@@ -16,9 +16,9 @@ public static class ObjectDefaultsConverter
     return null;
   }
   
-  private static bool CmpShapeDefault(DXD.ObjectDefaults openXmlElement, DMD.ShapeDefault? value, DiffList? diffs, string? objName)
+  private static bool CmpShapeDefault(DXD.ObjectDefaults openXmlElement, DMD.ShapeDefault? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.ShapeDefaultConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ShapeDefault>(), value, diffs, objName);
+    return DMXD.ShapeDefaultConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ShapeDefault>(), value, diffs, objName, propName);
   }
   
   private static void SetShapeDefault(DXD.ObjectDefaults openXmlElement, DMD.ShapeDefault? value)
@@ -45,9 +45,9 @@ public static class ObjectDefaultsConverter
     return null;
   }
   
-  private static bool CmpLineDefault(DXD.ObjectDefaults openXmlElement, DMD.LineDefault? value, DiffList? diffs, string? objName)
+  private static bool CmpLineDefault(DXD.ObjectDefaults openXmlElement, DMD.LineDefault? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.LineDefaultConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.LineDefault>(), value, diffs, objName);
+    return DMXD.LineDefaultConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.LineDefault>(), value, diffs, objName, propName);
   }
   
   private static void SetLineDefault(DXD.ObjectDefaults openXmlElement, DMD.LineDefault? value)
@@ -74,9 +74,9 @@ public static class ObjectDefaultsConverter
     return null;
   }
   
-  private static bool CmpTextDefault(DXD.ObjectDefaults openXmlElement, DMD.TextDefault? value, DiffList? diffs, string? objName)
+  private static bool CmpTextDefault(DXD.ObjectDefaults openXmlElement, DMD.TextDefault? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.TextDefaultConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.TextDefault>(), value, diffs, objName);
+    return DMXD.TextDefaultConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.TextDefault>(), value, diffs, objName, propName);
   }
   
   private static void SetTextDefault(DXD.ObjectDefaults openXmlElement, DMD.TextDefault? value)
@@ -103,9 +103,9 @@ public static class ObjectDefaultsConverter
     return null;
   }
   
-  private static bool CmpExtensionList(DXD.ObjectDefaults openXmlElement, DMD.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXD.ObjectDefaults openXmlElement, DMD.ExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ExtensionList>(), value, diffs, objName);
+    return DMXD.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetExtensionList(DXD.ObjectDefaults openXmlElement, DMD.ExtensionList? value)
@@ -135,23 +135,23 @@ public static class ObjectDefaultsConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.ObjectDefaults? openXmlElement, DMD.ObjectDefaults? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.ObjectDefaults? openXmlElement, DMD.ObjectDefaults? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpShapeDefault(openXmlElement, value.ShapeDefault, diffs, objName))
+      if (!CmpShapeDefault(openXmlElement, value.ShapeDefault, diffs, objName, propName))
         ok = false;
-      if (!CmpLineDefault(openXmlElement, value.LineDefault, diffs, objName))
+      if (!CmpLineDefault(openXmlElement, value.LineDefault, diffs, objName, propName))
         ok = false;
-      if (!CmpTextDefault(openXmlElement, value.TextDefault, diffs, objName))
+      if (!CmpTextDefault(openXmlElement, value.TextDefault, diffs, objName, propName))
         ok = false;
-      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

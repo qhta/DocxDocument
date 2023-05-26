@@ -16,9 +16,9 @@ public static class NumberDataSourceTypeConverter
     return null;
   }
   
-  private static bool CmpNumberReference(DXDC.NumberDataSourceType openXmlElement, DMDC.NumberReference? value, DiffList? diffs, string? objName)
+  private static bool CmpNumberReference(DXDC.NumberDataSourceType openXmlElement, DMDC.NumberReference? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.NumberReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.NumberReference>(), value, diffs, objName);
+    return DMXDC.NumberReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.NumberReference>(), value, diffs, objName, propName);
   }
   
   private static void SetNumberReference(DXDC.NumberDataSourceType openXmlElement, DMDC.NumberReference? value)
@@ -45,9 +45,9 @@ public static class NumberDataSourceTypeConverter
     return null;
   }
   
-  private static bool CmpNumberLiteral(DXDC.NumberDataSourceType openXmlElement, DMDC.NumberLiteral? value, DiffList? diffs, string? objName)
+  private static bool CmpNumberLiteral(DXDC.NumberDataSourceType openXmlElement, DMDC.NumberLiteral? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.NumberLiteralConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.NumberLiteral>(), value, diffs, objName);
+    return DMXDC.NumberLiteralConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.NumberLiteral>(), value, diffs, objName, propName);
   }
   
   private static void SetNumberLiteral(DXDC.NumberDataSourceType openXmlElement, DMDC.NumberLiteral? value)
@@ -75,19 +75,19 @@ public static class NumberDataSourceTypeConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDC.NumberDataSourceType? openXmlElement, DMDC.NumberDataSourceType? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.NumberDataSourceType? openXmlElement, DMDC.NumberDataSourceType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpNumberReference(openXmlElement, value.NumberReference, diffs, objName))
+      if (!CmpNumberReference(openXmlElement, value.NumberReference, diffs, objName, propName))
         ok = false;
-      if (!CmpNumberLiteral(openXmlElement, value.NumberLiteral, diffs, objName))
+      if (!CmpNumberLiteral(openXmlElement, value.NumberLiteral, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

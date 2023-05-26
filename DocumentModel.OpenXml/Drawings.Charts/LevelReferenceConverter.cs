@@ -13,7 +13,7 @@ public static class LevelReferenceConverter
       return openXmlElement?.GetFirstChild<DXO13DC.SequenceOfReferences>()?.Text;
   }
   
-  private static bool CmpSequenceOfReferences(DXO13DC.LevelReference openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpSequenceOfReferences(DXO13DC.LevelReference openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
       return openXmlElement?.GetFirstChild<DXO13DC.SequenceOfReferences>()?.Text == value;
   }
@@ -41,17 +41,17 @@ public static class LevelReferenceConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO13DC.LevelReference? openXmlElement, DMDC.LevelReference? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO13DC.LevelReference? openXmlElement, DMDC.LevelReference? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpSequenceOfReferences(openXmlElement, value.SequenceOfReferences, diffs, objName))
+      if (!CmpSequenceOfReferences(openXmlElement, value.SequenceOfReferences, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

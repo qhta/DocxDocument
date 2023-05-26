@@ -13,9 +13,9 @@ public static class BinningConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.IntervalClosedSide, DMDCDs.IntervalClosedSide>(openXmlElement?.IntervalClosed?.Value);
   }
   
-  private static bool CmpIntervalClosed(DXO16DCD.Binning openXmlElement, DMDCDs.IntervalClosedSide? value, DiffList? diffs, string? objName)
+  private static bool CmpIntervalClosed(DXO16DCD.Binning openXmlElement, DMDCDs.IntervalClosedSide? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.IntervalClosedSide, DMDCDs.IntervalClosedSide>(openXmlElement?.IntervalClosed?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.IntervalClosedSide, DMDCDs.IntervalClosedSide>(openXmlElement?.IntervalClosed?.Value, value, diffs, objName, propName);
   }
   
   private static void SetIntervalClosed(DXO16DCD.Binning openXmlElement, DMDCDs.IntervalClosedSide? value)
@@ -31,7 +31,7 @@ public static class BinningConverter
     return StringValueConverter.GetValue(openXmlElement?.Underflow);
   }
   
-  private static bool CmpUnderflow(DXO16DCD.Binning openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpUnderflow(DXO16DCD.Binning openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Underflow, value, diffs, objName, "Underflow");
   }
@@ -49,7 +49,7 @@ public static class BinningConverter
     return StringValueConverter.GetValue(openXmlElement?.Overflow);
   }
   
-  private static bool CmpOverflow(DXO16DCD.Binning openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpOverflow(DXO16DCD.Binning openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Overflow, value, diffs, objName, "Overflow");
   }
@@ -67,7 +67,7 @@ public static class BinningConverter
       return openXmlElement?.GetFirstChild<DXO16DCD.Xsddouble>()?.Text;
   }
   
-  private static bool CmpXsddouble(DXO16DCD.Binning openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpXsddouble(DXO16DCD.Binning openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
       return openXmlElement?.GetFirstChild<DXO16DCD.Xsddouble>()?.Text == value;
   }
@@ -92,7 +92,7 @@ public static class BinningConverter
       return openXmlElement?.GetFirstChild<DXO16DCD.BinCountXsdunsignedInt>()?.Text;
   }
   
-  private static bool CmpBinCountXsdunsignedInt(DXO16DCD.Binning openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpBinCountXsdunsignedInt(DXO16DCD.Binning openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
       return openXmlElement?.GetFirstChild<DXO16DCD.BinCountXsdunsignedInt>()?.Text == value;
   }
@@ -124,25 +124,25 @@ public static class BinningConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO16DCD.Binning? openXmlElement, DMDCDs.Binning? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16DCD.Binning? openXmlElement, DMDCDs.Binning? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpIntervalClosed(openXmlElement, value.IntervalClosed, diffs, objName))
+      if (!CmpIntervalClosed(openXmlElement, value.IntervalClosed, diffs, objName, propName))
         ok = false;
-      if (!CmpUnderflow(openXmlElement, value.Underflow, diffs, objName))
+      if (!CmpUnderflow(openXmlElement, value.Underflow, diffs, objName, propName))
         ok = false;
-      if (!CmpOverflow(openXmlElement, value.Overflow, diffs, objName))
+      if (!CmpOverflow(openXmlElement, value.Overflow, diffs, objName, propName))
         ok = false;
-      if (!CmpXsddouble(openXmlElement, value.Xsddouble, diffs, objName))
+      if (!CmpXsddouble(openXmlElement, value.Xsddouble, diffs, objName, propName))
         ok = false;
-      if (!CmpBinCountXsdunsignedInt(openXmlElement, value.BinCountXsdunsignedInt, diffs, objName))
+      if (!CmpBinCountXsdunsignedInt(openXmlElement, value.BinCountXsdunsignedInt, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

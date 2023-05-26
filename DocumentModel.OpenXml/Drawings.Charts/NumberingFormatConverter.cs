@@ -13,7 +13,7 @@ public static class NumberingFormatConverter
     return StringValueConverter.GetValue(openXmlElement?.FormatCode);
   }
   
-  private static bool CmpFormatCode(DXDC.NumberingFormat openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpFormatCode(DXDC.NumberingFormat openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.FormatCode, value, diffs, objName, "FormatCode");
   }
@@ -31,7 +31,7 @@ public static class NumberingFormatConverter
     return openXmlElement?.SourceLinked?.Value;
   }
   
-  private static bool CmpSourceLinked(DXDC.NumberingFormat openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpSourceLinked(DXDC.NumberingFormat openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.SourceLinked?.Value == value) return true;
     diffs?.Add(objName, "SourceLinked", openXmlElement?.SourceLinked?.Value, value);
@@ -58,19 +58,19 @@ public static class NumberingFormatConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDC.NumberingFormat? openXmlElement, DMDC.NumberingFormat? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.NumberingFormat? openXmlElement, DMDC.NumberingFormat? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpFormatCode(openXmlElement, value.FormatCode, diffs, objName))
+      if (!CmpFormatCode(openXmlElement, value.FormatCode, diffs, objName, propName))
         ok = false;
-      if (!CmpSourceLinked(openXmlElement, value.SourceLinked, diffs, objName))
+      if (!CmpSourceLinked(openXmlElement, value.SourceLinked, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -13,9 +13,9 @@ public static class UserShapesConverter
     return null;
   }
   
-  private static bool CmpRelativeAnchorSize(DXDC.UserShapes openXmlElement, DMDCD.RelativeAnchorSize? value, DiffList? diffs, string? objName)
+  private static bool CmpRelativeAnchorSize(DXDC.UserShapes openXmlElement, DMDCD.RelativeAnchorSize? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCD.RelativeAnchorSizeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDCD.RelativeAnchorSize>(), value, diffs, objName);
+    return DMXDCD.RelativeAnchorSizeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDCD.RelativeAnchorSize>(), value, diffs, objName, propName);
   }
   
   private static void SetRelativeAnchorSize(DXDC.UserShapes openXmlElement, DMDCD.RelativeAnchorSize? value)
@@ -39,9 +39,9 @@ public static class UserShapesConverter
     return null;
   }
   
-  private static bool CmpAbsoluteAnchorSize(DXDC.UserShapes openXmlElement, DMDCD.AbsoluteAnchorSize? value, DiffList? diffs, string? objName)
+  private static bool CmpAbsoluteAnchorSize(DXDC.UserShapes openXmlElement, DMDCD.AbsoluteAnchorSize? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCD.AbsoluteAnchorSizeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDCD.AbsoluteAnchorSize>(), value, diffs, objName);
+    return DMXDCD.AbsoluteAnchorSizeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDCD.AbsoluteAnchorSize>(), value, diffs, objName, propName);
   }
   
   private static void SetAbsoluteAnchorSize(DXDC.UserShapes openXmlElement, DMDCD.AbsoluteAnchorSize? value)
@@ -69,19 +69,19 @@ public static class UserShapesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDC.UserShapes? openXmlElement, DMDC.UserShapes? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.UserShapes? openXmlElement, DMDC.UserShapes? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpRelativeAnchorSize(openXmlElement, value.RelativeAnchorSize, diffs, objName))
+      if (!CmpRelativeAnchorSize(openXmlElement, value.RelativeAnchorSize, diffs, objName, propName))
         ok = false;
-      if (!CmpAbsoluteAnchorSize(openXmlElement, value.AbsoluteAnchorSize, diffs, objName))
+      if (!CmpAbsoluteAnchorSize(openXmlElement, value.AbsoluteAnchorSize, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

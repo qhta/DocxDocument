@@ -14,9 +14,9 @@ public static class LimitUpperConverter
     return null;
   }
   
-  private static bool CmpLimitUpperProperties(DXM.LimitUpper openXmlElement, DMM.LimitUpperProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpLimitUpperProperties(DXM.LimitUpper openXmlElement, DMM.LimitUpperProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXM.LimitUpperPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.LimitUpperProperties>(), value, diffs, objName);
+    return DMXM.LimitUpperPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.LimitUpperProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetLimitUpperProperties(DXM.LimitUpper openXmlElement, DMM.LimitUpperProperties? value)
@@ -42,9 +42,9 @@ public static class LimitUpperConverter
     return null;
   }
   
-  private static bool CmpArgument(DXM.LimitUpper openXmlElement, DMM.Argument? value, DiffList? diffs, string? objName)
+  private static bool CmpArgument(DXM.LimitUpper openXmlElement, DMM.Argument? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXM.ArgumentConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.Base>(), value, diffs, objName);
+    return DMXM.ArgumentConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.Base>(), value, diffs, objName, propName);
   }
   
   private static void SetArgument(DXM.LimitUpper openXmlElement, DMM.Argument? value)
@@ -70,9 +70,9 @@ public static class LimitUpperConverter
     return null;
   }
   
-  private static bool CmpLimit(DXM.LimitUpper openXmlElement, DMM.Limit? value, DiffList? diffs, string? objName)
+  private static bool CmpLimit(DXM.LimitUpper openXmlElement, DMM.Limit? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXM.LimitConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.Limit>(), value, diffs, objName);
+    return DMXM.LimitConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.Limit>(), value, diffs, objName, propName);
   }
   
   private static void SetLimit(DXM.LimitUpper openXmlElement, DMM.Limit? value)
@@ -103,21 +103,21 @@ public static class LimitUpperConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXM.LimitUpper? openXmlElement, DMM.LimitUpper? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXM.LimitUpper? openXmlElement, DMM.LimitUpper? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpLimitUpperProperties(openXmlElement, model.LimitUpperProperties, diffs, objName))
+      if (!CmpLimitUpperProperties(openXmlElement, model.LimitUpperProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpArgument(openXmlElement, model.Argument, diffs, objName))
+      if (!CmpArgument(openXmlElement, model.Argument, diffs, objName, propName))
         ok = false;
-      if (!CmpLimit(openXmlElement, model.Limit, diffs, objName))
+      if (!CmpLimit(openXmlElement, model.Limit, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   

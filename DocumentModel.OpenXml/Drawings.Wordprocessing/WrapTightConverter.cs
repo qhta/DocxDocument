@@ -13,9 +13,9 @@ public static class WrapTightConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapTextValues, DMDW.WrapTextKind>(openXmlElement?.WrapText?.Value);
   }
   
-  private static bool CmpWrapText(DXDW.WrapTight openXmlElement, DMDW.WrapTextKind? value, DiffList? diffs, string? objName)
+  private static bool CmpWrapText(DXDW.WrapTight openXmlElement, DMDW.WrapTextKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapTextValues, DMDW.WrapTextKind>(openXmlElement?.WrapText?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapTextValues, DMDW.WrapTextKind>(openXmlElement?.WrapText?.Value, value, diffs, objName, propName);
   }
   
   private static void SetWrapText(DXDW.WrapTight openXmlElement, DMDW.WrapTextKind? value)
@@ -31,7 +31,7 @@ public static class WrapTightConverter
     return openXmlElement?.DistanceFromLeft?.Value;
   }
   
-  private static bool CmpDistanceFromLeft(DXDW.WrapTight openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpDistanceFromLeft(DXDW.WrapTight openXmlElement, UInt32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.DistanceFromLeft?.Value == value) return true;
     diffs?.Add(objName, "DistanceFromLeft", openXmlElement?.DistanceFromLeft?.Value, value);
@@ -51,7 +51,7 @@ public static class WrapTightConverter
     return openXmlElement?.DistanceFromRight?.Value;
   }
   
-  private static bool CmpDistanceFromRight(DXDW.WrapTight openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpDistanceFromRight(DXDW.WrapTight openXmlElement, UInt32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.DistanceFromRight?.Value == value) return true;
     diffs?.Add(objName, "DistanceFromRight", openXmlElement?.DistanceFromRight?.Value, value);
@@ -74,9 +74,9 @@ public static class WrapTightConverter
     return null;
   }
   
-  private static bool CmpWrapPolygon(DXDW.WrapTight openXmlElement, DMDW.WrapPolygon? value, DiffList? diffs, string? objName)
+  private static bool CmpWrapPolygon(DXDW.WrapTight openXmlElement, DMDW.WrapPolygon? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDW.WrapPolygonConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDW.WrapPolygon>(), value, diffs, objName);
+    return DMXDW.WrapPolygonConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDW.WrapPolygon>(), value, diffs, objName, propName);
   }
   
   private static void SetWrapPolygon(DXDW.WrapTight openXmlElement, DMDW.WrapPolygon? value)
@@ -106,23 +106,23 @@ public static class WrapTightConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDW.WrapTight? openXmlElement, DMDW.WrapTight? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDW.WrapTight? openXmlElement, DMDW.WrapTight? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpWrapText(openXmlElement, value.WrapText, diffs, objName))
+      if (!CmpWrapText(openXmlElement, value.WrapText, diffs, objName, propName))
         ok = false;
-      if (!CmpDistanceFromLeft(openXmlElement, value.DistanceFromLeft, diffs, objName))
+      if (!CmpDistanceFromLeft(openXmlElement, value.DistanceFromLeft, diffs, objName, propName))
         ok = false;
-      if (!CmpDistanceFromRight(openXmlElement, value.DistanceFromRight, diffs, objName))
+      if (!CmpDistanceFromRight(openXmlElement, value.DistanceFromRight, diffs, objName, propName))
         ok = false;
-      if (!CmpWrapPolygon(openXmlElement, value.WrapPolygon, diffs, objName))
+      if (!CmpWrapPolygon(openXmlElement, value.WrapPolygon, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -10,7 +10,7 @@ public static class NumberingCacheConverter
       return openXmlElement?.GetFirstChild<DXDC.FormatCode>()?.Text;
   }
   
-  private static bool CmpFormatCode(DXDC.NumberingCache openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpFormatCode(DXDC.NumberingCache openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
       return openXmlElement?.GetFirstChild<DXDC.FormatCode>()?.Text == value;
   }
@@ -32,7 +32,7 @@ public static class NumberingCacheConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDC.PointCount>()?.Val);
   }
   
-  private static bool CmpPointCount(DXDC.NumberingCache openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpPointCount(DXDC.NumberingCache openXmlElement, UInt32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDC.PointCount>()?.Val, value, diffs, objName, "PointCount");
   }
@@ -56,7 +56,7 @@ public static class NumberingCacheConverter
     return null;
   }
   
-  private static bool CmpNumericPoints(DXDC.NumberingCache openXmlElement, Collection<DMDC.NumericPoint>? value, DiffList? diffs, string? objName)
+  private static bool CmpNumericPoints(DXDC.NumberingCache openXmlElement, Collection<DMDC.NumericPoint>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var origElements = openXmlElement.Elements<DXDC.NumericPoint>();
     var origElementsCount = origElements.Count();
@@ -65,7 +65,7 @@ public static class NumberingCacheConverter
     {
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, propName ?? openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -74,13 +74,13 @@ public static class NumberingCacheConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDC.NumericPointConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDC.NumericPointConverter.CompareModelElement(origItem, modelItem, diffs, objName, propName))
           ok = false;
       }
       return ok;
     }
     if (origElementsCount == 0 && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -106,9 +106,9 @@ public static class NumberingCacheConverter
     return null;
   }
   
-  private static bool CmpExtensionList(DXDC.NumberingCache openXmlElement, DMDC.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXDC.NumberingCache openXmlElement, DMDC.ExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ExtensionList>(), value, diffs, objName);
+    return DMXDC.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetExtensionList(DXDC.NumberingCache openXmlElement, DMDC.ExtensionList? value)
@@ -138,23 +138,23 @@ public static class NumberingCacheConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDC.NumberingCache? openXmlElement, DMDC.NumberingCache? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.NumberingCache? openXmlElement, DMDC.NumberingCache? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpFormatCode(openXmlElement, value.FormatCode, diffs, objName))
+      if (!CmpFormatCode(openXmlElement, value.FormatCode, diffs, objName, propName))
         ok = false;
-      if (!CmpPointCount(openXmlElement, value.PointCount, diffs, objName))
+      if (!CmpPointCount(openXmlElement, value.PointCount, diffs, objName, propName))
         ok = false;
-      if (!CmpNumericPoints(openXmlElement, value.NumericPoints, diffs, objName))
+      if (!CmpNumericPoints(openXmlElement, value.NumericPoints, diffs, objName, propName))
         ok = false;
-      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

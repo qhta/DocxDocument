@@ -13,7 +13,7 @@ public static class HyperlinkTypeConverter
     return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
-  private static bool CmpId(DXD.HyperlinkType openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpId(DXD.HyperlinkType openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
@@ -31,7 +31,7 @@ public static class HyperlinkTypeConverter
     return StringValueConverter.GetValue(openXmlElement?.InvalidUrl);
   }
   
-  private static bool CmpInvalidUrl(DXD.HyperlinkType openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpInvalidUrl(DXD.HyperlinkType openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.InvalidUrl, value, diffs, objName, "InvalidUrl");
   }
@@ -49,7 +49,7 @@ public static class HyperlinkTypeConverter
     return StringValueConverter.GetValue(openXmlElement?.Action);
   }
   
-  private static bool CmpAction(DXD.HyperlinkType openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpAction(DXD.HyperlinkType openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Action, value, diffs, objName, "Action");
   }
@@ -67,7 +67,7 @@ public static class HyperlinkTypeConverter
     return StringValueConverter.GetValue(openXmlElement?.TargetFrame);
   }
   
-  private static bool CmpTargetFrame(DXD.HyperlinkType openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpTargetFrame(DXD.HyperlinkType openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.TargetFrame, value, diffs, objName, "TargetFrame");
   }
@@ -85,7 +85,7 @@ public static class HyperlinkTypeConverter
     return StringValueConverter.GetValue(openXmlElement?.Tooltip);
   }
   
-  private static bool CmpTooltip(DXD.HyperlinkType openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpTooltip(DXD.HyperlinkType openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Tooltip, value, diffs, objName, "Tooltip");
   }
@@ -103,7 +103,7 @@ public static class HyperlinkTypeConverter
     return openXmlElement?.History?.Value;
   }
   
-  private static bool CmpHistory(DXD.HyperlinkType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpHistory(DXD.HyperlinkType openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.History?.Value == value) return true;
     diffs?.Add(objName, "History", openXmlElement?.History?.Value, value);
@@ -126,7 +126,7 @@ public static class HyperlinkTypeConverter
     return openXmlElement?.HighlightClick?.Value;
   }
   
-  private static bool CmpHighlightClick(DXD.HyperlinkType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpHighlightClick(DXD.HyperlinkType openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.HighlightClick?.Value == value) return true;
     diffs?.Add(objName, "HighlightClick", openXmlElement?.HighlightClick?.Value, value);
@@ -149,7 +149,7 @@ public static class HyperlinkTypeConverter
     return openXmlElement?.EndSound?.Value;
   }
   
-  private static bool CmpEndSound(DXD.HyperlinkType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpEndSound(DXD.HyperlinkType openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.EndSound?.Value == value) return true;
     diffs?.Add(objName, "EndSound", openXmlElement?.EndSound?.Value, value);
@@ -175,9 +175,9 @@ public static class HyperlinkTypeConverter
     return null;
   }
   
-  private static bool CmpHyperlinkSound(DXD.HyperlinkType openXmlElement, DMD.EmbeddedWavAudioFileType? value, DiffList? diffs, string? objName)
+  private static bool CmpHyperlinkSound(DXD.HyperlinkType openXmlElement, DMD.EmbeddedWavAudioFileType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.EmbeddedWavAudioFileTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.HyperlinkSound>(), value, diffs, objName);
+    return DMXD.EmbeddedWavAudioFileTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.HyperlinkSound>(), value, diffs, objName, propName);
   }
   
   private static void SetHyperlinkSound(DXD.HyperlinkType openXmlElement, DMD.EmbeddedWavAudioFileType? value)
@@ -204,9 +204,9 @@ public static class HyperlinkTypeConverter
     return null;
   }
   
-  private static bool CmpHyperlinkExtensionList(DXD.HyperlinkType openXmlElement, DMD.HyperlinkExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpHyperlinkExtensionList(DXD.HyperlinkType openXmlElement, DMD.HyperlinkExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.HyperlinkExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.HyperlinkExtensionList>(), value, diffs, objName);
+    return DMXD.HyperlinkExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.HyperlinkExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetHyperlinkExtensionList(DXD.HyperlinkType openXmlElement, DMD.HyperlinkExtensionList? value)
@@ -242,35 +242,35 @@ public static class HyperlinkTypeConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.HyperlinkType? openXmlElement, DMD.HyperlinkType? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.HyperlinkType? openXmlElement, DMD.HyperlinkType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+      if (!CmpId(openXmlElement, value.Id, diffs, objName, propName))
         ok = false;
-      if (!CmpInvalidUrl(openXmlElement, value.InvalidUrl, diffs, objName))
+      if (!CmpInvalidUrl(openXmlElement, value.InvalidUrl, diffs, objName, propName))
         ok = false;
-      if (!CmpAction(openXmlElement, value.Action, diffs, objName))
+      if (!CmpAction(openXmlElement, value.Action, diffs, objName, propName))
         ok = false;
-      if (!CmpTargetFrame(openXmlElement, value.TargetFrame, diffs, objName))
+      if (!CmpTargetFrame(openXmlElement, value.TargetFrame, diffs, objName, propName))
         ok = false;
-      if (!CmpTooltip(openXmlElement, value.Tooltip, diffs, objName))
+      if (!CmpTooltip(openXmlElement, value.Tooltip, diffs, objName, propName))
         ok = false;
-      if (!CmpHistory(openXmlElement, value.History, diffs, objName))
+      if (!CmpHistory(openXmlElement, value.History, diffs, objName, propName))
         ok = false;
-      if (!CmpHighlightClick(openXmlElement, value.HighlightClick, diffs, objName))
+      if (!CmpHighlightClick(openXmlElement, value.HighlightClick, diffs, objName, propName))
         ok = false;
-      if (!CmpEndSound(openXmlElement, value.EndSound, diffs, objName))
+      if (!CmpEndSound(openXmlElement, value.EndSound, diffs, objName, propName))
         ok = false;
-      if (!CmpHyperlinkSound(openXmlElement, value.HyperlinkSound, diffs, objName))
+      if (!CmpHyperlinkSound(openXmlElement, value.HyperlinkSound, diffs, objName, propName))
         ok = false;
-      if (!CmpHyperlinkExtensionList(openXmlElement, value.HyperlinkExtensionList, diffs, objName))
+      if (!CmpHyperlinkExtensionList(openXmlElement, value.HyperlinkExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

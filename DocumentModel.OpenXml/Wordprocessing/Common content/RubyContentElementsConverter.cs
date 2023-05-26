@@ -19,22 +19,22 @@ public static class RubyContentElementsConverter
     return null;
   }
 
-  public static bool? CompareModelElement(DX.OpenXmlElement? openXmlElement, DMW.IRubyContent? model, DiffList? diffs = null, string? objName = null)
+  public static bool? CompareModelElement(DX.OpenXmlElement? openXmlElement, DMW.IRubyContent? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       if (openXmlElement is DXW.HyperlinkRuby hyperlinkRuby && model is DMW.HyperlinkRuby hyperlinkRubyModel)
-        return DMXW.HyperlinkRubyConverter.CompareModelElement(hyperlinkRuby, hyperlinkRubyModel, diffs, objName);
+        return DMXW.HyperlinkRubyConverter.CompareModelElement(hyperlinkRuby, hyperlinkRubyModel, diffs, objName, propName);
       if (openXmlElement is DXW.CustomXmlRuby customXmlRuby && model is DMW.CustomXmlRuby customXmlRubyModel)
-        return DMXW.CustomXmlRubyConverter.CompareModelElement(customXmlRuby, customXmlRubyModel, diffs, objName);
+        return DMXW.CustomXmlRubyConverter.CompareModelElement(customXmlRuby, customXmlRubyModel, diffs, objName, propName);
       if (openXmlElement is DXW.SimpleFieldRuby simpleFieldRuby && model is DMW.SimpleFieldRuby simpleFieldRubyModel)
-        return DMXW.SimpleFieldRubyConverter.CompareModelElement(simpleFieldRuby, simpleFieldRubyModel, diffs, objName);
+        return DMXW.SimpleFieldRubyConverter.CompareModelElement(simpleFieldRuby, simpleFieldRubyModel, diffs, objName, propName);
       if (openXmlElement is DXW.SdtRunRuby sdtRunRuby && model is DMW.SdtRunRuby sdtRunRubyModel)
-        return DMXW.SdtRunRubyConverter.CompareModelElement(sdtRunRuby, sdtRunRubyModel, diffs, objName);
+        return DMXW.SdtRunRubyConverter.CompareModelElement(sdtRunRuby, sdtRunRubyModel, diffs, objName, propName);
       return null;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
 

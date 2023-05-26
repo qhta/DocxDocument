@@ -31,25 +31,25 @@ public static class CustomXmlBlockConverter
   }
 
   public static bool CompareCustomXmlBlockContent(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, 
-    DiffList? diffs = null, string? objName = null)
+    DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       if (openXmlElement is DXW.CustomXmlBlock customXmlBlock && model is DMW.CustomXmlBlock customXmlBlockModel)
-        return DMXW.CustomXmlBlockConverter.CompareModelElement(customXmlBlock, customXmlBlockModel, diffs, objName);
+        return DMXW.CustomXmlBlockConverter.CompareModelElement(customXmlBlock, customXmlBlockModel, diffs, objName, propName);
 
       if (openXmlElement is DXW.SdtBlock sdtBlock && model is DMW.SdtBlock sdtBlockModel)
-        return DMXW.SdtBlockConverter.CompareModelElement(sdtBlock, sdtBlockModel, diffs, objName);
+        return DMXW.SdtBlockConverter.CompareModelElement(sdtBlock, sdtBlockModel, diffs, objName, propName);
 
       if (openXmlElement is DXW.Paragraph paragraph && model is DMW.Paragraph paragraphModel)
-        return DMXW.ParagraphConverter.CompareModelElement(paragraph, paragraphModel, diffs, objName);
+        return DMXW.ParagraphConverter.CompareModelElement(paragraph, paragraphModel, diffs, objName, propName);
 
       if (openXmlElement is DXW.Table table && model is DMW.Table tableModel)
-        return DMXW.TableConverter.CompareModelElement(table, tableModel, diffs, objName);
+        return DMXW.TableConverter.CompareModelElement(table, tableModel, diffs, objName, propName);
 
       if (model is DMW.ICommonContent commonElementModel)
       {
-        var result2 = DMXW.CommonMarkersConverter.CompareModelElement(openXmlElement, commonElementModel, diffs, objName);
+        var result2 = DMXW.CommonMarkersConverter.CompareModelElement(openXmlElement, commonElementModel, diffs, objName, propName);
         if (result2 != null)
           return (bool)result2;
       }
@@ -59,7 +59,7 @@ public static class CustomXmlBlockConverter
 
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
 
@@ -129,21 +129,21 @@ public static class CustomXmlBlockConverter
     return null;
   }
 
-  public static bool CompareModelElement(DXW.CustomXmlBlock? openXmlElement, DMW.CustomXmlBlock? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.CustomXmlBlock? openXmlElement, DMW.CustomXmlBlock? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CustomXmlElementConverter.CompareModelElement(openXmlElement, model, diffs, objName))
+      if (!CustomXmlElementConverter.CompareModelElement(openXmlElement, model, diffs, objName, propName))
         ok = false;
       if (!ElementCollectionConverter<DM.IModelElement>.CompareOpenXmlElementCollection(
         openXmlElement, model,
-        CompareCustomXmlBlockContent, diffs, objName))
+        CompareCustomXmlBlockContent, diffs, objName, propName))
         return ok;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
 

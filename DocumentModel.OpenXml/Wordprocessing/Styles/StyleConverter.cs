@@ -13,9 +13,9 @@ public static class StyleConverter
     return EnumValueConverter.GetValue<DXW.StyleValues, DMW.StyleKind>(openXmlElement?.Type?.Value);
   }
   
-  private static bool CmpType(DXW.Style openXmlElement, DMW.StyleKind? value, DiffList? diffs, string? objName)
+  private static bool CmpType(DXW.Style openXmlElement, DMW.StyleKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.StyleValues, DMW.StyleKind>(openXmlElement?.Type?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.StyleValues, DMW.StyleKind>(openXmlElement?.Type?.Value, value, diffs, objName, propName);
   }
   
   private static void SetType(DXW.Style openXmlElement, DMW.StyleKind? value)
@@ -31,7 +31,7 @@ public static class StyleConverter
     return StringValueConverter.GetValue(openXmlElement?.StyleId);
   }
   
-  private static bool CmpStyleId(DXW.Style openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpStyleId(DXW.Style openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.StyleId, value, diffs, objName, "StyleId");
   }
@@ -49,7 +49,7 @@ public static class StyleConverter
     return BooleanValueConverter.GetValue(openXmlElement?.Default);
   }
   
-  private static bool CmpIsDefault(DXW.Style openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpIsDefault(DXW.Style openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.Default, value, diffs, objName, "Default");
   }
@@ -67,7 +67,7 @@ public static class StyleConverter
     return BooleanValueConverter.GetValue(openXmlElement?.CustomStyle);
   }
   
-  private static bool CmpIsCustom(DXW.Style openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpIsCustom(DXW.Style openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.CustomStyle, value, diffs, objName, "CustomStyle");
   }
@@ -85,7 +85,7 @@ public static class StyleConverter
     return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.StyleName>()?.Val);
   }
   
-  private static bool CmpStyleName(DXW.Style openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpStyleName(DXW.Style openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.StyleName>()?.Val, value, diffs, objName, "StyleName");
   }
@@ -103,7 +103,7 @@ public static class StyleConverter
     return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.Aliases>()?.Val);
   }
   
-  private static bool CmpAliases(DXW.Style openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpAliases(DXW.Style openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.Aliases>()?.Val, value, diffs, objName, "Aliases");
   }
@@ -121,7 +121,7 @@ public static class StyleConverter
     return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.BasedOn>()?.Val);
   }
   
-  private static bool CmpBasedOn(DXW.Style openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpBasedOn(DXW.Style openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.BasedOn>()?.Val, value, diffs, objName, "BasedOn");
   }
@@ -139,7 +139,7 @@ public static class StyleConverter
     return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.NextParagraphStyle>()?.Val);
   }
   
-  private static bool CmpNextParagraphStyle(DXW.Style openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpNextParagraphStyle(DXW.Style openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.NextParagraphStyle>()?.Val, value, diffs, objName, "NextParagraphStyle");
   }
@@ -157,7 +157,7 @@ public static class StyleConverter
     return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.LinkedStyle>()?.Val);
   }
   
-  private static bool CmpLinkedStyle(DXW.Style openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpLinkedStyle(DXW.Style openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.LinkedStyle>()?.Val, value, diffs, objName, "LinkedStyle");
   }
@@ -175,9 +175,9 @@ public static class StyleConverter
     return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.AutoRedefine>());
   }
   
-  private static bool CmpIsAutoRedefined(DXW.Style openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpIsAutoRedefined(DXW.Style openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.AutoRedefine>(), value, diffs, objName);
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.AutoRedefine>(), value, diffs, objName, propName);
   }
   
   private static void SetIsAutoRedefined(DXW.Style openXmlElement, Boolean? value)
@@ -193,9 +193,9 @@ public static class StyleConverter
     return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.StyleHidden>());
   }
   
-  private static bool CmpIsHidden(DXW.Style openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpIsHidden(DXW.Style openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.StyleHidden>(), value, diffs, objName);
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.StyleHidden>(), value, diffs, objName, propName);
   }
   
   private static void SetIsHidden(DXW.Style openXmlElement, Boolean? value)
@@ -211,7 +211,7 @@ public static class StyleConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.UIPriority>()?.Val);
   }
   
-  private static bool CmpUIPriority(DXW.Style openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpUIPriority(DXW.Style openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.UIPriority>()?.Val, value, diffs, objName, "UIPriority");
   }
@@ -229,9 +229,9 @@ public static class StyleConverter
     return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.SemiHidden>());
   }
   
-  private static bool CmpIsSemiHidden(DXW.Style openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpIsSemiHidden(DXW.Style openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.SemiHidden>(), value, diffs, objName);
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.SemiHidden>(), value, diffs, objName, propName);
   }
   
   private static void SetIsSemiHidden(DXW.Style openXmlElement, Boolean? value)
@@ -247,9 +247,9 @@ public static class StyleConverter
     return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.UnhideWhenUsed>());
   }
   
-  private static bool CmpIsUnhiddenWhenUsed(DXW.Style openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpIsUnhiddenWhenUsed(DXW.Style openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.UnhideWhenUsed>(), value, diffs, objName);
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.UnhideWhenUsed>(), value, diffs, objName, propName);
   }
   
   private static void SetIsUnhiddenWhenUsed(DXW.Style openXmlElement, Boolean? value)
@@ -265,9 +265,9 @@ public static class StyleConverter
     return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.PrimaryStyle>());
   }
   
-  private static bool CmpIsPrimary(DXW.Style openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpIsPrimary(DXW.Style openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.PrimaryStyle>(), value, diffs, objName);
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.PrimaryStyle>(), value, diffs, objName, propName);
   }
   
   private static void SetIsPrimary(DXW.Style openXmlElement, Boolean? value)
@@ -283,9 +283,9 @@ public static class StyleConverter
     return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.Locked>());
   }
   
-  private static bool CmpIsLocked(DXW.Style openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpIsLocked(DXW.Style openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.Locked>(), value, diffs, objName);
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.Locked>(), value, diffs, objName, propName);
   }
   
   private static void SetIsLocked(DXW.Style openXmlElement, Boolean? value)
@@ -301,9 +301,9 @@ public static class StyleConverter
     return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.Personal>());
   }
   
-  private static bool CmpIsPersonal(DXW.Style openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpIsPersonal(DXW.Style openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.Personal>(), value, diffs, objName);
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.Personal>(), value, diffs, objName, propName);
   }
   
   private static void SetIsPersonal(DXW.Style openXmlElement, Boolean? value)
@@ -319,9 +319,9 @@ public static class StyleConverter
     return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.PersonalCompose>());
   }
   
-  private static bool CmpIsPersonalCompose(DXW.Style openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpIsPersonalCompose(DXW.Style openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.PersonalCompose>(), value, diffs, objName);
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.PersonalCompose>(), value, diffs, objName, propName);
   }
   
   private static void SetIsPersonalCompose(DXW.Style openXmlElement, Boolean? value)
@@ -337,9 +337,9 @@ public static class StyleConverter
     return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.PersonalReply>());
   }
   
-  private static bool CmpIsPersonalReply(DXW.Style openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpIsPersonalReply(DXW.Style openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.PersonalReply>(), value, diffs, objName);
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.PersonalReply>(), value, diffs, objName, propName);
   }
   
   private static void SetIsPersonalReply(DXW.Style openXmlElement, Boolean? value)
@@ -355,7 +355,7 @@ public static class StyleConverter
     return HexIntConverter.GetValue(openXmlElement?.GetFirstChild<DXW.Rsid>()?.Val);
   }
   
-  private static bool CmpRsid(DXW.Style openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
+  private static bool CmpRsid(DXW.Style openXmlElement, DM.HexInt? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return HexIntConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.Rsid>()?.Val, value, diffs, objName, "Rsid");
   }
@@ -376,9 +376,9 @@ public static class StyleConverter
     return null;
   }
   
-  private static bool CmpStyleParagraphProperties(DXW.Style openXmlElement, DMW.StyleParagraphProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpStyleParagraphProperties(DXW.Style openXmlElement, DMW.StyleParagraphProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.StyleParagraphPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.StyleParagraphProperties>(), value, diffs, objName);
+    return DMXW.StyleParagraphPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.StyleParagraphProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetStyleParagraphProperties(DXW.Style openXmlElement, DMW.StyleParagraphProperties? value)
@@ -405,9 +405,9 @@ public static class StyleConverter
     return null;
   }
   
-  private static bool CmpStyleRunProperties(DXW.Style openXmlElement, DMW.StyleRunProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpStyleRunProperties(DXW.Style openXmlElement, DMW.StyleRunProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.StyleRunPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.StyleRunProperties>(), value, diffs, objName);
+    return DMXW.StyleRunPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.StyleRunProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetStyleRunProperties(DXW.Style openXmlElement, DMW.StyleRunProperties? value)
@@ -434,9 +434,9 @@ public static class StyleConverter
     return null;
   }
   
-  private static bool CmpStyleTableProperties(DXW.Style openXmlElement, DMW.StyleTableProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpStyleTableProperties(DXW.Style openXmlElement, DMW.StyleTableProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.StyleTablePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.StyleTableProperties>(), value, diffs, objName);
+    return DMXW.StyleTablePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.StyleTableProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetStyleTableProperties(DXW.Style openXmlElement, DMW.StyleTableProperties? value)
@@ -463,9 +463,9 @@ public static class StyleConverter
     return null;
   }
   
-  private static bool CmpTableStyleConditionalFormattingTableRowProperties(DXW.Style openXmlElement, DMW.TableStyleConditionalRowProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpTableStyleConditionalFormattingTableRowProperties(DXW.Style openXmlElement, DMW.TableStyleConditionalRowProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.TableStyleConditionalFormattingTableRowPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableStyleConditionalFormattingTableRowProperties>(), value, diffs, objName);
+    return DMXW.TableStyleConditionalFormattingTableRowPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableStyleConditionalFormattingTableRowProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetTableStyleConditionalFormattingTableRowProperties(DXW.Style openXmlElement, DMW.TableStyleConditionalRowProperties? value)
@@ -492,9 +492,9 @@ public static class StyleConverter
     return null;
   }
   
-  private static bool CmpStyleTableCellProperties(DXW.Style openXmlElement, DMW.StyleTableCellProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpStyleTableCellProperties(DXW.Style openXmlElement, DMW.StyleTableCellProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.StyleTableCellPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.StyleTableCellProperties>(), value, diffs, objName);
+    return DMXW.StyleTableCellPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.StyleTableCellProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetStyleTableCellProperties(DXW.Style openXmlElement, DMW.StyleTableCellProperties? value)
@@ -524,7 +524,7 @@ public static class StyleConverter
     return null;
   }
   
-  private static bool CmpTableStyleProperties(DXW.Style openXmlElement, ICollection<DMW.TableStyleProperties>? value, DiffList? diffs, string? objName)
+  private static bool CmpTableStyleProperties(DXW.Style openXmlElement, ICollection<DMW.TableStyleProperties>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var origElements = openXmlElement.Elements<DXW.TableStyleProperties>();
     var origElementsCount = origElements.Count();
@@ -533,7 +533,7 @@ public static class StyleConverter
     {
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, propName ?? openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -542,13 +542,13 @@ public static class StyleConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXW.TableStylePropertiesConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXW.TableStylePropertiesConverter.CompareModelElement(origItem, modelItem, diffs, objName, propName))
           ok = false;
       }
       return ok;
     }
     if (origElementsCount == 0 && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -602,67 +602,67 @@ public static class StyleConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.Style? openXmlElement, DMW.Style? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.Style? openXmlElement, DMW.Style? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpType(openXmlElement, value.Type, diffs, objName))
+      if (!CmpType(openXmlElement, value.Type, diffs, objName, propName))
         ok = false;
-      if (!CmpStyleId(openXmlElement, value.StyleId, diffs, objName))
+      if (!CmpStyleId(openXmlElement, value.StyleId, diffs, objName, propName))
         ok = false;
-      if (!CmpIsDefault(openXmlElement, value.IsDefault, diffs, objName))
+      if (!CmpIsDefault(openXmlElement, value.IsDefault, diffs, objName, propName))
         ok = false;
-      if (!CmpIsCustom(openXmlElement, value.IsCustom, diffs, objName))
+      if (!CmpIsCustom(openXmlElement, value.IsCustom, diffs, objName, propName))
         ok = false;
-      if (!CmpStyleName(openXmlElement, value.StyleName, diffs, objName))
+      if (!CmpStyleName(openXmlElement, value.StyleName, diffs, objName, propName))
         ok = false;
-      if (!CmpAliases(openXmlElement, value.Aliases, diffs, objName))
+      if (!CmpAliases(openXmlElement, value.Aliases, diffs, objName, propName))
         ok = false;
-      if (!CmpBasedOn(openXmlElement, value.BasedOn, diffs, objName))
+      if (!CmpBasedOn(openXmlElement, value.BasedOn, diffs, objName, propName))
         ok = false;
-      if (!CmpNextParagraphStyle(openXmlElement, value.NextParagraphStyle, diffs, objName))
+      if (!CmpNextParagraphStyle(openXmlElement, value.NextParagraphStyle, diffs, objName, propName))
         ok = false;
-      if (!CmpLinkedStyle(openXmlElement, value.LinkedStyle, diffs, objName))
+      if (!CmpLinkedStyle(openXmlElement, value.LinkedStyle, diffs, objName, propName))
         ok = false;
-      if (!CmpIsAutoRedefined(openXmlElement, value.IsAutoRedefined, diffs, objName))
+      if (!CmpIsAutoRedefined(openXmlElement, value.IsAutoRedefined, diffs, objName, propName))
         ok = false;
-      if (!CmpIsHidden(openXmlElement, value.IsHidden, diffs, objName))
+      if (!CmpIsHidden(openXmlElement, value.IsHidden, diffs, objName, propName))
         ok = false;
-      if (!CmpUIPriority(openXmlElement, value.UIPriority, diffs, objName))
+      if (!CmpUIPriority(openXmlElement, value.UIPriority, diffs, objName, propName))
         ok = false;
-      if (!CmpIsSemiHidden(openXmlElement, value.IsSemiHidden, diffs, objName))
+      if (!CmpIsSemiHidden(openXmlElement, value.IsSemiHidden, diffs, objName, propName))
         ok = false;
-      if (!CmpIsUnhiddenWhenUsed(openXmlElement, value.IsUnhiddenWhenUsed, diffs, objName))
+      if (!CmpIsUnhiddenWhenUsed(openXmlElement, value.IsUnhiddenWhenUsed, diffs, objName, propName))
         ok = false;
-      if (!CmpIsPrimary(openXmlElement, value.IsPrimary, diffs, objName))
+      if (!CmpIsPrimary(openXmlElement, value.IsPrimary, diffs, objName, propName))
         ok = false;
-      if (!CmpIsLocked(openXmlElement, value.IsLocked, diffs, objName))
+      if (!CmpIsLocked(openXmlElement, value.IsLocked, diffs, objName, propName))
         ok = false;
-      if (!CmpIsPersonal(openXmlElement, value.IsPersonal, diffs, objName))
+      if (!CmpIsPersonal(openXmlElement, value.IsPersonal, diffs, objName, propName))
         ok = false;
-      if (!CmpIsPersonalCompose(openXmlElement, value.IsPersonalCompose, diffs, objName))
+      if (!CmpIsPersonalCompose(openXmlElement, value.IsPersonalCompose, diffs, objName, propName))
         ok = false;
-      if (!CmpIsPersonalReply(openXmlElement, value.IsPersonalReply, diffs, objName))
+      if (!CmpIsPersonalReply(openXmlElement, value.IsPersonalReply, diffs, objName, propName))
         ok = false;
-      if (!CmpRsid(openXmlElement, value.Rsid, diffs, objName))
+      if (!CmpRsid(openXmlElement, value.Rsid, diffs, objName, propName))
         ok = false;
-      if (!CmpStyleParagraphProperties(openXmlElement, value.StyleParagraphProperties, diffs, objName))
+      if (!CmpStyleParagraphProperties(openXmlElement, value.StyleParagraphProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpStyleRunProperties(openXmlElement, value.StyleRunProperties, diffs, objName))
+      if (!CmpStyleRunProperties(openXmlElement, value.StyleRunProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpStyleTableProperties(openXmlElement, value.StyleTableProperties, diffs, objName))
+      if (!CmpStyleTableProperties(openXmlElement, value.StyleTableProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpTableStyleConditionalFormattingTableRowProperties(openXmlElement, value.TableStyleConditionalFormattingTableRowProperties, diffs, objName))
+      if (!CmpTableStyleConditionalFormattingTableRowProperties(openXmlElement, value.TableStyleConditionalFormattingTableRowProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpStyleTableCellProperties(openXmlElement, value.StyleTableCellProperties, diffs, objName))
+      if (!CmpStyleTableCellProperties(openXmlElement, value.StyleTableCellProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpTableStyleProperties(openXmlElement, value.TableStyleConditionalProperties, diffs, objName))
+      if (!CmpTableStyleProperties(openXmlElement, value.TableStyleConditionalProperties, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

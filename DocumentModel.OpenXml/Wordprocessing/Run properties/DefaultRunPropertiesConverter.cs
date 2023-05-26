@@ -18,18 +18,18 @@ public static class DefaultRunPropertiesConverter
     return null;
   }
 
-  public static bool CompareModelElement(DXW.RunPropertiesDefault? openXmlElement, DMW.DefaultRunProperties? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.RunPropertiesDefault? openXmlElement, DMW.DefaultRunProperties? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var element = openXmlElement?.GetFirstChild<DXW.RunPropertiesBaseStyle>();
     if (element != null && model != null)
     {
       var ok = true;
-      if (!BaseRunPropertiesConverter.CompareModelElement(element, model, diffs, objName))
+      if (!BaseRunPropertiesConverter.CompareModelElement(element, model, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
 

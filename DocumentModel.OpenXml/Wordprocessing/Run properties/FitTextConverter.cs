@@ -13,7 +13,7 @@ public static class FitTextConverter
     return openXmlElement?.Val?.Value;
   }
   
-  private static bool CmpVal(DXW.FitText openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpVal(DXW.FitText openXmlElement, UInt32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Val?.Value == value) return true;
     diffs?.Add(objName, "Value", openXmlElement?.Val?.Value, value);
@@ -33,7 +33,7 @@ public static class FitTextConverter
     return openXmlElement?.Id?.Value;
   }
   
-  private static bool CmpId(DXW.FitText openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpId(DXW.FitText openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Id?.Value == value) return true;
     diffs?.Add(objName, "AnnotationId", openXmlElement?.Id?.Value, value);
@@ -57,19 +57,19 @@ public static class FitTextConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.FitText? openXmlElement, DMW.FitText? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.FitText? openXmlElement, DMW.FitText? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpVal(openXmlElement, value.Value, diffs, objName))
+      if (!CmpVal(openXmlElement, value.Value, diffs, objName, propName))
         ok = false;
-      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+      if (!CmpId(openXmlElement, value.Id, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -13,9 +13,9 @@ public static class StatisticsConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.QuartileMethod, DMDCDs.QuartileMethod>(openXmlElement?.QuartileMethod?.Value);
   }
   
-  private static bool CmpQuartileMethod(DXO16DCD.Statistics openXmlElement, DMDCDs.QuartileMethod? value, DiffList? diffs, string? objName)
+  private static bool CmpQuartileMethod(DXO16DCD.Statistics openXmlElement, DMDCDs.QuartileMethod? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.QuartileMethod, DMDCDs.QuartileMethod>(openXmlElement?.QuartileMethod?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.QuartileMethod, DMDCDs.QuartileMethod>(openXmlElement?.QuartileMethod?.Value, value, diffs, objName, propName);
   }
   
   private static void SetQuartileMethod(DXO16DCD.Statistics openXmlElement, DMDCDs.QuartileMethod? value)
@@ -34,17 +34,17 @@ public static class StatisticsConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO16DCD.Statistics? openXmlElement, DMDCDs.Statistics? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16DCD.Statistics? openXmlElement, DMDCDs.Statistics? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpQuartileMethod(openXmlElement, value.QuartileMethod, diffs, objName))
+      if (!CmpQuartileMethod(openXmlElement, value.QuartileMethod, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

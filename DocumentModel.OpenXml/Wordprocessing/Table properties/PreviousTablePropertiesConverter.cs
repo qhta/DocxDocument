@@ -17,9 +17,9 @@ public static class PreviousTablePropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DX.OpenXmlCompositeElement? openXmlElement, DMW.PreviousTableProperties? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DX.OpenXmlCompositeElement? openXmlElement, DMW.PreviousTableProperties? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return ExtBaseTablePropertiesConverter.CompareModelElement(openXmlElement, model, diffs, objName);
+    return ExtBaseTablePropertiesConverter.CompareModelElement(openXmlElement, model, diffs, objName, propName);
   }
   
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.PreviousTableProperties model)

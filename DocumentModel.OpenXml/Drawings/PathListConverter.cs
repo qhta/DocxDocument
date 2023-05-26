@@ -19,7 +19,7 @@ public static class PathListConverter
     return null;
   }
   
-  private static bool CmpPaths(DXD.PathList openXmlElement, Collection<DMD.Path>? value, DiffList? diffs, string? objName)
+  private static bool CmpPaths(DXD.PathList openXmlElement, Collection<DMD.Path>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var origElements = openXmlElement.Elements<DXD.Path>();
     var origElementsCount = origElements.Count();
@@ -28,7 +28,7 @@ public static class PathListConverter
     {
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, propName ?? openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -37,13 +37,13 @@ public static class PathListConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXD.PathConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXD.PathConverter.CompareModelElement(origItem, modelItem, diffs, objName, propName))
           ok = false;
       }
       return ok;
     }
     if (origElementsCount == 0 && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -72,17 +72,17 @@ public static class PathListConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.PathList? openXmlElement, DMD.PathList? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.PathList? openXmlElement, DMD.PathList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpPaths(openXmlElement, value.Paths, diffs, objName))
+      if (!CmpPaths(openXmlElement, value.Paths, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

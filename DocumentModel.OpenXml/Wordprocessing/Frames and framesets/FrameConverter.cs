@@ -11,7 +11,7 @@ public static class FrameConverter
     return UInt32ValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.FrameSize>()?.Val?.Value);
   }
   
-  private static bool CmpFrameSize(DXW.Frame openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpFrameSize(DXW.Frame openXmlElement, UInt32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.FrameSize>();
     if (itemElement?.Val?.Value == value.ToString()) return true;
@@ -39,7 +39,7 @@ public static class FrameConverter
     return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.FrameName>()?.Val);
   }
   
-  private static bool CmpFrameName(DXW.Frame openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpFrameName(DXW.Frame openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.FrameName>()?.Val, value, diffs, objName, "FrameName");
   }
@@ -60,9 +60,9 @@ public static class FrameConverter
   }
   
   private static bool CmpSourceFileReference(DXW.Frame openXmlElement, DMW.FrameSourceFile? value, 
-    DiffList? diffs, string? objName, DXW.WebSettings? settings = null)
+    DiffList? diffs, string? objName, string? propName, DXW.WebSettings? settings = null)
   {
-    return DMXW.FrameSourceFileConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.SourceFileReference>(), value, diffs, objName, settings);
+    return DMXW.FrameSourceFileConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.SourceFileReference>(), value, diffs, objName, propName, settings);
   }
   
   private static void SetSourceFileReference(DXW.Frame openXmlElement, DMW.FrameSourceFile? value, DXW.WebSettings? settings = null)
@@ -85,7 +85,7 @@ public static class FrameConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.MarginWidth>()?.Val);
   }
   
-  private static bool CmpMarginWidth(DXW.Frame openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpMarginWidth(DXW.Frame openXmlElement, UInt32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.MarginWidth>()?.Val, value, diffs, objName, "MarginWidth");
   }
@@ -102,7 +102,7 @@ public static class FrameConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.MarginHeight>()?.Val);
   }
   
-  private static bool CmpMarginHeight(DXW.Frame openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpMarginHeight(DXW.Frame openXmlElement, UInt32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.MarginHeight>()?.Val, value, diffs, objName, "MarginHeight");
   }
@@ -119,9 +119,9 @@ public static class FrameConverter
     return EnumValueConverter.GetValue<DXW.FrameScrollbarVisibilityValues, DMW.FrameScrollbarVisibilityKind>(openXmlElement.GetFirstChild<DXW.ScrollbarVisibility>()?.Val?.Value);
   }
   
-  private static bool CmpScrollbarVisibility(DXW.Frame openXmlElement, DMW.FrameScrollbarVisibilityKind? value, DiffList? diffs, string? objName)
+  private static bool CmpScrollbarVisibility(DXW.Frame openXmlElement, DMW.FrameScrollbarVisibilityKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.FrameScrollbarVisibilityValues, DMW.FrameScrollbarVisibilityKind>(openXmlElement.GetFirstChild<DXW.ScrollbarVisibility>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.FrameScrollbarVisibilityValues, DMW.FrameScrollbarVisibilityKind>(openXmlElement.GetFirstChild<DXW.ScrollbarVisibility>()?.Val?.Value, value, diffs, objName, propName);
   }
   
   private static void SetScrollbarVisibility(DXW.Frame openXmlElement, DMW.FrameScrollbarVisibilityKind? value)
@@ -146,9 +146,9 @@ public static class FrameConverter
     return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.NoResizeAllowed>());
   }
   
-  private static bool CmpNoResizeAllowed(DXW.Frame openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoResizeAllowed(DXW.Frame openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.NoResizeAllowed>(), value, diffs, objName);
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.NoResizeAllowed>(), value, diffs, objName, propName);
   }
   
   private static void SetNoResizeAllowed(DXW.Frame openXmlElement, Boolean? value)
@@ -163,9 +163,9 @@ public static class FrameConverter
     return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.LinkedToFile>());
   }
   
-  private static bool CmpLinkedToFile(DXW.Frame openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpLinkedToFile(DXW.Frame openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.LinkedToFile>(), value, diffs, objName);
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.LinkedToFile>(), value, diffs, objName, propName);
   }
   
   private static void SetLinkedToFile(DXW.Frame openXmlElement, Boolean? value)
@@ -193,32 +193,32 @@ public static class FrameConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.Frame? openXmlElement, DMW.Frame? model, DiffList? diffs, string? objName, 
+  public static bool CompareModelElement(DXW.Frame? openXmlElement, DMW.Frame? model, DiffList? diffs, string? objName, string? propName,
     DXW.WebSettings? settings = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpFrameSize(openXmlElement, model.FrameSize, diffs, objName))
+      if (!CmpFrameSize(openXmlElement, model.FrameSize, diffs, objName, propName))
         ok = false;
-      if (!CmpFrameName(openXmlElement, model.FrameName, diffs, objName))
+      if (!CmpFrameName(openXmlElement, model.FrameName, diffs, objName, propName))
         ok = false;
-      if (!CmpSourceFileReference(openXmlElement, model.FrameSourceFile, diffs, objName, settings))
+      if (!CmpSourceFileReference(openXmlElement, model.FrameSourceFile, diffs, objName, propName, settings))
         ok = false;
-      if (!CmpMarginWidth(openXmlElement, model.MarginWidth, diffs, objName))
+      if (!CmpMarginWidth(openXmlElement, model.MarginWidth, diffs, objName, propName))
         ok = false;
-      if (!CmpMarginHeight(openXmlElement, model.MarginHeight, diffs, objName))
+      if (!CmpMarginHeight(openXmlElement, model.MarginHeight, diffs, objName, propName))
         ok = false;
-      if (!CmpScrollbarVisibility(openXmlElement, model.ScrollbarVisibility, diffs, objName))
+      if (!CmpScrollbarVisibility(openXmlElement, model.ScrollbarVisibility, diffs, objName, propName))
         ok = false;
-      if (!CmpNoResizeAllowed(openXmlElement, model.NoResizeAllowed, diffs, objName))
+      if (!CmpNoResizeAllowed(openXmlElement, model.NoResizeAllowed, diffs, objName, propName))
         ok = false;
-      if (!CmpLinkedToFile(openXmlElement, model.LinkedToFile, diffs, objName))
+      if (!CmpLinkedToFile(openXmlElement, model.LinkedToFile, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   

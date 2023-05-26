@@ -13,7 +13,7 @@ public static class DataLabel3Converter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDC.Index>()?.Val);
   }
   
-  private static bool CmpIndex(DXO13DC.DataLabel openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpIndex(DXO13DC.DataLabel openXmlElement, UInt32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDC.Index>()?.Val, value, diffs, objName, "Index");
   }
@@ -28,7 +28,7 @@ public static class DataLabel3Converter
     return openXmlElement.GetFirstChild<DXDC.Delete>() != null;
   }
   
-  private static bool CmpDelete(DXO13DC.DataLabel openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpDelete(DXO13DC.DataLabel openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXDC.Delete>() != null;
     if (val == value) return true;
@@ -59,9 +59,9 @@ public static class DataLabel3Converter
     return null;
   }
   
-  private static bool CmpLayout(DXO13DC.DataLabel openXmlElement, DMDC.Layout? value, DiffList? diffs, string? objName)
+  private static bool CmpLayout(DXO13DC.DataLabel openXmlElement, DMDC.Layout? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.LayoutConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.Layout>(), value, diffs, objName);
+    return DMXDC.LayoutConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.Layout>(), value, diffs, objName, propName);
   }
   
   private static void SetLayout(DXO13DC.DataLabel openXmlElement, DMDC.Layout? value)
@@ -85,9 +85,9 @@ public static class DataLabel3Converter
     return null;
   }
   
-  private static bool CmpChartText(DXO13DC.DataLabel openXmlElement, DMDC.ChartText? value, DiffList? diffs, string? objName)
+  private static bool CmpChartText(DXO13DC.DataLabel openXmlElement, DMDC.ChartText? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.ChartTextConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ChartText>(), value, diffs, objName);
+    return DMXDC.ChartTextConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ChartText>(), value, diffs, objName, propName);
   }
   
   private static void SetChartText(DXO13DC.DataLabel openXmlElement, DMDC.ChartText? value)
@@ -111,9 +111,9 @@ public static class DataLabel3Converter
     return null;
   }
   
-  private static bool CmpNumberingFormat(DXO13DC.DataLabel openXmlElement, DMDC.NumberingFormat? value, DiffList? diffs, string? objName)
+  private static bool CmpNumberingFormat(DXO13DC.DataLabel openXmlElement, DMDC.NumberingFormat? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.NumberingFormatConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.NumberingFormat>(), value, diffs, objName);
+    return DMXDC.NumberingFormatConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.NumberingFormat>(), value, diffs, objName, propName);
   }
   
   private static void SetNumberingFormat(DXO13DC.DataLabel openXmlElement, DMDC.NumberingFormat? value)
@@ -137,9 +137,9 @@ public static class DataLabel3Converter
     return null;
   }
   
-  private static bool CmpChartShapeProperties(DXO13DC.DataLabel openXmlElement, DMDC.ChartShapeProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpChartShapeProperties(DXO13DC.DataLabel openXmlElement, DMDC.ChartShapeProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.ChartShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ChartShapeProperties>(), value, diffs, objName);
+    return DMXDC.ChartShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ChartShapeProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetChartShapeProperties(DXO13DC.DataLabel openXmlElement, DMDC.ChartShapeProperties? value)
@@ -163,9 +163,9 @@ public static class DataLabel3Converter
     return null;
   }
   
-  private static bool CmpTextProperties(DXO13DC.DataLabel openXmlElement, DMDC.TextProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpTextProperties(DXO13DC.DataLabel openXmlElement, DMDC.TextProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.TextPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.TextProperties>(), value, diffs, objName);
+    return DMXDC.TextPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.TextProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetTextProperties(DXO13DC.DataLabel openXmlElement, DMDC.TextProperties? value)
@@ -186,9 +186,9 @@ public static class DataLabel3Converter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.DataLabelPositionValues, DMDC.DataLabelPositionKind>(openXmlElement.GetFirstChild<DXDC.DataLabelPosition>()?.Val?.Value);
   }
   
-  private static bool CmpDataLabelPosition(DXO13DC.DataLabel openXmlElement, DMDC.DataLabelPositionKind? value, DiffList? diffs, string? objName)
+  private static bool CmpDataLabelPosition(DXO13DC.DataLabel openXmlElement, DMDC.DataLabelPositionKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.DataLabelPositionValues, DMDC.DataLabelPositionKind>(openXmlElement.GetFirstChild<DXDC.DataLabelPosition>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.DataLabelPositionValues, DMDC.DataLabelPositionKind>(openXmlElement.GetFirstChild<DXDC.DataLabelPosition>()?.Val?.Value, value, diffs, objName, propName);
   }
   
   private static void SetDataLabelPosition(DXO13DC.DataLabel openXmlElement, DMDC.DataLabelPositionKind? value)
@@ -211,7 +211,7 @@ public static class DataLabel3Converter
     return openXmlElement.GetFirstChild<DXDC.ShowLegendKey>() != null;
   }
   
-  private static bool CmpShowLegendKey(DXO13DC.DataLabel openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpShowLegendKey(DXO13DC.DataLabel openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXDC.ShowLegendKey>() != null;
     if (val == value) return true;
@@ -239,7 +239,7 @@ public static class DataLabel3Converter
     return openXmlElement.GetFirstChild<DXDC.ShowValue>() != null;
   }
   
-  private static bool CmpShowValue(DXO13DC.DataLabel openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpShowValue(DXO13DC.DataLabel openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXDC.ShowValue>() != null;
     if (val == value) return true;
@@ -267,7 +267,7 @@ public static class DataLabel3Converter
     return openXmlElement.GetFirstChild<DXDC.ShowCategoryName>() != null;
   }
   
-  private static bool CmpShowCategoryName(DXO13DC.DataLabel openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpShowCategoryName(DXO13DC.DataLabel openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXDC.ShowCategoryName>() != null;
     if (val == value) return true;
@@ -295,7 +295,7 @@ public static class DataLabel3Converter
     return openXmlElement.GetFirstChild<DXDC.ShowSeriesName>() != null;
   }
   
-  private static bool CmpShowSeriesName(DXO13DC.DataLabel openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpShowSeriesName(DXO13DC.DataLabel openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXDC.ShowSeriesName>() != null;
     if (val == value) return true;
@@ -323,7 +323,7 @@ public static class DataLabel3Converter
     return openXmlElement.GetFirstChild<DXDC.ShowPercent>() != null;
   }
   
-  private static bool CmpShowPercent(DXO13DC.DataLabel openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpShowPercent(DXO13DC.DataLabel openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXDC.ShowPercent>() != null;
     if (val == value) return true;
@@ -351,7 +351,7 @@ public static class DataLabel3Converter
     return openXmlElement.GetFirstChild<DXDC.ShowBubbleSize>() != null;
   }
   
-  private static bool CmpShowBubbleSize(DXO13DC.DataLabel openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpShowBubbleSize(DXO13DC.DataLabel openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXDC.ShowBubbleSize>() != null;
     if (val == value) return true;
@@ -379,7 +379,7 @@ public static class DataLabel3Converter
       return openXmlElement?.GetFirstChild<DXDC.Separator>()?.Text;
   }
   
-  private static bool CmpSeparator(DXO13DC.DataLabel openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpSeparator(DXO13DC.DataLabel openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
       return openXmlElement?.GetFirstChild<DXDC.Separator>()?.Text == value;
   }
@@ -404,9 +404,9 @@ public static class DataLabel3Converter
     return null;
   }
   
-  private static bool CmpDLblExtensionList(DXO13DC.DataLabel openXmlElement, DMDC.DLblExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpDLblExtensionList(DXO13DC.DataLabel openXmlElement, DMDC.DLblExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.DLblExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.DLblExtensionList>(), value, diffs, objName);
+    return DMXDC.DLblExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.DLblExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetDLblExtensionList(DXO13DC.DataLabel openXmlElement, DMDC.DLblExtensionList? value)
@@ -448,47 +448,47 @@ public static class DataLabel3Converter
     return null;
   }
   
-  public static bool CompareModelElement(DXO13DC.DataLabel? openXmlElement, DMDC.DataLabel3? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO13DC.DataLabel? openXmlElement, DMDC.DataLabel3? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpIndex(openXmlElement, value.Index, diffs, objName))
+      if (!CmpIndex(openXmlElement, value.Index, diffs, objName, propName))
         ok = false;
-      if (!CmpDelete(openXmlElement, value.Delete, diffs, objName))
+      if (!CmpDelete(openXmlElement, value.Delete, diffs, objName, propName))
         ok = false;
-      if (!CmpLayout(openXmlElement, value.Layout, diffs, objName))
+      if (!CmpLayout(openXmlElement, value.Layout, diffs, objName, propName))
         ok = false;
-      if (!CmpChartText(openXmlElement, value.ChartText, diffs, objName))
+      if (!CmpChartText(openXmlElement, value.ChartText, diffs, objName, propName))
         ok = false;
-      if (!CmpNumberingFormat(openXmlElement, value.NumberingFormat, diffs, objName))
+      if (!CmpNumberingFormat(openXmlElement, value.NumberingFormat, diffs, objName, propName))
         ok = false;
-      if (!CmpChartShapeProperties(openXmlElement, value.ChartShapeProperties, diffs, objName))
+      if (!CmpChartShapeProperties(openXmlElement, value.ChartShapeProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpTextProperties(openXmlElement, value.TextProperties, diffs, objName))
+      if (!CmpTextProperties(openXmlElement, value.TextProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpDataLabelPosition(openXmlElement, value.DataLabelPosition, diffs, objName))
+      if (!CmpDataLabelPosition(openXmlElement, value.DataLabelPosition, diffs, objName, propName))
         ok = false;
-      if (!CmpShowLegendKey(openXmlElement, value.ShowLegendKey, diffs, objName))
+      if (!CmpShowLegendKey(openXmlElement, value.ShowLegendKey, diffs, objName, propName))
         ok = false;
-      if (!CmpShowValue(openXmlElement, value.ShowValue, diffs, objName))
+      if (!CmpShowValue(openXmlElement, value.ShowValue, diffs, objName, propName))
         ok = false;
-      if (!CmpShowCategoryName(openXmlElement, value.ShowCategoryName, diffs, objName))
+      if (!CmpShowCategoryName(openXmlElement, value.ShowCategoryName, diffs, objName, propName))
         ok = false;
-      if (!CmpShowSeriesName(openXmlElement, value.ShowSeriesName, diffs, objName))
+      if (!CmpShowSeriesName(openXmlElement, value.ShowSeriesName, diffs, objName, propName))
         ok = false;
-      if (!CmpShowPercent(openXmlElement, value.ShowPercent, diffs, objName))
+      if (!CmpShowPercent(openXmlElement, value.ShowPercent, diffs, objName, propName))
         ok = false;
-      if (!CmpShowBubbleSize(openXmlElement, value.ShowBubbleSize, diffs, objName))
+      if (!CmpShowBubbleSize(openXmlElement, value.ShowBubbleSize, diffs, objName, propName))
         ok = false;
-      if (!CmpSeparator(openXmlElement, value.Separator, diffs, objName))
+      if (!CmpSeparator(openXmlElement, value.Separator, diffs, objName, propName))
         ok = false;
-      if (!CmpDLblExtensionList(openXmlElement, value.DLblExtensionList, diffs, objName))
+      if (!CmpDLblExtensionList(openXmlElement, value.DLblExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

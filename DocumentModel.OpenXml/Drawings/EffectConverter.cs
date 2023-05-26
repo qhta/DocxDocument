@@ -13,7 +13,7 @@ public static class EffectConverter
     return StringValueConverter.GetValue(openXmlElement?.Reference);
   }
   
-  private static bool CmpReference(DXD.Effect openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpReference(DXD.Effect openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Reference, value, diffs, objName, "Reference");
   }
@@ -34,17 +34,17 @@ public static class EffectConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.Effect? openXmlElement, DMD.Effect? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.Effect? openXmlElement, DMD.Effect? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpReference(openXmlElement, value.Reference, diffs, objName))
+      if (!CmpReference(openXmlElement, value.Reference, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -13,7 +13,7 @@ public static class ControlCloneRegularConverter
     return StringValueConverter.GetValue(openXmlElement?.QualifiedId);
   }
   
-  private static bool CmpQualifiedId(DXO10CUI.ControlCloneRegular openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpQualifiedId(DXO10CUI.ControlCloneRegular openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.QualifiedId, value, diffs, objName, "QualifiedId");
   }
@@ -31,7 +31,7 @@ public static class ControlCloneRegularConverter
     return StringValueConverter.GetValue(openXmlElement?.Tag);
   }
   
-  private static bool CmpTag(DXO10CUI.ControlCloneRegular openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpTag(DXO10CUI.ControlCloneRegular openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Tag, value, diffs, objName, "Tag");
   }
@@ -49,7 +49,7 @@ public static class ControlCloneRegularConverter
     return StringValueConverter.GetValue(openXmlElement?.IdMso);
   }
   
-  private static bool CmpIdMso(DXO10CUI.ControlCloneRegular openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpIdMso(DXO10CUI.ControlCloneRegular openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.IdMso, value, diffs, objName, "IdMso");
   }
@@ -67,7 +67,7 @@ public static class ControlCloneRegularConverter
     return StringValueConverter.GetValue(openXmlElement?.Image);
   }
   
-  private static bool CmpImage(DXO10CUI.ControlCloneRegular openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpImage(DXO10CUI.ControlCloneRegular openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Image, value, diffs, objName, "Image");
   }
@@ -85,7 +85,7 @@ public static class ControlCloneRegularConverter
     return StringValueConverter.GetValue(openXmlElement?.ImageMso);
   }
   
-  private static bool CmpImageMso(DXO10CUI.ControlCloneRegular openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpImageMso(DXO10CUI.ControlCloneRegular openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.ImageMso, value, diffs, objName, "ImageMso");
   }
@@ -103,7 +103,7 @@ public static class ControlCloneRegularConverter
     return StringValueConverter.GetValue(openXmlElement?.GetImage);
   }
   
-  private static bool CmpGetImage(DXO10CUI.ControlCloneRegular openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetImage(DXO10CUI.ControlCloneRegular openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetImage, value, diffs, objName, "GetImage");
   }
@@ -121,7 +121,7 @@ public static class ControlCloneRegularConverter
     return StringValueConverter.GetValue(openXmlElement?.Screentip);
   }
   
-  private static bool CmpScreentip(DXO10CUI.ControlCloneRegular openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpScreentip(DXO10CUI.ControlCloneRegular openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Screentip, value, diffs, objName, "Screentip");
   }
@@ -139,7 +139,7 @@ public static class ControlCloneRegularConverter
     return StringValueConverter.GetValue(openXmlElement?.GetScreentip);
   }
   
-  private static bool CmpGetScreentip(DXO10CUI.ControlCloneRegular openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetScreentip(DXO10CUI.ControlCloneRegular openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetScreentip, value, diffs, objName, "GetScreentip");
   }
@@ -157,7 +157,7 @@ public static class ControlCloneRegularConverter
     return StringValueConverter.GetValue(openXmlElement?.Supertip);
   }
   
-  private static bool CmpSupertip(DXO10CUI.ControlCloneRegular openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpSupertip(DXO10CUI.ControlCloneRegular openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Supertip, value, diffs, objName, "Supertip");
   }
@@ -175,7 +175,7 @@ public static class ControlCloneRegularConverter
     return StringValueConverter.GetValue(openXmlElement?.GetSupertip);
   }
   
-  private static bool CmpGetSupertip(DXO10CUI.ControlCloneRegular openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetSupertip(DXO10CUI.ControlCloneRegular openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetSupertip, value, diffs, objName, "GetSupertip");
   }
@@ -193,7 +193,7 @@ public static class ControlCloneRegularConverter
     return openXmlElement?.Enabled?.Value;
   }
   
-  private static bool CmpEnabled(DXO10CUI.ControlCloneRegular openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpEnabled(DXO10CUI.ControlCloneRegular openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Enabled?.Value == value) return true;
     diffs?.Add(objName, "Enabled", openXmlElement?.Enabled?.Value, value);
@@ -216,7 +216,7 @@ public static class ControlCloneRegularConverter
     return StringValueConverter.GetValue(openXmlElement?.GetEnabled);
   }
   
-  private static bool CmpGetEnabled(DXO10CUI.ControlCloneRegular openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetEnabled(DXO10CUI.ControlCloneRegular openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetEnabled, value, diffs, objName, "GetEnabled");
   }
@@ -234,7 +234,7 @@ public static class ControlCloneRegularConverter
     return StringValueConverter.GetValue(openXmlElement?.Label);
   }
   
-  private static bool CmpLabel(DXO10CUI.ControlCloneRegular openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpLabel(DXO10CUI.ControlCloneRegular openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Label, value, diffs, objName, "Label");
   }
@@ -252,7 +252,7 @@ public static class ControlCloneRegularConverter
     return StringValueConverter.GetValue(openXmlElement?.GetLabel);
   }
   
-  private static bool CmpGetLabel(DXO10CUI.ControlCloneRegular openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetLabel(DXO10CUI.ControlCloneRegular openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetLabel, value, diffs, objName, "GetLabel");
   }
@@ -270,7 +270,7 @@ public static class ControlCloneRegularConverter
     return StringValueConverter.GetValue(openXmlElement?.InsertAfterMso);
   }
   
-  private static bool CmpInsertAfterMso(DXO10CUI.ControlCloneRegular openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpInsertAfterMso(DXO10CUI.ControlCloneRegular openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.InsertAfterMso, value, diffs, objName, "InsertAfterMso");
   }
@@ -288,7 +288,7 @@ public static class ControlCloneRegularConverter
     return StringValueConverter.GetValue(openXmlElement?.InsertBeforeMso);
   }
   
-  private static bool CmpInsertBeforeMso(DXO10CUI.ControlCloneRegular openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpInsertBeforeMso(DXO10CUI.ControlCloneRegular openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.InsertBeforeMso, value, diffs, objName, "InsertBeforeMso");
   }
@@ -306,7 +306,7 @@ public static class ControlCloneRegularConverter
     return StringValueConverter.GetValue(openXmlElement?.InsertAfterQulifiedId);
   }
   
-  private static bool CmpInsertAfterQulifiedId(DXO10CUI.ControlCloneRegular openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpInsertAfterQulifiedId(DXO10CUI.ControlCloneRegular openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.InsertAfterQulifiedId, value, diffs, objName, "InsertAfterQulifiedId");
   }
@@ -324,7 +324,7 @@ public static class ControlCloneRegularConverter
     return StringValueConverter.GetValue(openXmlElement?.InsertBeforeQulifiedId);
   }
   
-  private static bool CmpInsertBeforeQulifiedId(DXO10CUI.ControlCloneRegular openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpInsertBeforeQulifiedId(DXO10CUI.ControlCloneRegular openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.InsertBeforeQulifiedId, value, diffs, objName, "InsertBeforeQulifiedId");
   }
@@ -342,7 +342,7 @@ public static class ControlCloneRegularConverter
     return openXmlElement?.Visible?.Value;
   }
   
-  private static bool CmpVisible(DXO10CUI.ControlCloneRegular openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpVisible(DXO10CUI.ControlCloneRegular openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Visible?.Value == value) return true;
     diffs?.Add(objName, "Visible", openXmlElement?.Visible?.Value, value);
@@ -365,7 +365,7 @@ public static class ControlCloneRegularConverter
     return StringValueConverter.GetValue(openXmlElement?.GetVisible);
   }
   
-  private static bool CmpGetVisible(DXO10CUI.ControlCloneRegular openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetVisible(DXO10CUI.ControlCloneRegular openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetVisible, value, diffs, objName, "GetVisible");
   }
@@ -383,7 +383,7 @@ public static class ControlCloneRegularConverter
     return StringValueConverter.GetValue(openXmlElement?.Keytip);
   }
   
-  private static bool CmpKeytip(DXO10CUI.ControlCloneRegular openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpKeytip(DXO10CUI.ControlCloneRegular openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Keytip, value, diffs, objName, "Keytip");
   }
@@ -401,7 +401,7 @@ public static class ControlCloneRegularConverter
     return StringValueConverter.GetValue(openXmlElement?.GetKeytip);
   }
   
-  private static bool CmpGetKeytip(DXO10CUI.ControlCloneRegular openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetKeytip(DXO10CUI.ControlCloneRegular openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetKeytip, value, diffs, objName, "GetKeytip");
   }
@@ -419,7 +419,7 @@ public static class ControlCloneRegularConverter
     return openXmlElement?.ShowLabel?.Value;
   }
   
-  private static bool CmpShowLabel(DXO10CUI.ControlCloneRegular openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpShowLabel(DXO10CUI.ControlCloneRegular openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.ShowLabel?.Value == value) return true;
     diffs?.Add(objName, "ShowLabel", openXmlElement?.ShowLabel?.Value, value);
@@ -442,7 +442,7 @@ public static class ControlCloneRegularConverter
     return StringValueConverter.GetValue(openXmlElement?.GetShowLabel);
   }
   
-  private static bool CmpGetShowLabel(DXO10CUI.ControlCloneRegular openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetShowLabel(DXO10CUI.ControlCloneRegular openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetShowLabel, value, diffs, objName, "GetShowLabel");
   }
@@ -460,7 +460,7 @@ public static class ControlCloneRegularConverter
     return openXmlElement?.ShowImage?.Value;
   }
   
-  private static bool CmpShowImage(DXO10CUI.ControlCloneRegular openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpShowImage(DXO10CUI.ControlCloneRegular openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.ShowImage?.Value == value) return true;
     diffs?.Add(objName, "ShowImage", openXmlElement?.ShowImage?.Value, value);
@@ -483,7 +483,7 @@ public static class ControlCloneRegularConverter
     return StringValueConverter.GetValue(openXmlElement?.GetShowImage);
   }
   
-  private static bool CmpGetShowImage(DXO10CUI.ControlCloneRegular openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetShowImage(DXO10CUI.ControlCloneRegular openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetShowImage, value, diffs, objName, "GetShowImage");
   }
@@ -529,67 +529,67 @@ public static class ControlCloneRegularConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO10CUI.ControlCloneRegular? openXmlElement, DM.ControlCloneRegular? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10CUI.ControlCloneRegular? openXmlElement, DM.ControlCloneRegular? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpQualifiedId(openXmlElement, value.QualifiedId, diffs, objName))
+      if (!CmpQualifiedId(openXmlElement, value.QualifiedId, diffs, objName, propName))
         ok = false;
-      if (!CmpTag(openXmlElement, value.Tag, diffs, objName))
+      if (!CmpTag(openXmlElement, value.Tag, diffs, objName, propName))
         ok = false;
-      if (!CmpIdMso(openXmlElement, value.IdMso, diffs, objName))
+      if (!CmpIdMso(openXmlElement, value.IdMso, diffs, objName, propName))
         ok = false;
-      if (!CmpImage(openXmlElement, value.Image, diffs, objName))
+      if (!CmpImage(openXmlElement, value.Image, diffs, objName, propName))
         ok = false;
-      if (!CmpImageMso(openXmlElement, value.ImageMso, diffs, objName))
+      if (!CmpImageMso(openXmlElement, value.ImageMso, diffs, objName, propName))
         ok = false;
-      if (!CmpGetImage(openXmlElement, value.GetImage, diffs, objName))
+      if (!CmpGetImage(openXmlElement, value.GetImage, diffs, objName, propName))
         ok = false;
-      if (!CmpScreentip(openXmlElement, value.Screentip, diffs, objName))
+      if (!CmpScreentip(openXmlElement, value.Screentip, diffs, objName, propName))
         ok = false;
-      if (!CmpGetScreentip(openXmlElement, value.GetScreentip, diffs, objName))
+      if (!CmpGetScreentip(openXmlElement, value.GetScreentip, diffs, objName, propName))
         ok = false;
-      if (!CmpSupertip(openXmlElement, value.Supertip, diffs, objName))
+      if (!CmpSupertip(openXmlElement, value.Supertip, diffs, objName, propName))
         ok = false;
-      if (!CmpGetSupertip(openXmlElement, value.GetSupertip, diffs, objName))
+      if (!CmpGetSupertip(openXmlElement, value.GetSupertip, diffs, objName, propName))
         ok = false;
-      if (!CmpEnabled(openXmlElement, value.Enabled, diffs, objName))
+      if (!CmpEnabled(openXmlElement, value.Enabled, diffs, objName, propName))
         ok = false;
-      if (!CmpGetEnabled(openXmlElement, value.GetEnabled, diffs, objName))
+      if (!CmpGetEnabled(openXmlElement, value.GetEnabled, diffs, objName, propName))
         ok = false;
-      if (!CmpLabel(openXmlElement, value.Label, diffs, objName))
+      if (!CmpLabel(openXmlElement, value.Label, diffs, objName, propName))
         ok = false;
-      if (!CmpGetLabel(openXmlElement, value.GetLabel, diffs, objName))
+      if (!CmpGetLabel(openXmlElement, value.GetLabel, diffs, objName, propName))
         ok = false;
-      if (!CmpInsertAfterMso(openXmlElement, value.InsertAfterMso, diffs, objName))
+      if (!CmpInsertAfterMso(openXmlElement, value.InsertAfterMso, diffs, objName, propName))
         ok = false;
-      if (!CmpInsertBeforeMso(openXmlElement, value.InsertBeforeMso, diffs, objName))
+      if (!CmpInsertBeforeMso(openXmlElement, value.InsertBeforeMso, diffs, objName, propName))
         ok = false;
-      if (!CmpInsertAfterQulifiedId(openXmlElement, value.InsertAfterQulifiedId, diffs, objName))
+      if (!CmpInsertAfterQulifiedId(openXmlElement, value.InsertAfterQulifiedId, diffs, objName, propName))
         ok = false;
-      if (!CmpInsertBeforeQulifiedId(openXmlElement, value.InsertBeforeQulifiedId, diffs, objName))
+      if (!CmpInsertBeforeQulifiedId(openXmlElement, value.InsertBeforeQulifiedId, diffs, objName, propName))
         ok = false;
-      if (!CmpVisible(openXmlElement, value.Visible, diffs, objName))
+      if (!CmpVisible(openXmlElement, value.Visible, diffs, objName, propName))
         ok = false;
-      if (!CmpGetVisible(openXmlElement, value.GetVisible, diffs, objName))
+      if (!CmpGetVisible(openXmlElement, value.GetVisible, diffs, objName, propName))
         ok = false;
-      if (!CmpKeytip(openXmlElement, value.Keytip, diffs, objName))
+      if (!CmpKeytip(openXmlElement, value.Keytip, diffs, objName, propName))
         ok = false;
-      if (!CmpGetKeytip(openXmlElement, value.GetKeytip, diffs, objName))
+      if (!CmpGetKeytip(openXmlElement, value.GetKeytip, diffs, objName, propName))
         ok = false;
-      if (!CmpShowLabel(openXmlElement, value.ShowLabel, diffs, objName))
+      if (!CmpShowLabel(openXmlElement, value.ShowLabel, diffs, objName, propName))
         ok = false;
-      if (!CmpGetShowLabel(openXmlElement, value.GetShowLabel, diffs, objName))
+      if (!CmpGetShowLabel(openXmlElement, value.GetShowLabel, diffs, objName, propName))
         ok = false;
-      if (!CmpShowImage(openXmlElement, value.ShowImage, diffs, objName))
+      if (!CmpShowImage(openXmlElement, value.ShowImage, diffs, objName, propName))
         ok = false;
-      if (!CmpGetShowImage(openXmlElement, value.GetShowImage, diffs, objName))
+      if (!CmpGetShowImage(openXmlElement, value.GetShowImage, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

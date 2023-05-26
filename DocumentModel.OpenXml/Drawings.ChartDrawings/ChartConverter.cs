@@ -16,9 +16,9 @@ public static class ChartConverter
     return null;
   }
   
-  private static bool CmpChartTitle(DXO16DCD.Chart openXmlElement, DMDCDs.ChartTitle? value, DiffList? diffs, string? objName)
+  private static bool CmpChartTitle(DXO16DCD.Chart openXmlElement, DMDCDs.ChartTitle? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCDs.ChartTitleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.ChartTitle>(), value, diffs, objName);
+    return DMXDCDs.ChartTitleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.ChartTitle>(), value, diffs, objName, propName);
   }
   
   private static void SetChartTitle(DXO16DCD.Chart openXmlElement, DMDCDs.ChartTitle? value)
@@ -45,9 +45,9 @@ public static class ChartConverter
     return null;
   }
   
-  private static bool CmpPlotArea(DXO16DCD.Chart openXmlElement, DMDCDs.PlotArea? value, DiffList? diffs, string? objName)
+  private static bool CmpPlotArea(DXO16DCD.Chart openXmlElement, DMDCDs.PlotArea? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCDs.PlotAreaConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.PlotArea>(), value, diffs, objName);
+    return DMXDCDs.PlotAreaConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.PlotArea>(), value, diffs, objName, propName);
   }
   
   private static void SetPlotArea(DXO16DCD.Chart openXmlElement, DMDCDs.PlotArea? value)
@@ -74,9 +74,9 @@ public static class ChartConverter
     return null;
   }
   
-  private static bool CmpLegend(DXO16DCD.Chart openXmlElement, DMDCDs.Legend? value, DiffList? diffs, string? objName)
+  private static bool CmpLegend(DXO16DCD.Chart openXmlElement, DMDCDs.Legend? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCDs.LegendConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.Legend>(), value, diffs, objName);
+    return DMXDCDs.LegendConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.Legend>(), value, diffs, objName, propName);
   }
   
   private static void SetLegend(DXO16DCD.Chart openXmlElement, DMDCDs.Legend? value)
@@ -103,9 +103,9 @@ public static class ChartConverter
     return null;
   }
   
-  private static bool CmpExtensionList(DXO16DCD.Chart openXmlElement, DMDCDs.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXO16DCD.Chart openXmlElement, DMDCDs.ExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCDs.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.ExtensionList>(), value, diffs, objName);
+    return DMXDCDs.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.ExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetExtensionList(DXO16DCD.Chart openXmlElement, DMDCDs.ExtensionList? value)
@@ -135,23 +135,23 @@ public static class ChartConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO16DCD.Chart? openXmlElement, DMDCDs.Chart? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16DCD.Chart? openXmlElement, DMDCDs.Chart? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpChartTitle(openXmlElement, value.ChartTitle, diffs, objName))
+      if (!CmpChartTitle(openXmlElement, value.ChartTitle, diffs, objName, propName))
         ok = false;
-      if (!CmpPlotArea(openXmlElement, value.PlotArea, diffs, objName))
+      if (!CmpPlotArea(openXmlElement, value.PlotArea, diffs, objName, propName))
         ok = false;
-      if (!CmpLegend(openXmlElement, value.Legend, diffs, objName))
+      if (!CmpLegend(openXmlElement, value.Legend, diffs, objName, propName))
         ok = false;
-      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

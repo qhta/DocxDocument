@@ -13,7 +13,7 @@ public static class LatentStylesConverter
     return BooleanValueConverter.GetValue(openXmlElement?.DefaultLockedState);
   }
   
-  private static bool CmpDefaultLockedState(DXW.LatentStyles openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpDefaultLockedState(DXW.LatentStyles openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.DefaultLockedState, value, diffs, objName, "DefaultLockedState");
   }
@@ -31,7 +31,7 @@ public static class LatentStylesConverter
     return openXmlElement?.DefaultUiPriority?.Value;
   }
   
-  private static bool CmpDefaultUiPriority(DXW.LatentStyles openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpDefaultUiPriority(DXW.LatentStyles openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.DefaultUiPriority?.Value == value) return true;
     diffs?.Add(objName, "DefaultUiPriority", openXmlElement?.DefaultUiPriority?.Value, value);
@@ -51,7 +51,7 @@ public static class LatentStylesConverter
     return BooleanValueConverter.GetValue(openXmlElement?.DefaultSemiHidden);
   }
   
-  private static bool CmpDefaultSemiHidden(DXW.LatentStyles openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpDefaultSemiHidden(DXW.LatentStyles openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.DefaultSemiHidden, value, diffs, objName, "DefaultSemiHidden");
   }
@@ -69,7 +69,7 @@ public static class LatentStylesConverter
     return BooleanValueConverter.GetValue(openXmlElement?.DefaultUnhideWhenUsed);
   }
   
-  private static bool CmpDefaultUnhideWhenUsed(DXW.LatentStyles openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpDefaultUnhideWhenUsed(DXW.LatentStyles openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.DefaultUnhideWhenUsed, value, diffs, objName, "DefaultUnhideWhenUsed");
   }
@@ -87,7 +87,7 @@ public static class LatentStylesConverter
     return BooleanValueConverter.GetValue(openXmlElement?.DefaultPrimaryStyle);
   }
   
-  private static bool CmpDefaultPrimaryStyle(DXW.LatentStyles openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpDefaultPrimaryStyle(DXW.LatentStyles openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.DefaultPrimaryStyle, value, diffs, objName, "DefaultPrimaryStyle");
   }
@@ -105,7 +105,7 @@ public static class LatentStylesConverter
     return openXmlElement?.Count?.Value;
   }
   
-  private static bool CmpTotalCount(DXW.LatentStyles openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpTotalCount(DXW.LatentStyles openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Count?.Value == value) return true;
     diffs?.Add(objName, "Count", openXmlElement?.Count?.Value, value);
@@ -131,7 +131,7 @@ public static class LatentStylesConverter
     return null;
   }
   
-  private static bool CmpItems(DXW.LatentStyles openXmlElement, Collection<DMW.LatentStyleExceptionInfo>? value, DiffList? diffs, string? objName)
+  private static bool CmpItems(DXW.LatentStyles openXmlElement, Collection<DMW.LatentStyleExceptionInfo>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var origElements = openXmlElement.Elements<DXW.LatentStyleExceptionInfo>();
     var origElementsCount = origElements.Count();
@@ -140,7 +140,7 @@ public static class LatentStylesConverter
     {
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, propName ?? openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -149,13 +149,13 @@ public static class LatentStylesConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXW.LatentStyleExceptionInfoConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXW.LatentStyleExceptionInfoConverter.CompareModelElement(origItem, modelItem, diffs, objName, propName))
           ok = false;
       }
       return ok;
     }
     if (origElementsCount == 0 && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -190,29 +190,29 @@ public static class LatentStylesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.LatentStyles? openXmlElement, DMW.LatentStyles? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.LatentStyles? openXmlElement, DMW.LatentStyles? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpDefaultLockedState(openXmlElement, value.DefaultLockedState, diffs, objName))
+      if (!CmpDefaultLockedState(openXmlElement, value.DefaultLockedState, diffs, objName, propName))
         ok = false;
-      if (!CmpDefaultUiPriority(openXmlElement, value.DefaultUiPriority, diffs, objName))
+      if (!CmpDefaultUiPriority(openXmlElement, value.DefaultUiPriority, diffs, objName, propName))
         ok = false;
-      if (!CmpDefaultSemiHidden(openXmlElement, value.DefaultSemiHidden, diffs, objName))
+      if (!CmpDefaultSemiHidden(openXmlElement, value.DefaultSemiHidden, diffs, objName, propName))
         ok = false;
-      if (!CmpDefaultUnhideWhenUsed(openXmlElement, value.DefaultUnhideWhenUsed, diffs, objName))
+      if (!CmpDefaultUnhideWhenUsed(openXmlElement, value.DefaultUnhideWhenUsed, diffs, objName, propName))
         ok = false;
-      if (!CmpDefaultPrimaryStyle(openXmlElement, value.DefaultPrimaryStyle, diffs, objName))
+      if (!CmpDefaultPrimaryStyle(openXmlElement, value.DefaultPrimaryStyle, diffs, objName, propName))
         ok = false;
-      if (!CmpTotalCount(openXmlElement, value.TotalCount, diffs, objName))
+      if (!CmpTotalCount(openXmlElement, value.TotalCount, diffs, objName, propName))
         ok = false;
-      if (!CmpItems(openXmlElement, value.Items, diffs, objName))
+      if (!CmpItems(openXmlElement, value.Items, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

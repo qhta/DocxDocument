@@ -13,7 +13,7 @@ public static class TransformEffectConverter
     return openXmlElement?.HorizontalRatio?.Value;
   }
   
-  private static bool CmpHorizontalRatio(DXD.TransformEffect openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpHorizontalRatio(DXD.TransformEffect openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.HorizontalRatio?.Value == value) return true;
     diffs?.Add(objName, "HorizontalRatio", openXmlElement?.HorizontalRatio?.Value, value);
@@ -33,7 +33,7 @@ public static class TransformEffectConverter
     return openXmlElement?.VerticalRatio?.Value;
   }
   
-  private static bool CmpVerticalRatio(DXD.TransformEffect openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpVerticalRatio(DXD.TransformEffect openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.VerticalRatio?.Value == value) return true;
     diffs?.Add(objName, "VerticalRatio", openXmlElement?.VerticalRatio?.Value, value);
@@ -53,7 +53,7 @@ public static class TransformEffectConverter
     return openXmlElement?.HorizontalSkew?.Value;
   }
   
-  private static bool CmpHorizontalSkew(DXD.TransformEffect openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpHorizontalSkew(DXD.TransformEffect openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.HorizontalSkew?.Value == value) return true;
     diffs?.Add(objName, "HorizontalSkew", openXmlElement?.HorizontalSkew?.Value, value);
@@ -73,7 +73,7 @@ public static class TransformEffectConverter
     return openXmlElement?.VerticalSkew?.Value;
   }
   
-  private static bool CmpVerticalSkew(DXD.TransformEffect openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpVerticalSkew(DXD.TransformEffect openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.VerticalSkew?.Value == value) return true;
     diffs?.Add(objName, "VerticalSkew", openXmlElement?.VerticalSkew?.Value, value);
@@ -93,7 +93,7 @@ public static class TransformEffectConverter
     return openXmlElement?.HorizontalShift?.Value;
   }
   
-  private static bool CmpHorizontalShift(DXD.TransformEffect openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpHorizontalShift(DXD.TransformEffect openXmlElement, Int64? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.HorizontalShift?.Value == value) return true;
     diffs?.Add(objName, "HorizontalShift", openXmlElement?.HorizontalShift?.Value, value);
@@ -113,7 +113,7 @@ public static class TransformEffectConverter
     return openXmlElement?.VerticalShift?.Value;
   }
   
-  private static bool CmpVerticalShift(DXD.TransformEffect openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpVerticalShift(DXD.TransformEffect openXmlElement, Int64? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.VerticalShift?.Value == value) return true;
     diffs?.Add(objName, "VerticalShift", openXmlElement?.VerticalShift?.Value, value);
@@ -141,27 +141,27 @@ public static class TransformEffectConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.TransformEffect? openXmlElement, DMD.TransformEffect? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.TransformEffect? openXmlElement, DMD.TransformEffect? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpHorizontalRatio(openXmlElement, value.HorizontalRatio, diffs, objName))
+      if (!CmpHorizontalRatio(openXmlElement, value.HorizontalRatio, diffs, objName, propName))
         ok = false;
-      if (!CmpVerticalRatio(openXmlElement, value.VerticalRatio, diffs, objName))
+      if (!CmpVerticalRatio(openXmlElement, value.VerticalRatio, diffs, objName, propName))
         ok = false;
-      if (!CmpHorizontalSkew(openXmlElement, value.HorizontalSkew, diffs, objName))
+      if (!CmpHorizontalSkew(openXmlElement, value.HorizontalSkew, diffs, objName, propName))
         ok = false;
-      if (!CmpVerticalSkew(openXmlElement, value.VerticalSkew, diffs, objName))
+      if (!CmpVerticalSkew(openXmlElement, value.VerticalSkew, diffs, objName, propName))
         ok = false;
-      if (!CmpHorizontalShift(openXmlElement, value.HorizontalShift, diffs, objName))
+      if (!CmpHorizontalShift(openXmlElement, value.HorizontalShift, diffs, objName, propName))
         ok = false;
-      if (!CmpVerticalShift(openXmlElement, value.VerticalShift, diffs, objName))
+      if (!CmpVerticalShift(openXmlElement, value.VerticalShift, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -12,7 +12,7 @@ public static class AbstractNumConverter
     return openXmlElement?.AbstractNumberId?.Value;
   }
 
-  private static bool CmpAbstractNumberId(DXW.AbstractNum openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpAbstractNumberId(DXW.AbstractNum openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.AbstractNumberId?.Value == value) return true;
     diffs?.Add(objName, "AbstractNumberId", openXmlElement?.AbstractNumberId?.Value, value);
@@ -33,7 +33,7 @@ public static class AbstractNumConverter
     return null;
   }
 
-  private static bool CmpNsid(DXW.AbstractNum openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpNsid(DXW.AbstractNum openXmlElement, UInt32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Nsid?.Val?.Value != null)
       if (UInt32.Parse(openXmlElement.Nsid.Val.Value, NumberStyles.HexNumber) == value)
@@ -58,9 +58,9 @@ public static class AbstractNumConverter
     return EnumValueConverter.GetValue<DXW.MultiLevelValues, DMW.MultiLevelKind>(openXmlElement.GetFirstChild<DXW.MultiLevelType>()?.Val?.Value);
   }
 
-  private static bool CmpMultiLevelType(DXW.AbstractNum openXmlElement, DMW.MultiLevelKind? value, DiffList? diffs, string? objName)
+  private static bool CmpMultiLevelType(DXW.AbstractNum openXmlElement, DMW.MultiLevelKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.MultiLevelValues, DMW.MultiLevelKind>(openXmlElement.GetFirstChild<DXW.MultiLevelType>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.MultiLevelValues, DMW.MultiLevelKind>(openXmlElement.GetFirstChild<DXW.MultiLevelType>()?.Val?.Value, value, diffs, objName, propName);
   }
 
   private static void SetMultiLevelType(DXW.AbstractNum openXmlElement, DMW.MultiLevelKind? value)
@@ -87,7 +87,7 @@ public static class AbstractNumConverter
     return null;
   }
 
-  private static bool CmpTemplateCode(DXW.AbstractNum openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpTemplateCode(DXW.AbstractNum openXmlElement, UInt32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.TemplateCode?.Val?.Value != null)
       if (UInt32.Parse(openXmlElement.TemplateCode.Val.Value, NumberStyles.HexNumber) == value)
@@ -112,7 +112,7 @@ public static class AbstractNumConverter
     return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.AbstractNumDefinitionName>()?.Val);
   }
 
-  private static bool CmpAbstractNumDefinitionName(DXW.AbstractNum openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpAbstractNumDefinitionName(DXW.AbstractNum openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.AbstractNumDefinitionName>()?.Val, value, diffs, objName, "AbstractNumDefinitionName");
   }
@@ -129,7 +129,7 @@ public static class AbstractNumConverter
     return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.StyleLink>()?.Val);
   }
 
-  private static bool CmpStyleLink(DXW.AbstractNum openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpStyleLink(DXW.AbstractNum openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.StyleLink>()?.Val, value, diffs, objName, "StyleLink");
   }
@@ -146,7 +146,7 @@ public static class AbstractNumConverter
     return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.NumberingStyleLink>()?.Val);
   }
 
-  private static bool CmpNumberingStyleLink(DXW.AbstractNum openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpNumberingStyleLink(DXW.AbstractNum openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.NumberingStyleLink>()?.Val, value, diffs, objName, "NumberingStyleLink");
   }
@@ -172,7 +172,7 @@ public static class AbstractNumConverter
     return null;
   }
 
-  private static bool CmpLevels(DXW.AbstractNum openXmlElement, Collection<DMW.NumLevel>? value, DiffList? diffs, string? objName)
+  private static bool CmpLevels(DXW.AbstractNum openXmlElement, Collection<DMW.NumLevel>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var origElements = openXmlElement.Elements<DXW.Level>();
     var origElementsCount = origElements.Count();
@@ -181,7 +181,7 @@ public static class AbstractNumConverter
     {
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().Name + ".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, propName ?? openXmlElement.GetType().Name + ".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -190,13 +190,13 @@ public static class AbstractNumConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXW.LevelConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXW.LevelConverter.CompareModelElement(origItem, modelItem, diffs, objName, propName))
           ok = false;
       }
       return ok;
     }
     if (origElementsCount == 0 && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
 
@@ -221,7 +221,7 @@ public static class AbstractNumConverter
     return BooleanValueConverter.GetValue(openXmlElement?.GetAttribute("restartNumberingAfterBreak","http://schemas.microsoft.com/office/word/2012/wordml").Value);
   }
 
-  private static bool CmpRestartNumberingAfterBreak(DXW.AbstractNum openXmlElement, bool? value, DiffList? diffs, string? objName)
+  private static bool CmpRestartNumberingAfterBreak(DXW.AbstractNum openXmlElement, bool? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(
       openXmlElement?.GetAttribute("restartNumberingAfterBreak","http://schemas.microsoft.com/office/word/2012/wordml").Value,
@@ -259,33 +259,33 @@ public static class AbstractNumConverter
     return null;
   }
 
-  public static bool CompareModelElement(DXW.AbstractNum? openXmlElement, DMW.AbstractNum? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.AbstractNum? openXmlElement, DMW.AbstractNum? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpAbstractNumberId(openXmlElement, model.AbstractNumberId, diffs, objName))
+      if (!CmpAbstractNumberId(openXmlElement, model.AbstractNumberId, diffs, objName, propName))
         ok = false;
-      if (!CmpNsid(openXmlElement, model.Nsid, diffs, objName))
+      if (!CmpNsid(openXmlElement, model.Nsid, diffs, objName, propName))
         ok = false;
-      if (!CmpMultiLevelType(openXmlElement, model.MultiLevelType, diffs, objName))
+      if (!CmpMultiLevelType(openXmlElement, model.MultiLevelType, diffs, objName, propName))
         ok = false;
-      if (!CmpTemplateCode(openXmlElement, model.TemplateCode, diffs, objName))
+      if (!CmpTemplateCode(openXmlElement, model.TemplateCode, diffs, objName, propName))
         ok = false;
-      if (!CmpAbstractNumDefinitionName(openXmlElement, model.AbstractNumDefinitionName, diffs, objName))
+      if (!CmpAbstractNumDefinitionName(openXmlElement, model.AbstractNumDefinitionName, diffs, objName, propName))
         ok = false;
-      if (!CmpStyleLink(openXmlElement, model.StyleLink, diffs, objName))
+      if (!CmpStyleLink(openXmlElement, model.StyleLink, diffs, objName, propName))
         ok = false;
-      if (!CmpNumberingStyleLink(openXmlElement, model.NumberingStyleLink, diffs, objName))
+      if (!CmpNumberingStyleLink(openXmlElement, model.NumberingStyleLink, diffs, objName, propName))
         ok = false;
-      if (!CmpRestartNumberingAfterBreak(openXmlElement, model.RestartNumberingAfterBreak, diffs, objName))
+      if (!CmpRestartNumberingAfterBreak(openXmlElement, model.RestartNumberingAfterBreak, diffs, objName, propName))
         ok = false;
-      if (!CmpLevels(openXmlElement, model.Levels, diffs, objName))
+      if (!CmpLevels(openXmlElement, model.Levels, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
 

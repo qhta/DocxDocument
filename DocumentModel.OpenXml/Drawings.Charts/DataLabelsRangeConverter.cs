@@ -13,7 +13,7 @@ public static class DataLabelsRangeConverter
       return openXmlElement?.GetFirstChild<DXO13DC.Formula>()?.Text;
   }
   
-  private static bool CmpFormula(DXO13DC.DataLabelsRange openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpFormula(DXO13DC.DataLabelsRange openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
       return openXmlElement?.GetFirstChild<DXO13DC.Formula>()?.Text == value;
   }
@@ -41,9 +41,9 @@ public static class DataLabelsRangeConverter
     return null;
   }
   
-  private static bool CmpDataLabelsRangeChache(DXO13DC.DataLabelsRange openXmlElement, DMDC.DataLabelsRangeChache? value, DiffList? diffs, string? objName)
+  private static bool CmpDataLabelsRangeChache(DXO13DC.DataLabelsRange openXmlElement, DMDC.DataLabelsRangeChache? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.DataLabelsRangeChacheConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.DataLabelsRangeChache>(), value, diffs, objName);
+    return DMXDC.DataLabelsRangeChacheConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.DataLabelsRangeChache>(), value, diffs, objName, propName);
   }
   
   private static void SetDataLabelsRangeChache(DXO13DC.DataLabelsRange openXmlElement, DMDC.DataLabelsRangeChache? value)
@@ -71,19 +71,19 @@ public static class DataLabelsRangeConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO13DC.DataLabelsRange? openXmlElement, DMDC.DataLabelsRange? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO13DC.DataLabelsRange? openXmlElement, DMDC.DataLabelsRange? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpFormula(openXmlElement, value.Formula, diffs, objName))
+      if (!CmpFormula(openXmlElement, value.Formula, diffs, objName, propName))
         ok = false;
-      if (!CmpDataLabelsRangeChache(openXmlElement, value.DataLabelsRangeChache, diffs, objName))
+      if (!CmpDataLabelsRangeChache(openXmlElement, value.DataLabelsRangeChache, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

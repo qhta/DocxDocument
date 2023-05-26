@@ -16,9 +16,9 @@ public static class ExtraColorSchemeConverter
     return null;
   }
   
-  private static bool CmpColorScheme(DXD.ExtraColorScheme openXmlElement, DMD.ColorScheme? value, DiffList? diffs, string? objName)
+  private static bool CmpColorScheme(DXD.ExtraColorScheme openXmlElement, DMD.ColorScheme? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.ColorSchemeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ColorScheme>(), value, diffs, objName);
+    return DMXD.ColorSchemeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ColorScheme>(), value, diffs, objName, propName);
   }
   
   private static void SetColorScheme(DXD.ExtraColorScheme openXmlElement, DMD.ColorScheme? value)
@@ -45,9 +45,9 @@ public static class ExtraColorSchemeConverter
     return null;
   }
   
-  private static bool CmpColorMap(DXD.ExtraColorScheme openXmlElement, DMD.ColorMap? value, DiffList? diffs, string? objName)
+  private static bool CmpColorMap(DXD.ExtraColorScheme openXmlElement, DMD.ColorMap? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.ColorMapConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ColorMap>(), value, diffs, objName);
+    return DMXD.ColorMapConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ColorMap>(), value, diffs, objName, propName);
   }
   
   private static void SetColorMap(DXD.ExtraColorScheme openXmlElement, DMD.ColorMap? value)
@@ -75,19 +75,19 @@ public static class ExtraColorSchemeConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.ExtraColorScheme? openXmlElement, DMD.ExtraColorScheme? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.ExtraColorScheme? openXmlElement, DMD.ExtraColorScheme? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpColorScheme(openXmlElement, value.ColorScheme, diffs, objName))
+      if (!CmpColorScheme(openXmlElement, value.ColorScheme, diffs, objName, propName))
         ok = false;
-      if (!CmpColorMap(openXmlElement, value.ColorMap, diffs, objName))
+      if (!CmpColorMap(openXmlElement, value.ColorMap, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -13,7 +13,7 @@ public static class ValueColorPositionsConverter
     return openXmlElement?.Count?.Value;
   }
   
-  private static bool CmpCount(DXO16DCD.ValueColorPositions openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpCount(DXO16DCD.ValueColorPositions openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Count?.Value == value) return true;
     diffs?.Add(objName, "Count", openXmlElement?.Count?.Value, value);
@@ -36,9 +36,9 @@ public static class ValueColorPositionsConverter
     return null;
   }
   
-  private static bool CmpMinValueColorEndPosition(DXO16DCD.ValueColorPositions openXmlElement, DMDCDs.MinValueColorEndPosition? value, DiffList? diffs, string? objName)
+  private static bool CmpMinValueColorEndPosition(DXO16DCD.ValueColorPositions openXmlElement, DMDCDs.MinValueColorEndPosition? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCDs.MinValueColorEndPositionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.MinValueColorEndPosition>(), value, diffs, objName);
+    return DMXDCDs.MinValueColorEndPositionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.MinValueColorEndPosition>(), value, diffs, objName, propName);
   }
   
   private static void SetMinValueColorEndPosition(DXO16DCD.ValueColorPositions openXmlElement, DMDCDs.MinValueColorEndPosition? value)
@@ -65,9 +65,9 @@ public static class ValueColorPositionsConverter
     return null;
   }
   
-  private static bool CmpValueColorMiddlePosition(DXO16DCD.ValueColorPositions openXmlElement, DMDCDs.ValueColorMiddlePosition? value, DiffList? diffs, string? objName)
+  private static bool CmpValueColorMiddlePosition(DXO16DCD.ValueColorPositions openXmlElement, DMDCDs.ValueColorMiddlePosition? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCDs.ValueColorMiddlePositionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.ValueColorMiddlePosition>(), value, diffs, objName);
+    return DMXDCDs.ValueColorMiddlePositionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.ValueColorMiddlePosition>(), value, diffs, objName, propName);
   }
   
   private static void SetValueColorMiddlePosition(DXO16DCD.ValueColorPositions openXmlElement, DMDCDs.ValueColorMiddlePosition? value)
@@ -94,9 +94,9 @@ public static class ValueColorPositionsConverter
     return null;
   }
   
-  private static bool CmpMaxValueColorEndPosition(DXO16DCD.ValueColorPositions openXmlElement, DMDCDs.MaxValueColorEndPosition? value, DiffList? diffs, string? objName)
+  private static bool CmpMaxValueColorEndPosition(DXO16DCD.ValueColorPositions openXmlElement, DMDCDs.MaxValueColorEndPosition? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCDs.MaxValueColorEndPositionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.MaxValueColorEndPosition>(), value, diffs, objName);
+    return DMXDCDs.MaxValueColorEndPositionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.MaxValueColorEndPosition>(), value, diffs, objName, propName);
   }
   
   private static void SetMaxValueColorEndPosition(DXO16DCD.ValueColorPositions openXmlElement, DMDCDs.MaxValueColorEndPosition? value)
@@ -126,23 +126,23 @@ public static class ValueColorPositionsConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO16DCD.ValueColorPositions? openXmlElement, DMDCDs.ValueColorPositions? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16DCD.ValueColorPositions? openXmlElement, DMDCDs.ValueColorPositions? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpCount(openXmlElement, value.Count, diffs, objName))
+      if (!CmpCount(openXmlElement, value.Count, diffs, objName, propName))
         ok = false;
-      if (!CmpMinValueColorEndPosition(openXmlElement, value.MinValueColorEndPosition, diffs, objName))
+      if (!CmpMinValueColorEndPosition(openXmlElement, value.MinValueColorEndPosition, diffs, objName, propName))
         ok = false;
-      if (!CmpValueColorMiddlePosition(openXmlElement, value.ValueColorMiddlePosition, diffs, objName))
+      if (!CmpValueColorMiddlePosition(openXmlElement, value.ValueColorMiddlePosition, diffs, objName, propName))
         ok = false;
-      if (!CmpMaxValueColorEndPosition(openXmlElement, value.MaxValueColorEndPosition, diffs, objName))
+      if (!CmpMaxValueColorEndPosition(openXmlElement, value.MaxValueColorEndPosition, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

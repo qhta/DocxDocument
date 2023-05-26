@@ -12,9 +12,9 @@ public static class AlternateContentFallbackConverter
     return ElementCollectionConverter<ModelElement>.CreateModelElement<AlternateContentFallback>(openXmlElement);
   }
 
-  public static bool CompareModelElement(DX.AlternateContentFallback? openXmlElement, AlternateContentFallback? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DX.AlternateContentFallback? openXmlElement, AlternateContentFallback? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return ElementCollectionConverter<ModelElement>.CompareModelElement(openXmlElement, value, diffs, objName);
+    return ElementCollectionConverter<ModelElement>.CompareModelElement(openXmlElement, value, diffs, objName, propName);
   }
 
   public static DX.AlternateContentFallback CreateOpenXmlElement(AlternateContentFallback value)

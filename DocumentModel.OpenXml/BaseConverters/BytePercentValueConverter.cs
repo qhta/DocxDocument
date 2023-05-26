@@ -9,7 +9,7 @@ public static class BytePercentValueConverter
     return null;
   }
 
-  public static bool CmpValue(DX.StringValue? element, Percent? value, DiffList? diffs, string? objName, string? propName)
+  public static bool CmpValue(DX.StringValue? element, Percent? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var valProperty = element?.GetType().GetProperty("Value");
     if (valProperty != null && value is not null)
@@ -17,7 +17,7 @@ public static class BytePercentValueConverter
       var valStr = (string?)valProperty.GetValue(element);
       var valueStr = ((Percent)value).ToHexString();
       if (valStr == valueStr) return true;
-      diffs?.Add(objName, element?.GetType().ToString(), valStr, valueStr);
+      diffs?.Add(objName, propName ?? element?.GetType().ToString(), valStr, valueStr);
       return false;
     }
     if (valProperty == null && value is null) return true;

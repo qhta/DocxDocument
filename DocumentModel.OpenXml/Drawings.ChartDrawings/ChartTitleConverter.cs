@@ -13,9 +13,9 @@ public static class ChartTitleConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SidePos, DMDCDs.SidePos>(openXmlElement?.Pos?.Value);
   }
   
-  private static bool CmpPos(DXO16DCD.ChartTitle openXmlElement, DMDCDs.SidePos? value, DiffList? diffs, string? objName)
+  private static bool CmpPos(DXO16DCD.ChartTitle openXmlElement, DMDCDs.SidePos? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SidePos, DMDCDs.SidePos>(openXmlElement?.Pos?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SidePos, DMDCDs.SidePos>(openXmlElement?.Pos?.Value, value, diffs, objName, propName);
   }
   
   private static void SetPos(DXO16DCD.ChartTitle openXmlElement, DMDCDs.SidePos? value)
@@ -31,9 +31,9 @@ public static class ChartTitleConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PosAlign, DMDCDs.PosAlign>(openXmlElement?.Align?.Value);
   }
   
-  private static bool CmpAlign(DXO16DCD.ChartTitle openXmlElement, DMDCDs.PosAlign? value, DiffList? diffs, string? objName)
+  private static bool CmpAlign(DXO16DCD.ChartTitle openXmlElement, DMDCDs.PosAlign? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PosAlign, DMDCDs.PosAlign>(openXmlElement?.Align?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PosAlign, DMDCDs.PosAlign>(openXmlElement?.Align?.Value, value, diffs, objName, propName);
   }
   
   private static void SetAlign(DXO16DCD.ChartTitle openXmlElement, DMDCDs.PosAlign? value)
@@ -49,7 +49,7 @@ public static class ChartTitleConverter
     return openXmlElement?.Overlay?.Value;
   }
   
-  private static bool CmpOverlay(DXO16DCD.ChartTitle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpOverlay(DXO16DCD.ChartTitle openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Overlay?.Value == value) return true;
     diffs?.Add(objName, "Overlay", openXmlElement?.Overlay?.Value, value);
@@ -75,9 +75,9 @@ public static class ChartTitleConverter
     return null;
   }
   
-  private static bool CmpText(DXO16DCD.ChartTitle openXmlElement, DMDCDs.Text? value, DiffList? diffs, string? objName)
+  private static bool CmpText(DXO16DCD.ChartTitle openXmlElement, DMDCDs.Text? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCDs.TextConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.Text>(), value, diffs, objName);
+    return DMXDCDs.TextConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.Text>(), value, diffs, objName, propName);
   }
   
   private static void SetText(DXO16DCD.ChartTitle openXmlElement, DMDCDs.Text? value)
@@ -104,9 +104,9 @@ public static class ChartTitleConverter
     return null;
   }
   
-  private static bool CmpShapeProperties(DXO16DCD.ChartTitle openXmlElement, DMDCDs.ShapeProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpShapeProperties(DXO16DCD.ChartTitle openXmlElement, DMDCDs.ShapeProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCDs.ShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.ShapeProperties>(), value, diffs, objName);
+    return DMXDCDs.ShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.ShapeProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetShapeProperties(DXO16DCD.ChartTitle openXmlElement, DMDCDs.ShapeProperties? value)
@@ -133,9 +133,9 @@ public static class ChartTitleConverter
     return null;
   }
   
-  private static bool CmpTxPrTextBody(DXO16DCD.ChartTitle openXmlElement, DMDCDs.TxPrTextBody? value, DiffList? diffs, string? objName)
+  private static bool CmpTxPrTextBody(DXO16DCD.ChartTitle openXmlElement, DMDCDs.TxPrTextBody? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCDs.TxPrTextBodyConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.TxPrTextBody>(), value, diffs, objName);
+    return DMXDCDs.TxPrTextBodyConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.TxPrTextBody>(), value, diffs, objName, propName);
   }
   
   private static void SetTxPrTextBody(DXO16DCD.ChartTitle openXmlElement, DMDCDs.TxPrTextBody? value)
@@ -162,9 +162,9 @@ public static class ChartTitleConverter
     return null;
   }
   
-  private static bool CmpExtensionList(DXO16DCD.ChartTitle openXmlElement, DMDCDs.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXO16DCD.ChartTitle openXmlElement, DMDCDs.ExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCDs.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.ExtensionList>(), value, diffs, objName);
+    return DMXDCDs.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.ExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetExtensionList(DXO16DCD.ChartTitle openXmlElement, DMDCDs.ExtensionList? value)
@@ -197,29 +197,29 @@ public static class ChartTitleConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO16DCD.ChartTitle? openXmlElement, DMDCDs.ChartTitle? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16DCD.ChartTitle? openXmlElement, DMDCDs.ChartTitle? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpPos(openXmlElement, value.Pos, diffs, objName))
+      if (!CmpPos(openXmlElement, value.Pos, diffs, objName, propName))
         ok = false;
-      if (!CmpAlign(openXmlElement, value.Align, diffs, objName))
+      if (!CmpAlign(openXmlElement, value.Align, diffs, objName, propName))
         ok = false;
-      if (!CmpOverlay(openXmlElement, value.Overlay, diffs, objName))
+      if (!CmpOverlay(openXmlElement, value.Overlay, diffs, objName, propName))
         ok = false;
-      if (!CmpText(openXmlElement, value.Text, diffs, objName))
+      if (!CmpText(openXmlElement, value.Text, diffs, objName, propName))
         ok = false;
-      if (!CmpShapeProperties(openXmlElement, value.ShapeProperties, diffs, objName))
+      if (!CmpShapeProperties(openXmlElement, value.ShapeProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpTxPrTextBody(openXmlElement, value.TxPrTextBody, diffs, objName))
+      if (!CmpTxPrTextBody(openXmlElement, value.TxPrTextBody, diffs, objName, propName))
         ok = false;
-      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

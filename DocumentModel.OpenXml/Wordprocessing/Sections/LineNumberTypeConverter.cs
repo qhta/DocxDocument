@@ -13,7 +13,7 @@ public static class LineNumberTypeConverter
     return openXmlElement?.CountBy?.Value;
   }
   
-  private static bool CmpCountBy(DXW.LineNumberType openXmlElement, Int16? value, DiffList? diffs, string? objName)
+  private static bool CmpCountBy(DXW.LineNumberType openXmlElement, Int16? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.CountBy?.Value == value) return true;
     diffs?.Add(objName, "CountBy", openXmlElement?.CountBy?.Value, value);
@@ -33,7 +33,7 @@ public static class LineNumberTypeConverter
     return openXmlElement?.Start?.Value;
   }
   
-  private static bool CmpStart(DXW.LineNumberType openXmlElement, Int16? value, DiffList? diffs, string? objName)
+  private static bool CmpStart(DXW.LineNumberType openXmlElement, Int16? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Start?.Value == value) return true;
     diffs?.Add(objName, "Start", openXmlElement?.Start?.Value, value);
@@ -53,7 +53,7 @@ public static class LineNumberTypeConverter
     return StringValueConverter.GetValue(openXmlElement?.Distance);
   }
   
-  private static bool CmpDistance(DXW.LineNumberType openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpDistance(DXW.LineNumberType openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Distance, value, diffs, objName, "Distance");
   }
@@ -71,9 +71,9 @@ public static class LineNumberTypeConverter
     return EnumValueConverter.GetValue<DXW.LineNumberRestartValues, DMW.LineNumberRestartKind>(openXmlElement?.Restart?.Value);
   }
   
-  private static bool CmpRestart(DXW.LineNumberType openXmlElement, DMW.LineNumberRestartKind? value, DiffList? diffs, string? objName)
+  private static bool CmpRestart(DXW.LineNumberType openXmlElement, DMW.LineNumberRestartKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.LineNumberRestartValues, DMW.LineNumberRestartKind>(openXmlElement?.Restart?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.LineNumberRestartValues, DMW.LineNumberRestartKind>(openXmlElement?.Restart?.Value, value, diffs, objName, propName);
   }
   
   private static void SetRestart(DXW.LineNumberType openXmlElement, DMW.LineNumberRestartKind? value)
@@ -95,23 +95,23 @@ public static class LineNumberTypeConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.LineNumberType? openXmlElement, DMW.LineNumberType? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.LineNumberType? openXmlElement, DMW.LineNumberType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpCountBy(openXmlElement, value.CountBy, diffs, objName))
+      if (!CmpCountBy(openXmlElement, value.CountBy, diffs, objName, propName))
         ok = false;
-      if (!CmpStart(openXmlElement, value.Start, diffs, objName))
+      if (!CmpStart(openXmlElement, value.Start, diffs, objName, propName))
         ok = false;
-      if (!CmpDistance(openXmlElement, value.Distance, diffs, objName))
+      if (!CmpDistance(openXmlElement, value.Distance, diffs, objName, propName))
         ok = false;
-      if (!CmpRestart(openXmlElement, value.Restart, diffs, objName))
+      if (!CmpRestart(openXmlElement, value.Restart, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

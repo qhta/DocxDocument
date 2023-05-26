@@ -16,9 +16,9 @@ public static class QuickAccessToolbarConverter
     return null;
   }
   
-  private static bool CmpSharedQatControls(DXOCUI.QuickAccessToolbar openXmlElement, DMUI.SharedQatControls? value, DiffList? diffs, string? objName)
+  private static bool CmpSharedQatControls(DXOCUI.QuickAccessToolbar openXmlElement, DMUI.SharedQatControls? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXUI.SharedQatControlsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCUI.SharedQatControls>(), value, diffs, objName);
+    return DMXUI.SharedQatControlsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCUI.SharedQatControls>(), value, diffs, objName, propName);
   }
   
   private static void SetSharedQatControls(DXOCUI.QuickAccessToolbar openXmlElement, DMUI.SharedQatControls? value)
@@ -45,9 +45,9 @@ public static class QuickAccessToolbarConverter
     return null;
   }
   
-  private static bool CmpDocumentSpecificQuickAccessToolbarControls(DXOCUI.QuickAccessToolbar openXmlElement, DMUI.DocumentSpecificQuickAccessToolbarControls? value, DiffList? diffs, string? objName)
+  private static bool CmpDocumentSpecificQuickAccessToolbarControls(DXOCUI.QuickAccessToolbar openXmlElement, DMUI.DocumentSpecificQuickAccessToolbarControls? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXUI.DocumentSpecificQuickAccessToolbarControlsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCUI.DocumentSpecificQuickAccessToolbarControls>(), value, diffs, objName);
+    return DMXUI.DocumentSpecificQuickAccessToolbarControlsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCUI.DocumentSpecificQuickAccessToolbarControls>(), value, diffs, objName, propName);
   }
   
   private static void SetDocumentSpecificQuickAccessToolbarControls(DXOCUI.QuickAccessToolbar openXmlElement, DMUI.DocumentSpecificQuickAccessToolbarControls? value)
@@ -75,19 +75,19 @@ public static class QuickAccessToolbarConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXOCUI.QuickAccessToolbar? openXmlElement, DMUI.QuickAccessToolbar? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXOCUI.QuickAccessToolbar? openXmlElement, DMUI.QuickAccessToolbar? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpSharedQatControls(openXmlElement, value.SharedQatControls, diffs, objName))
+      if (!CmpSharedQatControls(openXmlElement, value.SharedQatControls, diffs, objName, propName))
         ok = false;
-      if (!CmpDocumentSpecificQuickAccessToolbarControls(openXmlElement, value.DocumentSpecificQuickAccessToolbarControls, diffs, objName))
+      if (!CmpDocumentSpecificQuickAccessToolbarControls(openXmlElement, value.DocumentSpecificQuickAccessToolbarControls, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

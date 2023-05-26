@@ -13,7 +13,7 @@ public static class PropertySetConverter
     return StringValueConverter.GetValue(openXmlElement?.PresentationElementId);
   }
   
-  private static bool CmpPresentationElementId(DXDD.PropertySet openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpPresentationElementId(DXDD.PropertySet openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.PresentationElementId, value, diffs, objName, "PresentationElementId");
   }
@@ -31,7 +31,7 @@ public static class PropertySetConverter
     return StringValueConverter.GetValue(openXmlElement?.PresentationName);
   }
   
-  private static bool CmpPresentationName(DXDD.PropertySet openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpPresentationName(DXDD.PropertySet openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.PresentationName, value, diffs, objName, "PresentationName");
   }
@@ -49,7 +49,7 @@ public static class PropertySetConverter
     return StringValueConverter.GetValue(openXmlElement?.PresentationStyleLabel);
   }
   
-  private static bool CmpPresentationStyleLabel(DXDD.PropertySet openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpPresentationStyleLabel(DXDD.PropertySet openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.PresentationStyleLabel, value, diffs, objName, "PresentationStyleLabel");
   }
@@ -67,7 +67,7 @@ public static class PropertySetConverter
     return openXmlElement?.PresentationStyleIndex?.Value;
   }
   
-  private static bool CmpPresentationStyleIndex(DXDD.PropertySet openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpPresentationStyleIndex(DXDD.PropertySet openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.PresentationStyleIndex?.Value == value) return true;
     diffs?.Add(objName, "PresentationStyleIndex", openXmlElement?.PresentationStyleIndex?.Value, value);
@@ -87,7 +87,7 @@ public static class PropertySetConverter
     return openXmlElement?.PresentationStyleCount?.Value;
   }
   
-  private static bool CmpPresentationStyleCount(DXDD.PropertySet openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpPresentationStyleCount(DXDD.PropertySet openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.PresentationStyleCount?.Value == value) return true;
     diffs?.Add(objName, "PresentationStyleCount", openXmlElement?.PresentationStyleCount?.Value, value);
@@ -107,7 +107,7 @@ public static class PropertySetConverter
     return StringValueConverter.GetValue(openXmlElement?.LayoutTypeId);
   }
   
-  private static bool CmpLayoutTypeId(DXDD.PropertySet openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpLayoutTypeId(DXDD.PropertySet openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.LayoutTypeId, value, diffs, objName, "LayoutTypeId");
   }
@@ -125,7 +125,7 @@ public static class PropertySetConverter
     return StringValueConverter.GetValue(openXmlElement?.LayoutCategoryId);
   }
   
-  private static bool CmpLayoutCategoryId(DXDD.PropertySet openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpLayoutCategoryId(DXDD.PropertySet openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.LayoutCategoryId, value, diffs, objName, "LayoutCategoryId");
   }
@@ -143,7 +143,7 @@ public static class PropertySetConverter
     return StringValueConverter.GetValue(openXmlElement?.QuickStyleTypeId);
   }
   
-  private static bool CmpQuickStyleTypeId(DXDD.PropertySet openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpQuickStyleTypeId(DXDD.PropertySet openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.QuickStyleTypeId, value, diffs, objName, "QuickStyleTypeId");
   }
@@ -161,7 +161,7 @@ public static class PropertySetConverter
     return StringValueConverter.GetValue(openXmlElement?.QuickStyleCategoryId);
   }
   
-  private static bool CmpQuickStyleCategoryId(DXDD.PropertySet openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpQuickStyleCategoryId(DXDD.PropertySet openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.QuickStyleCategoryId, value, diffs, objName, "QuickStyleCategoryId");
   }
@@ -179,7 +179,7 @@ public static class PropertySetConverter
     return StringValueConverter.GetValue(openXmlElement?.ColorType);
   }
   
-  private static bool CmpColorType(DXDD.PropertySet openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpColorType(DXDD.PropertySet openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.ColorType, value, diffs, objName, "ColorType");
   }
@@ -197,7 +197,7 @@ public static class PropertySetConverter
     return StringValueConverter.GetValue(openXmlElement?.ColorCategoryId);
   }
   
-  private static bool CmpColorCategoryId(DXDD.PropertySet openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpColorCategoryId(DXDD.PropertySet openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.ColorCategoryId, value, diffs, objName, "ColorCategoryId");
   }
@@ -215,7 +215,7 @@ public static class PropertySetConverter
     return openXmlElement?.Coherent3D?.Value;
   }
   
-  private static bool CmpCoherent3D(DXDD.PropertySet openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpCoherent3D(DXDD.PropertySet openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Coherent3D?.Value == value) return true;
     diffs?.Add(objName, "Coherent3D", openXmlElement?.Coherent3D?.Value, value);
@@ -238,7 +238,7 @@ public static class PropertySetConverter
     return StringValueConverter.GetValue(openXmlElement?.PlaceholderText);
   }
   
-  private static bool CmpPlaceholderText(DXDD.PropertySet openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpPlaceholderText(DXDD.PropertySet openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.PlaceholderText, value, diffs, objName, "PlaceholderText");
   }
@@ -256,7 +256,7 @@ public static class PropertySetConverter
     return openXmlElement?.Placeholder?.Value;
   }
   
-  private static bool CmpPlaceholder(DXDD.PropertySet openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpPlaceholder(DXDD.PropertySet openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Placeholder?.Value == value) return true;
     diffs?.Add(objName, "Placeholder", openXmlElement?.Placeholder?.Value, value);
@@ -279,7 +279,7 @@ public static class PropertySetConverter
     return openXmlElement?.Rotation?.Value;
   }
   
-  private static bool CmpRotation(DXDD.PropertySet openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpRotation(DXDD.PropertySet openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Rotation?.Value == value) return true;
     diffs?.Add(objName, "Rotation", openXmlElement?.Rotation?.Value, value);
@@ -299,7 +299,7 @@ public static class PropertySetConverter
     return openXmlElement?.VerticalFlip?.Value;
   }
   
-  private static bool CmpVerticalFlip(DXDD.PropertySet openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpVerticalFlip(DXDD.PropertySet openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.VerticalFlip?.Value == value) return true;
     diffs?.Add(objName, "VerticalFlip", openXmlElement?.VerticalFlip?.Value, value);
@@ -322,7 +322,7 @@ public static class PropertySetConverter
     return openXmlElement?.HorizontalFlip?.Value;
   }
   
-  private static bool CmpHorizontalFlip(DXDD.PropertySet openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpHorizontalFlip(DXDD.PropertySet openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.HorizontalFlip?.Value == value) return true;
     diffs?.Add(objName, "HorizontalFlip", openXmlElement?.HorizontalFlip?.Value, value);
@@ -345,7 +345,7 @@ public static class PropertySetConverter
     return openXmlElement?.FixedWidthOverride?.Value;
   }
   
-  private static bool CmpFixedWidthOverride(DXDD.PropertySet openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpFixedWidthOverride(DXDD.PropertySet openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.FixedWidthOverride?.Value == value) return true;
     diffs?.Add(objName, "FixedWidthOverride", openXmlElement?.FixedWidthOverride?.Value, value);
@@ -365,7 +365,7 @@ public static class PropertySetConverter
     return openXmlElement?.FixedHeightOverride?.Value;
   }
   
-  private static bool CmpFixedHeightOverride(DXDD.PropertySet openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpFixedHeightOverride(DXDD.PropertySet openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.FixedHeightOverride?.Value == value) return true;
     diffs?.Add(objName, "FixedHeightOverride", openXmlElement?.FixedHeightOverride?.Value, value);
@@ -385,7 +385,7 @@ public static class PropertySetConverter
     return openXmlElement?.WidthScale?.Value;
   }
   
-  private static bool CmpWidthScale(DXDD.PropertySet openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpWidthScale(DXDD.PropertySet openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.WidthScale?.Value == value) return true;
     diffs?.Add(objName, "WidthScale", openXmlElement?.WidthScale?.Value, value);
@@ -405,7 +405,7 @@ public static class PropertySetConverter
     return openXmlElement?.HightScale?.Value;
   }
   
-  private static bool CmpHightScale(DXDD.PropertySet openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpHightScale(DXDD.PropertySet openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.HightScale?.Value == value) return true;
     diffs?.Add(objName, "HightScale", openXmlElement?.HightScale?.Value, value);
@@ -425,7 +425,7 @@ public static class PropertySetConverter
     return openXmlElement?.TextChanged?.Value;
   }
   
-  private static bool CmpTextChanged(DXDD.PropertySet openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpTextChanged(DXDD.PropertySet openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.TextChanged?.Value == value) return true;
     diffs?.Add(objName, "TextChanged", openXmlElement?.TextChanged?.Value, value);
@@ -448,7 +448,7 @@ public static class PropertySetConverter
     return openXmlElement?.FactorWidth?.Value;
   }
   
-  private static bool CmpFactorWidth(DXDD.PropertySet openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpFactorWidth(DXDD.PropertySet openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.FactorWidth?.Value == value) return true;
     diffs?.Add(objName, "FactorWidth", openXmlElement?.FactorWidth?.Value, value);
@@ -468,7 +468,7 @@ public static class PropertySetConverter
     return openXmlElement?.FactorHeight?.Value;
   }
   
-  private static bool CmpFactorHeight(DXDD.PropertySet openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpFactorHeight(DXDD.PropertySet openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.FactorHeight?.Value == value) return true;
     diffs?.Add(objName, "FactorHeight", openXmlElement?.FactorHeight?.Value, value);
@@ -488,7 +488,7 @@ public static class PropertySetConverter
     return openXmlElement?.NeighborOffsetWidth?.Value;
   }
   
-  private static bool CmpNeighborOffsetWidth(DXDD.PropertySet openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpNeighborOffsetWidth(DXDD.PropertySet openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.NeighborOffsetWidth?.Value == value) return true;
     diffs?.Add(objName, "NeighborOffsetWidth", openXmlElement?.NeighborOffsetWidth?.Value, value);
@@ -508,7 +508,7 @@ public static class PropertySetConverter
     return openXmlElement?.NeighborOffsetHeight?.Value;
   }
   
-  private static bool CmpNeighborOffsetHeight(DXDD.PropertySet openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpNeighborOffsetHeight(DXDD.PropertySet openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.NeighborOffsetHeight?.Value == value) return true;
     diffs?.Add(objName, "NeighborOffsetHeight", openXmlElement?.NeighborOffsetHeight?.Value, value);
@@ -528,7 +528,7 @@ public static class PropertySetConverter
     return openXmlElement?.RadiusScale?.Value;
   }
   
-  private static bool CmpRadiusScale(DXDD.PropertySet openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpRadiusScale(DXDD.PropertySet openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.RadiusScale?.Value == value) return true;
     diffs?.Add(objName, "RadiusScale", openXmlElement?.RadiusScale?.Value, value);
@@ -548,7 +548,7 @@ public static class PropertySetConverter
     return openXmlElement?.IncludeAngleScale?.Value;
   }
   
-  private static bool CmpIncludeAngleScale(DXDD.PropertySet openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpIncludeAngleScale(DXDD.PropertySet openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.IncludeAngleScale?.Value == value) return true;
     diffs?.Add(objName, "IncludeAngleScale", openXmlElement?.IncludeAngleScale?.Value, value);
@@ -571,9 +571,9 @@ public static class PropertySetConverter
     return null;
   }
   
-  private static bool CmpPresentationLayoutVariables(DXDD.PropertySet openXmlElement, DMDD.PresentationLayoutVariables? value, DiffList? diffs, string? objName)
+  private static bool CmpPresentationLayoutVariables(DXDD.PropertySet openXmlElement, DMDD.PresentationLayoutVariables? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDD.PresentationLayoutVariablesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.PresentationLayoutVariables>(), value, diffs, objName);
+    return DMXDD.PresentationLayoutVariablesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.PresentationLayoutVariables>(), value, diffs, objName, propName);
   }
   
   private static void SetPresentationLayoutVariables(DXDD.PropertySet openXmlElement, DMDD.PresentationLayoutVariables? value)
@@ -600,9 +600,9 @@ public static class PropertySetConverter
     return null;
   }
   
-  private static bool CmpStyle(DXDD.PropertySet openXmlElement, DMDD.Style? value, DiffList? diffs, string? objName)
+  private static bool CmpStyle(DXDD.PropertySet openXmlElement, DMDD.Style? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDD.StyleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.Style>(), value, diffs, objName);
+    return DMXDD.StyleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.Style>(), value, diffs, objName, propName);
   }
   
   private static void SetStyle(DXDD.PropertySet openXmlElement, DMDD.Style? value)
@@ -658,75 +658,75 @@ public static class PropertySetConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDD.PropertySet? openXmlElement, DMDD.PropertySet? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDD.PropertySet? openXmlElement, DMDD.PropertySet? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpPresentationElementId(openXmlElement, value.PresentationElementId, diffs, objName))
+      if (!CmpPresentationElementId(openXmlElement, value.PresentationElementId, diffs, objName, propName))
         ok = false;
-      if (!CmpPresentationName(openXmlElement, value.PresentationName, diffs, objName))
+      if (!CmpPresentationName(openXmlElement, value.PresentationName, diffs, objName, propName))
         ok = false;
-      if (!CmpPresentationStyleLabel(openXmlElement, value.PresentationStyleLabel, diffs, objName))
+      if (!CmpPresentationStyleLabel(openXmlElement, value.PresentationStyleLabel, diffs, objName, propName))
         ok = false;
-      if (!CmpPresentationStyleIndex(openXmlElement, value.PresentationStyleIndex, diffs, objName))
+      if (!CmpPresentationStyleIndex(openXmlElement, value.PresentationStyleIndex, diffs, objName, propName))
         ok = false;
-      if (!CmpPresentationStyleCount(openXmlElement, value.PresentationStyleCount, diffs, objName))
+      if (!CmpPresentationStyleCount(openXmlElement, value.PresentationStyleCount, diffs, objName, propName))
         ok = false;
-      if (!CmpLayoutTypeId(openXmlElement, value.LayoutTypeId, diffs, objName))
+      if (!CmpLayoutTypeId(openXmlElement, value.LayoutTypeId, diffs, objName, propName))
         ok = false;
-      if (!CmpLayoutCategoryId(openXmlElement, value.LayoutCategoryId, diffs, objName))
+      if (!CmpLayoutCategoryId(openXmlElement, value.LayoutCategoryId, diffs, objName, propName))
         ok = false;
-      if (!CmpQuickStyleTypeId(openXmlElement, value.QuickStyleTypeId, diffs, objName))
+      if (!CmpQuickStyleTypeId(openXmlElement, value.QuickStyleTypeId, diffs, objName, propName))
         ok = false;
-      if (!CmpQuickStyleCategoryId(openXmlElement, value.QuickStyleCategoryId, diffs, objName))
+      if (!CmpQuickStyleCategoryId(openXmlElement, value.QuickStyleCategoryId, diffs, objName, propName))
         ok = false;
-      if (!CmpColorType(openXmlElement, value.ColorType, diffs, objName))
+      if (!CmpColorType(openXmlElement, value.ColorType, diffs, objName, propName))
         ok = false;
-      if (!CmpColorCategoryId(openXmlElement, value.ColorCategoryId, diffs, objName))
+      if (!CmpColorCategoryId(openXmlElement, value.ColorCategoryId, diffs, objName, propName))
         ok = false;
-      if (!CmpCoherent3D(openXmlElement, value.Coherent3D, diffs, objName))
+      if (!CmpCoherent3D(openXmlElement, value.Coherent3D, diffs, objName, propName))
         ok = false;
-      if (!CmpPlaceholderText(openXmlElement, value.PlaceholderText, diffs, objName))
+      if (!CmpPlaceholderText(openXmlElement, value.PlaceholderText, diffs, objName, propName))
         ok = false;
-      if (!CmpPlaceholder(openXmlElement, value.Placeholder, diffs, objName))
+      if (!CmpPlaceholder(openXmlElement, value.Placeholder, diffs, objName, propName))
         ok = false;
-      if (!CmpRotation(openXmlElement, value.Rotation, diffs, objName))
+      if (!CmpRotation(openXmlElement, value.Rotation, diffs, objName, propName))
         ok = false;
-      if (!CmpVerticalFlip(openXmlElement, value.VerticalFlip, diffs, objName))
+      if (!CmpVerticalFlip(openXmlElement, value.VerticalFlip, diffs, objName, propName))
         ok = false;
-      if (!CmpHorizontalFlip(openXmlElement, value.HorizontalFlip, diffs, objName))
+      if (!CmpHorizontalFlip(openXmlElement, value.HorizontalFlip, diffs, objName, propName))
         ok = false;
-      if (!CmpFixedWidthOverride(openXmlElement, value.FixedWidthOverride, diffs, objName))
+      if (!CmpFixedWidthOverride(openXmlElement, value.FixedWidthOverride, diffs, objName, propName))
         ok = false;
-      if (!CmpFixedHeightOverride(openXmlElement, value.FixedHeightOverride, diffs, objName))
+      if (!CmpFixedHeightOverride(openXmlElement, value.FixedHeightOverride, diffs, objName, propName))
         ok = false;
-      if (!CmpWidthScale(openXmlElement, value.WidthScale, diffs, objName))
+      if (!CmpWidthScale(openXmlElement, value.WidthScale, diffs, objName, propName))
         ok = false;
-      if (!CmpHightScale(openXmlElement, value.HightScale, diffs, objName))
+      if (!CmpHightScale(openXmlElement, value.HightScale, diffs, objName, propName))
         ok = false;
-      if (!CmpTextChanged(openXmlElement, value.TextChanged, diffs, objName))
+      if (!CmpTextChanged(openXmlElement, value.TextChanged, diffs, objName, propName))
         ok = false;
-      if (!CmpFactorWidth(openXmlElement, value.FactorWidth, diffs, objName))
+      if (!CmpFactorWidth(openXmlElement, value.FactorWidth, diffs, objName, propName))
         ok = false;
-      if (!CmpFactorHeight(openXmlElement, value.FactorHeight, diffs, objName))
+      if (!CmpFactorHeight(openXmlElement, value.FactorHeight, diffs, objName, propName))
         ok = false;
-      if (!CmpNeighborOffsetWidth(openXmlElement, value.NeighborOffsetWidth, diffs, objName))
+      if (!CmpNeighborOffsetWidth(openXmlElement, value.NeighborOffsetWidth, diffs, objName, propName))
         ok = false;
-      if (!CmpNeighborOffsetHeight(openXmlElement, value.NeighborOffsetHeight, diffs, objName))
+      if (!CmpNeighborOffsetHeight(openXmlElement, value.NeighborOffsetHeight, diffs, objName, propName))
         ok = false;
-      if (!CmpRadiusScale(openXmlElement, value.RadiusScale, diffs, objName))
+      if (!CmpRadiusScale(openXmlElement, value.RadiusScale, diffs, objName, propName))
         ok = false;
-      if (!CmpIncludeAngleScale(openXmlElement, value.IncludeAngleScale, diffs, objName))
+      if (!CmpIncludeAngleScale(openXmlElement, value.IncludeAngleScale, diffs, objName, propName))
         ok = false;
-      if (!CmpPresentationLayoutVariables(openXmlElement, value.PresentationLayoutVariables, diffs, objName))
+      if (!CmpPresentationLayoutVariables(openXmlElement, value.PresentationLayoutVariables, diffs, objName, propName))
         ok = false;
-      if (!CmpStyle(openXmlElement, value.Style, diffs, objName))
+      if (!CmpStyle(openXmlElement, value.Style, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

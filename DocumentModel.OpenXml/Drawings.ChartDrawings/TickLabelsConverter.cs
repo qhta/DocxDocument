@@ -16,9 +16,9 @@ public static class TickLabelsConverter
     return null;
   }
   
-  private static bool CmpExtensionList(DXO16DCD.TickLabels openXmlElement, DMDCDs.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXO16DCD.TickLabels openXmlElement, DMDCDs.ExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCDs.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.ExtensionList>(), value, diffs, objName);
+    return DMXDCDs.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.ExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetExtensionList(DXO16DCD.TickLabels openXmlElement, DMDCDs.ExtensionList? value)
@@ -45,17 +45,17 @@ public static class TickLabelsConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO16DCD.TickLabels? openXmlElement, DMDCDs.TickLabels? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16DCD.TickLabels? openXmlElement, DMDCDs.TickLabels? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

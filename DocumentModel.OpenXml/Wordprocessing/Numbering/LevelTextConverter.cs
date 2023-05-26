@@ -13,7 +13,7 @@ public static class LevelTextConverter
     return StringValueConverter.GetValue(openXmlElement?.Val);
   }
 
-  private static bool CmpVal(DXW.LevelText openXmlElement, string? value, DiffList? diffs, string? objName)
+  private static bool CmpVal(DXW.LevelText openXmlElement, string? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Val, value, diffs, objName, "Text");
   }
@@ -30,7 +30,7 @@ public static class LevelTextConverter
     return BooleanValueConverter.GetValue(openXmlElement?.Null) ?? false;
   }
 
-  private static bool CmpNull(DXW.LevelText openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNull(DXW.LevelText openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.Null ?? false, value, diffs, objName, "Null");
   }
@@ -54,19 +54,19 @@ public static class LevelTextConverter
     return null;
   }
 
-  public static bool CompareModelElement(DXW.LevelText? openXmlElement, DMW.NumLevelText? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.LevelText? openXmlElement, DMW.NumLevelText? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpVal(openXmlElement, model.Text, diffs, objName))
+      if (!CmpVal(openXmlElement, model.Text, diffs, objName, propName))
         ok = false;
-      if (!CmpNull(openXmlElement, model.IsNull, diffs, objName))
+      if (!CmpNull(openXmlElement, model.IsNull, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
 

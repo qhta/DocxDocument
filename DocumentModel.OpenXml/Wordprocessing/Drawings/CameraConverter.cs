@@ -13,9 +13,9 @@ public static class CameraConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.Word.PresetCameraTypeValues, DMW.PresetCameraKind>(openXmlElement?.PresetCameraType?.Value);
   }
   
-  private static bool CmpPresetCameraType(DXO10W.Camera openXmlElement, DMW.PresetCameraKind? value, DiffList? diffs, string? objName)
+  private static bool CmpPresetCameraType(DXO10W.Camera openXmlElement, DMW.PresetCameraKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.PresetCameraTypeValues, DMW.PresetCameraKind>(openXmlElement?.PresetCameraType?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.PresetCameraTypeValues, DMW.PresetCameraKind>(openXmlElement?.PresetCameraType?.Value, value, diffs, objName, propName);
   }
   
   private static void SetPresetCameraType(DXO10W.Camera openXmlElement, DMW.PresetCameraKind? value)
@@ -34,17 +34,17 @@ public static class CameraConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO10W.Camera? openXmlElement, DMW.Camera? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10W.Camera? openXmlElement, DMW.Camera? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpPresetCameraType(openXmlElement, value.PresetCameraType, diffs, objName))
+      if (!CmpPresetCameraType(openXmlElement, value.PresetCameraType, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

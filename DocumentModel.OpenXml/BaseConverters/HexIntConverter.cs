@@ -10,7 +10,7 @@ public static class HexIntConverter
     return null;
   }
 
-  public static bool CmpValue(DX.HexBinaryValue? element, HexInt? value, DiffList? diffs, string? objName, string? propName)
+  public static bool CmpValue(DX.HexBinaryValue? element, HexInt? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (element?.Value != null)
     {
@@ -66,7 +66,7 @@ public static class HexIntConverter
     return null;
   }
 
-    public static bool CmpValue(DX.TypedOpenXmlLeafElement? element, HexInt? value, DiffList? diffs, string? objName)
+    public static bool CmpValue(DX.TypedOpenXmlLeafElement? element, HexInt? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var valProperty = element?.GetType().GetProperties().FirstOrDefault(item=>item.PropertyType==typeof(HexBinaryValue));
     if (valProperty != null && value != null)
@@ -74,11 +74,11 @@ public static class HexIntConverter
       var valStr = (string?)valProperty.GetValue(element);
       var valueStr = value.ToString();
       if (valStr == valueStr) return true;
-      diffs?.Add(objName, element?.GetType().ToString(), valStr, valueStr);
+      diffs?.Add(objName, propName ?? element?.GetType().ToString(), valStr, valueStr);
       return false;
     }
     if (valProperty == null && value == null) return true;
-    diffs?.Add(objName, element?.GetType().ToString(), element, value);
+    diffs?.Add(objName, propName ?? element?.GetType().ToString(), element, value);
     return false;
   }
 

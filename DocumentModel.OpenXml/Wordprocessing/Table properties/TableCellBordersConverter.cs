@@ -16,9 +16,9 @@ public static class TableCellBordersConverter
     return null;
   }
   
-  private static bool CmpTopBorder(DXW.TableCellBorders openXmlElement, DMW.Border? value, DiffList? diffs, string? objName)
+  private static bool CmpTopBorder(DXW.TableCellBorders openXmlElement, DMW.Border? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.BorderConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TopBorder>(), value, diffs, objName);
+    return DMXW.BorderConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TopBorder>(), value, diffs, objName, propName);
   }
   
   private static void SetTopBorder(DXW.TableCellBorders openXmlElement, DMW.Border? value)
@@ -45,9 +45,9 @@ public static class TableCellBordersConverter
     return null;
   }
   
-  private static bool CmpLeftBorder(DXW.TableCellBorders openXmlElement, DMW.Border? value, DiffList? diffs, string? objName)
+  private static bool CmpLeftBorder(DXW.TableCellBorders openXmlElement, DMW.Border? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.BorderConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.LeftBorder>(), value, diffs, objName);
+    return DMXW.BorderConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.LeftBorder>(), value, diffs, objName, propName);
   }
   
   private static void SetLeftBorder(DXW.TableCellBorders openXmlElement, DMW.Border? value)
@@ -74,9 +74,9 @@ public static class TableCellBordersConverter
     return null;
   }
   
-  private static bool CmpStartBorder(DXW.TableCellBorders openXmlElement, DMW.Border? value, DiffList? diffs, string? objName)
+  private static bool CmpStartBorder(DXW.TableCellBorders openXmlElement, DMW.Border? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.BorderConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.StartBorder>(), value, diffs, objName);
+    return DMXW.BorderConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.StartBorder>(), value, diffs, objName, propName);
   }
   
   private static void SetStartBorder(DXW.TableCellBorders openXmlElement, DMW.Border? value)
@@ -103,9 +103,9 @@ public static class TableCellBordersConverter
     return null;
   }
   
-  private static bool CmpBottomBorder(DXW.TableCellBorders openXmlElement, DMW.Border? value, DiffList? diffs, string? objName)
+  private static bool CmpBottomBorder(DXW.TableCellBorders openXmlElement, DMW.Border? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.BorderConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.BottomBorder>(), value, diffs, objName);
+    return DMXW.BorderConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.BottomBorder>(), value, diffs, objName, propName);
   }
   
   private static void SetBottomBorder(DXW.TableCellBorders openXmlElement, DMW.Border? value)
@@ -132,9 +132,9 @@ public static class TableCellBordersConverter
     return null;
   }
   
-  private static bool CmpRightBorder(DXW.TableCellBorders openXmlElement, DMW.Border? value, DiffList? diffs, string? objName)
+  private static bool CmpRightBorder(DXW.TableCellBorders openXmlElement, DMW.Border? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.BorderConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.RightBorder>(), value, diffs, objName);
+    return DMXW.BorderConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.RightBorder>(), value, diffs, objName, propName);
   }
   
   private static void SetRightBorder(DXW.TableCellBorders openXmlElement, DMW.Border? value)
@@ -161,9 +161,9 @@ public static class TableCellBordersConverter
     return null;
   }
   
-  private static bool CmpEndBorder(DXW.TableCellBorders openXmlElement, DMW.Border? value, DiffList? diffs, string? objName)
+  private static bool CmpEndBorder(DXW.TableCellBorders openXmlElement, DMW.Border? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.BorderConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.EndBorder>(), value, diffs, objName);
+    return DMXW.BorderConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.EndBorder>(), value, diffs, objName, propName);
   }
   
   private static void SetEndBorder(DXW.TableCellBorders openXmlElement, DMW.Border? value)
@@ -190,9 +190,9 @@ public static class TableCellBordersConverter
     return null;
   }
   
-  private static bool CmpInsideHorizontalBorder(DXW.TableCellBorders openXmlElement, DMW.Border? value, DiffList? diffs, string? objName)
+  private static bool CmpInsideHorizontalBorder(DXW.TableCellBorders openXmlElement, DMW.Border? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.BorderConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.InsideHorizontalBorder>(), value, diffs, objName);
+    return DMXW.BorderConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.InsideHorizontalBorder>(), value, diffs, objName, propName);
   }
   
   private static void SetInsideHorizontalBorder(DXW.TableCellBorders openXmlElement, DMW.Border? value)
@@ -219,9 +219,9 @@ public static class TableCellBordersConverter
     return null;
   }
   
-  private static bool CmpInsideVerticalBorder(DXW.TableCellBorders openXmlElement, DMW.Border? value, DiffList? diffs, string? objName)
+  private static bool CmpInsideVerticalBorder(DXW.TableCellBorders openXmlElement, DMW.Border? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.BorderConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.InsideVerticalBorder>(), value, diffs, objName);
+    return DMXW.BorderConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.InsideVerticalBorder>(), value, diffs, objName, propName);
   }
   
   private static void SetInsideVerticalBorder(DXW.TableCellBorders openXmlElement, DMW.Border? value)
@@ -248,9 +248,9 @@ public static class TableCellBordersConverter
     return null;
   }
   
-  private static bool CmpTopLeftToBottomRightCellBorder(DXW.TableCellBorders openXmlElement, DMW.Border? value, DiffList? diffs, string? objName)
+  private static bool CmpTopLeftToBottomRightCellBorder(DXW.TableCellBorders openXmlElement, DMW.Border? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.BorderConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TopLeftToBottomRightCellBorder>(), value, diffs, objName);
+    return DMXW.BorderConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TopLeftToBottomRightCellBorder>(), value, diffs, objName, propName);
   }
   
   private static void SetTopLeftToBottomRightCellBorder(DXW.TableCellBorders openXmlElement, DMW.Border? value)
@@ -277,9 +277,9 @@ public static class TableCellBordersConverter
     return null;
   }
   
-  private static bool CmpTopRightToBottomLeftCellBorder(DXW.TableCellBorders openXmlElement, DMW.Border? value, DiffList? diffs, string? objName)
+  private static bool CmpTopRightToBottomLeftCellBorder(DXW.TableCellBorders openXmlElement, DMW.Border? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.BorderConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TopRightToBottomLeftCellBorder>(), value, diffs, objName);
+    return DMXW.BorderConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TopRightToBottomLeftCellBorder>(), value, diffs, objName, propName);
   }
   
   private static void SetTopRightToBottomLeftCellBorder(DXW.TableCellBorders openXmlElement, DMW.Border? value)
@@ -315,35 +315,35 @@ public static class TableCellBordersConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.TableCellBorders? openXmlElement, DMW.TableCellBorders? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.TableCellBorders? openXmlElement, DMW.TableCellBorders? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpTopBorder(openXmlElement, value.TopBorder, diffs, objName))
+      if (!CmpTopBorder(openXmlElement, value.TopBorder, diffs, objName, propName))
         ok = false;
-      if (!CmpLeftBorder(openXmlElement, value.LeftBorder, diffs, objName))
+      if (!CmpLeftBorder(openXmlElement, value.LeftBorder, diffs, objName, propName))
         ok = false;
-      if (!CmpStartBorder(openXmlElement, value.StartBorder, diffs, objName))
+      if (!CmpStartBorder(openXmlElement, value.StartBorder, diffs, objName, propName))
         ok = false;
-      if (!CmpBottomBorder(openXmlElement, value.BottomBorder, diffs, objName))
+      if (!CmpBottomBorder(openXmlElement, value.BottomBorder, diffs, objName, propName))
         ok = false;
-      if (!CmpRightBorder(openXmlElement, value.RightBorder, diffs, objName))
+      if (!CmpRightBorder(openXmlElement, value.RightBorder, diffs, objName, propName))
         ok = false;
-      if (!CmpEndBorder(openXmlElement, value.EndBorder, diffs, objName))
+      if (!CmpEndBorder(openXmlElement, value.EndBorder, diffs, objName, propName))
         ok = false;
-      if (!CmpInsideHorizontalBorder(openXmlElement, value.InsideHorizontalBorder, diffs, objName))
+      if (!CmpInsideHorizontalBorder(openXmlElement, value.InsideHorizontalBorder, diffs, objName, propName))
         ok = false;
-      if (!CmpInsideVerticalBorder(openXmlElement, value.InsideVerticalBorder, diffs, objName))
+      if (!CmpInsideVerticalBorder(openXmlElement, value.InsideVerticalBorder, diffs, objName, propName))
         ok = false;
-      if (!CmpTopLeftToBottomRightCellBorder(openXmlElement, value.TopLeftToBottomRightCellBorder, diffs, objName))
+      if (!CmpTopLeftToBottomRightCellBorder(openXmlElement, value.TopLeftToBottomRightCellBorder, diffs, objName, propName))
         ok = false;
-      if (!CmpTopRightToBottomLeftCellBorder(openXmlElement, value.TopRightToBottomLeftCellBorder, diffs, objName))
+      if (!CmpTopRightToBottomLeftCellBorder(openXmlElement, value.TopRightToBottomLeftCellBorder, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

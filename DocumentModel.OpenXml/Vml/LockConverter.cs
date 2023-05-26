@@ -13,9 +13,9 @@ public static class LockConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMV.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value);
   }
   
-  private static bool CmpExtension(DXVO.Lock openXmlElement, DMV.ExtensionHandlingBehaviorKind? value, DiffList? diffs, string? objName)
+  private static bool CmpExtension(DXVO.Lock openXmlElement, DMV.ExtensionHandlingBehaviorKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMV.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMV.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value, value, diffs, objName, propName);
   }
   
   private static void SetExtension(DXVO.Lock openXmlElement, DMV.ExtensionHandlingBehaviorKind? value)
@@ -31,7 +31,7 @@ public static class LockConverter
     return openXmlElement?.Position?.Value;
   }
   
-  private static bool CmpPosition(DXVO.Lock openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpPosition(DXVO.Lock openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Position?.Value == value) return true;
     diffs?.Add(objName, "Position", openXmlElement?.Position?.Value, value);
@@ -54,7 +54,7 @@ public static class LockConverter
     return openXmlElement?.Selection?.Value;
   }
   
-  private static bool CmpSelection(DXVO.Lock openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpSelection(DXVO.Lock openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Selection?.Value == value) return true;
     diffs?.Add(objName, "Selection", openXmlElement?.Selection?.Value, value);
@@ -77,7 +77,7 @@ public static class LockConverter
     return openXmlElement?.Grouping?.Value;
   }
   
-  private static bool CmpGrouping(DXVO.Lock openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpGrouping(DXVO.Lock openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Grouping?.Value == value) return true;
     diffs?.Add(objName, "Grouping", openXmlElement?.Grouping?.Value, value);
@@ -100,7 +100,7 @@ public static class LockConverter
     return openXmlElement?.Ungrouping?.Value;
   }
   
-  private static bool CmpUngrouping(DXVO.Lock openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpUngrouping(DXVO.Lock openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Ungrouping?.Value == value) return true;
     diffs?.Add(objName, "Ungrouping", openXmlElement?.Ungrouping?.Value, value);
@@ -123,7 +123,7 @@ public static class LockConverter
     return openXmlElement?.Rotation?.Value;
   }
   
-  private static bool CmpRotation(DXVO.Lock openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpRotation(DXVO.Lock openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Rotation?.Value == value) return true;
     diffs?.Add(objName, "Rotation", openXmlElement?.Rotation?.Value, value);
@@ -146,7 +146,7 @@ public static class LockConverter
     return openXmlElement?.Cropping?.Value;
   }
   
-  private static bool CmpCropping(DXVO.Lock openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpCropping(DXVO.Lock openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Cropping?.Value == value) return true;
     diffs?.Add(objName, "Cropping", openXmlElement?.Cropping?.Value, value);
@@ -169,7 +169,7 @@ public static class LockConverter
     return openXmlElement?.Verticies?.Value;
   }
   
-  private static bool CmpVerticies(DXVO.Lock openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpVerticies(DXVO.Lock openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Verticies?.Value == value) return true;
     diffs?.Add(objName, "Verticies", openXmlElement?.Verticies?.Value, value);
@@ -192,7 +192,7 @@ public static class LockConverter
     return openXmlElement?.AdjustHandles?.Value;
   }
   
-  private static bool CmpAdjustHandles(DXVO.Lock openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpAdjustHandles(DXVO.Lock openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.AdjustHandles?.Value == value) return true;
     diffs?.Add(objName, "AdjustHandles", openXmlElement?.AdjustHandles?.Value, value);
@@ -215,7 +215,7 @@ public static class LockConverter
     return openXmlElement?.TextLock?.Value;
   }
   
-  private static bool CmpTextLock(DXVO.Lock openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpTextLock(DXVO.Lock openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.TextLock?.Value == value) return true;
     diffs?.Add(objName, "TextLock", openXmlElement?.TextLock?.Value, value);
@@ -238,7 +238,7 @@ public static class LockConverter
     return openXmlElement?.AspectRatio?.Value;
   }
   
-  private static bool CmpAspectRatio(DXVO.Lock openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpAspectRatio(DXVO.Lock openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.AspectRatio?.Value == value) return true;
     diffs?.Add(objName, "AspectRatio", openXmlElement?.AspectRatio?.Value, value);
@@ -261,7 +261,7 @@ public static class LockConverter
     return openXmlElement?.ShapeType?.Value;
   }
   
-  private static bool CmpShapeType(DXVO.Lock openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpShapeType(DXVO.Lock openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.ShapeType?.Value == value) return true;
     diffs?.Add(objName, "ShapeType", openXmlElement?.ShapeType?.Value, value);
@@ -298,39 +298,39 @@ public static class LockConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXVO.Lock? openXmlElement, DMV.Lock? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXVO.Lock? openXmlElement, DMV.Lock? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpExtension(openXmlElement, value.Extension, diffs, objName))
+      if (!CmpExtension(openXmlElement, value.Extension, diffs, objName, propName))
         ok = false;
-      if (!CmpPosition(openXmlElement, value.Position, diffs, objName))
+      if (!CmpPosition(openXmlElement, value.Position, diffs, objName, propName))
         ok = false;
-      if (!CmpSelection(openXmlElement, value.Selection, diffs, objName))
+      if (!CmpSelection(openXmlElement, value.Selection, diffs, objName, propName))
         ok = false;
-      if (!CmpGrouping(openXmlElement, value.Grouping, diffs, objName))
+      if (!CmpGrouping(openXmlElement, value.Grouping, diffs, objName, propName))
         ok = false;
-      if (!CmpUngrouping(openXmlElement, value.Ungrouping, diffs, objName))
+      if (!CmpUngrouping(openXmlElement, value.Ungrouping, diffs, objName, propName))
         ok = false;
-      if (!CmpRotation(openXmlElement, value.Rotation, diffs, objName))
+      if (!CmpRotation(openXmlElement, value.Rotation, diffs, objName, propName))
         ok = false;
-      if (!CmpCropping(openXmlElement, value.Cropping, diffs, objName))
+      if (!CmpCropping(openXmlElement, value.Cropping, diffs, objName, propName))
         ok = false;
-      if (!CmpVerticies(openXmlElement, value.Verticies, diffs, objName))
+      if (!CmpVerticies(openXmlElement, value.Verticies, diffs, objName, propName))
         ok = false;
-      if (!CmpAdjustHandles(openXmlElement, value.AdjustHandles, diffs, objName))
+      if (!CmpAdjustHandles(openXmlElement, value.AdjustHandles, diffs, objName, propName))
         ok = false;
-      if (!CmpTextLock(openXmlElement, value.TextLock, diffs, objName))
+      if (!CmpTextLock(openXmlElement, value.TextLock, diffs, objName, propName))
         ok = false;
-      if (!CmpAspectRatio(openXmlElement, value.AspectRatio, diffs, objName))
+      if (!CmpAspectRatio(openXmlElement, value.AspectRatio, diffs, objName, propName))
         ok = false;
-      if (!CmpShapeType(openXmlElement, value.ShapeType, diffs, objName))
+      if (!CmpShapeType(openXmlElement, value.ShapeType, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

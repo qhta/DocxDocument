@@ -13,7 +13,7 @@ public static class OuterShadowConverter
     return openXmlElement?.BlurRadius?.Value;
   }
   
-  private static bool CmpBlurRadius(DXD.OuterShadow openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpBlurRadius(DXD.OuterShadow openXmlElement, Int64? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.BlurRadius?.Value == value) return true;
     diffs?.Add(objName, "BlurRadius", openXmlElement?.BlurRadius?.Value, value);
@@ -33,7 +33,7 @@ public static class OuterShadowConverter
     return openXmlElement?.Distance?.Value;
   }
   
-  private static bool CmpDistance(DXD.OuterShadow openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpDistance(DXD.OuterShadow openXmlElement, Int64? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Distance?.Value == value) return true;
     diffs?.Add(objName, "Distance", openXmlElement?.Distance?.Value, value);
@@ -53,7 +53,7 @@ public static class OuterShadowConverter
     return openXmlElement?.Direction?.Value;
   }
   
-  private static bool CmpDirection(DXD.OuterShadow openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpDirection(DXD.OuterShadow openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Direction?.Value == value) return true;
     diffs?.Add(objName, "Direction", openXmlElement?.Direction?.Value, value);
@@ -73,7 +73,7 @@ public static class OuterShadowConverter
     return openXmlElement?.HorizontalRatio?.Value;
   }
   
-  private static bool CmpHorizontalRatio(DXD.OuterShadow openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpHorizontalRatio(DXD.OuterShadow openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.HorizontalRatio?.Value == value) return true;
     diffs?.Add(objName, "HorizontalRatio", openXmlElement?.HorizontalRatio?.Value, value);
@@ -93,7 +93,7 @@ public static class OuterShadowConverter
     return openXmlElement?.VerticalRatio?.Value;
   }
   
-  private static bool CmpVerticalRatio(DXD.OuterShadow openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpVerticalRatio(DXD.OuterShadow openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.VerticalRatio?.Value == value) return true;
     diffs?.Add(objName, "VerticalRatio", openXmlElement?.VerticalRatio?.Value, value);
@@ -113,7 +113,7 @@ public static class OuterShadowConverter
     return openXmlElement?.HorizontalSkew?.Value;
   }
   
-  private static bool CmpHorizontalSkew(DXD.OuterShadow openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpHorizontalSkew(DXD.OuterShadow openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.HorizontalSkew?.Value == value) return true;
     diffs?.Add(objName, "HorizontalSkew", openXmlElement?.HorizontalSkew?.Value, value);
@@ -133,7 +133,7 @@ public static class OuterShadowConverter
     return openXmlElement?.VerticalSkew?.Value;
   }
   
-  private static bool CmpVerticalSkew(DXD.OuterShadow openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpVerticalSkew(DXD.OuterShadow openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.VerticalSkew?.Value == value) return true;
     diffs?.Add(objName, "VerticalSkew", openXmlElement?.VerticalSkew?.Value, value);
@@ -153,9 +153,9 @@ public static class OuterShadowConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.RectangleAlignmentValues, DMD.RectangleAlignmentKind>(openXmlElement?.Alignment?.Value);
   }
   
-  private static bool CmpAlignment(DXD.OuterShadow openXmlElement, DMD.RectangleAlignmentKind? value, DiffList? diffs, string? objName)
+  private static bool CmpAlignment(DXD.OuterShadow openXmlElement, DMD.RectangleAlignmentKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.RectangleAlignmentValues, DMD.RectangleAlignmentKind>(openXmlElement?.Alignment?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.RectangleAlignmentValues, DMD.RectangleAlignmentKind>(openXmlElement?.Alignment?.Value, value, diffs, objName, propName);
   }
   
   private static void SetAlignment(DXD.OuterShadow openXmlElement, DMD.RectangleAlignmentKind? value)
@@ -171,7 +171,7 @@ public static class OuterShadowConverter
     return openXmlElement?.RotateWithShape?.Value;
   }
   
-  private static bool CmpRotateWithShape(DXD.OuterShadow openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpRotateWithShape(DXD.OuterShadow openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.RotateWithShape?.Value == value) return true;
     diffs?.Add(objName, "RotateWithShape", openXmlElement?.RotateWithShape?.Value, value);
@@ -197,9 +197,9 @@ public static class OuterShadowConverter
     return null;
   }
   
-  private static bool CmpRgbColorModelPercentage(DXD.OuterShadow openXmlElement, DMD.RgbColorModelPercentage? value, DiffList? diffs, string? objName)
+  private static bool CmpRgbColorModelPercentage(DXD.OuterShadow openXmlElement, DMD.RgbColorModelPercentage? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.RgbColorModelPercentageConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.RgbColorModelPercentage>(), value, diffs, objName);
+    return DMXD.RgbColorModelPercentageConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.RgbColorModelPercentage>(), value, diffs, objName, propName);
   }
   
   private static void SetRgbColorModelPercentage(DXD.OuterShadow openXmlElement, DMD.RgbColorModelPercentage? value)
@@ -226,9 +226,9 @@ public static class OuterShadowConverter
     return null;
   }
   
-  private static bool CmpRgbColorModelHex(DXD.OuterShadow openXmlElement, DMD.RgbColorModelHex? value, DiffList? diffs, string? objName)
+  private static bool CmpRgbColorModelHex(DXD.OuterShadow openXmlElement, DMD.RgbColorModelHex? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.RgbColorModelHexConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.RgbColorModelHex>(), value, diffs, objName);
+    return DMXD.RgbColorModelHexConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.RgbColorModelHex>(), value, diffs, objName, propName);
   }
   
   private static void SetRgbColorModelHex(DXD.OuterShadow openXmlElement, DMD.RgbColorModelHex? value)
@@ -255,9 +255,9 @@ public static class OuterShadowConverter
     return null;
   }
   
-  private static bool CmpHslColor(DXD.OuterShadow openXmlElement, DMD.HslColor? value, DiffList? diffs, string? objName)
+  private static bool CmpHslColor(DXD.OuterShadow openXmlElement, DMD.HslColor? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.HslColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.HslColor>(), value, diffs, objName);
+    return DMXD.HslColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.HslColor>(), value, diffs, objName, propName);
   }
   
   private static void SetHslColor(DXD.OuterShadow openXmlElement, DMD.HslColor? value)
@@ -284,9 +284,9 @@ public static class OuterShadowConverter
     return null;
   }
   
-  private static bool CmpSystemColor(DXD.OuterShadow openXmlElement, DMD.SystemColor? value, DiffList? diffs, string? objName)
+  private static bool CmpSystemColor(DXD.OuterShadow openXmlElement, DMD.SystemColor? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.SystemColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.SystemColor>(), value, diffs, objName);
+    return DMXD.SystemColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.SystemColor>(), value, diffs, objName, propName);
   }
   
   private static void SetSystemColor(DXD.OuterShadow openXmlElement, DMD.SystemColor? value)
@@ -313,9 +313,9 @@ public static class OuterShadowConverter
     return null;
   }
   
-  private static bool CmpSchemeColor(DXD.OuterShadow openXmlElement, DMD.SchemeColor? value, DiffList? diffs, string? objName)
+  private static bool CmpSchemeColor(DXD.OuterShadow openXmlElement, DMD.SchemeColor? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.SchemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.SchemeColor>(), value, diffs, objName);
+    return DMXD.SchemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.SchemeColor>(), value, diffs, objName, propName);
   }
   
   private static void SetSchemeColor(DXD.OuterShadow openXmlElement, DMD.SchemeColor? value)
@@ -342,9 +342,9 @@ public static class OuterShadowConverter
     return null;
   }
   
-  private static bool CmpPresetColor(DXD.OuterShadow openXmlElement, DMD.PresetColor? value, DiffList? diffs, string? objName)
+  private static bool CmpPresetColor(DXD.OuterShadow openXmlElement, DMD.PresetColor? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.PresetColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.PresetColor>(), value, diffs, objName);
+    return DMXD.PresetColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.PresetColor>(), value, diffs, objName, propName);
   }
   
   private static void SetPresetColor(DXD.OuterShadow openXmlElement, DMD.PresetColor? value)
@@ -385,45 +385,45 @@ public static class OuterShadowConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.OuterShadow? openXmlElement, DMD.OuterShadow? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.OuterShadow? openXmlElement, DMD.OuterShadow? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpBlurRadius(openXmlElement, value.BlurRadius, diffs, objName))
+      if (!CmpBlurRadius(openXmlElement, value.BlurRadius, diffs, objName, propName))
         ok = false;
-      if (!CmpDistance(openXmlElement, value.Distance, diffs, objName))
+      if (!CmpDistance(openXmlElement, value.Distance, diffs, objName, propName))
         ok = false;
-      if (!CmpDirection(openXmlElement, value.Direction, diffs, objName))
+      if (!CmpDirection(openXmlElement, value.Direction, diffs, objName, propName))
         ok = false;
-      if (!CmpHorizontalRatio(openXmlElement, value.HorizontalRatio, diffs, objName))
+      if (!CmpHorizontalRatio(openXmlElement, value.HorizontalRatio, diffs, objName, propName))
         ok = false;
-      if (!CmpVerticalRatio(openXmlElement, value.VerticalRatio, diffs, objName))
+      if (!CmpVerticalRatio(openXmlElement, value.VerticalRatio, diffs, objName, propName))
         ok = false;
-      if (!CmpHorizontalSkew(openXmlElement, value.HorizontalSkew, diffs, objName))
+      if (!CmpHorizontalSkew(openXmlElement, value.HorizontalSkew, diffs, objName, propName))
         ok = false;
-      if (!CmpVerticalSkew(openXmlElement, value.VerticalSkew, diffs, objName))
+      if (!CmpVerticalSkew(openXmlElement, value.VerticalSkew, diffs, objName, propName))
         ok = false;
-      if (!CmpAlignment(openXmlElement, value.Alignment, diffs, objName))
+      if (!CmpAlignment(openXmlElement, value.Alignment, diffs, objName, propName))
         ok = false;
-      if (!CmpRotateWithShape(openXmlElement, value.RotateWithShape, diffs, objName))
+      if (!CmpRotateWithShape(openXmlElement, value.RotateWithShape, diffs, objName, propName))
         ok = false;
-      if (!CmpRgbColorModelPercentage(openXmlElement, value.RgbColorModelPercentage, diffs, objName))
+      if (!CmpRgbColorModelPercentage(openXmlElement, value.RgbColorModelPercentage, diffs, objName, propName))
         ok = false;
-      if (!CmpRgbColorModelHex(openXmlElement, value.RgbColorModelHex, diffs, objName))
+      if (!CmpRgbColorModelHex(openXmlElement, value.RgbColorModelHex, diffs, objName, propName))
         ok = false;
-      if (!CmpHslColor(openXmlElement, value.HslColor, diffs, objName))
+      if (!CmpHslColor(openXmlElement, value.HslColor, diffs, objName, propName))
         ok = false;
-      if (!CmpSystemColor(openXmlElement, value.SystemColor, diffs, objName))
+      if (!CmpSystemColor(openXmlElement, value.SystemColor, diffs, objName, propName))
         ok = false;
-      if (!CmpSchemeColor(openXmlElement, value.SchemeColor, diffs, objName))
+      if (!CmpSchemeColor(openXmlElement, value.SchemeColor, diffs, objName, propName))
         ok = false;
-      if (!CmpPresetColor(openXmlElement, value.PresetColor, diffs, objName))
+      if (!CmpPresetColor(openXmlElement, value.PresetColor, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -13,7 +13,7 @@ public static class PtExtensionConverter
     return StringValueConverter.GetValue(openXmlElement?.Uri);
   }
   
-  private static bool CmpUri(DXD.PtExtension openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpUri(DXD.PtExtension openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Uri, value, diffs, objName, "Uri");
   }
@@ -31,9 +31,9 @@ public static class PtExtensionConverter
     return null;
   }
   
-  private static bool CmpNonVisualDrawingProperties(DXD.PtExtension openXmlElement, DMDD.NonVisualDrawingProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpNonVisualDrawingProperties(DXD.PtExtension openXmlElement, DMDD.NonVisualDrawingProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDD.NonVisualDrawingPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10DD.NonVisualDrawingProperties>(), value, diffs, objName);
+    return DMXDD.NonVisualDrawingPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10DD.NonVisualDrawingProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetNonVisualDrawingProperties(DXD.PtExtension openXmlElement, DMDD.NonVisualDrawingProperties? value)
@@ -61,19 +61,19 @@ public static class PtExtensionConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.PtExtension? openXmlElement, DMD.PtExtension? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.PtExtension? openXmlElement, DMD.PtExtension? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpUri(openXmlElement, value.Uri, diffs, objName))
+      if (!CmpUri(openXmlElement, value.Uri, diffs, objName, propName))
         ok = false;
-      if (!CmpNonVisualDrawingProperties(openXmlElement, value.NonVisualDrawingProperties, diffs, objName))
+      if (!CmpNonVisualDrawingProperties(openXmlElement, value.NonVisualDrawingProperties, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

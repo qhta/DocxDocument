@@ -13,7 +13,7 @@ public static class HiddenFillPropertiesConverter
     return openXmlElement.GetFirstChild<DXD.NoFill>() != null;
   }
   
-  private static bool CmpNoFill(DXO10D.HiddenFillProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoFill(DXO10D.HiddenFillProperties openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXD.NoFill>() != null;
     if (val == value) return true;
@@ -47,9 +47,9 @@ public static class HiddenFillPropertiesConverter
     return null;
   }
   
-  private static bool CmpSolidFill(DXO10D.HiddenFillProperties openXmlElement, DMD.SolidFill? value, DiffList? diffs, string? objName)
+  private static bool CmpSolidFill(DXO10D.HiddenFillProperties openXmlElement, DMD.SolidFill? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.SolidFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.SolidFill>(), value, diffs, objName);
+    return DMXD.SolidFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.SolidFill>(), value, diffs, objName, propName);
   }
   
   private static void SetSolidFill(DXO10D.HiddenFillProperties openXmlElement, DMD.SolidFill? value)
@@ -76,9 +76,9 @@ public static class HiddenFillPropertiesConverter
     return null;
   }
   
-  private static bool CmpGradientFill(DXO10D.HiddenFillProperties openXmlElement, DMD.GradientFill? value, DiffList? diffs, string? objName)
+  private static bool CmpGradientFill(DXO10D.HiddenFillProperties openXmlElement, DMD.GradientFill? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.GradientFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.GradientFill>(), value, diffs, objName);
+    return DMXD.GradientFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.GradientFill>(), value, diffs, objName, propName);
   }
   
   private static void SetGradientFill(DXO10D.HiddenFillProperties openXmlElement, DMD.GradientFill? value)
@@ -105,9 +105,9 @@ public static class HiddenFillPropertiesConverter
     return null;
   }
   
-  private static bool CmpBlipFill(DXO10D.HiddenFillProperties openXmlElement, DMD.BlipFill? value, DiffList? diffs, string? objName)
+  private static bool CmpBlipFill(DXO10D.HiddenFillProperties openXmlElement, DMD.BlipFill? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.BlipFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.BlipFill>(), value, diffs, objName);
+    return DMXD.BlipFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.BlipFill>(), value, diffs, objName, propName);
   }
   
   private static void SetBlipFill(DXO10D.HiddenFillProperties openXmlElement, DMD.BlipFill? value)
@@ -134,9 +134,9 @@ public static class HiddenFillPropertiesConverter
     return null;
   }
   
-  private static bool CmpPatternFill(DXO10D.HiddenFillProperties openXmlElement, DMD.PatternFill? value, DiffList? diffs, string? objName)
+  private static bool CmpPatternFill(DXO10D.HiddenFillProperties openXmlElement, DMD.PatternFill? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.PatternFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.PatternFill>(), value, diffs, objName);
+    return DMXD.PatternFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.PatternFill>(), value, diffs, objName, propName);
   }
   
   private static void SetPatternFill(DXO10D.HiddenFillProperties openXmlElement, DMD.PatternFill? value)
@@ -160,7 +160,7 @@ public static class HiddenFillPropertiesConverter
     return openXmlElement.GetFirstChild<DXD.GroupFill>() != null;
   }
   
-  private static bool CmpGroupFill(DXO10D.HiddenFillProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpGroupFill(DXO10D.HiddenFillProperties openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXD.GroupFill>() != null;
     if (val == value) return true;
@@ -199,27 +199,27 @@ public static class HiddenFillPropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO10D.HiddenFillProperties? openXmlElement, DMD.HiddenFillProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10D.HiddenFillProperties? openXmlElement, DMD.HiddenFillProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpNoFill(openXmlElement, value.NoFill, diffs, objName))
+      if (!CmpNoFill(openXmlElement, value.NoFill, diffs, objName, propName))
         ok = false;
-      if (!CmpSolidFill(openXmlElement, value.SolidFill, diffs, objName))
+      if (!CmpSolidFill(openXmlElement, value.SolidFill, diffs, objName, propName))
         ok = false;
-      if (!CmpGradientFill(openXmlElement, value.GradientFill, diffs, objName))
+      if (!CmpGradientFill(openXmlElement, value.GradientFill, diffs, objName, propName))
         ok = false;
-      if (!CmpBlipFill(openXmlElement, value.BlipFill, diffs, objName))
+      if (!CmpBlipFill(openXmlElement, value.BlipFill, diffs, objName, propName))
         ok = false;
-      if (!CmpPatternFill(openXmlElement, value.PatternFill, diffs, objName))
+      if (!CmpPatternFill(openXmlElement, value.PatternFill, diffs, objName, propName))
         ok = false;
-      if (!CmpGroupFill(openXmlElement, value.GroupFill, diffs, objName))
+      if (!CmpGroupFill(openXmlElement, value.GroupFill, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -13,7 +13,7 @@ public static class FlatTextConverter
     return openXmlElement?.Z?.Value;
   }
   
-  private static bool CmpZ(DXD.FlatText openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpZ(DXD.FlatText openXmlElement, Int64? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Z?.Value == value) return true;
     diffs?.Add(objName, "Z", openXmlElement?.Z?.Value, value);
@@ -36,17 +36,17 @@ public static class FlatTextConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.FlatText? openXmlElement, DMD.FlatText? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.FlatText? openXmlElement, DMD.FlatText? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpZ(openXmlElement, value.Z, diffs, objName))
+      if (!CmpZ(openXmlElement, value.Z, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

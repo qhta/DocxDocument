@@ -16,9 +16,9 @@ public static class DataModelRootConverter
     return null;
   }
   
-  private static bool CmpPointList(DXDD.DataModelRoot openXmlElement, DMDD.PointList? value, DiffList? diffs, string? objName)
+  private static bool CmpPointList(DXDD.DataModelRoot openXmlElement, DMDD.PointList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDD.PointListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.PointList>(), value, diffs, objName);
+    return DMXDD.PointListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.PointList>(), value, diffs, objName, propName);
   }
   
   private static void SetPointList(DXDD.DataModelRoot openXmlElement, DMDD.PointList? value)
@@ -45,9 +45,9 @@ public static class DataModelRootConverter
     return null;
   }
   
-  private static bool CmpConnectionList(DXDD.DataModelRoot openXmlElement, DMDD.ConnectionList? value, DiffList? diffs, string? objName)
+  private static bool CmpConnectionList(DXDD.DataModelRoot openXmlElement, DMDD.ConnectionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDD.ConnectionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.ConnectionList>(), value, diffs, objName);
+    return DMXDD.ConnectionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.ConnectionList>(), value, diffs, objName, propName);
   }
   
   private static void SetConnectionList(DXDD.DataModelRoot openXmlElement, DMDD.ConnectionList? value)
@@ -74,9 +74,9 @@ public static class DataModelRootConverter
     return null;
   }
   
-  private static bool CmpBackground(DXDD.DataModelRoot openXmlElement, DMDD.Background? value, DiffList? diffs, string? objName)
+  private static bool CmpBackground(DXDD.DataModelRoot openXmlElement, DMDD.Background? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDD.BackgroundConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.Background>(), value, diffs, objName);
+    return DMXDD.BackgroundConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.Background>(), value, diffs, objName, propName);
   }
   
   private static void SetBackground(DXDD.DataModelRoot openXmlElement, DMDD.Background? value)
@@ -103,9 +103,9 @@ public static class DataModelRootConverter
     return null;
   }
   
-  private static bool CmpWhole(DXDD.DataModelRoot openXmlElement, DMDD.Whole? value, DiffList? diffs, string? objName)
+  private static bool CmpWhole(DXDD.DataModelRoot openXmlElement, DMDD.Whole? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDD.WholeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.Whole>(), value, diffs, objName);
+    return DMXDD.WholeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.Whole>(), value, diffs, objName, propName);
   }
   
   private static void SetWhole(DXDD.DataModelRoot openXmlElement, DMDD.Whole? value)
@@ -132,9 +132,9 @@ public static class DataModelRootConverter
     return null;
   }
   
-  private static bool CmpDataModelExtensionList(DXDD.DataModelRoot openXmlElement, DMDD.DataModelExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpDataModelExtensionList(DXDD.DataModelRoot openXmlElement, DMDD.DataModelExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDD.DataModelExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.DataModelExtensionList>(), value, diffs, objName);
+    return DMXDD.DataModelExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.DataModelExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetDataModelExtensionList(DXDD.DataModelRoot openXmlElement, DMDD.DataModelExtensionList? value)
@@ -165,25 +165,25 @@ public static class DataModelRootConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDD.DataModelRoot? openXmlElement, DMDD.DataModelRoot? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDD.DataModelRoot? openXmlElement, DMDD.DataModelRoot? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpPointList(openXmlElement, value.PointList, diffs, objName))
+      if (!CmpPointList(openXmlElement, value.PointList, diffs, objName, propName))
         ok = false;
-      if (!CmpConnectionList(openXmlElement, value.ConnectionList, diffs, objName))
+      if (!CmpConnectionList(openXmlElement, value.ConnectionList, diffs, objName, propName))
         ok = false;
-      if (!CmpBackground(openXmlElement, value.Background, diffs, objName))
+      if (!CmpBackground(openXmlElement, value.Background, diffs, objName, propName))
         ok = false;
-      if (!CmpWhole(openXmlElement, value.Whole, diffs, objName))
+      if (!CmpWhole(openXmlElement, value.Whole, diffs, objName, propName))
         ok = false;
-      if (!CmpDataModelExtensionList(openXmlElement, value.DataModelExtensionList, diffs, objName))
+      if (!CmpDataModelExtensionList(openXmlElement, value.DataModelExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

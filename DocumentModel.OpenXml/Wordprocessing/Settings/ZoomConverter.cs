@@ -13,9 +13,9 @@ public static class ZoomConverter
     return EnumValueConverter.GetValue<DXW.PresetZoomValues, DMW.PresetZoomKind>(openXmlElement?.Val?.Value);
   }
   
-  private static bool CmpVal(DXW.Zoom openXmlElement, DMW.PresetZoomKind? value, DiffList? diffs, string? objName)
+  private static bool CmpVal(DXW.Zoom openXmlElement, DMW.PresetZoomKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.PresetZoomValues, DMW.PresetZoomKind>(openXmlElement?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.PresetZoomValues, DMW.PresetZoomKind>(openXmlElement?.Val?.Value, value, diffs, objName, propName);
   }
   
   private static void SetVal(DXW.Zoom openXmlElement, DMW.PresetZoomKind? value)
@@ -38,7 +38,7 @@ public static class ZoomConverter
     return null;
   }
   
-  private static bool CmpPercent(DXW.Zoom openXmlElement, int? value, DiffList? diffs, string? objName)
+  private static bool CmpPercent(DXW.Zoom openXmlElement, int? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var valStr = (value != null) ? (value.ToString() + "%") : null;
     if (openXmlElement?.Percent?.Value == valStr) return true;
@@ -66,19 +66,19 @@ public static class ZoomConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.Zoom? openXmlElement, DMW.Zoom? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.Zoom? openXmlElement, DMW.Zoom? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpVal(openXmlElement, value.Kind, diffs, objName))
+      if (!CmpVal(openXmlElement, value.Kind, diffs, objName, propName))
         ok = false;
-      if (!CmpPercent(openXmlElement, value.Percent, diffs, objName))
+      if (!CmpPercent(openXmlElement, value.Percent, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

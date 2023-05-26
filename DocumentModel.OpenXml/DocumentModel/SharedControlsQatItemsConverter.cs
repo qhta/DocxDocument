@@ -13,9 +13,9 @@ public static class SharedControlsQatItemsConverter
     return null;
   }
   
-  private static bool CmpControlCloneQat(DXO10CUI.SharedControlsQatItems openXmlElement, DM.ControlCloneQat? value, DiffList? diffs, string? objName)
+  private static bool CmpControlCloneQat(DXO10CUI.SharedControlsQatItems openXmlElement, DM.ControlCloneQat? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMX.ControlCloneQatConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.ControlCloneQat>(), value, diffs, objName);
+    return DMX.ControlCloneQatConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.ControlCloneQat>(), value, diffs, objName, propName);
   }
   
   private static void SetControlCloneQat(DXO10CUI.SharedControlsQatItems openXmlElement, DM.ControlCloneQat? value)
@@ -39,9 +39,9 @@ public static class SharedControlsQatItemsConverter
     return null;
   }
   
-  private static bool CmpButtonRegular(DXO10CUI.SharedControlsQatItems openXmlElement, DM.ButtonRegular? value, DiffList? diffs, string? objName)
+  private static bool CmpButtonRegular(DXO10CUI.SharedControlsQatItems openXmlElement, DM.ButtonRegular? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMX.ButtonRegularConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.ButtonRegular>(), value, diffs, objName);
+    return DMX.ButtonRegularConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.ButtonRegular>(), value, diffs, objName, propName);
   }
   
   private static void SetButtonRegular(DXO10CUI.SharedControlsQatItems openXmlElement, DM.ButtonRegular? value)
@@ -65,9 +65,9 @@ public static class SharedControlsQatItemsConverter
     return null;
   }
   
-  private static bool CmpSeparator(DXO10CUI.SharedControlsQatItems openXmlElement, DM.Separator? value, DiffList? diffs, string? objName)
+  private static bool CmpSeparator(DXO10CUI.SharedControlsQatItems openXmlElement, DM.Separator? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMX.SeparatorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.Separator>(), value, diffs, objName);
+    return DMX.SeparatorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.Separator>(), value, diffs, objName, propName);
   }
   
   private static void SetSeparator(DXO10CUI.SharedControlsQatItems openXmlElement, DM.Separator? value)
@@ -96,21 +96,21 @@ public static class SharedControlsQatItemsConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO10CUI.SharedControlsQatItems? openXmlElement, DM.SharedControlsQatItems? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10CUI.SharedControlsQatItems? openXmlElement, DM.SharedControlsQatItems? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpControlCloneQat(openXmlElement, value.ControlCloneQat, diffs, objName))
+      if (!CmpControlCloneQat(openXmlElement, value.ControlCloneQat, diffs, objName, propName))
         ok = false;
-      if (!CmpButtonRegular(openXmlElement, value.ButtonRegular, diffs, objName))
+      if (!CmpButtonRegular(openXmlElement, value.ButtonRegular, diffs, objName, propName))
         ok = false;
-      if (!CmpSeparator(openXmlElement, value.Separator, diffs, objName))
+      if (!CmpSeparator(openXmlElement, value.Separator, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

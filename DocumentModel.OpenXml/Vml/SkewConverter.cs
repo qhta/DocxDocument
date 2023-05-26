@@ -13,9 +13,9 @@ public static class SkewConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMV.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value);
   }
   
-  private static bool CmpExtension(DXVO.Skew openXmlElement, DMV.ExtensionHandlingBehaviorKind? value, DiffList? diffs, string? objName)
+  private static bool CmpExtension(DXVO.Skew openXmlElement, DMV.ExtensionHandlingBehaviorKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMV.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMV.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value, value, diffs, objName, propName);
   }
   
   private static void SetExtension(DXVO.Skew openXmlElement, DMV.ExtensionHandlingBehaviorKind? value)
@@ -31,7 +31,7 @@ public static class SkewConverter
     return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
-  private static bool CmpId(DXVO.Skew openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpId(DXVO.Skew openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
@@ -49,7 +49,7 @@ public static class SkewConverter
     return openXmlElement?.On?.Value;
   }
   
-  private static bool CmpOn(DXVO.Skew openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpOn(DXVO.Skew openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.On?.Value == value) return true;
     diffs?.Add(objName, "On", openXmlElement?.On?.Value, value);
@@ -72,7 +72,7 @@ public static class SkewConverter
     return StringValueConverter.GetValue(openXmlElement?.Offset);
   }
   
-  private static bool CmpOffset(DXVO.Skew openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpOffset(DXVO.Skew openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Offset, value, diffs, objName, "Offset");
   }
@@ -90,7 +90,7 @@ public static class SkewConverter
     return StringValueConverter.GetValue(openXmlElement?.Origin);
   }
   
-  private static bool CmpOrigin(DXVO.Skew openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpOrigin(DXVO.Skew openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Origin, value, diffs, objName, "Origin");
   }
@@ -108,7 +108,7 @@ public static class SkewConverter
     return StringValueConverter.GetValue(openXmlElement?.Matrix);
   }
   
-  private static bool CmpMatrix(DXVO.Skew openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpMatrix(DXVO.Skew openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Matrix, value, diffs, objName, "Matrix");
   }
@@ -134,27 +134,27 @@ public static class SkewConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXVO.Skew? openXmlElement, DMV.Skew? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXVO.Skew? openXmlElement, DMV.Skew? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpExtension(openXmlElement, value.Extension, diffs, objName))
+      if (!CmpExtension(openXmlElement, value.Extension, diffs, objName, propName))
         ok = false;
-      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+      if (!CmpId(openXmlElement, value.Id, diffs, objName, propName))
         ok = false;
-      if (!CmpOn(openXmlElement, value.On, diffs, objName))
+      if (!CmpOn(openXmlElement, value.On, diffs, objName, propName))
         ok = false;
-      if (!CmpOffset(openXmlElement, value.Offset, diffs, objName))
+      if (!CmpOffset(openXmlElement, value.Offset, diffs, objName, propName))
         ok = false;
-      if (!CmpOrigin(openXmlElement, value.Origin, diffs, objName))
+      if (!CmpOrigin(openXmlElement, value.Origin, diffs, objName, propName))
         ok = false;
-      if (!CmpMatrix(openXmlElement, value.Matrix, diffs, objName))
+      if (!CmpMatrix(openXmlElement, value.Matrix, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

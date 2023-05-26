@@ -13,7 +13,7 @@ public static class View3DConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDC.RotateX>()?.Val);
   }
   
-  private static bool CmpRotateX(DXDC.View3D openXmlElement, SByte? value, DiffList? diffs, string? objName)
+  private static bool CmpRotateX(DXDC.View3D openXmlElement, SByte? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDC.RotateX>()?.Val, value, diffs, objName, "RotateX");
   }
@@ -31,7 +31,7 @@ public static class View3DConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDC.HeightPercent>()?.Val);
   }
   
-  private static bool CmpHeightPercent(DXDC.View3D openXmlElement, UInt16? value, DiffList? diffs, string? objName)
+  private static bool CmpHeightPercent(DXDC.View3D openXmlElement, UInt16? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDC.HeightPercent>()?.Val, value, diffs, objName, "HeightPercent");
   }
@@ -49,7 +49,7 @@ public static class View3DConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDC.RotateY>()?.Val);
   }
   
-  private static bool CmpRotateY(DXDC.View3D openXmlElement, UInt16? value, DiffList? diffs, string? objName)
+  private static bool CmpRotateY(DXDC.View3D openXmlElement, UInt16? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDC.RotateY>()?.Val, value, diffs, objName, "RotateY");
   }
@@ -67,7 +67,7 @@ public static class View3DConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDC.DepthPercent>()?.Val);
   }
   
-  private static bool CmpDepthPercent(DXDC.View3D openXmlElement, UInt16? value, DiffList? diffs, string? objName)
+  private static bool CmpDepthPercent(DXDC.View3D openXmlElement, UInt16? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDC.DepthPercent>()?.Val, value, diffs, objName, "DepthPercent");
   }
@@ -85,7 +85,7 @@ public static class View3DConverter
     return openXmlElement.GetFirstChild<DXDC.RightAngleAxes>() != null;
   }
   
-  private static bool CmpRightAngleAxes(DXDC.View3D openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpRightAngleAxes(DXDC.View3D openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXDC.RightAngleAxes>() != null;
     if (val == value) return true;
@@ -116,7 +116,7 @@ public static class View3DConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDC.Perspective>()?.Val);
   }
   
-  private static bool CmpPerspective(DXDC.View3D openXmlElement, Byte? value, DiffList? diffs, string? objName)
+  private static bool CmpPerspective(DXDC.View3D openXmlElement, Byte? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDC.Perspective>()?.Val, value, diffs, objName, "Perspective");
   }
@@ -137,9 +137,9 @@ public static class View3DConverter
     return null;
   }
   
-  private static bool CmpExtensionList(DXDC.View3D openXmlElement, DMDC.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXDC.View3D openXmlElement, DMDC.ExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ExtensionList>(), value, diffs, objName);
+    return DMXDC.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetExtensionList(DXDC.View3D openXmlElement, DMDC.ExtensionList? value)
@@ -172,29 +172,29 @@ public static class View3DConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDC.View3D? openXmlElement, DMDC.View3D? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.View3D? openXmlElement, DMDC.View3D? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpRotateX(openXmlElement, value.RotateX, diffs, objName))
+      if (!CmpRotateX(openXmlElement, value.RotateX, diffs, objName, propName))
         ok = false;
-      if (!CmpHeightPercent(openXmlElement, value.HeightPercent, diffs, objName))
+      if (!CmpHeightPercent(openXmlElement, value.HeightPercent, diffs, objName, propName))
         ok = false;
-      if (!CmpRotateY(openXmlElement, value.RotateY, diffs, objName))
+      if (!CmpRotateY(openXmlElement, value.RotateY, diffs, objName, propName))
         ok = false;
-      if (!CmpDepthPercent(openXmlElement, value.DepthPercent, diffs, objName))
+      if (!CmpDepthPercent(openXmlElement, value.DepthPercent, diffs, objName, propName))
         ok = false;
-      if (!CmpRightAngleAxes(openXmlElement, value.RightAngleAxes, diffs, objName))
+      if (!CmpRightAngleAxes(openXmlElement, value.RightAngleAxes, diffs, objName, propName))
         ok = false;
-      if (!CmpPerspective(openXmlElement, value.Perspective, diffs, objName))
+      if (!CmpPerspective(openXmlElement, value.Perspective, diffs, objName, propName))
         ok = false;
-      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

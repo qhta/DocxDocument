@@ -13,9 +13,9 @@ public static class AxisUnitsConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.AxisUnit, DMDCDs.AxisUnit>(openXmlElement?.Unit?.Value);
   }
   
-  private static bool CmpUnit(DXO16DCD.AxisUnits openXmlElement, DMDCDs.AxisUnit? value, DiffList? diffs, string? objName)
+  private static bool CmpUnit(DXO16DCD.AxisUnits openXmlElement, DMDCDs.AxisUnit? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.AxisUnit, DMDCDs.AxisUnit>(openXmlElement?.Unit?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.AxisUnit, DMDCDs.AxisUnit>(openXmlElement?.Unit?.Value, value, diffs, objName, propName);
   }
   
   private static void SetUnit(DXO16DCD.AxisUnits openXmlElement, DMDCDs.AxisUnit? value)
@@ -34,9 +34,9 @@ public static class AxisUnitsConverter
     return null;
   }
   
-  private static bool CmpAxisUnitsLabel(DXO16DCD.AxisUnits openXmlElement, DMDCDs.AxisUnitsLabel? value, DiffList? diffs, string? objName)
+  private static bool CmpAxisUnitsLabel(DXO16DCD.AxisUnits openXmlElement, DMDCDs.AxisUnitsLabel? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCDs.AxisUnitsLabelConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.AxisUnitsLabel>(), value, diffs, objName);
+    return DMXDCDs.AxisUnitsLabelConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.AxisUnitsLabel>(), value, diffs, objName, propName);
   }
   
   private static void SetAxisUnitsLabel(DXO16DCD.AxisUnits openXmlElement, DMDCDs.AxisUnitsLabel? value)
@@ -63,9 +63,9 @@ public static class AxisUnitsConverter
     return null;
   }
   
-  private static bool CmpExtensionList(DXO16DCD.AxisUnits openXmlElement, DMDCDs.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXO16DCD.AxisUnits openXmlElement, DMDCDs.ExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCDs.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.ExtensionList>(), value, diffs, objName);
+    return DMXDCDs.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.ExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetExtensionList(DXO16DCD.AxisUnits openXmlElement, DMDCDs.ExtensionList? value)
@@ -94,21 +94,21 @@ public static class AxisUnitsConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO16DCD.AxisUnits? openXmlElement, DMDCDs.AxisUnits? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16DCD.AxisUnits? openXmlElement, DMDCDs.AxisUnits? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpUnit(openXmlElement, value.Unit, diffs, objName))
+      if (!CmpUnit(openXmlElement, value.Unit, diffs, objName, propName))
         ok = false;
-      if (!CmpAxisUnitsLabel(openXmlElement, value.AxisUnitsLabel, diffs, objName))
+      if (!CmpAxisUnitsLabel(openXmlElement, value.AxisUnitsLabel, diffs, objName, propName))
         ok = false;
-      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

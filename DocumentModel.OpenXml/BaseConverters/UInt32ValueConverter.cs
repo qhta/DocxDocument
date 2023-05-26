@@ -7,10 +7,10 @@ public static class UInt32ValueConverter
     return element.Val?.Value;
   }
 
-  public static bool CmpValue(DXDC.UnsignedIntegerType element, UInt32? value, DiffList? diffs, string? objName)
+  public static bool CmpValue(DXDC.UnsignedIntegerType element, UInt32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (element.Val?.Value == value) return true;
-    diffs?.Add(objName, element.GetType().ToString(), element.Val?.Value, value);
+    diffs?.Add(objName, propName ?? element.GetType().ToString(), element.Val?.Value, value);
     return false;
   }
 
@@ -19,10 +19,10 @@ public static class UInt32ValueConverter
     return element.Val?.Value;
   }
 
-  public static bool CmpValue(DXO16DC.UnsignedIntegerType element, UInt32? value, DiffList? diffs, string? objName)
+  public static bool CmpValue(DXO16DC.UnsignedIntegerType element, UInt32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (element.Val?.Value == value) return true;
-    diffs?.Add(objName, element.GetType().ToString(), element.Val?.Value, value);
+    diffs?.Add(objName, propName ?? element.GetType().ToString(), element.Val?.Value, value);
     return false;
   }
 
@@ -31,10 +31,10 @@ public static class UInt32ValueConverter
     return element.Val?.Value;
   }
 
-  public static bool CmpValue(DXO16DCD.UnsignedIntegerType element, UInt32? value, DiffList? diffs, string? objName)
+  public static bool CmpValue(DXO16DCD.UnsignedIntegerType element, UInt32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (element.Val?.Value == value) return true;
-    diffs?.Add(objName, element.GetType().ToString(), element.Val?.Value, value);
+    diffs?.Add(objName, propName ?? element.GetType().ToString(), element.Val?.Value, value);
     return false;
   }
 
@@ -45,11 +45,11 @@ public static class UInt32ValueConverter
     return null;
   }
 
-  public static bool CmpValue(DXW.LongHexNumberType element, UInt32? value, DiffList? diffs, string? objName)
+  public static bool CmpValue(DXW.LongHexNumberType element, UInt32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (element.Val?.Value == null && value == null) return true;
     if (element.Val?.Value !=null && UInt32.Parse(element.Val.Value, NumberStyles.HexNumber) == value) return true;
-    diffs?.Add(objName, element.GetType().ToString(), element.Val?.Value, value);
+    diffs?.Add(objName, propName ?? element.GetType().ToString(), element.Val?.Value, value);
     return false;
   }
 

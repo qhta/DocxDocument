@@ -13,7 +13,7 @@ public static class ArtisticCutoutConverter
     return openXmlElement?.Transparancy?.Value;
   }
   
-  private static bool CmpTransparancy(DXO10D.ArtisticCutout openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpTransparancy(DXO10D.ArtisticCutout openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Transparancy?.Value == value) return true;
     diffs?.Add(objName, "Transparancy", openXmlElement?.Transparancy?.Value, value);
@@ -33,7 +33,7 @@ public static class ArtisticCutoutConverter
     return openXmlElement?.NumberOfShades?.Value;
   }
   
-  private static bool CmpNumberOfShades(DXO10D.ArtisticCutout openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpNumberOfShades(DXO10D.ArtisticCutout openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.NumberOfShades?.Value == value) return true;
     diffs?.Add(objName, "NumberOfShades", openXmlElement?.NumberOfShades?.Value, value);
@@ -57,19 +57,19 @@ public static class ArtisticCutoutConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO10D.ArtisticCutout? openXmlElement, DMD.ArtisticCutout? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10D.ArtisticCutout? openXmlElement, DMD.ArtisticCutout? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpTransparancy(openXmlElement, value.Transparancy, diffs, objName))
+      if (!CmpTransparancy(openXmlElement, value.Transparancy, diffs, objName, propName))
         ok = false;
-      if (!CmpNumberOfShades(openXmlElement, value.NumberOfShades, diffs, objName))
+      if (!CmpNumberOfShades(openXmlElement, value.NumberOfShades, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

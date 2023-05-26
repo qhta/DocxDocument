@@ -11,9 +11,9 @@ public static class FootnoteConverter
     return FootnoteEndnoteTypeConverter.CreateModelElement<DMW.Footnote>(openXmlElement);
   }
 
-  public static bool CompareModelElement(DXW.Footnote? openXmlElement, DMW.Footnote? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.Footnote? openXmlElement, DMW.Footnote? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return FootnoteEndnoteTypeConverter.CompareModelElement(openXmlElement, model, diffs, objName);
+    return FootnoteEndnoteTypeConverter.CompareModelElement(openXmlElement, model, diffs, objName, propName);
   }
 
   public static DXW.Footnote CreateOpenXmlElement(DMW.Footnote model)

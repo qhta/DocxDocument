@@ -13,7 +13,7 @@ public static class ArcToConverter
     return StringValueConverter.GetValue(openXmlElement?.WidthRadius);
   }
   
-  private static bool CmpWidthRadius(DXD.ArcTo openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpWidthRadius(DXD.ArcTo openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.WidthRadius, value, diffs, objName, "WidthRadius");
   }
@@ -31,7 +31,7 @@ public static class ArcToConverter
     return StringValueConverter.GetValue(openXmlElement?.HeightRadius);
   }
   
-  private static bool CmpHeightRadius(DXD.ArcTo openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpHeightRadius(DXD.ArcTo openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.HeightRadius, value, diffs, objName, "HeightRadius");
   }
@@ -49,7 +49,7 @@ public static class ArcToConverter
     return StringValueConverter.GetValue(openXmlElement?.StartAngle);
   }
   
-  private static bool CmpStartAngle(DXD.ArcTo openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpStartAngle(DXD.ArcTo openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.StartAngle, value, diffs, objName, "StartAngle");
   }
@@ -67,7 +67,7 @@ public static class ArcToConverter
     return StringValueConverter.GetValue(openXmlElement?.SwingAngle);
   }
   
-  private static bool CmpSwingAngle(DXD.ArcTo openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpSwingAngle(DXD.ArcTo openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.SwingAngle, value, diffs, objName, "SwingAngle");
   }
@@ -91,23 +91,23 @@ public static class ArcToConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.ArcTo? openXmlElement, DMD.ArcTo? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.ArcTo? openXmlElement, DMD.ArcTo? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpWidthRadius(openXmlElement, value.WidthRadius, diffs, objName))
+      if (!CmpWidthRadius(openXmlElement, value.WidthRadius, diffs, objName, propName))
         ok = false;
-      if (!CmpHeightRadius(openXmlElement, value.HeightRadius, diffs, objName))
+      if (!CmpHeightRadius(openXmlElement, value.HeightRadius, diffs, objName, propName))
         ok = false;
-      if (!CmpStartAngle(openXmlElement, value.StartAngle, diffs, objName))
+      if (!CmpStartAngle(openXmlElement, value.StartAngle, diffs, objName, propName))
         ok = false;
-      if (!CmpSwingAngle(openXmlElement, value.SwingAngle, diffs, objName))
+      if (!CmpSwingAngle(openXmlElement, value.SwingAngle, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

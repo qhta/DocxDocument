@@ -16,9 +16,9 @@ public static class Layout3Converter
     return null;
   }
   
-  private static bool CmpManualLayout(DXO13DC.Layout openXmlElement, DMDC.ManualLayout? value, DiffList? diffs, string? objName)
+  private static bool CmpManualLayout(DXO13DC.Layout openXmlElement, DMDC.ManualLayout? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.ManualLayoutConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ManualLayout>(), value, diffs, objName);
+    return DMXDC.ManualLayoutConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ManualLayout>(), value, diffs, objName, propName);
   }
   
   private static void SetManualLayout(DXO13DC.Layout openXmlElement, DMDC.ManualLayout? value)
@@ -45,9 +45,9 @@ public static class Layout3Converter
     return null;
   }
   
-  private static bool CmpExtensionList(DXO13DC.Layout openXmlElement, DMDC.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXO13DC.Layout openXmlElement, DMDC.ExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ExtensionList>(), value, diffs, objName);
+    return DMXDC.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetExtensionList(DXO13DC.Layout openXmlElement, DMDC.ExtensionList? value)
@@ -75,19 +75,19 @@ public static class Layout3Converter
     return null;
   }
   
-  public static bool CompareModelElement(DXO13DC.Layout? openXmlElement, DMDC.Layout3? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO13DC.Layout? openXmlElement, DMDC.Layout3? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpManualLayout(openXmlElement, value.ManualLayout, diffs, objName))
+      if (!CmpManualLayout(openXmlElement, value.ManualLayout, diffs, objName, propName))
         ok = false;
-      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

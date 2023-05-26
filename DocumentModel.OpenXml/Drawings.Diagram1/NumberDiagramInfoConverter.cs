@@ -13,7 +13,7 @@ public static class NumberDiagramInfoConverter
     return openXmlElement?.Lvl?.Value;
   }
   
-  private static bool CmpLvl(DXO19DD11.NumberDiagramInfo openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpLvl(DXO19DD11.NumberDiagramInfo openXmlElement, UInt32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Lvl?.Value == value) return true;
     diffs?.Add(objName, "Lvl", openXmlElement?.Lvl?.Value, value);
@@ -33,9 +33,9 @@ public static class NumberDiagramInfoConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2019.Drawing.Diagram11.STorageType, DMDD1.STorageType>(openXmlElement?.PtType?.Value);
   }
   
-  private static bool CmpPtType(DXO19DD11.NumberDiagramInfo openXmlElement, DMDD1.STorageType? value, DiffList? diffs, string? objName)
+  private static bool CmpPtType(DXO19DD11.NumberDiagramInfo openXmlElement, DMDD1.STorageType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2019.Drawing.Diagram11.STorageType, DMDD1.STorageType>(openXmlElement?.PtType?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2019.Drawing.Diagram11.STorageType, DMDD1.STorageType>(openXmlElement?.PtType?.Value, value, diffs, objName, propName);
   }
   
   private static void SetPtType(DXO19DD11.NumberDiagramInfo openXmlElement, DMDD1.STorageType? value)
@@ -54,9 +54,9 @@ public static class NumberDiagramInfoConverter
     return null;
   }
   
-  private static bool CmpDiagramAutoBullet(DXO19DD11.NumberDiagramInfo openXmlElement, DMDD1.DiagramAutoBullet? value, DiffList? diffs, string? objName)
+  private static bool CmpDiagramAutoBullet(DXO19DD11.NumberDiagramInfo openXmlElement, DMDD1.DiagramAutoBullet? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDD1.DiagramAutoBulletConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO19DD11.DiagramAutoBullet>(), value, diffs, objName);
+    return DMXDD1.DiagramAutoBulletConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO19DD11.DiagramAutoBullet>(), value, diffs, objName, propName);
   }
   
   private static void SetDiagramAutoBullet(DXO19DD11.NumberDiagramInfo openXmlElement, DMDD1.DiagramAutoBullet? value)
@@ -85,21 +85,21 @@ public static class NumberDiagramInfoConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO19DD11.NumberDiagramInfo? openXmlElement, DMDD1.NumberDiagramInfo? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO19DD11.NumberDiagramInfo? openXmlElement, DMDD1.NumberDiagramInfo? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpLvl(openXmlElement, value.Lvl, diffs, objName))
+      if (!CmpLvl(openXmlElement, value.Lvl, diffs, objName, propName))
         ok = false;
-      if (!CmpPtType(openXmlElement, value.PtType, diffs, objName))
+      if (!CmpPtType(openXmlElement, value.PtType, diffs, objName, propName))
         ok = false;
-      if (!CmpDiagramAutoBullet(openXmlElement, value.DiagramAutoBullet, diffs, objName))
+      if (!CmpDiagramAutoBullet(openXmlElement, value.DiagramAutoBullet, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

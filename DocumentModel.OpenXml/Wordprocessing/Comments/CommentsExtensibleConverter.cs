@@ -18,7 +18,7 @@ public static class CommentsExtensibleConverter
     return collection;
   }
 
-  public static bool CmpCommentsExtensibles(DXO21WCE.CommentsExtensible? openXmlElement, DMW.CommentsExtensible? collection, DiffList? diffs, string? objName)
+  public static bool CmpCommentsExtensibles(DXO21WCE.CommentsExtensible? openXmlElement, DMW.CommentsExtensible? collection, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     int origElementsCount = 0;
     if (openXmlElement != null)
@@ -30,7 +30,7 @@ public static class CommentsExtensibleConverter
       {
         if (origElementsCount != modelElementsCount)
         {
-          diffs?.Add(objName, openXmlElement.GetType().Name + ".Count", origElementsCount, modelElementsCount);
+          diffs?.Add(objName, propName ?? openXmlElement.GetType().Name + ".Count", origElementsCount, modelElementsCount);
           return false;
         }
         var ok = true;
@@ -39,14 +39,14 @@ public static class CommentsExtensibleConverter
         {
           modelEnumerator.MoveNext();
           var modelItem = modelEnumerator.Current;
-          if (!DMXW.CommentExtensibleConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+          if (!DMXW.CommentExtensibleConverter.CompareModelElement(origItem, modelItem, diffs, objName, propName))
             ok = false;
         }
         return ok;
       }
     }
     if (origElementsCount == 0 && collection == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, collection);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, collection);
     return false;
   }
 
@@ -81,9 +81,9 @@ public static class CommentsExtensibleConverter
     return null;
   }
 
-  public static bool CmpExtensionList(DXO21WCE.CommentsExtensible openXmlElement, DMW.ExtensionList? value, DiffList? diffs, string? objName)
+  public static bool CmpExtensionList(DXO21WCE.CommentsExtensible openXmlElement, DMW.ExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO21WCE.ExtensionList>(), value, diffs, objName);
+    return DMXW.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO21WCE.ExtensionList>(), value, diffs, objName, propName);
   }
 
   public static void SetExtensionList(DXO21WCE.CommentsExtensible openXmlElement, DMW.ExtensionList? value)

@@ -13,7 +13,7 @@ public static class ParagraphConverter
     return null;
   }
 
-  private static bool CmpRsidParagraphMarkRevision(DXW.Paragraph openXmlElement, DM.HexInt? model, DiffList? diffs, string? objName)
+  private static bool CmpRsidParagraphMarkRevision(DXW.Paragraph openXmlElement, DM.HexInt? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return HexIntConverter.CmpValue(openXmlElement?.RsidParagraphMarkRevision?.Value, model, diffs, objName, "RsidParagraphMarkRevision");
   }
@@ -35,7 +35,7 @@ public static class ParagraphConverter
     return null;
   }
 
-  private static bool CmpRsidParagraphAddition(DXW.Paragraph openXmlElement, DM.HexInt? model, DiffList? diffs, string? objName)
+  private static bool CmpRsidParagraphAddition(DXW.Paragraph openXmlElement, DM.HexInt? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return HexIntConverter.CmpValue(openXmlElement?.RsidParagraphAddition?.Value, model, diffs, objName, "RsidParagraphAddition");
   }
@@ -57,7 +57,7 @@ public static class ParagraphConverter
     return null;
   }
 
-  private static bool CmpRsidParagraphDeletion(DXW.Paragraph openXmlElement, DM.HexInt? model, DiffList? diffs, string? objName)
+  private static bool CmpRsidParagraphDeletion(DXW.Paragraph openXmlElement, DM.HexInt? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return HexIntConverter.CmpValue(openXmlElement?.RsidParagraphDeletion?.Value, model, diffs, objName, "RsidParagraphDeletion");
   }
@@ -79,7 +79,7 @@ public static class ParagraphConverter
     return null;
   }
 
-  private static bool CmpRsidParagraphProperties(DXW.Paragraph openXmlElement, DM.HexInt? model, DiffList? diffs, string? objName)
+  private static bool CmpRsidParagraphProperties(DXW.Paragraph openXmlElement, DM.HexInt? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return HexIntConverter.CmpValue(openXmlElement?.RsidParagraphProperties?.Value, model, diffs, objName, "RsidParagraphProperties");
   }
@@ -101,7 +101,7 @@ public static class ParagraphConverter
     return null;
   }
 
-  private static bool CmpRsidRunAdditionDefault(DXW.Paragraph openXmlElement, DM.HexInt? model, DiffList? diffs, string? objName)
+  private static bool CmpRsidRunAdditionDefault(DXW.Paragraph openXmlElement, DM.HexInt? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return HexIntConverter.CmpValue(openXmlElement?.RsidRunAdditionDefault?.Value, model, diffs, objName, "RsidRunAdditionDefault");
   }
@@ -123,7 +123,7 @@ public static class ParagraphConverter
     return null;
   }
 
-  private static bool CmpParagraphId(DXW.Paragraph openXmlElement, DM.HexInt? model, DiffList? diffs, string? objName)
+  private static bool CmpParagraphId(DXW.Paragraph openXmlElement, DM.HexInt? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return HexIntConverter.CmpValue(openXmlElement?.ParagraphId?.Value, model, diffs, objName, "ParagraphId");
   }
@@ -145,7 +145,7 @@ public static class ParagraphConverter
     return null;
   }
 
-  private static bool CmpTextId(DXW.Paragraph openXmlElement, DM.HexInt? model, DiffList? diffs, string? objName)
+  private static bool CmpTextId(DXW.Paragraph openXmlElement, DM.HexInt? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return HexIntConverter.CmpValue(openXmlElement?.TextId?.Value, model, diffs, objName, "TextId");
   }
@@ -168,9 +168,9 @@ public static class ParagraphConverter
     return null;
   }
 
-  private static bool CmpParagraphProperties(DXW.Paragraph openXmlElement, DMW.ParagraphProperties? model, DiffList? diffs, string? objName)
+  private static bool CmpParagraphProperties(DXW.Paragraph openXmlElement, DMW.ParagraphProperties? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.ParagraphPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.ParagraphProperties>(), model, diffs, objName?.Concat2(".", openXmlElement?.GetType().Name));
+    return DMXW.ParagraphPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.ParagraphProperties>(), model, diffs, objName, propName);
   }
 
   private static void SetParagraphProperties(DXW.Paragraph openXmlElement, DMW.ParagraphProperties? model)
@@ -193,7 +193,7 @@ public static class ParagraphConverter
     return BooleanValueConverter.GetValue(openXmlElement?.NoSpellError);
   }
 
-  private static bool CmpNoSpellError(DXW.Paragraph openXmlElement, Boolean? model, DiffList? diffs, string? objName)
+  private static bool CmpNoSpellError(DXW.Paragraph openXmlElement, Boolean? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.NoSpellError, model, diffs, objName, "NoSpellError");
   }
@@ -227,37 +227,37 @@ public static class ParagraphConverter
     return null;
   }
 
-  public static bool CompareModelElement(DXW.Paragraph? openXmlElement, DMW.Paragraph? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.Paragraph? openXmlElement, DMW.Paragraph? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpRsidParagraphMarkRevision(openXmlElement, model.RsidParagraphMarkRevision, diffs, objName))
+      if (!CmpRsidParagraphMarkRevision(openXmlElement, model.RsidParagraphMarkRevision, diffs, objName, propName))
         ok = false;
-      if (!CmpRsidParagraphAddition(openXmlElement, model.RsidParagraphAddition, diffs, objName))
+      if (!CmpRsidParagraphAddition(openXmlElement, model.RsidParagraphAddition, diffs, objName, propName))
         ok = false;
-      if (!CmpRsidParagraphDeletion(openXmlElement, model.RsidParagraphDeletion, diffs, objName))
+      if (!CmpRsidParagraphDeletion(openXmlElement, model.RsidParagraphDeletion, diffs, objName, propName))
         ok = false;
-      if (!CmpRsidParagraphProperties(openXmlElement, model.RsidParagraphProperties, diffs, objName))
+      if (!CmpRsidParagraphProperties(openXmlElement, model.RsidParagraphProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpRsidRunAdditionDefault(openXmlElement, model.RsidRunAdditionDefault, diffs, objName))
+      if (!CmpRsidRunAdditionDefault(openXmlElement, model.RsidRunAdditionDefault, diffs, objName, propName))
         ok = false;
-      if (!CmpParagraphId(openXmlElement, model.ParagraphId, diffs, objName))
+      if (!CmpParagraphId(openXmlElement, model.ParagraphId, diffs, objName, propName))
         ok = false;
-      if (!CmpTextId(openXmlElement, model.TextId, diffs, objName))
+      if (!CmpTextId(openXmlElement, model.TextId, diffs, objName, propName))
         ok = false;
-      if (!CmpNoSpellError(openXmlElement, model.NoSpellError, diffs, objName))
+      if (!CmpNoSpellError(openXmlElement, model.NoSpellError, diffs, objName, propName))
         ok = false;
-      if (!CmpParagraphProperties(openXmlElement, model.ParagraphProperties, diffs, objName))
+      if (!CmpParagraphProperties(openXmlElement, model.ParagraphProperties, diffs, objName, propName))
         ok = false;
       if (!ElementCollectionConverter<DMW.IParagraphContent>.CompareOpenXmlElementCollection(
         openXmlElement.Where(item=>item is not DXW.ParagraphProperties), model,
-        ParagraphContentConverter.CompareParagraphContent, diffs, objName))
+        ParagraphContentConverter.CompareParagraphContent, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
 

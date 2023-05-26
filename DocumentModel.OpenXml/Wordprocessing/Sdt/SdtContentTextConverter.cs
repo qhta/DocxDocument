@@ -13,7 +13,7 @@ public static class SdtContentTextConverter
     return BooleanValueConverter.GetValue(openXmlElement?.MultiLine);
   }
   
-  private static bool CmpMultiLine(DXW.SdtContentText openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpMultiLine(DXW.SdtContentText openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.MultiLine, value, diffs, objName, "MultiLine");
   }
@@ -34,17 +34,17 @@ public static class SdtContentTextConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.SdtContentText? openXmlElement, DMW.SdtContentText? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.SdtContentText? openXmlElement, DMW.SdtContentText? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpMultiLine(openXmlElement, value.MultiLine, diffs, objName))
+      if (!CmpMultiLine(openXmlElement, value.MultiLine, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

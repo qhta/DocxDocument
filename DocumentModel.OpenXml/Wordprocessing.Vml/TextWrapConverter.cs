@@ -13,9 +13,9 @@ public static class TextWrapConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Wordprocessing.WrapValues, DMWV.WrapKind>(openXmlElement?.Type?.Value);
   }
   
-  private static bool CmpType(DXVW.TextWrap openXmlElement, DMWV.WrapKind? value, DiffList? diffs, string? objName)
+  private static bool CmpType(DXVW.TextWrap openXmlElement, DMWV.WrapKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Wordprocessing.WrapValues, DMWV.WrapKind>(openXmlElement?.Type?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Wordprocessing.WrapValues, DMWV.WrapKind>(openXmlElement?.Type?.Value, value, diffs, objName, propName);
   }
   
   private static void SetType(DXVW.TextWrap openXmlElement, DMWV.WrapKind? value)
@@ -31,9 +31,9 @@ public static class TextWrapConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Wordprocessing.WrapSideValues, DMWV.WrapSideKind>(openXmlElement?.Side?.Value);
   }
   
-  private static bool CmpSide(DXVW.TextWrap openXmlElement, DMWV.WrapSideKind? value, DiffList? diffs, string? objName)
+  private static bool CmpSide(DXVW.TextWrap openXmlElement, DMWV.WrapSideKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Wordprocessing.WrapSideValues, DMWV.WrapSideKind>(openXmlElement?.Side?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Wordprocessing.WrapSideValues, DMWV.WrapSideKind>(openXmlElement?.Side?.Value, value, diffs, objName, propName);
   }
   
   private static void SetSide(DXVW.TextWrap openXmlElement, DMWV.WrapSideKind? value)
@@ -49,9 +49,9 @@ public static class TextWrapConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Wordprocessing.HorizontalAnchorValues, DMWV.HorizontalAnchorKind>(openXmlElement?.AnchorX?.Value);
   }
   
-  private static bool CmpAnchorX(DXVW.TextWrap openXmlElement, DMWV.HorizontalAnchorKind? value, DiffList? diffs, string? objName)
+  private static bool CmpAnchorX(DXVW.TextWrap openXmlElement, DMWV.HorizontalAnchorKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Wordprocessing.HorizontalAnchorValues, DMWV.HorizontalAnchorKind>(openXmlElement?.AnchorX?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Wordprocessing.HorizontalAnchorValues, DMWV.HorizontalAnchorKind>(openXmlElement?.AnchorX?.Value, value, diffs, objName, propName);
   }
   
   private static void SetAnchorX(DXVW.TextWrap openXmlElement, DMWV.HorizontalAnchorKind? value)
@@ -67,9 +67,9 @@ public static class TextWrapConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Wordprocessing.VerticalAnchorValues, DMWV.VerticalAnchorKind>(openXmlElement?.AnchorY?.Value);
   }
   
-  private static bool CmpAnchorY(DXVW.TextWrap openXmlElement, DMWV.VerticalAnchorKind? value, DiffList? diffs, string? objName)
+  private static bool CmpAnchorY(DXVW.TextWrap openXmlElement, DMWV.VerticalAnchorKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Wordprocessing.VerticalAnchorValues, DMWV.VerticalAnchorKind>(openXmlElement?.AnchorY?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Wordprocessing.VerticalAnchorValues, DMWV.VerticalAnchorKind>(openXmlElement?.AnchorY?.Value, value, diffs, objName, propName);
   }
   
   private static void SetAnchorY(DXVW.TextWrap openXmlElement, DMWV.VerticalAnchorKind? value)
@@ -91,23 +91,23 @@ public static class TextWrapConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXVW.TextWrap? openXmlElement, DMWV.TextWrap? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXVW.TextWrap? openXmlElement, DMWV.TextWrap? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpType(openXmlElement, value.Type, diffs, objName))
+      if (!CmpType(openXmlElement, value.Type, diffs, objName, propName))
         ok = false;
-      if (!CmpSide(openXmlElement, value.Side, diffs, objName))
+      if (!CmpSide(openXmlElement, value.Side, diffs, objName, propName))
         ok = false;
-      if (!CmpAnchorX(openXmlElement, value.AnchorX, diffs, objName))
+      if (!CmpAnchorX(openXmlElement, value.AnchorX, diffs, objName, propName))
         ok = false;
-      if (!CmpAnchorY(openXmlElement, value.AnchorY, diffs, objName))
+      if (!CmpAnchorY(openXmlElement, value.AnchorY, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

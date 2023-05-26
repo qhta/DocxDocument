@@ -14,9 +14,9 @@ public static class DefaultTableCellMarginConverter
     return null;
   }
   
-  private static bool CmpTopMargin(DXW.TableCellMarginDefault openXmlElement, DMW.TableWidth? value, DiffList? diffs, string? objName)
+  private static bool CmpTopMargin(DXW.TableCellMarginDefault openXmlElement, DMW.TableWidth? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.TableWidthTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TopMargin>(), value, diffs, objName);
+    return DMXW.TableWidthTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TopMargin>(), value, diffs, objName, propName);
   }
   
   private static void SetTopMargin(DXW.TableCellMarginDefault openXmlElement, DMW.TableWidth? value)
@@ -42,9 +42,9 @@ public static class DefaultTableCellMarginConverter
     return null;
   }
   
-  private static bool CmpTableCellLeftMargin(DXW.TableCellMarginDefault openXmlElement, DMW.TableWidth? value, DiffList? diffs, string? objName)
+  private static bool CmpTableCellLeftMargin(DXW.TableCellMarginDefault openXmlElement, DMW.TableWidth? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.TableWidthDxaNilTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableCellLeftMargin>(), value, diffs, objName);
+    return DMXW.TableWidthDxaNilTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableCellLeftMargin>(), value, diffs, objName, propName);
   }
   
   private static void SetTableCellLeftMargin(DXW.TableCellMarginDefault openXmlElement, DMW.TableWidth? value)
@@ -70,9 +70,9 @@ public static class DefaultTableCellMarginConverter
     return null;
   }
   
-  private static bool CmpStartMargin(DXW.TableCellMarginDefault openXmlElement, DMW.TableWidth? value, DiffList? diffs, string? objName)
+  private static bool CmpStartMargin(DXW.TableCellMarginDefault openXmlElement, DMW.TableWidth? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.TableWidthTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.StartMargin>(), value, diffs, objName);
+    return DMXW.TableWidthTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.StartMargin>(), value, diffs, objName, propName);
   }
   
   private static void SetStartMargin(DXW.TableCellMarginDefault openXmlElement, DMW.TableWidth? value)
@@ -98,9 +98,9 @@ public static class DefaultTableCellMarginConverter
     return null;
   }
   
-  private static bool CmpBottomMargin(DXW.TableCellMarginDefault openXmlElement, DMW.TableWidth? value, DiffList? diffs, string? objName)
+  private static bool CmpBottomMargin(DXW.TableCellMarginDefault openXmlElement, DMW.TableWidth? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.TableWidthTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.BottomMargin>(), value, diffs, objName);
+    return DMXW.TableWidthTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.BottomMargin>(), value, diffs, objName, propName);
   }
   
   private static void SetBottomMargin(DXW.TableCellMarginDefault openXmlElement, DMW.TableWidth? value)
@@ -126,9 +126,9 @@ public static class DefaultTableCellMarginConverter
     return null;
   }
   
-  private static bool CmpTableCellRightMargin(DXW.TableCellMarginDefault openXmlElement, DMW.TableWidth? value, DiffList? diffs, string? objName)
+  private static bool CmpTableCellRightMargin(DXW.TableCellMarginDefault openXmlElement, DMW.TableWidth? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.TableWidthDxaNilTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableCellRightMargin>(), value, diffs, objName);
+    return DMXW.TableWidthDxaNilTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableCellRightMargin>(), value, diffs, objName, propName);
   }
   
   private static void SetTableCellRightMargin(DXW.TableCellMarginDefault openXmlElement, DMW.TableWidth? value)
@@ -154,9 +154,9 @@ public static class DefaultTableCellMarginConverter
     return null;
   }
   
-  private static bool CmpEndMargin(DXW.TableCellMarginDefault openXmlElement, DMW.TableWidth? value, DiffList? diffs, string? objName)
+  private static bool CmpEndMargin(DXW.TableCellMarginDefault openXmlElement, DMW.TableWidth? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.TableWidthTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.EndMargin>(), value, diffs, objName);
+    return DMXW.TableWidthTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.EndMargin>(), value, diffs, objName, propName);
   }
   
   private static void SetEndMargin(DXW.TableCellMarginDefault openXmlElement, DMW.TableWidth? value)
@@ -190,27 +190,27 @@ public static class DefaultTableCellMarginConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.TableCellMarginDefault? openXmlElement, DMW.DefaultTableCellMargin? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.TableCellMarginDefault? openXmlElement, DMW.DefaultTableCellMargin? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpTopMargin(openXmlElement, model.TopMargin, diffs, objName))
+      if (!CmpTopMargin(openXmlElement, model.TopMargin, diffs, objName, propName))
         ok = false;
-      if (!CmpTableCellLeftMargin(openXmlElement, model.LeftMargin, diffs, objName))
+      if (!CmpTableCellLeftMargin(openXmlElement, model.LeftMargin, diffs, objName, propName))
         ok = false;
-      if (!CmpStartMargin(openXmlElement, model.StartMargin, diffs, objName))
+      if (!CmpStartMargin(openXmlElement, model.StartMargin, diffs, objName, propName))
         ok = false;
-      if (!CmpBottomMargin(openXmlElement, model.BottomMargin, diffs, objName))
+      if (!CmpBottomMargin(openXmlElement, model.BottomMargin, diffs, objName, propName))
         ok = false;
-      if (!CmpTableCellRightMargin(openXmlElement, model.RightMargin, diffs, objName))
+      if (!CmpTableCellRightMargin(openXmlElement, model.RightMargin, diffs, objName, propName))
         ok = false;
-      if (!CmpEndMargin(openXmlElement, model.EndMargin, diffs, objName))
+      if (!CmpEndMargin(openXmlElement, model.EndMargin, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   

@@ -43,7 +43,8 @@ public class TestBody : TestBase
     var origBody = reader.WordprocessingDocument.MainDocumentPart?.Document?.Body;
     int origBodyCount = origBody?.Elements().Count() ?? 0;
     var diffs = new DiffList();
-    var ok = DMXW.BodyConverter.CompareModelElement(origBody, modelBody, diffs, null);
+    diffs.AddDiff += Diffs_AddDiff;
+    var ok = DMXW.BodyConverter.CompareModelElement(origBody, modelBody, diffs, null, null);
     if (!ok && showDetails)
     {
       WriteLine("Read body differences found:");
@@ -52,6 +53,11 @@ public class TestBody : TestBase
     }
     if (!ok)
       Assert.Fail(diffs.FirstOrDefault()?.ToString());
+  }
+
+  private void Diffs_AddDiff(DiffList sender, Diff diff)
+  {
+    Assert.Fail(diff.ToString());
   }
 
   /// <summary>

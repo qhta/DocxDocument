@@ -65,7 +65,7 @@ public static class RunDateConverter
     return null;
   }
 
-  private static bool CheckModelElement(DX.OpenXmlElement? openXmlElement, DMW.RunDate? model, DMW.DateItem part, bool isLong, DiffList? diffs, string? objName)
+  private static bool CheckModelElement(DX.OpenXmlElement? openXmlElement, DMW.RunDate? model, DMW.DateItem part, bool isLong, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
@@ -77,27 +77,27 @@ public static class RunDateConverter
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
 
-  public static bool CompareModelElement(DXW.DayShort? openXmlElement, DMW.RunDate? model, DiffList? diffs, string? objName)
-    => CheckModelElement(openXmlElement, model, DMW.DateItem.Day, false, diffs, objName);
+  public static bool CompareModelElement(DXW.DayShort? openXmlElement, DMW.RunDate? model, DiffList? diffs = null, string? objName = null, string? propName = null)
+    => CheckModelElement(openXmlElement, model, DMW.DateItem.Day, false, diffs, objName, propName);
 
-  public static bool CompareModelElement(DXW.DayLong? openXmlElement, DMW.RunDate? model, DiffList? diffs, string? objName)
-    => CheckModelElement(openXmlElement, model, DMW.DateItem.Day, true, diffs, objName);
+  public static bool CompareModelElement(DXW.DayLong? openXmlElement, DMW.RunDate? model, DiffList? diffs = null, string? objName = null, string? propName = null)
+    => CheckModelElement(openXmlElement, model, DMW.DateItem.Day, true, diffs, objName, propName);
 
-  public static bool CompareModelElement(DXW.MonthShort? openXmlElement, DMW.RunDate? model, DiffList? diffs, string? objName)
-    => CheckModelElement(openXmlElement, model, DMW.DateItem.Month, false, diffs, objName);
+  public static bool CompareModelElement(DXW.MonthShort? openXmlElement, DMW.RunDate? model, DiffList? diffs = null, string? objName = null, string? propName = null)
+    => CheckModelElement(openXmlElement, model, DMW.DateItem.Month, false, diffs, objName, propName);
 
-  public static bool CompareModelElement(DXW.MonthLong? openXmlElement, DMW.RunDate? model, DiffList? diffs, string? objName)
-    => CheckModelElement(openXmlElement, model, DMW.DateItem.Month, true, diffs, objName);
+  public static bool CompareModelElement(DXW.MonthLong? openXmlElement, DMW.RunDate? model, DiffList? diffs = null, string? objName = null, string? propName = null)
+    => CheckModelElement(openXmlElement, model, DMW.DateItem.Month, true, diffs, objName, propName);
 
-  public static bool CompareModelElement(DXW.YearShort? openXmlElement, DMW.RunDate? model, DiffList? diffs, string? objName)
-    => CheckModelElement(openXmlElement, model, DMW.DateItem.Year, false, diffs, objName);
+  public static bool CompareModelElement(DXW.YearShort? openXmlElement, DMW.RunDate? model, DiffList? diffs = null, string? objName = null, string? propName = null)
+    => CheckModelElement(openXmlElement, model, DMW.DateItem.Year, false, diffs, objName, propName);
 
-  public static bool CompareModelElement(DXW.YearLong? openXmlElement, DMW.RunDate? model, DiffList? diffs, string? objName)
-    => CheckModelElement(openXmlElement, model, DMW.DateItem.Year, true, diffs, objName);
+  public static bool CompareModelElement(DXW.YearLong? openXmlElement, DMW.RunDate? model, DiffList? diffs = null, string? objName = null, string? propName = null)
+    => CheckModelElement(openXmlElement, model, DMW.DateItem.Year, true, diffs, objName, propName);
 
   public static DX.OpenXmlElement CreateOpenXmlElement(DMW.RunDate model)
   {

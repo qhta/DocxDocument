@@ -13,7 +13,7 @@ public static class SurfaceChartConverter
     return openXmlElement.GetFirstChild<DXDC.Wireframe>() != null;
   }
   
-  private static bool CmpWireframe(DXDC.SurfaceChart openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpWireframe(DXDC.SurfaceChart openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXDC.Wireframe>() != null;
     if (val == value) return true;
@@ -50,7 +50,7 @@ public static class SurfaceChartConverter
     return null;
   }
   
-  private static bool CmpSurfaceChartSeries(DXDC.SurfaceChart openXmlElement, Collection<DMDC.SurfaceChartSeries>? value, DiffList? diffs, string? objName)
+  private static bool CmpSurfaceChartSeries(DXDC.SurfaceChart openXmlElement, Collection<DMDC.SurfaceChartSeries>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var origElements = openXmlElement.Elements<DXDC.SurfaceChartSeries>();
     var origElementsCount = origElements.Count();
@@ -59,7 +59,7 @@ public static class SurfaceChartConverter
     {
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, propName ?? openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -68,13 +68,13 @@ public static class SurfaceChartConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDC.SurfaceChartSeriesConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDC.SurfaceChartSeriesConverter.CompareModelElement(origItem, modelItem, diffs, objName, propName))
           ok = false;
       }
       return ok;
     }
     if (origElementsCount == 0 && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -100,9 +100,9 @@ public static class SurfaceChartConverter
     return null;
   }
   
-  private static bool CmpBandFormats(DXDC.SurfaceChart openXmlElement, DMDC.BandFormats? value, DiffList? diffs, string? objName)
+  private static bool CmpBandFormats(DXDC.SurfaceChart openXmlElement, DMDC.BandFormats? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.BandFormatsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.BandFormats>(), value, diffs, objName);
+    return DMXDC.BandFormatsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.BandFormats>(), value, diffs, objName, propName);
   }
   
   private static void SetBandFormats(DXDC.SurfaceChart openXmlElement, DMDC.BandFormats? value)
@@ -132,7 +132,7 @@ public static class SurfaceChartConverter
     return null;
   }
   
-  private static bool CmpAxisIds(DXDC.SurfaceChart openXmlElement, Collection<UInt32>? value, DiffList? diffs, string? objName)
+  private static bool CmpAxisIds(DXDC.SurfaceChart openXmlElement, Collection<UInt32>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var origElements = openXmlElement.Elements<DXDC.AxisId>();
     var origElementsCount = origElements.Count();
@@ -141,7 +141,7 @@ public static class SurfaceChartConverter
     {
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, propName ?? openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -150,13 +150,13 @@ public static class SurfaceChartConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!UInt32ValueConverter.CmpValue(origItem, modelItem, diffs, objName))
+        if (!UInt32ValueConverter.CmpValue(origItem, modelItem, diffs, objName, propName))
           ok = false;
       }
       return ok;
     }
     if (origElementsCount == 0 && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -182,9 +182,9 @@ public static class SurfaceChartConverter
     return null;
   }
   
-  private static bool CmpSurfaceChartExtensionList(DXDC.SurfaceChart openXmlElement, DMDC.SurfaceChartExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpSurfaceChartExtensionList(DXDC.SurfaceChart openXmlElement, DMDC.SurfaceChartExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.SurfaceChartExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.SurfaceChartExtensionList>(), value, diffs, objName);
+    return DMXDC.SurfaceChartExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.SurfaceChartExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetSurfaceChartExtensionList(DXDC.SurfaceChart openXmlElement, DMDC.SurfaceChartExtensionList? value)
@@ -215,25 +215,25 @@ public static class SurfaceChartConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDC.SurfaceChart? openXmlElement, DMDC.SurfaceChart? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.SurfaceChart? openXmlElement, DMDC.SurfaceChart? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpWireframe(openXmlElement, value.Wireframe, diffs, objName))
+      if (!CmpWireframe(openXmlElement, value.Wireframe, diffs, objName, propName))
         ok = false;
-      if (!CmpSurfaceChartSeries(openXmlElement, value.SurfaceChartSeries, diffs, objName))
+      if (!CmpSurfaceChartSeries(openXmlElement, value.SurfaceChartSeries, diffs, objName, propName))
         ok = false;
-      if (!CmpBandFormats(openXmlElement, value.BandFormats, diffs, objName))
+      if (!CmpBandFormats(openXmlElement, value.BandFormats, diffs, objName, propName))
         ok = false;
-      if (!CmpAxisIds(openXmlElement, value.AxisIds, diffs, objName))
+      if (!CmpAxisIds(openXmlElement, value.AxisIds, diffs, objName, propName))
         ok = false;
-      if (!CmpSurfaceChartExtensionList(openXmlElement, value.SurfaceChartExtensionList, diffs, objName))
+      if (!CmpSurfaceChartExtensionList(openXmlElement, value.SurfaceChartExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

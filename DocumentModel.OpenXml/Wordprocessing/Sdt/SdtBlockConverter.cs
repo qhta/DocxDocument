@@ -46,22 +46,22 @@ public static class SdtBlockConverter
   /// <param name="objName">Name of the compared object (to pass to <see cref="diffs"/> collection).</param>
   /// <returns><c>True</c> if the model element is equivalent to the openXmlElement, <c>false</c> otherwise</returns>
   public static bool CompareSdtContentBlockElement(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, 
-    DiffList? diffs = null, string? objName = null)
+    DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       if (openXmlElement is DXW.Paragraph paragraph && model is DMW.Paragraph paragraphModel)
-        return DMXW.ParagraphConverter.CompareModelElement(paragraph, paragraphModel, diffs, objName);
+        return DMXW.ParagraphConverter.CompareModelElement(paragraph, paragraphModel, diffs, objName, propName);
       if (openXmlElement is DXW.Table table && model is DMW.Table tableModel)
-        return DMXW.TableConverter.CompareModelElement(table, tableModel, diffs, objName);
+        return DMXW.TableConverter.CompareModelElement(table, tableModel, diffs, objName, propName);
       if (openXmlElement is DXW.SdtBlock sdtBlock && model is DMW.SdtBlock sdtBlockModel)
-        return DMXW.SdtBlockConverter.CompareModelElement(sdtBlock, sdtBlockModel, diffs, objName);
+        return DMXW.SdtBlockConverter.CompareModelElement(sdtBlock, sdtBlockModel, diffs, objName, propName);
       if (openXmlElement is DXW.CustomXmlBlock customXmlBlock && model is DMW.CustomXmlBlock customXmlBlockModel)
-        return DMXW.CustomXmlBlockConverter.CompareModelElement(customXmlBlock, customXmlBlockModel, diffs, objName);
+        return DMXW.CustomXmlBlockConverter.CompareModelElement(customXmlBlock, customXmlBlockModel, diffs, objName, propName);
 
       if (model is DMW.ICommonContent commonElementModel)
       {
-        var result = CommonMarkersConverter.CompareModelElement(openXmlElement, commonElementModel, diffs, objName);
+        var result = CommonMarkersConverter.CompareModelElement(openXmlElement, commonElementModel, diffs, objName, propName);
         if (result != null)
           return (bool)result;
       }
@@ -69,7 +69,7 @@ public static class SdtBlockConverter
       return false;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
 
@@ -145,22 +145,22 @@ public static class SdtBlockConverter
   /// <param name="diffs">Differences list (defined in <see cref="Qhta.DeepCompare"/> assembly).</param>
   /// <param name="objName">Name of the compared object (to pass to <see cref="diffs"/> collection).</param>
   /// <returns><c>True</c> if the model element is equivalent to openXml element, <c>false</c> otherwise</returns>
-  public static bool CompareModelElement(DXW.SdtBlock? openXmlElement, DMW.SdtBlock? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.SdtBlock? openXmlElement, DMW.SdtBlock? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!SdtElementConverter.CmpSdtProperties(openXmlElement, model.SdtProperties, diffs, objName))
+      if (!SdtElementConverter.CmpSdtProperties(openXmlElement, model.SdtProperties, diffs, objName, propName))
         ok = false;
-      if (!SdtElementConverter.CmpSdtEndCharProperties(openXmlElement, model.SdtEndCharProperties, diffs, objName))
+      if (!SdtElementConverter.CmpSdtEndCharProperties(openXmlElement, model.SdtEndCharProperties, diffs, objName, propName))
         ok = false;
       if (!ElementCollectionConverter<DMW.ISdtBlockContent>.CompareOpenXmlElementCollection(openXmlElement.SdtContentBlock, model,
-        CompareSdtContentBlockElement, diffs, objName))
+        CompareSdtContentBlockElement, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
 

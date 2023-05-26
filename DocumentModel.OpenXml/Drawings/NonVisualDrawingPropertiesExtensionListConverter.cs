@@ -19,7 +19,7 @@ public static class NonVisualDrawingPropertiesExtensionListConverter
     return null;
   }
   
-  private static bool CmpNonVisualDrawingPropertiesExtensions(DXD.NonVisualDrawingPropertiesExtensionList openXmlElement, Collection<DMD.NonVisualDrawingPropertiesExtension>? value, DiffList? diffs, string? objName)
+  private static bool CmpNonVisualDrawingPropertiesExtensions(DXD.NonVisualDrawingPropertiesExtensionList openXmlElement, Collection<DMD.NonVisualDrawingPropertiesExtension>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var origElements = openXmlElement.Elements<DXD.NonVisualDrawingPropertiesExtension>();
     var origElementsCount = origElements.Count();
@@ -28,7 +28,7 @@ public static class NonVisualDrawingPropertiesExtensionListConverter
     {
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, propName ?? openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -37,13 +37,13 @@ public static class NonVisualDrawingPropertiesExtensionListConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXD.NonVisualDrawingPropertiesExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXD.NonVisualDrawingPropertiesExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName, propName))
           ok = false;
       }
       return ok;
     }
     if (origElementsCount == 0 && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -72,17 +72,17 @@ public static class NonVisualDrawingPropertiesExtensionListConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.NonVisualDrawingPropertiesExtensionList? openXmlElement, DMD.NonVisualDrawingPropertiesExtensionList? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.NonVisualDrawingPropertiesExtensionList? openXmlElement, DMD.NonVisualDrawingPropertiesExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpNonVisualDrawingPropertiesExtensions(openXmlElement, value.NonVisualDrawingPropertiesExtensions, diffs, objName))
+      if (!CmpNonVisualDrawingPropertiesExtensions(openXmlElement, value.NonVisualDrawingPropertiesExtensions, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

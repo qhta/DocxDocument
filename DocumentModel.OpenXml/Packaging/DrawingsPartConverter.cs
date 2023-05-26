@@ -20,7 +20,7 @@ public static class DrawingsPartConverter
     return collection;
   }
   
-  private static bool CmpChartParts(DXPack.DrawingsPart openXmlElement, Collection<DMPack.ChartPart>? value, DiffList? diffs, string? objName)
+  private static bool CmpChartParts(DXPack.DrawingsPart openXmlElement, Collection<DMPack.ChartPart>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return true;
   }
@@ -30,7 +30,7 @@ public static class DrawingsPartConverter
     return openXmlElement?.ContentType;
   }
   
-  private static bool CmpContentType(DXPack.DrawingsPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpContentType(DXPack.DrawingsPart openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.ContentType == value) return true;
     diffs?.Add(objName, "ContentType", openXmlElement?.ContentType, value);
@@ -52,7 +52,7 @@ public static class DrawingsPartConverter
     return collection;
   }
   
-  private static bool CmpCustomXmlParts(DXPack.DrawingsPart openXmlElement, Collection<DMPack.CustomXmlPart>? value, DiffList? diffs, string? objName)
+  private static bool CmpCustomXmlParts(DXPack.DrawingsPart openXmlElement, Collection<DMPack.CustomXmlPart>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return true;
   }
@@ -72,7 +72,7 @@ public static class DrawingsPartConverter
     return collection;
   }
   
-  private static bool CmpDiagramColorsParts(DXPack.DrawingsPart openXmlElement, Collection<DMPack.DiagramColorsPart>? value, DiffList? diffs, string? objName)
+  private static bool CmpDiagramColorsParts(DXPack.DrawingsPart openXmlElement, Collection<DMPack.DiagramColorsPart>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return true;
   }
@@ -92,7 +92,7 @@ public static class DrawingsPartConverter
     return collection;
   }
   
-  private static bool CmpDiagramDataParts(DXPack.DrawingsPart openXmlElement, Collection<DMPack.DiagramDataPart>? value, DiffList? diffs, string? objName)
+  private static bool CmpDiagramDataParts(DXPack.DrawingsPart openXmlElement, Collection<DMPack.DiagramDataPart>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return true;
   }
@@ -112,7 +112,7 @@ public static class DrawingsPartConverter
     return collection;
   }
   
-  private static bool CmpDiagramLayoutDefinitionParts(DXPack.DrawingsPart openXmlElement, Collection<DMPack.DiagramLayoutDefinitionPart>? value, DiffList? diffs, string? objName)
+  private static bool CmpDiagramLayoutDefinitionParts(DXPack.DrawingsPart openXmlElement, Collection<DMPack.DiagramLayoutDefinitionPart>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return true;
   }
@@ -132,7 +132,7 @@ public static class DrawingsPartConverter
     return collection;
   }
   
-  private static bool CmpDiagramPersistLayoutParts(DXPack.DrawingsPart openXmlElement, Collection<DMPack.DiagramPersistLayoutPart>? value, DiffList? diffs, string? objName)
+  private static bool CmpDiagramPersistLayoutParts(DXPack.DrawingsPart openXmlElement, Collection<DMPack.DiagramPersistLayoutPart>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return true;
   }
@@ -152,7 +152,7 @@ public static class DrawingsPartConverter
     return collection;
   }
   
-  private static bool CmpDiagramStyleParts(DXPack.DrawingsPart openXmlElement, Collection<DMPack.DiagramStylePart>? value, DiffList? diffs, string? objName)
+  private static bool CmpDiagramStyleParts(DXPack.DrawingsPart openXmlElement, Collection<DMPack.DiagramStylePart>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return true;
   }
@@ -172,7 +172,7 @@ public static class DrawingsPartConverter
     return collection;
   }
   
-  private static bool CmpExtendedChartParts(DXPack.DrawingsPart openXmlElement, Collection<DMPack.ExtendedChartPart>? value, DiffList? diffs, string? objName)
+  private static bool CmpExtendedChartParts(DXPack.DrawingsPart openXmlElement, Collection<DMPack.ExtendedChartPart>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return true;
   }
@@ -192,7 +192,7 @@ public static class DrawingsPartConverter
     return collection;
   }
   
-  private static bool CmpImageParts(DXPack.DrawingsPart openXmlElement, Collection<DMPack.ImagePart>? value, DiffList? diffs, string? objName)
+  private static bool CmpImageParts(DXPack.DrawingsPart openXmlElement, Collection<DMPack.ImagePart>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return true;
   }
@@ -202,7 +202,7 @@ public static class DrawingsPartConverter
     return openXmlElement?.RelationshipType;
   }
   
-  private static bool CmpRelationshipType(DXPack.DrawingsPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpRelationshipType(DXPack.DrawingsPart openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.RelationshipType == value) return true;
     diffs?.Add(objName, "RelationshipType", openXmlElement?.RelationshipType, value);
@@ -224,7 +224,7 @@ public static class DrawingsPartConverter
     return collection;
   }
   
-  private static bool CmpWebExtensionParts(DXPack.DrawingsPart openXmlElement, Collection<DMPack.WebExtensionPart>? value, DiffList? diffs, string? objName)
+  private static bool CmpWebExtensionParts(DXPack.DrawingsPart openXmlElement, Collection<DMPack.WebExtensionPart>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return true;
   }
@@ -251,39 +251,39 @@ public static class DrawingsPartConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXPack.DrawingsPart? openXmlElement, DMPack.DrawingsPart? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXPack.DrawingsPart? openXmlElement, DMPack.DrawingsPart? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpChartParts(openXmlElement, value.ChartParts, diffs, objName))
+      if (!CmpChartParts(openXmlElement, value.ChartParts, diffs, objName, propName))
         ok = false;
-      if (!CmpContentType(openXmlElement, value.ContentType, diffs, objName))
+      if (!CmpContentType(openXmlElement, value.ContentType, diffs, objName, propName))
         ok = false;
-      if (!CmpCustomXmlParts(openXmlElement, value.CustomXmlParts, diffs, objName))
+      if (!CmpCustomXmlParts(openXmlElement, value.CustomXmlParts, diffs, objName, propName))
         ok = false;
-      if (!CmpDiagramColorsParts(openXmlElement, value.DiagramColorsParts, diffs, objName))
+      if (!CmpDiagramColorsParts(openXmlElement, value.DiagramColorsParts, diffs, objName, propName))
         ok = false;
-      if (!CmpDiagramDataParts(openXmlElement, value.DiagramDataParts, diffs, objName))
+      if (!CmpDiagramDataParts(openXmlElement, value.DiagramDataParts, diffs, objName, propName))
         ok = false;
-      if (!CmpDiagramLayoutDefinitionParts(openXmlElement, value.DiagramLayoutDefinitionParts, diffs, objName))
+      if (!CmpDiagramLayoutDefinitionParts(openXmlElement, value.DiagramLayoutDefinitionParts, diffs, objName, propName))
         ok = false;
-      if (!CmpDiagramPersistLayoutParts(openXmlElement, value.DiagramPersistLayoutParts, diffs, objName))
+      if (!CmpDiagramPersistLayoutParts(openXmlElement, value.DiagramPersistLayoutParts, diffs, objName, propName))
         ok = false;
-      if (!CmpDiagramStyleParts(openXmlElement, value.DiagramStyleParts, diffs, objName))
+      if (!CmpDiagramStyleParts(openXmlElement, value.DiagramStyleParts, diffs, objName, propName))
         ok = false;
-      if (!CmpExtendedChartParts(openXmlElement, value.ExtendedChartParts, diffs, objName))
+      if (!CmpExtendedChartParts(openXmlElement, value.ExtendedChartParts, diffs, objName, propName))
         ok = false;
-      if (!CmpImageParts(openXmlElement, value.ImageParts, diffs, objName))
+      if (!CmpImageParts(openXmlElement, value.ImageParts, diffs, objName, propName))
         ok = false;
-      if (!CmpRelationshipType(openXmlElement, value.RelationshipType, diffs, objName))
+      if (!CmpRelationshipType(openXmlElement, value.RelationshipType, diffs, objName, propName))
         ok = false;
-      if (!CmpWebExtensionParts(openXmlElement, value.WebExtensionParts, diffs, objName))
+      if (!CmpWebExtensionParts(openXmlElement, value.WebExtensionParts, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

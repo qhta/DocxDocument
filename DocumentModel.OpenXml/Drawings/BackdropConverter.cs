@@ -16,9 +16,9 @@ public static class BackdropConverter
     return null;
   }
   
-  private static bool CmpAnchor(DXD.Backdrop openXmlElement, DMD.Anchor? value, DiffList? diffs, string? objName)
+  private static bool CmpAnchor(DXD.Backdrop openXmlElement, DMD.Anchor? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.AnchorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Anchor>(), value, diffs, objName);
+    return DMXD.AnchorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Anchor>(), value, diffs, objName, propName);
   }
   
   private static void SetAnchor(DXD.Backdrop openXmlElement, DMD.Anchor? value)
@@ -45,9 +45,9 @@ public static class BackdropConverter
     return null;
   }
   
-  private static bool CmpNormal(DXD.Backdrop openXmlElement, DMD.Vector3DType? value, DiffList? diffs, string? objName)
+  private static bool CmpNormal(DXD.Backdrop openXmlElement, DMD.Vector3DType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.Vector3DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Normal>(), value, diffs, objName);
+    return DMXD.Vector3DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Normal>(), value, diffs, objName, propName);
   }
   
   private static void SetNormal(DXD.Backdrop openXmlElement, DMD.Vector3DType? value)
@@ -74,9 +74,9 @@ public static class BackdropConverter
     return null;
   }
   
-  private static bool CmpUpVector(DXD.Backdrop openXmlElement, DMD.Vector3DType? value, DiffList? diffs, string? objName)
+  private static bool CmpUpVector(DXD.Backdrop openXmlElement, DMD.Vector3DType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.Vector3DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.UpVector>(), value, diffs, objName);
+    return DMXD.Vector3DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.UpVector>(), value, diffs, objName, propName);
   }
   
   private static void SetUpVector(DXD.Backdrop openXmlElement, DMD.Vector3DType? value)
@@ -103,9 +103,9 @@ public static class BackdropConverter
     return null;
   }
   
-  private static bool CmpExtensionList(DXD.Backdrop openXmlElement, DMD.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXD.Backdrop openXmlElement, DMD.ExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ExtensionList>(), value, diffs, objName);
+    return DMXD.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetExtensionList(DXD.Backdrop openXmlElement, DMD.ExtensionList? value)
@@ -135,23 +135,23 @@ public static class BackdropConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.Backdrop? openXmlElement, DMD.Backdrop? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.Backdrop? openXmlElement, DMD.Backdrop? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpAnchor(openXmlElement, value.Anchor, diffs, objName))
+      if (!CmpAnchor(openXmlElement, value.Anchor, diffs, objName, propName))
         ok = false;
-      if (!CmpNormal(openXmlElement, value.Normal, diffs, objName))
+      if (!CmpNormal(openXmlElement, value.Normal, diffs, objName, propName))
         ok = false;
-      if (!CmpUpVector(openXmlElement, value.UpVector, diffs, objName))
+      if (!CmpUpVector(openXmlElement, value.UpVector, diffs, objName, propName))
         ok = false;
-      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -12,7 +12,7 @@ public static class SimpleFieldRubyConverter
     return StringValueConverter.GetValue(openXmlElement?.Instruction);
   }
 
-  private static bool CmpInstruction(DXW.SimpleFieldRuby openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpInstruction(DXW.SimpleFieldRuby openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Instruction, value, diffs, objName, "Instruction");
   }
@@ -29,7 +29,7 @@ public static class SimpleFieldRubyConverter
     return BooleanValueConverter.GetValue(openXmlElement?.FieldLock);
   }
 
-  private static bool CmpFieldLock(DXW.SimpleFieldRuby openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpFieldLock(DXW.SimpleFieldRuby openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.FieldLock, value, diffs, objName, "FieldLock");
   }
@@ -46,7 +46,7 @@ public static class SimpleFieldRubyConverter
     return BooleanValueConverter.GetValue(openXmlElement?.Dirty);
   }
 
-  private static bool CmpDirty(DXW.SimpleFieldRuby openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpDirty(DXW.SimpleFieldRuby openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.Dirty, value, diffs, objName, "Dirty");
   }
@@ -63,7 +63,7 @@ public static class SimpleFieldRubyConverter
     return openXmlElement?.GetFirstChild<DXW.FieldData>()?.Text;
   }
 
-  private static bool CmpFieldData(DXW.SimpleFieldRuby openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpFieldData(DXW.SimpleFieldRuby openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return openXmlElement?.GetFirstChild<DXW.FieldData>()?.Text == value;
   }
@@ -99,27 +99,27 @@ public static class SimpleFieldRubyConverter
     return null;
   }
 
-  public static bool CompareModelElement(DXW.SimpleFieldRuby? openXmlElement, DMW.SimpleFieldRuby? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.SimpleFieldRuby? openXmlElement, DMW.SimpleFieldRuby? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpInstruction(openXmlElement, model.Instruction, diffs, objName))
+      if (!CmpInstruction(openXmlElement, model.Instruction, diffs, objName, propName))
         ok = false;
-      if (!CmpFieldLock(openXmlElement, model.FieldLock, diffs, objName))
+      if (!CmpFieldLock(openXmlElement, model.FieldLock, diffs, objName, propName))
         ok = false;
-      if (!CmpDirty(openXmlElement, model.Dirty, diffs, objName))
+      if (!CmpDirty(openXmlElement, model.Dirty, diffs, objName, propName))
         ok = false;
-      if (!CmpFieldData(openXmlElement, model.FieldData, diffs, objName))
+      if (!CmpFieldData(openXmlElement, model.FieldData, diffs, objName, propName))
         ok = false;
       if (!ElementCollectionConverter<DM.IModelElement>.CompareOpenXmlElementCollection(
         openXmlElement, model,
-        RubyContentConverter.CompareRubyContentElement, diffs, objName))
+        RubyContentConverter.CompareRubyContentElement, diffs, objName, propName))
         ok = false; ;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
 

@@ -13,9 +13,9 @@ public static class EffectStyleConverter
     return null;
   }
   
-  private static bool CmpEffectList(DXD.EffectStyle openXmlElement, DMD.EffectList? value, DiffList? diffs, string? objName)
+  private static bool CmpEffectList(DXD.EffectStyle openXmlElement, DMD.EffectList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.EffectListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.EffectList>(), value, diffs, objName);
+    return DMXD.EffectListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.EffectList>(), value, diffs, objName, propName);
   }
   
   private static void SetEffectList(DXD.EffectStyle openXmlElement, DMD.EffectList? value)
@@ -39,9 +39,9 @@ public static class EffectStyleConverter
     return null;
   }
   
-  private static bool CmpEffectDag(DXD.EffectStyle openXmlElement, DMD.EffectDag? value, DiffList? diffs, string? objName)
+  private static bool CmpEffectDag(DXD.EffectStyle openXmlElement, DMD.EffectDag? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.EffectDagConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.EffectDag>(), value, diffs, objName);
+    return DMXD.EffectDagConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.EffectDag>(), value, diffs, objName, propName);
   }
   
   private static void SetEffectDag(DXD.EffectStyle openXmlElement, DMD.EffectDag? value)
@@ -65,9 +65,9 @@ public static class EffectStyleConverter
     return null;
   }
   
-  private static bool CmpScene3DType(DXD.EffectStyle openXmlElement, DMD.Scene3DType? value, DiffList? diffs, string? objName)
+  private static bool CmpScene3DType(DXD.EffectStyle openXmlElement, DMD.Scene3DType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.Scene3DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Scene3DType>(), value, diffs, objName);
+    return DMXD.Scene3DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Scene3DType>(), value, diffs, objName, propName);
   }
   
   private static void SetScene3DType(DXD.EffectStyle openXmlElement, DMD.Scene3DType? value)
@@ -91,9 +91,9 @@ public static class EffectStyleConverter
     return null;
   }
   
-  private static bool CmpShape3DType(DXD.EffectStyle openXmlElement, DMD.Shape3DType? value, DiffList? diffs, string? objName)
+  private static bool CmpShape3DType(DXD.EffectStyle openXmlElement, DMD.Shape3DType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.Shape3DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Shape3DType>(), value, diffs, objName);
+    return DMXD.Shape3DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Shape3DType>(), value, diffs, objName, propName);
   }
   
   private static void SetShape3DType(DXD.EffectStyle openXmlElement, DMD.Shape3DType? value)
@@ -123,23 +123,23 @@ public static class EffectStyleConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.EffectStyle? openXmlElement, DMD.EffectStyle? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.EffectStyle? openXmlElement, DMD.EffectStyle? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpEffectList(openXmlElement, value.EffectList, diffs, objName))
+      if (!CmpEffectList(openXmlElement, value.EffectList, diffs, objName, propName))
         ok = false;
-      if (!CmpEffectDag(openXmlElement, value.EffectDag, diffs, objName))
+      if (!CmpEffectDag(openXmlElement, value.EffectDag, diffs, objName, propName))
         ok = false;
-      if (!CmpScene3DType(openXmlElement, value.Scene3DType, diffs, objName))
+      if (!CmpScene3DType(openXmlElement, value.Scene3DType, diffs, objName, propName))
         ok = false;
-      if (!CmpShape3DType(openXmlElement, value.Shape3DType, diffs, objName))
+      if (!CmpShape3DType(openXmlElement, value.Shape3DType, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -13,7 +13,7 @@ public static class ShadowConverter
     return openXmlElement?.BlurRadius?.Value;
   }
   
-  private static bool CmpBlurRadius(DXO10W.Shadow openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpBlurRadius(DXO10W.Shadow openXmlElement, Int64? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.BlurRadius?.Value == value) return true;
     diffs?.Add(objName, "BlurRadius", openXmlElement?.BlurRadius?.Value, value);
@@ -33,7 +33,7 @@ public static class ShadowConverter
     return openXmlElement?.DistanceFromText?.Value;
   }
   
-  private static bool CmpDistanceFromText(DXO10W.Shadow openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpDistanceFromText(DXO10W.Shadow openXmlElement, Int64? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.DistanceFromText?.Value == value) return true;
     diffs?.Add(objName, "DistanceFromText", openXmlElement?.DistanceFromText?.Value, value);
@@ -53,7 +53,7 @@ public static class ShadowConverter
     return openXmlElement?.DirectionAngle?.Value;
   }
   
-  private static bool CmpDirectionAngle(DXO10W.Shadow openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpDirectionAngle(DXO10W.Shadow openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.DirectionAngle?.Value == value) return true;
     diffs?.Add(objName, "DirectionAngle", openXmlElement?.DirectionAngle?.Value, value);
@@ -73,7 +73,7 @@ public static class ShadowConverter
     return openXmlElement?.HorizontalScalingFactor?.Value;
   }
   
-  private static bool CmpHorizontalScalingFactor(DXO10W.Shadow openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpHorizontalScalingFactor(DXO10W.Shadow openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.HorizontalScalingFactor?.Value == value) return true;
     diffs?.Add(objName, "HorizontalScalingFactor", openXmlElement?.HorizontalScalingFactor?.Value, value);
@@ -93,7 +93,7 @@ public static class ShadowConverter
     return openXmlElement?.VerticalScalingFactor?.Value;
   }
   
-  private static bool CmpVerticalScalingFactor(DXO10W.Shadow openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpVerticalScalingFactor(DXO10W.Shadow openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.VerticalScalingFactor?.Value == value) return true;
     diffs?.Add(objName, "VerticalScalingFactor", openXmlElement?.VerticalScalingFactor?.Value, value);
@@ -113,7 +113,7 @@ public static class ShadowConverter
     return openXmlElement?.HorizontalSkewAngle?.Value;
   }
   
-  private static bool CmpHorizontalSkewAngle(DXO10W.Shadow openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpHorizontalSkewAngle(DXO10W.Shadow openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.HorizontalSkewAngle?.Value == value) return true;
     diffs?.Add(objName, "HorizontalSkewAngle", openXmlElement?.HorizontalSkewAngle?.Value, value);
@@ -133,7 +133,7 @@ public static class ShadowConverter
     return openXmlElement?.VerticalSkewAngle?.Value;
   }
   
-  private static bool CmpVerticalSkewAngle(DXO10W.Shadow openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpVerticalSkewAngle(DXO10W.Shadow openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.VerticalSkewAngle?.Value == value) return true;
     diffs?.Add(objName, "VerticalSkewAngle", openXmlElement?.VerticalSkewAngle?.Value, value);
@@ -153,9 +153,9 @@ public static class ShadowConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.Word.RectangleAlignmentValues, DMW.RectangleAlignmentKind>(openXmlElement?.Alignment?.Value);
   }
   
-  private static bool CmpAlignment(DXO10W.Shadow openXmlElement, DMW.RectangleAlignmentKind? value, DiffList? diffs, string? objName)
+  private static bool CmpAlignment(DXO10W.Shadow openXmlElement, DMW.RectangleAlignmentKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.RectangleAlignmentValues, DMW.RectangleAlignmentKind>(openXmlElement?.Alignment?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.RectangleAlignmentValues, DMW.RectangleAlignmentKind>(openXmlElement?.Alignment?.Value, value, diffs, objName, propName);
   }
   
   private static void SetAlignment(DXO10W.Shadow openXmlElement, DMW.RectangleAlignmentKind? value)
@@ -174,9 +174,9 @@ public static class ShadowConverter
     return null;
   }
   
-  private static bool CmpRgbColorModelHex(DXO10W.Shadow openXmlElement, DMW.RgbColorModelHex? value, DiffList? diffs, string? objName)
+  private static bool CmpRgbColorModelHex(DXO10W.Shadow openXmlElement, DMW.RgbColorModelHex? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.RgbColorModelHexConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10W.RgbColorModelHex>(), value, diffs, objName);
+    return DMXW.RgbColorModelHexConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10W.RgbColorModelHex>(), value, diffs, objName, propName);
   }
   
   private static void SetRgbColorModelHex(DXO10W.Shadow openXmlElement, DMW.RgbColorModelHex? value)
@@ -203,9 +203,9 @@ public static class ShadowConverter
     return null;
   }
   
-  private static bool CmpSchemeColor(DXO10W.Shadow openXmlElement, DMW.SchemeColor? value, DiffList? diffs, string? objName)
+  private static bool CmpSchemeColor(DXO10W.Shadow openXmlElement, DMW.SchemeColor? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.SchemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10W.SchemeColor>(), value, diffs, objName);
+    return DMXW.SchemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10W.SchemeColor>(), value, diffs, objName, propName);
   }
   
   private static void SetSchemeColor(DXO10W.Shadow openXmlElement, DMW.SchemeColor? value)
@@ -241,35 +241,35 @@ public static class ShadowConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO10W.Shadow? openXmlElement, DMW.Shadow? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10W.Shadow? openXmlElement, DMW.Shadow? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpBlurRadius(openXmlElement, value.BlurRadius, diffs, objName))
+      if (!CmpBlurRadius(openXmlElement, value.BlurRadius, diffs, objName, propName))
         ok = false;
-      if (!CmpDistanceFromText(openXmlElement, value.DistanceFromText, diffs, objName))
+      if (!CmpDistanceFromText(openXmlElement, value.DistanceFromText, diffs, objName, propName))
         ok = false;
-      if (!CmpDirectionAngle(openXmlElement, value.DirectionAngle, diffs, objName))
+      if (!CmpDirectionAngle(openXmlElement, value.DirectionAngle, diffs, objName, propName))
         ok = false;
-      if (!CmpHorizontalScalingFactor(openXmlElement, value.HorizontalScalingFactor, diffs, objName))
+      if (!CmpHorizontalScalingFactor(openXmlElement, value.HorizontalScalingFactor, diffs, objName, propName))
         ok = false;
-      if (!CmpVerticalScalingFactor(openXmlElement, value.VerticalScalingFactor, diffs, objName))
+      if (!CmpVerticalScalingFactor(openXmlElement, value.VerticalScalingFactor, diffs, objName, propName))
         ok = false;
-      if (!CmpHorizontalSkewAngle(openXmlElement, value.HorizontalSkewAngle, diffs, objName))
+      if (!CmpHorizontalSkewAngle(openXmlElement, value.HorizontalSkewAngle, diffs, objName, propName))
         ok = false;
-      if (!CmpVerticalSkewAngle(openXmlElement, value.VerticalSkewAngle, diffs, objName))
+      if (!CmpVerticalSkewAngle(openXmlElement, value.VerticalSkewAngle, diffs, objName, propName))
         ok = false;
-      if (!CmpAlignment(openXmlElement, value.Alignment, diffs, objName))
+      if (!CmpAlignment(openXmlElement, value.Alignment, diffs, objName, propName))
         ok = false;
-      if (!CmpRgbColorModelHex(openXmlElement, value.RgbColorModelHex, diffs, objName))
+      if (!CmpRgbColorModelHex(openXmlElement, value.RgbColorModelHex, diffs, objName, propName))
         ok = false;
-      if (!CmpSchemeColor(openXmlElement, value.SchemeColor, diffs, objName))
+      if (!CmpSchemeColor(openXmlElement, value.SchemeColor, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

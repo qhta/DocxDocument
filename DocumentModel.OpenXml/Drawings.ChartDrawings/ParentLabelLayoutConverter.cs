@@ -13,9 +13,9 @@ public static class ParentLabelLayoutConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ParentLabelLayoutVal, DMDCDs.ParentLabelLayoutVal>(openXmlElement?.ParentLabelLayoutVal?.Value);
   }
   
-  private static bool CmpParentLabelLayoutVal(DXO16DCD.ParentLabelLayout openXmlElement, DMDCDs.ParentLabelLayoutVal? value, DiffList? diffs, string? objName)
+  private static bool CmpParentLabelLayoutVal(DXO16DCD.ParentLabelLayout openXmlElement, DMDCDs.ParentLabelLayoutVal? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ParentLabelLayoutVal, DMDCDs.ParentLabelLayoutVal>(openXmlElement?.ParentLabelLayoutVal?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ParentLabelLayoutVal, DMDCDs.ParentLabelLayoutVal>(openXmlElement?.ParentLabelLayoutVal?.Value, value, diffs, objName, propName);
   }
   
   private static void SetParentLabelLayoutVal(DXO16DCD.ParentLabelLayout openXmlElement, DMDCDs.ParentLabelLayoutVal? value)
@@ -34,17 +34,17 @@ public static class ParentLabelLayoutConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO16DCD.ParentLabelLayout? openXmlElement, DMDCDs.ParentLabelLayout? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16DCD.ParentLabelLayout? openXmlElement, DMDCDs.ParentLabelLayout? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpParentLabelLayoutVal(openXmlElement, value.ParentLabelLayoutVal, diffs, objName))
+      if (!CmpParentLabelLayoutVal(openXmlElement, value.ParentLabelLayoutVal, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

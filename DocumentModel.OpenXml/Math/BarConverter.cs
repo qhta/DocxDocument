@@ -14,9 +14,9 @@ public static class BarConverter
     return null;
   }
   
-  private static bool CmpBarProperties(DXM.Bar openXmlElement, DMM.BarProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpBarProperties(DXM.Bar openXmlElement, DMM.BarProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXM.BarPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.BarProperties>(), value, diffs, objName);
+    return DMXM.BarPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.BarProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetBarProperties(DXM.Bar openXmlElement, DMM.BarProperties? value)
@@ -42,9 +42,9 @@ public static class BarConverter
     return null;
   }
   
-  private static bool CmpArgument(DXM.Bar openXmlElement, DMM.Argument? value, DiffList? diffs, string? objName)
+  private static bool CmpArgument(DXM.Bar openXmlElement, DMM.Argument? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXM.ArgumentConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.Base>(), value, diffs, objName);
+    return DMXM.ArgumentConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.Base>(), value, diffs, objName, propName);
   }
   
   private static void SetArgument(DXM.Bar openXmlElement, DMM.Argument? value)
@@ -74,19 +74,19 @@ public static class BarConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXM.Bar? openXmlElement, DMM.Bar? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXM.Bar? openXmlElement, DMM.Bar? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpBarProperties(openXmlElement, model.BarProperties, diffs, objName))
+      if (!CmpBarProperties(openXmlElement, model.BarProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpArgument(openXmlElement, model.Argument, diffs, objName))
+      if (!CmpArgument(openXmlElement, model.Argument, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   

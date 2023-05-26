@@ -13,9 +13,9 @@ public static class UnderlineConverter
     return EnumValueConverter.GetValue<DXW.UnderlineValues, DMW.UnderlineKind>(openXmlElement?.Val?.Value);
   }
   
-  private static bool CmpVal(DXW.Underline openXmlElement, DMW.UnderlineKind? value, DiffList? diffs, string? objName)
+  private static bool CmpVal(DXW.Underline openXmlElement, DMW.UnderlineKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.UnderlineValues, DMW.UnderlineKind>(openXmlElement?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.UnderlineValues, DMW.UnderlineKind>(openXmlElement?.Val?.Value, value, diffs, objName, propName);
   }
   
   private static void SetVal(DXW.Underline openXmlElement, DMW.UnderlineKind? value)
@@ -31,7 +31,7 @@ public static class UnderlineConverter
     return StringValueConverter.GetValue(openXmlElement?.Color);
   }
   
-  private static bool CmpColor(DXW.Underline openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpColor(DXW.Underline openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Color, value, diffs, objName, "Color");
   }
@@ -49,9 +49,9 @@ public static class UnderlineConverter
     return EnumValueConverter.GetValue<DXW.ThemeColorValues, DMW.ThemeColorIndex>(openXmlElement?.ThemeColor?.Value);
   }
   
-  private static bool CmpThemeColor(DXW.Underline openXmlElement, DMW.ThemeColorIndex? value, DiffList? diffs, string? objName)
+  private static bool CmpThemeColor(DXW.Underline openXmlElement, DMW.ThemeColorIndex? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.ThemeColorValues, DMW.ThemeColorIndex>(openXmlElement?.ThemeColor?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.ThemeColorValues, DMW.ThemeColorIndex>(openXmlElement?.ThemeColor?.Value, value, diffs, objName, propName);
   }
   
   private static void SetThemeColor(DXW.Underline openXmlElement, DMW.ThemeColorIndex? value)
@@ -67,7 +67,7 @@ public static class UnderlineConverter
     return StringValueConverter.GetValue(openXmlElement?.ThemeTint);
   }
   
-  private static bool CmpThemeTint(DXW.Underline openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpThemeTint(DXW.Underline openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.ThemeTint, value, diffs, objName, "Tint");
   }
@@ -85,7 +85,7 @@ public static class UnderlineConverter
     return StringValueConverter.GetValue(openXmlElement?.ThemeShade);
   }
   
-  private static bool CmpThemeShade(DXW.Underline openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpThemeShade(DXW.Underline openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.ThemeShade, value, diffs, objName, "Shade");
   }
@@ -110,25 +110,25 @@ public static class UnderlineConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.Underline? openXmlElement, DMW.Underline? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.Underline? openXmlElement, DMW.Underline? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpVal(openXmlElement, value.Type, diffs, objName))
+      if (!CmpVal(openXmlElement, value.Type, diffs, objName, propName))
         ok = false;
-      if (!CmpColor(openXmlElement, value.Color, diffs, objName))
+      if (!CmpColor(openXmlElement, value.Color, diffs, objName, propName))
         ok = false;
-      if (!CmpThemeColor(openXmlElement, value.ThemeColor, diffs, objName))
+      if (!CmpThemeColor(openXmlElement, value.ThemeColor, diffs, objName, propName))
         ok = false;
-      if (!CmpThemeTint(openXmlElement, value.ThemeTint, diffs, objName))
+      if (!CmpThemeTint(openXmlElement, value.ThemeTint, diffs, objName, propName))
         ok = false;
-      if (!CmpThemeShade(openXmlElement, value.ThemeShade, diffs, objName))
+      if (!CmpThemeShade(openXmlElement, value.ThemeShade, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

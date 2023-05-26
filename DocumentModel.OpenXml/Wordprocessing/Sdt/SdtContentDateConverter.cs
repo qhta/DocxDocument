@@ -13,7 +13,7 @@ public static class SdtContentDateConverter
     return openXmlElement?.FullDate?.Value;
   }
   
-  private static bool CmpFullDate(DXW.SdtContentDate openXmlElement, DateTime? value, DiffList? diffs, string? objName)
+  private static bool CmpFullDate(DXW.SdtContentDate openXmlElement, DateTime? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.FullDate?.Value == value) return true;
     diffs?.Add(objName, "FullDate", openXmlElement?.FullDate?.Value, value);
@@ -33,7 +33,7 @@ public static class SdtContentDateConverter
     return openXmlElement.GetFirstChild<DXW.DateFormat>()?.Val?.Value;
   }
   
-  private static bool CmpDateFormat(DXW.SdtContentDate openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpDateFormat(DXW.SdtContentDate openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.DateFormat>();
     if (itemElement?.Val?.Value == value) return true;
@@ -61,7 +61,7 @@ public static class SdtContentDateConverter
     return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.LanguageId>()?.Val);
   }
   
-  private static bool CmpLanguageId(DXW.SdtContentDate openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpLanguageId(DXW.SdtContentDate openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.LanguageId>()?.Val, value, diffs, objName, "LanguageId");
   }
@@ -79,9 +79,9 @@ public static class SdtContentDateConverter
     return EnumValueConverter.GetValue<DXW.DateFormatValues, DMW.DateFormatKind>(openXmlElement.GetFirstChild<DXW.SdtDateMappingType>()?.Val?.Value);
   }
   
-  private static bool CmpSdtDateMappingType(DXW.SdtContentDate openXmlElement, DMW.DateFormatKind? value, DiffList? diffs, string? objName)
+  private static bool CmpSdtDateMappingType(DXW.SdtContentDate openXmlElement, DMW.DateFormatKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.DateFormatValues, DMW.DateFormatKind>(openXmlElement.GetFirstChild<DXW.SdtDateMappingType>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.DateFormatValues, DMW.DateFormatKind>(openXmlElement.GetFirstChild<DXW.SdtDateMappingType>()?.Val?.Value, value, diffs, objName, propName);
   }
   
   private static void SetSdtDateMappingType(DXW.SdtContentDate openXmlElement, DMW.DateFormatKind? value)
@@ -107,9 +107,9 @@ public static class SdtContentDateConverter
     return EnumValueConverter.GetValue<DXW.CalendarValues, DMW.CalendarKind>(openXmlElement.GetFirstChild<DXW.Calendar>()?.Val?.Value);
   }
   
-  private static bool CmpCalendar(DXW.SdtContentDate openXmlElement, DMW.CalendarKind? value, DiffList? diffs, string? objName)
+  private static bool CmpCalendar(DXW.SdtContentDate openXmlElement, DMW.CalendarKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.CalendarValues, DMW.CalendarKind>(openXmlElement.GetFirstChild<DXW.Calendar>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.CalendarValues, DMW.CalendarKind>(openXmlElement.GetFirstChild<DXW.Calendar>()?.Val?.Value, value, diffs, objName, propName);
   }
   
   private static void SetCalendar(DXW.SdtContentDate openXmlElement, DMW.CalendarKind? value)
@@ -142,25 +142,25 @@ public static class SdtContentDateConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.SdtContentDate? openXmlElement, DMW.SdtContentDate? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.SdtContentDate? openXmlElement, DMW.SdtContentDate? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpFullDate(openXmlElement, value.FullDate, diffs, objName))
+      if (!CmpFullDate(openXmlElement, value.FullDate, diffs, objName, propName))
         ok = false;
-      if (!CmpDateFormat(openXmlElement, value.DateFormat, diffs, objName))
+      if (!CmpDateFormat(openXmlElement, value.DateFormat, diffs, objName, propName))
         ok = false;
-      if (!CmpLanguageId(openXmlElement, value.LanguageId, diffs, objName))
+      if (!CmpLanguageId(openXmlElement, value.LanguageId, diffs, objName, propName))
         ok = false;
-      if (!CmpSdtDateMappingType(openXmlElement, value.SdtDateMappingType, diffs, objName))
+      if (!CmpSdtDateMappingType(openXmlElement, value.SdtDateMappingType, diffs, objName, propName))
         ok = false;
-      if (!CmpCalendar(openXmlElement, value.Calendar, diffs, objName))
+      if (!CmpCalendar(openXmlElement, value.Calendar, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -14,9 +14,9 @@ public static class BorderBoxConverter
     return null;
   }
   
-  private static bool CmpBorderBoxProperties(DXM.BorderBox openXmlElement, DMM.BorderBoxProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpBorderBoxProperties(DXM.BorderBox openXmlElement, DMM.BorderBoxProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXM.BorderBoxPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.BorderBoxProperties>(), value, diffs, objName);
+    return DMXM.BorderBoxPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.BorderBoxProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetBorderBoxProperties(DXM.BorderBox openXmlElement, DMM.BorderBoxProperties? value)
@@ -42,9 +42,9 @@ public static class BorderBoxConverter
     return null;
   }
   
-  private static bool CmpArgument(DXM.BorderBox openXmlElement, DMM.Argument? value, DiffList? diffs, string? objName)
+  private static bool CmpArgument(DXM.BorderBox openXmlElement, DMM.Argument? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXM.ArgumentConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.Base>(), value, diffs, objName);
+    return DMXM.ArgumentConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.Base>(), value, diffs, objName, propName);
   }
   
   private static void SetArgument(DXM.BorderBox openXmlElement, DMM.Argument? value)
@@ -74,19 +74,19 @@ public static class BorderBoxConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXM.BorderBox? openXmlElement, DMM.BorderBox? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXM.BorderBox? openXmlElement, DMM.BorderBox? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpBorderBoxProperties(openXmlElement, model.BorderBoxProperties, diffs, objName))
+      if (!CmpBorderBoxProperties(openXmlElement, model.BorderBoxProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpArgument(openXmlElement, model.Argument, diffs, objName))
+      if (!CmpArgument(openXmlElement, model.Argument, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   

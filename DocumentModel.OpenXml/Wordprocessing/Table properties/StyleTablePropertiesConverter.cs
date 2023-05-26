@@ -11,7 +11,7 @@ public static class StyleTablePropertiesConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.TableStyleRowBandSize>()?.Val);
   }
   
-  private static bool CmpTableStyleRowBandSize(DXW.StyleTableProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpTableStyleRowBandSize(DXW.StyleTableProperties openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.TableStyleRowBandSize>()?.Val, value, diffs, objName, "TableStyleRowBandSize");
   }
@@ -28,7 +28,7 @@ public static class StyleTablePropertiesConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.TableStyleColumnBandSize>()?.Val);
   }
   
-  private static bool CmpTableStyleColumnBandSize(DXW.StyleTableProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpTableStyleColumnBandSize(DXW.StyleTableProperties openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.TableStyleColumnBandSize>()?.Val, value, diffs, objName, "TableStyleColumnBandSize");
   }
@@ -53,21 +53,21 @@ public static class StyleTablePropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.StyleTableProperties? openXmlElement, DMW.StyleTableProperties? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.StyleTableProperties? openXmlElement, DMW.StyleTableProperties? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!BaseTablePropertiesConverter.CompareModelElement(openXmlElement, model, diffs, objName))
+      if (!BaseTablePropertiesConverter.CompareModelElement(openXmlElement, model, diffs, objName, propName))
         ok = false;
-      if (!CmpTableStyleRowBandSize(openXmlElement, model.TableStyleRowBandSize, diffs, objName))
+      if (!CmpTableStyleRowBandSize(openXmlElement, model.TableStyleRowBandSize, diffs, objName, propName))
         ok = false;
-      if (!CmpTableStyleColumnBandSize(openXmlElement, model.TableStyleColumnBandSize, diffs, objName))
+      if (!CmpTableStyleColumnBandSize(openXmlElement, model.TableStyleColumnBandSize, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   

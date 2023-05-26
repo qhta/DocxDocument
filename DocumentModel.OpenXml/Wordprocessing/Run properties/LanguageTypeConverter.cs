@@ -13,7 +13,7 @@ public static class LanguageTypeConverter
     return StringValueConverter.GetValue(openXmlElement?.Val);
   }
   
-  private static bool CmpVal(DXW.LanguageType openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpVal(DXW.LanguageType openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Val, value, diffs, objName, "Value");
   }
@@ -31,7 +31,7 @@ public static class LanguageTypeConverter
     return StringValueConverter.GetValue(openXmlElement?.EastAsia);
   }
   
-  private static bool CmpEastAsia(DXW.LanguageType openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpEastAsia(DXW.LanguageType openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.EastAsia, value, diffs, objName, "EastAsia");
   }
@@ -49,7 +49,7 @@ public static class LanguageTypeConverter
     return StringValueConverter.GetValue(openXmlElement?.Bidi);
   }
   
-  private static bool CmpBidi(DXW.LanguageType openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpBidi(DXW.LanguageType openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Bidi, value, diffs, objName, "ComplexScript");
   }
@@ -72,21 +72,21 @@ public static class LanguageTypeConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.LanguageType? openXmlElement, DMW.Languages? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.LanguageType? openXmlElement, DMW.Languages? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpVal(openXmlElement, value.Regular, diffs, objName))
+      if (!CmpVal(openXmlElement, value.Regular, diffs, objName, propName))
         ok = false;
-      if (!CmpEastAsia(openXmlElement, value.EastAsia, diffs, objName))
+      if (!CmpEastAsia(openXmlElement, value.EastAsia, diffs, objName, propName))
         ok = false;
-      if (!CmpBidi(openXmlElement, value.ComplexScript, diffs, objName))
+      if (!CmpBidi(openXmlElement, value.ComplexScript, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

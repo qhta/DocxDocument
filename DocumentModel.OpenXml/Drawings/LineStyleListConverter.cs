@@ -13,9 +13,9 @@ public static class LineStyleListConverter
     return null;
   }
   
-  private static bool CmpOutline(DXD.LineStyleList openXmlElement, DMD.Outline? value, DiffList? diffs, string? objName)
+  private static bool CmpOutline(DXD.LineStyleList openXmlElement, DMD.Outline? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.OutlineConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Outline>(), value, diffs, objName);
+    return DMXD.OutlineConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Outline>(), value, diffs, objName, propName);
   }
   
   private static void SetOutline(DXD.LineStyleList openXmlElement, DMD.Outline? value)
@@ -42,17 +42,17 @@ public static class LineStyleListConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.LineStyleList? openXmlElement, DMD.LineStyleList? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.LineStyleList? openXmlElement, DMD.LineStyleList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpOutline(openXmlElement, value.Outline, diffs, objName))
+      if (!CmpOutline(openXmlElement, value.Outline, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

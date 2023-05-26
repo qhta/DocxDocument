@@ -13,7 +13,7 @@ public static class ImageControlConverter
     return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
-  private static bool CmpId(DXO10CUI.ImageControl openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpId(DXO10CUI.ImageControl openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
@@ -31,7 +31,7 @@ public static class ImageControlConverter
     return StringValueConverter.GetValue(openXmlElement?.QualifiedId);
   }
   
-  private static bool CmpQualifiedId(DXO10CUI.ImageControl openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpQualifiedId(DXO10CUI.ImageControl openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.QualifiedId, value, diffs, objName, "QualifiedId");
   }
@@ -49,7 +49,7 @@ public static class ImageControlConverter
     return StringValueConverter.GetValue(openXmlElement?.Tag);
   }
   
-  private static bool CmpTag(DXO10CUI.ImageControl openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpTag(DXO10CUI.ImageControl openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Tag, value, diffs, objName, "Tag");
   }
@@ -67,7 +67,7 @@ public static class ImageControlConverter
     return openXmlElement?.Enabled?.Value;
   }
   
-  private static bool CmpEnabled(DXO10CUI.ImageControl openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpEnabled(DXO10CUI.ImageControl openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Enabled?.Value == value) return true;
     diffs?.Add(objName, "Enabled", openXmlElement?.Enabled?.Value, value);
@@ -90,7 +90,7 @@ public static class ImageControlConverter
     return StringValueConverter.GetValue(openXmlElement?.GetEnabled);
   }
   
-  private static bool CmpGetEnabled(DXO10CUI.ImageControl openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetEnabled(DXO10CUI.ImageControl openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetEnabled, value, diffs, objName, "GetEnabled");
   }
@@ -108,7 +108,7 @@ public static class ImageControlConverter
     return openXmlElement?.Visible?.Value;
   }
   
-  private static bool CmpVisible(DXO10CUI.ImageControl openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpVisible(DXO10CUI.ImageControl openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Visible?.Value == value) return true;
     diffs?.Add(objName, "Visible", openXmlElement?.Visible?.Value, value);
@@ -131,7 +131,7 @@ public static class ImageControlConverter
     return StringValueConverter.GetValue(openXmlElement?.GetVisible);
   }
   
-  private static bool CmpGetVisible(DXO10CUI.ImageControl openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetVisible(DXO10CUI.ImageControl openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetVisible, value, diffs, objName, "GetVisible");
   }
@@ -149,7 +149,7 @@ public static class ImageControlConverter
     return StringValueConverter.GetValue(openXmlElement?.Image);
   }
   
-  private static bool CmpImage(DXO10CUI.ImageControl openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpImage(DXO10CUI.ImageControl openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Image, value, diffs, objName, "Image");
   }
@@ -167,7 +167,7 @@ public static class ImageControlConverter
     return StringValueConverter.GetValue(openXmlElement?.ImageMso);
   }
   
-  private static bool CmpImageMso(DXO10CUI.ImageControl openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpImageMso(DXO10CUI.ImageControl openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.ImageMso, value, diffs, objName, "ImageMso");
   }
@@ -185,7 +185,7 @@ public static class ImageControlConverter
     return StringValueConverter.GetValue(openXmlElement?.GetImage);
   }
   
-  private static bool CmpGetImage(DXO10CUI.ImageControl openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetImage(DXO10CUI.ImageControl openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetImage, value, diffs, objName, "GetImage");
   }
@@ -203,7 +203,7 @@ public static class ImageControlConverter
     return StringValueConverter.GetValue(openXmlElement?.AltText);
   }
   
-  private static bool CmpAltText(DXO10CUI.ImageControl openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpAltText(DXO10CUI.ImageControl openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.AltText, value, diffs, objName, "AltText");
   }
@@ -221,7 +221,7 @@ public static class ImageControlConverter
     return StringValueConverter.GetValue(openXmlElement?.GetAltText);
   }
   
-  private static bool CmpGetAltText(DXO10CUI.ImageControl openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetAltText(DXO10CUI.ImageControl openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetAltText, value, diffs, objName, "GetAltText");
   }
@@ -253,39 +253,39 @@ public static class ImageControlConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO10CUI.ImageControl? openXmlElement, DM.ImageControl? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10CUI.ImageControl? openXmlElement, DM.ImageControl? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+      if (!CmpId(openXmlElement, value.Id, diffs, objName, propName))
         ok = false;
-      if (!CmpQualifiedId(openXmlElement, value.QualifiedId, diffs, objName))
+      if (!CmpQualifiedId(openXmlElement, value.QualifiedId, diffs, objName, propName))
         ok = false;
-      if (!CmpTag(openXmlElement, value.Tag, diffs, objName))
+      if (!CmpTag(openXmlElement, value.Tag, diffs, objName, propName))
         ok = false;
-      if (!CmpEnabled(openXmlElement, value.Enabled, diffs, objName))
+      if (!CmpEnabled(openXmlElement, value.Enabled, diffs, objName, propName))
         ok = false;
-      if (!CmpGetEnabled(openXmlElement, value.GetEnabled, diffs, objName))
+      if (!CmpGetEnabled(openXmlElement, value.GetEnabled, diffs, objName, propName))
         ok = false;
-      if (!CmpVisible(openXmlElement, value.Visible, diffs, objName))
+      if (!CmpVisible(openXmlElement, value.Visible, diffs, objName, propName))
         ok = false;
-      if (!CmpGetVisible(openXmlElement, value.GetVisible, diffs, objName))
+      if (!CmpGetVisible(openXmlElement, value.GetVisible, diffs, objName, propName))
         ok = false;
-      if (!CmpImage(openXmlElement, value.Image, diffs, objName))
+      if (!CmpImage(openXmlElement, value.Image, diffs, objName, propName))
         ok = false;
-      if (!CmpImageMso(openXmlElement, value.ImageMso, diffs, objName))
+      if (!CmpImageMso(openXmlElement, value.ImageMso, diffs, objName, propName))
         ok = false;
-      if (!CmpGetImage(openXmlElement, value.GetImage, diffs, objName))
+      if (!CmpGetImage(openXmlElement, value.GetImage, diffs, objName, propName))
         ok = false;
-      if (!CmpAltText(openXmlElement, value.AltText, diffs, objName))
+      if (!CmpAltText(openXmlElement, value.AltText, diffs, objName, propName))
         ok = false;
-      if (!CmpGetAltText(openXmlElement, value.GetAltText, diffs, objName))
+      if (!CmpGetAltText(openXmlElement, value.GetAltText, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

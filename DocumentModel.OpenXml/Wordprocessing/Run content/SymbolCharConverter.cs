@@ -13,7 +13,7 @@ public static class SymbolCharConverter
     return StringValueConverter.GetValue(openXmlElement?.Font);
   }
   
-  private static bool CmpFont(DXW.SymbolChar openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpFont(DXW.SymbolChar openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Font, value, diffs, objName, "Font");
   }
@@ -33,7 +33,7 @@ public static class SymbolCharConverter
     return null;
   }
   
-  private static bool CmpChar(DXW.SymbolChar openXmlElement, DM.HexChar? value, DiffList? diffs, string? objName)
+  private static bool CmpChar(DXW.SymbolChar openXmlElement, DM.HexChar? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Char?.Value != null)
       if (HexCharConverter.GetValue(openXmlElement.Char.Value).Equals(value))
@@ -63,19 +63,19 @@ public static class SymbolCharConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.SymbolChar? openXmlElement, DMW.SymbolChar? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.SymbolChar? openXmlElement, DMW.SymbolChar? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpFont(openXmlElement, value.Font, diffs, objName))
+      if (!CmpFont(openXmlElement, value.Font, diffs, objName, propName))
         ok = false;
-      if (!CmpChar(openXmlElement, value.Char, diffs, objName))
+      if (!CmpChar(openXmlElement, value.Char, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

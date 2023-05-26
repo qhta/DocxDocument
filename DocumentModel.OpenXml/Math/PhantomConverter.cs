@@ -14,9 +14,9 @@ public static class PhantomConverter
     return null;
   }
   
-  private static bool CmpPhantomProperties(DXM.Phantom openXmlElement, DMM.PhantomProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpPhantomProperties(DXM.Phantom openXmlElement, DMM.PhantomProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXM.PhantomPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.PhantomProperties>(), value, diffs, objName);
+    return DMXM.PhantomPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.PhantomProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetPhantomProperties(DXM.Phantom openXmlElement, DMM.PhantomProperties? value)
@@ -42,9 +42,9 @@ public static class PhantomConverter
     return null;
   }
   
-  private static bool CmpArgument(DXM.Phantom openXmlElement, DMM.Argument? value, DiffList? diffs, string? objName)
+  private static bool CmpArgument(DXM.Phantom openXmlElement, DMM.Argument? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXM.ArgumentConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.Base>(), value, diffs, objName);
+    return DMXM.ArgumentConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.Base>(), value, diffs, objName, propName);
   }
   
   private static void SetArgument(DXM.Phantom openXmlElement, DMM.Argument? value)
@@ -74,19 +74,19 @@ public static class PhantomConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXM.Phantom? openXmlElement, DMM.Phantom? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXM.Phantom? openXmlElement, DMM.Phantom? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpPhantomProperties(openXmlElement, model.PhantomProperties, diffs, objName))
+      if (!CmpPhantomProperties(openXmlElement, model.PhantomProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpArgument(openXmlElement, model.Argument, diffs, objName))
+      if (!CmpArgument(openXmlElement, model.Argument, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   

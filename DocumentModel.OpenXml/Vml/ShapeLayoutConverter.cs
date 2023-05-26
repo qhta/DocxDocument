@@ -13,9 +13,9 @@ public static class ShapeLayoutConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMV.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value);
   }
   
-  private static bool CmpExtension(DXVO.ShapeLayout openXmlElement, DMV.ExtensionHandlingBehaviorKind? value, DiffList? diffs, string? objName)
+  private static bool CmpExtension(DXVO.ShapeLayout openXmlElement, DMV.ExtensionHandlingBehaviorKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMV.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMV.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value, value, diffs, objName, propName);
   }
   
   private static void SetExtension(DXVO.ShapeLayout openXmlElement, DMV.ExtensionHandlingBehaviorKind? value)
@@ -34,9 +34,9 @@ public static class ShapeLayoutConverter
     return null;
   }
   
-  private static bool CmpShapeIdMap(DXVO.ShapeLayout openXmlElement, DMV.ShapeIdMap? value, DiffList? diffs, string? objName)
+  private static bool CmpShapeIdMap(DXVO.ShapeLayout openXmlElement, DMV.ShapeIdMap? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXV.ShapeIdMapConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVO.ShapeIdMap>(), value, diffs, objName);
+    return DMXV.ShapeIdMapConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVO.ShapeIdMap>(), value, diffs, objName, propName);
   }
   
   private static void SetShapeIdMap(DXVO.ShapeLayout openXmlElement, DMV.ShapeIdMap? value)
@@ -63,9 +63,9 @@ public static class ShapeLayoutConverter
     return null;
   }
   
-  private static bool CmpRegroupTable(DXVO.ShapeLayout openXmlElement, DMV.RegroupTable? value, DiffList? diffs, string? objName)
+  private static bool CmpRegroupTable(DXVO.ShapeLayout openXmlElement, DMV.RegroupTable? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXV.RegroupTableConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVO.RegroupTable>(), value, diffs, objName);
+    return DMXV.RegroupTableConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVO.RegroupTable>(), value, diffs, objName, propName);
   }
   
   private static void SetRegroupTable(DXVO.ShapeLayout openXmlElement, DMV.RegroupTable? value)
@@ -92,9 +92,9 @@ public static class ShapeLayoutConverter
     return null;
   }
   
-  private static bool CmpRules(DXVO.ShapeLayout openXmlElement, DMV.Rules? value, DiffList? diffs, string? objName)
+  private static bool CmpRules(DXVO.ShapeLayout openXmlElement, DMV.Rules? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXV.RulesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVO.Rules>(), value, diffs, objName);
+    return DMXV.RulesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVO.Rules>(), value, diffs, objName, propName);
   }
   
   private static void SetRules(DXVO.ShapeLayout openXmlElement, DMV.Rules? value)
@@ -124,23 +124,23 @@ public static class ShapeLayoutConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXVO.ShapeLayout? openXmlElement, DMV.ShapeLayout? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXVO.ShapeLayout? openXmlElement, DMV.ShapeLayout? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpExtension(openXmlElement, value.Extension, diffs, objName))
+      if (!CmpExtension(openXmlElement, value.Extension, diffs, objName, propName))
         ok = false;
-      if (!CmpShapeIdMap(openXmlElement, value.ShapeIdMap, diffs, objName))
+      if (!CmpShapeIdMap(openXmlElement, value.ShapeIdMap, diffs, objName, propName))
         ok = false;
-      if (!CmpRegroupTable(openXmlElement, value.RegroupTable, diffs, objName))
+      if (!CmpRegroupTable(openXmlElement, value.RegroupTable, diffs, objName, propName))
         ok = false;
-      if (!CmpRules(openXmlElement, value.Rules, diffs, objName))
+      if (!CmpRules(openXmlElement, value.Rules, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

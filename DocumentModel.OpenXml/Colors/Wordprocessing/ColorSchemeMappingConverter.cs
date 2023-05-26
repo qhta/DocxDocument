@@ -13,9 +13,9 @@ public static class ColorSchemeMappingConverter
     return EnumValueConverter.GetValue<DXW.ColorSchemeIndexValues, DMW.ColorSchemeIndexKind>(openXmlElement?.Background1?.Value);
   }
   
-  private static bool CmpBackground1(DXW.ColorSchemeMapping openXmlElement, DMW.ColorSchemeIndexKind? value, DiffList? diffs, string? objName)
+  private static bool CmpBackground1(DXW.ColorSchemeMapping openXmlElement, DMW.ColorSchemeIndexKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.ColorSchemeIndexValues, DMW.ColorSchemeIndexKind>(openXmlElement?.Background1?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.ColorSchemeIndexValues, DMW.ColorSchemeIndexKind>(openXmlElement?.Background1?.Value, value, diffs, objName, propName);
   }
   
   private static void SetBackground1(DXW.ColorSchemeMapping openXmlElement, DMW.ColorSchemeIndexKind? value)
@@ -31,9 +31,9 @@ public static class ColorSchemeMappingConverter
     return EnumValueConverter.GetValue<DXW.ColorSchemeIndexValues, DMW.ColorSchemeIndexKind>(openXmlElement?.Text1?.Value);
   }
   
-  private static bool CmpText1(DXW.ColorSchemeMapping openXmlElement, DMW.ColorSchemeIndexKind? value, DiffList? diffs, string? objName)
+  private static bool CmpText1(DXW.ColorSchemeMapping openXmlElement, DMW.ColorSchemeIndexKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.ColorSchemeIndexValues, DMW.ColorSchemeIndexKind>(openXmlElement?.Text1?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.ColorSchemeIndexValues, DMW.ColorSchemeIndexKind>(openXmlElement?.Text1?.Value, value, diffs, objName, propName);
   }
   
   private static void SetText1(DXW.ColorSchemeMapping openXmlElement, DMW.ColorSchemeIndexKind? value)
@@ -49,9 +49,9 @@ public static class ColorSchemeMappingConverter
     return EnumValueConverter.GetValue<DXW.ColorSchemeIndexValues, DMW.ColorSchemeIndexKind>(openXmlElement?.Background2?.Value);
   }
   
-  private static bool CmpBackground2(DXW.ColorSchemeMapping openXmlElement, DMW.ColorSchemeIndexKind? value, DiffList? diffs, string? objName)
+  private static bool CmpBackground2(DXW.ColorSchemeMapping openXmlElement, DMW.ColorSchemeIndexKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.ColorSchemeIndexValues, DMW.ColorSchemeIndexKind>(openXmlElement?.Background2?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.ColorSchemeIndexValues, DMW.ColorSchemeIndexKind>(openXmlElement?.Background2?.Value, value, diffs, objName, propName);
   }
   
   private static void SetBackground2(DXW.ColorSchemeMapping openXmlElement, DMW.ColorSchemeIndexKind? value)
@@ -67,9 +67,9 @@ public static class ColorSchemeMappingConverter
     return EnumValueConverter.GetValue<DXW.ColorSchemeIndexValues, DMW.ColorSchemeIndexKind>(openXmlElement?.Text2?.Value);
   }
   
-  private static bool CmpText2(DXW.ColorSchemeMapping openXmlElement, DMW.ColorSchemeIndexKind? value, DiffList? diffs, string? objName)
+  private static bool CmpText2(DXW.ColorSchemeMapping openXmlElement, DMW.ColorSchemeIndexKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.ColorSchemeIndexValues, DMW.ColorSchemeIndexKind>(openXmlElement?.Text2?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.ColorSchemeIndexValues, DMW.ColorSchemeIndexKind>(openXmlElement?.Text2?.Value, value, diffs, objName, propName);
   }
   
   private static void SetText2(DXW.ColorSchemeMapping openXmlElement, DMW.ColorSchemeIndexKind? value)
@@ -85,9 +85,9 @@ public static class ColorSchemeMappingConverter
     return EnumValueConverter.GetValue<DXW.ColorSchemeIndexValues, DMW.ColorSchemeIndexKind>(openXmlElement?.Accent1?.Value);
   }
   
-  private static bool CmpAccent1(DXW.ColorSchemeMapping openXmlElement, DMW.ColorSchemeIndexKind? value, DiffList? diffs, string? objName)
+  private static bool CmpAccent1(DXW.ColorSchemeMapping openXmlElement, DMW.ColorSchemeIndexKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.ColorSchemeIndexValues, DMW.ColorSchemeIndexKind>(openXmlElement?.Accent1?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.ColorSchemeIndexValues, DMW.ColorSchemeIndexKind>(openXmlElement?.Accent1?.Value, value, diffs, objName, propName);
   }
   
   private static void SetAccent1(DXW.ColorSchemeMapping openXmlElement, DMW.ColorSchemeIndexKind? value)
@@ -103,9 +103,9 @@ public static class ColorSchemeMappingConverter
     return EnumValueConverter.GetValue<DXW.ColorSchemeIndexValues, DMW.ColorSchemeIndexKind>(openXmlElement?.Accent2?.Value);
   }
   
-  private static bool CmpAccent2(DXW.ColorSchemeMapping openXmlElement, DMW.ColorSchemeIndexKind? value, DiffList? diffs, string? objName)
+  private static bool CmpAccent2(DXW.ColorSchemeMapping openXmlElement, DMW.ColorSchemeIndexKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.ColorSchemeIndexValues, DMW.ColorSchemeIndexKind>(openXmlElement?.Accent2?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.ColorSchemeIndexValues, DMW.ColorSchemeIndexKind>(openXmlElement?.Accent2?.Value, value, diffs, objName, propName);
   }
   
   private static void SetAccent2(DXW.ColorSchemeMapping openXmlElement, DMW.ColorSchemeIndexKind? value)
@@ -121,9 +121,9 @@ public static class ColorSchemeMappingConverter
     return EnumValueConverter.GetValue<DXW.ColorSchemeIndexValues, DMW.ColorSchemeIndexKind>(openXmlElement?.Accent3?.Value);
   }
   
-  private static bool CmpAccent3(DXW.ColorSchemeMapping openXmlElement, DMW.ColorSchemeIndexKind? value, DiffList? diffs, string? objName)
+  private static bool CmpAccent3(DXW.ColorSchemeMapping openXmlElement, DMW.ColorSchemeIndexKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.ColorSchemeIndexValues, DMW.ColorSchemeIndexKind>(openXmlElement?.Accent3?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.ColorSchemeIndexValues, DMW.ColorSchemeIndexKind>(openXmlElement?.Accent3?.Value, value, diffs, objName, propName);
   }
   
   private static void SetAccent3(DXW.ColorSchemeMapping openXmlElement, DMW.ColorSchemeIndexKind? value)
@@ -139,9 +139,9 @@ public static class ColorSchemeMappingConverter
     return EnumValueConverter.GetValue<DXW.ColorSchemeIndexValues, DMW.ColorSchemeIndexKind>(openXmlElement?.Accent4?.Value);
   }
   
-  private static bool CmpAccent4(DXW.ColorSchemeMapping openXmlElement, DMW.ColorSchemeIndexKind? value, DiffList? diffs, string? objName)
+  private static bool CmpAccent4(DXW.ColorSchemeMapping openXmlElement, DMW.ColorSchemeIndexKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.ColorSchemeIndexValues, DMW.ColorSchemeIndexKind>(openXmlElement?.Accent4?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.ColorSchemeIndexValues, DMW.ColorSchemeIndexKind>(openXmlElement?.Accent4?.Value, value, diffs, objName, propName);
   }
   
   private static void SetAccent4(DXW.ColorSchemeMapping openXmlElement, DMW.ColorSchemeIndexKind? value)
@@ -157,9 +157,9 @@ public static class ColorSchemeMappingConverter
     return EnumValueConverter.GetValue<DXW.ColorSchemeIndexValues, DMW.ColorSchemeIndexKind>(openXmlElement?.Accent5?.Value);
   }
   
-  private static bool CmpAccent5(DXW.ColorSchemeMapping openXmlElement, DMW.ColorSchemeIndexKind? value, DiffList? diffs, string? objName)
+  private static bool CmpAccent5(DXW.ColorSchemeMapping openXmlElement, DMW.ColorSchemeIndexKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.ColorSchemeIndexValues, DMW.ColorSchemeIndexKind>(openXmlElement?.Accent5?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.ColorSchemeIndexValues, DMW.ColorSchemeIndexKind>(openXmlElement?.Accent5?.Value, value, diffs, objName, propName);
   }
   
   private static void SetAccent5(DXW.ColorSchemeMapping openXmlElement, DMW.ColorSchemeIndexKind? value)
@@ -175,9 +175,9 @@ public static class ColorSchemeMappingConverter
     return EnumValueConverter.GetValue<DXW.ColorSchemeIndexValues, DMW.ColorSchemeIndexKind>(openXmlElement?.Accent6?.Value);
   }
   
-  private static bool CmpAccent6(DXW.ColorSchemeMapping openXmlElement, DMW.ColorSchemeIndexKind? value, DiffList? diffs, string? objName)
+  private static bool CmpAccent6(DXW.ColorSchemeMapping openXmlElement, DMW.ColorSchemeIndexKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.ColorSchemeIndexValues, DMW.ColorSchemeIndexKind>(openXmlElement?.Accent6?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.ColorSchemeIndexValues, DMW.ColorSchemeIndexKind>(openXmlElement?.Accent6?.Value, value, diffs, objName, propName);
   }
   
   private static void SetAccent6(DXW.ColorSchemeMapping openXmlElement, DMW.ColorSchemeIndexKind? value)
@@ -193,9 +193,9 @@ public static class ColorSchemeMappingConverter
     return EnumValueConverter.GetValue<DXW.ColorSchemeIndexValues, DMW.ColorSchemeIndexKind>(openXmlElement?.Hyperlink?.Value);
   }
   
-  private static bool CmpHyperlink(DXW.ColorSchemeMapping openXmlElement, DMW.ColorSchemeIndexKind? value, DiffList? diffs, string? objName)
+  private static bool CmpHyperlink(DXW.ColorSchemeMapping openXmlElement, DMW.ColorSchemeIndexKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.ColorSchemeIndexValues, DMW.ColorSchemeIndexKind>(openXmlElement?.Hyperlink?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.ColorSchemeIndexValues, DMW.ColorSchemeIndexKind>(openXmlElement?.Hyperlink?.Value, value, diffs, objName, propName);
   }
   
   private static void SetHyperlink(DXW.ColorSchemeMapping openXmlElement, DMW.ColorSchemeIndexKind? value)
@@ -211,9 +211,9 @@ public static class ColorSchemeMappingConverter
     return EnumValueConverter.GetValue<DXW.ColorSchemeIndexValues, DMW.ColorSchemeIndexKind>(openXmlElement?.FollowedHyperlink?.Value);
   }
   
-  private static bool CmpFollowedHyperlink(DXW.ColorSchemeMapping openXmlElement, DMW.ColorSchemeIndexKind? value, DiffList? diffs, string? objName)
+  private static bool CmpFollowedHyperlink(DXW.ColorSchemeMapping openXmlElement, DMW.ColorSchemeIndexKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.ColorSchemeIndexValues, DMW.ColorSchemeIndexKind>(openXmlElement?.FollowedHyperlink?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.ColorSchemeIndexValues, DMW.ColorSchemeIndexKind>(openXmlElement?.FollowedHyperlink?.Value, value, diffs, objName, propName);
   }
   
   private static void SetFollowedHyperlink(DXW.ColorSchemeMapping openXmlElement, DMW.ColorSchemeIndexKind? value)
@@ -243,39 +243,39 @@ public static class ColorSchemeMappingConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.ColorSchemeMapping? openXmlElement, DMW.ColorSchemeMapping? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.ColorSchemeMapping? openXmlElement, DMW.ColorSchemeMapping? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpBackground1(openXmlElement, value.Background1, diffs, objName))
+      if (!CmpBackground1(openXmlElement, value.Background1, diffs, objName, propName))
         ok = false;
-      if (!CmpText1(openXmlElement, value.Text1, diffs, objName))
+      if (!CmpText1(openXmlElement, value.Text1, diffs, objName, propName))
         ok = false;
-      if (!CmpBackground2(openXmlElement, value.Background2, diffs, objName))
+      if (!CmpBackground2(openXmlElement, value.Background2, diffs, objName, propName))
         ok = false;
-      if (!CmpText2(openXmlElement, value.Text2, diffs, objName))
+      if (!CmpText2(openXmlElement, value.Text2, diffs, objName, propName))
         ok = false;
-      if (!CmpAccent1(openXmlElement, value.Accent1, diffs, objName))
+      if (!CmpAccent1(openXmlElement, value.Accent1, diffs, objName, propName))
         ok = false;
-      if (!CmpAccent2(openXmlElement, value.Accent2, diffs, objName))
+      if (!CmpAccent2(openXmlElement, value.Accent2, diffs, objName, propName))
         ok = false;
-      if (!CmpAccent3(openXmlElement, value.Accent3, diffs, objName))
+      if (!CmpAccent3(openXmlElement, value.Accent3, diffs, objName, propName))
         ok = false;
-      if (!CmpAccent4(openXmlElement, value.Accent4, diffs, objName))
+      if (!CmpAccent4(openXmlElement, value.Accent4, diffs, objName, propName))
         ok = false;
-      if (!CmpAccent5(openXmlElement, value.Accent5, diffs, objName))
+      if (!CmpAccent5(openXmlElement, value.Accent5, diffs, objName, propName))
         ok = false;
-      if (!CmpAccent6(openXmlElement, value.Accent6, diffs, objName))
+      if (!CmpAccent6(openXmlElement, value.Accent6, diffs, objName, propName))
         ok = false;
-      if (!CmpHyperlink(openXmlElement, value.Hyperlink, diffs, objName))
+      if (!CmpHyperlink(openXmlElement, value.Hyperlink, diffs, objName, propName))
         ok = false;
-      if (!CmpFollowedHyperlink(openXmlElement, value.FollowedHyperlink, diffs, objName))
+      if (!CmpFollowedHyperlink(openXmlElement, value.FollowedHyperlink, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

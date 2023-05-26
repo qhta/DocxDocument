@@ -19,7 +19,7 @@ public static class ExtensionListConverter
     return null;
   }
 
-  public static bool CmpExtensions(DXO21WCE.ExtensionList? openXmlElement, Collection<DMW.Extension>? value, DiffList? diffs, string? objName)
+  public static bool CmpExtensions(DXO21WCE.ExtensionList? openXmlElement, Collection<DMW.Extension>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     int origElementsCount = 0;
     if (openXmlElement != null)
@@ -31,7 +31,7 @@ public static class ExtensionListConverter
       {
         if (origElementsCount != modelElementsCount)
         {
-          diffs?.Add(objName, openXmlElement.GetType().Name + ".Count", origElementsCount, modelElementsCount);
+          diffs?.Add(objName, propName ?? openXmlElement.GetType().Name + ".Count", origElementsCount, modelElementsCount);
           return false;
         }
         var ok = true;
@@ -40,14 +40,14 @@ public static class ExtensionListConverter
         {
           modelEnumerator.MoveNext();
           var modelItem = modelEnumerator.Current;
-          if (!DMXW.ExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+          if (!DMXW.ExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName, propName))
             ok = false;
         }
         return ok;
       }
     }
     if (origElementsCount == 0 && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
 
@@ -74,17 +74,17 @@ public static class ExtensionListConverter
     return null;
   }
 
-  public static bool CompareModelElement(DXO21WCE.ExtensionList? openXmlElement, DMW.ExtensionList? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO21WCE.ExtensionList? openXmlElement, DMW.ExtensionList? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpExtensions(openXmlElement, model, diffs, objName))
+      if (!CmpExtensions(openXmlElement, model, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
 

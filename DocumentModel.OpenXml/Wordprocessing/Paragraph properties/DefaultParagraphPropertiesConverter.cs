@@ -17,17 +17,17 @@ public static class DefaultParagraphPropertiesConverter
     return null;
   }
 
-  public static bool CompareModelElement(DXW.ParagraphPropertiesDefault? openXmlElement, DMW.DefaultParagraphProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.ParagraphPropertiesDefault? openXmlElement, DMW.DefaultParagraphProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!BaseParagraphPropertiesConverter.CompareModelElement(openXmlElement, value, diffs, objName))
+      if (!BaseParagraphPropertiesConverter.CompareModelElement(openXmlElement, value, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
 

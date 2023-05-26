@@ -13,9 +13,9 @@ public static class MailMergeRecipientsConverter
     return null;
   }
   
-  private static bool CmpSingleDataSourceRecord(DXOW.MailMergeRecipients openXmlElement, DMW.SingleDataSourceRecord? value, DiffList? diffs, string? objName)
+  private static bool CmpSingleDataSourceRecord(DXOW.MailMergeRecipients openXmlElement, DMW.SingleDataSourceRecord? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.SingleDataSourceRecordConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOW.SingleDataSourceRecord>(), value, diffs, objName);
+    return DMXW.SingleDataSourceRecordConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOW.SingleDataSourceRecord>(), value, diffs, objName, propName);
   }
   
   private static void SetSingleDataSourceRecord(DXOW.MailMergeRecipients openXmlElement, DMW.SingleDataSourceRecord? value)
@@ -42,17 +42,17 @@ public static class MailMergeRecipientsConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXOW.MailMergeRecipients? openXmlElement, DMW.MailMergeRecipients? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXOW.MailMergeRecipients? openXmlElement, DMW.MailMergeRecipients? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpSingleDataSourceRecord(openXmlElement, value.SingleDataSourceRecord, diffs, objName))
+      if (!CmpSingleDataSourceRecord(openXmlElement, value.SingleDataSourceRecord, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

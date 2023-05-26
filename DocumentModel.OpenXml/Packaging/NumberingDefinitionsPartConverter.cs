@@ -10,7 +10,7 @@ public static class NumberingDefinitionsPartConverter
     return openXmlElement?.ContentType;
   }
   
-  private static bool CmpContentType(DXPack.NumberingDefinitionsPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpContentType(DXPack.NumberingDefinitionsPart openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.ContentType == value) return true;
     diffs?.Add(objName, "ContentType", openXmlElement?.ContentType, value);
@@ -32,7 +32,7 @@ public static class NumberingDefinitionsPartConverter
     return collection;
   }
   
-  private static bool CmpImageParts(DXPack.NumberingDefinitionsPart openXmlElement, Collection<DMPack.ImagePart>? value, DiffList? diffs, string? objName)
+  private static bool CmpImageParts(DXPack.NumberingDefinitionsPart openXmlElement, Collection<DMPack.ImagePart>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return true;
   }
@@ -45,7 +45,7 @@ public static class NumberingDefinitionsPartConverter
       return DMXW.NumberingConverter.CreateModelElement(openXmlElement?.RootElement as DXW.Numbering);
   }
   
-  private static bool CmpNumbering(DXPack.NumberingDefinitionsPart openXmlElement, DMW.Numbering? value, DiffList? diffs, string? objName)
+  private static bool CmpNumbering(DXPack.NumberingDefinitionsPart openXmlElement, DMW.Numbering? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
       return true;
   }
@@ -65,7 +65,7 @@ public static class NumberingDefinitionsPartConverter
     return openXmlElement?.RelationshipType;
   }
   
-  private static bool CmpRelationshipType(DXPack.NumberingDefinitionsPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpRelationshipType(DXPack.NumberingDefinitionsPart openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.RelationshipType == value) return true;
     diffs?.Add(objName, "RelationshipType", openXmlElement?.RelationshipType, value);
@@ -86,23 +86,23 @@ public static class NumberingDefinitionsPartConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXPack.NumberingDefinitionsPart? openXmlElement, DMPack.NumberingDefinitionsPart? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXPack.NumberingDefinitionsPart? openXmlElement, DMPack.NumberingDefinitionsPart? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpContentType(openXmlElement, value.ContentType, diffs, objName))
+      if (!CmpContentType(openXmlElement, value.ContentType, diffs, objName, propName))
         ok = false;
-      if (!CmpImageParts(openXmlElement, value.ImageParts, diffs, objName))
+      if (!CmpImageParts(openXmlElement, value.ImageParts, diffs, objName, propName))
         ok = false;
-      if (!CmpNumbering(openXmlElement, value.Numbering, diffs, objName))
+      if (!CmpNumbering(openXmlElement, value.Numbering, diffs, objName, propName))
         ok = false;
-      if (!CmpRelationshipType(openXmlElement, value.RelationshipType, diffs, objName))
+      if (!CmpRelationshipType(openXmlElement, value.RelationshipType, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

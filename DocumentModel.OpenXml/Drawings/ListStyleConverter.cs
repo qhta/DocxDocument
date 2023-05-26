@@ -16,9 +16,9 @@ public static class ListStyleConverter
     return null;
   }
   
-  private static bool CmpDefaultParagraphProperties(DXD.ListStyle openXmlElement, DMD.DefaultParagraphProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpDefaultParagraphProperties(DXD.ListStyle openXmlElement, DMD.DefaultParagraphProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.DefaultParagraphPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.DefaultParagraphProperties>(), value, diffs, objName);
+    return DMXD.DefaultParagraphPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.DefaultParagraphProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetDefaultParagraphProperties(DXD.ListStyle openXmlElement, DMD.DefaultParagraphProperties? value)
@@ -45,9 +45,9 @@ public static class ListStyleConverter
     return null;
   }
   
-  private static bool CmpLevel1ParagraphProperties(DXD.ListStyle openXmlElement, DMD.Level1ParagraphProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpLevel1ParagraphProperties(DXD.ListStyle openXmlElement, DMD.Level1ParagraphProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.Level1ParagraphPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Level1ParagraphProperties>(), value, diffs, objName);
+    return DMXD.Level1ParagraphPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Level1ParagraphProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetLevel1ParagraphProperties(DXD.ListStyle openXmlElement, DMD.Level1ParagraphProperties? value)
@@ -74,9 +74,9 @@ public static class ListStyleConverter
     return null;
   }
   
-  private static bool CmpLevel2ParagraphProperties(DXD.ListStyle openXmlElement, DMD.Level2ParagraphProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpLevel2ParagraphProperties(DXD.ListStyle openXmlElement, DMD.Level2ParagraphProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.Level2ParagraphPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Level2ParagraphProperties>(), value, diffs, objName);
+    return DMXD.Level2ParagraphPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Level2ParagraphProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetLevel2ParagraphProperties(DXD.ListStyle openXmlElement, DMD.Level2ParagraphProperties? value)
@@ -103,9 +103,9 @@ public static class ListStyleConverter
     return null;
   }
   
-  private static bool CmpLevel3ParagraphProperties(DXD.ListStyle openXmlElement, DMD.Level3ParagraphProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpLevel3ParagraphProperties(DXD.ListStyle openXmlElement, DMD.Level3ParagraphProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.Level3ParagraphPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Level3ParagraphProperties>(), value, diffs, objName);
+    return DMXD.Level3ParagraphPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Level3ParagraphProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetLevel3ParagraphProperties(DXD.ListStyle openXmlElement, DMD.Level3ParagraphProperties? value)
@@ -132,9 +132,9 @@ public static class ListStyleConverter
     return null;
   }
   
-  private static bool CmpLevel4ParagraphProperties(DXD.ListStyle openXmlElement, DMD.Level4ParagraphProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpLevel4ParagraphProperties(DXD.ListStyle openXmlElement, DMD.Level4ParagraphProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.Level4ParagraphPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Level4ParagraphProperties>(), value, diffs, objName);
+    return DMXD.Level4ParagraphPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Level4ParagraphProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetLevel4ParagraphProperties(DXD.ListStyle openXmlElement, DMD.Level4ParagraphProperties? value)
@@ -161,9 +161,9 @@ public static class ListStyleConverter
     return null;
   }
   
-  private static bool CmpLevel5ParagraphProperties(DXD.ListStyle openXmlElement, DMD.Level5ParagraphProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpLevel5ParagraphProperties(DXD.ListStyle openXmlElement, DMD.Level5ParagraphProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.Level5ParagraphPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Level5ParagraphProperties>(), value, diffs, objName);
+    return DMXD.Level5ParagraphPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Level5ParagraphProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetLevel5ParagraphProperties(DXD.ListStyle openXmlElement, DMD.Level5ParagraphProperties? value)
@@ -190,9 +190,9 @@ public static class ListStyleConverter
     return null;
   }
   
-  private static bool CmpLevel6ParagraphProperties(DXD.ListStyle openXmlElement, DMD.Level6ParagraphProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpLevel6ParagraphProperties(DXD.ListStyle openXmlElement, DMD.Level6ParagraphProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.Level6ParagraphPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Level6ParagraphProperties>(), value, diffs, objName);
+    return DMXD.Level6ParagraphPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Level6ParagraphProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetLevel6ParagraphProperties(DXD.ListStyle openXmlElement, DMD.Level6ParagraphProperties? value)
@@ -219,9 +219,9 @@ public static class ListStyleConverter
     return null;
   }
   
-  private static bool CmpLevel7ParagraphProperties(DXD.ListStyle openXmlElement, DMD.Level7ParagraphProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpLevel7ParagraphProperties(DXD.ListStyle openXmlElement, DMD.Level7ParagraphProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.Level7ParagraphPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Level7ParagraphProperties>(), value, diffs, objName);
+    return DMXD.Level7ParagraphPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Level7ParagraphProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetLevel7ParagraphProperties(DXD.ListStyle openXmlElement, DMD.Level7ParagraphProperties? value)
@@ -248,9 +248,9 @@ public static class ListStyleConverter
     return null;
   }
   
-  private static bool CmpLevel8ParagraphProperties(DXD.ListStyle openXmlElement, DMD.Level8ParagraphProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpLevel8ParagraphProperties(DXD.ListStyle openXmlElement, DMD.Level8ParagraphProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.Level8ParagraphPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Level8ParagraphProperties>(), value, diffs, objName);
+    return DMXD.Level8ParagraphPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Level8ParagraphProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetLevel8ParagraphProperties(DXD.ListStyle openXmlElement, DMD.Level8ParagraphProperties? value)
@@ -277,9 +277,9 @@ public static class ListStyleConverter
     return null;
   }
   
-  private static bool CmpLevel9ParagraphProperties(DXD.ListStyle openXmlElement, DMD.Level9ParagraphProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpLevel9ParagraphProperties(DXD.ListStyle openXmlElement, DMD.Level9ParagraphProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.Level9ParagraphPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Level9ParagraphProperties>(), value, diffs, objName);
+    return DMXD.Level9ParagraphPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Level9ParagraphProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetLevel9ParagraphProperties(DXD.ListStyle openXmlElement, DMD.Level9ParagraphProperties? value)
@@ -306,9 +306,9 @@ public static class ListStyleConverter
     return null;
   }
   
-  private static bool CmpExtensionList(DXD.ListStyle openXmlElement, DMD.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXD.ListStyle openXmlElement, DMD.ExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ExtensionList>(), value, diffs, objName);
+    return DMXD.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetExtensionList(DXD.ListStyle openXmlElement, DMD.ExtensionList? value)
@@ -345,37 +345,37 @@ public static class ListStyleConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.ListStyle? openXmlElement, DMD.ListStyle? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.ListStyle? openXmlElement, DMD.ListStyle? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpDefaultParagraphProperties(openXmlElement, value.DefaultParagraphProperties, diffs, objName))
+      if (!CmpDefaultParagraphProperties(openXmlElement, value.DefaultParagraphProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpLevel1ParagraphProperties(openXmlElement, value.Level1ParagraphProperties, diffs, objName))
+      if (!CmpLevel1ParagraphProperties(openXmlElement, value.Level1ParagraphProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpLevel2ParagraphProperties(openXmlElement, value.Level2ParagraphProperties, diffs, objName))
+      if (!CmpLevel2ParagraphProperties(openXmlElement, value.Level2ParagraphProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpLevel3ParagraphProperties(openXmlElement, value.Level3ParagraphProperties, diffs, objName))
+      if (!CmpLevel3ParagraphProperties(openXmlElement, value.Level3ParagraphProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpLevel4ParagraphProperties(openXmlElement, value.Level4ParagraphProperties, diffs, objName))
+      if (!CmpLevel4ParagraphProperties(openXmlElement, value.Level4ParagraphProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpLevel5ParagraphProperties(openXmlElement, value.Level5ParagraphProperties, diffs, objName))
+      if (!CmpLevel5ParagraphProperties(openXmlElement, value.Level5ParagraphProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpLevel6ParagraphProperties(openXmlElement, value.Level6ParagraphProperties, diffs, objName))
+      if (!CmpLevel6ParagraphProperties(openXmlElement, value.Level6ParagraphProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpLevel7ParagraphProperties(openXmlElement, value.Level7ParagraphProperties, diffs, objName))
+      if (!CmpLevel7ParagraphProperties(openXmlElement, value.Level7ParagraphProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpLevel8ParagraphProperties(openXmlElement, value.Level8ParagraphProperties, diffs, objName))
+      if (!CmpLevel8ParagraphProperties(openXmlElement, value.Level8ParagraphProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpLevel9ParagraphProperties(openXmlElement, value.Level9ParagraphProperties, diffs, objName))
+      if (!CmpLevel9ParagraphProperties(openXmlElement, value.Level9ParagraphProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

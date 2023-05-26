@@ -13,7 +13,7 @@ public static class DataBindingConverter
     return StringValueConverter.GetValue(openXmlElement?.PrefixMappings);
   }
   
-  private static bool CmpPrefixMappings(DXW.DataBinding openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpPrefixMappings(DXW.DataBinding openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.PrefixMappings, value, diffs, objName, "PrefixMappings");
   }
@@ -31,7 +31,7 @@ public static class DataBindingConverter
     return StringValueConverter.GetValue(openXmlElement?.XPath);
   }
   
-  private static bool CmpXPath(DXW.DataBinding openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpXPath(DXW.DataBinding openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.XPath, value, diffs, objName, "XPath");
   }
@@ -49,7 +49,7 @@ public static class DataBindingConverter
     return StringValueConverter.GetValue(openXmlElement?.StoreItemId);
   }
   
-  private static bool CmpStoreItemId(DXW.DataBinding openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpStoreItemId(DXW.DataBinding openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.StoreItemId, value, diffs, objName, "StoreItemId");
   }
@@ -72,21 +72,21 @@ public static class DataBindingConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.DataBinding? openXmlElement, DMW.DataBinding? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.DataBinding? openXmlElement, DMW.DataBinding? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpPrefixMappings(openXmlElement, value.PrefixMappings, diffs, objName))
+      if (!CmpPrefixMappings(openXmlElement, value.PrefixMappings, diffs, objName, propName))
         ok = false;
-      if (!CmpXPath(openXmlElement, value.XPath, diffs, objName))
+      if (!CmpXPath(openXmlElement, value.XPath, diffs, objName, propName))
         ok = false;
-      if (!CmpStoreItemId(openXmlElement, value.StoreItemId, diffs, objName))
+      if (!CmpStoreItemId(openXmlElement, value.StoreItemId, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

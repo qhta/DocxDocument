@@ -13,9 +13,9 @@ public static class HyperlinkOnMouseOverConverter
     return null;
   }
   
-  private static bool CmpHyperlinkSound(DXD.HyperlinkOnMouseOver openXmlElement, DMD.EmbeddedWavAudioFileType? value, DiffList? diffs, string? objName)
+  private static bool CmpHyperlinkSound(DXD.HyperlinkOnMouseOver openXmlElement, DMD.EmbeddedWavAudioFileType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.EmbeddedWavAudioFileTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.HyperlinkSound>(), value, diffs, objName);
+    return DMXD.EmbeddedWavAudioFileTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.HyperlinkSound>(), value, diffs, objName, propName);
   }
   
   private static void SetHyperlinkSound(DXD.HyperlinkOnMouseOver openXmlElement, DMD.EmbeddedWavAudioFileType? value)
@@ -39,9 +39,9 @@ public static class HyperlinkOnMouseOverConverter
     return null;
   }
   
-  private static bool CmpHyperlinkExtensionList(DXD.HyperlinkOnMouseOver openXmlElement, DMD.HyperlinkExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpHyperlinkExtensionList(DXD.HyperlinkOnMouseOver openXmlElement, DMD.HyperlinkExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.HyperlinkExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.HyperlinkExtensionList>(), value, diffs, objName);
+    return DMXD.HyperlinkExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.HyperlinkExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetHyperlinkExtensionList(DXD.HyperlinkOnMouseOver openXmlElement, DMD.HyperlinkExtensionList? value)
@@ -69,19 +69,19 @@ public static class HyperlinkOnMouseOverConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.HyperlinkOnMouseOver? openXmlElement, DMD.HyperlinkOnMouseOver? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.HyperlinkOnMouseOver? openXmlElement, DMD.HyperlinkOnMouseOver? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpHyperlinkSound(openXmlElement, value.HyperlinkSound, diffs, objName))
+      if (!CmpHyperlinkSound(openXmlElement, value.HyperlinkSound, diffs, objName, propName))
         ok = false;
-      if (!CmpHyperlinkExtensionList(openXmlElement, value.HyperlinkExtensionList, diffs, objName))
+      if (!CmpHyperlinkExtensionList(openXmlElement, value.HyperlinkExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

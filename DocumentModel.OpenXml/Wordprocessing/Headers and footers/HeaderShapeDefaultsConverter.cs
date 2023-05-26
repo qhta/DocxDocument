@@ -13,9 +13,9 @@ public static class HeaderShapeDefaultsConverter
     return null;
   }
   
-  private static bool CmpShapeDefaults(DXW.HeaderShapeDefaults openXmlElement, DMV.ShapeDefaults? value, DiffList? diffs, string? objName)
+  private static bool CmpShapeDefaults(DXW.HeaderShapeDefaults openXmlElement, DMV.ShapeDefaults? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXV.ShapeDefaultsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVO.ShapeDefaults>(), value, diffs, objName);
+    return DMXV.ShapeDefaultsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVO.ShapeDefaults>(), value, diffs, objName, propName);
   }
   
   private static void SetShapeDefaults(DXW.HeaderShapeDefaults openXmlElement, DMV.ShapeDefaults? value)
@@ -39,9 +39,9 @@ public static class HeaderShapeDefaultsConverter
     return null;
   }
   
-  private static bool CmpShapeLayout(DXW.HeaderShapeDefaults openXmlElement, DMV.ShapeLayout? value, DiffList? diffs, string? objName)
+  private static bool CmpShapeLayout(DXW.HeaderShapeDefaults openXmlElement, DMV.ShapeLayout? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXV.ShapeLayoutConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVO.ShapeLayout>(), value, diffs, objName);
+    return DMXV.ShapeLayoutConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVO.ShapeLayout>(), value, diffs, objName, propName);
   }
   
   private static void SetShapeLayout(DXW.HeaderShapeDefaults openXmlElement, DMV.ShapeLayout? value)
@@ -69,19 +69,19 @@ public static class HeaderShapeDefaultsConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.HeaderShapeDefaults? openXmlElement, DMW.HeaderShapeDefaults? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.HeaderShapeDefaults? openXmlElement, DMW.HeaderShapeDefaults? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpShapeDefaults(openXmlElement, value.ShapeDefaults, diffs, objName))
+      if (!CmpShapeDefaults(openXmlElement, value.ShapeDefaults, diffs, objName, propName))
         ok = false;
-      if (!CmpShapeLayout(openXmlElement, value.ShapeLayout, diffs, objName))
+      if (!CmpShapeLayout(openXmlElement, value.ShapeLayout, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

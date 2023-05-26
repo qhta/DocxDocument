@@ -13,7 +13,7 @@ public static class SVGBlipConverter
     return StringValueConverter.GetValue(openXmlElement?.Embed);
   }
   
-  private static bool CmpEmbed(DXO19DSVG.SVGBlip openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpEmbed(DXO19DSVG.SVGBlip openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Embed, value, diffs, objName, "Embed");
   }
@@ -31,7 +31,7 @@ public static class SVGBlipConverter
     return StringValueConverter.GetValue(openXmlElement?.Link);
   }
   
-  private static bool CmpLink(DXO19DSVG.SVGBlip openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpLink(DXO19DSVG.SVGBlip openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Link, value, diffs, objName, "Link");
   }
@@ -53,19 +53,19 @@ public static class SVGBlipConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO19DSVG.SVGBlip? openXmlElement, DMDSVG.SVGBlip? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO19DSVG.SVGBlip? openXmlElement, DMDSVG.SVGBlip? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpEmbed(openXmlElement, value.Embed, diffs, objName))
+      if (!CmpEmbed(openXmlElement, value.Embed, diffs, objName, propName))
         ok = false;
-      if (!CmpLink(openXmlElement, value.Link, diffs, objName))
+      if (!CmpLink(openXmlElement, value.Link, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -13,9 +13,9 @@ public static class GeographyConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoProjectionType, DMDCDs.GeoProjectionType>(openXmlElement?.ProjectionType?.Value);
   }
   
-  private static bool CmpProjectionType(DXO16DCD.Geography openXmlElement, DMDCDs.GeoProjectionType? value, DiffList? diffs, string? objName)
+  private static bool CmpProjectionType(DXO16DCD.Geography openXmlElement, DMDCDs.GeoProjectionType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoProjectionType, DMDCDs.GeoProjectionType>(openXmlElement?.ProjectionType?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoProjectionType, DMDCDs.GeoProjectionType>(openXmlElement?.ProjectionType?.Value, value, diffs, objName, propName);
   }
   
   private static void SetProjectionType(DXO16DCD.Geography openXmlElement, DMDCDs.GeoProjectionType? value)
@@ -31,9 +31,9 @@ public static class GeographyConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoMappingLevel, DMDCDs.GeoMappingLevel>(openXmlElement?.ViewedRegionType?.Value);
   }
   
-  private static bool CmpViewedRegionType(DXO16DCD.Geography openXmlElement, DMDCDs.GeoMappingLevel? value, DiffList? diffs, string? objName)
+  private static bool CmpViewedRegionType(DXO16DCD.Geography openXmlElement, DMDCDs.GeoMappingLevel? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoMappingLevel, DMDCDs.GeoMappingLevel>(openXmlElement?.ViewedRegionType?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoMappingLevel, DMDCDs.GeoMappingLevel>(openXmlElement?.ViewedRegionType?.Value, value, diffs, objName, propName);
   }
   
   private static void SetViewedRegionType(DXO16DCD.Geography openXmlElement, DMDCDs.GeoMappingLevel? value)
@@ -49,7 +49,7 @@ public static class GeographyConverter
     return StringValueConverter.GetValue(openXmlElement?.CultureLanguage);
   }
   
-  private static bool CmpCultureLanguage(DXO16DCD.Geography openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpCultureLanguage(DXO16DCD.Geography openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.CultureLanguage, value, diffs, objName, "CultureLanguage");
   }
@@ -67,7 +67,7 @@ public static class GeographyConverter
     return StringValueConverter.GetValue(openXmlElement?.CultureRegion);
   }
   
-  private static bool CmpCultureRegion(DXO16DCD.Geography openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpCultureRegion(DXO16DCD.Geography openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.CultureRegion, value, diffs, objName, "CultureRegion");
   }
@@ -85,7 +85,7 @@ public static class GeographyConverter
     return StringValueConverter.GetValue(openXmlElement?.Attribution);
   }
   
-  private static bool CmpAttribution(DXO16DCD.Geography openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpAttribution(DXO16DCD.Geography openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Attribution, value, diffs, objName, "Attribution");
   }
@@ -106,9 +106,9 @@ public static class GeographyConverter
     return null;
   }
   
-  private static bool CmpGeoCache(DXO16DCD.Geography openXmlElement, DMDCDs.GeoCache? value, DiffList? diffs, string? objName)
+  private static bool CmpGeoCache(DXO16DCD.Geography openXmlElement, DMDCDs.GeoCache? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCDs.GeoCacheConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.GeoCache>(), value, diffs, objName);
+    return DMXDCDs.GeoCacheConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.GeoCache>(), value, diffs, objName, propName);
   }
   
   private static void SetGeoCache(DXO16DCD.Geography openXmlElement, DMDCDs.GeoCache? value)
@@ -140,27 +140,27 @@ public static class GeographyConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO16DCD.Geography? openXmlElement, DMDCDs.Geography? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16DCD.Geography? openXmlElement, DMDCDs.Geography? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpProjectionType(openXmlElement, value.ProjectionType, diffs, objName))
+      if (!CmpProjectionType(openXmlElement, value.ProjectionType, diffs, objName, propName))
         ok = false;
-      if (!CmpViewedRegionType(openXmlElement, value.ViewedRegionType, diffs, objName))
+      if (!CmpViewedRegionType(openXmlElement, value.ViewedRegionType, diffs, objName, propName))
         ok = false;
-      if (!CmpCultureLanguage(openXmlElement, value.CultureLanguage, diffs, objName))
+      if (!CmpCultureLanguage(openXmlElement, value.CultureLanguage, diffs, objName, propName))
         ok = false;
-      if (!CmpCultureRegion(openXmlElement, value.CultureRegion, diffs, objName))
+      if (!CmpCultureRegion(openXmlElement, value.CultureRegion, diffs, objName, propName))
         ok = false;
-      if (!CmpAttribution(openXmlElement, value.Attribution, diffs, objName))
+      if (!CmpAttribution(openXmlElement, value.Attribution, diffs, objName, propName))
         ok = false;
-      if (!CmpGeoCache(openXmlElement, value.GeoCache, diffs, objName))
+      if (!CmpGeoCache(openXmlElement, value.GeoCache, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

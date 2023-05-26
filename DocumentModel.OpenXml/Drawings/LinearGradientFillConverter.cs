@@ -13,7 +13,7 @@ public static class LinearGradientFillConverter
     return openXmlElement?.Angle?.Value;
   }
   
-  private static bool CmpAngle(DXD.LinearGradientFill openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpAngle(DXD.LinearGradientFill openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Angle?.Value == value) return true;
     diffs?.Add(objName, "Angle", openXmlElement?.Angle?.Value, value);
@@ -33,7 +33,7 @@ public static class LinearGradientFillConverter
     return openXmlElement?.Scaled?.Value ?? false;
   }
   
-  private static bool CmpScaled(DXD.LinearGradientFill openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpScaled(DXD.LinearGradientFill openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Scaled?.Value == value) return true;
     diffs?.Add(objName, "Scaled", openXmlElement?.Scaled?.Value, value);
@@ -60,19 +60,19 @@ public static class LinearGradientFillConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.LinearGradientFill? openXmlElement, DMD.LinearGradientFill? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.LinearGradientFill? openXmlElement, DMD.LinearGradientFill? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpAngle(openXmlElement, value.Angle, diffs, objName))
+      if (!CmpAngle(openXmlElement, value.Angle, diffs, objName, propName))
         ok = false;
-      if (!CmpScaled(openXmlElement, value.Scaled, diffs, objName))
+      if (!CmpScaled(openXmlElement, value.Scaled, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

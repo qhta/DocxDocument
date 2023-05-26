@@ -11,7 +11,7 @@ public static class CustomXmlElementConverter
     return StringValueConverter.GetValue(openXmlElement?.Uri);
   }
   
-  private static bool CmpUri(DXW.CustomXmlElement openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpUri(DXW.CustomXmlElement openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Uri, value, diffs, objName, "Uri");
   }
@@ -28,7 +28,7 @@ public static class CustomXmlElementConverter
     return StringValueConverter.GetValue(openXmlElement?.Element);
   }
   
-  private static bool CmpElement(DXW.CustomXmlElement openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpElement(DXW.CustomXmlElement openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Element, value, diffs, objName, "Element");
   }
@@ -48,9 +48,9 @@ public static class CustomXmlElementConverter
     return null;
   }
   
-  private static bool CmpCustomXmlProperties(DXW.CustomXmlElement openXmlElement, DMW.CustomXmlProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpCustomXmlProperties(DXW.CustomXmlElement openXmlElement, DMW.CustomXmlProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.CustomXmlPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.CustomXmlProperties>(), value, diffs, objName);
+    return DMXW.CustomXmlPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.CustomXmlProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetCustomXmlProperties(DXW.CustomXmlElement openXmlElement, DMW.CustomXmlProperties? value)
@@ -82,21 +82,21 @@ public static class CustomXmlElementConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.CustomXmlElement? openXmlElement, DMW.CustomXmlElement? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.CustomXmlElement? openXmlElement, DMW.CustomXmlElement? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpUri(openXmlElement, model.Uri, diffs, objName))
+      if (!CmpUri(openXmlElement, model.Uri, diffs, objName, propName))
         ok = false;
-      if (!CmpElement(openXmlElement, model.Element, diffs, objName))
+      if (!CmpElement(openXmlElement, model.Element, diffs, objName, propName))
         ok = false;
-      if (!CmpCustomXmlProperties(openXmlElement, model.CustomXmlProperties, diffs, objName))
+      if (!CmpCustomXmlProperties(openXmlElement, model.CustomXmlProperties, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   

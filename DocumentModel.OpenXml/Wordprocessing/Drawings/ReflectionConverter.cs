@@ -13,7 +13,7 @@ public static class ReflectionConverter
     return openXmlElement?.BlurRadius?.Value;
   }
   
-  private static bool CmpBlurRadius(DXO10W.Reflection openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpBlurRadius(DXO10W.Reflection openXmlElement, Int64? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.BlurRadius?.Value == value) return true;
     diffs?.Add(objName, "BlurRadius", openXmlElement?.BlurRadius?.Value, value);
@@ -33,7 +33,7 @@ public static class ReflectionConverter
     return openXmlElement?.StartingOpacity?.Value;
   }
   
-  private static bool CmpStartingOpacity(DXO10W.Reflection openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpStartingOpacity(DXO10W.Reflection openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.StartingOpacity?.Value == value) return true;
     diffs?.Add(objName, "StartingOpacity", openXmlElement?.StartingOpacity?.Value, value);
@@ -53,7 +53,7 @@ public static class ReflectionConverter
     return openXmlElement?.StartPosition?.Value;
   }
   
-  private static bool CmpStartPosition(DXO10W.Reflection openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpStartPosition(DXO10W.Reflection openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.StartPosition?.Value == value) return true;
     diffs?.Add(objName, "StartPosition", openXmlElement?.StartPosition?.Value, value);
@@ -73,7 +73,7 @@ public static class ReflectionConverter
     return openXmlElement?.EndingOpacity?.Value;
   }
   
-  private static bool CmpEndingOpacity(DXO10W.Reflection openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpEndingOpacity(DXO10W.Reflection openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.EndingOpacity?.Value == value) return true;
     diffs?.Add(objName, "EndingOpacity", openXmlElement?.EndingOpacity?.Value, value);
@@ -93,7 +93,7 @@ public static class ReflectionConverter
     return openXmlElement?.EndPosition?.Value;
   }
   
-  private static bool CmpEndPosition(DXO10W.Reflection openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpEndPosition(DXO10W.Reflection openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.EndPosition?.Value == value) return true;
     diffs?.Add(objName, "EndPosition", openXmlElement?.EndPosition?.Value, value);
@@ -113,7 +113,7 @@ public static class ReflectionConverter
     return openXmlElement?.DistanceFromText?.Value;
   }
   
-  private static bool CmpDistanceFromText(DXO10W.Reflection openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpDistanceFromText(DXO10W.Reflection openXmlElement, Int64? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.DistanceFromText?.Value == value) return true;
     diffs?.Add(objName, "DistanceFromText", openXmlElement?.DistanceFromText?.Value, value);
@@ -133,7 +133,7 @@ public static class ReflectionConverter
     return openXmlElement?.DirectionAngle?.Value;
   }
   
-  private static bool CmpDirectionAngle(DXO10W.Reflection openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpDirectionAngle(DXO10W.Reflection openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.DirectionAngle?.Value == value) return true;
     diffs?.Add(objName, "DirectionAngle", openXmlElement?.DirectionAngle?.Value, value);
@@ -153,7 +153,7 @@ public static class ReflectionConverter
     return openXmlElement?.FadeDirection?.Value;
   }
   
-  private static bool CmpFadeDirection(DXO10W.Reflection openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpFadeDirection(DXO10W.Reflection openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.FadeDirection?.Value == value) return true;
     diffs?.Add(objName, "FadeDirection", openXmlElement?.FadeDirection?.Value, value);
@@ -173,7 +173,7 @@ public static class ReflectionConverter
     return openXmlElement?.HorizontalScalingFactor?.Value;
   }
   
-  private static bool CmpHorizontalScalingFactor(DXO10W.Reflection openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpHorizontalScalingFactor(DXO10W.Reflection openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.HorizontalScalingFactor?.Value == value) return true;
     diffs?.Add(objName, "HorizontalScalingFactor", openXmlElement?.HorizontalScalingFactor?.Value, value);
@@ -193,7 +193,7 @@ public static class ReflectionConverter
     return openXmlElement?.VerticalScalingFactor?.Value;
   }
   
-  private static bool CmpVerticalScalingFactor(DXO10W.Reflection openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpVerticalScalingFactor(DXO10W.Reflection openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.VerticalScalingFactor?.Value == value) return true;
     diffs?.Add(objName, "VerticalScalingFactor", openXmlElement?.VerticalScalingFactor?.Value, value);
@@ -213,7 +213,7 @@ public static class ReflectionConverter
     return openXmlElement?.HorizontalSkewAngle?.Value;
   }
   
-  private static bool CmpHorizontalSkewAngle(DXO10W.Reflection openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpHorizontalSkewAngle(DXO10W.Reflection openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.HorizontalSkewAngle?.Value == value) return true;
     diffs?.Add(objName, "HorizontalSkewAngle", openXmlElement?.HorizontalSkewAngle?.Value, value);
@@ -233,7 +233,7 @@ public static class ReflectionConverter
     return openXmlElement?.VerticalSkewAngle?.Value;
   }
   
-  private static bool CmpVerticalSkewAngle(DXO10W.Reflection openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpVerticalSkewAngle(DXO10W.Reflection openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.VerticalSkewAngle?.Value == value) return true;
     diffs?.Add(objName, "VerticalSkewAngle", openXmlElement?.VerticalSkewAngle?.Value, value);
@@ -253,9 +253,9 @@ public static class ReflectionConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.Word.RectangleAlignmentValues, DMW.RectangleAlignmentKind>(openXmlElement?.Alignment?.Value);
   }
   
-  private static bool CmpAlignment(DXO10W.Reflection openXmlElement, DMW.RectangleAlignmentKind? value, DiffList? diffs, string? objName)
+  private static bool CmpAlignment(DXO10W.Reflection openXmlElement, DMW.RectangleAlignmentKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.RectangleAlignmentValues, DMW.RectangleAlignmentKind>(openXmlElement?.Alignment?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.RectangleAlignmentValues, DMW.RectangleAlignmentKind>(openXmlElement?.Alignment?.Value, value, diffs, objName, propName);
   }
   
   private static void SetAlignment(DXO10W.Reflection openXmlElement, DMW.RectangleAlignmentKind? value)
@@ -286,41 +286,41 @@ public static class ReflectionConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO10W.Reflection? openXmlElement, DMW.Reflection? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10W.Reflection? openXmlElement, DMW.Reflection? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpBlurRadius(openXmlElement, value.BlurRadius, diffs, objName))
+      if (!CmpBlurRadius(openXmlElement, value.BlurRadius, diffs, objName, propName))
         ok = false;
-      if (!CmpStartingOpacity(openXmlElement, value.StartingOpacity, diffs, objName))
+      if (!CmpStartingOpacity(openXmlElement, value.StartingOpacity, diffs, objName, propName))
         ok = false;
-      if (!CmpStartPosition(openXmlElement, value.StartPosition, diffs, objName))
+      if (!CmpStartPosition(openXmlElement, value.StartPosition, diffs, objName, propName))
         ok = false;
-      if (!CmpEndingOpacity(openXmlElement, value.EndingOpacity, diffs, objName))
+      if (!CmpEndingOpacity(openXmlElement, value.EndingOpacity, diffs, objName, propName))
         ok = false;
-      if (!CmpEndPosition(openXmlElement, value.EndPosition, diffs, objName))
+      if (!CmpEndPosition(openXmlElement, value.EndPosition, diffs, objName, propName))
         ok = false;
-      if (!CmpDistanceFromText(openXmlElement, value.DistanceFromText, diffs, objName))
+      if (!CmpDistanceFromText(openXmlElement, value.DistanceFromText, diffs, objName, propName))
         ok = false;
-      if (!CmpDirectionAngle(openXmlElement, value.DirectionAngle, diffs, objName))
+      if (!CmpDirectionAngle(openXmlElement, value.DirectionAngle, diffs, objName, propName))
         ok = false;
-      if (!CmpFadeDirection(openXmlElement, value.FadeDirection, diffs, objName))
+      if (!CmpFadeDirection(openXmlElement, value.FadeDirection, diffs, objName, propName))
         ok = false;
-      if (!CmpHorizontalScalingFactor(openXmlElement, value.HorizontalScalingFactor, diffs, objName))
+      if (!CmpHorizontalScalingFactor(openXmlElement, value.HorizontalScalingFactor, diffs, objName, propName))
         ok = false;
-      if (!CmpVerticalScalingFactor(openXmlElement, value.VerticalScalingFactor, diffs, objName))
+      if (!CmpVerticalScalingFactor(openXmlElement, value.VerticalScalingFactor, diffs, objName, propName))
         ok = false;
-      if (!CmpHorizontalSkewAngle(openXmlElement, value.HorizontalSkewAngle, diffs, objName))
+      if (!CmpHorizontalSkewAngle(openXmlElement, value.HorizontalSkewAngle, diffs, objName, propName))
         ok = false;
-      if (!CmpVerticalSkewAngle(openXmlElement, value.VerticalSkewAngle, diffs, objName))
+      if (!CmpVerticalSkewAngle(openXmlElement, value.VerticalSkewAngle, diffs, objName, propName))
         ok = false;
-      if (!CmpAlignment(openXmlElement, value.Alignment, diffs, objName))
+      if (!CmpAlignment(openXmlElement, value.Alignment, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

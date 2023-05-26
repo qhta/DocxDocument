@@ -13,7 +13,7 @@ public static class BevelTypeConverter
     return openXmlElement?.Width?.Value;
   }
   
-  private static bool CmpWidth(DXD.BevelType openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpWidth(DXD.BevelType openXmlElement, Int64? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Width?.Value == value) return true;
     diffs?.Add(objName, "Value", openXmlElement?.Width?.Value, value);
@@ -33,7 +33,7 @@ public static class BevelTypeConverter
     return openXmlElement?.Height?.Value;
   }
   
-  private static bool CmpHeight(DXD.BevelType openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpHeight(DXD.BevelType openXmlElement, Int64? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Height?.Value == value) return true;
     diffs?.Add(objName, "Height", openXmlElement?.Height?.Value, value);
@@ -53,9 +53,9 @@ public static class BevelTypeConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.BevelPresetValues, DMD.BevelPresetKind>(openXmlElement?.Preset?.Value);
   }
   
-  private static bool CmpPreset(DXD.BevelType openXmlElement, DMD.BevelPresetKind? value, DiffList? diffs, string? objName)
+  private static bool CmpPreset(DXD.BevelType openXmlElement, DMD.BevelPresetKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.BevelPresetValues, DMD.BevelPresetKind>(openXmlElement?.Preset?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.BevelPresetValues, DMD.BevelPresetKind>(openXmlElement?.Preset?.Value, value, diffs, objName, propName);
   }
   
   private static void SetPreset(DXD.BevelType openXmlElement, DMD.BevelPresetKind? value)
@@ -76,21 +76,21 @@ public static class BevelTypeConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.BevelType? openXmlElement, DMD.BevelType? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.BevelType? openXmlElement, DMD.BevelType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpWidth(openXmlElement, value.Width, diffs, objName))
+      if (!CmpWidth(openXmlElement, value.Width, diffs, objName, propName))
         ok = false;
-      if (!CmpHeight(openXmlElement, value.Height, diffs, objName))
+      if (!CmpHeight(openXmlElement, value.Height, diffs, objName, propName))
         ok = false;
-      if (!CmpPreset(openXmlElement, value.Preset, diffs, objName))
+      if (!CmpPreset(openXmlElement, value.Preset, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -13,7 +13,7 @@ public static class NoLineBreaksBeforeKinsokuConverter
     return StringValueConverter.GetValue(openXmlElement?.Language);
   }
   
-  private static bool CmpLanguage(DXW.NoLineBreaksBeforeKinsoku openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpLanguage(DXW.NoLineBreaksBeforeKinsoku openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Language, value, diffs, objName, "Languages");
   }
@@ -31,7 +31,7 @@ public static class NoLineBreaksBeforeKinsokuConverter
     return StringValueConverter.GetValue(openXmlElement?.Val);
   }
   
-  private static bool CmpVal(DXW.NoLineBreaksBeforeKinsoku openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpVal(DXW.NoLineBreaksBeforeKinsoku openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Val, value, diffs, objName, "Value");
   }
@@ -53,19 +53,19 @@ public static class NoLineBreaksBeforeKinsokuConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.NoLineBreaksBeforeKinsoku? openXmlElement, DMW.NoLineBreaksBeforeKinsoku? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.NoLineBreaksBeforeKinsoku? openXmlElement, DMW.NoLineBreaksBeforeKinsoku? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpLanguage(openXmlElement, value.Language, diffs, objName))
+      if (!CmpLanguage(openXmlElement, value.Language, diffs, objName, propName))
         ok = false;
-      if (!CmpVal(openXmlElement, value.Val, diffs, objName))
+      if (!CmpVal(openXmlElement, value.Val, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

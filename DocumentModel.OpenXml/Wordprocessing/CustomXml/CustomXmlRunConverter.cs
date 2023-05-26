@@ -22,20 +22,20 @@ public static class CustomXmlRunConverter
     return null;
   }
 
-  public static bool CompareModelElement(DXW.CustomXmlRun? openXmlElement, DMW.CustomXmlRun? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.CustomXmlRun? openXmlElement, DMW.CustomXmlRun? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CustomXmlElementConverter.CompareModelElement(openXmlElement, model, diffs, objName))
+      if (!CustomXmlElementConverter.CompareModelElement(openXmlElement, model, diffs, objName, propName))
         ok = false;
       if (!ElementCollectionConverter<DM.IModelElement>.CompareOpenXmlElementCollection(
         openXmlElement, model,
-        ParagraphContentConverter.CompareParagraphContent, diffs, objName))
+        ParagraphContentConverter.CompareParagraphContent, diffs, objName, propName))
         return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
 

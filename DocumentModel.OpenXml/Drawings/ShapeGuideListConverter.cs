@@ -19,7 +19,7 @@ public static class ShapeGuideListConverter
     return null;
   }
   
-  private static bool CmpShapeGuides(DXD.ShapeGuideList openXmlElement, Collection<DMD.ShapeGuide>? value, DiffList? diffs, string? objName)
+  private static bool CmpShapeGuides(DXD.ShapeGuideList openXmlElement, Collection<DMD.ShapeGuide>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var origElements = openXmlElement.Elements<DXD.ShapeGuide>();
     var origElementsCount = origElements.Count();
@@ -28,7 +28,7 @@ public static class ShapeGuideListConverter
     {
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, propName ?? openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -37,13 +37,13 @@ public static class ShapeGuideListConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXD.ShapeGuideConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXD.ShapeGuideConverter.CompareModelElement(origItem, modelItem, diffs, objName, propName))
           ok = false;
       }
       return ok;
     }
     if (origElementsCount == 0 && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -72,17 +72,17 @@ public static class ShapeGuideListConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.ShapeGuideList? openXmlElement, DMD.ShapeGuideList? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.ShapeGuideList? openXmlElement, DMD.ShapeGuideList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpShapeGuides(openXmlElement, value.ShapeGuides, diffs, objName))
+      if (!CmpShapeGuides(openXmlElement, value.ShapeGuides, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

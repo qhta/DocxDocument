@@ -20,7 +20,7 @@ public static class NumberingConverter
     return null;
   }
 
-  private static bool CmpNumberingPictureBullets(DXW.Numbering openXmlElement, Collection<DMW.NumberingPictureBullet>? value, DiffList? diffs, string? objName)
+  private static bool CmpNumberingPictureBullets(DXW.Numbering openXmlElement, Collection<DMW.NumberingPictureBullet>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var origElements = openXmlElement.Elements<DXW.NumberingPictureBullet>();
     var origElementsCount = origElements.Count();
@@ -29,7 +29,7 @@ public static class NumberingConverter
     {
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().Name + ".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, propName ?? openXmlElement.GetType().Name + ".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -38,13 +38,13 @@ public static class NumberingConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXW.NumberingPictureBulletConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXW.NumberingPictureBulletConverter.CompareModelElement(origItem, modelItem, diffs, objName, propName))
           ok = false;
       }
       return ok;
     }
     if (origElementsCount == 0 && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
 
@@ -78,7 +78,7 @@ public static class NumberingConverter
     return null;
   }
 
-  private static bool CmpAbstractNums(DXW.Numbering openXmlElement, Collection<DMW.AbstractNum>? value, DiffList? diffs, string? objName)
+  private static bool CmpAbstractNums(DXW.Numbering openXmlElement, Collection<DMW.AbstractNum>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var origElements = openXmlElement.Elements<DXW.AbstractNum>();
     var origElementsCount = origElements.Count();
@@ -87,7 +87,7 @@ public static class NumberingConverter
     {
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().Name + ".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, propName ?? openXmlElement.GetType().Name + ".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -96,13 +96,13 @@ public static class NumberingConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXW.AbstractNumConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXW.AbstractNumConverter.CompareModelElement(origItem, modelItem, diffs, objName, propName))
           ok = false;
       }
       return ok;
     }
     if (origElementsCount == 0 && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
 
@@ -136,7 +136,7 @@ public static class NumberingConverter
     return null;
   }
 
-  private static bool CmpNumberingInstances(DXW.Numbering openXmlElement, Collection<DMW.NumberingInstance>? value, DiffList? diffs, string? objName)
+  private static bool CmpNumberingInstances(DXW.Numbering openXmlElement, Collection<DMW.NumberingInstance>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var origElements = openXmlElement.Elements<DXW.NumberingInstance>();
     var origElementsCount = origElements.Count();
@@ -145,7 +145,7 @@ public static class NumberingConverter
     {
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().Name + ".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, propName ?? openXmlElement.GetType().Name + ".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -154,13 +154,13 @@ public static class NumberingConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXW.NumberingInstanceConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXW.NumberingInstanceConverter.CompareModelElement(origItem, modelItem, diffs, objName, propName))
           ok = false;
       }
       return ok;
     }
     if (origElementsCount == 0 && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
 
@@ -185,7 +185,7 @@ public static class NumberingConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.NumberingIdMacAtCleanup>()?.Val);
   }
 
-  private static bool CmpNumberingIdMacAtCleanup(DXW.Numbering openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpNumberingIdMacAtCleanup(DXW.Numbering openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.NumberingIdMacAtCleanup>()?.Val, value, diffs, objName, "NumberingIdMacAtCleanup");
   }
@@ -211,23 +211,23 @@ public static class NumberingConverter
     return null;
   }
 
-  public static bool CompareModelElement(DXW.Numbering? openXmlElement, DMW.Numbering? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.Numbering? openXmlElement, DMW.Numbering? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpNumberingPictureBullets(openXmlElement, model.NumberingPictureBullets, diffs, objName))
+      if (!CmpNumberingPictureBullets(openXmlElement, model.NumberingPictureBullets, diffs, objName, propName))
         ok = false;
-      if (!CmpAbstractNums(openXmlElement, model.AbstractNums, diffs, objName))
+      if (!CmpAbstractNums(openXmlElement, model.AbstractNums, diffs, objName, propName))
         ok = false;
-      if (!CmpNumberingInstances(openXmlElement, model.NumberingInstances, diffs, objName))
+      if (!CmpNumberingInstances(openXmlElement, model.NumberingInstances, diffs, objName, propName))
         ok = false;
-      if (!CmpNumberingIdMacAtCleanup(openXmlElement, model.NumberingIdMacAtCleanup, diffs, objName))
+      if (!CmpNumberingIdMacAtCleanup(openXmlElement, model.NumberingIdMacAtCleanup, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
 

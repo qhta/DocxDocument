@@ -13,7 +13,7 @@ public static class RevisionViewConverter
     return BooleanValueConverter.GetValue(openXmlElement?.Markup);
   }
   
-  private static bool CmpMarkup(DXW.RevisionView openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpMarkup(DXW.RevisionView openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.Markup, value, diffs, objName, "Markup");
   }
@@ -31,7 +31,7 @@ public static class RevisionViewConverter
     return BooleanValueConverter.GetValue(openXmlElement?.Comments);
   }
   
-  private static bool CmpComments(DXW.RevisionView openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpComments(DXW.RevisionView openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.Comments, value, diffs, objName, "Comments");
   }
@@ -49,7 +49,7 @@ public static class RevisionViewConverter
     return BooleanValueConverter.GetValue(openXmlElement?.DisplayRevision);
   }
   
-  private static bool CmpDisplayRevision(DXW.RevisionView openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpDisplayRevision(DXW.RevisionView openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.DisplayRevision, value, diffs, objName, "DisplayRevision");
   }
@@ -67,7 +67,7 @@ public static class RevisionViewConverter
     return BooleanValueConverter.GetValue(openXmlElement?.Formatting);
   }
   
-  private static bool CmpFormatting(DXW.RevisionView openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpFormatting(DXW.RevisionView openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.Formatting, value, diffs, objName, "Formatting");
   }
@@ -85,7 +85,7 @@ public static class RevisionViewConverter
     return BooleanValueConverter.GetValue(openXmlElement?.InkAnnotations);
   }
   
-  private static bool CmpInkAnnotations(DXW.RevisionView openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpInkAnnotations(DXW.RevisionView openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.InkAnnotations, value, diffs, objName, "InkAnnotations");
   }
@@ -110,25 +110,25 @@ public static class RevisionViewConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.RevisionView? openXmlElement, DMW.RevisionView? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.RevisionView? openXmlElement, DMW.RevisionView? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpMarkup(openXmlElement, value.Markup, diffs, objName))
+      if (!CmpMarkup(openXmlElement, value.Markup, diffs, objName, propName))
         ok = false;
-      if (!CmpComments(openXmlElement, value.Comments, diffs, objName))
+      if (!CmpComments(openXmlElement, value.Comments, diffs, objName, propName))
         ok = false;
-      if (!CmpDisplayRevision(openXmlElement, value.DisplayRevision, diffs, objName))
+      if (!CmpDisplayRevision(openXmlElement, value.DisplayRevision, diffs, objName, propName))
         ok = false;
-      if (!CmpFormatting(openXmlElement, value.Formatting, diffs, objName))
+      if (!CmpFormatting(openXmlElement, value.Formatting, diffs, objName, propName))
         ok = false;
-      if (!CmpInkAnnotations(openXmlElement, value.InkAnnotations, diffs, objName))
+      if (!CmpInkAnnotations(openXmlElement, value.InkAnnotations, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

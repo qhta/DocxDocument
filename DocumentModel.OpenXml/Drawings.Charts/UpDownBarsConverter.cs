@@ -13,7 +13,7 @@ public static class UpDownBarsConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDC.GapWidth>()?.Val);
   }
   
-  private static bool CmpGapWidth(DXDC.UpDownBars openXmlElement, UInt16? value, DiffList? diffs, string? objName)
+  private static bool CmpGapWidth(DXDC.UpDownBars openXmlElement, UInt16? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDC.GapWidth>()?.Val, value, diffs, objName, "GapWidth");
   }
@@ -34,9 +34,9 @@ public static class UpDownBarsConverter
     return null;
   }
   
-  private static bool CmpUpBars(DXDC.UpDownBars openXmlElement, DMDC.UpBars? value, DiffList? diffs, string? objName)
+  private static bool CmpUpBars(DXDC.UpDownBars openXmlElement, DMDC.UpBars? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.UpBarsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.UpBars>(), value, diffs, objName);
+    return DMXDC.UpBarsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.UpBars>(), value, diffs, objName, propName);
   }
   
   private static void SetUpBars(DXDC.UpDownBars openXmlElement, DMDC.UpBars? value)
@@ -63,9 +63,9 @@ public static class UpDownBarsConverter
     return null;
   }
   
-  private static bool CmpDownBars(DXDC.UpDownBars openXmlElement, DMDC.DownBars? value, DiffList? diffs, string? objName)
+  private static bool CmpDownBars(DXDC.UpDownBars openXmlElement, DMDC.DownBars? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.DownBarsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.DownBars>(), value, diffs, objName);
+    return DMXDC.DownBarsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.DownBars>(), value, diffs, objName, propName);
   }
   
   private static void SetDownBars(DXDC.UpDownBars openXmlElement, DMDC.DownBars? value)
@@ -92,9 +92,9 @@ public static class UpDownBarsConverter
     return null;
   }
   
-  private static bool CmpExtensionList(DXDC.UpDownBars openXmlElement, DMDC.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXDC.UpDownBars openXmlElement, DMDC.ExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ExtensionList>(), value, diffs, objName);
+    return DMXDC.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetExtensionList(DXDC.UpDownBars openXmlElement, DMDC.ExtensionList? value)
@@ -124,23 +124,23 @@ public static class UpDownBarsConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDC.UpDownBars? openXmlElement, DMDC.UpDownBars? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.UpDownBars? openXmlElement, DMDC.UpDownBars? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpGapWidth(openXmlElement, value.GapWidth, diffs, objName))
+      if (!CmpGapWidth(openXmlElement, value.GapWidth, diffs, objName, propName))
         ok = false;
-      if (!CmpUpBars(openXmlElement, value.UpBars, diffs, objName))
+      if (!CmpUpBars(openXmlElement, value.UpBars, diffs, objName, propName))
         ok = false;
-      if (!CmpDownBars(openXmlElement, value.DownBars, diffs, objName))
+      if (!CmpDownBars(openXmlElement, value.DownBars, diffs, objName, propName))
         ok = false;
-      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -11,9 +11,9 @@ public static class FooterConverter
     return HeaderFooterConverter.CreateModelElement<DMW.Footer>(openXmlElement);
   }
 
-  public static bool CompareModelElement(DXW.Footer? openXmlElement, DMW.Footer? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.Footer? openXmlElement, DMW.Footer? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return HeaderFooterConverter.CompareModelElement(openXmlElement, model, diffs, objName);
+    return HeaderFooterConverter.CompareModelElement(openXmlElement, model, diffs, objName, propName);
   }
 
   public static DXW.Footer CreateOpenXmlElement(DMW.Footer model)

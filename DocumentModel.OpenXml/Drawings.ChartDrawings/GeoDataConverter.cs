@@ -13,7 +13,7 @@ public static class GeoDataConverter
     return StringValueConverter.GetValue(openXmlElement?.EntityName);
   }
   
-  private static bool CmpEntityName(DXO16DCD.GeoData openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpEntityName(DXO16DCD.GeoData openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.EntityName, value, diffs, objName, "EntityName");
   }
@@ -31,7 +31,7 @@ public static class GeoDataConverter
     return StringValueConverter.GetValue(openXmlElement?.EntityId);
   }
   
-  private static bool CmpEntityId(DXO16DCD.GeoData openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpEntityId(DXO16DCD.GeoData openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.EntityId, value, diffs, objName, "EntityId");
   }
@@ -49,7 +49,7 @@ public static class GeoDataConverter
     return openXmlElement?.East?.Value;
   }
   
-  private static bool CmpEast(DXO16DCD.GeoData openXmlElement, Double? value, DiffList? diffs, string? objName)
+  private static bool CmpEast(DXO16DCD.GeoData openXmlElement, Double? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.East?.Value == value) return true;
     diffs?.Add(objName, "East", openXmlElement?.East?.Value, value);
@@ -69,7 +69,7 @@ public static class GeoDataConverter
     return openXmlElement?.West?.Value;
   }
   
-  private static bool CmpWest(DXO16DCD.GeoData openXmlElement, Double? value, DiffList? diffs, string? objName)
+  private static bool CmpWest(DXO16DCD.GeoData openXmlElement, Double? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.West?.Value == value) return true;
     diffs?.Add(objName, "West", openXmlElement?.West?.Value, value);
@@ -89,7 +89,7 @@ public static class GeoDataConverter
     return openXmlElement?.North?.Value;
   }
   
-  private static bool CmpNorth(DXO16DCD.GeoData openXmlElement, Double? value, DiffList? diffs, string? objName)
+  private static bool CmpNorth(DXO16DCD.GeoData openXmlElement, Double? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.North?.Value == value) return true;
     diffs?.Add(objName, "North", openXmlElement?.North?.Value, value);
@@ -109,7 +109,7 @@ public static class GeoDataConverter
     return openXmlElement?.South?.Value;
   }
   
-  private static bool CmpSouth(DXO16DCD.GeoData openXmlElement, Double? value, DiffList? diffs, string? objName)
+  private static bool CmpSouth(DXO16DCD.GeoData openXmlElement, Double? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.South?.Value == value) return true;
     diffs?.Add(objName, "South", openXmlElement?.South?.Value, value);
@@ -132,9 +132,9 @@ public static class GeoDataConverter
     return null;
   }
   
-  private static bool CmpGeoPolygons(DXO16DCD.GeoData openXmlElement, DMDCDs.GeoPolygons? value, DiffList? diffs, string? objName)
+  private static bool CmpGeoPolygons(DXO16DCD.GeoData openXmlElement, DMDCDs.GeoPolygons? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCDs.GeoPolygonsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.GeoPolygons>(), value, diffs, objName);
+    return DMXDCDs.GeoPolygonsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.GeoPolygons>(), value, diffs, objName, propName);
   }
   
   private static void SetGeoPolygons(DXO16DCD.GeoData openXmlElement, DMDCDs.GeoPolygons? value)
@@ -161,9 +161,9 @@ public static class GeoDataConverter
     return null;
   }
   
-  private static bool CmpCopyrights(DXO16DCD.GeoData openXmlElement, DMDCDs.Copyrights? value, DiffList? diffs, string? objName)
+  private static bool CmpCopyrights(DXO16DCD.GeoData openXmlElement, DMDCDs.Copyrights? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCDs.CopyrightsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.Copyrights>(), value, diffs, objName);
+    return DMXDCDs.CopyrightsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.Copyrights>(), value, diffs, objName, propName);
   }
   
   private static void SetCopyrights(DXO16DCD.GeoData openXmlElement, DMDCDs.Copyrights? value)
@@ -197,31 +197,31 @@ public static class GeoDataConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO16DCD.GeoData? openXmlElement, DMDCDs.GeoData? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16DCD.GeoData? openXmlElement, DMDCDs.GeoData? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpEntityName(openXmlElement, value.EntityName, diffs, objName))
+      if (!CmpEntityName(openXmlElement, value.EntityName, diffs, objName, propName))
         ok = false;
-      if (!CmpEntityId(openXmlElement, value.EntityId, diffs, objName))
+      if (!CmpEntityId(openXmlElement, value.EntityId, diffs, objName, propName))
         ok = false;
-      if (!CmpEast(openXmlElement, value.East, diffs, objName))
+      if (!CmpEast(openXmlElement, value.East, diffs, objName, propName))
         ok = false;
-      if (!CmpWest(openXmlElement, value.West, diffs, objName))
+      if (!CmpWest(openXmlElement, value.West, diffs, objName, propName))
         ok = false;
-      if (!CmpNorth(openXmlElement, value.North, diffs, objName))
+      if (!CmpNorth(openXmlElement, value.North, diffs, objName, propName))
         ok = false;
-      if (!CmpSouth(openXmlElement, value.South, diffs, objName))
+      if (!CmpSouth(openXmlElement, value.South, diffs, objName, propName))
         ok = false;
-      if (!CmpGeoPolygons(openXmlElement, value.GeoPolygons, diffs, objName))
+      if (!CmpGeoPolygons(openXmlElement, value.GeoPolygons, diffs, objName, propName))
         ok = false;
-      if (!CmpCopyrights(openXmlElement, value.Copyrights, diffs, objName))
+      if (!CmpCopyrights(openXmlElement, value.Copyrights, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

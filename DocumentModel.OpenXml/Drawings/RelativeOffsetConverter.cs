@@ -13,7 +13,7 @@ public static class RelativeOffsetConverter
     return openXmlElement?.OffsetX?.Value;
   }
   
-  private static bool CmpOffsetX(DXD.RelativeOffset openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpOffsetX(DXD.RelativeOffset openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.OffsetX?.Value == value) return true;
     diffs?.Add(objName, "OffsetX", openXmlElement?.OffsetX?.Value, value);
@@ -33,7 +33,7 @@ public static class RelativeOffsetConverter
     return openXmlElement?.OffsetY?.Value;
   }
   
-  private static bool CmpOffsetY(DXD.RelativeOffset openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpOffsetY(DXD.RelativeOffset openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.OffsetY?.Value == value) return true;
     diffs?.Add(objName, "OffsetY", openXmlElement?.OffsetY?.Value, value);
@@ -57,19 +57,19 @@ public static class RelativeOffsetConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.RelativeOffset? openXmlElement, DMD.RelativeOffset? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.RelativeOffset? openXmlElement, DMD.RelativeOffset? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpOffsetX(openXmlElement, value.OffsetX, diffs, objName))
+      if (!CmpOffsetX(openXmlElement, value.OffsetX, diffs, objName, propName))
         ok = false;
-      if (!CmpOffsetY(openXmlElement, value.OffsetY, diffs, objName))
+      if (!CmpOffsetY(openXmlElement, value.OffsetY, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

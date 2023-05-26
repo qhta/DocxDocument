@@ -14,9 +14,9 @@ public static class DelimiterConverter
     return null;
   }
 
-  private static bool CmpDelimiterProperties(DXM.Delimiter openXmlElement, DMM.DelimiterProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpDelimiterProperties(DXM.Delimiter openXmlElement, DMM.DelimiterProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXM.DelimiterPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.DelimiterProperties>(), value, diffs, objName);
+    return DMXM.DelimiterPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.DelimiterProperties>(), value, diffs, objName, propName);
   }
 
   private static void SetDelimiterProperties(DXM.Delimiter openXmlElement, DMM.DelimiterProperties? value)
@@ -45,18 +45,18 @@ public static class DelimiterConverter
   }
 
   public static bool CompareBaseElement(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, 
-    DiffList? diffs = null, string? objName = null)
+    DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       if (openXmlElement is DXM.Base baseElement && model is DMM.Argument baseModel)
-        return DMXM.ArgumentConverter.CompareModelElement(baseElement, baseModel, diffs, objName);
+        return DMXM.ArgumentConverter.CompareModelElement(baseElement, baseModel, diffs, objName, propName);
       diffs?.Add(objName, "Type", openXmlElement.GetType().Name, model.GetType().Name);
       return false;
 
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
 
@@ -95,22 +95,22 @@ public static class DelimiterConverter
     return null;
   }
 
-  public static bool CompareModelElement(DXM.Delimiter? openXmlElement, DMM.Delimiter? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXM.Delimiter? openXmlElement, DMM.Delimiter? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpDelimiterProperties(openXmlElement, model.DelimiterProperties, diffs, objName))
+      if (!CmpDelimiterProperties(openXmlElement, model.DelimiterProperties, diffs, objName, propName))
         ok = false;
       if (!ElementCollectionConverter<DMM.Argument>.CompareOpenXmlElementCollection(
         openXmlElement.Where(item=>item is not DXM.DelimiterProperties), model,
-        CompareBaseElement, diffs, objName))
+        CompareBaseElement, diffs, objName, propName))
         ok = false;
 
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
 

@@ -10,7 +10,7 @@ public static class DiagramDataPartConverter
     return openXmlElement?.ContentType;
   }
   
-  private static bool CmpContentType(DXPack.DiagramDataPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpContentType(DXPack.DiagramDataPart openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.ContentType == value) return true;
     diffs?.Add(objName, "ContentType", openXmlElement?.ContentType, value);
@@ -25,7 +25,7 @@ public static class DiagramDataPartConverter
       return DMXDD.DataModelRootConverter.CreateModelElement(openXmlElement?.RootElement as DXDD.DataModelRoot);
   }
   
-  private static bool CmpDataModelRoot(DXPack.DiagramDataPart openXmlElement, DMDD.DataModelRoot? value, DiffList? diffs, string? objName)
+  private static bool CmpDataModelRoot(DXPack.DiagramDataPart openXmlElement, DMDD.DataModelRoot? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
       return true;
   }
@@ -55,7 +55,7 @@ public static class DiagramDataPartConverter
     return collection;
   }
   
-  private static bool CmpImageParts(DXPack.DiagramDataPart openXmlElement, Collection<DMPack.ImagePart>? value, DiffList? diffs, string? objName)
+  private static bool CmpImageParts(DXPack.DiagramDataPart openXmlElement, Collection<DMPack.ImagePart>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return true;
   }
@@ -65,7 +65,7 @@ public static class DiagramDataPartConverter
     return openXmlElement?.RelationshipType;
   }
   
-  private static bool CmpRelationshipType(DXPack.DiagramDataPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpRelationshipType(DXPack.DiagramDataPart openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.RelationshipType == value) return true;
     diffs?.Add(objName, "RelationshipType", openXmlElement?.RelationshipType, value);
@@ -87,7 +87,7 @@ public static class DiagramDataPartConverter
     return collection;
   }
   
-  private static bool CmpSlideParts(DXPack.DiagramDataPart openXmlElement, Collection<DMPack.SlidePart>? value, DiffList? diffs, string? objName)
+  private static bool CmpSlideParts(DXPack.DiagramDataPart openXmlElement, Collection<DMPack.SlidePart>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return true;
   }
@@ -107,7 +107,7 @@ public static class DiagramDataPartConverter
     return collection;
   }
   
-  private static bool CmpWorksheetParts(DXPack.DiagramDataPart openXmlElement, Collection<DMPack.WorksheetPart>? value, DiffList? diffs, string? objName)
+  private static bool CmpWorksheetParts(DXPack.DiagramDataPart openXmlElement, Collection<DMPack.WorksheetPart>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return true;
   }
@@ -128,27 +128,27 @@ public static class DiagramDataPartConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXPack.DiagramDataPart? openXmlElement, DMPack.DiagramDataPart? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXPack.DiagramDataPart? openXmlElement, DMPack.DiagramDataPart? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpContentType(openXmlElement, value.ContentType, diffs, objName))
+      if (!CmpContentType(openXmlElement, value.ContentType, diffs, objName, propName))
         ok = false;
-      if (!CmpDataModelRoot(openXmlElement, value.DataModelRoot, diffs, objName))
+      if (!CmpDataModelRoot(openXmlElement, value.DataModelRoot, diffs, objName, propName))
         ok = false;
-      if (!CmpImageParts(openXmlElement, value.ImageParts, diffs, objName))
+      if (!CmpImageParts(openXmlElement, value.ImageParts, diffs, objName, propName))
         ok = false;
-      if (!CmpRelationshipType(openXmlElement, value.RelationshipType, diffs, objName))
+      if (!CmpRelationshipType(openXmlElement, value.RelationshipType, diffs, objName, propName))
         ok = false;
-      if (!CmpSlideParts(openXmlElement, value.SlideParts, diffs, objName))
+      if (!CmpSlideParts(openXmlElement, value.SlideParts, diffs, objName, propName))
         ok = false;
-      if (!CmpWorksheetParts(openXmlElement, value.WorksheetParts, diffs, objName))
+      if (!CmpWorksheetParts(openXmlElement, value.WorksheetParts, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

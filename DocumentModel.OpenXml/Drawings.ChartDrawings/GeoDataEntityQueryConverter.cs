@@ -13,9 +13,9 @@ public static class GeoDataEntityQueryConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityTypeEnum, DMDCDs.EntityTypeEnum>(openXmlElement?.EntityType?.Value);
   }
   
-  private static bool CmpEntityType(DXO16DCD.GeoDataEntityQuery openXmlElement, DMDCDs.EntityTypeEnum? value, DiffList? diffs, string? objName)
+  private static bool CmpEntityType(DXO16DCD.GeoDataEntityQuery openXmlElement, DMDCDs.EntityTypeEnum? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityTypeEnum, DMDCDs.EntityTypeEnum>(openXmlElement?.EntityType?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityTypeEnum, DMDCDs.EntityTypeEnum>(openXmlElement?.EntityType?.Value, value, diffs, objName, propName);
   }
   
   private static void SetEntityType(DXO16DCD.GeoDataEntityQuery openXmlElement, DMDCDs.EntityTypeEnum? value)
@@ -31,7 +31,7 @@ public static class GeoDataEntityQueryConverter
     return StringValueConverter.GetValue(openXmlElement?.EntityId);
   }
   
-  private static bool CmpEntityId(DXO16DCD.GeoDataEntityQuery openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpEntityId(DXO16DCD.GeoDataEntityQuery openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.EntityId, value, diffs, objName, "EntityId");
   }
@@ -53,19 +53,19 @@ public static class GeoDataEntityQueryConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO16DCD.GeoDataEntityQuery? openXmlElement, DMDCDs.GeoDataEntityQuery? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16DCD.GeoDataEntityQuery? openXmlElement, DMDCDs.GeoDataEntityQuery? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpEntityType(openXmlElement, value.EntityType, diffs, objName))
+      if (!CmpEntityType(openXmlElement, value.EntityType, diffs, objName, propName))
         ok = false;
-      if (!CmpEntityId(openXmlElement, value.EntityId, diffs, objName))
+      if (!CmpEntityId(openXmlElement, value.EntityId, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

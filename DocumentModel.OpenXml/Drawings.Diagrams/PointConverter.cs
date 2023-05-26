@@ -13,7 +13,7 @@ public static class PointConverter
     return StringValueConverter.GetValue(openXmlElement?.ModelId);
   }
   
-  private static bool CmpModelId(DXDD.Point openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpModelId(DXDD.Point openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.ModelId, value, diffs, objName, "ModelId");
   }
@@ -31,9 +31,9 @@ public static class PointConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Diagrams.PointValues, DMDD.PointKind>(openXmlElement?.Type?.Value);
   }
   
-  private static bool CmpType(DXDD.Point openXmlElement, DMDD.PointKind? value, DiffList? diffs, string? objName)
+  private static bool CmpType(DXDD.Point openXmlElement, DMDD.PointKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Diagrams.PointValues, DMDD.PointKind>(openXmlElement?.Type?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Diagrams.PointValues, DMDD.PointKind>(openXmlElement?.Type?.Value, value, diffs, objName, propName);
   }
   
   private static void SetType(DXDD.Point openXmlElement, DMDD.PointKind? value)
@@ -49,7 +49,7 @@ public static class PointConverter
     return StringValueConverter.GetValue(openXmlElement?.ConnectionId);
   }
   
-  private static bool CmpConnectionId(DXDD.Point openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpConnectionId(DXDD.Point openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.ConnectionId, value, diffs, objName, "ConnectionId");
   }
@@ -70,9 +70,9 @@ public static class PointConverter
     return null;
   }
   
-  private static bool CmpPropertySet(DXDD.Point openXmlElement, DMDD.PropertySet? value, DiffList? diffs, string? objName)
+  private static bool CmpPropertySet(DXDD.Point openXmlElement, DMDD.PropertySet? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDD.PropertySetConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.PropertySet>(), value, diffs, objName);
+    return DMXDD.PropertySetConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.PropertySet>(), value, diffs, objName, propName);
   }
   
   private static void SetPropertySet(DXDD.Point openXmlElement, DMDD.PropertySet? value)
@@ -99,9 +99,9 @@ public static class PointConverter
     return null;
   }
   
-  private static bool CmpShapeProperties(DXDD.Point openXmlElement, DMDD.ShapeProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpShapeProperties(DXDD.Point openXmlElement, DMDD.ShapeProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDD.ShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.ShapeProperties>(), value, diffs, objName);
+    return DMXDD.ShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.ShapeProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetShapeProperties(DXDD.Point openXmlElement, DMDD.ShapeProperties? value)
@@ -128,9 +128,9 @@ public static class PointConverter
     return null;
   }
   
-  private static bool CmpTextBody(DXDD.Point openXmlElement, DMDD.TextBody? value, DiffList? diffs, string? objName)
+  private static bool CmpTextBody(DXDD.Point openXmlElement, DMDD.TextBody? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDD.TextBodyConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.TextBody>(), value, diffs, objName);
+    return DMXDD.TextBodyConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.TextBody>(), value, diffs, objName, propName);
   }
   
   private static void SetTextBody(DXDD.Point openXmlElement, DMDD.TextBody? value)
@@ -157,9 +157,9 @@ public static class PointConverter
     return null;
   }
   
-  private static bool CmpPtExtensionList(DXDD.Point openXmlElement, DMDD.PtExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpPtExtensionList(DXDD.Point openXmlElement, DMDD.PtExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDD.PtExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.PtExtensionList>(), value, diffs, objName);
+    return DMXDD.PtExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.PtExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetPtExtensionList(DXDD.Point openXmlElement, DMDD.PtExtensionList? value)
@@ -192,29 +192,29 @@ public static class PointConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDD.Point? openXmlElement, DMDD.Point? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDD.Point? openXmlElement, DMDD.Point? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpModelId(openXmlElement, value.ModelId, diffs, objName))
+      if (!CmpModelId(openXmlElement, value.ModelId, diffs, objName, propName))
         ok = false;
-      if (!CmpType(openXmlElement, value.Type, diffs, objName))
+      if (!CmpType(openXmlElement, value.Type, diffs, objName, propName))
         ok = false;
-      if (!CmpConnectionId(openXmlElement, value.ConnectionId, diffs, objName))
+      if (!CmpConnectionId(openXmlElement, value.ConnectionId, diffs, objName, propName))
         ok = false;
-      if (!CmpPropertySet(openXmlElement, value.PropertySet, diffs, objName))
+      if (!CmpPropertySet(openXmlElement, value.PropertySet, diffs, objName, propName))
         ok = false;
-      if (!CmpShapeProperties(openXmlElement, value.ShapeProperties, diffs, objName))
+      if (!CmpShapeProperties(openXmlElement, value.ShapeProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpTextBody(openXmlElement, value.TextBody, diffs, objName))
+      if (!CmpTextBody(openXmlElement, value.TextBody, diffs, objName, propName))
         ok = false;
-      if (!CmpPtExtensionList(openXmlElement, value.PtExtensionList, diffs, objName))
+      if (!CmpPtExtensionList(openXmlElement, value.PtExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -13,9 +13,9 @@ public static class CameraConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.PresetCameraValues, DMD.PresetCameraKind>(openXmlElement?.Preset?.Value);
   }
   
-  private static bool CmpPreset(DXD.Camera openXmlElement, DMD.PresetCameraKind? value, DiffList? diffs, string? objName)
+  private static bool CmpPreset(DXD.Camera openXmlElement, DMD.PresetCameraKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.PresetCameraValues, DMD.PresetCameraKind>(openXmlElement?.Preset?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.PresetCameraValues, DMD.PresetCameraKind>(openXmlElement?.Preset?.Value, value, diffs, objName, propName);
   }
   
   private static void SetPreset(DXD.Camera openXmlElement, DMD.PresetCameraKind? value)
@@ -31,7 +31,7 @@ public static class CameraConverter
     return openXmlElement?.FieldOfView?.Value;
   }
   
-  private static bool CmpFieldOfView(DXD.Camera openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpFieldOfView(DXD.Camera openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.FieldOfView?.Value == value) return true;
     diffs?.Add(objName, "FieldOfView", openXmlElement?.FieldOfView?.Value, value);
@@ -51,7 +51,7 @@ public static class CameraConverter
     return openXmlElement?.Zoom?.Value;
   }
   
-  private static bool CmpZoom(DXD.Camera openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpZoom(DXD.Camera openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Zoom?.Value == value) return true;
     diffs?.Add(objName, "Zoom", openXmlElement?.Zoom?.Value, value);
@@ -74,9 +74,9 @@ public static class CameraConverter
     return null;
   }
   
-  private static bool CmpRotation(DXD.Camera openXmlElement, DMD.Rotation? value, DiffList? diffs, string? objName)
+  private static bool CmpRotation(DXD.Camera openXmlElement, DMD.Rotation? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.RotationConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Rotation>(), value, diffs, objName);
+    return DMXD.RotationConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Rotation>(), value, diffs, objName, propName);
   }
   
   private static void SetRotation(DXD.Camera openXmlElement, DMD.Rotation? value)
@@ -106,23 +106,23 @@ public static class CameraConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.Camera? openXmlElement, DMD.Camera? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.Camera? openXmlElement, DMD.Camera? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpPreset(openXmlElement, value.Preset, diffs, objName))
+      if (!CmpPreset(openXmlElement, value.Preset, diffs, objName, propName))
         ok = false;
-      if (!CmpFieldOfView(openXmlElement, value.FieldOfView, diffs, objName))
+      if (!CmpFieldOfView(openXmlElement, value.FieldOfView, diffs, objName, propName))
         ok = false;
-      if (!CmpZoom(openXmlElement, value.Zoom, diffs, objName))
+      if (!CmpZoom(openXmlElement, value.Zoom, diffs, objName, propName))
         ok = false;
-      if (!CmpRotation(openXmlElement, value.Rotation, diffs, objName))
+      if (!CmpRotation(openXmlElement, value.Rotation, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

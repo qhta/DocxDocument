@@ -19,7 +19,7 @@ public static class ChartExtensionListConverter
     return null;
   }
   
-  private static bool CmpDataDisplayOptions16s(DXDC.ChartExtensionList openXmlElement, Collection<DMDC.DataDisplayOptions16>? value, DiffList? diffs, string? objName)
+  private static bool CmpDataDisplayOptions16s(DXDC.ChartExtensionList openXmlElement, Collection<DMDC.DataDisplayOptions16>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var origElements = openXmlElement.Elements<DXDC.DataDisplayOptions16>();
     var origElementsCount = origElements.Count();
@@ -28,7 +28,7 @@ public static class ChartExtensionListConverter
     {
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, propName ?? openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -37,13 +37,13 @@ public static class ChartExtensionListConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDC.DataDisplayOptions16Converter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDC.DataDisplayOptions16Converter.CompareModelElement(origItem, modelItem, diffs, objName, propName))
           ok = false;
       }
       return ok;
     }
     if (origElementsCount == 0 && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -72,17 +72,17 @@ public static class ChartExtensionListConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDC.ChartExtensionList? openXmlElement, DMDC.ChartExtensionList? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.ChartExtensionList? openXmlElement, DMDC.ChartExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpDataDisplayOptions16s(openXmlElement, value.DataDisplayOptions16s, diffs, objName))
+      if (!CmpDataDisplayOptions16s(openXmlElement, value.DataDisplayOptions16s, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

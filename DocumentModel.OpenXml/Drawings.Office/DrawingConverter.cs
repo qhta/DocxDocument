@@ -16,9 +16,9 @@ public static class DrawingConverter
     return null;
   }
   
-  private static bool CmpShapeTree(DXOD.Drawing openXmlElement, DMDO.ShapeTree? value, DiffList? diffs, string? objName)
+  private static bool CmpShapeTree(DXOD.Drawing openXmlElement, DMDO.ShapeTree? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDO.ShapeTreeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOD.ShapeTree>(), value, diffs, objName);
+    return DMXDO.ShapeTreeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOD.ShapeTree>(), value, diffs, objName, propName);
   }
   
   private static void SetShapeTree(DXOD.Drawing openXmlElement, DMDO.ShapeTree? value)
@@ -45,17 +45,17 @@ public static class DrawingConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXOD.Drawing? openXmlElement, DMDO.Drawing? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXOD.Drawing? openXmlElement, DMDO.Drawing? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpShapeTree(openXmlElement, value.ShapeTree, diffs, objName))
+      if (!CmpShapeTree(openXmlElement, value.ShapeTree, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

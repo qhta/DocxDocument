@@ -16,9 +16,9 @@ public static class PrimaryItemConverter
     return null;
   }
   
-  private static bool CmpBackstageRegularButton(DXO10CUI.PrimaryItem openXmlElement, DM.BackstageRegularButton? value, DiffList? diffs, string? objName)
+  private static bool CmpBackstageRegularButton(DXO10CUI.PrimaryItem openXmlElement, DM.BackstageRegularButton? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMX.BackstageRegularButtonConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.BackstageRegularButton>(), value, diffs, objName);
+    return DMX.BackstageRegularButtonConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.BackstageRegularButton>(), value, diffs, objName, propName);
   }
   
   private static void SetBackstageRegularButton(DXO10CUI.PrimaryItem openXmlElement, DM.BackstageRegularButton? value)
@@ -45,9 +45,9 @@ public static class PrimaryItemConverter
     return null;
   }
   
-  private static bool CmpBackstagePrimaryMenu(DXO10CUI.PrimaryItem openXmlElement, DM.BackstagePrimaryMenu? value, DiffList? diffs, string? objName)
+  private static bool CmpBackstagePrimaryMenu(DXO10CUI.PrimaryItem openXmlElement, DM.BackstagePrimaryMenu? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMX.BackstagePrimaryMenuConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.BackstagePrimaryMenu>(), value, diffs, objName);
+    return DMX.BackstagePrimaryMenuConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.BackstagePrimaryMenu>(), value, diffs, objName, propName);
   }
   
   private static void SetBackstagePrimaryMenu(DXO10CUI.PrimaryItem openXmlElement, DM.BackstagePrimaryMenu? value)
@@ -75,19 +75,19 @@ public static class PrimaryItemConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO10CUI.PrimaryItem? openXmlElement, DM.PrimaryItem? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10CUI.PrimaryItem? openXmlElement, DM.PrimaryItem? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpBackstageRegularButton(openXmlElement, value.BackstageRegularButton, diffs, objName))
+      if (!CmpBackstageRegularButton(openXmlElement, value.BackstageRegularButton, diffs, objName, propName))
         ok = false;
-      if (!CmpBackstagePrimaryMenu(openXmlElement, value.BackstagePrimaryMenu, diffs, objName))
+      if (!CmpBackstagePrimaryMenu(openXmlElement, value.BackstagePrimaryMenu, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

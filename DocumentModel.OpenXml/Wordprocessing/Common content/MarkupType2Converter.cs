@@ -13,7 +13,7 @@ public static class MarkupType2Converter
     return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
-  private static bool CmpId(DXO10W.MarkupType openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpId(DXO10W.MarkupType openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
@@ -41,17 +41,17 @@ public static class MarkupType2Converter
   public static DMW.CustomXmlConflictDeletionRangeEnd? CreateModelElement(DXO10W.CustomXmlConflictDeletionRangeEnd? openXmlElement)
     => CreateModelElement<DMW.CustomXmlConflictDeletionRangeEnd>(openXmlElement);
 
-  public static bool CompareModelElement(DXO10W.MarkupType? openXmlElement, DMW.MarkupType2? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10W.MarkupType? openXmlElement, DMW.MarkupType2? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+      if (!CmpId(openXmlElement, value.Id, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

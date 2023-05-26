@@ -13,7 +13,7 @@ public static class EmbeddedWavAudioFileTypeConverter
     return StringValueConverter.GetValue(openXmlElement?.Embed);
   }
   
-  private static bool CmpEmbed(DXD.EmbeddedWavAudioFileType openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpEmbed(DXD.EmbeddedWavAudioFileType openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Embed, value, diffs, objName, "Embed");
   }
@@ -31,7 +31,7 @@ public static class EmbeddedWavAudioFileTypeConverter
     return StringValueConverter.GetValue(openXmlElement?.Name);
   }
   
-  private static bool CmpName(DXD.EmbeddedWavAudioFileType openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpName(DXD.EmbeddedWavAudioFileType openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Name, value, diffs, objName, "Name");
   }
@@ -49,7 +49,7 @@ public static class EmbeddedWavAudioFileTypeConverter
     return openXmlElement?.BuiltIn?.Value;
   }
   
-  private static bool CmpBuiltIn(DXD.EmbeddedWavAudioFileType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpBuiltIn(DXD.EmbeddedWavAudioFileType openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.BuiltIn?.Value == value) return true;
     diffs?.Add(objName, "BuiltIn", openXmlElement?.BuiltIn?.Value, value);
@@ -77,21 +77,21 @@ public static class EmbeddedWavAudioFileTypeConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.EmbeddedWavAudioFileType? openXmlElement, DMD.EmbeddedWavAudioFileType? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.EmbeddedWavAudioFileType? openXmlElement, DMD.EmbeddedWavAudioFileType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpEmbed(openXmlElement, value.Embed, diffs, objName))
+      if (!CmpEmbed(openXmlElement, value.Embed, diffs, objName, propName))
         ok = false;
-      if (!CmpName(openXmlElement, value.Name, diffs, objName))
+      if (!CmpName(openXmlElement, value.Name, diffs, objName, propName))
         ok = false;
-      if (!CmpBuiltIn(openXmlElement, value.BuiltIn, diffs, objName))
+      if (!CmpBuiltIn(openXmlElement, value.BuiltIn, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

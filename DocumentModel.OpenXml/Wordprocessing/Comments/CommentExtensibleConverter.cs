@@ -13,7 +13,7 @@ public static class CommentExtensibleConverter
     return null;
   }
   
-  private static bool CmpDurableId(DXO21WCE.CommentExtensible openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
+  private static bool CmpDurableId(DXO21WCE.CommentExtensible openXmlElement, DM.HexInt? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return HexIntConverter.CmpValue(openXmlElement?.DurableId?.Value, value, diffs, objName, "DurableId");
   }
@@ -33,7 +33,7 @@ public static class CommentExtensibleConverter
     return openXmlElement?.DateUtc?.Value;
   }
   
-  private static bool CmpDateUtc(DXO21WCE.CommentExtensible openXmlElement, DateTime? value, DiffList? diffs, string? objName)
+  private static bool CmpDateUtc(DXO21WCE.CommentExtensible openXmlElement, DateTime? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.DateUtc?.Value == value) return true;
     diffs?.Add(objName, "DateUtc", openXmlElement?.DateUtc?.Value, value);
@@ -52,7 +52,7 @@ public static class CommentExtensibleConverter
     return BooleanValueConverter.GetValue(openXmlElement?.IntelligentPlaceholder);
   }
   
-  private static bool CmpIntelligentPlaceholder(DXO21WCE.CommentExtensible openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpIntelligentPlaceholder(DXO21WCE.CommentExtensible openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.IntelligentPlaceholder, value, diffs, objName, "IntelligentPlaceholder");
   }
@@ -72,9 +72,9 @@ public static class CommentExtensibleConverter
     return null;
   }
   
-  private static bool CmpExtensionList(DXO21WCE.CommentExtensible openXmlElement, DMW.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXO21WCE.CommentExtensible openXmlElement, DMW.ExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.ExtensionListConverter.CmpExtensions(openXmlElement.GetFirstChild<DXO21WCE.ExtensionList>(), value, diffs, objName);
+    return DMXW.ExtensionListConverter.CmpExtensions(openXmlElement.GetFirstChild<DXO21WCE.ExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetExtensionList(DXO21WCE.CommentExtensible openXmlElement, DMW.ExtensionList? value)
@@ -104,23 +104,23 @@ public static class CommentExtensibleConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO21WCE.CommentExtensible? openXmlElement, DMW.CommentExtensible? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO21WCE.CommentExtensible? openXmlElement, DMW.CommentExtensible? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpDurableId(openXmlElement, value.DurableId, diffs, objName))
+      if (!CmpDurableId(openXmlElement, value.DurableId, diffs, objName, propName))
         ok = false;
-      if (!CmpDateUtc(openXmlElement, value.DateUtc, diffs, objName))
+      if (!CmpDateUtc(openXmlElement, value.DateUtc, diffs, objName, propName))
         ok = false;
-      if (!CmpIntelligentPlaceholder(openXmlElement, value.IntelligentPlaceholder, diffs, objName))
+      if (!CmpIntelligentPlaceholder(openXmlElement, value.IntelligentPlaceholder, diffs, objName, propName))
         ok = false;
-      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

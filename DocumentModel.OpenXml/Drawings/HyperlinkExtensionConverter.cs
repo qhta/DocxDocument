@@ -13,7 +13,7 @@ public static class HyperlinkExtensionConverter
     return StringValueConverter.GetValue(openXmlElement?.Uri);
   }
   
-  private static bool CmpUri(DXD.HyperlinkExtension openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpUri(DXD.HyperlinkExtension openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Uri, value, diffs, objName, "Uri");
   }
@@ -28,9 +28,9 @@ public static class HyperlinkExtensionConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2019.Drawing.HyperLinkColor.HyperlinkColorEnum, DMD.HyperlinkColorEnum>(openXmlElement.GetFirstChild<DXO19DHLC.HyperlinkColor>()?.Val?.Value);
   }
   
-  private static bool CmpHyperlinkColor(DXD.HyperlinkExtension openXmlElement, DMD.HyperlinkColorEnum? value, DiffList? diffs, string? objName)
+  private static bool CmpHyperlinkColor(DXD.HyperlinkExtension openXmlElement, DMD.HyperlinkColorEnum? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2019.Drawing.HyperLinkColor.HyperlinkColorEnum, DMD.HyperlinkColorEnum>(openXmlElement.GetFirstChild<DXO19DHLC.HyperlinkColor>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2019.Drawing.HyperLinkColor.HyperlinkColorEnum, DMD.HyperlinkColorEnum>(openXmlElement.GetFirstChild<DXO19DHLC.HyperlinkColor>()?.Val?.Value, value, diffs, objName, propName);
   }
   
   private static void SetHyperlinkColor(DXD.HyperlinkExtension openXmlElement, DMD.HyperlinkColorEnum? value)
@@ -60,19 +60,19 @@ public static class HyperlinkExtensionConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.HyperlinkExtension? openXmlElement, DMD.HyperlinkExtension? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.HyperlinkExtension? openXmlElement, DMD.HyperlinkExtension? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpUri(openXmlElement, value.Uri, diffs, objName))
+      if (!CmpUri(openXmlElement, value.Uri, diffs, objName, propName))
         ok = false;
-      if (!CmpHyperlinkColor(openXmlElement, value.HyperlinkColor, diffs, objName))
+      if (!CmpHyperlinkColor(openXmlElement, value.HyperlinkColor, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

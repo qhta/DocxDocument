@@ -13,7 +13,7 @@ public static class GeoPolygonConverter
     return StringValueConverter.GetValue(openXmlElement?.PolygonId);
   }
   
-  private static bool CmpPolygonId(DXO16DCD.GeoPolygon openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpPolygonId(DXO16DCD.GeoPolygon openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.PolygonId, value, diffs, objName, "PolygonId");
   }
@@ -31,7 +31,7 @@ public static class GeoPolygonConverter
     return openXmlElement?.NumPoints?.Value;
   }
   
-  private static bool CmpNumPoints(DXO16DCD.GeoPolygon openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpNumPoints(DXO16DCD.GeoPolygon openXmlElement, Int64? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.NumPoints?.Value == value) return true;
     diffs?.Add(objName, "NumPoints", openXmlElement?.NumPoints?.Value, value);
@@ -51,7 +51,7 @@ public static class GeoPolygonConverter
     return StringValueConverter.GetValue(openXmlElement?.PcaRings);
   }
   
-  private static bool CmpPcaRings(DXO16DCD.GeoPolygon openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpPcaRings(DXO16DCD.GeoPolygon openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.PcaRings, value, diffs, objName, "PcaRings");
   }
@@ -74,21 +74,21 @@ public static class GeoPolygonConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO16DCD.GeoPolygon? openXmlElement, DMDCDs.GeoPolygon? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16DCD.GeoPolygon? openXmlElement, DMDCDs.GeoPolygon? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpPolygonId(openXmlElement, value.PolygonId, diffs, objName))
+      if (!CmpPolygonId(openXmlElement, value.PolygonId, diffs, objName, propName))
         ok = false;
-      if (!CmpNumPoints(openXmlElement, value.NumPoints, diffs, objName))
+      if (!CmpNumPoints(openXmlElement, value.NumPoints, diffs, objName, propName))
         ok = false;
-      if (!CmpPcaRings(openXmlElement, value.PcaRings, diffs, objName))
+      if (!CmpPcaRings(openXmlElement, value.PcaRings, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

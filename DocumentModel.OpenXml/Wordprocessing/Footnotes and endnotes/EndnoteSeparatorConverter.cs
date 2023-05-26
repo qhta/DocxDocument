@@ -27,9 +27,9 @@ public static class EndnoteSeparatorConverter
     return null;
   }
 
-  public static bool CompareModelElement(DXW.FootnoteEndnoteSeparatorReferenceType? openXmlElement, DMW.EndnoteSeparator? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.FootnoteEndnoteSeparatorReferenceType? openXmlElement, DMW.EndnoteSeparator? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return FootnoteEndnoteSeparatorReferenceTypeConverter.CompareModelElement(openXmlElement, model, diffs, objName);
+    return FootnoteEndnoteSeparatorReferenceTypeConverter.CompareModelElement(openXmlElement, model, diffs, objName, propName);
   }
 
   public static DXW.EndnoteSpecialReference CreateOpenXmlElement(DMW.EndnoteSeparator model, DXW.Settings? settings)

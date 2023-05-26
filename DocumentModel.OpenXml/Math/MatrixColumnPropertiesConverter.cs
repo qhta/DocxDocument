@@ -11,7 +11,7 @@ public static class MatrixColumnPropertiesConverter
     return Int32ValueConverter.GetValue(openXmlElement?.GetFirstChild<DXM.MatrixColumnCount>()?.Val);
   }
   
-  private static bool CmpMatrixColumnCount(DXM.MatrixColumnProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpMatrixColumnCount(DXM.MatrixColumnProperties openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return Int32ValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXM.MatrixColumnCount>()?.Val, value, diffs, objName, "MatrixColumnCount");
   }
@@ -28,9 +28,9 @@ public static class MatrixColumnPropertiesConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.HorizontalAlignmentValues, DMM.HorizontalAlignmentKind>(openXmlElement.GetFirstChild<DXM.MatrixColumnJustification>()?.Val?.Value);
   }
   
-  private static bool CmpMatrixColumnJustification(DXM.MatrixColumnProperties openXmlElement, DMM.HorizontalAlignmentKind? value, DiffList? diffs, string? objName)
+  private static bool CmpMatrixColumnJustification(DXM.MatrixColumnProperties openXmlElement, DMM.HorizontalAlignmentKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.HorizontalAlignmentValues, DMM.HorizontalAlignmentKind>(openXmlElement.GetFirstChild<DXM.MatrixColumnJustification>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.HorizontalAlignmentValues, DMM.HorizontalAlignmentKind>(openXmlElement.GetFirstChild<DXM.MatrixColumnJustification>()?.Val?.Value, value, diffs, objName, propName);
   }
   
   private static void SetMatrixColumnJustification(DXM.MatrixColumnProperties openXmlElement, DMM.HorizontalAlignmentKind? value)
@@ -62,19 +62,19 @@ public static class MatrixColumnPropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXM.MatrixColumnProperties? openXmlElement, DMM.MatrixColumnProperties? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXM.MatrixColumnProperties? openXmlElement, DMM.MatrixColumnProperties? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpMatrixColumnCount(openXmlElement, model.MatrixColumnCount, diffs, objName))
+      if (!CmpMatrixColumnCount(openXmlElement, model.MatrixColumnCount, diffs, objName, propName))
         ok = false;
-      if (!CmpMatrixColumnJustification(openXmlElement, model.MatrixColumnJustification, diffs, objName))
+      if (!CmpMatrixColumnJustification(openXmlElement, model.MatrixColumnJustification, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   

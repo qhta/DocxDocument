@@ -13,7 +13,7 @@ public static class DiagramAutoBulletConverter
     return StringValueConverter.GetValue(openXmlElement?.AutoBulletPrefix);
   }
   
-  private static bool CmpAutoBulletPrefix(DXO19DD11.DiagramAutoBullet openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpAutoBulletPrefix(DXO19DD11.DiagramAutoBullet openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.AutoBulletPrefix, value, diffs, objName, "AutoBulletPrefix");
   }
@@ -31,7 +31,7 @@ public static class DiagramAutoBulletConverter
     return openXmlElement?.LeadZeros?.Value;
   }
   
-  private static bool CmpLeadZeros(DXO19DD11.DiagramAutoBullet openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpLeadZeros(DXO19DD11.DiagramAutoBullet openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.LeadZeros?.Value == value) return true;
     diffs?.Add(objName, "LeadZeros", openXmlElement?.LeadZeros?.Value, value);
@@ -54,7 +54,7 @@ public static class DiagramAutoBulletConverter
     return openXmlElement.GetFirstChild<DXD.NoBullet>() != null;
   }
   
-  private static bool CmpNoBullet(DXO19DD11.DiagramAutoBullet openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoBullet(DXO19DD11.DiagramAutoBullet openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXD.NoBullet>() != null;
     if (val == value) return true;
@@ -88,9 +88,9 @@ public static class DiagramAutoBulletConverter
     return null;
   }
   
-  private static bool CmpAutoNumberedBullet(DXO19DD11.DiagramAutoBullet openXmlElement, DMD.AutoNumberedBullet? value, DiffList? diffs, string? objName)
+  private static bool CmpAutoNumberedBullet(DXO19DD11.DiagramAutoBullet openXmlElement, DMD.AutoNumberedBullet? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.AutoNumberedBulletConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.AutoNumberedBullet>(), value, diffs, objName);
+    return DMXD.AutoNumberedBulletConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.AutoNumberedBullet>(), value, diffs, objName, propName);
   }
   
   private static void SetAutoNumberedBullet(DXO19DD11.DiagramAutoBullet openXmlElement, DMD.AutoNumberedBullet? value)
@@ -117,9 +117,9 @@ public static class DiagramAutoBulletConverter
     return null;
   }
   
-  private static bool CmpCharacterBullet(DXO19DD11.DiagramAutoBullet openXmlElement, DMD.CharacterBullet? value, DiffList? diffs, string? objName)
+  private static bool CmpCharacterBullet(DXO19DD11.DiagramAutoBullet openXmlElement, DMD.CharacterBullet? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.CharacterBulletConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.CharacterBullet>(), value, diffs, objName);
+    return DMXD.CharacterBulletConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.CharacterBullet>(), value, diffs, objName, propName);
   }
   
   private static void SetCharacterBullet(DXO19DD11.DiagramAutoBullet openXmlElement, DMD.CharacterBullet? value)
@@ -146,9 +146,9 @@ public static class DiagramAutoBulletConverter
     return null;
   }
   
-  private static bool CmpPictureBullet(DXO19DD11.DiagramAutoBullet openXmlElement, DMD.PictureBullet? value, DiffList? diffs, string? objName)
+  private static bool CmpPictureBullet(DXO19DD11.DiagramAutoBullet openXmlElement, DMD.PictureBullet? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.PictureBulletConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.PictureBullet>(), value, diffs, objName);
+    return DMXD.PictureBulletConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.PictureBullet>(), value, diffs, objName, propName);
   }
   
   private static void SetPictureBullet(DXO19DD11.DiagramAutoBullet openXmlElement, DMD.PictureBullet? value)
@@ -180,27 +180,27 @@ public static class DiagramAutoBulletConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO19DD11.DiagramAutoBullet? openXmlElement, DMDD1.DiagramAutoBullet? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO19DD11.DiagramAutoBullet? openXmlElement, DMDD1.DiagramAutoBullet? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpAutoBulletPrefix(openXmlElement, value.AutoBulletPrefix, diffs, objName))
+      if (!CmpAutoBulletPrefix(openXmlElement, value.AutoBulletPrefix, diffs, objName, propName))
         ok = false;
-      if (!CmpLeadZeros(openXmlElement, value.LeadZeros, diffs, objName))
+      if (!CmpLeadZeros(openXmlElement, value.LeadZeros, diffs, objName, propName))
         ok = false;
-      if (!CmpNoBullet(openXmlElement, value.NoBullet, diffs, objName))
+      if (!CmpNoBullet(openXmlElement, value.NoBullet, diffs, objName, propName))
         ok = false;
-      if (!CmpAutoNumberedBullet(openXmlElement, value.AutoNumberedBullet, diffs, objName))
+      if (!CmpAutoNumberedBullet(openXmlElement, value.AutoNumberedBullet, diffs, objName, propName))
         ok = false;
-      if (!CmpCharacterBullet(openXmlElement, value.CharacterBullet, diffs, objName))
+      if (!CmpCharacterBullet(openXmlElement, value.CharacterBullet, diffs, objName, propName))
         ok = false;
-      if (!CmpPictureBullet(openXmlElement, value.PictureBullet, diffs, objName))
+      if (!CmpPictureBullet(openXmlElement, value.PictureBullet, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

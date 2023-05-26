@@ -14,9 +14,9 @@ public static class AccentConverter
     return null;
   }
   
-  private static bool CmpAccentProperties(DXM.Accent openXmlElement, DMM.AccentProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpAccentProperties(DXM.Accent openXmlElement, DMM.AccentProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXM.AccentPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.AccentProperties>(), value, diffs, objName);
+    return DMXM.AccentPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.AccentProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetAccentProperties(DXM.Accent openXmlElement, DMM.AccentProperties? value)
@@ -42,9 +42,9 @@ public static class AccentConverter
     return null;
   }
   
-  private static bool CmpArgument(DXM.Accent openXmlElement, DMM.Argument? value, DiffList? diffs, string? objName)
+  private static bool CmpArgument(DXM.Accent openXmlElement, DMM.Argument? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXM.ArgumentConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.Base>(), value, diffs, objName);
+    return DMXM.ArgumentConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.Base>(), value, diffs, objName, propName);
   }
   
   private static void SetArgument(DXM.Accent openXmlElement, DMM.Argument? value)
@@ -74,19 +74,19 @@ public static class AccentConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXM.Accent? openXmlElement, DMM.Accent? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXM.Accent? openXmlElement, DMM.Accent? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpAccentProperties(openXmlElement, model.AccentProperties, diffs, objName))
+      if (!CmpAccentProperties(openXmlElement, model.AccentProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpArgument(openXmlElement, model.Argument, diffs, objName))
+      if (!CmpArgument(openXmlElement, model.Argument, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   

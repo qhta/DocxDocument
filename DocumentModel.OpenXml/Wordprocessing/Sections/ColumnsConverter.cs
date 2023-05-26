@@ -13,7 +13,7 @@ public static class ColumnsConverter
     return BooleanValueConverter.GetValue(openXmlElement?.EqualWidth);
   }
   
-  private static bool CmpEqualWidth(DXW.Columns openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpEqualWidth(DXW.Columns openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.EqualWidth, value, diffs, objName, "EqualWidth");
   }
@@ -31,7 +31,7 @@ public static class ColumnsConverter
     return Int32ValueConverter.GetValue(openXmlElement?.Space);
   }
   
-  private static bool CmpSpace(DXW.Columns openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpSpace(DXW.Columns openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Space, value, diffs, objName, "Space");
   }
@@ -49,7 +49,7 @@ public static class ColumnsConverter
     return openXmlElement?.ColumnCount?.Value;
   }
   
-  private static bool CmpColumnCount(DXW.Columns openXmlElement, int? value, DiffList? diffs, string? objName)
+  private static bool CmpColumnCount(DXW.Columns openXmlElement, int? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.ColumnCount?.Value == value) return true;
     diffs?.Add(objName, "ColumnCount", openXmlElement?.ColumnCount?.Value, value);
@@ -69,7 +69,7 @@ public static class ColumnsConverter
     return BooleanValueConverter.GetValue(openXmlElement?.Separator);
   }
   
-  private static bool CmpSeparator(DXW.Columns openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpSeparator(DXW.Columns openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.Separator, value, diffs, objName, "Separator");
   }
@@ -93,7 +93,7 @@ public static class ColumnsConverter
     return null;
   }
   
-  private static bool CmpItems(DXW.Columns openXmlElement, Collection<DMW.Column>? value, DiffList? diffs, string? objName)
+  private static bool CmpItems(DXW.Columns openXmlElement, Collection<DMW.Column>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var origElements = openXmlElement.Elements<DXW.Column>();
     var origElementsCount = origElements.Count();
@@ -102,7 +102,7 @@ public static class ColumnsConverter
     {
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, propName ?? openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -111,13 +111,13 @@ public static class ColumnsConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXW.ColumnConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXW.ColumnConverter.CompareModelElement(origItem, modelItem, diffs, objName, propName))
           ok = false;
       }
       return ok;
     }
     if (origElementsCount == 0 && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -150,25 +150,25 @@ public static class ColumnsConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.Columns? openXmlElement, DMW.Columns? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.Columns? openXmlElement, DMW.Columns? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpEqualWidth(openXmlElement, value.EqualWidth, diffs, objName))
+      if (!CmpEqualWidth(openXmlElement, value.EqualWidth, diffs, objName, propName))
         ok = false;
-      if (!CmpSpace(openXmlElement, value.Space, diffs, objName))
+      if (!CmpSpace(openXmlElement, value.Space, diffs, objName, propName))
         ok = false;
-      if (!CmpColumnCount(openXmlElement, value.ColumnCount, diffs, objName))
+      if (!CmpColumnCount(openXmlElement, value.ColumnCount, diffs, objName, propName))
         ok = false;
-      if (!CmpSeparator(openXmlElement, value.Separator, diffs, objName))
+      if (!CmpSeparator(openXmlElement, value.Separator, diffs, objName, propName))
         ok = false;
-      if (!CmpItems(openXmlElement, value.Items, diffs, objName))
+      if (!CmpItems(openXmlElement, value.Items, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

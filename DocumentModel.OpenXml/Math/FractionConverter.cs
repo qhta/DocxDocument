@@ -14,9 +14,9 @@ public static class FractionConverter
     return null;
   }
   
-  private static bool CmpFractionProperties(DXM.Fraction openXmlElement, DMM.FractionProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpFractionProperties(DXM.Fraction openXmlElement, DMM.FractionProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXM.FractionPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.FractionProperties>(), value, diffs, objName);
+    return DMXM.FractionPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.FractionProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetFractionProperties(DXM.Fraction openXmlElement, DMM.FractionProperties? value)
@@ -42,9 +42,9 @@ public static class FractionConverter
     return null;
   }
   
-  private static bool CmpNumerator(DXM.Fraction openXmlElement, DMM.Numerator? value, DiffList? diffs, string? objName)
+  private static bool CmpNumerator(DXM.Fraction openXmlElement, DMM.Numerator? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXM.NumeratorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.Numerator>(), value, diffs, objName);
+    return DMXM.NumeratorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.Numerator>(), value, diffs, objName, propName);
   }
   
   private static void SetNumerator(DXM.Fraction openXmlElement, DMM.Numerator? value)
@@ -70,9 +70,9 @@ public static class FractionConverter
     return null;
   }
   
-  private static bool CmpDenominator(DXM.Fraction openXmlElement, DMM.Denominator? value, DiffList? diffs, string? objName)
+  private static bool CmpDenominator(DXM.Fraction openXmlElement, DMM.Denominator? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXM.DenominatorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.Denominator>(), value, diffs, objName);
+    return DMXM.DenominatorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.Denominator>(), value, diffs, objName, propName);
   }
   
   private static void SetDenominator(DXM.Fraction openXmlElement, DMM.Denominator? value)
@@ -103,21 +103,21 @@ public static class FractionConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXM.Fraction? openXmlElement, DMM.Fraction? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXM.Fraction? openXmlElement, DMM.Fraction? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpFractionProperties(openXmlElement, model.FractionProperties, diffs, objName))
+      if (!CmpFractionProperties(openXmlElement, model.FractionProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpNumerator(openXmlElement, model.Numerator, diffs, objName))
+      if (!CmpNumerator(openXmlElement, model.Numerator, diffs, objName, propName))
         ok = false;
-      if (!CmpDenominator(openXmlElement, model.Denominator, diffs, objName))
+      if (!CmpDenominator(openXmlElement, model.Denominator, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   

@@ -13,9 +13,9 @@ public static class PresetGeometryConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.ShapeTypeValues, DMD.ShapeKind>(openXmlElement?.Preset?.Value);
   }
   
-  private static bool CmpPreset(DXD.PresetGeometry openXmlElement, DMD.ShapeKind? value, DiffList? diffs, string? objName)
+  private static bool CmpPreset(DXD.PresetGeometry openXmlElement, DMD.ShapeKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.ShapeTypeValues, DMD.ShapeKind>(openXmlElement?.Preset?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.ShapeTypeValues, DMD.ShapeKind>(openXmlElement?.Preset?.Value, value, diffs, objName, propName);
   }
   
   private static void SetPreset(DXD.PresetGeometry openXmlElement, DMD.ShapeKind? value)
@@ -34,9 +34,9 @@ public static class PresetGeometryConverter
     return null;
   }
   
-  private static bool CmpAdjustValueList(DXD.PresetGeometry openXmlElement, DMD.AdjustValueList? value, DiffList? diffs, string? objName)
+  private static bool CmpAdjustValueList(DXD.PresetGeometry openXmlElement, DMD.AdjustValueList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.AdjustValueListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.AdjustValueList>(), value, diffs, objName);
+    return DMXD.AdjustValueListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.AdjustValueList>(), value, diffs, objName, propName);
   }
   
   private static void SetAdjustValueList(DXD.PresetGeometry openXmlElement, DMD.AdjustValueList? value)
@@ -64,19 +64,19 @@ public static class PresetGeometryConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.PresetGeometry? openXmlElement, DMD.PresetGeometry? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.PresetGeometry? openXmlElement, DMD.PresetGeometry? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpPreset(openXmlElement, value.Preset, diffs, objName))
+      if (!CmpPreset(openXmlElement, value.Preset, diffs, objName, propName))
         ok = false;
-      if (!CmpAdjustValueList(openXmlElement, value.AdjustValueList, diffs, objName))
+      if (!CmpAdjustValueList(openXmlElement, value.AdjustValueList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

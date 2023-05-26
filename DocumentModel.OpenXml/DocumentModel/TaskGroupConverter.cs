@@ -13,7 +13,7 @@ public static class TaskGroupConverter
     return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
-  private static bool CmpId(DXO10CUI.TaskGroup openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpId(DXO10CUI.TaskGroup openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
@@ -31,7 +31,7 @@ public static class TaskGroupConverter
     return StringValueConverter.GetValue(openXmlElement?.QualifiedId);
   }
   
-  private static bool CmpQualifiedId(DXO10CUI.TaskGroup openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpQualifiedId(DXO10CUI.TaskGroup openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.QualifiedId, value, diffs, objName, "QualifiedId");
   }
@@ -49,7 +49,7 @@ public static class TaskGroupConverter
     return StringValueConverter.GetValue(openXmlElement?.Tag);
   }
   
-  private static bool CmpTag(DXO10CUI.TaskGroup openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpTag(DXO10CUI.TaskGroup openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Tag, value, diffs, objName, "Tag");
   }
@@ -67,7 +67,7 @@ public static class TaskGroupConverter
     return StringValueConverter.GetValue(openXmlElement?.IdMso);
   }
   
-  private static bool CmpIdMso(DXO10CUI.TaskGroup openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpIdMso(DXO10CUI.TaskGroup openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.IdMso, value, diffs, objName, "IdMso");
   }
@@ -85,7 +85,7 @@ public static class TaskGroupConverter
     return StringValueConverter.GetValue(openXmlElement?.InsertAfterMso);
   }
   
-  private static bool CmpInsertAfterMso(DXO10CUI.TaskGroup openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpInsertAfterMso(DXO10CUI.TaskGroup openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.InsertAfterMso, value, diffs, objName, "InsertAfterMso");
   }
@@ -103,7 +103,7 @@ public static class TaskGroupConverter
     return StringValueConverter.GetValue(openXmlElement?.InsertBeforeMso);
   }
   
-  private static bool CmpInsertBeforeMso(DXO10CUI.TaskGroup openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpInsertBeforeMso(DXO10CUI.TaskGroup openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.InsertBeforeMso, value, diffs, objName, "InsertBeforeMso");
   }
@@ -121,7 +121,7 @@ public static class TaskGroupConverter
     return StringValueConverter.GetValue(openXmlElement?.InsertAfterQulifiedId);
   }
   
-  private static bool CmpInsertAfterQulifiedId(DXO10CUI.TaskGroup openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpInsertAfterQulifiedId(DXO10CUI.TaskGroup openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.InsertAfterQulifiedId, value, diffs, objName, "InsertAfterQulifiedId");
   }
@@ -139,7 +139,7 @@ public static class TaskGroupConverter
     return StringValueConverter.GetValue(openXmlElement?.InsertBeforeQulifiedId);
   }
   
-  private static bool CmpInsertBeforeQulifiedId(DXO10CUI.TaskGroup openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpInsertBeforeQulifiedId(DXO10CUI.TaskGroup openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.InsertBeforeQulifiedId, value, diffs, objName, "InsertBeforeQulifiedId");
   }
@@ -157,7 +157,7 @@ public static class TaskGroupConverter
     return StringValueConverter.GetValue(openXmlElement?.Label);
   }
   
-  private static bool CmpLabel(DXO10CUI.TaskGroup openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpLabel(DXO10CUI.TaskGroup openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Label, value, diffs, objName, "Label");
   }
@@ -175,7 +175,7 @@ public static class TaskGroupConverter
     return StringValueConverter.GetValue(openXmlElement?.GetLabel);
   }
   
-  private static bool CmpGetLabel(DXO10CUI.TaskGroup openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetLabel(DXO10CUI.TaskGroup openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetLabel, value, diffs, objName, "GetLabel");
   }
@@ -193,7 +193,7 @@ public static class TaskGroupConverter
     return openXmlElement?.Visible?.Value;
   }
   
-  private static bool CmpVisible(DXO10CUI.TaskGroup openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpVisible(DXO10CUI.TaskGroup openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Visible?.Value == value) return true;
     diffs?.Add(objName, "Visible", openXmlElement?.Visible?.Value, value);
@@ -216,7 +216,7 @@ public static class TaskGroupConverter
     return StringValueConverter.GetValue(openXmlElement?.GetVisible);
   }
   
-  private static bool CmpGetVisible(DXO10CUI.TaskGroup openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetVisible(DXO10CUI.TaskGroup openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetVisible, value, diffs, objName, "GetVisible");
   }
@@ -234,7 +234,7 @@ public static class TaskGroupConverter
     return StringValueConverter.GetValue(openXmlElement?.HelperText);
   }
   
-  private static bool CmpHelperText(DXO10CUI.TaskGroup openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpHelperText(DXO10CUI.TaskGroup openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.HelperText, value, diffs, objName, "HelperText");
   }
@@ -252,7 +252,7 @@ public static class TaskGroupConverter
     return StringValueConverter.GetValue(openXmlElement?.GetHelperText);
   }
   
-  private static bool CmpGetHelperText(DXO10CUI.TaskGroup openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetHelperText(DXO10CUI.TaskGroup openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetHelperText, value, diffs, objName, "GetHelperText");
   }
@@ -270,7 +270,7 @@ public static class TaskGroupConverter
     return openXmlElement?.ShowLabel?.Value;
   }
   
-  private static bool CmpShowLabel(DXO10CUI.TaskGroup openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpShowLabel(DXO10CUI.TaskGroup openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.ShowLabel?.Value == value) return true;
     diffs?.Add(objName, "ShowLabel", openXmlElement?.ShowLabel?.Value, value);
@@ -293,7 +293,7 @@ public static class TaskGroupConverter
     return StringValueConverter.GetValue(openXmlElement?.GetShowLabel);
   }
   
-  private static bool CmpGetShowLabel(DXO10CUI.TaskGroup openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetShowLabel(DXO10CUI.TaskGroup openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetShowLabel, value, diffs, objName, "GetShowLabel");
   }
@@ -311,9 +311,9 @@ public static class TaskGroupConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.CustomUI.TaskSizesValues, DM.TaskSizesKind>(openXmlElement?.AllowedTaskSizes?.Value);
   }
   
-  private static bool CmpAllowedTaskSizes(DXO10CUI.TaskGroup openXmlElement, DM.TaskSizesKind? value, DiffList? diffs, string? objName)
+  private static bool CmpAllowedTaskSizes(DXO10CUI.TaskGroup openXmlElement, DM.TaskSizesKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.CustomUI.TaskSizesValues, DM.TaskSizesKind>(openXmlElement?.AllowedTaskSizes?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.CustomUI.TaskSizesValues, DM.TaskSizesKind>(openXmlElement?.AllowedTaskSizes?.Value, value, diffs, objName, propName);
   }
   
   private static void SetAllowedTaskSizes(DXO10CUI.TaskGroup openXmlElement, DM.TaskSizesKind? value)
@@ -335,7 +335,7 @@ public static class TaskGroupConverter
     return null;
   }
   
-  private static bool CmpTaskGroupCategories(DXO10CUI.TaskGroup openXmlElement, Collection<DM.TaskGroupCategory>? value, DiffList? diffs, string? objName)
+  private static bool CmpTaskGroupCategories(DXO10CUI.TaskGroup openXmlElement, Collection<DM.TaskGroupCategory>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var origElements = openXmlElement.Elements<DXO10CUI.TaskGroupCategory>();
     var origElementsCount = origElements.Count();
@@ -344,7 +344,7 @@ public static class TaskGroupConverter
     {
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, propName ?? openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -353,13 +353,13 @@ public static class TaskGroupConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMX.TaskGroupCategoryConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMX.TaskGroupCategoryConverter.CompareModelElement(origItem, modelItem, diffs, objName, propName))
           ok = false;
       }
       return ok;
     }
     if (origElementsCount == 0 && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -405,51 +405,51 @@ public static class TaskGroupConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO10CUI.TaskGroup? openXmlElement, DM.TaskGroup? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10CUI.TaskGroup? openXmlElement, DM.TaskGroup? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+      if (!CmpId(openXmlElement, value.Id, diffs, objName, propName))
         ok = false;
-      if (!CmpQualifiedId(openXmlElement, value.QualifiedId, diffs, objName))
+      if (!CmpQualifiedId(openXmlElement, value.QualifiedId, diffs, objName, propName))
         ok = false;
-      if (!CmpTag(openXmlElement, value.Tag, diffs, objName))
+      if (!CmpTag(openXmlElement, value.Tag, diffs, objName, propName))
         ok = false;
-      if (!CmpIdMso(openXmlElement, value.IdMso, diffs, objName))
+      if (!CmpIdMso(openXmlElement, value.IdMso, diffs, objName, propName))
         ok = false;
-      if (!CmpInsertAfterMso(openXmlElement, value.InsertAfterMso, diffs, objName))
+      if (!CmpInsertAfterMso(openXmlElement, value.InsertAfterMso, diffs, objName, propName))
         ok = false;
-      if (!CmpInsertBeforeMso(openXmlElement, value.InsertBeforeMso, diffs, objName))
+      if (!CmpInsertBeforeMso(openXmlElement, value.InsertBeforeMso, diffs, objName, propName))
         ok = false;
-      if (!CmpInsertAfterQulifiedId(openXmlElement, value.InsertAfterQulifiedId, diffs, objName))
+      if (!CmpInsertAfterQulifiedId(openXmlElement, value.InsertAfterQulifiedId, diffs, objName, propName))
         ok = false;
-      if (!CmpInsertBeforeQulifiedId(openXmlElement, value.InsertBeforeQulifiedId, diffs, objName))
+      if (!CmpInsertBeforeQulifiedId(openXmlElement, value.InsertBeforeQulifiedId, diffs, objName, propName))
         ok = false;
-      if (!CmpLabel(openXmlElement, value.Label, diffs, objName))
+      if (!CmpLabel(openXmlElement, value.Label, diffs, objName, propName))
         ok = false;
-      if (!CmpGetLabel(openXmlElement, value.GetLabel, diffs, objName))
+      if (!CmpGetLabel(openXmlElement, value.GetLabel, diffs, objName, propName))
         ok = false;
-      if (!CmpVisible(openXmlElement, value.Visible, diffs, objName))
+      if (!CmpVisible(openXmlElement, value.Visible, diffs, objName, propName))
         ok = false;
-      if (!CmpGetVisible(openXmlElement, value.GetVisible, diffs, objName))
+      if (!CmpGetVisible(openXmlElement, value.GetVisible, diffs, objName, propName))
         ok = false;
-      if (!CmpHelperText(openXmlElement, value.HelperText, diffs, objName))
+      if (!CmpHelperText(openXmlElement, value.HelperText, diffs, objName, propName))
         ok = false;
-      if (!CmpGetHelperText(openXmlElement, value.GetHelperText, diffs, objName))
+      if (!CmpGetHelperText(openXmlElement, value.GetHelperText, diffs, objName, propName))
         ok = false;
-      if (!CmpShowLabel(openXmlElement, value.ShowLabel, diffs, objName))
+      if (!CmpShowLabel(openXmlElement, value.ShowLabel, diffs, objName, propName))
         ok = false;
-      if (!CmpGetShowLabel(openXmlElement, value.GetShowLabel, diffs, objName))
+      if (!CmpGetShowLabel(openXmlElement, value.GetShowLabel, diffs, objName, propName))
         ok = false;
-      if (!CmpAllowedTaskSizes(openXmlElement, value.AllowedTaskSizes, diffs, objName))
+      if (!CmpAllowedTaskSizes(openXmlElement, value.AllowedTaskSizes, diffs, objName, propName))
         ok = false;
-      if (!CmpTaskGroupCategories(openXmlElement, value.TaskGroupCategories, diffs, objName))
+      if (!CmpTaskGroupCategories(openXmlElement, value.TaskGroupCategories, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

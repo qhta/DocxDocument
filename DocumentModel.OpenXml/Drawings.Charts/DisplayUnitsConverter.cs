@@ -10,7 +10,7 @@ public static class DisplayUnitsConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDC.CustomDisplayUnit>()?.Val);
   }
   
-  private static bool CmpCustomDisplayUnit(DXDC.DisplayUnits openXmlElement, Double? value, DiffList? diffs, string? objName)
+  private static bool CmpCustomDisplayUnit(DXDC.DisplayUnits openXmlElement, Double? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDC.CustomDisplayUnit>()?.Val, value, diffs, objName, "CustomDisplayUnit");
   }
@@ -25,9 +25,9 @@ public static class DisplayUnitsConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.BuiltInUnitValues, DMDC.BuiltInUnitKind>(openXmlElement.GetFirstChild<DXDC.BuiltInUnit>()?.Val?.Value);
   }
   
-  private static bool CmpBuiltInUnit(DXDC.DisplayUnits openXmlElement, DMDC.BuiltInUnitKind? value, DiffList? diffs, string? objName)
+  private static bool CmpBuiltInUnit(DXDC.DisplayUnits openXmlElement, DMDC.BuiltInUnitKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.BuiltInUnitValues, DMDC.BuiltInUnitKind>(openXmlElement.GetFirstChild<DXDC.BuiltInUnit>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.BuiltInUnitValues, DMDC.BuiltInUnitKind>(openXmlElement.GetFirstChild<DXDC.BuiltInUnit>()?.Val?.Value, value, diffs, objName, propName);
   }
   
   private static void SetBuiltInUnit(DXDC.DisplayUnits openXmlElement, DMDC.BuiltInUnitKind? value)
@@ -53,9 +53,9 @@ public static class DisplayUnitsConverter
     return null;
   }
   
-  private static bool CmpDisplayUnitsLabel(DXDC.DisplayUnits openXmlElement, DMDC.DisplayUnitsLabel? value, DiffList? diffs, string? objName)
+  private static bool CmpDisplayUnitsLabel(DXDC.DisplayUnits openXmlElement, DMDC.DisplayUnitsLabel? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.DisplayUnitsLabelConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.DisplayUnitsLabel>(), value, diffs, objName);
+    return DMXDC.DisplayUnitsLabelConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.DisplayUnitsLabel>(), value, diffs, objName, propName);
   }
   
   private static void SetDisplayUnitsLabel(DXDC.DisplayUnits openXmlElement, DMDC.DisplayUnitsLabel? value)
@@ -79,9 +79,9 @@ public static class DisplayUnitsConverter
     return null;
   }
   
-  private static bool CmpExtensionList(DXDC.DisplayUnits openXmlElement, DMDC.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXDC.DisplayUnits openXmlElement, DMDC.ExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ExtensionList>(), value, diffs, objName);
+    return DMXDC.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetExtensionList(DXDC.DisplayUnits openXmlElement, DMDC.ExtensionList? value)
@@ -111,23 +111,23 @@ public static class DisplayUnitsConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDC.DisplayUnits? openXmlElement, DMDC.DisplayUnits? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.DisplayUnits? openXmlElement, DMDC.DisplayUnits? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpCustomDisplayUnit(openXmlElement, value.CustomDisplayUnit, diffs, objName))
+      if (!CmpCustomDisplayUnit(openXmlElement, value.CustomDisplayUnit, diffs, objName, propName))
         ok = false;
-      if (!CmpBuiltInUnit(openXmlElement, value.BuiltInUnit, diffs, objName))
+      if (!CmpBuiltInUnit(openXmlElement, value.BuiltInUnit, diffs, objName, propName))
         ok = false;
-      if (!CmpDisplayUnitsLabel(openXmlElement, value.DisplayUnitsLabel, diffs, objName))
+      if (!CmpDisplayUnitsLabel(openXmlElement, value.DisplayUnitsLabel, diffs, objName, propName))
         ok = false;
-      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

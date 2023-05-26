@@ -13,7 +13,7 @@ public static class TableRowConverter
     return null;
   }
 
-  private static bool CmpRsidTableRowMarkRevision(DXW.TableRow openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
+  private static bool CmpRsidTableRowMarkRevision(DXW.TableRow openXmlElement, DM.HexInt? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return HexIntConverter.CmpValue(openXmlElement?.RsidTableRowMarkRevision?.Value, value, diffs, objName, "RsidTableRowMarkRevision");
   }
@@ -35,7 +35,7 @@ public static class TableRowConverter
     return null;
   }
 
-  private static bool CmpRsidTableRowAddition(DXW.TableRow openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
+  private static bool CmpRsidTableRowAddition(DXW.TableRow openXmlElement, DM.HexInt? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return HexIntConverter.CmpValue(openXmlElement?.RsidTableRowAddition?.Value, value, diffs, objName, "RsidTableRowAddition");
   }
@@ -57,7 +57,7 @@ public static class TableRowConverter
     return null;
   }
 
-  private static bool CmpRsidTableRowDeletion(DXW.TableRow openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
+  private static bool CmpRsidTableRowDeletion(DXW.TableRow openXmlElement, DM.HexInt? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return HexIntConverter.CmpValue(openXmlElement?.RsidTableRowDeletion?.Value, value, diffs, objName, "RsidTableRowDeletion");
   }
@@ -79,7 +79,7 @@ public static class TableRowConverter
     return null;
   }
 
-  private static bool CmpRsidTableRowProperties(DXW.TableRow openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
+  private static bool CmpRsidTableRowProperties(DXW.TableRow openXmlElement, DM.HexInt? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return HexIntConverter.CmpValue(openXmlElement?.RsidTableRowProperties?.Value, value, diffs, objName, "RsidTableRowProperties");
   }
@@ -101,7 +101,7 @@ public static class TableRowConverter
     return null;
   }
 
-  private static bool CmpParagraphId(DXW.TableRow openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
+  private static bool CmpParagraphId(DXW.TableRow openXmlElement, DM.HexInt? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return HexIntConverter.CmpValue(openXmlElement?.ParagraphId?.Value, value, diffs, objName, "ParagraphId");
   }
@@ -126,7 +126,7 @@ public static class TableRowConverter
     return null;
   }
 
-  private static bool CmpTextId(DXW.TableRow openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
+  private static bool CmpTextId(DXW.TableRow openXmlElement, DM.HexInt? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return HexIntConverter.CmpValue(openXmlElement?.TextId?.Value, value, diffs, objName, "TextId");
   }
@@ -149,9 +149,9 @@ public static class TableRowConverter
     return null;
   }
 
-  private static bool CmpTablePropertyExceptions(DXW.TableRow openXmlElement, DMW.TablePropertyExceptions? value, DiffList? diffs, string? objName)
+  private static bool CmpTablePropertyExceptions(DXW.TableRow openXmlElement, DMW.TablePropertyExceptions? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.TablePropertyExceptionsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TablePropertyExceptions>(), value, diffs, objName);
+    return DMXW.TablePropertyExceptionsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TablePropertyExceptions>(), value, diffs, objName, propName);
   }
 
   private static void SetTablePropertyExceptions(DXW.TableRow openXmlElement, DMW.TablePropertyExceptions? value)
@@ -177,9 +177,9 @@ public static class TableRowConverter
     return null;
   }
 
-  private static bool CmpTableRowProperties(DXW.TableRow openXmlElement, DMW.TableRowProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpTableRowProperties(DXW.TableRow openXmlElement, DMW.TableRowProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.TableRowPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableRowProperties>(), value, diffs, objName);
+    return DMXW.TableRowPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableRowProperties>(), value, diffs, objName, propName);
   }
 
   private static void SetTableRowProperties(DXW.TableRow openXmlElement, DMW.TableRowProperties? value)
@@ -214,20 +214,20 @@ public static class TableRowConverter
     return null;
   }
 
-  public static bool CompareTableRowElement(DX.OpenXmlElement? openXmlElement, DMW.ITableRowContent? value, DiffList? diffs = null, string? objName = null)
+  public static bool CompareTableRowElement(DX.OpenXmlElement? openXmlElement, DMW.ITableRowContent? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       if (openXmlElement is DXW.TableCell tableCell && value is DMW.TableCell tableCellModel)
-        return DMXW.TableCellConverter.CompareModelElement(tableCell, tableCellModel, diffs, objName);
+        return DMXW.TableCellConverter.CompareModelElement(tableCell, tableCellModel, diffs, objName, propName);
       if (openXmlElement is DXW.SdtCell sdtCell && value is DMW.SdtCell sdtCellModel)
-        return DMXW.SdtCellConverter.CompareModelElement(sdtCell, sdtCellModel, diffs, objName);
+        return DMXW.SdtCellConverter.CompareModelElement(sdtCell, sdtCellModel, diffs, objName, propName);
       if (openXmlElement is DXW.CustomXmlCell customXmlCell && value is DMW.CustomXmlCell customXmlCellModel)
-        return DMXW.CustomXmlCellConverter.CompareModelElement(customXmlCell, customXmlCellModel, diffs, objName);
+        return DMXW.CustomXmlCellConverter.CompareModelElement(customXmlCell, customXmlCellModel, diffs, objName, propName);
 
       if (value is DMW.ICommonContent commonElementModel)
       {
-        var result = CommonMarkersConverter.CompareModelElement(openXmlElement, commonElementModel, diffs, objName);
+        var result = CommonMarkersConverter.CompareModelElement(openXmlElement, commonElementModel, diffs, objName, propName);
         if (result != null)
           return (bool)result;
       }
@@ -235,7 +235,7 @@ public static class TableRowConverter
       return false;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
 
@@ -285,26 +285,26 @@ public static class TableRowConverter
     return null;
   }
 
-  public static bool CompareModelElement(DXW.TableRow? openXmlElement, DMW.TableRow? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.TableRow? openXmlElement, DMW.TableRow? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpRsidTableRowMarkRevision(openXmlElement, value.RsidTableRowMarkRevision, diffs, objName))
+      if (!CmpRsidTableRowMarkRevision(openXmlElement, value.RsidTableRowMarkRevision, diffs, objName, propName))
         ok = false;
-      if (!CmpRsidTableRowAddition(openXmlElement, value.RsidTableRowAddition, diffs, objName))
+      if (!CmpRsidTableRowAddition(openXmlElement, value.RsidTableRowAddition, diffs, objName, propName))
         ok = false;
-      if (!CmpRsidTableRowDeletion(openXmlElement, value.RsidTableRowDeletion, diffs, objName))
+      if (!CmpRsidTableRowDeletion(openXmlElement, value.RsidTableRowDeletion, diffs, objName, propName))
         ok = false;
-      if (!CmpRsidTableRowProperties(openXmlElement, value.RsidTableRowProperties, diffs, objName))
+      if (!CmpRsidTableRowProperties(openXmlElement, value.RsidTableRowProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpParagraphId(openXmlElement, value.ParagraphId, diffs, objName))
+      if (!CmpParagraphId(openXmlElement, value.ParagraphId, diffs, objName, propName))
         ok = false;
-      if (!CmpTextId(openXmlElement, value.TextId, diffs, objName))
+      if (!CmpTextId(openXmlElement, value.TextId, diffs, objName, propName))
         ok = false;
-      if (!CmpTablePropertyExceptions(openXmlElement, value.TablePropertyExceptions, diffs, objName))
+      if (!CmpTablePropertyExceptions(openXmlElement, value.TablePropertyExceptions, diffs, objName, propName))
         ok = false;
-      if (!CmpTableRowProperties(openXmlElement, value.TableRowProperties, diffs, objName))
+      if (!CmpTableRowProperties(openXmlElement, value.TableRowProperties, diffs, objName, propName))
         ok = false;
       var tableRowItems = value.ToArray();
       var elements = openXmlElement.Elements().Where(item => !(item is DXW.TablePropertyExceptions) && !(item is DXW.TableRowProperties)).ToArray();
@@ -312,7 +312,7 @@ public static class TableRowConverter
       {
         var element = elements[i];
         var item = tableRowItems[i];
-        if (!CompareTableRowElement(element, item, diffs, objName))
+        if (!CompareTableRowElement(element, item, diffs, objName, propName))
           ok = false;
       }
       if (!Int32ValueConverter.CmpValue(elements.Count(), tableRowItems.Count(), diffs, objName, "TableRow.Items.Count"))
@@ -321,7 +321,7 @@ public static class TableRowConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
 

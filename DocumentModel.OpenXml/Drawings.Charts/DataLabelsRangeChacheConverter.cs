@@ -10,7 +10,7 @@ public static class DataLabelsRangeChacheConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDC.PointCount>()?.Val);
   }
   
-  private static bool CmpPointCount(DXO13DC.DataLabelsRangeChache openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpPointCount(DXO13DC.DataLabelsRangeChache openXmlElement, UInt32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDC.PointCount>()?.Val, value, diffs, objName, "PointCount");
   }
@@ -34,7 +34,7 @@ public static class DataLabelsRangeChacheConverter
     return null;
   }
   
-  private static bool CmpStringPoints(DXO13DC.DataLabelsRangeChache openXmlElement, Collection<DMDC.StringPoint>? value, DiffList? diffs, string? objName)
+  private static bool CmpStringPoints(DXO13DC.DataLabelsRangeChache openXmlElement, Collection<DMDC.StringPoint>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var origElements = openXmlElement.Elements<DXDC.StringPoint>();
     var origElementsCount = origElements.Count();
@@ -43,7 +43,7 @@ public static class DataLabelsRangeChacheConverter
     {
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, propName ?? openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -52,13 +52,13 @@ public static class DataLabelsRangeChacheConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDC.StringPointConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDC.StringPointConverter.CompareModelElement(origItem, modelItem, diffs, objName, propName))
           ok = false;
       }
       return ok;
     }
     if (origElementsCount == 0 && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -84,9 +84,9 @@ public static class DataLabelsRangeChacheConverter
     return null;
   }
   
-  private static bool CmpStrDataExtensionList(DXO13DC.DataLabelsRangeChache openXmlElement, DMDC.StrDataExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpStrDataExtensionList(DXO13DC.DataLabelsRangeChache openXmlElement, DMDC.StrDataExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.StrDataExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.StrDataExtensionList>(), value, diffs, objName);
+    return DMXDC.StrDataExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.StrDataExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetStrDataExtensionList(DXO13DC.DataLabelsRangeChache openXmlElement, DMDC.StrDataExtensionList? value)
@@ -115,21 +115,21 @@ public static class DataLabelsRangeChacheConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO13DC.DataLabelsRangeChache? openXmlElement, DMDC.DataLabelsRangeChache? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO13DC.DataLabelsRangeChache? openXmlElement, DMDC.DataLabelsRangeChache? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpPointCount(openXmlElement, value.PointCount, diffs, objName))
+      if (!CmpPointCount(openXmlElement, value.PointCount, diffs, objName, propName))
         ok = false;
-      if (!CmpStringPoints(openXmlElement, value.StringPoints, diffs, objName))
+      if (!CmpStringPoints(openXmlElement, value.StringPoints, diffs, objName, propName))
         ok = false;
-      if (!CmpStrDataExtensionList(openXmlElement, value.StrDataExtensionList, diffs, objName))
+      if (!CmpStrDataExtensionList(openXmlElement, value.StrDataExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

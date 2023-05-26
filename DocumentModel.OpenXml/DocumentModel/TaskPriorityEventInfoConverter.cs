@@ -13,7 +13,7 @@ public static class TaskPriorityEventInfoConverter
     return openXmlElement?.Value?.Value;
   }
   
-  private static bool CmpValue(DXO21DT.TaskPriorityEventInfo openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpValue(DXO21DT.TaskPriorityEventInfo openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Value?.Value == value) return true;
     diffs?.Add(objName, "Type", openXmlElement?.Value?.Value, value);
@@ -36,17 +36,17 @@ public static class TaskPriorityEventInfoConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO21DT.TaskPriorityEventInfo? openXmlElement, DM.TaskPriorityEventInfo? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO21DT.TaskPriorityEventInfo? openXmlElement, DM.TaskPriorityEventInfo? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpValue(openXmlElement, value.Value, diffs, objName))
+      if (!CmpValue(openXmlElement, value.Value, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

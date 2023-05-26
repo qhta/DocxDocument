@@ -13,9 +13,9 @@ public static class TableStyleConditionalFormattingTableCellPropertiesConverter
     return null;
   }
   
-  private static bool CmpTableCellBorders(DXW.TableStyleConditionalFormattingTableCellProperties openXmlElement, DMW.TableCellBorders? value, DiffList? diffs, string? objName)
+  private static bool CmpTableCellBorders(DXW.TableStyleConditionalFormattingTableCellProperties openXmlElement, DMW.TableCellBorders? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.TableCellBordersConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableCellBorders>(), value, diffs, objName);
+    return DMXW.TableCellBordersConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableCellBorders>(), value, diffs, objName, propName);
   }
   
   private static void SetTableCellBorders(DXW.TableStyleConditionalFormattingTableCellProperties openXmlElement, DMW.TableCellBorders? value)
@@ -41,9 +41,9 @@ public static class TableStyleConditionalFormattingTableCellPropertiesConverter
     return null;
   }
   
-  private static bool CmpShading(DXW.TableStyleConditionalFormattingTableCellProperties openXmlElement, DMW.Shading? value, DiffList? diffs, string? objName)
+  private static bool CmpShading(DXW.TableStyleConditionalFormattingTableCellProperties openXmlElement, DMW.Shading? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.ShadingConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Shading>(), value, diffs, objName);
+    return DMXW.ShadingConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Shading>(), value, diffs, objName, propName);
   }
   
   private static void SetShading(DXW.TableStyleConditionalFormattingTableCellProperties openXmlElement, DMW.Shading? value)
@@ -66,9 +66,9 @@ public static class TableStyleConditionalFormattingTableCellPropertiesConverter
     return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.NoWrap>());
   }
   
-  private static bool CmpNoWrap(DXW.TableStyleConditionalFormattingTableCellProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoWrap(DXW.TableStyleConditionalFormattingTableCellProperties openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.NoWrap>(), value, diffs, objName);
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.NoWrap>(), value, diffs, objName, propName);
   }
   
   private static void SetNoWrap(DXW.TableStyleConditionalFormattingTableCellProperties openXmlElement, Boolean? value)
@@ -86,9 +86,9 @@ public static class TableStyleConditionalFormattingTableCellPropertiesConverter
     return null;
   }
   
-  private static bool CmpTableCellMargin(DXW.TableStyleConditionalFormattingTableCellProperties openXmlElement, DMW.TableCellMargin? value, DiffList? diffs, string? objName)
+  private static bool CmpTableCellMargin(DXW.TableStyleConditionalFormattingTableCellProperties openXmlElement, DMW.TableCellMargin? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.TableCellMarginConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableCellMargin>(), value, diffs, objName);
+    return DMXW.TableCellMarginConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableCellMargin>(), value, diffs, objName, propName);
   }
   
   private static void SetTableCellMargin(DXW.TableStyleConditionalFormattingTableCellProperties openXmlElement, DMW.TableCellMargin? value)
@@ -111,9 +111,9 @@ public static class TableStyleConditionalFormattingTableCellPropertiesConverter
     return EnumValueConverter.GetValue<DXW.TableVerticalAlignmentValues, DMW.TableVerticalAlignmentKind>(openXmlElement.GetFirstChild<DXW.TableCellVerticalAlignment>()?.Val?.Value);
   }
   
-  private static bool CmpTableCellVerticalAlignment(DXW.TableStyleConditionalFormattingTableCellProperties openXmlElement, DMW.TableVerticalAlignmentKind? value, DiffList? diffs, string? objName)
+  private static bool CmpTableCellVerticalAlignment(DXW.TableStyleConditionalFormattingTableCellProperties openXmlElement, DMW.TableVerticalAlignmentKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.TableVerticalAlignmentValues, DMW.TableVerticalAlignmentKind>(openXmlElement.GetFirstChild<DXW.TableCellVerticalAlignment>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.TableVerticalAlignmentValues, DMW.TableVerticalAlignmentKind>(openXmlElement.GetFirstChild<DXW.TableCellVerticalAlignment>()?.Val?.Value, value, diffs, objName, propName);
   }
   
   private static void SetTableCellVerticalAlignment(DXW.TableStyleConditionalFormattingTableCellProperties openXmlElement, DMW.TableVerticalAlignmentKind? value)
@@ -148,25 +148,25 @@ public static class TableStyleConditionalFormattingTableCellPropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.TableStyleConditionalFormattingTableCellProperties? openXmlElement, DMW.TableStyleConditionalCellProperties? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.TableStyleConditionalFormattingTableCellProperties? openXmlElement, DMW.TableStyleConditionalCellProperties? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpTableCellBorders(openXmlElement, model.TableCellBorders, diffs, objName))
+      if (!CmpTableCellBorders(openXmlElement, model.TableCellBorders, diffs, objName, propName))
         ok = false;
-      if (!CmpShading(openXmlElement, model.Shading, diffs, objName))
+      if (!CmpShading(openXmlElement, model.Shading, diffs, objName, propName))
         ok = false;
-      if (!CmpNoWrap(openXmlElement, model.NoWrap, diffs, objName))
+      if (!CmpNoWrap(openXmlElement, model.NoWrap, diffs, objName, propName))
         ok = false;
-      if (!CmpTableCellMargin(openXmlElement, model.TableCellMargin, diffs, objName))
+      if (!CmpTableCellMargin(openXmlElement, model.TableCellMargin, diffs, objName, propName))
         ok = false;
-      if (!CmpTableCellVerticalAlignment(openXmlElement, model.TableCellVerticalAlignment, diffs, objName))
+      if (!CmpTableCellVerticalAlignment(openXmlElement, model.TableCellVerticalAlignment, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   

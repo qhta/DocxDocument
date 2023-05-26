@@ -13,9 +13,9 @@ public static class DataLabelsConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataLabelPos, DMDCDs.DataLabelPos>(openXmlElement?.Pos?.Value);
   }
   
-  private static bool CmpPos(DXO16DCD.DataLabels openXmlElement, DMDCDs.DataLabelPos? value, DiffList? diffs, string? objName)
+  private static bool CmpPos(DXO16DCD.DataLabels openXmlElement, DMDCDs.DataLabelPos? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataLabelPos, DMDCDs.DataLabelPos>(openXmlElement?.Pos?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataLabelPos, DMDCDs.DataLabelPos>(openXmlElement?.Pos?.Value, value, diffs, objName, propName);
   }
   
   private static void SetPos(DXO16DCD.DataLabels openXmlElement, DMDCDs.DataLabelPos? value)
@@ -34,9 +34,9 @@ public static class DataLabelsConverter
     return null;
   }
   
-  private static bool CmpNumberFormat(DXO16DCD.DataLabels openXmlElement, DMDCDs.NumberFormat? value, DiffList? diffs, string? objName)
+  private static bool CmpNumberFormat(DXO16DCD.DataLabels openXmlElement, DMDCDs.NumberFormat? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCDs.NumberFormatConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.NumberFormat>(), value, diffs, objName);
+    return DMXDCDs.NumberFormatConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.NumberFormat>(), value, diffs, objName, propName);
   }
   
   private static void SetNumberFormat(DXO16DCD.DataLabels openXmlElement, DMDCDs.NumberFormat? value)
@@ -63,9 +63,9 @@ public static class DataLabelsConverter
     return null;
   }
   
-  private static bool CmpShapeProperties(DXO16DCD.DataLabels openXmlElement, DMDCDs.ShapeProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpShapeProperties(DXO16DCD.DataLabels openXmlElement, DMDCDs.ShapeProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCDs.ShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.ShapeProperties>(), value, diffs, objName);
+    return DMXDCDs.ShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.ShapeProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetShapeProperties(DXO16DCD.DataLabels openXmlElement, DMDCDs.ShapeProperties? value)
@@ -92,9 +92,9 @@ public static class DataLabelsConverter
     return null;
   }
   
-  private static bool CmpTxPrTextBody(DXO16DCD.DataLabels openXmlElement, DMDCDs.TxPrTextBody? value, DiffList? diffs, string? objName)
+  private static bool CmpTxPrTextBody(DXO16DCD.DataLabels openXmlElement, DMDCDs.TxPrTextBody? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCDs.TxPrTextBodyConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.TxPrTextBody>(), value, diffs, objName);
+    return DMXDCDs.TxPrTextBodyConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.TxPrTextBody>(), value, diffs, objName, propName);
   }
   
   private static void SetTxPrTextBody(DXO16DCD.DataLabels openXmlElement, DMDCDs.TxPrTextBody? value)
@@ -121,9 +121,9 @@ public static class DataLabelsConverter
     return null;
   }
   
-  private static bool CmpDataLabelVisibilities(DXO16DCD.DataLabels openXmlElement, DMDCDs.DataLabelVisibilities? value, DiffList? diffs, string? objName)
+  private static bool CmpDataLabelVisibilities(DXO16DCD.DataLabels openXmlElement, DMDCDs.DataLabelVisibilities? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCDs.DataLabelVisibilitiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.DataLabelVisibilities>(), value, diffs, objName);
+    return DMXDCDs.DataLabelVisibilitiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.DataLabelVisibilities>(), value, diffs, objName, propName);
   }
   
   private static void SetDataLabelVisibilities(DXO16DCD.DataLabels openXmlElement, DMDCDs.DataLabelVisibilities? value)
@@ -147,7 +147,7 @@ public static class DataLabelsConverter
       return openXmlElement?.GetFirstChild<DXO16DCD.SeparatorXsdstring>()?.Text;
   }
   
-  private static bool CmpSeparatorXsdstring(DXO16DCD.DataLabels openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpSeparatorXsdstring(DXO16DCD.DataLabels openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
       return openXmlElement?.GetFirstChild<DXO16DCD.SeparatorXsdstring>()?.Text == value;
   }
@@ -178,7 +178,7 @@ public static class DataLabelsConverter
     return null;
   }
   
-  private static bool CmpItems(DXO16DCD.DataLabels openXmlElement, Collection<DMDCDs.DataLabel>? value, DiffList? diffs, string? objName)
+  private static bool CmpItems(DXO16DCD.DataLabels openXmlElement, Collection<DMDCDs.DataLabel>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var origElements = openXmlElement.Elements<DXO16DCD.DataLabel>();
     var origElementsCount = origElements.Count();
@@ -187,7 +187,7 @@ public static class DataLabelsConverter
     {
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, propName ?? openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -196,13 +196,13 @@ public static class DataLabelsConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDCDs.DataLabelConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDCDs.DataLabelConverter.CompareModelElement(origItem, modelItem, diffs, objName, propName))
           ok = false;
       }
       return ok;
     }
     if (origElementsCount == 0 && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -234,7 +234,7 @@ public static class DataLabelsConverter
     return null;
   }
   
-  private static bool CmpDataLabelHiddens(DXO16DCD.DataLabels openXmlElement, Collection<DMDCDs.DataLabelHidden>? value, DiffList? diffs, string? objName)
+  private static bool CmpDataLabelHiddens(DXO16DCD.DataLabels openXmlElement, Collection<DMDCDs.DataLabelHidden>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var origElements = openXmlElement.Elements<DXO16DCD.DataLabelHidden>();
     var origElementsCount = origElements.Count();
@@ -243,7 +243,7 @@ public static class DataLabelsConverter
     {
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, propName ?? openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -252,13 +252,13 @@ public static class DataLabelsConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDCDs.DataLabelHiddenConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDCDs.DataLabelHiddenConverter.CompareModelElement(origItem, modelItem, diffs, objName, propName))
           ok = false;
       }
       return ok;
     }
     if (origElementsCount == 0 && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -284,9 +284,9 @@ public static class DataLabelsConverter
     return null;
   }
   
-  private static bool CmpExtensionList(DXO16DCD.DataLabels openXmlElement, DMDCDs.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXO16DCD.DataLabels openXmlElement, DMDCDs.ExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCDs.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.ExtensionList>(), value, diffs, objName);
+    return DMXDCDs.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.ExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetExtensionList(DXO16DCD.DataLabels openXmlElement, DMDCDs.ExtensionList? value)
@@ -321,33 +321,33 @@ public static class DataLabelsConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO16DCD.DataLabels? openXmlElement, DMDCDs.DataLabels? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16DCD.DataLabels? openXmlElement, DMDCDs.DataLabels? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpPos(openXmlElement, value.Pos, diffs, objName))
+      if (!CmpPos(openXmlElement, value.Pos, diffs, objName, propName))
         ok = false;
-      if (!CmpNumberFormat(openXmlElement, value.NumberFormat, diffs, objName))
+      if (!CmpNumberFormat(openXmlElement, value.NumberFormat, diffs, objName, propName))
         ok = false;
-      if (!CmpShapeProperties(openXmlElement, value.ShapeProperties, diffs, objName))
+      if (!CmpShapeProperties(openXmlElement, value.ShapeProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpTxPrTextBody(openXmlElement, value.TxPrTextBody, diffs, objName))
+      if (!CmpTxPrTextBody(openXmlElement, value.TxPrTextBody, diffs, objName, propName))
         ok = false;
-      if (!CmpDataLabelVisibilities(openXmlElement, value.DataLabelVisibilities, diffs, objName))
+      if (!CmpDataLabelVisibilities(openXmlElement, value.DataLabelVisibilities, diffs, objName, propName))
         ok = false;
-      if (!CmpSeparatorXsdstring(openXmlElement, value.SeparatorXsdstring, diffs, objName))
+      if (!CmpSeparatorXsdstring(openXmlElement, value.SeparatorXsdstring, diffs, objName, propName))
         ok = false;
-      if (!CmpItems(openXmlElement, value.Items, diffs, objName))
+      if (!CmpItems(openXmlElement, value.Items, diffs, objName, propName))
         ok = false;
-      if (!CmpDataLabelHiddens(openXmlElement, value.DataLabelHiddens, diffs, objName))
+      if (!CmpDataLabelHiddens(openXmlElement, value.DataLabelHiddens, diffs, objName, propName))
         ok = false;
-      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

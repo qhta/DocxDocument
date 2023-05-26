@@ -13,9 +13,9 @@ public static class FieldMapDataConverter
     return EnumValueConverter.GetValue<DXW.MailMergeOdsoFieldValues, DMW.MailMergeOdsoFieldKind>(openXmlElement.GetFirstChild<DXW.MailMergeFieldType>()?.Val?.Value);
   }
   
-  private static bool CmpMailMergeFieldType(DXW.FieldMapData openXmlElement, DMW.MailMergeOdsoFieldKind? value, DiffList? diffs, string? objName)
+  private static bool CmpMailMergeFieldType(DXW.FieldMapData openXmlElement, DMW.MailMergeOdsoFieldKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.MailMergeOdsoFieldValues, DMW.MailMergeOdsoFieldKind>(openXmlElement.GetFirstChild<DXW.MailMergeFieldType>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.MailMergeOdsoFieldValues, DMW.MailMergeOdsoFieldKind>(openXmlElement.GetFirstChild<DXW.MailMergeFieldType>()?.Val?.Value, value, diffs, objName, propName);
   }
   
   private static void SetMailMergeFieldType(DXW.FieldMapData openXmlElement, DMW.MailMergeOdsoFieldKind? value)
@@ -41,7 +41,7 @@ public static class FieldMapDataConverter
     return openXmlElement.GetFirstChild<DXW.Name>()?.Val?.Value;
   }
   
-  private static bool CmpName(DXW.FieldMapData openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpName(DXW.FieldMapData openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.Name>();
     if (itemElement?.Val?.Value == value) return true;
@@ -69,7 +69,7 @@ public static class FieldMapDataConverter
     return openXmlElement.GetFirstChild<DXW.MappedName>()?.Val?.Value;
   }
   
-  private static bool CmpMappedName(DXW.FieldMapData openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpMappedName(DXW.FieldMapData openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.MappedName>();
     if (itemElement?.Val?.Value == value) return true;
@@ -97,7 +97,7 @@ public static class FieldMapDataConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.ColumnIndex>()?.Val);
   }
   
-  private static bool CmpColumnIndex(DXW.FieldMapData openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpColumnIndex(DXW.FieldMapData openXmlElement, UInt32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.ColumnIndex>()?.Val, value, diffs, objName, "ColumnIndex");
   }
@@ -115,7 +115,7 @@ public static class FieldMapDataConverter
     return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.LanguageId>()?.Val);
   }
   
-  private static bool CmpLanguageId(DXW.FieldMapData openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpLanguageId(DXW.FieldMapData openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.LanguageId>()?.Val, value, diffs, objName, "LanguageId");
   }
@@ -133,9 +133,9 @@ public static class FieldMapDataConverter
     return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.DynamicAddress>());
   }
   
-  private static bool CmpDynamicAddress(DXW.FieldMapData openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpDynamicAddress(DXW.FieldMapData openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.DynamicAddress>(), value, diffs, objName);
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.DynamicAddress>(), value, diffs, objName, propName);
   }
   
   private static void SetDynamicAddress(DXW.FieldMapData openXmlElement, Boolean? value)
@@ -159,27 +159,27 @@ public static class FieldMapDataConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.FieldMapData? openXmlElement, DMW.FieldMapData? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.FieldMapData? openXmlElement, DMW.FieldMapData? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpMailMergeFieldType(openXmlElement, value.MailMergeFieldType, diffs, objName))
+      if (!CmpMailMergeFieldType(openXmlElement, value.MailMergeFieldType, diffs, objName, propName))
         ok = false;
-      if (!CmpName(openXmlElement, value.Name, diffs, objName))
+      if (!CmpName(openXmlElement, value.Name, diffs, objName, propName))
         ok = false;
-      if (!CmpMappedName(openXmlElement, value.MappedName, diffs, objName))
+      if (!CmpMappedName(openXmlElement, value.MappedName, diffs, objName, propName))
         ok = false;
-      if (!CmpColumnIndex(openXmlElement, value.ColumnIndex, diffs, objName))
+      if (!CmpColumnIndex(openXmlElement, value.ColumnIndex, diffs, objName, propName))
         ok = false;
-      if (!CmpLanguageId(openXmlElement, value.LanguageId, diffs, objName))
+      if (!CmpLanguageId(openXmlElement, value.LanguageId, diffs, objName, propName))
         ok = false;
-      if (!CmpDynamicAddress(openXmlElement, value.DynamicAddress, diffs, objName))
+      if (!CmpDynamicAddress(openXmlElement, value.DynamicAddress, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -13,9 +13,9 @@ public static class MarkerLayoutPropertiesConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.MarkerStyle, DMDCS.MarkerStyle>(openXmlElement?.Symbol?.Value);
   }
   
-  private static bool CmpSymbol(DXO13DCS.MarkerLayoutProperties openXmlElement, DMDCS.MarkerStyle? value, DiffList? diffs, string? objName)
+  private static bool CmpSymbol(DXO13DCS.MarkerLayoutProperties openXmlElement, DMDCS.MarkerStyle? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.MarkerStyle, DMDCS.MarkerStyle>(openXmlElement?.Symbol?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.MarkerStyle, DMDCS.MarkerStyle>(openXmlElement?.Symbol?.Value, value, diffs, objName, propName);
   }
   
   private static void SetSymbol(DXO13DCS.MarkerLayoutProperties openXmlElement, DMDCS.MarkerStyle? value)
@@ -31,7 +31,7 @@ public static class MarkerLayoutPropertiesConverter
     return openXmlElement?.Size?.Value;
   }
   
-  private static bool CmpSize(DXO13DCS.MarkerLayoutProperties openXmlElement, Byte? value, DiffList? diffs, string? objName)
+  private static bool CmpSize(DXO13DCS.MarkerLayoutProperties openXmlElement, Byte? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Size?.Value == value) return true;
     diffs?.Add(objName, "Value", openXmlElement?.Size?.Value, value);
@@ -55,19 +55,19 @@ public static class MarkerLayoutPropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO13DCS.MarkerLayoutProperties? openXmlElement, DMDCS.MarkerLayoutProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO13DCS.MarkerLayoutProperties? openXmlElement, DMDCS.MarkerLayoutProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpSymbol(openXmlElement, value.Symbol, diffs, objName))
+      if (!CmpSymbol(openXmlElement, value.Symbol, diffs, objName, propName))
         ok = false;
-      if (!CmpSize(openXmlElement, value.Size, diffs, objName))
+      if (!CmpSize(openXmlElement, value.Size, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -20,7 +20,7 @@ public static class OpenXmlPartContainerConverter
     return collection;
   }
   
-  private static bool CmpExternalRelationships(DXPack.OpenXmlPartContainer openXmlElement, Collection<DMPack.ExternalRelationship>? value, DiffList? diffs, string? objName)
+  private static bool CmpExternalRelationships(DXPack.OpenXmlPartContainer openXmlElement, Collection<DMPack.ExternalRelationship>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return true;
   }
@@ -40,7 +40,7 @@ public static class OpenXmlPartContainerConverter
     return collection;
   }
   
-  private static bool CmpHyperlinkRelationships(DXPack.OpenXmlPartContainer openXmlElement, Collection<DMPack.HyperlinkRelationship>? value, DiffList? diffs, string? objName)
+  private static bool CmpHyperlinkRelationships(DXPack.OpenXmlPartContainer openXmlElement, Collection<DMPack.HyperlinkRelationship>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return true;
   }
@@ -60,7 +60,7 @@ public static class OpenXmlPartContainerConverter
     return collection;
   }
   
-  private static bool CmpDataPartReferenceRelationships(DXPack.OpenXmlPartContainer openXmlElement, Collection<DMPack.DataPartReferenceRelationship>? value, DiffList? diffs, string? objName)
+  private static bool CmpDataPartReferenceRelationships(DXPack.OpenXmlPartContainer openXmlElement, Collection<DMPack.DataPartReferenceRelationship>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return true;
   }
@@ -80,7 +80,7 @@ public static class OpenXmlPartContainerConverter
     return collection;
   }
   
-  private static bool CmpParts(DXPack.OpenXmlPartContainer openXmlElement, Collection<DMPack.IdPartPair>? value, DiffList? diffs, string? objName)
+  private static bool CmpParts(DXPack.OpenXmlPartContainer openXmlElement, Collection<DMPack.IdPartPair>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return true;
   }
@@ -99,23 +99,23 @@ public static class OpenXmlPartContainerConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXPack.OpenXmlPartContainer? openXmlElement, DMPack.OpenXmlPartContainer? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXPack.OpenXmlPartContainer? openXmlElement, DMPack.OpenXmlPartContainer? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpExternalRelationships(openXmlElement, value.ExternalRelationships, diffs, objName))
+      if (!CmpExternalRelationships(openXmlElement, value.ExternalRelationships, diffs, objName, propName))
         ok = false;
-      if (!CmpHyperlinkRelationships(openXmlElement, value.HyperlinkRelationships, diffs, objName))
+      if (!CmpHyperlinkRelationships(openXmlElement, value.HyperlinkRelationships, diffs, objName, propName))
         ok = false;
-      if (!CmpDataPartReferenceRelationships(openXmlElement, value.DataPartReferenceRelationships, diffs, objName))
+      if (!CmpDataPartReferenceRelationships(openXmlElement, value.DataPartReferenceRelationships, diffs, objName, propName))
         ok = false;
-      if (!CmpParts(openXmlElement, value.Parts, diffs, objName))
+      if (!CmpParts(openXmlElement, value.Parts, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

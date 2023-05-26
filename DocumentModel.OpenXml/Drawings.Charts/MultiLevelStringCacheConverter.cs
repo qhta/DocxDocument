@@ -13,7 +13,7 @@ public static class MultiLevelStringCacheConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDC.PointCount>()?.Val);
   }
   
-  private static bool CmpPointCount(DXDC.MultiLevelStringCache openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpPointCount(DXDC.MultiLevelStringCache openXmlElement, UInt32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDC.PointCount>()?.Val, value, diffs, objName, "PointCount");
   }
@@ -37,7 +37,7 @@ public static class MultiLevelStringCacheConverter
     return null;
   }
   
-  private static bool CmpLevels(DXDC.MultiLevelStringCache openXmlElement, Collection<DMDC.Level>? value, DiffList? diffs, string? objName)
+  private static bool CmpLevels(DXDC.MultiLevelStringCache openXmlElement, Collection<DMDC.Level>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var origElements = openXmlElement.Elements<DXDC.Level>();
     var origElementsCount = origElements.Count();
@@ -46,7 +46,7 @@ public static class MultiLevelStringCacheConverter
     {
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, propName ?? openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -55,13 +55,13 @@ public static class MultiLevelStringCacheConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDC.LevelConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDC.LevelConverter.CompareModelElement(origItem, modelItem, diffs, objName, propName))
           ok = false;
       }
       return ok;
     }
     if (origElementsCount == 0 && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -87,9 +87,9 @@ public static class MultiLevelStringCacheConverter
     return null;
   }
   
-  private static bool CmpExtensionList(DXDC.MultiLevelStringCache openXmlElement, DMDC.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXDC.MultiLevelStringCache openXmlElement, DMDC.ExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ExtensionList>(), value, diffs, objName);
+    return DMXDC.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetExtensionList(DXDC.MultiLevelStringCache openXmlElement, DMDC.ExtensionList? value)
@@ -118,21 +118,21 @@ public static class MultiLevelStringCacheConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDC.MultiLevelStringCache? openXmlElement, DMDC.MultiLevelStringCache? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.MultiLevelStringCache? openXmlElement, DMDC.MultiLevelStringCache? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpPointCount(openXmlElement, value.PointCount, diffs, objName))
+      if (!CmpPointCount(openXmlElement, value.PointCount, diffs, objName, propName))
         ok = false;
-      if (!CmpLevels(openXmlElement, value.Levels, diffs, objName))
+      if (!CmpLevels(openXmlElement, value.Levels, diffs, objName, propName))
         ok = false;
-      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

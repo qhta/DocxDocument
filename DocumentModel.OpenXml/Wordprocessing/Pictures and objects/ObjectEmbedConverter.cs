@@ -13,9 +13,9 @@ public static class ObjectEmbedConverter
     return EnumValueConverter.GetValue<DXW.ObjectDrawAspect, DMW.ObjectDrawAspect>(openXmlElement?.drawAspect?.Value);
   }
   
-  private static bool CmpdrawAspect(DXW.ObjectEmbed openXmlElement, DMW.ObjectDrawAspect? value, DiffList? diffs, string? objName)
+  private static bool CmpdrawAspect(DXW.ObjectEmbed openXmlElement, DMW.ObjectDrawAspect? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.ObjectDrawAspect, DMW.ObjectDrawAspect>(openXmlElement?.drawAspect?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.ObjectDrawAspect, DMW.ObjectDrawAspect>(openXmlElement?.drawAspect?.Value, value, diffs, objName, propName);
   }
   
   private static void SetdrawAspect(DXW.ObjectEmbed openXmlElement, DMW.ObjectDrawAspect? value)
@@ -31,7 +31,7 @@ public static class ObjectEmbedConverter
     return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
-  private static bool CmpId(DXW.ObjectEmbed openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpId(DXW.ObjectEmbed openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
@@ -49,7 +49,7 @@ public static class ObjectEmbedConverter
     return StringValueConverter.GetValue(openXmlElement?.ProgId);
   }
   
-  private static bool CmpProgId(DXW.ObjectEmbed openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpProgId(DXW.ObjectEmbed openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.ProgId, value, diffs, objName, "ProgId");
   }
@@ -67,7 +67,7 @@ public static class ObjectEmbedConverter
     return StringValueConverter.GetValue(openXmlElement?.ShapeId);
   }
   
-  private static bool CmpShapeId(DXW.ObjectEmbed openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpShapeId(DXW.ObjectEmbed openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.ShapeId, value, diffs, objName, "ShapeId");
   }
@@ -85,7 +85,7 @@ public static class ObjectEmbedConverter
     return StringValueConverter.GetValue(openXmlElement?.FieldCodes);
   }
   
-  private static bool CmpFieldCodes(DXW.ObjectEmbed openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpFieldCodes(DXW.ObjectEmbed openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.FieldCodes, value, diffs, objName, "FieldCodes");
   }
@@ -110,25 +110,25 @@ public static class ObjectEmbedConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.ObjectEmbed? openXmlElement, DMW.ObjectEmbed? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.ObjectEmbed? openXmlElement, DMW.ObjectEmbed? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpdrawAspect(openXmlElement, value.drawAspect, diffs, objName))
+      if (!CmpdrawAspect(openXmlElement, value.drawAspect, diffs, objName, propName))
         ok = false;
-      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+      if (!CmpId(openXmlElement, value.Id, diffs, objName, propName))
         ok = false;
-      if (!CmpProgId(openXmlElement, value.ProgId, diffs, objName))
+      if (!CmpProgId(openXmlElement, value.ProgId, diffs, objName, propName))
         ok = false;
-      if (!CmpShapeId(openXmlElement, value.ShapeId, diffs, objName))
+      if (!CmpShapeId(openXmlElement, value.ShapeId, diffs, objName, propName))
         ok = false;
-      if (!CmpFieldCodes(openXmlElement, value.FieldCodes, diffs, objName))
+      if (!CmpFieldCodes(openXmlElement, value.FieldCodes, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

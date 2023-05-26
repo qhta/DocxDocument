@@ -13,7 +13,7 @@ public static class BubbleChartExtensionConverter
     return StringValueConverter.GetValue(openXmlElement?.Uri);
   }
   
-  private static bool CmpUri(DXDC.BubbleChartExtension openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpUri(DXDC.BubbleChartExtension openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Uri, value, diffs, objName, "Uri");
   }
@@ -31,9 +31,9 @@ public static class BubbleChartExtensionConverter
     return null;
   }
   
-  private static bool CmpFilteredBubbleSeries(DXDC.BubbleChartExtension openXmlElement, DMDC.FilteredBubbleSeries? value, DiffList? diffs, string? objName)
+  private static bool CmpFilteredBubbleSeries(DXDC.BubbleChartExtension openXmlElement, DMDC.FilteredBubbleSeries? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.FilteredBubbleSeriesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.FilteredBubbleSeries>(), value, diffs, objName);
+    return DMXDC.FilteredBubbleSeriesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.FilteredBubbleSeries>(), value, diffs, objName, propName);
   }
   
   private static void SetFilteredBubbleSeries(DXDC.BubbleChartExtension openXmlElement, DMDC.FilteredBubbleSeries? value)
@@ -61,19 +61,19 @@ public static class BubbleChartExtensionConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDC.BubbleChartExtension? openXmlElement, DMDC.BubbleChartExtension? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.BubbleChartExtension? openXmlElement, DMDC.BubbleChartExtension? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpUri(openXmlElement, value.Uri, diffs, objName))
+      if (!CmpUri(openXmlElement, value.Uri, diffs, objName, propName))
         ok = false;
-      if (!CmpFilteredBubbleSeries(openXmlElement, value.FilteredBubbleSeries, diffs, objName))
+      if (!CmpFilteredBubbleSeries(openXmlElement, value.FilteredBubbleSeries, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

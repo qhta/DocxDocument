@@ -13,9 +13,9 @@ public static class PageBordersConverter
     return EnumValueConverter.GetValue<DXW.PageBorderZOrderValues, DMW.PageBorderZOrderKind>(openXmlElement?.ZOrder?.Value);
   }
   
-  private static bool CmpZOrder(DXW.PageBorders openXmlElement, DMW.PageBorderZOrderKind? value, DiffList? diffs, string? objName)
+  private static bool CmpZOrder(DXW.PageBorders openXmlElement, DMW.PageBorderZOrderKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.PageBorderZOrderValues, DMW.PageBorderZOrderKind>(openXmlElement?.ZOrder?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.PageBorderZOrderValues, DMW.PageBorderZOrderKind>(openXmlElement?.ZOrder?.Value, value, diffs, objName, propName);
   }
   
   private static void SetZOrder(DXW.PageBorders openXmlElement, DMW.PageBorderZOrderKind? value)
@@ -31,9 +31,9 @@ public static class PageBordersConverter
     return EnumValueConverter.GetValue<DXW.PageBorderDisplayValues, DMW.PageBorderDisplayKind>(openXmlElement?.Display?.Value);
   }
   
-  private static bool CmpDisplay(DXW.PageBorders openXmlElement, DMW.PageBorderDisplayKind? value, DiffList? diffs, string? objName)
+  private static bool CmpDisplay(DXW.PageBorders openXmlElement, DMW.PageBorderDisplayKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.PageBorderDisplayValues, DMW.PageBorderDisplayKind>(openXmlElement?.Display?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.PageBorderDisplayValues, DMW.PageBorderDisplayKind>(openXmlElement?.Display?.Value, value, diffs, objName, propName);
   }
   
   private static void SetDisplay(DXW.PageBorders openXmlElement, DMW.PageBorderDisplayKind? value)
@@ -49,9 +49,9 @@ public static class PageBordersConverter
     return EnumValueConverter.GetValue<DXW.PageBorderOffsetValues, DMW.PageBorderOffsetKind>(openXmlElement?.OffsetFrom?.Value);
   }
   
-  private static bool CmpOffsetFrom(DXW.PageBorders openXmlElement, DMW.PageBorderOffsetKind? value, DiffList? diffs, string? objName)
+  private static bool CmpOffsetFrom(DXW.PageBorders openXmlElement, DMW.PageBorderOffsetKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.PageBorderOffsetValues, DMW.PageBorderOffsetKind>(openXmlElement?.OffsetFrom?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.PageBorderOffsetValues, DMW.PageBorderOffsetKind>(openXmlElement?.OffsetFrom?.Value, value, diffs, objName, propName);
   }
   
   private static void SetOffsetFrom(DXW.PageBorders openXmlElement, DMW.PageBorderOffsetKind? value)
@@ -70,9 +70,9 @@ public static class PageBordersConverter
     return null;
   }
   
-  private static bool CmpTopBorder(DXW.PageBorders openXmlElement, DMW.Border? value, DiffList? diffs, string? objName)
+  private static bool CmpTopBorder(DXW.PageBorders openXmlElement, DMW.Border? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.BorderConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TopBorder>(), value, diffs, objName);
+    return DMXW.BorderConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TopBorder>(), value, diffs, objName, propName);
   }
   
   private static void SetTopBorder(DXW.PageBorders openXmlElement, DMW.Border? value)
@@ -99,9 +99,9 @@ public static class PageBordersConverter
     return null;
   }
   
-  private static bool CmpLeftBorder(DXW.PageBorders openXmlElement, DMW.Border? value, DiffList? diffs, string? objName)
+  private static bool CmpLeftBorder(DXW.PageBorders openXmlElement, DMW.Border? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.BorderConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.LeftBorder>(), value, diffs, objName);
+    return DMXW.BorderConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.LeftBorder>(), value, diffs, objName, propName);
   }
   
   private static void SetLeftBorder(DXW.PageBorders openXmlElement, DMW.Border? value)
@@ -128,9 +128,9 @@ public static class PageBordersConverter
     return null;
   }
   
-  private static bool CmpBottomBorder(DXW.PageBorders openXmlElement, DMW.Border? value, DiffList? diffs, string? objName)
+  private static bool CmpBottomBorder(DXW.PageBorders openXmlElement, DMW.Border? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.BorderConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.BottomBorder>(), value, diffs, objName);
+    return DMXW.BorderConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.BottomBorder>(), value, diffs, objName, propName);
   }
   
   private static void SetBottomBorder(DXW.PageBorders openXmlElement, DMW.Border? value)
@@ -157,9 +157,9 @@ public static class PageBordersConverter
     return null;
   }
   
-  private static bool CmpRightBorder(DXW.PageBorders openXmlElement, DMW.Border? value, DiffList? diffs, string? objName)
+  private static bool CmpRightBorder(DXW.PageBorders openXmlElement, DMW.Border? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.BorderConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.RightBorder>(), value, diffs, objName);
+    return DMXW.BorderConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.RightBorder>(), value, diffs, objName, propName);
   }
   
   private static void SetRightBorder(DXW.PageBorders openXmlElement, DMW.Border? value)
@@ -192,29 +192,29 @@ public static class PageBordersConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.PageBorders? openXmlElement, DMW.PageBorders? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.PageBorders? openXmlElement, DMW.PageBorders? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpZOrder(openXmlElement, value.ZOrder, diffs, objName))
+      if (!CmpZOrder(openXmlElement, value.ZOrder, diffs, objName, propName))
         ok = false;
-      if (!CmpDisplay(openXmlElement, value.Display, diffs, objName))
+      if (!CmpDisplay(openXmlElement, value.Display, diffs, objName, propName))
         ok = false;
-      if (!CmpOffsetFrom(openXmlElement, value.OffsetFrom, diffs, objName))
+      if (!CmpOffsetFrom(openXmlElement, value.OffsetFrom, diffs, objName, propName))
         ok = false;
-      if (!CmpTopBorder(openXmlElement, value.TopBorder, diffs, objName))
+      if (!CmpTopBorder(openXmlElement, value.TopBorder, diffs, objName, propName))
         ok = false;
-      if (!CmpLeftBorder(openXmlElement, value.LeftBorder, diffs, objName))
+      if (!CmpLeftBorder(openXmlElement, value.LeftBorder, diffs, objName, propName))
         ok = false;
-      if (!CmpBottomBorder(openXmlElement, value.BottomBorder, diffs, objName))
+      if (!CmpBottomBorder(openXmlElement, value.BottomBorder, diffs, objName, propName))
         ok = false;
-      if (!CmpRightBorder(openXmlElement, value.RightBorder, diffs, objName))
+      if (!CmpRightBorder(openXmlElement, value.RightBorder, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

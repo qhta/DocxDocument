@@ -13,7 +13,7 @@ public static class BackstageMenuButtonConverter
     return StringValueConverter.GetValue(openXmlElement?.Description);
   }
   
-  private static bool CmpDescription(DXO10CUI.BackstageMenuButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpDescription(DXO10CUI.BackstageMenuButton openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Description, value, diffs, objName, "Description");
   }
@@ -31,7 +31,7 @@ public static class BackstageMenuButtonConverter
     return StringValueConverter.GetValue(openXmlElement?.GetDescription);
   }
   
-  private static bool CmpGetDescription(DXO10CUI.BackstageMenuButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetDescription(DXO10CUI.BackstageMenuButton openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetDescription, value, diffs, objName, "GetDescription");
   }
@@ -49,7 +49,7 @@ public static class BackstageMenuButtonConverter
     return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
-  private static bool CmpId(DXO10CUI.BackstageMenuButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpId(DXO10CUI.BackstageMenuButton openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
@@ -67,7 +67,7 @@ public static class BackstageMenuButtonConverter
     return StringValueConverter.GetValue(openXmlElement?.QualifiedId);
   }
   
-  private static bool CmpQualifiedId(DXO10CUI.BackstageMenuButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpQualifiedId(DXO10CUI.BackstageMenuButton openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.QualifiedId, value, diffs, objName, "QualifiedId");
   }
@@ -85,7 +85,7 @@ public static class BackstageMenuButtonConverter
     return StringValueConverter.GetValue(openXmlElement?.Tag);
   }
   
-  private static bool CmpTag(DXO10CUI.BackstageMenuButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpTag(DXO10CUI.BackstageMenuButton openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Tag, value, diffs, objName, "Tag");
   }
@@ -103,7 +103,7 @@ public static class BackstageMenuButtonConverter
     return StringValueConverter.GetValue(openXmlElement?.OnAction);
   }
   
-  private static bool CmpOnAction(DXO10CUI.BackstageMenuButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpOnAction(DXO10CUI.BackstageMenuButton openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.OnAction, value, diffs, objName, "OnAction");
   }
@@ -121,7 +121,7 @@ public static class BackstageMenuButtonConverter
     return openXmlElement?.IsDefinitive?.Value;
   }
   
-  private static bool CmpIsDefinitive(DXO10CUI.BackstageMenuButton openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpIsDefinitive(DXO10CUI.BackstageMenuButton openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.IsDefinitive?.Value == value) return true;
     diffs?.Add(objName, "IsDefinitive", openXmlElement?.IsDefinitive?.Value, value);
@@ -144,7 +144,7 @@ public static class BackstageMenuButtonConverter
     return openXmlElement?.Enabled?.Value;
   }
   
-  private static bool CmpEnabled(DXO10CUI.BackstageMenuButton openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpEnabled(DXO10CUI.BackstageMenuButton openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Enabled?.Value == value) return true;
     diffs?.Add(objName, "Enabled", openXmlElement?.Enabled?.Value, value);
@@ -167,7 +167,7 @@ public static class BackstageMenuButtonConverter
     return StringValueConverter.GetValue(openXmlElement?.GetEnabled);
   }
   
-  private static bool CmpGetEnabled(DXO10CUI.BackstageMenuButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetEnabled(DXO10CUI.BackstageMenuButton openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetEnabled, value, diffs, objName, "GetEnabled");
   }
@@ -185,7 +185,7 @@ public static class BackstageMenuButtonConverter
     return StringValueConverter.GetValue(openXmlElement?.Label);
   }
   
-  private static bool CmpLabel(DXO10CUI.BackstageMenuButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpLabel(DXO10CUI.BackstageMenuButton openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Label, value, diffs, objName, "Label");
   }
@@ -203,7 +203,7 @@ public static class BackstageMenuButtonConverter
     return StringValueConverter.GetValue(openXmlElement?.GetLabel);
   }
   
-  private static bool CmpGetLabel(DXO10CUI.BackstageMenuButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetLabel(DXO10CUI.BackstageMenuButton openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetLabel, value, diffs, objName, "GetLabel");
   }
@@ -221,7 +221,7 @@ public static class BackstageMenuButtonConverter
     return openXmlElement?.Visible?.Value;
   }
   
-  private static bool CmpVisible(DXO10CUI.BackstageMenuButton openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpVisible(DXO10CUI.BackstageMenuButton openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Visible?.Value == value) return true;
     diffs?.Add(objName, "Visible", openXmlElement?.Visible?.Value, value);
@@ -244,7 +244,7 @@ public static class BackstageMenuButtonConverter
     return StringValueConverter.GetValue(openXmlElement?.GetVisible);
   }
   
-  private static bool CmpGetVisible(DXO10CUI.BackstageMenuButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetVisible(DXO10CUI.BackstageMenuButton openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetVisible, value, diffs, objName, "GetVisible");
   }
@@ -262,7 +262,7 @@ public static class BackstageMenuButtonConverter
     return StringValueConverter.GetValue(openXmlElement?.Keytip);
   }
   
-  private static bool CmpKeytip(DXO10CUI.BackstageMenuButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpKeytip(DXO10CUI.BackstageMenuButton openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Keytip, value, diffs, objName, "Keytip");
   }
@@ -280,7 +280,7 @@ public static class BackstageMenuButtonConverter
     return StringValueConverter.GetValue(openXmlElement?.GetKeytip);
   }
   
-  private static bool CmpGetKeytip(DXO10CUI.BackstageMenuButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetKeytip(DXO10CUI.BackstageMenuButton openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetKeytip, value, diffs, objName, "GetKeytip");
   }
@@ -298,7 +298,7 @@ public static class BackstageMenuButtonConverter
     return StringValueConverter.GetValue(openXmlElement?.Image);
   }
   
-  private static bool CmpImage(DXO10CUI.BackstageMenuButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpImage(DXO10CUI.BackstageMenuButton openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Image, value, diffs, objName, "Image");
   }
@@ -316,7 +316,7 @@ public static class BackstageMenuButtonConverter
     return StringValueConverter.GetValue(openXmlElement?.ImageMso);
   }
   
-  private static bool CmpImageMso(DXO10CUI.BackstageMenuButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpImageMso(DXO10CUI.BackstageMenuButton openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.ImageMso, value, diffs, objName, "ImageMso");
   }
@@ -334,7 +334,7 @@ public static class BackstageMenuButtonConverter
     return StringValueConverter.GetValue(openXmlElement?.GetImage);
   }
   
-  private static bool CmpGetImage(DXO10CUI.BackstageMenuButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetImage(DXO10CUI.BackstageMenuButton openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetImage, value, diffs, objName, "GetImage");
   }
@@ -372,51 +372,51 @@ public static class BackstageMenuButtonConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO10CUI.BackstageMenuButton? openXmlElement, DM.BackstageMenuButton? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10CUI.BackstageMenuButton? openXmlElement, DM.BackstageMenuButton? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpDescription(openXmlElement, value.Description, diffs, objName))
+      if (!CmpDescription(openXmlElement, value.Description, diffs, objName, propName))
         ok = false;
-      if (!CmpGetDescription(openXmlElement, value.GetDescription, diffs, objName))
+      if (!CmpGetDescription(openXmlElement, value.GetDescription, diffs, objName, propName))
         ok = false;
-      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+      if (!CmpId(openXmlElement, value.Id, diffs, objName, propName))
         ok = false;
-      if (!CmpQualifiedId(openXmlElement, value.QualifiedId, diffs, objName))
+      if (!CmpQualifiedId(openXmlElement, value.QualifiedId, diffs, objName, propName))
         ok = false;
-      if (!CmpTag(openXmlElement, value.Tag, diffs, objName))
+      if (!CmpTag(openXmlElement, value.Tag, diffs, objName, propName))
         ok = false;
-      if (!CmpOnAction(openXmlElement, value.OnAction, diffs, objName))
+      if (!CmpOnAction(openXmlElement, value.OnAction, diffs, objName, propName))
         ok = false;
-      if (!CmpIsDefinitive(openXmlElement, value.IsDefinitive, diffs, objName))
+      if (!CmpIsDefinitive(openXmlElement, value.IsDefinitive, diffs, objName, propName))
         ok = false;
-      if (!CmpEnabled(openXmlElement, value.Enabled, diffs, objName))
+      if (!CmpEnabled(openXmlElement, value.Enabled, diffs, objName, propName))
         ok = false;
-      if (!CmpGetEnabled(openXmlElement, value.GetEnabled, diffs, objName))
+      if (!CmpGetEnabled(openXmlElement, value.GetEnabled, diffs, objName, propName))
         ok = false;
-      if (!CmpLabel(openXmlElement, value.Label, diffs, objName))
+      if (!CmpLabel(openXmlElement, value.Label, diffs, objName, propName))
         ok = false;
-      if (!CmpGetLabel(openXmlElement, value.GetLabel, diffs, objName))
+      if (!CmpGetLabel(openXmlElement, value.GetLabel, diffs, objName, propName))
         ok = false;
-      if (!CmpVisible(openXmlElement, value.Visible, diffs, objName))
+      if (!CmpVisible(openXmlElement, value.Visible, diffs, objName, propName))
         ok = false;
-      if (!CmpGetVisible(openXmlElement, value.GetVisible, diffs, objName))
+      if (!CmpGetVisible(openXmlElement, value.GetVisible, diffs, objName, propName))
         ok = false;
-      if (!CmpKeytip(openXmlElement, value.Keytip, diffs, objName))
+      if (!CmpKeytip(openXmlElement, value.Keytip, diffs, objName, propName))
         ok = false;
-      if (!CmpGetKeytip(openXmlElement, value.GetKeytip, diffs, objName))
+      if (!CmpGetKeytip(openXmlElement, value.GetKeytip, diffs, objName, propName))
         ok = false;
-      if (!CmpImage(openXmlElement, value.Image, diffs, objName))
+      if (!CmpImage(openXmlElement, value.Image, diffs, objName, propName))
         ok = false;
-      if (!CmpImageMso(openXmlElement, value.ImageMso, diffs, objName))
+      if (!CmpImageMso(openXmlElement, value.ImageMso, diffs, objName, propName))
         ok = false;
-      if (!CmpGetImage(openXmlElement, value.GetImage, diffs, objName))
+      if (!CmpGetImage(openXmlElement, value.GetImage, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -47,7 +47,7 @@ public class TestNumbering : TestBase
       if (origNumbering != null)
       {
         var diffs = new DiffList();
-        ok = DMXW.NumberingConverter.CompareModelElement(origNumbering, modelNumbering, diffs, null);
+        ok = DMXW.NumberingConverter.CompareModelElement(origNumbering, modelNumbering, diffs, null, null);
         if (!ok && showDetails)
         {
           WriteLine("Read numbering differences found:");

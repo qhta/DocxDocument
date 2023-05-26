@@ -13,7 +13,7 @@ public static class EffectExtentConverter
     return openXmlElement?.LeftEdge?.Value ?? 0;
   }
   
-  private static bool CmpLeftEdge(DXDW.EffectExtent openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpLeftEdge(DXDW.EffectExtent openXmlElement, Int64? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.LeftEdge?.Value == value) return true;
     diffs?.Add(objName, "LeftEdge", openXmlElement?.LeftEdge?.Value, value);
@@ -33,7 +33,7 @@ public static class EffectExtentConverter
     return openXmlElement?.TopEdge?.Value ?? 0;
   }
   
-  private static bool CmpTopEdge(DXDW.EffectExtent openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpTopEdge(DXDW.EffectExtent openXmlElement, Int64? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.TopEdge?.Value == value) return true;
     diffs?.Add(objName, "TopEdge", openXmlElement?.TopEdge?.Value, value);
@@ -53,7 +53,7 @@ public static class EffectExtentConverter
     return openXmlElement?.RightEdge?.Value ?? 0;
   }
   
-  private static bool CmpRightEdge(DXDW.EffectExtent openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpRightEdge(DXDW.EffectExtent openXmlElement, Int64? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.RightEdge?.Value == value) return true;
     diffs?.Add(objName, "RightEdge", openXmlElement?.RightEdge?.Value, value);
@@ -73,7 +73,7 @@ public static class EffectExtentConverter
     return openXmlElement?.BottomEdge?.Value ?? 0;
   }
   
-  private static bool CmpBottomEdge(DXDW.EffectExtent openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpBottomEdge(DXDW.EffectExtent openXmlElement, Int64? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.BottomEdge?.Value == value) return true;
     diffs?.Add(objName, "BottomEdge", openXmlElement?.BottomEdge?.Value, value);
@@ -99,23 +99,23 @@ public static class EffectExtentConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDW.EffectExtent? openXmlElement, DMDW.EffectExtent? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDW.EffectExtent? openXmlElement, DMDW.EffectExtent? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpLeftEdge(openXmlElement, value.LeftEdge, diffs, objName))
+      if (!CmpLeftEdge(openXmlElement, value.LeftEdge, diffs, objName, propName))
         ok = false;
-      if (!CmpTopEdge(openXmlElement, value.TopEdge, diffs, objName))
+      if (!CmpTopEdge(openXmlElement, value.TopEdge, diffs, objName, propName))
         ok = false;
-      if (!CmpRightEdge(openXmlElement, value.RightEdge, diffs, objName))
+      if (!CmpRightEdge(openXmlElement, value.RightEdge, diffs, objName, propName))
         ok = false;
-      if (!CmpBottomEdge(openXmlElement, value.BottomEdge, diffs, objName))
+      if (!CmpBottomEdge(openXmlElement, value.BottomEdge, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

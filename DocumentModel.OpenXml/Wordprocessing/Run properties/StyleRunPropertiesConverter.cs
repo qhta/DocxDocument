@@ -17,9 +17,9 @@ public static class StyleRunPropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.StyleRunProperties? openXmlElement, DMW.StyleRunProperties? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.StyleRunProperties? openXmlElement, DMW.StyleRunProperties? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return ExtBaseRunPropertiesConverter.CompareModelElement(openXmlElement, model, diffs, objName);
+    return ExtBaseRunPropertiesConverter.CompareModelElement(openXmlElement, model, diffs, objName, propName);
   }
   
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.StyleRunProperties model)

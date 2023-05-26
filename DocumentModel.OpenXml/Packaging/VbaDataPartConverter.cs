@@ -10,7 +10,7 @@ public static class VbaDataPartConverter
     return openXmlElement?.ContentType;
   }
   
-  private static bool CmpContentType(DXPack.VbaDataPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpContentType(DXPack.VbaDataPart openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.ContentType == value) return true;
     diffs?.Add(objName, "ContentType", openXmlElement?.ContentType, value);
@@ -22,7 +22,7 @@ public static class VbaDataPartConverter
     return openXmlElement?.RelationshipType;
   }
   
-  private static bool CmpRelationshipType(DXPack.VbaDataPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpRelationshipType(DXPack.VbaDataPart openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.RelationshipType == value) return true;
     diffs?.Add(objName, "RelationshipType", openXmlElement?.RelationshipType, value);
@@ -37,7 +37,7 @@ public static class VbaDataPartConverter
       return DMXW.VbaSuppDataConverter.CreateModelElement(openXmlElement?.RootElement as DXOW.VbaSuppData);
   }
   
-  private static bool CmpVbaSuppData(DXPack.VbaDataPart openXmlElement, DMW.VbaSuppData? value, DiffList? diffs, string? objName)
+  private static bool CmpVbaSuppData(DXPack.VbaDataPart openXmlElement, DMW.VbaSuppData? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
       return true;
   }
@@ -65,21 +65,21 @@ public static class VbaDataPartConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXPack.VbaDataPart? openXmlElement, DMPack.VbaDataPart? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXPack.VbaDataPart? openXmlElement, DMPack.VbaDataPart? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpContentType(openXmlElement, value.ContentType, diffs, objName))
+      if (!CmpContentType(openXmlElement, value.ContentType, diffs, objName, propName))
         ok = false;
-      if (!CmpRelationshipType(openXmlElement, value.RelationshipType, diffs, objName))
+      if (!CmpRelationshipType(openXmlElement, value.RelationshipType, diffs, objName, propName))
         ok = false;
-      if (!CmpVbaSuppData(openXmlElement, value.VbaSuppData, diffs, objName))
+      if (!CmpVbaSuppData(openXmlElement, value.VbaSuppData, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

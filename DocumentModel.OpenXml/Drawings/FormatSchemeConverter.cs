@@ -13,7 +13,7 @@ public static class FormatSchemeConverter
     return StringValueConverter.GetValue(openXmlElement?.Name);
   }
   
-  private static bool CmpName(DXD.FormatScheme openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpName(DXD.FormatScheme openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Name, value, diffs, objName, "Name");
   }
@@ -34,9 +34,9 @@ public static class FormatSchemeConverter
     return null;
   }
   
-  private static bool CmpFillStyleList(DXD.FormatScheme openXmlElement, DMD.FillStyleList? value, DiffList? diffs, string? objName)
+  private static bool CmpFillStyleList(DXD.FormatScheme openXmlElement, DMD.FillStyleList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.FillStyleListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.FillStyleList>(), value, diffs, objName);
+    return DMXD.FillStyleListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.FillStyleList>(), value, diffs, objName, propName);
   }
   
   private static void SetFillStyleList(DXD.FormatScheme openXmlElement, DMD.FillStyleList? value)
@@ -63,9 +63,9 @@ public static class FormatSchemeConverter
     return null;
   }
   
-  private static bool CmpLineStyleList(DXD.FormatScheme openXmlElement, DMD.LineStyleList? value, DiffList? diffs, string? objName)
+  private static bool CmpLineStyleList(DXD.FormatScheme openXmlElement, DMD.LineStyleList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.LineStyleListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.LineStyleList>(), value, diffs, objName);
+    return DMXD.LineStyleListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.LineStyleList>(), value, diffs, objName, propName);
   }
   
   private static void SetLineStyleList(DXD.FormatScheme openXmlElement, DMD.LineStyleList? value)
@@ -92,9 +92,9 @@ public static class FormatSchemeConverter
     return null;
   }
   
-  private static bool CmpEffectStyleList(DXD.FormatScheme openXmlElement, DMD.EffectStyleList? value, DiffList? diffs, string? objName)
+  private static bool CmpEffectStyleList(DXD.FormatScheme openXmlElement, DMD.EffectStyleList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.EffectStyleListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.EffectStyleList>(), value, diffs, objName);
+    return DMXD.EffectStyleListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.EffectStyleList>(), value, diffs, objName, propName);
   }
   
   private static void SetEffectStyleList(DXD.FormatScheme openXmlElement, DMD.EffectStyleList? value)
@@ -121,9 +121,9 @@ public static class FormatSchemeConverter
     return null;
   }
   
-  private static bool CmpBackgroundFillStyleList(DXD.FormatScheme openXmlElement, DMD.BackgroundFillStyleList? value, DiffList? diffs, string? objName)
+  private static bool CmpBackgroundFillStyleList(DXD.FormatScheme openXmlElement, DMD.BackgroundFillStyleList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.BackgroundFillStyleListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.BackgroundFillStyleList>(), value, diffs, objName);
+    return DMXD.BackgroundFillStyleListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.BackgroundFillStyleList>(), value, diffs, objName, propName);
   }
   
   private static void SetBackgroundFillStyleList(DXD.FormatScheme openXmlElement, DMD.BackgroundFillStyleList? value)
@@ -154,25 +154,25 @@ public static class FormatSchemeConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.FormatScheme? openXmlElement, DMD.FormatScheme? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.FormatScheme? openXmlElement, DMD.FormatScheme? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpName(openXmlElement, value.Name, diffs, objName))
+      if (!CmpName(openXmlElement, value.Name, diffs, objName, propName))
         ok = false;
-      if (!CmpFillStyleList(openXmlElement, value.FillStyleList, diffs, objName))
+      if (!CmpFillStyleList(openXmlElement, value.FillStyleList, diffs, objName, propName))
         ok = false;
-      if (!CmpLineStyleList(openXmlElement, value.LineStyleList, diffs, objName))
+      if (!CmpLineStyleList(openXmlElement, value.LineStyleList, diffs, objName, propName))
         ok = false;
-      if (!CmpEffectStyleList(openXmlElement, value.EffectStyleList, diffs, objName))
+      if (!CmpEffectStyleList(openXmlElement, value.EffectStyleList, diffs, objName, propName))
         ok = false;
-      if (!CmpBackgroundFillStyleList(openXmlElement, value.BackgroundFillStyleList, diffs, objName))
+      if (!CmpBackgroundFillStyleList(openXmlElement, value.BackgroundFillStyleList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

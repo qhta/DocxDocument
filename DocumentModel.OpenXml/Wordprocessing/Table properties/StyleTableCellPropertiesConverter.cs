@@ -17,9 +17,9 @@ public static class StyleTableCellPropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.StyleTableCellProperties? openXmlElement, DMW.StyleTableCellProperties? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.StyleTableCellProperties? openXmlElement, DMW.StyleTableCellProperties? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return BaseTableCellPropertiesConverter.CompareModelElement(openXmlElement, model, diffs, objName);
+    return BaseTableCellPropertiesConverter.CompareModelElement(openXmlElement, model, diffs, objName, propName);
   }
   
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.StyleTableCellProperties value)

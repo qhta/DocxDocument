@@ -13,9 +13,9 @@ public static class TabStopConverter
     return EnumValueConverter.GetValue<DXW.TabStopValues, DMW.TabStopKind>(openXmlElement?.Val?.Value);
   }
   
-  private static bool CmpVal(DXW.TabStop openXmlElement, DMW.TabStopKind? value, DiffList? diffs, string? objName)
+  private static bool CmpVal(DXW.TabStop openXmlElement, DMW.TabStopKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.TabStopValues, DMW.TabStopKind>(openXmlElement?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.TabStopValues, DMW.TabStopKind>(openXmlElement?.Val?.Value, value, diffs, objName, propName);
   }
   
   private static void SetVal(DXW.TabStop openXmlElement, DMW.TabStopKind? value)
@@ -31,9 +31,9 @@ public static class TabStopConverter
     return EnumValueConverter.GetValue<DXW.TabStopLeaderCharValues, DMW.TabStopLeaderCharKind>(openXmlElement?.Leader?.Value);
   }
   
-  private static bool CmpLeader(DXW.TabStop openXmlElement, DMW.TabStopLeaderCharKind? value, DiffList? diffs, string? objName)
+  private static bool CmpLeader(DXW.TabStop openXmlElement, DMW.TabStopLeaderCharKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.TabStopLeaderCharValues, DMW.TabStopLeaderCharKind>(openXmlElement?.Leader?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.TabStopLeaderCharValues, DMW.TabStopLeaderCharKind>(openXmlElement?.Leader?.Value, value, diffs, objName, propName);
   }
   
   private static void SetLeader(DXW.TabStop openXmlElement, DMW.TabStopLeaderCharKind? value)
@@ -49,7 +49,7 @@ public static class TabStopConverter
     return openXmlElement?.Position?.Value;
   }
   
-  private static bool CmpPosition(DXW.TabStop openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpPosition(DXW.TabStop openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Position?.Value == value) return true;
     diffs?.Add(objName, "Position", openXmlElement?.Position?.Value, value);
@@ -74,21 +74,21 @@ public static class TabStopConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.TabStop? openXmlElement, DMW.TabStop? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.TabStop? openXmlElement, DMW.TabStop? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpVal(openXmlElement, value.Val, diffs, objName))
+      if (!CmpVal(openXmlElement, value.Val, diffs, objName, propName))
         ok = false;
-      if (!CmpLeader(openXmlElement, value.Leader, diffs, objName))
+      if (!CmpLeader(openXmlElement, value.Leader, diffs, objName, propName))
         ok = false;
-      if (!CmpPosition(openXmlElement, value.Position, diffs, objName))
+      if (!CmpPosition(openXmlElement, value.Position, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

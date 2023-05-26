@@ -13,7 +13,7 @@ public static class ArtisticCementConverter
     return openXmlElement?.Transparancy?.Value;
   }
   
-  private static bool CmpTransparancy(DXO10D.ArtisticCement openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpTransparancy(DXO10D.ArtisticCement openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Transparancy?.Value == value) return true;
     diffs?.Add(objName, "Transparancy", openXmlElement?.Transparancy?.Value, value);
@@ -33,7 +33,7 @@ public static class ArtisticCementConverter
     return openXmlElement?.CrackSpacing?.Value;
   }
   
-  private static bool CmpCrackSpacing(DXO10D.ArtisticCement openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpCrackSpacing(DXO10D.ArtisticCement openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.CrackSpacing?.Value == value) return true;
     diffs?.Add(objName, "CrackSpacing", openXmlElement?.CrackSpacing?.Value, value);
@@ -57,19 +57,19 @@ public static class ArtisticCementConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO10D.ArtisticCement? openXmlElement, DMD.ArtisticCement? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10D.ArtisticCement? openXmlElement, DMD.ArtisticCement? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpTransparancy(openXmlElement, value.Transparancy, diffs, objName))
+      if (!CmpTransparancy(openXmlElement, value.Transparancy, diffs, objName, propName))
         ok = false;
-      if (!CmpCrackSpacing(openXmlElement, value.CrackSpacing, diffs, objName))
+      if (!CmpCrackSpacing(openXmlElement, value.CrackSpacing, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

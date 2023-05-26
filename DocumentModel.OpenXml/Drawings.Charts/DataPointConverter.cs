@@ -13,7 +13,7 @@ public static class DataPointConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDC.Index>()?.Val);
   }
   
-  private static bool CmpIndex(DXDC.DataPoint openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpIndex(DXDC.DataPoint openXmlElement, UInt32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDC.Index>()?.Val, value, diffs, objName, "Index");
   }
@@ -31,7 +31,7 @@ public static class DataPointConverter
     return openXmlElement.GetFirstChild<DXDC.InvertIfNegative>() != null;
   }
   
-  private static bool CmpInvertIfNegative(DXDC.DataPoint openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpInvertIfNegative(DXDC.DataPoint openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXDC.InvertIfNegative>() != null;
     if (val == value) return true;
@@ -65,9 +65,9 @@ public static class DataPointConverter
     return null;
   }
   
-  private static bool CmpMarker(DXDC.DataPoint openXmlElement, DMDC.Marker? value, DiffList? diffs, string? objName)
+  private static bool CmpMarker(DXDC.DataPoint openXmlElement, DMDC.Marker? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.MarkerConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.Marker>(), value, diffs, objName);
+    return DMXDC.MarkerConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.Marker>(), value, diffs, objName, propName);
   }
   
   private static void SetMarker(DXDC.DataPoint openXmlElement, DMDC.Marker? value)
@@ -91,7 +91,7 @@ public static class DataPointConverter
     return openXmlElement.GetFirstChild<DXDC.Bubble3D>() != null;
   }
   
-  private static bool CmpBubble3D(DXDC.DataPoint openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpBubble3D(DXDC.DataPoint openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXDC.Bubble3D>() != null;
     if (val == value) return true;
@@ -122,7 +122,7 @@ public static class DataPointConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDC.Explosion>()?.Val);
   }
   
-  private static bool CmpExplosion(DXDC.DataPoint openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpExplosion(DXDC.DataPoint openXmlElement, UInt32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDC.Explosion>()?.Val, value, diffs, objName, "Explosion");
   }
@@ -143,9 +143,9 @@ public static class DataPointConverter
     return null;
   }
   
-  private static bool CmpChartShapeProperties(DXDC.DataPoint openXmlElement, DMDC.ChartShapeProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpChartShapeProperties(DXDC.DataPoint openXmlElement, DMDC.ChartShapeProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.ChartShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ChartShapeProperties>(), value, diffs, objName);
+    return DMXDC.ChartShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ChartShapeProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetChartShapeProperties(DXDC.DataPoint openXmlElement, DMDC.ChartShapeProperties? value)
@@ -172,9 +172,9 @@ public static class DataPointConverter
     return null;
   }
   
-  private static bool CmpPictureOptions(DXDC.DataPoint openXmlElement, DMDC.PictureOptions? value, DiffList? diffs, string? objName)
+  private static bool CmpPictureOptions(DXDC.DataPoint openXmlElement, DMDC.PictureOptions? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.PictureOptionsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.PictureOptions>(), value, diffs, objName);
+    return DMXDC.PictureOptionsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.PictureOptions>(), value, diffs, objName, propName);
   }
   
   private static void SetPictureOptions(DXDC.DataPoint openXmlElement, DMDC.PictureOptions? value)
@@ -201,9 +201,9 @@ public static class DataPointConverter
     return null;
   }
   
-  private static bool CmpExtensionList(DXDC.DataPoint openXmlElement, DMDC.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXDC.DataPoint openXmlElement, DMDC.ExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ExtensionList>(), value, diffs, objName);
+    return DMXDC.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetExtensionList(DXDC.DataPoint openXmlElement, DMDC.ExtensionList? value)
@@ -237,31 +237,31 @@ public static class DataPointConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDC.DataPoint? openXmlElement, DMDC.DataPoint? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.DataPoint? openXmlElement, DMDC.DataPoint? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpIndex(openXmlElement, value.Index, diffs, objName))
+      if (!CmpIndex(openXmlElement, value.Index, diffs, objName, propName))
         ok = false;
-      if (!CmpInvertIfNegative(openXmlElement, value.InvertIfNegative, diffs, objName))
+      if (!CmpInvertIfNegative(openXmlElement, value.InvertIfNegative, diffs, objName, propName))
         ok = false;
-      if (!CmpMarker(openXmlElement, value.Marker, diffs, objName))
+      if (!CmpMarker(openXmlElement, value.Marker, diffs, objName, propName))
         ok = false;
-      if (!CmpBubble3D(openXmlElement, value.Bubble3D, diffs, objName))
+      if (!CmpBubble3D(openXmlElement, value.Bubble3D, diffs, objName, propName))
         ok = false;
-      if (!CmpExplosion(openXmlElement, value.Explosion, diffs, objName))
+      if (!CmpExplosion(openXmlElement, value.Explosion, diffs, objName, propName))
         ok = false;
-      if (!CmpChartShapeProperties(openXmlElement, value.ChartShapeProperties, diffs, objName))
+      if (!CmpChartShapeProperties(openXmlElement, value.ChartShapeProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpPictureOptions(openXmlElement, value.PictureOptions, diffs, objName))
+      if (!CmpPictureOptions(openXmlElement, value.PictureOptions, diffs, objName, propName))
         ok = false;
-      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

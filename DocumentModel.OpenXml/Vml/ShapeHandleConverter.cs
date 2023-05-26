@@ -13,7 +13,7 @@ public static class ShapeHandleConverter
     return StringValueConverter.GetValue(openXmlElement?.Position);
   }
   
-  private static bool CmpPosition(DXV.ShapeHandle openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpPosition(DXV.ShapeHandle openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Position, value, diffs, objName, "Position");
   }
@@ -31,7 +31,7 @@ public static class ShapeHandleConverter
     return StringValueConverter.GetValue(openXmlElement?.Polar);
   }
   
-  private static bool CmpPolar(DXV.ShapeHandle openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpPolar(DXV.ShapeHandle openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Polar, value, diffs, objName, "Polar");
   }
@@ -49,7 +49,7 @@ public static class ShapeHandleConverter
     return StringValueConverter.GetValue(openXmlElement?.Map);
   }
   
-  private static bool CmpMap(DXV.ShapeHandle openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpMap(DXV.ShapeHandle openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Map, value, diffs, objName, "Map");
   }
@@ -67,7 +67,7 @@ public static class ShapeHandleConverter
     return openXmlElement?.InvertX?.Value;
   }
   
-  private static bool CmpInvertX(DXV.ShapeHandle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpInvertX(DXV.ShapeHandle openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.InvertX?.Value == value) return true;
     diffs?.Add(objName, "InvertX", openXmlElement?.InvertX?.Value, value);
@@ -90,7 +90,7 @@ public static class ShapeHandleConverter
     return openXmlElement?.InvertY?.Value;
   }
   
-  private static bool CmpInvertY(DXV.ShapeHandle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpInvertY(DXV.ShapeHandle openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.InvertY?.Value == value) return true;
     diffs?.Add(objName, "InvertY", openXmlElement?.InvertY?.Value, value);
@@ -113,7 +113,7 @@ public static class ShapeHandleConverter
     return openXmlElement?.Switch?.Value;
   }
   
-  private static bool CmpSwitch(DXV.ShapeHandle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpSwitch(DXV.ShapeHandle openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Switch?.Value == value) return true;
     diffs?.Add(objName, "Switch", openXmlElement?.Switch?.Value, value);
@@ -136,7 +136,7 @@ public static class ShapeHandleConverter
     return StringValueConverter.GetValue(openXmlElement?.XRange);
   }
   
-  private static bool CmpXRange(DXV.ShapeHandle openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpXRange(DXV.ShapeHandle openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.XRange, value, diffs, objName, "XRange");
   }
@@ -154,7 +154,7 @@ public static class ShapeHandleConverter
     return StringValueConverter.GetValue(openXmlElement?.YRange);
   }
   
-  private static bool CmpYRange(DXV.ShapeHandle openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpYRange(DXV.ShapeHandle openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.YRange, value, diffs, objName, "YRange");
   }
@@ -172,7 +172,7 @@ public static class ShapeHandleConverter
     return StringValueConverter.GetValue(openXmlElement?.RadiusRange);
   }
   
-  private static bool CmpRadiusRange(DXV.ShapeHandle openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpRadiusRange(DXV.ShapeHandle openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.RadiusRange, value, diffs, objName, "RadiusRange");
   }
@@ -201,33 +201,33 @@ public static class ShapeHandleConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXV.ShapeHandle? openXmlElement, DMV.ShapeHandle? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXV.ShapeHandle? openXmlElement, DMV.ShapeHandle? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpPosition(openXmlElement, value.Position, diffs, objName))
+      if (!CmpPosition(openXmlElement, value.Position, diffs, objName, propName))
         ok = false;
-      if (!CmpPolar(openXmlElement, value.Polar, diffs, objName))
+      if (!CmpPolar(openXmlElement, value.Polar, diffs, objName, propName))
         ok = false;
-      if (!CmpMap(openXmlElement, value.Map, diffs, objName))
+      if (!CmpMap(openXmlElement, value.Map, diffs, objName, propName))
         ok = false;
-      if (!CmpInvertX(openXmlElement, value.InvertX, diffs, objName))
+      if (!CmpInvertX(openXmlElement, value.InvertX, diffs, objName, propName))
         ok = false;
-      if (!CmpInvertY(openXmlElement, value.InvertY, diffs, objName))
+      if (!CmpInvertY(openXmlElement, value.InvertY, diffs, objName, propName))
         ok = false;
-      if (!CmpSwitch(openXmlElement, value.Switch, diffs, objName))
+      if (!CmpSwitch(openXmlElement, value.Switch, diffs, objName, propName))
         ok = false;
-      if (!CmpXRange(openXmlElement, value.XRange, diffs, objName))
+      if (!CmpXRange(openXmlElement, value.XRange, diffs, objName, propName))
         ok = false;
-      if (!CmpYRange(openXmlElement, value.YRange, diffs, objName))
+      if (!CmpYRange(openXmlElement, value.YRange, diffs, objName, propName))
         ok = false;
-      if (!CmpRadiusRange(openXmlElement, value.RadiusRange, diffs, objName))
+      if (!CmpRadiusRange(openXmlElement, value.RadiusRange, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

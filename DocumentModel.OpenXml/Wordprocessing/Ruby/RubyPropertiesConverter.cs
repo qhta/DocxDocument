@@ -11,9 +11,9 @@ public static class RubyPropertiesConverter
     return EnumValueConverter.GetValue<DXW.RubyAlignValues, DMW.RubyAlignKind>(openXmlElement.GetFirstChild<DXW.RubyAlign>()?.Val?.Value);
   }
 
-  private static bool CmpRubyAlign(DXW.RubyProperties openXmlElement, DMW.RubyAlignKind? value, DiffList? diffs, string? objName)
+  private static bool CmpRubyAlign(DXW.RubyProperties openXmlElement, DMW.RubyAlignKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.RubyAlignValues, DMW.RubyAlignKind>(openXmlElement.GetFirstChild<DXW.RubyAlign>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.RubyAlignValues, DMW.RubyAlignKind>(openXmlElement.GetFirstChild<DXW.RubyAlign>()?.Val?.Value, value, diffs, objName, propName);
   }
 
   private static void SetRubyAlign(DXW.RubyProperties openXmlElement, DMW.RubyAlignKind? value)
@@ -38,7 +38,7 @@ public static class RubyPropertiesConverter
     return Int32ValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.PhoneticGuideTextFontSize>()?.Val);
   }
 
-  private static bool CmpPhoneticGuideTextFontSize(DXW.RubyProperties openXmlElement, Hps? value, DiffList? diffs, string? objName)
+  private static bool CmpPhoneticGuideTextFontSize(DXW.RubyProperties openXmlElement, Hps? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.PhoneticGuideTextFontSize>()?.Val, value, diffs, objName, "PhoneticGuideTextFontSize");
   }
@@ -55,7 +55,7 @@ public static class RubyPropertiesConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.PhoneticGuideRaise>()?.Val);
   }
 
-  private static bool CmpPhoneticGuideRaise(DXW.RubyProperties openXmlElement, Int16? value, DiffList? diffs, string? objName)
+  private static bool CmpPhoneticGuideRaise(DXW.RubyProperties openXmlElement, Int16? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.PhoneticGuideRaise>()?.Val, value, diffs, objName, "PhoneticGuideRaise");
   }
@@ -72,7 +72,7 @@ public static class RubyPropertiesConverter
     return Int32ValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.PhoneticGuideBaseTextSize>()?.Val);
   }
 
-  private static bool CmpPhoneticGuideBaseTextSize(DXW.RubyProperties openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpPhoneticGuideBaseTextSize(DXW.RubyProperties openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.PhoneticGuideBaseTextSize>()?.Val, value, diffs, objName, "PhoneticGuideBaseTextSize");
   }
@@ -89,7 +89,7 @@ public static class RubyPropertiesConverter
     return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.LanguageId>()?.Val);
   }
 
-  private static bool CmpLanguageId(DXW.RubyProperties openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpLanguageId(DXW.RubyProperties openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.LanguageId>()?.Val, value, diffs, objName, "LanguageId");
   }
@@ -106,9 +106,9 @@ public static class RubyPropertiesConverter
     return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.Dirty>());
   }
 
-  private static bool CmpDirty(DXW.RubyProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpDirty(DXW.RubyProperties openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.Dirty>(), value, diffs, objName);
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.Dirty>(), value, diffs, objName, propName);
   }
 
   private static void SetDirty(DXW.RubyProperties openXmlElement, Boolean? value)
@@ -134,27 +134,27 @@ public static class RubyPropertiesConverter
     return null;
   }
 
-  public static bool CompareModelElement(DXW.RubyProperties? openXmlElement, DMW.RubyProperties? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.RubyProperties? openXmlElement, DMW.RubyProperties? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpRubyAlign(openXmlElement, model.RubyAlign, diffs, objName))
+      if (!CmpRubyAlign(openXmlElement, model.RubyAlign, diffs, objName, propName))
         ok = false;
-      if (!CmpPhoneticGuideTextFontSize(openXmlElement, model.PhoneticGuideTextFontSize, diffs, objName))
+      if (!CmpPhoneticGuideTextFontSize(openXmlElement, model.PhoneticGuideTextFontSize, diffs, objName, propName))
         ok = false;
-      if (!CmpPhoneticGuideRaise(openXmlElement, model.PhoneticGuideRaise, diffs, objName))
+      if (!CmpPhoneticGuideRaise(openXmlElement, model.PhoneticGuideRaise, diffs, objName, propName))
         ok = false;
-      if (!CmpPhoneticGuideBaseTextSize(openXmlElement, model.PhoneticGuideBaseTextSize, diffs, objName))
+      if (!CmpPhoneticGuideBaseTextSize(openXmlElement, model.PhoneticGuideBaseTextSize, diffs, objName, propName))
         ok = false;
-      if (!CmpLanguageId(openXmlElement, model.LanguageId, diffs, objName))
+      if (!CmpLanguageId(openXmlElement, model.LanguageId, diffs, objName, propName))
         ok = false;
-      if (!CmpDirty(openXmlElement, model.Dirty, diffs, objName))
+      if (!CmpDirty(openXmlElement, model.Dirty, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
 

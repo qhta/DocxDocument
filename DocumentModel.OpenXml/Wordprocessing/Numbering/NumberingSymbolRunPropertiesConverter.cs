@@ -20,21 +20,21 @@ public static class NumberingSymbolRunPropertiesConverter
     return null;
   }
 
-  public static bool CompareModelElement(DXW.NumberingSymbolRunProperties? openXmlElement, DMW.NumberingSymbolRunProperties? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.NumberingSymbolRunProperties? openXmlElement, DMW.NumberingSymbolRunProperties? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!BaseRunPropertiesConverter.CompareModelElement(openXmlElement, model, diffs, objName))
+      if (!BaseRunPropertiesConverter.CompareModelElement(openXmlElement, model, diffs, objName, propName))
         ok = false;
-      if (!ExtBaseRunPropertiesConverter.CmpRightToLeftText(openXmlElement, model.RightToLeftText, diffs, objName))
+      if (!ExtBaseRunPropertiesConverter.CmpRightToLeftText(openXmlElement, model.RightToLeftText, diffs, objName, propName))
         ok = false;
-      if (!ExtBaseRunPropertiesConverter.CmpComplexScript(openXmlElement, model.ComplexScript, diffs, objName))
+      if (!ExtBaseRunPropertiesConverter.CmpComplexScript(openXmlElement, model.ComplexScript, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
 

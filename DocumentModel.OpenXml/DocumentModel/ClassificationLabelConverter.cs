@@ -13,7 +13,7 @@ public static class ClassificationLabelConverter
     return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
-  private static bool CmpId(DXO21MLMD.ClassificationLabel openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpId(DXO21MLMD.ClassificationLabel openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
@@ -31,7 +31,7 @@ public static class ClassificationLabelConverter
     return openXmlElement?.Enabled?.Value;
   }
   
-  private static bool CmpEnabled(DXO21MLMD.ClassificationLabel openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpEnabled(DXO21MLMD.ClassificationLabel openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Enabled?.Value == value) return true;
     diffs?.Add(objName, "Enabled", openXmlElement?.Enabled?.Value, value);
@@ -54,7 +54,7 @@ public static class ClassificationLabelConverter
     return StringValueConverter.GetValue(openXmlElement?.SetDate);
   }
   
-  private static bool CmpSetDate(DXO21MLMD.ClassificationLabel openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpSetDate(DXO21MLMD.ClassificationLabel openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.SetDate, value, diffs, objName, "SetDate");
   }
@@ -72,7 +72,7 @@ public static class ClassificationLabelConverter
     return StringValueConverter.GetValue(openXmlElement?.Method);
   }
   
-  private static bool CmpMethod(DXO21MLMD.ClassificationLabel openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpMethod(DXO21MLMD.ClassificationLabel openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Method, value, diffs, objName, "Method");
   }
@@ -90,7 +90,7 @@ public static class ClassificationLabelConverter
     return StringValueConverter.GetValue(openXmlElement?.Name);
   }
   
-  private static bool CmpName(DXO21MLMD.ClassificationLabel openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpName(DXO21MLMD.ClassificationLabel openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Name, value, diffs, objName, "Name");
   }
@@ -108,7 +108,7 @@ public static class ClassificationLabelConverter
     return StringValueConverter.GetValue(openXmlElement?.SiteId);
   }
   
-  private static bool CmpSiteId(DXO21MLMD.ClassificationLabel openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpSiteId(DXO21MLMD.ClassificationLabel openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.SiteId, value, diffs, objName, "SiteId");
   }
@@ -126,7 +126,7 @@ public static class ClassificationLabelConverter
     return StringValueConverter.GetValue(openXmlElement?.ActionId);
   }
   
-  private static bool CmpActionId(DXO21MLMD.ClassificationLabel openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpActionId(DXO21MLMD.ClassificationLabel openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.ActionId, value, diffs, objName, "ActionId");
   }
@@ -144,7 +144,7 @@ public static class ClassificationLabelConverter
     return openXmlElement?.ContentBits?.Value;
   }
   
-  private static bool CmpContentBits(DXO21MLMD.ClassificationLabel openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpContentBits(DXO21MLMD.ClassificationLabel openXmlElement, UInt32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.ContentBits?.Value == value) return true;
     diffs?.Add(objName, "ContentBits", openXmlElement?.ContentBits?.Value, value);
@@ -164,7 +164,7 @@ public static class ClassificationLabelConverter
     return openXmlElement?.Removed?.Value;
   }
   
-  private static bool CmpRemoved(DXO21MLMD.ClassificationLabel openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpRemoved(DXO21MLMD.ClassificationLabel openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Removed?.Value == value) return true;
     diffs?.Add(objName, "Removed", openXmlElement?.Removed?.Value, value);
@@ -198,33 +198,33 @@ public static class ClassificationLabelConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO21MLMD.ClassificationLabel? openXmlElement, DM.ClassificationLabel? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO21MLMD.ClassificationLabel? openXmlElement, DM.ClassificationLabel? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+      if (!CmpId(openXmlElement, value.Id, diffs, objName, propName))
         ok = false;
-      if (!CmpEnabled(openXmlElement, value.Enabled, diffs, objName))
+      if (!CmpEnabled(openXmlElement, value.Enabled, diffs, objName, propName))
         ok = false;
-      if (!CmpSetDate(openXmlElement, value.SetDate, diffs, objName))
+      if (!CmpSetDate(openXmlElement, value.SetDate, diffs, objName, propName))
         ok = false;
-      if (!CmpMethod(openXmlElement, value.Method, diffs, objName))
+      if (!CmpMethod(openXmlElement, value.Method, diffs, objName, propName))
         ok = false;
-      if (!CmpName(openXmlElement, value.Name, diffs, objName))
+      if (!CmpName(openXmlElement, value.Name, diffs, objName, propName))
         ok = false;
-      if (!CmpSiteId(openXmlElement, value.SiteId, diffs, objName))
+      if (!CmpSiteId(openXmlElement, value.SiteId, diffs, objName, propName))
         ok = false;
-      if (!CmpActionId(openXmlElement, value.ActionId, diffs, objName))
+      if (!CmpActionId(openXmlElement, value.ActionId, diffs, objName, propName))
         ok = false;
-      if (!CmpContentBits(openXmlElement, value.ContentBits, diffs, objName))
+      if (!CmpContentBits(openXmlElement, value.ContentBits, diffs, objName, propName))
         ok = false;
-      if (!CmpRemoved(openXmlElement, value.Removed, diffs, objName))
+      if (!CmpRemoved(openXmlElement, value.Removed, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

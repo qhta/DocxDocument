@@ -11,7 +11,7 @@ public static class ExtBaseParagraphPropertiesConverter
     return openXmlElement.GetFirstChild<DXW.ParagraphStyleId>()?.Val?.Value;
   }
 
-  private static bool CmpParagraphStyleId(DX.OpenXmlCompositeElement openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpParagraphStyleId(DX.OpenXmlCompositeElement openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.ParagraphStyleId>();
     if (itemElement?.Val?.Value == value) return true;
@@ -38,7 +38,7 @@ public static class ExtBaseParagraphPropertiesConverter
     return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.DivId>()?.Val);
   }
 
-  private static bool CmpDivId(DX.OpenXmlCompositeElement openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpDivId(DX.OpenXmlCompositeElement openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.DivId>()?.Val, value, diffs, objName, "DivId");
   }
@@ -58,9 +58,9 @@ public static class ExtBaseParagraphPropertiesConverter
     return null;
   }
 
-  private static bool CmpConditionalFormatStyle(DX.OpenXmlCompositeElement openXmlElement, DMW.ConditionalFormatFlags? value, DiffList? diffs, string? objName)
+  private static bool CmpConditionalFormatStyle(DX.OpenXmlCompositeElement openXmlElement, DMW.ConditionalFormatFlags? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.ConditionalFormatStyleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.ConditionalFormatStyle>(), value, diffs, objName);
+    return DMXW.ConditionalFormatStyleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.ConditionalFormatStyle>(), value, diffs, objName, propName);
   }
 
   private static void SetConditionalFormatStyle(DX.OpenXmlCompositeElement openXmlElement, DMW.ConditionalFormatFlags? value)
@@ -86,23 +86,23 @@ public static class ExtBaseParagraphPropertiesConverter
     value.ConditionalFormatStyle = GetConditionalFormatStyle(openXmlElement);
   }
 
-  public static bool CompareModelElement(DX.OpenXmlCompositeElement? openXmlElement, DMW.ExtBaseParagraphProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DX.OpenXmlCompositeElement? openXmlElement, DMW.ExtBaseParagraphProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!BaseParagraphPropertiesConverter.CompareModelElement(openXmlElement, value, diffs, objName))
+      if (!BaseParagraphPropertiesConverter.CompareModelElement(openXmlElement, value, diffs, objName, propName))
         ok = false;
-      if (!CmpParagraphStyleId(openXmlElement, value.ParagraphStyleId, diffs, objName))
+      if (!CmpParagraphStyleId(openXmlElement, value.ParagraphStyleId, diffs, objName, propName))
         ok = false;
-      if (!CmpDivId(openXmlElement, value.DivId, diffs, objName))
+      if (!CmpDivId(openXmlElement, value.DivId, diffs, objName, propName))
         ok = false;
-      if (!CmpConditionalFormatStyle(openXmlElement, value.ConditionalFormatStyle, diffs, objName))
+      if (!CmpConditionalFormatStyle(openXmlElement, value.ConditionalFormatStyle, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
 

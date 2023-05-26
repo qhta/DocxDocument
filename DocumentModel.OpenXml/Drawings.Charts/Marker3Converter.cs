@@ -13,9 +13,9 @@ public static class Marker3Converter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.MarkerStyleValues, DMDC.MarkerStyleKind>(openXmlElement.GetFirstChild<DXDC.Symbol>()?.Val?.Value);
   }
   
-  private static bool CmpSymbol(DXO13DC.Marker openXmlElement, DMDC.MarkerStyleKind? value, DiffList? diffs, string? objName)
+  private static bool CmpSymbol(DXO13DC.Marker openXmlElement, DMDC.MarkerStyleKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.MarkerStyleValues, DMDC.MarkerStyleKind>(openXmlElement.GetFirstChild<DXDC.Symbol>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.MarkerStyleValues, DMDC.MarkerStyleKind>(openXmlElement.GetFirstChild<DXDC.Symbol>()?.Val?.Value, value, diffs, objName, propName);
   }
   
   private static void SetSymbol(DXO13DC.Marker openXmlElement, DMDC.MarkerStyleKind? value)
@@ -41,7 +41,7 @@ public static class Marker3Converter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDC.Size>()?.Val);
   }
   
-  private static bool CmpSize(DXO13DC.Marker openXmlElement, Byte? value, DiffList? diffs, string? objName)
+  private static bool CmpSize(DXO13DC.Marker openXmlElement, Byte? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDC.Size>()?.Val, value, diffs, objName, "Value");
   }
@@ -62,9 +62,9 @@ public static class Marker3Converter
     return null;
   }
   
-  private static bool CmpChartShapeProperties(DXO13DC.Marker openXmlElement, DMDC.ChartShapeProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpChartShapeProperties(DXO13DC.Marker openXmlElement, DMDC.ChartShapeProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.ChartShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ChartShapeProperties>(), value, diffs, objName);
+    return DMXDC.ChartShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ChartShapeProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetChartShapeProperties(DXO13DC.Marker openXmlElement, DMDC.ChartShapeProperties? value)
@@ -91,9 +91,9 @@ public static class Marker3Converter
     return null;
   }
   
-  private static bool CmpExtensionList(DXO13DC.Marker openXmlElement, DMDC.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXO13DC.Marker openXmlElement, DMDC.ExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ExtensionList>(), value, diffs, objName);
+    return DMXDC.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetExtensionList(DXO13DC.Marker openXmlElement, DMDC.ExtensionList? value)
@@ -123,23 +123,23 @@ public static class Marker3Converter
     return null;
   }
   
-  public static bool CompareModelElement(DXO13DC.Marker? openXmlElement, DMDC.Marker3? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO13DC.Marker? openXmlElement, DMDC.Marker3? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpSymbol(openXmlElement, value.Symbol, diffs, objName))
+      if (!CmpSymbol(openXmlElement, value.Symbol, diffs, objName, propName))
         ok = false;
-      if (!CmpSize(openXmlElement, value.Size, diffs, objName))
+      if (!CmpSize(openXmlElement, value.Size, diffs, objName, propName))
         ok = false;
-      if (!CmpChartShapeProperties(openXmlElement, value.ChartShapeProperties, diffs, objName))
+      if (!CmpChartShapeProperties(openXmlElement, value.ChartShapeProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -26,9 +26,9 @@ public static class AttachedTemplateConverter
   }
 
 
-  public static bool CompareModelElement(DXW.AttachedTemplate? openXmlElement, DMW.AttachedTemplate? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.AttachedTemplate? openXmlElement, DMW.AttachedTemplate? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return RelationshipTypeConverter.CompareModelElement(openXmlElement, model, diffs, objName);
+    return RelationshipTypeConverter.CompareModelElement(openXmlElement, model, diffs, objName, propName);
   }
 
   public static DXW.AttachedTemplate CreateOpenXmlElement(DMW.AttachedTemplate model, DXW.Settings? settings)

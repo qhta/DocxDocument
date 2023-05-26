@@ -23,7 +23,7 @@ public static class ListValueConverter
     return null;
   }
 
-  public static bool CmpValue(DX.ListValue<DX.StringValue>? element, ListOf<String>? value, DiffList? diffs, string? objName)
+  public static bool CmpValue(DX.ListValue<DX.StringValue>? element, ListOf<String>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (element != null && value != null)
     {
@@ -32,7 +32,7 @@ public static class ListValueConverter
       var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, element.GetType().Name+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, propName ?? element.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var enumerator = value.GetEnumerator();
@@ -43,14 +43,14 @@ public static class ListValueConverter
         var modelItem = enumerator.Current;
         if (origItem.Value != modelItem)
         {
-          diffs?.Add(objName, element.GetType().Name + $"[{i++}]", origItem.Value, modelItem);
+          diffs?.Add(objName, propName ?? element.GetType().Name + $"[{i++}]", origItem.Value, modelItem);
           ok = false;
         }
       }
       return ok;
     }
     if (element == null && value == null) return true;
-    diffs?.Add(objName, element?.GetType().Name, element, value);
+    diffs?.Add(objName, propName ?? element?.GetType().Name, element, value);
     return false;
   }
 
@@ -85,7 +85,7 @@ public static class ListValueConverter
     return null;
   }
 
-  public static bool CmpValue<EnumType, EnumKind>(DX.ListValue<DX.EnumValue<EnumType>>? element, ListOf<EnumKind>? value, DiffList? diffs, string? objName)
+  public static bool CmpValue<EnumType, EnumKind>(DX.ListValue<DX.EnumValue<EnumType>>? element, ListOf<EnumKind>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
     where EnumType : struct, IConvertible
     where EnumKind : struct, IConvertible
   {
@@ -96,7 +96,7 @@ public static class ListValueConverter
       var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, element.GetType().Name + ".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, propName ?? element.GetType().Name + ".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var enumerator = value.GetEnumerator();
@@ -104,7 +104,7 @@ public static class ListValueConverter
       {
         enumerator.MoveNext();
         var modelItem = enumerator.Current;
-        if (!EnumValueConverter.CmpValue<EnumType, EnumKind>(origItem.Value, modelItem, diffs, objName))
+        if (!EnumValueConverter.CmpValue<EnumType, EnumKind>(origItem.Value, modelItem, diffs, objName, propName))
         {
           ok = false;
         }
@@ -112,7 +112,7 @@ public static class ListValueConverter
       return ok;
     }
     if (element == null && value == null) return true;
-    diffs?.Add(objName, element?.GetType().Name, element, value);
+    diffs?.Add(objName, propName ?? element?.GetType().Name, element, value);
     return false;
   }
 
@@ -143,7 +143,7 @@ public static class ListValueConverter
     return null;
   }
 
-  public static bool CmpValue(DX.ListValue<DX.BooleanValue>? element, ListOf<Boolean>? value, DiffList? diffs, string? objName)
+  public static bool CmpValue(DX.ListValue<DX.BooleanValue>? element, ListOf<Boolean>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (element != null && value != null)
     {
@@ -152,7 +152,7 @@ public static class ListValueConverter
       var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, element.GetType().Name + ".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, propName ?? element.GetType().Name + ".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var enumerator = value.GetEnumerator();
@@ -163,14 +163,14 @@ public static class ListValueConverter
         var modelItem = enumerator.Current;
         if (origItem.Value != modelItem)
         {
-          diffs?.Add(objName, element.GetType().Name + $"[{i++}]", origItem.Value, modelItem);
+          diffs?.Add(objName, propName ?? element.GetType().Name + $"[{i++}]", origItem.Value, modelItem);
           ok = false;
         }
       }
       return ok;
     }
     if (element == null && value == null) return true;
-    diffs?.Add(objName, element?.GetType().Name, element, value);
+    diffs?.Add(objName, propName ?? element?.GetType().Name, element, value);
     return false;
   }
 
@@ -198,7 +198,7 @@ public static class ListValueConverter
     return null;
   }
 
-  public static bool CmpValue(DX.ListValue<DX.Int32Value>? element, ListOf<Int32>? value, DiffList? diffs, string? objName)
+  public static bool CmpValue(DX.ListValue<DX.Int32Value>? element, ListOf<Int32>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (element != null && value != null)
     {
@@ -207,7 +207,7 @@ public static class ListValueConverter
       var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, element.GetType().Name + ".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, propName ?? element.GetType().Name + ".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var enumerator = value.GetEnumerator();
@@ -218,14 +218,14 @@ public static class ListValueConverter
         var modelItem = enumerator.Current;
         if (origItem.Value != modelItem)
         {
-          diffs?.Add(objName, element.GetType().Name + $"[{i++}]", origItem.Value, modelItem);
+          diffs?.Add(objName, propName ?? element.GetType().Name + $"[{i++}]", origItem.Value, modelItem);
           ok = false;
         }
       }
       return ok;
     }
     if (element == null && value == null) return true;
-    diffs?.Add(objName, element?.GetType().Name, element, value);
+    diffs?.Add(objName, propName ?? element?.GetType().Name, element, value);
     return false;
   }
 
@@ -253,7 +253,7 @@ public static class ListValueConverter
     return null;
   }
 
-  public static bool CmpValue(DX.ListValue<DX.UInt32Value>? element, ListOf<UInt32>? value, DiffList? diffs, string? objName)
+  public static bool CmpValue(DX.ListValue<DX.UInt32Value>? element, ListOf<UInt32>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (element != null && value != null)
     {
@@ -262,7 +262,7 @@ public static class ListValueConverter
       var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, element.GetType().Name + ".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, propName ?? element.GetType().Name + ".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var enumerator = value.GetEnumerator();
@@ -273,14 +273,14 @@ public static class ListValueConverter
         var modelItem = enumerator.Current;
         if (origItem.Value != modelItem)
         {
-          diffs?.Add(objName, element.GetType().Name + $"[{i++}]", origItem.Value, modelItem);
+          diffs?.Add(objName, propName ?? element.GetType().Name + $"[{i++}]", origItem.Value, modelItem);
           ok = false;
         }
       }
       return ok;
     }
     if (element == null && value == null) return true;
-    diffs?.Add(objName, element?.GetType().Name, element, value);
+    diffs?.Add(objName, propName ?? element?.GetType().Name, element, value);
     return false;
   }
 

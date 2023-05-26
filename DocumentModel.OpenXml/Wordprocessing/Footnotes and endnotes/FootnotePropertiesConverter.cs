@@ -13,9 +13,9 @@ public static class FootnotePropertiesConverter
     return EnumValueConverter.GetValue<DXW.FootnotePositionValues, DMW.FootnotePositionKind>(openXmlElement.GetFirstChild<DXW.FootnotePosition>()?.Val?.Value);
   }
   
-  private static bool CmpFootnotePosition(DXW.FootnoteProperties openXmlElement, DMW.FootnotePositionKind? value, DiffList? diffs, string? objName)
+  private static bool CmpFootnotePosition(DXW.FootnoteProperties openXmlElement, DMW.FootnotePositionKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.FootnotePositionValues, DMW.FootnotePositionKind>(openXmlElement.GetFirstChild<DXW.FootnotePosition>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.FootnotePositionValues, DMW.FootnotePositionKind>(openXmlElement.GetFirstChild<DXW.FootnotePosition>()?.Val?.Value, value, diffs, objName, propName);
   }
   
   private static void SetFootnotePosition(DXW.FootnoteProperties openXmlElement, DMW.FootnotePositionKind? value)
@@ -44,9 +44,9 @@ public static class FootnotePropertiesConverter
     return null;
   }
   
-  private static bool CmpNumberingFormat(DXW.FootnoteProperties openXmlElement, DMW.NumberingFormat? value, DiffList? diffs, string? objName)
+  private static bool CmpNumberingFormat(DXW.FootnoteProperties openXmlElement, DMW.NumberingFormat? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.NumberingFormatConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.NumberingFormat>(), value, diffs, objName);
+    return DMXW.NumberingFormatConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.NumberingFormat>(), value, diffs, objName, propName);
   }
   
   private static void SetNumberingFormat(DXW.FootnoteProperties openXmlElement, DMW.NumberingFormat? value)
@@ -70,7 +70,7 @@ public static class FootnotePropertiesConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.NumberingStart>()?.Val);
   }
   
-  private static bool CmpNumberingStart(DXW.FootnoteProperties openXmlElement, UInt16? value, DiffList? diffs, string? objName)
+  private static bool CmpNumberingStart(DXW.FootnoteProperties openXmlElement, UInt16? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.NumberingStart>()?.Val, value, diffs, objName, "NumberingStart");
   }
@@ -88,9 +88,9 @@ public static class FootnotePropertiesConverter
     return EnumValueConverter.GetValue<DXW.RestartNumberValues, DMW.RestartNumberKind>(openXmlElement.GetFirstChild<DXW.NumberingRestart>()?.Val?.Value);
   }
   
-  private static bool CmpNumberingRestart(DXW.FootnoteProperties openXmlElement, DMW.RestartNumberKind? value, DiffList? diffs, string? objName)
+  private static bool CmpNumberingRestart(DXW.FootnoteProperties openXmlElement, DMW.RestartNumberKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.RestartNumberValues, DMW.RestartNumberKind>(openXmlElement.GetFirstChild<DXW.NumberingRestart>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.RestartNumberValues, DMW.RestartNumberKind>(openXmlElement.GetFirstChild<DXW.NumberingRestart>()?.Val?.Value, value, diffs, objName, propName);
   }
   
   private static void SetNumberingRestart(DXW.FootnoteProperties openXmlElement, DMW.RestartNumberKind? value)
@@ -122,23 +122,23 @@ public static class FootnotePropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.FootnoteProperties? openXmlElement, DMW.FootnoteProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.FootnoteProperties? openXmlElement, DMW.FootnoteProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpFootnotePosition(openXmlElement, value.FootnotePosition, diffs, objName))
+      if (!CmpFootnotePosition(openXmlElement, value.FootnotePosition, diffs, objName, propName))
         ok = false;
-      if (!CmpNumberingFormat(openXmlElement, value.NumberingFormat, diffs, objName))
+      if (!CmpNumberingFormat(openXmlElement, value.NumberingFormat, diffs, objName, propName))
         ok = false;
-      if (!CmpNumberingStart(openXmlElement, value.NumberingStart, diffs, objName))
+      if (!CmpNumberingStart(openXmlElement, value.NumberingStart, diffs, objName, propName))
         ok = false;
-      if (!CmpNumberingRestart(openXmlElement, value.NumberingRestart, diffs, objName))
+      if (!CmpNumberingRestart(openXmlElement, value.NumberingRestart, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

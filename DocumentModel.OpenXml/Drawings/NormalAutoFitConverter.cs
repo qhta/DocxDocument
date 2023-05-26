@@ -13,7 +13,7 @@ public static class NormalAutoFitConverter
     return openXmlElement?.FontScale?.Value;
   }
   
-  private static bool CmpFontScale(DXD.NormalAutoFit openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpFontScale(DXD.NormalAutoFit openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.FontScale?.Value == value) return true;
     diffs?.Add(objName, "FontScale", openXmlElement?.FontScale?.Value, value);
@@ -33,7 +33,7 @@ public static class NormalAutoFitConverter
     return openXmlElement?.LineSpaceReduction?.Value;
   }
   
-  private static bool CmpLineSpaceReduction(DXD.NormalAutoFit openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpLineSpaceReduction(DXD.NormalAutoFit openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.LineSpaceReduction?.Value == value) return true;
     diffs?.Add(objName, "LineSpaceReduction", openXmlElement?.LineSpaceReduction?.Value, value);
@@ -57,19 +57,19 @@ public static class NormalAutoFitConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.NormalAutoFit? openXmlElement, DMD.NormalAutoFit? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.NormalAutoFit? openXmlElement, DMD.NormalAutoFit? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpFontScale(openXmlElement, value.FontScale, diffs, objName))
+      if (!CmpFontScale(openXmlElement, value.FontScale, diffs, objName, propName))
         ok = false;
-      if (!CmpLineSpaceReduction(openXmlElement, value.LineSpaceReduction, diffs, objName))
+      if (!CmpLineSpaceReduction(openXmlElement, value.LineSpaceReduction, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
