@@ -1,13 +1,11 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Effect.
+/// <see cref="DMD.Fill"/> abstract class from/to OpenXml converter.
 /// </summary>
 public static class EffectConverter
 {
-  /// <summary>
-  /// Reference
-  /// </summary>
+  #region Reference conversion.
   private static String? GetReference(DXD.Effect openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Reference);
@@ -22,42 +20,45 @@ public static class EffectConverter
   {
     openXmlElement.Reference = StringValueConverter.CreateStringValue(value);
   }
-  
-  public static DocumentModel.Drawings.Effect? CreateModelElement(DXD.Effect? openXmlElement)
+  #endregion
+
+  #region Effect model conversion.
+  public static DMD.Effect? CreateModelElement(DXD.Effect? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Effect();
-      value.Reference = GetReference(openXmlElement);
-      return value;
+      var model = new DMD.Effect();
+      model.Reference = GetReference(openXmlElement);
+      return model;
     }
     return null;
   }
   
-  public static bool CompareModelElement(DXD.Effect? openXmlElement, DMD.Effect? value, DiffList? diffs = null, string? objName = null, string? propName = null)
+  public static bool CompareModelElement(DXD.Effect? openXmlElement, DMD.Effect? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpReference(openXmlElement, value.Reference, diffs, objName, propName))
+      if (!CmpReference(openXmlElement, model.Reference, diffs, objName, propName))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.Effect value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.Effect model)
     where OpenXmlElementType: DXD.Effect, new()
   {
     var openXmlElement = new OpenXmlElementType();
-    UpdateOpenXmlElement(openXmlElement, value);
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXD.Effect openXmlElement, DMD.Effect value)
+  public static void UpdateOpenXmlElement(DXD.Effect openXmlElement, DMD.Effect model)
   {
-    SetReference(openXmlElement, value?.Reference);
+    SetReference(openXmlElement, model?.Reference);
   }
+  #endregion
 }

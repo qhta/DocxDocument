@@ -1,7 +1,3 @@
-using DocumentFormat.OpenXml.Office2019.Excel.RichData2;
-
-using DocumentModel.OpenXml.Vml;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
