@@ -1,225 +1,48 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Fill Style List.
+/// <see cref="DMD.FillStyleList"/> class from/to OpenXml converter.
 /// </summary>
 public static class FillStyleListConverter
 {
-  private static Boolean? GetNoFill(DXD.FillStyleList openXmlElement)
-  {
-    return openXmlElement.GetFirstChild<DXD.NoFill>() != null;
-  }
-  
-  private static bool CmpNoFill(DXD.FillStyleList openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
-  {
-    var val = openXmlElement.GetFirstChild<DXD.NoFill>() != null;
-    if (val == value) return true;
-    diffs?.Add(objName, "DXD.NoFill", val, value);
-    return false;
-  }
-  
-  private static void SetNoFill(DXD.FillStyleList openXmlElement, Boolean? value)
-  {
-    if (value == false)
-    {
-      var itemElement = openXmlElement.GetFirstChild<DXD.NoFill>();
-      if (itemElement != null)
-        itemElement.Remove();
-    }
-    if (value == true)
-    {
-      var itemElement = new DXD.NoFill();
-      openXmlElement.AppendChild(itemElement);
-    }
-  }
-  
-  private static DMD.SolidFill? GetSolidFill(DXD.FillStyleList openXmlElement)
-  {
-    var element = openXmlElement?.GetFirstChild<DXD.SolidFill>();
-    if (element != null)
-      return DMXD.SolidFillConverter.CreateModelElement(element);
-    return null;
-  }
-  
-  private static bool CmpSolidFill(DXD.FillStyleList openXmlElement, DMD.SolidFill? value, DiffList? diffs = null, string? objName = null, string? propName = null)
-  {
-    return DMXD.SolidFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.SolidFill>(), value, diffs, objName, propName);
-  }
-  
-  private static void SetSolidFill(DXD.FillStyleList openXmlElement, DMD.SolidFill? value)
-  {
-    var itemElement = openXmlElement.GetFirstChild<DXD.SolidFill>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = DMXD.SolidFillConverter.CreateOpenXmlElement<DXD.SolidFill>(value);
-      if (itemElement != null)
-        openXmlElement.AppendChild(itemElement);
-    }
-  }
-  
-  private static DMD.GradientFill? GetGradientFill(DXD.FillStyleList openXmlElement)
-  {
-    var element = openXmlElement?.GetFirstChild<DXD.GradientFill>();
-    if (element != null)
-      return DMXD.GradientFillConverter.CreateModelElement(element);
-    return null;
-  }
-  
-  private static bool CmpGradientFill(DXD.FillStyleList openXmlElement, DMD.GradientFill? value, DiffList? diffs = null, string? objName = null, string? propName = null)
-  {
-    return DMXD.GradientFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.GradientFill>(), value, diffs, objName, propName);
-  }
-  
-  private static void SetGradientFill(DXD.FillStyleList openXmlElement, DMD.GradientFill? value)
-  {
-    var itemElement = openXmlElement.GetFirstChild<DXD.GradientFill>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = DMXD.GradientFillConverter.CreateOpenXmlElement<DXD.GradientFill>(value);
-      if (itemElement != null)
-        openXmlElement.AppendChild(itemElement);
-    }
-  }
-  
-  private static DMD.BlipFill? GetBlipFill(DXD.FillStyleList openXmlElement)
-  {
-    var element = openXmlElement?.GetFirstChild<DXD.BlipFill>();
-    if (element != null)
-      return DMXD.BlipFillConverter.CreateModelElement(element);
-    return null;
-  }
-  
-  private static bool CmpBlipFill(DXD.FillStyleList openXmlElement, DMD.BlipFill? value, DiffList? diffs = null, string? objName = null, string? propName = null)
-  {
-    return DMXD.BlipFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.BlipFill>(), value, diffs, objName, propName);
-  }
-  
-  private static void SetBlipFill(DXD.FillStyleList openXmlElement, DMD.BlipFill? value)
-  {
-    var itemElement = openXmlElement.GetFirstChild<DXD.BlipFill>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = DMXD.BlipFillConverter.CreateOpenXmlElement<DXD.BlipFill>(value);
-      if (itemElement != null)
-        openXmlElement.AppendChild(itemElement);
-    }
-  }
-  
-  private static DMD.PatternFill? GetPatternFill(DXD.FillStyleList openXmlElement)
-  {
-    var element = openXmlElement?.GetFirstChild<DXD.PatternFill>();
-    if (element != null)
-      return DMXD.PatternFillConverter.CreateModelElement(element);
-    return null;
-  }
-  
-  private static bool CmpPatternFill(DXD.FillStyleList openXmlElement, DMD.PatternFill? value, DiffList? diffs = null, string? objName = null, string? propName = null)
-  {
-    return DMXD.PatternFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.PatternFill>(), value, diffs, objName, propName);
-  }
-  
-  private static void SetPatternFill(DXD.FillStyleList openXmlElement, DMD.PatternFill? value)
-  {
-    var itemElement = openXmlElement.GetFirstChild<DXD.PatternFill>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = DMXD.PatternFillConverter.CreateOpenXmlElement<DXD.PatternFill>(value);
-      if (itemElement != null)
-        openXmlElement.AppendChild(itemElement);
-    }
-  }
-  
-  private static Boolean? GetGroupFill(DXD.FillStyleList openXmlElement)
-  {
-    return openXmlElement.GetFirstChild<DXD.GroupFill>() != null;
-  }
-  
-  private static bool CmpGroupFill(DXD.FillStyleList openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
-  {
-    var val = openXmlElement.GetFirstChild<DXD.GroupFill>() != null;
-    if (val == value) return true;
-    diffs?.Add(objName, "DXD.GroupFill", val, value);
-    return false;
-  }
-  
-  private static void SetGroupFill(DXD.FillStyleList openXmlElement, Boolean? value)
-  {
-    if (value == false)
-    {
-      var itemElement = openXmlElement.GetFirstChild<DXD.GroupFill>();
-      if (itemElement != null)
-        itemElement.Remove();
-    }
-    if (value == true)
-    {
-      var itemElement = new DXD.GroupFill();
-      openXmlElement.AppendChild(itemElement);
-    }
-  }
-  
-  public static DocumentModel.Drawings.FillStyleList? CreateModelElement(DXD.FillStyleList? openXmlElement)
+ 
+  public static DMD.FillStyleList? CreateModelElement(DX.OpenXmlCompositeElement? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.FillStyleList();
-      value.NoFill = GetNoFill(openXmlElement);
-      value.SolidFill = GetSolidFill(openXmlElement);
-      value.GradientFill = GetGradientFill(openXmlElement);
-      value.BlipFill = GetBlipFill(openXmlElement);
-      value.PatternFill = GetPatternFill(openXmlElement);
-      value.GroupFill = GetGroupFill(openXmlElement);
-      return value;
+      var model = new DMD.FillStyleList();
+      ElementCollectionConverter<DMD.Fill>.FillModelElementCollection(openXmlElement.Elements(), model,
+        FillConverter.CreateFill);
+      return model;
     }
     return null;
   }
   
-  public static bool CompareModelElement(DXD.FillStyleList? openXmlElement, DMD.FillStyleList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
+  public static bool CompareModelElement(DX.OpenXmlCompositeElement? openXmlElement, DMD.FillStyleList? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
-      var ok = true;
-      if (!CmpNoFill(openXmlElement, value.NoFill, diffs, objName, propName))
-        ok = false;
-      if (!CmpSolidFill(openXmlElement, value.SolidFill, diffs, objName, propName))
-        ok = false;
-      if (!CmpGradientFill(openXmlElement, value.GradientFill, diffs, objName, propName))
-        ok = false;
-      if (!CmpBlipFill(openXmlElement, value.BlipFill, diffs, objName, propName))
-        ok = false;
-      if (!CmpPatternFill(openXmlElement, value.PatternFill, diffs, objName, propName))
-        ok = false;
-      if (!CmpGroupFill(openXmlElement, value.GroupFill, diffs, objName, propName))
-        ok = false;
-      return ok;
+      return ElementCollectionConverter<DMD.Fill>.CompareOpenXmlElementCollection(openXmlElement.Elements(), model,
+        FillConverter.CompareFill, diffs, objName, propName);
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.FillStyleList value)
-    where OpenXmlElementType: DXD.FillStyleList, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.FillStyleList model)
+    where OpenXmlElementType: DX.OpenXmlCompositeElement, new()
   {
     var openXmlElement = new OpenXmlElementType();
-    UpdateOpenXmlElement(openXmlElement, value);
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXD.FillStyleList openXmlElement, DMD.FillStyleList value)
+  public static bool UpdateOpenXmlElement(DX.OpenXmlCompositeElement openXmlElement, DMD.FillStyleList model)
   {
-    SetNoFill(openXmlElement, value?.NoFill);
-    SetSolidFill(openXmlElement, value?.SolidFill);
-    SetGradientFill(openXmlElement, value?.GradientFill);
-    SetBlipFill(openXmlElement, value?.BlipFill);
-    SetPatternFill(openXmlElement, value?.PatternFill);
-    SetGroupFill(openXmlElement, value?.GroupFill);
+    return ElementCollectionConverter<DMD.Fill>.UpdateOpenXmlElementCollection(openXmlElement, model,
+        FillConverter.CompareFill,
+        FillConverter.UpdateOpenXmlFillElement,
+        FillConverter.CreateOpenXmlFillElement);
   }
 }

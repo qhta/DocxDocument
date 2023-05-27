@@ -6,14 +6,7 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public class Outline: TypedModelElement, IDrawingProperty
 {
-  [DefaultValue(false)]
-  public Boolean NoFill { get; set; }
-
-  public SolidFill? SolidFill { get; set; }
-
-  public GradientFill? GradientFill { get; set; }
-
-  public PatternFill? PatternFill { get; set; }
+  public Fill? Fill { get; set; }
 
   public PresetLineDashKind? PresetDash { get; set; }
 

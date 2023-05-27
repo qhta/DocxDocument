@@ -1,10 +1,8 @@
 namespace DocumentModel.Drawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
-
 /// <summary>
 ///   Defines the GradientFill Class.
 /// </summary>
-public class GradientFill: ModelElement
+public abstract class GradientFill: Fill
 {
   /// <summary>
   ///   Tile Flip
@@ -21,9 +19,8 @@ public class GradientFill: ModelElement
   /// </summary>
   public GradientStopList? GradientStopList { get; set; }
 
-  public LinearGradientFill? LinearGradientFill { get; set; }
-
-  public PathGradientFill? PathGradientFill { get; set; }
-
+  /// <summary>
+  /// Relative rectangle coordinates.
+  /// </summary>
   public RelativeRectangleType? TileRectangle { get; set; }
 }

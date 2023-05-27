@@ -113,27 +113,27 @@ public static class FormatSchemeConverter
   /// <summary>
   /// Background Fill Style List.
   /// </summary>
-  private static DMD.BackgroundFillStyleList? GetBackgroundFillStyleList(DXD.FormatScheme openXmlElement)
+  private static DMD.FillStyleList? GetBackgroundFillStyleList(DXD.FormatScheme openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXD.BackgroundFillStyleList>();
     if (element != null)
-      return DMXD.BackgroundFillStyleListConverter.CreateModelElement(element);
+      return DMXD.FillStyleListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpBackgroundFillStyleList(DXD.FormatScheme openXmlElement, DMD.BackgroundFillStyleList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
+  private static bool CmpBackgroundFillStyleList(DXD.FormatScheme openXmlElement, DMD.FillStyleList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.BackgroundFillStyleListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.BackgroundFillStyleList>(), value, diffs, objName, propName);
+    return DMXD.FillStyleListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.BackgroundFillStyleList>(), value, diffs, objName, propName);
   }
   
-  private static void SetBackgroundFillStyleList(DXD.FormatScheme openXmlElement, DMD.BackgroundFillStyleList? value)
+  private static void SetBackgroundFillStyleList(DXD.FormatScheme openXmlElement, DMD.FillStyleList? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXD.BackgroundFillStyleList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXD.BackgroundFillStyleListConverter.CreateOpenXmlElement<DXD.BackgroundFillStyleList>(value);
+      itemElement = DMXD.FillStyleListConverter.CreateOpenXmlElement<DXD.BackgroundFillStyleList>(value);
       if (itemElement != null)
         openXmlElement.AppendChild(itemElement);
     }

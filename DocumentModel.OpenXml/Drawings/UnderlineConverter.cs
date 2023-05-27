@@ -5,135 +5,29 @@ namespace DocumentModel.OpenXml.Drawings;
 /// </summary>
 public static class UnderlineConverter
 {
-  private static Boolean? GetNoFill(DXD.Underline openXmlElement)
-  {
-    return openXmlElement.GetFirstChild<DXD.NoFill>() != null;
-  }
-  
-  private static bool CmpNoFill(DXD.Underline openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
-  {
-    var val = openXmlElement.GetFirstChild<DXD.NoFill>() != null;
-    if (val == value) return true;
-    diffs?.Add(objName, "DXD.NoFill", val, value);
-    return false;
-  }
-  
-  private static void SetNoFill(DXD.Underline openXmlElement, Boolean? value)
-  {
-    if (value == false)
-    {
-      var itemElement = openXmlElement.GetFirstChild<DXD.NoFill>();
-      if (itemElement != null)
-        itemElement.Remove();
-    }
-    if (value == true)
-    {
-      var itemElement = new DXD.NoFill();
-      openXmlElement.AppendChild(itemElement);
-    }
-  }
-  
-  private static DMD.SolidFill? GetSolidFill(DXD.Underline openXmlElement)
-  {
-    var element = openXmlElement?.GetFirstChild<DXD.SolidFill>();
-    if (element != null)
-      return DMXD.SolidFillConverter.CreateModelElement(element);
-    return null;
-  }
-  
-  private static bool CmpSolidFill(DXD.Underline openXmlElement, DMD.SolidFill? value, DiffList? diffs = null, string? objName = null, string? propName = null)
-  {
-    return DMXD.SolidFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.SolidFill>(), value, diffs, objName, propName);
-  }
-  
-  private static void SetSolidFill(DXD.Underline openXmlElement, DMD.SolidFill? value)
-  {
-    var itemElement = openXmlElement.GetFirstChild<DXD.SolidFill>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = DMXD.SolidFillConverter.CreateOpenXmlElement<DXD.SolidFill>(value);
-      if (itemElement != null)
-        openXmlElement.AppendChild(itemElement);
-    }
-  }
-  
-  private static DMD.GradientFill? GetGradientFill(DXD.Underline openXmlElement)
-  {
-    var element = openXmlElement?.GetFirstChild<DXD.GradientFill>();
-    if (element != null)
-      return DMXD.GradientFillConverter.CreateModelElement(element);
-    return null;
-  }
-  
-  private static bool CmpGradientFill(DXD.Underline openXmlElement, DMD.GradientFill? value, DiffList? diffs = null, string? objName = null, string? propName = null)
-  {
-    return DMXD.GradientFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.GradientFill>(), value, diffs, objName, propName);
-  }
-  
-  private static void SetGradientFill(DXD.Underline openXmlElement, DMD.GradientFill? value)
-  {
-    var itemElement = openXmlElement.GetFirstChild<DXD.GradientFill>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = DMXD.GradientFillConverter.CreateOpenXmlElement<DXD.GradientFill>(value);
-      if (itemElement != null)
-        openXmlElement.AppendChild(itemElement);
-    }
-  }
-  
-  private static DMD.PatternFill? GetPatternFill(DXD.Underline openXmlElement)
-  {
-    var element = openXmlElement?.GetFirstChild<DXD.PatternFill>();
-    if (element != null)
-      return DMXD.PatternFillConverter.CreateModelElement(element);
-    return null;
-  }
-  
-  private static bool CmpPatternFill(DXD.Underline openXmlElement, DMD.PatternFill? value, DiffList? diffs = null, string? objName = null, string? propName = null)
-  {
-    return DMXD.PatternFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.PatternFill>(), value, diffs, objName, propName);
-  }
-  
-  private static void SetPatternFill(DXD.Underline openXmlElement, DMD.PatternFill? value)
-  {
-    var itemElement = openXmlElement.GetFirstChild<DXD.PatternFill>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = DMXD.PatternFillConverter.CreateOpenXmlElement<DXD.PatternFill>(value);
-      if (itemElement != null)
-        openXmlElement.AppendChild(itemElement);
-    }
-  }
-  
   private static DMD.PresetLineDashKind? GetPresetDash(DXD.Underline openXmlElement)
   {
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.PresetLineDashValues, DMD.PresetLineDashKind>(openXmlElement.GetFirstChild<DXD.PresetDash>()?.Val?.Value);
   }
   
-  private static bool CmpPresetDash(DXD.Underline openXmlElement, DMD.PresetLineDashKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
+  private static bool CmpPresetDash(DXD.Underline openXmlElement, DMD.PresetLineDashKind? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.PresetLineDashValues, DMD.PresetLineDashKind>(openXmlElement.GetFirstChild<DXD.PresetDash>()?.Val?.Value, value, diffs, objName, propName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.PresetLineDashValues, DMD.PresetLineDashKind>(openXmlElement.GetFirstChild<DXD.PresetDash>()?.Val?.Value, model, diffs, objName, propName);
   }
   
-  private static void SetPresetDash(DXD.Underline openXmlElement, DMD.PresetLineDashKind? value)
+  private static void SetPresetDash(DXD.Underline openXmlElement, DMD.PresetLineDashKind? model)
   {
     var itemElement = openXmlElement.GetFirstChild<DXD.PresetDash>();
     if (itemElement != null)
     {
-      if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.PresetLineDashValues, DMD.PresetLineDashKind>(itemElement, (DMD.PresetLineDashKind)value);
+      if (model != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.PresetLineDashValues, DMD.PresetLineDashKind>(itemElement, (DMD.PresetLineDashKind)model);
       else
         itemElement.Remove();
     }
     else
-    if (value != null)
-      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXD.PresetDash, DocumentFormat.OpenXml.Drawing.PresetLineDashValues, DMD.PresetLineDashKind>((DMD.PresetLineDashKind)value));
+    if (model != null)
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXD.PresetDash, DocumentFormat.OpenXml.Drawing.PresetLineDashValues, DMD.PresetLineDashKind>((DMD.PresetLineDashKind)model));
   }
   
   private static DMD.CustomDash? GetCustomDash(DXD.Underline openXmlElement)
@@ -144,19 +38,19 @@ public static class UnderlineConverter
     return null;
   }
   
-  private static bool CmpCustomDash(DXD.Underline openXmlElement, DMD.CustomDash? value, DiffList? diffs = null, string? objName = null, string? propName = null)
+  private static bool CmpCustomDash(DXD.Underline openXmlElement, DMD.CustomDash? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.CustomDashConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.CustomDash>(), value, diffs, objName, propName);
+    return DMXD.CustomDashConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.CustomDash>(), model, diffs, objName, propName);
   }
   
-  private static void SetCustomDash(DXD.Underline openXmlElement, DMD.CustomDash? value)
+  private static void SetCustomDash(DXD.Underline openXmlElement, DMD.CustomDash? model)
   {
     var itemElement = openXmlElement.GetFirstChild<DXD.CustomDash>();
     if (itemElement != null)
       itemElement.Remove();
-    if (value != null)
+    if (model != null)
     {
-      itemElement = DMXD.CustomDashConverter.CreateOpenXmlElement<DXD.CustomDash>(value);
+      itemElement = DMXD.CustomDashConverter.CreateOpenXmlElement<DXD.CustomDash>(model);
       if (itemElement != null)
         openXmlElement.AppendChild(itemElement);
     }
@@ -167,23 +61,23 @@ public static class UnderlineConverter
     return openXmlElement.GetFirstChild<DXD.Round>() != null;
   }
   
-  private static bool CmpRound(DXD.Underline openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
+  private static bool CmpRound(DXD.Underline openXmlElement, Boolean? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXD.Round>() != null;
-    if (val == value) return true;
-    diffs?.Add(objName, "DXD.Round", val, value);
+    if (val == model) return true;
+    diffs?.Add(objName, "DXD.Round", val, model);
     return false;
   }
   
-  private static void SetRound(DXD.Underline openXmlElement, Boolean? value)
+  private static void SetRound(DXD.Underline openXmlElement, Boolean? model)
   {
-    if (value == false)
+    if (model == false)
     {
       var itemElement = openXmlElement.GetFirstChild<DXD.Round>();
       if (itemElement != null)
         itemElement.Remove();
     }
-    if (value == true)
+    if (model == true)
     {
       var itemElement = new DXD.Round();
       openXmlElement.AppendChild(itemElement);
@@ -195,23 +89,23 @@ public static class UnderlineConverter
     return openXmlElement.GetFirstChild<DXD.LineJoinBevel>() != null;
   }
   
-  private static bool CmpLineJoinBevel(DXD.Underline openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
+  private static bool CmpLineJoinBevel(DXD.Underline openXmlElement, Boolean? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXD.LineJoinBevel>() != null;
-    if (val == value) return true;
-    diffs?.Add(objName, "DXD.LineJoinBevel", val, value);
+    if (val == model) return true;
+    diffs?.Add(objName, "DXD.LineJoinBevel", val, model);
     return false;
   }
   
-  private static void SetLineJoinBevel(DXD.Underline openXmlElement, Boolean? value)
+  private static void SetLineJoinBevel(DXD.Underline openXmlElement, Boolean? model)
   {
-    if (value == false)
+    if (model == false)
     {
       var itemElement = openXmlElement.GetFirstChild<DXD.LineJoinBevel>();
       if (itemElement != null)
         itemElement.Remove();
     }
-    if (value == true)
+    if (model == true)
     {
       var itemElement = new DXD.LineJoinBevel();
       openXmlElement.AppendChild(itemElement);
@@ -226,19 +120,19 @@ public static class UnderlineConverter
     return null;
   }
   
-  private static bool CmpMiter(DXD.Underline openXmlElement, DMD.Miter? value, DiffList? diffs = null, string? objName = null, string? propName = null)
+  private static bool CmpMiter(DXD.Underline openXmlElement, DMD.Miter? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.MiterConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Miter>(), value, diffs, objName, propName);
+    return DMXD.MiterConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Miter>(), model, diffs, objName, propName);
   }
   
-  private static void SetMiter(DXD.Underline openXmlElement, DMD.Miter? value)
+  private static void SetMiter(DXD.Underline openXmlElement, DMD.Miter? model)
   {
     var itemElement = openXmlElement.GetFirstChild<DXD.Miter>();
     if (itemElement != null)
       itemElement.Remove();
-    if (value != null)
+    if (model != null)
     {
-      itemElement = DMXD.MiterConverter.CreateOpenXmlElement<DXD.Miter>(value);
+      itemElement = DMXD.MiterConverter.CreateOpenXmlElement<DXD.Miter>(model);
       if (itemElement != null)
         openXmlElement.AppendChild(itemElement);
     }
@@ -252,19 +146,19 @@ public static class UnderlineConverter
     return null;
   }
   
-  private static bool CmpHeadEnd(DXD.Underline openXmlElement, DMD.LineEndPropertiesType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
+  private static bool CmpHeadEnd(DXD.Underline openXmlElement, DMD.LineEndPropertiesType? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.LineEndPropertiesTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.HeadEnd>(), value, diffs, objName, propName);
+    return DMXD.LineEndPropertiesTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.HeadEnd>(), model, diffs, objName, propName);
   }
   
-  private static void SetHeadEnd(DXD.Underline openXmlElement, DMD.LineEndPropertiesType? value)
+  private static void SetHeadEnd(DXD.Underline openXmlElement, DMD.LineEndPropertiesType? model)
   {
     var itemElement = openXmlElement.GetFirstChild<DXD.HeadEnd>();
     if (itemElement != null)
       itemElement.Remove();
-    if (value != null)
+    if (model != null)
     {
-      itemElement = DMXD.LineEndPropertiesTypeConverter.CreateOpenXmlElement<DXD.HeadEnd>(value);
+      itemElement = DMXD.LineEndPropertiesTypeConverter.CreateOpenXmlElement<DXD.HeadEnd>(model);
       if (itemElement != null)
         openXmlElement.AppendChild(itemElement);
     }
@@ -278,19 +172,19 @@ public static class UnderlineConverter
     return null;
   }
   
-  private static bool CmpTailEnd(DXD.Underline openXmlElement, DMD.LineEndPropertiesType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
+  private static bool CmpTailEnd(DXD.Underline openXmlElement, DMD.LineEndPropertiesType? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.LineEndPropertiesTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.TailEnd>(), value, diffs, objName, propName);
+    return DMXD.LineEndPropertiesTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.TailEnd>(), model, diffs, objName, propName);
   }
   
-  private static void SetTailEnd(DXD.Underline openXmlElement, DMD.LineEndPropertiesType? value)
+  private static void SetTailEnd(DXD.Underline openXmlElement, DMD.LineEndPropertiesType? model)
   {
     var itemElement = openXmlElement.GetFirstChild<DXD.TailEnd>();
     if (itemElement != null)
       itemElement.Remove();
-    if (value != null)
+    if (model != null)
     {
-      itemElement = DMXD.LineEndPropertiesTypeConverter.CreateOpenXmlElement<DXD.TailEnd>(value);
+      itemElement = DMXD.LineEndPropertiesTypeConverter.CreateOpenXmlElement<DXD.TailEnd>(model);
       if (itemElement != null)
         openXmlElement.AppendChild(itemElement);
     }
@@ -304,19 +198,19 @@ public static class UnderlineConverter
     return null;
   }
   
-  private static bool CmpLinePropertiesExtensionList(DXD.Underline openXmlElement, DMD.LinePropertiesExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
+  private static bool CmpLinePropertiesExtensionList(DXD.Underline openXmlElement, DMD.LinePropertiesExtensionList? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.LinePropertiesExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.LinePropertiesExtensionList>(), value, diffs, objName, propName);
+    return DMXD.LinePropertiesExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.LinePropertiesExtensionList>(), model, diffs, objName, propName);
   }
   
-  private static void SetLinePropertiesExtensionList(DXD.Underline openXmlElement, DMD.LinePropertiesExtensionList? value)
+  private static void SetLinePropertiesExtensionList(DXD.Underline openXmlElement, DMD.LinePropertiesExtensionList? model)
   {
     var itemElement = openXmlElement.GetFirstChild<DXD.LinePropertiesExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
-    if (value != null)
+    if (model != null)
     {
-      itemElement = DMXD.LinePropertiesExtensionListConverter.CreateOpenXmlElement<DXD.LinePropertiesExtensionList>(value);
+      itemElement = DMXD.LinePropertiesExtensionListConverter.CreateOpenXmlElement<DXD.LinePropertiesExtensionList>(model);
       if (itemElement != null)
         openXmlElement.AppendChild(itemElement);
     }
@@ -326,81 +220,69 @@ public static class UnderlineConverter
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Underline();
-      value.NoFill = GetNoFill(openXmlElement);
-      value.SolidFill = GetSolidFill(openXmlElement);
-      value.GradientFill = GetGradientFill(openXmlElement);
-      value.PatternFill = GetPatternFill(openXmlElement);
-      value.PresetDash = GetPresetDash(openXmlElement);
-      value.CustomDash = GetCustomDash(openXmlElement);
-      value.Round = GetRound(openXmlElement);
-      value.LineJoinBevel = GetLineJoinBevel(openXmlElement);
-      value.Miter = GetMiter(openXmlElement);
-      value.HeadEnd = GetHeadEnd(openXmlElement);
-      value.TailEnd = GetTailEnd(openXmlElement);
-      value.LinePropertiesExtensionList = GetLinePropertiesExtensionList(openXmlElement);
-      return value;
+      var model = new DocumentModel.Drawings.Underline();
+      model.Fill = FillConverter.CreateFillModel(openXmlElement);
+      model.PresetDash = GetPresetDash(openXmlElement);
+      model.CustomDash = GetCustomDash(openXmlElement);
+      model.Round = GetRound(openXmlElement);
+      model.LineJoinBevel = GetLineJoinBevel(openXmlElement);
+      model.Miter = GetMiter(openXmlElement);
+      model.HeadEnd = GetHeadEnd(openXmlElement);
+      model.TailEnd = GetTailEnd(openXmlElement);
+      model.LinePropertiesExtensionList = GetLinePropertiesExtensionList(openXmlElement);
+      return model;
     }
     return null;
   }
   
-  public static bool CompareModelElement(DXD.Underline? openXmlElement, DMD.Underline? value, DiffList? diffs = null, string? objName = null, string? propName = null)
+  public static bool CompareModelElement(DXD.Underline? openXmlElement, DMD.Underline? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpNoFill(openXmlElement, value.NoFill, diffs, objName, propName))
+      if (!FillConverter.CompareFillModel(openXmlElement, model.Fill, diffs, objName, propName))
         ok = false;
-      if (!CmpSolidFill(openXmlElement, value.SolidFill, diffs, objName, propName))
+      if (!CmpPresetDash(openXmlElement, model.PresetDash, diffs, objName, propName))
         ok = false;
-      if (!CmpGradientFill(openXmlElement, value.GradientFill, diffs, objName, propName))
+      if (!CmpCustomDash(openXmlElement, model.CustomDash, diffs, objName, propName))
         ok = false;
-      if (!CmpPatternFill(openXmlElement, value.PatternFill, diffs, objName, propName))
+      if (!CmpRound(openXmlElement, model.Round, diffs, objName, propName))
         ok = false;
-      if (!CmpPresetDash(openXmlElement, value.PresetDash, diffs, objName, propName))
+      if (!CmpLineJoinBevel(openXmlElement, model.LineJoinBevel, diffs, objName, propName))
         ok = false;
-      if (!CmpCustomDash(openXmlElement, value.CustomDash, diffs, objName, propName))
+      if (!CmpMiter(openXmlElement, model.Miter, diffs, objName, propName))
         ok = false;
-      if (!CmpRound(openXmlElement, value.Round, diffs, objName, propName))
+      if (!CmpHeadEnd(openXmlElement, model.HeadEnd, diffs, objName, propName))
         ok = false;
-      if (!CmpLineJoinBevel(openXmlElement, value.LineJoinBevel, diffs, objName, propName))
+      if (!CmpTailEnd(openXmlElement, model.TailEnd, diffs, objName, propName))
         ok = false;
-      if (!CmpMiter(openXmlElement, value.Miter, diffs, objName, propName))
-        ok = false;
-      if (!CmpHeadEnd(openXmlElement, value.HeadEnd, diffs, objName, propName))
-        ok = false;
-      if (!CmpTailEnd(openXmlElement, value.TailEnd, diffs, objName, propName))
-        ok = false;
-      if (!CmpLinePropertiesExtensionList(openXmlElement, value.LinePropertiesExtensionList, diffs, objName, propName))
+      if (!CmpLinePropertiesExtensionList(openXmlElement, model.LinePropertiesExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.Underline value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.Underline model)
     where OpenXmlElementType: DXD.Underline, new()
   {
     var openXmlElement = new OpenXmlElementType();
-    UpdateOpenXmlElement(openXmlElement, value);
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXD.Underline openXmlElement, DMD.Underline value)
+  public static void UpdateOpenXmlElement(DXD.Underline openXmlElement, DMD.Underline model)
   {
-    SetNoFill(openXmlElement, value?.NoFill);
-    SetSolidFill(openXmlElement, value?.SolidFill);
-    SetGradientFill(openXmlElement, value?.GradientFill);
-    SetPatternFill(openXmlElement, value?.PatternFill);
-    SetPresetDash(openXmlElement, value?.PresetDash);
-    SetCustomDash(openXmlElement, value?.CustomDash);
-    SetRound(openXmlElement, value?.Round);
-    SetLineJoinBevel(openXmlElement, value?.LineJoinBevel);
-    SetMiter(openXmlElement, value?.Miter);
-    SetHeadEnd(openXmlElement, value?.HeadEnd);
-    SetTailEnd(openXmlElement, value?.TailEnd);
-    SetLinePropertiesExtensionList(openXmlElement, value?.LinePropertiesExtensionList);
+    FillConverter.UpdateOpenXmlFillElement(openXmlElement, model.Fill);
+    SetPresetDash(openXmlElement, model.PresetDash);
+    SetCustomDash(openXmlElement, model.CustomDash);
+    SetRound(openXmlElement, model.Round);
+    SetLineJoinBevel(openXmlElement, model.LineJoinBevel);
+    SetMiter(openXmlElement, model.Miter);
+    SetHeadEnd(openXmlElement, model.HeadEnd);
+    SetTailEnd(openXmlElement, model.TailEnd);
+    SetLinePropertiesExtensionList(openXmlElement, model.LinePropertiesExtensionList);
   }
 }

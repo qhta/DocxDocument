@@ -353,7 +353,7 @@
             <param name="shown">If unequal element were shown</param>
             <returns>true if both elements are equal</returns>
         </member>
-        <member name="M:Qhta.TestHelper.XmlFileComparer.TryCreateDictionary(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},System.Collections.Generic.Dictionary{System.String,System.Xml.Linq.XElement}@)">
+        <member name="M:Qhta.TestHelper.XmlFileComparer.TryCreateDictionary(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},System.Collections.Generic.SortedDictionary{System.String,System.Xml.Linq.XElement}@)">
             <summary>
             Creates dictionary of elements using element names as keys.
             Returs true if, and only if, all elements have unique names.
@@ -362,7 +362,7 @@
             <param name="itemsDictionary">Output dictionary of XElements</param>
             <returns></returns>
         </member>
-        <member name="M:Qhta.TestHelper.XmlFileComparer.CompareXmlElements(System.Xml.Linq.XElement,System.Xml.Linq.XElement,System.Collections.Generic.Dictionary{System.String,System.Xml.Linq.XElement},System.Collections.Generic.Dictionary{System.String,System.Xml.Linq.XElement},System.Boolean,System.Boolean@)">
+        <member name="M:Qhta.TestHelper.XmlFileComparer.CompareXmlElements(System.Xml.Linq.XElement,System.Xml.Linq.XElement,System.Collections.Generic.SortedDictionary{System.String,System.Xml.Linq.XElement},System.Collections.Generic.SortedDictionary{System.String,System.Xml.Linq.XElement},System.Boolean,System.Boolean@)">
             <summary>
             Compares dictionaries of items of recElement and expElement
             </summary>

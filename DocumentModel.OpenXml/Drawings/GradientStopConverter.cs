@@ -242,15 +242,14 @@ public static class GradientStopConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.GradientStop value)
-    where OpenXmlElementType: DXD.GradientStop, new()
+  public static DXD.GradientStop CreateOpenXmlElement(DMD.GradientStop value)
   {
-    var openXmlElement = new OpenXmlElementType();
+    var openXmlElement = new DXD.GradientStop();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXD.GradientStop openXmlElement, DMD.GradientStop value)
+  public static bool UpdateOpenXmlElement(DXD.GradientStop openXmlElement, DMD.GradientStop value)
   {
     SetPosition(openXmlElement, value?.Position);
     SetRgbColorModelPercentage(openXmlElement, value?.RgbColorModelPercentage);
@@ -259,5 +258,6 @@ public static class GradientStopConverter
     SetSystemColor(openXmlElement, value?.SystemColor);
     SetSchemeColor(openXmlElement, value?.SchemeColor);
     SetPresetColor(openXmlElement, value?.PresetColor);
+    return true;
   }
 }
