@@ -198,15 +198,14 @@ public static class BlipFillConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.BlipFill value)
-    where OpenXmlElementType: DXD.BlipFill, new()
+  public static DXD.BlipFill CreateOpenXmlElement(DMD.BlipFill value)
   {
-    var openXmlElement = new OpenXmlElementType();
+    var openXmlElement = new DXD.BlipFill();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXD.BlipFill openXmlElement, DMD.BlipFill value)
+  public static bool UpdateOpenXmlElement(DXD.BlipFill openXmlElement, DMD.BlipFill value)
   {
     SetDpi(openXmlElement, value?.Dpi);
     SetRotateWithShape(openXmlElement, value?.RotateWithShape);
@@ -214,5 +213,6 @@ public static class BlipFillConverter
     SetSourceRectangle(openXmlElement, value?.SourceRectangle);
     SetTile(openXmlElement, value?.Tile);
     SetStretch(openXmlElement, value?.Stretch);
+    return true;
   }
 }

@@ -36,7 +36,7 @@ public class TestNumbering : TestBase
     var ok = true;
     DMW.Document document;
     #region test read
-    WriteLine($"Testing read properties of: {filename}");
+    WriteLine($"Testing read numbering of: {filename}");
     using (var reader = new DocxReader(filename))
     {
       document = reader.GetDocument(PartsMask.NumberingDefinitions);
@@ -47,6 +47,7 @@ public class TestNumbering : TestBase
       if (origNumbering != null)
       {
         var diffs = new DiffList();
+        diffs.AddDiff += Diffs_AddDiff;
         ok = DMXW.NumberingConverter.CompareModelElement(origNumbering, modelNumbering, diffs, null, null);
         if (!ok && showDetails)
         {
@@ -121,13 +122,13 @@ public class TestNumbering : TestBase
         ok = TestDirectories(filename + ".unzip", newFilename + ".unzip", showDetails);
         #endregion
 
-        //if (ok && openWord)
-        //{
-        //  #region openWord
-        //  var processStartInfo = new ProcessStartInfo("C:\\Program Files\\Microsoft Office\\root\\Office16\\WINWORD.EXE", "\"" + newFilename + "\"");
-        //  Process.Start(processStartInfo);
-        //  #endregion
-        //}
+        if (ok && openWord)
+        {
+          #region openWord
+          var processStartInfo = new ProcessStartInfo("C:\\Program Files\\Microsoft Office\\root\\Office16\\WINWORD.EXE", "\"" + newFilename + "\"");
+          Process.Start(processStartInfo);
+          #endregion
+        }
       }
     }
     return ok;

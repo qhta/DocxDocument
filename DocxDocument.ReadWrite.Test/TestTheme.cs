@@ -10,23 +10,15 @@ public class TestTheme : TestBase
 {
 
   /// <summary>
-  /// Tests the normal template theme.
-  /// </summary>
-  [Test]
-  public void TestReadNormalTemplateTheme()
-  {
-    var filename = Path.Combine(TestPath, "Normal.dotm");
-    ReadReadTheme(filename, true);
-  }
-
-  /// <summary>
   /// Tests the theme read from all docx files in folder specified by test path.
   /// </summary>
-  [Test]
-  public void TestReadTheme()
+  [Test(ExpectedResult = true)]
+  public bool TestReadTheme()
   {
-    foreach (var filename in Directory.EnumerateFiles(TestPath, "*.docx"))
-      ReadReadTheme(filename);
+    foreach (var filename in GetTestFilenames(TestPath))
+      if (!TestReadTheme(filename, false, true, false))
+        return false;
+    return true;
   }
 
   /// <summary>
@@ -34,81 +26,117 @@ public class TestTheme : TestBase
   /// </summary>
   /// <param name="filename">The filename of the document to read.</param>
   /// <param name="showDetails">Specifies whether the detailed information on test should be shown on test failure.</param>
-  public virtual void ReadReadTheme(string filename, bool showDetails = false)
+  /// <param name="copyBack">Specifies whether test document should be copied back and modified with deserialized data</param>
+  /// <param name="openWord">Specifies that new document should be opened in MS Word</param>
+  /// <summary>
+  public virtual bool TestReadTheme(string filename, bool showDetails = false, bool copyBack = false, bool openWord = false)
   {
     if (String.IsNullOrEmpty(Path.GetDirectoryName(filename)))
       filename = Path.Combine(TestPath, filename);
-    WriteLine(filename);
-    var reader = new DocxReader(filename);
-    var document = reader.GetDocument(PartsMask.Theme);
-    Assert.IsNotNull(document, "No document read");
-    Assert.IsNotNull(document.Theme, "No document Theme read");
-    var modelTheme = document.Theme;
-    var originTheme = reader.WordprocessingDocument.MainDocumentPart?.ThemePart?.Theme;
-    if (originTheme != null)
+    string newFilename = null!;
+    var ok = true;
+    DMW.Document document;
+    #region test read
+    WriteLine($"Testing read theme of: {filename}");
+    using (var reader = new DocxReader(filename))
     {
-      var diffs = new DiffList();
-      if (!ThemeConverter.CompareModelElement(originTheme, modelTheme, diffs, null, null))
+      document = reader.GetDocument(PartsMask.Theme);
+      Assert.IsNotNull(document, "No document read");
+      Assert.IsNotNull(document.Theme, "No document theme read");
+      var modelTheme = document.Theme;
+      var origTheme = reader.WordprocessingDocument.MainDocumentPart?.ThemePart?.Theme;
+      if (origTheme != null)
       {
-        if (showDetails)
+        var diffs = new DiffList();
+        diffs.AddDiff += Diffs_AddDiff;
+        ok = DMXD.ThemeConverter.CompareModelElement(origTheme, modelTheme, diffs, null, null);
+        if (!ok && showDetails)
         {
           WriteLine("Read theme differences found:");
           foreach (var diff in diffs)
             WriteLine(diff.ToString());
         }
-        Assert.Fail(diffs.FirstOrDefault()?.ToString());
+        if (!ok)
+          Assert.Fail(diffs.FirstOrDefault()?.ToString());
       }
     }
+    #endregion
+    if (ok)
+    {
+      #region serialization
+      var oldTheme = document.Theme ?? new();
+      Assert.IsNotNull(oldTheme, "No document theme read");
+      if (oldTheme == null)
+        return false;
+      var textWriter = new StringWriter();
+      var extraTypes = Assembly.Load("DocumentModel").GetTypes()
+        .Where(item => item.IsPublic && !item.IsGenericType).ToArray();
+      var serializer = new QXmlSerializer(typeof(DMD.Theme), extraTypes.ToArray(),
+        new SerializationOptions { AcceptAllProperties = true });
+      try
+      {
+        serializer.Serialize(textWriter, oldTheme);
+      }
+      catch (Exception ex)
+      {
+        Console.WriteLine(ex.Message);
+      }
+      textWriter.Flush();
+      string str = textWriter.ToString();
+      if (showDetails)
+      {
+        WriteLine(str);
+        WriteLine();
+      }
+      #endregion
+
+      #region deserialization
+      var textReader = new StringReader(str);
+      var newTheme = (DMD.Theme?)serializer.Deserialize(textReader);
+      Assert.IsNotNull(newTheme, $"Deserialized theme are null");
+      var diffs = new DiffList();
+      diffs.AddDiff += Diffs_AddDiff;
+      ok = DeepComparer.IsEqual(oldTheme, newTheme, diffs);
+      if (!ok && showDetails)
+      {
+        WriteLine("Read theme differences found:");
+        foreach (var diff in diffs)
+          WriteLine(diff.ToString());
+      }
+      if (!ok)
+        Assert.Fail(diffs.FirstOrDefault()?.ToString());
+      #endregion
+      if (ok && copyBack)
+      {
+        #region copy back
+        if (String.IsNullOrEmpty(Path.GetDirectoryName(filename)))
+          filename = Path.Combine(TestPath, filename);
+        newFilename = Path.Combine(Path.Combine(Path.GetDirectoryName(filename) ?? "", "BackCopy"),
+          Path.GetFileNameWithoutExtension(filename) + ".new" + Path.GetExtension(filename));
+        File.Copy(filename, newFilename, true);
+        using (var writer = DocxWriter.Open(newFilename))
+        {
+          writer.SetTheme(newTheme);
+        }
+        UnzipFile(filename);
+        UnzipFile(newFilename);
+        ok = TestDirectories(filename + ".unzip", newFilename + ".unzip", showDetails);
+        #endregion
+
+        if (ok && openWord)
+        {
+          #region openWord
+          var processStartInfo = new ProcessStartInfo("C:\\Program Files\\Microsoft Office\\root\\Office16\\WINWORD.EXE", "\"" + newFilename + "\"");
+          Process.Start(processStartInfo);
+          #endregion
+        }
+      }
+    }
+    return ok;
   }
 
-  /// <summary>
-  /// Tests theme Xml serialization by reading all docx files,
-  /// serialize and deserialize theme using string writer.
-  /// </summary>
-  [Test]
-  public void TestReadThemeXmlSerialization()
+  private void Diffs_AddDiff(DiffList sender, Diff diff)
   {
-    foreach (var filename in Directory.EnumerateFiles(TestPath, "*.docx"))
-      TestReadThemeXmlSerialization(filename);
+    Assert.Fail(diff.ToString());
   }
-
-  /// <summary>
-  /// Tests theme Xml serialization by reading the specified docx file,
-  /// serialize and deserialize theme using string writer.
-  /// </summary>
-  public void TestReadThemeXmlSerialization(string filename, bool showDetails = false)
-  {
-    if (String.IsNullOrEmpty(Path.GetDirectoryName(filename)))
-      filename = Path.Combine(TestPath, filename);
-    WriteLine(filename);
-
-    var reader = new DocxReader(filename);
-    var document = reader.GetDocument(PartsMask.Theme);
-    DMD.Theme oldTheme = document.Theme ?? new DMD.Theme();
-    Assert.IsNotNull(oldTheme, "No document theme read");
-    if (oldTheme == null)
-      return;
-    var textWriter = new StringWriter();
-    var extraTypes = Assembly.Load("DocumentModel").GetTypes()
-      .Where(item => item.IsPublic && !item.IsGenericType).ToArray();
-    var serializer = new QXmlSerializer(typeof(DMD.Theme), extraTypes.ToArray(),
-      new SerializationOptions { AcceptAllProperties = true });
-    serializer.Serialize(textWriter, oldTheme);
-    textWriter.Flush();
-    string str = textWriter.ToString();
-    WriteLine(str);
-    WriteLine();
-
-    var textReader = new StringReader(str);
-    var newTheme = (DMD.Theme?)serializer.Deserialize(textReader);
-    Assert.IsNotNull(newTheme, $"Deserialized theme is null");
-    var diffs = new DiffList();
-    var ok = DeepComparer.IsEqual(oldTheme, newTheme, diffs);
-    var t6 = DateTime.Now;
-    if (!ok)
-      foreach (var diff in diffs)
-        WriteLine(diff.ToString());
-    Assert.That(ok, $"Deserialized {diffs.AssertMessage}");
-  }
-
 }

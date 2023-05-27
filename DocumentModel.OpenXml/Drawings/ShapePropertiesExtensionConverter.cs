@@ -23,27 +23,27 @@ public static class ShapePropertiesExtensionConverter
     openXmlElement.Uri = StringValueConverter.CreateStringValue(value);
   }
   
-  private static DMD.HiddenFillProperties? GetHiddenFillProperties(DXD.ShapePropertiesExtension openXmlElement)
+  private static DMD.Fill? GetHiddenFillProperties(DXD.ShapePropertiesExtension openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXO10D.HiddenFillProperties>();
     if (element != null)
-      return DMXD.HiddenFillPropertiesConverter.CreateModelElement(element);
+      return FillConverter  .CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpHiddenFillProperties(DXD.ShapePropertiesExtension openXmlElement, DMD.HiddenFillProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
+  private static bool CmpHiddenFillProperties(DXD.ShapePropertiesExtension openXmlElement, DMD.Fill? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.HiddenFillPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10D.HiddenFillProperties>(), value, diffs, objName, propName);
+    return FillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10D.HiddenFillProperties>(), value, diffs, objName, propName);
   }
   
-  private static void SetHiddenFillProperties(DXD.ShapePropertiesExtension openXmlElement, DMD.HiddenFillProperties? value)
+  private static void SetHiddenFillProperties(DXD.ShapePropertiesExtension openXmlElement, DMD.Fill? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXO10D.HiddenFillProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXD.HiddenFillPropertiesConverter.CreateOpenXmlElement<DXO10D.HiddenFillProperties>(value);
+      itemElement = FillConverter.CreateOpenXmlElement<DXO10D.HiddenFillProperties>(value);
       if (itemElement != null)
         openXmlElement.AppendChild(itemElement);
     }

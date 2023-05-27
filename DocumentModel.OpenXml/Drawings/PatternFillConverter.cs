@@ -112,18 +112,18 @@ public static class PatternFillConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.PatternFill value)
-    where OpenXmlElementType: DXD.PatternFill, new()
+  public static DXD.PatternFill CreateOpenXmlElement(DMD.PatternFill value)
   {
-    var openXmlElement = new OpenXmlElementType();
+    var openXmlElement = new DXD.PatternFill();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXD.PatternFill openXmlElement, DMD.PatternFill value)
+  public static bool UpdateOpenXmlElement(DXD.PatternFill openXmlElement, DMD.PatternFill value)
   {
     SetPreset(openXmlElement, value?.Preset);
     SetForegroundColor(openXmlElement, value?.ForegroundColor);
     SetBackgroundColor(openXmlElement, value?.BackgroundColor);
+    return true;
   }
 }

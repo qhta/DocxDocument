@@ -61,7 +61,6 @@ public static class ParagraphPropertiesConverter
   }
   #endregion
 
-
   #region ParagraphPropertiesChange conversion.
   public static DMW.ParagraphPropertiesChange? GetParagraphPropertiesChange(DX.OpenXmlCompositeElement openXmlElement)
   {

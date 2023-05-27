@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Format Scheme.
@@ -29,5 +28,5 @@ public class FormatScheme: ModelElement
   /// <summary>
   ///   Background Fill Style List.
   /// </summary>
-  public BackgroundFillStyleList? BackgroundFillStyleList { get; set; }
+  public FillStyleList? BackgroundFillStyleList { get; set; }
 }

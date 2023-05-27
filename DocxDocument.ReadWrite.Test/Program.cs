@@ -67,8 +67,7 @@ internal class Program
   {
     var testInstance = new TestTheme();
     testInstance.Setup();
-    testInstance.TestReadTheme();
-    testInstance.TestReadThemeXmlSerialization();
+    testInstance.TestReadTheme("BackgroundColor.docx", true, true, true);
     Console.WriteLine("\nTest passed");
   }
 

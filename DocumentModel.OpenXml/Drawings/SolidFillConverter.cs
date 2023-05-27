@@ -219,15 +219,14 @@ public static class SolidFillConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.SolidFill value)
-    where OpenXmlElementType: DXD.SolidFill, new()
+  public static DXD.SolidFill CreateOpenXmlElement(DMD.SolidFill value)
   {
-    var openXmlElement = new OpenXmlElementType();
+    var openXmlElement = new DXD.SolidFill();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXD.SolidFill openXmlElement, DMD.SolidFill value)
+  public static bool UpdateOpenXmlElement(DXD.SolidFill openXmlElement, DMD.SolidFill value)
   {
     SetRgbColorModelPercentage(openXmlElement, value?.RgbColorModelPercentage);
     SetRgbColorModelHex(openXmlElement, value?.RgbColorModelHex);
@@ -235,5 +234,6 @@ public static class SolidFillConverter
     SetSystemColor(openXmlElement, value?.SystemColor);
     SetSchemeColor(openXmlElement, value?.SchemeColor);
     SetPresetColor(openXmlElement, value?.PresetColor);
+    return true;
   }
 }

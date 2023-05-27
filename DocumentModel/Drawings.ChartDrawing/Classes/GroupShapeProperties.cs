@@ -16,17 +16,7 @@ public class GroupShapeProperties: ModelElement
   /// </summary>
   public TransformGroup? TransformGroup { get; set; }
 
-  public bool? NoFill { get; set; }
-
-  public SolidFill? SolidFill { get; set; }
-
-  public GradientFill? GradientFill { get; set; }
-
-  public Drawings.BlipFill? BlipFill { get; set; }
-
-  public PatternFill? PatternFill { get; set; }
-
-  public bool? GroupFill { get; set; }
+  public Fill? Fill { get; set; }
 
   public EffectList? EffectList { get; set; }
 

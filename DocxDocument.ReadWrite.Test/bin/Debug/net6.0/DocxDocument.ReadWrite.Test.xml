@@ -623,35 +623,12 @@
             </summary>
             <seealso cref="T:DocxDocument.ReadWrite.Test.TestBase" />
         </member>
-        <member name="M:DocxDocument.ReadWrite.Test.TestTheme.TestReadNormalTemplateTheme">
-            <summary>
-            Tests the normal template theme.
-            </summary>
-        </member>
         <member name="M:DocxDocument.ReadWrite.Test.TestTheme.TestReadTheme">
             <summary>
             Tests the theme read from all docx files in folder specified by test path.
             </summary>
         </member>
-        <member name="M:DocxDocument.ReadWrite.Test.TestTheme.ReadReadTheme(System.String,System.Boolean)">
-            <summary>
-            Tests the theme read from the specified docx file.
-            </summary>
-            <param name="filename">The filename of the document to read.</param>
-            <param name="showDetails">Specifies whether the detailed information on test should be shown on test failure.</param>
-        </member>
-        <member name="M:DocxDocument.ReadWrite.Test.TestTheme.TestReadThemeXmlSerialization">
-            <summary>
-            Tests theme Xml serialization by reading all docx files,
-            serialize and deserialize theme using string writer.
-            </summary>
-        </member>
-        <member name="M:DocxDocument.ReadWrite.Test.TestTheme.TestReadThemeXmlSerialization(System.String,System.Boolean)">
-            <summary>
-            Tests theme Xml serialization by reading the specified docx file,
-            serialize and deserialize theme using string writer.
-            </summary>
-        </member>
+        <!-- Badly formed XML comment ignored for member "M:DocxDocument.ReadWrite.Test.TestTheme.TestReadTheme(System.String,System.Boolean,System.Boolean,System.Boolean)" -->
         <member name="T:DocxDocument.ReadWrite.Test.Numbers">
             <summary>
             TestNumbers for variants
