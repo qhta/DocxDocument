@@ -143,19 +143,19 @@ public static class EffectStyleConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.EffectStyle value)
-    where OpenXmlElementType: DXD.EffectStyle, new()
+  public static DXD.EffectStyle CreateOpenXmlElement(DMD.EffectStyle value)
   {
-    var openXmlElement = new OpenXmlElementType();
+    var openXmlElement = new DXD.EffectStyle();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXD.EffectStyle openXmlElement, DMD.EffectStyle value)
+  public static bool UpdateOpenXmlElement(DXD.EffectStyle openXmlElement, DMD.EffectStyle value)
   {
     SetEffectList(openXmlElement, value?.EffectList);
     SetEffectDag(openXmlElement, value?.EffectDag);
     SetScene3DType(openXmlElement, value?.Scene3DType);
     SetShape3DType(openXmlElement, value?.Shape3DType);
+    return true;
   }
 }
