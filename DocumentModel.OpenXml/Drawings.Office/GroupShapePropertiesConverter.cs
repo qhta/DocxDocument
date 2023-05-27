@@ -52,166 +52,6 @@ public static class GroupShapePropertiesConverter
     }
   }
   
-  private static Boolean? GetNoFill(DXOD.GroupShapeProperties openXmlElement)
-  {
-    return openXmlElement.GetFirstChild<DXD.NoFill>() != null;
-  }
-  
-  private static bool CmpNoFill(DXOD.GroupShapeProperties openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
-  {
-    var val = openXmlElement.GetFirstChild<DXD.NoFill>() != null;
-    if (val == value) return true;
-    diffs?.Add(objName, "DXD.NoFill", val, value);
-    return false;
-  }
-  
-  private static void SetNoFill(DXOD.GroupShapeProperties openXmlElement, Boolean? value)
-  {
-    if (value == false)
-    {
-      var itemElement = openXmlElement.GetFirstChild<DXD.NoFill>();
-      if (itemElement != null)
-        itemElement.Remove();
-    }
-    if (value == true)
-    {
-      var itemElement = new DXD.NoFill();
-      openXmlElement.AppendChild(itemElement);
-    }
-  }
-  
-  private static DMD.SolidFill? GetSolidFill(DXOD.GroupShapeProperties openXmlElement)
-  {
-    var element = openXmlElement?.GetFirstChild<DXD.SolidFill>();
-    if (element != null)
-      return DMXD.SolidFillConverter.CreateModelElement(element);
-    return null;
-  }
-  
-  private static bool CmpSolidFill(DXOD.GroupShapeProperties openXmlElement, DMD.SolidFill? value, DiffList? diffs = null, string? objName = null, string? propName = null)
-  {
-    return DMXD.SolidFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.SolidFill>(), value, diffs, objName, propName);
-  }
-  
-  private static void SetSolidFill(DXOD.GroupShapeProperties openXmlElement, DMD.SolidFill? value)
-  {
-    var itemElement = openXmlElement.GetFirstChild<DXD.SolidFill>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = DMXD.SolidFillConverter.CreateOpenXmlElement<DXD.SolidFill>(value);
-      if (itemElement != null)
-        openXmlElement.AppendChild(itemElement);
-    }
-  }
-  
-  private static DMD.GradientFill? GetGradientFill(DXOD.GroupShapeProperties openXmlElement)
-  {
-    var element = openXmlElement?.GetFirstChild<DXD.GradientFill>();
-    if (element != null)
-      return DMXD.GradientFillConverter.CreateModelElement(element);
-    return null;
-  }
-  
-  private static bool CmpGradientFill(DXOD.GroupShapeProperties openXmlElement, DMD.GradientFill? value, DiffList? diffs = null, string? objName = null, string? propName = null)
-  {
-    return DMXD.GradientFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.GradientFill>(), value, diffs, objName, propName);
-  }
-  
-  private static void SetGradientFill(DXOD.GroupShapeProperties openXmlElement, DMD.GradientFill? value)
-  {
-    var itemElement = openXmlElement.GetFirstChild<DXD.GradientFill>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = DMXD.GradientFillConverter.CreateOpenXmlElement<DXD.GradientFill>(value);
-      if (itemElement != null)
-        openXmlElement.AppendChild(itemElement);
-    }
-  }
-  
-  private static DMD.BlipFill? GetBlipFill(DXOD.GroupShapeProperties openXmlElement)
-  {
-    var element = openXmlElement?.GetFirstChild<DXD.BlipFill>();
-    if (element != null)
-      return DMXD.BlipFillConverter.CreateModelElement(element);
-    return null;
-  }
-  
-  private static bool CmpBlipFill(DXOD.GroupShapeProperties openXmlElement, DMD.BlipFill? value, DiffList? diffs = null, string? objName = null, string? propName = null)
-  {
-    return DMXD.BlipFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.BlipFill>(), value, diffs, objName, propName);
-  }
-  
-  private static void SetBlipFill(DXOD.GroupShapeProperties openXmlElement, DMD.BlipFill? value)
-  {
-    var itemElement = openXmlElement.GetFirstChild<DXD.BlipFill>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = DMXD.BlipFillConverter.CreateOpenXmlElement<DXD.BlipFill>(value);
-      if (itemElement != null)
-        openXmlElement.AppendChild(itemElement);
-    }
-  }
-  
-  private static DMD.PatternFill? GetPatternFill(DXOD.GroupShapeProperties openXmlElement)
-  {
-    var element = openXmlElement?.GetFirstChild<DXD.PatternFill>();
-    if (element != null)
-      return DMXD.PatternFillConverter.CreateModelElement(element);
-    return null;
-  }
-  
-  private static bool CmpPatternFill(DXOD.GroupShapeProperties openXmlElement, DMD.PatternFill? value, DiffList? diffs = null, string? objName = null, string? propName = null)
-  {
-    return DMXD.PatternFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.PatternFill>(), value, diffs, objName, propName);
-  }
-  
-  private static void SetPatternFill(DXOD.GroupShapeProperties openXmlElement, DMD.PatternFill? value)
-  {
-    var itemElement = openXmlElement.GetFirstChild<DXD.PatternFill>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = DMXD.PatternFillConverter.CreateOpenXmlElement<DXD.PatternFill>(value);
-      if (itemElement != null)
-        openXmlElement.AppendChild(itemElement);
-    }
-  }
-  
-  private static Boolean? GetGroupFill(DXOD.GroupShapeProperties openXmlElement)
-  {
-    return openXmlElement.GetFirstChild<DXD.GroupFill>() != null;
-  }
-  
-  private static bool CmpGroupFill(DXOD.GroupShapeProperties openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
-  {
-    var val = openXmlElement.GetFirstChild<DXD.GroupFill>() != null;
-    if (val == value) return true;
-    diffs?.Add(objName, "DXD.GroupFill", val, value);
-    return false;
-  }
-  
-  private static void SetGroupFill(DXOD.GroupShapeProperties openXmlElement, Boolean? value)
-  {
-    if (value == false)
-    {
-      var itemElement = openXmlElement.GetFirstChild<DXD.GroupFill>();
-      if (itemElement != null)
-        itemElement.Remove();
-    }
-    if (value == true)
-    {
-      var itemElement = new DXD.GroupFill();
-      openXmlElement.AppendChild(itemElement);
-    }
-  }
-  
   private static DMD.EffectList? GetEffectList(DXOD.GroupShapeProperties openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXD.EffectList>();
@@ -316,85 +156,65 @@ public static class GroupShapePropertiesConverter
     }
   }
   
-  public static DocumentModel.Drawings.Office.GroupShapeProperties? CreateModelElement(DXOD.GroupShapeProperties? openXmlElement)
+  public static DMDO.GroupShapeProperties? CreateModelElement(DXOD.GroupShapeProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Office.GroupShapeProperties();
-      value.BlackWhiteMode = GetBlackWhiteMode(openXmlElement);
-      value.TransformGroup = GetTransformGroup(openXmlElement);
-      value.NoFill = GetNoFill(openXmlElement);
-      value.SolidFill = GetSolidFill(openXmlElement);
-      value.GradientFill = GetGradientFill(openXmlElement);
-      value.BlipFill = GetBlipFill(openXmlElement);
-      value.PatternFill = GetPatternFill(openXmlElement);
-      value.GroupFill = GetGroupFill(openXmlElement);
-      value.EffectList = GetEffectList(openXmlElement);
-      value.EffectDag = GetEffectDag(openXmlElement);
-      value.Scene3DType = GetScene3DType(openXmlElement);
-      value.ExtensionList = GetExtensionList(openXmlElement);
-      return value;
+      var model = new DMDO.GroupShapeProperties();
+      model.BlackWhiteMode = GetBlackWhiteMode(openXmlElement);
+      model.TransformGroup = GetTransformGroup(openXmlElement);
+      model.Fill = FillConverter.CreateFillModel(openXmlElement);
+      model.EffectList = GetEffectList(openXmlElement);
+      model.EffectDag = GetEffectDag(openXmlElement);
+      model.Scene3DType = GetScene3DType(openXmlElement);
+      model.ExtensionList = GetExtensionList(openXmlElement);
+      return model;
     }
     return null;
   }
   
-  public static bool CompareModelElement(DXOD.GroupShapeProperties? openXmlElement, DMDO.GroupShapeProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
+  public static bool CompareModelElement(DXOD.GroupShapeProperties? openXmlElement, DMDO.GroupShapeProperties? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpBlackWhiteMode(openXmlElement, value.BlackWhiteMode, diffs, objName, propName))
+      if (!CmpBlackWhiteMode(openXmlElement, model.BlackWhiteMode, diffs, objName, propName))
         ok = false;
-      if (!CmpTransformGroup(openXmlElement, value.TransformGroup, diffs, objName, propName))
+      if (!CmpTransformGroup(openXmlElement, model.TransformGroup, diffs, objName, propName))
         ok = false;
-      if (!CmpNoFill(openXmlElement, value.NoFill, diffs, objName, propName))
+      if (!FillConverter.CompareFillModel(openXmlElement, model.Fill, diffs, objName, propName))
         ok = false;
-      if (!CmpSolidFill(openXmlElement, value.SolidFill, diffs, objName, propName))
+      if (!CmpEffectList(openXmlElement, model.EffectList, diffs, objName, propName))
         ok = false;
-      if (!CmpGradientFill(openXmlElement, value.GradientFill, diffs, objName, propName))
+      if (!CmpEffectDag(openXmlElement, model.EffectDag, diffs, objName, propName))
         ok = false;
-      if (!CmpBlipFill(openXmlElement, value.BlipFill, diffs, objName, propName))
+      if (!CmpScene3DType(openXmlElement, model.Scene3DType, diffs, objName, propName))
         ok = false;
-      if (!CmpPatternFill(openXmlElement, value.PatternFill, diffs, objName, propName))
-        ok = false;
-      if (!CmpGroupFill(openXmlElement, value.GroupFill, diffs, objName, propName))
-        ok = false;
-      if (!CmpEffectList(openXmlElement, value.EffectList, diffs, objName, propName))
-        ok = false;
-      if (!CmpEffectDag(openXmlElement, value.EffectDag, diffs, objName, propName))
-        ok = false;
-      if (!CmpScene3DType(openXmlElement, value.Scene3DType, diffs, objName, propName))
-        ok = false;
-      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName, propName))
+      if (!CmpExtensionList(openXmlElement, model.ExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDO.GroupShapeProperties value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDO.GroupShapeProperties model)
     where OpenXmlElementType: DXOD.GroupShapeProperties, new()
   {
     var openXmlElement = new OpenXmlElementType();
-    UpdateOpenXmlElement(openXmlElement, value);
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXOD.GroupShapeProperties openXmlElement, DMDO.GroupShapeProperties value)
+  public static void UpdateOpenXmlElement(DXOD.GroupShapeProperties openXmlElement, DMDO.GroupShapeProperties model)
   {
-    SetBlackWhiteMode(openXmlElement, value?.BlackWhiteMode);
-    SetTransformGroup(openXmlElement, value?.TransformGroup);
-    SetNoFill(openXmlElement, value?.NoFill);
-    SetSolidFill(openXmlElement, value?.SolidFill);
-    SetGradientFill(openXmlElement, value?.GradientFill);
-    SetBlipFill(openXmlElement, value?.BlipFill);
-    SetPatternFill(openXmlElement, value?.PatternFill);
-    SetGroupFill(openXmlElement, value?.GroupFill);
-    SetEffectList(openXmlElement, value?.EffectList);
-    SetEffectDag(openXmlElement, value?.EffectDag);
-    SetScene3DType(openXmlElement, value?.Scene3DType);
-    SetExtensionList(openXmlElement, value?.ExtensionList);
+    SetBlackWhiteMode(openXmlElement, model.BlackWhiteMode);
+    SetTransformGroup(openXmlElement, model.TransformGroup);
+    FillConverter.UpdateOpenXmlFillElement(openXmlElement, model.Fill);
+    SetEffectList(openXmlElement, model.EffectList);
+    SetEffectDag(openXmlElement, model.EffectDag);
+    SetScene3DType(openXmlElement, model.Scene3DType);
+    SetExtensionList(openXmlElement, model.ExtensionList);
   }
 }

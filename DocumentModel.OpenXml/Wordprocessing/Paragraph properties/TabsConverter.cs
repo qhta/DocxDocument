@@ -1,10 +1,11 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the Tabs Class.
+/// <see cref="Tabs"/> class from/to OpenXml converter.
 /// </summary>
 public static class TabsConverter
 {
+  #region TabStop conversion.
   private static DMW.TabStop? GetTabStop(DXW.TabStop? openXmlElement)
   {
     if (openXmlElement != null)
@@ -26,7 +27,9 @@ public static class TabsConverter
   {
     return DMXW.TabStopConverter.UpdateOpenXmlElement(openXmlElement, value);
   }
+  #endregion
 
+  #region Tabs model conversion.
   public static DMW.Tabs? CreateModelElement(DXW.Tabs? openXmlElement)
   {
     if (openXmlElement != null)
@@ -44,14 +47,11 @@ public static class TabsConverter
   {
     if (openXmlElement != null && model != null)
     {
-      var ok = true;
-      if (!ElementCollectionConverter2<DXW.TabStop, DMW.TabStop>.CompareOpenXmlElementCollection(
+      return ElementCollectionConverter2<DXW.TabStop, DMW.TabStop>.CompareOpenXmlElementCollection(
         openXmlElement.Elements<DXW.TabStop>(),
         model,
         CmpTabStop,
-        diffs, objName, propName))
-         ok = false; 
-      return ok;
+        diffs, objName, propName);
     }
     if (openXmlElement == null && model == null) return true;
     diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
@@ -75,4 +75,5 @@ public static class TabsConverter
       CreateTabStop
       );
   }
+  #endregion
 }

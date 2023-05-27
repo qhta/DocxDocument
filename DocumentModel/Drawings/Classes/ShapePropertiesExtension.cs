@@ -11,7 +11,7 @@ public class ShapePropertiesExtension: ModelElement
   /// </summary>
   public string? Uri { get; set; }
 
-  public HiddenFillProperties? HiddenFillProperties { get; set; }
+  public Fill? HiddenFillProperties { get; set; }
 
   public HiddenLineProperties? HiddenLineProperties { get; set; }
 

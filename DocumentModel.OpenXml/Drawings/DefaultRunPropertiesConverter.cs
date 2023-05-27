@@ -31,166 +31,6 @@ public static class DefaultRunPropertiesConverter
     }
   }
   
-  private static Boolean? GetNoFill(DXD.DefaultRunProperties openXmlElement)
-  {
-    return openXmlElement.GetFirstChild<DXD.NoFill>() != null;
-  }
-  
-  private static bool CmpNoFill(DXD.DefaultRunProperties openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
-  {
-    var val = openXmlElement.GetFirstChild<DXD.NoFill>() != null;
-    if (val == value) return true;
-    diffs?.Add(objName, "DXD.NoFill", val, value);
-    return false;
-  }
-  
-  private static void SetNoFill(DXD.DefaultRunProperties openXmlElement, Boolean? value)
-  {
-    if (value == false)
-    {
-      var itemElement = openXmlElement.GetFirstChild<DXD.NoFill>();
-      if (itemElement != null)
-        itemElement.Remove();
-    }
-    if (value == true)
-    {
-      var itemElement = new DXD.NoFill();
-      openXmlElement.AppendChild(itemElement);
-    }
-  }
-  
-  private static DMD.SolidFill? GetSolidFill(DXD.DefaultRunProperties openXmlElement)
-  {
-    var element = openXmlElement?.GetFirstChild<DXD.SolidFill>();
-    if (element != null)
-      return DMXD.SolidFillConverter.CreateModelElement(element);
-    return null;
-  }
-  
-  private static bool CmpSolidFill(DXD.DefaultRunProperties openXmlElement, DMD.SolidFill? value, DiffList? diffs = null, string? objName = null, string? propName = null)
-  {
-    return DMXD.SolidFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.SolidFill>(), value, diffs, objName, propName);
-  }
-  
-  private static void SetSolidFill(DXD.DefaultRunProperties openXmlElement, DMD.SolidFill? value)
-  {
-    var itemElement = openXmlElement.GetFirstChild<DXD.SolidFill>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = DMXD.SolidFillConverter.CreateOpenXmlElement<DXD.SolidFill>(value);
-      if (itemElement != null)
-        openXmlElement.AppendChild(itemElement);
-    }
-  }
-  
-  private static DMD.GradientFill? GetGradientFill(DXD.DefaultRunProperties openXmlElement)
-  {
-    var element = openXmlElement?.GetFirstChild<DXD.GradientFill>();
-    if (element != null)
-      return DMXD.GradientFillConverter.CreateModelElement(element);
-    return null;
-  }
-  
-  private static bool CmpGradientFill(DXD.DefaultRunProperties openXmlElement, DMD.GradientFill? value, DiffList? diffs = null, string? objName = null, string? propName = null)
-  {
-    return DMXD.GradientFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.GradientFill>(), value, diffs, objName, propName);
-  }
-  
-  private static void SetGradientFill(DXD.DefaultRunProperties openXmlElement, DMD.GradientFill? value)
-  {
-    var itemElement = openXmlElement.GetFirstChild<DXD.GradientFill>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = DMXD.GradientFillConverter.CreateOpenXmlElement<DXD.GradientFill>(value);
-      if (itemElement != null)
-        openXmlElement.AppendChild(itemElement);
-    }
-  }
-  
-  private static DMD.BlipFill? GetBlipFill(DXD.DefaultRunProperties openXmlElement)
-  {
-    var element = openXmlElement?.GetFirstChild<DXD.BlipFill>();
-    if (element != null)
-      return DMXD.BlipFillConverter.CreateModelElement(element);
-    return null;
-  }
-  
-  private static bool CmpBlipFill(DXD.DefaultRunProperties openXmlElement, DMD.BlipFill? value, DiffList? diffs = null, string? objName = null, string? propName = null)
-  {
-    return DMXD.BlipFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.BlipFill>(), value, diffs, objName, propName);
-  }
-  
-  private static void SetBlipFill(DXD.DefaultRunProperties openXmlElement, DMD.BlipFill? value)
-  {
-    var itemElement = openXmlElement.GetFirstChild<DXD.BlipFill>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = DMXD.BlipFillConverter.CreateOpenXmlElement<DXD.BlipFill>(value);
-      if (itemElement != null)
-        openXmlElement.AppendChild(itemElement);
-    }
-  }
-  
-  private static DMD.PatternFill? GetPatternFill(DXD.DefaultRunProperties openXmlElement)
-  {
-    var element = openXmlElement?.GetFirstChild<DXD.PatternFill>();
-    if (element != null)
-      return DMXD.PatternFillConverter.CreateModelElement(element);
-    return null;
-  }
-  
-  private static bool CmpPatternFill(DXD.DefaultRunProperties openXmlElement, DMD.PatternFill? value, DiffList? diffs = null, string? objName = null, string? propName = null)
-  {
-    return DMXD.PatternFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.PatternFill>(), value, diffs, objName, propName);
-  }
-  
-  private static void SetPatternFill(DXD.DefaultRunProperties openXmlElement, DMD.PatternFill? value)
-  {
-    var itemElement = openXmlElement.GetFirstChild<DXD.PatternFill>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = DMXD.PatternFillConverter.CreateOpenXmlElement<DXD.PatternFill>(value);
-      if (itemElement != null)
-        openXmlElement.AppendChild(itemElement);
-    }
-  }
-  
-  private static Boolean? GetGroupFill(DXD.DefaultRunProperties openXmlElement)
-  {
-    return openXmlElement.GetFirstChild<DXD.GroupFill>() != null;
-  }
-  
-  private static bool CmpGroupFill(DXD.DefaultRunProperties openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
-  {
-    var val = openXmlElement.GetFirstChild<DXD.GroupFill>() != null;
-    if (val == value) return true;
-    diffs?.Add(objName, "DXD.GroupFill", val, value);
-    return false;
-  }
-  
-  private static void SetGroupFill(DXD.DefaultRunProperties openXmlElement, Boolean? value)
-  {
-    if (value == false)
-    {
-      var itemElement = openXmlElement.GetFirstChild<DXD.GroupFill>();
-      if (itemElement != null)
-        itemElement.Remove();
-    }
-    if (value == true)
-    {
-      var itemElement = new DXD.GroupFill();
-      openXmlElement.AppendChild(itemElement);
-    }
-  }
-  
   private static DMD.EffectList? GetEffectList(DXD.DefaultRunProperties openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXD.EffectList>();
@@ -351,27 +191,27 @@ public static class DefaultRunPropertiesConverter
     }
   }
   
-  private static DMD.UnderlineFill? GetUnderlineFill(DXD.DefaultRunProperties openXmlElement)
+  private static DMD.Fill? GetUnderlineFill(DXD.DefaultRunProperties openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXD.UnderlineFill>();
     if (element != null)
-      return DMXD.UnderlineFillConverter.CreateModelElement(element);
+      return DMXD.FillConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpUnderlineFill(DXD.DefaultRunProperties openXmlElement, DMD.UnderlineFill? value, DiffList? diffs = null, string? objName = null, string? propName = null)
+  private static bool CmpUnderlineFill(DXD.DefaultRunProperties openXmlElement, DMD.Fill? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.UnderlineFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.UnderlineFill>(), value, diffs, objName, propName);
+    return DMXD.FillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.UnderlineFill>(), value, diffs, objName, propName);
   }
   
-  private static void SetUnderlineFill(DXD.DefaultRunProperties openXmlElement, DMD.UnderlineFill? value)
+  private static void SetUnderlineFill(DXD.DefaultRunProperties openXmlElement, DMD.Fill? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXD.UnderlineFill>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXD.UnderlineFillConverter.CreateOpenXmlElement<DXD.UnderlineFill>(value);
+      itemElement = DMXD.FillConverter.CreateOpenXmlElement<DXD.UnderlineFill>(value);
       if (itemElement != null)
         openXmlElement.AppendChild(itemElement);
     }
@@ -593,12 +433,7 @@ public static class DefaultRunPropertiesConverter
     {
       var value = new DocumentModel.Drawings.DefaultRunProperties();
       value.Outline = GetOutline(openXmlElement);
-      value.NoFill = GetNoFill(openXmlElement);
-      value.SolidFill = GetSolidFill(openXmlElement);
-      value.GradientFill = GetGradientFill(openXmlElement);
-      value.BlipFill = GetBlipFill(openXmlElement);
-      value.PatternFill = GetPatternFill(openXmlElement);
-      value.GroupFill = GetGroupFill(openXmlElement);
+      value.Fill = FillConverter.CreateFillModel(openXmlElement);
       value.EffectList = GetEffectList(openXmlElement);
       value.EffectDag = GetEffectDag(openXmlElement);
       value.Highlight = GetHighlight(openXmlElement);
@@ -619,93 +454,78 @@ public static class DefaultRunPropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.DefaultRunProperties? openXmlElement, DMD.DefaultRunProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
+  public static bool CompareModelElement(DXD.DefaultRunProperties? openXmlElement, DMD.DefaultRunProperties? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpOutline(openXmlElement, value.Outline, diffs, objName, propName))
+      if (!CmpOutline(openXmlElement, model.Outline, diffs, objName, propName))
         ok = false;
-      if (!CmpNoFill(openXmlElement, value.NoFill, diffs, objName, propName))
+      if (!FillConverter.CompareFillModel(openXmlElement, model.Fill, diffs, objName, propName))
         ok = false;
-      if (!CmpSolidFill(openXmlElement, value.SolidFill, diffs, objName, propName))
+      if (!CmpEffectList(openXmlElement, model.EffectList, diffs, objName, propName))
         ok = false;
-      if (!CmpGradientFill(openXmlElement, value.GradientFill, diffs, objName, propName))
+      if (!CmpEffectDag(openXmlElement, model.EffectDag, diffs, objName, propName))
         ok = false;
-      if (!CmpBlipFill(openXmlElement, value.BlipFill, diffs, objName, propName))
+      if (!CmpHighlight(openXmlElement, model.Highlight, diffs, objName, propName))
         ok = false;
-      if (!CmpPatternFill(openXmlElement, value.PatternFill, diffs, objName, propName))
+      if (!CmpUnderlineFollowsText(openXmlElement, model.UnderlineFollowsText, diffs, objName, propName))
         ok = false;
-      if (!CmpGroupFill(openXmlElement, value.GroupFill, diffs, objName, propName))
+      if (!CmpUnderline(openXmlElement, model.Underline, diffs, objName, propName))
         ok = false;
-      if (!CmpEffectList(openXmlElement, value.EffectList, diffs, objName, propName))
+      if (!CmpUnderlineFillText(openXmlElement, model.UnderlineFillText, diffs, objName, propName))
         ok = false;
-      if (!CmpEffectDag(openXmlElement, value.EffectDag, diffs, objName, propName))
+      if (!CmpUnderlineFill(openXmlElement, model.UnderlineFill, diffs, objName, propName))
         ok = false;
-      if (!CmpHighlight(openXmlElement, value.Highlight, diffs, objName, propName))
+      if (!CmpLatinFont(openXmlElement, model.LatinFont, diffs, objName, propName))
         ok = false;
-      if (!CmpUnderlineFollowsText(openXmlElement, value.UnderlineFollowsText, diffs, objName, propName))
+      if (!CmpEastAsianFont(openXmlElement, model.EastAsianFont, diffs, objName, propName))
         ok = false;
-      if (!CmpUnderline(openXmlElement, value.Underline, diffs, objName, propName))
+      if (!CmpComplexScriptFont(openXmlElement, model.ComplexScriptFont, diffs, objName, propName))
         ok = false;
-      if (!CmpUnderlineFillText(openXmlElement, value.UnderlineFillText, diffs, objName, propName))
+      if (!CmpSymbolFont(openXmlElement, model.SymbolFont, diffs, objName, propName))
         ok = false;
-      if (!CmpUnderlineFill(openXmlElement, value.UnderlineFill, diffs, objName, propName))
+      if (!CmpHyperlinkOnClick(openXmlElement, model.HyperlinkOnClick, diffs, objName, propName))
         ok = false;
-      if (!CmpLatinFont(openXmlElement, value.LatinFont, diffs, objName, propName))
+      if (!CmpHyperlinkOnMouseOver(openXmlElement, model.HyperlinkOnMouseOver, diffs, objName, propName))
         ok = false;
-      if (!CmpEastAsianFont(openXmlElement, value.EastAsianFont, diffs, objName, propName))
+      if (!CmpRightToLeft(openXmlElement, model.RightToLeft, diffs, objName, propName))
         ok = false;
-      if (!CmpComplexScriptFont(openXmlElement, value.ComplexScriptFont, diffs, objName, propName))
-        ok = false;
-      if (!CmpSymbolFont(openXmlElement, value.SymbolFont, diffs, objName, propName))
-        ok = false;
-      if (!CmpHyperlinkOnClick(openXmlElement, value.HyperlinkOnClick, diffs, objName, propName))
-        ok = false;
-      if (!CmpHyperlinkOnMouseOver(openXmlElement, value.HyperlinkOnMouseOver, diffs, objName, propName))
-        ok = false;
-      if (!CmpRightToLeft(openXmlElement, value.RightToLeft, diffs, objName, propName))
-        ok = false;
-      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName, propName))
+      if (!CmpExtensionList(openXmlElement, model.ExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.DefaultRunProperties value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.DefaultRunProperties model)
     where OpenXmlElementType: DXD.DefaultRunProperties, new()
   {
     var openXmlElement = new OpenXmlElementType();
-    UpdateOpenXmlElement(openXmlElement, value);
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXD.DefaultRunProperties openXmlElement, DMD.DefaultRunProperties value)
+  public static void UpdateOpenXmlElement(DXD.DefaultRunProperties openXmlElement, DMD.DefaultRunProperties model)
   {
-    SetOutline(openXmlElement, value?.Outline);
-    SetNoFill(openXmlElement, value?.NoFill);
-    SetSolidFill(openXmlElement, value?.SolidFill);
-    SetGradientFill(openXmlElement, value?.GradientFill);
-    SetBlipFill(openXmlElement, value?.BlipFill);
-    SetPatternFill(openXmlElement, value?.PatternFill);
-    SetGroupFill(openXmlElement, value?.GroupFill);
-    SetEffectList(openXmlElement, value?.EffectList);
-    SetEffectDag(openXmlElement, value?.EffectDag);
-    SetHighlight(openXmlElement, value?.Highlight);
-    SetUnderlineFollowsText(openXmlElement, value?.UnderlineFollowsText);
-    SetUnderline(openXmlElement, value?.Underline);
-    SetUnderlineFillText(openXmlElement, value?.UnderlineFillText);
-    SetUnderlineFill(openXmlElement, value?.UnderlineFill);
-    SetLatinFont(openXmlElement, value?.LatinFont);
-    SetEastAsianFont(openXmlElement, value?.EastAsianFont);
-    SetComplexScriptFont(openXmlElement, value?.ComplexScriptFont);
-    SetSymbolFont(openXmlElement, value?.SymbolFont);
-    SetHyperlinkOnClick(openXmlElement, value?.HyperlinkOnClick);
-    SetHyperlinkOnMouseOver(openXmlElement, value?.HyperlinkOnMouseOver);
-    SetRightToLeft(openXmlElement, value?.RightToLeft);
-    SetExtensionList(openXmlElement, value?.ExtensionList);
+    SetOutline(openXmlElement, model.Outline);
+    FillConverter.UpdateOpenXmlElement(openXmlElement, model.Fill);
+    SetEffectList(openXmlElement, model.EffectList);
+    SetEffectDag(openXmlElement, model.EffectDag);
+    SetHighlight(openXmlElement, model.Highlight);
+    SetUnderlineFollowsText(openXmlElement, model.UnderlineFollowsText);
+    SetUnderline(openXmlElement, model.Underline);
+    SetUnderlineFillText(openXmlElement, model.UnderlineFillText);
+    SetUnderlineFill(openXmlElement, model.UnderlineFill);
+    SetLatinFont(openXmlElement, model.LatinFont);
+    SetEastAsianFont(openXmlElement, model.EastAsianFont);
+    SetComplexScriptFont(openXmlElement, model.ComplexScriptFont);
+    SetSymbolFont(openXmlElement, model.SymbolFont);
+    SetHyperlinkOnClick(openXmlElement, model.HyperlinkOnClick);
+    SetHyperlinkOnMouseOver(openXmlElement, model.HyperlinkOnMouseOver);
+    SetRightToLeft(openXmlElement, model.RightToLeft);
+    SetExtensionList(openXmlElement, model.ExtensionList);
   }
 }

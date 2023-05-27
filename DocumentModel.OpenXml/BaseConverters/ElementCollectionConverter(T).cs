@@ -249,7 +249,7 @@ public static class ElementCollectionConverter<ModelType>
         if (item is ModelType modelElement)
           modelElementCollection.Add(modelElement);
         else if (item != null)
-          throw new InvalidOperationException($"Type {item.GetType()} does not implement {typeof(ModelType)}");
+          throw new InvalidOperationException($"Type {item.GetType()} is not a subclass of {typeof(ModelType)}");
       }
     }
     return true;

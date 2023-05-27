@@ -116,17 +116,7 @@ public class TextCharacterPropertiesType: ModelElement
   /// </summary>
   public Outline? Outline { get; set; }
 
-  public bool? NoFill { get; set; }
-
-  public SolidFill? SolidFill { get; set; }
-
-  public GradientFill? GradientFill { get; set; }
-
-  public BlipFill? BlipFill { get; set; }
-
-  public PatternFill? PatternFill { get; set; }
-
-  public bool? GroupFill { get; set; }
+  public Fill? Fill { get; set; }
 
   public EffectList? EffectList { get; set; }
 
@@ -138,7 +128,7 @@ public class TextCharacterPropertiesType: ModelElement
 
   public bool? UnderlineFillText { get; set; }
 
-  public UnderlineFill? UnderlineFill { get; set; }
+  public Fill? UnderlineFill { get; set; }
 
   public TextFontType? LatinFont { get; set; }
 

@@ -1,20 +1,10 @@
 namespace DocumentModel.Drawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   Fill Style List.
+///   This element defines a set of three fill styles that are used within a theme. 
+///   The three fill styles are arranged in order from subtle to moderate to intense.
 /// </summary>
-public class FillStyleList: ModelElement
+public class FillStyleList: ElementCollection<Fill>
 {
-  public bool? NoFill { get; set; }
 
-  public SolidFill? SolidFill { get; set; }
-
-  public GradientFill? GradientFill { get; set; }
-
-  public BlipFill? BlipFill { get; set; }
-
-  public PatternFill? PatternFill { get; set; }
-
-  public bool? GroupFill { get; set; }
 }
