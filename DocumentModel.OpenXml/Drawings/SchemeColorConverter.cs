@@ -617,10 +617,9 @@ public static class SchemeColorConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.SchemeColor value)
-    where OpenXmlElementType: DXD.SchemeColor, new()
+  public static DXD.SchemeColor CreateOpenXmlElement(DMD.SchemeColor value)
   {
-    var openXmlElement = new OpenXmlElementType();
+    var openXmlElement = new DXD.SchemeColor();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }

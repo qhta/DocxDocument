@@ -42,8 +42,9 @@ public static class FormatSchemeConverter
   private static void SetFillStyleList(DXD.FormatScheme openXmlElement, DMD.FillStyleList? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXD.FillStyleList>();
-    if (itemElement != null)
-      itemElement.Remove();
+    if (itemElement != null && value != null)
+      DMXD.FillStyleListConverter.UpdateOpenXmlElement(itemElement, value);
+    else
     if (value != null)
     {
       itemElement = DMXD.FillStyleListConverter.CreateOpenXmlElement<DXD.FillStyleList>(value);

@@ -63,4 +63,8 @@
     <ProjectReference Include="..\..\MyLib\Qhta.Serialization\Qhta.Xml.Serialization.csproj" />
     <ProjectReference Include="..\..\MyLib\Qhta.Xml\Qhta.Xml.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Colors\Drawings\" />
+  </ItemGroup>
 </Project>

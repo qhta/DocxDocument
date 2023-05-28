@@ -8,7 +8,7 @@ public static class SolidColorFillPropertiesConverter
   /// <summary>
   /// RgbColorModelHex.
   /// </summary>
-  private static DMW.RgbColorModelHex? GetRgbColorModelHex(DXO10W.SolidColorFillProperties openXmlElement)
+  private static DMW.RgbColorModelHex? GetRgbColorModelHex(DX.OpenXmlCompositeElement openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXO10W.RgbColorModelHex>();
     if (element != null)
@@ -16,12 +16,12 @@ public static class SolidColorFillPropertiesConverter
     return null;
   }
   
-  private static bool CmpRgbColorModelHex(DXO10W.SolidColorFillProperties openXmlElement, DMW.RgbColorModelHex? value, DiffList? diffs = null, string? objName = null, string? propName = null)
+  private static bool CmpRgbColorModelHex(DX.OpenXmlCompositeElement openXmlElement, DMW.RgbColorModelHex? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return DMXW.RgbColorModelHexConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10W.RgbColorModelHex>(), value, diffs, objName, propName);
   }
   
-  private static void SetRgbColorModelHex(DXO10W.SolidColorFillProperties openXmlElement, DMW.RgbColorModelHex? value)
+  private static void SetRgbColorModelHex(DX.OpenXmlCompositeElement openXmlElement, DMW.RgbColorModelHex? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXO10W.RgbColorModelHex>();
     if (itemElement != null)
