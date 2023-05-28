@@ -34,7 +34,7 @@ public class ShapeProperties: ModelElement
 
   public bool? GroupFill { get; set; }
 
-  public Outline? Outline { get; set; }
+  public LineProperties? Outline { get; set; }
 
   public EffectList? EffectList { get; set; }
 

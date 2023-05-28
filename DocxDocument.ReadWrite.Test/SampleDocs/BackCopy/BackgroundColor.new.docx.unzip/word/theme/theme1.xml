@@ -170,7 +170,10 @@
         </a:gradFill>
       </a:fillStyleLst>
       <a:lnStyleLst>
-        <a:ln>
+        <a:ln w="6350" cap="flat" cmpd="sng" algn="ctr">
+          <a:solidFill>
+            <a:schemeClr val="phClr" />
+          </a:solidFill>
           <a:prstDash val="solid" />
           <a:miter lim="800000" />
         </a:ln>

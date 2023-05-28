@@ -38545,6 +38545,61 @@
               Length of Head/End
             </summary>
         </member>
+        <member name="T:DocumentModel.Drawings.LineProperties">
+            <summary>
+              Defines the LinePropertiesType Class.
+            </summary>
+        </member>
+        <member name="P:DocumentModel.Drawings.LineProperties.Width">
+            <summary>
+              Line width
+            </summary>
+        </member>
+        <member name="P:DocumentModel.Drawings.LineProperties.CapType">
+            <summary>
+              Line cap
+            </summary>
+        </member>
+        <member name="P:DocumentModel.Drawings.LineProperties.CompoundLineType">
+            <summary>
+              Compound line type
+            </summary>
+        </member>
+        <member name="P:DocumentModel.Drawings.LineProperties.Alignment">
+            <summary>
+              Pen alignment
+            </summary>
+        </member>
+        <member name="P:DocumentModel.Drawings.LineProperties.Fill">
+            <summary>
+            Line fill properties
+            </summary>
+        </member>
+        <member name="P:DocumentModel.Drawings.LineProperties.PresetDash">
+            <summary>
+            Line preset dash properties
+            </summary>
+        </member>
+        <member name="P:DocumentModel.Drawings.LineProperties.CustomDash">
+            <summary>
+            Line custom dash properties
+            </summary>
+        </member>
+        <member name="P:DocumentModel.Drawings.LineProperties.Round">
+            <summary>
+            Round Line Join.
+            </summary>
+        </member>
+        <member name="P:DocumentModel.Drawings.LineProperties.LineJoinBevel">
+            <summary>
+            Angle joint is used to connect lines.
+            </summary>
+        </member>
+        <member name="P:DocumentModel.Drawings.LineProperties.Miter">
+            <summary>
+            This element specifies that a line join shall be mitered.
+            </summary>
+        </member>
         <member name="T:DocumentModel.Drawings.LinePropertiesExtension">
             <summary>
               Defines the LinePropertiesExtension Class.
@@ -38558,31 +38613,6 @@
         <member name="T:DocumentModel.Drawings.LinePropertiesExtensionList">
             <summary>
               Future extensions..
-            </summary>
-        </member>
-        <member name="T:DocumentModel.Drawings.LinePropertiesType">
-            <summary>
-              Defines the LinePropertiesType Class.
-            </summary>
-        </member>
-        <member name="P:DocumentModel.Drawings.LinePropertiesType.Width">
-            <summary>
-              line width
-            </summary>
-        </member>
-        <member name="P:DocumentModel.Drawings.LinePropertiesType.CapType">
-            <summary>
-              line cap
-            </summary>
-        </member>
-        <member name="P:DocumentModel.Drawings.LinePropertiesType.CompoundLineType">
-            <summary>
-              compound line type
-            </summary>
-        </member>
-        <member name="P:DocumentModel.Drawings.LinePropertiesType.Alignment">
-            <summary>
-              pen alignment
             </summary>
         </member>
         <member name="T:DocumentModel.Drawings.LineReference">
@@ -38998,11 +39028,6 @@
         <member name="P:DocumentModel.Drawings.OuterShadow.PresetColor">
             <summary>
               Preset Color.
-            </summary>
-        </member>
-        <member name="T:DocumentModel.Drawings.Outline">
-            <summary>
-              Defines the Outline Class.
             </summary>
         </member>
         <member name="T:DocumentModel.Drawings.OverrideColorMapping">
@@ -40478,11 +40503,6 @@
         <member name="P:DocumentModel.Drawings.TransformGroup.ChildExtents">
             <summary>
               Child Extents.
-            </summary>
-        </member>
-        <member name="T:DocumentModel.Drawings.Underline">
-            <summary>
-              Underline Stroke.
             </summary>
         </member>
         <member name="T:DocumentModel.Drawings.Vector3DType">

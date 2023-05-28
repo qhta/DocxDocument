@@ -5,27 +5,27 @@ namespace DocumentModel.OpenXml.Drawings;
 /// </summary>
 public static class RunPropertiesConverter
 {
-  private static DMD.Outline? GetOutline(DXD.RunProperties openXmlElement)
+  private static DMD.LineProperties? GetOutline(DXD.RunProperties openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXD.Outline>();
     if (element != null)
-      return DMXD.OutlineConverter.CreateModelElement(element);
+      return DMXD.LinePropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpOutline(DXD.RunProperties openXmlElement, DMD.Outline? model, DiffList? diffs = null, string? objName = null, string? propName = null)
+  private static bool CmpOutline(DXD.RunProperties openXmlElement, DMD.LineProperties? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.OutlineConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Outline>(), model, diffs, objName, propName);
+    return DMXD.LinePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Outline>(), model, diffs, objName, propName);
   }
   
-  private static void SetOutline(DXD.RunProperties openXmlElement, DMD.Outline? model)
+  private static void SetOutline(DXD.RunProperties openXmlElement, DMD.LineProperties? model)
   {
     var itemElement = openXmlElement.GetFirstChild<DXD.Outline>();
     if (itemElement != null)
       itemElement.Remove();
     if (model != null)
     {
-      itemElement = DMXD.OutlineConverter.CreateOpenXmlElement<DXD.Outline>(model);
+      itemElement = DMXD.LinePropertiesConverter.CreateOpenXmlElement<DXD.Outline>(model);
       if (itemElement != null)
         openXmlElement.AppendChild(itemElement);
     }
@@ -297,27 +297,27 @@ public static class RunPropertiesConverter
     }
   }
   
-  private static DMD.Underline? GetUnderline(DXD.RunProperties openXmlElement)
+  private static DMD.LineProperties? GetUnderline(DXD.RunProperties openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXD.Underline>();
     if (element != null)
-      return DMXD.UnderlineConverter.CreateModelElement(element);
+      return DMXD.LinePropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpUnderline(DXD.RunProperties openXmlElement, DMD.Underline? model, DiffList? diffs = null, string? objName = null, string? propName = null)
+  private static bool CmpUnderline(DXD.RunProperties openXmlElement, DMD.LineProperties? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.UnderlineConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Underline>(), model, diffs, objName, propName);
+    return DMXD.LinePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Underline>(), model, diffs, objName, propName);
   }
   
-  private static void SetUnderline(DXD.RunProperties openXmlElement, DMD.Underline? model)
+  private static void SetUnderline(DXD.RunProperties openXmlElement, DMD.LineProperties? model)
   {
     var itemElement = openXmlElement.GetFirstChild<DXD.Underline>();
     if (itemElement != null)
       itemElement.Remove();
     if (model != null)
     {
-      itemElement = DMXD.UnderlineConverter.CreateOpenXmlElement<DXD.Underline>(model);
+      itemElement = DMXD.LinePropertiesConverter.CreateOpenXmlElement<DXD.Underline>(model);
       if (itemElement != null)
         openXmlElement.AppendChild(itemElement);
     }
@@ -672,7 +672,7 @@ public static class RunPropertiesConverter
   public static void UpdateOpenXmlElement(DXD.RunProperties openXmlElement, DMD.RunProperties model)
   {
     SetOutline(openXmlElement, model.Outline);
-    FillConverter.UpdateOpenXmlFillElement(openXmlElement, model.Fill);
+    FillConverter.UpdateOpenXmlElement(openXmlElement, model.Fill);
     SetEffectList(openXmlElement, model.EffectList);
     SetEffectDag(openXmlElement, model.EffectDag);
     SetHighlight(openXmlElement, model.Highlight);

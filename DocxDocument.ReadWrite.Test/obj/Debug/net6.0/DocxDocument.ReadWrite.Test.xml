@@ -628,7 +628,15 @@
             Tests the theme read from all docx files in folder specified by test path.
             </summary>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:DocxDocument.ReadWrite.Test.TestTheme.TestReadTheme(System.String,System.Boolean,System.Boolean,System.Boolean)" -->
+        <member name="M:DocxDocument.ReadWrite.Test.TestTheme.TestReadTheme(System.String,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Tests the theme read from the specified docx file.
+            </summary>
+            <param name="filename">The filename of the document to read.</param>
+            <param name="showDetails">Specifies whether the detailed information on test should be shown on test failure.</param>
+            <param name="copyBack">Specifies whether test document should be copied back and modified with deserialized data</param>
+            <param name="openWord">Specifies that new document should be opened in MS Word</param>
+        </member>
         <member name="T:DocxDocument.ReadWrite.Test.Numbers">
             <summary>
             TestNumbers for variants

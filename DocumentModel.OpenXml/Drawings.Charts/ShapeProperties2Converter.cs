@@ -104,27 +104,27 @@ public static class ShapeProperties2Converter
     }
   }
   
-  private static DMD.Outline? GetOutline(DXO10DC.ShapeProperties openXmlElement)
+  private static DMD.LineProperties? GetOutline(DXO10DC.ShapeProperties openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXD.Outline>();
     if (element != null)
-      return DMXD.OutlineConverter.CreateModelElement(element);
+      return DMXD.LinePropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpOutline(DXO10DC.ShapeProperties openXmlElement, DMD.Outline? value, DiffList? diffs = null, string? objName = null, string? propName = null)
+  private static bool CmpOutline(DXO10DC.ShapeProperties openXmlElement, DMD.LineProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.OutlineConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Outline>(), value, diffs, objName, propName);
+    return DMXD.LinePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Outline>(), value, diffs, objName, propName);
   }
   
-  private static void SetOutline(DXO10DC.ShapeProperties openXmlElement, DMD.Outline? value)
+  private static void SetOutline(DXO10DC.ShapeProperties openXmlElement, DMD.LineProperties? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXD.Outline>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXD.OutlineConverter.CreateOpenXmlElement<DXD.Outline>(value);
+      itemElement = DMXD.LinePropertiesConverter.CreateOpenXmlElement<DXD.Outline>(value);
       if (itemElement != null)
         openXmlElement.AppendChild(itemElement);
     }
@@ -329,7 +329,7 @@ public static class ShapeProperties2Converter
     SetTransform2D(openXmlElement, value?.Transform2D);
     SetCustomGeometry(openXmlElement, value?.CustomGeometry);
     SetPresetGeometry(openXmlElement, value?.PresetGeometry);
-    FillConverter.UpdateOpenXmlFillElement(openXmlElement, value?.Fill);
+    FillConverter.UpdateOpenXmlElement(openXmlElement, value?.Fill);
     SetOutline(openXmlElement, value?.Outline);
     SetEffectList(openXmlElement, value?.EffectList);
     SetEffectDag(openXmlElement, value?.EffectDag);

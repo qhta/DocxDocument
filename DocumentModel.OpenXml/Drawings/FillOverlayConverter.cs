@@ -62,6 +62,6 @@ public static class FillOverlayConverter
   public static void UpdateOpenXmlElement(DXD.FillOverlay openXmlElement, DMD.FillOverlay model)
   {
     SetBlend(openXmlElement, model.Blend);
-    FillConverter.UpdateOpenXmlFillElement(openXmlElement, model.Fill);
+    FillConverter.UpdateOpenXmlElement(openXmlElement, model.Fill);
   }
 }

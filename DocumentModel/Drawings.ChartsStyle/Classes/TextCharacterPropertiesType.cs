@@ -114,7 +114,7 @@ public class TextCharacterPropertiesType: ModelElement
   /// <summary>
   ///   Outline.
   /// </summary>
-  public Outline? Outline { get; set; }
+  public LineProperties? Outline { get; set; }
 
   public Fill? Fill { get; set; }
 

@@ -22,7 +22,7 @@ public class ShapeProperties: ModelElement
 
   public Fill? Fill { get; set; }
 
-  public Outline? Outline { get; set; }
+  public LineProperties? Outline { get; set; }
 
   public EffectList? EffectList { get; set; }
 

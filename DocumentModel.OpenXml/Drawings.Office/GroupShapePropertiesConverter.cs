@@ -211,7 +211,7 @@ public static class GroupShapePropertiesConverter
   {
     SetBlackWhiteMode(openXmlElement, model.BlackWhiteMode);
     SetTransformGroup(openXmlElement, model.TransformGroup);
-    FillConverter.UpdateOpenXmlFillElement(openXmlElement, model.Fill);
+    FillConverter.UpdateOpenXmlElement(openXmlElement, model.Fill);
     SetEffectList(openXmlElement, model.EffectList);
     SetEffectDag(openXmlElement, model.EffectDag);
     SetScene3DType(openXmlElement, model.Scene3DType);
