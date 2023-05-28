@@ -35,11 +35,11 @@ public static class SpaceBeforeConverter
     SimpleValueConverter.SetValue<DXD.SpacingPoints,System.Int32>(openXmlElement, value);
   }
   
-  public static DocumentModel.Drawings.SpaceBefore? CreateModelElement(DXD.SpaceBefore? openXmlElement)
+  public static DMD.SpaceBefore? CreateModelElement(DXD.SpaceBefore? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.SpaceBefore();
+      var value = new DMD.SpaceBefore();
       value.SpacingPercent = GetSpacingPercent(openXmlElement);
       value.SpacingPoints = GetSpacingPoints(openXmlElement);
       return value;

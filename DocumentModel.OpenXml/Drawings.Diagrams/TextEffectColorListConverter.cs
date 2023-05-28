@@ -161,11 +161,11 @@ public static class TextEffectColorListConverter
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.TextEffectColorList? CreateModelElement(DXDD.TextEffectColorList? openXmlElement)
+  public static DMDD.TextEffectColorList? CreateModelElement(DXDD.TextEffectColorList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.TextEffectColorList();
+      var value = new DMDD.TextEffectColorList();
       value.RgbColorModelPercentage = GetRgbColorModelPercentage(openXmlElement);
       value.RgbColorModelHex = GetRgbColorModelHex(openXmlElement);
       value.HslColor = GetHslColor(openXmlElement);

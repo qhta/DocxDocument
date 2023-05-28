@@ -121,11 +121,11 @@ public static class StyleConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawing.Style? CreateModelElement(DXDCD.Style? openXmlElement)
+  public static DMD.ChartDrawing.Style? CreateModelElement(DXDCD.Style? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawing.Style();
+      var value = new DMD.ChartDrawing.Style();
       value.LineReference = GetLineReference(openXmlElement);
       value.FillReference = GetFillReference(openXmlElement);
       value.EffectReference = GetEffectReference(openXmlElement);

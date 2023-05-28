@@ -61,11 +61,11 @@ public static class ConstraintsConverter
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.Constraints? CreateModelElement(DXDD.Constraints? openXmlElement)
+  public static DMDD.Constraints? CreateModelElement(DXDD.Constraints? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.Constraints();
+      var value = new DMDD.Constraints();
       value.Items = GetItems(openXmlElement);
       return value;
     }

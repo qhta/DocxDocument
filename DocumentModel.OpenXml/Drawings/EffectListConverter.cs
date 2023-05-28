@@ -237,11 +237,11 @@ public static class EffectListConverter
     }
   }
   
-  public static DocumentModel.Drawings.EffectList? CreateModelElement(DXD.EffectList? openXmlElement)
+  public static DMD.EffectList? CreateModelElement(DXD.EffectList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.EffectList();
+      var value = new DMD.EffectList();
       value.Blur = GetBlur(openXmlElement);
       value.FillOverlay = GetFillOverlay(openXmlElement);
       value.Glow = GetGlow(openXmlElement);

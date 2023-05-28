@@ -237,11 +237,11 @@ public static class ChartSpaceConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.ChartSpace? CreateModelElement(DXO16DCD.ChartSpace? openXmlElement)
+  public static DMDCDs.ChartSpace? CreateModelElement(DXO16DCD.ChartSpace? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.ChartSpace();
+      var value = new DMDCDs.ChartSpace();
       value.ChartData = GetChartData(openXmlElement);
       value.Chart = GetChart(openXmlElement);
       value.ShapeProperties = GetShapeProperties(openXmlElement);

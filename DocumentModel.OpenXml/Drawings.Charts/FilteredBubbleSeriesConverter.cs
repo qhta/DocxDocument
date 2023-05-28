@@ -34,11 +34,11 @@ public static class FilteredBubbleSeriesConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.FilteredBubbleSeries? CreateModelElement(DXO13DC.FilteredBubbleSeries? openXmlElement)
+  public static DMD.Charts.FilteredBubbleSeries? CreateModelElement(DXO13DC.FilteredBubbleSeries? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.FilteredBubbleSeries();
+      var value = new DMD.Charts.FilteredBubbleSeries();
       value.BubbleChartSeries = GetBubbleChartSeries(openXmlElement);
       return value;
     }

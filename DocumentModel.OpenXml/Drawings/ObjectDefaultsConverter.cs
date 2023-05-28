@@ -121,11 +121,11 @@ public static class ObjectDefaultsConverter
     }
   }
   
-  public static DocumentModel.Drawings.ObjectDefaults? CreateModelElement(DXD.ObjectDefaults? openXmlElement)
+  public static DMD.ObjectDefaults? CreateModelElement(DXD.ObjectDefaults? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ObjectDefaults();
+      var value = new DMD.ObjectDefaults();
       value.ShapeDefault = GetShapeDefault(openXmlElement);
       value.LineDefault = GetLineDefault(openXmlElement);
       value.TextDefault = GetTextDefault(openXmlElement);

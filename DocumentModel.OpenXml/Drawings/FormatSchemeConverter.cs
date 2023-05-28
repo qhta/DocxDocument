@@ -139,11 +139,11 @@ public static class FormatSchemeConverter
     }
   }
   
-  public static DocumentModel.Drawings.FormatScheme? CreateModelElement(DXD.FormatScheme? openXmlElement)
+  public static DMD.FormatScheme? CreateModelElement(DXD.FormatScheme? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.FormatScheme();
+      var value = new DMD.FormatScheme();
       value.Name = GetName(openXmlElement);
       value.FillStyleList = GetFillStyleList(openXmlElement);
       value.LineStyleList = GetLineStyleList(openXmlElement);

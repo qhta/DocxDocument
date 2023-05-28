@@ -61,11 +61,11 @@ public static class OfficeArtExtensionListConverter
     }
   }
   
-  public static DocumentModel.Drawings.Office.OEmbed.OfficeArtExtensionList? CreateModelElement(DXODY21OE.OfficeArtExtensionList? openXmlElement)
+  public static DMDO.OEmbed.OfficeArtExtensionList? CreateModelElement(DXODY21OE.OfficeArtExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Office.OEmbed.OfficeArtExtensionList();
+      var value = new DMDO.OEmbed.OfficeArtExtensionList();
       value.Extensions = GetExtensions(openXmlElement);
       return value;
     }

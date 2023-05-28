@@ -61,11 +61,11 @@ public static class DLblsExtensionListConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.DLblsExtensionList? CreateModelElement(DXDC.DLblsExtensionList? openXmlElement)
+  public static DMD.Charts.DLblsExtensionList? CreateModelElement(DXDC.DLblsExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.DLblsExtensionList();
+      var value = new DMD.Charts.DLblsExtensionList();
       value.DLblsExtensions = GetDLblsExtensions(openXmlElement);
       return value;
     }

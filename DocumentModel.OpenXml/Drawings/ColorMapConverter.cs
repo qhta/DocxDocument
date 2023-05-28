@@ -31,11 +31,11 @@ public static class ColorMapConverter
     }
   }
   
-  public static DocumentModel.Drawings.ColorMap? CreateModelElement(DXD.ColorMap? openXmlElement)
+  public static DMD.ColorMap? CreateModelElement(DXD.ColorMap? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ColorMap();
+      var value = new DMD.ColorMap();
       value.ExtensionList = GetExtensionList(openXmlElement);
       return value;
     }

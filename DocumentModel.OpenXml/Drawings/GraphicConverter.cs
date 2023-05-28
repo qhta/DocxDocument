@@ -34,11 +34,11 @@ public static class GraphicConverter
     }
   }
   
-  public static DocumentModel.Drawings.Graphic? CreateModelElement(DXD.Graphic? openXmlElement)
+  public static DMD.Graphic? CreateModelElement(DXD.Graphic? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Graphic();
+      var value = new DMD.Graphic();
       value.GraphicData = GetGraphicData(openXmlElement);
       return value;
     }

@@ -71,11 +71,11 @@ public static class GeoCacheConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.GeoCache? CreateModelElement(DXO16DCD.GeoCache? openXmlElement)
+  public static DMDCDs.GeoCache? CreateModelElement(DXO16DCD.GeoCache? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.GeoCache();
+      var value = new DMDCDs.GeoCache();
       value.Provider = GetProvider(openXmlElement);
       value.Xsdbase64Binary = GetXsdbase64Binary(openXmlElement);
       value.Clear = GetClear(openXmlElement);

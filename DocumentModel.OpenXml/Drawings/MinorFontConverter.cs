@@ -165,11 +165,11 @@ public static class MinorFontConverter
     }
   }
   
-  public static DocumentModel.Drawings.MinorFont? CreateModelElement(DXD.MinorFont? openXmlElement)
+  public static DMD.MinorFont? CreateModelElement(DXD.MinorFont? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.MinorFont();
+      var value = new DMD.MinorFont();
       value.LatinFont = GetLatinFont(openXmlElement);
       value.EastAsianFont = GetEastAsianFont(openXmlElement);
       value.ComplexScriptFont = GetComplexScriptFont(openXmlElement);

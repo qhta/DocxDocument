@@ -267,11 +267,11 @@ public static class PathConverter
     }
   }
   
-  public static DocumentModel.Drawings.Path? CreateModelElement(DXD.Path? openXmlElement)
+  public static DMD.Path? CreateModelElement(DXD.Path? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Path();
+      var value = new DMD.Path();
       value.Width = GetWidth(openXmlElement);
       value.Height = GetHeight(openXmlElement);
       value.Fill = GetFill(openXmlElement);

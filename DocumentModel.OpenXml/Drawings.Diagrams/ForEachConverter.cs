@@ -401,11 +401,11 @@ public static class ForEachConverter
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.ForEach? CreateModelElement(DXDD.ForEach? openXmlElement)
+  public static DMDD.ForEach? CreateModelElement(DXDD.ForEach? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.ForEach();
+      var value = new DMDD.ForEach();
       value.Name = GetName(openXmlElement);
       value.Reference = GetReference(openXmlElement);
       value.Axis = GetAxis(openXmlElement);

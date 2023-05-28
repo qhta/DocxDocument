@@ -207,11 +207,11 @@ public static class NonVisualDrawingPropertiesExtensionConverter
     }
   }
   
-  public static DocumentModel.Drawings.NonVisualDrawingPropertiesExtension? CreateModelElement(DXD.NonVisualDrawingPropertiesExtension? openXmlElement)
+  public static DMD.NonVisualDrawingPropertiesExtension? CreateModelElement(DXD.NonVisualDrawingPropertiesExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.NonVisualDrawingPropertiesExtension();
+      var value = new DMD.NonVisualDrawingPropertiesExtension();
       value.Uri = GetUri(openXmlElement);
       value.CompatExtension = GetCompatExtension(openXmlElement);
       value.BackgroundProperties = GetBackgroundProperties(openXmlElement);

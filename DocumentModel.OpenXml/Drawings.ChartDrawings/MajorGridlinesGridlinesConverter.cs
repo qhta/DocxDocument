@@ -57,11 +57,11 @@ public static class MajorGridlinesGridlinesConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.MajorGridlinesGridlines? CreateModelElement(DXO16DCD.MajorGridlinesGridlines? openXmlElement)
+  public static DMDCDs.MajorGridlinesGridlines? CreateModelElement(DXO16DCD.MajorGridlinesGridlines? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.MajorGridlinesGridlines();
+      var value = new DMDCDs.MajorGridlinesGridlines();
       value.ShapeProperties = GetShapeProperties(openXmlElement);
       value.ExtensionList = GetExtensionList(openXmlElement);
       return value;

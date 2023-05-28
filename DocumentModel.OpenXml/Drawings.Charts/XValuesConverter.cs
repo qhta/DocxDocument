@@ -135,11 +135,11 @@ public static class XValuesConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.XValues? CreateModelElement(DXDC.XValues? openXmlElement)
+  public static DMD.Charts.XValues? CreateModelElement(DXDC.XValues? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.XValues();
+      var value = new DMD.Charts.XValues();
       value.MultiLevelStringReference = GetMultiLevelStringReference(openXmlElement);
       value.NumberReference = GetNumberReference(openXmlElement);
       value.NumberLiteral = GetNumberLiteral(openXmlElement);

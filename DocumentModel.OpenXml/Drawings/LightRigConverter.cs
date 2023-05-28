@@ -70,11 +70,11 @@ public static class LightRigConverter
     }
   }
   
-  public static DocumentModel.Drawings.LightRig? CreateModelElement(DXD.LightRig? openXmlElement)
+  public static DMD.LightRig? CreateModelElement(DXD.LightRig? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.LightRig();
+      var value = new DMD.LightRig();
       value.Rig = GetRig(openXmlElement);
       value.Direction = GetDirection(openXmlElement);
       value.Rotation = GetRotation(openXmlElement);

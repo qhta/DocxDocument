@@ -31,11 +31,11 @@ public static class OverrideColorMappingConverter
     }
   }
   
-  public static DocumentModel.Drawings.OverrideColorMapping? CreateModelElement(DXD.OverrideColorMapping? openXmlElement)
+  public static DMD.OverrideColorMapping? CreateModelElement(DXD.OverrideColorMapping? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.OverrideColorMapping();
+      var value = new DMD.OverrideColorMapping();
       value.ExtensionList = GetExtensionList(openXmlElement);
       return value;
     }

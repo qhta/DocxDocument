@@ -296,11 +296,11 @@ public static class BubbleChartConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.BubbleChart? CreateModelElement(DXDC.BubbleChart? openXmlElement)
+  public static DMD.Charts.BubbleChart? CreateModelElement(DXDC.BubbleChart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.BubbleChart();
+      var value = new DMD.Charts.BubbleChart();
       value.VaryColors = GetVaryColors(openXmlElement);
       value.BubbleChartSeries = GetBubbleChartSeries(openXmlElement);
       value.DataLabels = GetDataLabels(openXmlElement);

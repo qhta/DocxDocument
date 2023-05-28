@@ -150,11 +150,11 @@ public static class ClearConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.Clear? CreateModelElement(DXO16DCD.Clear? openXmlElement)
+  public static DMDCDs.Clear? CreateModelElement(DXO16DCD.Clear? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.Clear();
+      var value = new DMDCDs.Clear();
       value.GeoLocationQueryResults = GetGeoLocationQueryResults(openXmlElement);
       value.GeoDataEntityQueryResults = GetGeoDataEntityQueryResults(openXmlElement);
       value.GeoDataPointToEntityQueryResults = GetGeoDataPointToEntityQueryResults(openXmlElement);

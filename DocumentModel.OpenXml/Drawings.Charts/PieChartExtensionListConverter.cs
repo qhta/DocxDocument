@@ -61,11 +61,11 @@ public static class PieChartExtensionListConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.PieChartExtensionList? CreateModelElement(DXDC.PieChartExtensionList? openXmlElement)
+  public static DMD.Charts.PieChartExtensionList? CreateModelElement(DXDC.PieChartExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.PieChartExtensionList();
+      var value = new DMD.Charts.PieChartExtensionList();
       value.PieChartExtensions = GetPieChartExtensions(openXmlElement);
       return value;
     }

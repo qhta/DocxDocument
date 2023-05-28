@@ -197,11 +197,11 @@ public static class FontReferenceConverter
     }
   }
   
-  public static DocumentModel.Drawings.FontReference? CreateModelElement(DXD.FontReference? openXmlElement)
+  public static DMD.FontReference? CreateModelElement(DXD.FontReference? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.FontReference();
+      var value = new DMD.FontReference();
       value.Index = GetIndex(openXmlElement);
       value.RgbColorModelPercentage = GetRgbColorModelPercentage(openXmlElement);
       value.RgbColorModelHex = GetRgbColorModelHex(openXmlElement);

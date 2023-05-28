@@ -45,11 +45,11 @@ public static class ArtisticPlasticWrapConverter
     openXmlElement.Smoothness = value;
   }
   
-  public static DocumentModel.Drawings.ArtisticPlasticWrap? CreateModelElement(DXO10D.ArtisticPlasticWrap? openXmlElement)
+  public static DMD.ArtisticPlasticWrap? CreateModelElement(DXO10D.ArtisticPlasticWrap? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ArtisticPlasticWrap();
+      var value = new DMD.ArtisticPlasticWrap();
       value.Transparancy = GetTransparancy(openXmlElement);
       value.Smoothness = GetSmoothness(openXmlElement);
       return value;

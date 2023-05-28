@@ -61,11 +61,11 @@ public static class DateAxExtensionListConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.DateAxExtensionList? CreateModelElement(DXDC.DateAxExtensionList? openXmlElement)
+  public static DMD.Charts.DateAxExtensionList? CreateModelElement(DXDC.DateAxExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.DateAxExtensionList();
+      var value = new DMD.Charts.DateAxExtensionList();
       value.DateAxExtensions = GetDateAxExtensions(openXmlElement);
       return value;
     }

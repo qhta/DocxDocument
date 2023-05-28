@@ -45,11 +45,11 @@ public static class ArtisticGlassConverter
     openXmlElement.Scaling = value;
   }
   
-  public static DocumentModel.Drawings.ArtisticGlass? CreateModelElement(DXO10D.ArtisticGlass? openXmlElement)
+  public static DMD.ArtisticGlass? CreateModelElement(DXO10D.ArtisticGlass? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ArtisticGlass();
+      var value = new DMD.ArtisticGlass();
       value.Transparancy = GetTransparancy(openXmlElement);
       value.Scaling = GetScaling(openXmlElement);
       return value;

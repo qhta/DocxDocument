@@ -92,11 +92,11 @@ public static class CameraConverter
     }
   }
   
-  public static DocumentModel.Drawings.Camera? CreateModelElement(DXD.Camera? openXmlElement)
+  public static DMD.Camera? CreateModelElement(DXD.Camera? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Camera();
+      var value = new DMD.Camera();
       value.Preset = GetPreset(openXmlElement);
       value.FieldOfView = GetFieldOfView(openXmlElement);
       value.Zoom = GetZoom(openXmlElement);

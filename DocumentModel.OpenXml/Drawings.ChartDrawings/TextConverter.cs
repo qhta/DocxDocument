@@ -63,11 +63,11 @@ public static class TextConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.Text? CreateModelElement(DXO16DCD.Text? openXmlElement)
+  public static DMDCDs.Text? CreateModelElement(DXO16DCD.Text? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.Text();
+      var value = new DMDCDs.Text();
       value.TextData = GetTextData(openXmlElement);
       value.RichTextBody = GetRichTextBody(openXmlElement);
       return value;

@@ -25,11 +25,11 @@ public static class BiLevelConverter
     openXmlElement.Threshold = value;
   }
   
-  public static DocumentModel.Drawings.BiLevel? CreateModelElement(DXD.BiLevel? openXmlElement)
+  public static DMD.BiLevel? CreateModelElement(DXD.BiLevel? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.BiLevel();
+      var value = new DMD.BiLevel();
       value.Threshold = GetThreshold(openXmlElement);
       return value;
     }

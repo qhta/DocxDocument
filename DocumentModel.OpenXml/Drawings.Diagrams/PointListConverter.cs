@@ -61,11 +61,11 @@ public static class PointListConverter
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.PointList? CreateModelElement(DXDD.PointList? openXmlElement)
+  public static DMDD.PointList? CreateModelElement(DXDD.PointList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.PointList();
+      var value = new DMDD.PointList();
       value.Points = GetPoints(openXmlElement);
       return value;
     }

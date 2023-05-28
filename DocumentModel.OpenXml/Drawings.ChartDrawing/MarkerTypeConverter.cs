@@ -55,11 +55,11 @@ public static class MarkerTypeConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawing.MarkerType? CreateModelElement(DXDCD.MarkerType? openXmlElement)
+  public static DMD.ChartDrawing.MarkerType? CreateModelElement(DXDCD.MarkerType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawing.MarkerType();
+      var value = new DMD.ChartDrawing.MarkerType();
       value.XPosition = GetXPosition(openXmlElement);
       value.YPosition = GetYPosition(openXmlElement);
       return value;

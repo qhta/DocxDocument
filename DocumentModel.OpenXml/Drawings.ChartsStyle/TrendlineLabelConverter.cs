@@ -235,11 +235,11 @@ public static class TrendlineLabelConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartsStyle.TrendlineLabel? CreateModelElement(DXO13DCS.TrendlineLabel? openXmlElement)
+  public static DMDCS.TrendlineLabel? CreateModelElement(DXO13DCS.TrendlineLabel? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartsStyle.TrendlineLabel();
+      var value = new DMDCS.TrendlineLabel();
       value.LineReference = GetLineReference(openXmlElement);
       value.LineWidthScale = GetLineWidthScale(openXmlElement);
       value.FillReference = GetFillReference(openXmlElement);

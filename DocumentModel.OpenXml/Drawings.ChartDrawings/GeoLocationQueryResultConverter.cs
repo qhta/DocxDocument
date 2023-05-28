@@ -63,11 +63,11 @@ public static class GeoLocationQueryResultConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.GeoLocationQueryResult? CreateModelElement(DXO16DCD.GeoLocationQueryResult? openXmlElement)
+  public static DMDCDs.GeoLocationQueryResult? CreateModelElement(DXO16DCD.GeoLocationQueryResult? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.GeoLocationQueryResult();
+      var value = new DMDCDs.GeoLocationQueryResult();
       value.GeoLocationQuery = GetGeoLocationQuery(openXmlElement);
       value.GeoLocations = GetGeoLocations(openXmlElement);
       return value;

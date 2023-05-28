@@ -45,11 +45,11 @@ public static class TintEffectConverter
     openXmlElement.Amount = value;
   }
   
-  public static DocumentModel.Drawings.TintEffect? CreateModelElement(DXD.TintEffect? openXmlElement)
+  public static DMD.TintEffect? CreateModelElement(DXD.TintEffect? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.TintEffect();
+      var value = new DMD.TintEffect();
       value.Hue = GetHue(openXmlElement);
       value.Amount = GetAmount(openXmlElement);
       return value;

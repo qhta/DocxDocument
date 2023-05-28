@@ -235,11 +235,11 @@ public static class GridlineMajorConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartsStyle.GridlineMajor? CreateModelElement(DXO13DCS.GridlineMajor? openXmlElement)
+  public static DMDCS.GridlineMajor? CreateModelElement(DXO13DCS.GridlineMajor? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartsStyle.GridlineMajor();
+      var value = new DMDCS.GridlineMajor();
       value.LineReference = GetLineReference(openXmlElement);
       value.LineWidthScale = GetLineWidthScale(openXmlElement);
       value.FillReference = GetFillReference(openXmlElement);

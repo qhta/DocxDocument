@@ -49,11 +49,11 @@ public static class ToAnchorConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawing.ToAnchor? CreateModelElement(DXDCD.ToAnchor? openXmlElement)
+  public static DMD.ChartDrawing.ToAnchor? CreateModelElement(DXDCD.ToAnchor? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawing.ToAnchor();
+      var value = new DMD.ChartDrawing.ToAnchor();
       value.XPosition = GetXPosition(openXmlElement);
       value.YPosition = GetYPosition(openXmlElement);
       return value;

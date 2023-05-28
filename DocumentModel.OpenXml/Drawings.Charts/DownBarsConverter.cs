@@ -31,11 +31,11 @@ public static class DownBarsConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.DownBars? CreateModelElement(DXDC.DownBars? openXmlElement)
+  public static DMD.Charts.DownBars? CreateModelElement(DXDC.DownBars? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.DownBars();
+      var value = new DMD.Charts.DownBars();
       value.ChartShapeProperties = GetChartShapeProperties(openXmlElement);
       return value;
     }

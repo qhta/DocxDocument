@@ -219,11 +219,11 @@ public static class DataPointConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.DataPoint? CreateModelElement(DXDC.DataPoint? openXmlElement)
+  public static DMD.Charts.DataPoint? CreateModelElement(DXDC.DataPoint? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.DataPoint();
+      var value = new DMD.Charts.DataPoint();
       value.Index = GetIndex(openXmlElement);
       value.InvertIfNegative = GetInvertIfNegative(openXmlElement);
       value.Marker = GetMarker(openXmlElement);

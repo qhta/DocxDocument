@@ -257,11 +257,11 @@ public static class DiagramChooseElseConverter
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.DiagramChooseElse? CreateModelElement(DXDD.DiagramChooseElse? openXmlElement)
+  public static DMDD.DiagramChooseElse? CreateModelElement(DXDD.DiagramChooseElse? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.DiagramChooseElse();
+      var value = new DMDD.DiagramChooseElse();
       value.Name = GetName(openXmlElement);
       value.Algorithm = GetAlgorithm(openXmlElement);
       value.Shape = GetShape(openXmlElement);

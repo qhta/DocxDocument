@@ -261,11 +261,11 @@ public static class ColorsDefinitionConverter
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.ColorsDefinition? CreateModelElement(DXDD.ColorsDefinition? openXmlElement)
+  public static DMDD.ColorsDefinition? CreateModelElement(DXDD.ColorsDefinition? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.ColorsDefinition();
+      var value = new DMDD.ColorsDefinition();
       value.UniqueId = GetUniqueId(openXmlElement);
       value.MinVersion = GetMinVersion(openXmlElement);
       value.ColorDefinitionTitles = GetColorDefinitionTitles(openXmlElement);

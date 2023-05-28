@@ -235,11 +235,11 @@ public static class WallConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartsStyle.Wall? CreateModelElement(DXO13DCS.Wall? openXmlElement)
+  public static DMDCS.Wall? CreateModelElement(DXO13DCS.Wall? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartsStyle.Wall();
+      var value = new DMDCS.Wall();
       value.LineReference = GetLineReference(openXmlElement);
       value.LineWidthScale = GetLineWidthScale(openXmlElement);
       value.FillReference = GetFillReference(openXmlElement);

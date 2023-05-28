@@ -142,11 +142,11 @@ public static class AdjustHandlePolarConverter
     }
   }
   
-  public static DocumentModel.Drawings.AdjustHandlePolar? CreateModelElement(DXD.AdjustHandlePolar? openXmlElement)
+  public static DMD.AdjustHandlePolar? CreateModelElement(DXD.AdjustHandlePolar? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.AdjustHandlePolar();
+      var value = new DMD.AdjustHandlePolar();
       value.RadialAdjustmentGuide = GetRadialAdjustmentGuide(openXmlElement);
       value.MinRadial = GetMinRadial(openXmlElement);
       value.MaxRadial = GetMaxRadial(openXmlElement);

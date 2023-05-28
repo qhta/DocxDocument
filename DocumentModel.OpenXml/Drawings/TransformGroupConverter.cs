@@ -187,11 +187,11 @@ public static class TransformGroupConverter
     }
   }
   
-  public static DocumentModel.Drawings.TransformGroup? CreateModelElement(DXD.TransformGroup? openXmlElement)
+  public static DMD.TransformGroup? CreateModelElement(DXD.TransformGroup? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.TransformGroup();
+      var value = new DMD.TransformGroup();
       value.Rotation = GetRotation(openXmlElement);
       value.HorizontalFlip = GetHorizontalFlip(openXmlElement);
       value.VerticalFlip = GetVerticalFlip(openXmlElement);

@@ -57,11 +57,11 @@ public static class SampleDataTypeConverter
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.SampleDataType? CreateModelElement(DXDD.SampleDataType? openXmlElement)
+  public static DMDD.SampleDataType? CreateModelElement(DXDD.SampleDataType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.SampleDataType();
+      var value = new DMDD.SampleDataType();
       value.UseDefault = GetUseDefault(openXmlElement);
       value.DataModel = GetDataModel(openXmlElement);
       return value;

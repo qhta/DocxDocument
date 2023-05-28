@@ -228,11 +228,11 @@ public static class HiddenShape3DConverter
     }
   }
   
-  public static DocumentModel.Drawings.HiddenShape3D? CreateModelElement(DXO10D.HiddenShape3D? openXmlElement)
+  public static DMD.HiddenShape3D? CreateModelElement(DXO10D.HiddenShape3D? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.HiddenShape3D();
+      var value = new DMD.HiddenShape3D();
       value.Z = GetZ(openXmlElement);
       value.ExtrusionHeight = GetExtrusionHeight(openXmlElement);
       value.ContourWidth = GetContourWidth(openXmlElement);

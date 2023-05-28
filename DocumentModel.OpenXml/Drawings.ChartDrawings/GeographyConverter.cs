@@ -124,11 +124,11 @@ public static class GeographyConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.Geography? CreateModelElement(DXO16DCD.Geography? openXmlElement)
+  public static DMDCDs.Geography? CreateModelElement(DXO16DCD.Geography? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.Geography();
+      var value = new DMDCDs.Geography();
       value.ProjectionType = GetProjectionType(openXmlElement);
       value.ViewedRegionType = GetViewedRegionType(openXmlElement);
       value.CultureLanguage = GetCultureLanguage(openXmlElement);

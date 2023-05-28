@@ -117,11 +117,11 @@ public static class NumericLevelConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.NumericLevel? CreateModelElement(DXO16DCD.NumericLevel? openXmlElement)
+  public static DMDCDs.NumericLevel? CreateModelElement(DXO16DCD.NumericLevel? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.NumericLevel();
+      var value = new DMDCDs.NumericLevel();
       value.PtCount = GetPtCount(openXmlElement);
       value.FormatCode = GetFormatCode(openXmlElement);
       value.Name = GetName(openXmlElement);

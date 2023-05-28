@@ -221,11 +221,11 @@ public static class LegendConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.Legend? CreateModelElement(DXDC.Legend? openXmlElement)
+  public static DMD.Charts.Legend? CreateModelElement(DXDC.Legend? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.Legend();
+      var value = new DMD.Charts.Legend();
       value.LegendPosition = GetLegendPosition(openXmlElement);
       value.LegendEntries = GetLegendEntries(openXmlElement);
       value.Layout = GetLayout(openXmlElement);

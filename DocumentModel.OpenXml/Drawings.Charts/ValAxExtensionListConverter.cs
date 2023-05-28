@@ -61,11 +61,11 @@ public static class ValAxExtensionListConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.ValAxExtensionList? CreateModelElement(DXDC.ValAxExtensionList? openXmlElement)
+  public static DMD.Charts.ValAxExtensionList? CreateModelElement(DXDC.ValAxExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.ValAxExtensionList();
+      var value = new DMD.Charts.ValAxExtensionList();
       value.ValAxExtensions = GetValAxExtensions(openXmlElement);
       return value;
     }

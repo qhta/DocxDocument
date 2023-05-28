@@ -61,11 +61,11 @@ public static class HyperlinkExtensionListConverter
     }
   }
   
-  public static DocumentModel.Drawings.HyperlinkExtensionList? CreateModelElement(DXD.HyperlinkExtensionList? openXmlElement)
+  public static DMD.HyperlinkExtensionList? CreateModelElement(DXD.HyperlinkExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.HyperlinkExtensionList();
+      var value = new DMD.HyperlinkExtensionList();
       value.HyperlinkExtensions = GetHyperlinkExtensions(openXmlElement);
       return value;
     }

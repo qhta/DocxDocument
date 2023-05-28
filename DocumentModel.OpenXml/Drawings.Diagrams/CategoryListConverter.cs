@@ -61,11 +61,11 @@ public static class CategoryListConverter
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.CategoryList? CreateModelElement(DXDD.CategoryList? openXmlElement)
+  public static DMDD.CategoryList? CreateModelElement(DXDD.CategoryList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.CategoryList();
+      var value = new DMDD.CategoryList();
       value.Categories = GetCategories(openXmlElement);
       return value;
     }

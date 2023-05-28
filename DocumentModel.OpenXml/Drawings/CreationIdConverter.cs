@@ -23,11 +23,11 @@ public static class CreationIdConverter
     openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Drawings.CreationId? CreateModelElement(DXO16D.CreationId? openXmlElement)
+  public static DMD.CreationId? CreateModelElement(DXO16D.CreationId? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.CreationId();
+      var value = new DMD.CreationId();
       value.Id = GetId(openXmlElement);
       return value;
     }

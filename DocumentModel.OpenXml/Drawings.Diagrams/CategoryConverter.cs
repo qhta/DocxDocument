@@ -43,11 +43,11 @@ public static class CategoryConverter
     openXmlElement.Priority = value;
   }
   
-  public static DocumentModel.Drawings.Diagrams.Category? CreateModelElement(DXDD.Category? openXmlElement)
+  public static DMDD.Category? CreateModelElement(DXDD.Category? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.Category();
+      var value = new DMDD.Category();
       value.Type = GetType(openXmlElement);
       value.Priority = GetPriority(openXmlElement);
       return value;

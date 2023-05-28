@@ -25,11 +25,11 @@ public static class AlphaModulationFixedConverter
     openXmlElement.Amount = value;
   }
   
-  public static DocumentModel.Drawings.AlphaModulationFixed? CreateModelElement(DXD.AlphaModulationFixed? openXmlElement)
+  public static DMD.AlphaModulationFixed? CreateModelElement(DXD.AlphaModulationFixed? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.AlphaModulationFixed();
+      var value = new DMD.AlphaModulationFixed();
       value.Amount = GetAmount(openXmlElement);
       return value;
     }

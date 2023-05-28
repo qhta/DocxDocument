@@ -400,11 +400,11 @@ public static class AreaChartSeries3Converter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.AreaChartSeries3? CreateModelElement(DXO13DC.AreaChartSeries? openXmlElement)
+  public static DMD.Charts.AreaChartSeries3? CreateModelElement(DXO13DC.AreaChartSeries? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.AreaChartSeries3();
+      var value = new DMD.Charts.AreaChartSeries3();
       value.Index = GetIndex(openXmlElement);
       value.Order = GetOrder(openXmlElement);
       value.SeriesText = GetSeriesText(openXmlElement);

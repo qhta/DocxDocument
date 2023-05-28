@@ -306,11 +306,11 @@ public static class PieChartSeriesConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.PieChartSeries? CreateModelElement(DXDC.PieChartSeries? openXmlElement)
+  public static DMD.Charts.PieChartSeries? CreateModelElement(DXDC.PieChartSeries? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.PieChartSeries();
+      var value = new DMD.Charts.PieChartSeries();
       value.Index = GetIndex(openXmlElement);
       value.Order = GetOrder(openXmlElement);
       value.SeriesText = GetSeriesText(openXmlElement);

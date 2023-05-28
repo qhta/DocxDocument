@@ -77,11 +77,11 @@ public static class DataModelExtensionConverter
     }
   }
   
-  public static DocumentModel.Drawings.DataModelExtension? CreateModelElement(DXD.DataModelExtension? openXmlElement)
+  public static DMD.DataModelExtension? CreateModelElement(DXD.DataModelExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.DataModelExtension();
+      var value = new DMD.DataModelExtension();
       value.Uri = GetUri(openXmlElement);
       value.DataModelExtensionBlock = GetDataModelExtensionBlock(openXmlElement);
       value.RecolorImages = GetRecolorImages(openXmlElement);

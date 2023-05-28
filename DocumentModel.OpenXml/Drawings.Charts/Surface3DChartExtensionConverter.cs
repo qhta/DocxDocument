@@ -49,11 +49,11 @@ public static class Surface3DChartExtensionConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.Surface3DChartExtension? CreateModelElement(DXDC.Surface3DChartExtension? openXmlElement)
+  public static DMD.Charts.Surface3DChartExtension? CreateModelElement(DXDC.Surface3DChartExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.Surface3DChartExtension();
+      var value = new DMD.Charts.Surface3DChartExtension();
       value.Uri = GetUri(openXmlElement);
       value.FilteredSurfaceSeries = GetFilteredSurfaceSeries(openXmlElement);
       return value;

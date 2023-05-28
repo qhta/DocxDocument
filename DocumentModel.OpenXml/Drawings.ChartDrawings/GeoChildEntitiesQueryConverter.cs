@@ -52,11 +52,11 @@ public static class GeoChildEntitiesQueryConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.GeoChildEntitiesQuery? CreateModelElement(DXO16DCD.GeoChildEntitiesQuery? openXmlElement)
+  public static DMDCDs.GeoChildEntitiesQuery? CreateModelElement(DXO16DCD.GeoChildEntitiesQuery? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.GeoChildEntitiesQuery();
+      var value = new DMDCDs.GeoChildEntitiesQuery();
       value.EntityId = GetEntityId(openXmlElement);
       value.GeoChildTypes = GetGeoChildTypes(openXmlElement);
       return value;

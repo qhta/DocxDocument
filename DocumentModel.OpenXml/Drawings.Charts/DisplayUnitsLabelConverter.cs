@@ -121,11 +121,11 @@ public static class DisplayUnitsLabelConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.DisplayUnitsLabel? CreateModelElement(DXDC.DisplayUnitsLabel? openXmlElement)
+  public static DMD.Charts.DisplayUnitsLabel? CreateModelElement(DXDC.DisplayUnitsLabel? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.DisplayUnitsLabel();
+      var value = new DMD.Charts.DisplayUnitsLabel();
       value.Layout = GetLayout(openXmlElement);
       value.ChartText = GetChartText(openXmlElement);
       value.ChartShapeProperties = GetChartShapeProperties(openXmlElement);

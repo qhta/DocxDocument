@@ -52,11 +52,11 @@ public static class PresetTextWrapConverter
     }
   }
   
-  public static DocumentModel.Drawings.PresetTextWrap? CreateModelElement(DXD.PresetTextWrap? openXmlElement)
+  public static DMD.PresetTextWrap? CreateModelElement(DXD.PresetTextWrap? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.PresetTextWrap();
+      var value = new DMD.PresetTextWrap();
       value.Preset = GetPreset(openXmlElement);
       value.AdjustValueList = GetAdjustValueList(openXmlElement);
       return value;

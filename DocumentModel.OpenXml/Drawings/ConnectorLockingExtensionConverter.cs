@@ -49,11 +49,11 @@ public static class ConnectorLockingExtensionConverter
     }
   }
   
-  public static DocumentModel.Drawings.ConnectorLockingExtension? CreateModelElement(DXD.ConnectorLockingExtension? openXmlElement)
+  public static DMD.ConnectorLockingExtension? CreateModelElement(DXD.ConnectorLockingExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ConnectorLockingExtension();
+      var value = new DMD.ConnectorLockingExtension();
       value.Uri = GetUri(openXmlElement);
       value.Graphic = GetGraphic(openXmlElement);
       return value;

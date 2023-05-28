@@ -110,11 +110,11 @@ public static class FontSchemeConverter
     }
   }
   
-  public static DocumentModel.Drawings.FontScheme? CreateModelElement(DXD.FontScheme? openXmlElement)
+  public static DMD.FontScheme? CreateModelElement(DXD.FontScheme? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.FontScheme();
+      var value = new DMD.FontScheme();
       value.Name = GetName(openXmlElement);
       value.MajorFont = GetMajorFont(openXmlElement);
       value.MinorFont = GetMinorFont(openXmlElement);

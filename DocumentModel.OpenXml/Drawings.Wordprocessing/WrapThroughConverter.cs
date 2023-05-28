@@ -92,11 +92,11 @@ public static class WrapThroughConverter
     }
   }
   
-  public static DocumentModel.Drawings.Wordprocessing.WrapThrough? CreateModelElement(DXDW.WrapThrough? openXmlElement)
+  public static DMD.Wordprocessing.WrapThrough? CreateModelElement(DXDW.WrapThrough? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Wordprocessing.WrapThrough();
+      var value = new DMD.Wordprocessing.WrapThrough();
       value.WrapText = GetWrapText(openXmlElement);
       value.DistanceFromLeft = GetDistanceFromLeft(openXmlElement);
       value.DistanceFromRight = GetDistanceFromRight(openXmlElement);

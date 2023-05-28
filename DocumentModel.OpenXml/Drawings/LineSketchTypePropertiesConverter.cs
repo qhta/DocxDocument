@@ -129,11 +129,11 @@ public static class LineSketchTypePropertiesConverter
     }
   }
   
-  public static DocumentModel.Drawings.LineSketchTypeProperties? CreateModelElement(DXO21DSS.LineSketchTypeProperties? openXmlElement)
+  public static DMD.LineSketchTypeProperties? CreateModelElement(DXO21DSS.LineSketchTypeProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.LineSketchTypeProperties();
+      var value = new DMD.LineSketchTypeProperties();
       value.LineSketchNoneEmpty = GetLineSketchNoneEmpty(openXmlElement);
       value.LineSketchCurvedEmpty = GetLineSketchCurvedEmpty(openXmlElement);
       value.LineSketchFreehandEmpty = GetLineSketchFreehandEmpty(openXmlElement);

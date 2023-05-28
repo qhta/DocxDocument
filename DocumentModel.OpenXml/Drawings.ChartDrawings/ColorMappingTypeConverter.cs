@@ -250,11 +250,11 @@ public static class ColorMappingTypeConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.ColorMappingType? CreateModelElement(DXO16DCD.ColorMappingType? openXmlElement)
+  public static DMDCDs.ColorMappingType? CreateModelElement(DXO16DCD.ColorMappingType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.ColorMappingType();
+      var value = new DMDCDs.ColorMappingType();
       value.Background1 = GetBackground1(openXmlElement);
       value.Text1 = GetText1(openXmlElement);
       value.Background2 = GetBackground2(openXmlElement);

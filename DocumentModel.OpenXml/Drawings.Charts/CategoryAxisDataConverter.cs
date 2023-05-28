@@ -135,11 +135,11 @@ public static class CategoryAxisDataConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.CategoryAxisData? CreateModelElement(DXDC.CategoryAxisData? openXmlElement)
+  public static DMD.Charts.CategoryAxisData? CreateModelElement(DXDC.CategoryAxisData? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.CategoryAxisData();
+      var value = new DMD.Charts.CategoryAxisData();
       value.MultiLevelStringReference = GetMultiLevelStringReference(openXmlElement);
       value.NumberReference = GetNumberReference(openXmlElement);
       value.NumberLiteral = GetNumberLiteral(openXmlElement);

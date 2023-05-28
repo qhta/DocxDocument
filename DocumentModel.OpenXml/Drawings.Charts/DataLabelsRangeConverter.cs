@@ -59,11 +59,11 @@ public static class DataLabelsRangeConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.DataLabelsRange? CreateModelElement(DXO13DC.DataLabelsRange? openXmlElement)
+  public static DMD.Charts.DataLabelsRange? CreateModelElement(DXO13DC.DataLabelsRange? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.DataLabelsRange();
+      var value = new DMD.Charts.DataLabelsRange();
       value.Formula = GetFormula(openXmlElement);
       value.DataLabelsRangeChache = GetDataLabelsRangeChache(openXmlElement);
       return value;

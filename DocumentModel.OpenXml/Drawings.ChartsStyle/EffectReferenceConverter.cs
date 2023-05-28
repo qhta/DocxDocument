@@ -187,11 +187,11 @@ public static class EffectReferenceConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartsStyle.EffectReference? CreateModelElement(DXO13DCS.EffectReference? openXmlElement)
+  public static DMDCS.EffectReference? CreateModelElement(DXO13DCS.EffectReference? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartsStyle.EffectReference();
+      var value = new DMDCS.EffectReference();
       value.RgbColorModelPercentage = GetRgbColorModelPercentage(openXmlElement);
       value.RgbColorModelHex = GetRgbColorModelHex(openXmlElement);
       value.HslColor = GetHslColor(openXmlElement);

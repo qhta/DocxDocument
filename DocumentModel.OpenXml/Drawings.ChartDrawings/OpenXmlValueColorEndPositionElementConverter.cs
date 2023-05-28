@@ -72,11 +72,11 @@ public static class OpenXmlValueColorEndPositionElementConverter
     SimpleValueConverter.SetValue<DXO16DCD.PercentageColorPosition,System.Double>(openXmlElement, value);
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.OpenXmlValueColorEndPositionElement? CreateModelElement(DXO16DCD.OpenXmlValueColorEndPositionElement? openXmlElement)
+  public static DMDCDs.OpenXmlValueColorEndPositionElement? CreateModelElement(DXO16DCD.OpenXmlValueColorEndPositionElement? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.OpenXmlValueColorEndPositionElement();
+      var value = new DMDCDs.OpenXmlValueColorEndPositionElement();
       value.ExtremeValueColorPosition = GetExtremeValueColorPosition(openXmlElement);
       value.NumberColorPosition = GetNumberColorPosition(openXmlElement);
       value.PercentageColorPosition = GetPercentageColorPosition(openXmlElement);

@@ -61,11 +61,11 @@ public static class CustomColorListConverter
     }
   }
   
-  public static DocumentModel.Drawings.CustomColorList? CreateModelElement(DXD.CustomColorList? openXmlElement)
+  public static DMD.CustomColorList? CreateModelElement(DXD.CustomColorList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.CustomColorList();
+      var value = new DMD.CustomColorList();
       value.CustomColors = GetCustomColors(openXmlElement);
       return value;
     }

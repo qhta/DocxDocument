@@ -49,11 +49,11 @@ public static class Pie3DChartExtensionConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.Pie3DChartExtension? CreateModelElement(DXDC.Pie3DChartExtension? openXmlElement)
+  public static DMD.Charts.Pie3DChartExtension? CreateModelElement(DXDC.Pie3DChartExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.Pie3DChartExtension();
+      var value = new DMD.Charts.Pie3DChartExtension();
       value.Uri = GetUri(openXmlElement);
       value.FilteredPieSeries = GetFilteredPieSeries(openXmlElement);
       return value;

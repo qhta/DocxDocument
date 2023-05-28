@@ -180,11 +180,11 @@ public static class ChartTitleConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.ChartTitle? CreateModelElement(DXO16DCD.ChartTitle? openXmlElement)
+  public static DMDCDs.ChartTitle? CreateModelElement(DXO16DCD.ChartTitle? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.ChartTitle();
+      var value = new DMDCDs.ChartTitle();
       value.Pos = GetPos(openXmlElement);
       value.Align = GetAlign(openXmlElement);
       value.Overlay = GetOverlay(openXmlElement);

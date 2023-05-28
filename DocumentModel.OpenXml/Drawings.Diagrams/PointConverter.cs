@@ -175,11 +175,11 @@ public static class PointConverter
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.Point? CreateModelElement(DXDD.Point? openXmlElement)
+  public static DMDD.Point? CreateModelElement(DXDD.Point? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.Point();
+      var value = new DMDD.Point();
       value.ModelId = GetModelId(openXmlElement);
       value.Type = GetType(openXmlElement);
       value.ConnectionId = GetConnectionId(openXmlElement);

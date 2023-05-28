@@ -135,11 +135,11 @@ public static class ShapeDefaultConverter
     }
   }
   
-  public static DocumentModel.Drawings.ShapeDefault? CreateModelElement(DXD.ShapeDefault? openXmlElement)
+  public static DMD.ShapeDefault? CreateModelElement(DXD.ShapeDefault? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ShapeDefault();
+      var value = new DMD.ShapeDefault();
       value.ShapeProperties = GetShapeProperties(openXmlElement);
       value.BodyProperties = GetBodyProperties(openXmlElement);
       value.ListStyle = GetListStyle(openXmlElement);

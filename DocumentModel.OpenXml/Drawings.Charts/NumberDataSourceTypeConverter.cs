@@ -63,11 +63,11 @@ public static class NumberDataSourceTypeConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.NumberDataSourceType? CreateModelElement(DXDC.NumberDataSourceType? openXmlElement)
+  public static DMD.Charts.NumberDataSourceType? CreateModelElement(DXDC.NumberDataSourceType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.NumberDataSourceType();
+      var value = new DMD.Charts.NumberDataSourceType();
       value.NumberReference = GetNumberReference(openXmlElement);
       value.NumberLiteral = GetNumberLiteral(openXmlElement);
       return value;

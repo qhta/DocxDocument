@@ -34,11 +34,11 @@ public static class FilteredCategoryTitleConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.FilteredCategoryTitle? CreateModelElement(DXO13DC.FilteredCategoryTitle? openXmlElement)
+  public static DMD.Charts.FilteredCategoryTitle? CreateModelElement(DXO13DC.FilteredCategoryTitle? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.FilteredCategoryTitle();
+      var value = new DMD.Charts.FilteredCategoryTitle();
       value.AxisDataSourceType = GetAxisDataSourceType(openXmlElement);
       return value;
     }

@@ -103,11 +103,11 @@ public static class LegendEntryConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.LegendEntry? CreateModelElement(DXDC.LegendEntry? openXmlElement)
+  public static DMD.Charts.LegendEntry? CreateModelElement(DXDC.LegendEntry? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.LegendEntry();
+      var value = new DMD.Charts.LegendEntry();
       value.Index = GetIndex(openXmlElement);
       value.Delete = GetDelete(openXmlElement);
       value.TextProperties = GetTextProperties(openXmlElement);

@@ -121,11 +121,11 @@ public static class Scene3DConverter
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.Scene3D? CreateModelElement(DXDD.Scene3D? openXmlElement)
+  public static DMDD.Scene3D? CreateModelElement(DXDD.Scene3D? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.Scene3D();
+      var value = new DMDD.Scene3D();
       value.Camera = GetCamera(openXmlElement);
       value.LightRig = GetLightRig(openXmlElement);
       value.Backdrop = GetBackdrop(openXmlElement);

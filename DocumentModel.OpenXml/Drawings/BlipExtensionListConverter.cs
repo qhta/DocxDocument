@@ -61,11 +61,11 @@ public static class BlipExtensionListConverter
     }
   }
   
-  public static DocumentModel.Drawings.BlipExtensionList? CreateModelElement(DXD.BlipExtensionList? openXmlElement)
+  public static DMD.BlipExtensionList? CreateModelElement(DXD.BlipExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.BlipExtensionList();
+      var value = new DMD.BlipExtensionList();
       value.BlipExtensions = GetBlipExtensions(openXmlElement);
       return value;
     }

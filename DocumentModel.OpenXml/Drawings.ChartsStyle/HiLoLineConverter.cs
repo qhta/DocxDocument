@@ -235,11 +235,11 @@ public static class HiLoLineConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartsStyle.HiLoLine? CreateModelElement(DXO13DCS.HiLoLine? openXmlElement)
+  public static DMDCS.HiLoLine? CreateModelElement(DXO13DCS.HiLoLine? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartsStyle.HiLoLine();
+      var value = new DMDCS.HiLoLine();
       value.LineReference = GetLineReference(openXmlElement);
       value.LineWidthScale = GetLineWidthScale(openXmlElement);
       value.FillReference = GetFillReference(openXmlElement);

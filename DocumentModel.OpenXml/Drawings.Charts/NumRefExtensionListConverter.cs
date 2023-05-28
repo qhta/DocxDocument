@@ -61,11 +61,11 @@ public static class NumRefExtensionListConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.NumRefExtensionList? CreateModelElement(DXDC.NumRefExtensionList? openXmlElement)
+  public static DMD.Charts.NumRefExtensionList? CreateModelElement(DXDC.NumRefExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.NumRefExtensionList();
+      var value = new DMD.Charts.NumRefExtensionList();
       value.NumRefExtensions = GetNumRefExtensions(openXmlElement);
       return value;
     }

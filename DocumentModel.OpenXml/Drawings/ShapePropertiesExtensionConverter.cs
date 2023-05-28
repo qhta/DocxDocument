@@ -181,11 +181,11 @@ public static class ShapePropertiesExtensionConverter
     }
   }
   
-  public static DocumentModel.Drawings.ShapePropertiesExtension? CreateModelElement(DXD.ShapePropertiesExtension? openXmlElement)
+  public static DMD.ShapePropertiesExtension? CreateModelElement(DXD.ShapePropertiesExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ShapePropertiesExtension();
+      var value = new DMD.ShapePropertiesExtension();
       value.Uri = GetUri(openXmlElement);
       value.HiddenFillProperties = GetHiddenFillProperties(openXmlElement);
       value.HiddenLineProperties = GetHiddenLineProperties(openXmlElement);

@@ -103,11 +103,11 @@ public static class DataConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.Data? CreateModelElement(DXO16DCD.Data? openXmlElement)
+  public static DMDCDs.Data? CreateModelElement(DXO16DCD.Data? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.Data();
+      var value = new DMDCDs.Data();
       value.Id = GetId(openXmlElement);
       value.NumericDimension = GetNumericDimension(openXmlElement);
       value.StringDimension = GetStringDimension(openXmlElement);

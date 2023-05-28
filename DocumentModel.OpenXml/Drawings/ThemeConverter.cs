@@ -186,11 +186,11 @@ public static class ThemeConverter
     }
   }
   
-  public static DocumentModel.Drawings.Theme? CreateModelElement(DXD.Theme? openXmlElement)
+  public static DMD.Theme? CreateModelElement(DXD.Theme? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Theme();
+      var value = new DMD.Theme();
       value.Name = GetName(openXmlElement);
       value.ThemeId = GetThemeId(openXmlElement);
       value.ThemeElements = GetThemeElements(openXmlElement);

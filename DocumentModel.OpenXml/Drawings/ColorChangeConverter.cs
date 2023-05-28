@@ -86,11 +86,11 @@ public static class ColorChangeConverter
     }
   }
   
-  public static DocumentModel.Drawings.ColorChange? CreateModelElement(DXD.ColorChange? openXmlElement)
+  public static DMD.ColorChange? CreateModelElement(DXD.ColorChange? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ColorChange();
+      var value = new DMD.ColorChange();
       value.UseAlpha = GetUseAlpha(openXmlElement);
       value.ColorFrom = GetColorFrom(openXmlElement);
       value.ColorTo = GetColorTo(openXmlElement);

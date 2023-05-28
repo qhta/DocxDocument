@@ -121,11 +121,11 @@ public static class AxisUnitsLabelConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.AxisUnitsLabel? CreateModelElement(DXO16DCD.AxisUnitsLabel? openXmlElement)
+  public static DMDCDs.AxisUnitsLabel? CreateModelElement(DXO16DCD.AxisUnitsLabel? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.AxisUnitsLabel();
+      var value = new DMDCDs.AxisUnitsLabel();
       value.Text = GetText(openXmlElement);
       value.ShapeProperties = GetShapeProperties(openXmlElement);
       value.TxPrTextBody = GetTxPrTextBody(openXmlElement);

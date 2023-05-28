@@ -61,11 +61,11 @@ public static class GeoDataEntityQueryResultsConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.GeoDataEntityQueryResults? CreateModelElement(DXO16DCD.GeoDataEntityQueryResults? openXmlElement)
+  public static DMDCDs.GeoDataEntityQueryResults? CreateModelElement(DXO16DCD.GeoDataEntityQueryResults? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.GeoDataEntityQueryResults();
+      var value = new DMDCDs.GeoDataEntityQueryResults();
       value.Items = GetItems(openXmlElement);
       return value;
     }

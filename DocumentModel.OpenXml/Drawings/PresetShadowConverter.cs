@@ -237,11 +237,11 @@ public static class PresetShadowConverter
     }
   }
   
-  public static DocumentModel.Drawings.PresetShadow? CreateModelElement(DXD.PresetShadow? openXmlElement)
+  public static DMD.PresetShadow? CreateModelElement(DXD.PresetShadow? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.PresetShadow();
+      var value = new DMD.PresetShadow();
       value.Preset = GetPreset(openXmlElement);
       value.Distance = GetDistance(openXmlElement);
       value.Direction = GetDirection(openXmlElement);

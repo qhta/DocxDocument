@@ -179,11 +179,11 @@ public static class SolidFillConverter
     }
   }
   
-  public static DocumentModel.Drawings.SolidFill? CreateModelElement(DXD.SolidFill? openXmlElement)
+  public static DMD.SolidFill? CreateModelElement(DXD.SolidFill? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.SolidFill();
+      var value = new DMD.SolidFill();
       value.RgbColorModelPercentage = GetRgbColorModelPercentage(openXmlElement);
       value.RgbColorModelHex = GetRgbColorModelHex(openXmlElement);
       value.HslColor = GetHslColor(openXmlElement);

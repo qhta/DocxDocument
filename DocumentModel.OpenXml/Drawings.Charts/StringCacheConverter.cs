@@ -102,11 +102,11 @@ public static class StringCacheConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.StringCache? CreateModelElement(DXDC.StringCache? openXmlElement)
+  public static DMD.Charts.StringCache? CreateModelElement(DXDC.StringCache? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.StringCache();
+      var value = new DMD.Charts.StringCache();
       value.PointCount = GetPointCount(openXmlElement);
       value.StringPoints = GetStringPoints(openXmlElement);
       value.StrDataExtensionList = GetStrDataExtensionList(openXmlElement);

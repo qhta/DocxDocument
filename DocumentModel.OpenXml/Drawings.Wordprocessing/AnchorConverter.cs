@@ -670,11 +670,11 @@ public static class AnchorConverter
     }
   }
   
-  public static DocumentModel.Drawings.Wordprocessing.Anchor? CreateModelElement(DXDW.Anchor? openXmlElement)
+  public static DMD.Wordprocessing.Anchor? CreateModelElement(DXDW.Anchor? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Wordprocessing.Anchor();
+      var value = new DMD.Wordprocessing.Anchor();
       value.DistanceFromTop = GetDistanceFromTop(openXmlElement);
       value.DistanceFromBottom = GetDistanceFromBottom(openXmlElement);
       value.DistanceFromLeft = GetDistanceFromLeft(openXmlElement);

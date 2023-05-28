@@ -61,11 +61,11 @@ public static class Area3DChartExtensionListConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.Area3DChartExtensionList? CreateModelElement(DXDC.Area3DChartExtensionList? openXmlElement)
+  public static DMD.Charts.Area3DChartExtensionList? CreateModelElement(DXDC.Area3DChartExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.Area3DChartExtensionList();
+      var value = new DMD.Charts.Area3DChartExtensionList();
       value.Area3DChartExtensions = GetArea3DChartExtensions(openXmlElement);
       return value;
     }

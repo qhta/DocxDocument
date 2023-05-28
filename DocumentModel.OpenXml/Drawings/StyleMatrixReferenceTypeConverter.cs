@@ -199,11 +199,11 @@ public static class StyleMatrixReferenceTypeConverter
     }
   }
   
-  public static DocumentModel.Drawings.StyleMatrixReferenceType? CreateModelElement(DXD.StyleMatrixReferenceType? openXmlElement)
+  public static DMD.StyleMatrixReferenceType? CreateModelElement(DXD.StyleMatrixReferenceType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.StyleMatrixReferenceType();
+      var value = new DMD.StyleMatrixReferenceType();
       value.Index = GetIndex(openXmlElement);
       value.RgbColorModelPercentage = GetRgbColorModelPercentage(openXmlElement);
       value.RgbColorModelHex = GetRgbColorModelHex(openXmlElement);

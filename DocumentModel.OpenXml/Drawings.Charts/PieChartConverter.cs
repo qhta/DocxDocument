@@ -159,11 +159,11 @@ public static class PieChartConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.PieChart? CreateModelElement(DXDC.PieChart? openXmlElement)
+  public static DMD.Charts.PieChart? CreateModelElement(DXDC.PieChart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.PieChart();
+      var value = new DMD.Charts.PieChart();
       value.VaryColors = GetVaryColors(openXmlElement);
       value.PieChartSeries = GetPieChartSeries(openXmlElement);
       value.DataLabels = GetDataLabels(openXmlElement);

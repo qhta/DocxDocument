@@ -57,11 +57,11 @@ public static class HyperlinkOnClickConverter
     }
   }
   
-  public static DocumentModel.Drawings.HyperlinkOnClick? CreateModelElement(DXD.HyperlinkOnClick? openXmlElement)
+  public static DMD.HyperlinkOnClick? CreateModelElement(DXD.HyperlinkOnClick? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.HyperlinkOnClick();
+      var value = new DMD.HyperlinkOnClick();
       value.HyperlinkSound = GetHyperlinkSound(openXmlElement);
       value.HyperlinkExtensionList = GetHyperlinkExtensionList(openXmlElement);
       return value;

@@ -41,11 +41,11 @@ public static class ValueColorMiddlePositionConverter
     SimpleValueConverter.SetValue<DXO16DCD.PercentageColorPosition,System.Double>(openXmlElement, value);
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.ValueColorMiddlePosition? CreateModelElement(DXO16DCD.ValueColorMiddlePosition? openXmlElement)
+  public static DMDCDs.ValueColorMiddlePosition? CreateModelElement(DXO16DCD.ValueColorMiddlePosition? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.ValueColorMiddlePosition();
+      var value = new DMDCDs.ValueColorMiddlePosition();
       value.NumberColorPosition = GetNumberColorPosition(openXmlElement);
       value.PercentageColorPosition = GetPercentageColorPosition(openXmlElement);
       return value;

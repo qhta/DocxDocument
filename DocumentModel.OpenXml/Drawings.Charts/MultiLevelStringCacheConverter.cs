@@ -105,11 +105,11 @@ public static class MultiLevelStringCacheConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.MultiLevelStringCache? CreateModelElement(DXDC.MultiLevelStringCache? openXmlElement)
+  public static DMD.Charts.MultiLevelStringCache? CreateModelElement(DXDC.MultiLevelStringCache? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.MultiLevelStringCache();
+      var value = new DMD.Charts.MultiLevelStringCache();
       value.PointCount = GetPointCount(openXmlElement);
       value.Levels = GetLevels(openXmlElement);
       value.ExtensionList = GetExtensionList(openXmlElement);

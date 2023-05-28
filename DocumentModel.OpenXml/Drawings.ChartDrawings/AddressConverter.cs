@@ -131,11 +131,11 @@ public static class AddressConverter
     openXmlElement.IsoCountryCode = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.Address? CreateModelElement(DXO16DCD.Address? openXmlElement)
+  public static DMDCDs.Address? CreateModelElement(DXO16DCD.Address? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.Address();
+      var value = new DMDCDs.Address();
       value.Address1 = GetAddress1(openXmlElement);
       value.CountryRegion = GetCountryRegion(openXmlElement);
       value.AdminDistrict1 = GetAdminDistrict1(openXmlElement);

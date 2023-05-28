@@ -57,11 +57,11 @@ public static class YValuesConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.YValues? CreateModelElement(DXDC.YValues? openXmlElement)
+  public static DMD.Charts.YValues? CreateModelElement(DXDC.YValues? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.YValues();
+      var value = new DMD.Charts.YValues();
       value.NumberReference = GetNumberReference(openXmlElement);
       value.NumberLiteral = GetNumberLiteral(openXmlElement);
       return value;

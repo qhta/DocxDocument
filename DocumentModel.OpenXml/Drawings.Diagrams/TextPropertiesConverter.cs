@@ -63,11 +63,11 @@ public static class TextPropertiesConverter
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.TextProperties? CreateModelElement(DXDD.TextProperties? openXmlElement)
+  public static DMDD.TextProperties? CreateModelElement(DXDD.TextProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.TextProperties();
+      var value = new DMDD.TextProperties();
       value.Shape3DType = GetShape3DType(openXmlElement);
       value.FlatText = GetFlatText(openXmlElement);
       return value;

@@ -157,11 +157,11 @@ public static class NumericDimensionConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.NumericDimension? CreateModelElement(DXO16DCD.NumericDimension? openXmlElement)
+  public static DMDCDs.NumericDimension? CreateModelElement(DXO16DCD.NumericDimension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.NumericDimension();
+      var value = new DMDCDs.NumericDimension();
       value.Type = GetType(openXmlElement);
       value.Formula = GetFormula(openXmlElement);
       value.NfFormula = GetNfFormula(openXmlElement);

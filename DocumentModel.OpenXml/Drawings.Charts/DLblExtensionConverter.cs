@@ -157,11 +157,11 @@ public static class DLblExtensionConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.DLblExtension? CreateModelElement(DXDC.DLblExtension? openXmlElement)
+  public static DMD.Charts.DLblExtension? CreateModelElement(DXDC.DLblExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.DLblExtension();
+      var value = new DMD.Charts.DLblExtension();
       value.Uri = GetUri(openXmlElement);
       value.DataLabelFieldTable = GetDataLabelFieldTable(openXmlElement);
       value.ExceptionForSave = GetExceptionForSave(openXmlElement);

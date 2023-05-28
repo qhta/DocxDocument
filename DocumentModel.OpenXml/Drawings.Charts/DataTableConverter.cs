@@ -216,11 +216,11 @@ public static class DataTableConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.DataTable? CreateModelElement(DXDC.DataTable? openXmlElement)
+  public static DMD.Charts.DataTable? CreateModelElement(DXDC.DataTable? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.DataTable();
+      var value = new DMD.Charts.DataTable();
       value.ShowHorizontalBorder = GetShowHorizontalBorder(openXmlElement);
       value.ShowVerticalBorder = GetShowVerticalBorder(openXmlElement);
       value.ShowOutlineBorder = GetShowOutlineBorder(openXmlElement);

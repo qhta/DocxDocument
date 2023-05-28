@@ -34,11 +34,11 @@ public static class BreakConverter
     }
   }
   
-  public static DocumentModel.Drawings.Break? CreateModelElement(DXD.Break? openXmlElement)
+  public static DMD.Break? CreateModelElement(DXD.Break? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Break();
+      var value = new DMD.Break();
       value.RunProperties = GetRunProperties(openXmlElement);
       return value;
     }

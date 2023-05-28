@@ -81,11 +81,11 @@ public static class PatternFillConverter
     }
   }
   
-  public static DocumentModel.Drawings.PatternFill? CreateModelElement(DXD.PatternFill? openXmlElement)
+  public static DMD.PatternFill? CreateModelElement(DXD.PatternFill? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.PatternFill();
+      var value = new DMD.PatternFill();
       value.Preset = GetPreset(openXmlElement);
       value.ForegroundColor = GetForegroundColor(openXmlElement);
       value.BackgroundColor = GetBackgroundColor(openXmlElement);

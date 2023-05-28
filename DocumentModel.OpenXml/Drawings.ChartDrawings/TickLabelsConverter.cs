@@ -34,11 +34,11 @@ public static class TickLabelsConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.TickLabels? CreateModelElement(DXO16DCD.TickLabels? openXmlElement)
+  public static DMDCDs.TickLabels? CreateModelElement(DXO16DCD.TickLabels? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.TickLabels();
+      var value = new DMDCDs.TickLabels();
       value.ExtensionList = GetExtensionList(openXmlElement);
       return value;
     }

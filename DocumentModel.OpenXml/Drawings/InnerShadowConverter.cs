@@ -239,11 +239,11 @@ public static class InnerShadowConverter
     }
   }
   
-  public static DocumentModel.Drawings.InnerShadow? CreateModelElement(DXD.InnerShadow? openXmlElement)
+  public static DMD.InnerShadow? CreateModelElement(DXD.InnerShadow? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.InnerShadow();
+      var value = new DMD.InnerShadow();
       value.BlurRadius = GetBlurRadius(openXmlElement);
       value.Distance = GetDistance(openXmlElement);
       value.Direction = GetDirection(openXmlElement);

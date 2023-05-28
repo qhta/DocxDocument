@@ -235,11 +235,11 @@ public static class GridlineMinorConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartsStyle.GridlineMinor? CreateModelElement(DXO13DCS.GridlineMinor? openXmlElement)
+  public static DMDCS.GridlineMinor? CreateModelElement(DXO13DCS.GridlineMinor? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartsStyle.GridlineMinor();
+      var value = new DMDCS.GridlineMinor();
       value.LineReference = GetLineReference(openXmlElement);
       value.LineWidthScale = GetLineWidthScale(openXmlElement);
       value.FillReference = GetFillReference(openXmlElement);

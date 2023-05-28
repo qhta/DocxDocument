@@ -222,11 +222,11 @@ public static class HyperlinkTypeConverter
     }
   }
   
-  public static DocumentModel.Drawings.HyperlinkType? CreateModelElement(DXD.HyperlinkType? openXmlElement)
+  public static DMD.HyperlinkType? CreateModelElement(DXD.HyperlinkType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.HyperlinkType();
+      var value = new DMD.HyperlinkType();
       value.Id = GetId(openXmlElement);
       value.InvalidUrl = GetInvalidUrl(openXmlElement);
       value.Action = GetAction(openXmlElement);

@@ -92,11 +92,11 @@ public static class WrapTightConverter
     }
   }
   
-  public static DocumentModel.Drawings.Wordprocessing.WrapTight? CreateModelElement(DXDW.WrapTight? openXmlElement)
+  public static DMD.Wordprocessing.WrapTight? CreateModelElement(DXDW.WrapTight? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Wordprocessing.WrapTight();
+      var value = new DMD.Wordprocessing.WrapTight();
       value.WrapText = GetWrapText(openXmlElement);
       value.DistanceFromLeft = GetDistanceFromLeft(openXmlElement);
       value.DistanceFromRight = GetDistanceFromRight(openXmlElement);

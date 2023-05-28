@@ -508,11 +508,11 @@ public static class SchemeColorConverter
     }
   }
   
-  public static DocumentModel.Drawings.SchemeColor? CreateModelElement(DXD.SchemeColor? openXmlElement)
+  public static DMD.SchemeColor? CreateModelElement(DXD.SchemeColor? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.SchemeColor();
+      var value = new DMD.SchemeColor();
       value.Val = GetVal(openXmlElement);
       value.Tint = GetTint(openXmlElement);
       value.Shade = GetShade(openXmlElement);

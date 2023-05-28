@@ -61,11 +61,11 @@ public static class CustomSplitConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.CustomSplit? CreateModelElement(DXDC.CustomSplit? openXmlElement)
+  public static DMD.Charts.CustomSplit? CreateModelElement(DXDC.CustomSplit? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.CustomSplit();
+      var value = new DMD.Charts.CustomSplit();
       value.SecondPiePoints = GetSecondPiePoints(openXmlElement);
       return value;
     }

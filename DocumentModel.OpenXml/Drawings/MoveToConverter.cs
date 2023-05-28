@@ -34,11 +34,11 @@ public static class MoveToConverter
     }
   }
   
-  public static DocumentModel.Drawings.MoveTo? CreateModelElement(DXD.MoveTo? openXmlElement)
+  public static DMD.MoveTo? CreateModelElement(DXD.MoveTo? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.MoveTo();
+      var value = new DMD.MoveTo();
       value.Point = GetPoint(openXmlElement);
       return value;
     }

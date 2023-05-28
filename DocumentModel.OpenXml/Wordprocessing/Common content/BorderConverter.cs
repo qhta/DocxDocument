@@ -1,5 +1,3 @@
-using DocumentModel.Drawings;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>

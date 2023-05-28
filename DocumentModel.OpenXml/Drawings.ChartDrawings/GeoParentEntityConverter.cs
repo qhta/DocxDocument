@@ -23,11 +23,11 @@ public static class GeoParentEntityConverter
     openXmlElement.EntityId = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.GeoParentEntity? CreateModelElement(DXO16DCD.GeoParentEntity? openXmlElement)
+  public static DMDCDs.GeoParentEntity? CreateModelElement(DXO16DCD.GeoParentEntity? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.GeoParentEntity();
+      var value = new DMDCDs.GeoParentEntity();
       value.EntityId = GetEntityId(openXmlElement);
       return value;
     }

@@ -132,11 +132,11 @@ public static class WrapSquareConverter
     }
   }
   
-  public static DocumentModel.Drawings.Wordprocessing.WrapSquare? CreateModelElement(DXDW.WrapSquare? openXmlElement)
+  public static DMD.Wordprocessing.WrapSquare? CreateModelElement(DXDW.WrapSquare? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Wordprocessing.WrapSquare();
+      var value = new DMD.Wordprocessing.WrapSquare();
       value.WrapText = GetWrapText(openXmlElement);
       value.DistanceFromTop = GetDistanceFromTop(openXmlElement);
       value.DistanceFromBottom = GetDistanceFromBottom(openXmlElement);

@@ -23,11 +23,11 @@ public static class GraphicDataConverter
     openXmlElement.Uri = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Drawings.GraphicData? CreateModelElement(DXD.GraphicData? openXmlElement)
+  public static DMD.GraphicData? CreateModelElement(DXD.GraphicData? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.GraphicData();
+      var value = new DMD.GraphicData();
       value.Uri = GetUri(openXmlElement);
       return value;
     }

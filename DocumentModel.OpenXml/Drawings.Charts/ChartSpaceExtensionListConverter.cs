@@ -61,11 +61,11 @@ public static class ChartSpaceExtensionListConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.ChartSpaceExtensionList? CreateModelElement(DXDC.ChartSpaceExtensionList? openXmlElement)
+  public static DMD.Charts.ChartSpaceExtensionList? CreateModelElement(DXDC.ChartSpaceExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.ChartSpaceExtensionList();
+      var value = new DMD.Charts.ChartSpaceExtensionList();
       value.ChartSpaceExtensions = GetChartSpaceExtensions(openXmlElement);
       return value;
     }

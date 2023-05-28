@@ -83,11 +83,11 @@ public static class RichTextConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.RichText? CreateModelElement(DXDC.RichText? openXmlElement)
+  public static DMD.Charts.RichText? CreateModelElement(DXDC.RichText? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.RichText();
+      var value = new DMD.Charts.RichText();
       value.BodyProperties = GetBodyProperties(openXmlElement);
       value.ListStyle = GetListStyle(openXmlElement);
       value.Paragraph = GetParagraph(openXmlElement);

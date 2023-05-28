@@ -86,11 +86,11 @@ public static class ChartDataConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.ChartData? CreateModelElement(DXO16DCD.ChartData? openXmlElement)
+  public static DMDCDs.ChartData? CreateModelElement(DXO16DCD.ChartData? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.ChartData();
+      var value = new DMDCDs.ChartData();
       value.ExternalData = GetExternalData(openXmlElement);
       value.Data = GetData(openXmlElement);
       value.ExtensionList = GetExtensionList(openXmlElement);

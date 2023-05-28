@@ -25,11 +25,11 @@ public static class SharpenSoftenConverter
     openXmlElement.Amount = value;
   }
   
-  public static DocumentModel.Drawings.SharpenSoften? CreateModelElement(DXO10D.SharpenSoften? openXmlElement)
+  public static DMD.SharpenSoften? CreateModelElement(DXO10D.SharpenSoften? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.SharpenSoften();
+      var value = new DMD.SharpenSoften();
       value.Amount = GetAmount(openXmlElement);
       return value;
     }

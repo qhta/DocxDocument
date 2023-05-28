@@ -360,11 +360,11 @@ public static class ChartSpaceConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.ChartSpace? CreateModelElement(DXDC.ChartSpace? openXmlElement)
+  public static DMD.Charts.ChartSpace? CreateModelElement(DXDC.ChartSpace? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.ChartSpace();
+      var value = new DMD.Charts.ChartSpace();
       value.Date1904 = GetDate1904(openXmlElement);
       value.EditingLanguage = GetEditingLanguage(openXmlElement);
       value.RoundedCorners = GetRoundedCorners(openXmlElement);

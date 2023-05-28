@@ -150,11 +150,11 @@ public static class Color2TypeConverter
     }
   }
   
-  public static DocumentModel.Drawings.Color2Type? CreateModelElement(DXD.Color2Type? openXmlElement)
+  public static DMD.Color2Type? CreateModelElement(DXD.Color2Type? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Color2Type();
+      var value = new DMD.Color2Type();
       value.RgbColorModelPercentage = GetRgbColorModelPercentage(openXmlElement);
       value.RgbColorModelHex = GetRgbColorModelHex(openXmlElement);
       value.HslColor = GetHslColor(openXmlElement);

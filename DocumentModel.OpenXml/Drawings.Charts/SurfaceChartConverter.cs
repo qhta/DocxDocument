@@ -200,11 +200,11 @@ public static class SurfaceChartConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.SurfaceChart? CreateModelElement(DXDC.SurfaceChart? openXmlElement)
+  public static DMD.Charts.SurfaceChart? CreateModelElement(DXDC.SurfaceChart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.SurfaceChart();
+      var value = new DMD.Charts.SurfaceChart();
       value.Wireframe = GetWireframe(openXmlElement);
       value.SurfaceChartSeries = GetSurfaceChartSeries(openXmlElement);
       value.BandFormats = GetBandFormats(openXmlElement);

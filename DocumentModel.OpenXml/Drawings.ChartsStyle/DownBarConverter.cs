@@ -235,11 +235,11 @@ public static class DownBarConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartsStyle.DownBar? CreateModelElement(DXO13DCS.DownBar? openXmlElement)
+  public static DMDCS.DownBar? CreateModelElement(DXO13DCS.DownBar? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartsStyle.DownBar();
+      var value = new DMDCS.DownBar();
       value.LineReference = GetLineReference(openXmlElement);
       value.LineWidthScale = GetLineWidthScale(openXmlElement);
       value.FillReference = GetFillReference(openXmlElement);
