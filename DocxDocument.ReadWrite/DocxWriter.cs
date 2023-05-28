@@ -159,7 +159,10 @@ public partial class DocxWriter : IDisposable
     var themePart = mainDocumentPart.GetPartsOfType<ThemePart>()?.FirstOrDefault();
     if (themePart == null)
       themePart = mainDocumentPart.AddNewPart<DXPack.ThemePart>();
-    themePart.Theme = DMXD.ThemeConverter.CreateOpenXmlElement(theme);
+    if (themePart.Theme != null)
+      DMXD.ThemeConverter.UpdateOpenXmlElement(themePart.Theme, theme);
+    else
+      themePart.Theme = DMXD.ThemeConverter.CreateOpenXmlElement(theme);
   }
 
   public void SetBackground(DMW.DocumentBackground background)
@@ -170,7 +173,10 @@ public partial class DocxWriter : IDisposable
     var docElement = mainDocumentPart.Document;
     if (docElement == null)
       docElement = mainDocumentPart.Document = new();
-    docElement.DocumentBackground = DMXW.DocumentBackgroundConverter.CreateOpenXmlElement(background);
+    if (docElement.DocumentBackground != null)
+      DMXW.DocumentBackgroundConverter.UpdateOpenXmlElement(docElement.DocumentBackground, background);
+    else
+      docElement.DocumentBackground = DMXW.DocumentBackgroundConverter.CreateOpenXmlElement(background);
   }
 
   public void SetFonts(DMW.Fonts fonts, DMW.EmbedFontData? embeddedFonts)

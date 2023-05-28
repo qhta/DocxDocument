@@ -106,7 +106,7 @@ public static class GlowConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXD.HslColorConverter.CreateOpenXmlElement<DXD.HslColor>(value);
+      itemElement = DMXD.HslColorConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AppendChild(itemElement);
     }
@@ -135,7 +135,7 @@ public static class GlowConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXD.SystemColorConverter.CreateOpenXmlElement<DXD.SystemColor>(value);
+      itemElement = DMXD.SystemColorConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AppendChild(itemElement);
     }
@@ -164,15 +164,11 @@ public static class GlowConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXD.SchemeColorConverter.CreateOpenXmlElement<DXD.SchemeColor>(value);
+      itemElement = DMXD.SchemeColorConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AppendChild(itemElement);
     }
   }
-  
-  /// <summary>
-  /// Preset Color.
-  /// </summary>
   private static DMD.PresetColor? GetPresetColor(DXD.Glow openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXD.PresetColor>();
