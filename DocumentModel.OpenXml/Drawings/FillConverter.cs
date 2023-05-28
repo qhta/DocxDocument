@@ -158,7 +158,7 @@ public static class FillConverter
   public static bool UpdateFillElement(DX.OpenXmlCompositeElement openXmlElement, DMD.Fill model)
   {
     var fillElement = openXmlElement.Elements().FirstOrDefault(element => IsFillElement(element));
-    if (fillElement!=null && FillConverter.UpdateOpenXmlFillElement(fillElement, model))
+    if (fillElement != null && FillConverter.UpdateOpenXmlFillElement(fillElement, model))
       return true;
     var element = FillConverter.CreateOpenXmlFillElement(model);
     if (element != null)
@@ -200,16 +200,20 @@ public static class FillConverter
     return openXmlElement;
   }
 
-  public static bool UpdateOpenXmlElement(DX.OpenXmlCompositeElement openXmlElement, DMD.Fill model)
+  public static bool UpdateOpenXmlElement(DX.OpenXmlCompositeElement openXmlElement, DMD.Fill? model)
   {
     openXmlElement.RemoveAllChildren();
-    var element = FillConverter.CreateOpenXmlFillElement(model);
-    if (element != null)
+    if (model != null)
     {
-      openXmlElement.AddChild(element);
-      return true;
+      var element = FillConverter.CreateOpenXmlFillElement(model);
+      if (element != null)
+      {
+        openXmlElement.AddChild(element);
+        return true;
+      }
+      return false;
     }
-    return false;
+    return true;
   }
   #endregion
 }

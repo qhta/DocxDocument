@@ -11,7 +11,7 @@ public class WholeFormatting: ModelElement
   /// <summary>
   ///   Outline.
   /// </summary>
-  public Outline? Outline { get; set; }
+  public LineProperties? Outline { get; set; }
 
   public EffectList? EffectList { get; set; }
 

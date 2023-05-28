@@ -98,7 +98,7 @@ public static class BackgroundConverter
   
   public static void UpdateOpenXmlElement(DXDD.Background openXmlElement, DMDD.Background model)
   {
-    FillConverter.UpdateOpenXmlFillElement(openXmlElement, model.Fill);
+    FillConverter.UpdateOpenXmlElement(openXmlElement, model.Fill);
     SetEffectList(openXmlElement, model.EffectList);
     SetEffectDag(openXmlElement, model.EffectDag);
   }

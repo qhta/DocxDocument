@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public class DefaultRunProperties: ModelElement
 {
-  public Outline? Outline { get; set; }
+  public LineProperties? Outline { get; set; }
 
   public Fill? Fill { get; set; }
 
@@ -18,7 +18,7 @@ public class DefaultRunProperties: ModelElement
 
   public bool? UnderlineFollowsText { get; set; }
 
-  public Underline? Underline { get; set; }
+  public LineProperties? Underline { get; set; }
 
   public bool? UnderlineFillText { get; set; }
 

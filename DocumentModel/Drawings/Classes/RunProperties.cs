@@ -7,7 +7,7 @@ namespace DocumentModel.Drawings;
 public class RunProperties: ModelElement
 {
 
-  public Outline? Outline { get; set; }
+  public LineProperties? Outline { get; set; }
 
   public Fill? Fill { get; set; }
 
@@ -19,7 +19,7 @@ public class RunProperties: ModelElement
 
   public bool? UnderlineFollowsText { get; set; }
 
-  public Underline? Underline { get; set; }
+  public LineProperties? Underline { get; set; }
 
   public bool? UnderlineFillText { get; set; }
 

@@ -6,5 +6,5 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public class LineStyleList: ModelElement
 {
-  public Outline? Outline { get; set; }
+  public LineProperties? Outline { get; set; }
 }

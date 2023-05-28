@@ -365,7 +365,7 @@ public static class HiddenLinePropertiesConverter
     SetCapType(openXmlElement, model.CapType);
     SetCompoundLineType(openXmlElement, model.CompoundLineType);
     SetAlignment(openXmlElement, model.Alignment);
-    FillConverter.UpdateOpenXmlFillElement(openXmlElement, model.Fill);
+    FillConverter.UpdateOpenXmlElement(openXmlElement, model.Fill);
     SetPresetDash(openXmlElement, model.PresetDash);
     SetCustomDash(openXmlElement, model.CustomDash);
     SetRound(openXmlElement, model.Round);
