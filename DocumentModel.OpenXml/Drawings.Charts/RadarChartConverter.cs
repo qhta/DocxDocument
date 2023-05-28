@@ -228,11 +228,11 @@ public static class RadarChartConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.RadarChart? CreateModelElement(DXDC.RadarChart? openXmlElement)
+  public static DMD.Charts.RadarChart? CreateModelElement(DXDC.RadarChart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.RadarChart();
+      var value = new DMD.Charts.RadarChart();
       value.RadarStyle = GetRadarStyle(openXmlElement);
       value.VaryColors = GetVaryColors(openXmlElement);
       value.RadarChartSeries = GetRadarChartSeries(openXmlElement);

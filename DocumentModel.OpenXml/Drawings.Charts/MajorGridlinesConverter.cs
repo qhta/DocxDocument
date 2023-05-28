@@ -31,11 +31,11 @@ public static class MajorGridlinesConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.MajorGridlines? CreateModelElement(DXDC.MajorGridlines? openXmlElement)
+  public static DMD.Charts.MajorGridlines? CreateModelElement(DXDC.MajorGridlines? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.MajorGridlines();
+      var value = new DMD.Charts.MajorGridlines();
       value.ChartShapeProperties = GetChartShapeProperties(openXmlElement);
       return value;
     }

@@ -1,5 +1,3 @@
-using DocumentModel.Drawings;
-
 namespace DocumentModel.OpenXml.Drawings.ChartDrawing;
 
 /// <summary>
@@ -39,7 +37,7 @@ public static class AbsoluteAnchorSizeConverter
   /// <summary>
   /// Shape Extent.
   /// </summary>
-  private static Extent? GetExtent(DXDCD.AbsoluteAnchorSize openXmlElement)
+  private static DMD.Extent? GetExtent(DXDCD.AbsoluteAnchorSize openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXDCD.Extent>();
     if (element != null)
@@ -47,12 +45,12 @@ public static class AbsoluteAnchorSizeConverter
     return null;
   }
   
-  private static bool CmpExtent(DXDCD.AbsoluteAnchorSize openXmlElement, Extent? value, DiffList? diffs = null, string? objName = null, string? propName = null)
+  private static bool CmpExtent(DXDCD.AbsoluteAnchorSize openXmlElement, DMD.Extent? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return DMXDCD.ExtentConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDCD.Extent>(), value, diffs, objName, propName);
   }
   
-  private static void SetExtent(DXDCD.AbsoluteAnchorSize openXmlElement, Extent? value)
+  private static void SetExtent(DXDCD.AbsoluteAnchorSize openXmlElement, DMD.Extent? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXDCD.Extent>();
     if (itemElement != null)
@@ -195,11 +193,11 @@ public static class AbsoluteAnchorSizeConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawing.AbsoluteAnchorSize? CreateModelElement(DXDCD.AbsoluteAnchorSize? openXmlElement)
+  public static DMD.ChartDrawing.AbsoluteAnchorSize? CreateModelElement(DXDCD.AbsoluteAnchorSize? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawing.AbsoluteAnchorSize();
+      var value = new DMD.ChartDrawing.AbsoluteAnchorSize();
       value.FromAnchor = GetFromAnchor(openXmlElement);
       value.Extent = GetExtent(openXmlElement);
       value.Shape = GetShape(openXmlElement);

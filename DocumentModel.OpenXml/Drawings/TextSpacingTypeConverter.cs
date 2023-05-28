@@ -41,11 +41,11 @@ public static class TextSpacingTypeConverter
     SimpleValueConverter.SetValue<DXD.SpacingPoints,System.Int32>(openXmlElement, value);
   }
   
-  public static DocumentModel.Drawings.TextSpacingType? CreateModelElement(DXD.TextSpacingType? openXmlElement)
+  public static DMD.TextSpacingType? CreateModelElement(DXD.TextSpacingType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.TextSpacingType();
+      var value = new DMD.TextSpacingType();
       value.SpacingPercent = GetSpacingPercent(openXmlElement);
       value.SpacingPoints = GetSpacingPoints(openXmlElement);
       return value;

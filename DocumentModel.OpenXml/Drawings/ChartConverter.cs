@@ -63,11 +63,11 @@ public static class ChartConverter
     openXmlElement.BuildStep = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.ChartBuildStepValues, DMD.ChartBuildStepKind>(value);
   }
   
-  public static DocumentModel.Drawings.Chart? CreateModelElement(DXD.Chart? openXmlElement)
+  public static DMD.Chart? CreateModelElement(DXD.Chart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Chart();
+      var value = new DMD.Chart();
       value.SeriesIndex = GetSeriesIndex(openXmlElement);
       value.CategoryIndex = GetCategoryIndex(openXmlElement);
       value.BuildStep = GetBuildStep(openXmlElement);

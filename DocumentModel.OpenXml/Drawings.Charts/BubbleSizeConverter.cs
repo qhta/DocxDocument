@@ -57,11 +57,11 @@ public static class BubbleSizeConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.BubbleSize? CreateModelElement(DXDC.BubbleSize? openXmlElement)
+  public static DMD.Charts.BubbleSize? CreateModelElement(DXDC.BubbleSize? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.BubbleSize();
+      var value = new DMD.Charts.BubbleSize();
       value.NumberReference = GetNumberReference(openXmlElement);
       value.NumberLiteral = GetNumberLiteral(openXmlElement);
       return value;

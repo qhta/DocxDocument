@@ -1,71 +1,49 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Line Style List.
+/// <see cref="DMD.LineStyleList"/> class from/to OpenXml converter.
 /// </summary>
 public static class LineStyleListConverter
 {
-  private static DMD.LineProperties? GetOutline(DXD.LineStyleList openXmlElement)
-  {
-    var element = openXmlElement?.GetFirstChild<DXD.Outline>();
-    if (element != null)
-      return DMXD.LinePropertiesConverter.CreateModelElement(element);
-    return null;
-  }
-  
-  private static bool CmpOutline(DXD.LineStyleList openXmlElement, DMD.LineProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
-  {
-    return DMXD.LinePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Outline>(), value, diffs, objName, propName);
-  }
-  
-  private static void SetOutline(DXD.LineStyleList openXmlElement, DMD.LineProperties? value)
-  {
-    var itemElement = openXmlElement.GetFirstChild<DXD.Outline>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = DMXD.LinePropertiesConverter.CreateOpenXmlElement<DXD.Outline>(value);
-      if (itemElement != null)
-        openXmlElement.AppendChild(itemElement);
-    }
-  }
-  
-  public static DocumentModel.Drawings.LineStyleList? CreateModelElement(DXD.LineStyleList? openXmlElement)
+  public static DMD.LineStyleList? CreateModelElement(DX.OpenXmlCompositeElement? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.LineStyleList();
-      value.Outline = GetOutline(openXmlElement);
-      return value;
+      var model = new DMD.LineStyleList();
+      ElementCollectionConverter2<DXD.Outline, DMD.LineProperties>
+        .FillModelElementCollection(openXmlElement.Elements<DXD.Outline>(), model,
+        LinePropertiesConverter.CreateModelElement);
+      return model;
     }
     return null;
   }
   
-  public static bool CompareModelElement(DXD.LineStyleList? openXmlElement, DMD.LineStyleList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
+  public static bool CompareModelElement(DX.OpenXmlCompositeElement? openXmlElement, DMD.LineStyleList? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
-      var ok = true;
-      if (!CmpOutline(openXmlElement, value.Outline, diffs, objName, propName))
-        ok = false;
-      return ok;
+      return ElementCollectionConverter2<DXD.Outline, DMD.LineProperties>
+        .CompareOpenXmlElementCollection(openXmlElement.Elements<DXD.Outline>(), model,
+        LinePropertiesConverter.CompareModelElement, diffs, objName, propName);
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.LineStyleList value)
-    where OpenXmlElementType: DXD.LineStyleList, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.LineStyleList model)
+    where OpenXmlElementType: DX.OpenXmlCompositeElement, new()
   {
     var openXmlElement = new OpenXmlElementType();
-    UpdateOpenXmlElement(openXmlElement, value);
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXD.LineStyleList openXmlElement, DMD.LineStyleList value)
+  public static bool UpdateOpenXmlElement(DX.OpenXmlCompositeElement openXmlElement, DMD.LineStyleList model)
   {
-    SetOutline(openXmlElement, value?.Outline);
+    return ElementCollectionConverter2<DXD.Outline, DMD.LineProperties>.UpdateOpenXmlElementCollection(openXmlElement, model,
+        LinePropertiesConverter.CompareModelElement,
+        LinePropertiesConverter.UpdateOpenXmlElement,
+        LinePropertiesConverter.CreateOpenXmlElement<DXD.Outline>);
   }
 }

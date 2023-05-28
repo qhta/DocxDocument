@@ -92,11 +92,11 @@ public static class ThemeOverrideConverter
     }
   }
   
-  public static DocumentModel.Drawings.ThemeOverride? CreateModelElement(DXD.ThemeOverride? openXmlElement)
+  public static DMD.ThemeOverride? CreateModelElement(DXD.ThemeOverride? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ThemeOverride();
+      var value = new DMD.ThemeOverride();
       value.ColorScheme = GetColorScheme(openXmlElement);
       value.FontScheme = GetFontScheme(openXmlElement);
       value.FormatScheme = GetFormatScheme(openXmlElement);

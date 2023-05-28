@@ -61,11 +61,11 @@ public static class RuleListConverter
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.RuleList? CreateModelElement(DXDD.RuleList? openXmlElement)
+  public static DMDD.RuleList? CreateModelElement(DXDD.RuleList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.RuleList();
+      var value = new DMDD.RuleList();
       value.Rules = GetRules(openXmlElement);
       return value;
     }

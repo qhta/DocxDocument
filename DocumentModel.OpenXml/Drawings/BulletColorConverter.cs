@@ -161,11 +161,11 @@ public static class BulletColorConverter
     }
   }
   
-  public static DocumentModel.Drawings.BulletColor? CreateModelElement(DXD.BulletColor? openXmlElement)
+  public static DMD.BulletColor? CreateModelElement(DXD.BulletColor? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.BulletColor();
+      var value = new DMD.BulletColor();
       value.RgbColorModelPercentage = GetRgbColorModelPercentage(openXmlElement);
       value.RgbColorModelHex = GetRgbColorModelHex(openXmlElement);
       value.HslColor = GetHslColor(openXmlElement);

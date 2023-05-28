@@ -433,11 +433,11 @@ public static class Level1ParagraphPropertiesConverter
     }
   }
   
-  public static DocumentModel.Drawings.Level1ParagraphProperties? CreateModelElement(DXD.Level1ParagraphProperties? openXmlElement)
+  public static DMD.Level1ParagraphProperties? CreateModelElement(DXD.Level1ParagraphProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Level1ParagraphProperties();
+      var value = new DMD.Level1ParagraphProperties();
       value.LineSpacing = GetLineSpacing(openXmlElement);
       value.SpaceBefore = GetSpaceBefore(openXmlElement);
       value.SpaceAfter = GetSpaceAfter(openXmlElement);

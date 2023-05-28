@@ -65,7 +65,7 @@ public static class SubtotalsConverter
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.Subtotals();
+      var value = new DMDCDs.Subtotals();
       value.UnsignedIntegerTypes = GetUnsignedIntegerTypes(openXmlElement);
       return value;
     }

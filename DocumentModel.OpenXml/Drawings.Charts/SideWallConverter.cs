@@ -98,11 +98,11 @@ public static class SideWallConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.SideWall? CreateModelElement(DXDC.SideWall? openXmlElement)
+  public static DMD.Charts.SideWall? CreateModelElement(DXDC.SideWall? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.SideWall();
+      var value = new DMD.Charts.SideWall();
       value.Thickness = GetThickness(openXmlElement);
       value.ShapeProperties = GetShapeProperties(openXmlElement);
       value.PictureOptions = GetPictureOptions(openXmlElement);

@@ -52,11 +52,11 @@ public static class PathGradientFillConverter
     }
   }
   
-  public static DocumentModel.Drawings.PathGradientFill? CreateModelElement(DXD.PathGradientFill? openXmlElement)
+  public static DMD.PathGradientFill? CreateModelElement(DXD.PathGradientFill? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.PathGradientFill();
+      var value = new DMD.PathGradientFill();
       value.Path = GetPath(openXmlElement);
       value.FillToRectangle = GetFillToRectangle(openXmlElement);
       return value;

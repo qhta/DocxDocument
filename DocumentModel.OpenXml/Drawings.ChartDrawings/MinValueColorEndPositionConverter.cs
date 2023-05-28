@@ -63,11 +63,11 @@ public static class MinValueColorEndPositionConverter
     SimpleValueConverter.SetValue<DXO16DCD.PercentageColorPosition,System.Double>(openXmlElement, value);
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.MinValueColorEndPosition? CreateModelElement(DXO16DCD.MinValueColorEndPosition? openXmlElement)
+  public static DMDCDs.MinValueColorEndPosition? CreateModelElement(DXO16DCD.MinValueColorEndPosition? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.MinValueColorEndPosition();
+      var value = new DMDCDs.MinValueColorEndPosition();
       value.ExtremeValueColorPosition = GetExtremeValueColorPosition(openXmlElement);
       value.NumberColorPosition = GetNumberColorPosition(openXmlElement);
       value.PercentageColorPosition = GetPercentageColorPosition(openXmlElement);

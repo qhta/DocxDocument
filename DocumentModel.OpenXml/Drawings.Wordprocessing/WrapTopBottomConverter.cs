@@ -74,11 +74,11 @@ public static class WrapTopBottomConverter
     }
   }
   
-  public static DocumentModel.Drawings.Wordprocessing.WrapTopBottom? CreateModelElement(DXDW.WrapTopBottom? openXmlElement)
+  public static DMD.Wordprocessing.WrapTopBottom? CreateModelElement(DXDW.WrapTopBottom? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Wordprocessing.WrapTopBottom();
+      var value = new DMD.Wordprocessing.WrapTopBottom();
       value.DistanceFromTop = GetDistanceFromTop(openXmlElement);
       value.DistanceFromBottom = GetDistanceFromBottom(openXmlElement);
       value.EffectExtent = GetEffectExtent(openXmlElement);

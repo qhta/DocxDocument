@@ -297,11 +297,11 @@ public static class TrendlineConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.Trendline? CreateModelElement(DXDC.Trendline? openXmlElement)
+  public static DMD.Charts.Trendline? CreateModelElement(DXDC.Trendline? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.Trendline();
+      var value = new DMD.Charts.Trendline();
       value.TrendlineName = GetTrendlineName(openXmlElement);
       value.ChartShapeProperties = GetChartShapeProperties(openXmlElement);
       value.TrendlineType = GetTrendlineType(openXmlElement);

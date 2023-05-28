@@ -61,11 +61,11 @@ public static class TabStopListConverter
     }
   }
   
-  public static DocumentModel.Drawings.TabStopList? CreateModelElement(DXD.TabStopList? openXmlElement)
+  public static DMD.TabStopList? CreateModelElement(DXD.TabStopList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.TabStopList();
+      var value = new DMD.TabStopList();
       value.TabStops = GetTabStops(openXmlElement);
       return value;
     }

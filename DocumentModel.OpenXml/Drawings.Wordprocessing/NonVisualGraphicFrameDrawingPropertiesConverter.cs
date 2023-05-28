@@ -63,11 +63,11 @@ public static class NonVisualGraphicFrameDrawingPropertiesConverter
     }
   }
   
-  public static DocumentModel.Drawings.Wordprocessing.NonVisualGraphicFrameDrawingProperties? CreateModelElement(DXDW.NonVisualGraphicFrameDrawingProperties? openXmlElement)
+  public static DMD.Wordprocessing.NonVisualGraphicFrameDrawingProperties? CreateModelElement(DXDW.NonVisualGraphicFrameDrawingProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Wordprocessing.NonVisualGraphicFrameDrawingProperties();
+      var value = new DMD.Wordprocessing.NonVisualGraphicFrameDrawingProperties();
       value.GraphicFrameLocks = GetGraphicFrameLocks(openXmlElement);
       value.ExtensionList = GetExtensionList(openXmlElement);
       return value;

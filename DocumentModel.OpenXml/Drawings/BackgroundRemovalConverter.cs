@@ -197,11 +197,11 @@ public static class BackgroundRemovalConverter
     }
   }
   
-  public static DocumentModel.Drawings.BackgroundRemoval? CreateModelElement(DXO10D.BackgroundRemoval? openXmlElement)
+  public static DMD.BackgroundRemoval? CreateModelElement(DXO10D.BackgroundRemoval? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.BackgroundRemoval();
+      var value = new DMD.BackgroundRemoval();
       value.MarqueeTop = GetMarqueeTop(openXmlElement);
       value.MarqueeBottom = GetMarqueeBottom(openXmlElement);
       value.MarqueeLeft = GetMarqueeLeft(openXmlElement);

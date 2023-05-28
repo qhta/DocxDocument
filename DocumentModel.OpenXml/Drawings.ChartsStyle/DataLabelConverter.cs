@@ -235,11 +235,11 @@ public static class DataLabelConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartsStyle.DataLabel? CreateModelElement(DXO13DCS.DataLabel? openXmlElement)
+  public static DMDCS.DataLabel? CreateModelElement(DXO13DCS.DataLabel? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartsStyle.DataLabel();
+      var value = new DMDCS.DataLabel();
       value.LineReference = GetLineReference(openXmlElement);
       value.LineWidthScale = GetLineWidthScale(openXmlElement);
       value.FillReference = GetFillReference(openXmlElement);

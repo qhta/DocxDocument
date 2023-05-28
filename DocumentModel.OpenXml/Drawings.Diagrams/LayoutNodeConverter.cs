@@ -337,11 +337,11 @@ public static class LayoutNodeConverter
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.LayoutNode? CreateModelElement(DXDD.LayoutNode? openXmlElement)
+  public static DMDD.LayoutNode? CreateModelElement(DXDD.LayoutNode? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.LayoutNode();
+      var value = new DMDD.LayoutNode();
       value.Name = GetName(openXmlElement);
       value.StyleLabel = GetStyleLabel(openXmlElement);
       value.ChildOrder = GetChildOrder(openXmlElement);

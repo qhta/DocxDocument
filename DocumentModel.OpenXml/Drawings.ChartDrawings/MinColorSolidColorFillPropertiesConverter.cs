@@ -161,11 +161,11 @@ public static class MinColorSolidColorFillPropertiesConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.MinColorSolidColorFillProperties? CreateModelElement(DXO16DCD.MinColorSolidColorFillProperties? openXmlElement)
+  public static DMDCDs.MinColorSolidColorFillProperties? CreateModelElement(DXO16DCD.MinColorSolidColorFillProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.MinColorSolidColorFillProperties();
+      var value = new DMDCDs.MinColorSolidColorFillProperties();
       value.RgbColorModelPercentage = GetRgbColorModelPercentage(openXmlElement);
       value.RgbColorModelHex = GetRgbColorModelHex(openXmlElement);
       value.HslColor = GetHslColor(openXmlElement);

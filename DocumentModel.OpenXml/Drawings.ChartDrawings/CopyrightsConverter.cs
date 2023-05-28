@@ -61,11 +61,11 @@ public static class CopyrightsConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.Copyrights? CreateModelElement(DXO16DCD.Copyrights? openXmlElement)
+  public static DMDCDs.Copyrights? CreateModelElement(DXO16DCD.Copyrights? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.Copyrights();
+      var value = new DMDCDs.Copyrights();
       value.CopyrightXsdstrings = GetCopyrightXsdstrings(openXmlElement);
       return value;
     }

@@ -164,11 +164,11 @@ public static class DiagramAutoBulletConverter
     }
   }
   
-  public static DocumentModel.Drawings.Diagram1.DiagramAutoBullet? CreateModelElement(DXO19DD11.DiagramAutoBullet? openXmlElement)
+  public static DMDD1.DiagramAutoBullet? CreateModelElement(DXO19DD11.DiagramAutoBullet? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagram1.DiagramAutoBullet();
+      var value = new DMDD1.DiagramAutoBullet();
       value.AutoBulletPrefix = GetAutoBulletPrefix(openXmlElement);
       value.LeadZeros = GetLeadZeros(openXmlElement);
       value.NoBullet = GetNoBullet(openXmlElement);

@@ -235,11 +235,11 @@ public static class ChartAreaConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartsStyle.ChartArea? CreateModelElement(DXO13DCS.ChartArea? openXmlElement)
+  public static DMDCS.ChartArea? CreateModelElement(DXO13DCS.ChartArea? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartsStyle.ChartArea();
+      var value = new DMDCS.ChartArea();
       value.LineReference = GetLineReference(openXmlElement);
       value.LineWidthScale = GetLineWidthScale(openXmlElement);
       value.FillReference = GetFillReference(openXmlElement);

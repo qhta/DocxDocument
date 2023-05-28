@@ -161,11 +161,11 @@ public static class MidColorSolidColorFillPropertiesConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.MidColorSolidColorFillProperties? CreateModelElement(DXO16DCD.MidColorSolidColorFillProperties? openXmlElement)
+  public static DMDCDs.MidColorSolidColorFillProperties? CreateModelElement(DXO16DCD.MidColorSolidColorFillProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.MidColorSolidColorFillProperties();
+      var value = new DMDCDs.MidColorSolidColorFillProperties();
       value.RgbColorModelPercentage = GetRgbColorModelPercentage(openXmlElement);
       value.RgbColorModelHex = GetRgbColorModelHex(openXmlElement);
       value.HslColor = GetHslColor(openXmlElement);

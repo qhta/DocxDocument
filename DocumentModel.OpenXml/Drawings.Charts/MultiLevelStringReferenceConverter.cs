@@ -88,11 +88,11 @@ public static class MultiLevelStringReferenceConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.MultiLevelStringReference? CreateModelElement(DXDC.MultiLevelStringReference? openXmlElement)
+  public static DMD.Charts.MultiLevelStringReference? CreateModelElement(DXDC.MultiLevelStringReference? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.MultiLevelStringReference();
+      var value = new DMD.Charts.MultiLevelStringReference();
       value.Formula = GetFormula(openXmlElement);
       value.MultiLevelStringCache = GetMultiLevelStringCache(openXmlElement);
       value.MultiLvlStrRefExtensionList = GetMultiLvlStrRefExtensionList(openXmlElement);

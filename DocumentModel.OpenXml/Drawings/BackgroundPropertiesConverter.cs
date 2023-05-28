@@ -77,11 +77,11 @@ public static class BackgroundPropertiesConverter
     openXmlElement.TargetScreenSize = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2013.Drawing.TargetScreenSize, DMD.TargetScreenSize>(value);
   }
   
-  public static DocumentModel.Drawings.BackgroundProperties? CreateModelElement(DXO13D.BackgroundProperties? openXmlElement)
+  public static DMD.BackgroundProperties? CreateModelElement(DXO13D.BackgroundProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.BackgroundProperties();
+      var value = new DMD.BackgroundProperties();
       value.Mode = GetMode(openXmlElement);
       value.Pure = GetPure(openXmlElement);
       value.Normal = GetNormal(openXmlElement);

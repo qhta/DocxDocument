@@ -41,11 +41,11 @@ public static class StyleLabelDescriptionConverter
     openXmlElement.Val = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Drawings.Diagrams.StyleLabelDescription? CreateModelElement(DXDD.StyleLabelDescription? openXmlElement)
+  public static DMDD.StyleLabelDescription? CreateModelElement(DXDD.StyleLabelDescription? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.StyleLabelDescription();
+      var value = new DMDD.StyleLabelDescription();
       value.Language = GetLanguage(openXmlElement);
       value.Val = GetVal(openXmlElement);
       return value;

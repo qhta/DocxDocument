@@ -485,11 +485,11 @@ public static class BubbleChartSeries3Converter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.BubbleChartSeries3? CreateModelElement(DXO13DC.BubbleChartSeries? openXmlElement)
+  public static DMD.Charts.BubbleChartSeries3? CreateModelElement(DXO13DC.BubbleChartSeries? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.BubbleChartSeries3();
+      var value = new DMD.Charts.BubbleChartSeries3();
       value.Index = GetIndex(openXmlElement);
       value.Order = GetOrder(openXmlElement);
       value.SeriesText = GetSeriesText(openXmlElement);

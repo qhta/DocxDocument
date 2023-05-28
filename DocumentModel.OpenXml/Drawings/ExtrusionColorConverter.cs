@@ -161,11 +161,11 @@ public static class ExtrusionColorConverter
     }
   }
   
-  public static DocumentModel.Drawings.ExtrusionColor? CreateModelElement(DXD.ExtrusionColor? openXmlElement)
+  public static DMD.ExtrusionColor? CreateModelElement(DXD.ExtrusionColor? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ExtrusionColor();
+      var value = new DMD.ExtrusionColor();
       value.RgbColorModelPercentage = GetRgbColorModelPercentage(openXmlElement);
       value.RgbColorModelHex = GetRgbColorModelHex(openXmlElement);
       value.HslColor = GetHslColor(openXmlElement);

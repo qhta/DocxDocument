@@ -197,11 +197,11 @@ public static class ShapeConverter
     }
   }
   
-  public static DocumentModel.Drawings.Office.Shape? CreateModelElement(DXOD.Shape? openXmlElement)
+  public static DMDO.Shape? CreateModelElement(DXOD.Shape? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Office.Shape();
+      var value = new DMDO.Shape();
       value.ModelId = GetModelId(openXmlElement);
       value.ShapeNonVisualProperties = GetShapeNonVisualProperties(openXmlElement);
       value.ShapeProperties = GetShapeProperties(openXmlElement);

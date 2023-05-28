@@ -129,11 +129,11 @@ public static class Transform2DConverter
     }
   }
   
-  public static DocumentModel.Drawings.Transform2D? CreateModelElement(DXD.Transform2D? openXmlElement)
+  public static DMD.Transform2D? CreateModelElement(DXD.Transform2D? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Transform2D();
+      var value = new DMD.Transform2D();
       value.Rotation = GetRotation(openXmlElement);
       value.HorizontalFlip = GetHorizontalFlip(openXmlElement);
       value.VerticalFlip = GetVerticalFlip(openXmlElement);

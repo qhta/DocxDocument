@@ -246,11 +246,11 @@ public static class SurfaceChartSeries3Converter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.SurfaceChartSeries3? CreateModelElement(DXO13DC.SurfaceChartSeries? openXmlElement)
+  public static DMD.Charts.SurfaceChartSeries3? CreateModelElement(DXO13DC.SurfaceChartSeries? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.SurfaceChartSeries3();
+      var value = new DMD.Charts.SurfaceChartSeries3();
       value.Index = GetIndex(openXmlElement);
       value.Order = GetOrder(openXmlElement);
       value.SeriesText = GetSeriesText(openXmlElement);

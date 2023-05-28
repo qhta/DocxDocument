@@ -52,11 +52,11 @@ public static class BlendConverter
     }
   }
   
-  public static DocumentModel.Drawings.Blend? CreateModelElement(DXD.Blend? openXmlElement)
+  public static DMD.Blend? CreateModelElement(DXD.Blend? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Blend();
+      var value = new DMD.Blend();
       value.BlendMode = GetBlendMode(openXmlElement);
       value.EffectContainer = GetEffectContainer(openXmlElement);
       return value;

@@ -63,11 +63,11 @@ public static class NonVisualConnectorShapeDrawingPropertiesConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawing.NonVisualConnectorShapeDrawingProperties? CreateModelElement(DXDCD.NonVisualConnectorShapeDrawingProperties? openXmlElement)
+  public static DMD.ChartDrawing.NonVisualConnectorShapeDrawingProperties? CreateModelElement(DXDCD.NonVisualConnectorShapeDrawingProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawing.NonVisualConnectorShapeDrawingProperties();
+      var value = new DMD.ChartDrawing.NonVisualConnectorShapeDrawingProperties();
       value.NonVisualDrawingProperties = GetNonVisualDrawingProperties(openXmlElement);
       value.NonVisualConnectionShapeProperties = GetNonVisualConnectionShapeProperties(openXmlElement);
       return value;

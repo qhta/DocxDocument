@@ -611,11 +611,11 @@ public static class BodyPropertiesConverter
     }
   }
   
-  public static DocumentModel.Drawings.BodyProperties? CreateModelElement(DXD.BodyProperties? openXmlElement)
+  public static DMD.BodyProperties? CreateModelElement(DXD.BodyProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.BodyProperties();
+      var value = new DMD.BodyProperties();
       value.Rotation = GetRotation(openXmlElement);
       value.UseParagraphSpacing = GetUseParagraphSpacing(openXmlElement);
       value.VerticalOverflow = GetVerticalOverflow(openXmlElement);

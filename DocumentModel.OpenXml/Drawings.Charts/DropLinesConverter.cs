@@ -31,11 +31,11 @@ public static class DropLinesConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.DropLines? CreateModelElement(DXDC.DropLines? openXmlElement)
+  public static DMD.Charts.DropLines? CreateModelElement(DXDC.DropLines? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.DropLines();
+      var value = new DMD.Charts.DropLines();
       value.ChartShapeProperties = GetChartShapeProperties(openXmlElement);
       return value;
     }

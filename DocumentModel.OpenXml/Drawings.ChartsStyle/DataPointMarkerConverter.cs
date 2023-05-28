@@ -235,11 +235,11 @@ public static class DataPointMarkerConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartsStyle.DataPointMarker? CreateModelElement(DXO13DCS.DataPointMarker? openXmlElement)
+  public static DMDCS.DataPointMarker? CreateModelElement(DXO13DCS.DataPointMarker? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartsStyle.DataPointMarker();
+      var value = new DMDCS.DataPointMarker();
       value.LineReference = GetLineReference(openXmlElement);
       value.LineWidthScale = GetLineWidthScale(openXmlElement);
       value.FillReference = GetFillReference(openXmlElement);

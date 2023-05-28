@@ -57,11 +57,11 @@ public static class ValuesConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.Values? CreateModelElement(DXDC.Values? openXmlElement)
+  public static DMD.Charts.Values? CreateModelElement(DXDC.Values? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.Values();
+      var value = new DMD.Charts.Values();
       value.NumberReference = GetNumberReference(openXmlElement);
       value.NumberLiteral = GetNumberLiteral(openXmlElement);
       return value;

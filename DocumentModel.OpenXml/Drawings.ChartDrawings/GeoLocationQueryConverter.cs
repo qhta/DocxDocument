@@ -95,11 +95,11 @@ public static class GeoLocationQueryConverter
     openXmlElement.EntityType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityTypeEnum, DMDCDs.EntityTypeEnum>(value);
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.GeoLocationQuery? CreateModelElement(DXO16DCD.GeoLocationQuery? openXmlElement)
+  public static DMDCDs.GeoLocationQuery? CreateModelElement(DXO16DCD.GeoLocationQuery? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.GeoLocationQuery();
+      var value = new DMDCDs.GeoLocationQuery();
       value.CountryRegion = GetCountryRegion(openXmlElement);
       value.AdminDistrict1 = GetAdminDistrict1(openXmlElement);
       value.AdminDistrict2 = GetAdminDistrict2(openXmlElement);

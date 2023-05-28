@@ -49,11 +49,11 @@ public static class DateAxExtensionConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.DateAxExtension? CreateModelElement(DXDC.DateAxExtension? openXmlElement)
+  public static DMD.Charts.DateAxExtension? CreateModelElement(DXDC.DateAxExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.DateAxExtension();
+      var value = new DMD.Charts.DateAxExtension();
       value.Uri = GetUri(openXmlElement);
       value.NumberingFormat = GetNumberingFormat(openXmlElement);
       return value;

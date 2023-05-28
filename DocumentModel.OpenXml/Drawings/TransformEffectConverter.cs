@@ -125,11 +125,11 @@ public static class TransformEffectConverter
     openXmlElement.VerticalShift = value;
   }
   
-  public static DocumentModel.Drawings.TransformEffect? CreateModelElement(DXD.TransformEffect? openXmlElement)
+  public static DMD.TransformEffect? CreateModelElement(DXD.TransformEffect? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.TransformEffect();
+      var value = new DMD.TransformEffect();
       value.HorizontalRatio = GetHorizontalRatio(openXmlElement);
       value.VerticalRatio = GetVerticalRatio(openXmlElement);
       value.HorizontalSkew = GetHorizontalSkew(openXmlElement);

@@ -235,11 +235,11 @@ public static class DropLineConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartsStyle.DropLine? CreateModelElement(DXO13DCS.DropLine? openXmlElement)
+  public static DMDCS.DropLine? CreateModelElement(DXO13DCS.DropLine? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartsStyle.DropLine();
+      var value = new DMDCS.DropLine();
       value.LineReference = GetLineReference(openXmlElement);
       value.LineWidthScale = GetLineWidthScale(openXmlElement);
       value.FillReference = GetFillReference(openXmlElement);

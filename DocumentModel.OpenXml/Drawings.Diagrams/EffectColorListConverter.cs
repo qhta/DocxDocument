@@ -161,11 +161,11 @@ public static class EffectColorListConverter
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.EffectColorList? CreateModelElement(DXDD.EffectColorList? openXmlElement)
+  public static DMDD.EffectColorList? CreateModelElement(DXDD.EffectColorList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.EffectColorList();
+      var value = new DMDD.EffectColorList();
       value.RgbColorModelPercentage = GetRgbColorModelPercentage(openXmlElement);
       value.RgbColorModelHex = GetRgbColorModelHex(openXmlElement);
       value.HslColor = GetHslColor(openXmlElement);

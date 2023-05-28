@@ -161,11 +161,11 @@ public static class ForegroundColorConverter
     }
   }
   
-  public static DocumentModel.Drawings.ForegroundColor? CreateModelElement(DXD.ForegroundColor? openXmlElement)
+  public static DMD.ForegroundColor? CreateModelElement(DXD.ForegroundColor? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ForegroundColor();
+      var value = new DMD.ForegroundColor();
       value.RgbColorModelPercentage = GetRgbColorModelPercentage(openXmlElement);
       value.RgbColorModelHex = GetRgbColorModelHex(openXmlElement);
       value.HslColor = GetHslColor(openXmlElement);

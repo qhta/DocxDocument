@@ -34,11 +34,11 @@ public static class FilteredAreaSeriesConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.FilteredAreaSeries? CreateModelElement(DXO13DC.FilteredAreaSeries? openXmlElement)
+  public static DMD.Charts.FilteredAreaSeries? CreateModelElement(DXO13DC.FilteredAreaSeries? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.FilteredAreaSeries();
+      var value = new DMD.Charts.FilteredAreaSeries();
       value.AreaChartSeries = GetAreaChartSeries(openXmlElement);
       return value;
     }

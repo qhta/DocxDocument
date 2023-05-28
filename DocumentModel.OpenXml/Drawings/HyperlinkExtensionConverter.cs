@@ -48,11 +48,11 @@ public static class HyperlinkExtensionConverter
       openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXO19DHLC.HyperlinkColor, DocumentFormat.OpenXml.Office2019.Drawing.HyperLinkColor.HyperlinkColorEnum, DMD.HyperlinkColorEnum>((DMD.HyperlinkColorEnum)value));
   }
   
-  public static DocumentModel.Drawings.HyperlinkExtension? CreateModelElement(DXD.HyperlinkExtension? openXmlElement)
+  public static DMD.HyperlinkExtension? CreateModelElement(DXD.HyperlinkExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.HyperlinkExtension();
+      var value = new DMD.HyperlinkExtension();
       value.Uri = GetUri(openXmlElement);
       value.HyperlinkColor = GetHyperlinkColor(openXmlElement);
       return value;

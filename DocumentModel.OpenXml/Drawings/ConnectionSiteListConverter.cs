@@ -61,11 +61,11 @@ public static class ConnectionSiteListConverter
     }
   }
   
-  public static DocumentModel.Drawings.ConnectionSiteList? CreateModelElement(DXD.ConnectionSiteList? openXmlElement)
+  public static DMD.ConnectionSiteList? CreateModelElement(DXD.ConnectionSiteList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ConnectionSiteList();
+      var value = new DMD.ConnectionSiteList();
       value.ConnectionSites = GetConnectionSites(openXmlElement);
       return value;
     }

@@ -249,11 +249,11 @@ public static class SeriesLayoutPropertiesConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.SeriesLayoutProperties? CreateModelElement(DXO16DCD.SeriesLayoutProperties? openXmlElement)
+  public static DMDCDs.SeriesLayoutProperties? CreateModelElement(DXO16DCD.SeriesLayoutProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.SeriesLayoutProperties();
+      var value = new DMDCDs.SeriesLayoutProperties();
       value.ParentLabelLayout = GetParentLabelLayout(openXmlElement);
       value.RegionLabelLayout = GetRegionLabelLayout(openXmlElement);
       value.SeriesElementVisibilities = GetSeriesElementVisibilities(openXmlElement);

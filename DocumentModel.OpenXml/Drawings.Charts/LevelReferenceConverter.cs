@@ -30,11 +30,11 @@ public static class LevelReferenceConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.LevelReference? CreateModelElement(DXO13DC.LevelReference? openXmlElement)
+  public static DMD.Charts.LevelReference? CreateModelElement(DXO13DC.LevelReference? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.LevelReference();
+      var value = new DMD.Charts.LevelReference();
       value.SequenceOfReferences = GetSequenceOfReferences(openXmlElement);
       return value;
     }

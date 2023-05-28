@@ -34,11 +34,11 @@ public static class BackgroundBlurPropertiesConverter
     }
   }
   
-  public static DocumentModel.Drawings.BackgroundBlurProperties? CreateModelElement(DXO21DL.BackgroundBlurProperties? openXmlElement)
+  public static DMD.BackgroundBlurProperties? CreateModelElement(DXO21DL.BackgroundBlurProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.BackgroundBlurProperties();
+      var value = new DMD.BackgroundBlurProperties();
       value.OfficeArtExtensionList = GetOfficeArtExtensionList(openXmlElement);
       return value;
     }

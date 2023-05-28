@@ -135,11 +135,11 @@ public static class TextDefaultConverter
     }
   }
   
-  public static DocumentModel.Drawings.TextDefault? CreateModelElement(DXD.TextDefault? openXmlElement)
+  public static DMD.TextDefault? CreateModelElement(DXD.TextDefault? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.TextDefault();
+      var value = new DMD.TextDefault();
       value.ShapeProperties = GetShapeProperties(openXmlElement);
       value.BodyProperties = GetBodyProperties(openXmlElement);
       value.ListStyle = GetListStyle(openXmlElement);

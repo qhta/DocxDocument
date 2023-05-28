@@ -112,11 +112,11 @@ public static class ValueColorPositionsConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.ValueColorPositions? CreateModelElement(DXO16DCD.ValueColorPositions? openXmlElement)
+  public static DMDCDs.ValueColorPositions? CreateModelElement(DXO16DCD.ValueColorPositions? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.ValueColorPositions();
+      var value = new DMDCDs.ValueColorPositions();
       value.Count = GetCount(openXmlElement);
       value.MinValueColorEndPosition = GetMinValueColorEndPosition(openXmlElement);
       value.ValueColorMiddlePosition = GetValueColorMiddlePosition(openXmlElement);

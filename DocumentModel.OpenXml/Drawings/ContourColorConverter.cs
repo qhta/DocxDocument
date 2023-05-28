@@ -161,11 +161,11 @@ public static class ContourColorConverter
     }
   }
   
-  public static DocumentModel.Drawings.ContourColor? CreateModelElement(DXD.ContourColor? openXmlElement)
+  public static DMD.ContourColor? CreateModelElement(DXD.ContourColor? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ContourColor();
+      var value = new DMD.ContourColor();
       value.RgbColorModelPercentage = GetRgbColorModelPercentage(openXmlElement);
       value.RgbColorModelHex = GetRgbColorModelHex(openXmlElement);
       value.HslColor = GetHslColor(openXmlElement);

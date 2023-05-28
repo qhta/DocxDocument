@@ -61,11 +61,11 @@ public static class BubbleSerExtensionListConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.BubbleSerExtensionList? CreateModelElement(DXDC.BubbleSerExtensionList? openXmlElement)
+  public static DMD.Charts.BubbleSerExtensionList? CreateModelElement(DXDC.BubbleSerExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.BubbleSerExtensionList();
+      var value = new DMD.Charts.BubbleSerExtensionList();
       value.BubbleSerExtensions = GetBubbleSerExtensions(openXmlElement);
       return value;
     }

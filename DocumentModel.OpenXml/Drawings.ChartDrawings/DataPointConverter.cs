@@ -83,11 +83,11 @@ public static class DataPointConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.DataPoint? CreateModelElement(DXO16DCD.DataPoint? openXmlElement)
+  public static DMDCDs.DataPoint? CreateModelElement(DXO16DCD.DataPoint? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.DataPoint();
+      var value = new DMDCDs.DataPoint();
       value.Idx = GetIdx(openXmlElement);
       value.ShapeProperties = GetShapeProperties(openXmlElement);
       value.ExtensionList = GetExtensionList(openXmlElement);

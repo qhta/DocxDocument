@@ -49,11 +49,11 @@ public static class ScatterChartExtensionConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.ScatterChartExtension? CreateModelElement(DXDC.ScatterChartExtension? openXmlElement)
+  public static DMD.Charts.ScatterChartExtension? CreateModelElement(DXDC.ScatterChartExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.ScatterChartExtension();
+      var value = new DMD.Charts.ScatterChartExtension();
       value.Uri = GetUri(openXmlElement);
       value.FilteredScatterSeries = GetFilteredScatterSeries(openXmlElement);
       return value;

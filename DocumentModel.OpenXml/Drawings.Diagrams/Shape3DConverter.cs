@@ -228,11 +228,11 @@ public static class Shape3DConverter
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.Shape3D? CreateModelElement(DXDD.Shape3D? openXmlElement)
+  public static DMDD.Shape3D? CreateModelElement(DXDD.Shape3D? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.Shape3D();
+      var value = new DMDD.Shape3D();
       value.Z = GetZ(openXmlElement);
       value.ExtrusionHeight = GetExtrusionHeight(openXmlElement);
       value.ContourWidth = GetContourWidth(openXmlElement);

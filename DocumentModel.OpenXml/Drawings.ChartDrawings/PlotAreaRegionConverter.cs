@@ -116,11 +116,11 @@ public static class PlotAreaRegionConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.PlotAreaRegion? CreateModelElement(DXO16DCD.PlotAreaRegion? openXmlElement)
+  public static DMDCDs.PlotAreaRegion? CreateModelElement(DXO16DCD.PlotAreaRegion? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.PlotAreaRegion();
+      var value = new DMDCDs.PlotAreaRegion();
       value.PlotSurface = GetPlotSurface(openXmlElement);
       value.Series = GetSeries(openXmlElement);
       value.ExtensionList = GetExtensionList(openXmlElement);

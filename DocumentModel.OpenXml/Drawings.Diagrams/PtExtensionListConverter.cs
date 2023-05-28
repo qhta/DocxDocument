@@ -61,11 +61,11 @@ public static class PtExtensionListConverter
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.PtExtensionList? CreateModelElement(DXDD.PtExtensionList? openXmlElement)
+  public static DMDD.PtExtensionList? CreateModelElement(DXDD.PtExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.PtExtensionList();
+      var value = new DMDD.PtExtensionList();
       value.PtExtensions = GetPtExtensions(openXmlElement);
       return value;
     }

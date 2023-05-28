@@ -124,11 +124,11 @@ public static class NumberLiteralConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.NumberLiteral? CreateModelElement(DXDC.NumberLiteral? openXmlElement)
+  public static DMD.Charts.NumberLiteral? CreateModelElement(DXDC.NumberLiteral? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.NumberLiteral();
+      var value = new DMD.Charts.NumberLiteral();
       value.FormatCode = GetFormatCode(openXmlElement);
       value.PointCount = GetPointCount(openXmlElement);
       value.NumericPoints = GetNumericPoints(openXmlElement);

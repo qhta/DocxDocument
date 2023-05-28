@@ -92,11 +92,11 @@ public static class GeoParentEntitiesQueryResultConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.GeoParentEntitiesQueryResult? CreateModelElement(DXO16DCD.GeoParentEntitiesQueryResult? openXmlElement)
+  public static DMDCDs.GeoParentEntitiesQueryResult? CreateModelElement(DXO16DCD.GeoParentEntitiesQueryResult? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.GeoParentEntitiesQueryResult();
+      var value = new DMDCDs.GeoParentEntitiesQueryResult();
       value.GeoParentEntitiesQuery = GetGeoParentEntitiesQuery(openXmlElement);
       value.GeoEntity = GetGeoEntity(openXmlElement);
       value.GeoParentEntity = GetGeoParentEntity(openXmlElement);

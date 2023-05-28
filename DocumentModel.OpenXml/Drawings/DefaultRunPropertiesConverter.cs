@@ -427,11 +427,11 @@ public static class DefaultRunPropertiesConverter
     }
   }
   
-  public static DocumentModel.Drawings.DefaultRunProperties? CreateModelElement(DXD.DefaultRunProperties? openXmlElement)
+  public static DMD.DefaultRunProperties? CreateModelElement(DXD.DefaultRunProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.DefaultRunProperties();
+      var value = new DMD.DefaultRunProperties();
       value.Outline = GetOutline(openXmlElement);
       value.Fill = FillConverter.CreateFillModel(openXmlElement);
       value.EffectList = GetEffectList(openXmlElement);

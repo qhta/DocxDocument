@@ -92,11 +92,11 @@ public static class PrintSettingsConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.PrintSettings? CreateModelElement(DXO16DCD.PrintSettings? openXmlElement)
+  public static DMDCDs.PrintSettings? CreateModelElement(DXO16DCD.PrintSettings? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.PrintSettings();
+      var value = new DMDCDs.PrintSettings();
       value.HeaderFooter = GetHeaderFooter(openXmlElement);
       value.PageMargins = GetPageMargins(openXmlElement);
       value.PageSetup = GetPageSetup(openXmlElement);

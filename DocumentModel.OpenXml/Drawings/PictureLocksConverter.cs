@@ -287,11 +287,11 @@ public static class PictureLocksConverter
     }
   }
   
-  public static DocumentModel.Drawings.PictureLocks? CreateModelElement(DXD.PictureLocks? openXmlElement)
+  public static DMD.PictureLocks? CreateModelElement(DXD.PictureLocks? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.PictureLocks();
+      var value = new DMD.PictureLocks();
       value.NoGrouping = GetNoGrouping(openXmlElement);
       value.NoSelection = GetNoSelection(openXmlElement);
       value.NoRotation = GetNoRotation(openXmlElement);

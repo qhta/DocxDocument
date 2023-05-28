@@ -23,11 +23,11 @@ public static class StringDataTypeConverter
     SimpleValueConverter.SetValue<DXDC.PointCount,System.UInt32>(openXmlElement, value);
   }
   
-  public static DocumentModel.Drawings.Charts.StringDataType? CreateModelElement(DXDC.StringDataType? openXmlElement)
+  public static DMD.Charts.StringDataType? CreateModelElement(DXDC.StringDataType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.StringDataType();
+      var value = new DMD.Charts.StringDataType();
       value.PointCount = GetPointCount(openXmlElement);
       return value;
     }

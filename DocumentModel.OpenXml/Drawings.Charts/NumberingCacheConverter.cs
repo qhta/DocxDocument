@@ -124,11 +124,11 @@ public static class NumberingCacheConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.NumberingCache? CreateModelElement(DXDC.NumberingCache? openXmlElement)
+  public static DMD.Charts.NumberingCache? CreateModelElement(DXDC.NumberingCache? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.NumberingCache();
+      var value = new DMD.Charts.NumberingCache();
       value.FormatCode = GetFormatCode(openXmlElement);
       value.PointCount = GetPointCount(openXmlElement);
       value.NumericPoints = GetNumericPoints(openXmlElement);

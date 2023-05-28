@@ -213,11 +213,11 @@ public static class DataLabelConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.DataLabel? CreateModelElement(DXO16DCD.DataLabel? openXmlElement)
+  public static DMDCDs.DataLabel? CreateModelElement(DXO16DCD.DataLabel? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.DataLabel();
+      var value = new DMDCDs.DataLabel();
       value.Idx = GetIdx(openXmlElement);
       value.Pos = GetPos(openXmlElement);
       value.NumberFormat = GetNumberFormat(openXmlElement);

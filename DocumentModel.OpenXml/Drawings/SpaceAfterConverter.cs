@@ -35,11 +35,11 @@ public static class SpaceAfterConverter
     SimpleValueConverter.SetValue<DXD.SpacingPoints,System.Int32>(openXmlElement, value);
   }
   
-  public static DocumentModel.Drawings.SpaceAfter? CreateModelElement(DXD.SpaceAfter? openXmlElement)
+  public static DMD.SpaceAfter? CreateModelElement(DXD.SpaceAfter? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.SpaceAfter();
+      var value = new DMD.SpaceAfter();
       value.SpacingPercent = GetSpacingPercent(openXmlElement);
       value.SpacingPoints = GetSpacingPoints(openXmlElement);
       return value;

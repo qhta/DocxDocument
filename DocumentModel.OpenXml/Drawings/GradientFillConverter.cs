@@ -158,7 +158,7 @@ public static class GradientFillConverter
   #endregion
 
   #region GradientFill model conversion.
-  public static DocumentModel.Drawings.GradientFill? CreateModelElement(DXD.GradientFill? openXmlElement)
+  public static DMD.GradientFill? CreateModelElement(DXD.GradientFill? openXmlElement)
   {
     if (openXmlElement != null)
     {

@@ -533,11 +533,11 @@ public static class BlipConverter
     }
   }
   
-  public static DocumentModel.Drawings.Blip? CreateModelElement(DXD.Blip? openXmlElement)
+  public static DMD.Blip? CreateModelElement(DXD.Blip? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Blip();
+      var value = new DMD.Blip();
       value.Embed = GetEmbed(openXmlElement);
       value.Link = GetLink(openXmlElement);
       value.CompressionState = GetCompressionState(openXmlElement);

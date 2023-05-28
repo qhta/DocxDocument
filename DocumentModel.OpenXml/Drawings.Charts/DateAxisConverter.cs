@@ -601,11 +601,11 @@ public static class DateAxisConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.DateAxis? CreateModelElement(DXDC.DateAxis? openXmlElement)
+  public static DMD.Charts.DateAxis? CreateModelElement(DXDC.DateAxis? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.DateAxis();
+      var value = new DMD.Charts.DateAxis();
       value.AxisId = GetAxisId(openXmlElement);
       value.Scaling = GetScaling(openXmlElement);
       value.Delete = GetDelete(openXmlElement);

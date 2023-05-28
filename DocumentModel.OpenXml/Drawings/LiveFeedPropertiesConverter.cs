@@ -63,11 +63,11 @@ public static class LiveFeedPropertiesConverter
     }
   }
   
-  public static DocumentModel.Drawings.LiveFeedProperties? CreateModelElement(DXO21DL.LiveFeedProperties? openXmlElement)
+  public static DMD.LiveFeedProperties? CreateModelElement(DXO21DL.LiveFeedProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.LiveFeedProperties();
+      var value = new DMD.LiveFeedProperties();
       value.LiveFeedBackgroundProperties = GetLiveFeedBackgroundProperties(openXmlElement);
       value.OfficeArtExtensionList = GetOfficeArtExtensionList(openXmlElement);
       return value;

@@ -34,11 +34,11 @@ public static class BackgroundRemovedPropertiesConverter
     }
   }
   
-  public static DocumentModel.Drawings.BackgroundRemovedProperties? CreateModelElement(DXO21DL.BackgroundRemovedProperties? openXmlElement)
+  public static DMD.BackgroundRemovedProperties? CreateModelElement(DXO21DL.BackgroundRemovedProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.BackgroundRemovedProperties();
+      var value = new DMD.BackgroundRemovedProperties();
       value.OfficeArtExtensionList = GetOfficeArtExtensionList(openXmlElement);
       return value;
     }

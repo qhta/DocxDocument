@@ -320,11 +320,11 @@ public static class TextParagraphPropertiesTypeConverter
     }
   }
   
-  public static DocumentModel.Drawings.TextParagraphPropertiesType? CreateModelElement(DXD.TextParagraphPropertiesType? openXmlElement)
+  public static DMD.TextParagraphPropertiesType? CreateModelElement(DXD.TextParagraphPropertiesType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.TextParagraphPropertiesType();
+      var value = new DMD.TextParagraphPropertiesType();
       value.LeftMargin = GetLeftMargin(openXmlElement);
       value.RightMargin = GetRightMargin(openXmlElement);
       value.Level = GetLevel(openXmlElement);

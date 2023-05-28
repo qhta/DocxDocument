@@ -121,11 +121,11 @@ public static class NonVisualConnectionShapePropertiesConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawing.NonVisualConnectionShapeProperties? CreateModelElement(DXDCD.NonVisualConnectionShapeProperties? openXmlElement)
+  public static DMD.ChartDrawing.NonVisualConnectionShapeProperties? CreateModelElement(DXDCD.NonVisualConnectionShapeProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawing.NonVisualConnectionShapeProperties();
+      var value = new DMD.ChartDrawing.NonVisualConnectionShapeProperties();
       value.ConnectionShapeLocks = GetConnectionShapeLocks(openXmlElement);
       value.StartConnection = GetStartConnection(openXmlElement);
       value.EndConnection = GetEndConnection(openXmlElement);

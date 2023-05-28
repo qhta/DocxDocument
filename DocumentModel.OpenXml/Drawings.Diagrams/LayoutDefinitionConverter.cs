@@ -327,11 +327,11 @@ public static class LayoutDefinitionConverter
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.LayoutDefinition? CreateModelElement(DXDD.LayoutDefinition? openXmlElement)
+  public static DMDD.LayoutDefinition? CreateModelElement(DXDD.LayoutDefinition? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.LayoutDefinition();
+      var value = new DMDD.LayoutDefinition();
       value.UniqueId = GetUniqueId(openXmlElement);
       value.MinVersion = GetMinVersion(openXmlElement);
       value.DefaultStyle = GetDefaultStyle(openXmlElement);

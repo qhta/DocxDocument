@@ -127,11 +127,11 @@ public static class LineSerExtensionConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.LineSerExtension? CreateModelElement(DXDC.LineSerExtension? openXmlElement)
+  public static DMD.Charts.LineSerExtension? CreateModelElement(DXDC.LineSerExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.LineSerExtension();
+      var value = new DMD.Charts.LineSerExtension();
       value.Uri = GetUri(openXmlElement);
       value.FilteredSeriesTitle = GetFilteredSeriesTitle(openXmlElement);
       value.FilteredCategoryTitle = GetFilteredCategoryTitle(openXmlElement);

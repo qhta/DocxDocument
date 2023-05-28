@@ -89,11 +89,11 @@ public static class TextBodyConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawing.TextBody? CreateModelElement(DXDCD.TextBody? openXmlElement)
+  public static DMD.ChartDrawing.TextBody? CreateModelElement(DXDCD.TextBody? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawing.TextBody();
+      var value = new DMD.ChartDrawing.TextBody();
       value.BodyProperties = GetBodyProperties(openXmlElement);
       value.ListStyle = GetListStyle(openXmlElement);
       value.Paragraph = GetParagraph(openXmlElement);

@@ -46,11 +46,11 @@ public static class BuildChartConverter
       openXmlElement.AnimateBackground = null;
   }
   
-  public static DocumentModel.Drawings.BuildChart? CreateModelElement(DXD.BuildChart? openXmlElement)
+  public static DMD.BuildChart? CreateModelElement(DXD.BuildChart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.BuildChart();
+      var value = new DMD.BuildChart();
       value.Build = GetBuild(openXmlElement);
       value.AnimateBackground = GetAnimateBackground(openXmlElement);
       return value;

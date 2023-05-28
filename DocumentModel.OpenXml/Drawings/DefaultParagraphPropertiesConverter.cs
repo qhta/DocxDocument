@@ -433,11 +433,11 @@ public static class DefaultParagraphPropertiesConverter
     }
   }
   
-  public static DocumentModel.Drawings.DefaultParagraphProperties? CreateModelElement(DXD.DefaultParagraphProperties? openXmlElement)
+  public static DMD.DefaultParagraphProperties? CreateModelElement(DXD.DefaultParagraphProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.DefaultParagraphProperties();
+      var value = new DMD.DefaultParagraphProperties();
       value.LineSpacing = GetLineSpacing(openXmlElement);
       value.SpaceBefore = GetSpaceBefore(openXmlElement);
       value.SpaceAfter = GetSpaceAfter(openXmlElement);

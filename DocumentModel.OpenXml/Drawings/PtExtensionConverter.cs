@@ -49,11 +49,11 @@ public static class PtExtensionConverter
     }
   }
   
-  public static DocumentModel.Drawings.PtExtension? CreateModelElement(DXD.PtExtension? openXmlElement)
+  public static DMD.PtExtension? CreateModelElement(DXD.PtExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.PtExtension();
+      var value = new DMD.PtExtension();
       value.Uri = GetUri(openXmlElement);
       value.NonVisualDrawingProperties = GetNonVisualDrawingProperties(openXmlElement);
       return value;

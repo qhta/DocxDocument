@@ -228,11 +228,11 @@ public static class Shape3DTypeConverter
     }
   }
   
-  public static DocumentModel.Drawings.Shape3DType? CreateModelElement(DXD.Shape3DType? openXmlElement)
+  public static DMD.Shape3DType? CreateModelElement(DXD.Shape3DType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Shape3DType();
+      var value = new DMD.Shape3DType();
       value.Z = GetZ(openXmlElement);
       value.ExtrusionHeight = GetExtrusionHeight(openXmlElement);
       value.ContourWidth = GetContourWidth(openXmlElement);

@@ -160,11 +160,11 @@ public static class PresentationOfConverter
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.PresentationOf? CreateModelElement(DXDD.PresentationOf? openXmlElement)
+  public static DMDD.PresentationOf? CreateModelElement(DXDD.PresentationOf? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.PresentationOf();
+      var value = new DMDD.PresentationOf();
       value.Axis = GetAxis(openXmlElement);
       value.PointType = GetPointType(openXmlElement);
       value.HideLastTrans = GetHideLastTrans(openXmlElement);

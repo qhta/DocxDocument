@@ -276,11 +276,11 @@ public static class InlineConverter
     }
   }
   
-  public static DocumentModel.Drawings.Wordprocessing.Inline? CreateModelElement(DXDW.Inline? openXmlElement)
+  public static DMD.Wordprocessing.Inline? CreateModelElement(DXDW.Inline? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Wordprocessing.Inline();
+      var value = new DMD.Wordprocessing.Inline();
       value.DistanceFromTop = GetDistanceFromTop(openXmlElement);
       value.DistanceFromBottom = GetDistanceFromBottom(openXmlElement);
       value.DistanceFromLeft = GetDistanceFromLeft(openXmlElement);

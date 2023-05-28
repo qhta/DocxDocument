@@ -88,11 +88,11 @@ public static class StringReferenceConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.StringReference? CreateModelElement(DXDC.StringReference? openXmlElement)
+  public static DMD.Charts.StringReference? CreateModelElement(DXDC.StringReference? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.StringReference();
+      var value = new DMD.Charts.StringReference();
       value.Formula = GetFormula(openXmlElement);
       value.StringCache = GetStringCache(openXmlElement);
       value.StrRefExtensionList = GetStrRefExtensionList(openXmlElement);

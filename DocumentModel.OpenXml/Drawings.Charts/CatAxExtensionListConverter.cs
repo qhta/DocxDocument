@@ -61,11 +61,11 @@ public static class CatAxExtensionListConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.CatAxExtensionList? CreateModelElement(DXDC.CatAxExtensionList? openXmlElement)
+  public static DMD.Charts.CatAxExtensionList? CreateModelElement(DXDC.CatAxExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.CatAxExtensionList();
+      var value = new DMD.Charts.CatAxExtensionList();
       value.CatAxExtensions = GetCatAxExtensions(openXmlElement);
       return value;
     }

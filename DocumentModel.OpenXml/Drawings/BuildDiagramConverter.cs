@@ -46,11 +46,11 @@ public static class BuildDiagramConverter
       openXmlElement.ReverseAnimation = null;
   }
   
-  public static DocumentModel.Drawings.BuildDiagram? CreateModelElement(DXD.BuildDiagram? openXmlElement)
+  public static DMD.BuildDiagram? CreateModelElement(DXD.BuildDiagram? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.BuildDiagram();
+      var value = new DMD.BuildDiagram();
       value.Build = GetBuild(openXmlElement);
       value.ReverseAnimation = GetReverseAnimation(openXmlElement);
       return value;

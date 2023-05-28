@@ -31,11 +31,11 @@ public static class MinorGridlinesConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.MinorGridlines? CreateModelElement(DXDC.MinorGridlines? openXmlElement)
+  public static DMD.Charts.MinorGridlines? CreateModelElement(DXDC.MinorGridlines? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.MinorGridlines();
+      var value = new DMD.Charts.MinorGridlines();
       value.ChartShapeProperties = GetChartShapeProperties(openXmlElement);
       return value;
     }

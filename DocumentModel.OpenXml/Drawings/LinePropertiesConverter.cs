@@ -307,7 +307,7 @@ public static class LinePropertiesConverter
   {
     if (openXmlElement != null)
     {
-      var model = new DocumentModel.Drawings.LineProperties();
+      var model = new DMD.LineProperties();
       model.Width = GetWidth(openXmlElement);
       model.CapType = GetCapType(openXmlElement);
       model.CompoundLineType = GetCompoundLineType(openXmlElement);
@@ -372,7 +372,7 @@ public static class LinePropertiesConverter
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXD.LinePropertiesType openXmlElement, DMD.LineProperties model)
+  public static bool UpdateOpenXmlElement(DXD.LinePropertiesType openXmlElement, DMD.LineProperties model)
   {
     SetWidth(openXmlElement, model.Width);
     SetCapType(openXmlElement, model.CapType);
@@ -387,6 +387,7 @@ public static class LinePropertiesConverter
     SetHeadEnd(openXmlElement, model.HeadEnd);
     SetTailEnd(openXmlElement, model.TailEnd);
     SetLinePropertiesExtensionList(openXmlElement, model.LinePropertiesExtensionList);
+    return true;
   }
   #endregion
 }

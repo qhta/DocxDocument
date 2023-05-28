@@ -34,11 +34,11 @@ public static class LineToConverter
     }
   }
   
-  public static DocumentModel.Drawings.LineTo? CreateModelElement(DXD.LineTo? openXmlElement)
+  public static DMD.LineTo? CreateModelElement(DXD.LineTo? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.LineTo();
+      var value = new DMD.LineTo();
       value.Point = GetPoint(openXmlElement);
       return value;
     }

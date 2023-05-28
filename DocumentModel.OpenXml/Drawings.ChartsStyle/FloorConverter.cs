@@ -235,11 +235,11 @@ public static class FloorConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartsStyle.Floor? CreateModelElement(DXO13DCS.Floor? openXmlElement)
+  public static DMDCS.Floor? CreateModelElement(DXO13DCS.Floor? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartsStyle.Floor();
+      var value = new DMDCS.Floor();
       value.LineReference = GetLineReference(openXmlElement);
       value.LineWidthScale = GetLineWidthScale(openXmlElement);
       value.FillReference = GetFillReference(openXmlElement);

@@ -235,11 +235,11 @@ public static class LeaderLineConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartsStyle.LeaderLine? CreateModelElement(DXO13DCS.LeaderLine? openXmlElement)
+  public static DMDCS.LeaderLine? CreateModelElement(DXO13DCS.LeaderLine? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartsStyle.LeaderLine();
+      var value = new DMDCS.LeaderLine();
       value.LineReference = GetLineReference(openXmlElement);
       value.LineWidthScale = GetLineWidthScale(openXmlElement);
       value.FillReference = GetFillReference(openXmlElement);

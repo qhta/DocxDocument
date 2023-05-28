@@ -23,11 +23,11 @@ public static class RelationshipIdTypeConverter
     openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Drawings.Charts.RelationshipIdType? CreateModelElement(DXDC.RelationshipIdType? openXmlElement)
+  public static DMD.Charts.RelationshipIdType? CreateModelElement(DXDC.RelationshipIdType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.RelationshipIdType();
+      var value = new DMD.Charts.RelationshipIdType();
       value.Id = GetId(openXmlElement);
       return value;
     }

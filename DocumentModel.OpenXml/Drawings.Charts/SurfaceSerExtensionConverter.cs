@@ -101,11 +101,11 @@ public static class SurfaceSerExtensionConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.SurfaceSerExtension? CreateModelElement(DXDC.SurfaceSerExtension? openXmlElement)
+  public static DMD.Charts.SurfaceSerExtension? CreateModelElement(DXDC.SurfaceSerExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.SurfaceSerExtension();
+      var value = new DMD.Charts.SurfaceSerExtension();
       value.Uri = GetUri(openXmlElement);
       value.FilteredSeriesTitle = GetFilteredSeriesTitle(openXmlElement);
       value.FilteredCategoryTitle = GetFilteredCategoryTitle(openXmlElement);

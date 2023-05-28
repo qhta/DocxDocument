@@ -89,11 +89,11 @@ public static class TextBodyConverter
     }
   }
   
-  public static DocumentModel.Drawings.Office.TextBody? CreateModelElement(DXOD.TextBody? openXmlElement)
+  public static DMDO.TextBody? CreateModelElement(DXOD.TextBody? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Office.TextBody();
+      var value = new DMDO.TextBody();
       value.BodyProperties = GetBodyProperties(openXmlElement);
       value.ListStyle = GetListStyle(openXmlElement);
       value.Paragraph = GetParagraph(openXmlElement);

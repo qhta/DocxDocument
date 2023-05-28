@@ -52,11 +52,11 @@ public static class ScriptLinkConverter
     }
   }
   
-  public static DocumentModel.Drawings.Office.ScriptLink.ScriptLink? CreateModelElement(DXODY21SL.ScriptLink? openXmlElement)
+  public static DMDO.ScriptLink.ScriptLink? CreateModelElement(DXODY21SL.ScriptLink? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Office.ScriptLink.ScriptLink();
+      var value = new DMDO.ScriptLink.ScriptLink();
       value.Val = GetVal(openXmlElement);
       value.OfficeArtExtensionList = GetOfficeArtExtensionList(openXmlElement);
       return value;

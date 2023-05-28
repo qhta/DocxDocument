@@ -235,11 +235,11 @@ public static class DataPoint3DConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartsStyle.DataPoint3D? CreateModelElement(DXO13DCS.DataPoint3D? openXmlElement)
+  public static DMDCS.DataPoint3D? CreateModelElement(DXO13DCS.DataPoint3D? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartsStyle.DataPoint3D();
+      var value = new DMDCS.DataPoint3D();
       value.LineReference = GetLineReference(openXmlElement);
       value.LineWidthScale = GetLineWidthScale(openXmlElement);
       value.FillReference = GetFillReference(openXmlElement);

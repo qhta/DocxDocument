@@ -63,11 +63,11 @@ public static class PlotSurfaceConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.PlotSurface? CreateModelElement(DXO16DCD.PlotSurface? openXmlElement)
+  public static DMDCDs.PlotSurface? CreateModelElement(DXO16DCD.PlotSurface? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.PlotSurface();
+      var value = new DMDCDs.PlotSurface();
       value.ShapeProperties = GetShapeProperties(openXmlElement);
       value.ExtensionList = GetExtensionList(openXmlElement);
       return value;

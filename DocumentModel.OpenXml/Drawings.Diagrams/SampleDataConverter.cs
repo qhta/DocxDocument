@@ -31,11 +31,11 @@ public static class SampleDataConverter
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.SampleData? CreateModelElement(DXDD.SampleData? openXmlElement)
+  public static DMDD.SampleData? CreateModelElement(DXDD.SampleData? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.SampleData();
+      var value = new DMDD.SampleData();
       value.DataModel = GetDataModel(openXmlElement);
       return value;
     }

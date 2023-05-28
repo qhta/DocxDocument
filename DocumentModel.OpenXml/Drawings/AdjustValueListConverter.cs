@@ -61,11 +61,11 @@ public static class AdjustValueListConverter
     }
   }
   
-  public static DocumentModel.Drawings.AdjustValueList? CreateModelElement(DXD.AdjustValueList? openXmlElement)
+  public static DMD.AdjustValueList? CreateModelElement(DXD.AdjustValueList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.AdjustValueList();
+      var value = new DMD.AdjustValueList();
       value.ShapeGuides = GetShapeGuides(openXmlElement);
       return value;
     }

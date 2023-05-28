@@ -31,11 +31,11 @@ public static class StyleDataConverter
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.StyleData? CreateModelElement(DXDD.StyleData? openXmlElement)
+  public static DMDD.StyleData? CreateModelElement(DXDD.StyleData? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.StyleData();
+      var value = new DMDD.StyleData();
       value.DataModel = GetDataModel(openXmlElement);
       return value;
     }

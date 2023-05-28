@@ -25,11 +25,11 @@ public static class NumericValueConverter
     openXmlElement.Idx = value;
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.NumericValue? CreateModelElement(DXO16DCD.NumericValue? openXmlElement)
+  public static DMDCDs.NumericValue? CreateModelElement(DXO16DCD.NumericValue? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.NumericValue();
+      var value = new DMDCDs.NumericValue();
       value.Idx = GetIdx(openXmlElement);
       return value;
     }

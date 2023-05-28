@@ -61,11 +61,11 @@ public static class PivotFormatsConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.PivotFormats? CreateModelElement(DXDC.PivotFormats? openXmlElement)
+  public static DMD.Charts.PivotFormats? CreateModelElement(DXDC.PivotFormats? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.PivotFormats();
+      var value = new DMD.Charts.PivotFormats();
       value.Items = GetItems(openXmlElement);
       return value;
     }

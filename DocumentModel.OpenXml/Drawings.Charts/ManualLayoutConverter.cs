@@ -246,11 +246,11 @@ public static class ManualLayoutConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.ManualLayout? CreateModelElement(DXDC.ManualLayout? openXmlElement)
+  public static DMD.Charts.ManualLayout? CreateModelElement(DXDC.ManualLayout? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.ManualLayout();
+      var value = new DMD.Charts.ManualLayout();
       value.LayoutTarget = GetLayoutTarget(openXmlElement);
       value.LeftMode = GetLeftMode(openXmlElement);
       value.TopMode = GetTopMode(openXmlElement);

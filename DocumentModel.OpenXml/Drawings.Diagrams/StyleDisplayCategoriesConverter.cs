@@ -61,11 +61,11 @@ public static class StyleDisplayCategoriesConverter
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.StyleDisplayCategories? CreateModelElement(DXDD.StyleDisplayCategories? openXmlElement)
+  public static DMDD.StyleDisplayCategories? CreateModelElement(DXDD.StyleDisplayCategories? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.StyleDisplayCategories();
+      var value = new DMDD.StyleDisplayCategories();
       value.Items = GetItems(openXmlElement);
       return value;
     }

@@ -121,11 +121,11 @@ public static class ThemeElementsConverter
     }
   }
   
-  public static DocumentModel.Drawings.ThemeElements? CreateModelElement(DXD.ThemeElements? openXmlElement)
+  public static DMD.ThemeElements? CreateModelElement(DXD.ThemeElements? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ThemeElements();
+      var value = new DMD.ThemeElements();
       value.ColorScheme = GetColorScheme(openXmlElement);
       value.FontScheme = GetFontScheme(openXmlElement);
       value.FormatScheme = GetFormatScheme(openXmlElement);

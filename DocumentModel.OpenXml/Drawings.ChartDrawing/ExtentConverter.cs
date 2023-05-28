@@ -1,5 +1,3 @@
-using DocumentModel.Drawings;
-
 namespace DocumentModel.OpenXml.Drawings.ChartDrawing;
 
 /// <summary>
@@ -47,11 +45,11 @@ public static class ExtentConverter
     openXmlElement.Cy = value;
   }
   
-  public static Extent? CreateModelElement(DXDCD.Extent? openXmlElement)
+  public static DMD.Extent? CreateModelElement(DXDCD.Extent? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new Extent();
+      var value = new DMD.Extent();
       value.Cx = GetCx(openXmlElement);
       value.Cy = GetCy(openXmlElement);
       return value;
@@ -59,7 +57,7 @@ public static class ExtentConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDCD.Extent? openXmlElement, Extent? value, DiffList? diffs = null, string? objName = null, string? propName = null)
+  public static bool CompareModelElement(DXDCD.Extent? openXmlElement, DMD.Extent? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
@@ -75,7 +73,7 @@ public static class ExtentConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(Extent value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.Extent value)
     where OpenXmlElementType: DXDCD.Extent, new()
   {
     var openXmlElement = new OpenXmlElementType();
@@ -83,7 +81,7 @@ public static class ExtentConverter
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDCD.Extent openXmlElement, Extent value)
+  public static void UpdateOpenXmlElement(DXDCD.Extent openXmlElement, DMD.Extent value)
   {
     SetCx(openXmlElement, value.Cx);
     SetCy(openXmlElement, value.Cy);

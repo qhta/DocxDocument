@@ -61,11 +61,11 @@ public static class ExtraColorSchemeListConverter
     }
   }
   
-  public static DocumentModel.Drawings.ExtraColorSchemeList? CreateModelElement(DXD.ExtraColorSchemeList? openXmlElement)
+  public static DMD.ExtraColorSchemeList? CreateModelElement(DXD.ExtraColorSchemeList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ExtraColorSchemeList();
+      var value = new DMD.ExtraColorSchemeList();
       value.ExtraColorSchemes = GetExtraColorSchemes(openXmlElement);
       return value;
     }

@@ -41,11 +41,11 @@ public static class AdjustPoint2DTypeConverter
     openXmlElement.Y = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Drawings.AdjustPoint2DType? CreateModelElement(DXD.AdjustPoint2DType? openXmlElement)
+  public static DMD.AdjustPoint2DType? CreateModelElement(DXD.AdjustPoint2DType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.AdjustPoint2DType();
+      var value = new DMD.AdjustPoint2DType();
       value.X = GetX(openXmlElement);
       value.Y = GetY(openXmlElement);
       return value;

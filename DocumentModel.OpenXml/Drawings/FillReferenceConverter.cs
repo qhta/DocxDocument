@@ -161,11 +161,11 @@ public static class FillReferenceConverter
     }
   }
   
-  public static DocumentModel.Drawings.FillReference? CreateModelElement(DXD.FillReference? openXmlElement)
+  public static DMD.FillReference? CreateModelElement(DXD.FillReference? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.FillReference();
+      var value = new DMD.FillReference();
       value.RgbColorModelPercentage = GetRgbColorModelPercentage(openXmlElement);
       value.RgbColorModelHex = GetRgbColorModelHex(openXmlElement);
       value.HslColor = GetHslColor(openXmlElement);

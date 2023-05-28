@@ -41,11 +41,11 @@ public static class DiagramConverter
     openXmlElement.BuildStep = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.DiagramBuildStepValues, DMD.DiagramBuildStepKind>(value);
   }
   
-  public static DocumentModel.Drawings.Diagram? CreateModelElement(DXD.Diagram? openXmlElement)
+  public static DMD.Diagram? CreateModelElement(DXD.Diagram? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagram();
+      var value = new DMD.Diagram();
       value.Id = GetId(openXmlElement);
       value.BuildStep = GetBuildStep(openXmlElement);
       return value;

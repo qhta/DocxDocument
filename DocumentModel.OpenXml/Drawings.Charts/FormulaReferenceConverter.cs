@@ -30,11 +30,11 @@ public static class FormulaReferenceConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.FormulaReference? CreateModelElement(DXO13DC.FormulaReference? openXmlElement)
+  public static DMD.Charts.FormulaReference? CreateModelElement(DXO13DC.FormulaReference? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.FormulaReference();
+      var value = new DMD.Charts.FormulaReference();
       value.SequenceOfReferences = GetSequenceOfReferences(openXmlElement);
       return value;
     }

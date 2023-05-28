@@ -88,11 +88,11 @@ public static class NumberReferenceConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.NumberReference? CreateModelElement(DXDC.NumberReference? openXmlElement)
+  public static DMD.Charts.NumberReference? CreateModelElement(DXDC.NumberReference? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.NumberReference();
+      var value = new DMD.Charts.NumberReference();
       value.Formula = GetFormula(openXmlElement);
       value.NumberingCache = GetNumberingCache(openXmlElement);
       value.NumRefExtensionList = GetNumRefExtensionList(openXmlElement);

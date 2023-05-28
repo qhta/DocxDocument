@@ -45,11 +45,11 @@ public static class AdjustConverter
     openXmlElement.Val = value;
   }
   
-  public static DocumentModel.Drawings.Diagrams.Adjust? CreateModelElement(DXDD.Adjust? openXmlElement)
+  public static DMDD.Adjust? CreateModelElement(DXDD.Adjust? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.Adjust();
+      var value = new DMDD.Adjust();
       value.Index = GetIndex(openXmlElement);
       value.Val = GetVal(openXmlElement);
       return value;

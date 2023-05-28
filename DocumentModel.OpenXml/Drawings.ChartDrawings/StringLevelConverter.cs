@@ -99,11 +99,11 @@ public static class StringLevelConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.StringLevel? CreateModelElement(DXO16DCD.StringLevel? openXmlElement)
+  public static DMDCDs.StringLevel? CreateModelElement(DXO16DCD.StringLevel? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.StringLevel();
+      var value = new DMDCDs.StringLevel();
       value.PtCount = GetPtCount(openXmlElement);
       value.Name = GetName(openXmlElement);
       value.ChartStringValues = GetChartStringValues(openXmlElement);

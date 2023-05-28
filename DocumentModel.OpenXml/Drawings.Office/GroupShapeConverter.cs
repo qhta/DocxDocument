@@ -135,11 +135,11 @@ public static class GroupShapeConverter
     }
   }
   
-  public static DocumentModel.Drawings.Office.GroupShape? CreateModelElement(DXOD.GroupShape? openXmlElement)
+  public static DMDO.GroupShape? CreateModelElement(DXOD.GroupShape? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Office.GroupShape();
+      var value = new DMDO.GroupShape();
       value.GroupShapeNonVisualProperties = GetGroupShapeNonVisualProperties(openXmlElement);
       value.GroupShapeProperties = GetGroupShapeProperties(openXmlElement);
       value.Shape = GetShape(openXmlElement);

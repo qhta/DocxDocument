@@ -98,11 +98,11 @@ public static class BackWallConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.BackWall? CreateModelElement(DXDC.BackWall? openXmlElement)
+  public static DMD.Charts.BackWall? CreateModelElement(DXDC.BackWall? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.BackWall();
+      var value = new DMD.Charts.BackWall();
       value.Thickness = GetThickness(openXmlElement);
       value.ShapeProperties = GetShapeProperties(openXmlElement);
       value.PictureOptions = GetPictureOptions(openXmlElement);

@@ -52,11 +52,11 @@ public static class VideoFromFileConverter
     }
   }
   
-  public static DocumentModel.Drawings.VideoFromFile? CreateModelElement(DXD.VideoFromFile? openXmlElement)
+  public static DMD.VideoFromFile? CreateModelElement(DXD.VideoFromFile? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.VideoFromFile();
+      var value = new DMD.VideoFromFile();
       value.Link = GetLink(openXmlElement);
       value.ExtensionList = GetExtensionList(openXmlElement);
       return value;

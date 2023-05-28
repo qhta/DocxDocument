@@ -34,11 +34,11 @@ public static class FilteredSurfaceSeriesConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.FilteredSurfaceSeries? CreateModelElement(DXO13DC.FilteredSurfaceSeries? openXmlElement)
+  public static DMD.Charts.FilteredSurfaceSeries? CreateModelElement(DXO13DC.FilteredSurfaceSeries? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.FilteredSurfaceSeries();
+      var value = new DMD.Charts.FilteredSurfaceSeries();
       value.SurfaceChartSeries = GetSurfaceChartSeries(openXmlElement);
       return value;
     }

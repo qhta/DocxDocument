@@ -48,11 +48,11 @@ public static class NumberDataTypeConverter
     SimpleValueConverter.SetValue<DXDC.PointCount,System.UInt32>(openXmlElement, value);
   }
   
-  public static DocumentModel.Drawings.Charts.NumberDataType? CreateModelElement(DXDC.NumberDataType? openXmlElement)
+  public static DMD.Charts.NumberDataType? CreateModelElement(DXDC.NumberDataType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.NumberDataType();
+      var value = new DMD.Charts.NumberDataType();
       value.FormatCode = GetFormatCode(openXmlElement);
       value.PointCount = GetPointCount(openXmlElement);
       return value;

@@ -102,11 +102,11 @@ public static class DataLabelFieldTableCacheConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.DataLabelFieldTableCache? CreateModelElement(DXO13DC.DataLabelFieldTableCache? openXmlElement)
+  public static DMD.Charts.DataLabelFieldTableCache? CreateModelElement(DXO13DC.DataLabelFieldTableCache? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.DataLabelFieldTableCache();
+      var value = new DMD.Charts.DataLabelFieldTableCache();
       value.PointCount = GetPointCount(openXmlElement);
       value.StringPoints = GetStringPoints(openXmlElement);
       value.StrDataExtensionList = GetStrDataExtensionList(openXmlElement);

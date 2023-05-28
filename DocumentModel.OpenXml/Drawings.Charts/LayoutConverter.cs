@@ -63,11 +63,11 @@ public static class LayoutConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.Layout? CreateModelElement(DXDC.Layout? openXmlElement)
+  public static DMD.Charts.Layout? CreateModelElement(DXDC.Layout? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.Layout();
+      var value = new DMD.Charts.Layout();
       value.ManualLayout = GetManualLayout(openXmlElement);
       value.ExtensionList = GetExtensionList(openXmlElement);
       return value;

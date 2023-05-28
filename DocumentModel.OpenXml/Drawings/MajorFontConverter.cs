@@ -165,11 +165,11 @@ public static class MajorFontConverter
     }
   }
   
-  public static DocumentModel.Drawings.MajorFont? CreateModelElement(DXD.MajorFont? openXmlElement)
+  public static DMD.MajorFont? CreateModelElement(DXD.MajorFont? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.MajorFont();
+      var value = new DMD.MajorFont();
       value.LatinFont = GetLatinFont(openXmlElement);
       value.EastAsianFont = GetEastAsianFont(openXmlElement);
       value.ComplexScriptFont = GetComplexScriptFont(openXmlElement);

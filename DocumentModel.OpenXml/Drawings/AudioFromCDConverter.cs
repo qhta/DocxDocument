@@ -92,11 +92,11 @@ public static class AudioFromCDConverter
     }
   }
   
-  public static DocumentModel.Drawings.AudioFromCD? CreateModelElement(DXD.AudioFromCD? openXmlElement)
+  public static DMD.AudioFromCD? CreateModelElement(DXD.AudioFromCD? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.AudioFromCD();
+      var value = new DMD.AudioFromCD();
       value.StartTime = GetStartTime(openXmlElement);
       value.EndTime = GetEndTime(openXmlElement);
       value.ExtensionList = GetExtensionList(openXmlElement);

@@ -179,11 +179,11 @@ public static class ColorReplacementConverter
     }
   }
   
-  public static DocumentModel.Drawings.ColorReplacement? CreateModelElement(DXD.ColorReplacement? openXmlElement)
+  public static DMD.ColorReplacement? CreateModelElement(DXD.ColorReplacement? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ColorReplacement();
+      var value = new DMD.ColorReplacement();
       value.RgbColorModelPercentage = GetRgbColorModelPercentage(openXmlElement);
       value.RgbColorModelHex = GetRgbColorModelHex(openXmlElement);
       value.HslColor = GetHslColor(openXmlElement);

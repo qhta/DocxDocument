@@ -121,11 +121,11 @@ public static class Scene3DTypeConverter
     }
   }
   
-  public static DocumentModel.Drawings.Scene3DType? CreateModelElement(DXD.Scene3DType? openXmlElement)
+  public static DMD.Scene3DType? CreateModelElement(DXD.Scene3DType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Scene3DType();
+      var value = new DMD.Scene3DType();
       value.Camera = GetCamera(openXmlElement);
       value.LightRig = GetLightRig(openXmlElement);
       value.Backdrop = GetBackdrop(openXmlElement);

@@ -92,11 +92,11 @@ public static class FontCollectionTypeConverter
     }
   }
   
-  public static DocumentModel.Drawings.FontCollectionType? CreateModelElement(DXD.FontCollectionType? openXmlElement)
+  public static DMD.FontCollectionType? CreateModelElement(DXD.FontCollectionType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.FontCollectionType();
+      var value = new DMD.FontCollectionType();
       value.LatinFont = GetLatinFont(openXmlElement);
       value.EastAsianFont = GetEastAsianFont(openXmlElement);
       value.ComplexScriptFont = GetComplexScriptFont(openXmlElement);

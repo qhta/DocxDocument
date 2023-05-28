@@ -61,11 +61,11 @@ public static class StrDataExtensionListConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.StrDataExtensionList? CreateModelElement(DXDC.StrDataExtensionList? openXmlElement)
+  public static DMD.Charts.StrDataExtensionList? CreateModelElement(DXDC.StrDataExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.StrDataExtensionList();
+      var value = new DMD.Charts.StrDataExtensionList();
       value.StrDataExtensions = GetStrDataExtensions(openXmlElement);
       return value;
     }

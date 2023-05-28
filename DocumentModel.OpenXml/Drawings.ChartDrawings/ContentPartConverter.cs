@@ -157,11 +157,11 @@ public static class ContentPartConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.ContentPart? CreateModelElement(DXO10DCD.ContentPart? openXmlElement)
+  public static DMDCDs.ContentPart? CreateModelElement(DXO10DCD.ContentPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.ContentPart();
+      var value = new DMDCDs.ContentPart();
       value.RelationshipId = GetRelationshipId(openXmlElement);
       value.BlackWhiteMode = GetBlackWhiteMode(openXmlElement);
       value.NonVisualContentPartProperties = GetNonVisualContentPartProperties(openXmlElement);

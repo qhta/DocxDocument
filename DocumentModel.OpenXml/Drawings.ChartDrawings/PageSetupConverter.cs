@@ -192,11 +192,11 @@ public static class PageSetupConverter
     openXmlElement.Copies = value;
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.PageSetup? CreateModelElement(DXO16DCD.PageSetup? openXmlElement)
+  public static DMDCDs.PageSetup? CreateModelElement(DXO16DCD.PageSetup? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.PageSetup();
+      var value = new DMDCDs.PageSetup();
       value.PaperSize = GetPaperSize(openXmlElement);
       value.FirstPageNumber = GetFirstPageNumber(openXmlElement);
       value.Orientation = GetOrientation(openXmlElement);

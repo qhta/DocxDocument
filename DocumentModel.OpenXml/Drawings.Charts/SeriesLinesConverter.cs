@@ -31,11 +31,11 @@ public static class SeriesLinesConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.SeriesLines? CreateModelElement(DXDC.SeriesLines? openXmlElement)
+  public static DMD.Charts.SeriesLines? CreateModelElement(DXDC.SeriesLines? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.SeriesLines();
+      var value = new DMD.Charts.SeriesLines();
       value.ChartShapeProperties = GetChartShapeProperties(openXmlElement);
       return value;
     }

@@ -1,9 +1,7 @@
-using DocumentModel.Drawings;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// <see cref="DocumentModel.Drawings.DrawingProperties"/> class from/to OpenXml converter.
+/// <see cref="DMD.DrawingProperties"/> class from/to OpenXml converter.
 /// </summary>
 public static class DXO10WPropertiesConverter
 {
@@ -140,7 +138,7 @@ public static class DXO10WPropertiesConverter
       var properties = GetDXO10WProperties(openXmlElement);
       if (properties != null)
       {
-        var drawingProperties = properties.OfType<IDrawingProperty>();
+        var drawingProperties = properties.OfType<DMD.IDrawingProperty>();
         if (drawingProperties.Any())
           runProperties.DrawingProperties = new DMD.DrawingProperties(drawingProperties);
       }

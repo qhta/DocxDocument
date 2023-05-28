@@ -161,11 +161,11 @@ public static class TextLineColorListConverter
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.TextLineColorList? CreateModelElement(DXDD.TextLineColorList? openXmlElement)
+  public static DMDD.TextLineColorList? CreateModelElement(DXDD.TextLineColorList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.TextLineColorList();
+      var value = new DMDD.TextLineColorList();
       value.RgbColorModelPercentage = GetRgbColorModelPercentage(openXmlElement);
       value.RgbColorModelHex = GetRgbColorModelHex(openXmlElement);
       value.HslColor = GetHslColor(openXmlElement);

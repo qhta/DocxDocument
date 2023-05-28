@@ -31,11 +31,11 @@ public static class MinorTickMarksTickMarksConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.MinorTickMarksTickMarks? CreateModelElement(DXO16DCD.MinorTickMarksTickMarks? openXmlElement)
+  public static DMDCDs.MinorTickMarksTickMarks? CreateModelElement(DXO16DCD.MinorTickMarksTickMarks? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.MinorTickMarksTickMarks();
+      var value = new DMDCDs.MinorTickMarksTickMarks();
       value.ExtensionList = GetExtensionList(openXmlElement);
       return value;
     }

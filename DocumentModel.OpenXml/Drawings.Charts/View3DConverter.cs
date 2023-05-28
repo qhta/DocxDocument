@@ -155,11 +155,11 @@ public static class View3DConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.View3D? CreateModelElement(DXDC.View3D? openXmlElement)
+  public static DMD.Charts.View3D? CreateModelElement(DXDC.View3D? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.View3D();
+      var value = new DMD.Charts.View3D();
       value.RotateX = GetRotateX(openXmlElement);
       value.HeightPercent = GetHeightPercent(openXmlElement);
       value.RotateY = GetRotateY(openXmlElement);

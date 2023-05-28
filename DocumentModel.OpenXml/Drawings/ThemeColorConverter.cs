@@ -150,13 +150,13 @@ public static class ThemeColorConverter
     }
   }
   
-  public static DocumentModel.Drawings.ThemeColor? CreateModelElement(DXD.Color2Type? openXmlElement)
+  public static DMD.ThemeColor? CreateModelElement(DXD.Color2Type? openXmlElement)
   {
     if (openXmlElement != null)
     {
       var propName = openXmlElement.GetType().Name;
       var value = Color2TypeConverter.CreateModelElement(openXmlElement);
-      return new DocumentModel.Drawings.ThemeColor{Name = propName, Value = value};
+      return new DMD.ThemeColor{Name = propName, Value = value};
     }
     return null;
   }

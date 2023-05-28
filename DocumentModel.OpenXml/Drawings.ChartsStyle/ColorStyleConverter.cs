@@ -281,11 +281,11 @@ public static class ColorStyleConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartsStyle.ColorStyle? CreateModelElement(DXO13DCS.ColorStyle? openXmlElement)
+  public static DMDCS.ColorStyle? CreateModelElement(DXO13DCS.ColorStyle? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartsStyle.ColorStyle();
+      var value = new DMDCS.ColorStyle();
       value.Method = GetMethod(openXmlElement);
       value.Id = GetId(openXmlElement);
       value.RgbColorModelPercentage = GetRgbColorModelPercentage(openXmlElement);

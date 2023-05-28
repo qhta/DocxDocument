@@ -135,11 +135,11 @@ public static class ShapeTreeConverter
     }
   }
   
-  public static DocumentModel.Drawings.Office.ShapeTree? CreateModelElement(DXOD.ShapeTree? openXmlElement)
+  public static DMDO.ShapeTree? CreateModelElement(DXOD.ShapeTree? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Office.ShapeTree();
+      var value = new DMDO.ShapeTree();
       value.GroupShapeNonVisualProperties = GetGroupShapeNonVisualProperties(openXmlElement);
       value.GroupShapeProperties = GetGroupShapeProperties(openXmlElement);
       value.Shape = GetShape(openXmlElement);

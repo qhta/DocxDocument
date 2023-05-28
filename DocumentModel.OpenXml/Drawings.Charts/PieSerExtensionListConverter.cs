@@ -61,11 +61,11 @@ public static class PieSerExtensionListConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.PieSerExtensionList? CreateModelElement(DXDC.PieSerExtensionList? openXmlElement)
+  public static DMD.Charts.PieSerExtensionList? CreateModelElement(DXDC.PieSerExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.PieSerExtensionList();
+      var value = new DMD.Charts.PieSerExtensionList();
       value.PieSerExtensions = GetPieSerExtensions(openXmlElement);
       return value;
     }

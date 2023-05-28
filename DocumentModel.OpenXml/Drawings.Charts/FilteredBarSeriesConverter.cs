@@ -34,11 +34,11 @@ public static class FilteredBarSeriesConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.FilteredBarSeries? CreateModelElement(DXO13DC.FilteredBarSeries? openXmlElement)
+  public static DMD.Charts.FilteredBarSeries? CreateModelElement(DXO13DC.FilteredBarSeries? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.FilteredBarSeries();
+      var value = new DMD.Charts.FilteredBarSeries();
       value.BarChartSeries = GetBarChartSeries(openXmlElement);
       return value;
     }

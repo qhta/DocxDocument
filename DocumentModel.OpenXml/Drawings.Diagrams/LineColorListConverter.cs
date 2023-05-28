@@ -161,11 +161,11 @@ public static class LineColorListConverter
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.LineColorList? CreateModelElement(DXDD.LineColorList? openXmlElement)
+  public static DMDD.LineColorList? CreateModelElement(DXDD.LineColorList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.LineColorList();
+      var value = new DMDD.LineColorList();
       value.RgbColorModelPercentage = GetRgbColorModelPercentage(openXmlElement);
       value.RgbColorModelHex = GetRgbColorModelHex(openXmlElement);
       value.HslColor = GetHslColor(openXmlElement);

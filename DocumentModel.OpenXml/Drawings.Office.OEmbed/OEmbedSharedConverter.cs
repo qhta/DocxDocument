@@ -70,11 +70,11 @@ public static class OEmbedSharedConverter
     }
   }
   
-  public static DocumentModel.Drawings.Office.OEmbed.OEmbedShared? CreateModelElement(DXODY21OE.OEmbedShared? openXmlElement)
+  public static DMDO.OEmbed.OEmbedShared? CreateModelElement(DXODY21OE.OEmbedShared? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Office.OEmbed.OEmbedShared();
+      var value = new DMDO.OEmbed.OEmbedShared();
       value.SrcUrl = GetSrcUrl(openXmlElement);
       value.Type = GetType(openXmlElement);
       value.OfficeArtExtensionList = GetOfficeArtExtensionList(openXmlElement);

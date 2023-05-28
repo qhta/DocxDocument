@@ -86,11 +86,11 @@ public static class NonVisualDrawingShapePropertiesConverter
     }
   }
   
-  public static DocumentModel.Drawings.Office.NonVisualDrawingShapeProperties? CreateModelElement(DXOD.NonVisualDrawingShapeProperties? openXmlElement)
+  public static DMDO.NonVisualDrawingShapeProperties? CreateModelElement(DXOD.NonVisualDrawingShapeProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Office.NonVisualDrawingShapeProperties();
+      var value = new DMDO.NonVisualDrawingShapeProperties();
       value.TextBox = GetTextBox(openXmlElement);
       value.ShapeLocks = GetShapeLocks(openXmlElement);
       value.ExtensionList = GetExtensionList(openXmlElement);

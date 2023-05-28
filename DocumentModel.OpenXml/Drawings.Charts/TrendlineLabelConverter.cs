@@ -179,11 +179,11 @@ public static class TrendlineLabelConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.TrendlineLabel? CreateModelElement(DXDC.TrendlineLabel? openXmlElement)
+  public static DMD.Charts.TrendlineLabel? CreateModelElement(DXDC.TrendlineLabel? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.TrendlineLabel();
+      var value = new DMD.Charts.TrendlineLabel();
       value.Layout = GetLayout(openXmlElement);
       value.ChartText = GetChartText(openXmlElement);
       value.NumberingFormat = GetNumberingFormat(openXmlElement);

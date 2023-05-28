@@ -52,11 +52,11 @@ public static class AudioFromFileConverter
     }
   }
   
-  public static DocumentModel.Drawings.AudioFromFile? CreateModelElement(DXD.AudioFromFile? openXmlElement)
+  public static DMD.AudioFromFile? CreateModelElement(DXD.AudioFromFile? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.AudioFromFile();
+      var value = new DMD.AudioFromFile();
       value.Link = GetLink(openXmlElement);
       value.ExtensionList = GetExtensionList(openXmlElement);
       return value;

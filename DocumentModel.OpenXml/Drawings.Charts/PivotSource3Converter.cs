@@ -77,11 +77,11 @@ public static class PivotSource3Converter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.PivotSource3? CreateModelElement(DXO13DC.PivotSource? openXmlElement)
+  public static DMD.Charts.PivotSource3? CreateModelElement(DXO13DC.PivotSource? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.PivotSource3();
+      var value = new DMD.Charts.PivotSource3();
       value.PivotTableName = GetPivotTableName(openXmlElement);
       value.FormatId = GetFormatId(openXmlElement);
       value.ExtensionList = GetExtensionList(openXmlElement);

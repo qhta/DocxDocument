@@ -264,11 +264,11 @@ public static class ContentPartLocksConverter
     }
   }
   
-  public static DocumentModel.Drawings.ContentPartLocks? CreateModelElement(DXO10D.ContentPartLocks? openXmlElement)
+  public static DMD.ContentPartLocks? CreateModelElement(DXO10D.ContentPartLocks? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ContentPartLocks();
+      var value = new DMD.ContentPartLocks();
       value.NoGrouping = GetNoGrouping(openXmlElement);
       value.NoSelection = GetNoSelection(openXmlElement);
       value.NoRotation = GetNoRotation(openXmlElement);

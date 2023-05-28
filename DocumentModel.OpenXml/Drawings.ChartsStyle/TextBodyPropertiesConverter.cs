@@ -611,11 +611,11 @@ public static class TextBodyPropertiesConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartsStyle.TextBodyProperties? CreateModelElement(DXO13DCS.TextBodyProperties? openXmlElement)
+  public static DMDCS.TextBodyProperties? CreateModelElement(DXO13DCS.TextBodyProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartsStyle.TextBodyProperties();
+      var value = new DMDCS.TextBodyProperties();
       value.Rotation = GetRotation(openXmlElement);
       value.UseParagraphSpacing = GetUseParagraphSpacing(openXmlElement);
       value.VerticalOverflow = GetVerticalOverflow(openXmlElement);

@@ -235,11 +235,11 @@ public static class CategoryAxisConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartsStyle.CategoryAxis? CreateModelElement(DXO13DCS.CategoryAxis? openXmlElement)
+  public static DMDCS.CategoryAxis? CreateModelElement(DXO13DCS.CategoryAxis? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartsStyle.CategoryAxis();
+      var value = new DMDCS.CategoryAxis();
       value.LineReference = GetLineReference(openXmlElement);
       value.LineWidthScale = GetLineWidthScale(openXmlElement);
       value.FillReference = GetFillReference(openXmlElement);

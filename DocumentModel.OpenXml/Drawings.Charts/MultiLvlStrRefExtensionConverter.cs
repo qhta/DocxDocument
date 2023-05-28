@@ -101,11 +101,11 @@ public static class MultiLvlStrRefExtensionConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.MultiLvlStrRefExtension? CreateModelElement(DXDC.MultiLvlStrRefExtension? openXmlElement)
+  public static DMD.Charts.MultiLvlStrRefExtension? CreateModelElement(DXDC.MultiLvlStrRefExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.MultiLvlStrRefExtension();
+      var value = new DMD.Charts.MultiLvlStrRefExtension();
       value.Uri = GetUri(openXmlElement);
       value.FullReference = GetFullReference(openXmlElement);
       value.LevelReference = GetLevelReference(openXmlElement);

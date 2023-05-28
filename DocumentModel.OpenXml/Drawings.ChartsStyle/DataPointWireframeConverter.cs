@@ -235,11 +235,11 @@ public static class DataPointWireframeConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartsStyle.DataPointWireframe? CreateModelElement(DXO13DCS.DataPointWireframe? openXmlElement)
+  public static DMDCS.DataPointWireframe? CreateModelElement(DXO13DCS.DataPointWireframe? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartsStyle.DataPointWireframe();
+      var value = new DMDCS.DataPointWireframe();
       value.LineReference = GetLineReference(openXmlElement);
       value.LineWidthScale = GetLineWidthScale(openXmlElement);
       value.FillReference = GetFillReference(openXmlElement);

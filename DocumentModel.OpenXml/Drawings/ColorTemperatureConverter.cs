@@ -25,11 +25,11 @@ public static class ColorTemperatureConverter
     openXmlElement.ColorTemperatureValue = value;
   }
   
-  public static DocumentModel.Drawings.ColorTemperature? CreateModelElement(DXO10D.ColorTemperature? openXmlElement)
+  public static DMD.ColorTemperature? CreateModelElement(DXO10D.ColorTemperature? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ColorTemperature();
+      var value = new DMD.ColorTemperature();
       value.ColorTemperatureValue = GetColorTemperatureValue(openXmlElement);
       return value;
     }

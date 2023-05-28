@@ -65,11 +65,11 @@ public static class Vector3DTypeConverter
     openXmlElement.Dz = value;
   }
   
-  public static DocumentModel.Drawings.Vector3DType? CreateModelElement(DXD.Vector3DType? openXmlElement)
+  public static DMD.Vector3DType? CreateModelElement(DXD.Vector3DType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Vector3DType();
+      var value = new DMD.Vector3DType();
       value.Dx = GetDx(openXmlElement);
       value.Dy = GetDy(openXmlElement);
       value.Dz = GetDz(openXmlElement);

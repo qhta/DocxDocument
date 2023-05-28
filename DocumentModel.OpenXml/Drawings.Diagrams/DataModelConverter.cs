@@ -150,11 +150,11 @@ public static class DataModelConverter
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.DataModel? CreateModelElement(DXDD.DataModel? openXmlElement)
+  public static DMDD.DataModel? CreateModelElement(DXDD.DataModel? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.DataModel();
+      var value = new DMDD.DataModel();
       value.PointList = GetPointList(openXmlElement);
       value.ConnectionList = GetConnectionList(openXmlElement);
       value.Background = GetBackground(openXmlElement);

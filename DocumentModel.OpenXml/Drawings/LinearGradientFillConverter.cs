@@ -48,11 +48,11 @@ public static class LinearGradientFillConverter
       openXmlElement.Scaled = null;
   }
   
-  public static DocumentModel.Drawings.LinearGradientFill? CreateModelElement(DXD.LinearGradientFill? openXmlElement)
+  public static DMD.LinearGradientFill? CreateModelElement(DXD.LinearGradientFill? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.LinearGradientFill();
+      var value = new DMD.LinearGradientFill();
       value.Angle = GetAngle(openXmlElement);
       value.Scaled = GetScaled(openXmlElement);
       return value;

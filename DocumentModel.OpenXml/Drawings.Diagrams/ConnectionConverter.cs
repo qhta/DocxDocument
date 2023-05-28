@@ -200,11 +200,11 @@ public static class ConnectionConverter
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.Connection? CreateModelElement(DXDD.Connection? openXmlElement)
+  public static DMDD.Connection? CreateModelElement(DXDD.Connection? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.Connection();
+      var value = new DMDD.Connection();
       value.ModelId = GetModelId(openXmlElement);
       value.Type = GetType(openXmlElement);
       value.SourceId = GetSourceId(openXmlElement);

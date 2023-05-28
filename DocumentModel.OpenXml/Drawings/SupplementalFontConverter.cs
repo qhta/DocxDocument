@@ -41,11 +41,11 @@ public static class SupplementalFontConverter
     openXmlElement.Typeface = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Drawings.SupplementalFont? CreateModelElement(DXD.SupplementalFont? openXmlElement)
+  public static DMD.SupplementalFont? CreateModelElement(DXD.SupplementalFont? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.SupplementalFont();
+      var value = new DMD.SupplementalFont();
       value.Script = GetScript(openXmlElement);
       value.Typeface = GetTypeface(openXmlElement);
       return value;

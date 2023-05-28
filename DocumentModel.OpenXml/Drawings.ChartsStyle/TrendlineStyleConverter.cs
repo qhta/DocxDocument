@@ -235,11 +235,11 @@ public static class TrendlineStyleConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartsStyle.TrendlineStyle? CreateModelElement(DXO13DCS.TrendlineStyle? openXmlElement)
+  public static DMDCS.TrendlineStyle? CreateModelElement(DXO13DCS.TrendlineStyle? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartsStyle.TrendlineStyle();
+      var value = new DMDCS.TrendlineStyle();
       value.LineReference = GetLineReference(openXmlElement);
       value.LineWidthScale = GetLineWidthScale(openXmlElement);
       value.FillReference = GetFillReference(openXmlElement);

@@ -127,11 +127,11 @@ public static class BubbleSerExtensionConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.BubbleSerExtension? CreateModelElement(DXDC.BubbleSerExtension? openXmlElement)
+  public static DMD.Charts.BubbleSerExtension? CreateModelElement(DXDC.BubbleSerExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.BubbleSerExtension();
+      var value = new DMD.Charts.BubbleSerExtension();
       value.Uri = GetUri(openXmlElement);
       value.InvertSolidFillFormat = GetInvertSolidFillFormat(openXmlElement);
       value.FilteredCategoryTitle = GetFilteredCategoryTitle(openXmlElement);

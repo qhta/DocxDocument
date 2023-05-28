@@ -57,11 +57,11 @@ public static class HyperlinkOnHoverConverter
     }
   }
   
-  public static DocumentModel.Drawings.HyperlinkOnHover? CreateModelElement(DXD.HyperlinkOnHover? openXmlElement)
+  public static DMD.HyperlinkOnHover? CreateModelElement(DXD.HyperlinkOnHover? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.HyperlinkOnHover();
+      var value = new DMD.HyperlinkOnHover();
       value.HyperlinkSound = GetHyperlinkSound(openXmlElement);
       value.HyperlinkExtensionList = GetHyperlinkExtensionList(openXmlElement);
       return value;

@@ -166,11 +166,11 @@ public static class ParagraphConverter
     }
   }
   
-  public static DocumentModel.Drawings.Paragraph? CreateModelElement(DXD.Paragraph? openXmlElement)
+  public static DMD.Paragraph? CreateModelElement(DXD.Paragraph? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Paragraph();
+      var value = new DMD.Paragraph();
       value.ParagraphProperties = GetParagraphProperties(openXmlElement);
       value.Run = GetRun(openXmlElement);
       value.Break = GetBreak(openXmlElement);

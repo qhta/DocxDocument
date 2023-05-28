@@ -121,11 +121,11 @@ public static class HiddenScene3DConverter
     }
   }
   
-  public static DocumentModel.Drawings.HiddenScene3D? CreateModelElement(DXO10D.HiddenScene3D? openXmlElement)
+  public static DMD.HiddenScene3D? CreateModelElement(DXO10D.HiddenScene3D? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.HiddenScene3D();
+      var value = new DMD.HiddenScene3D();
       value.Camera = GetCamera(openXmlElement);
       value.LightRig = GetLightRig(openXmlElement);
       value.Backdrop = GetBackdrop(openXmlElement);

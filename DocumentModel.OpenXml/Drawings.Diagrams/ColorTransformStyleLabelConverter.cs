@@ -226,11 +226,11 @@ public static class ColorTransformStyleLabelConverter
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.ColorTransformStyleLabel? CreateModelElement(DXDD.ColorTransformStyleLabel? openXmlElement)
+  public static DMDD.ColorTransformStyleLabel? CreateModelElement(DXDD.ColorTransformStyleLabel? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.ColorTransformStyleLabel();
+      var value = new DMDD.ColorTransformStyleLabel();
       value.Name = GetName(openXmlElement);
       value.FillColorList = GetFillColorList(openXmlElement);
       value.LineColorList = GetLineColorList(openXmlElement);

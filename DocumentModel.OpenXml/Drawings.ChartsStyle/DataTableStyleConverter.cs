@@ -235,11 +235,11 @@ public static class DataTableStyleConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartsStyle.DataTableStyle? CreateModelElement(DXO13DCS.DataTableStyle? openXmlElement)
+  public static DMDCS.DataTableStyle? CreateModelElement(DXO13DCS.DataTableStyle? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartsStyle.DataTableStyle();
+      var value = new DMDCS.DataTableStyle();
       value.LineReference = GetLineReference(openXmlElement);
       value.LineWidthScale = GetLineWidthScale(openXmlElement);
       value.FillReference = GetFillReference(openXmlElement);

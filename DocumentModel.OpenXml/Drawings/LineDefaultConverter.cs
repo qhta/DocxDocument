@@ -135,11 +135,11 @@ public static class LineDefaultConverter
     }
   }
   
-  public static DocumentModel.Drawings.LineDefault? CreateModelElement(DXD.LineDefault? openXmlElement)
+  public static DMD.LineDefault? CreateModelElement(DXD.LineDefault? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.LineDefault();
+      var value = new DMD.LineDefault();
       value.ShapeProperties = GetShapeProperties(openXmlElement);
       value.BodyProperties = GetBodyProperties(openXmlElement);
       value.ListStyle = GetListStyle(openXmlElement);

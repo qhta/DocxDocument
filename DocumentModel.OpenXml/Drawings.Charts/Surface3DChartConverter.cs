@@ -231,11 +231,11 @@ public static class Surface3DChartConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.Surface3DChart? CreateModelElement(DXDC.Surface3DChart? openXmlElement)
+  public static DMD.Charts.Surface3DChart? CreateModelElement(DXDC.Surface3DChart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.Surface3DChart();
+      var value = new DMD.Charts.Surface3DChart();
       value.Wireframe = GetWireframe(openXmlElement);
       value.VaryColors = GetVaryColors(openXmlElement);
       value.SurfaceChartSeries = GetSurfaceChartSeries(openXmlElement);

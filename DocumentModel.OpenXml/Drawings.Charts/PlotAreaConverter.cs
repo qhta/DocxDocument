@@ -632,11 +632,11 @@ public static class PlotAreaConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.PlotArea? CreateModelElement(DXDC.PlotArea? openXmlElement)
+  public static DMD.Charts.PlotArea? CreateModelElement(DXDC.PlotArea? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.PlotArea();
+      var value = new DMD.Charts.PlotArea();
       value.Layout = GetLayout(openXmlElement);
       value.AreaChart = GetAreaChart(openXmlElement);
       value.Area3DChart = GetArea3DChart(openXmlElement);

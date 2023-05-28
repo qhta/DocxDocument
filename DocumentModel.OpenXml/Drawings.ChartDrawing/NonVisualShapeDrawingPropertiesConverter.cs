@@ -86,11 +86,11 @@ public static class NonVisualShapeDrawingPropertiesConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawing.NonVisualShapeDrawingProperties? CreateModelElement(DXDCD.NonVisualShapeDrawingProperties? openXmlElement)
+  public static DMD.ChartDrawing.NonVisualShapeDrawingProperties? CreateModelElement(DXDCD.NonVisualShapeDrawingProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawing.NonVisualShapeDrawingProperties();
+      var value = new DMD.ChartDrawing.NonVisualShapeDrawingProperties();
       value.TextBox = GetTextBox(openXmlElement);
       value.ShapeLocks = GetShapeLocks(openXmlElement);
       value.ExtensionList = GetExtensionList(openXmlElement);

@@ -68,11 +68,11 @@ public static class NumericPointConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.NumericPoint? CreateModelElement(DXDC.NumericPoint? openXmlElement)
+  public static DMD.Charts.NumericPoint? CreateModelElement(DXDC.NumericPoint? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.NumericPoint();
+      var value = new DMD.Charts.NumericPoint();
       value.Index = GetIndex(openXmlElement);
       value.FormatCode = GetFormatCode(openXmlElement);
       value.NumericValue = GetNumericValue(openXmlElement);

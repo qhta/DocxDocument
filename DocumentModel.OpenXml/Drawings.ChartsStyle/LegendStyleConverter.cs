@@ -235,11 +235,11 @@ public static class LegendStyleConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartsStyle.LegendStyle? CreateModelElement(DXO13DCS.LegendStyle? openXmlElement)
+  public static DMDCS.LegendStyle? CreateModelElement(DXO13DCS.LegendStyle? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartsStyle.LegendStyle();
+      var value = new DMDCS.LegendStyle();
       value.LineReference = GetLineReference(openXmlElement);
       value.LineWidthScale = GetLineWidthScale(openXmlElement);
       value.FillReference = GetFillReference(openXmlElement);

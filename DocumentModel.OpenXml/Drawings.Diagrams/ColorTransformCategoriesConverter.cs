@@ -61,11 +61,11 @@ public static class ColorTransformCategoriesConverter
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.ColorTransformCategories? CreateModelElement(DXDD.ColorTransformCategories? openXmlElement)
+  public static DMDD.ColorTransformCategories? CreateModelElement(DXDD.ColorTransformCategories? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.ColorTransformCategories();
+      var value = new DMDD.ColorTransformCategories();
       value.Items = GetItems(openXmlElement);
       return value;
     }

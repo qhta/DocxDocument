@@ -428,11 +428,11 @@ public static class ScatterChartSeries3Converter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.ScatterChartSeries3? CreateModelElement(DXO13DC.ScatterChartSeries? openXmlElement)
+  public static DMD.Charts.ScatterChartSeries3? CreateModelElement(DXO13DC.ScatterChartSeries? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.ScatterChartSeries3();
+      var value = new DMD.Charts.ScatterChartSeries3();
       value.Index = GetIndex(openXmlElement);
       value.Order = GetOrder(openXmlElement);
       value.SeriesText = GetSeriesText(openXmlElement);

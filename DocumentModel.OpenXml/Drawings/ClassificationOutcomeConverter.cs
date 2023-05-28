@@ -23,11 +23,11 @@ public static class ClassificationOutcomeConverter
     openXmlElement.ClassificationOutcomeType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2021.Drawing.DocumentClassification.ClassificationOutcomeType, DMD.ClassificationOutcomeType>(value);
   }
   
-  public static DocumentModel.Drawings.ClassificationOutcome? CreateModelElement(DXO21DDC.ClassificationOutcome? openXmlElement)
+  public static DMD.ClassificationOutcome? CreateModelElement(DXO21DDC.ClassificationOutcome? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ClassificationOutcome();
+      var value = new DMD.ClassificationOutcome();
       value.ClassificationOutcomeType = GetClassificationOutcomeType(openXmlElement);
       return value;
     }

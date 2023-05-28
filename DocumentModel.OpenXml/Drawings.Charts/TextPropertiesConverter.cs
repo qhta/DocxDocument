@@ -83,11 +83,11 @@ public static class TextPropertiesConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.TextProperties? CreateModelElement(DXDC.TextProperties? openXmlElement)
+  public static DMD.Charts.TextProperties? CreateModelElement(DXDC.TextProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.TextProperties();
+      var value = new DMD.Charts.TextProperties();
       value.BodyProperties = GetBodyProperties(openXmlElement);
       value.ListStyle = GetListStyle(openXmlElement);
       value.Paragraph = GetParagraph(openXmlElement);

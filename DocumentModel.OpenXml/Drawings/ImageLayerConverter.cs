@@ -79,11 +79,11 @@ public static class ImageLayerConverter
     }
   }
   
-  public static DocumentModel.Drawings.ImageLayer? CreateModelElement(DXO10D.ImageLayer? openXmlElement)
+  public static DMD.ImageLayer? CreateModelElement(DXO10D.ImageLayer? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ImageLayer();
+      var value = new DMD.ImageLayer();
       value.Embed = GetEmbed(openXmlElement);
       value.ImageEffects = GetImageEffects(openXmlElement);
       return value;

@@ -127,11 +127,11 @@ public static class NonVisualPicturePropertiesExtensionConverter
     }
   }
   
-  public static DocumentModel.Drawings.NonVisualPicturePropertiesExtension? CreateModelElement(DXD.NonVisualPicturePropertiesExtension? openXmlElement)
+  public static DMD.NonVisualPicturePropertiesExtension? CreateModelElement(DXD.NonVisualPicturePropertiesExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.NonVisualPicturePropertiesExtension();
+      var value = new DMD.NonVisualPicturePropertiesExtension();
       value.Uri = GetUri(openXmlElement);
       value.CameraTool = GetCameraTool(openXmlElement);
       value.SignatureLine = GetSignatureLine(openXmlElement);

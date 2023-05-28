@@ -133,11 +133,11 @@ public static class GraphicFrameConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawing.GraphicFrame? CreateModelElement(DXDCD.GraphicFrame? openXmlElement)
+  public static DMD.ChartDrawing.GraphicFrame? CreateModelElement(DXDCD.GraphicFrame? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawing.GraphicFrame();
+      var value = new DMD.ChartDrawing.GraphicFrame();
       value.Macro = GetMacro(openXmlElement);
       value.Published = GetPublished(openXmlElement);
       value.NonVisualGraphicFrameProperties = GetNonVisualGraphicFrameProperties(openXmlElement);

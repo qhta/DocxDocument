@@ -61,11 +61,11 @@ public static class AdjustListConverter
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.AdjustList? CreateModelElement(DXDD.AdjustList? openXmlElement)
+  public static DMDD.AdjustList? CreateModelElement(DXDD.AdjustList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.AdjustList();
+      var value = new DMDD.AdjustList();
       value.Adjusts = GetAdjusts(openXmlElement);
       return value;
     }

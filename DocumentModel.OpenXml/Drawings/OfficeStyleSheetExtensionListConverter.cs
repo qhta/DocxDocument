@@ -61,11 +61,11 @@ public static class OfficeStyleSheetExtensionListConverter
     }
   }
   
-  public static DocumentModel.Drawings.OfficeStyleSheetExtensionList? CreateModelElement(DXD.OfficeStyleSheetExtensionList? openXmlElement)
+  public static DMD.OfficeStyleSheetExtensionList? CreateModelElement(DXD.OfficeStyleSheetExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.OfficeStyleSheetExtensionList();
+      var value = new DMD.OfficeStyleSheetExtensionList();
       value.OfficeStyleSheetExtensions = GetOfficeStyleSheetExtensions(openXmlElement);
       return value;
     }

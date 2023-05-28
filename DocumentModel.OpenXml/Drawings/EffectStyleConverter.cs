@@ -109,11 +109,11 @@ public static class EffectStyleConverter
     }
   }
   
-  public static DocumentModel.Drawings.EffectStyle? CreateModelElement(DXD.EffectStyle? openXmlElement)
+  public static DMD.EffectStyle? CreateModelElement(DXD.EffectStyle? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.EffectStyle();
+      var value = new DMD.EffectStyle();
       value.EffectList = GetEffectList(openXmlElement);
       value.EffectDag = GetEffectDag(openXmlElement);
       value.Scene3DType = GetScene3DType(openXmlElement);

@@ -57,11 +57,11 @@ public static class RunConverter
       openXmlElement.Text = null;
   }
   
-  public static DocumentModel.Drawings.Run? CreateModelElement(DXD.Run? openXmlElement)
+  public static DMD.Run? CreateModelElement(DXD.Run? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Run();
+      var value = new DMD.Run();
       value.RunProperties = GetRunProperties(openXmlElement);
       value.Text = GetText(openXmlElement);
       return value;

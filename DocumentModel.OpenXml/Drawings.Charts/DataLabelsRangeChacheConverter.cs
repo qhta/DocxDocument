@@ -102,11 +102,11 @@ public static class DataLabelsRangeChacheConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.DataLabelsRangeChache? CreateModelElement(DXO13DC.DataLabelsRangeChache? openXmlElement)
+  public static DMD.Charts.DataLabelsRangeChache? CreateModelElement(DXO13DC.DataLabelsRangeChache? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.DataLabelsRangeChache();
+      var value = new DMD.Charts.DataLabelsRangeChache();
       value.PointCount = GetPointCount(openXmlElement);
       value.StringPoints = GetStringPoints(openXmlElement);
       value.StrDataExtensionList = GetStrDataExtensionList(openXmlElement);

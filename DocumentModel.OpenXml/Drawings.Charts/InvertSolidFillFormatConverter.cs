@@ -34,11 +34,11 @@ public static class InvertSolidFillFormatConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.InvertSolidFillFormat? CreateModelElement(DXO10DC.InvertSolidFillFormat? openXmlElement)
+  public static DMD.Charts.InvertSolidFillFormat? CreateModelElement(DXO10DC.InvertSolidFillFormat? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.InvertSolidFillFormat();
+      var value = new DMD.Charts.InvertSolidFillFormat();
       value.ShapeProperties = GetShapeProperties(openXmlElement);
       return value;
     }

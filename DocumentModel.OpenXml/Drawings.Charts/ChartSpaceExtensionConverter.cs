@@ -101,11 +101,11 @@ public static class ChartSpaceExtensionConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.ChartSpaceExtension? CreateModelElement(DXDC.ChartSpaceExtension? openXmlElement)
+  public static DMD.Charts.ChartSpaceExtension? CreateModelElement(DXDC.ChartSpaceExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.ChartSpaceExtension();
+      var value = new DMD.Charts.ChartSpaceExtension();
       value.Uri = GetUri(openXmlElement);
       value.PivotOptions = GetPivotOptions(openXmlElement);
       value.SketchOptions = GetSketchOptions(openXmlElement);

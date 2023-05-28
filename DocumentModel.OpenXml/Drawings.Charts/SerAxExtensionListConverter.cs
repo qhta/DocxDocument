@@ -61,11 +61,11 @@ public static class SerAxExtensionListConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.SerAxExtensionList? CreateModelElement(DXDC.SerAxExtensionList? openXmlElement)
+  public static DMD.Charts.SerAxExtensionList? CreateModelElement(DXDC.SerAxExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.SerAxExtensionList();
+      var value = new DMD.Charts.SerAxExtensionList();
       value.SerAxExtensions = GetSerAxExtensions(openXmlElement);
       return value;
     }

@@ -52,11 +52,11 @@ public static class QuickTimeFromFileConverter
     }
   }
   
-  public static DocumentModel.Drawings.QuickTimeFromFile? CreateModelElement(DXD.QuickTimeFromFile? openXmlElement)
+  public static DMD.QuickTimeFromFile? CreateModelElement(DXD.QuickTimeFromFile? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.QuickTimeFromFile();
+      var value = new DMD.QuickTimeFromFile();
       value.Link = GetLink(openXmlElement);
       value.ExtensionList = GetExtensionList(openXmlElement);
       return value;

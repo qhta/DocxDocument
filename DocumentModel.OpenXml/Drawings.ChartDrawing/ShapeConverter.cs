@@ -203,11 +203,11 @@ public static class ShapeConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawing.Shape? CreateModelElement(DXDCD.Shape? openXmlElement)
+  public static DMD.ChartDrawing.Shape? CreateModelElement(DXDCD.Shape? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawing.Shape();
+      var value = new DMD.ChartDrawing.Shape();
       value.Macro = GetMacro(openXmlElement);
       value.TextLink = GetTextLink(openXmlElement);
       value.LockText = GetLockText(openXmlElement);

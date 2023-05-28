@@ -61,11 +61,11 @@ public static class GeoPolygonConverter
     openXmlElement.PcaRings = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.GeoPolygon? CreateModelElement(DXO16DCD.GeoPolygon? openXmlElement)
+  public static DMDCDs.GeoPolygon? CreateModelElement(DXO16DCD.GeoPolygon? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.GeoPolygon();
+      var value = new DMDCDs.GeoPolygon();
       value.PolygonId = GetPolygonId(openXmlElement);
       value.NumPoints = GetNumPoints(openXmlElement);
       value.PcaRings = GetPcaRings(openXmlElement);

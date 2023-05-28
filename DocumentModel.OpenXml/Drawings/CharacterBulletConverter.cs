@@ -23,11 +23,11 @@ public static class CharacterBulletConverter
     openXmlElement.Char = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Drawings.CharacterBullet? CreateModelElement(DXD.CharacterBullet? openXmlElement)
+  public static DMD.CharacterBullet? CreateModelElement(DXD.CharacterBullet? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.CharacterBullet();
+      var value = new DMD.CharacterBullet();
       value.Char = GetChar(openXmlElement);
       return value;
     }

@@ -226,11 +226,11 @@ public static class FontReferenceConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartsStyle.FontReference? CreateModelElement(DXO13DCS.FontReference? openXmlElement)
+  public static DMDCS.FontReference? CreateModelElement(DXO13DCS.FontReference? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartsStyle.FontReference();
+      var value = new DMDCS.FontReference();
       value.Index = GetIndex(openXmlElement);
       value.Modifiers = GetModifiers(openXmlElement);
       value.RgbColorModelPercentage = GetRgbColorModelPercentage(openXmlElement);

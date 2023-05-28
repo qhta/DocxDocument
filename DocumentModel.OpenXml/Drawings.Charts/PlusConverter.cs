@@ -57,11 +57,11 @@ public static class PlusConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.Plus? CreateModelElement(DXDC.Plus? openXmlElement)
+  public static DMD.Charts.Plus? CreateModelElement(DXDC.Plus? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.Plus();
+      var value = new DMD.Charts.Plus();
       value.NumberReference = GetNumberReference(openXmlElement);
       value.NumberLiteral = GetNumberLiteral(openXmlElement);
       return value;

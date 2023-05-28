@@ -61,11 +61,11 @@ public static class AreaSerExtensionListConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.AreaSerExtensionList? CreateModelElement(DXDC.AreaSerExtensionList? openXmlElement)
+  public static DMD.Charts.AreaSerExtensionList? CreateModelElement(DXDC.AreaSerExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.AreaSerExtensionList();
+      var value = new DMD.Charts.AreaSerExtensionList();
       value.AreaSerExtensions = GetAreaSerExtensions(openXmlElement);
       return value;
     }

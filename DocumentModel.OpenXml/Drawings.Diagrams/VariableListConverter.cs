@@ -216,11 +216,11 @@ public static class VariableListConverter
       openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXDD.ResizeHandles, DocumentFormat.OpenXml.Drawing.Diagrams.ResizeHandlesStringValues, DMDD.ResizeHandlesStringKind>((DMDD.ResizeHandlesStringKind)value));
   }
   
-  public static DocumentModel.Drawings.Diagrams.VariableList? CreateModelElement(DXDD.VariableList? openXmlElement)
+  public static DMDD.VariableList? CreateModelElement(DXDD.VariableList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.VariableList();
+      var value = new DMDD.VariableList();
       value.OrganizationChart = GetOrganizationChart(openXmlElement);
       value.MaxNumberOfChildren = GetMaxNumberOfChildren(openXmlElement);
       value.PreferredNumberOfChildren = GetPreferredNumberOfChildren(openXmlElement);

@@ -324,11 +324,11 @@ public static class OfPieChartConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.OfPieChart? CreateModelElement(DXDC.OfPieChart? openXmlElement)
+  public static DMD.Charts.OfPieChart? CreateModelElement(DXDC.OfPieChart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.OfPieChart();
+      var value = new DMD.Charts.OfPieChart();
       value.OfPieType = GetOfPieType(openXmlElement);
       value.VaryColors = GetVaryColors(openXmlElement);
       value.PieChartSeries = GetPieChartSeries(openXmlElement);

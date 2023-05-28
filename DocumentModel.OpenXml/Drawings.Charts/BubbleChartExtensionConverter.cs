@@ -49,11 +49,11 @@ public static class BubbleChartExtensionConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.BubbleChartExtension? CreateModelElement(DXDC.BubbleChartExtension? openXmlElement)
+  public static DMD.Charts.BubbleChartExtension? CreateModelElement(DXDC.BubbleChartExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.BubbleChartExtension();
+      var value = new DMD.Charts.BubbleChartExtension();
       value.Uri = GetUri(openXmlElement);
       value.FilteredBubbleSeries = GetFilteredBubbleSeries(openXmlElement);
       return value;

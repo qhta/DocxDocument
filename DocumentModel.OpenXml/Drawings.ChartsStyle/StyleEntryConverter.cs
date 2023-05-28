@@ -283,11 +283,11 @@ public static class StyleEntryConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartsStyle.StyleEntry? CreateModelElement(DXO13DCS.StyleEntry? openXmlElement)
+  public static DMDCS.StyleEntry? CreateModelElement(DXO13DCS.StyleEntry? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartsStyle.StyleEntry();
+      var value = new DMDCS.StyleEntry();
       value.Modifiers = GetModifiers(openXmlElement);
       value.LineReference = GetLineReference(openXmlElement);
       value.LineWidthScale = GetLineWidthScale(openXmlElement);

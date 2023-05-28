@@ -57,11 +57,11 @@ public static class AdjustHandleListConverter
     }
   }
   
-  public static DocumentModel.Drawings.AdjustHandleList? CreateModelElement(DXD.AdjustHandleList? openXmlElement)
+  public static DMD.AdjustHandleList? CreateModelElement(DXD.AdjustHandleList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.AdjustHandleList();
+      var value = new DMD.AdjustHandleList();
       value.AdjustHandleXY = GetAdjustHandleXY(openXmlElement);
       value.AdjustHandlePolar = GetAdjustHandlePolar(openXmlElement);
       return value;

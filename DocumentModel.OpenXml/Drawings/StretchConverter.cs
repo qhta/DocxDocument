@@ -34,11 +34,11 @@ public static class StretchConverter
     }
   }
   
-  public static DocumentModel.Drawings.Stretch? CreateModelElement(DXD.Stretch? openXmlElement)
+  public static DMD.Stretch? CreateModelElement(DXD.Stretch? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Stretch();
+      var value = new DMD.Stretch();
       value.FillRectangle = GetFillRectangle(openXmlElement);
       return value;
     }

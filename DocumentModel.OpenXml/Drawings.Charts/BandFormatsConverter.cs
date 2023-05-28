@@ -61,11 +61,11 @@ public static class BandFormatsConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.BandFormats? CreateModelElement(DXDC.BandFormats? openXmlElement)
+  public static DMD.Charts.BandFormats? CreateModelElement(DXDC.BandFormats? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.BandFormats();
+      var value = new DMD.Charts.BandFormats();
       value.Items = GetItems(openXmlElement);
       return value;
     }

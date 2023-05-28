@@ -179,11 +179,11 @@ public static class GeoDataConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.GeoData? CreateModelElement(DXO16DCD.GeoData? openXmlElement)
+  public static DMDCDs.GeoData? CreateModelElement(DXO16DCD.GeoData? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.GeoData();
+      var value = new DMDCDs.GeoData();
       value.EntityName = GetEntityName(openXmlElement);
       value.EntityId = GetEntityId(openXmlElement);
       value.East = GetEast(openXmlElement);

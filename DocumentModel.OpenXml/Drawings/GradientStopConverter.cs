@@ -199,11 +199,11 @@ public static class GradientStopConverter
     }
   }
   
-  public static DocumentModel.Drawings.GradientStop? CreateModelElement(DXD.GradientStop? openXmlElement)
+  public static DMD.GradientStop? CreateModelElement(DXD.GradientStop? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.GradientStop();
+      var value = new DMD.GradientStop();
       value.Position = GetPosition(openXmlElement);
       value.RgbColorModelPercentage = GetRgbColorModelPercentage(openXmlElement);
       value.RgbColorModelHex = GetRgbColorModelHex(openXmlElement);

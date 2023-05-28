@@ -35,11 +35,11 @@ public static class LineSpacingConverter
     SimpleValueConverter.SetValue<DXD.SpacingPoints,System.Int32>(openXmlElement, value);
   }
   
-  public static DocumentModel.Drawings.LineSpacing? CreateModelElement(DXD.LineSpacing? openXmlElement)
+  public static DMD.LineSpacing? CreateModelElement(DXD.LineSpacing? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.LineSpacing();
+      var value = new DMD.LineSpacing();
       value.SpacingPercent = GetSpacingPercent(openXmlElement);
       value.SpacingPoints = GetSpacingPoints(openXmlElement);
       return value;

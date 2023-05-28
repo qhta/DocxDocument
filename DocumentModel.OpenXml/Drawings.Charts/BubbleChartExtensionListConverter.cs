@@ -61,11 +61,11 @@ public static class BubbleChartExtensionListConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.BubbleChartExtensionList? CreateModelElement(DXDC.BubbleChartExtensionList? openXmlElement)
+  public static DMD.Charts.BubbleChartExtensionList? CreateModelElement(DXDC.BubbleChartExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.BubbleChartExtensionList();
+      var value = new DMD.Charts.BubbleChartExtensionList();
       value.BubbleChartExtensions = GetBubbleChartExtensions(openXmlElement);
       return value;
     }

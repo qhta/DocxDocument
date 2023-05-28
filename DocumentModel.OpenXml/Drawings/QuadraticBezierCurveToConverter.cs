@@ -61,11 +61,11 @@ public static class QuadraticBezierCurveToConverter
     }
   }
   
-  public static DocumentModel.Drawings.QuadraticBezierCurveTo? CreateModelElement(DXD.QuadraticBezierCurveTo? openXmlElement)
+  public static DMD.QuadraticBezierCurveTo? CreateModelElement(DXD.QuadraticBezierCurveTo? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.QuadraticBezierCurveTo();
+      var value = new DMD.QuadraticBezierCurveTo();
       value.Points = GetPoints(openXmlElement);
       return value;
     }

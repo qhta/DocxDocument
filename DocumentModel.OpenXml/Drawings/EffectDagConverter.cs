@@ -791,11 +791,11 @@ public static class EffectDagConverter
     }
   }
   
-  public static DocumentModel.Drawings.EffectDag? CreateModelElement(DXD.EffectDag? openXmlElement)
+  public static DMD.EffectDag? CreateModelElement(DXD.EffectDag? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.EffectDag();
+      var value = new DMD.EffectDag();
       value.EffectContainer = GetEffectContainer(openXmlElement);
       value.Effect = GetEffect(openXmlElement);
       value.AlphaBiLevel = GetAlphaBiLevel(openXmlElement);

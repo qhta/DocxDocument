@@ -139,11 +139,11 @@ public static class PivotFormatConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.PivotFormat? CreateModelElement(DXDC.PivotFormat? openXmlElement)
+  public static DMD.Charts.PivotFormat? CreateModelElement(DXDC.PivotFormat? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.PivotFormat();
+      var value = new DMD.Charts.PivotFormat();
       value.Index = GetIndex(openXmlElement);
       value.ShapeProperties = GetShapeProperties(openXmlElement);
       value.Marker = GetMarker(openXmlElement);

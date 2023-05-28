@@ -34,11 +34,11 @@ public static class BackgroundCustomPropertiesConverter
     }
   }
   
-  public static DocumentModel.Drawings.BackgroundCustomProperties? CreateModelElement(DXO21DL.BackgroundCustomProperties? openXmlElement)
+  public static DMD.BackgroundCustomProperties? CreateModelElement(DXO21DL.BackgroundCustomProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.BackgroundCustomProperties();
+      var value = new DMD.BackgroundCustomProperties();
       value.OfficeArtExtensionList = GetOfficeArtExtensionList(openXmlElement);
       return value;
     }

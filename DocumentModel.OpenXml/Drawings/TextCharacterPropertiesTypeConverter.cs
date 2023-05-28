@@ -469,11 +469,11 @@ public static class TextCharacterPropertiesTypeConverter
     }
   }
   
-  public static DocumentModel.Drawings.TextCharacterPropertiesType? CreateModelElement(DXD.TextCharacterPropertiesType? openXmlElement)
+  public static DMD.TextCharacterPropertiesType? CreateModelElement(DXD.TextCharacterPropertiesType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.TextCharacterPropertiesType();
+      var value = new DMD.TextCharacterPropertiesType();
       value.SmtClean = GetSmtClean(openXmlElement);
       value.SmtId = GetSmtId(openXmlElement);
       value.Kumimoji = GetKumimoji(openXmlElement);

@@ -110,11 +110,11 @@ public static class SurfaceTypeConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.SurfaceType? CreateModelElement(DXDC.SurfaceType? openXmlElement)
+  public static DMD.Charts.SurfaceType? CreateModelElement(DXDC.SurfaceType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.SurfaceType();
+      var value = new DMD.Charts.SurfaceType();
       value.Thickness = GetThickness(openXmlElement);
       value.ShapeProperties = GetShapeProperties(openXmlElement);
       value.PictureOptions = GetPictureOptions(openXmlElement);

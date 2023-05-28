@@ -61,11 +61,11 @@ public static class CustomDashConverter
     }
   }
   
-  public static DocumentModel.Drawings.CustomDash? CreateModelElement(DXD.CustomDash? openXmlElement)
+  public static DMD.CustomDash? CreateModelElement(DXD.CustomDash? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.CustomDash();
+      var value = new DMD.CustomDash();
       value.DashStops = GetDashStops(openXmlElement);
       return value;
     }

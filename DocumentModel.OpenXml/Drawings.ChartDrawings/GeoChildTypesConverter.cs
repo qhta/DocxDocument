@@ -61,11 +61,11 @@ public static class GeoChildTypesConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.GeoChildTypes? CreateModelElement(DXO16DCD.GeoChildTypes? openXmlElement)
+  public static DMDCDs.GeoChildTypes? CreateModelElement(DXO16DCD.GeoChildTypes? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.GeoChildTypes();
+      var value = new DMDCDs.GeoChildTypes();
       value.EntityTypes = GetEntityTypes(openXmlElement);
       return value;
     }

@@ -197,11 +197,11 @@ public static class CustomColorConverter
     }
   }
   
-  public static DocumentModel.Drawings.CustomColor? CreateModelElement(DXD.CustomColor? openXmlElement)
+  public static DMD.CustomColor? CreateModelElement(DXD.CustomColor? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.CustomColor();
+      var value = new DMD.CustomColor();
       value.Name = GetName(openXmlElement);
       value.RgbColorModelPercentage = GetRgbColorModelPercentage(openXmlElement);
       value.RgbColorModelHex = GetRgbColorModelHex(openXmlElement);

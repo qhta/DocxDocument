@@ -53,11 +53,11 @@ public static class TextDataConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.TextData? CreateModelElement(DXO16DCD.TextData? openXmlElement)
+  public static DMDCDs.TextData? CreateModelElement(DXO16DCD.TextData? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.TextData();
+      var value = new DMDCDs.TextData();
       value.Formula = GetFormula(openXmlElement);
       value.VXsdstring = GetVXsdstring(openXmlElement);
       return value;

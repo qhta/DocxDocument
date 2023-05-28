@@ -34,11 +34,11 @@ public static class PictureBulletConverter
     }
   }
   
-  public static DocumentModel.Drawings.PictureBullet? CreateModelElement(DXD.PictureBullet? openXmlElement)
+  public static DMD.PictureBullet? CreateModelElement(DXD.PictureBullet? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.PictureBullet();
+      var value = new DMD.PictureBullet();
       value.Blip = GetBlip(openXmlElement);
       return value;
     }

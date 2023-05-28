@@ -127,11 +127,11 @@ public static class RadarSerExtensionConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.RadarSerExtension? CreateModelElement(DXDC.RadarSerExtension? openXmlElement)
+  public static DMD.Charts.RadarSerExtension? CreateModelElement(DXDC.RadarSerExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.RadarSerExtension();
+      var value = new DMD.Charts.RadarSerExtension();
       value.Uri = GetUri(openXmlElement);
       value.FilteredSeriesTitle = GetFilteredSeriesTitle(openXmlElement);
       value.FilteredCategoryTitle = GetFilteredCategoryTitle(openXmlElement);

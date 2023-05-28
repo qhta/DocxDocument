@@ -235,11 +235,11 @@ public static class SeriesLineConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartsStyle.SeriesLine? CreateModelElement(DXO13DCS.SeriesLine? openXmlElement)
+  public static DMDCS.SeriesLine? CreateModelElement(DXO13DCS.SeriesLine? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartsStyle.SeriesLine();
+      var value = new DMDCS.SeriesLine();
       value.LineReference = GetLineReference(openXmlElement);
       value.LineWidthScale = GetLineWidthScale(openXmlElement);
       value.FillReference = GetFillReference(openXmlElement);

@@ -81,11 +81,11 @@ public static class AxisUnitsConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.AxisUnits? CreateModelElement(DXO16DCD.AxisUnits? openXmlElement)
+  public static DMDCDs.AxisUnits? CreateModelElement(DXO16DCD.AxisUnits? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.AxisUnits();
+      var value = new DMDCDs.AxisUnits();
       value.Unit = GetUnit(openXmlElement);
       value.AxisUnitsLabel = GetAxisUnitsLabel(openXmlElement);
       value.ExtensionList = GetExtensionList(openXmlElement);

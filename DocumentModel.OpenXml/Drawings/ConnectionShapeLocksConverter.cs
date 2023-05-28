@@ -264,11 +264,11 @@ public static class ConnectionShapeLocksConverter
     }
   }
   
-  public static DocumentModel.Drawings.ConnectionShapeLocks? CreateModelElement(DXD.ConnectionShapeLocks? openXmlElement)
+  public static DMD.ConnectionShapeLocks? CreateModelElement(DXD.ConnectionShapeLocks? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ConnectionShapeLocks();
+      var value = new DMD.ConnectionShapeLocks();
       value.NoGrouping = GetNoGrouping(openXmlElement);
       value.NoSelection = GetNoSelection(openXmlElement);
       value.NoRotation = GetNoRotation(openXmlElement);

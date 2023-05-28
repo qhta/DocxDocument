@@ -197,11 +197,11 @@ public static class CategoryFilterExceptionConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.CategoryFilterException? CreateModelElement(DXO13DC.CategoryFilterException? openXmlElement)
+  public static DMD.Charts.CategoryFilterException? CreateModelElement(DXO13DC.CategoryFilterException? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.CategoryFilterException();
+      var value = new DMD.Charts.CategoryFilterException();
       value.SequenceOfReferences = GetSequenceOfReferences(openXmlElement);
       value.ShapeProperties = GetShapeProperties(openXmlElement);
       value.Explosion = GetExplosion(openXmlElement);

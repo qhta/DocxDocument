@@ -34,11 +34,11 @@ public static class BackgroundNormalPropertiesConverter
     }
   }
   
-  public static DocumentModel.Drawings.BackgroundNormalProperties? CreateModelElement(DXO21DL.BackgroundNormalProperties? openXmlElement)
+  public static DMD.BackgroundNormalProperties? CreateModelElement(DXO21DL.BackgroundNormalProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.BackgroundNormalProperties();
+      var value = new DMD.BackgroundNormalProperties();
       value.OfficeArtExtensionList = GetOfficeArtExtensionList(openXmlElement);
       return value;
     }

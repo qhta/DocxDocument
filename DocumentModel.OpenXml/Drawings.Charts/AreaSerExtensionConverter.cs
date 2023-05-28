@@ -127,11 +127,11 @@ public static class AreaSerExtensionConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.AreaSerExtension? CreateModelElement(DXDC.AreaSerExtension? openXmlElement)
+  public static DMD.Charts.AreaSerExtension? CreateModelElement(DXDC.AreaSerExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.AreaSerExtension();
+      var value = new DMD.Charts.AreaSerExtension();
       value.Uri = GetUri(openXmlElement);
       value.FilteredSeriesTitle = GetFilteredSeriesTitle(openXmlElement);
       value.FilteredCategoryTitle = GetFilteredCategoryTitle(openXmlElement);

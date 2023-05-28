@@ -34,11 +34,11 @@ public static class DrawingConverter
     }
   }
   
-  public static DocumentModel.Drawings.Office.Drawing? CreateModelElement(DXOD.Drawing? openXmlElement)
+  public static DMDO.Drawing? CreateModelElement(DXOD.Drawing? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Office.Drawing();
+      var value = new DMDO.Drawing();
       value.ShapeTree = GetShapeTree(openXmlElement);
       return value;
     }

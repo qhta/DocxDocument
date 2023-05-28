@@ -161,11 +161,11 @@ public static class DuotoneConverter
     }
   }
   
-  public static DocumentModel.Drawings.Duotone? CreateModelElement(DXD.Duotone? openXmlElement)
+  public static DMD.Duotone? CreateModelElement(DXD.Duotone? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Duotone();
+      var value = new DMD.Duotone();
       value.RgbColorModelPercentage = GetRgbColorModelPercentage(openXmlElement);
       value.RgbColorModelHex = GetRgbColorModelHex(openXmlElement);
       value.HslColor = GetHslColor(openXmlElement);

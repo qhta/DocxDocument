@@ -65,11 +65,11 @@ public static class AnchorConverter
     openXmlElement.Z = value;
   }
   
-  public static DocumentModel.Drawings.Anchor? CreateModelElement(DXD.Anchor? openXmlElement)
+  public static DMD.Anchor? CreateModelElement(DXD.Anchor? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Anchor();
+      var value = new DMD.Anchor();
       value.X = GetX(openXmlElement);
       value.Y = GetY(openXmlElement);
       value.Z = GetZ(openXmlElement);

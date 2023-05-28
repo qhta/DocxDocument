@@ -187,11 +187,11 @@ public static class FillReferenceConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartsStyle.FillReference? CreateModelElement(DXO13DCS.FillReference? openXmlElement)
+  public static DMDCS.FillReference? CreateModelElement(DXO13DCS.FillReference? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartsStyle.FillReference();
+      var value = new DMDCS.FillReference();
       value.RgbColorModelPercentage = GetRgbColorModelPercentage(openXmlElement);
       value.RgbColorModelHex = GetRgbColorModelHex(openXmlElement);
       value.HslColor = GetHslColor(openXmlElement);

@@ -41,11 +41,11 @@ public static class ShapeGuideConverter
     openXmlElement.Formula = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Drawings.ShapeGuide? CreateModelElement(DXD.ShapeGuide? openXmlElement)
+  public static DMD.ShapeGuide? CreateModelElement(DXD.ShapeGuide? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ShapeGuide();
+      var value = new DMD.ShapeGuide();
       value.Name = GetName(openXmlElement);
       value.Formula = GetFormula(openXmlElement);
       return value;

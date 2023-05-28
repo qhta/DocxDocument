@@ -64,11 +64,11 @@ public static class ObjectPropertiesConverter
     openXmlElement.LinkType = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Drawings.ObjectProperties? CreateModelElement(DXO13D.ObjectProperties? openXmlElement)
+  public static DMD.ObjectProperties? CreateModelElement(DXO13D.ObjectProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ObjectProperties();
+      var value = new DMD.ObjectProperties();
       value.Id = GetId(openXmlElement);
       value.IsActiveX = GetIsActiveX(openXmlElement);
       value.LinkType = GetLinkType(openXmlElement);

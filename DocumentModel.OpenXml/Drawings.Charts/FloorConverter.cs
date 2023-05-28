@@ -98,11 +98,11 @@ public static class FloorConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.Floor? CreateModelElement(DXDC.Floor? openXmlElement)
+  public static DMD.Charts.Floor? CreateModelElement(DXDC.Floor? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.Floor();
+      var value = new DMD.Charts.Floor();
       value.Thickness = GetThickness(openXmlElement);
       value.ShapeProperties = GetShapeProperties(openXmlElement);
       value.PictureOptions = GetPictureOptions(openXmlElement);

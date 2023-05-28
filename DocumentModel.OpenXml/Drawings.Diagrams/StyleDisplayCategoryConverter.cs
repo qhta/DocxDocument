@@ -43,11 +43,11 @@ public static class StyleDisplayCategoryConverter
     openXmlElement.Priority = value;
   }
   
-  public static DocumentModel.Drawings.Diagrams.StyleDisplayCategory? CreateModelElement(DXDD.StyleDisplayCategory? openXmlElement)
+  public static DMDD.StyleDisplayCategory? CreateModelElement(DXDD.StyleDisplayCategory? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.StyleDisplayCategory();
+      var value = new DMDD.StyleDisplayCategory();
       value.Type = GetType(openXmlElement);
       value.Priority = GetPriority(openXmlElement);
       return value;

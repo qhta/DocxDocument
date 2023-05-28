@@ -45,11 +45,11 @@ public static class ArtisticLineDrawingConverter
     openXmlElement.PencilSize = value;
   }
   
-  public static DocumentModel.Drawings.ArtisticLineDrawing? CreateModelElement(DXO10D.ArtisticLineDrawing? openXmlElement)
+  public static DMD.ArtisticLineDrawing? CreateModelElement(DXO10D.ArtisticLineDrawing? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ArtisticLineDrawing();
+      var value = new DMD.ArtisticLineDrawing();
       value.Transparancy = GetTransparancy(openXmlElement);
       value.PencilSize = GetPencilSize(openXmlElement);
       return value;

@@ -49,11 +49,11 @@ public static class NonVisualGroupDrawingShapePropsExtensionConverter
     }
   }
   
-  public static DocumentModel.Drawings.NonVisualGroupDrawingShapePropsExtension? CreateModelElement(DXD.NonVisualGroupDrawingShapePropsExtension? openXmlElement)
+  public static DMD.NonVisualGroupDrawingShapePropsExtension? CreateModelElement(DXD.NonVisualGroupDrawingShapePropsExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.NonVisualGroupDrawingShapePropsExtension();
+      var value = new DMD.NonVisualGroupDrawingShapePropsExtension();
       value.Uri = GetUri(openXmlElement);
       value.NonVisualGroupProperties = GetNonVisualGroupProperties(openXmlElement);
       return value;

@@ -86,11 +86,11 @@ public static class NonVisualInkContentPartPropertiesConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.NonVisualInkContentPartProperties? CreateModelElement(DXO10DCD.NonVisualInkContentPartProperties? openXmlElement)
+  public static DMDCDs.NonVisualInkContentPartProperties? CreateModelElement(DXO10DCD.NonVisualInkContentPartProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.NonVisualInkContentPartProperties();
+      var value = new DMDCDs.NonVisualInkContentPartProperties();
       value.IsComment = GetIsComment(openXmlElement);
       value.ContentPartLocks = GetContentPartLocks(openXmlElement);
       value.OfficeArtExtensionList = GetOfficeArtExtensionList(openXmlElement);

@@ -425,11 +425,11 @@ public static class SeriesConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.Series? CreateModelElement(DXO16DCD.Series? openXmlElement)
+  public static DMDCDs.Series? CreateModelElement(DXO16DCD.Series? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.Series();
+      var value = new DMDCDs.Series();
       value.LayoutId = GetLayoutId(openXmlElement);
       value.Hidden = GetHidden(openXmlElement);
       value.OwnerIdx = GetOwnerIdx(openXmlElement);

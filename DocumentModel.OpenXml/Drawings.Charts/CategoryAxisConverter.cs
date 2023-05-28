@@ -579,11 +579,11 @@ public static class CategoryAxisConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.CategoryAxis? CreateModelElement(DXDC.CategoryAxis? openXmlElement)
+  public static DMD.Charts.CategoryAxis? CreateModelElement(DXDC.CategoryAxis? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.CategoryAxis();
+      var value = new DMD.Charts.CategoryAxis();
       value.AxisId = GetAxisId(openXmlElement);
       value.Scaling = GetScaling(openXmlElement);
       value.Delete = GetDelete(openXmlElement);

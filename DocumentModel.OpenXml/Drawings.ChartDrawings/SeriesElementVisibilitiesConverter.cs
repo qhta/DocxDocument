@@ -120,11 +120,11 @@ public static class SeriesElementVisibilitiesConverter
       openXmlElement.Outliers = null;
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.SeriesElementVisibilities? CreateModelElement(DXO16DCD.SeriesElementVisibilities? openXmlElement)
+  public static DMDCDs.SeriesElementVisibilities? CreateModelElement(DXO16DCD.SeriesElementVisibilities? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.SeriesElementVisibilities();
+      var value = new DMDCDs.SeriesElementVisibilities();
       value.ConnectorLines = GetConnectorLines(openXmlElement);
       value.MeanLine = GetMeanLine(openXmlElement);
       value.MeanMarker = GetMeanMarker(openXmlElement);

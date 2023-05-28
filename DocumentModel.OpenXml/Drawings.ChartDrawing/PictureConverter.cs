@@ -162,11 +162,11 @@ public static class PictureConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawing.Picture? CreateModelElement(DXDCD.Picture? openXmlElement)
+  public static DMD.ChartDrawing.Picture? CreateModelElement(DXDCD.Picture? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawing.Picture();
+      var value = new DMD.ChartDrawing.Picture();
       value.Macro = GetMacro(openXmlElement);
       value.Published = GetPublished(openXmlElement);
       value.NonVisualPictureProperties = GetNonVisualPictureProperties(openXmlElement);

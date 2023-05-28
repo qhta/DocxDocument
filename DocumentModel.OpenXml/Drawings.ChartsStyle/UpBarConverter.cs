@@ -235,11 +235,11 @@ public static class UpBarConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartsStyle.UpBar? CreateModelElement(DXO13DCS.UpBar? openXmlElement)
+  public static DMDCS.UpBar? CreateModelElement(DXO13DCS.UpBar? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartsStyle.UpBar();
+      var value = new DMDCS.UpBar();
       value.LineReference = GetLineReference(openXmlElement);
       value.LineWidthScale = GetLineWidthScale(openXmlElement);
       value.FillReference = GetFillReference(openXmlElement);

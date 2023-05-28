@@ -189,11 +189,11 @@ public static class DocPropertiesConverter
     }
   }
   
-  public static DocumentModel.Drawings.Wordprocessing.DocProperties? CreateModelElement(DXDW.DocProperties? openXmlElement)
+  public static DMD.Wordprocessing.DocProperties? CreateModelElement(DXDW.DocProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Wordprocessing.DocProperties();
+      var value = new DMD.Wordprocessing.DocProperties();
       value.Id = GetId(openXmlElement);
       value.Name = GetName(openXmlElement);
       value.Description = GetDescription(openXmlElement);

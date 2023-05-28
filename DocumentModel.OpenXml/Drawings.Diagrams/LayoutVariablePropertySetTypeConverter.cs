@@ -243,11 +243,11 @@ public static class LayoutVariablePropertySetTypeConverter
       openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXDD.ResizeHandles, DocumentFormat.OpenXml.Drawing.Diagrams.ResizeHandlesStringValues, DMDD.ResizeHandlesStringKind>((DMDD.ResizeHandlesStringKind)value));
   }
   
-  public static DocumentModel.Drawings.Diagrams.LayoutVariablePropertySetType? CreateModelElement(DXDD.LayoutVariablePropertySetType? openXmlElement)
+  public static DMDD.LayoutVariablePropertySetType? CreateModelElement(DXDD.LayoutVariablePropertySetType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.LayoutVariablePropertySetType();
+      var value = new DMDD.LayoutVariablePropertySetType();
       value.OrganizationChart = GetOrganizationChart(openXmlElement);
       value.MaxNumberOfChildren = GetMaxNumberOfChildren(openXmlElement);
       value.PreferredNumberOfChildren = GetPreferredNumberOfChildren(openXmlElement);

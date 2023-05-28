@@ -45,11 +45,11 @@ public static class ArtisticGlowEdgesConverter
     openXmlElement.Smoothness = value;
   }
   
-  public static DocumentModel.Drawings.ArtisticGlowEdges? CreateModelElement(DXO10D.ArtisticGlowEdges? openXmlElement)
+  public static DMD.ArtisticGlowEdges? CreateModelElement(DXO10D.ArtisticGlowEdges? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ArtisticGlowEdges();
+      var value = new DMD.ArtisticGlowEdges();
       value.Transparancy = GetTransparancy(openXmlElement);
       value.Smoothness = GetSmoothness(openXmlElement);
       return value;

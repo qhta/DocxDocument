@@ -324,11 +324,11 @@ public static class TextListStyleTypeConverter
     }
   }
   
-  public static DocumentModel.Drawings.Diagram2.TextListStyleType? CreateModelElement(DXO19DD12.TextListStyleType? openXmlElement)
+  public static DMDD2.TextListStyleType? CreateModelElement(DXO19DD12.TextListStyleType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagram2.TextListStyleType();
+      var value = new DMDD2.TextListStyleType();
       value.DefaultParagraphProperties = GetDefaultParagraphProperties(openXmlElement);
       value.Level1ParagraphProperties = GetLevel1ParagraphProperties(openXmlElement);
       value.Level2ParagraphProperties = GetLevel2ParagraphProperties(openXmlElement);

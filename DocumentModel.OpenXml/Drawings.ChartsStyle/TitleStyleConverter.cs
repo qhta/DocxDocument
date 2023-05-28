@@ -235,11 +235,11 @@ public static class TitleStyleConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartsStyle.TitleStyle? CreateModelElement(DXO13DCS.TitleStyle? openXmlElement)
+  public static DMDCS.TitleStyle? CreateModelElement(DXO13DCS.TitleStyle? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartsStyle.TitleStyle();
+      var value = new DMDCS.TitleStyle();
       value.LineReference = GetLineReference(openXmlElement);
       value.LineWidthScale = GetLineWidthScale(openXmlElement);
       value.FillReference = GetFillReference(openXmlElement);

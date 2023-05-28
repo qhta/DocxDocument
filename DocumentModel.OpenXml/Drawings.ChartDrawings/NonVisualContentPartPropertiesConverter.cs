@@ -63,11 +63,11 @@ public static class NonVisualContentPartPropertiesConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.NonVisualContentPartProperties? CreateModelElement(DXO10DCD.NonVisualContentPartProperties? openXmlElement)
+  public static DMDCDs.NonVisualContentPartProperties? CreateModelElement(DXO10DCD.NonVisualContentPartProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.NonVisualContentPartProperties();
+      var value = new DMDCDs.NonVisualContentPartProperties();
       value.NonVisualDrawingProperties = GetNonVisualDrawingProperties(openXmlElement);
       value.NonVisualInkContentPartProperties = GetNonVisualInkContentPartProperties(openXmlElement);
       return value;

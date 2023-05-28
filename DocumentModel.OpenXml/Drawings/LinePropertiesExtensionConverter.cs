@@ -49,11 +49,11 @@ public static class LinePropertiesExtensionConverter
     }
   }
   
-  public static DocumentModel.Drawings.LinePropertiesExtension? CreateModelElement(DXD.LinePropertiesExtension? openXmlElement)
+  public static DMD.LinePropertiesExtension? CreateModelElement(DXD.LinePropertiesExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.LinePropertiesExtension();
+      var value = new DMD.LinePropertiesExtension();
       value.Uri = GetUri(openXmlElement);
       value.LineSketchStyleProperties = GetLineSketchStyleProperties(openXmlElement);
       return value;

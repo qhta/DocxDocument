@@ -302,11 +302,11 @@ public static class DataLabelsConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.DataLabels? CreateModelElement(DXO16DCD.DataLabels? openXmlElement)
+  public static DMDCDs.DataLabels? CreateModelElement(DXO16DCD.DataLabels? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.DataLabels();
+      var value = new DMDCDs.DataLabels();
       value.Pos = GetPos(openXmlElement);
       value.NumberFormat = GetNumberFormat(openXmlElement);
       value.ShapeProperties = GetShapeProperties(openXmlElement);

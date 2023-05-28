@@ -151,11 +151,11 @@ public static class LineSketchStylePropertiesConverter
     }
   }
   
-  public static DocumentModel.Drawings.LineSketchStyleProperties? CreateModelElement(DXO21DSS.LineSketchStyleProperties? openXmlElement)
+  public static DMD.LineSketchStyleProperties? CreateModelElement(DXO21DSS.LineSketchStyleProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.LineSketchStyleProperties();
+      var value = new DMD.LineSketchStyleProperties();
       value.Sd = GetSd(openXmlElement);
       value.CustomGeometry = GetCustomGeometry(openXmlElement);
       value.PresetGeometry = GetPresetGeometry(openXmlElement);

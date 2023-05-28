@@ -31,11 +31,11 @@ public static class HighLowLinesConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.HighLowLines? CreateModelElement(DXDC.HighLowLines? openXmlElement)
+  public static DMD.Charts.HighLowLines? CreateModelElement(DXDC.HighLowLines? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.HighLowLines();
+      var value = new DMD.Charts.HighLowLines();
       value.ChartShapeProperties = GetChartShapeProperties(openXmlElement);
       return value;
     }

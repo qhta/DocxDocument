@@ -86,11 +86,11 @@ public static class WholeConverter
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.Whole? CreateModelElement(DXDD.Whole? openXmlElement)
+  public static DMDD.Whole? CreateModelElement(DXDD.Whole? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.Whole();
+      var value = new DMDD.Whole();
       value.Outline = GetOutline(openXmlElement);
       value.EffectList = GetEffectList(openXmlElement);
       value.EffectDag = GetEffectDag(openXmlElement);

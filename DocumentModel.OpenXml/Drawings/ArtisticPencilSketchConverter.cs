@@ -45,11 +45,11 @@ public static class ArtisticPencilSketchConverter
     openXmlElement.Pressure = value;
   }
   
-  public static DocumentModel.Drawings.ArtisticPencilSketch? CreateModelElement(DXO10D.ArtisticPencilSketch? openXmlElement)
+  public static DMD.ArtisticPencilSketch? CreateModelElement(DXO10D.ArtisticPencilSketch? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ArtisticPencilSketch();
+      var value = new DMD.ArtisticPencilSketch();
       value.Transparancy = GetTransparancy(openXmlElement);
       value.Pressure = GetPressure(openXmlElement);
       return value;

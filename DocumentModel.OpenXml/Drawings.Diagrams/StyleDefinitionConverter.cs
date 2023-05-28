@@ -257,11 +257,11 @@ public static class StyleDefinitionConverter
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.StyleDefinition? CreateModelElement(DXDD.StyleDefinition? openXmlElement)
+  public static DMDD.StyleDefinition? CreateModelElement(DXDD.StyleDefinition? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.StyleDefinition();
+      var value = new DMDD.StyleDefinition();
       value.UniqueId = GetUniqueId(openXmlElement);
       value.MinVersion = GetMinVersion(openXmlElement);
       value.StyleDefinitionTitles = GetStyleDefinitionTitles(openXmlElement);

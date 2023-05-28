@@ -45,11 +45,11 @@ public static class ArtisticPaintBrushConverter
     openXmlElement.BrushSize = value;
   }
   
-  public static DocumentModel.Drawings.ArtisticPaintBrush? CreateModelElement(DXO10D.ArtisticPaintBrush? openXmlElement)
+  public static DMD.ArtisticPaintBrush? CreateModelElement(DXO10D.ArtisticPaintBrush? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ArtisticPaintBrush();
+      var value = new DMD.ArtisticPaintBrush();
       value.Transparancy = GetTransparancy(openXmlElement);
       value.BrushSize = GetBrushSize(openXmlElement);
       return value;

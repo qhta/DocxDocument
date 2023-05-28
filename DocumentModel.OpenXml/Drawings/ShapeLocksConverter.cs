@@ -287,11 +287,11 @@ public static class ShapeLocksConverter
     }
   }
   
-  public static DocumentModel.Drawings.ShapeLocks? CreateModelElement(DXD.ShapeLocks? openXmlElement)
+  public static DMD.ShapeLocks? CreateModelElement(DXD.ShapeLocks? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ShapeLocks();
+      var value = new DMD.ShapeLocks();
       value.NoGrouping = GetNoGrouping(openXmlElement);
       value.NoSelection = GetNoSelection(openXmlElement);
       value.NoRotation = GetNoRotation(openXmlElement);

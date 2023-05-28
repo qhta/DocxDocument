@@ -23,11 +23,11 @@ public static class FillOverlayConverter
     openXmlElement.Blend = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.BlendModeValues, DMD.BlendMode>(value);
   }
   
-  public static DocumentModel.Drawings.FillOverlay? CreateModelElement(DXD.FillOverlay? openXmlElement)
+  public static DMD.FillOverlay? CreateModelElement(DXD.FillOverlay? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var model = new DocumentModel.Drawings.FillOverlay();
+      var model = new DMD.FillOverlay();
       model.Blend = GetBlend(openXmlElement);
       model.Fill = FillConverter.CreateFillModel(openXmlElement);
       return model;

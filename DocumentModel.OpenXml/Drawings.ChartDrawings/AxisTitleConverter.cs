@@ -121,11 +121,11 @@ public static class AxisTitleConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.AxisTitle? CreateModelElement(DXO16DCD.AxisTitle? openXmlElement)
+  public static DMDCDs.AxisTitle? CreateModelElement(DXO16DCD.AxisTitle? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.AxisTitle();
+      var value = new DMDCDs.AxisTitle();
       value.Text = GetText(openXmlElement);
       value.ShapeProperties = GetShapeProperties(openXmlElement);
       value.TxPrTextBody = GetTxPrTextBody(openXmlElement);

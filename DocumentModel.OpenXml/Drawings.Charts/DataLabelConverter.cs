@@ -422,11 +422,11 @@ public static class DataLabelConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.DataLabel? CreateModelElement(DXDC.DataLabel? openXmlElement)
+  public static DMD.Charts.DataLabel? CreateModelElement(DXDC.DataLabel? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.DataLabel();
+      var value = new DMD.Charts.DataLabel();
       value.Index = GetIndex(openXmlElement);
       value.Delete = GetDelete(openXmlElement);
       value.Layout = GetLayout(openXmlElement);

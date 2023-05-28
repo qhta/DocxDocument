@@ -49,11 +49,11 @@ public static class Bar3DChartExtensionConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.Bar3DChartExtension? CreateModelElement(DXDC.Bar3DChartExtension? openXmlElement)
+  public static DMD.Charts.Bar3DChartExtension? CreateModelElement(DXDC.Bar3DChartExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.Bar3DChartExtension();
+      var value = new DMD.Charts.Bar3DChartExtension();
       value.Uri = GetUri(openXmlElement);
       value.FilteredBarSeries = GetFilteredBarSeries(openXmlElement);
       return value;

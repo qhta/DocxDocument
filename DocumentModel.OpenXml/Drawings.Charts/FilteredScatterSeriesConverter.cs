@@ -34,11 +34,11 @@ public static class FilteredScatterSeriesConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.FilteredScatterSeries? CreateModelElement(DXO13DC.FilteredScatterSeries? openXmlElement)
+  public static DMD.Charts.FilteredScatterSeries? CreateModelElement(DXO13DC.FilteredScatterSeries? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.FilteredScatterSeries();
+      var value = new DMD.Charts.FilteredScatterSeries();
       value.ScatterChartSeries = GetScatterChartSeries(openXmlElement);
       return value;
     }

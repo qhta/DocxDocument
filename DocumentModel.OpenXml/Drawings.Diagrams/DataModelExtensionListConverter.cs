@@ -61,11 +61,11 @@ public static class DataModelExtensionListConverter
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.DataModelExtensionList? CreateModelElement(DXDD.DataModelExtensionList? openXmlElement)
+  public static DMDD.DataModelExtensionList? CreateModelElement(DXDD.DataModelExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.DataModelExtensionList();
+      var value = new DMDD.DataModelExtensionList();
       value.DataModelExtensions = GetDataModelExtensions(openXmlElement);
       return value;
     }

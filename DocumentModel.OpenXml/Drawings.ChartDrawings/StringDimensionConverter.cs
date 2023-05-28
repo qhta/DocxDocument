@@ -157,11 +157,11 @@ public static class StringDimensionConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.StringDimension? CreateModelElement(DXO16DCD.StringDimension? openXmlElement)
+  public static DMDCDs.StringDimension? CreateModelElement(DXO16DCD.StringDimension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.StringDimension();
+      var value = new DMDCDs.StringDimension();
       value.Type = GetType(openXmlElement);
       value.Formula = GetFormula(openXmlElement);
       value.NfFormula = GetNfFormula(openXmlElement);

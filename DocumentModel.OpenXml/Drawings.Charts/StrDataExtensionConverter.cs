@@ -51,11 +51,11 @@ public static class StrDataExtensionConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.StrDataExtension? CreateModelElement(DXDC.StrDataExtension? openXmlElement)
+  public static DMD.Charts.StrDataExtension? CreateModelElement(DXDC.StrDataExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.StrDataExtension();
+      var value = new DMD.Charts.StrDataExtension();
       value.Uri = GetUri(openXmlElement);
       value.AutoGeneneratedCategories = GetAutoGeneneratedCategories(openXmlElement);
       return value;

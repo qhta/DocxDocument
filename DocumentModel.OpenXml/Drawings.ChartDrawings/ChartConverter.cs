@@ -121,11 +121,11 @@ public static class ChartConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.Chart? CreateModelElement(DXO16DCD.Chart? openXmlElement)
+  public static DMDCDs.Chart? CreateModelElement(DXO16DCD.Chart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.Chart();
+      var value = new DMDCDs.Chart();
       value.ChartTitle = GetChartTitle(openXmlElement);
       value.PlotArea = GetPlotArea(openXmlElement);
       value.Legend = GetLegend(openXmlElement);

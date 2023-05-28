@@ -455,11 +455,11 @@ public static class DiagramChooseIfConverter
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.DiagramChooseIf? CreateModelElement(DXDD.DiagramChooseIf? openXmlElement)
+  public static DMDD.DiagramChooseIf? CreateModelElement(DXDD.DiagramChooseIf? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.DiagramChooseIf();
+      var value = new DMDD.DiagramChooseIf();
       value.Name = GetName(openXmlElement);
       value.Axis = GetAxis(openXmlElement);
       value.PointType = GetPointType(openXmlElement);

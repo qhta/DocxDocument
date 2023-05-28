@@ -45,11 +45,11 @@ public static class ArtisticMosaicBubblesConverter
     openXmlElement.Pressure = value;
   }
   
-  public static DocumentModel.Drawings.ArtisticMosaicBubbles? CreateModelElement(DXO10D.ArtisticMosaicBubbles? openXmlElement)
+  public static DMD.ArtisticMosaicBubbles? CreateModelElement(DXO10D.ArtisticMosaicBubbles? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ArtisticMosaicBubbles();
+      var value = new DMD.ArtisticMosaicBubbles();
       value.Transparancy = GetTransparancy(openXmlElement);
       value.Pressure = GetPressure(openXmlElement);
       return value;

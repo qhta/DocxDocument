@@ -235,11 +235,11 @@ public static class PlotAreaConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartsStyle.PlotArea? CreateModelElement(DXO13DCS.PlotArea? openXmlElement)
+  public static DMDCS.PlotArea? CreateModelElement(DXO13DCS.PlotArea? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartsStyle.PlotArea();
+      var value = new DMDCS.PlotArea();
       value.LineReference = GetLineReference(openXmlElement);
       value.LineWidthScale = GetLineWidthScale(openXmlElement);
       value.FillReference = GetFillReference(openXmlElement);

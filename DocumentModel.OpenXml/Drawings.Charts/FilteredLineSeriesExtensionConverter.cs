@@ -34,11 +34,11 @@ public static class FilteredLineSeriesExtensionConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.FilteredLineSeriesExtension? CreateModelElement(DXO13DC.FilteredLineSeriesExtension? openXmlElement)
+  public static DMD.Charts.FilteredLineSeriesExtension? CreateModelElement(DXO13DC.FilteredLineSeriesExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.FilteredLineSeriesExtension();
+      var value = new DMD.Charts.FilteredLineSeriesExtension();
       value.LineChartSeries = GetLineChartSeries(openXmlElement);
       return value;
     }

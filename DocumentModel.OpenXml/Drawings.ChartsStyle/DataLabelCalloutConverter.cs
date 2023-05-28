@@ -235,11 +235,11 @@ public static class DataLabelCalloutConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartsStyle.DataLabelCallout? CreateModelElement(DXO13DCS.DataLabelCallout? openXmlElement)
+  public static DMDCS.DataLabelCallout? CreateModelElement(DXO13DCS.DataLabelCallout? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartsStyle.DataLabelCallout();
+      var value = new DMDCS.DataLabelCallout();
       value.LineReference = GetLineReference(openXmlElement);
       value.LineWidthScale = GetLineWidthScale(openXmlElement);
       value.FillReference = GetFillReference(openXmlElement);

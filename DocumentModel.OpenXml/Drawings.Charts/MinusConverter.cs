@@ -57,11 +57,11 @@ public static class MinusConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.Minus? CreateModelElement(DXDC.Minus? openXmlElement)
+  public static DMD.Charts.Minus? CreateModelElement(DXDC.Minus? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.Minus();
+      var value = new DMD.Charts.Minus();
       value.NumberReference = GetNumberReference(openXmlElement);
       value.NumberLiteral = GetNumberLiteral(openXmlElement);
       return value;

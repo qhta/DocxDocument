@@ -109,11 +109,11 @@ public static class BinningConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.Binning? CreateModelElement(DXO16DCD.Binning? openXmlElement)
+  public static DMDCDs.Binning? CreateModelElement(DXO16DCD.Binning? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.Binning();
+      var value = new DMDCDs.Binning();
       value.IntervalClosed = GetIntervalClosed(openXmlElement);
       value.Underflow = GetUnderflow(openXmlElement);
       value.Overflow = GetOverflow(openXmlElement);

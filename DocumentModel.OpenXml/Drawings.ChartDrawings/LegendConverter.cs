@@ -151,11 +151,11 @@ public static class LegendConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.Legend? CreateModelElement(DXO16DCD.Legend? openXmlElement)
+  public static DMDCDs.Legend? CreateModelElement(DXO16DCD.Legend? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.Legend();
+      var value = new DMDCDs.Legend();
       value.Pos = GetPos(openXmlElement);
       value.Align = GetAlign(openXmlElement);
       value.Overlay = GetOverlay(openXmlElement);

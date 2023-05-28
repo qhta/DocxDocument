@@ -31,11 +31,11 @@ public static class ColorDataConverter
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.ColorData? CreateModelElement(DXDD.ColorData? openXmlElement)
+  public static DMDD.ColorData? CreateModelElement(DXDD.ColorData? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.ColorData();
+      var value = new DMDD.ColorData();
       value.DataModel = GetDataModel(openXmlElement);
       return value;
     }

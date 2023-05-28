@@ -63,11 +63,11 @@ public static class ExtraColorSchemeConverter
     }
   }
   
-  public static DocumentModel.Drawings.ExtraColorScheme? CreateModelElement(DXD.ExtraColorScheme? openXmlElement)
+  public static DMD.ExtraColorScheme? CreateModelElement(DXD.ExtraColorScheme? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ExtraColorScheme();
+      var value = new DMD.ExtraColorScheme();
       value.ColorScheme = GetColorScheme(openXmlElement);
       value.ColorMap = GetColorMap(openXmlElement);
       return value;

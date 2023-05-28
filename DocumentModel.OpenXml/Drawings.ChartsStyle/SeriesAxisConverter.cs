@@ -235,11 +235,11 @@ public static class SeriesAxisConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartsStyle.SeriesAxis? CreateModelElement(DXO13DCS.SeriesAxis? openXmlElement)
+  public static DMDCS.SeriesAxis? CreateModelElement(DXO13DCS.SeriesAxis? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartsStyle.SeriesAxis();
+      var value = new DMDCS.SeriesAxis();
       value.LineReference = GetLineReference(openXmlElement);
       value.LineWidthScale = GetLineWidthScale(openXmlElement);
       value.FillReference = GetFillReference(openXmlElement);

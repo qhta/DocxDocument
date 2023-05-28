@@ -77,11 +77,11 @@ public static class RectangleConverter
     openXmlElement.Bottom = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Drawings.Rectangle? CreateModelElement(DXD.Rectangle? openXmlElement)
+  public static DMD.Rectangle? CreateModelElement(DXD.Rectangle? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Rectangle();
+      var value = new DMD.Rectangle();
       value.Left = GetLeft(openXmlElement);
       value.Top = GetTop(openXmlElement);
       value.Right = GetRight(openXmlElement);

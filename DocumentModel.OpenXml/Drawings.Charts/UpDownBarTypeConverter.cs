@@ -34,11 +34,11 @@ public static class UpDownBarTypeConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.UpDownBarType? CreateModelElement(DXDC.UpDownBarType? openXmlElement)
+  public static DMD.Charts.UpDownBarType? CreateModelElement(DXDC.UpDownBarType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.UpDownBarType();
+      var value = new DMD.Charts.UpDownBarType();
       value.ChartShapeProperties = GetChartShapeProperties(openXmlElement);
       return value;
     }

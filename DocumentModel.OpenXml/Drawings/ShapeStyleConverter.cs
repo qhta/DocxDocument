@@ -121,11 +121,11 @@ public static class ShapeStyleConverter
     }
   }
   
-  public static DocumentModel.Drawings.ShapeStyle? CreateModelElement(DXD.ShapeStyle? openXmlElement)
+  public static DMD.ShapeStyle? CreateModelElement(DXD.ShapeStyle? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ShapeStyle();
+      var value = new DMD.ShapeStyle();
       value.LineReference = GetLineReference(openXmlElement);
       value.FillReference = GetFillReference(openXmlElement);
       value.EffectReference = GetEffectReference(openXmlElement);

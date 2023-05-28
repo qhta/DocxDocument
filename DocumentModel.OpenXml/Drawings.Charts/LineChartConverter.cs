@@ -362,11 +362,11 @@ public static class LineChartConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.LineChart? CreateModelElement(DXDC.LineChart? openXmlElement)
+  public static DMD.Charts.LineChart? CreateModelElement(DXDC.LineChart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.LineChart();
+      var value = new DMD.Charts.LineChart();
       value.Grouping = GetGrouping(openXmlElement);
       value.VaryColors = GetVaryColors(openXmlElement);
       value.LineChartSeries = GetLineChartSeries(openXmlElement);

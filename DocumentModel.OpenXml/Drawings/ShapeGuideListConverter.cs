@@ -61,11 +61,11 @@ public static class ShapeGuideListConverter
     }
   }
   
-  public static DocumentModel.Drawings.ShapeGuideList? CreateModelElement(DXD.ShapeGuideList? openXmlElement)
+  public static DMD.ShapeGuideList? CreateModelElement(DXD.ShapeGuideList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ShapeGuideList();
+      var value = new DMD.ShapeGuideList();
       value.ShapeGuides = GetShapeGuides(openXmlElement);
       return value;
     }

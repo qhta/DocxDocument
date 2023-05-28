@@ -57,11 +57,11 @@ public static class UserShapesConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.UserShapes? CreateModelElement(DXDC.UserShapes? openXmlElement)
+  public static DMD.Charts.UserShapes? CreateModelElement(DXDC.UserShapes? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.UserShapes();
+      var value = new DMD.Charts.UserShapes();
       value.RelativeAnchorSize = GetRelativeAnchorSize(openXmlElement);
       value.AbsoluteAnchorSize = GetAbsoluteAnchorSize(openXmlElement);
       return value;

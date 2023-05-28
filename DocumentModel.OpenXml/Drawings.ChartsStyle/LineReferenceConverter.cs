@@ -187,11 +187,11 @@ public static class LineReferenceConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartsStyle.LineReference? CreateModelElement(DXO13DCS.LineReference? openXmlElement)
+  public static DMDCS.LineReference? CreateModelElement(DXO13DCS.LineReference? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartsStyle.LineReference();
+      var value = new DMDCS.LineReference();
       value.RgbColorModelPercentage = GetRgbColorModelPercentage(openXmlElement);
       value.RgbColorModelHex = GetRgbColorModelHex(openXmlElement);
       value.HslColor = GetHslColor(openXmlElement);

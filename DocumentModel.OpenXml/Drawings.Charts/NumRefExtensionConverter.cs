@@ -101,11 +101,11 @@ public static class NumRefExtensionConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.NumRefExtension? CreateModelElement(DXDC.NumRefExtension? openXmlElement)
+  public static DMD.Charts.NumRefExtension? CreateModelElement(DXDC.NumRefExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.NumRefExtension();
+      var value = new DMD.Charts.NumRefExtension();
       value.Uri = GetUri(openXmlElement);
       value.FullReference = GetFullReference(openXmlElement);
       value.LevelReference = GetLevelReference(openXmlElement);

@@ -61,11 +61,11 @@ public static class ConnectionListConverter
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.ConnectionList? CreateModelElement(DXDD.ConnectionList? openXmlElement)
+  public static DMDD.ConnectionList? CreateModelElement(DXDD.ConnectionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.ConnectionList();
+      var value = new DMDD.ConnectionList();
       value.Connections = GetConnections(openXmlElement);
       return value;
     }

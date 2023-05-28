@@ -63,11 +63,11 @@ public static class ShapeNonVisualPropertiesConverter
     }
   }
   
-  public static DocumentModel.Drawings.Office.ShapeNonVisualProperties? CreateModelElement(DXOD.ShapeNonVisualProperties? openXmlElement)
+  public static DMDO.ShapeNonVisualProperties? CreateModelElement(DXOD.ShapeNonVisualProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Office.ShapeNonVisualProperties();
+      var value = new DMDO.ShapeNonVisualProperties();
       value.NonVisualDrawingProperties = GetNonVisualDrawingProperties(openXmlElement);
       value.NonVisualDrawingShapeProperties = GetNonVisualDrawingShapeProperties(openXmlElement);
       return value;

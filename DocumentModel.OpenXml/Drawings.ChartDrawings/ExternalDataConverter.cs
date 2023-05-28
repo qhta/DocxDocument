@@ -46,11 +46,11 @@ public static class ExternalDataConverter
       openXmlElement.AutoUpdate = null;
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.ExternalData? CreateModelElement(DXO16DCD.ExternalData? openXmlElement)
+  public static DMDCDs.ExternalData? CreateModelElement(DXO16DCD.ExternalData? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.ExternalData();
+      var value = new DMDCDs.ExternalData();
       value.Id = GetId(openXmlElement);
       value.AutoUpdate = GetAutoUpdate(openXmlElement);
       return value;

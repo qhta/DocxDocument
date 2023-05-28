@@ -61,11 +61,11 @@ public static class DiagramDefinitionExtensionListConverter
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.DiagramDefinitionExtensionList? CreateModelElement(DXDD.DiagramDefinitionExtensionList? openXmlElement)
+  public static DMDD.DiagramDefinitionExtensionList? CreateModelElement(DXDD.DiagramDefinitionExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.DiagramDefinitionExtensionList();
+      var value = new DMDD.DiagramDefinitionExtensionList();
       value.DiagramDefinitionExtensions = GetDiagramDefinitionExtensions(openXmlElement);
       return value;
     }

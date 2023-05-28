@@ -618,11 +618,11 @@ public static class PropertySetConverter
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.PropertySet? CreateModelElement(DXDD.PropertySet? openXmlElement)
+  public static DMDD.PropertySet? CreateModelElement(DXDD.PropertySet? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.PropertySet();
+      var value = new DMDD.PropertySet();
       value.PresentationElementId = GetPresentationElementId(openXmlElement);
       value.PresentationName = GetPresentationName(openXmlElement);
       value.PresentationStyleLabel = GetPresentationStyleLabel(openXmlElement);

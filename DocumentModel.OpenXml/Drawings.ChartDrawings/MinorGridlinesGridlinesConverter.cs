@@ -57,11 +57,11 @@ public static class MinorGridlinesGridlinesConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.MinorGridlinesGridlines? CreateModelElement(DXO16DCD.MinorGridlinesGridlines? openXmlElement)
+  public static DMDCDs.MinorGridlinesGridlines? CreateModelElement(DXO16DCD.MinorGridlinesGridlines? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.MinorGridlinesGridlines();
+      var value = new DMDCDs.MinorGridlinesGridlines();
       value.ShapeProperties = GetShapeProperties(openXmlElement);
       value.ExtensionList = GetExtensionList(openXmlElement);
       return value;

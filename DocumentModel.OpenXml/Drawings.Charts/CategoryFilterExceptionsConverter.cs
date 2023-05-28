@@ -31,11 +31,11 @@ public static class CategoryFilterExceptionsConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.CategoryFilterExceptions? CreateModelElement(DXO13DC.CategoryFilterExceptions? openXmlElement)
+  public static DMD.Charts.CategoryFilterExceptions? CreateModelElement(DXO13DC.CategoryFilterExceptions? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.CategoryFilterExceptions();
+      var value = new DMD.Charts.CategoryFilterExceptions();
       value.CategoryFilterException = GetCategoryFilterException(openXmlElement);
       return value;
     }
