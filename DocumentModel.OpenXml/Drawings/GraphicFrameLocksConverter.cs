@@ -172,11 +172,11 @@ public static class GraphicFrameLocksConverter
     }
   }
   
-  public static DocumentModel.Drawings.GraphicFrameLocks? CreateModelElement(DXD.GraphicFrameLocks? openXmlElement)
+  public static DMD.GraphicFrameLocks? CreateModelElement(DXD.GraphicFrameLocks? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.GraphicFrameLocks();
+      var value = new DMD.GraphicFrameLocks();
       value.NoGrouping = GetNoGrouping(openXmlElement);
       value.NoDrilldown = GetNoDrilldown(openXmlElement);
       value.NoSelection = GetNoSelection(openXmlElement);

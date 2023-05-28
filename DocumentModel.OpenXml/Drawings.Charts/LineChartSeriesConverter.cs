@@ -427,11 +427,11 @@ public static class LineChartSeriesConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.LineChartSeries? CreateModelElement(DXDC.LineChartSeries? openXmlElement)
+  public static DMD.Charts.LineChartSeries? CreateModelElement(DXDC.LineChartSeries? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.LineChartSeries();
+      var value = new DMD.Charts.LineChartSeries();
       value.Index = GetIndex(openXmlElement);
       value.Order = GetOrder(openXmlElement);
       value.SeriesText = GetSeriesText(openXmlElement);

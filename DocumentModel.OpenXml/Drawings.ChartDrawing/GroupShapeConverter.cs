@@ -193,11 +193,11 @@ public static class GroupShapeConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawing.GroupShape? CreateModelElement(DXDCD.GroupShape? openXmlElement)
+  public static DMD.ChartDrawing.GroupShape? CreateModelElement(DXDCD.GroupShape? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawing.GroupShape();
+      var value = new DMD.ChartDrawing.GroupShape();
       value.NonVisualGroupShapeProperties = GetNonVisualGroupShapeProperties(openXmlElement);
       value.GroupShapeProperties = GetGroupShapeProperties(openXmlElement);
       value.Shape = GetShape(openXmlElement);

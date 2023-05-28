@@ -59,11 +59,11 @@ public static class SeriesTextConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.SeriesText? CreateModelElement(DXDC.SeriesText? openXmlElement)
+  public static DMD.Charts.SeriesText? CreateModelElement(DXDC.SeriesText? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.SeriesText();
+      var value = new DMD.Charts.SeriesText();
       value.StringReference = GetStringReference(openXmlElement);
       value.NumericValue = GetNumericValue(openXmlElement);
       return value;

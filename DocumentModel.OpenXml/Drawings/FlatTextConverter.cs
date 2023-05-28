@@ -25,11 +25,11 @@ public static class FlatTextConverter
     openXmlElement.Z = value;
   }
   
-  public static DocumentModel.Drawings.FlatText? CreateModelElement(DXD.FlatText? openXmlElement)
+  public static DMD.FlatText? CreateModelElement(DXD.FlatText? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.FlatText();
+      var value = new DMD.FlatText();
       value.Z = GetZ(openXmlElement);
       return value;
     }

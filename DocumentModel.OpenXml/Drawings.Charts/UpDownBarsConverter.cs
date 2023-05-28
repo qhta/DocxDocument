@@ -110,11 +110,11 @@ public static class UpDownBarsConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.UpDownBars? CreateModelElement(DXDC.UpDownBars? openXmlElement)
+  public static DMD.Charts.UpDownBars? CreateModelElement(DXDC.UpDownBars? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.UpDownBars();
+      var value = new DMD.Charts.UpDownBars();
       value.GapWidth = GetGapWidth(openXmlElement);
       value.UpBars = GetUpBars(openXmlElement);
       value.DownBars = GetDownBars(openXmlElement);

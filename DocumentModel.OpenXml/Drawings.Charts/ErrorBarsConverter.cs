@@ -254,11 +254,11 @@ public static class ErrorBarsConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.ErrorBars? CreateModelElement(DXDC.ErrorBars? openXmlElement)
+  public static DMD.Charts.ErrorBars? CreateModelElement(DXDC.ErrorBars? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.ErrorBars();
+      var value = new DMD.Charts.ErrorBars();
       value.ErrorDirection = GetErrorDirection(openXmlElement);
       value.ErrorBarType = GetErrorBarType(openXmlElement);
       value.ErrorBarValueType = GetErrorBarValueType(openXmlElement);

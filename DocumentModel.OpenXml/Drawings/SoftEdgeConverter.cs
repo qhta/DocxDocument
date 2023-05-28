@@ -25,11 +25,11 @@ public static class SoftEdgeConverter
     openXmlElement.Radius = value;
   }
   
-  public static DocumentModel.Drawings.SoftEdge? CreateModelElement(DXD.SoftEdge? openXmlElement)
+  public static DMD.SoftEdge? CreateModelElement(DXD.SoftEdge? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.SoftEdge();
+      var value = new DMD.SoftEdge();
       value.Radius = GetRadius(openXmlElement);
       return value;
     }

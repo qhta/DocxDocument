@@ -61,11 +61,11 @@ public static class BarSerExtensionListConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.BarSerExtensionList? CreateModelElement(DXDC.BarSerExtensionList? openXmlElement)
+  public static DMD.Charts.BarSerExtensionList? CreateModelElement(DXDC.BarSerExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.BarSerExtensionList();
+      var value = new DMD.Charts.BarSerExtensionList();
       value.BarSerExtensions = GetBarSerExtensions(openXmlElement);
       return value;
     }

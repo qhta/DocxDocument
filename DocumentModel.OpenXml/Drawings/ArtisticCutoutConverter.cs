@@ -45,11 +45,11 @@ public static class ArtisticCutoutConverter
     openXmlElement.NumberOfShades = value;
   }
   
-  public static DocumentModel.Drawings.ArtisticCutout? CreateModelElement(DXO10D.ArtisticCutout? openXmlElement)
+  public static DMD.ArtisticCutout? CreateModelElement(DXO10D.ArtisticCutout? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ArtisticCutout();
+      var value = new DMD.ArtisticCutout();
       value.Transparancy = GetTransparancy(openXmlElement);
       value.NumberOfShades = GetNumberOfShades(openXmlElement);
       return value;

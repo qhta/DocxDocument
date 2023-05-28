@@ -52,11 +52,11 @@ public static class ConnectionSiteConverter
     }
   }
   
-  public static DocumentModel.Drawings.ConnectionSite? CreateModelElement(DXD.ConnectionSite? openXmlElement)
+  public static DMD.ConnectionSite? CreateModelElement(DXD.ConnectionSite? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ConnectionSite();
+      var value = new DMD.ConnectionSite();
       value.Angle = GetAngle(openXmlElement);
       value.Position = GetPosition(openXmlElement);
       return value;

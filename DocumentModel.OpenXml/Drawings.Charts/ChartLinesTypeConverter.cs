@@ -34,11 +34,11 @@ public static class ChartLinesTypeConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.ChartLinesType? CreateModelElement(DXDC.ChartLinesType? openXmlElement)
+  public static DMD.Charts.ChartLinesType? CreateModelElement(DXDC.ChartLinesType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.ChartLinesType();
+      var value = new DMD.Charts.ChartLinesType();
       value.ChartShapeProperties = GetChartShapeProperties(openXmlElement);
       return value;
     }

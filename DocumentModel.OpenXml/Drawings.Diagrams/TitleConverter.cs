@@ -41,11 +41,11 @@ public static class TitleConverter
     openXmlElement.Val = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Drawings.Diagrams.Title? CreateModelElement(DXDD.Title? openXmlElement)
+  public static DMDD.Title? CreateModelElement(DXDD.Title? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.Title();
+      var value = new DMDD.Title();
       value.Language = GetLanguage(openXmlElement);
       value.Val = GetVal(openXmlElement);
       return value;

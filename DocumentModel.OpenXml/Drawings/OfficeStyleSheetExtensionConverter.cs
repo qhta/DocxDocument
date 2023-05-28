@@ -49,11 +49,11 @@ public static class OfficeStyleSheetExtensionConverter
     }
   }
   
-  public static DocumentModel.Drawings.OfficeStyleSheetExtension? CreateModelElement(DXD.OfficeStyleSheetExtension? openXmlElement)
+  public static DMD.OfficeStyleSheetExtension? CreateModelElement(DXD.OfficeStyleSheetExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.OfficeStyleSheetExtension();
+      var value = new DMD.OfficeStyleSheetExtension();
       value.Uri = GetUri(openXmlElement);
       value.ThemeFamily = GetThemeFamily(openXmlElement);
       return value;

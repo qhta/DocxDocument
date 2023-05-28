@@ -102,11 +102,11 @@ public static class StringLiteralConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.StringLiteral? CreateModelElement(DXDC.StringLiteral? openXmlElement)
+  public static DMD.Charts.StringLiteral? CreateModelElement(DXDC.StringLiteral? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.StringLiteral();
+      var value = new DMD.Charts.StringLiteral();
       value.PointCount = GetPointCount(openXmlElement);
       value.StringPoints = GetStringPoints(openXmlElement);
       value.StrDataExtensionList = GetStrDataExtensionList(openXmlElement);

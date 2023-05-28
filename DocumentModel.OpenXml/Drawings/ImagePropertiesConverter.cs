@@ -34,11 +34,11 @@ public static class ImagePropertiesConverter
     }
   }
   
-  public static DocumentModel.Drawings.ImageProperties? CreateModelElement(DXO10D.ImageProperties? openXmlElement)
+  public static DMD.ImageProperties? CreateModelElement(DXO10D.ImageProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ImageProperties();
+      var value = new DMD.ImageProperties();
       value.ImageLayer = GetImageLayer(openXmlElement);
       return value;
     }

@@ -166,11 +166,11 @@ public static class RuleConverter
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.Rule? CreateModelElement(DXDD.Rule? openXmlElement)
+  public static DMDD.Rule? CreateModelElement(DXDD.Rule? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.Rule();
+      var value = new DMDD.Rule();
       value.Type = GetType(openXmlElement);
       value.For = GetFor(openXmlElement);
       value.ForName = GetForName(openXmlElement);

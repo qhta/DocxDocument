@@ -34,11 +34,11 @@ public static class FilteredSeriesTitleConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.FilteredSeriesTitle? CreateModelElement(DXO13DC.FilteredSeriesTitle? openXmlElement)
+  public static DMD.Charts.FilteredSeriesTitle? CreateModelElement(DXO13DC.FilteredSeriesTitle? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.FilteredSeriesTitle();
+      var value = new DMD.Charts.FilteredSeriesTitle();
       value.ChartText = GetChartText(openXmlElement);
       return value;
     }

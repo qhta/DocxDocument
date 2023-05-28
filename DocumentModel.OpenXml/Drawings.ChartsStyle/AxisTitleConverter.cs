@@ -235,11 +235,11 @@ public static class AxisTitleConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartsStyle.AxisTitle? CreateModelElement(DXO13DCS.AxisTitle? openXmlElement)
+  public static DMDCS.AxisTitle? CreateModelElement(DXO13DCS.AxisTitle? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartsStyle.AxisTitle();
+      var value = new DMDCS.AxisTitle();
       value.LineReference = GetLineReference(openXmlElement);
       value.LineWidthScale = GetLineWidthScale(openXmlElement);
       value.FillReference = GetFillReference(openXmlElement);

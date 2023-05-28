@@ -174,11 +174,11 @@ public static class DoughnutChartConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.DoughnutChart? CreateModelElement(DXDC.DoughnutChart? openXmlElement)
+  public static DMD.Charts.DoughnutChart? CreateModelElement(DXDC.DoughnutChart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.DoughnutChart();
+      var value = new DMD.Charts.DoughnutChart();
       value.VaryColors = GetVaryColors(openXmlElement);
       value.PieChartSeries = GetPieChartSeries(openXmlElement);
       value.DataLabels = GetDataLabels(openXmlElement);

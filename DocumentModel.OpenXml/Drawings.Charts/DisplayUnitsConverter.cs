@@ -97,11 +97,11 @@ public static class DisplayUnitsConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.DisplayUnits? CreateModelElement(DXDC.DisplayUnits? openXmlElement)
+  public static DMD.Charts.DisplayUnits? CreateModelElement(DXDC.DisplayUnits? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.DisplayUnits();
+      var value = new DMD.Charts.DisplayUnits();
       value.CustomDisplayUnit = GetCustomDisplayUnit(openXmlElement);
       value.BuiltInUnit = GetBuiltInUnit(openXmlElement);
       value.DisplayUnitsLabel = GetDisplayUnitsLabel(openXmlElement);

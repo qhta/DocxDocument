@@ -83,11 +83,11 @@ public static class WrapPolygonConverter
     }
   }
   
-  public static DocumentModel.Drawings.Wordprocessing.WrapPolygon? CreateModelElement(DXDW.WrapPolygon? openXmlElement)
+  public static DMD.Wordprocessing.WrapPolygon? CreateModelElement(DXDW.WrapPolygon? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Wordprocessing.WrapPolygon();
+      var value = new DMD.Wordprocessing.WrapPolygon();
       value.Edited = GetEdited(openXmlElement);
       value.StartPoint = GetStartPoint(openXmlElement);
       value.LineTo = GetLineTo(openXmlElement);

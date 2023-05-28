@@ -31,11 +31,11 @@ public static class MajorTickMarksTickMarksConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.MajorTickMarksTickMarks? CreateModelElement(DXO16DCD.MajorTickMarksTickMarks? openXmlElement)
+  public static DMDCDs.MajorTickMarksTickMarks? CreateModelElement(DXO16DCD.MajorTickMarksTickMarks? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.MajorTickMarksTickMarks();
+      var value = new DMDCDs.MajorTickMarksTickMarks();
       value.ExtensionList = GetExtensionList(openXmlElement);
       return value;
     }

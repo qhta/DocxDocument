@@ -534,11 +534,11 @@ public static class ValueAxisConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.ValueAxis? CreateModelElement(DXDC.ValueAxis? openXmlElement)
+  public static DMD.Charts.ValueAxis? CreateModelElement(DXDC.ValueAxis? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.ValueAxis();
+      var value = new DMD.Charts.ValueAxis();
       value.AxisId = GetAxisId(openXmlElement);
       value.Scaling = GetScaling(openXmlElement);
       value.Delete = GetDelete(openXmlElement);

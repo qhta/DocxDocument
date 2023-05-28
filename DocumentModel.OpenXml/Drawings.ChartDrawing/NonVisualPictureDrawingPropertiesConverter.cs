@@ -86,11 +86,11 @@ public static class NonVisualPictureDrawingPropertiesConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawing.NonVisualPictureDrawingProperties? CreateModelElement(DXDCD.NonVisualPictureDrawingProperties? openXmlElement)
+  public static DMD.ChartDrawing.NonVisualPictureDrawingProperties? CreateModelElement(DXDCD.NonVisualPictureDrawingProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawing.NonVisualPictureDrawingProperties();
+      var value = new DMD.ChartDrawing.NonVisualPictureDrawingProperties();
       value.PreferRelativeResize = GetPreferRelativeResize(openXmlElement);
       value.PictureLocks = GetPictureLocks(openXmlElement);
       value.NonVisualPicturePropertiesExtensionList = GetNonVisualPicturePropertiesExtensionList(openXmlElement);

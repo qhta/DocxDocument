@@ -269,11 +269,11 @@ public static class Area3DChartConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.Area3DChart? CreateModelElement(DXDC.Area3DChart? openXmlElement)
+  public static DMD.Charts.Area3DChart? CreateModelElement(DXDC.Area3DChart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.Area3DChart();
+      var value = new DMD.Charts.Area3DChart();
       value.Grouping = GetGrouping(openXmlElement);
       value.VaryColors = GetVaryColors(openXmlElement);
       value.AreaChartSeries = GetAreaChartSeries(openXmlElement);

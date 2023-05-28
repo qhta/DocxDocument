@@ -193,11 +193,11 @@ public static class RelativeAnchorSizeConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawing.RelativeAnchorSize? CreateModelElement(DXDCD.RelativeAnchorSize? openXmlElement)
+  public static DMD.ChartDrawing.RelativeAnchorSize? CreateModelElement(DXDCD.RelativeAnchorSize? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawing.RelativeAnchorSize();
+      var value = new DMD.ChartDrawing.RelativeAnchorSize();
       value.FromAnchor = GetFromAnchor(openXmlElement);
       value.ToAnchor = GetToAnchor(openXmlElement);
       value.Shape = GetShape(openXmlElement);

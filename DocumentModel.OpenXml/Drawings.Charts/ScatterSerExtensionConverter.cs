@@ -127,11 +127,11 @@ public static class ScatterSerExtensionConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.ScatterSerExtension? CreateModelElement(DXDC.ScatterSerExtension? openXmlElement)
+  public static DMD.Charts.ScatterSerExtension? CreateModelElement(DXDC.ScatterSerExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.ScatterSerExtension();
+      var value = new DMD.Charts.ScatterSerExtension();
       value.Uri = GetUri(openXmlElement);
       value.FilteredSeriesTitle = GetFilteredSeriesTitle(openXmlElement);
       value.FilteredCategoryTitle = GetFilteredCategoryTitle(openXmlElement);

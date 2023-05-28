@@ -52,11 +52,11 @@ public static class OpenXmlTickMarksElementConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.OpenXmlTickMarksElement? CreateModelElement(DXO16DCD.OpenXmlTickMarksElement? openXmlElement)
+  public static DMDCDs.OpenXmlTickMarksElement? CreateModelElement(DXO16DCD.OpenXmlTickMarksElement? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.OpenXmlTickMarksElement();
+      var value = new DMDCDs.OpenXmlTickMarksElement();
       value.Type = GetType(openXmlElement);
       value.ExtensionList = GetExtensionList(openXmlElement);
       return value;

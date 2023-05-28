@@ -133,11 +133,11 @@ public static class ConnectionShapeConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawing.ConnectionShape? CreateModelElement(DXDCD.ConnectionShape? openXmlElement)
+  public static DMD.ChartDrawing.ConnectionShape? CreateModelElement(DXDCD.ConnectionShape? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawing.ConnectionShape();
+      var value = new DMD.ChartDrawing.ConnectionShape();
       value.Macro = GetMacro(openXmlElement);
       value.Published = GetPublished(openXmlElement);
       value.NonVisualConnectorShapeDrawingProperties = GetNonVisualConnectorShapeDrawingProperties(openXmlElement);

@@ -34,11 +34,11 @@ public static class AlphaModulationEffectConverter
     }
   }
   
-  public static DocumentModel.Drawings.AlphaModulationEffect? CreateModelElement(DXD.AlphaModulationEffect? openXmlElement)
+  public static DMD.AlphaModulationEffect? CreateModelElement(DXD.AlphaModulationEffect? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.AlphaModulationEffect();
+      var value = new DMD.AlphaModulationEffect();
       value.EffectContainer = GetEffectContainer(openXmlElement);
       return value;
     }

@@ -121,11 +121,11 @@ public static class ShapeStyleConverter
     }
   }
   
-  public static DocumentModel.Drawings.Office.ShapeStyle? CreateModelElement(DXOD.ShapeStyle? openXmlElement)
+  public static DMDO.ShapeStyle? CreateModelElement(DXOD.ShapeStyle? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Office.ShapeStyle();
+      var value = new DMDO.ShapeStyle();
       value.LineReference = GetLineReference(openXmlElement);
       value.FillReference = GetFillReference(openXmlElement);
       value.EffectReference = GetEffectReference(openXmlElement);

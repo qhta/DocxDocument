@@ -61,11 +61,11 @@ public static class GeoChildEntitiesConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.GeoChildEntities? CreateModelElement(DXO16DCD.GeoChildEntities? openXmlElement)
+  public static DMDCDs.GeoChildEntities? CreateModelElement(DXO16DCD.GeoChildEntities? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.GeoChildEntities();
+      var value = new DMDCDs.GeoChildEntities();
       value.GeoHierarchyEntities = GetGeoHierarchyEntities(openXmlElement);
       return value;
     }

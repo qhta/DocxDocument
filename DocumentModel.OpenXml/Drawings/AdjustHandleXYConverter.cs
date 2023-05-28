@@ -142,11 +142,11 @@ public static class AdjustHandleXYConverter
     }
   }
   
-  public static DocumentModel.Drawings.AdjustHandleXY? CreateModelElement(DXD.AdjustHandleXY? openXmlElement)
+  public static DMD.AdjustHandleXY? CreateModelElement(DXD.AdjustHandleXY? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.AdjustHandleXY();
+      var value = new DMD.AdjustHandleXY();
       value.XAdjustmentGuide = GetXAdjustmentGuide(openXmlElement);
       value.MinX = GetMinX(openXmlElement);
       value.MaxX = GetMaxX(openXmlElement);

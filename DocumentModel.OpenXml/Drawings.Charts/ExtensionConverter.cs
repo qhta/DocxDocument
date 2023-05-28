@@ -23,11 +23,11 @@ public static class ExtensionConverter
     openXmlElement.Uri = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Drawings.Charts.Extension? CreateModelElement(DXDC.Extension? openXmlElement)
+  public static DMD.Charts.Extension? CreateModelElement(DXDC.Extension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.Extension();
+      var value = new DMD.Charts.Extension();
       value.Uri = GetUri(openXmlElement);
       return value;
     }

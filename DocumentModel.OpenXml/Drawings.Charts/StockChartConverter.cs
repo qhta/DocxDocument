@@ -247,11 +247,11 @@ public static class StockChartConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.StockChart? CreateModelElement(DXDC.StockChart? openXmlElement)
+  public static DMD.Charts.StockChart? CreateModelElement(DXDC.StockChart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.StockChart();
+      var value = new DMD.Charts.StockChart();
       value.LineChartSeries = GetLineChartSeries(openXmlElement);
       value.DataLabels = GetDataLabels(openXmlElement);
       value.DropLines = GetDropLines(openXmlElement);

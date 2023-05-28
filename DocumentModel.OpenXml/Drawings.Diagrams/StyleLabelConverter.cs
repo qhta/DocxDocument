@@ -168,11 +168,11 @@ public static class StyleLabelConverter
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.StyleLabel? CreateModelElement(DXDD.StyleLabel? openXmlElement)
+  public static DMDD.StyleLabel? CreateModelElement(DXDD.StyleLabel? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.StyleLabel();
+      var value = new DMDD.StyleLabel();
       value.Name = GetName(openXmlElement);
       value.Scene3D = GetScene3D(openXmlElement);
       value.Shape3D = GetShape3D(openXmlElement);

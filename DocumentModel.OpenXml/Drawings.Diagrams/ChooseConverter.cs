@@ -75,11 +75,11 @@ public static class ChooseConverter
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.Choose? CreateModelElement(DXDD.Choose? openXmlElement)
+  public static DMDD.Choose? CreateModelElement(DXDD.Choose? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.Choose();
+      var value = new DMDD.Choose();
       value.Name = GetName(openXmlElement);
       value.DiagramChooseIf = GetDiagramChooseIf(openXmlElement);
       value.DiagramChooseElse = GetDiagramChooseElse(openXmlElement);

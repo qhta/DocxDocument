@@ -129,11 +129,11 @@ public static class TransformConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawing.Transform? CreateModelElement(DXDCD.Transform? openXmlElement)
+  public static DMD.ChartDrawing.Transform? CreateModelElement(DXDCD.Transform? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawing.Transform();
+      var value = new DMD.ChartDrawing.Transform();
       value.Rotation = GetRotation(openXmlElement);
       value.HorizontalFlip = GetHorizontalFlip(openXmlElement);
       value.VerticalFlip = GetVerticalFlip(openXmlElement);

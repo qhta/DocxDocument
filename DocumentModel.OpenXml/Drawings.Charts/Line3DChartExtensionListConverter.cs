@@ -61,11 +61,11 @@ public static class Line3DChartExtensionListConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.Line3DChartExtensionList? CreateModelElement(DXDC.Line3DChartExtensionList? openXmlElement)
+  public static DMD.Charts.Line3DChartExtensionList? CreateModelElement(DXDC.Line3DChartExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.Line3DChartExtensionList();
+      var value = new DMD.Charts.Line3DChartExtensionList();
       value.Line3DChartExtensions = GetLine3DChartExtensions(openXmlElement);
       return value;
     }

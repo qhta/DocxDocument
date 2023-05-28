@@ -49,11 +49,11 @@ public static class CatAxExtensionConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.CatAxExtension? CreateModelElement(DXDC.CatAxExtension? openXmlElement)
+  public static DMD.Charts.CatAxExtension? CreateModelElement(DXDC.CatAxExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.CatAxExtension();
+      var value = new DMD.Charts.CatAxExtension();
       value.Uri = GetUri(openXmlElement);
       value.NumberingFormat = GetNumberingFormat(openXmlElement);
       return value;

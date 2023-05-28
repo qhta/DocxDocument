@@ -63,11 +63,11 @@ public static class HiddenEffectsPropertiesConverter
     }
   }
   
-  public static DocumentModel.Drawings.HiddenEffectsProperties? CreateModelElement(DXO10D.HiddenEffectsProperties? openXmlElement)
+  public static DMD.HiddenEffectsProperties? CreateModelElement(DXO10D.HiddenEffectsProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.HiddenEffectsProperties();
+      var value = new DMD.HiddenEffectsProperties();
       value.EffectList = GetEffectList(openXmlElement);
       value.EffectDag = GetEffectDag(openXmlElement);
       return value;

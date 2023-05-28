@@ -161,11 +161,11 @@ public static class MaxColorSolidColorFillPropertiesConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.MaxColorSolidColorFillProperties? CreateModelElement(DXO16DCD.MaxColorSolidColorFillProperties? openXmlElement)
+  public static DMDCDs.MaxColorSolidColorFillProperties? CreateModelElement(DXO16DCD.MaxColorSolidColorFillProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.MaxColorSolidColorFillProperties();
+      var value = new DMDCDs.MaxColorSolidColorFillProperties();
       value.RgbColorModelPercentage = GetRgbColorModelPercentage(openXmlElement);
       value.RgbColorModelHex = GetRgbColorModelHex(openXmlElement);
       value.HslColor = GetHslColor(openXmlElement);

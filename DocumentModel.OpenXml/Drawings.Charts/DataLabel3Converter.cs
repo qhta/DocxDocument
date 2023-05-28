@@ -422,11 +422,11 @@ public static class DataLabel3Converter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.DataLabel3? CreateModelElement(DXO13DC.DataLabel? openXmlElement)
+  public static DMD.Charts.DataLabel3? CreateModelElement(DXO13DC.DataLabel? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.DataLabel3();
+      var value = new DMD.Charts.DataLabel3();
       value.Index = GetIndex(openXmlElement);
       value.Delete = GetDelete(openXmlElement);
       value.Layout = GetLayout(openXmlElement);

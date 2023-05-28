@@ -63,11 +63,11 @@ public static class NonVisualShapePropertiesConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawing.NonVisualShapeProperties? CreateModelElement(DXDCD.NonVisualShapeProperties? openXmlElement)
+  public static DMD.ChartDrawing.NonVisualShapeProperties? CreateModelElement(DXDCD.NonVisualShapeProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawing.NonVisualShapeProperties();
+      var value = new DMD.ChartDrawing.NonVisualShapeProperties();
       value.NonVisualDrawingProperties = GetNonVisualDrawingProperties(openXmlElement);
       value.NonVisualShapeDrawingProperties = GetNonVisualShapeDrawingProperties(openXmlElement);
       return value;

@@ -116,11 +116,11 @@ public static class ScalingConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.Scaling? CreateModelElement(DXDC.Scaling? openXmlElement)
+  public static DMD.Charts.Scaling? CreateModelElement(DXDC.Scaling? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.Scaling();
+      var value = new DMD.Charts.Scaling();
       value.LogBase = GetLogBase(openXmlElement);
       value.Orientation = GetOrientation(openXmlElement);
       value.MaxAxisValue = GetMaxAxisValue(openXmlElement);

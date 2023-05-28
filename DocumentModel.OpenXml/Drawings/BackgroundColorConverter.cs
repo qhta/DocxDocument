@@ -161,11 +161,11 @@ public static class BackgroundColorConverter
     }
   }
   
-  public static DocumentModel.Drawings.BackgroundColor? CreateModelElement(DXD.BackgroundColor? openXmlElement)
+  public static DMD.BackgroundColor? CreateModelElement(DXD.BackgroundColor? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.BackgroundColor();
+      var value = new DMD.BackgroundColor();
       value.RgbColorModelPercentage = GetRgbColorModelPercentage(openXmlElement);
       value.RgbColorModelHex = GetRgbColorModelHex(openXmlElement);
       value.HslColor = GetHslColor(openXmlElement);

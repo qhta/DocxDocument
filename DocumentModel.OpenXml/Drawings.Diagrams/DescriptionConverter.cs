@@ -41,11 +41,11 @@ public static class DescriptionConverter
     openXmlElement.Val = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Drawings.Diagrams.Description? CreateModelElement(DXDD.Description? openXmlElement)
+  public static DMDD.Description? CreateModelElement(DXDD.Description? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.Description();
+      var value = new DMDD.Description();
       value.Language = GetLanguage(openXmlElement);
       value.Val = GetVal(openXmlElement);
       return value;

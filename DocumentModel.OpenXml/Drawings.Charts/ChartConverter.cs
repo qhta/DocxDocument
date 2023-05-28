@@ -387,11 +387,11 @@ public static class ChartConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.Chart? CreateModelElement(DXDC.Chart? openXmlElement)
+  public static DMD.Charts.Chart? CreateModelElement(DXDC.Chart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.Chart();
+      var value = new DMD.Charts.Chart();
       value.Title = GetTitle(openXmlElement);
       value.AutoTitleDeleted = GetAutoTitleDeleted(openXmlElement);
       value.PivotFormats = GetPivotFormats(openXmlElement);

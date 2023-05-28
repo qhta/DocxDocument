@@ -45,11 +45,11 @@ public static class ConnectionTypeConverter
     openXmlElement.Index = value;
   }
   
-  public static DocumentModel.Drawings.ConnectionType? CreateModelElement(DXD.ConnectionType? openXmlElement)
+  public static DMD.ConnectionType? CreateModelElement(DXD.ConnectionType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ConnectionType();
+      var value = new DMD.ConnectionType();
       value.Id = GetId(openXmlElement);
       value.Index = GetIndex(openXmlElement);
       return value;

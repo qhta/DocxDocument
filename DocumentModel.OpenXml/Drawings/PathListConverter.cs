@@ -61,11 +61,11 @@ public static class PathListConverter
     }
   }
   
-  public static DocumentModel.Drawings.PathList? CreateModelElement(DXD.PathList? openXmlElement)
+  public static DMD.PathList? CreateModelElement(DXD.PathList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.PathList();
+      var value = new DMD.PathList();
       value.Paths = GetPaths(openXmlElement);
       return value;
     }

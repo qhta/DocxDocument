@@ -811,11 +811,11 @@ public static class ImageEffectConverter
     }
   }
   
-  public static DocumentModel.Drawings.ImageEffect? CreateModelElement(DXO10D.ImageEffect? openXmlElement)
+  public static DMD.ImageEffect? CreateModelElement(DXO10D.ImageEffect? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ImageEffect();
+      var value = new DMD.ImageEffect();
       value.Visible = GetVisible(openXmlElement);
       value.ArtisticBlur = GetArtisticBlur(openXmlElement);
       value.ArtisticCement = GetArtisticCement(openXmlElement);

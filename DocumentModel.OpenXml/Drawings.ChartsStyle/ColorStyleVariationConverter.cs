@@ -490,11 +490,11 @@ public static class ColorStyleVariationConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartsStyle.ColorStyleVariation? CreateModelElement(DXO13DCS.ColorStyleVariation? openXmlElement)
+  public static DMDCS.ColorStyleVariation? CreateModelElement(DXO13DCS.ColorStyleVariation? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartsStyle.ColorStyleVariation();
+      var value = new DMDCS.ColorStyleVariation();
       value.Tint = GetTint(openXmlElement);
       value.Shade = GetShade(openXmlElement);
       value.Complement = GetComplement(openXmlElement);

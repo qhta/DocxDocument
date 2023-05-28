@@ -324,11 +324,11 @@ public static class ListStyleConverter
     }
   }
   
-  public static DocumentModel.Drawings.ListStyle? CreateModelElement(DXD.ListStyle? openXmlElement)
+  public static DMD.ListStyle? CreateModelElement(DXD.ListStyle? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ListStyle();
+      var value = new DMD.ListStyle();
       value.DefaultParagraphProperties = GetDefaultParagraphProperties(openXmlElement);
       value.Level1ParagraphProperties = GetLevel1ParagraphProperties(openXmlElement);
       value.Level2ParagraphProperties = GetLevel2ParagraphProperties(openXmlElement);

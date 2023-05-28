@@ -462,11 +462,11 @@ public static class DataLabelsConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.DataLabels? CreateModelElement(DXDC.DataLabels? openXmlElement)
+  public static DMD.Charts.DataLabels? CreateModelElement(DXDC.DataLabels? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.DataLabels();
+      var value = new DMD.Charts.DataLabels();
       value.Items = GetItems(openXmlElement);
       value.Delete = GetDelete(openXmlElement);
       value.NumberingFormat = GetNumberingFormat(openXmlElement);

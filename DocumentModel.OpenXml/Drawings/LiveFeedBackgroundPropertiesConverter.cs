@@ -135,11 +135,11 @@ public static class LiveFeedBackgroundPropertiesConverter
     }
   }
   
-  public static DocumentModel.Drawings.LiveFeedBackgroundProperties? CreateModelElement(DXO21DL.LiveFeedBackgroundProperties? openXmlElement)
+  public static DMD.LiveFeedBackgroundProperties? CreateModelElement(DXO21DL.LiveFeedBackgroundProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.LiveFeedBackgroundProperties();
+      var value = new DMD.LiveFeedBackgroundProperties();
       value.BackgroundNormalProperties = GetBackgroundNormalProperties(openXmlElement);
       value.BackgroundRemovedProperties = GetBackgroundRemovedProperties(openXmlElement);
       value.BackgroundBlurProperties = GetBackgroundBlurProperties(openXmlElement);

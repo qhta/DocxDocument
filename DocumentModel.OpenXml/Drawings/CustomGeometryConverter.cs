@@ -179,11 +179,11 @@ public static class CustomGeometryConverter
     }
   }
   
-  public static DocumentModel.Drawings.CustomGeometry? CreateModelElement(DXD.CustomGeometry? openXmlElement)
+  public static DMD.CustomGeometry? CreateModelElement(DXD.CustomGeometry? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.CustomGeometry();
+      var value = new DMD.CustomGeometry();
       value.AdjustValueList = GetAdjustValueList(openXmlElement);
       value.ShapeGuideList = GetShapeGuideList(openXmlElement);
       value.AdjustHandleList = GetAdjustHandleList(openXmlElement);

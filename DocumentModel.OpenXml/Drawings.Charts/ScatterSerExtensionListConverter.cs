@@ -61,11 +61,11 @@ public static class ScatterSerExtensionListConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.ScatterSerExtensionList? CreateModelElement(DXDC.ScatterSerExtensionList? openXmlElement)
+  public static DMD.Charts.ScatterSerExtensionList? CreateModelElement(DXDC.ScatterSerExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.ScatterSerExtensionList();
+      var value = new DMD.Charts.ScatterSerExtensionList();
       value.ScatterSerExtensions = GetScatterSerExtensions(openXmlElement);
       return value;
     }

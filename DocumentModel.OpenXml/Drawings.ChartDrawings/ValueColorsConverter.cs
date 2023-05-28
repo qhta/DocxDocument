@@ -92,11 +92,11 @@ public static class ValueColorsConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.ValueColors? CreateModelElement(DXO16DCD.ValueColors? openXmlElement)
+  public static DMDCDs.ValueColors? CreateModelElement(DXO16DCD.ValueColors? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.ValueColors();
+      var value = new DMDCDs.ValueColors();
       value.MinColorSolidColorFillProperties = GetMinColorSolidColorFillProperties(openXmlElement);
       value.MidColorSolidColorFillProperties = GetMidColorSolidColorFillProperties(openXmlElement);
       value.MaxColorSolidColorFillProperties = GetMaxColorSolidColorFillProperties(openXmlElement);

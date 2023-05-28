@@ -92,11 +92,11 @@ public static class ChartText3Converter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.ChartText3? CreateModelElement(DXO13DC.ChartText? openXmlElement)
+  public static DMD.Charts.ChartText3? CreateModelElement(DXO13DC.ChartText? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.ChartText3();
+      var value = new DMD.Charts.ChartText3();
       value.StringReference = GetStringReference(openXmlElement);
       value.RichText = GetRichText(openXmlElement);
       value.StringLiteral = GetStringLiteral(openXmlElement);

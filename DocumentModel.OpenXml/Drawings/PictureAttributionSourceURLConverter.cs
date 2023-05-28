@@ -23,11 +23,11 @@ public static class PictureAttributionSourceURLConverter
     openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Drawings.PictureAttributionSourceURL? CreateModelElement(DXO19D.PictureAttributionSourceURL? openXmlElement)
+  public static DMD.PictureAttributionSourceURL? CreateModelElement(DXO19D.PictureAttributionSourceURL? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.PictureAttributionSourceURL();
+      var value = new DMD.PictureAttributionSourceURL();
       value.Id = GetId(openXmlElement);
       return value;
     }

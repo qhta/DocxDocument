@@ -63,11 +63,11 @@ public static class NonVisualGroupShapeDrawingPropertiesConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawing.NonVisualGroupShapeDrawingProperties? CreateModelElement(DXDCD.NonVisualGroupShapeDrawingProperties? openXmlElement)
+  public static DMD.ChartDrawing.NonVisualGroupShapeDrawingProperties? CreateModelElement(DXDCD.NonVisualGroupShapeDrawingProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawing.NonVisualGroupShapeDrawingProperties();
+      var value = new DMD.ChartDrawing.NonVisualGroupShapeDrawingProperties();
       value.GroupShapeLocks = GetGroupShapeLocks(openXmlElement);
       value.NonVisualGroupDrawingShapePropsExtensionList = GetNonVisualGroupDrawingShapePropsExtensionList(openXmlElement);
       return value;

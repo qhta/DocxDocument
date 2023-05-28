@@ -161,11 +161,11 @@ public static class EffectReferenceConverter
     }
   }
   
-  public static DocumentModel.Drawings.EffectReference? CreateModelElement(DXD.EffectReference? openXmlElement)
+  public static DMD.EffectReference? CreateModelElement(DXD.EffectReference? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.EffectReference();
+      var value = new DMD.EffectReference();
       value.RgbColorModelPercentage = GetRgbColorModelPercentage(openXmlElement);
       value.RgbColorModelHex = GetRgbColorModelHex(openXmlElement);
       value.HslColor = GetHslColor(openXmlElement);

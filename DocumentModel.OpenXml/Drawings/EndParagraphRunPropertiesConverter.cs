@@ -427,11 +427,11 @@ public static class EndParagraphRunPropertiesConverter
     }
   }
   
-  public static DocumentModel.Drawings.EndParagraphRunProperties? CreateModelElement(DXD.EndParagraphRunProperties? openXmlElement)
+  public static DMD.EndParagraphRunProperties? CreateModelElement(DXD.EndParagraphRunProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var model = new DocumentModel.Drawings.EndParagraphRunProperties();
+      var model = new DMD.EndParagraphRunProperties();
       model.Outline = GetOutline(openXmlElement);
       model.Fill = FillConverter.CreateFillModel(openXmlElement);
       model.EffectList = GetEffectList(openXmlElement);

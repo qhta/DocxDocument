@@ -61,11 +61,11 @@ public static class Surface3DChartExtensionListConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.Surface3DChartExtensionList? CreateModelElement(DXDC.Surface3DChartExtensionList? openXmlElement)
+  public static DMD.Charts.Surface3DChartExtensionList? CreateModelElement(DXDC.Surface3DChartExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.Surface3DChartExtensionList();
+      var value = new DMD.Charts.Surface3DChartExtensionList();
       value.Surface3DChartExtensions = GetSurface3DChartExtensions(openXmlElement);
       return value;
     }

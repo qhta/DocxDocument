@@ -160,11 +160,11 @@ public static class PivotOptionsConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.PivotOptions? CreateModelElement(DXO10DC.PivotOptions? openXmlElement)
+  public static DMD.Charts.PivotOptions? CreateModelElement(DXO10DC.PivotOptions? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.PivotOptions();
+      var value = new DMD.Charts.PivotOptions();
       value.DropZoneFilter = GetDropZoneFilter(openXmlElement);
       value.DropZoneCategories = GetDropZoneCategories(openXmlElement);
       value.DropZoneData = GetDropZoneData(openXmlElement);

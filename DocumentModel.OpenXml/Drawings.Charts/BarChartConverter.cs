@@ -342,11 +342,11 @@ public static class BarChartConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.BarChart? CreateModelElement(DXDC.BarChart? openXmlElement)
+  public static DMD.Charts.BarChart? CreateModelElement(DXDC.BarChart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.BarChart();
+      var value = new DMD.Charts.BarChart();
       value.BarDirection = GetBarDirection(openXmlElement);
       value.BarGrouping = GetBarGrouping(openXmlElement);
       value.VaryColors = GetVaryColors(openXmlElement);

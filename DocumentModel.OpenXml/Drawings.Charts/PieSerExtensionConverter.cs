@@ -127,11 +127,11 @@ public static class PieSerExtensionConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.PieSerExtension? CreateModelElement(DXDC.PieSerExtension? openXmlElement)
+  public static DMD.Charts.PieSerExtension? CreateModelElement(DXDC.PieSerExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.PieSerExtension();
+      var value = new DMD.Charts.PieSerExtension();
       value.Uri = GetUri(openXmlElement);
       value.FilteredSeriesTitle = GetFilteredSeriesTitle(openXmlElement);
       value.FilteredCategoryTitle = GetFilteredCategoryTitle(openXmlElement);

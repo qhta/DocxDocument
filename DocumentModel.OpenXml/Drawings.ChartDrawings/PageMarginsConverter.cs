@@ -125,11 +125,11 @@ public static class PageMarginsConverter
     openXmlElement.Footer = value;
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.PageMargins? CreateModelElement(DXO16DCD.PageMargins? openXmlElement)
+  public static DMDCDs.PageMargins? CreateModelElement(DXO16DCD.PageMargins? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.PageMargins();
+      var value = new DMDCDs.PageMargins();
       value.L = GetL(openXmlElement);
       value.R = GetR(openXmlElement);
       value.T = GetT(openXmlElement);

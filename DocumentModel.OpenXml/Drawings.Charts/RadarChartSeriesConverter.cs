@@ -317,11 +317,11 @@ public static class RadarChartSeriesConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.RadarChartSeries? CreateModelElement(DXDC.RadarChartSeries? openXmlElement)
+  public static DMD.Charts.RadarChartSeries? CreateModelElement(DXDC.RadarChartSeries? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.RadarChartSeries();
+      var value = new DMD.Charts.RadarChartSeries();
       value.Index = GetIndex(openXmlElement);
       value.Order = GetOrder(openXmlElement);
       value.SeriesText = GetSeriesText(openXmlElement);

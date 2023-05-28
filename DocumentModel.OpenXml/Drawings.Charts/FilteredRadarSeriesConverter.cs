@@ -34,11 +34,11 @@ public static class FilteredRadarSeriesConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.FilteredRadarSeries? CreateModelElement(DXO13DC.FilteredRadarSeries? openXmlElement)
+  public static DMD.Charts.FilteredRadarSeries? CreateModelElement(DXO13DC.FilteredRadarSeries? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.FilteredRadarSeries();
+      var value = new DMD.Charts.FilteredRadarSeries();
       value.RadarChartSeries = GetRadarChartSeries(openXmlElement);
       return value;
     }

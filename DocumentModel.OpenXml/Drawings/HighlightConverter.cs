@@ -161,11 +161,11 @@ public static class HighlightConverter
     }
   }
   
-  public static DocumentModel.Drawings.Highlight? CreateModelElement(DXD.Highlight? openXmlElement)
+  public static DMD.Highlight? CreateModelElement(DXD.Highlight? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Highlight();
+      var value = new DMD.Highlight();
       value.RgbColorModelPercentage = GetRgbColorModelPercentage(openXmlElement);
       value.RgbColorModelHex = GetRgbColorModelHex(openXmlElement);
       value.HslColor = GetHslColor(openXmlElement);

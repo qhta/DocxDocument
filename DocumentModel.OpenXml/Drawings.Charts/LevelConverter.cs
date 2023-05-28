@@ -61,11 +61,11 @@ public static class LevelConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.Level? CreateModelElement(DXDC.Level? openXmlElement)
+  public static DMD.Charts.Level? CreateModelElement(DXDC.Level? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.Level();
+      var value = new DMD.Charts.Level();
       value.StringPoints = GetStringPoints(openXmlElement);
       return value;
     }

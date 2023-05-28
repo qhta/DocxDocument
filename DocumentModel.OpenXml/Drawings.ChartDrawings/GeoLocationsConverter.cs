@@ -34,11 +34,11 @@ public static class GeoLocationsConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.GeoLocations? CreateModelElement(DXO16DCD.GeoLocations? openXmlElement)
+  public static DMDCDs.GeoLocations? CreateModelElement(DXO16DCD.GeoLocations? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.GeoLocations();
+      var value = new DMDCDs.GeoLocations();
       value.GeoLocation = GetGeoLocation(openXmlElement);
       return value;
     }

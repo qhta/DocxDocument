@@ -41,11 +41,11 @@ public static class ColorsTypeConverter
     openXmlElement.HueDirection = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.Diagrams.HueDirectionValues, DMDD.HueDirectionKind>(value);
   }
   
-  public static DocumentModel.Drawings.Diagrams.ColorsType? CreateModelElement(DXDD.ColorsType? openXmlElement)
+  public static DMDD.ColorsType? CreateModelElement(DXDD.ColorsType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.ColorsType();
+      var value = new DMDD.ColorsType();
       value.Method = GetMethod(openXmlElement);
       value.HueDirection = GetHueDirection(openXmlElement);
       return value;

@@ -72,11 +72,11 @@ public static class NumberDiagramInfoConverter
     }
   }
   
-  public static DocumentModel.Drawings.Diagram1.NumberDiagramInfo? CreateModelElement(DXO19DD11.NumberDiagramInfo? openXmlElement)
+  public static DMDD1.NumberDiagramInfo? CreateModelElement(DXO19DD11.NumberDiagramInfo? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagram1.NumberDiagramInfo();
+      var value = new DMDD1.NumberDiagramInfo();
       value.Lvl = GetLvl(openXmlElement);
       value.PtType = GetPtType(openXmlElement);
       value.DiagramAutoBullet = GetDiagramAutoBullet(openXmlElement);

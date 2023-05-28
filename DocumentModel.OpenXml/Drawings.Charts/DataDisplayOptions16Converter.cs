@@ -36,11 +36,11 @@ public static class DataDisplayOptions16Converter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.DataDisplayOptions16? CreateModelElement(DXDC.DataDisplayOptions16? openXmlElement)
+  public static DMD.Charts.DataDisplayOptions16? CreateModelElement(DXDC.DataDisplayOptions16? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.DataDisplayOptions16();
+      var value = new DMD.Charts.DataDisplayOptions16();
       value.BooleanFalse = GetBooleanFalse(openXmlElement);
       return value;
     }

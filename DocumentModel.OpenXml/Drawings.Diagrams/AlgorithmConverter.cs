@@ -125,11 +125,11 @@ public static class AlgorithmConverter
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.Algorithm? CreateModelElement(DXDD.Algorithm? openXmlElement)
+  public static DMDD.Algorithm? CreateModelElement(DXDD.Algorithm? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.Algorithm();
+      var value = new DMDD.Algorithm();
       value.Type = GetType(openXmlElement);
       value.Revision = GetRevision(openXmlElement);
       value.Parameters = GetParameters(openXmlElement);

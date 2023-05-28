@@ -360,11 +360,11 @@ public static class OuterShadowConverter
     }
   }
   
-  public static DocumentModel.Drawings.OuterShadow? CreateModelElement(DXD.OuterShadow? openXmlElement)
+  public static DMD.OuterShadow? CreateModelElement(DXD.OuterShadow? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.OuterShadow();
+      var value = new DMD.OuterShadow();
       value.BlurRadius = GetBlurRadius(openXmlElement);
       value.Distance = GetDistance(openXmlElement);
       value.Direction = GetDirection(openXmlElement);

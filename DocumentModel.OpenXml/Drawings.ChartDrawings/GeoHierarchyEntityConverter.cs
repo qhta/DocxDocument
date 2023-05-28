@@ -59,11 +59,11 @@ public static class GeoHierarchyEntityConverter
     openXmlElement.EntityType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityTypeEnum, DMDCDs.EntityTypeEnum>(value);
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.GeoHierarchyEntity? CreateModelElement(DXO16DCD.GeoHierarchyEntity? openXmlElement)
+  public static DMDCDs.GeoHierarchyEntity? CreateModelElement(DXO16DCD.GeoHierarchyEntity? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.GeoHierarchyEntity();
+      var value = new DMDCDs.GeoHierarchyEntity();
       value.EntityName = GetEntityName(openXmlElement);
       value.EntityId = GetEntityId(openXmlElement);
       value.EntityType = GetEntityType(openXmlElement);

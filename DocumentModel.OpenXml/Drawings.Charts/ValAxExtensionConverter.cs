@@ -49,11 +49,11 @@ public static class ValAxExtensionConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.ValAxExtension? CreateModelElement(DXDC.ValAxExtension? openXmlElement)
+  public static DMD.Charts.ValAxExtension? CreateModelElement(DXDC.ValAxExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.ValAxExtension();
+      var value = new DMD.Charts.ValAxExtension();
       value.Uri = GetUri(openXmlElement);
       value.NumberingFormat = GetNumberingFormat(openXmlElement);
       return value;

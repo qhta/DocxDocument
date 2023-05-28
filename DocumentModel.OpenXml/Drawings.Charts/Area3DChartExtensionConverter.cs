@@ -49,11 +49,11 @@ public static class Area3DChartExtensionConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.Area3DChartExtension? CreateModelElement(DXDC.Area3DChartExtension? openXmlElement)
+  public static DMD.Charts.Area3DChartExtension? CreateModelElement(DXDC.Area3DChartExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.Area3DChartExtension();
+      var value = new DMD.Charts.Area3DChartExtension();
       value.Uri = GetUri(openXmlElement);
       value.FilteredAreaSeries = GetFilteredAreaSeries(openXmlElement);
       return value;

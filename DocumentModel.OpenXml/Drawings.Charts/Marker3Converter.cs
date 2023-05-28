@@ -109,11 +109,11 @@ public static class Marker3Converter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.Marker3? CreateModelElement(DXO13DC.Marker? openXmlElement)
+  public static DMD.Charts.Marker3? CreateModelElement(DXO13DC.Marker? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.Marker3();
+      var value = new DMD.Charts.Marker3();
       value.Symbol = GetSymbol(openXmlElement);
       value.Size = GetSize(openXmlElement);
       value.ChartShapeProperties = GetChartShapeProperties(openXmlElement);

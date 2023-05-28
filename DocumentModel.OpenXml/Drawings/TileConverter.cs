@@ -121,11 +121,11 @@ public static class TileConverter
     openXmlElement.Alignment = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.RectangleAlignmentValues, DMD.RectangleAlignmentKind>(value);
   }
   
-  public static DocumentModel.Drawings.Tile? CreateModelElement(DXD.Tile? openXmlElement)
+  public static DMD.Tile? CreateModelElement(DXD.Tile? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Tile();
+      var value = new DMD.Tile();
       value.HorizontalOffset = GetHorizontalOffset(openXmlElement);
       value.VerticalOffset = GetVerticalOffset(openXmlElement);
       value.HorizontalRatio = GetHorizontalRatio(openXmlElement);

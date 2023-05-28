@@ -179,11 +179,11 @@ public static class AlphaInverseConverter
     }
   }
   
-  public static DocumentModel.Drawings.AlphaInverse? CreateModelElement(DXD.AlphaInverse? openXmlElement)
+  public static DMD.AlphaInverse? CreateModelElement(DXD.AlphaInverse? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.AlphaInverse();
+      var value = new DMD.AlphaInverse();
       value.RgbColorModelPercentage = GetRgbColorModelPercentage(openXmlElement);
       value.RgbColorModelHex = GetRgbColorModelHex(openXmlElement);
       value.HslColor = GetHslColor(openXmlElement);

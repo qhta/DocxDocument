@@ -181,11 +181,11 @@ public static class TitleConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.Title? CreateModelElement(DXDC.Title? openXmlElement)
+  public static DMD.Charts.Title? CreateModelElement(DXDC.Title? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.Title();
+      var value = new DMD.Charts.Title();
       value.ChartText = GetChartText(openXmlElement);
       value.Layout = GetLayout(openXmlElement);
       value.Overlay = GetOverlay(openXmlElement);

@@ -208,11 +208,11 @@ public static class ShapeConverter
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.Shape? CreateModelElement(DXDD.Shape? openXmlElement)
+  public static DMDD.Shape? CreateModelElement(DXDD.Shape? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.Shape();
+      var value = new DMDD.Shape();
       value.Rotation = GetRotation(openXmlElement);
       value.Type = GetType(openXmlElement);
       value.Blip = GetBlip(openXmlElement);

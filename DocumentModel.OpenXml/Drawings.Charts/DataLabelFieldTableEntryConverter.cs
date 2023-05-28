@@ -84,11 +84,11 @@ public static class DataLabelFieldTableEntryConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.DataLabelFieldTableEntry? CreateModelElement(DXO13DC.DataLabelFieldTableEntry? openXmlElement)
+  public static DMD.Charts.DataLabelFieldTableEntry? CreateModelElement(DXO13DC.DataLabelFieldTableEntry? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.DataLabelFieldTableEntry();
+      var value = new DMD.Charts.DataLabelFieldTableEntry();
       value.TextFieldGuid = GetTextFieldGuid(openXmlElement);
       value.Formula = GetFormula(openXmlElement);
       value.DataLabelFieldTableCache = GetDataLabelFieldTableCache(openXmlElement);

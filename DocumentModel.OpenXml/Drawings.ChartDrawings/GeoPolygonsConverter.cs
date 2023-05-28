@@ -61,11 +61,11 @@ public static class GeoPolygonsConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.GeoPolygons? CreateModelElement(DXO16DCD.GeoPolygons? openXmlElement)
+  public static DMDCDs.GeoPolygons? CreateModelElement(DXO16DCD.GeoPolygons? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.GeoPolygons();
+      var value = new DMDCDs.GeoPolygons();
       value.Items = GetItems(openXmlElement);
       return value;
     }

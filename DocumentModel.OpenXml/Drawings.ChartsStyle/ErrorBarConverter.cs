@@ -235,11 +235,11 @@ public static class ErrorBarConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartsStyle.ErrorBar? CreateModelElement(DXO13DCS.ErrorBar? openXmlElement)
+  public static DMDCS.ErrorBar? CreateModelElement(DXO13DCS.ErrorBar? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartsStyle.ErrorBar();
+      var value = new DMDCS.ErrorBar();
       value.LineReference = GetLineReference(openXmlElement);
       value.LineWidthScale = GetLineWidthScale(openXmlElement);
       value.FillReference = GetFillReference(openXmlElement);

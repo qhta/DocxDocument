@@ -83,11 +83,11 @@ public static class FormatOverrideConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.FormatOverride? CreateModelElement(DXO16DCD.FormatOverride? openXmlElement)
+  public static DMDCDs.FormatOverride? CreateModelElement(DXO16DCD.FormatOverride? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.FormatOverride();
+      var value = new DMDCDs.FormatOverride();
       value.Idx = GetIdx(openXmlElement);
       value.ShapeProperties = GetShapeProperties(openXmlElement);
       value.ExtensionList = GetExtensionList(openXmlElement);

@@ -34,11 +34,11 @@ public static class FilteredPieSeriesConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.FilteredPieSeries? CreateModelElement(DXO13DC.FilteredPieSeries? openXmlElement)
+  public static DMD.Charts.FilteredPieSeries? CreateModelElement(DXO13DC.FilteredPieSeries? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.FilteredPieSeries();
+      var value = new DMD.Charts.FilteredPieSeries();
       value.PieChartSeries = GetPieChartSeries(openXmlElement);
       return value;
     }

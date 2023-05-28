@@ -161,11 +161,11 @@ public static class LineReferenceConverter
     }
   }
   
-  public static DocumentModel.Drawings.LineReference? CreateModelElement(DXD.LineReference? openXmlElement)
+  public static DMD.LineReference? CreateModelElement(DXD.LineReference? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.LineReference();
+      var value = new DMD.LineReference();
       value.RgbColorModelPercentage = GetRgbColorModelPercentage(openXmlElement);
       value.RgbColorModelHex = GetRgbColorModelHex(openXmlElement);
       value.HslColor = GetHslColor(openXmlElement);

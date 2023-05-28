@@ -235,11 +235,11 @@ public static class ValueAxisConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartsStyle.ValueAxis? CreateModelElement(DXO13DCS.ValueAxis? openXmlElement)
+  public static DMDCS.ValueAxis? CreateModelElement(DXO13DCS.ValueAxis? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartsStyle.ValueAxis();
+      var value = new DMDCS.ValueAxis();
       value.LineReference = GetLineReference(openXmlElement);
       value.LineWidthScale = GetLineWidthScale(openXmlElement);
       value.FillReference = GetFillReference(openXmlElement);

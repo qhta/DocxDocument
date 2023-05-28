@@ -25,11 +25,11 @@ public static class Saturation2Converter
     openXmlElement.SaturationAmount = value;
   }
   
-  public static DocumentModel.Drawings.Saturation2? CreateModelElement(DXO10D.Saturation? openXmlElement)
+  public static DMD.Saturation2? CreateModelElement(DXO10D.Saturation? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Saturation2();
+      var value = new DMD.Saturation2();
       value.SaturationAmount = GetSaturationAmount(openXmlElement);
       return value;
     }

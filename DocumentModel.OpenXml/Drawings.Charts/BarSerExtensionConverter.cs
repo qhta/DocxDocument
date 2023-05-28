@@ -153,11 +153,11 @@ public static class BarSerExtensionConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.BarSerExtension? CreateModelElement(DXDC.BarSerExtension? openXmlElement)
+  public static DMD.Charts.BarSerExtension? CreateModelElement(DXDC.BarSerExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.BarSerExtension();
+      var value = new DMD.Charts.BarSerExtension();
       value.Uri = GetUri(openXmlElement);
       value.InvertSolidFillFormat = GetInvertSolidFillFormat(openXmlElement);
       value.FilteredSeriesTitle = GetFilteredSeriesTitle(openXmlElement);

@@ -953,11 +953,11 @@ public static class ChartStyleConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartsStyle.ChartStyle? CreateModelElement(DXO13DCS.ChartStyle? openXmlElement)
+  public static DMDCS.ChartStyle? CreateModelElement(DXO13DCS.ChartStyle? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartsStyle.ChartStyle();
+      var value = new DMDCS.ChartStyle();
       value.Id = GetId(openXmlElement);
       value.AxisTitle = GetAxisTitle(openXmlElement);
       value.CategoryAxis = GetCategoryAxis(openXmlElement);

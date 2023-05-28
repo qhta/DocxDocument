@@ -49,11 +49,11 @@ public static class StockChartExtensionConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.StockChartExtension? CreateModelElement(DXDC.StockChartExtension? openXmlElement)
+  public static DMD.Charts.StockChartExtension? CreateModelElement(DXDC.StockChartExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.StockChartExtension();
+      var value = new DMD.Charts.StockChartExtension();
       value.Uri = GetUri(openXmlElement);
       value.FilteredLineSeriesExtension = GetFilteredLineSeriesExtension(openXmlElement);
       return value;

@@ -63,11 +63,11 @@ public static class OpenXmlGridlinesElementConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.OpenXmlGridlinesElement? CreateModelElement(DXO16DCD.OpenXmlGridlinesElement? openXmlElement)
+  public static DMDCDs.OpenXmlGridlinesElement? CreateModelElement(DXO16DCD.OpenXmlGridlinesElement? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.OpenXmlGridlinesElement();
+      var value = new DMDCDs.OpenXmlGridlinesElement();
       value.ShapeProperties = GetShapeProperties(openXmlElement);
       value.ExtensionList = GetExtensionList(openXmlElement);
       return value;

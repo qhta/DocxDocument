@@ -228,11 +228,11 @@ public static class ScatterChartConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.ScatterChart? CreateModelElement(DXDC.ScatterChart? openXmlElement)
+  public static DMD.Charts.ScatterChart? CreateModelElement(DXDC.ScatterChart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.ScatterChart();
+      var value = new DMD.Charts.ScatterChart();
       value.ScatterStyle = GetScatterStyle(openXmlElement);
       value.VaryColors = GetVaryColors(openXmlElement);
       value.ScatterChartSeries = GetScatterChartSeries(openXmlElement);

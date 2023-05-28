@@ -83,11 +83,11 @@ public static class TxPrTextBodyConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.TxPrTextBody? CreateModelElement(DXO16DCD.TxPrTextBody? openXmlElement)
+  public static DMDCDs.TxPrTextBody? CreateModelElement(DXO16DCD.TxPrTextBody? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.TxPrTextBody();
+      var value = new DMDCDs.TxPrTextBody();
       value.BodyProperties = GetBodyProperties(openXmlElement);
       value.ListStyle = GetListStyle(openXmlElement);
       value.Paragraph = GetParagraph(openXmlElement);

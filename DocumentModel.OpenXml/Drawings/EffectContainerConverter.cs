@@ -791,11 +791,11 @@ public static class EffectContainerConverter
     }
   }
   
-  public static DocumentModel.Drawings.EffectContainer? CreateModelElement(DXD.EffectContainer? openXmlElement)
+  public static DMD.EffectContainer? CreateModelElement(DXD.EffectContainer? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.EffectContainer();
+      var value = new DMD.EffectContainer();
       value.ChildEffectContainer = GetChildEffectContainer(openXmlElement);
       value.Effect = GetEffect(openXmlElement);
       value.AlphaBiLevel = GetAlphaBiLevel(openXmlElement);

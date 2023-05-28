@@ -61,11 +61,11 @@ public static class RadarChartExtensionListConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.RadarChartExtensionList? CreateModelElement(DXDC.RadarChartExtensionList? openXmlElement)
+  public static DMD.Charts.RadarChartExtensionList? CreateModelElement(DXDC.RadarChartExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.RadarChartExtensionList();
+      var value = new DMD.Charts.RadarChartExtensionList();
       value.RadarChartExtensions = GetRadarChartExtensions(openXmlElement);
       return value;
     }

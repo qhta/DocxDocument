@@ -426,11 +426,11 @@ public static class BarChartSeriesConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.BarChartSeries? CreateModelElement(DXDC.BarChartSeries? openXmlElement)
+  public static DMD.Charts.BarChartSeries? CreateModelElement(DXDC.BarChartSeries? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.BarChartSeries();
+      var value = new DMD.Charts.BarChartSeries();
       value.Index = GetIndex(openXmlElement);
       value.Order = GetOrder(openXmlElement);
       value.SeriesText = GetSeriesText(openXmlElement);

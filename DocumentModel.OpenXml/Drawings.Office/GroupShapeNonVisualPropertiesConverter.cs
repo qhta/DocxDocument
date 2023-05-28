@@ -63,11 +63,11 @@ public static class GroupShapeNonVisualPropertiesConverter
     }
   }
   
-  public static DocumentModel.Drawings.Office.GroupShapeNonVisualProperties? CreateModelElement(DXOD.GroupShapeNonVisualProperties? openXmlElement)
+  public static DMDO.GroupShapeNonVisualProperties? CreateModelElement(DXOD.GroupShapeNonVisualProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Office.GroupShapeNonVisualProperties();
+      var value = new DMDO.GroupShapeNonVisualProperties();
       value.NonVisualDrawingProperties = GetNonVisualDrawingProperties(openXmlElement);
       value.NonVisualGroupDrawingShapeProperties = GetNonVisualGroupDrawingShapeProperties(openXmlElement);
       return value;

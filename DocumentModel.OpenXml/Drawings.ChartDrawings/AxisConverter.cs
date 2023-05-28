@@ -386,11 +386,11 @@ public static class AxisConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.Axis? CreateModelElement(DXO16DCD.Axis? openXmlElement)
+  public static DMDCDs.Axis? CreateModelElement(DXO16DCD.Axis? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.Axis();
+      var value = new DMDCDs.Axis();
       value.Id = GetId(openXmlElement);
       value.Hidden = GetHidden(openXmlElement);
       value.CategoryAxisScaling = GetCategoryAxisScaling(openXmlElement);

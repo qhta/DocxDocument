@@ -260,11 +260,11 @@ public static class ShapePropertiesConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.ShapeProperties? CreateModelElement(DXDC.ShapeProperties? openXmlElement)
+  public static DMD.Charts.ShapeProperties? CreateModelElement(DXDC.ShapeProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var model = new DocumentModel.Drawings.Charts.ShapeProperties();
+      var model = new DMD.Charts.ShapeProperties();
       model.BlackWhiteMode = GetBlackWhiteMode(openXmlElement);
       model.Transform2D = GetTransform2D(openXmlElement);
       model.CustomGeometry = GetCustomGeometry(openXmlElement);

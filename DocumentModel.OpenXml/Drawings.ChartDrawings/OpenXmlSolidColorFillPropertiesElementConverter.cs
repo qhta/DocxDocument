@@ -179,11 +179,11 @@ public static class OpenXmlSolidColorFillPropertiesElementConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.OpenXmlSolidColorFillPropertiesElement? CreateModelElement(DXO16DCD.OpenXmlSolidColorFillPropertiesElement? openXmlElement)
+  public static DMDCDs.OpenXmlSolidColorFillPropertiesElement? CreateModelElement(DXO16DCD.OpenXmlSolidColorFillPropertiesElement? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.OpenXmlSolidColorFillPropertiesElement();
+      var value = new DMDCDs.OpenXmlSolidColorFillPropertiesElement();
       value.RgbColorModelPercentage = GetRgbColorModelPercentage(openXmlElement);
       value.RgbColorModelHex = GetRgbColorModelHex(openXmlElement);
       value.HslColor = GetHslColor(openXmlElement);

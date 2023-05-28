@@ -250,11 +250,11 @@ public static class ColorMapOverrideConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.ColorMapOverride? CreateModelElement(DXDC.ColorMapOverride? openXmlElement)
+  public static DMD.Charts.ColorMapOverride? CreateModelElement(DXDC.ColorMapOverride? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.ColorMapOverride();
+      var value = new DMD.Charts.ColorMapOverride();
       value.Background1 = GetBackground1(openXmlElement);
       value.Text1 = GetText1(openXmlElement);
       value.Background2 = GetBackground2(openXmlElement);

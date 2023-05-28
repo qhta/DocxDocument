@@ -61,11 +61,11 @@ public static class SurfaceSerExtensionListConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.SurfaceSerExtensionList? CreateModelElement(DXDC.SurfaceSerExtensionList? openXmlElement)
+  public static DMD.Charts.SurfaceSerExtensionList? CreateModelElement(DXDC.SurfaceSerExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.SurfaceSerExtensionList();
+      var value = new DMD.Charts.SurfaceSerExtensionList();
       value.SurfaceSerExtensions = GetSurfaceSerExtensions(openXmlElement);
       return value;
     }

@@ -150,11 +150,11 @@ public static class AxisDataSourceType3Converter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.AxisDataSourceType3? CreateModelElement(DXO13DC.AxisDataSourceType? openXmlElement)
+  public static DMD.Charts.AxisDataSourceType3? CreateModelElement(DXO13DC.AxisDataSourceType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.AxisDataSourceType3();
+      var value = new DMD.Charts.AxisDataSourceType3();
       value.MultiLevelStringReference = GetMultiLevelStringReference(openXmlElement);
       value.NumberReference = GetNumberReference(openXmlElement);
       value.NumberLiteral = GetNumberLiteral(openXmlElement);

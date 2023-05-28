@@ -195,11 +195,11 @@ public static class GroupShapeLocksConverter
     }
   }
   
-  public static DocumentModel.Drawings.GroupShapeLocks? CreateModelElement(DXD.GroupShapeLocks? openXmlElement)
+  public static DMD.GroupShapeLocks? CreateModelElement(DXD.GroupShapeLocks? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.GroupShapeLocks();
+      var value = new DMD.GroupShapeLocks();
       value.NoGrouping = GetNoGrouping(openXmlElement);
       value.NoUngrouping = GetNoUngrouping(openXmlElement);
       value.NoSelection = GetNoSelection(openXmlElement);

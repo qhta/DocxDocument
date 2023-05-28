@@ -110,11 +110,11 @@ public static class GeoLocationConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.GeoLocation? CreateModelElement(DXO16DCD.GeoLocation? openXmlElement)
+  public static DMDCDs.GeoLocation? CreateModelElement(DXO16DCD.GeoLocation? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.GeoLocation();
+      var value = new DMDCDs.GeoLocation();
       value.Latitude = GetLatitude(openXmlElement);
       value.Longitude = GetLongitude(openXmlElement);
       value.EntityName = GetEntityName(openXmlElement);

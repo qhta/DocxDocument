@@ -61,11 +61,11 @@ public static class NumberDiagramInfoListConverter
     }
   }
   
-  public static DocumentModel.Drawings.Diagram1.NumberDiagramInfoList? CreateModelElement(DXO19DD11.NumberDiagramInfoList? openXmlElement)
+  public static DMDD1.NumberDiagramInfoList? CreateModelElement(DXO19DD11.NumberDiagramInfoList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagram1.NumberDiagramInfoList();
+      var value = new DMDD1.NumberDiagramInfoList();
       value.NumberDiagramInfos = GetNumberDiagramInfos(openXmlElement);
       return value;
     }

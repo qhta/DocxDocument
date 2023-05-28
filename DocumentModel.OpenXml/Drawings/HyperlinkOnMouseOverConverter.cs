@@ -57,11 +57,11 @@ public static class HyperlinkOnMouseOverConverter
     }
   }
   
-  public static DocumentModel.Drawings.HyperlinkOnMouseOver? CreateModelElement(DXD.HyperlinkOnMouseOver? openXmlElement)
+  public static DMD.HyperlinkOnMouseOver? CreateModelElement(DXD.HyperlinkOnMouseOver? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.HyperlinkOnMouseOver();
+      var value = new DMD.HyperlinkOnMouseOver();
       value.HyperlinkSound = GetHyperlinkSound(openXmlElement);
       value.HyperlinkExtensionList = GetHyperlinkExtensionList(openXmlElement);
       return value;

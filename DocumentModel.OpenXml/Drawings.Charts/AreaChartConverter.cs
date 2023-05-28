@@ -254,11 +254,11 @@ public static class AreaChartConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.AreaChart? CreateModelElement(DXDC.AreaChart? openXmlElement)
+  public static DMD.Charts.AreaChart? CreateModelElement(DXDC.AreaChart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.AreaChart();
+      var value = new DMD.Charts.AreaChart();
       value.Grouping = GetGrouping(openXmlElement);
       value.VaryColors = GetVaryColors(openXmlElement);
       value.AreaChartSeries = GetAreaChartSeries(openXmlElement);

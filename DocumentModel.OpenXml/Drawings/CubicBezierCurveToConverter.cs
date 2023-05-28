@@ -61,11 +61,11 @@ public static class CubicBezierCurveToConverter
     }
   }
   
-  public static DocumentModel.Drawings.CubicBezierCurveTo? CreateModelElement(DXD.CubicBezierCurveTo? openXmlElement)
+  public static DMD.CubicBezierCurveTo? CreateModelElement(DXD.CubicBezierCurveTo? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.CubicBezierCurveTo();
+      var value = new DMD.CubicBezierCurveTo();
       value.Points = GetPoints(openXmlElement);
       return value;
     }

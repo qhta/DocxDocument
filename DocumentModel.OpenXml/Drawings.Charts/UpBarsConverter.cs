@@ -31,11 +31,11 @@ public static class UpBarsConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.UpBars? CreateModelElement(DXDC.UpBars? openXmlElement)
+  public static DMD.Charts.UpBars? CreateModelElement(DXDC.UpBars? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.UpBars();
+      var value = new DMD.Charts.UpBars();
       value.ChartShapeProperties = GetChartShapeProperties(openXmlElement);
       return value;
     }

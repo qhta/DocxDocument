@@ -144,11 +144,11 @@ public static class PictureOptionsConverter
     SimpleValueConverter.SetValue<DXDC.PictureStackUnit,System.Double>(openXmlElement, value);
   }
   
-  public static DocumentModel.Drawings.Charts.PictureOptions? CreateModelElement(DXDC.PictureOptions? openXmlElement)
+  public static DMD.Charts.PictureOptions? CreateModelElement(DXDC.PictureOptions? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.PictureOptions();
+      var value = new DMD.Charts.PictureOptions();
       value.ApplyToFront = GetApplyToFront(openXmlElement);
       value.ApplyToSides = GetApplyToSides(openXmlElement);
       value.ApplyToEnd = GetApplyToEnd(openXmlElement);

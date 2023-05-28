@@ -207,11 +207,11 @@ public static class BlipExtensionConverter
     }
   }
   
-  public static DocumentModel.Drawings.BlipExtension? CreateModelElement(DXD.BlipExtension? openXmlElement)
+  public static DMD.BlipExtension? CreateModelElement(DXD.BlipExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.BlipExtension();
+      var value = new DMD.BlipExtension();
       value.Uri = GetUri(openXmlElement);
       value.ImageProperties = GetImageProperties(openXmlElement);
       value.UseLocalDpi = GetUseLocalDpi(openXmlElement);

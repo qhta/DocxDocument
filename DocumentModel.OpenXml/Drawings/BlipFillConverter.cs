@@ -158,11 +158,11 @@ public static class BlipFillConverter
     }
   }
   
-  public static DocumentModel.Drawings.BlipFill? CreateModelElement(DXD.BlipFill? openXmlElement)
+  public static DMD.BlipFill? CreateModelElement(DXD.BlipFill? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.BlipFill();
+      var value = new DMD.BlipFill();
       value.Dpi = GetDpi(openXmlElement);
       value.RotateWithShape = GetRotateWithShape(openXmlElement);
       value.Blip = GetBlip(openXmlElement);

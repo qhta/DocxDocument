@@ -41,11 +41,11 @@ public static class ParameterConverter
     openXmlElement.Val = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Drawings.Diagrams.Parameter? CreateModelElement(DXDD.Parameter? openXmlElement)
+  public static DMDD.Parameter? CreateModelElement(DXDD.Parameter? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.Parameter();
+      var value = new DMDD.Parameter();
       value.Type = GetType(openXmlElement);
       value.Val = GetVal(openXmlElement);
       return value;

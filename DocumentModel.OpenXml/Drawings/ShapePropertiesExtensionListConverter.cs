@@ -61,11 +61,11 @@ public static class ShapePropertiesExtensionListConverter
     }
   }
   
-  public static DocumentModel.Drawings.ShapePropertiesExtensionList? CreateModelElement(DXD.ShapePropertiesExtensionList? openXmlElement)
+  public static DMD.ShapePropertiesExtensionList? CreateModelElement(DXD.ShapePropertiesExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ShapePropertiesExtensionList();
+      var value = new DMD.ShapePropertiesExtensionList();
       value.ShapePropertiesExtensions = GetShapePropertiesExtensions(openXmlElement);
       return value;
     }

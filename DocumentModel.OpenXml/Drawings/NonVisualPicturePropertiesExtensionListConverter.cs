@@ -61,11 +61,11 @@ public static class NonVisualPicturePropertiesExtensionListConverter
     }
   }
   
-  public static DocumentModel.Drawings.NonVisualPicturePropertiesExtensionList? CreateModelElement(DXD.NonVisualPicturePropertiesExtensionList? openXmlElement)
+  public static DMD.NonVisualPicturePropertiesExtensionList? CreateModelElement(DXD.NonVisualPicturePropertiesExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.NonVisualPicturePropertiesExtensionList();
+      var value = new DMD.NonVisualPicturePropertiesExtensionList();
       value.NonVisualPicturePropertiesExtensions = GetNonVisualPicturePropertiesExtensions(openXmlElement);
       return value;
     }

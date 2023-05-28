@@ -31,11 +31,11 @@ public static class LeaderLinesConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.LeaderLines? CreateModelElement(DXDC.LeaderLines? openXmlElement)
+  public static DMD.Charts.LeaderLines? CreateModelElement(DXDC.LeaderLines? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.LeaderLines();
+      var value = new DMD.Charts.LeaderLines();
       value.ChartShapeProperties = GetChartShapeProperties(openXmlElement);
       return value;
     }

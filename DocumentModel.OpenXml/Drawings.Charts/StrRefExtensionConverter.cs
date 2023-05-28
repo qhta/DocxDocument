@@ -101,11 +101,11 @@ public static class StrRefExtensionConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.StrRefExtension? CreateModelElement(DXDC.StrRefExtension? openXmlElement)
+  public static DMD.Charts.StrRefExtension? CreateModelElement(DXDC.StrRefExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.StrRefExtension();
+      var value = new DMD.Charts.StrRefExtension();
       value.Uri = GetUri(openXmlElement);
       value.FullReference = GetFullReference(openXmlElement);
       value.LevelReference = GetLevelReference(openXmlElement);

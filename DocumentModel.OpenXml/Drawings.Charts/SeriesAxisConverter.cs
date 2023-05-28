@@ -483,11 +483,11 @@ public static class SeriesAxisConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.SeriesAxis? CreateModelElement(DXDC.SeriesAxis? openXmlElement)
+  public static DMD.Charts.SeriesAxis? CreateModelElement(DXDC.SeriesAxis? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.SeriesAxis();
+      var value = new DMD.Charts.SeriesAxis();
       value.AxisId = GetAxisId(openXmlElement);
       value.Scaling = GetScaling(openXmlElement);
       value.Delete = GetDelete(openXmlElement);

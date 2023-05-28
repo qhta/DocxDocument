@@ -63,11 +63,11 @@ public static class TextBodyTypeConverter
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.TextBodyType? CreateModelElement(DXO16DCD.TextBodyType? openXmlElement)
+  public static DMDCDs.TextBodyType? CreateModelElement(DXO16DCD.TextBodyType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.TextBodyType();
+      var value = new DMDCDs.TextBodyType();
       value.BodyProperties = GetBodyProperties(openXmlElement);
       value.ListStyle = GetListStyle(openXmlElement);
       return value;

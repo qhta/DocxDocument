@@ -122,11 +122,11 @@ public static class FieldConverter
       openXmlElement.Text = null;
   }
   
-  public static DocumentModel.Drawings.Field? CreateModelElement(DXD.Field? openXmlElement)
+  public static DMD.Field? CreateModelElement(DXD.Field? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Field();
+      var value = new DMD.Field();
       value.Id = GetId(openXmlElement);
       value.Type = GetType(openXmlElement);
       value.RunProperties = GetRunProperties(openXmlElement);

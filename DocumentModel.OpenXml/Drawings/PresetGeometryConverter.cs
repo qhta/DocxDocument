@@ -52,11 +52,11 @@ public static class PresetGeometryConverter
     }
   }
   
-  public static DocumentModel.Drawings.PresetGeometry? CreateModelElement(DXD.PresetGeometry? openXmlElement)
+  public static DMD.PresetGeometry? CreateModelElement(DXD.PresetGeometry? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.PresetGeometry();
+      var value = new DMD.PresetGeometry();
       value.Preset = GetPreset(openXmlElement);
       value.AdjustValueList = GetAdjustValueList(openXmlElement);
       return value;

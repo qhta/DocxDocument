@@ -199,11 +199,11 @@ public static class GlowConverter
     }
   }
   
-  public static DocumentModel.Drawings.Glow? CreateModelElement(DXD.Glow? openXmlElement)
+  public static DMD.Glow? CreateModelElement(DXD.Glow? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Glow();
+      var value = new DMD.Glow();
       value.Radius = GetRadius(openXmlElement);
       value.RgbColorModelPercentage = GetRgbColorModelPercentage(openXmlElement);
       value.RgbColorModelHex = GetRgbColorModelHex(openXmlElement);

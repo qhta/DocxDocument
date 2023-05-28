@@ -311,11 +311,11 @@ public static class Bar3DChartConverter
     }
   }
   
-  public static DocumentModel.Drawings.Charts.Bar3DChart? CreateModelElement(DXDC.Bar3DChart? openXmlElement)
+  public static DMD.Charts.Bar3DChart? CreateModelElement(DXDC.Bar3DChart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.Bar3DChart();
+      var value = new DMD.Charts.Bar3DChart();
       value.BarDirection = GetBarDirection(openXmlElement);
       value.BarGrouping = GetBarGrouping(openXmlElement);
       value.VaryColors = GetVaryColors(openXmlElement);
