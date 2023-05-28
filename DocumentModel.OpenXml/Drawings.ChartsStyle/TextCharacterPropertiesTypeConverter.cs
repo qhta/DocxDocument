@@ -443,27 +443,27 @@ public static class TextCharacterPropertiesTypeConverter
   /// <summary>
   /// Outline.
   /// </summary>
-  private static DMD.Outline? GetOutline(DXO13DCS.TextCharacterPropertiesType openXmlElement)
+  private static DMD.LineProperties? GetOutline(DXO13DCS.TextCharacterPropertiesType openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXD.Outline>();
     if (element != null)
-      return DMXD.OutlineConverter.CreateModelElement(element);
+      return DMXD.LinePropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpOutline(DXO13DCS.TextCharacterPropertiesType openXmlElement, DMD.Outline? value, DiffList? diffs = null, string? objName = null, string? propName = null)
+  private static bool CmpOutline(DXO13DCS.TextCharacterPropertiesType openXmlElement, DMD.LineProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.OutlineConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Outline>(), value, diffs, objName, propName);
+    return DMXD.LinePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Outline>(), value, diffs, objName, propName);
   }
   
-  private static void SetOutline(DXO13DCS.TextCharacterPropertiesType openXmlElement, DMD.Outline? value)
+  private static void SetOutline(DXO13DCS.TextCharacterPropertiesType openXmlElement, DMD.LineProperties? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXD.Outline>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXD.OutlineConverter.CreateOpenXmlElement<DXD.Outline>(value);
+      itemElement = DMXD.LinePropertiesConverter.CreateOpenXmlElement<DXD.Outline>(value);
       if (itemElement != null)
         openXmlElement.AppendChild(itemElement);
     }

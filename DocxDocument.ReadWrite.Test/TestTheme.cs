@@ -28,7 +28,6 @@ public class TestTheme : TestBase
   /// <param name="showDetails">Specifies whether the detailed information on test should be shown on test failure.</param>
   /// <param name="copyBack">Specifies whether test document should be copied back and modified with deserialized data</param>
   /// <param name="openWord">Specifies that new document should be opened in MS Word</param>
-  /// <summary>
   public virtual bool TestReadTheme(string filename, bool showDetails = false, bool copyBack = false, bool openWord = false)
   {
     if (String.IsNullOrEmpty(Path.GetDirectoryName(filename)))
