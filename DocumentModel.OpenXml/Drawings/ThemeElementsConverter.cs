@@ -82,8 +82,9 @@ public static class ThemeElementsConverter
   private static void SetFormatScheme(DXD.ThemeElements openXmlElement, DMD.FormatScheme? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXD.FormatScheme>();
-    if (itemElement != null)
-      itemElement.Remove();
+    if (itemElement != null && value != null)
+      DMXD.FormatSchemeConverter.UpdateOpenXmlElement(itemElement, value);
+    else
     if (value != null)
     {
       itemElement = DMXD.FormatSchemeConverter.CreateOpenXmlElement<DXD.FormatScheme>(value);

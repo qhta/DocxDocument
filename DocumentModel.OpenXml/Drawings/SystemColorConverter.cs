@@ -12,17 +12,17 @@ public static class SystemColorConverter
   {
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.SystemColorValues, DMD.SystemColorKind>(openXmlElement?.Val?.Value);
   }
-  
+
   private static bool CmpVal(DXD.SystemColor openXmlElement, DMD.SystemColorKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.SystemColorValues, DMD.SystemColorKind>(openXmlElement?.Val?.Value, value, diffs, objName, propName);
   }
-  
+
   private static void SetVal(DXD.SystemColor openXmlElement, DMD.SystemColorKind? value)
   {
     openXmlElement.Val = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.SystemColorValues, DMD.SystemColorKind>(value);
   }
-  
+
   /// <summary>
   /// Last Color
   /// </summary>
@@ -32,17 +32,17 @@ public static class SystemColorConverter
       return (DocumentModel.RGB)UInt32.Parse(openXmlElement.LastColor.Value, NumberStyles.HexNumber);
     return null;
   }
-  
+
   private static bool CmpLastColor(DXD.SystemColor openXmlElement, DM.RGB? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.LastColor?.Value != null)
       if (UInt32.Parse(openXmlElement.LastColor.Value, NumberStyles.HexNumber) == value)
         return true;
     if (openXmlElement?.LastColor?.Value == null && value == null) return true;
-    diffs?.Add(objName, "LastColor", openXmlElement?.LastColor?.Value, value?.ToString());
+    diffs?.Add(objName, "LastColor", openXmlElement?.LastColor?.Value, value.ToString());
     return false;
   }
-  
+
   private static void SetLastColor(DXD.SystemColor openXmlElement, DM.RGB? value)
   {
     if (value != null)
@@ -50,12 +50,12 @@ public static class SystemColorConverter
     else
       openXmlElement.LastColor = null;
   }
-  
+
   private static Int32? GetTint(DXD.SystemColor openXmlElement)
   {
     return openXmlElement?.GetFirstChild<DXD.Tint>()?.Val?.Value;
   }
-  
+
   private static bool CmpTint(DXD.SystemColor openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var itemElement = openXmlElement?.GetFirstChild<DXD.Tint>();
@@ -63,7 +63,7 @@ public static class SystemColorConverter
     diffs?.Add(objName, "DXD.Tint", itemElement?.Val?.Value, value);
     return false;
   }
-  
+
   private static void SetTint(DXD.SystemColor openXmlElement, Int32? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXD.Tint>();
@@ -71,16 +71,16 @@ public static class SystemColorConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXD.Tint{ Val = value };
+      itemElement = new DXD.Tint { Val = value };
       openXmlElement.AppendChild(itemElement);
     }
   }
-  
+
   private static Int32? GetShade(DXD.SystemColor openXmlElement)
   {
     return openXmlElement?.GetFirstChild<DXD.Shade>()?.Val?.Value;
   }
-  
+
   private static bool CmpShade(DXD.SystemColor openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var itemElement = openXmlElement?.GetFirstChild<DXD.Shade>();
@@ -88,7 +88,7 @@ public static class SystemColorConverter
     diffs?.Add(objName, "DXD.Shade", itemElement?.Val?.Value, value);
     return false;
   }
-  
+
   private static void SetShade(DXD.SystemColor openXmlElement, Int32? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXD.Shade>();
@@ -96,16 +96,16 @@ public static class SystemColorConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXD.Shade{ Val = value };
+      itemElement = new DXD.Shade { Val = value };
       openXmlElement.AppendChild(itemElement);
     }
   }
-  
+
   private static Boolean GetComplement(DXD.SystemColor openXmlElement)
   {
     return openXmlElement.GetFirstChild<DXD.Complement>() != null;
   }
-  
+
   private static bool CmpComplement(DXD.SystemColor openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXD.Complement>() != null;
@@ -113,7 +113,7 @@ public static class SystemColorConverter
     diffs?.Add(objName, "DXD.Complement", val, value);
     return false;
   }
-  
+
   private static void SetComplement(DXD.SystemColor openXmlElement, Boolean? value)
   {
     if (value == false)
@@ -128,12 +128,12 @@ public static class SystemColorConverter
       openXmlElement.AppendChild(itemElement);
     }
   }
-  
+
   private static Boolean GetInverse(DXD.SystemColor openXmlElement)
   {
     return openXmlElement.GetFirstChild<DXD.Inverse>() != null;
   }
-  
+
   private static bool CmpInverse(DXD.SystemColor openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXD.Inverse>() != null;
@@ -141,7 +141,7 @@ public static class SystemColorConverter
     diffs?.Add(objName, "DXD.Inverse", val, value);
     return false;
   }
-  
+
   private static void SetInverse(DXD.SystemColor openXmlElement, Boolean? value)
   {
     if (value == false)
@@ -156,12 +156,12 @@ public static class SystemColorConverter
       openXmlElement.AppendChild(itemElement);
     }
   }
-  
+
   private static Boolean GetGray(DXD.SystemColor openXmlElement)
   {
     return openXmlElement.GetFirstChild<DXD.Gray>() != null;
   }
-  
+
   private static bool CmpGray(DXD.SystemColor openXmlElement, Boolean value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXD.Gray>() != null;
@@ -169,7 +169,7 @@ public static class SystemColorConverter
     diffs?.Add(objName, "DXD.Gray", val, value);
     return false;
   }
-  
+
   private static void SetGray(DXD.SystemColor openXmlElement, Boolean? value)
   {
     if (value == false)
@@ -184,12 +184,12 @@ public static class SystemColorConverter
       openXmlElement.AppendChild(itemElement);
     }
   }
-  
+
   private static Int32? GetAlpha(DXD.SystemColor openXmlElement)
   {
     return openXmlElement?.GetFirstChild<DXD.Alpha>()?.Val?.Value;
   }
-  
+
   private static bool CmpAlpha(DXD.SystemColor openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var itemElement = openXmlElement?.GetFirstChild<DXD.Alpha>();
@@ -197,7 +197,7 @@ public static class SystemColorConverter
     diffs?.Add(objName, "DXD.Alpha", itemElement?.Val?.Value, value);
     return false;
   }
-  
+
   private static void SetAlpha(DXD.SystemColor openXmlElement, Int32? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXD.Alpha>();
@@ -205,16 +205,16 @@ public static class SystemColorConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXD.Alpha{ Val = value };
+      itemElement = new DXD.Alpha { Val = value };
       openXmlElement.AppendChild(itemElement);
     }
   }
-  
+
   private static Int32? GetAlphaOffset(DXD.SystemColor openXmlElement)
   {
     return openXmlElement?.GetFirstChild<DXD.AlphaOffset>()?.Val?.Value;
   }
-  
+
   private static bool CmpAlphaOffset(DXD.SystemColor openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var itemElement = openXmlElement?.GetFirstChild<DXD.AlphaOffset>();
@@ -222,7 +222,7 @@ public static class SystemColorConverter
     diffs?.Add(objName, "DXD.AlphaOffset", itemElement?.Val?.Value, value);
     return false;
   }
-  
+
   private static void SetAlphaOffset(DXD.SystemColor openXmlElement, Int32? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXD.AlphaOffset>();
@@ -230,16 +230,16 @@ public static class SystemColorConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXD.AlphaOffset{ Val = value };
+      itemElement = new DXD.AlphaOffset { Val = value };
       openXmlElement.AppendChild(itemElement);
     }
   }
-  
+
   private static Int32? GetAlphaModulation(DXD.SystemColor openXmlElement)
   {
     return openXmlElement?.GetFirstChild<DXD.AlphaModulation>()?.Val?.Value;
   }
-  
+
   private static bool CmpAlphaModulation(DXD.SystemColor openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var itemElement = openXmlElement?.GetFirstChild<DXD.AlphaModulation>();
@@ -247,7 +247,7 @@ public static class SystemColorConverter
     diffs?.Add(objName, "DXD.AlphaModulation", itemElement?.Val?.Value, value);
     return false;
   }
-  
+
   private static void SetAlphaModulation(DXD.SystemColor openXmlElement, Int32? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXD.AlphaModulation>();
@@ -255,16 +255,16 @@ public static class SystemColorConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXD.AlphaModulation{ Val = value };
+      itemElement = new DXD.AlphaModulation { Val = value };
       openXmlElement.AppendChild(itemElement);
     }
   }
-  
+
   private static Int32? GetHue(DXD.SystemColor openXmlElement)
   {
     return openXmlElement?.GetFirstChild<DXD.Hue>()?.Val?.Value;
   }
-  
+
   private static bool CmpHue(DXD.SystemColor openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var itemElement = openXmlElement?.GetFirstChild<DXD.Hue>();
@@ -272,7 +272,7 @@ public static class SystemColorConverter
     diffs?.Add(objName, "DXD.Hue", itemElement?.Val?.Value, value);
     return false;
   }
-  
+
   private static void SetHue(DXD.SystemColor openXmlElement, Int32? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXD.Hue>();
@@ -280,16 +280,16 @@ public static class SystemColorConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXD.Hue{ Val = value };
+      itemElement = new DXD.Hue { Val = value };
       openXmlElement.AppendChild(itemElement);
     }
   }
-  
+
   private static Int32? GetHueOffset(DXD.SystemColor openXmlElement)
   {
     return openXmlElement?.GetFirstChild<DXD.HueOffset>()?.Val?.Value;
   }
-  
+
   private static bool CmpHueOffset(DXD.SystemColor openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var itemElement = openXmlElement?.GetFirstChild<DXD.HueOffset>();
@@ -297,7 +297,7 @@ public static class SystemColorConverter
     diffs?.Add(objName, "DXD.HueOffset", itemElement?.Val?.Value, value);
     return false;
   }
-  
+
   private static void SetHueOffset(DXD.SystemColor openXmlElement, Int32? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXD.HueOffset>();
@@ -305,16 +305,16 @@ public static class SystemColorConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXD.HueOffset{ Val = value };
+      itemElement = new DXD.HueOffset { Val = value };
       openXmlElement.AppendChild(itemElement);
     }
   }
-  
+
   private static Int32? GetHueModulation(DXD.SystemColor openXmlElement)
   {
     return openXmlElement?.GetFirstChild<DXD.HueModulation>()?.Val?.Value;
   }
-  
+
   private static bool CmpHueModulation(DXD.SystemColor openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var itemElement = openXmlElement?.GetFirstChild<DXD.HueModulation>();
@@ -322,7 +322,7 @@ public static class SystemColorConverter
     diffs?.Add(objName, "DXD.HueModulation", itemElement?.Val?.Value, value);
     return false;
   }
-  
+
   private static void SetHueModulation(DXD.SystemColor openXmlElement, Int32? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXD.HueModulation>();
@@ -330,16 +330,16 @@ public static class SystemColorConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXD.HueModulation{ Val = value };
+      itemElement = new DXD.HueModulation { Val = value };
       openXmlElement.AppendChild(itemElement);
     }
   }
-  
+
   private static Int32? GetSaturation(DXD.SystemColor openXmlElement)
   {
     return openXmlElement?.GetFirstChild<DXD.Saturation>()?.Val?.Value;
   }
-  
+
   private static bool CmpSaturation(DXD.SystemColor openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var itemElement = openXmlElement?.GetFirstChild<DXD.Saturation>();
@@ -347,7 +347,7 @@ public static class SystemColorConverter
     diffs?.Add(objName, "DXD.Saturation", itemElement?.Val?.Value, value);
     return false;
   }
-  
+
   private static void SetSaturation(DXD.SystemColor openXmlElement, Int32? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXD.Saturation>();
@@ -355,16 +355,16 @@ public static class SystemColorConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXD.Saturation{ Val = value };
+      itemElement = new DXD.Saturation { Val = value };
       openXmlElement.AppendChild(itemElement);
     }
   }
-  
+
   private static Int32? GetSaturationOffset(DXD.SystemColor openXmlElement)
   {
     return openXmlElement?.GetFirstChild<DXD.SaturationOffset>()?.Val?.Value;
   }
-  
+
   private static bool CmpSaturationOffset(DXD.SystemColor openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var itemElement = openXmlElement?.GetFirstChild<DXD.SaturationOffset>();
@@ -372,7 +372,7 @@ public static class SystemColorConverter
     diffs?.Add(objName, "DXD.SaturationOffset", itemElement?.Val?.Value, value);
     return false;
   }
-  
+
   private static void SetSaturationOffset(DXD.SystemColor openXmlElement, Int32? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXD.SaturationOffset>();
@@ -380,16 +380,16 @@ public static class SystemColorConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXD.SaturationOffset{ Val = value };
+      itemElement = new DXD.SaturationOffset { Val = value };
       openXmlElement.AppendChild(itemElement);
     }
   }
-  
+
   private static Int32? GetSaturationModulation(DXD.SystemColor openXmlElement)
   {
     return openXmlElement?.GetFirstChild<DXD.SaturationModulation>()?.Val?.Value;
   }
-  
+
   private static bool CmpSaturationModulation(DXD.SystemColor openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var itemElement = openXmlElement?.GetFirstChild<DXD.SaturationModulation>();
@@ -397,7 +397,7 @@ public static class SystemColorConverter
     diffs?.Add(objName, "DXD.SaturationModulation", itemElement?.Val?.Value, value);
     return false;
   }
-  
+
   private static void SetSaturationModulation(DXD.SystemColor openXmlElement, Int32? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXD.SaturationModulation>();
@@ -405,16 +405,16 @@ public static class SystemColorConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXD.SaturationModulation{ Val = value };
+      itemElement = new DXD.SaturationModulation { Val = value };
       openXmlElement.AppendChild(itemElement);
     }
   }
-  
+
   private static Int32? GetLuminance(DXD.SystemColor openXmlElement)
   {
     return openXmlElement?.GetFirstChild<DXD.Luminance>()?.Val?.Value;
   }
-  
+
   private static bool CmpLuminance(DXD.SystemColor openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var itemElement = openXmlElement?.GetFirstChild<DXD.Luminance>();
@@ -422,7 +422,7 @@ public static class SystemColorConverter
     diffs?.Add(objName, "DXD.Luminance", itemElement?.Val?.Value, value);
     return false;
   }
-  
+
   private static void SetLuminance(DXD.SystemColor openXmlElement, Int32? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXD.Luminance>();
@@ -430,16 +430,16 @@ public static class SystemColorConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXD.Luminance{ Val = value };
+      itemElement = new DXD.Luminance { Val = value };
       openXmlElement.AppendChild(itemElement);
     }
   }
-  
+
   private static Int32? GetLuminanceOffset(DXD.SystemColor openXmlElement)
   {
     return openXmlElement?.GetFirstChild<DXD.LuminanceOffset>()?.Val?.Value;
   }
-  
+
   private static bool CmpLuminanceOffset(DXD.SystemColor openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var itemElement = openXmlElement?.GetFirstChild<DXD.LuminanceOffset>();
@@ -447,7 +447,7 @@ public static class SystemColorConverter
     diffs?.Add(objName, "DXD.LuminanceOffset", itemElement?.Val?.Value, value);
     return false;
   }
-  
+
   private static void SetLuminanceOffset(DXD.SystemColor openXmlElement, Int32? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXD.LuminanceOffset>();
@@ -455,16 +455,16 @@ public static class SystemColorConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXD.LuminanceOffset{ Val = value };
+      itemElement = new DXD.LuminanceOffset { Val = value };
       openXmlElement.AppendChild(itemElement);
     }
   }
-  
+
   private static Int32? GetLuminanceModulation(DXD.SystemColor openXmlElement)
   {
     return openXmlElement?.GetFirstChild<DXD.LuminanceModulation>()?.Val?.Value;
   }
-  
+
   private static bool CmpLuminanceModulation(DXD.SystemColor openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var itemElement = openXmlElement?.GetFirstChild<DXD.LuminanceModulation>();
@@ -472,7 +472,7 @@ public static class SystemColorConverter
     diffs?.Add(objName, "DXD.LuminanceModulation", itemElement?.Val?.Value, value);
     return false;
   }
-  
+
   private static void SetLuminanceModulation(DXD.SystemColor openXmlElement, Int32? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXD.LuminanceModulation>();
@@ -480,16 +480,16 @@ public static class SystemColorConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXD.LuminanceModulation{ Val = value };
+      itemElement = new DXD.LuminanceModulation { Val = value };
       openXmlElement.AppendChild(itemElement);
     }
   }
-  
+
   private static Int32? GetRed(DXD.SystemColor openXmlElement)
   {
     return openXmlElement?.GetFirstChild<DXD.Red>()?.Val?.Value;
   }
-  
+
   private static bool CmpRed(DXD.SystemColor openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var itemElement = openXmlElement?.GetFirstChild<DXD.Red>();
@@ -497,7 +497,7 @@ public static class SystemColorConverter
     diffs?.Add(objName, "DXD.Red", itemElement?.Val?.Value, value);
     return false;
   }
-  
+
   private static void SetRed(DXD.SystemColor openXmlElement, Int32? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXD.Red>();
@@ -505,16 +505,16 @@ public static class SystemColorConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXD.Red{ Val = value };
+      itemElement = new DXD.Red { Val = value };
       openXmlElement.AppendChild(itemElement);
     }
   }
-  
+
   private static Int32? GetRedOffset(DXD.SystemColor openXmlElement)
   {
     return openXmlElement?.GetFirstChild<DXD.RedOffset>()?.Val?.Value;
   }
-  
+
   private static bool CmpRedOffset(DXD.SystemColor openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var itemElement = openXmlElement?.GetFirstChild<DXD.RedOffset>();
@@ -522,7 +522,7 @@ public static class SystemColorConverter
     diffs?.Add(objName, "DXD.RedOffset", itemElement?.Val?.Value, value);
     return false;
   }
-  
+
   private static void SetRedOffset(DXD.SystemColor openXmlElement, Int32? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXD.RedOffset>();
@@ -530,16 +530,16 @@ public static class SystemColorConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXD.RedOffset{ Val = value };
+      itemElement = new DXD.RedOffset { Val = value };
       openXmlElement.AppendChild(itemElement);
     }
   }
-  
+
   private static Int32? GetRedModulation(DXD.SystemColor openXmlElement)
   {
     return openXmlElement?.GetFirstChild<DXD.RedModulation>()?.Val?.Value;
   }
-  
+
   private static bool CmpRedModulation(DXD.SystemColor openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var itemElement = openXmlElement?.GetFirstChild<DXD.RedModulation>();
@@ -547,7 +547,7 @@ public static class SystemColorConverter
     diffs?.Add(objName, "DXD.RedModulation", itemElement?.Val?.Value, value);
     return false;
   }
-  
+
   private static void SetRedModulation(DXD.SystemColor openXmlElement, Int32? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXD.RedModulation>();
@@ -555,16 +555,16 @@ public static class SystemColorConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXD.RedModulation{ Val = value };
+      itemElement = new DXD.RedModulation { Val = value };
       openXmlElement.AppendChild(itemElement);
     }
   }
-  
+
   private static Int32? GetGreen(DXD.SystemColor openXmlElement)
   {
     return openXmlElement?.GetFirstChild<DXD.Green>()?.Val?.Value;
   }
-  
+
   private static bool CmpGreen(DXD.SystemColor openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var itemElement = openXmlElement?.GetFirstChild<DXD.Green>();
@@ -572,7 +572,7 @@ public static class SystemColorConverter
     diffs?.Add(objName, "DXD.Green", itemElement?.Val?.Value, value);
     return false;
   }
-  
+
   private static void SetGreen(DXD.SystemColor openXmlElement, Int32? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXD.Green>();
@@ -580,16 +580,16 @@ public static class SystemColorConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXD.Green{ Val = value };
+      itemElement = new DXD.Green { Val = value };
       openXmlElement.AppendChild(itemElement);
     }
   }
-  
+
   private static Int32? GetGreenOffset(DXD.SystemColor openXmlElement)
   {
     return openXmlElement?.GetFirstChild<DXD.GreenOffset>()?.Val?.Value;
   }
-  
+
   private static bool CmpGreenOffset(DXD.SystemColor openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var itemElement = openXmlElement?.GetFirstChild<DXD.GreenOffset>();
@@ -597,7 +597,7 @@ public static class SystemColorConverter
     diffs?.Add(objName, "DXD.GreenOffset", itemElement?.Val?.Value, value);
     return false;
   }
-  
+
   private static void SetGreenOffset(DXD.SystemColor openXmlElement, Int32? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXD.GreenOffset>();
@@ -605,16 +605,16 @@ public static class SystemColorConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXD.GreenOffset{ Val = value };
+      itemElement = new DXD.GreenOffset { Val = value };
       openXmlElement.AppendChild(itemElement);
     }
   }
-  
+
   private static Int32? GetGreenModulation(DXD.SystemColor openXmlElement)
   {
     return openXmlElement?.GetFirstChild<DXD.GreenModulation>()?.Val?.Value;
   }
-  
+
   private static bool CmpGreenModulation(DXD.SystemColor openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var itemElement = openXmlElement?.GetFirstChild<DXD.GreenModulation>();
@@ -622,7 +622,7 @@ public static class SystemColorConverter
     diffs?.Add(objName, "DXD.GreenModulation", itemElement?.Val?.Value, value);
     return false;
   }
-  
+
   private static void SetGreenModulation(DXD.SystemColor openXmlElement, Int32? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXD.GreenModulation>();
@@ -630,16 +630,16 @@ public static class SystemColorConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXD.GreenModulation{ Val = value };
+      itemElement = new DXD.GreenModulation { Val = value };
       openXmlElement.AppendChild(itemElement);
     }
   }
-  
+
   private static Int32? GetBlue(DXD.SystemColor openXmlElement)
   {
     return openXmlElement?.GetFirstChild<DXD.Blue>()?.Val?.Value;
   }
-  
+
   private static bool CmpBlue(DXD.SystemColor openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var itemElement = openXmlElement?.GetFirstChild<DXD.Blue>();
@@ -647,7 +647,7 @@ public static class SystemColorConverter
     diffs?.Add(objName, "DXD.Blue", itemElement?.Val?.Value, value);
     return false;
   }
-  
+
   private static void SetBlue(DXD.SystemColor openXmlElement, Int32? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXD.Blue>();
@@ -655,16 +655,16 @@ public static class SystemColorConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXD.Blue{ Val = value };
+      itemElement = new DXD.Blue { Val = value };
       openXmlElement.AppendChild(itemElement);
     }
   }
-  
+
   private static Int32? GetBlueOffset(DXD.SystemColor openXmlElement)
   {
     return openXmlElement?.GetFirstChild<DXD.BlueOffset>()?.Val?.Value;
   }
-  
+
   private static bool CmpBlueOffset(DXD.SystemColor openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var itemElement = openXmlElement?.GetFirstChild<DXD.BlueOffset>();
@@ -672,7 +672,7 @@ public static class SystemColorConverter
     diffs?.Add(objName, "DXD.BlueOffset", itemElement?.Val?.Value, value);
     return false;
   }
-  
+
   private static void SetBlueOffset(DXD.SystemColor openXmlElement, Int32? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXD.BlueOffset>();
@@ -680,16 +680,16 @@ public static class SystemColorConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXD.BlueOffset{ Val = value };
+      itemElement = new DXD.BlueOffset { Val = value };
       openXmlElement.AppendChild(itemElement);
     }
   }
-  
+
   private static Int32? GetBlueModulation(DXD.SystemColor openXmlElement)
   {
     return openXmlElement?.GetFirstChild<DXD.BlueModulation>()?.Val?.Value;
   }
-  
+
   private static bool CmpBlueModulation(DXD.SystemColor openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var itemElement = openXmlElement?.GetFirstChild<DXD.BlueModulation>();
@@ -697,7 +697,7 @@ public static class SystemColorConverter
     diffs?.Add(objName, "DXD.BlueModulation", itemElement?.Val?.Value, value);
     return false;
   }
-  
+
   private static void SetBlueModulation(DXD.SystemColor openXmlElement, Int32? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXD.BlueModulation>();
@@ -705,16 +705,16 @@ public static class SystemColorConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXD.BlueModulation{ Val = value };
+      itemElement = new DXD.BlueModulation { Val = value };
       openXmlElement.AppendChild(itemElement);
     }
   }
-  
+
   private static Boolean GetGamma(DXD.SystemColor openXmlElement)
   {
     return openXmlElement.GetFirstChild<DXD.Gamma>() != null;
   }
-  
+
   private static bool CmpGamma(DXD.SystemColor openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXD.Gamma>() != null;
@@ -722,7 +722,7 @@ public static class SystemColorConverter
     diffs?.Add(objName, "DXD.Gamma", val, value);
     return false;
   }
-  
+
   private static void SetGamma(DXD.SystemColor openXmlElement, Boolean? value)
   {
     if (value == false)
@@ -737,12 +737,12 @@ public static class SystemColorConverter
       openXmlElement.AppendChild(itemElement);
     }
   }
-  
+
   private static Boolean GetInverseGamma(DXD.SystemColor openXmlElement)
   {
     return openXmlElement.GetFirstChild<DXD.InverseGamma>() != null;
   }
-  
+
   private static bool CmpInverseGamma(DXD.SystemColor openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXD.InverseGamma>() != null;
@@ -750,7 +750,7 @@ public static class SystemColorConverter
     diffs?.Add(objName, "DXD.InverseGamma", val, value);
     return false;
   }
-  
+
   private static void SetInverseGamma(DXD.SystemColor openXmlElement, Boolean? value)
   {
     if (value == false)
@@ -765,7 +765,7 @@ public static class SystemColorConverter
       openXmlElement.AppendChild(itemElement);
     }
   }
-  
+
   public static DMD.SystemColor? CreateModelElement(DXD.SystemColor? openXmlElement)
   {
     if (openXmlElement != null)
@@ -805,7 +805,7 @@ public static class SystemColorConverter
     }
     return null;
   }
-  
+
   public static bool CompareModelElement(DXD.SystemColor? openXmlElement, DMD.SystemColor? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
@@ -877,45 +877,45 @@ public static class SystemColorConverter
     diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
-  
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMD.SystemColor? value)
-    where OpenXmlElementType: DXD.SystemColor, new()
+  public static DXD.SystemColor CreateOpenXmlElement(DMD.SystemColor value)
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetVal(openXmlElement, value?.Val);
-      SetLastColor(openXmlElement, value?.LastColor);
-      SetTint(openXmlElement, value?.Tint);
-      SetShade(openXmlElement, value?.Shade);
-      SetComplement(openXmlElement, value?.Complement);
-      SetInverse(openXmlElement, value?.Inverse);
-      SetGray(openXmlElement, value?.Gray);
-      SetAlpha(openXmlElement, value?.Alpha);
-      SetAlphaOffset(openXmlElement, value?.AlphaOffset);
-      SetAlphaModulation(openXmlElement, value?.AlphaModulation);
-      SetHue(openXmlElement, value?.Hue);
-      SetHueOffset(openXmlElement, value?.HueOffset);
-      SetHueModulation(openXmlElement, value?.HueModulation);
-      SetSaturation(openXmlElement, value?.Saturation);
-      SetSaturationOffset(openXmlElement, value?.SaturationOffset);
-      SetSaturationModulation(openXmlElement, value?.SaturationModulation);
-      SetLuminance(openXmlElement, value?.Luminance);
-      SetLuminanceOffset(openXmlElement, value?.LuminanceOffset);
-      SetLuminanceModulation(openXmlElement, value?.LuminanceModulation);
-      SetRed(openXmlElement, value?.Red);
-      SetRedOffset(openXmlElement, value?.RedOffset);
-      SetRedModulation(openXmlElement, value?.RedModulation);
-      SetGreen(openXmlElement, value?.Green);
-      SetGreenOffset(openXmlElement, value?.GreenOffset);
-      SetGreenModulation(openXmlElement, value?.GreenModulation);
-      SetBlue(openXmlElement, value?.Blue);
-      SetBlueOffset(openXmlElement, value?.BlueOffset);
-      SetBlueModulation(openXmlElement, value?.BlueModulation);
-      SetGamma(openXmlElement, value?.Gamma);
-      SetInverseGamma(openXmlElement, value?.InverseGamma);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new DXD.SystemColor();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
+  }
+
+  public static bool UpdateOpenXmlElement(DXD.SystemColor openXmlElement, DMD.SystemColor value)
+  {
+    SetVal(openXmlElement, value.Val);
+    SetLastColor(openXmlElement, value.LastColor);
+    SetTint(openXmlElement, value.Tint);
+    SetShade(openXmlElement, value.Shade);
+    SetComplement(openXmlElement, value.Complement);
+    SetInverse(openXmlElement, value.Inverse);
+    SetGray(openXmlElement, value.Gray);
+    SetAlpha(openXmlElement, value.Alpha);
+    SetAlphaOffset(openXmlElement, value.AlphaOffset);
+    SetAlphaModulation(openXmlElement, value.AlphaModulation);
+    SetHue(openXmlElement, value.Hue);
+    SetHueOffset(openXmlElement, value.HueOffset);
+    SetHueModulation(openXmlElement, value.HueModulation);
+    SetSaturation(openXmlElement, value.Saturation);
+    SetSaturationOffset(openXmlElement, value.SaturationOffset);
+    SetSaturationModulation(openXmlElement, value.SaturationModulation);
+    SetLuminance(openXmlElement, value.Luminance);
+    SetLuminanceOffset(openXmlElement, value.LuminanceOffset);
+    SetLuminanceModulation(openXmlElement, value.LuminanceModulation);
+    SetRed(openXmlElement, value.Red);
+    SetRedOffset(openXmlElement, value.RedOffset);
+    SetRedModulation(openXmlElement, value.RedModulation);
+    SetGreen(openXmlElement, value.Green);
+    SetGreenOffset(openXmlElement, value.GreenOffset);
+    SetGreenModulation(openXmlElement, value.GreenModulation);
+    SetBlue(openXmlElement, value.Blue);
+    SetBlueOffset(openXmlElement, value.BlueOffset);
+    SetBlueModulation(openXmlElement, value.BlueModulation);
+    SetGamma(openXmlElement, value.Gamma);
+    SetInverseGamma(openXmlElement, value.InverseGamma);
+    return true;
   }
 }

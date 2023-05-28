@@ -1,11 +1,11 @@
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the MinColorSolidColorFillProperties Class.
+/// Defines the MaxColorSolidColorFillProperties Class.
 /// </summary>
-public static class MinColorSolidColorFillPropertiesConverter
+public static class SolidColorFillPropertiesConverter
 {
-  private static DMD.RgbColorModelPercentage? GetRgbColorModelPercentage(DXO16DCD.MinColorSolidColorFillProperties openXmlElement)
+  private static DMD.RgbColorModelPercentage? GetRgbColorModelPercentage(DX.OpenXmlCompositeElement openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXD.RgbColorModelPercentage>();
     if (element != null)
@@ -13,12 +13,12 @@ public static class MinColorSolidColorFillPropertiesConverter
     return null;
   }
   
-  private static bool CmpRgbColorModelPercentage(DXO16DCD.MinColorSolidColorFillProperties openXmlElement, DMD.RgbColorModelPercentage? value, DiffList? diffs = null, string? objName = null, string? propName = null)
+  private static bool CmpRgbColorModelPercentage(DX.OpenXmlCompositeElement openXmlElement, DMD.RgbColorModelPercentage? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return DMXD.RgbColorModelPercentageConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.RgbColorModelPercentage>(), value, diffs, objName, propName);
   }
   
-  private static void SetRgbColorModelPercentage(DXO16DCD.MinColorSolidColorFillProperties openXmlElement, DMD.RgbColorModelPercentage? value)
+  private static void SetRgbColorModelPercentage(DX.OpenXmlCompositeElement openXmlElement, DMD.RgbColorModelPercentage? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXD.RgbColorModelPercentage>();
     if (itemElement != null)
@@ -31,7 +31,7 @@ public static class MinColorSolidColorFillPropertiesConverter
     }
   }
   
-  private static DMD.RgbColorModelHex? GetRgbColorModelHex(DXO16DCD.MinColorSolidColorFillProperties openXmlElement)
+  private static DMD.RgbColorModelHex? GetRgbColorModelHex(DX.OpenXmlCompositeElement openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXD.RgbColorModelHex>();
     if (element != null)
@@ -39,12 +39,12 @@ public static class MinColorSolidColorFillPropertiesConverter
     return null;
   }
   
-  private static bool CmpRgbColorModelHex(DXO16DCD.MinColorSolidColorFillProperties openXmlElement, DMD.RgbColorModelHex? value, DiffList? diffs = null, string? objName = null, string? propName = null)
+  private static bool CmpRgbColorModelHex(DX.OpenXmlCompositeElement openXmlElement, DMD.RgbColorModelHex? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return DMXD.RgbColorModelHexConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.RgbColorModelHex>(), value, diffs, objName, propName);
   }
   
-  private static void SetRgbColorModelHex(DXO16DCD.MinColorSolidColorFillProperties openXmlElement, DMD.RgbColorModelHex? value)
+  private static void SetRgbColorModelHex(DX.OpenXmlCompositeElement openXmlElement, DMD.RgbColorModelHex? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXD.RgbColorModelHex>();
     if (itemElement != null)
@@ -57,7 +57,7 @@ public static class MinColorSolidColorFillPropertiesConverter
     }
   }
   
-  private static DMD.HslColor? GetHslColor(DXO16DCD.MinColorSolidColorFillProperties openXmlElement)
+  private static DMD.HslColor? GetHslColor(DX.OpenXmlCompositeElement openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXD.HslColor>();
     if (element != null)
@@ -65,25 +65,25 @@ public static class MinColorSolidColorFillPropertiesConverter
     return null;
   }
   
-  private static bool CmpHslColor(DXO16DCD.MinColorSolidColorFillProperties openXmlElement, DMD.HslColor? value, DiffList? diffs = null, string? objName = null, string? propName = null)
+  private static bool CmpHslColor(DX.OpenXmlCompositeElement openXmlElement, DMD.HslColor? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return DMXD.HslColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.HslColor>(), value, diffs, objName, propName);
   }
   
-  private static void SetHslColor(DXO16DCD.MinColorSolidColorFillProperties openXmlElement, DMD.HslColor? value)
+  private static void SetHslColor(DX.OpenXmlCompositeElement openXmlElement, DMD.HslColor? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXD.HslColor>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXD.HslColorConverter.CreateOpenXmlElement<DXD.HslColor>(value);
+      itemElement = DMXD.HslColorConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AppendChild(itemElement);
     }
   }
   
-  private static DMD.SystemColor? GetSystemColor(DXO16DCD.MinColorSolidColorFillProperties openXmlElement)
+  private static DMD.SystemColor? GetSystemColor(DX.OpenXmlCompositeElement openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXD.SystemColor>();
     if (element != null)
@@ -91,25 +91,24 @@ public static class MinColorSolidColorFillPropertiesConverter
     return null;
   }
   
-  private static bool CmpSystemColor(DXO16DCD.MinColorSolidColorFillProperties openXmlElement, DMD.SystemColor? value, DiffList? diffs = null, string? objName = null, string? propName = null)
+  private static bool CmpSystemColor(DX.OpenXmlCompositeElement openXmlElement, DMD.SystemColor? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return DMXD.SystemColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.SystemColor>(), value, diffs, objName, propName);
   }
   
-  private static void SetSystemColor(DXO16DCD.MinColorSolidColorFillProperties openXmlElement, DMD.SystemColor? value)
+  private static void SetSystemColor(DX.OpenXmlCompositeElement openXmlElement, DMD.SystemColor? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXD.SystemColor>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXD.SystemColorConverter.CreateOpenXmlElement<DXD.SystemColor>(value);
+      itemElement = DMXD.SystemColorConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AppendChild(itemElement);
     }
   }
-  
-  private static DMD.SchemeColor? GetSchemeColor(DXO16DCD.MinColorSolidColorFillProperties openXmlElement)
+  private static DMD.SchemeColor? GetSchemeColor(DX.OpenXmlCompositeElement openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXD.SchemeColor>();
     if (element != null)
@@ -117,25 +116,25 @@ public static class MinColorSolidColorFillPropertiesConverter
     return null;
   }
   
-  private static bool CmpSchemeColor(DXO16DCD.MinColorSolidColorFillProperties openXmlElement, DMD.SchemeColor? value, DiffList? diffs = null, string? objName = null, string? propName = null)
+  private static bool CmpSchemeColor(DX.OpenXmlCompositeElement openXmlElement, DMD.SchemeColor? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return DMXD.SchemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.SchemeColor>(), value, diffs, objName, propName);
   }
   
-  private static void SetSchemeColor(DXO16DCD.MinColorSolidColorFillProperties openXmlElement, DMD.SchemeColor? value)
+  private static void SetSchemeColor(DX.OpenXmlCompositeElement openXmlElement, DMD.SchemeColor? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXD.SchemeColor>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXD.SchemeColorConverter.CreateOpenXmlElement<DXD.SchemeColor>(value);
+      itemElement = DMXD.SchemeColorConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AppendChild(itemElement);
     }
   }
   
-  private static DMD.PresetColor? GetPresetColor(DXO16DCD.MinColorSolidColorFillProperties openXmlElement)
+  private static DMD.PresetColor? GetPresetColor(DX.OpenXmlCompositeElement openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXD.PresetColor>();
     if (element != null)
@@ -143,12 +142,12 @@ public static class MinColorSolidColorFillPropertiesConverter
     return null;
   }
   
-  private static bool CmpPresetColor(DXO16DCD.MinColorSolidColorFillProperties openXmlElement, DMD.PresetColor? value, DiffList? diffs = null, string? objName = null, string? propName = null)
+  private static bool CmpPresetColor(DX.OpenXmlCompositeElement openXmlElement, DMD.PresetColor? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return DMXD.PresetColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.PresetColor>(), value, diffs, objName, propName);
   }
   
-  private static void SetPresetColor(DXO16DCD.MinColorSolidColorFillProperties openXmlElement, DMD.PresetColor? value)
+  private static void SetPresetColor(DX.OpenXmlCompositeElement openXmlElement, DMD.PresetColor? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXD.PresetColor>();
     if (itemElement != null)
@@ -161,11 +160,11 @@ public static class MinColorSolidColorFillPropertiesConverter
     }
   }
   
-  public static DMDCDs.MinColorSolidColorFillProperties? CreateModelElement(DXO16DCD.MinColorSolidColorFillProperties? openXmlElement)
+  public static DMDCDs.SolidColorFillProperties? CreateModelElement(DX.OpenXmlCompositeElement? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDCDs.MinColorSolidColorFillProperties();
+      var value = new DMDCDs.SolidColorFillProperties();
       value.RgbColorModelPercentage = GetRgbColorModelPercentage(openXmlElement);
       value.RgbColorModelHex = GetRgbColorModelHex(openXmlElement);
       value.HslColor = GetHslColor(openXmlElement);
@@ -177,7 +176,7 @@ public static class MinColorSolidColorFillPropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO16DCD.MinColorSolidColorFillProperties? openXmlElement, DMDCDs.MinColorSolidColorFillProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
+  public static bool CompareModelElement(DX.OpenXmlCompositeElement? openXmlElement, DMDCDs.SolidColorFillProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
@@ -201,15 +200,15 @@ public static class MinColorSolidColorFillPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDCDs.MinColorSolidColorFillProperties value)
-    where OpenXmlElementType: DXO16DCD.MinColorSolidColorFillProperties, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDCDs.SolidColorFillProperties value)
+    where OpenXmlElementType: DX.OpenXmlCompositeElement, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO16DCD.MinColorSolidColorFillProperties openXmlElement, DMDCDs.MinColorSolidColorFillProperties value)
+  public static void UpdateOpenXmlElement(DX.OpenXmlCompositeElement openXmlElement, DMDCDs.SolidColorFillProperties value)
   {
     SetRgbColorModelPercentage(openXmlElement, value?.RgbColorModelPercentage);
     SetRgbColorModelHex(openXmlElement, value?.RgbColorModelHex);

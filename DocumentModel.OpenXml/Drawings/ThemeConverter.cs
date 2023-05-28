@@ -59,14 +59,16 @@ public static class ThemeConverter
   
   private static void SetThemeElements(DXD.Theme openXmlElement, DMD.ThemeElements? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXD.ThemeElements>();
-    if (itemElement != null)
-      itemElement.Remove();
+    var itemElements = openXmlElement.GetFirstChild<DXD.ThemeElements>();
+    if (itemElements != null/* && value != null*/)
+      itemElements.Remove();
+      //DMXD.ThemeElementsConverter.UpdateOpenXmlElement(itemElements, value);
+    //else
     if (value != null)
     {
-      itemElement = DMXD.ThemeElementsConverter.CreateOpenXmlElement<DXD.ThemeElements>(value);
-      if (itemElement != null)
-        openXmlElement.AppendChild(itemElement);
+      itemElements = DMXD.ThemeElementsConverter.CreateOpenXmlElement<DXD.ThemeElements>(value);
+      if (itemElements != null)
+        openXmlElement.AppendChild(itemElements);
     }
   }
   
