@@ -9,6 +9,7 @@ using Text = DocumentFormat.OpenXml.Drawing.Text;
 using System.Reflection;
 using System.Xml.Linq;
 using DocumentModel.OpenXml;
+using InvalidOperationException = System.InvalidOperationException;
 
 namespace ModelGen;
 
@@ -290,7 +291,7 @@ public class ConverterGenerator : BaseCodeGenerator
 
   private bool GenerateAcceptedPropertiesConversion(TypeInfo typeInfo, string? inNamespace)
   {
-    if (typeInfo.Name=="Rsids")
+    if (typeInfo.Name == "Rsids")
       TestTools.Stop();
     var ok = true;
     if (typeInfo.AcceptedProperties != null)
@@ -2078,9 +2079,10 @@ public class ConverterGenerator : BaseCodeGenerator
   private bool GenerateCollectionGetCode(PropInfo prop)
   {
     var origPropType = prop.PropertyType;
-    var origItemType = origPropType.GetGenericTypeArguments().FirstOrDefault();
-    if (origItemType != null)
+    var args = origPropType.GetGenericTypeArguments();
+    if (args.Length == 1)
     {
+      var origItemType = args[0];
       var origItemTypeName = origItemType.GetFullName(true);
       if (origItemTypeName.Name.EndsWith("Part"))
         return GenerateCollectionOfPartsGetCode(prop);
@@ -2090,15 +2092,18 @@ public class ConverterGenerator : BaseCodeGenerator
         return GenerateCollectionOfRelationshipGetCode(prop);
       return GenerateCollectionOfElementsGetCode(prop);
     }
+    else if (args.Length == 2)
+      return false;
     throw new InvalidOperationException($"Not supported propertyType {prop.PropertyType.Type} in GenerateCollectionGetCode");
   }
 
   private bool GenerateCollectionCmpCode(PropInfo prop)
   {
     var origPropType = prop.PropertyType;
-    var origItemType = origPropType.GetGenericTypeArguments().FirstOrDefault();
-    if (origItemType != null)
+    var args = origPropType.GetGenericTypeArguments();
+    if (args.Length == 1)
     {
+      var origItemType = args[0];
       var origItemTypeName = origItemType.GetFullName(true);
       if (origItemTypeName.Name.EndsWith("Part"))
         return GenerateCollectionOfPartsCmpCode(prop);
@@ -2108,15 +2113,18 @@ public class ConverterGenerator : BaseCodeGenerator
         return GenerateCollectionOfRelationshipCmpCode(prop);
       return GenerateCollectionOfElementsCmpCode(prop);
     }
+    else if (args.Length == 2)
+      return false;
     throw new InvalidOperationException($"Not supported propertyType {prop.PropertyType.Type} in GenerateCollectionCmpCode");
   }
 
   private bool GenerateCollectionSetCode(PropInfo prop)
   {
     var origPropType = prop.PropertyType;
-    var origItemType = origPropType.GetGenericTypeArguments().FirstOrDefault();
-    if (origItemType != null)
+    var args = origPropType.GetGenericTypeArguments();
+    if (args.Length == 1)
     {
+      var origItemType = args[0];
       var origItemTypeName = origItemType.GetFullName(true);
       if (origItemTypeName.Name.EndsWith("Part"))
         return GenerateCollectionOfPartsSetCode(prop);
@@ -2126,14 +2134,17 @@ public class ConverterGenerator : BaseCodeGenerator
         return GenerateCollectionOfRelationshipSetCode(prop);
       return GenerateCollectionOfElementsSetCode(prop);
     }
+    else if (args.Length == 2)
+      return false;
     throw new InvalidOperationException($"Not supported propertyType {prop.PropertyType.Type} in GenerateCollectionSetCode");
   }
+
   #endregion
 
   #region GenerateCollectionOfElements code
   private bool GenerateCollectionOfElementsGetCode(PropInfo prop)
   {
-    if (prop.Name=="Items")
+    if (prop.Name == "Items")
       TestTools.Stop();
     var origPropTypeName = prop.PropertyType.GetFullName(true);
     var origPropType = prop.PropertyType;
@@ -2420,7 +2431,7 @@ public class ConverterGenerator : BaseCodeGenerator
 
   private string ConverterGetMethodName(PropInfo prop)
   {
-    if (prop.Name=="Items" && prop.DeclaringType?.Name=="Rsids")
+    if (prop.Name == "Items" && prop.DeclaringType?.Name == "Rsids")
       TestTools.Stop();
     var targetPropType = prop.PropertyType.GetTargetType();
     var origPropType = prop.PropertyType;

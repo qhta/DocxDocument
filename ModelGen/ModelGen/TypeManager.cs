@@ -279,7 +279,13 @@ public static class TypeManager
   {
     if (!typeInfo.IsReflected)
       TypeReflector.WaitForReflection(typeInfo);
-    return TypeManager.GetRelatedTypes(typeInfo, Semantics.GenericTypeArg).ToArray();
+    var args = TypeManager.GetRelatedTypes(typeInfo, Semantics.GenericTypeArg).ToArray();
+    if (args.Length != 0)
+      return args;
+    var baseType = typeInfo.BaseTypeInfo;
+    if (baseType != null)
+      return GetGenericTypeArguments(baseType);
+    return new TypeInfo[0];
   }
 
   public static TypeInfo[] GetGenericParamTypes(this TypeInfo typeInfo)

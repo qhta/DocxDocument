@@ -1,0 +1,3 @@
+is_global = true
+build_property.RootNamespace = DocumentModel.Internal.Impl
+build_property.ProjectDir = D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.Internal.Impl\

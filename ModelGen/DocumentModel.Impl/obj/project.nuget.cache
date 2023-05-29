@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "dgSpecHash": "iHmGiOHVS10GUSANiSxUc1U62DsrP4OW2uLfPcAYHJAu+8K/vcbd4BaTWwigHx7LD7ISn63PlW5gWX97LrFn8Q==",
+  "success": false,
+  "projectFilePath": "D:\\VS\\Projects\\DocxDocument\\ModelGen\\DocumentModel.Impl\\DocumentModel.Impl.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\qhta1\\.nuget\\packages\\documentformat.openxml\\2.19.0\\documentformat.openxml.2.19.0.nupkg.sha512",
+    "C:\\Users\\qhta1\\.nuget\\packages\\system.io.packaging\\7.0.0\\system.io.packaging.7.0.0.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "Unable to find project 'D:\\VS\\Projects\\DocxDocument\\ModelGen\\DocumentModel\\DocumentModel.csproj'. Check that the project reference is valid and that the project file exists.",
+      "libraryId": "D:\\VS\\Projects\\DocxDocument\\ModelGen\\DocumentModel\\DocumentModel.csproj",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "Unable to find project 'D:\\VS\\Projects\\DocxDocument\\ModelGen\\DocumentModel.BaseTypes.Impl\\DocumentModel.BaseTypes.Impl.csproj'. Check that the project reference is valid and that the project file exists.",
+      "libraryId": "D:\\VS\\Projects\\DocxDocument\\ModelGen\\DocumentModel.BaseTypes.Impl\\DocumentModel.BaseTypes.Impl.csproj",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
+}

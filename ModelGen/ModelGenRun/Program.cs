@@ -34,7 +34,7 @@ public static class Program
       filePath = filePath.Substring(0, index);
     filePath = Path.GetDirectoryName(filePath) ?? "";
     filePath = Path.GetDirectoryName(filePath) ?? "";
-    filePath = Path.Combine(filePath, "DocumentModel");
+    filePath = Path.Combine(filePath, @"ModelGen\DocumentModel");
     var creator = new ConverterCreator("DocumentModel", filePath);
     creator.RunOn(type);
   }
