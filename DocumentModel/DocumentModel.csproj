@@ -66,5 +66,6 @@
 
   <ItemGroup>
     <Folder Include="Colors\Drawings\" />
+    <Folder Include="Drawings.Diagram2\Classes\" />
   </ItemGroup>
 </Project>

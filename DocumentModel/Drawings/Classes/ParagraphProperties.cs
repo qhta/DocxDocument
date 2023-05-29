@@ -1,42 +1,77 @@
 namespace DocumentModel.Drawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   Text Paragraph Properties.
+///   Defines the TextParagraphPropertiesType Class.
 /// </summary>
 public class ParagraphProperties: ModelElement
 {
+  /// <summary>
+  ///   Left Margin
+  /// </summary>
+  public Int32? LeftMargin { get; set; }
+
+  /// <summary>
+  ///   Right Margin
+  /// </summary>
+  public Int32? RightMargin { get; set; }
+
+  /// <summary>
+  ///   Level
+  /// </summary>
+  public Int32? Level { get; set; }
+
+  /// <summary>
+  ///   Indent
+  /// </summary>
+  public Int32? Indent { get; set; }
+
+  /// <summary>
+  ///   Alignment
+  /// </summary>
+  public TextAlignmentKind? Alignment { get; set; }
+
+  /// <summary>
+  ///   Default Tab Size
+  /// </summary>
+  public Int32? DefaultTabSize { get; set; }
+
+  /// <summary>
+  ///   Right To Left
+  /// </summary>
+  public bool? RightToLeft { get; set; }
+
+  /// <summary>
+  ///   East Asian Line Break
+  /// </summary>
+  public bool? EastAsianLineBreak { get; set; }
+
+  /// <summary>
+  ///   Font Alignment
+  /// </summary>
+  public TextFontAlignmentKind? FontAlignment { get; set; }
+
+  /// <summary>
+  ///   Latin Line Break
+  /// </summary>
+  public bool? LatinLineBreak { get; set; }
+
+  /// <summary>
+  ///   Hanging Punctuation
+  /// </summary>
+  public bool? Height { get; set; }
+
+  /// <summary>
+  ///   Line Spacing.
+  /// </summary>
   public LineSpacing? LineSpacing { get; set; }
 
+  /// <summary>
+  ///   Space Before.
+  /// </summary>
   public SpaceBefore? SpaceBefore { get; set; }
 
+  /// <summary>
+  ///   Space After.
+  /// </summary>
   public SpaceAfter? SpaceAfter { get; set; }
-
-  public bool? BulletColorText { get; set; }
-
-  public BulletColor? BulletColor { get; set; }
-
-  public bool? BulletSizeText { get; set; }
-
-  public Int32? BulletSizePercentage { get; set; }
-
-  public Int32? BulletSizePoints { get; set; }
-
-  public bool? BulletFontText { get; set; }
-
-  public TextFontType? BulletFont { get; set; }
-
-  public bool? NoBullet { get; set; }
-
-  public AutoNumberedBullet? AutoNumberedBullet { get; set; }
-
-  public CharacterBullet? CharacterBullet { get; set; }
-
-  public PictureBullet? PictureBullet { get; set; }
-
-  public TabStopList? TabStopList { get; set; }
-
-  public DefaultRunProperties? DefaultRunProperties { get; set; }
-
-  public ExtensionList? ExtensionList { get; set; }
 }

@@ -40,6 +40,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Drawings.Diagram2\" />
     <Folder Include="Wordprocessing\Frames and framesets\" />
     <Folder Include="Wordprocessing\VBA\" />
     <Folder Include="Wordprocessing\Ruby\" />

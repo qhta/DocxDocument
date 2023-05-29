@@ -48,76 +48,80 @@ public static class DiagramDefinitionExtensionConverter
         openXmlElement.AppendChild(itemElement);
     }
   }
-  
-  private static DMDD2.TextListStyleType? GetTextListStyleType(DXDD.DiagramDefinitionExtension openXmlElement)
+
+  #region TextListStyleType conversion.
+  private static DMD.ListStyle? GetTextListStyleType(DXDD.DiagramDefinitionExtension openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXO19DD12.TextListStyleType>();
     if (element != null)
-      return DMXDD2.TextListStyleTypeConverter.CreateModelElement(element);
+      return DMXD.ListStyleConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpTextListStyleType(DXDD.DiagramDefinitionExtension openXmlElement, DMDD2.TextListStyleType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
+  private static bool CmpTextListStyleType(DXDD.DiagramDefinitionExtension openXmlElement, DMD.ListStyle? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDD2.TextListStyleTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO19DD12.TextListStyleType>(), value, diffs, objName, propName);
+    return DMXD.ListStyleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO19DD12.TextListStyleType>(), value, diffs, objName, propName);
   }
   
-  private static void SetTextListStyleType(DXDD.DiagramDefinitionExtension openXmlElement, DMDD2.TextListStyleType? value)
+  private static void SetTextListStyleType(DXDD.DiagramDefinitionExtension openXmlElement, DMD.ListStyle? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXO19DD12.TextListStyleType>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDD2.TextListStyleTypeConverter.CreateOpenXmlElement<DXO19DD12.TextListStyleType>(value);
+      itemElement = DMXD.ListStyleConverter.CreateOpenXmlElement<DXO19DD12.TextListStyleType>(value);
       if (itemElement != null)
         openXmlElement.AppendChild(itemElement);
     }
   }
-  
+  #endregion
+
+  #region DiagramDefinitionExtension model conversion.
   public static DMDD.DiagramDefinitionExtension? CreateModelElement(DXDD.DiagramDefinitionExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDD.DiagramDefinitionExtension();
-      value.Uri = GetUri(openXmlElement);
-      value.NumberDiagramInfoList = GetNumberDiagramInfoList(openXmlElement);
-      value.TextListStyleType = GetTextListStyleType(openXmlElement);
-      return value;
+      var model = new DMDD.DiagramDefinitionExtension();
+      model.Uri = GetUri(openXmlElement);
+      model.NumberDiagramInfoList = GetNumberDiagramInfoList(openXmlElement);
+      model.TextListStyleType = GetTextListStyleType(openXmlElement);
+      return model;
     }
     return null;
   }
   
-  public static bool CompareModelElement(DXDD.DiagramDefinitionExtension? openXmlElement, DMDD.DiagramDefinitionExtension? value, DiffList? diffs = null, string? objName = null, string? propName = null)
+  public static bool CompareModelElement(DXDD.DiagramDefinitionExtension? openXmlElement, DMDD.DiagramDefinitionExtension? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpUri(openXmlElement, value.Uri, diffs, objName, propName))
+      if (!CmpUri(openXmlElement, model.Uri, diffs, objName, propName))
         ok = false;
-      if (!CmpNumberDiagramInfoList(openXmlElement, value.NumberDiagramInfoList, diffs, objName, propName))
+      if (!CmpNumberDiagramInfoList(openXmlElement, model.NumberDiagramInfoList, diffs, objName, propName))
         ok = false;
-      if (!CmpTextListStyleType(openXmlElement, value.TextListStyleType, diffs, objName, propName))
+      if (!CmpTextListStyleType(openXmlElement, model.TextListStyleType, diffs, objName, propName))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDD.DiagramDefinitionExtension value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDD.DiagramDefinitionExtension model)
     where OpenXmlElementType: DXDD.DiagramDefinitionExtension, new()
   {
     var openXmlElement = new OpenXmlElementType();
-    UpdateOpenXmlElement(openXmlElement, value);
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDD.DiagramDefinitionExtension openXmlElement, DMDD.DiagramDefinitionExtension value)
+  public static void UpdateOpenXmlElement(DXDD.DiagramDefinitionExtension openXmlElement, DMDD.DiagramDefinitionExtension model)
   {
-    SetUri(openXmlElement, value?.Uri);
-    SetNumberDiagramInfoList(openXmlElement, value?.NumberDiagramInfoList);
-    SetTextListStyleType(openXmlElement, value?.TextListStyleType);
+    SetUri(openXmlElement, model.Uri);
+    SetNumberDiagramInfoList(openXmlElement, model.NumberDiagramInfoList);
+    SetTextListStyleType(openXmlElement, model.TextListStyleType);
   }
+  #endregion
 }

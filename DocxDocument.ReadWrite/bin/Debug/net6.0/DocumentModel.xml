@@ -16029,66 +16029,6 @@
               parTrans.
             </summary>
         </member>
-        <member name="T:DocumentModel.Drawings.Diagram2.TextListStyleType">
-            <summary>
-              Defines the TextListStyleType Class.
-            </summary>
-        </member>
-        <member name="P:DocumentModel.Drawings.Diagram2.TextListStyleType.DefaultParagraphProperties">
-            <summary>
-              Default Paragraph Style.
-            </summary>
-        </member>
-        <member name="P:DocumentModel.Drawings.Diagram2.TextListStyleType.Level1ParagraphProperties">
-            <summary>
-              List Level 1 Text Style.
-            </summary>
-        </member>
-        <member name="P:DocumentModel.Drawings.Diagram2.TextListStyleType.Level2ParagraphProperties">
-            <summary>
-              List Level 2 Text Style.
-            </summary>
-        </member>
-        <member name="P:DocumentModel.Drawings.Diagram2.TextListStyleType.Level3ParagraphProperties">
-            <summary>
-              List Level 3 Text Style.
-            </summary>
-        </member>
-        <member name="P:DocumentModel.Drawings.Diagram2.TextListStyleType.Level4ParagraphProperties">
-            <summary>
-              List Level 4 Text Style.
-            </summary>
-        </member>
-        <member name="P:DocumentModel.Drawings.Diagram2.TextListStyleType.Level5ParagraphProperties">
-            <summary>
-              List Level 5 Text Style.
-            </summary>
-        </member>
-        <member name="P:DocumentModel.Drawings.Diagram2.TextListStyleType.Level6ParagraphProperties">
-            <summary>
-              List Level 6 Text Style.
-            </summary>
-        </member>
-        <member name="P:DocumentModel.Drawings.Diagram2.TextListStyleType.Level7ParagraphProperties">
-            <summary>
-              List Level 7 Text Style.
-            </summary>
-        </member>
-        <member name="P:DocumentModel.Drawings.Diagram2.TextListStyleType.Level8ParagraphProperties">
-            <summary>
-              List Level 8 Text Style.
-            </summary>
-        </member>
-        <member name="P:DocumentModel.Drawings.Diagram2.TextListStyleType.Level9ParagraphProperties">
-            <summary>
-              List Level 9 Text Style.
-            </summary>
-        </member>
-        <member name="P:DocumentModel.Drawings.Diagram2.TextListStyleType.ExtensionList">
-            <summary>
-              ExtensionList.
-            </summary>
-        </member>
         <member name="T:DocumentModel.Drawings.Diagrams.Adjust">
             <summary>
               Shape Adjust.
@@ -21454,11 +21394,6 @@
               URI
             </summary>
         </member>
-        <member name="T:DocumentModel.Drawings.DefaultParagraphProperties">
-            <summary>
-              Default Paragraph Style.
-            </summary>
-        </member>
         <member name="T:DocumentModel.Drawings.DefaultRunProperties">
             <summary>
               Default Text Run Properties.
@@ -22677,51 +22612,6 @@
               Preset Color.
             </summary>
         </member>
-        <member name="T:DocumentModel.Drawings.Level1ParagraphProperties">
-            <summary>
-              List Level 1 Text Style.
-            </summary>
-        </member>
-        <member name="T:DocumentModel.Drawings.Level2ParagraphProperties">
-            <summary>
-              List Level 2 Text Style.
-            </summary>
-        </member>
-        <member name="T:DocumentModel.Drawings.Level3ParagraphProperties">
-            <summary>
-              List Level 3 Text Style.
-            </summary>
-        </member>
-        <member name="T:DocumentModel.Drawings.Level4ParagraphProperties">
-            <summary>
-              List Level 4 Text Style.
-            </summary>
-        </member>
-        <member name="T:DocumentModel.Drawings.Level5ParagraphProperties">
-            <summary>
-              List Level 5 Text Style.
-            </summary>
-        </member>
-        <member name="T:DocumentModel.Drawings.Level6ParagraphProperties">
-            <summary>
-              List Level 6 Text Style.
-            </summary>
-        </member>
-        <member name="T:DocumentModel.Drawings.Level7ParagraphProperties">
-            <summary>
-              List Level 7 Text Style.
-            </summary>
-        </member>
-        <member name="T:DocumentModel.Drawings.Level8ParagraphProperties">
-            <summary>
-              List Level 8 Text Style.
-            </summary>
-        </member>
-        <member name="T:DocumentModel.Drawings.Level9ParagraphProperties">
-            <summary>
-              List Level 9 Text Style.
-            </summary>
-        </member>
         <member name="T:DocumentModel.Drawings.LightRig">
             <summary>
               Light Rig.
@@ -23284,7 +23174,77 @@
         </member>
         <member name="T:DocumentModel.Drawings.ParagraphProperties">
             <summary>
-              Text Paragraph Properties.
+              Defines the TextParagraphPropertiesType Class.
+            </summary>
+        </member>
+        <member name="P:DocumentModel.Drawings.ParagraphProperties.LeftMargin">
+            <summary>
+              Left Margin
+            </summary>
+        </member>
+        <member name="P:DocumentModel.Drawings.ParagraphProperties.RightMargin">
+            <summary>
+              Right Margin
+            </summary>
+        </member>
+        <member name="P:DocumentModel.Drawings.ParagraphProperties.Level">
+            <summary>
+              Level
+            </summary>
+        </member>
+        <member name="P:DocumentModel.Drawings.ParagraphProperties.Indent">
+            <summary>
+              Indent
+            </summary>
+        </member>
+        <member name="P:DocumentModel.Drawings.ParagraphProperties.Alignment">
+            <summary>
+              Alignment
+            </summary>
+        </member>
+        <member name="P:DocumentModel.Drawings.ParagraphProperties.DefaultTabSize">
+            <summary>
+              Default Tab Size
+            </summary>
+        </member>
+        <member name="P:DocumentModel.Drawings.ParagraphProperties.RightToLeft">
+            <summary>
+              Right To Left
+            </summary>
+        </member>
+        <member name="P:DocumentModel.Drawings.ParagraphProperties.EastAsianLineBreak">
+            <summary>
+              East Asian Line Break
+            </summary>
+        </member>
+        <member name="P:DocumentModel.Drawings.ParagraphProperties.FontAlignment">
+            <summary>
+              Font Alignment
+            </summary>
+        </member>
+        <member name="P:DocumentModel.Drawings.ParagraphProperties.LatinLineBreak">
+            <summary>
+              Latin Line Break
+            </summary>
+        </member>
+        <member name="P:DocumentModel.Drawings.ParagraphProperties.Height">
+            <summary>
+              Hanging Punctuation
+            </summary>
+        </member>
+        <member name="P:DocumentModel.Drawings.ParagraphProperties.LineSpacing">
+            <summary>
+              Line Spacing.
+            </summary>
+        </member>
+        <member name="P:DocumentModel.Drawings.ParagraphProperties.SpaceBefore">
+            <summary>
+              Space Before.
+            </summary>
+        </member>
+        <member name="P:DocumentModel.Drawings.ParagraphProperties.SpaceAfter">
+            <summary>
+              Space After.
             </summary>
         </member>
         <member name="T:DocumentModel.Drawings.Path">
@@ -24375,81 +24335,6 @@
         <member name="P:DocumentModel.Drawings.TextFontType.CharacterSet">
             <summary>
               Similar Character Set
-            </summary>
-        </member>
-        <member name="T:DocumentModel.Drawings.TextParagraphPropertiesType">
-            <summary>
-              Defines the TextParagraphPropertiesType Class.
-            </summary>
-        </member>
-        <member name="P:DocumentModel.Drawings.TextParagraphPropertiesType.LeftMargin">
-            <summary>
-              Left Margin
-            </summary>
-        </member>
-        <member name="P:DocumentModel.Drawings.TextParagraphPropertiesType.RightMargin">
-            <summary>
-              Right Margin
-            </summary>
-        </member>
-        <member name="P:DocumentModel.Drawings.TextParagraphPropertiesType.Level">
-            <summary>
-              Level
-            </summary>
-        </member>
-        <member name="P:DocumentModel.Drawings.TextParagraphPropertiesType.Indent">
-            <summary>
-              Indent
-            </summary>
-        </member>
-        <member name="P:DocumentModel.Drawings.TextParagraphPropertiesType.Alignment">
-            <summary>
-              Alignment
-            </summary>
-        </member>
-        <member name="P:DocumentModel.Drawings.TextParagraphPropertiesType.DefaultTabSize">
-            <summary>
-              Default Tab Size
-            </summary>
-        </member>
-        <member name="P:DocumentModel.Drawings.TextParagraphPropertiesType.RightToLeft">
-            <summary>
-              Right To Left
-            </summary>
-        </member>
-        <member name="P:DocumentModel.Drawings.TextParagraphPropertiesType.EastAsianLineBreak">
-            <summary>
-              East Asian Line Break
-            </summary>
-        </member>
-        <member name="P:DocumentModel.Drawings.TextParagraphPropertiesType.FontAlignment">
-            <summary>
-              Font Alignment
-            </summary>
-        </member>
-        <member name="P:DocumentModel.Drawings.TextParagraphPropertiesType.LatinLineBreak">
-            <summary>
-              Latin Line Break
-            </summary>
-        </member>
-        <member name="P:DocumentModel.Drawings.TextParagraphPropertiesType.Height">
-            <summary>
-              Hanging Punctuation
-            </summary>
-        </member>
-        <member name="P:DocumentModel.Drawings.TextParagraphPropertiesType.LineSpacing">
-            <summary>
-              Line Spacing.
-            </summary>
-        </member>
-        <member name="P:DocumentModel.Drawings.TextParagraphPropertiesType.SpaceBefore">
-            <summary>
-              Space Before.
-            </summary>
-        </member>
-        <member name="P:DocumentModel.Drawings.TextParagraphPropertiesType.SpaceAfter">
-            <summary>
-              Space After.
             </summary>
         </member>
         <member name="T:DocumentModel.Drawings.TextSpacingType">

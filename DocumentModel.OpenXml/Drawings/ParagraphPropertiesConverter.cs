@@ -1,11 +1,242 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Text Paragraph Properties.
+/// Defines the TextParagraphPropertiesType Class.
 /// </summary>
 public static class ParagraphPropertiesConverter
 {
-  private static DMD.LineSpacing? GetLineSpacing(DXD.ParagraphProperties openXmlElement)
+  /// <summary>
+  /// Left Margin
+  /// </summary>
+  private static Int32? GetLeftMargin(DXD.TextParagraphPropertiesType openXmlElement)
+  {
+    return openXmlElement?.LeftMargin?.Value;
+  }
+  
+  private static bool CmpLeftMargin(DXD.TextParagraphPropertiesType openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
+  {
+    if (openXmlElement?.LeftMargin?.Value == value) return true;
+    diffs?.Add(objName, "LeftMargin", openXmlElement?.LeftMargin?.Value, value);
+    return false;
+  }
+  
+  private static void SetLeftMargin(DXD.TextParagraphPropertiesType openXmlElement, Int32? value)
+  {
+    openXmlElement.LeftMargin = value;
+  }
+  
+  /// <summary>
+  /// Right Margin
+  /// </summary>
+  private static Int32? GetRightMargin(DXD.TextParagraphPropertiesType openXmlElement)
+  {
+    return openXmlElement?.RightMargin?.Value;
+  }
+  
+  private static bool CmpRightMargin(DXD.TextParagraphPropertiesType openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
+  {
+    if (openXmlElement?.RightMargin?.Value == value) return true;
+    diffs?.Add(objName, "RightMargin", openXmlElement?.RightMargin?.Value, value);
+    return false;
+  }
+  
+  private static void SetRightMargin(DXD.TextParagraphPropertiesType openXmlElement, Int32? value)
+  {
+    openXmlElement.RightMargin = value;
+  }
+  
+  /// <summary>
+  /// Level
+  /// </summary>
+  private static Int32? GetLevel(DXD.TextParagraphPropertiesType openXmlElement)
+  {
+    return openXmlElement?.Level?.Value;
+  }
+  
+  private static bool CmpLevel(DXD.TextParagraphPropertiesType openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
+  {
+    if (openXmlElement?.Level?.Value == value) return true;
+    diffs?.Add(objName, "Level", openXmlElement?.Level?.Value, value);
+    return false;
+  }
+  
+  private static void SetLevel(DXD.TextParagraphPropertiesType openXmlElement, Int32? value)
+  {
+    openXmlElement.Level = value;
+  }
+  
+  /// <summary>
+  /// Indent
+  /// </summary>
+  private static Int32? GetIndent(DXD.TextParagraphPropertiesType openXmlElement)
+  {
+    return openXmlElement?.Indent?.Value;
+  }
+  
+  private static bool CmpIndent(DXD.TextParagraphPropertiesType openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
+  {
+    if (openXmlElement?.Indent?.Value == value) return true;
+    diffs?.Add(objName, "Indent", openXmlElement?.Indent?.Value, value);
+    return false;
+  }
+  
+  private static void SetIndent(DXD.TextParagraphPropertiesType openXmlElement, Int32? value)
+  {
+    openXmlElement.Indent = value;
+  }
+  
+  /// <summary>
+  /// Alignment
+  /// </summary>
+  private static DMD.TextAlignmentKind? GetAlignment(DXD.TextParagraphPropertiesType openXmlElement)
+  {
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.TextAlignmentTypeValues, DMD.TextAlignmentKind>(openXmlElement?.Alignment?.Value);
+  }
+  
+  private static bool CmpAlignment(DXD.TextParagraphPropertiesType openXmlElement, DMD.TextAlignmentKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.TextAlignmentTypeValues, DMD.TextAlignmentKind>(openXmlElement?.Alignment?.Value, value, diffs, objName, propName);
+  }
+  
+  private static void SetAlignment(DXD.TextParagraphPropertiesType openXmlElement, DMD.TextAlignmentKind? value)
+  {
+    openXmlElement.Alignment = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.TextAlignmentTypeValues, DMD.TextAlignmentKind>(value);
+  }
+  
+  /// <summary>
+  /// Default Tab Size
+  /// </summary>
+  private static Int32? GetDefaultTabSize(DXD.TextParagraphPropertiesType openXmlElement)
+  {
+    return openXmlElement?.DefaultTabSize?.Value;
+  }
+  
+  private static bool CmpDefaultTabSize(DXD.TextParagraphPropertiesType openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
+  {
+    if (openXmlElement?.DefaultTabSize?.Value == value) return true;
+    diffs?.Add(objName, "DefaultTabSize", openXmlElement?.DefaultTabSize?.Value, value);
+    return false;
+  }
+  
+  private static void SetDefaultTabSize(DXD.TextParagraphPropertiesType openXmlElement, Int32? value)
+  {
+    openXmlElement.DefaultTabSize = value;
+  }
+  
+  /// <summary>
+  /// Right To Left
+  /// </summary>
+  private static Boolean? GetRightToLeft(DXD.TextParagraphPropertiesType openXmlElement)
+  {
+    return openXmlElement?.RightToLeft?.Value;
+  }
+  
+  private static bool CmpRightToLeft(DXD.TextParagraphPropertiesType openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
+  {
+    if (openXmlElement?.RightToLeft?.Value == value) return true;
+    diffs?.Add(objName, "RightToLeft", openXmlElement?.RightToLeft?.Value, value);
+    return false;
+  }
+  
+  private static void SetRightToLeft(DXD.TextParagraphPropertiesType openXmlElement, Boolean? value)
+  {
+    if (value != null)
+      openXmlElement.RightToLeft = new BooleanValue { Value = (Boolean)value };
+    else
+      openXmlElement.RightToLeft = null;
+  }
+  
+  /// <summary>
+  /// East Asian Line Break
+  /// </summary>
+  private static Boolean? GetEastAsianLineBreak(DXD.TextParagraphPropertiesType openXmlElement)
+  {
+    return openXmlElement?.EastAsianLineBreak?.Value;
+  }
+  
+  private static bool CmpEastAsianLineBreak(DXD.TextParagraphPropertiesType openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
+  {
+    if (openXmlElement?.EastAsianLineBreak?.Value == value) return true;
+    diffs?.Add(objName, "EastAsianLineBreak", openXmlElement?.EastAsianLineBreak?.Value, value);
+    return false;
+  }
+  
+  private static void SetEastAsianLineBreak(DXD.TextParagraphPropertiesType openXmlElement, Boolean? value)
+  {
+    if (value != null)
+      openXmlElement.EastAsianLineBreak = new BooleanValue { Value = (Boolean)value };
+    else
+      openXmlElement.EastAsianLineBreak = null;
+  }
+  
+  /// <summary>
+  /// Font Alignment
+  /// </summary>
+  private static DMD.TextFontAlignmentKind? GetFontAlignment(DXD.TextParagraphPropertiesType openXmlElement)
+  {
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.TextFontAlignmentValues, DMD.TextFontAlignmentKind>(openXmlElement?.FontAlignment?.Value);
+  }
+  
+  private static bool CmpFontAlignment(DXD.TextParagraphPropertiesType openXmlElement, DMD.TextFontAlignmentKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.TextFontAlignmentValues, DMD.TextFontAlignmentKind>(openXmlElement?.FontAlignment?.Value, value, diffs, objName, propName);
+  }
+  
+  private static void SetFontAlignment(DXD.TextParagraphPropertiesType openXmlElement, DMD.TextFontAlignmentKind? value)
+  {
+    openXmlElement.FontAlignment = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.TextFontAlignmentValues, DMD.TextFontAlignmentKind>(value);
+  }
+  
+  /// <summary>
+  /// Latin Line Break
+  /// </summary>
+  private static Boolean? GetLatinLineBreak(DXD.TextParagraphPropertiesType openXmlElement)
+  {
+    return openXmlElement?.LatinLineBreak?.Value;
+  }
+  
+  private static bool CmpLatinLineBreak(DXD.TextParagraphPropertiesType openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
+  {
+    if (openXmlElement?.LatinLineBreak?.Value == value) return true;
+    diffs?.Add(objName, "LatinLineBreak", openXmlElement?.LatinLineBreak?.Value, value);
+    return false;
+  }
+  
+  private static void SetLatinLineBreak(DXD.TextParagraphPropertiesType openXmlElement, Boolean? value)
+  {
+    if (value != null)
+      openXmlElement.LatinLineBreak = new BooleanValue { Value = (Boolean)value };
+    else
+      openXmlElement.LatinLineBreak = null;
+  }
+  
+  /// <summary>
+  /// Hanging Punctuation
+  /// </summary>
+  private static Boolean? GetHeight(DXD.TextParagraphPropertiesType openXmlElement)
+  {
+    return openXmlElement?.Height?.Value;
+  }
+  
+  private static bool CmpHeight(DXD.TextParagraphPropertiesType openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
+  {
+    if (openXmlElement?.Height?.Value == value) return true;
+    diffs?.Add(objName, "Height", openXmlElement?.Height?.Value, value);
+    return false;
+  }
+  
+  private static void SetHeight(DXD.TextParagraphPropertiesType openXmlElement, Boolean? value)
+  {
+    if (value != null)
+      openXmlElement.Height = new BooleanValue { Value = (Boolean)value };
+    else
+      openXmlElement.Height = null;
+  }
+  
+  /// <summary>
+  /// Line Spacing.
+  /// </summary>
+  private static DMD.LineSpacing? GetLineSpacing(DXD.TextParagraphPropertiesType openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXD.LineSpacing>();
     if (element != null)
@@ -13,12 +244,12 @@ public static class ParagraphPropertiesConverter
     return null;
   }
   
-  private static bool CmpLineSpacing(DXD.ParagraphProperties openXmlElement, DMD.LineSpacing? value, DiffList? diffs = null, string? objName = null, string? propName = null)
+  private static bool CmpLineSpacing(DXD.TextParagraphPropertiesType openXmlElement, DMD.LineSpacing? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return DMXD.LineSpacingConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.LineSpacing>(), value, diffs, objName, propName);
   }
   
-  private static void SetLineSpacing(DXD.ParagraphProperties openXmlElement, DMD.LineSpacing? value)
+  private static void SetLineSpacing(DXD.TextParagraphPropertiesType openXmlElement, DMD.LineSpacing? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXD.LineSpacing>();
     if (itemElement != null)
@@ -31,7 +262,10 @@ public static class ParagraphPropertiesConverter
     }
   }
   
-  private static DMD.SpaceBefore? GetSpaceBefore(DXD.ParagraphProperties openXmlElement)
+  /// <summary>
+  /// Space Before.
+  /// </summary>
+  private static DMD.SpaceBefore? GetSpaceBefore(DXD.TextParagraphPropertiesType openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXD.SpaceBefore>();
     if (element != null)
@@ -39,12 +273,12 @@ public static class ParagraphPropertiesConverter
     return null;
   }
   
-  private static bool CmpSpaceBefore(DXD.ParagraphProperties openXmlElement, DMD.SpaceBefore? value, DiffList? diffs = null, string? objName = null, string? propName = null)
+  private static bool CmpSpaceBefore(DXD.TextParagraphPropertiesType openXmlElement, DMD.SpaceBefore? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return DMXD.SpaceBeforeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.SpaceBefore>(), value, diffs, objName, propName);
   }
   
-  private static void SetSpaceBefore(DXD.ParagraphProperties openXmlElement, DMD.SpaceBefore? value)
+  private static void SetSpaceBefore(DXD.TextParagraphPropertiesType openXmlElement, DMD.SpaceBefore? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXD.SpaceBefore>();
     if (itemElement != null)
@@ -57,7 +291,10 @@ public static class ParagraphPropertiesConverter
     }
   }
   
-  private static DMD.SpaceAfter? GetSpaceAfter(DXD.ParagraphProperties openXmlElement)
+  /// <summary>
+  /// Space After.
+  /// </summary>
+  private static DMD.SpaceAfter? GetSpaceAfter(DXD.TextParagraphPropertiesType openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXD.SpaceAfter>();
     if (element != null)
@@ -65,12 +302,12 @@ public static class ParagraphPropertiesConverter
     return null;
   }
   
-  private static bool CmpSpaceAfter(DXD.ParagraphProperties openXmlElement, DMD.SpaceAfter? value, DiffList? diffs = null, string? objName = null, string? propName = null)
+  private static bool CmpSpaceAfter(DXD.TextParagraphPropertiesType openXmlElement, DMD.SpaceAfter? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return DMXD.SpaceAfterConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.SpaceAfter>(), value, diffs, objName, propName);
   }
   
-  private static void SetSpaceAfter(DXD.ParagraphProperties openXmlElement, DMD.SpaceAfter? value)
+  private static void SetSpaceAfter(DXD.TextParagraphPropertiesType openXmlElement, DMD.SpaceAfter? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXD.SpaceAfter>();
     if (itemElement != null)
@@ -83,421 +320,62 @@ public static class ParagraphPropertiesConverter
     }
   }
   
-  private static Boolean? GetBulletColorText(DXD.ParagraphProperties openXmlElement)
-  {
-    return openXmlElement.GetFirstChild<DXD.BulletColorText>() != null;
-  }
-  
-  private static bool CmpBulletColorText(DXD.ParagraphProperties openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
-  {
-    var val = openXmlElement.GetFirstChild<DXD.BulletColorText>() != null;
-    if (val == value) return true;
-    diffs?.Add(objName, "DXD.BulletColorText", val, value);
-    return false;
-  }
-  
-  private static void SetBulletColorText(DXD.ParagraphProperties openXmlElement, Boolean? value)
-  {
-    if (value == false)
-    {
-      var itemElement = openXmlElement.GetFirstChild<DXD.BulletColorText>();
-      if (itemElement != null)
-        itemElement.Remove();
-    }
-    if (value == true)
-    {
-      var itemElement = new DXD.BulletColorText();
-      openXmlElement.AppendChild(itemElement);
-    }
-  }
-  
-  private static DMD.BulletColor? GetBulletColor(DXD.ParagraphProperties openXmlElement)
-  {
-    var element = openXmlElement?.GetFirstChild<DXD.BulletColor>();
-    if (element != null)
-      return DMXD.BulletColorConverter.CreateModelElement(element);
-    return null;
-  }
-  
-  private static bool CmpBulletColor(DXD.ParagraphProperties openXmlElement, DMD.BulletColor? value, DiffList? diffs = null, string? objName = null, string? propName = null)
-  {
-    return DMXD.BulletColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.BulletColor>(), value, diffs, objName, propName);
-  }
-  
-  private static void SetBulletColor(DXD.ParagraphProperties openXmlElement, DMD.BulletColor? value)
-  {
-    var itemElement = openXmlElement.GetFirstChild<DXD.BulletColor>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = DMXD.BulletColorConverter.CreateOpenXmlElement<DXD.BulletColor>(value);
-      if (itemElement != null)
-        openXmlElement.AppendChild(itemElement);
-    }
-  }
-  
-  private static Boolean? GetBulletSizeText(DXD.ParagraphProperties openXmlElement)
-  {
-    return openXmlElement.GetFirstChild<DXD.BulletSizeText>() != null;
-  }
-  
-  private static bool CmpBulletSizeText(DXD.ParagraphProperties openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
-  {
-    var val = openXmlElement.GetFirstChild<DXD.BulletSizeText>() != null;
-    if (val == value) return true;
-    diffs?.Add(objName, "DXD.BulletSizeText", val, value);
-    return false;
-  }
-  
-  private static void SetBulletSizeText(DXD.ParagraphProperties openXmlElement, Boolean? value)
-  {
-    if (value == false)
-    {
-      var itemElement = openXmlElement.GetFirstChild<DXD.BulletSizeText>();
-      if (itemElement != null)
-        itemElement.Remove();
-    }
-    if (value == true)
-    {
-      var itemElement = new DXD.BulletSizeText();
-      openXmlElement.AppendChild(itemElement);
-    }
-  }
-  
-  private static Int32? GetBulletSizePercentage(DXD.ParagraphProperties openXmlElement)
-  {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXD.BulletSizePercentage>()?.Val);
-  }
-  
-  private static bool CmpBulletSizePercentage(DXD.ParagraphProperties openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
-  {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXD.BulletSizePercentage>()?.Val, value, diffs, objName, "BulletSizePercentage");
-  }
-  
-  private static void SetBulletSizePercentage(DXD.ParagraphProperties openXmlElement, Int32? value)
-  {
-    SimpleValueConverter.SetValue<DXD.BulletSizePercentage,System.Int32>(openXmlElement, value);
-  }
-  
-  private static Int32? GetBulletSizePoints(DXD.ParagraphProperties openXmlElement)
-  {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXD.BulletSizePoints>()?.Val);
-  }
-  
-  private static bool CmpBulletSizePoints(DXD.ParagraphProperties openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
-  {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXD.BulletSizePoints>()?.Val, value, diffs, objName, "BulletSizePoints");
-  }
-  
-  private static void SetBulletSizePoints(DXD.ParagraphProperties openXmlElement, Int32? value)
-  {
-    SimpleValueConverter.SetValue<DXD.BulletSizePoints,System.Int32>(openXmlElement, value);
-  }
-  
-  private static Boolean? GetBulletFontText(DXD.ParagraphProperties openXmlElement)
-  {
-    return openXmlElement.GetFirstChild<DXD.BulletFontText>() != null;
-  }
-  
-  private static bool CmpBulletFontText(DXD.ParagraphProperties openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
-  {
-    var val = openXmlElement.GetFirstChild<DXD.BulletFontText>() != null;
-    if (val == value) return true;
-    diffs?.Add(objName, "DXD.BulletFontText", val, value);
-    return false;
-  }
-  
-  private static void SetBulletFontText(DXD.ParagraphProperties openXmlElement, Boolean? value)
-  {
-    if (value == false)
-    {
-      var itemElement = openXmlElement.GetFirstChild<DXD.BulletFontText>();
-      if (itemElement != null)
-        itemElement.Remove();
-    }
-    if (value == true)
-    {
-      var itemElement = new DXD.BulletFontText();
-      openXmlElement.AppendChild(itemElement);
-    }
-  }
-  
-  private static DMD.TextFontType? GetBulletFont(DXD.ParagraphProperties openXmlElement)
-  {
-    var element = openXmlElement?.GetFirstChild<DXD.BulletFont>();
-    if (element != null)
-      return DMXD.TextFontTypeConverter.CreateModelElement(element);
-    return null;
-  }
-  
-  private static bool CmpBulletFont(DXD.ParagraphProperties openXmlElement, DMD.TextFontType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
-  {
-    return DMXD.TextFontTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.BulletFont>(), value, diffs, objName, propName);
-  }
-  
-  private static void SetBulletFont(DXD.ParagraphProperties openXmlElement, DMD.TextFontType? value)
-  {
-    var itemElement = openXmlElement.GetFirstChild<DXD.BulletFont>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = DMXD.TextFontTypeConverter.CreateOpenXmlElement<DXD.BulletFont>(value);
-      if (itemElement != null)
-        openXmlElement.AppendChild(itemElement);
-    }
-  }
-  
-  private static Boolean? GetNoBullet(DXD.ParagraphProperties openXmlElement)
-  {
-    return openXmlElement.GetFirstChild<DXD.NoBullet>() != null;
-  }
-  
-  private static bool CmpNoBullet(DXD.ParagraphProperties openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
-  {
-    var val = openXmlElement.GetFirstChild<DXD.NoBullet>() != null;
-    if (val == value) return true;
-    diffs?.Add(objName, "DXD.NoBullet", val, value);
-    return false;
-  }
-  
-  private static void SetNoBullet(DXD.ParagraphProperties openXmlElement, Boolean? value)
-  {
-    if (value == false)
-    {
-      var itemElement = openXmlElement.GetFirstChild<DXD.NoBullet>();
-      if (itemElement != null)
-        itemElement.Remove();
-    }
-    if (value == true)
-    {
-      var itemElement = new DXD.NoBullet();
-      openXmlElement.AppendChild(itemElement);
-    }
-  }
-  
-  private static DMD.AutoNumberedBullet? GetAutoNumberedBullet(DXD.ParagraphProperties openXmlElement)
-  {
-    var element = openXmlElement?.GetFirstChild<DXD.AutoNumberedBullet>();
-    if (element != null)
-      return DMXD.AutoNumberedBulletConverter.CreateModelElement(element);
-    return null;
-  }
-  
-  private static bool CmpAutoNumberedBullet(DXD.ParagraphProperties openXmlElement, DMD.AutoNumberedBullet? value, DiffList? diffs = null, string? objName = null, string? propName = null)
-  {
-    return DMXD.AutoNumberedBulletConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.AutoNumberedBullet>(), value, diffs, objName, propName);
-  }
-  
-  private static void SetAutoNumberedBullet(DXD.ParagraphProperties openXmlElement, DMD.AutoNumberedBullet? value)
-  {
-    var itemElement = openXmlElement.GetFirstChild<DXD.AutoNumberedBullet>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = DMXD.AutoNumberedBulletConverter.CreateOpenXmlElement<DXD.AutoNumberedBullet>(value);
-      if (itemElement != null)
-        openXmlElement.AppendChild(itemElement);
-    }
-  }
-  
-  private static DMD.CharacterBullet? GetCharacterBullet(DXD.ParagraphProperties openXmlElement)
-  {
-    var element = openXmlElement?.GetFirstChild<DXD.CharacterBullet>();
-    if (element != null)
-      return DMXD.CharacterBulletConverter.CreateModelElement(element);
-    return null;
-  }
-  
-  private static bool CmpCharacterBullet(DXD.ParagraphProperties openXmlElement, DMD.CharacterBullet? value, DiffList? diffs = null, string? objName = null, string? propName = null)
-  {
-    return DMXD.CharacterBulletConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.CharacterBullet>(), value, diffs, objName, propName);
-  }
-  
-  private static void SetCharacterBullet(DXD.ParagraphProperties openXmlElement, DMD.CharacterBullet? value)
-  {
-    var itemElement = openXmlElement.GetFirstChild<DXD.CharacterBullet>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = DMXD.CharacterBulletConverter.CreateOpenXmlElement<DXD.CharacterBullet>(value);
-      if (itemElement != null)
-        openXmlElement.AppendChild(itemElement);
-    }
-  }
-  
-  private static DMD.PictureBullet? GetPictureBullet(DXD.ParagraphProperties openXmlElement)
-  {
-    var element = openXmlElement?.GetFirstChild<DXD.PictureBullet>();
-    if (element != null)
-      return DMXD.PictureBulletConverter.CreateModelElement(element);
-    return null;
-  }
-  
-  private static bool CmpPictureBullet(DXD.ParagraphProperties openXmlElement, DMD.PictureBullet? value, DiffList? diffs = null, string? objName = null, string? propName = null)
-  {
-    return DMXD.PictureBulletConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.PictureBullet>(), value, diffs, objName, propName);
-  }
-  
-  private static void SetPictureBullet(DXD.ParagraphProperties openXmlElement, DMD.PictureBullet? value)
-  {
-    var itemElement = openXmlElement.GetFirstChild<DXD.PictureBullet>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = DMXD.PictureBulletConverter.CreateOpenXmlElement<DXD.PictureBullet>(value);
-      if (itemElement != null)
-        openXmlElement.AppendChild(itemElement);
-    }
-  }
-  
-  private static DMD.TabStopList? GetTabStopList(DXD.ParagraphProperties openXmlElement)
-  {
-    var element = openXmlElement?.GetFirstChild<DXD.TabStopList>();
-    if (element != null)
-      return DMXD.TabStopListConverter.CreateModelElement(element);
-    return null;
-  }
-  
-  private static bool CmpTabStopList(DXD.ParagraphProperties openXmlElement, DMD.TabStopList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
-  {
-    return DMXD.TabStopListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.TabStopList>(), value, diffs, objName, propName);
-  }
-  
-  private static void SetTabStopList(DXD.ParagraphProperties openXmlElement, DMD.TabStopList? value)
-  {
-    var itemElement = openXmlElement.GetFirstChild<DXD.TabStopList>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = DMXD.TabStopListConverter.CreateOpenXmlElement<DXD.TabStopList>(value);
-      if (itemElement != null)
-        openXmlElement.AppendChild(itemElement);
-    }
-  }
-  
-  private static DMD.DefaultRunProperties? GetDefaultRunProperties(DXD.ParagraphProperties openXmlElement)
-  {
-    var element = openXmlElement?.GetFirstChild<DXD.DefaultRunProperties>();
-    if (element != null)
-      return DMXD.DefaultRunPropertiesConverter.CreateModelElement(element);
-    return null;
-  }
-  
-  private static bool CmpDefaultRunProperties(DXD.ParagraphProperties openXmlElement, DMD.DefaultRunProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
-  {
-    return DMXD.DefaultRunPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.DefaultRunProperties>(), value, diffs, objName, propName);
-  }
-  
-  private static void SetDefaultRunProperties(DXD.ParagraphProperties openXmlElement, DMD.DefaultRunProperties? value)
-  {
-    var itemElement = openXmlElement.GetFirstChild<DXD.DefaultRunProperties>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = DMXD.DefaultRunPropertiesConverter.CreateOpenXmlElement<DXD.DefaultRunProperties>(value);
-      if (itemElement != null)
-        openXmlElement.AppendChild(itemElement);
-    }
-  }
-  
-  private static DMD.ExtensionList? GetExtensionList(DXD.ParagraphProperties openXmlElement)
-  {
-    var element = openXmlElement?.GetFirstChild<DXD.ExtensionList>();
-    if (element != null)
-      return DMXD.ExtensionListConverter.CreateModelElement(element);
-    return null;
-  }
-  
-  private static bool CmpExtensionList(DXD.ParagraphProperties openXmlElement, DMD.ExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
-  {
-    return DMXD.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ExtensionList>(), value, diffs, objName, propName);
-  }
-  
-  private static void SetExtensionList(DXD.ParagraphProperties openXmlElement, DMD.ExtensionList? value)
-  {
-    var itemElement = openXmlElement.GetFirstChild<DXD.ExtensionList>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = DMXD.ExtensionListConverter.CreateOpenXmlElement<DXD.ExtensionList>(value);
-      if (itemElement != null)
-        openXmlElement.AppendChild(itemElement);
-    }
-  }
-  
-  public static DMD.ParagraphProperties? CreateModelElement(DXD.ParagraphProperties? openXmlElement)
+  public static DMD.ParagraphProperties? CreateModelElement(DXD.TextParagraphPropertiesType? openXmlElement)
   {
     if (openXmlElement != null)
     {
       var value = new DMD.ParagraphProperties();
+      value.LeftMargin = GetLeftMargin(openXmlElement);
+      value.RightMargin = GetRightMargin(openXmlElement);
+      value.Level = GetLevel(openXmlElement);
+      value.Indent = GetIndent(openXmlElement);
+      value.Alignment = GetAlignment(openXmlElement);
+      value.DefaultTabSize = GetDefaultTabSize(openXmlElement);
+      value.RightToLeft = GetRightToLeft(openXmlElement);
+      value.EastAsianLineBreak = GetEastAsianLineBreak(openXmlElement);
+      value.FontAlignment = GetFontAlignment(openXmlElement);
+      value.LatinLineBreak = GetLatinLineBreak(openXmlElement);
+      value.Height = GetHeight(openXmlElement);
       value.LineSpacing = GetLineSpacing(openXmlElement);
       value.SpaceBefore = GetSpaceBefore(openXmlElement);
       value.SpaceAfter = GetSpaceAfter(openXmlElement);
-      value.BulletColorText = GetBulletColorText(openXmlElement);
-      value.BulletColor = GetBulletColor(openXmlElement);
-      value.BulletSizeText = GetBulletSizeText(openXmlElement);
-      value.BulletSizePercentage = GetBulletSizePercentage(openXmlElement);
-      value.BulletSizePoints = GetBulletSizePoints(openXmlElement);
-      value.BulletFontText = GetBulletFontText(openXmlElement);
-      value.BulletFont = GetBulletFont(openXmlElement);
-      value.NoBullet = GetNoBullet(openXmlElement);
-      value.AutoNumberedBullet = GetAutoNumberedBullet(openXmlElement);
-      value.CharacterBullet = GetCharacterBullet(openXmlElement);
-      value.PictureBullet = GetPictureBullet(openXmlElement);
-      value.TabStopList = GetTabStopList(openXmlElement);
-      value.DefaultRunProperties = GetDefaultRunProperties(openXmlElement);
-      value.ExtensionList = GetExtensionList(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static bool CompareModelElement(DXD.ParagraphProperties? openXmlElement, DMD.ParagraphProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
+  public static bool CompareModelElement(DXD.TextParagraphPropertiesType? openXmlElement, DMD.ParagraphProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
+      if (!CmpLeftMargin(openXmlElement, value.LeftMargin, diffs, objName, propName))
+        ok = false;
+      if (!CmpRightMargin(openXmlElement, value.RightMargin, diffs, objName, propName))
+        ok = false;
+      if (!CmpLevel(openXmlElement, value.Level, diffs, objName, propName))
+        ok = false;
+      if (!CmpIndent(openXmlElement, value.Indent, diffs, objName, propName))
+        ok = false;
+      if (!CmpAlignment(openXmlElement, value.Alignment, diffs, objName, propName))
+        ok = false;
+      if (!CmpDefaultTabSize(openXmlElement, value.DefaultTabSize, diffs, objName, propName))
+        ok = false;
+      if (!CmpRightToLeft(openXmlElement, value.RightToLeft, diffs, objName, propName))
+        ok = false;
+      if (!CmpEastAsianLineBreak(openXmlElement, value.EastAsianLineBreak, diffs, objName, propName))
+        ok = false;
+      if (!CmpFontAlignment(openXmlElement, value.FontAlignment, diffs, objName, propName))
+        ok = false;
+      if (!CmpLatinLineBreak(openXmlElement, value.LatinLineBreak, diffs, objName, propName))
+        ok = false;
+      if (!CmpHeight(openXmlElement, value.Height, diffs, objName, propName))
+        ok = false;
       if (!CmpLineSpacing(openXmlElement, value.LineSpacing, diffs, objName, propName))
         ok = false;
       if (!CmpSpaceBefore(openXmlElement, value.SpaceBefore, diffs, objName, propName))
         ok = false;
       if (!CmpSpaceAfter(openXmlElement, value.SpaceAfter, diffs, objName, propName))
-        ok = false;
-      if (!CmpBulletColorText(openXmlElement, value.BulletColorText, diffs, objName, propName))
-        ok = false;
-      if (!CmpBulletColor(openXmlElement, value.BulletColor, diffs, objName, propName))
-        ok = false;
-      if (!CmpBulletSizeText(openXmlElement, value.BulletSizeText, diffs, objName, propName))
-        ok = false;
-      if (!CmpBulletSizePercentage(openXmlElement, value.BulletSizePercentage, diffs, objName, propName))
-        ok = false;
-      if (!CmpBulletSizePoints(openXmlElement, value.BulletSizePoints, diffs, objName, propName))
-        ok = false;
-      if (!CmpBulletFontText(openXmlElement, value.BulletFontText, diffs, objName, propName))
-        ok = false;
-      if (!CmpBulletFont(openXmlElement, value.BulletFont, diffs, objName, propName))
-        ok = false;
-      if (!CmpNoBullet(openXmlElement, value.NoBullet, diffs, objName, propName))
-        ok = false;
-      if (!CmpAutoNumberedBullet(openXmlElement, value.AutoNumberedBullet, diffs, objName, propName))
-        ok = false;
-      if (!CmpCharacterBullet(openXmlElement, value.CharacterBullet, diffs, objName, propName))
-        ok = false;
-      if (!CmpPictureBullet(openXmlElement, value.PictureBullet, diffs, objName, propName))
-        ok = false;
-      if (!CmpTabStopList(openXmlElement, value.TabStopList, diffs, objName, propName))
-        ok = false;
-      if (!CmpDefaultRunProperties(openXmlElement, value.DefaultRunProperties, diffs, objName, propName))
-        ok = false;
-      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
@@ -507,31 +385,28 @@ public static class ParagraphPropertiesConverter
   }
   
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.ParagraphProperties value)
-    where OpenXmlElementType: DXD.ParagraphProperties, new()
+    where OpenXmlElementType: DXD.TextParagraphPropertiesType, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXD.ParagraphProperties openXmlElement, DMD.ParagraphProperties value)
+  public static void UpdateOpenXmlElement(DXD.TextParagraphPropertiesType openXmlElement, DMD.ParagraphProperties value)
   {
+    SetLeftMargin(openXmlElement, value?.LeftMargin);
+    SetRightMargin(openXmlElement, value?.RightMargin);
+    SetLevel(openXmlElement, value?.Level);
+    SetIndent(openXmlElement, value?.Indent);
+    SetAlignment(openXmlElement, value?.Alignment);
+    SetDefaultTabSize(openXmlElement, value?.DefaultTabSize);
+    SetRightToLeft(openXmlElement, value?.RightToLeft);
+    SetEastAsianLineBreak(openXmlElement, value?.EastAsianLineBreak);
+    SetFontAlignment(openXmlElement, value?.FontAlignment);
+    SetLatinLineBreak(openXmlElement, value?.LatinLineBreak);
+    SetHeight(openXmlElement, value?.Height);
     SetLineSpacing(openXmlElement, value?.LineSpacing);
     SetSpaceBefore(openXmlElement, value?.SpaceBefore);
     SetSpaceAfter(openXmlElement, value?.SpaceAfter);
-    SetBulletColorText(openXmlElement, value?.BulletColorText);
-    SetBulletColor(openXmlElement, value?.BulletColor);
-    SetBulletSizeText(openXmlElement, value?.BulletSizeText);
-    SetBulletSizePercentage(openXmlElement, value?.BulletSizePercentage);
-    SetBulletSizePoints(openXmlElement, value?.BulletSizePoints);
-    SetBulletFontText(openXmlElement, value?.BulletFontText);
-    SetBulletFont(openXmlElement, value?.BulletFont);
-    SetNoBullet(openXmlElement, value?.NoBullet);
-    SetAutoNumberedBullet(openXmlElement, value?.AutoNumberedBullet);
-    SetCharacterBullet(openXmlElement, value?.CharacterBullet);
-    SetPictureBullet(openXmlElement, value?.PictureBullet);
-    SetTabStopList(openXmlElement, value?.TabStopList);
-    SetDefaultRunProperties(openXmlElement, value?.DefaultRunProperties);
-    SetExtensionList(openXmlElement, value?.ExtensionList);
   }
 }

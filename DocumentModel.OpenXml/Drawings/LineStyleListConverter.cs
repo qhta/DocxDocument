@@ -31,15 +31,14 @@ public static class LineStyleListConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.LineStyleList model)
-    where OpenXmlElementType: DX.OpenXmlCompositeElement, new()
+  public static DXD.LineStyleList CreateOpenXmlElement(DMD.LineStyleList model)
   {
-    var openXmlElement = new OpenXmlElementType();
+    var openXmlElement = new DXD.LineStyleList();
     UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
   
-  public static bool UpdateOpenXmlElement(DX.OpenXmlCompositeElement openXmlElement, DMD.LineStyleList model)
+  public static bool UpdateOpenXmlElement(DXD.LineStyleList openXmlElement, DMD.LineStyleList model)
   {
     return ElementCollectionConverter2<DXD.Outline, DMD.LineProperties>.UpdateOpenXmlElementCollection(openXmlElement, model,
         LinePropertiesConverter.CompareModelElement,

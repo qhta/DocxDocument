@@ -86,10 +86,9 @@ public static class ExtensionListConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.ExtensionList value)
-    where OpenXmlElementType: DXD.ExtensionList, new()
+  public static DXD.ExtensionList CreateOpenXmlElement(DMD.ExtensionList value)
   {
-    var openXmlElement = new OpenXmlElementType();
+    var openXmlElement = new DXD.ExtensionList();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }

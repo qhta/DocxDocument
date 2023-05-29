@@ -72,11 +72,12 @@ public static class FormatSchemeConverter
   private static void SetLineStyleList(DXD.FormatScheme openXmlElement, DMD.LineStyleList? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXD.LineStyleList>();
-    if (itemElement != null)
-      itemElement.Remove();
+    if (itemElement != null && value != null)
+      DMXD.LineStyleListConverter.UpdateOpenXmlElement(itemElement, value);
+    else
     if (value != null)
     {
-      itemElement = DMXD.LineStyleListConverter.CreateOpenXmlElement<DXD.LineStyleList>(value);
+      itemElement = DMXD.LineStyleListConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AppendChild(itemElement);
     }
@@ -101,8 +102,9 @@ public static class FormatSchemeConverter
   private static void SetEffectStyleList(DXD.FormatScheme openXmlElement, DMD.EffectStyleList? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXD.EffectStyleList>();
-    if (itemElement != null)
-      itemElement.Remove();
+    if (itemElement != null && value != null)
+      DMXD.EffectStyleListConverter.UpdateOpenXmlElement(itemElement, value);
+    else
     if (value != null)
     {
       itemElement = DMXD.EffectStyleListConverter.CreateOpenXmlElement<DXD.EffectStyleList>(value);
@@ -130,8 +132,9 @@ public static class FormatSchemeConverter
   private static void SetBackgroundFillStyleList(DXD.FormatScheme openXmlElement, DMD.FillStyleList? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXD.BackgroundFillStyleList>();
-    if (itemElement != null)
-      itemElement.Remove();
+    if (itemElement != null && value != null)
+      DMXD.FillStyleListConverter.UpdateOpenXmlElement(itemElement, value);
+    else
     if (value != null)
     {
       itemElement = DMXD.FillStyleListConverter.CreateOpenXmlElement<DXD.BackgroundFillStyleList>(value);
@@ -185,12 +188,13 @@ public static class FormatSchemeConverter
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXD.FormatScheme openXmlElement, DMD.FormatScheme value)
+  public static bool UpdateOpenXmlElement(DXD.FormatScheme openXmlElement, DMD.FormatScheme value)
   {
     SetName(openXmlElement, value?.Name);
     SetFillStyleList(openXmlElement, value?.FillStyleList);
     SetLineStyleList(openXmlElement, value?.LineStyleList);
     SetEffectStyleList(openXmlElement, value?.EffectStyleList);
     SetBackgroundFillStyleList(openXmlElement, value?.BackgroundFillStyleList);
+    return true;
   }
 }

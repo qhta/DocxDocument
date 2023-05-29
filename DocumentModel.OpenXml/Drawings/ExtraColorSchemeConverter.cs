@@ -28,7 +28,7 @@ public static class ExtraColorSchemeConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXD.ColorSchemeConverter.CreateOpenXmlElement<DXD.ColorScheme>(value);
+      itemElement = DMXD.ColorSchemeConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AppendChild(itemElement);
     }

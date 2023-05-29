@@ -581,7 +581,7 @@ public static class RunPropertiesConverter
       itemElement.Remove();
     if (model != null)
     {
-      itemElement = DMXD.ExtensionListConverter.CreateOpenXmlElement<DXD.ExtensionList>(model);
+      itemElement = DMXD.ExtensionListConverter.CreateOpenXmlElement(model);
       if (itemElement != null)
         openXmlElement.AppendChild(itemElement);
     }

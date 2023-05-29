@@ -129,7 +129,7 @@ public static class TextDefaultConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXD.ExtensionListConverter.CreateOpenXmlElement<DXD.ExtensionList>(value);
+      itemElement = DMXD.ExtensionListConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AppendChild(itemElement);
     }

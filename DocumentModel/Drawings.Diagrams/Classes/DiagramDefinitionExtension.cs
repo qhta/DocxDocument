@@ -1,5 +1,5 @@
 using DocumentModel.Drawings.Diagram1;
-using DocumentModel.Drawings.Diagram2;
+
 
 namespace DocumentModel.Drawings.Diagrams;
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
@@ -16,5 +16,5 @@ public class DiagramDefinitionExtension: ModelElement
 
   public NumberDiagramInfoList? NumberDiagramInfoList { get; set; }
 
-  public TextListStyleType? TextListStyleType { get; set; }
+  public ListStyle? TextListStyleType { get; set; }
 }
