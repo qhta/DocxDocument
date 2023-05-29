@@ -81,8 +81,9 @@ public static class HslColorConverter
   private static void SetTint(DXD.HslColor openXmlElement, Int32? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXD.Tint>();
-    if (itemElement != null)
-      itemElement.Remove();
+    if (itemElement != null && value != null)
+      itemElement.Val = value;
+    else
     if (value != null)
     {
       itemElement = new DXD.Tint { Val = value };
@@ -106,8 +107,9 @@ public static class HslColorConverter
   private static void SetShade(DXD.HslColor openXmlElement, Int32? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXD.Shade>();
-    if (itemElement != null)
-      itemElement.Remove();
+    if (itemElement != null && value != null)
+      itemElement.Val = value;
+    else
     if (value != null)
     {
       itemElement = new DXD.Shade { Val = value };
