@@ -24,11 +24,12 @@ public static class ThemeElementsConverter
   private static void SetColorScheme(DXD.ThemeElements openXmlElement, DMD.ColorScheme? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXD.ColorScheme>();
-    if (itemElement != null)
-      itemElement.Remove();
+    if (itemElement != null && value != null)
+      DMXD.ColorSchemeConverter.UpdateOpenXmlElement(itemElement, value);
+    else
     if (value != null)
     {
-      itemElement = DMXD.ColorSchemeConverter.CreateOpenXmlElement<DXD.ColorScheme>(value);
+      itemElement = DMXD.ColorSchemeConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AppendChild(itemElement);
     }
@@ -53,8 +54,9 @@ public static class ThemeElementsConverter
   private static void SetFontScheme(DXD.ThemeElements openXmlElement, DMD.FontScheme? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXD.FontScheme>();
-    if (itemElement != null)
-      itemElement.Remove();
+    if (itemElement != null && value != null)
+      DMXD.FontSchemeConverter.UpdateOpenXmlElement(itemElement, value);
+    else
     if (value != null)
     {
       itemElement = DMXD.FontSchemeConverter.CreateOpenXmlElement<DXD.FontScheme>(value);
@@ -112,11 +114,12 @@ public static class ThemeElementsConverter
   private static void SetExtensionList(DXD.ThemeElements openXmlElement, DMD.ExtensionList? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXD.ExtensionList>();
-    if (itemElement != null)
-      itemElement.Remove();
+    if (itemElement != null && value != null)
+      DMXD.ExtensionListConverter.UpdateOpenXmlElement(itemElement, value);
+    else
     if (value != null)
     {
-      itemElement = DMXD.ExtensionListConverter.CreateOpenXmlElement<DXD.ExtensionList>(value);
+      itemElement = DMXD.ExtensionListConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AppendChild(itemElement);
     }
@@ -156,10 +159,9 @@ public static class ThemeElementsConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.ThemeElements value)
-    where OpenXmlElementType: DXD.ThemeElements, new()
+  public static DXD.ThemeElements CreateOpenXmlElement(DMD.ThemeElements value)
   {
-    var openXmlElement = new OpenXmlElementType();
+    var openXmlElement = new DXD.ThemeElements();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
@@ -169,6 +171,6 @@ public static class ThemeElementsConverter
     SetColorScheme(openXmlElement, value?.ColorScheme);
     SetFontScheme(openXmlElement, value?.FontScheme);
     SetFormatScheme(openXmlElement, value?.FormatScheme);
-    SetExtensionList(openXmlElement, value?.ExtensionList);
+    //SetExtensionList(openXmlElement, value?.ExtensionList);
   }
 }
