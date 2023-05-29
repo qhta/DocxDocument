@@ -2079,6 +2079,8 @@ public class ConverterGenerator : BaseCodeGenerator
   private bool GenerateCollectionGetCode(PropInfo prop)
   {
     var origPropType = prop.PropertyType;
+    if (origPropType.Name == "PartExtensionProvider")
+      Debug.Assert(true);
     var args = origPropType.GetGenericTypeArguments();
     if (args.Length == 1)
     {
