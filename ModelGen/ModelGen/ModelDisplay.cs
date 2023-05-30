@@ -2,8 +2,6 @@
 
 public static class ModelDisplay
 {
-
-
   private static IndentedTextWriter Writer { get; set; } = new IndentedTextWriter(Console.Out, "  ");
   //private static int IndentLength = 2;
   private static int LineLength = 0;
@@ -37,7 +35,7 @@ public static class ModelDisplay
     LineLength = l;
   }
 
-  public static void ShowNamespaces(OTS filter)
+  public static void ShowNamespaceSummary(OTS filter)
   {
     var namespaces = TypeManager.GetNamespaces(filter);
     if (namespaces.Any())
@@ -80,7 +78,7 @@ public static class ModelDisplay
   public static void ShowNamespaceDetails(string nspace, ShowOptions options, Semantics[]? semanticsFilter = null)
   {
     var nSpaceTypes = TypeManager.GetNamespaceTypes(nspace).ToList();
-    if (options.AcceptedTypesOnly)
+    if (options.HasFlag(ShowOptions.AcceptedTypesOnly))
       nSpaceTypes = nSpaceTypes.Where(item => item.IsAccepted == true).ToList();
     if (nSpaceTypes.Count() > 0)
     {
