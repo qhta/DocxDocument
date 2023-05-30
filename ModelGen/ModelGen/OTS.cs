@@ -1,5 +1,8 @@
 ﻿namespace ModelGen;
 
+/// <summary>
+/// Origin/Target Selector
+/// </summary>
 [Flags]
 public enum OTS
 {

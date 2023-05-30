@@ -1,19 +1,20 @@
 ﻿namespace ModelGen;
 
-public class ShowOptions
+[Flags]
+public enum ShowOptions
 {
-  public bool AcceptedTypesOnly;
-  public bool OriginalNames;
-  public bool BaseTypes;
-  public bool ImplementedInterfaces;
-  public bool GenericParamsConstraints;
-  public bool OutgoingRelationships;
-  public bool IncomingRelationships;
-  public bool SelectedSemantics;
-  public bool ExcludeSemantics;
-  public bool EnumValues;
-  public bool Properties;
-  public bool HideUnacceptedProperties;
-  public bool HideUnacceptedTypeDetails;
-  public bool IncludedTypes;
+  AcceptedTypesOnly = 1,
+  OriginalNames = 2,
+  BaseTypes = 4,
+  ImplementedInterfaces = 8,
+  GenericParamsConstraints = 16,
+  OutgoingRelationships = 32,
+  IncomingRelationships = 64,
+  SelectedSemantics = 128,
+  ExcludeSemantics = 256,
+  EnumValues = 512,
+  Properties = 1024,
+  HideUnacceptedProperties = 2048,
+  HideUnacceptedTypeDetails = 4096,
+  IncludedTypes = 8192,
 }
