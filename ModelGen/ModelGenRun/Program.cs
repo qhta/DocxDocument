@@ -10,10 +10,10 @@ public static class Program
   public static void Main(string[] args)
   {
     //GenerateModelTypes();
-    GenerateTypeConverter(typeof(DocumentFormat.OpenXml.Packaging.WordprocessingDocument));
+    GenerateTypeConverters(typeof(DocumentFormat.OpenXml.Packaging.WordprocessingDocument));
   }
 
-  public static void GenerateModelTypes()
+  public static void GenerateModelTypes(Type rootType)
   {
     var filePath = Assembly.GetExecutingAssembly().Location;
     var index = filePath.IndexOf(@"\bin");
@@ -21,12 +21,12 @@ public static class Program
       filePath = filePath.Substring(0, index);
     filePath = Path.GetDirectoryName(filePath) ?? "";
     filePath = Path.GetDirectoryName(filePath) ?? "";
-    filePath = Path.Combine(filePath, "DocumentModel");
+    filePath = Path.Combine(filePath, @"ModelGen\DocumentModel");
     var creator = new ModelCreator("DocumentModel", filePath);
-    creator.RunOn(typeof(DocumentFormat.OpenXml.Wordprocessing.Document).Assembly);
+    creator.RunOn(rootType);
   }
 
-  public static void GenerateTypeConverter(Type type)
+  public static void GenerateTypeConverters(Type rootType)
   {
     var filePath = Assembly.GetExecutingAssembly().Location;
     var index = filePath.IndexOf(@"\bin");
@@ -36,6 +36,6 @@ public static class Program
     filePath = Path.GetDirectoryName(filePath) ?? "";
     filePath = Path.Combine(filePath, @"ModelGen\DocumentModel");
     var creator = new ConverterCreator("DocumentModel", filePath);
-    creator.RunOn(type);
+    creator.RunOn(rootType);
   }
 }
