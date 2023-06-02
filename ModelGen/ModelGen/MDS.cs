@@ -8,8 +8,9 @@ public enum MDS
 {
   None = 0,
   ScannedNamespaces = 1,
-  TypeRenames = 2,
-  TypeConversions = 4,
-  TypeUsage = 8,
-  ValidatedTypes = 16,
+  ScannedTypes = 2,
+  TypeRenames = 4,
+  TypeConversions = 8,
+  TypeUsage = 16,
+  ValidatedTypes = 32,
 }

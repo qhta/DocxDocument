@@ -1,9 +1,10 @@
-﻿namespace ModelGen;
+﻿using Qhta.TextUtils;
+
+namespace ModelGen;
 
 public static class ModelDisplay
 {
   private static IndentedTextWriter Writer { get; set; } = new IndentedTextWriter(Console.Out, "  ");
-  //private static int IndentLength = 2;
   private static int LineLength = 0;
 
   public static void SetOutput(TextWriter textWriter)
@@ -24,20 +25,20 @@ public static class ModelDisplay
 
   public static void WriteSameLine(string str)
   {
-    int maxLength = Console.WindowWidth-1;
-    if (str.Length>maxLength)
+    int maxLength = Console.WindowWidth - 1;
+    if (str.Length > maxLength)
       str = str.Substring(maxLength);
     var l = str?.Length ?? 0;
     int n = (l < LineLength) ? LineLength - l : 0;
     Writer.Write($"\r{str}");
     if (n > 0)
-      Writer.Write(new String(' ',n));
+      Writer.Write(new String(' ', n));
     LineLength = l;
   }
 
-  public static void ShowNamespaceSummary(OTS filter)
+  public static void ShowNamespaceSummary(NTS originTargetSelector = NTS.Any)
   {
-    var namespaces = TypeManager.GetNamespaces(filter);
+    var namespaces = TypeManager.GetNamespaces(originTargetSelector);
     if (namespaces.Any())
     {
       var maxNamespaceLength = namespaces.Max(item => item.Length);
@@ -47,27 +48,34 @@ public static class ModelDisplay
         if (aSpace.Length < maxNamespaceLength)
           aSpace = aSpace + new string(' ', maxNamespaceLength - aSpace.Length);
         var nSpaceTypes = TypeManager.GetNamespaceTypes(nspace).ToArray();
-        var nSpaceTypesCount = nSpaceTypes.Count();
-        var nSpaceAcceptedCount = nSpaceTypes.Count(item => item.IsAccepted == true);
-        var nSpaceClassesCount = nSpaceTypes.Count(item => item.TypeKind == TypeKind.Class);
-        var nSpaceEnumsCount = nSpaceTypes.Count(item => item.TypeKind == TypeKind.Enum);
-        var nSpaceOtherCount = nSpaceTypes.Count(item => item.TypeKind == TypeKind.Type);
-        var str = $"{aSpace} {nSpaceTypesCount} types";
-        str += $", {AllNone(nSpaceAcceptedCount, nSpaceTypesCount)} accepted";
-        if (nSpaceClassesCount != 0)
-          str += $", {AllNone(nSpaceClassesCount, nSpaceTypesCount)} {Multi(nSpaceClassesCount, "class")}";
-        if (nSpaceEnumsCount != 0)
-          str += $", {AllNone(nSpaceEnumsCount, nSpaceTypesCount)} {Multi(nSpaceEnumsCount, "enum")}";
-        if (nSpaceOtherCount != 0)
-          str += $", {AllNone(nSpaceOtherCount, nSpaceTypesCount)} other types";
+        var totalTypesCount = nSpaceTypes.Count();
+        var acceptedTypesCount = nSpaceTypes.Count(item => item.IsAccepted);
+        var rejectedTypesCount = nSpaceTypes.Count(item => item.IsRejected);
+        var classTypesCount = nSpaceTypes.Count(item => item.TypeKind == TypeKind.Class);
+        var enumTypesCount = nSpaceTypes.Count(item => item.TypeKind == TypeKind.Enum);
+        var otherTypesCount = nSpaceTypes.Count(item => item.TypeKind != TypeKind.Class && item.TypeKind != TypeKind.Enum);
+        var str = $"{aSpace} Total {totalTypesCount} types";
+        str += $", {AllNone(acceptedTypesCount, totalTypesCount)} accepted";
+        if (rejectedTypesCount != 0)
+          str += $", {AllNone(rejectedTypesCount, totalTypesCount)} rejected";
+        if (classTypesCount != 0)
+          str += $", {AllNone(classTypesCount, totalTypesCount)} {Multi(classTypesCount, "class")}";
+        if (enumTypesCount != 0)
+          str += $", {AllNone(enumTypesCount, totalTypesCount)} {Multi(enumTypesCount, "enum")}";
+        if (otherTypesCount != 0)
+          str += $", {AllNone(otherTypesCount, totalTypesCount)} {Multi(otherTypesCount, "other")}";
         Writer.WriteLine(str);
       }
     }
   }
 
-  public static void ShowNamespaceDetails(OTS filter, ShowOptions options)
+  public static void ShowNamespacesDetails(DisplayOptions options)
   {
-    foreach (var nspace in TypeManager.GetNamespaces(filter).ToList())
+    var namespaces = TypeManager.GetNamespaces(options.NamespaceTypeSelector).ToList();
+    if (options.Namespaces != null)
+      namespaces = namespaces.Where(item => options.Namespaces
+      .FirstOrDefault(pattern => item == pattern || item.IsLike(pattern)) != null).ToList();
+    foreach (var nspace in namespaces)
     {
       Writer.Indent++;
       ShowNamespaceDetails(nspace, options);
@@ -75,11 +83,16 @@ public static class ModelDisplay
     }
   }
 
-  public static void ShowNamespaceDetails(string nspace, ShowOptions options, Semantics[]? semanticsFilter = null)
+  public static void ShowNamespaceDetails(string nspace, DisplayOptions options)
   {
     var nSpaceTypes = TypeManager.GetNamespaceTypes(nspace).ToList();
-    if (options.HasFlag(ShowOptions.AcceptedTypesOnly))
-      nSpaceTypes = nSpaceTypes.Where(item => item.IsAccepted == true).ToList();
+    if (options.Typenames != null)
+      nSpaceTypes = nSpaceTypes.Where(item => options.Typenames
+      .FirstOrDefault(pattern => item.Name == pattern || item.Name.IsLike(pattern)) != null).ToList();
+    if (options.TypeKindSelector != TKS.Any)
+      nSpaceTypes = nSpaceTypes.Where(item => IsTypeKind(item.TypeKind,options.TypeKindSelector)).ToList();
+    if (options.TypeDataSelector.HasFlag(TDS.AcceptedTypesOnly))
+      nSpaceTypes = nSpaceTypes.Where(item => item.IsAccepted).ToList();
     if (nSpaceTypes.Count() > 0)
     {
       Writer.WriteLine();
@@ -89,10 +102,28 @@ public static class ModelDisplay
       {
         if (typeInfo.IsGenericTypeParameter)
           continue;
-        ShowTypeInfo(typeInfo, options, semanticsFilter);
+        ShowTypeInfo(typeInfo, options);
       }
       Writer.Indent--;
     }
+  }
+
+  private static bool IsTypeKind(TypeKind typeKind, TKS selector)
+  {
+    switch (typeKind)
+    {
+      case TypeKind.Type: 
+        return selector == TKS.Any;
+      case TypeKind.Struct: 
+        return selector.HasFlag(TKS.Struct);
+      case TypeKind.Class: 
+        return selector.HasFlag(TKS.Class);
+      case TypeKind.Enum: 
+        return selector.HasFlag(TKS.Enum);
+      case TypeKind.Interface: 
+        return selector.HasFlag(TKS.Interface);
+    }
+    return false;
   }
 
   private static string[] constaints = new string[]
@@ -113,49 +144,52 @@ public static class ModelDisplay
     }
   }
 
-  public static void ShowTypeInfo(TypeInfo typeInfo, ShowOptions options = null!, Semantics[]? semanticsFilter = null)
+  public static void ShowTypeInfo(TypeInfo typeInfo, DisplayOptions options = null!)
   {
-    if (options == null) options = new();
+    if (options == null)
+      options = new DisplayOptions();
     if (!typeInfo.IsReflected)
       typeInfo.WaitForReflection();
-    var str = $"{typeInfo.TypeKind.ToString().ToLower()} {typeInfo.GetFullName(options.OriginalNames)}";
-    var changedToType = ModelManager.GetConversionTargetOrSelf(typeInfo);
-    if (changedToType != null)
-      str += $" => {changedToType.GetFullName(options.OriginalNames)}";
-    //else if (typeInfo.IsAccepted != null)
-    //  str += $" {{{Accepted(typeInfo.IsAccepted)}}}";
+    var str = $"{typeInfo.TypeKind.ToString().ToLower()} {typeInfo.GetFullName(options.TypeDataSelector.HasFlag(TDS.OriginalNames))}";
+    if (options.TypeDataSelector.HasFlag(TDS.ConversionInfo))
+    {
+      var changedToType = ModelManager.GetConversionTargetOrSelf(typeInfo);
+      if (changedToType != null)
+        str += $" => {changedToType.GetFullName(options.TypeDataSelector.HasFlag(TDS.OriginalNames))}";
+    }
     Writer.WriteLine(str);
-    if (options.HideUnacceptedTypeDetails && typeInfo.IsAccepted == false)
+    if (options.TypeDataSelector.HasFlag(TDS.AcceptedTypesOnly) && typeInfo.IsAccepted == false)
       return;
     Writer.Indent++;
-    if (options.BaseTypes && typeInfo.BaseTypeInfo != null)
+    if (options.TypeDataSelector.HasFlag(TDS.BaseTypes) && typeInfo.BaseTypeInfo != null)
     {
-      str = $"based on: {typeInfo.BaseTypeInfo.GetFullName(options.OriginalNames)}";
-      changedToType = ModelManager.GetConversionTargetOrSelf(typeInfo.BaseTypeInfo);
-      if (changedToType != null)
-        str += $" => {changedToType.GetFullName(options.OriginalNames)}";
-      //else if (typeInfo.BaseTypeInfo.IsAccepted != null)
-      //  str += $" {{{Accepted(typeInfo.BaseTypeInfo.IsAccepted)}}}";
+      str = $"based on: {typeInfo.BaseTypeInfo.GetFullName(options.TypeDataSelector.HasFlag(TDS.OriginalNames))}";
+      if (options.TypeDataSelector.HasFlag(TDS.ConversionInfo))
+      {
+        var changedToType = ModelManager.GetConversionTargetOrSelf(typeInfo.BaseTypeInfo);
+        if (changedToType != null)
+          str += $" => {changedToType.GetFullName(options.TypeDataSelector.HasFlag(TDS.OriginalNames))}";
+      }
       Writer.WriteLine(str);
     }
-    if (options.ImplementedInterfaces)
+    if (options.TypeDataSelector.HasFlag(TDS.ImplementedInterfaces))
       ShowImplementedInterfaces(typeInfo, options);
-    if (options.GenericParamsConstraints)
+    if (options.TypeDataSelector.HasFlag(TDS.GenericParamsConstraints))
       ShowGenericParamsConstraints(typeInfo, options);
-    if (options.OutgoingRelationships)
-      ShowOutgoingRelationships(typeInfo, options, semanticsFilter);
-    if (options.IncomingRelationships)
-      ShowIncomingRelationships(typeInfo, options, semanticsFilter);
-    if (options.IncludedTypes)
-      ShowIncludedTypes(typeInfo, options);
-    if (options.EnumValues)
+    if (options.TypeDataSelector.HasFlag(TDS.OutgoingRelationships))
+      ShowOutgoingRelationships(typeInfo, options);
+    if (options.TypeDataSelector.HasFlag(TDS.IncomingRelationships))
+      ShowIncomingRelationships(typeInfo, options);
+    if (options.TypeDataSelector.HasFlag(TDS.ElementsTypes))
+      ShowElementsTypes(typeInfo, options);
+    if (options.TypeDataSelector.HasFlag(TDS.EnumValues))
       ShowEnumValues(typeInfo, options);
-    if (options.Properties)
+    if (options.TypeDataSelector.HasFlag(TDS.Properties))
       ShowProperties(typeInfo, options);
     Writer.Indent--;
   }
 
-  public static void ShowGenericParamsConstraints(TypeInfo typeInfo, ShowOptions options)
+  public static void ShowGenericParamsConstraints(TypeInfo typeInfo, DisplayOptions options)
   {
     var genericTypeParams = typeInfo.GetGenericParamTypes();
     if (genericTypeParams != null)
@@ -166,7 +200,7 @@ public static class ModelDisplay
         var genericTypeParamsConstraints = genericTypeParam.GetGenericTypeParamConstraints();
         if (genericTypeParamsConstraints != null)
           foreach (var item in genericTypeParamsConstraints.ToArray())
-            ls.Add(item.GetFullName(options.OriginalNames));
+            ls.Add(item.GetFullName(options.TypeDataSelector.HasFlag(TDS.OriginalNames)));
         var genericParamConstraints = genericTypeParam.GetGenericParamConstraints();
         if (genericParamConstraints != null)
           foreach (var item in genericParamConstraints.ToArray())
@@ -180,122 +214,123 @@ public static class ModelDisplay
     }
   }
 
-  public static void ShowImplementedInterfaces(TypeInfo typeInfo, ShowOptions options)
+  public static void ShowImplementedInterfaces(TypeInfo typeInfo, DisplayOptions options)
   {
-    var implementedInterfaces = typeInfo.GetInterfaces();
+    var implementedInterfaces = typeInfo.GetImplementedInterfaces();
     if (implementedInterfaces.Any())
     {
-      foreach (var intfType in implementedInterfaces.Take(10).ToArray())
+      foreach (var intfType in implementedInterfaces.Take(options.ListLimit).ToArray())
       {
-        var str = $"implements {intfType.GetFullName(options.OriginalNames)}";
+        var str = $"implements {intfType.GetFullName(options.TypeDataSelector.HasFlag(TDS.OriginalNames))}";
         Writer.WriteLine(str);
       }
-      if (implementedInterfaces.Count()>10)
+      if (implementedInterfaces.Count() > 10)
         Writer.WriteLine("...");
     }
   }
 
-  public static void ShowIncludedTypes(TypeInfo typeInfo, ShowOptions options)
+  public static void ShowElementsTypes(TypeInfo typeInfo, DisplayOptions options)
   {
-    var includedTypes = typeInfo.GetIncludedTypes();
+    var includedTypes = typeInfo.GetIElementsTypes();
     if (includedTypes.Any())
     {
-      foreach (var intfType in includedTypes.Take(10).ToArray())
+      foreach (var intfType in includedTypes.Take(options.ListLimit).ToArray())
       {
-        var str = $"includes {intfType.GetFullName(options.OriginalNames)}";
+        var str = $"includes {intfType.GetFullName(options.TypeDataSelector.HasFlag(TDS.OriginalNames))}";
         Writer.WriteLine(str);
       }
-      if (includedTypes.Count()>10)
+      if (includedTypes.Count() > 10)
         Writer.WriteLine("...");
     }
   }
-  public static void ShowOutgoingRelationships(TypeInfo typeInfo, ShowOptions options, Semantics[]? semanticsFilter = null)
+
+  public static void ShowOutgoingRelationships(TypeInfo typeInfo, DisplayOptions options)
   {
     var outgoingRels = TypeManager.GetOutgoingRelationships(typeInfo).ToList();
-    if (options.ExcludeSemantics && semanticsFilter != null)
-      outgoingRels = outgoingRels.Where(item => !semanticsFilter.Contains(item.Semantics)).ToList();
+    if (options.TypeDataSelector.HasFlag(TDS.ExcludeSemantics) && options.SemanticsFilter != null)
+      outgoingRels = outgoingRels.Where(item => !options.SemanticsFilter.Contains(item.Semantics)).Take(options.ListLimit).ToList();
     else
-    if (options.SelectedSemantics && semanticsFilter != null)
-      outgoingRels = outgoingRels.Where(item => semanticsFilter.Contains(item.Semantics)).ToList();
+    if (options.TypeDataSelector.HasFlag(TDS.SelectedSemantics) && options.SemanticsFilter != null)
+      outgoingRels = outgoingRels.Where(item => options.SemanticsFilter.Contains(item.Semantics)).Take(options.ListLimit).ToList();
     if (outgoingRels.Any())
     {
       Writer.WriteLine($"has {outgoingRels.Count} outgoing {Multi(outgoingRels.Count, "relationship")}");
-      foreach (var rel in outgoingRels.Take(10))
+      foreach (var rel in outgoingRels.Take(options.ListLimit))
       {
         Writer.Indent++;
         Writer.WriteLine($"{rel.Semantics} -> {rel.Target.ToString()}");
         Writer.Indent--;
       }
-      if (outgoingRels.Count()>10)
+      if (outgoingRels.Count() > 10)
         Writer.WriteLine("...");
 
     }
   }
 
-  public static void ShowIncomingRelationships(TypeInfo typeInfo, ShowOptions options, Semantics[]? semanticsFilter = null)
+  public static void ShowIncomingRelationships(TypeInfo typeInfo, DisplayOptions options)
   {
     var incomingRels = TypeManager.GetIncomingRelationships(typeInfo).ToList();
-    if (options.ExcludeSemantics && semanticsFilter != null)
-      incomingRels = incomingRels.Where(item => !semanticsFilter.Contains(item.Semantics)).ToList();
+    if (options.TypeDataSelector.HasFlag(TDS.ExcludeSemantics) && options.SemanticsFilter != null)
+      incomingRels = incomingRels.Where(item => !options.SemanticsFilter.Contains(item.Semantics)).Take(options.ListLimit).ToList();
     else
-    if (options.SelectedSemantics && semanticsFilter != null)
-      incomingRels = incomingRels.Where(item => semanticsFilter.Contains(item.Semantics)).ToList();
+    if (options.TypeDataSelector.HasFlag(TDS.SelectedSemantics) && options.SemanticsFilter != null)
+      incomingRels = incomingRels.Where(item => options.SemanticsFilter.Contains(item.Semantics)).Take(options.ListLimit).ToList();
     if (incomingRels.Any())
     {
       Writer.WriteLine($"has {incomingRels.Count} incoming {Multi(incomingRels.Count, "relationship")}");
-      foreach (var rel in incomingRels.Take(10))
+      foreach (var rel in incomingRels.Take(options.ListLimit))
       {
         Writer.Indent++;
         Writer.WriteLine($"{rel.Semantics} <- {rel.Source.ToString()}");
         Writer.Indent--;
       }
-      if (incomingRels.Count()>10)
+      if (incomingRels.Count() > 10)
         Writer.WriteLine("...");
     }
   }
 
-  public static void ShowEnumValues(TypeInfo typeInfo, ShowOptions options)
+  public static void ShowEnumValues(TypeInfo typeInfo, DisplayOptions options)
   {
     var enumValues = typeInfo.EnumValues;
     if (enumValues != null && enumValues.Any())
     {
       Writer.WriteLine("{");
-      foreach (var enumValue in enumValues.Take(10).ToArray())
+      foreach (var enumValue in enumValues.Take(options.ListLimit).ToArray())
       {
         Writer.Indent++;
         var str = $"{enumValue.Name}";
         Writer.WriteLine(str);
         Writer.Indent--;
       }
-      if (enumValues.Count()>10)
+      if (enumValues.Count() > 10)
         Writer.WriteLine("...");
       Writer.WriteLine("}");
     }
   }
 
-  public static void ShowProperties(TypeInfo typeInfo, ShowOptions options)
+  public static void ShowProperties(TypeInfo typeInfo, DisplayOptions options)
   {
-    if (options.HideUnacceptedProperties && typeInfo.IsAccepted == false)
+    if (options.TypeDataSelector.HasFlag(TDS.AcceptedTypesOnly) && typeInfo.IsAccepted == false)
       return;
     var properties = typeInfo.Properties;
     if (properties != null && properties.Any())
     {
       Writer.WriteLine("{");
-      foreach (var property in properties.Take(1).ToArray())
+      foreach (var property in properties.Take(options.ListLimit).ToArray())
       {
-        if (options.HideUnacceptedProperties && property.IsAccepted == false)
+        if (options.TypeDataSelector.HasFlag(TDS.AcceptedTypesOnly) && property.IsAccepted == false)
           continue;
         Writer.Indent++;
-        var str = $"{property.Name}: {property.PropertyType.GetFullName(options.OriginalNames)}";
+        var str = $"{property.Name}: {property.PropertyType.GetFullName(options.TypeDataSelector.HasFlag(TDS.AcceptedTypesOnly))}";
         var changedToType = ModelManager.GetConversionTargetOrSelf(property.PropertyType);
         if (changedToType != null)
-          str += $" => {changedToType.GetFullName(options.OriginalNames)}";
+          str += $" => {changedToType.GetFullName(options.TypeDataSelector.HasFlag(TDS.AcceptedTypesOnly))}";
         //else if (property.PropertyType.IsAccepted != null)
         //  str += $" {{{Accepted(property.PropertyType.IsAccepted)}}}";
         Writer.WriteLine(str);
         Writer.Indent--;
       }
-      if (properties.Count()>10)
+      if (properties.Count() > 10)
         Writer.WriteLine("...");
       Writer.WriteLine("}");
     }
@@ -323,7 +358,7 @@ public static class ModelDisplay
       }
     }
   }
-  
+
   public static void ShowTypeRenames()
   {
     foreach (var typeInfo in TypeManager.AllTypes)
@@ -335,10 +370,12 @@ public static class ModelDisplay
     }
   }
 
+  #region Helper functions to format diplay
   private static string AllNone(int n, int cmp) => (n == 0) ? "none" : (n == cmp) ? "all" : n.ToString();
 
   private static string Multi(int n, string single, string? multi = null) => (n == 1) ? single : (multi ?? (single.EndsWith("s") ? (single + "es") : (single + "s")));
 
-  private static string Accepted(bool? isAccepted) => isAccepted == true ? "accepted" : (isAccepted == false) ? "unaccepted" : string.Empty;
+  //private static string Accepted(ARS acceptance) => (acceptance == ARS.Accepted) ? "accepted" :(acceptance == ARS.Rejected) ? "rejected" : string.Empty;
+  #endregion
 }
 

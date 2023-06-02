@@ -54,7 +54,7 @@ public class PropInfo: ModelElement
     if (Documentation != null)
       Summary = DocumentationReader.GetSummaryFirstPara(Documentation);
     foreach (var item in propertyInfo.CustomAttributes)
-      CustomAttributes.Add(new CustomAttribData(item));
+      CustomAttributes.Add(new CustomAttribInfo(item));
   }
 
   public PropInfo(TypeInfo typeInfo) : this(typeInfo.Name, typeInfo.Type)

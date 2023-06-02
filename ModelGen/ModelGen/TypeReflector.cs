@@ -112,10 +112,7 @@ public static class TypeReflector
     }
     else if ((type.IsClass || type.IsInterface || type.IsValueType) && type != typeof(string) && type != typeof(object))
     {
-      if ((type.Namespace ?? "").StartsWith("DocumentFormat"))
-        typeInfo.TypeKind = TypeKind.Interface | TypeKind.Class;
-      else
-        typeInfo.TypeKind = (type.IsInterface) ? TypeKind.Interface : (type.IsClass) ? TypeKind.Class : TypeKind.Struct;
+      typeInfo.TypeKind = (type.IsInterface) ? TypeKind.Interface : (type.IsClass) ? TypeKind.Class : TypeKind.Struct;
       if (typeInfo.Properties == null)
         typeInfo.Properties = new OwnedCollection<PropInfo>(typeInfo);
       foreach (var item in type.GetProperties(BindingFlags.Instance | BindingFlags.Public | BindingFlags.DeclaredOnly))
@@ -256,7 +253,7 @@ public static class TypeReflector
         Type propertyType = typeof(System.Collections.ObjectModel.Collection<>).MakeGenericType(new Type[] { targetType.Type });
         if (constraint.MaxCount != null || constraint.MinCount!= null)
         {
-          propInfo.CustomAttributes.Add(new CustomAttribData(
+          propInfo.CustomAttributes.Add(new CustomAttribInfo(
             new DocumentModel.Attributes.CollectionConstraintAttribute
           { 
             MinCount = constraint.MinCount,

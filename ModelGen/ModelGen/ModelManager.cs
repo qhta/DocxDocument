@@ -397,15 +397,16 @@ public static class ModelManager
 
   public static bool TryAcceptType(Type type, [NotNullWhen(true)] out TypeInfo? typeInfo)
   {
+    bool ok = true;
     typeInfo = null;
     var typeName = type.ToString();
     if (typeName.Contains('<') || typeName.Contains('+') || typeName.Contains('&'))
       return false;
     if (ModelData.IsExcluded(type))
-      return false;
-    typeInfo = TypeManager.RegisterType(type);
-    typeInfo.IsAccepted = true;
-    typeInfo.IsUsed = true;
+      ok = false;
+    typeInfo = TypeManager.RegisterType(type, ok);
+    //typeInfo.IsAccepted = true;
+    //typeInfo.IsUsed = true;
     return true;
   }
 
@@ -443,25 +444,25 @@ public static class ModelManager
       {
         //if (prop.Name == "RsidRoot")
         //  Debug.Assert(true);
-        if (prop.IsAccepted is null or true)
+        if (!prop.IsRejected)
         {
           if (prop.Name == "NotesMaster")
             Debug.Assert(true);
           var propType = prop.PropertyType.GetConversionTargetOrSelf();
           if (propType.HasExcludedNamespace())
             prop.IsAccepted = false;
-          else if (propType.IsAccepted is null or true)
+          else if (!propType.IsRejected)
           {
             CheckTypeUsage(propType, OnStartChecking);
           }
         }
       }
 
-    var interfaces = typeInfo.GetInterfaces();
+    var interfaces = typeInfo.GetImplementedInterfaces();
     if (interfaces.Any())
       foreach (var intfType in interfaces.ToArray())
       {
-        if (intfType.IsAccepted is null or true)
+        if (!intfType.IsRejected)
         {
           CheckTypeUsage(intfType, OnStartChecking);
         }
@@ -569,7 +570,7 @@ public static class ModelManager
 
   public static int CheckNamespacesDuplicatedTypesAsync(Action<int, int> OnDone)
   {
-    var namespaces = TypeManager.GetNamespaces(OTS.Target);
+    var namespaces = TypeManager.GetNamespaces(NTS.Target);
     Task<int>[] tasks = new Task<int>[namespaces.Count()];
     int i = 0;
     foreach (var nspace in namespaces)

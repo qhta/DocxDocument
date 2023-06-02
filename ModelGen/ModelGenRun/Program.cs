@@ -9,11 +9,16 @@ public static class Program
 
   public static void Main(string[] args)
   {
-    //GenerateModelTypes();
-    GenerateTypeConverters(typeof(DocumentFormat.OpenXml.Packaging.WordprocessingDocument));
+    GenerateModelTypes(typeof(DocumentFormat.OpenXml.Packaging.WordprocessingDocument), MDS.ScannedNamespaces | MDS.ScannedTypes,
+      new DisplayOptions
+      { Namespaces = new string[]{ "*.Packaging*"},
+        //TypeKindSelector = TKS.Enum,
+        //Typenames = new string[]{ "*Values" },
+      });
+    //GenerateTypeConverters(typeof(DocumentFormat.OpenXml.Packaging.WordprocessingDocument));
   }
 
-  public static void GenerateModelTypes(Type rootType)
+  public static void GenerateModelTypes(Type rootType, MDS display = MDS.None, DisplayOptions? options = null)
   {
     var filePath = Assembly.GetExecutingAssembly().Location;
     var index = filePath.IndexOf(@"\bin");
@@ -23,7 +28,7 @@ public static class Program
     filePath = Path.GetDirectoryName(filePath) ?? "";
     filePath = Path.Combine(filePath, @"ModelGen\DocumentModel");
     var creator = new ModelCreator("DocumentModel", filePath);
-    creator.RunOn(rootType);
+    creator.RunOn(rootType, display, options);
   }
 
   public static void GenerateTypeConverters(Type rootType)
