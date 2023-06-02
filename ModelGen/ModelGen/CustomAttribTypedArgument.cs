@@ -2,20 +2,29 @@
 
 namespace ModelGen;
 
-public class CustomAttribTypedArgument: IOwnedElement
+/// <summary>
+/// Represents the argument of the custom attribute. This argument is passed by the constructor.
+/// </summary>
+public class CustomAttribTypedArgument : IOwnedElement
 {
-  public static bool operator ==(CustomAttribTypedArgument left, CustomAttribTypedArgument right) => left.Equals(right);
-  public static bool operator !=(CustomAttribTypedArgument left, CustomAttribTypedArgument right) => !left.Equals(right);
-
+  /// <summary>
+  /// Used to implement <see cref="IOwnedElement"/>
+  /// </summary>
   public object? Owner { get; set; }
-  public Type ArgumentType => ArgumentTypeInfo.Type;
-  public TypeInfo ArgumentTypeInfo { get; }
 
+  /// <summary>
+  /// Type of the argument
+  /// </summary>
+  public TypeInfo Type { get; }
+
+  /// <summary>
+  /// Value of the argument
+  /// </summary>
   public object? Value { get; }
 
   public CustomAttribTypedArgument(Type argumentType, object? value)
   {
-    ArgumentTypeInfo = TypeManager.RegisterType(argumentType);
+    Type = TypeManager.RegisterType(argumentType);
     Value = CanonicalizeValue(value);
   }
 
@@ -31,26 +40,26 @@ public class CustomAttribTypedArgument: IOwnedElement
 
   internal string ToString(bool typed)
   {
-
-    if (ArgumentType.IsEnum)
-      return typed ? $"{Value}" : $"({ArgumentType.FullName}){Value}";
+    var argumentType = Type.Type;
+    if (argumentType.IsEnum)
+      return typed ? $"{Value}" : $"({argumentType.FullName}){Value}";
 
     if (Value is null)
-      return typed ? "null" : $"({ArgumentType.Name})null";
+      return typed ? "null" : $"({argumentType.Name})null";
 
-    if (ArgumentType == typeof(string))
+    if (argumentType == typeof(string))
       return $"\"{Value}\"";
 
-    if (ArgumentType == typeof(char))
+    if (argumentType == typeof(char))
       return $"'{Value}'";
 
-    if (ArgumentType == typeof(Type))
+    if (argumentType == typeof(Type))
       return $"typeof({((Type)Value!).FullName})";
 
-    if (ArgumentType.IsArray)
+    if (argumentType.IsArray)
     {
       IList<CustomAttribTypedArgument> array = (IList<CustomAttribTypedArgument>)Value!;
-      Type elementType = ArgumentType.GetElementType()!;
+      Type elementType = argumentType.GetElementType()!;
 
       var result = new StringBuilder();
       result.Append("new ");
@@ -74,7 +83,7 @@ public class CustomAttribTypedArgument: IOwnedElement
       return result.ToString();
     }
 
-    return typed ? $"{Value}" : $"({ArgumentType.Name}){Value}";
+    return typed ? $"{Value}" : $"({argumentType.Name}){Value}";
   }
 
   public override int GetHashCode() => base.GetHashCode();
@@ -86,12 +95,15 @@ public class CustomAttribTypedArgument: IOwnedElement
       return null;
     if (value is string str)
       return str;
-    if (value is Enum e) 
+    if (value is Enum e)
       return e;
     if (value is Type type)
       return TypeManager.RegisterType(type);
     //if (value.GetType().IsValueType)
-      return value;
+    return value;
     //throw new NotSupportedException($"Value of type {value.GetType()} not supported as CustomAttribTypedArgument");
   }
+
+  public static bool operator ==(CustomAttribTypedArgument left, CustomAttribTypedArgument right) => left.Equals(right);
+  public static bool operator !=(CustomAttribTypedArgument left, CustomAttribTypedArgument right) => !left.Equals(right);
 }

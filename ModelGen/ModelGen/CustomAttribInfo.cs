@@ -1,35 +1,42 @@
-﻿using DocumentFormat.OpenXml.Drawing.Charts;
-using DocumentFormat.OpenXml.Vml.Spreadsheet;
+﻿namespace ModelGen;
 
-namespace ModelGen;
-
-public class CustomAttribData: ModelElement
+/// <summary>
+/// Represents CustomAttribute assigned to element.
+/// </summary>
+public class CustomAttribInfo: ModelElement
 {
-
+  /// <summary>
+  /// Type of the CustomAttribute.
+  /// </summary>
   public TypeInfo AttributeType { get; }
 
+  /// <summary>
+  /// Represents arguments passed in the constructor of the CustomAttribute.
+  /// </summary>
   public OwnedCollection<CustomAttribTypedArgument> ConstructorArguments { get; }
+
+  /// <summary>
+  /// Represents name arguments set to the CustomAttribute.
+  /// </summary>
   public OwnedCollection<CustomAttribNamedArgument> NamedArguments { get; set; }
 
-  public CustomAttribData(Attribute attribute) : base(attribute.GetType().Name)
+  public CustomAttribInfo(Attribute attribute) : base(attribute.GetType().Name)
   {
     AttributeType = TypeManager.RegisterType(attribute.GetType());
     ConstructorArguments = new OwnedCollection<CustomAttribTypedArgument>(this);
     NamedArguments = new OwnedCollection<CustomAttribNamedArgument>(this);
     foreach (var prop in attribute.GetType().GetProperties())
-    {
-      NamedArguments.Add(new CustomAttribNamedArgument(prop, prop.GetValue(attribute)));
-    }
+      NamedArguments.Add(new CustomAttribNamedArgument(prop.Name, prop.PropertyType, prop.GetValue(attribute)));
   }
 
-  public CustomAttribData(Type attributeType): base(attributeType.Name)
+  public CustomAttribInfo(Type attributeType): base(attributeType.Name)
   {
     ConstructorArguments = new OwnedCollection<CustomAttribTypedArgument>(this);
     NamedArguments = new OwnedCollection<CustomAttribNamedArgument>(this);
     AttributeType = TypeManager.RegisterType(attributeType);
   }
 
-  public CustomAttribData(Type attributeType, 
+  public CustomAttribInfo(Type attributeType, 
     IEnumerable<CustomAttributeTypedArgument>? constructorArguments = null, IEnumerable<CustomAttributeNamedArgument>? namedArguments = null): this(attributeType)
   {
     if (constructorArguments != null)
@@ -40,7 +47,7 @@ public class CustomAttribData: ModelElement
         NamedArguments.Add(new CustomAttribNamedArgument(item));
   }
 
-  public CustomAttribData(CustomAttributeData data) : this(data.AttributeType, data.ConstructorArguments, data.NamedArguments)
+  public CustomAttribInfo(CustomAttributeData data) : this(data.AttributeType, data.ConstructorArguments, data.NamedArguments)
   {
   }
 

@@ -22,7 +22,16 @@ public static class TypeManager
     get
     {
       lock (NamespacesLock)
-        return TypeManager.KnownTypes.Values.Where(item => item.IsAccepted == true);
+        return TypeManager.KnownTypes.Values.Where(item => item.IsAccepted);
+    }
+  }
+
+  public static IEnumerable<TypeInfo> RejectedTypes
+  {
+    get
+    {
+      lock (NamespacesLock)
+        return TypeManager.KnownTypes.Values.Where(item => item.IsRejected);
     }
   }
 
@@ -73,19 +82,19 @@ public static class TypeManager
     return newNspace;
   }
 
-  public static IEnumerable<string> GetNamespaces(OTS filter)
+  public static IEnumerable<string> GetNamespaces(NTS filter)
   {
     lock (NamespacesLock)
     {
       var knownNamespace = KnownNamespaces.ToArray();
-      if (filter == OTS.Any)
+      if (filter == NTS.Any)
         return KnownNamespaces.Select(item => item.Key);
       var result = new List<string>();
-      if (filter.HasFlag(OTS.Target))
+      if (filter.HasFlag(NTS.Target))
         result.AddRange(knownNamespace.Where(item => item.Key.StartsWith("DocumentModel")).Select(item => item.Key));
-      if (filter.HasFlag(OTS.Origin))
+      if (filter.HasFlag(NTS.Origin))
         result.AddRange(knownNamespace.Where(item => item.Key.StartsWith("DocumentFormat")).Select(item => item.Key));
-      if (filter.HasFlag(OTS.System))
+      if (filter.HasFlag(NTS.System))
         result.AddRange(knownNamespace.Where(item => item.Key.StartsWith("System")).Select(item => item.Key));
       return result;
     }
@@ -105,28 +114,28 @@ public static class TypeManager
     return false;
   }
 
-  public static TypeInfo RegisterAndReflectType(Type type)
-  {
-    lock (KnownTypesLock)
-    {
-      if (KnownTypes.TryGetValue(type, out var info))
-        return info;
-      var nspace = type.Namespace ?? "";
-      lock (NamespacesLock)
-      {
-        if (!KnownNamespaces.ContainsKey(nspace))
-          RegisterNamespace(nspace);
-        info = new TypeInfo(type);
-        KnownTypes.Add(type, info);
-        var NamespaceDictionary = TypeManager.GetNamespaceDictionary(nspace);
-        NamespaceDictionary.Add(info);
-      }
-      TypeReflector.ReflectType(info);
-      return info;
-    }
-  }
+  //public static TypeInfo RegisterAndReflectType(Type type)
+  //{
+  //  lock (KnownTypesLock)
+  //  {
+  //    if (KnownTypes.TryGetValue(type, out var info))
+  //      return info;
+  //    var nspace = type.Namespace ?? "";
+  //    lock (NamespacesLock)
+  //    {
+  //      if (!KnownNamespaces.ContainsKey(nspace))
+  //        RegisterNamespace(nspace);
+  //      info = new TypeInfo(type);
+  //      KnownTypes.Add(type, info);
+  //      var NamespaceDictionary = TypeManager.GetNamespaceDictionary(nspace);
+  //      NamespaceDictionary.Add(info);
+  //    }
+  //    TypeReflector.ReflectType(info);
+  //    return info;
+  //  }
+  //}
 
-  public static TypeInfo RegisterType(Type type)
+  public static TypeInfo RegisterType(Type type, bool? accept = null)
   {
     lock (KnownTypesLock)
     {
@@ -144,7 +153,10 @@ public static class TypeManager
         var NamespaceDictionary = TypeManager.GetNamespaceDictionary(nspace);
         NamespaceDictionary.Add(info);
       }
-      TypeReflector.ReflectTypeAsync(info);
+      if (accept!=false)
+        TypeReflector.ReflectTypeAsync(info);
+      if (accept!=null)
+        info.IsAccepted = (bool)accept;
       return info;
     }
   }
@@ -262,14 +274,14 @@ public static class TypeManager
   //  }
   //}
 
-  public static TypeInfo[] GetInterfaces(this TypeInfo typeInfo)
+  public static TypeInfo[] GetImplementedInterfaces(this TypeInfo typeInfo)
   {
     if (!typeInfo.IsReflected)
       TypeReflector.WaitForReflection(typeInfo);
     return TypeManager.GetRelatedTypes(typeInfo, Semantics.Implementation).ToArray();
   }
 
-  public static TypeInfo[] GetIncludedTypes(this TypeInfo typeInfo)
+  public static TypeInfo[] GetIElementsTypes(this TypeInfo typeInfo)
   {
     if (!typeInfo.IsReflected)
       TypeReflector.WaitForReflection(typeInfo);
@@ -377,7 +389,7 @@ public static class TypeManager
       return true;
     }
 
-    var type = aType.GetInterfaces().FirstOrDefault((TypeInfo item) => item.Name.StartsWith("ICollection`1"));
+    var type = aType.GetImplementedInterfaces().FirstOrDefault((TypeInfo item) => item.Name.StartsWith("ICollection`1"));
     if (type != null)
     {
       itemType = type.GetGenericTypeArguments()[0];
@@ -390,7 +402,7 @@ public static class TypeManager
 
   public static bool IsEnumerable(this TypeInfo aType, [NotNullWhen(true)][MaybeNullWhen(false)] out TypeInfo? itemType)
   {
-    var type = aType.GetInterfaces().FirstOrDefault((TypeInfo item) => item.Name.StartsWith("IEnumerable`1"));
+    var type = aType.GetImplementedInterfaces().FirstOrDefault((TypeInfo item) => item.Name.StartsWith("IEnumerable`1"));
     if (type != null)
     {
       itemType = type.GetGenericTypeArguments()[0];

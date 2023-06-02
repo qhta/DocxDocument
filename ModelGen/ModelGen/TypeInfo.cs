@@ -4,23 +4,28 @@ using DocumentModel;
 
 namespace ModelGen;
 
+/// <summary>
+/// Represents information of scanned and generated type.
+/// </summary>
 public class TypeInfo : ModelElement
 {
-  public string Namespace { get; set; } = String.Empty;
+  /// <summary>
+  /// Type read from source library or declared explicitly.
+  /// </summary>
+  public Type Type { get; set; }
 
-  private string _Namespace = string.Empty;
+  /// <summary>
+  /// Target type info
+  /// </summary>
+  public TypeInfo? TargetType { get; set; }
+
+  public string Namespace { get; set; } = String.Empty;
 
   public string OriginalNamespace => Type.Namespace ?? "";
 
   public string OriginalName => Type.Name;
 
   public bool IsReflected { get; internal set; }
-
-  public new bool? IsAccepted
-  {
-    get;
-    set;
-  }
 
   public bool IsValueOrStringType => Type.IsValueType || Type == typeof(string) || Type == typeof(System.Uri);
 
@@ -31,10 +36,14 @@ public class TypeInfo : ModelElement
                                     (BaseTypeInfo.IsConstructedGenericType || BaseTypeInfo.IsGenericTypeBased);
   public bool IsGenericTypeParameter => Type.IsGenericTypeParameter;
 
-  public TypeKind TypeKind { get; set; }
+  public TypeKind TypeKind
+  {
+    get;
+    set;
+  }
 
-  public bool IsInterface => TypeKind.HasFlag(TypeKind.Interface);
-  public bool IsClass => TypeKind.HasFlag(TypeKind.Class);
+  public bool IsInterface => TypeKind == TypeKind.Interface;
+  public bool IsClass => TypeKind == TypeKind.Class;
 
   public OwnedCollection<EnumInfo>? EnumValues { get; set; }
   public OwnedCollection<PropInfo>? Properties { get; set; }
@@ -44,10 +53,6 @@ public class TypeInfo : ModelElement
   public IEnumerable<PropInfo>? AcceptedProperties => Properties?.Where(item => item.IsAccepted != false);
 
   public TypeInfo? BaseTypeInfo { get; set; }
-
-  public Type Type { get; set; }
-
-  public TypeInfo? TargetType { get; set; }
 
   public bool IsSimple()
   {

@@ -1,5 +1,4 @@
-﻿using System;
-namespace ModelGen;
+﻿namespace ModelGen;
 
 /// <summary>
 /// Base creator containing common methods for both specific creators.
@@ -27,34 +26,49 @@ public abstract class BaseCreator
     OutputPath = outputPath;
   }
 
-  public void RunOn(Type type, MDS monitorDisplaySelector = MDS.None, OTS? originTargetSelector = null,ShowOptions? showOptions = null)
+  public void RunOn(Type type, MDS monitorDisplaySelector = MDS.None, DisplayOptions? displayOptions = null)
   {
+    if (displayOptions == null)
+      displayOptions = new DisplayOptions();
+
     SourceAssembly = type.Assembly;
     TimeSpan totalTime = TimeSpan.Zero;
     totalTime += ScanType(type);
-    
+
     if (monitorDisplaySelector.HasFlag(MDS.ScannedNamespaces))
-      ModelDisplay.ShowNamespaceSummary(originTargetSelector ?? OTS.Origin);
+    {
+      ModelDisplay.WriteLine();
+      ModelDisplay.WriteLine("Scanned namespaces:");
+      ModelDisplay.ShowNamespaceSummary(NTS.Origin);
+    }
 
-    totalTime += RenameTypes();
-    if (monitorDisplaySelector.HasFlag(MDS.TypeRenames))
-      ModelDisplay.ShowTypeRenames();
-    
+    if (monitorDisplaySelector.HasFlag(MDS.ScannedTypes))
+    {
+      ModelDisplay.WriteLine();
+      ModelDisplay.WriteLine("Scanned types:");
+      ModelDisplay.ShowNamespacesDetails(displayOptions with { NamespaceTypeSelector = NTS.Origin});
+    }
 
-    totalTime += SetTypeConversions();
-    if (monitorDisplaySelector.HasFlag(MDS.TypeConversions))
-      ModelDisplay.ShowTypeConversions();
+    //totalTime += RenameTypes();
+    //if (monitorDisplaySelector.HasFlag(MDS.TypeRenames))
+    //  ModelDisplay.ShowTypeRenames();
 
-    totalTime += CheckTypeUsage();
-    if (monitorDisplaySelector.HasFlag(MDS.TypeUsage))
-      ModelDisplay.ShowNamespaceDetails(originTargetSelector ?? OTS.Target, showOptions ?? ShowOptions.BaseTypes | ShowOptions.Properties);
 
-    totalTime += ValidateTypes();
-    if (monitorDisplaySelector.HasFlag(MDS.ValidatedTypes))
-      ModelDisplay.ShowNamespaceDetails(originTargetSelector ?? OTS.Target, showOptions ?? ShowOptions.BaseTypes | ShowOptions.Properties);
+    //totalTime += SetTypeConversions();
+    //if (monitorDisplaySelector.HasFlag(MDS.TypeConversions))
+    //  ModelDisplay.ShowTypeConversions();
 
-    totalTime += GenerateCode();
+    //totalTime += CheckTypeUsage();
+    //if (monitorDisplaySelector.HasFlag(MDS.TypeUsage))
+    //  ModelDisplay.ShowNamespaceDetails(displayOptions ?? new DisplayOptions());
 
+    //totalTime += ValidateTypes();
+    //if (monitorDisplaySelector.HasFlag(MDS.ValidatedTypes))
+    //  ModelDisplay.ShowNamespaceDetails(displayOptions ?? new DisplayOptions());
+
+    //totalTime += GenerateCode();
+
+    ModelDisplay.WriteLine();
     ModelDisplay.WriteLine($"Total time = {totalTime}");
   }
 
@@ -63,23 +77,12 @@ public abstract class BaseCreator
   {
     ModelDisplay.WriteLine("Scanning types");
     DateTime t1 = DateTime.Now;
-    var foundTypesCount = 0;
-    var approvedTypesCount = 0;
-    //if (ModelData.IncludedNamespaces.Count == 0 || ModelData.IncludedNamespaces.Contains(type.Namespace ?? "")
-    //                                            || ModelData.IncludedTypes.Contains(type.Name))
-    {
-      foundTypesCount++;
-      if (ModelManager.TryAcceptType(type, out var typeInfo))
-      {
-        approvedTypesCount++;
-      }
-    }
+    ModelManager.TryAcceptType(type, out var typeInfo);
     TypeReflector.WaitDone();
     ModelDisplay.WriteLine();
     DateTime t2 = DateTime.Now;
     var ts = t2 - t1;
     ModelDisplay.WriteLine($"Scanning time is {ts}");
-    ModelDisplay.WriteLine($"Directly {foundTypesCount} types found, {approvedTypesCount} approved");
     var allTypesCount = TypeManager.AllTypes.Count();
     var reflectedTypesCount = TypeManager.AllTypes.Where(item => item.IsReflected).ToArray().Count();
     var acceptedTypesCount = TypeManager.AcceptedTypes.Count();
@@ -153,7 +156,7 @@ public abstract class BaseCreator
     return ts;
   }
 
-  
+
   protected TimeSpan ValidateTypes()
   {
     ModelDisplay.WriteLine();
@@ -172,7 +175,7 @@ public abstract class BaseCreator
     //  =>
     //  ModelDisplay.WriteSameLine($"Repaired {repaired} types. Waiting for {waiting} namespaces ")
     //  );
-    foreach (var nspace in TypeManager.GetNamespaces(OTS.Target))
+    foreach (var nspace in TypeManager.GetNamespaces(NTS.Target))
     {
       ModelDisplay.WriteSameLine($"Checked {++checkedNamespacesCount} namespaces for duplicate type names. {nspace}");
       int n = ModelManager.CheckNamespaceDuplicatedTypes(nspace);
