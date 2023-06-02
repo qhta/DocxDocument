@@ -1,45 +1,35 @@
 ﻿namespace ModelGen;
 
-public class CustomAttribNamedArgument: IOwnedElement
+public class CustomAttribNamedArgument: CustomAttribTypedArgument
 {
-  public static bool operator ==(CustomAttribNamedArgument left, CustomAttribNamedArgument right) => left.Equals(right);
-  public static bool operator !=(CustomAttribNamedArgument left, CustomAttribNamedArgument right) => !left.Equals(right);
+  public string Name { get; set; }
 
-  public object? Owner { get; set; }
-  public MemberInfo MemberInfo { get; }
-  public CustomAttribTypedArgument TypedValue { get; }
-
-  public CustomAttribNamedArgument(MemberInfo memberInfo, object? value)
+  public CustomAttribNamedArgument(string name, Type type, object? value): base(type, value)
   {
-    Type type = memberInfo switch
-    {
-      FieldInfo field => field.FieldType,
-      PropertyInfo property => property.PropertyType,
-      _ => throw new ArgumentException("Invalid Member For Named Argument")
-    };
-
-    MemberInfo = memberInfo;
-    TypedValue = new CustomAttribTypedArgument(type, value);
+    Name = name;
   }
 
-  public CustomAttribNamedArgument(MemberInfo memberInfo, CustomAttributeTypedArgument typedArgument)
+  //private static Type GetType(MemberInfo memberInfo)
+  //{
+  //  Type type = memberInfo switch
+  //  {
+  //    FieldInfo field => field.FieldType,
+  //    PropertyInfo property => property.PropertyType,
+  //    _ => throw new ArgumentException("Invalid Member For Named Argument")
+  //  };
+  //  return type;
+  //}
+  public CustomAttribNamedArgument(CustomAttributeNamedArgument namedArgument): base(namedArgument.TypedValue.ArgumentType, namedArgument.TypedValue.Value)
   {
-    MemberInfo = memberInfo;
-    TypedValue = new CustomAttribTypedArgument(typedArgument.Value) { Owner = this };
-  }
-
-  public CustomAttribNamedArgument(CustomAttributeNamedArgument namedArgument)
-  {
-    MemberInfo = namedArgument.MemberInfo ?? throw new ArgumentNullException(nameof(MemberInfo));
-    TypedValue = new CustomAttribTypedArgument(namedArgument.TypedValue.Value);
+    Name = namedArgument.MemberInfo.Name ?? throw new ArgumentNullException(nameof(MemberInfo));
   }
 
   public override string ToString()
   {
-    if (MemberInfo is null)
+    if (Name is null)
       return base.ToString()!;
 
-    return $"{MemberInfo.Name} = {TypedValue.ToString(ArgumentType != typeof(object))}";
+    return $"{Name} = {base.ToString(Type.Type != typeof(object))}";
   }
 
   public override int GetHashCode()
@@ -52,12 +42,8 @@ public class CustomAttribNamedArgument: IOwnedElement
     return obj == (object)this;
   }
 
-  internal Type ArgumentType =>
-      MemberInfo is FieldInfo fi ?
-          fi.FieldType :
-          ((PropertyInfo)MemberInfo).PropertyType;
+  public static bool operator ==(CustomAttribNamedArgument left, CustomAttribNamedArgument right) => left.Equals(right);
+  public static bool operator !=(CustomAttribNamedArgument left, CustomAttribNamedArgument right) => !left.Equals(right);
 
-  public string MemberName => MemberInfo.Name;
-  public bool IsField => MemberInfo is FieldInfo;
 }
 

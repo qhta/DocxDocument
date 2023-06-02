@@ -43,7 +43,7 @@ public class BaseCodeGenerator
 
   #region CustomAttributes generation
 
-  protected bool GenerateCustomAttributes(IEnumerable<CustomAttribData>? attributes)
+  protected bool GenerateCustomAttributes(IEnumerable<CustomAttribInfo>? attributes)
   {
     if (attributes?.Any() == true)
     {
@@ -59,7 +59,7 @@ public class BaseCodeGenerator
     return false;
   }
 
-  protected bool GenerateCustomAttribute(CustomAttribData attrData)
+  protected bool GenerateCustomAttribute(CustomAttribInfo attrData)
   {
     var kind = TypeKind.Type;
     var attributeType = attrData.AttributeType;
@@ -165,15 +165,10 @@ public class BaseCodeGenerator
   #region Literals generation
   protected string CreateTypedValueLiteral(CustomAttribNamedArgument namedArgument, TypeKind kind)
   {
-    return namedArgument.MemberName + "=" + GenerateTypedValueLiteral(namedArgument.TypedValue, kind);
+    return namedArgument.Name + "=" + GenerateTypedValueLiteral(namedArgument.Value, kind);
   }
 
-  protected string GenerateTypedValueLiteral(CustomAttribTypedArgument typedArgument, TypeKind kind)
-  {
-    return CreateTypedValueLiteral(typedArgument.Value, kind);
-  }
-
-  protected string CreateTypedValueLiteral(object? value, TypeKind kind)
+  protected string GenerateTypedValueLiteral(object? value, TypeKind kind)
   {
     if (value is string str)
     {

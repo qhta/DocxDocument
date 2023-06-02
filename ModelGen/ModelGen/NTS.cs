@@ -1,10 +1,10 @@
 ﻿namespace ModelGen;
 
 /// <summary>
-/// Origin/Target Selector
+/// Namespace Type Selector
 /// </summary>
 [Flags]
-public enum OTS
+public enum NTS
 {
   Any = 0,
   Origin = 1,
