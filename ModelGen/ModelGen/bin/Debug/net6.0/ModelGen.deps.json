@@ -12,7 +12,7 @@
           "DocumentModel": "1.0.0",
           "DocumentModel.Attributes": "1.0.0",
           "IgnoresAccessChecksToGenerator": "0.6.0",
-          "Namotion.Reflection": "2.1.1",
+          "Namotion.Reflection": "2.1.2",
           "Qhta.Xml.Serialization.Attributes": "1.0.0",
           "System.IO.Packaging": "7.0.0",
           "DocumentModel.OpenXml": "1.0.0.0"
@@ -90,14 +90,14 @@
           }
         }
       },
-      "Namotion.Reflection/2.1.1": {
+      "Namotion.Reflection/2.1.2": {
         "dependencies": {
           "Microsoft.CSharp": "4.3.0"
         },
         "runtime": {
           "lib/netstandard2.0/Namotion.Reflection.dll": {
-            "assemblyVersion": "2.1.1.0",
-            "fileVersion": "2.1.1.0"
+            "assemblyVersion": "2.1.2.0",
+            "fileVersion": "2.1.2.0"
           }
         }
       },
@@ -632,12 +632,12 @@
       "path": "microsoft.win32.systemevents/7.0.0",
       "hashPath": "microsoft.win32.systemevents.7.0.0.nupkg.sha512"
     },
-    "Namotion.Reflection/2.1.1": {
+    "Namotion.Reflection/2.1.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-trZzWMjzoZyfn34HtMs6cuoR0ssPZGpn9pyBWMGkaHdGA9VZzWLho+Rldtf+Ojej596PIal/vPdrDr1+MERXbA==",
-      "path": "namotion.reflection/2.1.1",
-      "hashPath": "namotion.reflection.2.1.1.nupkg.sha512"
+      "sha512": "sha512-7tSHAzX8GWKy0qrW6OgQWD7kAZiqzhq+m1503qczuwuK6ZYhOGCQUxw+F3F4KkRM70aB6RMslsRVSCFeouIehw==",
+      "path": "namotion.reflection/2.1.2",
+      "hashPath": "namotion.reflection.2.1.2.nupkg.sha512"
     },
     "Newtonsoft.Json/13.0.3": {
       "type": "package",

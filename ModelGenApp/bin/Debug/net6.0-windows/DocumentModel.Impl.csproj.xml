@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>1701;1702;8766;0618</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <NoWarn>1701;1702;8766;0618</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.IO.Packaging" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DocumentModel.Attributes\DocumentModel.Attributes.csproj" />
+    <ProjectReference Include="..\DocumentModel.BaseTypes.Impl\DocumentModel.BaseTypes.Impl.csproj" />
+    <ProjectReference Include="..\DocumentModel.BaseTypes\DocumentModel.BaseTypes.csproj" />
+    <ProjectReference Include="..\DocumentModel.Internal.Impl\DocumentModel.Internal.Impl.csproj" />
+    <ProjectReference Include="..\DocumentModel.VariantTypes.Impl\DocumentModel.VariantTypes.Impl.csproj" />
+    <ProjectReference Include="..\DocumentModel.VariantTypes\DocumentModel.VariantTypes.csproj" />
+    <ProjectReference Include="..\DocumentModel\DocumentModel.csproj" />
+  </ItemGroup>
+</Project>
