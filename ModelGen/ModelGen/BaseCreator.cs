@@ -1,4 +1,6 @@
-﻿namespace ModelGen;
+﻿using DocumentFormat.OpenXml.Math;
+
+namespace ModelGen;
 
 /// <summary>
 /// Base creator containing common methods for both specific creators.
@@ -20,6 +22,10 @@ public abstract class BaseCreator
   /// </summary>
   protected string OutputPath { get; set; }
 
+  public bool IsRun { get; set; }
+
+  public ModelMonitor? ModelMonitor { get; set; }
+
   public BaseCreator(string projectName, string outputPath)
   {
     ProjectName = projectName;
@@ -28,165 +34,168 @@ public abstract class BaseCreator
 
   public void RunOn(Type type, MDS monitorDisplaySelector = MDS.None, DisplayOptions? displayOptions = null)
   {
+    IsRun = true;
     if (displayOptions == null)
       displayOptions = new DisplayOptions();
-
+    if (ModelMonitor!=null)
+    {
+      TypeReflector.OnReflection += TypeReflector_OnReflection;
+    }
     SourceAssembly = type.Assembly;
     TimeSpan totalTime = TimeSpan.Zero;
     totalTime += ScanType(type);
 
     if (monitorDisplaySelector.HasFlag(MDS.ScannedNamespaces))
-    {
-      ModelDisplay.WriteLine();
-      ModelDisplay.WriteLine("Scanned namespaces:");
-      ModelDisplay.ShowNamespaceSummary(NTS.Origin);
-    }
+      ModelMonitor?.ShowNamespaceSummary(NTS.Origin);
 
     if (monitorDisplaySelector.HasFlag(MDS.ScannedTypes))
-    {
-      ModelDisplay.WriteLine();
-      ModelDisplay.WriteLine("Scanned types:");
-      ModelDisplay.ShowNamespacesDetails(displayOptions with { NamespaceTypeSelector = NTS.Origin});
-    }
+      ModelMonitor?.ShowNamespacesDetails(displayOptions with { NamespaceTypeSelector = NTS.Origin});
 
     //totalTime += RenameTypes();
     //if (monitorDisplaySelector.HasFlag(MDS.TypeRenames))
-    //  ModelDisplay.ShowTypeRenames();
+    //  ModelMonitor?.ShowTypeRenames();
 
 
     //totalTime += SetTypeConversions();
     //if (monitorDisplaySelector.HasFlag(MDS.TypeConversions))
-    //  ModelDisplay.ShowTypeConversions();
+    //  ModelMonitor?.ShowTypeConversions();
 
     //totalTime += CheckTypeUsage();
     //if (monitorDisplaySelector.HasFlag(MDS.TypeUsage))
-    //  ModelDisplay.ShowNamespaceDetails(displayOptions ?? new DisplayOptions());
+    //  ModelMonitor?.ShowNamespacesDetails(displayOptions ?? new DisplayOptions());
 
     //totalTime += ValidateTypes();
     //if (monitorDisplaySelector.HasFlag(MDS.ValidatedTypes))
-    //  ModelDisplay.ShowNamespaceDetails(displayOptions ?? new DisplayOptions());
+    //  ModelMonitor?.ShowNamespacesDetails(displayOptions ?? new DisplayOptions());
 
     //totalTime += GenerateCode();
 
-    ModelDisplay.WriteLine();
-    ModelDisplay.WriteLine($"Total time = {totalTime}");
+    ModelMonitor?.ShowProcessSummary(new ProcessInfo{ TotalTime = totalTime });
+    IsRun = false;
+  }
+
+  private void TypeReflector_OnReflection(ReflectionInfo info)
+  {
+    ModelMonitor?.WriteSameLine(
+        $"Total {TypeManager.TotalTypesCount} registered types, {info.Done} reflected, {info.Waiting} waiting. {info.Current?.OriginalNamespace}.{info.Current?.OriginalName}");
+
   }
 
   #region Processing methods
   protected TimeSpan ScanType(Type type)
   {
-    ModelDisplay.WriteLine("Scanning types");
+    ModelMonitor?.WriteLine("Scanning types");
     DateTime t1 = DateTime.Now;
     ModelManager.TryAcceptType(type, out var typeInfo);
     TypeReflector.WaitDone();
-    ModelDisplay.WriteLine();
+    ModelMonitor?.WriteLine();
     DateTime t2 = DateTime.Now;
     var ts = t2 - t1;
-    ModelDisplay.WriteLine($"Scanning time is {ts}");
+    ModelMonitor?.WriteLine($"Scanning time is {ts}");
     var allTypesCount = TypeManager.AllTypes.Count();
     var reflectedTypesCount = TypeManager.AllTypes.Where(item => item.IsReflected).ToArray().Count();
     var acceptedTypesCount = TypeManager.AcceptedTypes.Count();
-    ModelDisplay.WriteLine($"Finally {allTypesCount} types registered, {reflectedTypesCount} reflected");
-    ModelDisplay.WriteLine($"Accepted {acceptedTypesCount} types");
+    ModelMonitor?.WriteLine($"Finally {allTypesCount} types registered, {reflectedTypesCount} reflected");
+    ModelMonitor?.WriteLine($"Accepted {acceptedTypesCount} types");
     return ts;
   }
 
   protected TimeSpan RenameTypes()
   {
-    ModelDisplay.WriteLine();
-    ModelDisplay.WriteLine("Renaming types");
+    ModelMonitor?.WriteLine();
+    ModelMonitor?.WriteLine("Renaming types");
     DateTime t1 = DateTime.Now;
     var checkedCount = 0;
     var renamedCount = ModelManager.RenameSpecificTypes();
     foreach (var type in TypeManager.AllTypes.ToArray())
     {
-      ModelDisplay.WriteSameLine($"Checked {++checkedCount} types. {type.GetFullName()}");
+      ModelMonitor?.WriteSameLine($"Checked {++checkedCount} types. {type.GetFullName()}");
       if (ModelManager.RenameType(type))
         renamedCount++;
     }
-    ModelDisplay.WriteLine();
     DateTime t2 = DateTime.Now;
     var ts = t2 - t1;
-    ModelDisplay.WriteLine($"Renaming time is {ts}");
-    ModelDisplay.WriteLine($"Renamed {renamedCount} types");
+    ModelMonitor?.WriteLine();
+    ModelMonitor?.WriteLine($"Renaming time is {ts}");
+    ModelMonitor?.WriteLine($"Renamed {renamedCount} types");
     return ts;
   }
 
   protected TimeSpan SetTypeConversions()
   {
-    ModelDisplay.WriteLine();
-    ModelDisplay.WriteLine("Converting types");
+    ModelMonitor?.WriteLine();
+    ModelMonitor?.WriteLine("Converting types");
     DateTime t1 = DateTime.Now;
     var checkedCount = 0;
     foreach (var type in TypeManager.AllTypes.ToArray())
     {
       checkedCount++;
-      ModelDisplay.WriteSameLine($"Checked {checkedCount} types. {type.GetFullName()}");
+      ModelMonitor?.WriteSameLine($"Checked {checkedCount} types. {type.GetFullName()}");
       ModelManager.TryAddTypeConversion(type);
     }
     DateTime t2 = DateTime.Now;
     var ts = t2 - t1;
-    ModelDisplay.WriteLine();
-    ModelDisplay.WriteLine($"Converting time is {ts}");
+    ModelMonitor?.WriteLine();
+    ModelMonitor?.WriteLine($"Converting time is {ts}");
     var convertedTypesCount = TypeManager.ConvertedTypes.Count();
-    ModelDisplay.WriteLine($"Converted {convertedTypesCount} types");
-    //ModelDisplay.ShowTypeConversions();
+    ModelMonitor?.WriteLine($"Converted {convertedTypesCount} types");
+    ModelMonitor?.ShowTypeConversions();
     return ts;
   }
 
   protected TimeSpan CheckTypeUsage()
   {
-    ModelDisplay.WriteLine();
-    ModelDisplay.WriteLine("Checking type usage");
+    ModelMonitor?.WriteLine();
+    ModelMonitor?.WriteLine("Checking type usage");
     DateTime t1 = DateTime.Now;
     var checkCount = 0;
     foreach (var type in TypeManager.AcceptedTypes.ToArray())
     {
       ModelManager.CheckTypeUsage(type,
-        (item) => { ModelDisplay.WriteSameLine($"Checked {++checkCount} types. {item.GetFullName()}"); });
+        (item) => { ModelMonitor?.WriteSameLine($"Checked {++checkCount} types. {item.GetFullName()}"); });
     }
     DateTime t2 = DateTime.Now;
     var ts = t2 - t1;
     var usedCount = TypeManager.UsedTypes.Count();
     var acceptedCount = TypeManager.AcceptedTypes.Count();
-    ModelDisplay.WriteLine();
-    ModelDisplay.WriteLine($"Checking time is {ts}");
-    ModelDisplay.WriteLine($"Found {usedCount} used types, {acceptedCount} accepted types");
-    //ModelMonitorDisplay.ShowUnusedTypes();
+    ModelMonitor?.WriteLine();
+    ModelMonitor?.WriteLine($"Checking time is {ts}");
+    ModelMonitor?.WriteLine($"Found {usedCount} used types, {acceptedCount} accepted types");
+    //ModelMonitor?.ShowUnusedTypes();
     return ts;
   }
 
 
   protected TimeSpan ValidateTypes()
   {
-    ModelDisplay.WriteLine();
-    ModelDisplay.WriteLine("Validating types & namespaces");
+    ModelMonitor?.WriteLine();
+    ModelMonitor?.WriteLine("Validating types & namespaces");
     DateTime t1 = DateTime.Now;
     var checkedTypesCount = 0;
     var checkedNamespacesCount = 0;
     var invalidTypesCount = 0;
     foreach (var typeInfo in TypeManager.AllTypes.ToArray())
     {
-      ModelDisplay.WriteSameLine($"Checked {++checkedTypesCount} types. {typeInfo.GetFullName()}");
+      ModelMonitor?.WriteSameLine($"Checked {++checkedTypesCount} types. {typeInfo.GetFullName()}");
       if (!ModelManager.ValidateType(typeInfo))
         invalidTypesCount++;
     }
     //invalidTypesCount += ModelManager.CheckNamespacesDuplicatedTypesAsync((int repaired, int waiting)
     //  =>
-    //  ModelDisplay.WriteSameLine($"Repaired {repaired} types. Waiting for {waiting} namespaces ")
+    //  ModelMonitor?.WriteSameLine($"Repaired {repaired} types. Waiting for {waiting} namespaces ")
     //  );
     foreach (var nspace in TypeManager.GetNamespaces(NTS.Target))
     {
-      ModelDisplay.WriteSameLine($"Checked {++checkedNamespacesCount} namespaces for duplicate type names. {nspace}");
+      ModelMonitor?.WriteSameLine($"Checked {++checkedNamespacesCount} namespaces for duplicate type names. {nspace}");
       int n = ModelManager.CheckNamespaceDuplicatedTypes(nspace);
       if (n > 0)
         invalidTypesCount += n;
     }
-    ModelDisplay.WriteLine();
+    ModelMonitor?.WriteLine();
     DateTime t2 = DateTime.Now;
     var ts = t2 - t1;
-    ModelDisplay.WriteLine($"Validation time is {ts}");
-    ModelDisplay.WriteLine($"Invalid {invalidTypesCount} types found and repaired");
+    ModelMonitor?.WriteLine($"Validation time is {ts}");
+    ModelMonitor?.WriteLine($"Invalid {invalidTypesCount} types found and repaired");
     return ts;
   }
 

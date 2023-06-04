@@ -89,10 +89,10 @@ public class ModelCreator: BaseCreator
 
   protected override TimeSpan GenerateCode()
   {
-    ModelDisplay.WriteLine();
+    ModelMonitor.WriteLine();
     //ModelGenerator.PrepareProjects();
     int generatedCount = 0;
-    ModelDisplay.WriteLine($"Generating {TypeManager.AcceptedTypes.Count()} types");
+    ModelMonitor.WriteLine($"Generating {TypeManager.AcceptedTypes.Count()} types");
     DateTime t1 = DateTime.Now;
     foreach (var typeInfo in TypeManager.AcceptedTypes.ToArray())
     {
@@ -102,18 +102,18 @@ public class ModelCreator: BaseCreator
         continue;
       if (!typeInfo.IsUsed)
         continue;
-      ModelDisplay.WriteSameLine($"Generated {generatedCount} types. {typeInfo.GetFullName(false)}");
+      ModelMonitor.WriteSameLine($"Generated {generatedCount} types. {typeInfo.GetFullName(false)}");
       if (ModelGenerator.GenerateTypeFile(typeInfo))
         generatedCount++;
     }
     //ModelGenerator.GenerateGlobalUsings();
     DateTime t2 = DateTime.Now;
     var ts = t2 - t1;
-    ModelDisplay.WriteLine();
-    ModelDisplay.WriteLine($"Generating time is {ts}");
-    ModelDisplay.WriteLine($"Generated {ModelGenerator.GeneratedInterfacesCount} interfaces, {ModelGenerator.GeneratedClassesCount} classes" +
+    ModelMonitor.WriteLine();
+    ModelMonitor.WriteLine($"Generating time is {ts}");
+    ModelMonitor.WriteLine($"Generated {ModelGenerator.GeneratedInterfacesCount} interfaces, {ModelGenerator.GeneratedClassesCount} classes" +
                       $", {ModelGenerator.GeneratedStructsCount} structs, {ModelGenerator.GeneratedEnumTypesCount} enums");
-    ModelDisplay.WriteLine($"Total {ModelGenerator.GeneratedPropertiesCount} properties, {ModelGenerator.GeneratedEnumValuesCount} enumValues");
+    ModelMonitor.WriteLine($"Total {ModelGenerator.GeneratedPropertiesCount} properties, {ModelGenerator.GeneratedEnumValuesCount} enumValues");
     return ts;
   }
 

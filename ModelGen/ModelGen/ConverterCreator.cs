@@ -112,10 +112,10 @@ public class ConverterCreator: BaseCreator
 
   protected override TimeSpan GenerateCode()
   {
-    ModelDisplay.WriteLine();
+    ModelMonitor.WriteLine();
     //CodeGenerator.PrepareProjects();
     int generatedCount = 0;
-    ModelDisplay.WriteLine($"Generating {TypeManager.AcceptedTypes.Count()} types");
+    ModelMonitor.WriteLine($"Generating {TypeManager.AcceptedTypes.Count()} types");
     DateTime t1 = DateTime.Now;
     foreach (var typeInfo in TypeManager.AcceptedTypes.ToArray())
     {
@@ -125,19 +125,19 @@ public class ConverterCreator: BaseCreator
         continue;
       if (!typeInfo.IsUsed)
         continue;
-      ModelDisplay.WriteSameLine($"Generated {generatedCount} types. {typeInfo.GetFullName(false)}");
+      ModelMonitor.WriteSameLine($"Generated {generatedCount} types. {typeInfo.GetFullName(false)}");
       if (CodeGenerator.GenerateConverterFile(typeInfo))
         generatedCount++;
     }
     //CodeGenerator.GenerateGlobalUsings();
     DateTime t2 = DateTime.Now;
     var ts = t2 - t1;
-    ModelDisplay.WriteLine();
-    ModelDisplay.WriteLine($"Generating time is {ts}");
-    ModelDisplay.WriteLine($"Generated {CodeGenerator.GeneratedInterfacesCount} interfaces, {CodeGenerator.GeneratedClassesCount} classes" +
+    ModelMonitor.WriteLine();
+    ModelMonitor.WriteLine($"Generating time is {ts}");
+    ModelMonitor.WriteLine($"Generated {CodeGenerator.GeneratedInterfacesCount} interfaces, {CodeGenerator.GeneratedClassesCount} classes" +
                       $", {CodeGenerator.GeneratedStructsCount} structs, {CodeGenerator.GeneratedEnumTypesCount} enums");
-    ModelDisplay.WriteLine($"Skipped {CodeGenerator.SkippedTypesCount} converters");
-    ModelDisplay.WriteLine($"Total {CodeGenerator.GeneratedPropertiesCount} properties, {CodeGenerator.GeneratedEnumValuesCount} enumValues");
+    ModelMonitor.WriteLine($"Skipped {CodeGenerator.SkippedTypesCount} converters");
+    ModelMonitor.WriteLine($"Total {CodeGenerator.GeneratedPropertiesCount} properties, {CodeGenerator.GeneratedEnumValuesCount} enumValues");
     return ts;
   }
 
