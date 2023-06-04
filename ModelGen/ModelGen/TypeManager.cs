@@ -4,7 +4,7 @@ public static class TypeManager
 {
 
   internal static Dictionary<Type, TypeInfo> KnownTypes = new();
-  internal static Dictionary<string, TypeDictionary> KnownNamespaces = new();
+  internal static Dictionary<string, Namespace> KnownNamespaces = new();
 
   public static int TotalTypesCount => KnownTypes.Count;
 
@@ -22,7 +22,7 @@ public static class TypeManager
     get
     {
       lock (NamespacesLock)
-        return TypeManager.KnownTypes.Values.Where(item => item.IsAccepted);
+        return TypeManager.KnownTypes.Values.Where(item => item.IsAccepted == true);
     }
   }
 
@@ -31,7 +31,7 @@ public static class TypeManager
     get
     {
       lock (NamespacesLock)
-        return TypeManager.KnownTypes.Values.Where(item => item.IsRejected);
+        return TypeManager.KnownTypes.Values.Where(item => item.IsAccepted == false);
     }
   }
 
@@ -57,7 +57,7 @@ public static class TypeManager
   {
     lock (NamespacesLock)
       if (!KnownNamespaces.ContainsKey(nspace))
-        KnownNamespaces.Add(nspace, new());
+        KnownNamespaces.Add(nspace, new(nspace));
   }
 
   public static string TranslateNamespace(string nspace)
@@ -150,8 +150,8 @@ public static class TypeManager
           RegisterNamespace(nspace);
         info = new TypeInfo(type);
         KnownTypes.Add(type, info);
-        var NamespaceDictionary = TypeManager.GetNamespaceDictionary(nspace);
-        NamespaceDictionary.Add(info);
+        var NamespaceDictionary = TypeManager.GetNamespace(nspace);
+        NamespaceDictionary.Types.Add(info);
       }
       if (accept!=false)
         TypeReflector.ReflectTypeAsync(info);
@@ -245,7 +245,7 @@ public static class TypeManager
       return typeInfo.IncomingRelationships.Where(item => item.Semantics == semantics).Select(item => item.Source).ToArray();
   }
 
-  public static TypeDictionary GetNamespaceDictionary(string nspace)
+  public static Namespace GetNamespace(string nspace)
   {
     lock (KnownTypesLock)
     {
@@ -257,7 +257,7 @@ public static class TypeManager
   {
     lock (KnownTypesLock)
     {
-      return KnownNamespaces[nspace].Values;
+      return KnownNamespaces[nspace].Types;
     }
   }
 

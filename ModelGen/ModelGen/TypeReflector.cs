@@ -248,8 +248,7 @@ public static class TypeReflector
       var existingProp = typeInfo.Properties.FirstOrDefault(item => item.Name == propName);
       if (existingProp == null)
       {
-        var propInfo = new PropInfo(targetType);
-        propInfo.Name = propName;
+        var propInfo = new PropInfo(propName, targetType);
         Type propertyType = typeof(System.Collections.ObjectModel.Collection<>).MakeGenericType(new Type[] { targetType.Type });
         if (constraint.MaxCount != null || constraint.MinCount!= null)
         {
@@ -279,8 +278,7 @@ public static class TypeReflector
       var existingProp = typeInfo.Properties.FirstOrDefault(item => item.Name == propName);
       if (existingProp == null)
       {
-        var propInfo = new PropInfo(targetType);
-        propInfo.Name = propName;
+        var propInfo = new PropInfo(propName, targetType);
         propInfo.IsConstrained = true;
         typeInfo.Properties.Add(propInfo);
         return propInfo;

@@ -1,8 +1,4 @@
-﻿using DocumentFormat.OpenXml.Framework.Metadata;
-
-using DocumentModel;
-
-namespace ModelGen;
+﻿namespace ModelGen;
 
 /// <summary>
 /// Represents information of scanned and generated type.
@@ -10,20 +6,32 @@ namespace ModelGen;
 public class TypeInfo : ModelElement
 {
   /// <summary>
-  /// Type read from source library or declared explicitly.
+  /// Type read from source library or declared explicitly on creation.
   /// </summary>
-  public Type Type { get; set; }
+  public Type Type { get; private set; }
 
   /// <summary>
-  /// Target type info
+  /// Original namespace - get from type.
+  /// </summary>
+  public string OriginalNamespace => Type.Namespace ?? "";
+
+  /// <summary>
+  /// Original type name - get from Type.
+  /// </summary>
+  public string OriginalName => Type.Name;
+
+  /// <summary>
+  /// Target type info - used in conversion.
   /// </summary>
   public TypeInfo? TargetType { get; set; }
 
-  public string Namespace { get; set; } = String.Empty;
+  /// <summary>
+  /// Target namespace - when generated.
+  /// </summary>
+  public string TargetNamespace { get => _TargetNamespace ?? OriginalNamespace; set { _TargetNamespace = value; } }
 
-  public string OriginalNamespace => Type.Namespace ?? "";
+  private string? _TargetNamespace;
 
-  public string OriginalName => Type.Name;
 
   public bool IsReflected { get; internal set; }
 
@@ -80,7 +88,7 @@ public class TypeInfo : ModelElement
   public TypeInfo(Type type) : base(type.Name)
   {
     Type = type;
-    Namespace = type.Namespace ?? "";
+    TargetNamespace = type.Namespace ?? "";
     if (IsAccepted == null)
     {
       var isAccepted = true;
@@ -105,7 +113,7 @@ public class TypeInfo : ModelElement
     }
     else
     {
-      aNamespace = this.Namespace;
+      aNamespace = this.TargetNamespace;
       aNamespace = TypeManager.TranslateNamespace(aNamespace);
     }
     if (shortcut)
@@ -125,7 +133,7 @@ public class TypeInfo : ModelElement
     else
     {
       aName = this.Name;
-      aNamespace = this.Namespace;
+      aNamespace = this.TargetNamespace;
       aNamespace = TypeManager.TranslateNamespace(aNamespace);
     }
     if (shortcut)
@@ -187,5 +195,5 @@ public class TypeInfo : ModelElement
     //return result;
   }
 
-  public override string ToString() => $"{Namespace}.{Name}";
+  public override string ToString() => $"{TargetNamespace}.{Name}";
 }

@@ -13,29 +13,29 @@ public class ModelElement: IOwnedElement
   public object? Owner {get; set;}
 
   /// <summary>
-  /// Name of the element (as read from the source library).
+  /// Name of the element (as read from the source library) or declared on creation.
   /// </summary>
-  public string Name { get; set; }
+  public string Name { get; /*set; */}
 
   /// <summary>
-  /// New name of the element (with a namespace) used if the element is renamed.
+  /// New name of the element used if the element is renamed.
   /// </summary>
-  public QualifiedName? NewName { get; set; }
+  public string? NewName { get; set; }
 
   /// <summary>
   /// Status of acceptance for the further processing.
   /// </summary>
-  private ARS Acceptance;
+  public bool? Acceptance;
   
   /// <summary>
   /// Specifies whether the element is accepted for further processing.
   /// </summary>
-  public bool IsAccepted { get => Acceptance == ARS.Accepted; set { if (value) Acceptance = ARS.Accepted; else Acceptance=ARS.Rejected; } }
+  public bool IsAccepted { get => Acceptance == true; set { if (value) Acceptance = true; else Acceptance = false; } }
 
   /// <summary>
   /// Specifies whether the element is rejected from further processing.
   /// </summary>
-  public bool IsRejected { get => Acceptance == ARS.Rejected; set { if (value) Acceptance = ARS.Rejected; else Acceptance=ARS.None; } }
+  public bool IsRejected { get => Acceptance == false; set { if (value) Acceptance = false; else Acceptance = true; } }
 
   /// <summary>
   /// Specifies whether the element is used by other elements.

@@ -127,7 +127,7 @@ public class ConverterGenerator : BaseCodeGenerator
     var typeName = type.Name;
     if (typeName == "Rsids")
       TestTools.Stop();
-    var aNamespace = type.Namespace;
+    var aNamespace = type.TargetNamespace;
     aNamespace = aNamespace.Replace("DocumentModel.", "");
     var implOutputPath = Path.Combine(OutputPath, aNamespace);
     return GenerateConverterClass(type, typeName, Path.Combine(implOutputPath, typeName + "Converter" + ".cs"));
@@ -148,7 +148,7 @@ public class ConverterGenerator : BaseCodeGenerator
   {
     if (typeName == "Rsids")
       TestTools.Stop();
-    var aNamespace = typeInfo.Namespace;
+    var aNamespace = typeInfo.TargetNamespace;
     if (aNamespace != null)
     {
       aNamespace = aNamespace.ReplaceStart("DocumentModel", "DocumentModel.OpenXml");
@@ -2454,7 +2454,7 @@ public class ConverterGenerator : BaseCodeGenerator
         return SimpleTypeConverterGetMethodName(targetItemType.GetFullName(), origItemType.GetFullName());
 
       convPropName = new FullTypeName(targetItemType.Name + "Converter",
-        TypeInfo.NamespaceShortcut(targetItemType.Namespace.ReplaceStart("DocumentModel", "DocumentModel.OpenXml")));
+        TypeInfo.NamespaceShortcut(targetItemType.TargetNamespace.ReplaceStart("DocumentModel", "DocumentModel.OpenXml")));
     }
     else if (targetPropTypeName.Name == "Byte[]" || targetPropTypeName.Name == "HexBinary")
     {
@@ -2464,7 +2464,7 @@ public class ConverterGenerator : BaseCodeGenerator
     else
     {
       convPropName = new FullTypeName(targetPropTypeName.Name + "Converter",
-        TypeInfo.NamespaceShortcut((targetPropType?.Namespace ?? "").ReplaceStart("DocumentModel", "DocumentModel.OpenXml")));
+        TypeInfo.NamespaceShortcut((targetPropType?.TargetNamespace ?? "").ReplaceStart("DocumentModel", "DocumentModel.OpenXml")));
     }
     return $"{convPropName}.CreateModelElement";
   }
@@ -2531,7 +2531,7 @@ public class ConverterGenerator : BaseCodeGenerator
         return SimpleTypeConverterCreateMethodName(targetItemType.GetFullName(), origItemType.GetFullName(true));
 
       convPropName = new FullTypeName(targetItemType.Name + "Converter",
-        TypeInfo.NamespaceShortcut((targetItemType?.Namespace ?? "").ReplaceStart("DocumentModel", "DocumentModel.OpenXml")));
+        TypeInfo.NamespaceShortcut((targetItemType?.TargetNamespace ?? "").ReplaceStart("DocumentModel", "DocumentModel.OpenXml")));
       origPropTypeName = origItemType.GetFullName(true);
     }
     else if (targetPropTypeName.Name == "Byte[]")
@@ -2541,7 +2541,7 @@ public class ConverterGenerator : BaseCodeGenerator
     else
     {
       convPropName = new FullTypeName(targetPropTypeName.Name + "Converter",
-        TypeInfo.NamespaceShortcut((targetPropType.Namespace ?? "").ReplaceStart("DocumentModel", "DocumentModel.OpenXml")));
+        TypeInfo.NamespaceShortcut((targetPropType.TargetNamespace ?? "").ReplaceStart("DocumentModel", "DocumentModel.OpenXml")));
     }
     var convCreateMethodName = $"{convPropName}.CreateOpenXmlElement";
     if (generic)

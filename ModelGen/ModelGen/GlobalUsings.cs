@@ -13,6 +13,10 @@ global using Qhta.Xml.Reflection;
 global using Qhta.TestHelper;
 global using Qhta.TypeUtils;
 
+global using DocumentFormat.OpenXml.Framework.Metadata;
+global using DocumentModel;
+global using Task = System.Threading.Tasks.Task;
+
 global using DX = DocumentFormat.OpenXml;
 //global using DXAddCht = DocumentFormat.OpenXml.AdditionalCharacteristics;
 //global using DXBib = DocumentFormat.OpenXml.Bibliography;
