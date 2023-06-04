@@ -119,7 +119,7 @@ public class ConverterCreator: BaseCreator
     DateTime t1 = DateTime.Now;
     foreach (var typeInfo in TypeManager.AcceptedTypes.ToArray())
     {
-      if (typeInfo.Namespace.StartsWith("System"))
+      if (typeInfo.TargetNamespace.StartsWith("System"))
         continue;
       if (typeInfo.Name.Contains('`'))
         continue;

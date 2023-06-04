@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "XOjDYuU0zaP8U0vwEGfn3JN4L803nFrEC/BGD94BxLsVGm4qWsRJlLDk0olFLdv8ePXDHesX75TuO7gkyAImjA==",
+  "dgSpecHash": "alQAwfkMGDB/OSHuAxZoLmTm6El0uXprk8o9s2d8Dsy4EbdDGPirjYOCY227/KSXHvuxRTYTznIjOIYdY3vYTw==",
   "success": true,
   "projectFilePath": "D:\\VS\\Projects\\DocxDocument\\ModelGen\\ModelGenRun\\ModelGenRun.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\qhta1\\.nuget\\packages\\deepequal\\4.2.1\\deepequal.4.2.1.nupkg.sha512",
-    "C:\\Users\\qhta1\\.nuget\\packages\\documentformat.openxml\\2.19.0\\documentformat.openxml.2.19.0.nupkg.sha512",
+    "C:\\Users\\qhta1\\.nuget\\packages\\documentformat.openxml\\2.20.0\\documentformat.openxml.2.20.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\ignoresaccesscheckstogenerator\\0.6.0\\ignoresaccesscheckstogenerator.0.6.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\jsonknowntypes\\0.5.5\\jsonknowntypes.0.5.5.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\microsoft.csharp\\4.3.0\\microsoft.csharp.4.3.0.nupkg.sha512",
