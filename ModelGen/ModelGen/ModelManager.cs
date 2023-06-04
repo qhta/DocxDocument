@@ -1,14 +1,4 @@
-﻿using System.Reflection;
-
-using DocumentFormat.OpenXml;
-using DocumentFormat.OpenXml.EMMA;
-
-using DocumentModel;
-
-using Qhta.Xml.Reflection;
-
-using Task = System.Threading.Tasks.Task;
-
+﻿
 namespace ModelGen;
 
 public static class ModelManager
@@ -17,11 +7,8 @@ public static class ModelManager
   #region Type conversion
   public static bool TryAddTypeConversion(this TypeInfo typeInfo)
   {
-    //if (typeInfo.Name == "AttachedTemplate")
-    //  Debug.Assert(true);
     if (typeInfo.IsConverted)
       return false;
-
     if (TryAddTypeTableConversion(typeInfo))
       return true;
     if (TryAddBaseTypeConversion(typeInfo))
@@ -279,7 +266,7 @@ public static class ModelManager
     var typeInfo = propInfo.PropertyType;
     TypeInfo targetTypeInfo = null!;
     Type? targetType = null;
-    var propName = propInfo.DeclaringType?.Namespace+"."+propInfo.DeclaringType?.Name+"."+propInfo.Name; 
+    var propName = propInfo.DeclaringType?.TargetNamespace+"."+propInfo.DeclaringType?.Name+"."+propInfo.Name; 
     if (ModelData.TryGetPropertyType(propName, out targetType))
       targetTypeInfo = TypeManager.RegisterType(targetType, typeInfo, Semantics.TypeChange);
     else
@@ -331,7 +318,7 @@ public static class ModelManager
     string aName = typeInfo.Name;
     if (typeInfo.IsGenericTypeParameter)
       return new FullTypeName(aName, null);
-    string aNamespace = typeInfo.Namespace;
+    string aNamespace = typeInfo.TargetNamespace;
 
     aNamespace = TypeManager.TranslateNamespace(aNamespace);
     var apos = aName.IndexOf('`');
@@ -429,7 +416,7 @@ public static class ModelManager
       return false;
     if (ModelData.IsExcluded(typeInfo.Type))
       return false;
-    if (ModelData.ExcludedNamespaces.Contains(typeInfo.Namespace ?? ""))
+    if (ModelData.ExcludedNamespaces.Contains(typeInfo.TargetNamespace ?? ""))
       return false;
     typeInfo.IsUsed = true;
 
@@ -473,7 +460,7 @@ public static class ModelManager
 
   private static bool HasExcludedNamespace(this TypeInfo typeInfo)
   {
-    if (ModelData.ExcludedNamespaces.Contains(typeInfo.Namespace))
+    if (ModelData.ExcludedNamespaces.Contains(typeInfo.TargetNamespace))
       return true;
     if (typeInfo.IsConstructedGenericType)
     {
@@ -613,7 +600,7 @@ public static class ModelManager
         foreach (var type in duplicateTypes)
         {
           cnt++;
-          type.Name += cnt.ToString();
+          type.NewName = type.Name + cnt.ToString();
           i++;
         }
         duplicatedTypesCount += cnt;
@@ -633,30 +620,30 @@ public static class ModelManager
     if (ModelData.TypeNameConversion.TryGetValue(typeName, out var newName))
     {
       var k = newName.LastIndexOf(".");
-      typeInfo.Name = newName.Substring(k + 1);
-      typeInfo.Namespace = newName.Substring(0, k);
+      typeInfo.NewName = newName.Substring(k + 1);
+      typeInfo.TargetNamespace = newName.Substring(0, k);
       return true;
     }
-    var aNamespace = TypeManager.TranslateNamespace(typeInfo.Namespace);
-    if (aNamespace != typeInfo.Namespace)
+    var aNamespace = TypeManager.TranslateNamespace(typeInfo.TargetNamespace);
+    if (aNamespace != typeInfo.TargetNamespace)
     {
       TypeManager.RegisterNamespace(aNamespace);
-      typeInfo.Namespace = aNamespace;
-      var namespaces = TypeManager.GetNamespaceDictionary(aNamespace);
-      if (namespaces.TryGetTypesWithSameName(typeInfo, out var otherTypes))
+      typeInfo.TargetNamespace = aNamespace;
+      var nspace = TypeManager.GetNamespace(aNamespace);
+      if (nspace.TryGetTypesWithSameName(typeInfo, out var otherTypes))
       {
         foreach (var sameNameType in otherTypes)
           RenameTypeWithNamespace(sameNameType);
         RenameTypeWithNamespace(typeInfo);
       }
-      namespaces.Add(typeInfo);
+      nspace.Types.Add(typeInfo);
     }
     if (typeInfo.TypeKind == TypeKind.Enum)
     {
       newName = NewEnumTypeName(typeInfo.Type);
       if (newName != typeInfo.Name)
       {
-        typeInfo.Name = newName;
+        typeInfo.NewName = newName;
         return true;
       }
     }
@@ -676,20 +663,20 @@ public static class ModelManager
     var count = 0;
     if (TypeManager.TryGetTypeInfo(typeof(System.IO.Packaging.PackageProperties), out var corePropertiesTypeInfo))
     {
-      corePropertiesTypeInfo.Name = "CoreProperties";
-      corePropertiesTypeInfo.Namespace = "DocumentModel.Properties";
+      corePropertiesTypeInfo.NewName = "CoreProperties";
+      corePropertiesTypeInfo.TargetNamespace = "DocumentModel.Properties";
       count++;
     }
     if (TypeManager.TryGetTypeInfo(typeof(DocumentFormat.OpenXml.ExtendedProperties.Properties), out var extendedPropertiesTypeInfo))
     {
-      extendedPropertiesTypeInfo.Name = "ExtendedProperties";
-      extendedPropertiesTypeInfo.Namespace = "DocumentModel.Properties";
+      extendedPropertiesTypeInfo.NewName = "ExtendedProperties";
+      extendedPropertiesTypeInfo.TargetNamespace = "DocumentModel.Properties";
       count++;
     }
     if (TypeManager.TryGetTypeInfo(typeof(DocumentFormat.OpenXml.CustomProperties.Properties), out var customPropertiesTypeInfo))
     {
-      customPropertiesTypeInfo.Name = "CustomProperties";
-      customPropertiesTypeInfo.Namespace = "DocumentModel.Properties";
+      customPropertiesTypeInfo.NewName = "CustomProperties";
+      customPropertiesTypeInfo.TargetNamespace = "DocumentModel.Properties";
       count++;
     }
     return count;
@@ -699,22 +686,22 @@ public static class ModelManager
   {
     var origNamespace = typeInfo.OriginalNamespace;
     if (origNamespace.Contains("2010"))
-      typeInfo.Name += "2";
+      typeInfo.NewName = typeInfo.Name+"2";
     else
     if (origNamespace.Contains("2013"))
-      typeInfo.Name += "3";
+      typeInfo.NewName = typeInfo.Name + "3";
     else
     if (origNamespace.Contains("2016"))
-      typeInfo.Name += "4";
+      typeInfo.NewName = typeInfo.Name + "4";
     else
     if (origNamespace.Contains("2019"))
-      typeInfo.Name += "5";
+      typeInfo.NewName = typeInfo.Name + "5";
     else
     if (origNamespace.Contains("2021"))
-      typeInfo.Name += "6";
+      typeInfo.NewName = typeInfo.Name + "6";
     else
     if (origNamespace.Contains("2022"))
-      typeInfo.Name += "7";
+      typeInfo.NewName = typeInfo.Name + "7";
   }
 
   private static string NewEnumTypeName(Type type)
@@ -759,12 +746,12 @@ public static class ModelManager
   {
     if (type.Name.Contains('`'))
       return false;
-    return TypeManager.GetNamespaceTypes(type.Namespace).Where(Item => Item.Name == type.Name).Count() > 1;
+    return TypeManager.GetNamespaceTypes(type.TargetNamespace).Where(Item => Item.Name == type.Name).Count() > 1;
   }
 
   public static TypeInfo[] GetDuplicatesInNamespace(this TypeInfo type)
   {
-    return TypeManager.GetNamespaceTypes(type.Namespace).Where(Item => Item.Name == type.Name).ToArray();
+    return TypeManager.GetNamespaceTypes(type.TargetNamespace).Where(Item => Item.Name == type.Name).ToArray();
   }
   #endregion
 

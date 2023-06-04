@@ -1,9 +1,15 @@
-﻿using System.Diagnostics;
+﻿using System.Buffers;
+using System.Diagnostics;
 
 namespace ModelGen;
 
-public class TypeDictionary: List<TypeInfo>
+public class Namespace
 {
+  public string OrigName { get; private set; }
+
+  public string? TargetName { get; set; }
+
+  public OwnedCollection<TypeInfo> Types { get; private set; }
 
   //private class TypeInfoComparer : IEqualityComparer<TypeInfo>
   //{
@@ -33,9 +39,15 @@ public class TypeDictionary: List<TypeInfo>
 
   //private static TypeInfoComparer MyComparer = new TypeInfoComparer();
 
-  public TypeDictionary()  {}
+  /// <summary>
+  /// 
+  /// </summary>
+  public Namespace(string name)
+  {
+    OrigName = name;
+    Types = new OwnedCollection<TypeInfo>(this);
+  }
 
-  public IEnumerable<TypeInfo> Values => this;
   //public void Add(TypeInfo typeInfo)
   //{
   //  var name = typeInfo.GetNameWithParams();
@@ -45,7 +57,7 @@ public class TypeDictionary: List<TypeInfo>
   public bool TryGetTypesWithSameName(TypeInfo typeInfo, out IEnumerable<TypeInfo> types)
   {
     var name = typeInfo.GetNameWithParams();
-    types = this.Where(item => item.GetNameWithParams() == name).ToList();
-    return types.Count()>0;
+    types = Types.Where(item => item.GetNameWithParams() == name).ToList();
+    return types.Count() > 0;
   }
 }

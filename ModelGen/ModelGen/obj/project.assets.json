@@ -11,7 +11,7 @@
           "lib/net6.0/DeepEqual.dll": {}
         }
       },
-      "DocumentFormat.OpenXml/2.19.0": {
+      "DocumentFormat.OpenXml/2.20.0": {
         "type": "package",
         "dependencies": {
           "System.IO.Packaging": "4.7.0"
@@ -897,14 +897,14 @@
         "lib/netstandard2.1/DeepEqual.dll"
       ]
     },
-    "DocumentFormat.OpenXml/2.19.0": {
-      "sha512": "BLFqodowHZHR/A/sKU/6e+63J5ONWDdv8hEuSZOUiBfGFuVmsG9P3o+LMSq+dajNWE1q+lqVSa1H5FuhLX8/fA==",
+    "DocumentFormat.OpenXml/2.20.0": {
+      "sha512": "+oFMsEppo/W6KpGTRXaJl2jTFYn9zeon4FaZuDoCijQ1/0JaPENaCef7d4Y3f8v116eKhVBwd4Ya+/NDglxkjw==",
       "type": "package",
-      "path": "documentformat.openxml/2.19.0",
+      "path": "documentformat.openxml/2.20.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "documentformat.openxml.2.19.0.nupkg.sha512",
+        "documentformat.openxml.2.20.0.nupkg.sha512",
         "documentformat.openxml.nuspec",
         "icon.png",
         "lib/net35/DocumentFormat.OpenXml.dll",
@@ -3074,7 +3074,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "DocumentFormat.OpenXml >= 2.19.0",
+      "DocumentFormat.OpenXml >= 2.20.0",
       "DocumentModel >= 1.0.0",
       "DocumentModel.Attributes >= 1.0.0",
       "IgnoresAccessChecksToGenerator >= 0.6.0",
@@ -3140,7 +3140,7 @@
         "dependencies": {
           "DocumentFormat.OpenXml": {
             "target": "Package",
-            "version": "[2.19.0, )"
+            "version": "[2.20.0, )"
           },
           "IgnoresAccessChecksToGenerator": {
             "suppressParent": "All",

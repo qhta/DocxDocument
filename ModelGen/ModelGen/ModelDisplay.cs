@@ -137,7 +137,7 @@ public static class ModelDisplay
 
   public static void ShowTypes(string nspace, string name)
   {
-    var types = TypeManager.GetNamespaceDictionary(nspace).Where(item => item.Name.StartsWith(name));
+    var types = TypeManager.GetNamespace(nspace).Types.Where(item => item.Name.StartsWith(name));
     foreach (var type in types)
     {
       ShowTypeInfo(type);
@@ -150,7 +150,10 @@ public static class ModelDisplay
       options = new DisplayOptions();
     if (!typeInfo.IsReflected)
       typeInfo.WaitForReflection();
-    var str = $"{typeInfo.TypeKind.ToString().ToLower()} {typeInfo.GetFullName(options.TypeDataSelector.HasFlag(TDS.OriginalNames))}";
+    string str = "";
+    if (!options.TypeDataSelector.HasFlag(TDS.AcceptedTypesOnly))
+      str += Accepted(typeInfo.Acceptance);
+    str += $"{typeInfo.TypeKind.ToString().ToLower()} {typeInfo.GetFullName(options.TypeDataSelector.HasFlag(TDS.OriginalNames))}";
     if (options.TypeDataSelector.HasFlag(TDS.ConversionInfo))
     {
       var changedToType = ModelManager.GetConversionTargetOrSelf(typeInfo);
@@ -375,7 +378,7 @@ public static class ModelDisplay
 
   private static string Multi(int n, string single, string? multi = null) => (n == 1) ? single : (multi ?? (single.EndsWith("s") ? (single + "es") : (single + "s")));
 
-  //private static string Accepted(ARS acceptance) => (acceptance == ARS.Accepted) ? "accepted" :(acceptance == ARS.Rejected) ? "rejected" : string.Empty;
+  private static string Accepted(bool? acceptance) => (acceptance == true) ? "+ " :(acceptance == false) ? "- " : "? ";
   #endregion
 }
 

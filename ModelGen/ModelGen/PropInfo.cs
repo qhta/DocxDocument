@@ -57,7 +57,7 @@ public class PropInfo: ModelElement
       CustomAttributes.Add(new CustomAttribInfo(item));
   }
 
-  public PropInfo(TypeInfo typeInfo) : this(typeInfo.Name, typeInfo.Type)
+  public PropInfo(string name, TypeInfo typeInfo) : this(name, typeInfo.Type)
   {
     if (ModelData.ExcludedProperties.Contains(typeInfo.Name))
       IsAccepted = false;
