@@ -1,29 +1,31 @@
-﻿using Qhta.TextUtils;
+﻿using System.CodeDom.Compiler;
+
+using Qhta.TextUtils;
 
 namespace ModelGen;
 
-public static class ModelDisplay
+public class ModelDisplay : ModelMonitor
 {
-  private static IndentedTextWriter Writer { get; set; } = new IndentedTextWriter(Console.Out, "  ");
-  private static int LineLength = 0;
+  private IndentedTextWriter Writer { get; set; } = new IndentedTextWriter(Console.Out, "  ");
+  private int LineLength = 0;
 
-  public static void SetOutput(TextWriter textWriter)
+  public void SetOutput(TextWriter textWriter)
   {
     Writer = new IndentedTextWriter(textWriter, "  ");
   }
 
-  public static void WriteLine(string? str)
+  public override void WriteLine(string? str)
   {
     Writer.WriteLine(str);
     LineLength = (str?.Length ?? 0);
   }
-  public static void WriteLine()
+  public override void WriteLine()
   {
     Writer.WriteLine();
     LineLength = 0;
   }
 
-  public static void WriteSameLine(string str)
+  public override void WriteSameLine(string str)
   {
     int maxLength = Console.WindowWidth - 1;
     if (str.Length > maxLength)
@@ -36,8 +38,10 @@ public static class ModelDisplay
     LineLength = l;
   }
 
-  public static void ShowNamespaceSummary(NTS originTargetSelector = NTS.Any)
+  public override void ShowNamespaceSummary(NTS originTargetSelector = NTS.Any)
   {
+    WriteLine();
+    WriteLine("Scanned namespaces:");
     var namespaces = TypeManager.GetNamespaces(originTargetSelector);
     if (namespaces.Any())
     {
@@ -69,8 +73,10 @@ public static class ModelDisplay
     }
   }
 
-  public static void ShowNamespacesDetails(DisplayOptions options)
+  public override void ShowNamespacesDetails(DisplayOptions options)
   {
+    WriteLine();
+    WriteLine("Scanned types:");
     var namespaces = TypeManager.GetNamespaces(options.NamespaceTypeSelector).ToList();
     if (options.Namespaces != null)
       namespaces = namespaces.Where(item => options.Namespaces
@@ -83,14 +89,14 @@ public static class ModelDisplay
     }
   }
 
-  public static void ShowNamespaceDetails(string nspace, DisplayOptions options)
+  public override void ShowNamespaceDetails(string nspace, DisplayOptions options)
   {
     var nSpaceTypes = TypeManager.GetNamespaceTypes(nspace).ToList();
     if (options.Typenames != null)
       nSpaceTypes = nSpaceTypes.Where(item => options.Typenames
       .FirstOrDefault(pattern => item.Name == pattern || item.Name.IsLike(pattern)) != null).ToList();
     if (options.TypeKindSelector != TKS.Any)
-      nSpaceTypes = nSpaceTypes.Where(item => IsTypeKind(item.TypeKind,options.TypeKindSelector)).ToList();
+      nSpaceTypes = nSpaceTypes.Where(item => IsTypeKind(item.TypeKind, options.TypeKindSelector)).ToList();
     if (options.TypeDataSelector.HasFlag(TDS.AcceptedTypesOnly))
       nSpaceTypes = nSpaceTypes.Where(item => item.IsAccepted).ToList();
     if (nSpaceTypes.Count() > 0)
@@ -108,34 +114,7 @@ public static class ModelDisplay
     }
   }
 
-  private static bool IsTypeKind(TypeKind typeKind, TKS selector)
-  {
-    switch (typeKind)
-    {
-      case TypeKind.Type: 
-        return selector == TKS.Any;
-      case TypeKind.Struct: 
-        return selector.HasFlag(TKS.Struct);
-      case TypeKind.Class: 
-        return selector.HasFlag(TKS.Class);
-      case TypeKind.Enum: 
-        return selector.HasFlag(TKS.Enum);
-      case TypeKind.Interface: 
-        return selector.HasFlag(TKS.Interface);
-    }
-    return false;
-  }
-
-  private static string[] constaints = new string[]
-  {
-    "covariant",
-    "contravariant",
-    "class",
-    "struct",
-    "new()"
-  };
-
-  public static void ShowTypes(string nspace, string name)
+  public override void ShowTypes(string nspace, string name)
   {
     var types = TypeManager.GetNamespace(nspace).Types.Where(item => item.Name.StartsWith(name));
     foreach (var type in types)
@@ -144,7 +123,7 @@ public static class ModelDisplay
     }
   }
 
-  public static void ShowTypeInfo(TypeInfo typeInfo, DisplayOptions options = null!)
+  public override void ShowTypeInfo(TypeInfo typeInfo, DisplayOptions options = null!)
   {
     if (options == null)
       options = new DisplayOptions();
@@ -192,7 +171,7 @@ public static class ModelDisplay
     Writer.Indent--;
   }
 
-  public static void ShowGenericParamsConstraints(TypeInfo typeInfo, DisplayOptions options)
+  public override void ShowGenericParamsConstraints(TypeInfo typeInfo, DisplayOptions options)
   {
     var genericTypeParams = typeInfo.GetGenericParamTypes();
     if (genericTypeParams != null)
@@ -217,7 +196,7 @@ public static class ModelDisplay
     }
   }
 
-  public static void ShowImplementedInterfaces(TypeInfo typeInfo, DisplayOptions options)
+  public override void ShowImplementedInterfaces(TypeInfo typeInfo, DisplayOptions options)
   {
     var implementedInterfaces = typeInfo.GetImplementedInterfaces();
     if (implementedInterfaces.Any())
@@ -232,7 +211,7 @@ public static class ModelDisplay
     }
   }
 
-  public static void ShowElementsTypes(TypeInfo typeInfo, DisplayOptions options)
+  public override void ShowElementsTypes(TypeInfo typeInfo, DisplayOptions options)
   {
     var includedTypes = typeInfo.GetIElementsTypes();
     if (includedTypes.Any())
@@ -247,7 +226,7 @@ public static class ModelDisplay
     }
   }
 
-  public static void ShowOutgoingRelationships(TypeInfo typeInfo, DisplayOptions options)
+  public override void ShowOutgoingRelationships(TypeInfo typeInfo, DisplayOptions options)
   {
     var outgoingRels = TypeManager.GetOutgoingRelationships(typeInfo).ToList();
     if (options.TypeDataSelector.HasFlag(TDS.ExcludeSemantics) && options.SemanticsFilter != null)
@@ -270,7 +249,7 @@ public static class ModelDisplay
     }
   }
 
-  public static void ShowIncomingRelationships(TypeInfo typeInfo, DisplayOptions options)
+  public override void ShowIncomingRelationships(TypeInfo typeInfo, DisplayOptions options)
   {
     var incomingRels = TypeManager.GetIncomingRelationships(typeInfo).ToList();
     if (options.TypeDataSelector.HasFlag(TDS.ExcludeSemantics) && options.SemanticsFilter != null)
@@ -292,7 +271,7 @@ public static class ModelDisplay
     }
   }
 
-  public static void ShowEnumValues(TypeInfo typeInfo, DisplayOptions options)
+  public override void ShowEnumValues(TypeInfo typeInfo, DisplayOptions options)
   {
     var enumValues = typeInfo.EnumValues;
     if (enumValues != null && enumValues.Any())
@@ -311,7 +290,7 @@ public static class ModelDisplay
     }
   }
 
-  public static void ShowProperties(TypeInfo typeInfo, DisplayOptions options)
+  public override void ShowProperties(TypeInfo typeInfo, DisplayOptions options)
   {
     if (options.TypeDataSelector.HasFlag(TDS.AcceptedTypesOnly) && typeInfo.IsAccepted == false)
       return;
@@ -339,7 +318,7 @@ public static class ModelDisplay
     }
   }
 
-  public static void ShowTypeConversions()
+  public override void ShowTypeConversions()
   {
     foreach (var type in TypeManager.AllTypes)
     {
@@ -347,7 +326,7 @@ public static class ModelDisplay
     }
   }
 
-  public static void ShowTypeConversion(TypeInfo type)
+  public override void ShowTypeConversion(TypeInfo type)
   {
     if (type.IsConverted)
     {
@@ -362,7 +341,7 @@ public static class ModelDisplay
     }
   }
 
-  public static void ShowTypeRenames()
+  public override void ShowTypeRenames()
   {
     foreach (var typeInfo in TypeManager.AllTypes)
     {
@@ -373,12 +352,11 @@ public static class ModelDisplay
     }
   }
 
-  #region Helper functions to format diplay
-  private static string AllNone(int n, int cmp) => (n == 0) ? "none" : (n == cmp) ? "all" : n.ToString();
+  public override void ShowProcessSummary(ProcessInfo info)
+  {
+    WriteLine();
+    WriteLine($"Total time = {info.TotalTime}");
+  }
 
-  private static string Multi(int n, string single, string? multi = null) => (n == 1) ? single : (multi ?? (single.EndsWith("s") ? (single + "es") : (single + "s")));
-
-  private static string Accepted(bool? acceptance) => (acceptance == true) ? "+ " :(acceptance == false) ? "- " : "? ";
-  #endregion
 }
 

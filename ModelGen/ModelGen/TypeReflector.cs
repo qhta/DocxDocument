@@ -1,17 +1,21 @@
 ﻿using DocumentFormat.OpenXml;
-using DocumentFormat.OpenXml.Office.CustomDocumentInformationPanel;
-using DocumentFormat.OpenXml.Wordprocessing;
 
 using Namotion.Reflection;
 
-using System.Diagnostics;
-using DocumentFormat.OpenXml.Office2016.Drawing;
-using DocumentFormat.OpenXml.Validation.Schema;
-
 namespace ModelGen;
+
+public record ReflectionInfo
+{
+  public int Done;
+  public int Waiting;
+  public TypeInfo? Current;
+}
+
+public delegate void ReflectionEvent(ReflectionInfo typeInfo);
 
 public static class TypeReflector
 {
+  public static event ReflectionEvent? OnReflection;
 
   private static Queue<TypeInfo> TypeQueue = new Queue<TypeInfo>();
 
@@ -97,8 +101,7 @@ public static class TypeReflector
     lock (reflectedLock)
     {
       reflected++;
-      ModelDisplay.WriteSameLine(
-        $"Total {TypeManager.TotalTypesCount} registered types, {reflected} reflected, {TypeQueue.Count} waiting. {typeInfo.OriginalNamespace}.{typeInfo.OriginalName}");
+      OnReflection?.Invoke(new ReflectionInfo{ Done=reflected, Waiting=TypeQueue.Count, Current = typeInfo });
     }
     var type = typeInfo.Type;
     typeInfo.TypeKind = TypeKind.Type;
