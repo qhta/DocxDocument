@@ -1,50 +1,102 @@
-﻿using System.CodeDom.Compiler;
+﻿using System.Collections.Immutable;
 
-using Qhta.TextUtils;
+namespace ModelGenRun;
 
-namespace ModelGen;
-
-public class ModelDisplay : ModelMonitor
+public class ModelDisplay : IModelMonitor
 {
-  private IndentedTextWriter Writer { get; set; } = new IndentedTextWriter(Console.Out, "  ");
+  private TraceWriter Writer { get; set; }
   private int LineLength = 0;
 
-  public void SetOutput(TextWriter textWriter)
+  public ModelDisplay ()
   {
-    Writer = new IndentedTextWriter(textWriter, "  ");
+    Writer = new TraceWriter ();
   }
 
-  public override void WriteLine(string? str)
+  public void WriteLine(string str)
   {
     Writer.WriteLine(str);
-    LineLength = (str?.Length ?? 0);
+    LineLength = str.Length;
   }
-  public override void WriteLine()
+  public void WriteLine()
   {
     Writer.WriteLine();
     LineLength = 0;
   }
 
-  public override void WriteSameLine(string str)
+  public void WriteSameLine(string str)
   {
     int maxLength = Console.WindowWidth - 1;
     if (str.Length > maxLength)
       str = str.Substring(maxLength);
     var l = str?.Length ?? 0;
     int n = (l < LineLength) ? LineLength - l : 0;
-    Writer.Write($"\r{str}");
+    Console.Write($"\r{str}");
     if (n > 0)
-      Writer.Write(new String(' ', n));
+      Console.Write(new String(' ', n));
     LineLength = l;
   }
 
-  public override void ShowNamespaceSummary(NTS originTargetSelector = NTS.Any)
+  public void ShowProcessStart(string line)
+  {
+    WriteLine();
+    WriteLine(line);
+  }
+
+  public void ShowPhaseStart(string phaseName)
+  {
+    WriteLine();
+    WriteLine($"Start {phaseName.ToLower()}");
+  }
+
+  public void ShowPhaseProgress(string phaseName, ProgressInfo info)
+  {
+    var sl = new List<string>();
+    if (info.PreStr!=null)
+      sl.Add(info.PreStr);
+    if (info.Done!=null && info.Total!=null)
+      sl.Add($"{info.Done}/{info.Total}");
+    else if (info.Done!=null)
+      sl.Add($"{info.Done}");
+    if (info.MidStr!=null)
+      sl.Add(info.MidStr);
+    if (info.Summary!=null)
+      foreach (var item in info.Summary)
+      {
+        if (item.Key.Contains('{'))
+          sl.Add(String.Format(item.Key, item.Value));
+        else
+          sl.Add($"{item.Key} = {item.Value}");
+      }
+    if (info.PostStr!=null)
+      sl.Add(info.PostStr);
+    var str = String.Join(" ",sl);
+    if (str!="")
+      WriteSameLine(str);
+  }
+
+  public void ShowPhaseEnd(string phaseName, SummaryInfo info)
+  {
+    WriteLine();
+    WriteLine($"End {phaseName.ToLower()}, time={info.Time}");
+    if (info.Summary!=null)
+      foreach (var item in info.Summary)
+      {
+        if (item.Key.Contains('{'))
+          WriteLine(String.Format(item.Key, item.Value));
+        else
+          WriteLine($"{item.Key} = {item.Value}");
+      }
+
+  }
+
+  public void ShowNamespaceSummary(NTS originTargetSelector)
   {
     WriteLine();
     WriteLine("Scanned namespaces:");
-    var namespaces = TypeManager.GetNamespaces(originTargetSelector);
+    var namespaces = TypeManager.GetNamespaces(originTargetSelector).ToList();
     if (namespaces.Any())
     {
+      namespaces.Sort();
       var maxNamespaceLength = namespaces.Max(item => item.Length);
       foreach (var nspace in namespaces)
       {
@@ -73,7 +125,7 @@ public class ModelDisplay : ModelMonitor
     }
   }
 
-  public override void ShowNamespacesDetails(DisplayOptions options)
+  public void ShowNamespacesDetails(DisplayOptions options)
   {
     WriteLine();
     WriteLine("Scanned types:");
@@ -81,15 +133,16 @@ public class ModelDisplay : ModelMonitor
     if (options.Namespaces != null)
       namespaces = namespaces.Where(item => options.Namespaces
       .FirstOrDefault(pattern => item == pattern || item.IsLike(pattern)) != null).ToList();
+    namespaces.Sort();
     foreach (var nspace in namespaces)
     {
-      Writer.Indent++;
+      Writer.Indent();
       ShowNamespaceDetails(nspace, options);
-      Writer.Indent--;
+      Writer.Unindent();
     }
   }
 
-  public override void ShowNamespaceDetails(string nspace, DisplayOptions options)
+  public void ShowNamespaceDetails(string nspace, DisplayOptions options)
   {
     var nSpaceTypes = TypeManager.GetNamespaceTypes(nspace).ToList();
     if (options.Typenames != null)
@@ -103,18 +156,19 @@ public class ModelDisplay : ModelMonitor
     {
       Writer.WriteLine();
       Writer.WriteLine($"namespace {nspace}");
-      Writer.Indent++;
+      Writer.Indent();
+      nSpaceTypes.Sort((info1, info2) => info1.Name.CompareTo(info2.Name));
       foreach (var typeInfo in nSpaceTypes)
       {
         if (typeInfo.IsGenericTypeParameter)
           continue;
         ShowTypeInfo(typeInfo, options);
       }
-      Writer.Indent--;
+      Writer.Unindent();
     }
   }
 
-  public override void ShowTypes(string nspace, string name)
+  public void ShowTypes(string nspace, string name)
   {
     var types = TypeManager.GetNamespace(nspace).Types.Where(item => item.Name.StartsWith(name));
     foreach (var type in types)
@@ -123,34 +177,33 @@ public class ModelDisplay : ModelMonitor
     }
   }
 
-  public override void ShowTypeInfo(TypeInfo typeInfo, DisplayOptions options = null!)
+  public void ShowTypeInfo(TypeInfo typeInfo, DisplayOptions options = null!)
   {
     if (options == null)
       options = new DisplayOptions();
-    if (!typeInfo.IsReflected)
-      typeInfo.WaitForReflection();
     string str = "";
     if (!options.TypeDataSelector.HasFlag(TDS.AcceptedTypesOnly))
       str += Accepted(typeInfo.Acceptance);
-    str += $"{typeInfo.TypeKind.ToString().ToLower()} {typeInfo.GetFullName(options.TypeDataSelector.HasFlag(TDS.OriginalNames))}";
+    var originNames = options.NamespaceTypeSelector == NTS.Origin || options.TypeDataSelector.HasFlag(TDS.OriginalNames);
+    str += $"{typeInfo.TypeKind.ToString().ToLower()} {typeInfo.GetFullName(originNames)}";
     if (options.TypeDataSelector.HasFlag(TDS.ConversionInfo))
     {
       var changedToType = ModelManager.GetConversionTargetOrSelf(typeInfo);
       if (changedToType != null)
-        str += $" => {changedToType.GetFullName(options.TypeDataSelector.HasFlag(TDS.OriginalNames))}";
+        str += $" => {changedToType.GetFullName()}";
     }
     Writer.WriteLine(str);
     if (options.TypeDataSelector.HasFlag(TDS.AcceptedTypesOnly) && typeInfo.IsAccepted == false)
       return;
-    Writer.Indent++;
+    Writer.Indent();
     if (options.TypeDataSelector.HasFlag(TDS.BaseTypes) && typeInfo.BaseTypeInfo != null)
     {
-      str = $"based on: {typeInfo.BaseTypeInfo.GetFullName(options.TypeDataSelector.HasFlag(TDS.OriginalNames))}";
+      str = $"based on: {typeInfo.BaseTypeInfo.GetFullName(originNames)}";
       if (options.TypeDataSelector.HasFlag(TDS.ConversionInfo))
       {
         var changedToType = ModelManager.GetConversionTargetOrSelf(typeInfo.BaseTypeInfo);
         if (changedToType != null)
-          str += $" => {changedToType.GetFullName(options.TypeDataSelector.HasFlag(TDS.OriginalNames))}";
+          str += $" => {changedToType.GetFullName()}";
       }
       Writer.WriteLine(str);
     }
@@ -168,11 +221,12 @@ public class ModelDisplay : ModelMonitor
       ShowEnumValues(typeInfo, options);
     if (options.TypeDataSelector.HasFlag(TDS.Properties))
       ShowProperties(typeInfo, options);
-    Writer.Indent--;
+    Writer.Unindent();
   }
 
-  public override void ShowGenericParamsConstraints(TypeInfo typeInfo, DisplayOptions options)
+  public void ShowGenericParamsConstraints(TypeInfo typeInfo, DisplayOptions options)
   {
+    var originNames = options.NamespaceTypeSelector == NTS.Origin || options.TypeDataSelector.HasFlag(TDS.OriginalNames);
     var genericTypeParams = typeInfo.GetGenericParamTypes();
     if (genericTypeParams != null)
     {
@@ -182,7 +236,7 @@ public class ModelDisplay : ModelMonitor
         var genericTypeParamsConstraints = genericTypeParam.GetGenericTypeParamConstraints();
         if (genericTypeParamsConstraints != null)
           foreach (var item in genericTypeParamsConstraints.ToArray())
-            ls.Add(item.GetFullName(options.TypeDataSelector.HasFlag(TDS.OriginalNames)));
+            ls.Add(item.GetFullName(originNames));
         var genericParamConstraints = genericTypeParam.GetGenericParamConstraints();
         if (genericParamConstraints != null)
           foreach (var item in genericParamConstraints.ToArray())
@@ -196,14 +250,15 @@ public class ModelDisplay : ModelMonitor
     }
   }
 
-  public override void ShowImplementedInterfaces(TypeInfo typeInfo, DisplayOptions options)
+  public void ShowImplementedInterfaces(TypeInfo typeInfo, DisplayOptions options)
   {
+    var originNames = options.NamespaceTypeSelector == NTS.Origin || options.TypeDataSelector.HasFlag(TDS.OriginalNames);
     var implementedInterfaces = typeInfo.GetImplementedInterfaces();
     if (implementedInterfaces.Any())
     {
       foreach (var intfType in implementedInterfaces.Take(options.ListLimit).ToArray())
       {
-        var str = $"implements {intfType.GetFullName(options.TypeDataSelector.HasFlag(TDS.OriginalNames))}";
+        var str = $"implements {intfType.GetFullName(originNames)}";
         Writer.WriteLine(str);
       }
       if (implementedInterfaces.Count() > 10)
@@ -211,14 +266,15 @@ public class ModelDisplay : ModelMonitor
     }
   }
 
-  public override void ShowElementsTypes(TypeInfo typeInfo, DisplayOptions options)
+  public void ShowElementsTypes(TypeInfo typeInfo, DisplayOptions options)
   {
+    var originNames = options.NamespaceTypeSelector == NTS.Origin || options.TypeDataSelector.HasFlag(TDS.OriginalNames);
     var includedTypes = typeInfo.GetIElementsTypes();
     if (includedTypes.Any())
     {
       foreach (var intfType in includedTypes.Take(options.ListLimit).ToArray())
       {
-        var str = $"includes {intfType.GetFullName(options.TypeDataSelector.HasFlag(TDS.OriginalNames))}";
+        var str = $"includes {intfType.GetFullName(originNames)}";
         Writer.WriteLine(str);
       }
       if (includedTypes.Count() > 10)
@@ -226,7 +282,7 @@ public class ModelDisplay : ModelMonitor
     }
   }
 
-  public override void ShowOutgoingRelationships(TypeInfo typeInfo, DisplayOptions options)
+  public void ShowOutgoingRelationships(TypeInfo typeInfo, DisplayOptions options)
   {
     var outgoingRels = TypeManager.GetOutgoingRelationships(typeInfo).ToList();
     if (options.TypeDataSelector.HasFlag(TDS.ExcludeSemantics) && options.SemanticsFilter != null)
@@ -239,9 +295,9 @@ public class ModelDisplay : ModelMonitor
       Writer.WriteLine($"has {outgoingRels.Count} outgoing {Multi(outgoingRels.Count, "relationship")}");
       foreach (var rel in outgoingRels.Take(options.ListLimit))
       {
-        Writer.Indent++;
+        Writer.Indent();
         Writer.WriteLine($"{rel.Semantics} -> {rel.Target.ToString()}");
-        Writer.Indent--;
+        Writer.Unindent();
       }
       if (outgoingRels.Count() > 10)
         Writer.WriteLine("...");
@@ -249,7 +305,7 @@ public class ModelDisplay : ModelMonitor
     }
   }
 
-  public override void ShowIncomingRelationships(TypeInfo typeInfo, DisplayOptions options)
+  public void ShowIncomingRelationships(TypeInfo typeInfo, DisplayOptions options)
   {
     var incomingRels = TypeManager.GetIncomingRelationships(typeInfo).ToList();
     if (options.TypeDataSelector.HasFlag(TDS.ExcludeSemantics) && options.SemanticsFilter != null)
@@ -262,16 +318,16 @@ public class ModelDisplay : ModelMonitor
       Writer.WriteLine($"has {incomingRels.Count} incoming {Multi(incomingRels.Count, "relationship")}");
       foreach (var rel in incomingRels.Take(options.ListLimit))
       {
-        Writer.Indent++;
+        Writer.Indent();
         Writer.WriteLine($"{rel.Semantics} <- {rel.Source.ToString()}");
-        Writer.Indent--;
+        Writer.Unindent();
       }
       if (incomingRels.Count() > 10)
         Writer.WriteLine("...");
     }
   }
 
-  public override void ShowEnumValues(TypeInfo typeInfo, DisplayOptions options)
+  public void ShowEnumValues(TypeInfo typeInfo, DisplayOptions options)
   {
     var enumValues = typeInfo.EnumValues;
     if (enumValues != null && enumValues.Any())
@@ -279,10 +335,10 @@ public class ModelDisplay : ModelMonitor
       Writer.WriteLine("{");
       foreach (var enumValue in enumValues.Take(options.ListLimit).ToArray())
       {
-        Writer.Indent++;
+        Writer.Indent();
         var str = $"{enumValue.Name}";
         Writer.WriteLine(str);
-        Writer.Indent--;
+        Writer.Unindent();
       }
       if (enumValues.Count() > 10)
         Writer.WriteLine("...");
@@ -290,10 +346,11 @@ public class ModelDisplay : ModelMonitor
     }
   }
 
-  public override void ShowProperties(TypeInfo typeInfo, DisplayOptions options)
+  public void ShowProperties(TypeInfo typeInfo, DisplayOptions options)
   {
     if (options.TypeDataSelector.HasFlag(TDS.AcceptedTypesOnly) && typeInfo.IsAccepted == false)
       return;
+    var originNames = options.NamespaceTypeSelector == NTS.Origin || options.TypeDataSelector.HasFlag(TDS.OriginalNames);
     var properties = typeInfo.Properties;
     if (properties != null && properties.Any())
     {
@@ -302,15 +359,15 @@ public class ModelDisplay : ModelMonitor
       {
         if (options.TypeDataSelector.HasFlag(TDS.AcceptedTypesOnly) && property.IsAccepted == false)
           continue;
-        Writer.Indent++;
-        var str = $"{property.Name}: {property.PropertyType.GetFullName(options.TypeDataSelector.HasFlag(TDS.AcceptedTypesOnly))}";
+        Writer.Indent();
+        var str = $"{property.Name}: {property.PropertyType.GetFullName(originNames)}";
         var changedToType = ModelManager.GetConversionTargetOrSelf(property.PropertyType);
         if (changedToType != null)
           str += $" => {changedToType.GetFullName(options.TypeDataSelector.HasFlag(TDS.AcceptedTypesOnly))}";
         //else if (property.PropertyType.IsAccepted != null)
         //  str += $" {{{Accepted(property.PropertyType.IsAccepted)}}}";
         Writer.WriteLine(str);
-        Writer.Indent--;
+        Writer.Unindent();
       }
       if (properties.Count() > 10)
         Writer.WriteLine("...");
@@ -318,7 +375,7 @@ public class ModelDisplay : ModelMonitor
     }
   }
 
-  public override void ShowTypeConversions()
+  public void ShowTypeConversions()
   {
     foreach (var type in TypeManager.AllTypes)
     {
@@ -326,7 +383,7 @@ public class ModelDisplay : ModelMonitor
     }
   }
 
-  public override void ShowTypeConversion(TypeInfo type)
+  public void ShowTypeConversion(TypeInfo type)
   {
     if (type.IsConverted)
     {
@@ -334,14 +391,14 @@ public class ModelDisplay : ModelMonitor
       if (convTarget != null)
       {
         Writer.WriteLine($"{type} => {convTarget}");
-        Writer.Indent++;
+        Writer.Indent();
         ShowTypeConversion(convTarget);
-        Writer.Indent--;
+        Writer.Unindent();
       }
     }
   }
 
-  public override void ShowTypeRenames()
+  public void ShowTypeRenames()
   {
     foreach (var typeInfo in TypeManager.AllTypes)
     {
@@ -352,11 +409,45 @@ public class ModelDisplay : ModelMonitor
     }
   }
 
-  public override void ShowProcessSummary(ProcessInfo info)
+  public void ShowProcessSummary(SummaryInfo info)
   {
     WriteLine();
-    WriteLine($"Total time = {info.TotalTime}");
+    WriteLine($"Total time = {info.Time}");
   }
+
+  #region Helper functions to format diplay
+  protected string AllNone(int n, int cmp) => (n == 0) ? "none" : (n == cmp) ? "all" : n.ToString();
+  protected string Multi(int n, string single, string? multi = null) => (n == 1) ? single : (multi ?? (single.EndsWith("s") ? (single + "es") : (single + "s")));
+  protected string Accepted(bool? acceptance) => (acceptance == true) ? "+ " : (acceptance == false) ? "- " : "? ";
+  #endregion
+
+  protected bool IsTypeKind(TypeKind typeKind, TKS selector)
+  {
+    switch (typeKind)
+    {
+      case TypeKind.Type:
+        return selector == TKS.Any;
+      case TypeKind.Struct:
+        return selector.HasFlag(TKS.Struct);
+      case TypeKind.Class:
+        return selector.HasFlag(TKS.Class);
+      case TypeKind.Enum:
+        return selector.HasFlag(TKS.Enum);
+      case TypeKind.Interface:
+        return selector.HasFlag(TKS.Interface);
+    }
+    return false;
+  }
+
+  protected string[] constaints = new string[]
+  {
+    "covariant",
+    "contravariant",
+    "class",
+    "struct",
+    "new()"
+  };
+
 
 }
 

@@ -91,10 +91,12 @@ public static class TypeInspector
       };
       var elementType = elementParticle.ElementType;
       var itemTypeInfo = TypeManager.RegisterType(elementType);
-      itemTypeInfo.IsAccepted = true;
-      var itemTypeRelation = typeInfo.AddRelationship(itemTypeInfo, Semantics.Include);
-      itemTypeRelation.IsMultiple = isMultiple;
-      ((ItemTypeConstraint)itemsConstraint).ItemType = itemTypeInfo;
+      if (itemTypeInfo != null)
+      {
+        var itemTypeRelation = typeInfo.AddRelationship(itemTypeInfo, Semantics.Include);
+        itemTypeRelation.IsMultiple = isMultiple;
+        ((ItemTypeConstraint)itemsConstraint).ItemType = itemTypeInfo;
+      }
     }
     return itemsConstraint;
   }

@@ -6,12 +6,12 @@ namespace ModelGen;
 
 public record ReflectionInfo
 {
-  public int Done;
-  public int Waiting;
+  public int? Done;
+  public int? Waiting;
   public TypeInfo? Current;
 }
 
-public delegate void ReflectionEvent(ReflectionInfo typeInfo);
+public delegate void ReflectionEvent(ReflectionInfo info);
 
 public static class TypeReflector
 {
@@ -104,10 +104,8 @@ public static class TypeReflector
       OnReflection?.Invoke(new ReflectionInfo{ Done=reflected, Waiting=TypeQueue.Count, Current = typeInfo });
     }
     var type = typeInfo.Type;
-    typeInfo.TypeKind = TypeKind.Type;
     if (type.IsEnum)
     {
-      typeInfo.TypeKind = TypeKind.Enum;
       if (typeInfo.EnumValues == null)
         typeInfo.EnumValues = new OwnedCollection<EnumInfo>(typeInfo);
       foreach (var item in type.GetFields(BindingFlags.Static | BindingFlags.Public))
@@ -115,7 +113,6 @@ public static class TypeReflector
     }
     else if ((type.IsClass || type.IsInterface || type.IsValueType) && type != typeof(string) && type != typeof(object))
     {
-      typeInfo.TypeKind = (type.IsInterface) ? TypeKind.Interface : (type.IsClass) ? TypeKind.Class : TypeKind.Struct;
       if (typeInfo.Properties == null)
         typeInfo.Properties = new OwnedCollection<PropInfo>(typeInfo);
       foreach (var item in type.GetProperties(BindingFlags.Instance | BindingFlags.Public | BindingFlags.DeclaredOnly))
