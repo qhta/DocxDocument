@@ -8,7 +8,7 @@ public class CustomAttribInfo: ModelElement
   /// <summary>
   /// Type of the CustomAttribute.
   /// </summary>
-  public TypeInfo AttributeType { get; }
+  public TypeInfo? AttributeTypeInfo { get; }
 
   /// <summary>
   /// Represents arguments passed in the constructor of the CustomAttribute.
@@ -22,7 +22,7 @@ public class CustomAttribInfo: ModelElement
 
   public CustomAttribInfo(Attribute attribute) : base(attribute.GetType().Name)
   {
-    AttributeType = TypeManager.RegisterType(attribute.GetType());
+    AttributeTypeInfo = TypeManager.RegisterType(attribute.GetType());
     ConstructorArguments = new OwnedCollection<CustomAttribTypedArgument>(this);
     NamedArguments = new OwnedCollection<CustomAttribNamedArgument>(this);
     foreach (var prop in attribute.GetType().GetProperties())
@@ -33,7 +33,7 @@ public class CustomAttribInfo: ModelElement
   {
     ConstructorArguments = new OwnedCollection<CustomAttribTypedArgument>(this);
     NamedArguments = new OwnedCollection<CustomAttribNamedArgument>(this);
-    AttributeType = TypeManager.RegisterType(attributeType);
+    AttributeTypeInfo = TypeManager.RegisterType(attributeType);
   }
 
   public CustomAttribInfo(Type attributeType, 
@@ -51,6 +51,6 @@ public class CustomAttribInfo: ModelElement
   {
   }
 
-  public override string ToString() => $"CustomAttribData({AttributeType})"
+  public override string ToString() => $"CustomAttribData({AttributeTypeInfo})"
   +((Owner==null) ? "" : $" in {Owner.ToString}");
 }

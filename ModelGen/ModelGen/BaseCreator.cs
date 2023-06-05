@@ -24,7 +24,7 @@ public abstract class BaseCreator
 
   public bool IsRun { get; set; }
 
-  public ModelMonitor? ModelMonitor { get; set; }
+  public IModelMonitor? ModelMonitor { get; set; }
 
   public BaseCreator(string projectName, string outputPath)
   {
@@ -37,10 +37,7 @@ public abstract class BaseCreator
     IsRun = true;
     if (displayOptions == null)
       displayOptions = new DisplayOptions();
-    if (ModelMonitor!=null)
-    {
-      TypeReflector.OnReflection += TypeReflector_OnReflection;
-    }
+    ModelMonitor?.ShowProcessStart($"Start processing {type}");
     SourceAssembly = type.Assembly;
     TimeSpan totalTime = TimeSpan.Zero;
     totalTime += ScanType(type);
@@ -49,12 +46,11 @@ public abstract class BaseCreator
       ModelMonitor?.ShowNamespaceSummary(NTS.Origin);
 
     if (monitorDisplaySelector.HasFlag(MDS.ScannedTypes))
-      ModelMonitor?.ShowNamespacesDetails(displayOptions with { NamespaceTypeSelector = NTS.Origin});
+      ModelMonitor?.ShowNamespacesDetails(displayOptions with { NamespaceTypeSelector = NTS.Origin });
 
     //totalTime += RenameTypes();
     //if (monitorDisplaySelector.HasFlag(MDS.TypeRenames))
     //  ModelMonitor?.ShowTypeRenames();
-
 
     //totalTime += SetTypeConversions();
     //if (monitorDisplaySelector.HasFlag(MDS.TypeConversions))
@@ -70,137 +66,201 @@ public abstract class BaseCreator
 
     //totalTime += GenerateCode();
 
-    ModelMonitor?.ShowProcessSummary(new ProcessInfo{ TotalTime = totalTime });
+    ModelMonitor?.ShowProcessSummary(new SummaryInfo { Time = totalTime });
     IsRun = false;
   }
 
-  private void TypeReflector_OnReflection(ReflectionInfo info)
-  {
-    ModelMonitor?.WriteSameLine(
-        $"Total {TypeManager.TotalTypesCount} registered types, {info.Done} reflected, {info.Waiting} waiting. {info.Current?.OriginalNamespace}.{info.Current?.OriginalName}");
-
-  }
 
   #region Processing methods
   protected TimeSpan ScanType(Type type)
   {
-    ModelMonitor?.WriteLine("Scanning types");
+    ModelMonitor?.ShowPhaseStart("Scanning types");
     DateTime t1 = DateTime.Now;
-    ModelManager.TryAcceptType(type, out var typeInfo);
-    TypeReflector.WaitDone();
-    ModelMonitor?.WriteLine();
+    ModelManager.OnScanningType += ModelManager_OnScanningType;
+    ModelManager.ScanType(type);
+    ModelManager.OnScanningType -= ModelManager_OnScanningType;
     DateTime t2 = DateTime.Now;
     var ts = t2 - t1;
-    ModelMonitor?.WriteLine($"Scanning time is {ts}");
     var allTypesCount = TypeManager.AllTypes.Count();
-    var reflectedTypesCount = TypeManager.AllTypes.Where(item => item.IsReflected).ToArray().Count();
+    var reflectedTypesCount = TypeManager.AllTypes.Where(item => item.IsReflected).Count();
     var acceptedTypesCount = TypeManager.AcceptedTypes.Count();
-    ModelMonitor?.WriteLine($"Finally {allTypesCount} types registered, {reflectedTypesCount} reflected");
-    ModelMonitor?.WriteLine($"Accepted {acceptedTypesCount} types");
+    var rejectedTypesCount = TypeManager.RejectedTypes.Count();
+    ModelMonitor?.ShowPhaseEnd("Scanning types", new SummaryInfo
+    {
+      Time = ts,
+      Summary = new Dictionary<string, object>{
+        {"Registered types", allTypesCount },
+        {"Reflected types", reflectedTypesCount },
+        {"Accepted types", acceptedTypesCount },
+        {"Rejected types", rejectedTypesCount }
+        }
+    });
     return ts;
   }
 
-  protected TimeSpan RenameTypes()
-  {
-    ModelMonitor?.WriteLine();
-    ModelMonitor?.WriteLine("Renaming types");
-    DateTime t1 = DateTime.Now;
-    var checkedCount = 0;
-    var renamedCount = ModelManager.RenameSpecificTypes();
-    foreach (var type in TypeManager.AllTypes.ToArray())
-    {
-      ModelMonitor?.WriteSameLine($"Checked {++checkedCount} types. {type.GetFullName()}");
-      if (ModelManager.RenameType(type))
-        renamedCount++;
-    }
-    DateTime t2 = DateTime.Now;
-    var ts = t2 - t1;
-    ModelMonitor?.WriteLine();
-    ModelMonitor?.WriteLine($"Renaming time is {ts}");
-    ModelMonitor?.WriteLine($"Renamed {renamedCount} types");
-    return ts;
-  }
+  //protected TimeSpan RenameTypes()
+  //{
+  //  ModelMonitor?.ShowPhaseStart("Renaming types");
+  //  DateTime t1 = DateTime.Now;
+  //  var renamedTypesCount = ModelManager.RenameSpecificTypes();
+  //  foreach (var type in TypeManager.AllTypes.ToArray())
+  //  {
+  //    ModelManager.RenameType(type);
+  //  }
+  //  DateTime t2 = DateTime.Now;
+  //  var ts = t2 - t1;
+  //  ModelMonitor?.ShowPhaseEnd("Renaming types", new SummaryInfo
+  //  {
+  //    Time = ts,
+  //    Summary = new Dictionary<string, object>{
+  //      {"Renamed types", renamedTypesCount },
+  //      }
+  //  });
+  //  return ts;
+  //}
 
-  protected TimeSpan SetTypeConversions()
-  {
-    ModelMonitor?.WriteLine();
-    ModelMonitor?.WriteLine("Converting types");
-    DateTime t1 = DateTime.Now;
-    var checkedCount = 0;
-    foreach (var type in TypeManager.AllTypes.ToArray())
-    {
-      checkedCount++;
-      ModelMonitor?.WriteSameLine($"Checked {checkedCount} types. {type.GetFullName()}");
-      ModelManager.TryAddTypeConversion(type);
-    }
-    DateTime t2 = DateTime.Now;
-    var ts = t2 - t1;
-    ModelMonitor?.WriteLine();
-    ModelMonitor?.WriteLine($"Converting time is {ts}");
-    var convertedTypesCount = TypeManager.ConvertedTypes.Count();
-    ModelMonitor?.WriteLine($"Converted {convertedTypesCount} types");
-    ModelMonitor?.ShowTypeConversions();
-    return ts;
-  }
+  //protected TimeSpan SetTypeConversions()
+  //{
+  //  ModelMonitor?.ShowPhaseStart("Converting types");
+  //  DateTime t1 = DateTime.Now;
+  //  var converterTypesCount = 0;
+  //  foreach (var type in TypeManager.AllTypes.ToArray())
+  //  {
+  //    if (ModelManager.TryAddTypeConversion(type))
+  //    {
+  //      converterTypesCount++;
+  //      ModelMonitor?.ShowPhaseProgress("Converting types", new ProgressInfo
+  //      {
+  //        PreStr = "checked",
+  //        Done = checkedTypesCount,
+  //        MidStr = "types",
+  //        Summary = new Dictionary<string, object>{
+  //      {"converted", converterTypesCount } },
+  //        PostStr = $"{type.GetFullName()}"
+  //      });
+  //    }
+  //  }
+  //  DateTime t2 = DateTime.Now;
+  //  var ts = t2 - t1;
+  //  var convertedTypesCount = TypeManager.ConvertedTypes.Count();
+  //  ModelMonitor?.ShowPhaseEnd("Converting types", new SummaryInfo
+  //  {
+  //    Time = ts,
+  //    Summary = new Dictionary<string, object>{
+  //      {"Converted types", convertedTypesCount },
+  //      }
+  //  });
+  //  return ts;
+  //}
 
-  protected TimeSpan CheckTypeUsage()
-  {
-    ModelMonitor?.WriteLine();
-    ModelMonitor?.WriteLine("Checking type usage");
-    DateTime t1 = DateTime.Now;
-    var checkCount = 0;
-    foreach (var type in TypeManager.AcceptedTypes.ToArray())
-    {
-      ModelManager.CheckTypeUsage(type,
-        (item) => { ModelMonitor?.WriteSameLine($"Checked {++checkCount} types. {item.GetFullName()}"); });
-    }
-    DateTime t2 = DateTime.Now;
-    var ts = t2 - t1;
-    var usedCount = TypeManager.UsedTypes.Count();
-    var acceptedCount = TypeManager.AcceptedTypes.Count();
-    ModelMonitor?.WriteLine();
-    ModelMonitor?.WriteLine($"Checking time is {ts}");
-    ModelMonitor?.WriteLine($"Found {usedCount} used types, {acceptedCount} accepted types");
-    //ModelMonitor?.ShowUnusedTypes();
-    return ts;
-  }
+  //protected TimeSpan CheckTypeUsage()
+  //{
+  //  ModelMonitor?.ShowPhaseStart("Checking types usage");
+  //  DateTime t1 = DateTime.Now;
+  //  ModelManager.OnCheckingUsage += ModelManager_OnCheckingUsage;
+  //  foreach (var type in TypeManager.AcceptedTypes.ToArray())
+  //  {
+  //    ModelManager.CheckTypeUsage(type);
+  //  }
+  //  ModelManager.OnCheckingUsage -= ModelManager_OnCheckingUsage;
+  //  DateTime t2 = DateTime.Now;
+  //  var ts = t2 - t1;
+  //  var usedTypesCount = TypeManager.UsedTypes.Count();
+  //  var acceptedTypesCount = TypeManager.AcceptedTypes.Count();
+  //  ModelMonitor?.ShowPhaseEnd("Checking type usage", new SummaryInfo
+  //  {
+  //    Time = ts,
+  //    Summary = new Dictionary<string, object>{
+  //      {"Used types", usedTypesCount },
+  //      {"Accepted types", acceptedTypesCount },
+  //      }
+  //  });
+  //  return ts;
+  //}
 
-
-  protected TimeSpan ValidateTypes()
-  {
-    ModelMonitor?.WriteLine();
-    ModelMonitor?.WriteLine("Validating types & namespaces");
-    DateTime t1 = DateTime.Now;
-    var checkedTypesCount = 0;
-    var checkedNamespacesCount = 0;
-    var invalidTypesCount = 0;
-    foreach (var typeInfo in TypeManager.AllTypes.ToArray())
-    {
-      ModelMonitor?.WriteSameLine($"Checked {++checkedTypesCount} types. {typeInfo.GetFullName()}");
-      if (!ModelManager.ValidateType(typeInfo))
-        invalidTypesCount++;
-    }
-    //invalidTypesCount += ModelManager.CheckNamespacesDuplicatedTypesAsync((int repaired, int waiting)
-    //  =>
-    //  ModelMonitor?.WriteSameLine($"Repaired {repaired} types. Waiting for {waiting} namespaces ")
-    //  );
-    foreach (var nspace in TypeManager.GetNamespaces(NTS.Target))
-    {
-      ModelMonitor?.WriteSameLine($"Checked {++checkedNamespacesCount} namespaces for duplicate type names. {nspace}");
-      int n = ModelManager.CheckNamespaceDuplicatedTypes(nspace);
-      if (n > 0)
-        invalidTypesCount += n;
-    }
-    ModelMonitor?.WriteLine();
-    DateTime t2 = DateTime.Now;
-    var ts = t2 - t1;
-    ModelMonitor?.WriteLine($"Validation time is {ts}");
-    ModelMonitor?.WriteLine($"Invalid {invalidTypesCount} types found and repaired");
-    return ts;
-  }
+  //protected TimeSpan ValidateTypes()
+  //{
+  //  ModelMonitor?.ShowPhaseStart("Validating types & namespaces");
+  //  DateTime t1 = DateTime.Now;
+  //  var checkedTypesCount = 0;
+  //  var checkedNamespacesCount = 0;
+  //  var fixedTypesCount = 0;
+  //  var duplicateTypesCount = 0;
+  //  foreach (var typeInfo in TypeManager.AllTypes.ToArray())
+  //  {
+  //    ModelMonitor?.WriteSameLine($"Checked {++checkedTypesCount} types. {typeInfo.GetFullName()}");
+  //    if (!ModelManager.ValidateType(typeInfo))
+  //      fixedTypesCount++;
+  //  }
+  //  //invalidTypesCount += ModelManager.CheckNamespacesDuplicatedTypesAsync((int repaired, int waiting)
+  //  //  =>
+  //  //  ModelMonitor?.WriteSameLine($"Repaired {repaired} types. Waiting for {waiting} namespaces ")
+  //  //  );
+  //  foreach (var nspace in TypeManager.GetNamespaces(NTS.Target))
+  //  {
+  //    ModelMonitor?.WriteSameLine($"Checked {++checkedNamespacesCount} namespaces for duplicate type names. {nspace}");
+  //    int n = ModelManager.CheckNamespaceDuplicatedTypes(nspace);
+  //    if (n > 0)
+  //      duplicateTypesCount += n;
+  //  }
+  //  DateTime t2 = DateTime.Now;
+  //  var ts = t2 - t1;
+  //  ModelMonitor?.ShowPhaseEnd("Validating types & namespaces", new SummaryInfo
+  //  {
+  //    Time = ts,
+  //    Summary = new Dictionary<string, object>{
+  //      {"Fixed types", fixedTypesCount },
+  //      {"Duplicated types", duplicateTypesCount },
+  //      }
+  //  });
+  //  return ts;
+  //}
 
   protected abstract TimeSpan GenerateCode();
   #endregion
 
+  #region monitoring callbacks
+
+  private void ModelManager_OnScanningType(ScanningTypeInfo info)
+  {
+    ModelMonitor?.ShowPhaseProgress("Scanning types", new ProgressInfo
+    {
+      PreStr = "registered",
+      Done = info.RegisteredTypes,
+      MidStr = "types",
+      Summary = new Dictionary<string, object>{
+        {"in {0} namespaces", info.RegisteredNamespaces ?? 0 } },
+      PostStr = $"{info.Current?.OriginalNamespace}.{info.Current?.OriginalName}"
+    });
+  }
+
+  private void TypeReflector_OnReflection(ReflectionInfo info)
+  {
+    ModelMonitor?.ShowPhaseProgress("Scanning types", new ProgressInfo
+    {
+      PreStr = "reflected",
+      Done = info.Done,
+      MidStr = "types",
+      Summary = new Dictionary<string, object>{
+        {"waiting", info.Waiting ?? 0 } },
+      PostStr = $"{info.Current?.OriginalNamespace}.{info.Current?.OriginalName}"
+    });
+  }
+
+ 
+  private void ModelManager_OnCheckingUsage(CheckingUsageInfo info)
+  {
+    ModelMonitor?.ShowPhaseProgress("Checking types", new ProgressInfo
+    {
+      PreStr = "checked",
+      Done = info.CheckedTypes,
+      MidStr = "types",
+      Summary = new Dictionary<string, object>{
+        {"used", info.UsedTypes ?? 0 } },
+      PostStr = $"{info.Current?.OriginalNamespace}.{info.Current?.OriginalName}"
+    });
+  }
+
+  #endregion
 }
 

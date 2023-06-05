@@ -1,7 +1,21 @@
-﻿namespace ModelGen;
+﻿using System.Reflection;
+
+using Qhta.TypeUtils;
+
+namespace ModelGen;
+
+public record RegisteringInfo
+{
+  public int? RegisteredNamespaces;
+  public int? RegisteredTypes;
+  public TypeInfo? Current;
+}
+
+public delegate void RegisteringEvent(RegisteringInfo info);
 
 public static class TypeManager
 {
+  public static event RegisteringEvent? OnRegistering;
 
   internal static Dictionary<Type, TypeInfo> KnownTypes = new();
   internal static Dictionary<string, Namespace> KnownNamespaces = new();
@@ -57,7 +71,10 @@ public static class TypeManager
   {
     lock (NamespacesLock)
       if (!KnownNamespaces.ContainsKey(nspace))
+      {
         KnownNamespaces.Add(nspace, new(nspace));
+        OnRegistering?.Invoke(new RegisteringInfo { RegisteredNamespaces = KnownNamespaces.Count, RegisteredTypes = AllTypes.Count() });
+      }
   }
 
   public static string TranslateNamespace(string nspace)
@@ -87,7 +104,7 @@ public static class TypeManager
     lock (NamespacesLock)
     {
       var knownNamespace = KnownNamespaces.ToArray();
-      if (filter == NTS.Any)
+      if (filter == 0)
         return KnownNamespaces.Select(item => item.Key);
       var result = new List<string>();
       if (filter.HasFlag(NTS.Target))
@@ -114,65 +131,50 @@ public static class TypeManager
     return false;
   }
 
-  //public static TypeInfo RegisterAndReflectType(Type type)
-  //{
-  //  lock (KnownTypesLock)
-  //  {
-  //    if (KnownTypes.TryGetValue(type, out var info))
-  //      return info;
-  //    var nspace = type.Namespace ?? "";
-  //    lock (NamespacesLock)
-  //    {
-  //      if (!KnownNamespaces.ContainsKey(nspace))
-  //        RegisterNamespace(nspace);
-  //      info = new TypeInfo(type);
-  //      KnownTypes.Add(type, info);
-  //      var NamespaceDictionary = TypeManager.GetNamespaceDictionary(nspace);
-  //      NamespaceDictionary.Add(info);
-  //    }
-  //    TypeReflector.ReflectType(info);
-  //    return info;
-  //  }
-  //}
-
-  public static TypeInfo RegisterType(Type type, bool? accept = null)
+  public static TypeInfo? RegisterType(Type type, bool? acceptance = null)
   {
+    if (type.IsConstructedGenericType)
+       return null;
     lock (KnownTypesLock)
     {
-      //if (type.Name == "StyleSet")
-      //  Debug.Assert(true);
-      if (KnownTypes.TryGetValue(type, out var info))
-        return info;
+
+      if (KnownTypes.TryGetValue(type, out var typeInfo))
+        return typeInfo;
+      if (type.Name=="ClientData")
+        Debug.Assert(true);
       var nspace = type.Namespace ?? "";
       lock (NamespacesLock)
       {
         if (!KnownNamespaces.ContainsKey(nspace))
           RegisterNamespace(nspace);
-        info = new TypeInfo(type);
-        KnownTypes.Add(type, info);
+        typeInfo = new TypeInfo(type);
+        KnownTypes.Add(type, typeInfo);
         var NamespaceDictionary = TypeManager.GetNamespace(nspace);
-        NamespaceDictionary.Types.Add(info);
+        NamespaceDictionary.Types.Add(typeInfo);
+        OnRegistering?.Invoke(new RegisteringInfo { RegisteredNamespaces = KnownNamespaces.Count + 1, RegisteredTypes = AllTypes.Count(), Current = typeInfo });
       }
-      if (accept!=false)
-        TypeReflector.ReflectTypeAsync(info);
-      if (accept!=null)
-        info.IsAccepted = (bool)accept;
-      return info;
+      bool accept = acceptance == true || !ModelData.IsExcluded(type);
+      typeInfo.IsAccepted = accept;
+      if (accept)
+        TypeReflector.ReflectType(typeInfo);
+      return typeInfo;
     }
   }
 
-  public static TypeInfo RegisterType(Type type, Type source, Semantics semantics)
+  public static TypeInfo? RegisterType(Type type, Type source, Semantics semantics)
   {
     var result = RegisterType(type);
     var sourceTypeInfo = RegisterType(source);
-    AddRelationship(sourceTypeInfo, result, semantics);
+    if (sourceTypeInfo!=null && result!=null)
+      AddRelationship(sourceTypeInfo, result, semantics);
     return result;
   }
 
-  public static TypeInfo RegisterType(Type type, TypeInfo source, Semantics semantics)
+  public static TypeInfo? RegisterType(Type type, TypeInfo source, Semantics semantics)
   {
     var result = RegisterType(type);
-    AddRelationship(source, result, semantics);
+    if (result!=null)
+      AddRelationship(source, result, semantics);
     return result;
   }
 

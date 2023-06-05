@@ -25,7 +25,11 @@ public class ModelElement: IOwnedElement
   /// <summary>
   /// Status of acceptance for the further processing.
   /// </summary>
-  public bool? Acceptance;
+  public bool? Acceptance
+  { 
+    get; 
+    set; 
+  }
   
   /// <summary>
   /// Specifies whether the element is accepted for further processing.

@@ -13,4 +13,6 @@ public enum MDS
   TypeConversions = 8,
   TypeUsage = 16,
   ValidatedTypes = 32,
+
+  All = 63
 }

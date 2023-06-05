@@ -14,9 +14,9 @@ public class Commander
 
   public Start Start { get; set;} 
 
-  public bool IsRun => Creator?.IsRun == true;
+  public bool IsRun => creator?.IsRun == true;
 
-  public BaseCreator? Creator { get; set; }
+  private BaseCreator? creator { get; set; }
   public Task? Runner { get; set; }
 
   public CancellationToken StartGenerateModelTypes(Type rootType, MDS display = MDS.None, DisplayOptions? options = null)
@@ -28,10 +28,11 @@ public class Commander
     filePath = Path.GetDirectoryName(filePath) ?? "";
     filePath = Path.GetDirectoryName(filePath) ?? "";
     filePath = Path.Combine(filePath, @"ModelGen\DocumentModel");
-    Creator = new ModelCreator("DocumentModel", filePath);
+    creator = new ModelCreator("DocumentModel", filePath);
+    //creator.ModelMonitor=new ModelDisplay();
     var cancellationToken = new CancellationToken();
     Runner = Task.Factory.StartNew(() =>
-      { Creator.RunOn(rootType, display, options); }, cancellationToken);
+      { creator.RunOn(rootType, display, options); }, cancellationToken);
     return cancellationToken;
   }
 

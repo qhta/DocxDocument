@@ -1,8 +1,4 @@
-﻿using System.Reflection;
-
-using ModelGen;
-
-using Qhta.TypeUtils;
+﻿namespace ModelGenRun;
 
 public static class Program
 {
@@ -11,9 +7,9 @@ public static class Program
   {
     GenerateModelTypes(typeof(DocumentFormat.OpenXml.Packaging.WordprocessingDocument), MDS.ScannedNamespaces | MDS.ScannedTypes,
       new DisplayOptions
-      { Namespaces = new string[]{ "*.Packaging*"},
+      { Namespaces = new string[]{ "*.Vml*"},
         //TypeKindSelector = TKS.Enum,
-        //Typenames = new string[]{ "*Values" },
+        //Typenames = new string[] { "*Values" },
       });
     //GenerateTypeConverters(typeof(DocumentFormat.OpenXml.Packaging.WordprocessingDocument));
   }

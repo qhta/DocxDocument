@@ -89,19 +89,24 @@ public class TypeInfo : ModelElement
   {
     Type = type;
     TargetNamespace = type.Namespace ?? "";
-    if (IsAccepted == null)
-    {
-      var isAccepted = true;
-      if (ModelData.ExcludedNamespaces.Contains(type.Namespace ?? ""))
-        isAccepted = false;
-      if (ModelData.ExcludedTypes.Contains(type.Name))
-        isAccepted = false;
-      if (ModelData.IncludedTypes.Contains(type.Name))
-        isAccepted = true;
-      if (ModelData.TypeConversionTable.ContainsKey(type))
-        isAccepted = false;
-      IsAccepted = isAccepted;
-    }
+    TypeKind = (type.IsEnum) ? TypeKind.Enum
+               : (type.IsInterface) ? TypeKind.Interface
+               : (type.IsClass) ? TypeKind.Class
+               : (type.IsStruct() ? TypeKind.Struct
+               : TypeKind.Type);
+    //if (Acceptance == null)
+    //{
+    //  var isAccepted = true;
+    //  if (ModelData.ExcludedNamespaces.Contains(type.Namespace ?? ""))
+    //    isAccepted = false;
+    //  if (ModelData.ExcludedTypes.Contains(type.Name))
+    //    isAccepted = false;
+    //  if (ModelData.IncludedTypes.Contains(type.Name))
+    //    isAccepted = true;
+    //  if (ModelData.TypeConversionTable.ContainsKey(type))
+    //    isAccepted = false;
+    //  IsAccepted = isAccepted;
+    //}
   }
 
   public string GetNamespace(bool original = false, bool shortcut = true)

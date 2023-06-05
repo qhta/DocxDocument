@@ -62,7 +62,7 @@ public class BaseCodeGenerator
   protected bool GenerateCustomAttribute(CustomAttribInfo attrData)
   {
     var kind = TypeKind.Type;
-    var attributeType = attrData.AttributeType;
+    var attributeType = attrData.AttributeTypeInfo;
     var attributeTypeName = attributeType.GetConvertedName(kind);
     var attrTypeName = attributeTypeName.Name;
     if (attrTypeName.EndsWith("Attribute"))

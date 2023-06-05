@@ -7,5 +7,9 @@ global using System.Text;
 global using System.Threading.Tasks;
 global using System.Windows;
 global using System.Windows.Input;
+global using System.CodeDom.Compiler;
 
+global using Qhta.TextUtils;
+global using ModelGen;
 global using ModelGenApp.Commands;
+global using TypeInfo = ModelGen.TypeInfo;

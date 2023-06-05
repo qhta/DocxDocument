@@ -1,8 +1,43 @@
-﻿
-namespace ModelGen;
+﻿namespace ModelGen;
+
+public record ScanningTypeInfo
+{
+  public int? RegisteredNamespaces;
+  public int? RegisteredTypes;
+  public TypeInfo? Current;
+}
+
+public delegate void ScanningTypeEvent(ScanningTypeInfo info);
+
+public record RenamingTypeInfo
+{
+  public int? CheckedTypes;
+  public int? RenamedTypes;
+  public TypeInfo? Current;
+}
+
+public delegate void RenamingTypeEvent(RenamingTypeInfo info);
+
+public record CheckingUsageInfo
+{
+  public int? CheckedTypes;
+  public int? UsedTypes;
+  public TypeInfo? Current;
+}
+
+public delegate void CheckingUsageEvent(CheckingUsageInfo info);
 
 public static class ModelManager
 {
+  public static event ScanningTypeEvent? OnScanningType;
+  public static event RenamingTypeEvent? OnRenamingType;
+  public static event CheckingUsageEvent? OnCheckingUsage;
+
+  public static int CheckedRenameTypesCount {get; private set; }
+  public static int RenamedTypesCount {get; private set; }
+
+  public static int CheckedUsageTypesCount {get; private set; }
+  public static int UsedTypesCount {get; private set; }
 
   #region Type conversion
   public static bool TryAddTypeConversion(this TypeInfo typeInfo)
@@ -382,36 +417,36 @@ public static class ModelManager
 
   #region Checking types
 
-  public static bool TryAcceptType(Type type, [NotNullWhen(true)] out TypeInfo? typeInfo)
+  public static bool ScanType(Type type)
   {
-    bool ok = true;
-    typeInfo = null;
+    TypeManager.OnRegistering += TypeManager_OnRegistering;
     var typeName = type.ToString();
-    if (typeName.Contains('<') || typeName.Contains('+') || typeName.Contains('&'))
-      return false;
-    if (ModelData.IsExcluded(type))
-      ok = false;
-    typeInfo = TypeManager.RegisterType(type, ok);
-    //typeInfo.IsAccepted = true;
-    //typeInfo.IsUsed = true;
+    TypeManager.RegisterType(type);
+    TypeManager.OnRegistering -= TypeManager_OnRegistering;
     return true;
   }
 
-  public static Task CheckTypeUsageAsync(this TypeInfo typeInfo, Action<TypeInfo>? OnStartChecking = null)
+  private static void TypeManager_OnRegistering(RegisteringInfo info)
   {
-    return Task.Run(() => CheckTypeUsage(typeInfo, OnStartChecking));
+    OnScanningType?.Invoke(new ScanningTypeInfo{ 
+      RegisteredNamespaces = info.RegisteredNamespaces,
+      RegisteredTypes = info.RegisteredTypes,
+      Current = info.Current,
+      });
   }
 
-  public static bool CheckTypeUsage(this TypeInfo typeInfo, Action<TypeInfo>? OnStartChecking = null)
+  public static Task CheckTypeUsageAsync(this TypeInfo typeInfo)
   {
-    if (typeInfo.Name == "AttachedTemplate")
-      Debug.Assert(true);
+    return Task.Run(() => CheckTypeUsage(typeInfo));
+  }
+
+  public static bool CheckTypeUsage(this TypeInfo typeInfo)
+  {
     if (typeInfo.UsesEvaluated)
       return typeInfo.IsUsed;
     typeInfo.UsesEvaluated = true;
+    CheckedUsageTypesCount++;
 
-    if (OnStartChecking != null)
-      OnStartChecking(typeInfo);
     if (typeInfo.IsAccepted == false)
       return false;
     if (ModelData.IsExcluded(typeInfo.Type))
@@ -419,11 +454,14 @@ public static class ModelManager
     if (ModelData.ExcludedNamespaces.Contains(typeInfo.TargetNamespace ?? ""))
       return false;
     typeInfo.IsUsed = true;
+    UsedTypesCount++;
+    OnCheckingUsage?.Invoke(new CheckingUsageInfo{ CheckedTypes = CheckedUsageTypesCount, UsedTypes = UsedTypesCount, Current = typeInfo });
+
 
     if (typeInfo.BaseTypeInfo != null)
     {
       var baseType = typeInfo.BaseTypeInfo.GetConversionTargetOrSelf();
-      CheckTypeUsage(baseType, OnStartChecking);
+      CheckTypeUsage(baseType);
     }
 
     if (typeInfo.Properties != null)
@@ -433,14 +471,12 @@ public static class ModelManager
         //  Debug.Assert(true);
         if (!prop.IsRejected)
         {
-          if (prop.Name == "NotesMaster")
-            Debug.Assert(true);
           var propType = prop.PropertyType.GetConversionTargetOrSelf();
           if (propType.HasExcludedNamespace())
             prop.IsAccepted = false;
           else if (!propType.IsRejected)
           {
-            CheckTypeUsage(propType, OnStartChecking);
+            CheckTypeUsage(propType);
           }
         }
       }
@@ -451,7 +487,7 @@ public static class ModelManager
       {
         if (!intfType.IsRejected)
         {
-          CheckTypeUsage(intfType, OnStartChecking);
+          CheckTypeUsage(intfType);
         }
       }
 
@@ -616,12 +652,15 @@ public static class ModelManager
 
   public static bool RenameType(TypeInfo typeInfo)
   {
+    CheckedRenameTypesCount++;
     var typeName = typeInfo.Type.FullName ?? "";
     if (ModelData.TypeNameConversion.TryGetValue(typeName, out var newName))
     {
       var k = newName.LastIndexOf(".");
       typeInfo.NewName = newName.Substring(k + 1);
       typeInfo.TargetNamespace = newName.Substring(0, k);
+      RenamedTypesCount++;
+      OnRenamingType?.Invoke(new RenamingTypeInfo{ CheckedTypes = CheckedRenameTypesCount, RenamedTypes = RenamedTypesCount, Current = typeInfo });
       return true;
     }
     var aNamespace = TypeManager.TranslateNamespace(typeInfo.TargetNamespace);
@@ -644,6 +683,8 @@ public static class ModelManager
       if (newName != typeInfo.Name)
       {
         typeInfo.NewName = newName;
+        RenamedTypesCount++;
+        OnRenamingType?.Invoke(new RenamingTypeInfo{ CheckedTypes = CheckedRenameTypesCount, RenamedTypes = RenamedTypesCount, Current = typeInfo });
         return true;
       }
     }
@@ -679,6 +720,8 @@ public static class ModelManager
       customPropertiesTypeInfo.TargetNamespace = "DocumentModel.Properties";
       count++;
     }
+    CheckedRenameTypesCount = count;
+    RenamedTypesCount = count;
     return count;
   }
 
@@ -686,22 +729,41 @@ public static class ModelManager
   {
     var origNamespace = typeInfo.OriginalNamespace;
     if (origNamespace.Contains("2010"))
+    {
       typeInfo.NewName = typeInfo.Name+"2";
+      RenamedTypesCount++;
+    }
     else
     if (origNamespace.Contains("2013"))
+    {
       typeInfo.NewName = typeInfo.Name + "3";
+      RenamedTypesCount++;
+    }
     else
     if (origNamespace.Contains("2016"))
+    {
       typeInfo.NewName = typeInfo.Name + "4";
+      RenamedTypesCount++;
+    }
     else
     if (origNamespace.Contains("2019"))
+    {
       typeInfo.NewName = typeInfo.Name + "5";
+      RenamedTypesCount++;
+    }
     else
     if (origNamespace.Contains("2021"))
+    {
       typeInfo.NewName = typeInfo.Name + "6";
+      RenamedTypesCount++;
+    }
     else
     if (origNamespace.Contains("2022"))
+    {
       typeInfo.NewName = typeInfo.Name + "7";
+      RenamedTypesCount++;
+    }
+    OnRenamingType?.Invoke(new RenamingTypeInfo{ CheckedTypes = CheckedRenameTypesCount, RenamedTypes = RenamedTypesCount, Current = typeInfo });
   }
 
   private static string NewEnumTypeName(Type type)

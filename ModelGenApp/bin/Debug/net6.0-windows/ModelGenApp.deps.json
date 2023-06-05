@@ -8,10 +8,19 @@
     ".NETCoreApp,Version=v6.0": {
       "ModelGenApp/1.0.0": {
         "dependencies": {
+          "CommunityToolkit.Mvvm": "8.2.0",
           "ModelGen": "1.0.0"
         },
         "runtime": {
           "ModelGenApp.dll": {}
+        }
+      },
+      "CommunityToolkit.Mvvm/8.2.0": {
+        "runtime": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "assemblyVersion": "8.2.0.0",
+            "fileVersion": "8.2.0.1"
+          }
         }
       },
       "DeepEqual/4.2.1": {
@@ -82,14 +91,14 @@
           }
         }
       },
-      "Namotion.Reflection/2.1.1": {
+      "Namotion.Reflection/2.1.2": {
         "dependencies": {
           "Microsoft.CSharp": "4.3.0"
         },
         "runtime": {
           "lib/netstandard2.0/Namotion.Reflection.dll": {
-            "assemblyVersion": "2.1.1.0",
-            "fileVersion": "2.1.1.0"
+            "assemblyVersion": "2.1.2.0",
+            "fileVersion": "2.1.2.0"
           }
         }
       },
@@ -486,7 +495,7 @@
           "DocumentFormat.OpenXml": "2.20.0",
           "DocumentModel": "1.0.0",
           "DocumentModel.Attributes": "1.0.0",
-          "Namotion.Reflection": "2.1.1",
+          "Namotion.Reflection": "2.1.2",
           "Qhta.Xml.Serialization.Attributes": "1.0.0",
           "System.IO.Packaging": "7.0.0"
         },
@@ -557,6 +566,13 @@
       "serviceable": false,
       "sha512": ""
     },
+    "CommunityToolkit.Mvvm/8.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-F883u+B0AVUkRZS+VQBiZEJiqlGiiQhGA8Ejy1/Y8fl4ecBmSd+HYuDso0iiUhh+UxRDjp2aTQ7jGkuL2S4NrA==",
+      "path": "communitytoolkit.mvvm/8.2.0",
+      "hashPath": "communitytoolkit.mvvm.8.2.0.nupkg.sha512"
+    },
     "DeepEqual/4.2.1": {
       "type": "package",
       "serviceable": true,
@@ -606,12 +622,12 @@
       "path": "microsoft.win32.systemevents/7.0.0",
       "hashPath": "microsoft.win32.systemevents.7.0.0.nupkg.sha512"
     },
-    "Namotion.Reflection/2.1.1": {
+    "Namotion.Reflection/2.1.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-trZzWMjzoZyfn34HtMs6cuoR0ssPZGpn9pyBWMGkaHdGA9VZzWLho+Rldtf+Ojej596PIal/vPdrDr1+MERXbA==",
-      "path": "namotion.reflection/2.1.1",
-      "hashPath": "namotion.reflection.2.1.1.nupkg.sha512"
+      "sha512": "sha512-7tSHAzX8GWKy0qrW6OgQWD7kAZiqzhq+m1503qczuwuK6ZYhOGCQUxw+F3F4KkRM70aB6RMslsRVSCFeouIehw==",
+      "path": "namotion.reflection/2.1.2",
+      "hashPath": "namotion.reflection.2.1.2.nupkg.sha512"
     },
     "Newtonsoft.Json/13.0.3": {
       "type": "package",

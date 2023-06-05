@@ -89,10 +89,9 @@ public class ModelCreator: BaseCreator
 
   protected override TimeSpan GenerateCode()
   {
-    ModelMonitor.WriteLine();
     //ModelGenerator.PrepareProjects();
     int generatedCount = 0;
-    ModelMonitor.WriteLine($"Generating {TypeManager.AcceptedTypes.Count()} types");
+    ModelMonitor?.ShowPhaseStart("Generating model types");
     DateTime t1 = DateTime.Now;
     foreach (var typeInfo in TypeManager.AcceptedTypes.ToArray())
     {
@@ -102,18 +101,22 @@ public class ModelCreator: BaseCreator
         continue;
       if (!typeInfo.IsUsed)
         continue;
-      ModelMonitor.WriteSameLine($"Generated {generatedCount} types. {typeInfo.GetFullName(false)}");
+      //ModelMonitor.WriteSameLine($"Generated {generatedCount} types. {typeInfo.GetFullName(false)}");
       if (ModelGenerator.GenerateTypeFile(typeInfo))
         generatedCount++;
     }
     //ModelGenerator.GenerateGlobalUsings();
     DateTime t2 = DateTime.Now;
     var ts = t2 - t1;
-    ModelMonitor.WriteLine();
-    ModelMonitor.WriteLine($"Generating time is {ts}");
-    ModelMonitor.WriteLine($"Generated {ModelGenerator.GeneratedInterfacesCount} interfaces, {ModelGenerator.GeneratedClassesCount} classes" +
-                      $", {ModelGenerator.GeneratedStructsCount} structs, {ModelGenerator.GeneratedEnumTypesCount} enums");
-    ModelMonitor.WriteLine($"Total {ModelGenerator.GeneratedPropertiesCount} properties, {ModelGenerator.GeneratedEnumValuesCount} enumValues");
+    ModelMonitor?.ShowPhaseEnd("Generating converters", new SummaryInfo{ Time = ts, 
+      Summary = new Dictionary<string, object>{ 
+        {"Generated interfaces", ModelGenerator.GeneratedInterfacesCount }, 
+        {"Generated classes", ModelGenerator.GeneratedClassesCount }, 
+        {"Generated structs", ModelGenerator.GeneratedStructsCount }, 
+        {"Generated enum types", ModelGenerator.GeneratedEnumTypesCount }, 
+        {"Total properties", ModelGenerator.GeneratedPropertiesCount }, 
+        {"Total enum values", ModelGenerator.GeneratedEnumValuesCount }, 
+        }});
     return ts;
   }
 
