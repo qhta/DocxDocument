@@ -1,4 +1,7 @@
 ﻿using System.Diagnostics;
+
+using DocumentFormat.OpenXml.Drawing.Diagrams;
+
 using DocumentModel;
 
 using Qhta.Collections;
@@ -17,12 +20,16 @@ public static class ModelData
 
   public static SortedStrings ExcludedNamespaces { get; } = new SortedStrings
   {
+    "DocumentFormat.OpenXml",
     "*Metadata", "*Features", "*Framework", "*Framework.Schema", "*Validation", "*Validation.Schema", 
     "*Presentation*",
     "*Spreadsheet*",
-    "*SpreadSheet*",
     "*Excel*",
     "*PowerPoint*",
+    "*.Office.Word",
+    "*.VariantTypes",
+    "DocumentFormat.OpenXml.Vml.Presentation",
+    "DocumentFormat.OpenXml.Vml.Spreadsheet",
   };
 
   public static BiDiDictionary<string, string> Namespaces { get; } = new BiDiDictionary<string, string>()
@@ -604,10 +611,10 @@ public static class ModelData
   #region Types
   public static bool IsExcluded(Type type)
   {
-    if (ExcludedNamespaces.Contains(type.Namespace ?? ""))
-      return true;
     if (IncludedTypes.Contains(type.Name))
       return false;
+    if (ExcludedNamespaces.Contains(type.Namespace ?? ""))
+      return true;
     if (ExcludedTypes.Contains(type.Name))
       return true;
     return false;
@@ -620,8 +627,30 @@ public static class ModelData
     "OpenXmlElementContext",
     "OpenXmlElementList",
     "OpenXmlSimpleType",
-    //"OpenXmlPackage",
-    //"OpenXml*",
+    "OpenXmlPackage",
+    "OpenXmlPart",
+    "TypedOpenXmlPart",
+    "OpenXmlPartContainer",
+    "IFixedContentTypePart",
+    "WordAttachedToolbarsPart",
+    "Worksheet*Part",
+    "NamedsheetPart",
+    "PivotTable*Part",
+    "TableDefinitionPart",
+    "QueryTablePart",
+    "SingleCellTablePart",
+    "SpreadsheetPrinterSettingsPart",
+    "Slide*Part",
+    "Notes*Part",
+    "PowerPointCommentPart",
+    "DocumentTasksPart",
+    "Vba*Part",
+    "Ribbon*Part",
+    "QuickAccessToolbarCustomizationsPart",
+    "WebEx*Part",
+    "CustomUIPart",
+    "TypedOpenXmlPackage",
+    "OnOffType",
   };
 
   public static SortedStrings IncludedTypes { get; } = new SortedStrings
@@ -629,6 +658,7 @@ public static class ModelData
     "CustomXmlAttribute",
     "DocPart",
     "Wordprocessing*",
+    "WordprocessingDocumentType",
     //"OpenXmlSolidColorFillPropertiesElement",
     //"OpenXmlValueColorEndPositionElement", "OpenXmlTaskAssignUnassignUserElement", "OpenXmlTaskUserElement",
     //"OpenXmlPartRootElement",

@@ -112,10 +112,9 @@ public class ConverterCreator: BaseCreator
 
   protected override TimeSpan GenerateCode()
   {
-    ModelMonitor.WriteLine();
     //CodeGenerator.PrepareProjects();
     int generatedCount = 0;
-    ModelMonitor.WriteLine($"Generating {TypeManager.AcceptedTypes.Count()} types");
+    ModelMonitor?.ShowPhaseStart("Generating converters");
     DateTime t1 = DateTime.Now;
     foreach (var typeInfo in TypeManager.AcceptedTypes.ToArray())
     {
@@ -125,19 +124,21 @@ public class ConverterCreator: BaseCreator
         continue;
       if (!typeInfo.IsUsed)
         continue;
-      ModelMonitor.WriteSameLine($"Generated {generatedCount} types. {typeInfo.GetFullName(false)}");
+      //ModelMonitor?.WriteSameLine($"Generated {generatedCount} types. {typeInfo.GetFullName(false)}");
       if (CodeGenerator.GenerateConverterFile(typeInfo))
         generatedCount++;
     }
     //CodeGenerator.GenerateGlobalUsings();
     DateTime t2 = DateTime.Now;
     var ts = t2 - t1;
-    ModelMonitor.WriteLine();
-    ModelMonitor.WriteLine($"Generating time is {ts}");
-    ModelMonitor.WriteLine($"Generated {CodeGenerator.GeneratedInterfacesCount} interfaces, {CodeGenerator.GeneratedClassesCount} classes" +
-                      $", {CodeGenerator.GeneratedStructsCount} structs, {CodeGenerator.GeneratedEnumTypesCount} enums");
-    ModelMonitor.WriteLine($"Skipped {CodeGenerator.SkippedTypesCount} converters");
-    ModelMonitor.WriteLine($"Total {CodeGenerator.GeneratedPropertiesCount} properties, {CodeGenerator.GeneratedEnumValuesCount} enumValues");
+    ModelMonitor?.ShowPhaseEnd("Generating converters", new SummaryInfo{ Time = ts, 
+      Summary = new Dictionary<string, object>{ 
+        {"Generated interfaces", CodeGenerator.GeneratedInterfacesCount }, 
+        {"Generated classes", CodeGenerator.GeneratedClassesCount }, 
+        {"Skipped types", CodeGenerator.SkippedTypesCount }, 
+        {"Total properties", CodeGenerator.GeneratedPropertiesCount }, 
+        {"Total enum values", CodeGenerator.GeneratedEnumValuesCount }, 
+        }});
     return ts;
   }
 
