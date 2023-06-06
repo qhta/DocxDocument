@@ -183,7 +183,7 @@
           }
         }
       },
-      "Qhta.TypeUtils/1.3.7": {
+      "Qhta.TypeUtils/1.3.8.1": {
         "type": "package",
         "dependencies": {
           "Qhta.Collections": "2.0.0"
@@ -776,7 +776,7 @@
           "Newtonsoft.Json": "13.0.3",
           "Qhta.Collections": "2.0.0",
           "Qhta.TextUtils": "3.1.0",
-          "Qhta.TypeUtils": "1.3.7",
+          "Qhta.TypeUtils": "1.3.8.1",
           "Qhta.Xml": "1.0.0",
           "Qhta.Xml.Serialization": "1.0.0",
           "System.IO.Packaging": "7.0.0"
@@ -1171,10 +1171,10 @@
         "qhta.textutils.nuspec"
       ]
     },
-    "Qhta.TypeUtils/1.3.7": {
-      "sha512": "bO32N+NcYWXheBv+rZtod4hj/miit5I08hSg3OBT1YV+GokTrwk38NIJ31BSOgnElaeJ7cN5sD43o1v6fvDxJg==",
+    "Qhta.TypeUtils/1.3.8.1": {
+      "sha512": "7dP60tBDAmhg614SF/Z5UNj3Apn5aKG9/mnBy7eFlNfjY6SM2+Sa7fNnJNW4cXDkTMzieb9Ya0WhTinto5Splw==",
       "type": "package",
-      "path": "qhta.typeutils/1.3.7",
+      "path": "qhta.typeutils/1.3.8.1",
       "files": [
         ".nupkg.metadata",
         "lib/net6.0/Qhta.TypeUtils.dll",
@@ -1183,7 +1183,7 @@
         "lib/net7.0/Qhta.TypeUtils.xml",
         "lib/netstandard2.0/Qhta.TypeUtils.dll",
         "lib/netstandard2.0/Qhta.TypeUtils.xml",
-        "qhta.typeutils.1.3.7.nupkg.sha512",
+        "qhta.typeutils.1.3.8.1.nupkg.sha512",
         "qhta.typeutils.nuspec"
       ]
     },

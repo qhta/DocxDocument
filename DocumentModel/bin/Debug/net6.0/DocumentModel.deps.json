@@ -13,7 +13,7 @@
           "Newtonsoft.Json": "13.0.3",
           "Qhta.Collections": "2.0.0",
           "Qhta.TextUtils": "3.1.0",
-          "Qhta.TypeUtils": "1.3.7",
+          "Qhta.TypeUtils": "1.3.8.1",
           "Qhta.Xml": "1.0.0",
           "Qhta.Xml.Serialization": "1.0.0",
           "System.IO.Packaging": "7.0.0"
@@ -91,14 +91,14 @@
           }
         }
       },
-      "Qhta.TypeUtils/1.3.7": {
+      "Qhta.TypeUtils/1.3.8.1": {
         "dependencies": {
           "Qhta.Collections": "2.0.0"
         },
         "runtime": {
           "lib/net6.0/Qhta.TypeUtils.dll": {
-            "assemblyVersion": "1.3.7.0",
-            "fileVersion": "1.3.7.0"
+            "assemblyVersion": "1.3.8.1",
+            "fileVersion": "1.3.8.1"
           }
         }
       },
@@ -328,7 +328,7 @@
         "dependencies": {
           "Qhta.Collections": "2.0.0",
           "Qhta.TextUtils": "3.1.0",
-          "Qhta.TypeUtils": "1.3.7",
+          "Qhta.TypeUtils": "1.3.8.1",
           "Qhta.Xml": "1.0.0",
           "System.Configuration.ConfigurationManager": "7.0.0"
         },
@@ -340,7 +340,7 @@
         "dependencies": {
           "Qhta.Collections": "2.0.0",
           "Qhta.TextUtils": "3.1.0",
-          "Qhta.TypeUtils": "1.3.7"
+          "Qhta.TypeUtils": "1.3.8.1"
         },
         "runtime": {
           "Qhta.Xml.dll": {}
@@ -350,7 +350,7 @@
         "dependencies": {
           "Qhta.Collections": "2.0.0",
           "Qhta.TextUtils": "3.1.0",
-          "Qhta.TypeUtils": "1.3.7",
+          "Qhta.TypeUtils": "1.3.8.1",
           "Qhta.Xml": "1.0.0"
         },
         "runtime": {
@@ -363,7 +363,7 @@
           "Qhta.Conversion": "1.0.0",
           "Qhta.TestHelper": "2.1.0",
           "Qhta.TextUtils": "3.1.0",
-          "Qhta.TypeUtils": "1.3.7",
+          "Qhta.TypeUtils": "1.3.8.1",
           "Qhta.Xml": "1.0.0",
           "Qhta.Xml.Reflection": "1.0.0",
           "System.CodeDom": "7.0.0",
@@ -445,12 +445,12 @@
       "path": "qhta.textutils/3.1.0",
       "hashPath": "qhta.textutils.3.1.0.nupkg.sha512"
     },
-    "Qhta.TypeUtils/1.3.7": {
+    "Qhta.TypeUtils/1.3.8.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-bO32N+NcYWXheBv+rZtod4hj/miit5I08hSg3OBT1YV+GokTrwk38NIJ31BSOgnElaeJ7cN5sD43o1v6fvDxJg==",
-      "path": "qhta.typeutils/1.3.7",
-      "hashPath": "qhta.typeutils.1.3.7.nupkg.sha512"
+      "sha512": "sha512-7dP60tBDAmhg614SF/Z5UNj3Apn5aKG9/mnBy7eFlNfjY6SM2+Sa7fNnJNW4cXDkTMzieb9Ya0WhTinto5Splw==",
+      "path": "qhta.typeutils/1.3.8.1",
+      "hashPath": "qhta.typeutils.1.3.8.1.nupkg.sha512"
     },
     "System.CodeDom/7.0.0": {
       "type": "package",
