@@ -133,15 +133,13 @@ public static class TypeManager
 
   public static TypeInfo? RegisterType(Type type, bool? acceptance = null)
   {
-    if (type.IsConstructedGenericType)
-       return null;
     lock (KnownTypesLock)
     {
 
       if (KnownTypes.TryGetValue(type, out var typeInfo))
         return typeInfo;
-      if (type.Name=="ClientData")
-        Debug.Assert(true);
+      //if (type.Name=="ClientData")
+      //  Debug.Assert(true);
       var nspace = type.Namespace ?? "";
       lock (NamespacesLock)
       {
@@ -155,6 +153,7 @@ public static class TypeManager
       }
       bool accept = acceptance == true || !ModelData.IsExcluded(type);
       typeInfo.IsAccepted = accept;
+
       if (accept)
         TypeReflector.ReflectType(typeInfo);
       return typeInfo;

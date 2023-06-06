@@ -7,9 +7,10 @@ public static class Program
   {
     GenerateModelTypes(typeof(DocumentFormat.OpenXml.Packaging.WordprocessingDocument), MDS.ScannedNamespaces | MDS.ScannedTypes,
       new DisplayOptions
-      { Namespaces = new string[]{ "*.Vml*"},
-        //TypeKindSelector = TKS.Enum,
+      { Namespaces = new string[]{ "*.Wordprocessing"},
+        TypeKindSelector = TKS.Enum,
         //Typenames = new string[] { "*Values" },
+        TypeDataSelector = TDS.AcceptedTypesOnly | TDS.Properties | TDS.EnumValues
       });
     //GenerateTypeConverters(typeof(DocumentFormat.OpenXml.Packaging.WordprocessingDocument));
   }

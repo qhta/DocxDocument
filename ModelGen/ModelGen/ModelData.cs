@@ -659,6 +659,7 @@ public static class ModelData
     "DocPart",
     "Wordprocessing*",
     "WordprocessingDocumentType",
+    "EnumValue*",
     //"OpenXmlSolidColorFillPropertiesElement",
     //"OpenXmlValueColorEndPositionElement", "OpenXmlTaskAssignUnassignUserElement", "OpenXmlTaskUserElement",
     //"OpenXmlPartRootElement",
