@@ -18,7 +18,6 @@ public enum TDS
   ExcludeSemantics = 512,
   EnumValues = 1024,
   Properties = 2048,
-  HideUnacceptedProperties = 4096,
-  HideUnacceptedTypeDetails = 8192,
-  ConversionInfo = 16384,
+  AcceptedMembersOnly = 4096,
+  ConversionInfo = 8192,
 }
