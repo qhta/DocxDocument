@@ -169,7 +169,7 @@ public static class TypeReflector
     typeInfo.Documentation = type.GetXmlDocsElement();
     if (typeInfo.Documentation != null)
     {
-      typeInfo.Summary = DocumentationReader.GetSummaryFirstPara(typeInfo.Documentation);
+      typeInfo.Metadata = DocumentationReader.GetElementMetadata(typeInfo.Documentation);
       //var childItemTypes = DocumentationReader.GetChildItemTypes(typeInfo.Documentation, type.Assembly);
       //if (childItemTypes != null)
       //{
@@ -314,15 +314,15 @@ public static class TypeReflector
     else return aName;
   }
 
-  private static bool GenDocumentationComments(TypeInfo typeInfo)
-  {
-    var documentation = typeInfo.Type.GetXmlDocsElement();
-    if (documentation != null)
-    {
-      var summary = DocumentationReader.GetSummaryFirstPara(documentation);
-      typeInfo.Summary = summary;
-      return true;
-    }
-    return false;
-  }
+  //private static bool GenDocumentationComments(TypeInfo typeInfo)
+  //{
+  //  var documentation = typeInfo.Type.GetXmlDocsElement();
+  //  if (documentation != null)
+  //  {
+  //    var summary = DocumentationReader.GetSummaryFirstPara(documentation);
+  //    typeInfo.Summary = summary;
+  //    return true;
+  //  }
+  //  return false;
+  //}
 }

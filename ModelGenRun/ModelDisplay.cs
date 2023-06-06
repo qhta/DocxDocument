@@ -185,8 +185,10 @@ public class ModelDisplay : IModelMonitor
 
   public void ShowTypeInfo(TypeInfo typeInfo, DisplayOptions options)
   {
-    if (options.TypeDataSelector.HasFlag(TDS.Description))
-      ShowDescription(typeInfo, options);
+    if (options.TypeDataSelector.HasFlag(TDS.Documentation))
+      ShowDocumentation(typeInfo, options);
+    if (options.TypeDataSelector.HasFlag(TDS.Metadata))
+      ShowMetadata(typeInfo, options);
     string str = "";
     if (!options.TypeDataSelector.HasFlag(TDS.AcceptedTypesOnly))
       str += Accepted(typeInfo.Acceptance);
@@ -379,8 +381,10 @@ public class ModelDisplay : IModelMonitor
           listCont = true;
           break;
         }
-        if (options.TypeDataSelector.HasFlag(TDS.Description))
-          ShowDescription(enumValue, options);
+        if (options.TypeDataSelector.HasFlag(TDS.Documentation))
+          ShowDocumentation(enumValue, options);
+        if (options.TypeDataSelector.HasFlag(TDS.Metadata))
+          ShowMetadata(enumValue, options);
         var str = $"{enumValue.Name}={enumValue.Value}";
         Writer.WriteLine(str);
       }
@@ -403,8 +407,10 @@ public class ModelDisplay : IModelMonitor
       {
         if (options.TypeDataSelector.HasFlag(TDS.AcceptedMembersOnly) && property.IsAccepted == false)
           continue;
-        if (options.TypeDataSelector.HasFlag(TDS.Description))
-          ShowDescription(property, options);
+        if (options.TypeDataSelector.HasFlag(TDS.Documentation))
+          ShowDocumentation(property, options);
+        if (options.TypeDataSelector.HasFlag(TDS.Metadata))
+          ShowMetadata(property, options);
         var str = $"{property.Name}: {property.PropertyType.GetFullName(originNames)}";
         if (options.TypeDataSelector.HasFlag(TDS.ConversionInfo))
         {
@@ -421,158 +427,168 @@ public class ModelDisplay : IModelMonitor
     }
   }
 
-  public void ShowDescription(ModelElement element, DisplayOptions options)
+  public void ShowMetadata(ModelElement element, DisplayOptions options)
   {
-    if (element.Documentation != null)
+    var metadata = element.Metadata;
+    if (metadata == null)
+      return;
+    Writer.WriteLine();
+    if (metadata.Summary != null)
     {
-      Writer.WriteLine();
-      ShowDocumentation(element, options);
+      Writer.WriteLine("//  <summary>");
+      WriteWrapText(metadata.Summary, options);
+      Writer.WriteLine("//  </summary>");
+    }
+    if (metadata.SchemaTag != null)
+      Writer.WriteLine($"//  <schemaTag>{metadata.SchemaTag}</schemaTag>");
+    if (metadata.SchemaUrl != null)
+      Writer.WriteLine($"//  <schemaUrl>{metadata.SchemaUrl}</schemaUrl>");
+    if (metadata.Availability != null)
+      Writer.WriteLine($"//  <availability>{metadata.Availability}</availability>");
+  }
+
+  private void WriteWrapText(string text, DisplayOptions options)
+  {
+    if (options.SummaryWidthLimit > 0)
+    {
+      var wrapLimit = options.SummaryWidthLimit - 4 - Writer.IndentSize * Writer.IndentLevel;
+      List<string> lines = Snork.TextWrap.TextWrapper.Wrap(text, wrapLimit);
+      foreach (var line in lines)
+        Writer.WriteLine($"//  {line}");
     }
     else
-    if (element.Summary != null)
+      Writer.WriteLine($"/// {text}");
+  }
+
+  public void ShowDocumentation(ModelElement element, DisplayOptions options)
+{
+  var xElement = element.Documentation;
+  if (xElement != null)
+  {
+    Writer.WriteLine();
+    foreach (var subElement in xElement.Elements())
+      ShowDocumentationElement(subElement, options);
+  }
+}
+
+private void ShowDocumentationElement(XElement xElement, DisplayOptions options, int indent = 0)
+{
+  var indentStr = new String(' ', indent * 2);
+  var header = xElement.Name.ToString();
+  foreach (var attribute in xElement.Attributes())
+  {
+    header += $" {attribute.Name}=\"{attribute.Value}\"";
+  }
+  string? text = null;
+  if (!xElement.HasElements)
+  {
+    text = xElement.Value.Trim();
+    text = Qhta.HtmlUtils.HtmlTextUtils.EncodeHtmlEntities(text);
+    if (text == "")
     {
-      Writer.WriteLine();
-      Writer.WriteLine("/// <summary>");
-      if (options.SummaryWidthLimit > 0)
-      {
-        var wrapLimit = options.SummaryWidthLimit - 4 - Writer.IndentSize * Writer.IndentLevel;
-        List<string> lines = Snork.TextWrap.TextWrapper.Wrap(element.Summary, wrapLimit);
-        foreach (var line in lines)
-          Writer.WriteLine($"/// {line}");
-      }
-      else
-        Writer.WriteLine($"/// {element.Summary}");
-      Writer.WriteLine("/// </summary>");
+      Writer.WriteLine($"/// {indentStr}<{header}/>");
+      return;
+    }
+    else if (header == "c" || header == "remark")
+    {
+      Writer.WriteLine($"/// {indentStr}<{header}>{text}</{xElement.Name}>");
+      return;
     }
   }
 
-
-  private void ShowDocumentation(ModelElement element, DisplayOptions options)
+  Writer.WriteLine($"/// {indentStr}<{header}>");
+  if (xElement.HasElements)
   {
-    var xElement = element.Documentation;
-    if (xElement != null)
-      foreach (var subElement in xElement.Elements())
-        ShowDocumentation(subElement, options);
+    foreach (var subElement in xElement.Elements())
+      ShowDocumentationElement(subElement, options, indent + 1);
   }
-
-  private void ShowDocumentation(XElement xElement, DisplayOptions options, int indent=0)
+  else if (text!=null)
   {
-    var indentStr = new String(' ', indent*2);
-    var header = xElement.Name.ToString();
-    foreach (var attribute in xElement.Attributes())
+    if (options.SummaryWidthLimit > 0)
     {
-      header+=$" {attribute.Name}=\"{attribute.Value}\"";
-    }
-    string? text =null;
-    if (!xElement.HasElements)
-    {
-      text = xElement.Value.Trim();
-      text = Qhta.HtmlUtils.HtmlTextUtils.EncodeHtmlEntities(text);
-      if (text=="")
-      {
-        Writer.WriteLine($"/// {indentStr}<{header}/>");
-        return;
-      }
-      else if (header=="c" || header=="remark")
-      {
-        Writer.WriteLine($"/// {indentStr}<{header}>{text}</{xElement.Name}>");
-        return;
-      }
-    }
-
-    Writer.WriteLine($"/// {indentStr}<{header}>");
-    if (xElement.HasElements)
-    {
-      foreach (var subElement in xElement.Elements())
-        ShowDocumentation(subElement, options, indent+1);
+      var wrapLimit = options.SummaryWidthLimit - 4 - Writer.IndentSize * Writer.IndentLevel;
+      List<string> lines = Snork.TextWrap.TextWrapper.Wrap(text, wrapLimit);
+      foreach (var line in lines)
+        Writer.WriteLine($"/// {indentStr + "  "}{line}");
     }
     else
-    {
-      if (options.SummaryWidthLimit > 0)
-      {
-        var wrapLimit = options.SummaryWidthLimit - 4 - Writer.IndentSize * Writer.IndentLevel;
-        List<string> lines = Snork.TextWrap.TextWrapper.Wrap(text, wrapLimit);
-        foreach (var line in lines)
-          Writer.WriteLine($"/// {indentStr+"  "}{line}");
-      }
-      else
-        Writer.WriteLine($"/// {indentStr+"  "}{text}");
-    }
-    Writer.WriteLine($"/// {indentStr}</{xElement.Name}>");
+      Writer.WriteLine($"/// {indentStr + "  "}{text}");
   }
+  Writer.WriteLine($"/// {indentStr}</{xElement.Name}>");
+}
 
-  public void ShowTypeConversions()
+public void ShowTypeConversions()
+{
+  foreach (var type in TypeManager.AllTypes)
   {
-    foreach (var type in TypeManager.AllTypes)
-    {
-      ShowTypeConversion(type);
-    }
+    ShowTypeConversion(type);
   }
+}
 
-  public void ShowTypeConversion(TypeInfo type)
+public void ShowTypeConversion(TypeInfo type)
+{
+  if (type.IsConverted)
   {
-    if (type.IsConverted)
+    var convTarget = ModelManager.GetConversionTargetOrSelf(type);
+    if (convTarget != null)
     {
-      var convTarget = ModelManager.GetConversionTargetOrSelf(type);
-      if (convTarget != null)
-      {
-        Writer.WriteLine($"{type} => {convTarget}");
-        Writer.Indent();
-        ShowTypeConversion(convTarget);
-        Writer.Unindent();
-      }
+      Writer.WriteLine($"{type} => {convTarget}");
+      Writer.Indent();
+      ShowTypeConversion(convTarget);
+      Writer.Unindent();
     }
   }
+}
 
-  public void ShowTypeRenames()
+public void ShowTypeRenames()
+{
+  foreach (var typeInfo in TypeManager.AllTypes)
   {
-    foreach (var typeInfo in TypeManager.AllTypes)
+    if (typeInfo.Name != typeInfo.OriginalName)
     {
-      if (typeInfo.Name != typeInfo.OriginalName)
-      {
-        Writer.WriteLine($"{typeInfo.OriginalName} --> {typeInfo.Name}");
-      }
+      Writer.WriteLine($"{typeInfo.OriginalName} --> {typeInfo.Name}");
     }
   }
+}
 
-  public void ShowProcessSummary(SummaryInfo info)
+public void ShowProcessSummary(SummaryInfo info)
+{
+  WriteLine();
+  WriteLine($"Total time = {info.Time}");
+}
+
+#region Helper functions to format diplay
+protected string AllNone(int n, int cmp) => (n == 0) ? "none" : (n == cmp) ? "all" : n.ToString();
+protected string Multi(int n, string single, string? multi = null) => (n == 1) ? single : (multi ?? (single.EndsWith("s") ? (single + "es") : (single + "s")));
+protected string Accepted(bool? acceptance) => (acceptance == true) ? "+ " : (acceptance == false) ? "- " : "? ";
+#endregion
+
+protected bool IsTypeKind(TypeKind typeKind, TKS selector)
+{
+  switch (typeKind)
   {
-    WriteLine();
-    WriteLine($"Total time = {info.Time}");
+    case TypeKind.Type:
+      return selector == TKS.Any;
+    case TypeKind.Struct:
+      return selector.HasFlag(TKS.Struct);
+    case TypeKind.Class:
+      return selector.HasFlag(TKS.Class);
+    case TypeKind.Enum:
+      return selector.HasFlag(TKS.Enum);
+    case TypeKind.Interface:
+      return selector.HasFlag(TKS.Interface);
   }
+  return false;
+}
 
-  #region Helper functions to format diplay
-  protected string AllNone(int n, int cmp) => (n == 0) ? "none" : (n == cmp) ? "all" : n.ToString();
-  protected string Multi(int n, string single, string? multi = null) => (n == 1) ? single : (multi ?? (single.EndsWith("s") ? (single + "es") : (single + "s")));
-  protected string Accepted(bool? acceptance) => (acceptance == true) ? "+ " : (acceptance == false) ? "- " : "? ";
-  #endregion
-
-  protected bool IsTypeKind(TypeKind typeKind, TKS selector)
-  {
-    switch (typeKind)
-    {
-      case TypeKind.Type:
-        return selector == TKS.Any;
-      case TypeKind.Struct:
-        return selector.HasFlag(TKS.Struct);
-      case TypeKind.Class:
-        return selector.HasFlag(TKS.Class);
-      case TypeKind.Enum:
-        return selector.HasFlag(TKS.Enum);
-      case TypeKind.Interface:
-        return selector.HasFlag(TKS.Interface);
-    }
-    return false;
-  }
-
-  protected string[] constaints = new string[]
-  {
+protected string[] constaints = new string[]
+{
     "covariant",
     "contravariant",
     "class",
     "struct",
     "new()"
-  };
+};
 
 
 }
