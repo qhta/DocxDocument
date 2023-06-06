@@ -57,14 +57,14 @@ public class ModelElement: IOwnedElement
   public bool IsConvertedTo { get; set; }
 
   /// <summary>
-  /// Short text description of this element.
+  /// Xml documentation assigned to this element.
   /// </summary>
-  public string? Summary { get; set; }
+  public XElement? Documentation { get; set; }
 
   /// <summary>
   /// Xml documentation assigned to this element.
   /// </summary>
-  public XElement? Documentation { get; set; }
+  public ElementMetadata? Metadata { get; set; }
 
   /// <summary>
   /// Custom attributes assigned to this element
@@ -77,4 +77,5 @@ public class ModelElement: IOwnedElement
     Name = name;
     CustomAttributes = new OwnedCollection<CustomAttribInfo>(this);
   }
+
 }

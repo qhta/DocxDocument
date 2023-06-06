@@ -100,4 +100,77 @@ public static class DocumentationReader
     return null;
   }
 
+  public static ElementMetadata GetElementMetadata(XElement documentation)
+  {
+    ElementMetadata metadata = new ElementMetadata();
+    foreach (var element in documentation.Elements())
+    {
+      if (element.Name == "summary")
+      {
+        foreach (var subElement in element.Elements())
+          if (subElement.Name == "para")
+          {
+            var text = subElement.Value.Trim();
+            if (text.StartsWith("Represents the following attribute in the schema"))
+            {
+              int k = text.IndexOf(':');
+              if (k >= 0)
+              {
+                text = text.Substring(k + 1).Trim();
+                if (text.EndsWith('.'))
+                  text = text.Substring(0, text.Length - 1).Trim();
+                metadata.SchemaTag = text;
+              }
+            }
+            else if (text.StartsWith("When the object is serialized out as xml, it's qualified name is "))
+            {
+              int k = "When the object is serialized out as xml, it's qualified name is ".Length;
+              text = text.Substring(k).Trim();
+              if (text.EndsWith('.'))
+                text = text.Substring(0, text.Length - 1).Trim();
+              metadata.SchemaTag = text;
+            }
+            else if (text.StartsWith("This class is available in "))
+            {
+              int k = "This class is available in ".Length;
+              text = text.Substring(k).Trim();
+              if (text.EndsWith('.'))
+                text = text.Substring(0, text.Length - 1).Trim();
+              metadata.Availability = text;
+            }
+            else
+            {
+              int k = text.IndexOf("this property is only available in ");
+              if (k >= 0)
+              {
+                k += "this property is only available in ".Length;
+                text = text.Substring(k).Trim();
+                if (text.EndsWith('.'))
+                  text = text.Substring(0, text.Length - 1).Trim();
+                metadata.Availability = text;
+              }
+              else
+              if (metadata.Summary == null)
+                metadata.Summary = text;
+            }
+          }
+      }
+      else if (element.Name == "remark")
+      {
+        if (!element.HasElements)
+        {
+          var text = element.Value.Trim();
+          int k = text.IndexOf("http://");
+          if (k >= 0)
+          {
+            text = text.Substring(k).Trim();
+            if (text.EndsWith('.'))
+              text = text.Substring(0, text.Length - 1).Trim();
+            metadata.SchemaUrl = text;
+          }
+        }
+      }
+    }
+    return metadata;
+  }
 }

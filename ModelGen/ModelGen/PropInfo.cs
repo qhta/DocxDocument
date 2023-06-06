@@ -52,7 +52,7 @@ public class PropInfo: ModelElement
       IsAccepted = false;
     Documentation = propertyInfo.GetXmlDocsElement();
     if (Documentation != null)
-      Summary = DocumentationReader.GetSummaryFirstPara(Documentation);
+      Metadata = DocumentationReader.GetElementMetadata(Documentation);
     foreach (var item in propertyInfo.CustomAttributes)
       CustomAttributes.Add(new CustomAttribInfo(item));
   }

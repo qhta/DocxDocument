@@ -92,9 +92,11 @@ public class BaseCodeGenerator
 
   #region Documentation comments generation
 
-  protected bool GenerateDocumentationComments(TypeInfo typeInfo)
+  protected bool GenerateDocumentationComments(ModelElement element)
   {
-    var summary = typeInfo.Summary;
+    if (element.Metadata==null)
+      return false;
+    var summary = element.Metadata.Summary;
     if (summary != null)
     {
       Writer.WriteLine("/// <summary>");
@@ -105,31 +107,6 @@ public class BaseCodeGenerator
     return false;
   }
 
-  protected bool GenerateDocumentationComments(EnumInfo aField)
-  {
-    var summary = aField.Summary;
-    if (summary != null)
-    {
-      Writer.WriteLine("/// <summary>");
-      Writer.WriteLine($"/// {summary}");
-      Writer.WriteLine("/// </summary>");
-      return true;
-    }
-    return false;
-  }
-
-  protected bool GenerateDocumentationComments(PropInfo aProp)
-  {
-    var summary = aProp.Summary;
-    if (summary != null)
-    {
-      Writer.WriteLine("/// <summary>");
-      Writer.WriteLine($"/// {summary}");
-      Writer.WriteLine("/// </summary>");
-      return true;
-    }
-    return false;
-  }
   #endregion
 
   #region Global usings generation

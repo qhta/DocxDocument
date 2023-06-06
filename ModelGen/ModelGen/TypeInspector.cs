@@ -13,8 +13,8 @@ public static class TypeInspector
   {
     //if (typeInfo.Name == "FontSignature")
     //  Debug.Assert(true);
-    if (typeInfo.Metadata != null)
-      return typeInfo.Metadata;
+    if (typeInfo.ElementMetadata != null)
+      return typeInfo.ElementMetadata;
     var type = typeInfo.Type;
     if (type != null)
     {
@@ -24,7 +24,7 @@ public static class TypeInspector
         if (element != null)
         {
           var elementMetadata = new ElementMetadataFactoryFeature().GetMetadata(element);
-          typeInfo.Metadata = elementMetadata;
+          typeInfo.ElementMetadata = elementMetadata;
           var particle = elementMetadata.Particle?.Particle;
           if (particle != null)
           {

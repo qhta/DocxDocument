@@ -20,5 +20,6 @@ public enum TDS
   Properties = 2048,
   AcceptedMembersOnly = 4096,
   ConversionInfo = 8192,
-  Description = 16384,
+  Documentation = 16384,
+  Metadata = 32768,
 }
