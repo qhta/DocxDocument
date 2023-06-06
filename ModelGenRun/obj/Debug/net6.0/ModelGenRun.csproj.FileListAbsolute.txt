@@ -121,3 +121,7 @@ D:\VS\Projects\DocxDocument\ModelGenRun\obj\Debug\net6.0\ModelGenRun.csproj.Core
 D:\VS\Projects\DocxDocument\ModelGenRun\obj\Debug\net6.0\ModelGenRun.csproj.CopyComplete
 D:\VS\Projects\DocxDocument\ModelGenRun\obj\Debug\net6.0\ModelGenRun.genruntimeconfig.cache
 D:\VS\Projects\DocxDocument\ModelGenRun\obj\Debug\net6.0\ref\ModelGenRun.dll
+D:\VS\Projects\DocxDocument\ModelGenRun\bin\Debug\net6.0\Snork.TextWrap.dll
+D:\VS\Projects\DocxDocument\ModelGenRun\bin\Debug\net6.0\HtmlAgilityPack.dll
+D:\VS\Projects\DocxDocument\ModelGenRun\bin\Debug\net6.0\Qhta.HtmlUtils.dll
+D:\VS\Projects\DocxDocument\ModelGenRun\bin\Debug\net6.0\System.Xml.XPath.XmlDocument.dll

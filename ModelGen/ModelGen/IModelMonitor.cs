@@ -27,8 +27,7 @@ public interface IModelMonitor
   public void ShowPhaseEnd(string phaseName, SummaryInfo info);
   public void ShowNamespaceSummary(NTS originTargetSelector);
   public void ShowNamespacesDetails(DisplayOptions options);
-  public void ShowNamespaceDetails(string nspace, DisplayOptions options);
-  public void ShowTypes(string nspace, string name);
+  public void ShowNamespaceTypes(string nspace, DisplayOptions options);
   public void ShowTypeInfo(TypeInfo typeInfo, DisplayOptions options);
   public void ShowGenericParamsConstraints(TypeInfo typeInfo, DisplayOptions options);
   public void ShowImplementedInterfaces(TypeInfo typeInfo, DisplayOptions options);
@@ -37,6 +36,8 @@ public interface IModelMonitor
   public void ShowIncomingRelationships(TypeInfo typeInfo, DisplayOptions options);
   public void ShowEnumValues(TypeInfo typeInfo, DisplayOptions options);
   public void ShowProperties(TypeInfo typeInfo, DisplayOptions options);
+  public void ShowDescription(ModelElement element, DisplayOptions options);
+
 
   public void ShowTypeRenames();
   public void ShowTypeConversions();

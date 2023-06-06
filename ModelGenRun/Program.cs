@@ -1,16 +1,18 @@
 ﻿namespace ModelGenRun;
-
+using DocumentFormat.OpenXml;
 public static class Program
 {
-
+  static DocumentFormat.OpenXml.Drawing.Wordprocessing.VerticalAlignment dummy;
   public static void Main(string[] args)
   {
     GenerateModelTypes(typeof(DocumentFormat.OpenXml.Packaging.WordprocessingDocument), MDS.ScannedNamespaces | MDS.ScannedTypes,
       new DisplayOptions
       { Namespaces = new string[]{ "*.Wordprocessing"},
-        TypeKindSelector = TKS.Enum,
+        TypeKindSelector = TKS.Class,
         //Typenames = new string[] { "*Values" },
-        TypeDataSelector = TDS.AcceptedTypesOnly | TDS.Properties | TDS.EnumValues
+        TypesLimit = 100,
+        DetailsLimit = 0,
+        TypeDataSelector = TDS.AcceptedTypesOnly | TDS.Description | TDS.BaseTypes | TDS.Properties | TDS.EnumValues
       });
     //GenerateTypeConverters(typeof(DocumentFormat.OpenXml.Packaging.WordprocessingDocument));
   }

@@ -31,9 +31,19 @@ public record DisplayOptions
   public TDS TypeDataSelector { get; set; }
 
   /// <summary>
-  /// Limit list wyszczególnianych elementów
+  /// Limits list of enumerated types
   /// </summary>
-  public int ListLimit {get; set; } = 10;
+  public int TypesLimit {get; set; }
+
+  /// <summary>
+  /// Limit list of enumerated details
+  /// </summary>
+  public int DetailsLimit {get; set; } = 10;
+
+  /// <summary>
+  /// Limit line length for summary
+  /// </summary>
+  public int SummaryWidthLimit {get; set; } = 120;
 
   /// <summary>
   /// Specifies relationships semantics selected to display or to exclude depending on TDS.

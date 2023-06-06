@@ -74,7 +74,7 @@
             },
             "Qhta.TypeUtils": {
               "target": "Package",
-              "version": "[1.3.7, )"
+              "version": "[1.3.8.1, )"
             },
             "System.IO.Packaging": {
               "target": "Package",
@@ -161,6 +161,14 @@
             "Namotion.Reflection": {
               "target": "Package",
               "version": "[2.1.2, )"
+            },
+            "Qhta.HtmlUtils": {
+              "target": "Package",
+              "version": "[1.0.1, )"
+            },
+            "Snork.TextWrap": {
+              "target": "Package",
+              "version": "[1.0.1301, )"
             },
             "System.IO.Packaging": {
               "target": "Package",
