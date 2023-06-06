@@ -12,7 +12,7 @@ public static class Program
         //Typenames = new string[] { "*Values" },
         TypesLimit = 100,
         DetailsLimit = 0,
-        TypeDataSelector = TDS.AcceptedTypesOnly | TDS.Description | TDS.BaseTypes | TDS.Properties | TDS.EnumValues
+        TypeDataSelector = TDS.AcceptedTypesOnly | TDS.Documentation | TDS.Metadata |TDS.BaseTypes | TDS.Properties | TDS.EnumValues
       });
     //GenerateTypeConverters(typeof(DocumentFormat.OpenXml.Packaging.WordprocessingDocument));
   }
