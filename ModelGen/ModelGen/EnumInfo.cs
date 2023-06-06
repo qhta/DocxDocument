@@ -4,14 +4,14 @@ namespace ModelGen;
 
 public class EnumInfo: ModelElement
 {
-  public string? Value { get; set; }
+  public int? Value { get; set; }
 
-  public EnumInfo(string name, string? value): base(name)
+  public EnumInfo(string name, int? value): base(name)
   {
     Value = value;
   }
 
-  public EnumInfo(FieldInfo fieldInfo): this(fieldInfo.Name, fieldInfo.GetValue(null)?.ToString())
+  public EnumInfo(FieldInfo fieldInfo): this(fieldInfo.Name, Convert.ToInt32(fieldInfo.GetValue(null)))
   {
     Documentation = fieldInfo.GetXmlDocsElement();
     if (Documentation != null)
