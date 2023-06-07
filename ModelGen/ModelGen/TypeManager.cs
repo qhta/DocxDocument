@@ -131,7 +131,7 @@ public static class TypeManager
     return false;
   }
 
-  public static TypeInfo? RegisterType(Type type, bool? acceptance = null)
+  public static TypeInfo RegisterType(Type type, bool? acceptance = null)
   {
     lock (KnownTypesLock)
     {
@@ -160,20 +160,18 @@ public static class TypeManager
     }
   }
 
-  public static TypeInfo? RegisterType(Type type, Type source, Semantics semantics)
+  public static TypeInfo RegisterType(Type type, Type source, Semantics semantics)
   {
     var result = RegisterType(type);
     var sourceTypeInfo = RegisterType(source);
-    if (sourceTypeInfo!=null && result!=null)
-      AddRelationship(sourceTypeInfo, result, semantics);
+    AddRelationship(sourceTypeInfo, result, semantics);
     return result;
   }
 
-  public static TypeInfo? RegisterType(Type type, TypeInfo source, Semantics semantics)
+  public static TypeInfo RegisterType(Type type, TypeInfo source, Semantics semantics)
   {
     var result = RegisterType(type);
-    if (result!=null)
-      AddRelationship(source, result, semantics);
+    AddRelationship(source, result, semantics);
     return result;
   }
 

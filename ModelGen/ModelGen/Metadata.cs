@@ -3,7 +3,7 @@
 /// <summary>
 /// Metadata assigned to model element.
 /// </summary>
-public record ElementMetadata
+public record Metadata
 {
   /// <summary>
   /// Short text description of this element.

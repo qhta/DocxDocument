@@ -1,10 +1,11 @@
 ﻿using DocumentFormat.OpenXml.Bibliography;
 using DocumentFormat.OpenXml.Validation.Schema;
+
 using Namotion.Reflection;
 
 namespace ModelGen;
 
-public class PropInfo: ModelElement
+public class PropInfo : ModelElement
 {
   public TypeInfo? DeclaringType => (TypeInfo?)Owner;
   public PropertyInfo? PropertyInfo { get; set; }
@@ -16,11 +17,29 @@ public class PropInfo: ModelElement
   public bool IsAbstract { get; set; }
   public bool IsVirtual { get; set; }
   public bool IsOverriden { get; set; }
-  public bool IsNew { get; set;}
+  public bool IsNew { get; set; }
 
   public bool IsConstrained { get; set; }
 
   public Validators? Validators { get; set; }
+
+  /// <summary>
+  /// Xml documentation assigned to this element.
+  /// </summary>
+  public override XElement? Documentation
+  {
+    get => base.Documentation ?? DeclaringType?.Documentation;
+    set => base.Documentation = value;
+  }
+
+  /// <summary>
+  /// Xml documentation assigned to this element.
+  /// </summary>
+  public override Metadata? Metadata 
+  {
+    get => base.Metadata ?? DeclaringType?.Metadata;
+    set => base.Metadata = value;
+  }
 
   public PropInfo(string name, Type type) : base(name)
   {
@@ -64,5 +83,5 @@ public class PropInfo: ModelElement
   }
 
   public override string ToString() => $"Prop({Name}: {PropertyType})"
-                                       +((Owner==null) ? "" : $" in {Owner.ToString}");
+                                       + ((Owner == null) ? "" : $" in {Owner.ToString}");
 }
