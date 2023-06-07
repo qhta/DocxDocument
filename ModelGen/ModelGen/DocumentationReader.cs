@@ -100,9 +100,9 @@ public static class DocumentationReader
     return null;
   }
 
-  public static ElementMetadata GetElementMetadata(XElement documentation)
+  public static Metadata GetElementMetadata(XElement documentation)
   {
-    ElementMetadata metadata = new ElementMetadata();
+    Metadata metadata = new Metadata();
     foreach (var element in documentation.Elements())
     {
       if (element.Name == "summary")

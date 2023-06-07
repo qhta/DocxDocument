@@ -72,7 +72,8 @@ public static class ModelManager
       else
       {
         var targetTypeInfo = TypeManager.RegisterType(target.Type, typeInfo, Semantics.TypeChange);
-        targetTypeInfo.IsConvertedTo = true;
+        if (targetTypeInfo != null)
+          targetTypeInfo.IsConvertedTo = true;
         typeInfo.IsConverted = true;
         return true;
       }

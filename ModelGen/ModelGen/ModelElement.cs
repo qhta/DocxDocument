@@ -59,12 +59,12 @@ public class ModelElement: IOwnedElement
   /// <summary>
   /// Xml documentation assigned to this element.
   /// </summary>
-  public XElement? Documentation { get; set; }
+  public virtual XElement? Documentation { get; set; }
 
   /// <summary>
   /// Xml documentation assigned to this element.
   /// </summary>
-  public ElementMetadata? Metadata { get; set; }
+  public virtual Metadata? Metadata { get; set; }
 
   /// <summary>
   /// Custom attributes assigned to this element

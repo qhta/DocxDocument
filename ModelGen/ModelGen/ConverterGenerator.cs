@@ -2138,7 +2138,7 @@ public class ConverterGenerator : BaseCodeGenerator
     }
     else if (args.Length == 2)
       return false;
-    throw new InvalidOperationException($"Not supported propertyType {prop.PropertyType.Type} in GenerateCollectionSetCode");
+    throw new InvalidOperationException($"Not supported propertyType {prop.PropertyType?.Type} in GenerateCollectionSetCode");
   }
 
   #endregion

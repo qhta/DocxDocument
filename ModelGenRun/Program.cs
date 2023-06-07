@@ -2,7 +2,7 @@
 using DocumentFormat.OpenXml;
 public static class Program
 {
-  static DocumentFormat.OpenXml.Drawing.Wordprocessing.VerticalAlignment dummy;
+  static DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor dummy;
   public static void Main(string[] args)
   {
     GenerateModelTypes(typeof(DocumentFormat.OpenXml.Packaging.WordprocessingDocument), MDS.ScannedNamespaces | MDS.ScannedTypes,
@@ -12,7 +12,7 @@ public static class Program
         //Typenames = new string[] { "*Values" },
         TypesLimit = 100,
         DetailsLimit = 0,
-        TypeDataSelector = TDS.AcceptedTypesOnly | TDS.Documentation | TDS.Metadata |TDS.BaseTypes | TDS.Properties | TDS.EnumValues
+        TypeDataSelector = TDS.AcceptedTypesOnly /*| TDS.Documentation*/ | TDS.Metadata |TDS.BaseTypes | TDS.Properties | TDS.EnumValues
       });
     //GenerateTypeConverters(typeof(DocumentFormat.OpenXml.Packaging.WordprocessingDocument));
   }

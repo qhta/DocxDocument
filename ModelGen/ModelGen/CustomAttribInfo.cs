@@ -8,7 +8,7 @@ public class CustomAttribInfo: ModelElement
   /// <summary>
   /// Type of the CustomAttribute.
   /// </summary>
-  public TypeInfo? AttributeTypeInfo { get; }
+  public TypeInfo AttributeTypeInfo { get; }
 
   /// <summary>
   /// Represents arguments passed in the constructor of the CustomAttribute.
