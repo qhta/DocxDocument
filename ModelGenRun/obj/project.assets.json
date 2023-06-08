@@ -1542,7 +1542,9 @@
           "DocumentModel": "1.0.0",
           "DocumentModel.Attributes": "1.0.0",
           "Namotion.Reflection": "2.1.2",
+          "Qhta.HtmlUtils": "1.0.1",
           "Qhta.Xml.Serialization.Attributes": "1.0.0",
+          "Snork.TextWrap": "1.0.1301",
           "System.IO.Packaging": "7.0.0"
         },
         "compile": {

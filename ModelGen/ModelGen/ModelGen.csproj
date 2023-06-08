@@ -31,6 +31,8 @@
     <PackageReference Include="DocumentFormat.OpenXml" Version="2.20.0" />
     <PackageReference Include="IgnoresAccessChecksToGenerator" Version="0.6.0" PrivateAssets="All" />
     <PackageReference Include="Namotion.Reflection" Version="2.1.2" />
+    <PackageReference Include="Qhta.HtmlUtils" Version="1.0.1" />
+    <PackageReference Include="Snork.TextWrap" Version="1.0.1301" />
     <PackageReference Include="System.IO.Packaging" Version="7.0.0" />
   </ItemGroup>
 

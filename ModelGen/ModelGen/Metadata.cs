@@ -6,14 +6,34 @@
 public record Metadata
 {
   /// <summary>
+  /// XElement representation of summary.
+  /// </summary>
+  public XElement? Summary { get; set; }
+
+  /// <summary>
   /// Short text description of this element.
   /// </summary>
-  public string? Summary { get; set; }
+  public string? SummaryText
+  {
+    get => Summary?.Value;
+    set
+    {
+      if (value!=null)
+        Summary = new XElement("summary", value);
+      else
+        Summary = null;
+    }
+  }
+
+  /// <summary>
+  /// Attribute tag in schema.
+  /// </summary>
+  public string? SchemaAttribute { get; set; }
 
   /// <summary>
   /// Element tag in schema.
   /// </summary>
-  public string? SchemaTag { get; set; }
+  public string? SchemaElement { get; set; }
 
   /// <summary>
   /// Url for the shema tag namespace.
