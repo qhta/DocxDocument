@@ -1,5 +1,7 @@
 ﻿using System.Xml.Linq;
 
+using Namotion.Reflection;
+
 namespace ModelGen;
 
 public static class DocumentationReader
@@ -103,23 +105,28 @@ public static class DocumentationReader
   public static Metadata GetElementMetadata(XElement documentation)
   {
     Metadata metadata = new Metadata();
-    foreach (var element in documentation.Elements())
+    var items = new List<XElement>();
+    foreach (var xElement in documentation.Elements())
     {
-      if (element.Name == "summary")
+      if (xElement.Name == "summary")
       {
-        foreach (var subElement in element.Elements())
+        foreach (var subElement in xElement.Elements())
+        {
           if (subElement.Name == "para")
           {
             var text = subElement.Value.Trim();
-            if (text.StartsWith("Represents the following attribute in the schema"))
+            if (text.StartsWith("Represents the following"))
             {
               int k = text.IndexOf(':');
               if (k >= 0)
               {
-                text = text.Substring(k + 1).Trim();
-                if (text.EndsWith('.'))
-                  text = text.Substring(0, text.Length - 1).Trim();
-                metadata.SchemaTag = text;
+                var tag = text.Substring(k + 1).Trim();
+                if (tag.EndsWith('.'))
+                  tag = tag.Substring(0, tag.Length - 1).Trim();
+                if (text.Contains("attribute"))
+                  metadata.SchemaAttribute = tag;
+                else
+                  metadata.SchemaElement = tag;
               }
             }
             else if (text.StartsWith("When the object is serialized out as xml, it's qualified name is "))
@@ -128,7 +135,7 @@ public static class DocumentationReader
               text = text.Substring(k).Trim();
               if (text.EndsWith('.'))
                 text = text.Substring(0, text.Length - 1).Trim();
-              metadata.SchemaTag = text;
+              metadata.SchemaElement = text;
             }
             else if (text.StartsWith("This class is available in "))
             {
@@ -150,16 +157,18 @@ public static class DocumentationReader
                 metadata.Availability = text;
               }
               else
-              if (metadata.Summary == null)
-                metadata.Summary = text;
+                items.Add(subElement);
             }
           }
+          else
+            items.Add(subElement);
+        }
       }
-      else if (element.Name == "remark")
+      else if (xElement.Name == "remark")
       {
-        if (!element.HasElements)
+        if (!xElement.HasElements)
         {
-          var text = element.Value.Trim();
+          var text = xElement.Value.Trim();
           int k = text.IndexOf("http://");
           if (k >= 0)
           {
@@ -170,7 +179,25 @@ public static class DocumentationReader
           }
         }
       }
+      else 
+      if (xElement.Name == "inheritdoc"  || xElement.Name == "typeparam")
+      {
+        // ignore
+      }
+      else
+        ;
     }
+    if (items.Count == 1 && items.First().Name=="para")
+    {
+      metadata.SummaryText = items.First().Value;
+    }
+    else if (items.Count > 0)
+    {
+      metadata.Summary = new XElement("summary");
+      foreach (var item in items)
+        metadata.Summary.Add(item);
+    }
+
     return metadata;
   }
 }
