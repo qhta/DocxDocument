@@ -43,7 +43,7 @@ public record DisplayOptions
   /// <summary>
   /// Limit line length for summary
   /// </summary>
-  public int SummaryWidthLimit {get; set; } = 120;
+  public int LineWidthLimit {get; set; } = 120;
 
   /// <summary>
   /// Specifies relationships semantics selected to display or to exclude depending on TDS.

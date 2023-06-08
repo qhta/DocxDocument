@@ -64,3 +64,7 @@ D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Qhta.Xml.Serial
 D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Qhta.Xml.pdb
 D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\ModelGenApp.csproj.CopyComplete
 D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\CommunityToolkit.Mvvm.dll
+D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\HtmlAgilityPack.dll
+D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Qhta.HtmlUtils.dll
+D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Snork.TextWrap.dll
+D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\System.Xml.XPath.XmlDocument.dll

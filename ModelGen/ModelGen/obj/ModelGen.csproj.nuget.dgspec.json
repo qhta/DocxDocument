@@ -225,6 +225,14 @@
               "target": "Package",
               "version": "[2.1.2, )"
             },
+            "Qhta.HtmlUtils": {
+              "target": "Package",
+              "version": "[1.0.1, )"
+            },
+            "Snork.TextWrap": {
+              "target": "Package",
+              "version": "[1.0.1301, )"
+            },
             "System.IO.Packaging": {
               "target": "Package",
               "version": "[7.0.0, )"

@@ -435,29 +435,17 @@ public class ModelDisplay : IModelMonitor
     Writer.WriteLine();
     if (metadata.Summary != null)
     {
-      Writer.WriteLine("//  <summary>");
-      WriteWrapText(metadata.Summary, options);
-      Writer.WriteLine("//  </summary>");
+      var documentationWriter = new DocumentationWriter(Writer, Writer.IndentLevel*Writer.IndentSize, options.LineWidthLimit);
+      documentationWriter.Write(metadata.Summary);
     }
-    if (metadata.SchemaTag != null)
-      Writer.WriteLine($"//  <schemaTag>{metadata.SchemaTag}</schemaTag>");
+    if (metadata.SchemaAttribute != null)
+      Writer.WriteLine($"/// <schemaAttribute>{metadata.SchemaAttribute}</schemaAttribute>");
+    if (metadata.SchemaElement != null)
+      Writer.WriteLine($"/// <schemaElement>{metadata.SchemaElement}</schemaElement>");
     if (metadata.SchemaUrl != null)
-      Writer.WriteLine($"//  <schemaUrl>{metadata.SchemaUrl}</schemaUrl>");
+      Writer.WriteLine($"/// <schemaUrl>{metadata.SchemaUrl}</schemaUrl>");
     if (metadata.Availability != null)
-      Writer.WriteLine($"//  <availability>{metadata.Availability}</availability>");
-  }
-
-  private void WriteWrapText(string text, DisplayOptions options)
-  {
-    if (options.SummaryWidthLimit > 0)
-    {
-      var wrapLimit = options.SummaryWidthLimit - 4 - Writer.IndentSize * Writer.IndentLevel;
-      List<string> lines = Snork.TextWrap.TextWrapper.Wrap(text, wrapLimit);
-      foreach (var line in lines)
-        Writer.WriteLine($"//  {line}");
-    }
-    else
-      Writer.WriteLine($"/// {text}");
+      Writer.WriteLine($"/// <availability>{metadata.Availability}</availability>");
   }
 
   public void ShowDocumentation(ModelElement element, DisplayOptions options)
@@ -504,9 +492,9 @@ private void ShowDocumentationElement(XElement xElement, DisplayOptions options,
   }
   else if (text!=null)
   {
-    if (options.SummaryWidthLimit > 0)
+    if (options.LineWidthLimit > 0)
     {
-      var wrapLimit = options.SummaryWidthLimit - 4 - Writer.IndentSize * Writer.IndentLevel;
+      var wrapLimit = options.LineWidthLimit - 4 - Writer.IndentSize * Writer.IndentLevel;
       List<string> lines = Snork.TextWrap.TextWrapper.Wrap(text, wrapLimit);
       foreach (var line in lines)
         Writer.WriteLine($"/// {indentStr + "  "}{line}");
