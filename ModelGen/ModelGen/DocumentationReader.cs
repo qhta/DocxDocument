@@ -179,13 +179,13 @@ public static class DocumentationReader
           }
         }
       }
-      else 
-      if (xElement.Name == "inheritdoc"  || xElement.Name == "typeparam")
-      {
-        // ignore
-      }
-      else
-        ;
+      //else 
+      //if (xElement.Name == "inheritdoc"  || xElement.Name == "typeparam")
+      //{
+      //  // ignore
+      //}
+      //else
+      //  ;
     }
     if (items.Count == 1 && items.First().Name=="para")
     {

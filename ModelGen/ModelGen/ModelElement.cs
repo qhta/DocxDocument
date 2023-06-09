@@ -56,10 +56,10 @@ public class ModelElement: IOwnedElement
   /// </summary>
   public bool IsConvertedTo { get; set; }
 
-  /// <summary>
-  /// Xml documentation assigned to this element.
-  /// </summary>
-  public virtual XElement? Documentation { get; set; }
+  ///// <summary>
+  ///// Xml documentation assigned to this element.
+  ///// </summary>
+  //public virtual XElement? Documentation { get; set; }
 
   /// <summary>
   /// Xml documentation assigned to this element.

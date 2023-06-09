@@ -21,10 +21,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="Managers.cs" />
     <Compile Remove="ModelGenerator - Copy.cs" />
     <Compile Remove="MyParticleConstraint.cs" />
     <Compile Remove="PropKind.cs" />
     <Compile Remove="SchemaGenerator.cs" />
+    <Compile Remove="TypeInfoMethods.cs" />
   </ItemGroup>
 
   <ItemGroup>

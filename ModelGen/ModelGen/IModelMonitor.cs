@@ -36,7 +36,7 @@ public interface IModelMonitor
   public void ShowIncomingRelationships(TypeInfo typeInfo, DisplayOptions options);
   public void ShowEnumValues(TypeInfo typeInfo, DisplayOptions options);
   public void ShowProperties(TypeInfo typeInfo, DisplayOptions options);
-  public void ShowDocumentation(ModelElement element, DisplayOptions options);
+  //public void ShowDocumentation(ModelElement element, DisplayOptions options);
   public void ShowMetadata(ModelElement element, DisplayOptions options);
 
 
