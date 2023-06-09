@@ -185,8 +185,8 @@ public class ModelDisplay : IModelMonitor
 
   public void ShowTypeInfo(TypeInfo typeInfo, DisplayOptions options)
   {
-    if (options.TypeDataSelector.HasFlag(TDS.Documentation))
-      ShowDocumentation(typeInfo, options);
+    //if (options.TypeDataSelector.HasFlag(TDS.Documentation))
+    //  ShowDocumentation(typeInfo, options);
     if (options.TypeDataSelector.HasFlag(TDS.Metadata))
       ShowMetadata(typeInfo, options);
     string str = "";
@@ -381,8 +381,8 @@ public class ModelDisplay : IModelMonitor
           listCont = true;
           break;
         }
-        if (options.TypeDataSelector.HasFlag(TDS.Documentation))
-          ShowDocumentation(enumValue, options);
+        //if (options.TypeDataSelector.HasFlag(TDS.Documentation))
+        //  ShowDocumentation(enumValue, options);
         if (options.TypeDataSelector.HasFlag(TDS.Metadata))
           ShowMetadata(enumValue, options);
         var str = $"{enumValue.Name}={enumValue.Value}";
@@ -407,8 +407,8 @@ public class ModelDisplay : IModelMonitor
       {
         if (options.TypeDataSelector.HasFlag(TDS.AcceptedMembersOnly) && property.IsAccepted == false)
           continue;
-        if (options.TypeDataSelector.HasFlag(TDS.Documentation))
-          ShowDocumentation(property, options);
+        //if (options.TypeDataSelector.HasFlag(TDS.Documentation))
+        //  ShowDocumentation(property, options);
         if (options.TypeDataSelector.HasFlag(TDS.Metadata))
           ShowMetadata(property, options);
         var str = $"{property.Name}: {property.PropertyType.GetFullName(originNames)}";
@@ -448,16 +448,16 @@ public class ModelDisplay : IModelMonitor
       Writer.WriteLine($"/// <availability>{metadata.Availability}</availability>");
   }
 
-  public void ShowDocumentation(ModelElement element, DisplayOptions options)
-{
-  var xElement = element.Documentation;
-  if (xElement != null)
-  {
-    Writer.WriteLine();
-    foreach (var subElement in xElement.Elements())
-      ShowDocumentationElement(subElement, options);
-  }
-}
+//  public void ShowDocumentation(ModelElement element, DisplayOptions options)
+//{
+//  var xElement = element.Documentation;
+//  if (xElement != null)
+//  {
+//    Writer.WriteLine();
+//    foreach (var subElement in xElement.Elements())
+//      ShowDocumentationElement(subElement, options);
+//  }
+//}
 
 private void ShowDocumentationElement(XElement xElement, DisplayOptions options, int indent = 0)
 {
