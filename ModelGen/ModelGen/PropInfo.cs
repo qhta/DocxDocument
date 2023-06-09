@@ -23,14 +23,14 @@ public class PropInfo : ModelElement
 
   public Validators? Validators { get; set; }
 
-  /// <summary>
-  /// Xml documentation assigned to this element.
-  /// </summary>
-  public override XElement? Documentation
-  {
-    get => base.Documentation ?? DeclaringType?.Documentation;
-    set => base.Documentation = value;
-  }
+  ///// <summary>
+  ///// Xml documentation assigned to this element.
+  ///// </summary>
+  //public override XElement? Documentation
+  //{
+  //  get => base.Documentation ?? DeclaringType?.Documentation;
+  //  set => base.Documentation = value;
+  //}
 
   /// <summary>
   /// Xml documentation assigned to this element.
@@ -69,9 +69,9 @@ public class PropInfo : ModelElement
 
     if (ModelData.ExcludedProperties.Contains(propertyInfo.Name))
       IsAccepted = false;
-    Documentation = propertyInfo.GetXmlDocsElement();
-    if (Documentation != null)
-      Metadata = DocumentationReader.GetElementMetadata(Documentation);
+    var xmlDocsElement = propertyInfo.GetXmlDocsElement();
+    if (xmlDocsElement != null)
+      Metadata = DocumentationReader.GetElementMetadata(xmlDocsElement);
     foreach (var item in propertyInfo.CustomAttributes)
       CustomAttributes.Add(new CustomAttribInfo(item));
   }

@@ -166,8 +166,8 @@ public static class TypeReflector
       }
     }
 
-    typeInfo.Documentation = type.GetXmlDocsElement();
-    if (typeInfo.Documentation != null)
+    var xmlDocsElement = type.GetXmlDocsElement();
+    if (xmlDocsElement != null)
     {
       typeInfo.Metadata = DocumentationReader.GetElementMetadata(typeInfo.Documentation);
       //var childItemTypes = DocumentationReader.GetChildItemTypes(typeInfo.Documentation, type.Assembly);

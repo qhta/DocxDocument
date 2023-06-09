@@ -1,8 +1,7 @@
 ﻿namespace ModelGenRun;
-using DocumentFormat.OpenXml;
 public static class Program
 {
-  static DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor dummy;
+  //static DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor dummy;
   public static void Main(string[] args)
   {
     GenerateModelTypes(typeof(DocumentFormat.OpenXml.Packaging.WordprocessingDocument), MDS.ScannedNamespaces | MDS.ScannedTypes,
