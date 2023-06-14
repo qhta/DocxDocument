@@ -5,6 +5,8 @@ using System.Xml.Linq;
 
 using DocumentFormat.OpenXml.ExtendedProperties;
 
+using ModelGen;
+
 namespace ModelGenRun;
 
 public class ModelDisplay : IModelMonitor
@@ -577,7 +579,10 @@ public class ModelDisplay : IModelMonitor
   public void ShowElementSchema(TypeInfo typeInfo, DisplayOptions options)
   {
     if (typeInfo.Schema!=null)
+    {
+      typeInfo.Schema.Rename();
       WriteSchemaParticle(typeInfo.Schema.Main);
+    }
   }
 
   public void WriteSchemaParticle(SchemaParticle particle)

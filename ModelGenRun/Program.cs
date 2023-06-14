@@ -5,7 +5,7 @@ public static class Program
   public static void Main(string[] args)
   {
     GenerateModelTypes(typeof(DocumentFormat.OpenXml.Packaging.WordprocessingDocument), 
-      MDS.ScannedNamespaces | MDS.ScanValidation | MDS.ScannedTypes ,
+      MDS.ScannedNamespaces/* | MDS.ScanValidation | MDS.ScannedTypes*/ ,
       new DisplayOptions
       { Namespaces = new string[]{ "*.Wordprocessing"},
         TypeKindSelector = TKS.Class,
