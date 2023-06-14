@@ -302,25 +302,26 @@ public class ConverterGenerator : BaseCodeGenerator
     return ok;
   }
 
-  private bool GenerateItemsProperties(TypeInfo typeInfo, ItemsConstraint constraint, string fromClassName, string? inNamespace,
+  private bool GenerateItemsProperties(TypeInfo typeInfo, SchemaParticle particle, string fromClassName, string? inNamespace,
     List<string> subclassesTypeNames)
   {
     var ok = true;
-    if (constraint is ItemTypeConstraint itemTypeConstraint)
+    if (particle is ItemElementParticle itemTypeConstraint)
     {
       var prop = itemTypeConstraint.AccessProperty;
       if (prop != null)
         if (!GeneratePropertyAccessors(prop, inNamespace))
           ok = false;
     }
-    else if (constraint is ItemsCompoundConstraint itemsCompoundConstraint)
+    else if (particle is ItemsParticle itemsParticle)
     {
-      var constraintClassName = fromClassName + constraint.ConstraintType;
-      subclassesTypeNames.Add(constraintClassName);
-      if (constraint.ConstraintType == ConstraintType.Group && !constraint.IsRequired && !constraint.IsMultiple)
-        foreach (var itemConstraint in itemsCompoundConstraint.Items)
-          if (!GenerateItemsProperties(typeInfo, itemConstraint, constraintClassName, inNamespace, subclassesTypeNames))
-            ok = false;
+
+      //var constraintClassName = fromClassName + particle.GetType().Name;
+      //subclassesTypeNames.Add(constraintClassName);
+      //if (particle.ConstraintType == ConstraintType.Group && !particle.IsRequired && !particle.IsMultiple)
+      //  foreach (var itemConstraint in itemsCompoundConstraint.Items)
+      //    if (!GenerateItemsProperties(typeInfo, itemConstraint, constraintClassName, inNamespace, subclassesTypeNames))
+        ok = false;
     }
     return ok;
   }

@@ -1,4 +1,5 @@
 ﻿using DocumentFormat.OpenXml.Math;
+using DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle;
 
 namespace ModelGen;
 
@@ -44,6 +45,8 @@ public abstract class BaseCreator
 
     if (monitorDisplaySelector.HasFlag(MDS.ScannedNamespaces))
       ModelMonitor?.ShowNamespaceSummary(NTS.Origin);
+    if (monitorDisplaySelector.HasFlag(MDS.ScanValidation))
+      totalTime += ValidateTypes(NTS.Origin, displayOptions.TypeStatusSelector, displayOptions.TypeDataSelector);
 
     if (monitorDisplaySelector.HasFlag(MDS.ScannedTypes))
       ModelMonitor?.ShowNamespacesDetails(displayOptions with { NamespaceTypeSelector = NTS.Origin });
@@ -94,6 +97,34 @@ public abstract class BaseCreator
         {"Accepted types", acceptedTypesCount },
         {"Rejected types", rejectedTypesCount }
         }
+    });
+    return ts;
+  }
+
+  protected TimeSpan ValidateTypes(NTS nameTypeSelector, MSS typeStatusSelector, TDS typeDataSelector)
+  {
+    var phaseName = "Validating types";
+    ModelMonitor?.ShowPhaseStart(phaseName);
+    DateTime t1 = DateTime.Now;
+    var ModelValidator = new ModelValidator(nameTypeSelector, typeStatusSelector, typeDataSelector);
+    ModelValidator.OnValidatingType += ModelValidator_OnValidatingType;
+    ModelValidator.ValidateTypes();
+    ModelValidator.OnValidatingType += ModelValidator_OnValidatingType;
+    DateTime t2 = DateTime.Now;
+    var ts = t2 - t1;
+    var summary = new Dictionary<string, object>{
+        {"Checked types", ModelValidator.CheckedTypesCount },
+        {"Valid types", ModelValidator.ValidTypesCount } };
+    if (ModelValidator.NoDocsTypesCount > 0)
+      summary.Add("No docs types", ModelValidator.NoDocsTypesCount);
+    if (ModelValidator.NoSchemaTagTypesCount > 0)
+      summary.Add("No schema tag types", ModelValidator.NoSchemaTagTypesCount);
+    if (ModelValidator.NoSchemaUrlTypesCount > 0)
+      summary.Add("No schema url types", ModelValidator.NoSchemaUrlTypesCount);
+    ModelMonitor?.ShowPhaseEnd(phaseName, new SummaryInfo
+    {
+      Time = ts,
+      Summary = summary
     });
     return ts;
   }
@@ -247,7 +278,20 @@ public abstract class BaseCreator
     });
   }
 
- 
+
+  private void ModelValidator_OnValidatingType(ModelValidator sender, ValidatingTypeInfo info)
+  {
+    ModelMonitor?.ShowPhaseProgress("Validating types", new ProgressInfo
+    {
+      PreStr = "validated",
+      Done = info.CheckedTypes,
+      MidStr = "types",
+      Summary = new Dictionary<string, object>{
+        {"invalid", info.InvalidTypes ?? 0 } },
+      PostStr = $"{info.Current?.OriginalNamespace}.{info.Current?.OriginalName}"
+    });
+  }
+
   private void ModelManager_OnCheckingUsage(CheckingUsageInfo info)
   {
     ModelMonitor?.ShowPhaseProgress("Checking types", new ProgressInfo
