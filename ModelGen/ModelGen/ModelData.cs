@@ -845,7 +845,7 @@ public static class ModelData
       return true;
     foreach (var item in CommonTypeName)
     {
-      if (name.IsLike1(item.Key, out var wildKey, StringComparison.InvariantCulture))
+      if (name.IsLike(item.Key, out var wildKey, StringComparison.InvariantCulture))
       {
         newName = item.Value.Replace("*", wildKey);
         return true;
@@ -854,107 +854,6 @@ public static class ModelData
     newName = null;
     return false;
   }
-
-    public static bool IsLike1(this string key, string pattern, out string? wildKey, StringComparison stringComparison = StringComparison.CurrentCultureIgnoreCase)
-    {
-      wildKey = null;
-      int num = pattern.Where((char c) => c == '*').Count();
-      if (num == 1 && pattern.EndsWith("*"))
-      {
-        pattern = pattern.Substring(0, pattern.Length - 1);
-        if (key.StartsWith(pattern, stringComparison))
-        {
-          wildKey = key.Substring(pattern.Length);
-          return true;
-        }
-
-        return false;
-      }
-
-      if (num == 1 && pattern.StartsWith("*"))
-      {
-        pattern = pattern.Substring(1, pattern.Length - 1);
-        if (key.EndsWith(pattern, stringComparison))
-        {
-          wildKey = key.Substring(0, key.Length-pattern.Length);
-          return true;
-        }
-
-        return false;
-      }
-
-      if (num == 2 && pattern.EndsWith("*") && pattern.StartsWith("*"))
-      {
-        pattern = pattern.Substring(1, pattern.Length - 2);
-        int num2 = key.IndexOf(pattern, stringComparison);
-        if (num2 >= 0)
-        {
-          wildKey = string.Join("*", key.Substring(0, num2), key.Substring(num2 + pattern.Length));
-          return true;
-        }
-      }
-
-      if (num > 0)
-      {
-        List<string> patternParts = pattern.Split('*').ToList();
-        if (MatchPatternParts(key, patternParts, out var wildKeyParts, stringComparison))
-        {
-          wildKey = string.Join("*", wildKeyParts);
-          return true;
-        }
-
-        return false;
-      }
-
-      return key.Equals(pattern, stringComparison);
-    }
-
-    private static bool MatchPatternParts(string key, List<string> patternParts, out List<string> wildKeyParts, StringComparison stringComparison = StringComparison.CurrentCultureIgnoreCase)
-    {
-      wildKeyParts = new List<string>();
-      if (patternParts.Count == 0)
-      {
-        return true;
-      }
-
-      if (!key.StartsWith(patternParts.First(), stringComparison))
-      {
-        return false;
-      }
-
-      wildKeyParts.Add(key.Substring(patternParts.First().Length));
-      if (patternParts.Count == 1)
-      {
-        return true;
-      }
-
-      key = key.Substring(patternParts.First().Length);
-      patternParts.RemoveAt(0);
-      if (!key.EndsWith(patternParts.Last(), stringComparison))
-      {
-        return false;
-      }
-
-      wildKeyParts.Add(key.Substring(key.Length - patternParts.Last().Length));
-      if (patternParts.Count == 1)
-      {
-        return true;
-      }
-
-      key = key.Substring(key.Length - patternParts.Last().Length);
-      patternParts.RemoveAt(patternParts.Count - 1);
-      if (MatchPatternParts(key, patternParts, out var wildKeyParts2, stringComparison))
-      {
-        if (wildKeyParts2.Count > 0)
-        {
-          wildKeyParts.InsertRange(1, wildKeyParts2);
-        }
-
-        return true;
-      }
-
-      return false;
-    }
 
   #endregion
 }
