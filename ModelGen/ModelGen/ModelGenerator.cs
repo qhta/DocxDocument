@@ -129,32 +129,32 @@ public class ModelGenerator : BaseCodeGenerator
     return true;
   }
 
-  private bool GenerateItemsProperties(TypeInfo typeInfo, ItemsConstraint constraint, string fromClassName, string? inNamespace,
-    List<string> subclassesTypeNames, TypeKind kind)
-  {
-    if (constraint is ItemTypeConstraint itemTypeConstraint)
-    {
-      var prop = itemTypeConstraint.AccessProperty;
-      if (prop != null)
-        if (!GenerateProperty(prop, inNamespace, kind))
-          return false;
-    }
-    else
-    if (constraint is ItemsCompoundConstraint itemsCompoundConstraint)
-    {
-      var constraintClassName = fromClassName + constraint.ConstraintType.ToString();
-      subclassesTypeNames.Add(constraintClassName);
-      if (constraint.ConstraintType == ConstraintType.Group && !constraint.IsRequired && !constraint.IsMultiple)
-      {
-        foreach (var itemConstraint in itemsCompoundConstraint.Items)
-        {
-          if (!GenerateItemsProperties(typeInfo, itemConstraint, constraintClassName, inNamespace, subclassesTypeNames, TypeKind.EmbeddedClass))
-            return false;
-        }
-      }
-    }
-    return true;
-  }
+  //private bool GenerateItemsProperties(TypeInfo typeInfo, SchemaParticle constraint, string fromClassName, string? inNamespace,
+  //  List<string> subclassesTypeNames, TypeKind kind)
+  //{
+  //  if (constraint is ItemTypeParticle itemTypeConstraint)
+  //  {
+  //    var prop = itemTypeConstraint.AccessProperty;
+  //    if (prop != null)
+  //      if (!GenerateProperty(prop, inNamespace, kind))
+  //        return false;
+  //  }
+  //  else
+  //  if (constraint is ItemsParticle itemsCompoundConstraint)
+  //  {
+  //    //var constraintClassName = fromClassName + constraint.ConstraintType.ToString();
+  //    //subclassesTypeNames.Add(constraintClassName);
+  //    //if (constraint.ConstraintType == ConstraintType.Group && !constraint.IsRequired && !constraint.IsMultiple)
+  //    //{
+  //    //  foreach (var itemConstraint in itemsCompoundConstraint.Items)
+  //    //  {
+  //    //    if (!GenerateItemsProperties(typeInfo, itemConstraint, constraintClassName, inNamespace, subclassesTypeNames, TypeKind.EmbeddedClass))
+  //          return false;
+  //      //}
+  //    //}
+  //  }
+  //  return true;
+  //}
 
   private bool GenerateProperty(PropInfo prop, string? inNamespace, TypeKind kind)
   {

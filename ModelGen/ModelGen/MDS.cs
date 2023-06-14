@@ -7,12 +7,13 @@
 public enum MDS
 {
   None = 0,
-  ScannedNamespaces = 1,
-  ScannedTypes = 2,
-  TypeRenames = 4,
-  TypeConversions = 8,
-  TypeUsage = 16,
-  ValidatedTypes = 32,
+  ScannedNamespaces     = 0x0001,
+  ScanValidation        = 0x0002,
+  ScannedTypes          = 0x0004,
+  TypeRenames = 8,
+  TypeConversions = 16,
+  TypeUsage = 32,
+  ValidatedTypes = 64,
 
-  All = 63
+  All = 127
 }

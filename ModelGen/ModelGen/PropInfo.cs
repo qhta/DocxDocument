@@ -35,7 +35,7 @@ public class PropInfo : ModelElement
   /// <summary>
   /// Xml documentation assigned to this element.
   /// </summary>
-  public override Metadata? Metadata 
+  public override ElementMetadata? Metadata 
   {
     get => base.Metadata ?? DeclaringType?.Metadata;
     set => base.Metadata = value;

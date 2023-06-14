@@ -1,17 +1,19 @@
 ﻿namespace ModelGenRun;
 public static class Program
 {
-  //static DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor dummy;
+  static DocumentFormat.OpenXml.Wordprocessing.Paragraph dummy;
   public static void Main(string[] args)
   {
-    GenerateModelTypes(typeof(DocumentFormat.OpenXml.Packaging.WordprocessingDocument), MDS.ScannedNamespaces | MDS.ScannedTypes,
+    GenerateModelTypes(typeof(DocumentFormat.OpenXml.Packaging.WordprocessingDocument), 
+      MDS.ScannedNamespaces | MDS.ScanValidation | MDS.ScannedTypes ,
       new DisplayOptions
       { Namespaces = new string[]{ "*.Wordprocessing"},
         TypeKindSelector = TKS.Class,
         //Typenames = new string[] { "*Values" },
-        TypesLimit = 100,
+        TypesLimit = 0,
         DetailsLimit = 0,
-        TypeDataSelector = TDS.AcceptedTypesOnly /*| TDS.Documentation*/ | TDS.Metadata |TDS.BaseTypes | TDS.Properties | TDS.EnumValues
+        TypeStatusSelector = MSS.Accepted,
+        TypeDataSelector = /*TDS.Metadata |*/ TDS.ElementSchema /*|TDS.BaseTypes | TDS.Properties | TDS.EnumValues*/
       });
     //GenerateTypeConverters(typeof(DocumentFormat.OpenXml.Packaging.WordprocessingDocument));
   }
