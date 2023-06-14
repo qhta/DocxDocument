@@ -116,15 +116,15 @@ public class ModelDisplay : IModelMonitor
         var enumTypesCount = nSpaceTypes.Count(item => item.TypeKind == TypeKind.Enum);
         var otherTypesCount = nSpaceTypes.Count(item => item.TypeKind != TypeKind.Class && item.TypeKind != TypeKind.Enum);
         var str = $"{aSpace} Total {totalTypesCount} types";
-        str += $", {AllNone(acceptedTypesCount, totalTypesCount)} accepted";
+        str += $", {AllOrNoneOrValueStr(acceptedTypesCount, totalTypesCount)} accepted";
         if (rejectedTypesCount != 0)
-          str += $", {AllNone(rejectedTypesCount, totalTypesCount)} rejected";
+          str += $", {AllOrNoneOrValueStr(rejectedTypesCount, totalTypesCount)} rejected";
         if (classTypesCount != 0)
-          str += $", {AllNone(classTypesCount, totalTypesCount)} {Multi(classTypesCount, "class")}";
+          str += $", {AllOrNoneOrValueStr(classTypesCount, totalTypesCount)} {MultiStr(classTypesCount, "class")}";
         if (enumTypesCount != 0)
-          str += $", {AllNone(enumTypesCount, totalTypesCount)} {Multi(enumTypesCount, "enum")}";
+          str += $", {AllOrNoneOrValueStr(enumTypesCount, totalTypesCount)} {MultiStr(enumTypesCount, "enum")}";
         if (otherTypesCount != 0)
-          str += $", {AllNone(otherTypesCount, totalTypesCount)} {Multi(otherTypesCount, "other")}";
+          str += $", {AllOrNoneOrValueStr(otherTypesCount, totalTypesCount)} {MultiStr(otherTypesCount, "other")}";
         Writer.WriteLine(str);
       }
     }
@@ -263,7 +263,7 @@ public class ModelDisplay : IModelMonitor
         var genericParamConstraints = genericTypeParam.GetGenericParamConstraints();
         if (genericParamConstraints != null)
           foreach (var item in genericParamConstraints.ToArray())
-            ls.Add(constaints[(int)item]);
+            ls.Add(constraints[(int)item]);
         if (ls.Count > 0)
         {
           var str = $"where {genericTypeParam.Name}: " + String.Join(", ", ls);
@@ -331,7 +331,7 @@ public class ModelDisplay : IModelMonitor
       outgoingRels = outgoingRels.Where(item => options.SemanticsFilter.Contains(item.Semantics)).ToList();
     if (outgoingRels.Any())
     {
-      Writer.WriteLine($"has {outgoingRels.Count} outgoing {Multi(outgoingRels.Count, "relationship")}");
+      Writer.WriteLine($"has {outgoingRels.Count} outgoing {MultiStr(outgoingRels.Count, "relationship")}");
       var listCount = 0;
       var listCont = false;
       foreach (var rel in outgoingRels)
@@ -342,7 +342,7 @@ public class ModelDisplay : IModelMonitor
           break;
         }
         Writer.Indent();
-        Writer.WriteLine($"{rel.Semantics} -> {rel.Target.ToString()}");
+        Writer.WriteLine($"{rel.Semantics} -> {rel.Target.ToString()}{RelationshipConstraints(rel)}");
         Writer.Unindent();
       }
       if (listCont)
@@ -361,7 +361,7 @@ public class ModelDisplay : IModelMonitor
       incomingRels = incomingRels.Where(item => options.SemanticsFilter.Contains(item.Semantics)).ToList();
     if (incomingRels.Any())
     {
-      Writer.WriteLine($"has {incomingRels.Count} incoming {Multi(incomingRels.Count, "relationship")}");
+      Writer.WriteLine($"has {incomingRels.Count} incoming {MultiStr(incomingRels.Count, "relationship")}");
       var listCount = 0;
       var listCont = false;
       foreach (var rel in incomingRels)
@@ -616,10 +616,11 @@ public class ModelDisplay : IModelMonitor
   }
 
   #region Helper functions to format diplay
-  protected string AllNone(int n, int cmp) => (n == 0) ? "none" : (n == cmp) ? "all" : n.ToString();
-  protected string Multi(int n, string single, string? multi = null) => (n == 1) ? single : (multi ?? (single.EndsWith("s") ? (single + "es") : (single + "s")));
+  protected string AllOrNoneOrValueStr(int n, int cmp) => (n == 0) ? "none" : (n == cmp) ? "all" : n.ToString();
+  protected string MultiStr(int n, string single, string? multi = null) => (n == 1) ? single : (multi ?? (single.EndsWith("s") ? (single + "es") : (single + "s")));
   protected string AcceptedMark(bool? acceptance) => (acceptance == true) ? "+ " : (acceptance == false) ? "- " : "  ";
   protected string ValidStr(bool? validity) => (validity == true) ? "valid" : (validity == false) ? "invalid" : string.Empty;
+  protected string RelationshipConstraints(TypeRelationship rel) => (rel.IsMultiple) ? "{multiple}": string.Empty;
 
   #endregion
 
@@ -641,7 +642,7 @@ public class ModelDisplay : IModelMonitor
     return false;
   }
 
-  protected string[] constaints = new string[]
+  protected string[] constraints = new string[]
   {
     "covariant",
     "contravariant",

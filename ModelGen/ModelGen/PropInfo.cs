@@ -18,10 +18,12 @@ public class PropInfo : ModelElement
   public bool IsVirtual { get; set; }
   public bool IsOverriden { get; set; }
   public bool IsNew { get; set; }
-
   public bool IsConstrained { get; set; }
-
-  public Validators? Validators { get; set; }
+  public bool IsRequired { get; set; }
+  public bool IsEnum { get; set; }
+  public bool IsList { get; set; }
+  public string RealTypeName { get; set; }
+  public Constraints? Constraints { get; set; }
 
   ///// <summary>
   ///// Xml documentation assigned to this element.

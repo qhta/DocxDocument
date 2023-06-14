@@ -172,7 +172,7 @@ public static class TypeReflector
       typeInfo.Metadata = DocumentationReader.GetElementMetadata(xmlDocsElement);
     }
 
-    typeInfo.Schema = OpenXmlMetadataReader.InspectType(typeInfo);
+    typeInfo.Schema = OpenXmlMetadataReader.GetElementSchema(typeInfo);
 
     if (typeInfo.Schema != null)
       ScanElementSchema(typeInfo, typeInfo.Schema);
@@ -227,14 +227,14 @@ public static class TypeReflector
   {
     if (particle is ItemElementParticle itemElementParticle)
     {
-      itemElementParticle.AccessProperty = CreateProperty(typeInfo, itemElementParticle);
+      //itemElementParticle.AccessProperty = CreateProperty(typeInfo, itemElementParticle);
     }
     else
     if (particle is ItemsGroupParticle itemsGroupParticle)
     {
-      if (itemsGroupParticle.Items.Count==1)
-      {
-      }
+      //if (itemsGroupParticle.Items.Count==1)
+      //{
+      //}
       ScanItemsParticle(typeInfo, itemsGroupParticle);
     }
     else
@@ -260,12 +260,12 @@ public static class TypeReflector
       ScanSchemaParticle(typeInfo, item);
   }
 
-  public static PropInfo? CreateProperty(this TypeInfo typeInfo, ItemElementParticle constraint)
+  public static PropInfo? CreateProperty(this TypeInfo typeInfo, ItemElementParticle particle)
   {
     if (typeInfo.Properties == null)
       typeInfo.Properties = new OwnedCollection<PropInfo>(typeInfo);
-    var targetType = constraint.ItemType;
-    if (constraint.IsMultiple)
+    var targetType = particle.ItemType;
+    if (particle.IsMultiple)
     {
       var propName = PluralizeName(targetType.Name);
       if (typeInfo.Name == propName)
@@ -275,13 +275,13 @@ public static class TypeReflector
       {
         var propInfo = new PropInfo(propName, targetType);
         Type propertyType = typeof(System.Collections.ObjectModel.Collection<>).MakeGenericType(new Type[] { targetType.Type });
-        if (constraint.MaxOccurs != null || constraint.MinOccurs != null)
+        if (particle.MaxOccurs != null || particle.MinOccurs != null)
         {
           propInfo.CustomAttributes.Add(new CustomAttribInfo(
             new DocumentModel.Attributes.CollectionConstraintAttribute
             {
-              MinCount = constraint.MinOccurs,
-              MaxCount = constraint.MaxOccurs,
+              MinCount = particle.MinOccurs,
+              MaxCount = particle.MaxOccurs,
             }));
         }
         propInfo.PropertyType = TypeManager.RegisterType(propertyType);
