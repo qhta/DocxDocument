@@ -856,4 +856,13 @@ public static class ModelData
   }
 
   #endregion
+
+  #region Validation info
+  public static string[] KnownRealTypes = new string[]
+  {
+    "Int64","Int32","UInt32","Double","Boolean",
+    "http://www.w3.org/2001/XMLSchema:hexBinary",
+    "http://www.w3.org/2001/XMLSchema:integer",
+  };
+  #endregion
 }
