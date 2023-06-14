@@ -309,19 +309,19 @@ public static class ModelManager
     {
       if (typeInfo.Name == "HexBinaryValue")
       {
-        if (propInfo.Validators != null)
+        if (propInfo.Constraints != null)
         {
-          var validator = (DocumentFormat.OpenXml.Framework.StringValidator?)
-            propInfo.Validators.FirstOrDefault(item => item.GetType() == typeof(DocumentFormat.OpenXml.Framework.StringValidator));
-          if (validator != null)
+          var stringConstraint = (StringConstraint?)
+            propInfo.Constraints.FirstOrDefault(item => item.GetType() == typeof(StringConstraint));
+          if (stringConstraint != null)
           {
-            if (validator.Length == 2)
+            if (stringConstraint.Length == 2)
               targetType = typeof(HexChar);
             else
-            if (validator.Length == 3)
+            if (stringConstraint.Length == 3)
               targetType = typeof(RGB);
             else
-            if (validator.Length == 4)
+            if (stringConstraint.Length == 4)
               targetType = typeof(HexInt);
           }
         }
