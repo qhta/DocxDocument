@@ -3,7 +3,7 @@
 /// <summary>
 /// Metadata assigned to model element.
 /// </summary>
-public record Metadata
+public record ElementMetadata
 {
   /// <summary>
   /// XElement representation of summary.
@@ -18,7 +18,7 @@ public record Metadata
     get => Summary?.Value;
     set
     {
-      if (value!=null)
+      if (value != null)
         Summary = new XElement("summary", value);
       else
         Summary = null;
@@ -26,14 +26,32 @@ public record Metadata
   }
 
   /// <summary>
-  /// Attribute tag in schema.
+  /// Attribute/Element tag in schema.
   /// </summary>
-  public string? SchemaAttribute { get; set; }
+  public string? SchemaTag { get; set; }
 
   /// <summary>
-  /// Element tag in schema.
+  /// SchemaTag is attrib
   /// </summary>
-  public string? SchemaElement { get; set; }
+  public bool SchemaIsAttrib { get; set; }
+
+  /// <summary>
+  /// Prefix extracted from SchemaTag
+  /// </summary>
+  public string? SchemaPrefix
+  {
+    get
+    {
+      if (SchemaTag != null)
+      {
+        var k = SchemaTag.IndexOf(':');
+        if (k>0)
+          return SchemaTag.Substring(0, k);
+      }
+      return null;
+    }
+  }
+
 
   /// <summary>
   /// Url for the shema tag namespace.

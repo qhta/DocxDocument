@@ -76,7 +76,7 @@ public static class TypeReflector
   public static void WaitDone()
   {
     if (ReflectionTasks is not null)
-      while (TypeQueue.Count>0)
+      while (TypeQueue.Count > 0)
         Task.WaitAll(ReflectionTasks, 1000);
   }
 
@@ -101,7 +101,7 @@ public static class TypeReflector
     lock (reflectedLock)
     {
       reflected++;
-      OnReflection?.Invoke(new ReflectionInfo{ Done=reflected, Waiting=TypeQueue.Count, Current = typeInfo });
+      OnReflection?.Invoke(new ReflectionInfo { Done = reflected, Waiting = TypeQueue.Count, Current = typeInfo });
     }
     var type = typeInfo.Type;
     if (type.IsEnum)
@@ -169,19 +169,13 @@ public static class TypeReflector
     var xmlDocsElement = type.GetXmlDocsElement();
     if (xmlDocsElement != null)
     {
-      typeInfo.Metadata = DocumentationReader.GetElementMetadata(typeInfo.Documentation);
-      //var childItemTypes = DocumentationReader.GetChildItemTypes(typeInfo.Documentation, type.Assembly);
-      //if (childItemTypes != null)
-      //{
-      //  foreach (var childItemType in childItemTypes)
-      //    TypeManager.RegisterType(childItemType, typeInfo, Semantics.Include);
-      //}
+      typeInfo.Metadata = DocumentationReader.GetElementMetadata(xmlDocsElement);
     }
 
-    TypeInspector.InspectType(typeInfo);
+    typeInfo.Schema = OpenXmlMetadataReader.InspectType(typeInfo);
 
-    if (typeInfo.ItemsConstraint != null)
-      IncludeProperties(typeInfo, typeInfo.ItemsConstraint);
+    if (typeInfo.Schema != null)
+      ScanElementSchema(typeInfo, typeInfo.Schema);
     /*
     else
     {
@@ -222,20 +216,51 @@ public static class TypeReflector
     //  typeInfo.CustomAttributes.Add(new CustomAttribData(item));
   }
 
-  public static void IncludeProperties(this TypeInfo typeInfo, ItemsConstraint constraint)
+  public static void ScanElementSchema(this TypeInfo typeInfo, ElementSchema constraint)
   {
-    if (typeInfo.Name == "DocParts")
-      Debug.Assert(true);
-    if (constraint is ItemTypeConstraint typeConstraint)
-    {
-      typeConstraint.AccessProperty = CreateProperty(typeInfo, typeConstraint);
-    }
-    else if (constraint is ItemsCompoundConstraint compoundConstraint)
-      foreach (var itemConstraint in compoundConstraint.Items)
-        IncludeProperties(typeInfo, itemConstraint);
+    //if (typeInfo.Name == "DocParts")
+    //  Debug.Assert(true);
+    ScanSchemaParticle(typeInfo, constraint.Main);
   }
 
-  public static PropInfo? CreateProperty(this TypeInfo typeInfo, ItemTypeConstraint constraint)
+  public static void ScanSchemaParticle(this TypeInfo typeInfo, SchemaParticle particle)
+  {
+    if (particle is ItemElementParticle itemElementParticle)
+    {
+      itemElementParticle.AccessProperty = CreateProperty(typeInfo, itemElementParticle);
+    }
+    else
+    if (particle is ItemsGroupParticle itemsGroupParticle)
+    {
+      if (itemsGroupParticle.Items.Count==1)
+      {
+      }
+      ScanItemsParticle(typeInfo, itemsGroupParticle);
+    }
+    else
+    if (particle is ItemsChoiceParticle itemsChoiceParticle)
+    {
+        ScanItemsParticle(typeInfo, itemsChoiceParticle);
+    }
+    else
+    if (particle is ItemsSequenceParticle itemsSequenceParticle)
+    {
+        ScanItemsParticle(typeInfo, itemsSequenceParticle);
+    }
+    else
+    if (particle is ItemsAllParticle itemsAllParticle)
+    {
+        ScanItemsParticle(typeInfo, itemsAllParticle);
+    }
+  }
+
+  public static void ScanItemsParticle(this TypeInfo typeInfo, ItemsParticle particle)
+  {
+    foreach (var item in particle.Items)
+      ScanSchemaParticle(typeInfo, item);
+  }
+
+  public static PropInfo? CreateProperty(this TypeInfo typeInfo, ItemElementParticle constraint)
   {
     if (typeInfo.Properties == null)
       typeInfo.Properties = new OwnedCollection<PropInfo>(typeInfo);
@@ -250,14 +275,14 @@ public static class TypeReflector
       {
         var propInfo = new PropInfo(propName, targetType);
         Type propertyType = typeof(System.Collections.ObjectModel.Collection<>).MakeGenericType(new Type[] { targetType.Type });
-        if (constraint.MaxCount != null || constraint.MinCount!= null)
+        if (constraint.MaxOccurs != null || constraint.MinOccurs != null)
         {
           propInfo.CustomAttributes.Add(new CustomAttribInfo(
             new DocumentModel.Attributes.CollectionConstraintAttribute
-          { 
-            MinCount = constraint.MinCount,
-            MaxCount = constraint.MaxCount,
-          }));
+            {
+              MinCount = constraint.MinOccurs,
+              MaxCount = constraint.MaxOccurs,
+            }));
         }
         propInfo.PropertyType = TypeManager.RegisterType(propertyType);
         propInfo.IsConstrained = true;

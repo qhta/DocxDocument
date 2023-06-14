@@ -42,9 +42,33 @@ public class ModelElement: IOwnedElement
   public bool IsRejected { get => Acceptance == false; set { if (value) Acceptance = false; else Acceptance = true; } }
 
   /// <summary>
-  /// Specifies whether the element is used by other elements.
+  /// Status of checked usage.
   /// </summary>
-  public bool IsUsed { get; set;}
+  public bool IsUsed
+  { 
+    get; 
+    set; 
+  }
+
+  /// <summary>
+  /// Status of validity check.
+  /// </summary>
+  public bool? Validity
+  { 
+    get; 
+    set; 
+  }
+  
+  /// <summary>
+  /// Specifies whether the element is accepted for further processing.
+  /// </summary>
+  public bool IsValid { get => Validity == true; set { if (value) Validity = true; else Validity = false; } }
+
+  /// <summary>
+  /// Specifies whether the element is rejected from further processing.
+  /// </summary>
+  public bool IsInvalid { get => Validity == false; set { if (value) Validity = false; else Validity = true; } }
+  /// <summary>
 
   /// <summary>
   /// Specifies whether the element is converted to other element.
@@ -56,15 +80,10 @@ public class ModelElement: IOwnedElement
   /// </summary>
   public bool IsConvertedTo { get; set; }
 
-  ///// <summary>
-  ///// Xml documentation assigned to this element.
-  ///// </summary>
-  //public virtual XElement? Documentation { get; set; }
-
   /// <summary>
   /// Xml documentation assigned to this element.
   /// </summary>
-  public virtual Metadata? Metadata { get; set; }
+  public virtual ElementMetadata? Metadata { get; set; }
 
   /// <summary>
   /// Custom attributes assigned to this element

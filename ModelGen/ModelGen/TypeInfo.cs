@@ -78,9 +78,7 @@ public class TypeInfo : ModelElement
     return false;
   }
 
-  internal IElementMetadata? ElementMetadata { get; set; }
-
-  public ItemsConstraint? ItemsConstraint { get; set; }
+  public ElementSchema? Schema { get; set; }
 
   public bool UsesEvaluated { get; set; }
   public int AcceptedPropsCount { get; set; }

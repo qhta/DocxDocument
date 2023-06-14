@@ -5,6 +5,7 @@ using DocumentFormat.OpenXml.Drawing.Diagrams;
 using DocumentModel;
 
 using Qhta.Collections;
+using Qhta.TextUtils;
 
 namespace ModelGen;
 
@@ -150,6 +151,7 @@ public static class ModelData
     { "o21pt", "DocumentFormat.OpenXml.Office2021.PowerPoint.Tasks" },
     { "o21wcx", "DocumentFormat.OpenXml.Office2021.Word.CommentsExt" },
     { "o21wxl", "DocumentFormat.OpenXml.Office2021.Word.ExtensionList" },
+    { "o22if", "DocumentFormat.OpenXml.Office.Drawing.Y2022.ImageFormula" },
     { "pck", "DocumentFormat.OpenXml.Packaging" },
     { "p", "DocumentFormat.OpenXml.Presentation" },
     { "s", "DocumentFormat.OpenXml.Spreadsheet" },
@@ -284,6 +286,7 @@ public static class ModelData
     {"DocumentFormat.OpenXml.Office2021.PowerPoint.Tasks", "DocumentModel.Presentation" },
     {"DocumentFormat.OpenXml.Office2021.Word.CommentsExt", "DocumentModel.Wordprocessing" },
     {"DocumentFormat.OpenXml.Office2021.Word.ExtensionList", "DocumentModel.Wordprocessing" },
+    {"DocumentFormat.OpenXml.Office.Drawing.Y2022.ImageFormula", "DocumentModel.Drawings" },
     {"DocumentFormat.OpenXml.Packaging", "DocumentModel.Packaging" },
     {"DocumentFormat.OpenXml.Presentation", "DocumentModel.Presentation" },
     {"DocumentFormat.OpenXml.Spreadsheet", "DocumentModel.Spreadsheet" },
@@ -332,7 +335,7 @@ public static class ModelData
   { "DocumentFormat.OpenXml.Framework.Metadata", "DXFworkMeta" },
   { "DocumentFormat.OpenXml.Framework.Schema", "DXFworkSch" },
   { "DocumentFormat.OpenXml.InkML", "DXInkML" },
-  { "DocumentFormat.OpenXml.Math", "DXMath" },
+  { "DocumentFormat.OpenXml.Math", "DXM" },
   { "DocumentFormat.OpenXml.Office.ActiveX", "DXOActiveX" },
   { "DocumentFormat.OpenXml.Office.ContentType", "DXOContentType" },
   { "DocumentFormat.OpenXml.Office.CoverPageProps", "DXOCoverPageProps" },
@@ -340,92 +343,93 @@ public static class ModelData
   { "DocumentFormat.OpenXml.Office.CustomUI", "DXOCustUI" },
   { "DocumentFormat.OpenXml.Office.CustomXsn", "DXOCustXsn" },
   { "DocumentFormat.OpenXml.Office.Drawing", "DXODraw" },
-  { "DocumentFormat.OpenXml.Office.Drawing.Y2021.OEmbed", "DXODrawY2021OEmb" },
-  { "DocumentFormat.OpenXml.Office.Drawing.Y2021.ScriptLink", "DXODrawY2021ScptLnk" },
+  { "DocumentFormat.OpenXml.Office.Drawing.Y2021.OEmbed", "DXODrawY21OEmb" },
+  { "DocumentFormat.OpenXml.Office.Drawing.Y2021.ScriptLink", "DXODrawY21ScptLnk" },
   { "DocumentFormat.OpenXml.Office.Excel", "DXOS" },
   { "DocumentFormat.OpenXml.Office.LongProperties", "DXOLongProps" },
   { "DocumentFormat.OpenXml.Office.MetaAttributes", "DXOMetaAttr" },
-  { "DocumentFormat.OpenXml.Office.PowerPoint.Y2021.M06.Main", "DXOPY2021M06Main" },
-  { "DocumentFormat.OpenXml.Office.SpreadSheetML.Y2021.ExtLinks2021", "DXOSMLY2021ExtLnks2021" },
-  { "DocumentFormat.OpenXml.Office.SpreadSheetML.Y2022.PivotVersionInfo", "DXOSMLY2022PivotVerInf" },
+  { "DocumentFormat.OpenXml.Office.PowerPoint.Y2021.M06.Main", "DXOPY21M06Main" },
+  { "DocumentFormat.OpenXml.Office.SpreadSheetML.Y2021.ExtLinks2021", "DXOSMLY21ExtLnks2021" },
+  { "DocumentFormat.OpenXml.Office.SpreadSheetML.Y2022.PivotVersionInfo", "DXOSMLY22PivotVerInf" },
   { "DocumentFormat.OpenXml.Office.Word", "DXOW" },
-  { "DocumentFormat.OpenXml.Office.Word.Y2020.OEmbed", "DXOWY2020OEmb" },
-  { "DocumentFormat.OpenXml.Office2010.CustomUI", "DXO2010CustUI" },
-  { "DocumentFormat.OpenXml.Office2010.Drawing", "DXO2010Draw" },
-  { "DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing", "DXO2010DrawChartDraw" },
-  { "DocumentFormat.OpenXml.Office2010.Drawing.Charts", "DXO2010DrawCharts" },
-  { "DocumentFormat.OpenXml.Office2010.Drawing.Diagram", "DXO2010DrawDgm" },
-  { "DocumentFormat.OpenXml.Office2010.Drawing.LegacyCompatibility", "DXO2010DrawLegComp" },
-  { "DocumentFormat.OpenXml.Office2010.Drawing.Pictures", "DXO2010DrawPict" },
-  { "DocumentFormat.OpenXml.Office2010.Drawing.Slicer", "DXO2010DrawSlicer" },
-  { "DocumentFormat.OpenXml.Office2010.Excel", "DXO2010S" },
-  { "DocumentFormat.OpenXml.Office2010.Excel.Drawing", "DXO2010SDraw" },
-  { "DocumentFormat.OpenXml.Office2010.ExcelAc", "DXO2010SAc" },
-  { "DocumentFormat.OpenXml.Office2010.Ink", "DXO2010Ink" },
-  { "DocumentFormat.OpenXml.Office2010.PowerPoint", "DXO2010P" },
-  { "DocumentFormat.OpenXml.Office2010.Word", "DXO2010W" },
-  { "DocumentFormat.OpenXml.Office2010.Word.Drawing", "DXO2010WDraw" },
-  { "DocumentFormat.OpenXml.Office2010.Word.DrawingCanvas", "DXO2010WDrawCnv" },
-  { "DocumentFormat.OpenXml.Office2010.Word.DrawingGroup", "DXO2010WDrawGroup" },
-  { "DocumentFormat.OpenXml.Office2010.Word.DrawingShape", "DXO2010WDrawShp" },
-  { "DocumentFormat.OpenXml.Office2013.Drawing", "DXO2013Draw" },
-  { "DocumentFormat.OpenXml.Office2013.Drawing.Chart", "DXO2013DrawChart" },
-  { "DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle", "DXO2013DrawChartStyle" },
-  { "DocumentFormat.OpenXml.Office2013.Drawing.TimeSlicer", "DXO2013DrawTimeSlicer" },
-  { "DocumentFormat.OpenXml.Office2013.Excel", "DXO2013S" },
-  { "DocumentFormat.OpenXml.Office2013.ExcelAc", "DXO2013SAc" },
-  { "DocumentFormat.OpenXml.Office2013.PowerPoint", "DXO2013P" },
-  { "DocumentFormat.OpenXml.Office2013.PowerPoint.Roaming", "DXO2013PRoaming" },
-  { "DocumentFormat.OpenXml.Office2013.Theme", "DXO2013Theme" },
-  { "DocumentFormat.OpenXml.Office2013.WebExtension", "DXO2013WebExt" },
-  { "DocumentFormat.OpenXml.Office2013.WebExtentionPane", "DXO2013WebExtPane" },
-  { "DocumentFormat.OpenXml.Office2013.Word", "DXO2013W" },
-  { "DocumentFormat.OpenXml.Office2013.Word.Drawing", "DXO2013WDraw" },
-  { "DocumentFormat.OpenXml.Office2016.Drawing", "DXO2016Draw" },
-  { "DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing", "DXO2016DrawChartDraw" },
-  { "DocumentFormat.OpenXml.Office2016.Drawing.Charts", "DXO2016DrawCharts" },
-  { "DocumentFormat.OpenXml.Office2016.Drawing.ChartsAc", "DXO2016DrawChartsAc" },
-  { "DocumentFormat.OpenXml.Office2016.Drawing.Command", "DXO2016DrawCmd" },
-  { "DocumentFormat.OpenXml.Office2016.Excel", "DXO2016S" },
-  { "DocumentFormat.OpenXml.Office2016.ExcelAc", "DXO2016SAc" },
-  { "DocumentFormat.OpenXml.Office2016.Presentation", "DXO2016P" },
-  { "DocumentFormat.OpenXml.Office2016.Presentation.Command", "DXO2016PCmd" },
-  { "DocumentFormat.OpenXml.Office2016.Word.Symex", "DXO2016WSymex" },
-  { "DocumentFormat.OpenXml.Office2019.Drawing", "DXO2019Draw" },
-  { "DocumentFormat.OpenXml.Office2019.Drawing.Animation", "DXO2019DrawAnim" },
-  { "DocumentFormat.OpenXml.Office2019.Drawing.Animation.Model3D", "DXO2019DrawAnim3D" },
-  { "DocumentFormat.OpenXml.Office2019.Drawing.Chart", "DXO2019DrawChart" },
-  { "DocumentFormat.OpenXml.Office2019.Drawing.Diagram11", "DXO2019DrawDgm11" },
-  { "DocumentFormat.OpenXml.Office2019.Drawing.Diagram12", "DXO2019DrawDgm12" },
-  { "DocumentFormat.OpenXml.Office2019.Drawing.HyperLinkColor", "DXO2019DrawHLnkClr" },
-  { "DocumentFormat.OpenXml.Office2019.Drawing.Ink", "DXO2019DrawInk" },
-  { "DocumentFormat.OpenXml.Office2019.Drawing.Model3D", "DXO2019Draw3D" },
-  { "DocumentFormat.OpenXml.Office2019.Drawing.SVG", "DXO2019DrawSVG" },
-  { "DocumentFormat.OpenXml.Office2019.Excel.CalcFeatures", "DXO2019SCalcFeat" },
-  { "DocumentFormat.OpenXml.Office2019.Excel.DynamicArray", "DXO2019SDynArray" },
-  { "DocumentFormat.OpenXml.Office2019.Excel.PivotDefaultLayout", "DXO2019SPivotDefLayt" },
-  { "DocumentFormat.OpenXml.Office2019.Excel.RichData", "DXO2019SRichData" },
-  { "DocumentFormat.OpenXml.Office2019.Excel.RichData2", "DXO2019SRichData2" },
-  { "DocumentFormat.OpenXml.Office2019.Excel.ThreadedComments", "DXO2019SThrComt" },
-  { "DocumentFormat.OpenXml.Office2019.Presentation", "DXO2019P" },
-  { "DocumentFormat.OpenXml.Office2019.Word.Cid", "DXO2019WCid" },
-  { "DocumentFormat.OpenXml.Office2021.DocumentTasks", "DXO2021DocTasks" },
-  { "DocumentFormat.OpenXml.Office2021.Drawing.DocumentClassification", "DXO2021DrawDocCls" },
-  { "DocumentFormat.OpenXml.Office2021.Drawing.Livefeed", "DXO2021DrawLivefeed" },
-  { "DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes", "DXO2021DrawSketchyShps" },
-  { "DocumentFormat.OpenXml.Office2021.Excel.ExternalLinks", "DXO2021SExtLnks" },
-  { "DocumentFormat.OpenXml.Office2021.Excel.NamedSheetViews", "DXO2021SNamedSheetVws" },
-  { "DocumentFormat.OpenXml.Office2021.Excel.Pivot", "DXO2021SPivot" },
-  { "DocumentFormat.OpenXml.Office2021.Excel.RichDataWebImage", "DXO2021SRichDataWebImg" },
-  { "DocumentFormat.OpenXml.Office2021.Excel.RichValueRefreshIntervals", "DXO2021SRichValRefshImtv" },
-  { "DocumentFormat.OpenXml.Office2021.Excel.ThreadedComments2", "DXO2021SThrComt2" },
-  { "DocumentFormat.OpenXml.Office2021.MipLabelMetaData", "DXO2021MipLabelMeta" },
-  { "DocumentFormat.OpenXml.Office2021.OfficeExtLst", "DXO2021OExtLst" },
-  { "DocumentFormat.OpenXml.Office2021.PowerPoint.Comment", "DXO2021PComt" },
-  { "DocumentFormat.OpenXml.Office2021.PowerPoint.Designer", "DXO2021PDsg" },
-  { "DocumentFormat.OpenXml.Office2021.PowerPoint.Tasks", "DXO2021PTasks" },
-  { "DocumentFormat.OpenXml.Office2021.Word.CommentsExt", "DXO2021WComtExt" },
-  { "DocumentFormat.OpenXml.Office2021.Word.ExtensionList", "DXO2021WExtList" },
+  { "DocumentFormat.OpenXml.Office.Word.Y2020.OEmbed", "DXOWY20OEmb" },
+  { "DocumentFormat.OpenXml.Office2010.CustomUI", "DXO10CustUI" },
+  { "DocumentFormat.OpenXml.Office2010.Drawing", "DXO10Draw" },
+  { "DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing", "DXO10DrawChartDraw" },
+  { "DocumentFormat.OpenXml.Office2010.Drawing.Charts", "DXO10DrawCharts" },
+  { "DocumentFormat.OpenXml.Office2010.Drawing.Diagram", "DXO10DrawDgm" },
+  { "DocumentFormat.OpenXml.Office2010.Drawing.LegacyCompatibility", "DXO10DrawLegComp" },
+  { "DocumentFormat.OpenXml.Office2010.Drawing.Pictures", "DXO10DrawPict" },
+  { "DocumentFormat.OpenXml.Office2010.Drawing.Slicer", "DXO10DrawSlicer" },
+  { "DocumentFormat.OpenXml.Office.Drawing.Y2022.ImageFormula", "DXODrawY22IF" },
+  { "DocumentFormat.OpenXml.Office2010.Excel", "DXO10S" },
+  { "DocumentFormat.OpenXml.Office2010.Excel.Drawing", "DXO10SDraw" },
+  { "DocumentFormat.OpenXml.Office2010.ExcelAc", "DXO10SAc" },
+  { "DocumentFormat.OpenXml.Office2010.Ink", "DXO10Ink" },
+  { "DocumentFormat.OpenXml.Office2010.PowerPoint", "DXO10P" },
+  { "DocumentFormat.OpenXml.Office2010.Word", "DXO10W" },
+  { "DocumentFormat.OpenXml.Office2010.Word.Drawing", "DXO10WDraw" },
+  { "DocumentFormat.OpenXml.Office2010.Word.DrawingCanvas", "DXO10WDrawCnv" },
+  { "DocumentFormat.OpenXml.Office2010.Word.DrawingGroup", "DXO10WDrawGroup" },
+  { "DocumentFormat.OpenXml.Office2010.Word.DrawingShape", "DXO10WDrawShp" },
+  { "DocumentFormat.OpenXml.Office2013.Drawing", "DXO13Draw" },
+  { "DocumentFormat.OpenXml.Office2013.Drawing.Chart", "DXO13DrawChart" },
+  { "DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle", "DXO13DrawChartStyle" },
+  { "DocumentFormat.OpenXml.Office2013.Drawing.TimeSlicer", "DXO13DrawTimeSlicer" },
+  { "DocumentFormat.OpenXml.Office2013.Excel", "DXO13S" },
+  { "DocumentFormat.OpenXml.Office2013.ExcelAc", "DXO13SAc" },
+  { "DocumentFormat.OpenXml.Office2013.PowerPoint", "DXO13P" },
+  { "DocumentFormat.OpenXml.Office2013.PowerPoint.Roaming", "DXO13PRoaming" },
+  { "DocumentFormat.OpenXml.Office2013.Theme", "DXO13Theme" },
+  { "DocumentFormat.OpenXml.Office2013.WebExtension", "DXO13WebExt" },
+  { "DocumentFormat.OpenXml.Office2013.WebExtentionPane", "DXO13WebExtPane" },
+  { "DocumentFormat.OpenXml.Office2013.Word", "DXO13W" },
+  { "DocumentFormat.OpenXml.Office2013.Word.Drawing", "DXO13WDraw" },
+  { "DocumentFormat.OpenXml.Office2016.Drawing", "DXO16Draw" },
+  { "DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing", "DXO16DrawChartDraw" },
+  { "DocumentFormat.OpenXml.Office2016.Drawing.Charts", "DXO16DrawCharts" },
+  { "DocumentFormat.OpenXml.Office2016.Drawing.ChartsAc", "DXO16DrawChartsAc" },
+  { "DocumentFormat.OpenXml.Office2016.Drawing.Command", "DXO16DrawCmd" },
+  { "DocumentFormat.OpenXml.Office2016.Excel", "DXO16S" },
+  { "DocumentFormat.OpenXml.Office2016.ExcelAc", "DXO16SAc" },
+  { "DocumentFormat.OpenXml.Office2016.Presentation", "DXO16P" },
+  { "DocumentFormat.OpenXml.Office2016.Presentation.Command", "DXO16PCmd" },
+  { "DocumentFormat.OpenXml.Office2016.Word.Symex", "DXO16WSymex" },
+  { "DocumentFormat.OpenXml.Office2019.Drawing", "DXO19Draw" },
+  { "DocumentFormat.OpenXml.Office2019.Drawing.Animation", "DXO19DrawAnim" },
+  { "DocumentFormat.OpenXml.Office2019.Drawing.Animation.Model3D", "DXO19DrawAnim3D" },
+  { "DocumentFormat.OpenXml.Office2019.Drawing.Chart", "DXO19DrawChart" },
+  { "DocumentFormat.OpenXml.Office2019.Drawing.Diagram11", "DXO19DrawDgm11" },
+  { "DocumentFormat.OpenXml.Office2019.Drawing.Diagram12", "DXO19DrawDgm12" },
+  { "DocumentFormat.OpenXml.Office2019.Drawing.HyperLinkColor", "DXO19DrawHLnkClr" },
+  { "DocumentFormat.OpenXml.Office2019.Drawing.Ink", "DXO19DrawInk" },
+  { "DocumentFormat.OpenXml.Office2019.Drawing.Model3D", "DXO19Draw3D" },
+  { "DocumentFormat.OpenXml.Office2019.Drawing.SVG", "DXO19DrawSVG" },
+  { "DocumentFormat.OpenXml.Office2019.Excel.CalcFeatures", "DXO19SCalcFeat" },
+  { "DocumentFormat.OpenXml.Office2019.Excel.DynamicArray", "DXO19SDynArray" },
+  { "DocumentFormat.OpenXml.Office2019.Excel.PivotDefaultLayout", "DXO19SPivotDefLayt" },
+  { "DocumentFormat.OpenXml.Office2019.Excel.RichData", "DXO19SRichData" },
+  { "DocumentFormat.OpenXml.Office2019.Excel.RichData2", "DXO19SRichData2" },
+  { "DocumentFormat.OpenXml.Office2019.Excel.ThreadedComments", "DXO19SThrComt" },
+  { "DocumentFormat.OpenXml.Office2019.Presentation", "DXO19P" },
+  { "DocumentFormat.OpenXml.Office2019.Word.Cid", "DXO19WCid" },
+  { "DocumentFormat.OpenXml.Office2021.DocumentTasks", "DXO21DocTasks" },
+  { "DocumentFormat.OpenXml.Office2021.Drawing.DocumentClassification", "DXO21DrawDocCls" },
+  { "DocumentFormat.OpenXml.Office2021.Drawing.Livefeed", "DXO21DrawLivefeed" },
+  { "DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes", "DXO21DrawSketchyShps" },
+  { "DocumentFormat.OpenXml.Office2021.Excel.ExternalLinks", "DXO21SExtLnks" },
+  { "DocumentFormat.OpenXml.Office2021.Excel.NamedSheetViews", "DXO21SNamedSheetVws" },
+  { "DocumentFormat.OpenXml.Office2021.Excel.Pivot", "DXO21SPivot" },
+  { "DocumentFormat.OpenXml.Office2021.Excel.RichDataWebImage", "DXO21SRichDataWebImg" },
+  { "DocumentFormat.OpenXml.Office2021.Excel.RichValueRefreshIntervals", "DXO21SRichValRefshImtv" },
+  { "DocumentFormat.OpenXml.Office2021.Excel.ThreadedComments2", "DXO21SThrComt2" },
+  { "DocumentFormat.OpenXml.Office2021.MipLabelMetaData", "DXO21MipLabelMeta" },
+  { "DocumentFormat.OpenXml.Office2021.OfficeExtLst", "DXO21OExtLst" },
+  { "DocumentFormat.OpenXml.Office2021.PowerPoint.Comment", "DXO21PComt" },
+  { "DocumentFormat.OpenXml.Office2021.PowerPoint.Designer", "DXO21PDsg" },
+  { "DocumentFormat.OpenXml.Office2021.PowerPoint.Tasks", "DXO21PTasks" },
+  { "DocumentFormat.OpenXml.Office2021.Word.CommentsExt", "DXO21WComtExt" },
+  { "DocumentFormat.OpenXml.Office2021.Word.ExtensionList", "DXO21WExtList" },
   { "DocumentFormat.OpenXml.Packaging", "DXPack" },
   { "DocumentFormat.OpenXml.Presentation", "DXP" },
   { "DocumentFormat.OpenXml.Spreadsheet", "DXS" },
@@ -786,6 +790,171 @@ public static class ModelData
     nameof(System.Double),
     nameof(System.Decimal),
   };
+
+  #endregion
+
+  #region Common type names
+  public static Dictionary<string, string> CommonTypeName { get; } = new()
+  {
+    { "*Start", "*Mark" },
+    { "*End", "*Mark" },
+    { "MoveFromRangeMark", "EditRangeMark" },
+    { "MoveToRangeMark", "EditRangeMark" },
+    { "CustomXml*RangeMark", "EditRangeMark" },
+    { "BookmarkMark", "AnnotationRangeMark" },
+    { "CommentRangeMark", "AnnotationRangeMark" },
+    { "DXW.Bidirectional*", "DXW.BidirectionalMark" },
+    { "DXO10W.RunConflict*", "DXO10W.RunConflictMark" },
+    { "DXW.AnnotationRangeMark|DXW.EditRangeMark|DXO10W.EditRangeMark", "DXW.RangeMark" },
+    { "DXW.ProofError|DXW.PermMark", "DXW.ProofPermMark" },
+    { "DXW.InsertedRun", "DXW.EditRunMark" },
+    { "DXW.DeletedRun", "DXW.EditRunMark" },
+    { "DXW.MoveFromRun", "DXW.EditRunMark" },
+    { "DXW.MoveToRun", "DXW.EditRunMark" },
+    { "DXW.ProofPermMark|DXW.RangeMark|DXW.EditRunMark|DXW.ContentPart|DXO10W.RunConflictMark", "DXW.CommonMark" },
+    { "DXW.CustomXmlRun|DXW.SimpleField|DXW.Hyperlink", "DXW.ActiveRun" },
+    { "DXW.ActiveRun|DXW.SdtRun|DXW.CommonMark|DXM.MathElement|DXW.Run|DXW.BidirectionalMark|DXW.SubDocumentReference", "DXW.ParagraphContent" },
+    { "DXM.Accent", "DXM.MathOp" },
+    { "DXM.Bar", "DXM.MathOp" },
+    { "DXM.Box", "DXM.MathOp" },
+    { "DXM.BorderBox", "DXM.MathOp" },
+    { "DXM.Delimiter", "DXM.MathOp" },
+    { "DXM.EquationArray", "DXM.MathOp" },
+    { "DXM.Fraction", "DXM.MathOp" },
+    { "DXM.MathFunction", "DXM.MathOp" },
+    { "DXM.GroupChar", "DXM.MathOp" },
+    { "DXM.LimitLower", "DXM.MathOp" },
+    { "DXM.LimitUpper", "DXM.MathOp" },
+    { "DXM.Matrix", "DXM.MathOp" },
+    { "DXM.Nary", "DXM.MathOp" },
+    { "DXM.Phantom", "DXM.MathOp" },
+    { "DXM.Radical", "DXM.MathOp" },
+    { "DXM.PreSubSuper", "DXM.MathOp" },
+    { "DXM.Subscript", "DXM.MathOp" },
+    { "DXM.SubSuperscript", "DXM.MathOp" },
+    { "DXM.Superscript", "DXM.MathOp" },
+    { "DXM.Run", "DXM.MathOp" },
+    { "DXM.Paragraph|DXM.OfficeMath|DXM.MathOp", "DXM.MathElement" },
+    { "DXW.*Border", "DXW.Border" },
+    { "DXW.CustomXmlBlock|DXW.SdtBlock|DXW.Paragraph|DXW.Table", "DXW.TextBlock" },
+  };
+
+  public static bool TryGetCommonTypeName(string name, [MaybeNullWhen(false)][NotNullWhen(true)] out string? newName)
+  {
+    if (CommonTypeName.TryGetValue(name, out newName))
+      return true;
+    foreach (var item in CommonTypeName)
+    {
+      if (name.IsLike1(item.Key, out var wildKey, StringComparison.InvariantCulture))
+      {
+        newName = item.Value.Replace("*", wildKey);
+        return true;
+      }
+    }
+    newName = null;
+    return false;
+  }
+
+    public static bool IsLike1(this string key, string pattern, out string? wildKey, StringComparison stringComparison = StringComparison.CurrentCultureIgnoreCase)
+    {
+      wildKey = null;
+      int num = pattern.Where((char c) => c == '*').Count();
+      if (num == 1 && pattern.EndsWith("*"))
+      {
+        pattern = pattern.Substring(0, pattern.Length - 1);
+        if (key.StartsWith(pattern, stringComparison))
+        {
+          wildKey = key.Substring(pattern.Length);
+          return true;
+        }
+
+        return false;
+      }
+
+      if (num == 1 && pattern.StartsWith("*"))
+      {
+        pattern = pattern.Substring(1, pattern.Length - 1);
+        if (key.EndsWith(pattern, stringComparison))
+        {
+          wildKey = key.Substring(0, key.Length-pattern.Length);
+          return true;
+        }
+
+        return false;
+      }
+
+      if (num == 2 && pattern.EndsWith("*") && pattern.StartsWith("*"))
+      {
+        pattern = pattern.Substring(1, pattern.Length - 2);
+        int num2 = key.IndexOf(pattern, stringComparison);
+        if (num2 >= 0)
+        {
+          wildKey = string.Join("*", key.Substring(0, num2), key.Substring(num2 + pattern.Length));
+          return true;
+        }
+      }
+
+      if (num > 0)
+      {
+        List<string> patternParts = pattern.Split('*').ToList();
+        if (MatchPatternParts(key, patternParts, out var wildKeyParts, stringComparison))
+        {
+          wildKey = string.Join("*", wildKeyParts);
+          return true;
+        }
+
+        return false;
+      }
+
+      return key.Equals(pattern, stringComparison);
+    }
+
+    private static bool MatchPatternParts(string key, List<string> patternParts, out List<string> wildKeyParts, StringComparison stringComparison = StringComparison.CurrentCultureIgnoreCase)
+    {
+      wildKeyParts = new List<string>();
+      if (patternParts.Count == 0)
+      {
+        return true;
+      }
+
+      if (!key.StartsWith(patternParts.First(), stringComparison))
+      {
+        return false;
+      }
+
+      wildKeyParts.Add(key.Substring(patternParts.First().Length));
+      if (patternParts.Count == 1)
+      {
+        return true;
+      }
+
+      key = key.Substring(patternParts.First().Length);
+      patternParts.RemoveAt(0);
+      if (!key.EndsWith(patternParts.Last(), stringComparison))
+      {
+        return false;
+      }
+
+      wildKeyParts.Add(key.Substring(key.Length - patternParts.Last().Length));
+      if (patternParts.Count == 1)
+      {
+        return true;
+      }
+
+      key = key.Substring(key.Length - patternParts.Last().Length);
+      patternParts.RemoveAt(patternParts.Count - 1);
+      if (MatchPatternParts(key, patternParts, out var wildKeyParts2, stringComparison))
+      {
+        if (wildKeyParts2.Count > 0)
+        {
+          wildKeyParts.InsertRange(1, wildKeyParts2);
+        }
+
+        return true;
+      }
+
+      return false;
+    }
 
   #endregion
 }

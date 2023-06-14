@@ -1,6 +1,6 @@
 ﻿namespace ModelGen;
 
-public class ItemTypeConstraint: ItemsConstraint
+public class ItemElementParticle: SchemaParticle
 {
   public TypeInfo ItemType { get; set; } = null!;
   public PropInfo? AccessProperty { get; set; }

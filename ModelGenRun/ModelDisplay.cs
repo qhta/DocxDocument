@@ -133,7 +133,10 @@ public class ModelDisplay : IModelMonitor
   public void ShowNamespacesDetails(DisplayOptions options)
   {
     WriteLine();
-    WriteLine("Scanned types:");
+    string? filter = null;
+    if (options.TypeStatusSelector != MSS.Any)
+      filter = " " + options.TypeStatusSelector.ToString().ToLower();
+    WriteLine($"Scanned{filter} types:");
     var namespaces = TypeManager.GetNamespaces(options.NamespaceTypeSelector).ToList();
     if (options.Namespaces != null)
       namespaces = namespaces.Where(item => options.Namespaces
@@ -155,8 +158,17 @@ public class ModelDisplay : IModelMonitor
       .FirstOrDefault(pattern => item.Name == pattern || item.Name.IsLike(pattern)) != null).ToList();
     if (options.TypeKindSelector != TKS.Any)
       nSpaceTypes = nSpaceTypes.Where(item => IsTypeKind(item.TypeKind, options.TypeKindSelector)).ToList();
-    if (options.TypeDataSelector.HasFlag(TDS.AcceptedTypesOnly))
-      nSpaceTypes = nSpaceTypes.Where(item => item.IsAccepted).ToList();
+    if (options.TypeStatusSelector != MSS.Any)
+    {
+      if (options.TypeStatusSelector.HasFlag(MSS.Accepted) || options.TypeStatusSelector.HasFlag(MSS.Rejected))
+        nSpaceTypes = nSpaceTypes.Where(item =>
+          options.TypeStatusSelector.HasFlag(MSS.Accepted) && item.IsAccepted
+          || options.TypeStatusSelector.HasFlag(MSS.Rejected) && item.IsRejected).ToList();
+      if (options.TypeStatusSelector.HasFlag(MSS.Valid) || options.TypeStatusSelector.HasFlag(MSS.Invalid))
+        nSpaceTypes = nSpaceTypes.Where(item =>
+          options.TypeStatusSelector.HasFlag(MSS.Valid) && item.IsValid
+          || options.TypeStatusSelector.HasFlag(MSS.Invalid) && item.IsInvalid).ToList();
+    }
     var originNames = options.NamespaceTypeSelector == NTS.Origin || options.TypeDataSelector.HasFlag(TDS.OriginalNames);
     if (nSpaceTypes.Count() > 0)
     {
@@ -189,11 +201,14 @@ public class ModelDisplay : IModelMonitor
     //  ShowDocumentation(typeInfo, options);
     if (options.TypeDataSelector.HasFlag(TDS.Metadata))
       ShowMetadata(typeInfo, options);
-    string str = "";
-    if (!options.TypeDataSelector.HasFlag(TDS.AcceptedTypesOnly))
-      str += Accepted(typeInfo.Acceptance);
+    string str = AcceptedMark(typeInfo.Acceptance);
     var originNames = options.NamespaceTypeSelector == NTS.Origin || options.TypeDataSelector.HasFlag(TDS.OriginalNames);
     str += $"{typeInfo.TypeKind.ToString().ToLower()} {typeInfo.GetFullName(originNames)}";
+    List<string> status = new List<string>();
+    if (typeInfo.Validity != null)
+      status.Add(ValidStr(typeInfo.Validity));
+    if (status.Count > 0)
+      str += " { " + string.Join(", ", status) + " }";
     if (options.TypeDataSelector.HasFlag(TDS.ConversionInfo))
     {
       var changedToType = ModelManager.GetConversionTargetOrSelf(typeInfo);
@@ -201,8 +216,6 @@ public class ModelDisplay : IModelMonitor
         str += $" => {changedToType.GetFullName()}";
     }
     Writer.WriteLine(str);
-    if (options.TypeDataSelector.HasFlag(TDS.AcceptedTypesOnly) && typeInfo.IsAccepted == false)
-      return;
     Writer.Indent();
     if (options.TypeDataSelector.HasFlag(TDS.BaseTypes) && typeInfo.BaseTypeInfo != null)
     {
@@ -225,6 +238,8 @@ public class ModelDisplay : IModelMonitor
       ShowIncomingRelationships(typeInfo, options);
     if (options.TypeDataSelector.HasFlag(TDS.ElementsTypes))
       ShowElementsTypes(typeInfo, options);
+    if (options.TypeDataSelector.HasFlag(TDS.ElementSchema))
+      ShowElementSchema(typeInfo, options);
     Writer.Unindent();
     if (options.TypeDataSelector.HasFlag(TDS.EnumValues))
       ShowEnumValues(typeInfo, options);
@@ -397,18 +412,29 @@ public class ModelDisplay : IModelMonitor
 
   public void ShowProperties(TypeInfo typeInfo, DisplayOptions options)
   {
+    if (typeInfo.Properties == null)
+      return;
     var originNames = options.NamespaceTypeSelector == NTS.Origin || options.TypeDataSelector.HasFlag(TDS.OriginalNames);
-    var properties = typeInfo.Properties;
-    if (properties != null && properties.Any())
+    var properties = typeInfo.Properties.ToList();
+    if (properties.Any())
     {
+      if (options.MemberStatusSelector != MSS.Any)
+      {
+        properties = properties.Where(item =>
+          options.MemberStatusSelector.HasFlag(MSS.Accepted) && item.IsAccepted ||
+          options.MemberStatusSelector.HasFlag(MSS.Rejected) && item.IsRejected ||
+          options.MemberStatusSelector.HasFlag(MSS.Used) && item.IsUsed ||
+          options.MemberStatusSelector.HasFlag(MSS.Unused) && !item.IsUsed ||
+          options.MemberStatusSelector.HasFlag(MSS.Valid) && item.IsValid ||
+          options.MemberStatusSelector.HasFlag(MSS.Invalid) && !item.IsValid ||
+          options.MemberStatusSelector.HasFlag(MSS.Converted) && item.IsConverted ||
+          options.MemberStatusSelector.HasFlag(MSS.ConvertedTo) && item.IsConvertedTo
+        ).ToList();
+      }
       Writer.WriteLine("{");
       Writer.Indent();
       foreach (var property in properties)
       {
-        if (options.TypeDataSelector.HasFlag(TDS.AcceptedMembersOnly) && property.IsAccepted == false)
-          continue;
-        //if (options.TypeDataSelector.HasFlag(TDS.Documentation))
-        //  ShowDocumentation(property, options);
         if (options.TypeDataSelector.HasFlag(TDS.Metadata))
           ShowMetadata(property, options);
         var str = $"{property.Name}: {property.PropertyType.GetFullName(originNames)}";
@@ -435,148 +461,194 @@ public class ModelDisplay : IModelMonitor
     Writer.WriteLine();
     if (metadata.Summary != null)
     {
-      var documentationWriter = new DocumentationWriter(Writer, Writer.IndentLevel*Writer.IndentSize, options.LineWidthLimit);
+      var documentationWriter = new DocumentationWriter(Writer, Writer.IndentLevel * Writer.IndentSize, options.LineWidthLimit);
       documentationWriter.Write(metadata.Summary);
     }
-    if (metadata.SchemaAttribute != null)
-      Writer.WriteLine($"/// <schemaAttribute>{metadata.SchemaAttribute}</schemaAttribute>");
-    if (metadata.SchemaElement != null)
-      Writer.WriteLine($"/// <schemaElement>{metadata.SchemaElement}</schemaElement>");
+    if (metadata.SchemaTag != null)
+    {
+      var isAttribStr = "";
+      if (metadata.SchemaIsAttrib)
+        isAttribStr = " isAttrib=\"true\"";
+      Writer.WriteLine($"/// <schemaTag{isAttribStr}>{metadata.SchemaTag}</schemaTag>");
+    }
     if (metadata.SchemaUrl != null)
       Writer.WriteLine($"/// <schemaUrl>{metadata.SchemaUrl}</schemaUrl>");
     if (metadata.Availability != null)
       Writer.WriteLine($"/// <availability>{metadata.Availability}</availability>");
   }
 
-//  public void ShowDocumentation(ModelElement element, DisplayOptions options)
-//{
-//  var xElement = element.Documentation;
-//  if (xElement != null)
-//  {
-//    Writer.WriteLine();
-//    foreach (var subElement in xElement.Elements())
-//      ShowDocumentationElement(subElement, options);
-//  }
-//}
+  //  public void ShowDocumentation(ModelElement element, DisplayOptions options)
+  //{
+  //  var xElement = element.Documentation;
+  //  if (xElement != null)
+  //  {
+  //    Writer.WriteLine();
+  //    foreach (var subElement in xElement.Elements())
+  //      ShowDocumentationElement(subElement, options);
+  //  }
+  //}
 
-private void ShowDocumentationElement(XElement xElement, DisplayOptions options, int indent = 0)
-{
-  var indentStr = new String(' ', indent * 2);
-  var header = xElement.Name.ToString();
-  foreach (var attribute in xElement.Attributes())
+  private void ShowDocumentationElement(XElement xElement, DisplayOptions options, int indent = 0)
   {
-    header += $" {attribute.Name}=\"{attribute.Value}\"";
-  }
-  string? text = null;
-  if (!xElement.HasElements)
-  {
-    text = xElement.Value.Trim();
-    text = Qhta.HtmlUtils.HtmlTextUtils.EncodeHtmlEntities(text);
-    if (text == "")
+    var indentStr = new String(' ', indent * 2);
+    var header = xElement.Name.ToString();
+    foreach (var attribute in xElement.Attributes())
     {
-      Writer.WriteLine($"/// {indentStr}<{header}/>");
-      return;
+      header += $" {attribute.Name}=\"{attribute.Value}\"";
     }
-    else if (header == "c" || header == "remark")
+    string? text = null;
+    if (!xElement.HasElements)
     {
-      Writer.WriteLine($"/// {indentStr}<{header}>{text}</{xElement.Name}>");
-      return;
+      text = xElement.Value.Trim();
+      text = Qhta.HtmlUtils.HtmlTextUtils.EncodeHtmlEntities(text);
+      if (text == "")
+      {
+        Writer.WriteLine($"/// {indentStr}<{header}/>");
+        return;
+      }
+      else if (header == "c" || header == "remark")
+      {
+        Writer.WriteLine($"/// {indentStr}<{header}>{text}</{xElement.Name}>");
+        return;
+      }
+    }
+
+    Writer.WriteLine($"/// {indentStr}<{header}>");
+    if (xElement.HasElements)
+    {
+      foreach (var subElement in xElement.Elements())
+        ShowDocumentationElement(subElement, options, indent + 1);
+    }
+    else if (text != null)
+    {
+      if (options.LineWidthLimit > 0)
+      {
+        var wrapLimit = options.LineWidthLimit - 4 - Writer.IndentSize * Writer.IndentLevel;
+        List<string> lines = Snork.TextWrap.TextWrapper.Wrap(text, wrapLimit);
+        foreach (var line in lines)
+          Writer.WriteLine($"/// {indentStr + "  "}{line}");
+      }
+      else
+        Writer.WriteLine($"/// {indentStr + "  "}{text}");
+    }
+    Writer.WriteLine($"/// {indentStr}</{xElement.Name}>");
+  }
+
+  public void ShowTypeConversions()
+  {
+    foreach (var type in TypeManager.AllTypes)
+    {
+      ShowTypeConversion(type);
     }
   }
 
-  Writer.WriteLine($"/// {indentStr}<{header}>");
-  if (xElement.HasElements)
+  public void ShowTypeConversion(TypeInfo type)
   {
-    foreach (var subElement in xElement.Elements())
-      ShowDocumentationElement(subElement, options, indent + 1);
-  }
-  else if (text!=null)
-  {
-    if (options.LineWidthLimit > 0)
+    if (type.IsConverted)
     {
-      var wrapLimit = options.LineWidthLimit - 4 - Writer.IndentSize * Writer.IndentLevel;
-      List<string> lines = Snork.TextWrap.TextWrapper.Wrap(text, wrapLimit);
-      foreach (var line in lines)
-        Writer.WriteLine($"/// {indentStr + "  "}{line}");
+      var convTarget = ModelManager.GetConversionTargetOrSelf(type);
+      if (convTarget != null)
+      {
+        Writer.WriteLine($"{type} => {convTarget}");
+        Writer.Indent();
+        ShowTypeConversion(convTarget);
+        Writer.Unindent();
+      }
+    }
+  }
+
+  public void ShowTypeRenames()
+  {
+    foreach (var typeInfo in TypeManager.AllTypes)
+    {
+      if (typeInfo.Name != typeInfo.OriginalName)
+      {
+        Writer.WriteLine($"{typeInfo.OriginalName} --> {typeInfo.Name}");
+      }
+    }
+  }
+
+  public void ShowProcessSummary(SummaryInfo info)
+  {
+    WriteLine();
+    WriteLine($"Total time = {info.Time}");
+  }
+
+  public void ShowElementSchema(TypeInfo typeInfo, DisplayOptions options)
+  {
+    if (typeInfo.Schema!=null)
+      WriteSchemaParticle(typeInfo.Schema.Main);
+  }
+
+  public void WriteSchemaParticle(SchemaParticle particle)
+  {
+    if (particle is ItemElementParticle itemElementParticle)
+    {
+      Writer.WriteLine($"<xsd:element type=\"{itemElementParticle.ItemType.GetFullName(true, true)}\"" +
+        $" {ParticleAttribs(particle)}/>");
     }
     else
-      Writer.WriteLine($"/// {indentStr + "  "}{text}");
-  }
-  Writer.WriteLine($"/// {indentStr}</{xElement.Name}>");
-}
-
-public void ShowTypeConversions()
-{
-  foreach (var type in TypeManager.AllTypes)
-  {
-    ShowTypeConversion(type);
-  }
-}
-
-public void ShowTypeConversion(TypeInfo type)
-{
-  if (type.IsConverted)
-  {
-    var convTarget = ModelManager.GetConversionTargetOrSelf(type);
-    if (convTarget != null)
+    if (particle is ItemsParticle itemsParticle)
     {
-      Writer.WriteLine($"{type} => {convTarget}");
+      var particleType = particle.ParticleType.ToString().ToLower();
+      Writer.WriteLine($"<xsd:{particleType} {ParticleAttribs(particle)}>");
       Writer.Indent();
-      ShowTypeConversion(convTarget);
+      foreach (var item in itemsParticle.Items)
+        WriteSchemaParticle(item);
       Writer.Unindent();
+      Writer.WriteLine($"</xsd:{particleType}>");
     }
   }
-}
 
-public void ShowTypeRenames()
-{
-  foreach (var typeInfo in TypeManager.AllTypes)
+  protected string ParticleAttribs(SchemaParticle particle)
   {
-    if (typeInfo.Name != typeInfo.OriginalName)
+    List<string> attribs = new List<string>();
+    if (particle.Name != null)
+      attribs.Add($"name=\"{particle.Name}\"");
+    attribs.Add($"required=\"{particle.IsRequired}\"");
+    if (particle.IsMultiple)
+      attribs.Add($"multiple=\"{particle.IsMultiple}\"");
+    if (particle.MinOccurs!=null && particle.MinOccurs!=particle.DefMinOccurs)
+      attribs.Add($"minOccurs=\"{particle.MinOccurs}\"");
+    if (particle.MaxOccurs!=null && particle.MaxOccurs!=particle.DefMaxOccurs)
+      attribs.Add($"maxOccurs=\"{particle.MaxOccurs}\"");
+    return String.Join(" ", attribs);
+  }
+
+  #region Helper functions to format diplay
+  protected string AllNone(int n, int cmp) => (n == 0) ? "none" : (n == cmp) ? "all" : n.ToString();
+  protected string Multi(int n, string single, string? multi = null) => (n == 1) ? single : (multi ?? (single.EndsWith("s") ? (single + "es") : (single + "s")));
+  protected string AcceptedMark(bool? acceptance) => (acceptance == true) ? "+ " : (acceptance == false) ? "- " : "  ";
+  protected string ValidStr(bool? validity) => (validity == true) ? "valid" : (validity == false) ? "invalid" : string.Empty;
+
+  #endregion
+
+  protected bool IsTypeKind(TypeKind typeKind, TKS selector)
+  {
+    switch (typeKind)
     {
-      Writer.WriteLine($"{typeInfo.OriginalName} --> {typeInfo.Name}");
+      case TypeKind.Type:
+        return selector == TKS.Any;
+      case TypeKind.Struct:
+        return selector.HasFlag(TKS.Struct);
+      case TypeKind.Class:
+        return selector.HasFlag(TKS.Class);
+      case TypeKind.Enum:
+        return selector.HasFlag(TKS.Enum);
+      case TypeKind.Interface:
+        return selector.HasFlag(TKS.Interface);
     }
+    return false;
   }
-}
 
-public void ShowProcessSummary(SummaryInfo info)
-{
-  WriteLine();
-  WriteLine($"Total time = {info.Time}");
-}
-
-#region Helper functions to format diplay
-protected string AllNone(int n, int cmp) => (n == 0) ? "none" : (n == cmp) ? "all" : n.ToString();
-protected string Multi(int n, string single, string? multi = null) => (n == 1) ? single : (multi ?? (single.EndsWith("s") ? (single + "es") : (single + "s")));
-protected string Accepted(bool? acceptance) => (acceptance == true) ? "+ " : (acceptance == false) ? "- " : "? ";
-#endregion
-
-protected bool IsTypeKind(TypeKind typeKind, TKS selector)
-{
-  switch (typeKind)
+  protected string[] constaints = new string[]
   {
-    case TypeKind.Type:
-      return selector == TKS.Any;
-    case TypeKind.Struct:
-      return selector.HasFlag(TKS.Struct);
-    case TypeKind.Class:
-      return selector.HasFlag(TKS.Class);
-    case TypeKind.Enum:
-      return selector.HasFlag(TKS.Enum);
-    case TypeKind.Interface:
-      return selector.HasFlag(TKS.Interface);
-  }
-  return false;
-}
-
-protected string[] constaints = new string[]
-{
     "covariant",
     "contravariant",
     "class",
     "struct",
     "new()"
-};
+  };
 
 
 }

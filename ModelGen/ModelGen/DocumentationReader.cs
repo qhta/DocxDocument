@@ -1,8 +1,4 @@
-﻿using System.Xml.Linq;
-
-using Namotion.Reflection;
-
-namespace ModelGen;
+﻿namespace ModelGen;
 
 public static class DocumentationReader
 {
@@ -102,66 +98,73 @@ public static class DocumentationReader
     return null;
   }
 
-  public static Metadata GetElementMetadata(XElement documentation)
+  public static ElementMetadata GetElementMetadata(XElement documentation)
   {
-    Metadata metadata = new Metadata();
+    ElementMetadata metadata = new ElementMetadata();
     var items = new List<XElement>();
     foreach (var xElement in documentation.Elements())
     {
       if (xElement.Name == "summary")
       {
-        foreach (var subElement in xElement.Elements())
+        if (xElement.HasElements)
         {
-          if (subElement.Name == "para")
+          foreach (var subElement in xElement.Elements())
           {
-            var text = subElement.Value.Trim();
-            if (text.StartsWith("Represents the following"))
+            if (subElement.Name == "para")
             {
-              int k = text.IndexOf(':');
-              if (k >= 0)
+              var text = subElement.Value.Trim();
+              if (text.StartsWith("Represents the following"))
               {
-                var tag = text.Substring(k + 1).Trim();
+                int k = text.IndexOf(':');
+                if (k >= 0)
+                {
+                  var tag = text.Substring(k + 1).Trim();
+                  if (tag.EndsWith('.'))
+                    tag = tag.Substring(0, tag.Length - 1).Trim();
+                  if (text.Contains("attribute"))
+                    metadata.SchemaIsAttrib = true;
+                  metadata.SchemaTag = tag;
+                }
+              }
+              else if (text.StartsWith("When the object is serialized out as xml, it's qualified name is "))
+              {
+                int k = "When the object is serialized out as xml, it's qualified name is ".Length;
+                var tag = text.Substring(k).Trim();
                 if (tag.EndsWith('.'))
                   tag = tag.Substring(0, tag.Length - 1).Trim();
-                if (text.Contains("attribute"))
-                  metadata.SchemaAttribute = tag;
-                else
-                  metadata.SchemaElement = tag;
+                metadata.SchemaTag = tag;
               }
-            }
-            else if (text.StartsWith("When the object is serialized out as xml, it's qualified name is "))
-            {
-              int k = "When the object is serialized out as xml, it's qualified name is ".Length;
-              text = text.Substring(k).Trim();
-              if (text.EndsWith('.'))
-                text = text.Substring(0, text.Length - 1).Trim();
-              metadata.SchemaElement = text;
-            }
-            else if (text.StartsWith("This class is available in "))
-            {
-              int k = "This class is available in ".Length;
-              text = text.Substring(k).Trim();
-              if (text.EndsWith('.'))
-                text = text.Substring(0, text.Length - 1).Trim();
-              metadata.Availability = text;
-            }
-            else
-            {
-              int k = text.IndexOf("this property is only available in ");
-              if (k >= 0)
+              else if (text.StartsWith("This class is available in "))
               {
-                k += "this property is only available in ".Length;
+                int k = "This class is available in ".Length;
                 text = text.Substring(k).Trim();
                 if (text.EndsWith('.'))
                   text = text.Substring(0, text.Length - 1).Trim();
                 metadata.Availability = text;
               }
               else
-                items.Add(subElement);
+              {
+                int k = text.IndexOf("this property is only available in ");
+                if (k >= 0)
+                {
+                  k += "this property is only available in ".Length;
+                  text = text.Substring(k).Trim();
+                  if (text.EndsWith('.'))
+                    text = text.Substring(0, text.Length - 1).Trim();
+                  metadata.Availability = text;
+                }
+                else
+                  items.Add(subElement);
+              }
             }
+            else
+              items.Add(subElement);
           }
-          else
-            items.Add(subElement);
+        }
+        else
+        {
+          var text = xElement.Value.Trim();
+          items.Add(new XElement("para", text));
         }
       }
       else if (xElement.Name == "remark")
@@ -187,7 +190,7 @@ public static class DocumentationReader
       //else
       //  ;
     }
-    if (items.Count == 1 && items.First().Name=="para")
+    if (items.Count == 1 && items.First().Name == "para")
     {
       metadata.SummaryText = items.First().Value;
     }

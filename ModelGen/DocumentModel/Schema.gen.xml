@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xsd:element type="DXW.Paragraph" xmlns:xsd="http://schemas.openxmlformats.org/drawingml/2006/main">
+      <xsd:sequence name="DXW.ParagraphProperties_DXW.CustomXmlRun_DXW.SimpleField_DXW.Hyperlink_DXW.SdtRun_DXW.CommonParaMark_DXW.BookmarkStart_DXW.BookmarkEnd_DXW.CommentRangeStart_DXW.CommentRangeEnd_DXW.MoveFromRangeStart_DXW.MoveFromRangeEnd_DXW.MoveToRangeStart_DXW.MoveToRangeEnd_DXW.CustomXmlInsRangeStart_DXW.CustomXmlInsRangeEnd_DXW.CustomXmlDelRangeStart_DXW.CustomXmlDelRangeEnd_DXW.CustomXmlMoveFromRangeStart_DXW.CustomXmlMoveFromRangeEnd_DXW.CustomXmlMoveToRangeStart_DXW.CustomXmlMoveToRangeEnd_DXO10W.CustomXmlConflictInsertionRangeStart_DXO10W.CustomXmlConflictInsertionRangeEnd_DXO10W.CustomXmlConflictDeletionRangeStart_DXO10W.CustomXmlConflictDeletionRangeEnd_DXW.RunMark_DXW.ContentPart_CommonParaMark_DXM.MathElement_DXW.Run_DXW.BidirectionalOverride_DXW.BidirectionalEmbedding_DXW.SubDocumentReference" required="True">
+        <xsd:element type="DXW.ParagraphProperties" required="False"/>
+        <xsd:group name="DXW.CustomXmlRun_DXW.SimpleField_DXW.Hyperlink_DXW.SdtRun_DXW.CommonParaMark_DXW.BookmarkStart_DXW.BookmarkEnd_DXW.CommentRangeStart_DXW.CommentRangeEnd_DXW.MoveFromRangeStart_DXW.MoveFromRangeEnd_DXW.MoveToRangeStart_DXW.MoveToRangeEnd_DXW.CustomXmlInsRangeStart_DXW.CustomXmlInsRangeEnd_DXW.CustomXmlDelRangeStart_DXW.CustomXmlDelRangeEnd_DXW.CustomXmlMoveFromRangeStart_DXW.CustomXmlMoveFromRangeEnd_DXW.CustomXmlMoveToRangeStart_DXW.CustomXmlMoveToRangeEnd_DXO10W.CustomXmlConflictInsertionRangeStart_DXO10W.CustomXmlConflictInsertionRangeEnd_DXO10W.CustomXmlConflictDeletionRangeStart_DXO10W.CustomXmlConflictDeletionRangeEnd_DXW.RunMark_DXW.ContentPart_CommonParaMark_DXM.MathElement_DXW.Run_DXW.BidirectionalOverride_DXW.BidirectionalEmbedding_DXW.SubDocumentReference" required="False" multiple="True">
+          <xsd:choice name="DXW.CustomXmlRun_DXW.SimpleField_DXW.Hyperlink_DXW.SdtRun_DXW.CommonParaMark_DXW.BookmarkStart_DXW.BookmarkEnd_DXW.CommentRangeStart_DXW.CommentRangeEnd_DXW.MoveFromRangeStart_DXW.MoveFromRangeEnd_DXW.MoveToRangeStart_DXW.MoveToRangeEnd_DXW.CustomXmlInsRangeStart_DXW.CustomXmlInsRangeEnd_DXW.CustomXmlDelRangeStart_DXW.CustomXmlDelRangeEnd_DXW.CustomXmlMoveFromRangeStart_DXW.CustomXmlMoveFromRangeEnd_DXW.CustomXmlMoveToRangeStart_DXW.CustomXmlMoveToRangeEnd_DXO10W.CustomXmlConflictInsertionRangeStart_DXO10W.CustomXmlConflictInsertionRangeEnd_DXO10W.CustomXmlConflictDeletionRangeStart_DXO10W.CustomXmlConflictDeletionRangeEnd_DXW.RunMark_DXW.ContentPart_CommonParaMark_DXM.MathElement_DXW.Run_DXW.BidirectionalOverride_DXW.BidirectionalEmbedding_DXW.SubDocumentReference" required="True">
+            <xsd:group name="DXW.CustomXmlRun_DXW.SimpleField_DXW.Hyperlink" required="False" multiple="True">
+              <xsd:choice name="DXW.CustomXmlRun_DXW.SimpleField_DXW.Hyperlink" required="True">
+                <xsd:element type="DXW.CustomXmlRun" required="True"/>
+                <xsd:element type="DXW.SimpleField" required="False" multiple="True"/>
+                <xsd:element type="DXW.Hyperlink" required="True"/>
+              </xsd:choice>
+            </xsd:group>
+            <xsd:group name="DXW.SdtRun_DXW.CommonParaMark_DXW.BookmarkStart_DXW.BookmarkEnd_DXW.CommentRangeStart_DXW.CommentRangeEnd_DXW.MoveFromRangeStart_DXW.MoveFromRangeEnd_DXW.MoveToRangeStart_DXW.MoveToRangeEnd_DXW.CustomXmlInsRangeStart_DXW.CustomXmlInsRangeEnd_DXW.CustomXmlDelRangeStart_DXW.CustomXmlDelRangeEnd_DXW.CustomXmlMoveFromRangeStart_DXW.CustomXmlMoveFromRangeEnd_DXW.CustomXmlMoveToRangeStart_DXW.CustomXmlMoveToRangeEnd_DXO10W.CustomXmlConflictInsertionRangeStart_DXO10W.CustomXmlConflictInsertionRangeEnd_DXO10W.CustomXmlConflictDeletionRangeStart_DXO10W.CustomXmlConflictDeletionRangeEnd_DXW.RunMark_DXW.ContentPart_CommonParaMark_DXM.MathElement_DXW.Run_DXW.BidirectionalOverride_DXW.BidirectionalEmbedding" required="False" multiple="True">
+              <xsd:choice name="DXW.SdtRun_DXW.CommonParaMark_DXW.BookmarkStart_DXW.BookmarkEnd_DXW.CommentRangeStart_DXW.CommentRangeEnd_DXW.MoveFromRangeStart_DXW.MoveFromRangeEnd_DXW.MoveToRangeStart_DXW.MoveToRangeEnd_DXW.CustomXmlInsRangeStart_DXW.CustomXmlInsRangeEnd_DXW.CustomXmlDelRangeStart_DXW.CustomXmlDelRangeEnd_DXW.CustomXmlMoveFromRangeStart_DXW.CustomXmlMoveFromRangeEnd_DXW.CustomXmlMoveToRangeStart_DXW.CustomXmlMoveToRangeEnd_DXO10W.CustomXmlConflictInsertionRangeStart_DXO10W.CustomXmlConflictInsertionRangeEnd_DXO10W.CustomXmlConflictDeletionRangeStart_DXO10W.CustomXmlConflictDeletionRangeEnd_DXW.RunMark_DXW.ContentPart_CommonParaMark_DXM.MathElement_DXW.Run_DXW.BidirectionalOverride_DXW.BidirectionalEmbedding" required="True">
+                <xsd:group name="DXW.SdtRun_DXW.CommonParaMark_DXW.BookmarkStart_DXW.BookmarkEnd_DXW.CommentRangeStart_DXW.CommentRangeEnd_DXW.MoveFromRangeStart_DXW.MoveFromRangeEnd_DXW.MoveToRangeStart_DXW.MoveToRangeEnd_DXW.CustomXmlInsRangeStart_DXW.CustomXmlInsRangeEnd_DXW.CustomXmlDelRangeStart_DXW.CustomXmlDelRangeEnd_DXW.CustomXmlMoveFromRangeStart_DXW.CustomXmlMoveFromRangeEnd_DXW.CustomXmlMoveToRangeStart_DXW.CustomXmlMoveToRangeEnd_DXO10W.CustomXmlConflictInsertionRangeStart_DXO10W.CustomXmlConflictInsertionRangeEnd_DXO10W.CustomXmlConflictDeletionRangeStart_DXO10W.CustomXmlConflictDeletionRangeEnd_DXW.RunMark_DXW.ContentPart_CommonParaMark_DXM.MathElement" required="False" multiple="True">
+                  <xsd:choice name="DXW.SdtRun_DXW.CommonParaMark_DXW.BookmarkStart_DXW.BookmarkEnd_DXW.CommentRangeStart_DXW.CommentRangeEnd_DXW.MoveFromRangeStart_DXW.MoveFromRangeEnd_DXW.MoveToRangeStart_DXW.MoveToRangeEnd_DXW.CustomXmlInsRangeStart_DXW.CustomXmlInsRangeEnd_DXW.CustomXmlDelRangeStart_DXW.CustomXmlDelRangeEnd_DXW.CustomXmlMoveFromRangeStart_DXW.CustomXmlMoveFromRangeEnd_DXW.CustomXmlMoveToRangeStart_DXW.CustomXmlMoveToRangeEnd_DXO10W.CustomXmlConflictInsertionRangeStart_DXO10W.CustomXmlConflictInsertionRangeEnd_DXO10W.CustomXmlConflictDeletionRangeStart_DXO10W.CustomXmlConflictDeletionRangeEnd_DXW.RunMark_DXW.ContentPart_CommonParaMark_DXM.MathElement" required="True">
+                    <xsd:element type="DXW.SdtRun" required="True"/>
+                    <xsd:group name="DXW.CommonParaMark_DXW.BookmarkStart_DXW.BookmarkEnd_DXW.CommentRangeStart_DXW.CommentRangeEnd_DXW.MoveFromRangeStart_DXW.MoveFromRangeEnd_DXW.MoveToRangeStart_DXW.MoveToRangeEnd_DXW.CustomXmlInsRangeStart_DXW.CustomXmlInsRangeEnd_DXW.CustomXmlDelRangeStart_DXW.CustomXmlDelRangeEnd_DXW.CustomXmlMoveFromRangeStart_DXW.CustomXmlMoveFromRangeEnd_DXW.CustomXmlMoveToRangeStart_DXW.CustomXmlMoveToRangeEnd_DXO10W.CustomXmlConflictInsertionRangeStart_DXO10W.CustomXmlConflictInsertionRangeEnd_DXO10W.CustomXmlConflictDeletionRangeStart_DXO10W.CustomXmlConflictDeletionRangeEnd_DXW.RunMark_DXW.ContentPart_CommonParaMark_DXM.MathElement" required="False" multiple="True">
+                      <xsd:choice name="DXW.CommonParaMark_DXW.BookmarkStart_DXW.BookmarkEnd_DXW.CommentRangeStart_DXW.CommentRangeEnd_DXW.MoveFromRangeStart_DXW.MoveFromRangeEnd_DXW.MoveToRangeStart_DXW.MoveToRangeEnd_DXW.CustomXmlInsRangeStart_DXW.CustomXmlInsRangeEnd_DXW.CustomXmlDelRangeStart_DXW.CustomXmlDelRangeEnd_DXW.CustomXmlMoveFromRangeStart_DXW.CustomXmlMoveFromRangeEnd_DXW.CustomXmlMoveToRangeStart_DXW.CustomXmlMoveToRangeEnd_DXO10W.CustomXmlConflictInsertionRangeStart_DXO10W.CustomXmlConflictInsertionRangeEnd_DXO10W.CustomXmlConflictDeletionRangeStart_DXO10W.CustomXmlConflictDeletionRangeEnd_DXW.RunMark_DXW.ContentPart_CommonParaMark_DXM.MathElement" required="True">
+                        <xsd:group name="DXW.CommonParaMark_DXW.BookmarkStart_DXW.BookmarkEnd_DXW.CommentRangeStart_DXW.CommentRangeEnd_DXW.MoveFromRangeStart_DXW.MoveFromRangeEnd_DXW.MoveToRangeStart_DXW.MoveToRangeEnd_DXW.CustomXmlInsRangeStart_DXW.CustomXmlInsRangeEnd_DXW.CustomXmlDelRangeStart_DXW.CustomXmlDelRangeEnd_DXW.CustomXmlMoveFromRangeStart_DXW.CustomXmlMoveFromRangeEnd_DXW.CustomXmlMoveToRangeStart_DXW.CustomXmlMoveToRangeEnd_DXO10W.CustomXmlConflictInsertionRangeStart_DXO10W.CustomXmlConflictInsertionRangeEnd_DXO10W.CustomXmlConflictDeletionRangeStart_DXO10W.CustomXmlConflictDeletionRangeEnd_DXW.RunMark_DXW.ContentPart_CommonParaMark" required="False" multiple="True">
+                          <xsd:choice name="DXW.CommonParaMark_DXW.BookmarkStart_DXW.BookmarkEnd_DXW.CommentRangeStart_DXW.CommentRangeEnd_DXW.MoveFromRangeStart_DXW.MoveFromRangeEnd_DXW.MoveToRangeStart_DXW.MoveToRangeEnd_DXW.CustomXmlInsRangeStart_DXW.CustomXmlInsRangeEnd_DXW.CustomXmlDelRangeStart_DXW.CustomXmlDelRangeEnd_DXW.CustomXmlMoveFromRangeStart_DXW.CustomXmlMoveFromRangeEnd_DXW.CustomXmlMoveToRangeStart_DXW.CustomXmlMoveToRangeEnd_DXO10W.CustomXmlConflictInsertionRangeStart_DXO10W.CustomXmlConflictInsertionRangeEnd_DXO10W.CustomXmlConflictDeletionRangeStart_DXO10W.CustomXmlConflictDeletionRangeEnd_DXW.RunMark_DXW.ContentPart_CommonParaMark" required="True">
+                            <xsd:group name="DXW.ProofPermMark" required="False" multiple="True">
+                              <xsd:choice name="DXW.ProofPermMark" required="True">
+                                <xsd:element type="DXW.ProofError" required="False"/>
+                                <xsd:element type="DXW.PermStart" required="False"/>
+                                <xsd:element type="DXW.PermEnd" required="False"/>
+                              </xsd:choice>
+                            </xsd:group>
+                            <xsd:group name="DXW.BookmarkStart_DXW.BookmarkEnd_DXW.CommentRangeStart_DXW.CommentRangeEnd_DXW.MoveFromRangeStart_DXW.MoveFromRangeEnd_DXW.MoveToRangeStart_DXW.MoveToRangeEnd_DXW.CustomXmlInsRangeStart_DXW.CustomXmlInsRangeEnd_DXW.CustomXmlDelRangeStart_DXW.CustomXmlDelRangeEnd_DXW.CustomXmlMoveFromRangeStart_DXW.CustomXmlMoveFromRangeEnd_DXW.CustomXmlMoveToRangeStart_DXW.CustomXmlMoveToRangeEnd_DXO10W.CustomXmlConflictInsertionRangeStart_DXO10W.CustomXmlConflictInsertionRangeEnd_DXO10W.CustomXmlConflictDeletionRangeStart_DXO10W.CustomXmlConflictDeletionRangeEnd" required="False" multiple="True">
+                              <xsd:choice name="DXW.BookmarkStart_DXW.BookmarkEnd_DXW.CommentRangeStart_DXW.CommentRangeEnd_DXW.MoveFromRangeStart_DXW.MoveFromRangeEnd_DXW.MoveToRangeStart_DXW.MoveToRangeEnd_DXW.CustomXmlInsRangeStart_DXW.CustomXmlInsRangeEnd_DXW.CustomXmlDelRangeStart_DXW.CustomXmlDelRangeEnd_DXW.CustomXmlMoveFromRangeStart_DXW.CustomXmlMoveFromRangeEnd_DXW.CustomXmlMoveToRangeStart_DXW.CustomXmlMoveToRangeEnd_DXO10W.CustomXmlConflictInsertionRangeStart_DXO10W.CustomXmlConflictInsertionRangeEnd_DXO10W.CustomXmlConflictDeletionRangeStart_DXO10W.CustomXmlConflictDeletionRangeEnd" required="True">
+                                <xsd:group name="DXW.BookmarkStart_DXW.BookmarkEnd_DXW.CommentRangeStart_DXW.CommentRangeEnd" required="False" multiple="True">
+                                  <xsd:choice name="DXW.BookmarkStart_DXW.BookmarkEnd_DXW.CommentRangeStart_DXW.CommentRangeEnd" required="True">
+                                    <xsd:element type="DXW.BookmarkStart" required="True"/>
+                                    <xsd:element type="DXW.BookmarkEnd" required="True"/>
+                                    <xsd:element type="DXW.CommentRangeStart" required="True"/>
+                                    <xsd:element type="DXW.CommentRangeEnd" required="True"/>
+                                  </xsd:choice>
+                                </xsd:group>
+                                <xsd:group name="DXW.MoveFromRangeStart_DXW.MoveFromRangeEnd_DXW.MoveToRangeStart_DXW.MoveToRangeEnd_DXW.CustomXmlInsRangeStart_DXW.CustomXmlInsRangeEnd_DXW.CustomXmlDelRangeStart_DXW.CustomXmlDelRangeEnd_DXW.CustomXmlMoveFromRangeStart_DXW.CustomXmlMoveFromRangeEnd_DXW.CustomXmlMoveToRangeStart_DXW.CustomXmlMoveToRangeEnd" required="False" multiple="True">
+                                  <xsd:choice name="DXW.MoveFromRangeStart_DXW.MoveFromRangeEnd_DXW.MoveToRangeStart_DXW.MoveToRangeEnd_DXW.CustomXmlInsRangeStart_DXW.CustomXmlInsRangeEnd_DXW.CustomXmlDelRangeStart_DXW.CustomXmlDelRangeEnd_DXW.CustomXmlMoveFromRangeStart_DXW.CustomXmlMoveFromRangeEnd_DXW.CustomXmlMoveToRangeStart_DXW.CustomXmlMoveToRangeEnd" required="True">
+                                    <xsd:element type="DXW.MoveFromRangeStart" required="True"/>
+                                    <xsd:element type="DXW.MoveFromRangeEnd" required="True"/>
+                                    <xsd:element type="DXW.MoveToRangeStart" required="True"/>
+                                    <xsd:element type="DXW.MoveToRangeEnd" required="True"/>
+                                    <xsd:element type="DXW.CustomXmlInsRangeStart" required="True"/>
+                                    <xsd:element type="DXW.CustomXmlInsRangeEnd" required="True"/>
+                                    <xsd:element type="DXW.CustomXmlDelRangeStart" required="True"/>
+                                    <xsd:element type="DXW.CustomXmlDelRangeEnd" required="True"/>
+                                    <xsd:element type="DXW.CustomXmlMoveFromRangeStart" required="True"/>
+                                    <xsd:element type="DXW.CustomXmlMoveFromRangeEnd" required="True"/>
+                                    <xsd:element type="DXW.CustomXmlMoveToRangeStart" required="True"/>
+                                    <xsd:element type="DXW.CustomXmlMoveToRangeEnd" required="True"/>
+                                  </xsd:choice>
+                                </xsd:group>
+                                <xsd:element type="DXO10W.CustomXmlConflictInsertionRangeStart" required="False"/>
+                                <xsd:element type="DXO10W.CustomXmlConflictInsertionRangeEnd" required="False"/>
+                                <xsd:element type="DXO10W.CustomXmlConflictDeletionRangeStart" required="False"/>
+                                <xsd:element type="DXO10W.CustomXmlConflictDeletionRangeEnd" required="False"/>
+                              </xsd:choice>
+                            </xsd:group>
+                            <xsd:element type="DXW.InsertedRun" required="False"/>
+                            <xsd:element type="DXW.DeletedRun" required="False"/>
+                            <xsd:element type="DXW.MoveFromRun" required="True"/>
+                            <xsd:element type="DXW.MoveToRun" required="True"/>
+                            <xsd:element type="DXW.ContentPart" required="False" multiple="True"/>
+                            <xsd:sequence name="DXO10W.RunConflictMark" required="False">
+                              <xsd:element type="DXO10W.RunConflictInsertion" required="False"/>
+                              <xsd:element type="DXO10W.RunConflictDeletion" required="False"/>
+                            </xsd:sequence>
+                          </xsd:choice>
+                        </xsd:group>
+                        <xsd:group name="DXM.MathElement" required="False" multiple="True">
+                          <xsd:choice name="DXM.MathElement" required="True">
+                            <xsd:element type="DXM.Paragraph" required="True"/>
+                            <xsd:element type="DXM.OfficeMath" required="True"/>
+                            <xsd:choice name="DXM.MathOp" required="True">
+                              <xsd:element type="DXM.Accent" required="True"/>
+                              <xsd:element type="DXM.Bar" required="True"/>
+                              <xsd:element type="DXM.Box" required="True"/>
+                              <xsd:element type="DXM.BorderBox" required="True"/>
+                              <xsd:element type="DXM.Delimiter" required="True"/>
+                              <xsd:element type="DXM.EquationArray" required="True"/>
+                              <xsd:element type="DXM.Fraction" required="True"/>
+                              <xsd:element type="DXM.MathFunction" required="True"/>
+                              <xsd:element type="DXM.GroupChar" required="True"/>
+                              <xsd:element type="DXM.LimitLower" required="True"/>
+                              <xsd:element type="DXM.LimitUpper" required="True"/>
+                              <xsd:element type="DXM.Matrix" required="True"/>
+                              <xsd:element type="DXM.Nary" required="True"/>
+                              <xsd:element type="DXM.Phantom" required="True"/>
+                              <xsd:element type="DXM.Radical" required="True"/>
+                              <xsd:element type="DXM.PreSubSuper" required="True"/>
+                              <xsd:element type="DXM.Subscript" required="True"/>
+                              <xsd:element type="DXM.SubSuperscript" required="True"/>
+                              <xsd:element type="DXM.Superscript" required="True"/>
+                              <xsd:choice name="DXM.Run" required="True">
+                                <xsd:element type="DXM.Run" required="True"/>
+                              </xsd:choice>
+                            </xsd:choice>
+                          </xsd:choice>
+                        </xsd:group>
+                      </xsd:choice>
+                    </xsd:group>
+                  </xsd:choice>
+                </xsd:group>
+                <xsd:choice name="DXW.Run" required="True">
+                  <xsd:element type="DXW.Run" required="True"/>
+                </xsd:choice>
+                <xsd:element type="DXW.BidirectionalOverride" required="False"/>
+                <xsd:element type="DXW.BidirectionalEmbedding" required="False"/>
+              </xsd:choice>
+            </xsd:group>
+            <xsd:element type="DXW.SubDocumentReference" required="True"/>
+          </xsd:choice>
+        </xsd:group>
+      </xsd:sequence>
+</xsd:element>

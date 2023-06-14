@@ -8,7 +8,7 @@ namespace ModelGenApp.Commands
 
     public Start(Commander commander)
     {
-      Commander = commander;  
+      Commander = commander;
     }
 
     public bool CanExecute(object? parameter)
@@ -20,7 +20,7 @@ namespace ModelGenApp.Commands
     {
 
     }
-
+#pragma warning disable CS0067
     public event EventHandler? CanExecuteChanged;
   }
 }

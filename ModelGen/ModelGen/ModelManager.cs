@@ -513,14 +513,6 @@ public static class ModelManager
   public static bool ValidateType(this TypeInfo typeInfo)
   {
     var isValid = true;
-    //if (typeInfo.Name.StartsWith("Nullable`"))
-    //{
-    //  var arg = typeInfo.GetGenericArgTypes().FirstOrDefault();
-    //  if (arg != null)
-    //  {
-
-    //  }
-    //}
     if (!ValidateProperties(typeInfo))
       isValid = false;
     return isValid;
