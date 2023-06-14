@@ -1,7 +1,7 @@
 ﻿namespace ModelGenRun;
 public static class Program
 {
-  static DocumentFormat.OpenXml.Wordprocessing.Paragraph dummy;
+  //static DocumentFormat.OpenXml.Wordprocessing.Paragraph dummy;
   public static void Main(string[] args)
   {
     GenerateModelTypes(typeof(DocumentFormat.OpenXml.Packaging.WordprocessingDocument), 
@@ -13,7 +13,7 @@ public static class Program
         TypesLimit = 0,
         DetailsLimit = 0,
         TypeStatusSelector = MSS.Accepted,
-        TypeDataSelector = /*TDS.Metadata |*/ TDS.ElementSchema /*|TDS.BaseTypes | TDS.Properties | TDS.EnumValues*/
+        TypeDataSelector = /*TDS.Metadata | TDS.BaseTypes | TDS.Properties | TDS.EnumValues*/ TDS.ElementSchema | TDS.OutgoingRelationships
       });
     //GenerateTypeConverters(typeof(DocumentFormat.OpenXml.Packaging.WordprocessingDocument));
   }

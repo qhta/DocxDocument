@@ -1,5 +1,8 @@
 ﻿namespace ModelGen;
 
+/// <summary>
+/// Abstract <see cref="SchemaParticle"/> which holds item particles.
+/// </summary>
 public abstract class ItemsParticle : SchemaParticle
 {
   public Collection<SchemaParticle> Items { get; } = new Collection<SchemaParticle>();
