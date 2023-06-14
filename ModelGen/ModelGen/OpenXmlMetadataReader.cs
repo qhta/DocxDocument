@@ -1,11 +1,8 @@
 ﻿using DocumentFormat.OpenXml;
-using DocumentFormat.OpenXml.Drawing;
+
 using DXFwork = DocumentFormat.OpenXml.Framework;
 using DXMeta = DocumentFormat.OpenXml.Framework.Metadata;
 using DXSchema = DocumentFormat.OpenXml.Validation.Schema;
-
-using Qhta.TextUtils;
-using System.Reflection;
 
 namespace ModelGen;
 
@@ -165,6 +162,7 @@ public static class OpenXmlMetadataReader
   /// Creates <see cref="ItemElementParticle"/> basing on OpenXml <see cref="DXFwork.ElementParticle"/>.
   /// Creates elementTypeInfo by registering elementType.
   /// Adds "include" relationship between owner type info with possible isMultiple flag.
+  /// Adds missing property when the relationship is not multiple.
   /// Sets the name of the result particle basing on element schemaTag or element type name
   /// </summary>
   /// <param name="ownerTypeInfo">Type info for which the particle is processed</param>
@@ -184,18 +182,25 @@ public static class OpenXmlMetadataReader
     var elementTypeInfo = TypeManager.RegisterType(elementType);
     if (elementTypeInfo != null)
     {
+      schemaParticle.ItemType = elementTypeInfo;
       var itemTypeRelation = ownerTypeInfo.AddRelationship(elementTypeInfo, Semantics.Include);
       itemTypeRelation.IsMultiple = isMultiple;
-      schemaParticle.ItemType = elementTypeInfo;
+      if (!isMultiple)
+      {
+        var accessProperty = ownerTypeInfo.Properties?.FirstOrDefault(item => item.PropertyType == elementTypeInfo);
+        if (accessProperty == null)
+        {
+          accessProperty = new PropInfo(elementTypeInfo.Name, elementTypeInfo);
+          Debug.Assert(ownerTypeInfo.Properties != null);
+          ownerTypeInfo.Properties.Add(accessProperty);
+        }
+      }
     }
-    var name = schemaParticle.ItemType.Metadata?.SchemaTag ?? schemaParticle.ItemType.Name;
-    schemaParticle.Name = name;
     return schemaParticle;
   }
 
   /// <summary>
   /// Creates <see cref="SchemaParticle"/> basing on OpenXml <see cref="DXFwork.CompositeParticle"/>.
-  /// Sets name of the created particle basing on <see cref="ModelData"/> class.
   /// </summary>
   /// <param name="ownerTypeInfo">Type info for which the particle is processed</param>
   /// <param name="compositeParticle">Processed OpenXml composite particle</param>
@@ -214,15 +219,47 @@ public static class OpenXmlMetadataReader
       if (itemParticle != null)
         schemaParticle.Items.Add(itemParticle);
     }
-    if (schemaParticle.ParticleType == ParticleType.Choice)
-      SetItemsParticleName(schemaParticle);
-    else
-    if (schemaParticle.ParticleType == ParticleType.Sequence)
-      SetItemsParticleName(schemaParticle);
-    else
-    if (schemaParticle.ParticleType == ParticleType.Group)
-      SetGroupParticleName(schemaParticle);
     return schemaParticle;
+  }
+
+  #endregion
+
+  #region SchemaParticle set name methods
+
+  /// <summary>
+  /// Evaluate names for all particles.
+  /// </summary>
+  /// <param name="elementSchema"></param>
+  public static void Rename(this ElementSchema elementSchema)
+  {
+    SetParticleName(elementSchema.Main);
+  }
+
+  /// <summary>
+  ///   Sets name of the created particle basing on <see cref="ModelData"/> class.
+  /// </summary>
+  /// <param name="schemaParticle"></param>
+  /// <returns></returns>
+  public static string? SetParticleName(this SchemaParticle schemaParticle)
+  {
+    if (schemaParticle is ItemElementParticle itemElementParticle)
+    {
+      schemaParticle.Name = itemElementParticle.ItemType.Metadata?.SchemaTag ?? itemElementParticle.ItemType.Name;
+      return schemaParticle.Name;
+    }
+    else
+    if (schemaParticle is ItemsParticle itemsParticle)
+    {
+      if (schemaParticle.ParticleType == ParticleType.Choice)
+        return SetItemsParticleName(itemsParticle);
+      else
+      if (schemaParticle.ParticleType == ParticleType.Sequence)
+        return SetItemsParticleName(itemsParticle);
+      else
+      if (schemaParticle.ParticleType == ParticleType.Group)
+        return SetGroupParticleName(itemsParticle);
+    }
+    return null;
   }
 
   /// <summary>
@@ -417,7 +454,6 @@ public static class OpenXmlMetadataReader
           propInfo.IsEnum = true;
         else
           throw new System.InvalidOperationException($"Unexpected simple type name \"{argType.Name}\"");
-        //CreateConstraints(propInfo, unionValidator.Validators);
       }
       else
       if (validator is DXFwork.OfficeVersionValidator)
@@ -428,8 +464,7 @@ public static class OpenXmlMetadataReader
       if (validator is DXFwork.NameProviderValidator nameProviderValidator)
       {
         propInfo.RealTypeName = nameProviderValidator.QName.ToString();
-        //if (Assembly.Load("System").GetType(propInfo.RealTypeName)==null)
-        if (!KnownRealTypes.Contains(propInfo.RealTypeName))
+        if (!ModelData.KnownRealTypes.Contains(propInfo.RealTypeName))
           throw new System.InvalidOperationException($"Unknown real type name \"{propInfo.RealTypeName}\"");
       }
       else
@@ -444,11 +479,5 @@ public static class OpenXmlMetadataReader
     }
   }
 
-  public static string[] KnownRealTypes = new string[] 
-  {
-    "Int64","Int32","UInt32","Double","Boolean",
-    "http://www.w3.org/2001/XMLSchema:hexBinary",
-    "http://www.w3.org/2001/XMLSchema:integer",
-  };
   #endregion
 }

@@ -22,7 +22,7 @@ public class PropInfo : ModelElement
   public bool IsRequired { get; set; }
   public bool IsEnum { get; set; }
   public bool IsList { get; set; }
-  public string RealTypeName { get; set; }
+  public string? RealTypeName { get; set; }
   public Constraints? Constraints { get; set; }
 
   ///// <summary>
