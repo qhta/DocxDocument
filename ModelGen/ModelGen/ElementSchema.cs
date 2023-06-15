@@ -6,10 +6,40 @@
 /// </summary>
 public class ElementSchema
 {
-  public ElementSchema(SchemaParticle schemaParticle)
+  /// <summary>
+  /// Attribute/Element tag in schema.
+  /// </summary>
+  public string? SchemaTag { get; set; }
+
+  /// <summary>
+  /// SchemaTag is attrib
+  /// </summary>
+  public bool SchemaIsAttrib { get; set; }
+
+  /// <summary>
+  /// Prefix extracted from SchemaTag
+  /// </summary>
+  public string? SchemaPrefix
   {
-    Main = schemaParticle;
+    get
+    {
+      if (SchemaTag != null)
+      {
+        var k = SchemaTag.IndexOf(':');
+        if (k>0)
+          return SchemaTag.Substring(0, k);
+      }
+      return null;
+    }
   }
 
-  public SchemaParticle Main { get; set; }
+  /// <summary>
+  /// Url for the schema tag namespace.
+  /// </summary>
+  public string? SchemaUrl { get; set; }
+
+  /// <summary>
+  /// Main particle in compound element
+  /// </summary>
+  public SchemaParticle? Main { get; set; }
 }

@@ -168,14 +168,12 @@ public static class TypeReflector
 
     var xmlDocsElement = type.GetXmlDocsElement();
     if (xmlDocsElement != null)
-    {
-      typeInfo.Metadata = DocumentationReader.GetElementMetadata(xmlDocsElement);
-    }
+      DocumentationReader.ParseDocumentation(typeInfo, xmlDocsElement);
 
-    typeInfo.Schema = OpenXmlMetadataReader.GetElementSchema(typeInfo);
+    OpenXmlMetadataReader.GetOpenXmlElementSchema(typeInfo);
 
     if (typeInfo.Schema != null)
-      ScanElementSchema(typeInfo, typeInfo.Schema);
+      ProcessElementSchema(typeInfo, typeInfo.Schema);
     /*
     else
     {
@@ -216,14 +214,15 @@ public static class TypeReflector
     //  typeInfo.CustomAttributes.Add(new CustomAttribData(item));
   }
 
-  public static void ScanElementSchema(this TypeInfo typeInfo, ElementSchema constraint)
+  public static void ProcessElementSchema(this TypeInfo typeInfo, ElementSchema schema)
   {
     //if (typeInfo.Name == "DocParts")
     //  Debug.Assert(true);
-    ScanSchemaParticle(typeInfo, constraint.Main);
+    if (schema.Main!=null)
+      ProcessSchemaParticle(typeInfo, schema.Main);
   }
 
-  public static void ScanSchemaParticle(this TypeInfo typeInfo, SchemaParticle particle)
+  public static void ProcessSchemaParticle(this TypeInfo typeInfo, SchemaParticle particle)
   {
     if (particle is ItemElementParticle itemElementParticle)
     {
@@ -257,7 +256,7 @@ public static class TypeReflector
   public static void ScanItemsParticle(this TypeInfo typeInfo, ItemsParticle particle)
   {
     foreach (var item in particle.Items)
-      ScanSchemaParticle(typeInfo, item);
+      ProcessSchemaParticle(typeInfo, item);
   }
 
   public static PropInfo? CreateProperty(this TypeInfo typeInfo, ItemElementParticle particle)

@@ -1,11 +1,13 @@
 ﻿namespace ModelGenRun;
 public static class Program
 {
-  //static DocumentFormat.OpenXml.Wordprocessing.Paragraph dummy;
+  static DocumentFormat.OpenXml.Wordprocessing.Zoom dummy;
   public static void Main(string[] args)
   {
     GenerateModelTypes(typeof(DocumentFormat.OpenXml.Packaging.WordprocessingDocument), 
-      MDS.ScannedNamespaces/* | MDS.ScanValidation | MDS.ScannedTypes*/ ,
+      MDS.ScannedNamespaces
+      //| MDS.ScanValidation 
+      | MDS.ScannedTypes ,
       new DisplayOptions
       { Namespaces = new string[]{ "*.Wordprocessing"},
         TypeKindSelector = TKS.Class,
@@ -13,7 +15,13 @@ public static class Program
         TypesLimit = 0,
         DetailsLimit = 0,
         TypeStatusSelector = MSS.Accepted,
-        TypeDataSelector = /*TDS.Metadata | TDS.BaseTypes | TDS.Properties | TDS.EnumValues*/ TDS.ElementSchema | TDS.OutgoingRelationships
+        TypeDataSelector = 0
+                          | TDS.Metadata 
+                          | TDS.BaseTypes
+                          | TDS.Properties 
+                          //| TDS.EnumValues 
+                          //| TDS.ElementSchema 
+                          //| TDS.OutgoingRelationships
       });
     //GenerateTypeConverters(typeof(DocumentFormat.OpenXml.Packaging.WordprocessingDocument));
   }

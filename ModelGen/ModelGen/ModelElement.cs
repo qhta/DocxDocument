@@ -83,7 +83,17 @@ public class ModelElement: IOwnedElement
   /// <summary>
   /// Xml documentation assigned to this element.
   /// </summary>
-  public virtual ElementMetadata? Metadata { get; set; }
+  public virtual ElementDocs? Documentation { get; set; }
+
+  /// <summary>
+  /// Schema for OpenXml format
+  /// </summary>
+  public ElementSchema? Schema { get; set; }
+
+  /// <summary>
+  /// Version of Office when the element is available.
+  /// </summary>
+  public string? Availability { get; set; }
 
   /// <summary>
   /// Custom attributes assigned to this element

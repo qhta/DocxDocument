@@ -78,8 +78,6 @@ public class TypeInfo : ModelElement
     return false;
   }
 
-  public ElementSchema? Schema { get; set; }
-
   public bool UsesEvaluated { get; set; }
   public int AcceptedPropsCount { get; set; }
 

@@ -14,6 +14,7 @@
           "ModelGen": "1.0.0",
           "Namotion.Reflection": "2.1.2",
           "Qhta.HtmlUtils": "1.0.1",
+          "Qhta.TestHelper": "2.2.0",
           "Snork.TextWrap": "1.0.1301",
           "System.IO.Packaging": "7.0.0"
         },
@@ -142,11 +143,11 @@
           }
         }
       },
-      "Qhta.TestHelper/2.1.0": {
+      "Qhta.TestHelper/2.2.0": {
         "runtime": {
           "lib/net6.0/Qhta.TestHelper.dll": {
-            "assemblyVersion": "2.1.0.0",
-            "fileVersion": "2.1.0.0"
+            "assemblyVersion": "2.2.0.0",
+            "fileVersion": "2.2.0.0"
           }
         }
       },
@@ -881,6 +882,7 @@
           "DocumentModel.Attributes": "1.0.0",
           "Namotion.Reflection": "2.1.2",
           "Qhta.HtmlUtils": "1.0.1",
+          "Qhta.TestHelper": "2.2.0",
           "Qhta.Xml.Serialization.Attributes": "1.0.0",
           "Snork.TextWrap": "1.0.1301",
           "System.IO.Packaging": "7.0.0"
@@ -926,7 +928,7 @@
         "dependencies": {
           "Qhta.Collections": "2.0.0",
           "Qhta.Conversion": "1.0.0",
-          "Qhta.TestHelper": "2.1.0",
+          "Qhta.TestHelper": "2.2.0",
           "Qhta.TextUtils": "3.1.1",
           "Qhta.TypeUtils": "1.3.8.1",
           "Qhta.Xml": "1.0.0",
@@ -1043,12 +1045,12 @@
       "path": "qhta.htmlutils/1.0.1",
       "hashPath": "qhta.htmlutils.1.0.1.nupkg.sha512"
     },
-    "Qhta.TestHelper/2.1.0": {
+    "Qhta.TestHelper/2.2.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-DWg1nByNXaUsRqUglxPcZOjRdz/F8FT9TjgzlQveA79cgO6v5mDereemRZ6WVQzaRMM1QbPCsh+tByIEO2tcag==",
-      "path": "qhta.testhelper/2.1.0",
-      "hashPath": "qhta.testhelper.2.1.0.nupkg.sha512"
+      "sha512": "sha512-BHE3QymuDXMf2aKqBrPCuXDJvqniP9AzmUXJklCk5O/2eN3QzFy3weuI4SK0+quPlEfVY/lRQPGSH/7I6zcAww==",
+      "path": "qhta.testhelper/2.2.0",
+      "hashPath": "qhta.testhelper.2.2.0.nupkg.sha512"
     },
     "Qhta.TextUtils/3.1.1": {
       "type": "package",

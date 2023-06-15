@@ -1,7 +1,4 @@
-﻿using DocumentFormat.OpenXml.Bibliography;
-using DocumentFormat.OpenXml.Validation.Schema;
-
-using Namotion.Reflection;
+﻿using Namotion.Reflection;
 
 namespace ModelGen;
 
@@ -37,10 +34,10 @@ public class PropInfo : ModelElement
   /// <summary>
   /// Xml documentation assigned to this element.
   /// </summary>
-  public override ElementMetadata? Metadata 
+  public override ElementDocs? Documentation 
   {
-    get => base.Metadata ?? DeclaringType?.Metadata;
-    set => base.Metadata = value;
+    get => base.Documentation ?? DeclaringType?.Documentation;
+    set => base.Documentation = value;
   }
 
   public PropInfo(string name, Type type) : base(name)
@@ -73,7 +70,7 @@ public class PropInfo : ModelElement
       IsAccepted = false;
     var xmlDocsElement = propertyInfo.GetXmlDocsElement();
     if (xmlDocsElement != null)
-      Metadata = DocumentationReader.GetElementMetadata(xmlDocsElement);
+      DocumentationReader.ParseDocumentation(this, xmlDocsElement);
     foreach (var item in propertyInfo.CustomAttributes)
       CustomAttributes.Add(new CustomAttribInfo(item));
   }
