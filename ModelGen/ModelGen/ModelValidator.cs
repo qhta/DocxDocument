@@ -28,8 +28,6 @@ public class ModelValidator
   public int CheckedTypesCount { get; private set; }
   public int NoDocsTypesCount { get; private set; }
   public int NoSummaryTypesCount { get; private set; }
-  public int NoSchemaTagTypesCount { get; private set; }
-  public int NoSchemaUrlTypesCount { get; private set; }
   public int ValidTypesCount { get; private set; }
 
   public event ValidatingTypeEvent? OnValidatingType;
@@ -74,28 +72,14 @@ public class ModelValidator
 
   public bool ValidateDocumentation(TypeInfo typeInfo)
   {
-    var metadata = typeInfo.Metadata;
-    if (metadata != null)
+    var documentation = typeInfo.Documentation;
+    if (documentation != null)
     {
       bool ok = true;
-      if (metadata.Summary == null)
+      if (documentation.Summary == null)
       {
         NoSummaryTypesCount++;
         ok = false;
-      }
-      if (metadata.SchemaTag != null)
-      {
-        if (metadata.SchemaPrefix != null)
-        {
-          if (metadata.SchemaUrl == null)
-          {
-            NoSchemaUrlTypesCount++;
-          }
-        }
-      }
-      else
-      {
-        NoSchemaTagTypesCount++;
       }
       return ok;
     }

@@ -166,6 +166,10 @@
               "target": "Package",
               "version": "[1.0.1, )"
             },
+            "Qhta.TestHelper": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Snork.TextWrap": {
               "target": "Package",
               "version": "[1.0.1301, )"
@@ -322,6 +326,10 @@
             "Qhta.HtmlUtils": {
               "target": "Package",
               "version": "[1.0.1, )"
+            },
+            "Qhta.TestHelper": {
+              "target": "Package",
+              "version": "[2.2.0, )"
             },
             "Snork.TextWrap": {
               "target": "Package",

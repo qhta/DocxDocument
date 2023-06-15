@@ -197,7 +197,7 @@
           "lib/netstandard2.0/Qhta.HtmlUtils.dll": {}
         }
       },
-      "Qhta.TestHelper/2.1.0": {
+      "Qhta.TestHelper/2.2.0": {
         "type": "package",
         "compile": {
           "lib/net6.0/Qhta.TestHelper.dll": {
@@ -1552,6 +1552,7 @@
           "DocumentModel.Attributes": "1.0.0",
           "Namotion.Reflection": "2.1.2",
           "Qhta.HtmlUtils": "1.0.1",
+          "Qhta.TestHelper": "2.2.0",
           "Qhta.Xml.Serialization.Attributes": "1.0.0",
           "Snork.TextWrap": "1.0.1301",
           "System.IO.Packaging": "7.0.0"
@@ -1973,18 +1974,19 @@
         "qhta.htmlutils.nuspec"
       ]
     },
-    "Qhta.TestHelper/2.1.0": {
-      "sha512": "DWg1nByNXaUsRqUglxPcZOjRdz/F8FT9TjgzlQveA79cgO6v5mDereemRZ6WVQzaRMM1QbPCsh+tByIEO2tcag==",
+    "Qhta.TestHelper/2.2.0": {
+      "sha512": "BHE3QymuDXMf2aKqBrPCuXDJvqniP9AzmUXJklCk5O/2eN3QzFy3weuI4SK0+quPlEfVY/lRQPGSH/7I6zcAww==",
       "type": "package",
-      "path": "qhta.testhelper/2.1.0",
+      "path": "qhta.testhelper/2.2.0",
       "files": [
         ".nupkg.metadata",
         "lib/net6.0/Qhta.TestHelper.dll",
         "lib/net6.0/Qhta.TestHelper.xml",
         "lib/net7.0/Qhta.TestHelper.dll",
         "lib/net7.0/Qhta.TestHelper.xml",
-        "qhta.testhelper.2.1.0.nupkg.sha512",
-        "qhta.testhelper.nuspec"
+        "qhta.testhelper.2.2.0.nupkg.sha512",
+        "qhta.testhelper.nuspec",
+        "readme.md"
       ]
     },
     "Qhta.TextUtils/3.1.1": {

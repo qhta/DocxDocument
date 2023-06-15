@@ -11,16 +11,17 @@ public class DocumentationWriter
   /// <param name="writer">.</param>
   /// <param name="lineIndent">Start line indent to subtract from lineWrapLimit.</param>
   /// <param name="lineWrapLimit">Maximum length of line to wrap text. If 0 then .ext is not wrapped.</param>
-  public DocumentationWriter(ITextWriter writer, int lineIndent, int lineWrapLimit)
+  public DocumentationWriter(TextWriter writer, int lineIndent, int lineWrapLimit)
   {
     Writer = writer;
     LineIndent = lineIndent;
     LineWrapLimit = lineWrapLimit;
   }
+
   /// <summary>
   /// Text writer to write lines of text
   /// </summary>
-  public ITextWriter Writer { get; }
+  public TextWriter Writer { get; }
 
   /// <summary>
   /// Start line indent to subtract from lineWrapLimit.

@@ -1,11 +1,5 @@
 ﻿using System.Collections.Immutable;
-using System.Runtime.Serialization;
-using System.Text.Encodings.Web;
 using System.Xml.Linq;
-
-using DocumentFormat.OpenXml.ExtendedProperties;
-
-using ModelGen;
 
 namespace ModelGenRun;
 
@@ -457,85 +451,84 @@ public class ModelDisplay : IModelMonitor
 
   public void ShowMetadata(ModelElement element, DisplayOptions options)
   {
-    var metadata = element.Metadata;
-    if (metadata == null)
-      return;
-    Writer.WriteLine();
-    if (metadata.Summary != null)
+    var documentation = element.Documentation;
+    if (documentation != null)
     {
-      var documentationWriter = new DocumentationWriter(Writer, Writer.IndentLevel * Writer.IndentSize, options.LineWidthLimit);
-      documentationWriter.Write(metadata.Summary);
+      Writer.WriteLine();
+      foreach (var item in documentation)
+      {
+        var documentationWriter = new DocumentationWriter(Writer, Writer.IndentLevel * Writer.IndentSize, options.LineWidthLimit);
+        documentationWriter.Write(item);
+      }
     }
-    if (metadata.SchemaTag != null)
+    var schema = element.Schema;
+    if (schema != null)
     {
-      var isAttribStr = "";
-      if (metadata.SchemaIsAttrib)
-        isAttribStr = " isAttrib=\"true\"";
-      Writer.WriteLine($"/// <schemaTag{isAttribStr}>{metadata.SchemaTag}</schemaTag>");
+      if (schema.SchemaTag != null)
+      {
+        var isAttribStr = "";
+        if (schema.SchemaIsAttrib)
+          isAttribStr = " isAttrib=\"true\"";
+        Writer.WriteLine($"/// <schemaTag{isAttribStr}>{schema.SchemaTag}</schemaTag>");
+      }
+      if (schema.SchemaUrl != null)
+        Writer.WriteLine($"/// <schemaUrl>{schema.SchemaUrl}</schemaUrl>");
     }
-    if (metadata.SchemaUrl != null)
-      Writer.WriteLine($"/// <schemaUrl>{metadata.SchemaUrl}</schemaUrl>");
-    if (metadata.Availability != null)
-      Writer.WriteLine($"/// <availability>{metadata.Availability}</availability>");
+    if (element.Availability != null)
+      Writer.WriteLine($"/// <availability>{element.Availability}</availability>");
+    if (element is PropInfo propInfo)
+    {
+      if (propInfo.IsRequired)
+        Writer.WriteLine($"/// <isRequired>True</isRequired>");
+      if (propInfo.IsEnum)
+        Writer.WriteLine($"/// <isEnum>True</isEnum>");
+      if (propInfo.IsList)
+        Writer.WriteLine($"/// <isList>True</isList>");
+      if (propInfo.RealTypeName != null)
+        Writer.WriteLine($"/// <realTypeName>{propInfo.RealTypeName}</realTypeName>");
+      if (propInfo.IsConstrained)
+        Writer.WriteLine($"/// <isConstrained>True</isConstrained>");
+      if (propInfo.Constraints!=null)
+        foreach (var constraint in propInfo.Constraints)
+        {
+          if (constraint is StringConstraint stringConstraint)
+            ShowStringConstraint(stringConstraint);
+          else
+          if (constraint is NumberConstraint numberConstraint)
+            ShowNumberConstraint(numberConstraint);
+        }
+    }
   }
 
-  //  public void ShowDocumentation(ModelElement element, DisplayOptions options)
-  //{
-  //  var xElement = element.Documentation;
-  //  if (xElement != null)
-  //  {
-  //    Writer.WriteLine();
-  //    foreach (var subElement in xElement.Elements())
-  //      ShowDocumentationElement(subElement, options);
-  //  }
-  //}
-
-  private void ShowDocumentationElement(XElement xElement, DisplayOptions options, int indent = 0)
+  private void ShowStringConstraint(StringConstraint stringConstraint)
   {
-    var indentStr = new String(' ', indent * 2);
-    var header = xElement.Name.ToString();
-    foreach (var attribute in xElement.Attributes())
-    {
-      header += $" {attribute.Name}=\"{attribute.Value}\"";
-    }
-    string? text = null;
-    if (!xElement.HasElements)
-    {
-      text = xElement.Value.Trim();
-      text = Qhta.HtmlUtils.HtmlTextUtils.EncodeHtmlEntities(text);
-      if (text == "")
-      {
-        Writer.WriteLine($"/// {indentStr}<{header}/>");
-        return;
-      }
-      else if (header == "c" || header == "remark")
-      {
-        Writer.WriteLine($"/// {indentStr}<{header}>{text}</{xElement.Name}>");
-        return;
-      }
-    }
-
-    Writer.WriteLine($"/// {indentStr}<{header}>");
-    if (xElement.HasElements)
-    {
-      foreach (var subElement in xElement.Elements())
-        ShowDocumentationElement(subElement, options, indent + 1);
-    }
-    else if (text != null)
-    {
-      if (options.LineWidthLimit > 0)
-      {
-        var wrapLimit = options.LineWidthLimit - 4 - Writer.IndentSize * Writer.IndentLevel;
-        List<string> lines = Snork.TextWrap.TextWrapper.Wrap(text, wrapLimit);
-        foreach (var line in lines)
-          Writer.WriteLine($"/// {indentStr + "  "}{line}");
-      }
-      else
-        Writer.WriteLine($"/// {indentStr + "  "}{text}");
-    }
-    Writer.WriteLine($"/// {indentStr}</{xElement.Name}>");
+    var attribs = new List<string>();
+    if (stringConstraint.MinLength != null)
+      attribs.Add($" minLength=\"{stringConstraint.MinLength}\"");
+    if (stringConstraint.MaxLength != null)
+      attribs.Add($" minLength=\"{stringConstraint.MaxLength}\"");
+    if (stringConstraint.Length != null)
+      attribs.Add($" length=\"{stringConstraint.Length}\"");
+    if (stringConstraint.Regex != null)
+      attribs.Add($" regex=\"{stringConstraint.Regex}\"");
+    if (stringConstraint.XsdType != null)
+      attribs.Add($" xsdType=\"{stringConstraint.XsdType}\"");
+    Writer.WriteLine($"/// <stringConstraint{string.Join("",attribs)}/>");
   }
 
+    private void ShowNumberConstraint(NumberConstraint number)
+  {
+    var attribs = new List<string>();
+    if (number.MinInclusive != null)
+      attribs.Add($" minInclusive=\"{number.MinInclusive}\"");
+    if (number.MaxInclusive != null)
+      attribs.Add($" minInclusive=\"{number.MaxInclusive}\"");
+    if (number.MinExclusive != null)
+      attribs.Add($" minExclusive=\"{number.MinExclusive}\"");
+    if (number.MaxExclusive != null)
+      attribs.Add($" minExclusive=\"{number.MaxExclusive}\"");
+    Writer.WriteLine($"/// <stringConstraint{string.Join("",attribs)}/>");
+  }
   public void ShowTypeConversions()
   {
     foreach (var type in TypeManager.AllTypes)
@@ -578,10 +571,11 @@ public class ModelDisplay : IModelMonitor
 
   public void ShowElementSchema(TypeInfo typeInfo, DisplayOptions options)
   {
-    if (typeInfo.Schema!=null)
+    if (typeInfo.Schema != null)
     {
       typeInfo.Schema.Rename();
-      WriteSchemaParticle(typeInfo.Schema.Main);
+      if (typeInfo.Schema?.Main != null)
+        WriteSchemaParticle(typeInfo.Schema.Main);
     }
   }
 
@@ -613,9 +607,9 @@ public class ModelDisplay : IModelMonitor
     attribs.Add($"required=\"{particle.IsRequired}\"");
     if (particle.IsMultiple)
       attribs.Add($"multiple=\"{particle.IsMultiple}\"");
-    if (particle.MinOccurs!=null && particle.MinOccurs!=particle.DefMinOccurs)
+    if (particle.MinOccurs != null && particle.MinOccurs != particle.DefMinOccurs)
       attribs.Add($"minOccurs=\"{particle.MinOccurs}\"");
-    if (particle.MaxOccurs!=null && particle.MaxOccurs!=particle.DefMaxOccurs)
+    if (particle.MaxOccurs != null && particle.MaxOccurs != particle.DefMaxOccurs)
       attribs.Add($"maxOccurs=\"{particle.MaxOccurs}\"");
     return String.Join(" ", attribs);
   }
@@ -625,7 +619,7 @@ public class ModelDisplay : IModelMonitor
   protected string MultiStr(int n, string single, string? multi = null) => (n == 1) ? single : (multi ?? (single.EndsWith("s") ? (single + "es") : (single + "s")));
   protected string AcceptedMark(bool? acceptance) => (acceptance == true) ? "+ " : (acceptance == false) ? "- " : "  ";
   protected string ValidStr(bool? validity) => (validity == true) ? "valid" : (validity == false) ? "invalid" : string.Empty;
-  protected string RelationshipConstraints(TypeRelationship rel) => (rel.IsMultiple) ? "{multiple}": string.Empty;
+  protected string RelationshipConstraints(TypeRelationship rel) => (rel.IsMultiple) ? "{multiple}" : string.Empty;
 
   #endregion
 
