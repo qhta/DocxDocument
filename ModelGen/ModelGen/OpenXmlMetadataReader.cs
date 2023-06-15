@@ -1,4 +1,7 @@
 ﻿using DocumentFormat.OpenXml;
+using DocumentFormat.OpenXml.Validation.Schema;
+
+using Newtonsoft.Json.Serialization;
 
 using DXFwork = DocumentFormat.OpenXml.Framework;
 using DXMeta = DocumentFormat.OpenXml.Framework.Metadata;
@@ -83,8 +86,8 @@ namespace ModelGen;
 ///   <see cref="DXFwork.UnionValidator"/> contains some internal validators, which are converted as other ones.
 ///   <see cref="DXFwork.SimpleTypeValidator{TSimpleType}"/> is converted as <see cref="DXFwork.EnumValidator"/> 
 ///   (only <see cref="DX.EnumValue{T}"/> appears).
-///   <see cref="DXFwork.NameProviderValidator"/> is converted to <see cref="PropInfo.RealTypeName"/> attribute, 
-///   and <see cref="DXFwork.OfficeVersionValidator"/> is ignored.
+///   <see cref="DXFwork.NameProviderValidator"/> is converted to <see cref="PropInfo.RealTypeName"/> property, 
+///   and <see cref="DXFwork.OfficeVersionValidator"/> is converted to <see cref="ModelElement.Availability"/> property.
 /// </para>
 /// </summary>
 public static class OpenXmlMetadataReader
@@ -97,9 +100,10 @@ public static class OpenXmlMetadataReader
   /// </summary>
   /// <param name="typeInfo">TypeInfo for which the element metadata is processed.</param>
   /// <returns>Created element schema</returns>
-  public static ElementSchema? GetElementSchema(this TypeInfo typeInfo)
+  public static void GetOpenXmlElementSchema(this TypeInfo typeInfo)
   {
-    ElementSchema? elementSchema = null;
+    ElementSchema? elementSchema = typeInfo.Schema ?? new();
+    var isSchemaModified = false;
     var type = typeInfo.Type;
     if (type != null)
     {
@@ -113,8 +117,8 @@ public static class OpenXmlMetadataReader
           if (metadataParticle != null)
           {
             var schemaParticle = GetSchemaParticle(typeInfo, metadataParticle, false);
-            if (schemaParticle != null)
-              elementSchema = new ElementSchema(schemaParticle);
+            elementSchema.Main = schemaParticle;
+            isSchemaModified = true;
           }
           if (elementMetadata.Attributes.Length > 0)
           {
@@ -133,7 +137,8 @@ public static class OpenXmlMetadataReader
         }
       }
     }
-    return elementSchema;
+    if (isSchemaModified)
+      typeInfo.Schema = elementSchema;
   }
 
   #region CompiledParticle read methods
@@ -232,7 +237,8 @@ public static class OpenXmlMetadataReader
   /// <param name="elementSchema"></param>
   public static void Rename(this ElementSchema elementSchema)
   {
-    SetParticleName(elementSchema.Main);
+    if (elementSchema.Main != null)
+      SetParticleName(elementSchema.Main);
   }
 
   /// <summary>
@@ -244,7 +250,7 @@ public static class OpenXmlMetadataReader
   {
     if (schemaParticle is ItemElementParticle itemElementParticle)
     {
-      schemaParticle.Name = itemElementParticle.ItemType.Metadata?.SchemaTag ?? itemElementParticle.ItemType.Name;
+      schemaParticle.Name = itemElementParticle.ItemType.Schema?.SchemaTag ?? itemElementParticle.ItemType.Name;
       return schemaParticle.Name;
     }
     else
@@ -405,15 +411,35 @@ public static class OpenXmlMetadataReader
     {
       if (validator is DXFwork.StringValidator stringValidator)
       {
-        if (propInfo.Constraints == null)
-          propInfo.Constraints = new Constraints();
-        propInfo.Constraints.Add(new StringConstraint
+        if (!stringValidator.IsEmpty())
         {
-          Length = stringValidator.Length,
-          MinLength = stringValidator.MinLength,
-          MaxLength = stringValidator.MaxLength
-        });
-        propInfo.IsConstrained = true;
+          StringConstraint constraint = new StringConstraint
+          {
+            Length = NonZeroOrNull(stringValidator.Length),
+            MinLength = NonZeroOrNull(stringValidator.MinLength),
+            MaxLength = NonZeroOrNull(stringValidator.MaxLength)
+          };
+          if (stringValidator.Regex != null)
+            constraint.Regex = stringValidator.Regex.ToString();
+          XsdType xsdType = 0;
+          if (stringValidator.IsId)
+            xsdType |= XsdType.Id;
+          if (stringValidator.IsToken)
+            xsdType |= XsdType.Token;
+          if (stringValidator.IsNcName)
+            xsdType |= XsdType.NcName;
+          if (stringValidator.IsQName)
+            xsdType |= XsdType.QName;
+          if (stringValidator.IsUri)
+            xsdType |= XsdType.Uri;
+          if (xsdType!=0)
+            constraint.XsdType = xsdType;
+          if (propInfo.Constraints == null)
+            propInfo.Constraints = new Constraints();
+          if (propInfo.Constraints.FirstOrDefault(item => item.Equals(constraint))==null)
+            propInfo.Constraints.Add(constraint);
+          propInfo.IsConstrained = true;
+        }
       }
       else
       if (validator is DXFwork.RequiredValidator requiredValidator)
@@ -427,10 +453,10 @@ public static class OpenXmlMetadataReader
           propInfo.Constraints = new Constraints();
         propInfo.Constraints.Add(new NumberConstraint
         {
-          MinExclusive = numberValidator.MinExclusive,
-          MaxExclusive = numberValidator.MaxExclusive,
-          MinInclusive = numberValidator.MinInclusive,
-          MaxInclusive = numberValidator.MaxInclusive,
+          MinExclusive = NonZeroOrNull(numberValidator.MinExclusive),
+          MaxExclusive = NonZeroOrNull(numberValidator.MaxExclusive),
+          MinInclusive = NonZeroOrNull(numberValidator.MinInclusive),
+          MaxInclusive = NonZeroOrNull(numberValidator.MaxInclusive),
         });
         propInfo.IsConstrained = true;
       }
@@ -456,9 +482,9 @@ public static class OpenXmlMetadataReader
           throw new System.InvalidOperationException($"Unexpected simple type name \"{argType.Name}\"");
       }
       else
-      if (validator is DXFwork.OfficeVersionValidator)
+      if (validator is DXFwork.OfficeVersionValidator officeVersionValidator)
       {
-        //ignore
+        propInfo.Availability = officeVersionValidator.OfficeVersion.ToString();
       }
       else
       if (validator is DXFwork.NameProviderValidator nameProviderValidator)
@@ -479,5 +505,30 @@ public static class OpenXmlMetadataReader
     }
   }
 
+  private static bool IsEmpty(this DXFwork.StringValidator stringValidator)
+  {
+    if (stringValidator.Length != 0)
+      return false;
+    if (stringValidator.MaxLength != 0)
+      return false;
+    if (stringValidator.MinLength != 0)
+      return false;
+    if (stringValidator.Regex != null)
+      return false;
+    if (stringValidator.IsId)
+      return false;
+    if (stringValidator.IsQName)
+      return false;
+    if (stringValidator.IsToken)
+      return false;
+    if (stringValidator.IsNcName)
+      return false;
+    if (stringValidator.IsUri)
+      return false;
+    return true;
+  }
+
+  private static long? NonZeroOrNull(long val)
+    => val == 0 ? null : val;
   #endregion
 }

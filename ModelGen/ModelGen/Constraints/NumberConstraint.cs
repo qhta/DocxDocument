@@ -1,6 +1,6 @@
 ﻿namespace ModelGen;
 
-public class NumberConstraint : Constraint
+public record NumberConstraint : Constraint
 {
   public long? MinInclusive { get; set; }
 

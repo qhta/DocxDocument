@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "2zILhaRn2m2yfkf6ft+gom+f2W6jDnz2XltolGksC7GjhBlfFRjIYphD/rLjgmcS2YX9k7QaMbCn8aQoYNWrgQ==",
+  "dgSpecHash": "HOIoFYkHcOGM59tzwGRIrOzn/LAkckt4IZvOu9j8+EuaeRH7jfmDe4jI81vYXpSt+hf6dVoziDDx65vnU5/aTw==",
   "success": true,
   "projectFilePath": "D:\\VS\\Projects\\DocxDocument\\ModelGenRun\\ModelGenRun.csproj",
   "expectedPackageFiles": [
@@ -17,7 +17,7 @@
     "C:\\Users\\qhta1\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\qhta.collections\\2.0.0\\qhta.collections.2.0.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\qhta.htmlutils\\1.0.1\\qhta.htmlutils.1.0.1.nupkg.sha512",
-    "C:\\Users\\qhta1\\.nuget\\packages\\qhta.testhelper\\2.1.0\\qhta.testhelper.2.1.0.nupkg.sha512",
+    "C:\\Users\\qhta1\\.nuget\\packages\\qhta.testhelper\\2.2.0\\qhta.testhelper.2.2.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\qhta.textutils\\3.1.1\\qhta.textutils.3.1.1.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\qhta.typeutils\\1.3.8.1\\qhta.typeutils.1.3.8.1.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",

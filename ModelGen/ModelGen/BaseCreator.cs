@@ -117,10 +117,8 @@ public abstract class BaseCreator
         {"Valid types", ModelValidator.ValidTypesCount } };
     if (ModelValidator.NoDocsTypesCount > 0)
       summary.Add("No docs types", ModelValidator.NoDocsTypesCount);
-    if (ModelValidator.NoSchemaTagTypesCount > 0)
-      summary.Add("No schema tag types", ModelValidator.NoSchemaTagTypesCount);
-    if (ModelValidator.NoSchemaUrlTypesCount > 0)
-      summary.Add("No schema url types", ModelValidator.NoSchemaUrlTypesCount);
+    if (ModelValidator.NoSummaryTypesCount > 0)
+      summary.Add("No summary types", ModelValidator.NoSummaryTypesCount);
     ModelMonitor?.ShowPhaseEnd(phaseName, new SummaryInfo
     {
       Time = ts,

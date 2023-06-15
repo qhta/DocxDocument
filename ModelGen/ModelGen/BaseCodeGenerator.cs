@@ -8,7 +8,7 @@ public class BaseCodeGenerator
   public string ProjectName { get; protected set; } = null!;
   public string OutputPath { get; protected set; } = null!;
 
-  
+
   public int GeneratedClassesCount { get; protected set; }
   public int GeneratedInterfacesCount { get; protected set; }
   public int GeneratedStructsCount { get; protected set; }
@@ -94,14 +94,15 @@ public class BaseCodeGenerator
 
   protected bool GenerateDocumentationComments(ModelElement element)
   {
-    if (element.Metadata==null)
-      return false;
-    var summary = element.Metadata.Summary;
-    if (summary != null)
+    var documentation = element.Documentation;
+    if (documentation != null)
     {
-      Writer.WriteLine("/// <summary>");
-      Writer.WriteLine($"/// {summary}");
-      Writer.WriteLine("/// </summary>");
+      Writer.WriteLine();
+      foreach (var item in documentation)
+      {
+        var documentationWriter = new DocumentationWriter(Writer, Writer.Indent, 0);
+        documentationWriter.Write(item);
+      }
       return true;
     }
     return false;

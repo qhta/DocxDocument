@@ -98,9 +98,12 @@ public static class DocumentationReader
     return null;
   }
 
-  public static ElementMetadata GetElementMetadata(XElement documentation)
+  public static void ParseDocumentation(ModelElement element, XElement documentation)
   {
-    ElementMetadata metadata = new ElementMetadata();
+    ElementDocs docs = element.Documentation ?? new ElementDocs();
+    var isDocsModified = false;
+    var schema = element.Schema ?? new ElementSchema();
+    var isSchemaModified = false;
     var items = new List<XElement>();
     foreach (var xElement in documentation.Elements())
     {
@@ -122,8 +125,9 @@ public static class DocumentationReader
                   if (tag.EndsWith('.'))
                     tag = tag.Substring(0, tag.Length - 1).Trim();
                   if (text.Contains("attribute"))
-                    metadata.SchemaIsAttrib = true;
-                  metadata.SchemaTag = tag;
+                    schema.SchemaIsAttrib = true;
+                  schema.SchemaTag = tag;
+                  isSchemaModified = true;
                 }
               }
               else if (text.StartsWith("When the object is serialized out as xml, it's qualified name is "))
@@ -132,7 +136,8 @@ public static class DocumentationReader
                 var tag = text.Substring(k).Trim();
                 if (tag.EndsWith('.'))
                   tag = tag.Substring(0, tag.Length - 1).Trim();
-                metadata.SchemaTag = tag;
+                schema.SchemaTag = tag;
+                isSchemaModified = true;
               }
               else if (text.StartsWith("This class is available in "))
               {
@@ -140,7 +145,7 @@ public static class DocumentationReader
                 text = text.Substring(k).Trim();
                 if (text.EndsWith('.'))
                   text = text.Substring(0, text.Length - 1).Trim();
-                metadata.Availability = text;
+                element.Availability = text;
               }
               else
               {
@@ -151,7 +156,7 @@ public static class DocumentationReader
                   text = text.Substring(k).Trim();
                   if (text.EndsWith('.'))
                     text = text.Substring(0, text.Length - 1).Trim();
-                  metadata.Availability = text;
+                element.Availability = text;
                 }
                 else
                   items.Add(subElement);
@@ -178,7 +183,8 @@ public static class DocumentationReader
             text = text.Substring(k).Trim();
             if (text.EndsWith('.'))
               text = text.Substring(0, text.Length - 1).Trim();
-            metadata.SchemaUrl = text;
+            schema.SchemaUrl = text;
+            isSchemaModified = true;
           }
         }
       }
@@ -192,15 +198,19 @@ public static class DocumentationReader
     }
     if (items.Count == 1 && items.First().Name == "para")
     {
-      metadata.SummaryText = items.First().Value;
+      docs.SummaryText = items.First().Value;
+      isDocsModified = true;
     }
     else if (items.Count > 0)
     {
-      metadata.Summary = new XElement("summary");
+      docs.Summary = new XElement("summary");
       foreach (var item in items)
-        metadata.Summary.Add(item);
+        docs.Summary.Add(item);
+      isDocsModified = true;
     }
-
-    return metadata;
+    if (isDocsModified)
+      element.Documentation = docs;
+    if (isSchemaModified)
+      element.Schema = schema;
   }
 }
