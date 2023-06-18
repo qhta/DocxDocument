@@ -15,4 +15,8 @@
     <ProjectReference Include="..\ModelGen\ModelGen\ModelGen.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="ViewModels\" />
+  </ItemGroup>
+
 </Project>

@@ -13,3 +13,7 @@ global using Qhta.TextUtils;
 global using ModelGen;
 global using ModelGenApp.Commands;
 global using TypeInfo = ModelGen.TypeInfo;
+
+global using CommunityToolkit.Mvvm;
+global using CommunityToolkit.Mvvm.Input;
+global using CommunityToolkit.Mvvm.ComponentModel;
