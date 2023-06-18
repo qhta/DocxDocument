@@ -33,6 +33,13 @@ public abstract class BaseCreator
     OutputPath = outputPath;
   }
 
+  public void RunProcess(ProcessOptions options)
+  {
+    Type? rootType = Type.GetType(options.ScanTypeName, true);
+    Debug.Assert(rootType != null);
+    RunOn(rootType,options.Display,options.DisplayOptions);
+  }
+
   public void RunOn(Type type, MDS monitorDisplaySelector = MDS.None, DisplayOptions? displayOptions = null)
   {
     IsRun = true;
@@ -51,9 +58,9 @@ public abstract class BaseCreator
     if (monitorDisplaySelector.HasFlag(MDS.ScannedTypes))
       ModelMonitor?.ShowNamespacesDetails(displayOptions with { NamespaceTypeSelector = NTS.Origin });
 
-    //totalTime += RenameTypes();
-    //if (monitorDisplaySelector.HasFlag(MDS.TypeRenames))
-    //  ModelMonitor?.ShowTypeRenames();
+    totalTime += RenameTypes();
+    if (monitorDisplaySelector.HasFlag(MDS.TypeRename))
+      ModelMonitor?.ShowTypeRenames();
 
     //totalTime += SetTypeConversions();
     //if (monitorDisplaySelector.HasFlag(MDS.TypeConversions))
@@ -127,26 +134,26 @@ public abstract class BaseCreator
     return ts;
   }
 
-  //protected TimeSpan RenameTypes()
-  //{
-  //  ModelMonitor?.ShowPhaseStart("Renaming types");
-  //  DateTime t1 = DateTime.Now;
-  //  var renamedTypesCount = ModelManager.RenameSpecificTypes();
-  //  foreach (var type in TypeManager.AllTypes.ToArray())
-  //  {
-  //    ModelManager.RenameType(type);
-  //  }
-  //  DateTime t2 = DateTime.Now;
-  //  var ts = t2 - t1;
-  //  ModelMonitor?.ShowPhaseEnd("Renaming types", new SummaryInfo
-  //  {
-  //    Time = ts,
-  //    Summary = new Dictionary<string, object>{
-  //      {"Renamed types", renamedTypesCount },
-  //      }
-  //  });
-  //  return ts;
-  //}
+  protected TimeSpan RenameTypes()
+  {
+    ModelMonitor?.ShowPhaseStart("Renaming types");
+    DateTime t1 = DateTime.Now;
+    var renamedTypesCount = ModelManager.RenameSpecificTypes();
+    foreach (var type in TypeManager.AllTypes.ToArray())
+    {
+      ModelManager.RenameType(type);
+    }
+    DateTime t2 = DateTime.Now;
+    var ts = t2 - t1;
+    ModelMonitor?.ShowPhaseEnd("Renaming types", new SummaryInfo
+    {
+      Time = ts,
+      Summary = new Dictionary<string, object>{
+        {"Renamed types", renamedTypesCount },
+        }
+    });
+    return ts;
+  }
 
   //protected TimeSpan SetTypeConversions()
   //{
