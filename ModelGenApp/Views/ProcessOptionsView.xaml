@@ -4,8 +4,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ModelGenApp"
+             xmlns:vm="clr-namespace:ModelGenApp.ViewModels"
              mc:Ignorable="d" 
-             d:DataContext="{d:DesignInstance Type=local:MainViewModel}"
+             d:DataContext="{d:DesignInstance Type=vm:ProcessOptionsViewModel}"
              d:DesignHeight="450" d:DesignWidth="800">
   <Grid>
     <Grid.ColumnDefinitions>
@@ -28,7 +29,7 @@
     <Slider Grid.Column="0" Grid.RowSpan="11"
       Minimum="1" Maximum="6" Orientation="Vertical" TickFrequency="1" TickPlacement="BottomRight" 
             IsSnapToTickEnabled="True" Margin="0,10,0,15" 
-            Value="{Binding Path=ProcessOptions.StopAtPhase}"/>
+            Value="{Binding Path=Options.StopAtPhase}"/>
     <Label Grid.Column="1" Grid.Row="0" Content="Generate code"/>
     <Label Grid.Column="1" Grid.Row="2" Content="Validate types"/>
     <Label Grid.Column="1" Grid.Row="4" Content="Check type Uusage"/>
@@ -38,8 +39,10 @@
     </StackPanel>
     <StackPanel Grid.Column="1" Grid.Row="10" VerticalAlignment="Center" Orientation="Horizontal">
       <Label Content="Scan type" />
-      <TextBox MinWidth="300" VerticalContentAlignment="Center"
-               Text="{Binding Path=ProcessOptions.ScanTypeName}"/>
+      <ComboBox MinWidth="300" VerticalContentAlignment="Center"
+                IsEditable="True"
+                Text="{Binding Path=Options.ScanTypeName}"
+                ItemsSource="{Binding Path=Options.ScanTypeName}"/>
     </StackPanel>
   </Grid>
 </UserControl>

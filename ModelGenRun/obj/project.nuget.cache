@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "HOIoFYkHcOGM59tzwGRIrOzn/LAkckt4IZvOu9j8+EuaeRH7jfmDe4jI81vYXpSt+hf6dVoziDDx65vnU5/aTw==",
+  "dgSpecHash": "cSjH4UNEAL0xiBP0HLUbjMrorzxFpqbQUuOR0Grv614HvknXCYoQlk5Otkmugtc773ufOQfaSZyvB+ETaEmWRw==",
   "success": true,
   "projectFilePath": "D:\\VS\\Projects\\DocxDocument\\ModelGenRun\\ModelGenRun.csproj",
   "expectedPackageFiles": [
@@ -19,7 +19,7 @@
     "C:\\Users\\qhta1\\.nuget\\packages\\qhta.htmlutils\\1.0.1\\qhta.htmlutils.1.0.1.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\qhta.testhelper\\2.2.0\\qhta.testhelper.2.2.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\qhta.textutils\\3.1.1\\qhta.textutils.3.1.1.nupkg.sha512",
-    "C:\\Users\\qhta1\\.nuget\\packages\\qhta.typeutils\\1.3.8.1\\qhta.typeutils.1.3.8.1.nupkg.sha512",
+    "C:\\Users\\qhta1\\.nuget\\packages\\qhta.typeutils\\1.3.10.1\\qhta.typeutils.1.3.10.1.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
