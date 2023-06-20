@@ -68,7 +68,7 @@ public abstract class ModelMonitor
 
   public void ShowPhaseEnd(string phaseName, SummaryInfo info)
   {
-    WriteLine();
+    WriteSameLine("");
     WriteLine($"End {phaseName.ToLower()}, time={info.Time}");
     if (info.Summary != null)
       foreach (var item in info.Summary)

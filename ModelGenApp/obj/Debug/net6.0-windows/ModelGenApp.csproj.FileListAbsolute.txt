@@ -1,5 +1,4 @@
 D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\ModelGenApp.csproj.AssemblyReference.cache
-D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\MainWindow.g.cs
 D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\ProcessOptionsView.g.cs
 D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\StartWindow.g.cs
 D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\App.g.cs
@@ -58,7 +57,6 @@ D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Qhta.Xml.Reflec
 D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Qhta.Xml.Serialization.pdb
 D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Qhta.Xml.Serialization.xml
 D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Qhta.Xml.pdb
-D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\MainWindow.baml
 D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\ProcessOptionsView.baml
 D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\StartWindow.baml
 D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\ModelGenApp.g.resources
@@ -75,3 +73,5 @@ D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\ref\ModelGenApp
 D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\App.baml
 D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\ProcessMonitorView.g.cs
 D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\ProcessMonitorView.baml
+D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\MainWindow.g.cs
+D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\MainWindow.baml
