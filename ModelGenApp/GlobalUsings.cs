@@ -1,5 +1,6 @@
 ﻿global using System;
 global using System.Collections.Generic;
+global using System.Collections.ObjectModel;
 global using System.IO;
 global using System.Linq;
 global using System.Reflection;
@@ -10,6 +11,7 @@ global using System.Windows.Input;
 global using System.CodeDom.Compiler;
 
 global using Qhta.TextUtils;
+global using Qhta.TypeUtils;
 global using ModelGen;
 global using ModelGenApp.Commands;
 global using TypeInfo = ModelGen.TypeInfo;
