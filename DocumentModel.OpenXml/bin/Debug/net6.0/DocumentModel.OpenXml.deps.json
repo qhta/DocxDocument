@@ -13,8 +13,8 @@
           "Qhta.Collections": "2.0.0",
           "Qhta.DeepCompare": "1.1.0",
           "Qhta.OpenXMLTools": "1.0.0",
-          "Qhta.TextUtils": "3.1.0",
-          "Qhta.TypeUtils": "1.3.7"
+          "Qhta.TextUtils": "3.1.1",
+          "Qhta.TypeUtils": "1.3.10"
         },
         "runtime": {
           "DocumentModel.OpenXml.dll": {}
@@ -92,30 +92,30 @@
           }
         }
       },
-      "Qhta.TestHelper/2.1.0": {
+      "Qhta.TestHelper/2.2.0": {
         "runtime": {
           "lib/net6.0/Qhta.TestHelper.dll": {
-            "assemblyVersion": "2.1.0.0",
-            "fileVersion": "2.1.0.0"
+            "assemblyVersion": "2.2.0.0",
+            "fileVersion": "2.2.0.0"
           }
         }
       },
-      "Qhta.TextUtils/3.1.0": {
+      "Qhta.TextUtils/3.1.1": {
         "runtime": {
           "lib/net6.0/Qhta.TextUtils.dll": {
-            "assemblyVersion": "3.1.0.0",
-            "fileVersion": "3.1.0.0"
+            "assemblyVersion": "3.1.1.0",
+            "fileVersion": "3.1.1.0"
           }
         }
       },
-      "Qhta.TypeUtils/1.3.7": {
+      "Qhta.TypeUtils/1.3.10": {
         "dependencies": {
           "Qhta.Collections": "2.0.0"
         },
         "runtime": {
           "lib/net6.0/Qhta.TypeUtils.dll": {
-            "assemblyVersion": "1.3.7.0",
-            "fileVersion": "1.3.7.0"
+            "assemblyVersion": "1.3.10.0",
+            "fileVersion": "1.3.10.0"
           }
         }
       },
@@ -346,9 +346,7 @@
           "DeepEqual": "4.2.1",
           "JsonKnownTypes": "0.5.5",
           "Newtonsoft.Json": "13.0.3",
-          "Qhta.Collections": "2.0.0",
-          "Qhta.TextUtils": "3.1.0",
-          "Qhta.TypeUtils": "1.3.7",
+          "Qhta.TypeUtils": "1.3.10",
           "Qhta.Xml": "1.0.0",
           "Qhta.Xml.Serialization": "1.0.0",
           "System.IO.Packaging": "7.0.0"
@@ -360,8 +358,8 @@
       "Qhta.Conversion/1.0.0": {
         "dependencies": {
           "Qhta.Collections": "2.0.0",
-          "Qhta.TextUtils": "3.1.0",
-          "Qhta.TypeUtils": "1.3.7",
+          "Qhta.TextUtils": "3.1.1",
+          "Qhta.TypeUtils": "1.3.10",
           "Qhta.Xml": "1.0.0",
           "System.Configuration.ConfigurationManager": "7.0.0"
         },
@@ -372,8 +370,8 @@
       "Qhta.DeepCompare/1.1.0": {
         "dependencies": {
           "Qhta.Collections": "2.0.0",
-          "Qhta.TextUtils": "3.1.0",
-          "Qhta.TypeUtils": "1.3.7"
+          "Qhta.TextUtils": "3.1.1",
+          "Qhta.TypeUtils": "1.3.10"
         },
         "runtime": {
           "Qhta.DeepCompare.dll": {}
@@ -391,8 +389,8 @@
       "Qhta.Xml/1.0.0": {
         "dependencies": {
           "Qhta.Collections": "2.0.0",
-          "Qhta.TextUtils": "3.1.0",
-          "Qhta.TypeUtils": "1.3.7"
+          "Qhta.TextUtils": "3.1.1",
+          "Qhta.TypeUtils": "1.3.10"
         },
         "runtime": {
           "Qhta.Xml.dll": {}
@@ -401,8 +399,8 @@
       "Qhta.Xml.Reflection/1.0.0": {
         "dependencies": {
           "Qhta.Collections": "2.0.0",
-          "Qhta.TextUtils": "3.1.0",
-          "Qhta.TypeUtils": "1.3.7",
+          "Qhta.TextUtils": "3.1.1",
+          "Qhta.TypeUtils": "1.3.10",
           "Qhta.Xml": "1.0.0"
         },
         "runtime": {
@@ -413,9 +411,9 @@
         "dependencies": {
           "Qhta.Collections": "2.0.0",
           "Qhta.Conversion": "1.0.0",
-          "Qhta.TestHelper": "2.1.0",
-          "Qhta.TextUtils": "3.1.0",
-          "Qhta.TypeUtils": "1.3.7",
+          "Qhta.TestHelper": "2.2.0",
+          "Qhta.TextUtils": "3.1.1",
+          "Qhta.TypeUtils": "1.3.10",
           "Qhta.Xml": "1.0.0",
           "Qhta.Xml.Reflection": "1.0.0",
           "System.CodeDom": "7.0.0",
@@ -497,26 +495,26 @@
       "path": "qhta.ordnumbers/2.2.1",
       "hashPath": "qhta.ordnumbers.2.2.1.nupkg.sha512"
     },
-    "Qhta.TestHelper/2.1.0": {
+    "Qhta.TestHelper/2.2.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-DWg1nByNXaUsRqUglxPcZOjRdz/F8FT9TjgzlQveA79cgO6v5mDereemRZ6WVQzaRMM1QbPCsh+tByIEO2tcag==",
-      "path": "qhta.testhelper/2.1.0",
-      "hashPath": "qhta.testhelper.2.1.0.nupkg.sha512"
+      "sha512": "sha512-BHE3QymuDXMf2aKqBrPCuXDJvqniP9AzmUXJklCk5O/2eN3QzFy3weuI4SK0+quPlEfVY/lRQPGSH/7I6zcAww==",
+      "path": "qhta.testhelper/2.2.0",
+      "hashPath": "qhta.testhelper.2.2.0.nupkg.sha512"
     },
-    "Qhta.TextUtils/3.1.0": {
+    "Qhta.TextUtils/3.1.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-3alOb+J8eFkla4wVKqyyVYzOZYpGm/koVcBMCpjHtJZ/e0q2vXbnNXyXBSc/iTeYFhIT9vVmfJFWs0I6pPyFpg==",
-      "path": "qhta.textutils/3.1.0",
-      "hashPath": "qhta.textutils.3.1.0.nupkg.sha512"
+      "sha512": "sha512-RYRqFK3PdythcfgCiN4gm6FqvXBjis9zQjBA8mtN/XaxOjpJzev/nfNdzbBzk6FVod5d0F+i2GWckG+K3x9u0g==",
+      "path": "qhta.textutils/3.1.1",
+      "hashPath": "qhta.textutils.3.1.1.nupkg.sha512"
     },
-    "Qhta.TypeUtils/1.3.7": {
+    "Qhta.TypeUtils/1.3.10": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-bO32N+NcYWXheBv+rZtod4hj/miit5I08hSg3OBT1YV+GokTrwk38NIJ31BSOgnElaeJ7cN5sD43o1v6fvDxJg==",
-      "path": "qhta.typeutils/1.3.7",
-      "hashPath": "qhta.typeutils.1.3.7.nupkg.sha512"
+      "sha512": "sha512-B7PdirY8fCr+VxwxCrNWiOqE7SH8Bi3jsXdnTnVmbsG107IEZLsOAKzTpzOJCjWqewxXX1SJSHV43TgfsBWVSQ==",
+      "path": "qhta.typeutils/1.3.10",
+      "hashPath": "qhta.typeutils.1.3.10.nupkg.sha512"
     },
     "System.CodeDom/7.0.0": {
       "type": "package",

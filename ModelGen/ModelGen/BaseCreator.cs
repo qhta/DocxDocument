@@ -25,7 +25,7 @@ public abstract class BaseCreator
 
   public bool IsRun { get; set; }
 
-  public IModelMonitor? ModelMonitor { get; set; }
+  public ModelMonitor? ModelMonitor { get; set; }
 
   public BaseCreator(string projectName, string outputPath)
   {
@@ -35,7 +35,9 @@ public abstract class BaseCreator
 
   public void RunProcess(ProcessOptions options)
   {
-    Type? rootType = Type.GetType(options.ScanTypeName, true);
+    var assembly = Assembly.Load("DocumentFormat.OpenXml");
+    Debug.Assert(assembly != null);
+    Type? rootType = assembly.GetType(options.ScanTypeName, true);
     Debug.Assert(rootType != null);
     RunOn(rootType,options.Display,options.DisplayOptions);
   }

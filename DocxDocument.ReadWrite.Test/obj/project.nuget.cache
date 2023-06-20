@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "nJNLAtBejGxi9uQQ2w6584ghbpzVuw2BE2ttSMGj2WMWGL8rZCXx860an4z6YhcgLYU3FtlGLS4KToMW3v2COQ==",
+  "dgSpecHash": "FXtB5w+0jwqFzpT4vUFsqU6xeAtemeeNhGOaswM43Gy/st4Jd0vGrMITv8ukjwC12aSA4nqCnzF5m2gB0WuEZw==",
   "success": true,
   "projectFilePath": "D:\\VS\\Projects\\DocxDocument\\DocxDocument.ReadWrite.Test\\DocxDocument.ReadWrite.Test.csproj",
   "expectedPackageFiles": [
@@ -23,9 +23,9 @@
     "C:\\Users\\qhta1\\.nuget\\packages\\qhta.collections\\2.0.0\\qhta.collections.2.0.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\qhta.ordnumbers\\2.2.1\\qhta.ordnumbers.2.2.1.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\qhta.systemutils\\1.0.0\\qhta.systemutils.1.0.0.nupkg.sha512",
-    "C:\\Users\\qhta1\\.nuget\\packages\\qhta.testhelper\\2.1.0\\qhta.testhelper.2.1.0.nupkg.sha512",
-    "C:\\Users\\qhta1\\.nuget\\packages\\qhta.textutils\\3.1.0\\qhta.textutils.3.1.0.nupkg.sha512",
-    "C:\\Users\\qhta1\\.nuget\\packages\\qhta.typeutils\\1.3.7\\qhta.typeutils.1.3.7.nupkg.sha512",
+    "C:\\Users\\qhta1\\.nuget\\packages\\qhta.testhelper\\2.2.0\\qhta.testhelper.2.2.0.nupkg.sha512",
+    "C:\\Users\\qhta1\\.nuget\\packages\\qhta.textutils\\3.1.1\\qhta.textutils.3.1.1.nupkg.sha512",
+    "C:\\Users\\qhta1\\.nuget\\packages\\qhta.typeutils\\1.3.10\\qhta.typeutils.1.3.10.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\system.codedom\\7.0.0\\system.codedom.7.0.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\system.collections.nongeneric\\4.3.0\\system.collections.nongeneric.4.3.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\system.collections.specialized\\4.3.0\\system.collections.specialized.4.3.0.nupkg.sha512",

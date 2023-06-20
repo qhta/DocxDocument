@@ -4,20 +4,22 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ModelGenApp"
-        xmlns:cmd="clr-namespace:ModelGenApp.Commands"
+        xmlns:views="clr-namespace:ModelGenApp.Views"
         mc:Ignorable="d"
+        d:DataContext="{d:DesignInstance Type=local:MainViewModel}"
         Title="MainWindow" Height="450" Width="800">
-  <Window.Resources>
-    <local:Commander x:Key="Commander"/>
-  </Window.Resources>
   <Grid>
     <Grid.RowDefinitions>
       <RowDefinition Height="20" />
       <RowDefinition Height="*"/>
-      <RowDefinition Height="20" />
     </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="*"/>
+    </Grid.ColumnDefinitions>
     <Menu Grid.Row="0">
-      <MenuItem Header="Start" Command="{Binding Source={StaticResource Commander}, Path=Start}"/>
+      <MenuItem Header="Start" Command="{Binding OpenStartWindowCommand}"/>
     </Menu>
+    <views:ProcessMonitorView Grid.Row="1"
+      DataContext="{Binding Path=ProcessMonitor}"/>
   </Grid>
 </Window>

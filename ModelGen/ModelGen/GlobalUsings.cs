@@ -11,6 +11,7 @@ global using System.Xml.Linq;
 
 global using Qhta.Xml.Reflection;
 global using Qhta.TestHelper;
+global using Qhta.TextUtils;
 global using Qhta.TypeUtils;
 
 global using DocumentModel;

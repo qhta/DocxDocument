@@ -64,17 +64,9 @@
               "target": "Package",
               "version": "[13.0.3, )"
             },
-            "Qhta.Collections": {
-              "target": "Package",
-              "version": "[2.0.0, )"
-            },
-            "Qhta.TextUtils": {
-              "target": "Package",
-              "version": "[3.1.1, )"
-            },
             "Qhta.TypeUtils": {
               "target": "Package",
-              "version": "[1.3.8.1, )"
+              "version": "[1.3.10.1, )"
             },
             "System.IO.Packaging": {
               "target": "Package",
@@ -152,11 +144,11 @@
             },
             "Qhta.TextUtils": {
               "target": "Package",
-              "version": "[3.1.0, )"
+              "version": "[3.1.1, )"
             },
             "Qhta.TypeUtils": {
               "target": "Package",
-              "version": "[1.3.7, )"
+              "version": "[1.3.10, )"
             },
             "System.Configuration.ConfigurationManager": {
               "target": "Package",
@@ -179,7 +171,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -240,15 +232,15 @@
             },
             "Qhta.TestHelper": {
               "target": "Package",
-              "version": "[2.1.0, )"
+              "version": "[2.2.0, )"
             },
             "Qhta.TextUtils": {
               "target": "Package",
-              "version": "[3.1.0, )"
+              "version": "[3.1.1, )"
             },
             "Qhta.TypeUtils": {
               "target": "Package",
-              "version": "[1.3.7, )"
+              "version": "[1.3.10, )"
             },
             "System.CodeDom": {
               "target": "Package",
@@ -279,7 +271,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -334,11 +326,11 @@
             },
             "Qhta.TextUtils": {
               "target": "Package",
-              "version": "[3.1.0, )"
+              "version": "[3.1.1, )"
             },
             "Qhta.TypeUtils": {
               "target": "Package",
-              "version": "[1.3.7, )"
+              "version": "[1.3.10, )"
             }
           },
           "imports": [
@@ -357,7 +349,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -414,11 +406,11 @@
             },
             "Qhta.TextUtils": {
               "target": "Package",
-              "version": "[3.1.0, )"
+              "version": "[3.1.1, )"
             },
             "Qhta.TypeUtils": {
               "target": "Package",
-              "version": "[1.3.7, )"
+              "version": "[1.3.10, )"
             }
           },
           "imports": [
@@ -437,7 +429,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
         },
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
@@ -454,11 +446,11 @@
             },
             "Qhta.TextUtils": {
               "target": "Package",
-              "version": "[3.1.0, )"
+              "version": "[3.1.1, )"
             },
             "Qhta.TypeUtils": {
               "target": "Package",
-              "version": "[1.3.7, )"
+              "version": "[1.3.10, )"
             }
           },
           "imports": [
@@ -472,7 +464,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
         }
       }
     }

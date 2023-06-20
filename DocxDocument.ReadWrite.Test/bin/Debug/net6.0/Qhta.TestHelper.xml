@@ -570,94 +570,94 @@
             Virtual method called on dispose
             </summary>
         </member>
-        <member name="T:Qhta.TestHelper.AbstractWriter">
+        <member name="T:Qhta.TestHelper.BufferedTextWriter">
             <summary>
-            Abstract implementation of a text writer
+            Buffered extension of a text writer
             </summary>
         </member>
-        <member name="P:Qhta.TestHelper.AbstractWriter.Buffer">
+        <member name="P:Qhta.TestHelper.BufferedTextWriter.Buffer">
             <summary>
             Buffer must not be a collection of string, because it may contain color tags.
             </summary>
         </member>
-        <member name="P:Qhta.TestHelper.AbstractWriter.LastChar">
+        <member name="P:Qhta.TestHelper.BufferedTextWriter.LastChar">
             <summary>
             Last written character
             </summary>
         </member>
-        <member name="M:Qhta.TestHelper.AbstractWriter.Flush">
+        <member name="M:Qhta.TestHelper.BufferedTextWriter.Flush">
             <summary>
-            Flush invokes abstract <see cref="M:Qhta.TestHelper.AbstractWriter.FlushBuffer"/>.
+            Flush invokes abstract <see cref="M:Qhta.TestHelper.BufferedTextWriter.FlushBuffer"/>.
             This construction is needed to avoid premature cleaning
             when subclasses will invoke base method.
             </summary>
         </member>
-        <member name="M:Qhta.TestHelper.AbstractWriter.FlushBuffer">
+        <member name="M:Qhta.TestHelper.BufferedTextWriter.FlushBuffer">
             <summary>
             This method is abstract and must be implemented in a subclass
             </summary>
         </member>
-        <member name="P:Qhta.TestHelper.AbstractWriter.AutoFlush">
+        <member name="P:Qhta.TestHelper.BufferedTextWriter.AutoFlush">
             <summary>
             AutoFlush means that flush is invoked after each operation
             </summary>
         </member>
-        <member name="P:Qhta.TestHelper.AbstractWriter.IndentSize">
+        <member name="P:Qhta.TestHelper.BufferedTextWriter.IndentSize">
             <summary>
             Indent unit consists of two spaces
             </summary>
         </member>
-        <member name="P:Qhta.TestHelper.AbstractWriter.IndentLevel">
+        <member name="P:Qhta.TestHelper.BufferedTextWriter.IndentLevel">
             <summary>
             Indent level used at the beginning of each line
             </summary>
         </member>
-        <member name="M:Qhta.TestHelper.AbstractWriter.Indent">
+        <member name="M:Qhta.TestHelper.BufferedTextWriter.Indent">
             <summary>
             Unlimited indent level increment
             </summary>
         </member>
-        <member name="M:Qhta.TestHelper.AbstractWriter.Unindent">
+        <member name="M:Qhta.TestHelper.BufferedTextWriter.Unindent">
             <summary>
             Indent level decrement imited to zero
             </summary>
         </member>
-        <member name="P:Qhta.TestHelper.AbstractWriter.Enabled">
+        <member name="P:Qhta.TestHelper.BufferedTextWriter.Enabled">
             <summary>
             If set to false then disables operations.
             </summary>
         </member>
-        <member name="P:Qhta.TestHelper.AbstractWriter.WriteVisualNewLine">
+        <member name="P:Qhta.TestHelper.BufferedTextWriter.WriteVisualNewLine">
             <summary>
             If set then new lines are written visually, as "\n" sequence;
-            To so, to write a "real" new line use <see cref="M:Qhta.TestHelper.AbstractWriter.WriteLine"/> method.
+            To so, to write a "real" new line use <see cref="M:Qhta.TestHelper.BufferedTextWriter.WriteLine"/> method.
             </summary>
         </member>
-        <member name="P:Qhta.TestHelper.AbstractWriter.AllowIntelligentSpacing">
+        <member name="P:Qhta.TestHelper.BufferedTextWriter.AllowIntelligentSpacing">
             <summary>
             If set then "\n" and "\s" sequences at start of the string to write are treated specially.
             "\n" forces to write a new line if last char is not a new line character.
             "\s" forces to write a space if last char is not a space and is not an open punctuation character.
             </summary>
         </member>
-        <member name="M:Qhta.TestHelper.AbstractWriter.Write(System.String)">
+        <member name="M:Qhta.TestHelper.BufferedTextWriter.Write(System.String)">
             <summary>
             Basic write implementation. New lines and spaces interpreted according to controlling properties.
             </summary>
             <param name="str"></param>
         </member>
-        <member name="M:Qhta.TestHelper.AbstractWriter.WriteLine">
+        <member name="M:Qhta.TestHelper.BufferedTextWriter.WriteLine">
             <summary>
             After WriteLine last char is '\n'.
             </summary>
         </member>
-        <member name="M:Qhta.TestHelper.AbstractWriter.WriteLine(System.String)">
+        <member name="M:Qhta.TestHelper.BufferedTextWriter.WriteLine(System.String)">
             <summary>
             Simply Write(str) and WriteLine();
             </summary>
             <param name="str"></param>
         </member>
-        <member name="P:Qhta.TestHelper.AbstractWriter.TraceListener">
+        <member name="P:Qhta.TestHelper.BufferedTextWriter.TraceListener">
             <summary>
             TraceListener needed for VisualStudio TraceListeners collections
             </summary>
@@ -691,7 +691,7 @@
         </member>
         <member name="T:Qhta.TestHelper.ConsoleWriter">
             <summary>
-            Extends <see cref="T:Qhta.TestHelper.AbstractWriter"/> with implementation of
+            Extends <see cref="T:Qhta.TestHelper.BufferedTextWriter"/> with implementation of
             color operations and Console output.
             </summary>
         </member>
@@ -757,6 +757,11 @@
             This implementation of flush operation sends strings to output via <see cref="M:Qhta.TestHelper.ConsoleWriter.FlushString(System.String)"/>
             and manipulates of console colors via <see cref="M:Qhta.TestHelper.ConsoleWriter.FlushColorTag(Qhta.TestHelper.ColorTag)"/> operations.
             After flush the buffer is cleared.
+            </summary>
+        </member>
+        <member name="P:Qhta.TestHelper.ConsoleWriter.Encoding">
+            <summary>
+            Implements TextWriter Encoding property.
             </summary>
         </member>
         <member name="T:Qhta.TestHelper.IConsoleWriter">
@@ -1117,9 +1122,9 @@
             Class used as a listener for <see cref="T:System.Diagnostics.Trace"/> output.
             </summary>
         </member>
-        <member name="M:Qhta.TestHelper.TraceWriting.WriterTraceListener.#ctor(Qhta.TestHelper.AbstractWriter)">
+        <member name="M:Qhta.TestHelper.TraceWriting.WriterTraceListener.#ctor(Qhta.TestHelper.BufferedTextWriter)">
             <summary>
-            Connects listener to <see cref="T:Qhta.TestHelper.AbstractWriter"/>
+            Connects listener to <see cref="T:Qhta.TestHelper.BufferedTextWriter"/>
             </summary>
             <param name="writer"></param>
         </member>

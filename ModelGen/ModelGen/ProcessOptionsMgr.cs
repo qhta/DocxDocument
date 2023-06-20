@@ -17,7 +17,7 @@ public static class ProcessOptionsMgr
             return result;
         }
       }
-      catch (Exception ex)
+      catch// (Exception ex)
       {
       }
     }
