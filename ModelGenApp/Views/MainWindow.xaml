@@ -1,0 +1,64 @@
+﻿<Window x:Class="ModelGenApp.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:views="clr-namespace:ModelGenApp.Views"
+        xmlns:vm="clr-namespace:ModelGenApp.ViewModels"
+        mc:Ignorable="d"
+        d:DataContext="{d:DesignInstance Type=vm:MainViewModel}"
+        Title="MainWindow" Height="450" Width="800">
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="20" />
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="40"/>
+      <RowDefinition Height="24"/>
+    </Grid.RowDefinitions>
+    <Menu Grid.Row="0" >
+      <MenuItem Header="Start" Command="{Binding OpenStartWindowCommand}"/>
+    </Menu>
+    <Grid Grid.Row="1">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="400"/>
+        <ColumnDefinition Width="*"/>
+      </Grid.ColumnDefinitions>
+      <views:ProcessOptionsView Grid.Column="0"
+                      DataContext="{Binding Path=ProcessOptionsVM}"
+                      />
+      <views:ProcessMonitorView Grid.Column="1"
+                    Margin="5,0,0,0"
+                    DataContext="{Binding Path=ProcessMonitor}"
+                    />
+      <GridSplitter Grid.Column="1" 
+                    HorizontalAlignment="Left"
+                    Width="5"
+                    VerticalAlignment="Stretch"
+                    />
+    </Grid>
+    <Border  Grid.Row="2"
+             Background="WhiteSmoke">
+      <StackPanel 
+                Orientation="Horizontal" 
+                HorizontalAlignment="Center" 
+                Margin="10">
+        <Button Content="Start" 
+              Width="100"
+              Command="{Binding StartProcessCommand}"
+              />
+        <Button Content="Cancel" 
+              Width="100" 
+              Margin="20,0,0,0"
+              Command="ApplicationCommands.Close"
+              />
+      </StackPanel>
+    </Border>
+    <Border Grid.Row="3"
+            BorderBrush="Silver"
+            BorderThickness="0.5">
+      <StatusBar >
+        <StatusBarItem Content="{Binding Path=ProcessMonitor.StatusLine}"/>
+      </StatusBar>
+    </Border>
+  </Grid>
+</Window>

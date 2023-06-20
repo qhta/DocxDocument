@@ -9,40 +9,84 @@
              d:DataContext="{d:DesignInstance Type=vm:ProcessOptionsViewModel}"
              d:DesignHeight="450" d:DesignWidth="800">
   <Grid>
-    <Grid.ColumnDefinitions>
-      <ColumnDefinition Width="Auto"/>
-      <ColumnDefinition Width="*"/>
-    </Grid.ColumnDefinitions>
-    <Grid.RowDefinitions>
-      <RowDefinition Height="40"/>
-      <RowDefinition Height="*"/>
-      <RowDefinition Height="40"/>
-      <RowDefinition Height="*"/>
-      <RowDefinition Height="40"/>
-      <RowDefinition Height="*"/>
-      <RowDefinition Height="40"/>
-      <RowDefinition Height="*"/>
-      <RowDefinition Height="40"/>
-      <RowDefinition Height="*"/>
-      <RowDefinition Height="40"/>
-    </Grid.RowDefinitions>
-    <Slider Grid.Column="0" Grid.RowSpan="11"
-      Minimum="1" Maximum="6" Orientation="Vertical" TickFrequency="1" TickPlacement="BottomRight" 
-            IsSnapToTickEnabled="True" Margin="0,10,0,15" 
-            Value="{Binding Path=Options.StopAtPhase}"/>
-    <Label Grid.Column="1" Grid.Row="0" Content="Generate code"/>
-    <Label Grid.Column="1" Grid.Row="2" Content="Validate types"/>
-    <Label Grid.Column="1" Grid.Row="4" Content="Check type Uusage"/>
-    <Label Grid.Column="1" Grid.Row="6" Content="Set type conversions"/>
-    <StackPanel Grid.Column="1" Grid.Row="8" VerticalAlignment="Center" Orientation="Horizontal">
-      <Label Content="Rename types" />
-    </StackPanel>
-    <StackPanel Grid.Column="1" Grid.Row="10" VerticalAlignment="Center" Orientation="Horizontal">
-      <Label Content="Scan type" />
-      <ComboBox MinWidth="300" VerticalContentAlignment="Center"
+    <Border BorderBrush="Black" BorderThickness="0.5" Background="LightGray">
+      <Grid>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+          </Grid.ColumnDefinitions>
+          <Label Grid.Row="1" Grid.Column="0" 
+                Margin="5"
+                VerticalAlignment="Center"
+                Content="Scan type" 
+                />
+          <ComboBox Grid.Row="1" Grid.Column="1" 
+                Margin="5"
+                MinWidth="300" 
+                VerticalContentAlignment="Center"
                 IsEditable="True"
                 Text="{Binding Path=Options.ScanTypeName}"
-                ItemsSource="{Binding Path=Options.ScanTypeName}"/>
-    </StackPanel>
+                ItemsSource="{Binding Path=Options.ScanTypeName}"
+                />
+        </Grid>
+        <Grid Grid.Row="1">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+          </Grid.ColumnDefinitions>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="40"/>
+          </Grid.RowDefinitions>
+          <Slider Grid.Column="0" Grid.RowSpan="11"
+                  Minimum="1" 
+                  Maximum="6" 
+                  Orientation="Vertical" 
+                  TickFrequency="1" 
+                  TickPlacement="BottomRight" 
+                  IsDirectionReversed="True"
+                  IsSnapToTickEnabled="True" 
+                  Margin="0,15,0,10" 
+                  Value="{Binding Path=Options.StopAtPhase}"
+                  />
+          <StackPanel Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" Orientation="Horizontal">
+            <Label Content="Scan type" />
+          </StackPanel>
+          <StackPanel Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" Orientation="Horizontal">
+            <Label Content="Rename types" />
+          </StackPanel>
+          <StackPanel Grid.Column="1" Grid.Row="4" VerticalAlignment="Center" Orientation="Horizontal">
+            <Label Content="Set type conversions" />
+          </StackPanel>
+          <StackPanel Grid.Column="1" Grid.Row="6" VerticalAlignment="Center" Orientation="Horizontal">
+            <Label Content="Check type usage" />
+          </StackPanel>
+          <StackPanel Grid.Column="1" Grid.Row="8" VerticalAlignment="Center" Orientation="Horizontal">
+            <Label Content="Validate types" />
+          </StackPanel>
+          <StackPanel Grid.Column="1" Grid.Row="10" VerticalAlignment="Center" Orientation="Horizontal">
+            <Label Content="Generate code" />
+          </StackPanel>
+        </Grid>
+      </Grid>
+    </Border>
   </Grid>
 </UserControl>

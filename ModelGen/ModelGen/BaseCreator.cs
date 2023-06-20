@@ -272,18 +272,18 @@ public abstract class BaseCreator
     });
   }
 
-  private void TypeReflector_OnReflection(ReflectionInfo info)
-  {
-    ModelMonitor?.ShowPhaseProgress("Scanning types", new ProgressInfo
-    {
-      PreStr = "reflected",
-      Done = info.Done,
-      MidStr = "types",
-      Summary = new Dictionary<string, object>{
-        {"waiting", info.Waiting ?? 0 } },
-      PostStr = $"{info.Current?.OriginalNamespace}.{info.Current?.OriginalName}"
-    });
-  }
+  //private void TypeReflector_OnReflection(ReflectionInfo info)
+  //{
+  //  ModelMonitor?.ShowPhaseProgress("Scanning types", new ProgressInfo
+  //  {
+  //    PreStr = "reflected",
+  //    Done = info.Done,
+  //    MidStr = "types",
+  //    Summary = new Dictionary<string, object>{
+  //      {"waiting", info.Waiting ?? 0 } },
+  //    PostStr = $"{info.Current?.OriginalNamespace}.{info.Current?.OriginalName}"
+  //  });
+  //}
 
 
   private void ModelValidator_OnValidatingType(ModelValidator sender, ValidatingTypeInfo info)
