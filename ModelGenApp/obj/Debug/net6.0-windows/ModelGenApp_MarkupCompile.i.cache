@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 D:\VS\Projects\DocxDocument\ModelGenApp\App.xaml
-31530776811
+4-1888693928
 
-15-44731766
-217743662841
-Views\MainWindow.xaml;Views\ProcessMonitorView.xaml;Views\ProcessOptionsView.xaml;
+20-597975096
+218-2123864209
+Views\MainWindow.xaml;Views\PhaseProgressView.xaml;Views\ProcessMonitorView.xaml;Views\ProcessOptionsView.xaml;
 
-False
+True
 

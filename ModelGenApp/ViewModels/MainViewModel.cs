@@ -1,25 +1,59 @@
-﻿using System.ComponentModel;
+﻿namespace ModelGenApp.ViewModels;
 
-namespace ModelGenApp.ViewModels;
-
-public partial class MainViewModel : ObservableObject
+public class MainViewModel : ViewModel
 {
-  [ObservableProperty]
-  private ProcessOptionsViewModel processOptionsVM;
 
-  [ObservableProperty]
-  private Window? startWindow;
 
-  [ObservableProperty]
+  public ProcessMonitor? ProcessMonitor
+  {
+    get { return _ProcessMonitor; }
+    set
+    {
+      if (_ProcessMonitor != value)
+      {
+        _ProcessMonitor = value;
+        NotifyPropertyChanged(nameof(ProcessMonitor));
+      }
+    }
+  }
+  private ProcessMonitor? _ProcessMonitor;
+  public ProcessOptionsViewModel ProcessOptionsVM
+  {
+    get { return _ProcessOptionsVM; }
+    set
+    {
+      if (_ProcessOptionsVM != value)
+      {
+        _ProcessOptionsVM = value;
+        NotifyPropertyChanged(nameof(ProcessOptionsVM));
+      }
+    }
+  }
+  private ProcessOptionsViewModel _ProcessOptionsVM;
+
+
+  public Window? StartWindow
+  {
+    get { return _StartWindow; }
+    set
+    {
+      if (_StartWindow != value)
+      {
+        _StartWindow = value;
+        NotifyPropertyChanged(nameof(StartWindow));
+      }
+    }
+  }
+  private Window? _StartWindow;
+
+
+
   private IWindowService windowService;
-
-  [ObservableProperty]
-  private ProcessMonitor? processMonitor;
 
   public MainViewModel()//: this()
   {
     this.windowService = new WindowService();
-    ProcessOptionsVM = new ProcessOptionsViewModel();
+    _ProcessOptionsVM = new ProcessOptionsViewModel();
     StartProcessCommand = new RelayCommand(StartProcess);
     CloseWindowCommand = new RelayCommand(CloseWindow);
   }

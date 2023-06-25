@@ -138,13 +138,13 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "dependencies": {
-            "CommunityToolkit.Mvvm": {
-              "target": "Package",
-              "version": "[8.2.0, )"
-            },
             "Qhta.HtmlUtils": {
               "target": "Package",
               "version": "[1.0.1, )"
+            },
+            "Qhta.MVVM": {
+              "target": "Package",
+              "version": "[2.0.0, )"
             },
             "Qhta.TypeUtils": {
               "target": "Package",

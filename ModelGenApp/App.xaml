@@ -8,8 +8,5 @@
     <DataTemplate x:Key="{x:Type vm:MainViewModel}" DataType="{x:Type vm:MainViewModel}">
       <views:MainWindow/>
     </DataTemplate>
-    <DataTemplate x:Key="{x:Type vm:StartProcessViewModel}" DataType="{x:Type vm:StartProcessViewModel}">
-      <views:StartWindow/>
-    </DataTemplate>
   </Application.Resources>
 </Application>
