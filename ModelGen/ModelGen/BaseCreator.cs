@@ -14,6 +14,11 @@ public abstract class BaseCreator
   protected Assembly SourceAssembly { get; set; } = null!;
 
   /// <summary>
+  /// Total count of types in SourceAssembly
+  /// </summary>
+  protected int TotalTypesCount { get; set; }
+
+  /// <summary>
   /// Name of the C# project. Base of the namespace.
   /// </summary>
   protected string ProjectName { get; set; }
@@ -49,20 +54,21 @@ public abstract class BaseCreator
       displayOptions = new DisplayOptions();
     ModelMonitor?.ShowProcessStart($"Start processing {type}");
     SourceAssembly = type.Assembly;
+    TotalTypesCount = SourceAssembly.ExportedTypes.Count();
     TimeSpan totalTime = TimeSpan.Zero;
     totalTime += ScanType(type);
 
     if (monitorDisplaySelector.HasFlag(MDS.ScannedNamespaces))
       ModelMonitor?.ShowNamespaceSummary(NTS.Origin);
     if (monitorDisplaySelector.HasFlag(MDS.ScanValidation))
-      totalTime += ValidateTypes(NTS.Origin, displayOptions.TypeStatusSelector, displayOptions.TypeDataSelector);
+      totalTime += ValidateScan(NTS.Origin, displayOptions.TypeStatusSelector, displayOptions.TypeDataSelector);
 
     if (monitorDisplaySelector.HasFlag(MDS.ScannedTypes))
       ModelMonitor?.ShowNamespacesDetails(displayOptions with { NamespaceTypeSelector = NTS.Origin });
 
-    totalTime += RenameTypes();
-    if (monitorDisplaySelector.HasFlag(MDS.TypeRename))
-      ModelMonitor?.ShowTypeRenames();
+    //totalTime += RenameTypes();
+    //if (monitorDisplaySelector.HasFlag(MDS.TypeRename))
+    //  ModelMonitor?.ShowTypeRenames();
 
     //totalTime += SetTypeConversions();
     //if (monitorDisplaySelector.HasFlag(MDS.TypeConversions))
@@ -82,11 +88,11 @@ public abstract class BaseCreator
     IsRun = false;
   }
 
-
   #region Processing methods
+
   protected TimeSpan ScanType(Type type)
   {
-    ModelMonitor?.ShowPhaseStart("Scanning types");
+    ModelMonitor?.ShowPhaseStart(PPS.ScanTypes, "Scanning types");
     DateTime t1 = DateTime.Now;
     ModelManager.OnScanningType += ModelManager_OnScanningType;
     ModelManager.ScanType(type);
@@ -97,7 +103,7 @@ public abstract class BaseCreator
     var reflectedTypesCount = TypeManager.AllTypes.Where(item => item.IsReflected).Count();
     var acceptedTypesCount = TypeManager.AcceptedTypes.Count();
     var rejectedTypesCount = TypeManager.RejectedTypes.Count();
-    ModelMonitor?.ShowPhaseEnd("Scanning types", new SummaryInfo
+    ModelMonitor?.ShowPhaseEnd(PPS.ScanTypes, new SummaryInfo
     {
       Time = ts,
       Summary = new Dictionary<string, object>{
@@ -110,10 +116,22 @@ public abstract class BaseCreator
     return ts;
   }
 
-  protected TimeSpan ValidateTypes(NTS nameTypeSelector, MSS typeStatusSelector, TDS typeDataSelector)
+  private void ModelManager_OnScanningType(ScanningTypeInfo info)
   {
-    var phaseName = "Validating types";
-    ModelMonitor?.ShowPhaseStart(phaseName);
+    ModelMonitor?.ShowPhaseProgress(PPS.ScanTypes, new ProgressInfo
+    {
+      Total = TotalTypesCount,
+      PreStr = "registered",
+      Done = info.RegisteredTypes,
+      MidStr = "types",
+      Summary = new Dictionary<string, object>{
+        {"in {0} namespaces", info.RegisteredNamespaces ?? 0 } },
+      PostStr = $"{info.Current?.OriginalNamespace}.{info.Current?.OriginalName}"
+    });
+  }
+  protected TimeSpan ValidateScan(NTS nameTypeSelector, MSS typeStatusSelector, TDS typeDataSelector)
+  {
+    ModelMonitor?.ShowPhaseStart(PPS.ScanValidation,"Validating scan");
     DateTime t1 = DateTime.Now;
     var ModelValidator = new ModelValidator(nameTypeSelector, typeStatusSelector, typeDataSelector);
     ModelValidator.OnValidatingType += ModelValidator_OnValidatingType;
@@ -128,7 +146,7 @@ public abstract class BaseCreator
       summary.Add("No docs types", ModelValidator.NoDocsTypesCount);
     if (ModelValidator.NoSummaryTypesCount > 0)
       summary.Add("No summary types", ModelValidator.NoSummaryTypesCount);
-    ModelMonitor?.ShowPhaseEnd(phaseName, new SummaryInfo
+    ModelMonitor?.ShowPhaseEnd(PPS.ScanValidation, new SummaryInfo
     {
       Time = ts,
       Summary = summary
@@ -136,26 +154,26 @@ public abstract class BaseCreator
     return ts;
   }
 
-  protected TimeSpan RenameTypes()
-  {
-    ModelMonitor?.ShowPhaseStart("Renaming types");
-    DateTime t1 = DateTime.Now;
-    var renamedTypesCount = ModelManager.RenameSpecificTypes();
-    foreach (var type in TypeManager.AllTypes.ToArray())
-    {
-      ModelManager.RenameType(type);
-    }
-    DateTime t2 = DateTime.Now;
-    var ts = t2 - t1;
-    ModelMonitor?.ShowPhaseEnd("Renaming types", new SummaryInfo
-    {
-      Time = ts,
-      Summary = new Dictionary<string, object>{
-        {"Renamed types", renamedTypesCount },
-        }
-    });
-    return ts;
-  }
+  //protected TimeSpan RenameTypes()
+  //{
+  //  ModelMonitor?.ShowPhaseStart(TypeRename,"Renaming types");
+  //  DateTime t1 = DateTime.Now;
+  //  var renamedTypesCount = ModelManager.RenameSpecificTypes();
+  //  foreach (var type in TypeManager.AllTypes.ToArray())
+  //  {
+  //    ModelManager.RenameType(type);
+  //  }
+  //  DateTime t2 = DateTime.Now;
+  //  var ts = t2 - t1;
+  //  ModelMonitor?.ShowPhaseEnd("Renaming types", new SummaryInfo
+  //  {
+  //    Time = ts,
+  //    Summary = new Dictionary<string, object>{
+  //      {"Renamed types", renamedTypesCount },
+  //      }
+  //  });
+  //  return ts;
+  //}
 
   //protected TimeSpan SetTypeConversions()
   //{
@@ -259,18 +277,7 @@ public abstract class BaseCreator
 
   #region monitoring callbacks
 
-  private void ModelManager_OnScanningType(ScanningTypeInfo info)
-  {
-    ModelMonitor?.ShowPhaseProgress("Scanning types", new ProgressInfo
-    {
-      PreStr = "registered",
-      Done = info.RegisteredTypes,
-      MidStr = "types",
-      Summary = new Dictionary<string, object>{
-        {"in {0} namespaces", info.RegisteredNamespaces ?? 0 } },
-      PostStr = $"{info.Current?.OriginalNamespace}.{info.Current?.OriginalName}"
-    });
-  }
+
 
   //private void TypeReflector_OnReflection(ReflectionInfo info)
   //{
@@ -288,7 +295,7 @@ public abstract class BaseCreator
 
   private void ModelValidator_OnValidatingType(ModelValidator sender, ValidatingTypeInfo info)
   {
-    ModelMonitor?.ShowPhaseProgress("Validating types", new ProgressInfo
+    ModelMonitor?.ShowPhaseProgress(PPS.ScanValidation, new ProgressInfo
     {
       PreStr = "validated",
       Done = info.CheckedTypes,
@@ -301,7 +308,7 @@ public abstract class BaseCreator
 
   private void ModelManager_OnCheckingUsage(CheckingUsageInfo info)
   {
-    ModelMonitor?.ShowPhaseProgress("Checking types", new ProgressInfo
+    ModelMonitor?.ShowPhaseProgress(PPS.UsageCheck, new ProgressInfo
     {
       PreStr = "checked",
       Done = info.CheckedTypes,

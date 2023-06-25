@@ -8,21 +8,13 @@
     ".NETCoreApp,Version=v6.0": {
       "ModelGenApp/1.0.0": {
         "dependencies": {
-          "CommunityToolkit.Mvvm": "8.2.0",
           "ModelGen": "1.0.0",
           "Qhta.HtmlUtils": "1.0.1",
+          "Qhta.MVVM": "2.0.0",
           "Qhta.TypeUtils": "1.3.10.1"
         },
         "runtime": {
           "ModelGenApp.dll": {}
-        }
-      },
-      "CommunityToolkit.Mvvm/8.2.0": {
-        "runtime": {
-          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
-            "assemblyVersion": "8.2.0.0",
-            "fileVersion": "8.2.0.1"
-          }
         }
       },
       "DeepEqual/4.2.1": {
@@ -134,6 +126,14 @@
           }
         }
       },
+      "Qhta.DispatchedObjects/1.2.0": {
+        "runtime": {
+          "lib/netstandard2.0/Qhta.DispatchedObjects.dll": {
+            "assemblyVersion": "1.2.0.0",
+            "fileVersion": "1.2.0.0"
+          }
+        }
+      },
       "Qhta.HtmlUtils/1.0.1": {
         "dependencies": {
           "HtmlAgilityPack": "1.8.9"
@@ -142,6 +142,17 @@
           "lib/netstandard2.0/Qhta.HtmlUtils.dll": {
             "assemblyVersion": "1.0.1.0",
             "fileVersion": "1.0.1.0"
+          }
+        }
+      },
+      "Qhta.MVVM/2.0.0": {
+        "dependencies": {
+          "Qhta.DispatchedObjects": "1.2.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Qhta.MVVM.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
           }
         }
       },
@@ -954,13 +965,6 @@
       "serviceable": false,
       "sha512": ""
     },
-    "CommunityToolkit.Mvvm/8.2.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-F883u+B0AVUkRZS+VQBiZEJiqlGiiQhGA8Ejy1/Y8fl4ecBmSd+HYuDso0iiUhh+UxRDjp2aTQ7jGkuL2S4NrA==",
-      "path": "communitytoolkit.mvvm/8.2.0",
-      "hashPath": "communitytoolkit.mvvm.8.2.0.nupkg.sha512"
-    },
     "DeepEqual/4.2.1": {
       "type": "package",
       "serviceable": true,
@@ -1038,12 +1042,26 @@
       "path": "qhta.collections/2.0.0",
       "hashPath": "qhta.collections.2.0.0.nupkg.sha512"
     },
+    "Qhta.DispatchedObjects/1.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-FXnack/pp645+0NmUkqF0aS+tjmG+MIDmnH9JscBdBNvNnUAydxRAX72J3Vxwyu9Ro37Nt8zcWVbIYYmQYlXdg==",
+      "path": "qhta.dispatchedobjects/1.2.0",
+      "hashPath": "qhta.dispatchedobjects.1.2.0.nupkg.sha512"
+    },
     "Qhta.HtmlUtils/1.0.1": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-oJh2DeXbi9eXHzlRZ34t9ia7aPhr8a68e58PkVuASejQ7BOYUQHWZrQMe40zfy4sv/2Es0wXHyK2kflZvun+qw==",
       "path": "qhta.htmlutils/1.0.1",
       "hashPath": "qhta.htmlutils.1.0.1.nupkg.sha512"
+    },
+    "Qhta.MVVM/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pkSviUzOr4ZNEn0HGFlwRr1XYJ28aKOXD7n21ITKKeQeu1V8kJRH5zh7Q7mc2oOxki/35yqoCP2UM6C57JJ6Fg==",
+      "path": "qhta.mvvm/2.0.0",
+      "hashPath": "qhta.mvvm.2.0.0.nupkg.sha512"
     },
     "Qhta.TestHelper/2.2.0": {
       "type": "package",
