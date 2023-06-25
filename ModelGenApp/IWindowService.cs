@@ -1,7 +1,7 @@
 ﻿namespace ModelGenApp;
 public interface IWindowService
 {
-  Window? ShowWindow(ObservableObject viewModel, Window? ownerWindow);
+  Window? ShowWindow(IViewModel viewModel, Window? ownerWindow);
 }
 
 public class WindowService : IWindowService
@@ -13,7 +13,7 @@ public class WindowService : IWindowService
     //this.Owner = owner;
   }
 
-  public Window? ShowWindow(ObservableObject viewModel, Window? ownerWindow)
+  public Window? ShowWindow(IViewModel viewModel, Window? ownerWindow)
   {
     var dataTemplate = (DataTemplate)Application.Current.FindResource(viewModel.GetType());
     var window = dataTemplate.LoadContent() as Window;

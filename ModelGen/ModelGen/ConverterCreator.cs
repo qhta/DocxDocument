@@ -114,7 +114,7 @@ public class ConverterCreator: BaseCreator
   {
     //CodeGenerator.PrepareProjects();
     int generatedCount = 0;
-    ModelMonitor?.ShowPhaseStart("Generating converters");
+    ModelMonitor?.ShowPhaseStart(PPS.CodeGeneration,"Generating converters");
     DateTime t1 = DateTime.Now;
     foreach (var typeInfo in TypeManager.AcceptedTypes.ToArray())
     {
@@ -131,7 +131,7 @@ public class ConverterCreator: BaseCreator
     //CodeGenerator.GenerateGlobalUsings();
     DateTime t2 = DateTime.Now;
     var ts = t2 - t1;
-    ModelMonitor?.ShowPhaseEnd("Generating converters", new SummaryInfo{ Time = ts, 
+    ModelMonitor?.ShowPhaseEnd(PPS.CodeGeneration, new SummaryInfo{ Time = ts, 
       Summary = new Dictionary<string, object>{ 
         {"Generated interfaces", CodeGenerator.GeneratedInterfacesCount }, 
         {"Generated classes", CodeGenerator.GeneratedClassesCount }, 

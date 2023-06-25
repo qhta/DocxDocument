@@ -28,19 +28,24 @@ public abstract class ModelMonitor
 
   public abstract DocumentationWriter GetDocumentationWriter(DisplayOptions options);
 
-  public void ShowProcessStart(string line)
+  public PPS PhaseNum { get; protected set; }
+
+  public string? PhaseName { get; protected set; }
+
+  public virtual void ShowProcessStart(string line)
   {
-    WriteLine();
     WriteLine(line);
   }
 
-  public void ShowPhaseStart(string phaseName)
+  public virtual void ShowPhaseStart(PPS phaseNumber, string phaseName)
   {
+    PhaseNum = phaseNumber;
+    PhaseName = phaseName;
     WriteLine();
     WriteLine($"Start {phaseName.ToLower()}");
   }
 
-  public void ShowPhaseProgress(string phaseName, ProgressInfo info)
+  public virtual void ShowPhaseProgress(PPS phaseNumber, ProgressInfo info)
   {
     var sl = new List<string>();
     if (info.PreStr != null)
@@ -66,10 +71,11 @@ public abstract class ModelMonitor
       WriteSameLine(str);
   }
 
-  public void ShowPhaseEnd(string phaseName, SummaryInfo info)
+  public virtual void ShowPhaseEnd(PPS phaseNumber, SummaryInfo info)
   {
     WriteSameLine("");
-    WriteLine($"End {phaseName.ToLower()}, time={info.Time}");
+    Debug.Assert(phaseNumber == PhaseNum);
+    WriteLine($"End {PhaseName?.ToLower()}, time={info.Time}");
     if (info.Summary != null)
       foreach (var item in info.Summary)
       {
@@ -81,7 +87,7 @@ public abstract class ModelMonitor
 
   }
 
-  public void ShowNamespaceSummary(NTS originTargetSelector)
+  public virtual void ShowNamespaceSummary(NTS originTargetSelector)
   {
     WriteLine();
     WriteLine("Scanned namespaces:");
@@ -117,7 +123,7 @@ public abstract class ModelMonitor
     }
   }
 
-  public void ShowNamespacesDetails(DisplayOptions options)
+  public virtual void ShowNamespacesDetails(DisplayOptions options)
   {
     WriteLine();
     string? filter = null;
@@ -137,7 +143,7 @@ public abstract class ModelMonitor
     }
   }
 
-  public void ShowNamespaceTypes(string nspace, DisplayOptions options)
+  public virtual void ShowNamespaceTypes(string nspace, DisplayOptions options)
   {
     var nSpaceTypes = TypeManager.GetNamespaceTypes(nspace).ToList();
     if (options.Typenames != null)
@@ -182,7 +188,7 @@ public abstract class ModelMonitor
     }
   }
 
-  public void ShowTypeInfo(TypeInfo typeInfo, DisplayOptions options)
+  public virtual void ShowTypeInfo(TypeInfo typeInfo, DisplayOptions options)
   {
     //if (options.TypeDataSelector.HasFlag(TDS.Documentation))
     //  ShowDocumentation(typeInfo, options);
@@ -234,7 +240,7 @@ public abstract class ModelMonitor
       ShowProperties(typeInfo, options);
   }
 
-  public void ShowGenericParamsConstraints(TypeInfo typeInfo, DisplayOptions options)
+  public virtual void ShowGenericParamsConstraints(TypeInfo typeInfo, DisplayOptions options)
   {
     var originNames = options.NamespaceTypeSelector == NTS.Origin || options.TypeDataSelector.HasFlag(TDS.OriginalNames);
     var genericTypeParams = typeInfo.GetGenericParamTypes();
@@ -260,7 +266,7 @@ public abstract class ModelMonitor
     }
   }
 
-  public void ShowImplementedInterfaces(TypeInfo typeInfo, DisplayOptions options)
+  public virtual void ShowImplementedInterfaces(TypeInfo typeInfo, DisplayOptions options)
   {
     var originNames = options.NamespaceTypeSelector == NTS.Origin || options.TypeDataSelector.HasFlag(TDS.OriginalNames);
     var implementedInterfaces = typeInfo.GetImplementedInterfaces().ToList();
@@ -284,7 +290,7 @@ public abstract class ModelMonitor
     }
   }
 
-  public void ShowElementsTypes(TypeInfo typeInfo, DisplayOptions options)
+  public virtual void ShowElementsTypes(TypeInfo typeInfo, DisplayOptions options)
   {
     var originNames = options.NamespaceTypeSelector == NTS.Origin || options.TypeDataSelector.HasFlag(TDS.OriginalNames);
     var includedTypes = typeInfo.GetIElementsTypes().ToList();
@@ -308,7 +314,7 @@ public abstract class ModelMonitor
     }
   }
 
-  public void ShowOutgoingRelationships(TypeInfo typeInfo, DisplayOptions options)
+  public virtual void ShowOutgoingRelationships(TypeInfo typeInfo, DisplayOptions options)
   {
     var outgoingRels = TypeManager.GetOutgoingRelationships(typeInfo).ToList();
     if (options.TypeDataSelector.HasFlag(TDS.ExcludeSemantics) && options.SemanticsFilter != null)
@@ -338,7 +344,7 @@ public abstract class ModelMonitor
     }
   }
 
-  public void ShowIncomingRelationships(TypeInfo typeInfo, DisplayOptions options)
+  public virtual void ShowIncomingRelationships(TypeInfo typeInfo, DisplayOptions options)
   {
     var incomingRels = TypeManager.GetIncomingRelationships(typeInfo).ToList();
     if (options.TypeDataSelector.HasFlag(TDS.ExcludeSemantics) && options.SemanticsFilter != null)
@@ -367,7 +373,7 @@ public abstract class ModelMonitor
     }
   }
 
-  public void ShowEnumValues(TypeInfo typeInfo, DisplayOptions options)
+  public virtual void ShowEnumValues(TypeInfo typeInfo, DisplayOptions options)
   {
     var enumValues = typeInfo.EnumValues?.ToList();
     if (enumValues != null && enumValues.Any())
@@ -397,7 +403,7 @@ public abstract class ModelMonitor
     }
   }
 
-  public void ShowProperties(TypeInfo typeInfo, DisplayOptions options)
+  public virtual void ShowProperties(TypeInfo typeInfo, DisplayOptions options)
   {
     if (typeInfo.Properties == null)
       return;
@@ -440,7 +446,7 @@ public abstract class ModelMonitor
     }
   }
 
-  public void ShowMetadata(ModelElement element, DisplayOptions options)
+  public virtual void ShowMetadata(ModelElement element, DisplayOptions options)
   {
     var documentation = element.Documentation;
     if (documentation != null)
@@ -520,7 +526,7 @@ public abstract class ModelMonitor
       attribs.Add($" minExclusive=\"{number.MaxExclusive}\"");
     WriteLine($"/// <stringConstraint{string.Join("",attribs)}/>");
   }
-  public void ShowTypeConversions()
+  public virtual void ShowTypeConversions()
   {
     foreach (var type in TypeManager.AllTypes)
     {
@@ -528,7 +534,7 @@ public abstract class ModelMonitor
     }
   }
 
-  public void ShowTypeConversion(TypeInfo type)
+  public virtual void ShowTypeConversion(TypeInfo type)
   {
     if (type.IsConverted)
     {
@@ -543,7 +549,7 @@ public abstract class ModelMonitor
     }
   }
 
-  public void ShowTypeRenames()
+  public virtual void ShowTypeRenames()
   {
     foreach (var typeInfo in TypeManager.AllTypes)
     {
@@ -554,13 +560,13 @@ public abstract class ModelMonitor
     }
   }
 
-  public void ShowProcessSummary(SummaryInfo info)
+  public virtual void ShowProcessSummary(SummaryInfo info)
   {
     WriteLine();
     WriteLine($"Total time = {info.Time}");
   }
 
-  public void ShowElementSchema(TypeInfo typeInfo, DisplayOptions options)
+  public virtual void ShowElementSchema(TypeInfo typeInfo, DisplayOptions options)
   {
     if (typeInfo.Schema != null)
     {
@@ -570,7 +576,7 @@ public abstract class ModelMonitor
     }
   }
 
-  public void WriteSchemaParticle(SchemaParticle particle)
+  public virtual void WriteSchemaParticle(SchemaParticle particle)
   {
     if (particle is ItemElementParticle itemElementParticle)
     {

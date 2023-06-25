@@ -1,16 +1,41 @@
 ﻿namespace ModelGenApp.ViewModels;
-public partial class ProcessOptionsViewModel: ObservableObject
+public partial class ProcessOptionsViewModel: ViewModel
 {
-  [ObservableProperty]
-  private ProcessOptions options;
 
-  [ObservableProperty]
-  private ObservableCollection<string> mainTypeNames;
+  public ProcessOptions Options
+  {
+    get { return _Options; }
+    set
+    {
+      if (_Options != value)
+      {
+        _Options = value;
+        NotifyPropertyChanged(nameof(Options));
+      }
+    }
+  }
+  private ProcessOptions _Options;
+
+
+  public ObservableCollection<string> MainTypeNames
+  {
+    get { return _MainTypeNames; }
+    set
+    {
+      if (_MainTypeNames != value)
+      {
+        _MainTypeNames = value;
+        NotifyPropertyChanged(nameof(MainTypeNames));
+      }
+    }
+  }
+  private ObservableCollection<string> _MainTypeNames;
+
 
   public ProcessOptionsViewModel()
   {
-    options = ProcessOptionsMgr.GetInstance();
-    mainTypeNames = GetMainTypeNames();
+    _Options = ProcessOptionsMgr.GetInstance();
+    _MainTypeNames = GetMainTypeNames();
   }
 
   private ObservableCollection<string> GetMainTypeNames()
