@@ -5,8 +5,8 @@ namespace ModelGenApp.ViewModels;
 public partial class ProcessMonitor : ModelMonitor
 {
 
-  public ProcessMonitorViewModel ProcessMonitorVM { get; set; } = new();
-  
+  public ProcessMonitorViewModel VM { get; set; } = new();
+
   public int IndentLevel { get; set; }
 
   public int IndentSize { get; set; } = 2;
@@ -14,17 +14,17 @@ public partial class ProcessMonitor : ModelMonitor
 
   public override void WriteLine()
   {
-    DispatcherHelper.Execute(() => ProcessMonitorVM.Lines.Add(string.Empty));
+    DispatcherHelper.Execute(() => VM.Lines.Add(string.Empty));
   }
 
   public override void WriteLine(string line)
   {
-    DispatcherHelper.Execute(() => ProcessMonitorVM.Lines.Add(line));
+    DispatcherHelper.Execute(() => VM.Lines.Add(line));
   }
 
   public override void WriteSameLine(string line)
   {
-    DispatcherHelper.Execute(() => ProcessMonitorVM.StatusLine = line);
+    DispatcherHelper.Execute(() => VM.StatusLine = line);
   }
 
   public override void Indent()
@@ -41,53 +41,29 @@ public partial class ProcessMonitor : ModelMonitor
   public override void ShowProcessStart(string line)
   {
     base.ShowProcessStart(line);
-    //PhaseMonitors = new();
+    const int numPhases = 6;
+    VM.PhaseMonitors = new PhaseMonitor[numPhases];
+    for (int i = 0; i < numPhases; i++)
+      VM.PhaseMonitors[i] = new PhaseMonitor();
   }
 
   public override void ShowPhaseStart(PPS phaseNumber, string phaseName)
   {
     base.ShowPhaseStart(phaseNumber, phaseName);
-    //if (PhaseMonitors != null)
-    {
-      DispatcherHelper.Execute(() =>
-      { 
-        //PhaseMonitor phaseMonitor;
-        //PhaseMonitors.Add(phaseMonitor = new PhaseMonitor { PhaseNumber = PhaseNum, PhaseName = phaseName });
-        //PhaseMonitors0 = phaseMonitor;
-        ProcessMonitorVM.Percentage = 10;
-        //(Application.Current.MainWindow as MainWindow).ProcessOptionsView.ProgressBar.Value = 0;
-      });
-    }
+    VM.PhaseMonitors[(int)phaseNumber-1].Percentage = 0;
   }
 
   public override void ShowPhaseProgress(PPS phaseNumber, ProgressInfo info)
   {
     base.ShowPhaseProgress(phaseNumber, info);
-    //if (PhaseMonitors != null)
-    {
-      //var phaseMonitor = PhaseMonitors.FirstOrDefault(item => item.PhaseNumber == phaseNumber);
-      //if (phaseMonitor != null)
-      {
-        //if (phaseMonitor.Progress == null)
-        //  phaseMonitor.Progress = new Progress<int>();
-        var percentage = (info.Done??0)*100/(info.Total??100);
-        //(Application.Current.MainWindow as MainWindow).ProcessOptionsView.ProgressBar.Value = percentage;
-        //Debug.WriteLine($"ShowPhaseProgress.Update.Begin({percentage})");
-        ProcessMonitorVM.Percentage=percentage;
-        //Debug.WriteLine($"ShowPhaseProgress.Update.End({percentage})");
-      }
-    }
+    var percentage = (info.Done ?? 0) * 100 / (info.Total ?? 100);
+    VM.PhaseMonitors[(int)phaseNumber-1].Percentage = percentage;
   }
 
   public override void ShowPhaseEnd(PPS phaseNumber, SummaryInfo info)
   {
     base.ShowPhaseEnd(phaseNumber, info);
-    //if (PhaseMonitors != null)
-    {
-      //var phaseMonitor = PhaseMonitors.FirstOrDefault(item => item.PhaseNumber == phaseNumber);
-      //if (phaseMonitor != null)
-      //  phaseMonitor.SummaryInfo = info;
-    }
+    VM.PhaseMonitors[(int)phaseNumber-1].Percentage = 100;
   }
 
   public override DocumentationWriter GetDocumentationWriter(DisplayOptions options)

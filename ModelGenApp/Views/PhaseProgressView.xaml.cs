@@ -30,7 +30,8 @@ public partial class PhaseProgressView : UserControl
 
   public int Percentage
   {
-    get => (int)GetValue(PercentageProperty); set => SetValue(PercentageProperty, value);
+    get => (int)GetValue(PercentageProperty); 
+    set => SetValue(PercentageProperty, value);
   }
 
   private static void PercentagePropertyChanged(object sender, DependencyPropertyChangedEventArgs arg)
@@ -39,7 +40,7 @@ public partial class PhaseProgressView : UserControl
     var phaseProgressVM = instance.FindResource("PhaseProgressVM") as ViewModels.PhaseProgressViewModel;
     if (phaseProgressVM!=null && !double.IsNaN(instance.ActualHeight) && instance.ActualHeight!=0)
       DispatcherHelper.Execute(()=>
-       phaseProgressVM.InnerHeight = (int)((int)arg.NewValue*100/instance.ActualHeight)
+       phaseProgressVM.InnerHeight = (int)((int)arg.NewValue*instance.ActualHeight/100)
       );
   }
 
