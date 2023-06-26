@@ -50,6 +50,7 @@ public partial class ProcessMonitor : ModelMonitor
   public override void ShowPhaseStart(PPS phaseNumber, string phaseName)
   {
     base.ShowPhaseStart(phaseNumber, phaseName);
+    var numPhases = VM.PhaseMonitors.Length;
     VM.PhaseMonitors[(int)phaseNumber-1].Percentage = 0;
   }
 
