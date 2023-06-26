@@ -44,10 +44,10 @@ public abstract class BaseCreator
     Debug.Assert(assembly != null);
     Type? rootType = assembly.GetType(options.ScanTypeName, true);
     Debug.Assert(rootType != null);
-    RunOn(rootType,options.Display,options.DisplayOptions);
+    RunOn(rootType, options.StopAtPhase, options.Display, options.DisplayOptions);
   }
 
-  public void RunOn(Type type, MDS monitorDisplaySelector = MDS.None, DisplayOptions? displayOptions = null)
+  public void RunOn(Type type, PPS stopAtPhase, MDS monitorDisplaySelector = MDS.None, DisplayOptions? displayOptions = null)
   {
     IsRun = true;
     if (displayOptions == null)
@@ -56,15 +56,20 @@ public abstract class BaseCreator
     SourceAssembly = type.Assembly;
     TotalTypesCount = SourceAssembly.ExportedTypes.Count();
     TimeSpan totalTime = TimeSpan.Zero;
-    totalTime += ScanType(type);
 
-    if (monitorDisplaySelector.HasFlag(MDS.ScannedNamespaces))
-      ModelMonitor?.ShowNamespaceSummary(NTS.Origin);
-    if (monitorDisplaySelector.HasFlag(MDS.ScanValidation))
+    if (stopAtPhase >= PPS.ScanTypes)
+    {
+      totalTime += ScanType(type);
+      if (monitorDisplaySelector.HasFlag(MDS.ScannedNamespaces))
+        ModelMonitor?.ShowNamespaceSummary(NTS.Origin);
+    }
+
+    if (stopAtPhase >= PPS.ScanValidation)
+    {
       totalTime += ValidateScan(NTS.Origin, displayOptions.TypeStatusSelector, displayOptions.TypeDataSelector);
-
-    if (monitorDisplaySelector.HasFlag(MDS.ScannedTypes))
-      ModelMonitor?.ShowNamespacesDetails(displayOptions with { NamespaceTypeSelector = NTS.Origin });
+      if (monitorDisplaySelector.HasFlag(MDS.ScannedTypes))
+        ModelMonitor?.ShowNamespacesDetails(displayOptions with { NamespaceTypeSelector = NTS.Origin });
+    }
 
     //totalTime += RenameTypes();
     //if (monitorDisplaySelector.HasFlag(MDS.TypeRename))
@@ -84,7 +89,10 @@ public abstract class BaseCreator
 
     //totalTime += GenerateCode();
 
-    ModelMonitor?.ShowProcessSummary(new SummaryInfo { Time = totalTime });
+    ModelMonitor?.ShowProcessSummary(new SummaryInfo
+    {
+      Time = totalTime
+    });
     IsRun = false;
   }
 
@@ -131,7 +139,7 @@ public abstract class BaseCreator
   }
   protected TimeSpan ValidateScan(NTS nameTypeSelector, MSS typeStatusSelector, TDS typeDataSelector)
   {
-    ModelMonitor?.ShowPhaseStart(PPS.ScanValidation,"Validating scan");
+    ModelMonitor?.ShowPhaseStart(PPS.ScanValidation, "Validating scan");
     DateTime t1 = DateTime.Now;
     var ModelValidator = new ModelValidator(nameTypeSelector, typeStatusSelector, typeDataSelector);
     ModelValidator.OnValidatingType += ModelValidator_OnValidatingType;
