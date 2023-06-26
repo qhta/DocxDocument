@@ -10,25 +10,18 @@
              d:DataContext="{d:DesignInstance Type=vm:MainViewModel}"
              d:DesignHeight="450" d:DesignWidth="800">
   <UserControl.Resources>
-    <Style x:Key="{x:Type ProgressBar}" TargetType="{x:Type ProgressBar}">
+    <Style x:Key="{x:Type views:PhaseProgressView}" TargetType="{x:Type views:PhaseProgressView}">
       <Setter Property="Width" Value="5"/>
-      <Setter Property="Orientation" Value="Vertical"/>
       <Setter Property="HorizontalAlignment" Value="Right"/>
-      <Setter Property="Maximum" Value="100"/>
-      <Setter Property="RenderTransformOrigin" Value="0,0.5"/>
-      <Setter Property="Background" Value="Transparent"/>
-      <Setter Property="BorderThickness" Value="0"/>
-      <Setter Property="RenderTransform">
+      <Setter Property="Margin" Value="0,-15,0,15"/>
+      <!--<Setter Property="RenderTransform">
         <Setter.Value>
           <TransformGroup>
-            <ScaleTransform ScaleY="-1"/>
-            <SkewTransform/>
-            <RotateTransform/>
-            <TranslateTransform Y="-15
-                                "/>
+            
+            <TranslateTransform Y="-15"/>
           </TransformGroup>
         </Setter.Value>
-      </Setter>
+      </Setter>-->
     </Style>
   </UserControl.Resources>
   <Grid>
@@ -87,28 +80,11 @@
                  Content="Stop after phase:"/>
 
           <views:PhaseProgressView Grid.Row="1" Grid.RowSpan="2"
-                       Percentage="{Binding Path=ProcessMonitor.Percentage}" 
+                       Percentage="{Binding Path=ProcessMonitor.VM.PhaseMonitors[0].Percentage}" 
                        />
-          <!--<ProgressBar Grid.Row="3" Grid.RowSpan="2"
-                       Maximum="{Binding Path=ProcessMonitor.PhaseMonitors[1].ProgressInfo.Total}" 
-                       Value="{Binding Path=ProcessMonitor.PhaseMonitors[1].Progress.Done}" 
+          <views:PhaseProgressView Grid.Row="3" Grid.RowSpan="2"
+                       Percentage="{Binding Path=ProcessMonitor.VM.PhaseMonitors[1].Percentage}" 
                        />
-          <ProgressBar Grid.Row="5" Grid.RowSpan="2"
-                       Maximum="{Binding Path=ProcessMonitor.PhaseMonitors[2].ProgressInfo.Total}" 
-                       Value="{Binding Path=ProcessMonitor.PhaseMonitors[2].Progress.Done}" 
-                       />
-          <ProgressBar Grid.Row="7" Grid.RowSpan="2"
-                       Maximum="{Binding Path=ProcessMonitor.PhaseMonitors[3].ProgressInfo.Total}" 
-                       Value="{Binding Path=ProcessMonitor.PhaseMonitors[3].ProgressInfo.Done}" 
-                       />
-          <ProgressBar Grid.Row="9" Grid.RowSpan="2"
-                       Maximum="{Binding Path=ProcessMonitor.PhaseMonitors[4].ProgressInfo.Total}" 
-                       Value="{Binding Path=ProcessMonitor.PhaseMonitors[4].ProgressInfo.Done}" 
-                       />
-          <ProgressBar Grid.Row="11" Grid.RowSpan="2"
-                       Maximum="{Binding Path=ProcessMonitor.PhaseMonitors[5].ProgressInfo.Total}" 
-                       Value="{Binding Path=ProcessMonitor.PhaseMonitors[5].ProgressInfo.Done}" 
-                       />-->
 
           <Slider Grid.Column="0" Grid.Row="2" Grid.RowSpan="11"
                   Minimum="1" 
@@ -119,7 +95,7 @@
                   IsDirectionReversed="True"
                   IsSnapToTickEnabled="True" 
                   Margin="0,10,0,10" 
-                  Value="{Binding Path=Options.StopAtPhase}"
+                  Value="{Binding Path=ProcessOptionsVM.Options.StopAtPhase}"
                   />
           <StackPanel Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" Orientation="Horizontal">
             <Label Content="Scan types" />

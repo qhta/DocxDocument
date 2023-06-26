@@ -32,6 +32,20 @@ public class ProcessMonitorViewModel: ViewModel
   private string? _StatusLine;
 
 
+  public PhaseMonitor[] PhaseMonitors
+  {
+    get { return _PhaseMonitors; }
+    set
+    {
+      if (_PhaseMonitors != value)
+      {
+        _PhaseMonitors = value;
+        NotifyPropertyChanged(nameof(PhaseMonitors));
+      }
+    }
+  }
+  private PhaseMonitor[] _PhaseMonitors = null!;
+
   public int Percentage
   {
     get { return _Percentage; }

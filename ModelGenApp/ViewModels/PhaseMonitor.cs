@@ -61,20 +61,20 @@ public partial class PhaseMonitor : ViewModel
 
   //private SummaryInfo? SummaryInfo;
 
-  private BackgroundWorker worker;
+//  private BackgroundWorker worker;
 
   public PhaseMonitor()
   {
-    worker = new BackgroundWorker();
-    worker.WorkerReportsProgress = true;
-    worker.ProgressChanged += (sender, args) =>
-    {
-      Debug.WriteLine($"ProgressChanged.Begin({args.ProgressPercentage})");
-      DispatcherHelper.Execute(() => Percentage = args.ProgressPercentage);
-      Debug.WriteLine($"ProgressChanged.End({args.ProgressPercentage})");
-    };
-    worker.DoWork += WorkerDoWork;
-    worker.RunWorkerAsync();
+    //worker = new BackgroundWorker();
+    //worker.WorkerReportsProgress = true;
+    //worker.ProgressChanged += (sender, args) =>
+    //{
+    //  Debug.WriteLine($"ProgressChanged.Begin({args.ProgressPercentage})");
+    //  DispatcherHelper.Execute(() => Percentage = args.ProgressPercentage);
+    //  Debug.WriteLine($"ProgressChanged.End({args.ProgressPercentage})");
+    //};
+    //worker.DoWork += WorkerDoWork;
+    //worker.RunWorkerAsync();
 
   }
   //public void Load()
@@ -84,9 +84,9 @@ public partial class PhaseMonitor : ViewModel
 
   private void WorkerDoWork(object? sender, DoWorkEventArgs e)
   {
-    Debug.WriteLine($"Worker.DoWork.Begin({Percentage})");
-    worker.ReportProgress(Percentage);
-    Thread.Sleep(100);
-    Debug.WriteLine($"Worker.DoWork.End({Percentage})");
+    //Debug.WriteLine($"Worker.DoWork.Begin({Percentage})");
+    //worker.ReportProgress(Percentage);
+    //Thread.Sleep(100);
+    //Debug.WriteLine($"Worker.DoWork.End({Percentage})");
   }
 }
