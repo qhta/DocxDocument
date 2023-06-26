@@ -1,7 +1,7 @@
 ﻿namespace ModelGen;
 public record ProcessOptions
 {
-  public int StopAtPhase { get; set; } = 1;
+  public PPS StopAtPhase { get; set; } = PPS.ScanTypes;
 
   public string ScanTypeName { get; set; } = "DocumentFormat.OpenXml.Packaging.WordprocessingDocument";
 

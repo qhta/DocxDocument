@@ -32,7 +32,7 @@ public class Commander
     //creator.ModelMonitor=new ModelDisplay();
     var cancellationToken = new CancellationToken();
     Runner = Task.Factory.StartNew(() =>
-      { creator.RunOn(rootType, display, options); }, cancellationToken);
+      { creator.RunOn(rootType, PPS.CodeGeneration, display, options); }, cancellationToken);
     return cancellationToken;
   }
 

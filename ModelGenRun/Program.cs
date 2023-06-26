@@ -59,6 +59,6 @@ public static void GenerateTypeConverters(Type rootType)
   filePath = Path.Combine(filePath, @"ModelGen\DocumentModel");
   var creator = new ConverterCreator("DocumentModel", filePath);
   creator.ModelMonitor = new ModelDisplay();
-  creator.RunOn(rootType);
+  creator.RunOn(rootType, PPS.CodeGeneration);
 }
 }
