@@ -169,19 +169,6 @@
           }
         }
       },
-      "Qhta.DispatchedObjects/1.2.0": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/Qhta.DispatchedObjects.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/Qhta.DispatchedObjects.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "Qhta.HtmlUtils/1.0.1": {
         "type": "package",
         "dependencies": {
@@ -192,22 +179,6 @@
         },
         "runtime": {
           "lib/netstandard2.0/Qhta.HtmlUtils.dll": {}
-        }
-      },
-      "Qhta.MVVM/2.0.0": {
-        "type": "package",
-        "dependencies": {
-          "Qhta.DispatchedObjects": "1.2.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/Qhta.MVVM.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/Qhta.MVVM.dll": {
-            "related": ".xml"
-          }
         }
       },
       "Qhta.TestHelper/2.2.0": {
@@ -1592,6 +1563,29 @@
           "bin/placeholder/Qhta.Conversion.dll": {}
         }
       },
+      "Qhta.DispatchedObjects/1.2.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Qhta.DispatchedObjects.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Qhta.DispatchedObjects.dll": {}
+        }
+      },
+      "Qhta.MVVM/2.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Qhta.DispatchedObjects": "1.2.0"
+        },
+        "compile": {
+          "bin/placeholder/Qhta.MVVM.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Qhta.MVVM.dll": {}
+        }
+      },
       "Qhta.Xml/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -1942,19 +1936,6 @@
         "qhta.collections.nuspec"
       ]
     },
-    "Qhta.DispatchedObjects/1.2.0": {
-      "sha512": "FXnack/pp645+0NmUkqF0aS+tjmG+MIDmnH9JscBdBNvNnUAydxRAX72J3Vxwyu9Ro37Nt8zcWVbIYYmQYlXdg==",
-      "type": "package",
-      "path": "qhta.dispatchedobjects/1.2.0",
-      "files": [
-        ".nupkg.metadata",
-        "lib/netstandard2.0/Qhta.DispatchedObjects.dll",
-        "lib/netstandard2.0/Qhta.DispatchedObjects.xml",
-        "qhta.dispatchedobjects.1.2.0.nupkg.sha512",
-        "qhta.dispatchedobjects.nuspec",
-        "readme.md"
-      ]
-    },
     "Qhta.HtmlUtils/1.0.1": {
       "sha512": "oJh2DeXbi9eXHzlRZ34t9ia7aPhr8a68e58PkVuASejQ7BOYUQHWZrQMe40zfy4sv/2Es0wXHyK2kflZvun+qw==",
       "type": "package",
@@ -1965,19 +1946,6 @@
         "lib/netstandard2.0/Qhta.HtmlUtils.dll",
         "qhta.htmlutils.1.0.1.nupkg.sha512",
         "qhta.htmlutils.nuspec"
-      ]
-    },
-    "Qhta.MVVM/2.0.0": {
-      "sha512": "pkSviUzOr4ZNEn0HGFlwRr1XYJ28aKOXD7n21ITKKeQeu1V8kJRH5zh7Q7mc2oOxki/35yqoCP2UM6C57JJ6Fg==",
-      "type": "package",
-      "path": "qhta.mvvm/2.0.0",
-      "files": [
-        ".nupkg.metadata",
-        "lib/netstandard2.0/Qhta.MVVM.dll",
-        "lib/netstandard2.0/Qhta.MVVM.xml",
-        "qhta.mvvm.2.0.0.nupkg.sha512",
-        "qhta.mvvm.nuspec",
-        "readme.md"
       ]
     },
     "Qhta.TestHelper/2.2.0": {
@@ -5192,6 +5160,16 @@
       "path": "../../MyLib/Qhta.Conversion/Qhta.Conversion.csproj",
       "msbuildProject": "../../MyLib/Qhta.Conversion/Qhta.Conversion.csproj"
     },
+    "Qhta.DispatchedObjects/1.2.0": {
+      "type": "project",
+      "path": "../../MyLib/Qhta.DispatchedObjects/Qhta.DispatchedObjects.csproj",
+      "msbuildProject": "../../MyLib/Qhta.DispatchedObjects/Qhta.DispatchedObjects.csproj"
+    },
+    "Qhta.MVVM/2.0.0": {
+      "type": "project",
+      "path": "../../MyLib/Qhta.MVVM/Qhta.MVVM.csproj",
+      "msbuildProject": "../../MyLib/Qhta.MVVM/Qhta.MVVM.csproj"
+    },
     "Qhta.Xml/1.0.0": {
       "type": "project",
       "path": "../../MyLib/Qhta.Xml/Qhta.Xml.csproj",
@@ -5256,6 +5234,9 @@
           "projectReferences": {
             "D:\\VS\\Projects\\DocxDocument\\ModelGen\\ModelGen\\ModelGen.csproj": {
               "projectPath": "D:\\VS\\Projects\\DocxDocument\\ModelGen\\ModelGen\\ModelGen.csproj"
+            },
+            "D:\\VS\\Projects\\MyLib\\Qhta.MVVM\\Qhta.MVVM.csproj": {
+              "projectPath": "D:\\VS\\Projects\\MyLib\\Qhta.MVVM\\Qhta.MVVM.csproj"
             }
           }
         }
@@ -5273,10 +5254,6 @@
           "Qhta.HtmlUtils": {
             "target": "Package",
             "version": "[1.0.1, )"
-          },
-          "Qhta.MVVM": {
-            "target": "Package",
-            "version": "[2.0.0, )"
           },
           "Qhta.TypeUtils": {
             "target": "Package",

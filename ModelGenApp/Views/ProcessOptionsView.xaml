@@ -9,7 +9,7 @@
              xmlns:cvr="clr-namespace:ModelGenApp.Converters"
              mc:Ignorable="d" 
              d:DataContext="{d:DesignInstance Type=vm:MainViewModel}"
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="400">
   <UserControl.Resources>
     <Style x:Key="{x:Type views:PhaseProgressView}" TargetType="{x:Type views:PhaseProgressView}">
       <Setter Property="Width" Value="5"/>
@@ -55,7 +55,11 @@
         <Grid Grid.Row="1">
           <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="20"/>
           </Grid.ColumnDefinitions>
           <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
@@ -89,24 +93,49 @@
                   IsSnapToTickEnabled="True" 
                   Value="{Binding Path=ProcessOptionsVM.Options.StopAtPhase, Converter={StaticResource PhaseNumberConverter}}"
                   />
-          <StackPanel Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" Orientation="Horizontal">
-            <Label Content="Scan types" />
-          </StackPanel>
-          <StackPanel Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" Orientation="Horizontal">
-            <Label Content="Scan validation" />
-          </StackPanel>
-          <StackPanel Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" Orientation="Horizontal">
-            <Label Content="Set type conversions" />
-          </StackPanel>
-          <StackPanel Grid.Column="1" Grid.Row="4" VerticalAlignment="Center" Orientation="Horizontal">
-            <Label Content="Check type usage" />
-          </StackPanel>
-          <StackPanel Grid.Column="1" Grid.Row="5" VerticalAlignment="Center" Orientation="Horizontal">
-            <Label Content="Validate types" />
-          </StackPanel>
-          <StackPanel Grid.Column="1" Grid.Row="6" VerticalAlignment="Center" Orientation="Horizontal">
-            <Label Content="Generate code" />
-          </StackPanel>
+          <Label Grid.Column="1" Grid.Row="1" 
+                   VerticalAlignment="Center"
+                   Content="Scan types" />
+          <!--<Button Grid.Column="2" Grid.Row="1" 
+                  VerticalAlignment="Center"
+                  Margin="5,0,5,0" Height="25"
+                  Padding="5,0"
+                  Content="Show summary" 
+                  Command="{Binding Path=ProcessMonitor.VM.PhaseMonitors[0].ShowSummaryCommand}"/>
+          <Button Grid.Column="3" Grid.Row="1" 
+                  VerticalAlignment="Center"
+                  Margin="5,0,5,0" Height="25"
+                  Padding="5,0"
+                  Content="Show overview" 
+                  Command="{Binding Path=ProcessMonitor.VM.PhaseMonitors[0].ShowOverviewCommand}"/>
+          <Button Grid.Column="4" Grid.Row="1" 
+                  VerticalAlignment="Center"
+                  Margin="5,0,5,0" Height="25"
+                  Padding="5,0"
+                  Content="Show details" 
+                  Command="{Binding Path=ProcessMonitor.VM.PhaseMonitors[0].ShowDetailsCommand}"/>-->
+
+          <Label Grid.Column="1" Grid.Row="2" 
+                   VerticalAlignment="Center"
+                   Content="Validate scan" />
+          <!--<Button Grid.Column="2" Grid.Row="2" 
+                  VerticalAlignment="Center"
+                  Margin="5,0,5,0" Height="25"
+                  Padding="5,0"
+                  Content="Show summary" 
+                  Command="{Binding Path=ProcessMonitor.VM.PhaseMonitors[1].ShowSummaryCommand}"/>
+          <Button Grid.Column="3" Grid.Row="2" 
+                  VerticalAlignment="Center"
+                  Margin="5,0,5,0" Height="25"
+                  Padding="5,0"
+                  Content="Show overview" 
+                  Command="{Binding Path=ProcessMonitor.VM.PhaseMonitors[1].ShowOverviewCommand}"/>
+          <Button Grid.Column="4" Grid.Row="2" 
+                  VerticalAlignment="Center"
+                  Margin="5,0,5,0" Height="25"
+                  Padding="5,0"
+                  Content="Show details" 
+                  Command="{Binding Path=ProcessMonitor.VM.PhaseMonitors[1].ShowDetailsCommand}"/>-->
         </Grid>
       </Grid>
     </Border>
