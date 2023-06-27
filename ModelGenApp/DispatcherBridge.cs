@@ -4,9 +4,8 @@ namespace ModelGenApp;
 
 public class DispatcherBridge: IDispatcherBridge
 {
-
-  public Dispatcher GetDispatcher()
+  public void Invoke(Action action)
   {
-    return Application.Current.Dispatcher;
+    DispatcherHelper.Execute(action);
   }
 }

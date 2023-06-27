@@ -28,7 +28,7 @@
         </member>
         <member name="M:Qhta.MVVM.Command.OnCanExecuteChanged">
             <summary>
-            Callback method to notify, that a result of <see cref="M:Qhta.MVVM.Command.CanExecute(System.Object)"/> function may bye changed.
+            Callback method to notify, that a result of <see cref="M:Qhta.MVVM.Command.CanExecute(System.Object)"/> function may be changed.
             </summary>
         </member>
         <member name="M:Qhta.MVVM.Command.CanExecute(System.Object)">
@@ -77,21 +77,6 @@
             </summary>
             <param name="sender"></param>
             <param name="args"></param>
-        </member>
-        <member name="T:Qhta.MVVM.DispatchedCommand">
-            <summary>
-             A command which invokes Dispatcher when NotifyCanExecuteChanged is called.
-            </summary>
-        </member>
-        <member name="M:Qhta.MVVM.DispatchedCommand.#ctor">
-            <summary>
-            Default constructor.
-            </summary>
-        </member>
-        <member name="M:Qhta.MVVM.DispatchedCommand.NotifyCanExecuteChanged">
-            <summary>
-            Overriden method to notify that a result of <see cref="M:Qhta.MVVM.Command.CanExecute(System.Object)"/> function may be changed.
-            </summary>
         </member>
         <member name="T:Qhta.MVVM.DisplayPropertyAttribute">
             <summary>
@@ -660,47 +645,6 @@
         <member name="M:Qhta.MVVM.RelayCommand.Execute(System.Object)">
             <summary>
             Overriden method to invoke command action.
-            </summary>
-            <param name="parameter"></param>
-        </member>
-        <member name="T:Qhta.MVVM.RelayDispatchedCommand">
-            <summary>
-             A dispatched command which relays its functionality to other objects by invoking delegates.
-            </summary>
-        </member>
-        <member name="F:Qhta.MVVM.RelayDispatchedCommand.execute">
-            <summary>
-            Action to invoke on Execute.
-            </summary>
-        </member>
-        <member name="F:Qhta.MVVM.RelayDispatchedCommand.canExecute">
-            <summary>
-             Function to invoke on CanExecute.
-            </summary>
-        </member>
-        <member name="M:Qhta.MVVM.RelayDispatchedCommand.#ctor(System.Action)">
-            <summary>
-             Initializes a new instance with action to execute.
-            </summary>
-            <param name="execute">Action to execute.</param>
-        </member>
-        <member name="M:Qhta.MVVM.RelayDispatchedCommand.#ctor(System.Action,System.Func{System.Boolean})">
-            <summary>
-             Initializes a new instance with action to execute and function to check if can execute.
-            </summary>
-            <param name="execute">Action to execute.</param>
-            <param name="canExecute">Function to check if Action can be executed</param>
-        </member>
-        <member name="M:Qhta.MVVM.RelayDispatchedCommand.CanExecute(System.Object)">
-            <summary>
-            Overriden function which checks if a command can execute an action.
-            </summary>
-            <param name="parameter"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Qhta.MVVM.RelayDispatchedCommand.Execute(System.Object)">
-            <summary>
-            Overriden method for command action. It uses <see cref="T:System.Windows.Threading.Dispatcher"/>
             </summary>
             <param name="parameter"></param>
         </member>

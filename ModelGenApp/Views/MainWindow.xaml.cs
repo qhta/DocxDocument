@@ -1,5 +1,7 @@
 ﻿using ModelGenApp.ViewModels;
 
+using Qhta.DispatchedObjects;
+
 namespace ModelGenApp.Views;
 /// <summary>
 /// Interaction logic for MainWindow.xaml
@@ -11,6 +13,7 @@ public partial class MainWindow : Window
     InitializeComponent();
     MainViewModel = new MainViewModel();
     DataContext = MainViewModel;
+    DispatchedObject.DispatcherBridge = new DispatcherBridge();
   }
 
   public MainViewModel MainViewModel { get; }
