@@ -91,17 +91,18 @@
                   TickPlacement="BottomRight" 
                   IsDirectionReversed="True"
                   IsSnapToTickEnabled="True" 
-                  Value="{Binding Path=ProcessOptionsVM.Options.StopAtPhase, Converter={StaticResource PhaseNumberConverter}}"
+                  Value="{Binding Path=ProcessOptionsVM.StopAtPhase}"
                   />
           <Label Grid.Column="1" Grid.Row="1" 
                    VerticalAlignment="Center"
                    Content="Scan types" />
           <Button Grid.Column="2" Grid.Row="1" 
+                  x:Name="ShowSummaryButton"
                   VerticalAlignment="Center"
                   Margin="5,0,5,0" Height="25"
                   Padding="5,0"
                   Content="Show summary" 
-                  Command="{Binding Path=ProcessMonitor.VM.PhaseMonitors[0].ShowSummaryCommand}"/>
+                  Command="{Binding Path=ProcessMonitorVM.PhaseMonitors[0].ShowSummaryCommand}"/>
           <!--<Button Grid.Column="3" Grid.Row="1" 
                   VerticalAlignment="Center"
                   Margin="5,0,5,0" Height="25"

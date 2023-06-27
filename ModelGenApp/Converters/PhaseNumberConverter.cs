@@ -8,7 +8,7 @@ public class PhaseNumberConverter: IValueConverter
   {
    if (value is ModelGen.PPS pps)
       return (int)pps;
-    throw new NotImplementedException();
+    return value;
   }
 
   public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
@@ -18,6 +18,6 @@ public class PhaseNumberConverter: IValueConverter
       int n = (int)System.Convert.ChangeType(value, typeof(int));
       return Enum.ToObject(typeof(ModelGen.PPS), n);
     }
-    throw new NotImplementedException();
+    return value;
   }
 }

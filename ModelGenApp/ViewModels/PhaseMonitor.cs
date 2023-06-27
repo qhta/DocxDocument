@@ -1,7 +1,4 @@
-﻿using System.ComponentModel;
-using System.Diagnostics;
-
-namespace ModelGenApp.ViewModels;
+﻿namespace ModelGenApp.ViewModels;
 
 /// <summary>
 /// Observable monitor for a single process phase
@@ -11,9 +8,14 @@ public partial class PhaseMonitor : ViewModel
 
   public PhaseMonitor()
   {
-    ShowSummaryCommand = new RelayCommand(ShowSummaryExecute, ShowSummaryCanExecute);
-    //ShowOverviewCommand = new RelayDispatchedCommand(ShowOverviewExecute, ShowOverviewCanExecute);
-    //ShowDetailsCommand = new RelayDispatchedCommand(ShowDetailsExecute, ShowDetailsCanExecute);
+    ShowSummaryCommand = new RelayCommand(ShowSummaryExecute, ShowSummaryCanExecute){ DebugName="ShowSummaryCommand" };
+    ShowOverviewCommand = new RelayCommand(ShowOverviewExecute, ShowOverviewCanExecute){ DebugName="ShowOverviewCommand" };
+    ShowDetailsCommand = new RelayCommand(ShowDetailsExecute, ShowDetailsCanExecute){ DebugName="ShowDetailsCommand" };
+    PropertyChanged += PhaseMonitor_PropertyChanged;
+  }
+
+  private void PhaseMonitor_PropertyChanged(object? sender, System.ComponentModel.PropertyChangedEventArgs e)
+  {
     NotifyCanExecuteChanged();
   }
 
@@ -62,9 +64,6 @@ public partial class PhaseMonitor : ViewModel
       {
         _Percentage = value;
         NotifyPropertyChanged(nameof(Percentage));
-        if (_Percentage==100 )
-          Debug.WriteLine($"Percentage[{_PhaseNumber}, {_PhaseName}]={_Percentage}");
-        NotifyCanExecuteChanged();
       }
     }
   }
@@ -112,11 +111,11 @@ public partial class PhaseMonitor : ViewModel
   }
   private Command _ShowDetailsCommand = null!;
 
-  protected void NotifyCanExecuteChanged()
+  public void NotifyCanExecuteChanged()
   {
     ShowSummaryCommand.NotifyCanExecuteChanged();
-    //ShowOverviewCommand.NotifyCanExecuteChanged();
-    //ShowDetailsCommand.NotifyCanExecuteChanged();
+    ShowOverviewCommand.NotifyCanExecuteChanged();
+    ShowDetailsCommand.NotifyCanExecuteChanged();
   }
 
   protected virtual void ShowSummaryExecute()

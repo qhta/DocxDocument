@@ -41,10 +41,6 @@ public partial class ProcessMonitor : ModelMonitor
   public override void ShowProcessStart(string line)
   {
     base.ShowProcessStart(line);
-    const int numPhases = 6;
-    VM.PhaseMonitors = new PhaseMonitor[numPhases];
-    for (int i = 0; i < numPhases; i++)
-      VM.PhaseMonitors[i] = new PhaseMonitor{ PhaseNumber=i+1, PhaseName=Enum.ToObject(typeof(PPS),i+1).ToString() };
   }
 
   public override void ShowPhaseStart(PPS phaseNumber, string phaseName)
