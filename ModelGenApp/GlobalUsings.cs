@@ -14,6 +14,7 @@ global using System.Windows.Threading;
 global using System.CodeDom.Compiler;
 
 global using Qhta.MVVM;
+global using Qhta.DispatchedObjects;
 global using Qhta.TextUtils;
 global using Qhta.TypeUtils;
 global using ModelGen;

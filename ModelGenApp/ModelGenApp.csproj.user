@@ -10,6 +10,12 @@
     <Compile Update="Views\PhaseProgressView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\PhaseResultsView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\PhaseResultsWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\ProcessMonitorView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -22,6 +28,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\PhaseProgressView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\PhaseResultsView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\PhaseResultsWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\ProcessMonitorView.xaml">

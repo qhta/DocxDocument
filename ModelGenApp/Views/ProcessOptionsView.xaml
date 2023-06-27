@@ -57,9 +57,7 @@
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
           </Grid.ColumnDefinitions>
           <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
@@ -97,46 +95,22 @@
                    VerticalAlignment="Center"
                    Content="Scan types" />
           <Button Grid.Column="2" Grid.Row="1" 
-                  x:Name="ShowSummaryButton"
                   VerticalAlignment="Center"
                   Margin="5,0,5,0" Height="25"
                   Padding="5,0"
-                  Content="Show summary" 
-                  Command="{Binding Path=ProcessMonitorVM.PhaseMonitors[0].ShowSummaryCommand}"/>
-          <!--<Button Grid.Column="3" Grid.Row="1" 
-                  VerticalAlignment="Center"
-                  Margin="5,0,5,0" Height="25"
-                  Padding="5,0"
-                  Content="Show overview" 
-                  Command="{Binding Path=ProcessMonitor.VM.PhaseMonitors[0].ShowOverviewCommand}"/>
-          <Button Grid.Column="4" Grid.Row="1" 
-                  VerticalAlignment="Center"
-                  Margin="5,0,5,0" Height="25"
-                  Padding="5,0"
-                  Content="Show details" 
-                  Command="{Binding Path=ProcessMonitor.VM.PhaseMonitors[0].ShowDetailsCommand}"/>-->
+                  Content="Show results" 
+                  Command="{Binding Path=ProcessMonitorVM.PhaseMonitors[0].ShowResultsCommand}"/>
 
           <Label Grid.Column="1" Grid.Row="2" 
                    VerticalAlignment="Center"
                    Content="Validate scan" />
-          <!--<Button Grid.Column="2" Grid.Row="2" 
+          <Button Grid.Column="2" Grid.Row="2" 
                   VerticalAlignment="Center"
                   Margin="5,0,5,0" Height="25"
                   Padding="5,0"
-                  Content="Show summary" 
-                  Command="{Binding Path=ProcessMonitor.VM.PhaseMonitors[1].ShowSummaryCommand}"/>
-          <Button Grid.Column="3" Grid.Row="2" 
-                  VerticalAlignment="Center"
-                  Margin="5,0,5,0" Height="25"
-                  Padding="5,0"
-                  Content="Show overview" 
-                  Command="{Binding Path=ProcessMonitor.VM.PhaseMonitors[1].ShowOverviewCommand}"/>
-          <Button Grid.Column="4" Grid.Row="2" 
-                  VerticalAlignment="Center"
-                  Margin="5,0,5,0" Height="25"
-                  Padding="5,0"
-                  Content="Show details" 
-                  Command="{Binding Path=ProcessMonitor.VM.PhaseMonitors[1].ShowDetailsCommand}"/>-->
+                  Content="Show results" 
+                  Command="{Binding Path=ProcessMonitorVM.PhaseMonitors[0].ShowResultsCommand}"/>
+
         </Grid>
       </Grid>
     </Border>

@@ -61,6 +61,7 @@ public partial class ProcessMonitor : ModelMonitor
   {
     base.ShowPhaseEnd(phaseNumber, info);
     VM.PhaseMonitors[(int)phaseNumber-1].Percentage = 100;
+    VM.PhaseMonitors[(int)phaseNumber-1].SetSummary(info);
   }
 
   public override DocumentationWriter GetDocumentationWriter(DisplayOptions options)
