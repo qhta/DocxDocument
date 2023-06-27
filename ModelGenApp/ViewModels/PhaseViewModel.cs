@@ -1,4 +1,6 @@
-﻿namespace ModelGenApp.ViewModels;
+﻿using ModelGenApp.Views;
+
+namespace ModelGenApp.ViewModels;
 
 /// <summary>
 /// Observable monitor for a single process phase
@@ -8,7 +10,7 @@ public partial class PhaseMonitor : ViewModel
 
   public PhaseMonitor()
   {
-    ShowSummaryCommand = new RelayCommand(ShowSummaryExecute, ShowSummaryCanExecute){ DebugName="ShowSummaryCommand" };
+    ShowResultsCommand = new RelayCommand(ShowResultsExecute, ShowResultsCanExecute){ DebugName="ShowResultsCommand" };
     ShowOverviewCommand = new RelayCommand(ShowOverviewExecute, ShowOverviewCanExecute){ DebugName="ShowOverviewCommand" };
     ShowDetailsCommand = new RelayCommand(ShowDetailsExecute, ShowDetailsCanExecute){ DebugName="ShowDetailsCommand" };
     PropertyChanged += PhaseMonitor_PropertyChanged;
@@ -54,7 +56,9 @@ public partial class PhaseMonitor : ViewModel
   }
   private string? _PhaseName;
 
-
+  /// <summary>
+  /// Percent of the phase advantage.
+  /// </summary>
   public int Percentage
   {
     get { return _Percentage; }
@@ -69,20 +73,60 @@ public partial class PhaseMonitor : ViewModel
   }
   private int _Percentage;
 
-  public Command ShowSummaryCommand
+  public SummaryViewModel SummaryVM
   {
-    get { return _ShowSummaryCommand; }
+    get { return _SummaryVM; }
     set
     {
-      if (_ShowSummaryCommand != value)
+      if (_SummaryVM != value)
       {
-        _ShowSummaryCommand = value;
-        NotifyPropertyChanged(nameof(_ShowSummaryCommand));
+        _SummaryVM = value;
+        NotifyPropertyChanged(nameof(SummaryVM));
       }
     }
   }
-  private Command _ShowSummaryCommand = null!;
+  private SummaryViewModel _SummaryVM;
 
+  public void SetSummary(SummaryInfo summary)
+  {
+    SummaryVM = new SummaryViewModel();
+    if (summary.Summary != null) 
+      foreach (var info in summary.Summary)
+        SummaryVM.Add(new SummaryValueViewModel{ Name = info.Key, Value = info.Value });
+  }
+
+  #region ShowResultsCommand
+  /// <summary>
+  /// Command to show phase result window.
+  /// </summary>
+  public Command ShowResultsCommand
+  {
+    get { return _ShowResultsCommand; }
+    set
+    {
+      if (_ShowResultsCommand != value)
+      {
+        _ShowResultsCommand = value;
+        NotifyPropertyChanged(nameof(_ShowResultsCommand));
+      }
+    }
+  }
+  private Command _ShowResultsCommand = null!;
+
+  Window? window;
+  protected virtual void ShowResultsExecute()
+  {
+    if (window == null)
+     window = new PhaseResultsWindow();
+    window.DataContext = this;
+    window.Show();
+  }
+
+  protected virtual bool ShowResultsCanExecute()
+  {
+    return Percentage == 100;
+  }
+  #endregion
   public Command ShowOverviewCommand
   {
     get { return _ShowOverviewCommand; }
@@ -113,18 +157,9 @@ public partial class PhaseMonitor : ViewModel
 
   public void NotifyCanExecuteChanged()
   {
-    ShowSummaryCommand.NotifyCanExecuteChanged();
+    ShowResultsCommand.NotifyCanExecuteChanged();
     ShowOverviewCommand.NotifyCanExecuteChanged();
     ShowDetailsCommand.NotifyCanExecuteChanged();
-  }
-
-  protected virtual void ShowSummaryExecute()
-  {
-  }
-
-  protected virtual bool ShowSummaryCanExecute()
-  {
-    return Percentage == 100;
   }
 
   protected virtual void ShowOverviewExecute()
