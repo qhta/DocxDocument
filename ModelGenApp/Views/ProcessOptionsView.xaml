@@ -96,13 +96,13 @@
           <Label Grid.Column="1" Grid.Row="1" 
                    VerticalAlignment="Center"
                    Content="Scan types" />
-          <!--<Button Grid.Column="2" Grid.Row="1" 
+          <Button Grid.Column="2" Grid.Row="1" 
                   VerticalAlignment="Center"
                   Margin="5,0,5,0" Height="25"
                   Padding="5,0"
                   Content="Show summary" 
                   Command="{Binding Path=ProcessMonitor.VM.PhaseMonitors[0].ShowSummaryCommand}"/>
-          <Button Grid.Column="3" Grid.Row="1" 
+          <!--<Button Grid.Column="3" Grid.Row="1" 
                   VerticalAlignment="Center"
                   Margin="5,0,5,0" Height="25"
                   Padding="5,0"

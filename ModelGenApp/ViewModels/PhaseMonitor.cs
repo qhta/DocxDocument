@@ -11,12 +11,10 @@ public partial class PhaseMonitor : ViewModel
 
   public PhaseMonitor()
   {
-    //ShowSummaryCommand = new RelayDispatchedCommand(ShowSummaryExecute, ShowSummaryCanExecute);
+    ShowSummaryCommand = new RelayCommand(ShowSummaryExecute, ShowSummaryCanExecute);
     //ShowOverviewCommand = new RelayDispatchedCommand(ShowOverviewExecute, ShowOverviewCanExecute);
     //ShowDetailsCommand = new RelayDispatchedCommand(ShowDetailsExecute, ShowDetailsCanExecute);
-    //ShowSummaryCommand.NotifyCanExecuteChanged();
-    //ShowOverviewCommand.NotifyCanExecuteChanged();
-    //ShowDetailsCommand.NotifyCanExecuteChanged();
+    NotifyCanExecuteChanged();
   }
 
   /// <summary>
@@ -66,7 +64,7 @@ public partial class PhaseMonitor : ViewModel
         NotifyPropertyChanged(nameof(Percentage));
         if (_Percentage==100 )
           Debug.WriteLine($"Percentage[{_PhaseNumber}, {_PhaseName}]={_Percentage}");
-        //  NotifyCanExecuteChanged();
+        NotifyCanExecuteChanged();
       }
     }
   }
@@ -117,8 +115,8 @@ public partial class PhaseMonitor : ViewModel
   protected void NotifyCanExecuteChanged()
   {
     ShowSummaryCommand.NotifyCanExecuteChanged();
-    ShowOverviewCommand.NotifyCanExecuteChanged();
-    ShowDetailsCommand.NotifyCanExecuteChanged();
+    //ShowOverviewCommand.NotifyCanExecuteChanged();
+    //ShowDetailsCommand.NotifyCanExecuteChanged();
   }
 
   protected virtual void ShowSummaryExecute()
