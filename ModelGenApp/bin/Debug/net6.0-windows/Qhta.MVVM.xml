@@ -1,0 +1,855 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Qhta.MVVM</name>
+    </assembly>
+    <members>
+        <member name="T:Qhta.MVVM.Command">
+            <summary>
+            Abstract class implementing <see cref="T:System.Windows.Input.ICommand"/> interface
+            </summary>
+        </member>
+        <member name="E:Qhta.MVVM.Command.CanExecuteChanged">
+            <summary>
+            Event required by <see cref="T:System.Windows.Input.ICommand"/> interface. 
+            It is a hook for callback method invoked when a result of <see cref="M:Qhta.MVVM.Command.CanExecute(System.Object)"/> function may be changed.
+            </summary>
+        </member>
+        <member name="F:Qhta.MVVM.Command._CanExecuteChanged">
+            <summary>
+            Internal event for <see cref="E:Qhta.MVVM.Command.CanExecuteChanged"/> to be called in descendant classes.
+            </summary>
+        </member>
+        <member name="M:Qhta.MVVM.Command.NotifyCanExecuteChanged">
+            <summary>
+            A method to notify that a result of <see cref="M:Qhta.MVVM.Command.CanExecute(System.Object)"/> function may be changed.
+            Invokes <see cref="M:Qhta.MVVM.Command.OnCanExecuteChanged"/> callback method.
+            </summary>
+        </member>
+        <member name="M:Qhta.MVVM.Command.OnCanExecuteChanged">
+            <summary>
+            Callback method to notify, that a result of <see cref="M:Qhta.MVVM.Command.CanExecute(System.Object)"/> function may bye changed.
+            </summary>
+        </member>
+        <member name="M:Qhta.MVVM.Command.CanExecute(System.Object)">
+            <summary>
+            Default function which checks if a command can execute an action.
+            </summary>
+            <param name="parameter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.MVVM.Command.Execute(System.Object)">
+            <summary>
+            Default abstract method for command action. 
+            </summary>
+            <param name="parameter"></param>
+        </member>
+        <member name="T:Qhta.MVVM.Commands">
+            <summary>
+            ObservableCollection of Command items.
+            </summary>
+        </member>
+        <member name="T:Qhta.MVVM.CurrentItemChangedEventArgs">
+            <summary>
+            <see cref="T:System.EventArgs"/> to notify that a current item in a list has changed.
+            </summary>
+        </member>
+        <member name="M:Qhta.MVVM.CurrentItemChangedEventArgs.#ctor(System.Object,System.Object)">
+            <summary>
+            Constructor to set an old and a new item.
+            </summary>
+            <param name="newItem"></param>
+            <param name="oldItem"></param>
+        </member>
+        <member name="P:Qhta.MVVM.CurrentItemChangedEventArgs.NewItem">
+            <summary>
+            New current item.
+            </summary>
+        </member>
+        <member name="P:Qhta.MVVM.CurrentItemChangedEventArgs.OldItem">
+            <summary>
+            Old current item.
+            </summary>
+        </member>
+        <member name="T:Qhta.MVVM.CurrentItemChangedEventHandler">
+            <summary>
+            Definition of a handler for <see cref="T:Qhta.MVVM.CurrentItemChangedEventArgs"/>
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+        </member>
+        <member name="T:Qhta.MVVM.DispatchedCommand">
+            <summary>
+             A command which invokes Dispatcher when NotifyCanExecuteChanged is called.
+            </summary>
+        </member>
+        <member name="M:Qhta.MVVM.DispatchedCommand.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:Qhta.MVVM.DispatchedCommand.NotifyCanExecuteChanged">
+            <summary>
+            Overriden method to notify that a result of <see cref="M:Qhta.MVVM.Command.CanExecute(System.Object)"/> function may be changed.
+            </summary>
+        </member>
+        <member name="T:Qhta.MVVM.DisplayPropertyAttribute">
+            <summary>
+            An attribute that annotates a property which should be displayed.
+            </summary>
+        </member>
+        <member name="T:Qhta.MVVM.IExpandable">
+            <summary>
+            Interface for object that defines HasRowDetails and IsExpanded properties.
+            </summary>
+        </member>
+        <member name="P:Qhta.MVVM.IExpandable.IsExpanded">
+            <summary>
+            Determines whether an object is expanded (e.g. as a tree view item).
+            </summary>
+        </member>
+        <member name="P:Qhta.MVVM.IExpandable.HasRowDetails">
+            <summary>
+            Determines whether an object has details.
+            </summary>
+        </member>
+        <member name="T:Qhta.MVVM.ILazyLoad">
+            <summary>
+            Interface that defines properties and a method for loading object in background thread.
+            </summary>
+        </member>
+        <member name="P:Qhta.MVVM.ILazyLoad.LoadOnInit">
+            <summary>
+            Determines whether a view model should load a model on init.
+            </summary>
+        </member>
+        <member name="P:Qhta.MVVM.ILazyLoad.IsLoading">
+            <summary>
+            Determines whether a view model is loading a model.
+            </summary>
+        </member>
+        <member name="P:Qhta.MVVM.ILazyLoad.IsLoaded">
+            <summary>
+            Determines whether a view model has already loaded a model.
+            </summary>
+        </member>
+        <member name="M:Qhta.MVVM.ILazyLoad.StartLoading">
+            <summary>
+            A task to start loading.
+            </summary>
+        </member>
+        <member name="T:Qhta.MVVM.IListViewModel">
+            <summary>
+            Interface for a <see cref="T:Qhta.MVVM.ListViewModel`1"/>.
+            </summary>
+        </member>
+        <member name="M:Qhta.MVVM.IListViewModel.GetItemType">
+            <summary>
+            Gets a type of the item.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.MVVM.IListViewModel.GetItems">
+            <summary>
+            Enumerates through all item items.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Qhta.MVVM.IListViewModel.Items">
+            <summary>
+            Enumerable of all items.
+            </summary>
+        </member>
+        <member name="P:Qhta.MVVM.IListViewModel.CurrentItem">
+            <summary>
+            Current item.
+            </summary>
+        </member>
+        <member name="P:Qhta.MVVM.IListViewModel.SelectedItems">
+            <summary>
+            Enumerable of selected items.
+            </summary>
+        </member>
+        <member name="M:Qhta.MVVM.IListViewModel.SelectAll(System.Boolean)">
+            <summary>
+            A method of selecting or deselecting all items.
+            </summary>
+            <param name="select"></param>
+            
+        </member>
+        <member name="P:Qhta.MVVM.IListViewModel.ParentViewModel">
+            <summary>
+            Parent of the <see cref="T:Qhta.MVVM.ListViewModel"/>
+            </summary>
+        </member>
+        <member name="P:Qhta.MVVM.IListViewModel.SortedBy">
+            <summary>
+            A string specified how <see cref="T:Qhta.MVVM.ListViewModel"/> items are sorted.
+            </summary>
+        </member>
+        <member name="M:Qhta.MVVM.IListViewModel.FindFirstItem(System.Object,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            A method to switch to the first item with a specific pattern and selected propNames.
+            </summary>
+            <param name="pattern"></param>
+            <param name="propNames"></param>
+        </member>
+        <member name="M:Qhta.MVVM.IListViewModel.FindFirstItem(System.Linq.Expressions.Expression{System.Func{System.Object,System.Boolean}})">
+            <summary>
+            A method to switch to the first item that fullfills the expression.
+            </summary>
+            <param name="expression"></param>
+        </member>
+        <member name="M:Qhta.MVVM.IListViewModel.FindNextItem">
+            <summary>
+            A method to switch to the next item.
+            </summary>
+        </member>
+        <member name="M:Qhta.MVVM.IListViewModel.FindFirstInvalidItem">
+            <summary>
+            A method to switch to the first invalid item.
+            </summary>
+        </member>
+        <member name="M:Qhta.MVVM.IListViewModel.FindNextInvalidItem">
+            <summary>
+            A method to switch to the next invalid item.
+            </summary>
+        </member>
+        <member name="T:Qhta.MVVM.INotifySelectionChanged">
+            <summary>
+            Interface that declares <see cref="E:Qhta.MVVM.INotifySelectionChanged.SelectionChanged"/> event.
+            </summary>
+        </member>
+        <member name="E:Qhta.MVVM.INotifySelectionChanged.SelectionChanged">
+            <summary>
+            An event to notify that selection has been changed.
+            </summary>
+        </member>
+        <member name="T:Qhta.MVVM.INumbered">
+            <summary>
+            Interface for an object that has a <see cref="P:Qhta.MVVM.INumbered.Number"/> property.
+            </summary>
+        </member>
+        <member name="P:Qhta.MVVM.INumbered.Number">
+            <summary>
+            A number of the item.
+            </summary>
+        </member>
+        <member name="T:Qhta.MVVM.OrientationType">
+            <summary>
+            How is a ListViewModel oriented
+            </summary>
+        </member>
+        <member name="F:Qhta.MVVM.OrientationType.Horizontal">
+            <summary>
+            Items are shown in a horizontal panel.
+            </summary>
+        </member>
+        <member name="F:Qhta.MVVM.OrientationType.Vertical">
+            <summary>
+            Items are shown in a vertical panel.
+            </summary>
+        </member>
+        <member name="T:Qhta.MVVM.IOrientable">
+            <summary>
+            Interface for ListViewModel to be oriented horizontally or vertically.
+            </summary>
+        </member>
+        <member name="P:Qhta.MVVM.IOrientable.Orientation">
+            <summary>
+            How is a ListViewModel oriented
+            </summary>
+        </member>
+        <member name="T:Qhta.MVVM.IRelayCommand">
+            <summary>
+            An interface expanding ICommand (from System.Windows.Input) with NotifyCanExecuteChanged method.
+            </summary>
+        </member>
+        <member name="M:Qhta.MVVM.IRelayCommand.NotifyCanExecuteChanged">
+            <summary>
+               Notifies that the System.Windows.Input.ICommand.CanExecute(System.Object) property
+               has changed.
+            </summary>
+        </member>
+        <member name="T:Qhta.MVVM.ISameAs`1">
+            <summary>
+            Interface for an object which can be compared to another object.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Qhta.MVVM.ISameAs`1.SameAs(`0)">
+            <summary>
+            A method of comparison an object with another object.
+            It does not need to be shallow or deep equality.
+            </summary>
+            <param name="other"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Qhta.MVVM.ISelectable">
+            <summary>
+            Interface for object that defines IsSelected property.
+            </summary>
+        </member>
+        <member name="P:Qhta.MVVM.ISelectable.IsSelected">
+            <summary>
+            Specifies whether the object is selected.
+            </summary>
+        </member>
+        <member name="T:Qhta.MVVM.ISelector">
+            <summary>
+            Interface for the object that can have a selection.
+            </summary>
+        </member>
+        <member name="T:Qhta.MVVM.ISequenceable`1">
+            <summary>
+            Interface for a collection that can go to next or previous object.
+            </summary>
+            <typeparam name="ItemType"></typeparam>
+        </member>
+        <member name="P:Qhta.MVVM.ISequenceable`1.Next">
+            <summary>
+            Next object.
+            </summary>
+        </member>
+        <member name="P:Qhta.MVVM.ISequenceable`1.Prior">
+            <summary>
+            Previous object.
+            </summary>
+        </member>
+        <member name="T:Qhta.MVVM.IValidated">
+            <summary>
+            Interface for an object that cant be validated.
+            </summary>
+        </member>
+        <member name="P:Qhta.MVVM.IValidated.IsValid">
+            <summary>
+            Specifies whether the object is valid.
+            </summary>
+        </member>
+        <member name="T:Qhta.MVVM.IViewModel">
+            <summary>
+            An interface expanding INotifyPropertyChanged (from System.ComponentModel) with NotifyPropertyChanged method.
+            </summary>
+        </member>
+        <member name="M:Qhta.MVVM.IViewModel.NotifyPropertyChanged(System.String)">
+            <summary>
+            A method to notify that a property value has changed.
+            </summary>
+            <param name="propertyName"></param>
+        </member>
+        <member name="T:Qhta.MVVM.IVisible">
+            <summary>
+            Interface for object that defines IVisible property.
+            </summary>
+        </member>
+        <member name="P:Qhta.MVVM.IVisible.IsVisible">
+            <summary>
+            Specifies whether an object is currently visible.
+            </summary>
+        </member>
+        <member name="T:Qhta.MVVM.LazyLoadViewModel`1">
+            <summary>
+            Abstract <see cref="T:Qhta.MVVM.LazyLoadViewModel`1"/> that implements <see cref="T:Qhta.MVVM.ILazyLoad"/> and <see cref="T:Qhta.MVVM.IExpandable"/> interfaces.
+            </summary>
+            <typeparam name="ModelType"></typeparam>
+        </member>
+        <member name="P:Qhta.MVVM.LazyLoadViewModel`1.LoadOnInit">
+            <summary>
+            Determines whether a view model should load a model on init.
+            </summary>
+        </member>
+        <member name="P:Qhta.MVVM.LazyLoadViewModel`1.LoadOnExpand">
+            <summary>
+            Determines whether a view model should load items on expand.
+            </summary>
+        </member>
+        <member name="P:Qhta.MVVM.LazyLoadViewModel`1.IsLoading">
+            <summary>
+            Determines whether a view model is loading a model.
+            </summary>
+        </member>
+        <member name="P:Qhta.MVVM.LazyLoadViewModel`1.IsLoaded">
+            <summary>
+            Determines whether a view model has already loaded a model.
+            </summary>
+        </member>
+        <member name="P:Qhta.MVVM.LazyLoadViewModel`1.IsExpanded">
+            <summary>
+            Determines whether a view model is expanded (e.g. as a tree view item).
+            </summary>
+        </member>
+        <member name="M:Qhta.MVVM.LazyLoadViewModel`1.PrepareLoadOnExpand">
+            <summary>
+            A method invoked before load on expand
+            </summary>
+        </member>
+        <member name="M:Qhta.MVVM.LazyLoadViewModel`1.StartLoading">
+            <summary>
+            A task to load items.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Qhta.MVVM.ListViewModel">
+            <summary>
+            Abstract VisibleViewModel for a list. Declares <see cref="P:Qhta.MVVM.ListViewModel.ParentViewModel"/> property.
+            </summary>
+        </member>
+        <member name="M:Qhta.MVVM.ListViewModel.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:Qhta.MVVM.ListViewModel.#ctor(Qhta.MVVM.IViewModel)">
+            <summary>
+            Constructor with a parent ViewModel.
+            </summary>
+            <param name="parentViewModel"></param>
+        </member>
+        <member name="P:Qhta.MVVM.ListViewModel.ParentViewModel">
+            <summary>
+            Parent ViewModel
+            </summary>
+        </member>
+        <member name="M:Qhta.MVVM.ListViewModel.GetItems">
+            <summary>
+            Enumerable items.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Qhta.MVVM.ListViewModel.Orientation">
+            <summary>
+            Orientation: horizontal or vertical.
+            </summary>
+        </member>
+        <member name="T:Qhta.MVVM.ListViewModel`1">
+            <summary>
+            <see cref="T:Qhta.MVVM.ListViewModel"/> with specified item type.
+            </summary>
+            <typeparam name="ItemType"></typeparam>
+        </member>
+        <member name="M:Qhta.MVVM.ListViewModel`1.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:Qhta.MVVM.ListViewModel`1.#ctor(Qhta.MVVM.IViewModel)">
+            <summary>
+            Constructor with parent VIewModel.
+            </summary>
+            <param name="parentViewModel"></param>
+        </member>
+        <member name="P:Qhta.MVVM.ListViewModel`1.ParentViewModel">
+            <summary>
+            VIewModel that is a parent of this ViewModel.
+            </summary>
+        </member>
+        <member name="P:Qhta.MVVM.ListViewModel`1.SelectedItem">
+            <summary>
+            An item that is currently selected.
+            </summary>
+        </member>
+        <member name="P:Qhta.MVVM.ListViewModel`1.ValidItemsCount">
+            <summary>
+            Number of valid items.
+            </summary>
+        </member>
+        <member name="P:Qhta.MVVM.ListViewModel`1.InvalidItemsCount">
+            <summary>
+            Number of invalid items.
+            </summary>
+        </member>
+        <member name="M:Qhta.MVVM.ListViewModel`1.AfterCollectionChanged(System.Collections.Specialized.NotifyCollectionChangedEventArgs)">
+            <summary>
+            Event handler method to get notification of collection changing.
+            </summary>
+            <param name="arg"></param>
+        </member>
+        <member name="M:Qhta.MVVM.ListViewModel`1.Item_PropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            Event handler method to send notification of property changing.
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:Qhta.MVVM.ListViewModel`1.NotifySelectionChanged(System.Object)">
+            <summary>
+            A method to notify that selection has been changed.
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="E:Qhta.MVVM.ListViewModel`1.SelectionChanged">
+            <summary>
+            An event to be called when selection has changed.
+            </summary>
+        </member>
+        <member name="E:Qhta.MVVM.ListViewModel`1._SelectionChanged">
+            <summary>
+            Protected event to be called when selection has changed.
+            </summary>
+        </member>
+        <member name="M:Qhta.MVVM.ListViewModel`1.OnSelectionChanged(Qhta.MVVM.SelectionChangedEventArgs)">
+            <summary>
+            A method invoked when selection has been changed.
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:Qhta.MVVM.ListViewModel`1.AfterSelectionChanged(Qhta.MVVM.SelectionChangedEventArgs)">
+            <summary>
+            A method called after selection has been changed. Notifies that a property has been changed.
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="P:Qhta.MVVM.ListViewModel`1.CurrentItem">
+            <summary>
+            Currently chosen item.
+            </summary>
+        </member>
+        <member name="E:Qhta.MVVM.ListViewModel`1.CurrentItemChanged">
+            <summary>
+            An event to call when <see cref="P:Qhta.MVVM.ListViewModel`1.CurrentItem"/> property has been changed.
+            </summary>
+        </member>
+        <member name="P:Qhta.MVVM.ListViewModel`1.SelectedIndex">
+            <summary>
+            Currently selected item.
+            </summary>
+        </member>
+        <member name="P:Qhta.MVVM.ListViewModel`1.IsSelected">
+            <summary>
+            Specifies whether a view item is selected.
+            </summary>
+        </member>
+        <member name="M:Qhta.MVVM.ListViewModel`1.GetItems">
+            <summary>
+            Enumerable items.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.MVVM.ListViewModel`1.FindNextItem">
+            <summary>
+            A method to switch to the next item.
+            </summary>
+        </member>
+        <member name="M:Qhta.MVVM.ListViewModel`1.FindFirstItem(System.Linq.Expressions.Expression{System.Func{System.Object,System.Boolean}})">
+            <summary>
+            A method to switch to the first item that fullfills the expression.
+            </summary>
+            <param name="expression"></param>
+        </member>
+        <member name="M:Qhta.MVVM.ListViewModel`1.FindFirstItem(System.Func{System.Object,System.Boolean})">
+            <summary>
+            A method to switch to the first item that fullfills the predicate.
+            </summary>
+            <param name="predicate"></param>
+        </member>
+        <member name="M:Qhta.MVVM.ListViewModel`1.FindFirstItem(System.Object,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            A method to switch to the first item with a specific pattern and selected propNames.
+            </summary>
+            <param name="pattern"></param>
+            <param name="propNames"></param>
+        </member>
+        <member name="M:Qhta.MVVM.ListViewModel`1.FindFirstItem(`0,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            A method to switch to the first item with a specific pattern and selected propNames.
+            </summary>
+            <param name="pattern"></param>
+            <param name="propNames"></param>
+        </member>
+        <member name="M:Qhta.MVVM.ListViewModel`1.FindNextItemWithPredicate">
+            <summary>
+            Find next item with previously defined predicate.
+            </summary>
+        </member>
+        <member name="M:Qhta.MVVM.ListViewModel`1.FindNextItemWithPattern">
+            <summary>
+            Find next item with previously defined pattern.
+            </summary>
+        </member>
+        <member name="M:Qhta.MVVM.ListViewModel`1.SameAs(`0,`0,System.Collections.Generic.IEnumerable{System.Reflection.PropertyInfo})">
+            <summary>
+            A method to check if the modeled item is same as other item type.
+            </summary>
+            <param name="item"></param>
+            <param name="pattern"></param>
+            <param name="properties"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.MVVM.ListViewModel`1.FindFirstInvalidItem">
+            <summary>
+            Find first invalid item.
+            </summary>
+        </member>
+        <member name="M:Qhta.MVVM.ListViewModel`1.FindNextInvalidItem">
+            <summary>
+            Find next invalid item.
+            </summary>
+        </member>
+        <member name="M:Qhta.MVVM.ListViewModel`1.GetItemType">
+            <summary>
+            Returns a type of the item.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.MVVM.ListViewModel`1.GetItemsList">
+            <summary>
+            Get list of modeled items.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Qhta.MVVM.ListViewModel`1.SortedBy">
+            <summary>
+            Specifes the criteria of sorting
+            </summary>
+        </member>
+        <member name="P:Qhta.MVVM.ListViewModel`1.SelectedItems">
+            <summary>
+            Returns a list of selected items.
+            </summary>
+        </member>
+        <member name="P:Qhta.MVVM.ListViewModel`1.Items">
+            <summary>
+            Enumerable of all items.
+            </summary>
+        </member>
+        <member name="M:Qhta.MVVM.ListViewModel`1.SelectAll(System.Boolean)">
+            <summary>
+            A method of selecting or deselecting items.
+            </summary>
+            <param name="select"></param>
+        </member>
+        <member name="M:Qhta.MVVM.ListViewModel`1.NotifySelectionChanged">
+            <summary>
+            A method of notification that selection has been changed.
+            </summary>
+        </member>
+        <member name="T:Qhta.MVVM.RelayCommand">
+            <summary>
+             A command which relays its functionality to other objects by invoking delegates.
+            </summary>
+        </member>
+        <member name="F:Qhta.MVVM.RelayCommand.execute">
+            <summary>
+            Action to invoke on Execute.
+            </summary>
+        </member>
+        <member name="F:Qhta.MVVM.RelayCommand.canExecute">
+            <summary>
+             Function to invoke on CanExecute.
+            </summary>
+        </member>
+        <member name="M:Qhta.MVVM.RelayCommand.#ctor(System.Action)">
+            <summary>
+             Initializes a new instance with action to execute.
+            </summary>
+            <param name="execute">Action to execute.</param>
+        </member>
+        <member name="M:Qhta.MVVM.RelayCommand.#ctor(System.Action,System.Func{System.Boolean})">
+            <summary>
+             Initializes a new instance with action to execute and function to check if can execute.
+            </summary>
+            <param name="execute">Action to execute.</param>
+            <param name="canExecute">Function to check if Action can be executed</param>
+        </member>
+        <member name="M:Qhta.MVVM.RelayCommand.CanExecute(System.Object)">
+            <summary>
+            Overriden function which checks if a command can execute an action.
+            </summary>
+            <param name="parameter"></param>
+        </member>
+        <member name="M:Qhta.MVVM.RelayCommand.Execute(System.Object)">
+            <summary>
+            Overriden method to invoke command action.
+            </summary>
+            <param name="parameter"></param>
+        </member>
+        <member name="T:Qhta.MVVM.RelayDispatchedCommand">
+            <summary>
+             A dispatched command which relays its functionality to other objects by invoking delegates.
+            </summary>
+        </member>
+        <member name="F:Qhta.MVVM.RelayDispatchedCommand.execute">
+            <summary>
+            Action to invoke on Execute.
+            </summary>
+        </member>
+        <member name="F:Qhta.MVVM.RelayDispatchedCommand.canExecute">
+            <summary>
+             Function to invoke on CanExecute.
+            </summary>
+        </member>
+        <member name="M:Qhta.MVVM.RelayDispatchedCommand.#ctor(System.Action)">
+            <summary>
+             Initializes a new instance with action to execute.
+            </summary>
+            <param name="execute">Action to execute.</param>
+        </member>
+        <member name="M:Qhta.MVVM.RelayDispatchedCommand.#ctor(System.Action,System.Func{System.Boolean})">
+            <summary>
+             Initializes a new instance with action to execute and function to check if can execute.
+            </summary>
+            <param name="execute">Action to execute.</param>
+            <param name="canExecute">Function to check if Action can be executed</param>
+        </member>
+        <member name="M:Qhta.MVVM.RelayDispatchedCommand.CanExecute(System.Object)">
+            <summary>
+            Overriden function which checks if a command can execute an action.
+            </summary>
+            <param name="parameter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.MVVM.RelayDispatchedCommand.Execute(System.Object)">
+            <summary>
+            Overriden method for command action. It uses <see cref="T:System.Windows.Threading.Dispatcher"/>
+            </summary>
+            <param name="parameter"></param>
+        </member>
+        <member name="T:Qhta.MVVM.SelectionChangedEventArgs">
+            <summary>
+            <see cref="T:System.EventArgs"/> to notify that a selection has been changed.
+            </summary>
+        </member>
+        <member name="M:Qhta.MVVM.SelectionChangedEventArgs.#ctor(System.Collections.IList,System.Collections.IList)">
+            <summary>
+            Constructor to set an newly selected and a unselected item.
+            </summary>
+            <param name="selectedItems"></param>
+            <param name="unselectedItems"></param>
+        </member>
+        <member name="P:Qhta.MVVM.SelectionChangedEventArgs.AddedItems">
+            <summary>
+            Newly selected items.
+            </summary>
+        </member>
+        <member name="P:Qhta.MVVM.SelectionChangedEventArgs.RemovedItems">
+            <summary>
+            Newly unselected items.
+            </summary>
+        </member>
+        <member name="T:Qhta.MVVM.SelectionChangedEventHandler">
+            <summary>
+            Definition of a handler for <see cref="T:Qhta.MVVM.SelectionChangedEventArgs"/>
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+        </member>
+        <member name="T:Qhta.MVVM.ViewModel">
+            <summary>
+            Base class of view model.
+            </summary>
+        </member>
+        <member name="M:Qhta.MVVM.ViewModel.NotifyPropertyChanged(System.String)">
+            <summary>
+            A method to notify that a property has changed.
+            </summary>
+            <param name="propertyName"></param>
+        </member>
+        <member name="P:Qhta.MVVM.ViewModel.IsValid">
+            <summary>
+            Specifies if the data of view model is valid.
+            </summary>
+        </member>
+        <member name="T:Qhta.MVVM.ViewModel`1">
+            <summary>
+            View model which has a model of a specific type.
+            </summary>
+            <typeparam name="ModelType"></typeparam>
+        </member>
+        <member name="P:Qhta.MVVM.ViewModel`1.Model">
+            <summary>
+            Specific modeled object.
+            </summary>
+        </member>
+        <member name="T:Qhta.MVVM.VisibleViewModel">
+            <summary>
+            ViewModel which implements <see cref="T:Qhta.MVVM.IVisible"/>, <see cref="T:Qhta.MVVM.ISelectable"/>, and <see cref="T:Qhta.MVVM.IExpandable"/> interfaces.
+            </summary>
+        </member>
+        <member name="P:Qhta.MVVM.VisibleViewModel.IsVisible">
+            <summary>
+            Specifies whether the ViewModel is visible.
+            </summary>
+        </member>
+        <member name="F:Qhta.MVVM.VisibleViewModel._IsVisible">
+            <summary>
+            Internal property that specifies whether the ViewModel is visible.
+            </summary>
+        </member>
+        <member name="P:Qhta.MVVM.VisibleViewModel.HasRowDetails">
+            <summary>
+            Specifies whether the ViewModel has details.
+            </summary>
+        </member>
+        <member name="F:Qhta.MVVM.VisibleViewModel._HasRowDetails">
+            <summary>
+            Internal property that specifies whether the ViewModel has details.
+            </summary>
+        </member>
+        <member name="P:Qhta.MVVM.VisibleViewModel.IsExpanded">
+            <summary>
+            Specifies whether the ViewModel is expanded.
+            </summary>
+        </member>
+        <member name="F:Qhta.MVVM.VisibleViewModel._IsExpanded">
+            <summary>
+            Internal property that specifies whether the ViewModel is expanded.
+            </summary>
+        </member>
+        <member name="P:Qhta.MVVM.VisibleViewModel.IsSelected">
+            <summary>
+            Specifies whether the ViewModel is selected.
+            </summary>
+        </member>
+        <member name="F:Qhta.MVVM.VisibleViewModel._IsSelected">
+            <summary>
+            Internal property that specifies whether the ViewModel is selected.
+            </summary>
+        </member>
+        <member name="P:Qhta.MVVM.VisibleViewModel.Commands">
+            <summary>
+            Observable collection of commands assigned to this ViewModel.
+            </summary>
+        </member>
+        <member name="T:Qhta.MVVM.VisibleViewModel`1">
+            <summary>
+            Visible view model which has a model of a specific type.
+            </summary>
+        </member>
+        <member name="M:Qhta.MVVM.VisibleViewModel`1.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:Qhta.MVVM.VisibleViewModel`1.#ctor(Qhta.MVVM.IViewModel)">
+            <summary>
+            A constructor with a parent ViewModel.
+            </summary>
+            <param name="parentViewModel"></param>
+        </member>
+        <member name="P:Qhta.MVVM.VisibleViewModel`1.ParentViewModel">
+            <summary>
+            A parent ViewModel of this ViewModel.
+            </summary>
+        </member>
+        <member name="P:Qhta.MVVM.VisibleViewModel`1.Model">
+            <summary>
+            A modeled object.
+            </summary>
+        </member>
+        <member name="P:Qhta.MVVM.VisibleViewModel`1.IsWaiting">
+            <summary>
+            Determines if a <see cref="F:Qhta.MVVM.VisibleViewModel`1._WaitCount"/> is greater than 0.
+            </summary>
+        </member>
+        <member name="M:Qhta.MVVM.VisibleViewModel`1.StartWaiting">
+            <summary>
+            Increments <see cref="F:Qhta.MVVM.VisibleViewModel`1._WaitCount"/> and notifies UI that <see cref="P:Qhta.MVVM.VisibleViewModel`1.IsWaiting"/> property has been changed.
+            </summary>
+        </member>
+        <member name="M:Qhta.MVVM.VisibleViewModel`1.StopWaiting">
+            <summary>
+            Decrements <see cref="F:Qhta.MVVM.VisibleViewModel`1._WaitCount"/> and notifies UI that <see cref="P:Qhta.MVVM.VisibleViewModel`1.IsWaiting"/> property has been changed.
+            </summary>
+        </member>
+    </members>
+</doc>

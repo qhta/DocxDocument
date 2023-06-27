@@ -1,0 +1,605 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Qhta.DispatchedObjects</name>
+    </assembly>
+    <members>
+        <member name="T:Qhta.DispatchedObjects.DispatchedCollection`1">
+            <summary>
+            A dispatched version of <see cref="T:System.Collections.ObjectModel.ObservableCollection`1"/>.
+            Is is based on <see cref="T:Qhta.DispatchedObjects.DispatchedObject"/> to notify on changes and to invoke actions.
+            </summary>
+            <typeparam name="TValue"></typeparam>
+        </member>
+        <member name="M:Qhta.DispatchedObjects.DispatchedCollection`1.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="P:Qhta.DispatchedObjects.DispatchedCollection`1.Values">
+            <summary>
+            External collection of values.
+            </summary>
+        </member>
+        <member name="F:Qhta.DispatchedObjects.DispatchedCollection`1._Values">
+            <summary>
+            Internal observable collection of values.
+            It can be accessed in descendant classes.
+            </summary>
+        </member>
+        <member name="E:Qhta.DispatchedObjects.DispatchedCollection`1.CollectionChanged">
+            <summary>
+            Implementation of <see cref="T:System.Collections.Specialized.INotifyCollectionChanged"/> interface.
+            </summary>
+        </member>
+        <member name="E:Qhta.DispatchedObjects.DispatchedCollection`1._CollectionChanged">
+            <summary>
+            Internal <see cref="T:System.Collections.Specialized.NotifyCollectionChangedEventHandler"/> event.
+            It can be checked in descendant classes.
+            </summary>
+        </member>
+        <member name="M:Qhta.DispatchedObjects.DispatchedCollection`1._Values_CollectionChanged(System.Object,System.Collections.Specialized.NotifyCollectionChangedEventArgs)">
+            <summary>
+            A protected method which enables external objects to notify that the collection has changed.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Qhta.DispatchedObjects.DispatchedCollection`1.OnCollectionChanged(System.Collections.Specialized.NotifyCollectionChangedEventArgs)">
+            <summary>
+            A protected method that is called to notify that the collection has changed.
+            When it is called in <see cref="M:Qhta.DispatchedObjects.DispatchedCollection`1.AddRange(System.Collections.Generic.IEnumerable{`0})"/> method, it returns immediatelly.
+            When <see cref="P:Qhta.DispatchedObjects.DispatchedObject.ApplicationDispatcher"/> was not set
+            or it is a CurrentDispatcher (a method is called from within the main thread), a <see cref="E:Qhta.DispatchedObjects.DispatchedCollection`1._CollectionChanged"/> event
+            is invoked directly. 
+            After that a <see cref="M:Qhta.DispatchedObjects.DispatchedCollection`1.AfterCollectionChanged(System.Collections.Specialized.NotifyCollectionChangedEventArgs)"/> is called 
+            to notify that a <see cref="P:Qhta.DispatchedObjects.DispatchedCollection`1.Count"/> has changed.
+            Otherwise it is invoked using <see cref="P:Qhta.DispatchedObjects.DispatchedObject.ApplicationDispatcher"/>.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Qhta.DispatchedObjects.DispatchedCollection`1.AfterCollectionChanged(System.Collections.Specialized.NotifyCollectionChangedEventArgs)">
+            <summary>
+            A virtual method to notify that a <see cref="P:Qhta.DispatchedObjects.DispatchedCollection`1.Count"/> property has changed.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="F:Qhta.DispatchedObjects.DispatchedCollection`1._InAddRange">
+            <summary>
+            A flag to signal that <see cref="M:Qhta.DispatchedObjects.DispatchedCollection`1.Add(`0)"/> operation is invoked in <see cref="M:Qhta.DispatchedObjects.DispatchedCollection`1.AddRange(System.Collections.Generic.IEnumerable{`0})"/> method.
+            </summary>
+        </member>
+        <member name="M:Qhta.DispatchedObjects.DispatchedCollection`1.AddRange(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Adds a whole collection of items. 
+            <see cref="F:Qhta.DispatchedObjects.DispatchedCollection`1._InAddRange"/> is used to omit large number of notifications in the <see cref="M:Qhta.DispatchedObjects.DispatchedCollection`1.Add(`0)"/> method.
+            <see cref="M:Qhta.DispatchedObjects.DispatchedCollection`1.OnCollectionChanged(System.Collections.Specialized.NotifyCollectionChangedEventArgs)"/> is invoked after adding the last item.
+            </summary>
+            <param name="items"></param>
+        </member>
+        <member name="M:Qhta.DispatchedObjects.DispatchedCollection`1.Add(`0)">
+            <summary>
+            Adds a single item.
+            When <see cref="P:Qhta.DispatchedObjects.DispatchedObject.ApplicationDispatcher"/> was not set
+            or it is a CurrentDispatcher (a method is called from within the main thread), 
+            the item is added immediately to the <see cref="F:Qhta.DispatchedObjects.DispatchedCollection`1._Values"/> collection.
+            otherwise it is added by invokinf the same method using <see cref="P:Qhta.DispatchedObjects.DispatchedObject.ApplicationDispatcher"/>.
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="P:Qhta.DispatchedObjects.DispatchedCollection`1.Count">
+            <summary>
+            Returns the count of items.
+            </summary>
+        </member>
+        <member name="P:Qhta.DispatchedObjects.DispatchedCollection`1.IsReadOnly">
+            <summary>
+            The collection is not read only.
+            </summary>
+        </member>
+        <member name="M:Qhta.DispatchedObjects.DispatchedCollection`1.ToArray">
+            <summary>
+            Gets the <see cref="F:Qhta.DispatchedObjects.DispatchedCollection`1._Values"/> collection as an array.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.DispatchedObjects.DispatchedCollection`1.GetEnumerator">
+            <summary>
+            Enumerates the <see cref="F:Qhta.DispatchedObjects.DispatchedCollection`1._Values"/> collection.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.DispatchedObjects.DispatchedCollection`1.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Enumerates the <see cref="F:Qhta.DispatchedObjects.DispatchedCollection`1._Values"/> collection.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.DispatchedObjects.DispatchedCollection`1.Clear">
+            <summary>
+            Clears the <see cref="F:Qhta.DispatchedObjects.DispatchedCollection`1._Values"/> collection.
+            </summary>
+        </member>
+        <member name="M:Qhta.DispatchedObjects.DispatchedCollection`1.Contains(`0)">
+            <summary>
+            Checks if the <see cref="F:Qhta.DispatchedObjects.DispatchedCollection`1._Values"/> collection contains the item.
+            </summary>
+        </member>
+        <member name="M:Qhta.DispatchedObjects.DispatchedCollection`1.CopyTo(`0[],System.Int32)">
+            <summary>
+            Copies the <see cref="F:Qhta.DispatchedObjects.DispatchedCollection`1._Values"/> collection to an array.
+            </summary>
+            <param name="array"></param>
+            <param name="arrayIndex"></param>
+        </member>
+        <member name="M:Qhta.DispatchedObjects.DispatchedCollection`1.Remove(`0)">
+            <summary>
+            Removes an item from the <see cref="F:Qhta.DispatchedObjects.DispatchedCollection`1._Values"/> collection.
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Qhta.DispatchedObjects.DispatchedDictionary`2">
+            <summary>
+            A dispatched version of <see cref="T:System.Collections.Concurrent.ConcurrentDictionary`2"/>. 
+            It implements <see cref="T:System.Collections.Specialized.INotifyCollectionChanged"/> event (as <see cref="T:Qhta.DispatchedObjects.DispatchedCollection`1"/> does).
+            Is is based on <see cref="T:Qhta.DispatchedObjects.DispatchedObject"/> to notify on changes and to invoke actions.
+            Internally it uses a <see cref="T:System.Collections.Concurrent.ConcurrentDictionary`2"/> to support multithreading applications
+            and <see cref="T:Qhta.DispatchedObjects.DispatchedDictionary`2.DispatchedDictionaryValues"/> to support dispatched observable collection.
+            </summary>
+            <typeparam name="TKey"></typeparam>
+            <typeparam name="TValue"></typeparam>
+        </member>
+        <member name="F:Qhta.DispatchedObjects.DispatchedDictionary`2.Dictionary">
+            <summary>
+            Internal concurrent dictionary instance;
+            </summary>
+        </member>
+        <member name="P:Qhta.DispatchedObjects.DispatchedDictionary`2.Values">
+            <summary>
+            External collection of values. Modified internally.
+            </summary>
+        </member>
+        <member name="F:Qhta.DispatchedObjects.DispatchedDictionary`2._Values">
+            <summary>
+            Internal collection of values.
+            It can be accessed in desendant classes.
+            </summary>
+        </member>
+        <member name="M:Qhta.DispatchedObjects.DispatchedDictionary`2.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:Qhta.DispatchedObjects.DispatchedDictionary`2.#ctor(System.String)">
+            <summary>
+            Constructor which enables to set a <see cref="P:Qhta.DispatchedObjects.DispatchedObject.DebugName"/> property.
+            </summary>
+            <param name="debugName"></param>
+        </member>
+        <member name="M:Qhta.DispatchedObjects.DispatchedDictionary`2.#ctor(System.Collections.Generic.IEnumerable{`1})">
+            <summary>
+            Initializing constructor based on a collection of values.
+            </summary>
+            <param name="collection"></param>
+        </member>
+        <member name="M:Qhta.DispatchedObjects.DispatchedDictionary`2.#ctor(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{`0,`1}})">
+            <summary>
+            Initializing constructor based on a collection of key-value pairs.
+            </summary>
+            <param name="collection"></param>
+        </member>
+        <member name="M:Qhta.DispatchedObjects.DispatchedDictionary`2.#ctor(System.Collections.Generic.IEqualityComparer{`0})">
+            <summary>
+            Constructor that enables to setup a comparer in the internal dictionary.
+            </summary>
+            <param name="comparer"></param>
+        </member>
+        <member name="M:Qhta.DispatchedObjects.DispatchedDictionary`2.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Constructor that enables to setup a concurrency level and capacity in internal dictionary.
+            </summary>
+            <param name="concurrencyLevel"></param>
+            <param name="capacity"></param>
+        </member>
+        <member name="M:Qhta.DispatchedObjects.DispatchedDictionary`2.#ctor(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{`0,`1}},System.Collections.Generic.IEqualityComparer{`0})">
+            <summary>
+            Initializing constructor based on a collection of key-value pairs.
+            It enables to setup a comparer in the internal dictionary.
+            </summary>
+            <param name="collection"></param>
+            <param name="comparer"></param>
+        </member>
+        <member name="M:Qhta.DispatchedObjects.DispatchedDictionary`2.#ctor(System.Int32,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{`0,`1}},System.Collections.Generic.IEqualityComparer{`0})">
+            <summary>
+            Initializing constructor based on a collection of key-value pairs.
+            It enables to setup a concurrency level and comparer in the internal dictionary.
+            </summary>
+            <param name="concurrencyLevel"></param>
+            <param name="collection"></param>
+            <param name="comparer"></param>
+        </member>
+        <member name="M:Qhta.DispatchedObjects.DispatchedDictionary`2.#ctor(System.Int32,System.Int32,System.Collections.Generic.IEqualityComparer{`0})">
+            <summary>
+            <summary>
+            Constructor that enables to setup a concurrency level, capacity in internal dictionary and comparer in the internal dictionary.
+            </summary>
+            </summary>
+            <param name="concurrencyLevel"></param>
+            <param name="capacity"></param>
+            <param name="comparer"></param>
+        </member>
+        <member name="M:Qhta.DispatchedObjects.DispatchedDictionary`2.Dispose(System.Boolean)">
+            <summary>
+            Internal Dispose implementation.
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="M:Qhta.DispatchedObjects.DispatchedDictionary`2.Dispose">
+            <summary>
+             External method to correctly implement the disposable pattern.
+            </summary>
+        </member>
+        <member name="P:Qhta.DispatchedObjects.DispatchedDictionary`2.HasItems">
+            <summary>
+            Determines if the dictionary has items. Set internally.
+            </summary>
+        </member>
+        <member name="E:Qhta.DispatchedObjects.DispatchedDictionary`2.CollectionChanged">
+            <summary>
+            Implementation of <see cref="T:System.Collections.Specialized.INotifyCollectionChanged"/> interface.
+            </summary>
+        </member>
+        <member name="E:Qhta.DispatchedObjects.DispatchedDictionary`2._CollectionChanged">
+            <summary>
+            Internal <see cref="T:System.Collections.Specialized.NotifyCollectionChangedEventHandler"/> event.
+            It can be checked in descendent classes.
+            </summary>
+        </member>
+        <member name="M:Qhta.DispatchedObjects.DispatchedDictionary`2.AddOrUpdate(`0,System.Func{`0,`1},System.Func{`0,`1,`1})">
+            <summary>
+            Overrides <see cref="M:System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate(`0,System.Func{`0,`1},System.Func{`0,`1,`1})"/> method.
+            </summary>
+            <param name="key"></param>
+            <param name="addValueFactory"></param>
+            <param name="updateValueFactory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.DispatchedObjects.DispatchedDictionary`2.AddOrUpdate(`0,`1,System.Func{`0,`1,`1})">
+            <summary>
+            Overrides <see cref="M:System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate(`0,`1,System.Func{`0,`1,`1})"/> method.
+            </summary>
+            <param name="key"></param>
+            <param name="addValue"></param>
+            <param name="updateValueFactory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.DispatchedObjects.DispatchedDictionary`2.GetOrAdd(`0,System.Func{`0,`1})">
+            <summary>
+            Overrides <see cref="M:System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(`0,System.Func{`0,`1})"/> method.
+            </summary>
+            <param name="key"></param>
+            <param name="valueFactory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.DispatchedObjects.DispatchedDictionary`2.GetOrAdd(`0,`1)">
+            <summary>
+            Overrides <see cref="M:System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(`0,`1)"/> method.
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.DispatchedObjects.DispatchedDictionary`2.TryAdd(`0,`1)">
+            <summary>
+            Overrides <see cref="M:System.Collections.Concurrent.ConcurrentDictionary`2.TryAdd(`0,`1)"/> method.
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.DispatchedObjects.DispatchedDictionary`2.TryRemove(`0,`1@)">
+            <summary>
+            Overrides <see cref="M:System.Collections.Concurrent.ConcurrentDictionary`2.TryRemove(`0,`1@)"/> method.
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.DispatchedObjects.DispatchedDictionary`2.TryUpdate(`0,`1,`1)">
+            <summary>
+            Overrides <see cref="M:System.Collections.Concurrent.ConcurrentDictionary`2.TryUpdate(`0,`1,`1)"/> nethod.
+            </summary>
+            <param name="key"></param>
+            <param name="newValue"></param>
+            <param name="comparisonValue"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Qhta.DispatchedObjects.DispatchedDictionary`2.IsReadOnly">
+            <summary>
+            A collection is not read only.
+            </summary>
+        </member>
+        <member name="P:Qhta.DispatchedObjects.DispatchedDictionary`2.Count">
+            <summary>
+            Returns the number of key-value pairs.
+            </summary>
+        </member>
+        <member name="M:Qhta.DispatchedObjects.DispatchedDictionary`2.System#Collections#Generic#ICollection{TValue}#Add(`1)">
+            <summary>
+            A value can not be added without a key.
+            </summary>
+            <param name="item"></param>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:Qhta.DispatchedObjects.DispatchedDictionary`2.System#Collections#Generic#ICollection{TValue}#Contains(`1)">
+            <summary>
+            Checks if the values collection contains an item.
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.DispatchedObjects.DispatchedDictionary`2.System#Collections#Generic#ICollection{TValue}#CopyTo(`1[],System.Int32)">
+            <summary>
+            Copies the collection of values to an array.
+            </summary>
+            <param name="array"></param>
+            <param name="arrayIndex"></param>
+        </member>
+        <member name="M:Qhta.DispatchedObjects.DispatchedDictionary`2.System#Collections#Generic#ICollection{TValue}#Remove(`1)">
+            <summary>
+            A value can not be removed without a key.
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:Qhta.DispatchedObjects.DispatchedDictionary`2.System#Collections#Generic#IEnumerable{TValue}#GetEnumerator">
+            <summary>
+            Enumerates the collection of values.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.DispatchedObjects.DispatchedDictionary`2.Clear">
+            <summary>
+            Clears the collection of values.
+            </summary>
+        </member>
+        <member name="M:Qhta.DispatchedObjects.DispatchedDictionary`2.GetEnumerator">
+            <summary>
+            Enumerates the collection of values.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Qhta.DispatchedObjects.DispatchedDictionary`2.DispatchedDictionaryValues">
+            <summary>
+            Internal collection of dispatched dictionary values.
+            </summary>
+        </member>
+        <member name="E:Qhta.DispatchedObjects.DispatchedDictionary`2.DispatchedDictionaryValues.CollectionChanged">
+            <summary>
+            Implementation of <see cref="T:System.Collections.Specialized.INotifyCollectionChanged"/> interface.
+            </summary>
+        </member>
+        <member name="P:Qhta.DispatchedObjects.DispatchedDictionary`2.DispatchedDictionaryValues.Owner">
+            <summary>
+            Owner of the collection is the <see cref="T:Qhta.DispatchedObjects.DispatchedDictionary`2"/> object.
+            </summary>
+        </member>
+        <member name="P:Qhta.DispatchedObjects.DispatchedDictionary`2.DispatchedDictionaryValues.Count">
+            <summary>
+            Returns the number of values.
+            </summary>
+        </member>
+        <member name="P:Qhta.DispatchedObjects.DispatchedDictionary`2.DispatchedDictionaryValues.IsReadOnly">
+            <summary>
+            The collection is not read only.
+            </summary>
+        </member>
+        <member name="M:Qhta.DispatchedObjects.DispatchedDictionary`2.DispatchedDictionaryValues.#ctor(Qhta.DispatchedObjects.DispatchedDictionary{`0,`1})">
+            <summary>
+            Constructor based on the owner.
+            </summary>
+            <param name="owner"></param>
+        </member>
+        <member name="M:Qhta.DispatchedObjects.DispatchedDictionary`2.DispatchedDictionaryValues.Contains(`1)">
+            <summary>
+            Checks if the collection contains an item.
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.DispatchedObjects.DispatchedDictionary`2.DispatchedDictionaryValues.CopyTo(`1[],System.Int32)">
+            <summary>
+            Copies collection to an array.
+            </summary>
+            <param name="array"></param>
+            <param name="arrayIndex"></param>
+        </member>
+        <member name="M:Qhta.DispatchedObjects.DispatchedDictionary`2.DispatchedDictionaryValues.GetEnumerator">
+            <summary>
+            Enumerates on the collection items.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.DispatchedObjects.DispatchedDictionary`2.DispatchedDictionaryValues.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Enumerates on the collection items.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.DispatchedObjects.DispatchedDictionary`2.DispatchedDictionaryValues.Add(`1)">
+            <summary>
+            An item can not be added directly.
+            </summary>
+            <param name="item"></param>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:Qhta.DispatchedObjects.DispatchedDictionary`2.DispatchedDictionaryValues.Clear">
+            <summary>
+            The collection can not be cleared directly.
+            </summary>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:Qhta.DispatchedObjects.DispatchedDictionary`2.DispatchedDictionaryValues.Remove(`1)">
+            <summary>
+            An item can not be removed directly.
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:Qhta.DispatchedObjects.DispatchedDictionary`2.System#Collections#Generic#IEnumerable{System#Collections#Generic#KeyValuePair{TKey,TValue}}#GetEnumerator">
+            <summary>
+            Enumerates on the internal dictionary as on the collection of item-value pairs.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.DispatchedObjects.DispatchedDictionary`2.CopyTo(System.Array,System.Int32)">
+            <summary>
+            Copies the internal dictionary to an array
+            </summary>
+            <param name="array"></param>
+            <param name="index"></param>
+        </member>
+        <member name="P:Qhta.DispatchedObjects.DispatchedDictionary`2.IsSynchronized">
+            <summary>
+            Checks if the internal dictionary is synchronized.
+            </summary>
+        </member>
+        <member name="P:Qhta.DispatchedObjects.DispatchedDictionary`2.SyncRoot">
+            <summary>
+            An object to lock synchronization critical section.
+            </summary>
+        </member>
+        <member name="M:Qhta.DispatchedObjects.DispatchedDictionary`2.Add(`0,`1)">
+            <summary>
+            Adds a key-value pair to the internal dictionary.
+            Add a value to the internal values collection.
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:Qhta.DispatchedObjects.DispatchedDictionary`2.ContainsKey(`0)">
+            <summary>
+            Checks if the internal dictionary contains a key;
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.DispatchedObjects.DispatchedDictionary`2.Remove(`0)">
+            <summary>
+            Removes a key-value pair from the internal dictionary.
+            On success it removes a value from the internal values collection.
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.DispatchedObjects.DispatchedDictionary`2.TryGetValue(`0,`1@)">
+            <summary>
+            Tries to get a value of the key from the internal dictionary.
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Qhta.DispatchedObjects.DispatchedDictionary`2.Item(`0)">
+            <summary>
+            Returns a value of the specific key from the internal dictionary. Only get accessor is implemented.
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+            <exception cref="T:System.Collections.Generic.KeyNotFoundException"></exception>
+        </member>
+        <member name="P:Qhta.DispatchedObjects.DispatchedDictionary`2.Keys">
+            <summary>
+            Access to the collection of keys in the internal dictionary.
+            </summary>
+        </member>
+        <member name="M:Qhta.DispatchedObjects.DispatchedDictionary`2.Add(System.Collections.Generic.KeyValuePair{`0,`1})">
+            <summary>
+            Adds a key-value pair to the internal dictionary.
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="M:Qhta.DispatchedObjects.DispatchedDictionary`2.Contains(System.Collections.Generic.KeyValuePair{`0,`1})">
+            <summary>
+            Checks if the internal dictionary contains a key-value pair.
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:Qhta.DispatchedObjects.DispatchedDictionary`2.CopyTo(System.Collections.Generic.KeyValuePair{`0,`1}[],System.Int32)">
+            <summary>
+            Copies the internal dictionary as the collection of key-value pairs to an array.
+            </summary>
+            <param name="array"></param>
+            <param name="arrayIndex"></param>
+        </member>
+        <member name="M:Qhta.DispatchedObjects.DispatchedDictionary`2.Remove(System.Collections.Generic.KeyValuePair{`0,`1})">
+            <summary>
+            Removes the key-value pair from the internal dictionary.
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Qhta.DispatchedObjects.DispatchedObject">
+            <summary>
+            A class that invokes <see cref="T:System.Windows.Threading.Dispatcher"/> on <see cref="E:Qhta.DispatchedObjects.DispatchedObject.PropertyChanged"/>> event or on other action.
+            It defines a static <see cref="P:Qhta.DispatchedObjects.DispatchedObject.ApplicationDispatcher"/> property which enables a developer to setup a <see cref="T:System.Windows.Threading.Dispatcher"/> from any application
+            (e.g. it can be Application.Current.Dispatcher in WPF applications).
+            </summary>
+        </member>
+        <member name="P:Qhta.DispatchedObjects.DispatchedObject.ApplicationDispatcher">
+            <summary>
+            A static property which enables a developer to setup a Dispatcher from any application
+            (e.g. it can be Application.Dispatcher in WPF applications).
+            </summary>
+        </member>
+        <member name="P:Qhta.DispatchedObjects.DispatchedObject.DebugName">
+            <summary>
+            Helper name which can be used on Debugging.
+            </summary>
+        </member>
+        <member name="E:Qhta.DispatchedObjects.DispatchedObject.PropertyChanged">
+            <summary>
+            Property changed event which implements <see cref="T:System.ComponentModel.INotifyPropertyChanged"/> interface.
+            </summary>
+        </member>
+        <member name="E:Qhta.DispatchedObjects.DispatchedObject._PropertyChanged">
+            <summary>
+            A handler of <see cref="E:Qhta.DispatchedObjects.DispatchedObject.PropertyChanged"/> event which can be checked in descending classes.
+            </summary>
+        </member>
+        <member name="M:Qhta.DispatchedObjects.DispatchedObject.NotifyPropertyChanged(System.String)">
+            <summary>
+            A method to notify that a property has changed. 
+            When <see cref="P:Qhta.DispatchedObjects.DispatchedObject.ApplicationDispatcher"/> was not set
+            or it is a CurrentDispatcher (a method is called from within the main thread), a <see cref="E:Qhta.DispatchedObjects.DispatchedObject.PropertyChanged"/> event
+            is invoked directly, otherwise it is invoked using <see cref="P:Qhta.DispatchedObjects.DispatchedObject.ApplicationDispatcher"/>.
+            </summary>
+            <param name="propertyName"></param>
+        </member>
+        <member name="M:Qhta.DispatchedObjects.DispatchedObject.Dispatch(System.Action)">
+            <summary>
+            A method to invoke and action.
+            When <see cref="P:Qhta.DispatchedObjects.DispatchedObject.ApplicationDispatcher"/> was not set
+            or it is a CurrentDispatcher (a method is called from within the main thread), the action
+            is invoked directly, otherwise it is invoked using <see cref="P:Qhta.DispatchedObjects.DispatchedObject.ApplicationDispatcher"/>.
+            </summary>
+            <param name="action"></param>
+        </member>
+        <member name="T:Qhta.DispatchedObjects.IDispatcherBridge">
+            <summary>
+            Interface to get access to Windows Application Dispatcher.
+            </summary>
+        </member>
+        <member name="M:Qhta.DispatchedObjects.IDispatcherBridge.GetDispatcher">
+            <summary>
+            Gets access to Windows Application Dispatcher.
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
