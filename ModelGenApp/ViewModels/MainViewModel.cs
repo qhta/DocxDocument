@@ -2,9 +2,20 @@
 
 public class MainViewModel : ViewModel
 {
+    public ProcessMonitorViewModel ProcessMonitorVM
+  {
+    get { return ProcessMonitor.VM; }
+    set
+    {
+      if (ProcessMonitor.VM != value)
+      {
+        ProcessMonitor.VM = value;
+        NotifyPropertyChanged(nameof(ProcessMonitor));
+      }
+    }
+  }
 
-
-  public ProcessMonitor? ProcessMonitor
+  public ProcessMonitor ProcessMonitor
   {
     get { return _ProcessMonitor; }
     set
@@ -16,7 +27,8 @@ public class MainViewModel : ViewModel
       }
     }
   }
-  private ProcessMonitor? _ProcessMonitor;
+  private ProcessMonitor _ProcessMonitor = new ProcessMonitor();
+
   public ProcessOptionsViewModel ProcessOptionsVM
   {
     get { return _ProcessOptionsVM; }
@@ -54,18 +66,26 @@ public class MainViewModel : ViewModel
   {
     this.windowService = new WindowService();
     _ProcessOptionsVM = new ProcessOptionsViewModel();
-    StartProcessCommand = new RelayCommand(StartProcess);
-    CloseWindowCommand = new RelayCommand(CloseWindow);
+    StartProcessCommand = new RelayCommand(StartProcess, CanStartProcess){ DebugName = "StartProcessCommand" };
+    StopProcessCommand = new RelayCommand(StopProcess, CanStopProcess){ DebugName = "StopProcessCommand" };
+    ProcessOptionsVM.PropertyChanged += ProcessOptionsVM_PropertyChanged;
   }
 
-  public ICommand StartProcessCommand { get; }
-
-  public ICommand CloseWindowCommand { get; }
-
-  public void CloseWindow()
+  private void ProcessOptionsVM_PropertyChanged(object? sender, System.ComponentModel.PropertyChangedEventArgs args)
   {
+    StartProcessCommand.NotifyCanExecuteChanged();
+    CommandManager.InvalidateRequerySuggested();
   }
 
+  public Command StartProcessCommand { get; }
+
+  public Command StopProcessCommand { get; }
+
+  
+  public bool CanStartProcess()
+  {
+    return ProcessOptionsVM.StopAtPhase>0;
+  }
 
   public async void StartProcess()
   {
@@ -81,10 +101,18 @@ public class MainViewModel : ViewModel
       filePath = Path.GetDirectoryName(filePath) ?? "";
       filePath = Path.Combine(filePath, @"ModelGen\DocumentModel");
       var creator = new ModelCreator("DocumentModel", filePath);
-      this.ProcessMonitor = new ProcessMonitor();
       creator.ModelMonitor = this.ProcessMonitor;
       await Task.Run(() => creator.RunProcess(options));
     }
+  }
+
+  public bool CanStopProcess()
+  {
+    return false;
+  }
+
+  public void StopProcess()
+  {
   }
 
 }

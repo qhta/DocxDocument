@@ -2,6 +2,20 @@
 public partial class ProcessOptionsViewModel: ViewModel
 {
 
+
+  public int StopAtPhase
+  {
+    get { return Options.StopAtPhase; }
+    set
+    {
+      if (Options.StopAtPhase != value)
+      {
+        Options.StopAtPhase = value;
+        NotifyPropertyChanged(nameof(StopAtPhase));
+      }
+    }
+  }
+
   public ProcessOptions Options
   {
     get { return _Options; }

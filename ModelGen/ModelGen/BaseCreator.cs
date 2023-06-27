@@ -44,7 +44,7 @@ public abstract class BaseCreator
     Debug.Assert(assembly != null);
     Type? rootType = assembly.GetType(options.ScanTypeName, true);
     Debug.Assert(rootType != null);
-    RunOn(rootType, options.StopAtPhase, options.Display, options.DisplayOptions);
+    RunOn(rootType, (PPS)Enum.ToObject(typeof(PPS), options.StopAtPhase), options.Display, options.DisplayOptions);
   }
 
   public void RunOn(Type type, PPS stopAtPhase, MDS monitorDisplaySelector = MDS.None, DisplayOptions? displayOptions = null)
