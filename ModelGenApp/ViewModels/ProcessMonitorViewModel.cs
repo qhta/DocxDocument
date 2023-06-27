@@ -1,6 +1,36 @@
 ﻿namespace ModelGenApp.ViewModels;
-public class ProcessMonitorViewModel: ViewModel
+public class ProcessMonitorViewModel : ViewModel
 {
+
+  public void WriteLine()
+  {
+    DispatcherHelper.Execute(() => Lines.Add(string.Empty));
+    //var dispatcher = Dispatcher;
+    //if (dispatcher != null)
+    //  dispatcher.Invoke(() => Lines.Add(string.Empty));
+    //else
+    //  Lines.Add(string.Empty);
+  }
+
+  public void WriteLine(string line)
+  {
+    DispatcherHelper.Execute(() => Lines.Add(line));
+    //var dispatcher = Dispatcher;
+    //if (dispatcher != null)
+    //  dispatcher.Invoke(() => Lines.Add(line));
+    //else
+    //  Lines.Add(line);
+  }
+
+  public void WriteSameLine(string line)
+  {
+    DispatcherHelper.Execute(() => StatusLine = line);
+    //var dispatcher = Dispatcher;
+    //if (dispatcher != null)
+    //  dispatcher.Invoke(() => StatusLine = line);
+    //else
+    //  StatusLine = line;
+  }
 
   public ObservableCollection<string> Lines
   {

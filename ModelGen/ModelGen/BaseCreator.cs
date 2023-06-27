@@ -162,6 +162,20 @@ public abstract class BaseCreator
     return ts;
   }
 
+  private void ModelValidator_OnValidatingType(ModelValidator sender, ValidatingTypeInfo info)
+  {
+    ModelMonitor?.ShowPhaseProgress(PPS.ScanValidation, new ProgressInfo
+    {
+      PreStr = "validated",
+      Done = info.CheckedTypes,
+      Total = info.TotalTypes,
+      MidStr = "types",
+      Summary = new Dictionary<string, object>{
+        {"invalid", info.InvalidTypes ?? 0 } },
+      PostStr = $"{info.Current?.OriginalNamespace}.{info.Current?.OriginalName}"
+    });
+  }
+
   //protected TimeSpan RenameTypes()
   //{
   //  ModelMonitor?.ShowPhaseStart(TypeRename,"Renaming types");
@@ -300,19 +314,6 @@ public abstract class BaseCreator
   //  });
   //}
 
-
-  private void ModelValidator_OnValidatingType(ModelValidator sender, ValidatingTypeInfo info)
-  {
-    ModelMonitor?.ShowPhaseProgress(PPS.ScanValidation, new ProgressInfo
-    {
-      PreStr = "validated",
-      Done = info.CheckedTypes,
-      MidStr = "types",
-      Summary = new Dictionary<string, object>{
-        {"invalid", info.InvalidTypes ?? 0 } },
-      PostStr = $"{info.Current?.OriginalNamespace}.{info.Current?.OriginalName}"
-    });
-  }
 
   private void ModelManager_OnCheckingUsage(CheckingUsageInfo info)
   {

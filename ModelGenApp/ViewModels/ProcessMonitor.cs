@@ -14,17 +14,17 @@ public partial class ProcessMonitor : ModelMonitor
 
   public override void WriteLine()
   {
-    DispatcherHelper.Execute(() => VM.Lines.Add(string.Empty));
+    VM.WriteLine();
   }
 
   public override void WriteLine(string line)
   {
-    DispatcherHelper.Execute(() => VM.Lines.Add(line));
+    VM.WriteLine(line);
   }
 
   public override void WriteSameLine(string line)
   {
-    DispatcherHelper.Execute(() => VM.StatusLine = line);
+    VM.WriteSameLine(line);
   }
 
   public override void Indent()
@@ -44,7 +44,7 @@ public partial class ProcessMonitor : ModelMonitor
     const int numPhases = 6;
     VM.PhaseMonitors = new PhaseMonitor[numPhases];
     for (int i = 0; i < numPhases; i++)
-      VM.PhaseMonitors[i] = new PhaseMonitor();
+      VM.PhaseMonitors[i] = new PhaseMonitor{ PhaseNumber=i+1, PhaseName=Enum.ToObject(typeof(PPS),i+1).ToString() };
   }
 
   public override void ShowPhaseStart(PPS phaseNumber, string phaseName)

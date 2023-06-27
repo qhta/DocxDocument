@@ -2,6 +2,7 @@
 
 public record ValidatingTypeInfo
 {
+  public int? TotalTypes;
   public int? CheckedTypes;
   public int? InvalidTypes;
   public TypeInfo? Current;
@@ -25,6 +26,7 @@ public class ModelValidator
   public MSS TypeStatusSelector { get; private set; }
   public TDS TypeDataSelector { get; private set; }
 
+  public int TotalTypesCount { get; private set; }
   public int CheckedTypesCount { get; private set; }
   public int NoDocsTypesCount { get; private set; }
   public int NoSummaryTypesCount { get; private set; }
@@ -36,6 +38,7 @@ public class ModelValidator
   {
     bool ok = true;
     var nspaces = TypeManager.GetNamespaces(NamespaceTypeSelector);
+    List<TypeInfo>  types = new List<TypeInfo>();
     foreach (var nspace in nspaces)
     {
       var nSpaceTypes = TypeManager.GetNamespaceTypes(nspace).ToList();
@@ -43,11 +46,13 @@ public class ModelValidator
         nSpaceTypes = nSpaceTypes.Where(item =>
           TypeStatusSelector.HasFlag(MSS.Accepted) && item.IsAccepted
           || TypeStatusSelector.HasFlag(MSS.Rejected) && item.IsRejected).ToList();
-      foreach (var typeInfo in nSpaceTypes)
-      {
-        if (!ValidateType(typeInfo))
-          ok = false;
-      }
+      types.AddRange(nSpaceTypes);
+    }
+    TotalTypesCount = types.Count();
+    foreach (var typeInfo in types)
+    {
+      if (!ValidateType(typeInfo))
+        ok = false;
     }
     return ok;
   }
@@ -57,6 +62,7 @@ public class ModelValidator
     CheckedTypesCount++;
     OnValidatingType?.Invoke(this, new ValidatingTypeInfo
     {
+      TotalTypes =  TotalTypesCount,
       CheckedTypes = CheckedTypesCount,
       InvalidTypes = CheckedTypesCount - ValidTypesCount,
       Current = typeInfo

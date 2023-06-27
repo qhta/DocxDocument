@@ -76,3 +76,7 @@ D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\PhaseProg
 D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\PhaseProgressView.baml
 D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Qhta.DispatchedObjects.dll
 D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Qhta.MVVM.dll
+D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Qhta.MVVM.pdb
+D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Qhta.MVVM.xml
+D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Qhta.DispatchedObjects.pdb
+D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Qhta.DispatchedObjects.xml

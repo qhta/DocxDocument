@@ -8,10 +8,21 @@ namespace ModelGenApp.ViewModels;
 /// </summary>
 public partial class PhaseMonitor : ViewModel
 {
+
+  public PhaseMonitor()
+  {
+    //ShowSummaryCommand = new RelayDispatchedCommand(ShowSummaryExecute, ShowSummaryCanExecute);
+    //ShowOverviewCommand = new RelayDispatchedCommand(ShowOverviewExecute, ShowOverviewCanExecute);
+    //ShowDetailsCommand = new RelayDispatchedCommand(ShowDetailsExecute, ShowDetailsCanExecute);
+    //ShowSummaryCommand.NotifyCanExecuteChanged();
+    //ShowOverviewCommand.NotifyCanExecuteChanged();
+    //ShowDetailsCommand.NotifyCanExecuteChanged();
+  }
+
   /// <summary>
   /// Id of the process phase.
   /// </summary>
-  public PPS PhaseNumber
+  public int PhaseNumber
   {
     get => _PhaseNumber;
     set
@@ -23,7 +34,7 @@ public partial class PhaseMonitor : ViewModel
       }
     }
   }
-  private PPS _PhaseNumber;
+  private int _PhaseNumber;
 
 
   /// <summary>
@@ -32,7 +43,7 @@ public partial class PhaseMonitor : ViewModel
   public string? PhaseName
   {
     get => _PhaseName;
-    set 
+    set
     {
       if (value != _PhaseName)
       {
@@ -53,40 +64,89 @@ public partial class PhaseMonitor : ViewModel
       {
         _Percentage = value;
         NotifyPropertyChanged(nameof(Percentage));
+        if (_Percentage==100 )
+          Debug.WriteLine($"Percentage[{_PhaseNumber}, {_PhaseName}]={_Percentage}");
+        //  NotifyCanExecuteChanged();
       }
     }
   }
   private int _Percentage;
 
-
-  //private SummaryInfo? SummaryInfo;
-
-//  private BackgroundWorker worker;
-
-  public PhaseMonitor()
+  public Command ShowSummaryCommand
   {
-    //worker = new BackgroundWorker();
-    //worker.WorkerReportsProgress = true;
-    //worker.ProgressChanged += (sender, args) =>
-    //{
-    //  Debug.WriteLine($"ProgressChanged.Begin({args.ProgressPercentage})");
-    //  DispatcherHelper.Execute(() => Percentage = args.ProgressPercentage);
-    //  Debug.WriteLine($"ProgressChanged.End({args.ProgressPercentage})");
-    //};
-    //worker.DoWork += WorkerDoWork;
-    //worker.RunWorkerAsync();
-
+    get { return _ShowSummaryCommand; }
+    set
+    {
+      if (_ShowSummaryCommand != value)
+      {
+        _ShowSummaryCommand = value;
+        NotifyPropertyChanged(nameof(_ShowSummaryCommand));
+      }
+    }
   }
-  //public void Load()
-  //{
-  //  worker.RunWorkerAsync();
-  //}
+  private Command _ShowSummaryCommand = null!;
 
-  private void WorkerDoWork(object? sender, DoWorkEventArgs e)
+  public Command ShowOverviewCommand
   {
-    //Debug.WriteLine($"Worker.DoWork.Begin({Percentage})");
-    //worker.ReportProgress(Percentage);
-    //Thread.Sleep(100);
-    //Debug.WriteLine($"Worker.DoWork.End({Percentage})");
+    get { return _ShowOverviewCommand; }
+    set
+    {
+      if (_ShowOverviewCommand != value)
+      {
+        _ShowOverviewCommand = value;
+        NotifyPropertyChanged(nameof(ShowOverviewCommand));
+      }
+    }
   }
+  private Command _ShowOverviewCommand = null!;
+
+  public Command ShowDetailsCommand
+  {
+    get { return _ShowOverviewCommand; }
+    set
+    {
+      if (_ShowDetailsCommand != value)
+      {
+        _ShowDetailsCommand = value;
+        NotifyPropertyChanged(nameof(_ShowDetailsCommand));
+      }
+    }
+  }
+  private Command _ShowDetailsCommand = null!;
+
+  protected void NotifyCanExecuteChanged()
+  {
+    ShowSummaryCommand.NotifyCanExecuteChanged();
+    ShowOverviewCommand.NotifyCanExecuteChanged();
+    ShowDetailsCommand.NotifyCanExecuteChanged();
+  }
+
+  protected virtual void ShowSummaryExecute()
+  {
+  }
+
+  protected virtual bool ShowSummaryCanExecute()
+  {
+    return Percentage == 100;
+  }
+
+  protected virtual void ShowOverviewExecute()
+  {
+  }
+
+  protected virtual bool ShowOverviewCanExecute()
+  {
+    return Percentage == 100;
+  }
+
+  protected virtual void ShowDetailsExecute()
+  {
+  }
+
+  protected virtual bool ShowDetailsCanExecute()
+  {
+    return Percentage == 100;
+  }
+
+
 }
