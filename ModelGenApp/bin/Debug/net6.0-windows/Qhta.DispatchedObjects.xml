@@ -48,15 +48,12 @@
         <member name="M:Qhta.DispatchedObjects.DispatchedCollection`1.OnCollectionChanged(System.Collections.Specialized.NotifyCollectionChangedEventArgs)">
             <summary>
             A protected method that is called to notify that the collection has changed.
-            When it is called in <see cref="M:Qhta.DispatchedObjects.DispatchedCollection`1.AddRange(System.Collections.Generic.IEnumerable{`0})"/> method, it returns immediatelly.
-            When <see cref="P:Qhta.DispatchedObjects.DispatchedObject.ApplicationDispatcher"/> was not set
-            or it is a CurrentDispatcher (a method is called from within the main thread), a <see cref="E:Qhta.DispatchedObjects.DispatchedCollection`1._CollectionChanged"/> event
-            is invoked directly. 
+            Uses <see cref="P:Qhta.DispatchedObjects.DispatchedObject.DispatcherBridge"/>, if it is set, to invoke <see cref="E:Qhta.DispatchedObjects.DispatchedCollection`1.CollectionChanged"/> event.
+            Otherwise the event is invoked directly.
             After that a <see cref="M:Qhta.DispatchedObjects.DispatchedCollection`1.AfterCollectionChanged(System.Collections.Specialized.NotifyCollectionChangedEventArgs)"/> is called 
             to notify that a <see cref="P:Qhta.DispatchedObjects.DispatchedCollection`1.Count"/> has changed.
-            Otherwise it is invoked using <see cref="P:Qhta.DispatchedObjects.DispatchedObject.ApplicationDispatcher"/>.
             </summary>
-            <param name="e"></param>
+            <param name="args"></param>
         </member>
         <member name="M:Qhta.DispatchedObjects.DispatchedCollection`1.AfterCollectionChanged(System.Collections.Specialized.NotifyCollectionChangedEventArgs)">
             <summary>
@@ -80,10 +77,8 @@
         <member name="M:Qhta.DispatchedObjects.DispatchedCollection`1.Add(`0)">
             <summary>
             Adds a single item.
-            When <see cref="P:Qhta.DispatchedObjects.DispatchedObject.ApplicationDispatcher"/> was not set
-            or it is a CurrentDispatcher (a method is called from within the main thread), 
-            the item is added immediately to the <see cref="F:Qhta.DispatchedObjects.DispatchedCollection`1._Values"/> collection.
-            otherwise it is added by invokinf the same method using <see cref="P:Qhta.DispatchedObjects.DispatchedObject.ApplicationDispatcher"/>.
+            Uses <see cref="P:Qhta.DispatchedObjects.DispatchedObject.DispatcherBridge"/>, if it is set, to add the item.
+            Otherwise the item is added directly.
             </summary>
             <param name="item"></param>
         </member>
@@ -547,19 +542,11 @@
         <member name="T:Qhta.DispatchedObjects.DispatchedObject">
             <summary>
             A class that invokes <see cref="T:System.Windows.Threading.Dispatcher"/> on <see cref="E:Qhta.DispatchedObjects.DispatchedObject.PropertyChanged"/>> event or on other action.
-            It defines a static <see cref="P:Qhta.DispatchedObjects.DispatchedObject.ApplicationDispatcher"/> property which enables a developer to setup a <see cref="T:System.Windows.Threading.Dispatcher"/> from any application
-            (e.g. it can be Application.Current.Dispatcher in WPF applications).
             </summary>
         </member>
         <member name="P:Qhta.DispatchedObjects.DispatchedObject.DispatcherBridge">
             <summary>
             A static object to dispatch actions to main app thread.
-            </summary>
-        </member>
-        <member name="P:Qhta.DispatchedObjects.DispatchedObject.ApplicationDispatcher">
-            <summary>
-            A static property which enables a developer to setup a Dispatcher from any application
-            (e.g. it can be Application.Dispatcher in WPF applications).
             </summary>
         </member>
         <member name="P:Qhta.DispatchedObjects.DispatchedObject.DebugName">
@@ -580,18 +567,16 @@
         <member name="M:Qhta.DispatchedObjects.DispatchedObject.NotifyPropertyChanged(System.String)">
             <summary>
             A method to notify that a property has changed. 
-            When <see cref="P:Qhta.DispatchedObjects.DispatchedObject.ApplicationDispatcher"/> was not set
-            or it is a CurrentDispatcher (a method is called from within the main thread), a <see cref="E:Qhta.DispatchedObjects.DispatchedObject.PropertyChanged"/> event
-            is invoked directly, otherwise it is invoked using <see cref="P:Qhta.DispatchedObjects.DispatchedObject.ApplicationDispatcher"/>.
+            Uses <see cref="P:Qhta.DispatchedObjects.DispatchedObject.DispatcherBridge"/>, if it is set, to invoke <see cref="E:Qhta.DispatchedObjects.DispatchedObject.PropertyChanged"/> event.
+            Otherwise the event is invoked directly.
             </summary>
             <param name="propertyName"></param>
         </member>
         <member name="M:Qhta.DispatchedObjects.DispatchedObject.Dispatch(System.Action)">
             <summary>
             A method to invoke and action.
-            When <see cref="P:Qhta.DispatchedObjects.DispatchedObject.ApplicationDispatcher"/> was not set
-            or it is a CurrentDispatcher (a method is called from within the main thread), the action
-            is invoked directly, otherwise it is invoked using <see cref="P:Qhta.DispatchedObjects.DispatchedObject.ApplicationDispatcher"/>.
+            Uses <see cref="P:Qhta.DispatchedObjects.DispatchedObject.DispatcherBridge"/>, if it is set, to invoke an action .
+            Otherwise the action is invoked directly.
             </summary>
             <param name="action"></param>
         </member>
@@ -601,6 +586,12 @@
             </summary>
         </member>
         <member name="M:Qhta.DispatchedObjects.IDispatcherBridge.Invoke(System.Action)">
+            <summary>
+            Gets access to Windows Application Dispatcher.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.DispatchedObjects.IDispatcherBridge.Invoke(System.Action,System.Object[])">
             <summary>
             Gets access to Windows Application Dispatcher.
             </summary>
