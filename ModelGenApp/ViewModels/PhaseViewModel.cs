@@ -73,6 +73,7 @@ public partial class PhaseMonitor : ViewModel
   }
   private int _Percentage;
 
+  #region Summary
   public SummaryViewModel SummaryVM
   {
     get { return _SummaryVM; }
@@ -85,7 +86,7 @@ public partial class PhaseMonitor : ViewModel
       }
     }
   }
-  private SummaryViewModel _SummaryVM;
+  private SummaryViewModel _SummaryVM = null!;
 
   public void SetSummary(SummaryInfo summary)
   {
@@ -94,6 +95,38 @@ public partial class PhaseMonitor : ViewModel
       foreach (var info in summary.Summary)
         SummaryVM.Add(new SummaryValueViewModel{ Name = info.Key, Value = info.Value });
   }
+  #endregion
+
+  #region Namespaces
+
+
+  public NamespaceListViewModel NamespacesVM
+  {
+    get { return _Namespaces; }
+    set
+    {
+      if (_Namespaces != value)
+      {
+        _Namespaces = value;
+        NotifyPropertyChanged(nameof(NamespacesVM));
+      }
+    }
+  }
+  private NamespaceListViewModel _Namespaces = null!;
+
+  public void GetNamespaces(NTS filter)
+  {
+    NamespacesVM = new NamespaceListViewModel();
+    var namespaces = TypeManager.GetNamespaces(filter).OrderBy(item=>item);
+    foreach (var ns in namespaces)
+    {
+      var nsVM = new NamespaceViewModel{ Name = ns };
+      var nsTypes = TypeManager.GetNamespaceTypes(ns).OrderBy(item=>item.Name).ToList();
+      nsVM.AllTypesCount = nsTypes.Count();
+      NamespacesVM.Add(nsVM);
+    }
+  }
+  #endregion
 
   #region ShowResultsCommand
   /// <summary>
@@ -127,6 +160,8 @@ public partial class PhaseMonitor : ViewModel
     return Percentage == 100;
   }
   #endregion
+
+  #region ShowOverviewCommand
   public Command ShowOverviewCommand
   {
     get { return _ShowOverviewCommand; }
@@ -141,6 +176,20 @@ public partial class PhaseMonitor : ViewModel
   }
   private Command _ShowOverviewCommand = null!;
 
+
+  protected virtual bool ShowOverviewCanExecute()
+  {
+    return Percentage == 100;
+  }
+
+  protected virtual async void ShowOverviewExecute()
+  {
+    await Task.Run(() => {
+    GetNamespaces(NTS.Origin|NTS.System);
+      });
+  }
+
+  #endregion
   public Command ShowDetailsCommand
   {
     get { return _ShowOverviewCommand; }
@@ -160,15 +209,6 @@ public partial class PhaseMonitor : ViewModel
     ShowResultsCommand.NotifyCanExecuteChanged();
     ShowOverviewCommand.NotifyCanExecuteChanged();
     ShowDetailsCommand.NotifyCanExecuteChanged();
-  }
-
-  protected virtual void ShowOverviewExecute()
-  {
-  }
-
-  protected virtual bool ShowOverviewCanExecute()
-  {
-    return Percentage == 100;
   }
 
   protected virtual void ShowDetailsExecute()
