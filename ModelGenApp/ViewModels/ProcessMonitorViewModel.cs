@@ -15,17 +15,17 @@ public class ProcessMonitorViewModel : ViewModel
 
   public void WriteLine()
   {
-    DispatcherHelper.Execute(() => Lines.Add(string.Empty));
+    DispatcherHelper.Invoke(() => Lines.Add(string.Empty));
   }
 
   public void WriteLine(string line)
   {
-    DispatcherHelper.Execute(() => Lines.Add(line));
+    DispatcherHelper.Invoke(() => Lines.Add(line));
   }
 
   public void WriteSameLine(string line)
   {
-    DispatcherHelper.Execute(() => StatusLine = line);
+    DispatcherHelper.Invoke(() => StatusLine = line);
   }
 
   public ObservableCollection<string> Lines
