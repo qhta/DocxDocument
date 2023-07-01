@@ -131,14 +131,14 @@ public class ConverterCreator: BaseCreator
     //CodeGenerator.GenerateGlobalUsings();
     DateTime t2 = DateTime.Now;
     var ts = t2 - t1;
-    ModelMonitor?.ShowPhaseEnd(PPS.CodeGeneration, new SummaryInfo{ Time = ts, 
-      Summary = new Dictionary<string, object>{ 
-        {"Generated interfaces", CodeGenerator.GeneratedInterfacesCount }, 
-        {"Generated classes", CodeGenerator.GeneratedClassesCount }, 
-        {"Skipped types", CodeGenerator.SkippedTypesCount }, 
-        {"Total properties", CodeGenerator.GeneratedPropertiesCount }, 
-        {"Total enum values", CodeGenerator.GeneratedEnumValuesCount }, 
-        }});
+    //ModelMonitor?.ShowPhaseEnd(PPS.CodeGeneration, new SummaryInfo{ Time = ts, 
+    //  Summary = new Dictionary<string, object>{ 
+    //    {"Generated interfaces", CodeGenerator.GeneratedInterfacesCount }, 
+    //    {"Generated classes", CodeGenerator.GeneratedClassesCount }, 
+    //    {"Skipped types", CodeGenerator.SkippedTypesCount }, 
+    //    {"Total properties", CodeGenerator.GeneratedPropertiesCount }, 
+    //    {"Total enum values", CodeGenerator.GeneratedEnumValuesCount }, 
+    //    }});
     return ts;
   }
 

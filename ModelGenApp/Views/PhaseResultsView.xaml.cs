@@ -34,6 +34,7 @@ public partial class PhaseResultsView : UserControl
         col.Binding = aBinding;
         col.ContentTemplate = template;
         col.Header = e.Column.Header;
+        col.SortMemberPath = aBinding.Path.Path + ".Count";
         col.ClipboardContentBinding =
             new Binding
             {

@@ -19,6 +19,14 @@ public partial class PhaseViewModel : ViewModel
   {
     NotifyCanExecuteChanged();
   }
+  public void NotifyCanExecuteChanged()
+  {
+    ShowResultsCommand.NotifyCanExecuteChanged();
+    ShowOverviewCommand.NotifyCanExecuteChanged();
+  }
+
+
+
 
   /// <summary>
   /// Id of the process phase.
@@ -92,13 +100,25 @@ public partial class PhaseViewModel : ViewModel
     SummaryVM = new SummaryViewModel();
     if (summary.Summary != null)
       foreach (var info in summary.Summary)
-        SummaryVM.Add(new SummaryValueViewModel { Name = info.Key, Value = info.Value });
+        SummaryVM.Add(new SummaryValueViewModel { Name = info.Key.ToString().DeCamelCase(), InfoKind = info.Key, Value = info.Value });
+    SummaryVM.PropertyChanged += SummaryVM_PropertyChanged;
+  }
+
+  private void SummaryVM_PropertyChanged(object? sender, System.ComponentModel.PropertyChangedEventArgs e)
+  {
+    if (e.PropertyName == nameof(SummaryVM.Filter))
+    {
+      var summary = sender as SummaryViewModel;
+      if (summary != null)
+      {
+        var filter = summary.Filter;
+        SetFilter(filter);
+      }
+    }
   }
   #endregion
 
   #region Namespaces
-
-
   public NamespaceListViewModel NamespacesVM
   {
     get { return _Namespaces; }
@@ -113,9 +133,9 @@ public partial class PhaseViewModel : ViewModel
   }
   private NamespaceListViewModel _Namespaces = null!;
 
-  public void GetNamespaces(NTS filter)
+  public void GetNamespaces(NTS nts)
   {
-    NamespacesVM = new NamespaceListViewModel(this, filter);
+    NamespacesVM = new NamespaceListViewModel(this, nts, Filter);
   }
   #endregion
 
@@ -142,7 +162,7 @@ public partial class PhaseViewModel : ViewModel
   {
     if (window != null && window.IsVisible)
     {
-      window.Topmost=true;
+      window.Topmost = true;
       window.Focus();
     }
     else
@@ -190,11 +210,31 @@ public partial class PhaseViewModel : ViewModel
   }
 
   #endregion
-  public void NotifyCanExecuteChanged()
+
+  #region Filter namespaces
+
+
+  public string? Filter
   {
-    ShowResultsCommand.NotifyCanExecuteChanged();
-    ShowOverviewCommand.NotifyCanExecuteChanged();
+    get { return _Filter; }
+    set
+    {
+      if (_Filter != value)
+      {
+        _Filter = value;
+        NotifyPropertyChanged(nameof(Filter));
+      }
+    }
   }
+  private string? _Filter;
 
-
+  public async void SetFilter(string? filter)
+  {
+    Filter = filter;
+    await Task.Run(() =>
+    {
+      GetNamespaces(NTS.Origin | NTS.System);
+    });
+  }
+  #endregion
 }
