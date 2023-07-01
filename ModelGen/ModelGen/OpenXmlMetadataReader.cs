@@ -330,7 +330,7 @@ public static class OpenXmlMetadataReader
         break;
     var newName = String.Join("|", itemNames);
     if (itemNames.Count > 1)
-      if (ModelData.CommonTypeName.TryGetValue(newName, out var commonName))
+      if (ModelData.CommonTypes.TryGetValue(newName, out var commonName))
         newName = commonName;
     itemsParticle.Name = newName;
     return newName;
@@ -490,7 +490,7 @@ public static class OpenXmlMetadataReader
       if (validator is DXFwork.NameProviderValidator nameProviderValidator)
       {
         propInfo.RealTypeName = nameProviderValidator.QName.ToString();
-        if (!ModelData.KnownRealTypes.Contains(propInfo.RealTypeName))
+        if (!ModelData.RealTypes.Contains(propInfo.RealTypeName))
           throw new System.InvalidOperationException($"Unknown real type name \"{propInfo.RealTypeName}\"");
       }
       else

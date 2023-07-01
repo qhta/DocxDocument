@@ -61,17 +61,19 @@ public static class ModelManager
   {
     if (typeInfo.IsConverted)
       return false;
-    if (ModelData.TypeConversionTable.TryGetValue(typeInfo.Type, out var target))
+    if (ModelData.TypeConversion.TryGetValue2(typeInfo.Type.FullName ?? "", out var targetName))
     {
-      if (target.Rename)
+      //if (target.Rename)
+      //{
+      //  var targetType = target.Type;
+      //  typeInfo.NewName = new QualifiedName(targetType.Name, targetType.Namespace ?? "");
+      //  return true;
+      //}
+      //else
       {
-        var targetType = target.Type;
-        typeInfo.NewName = new QualifiedName(targetType.Name, targetType.Namespace ?? "");
-        return true;
-      }
-      else
-      {
-        var targetTypeInfo = TypeManager.RegisterType(target.Type, typeInfo, Semantics.TypeChange);
+        var targetType = Type.GetType(targetName);
+        if (targetType == null) return false;
+        var targetTypeInfo = TypeManager.RegisterType(targetType, typeInfo, Semantics.TypeChange);
         if (targetTypeInfo != null)
           targetTypeInfo.IsConvertedTo = true;
         typeInfo.IsConverted = true;
@@ -647,7 +649,7 @@ public static class ModelManager
   {
     CheckedRenameTypesCount++;
     var typeName = typeInfo.Type.FullName ?? "";
-    if (ModelData.TypeNameConversion.TryGetValue(typeName, out var newName))
+    if (ModelData.TypeConversion.TryGetValue2(typeName, out var newName))
     {
       var k = newName.LastIndexOf(".");
       typeInfo.NewName = newName.Substring(k + 1);

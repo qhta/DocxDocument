@@ -22,7 +22,7 @@ public static class ModelData
   public static SortedStrings ExcludedNamespaces { get; } = new SortedStrings
   {
     "DocumentFormat.OpenXml",
-    "*Metadata", "*Features", "*Framework", "*Framework.Schema", "*Validation", "*Validation.Schema", 
+    "*Metadata", "*Features", "*Framework", "*Framework.Schema", "*Validation", "*Validation.Schema",
     "*Presentation*",
     "*Spreadsheet*",
     "*Excel*",
@@ -33,7 +33,7 @@ public static class ModelData
     "DocumentFormat.OpenXml.Vml.Spreadsheet",
   };
 
-  public static BiDiDictionary<string, string> Namespaces { get; } = new BiDiDictionary<string, string>()
+  public static BiDiDictionary<string, string> NamespacePrefixes { get; } = new BiDiDictionary<string, string>()
   {
     { "oo", "DocumentFormat.OpenXml" },
     { "ac", "DocumentFormat.OpenXml.AdditionalCharacteristics" },
@@ -168,7 +168,7 @@ public static class ModelData
     { "w", "DocumentFormat.OpenXml.Wordprocessing" },
   };
 
-  public static BiDiDictionary<string, string> NamespaceTranslationTable { get; } = new BiDiDictionary<string, string>()
+  public static BiDiDictionary<string, string> TranslatedNamespaces { get; } = new BiDiDictionary<string, string>()
   {
     {"DocumentFormat.OpenXml", "DocumentModel" },
     {"DocumentFormat.OpenXml.AdditionalCharacteristics", "DocumentModel" },
@@ -303,7 +303,7 @@ public static class ModelData
     {"DocumentFormat.OpenXml.Wordprocessing", "DocumentModel.Wordprocessing" },
   };
 
-  public static BiDiDictionary<string, string> NamespaceShortcutTable { get; } = new BiDiDictionary<string, string>()
+  public static BiDiDictionary<string, string> NamespaceShortcuts { get; } = new BiDiDictionary<string, string>()
   {
     { "System", "" },
     { "System.Collections", "" },
@@ -599,12 +599,12 @@ public static class ModelData
     if (PropertyTypes.TryGetValue(propertyName, out propertyType))
       return true;
     var k = propertyName.IndexOf('.');
-    while (k>0)
+    while (k > 0)
     {
-      var wildcardName = '*'+propertyName.Substring(k);
+      var wildcardName = '*' + propertyName.Substring(k);
       if (PropertyTypes.TryGetValue(wildcardName, out propertyType))
         return true;
-      k = propertyName.IndexOf(".",k+1);
+      k = propertyName.IndexOf(".", k + 1);
     }
     propertyType = null;
     return false;
@@ -674,24 +674,47 @@ public static class ModelData
 
   public static SortedStrings ExcludedAttributes { get; } = new SortedStrings
   {
-    "OfficeAvailability", "NullableContext", "SchemaAttr", "Nullable", "Serializable", 
+    "OfficeAvailability", "NullableContext", "SchemaAttr", "Nullable", "Serializable",
     "DebuggerDisplay", "DebuggerNonUserCode", "CLSCompliant", "EditorBrowsable",
   };
 
-  public static Dictionary<string, string> TypeNameConversion { get; } = new()
+  public static BiDiDictionary<string, string> TypeConversion { get; } = new()
   {
     { "DocumentFormat.OpenXml.Wordprocessing.Settings", "DocumentModel.DocumentSettings"},
     { "DocumentFormat.OpenXml.Wordprocessing.WebSettings", "DocumentModel.WebSettings"},
     { "DocumentFormat.OpenXml.Wordprocessing.Fonts", "DocumentModel.Wordprocessing.Fonts"},
-  //  //{ "DocumentFormat.OpenXml.ExtendedProperties.Properties", "DocumentModel.ExtendedProperties"},
-  //  //{ "DocumentFormat.OpenXml.CustomProperties.Properties", "DocumentModel.CustomProperties"},
-  //  //{ "DocumentFormat.OpenXml.Drawing.ChartDrawingNonVisualDrawingProperties", "DocumentModel.Drawings.DrawingNonVisualDrawingProperties" },
-  //  //{ "DocumentFormat.OpenXml.Presentation.NonVisualDrawingProperties", "DocumentModel.Presentation.PresentationNonVisualDrawingProperties" },
-  //  //{ "DocumentFormat.OpenXml.Drawing.ShapeProperties", "DocumentModel.Drawings.ShapeProperties"},
-  //  //{ "DocumentFormat.OpenXml.Office2010.Word.RunTrackChangeType", "DocumentModel.Wordprocessing.RunTrackChangeType2"},
-  //  //{ "DocumentFormat.OpenXml.Office2013.Drawing.Chart.AxisDataSourceType", "DocumentModel.Drawings.AxisDataSourceType2"},
-  //  //{ "DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TextBodyType", "DocumentModel.Drawings.TextBodyType2"},
-  //  //{ "DocumentFormat.OpenXml.Office2013.Drawing.Chart.StringDataType", "DocumentModel.Drawings.StringDataType2"},
+    { "DocumentFormat.OpenXml.StringValue", "System.String"},
+    { "DocumentFormat.OpenXml.BooleanValue", "System.Boolean"},
+    { "DocumentFormat.OpenXml.OnOffValue", "System.Boolean"},
+    { "DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues", "System.Boolean"},
+    { "DocumentFormat.OpenXml.Office2019.Drawing.Chart.BooleanFalse", "System.Boolean"},
+    { "DocumentFormat.OpenXml.Office2010.ExcelAc.List", "System.String"},
+    { "DocumentFormat.OpenXml.IntegerValue", "System.Int64"},
+    { "DocumentFormat.OpenXml.Int32Value", "System.Int32"},
+    { "DocumentFormat.OpenXml.UInt32Value", "System.UInt32"},
+    { "DocumentFormat.OpenXml.Int16Value", "System.Int16"},
+    { "DocumentFormat.OpenXml.UInt16Value", "System.UInt16"},
+    { "DocumentFormat.OpenXml.Int64Value", "System.Int64"},
+    { "DocumentFormat.OpenXml.UInt64Value", "System.UInt16"},
+    { "DocumentFormat.OpenXml.ByteValue", "System.Byte"},
+    { "DocumentFormat.OpenXml.SByteValue", "System.SByte"},
+    { "DocumentFormat.OpenXml.SingleValue", "System.Single"},
+    { "DocumentFormat.OpenXml.DoubleValue", "System.Double"},
+    { "DocumentFormat.OpenXml.DecimalValue", "System.Decimal"},
+    { "DocumentFormat.OpenXml.DateTimeValue", "System.DateTime"},
+    { "DocumentFormat.OpenXml.OpenXmlElement", "DocumentModel.ModelElement"},
+    { "DocumentFormat.OpenXml.OpenXmlLeafElement", "System.Boolean"},
+    { "DocumentFormat.OpenXml.OpenXmlLeafTextElement", "System.String"},
+    { "DocumentFormat.OpenXml.Wordprocessing.LongHexNumberType", "System.UInt32"},
+    { "DocumentFormat.OpenXml.EnumStringAttribute", "System.Xml.Serialization.XmlEnumAttribute"},
+    { "DocumentFormat.OpenXml.OfficeAvailabilityAttribute", "DocumentModel.Attributes.OfficeAvailabilityAttribute"},
+    { "DocumentFormat.OpenXml.ChildElementInfoAttribute", "DocumentModel.Attributes.ChildElementInfoAttribute"},
+    { "DocumentFormat.OpenXml.SchemaAttrAttribute", "DocumentModel.Attributes.SchemaAttrAttribute"},
+    { "DocumentFormat.OpenXml.VariantTypes.Variant", "DocumentModel.Variant"},
+    { "DocumentFormat.OpenXml.VariantTypes.VTArray", "DocumentModel.ArrayVariant"},
+    { "DocumentFormat.OpenXml.VariantTypes.VTVector", "DocumentModel.VectorVariant"},
+    { "DocumentFormat.OpenXml.Base64BinaryValue", "DocumentModel.Base64Binary"},
+    { "DocumentFormat.OpenXml.HexBinaryValue", "DocumentModel.HexBinary"},
   };
 
   public static Dictionary<string, Type> ModelTypes { get; } = new();
@@ -703,80 +726,79 @@ public static class ModelData
       ModelTypes.Add(type.FullName ?? "", type);
   }
 
-  public record TypeConversionTarget
-  {
-    public Type Type {get; set; }= null!;
-    public bool Rename {get; set;}
+  //public record TypeConversionTarget
+  //{
+  //  public Type Type { get; set; } = null!;
+  //  public bool Rename { get; set; }
 
-    public TypeConversionTarget(Type type)
-    {
-      Type = type;
-    }
-    public TypeConversionTarget(Type type, bool rename)
-    {
-      Type = type;
-      Rename = rename;
-    }
+  //  public TypeConversionTarget(Type type)
+  //  {
+  //    Type = type;
+  //  }
+  //  public TypeConversionTarget(Type type, bool rename)
+  //  {
+  //    Type = type;
+  //    Rename = rename;
+  //  }
 
-    public static implicit operator TypeConversionTarget (Type type) => new TypeConversionTarget(type);
-    public static implicit operator TypeConversionTarget (TypeInfo typeInfo) => new TypeConversionTarget(typeInfo.Type);
-  }
-  public static Dictionary<Type, TypeConversionTarget> TypeConversionTable { get; } = new ()
+  //  public static implicit operator TypeConversionTarget(Type type) => new TypeConversionTarget(type);
+  //  public static implicit operator TypeConversionTarget(TypeInfo typeInfo) => new TypeConversionTarget(typeInfo.Type);
+  //}
+  //public static Dictionary<Type, TypeConversionTarget> TypeConversionTable { get; } = new()
+  //{
+  //  { typeof(DocumentFormat.OpenXml.StringValue), typeof(System.String)},
+  //  { typeof(DocumentFormat.OpenXml.BooleanValue), typeof(System.Boolean)},
+  //  { typeof(DocumentFormat.OpenXml.OnOffValue), typeof(System.Boolean)},
+  //  { typeof(DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues), typeof(System.Boolean)},
+  //  { typeof(DocumentFormat.OpenXml.Office2019.Drawing.Chart.BooleanFalse), typeof(System.Boolean) },
+  //  { typeof(DocumentFormat.OpenXml.Office2010.ExcelAc.List), typeof(System.String) },
+  //  { typeof(DocumentFormat.OpenXml.IntegerValue), typeof(System.Int64)},
+  //  { typeof(DocumentFormat.OpenXml.Int32Value), typeof(System.Int32)},
+  //  { typeof(DocumentFormat.OpenXml.UInt32Value), typeof(System.UInt32)},
+  //  { typeof(DocumentFormat.OpenXml.Int16Value), typeof(System.Int16)},
+  //  { typeof(DocumentFormat.OpenXml.UInt16Value), typeof(System.UInt16)},
+  //  { typeof(DocumentFormat.OpenXml.Int64Value), typeof(System.Int64)},
+  //  { typeof(DocumentFormat.OpenXml.UInt64Value), typeof(System.UInt16)},
+  //  { typeof(DocumentFormat.OpenXml.ByteValue), typeof(System.Byte)},
+  //  { typeof(DocumentFormat.OpenXml.SByteValue), typeof(System.SByte)},
+  //  { typeof(DocumentFormat.OpenXml.SingleValue), typeof(System.Single)},
+  //  { typeof(DocumentFormat.OpenXml.DoubleValue), typeof(System.Double)},
+  //  { typeof(DocumentFormat.OpenXml.DecimalValue), typeof(System.Decimal)},
+  //  { typeof(DocumentFormat.OpenXml.DateTimeValue), typeof(System.DateTime)},
+  //  { typeof(DocumentFormat.OpenXml.OpenXmlElement), typeof(DocumentModel.ModelElement)},
+  //  { typeof(DocumentFormat.OpenXml.OpenXmlLeafElement), typeof(System.Boolean)},
+  //  { typeof(DocumentFormat.OpenXml.OpenXmlLeafTextElement), typeof(System.String)},
+  //  { typeof(DocumentFormat.OpenXml.Wordprocessing.LongHexNumberType), typeof(System.UInt32)},
+  //  { typeof(DocumentFormat.OpenXml.EnumStringAttribute), typeof(System.Xml.Serialization.XmlEnumAttribute) },
+  //  { typeof(DocumentFormat.OpenXml.OfficeAvailabilityAttribute), typeof(DocumentModel.Attributes.OfficeAvailabilityAttribute) },
+  //  { typeof(DocumentFormat.OpenXml.ChildElementInfoAttribute), typeof(DocumentModel.Attributes.ChildElementInfoAttribute) },
+  //  { typeof(DocumentFormat.OpenXml.SchemaAttrAttribute), typeof(DocumentModel.Attributes.SchemaAttrAttribute) },
+  //  { typeof(DocumentFormat.OpenXml.VariantTypes.Variant), typeof(DocumentModel.Variant)},
+  //  { typeof(DocumentFormat.OpenXml.VariantTypes.VTArray), typeof(DocumentModel.ArrayVariant)},
+  //  { typeof(DocumentFormat.OpenXml.VariantTypes.VTVector), typeof(DocumentModel.VectorVariant)},
+  //  { typeof(DocumentFormat.OpenXml.Base64BinaryValue), typeof(DocumentModel.Base64Binary)},
+  //  { typeof(DocumentFormat.OpenXml.HexBinaryValue), typeof(DocumentModel.HexBinary)},
+  //};
+
+  public static BiDiDictionary<string, string> BuiltInTypeTranslation { get; } = new()
   {
-    { typeof(DocumentFormat.OpenXml.StringValue), typeof(System.String)},
-    { typeof(DocumentFormat.OpenXml.BooleanValue), typeof(System.Boolean)},
-    { typeof(DocumentFormat.OpenXml.OnOffValue), typeof(System.Boolean)},
-    { typeof(DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues), typeof(System.Boolean)},
-    { typeof(DocumentFormat.OpenXml.Office2019.Drawing.Chart.BooleanFalse), typeof(System.Boolean) },
-    { typeof(DocumentFormat.OpenXml.Office2010.ExcelAc.List), typeof(System.String) },
-    { typeof(DocumentFormat.OpenXml.IntegerValue), typeof(System.Int64)},
-    { typeof(DocumentFormat.OpenXml.Int32Value), typeof(System.Int32)},
-    { typeof(DocumentFormat.OpenXml.UInt32Value), typeof(System.UInt32)},
-    { typeof(DocumentFormat.OpenXml.Int16Value), typeof(System.Int16)},
-    { typeof(DocumentFormat.OpenXml.UInt16Value), typeof(System.UInt16)},
-    { typeof(DocumentFormat.OpenXml.Int64Value), typeof(System.Int64)},
-    { typeof(DocumentFormat.OpenXml.UInt64Value), typeof(System.UInt16)},
-    { typeof(DocumentFormat.OpenXml.ByteValue), typeof(System.Byte)},
-    { typeof(DocumentFormat.OpenXml.SByteValue), typeof(System.SByte)},
-    { typeof(DocumentFormat.OpenXml.SingleValue), typeof(System.Single)},
-    { typeof(DocumentFormat.OpenXml.DoubleValue), typeof(System.Double)},
-    { typeof(DocumentFormat.OpenXml.DecimalValue), typeof(System.Decimal)},
-    { typeof(DocumentFormat.OpenXml.DateTimeValue), typeof(System.DateTime)},
-    { typeof(DocumentFormat.OpenXml.OpenXmlElement), typeof(DocumentModel.ModelElement)},
-    { typeof(DocumentFormat.OpenXml.OpenXmlLeafElement), typeof(System.Boolean)},
-    { typeof(DocumentFormat.OpenXml.OpenXmlLeafTextElement), typeof(System.String)},
-    { typeof(DocumentFormat.OpenXml.Wordprocessing.LongHexNumberType), typeof(UInt32)},
-    { typeof(DocumentFormat.OpenXml.EnumStringAttribute), typeof(System.Xml.Serialization.XmlEnumAttribute) },
-    { typeof(DocumentFormat.OpenXml.OfficeAvailabilityAttribute), typeof(DocumentModel.Attributes.OfficeAvailabilityAttribute) },
-    { typeof(DocumentFormat.OpenXml.ChildElementInfoAttribute), typeof(DocumentModel.Attributes.ChildElementInfoAttribute) },
-    { typeof(DocumentFormat.OpenXml.SchemaAttrAttribute), typeof(DocumentModel.Attributes.SchemaAttrAttribute) },
-    { typeof(DocumentFormat.OpenXml.VariantTypes.Variant), typeof(DocumentModel.Variant)},
-    { typeof(DocumentFormat.OpenXml.VariantTypes.VTArray), typeof(DocumentModel.ArrayVariant)},
-    { typeof(DocumentFormat.OpenXml.VariantTypes.VTVector), typeof(DocumentModel.VectorVariant)},
-    { typeof(DocumentFormat.OpenXml.Base64BinaryValue), typeof(DocumentModel.Base64Binary)},
-    { typeof(DocumentFormat.OpenXml.HexBinaryValue), typeof(DocumentModel.HexBinary)},
-//    { typeof(Collection<UInt32>), typeof(Collection<HexInt>)},
+    { "System.Object", "object" },
+    { "System.String", "string" },
+    { "System.Boolean", "bool" },
+    { "System.Int32", "int"},
+    { "System.UInt32", "uint"},
+    { "System.Int16", "short" },
+    { "System.UInt16", "ushort" },
+    { "System.Int64", "long" },
+    { "System.UInt64", "ulong" },
+    { "System.Byte", "byte" },
+    { "System.SByte", "sbyte" },
+    { "System.Single", "float" },
+    { "System.Double", "double" },
+    { "System.Decimal", "decimal" },
   };
 
-  public static Dictionary<Type, string> BuiltInTypeNames { get; } = new Dictionary<Type, string>
-  {
-    { typeof(System.Object), "object" },
-    { typeof(System.String), "string" },
-    { typeof(System.Boolean), "bool" },
-    { typeof(System.Int32), "int"},
-    { typeof(System.UInt32), "uint"},
-    { typeof(System.Int16), "short" },
-    { typeof(System.UInt16), "ushort" },
-    { typeof(System.Int64), "long" },
-    { typeof(System.UInt64), "ulong" },
-    { typeof(System.Byte), "byte" },
-    { typeof(System.SByte), "sbyte" },
-    { typeof(System.Single), "float" },
-    { typeof(System.Double), "double" },
-    { typeof(System.Decimal), "decimal" },
-  };
-
-  public static string[] SimpleTypeNames { get; } = new string[]
+  public static SortedStrings SimpleTypes { get; } = new SortedStrings
   {
     nameof(System.String),
     nameof(System.Boolean),
@@ -796,7 +818,7 @@ public static class ModelData
   #endregion
 
   #region Common type names
-  public static Dictionary<string, string> CommonTypeName { get; } = new()
+  public static Dictionary<string, string> CommonTypes { get; } = new()
   {
     { "*Start", "*Mark" },
     { "*End", "*Mark" },
@@ -843,9 +865,9 @@ public static class ModelData
 
   public static bool TryGetCommonTypeName(string name, [MaybeNullWhen(false)][NotNullWhen(true)] out string? newName)
   {
-    if (CommonTypeName.TryGetValue(name, out newName))
+    if (CommonTypes.TryGetValue(name, out newName))
       return true;
-    foreach (var item in CommonTypeName)
+    foreach (var item in CommonTypes)
     {
       if (name.IsLike(item.Key, out var wildKey, StringComparison.InvariantCulture))
       {
@@ -860,11 +882,156 @@ public static class ModelData
   #endregion
 
   #region Validation info
-  public static string[] KnownRealTypes = new string[]
+  public static SortedStrings RealTypes = new()
   {
     "Int64","Int32","UInt32","Double","Boolean",
     "http://www.w3.org/2001/XMLSchema:hexBinary",
     "http://www.w3.org/2001/XMLSchema:integer",
   };
+  #endregion
+
+
+  #region Save & Load
+  public static void SaveData()
+  {
+    SaveData(GetFilename());
+  }
+
+  public static void LoadData()
+  {
+    LoadData(GetFilename());
+  }
+
+  public static string GetFilename()
+  {
+    var path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+    path = Path.Combine(path, "ModelGen");
+    if (!Directory.Exists(path))
+      Directory.CreateDirectory(path);
+    path = Path.Combine(path, "ModelData.txt");
+    return path;
+  }
+
+  public static void SaveData(string filename)
+  {
+    using (var textWriter = File.CreateText(filename))
+    {
+      WriteStrings(textWriter, "IncludedNamespaces", IncludedNamespaces);
+      WriteStrings(textWriter, "ExcludedNamespaces", ExcludedNamespaces);
+      WriteDictionary(textWriter, "NamespacePrefixes", NamespacePrefixes);
+      WriteDictionary(textWriter, "TranslatedNamespaces", TranslatedNamespaces);
+      WriteDictionary(textWriter, "NamespaceShortcuts", NamespaceShortcuts);
+      WriteStrings(textWriter, "IncludedTypes", IncludedTypes);
+      WriteStrings(textWriter, "ExcludedTypes", ExcludedTypes);
+      WriteStrings(textWriter, "ExcludedAttributes", ExcludedAttributes);
+      WriteDictionary(textWriter, "TypeConversion", TypeConversion);
+      WriteDictionary(textWriter, "BuiltInTypeTranslation", BuiltInTypeTranslation);
+      WriteStrings(textWriter, "SimpleTypes", SimpleTypes);
+      WriteStrings(textWriter, "RealTypes", RealTypes);
+      WriteDictionary(textWriter, "CommonTypes", CommonTypes);
+    }
+  }
+
+  public static void LoadData(string filename)
+  {
+    using (var textReader = File.OpenText(filename))
+    {
+      string? line;
+      int lineNumber = 0;
+      while ((line = textReader.ReadLine()) != null)
+      {
+        lineNumber++;
+        line = line.Trim();
+        if (line.StartsWith('[') && line.EndsWith(']'))
+        {
+          var key = line.Substring(1, line.Length - 2);
+          if (key == "IncludedNamespaces")
+            ReadStrings(textReader, IncludedNamespaces, ref lineNumber);
+          else if (key == "ExcludedNamespaces")
+            ReadStrings(textReader, ExcludedNamespaces, ref lineNumber);
+          else if (key == "NamespacePrefixes")
+            ReadDictionary(textReader, NamespacePrefixes, ref lineNumber);
+          else if (key == "TranslatedNamespaces")
+            ReadDictionary(textReader, TranslatedNamespaces, ref lineNumber);
+          else if (key == "NamespaceShortcuts")
+            ReadDictionary(textReader, NamespaceShortcuts, ref lineNumber);
+          else if (key == "IncludedTypes")
+            ReadStrings(textReader, IncludedTypes, ref lineNumber);
+          else if (key == "ExcludedTypes")
+            ReadStrings(textReader, ExcludedTypes, ref lineNumber);
+          else if (key == "ExcludedAttributes")
+            ReadStrings(textReader, ExcludedAttributes, ref lineNumber);
+          else if (key == "TypeConversion")
+            ReadDictionary(textReader, TypeConversion, ref lineNumber);
+          else if (key == "BuiltInTypeTranslation")
+            ReadDictionary(textReader, BuiltInTypeTranslation, ref lineNumber);
+          else if (key == "SimpleTypes")
+            ReadStrings(textReader, SimpleTypes, ref lineNumber);
+          else if (key == "RealTypes")
+            ReadStrings(textReader, RealTypes, ref lineNumber);
+          else if (key == "CommonTypes")
+            ReadDictionary(textReader, CommonTypes, ref lineNumber);
+          else
+            throw new InvalidDataException($"Unrecognized key [{key}] expected in line {lineNumber}");
+        }
+        else
+          throw new InvalidDataException($"[key] expected in line {lineNumber}");
+      }
+    }
+  }
+
+
+  private static void WriteStrings(TextWriter textWriter, string caption, ICollection<string> data)
+  {
+    textWriter.WriteLine("[" + caption + "]");
+    foreach (var item in data)
+      textWriter.WriteLine(item);
+    textWriter.WriteLine();
+  }
+
+  private static void WriteDictionary(TextWriter textWriter, string caption, IDictionary<string, string> data)
+  {
+    textWriter.WriteLine("[" + caption + "]");
+    foreach (var item in data)
+      textWriter.WriteLine($"{item.Key}\t{item.Value}");
+    textWriter.WriteLine();
+  }
+
+
+  private static void ReadStrings(TextReader textReader, ICollection<string> data, ref int lineNumber)
+  {
+    data.Clear();
+    string? line;
+    while (!(String.IsNullOrEmpty(line = textReader.ReadLine())))
+    {
+      lineNumber++;
+      try
+      {
+        data.Add(line.Trim());
+      }
+      catch (Exception ex)
+      { throw new InvalidDataException($"{ex.Message} in line {lineNumber}"); }
+    }
+  }
+
+  private static void ReadDictionary(TextReader textReader, IDictionary<string, string> data, ref int lineNumber)
+  {
+    data.Clear();
+    string? line;
+    while (!(String.IsNullOrEmpty(line = textReader.ReadLine())))
+    {
+      lineNumber++;
+      var ss = line.Trim().Split('\t');
+      try
+      {
+        if (ss.Length > 1)
+          data.Add(ss[0], ss[1]);
+        else
+          data.Add(ss[0], string.Empty);
+      }
+      catch (Exception ex)
+      { throw new InvalidDataException($"{ex.Message} in line {lineNumber}"); }
+    }
+  }
   #endregion
 }

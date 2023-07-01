@@ -11,9 +11,6 @@ public partial class ProcessOptionsView : UserControl
     InitializeComponent();
   }
 
-
-
-
   private void Button_CanExecute(object sender, CanExecuteRoutedEventArgs args)
   {
     var button = (Button)sender;

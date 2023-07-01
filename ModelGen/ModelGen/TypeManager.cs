@@ -80,7 +80,7 @@ public static class TypeManager
   public static string TranslateNamespace(string nspace)
   {
     var newNspace = nspace;
-    foreach (var item in ModelData.NamespaceTranslationTable)
+    foreach (var item in ModelData.TranslatedNamespaces)
     {
       if (nspace.StartsWith(item.Item1))
         newNspace = nspace.Replace(item.Item1, item.Item2);
@@ -91,7 +91,7 @@ public static class TypeManager
   public static string TranslateNamespaceBack(string nspace)
   {
     var newNspace = nspace;
-    foreach (var item in ModelData.NamespaceTranslationTable)
+    foreach (var item in ModelData.TranslatedNamespaces)
     {
       if (nspace.StartsWith(item.Item2))
         newNspace = nspace.Replace(item.Item2, item.Item1);
