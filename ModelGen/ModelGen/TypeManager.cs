@@ -45,7 +45,7 @@ public static class TypeManager
     get
     {
       lock (NamespacesLock)
-        return TypeManager.KnownTypes.Values.Where(item => item.IsAccepted == false);
+        return TypeManager.KnownTypes.Values.Where(item => item.IsRejected == true);
     }
   }
 
@@ -138,7 +138,7 @@ public static class TypeManager
 
       if (KnownTypes.TryGetValue(type, out var typeInfo))
         return typeInfo;
-      //if (type.Name=="ClientData")
+      //if (type.Name.StartsWith("OpenXmlSimpleValue"))
       //  Debug.Assert(true);
       var nspace = type.Namespace ?? "";
       lock (NamespacesLock)
@@ -152,7 +152,10 @@ public static class TypeManager
         OnRegistering?.Invoke(new RegisteringInfo { RegisteredNamespaces = KnownNamespaces.Count + 1, RegisteredTypes = AllTypes.Count(), Current = typeInfo });
       }
       bool accept = acceptance == true || !ModelData.IsExcluded(type);
-      typeInfo.IsAccepted = accept;
+      if (accept)
+        typeInfo.IsAccepted = true;
+      else
+        typeInfo.IsRejected = true;
 
       if (accept)
         TypeReflector.ReflectType(typeInfo);
@@ -173,27 +176,6 @@ public static class TypeManager
     var result = RegisterType(type);
     AddRelationship(source, result, semantics);
     return result;
-  }
-
-  public static TypeInfo RegisterTargetType(Type type)
-  {
-    lock (KnownTypesLock)
-    {
-      if (KnownTypes.TryGetValue(type, out var info))
-        return info;
-      //var nspace = type.Namespace ?? "";
-      //lock (NamespacesLock)
-      //{
-      //if (!KnownNamespaces.ContainsKey(nspace))
-      //  RegisterNamespace(nspace);
-      info = new TypeInfo(type);
-      KnownTypes.Add(type, info);
-      //var NamespaceDictionary = TypeManager.GetNamespaceDictionary(nspace);
-      //NamespaceDictionary.Add(info);
-      //}
-      //TypeReflector.ReflectTypeAsync(info);
-      return info;
-    }
   }
 
   public static TypeRelationship AddRelationship(this TypeInfo source, TypeInfo target, Semantics semantics, int order = 0)

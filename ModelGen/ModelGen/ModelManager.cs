@@ -474,7 +474,7 @@ public static class ModelManager
         {
           var propType = prop.PropertyType.GetConversionTargetOrSelf();
           if (propType.HasExcludedNamespace())
-            prop.IsAccepted = false;
+            prop.IsRejected = true;
           else if (!propType.IsRejected)
           {
             CheckTypeUsage(propType);
