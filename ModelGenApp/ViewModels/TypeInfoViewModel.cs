@@ -14,9 +14,15 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
   {
     get
     {
-      var str = Model?.GetFullName(Original);
-      if (str!=null)
-        return str.Name;
+      var name = Model?.GetFullName(Original);
+      if (name!=null)
+      {
+        var str= name.ToString();
+        var k = str.IndexOf('.');
+        if (k!=-1)
+          str = str.Substring(k+1);
+        return str;
+      }
       return string.Empty;
     }
   }
