@@ -168,7 +168,7 @@
         </member>
         <member name="M:Qhta.DispatchedObjects.DispatchedDictionary`2.#ctor(System.String)">
             <summary>
-            Constructor which enables to set a <see cref="P:Qhta.DispatchedObjects.DispatchedObject.DebugName"/> property.
+            Constructor which enables to set a <see cref="P:Qhta.DispatchedObjects.DispatchedObject.Name"/> property.
             </summary>
             <param name="debugName"></param>
         </member>
@@ -549,7 +549,7 @@
             A static object to dispatch actions to main app thread.
             </summary>
         </member>
-        <member name="P:Qhta.DispatchedObjects.DispatchedObject.DebugName">
+        <member name="P:Qhta.DispatchedObjects.DispatchedObject.Name">
             <summary>
             Helper name which can be used on Debugging.
             </summary>

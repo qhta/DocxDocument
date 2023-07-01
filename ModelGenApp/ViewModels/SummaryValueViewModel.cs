@@ -2,7 +2,7 @@
 public class SummaryValueViewModel: ViewModel
 {
 
-  public string Name
+  public new string Name
   {
     get { return _Name; }
     set
@@ -30,4 +30,19 @@ public class SummaryValueViewModel: ViewModel
     }
   }
   private object? _Value;
+
+
+  public bool IsChecked
+  {
+    get { return _IsChecked; }
+    set
+    {
+      if (_IsChecked != value)
+      {
+        _IsChecked = value;
+        NotifyPropertyChanged(nameof(IsChecked));
+      }
+    }
+  }
+  private bool _IsChecked = true;
 }

@@ -5,14 +5,13 @@ namespace ModelGenApp.ViewModels;
 /// <summary>
 /// Observable monitor for a single process phase
 /// </summary>
-public partial class PhaseMonitor : ViewModel
+public partial class PhaseViewModel : ViewModel
 {
 
-  public PhaseMonitor()
+  public PhaseViewModel()
   {
-    ShowResultsCommand = new RelayCommand(ShowResultsExecute, ShowResultsCanExecute){ DebugName="ShowResultsCommand" };
-    ShowOverviewCommand = new RelayCommand(ShowOverviewExecute, ShowOverviewCanExecute){ DebugName="ShowOverviewCommand" };
-    ShowDetailsCommand = new RelayCommand(ShowDetailsExecute, ShowDetailsCanExecute){ DebugName="ShowDetailsCommand" };
+    ShowResultsCommand = new RelayCommand(ShowResultsExecute, ShowResultsCanExecute) { Name = "ShowResultsCommand" };
+    ShowOverviewCommand = new RelayCommand(ShowOverviewExecute, ShowOverviewCanExecute) { Name = "ShowOverviewCommand" };
     PropertyChanged += PhaseMonitor_PropertyChanged;
   }
 
@@ -91,9 +90,9 @@ public partial class PhaseMonitor : ViewModel
   public void SetSummary(SummaryInfo summary)
   {
     SummaryVM = new SummaryViewModel();
-    if (summary.Summary != null) 
+    if (summary.Summary != null)
       foreach (var info in summary.Summary)
-        SummaryVM.Add(new SummaryValueViewModel{ Name = info.Key, Value = info.Value });
+        SummaryVM.Add(new SummaryValueViewModel { Name = info.Key, Value = info.Value });
   }
   #endregion
 
@@ -116,15 +115,7 @@ public partial class PhaseMonitor : ViewModel
 
   public void GetNamespaces(NTS filter)
   {
-    NamespacesVM = new NamespaceListViewModel();
-    var namespaces = TypeManager.GetNamespaces(filter).OrderBy(item=>item);
-    foreach (var ns in namespaces)
-    {
-      var nsVM = new NamespaceViewModel{ Name = ns };
-      var nsTypes = TypeManager.GetNamespaceTypes(ns).OrderBy(item=>item.Name).ToList();
-      nsVM.AllTypesCount = nsTypes.Count();
-      NamespacesVM.Add(nsVM);
-    }
+    NamespacesVM = new NamespaceListViewModel(this, filter);
   }
   #endregion
 
@@ -147,12 +138,20 @@ public partial class PhaseMonitor : ViewModel
   private Command _ShowResultsCommand = null!;
 
   Window? window;
-  protected virtual void ShowResultsExecute()
+  protected virtual async void ShowResultsExecute()
   {
-    if (window == null)
-     window = new PhaseResultsWindow();
-    window.DataContext = this;
-    window.Show();
+    if (window != null && window.IsVisible)
+    {
+      window.Topmost=true;
+      window.Focus();
+    }
+    else
+    {
+      window = new PhaseResultsWindow();
+      window.DataContext = this;
+      window.Show();
+      await Task.Run(() => ShowOverviewExecute());
+    }
   }
 
   protected virtual bool ShowResultsCanExecute()
@@ -184,40 +183,17 @@ public partial class PhaseMonitor : ViewModel
 
   protected virtual async void ShowOverviewExecute()
   {
-    await Task.Run(() => {
-    GetNamespaces(NTS.Origin|NTS.System);
-      });
+    await Task.Run(() =>
+    {
+      GetNamespaces(NTS.Origin | NTS.System);
+    });
   }
 
   #endregion
-  public Command ShowDetailsCommand
-  {
-    get { return _ShowOverviewCommand; }
-    set
-    {
-      if (_ShowDetailsCommand != value)
-      {
-        _ShowDetailsCommand = value;
-        NotifyPropertyChanged(nameof(_ShowDetailsCommand));
-      }
-    }
-  }
-  private Command _ShowDetailsCommand = null!;
-
   public void NotifyCanExecuteChanged()
   {
     ShowResultsCommand.NotifyCanExecuteChanged();
     ShowOverviewCommand.NotifyCanExecuteChanged();
-    ShowDetailsCommand.NotifyCanExecuteChanged();
-  }
-
-  protected virtual void ShowDetailsExecute()
-  {
-  }
-
-  protected virtual bool ShowDetailsCanExecute()
-  {
-    return Percentage == 100;
   }
 
 
