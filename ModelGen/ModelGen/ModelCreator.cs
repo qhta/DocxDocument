@@ -108,15 +108,15 @@ public class ModelCreator: BaseCreator
     //ModelGenerator.GenerateGlobalUsings();
     DateTime t2 = DateTime.Now;
     var ts = t2 - t1;
-    ModelMonitor?.ShowPhaseEnd(PPS.CodeGeneration, new SummaryInfo{ Time = ts, 
-      Summary = new Dictionary<string, object>{ 
-        {"Generated interfaces", ModelGenerator.GeneratedInterfacesCount }, 
-        {"Generated classes", ModelGenerator.GeneratedClassesCount }, 
-        {"Generated structs", ModelGenerator.GeneratedStructsCount }, 
-        {"Generated enum types", ModelGenerator.GeneratedEnumTypesCount }, 
-        {"Total properties", ModelGenerator.GeneratedPropertiesCount }, 
-        {"Total enum values", ModelGenerator.GeneratedEnumValuesCount }, 
-        }});
+    //ModelMonitor?.ShowPhaseEnd(PPS.CodeGeneration, new SummaryInfo{ Time = ts, 
+    //  Summary = new Dictionary<string, object>{ 
+    //    {"Generated interfaces", ModelGenerator.GeneratedInterfacesCount }, 
+    //    {"Generated classes", ModelGenerator.GeneratedClassesCount }, 
+    //    {"Generated structs", ModelGenerator.GeneratedStructsCount }, 
+    //    {"Generated enum types", ModelGenerator.GeneratedEnumTypesCount }, 
+    //    {"Total properties", ModelGenerator.GeneratedPropertiesCount }, 
+    //    {"Total enum values", ModelGenerator.GeneratedEnumValuesCount }, 
+    //    }});
     return ts;
   }
 

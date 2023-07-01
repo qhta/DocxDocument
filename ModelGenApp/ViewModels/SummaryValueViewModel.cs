@@ -2,20 +2,19 @@
 public class SummaryValueViewModel: ViewModel
 {
 
-  public new string Name
+  public SummaryInfoKind InfoKind
   {
-    get { return _Name; }
+    get { return _InfoKind; }
     set
     {
-      if (_Name != value)
+      if (_InfoKind != value)
       {
-        _Name = value;
-        NotifyPropertyChanged(nameof(Name));
+        _InfoKind = value;
+        NotifyPropertyChanged(nameof(InfoKind));
       }
     }
   }
-  private string _Name = null!;
-
+  private SummaryInfoKind _InfoKind;
 
   public object? Value
   {
@@ -44,5 +43,5 @@ public class SummaryValueViewModel: ViewModel
       }
     }
   }
-  private bool _IsChecked = true;
+  private bool _IsChecked;
 }
