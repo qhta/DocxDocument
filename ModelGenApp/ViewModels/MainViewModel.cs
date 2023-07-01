@@ -66,8 +66,8 @@ public class MainViewModel : ViewModel
   {
     this.windowService = new WindowService();
     _ProcessOptionsVM = new ProcessOptionsViewModel();
-    StartProcessCommand = new RelayCommand(StartProcess, CanStartProcess){ DebugName = "StartProcessCommand" };
-    StopProcessCommand = new RelayCommand(StopProcess, CanStopProcess){ DebugName = "StopProcessCommand" };
+    StartProcessCommand = new RelayCommand(StartProcess, CanStartProcess){ Name = "StartProcessCommand" };
+    StopProcessCommand = new RelayCommand(StopProcess, CanStopProcess){ Name = "StopProcessCommand" };
     ProcessOptionsVM.PropertyChanged += ProcessOptionsVM_PropertyChanged;
   }
 

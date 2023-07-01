@@ -648,6 +648,46 @@
             </summary>
             <param name="parameter"></param>
         </member>
+        <member name="T:Qhta.MVVM.RelayCommand`1">
+            <summary>
+             A command which relays its functionality to other objects by invoking delegates.
+            </summary>
+        </member>
+        <member name="F:Qhta.MVVM.RelayCommand`1.execute">
+            <summary>
+            Action to invoke on Execute.
+            </summary>
+        </member>
+        <member name="F:Qhta.MVVM.RelayCommand`1.canExecute">
+            <summary>
+             Function to invoke on CanExecute.
+            </summary>
+        </member>
+        <member name="M:Qhta.MVVM.RelayCommand`1.#ctor(System.Action{`0})">
+            <summary>
+             Initializes a new instance with action to execute.
+            </summary>
+            <param name="execute">Action to execute.</param>
+        </member>
+        <member name="M:Qhta.MVVM.RelayCommand`1.#ctor(System.Action{`0},System.Func{`0,System.Boolean})">
+            <summary>
+             Initializes a new instance with action to execute and function to check if can execute.
+            </summary>
+            <param name="execute">Action to execute.</param>
+            <param name="canExecute">Function to check if Action can be executed</param>
+        </member>
+        <member name="M:Qhta.MVVM.RelayCommand`1.CanExecute(System.Object)">
+            <summary>
+            Overriden function which checks if a command can execute an action.
+            </summary>
+            <param name="parameter"></param>
+        </member>
+        <member name="M:Qhta.MVVM.RelayCommand`1.Execute(System.Object)">
+            <summary>
+            Overriden method to invoke command action.
+            </summary>
+            <param name="parameter"></param>
+        </member>
         <member name="T:Qhta.MVVM.SelectionChangedEventArgs">
             <summary>
             <see cref="T:System.EventArgs"/> to notify that a selection has been changed.
@@ -688,7 +728,7 @@
             </summary>
             <param name="propertyName"></param>
         </member>
-        <member name="P:Qhta.MVVM.ViewModel.IsValid">
+        <member name="M:Qhta.MVVM.ViewModel.IsValid">
             <summary>
             Specifies if the data of view model is valid.
             </summary>
@@ -698,6 +738,17 @@
             View model which has a model of a specific type.
             </summary>
             <typeparam name="ModelType"></typeparam>
+        </member>
+        <member name="M:Qhta.MVVM.ViewModel`1.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:Qhta.MVVM.ViewModel`1.#ctor(`0)">
+            <summary>
+            Initializing constructor.
+            </summary>
+            <param name="model"></param>
         </member>
         <member name="P:Qhta.MVVM.ViewModel`1.Model">
             <summary>
