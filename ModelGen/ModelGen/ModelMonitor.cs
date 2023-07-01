@@ -14,7 +14,7 @@ public class ProgressInfo
 public class SummaryInfo
 {
   public TimeSpan Time { get; set; }
-  public Dictionary<string, object>? Summary {get; set; }
+  public Dictionary<SummaryInfoKind, object>? Summary {get; set; }
 }
 
 public abstract class ModelMonitor
@@ -79,10 +79,10 @@ public abstract class ModelMonitor
     if (info.Summary != null)
       foreach (var item in info.Summary)
       {
-        if (item.Key.Contains('{'))
-          WriteLine(String.Format(item.Key, item.Value));
-        else
-          WriteLine($"{item.Key} = {item.Value}");
+        //if (item.Key.Contains('{'))
+        //  WriteLine(String.Format(item.Key, item.Value));
+        //else
+        WriteLine($"{item.Key.ToString().DeCamelCase()} = {item.Value}");
       }
 
   }

@@ -108,17 +108,16 @@ public abstract class BaseCreator
     DateTime t2 = DateTime.Now;
     var ts = t2 - t1;
     var allTypesCount = TypeManager.AllTypes.Count();
-    var reflectedTypesCount = TypeManager.AllTypes.Where(item => item.IsReflected).Count();
+    //var reflectedTypesCount = TypeManager.AllTypes.Where(item => item.IsReflected).Count();
     var acceptedTypesCount = TypeManager.AcceptedTypes.Count();
     var rejectedTypesCount = TypeManager.RejectedTypes.Count();
     ModelMonitor?.ShowPhaseEnd(PPS.ScanTypes, new SummaryInfo
     {
       Time = ts,
-      Summary = new Dictionary<string, object>{
-        {"Registered types", allTypesCount },
-        {"Reflected types", reflectedTypesCount },
-        {"Accepted types", acceptedTypesCount },
-        {"Rejected types", rejectedTypesCount }
+      Summary = new Dictionary<SummaryInfoKind, object>{
+        {SummaryInfoKind.RegisteredTypes, allTypesCount },
+        {SummaryInfoKind.AcceptedTypes, acceptedTypesCount },
+        {SummaryInfoKind.RejectedTypes, rejectedTypesCount }
         }
     });
     return ts;
@@ -147,13 +146,15 @@ public abstract class BaseCreator
     ModelValidator.OnValidatingType += ModelValidator_OnValidatingType;
     DateTime t2 = DateTime.Now;
     var ts = t2 - t1;
-    var summary = new Dictionary<string, object>{
-        {"Checked types", ModelValidator.CheckedTypesCount },
-        {"Valid types", ModelValidator.ValidTypesCount } };
+    var summary = new Dictionary<SummaryInfoKind, object>{
+        {SummaryInfoKind.ValidatedTypes, ModelValidator.CheckedTypesCount },
+        {SummaryInfoKind.ValidTypes, ModelValidator.ValidTypesCount }, 
+        {SummaryInfoKind.InvalidTypes, ModelValidator.CheckedTypesCount-ModelValidator.ValidTypesCount }, 
+      };
     if (ModelValidator.NoDocsTypesCount > 0)
-      summary.Add("No docs types", ModelValidator.NoDocsTypesCount);
+      summary.Add(SummaryInfoKind.TypesWithoutDocumentation, ModelValidator.NoDocsTypesCount);
     if (ModelValidator.NoSummaryTypesCount > 0)
-      summary.Add("No summary types", ModelValidator.NoSummaryTypesCount);
+      summary.Add(SummaryInfoKind.TypesWithoutSummary, ModelValidator.NoSummaryTypesCount);
     ModelMonitor?.ShowPhaseEnd(PPS.ScanValidation, new SummaryInfo
     {
       Time = ts,
