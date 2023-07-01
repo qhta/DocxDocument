@@ -297,6 +297,10 @@
               "target": "Package",
               "version": "[2.1.2, )"
             },
+            "Qhta.Collections": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
             "Qhta.HtmlUtils": {
               "target": "Package",
               "version": "[1.0.1, )"
