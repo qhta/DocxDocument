@@ -31,7 +31,7 @@ public static class ProcessOptionsMgr
       JsonSerializer.Serialize<ProcessOptions>(stream, value);
   }
 
-  private static string GetFilename()
+  public static string GetFilename()
   {
     var path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
     path = Path.Combine(path, "ModelGen");
