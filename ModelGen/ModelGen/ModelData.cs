@@ -661,9 +661,11 @@ public static class ModelData
   {
     "CustomXmlAttribute",
     "DocPart",
-    "Wordprocessing*",
-    "WordprocessingDocumentType",
+    //"Wordprocessing*",
+    //"WordprocessingDocumentType",
     "EnumValue*",
+    "OpenXmlSimpleValue*",
+    "ListValue*",
     //"OpenXmlSolidColorFillPropertiesElement",
     //"OpenXmlValueColorEndPositionElement", "OpenXmlTaskAssignUnassignUserElement", "OpenXmlTaskUserElement",
     //"OpenXmlPartRootElement",

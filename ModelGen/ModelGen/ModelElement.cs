@@ -28,7 +28,7 @@ public class ModelElement: IOwnedElement
   public bool? Acceptance
   { 
     get; 
-    set; 
+    private set; 
   }
   
   /// <summary>
