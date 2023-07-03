@@ -16,6 +16,21 @@ public class SummaryValueViewModel: ViewModel
   }
   private SummaryInfoKind _InfoKind;
 
+
+  public string Name
+  {
+    get { return _Name; }
+    set
+    {
+      if (_Name != value)
+      {
+        _Name = value;
+        NotifyPropertyChanged(nameof(Name));
+      }
+    }
+  }
+  private string _Name = null!;
+
   public object? Value
   {
     get { return _Value; }

@@ -27,6 +27,19 @@ public partial class PhaseViewModel : ViewModel
 
 
 
+  public string Name
+  {
+    get { return _Name; }
+    set
+    {
+      if (_Name != value)
+      {
+        _Name = value;
+        NotifyPropertyChanged(nameof(Name));
+      }
+    }
+  }
+  private string _Name = null!  ;
 
   /// <summary>
   /// Id of the process phase.

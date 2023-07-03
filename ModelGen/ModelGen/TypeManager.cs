@@ -80,7 +80,7 @@ public static class TypeManager
   public static string TranslateNamespace(string nspace)
   {
     var newNspace = nspace;
-    foreach (var item in ModelData.TranslatedNamespaces)
+    foreach (var item in ModelConfig.Instance.TranslatedNamespaces)
     {
       if (nspace.StartsWith(item.Item1))
         newNspace = nspace.Replace(item.Item1, item.Item2);
@@ -91,7 +91,7 @@ public static class TypeManager
   public static string TranslateNamespaceBack(string nspace)
   {
     var newNspace = nspace;
-    foreach (var item in ModelData.TranslatedNamespaces)
+    foreach (var item in ModelConfig.Instance.TranslatedNamespaces)
     {
       if (nspace.StartsWith(item.Item2))
         newNspace = nspace.Replace(item.Item2, item.Item1);
@@ -151,7 +151,7 @@ public static class TypeManager
         NamespaceDictionary.Types.Add(typeInfo);
         OnRegistering?.Invoke(new RegisteringInfo { RegisteredNamespaces = KnownNamespaces.Count + 1, RegisteredTypes = AllTypes.Count(), Current = typeInfo });
       }
-      bool accept = acceptance == true || !ModelData.IsExcluded(type);
+      bool accept = acceptance == true || !ModelConfig.Instance.IsExcluded(type);
       if (accept)
         typeInfo.IsAccepted = true;
       else

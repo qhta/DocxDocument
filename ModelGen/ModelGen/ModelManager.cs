@@ -61,7 +61,7 @@ public static class ModelManager
   {
     if (typeInfo.IsConverted)
       return false;
-    if (ModelData.TypeConversion.TryGetValue2(typeInfo.Type.FullName ?? "", out var targetName))
+    if (ModelConfig.Instance.TypeConversion.TryGetValue2(typeInfo.Type.FullName ?? "", out var targetName))
     {
       //if (target.Rename)
       //{
@@ -305,7 +305,7 @@ public static class ModelManager
     TypeInfo targetTypeInfo = null!;
     Type? targetType = null;
     var propName = propInfo.DeclaringType?.TargetNamespace+"."+propInfo.DeclaringType?.Name+"."+propInfo.Name; 
-    if (ModelData.TryGetPropertyType(propName, out targetType))
+    if (ModelConfig.Instance.TryGetPropertyType(propName, out targetType))
       targetTypeInfo = TypeManager.RegisterType(targetType, typeInfo, Semantics.TypeChange);
     else
     {
@@ -452,9 +452,9 @@ public static class ModelManager
 
     if (typeInfo.IsAccepted == false)
       return false;
-    if (ModelData.IsExcluded(typeInfo.Type))
+    if (ModelConfig.Instance.IsExcluded(typeInfo.Type))
       return false;
-    if (ModelData.ExcludedNamespaces.Contains(typeInfo.TargetNamespace ?? ""))
+    if (ModelConfig.Instance.ExcludedNamespaces.Contains(typeInfo.TargetNamespace ?? ""))
       return false;
     typeInfo.IsUsed = true;
     UsedTypesCount++;
@@ -499,7 +499,7 @@ public static class ModelManager
 
   private static bool HasExcludedNamespace(this TypeInfo typeInfo)
   {
-    if (ModelData.ExcludedNamespaces.Contains(typeInfo.TargetNamespace))
+    if (ModelConfig.Instance.ExcludedNamespaces.Contains(typeInfo.TargetNamespace))
       return true;
     if (typeInfo.IsConstructedGenericType)
     {
@@ -649,7 +649,7 @@ public static class ModelManager
   {
     CheckedRenameTypesCount++;
     var typeName = typeInfo.Type.FullName ?? "";
-    if (ModelData.TypeConversion.TryGetValue2(typeName, out var newName))
+    if (ModelConfig.Instance.TypeConversion.TryGetValue2(typeName, out var newName))
     {
       var k = newName.LastIndexOf(".");
       typeInfo.NewName = newName.Substring(k + 1);
@@ -791,7 +791,7 @@ public static class ModelManager
       if (prop.Name == "Count")
         Debug.Assert(true);
       var fullName = prop.DeclaringType.GetFullName(true) + "." + prop.Name;
-      if (ModelData.PropertyTranslateTable.TryGetValue(fullName, out var newName))
+      if (ModelConfig.Instance.PropertyTranslateTable.TryGetValue(fullName, out var newName))
         return newName;
     }
     return prop.Name;

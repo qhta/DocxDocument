@@ -1,8 +1,4 @@
-﻿using ModelGenApp.ViewModels;
-
-using Qhta.DispatchedObjects;
-
-namespace ModelGenApp.Views;
+﻿namespace ModelGenApp.Views;
 /// <summary>
 /// Interaction logic for MainWindow.xaml
 /// </summary>
@@ -14,11 +10,11 @@ public partial class MainWindow : Window
     MainViewModel = new MainViewModel();
     DataContext = MainViewModel;
     DispatchedObject.DispatcherBridge = new DispatcherBridge();
-    var modelDataFilename = ModelData.GetFilename();
+    var modelDataFilename = ModelConfig.Instance.GetFilename();
     if (File.Exists(modelDataFilename))
       try
       {
-        ModelData.LoadData(modelDataFilename);
+        ModelConfig.Instance.LoadData(modelDataFilename);
       }
       catch (Exception ex)
       {
@@ -27,7 +23,7 @@ public partial class MainWindow : Window
     else
       try
       {
-        ModelData.SaveData(modelDataFilename);
+        ModelConfig.Instance.SaveData(modelDataFilename);
       }
       catch (Exception ex)
       {

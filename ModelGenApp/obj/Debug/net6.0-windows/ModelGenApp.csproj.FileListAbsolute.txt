@@ -90,3 +90,7 @@ D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\TypeListV
 D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\TypeListWindow.baml
 D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\TypeListCountView.g.cs
 D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\TypeListCountView.baml
+D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\ModelConfigView.g.cs
+D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\NamespacesConfigView.g.cs
+D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\ModelConfigView.baml
+D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\NamespacesConfigView.baml

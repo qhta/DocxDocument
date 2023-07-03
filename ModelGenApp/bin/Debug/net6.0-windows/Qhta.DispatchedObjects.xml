@@ -11,22 +11,6 @@
             </summary>
             <typeparam name="TValue"></typeparam>
         </member>
-        <member name="M:Qhta.DispatchedObjects.DispatchedCollection`1.#ctor">
-            <summary>
-            Default constructor.
-            </summary>
-        </member>
-        <member name="P:Qhta.DispatchedObjects.DispatchedCollection`1.Values">
-            <summary>
-            External collection of values.
-            </summary>
-        </member>
-        <member name="F:Qhta.DispatchedObjects.DispatchedCollection`1._Values">
-            <summary>
-            Internal observable collection of values.
-            It can be accessed in descendant classes.
-            </summary>
-        </member>
         <member name="E:Qhta.DispatchedObjects.DispatchedCollection`1.CollectionChanged">
             <summary>
             Implementation of <see cref="T:System.Collections.Specialized.INotifyCollectionChanged"/> interface.
@@ -37,6 +21,24 @@
             Internal <see cref="T:System.Collections.Specialized.NotifyCollectionChangedEventHandler"/> event.
             It can be checked in descendant classes.
             </summary>
+        </member>
+        <member name="E:Qhta.DispatchedObjects.DispatchedCollection`1.PropertyChanged">
+            <summary>
+            Property changed event which implements <see cref="T:System.ComponentModel.INotifyPropertyChanged"/> interface.
+            </summary>
+        </member>
+        <member name="E:Qhta.DispatchedObjects.DispatchedCollection`1._PropertyChanged">
+            <summary>
+            A handler of <see cref="E:Qhta.DispatchedObjects.DispatchedCollection`1.PropertyChanged"/> event which can be checked in descending classes.
+            </summary>
+        </member>
+        <member name="M:Qhta.DispatchedObjects.DispatchedCollection`1.NotifyPropertyChanged(System.String)">
+            <summary>
+            A method to notify that a property has changed. 
+            Uses <see cref="P:Qhta.DispatchedObjects.DispatchedObject.DispatcherBridge"/>, if it is set, to invoke <see cref="E:Qhta.DispatchedObjects.DispatchedCollection`1.PropertyChanged"/> event.
+            Otherwise the event is invoked directly.
+            </summary>
+            <param name="propertyName"></param>
         </member>
         <member name="M:Qhta.DispatchedObjects.DispatchedCollection`1._Values_CollectionChanged(System.Object,System.Collections.Specialized.NotifyCollectionChangedEventArgs)">
             <summary>
@@ -51,108 +53,36 @@
             Uses <see cref="P:Qhta.DispatchedObjects.DispatchedObject.DispatcherBridge"/>, if it is set, to invoke <see cref="E:Qhta.DispatchedObjects.DispatchedCollection`1.CollectionChanged"/> event.
             Otherwise the event is invoked directly.
             After that a <see cref="M:Qhta.DispatchedObjects.DispatchedCollection`1.AfterCollectionChanged(System.Collections.Specialized.NotifyCollectionChangedEventArgs)"/> is called 
-            to notify that a <see cref="P:Qhta.DispatchedObjects.DispatchedCollection`1.Count"/> has changed.
+            to notify that items Count has changed.
             </summary>
             <param name="args"></param>
         </member>
         <member name="M:Qhta.DispatchedObjects.DispatchedCollection`1.AfterCollectionChanged(System.Collections.Specialized.NotifyCollectionChangedEventArgs)">
             <summary>
-            A virtual method to notify that a <see cref="P:Qhta.DispatchedObjects.DispatchedCollection`1.Count"/> property has changed.
+            A virtual method to notify that a <see cref="!:Count"/> property has changed.
             </summary>
             <param name="e"></param>
         </member>
         <member name="F:Qhta.DispatchedObjects.DispatchedCollection`1._InAddRange">
             <summary>
-            A flag to signal that <see cref="M:Qhta.DispatchedObjects.DispatchedCollection`1.Add(`0)"/> operation is invoked in <see cref="M:Qhta.DispatchedObjects.DispatchedCollection`1.AddRange(System.Collections.Generic.IEnumerable{`0})"/> method.
+            A flag to signal that <see cref="!:Add(TValue)"/> operation is invoked in <see cref="M:Qhta.DispatchedObjects.DispatchedCollection`1.AddRange(System.Collections.Generic.IEnumerable{`0})"/> method.
             </summary>
         </member>
         <member name="M:Qhta.DispatchedObjects.DispatchedCollection`1.AddRange(System.Collections.Generic.IEnumerable{`0})">
             <summary>
             Adds a whole collection of items. 
-            <see cref="F:Qhta.DispatchedObjects.DispatchedCollection`1._InAddRange"/> is used to omit large number of notifications in the <see cref="M:Qhta.DispatchedObjects.DispatchedCollection`1.Add(`0)"/> method.
+            <see cref="F:Qhta.DispatchedObjects.DispatchedCollection`1._InAddRange"/> is used to omit large number of notifications in the <see cref="!:Add(TValue)"/> method.
             <see cref="M:Qhta.DispatchedObjects.DispatchedCollection`1.OnCollectionChanged(System.Collections.Specialized.NotifyCollectionChangedEventArgs)"/> is invoked after adding the last item.
             </summary>
             <param name="items"></param>
         </member>
-        <member name="M:Qhta.DispatchedObjects.DispatchedCollection`1.Add(`0)">
+        <member name="M:Qhta.DispatchedObjects.DispatchedCollection`1.Dispatch(System.Action)">
             <summary>
-            Adds a single item.
-            Invokes protected <see cref="M:Qhta.DispatchedObjects.DispatchedCollection`1.InsertItem(System.Int32,`0)"/> method.
-            Uses <see cref="P:Qhta.DispatchedObjects.DispatchedObject.DispatcherBridge"/>, if it is set, to add the item.
-            Otherwise the item is added directly.
+            A method to invoke and action.
+            Uses <see cref="P:Qhta.DispatchedObjects.DispatchedObject.DispatcherBridge"/>, if it is set, to invoke an action .
+            Otherwise the action is invoked directly.
             </summary>
-            <param name="item"></param>
-        </member>
-        <member name="M:Qhta.DispatchedObjects.DispatchedCollection`1.Insert(System.Int32,`0)">
-            <summary>
-            Inserts a single item at the specified index.
-            Invokes protected <see cref="M:Qhta.DispatchedObjects.DispatchedCollection`1.InsertItem(System.Int32,`0)"/> method.
-            Uses <see cref="P:Qhta.DispatchedObjects.DispatchedObject.DispatcherBridge"/>, if it is set, to add the item.
-            Otherwise the item is added directly.
-            </summary>
-            <param name="index"></param>
-            <param name="item"></param>
-        </member>
-        <member name="M:Qhta.DispatchedObjects.DispatchedCollection`1.InsertItem(System.Int32,`0)">
-            <summary>
-            Inserts a single item at the specified index.
-            Uses <see cref="P:Qhta.DispatchedObjects.DispatchedObject.DispatcherBridge"/>, if it is set, to add the item.
-            Otherwise the item is added directly.
-            </summary>
-            <param name="index"></param>
-            <param name="item"></param>
-        </member>
-        <member name="P:Qhta.DispatchedObjects.DispatchedCollection`1.Count">
-            <summary>
-            Returns the count of items.
-            </summary>
-        </member>
-        <member name="P:Qhta.DispatchedObjects.DispatchedCollection`1.IsReadOnly">
-            <summary>
-            The collection is not read only.
-            </summary>
-        </member>
-        <member name="M:Qhta.DispatchedObjects.DispatchedCollection`1.ToArray">
-            <summary>
-            Gets the <see cref="F:Qhta.DispatchedObjects.DispatchedCollection`1._Values"/> collection as an array.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Qhta.DispatchedObjects.DispatchedCollection`1.GetEnumerator">
-            <summary>
-            Enumerates the <see cref="F:Qhta.DispatchedObjects.DispatchedCollection`1._Values"/> collection.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Qhta.DispatchedObjects.DispatchedCollection`1.System#Collections#IEnumerable#GetEnumerator">
-            <summary>
-            Enumerates the <see cref="F:Qhta.DispatchedObjects.DispatchedCollection`1._Values"/> collection.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Qhta.DispatchedObjects.DispatchedCollection`1.Clear">
-            <summary>
-            Clears the <see cref="F:Qhta.DispatchedObjects.DispatchedCollection`1._Values"/> collection.
-            </summary>
-        </member>
-        <member name="M:Qhta.DispatchedObjects.DispatchedCollection`1.Contains(`0)">
-            <summary>
-            Checks if the <see cref="F:Qhta.DispatchedObjects.DispatchedCollection`1._Values"/> collection contains the item.
-            </summary>
-        </member>
-        <member name="M:Qhta.DispatchedObjects.DispatchedCollection`1.CopyTo(`0[],System.Int32)">
-            <summary>
-            Copies the <see cref="F:Qhta.DispatchedObjects.DispatchedCollection`1._Values"/> collection to an array.
-            </summary>
-            <param name="array"></param>
-            <param name="arrayIndex"></param>
-        </member>
-        <member name="M:Qhta.DispatchedObjects.DispatchedCollection`1.Remove(`0)">
-            <summary>
-            Removes an item from the <see cref="F:Qhta.DispatchedObjects.DispatchedCollection`1._Values"/> collection.
-            </summary>
-            <param name="item"></param>
-            <returns></returns>
+            <param name="action"></param>
         </member>
         <member name="T:Qhta.DispatchedObjects.DispatchedDictionary`2">
             <summary>
@@ -185,12 +115,6 @@
             <summary>
             Default constructor.
             </summary>
-        </member>
-        <member name="M:Qhta.DispatchedObjects.DispatchedDictionary`2.#ctor(System.String)">
-            <summary>
-            Constructor which enables to set a <see cref="P:Qhta.DispatchedObjects.DispatchedObject.Name"/> property.
-            </summary>
-            <param name="debugName"></param>
         </member>
         <member name="M:Qhta.DispatchedObjects.DispatchedDictionary`2.#ctor(System.Collections.Generic.IEnumerable{`1})">
             <summary>
@@ -567,11 +491,6 @@
         <member name="P:Qhta.DispatchedObjects.DispatchedObject.DispatcherBridge">
             <summary>
             A static object to dispatch actions to main app thread.
-            </summary>
-        </member>
-        <member name="P:Qhta.DispatchedObjects.DispatchedObject.Name">
-            <summary>
-            Helper name which can be used on Debugging.
             </summary>
         </member>
         <member name="E:Qhta.DispatchedObjects.DispatchedObject.PropertyChanged">
