@@ -69,7 +69,7 @@ public class BaseCodeGenerator
       attrTypeName = attrTypeName.Substring(0, attrTypeName.Length - "Attribute".Length);
     if (attrTypeName == string.Empty)
       return false;
-    if (ModelData.ExcludedAttributes.Contains(attrTypeName))
+    if (ModelConfig.Instance.ExcludedAttributes.Contains(attrTypeName))
       return false;
     var attrString = attrTypeName;
     if (attrData.ConstructorArguments?.Count + attrData.NamedArguments?.Count > 0)

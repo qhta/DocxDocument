@@ -170,7 +170,7 @@ public class TypeInfo : ModelElement
 
   public static string NamespaceShortcut(string ns)
   {
-    if (ModelData.NamespaceShortcuts.TryGetValue2(ns, out var shortcut))
+    if (ModelConfig.Instance.NamespaceShortcuts.TryGetValue2(ns, out var shortcut))
       return shortcut;
     return ns;
     //string result = "";

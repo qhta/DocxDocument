@@ -16,6 +16,7 @@
       <RowDefinition Height="24"/>
     </Grid.RowDefinitions>
     <Menu Grid.Row="0" >
+      <MenuItem Header="Config" Command="{Binding OpenConfigCommand}"/>
       <MenuItem Header="Start" Command="{Binding StartProcessCommand}"/>
     </Menu>
     <Grid Grid.Row="1">

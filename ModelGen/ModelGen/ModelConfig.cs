@@ -1,25 +1,28 @@
-﻿using System.Diagnostics;
-
-using DocumentFormat.OpenXml.Drawing.Diagrams;
-
-using DocumentModel;
-
-using Qhta.Collections;
-using Qhta.TextUtils;
+﻿using Qhta.Collections;
 
 namespace ModelGen;
 
-public static class ModelData
+public class ModelConfig
 {
+
+  public static ModelConfig Instance
+  {
+    get
+    {
+      if (_Instance == null)
+        _Instance = new ModelConfig();
+      return _Instance;
+    }
+  }
+  private static ModelConfig _Instance = null!;
 
   #region Namespaces
 
-  public static SortedStrings IncludedNamespaces { get; } = new SortedStrings
+  public SortedStrings IncludedNamespaces { get; } = new SortedStrings
   {
-    "DocumentFormat.OpenXml.Wordprocesing"
   };
 
-  public static SortedStrings ExcludedNamespaces { get; } = new SortedStrings
+  public SortedStrings ExcludedNamespaces { get; } = new SortedStrings
   {
     "DocumentFormat.OpenXml",
     "*Metadata", "*Features", "*Framework", "*Framework.Schema", "*Validation", "*Validation.Schema",
@@ -33,7 +36,7 @@ public static class ModelData
     "DocumentFormat.OpenXml.Vml.Spreadsheet",
   };
 
-  public static BiDiDictionary<string, string> NamespacePrefixes { get; } = new BiDiDictionary<string, string>()
+  public BiDiDictionary<string, string> NamespacePrefixes { get; } = new BiDiDictionary<string, string>()
   {
     { "oo", "DocumentFormat.OpenXml" },
     { "ac", "DocumentFormat.OpenXml.AdditionalCharacteristics" },
@@ -168,7 +171,7 @@ public static class ModelData
     { "w", "DocumentFormat.OpenXml.Wordprocessing" },
   };
 
-  public static BiDiDictionary<string, string> TranslatedNamespaces { get; } = new BiDiDictionary<string, string>()
+  public BiDiDictionary<string, string> TranslatedNamespaces { get; } = new BiDiDictionary<string, string>()
   {
     {"DocumentFormat.OpenXml", "DocumentModel" },
     {"DocumentFormat.OpenXml.AdditionalCharacteristics", "DocumentModel" },
@@ -303,7 +306,7 @@ public static class ModelData
     {"DocumentFormat.OpenXml.Wordprocessing", "DocumentModel.Wordprocessing" },
   };
 
-  public static BiDiDictionary<string, string> NamespaceShortcuts { get; } = new BiDiDictionary<string, string>()
+  public BiDiDictionary<string, string> NamespaceShortcuts { get; } = new BiDiDictionary<string, string>()
   {
     { "System", "" },
     { "System.Collections", "" },
@@ -544,7 +547,7 @@ public static class ModelData
 
   #region Properties
 
-  public static SortedStrings ExcludedProperties { get; } = new SortedStrings
+  public SortedStrings ExcludedProperties { get; } = new SortedStrings
   {
     "FirstChild", "LastChild", "HasChildren", "InnerText", "InnerXml", "Features",
     "OpenXmlElementContext", "HasAttributes", "ExtendedAttributes", "ChildElements",
@@ -563,7 +566,7 @@ public static class ModelData
 
   };
 
-  public static Dictionary<string, string> PropertyTranslateTable = new()
+  public Dictionary<string, string> PropertyTranslateTable = new()
   {
     { "DXW.LatentStyles.Count", "TotalCount" },
     { "DXW.LatentStyles.LatentStyleExceptionInfos", "Items" },
@@ -582,7 +585,7 @@ public static class ModelData
     { "DXW.Font.Panose1Number", "Panose"},
     };
 
-  public static Dictionary<string, Type> PropertyTypes { get; } = new()
+  public Dictionary<string, Type> PropertyTypes { get; } = new()
   {
     { "DocumentModel.DocumentSettings.DocumentId", typeof(HexInt) },
     { "DocumentModel.DocumentSettings.PersistentDocumentId", typeof(Guid) },
@@ -594,7 +597,7 @@ public static class ModelData
     { "DocumentModel.Wordprocessing.Rsids.Items", typeof(Collection<HexInt>) },
   };
 
-  public static bool TryGetPropertyType(string propertyName, [MaybeNullWhen(false)][NotNullWhen(true)] out Type propertyType)
+  public bool TryGetPropertyType(string propertyName, [MaybeNullWhen(false)][NotNullWhen(true)] out Type propertyType)
   {
     if (PropertyTypes.TryGetValue(propertyName, out propertyType))
       return true;
@@ -613,7 +616,7 @@ public static class ModelData
   #endregion
 
   #region Types
-  public static bool IsExcluded(Type type)
+  public bool IsExcluded(Type type)
   {
     if (IncludedTypes.Contains(type.Name))
       return false;
@@ -624,7 +627,7 @@ public static class ModelData
     return false;
   }
 
-  public static SortedStrings ExcludedTypes { get; } = new SortedStrings
+  public SortedStrings ExcludedTypes { get; } = new SortedStrings
   {
     "SR", "*Reader", "*Attribute", "*Attributes", "*Extensions", "*Helper", "*Provider", "*Methods",
     "XmlConvertingReader*", "*.Part", "EnumInfoLookup`1", "MiscAttrContainer", "ModelElement", /*"HexWord",*/
@@ -657,7 +660,7 @@ public static class ModelData
     "OnOffType",
   };
 
-  public static SortedStrings IncludedTypes { get; } = new SortedStrings
+  public SortedStrings IncludedTypes { get; } = new SortedStrings
   {
     "CustomXmlAttribute",
     "DocPart",
@@ -672,13 +675,13 @@ public static class ModelData
     //"OpenXmlFormulaElement",
   };
 
-  public static SortedStrings ExcludedAttributes { get; } = new SortedStrings
+  public SortedStrings ExcludedAttributes { get; } = new SortedStrings
   {
     "OfficeAvailability", "NullableContext", "SchemaAttr", "Nullable", "Serializable",
     "DebuggerDisplay", "DebuggerNonUserCode", "CLSCompliant", "EditorBrowsable",
   };
 
-  public static BiDiDictionary<string, string> TypeConversion { get; } = new()
+  public BiDiDictionary<string, string> TypeConversion { get; } = new()
   {
     { "DocumentFormat.OpenXml.Wordprocessing.Settings", "DocumentModel.DocumentSettings"},
     { "DocumentFormat.OpenXml.Wordprocessing.WebSettings", "DocumentModel.WebSettings"},
@@ -717,10 +720,10 @@ public static class ModelData
     { "DocumentFormat.OpenXml.HexBinaryValue", "DocumentModel.HexBinary"},
   };
 
-  public static Dictionary<string, Type> ModelTypes { get; } = new();
+  public Dictionary<string, Type> ModelTypes { get; } = new();
 
 
-  public static void LoadModelTypes(Assembly assembly)
+  public void LoadModelTypes(Assembly assembly)
   {
     foreach (var type in assembly.GetTypes())
       ModelTypes.Add(type.FullName ?? "", type);
@@ -741,10 +744,10 @@ public static class ModelData
   //    Rename = rename;
   //  }
 
-  //  public static implicit operator TypeConversionTarget(Type type) => new TypeConversionTarget(type);
-  //  public static implicit operator TypeConversionTarget(TypeInfo typeInfo) => new TypeConversionTarget(typeInfo.Type);
+  //  public implicit operator TypeConversionTarget(Type type) => new TypeConversionTarget(type);
+  //  public implicit operator TypeConversionTarget(TypeInfo typeInfo) => new TypeConversionTarget(typeInfo.Type);
   //}
-  //public static Dictionary<Type, TypeConversionTarget> TypeConversionTable { get; } = new()
+  //public Dictionary<Type, TypeConversionTarget> TypeConversionTable { get; } = new()
   //{
   //  { typeof(DocumentFormat.OpenXml.StringValue), typeof(System.String)},
   //  { typeof(DocumentFormat.OpenXml.BooleanValue), typeof(System.Boolean)},
@@ -780,7 +783,7 @@ public static class ModelData
   //  { typeof(DocumentFormat.OpenXml.HexBinaryValue), typeof(DocumentModel.HexBinary)},
   //};
 
-  public static BiDiDictionary<string, string> BuiltInTypeTranslation { get; } = new()
+  public BiDiDictionary<string, string> BuiltInTypeTranslation { get; } = new()
   {
     { "System.Object", "object" },
     { "System.String", "string" },
@@ -798,7 +801,7 @@ public static class ModelData
     { "System.Decimal", "decimal" },
   };
 
-  public static SortedStrings SimpleTypes { get; } = new SortedStrings
+  public SortedStrings SimpleTypes { get; } = new SortedStrings
   {
     nameof(System.String),
     nameof(System.Boolean),
@@ -818,7 +821,7 @@ public static class ModelData
   #endregion
 
   #region Common type names
-  public static Dictionary<string, string> CommonTypes { get; } = new()
+  public Dictionary<string, string> CommonTypes { get; } = new()
   {
     { "*Start", "*Mark" },
     { "*End", "*Mark" },
@@ -863,7 +866,7 @@ public static class ModelData
     { "DXW.CustomXmlBlock|DXW.SdtBlock|DXW.Paragraph|DXW.Table", "DXW.TextBlock" },
   };
 
-  public static bool TryGetCommonTypeName(string name, [MaybeNullWhen(false)][NotNullWhen(true)] out string? newName)
+  public bool TryGetCommonTypeName(string name, [MaybeNullWhen(false)][NotNullWhen(true)] out string? newName)
   {
     if (CommonTypes.TryGetValue(name, out newName))
       return true;
@@ -882,7 +885,7 @@ public static class ModelData
   #endregion
 
   #region Validation info
-  public static SortedStrings RealTypes = new()
+  public SortedStrings RealTypes = new()
   {
     "Int64","Int32","UInt32","Double","Boolean",
     "http://www.w3.org/2001/XMLSchema:hexBinary",
@@ -892,27 +895,27 @@ public static class ModelData
 
 
   #region Save & Load
-  public static void SaveData()
+  public void SaveData()
   {
     SaveData(GetFilename());
   }
 
-  public static void LoadData()
+  public void LoadData()
   {
     LoadData(GetFilename());
   }
 
-  public static string GetFilename()
+  public string GetFilename()
   {
     var path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
     path = Path.Combine(path, "ModelGen");
     if (!Directory.Exists(path))
       Directory.CreateDirectory(path);
-    path = Path.Combine(path, "ModelData.txt");
+    path = Path.Combine(path, "ModelConfig.txt");
     return path;
   }
 
-  public static void SaveData(string filename)
+  public void SaveData(string filename)
   {
     using (var textWriter = File.CreateText(filename))
     {
@@ -932,7 +935,7 @@ public static class ModelData
     }
   }
 
-  public static void LoadData(string filename)
+  public void LoadData(string filename)
   {
     using (var textReader = File.OpenText(filename))
     {
@@ -981,7 +984,7 @@ public static class ModelData
   }
 
 
-  private static void WriteStrings(TextWriter textWriter, string caption, ICollection<string> data)
+  private void WriteStrings(TextWriter textWriter, string caption, ICollection<string> data)
   {
     textWriter.WriteLine("[" + caption + "]");
     foreach (var item in data)
@@ -989,7 +992,7 @@ public static class ModelData
     textWriter.WriteLine();
   }
 
-  private static void WriteDictionary(TextWriter textWriter, string caption, IDictionary<string, string> data)
+  private void WriteDictionary(TextWriter textWriter, string caption, IDictionary<string, string> data)
   {
     textWriter.WriteLine("[" + caption + "]");
     foreach (var item in data)
@@ -998,7 +1001,7 @@ public static class ModelData
   }
 
 
-  private static void ReadStrings(TextReader textReader, ICollection<string> data, ref int lineNumber)
+  private void ReadStrings(TextReader textReader, ICollection<string> data, ref int lineNumber)
   {
     data.Clear();
     string? line;
@@ -1014,7 +1017,7 @@ public static class ModelData
     }
   }
 
-  private static void ReadDictionary(TextReader textReader, IDictionary<string, string> data, ref int lineNumber)
+  private void ReadDictionary(TextReader textReader, IDictionary<string, string> data, ref int lineNumber)
   {
     data.Clear();
     string? line;

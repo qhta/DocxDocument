@@ -9,6 +9,11 @@
             Abstract class implementing <see cref="T:System.Windows.Input.ICommand"/> interface
             </summary>
         </member>
+        <member name="P:Qhta.MVVM.Command.Name">
+            <summary>
+            Name to trace command.
+            </summary>
+        </member>
         <member name="E:Qhta.MVVM.Command.CanExecuteChanged">
             <summary>
             Event required by <see cref="T:System.Windows.Input.ICommand"/> interface. 

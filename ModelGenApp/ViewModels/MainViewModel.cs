@@ -1,4 +1,6 @@
-﻿namespace ModelGenApp.ViewModels;
+﻿using ModelGenApp.Views;
+
+namespace ModelGenApp.ViewModels;
 
 public class MainViewModel : ViewModel
 {
@@ -66,6 +68,7 @@ public class MainViewModel : ViewModel
   {
     this.windowService = new WindowService();
     _ProcessOptionsVM = new ProcessOptionsViewModel();
+    OpenConfigCommand = new RelayCommand(OpenConfig, CanOpenConfig){ Name = "OpenConfigCommand" };
     StartProcessCommand = new RelayCommand(StartProcess, CanStartProcess){ Name = "StartProcessCommand" };
     StopProcessCommand = new RelayCommand(StopProcess, CanStopProcess){ Name = "StopProcessCommand" };
     ProcessOptionsVM.PropertyChanged += ProcessOptionsVM_PropertyChanged;
@@ -77,10 +80,32 @@ public class MainViewModel : ViewModel
     CommandManager.InvalidateRequerySuggested();
   }
 
+  #region OpenConfigCommand    -
+  public Command OpenConfigCommand { get; }
+  
+  public bool CanOpenConfig()
+  {
+    return true;
+  }
+
+  Window? window;
+  protected void OpenConfig()
+  {
+    if (window != null && window.IsVisible)
+    {
+      window.Topmost=true;
+      window.Focus();
+    }
+    else
+    {
+      window = new ModelConfigView();
+      window.Show();
+    }
+  }
+  #endregion
+
+  #region StartProcessCommand
   public Command StartProcessCommand { get; }
-
-  public Command StopProcessCommand { get; }
-
   
   public bool CanStartProcess()
   {
@@ -105,6 +130,10 @@ public class MainViewModel : ViewModel
       await Task.Run(() => creator.RunProcess(options));
     }
   }
+  #endregion
+
+  #region StopProcessCommand
+  public Command StopProcessCommand { get; }
 
   public bool CanStopProcess()
   {
@@ -114,5 +143,5 @@ public class MainViewModel : ViewModel
   public void StopProcess()
   {
   }
-
+  #endregion
 }
