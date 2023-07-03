@@ -10,6 +10,21 @@ public class NamespaceViewModel: ViewModel
 
   internal PhaseViewModel Owner { get; private set; }
 
+
+  public string Name
+  {
+    get { return _Name; }
+    set
+    {
+      if (_Name != value)
+      {
+        _Name = value;
+        NotifyPropertyChanged(nameof(Name));
+      }
+    }
+  }
+  private string _Name = null!;
+
   public string Caption => Owner.Name +" "+this.Name;
 
   public TypeListViewModel AllTypes

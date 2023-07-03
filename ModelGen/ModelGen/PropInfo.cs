@@ -66,7 +66,7 @@ public class PropInfo : ModelElement
     if (propertyInfo.SetMethod == null || !propertyInfo.SetMethod.IsPublic)
       IsReadonly = true;
 
-    if (ModelData.ExcludedProperties.Contains(propertyInfo.Name))
+    if (ModelConfig.Instance.ExcludedProperties.Contains(propertyInfo.Name))
       IsAccepted = false;
     var xmlDocsElement = propertyInfo.GetXmlDocsElement();
     if (xmlDocsElement != null)
@@ -77,7 +77,7 @@ public class PropInfo : ModelElement
 
   public PropInfo(string name, TypeInfo typeInfo) : this(name, typeInfo.Type)
   {
-    if (ModelData.ExcludedProperties.Contains(typeInfo.Name))
+    if (ModelConfig.Instance.ExcludedProperties.Contains(typeInfo.Name))
       IsAccepted = false;
   }
 

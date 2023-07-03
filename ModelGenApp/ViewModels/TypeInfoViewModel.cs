@@ -10,7 +10,7 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
 
   public bool Original { get; private set; }
 
-  public new string Name
+  public string Name
   {
     get
     {

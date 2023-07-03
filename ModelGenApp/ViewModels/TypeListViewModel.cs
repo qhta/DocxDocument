@@ -12,6 +12,22 @@ public class TypeListViewModel: DispatchedCollection<TypeInfoViewModel>
 
   internal NamespaceViewModel Owner { get; private set; }
 
+
+  public string Name
+  {
+    get { return _Name; }
+    set
+    {
+      if (_Name != value)
+      {
+        _Name = value;
+        NotifyPropertyChanged(nameof(Name));
+      }
+    }
+  }
+  private string _Name = null!;
+
+
   public string Caption => Owner.Caption +": "+this.Name?.ToLower();
 
   #region ShowDetailsCommand

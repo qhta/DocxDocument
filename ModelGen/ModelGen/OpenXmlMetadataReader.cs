@@ -242,7 +242,7 @@ public static class OpenXmlMetadataReader
   }
 
   /// <summary>
-  ///   Sets name of the created particle basing on <see cref="ModelData"/> class.
+  ///   Sets name of the created particle basing on <see cref="ModelConfig"/> class.
   /// </summary>
   /// <param name="schemaParticle"></param>
   /// <returns></returns>
@@ -298,7 +298,7 @@ public static class OpenXmlMetadataReader
   }
 
   /// <summary>
-  /// Sets the name of the item particle. Scans all item particle names and asks <see cref="ModelData"/> for a common type name.
+  /// Sets the name of the item particle. Scans all item particle names and asks <see cref="ModelConfig"/> for a common type name.
   /// </summary>
   /// <param name="itemsParticle">Items particle to name</param>
   /// <returns>Common type name or items names joined with '|'.</returns>
@@ -330,7 +330,7 @@ public static class OpenXmlMetadataReader
         break;
     var newName = String.Join("|", itemNames);
     if (itemNames.Count > 1)
-      if (ModelData.CommonTypes.TryGetValue(newName, out var commonName))
+      if (ModelConfig.Instance.CommonTypes.TryGetValue(newName, out var commonName))
         newName = commonName;
     itemsParticle.Name = newName;
     return newName;
@@ -370,7 +370,7 @@ public static class OpenXmlMetadataReader
   }
 
   /// <summary>
-  /// Method to get a common type name from <see cref="ModelData"/> component.
+  /// Method to get a common type name from <see cref="ModelConfig"/> component.
   /// </summary>
   /// <param name="name">Item name.</param>
   /// <param name="newName">Common type name or null.</param>
@@ -378,7 +378,7 @@ public static class OpenXmlMetadataReader
   private static bool TryGetCommonTypeName(string name, [NotNullWhen(true)] out string? newName)
   {
     string prefix = string.Empty;
-    if (ModelData.TryGetCommonTypeName(name, out newName))
+    if (ModelConfig.Instance.TryGetCommonTypeName(name, out newName))
       return true;
     var k = name.LastIndexOf('.');
     if (k > 0)
@@ -386,7 +386,7 @@ public static class OpenXmlMetadataReader
       prefix = name.Substring(0, k);
       name = name.Substring(k + 1);
     }
-    if (ModelData.TryGetCommonTypeName(name, out newName))
+    if (ModelConfig.Instance.TryGetCommonTypeName(name, out newName))
     {
       if (prefix != string.Empty)
         newName = prefix + "." + newName;
@@ -490,7 +490,7 @@ public static class OpenXmlMetadataReader
       if (validator is DXFwork.NameProviderValidator nameProviderValidator)
       {
         propInfo.RealTypeName = nameProviderValidator.QName.ToString();
-        if (!ModelData.RealTypes.Contains(propInfo.RealTypeName))
+        if (!ModelConfig.Instance.RealTypes.Contains(propInfo.RealTypeName))
           throw new System.InvalidOperationException($"Unknown real type name \"{propInfo.RealTypeName}\"");
       }
       else
