@@ -47,21 +47,26 @@ public partial class ProcessMonitor : ModelMonitor
   {
     base.ShowPhaseStart(phaseNumber, phaseName);
     var numPhases = VM.PhaseMonitors.Length;
-    VM.PhaseMonitors[(int)phaseNumber-1].Percentage = 0;
+    if (VM.PhaseMonitors[(int)phaseNumber - 1] != null)
+      VM.PhaseMonitors[(int)phaseNumber - 1].Percentage = 0;
   }
 
   public override void ShowPhaseProgress(PPS phaseNumber, ProgressInfo info)
   {
     base.ShowPhaseProgress(phaseNumber, info);
     var percentage = (info.Done ?? 0) * 100 / (info.Total ?? 100);
-    VM.PhaseMonitors[(int)phaseNumber-1].Percentage = percentage;
+    if (VM.PhaseMonitors[(int)phaseNumber - 1] != null)
+      VM.PhaseMonitors[(int)phaseNumber - 1].Percentage = percentage;
   }
 
   public override void ShowPhaseEnd(PPS phaseNumber, SummaryInfo info)
   {
     base.ShowPhaseEnd(phaseNumber, info);
-    VM.PhaseMonitors[(int)phaseNumber-1].Percentage = 100;
-    VM.PhaseMonitors[(int)phaseNumber-1].SetSummary(info);
+    if (VM.PhaseMonitors[(int)phaseNumber - 1] != null)
+    {
+      VM.PhaseMonitors[(int)phaseNumber - 1].Percentage = 100;
+      VM.PhaseMonitors[(int)phaseNumber - 1].SetSummary(info);
+    }
   }
 
   public override DocumentationWriter GetDocumentationWriter(DisplayOptions options)

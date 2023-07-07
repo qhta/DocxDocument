@@ -5,7 +5,7 @@ namespace ModelGenApp.ViewModels;
 /// <summary>
 /// Observable monitor for a single process phase
 /// </summary>
-public partial class PhaseViewModel : ViewModel
+public abstract partial class PhaseViewModel : ViewModel
 {
 
   public PhaseViewModel()
@@ -25,56 +25,16 @@ public partial class PhaseViewModel : ViewModel
     ShowOverviewCommand.NotifyCanExecuteChanged();
   }
 
-
-
-  public string Name
-  {
-    get { return _Name; }
-    set
-    {
-      if (_Name != value)
-      {
-        _Name = value;
-        NotifyPropertyChanged(nameof(Name));
-      }
-    }
-  }
-  private string _Name = null!  ;
-
   /// <summary>
   /// Id of the process phase.
   /// </summary>
-  public int PhaseNumber
-  {
-    get => _PhaseNumber;
-    set
-    {
-      if (value != _PhaseNumber)
-      {
-        _PhaseNumber = value;
-        NotifyPropertyChanged(nameof(PhaseNumber));
-      }
-    }
-  }
-  private int _PhaseNumber;
+  public int PhaseNumber { get; set; }
 
 
   /// <summary>
   /// Name of the process phase.
   /// </summary>
-  public string? PhaseName
-  {
-    get => _PhaseName;
-    set
-    {
-      if (value != _PhaseName)
-      {
-        _PhaseName = value;
-        NotifyPropertyChanged(nameof(PhaseName));
-      }
-    }
-  }
-  private string? _PhaseName;
+  public string? PhaseName {get; set; }
 
   /// <summary>
   /// Percent of the phase advantage.
@@ -214,14 +174,7 @@ public partial class PhaseViewModel : ViewModel
     return Percentage == 100;
   }
 
-  protected virtual async void ShowOverviewExecute()
-  {
-    await Task.Run(() =>
-    {
-      GetNamespaces(NTS.Origin | NTS.System);
-    });
-  }
-
+  protected abstract void ShowOverviewExecute();
   #endregion
 
   #region Filter namespaces

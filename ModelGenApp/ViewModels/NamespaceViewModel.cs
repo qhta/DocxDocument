@@ -30,7 +30,7 @@ public class NamespaceViewModel: ViewModel
   }
   private string _Name = null!;
 
-  public string Caption => Owner.Name +" "+this.Name;
+  public string Caption => Owner.PhaseName +" "+this.Name;
 
   public TypeListViewModel AllTypes
   {
