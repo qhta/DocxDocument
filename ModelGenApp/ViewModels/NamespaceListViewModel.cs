@@ -18,6 +18,16 @@ public class NamespaceListViewModel: DispatchedCollection<NamespaceViewModel>
       }
       var nsTypesVM = nsTypes.Select(item=>new TypeInfoViewModel(item, nts.HasFlag(NTS.Origin))).ToList();
       nsVM.AllTypes.AddRange(nsTypesVM);
+      var nsClassesVM = nsTypesVM.Where(item=>item.TypeKind==TypeKind.Class).ToList();
+      nsVM.Classes.AddRange(nsClassesVM);
+      var nsEnumsVM = nsTypesVM.Where(item=>item.TypeKind==TypeKind.Enum).ToList();
+      nsVM.Enums.AddRange(nsEnumsVM);
+      var nsInterfacesVM = nsTypesVM.Where(item=>item.TypeKind==TypeKind.Interface).ToList();
+      nsVM.Interfaces.AddRange(nsInterfacesVM);
+      var nsStructsVM = nsTypesVM.Where(item=>item.TypeKind==TypeKind.Struct).ToList();
+      nsVM.Structs.AddRange(nsStructsVM);
+      var nsOthersVM = nsTypesVM.Where(item=>item.TypeKind==TypeKind.Type).ToList();
+      nsVM.Others.AddRange(nsOthersVM);
       Add(nsVM);
     }
   }

@@ -6,6 +6,11 @@ public class NamespaceViewModel: ViewModel
     Owner = phaseViewModel;
     Name = name;
     _AllTypes = new TypeListViewModel(this, "All types");
+    _Classes = new TypeListViewModel(this, "Classes");
+    _Enums = new TypeListViewModel(this, "Enums");
+    _Interfaces= new TypeListViewModel(this, "Interfaces");
+    _Structs = new TypeListViewModel(this, "Structs");
+    _Others= new TypeListViewModel(this, "Others");
   }
 
   internal PhaseViewModel Owner { get; private set; }
@@ -41,16 +46,79 @@ public class NamespaceViewModel: ViewModel
   }
   private TypeListViewModel _AllTypes;
 
-  //public int AllTypesCount =>  AllTypes.Count();
 
-  //public int ClassesCount => AllTypes.Where(item=>item.TypeKind==TypeKind.Class).Count();
+  public TypeListViewModel Classes
+  {
+    get { return _Classes; }
+    set
+    {
+      if (_Classes != value)
+      {
+        _Classes = value;
+        NotifyPropertyChanged(nameof(Classes));
+      }
+    }
+  }
+  private TypeListViewModel _Classes;
 
-  //public int EnumsCount => AllTypes.Where(item=>item.TypeKind==TypeKind.Enum).Count(); 
 
-  //public int InterfacesCount => AllTypes.Where(item=>item.TypeKind==TypeKind.Interface).Count();
+  public TypeListViewModel Enums
+  {
+    get { return _Enums; }
+    set
+    {
+      if (_Enums != value)
+      {
+        _Enums = value;
+        NotifyPropertyChanged(nameof(Enums));
+      }
+    }
+  }
+  private TypeListViewModel _Enums;
 
-  //public int StructsCount => AllTypes.Where(item=>item.TypeKind==TypeKind.Struct).Count();
 
-  //public int OthersCount => AllTypes.Where(item=>item.TypeKind==TypeKind.Type).Count(); 
+  public TypeListViewModel Interfaces
+  {
+    get { return _Interfaces; }
+    set
+    {
+      if (_Interfaces != value)
+      {
+        _Interfaces = value;
+        NotifyPropertyChanged(nameof(Interfaces));
+      }
+    }
+  }
+  private TypeListViewModel _Interfaces;
+
+
+  public TypeListViewModel Structs
+  {
+    get { return _Structs; }
+    set
+    {
+      if (_Structs != value)
+      {
+        _Structs = value;
+        NotifyPropertyChanged(nameof(Structs));
+      }
+    }
+  }
+  private TypeListViewModel _Structs;
+
+
+  public TypeListViewModel Others
+  {
+    get { return _Others; }
+    set
+    {
+      if (_Others != value)
+      {
+        _Others = value;
+        NotifyPropertyChanged(nameof(Others));
+      }
+    }
+  }
+  private TypeListViewModel _Others;
 
 }
