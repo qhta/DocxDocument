@@ -148,7 +148,7 @@
             },
             "Qhta.MVVM": {
               "target": "Package",
-              "version": "[2.1.0, )"
+              "version": "[2.4.0, )"
             },
             "Qhta.TypeUtils": {
               "target": "Package",

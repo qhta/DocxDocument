@@ -140,14 +140,14 @@
           }
         }
       },
-      "Qhta.MVVM/2.1.0": {
+      "Qhta.MVVM/2.4.0": {
         "dependencies": {
           "Qhta.DispatchedObjects": "2.1.0"
         },
         "runtime": {
           "lib/netstandard2.0/Qhta.MVVM.dll": {
-            "assemblyVersion": "2.1.0.0",
-            "fileVersion": "2.1.0.0"
+            "assemblyVersion": "2.4.0.0",
+            "fileVersion": "2.4.0.0"
           }
         }
       },
@@ -1300,12 +1300,12 @@
       "path": "qhta.htmlutils/2.1.0",
       "hashPath": "qhta.htmlutils.2.1.0.nupkg.sha512"
     },
-    "Qhta.MVVM/2.1.0": {
+    "Qhta.MVVM/2.4.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-CHZr5FM+hYbEEhU/R6PISb3LFe8gSjsHf9bUl1uDoTFX213YoakE3/lnlmTZ3rcp2BDE3i5L45kBrAe2EX49mg==",
-      "path": "qhta.mvvm/2.1.0",
-      "hashPath": "qhta.mvvm.2.1.0.nupkg.sha512"
+      "sha512": "sha512-pOUgOlkw8rvxEvh2jjm3wG9YitTLkuWJsbU5yxQpbhwC68cvMJo7+cKKVeXQkoFUaaBeEihiwpMwRpzNvL94bQ==",
+      "path": "qhta.mvvm/2.4.0",
+      "hashPath": "qhta.mvvm.2.4.0.nupkg.sha512"
     },
     "Qhta.TestHelper/2.2.0": {
       "type": "package",
