@@ -170,30 +170,7 @@ public class TypeInfo : ModelElement
 
   public static string NamespaceShortcut(string ns)
   {
-    if (ModelConfig.Instance.NamespaceShortcuts.TryGetValue2(ns, out var shortcut))
-      return shortcut;
-    return ns;
-    //string result = "";
-    //if (ns.StartsWith("DocumentFormat.OpenXml"))
-    //{
-    //  result = "DX";
-    //  ns = ns.Substring("DocumentFormat.OpenXml".Length);
-    //}
-    //else if (ns.StartsWith("DocumentModel"))
-    //{
-    //  result = "DM";
-    //  ns = ns.Substring("DocumentModel".Length);
-    //}
-    //else
-    //  return ns;
-
-    //foreach (var ch in ns)
-    //{
-    //  if (ch >= 'A' && ch <= 'Z')
-    //    result += ch;
-    //}
-    //ModelData.NamespaceShortcutTable.Add(ns, result);
-    //return result;
+    return ModelConfig.NamespaceShortcut(ns);
   }
 
   public override string ToString() => $"{TargetNamespace}.{Name}";

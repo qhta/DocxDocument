@@ -50,21 +50,19 @@ public class NamespaceConfigViewModel : ViewModel, IEditableObject
   }
   private bool _Excluded;
 
-
-  public string? Prefix
+  public string? Shortcut
   {
-    get { return _Prefix; }
+    get { return _Shortcut; }
     set
     {
-      if (_Prefix != value)
+      if (_Shortcut != value)
       {
-        _Prefix = value;
-        NotifyPropertyChanged(nameof(Prefix));
+        _Shortcut = value;
+        NotifyPropertyChanged(nameof(Shortcut));
       }
     }
   }
-  private string? _Prefix;
-
+  private string? _Shortcut;
 
   public string? TranslatedName
   {
@@ -79,6 +77,51 @@ public class NamespaceConfigViewModel : ViewModel, IEditableObject
     }
   }
   private string? _TranslatedName;
+
+
+  public string? TranslatedShortcut
+  {
+    get { return _TranslatedShortcut; }
+    set
+    {
+      if (_TranslatedShortcut != value)
+      {
+        _TranslatedShortcut = value;
+        NotifyPropertyChanged(nameof(TranslatedShortcut));
+      }
+    }
+  }
+  private string? _TranslatedShortcut;
+
+
+  public new bool IsValid
+  {
+    get { return _IsValid; }
+    set
+    {
+      if (_IsValid != value)
+      {
+        _IsValid = value;
+        NotifyPropertyChanged(nameof(IsValid));
+      }
+    }
+  }
+  private bool _IsValid = true;
+
+
+  public string? ValidationMsg
+  {
+    get { return _ValidationMsg; }
+    set
+    {
+      if (_ValidationMsg != value)
+      {
+        _ValidationMsg = value;
+        NotifyPropertyChanged(nameof(ValidationMsg));
+      }
+    }
+  }
+  private string? _ValidationMsg;
 
   public void BeginEdit()
   {

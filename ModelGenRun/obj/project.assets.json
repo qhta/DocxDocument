@@ -163,7 +163,7 @@
           }
         }
       },
-      "Qhta.Collections/3.0.0": {
+      "Qhta.Collections/2.0.0": {
         "type": "package",
         "compile": {
           "lib/net6.0/Qhta.Collections.dll": {
@@ -176,16 +176,10 @@
           }
         }
       },
-      "Qhta.HtmlUtils/1.0.1": {
+      "Qhta.HtmlUtils/2.0.0": {
         "type": "package",
         "dependencies": {
           "HtmlAgilityPack": "1.8.9"
-        },
-        "compile": {
-          "lib/netstandard2.0/Qhta.HtmlUtils.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Qhta.HtmlUtils.dll": {}
         }
       },
       "Qhta.TestHelper/2.2.0": {
@@ -1540,8 +1534,7 @@
           "DocumentModel": "1.0.0",
           "DocumentModel.Attributes": "1.0.0",
           "Namotion.Reflection": "2.1.2",
-          "Qhta.Collections": "3.0.0",
-          "Qhta.HtmlUtils": "1.0.1",
+          "Qhta.HtmlUtils": "2.0.0",
           "Qhta.TypeUtils": "1.3.10.1",
           "Qhta.Xml.Serialization.Attributes": "1.0.0",
           "Snork.TextWrap": "1.0.1301",
@@ -1933,32 +1926,27 @@
         "packageIcon.png"
       ]
     },
-    "Qhta.Collections/3.0.0": {
-      "sha512": "4kORfQeR/f69t3aKamLDbqdy1hK8uzxkmG5PUS1g86ArHAF8/KHlskFtmZ6cPq9mLXXPajVCvTVLovCl2rBk3Q==",
+    "Qhta.Collections/2.0.0": {
+      "sha512": "hSRcjgHW2Vfq2v7i+smLsa6wo2NMP82StXNYIiGYHPj6IcylOAupz1tOTa05PrWutnHVfaKUEO+XdA0+zgEtnA==",
       "type": "package",
-      "path": "qhta.collections/3.0.0",
+      "path": "qhta.collections/2.0.0",
       "files": [
         ".nupkg.metadata",
         "lib/net6.0/Qhta.Collections.dll",
         "lib/net6.0/Qhta.Collections.xml",
-        "lib/net7.0/Qhta.Collections.dll",
-        "lib/net7.0/Qhta.Collections.xml",
         "lib/netstandard2.0/Qhta.Collections.dll",
         "lib/netstandard2.0/Qhta.Collections.xml",
-        "qhta.collections.3.0.0.nupkg.sha512",
-        "qhta.collections.nuspec",
-        "readme.md"
+        "qhta.collections.2.0.0.nupkg.sha512",
+        "qhta.collections.nuspec"
       ]
     },
-    "Qhta.HtmlUtils/1.0.1": {
-      "sha512": "oJh2DeXbi9eXHzlRZ34t9ia7aPhr8a68e58PkVuASejQ7BOYUQHWZrQMe40zfy4sv/2Es0wXHyK2kflZvun+qw==",
+    "Qhta.HtmlUtils/2.0.0": {
+      "sha512": "3ZimBXjS4fXJsp0VC2Q+vKoFh+lP3Hc2CQ8A3BhGuSkStnWUKHRjkZRfe+0iFZHRWChyNcCResDRUd1YrNrX/w==",
       "type": "package",
-      "path": "qhta.htmlutils/1.0.1",
+      "path": "qhta.htmlutils/2.0.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/netstandard2.0/Qhta.HtmlUtils.dll",
-        "qhta.htmlutils.1.0.1.nupkg.sha512",
+        "qhta.htmlutils.2.0.0.nupkg.sha512",
         "qhta.htmlutils.nuspec"
       ]
     },
@@ -5202,7 +5190,7 @@
       "IgnoresAccessChecksToGenerator >= 0.6.0",
       "ModelGen >= 1.0.0",
       "Namotion.Reflection >= 2.1.2",
-      "Qhta.HtmlUtils >= 1.0.1",
+      "Qhta.HtmlUtils >= 2.0.0",
       "Qhta.TestHelper >= 2.2.0",
       "Qhta.TypeUtils >= 1.3.10.1",
       "Snork.TextWrap >= 1.0.1301",
@@ -5276,7 +5264,7 @@
           },
           "Qhta.HtmlUtils": {
             "target": "Package",
-            "version": "[1.0.1, )"
+            "version": "[2.0.0, )"
           },
           "Qhta.TestHelper": {
             "target": "Package",

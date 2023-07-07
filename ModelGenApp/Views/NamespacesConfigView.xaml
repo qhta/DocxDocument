@@ -5,12 +5,17 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:views="clr-namespace:ModelGenApp.Views"
              xmlns:vm="clr-namespace:ModelGenApp.ViewModels"
+             xmlns:vc="clr-namespace:Qhta.WPF.Converters;assembly=Qhta.WPF.Converters"
              mc:Ignorable="d" 
              d:DataContext="{d:DesignInstance Type={x:Type vm:ModelConfigViewModel}}"
              d:DesignHeight="450" d:DesignWidth="800">
+  <UserControl.Resources>
+    <vc:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+  </UserControl.Resources>
   <Grid>
     <DataGrid 
       AutoGenerateColumns="False"
+      HorizontalContentAlignment="Stretch"
       ItemsSource="{Binding Path=Namespaces}">
       <DataGrid.Columns>
         <DataGridTextColumn Header="Orig name" Binding="{Binding Name}"/>
@@ -30,6 +35,40 @@
             </DataTemplate>
           </DataGridTemplateColumn.CellTemplate>
         </DataGridTemplateColumn>
+        <DataGridTemplateColumn Header="Shortcut">
+          <DataGridTemplateColumn.CellTemplate>
+            <DataTemplate>
+              <Grid>
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="*"/>
+                  <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="{Binding Shortcut}"/>
+                <Image Grid.Column="1"
+                       Width="16"
+                       Height="16"
+                       Source="/Images/ErrorMark.png"
+                       Visibility="{Binding Path=IsValid, 
+                       Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter='Collapsed,Visible'}"
+                       ToolTip="{Binding Path=ValidationMsg}"
+                       />
+              </Grid>
+            </DataTemplate>
+          </DataGridTemplateColumn.CellTemplate>
+          <DataGridTemplateColumn.CellEditingTemplate>
+            <DataTemplate>
+                <TextBox Text="{Binding Shortcut, UpdateSourceTrigger=PropertyChanged}">
+                  <TextBox.Style>
+                    <Style TargetType="TextBox">
+                      <Setter Property="BorderThickness" Value="0"/>
+                    </Style>
+                  </TextBox.Style>
+                </TextBox>
+            </DataTemplate>
+          </DataGridTemplateColumn.CellEditingTemplate>
+        </DataGridTemplateColumn>
+        <DataGridTextColumn Header="Translated name" Binding="{Binding TranslatedName}"/>
+        <DataGridTextColumn Header="Translated shortcut" Binding="{Binding TranslatedShortcut}"/>
       </DataGrid.Columns>
     </DataGrid>
   </Grid>

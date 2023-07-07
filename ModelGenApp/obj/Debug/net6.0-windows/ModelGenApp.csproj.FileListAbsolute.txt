@@ -42,13 +42,11 @@ D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\ModelGen.dll
 D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Qhta.Conversion.dll
 D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Qhta.Xml.dll
 D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Qhta.Xml.Reflection.dll
-D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Qhta.Xml.Serialization.Attributes.dll
 D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Qhta.Xml.Serialization.dll
 D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\ModelGen.pdb
 D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\DocumentModel.pdb
 D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\DocumentModel.xml
 D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\DocumentModel.Attributes.pdb
-D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Qhta.Xml.Serialization.Attributes.pdb
 D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Qhta.Conversion.pdb
 D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Qhta.Xml.Reflection.pdb
 D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Qhta.Xml.Reflection.xml
@@ -76,10 +74,6 @@ D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\PhaseProg
 D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\PhaseProgressView.baml
 D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Qhta.DispatchedObjects.dll
 D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Qhta.MVVM.dll
-D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Qhta.MVVM.pdb
-D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Qhta.MVVM.xml
-D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Qhta.DispatchedObjects.pdb
-D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Qhta.DispatchedObjects.xml
 D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\PhaseResultsView.g.cs
 D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\PhaseResultsWindow.g.cs
 D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\PhaseResultsView.baml
@@ -94,3 +88,4 @@ D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\ModelConf
 D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\NamespacesConfigView.g.cs
 D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\ModelConfigView.baml
 D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\NamespacesConfigView.baml
+D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Qhta.WPF.Converters.dll
