@@ -1,14 +1,14 @@
 ﻿namespace ModelGenApp.ViewModels;
-public class ModelConfigViewModel: ViewModel
+public class ModelConfigViewModel : ViewModel
 {
   public ModelConfigViewModel()
   {
-    StoreDataCommand = new RelayCommand(StoreData, CanStoreData){ Name = "StoreDataCommand" };
-    RestoreDataCommand = new RelayCommand(RestoreData, CanRestoreData){ Name = "RestoreDataCommand" };
+    StoreDataCommand = new RelayCommand(StoreData, CanStoreData) { Name = "StoreDataCommand" };
+    RestoreDataCommand = new RelayCommand(RestoreData, CanRestoreData) { Name = "RestoreDataCommand" };
 
   }
 
-  public NamespacesConfigViewModel? Namespaces
+  public NamespacesConfigViewModel Namespaces
   {
     get { return _Namespaces; }
     set
@@ -20,7 +20,7 @@ public class ModelConfigViewModel: ViewModel
       }
     }
   }
-  private NamespacesConfigViewModel? _Namespaces;
+  private NamespacesConfigViewModel _Namespaces = null!;
 
   private Assembly? _Assembly;
 
@@ -33,7 +33,7 @@ public class ModelConfigViewModel: ViewModel
 
   public void ReloadData(ModelConfig configData)
   {
-    if (_Assembly!=null)
+    if (_Assembly != null)
     {
       configData.LoadData();
       var assembly = _Assembly;
@@ -44,22 +44,39 @@ public class ModelConfigViewModel: ViewModel
 
   public void SaveData(ModelConfig configData)
   {
-    Namespaces?.SetData(configData);
+    Namespaces.SetData(configData);
     configData.SaveData();
+    ReloadData(configData);
+  }
+
+  public bool ValidateData(ModelConfig configData)
+  {
+    var ok = true;
+    if (!Namespaces.ValidateData(configData))
+      ok = false;
+    return ok;
   }
 
   #region StoreDataCommand
   public Command StoreDataCommand { get; }
-  
+
   public bool CanStoreData()
   {
     return true;
   }
 
-  public async void StoreData()
+  public void StoreData()
   {
-    await Task.Run(()=>SaveData(ModelConfig.Instance));
-    MessageBox.Show($"Model configuration saved in {ModelConfig.Instance.GetFilename()}");
+    if (!ValidateData(ModelConfig.Instance))
+      MessageBox.Show($"Model configuration is invalid. See marks in the table.");
+    else
+    {
+      var filename = ModelConfig.Instance.GetFilename();
+      if (!File.Exists(filename))
+        File.Copy(filename, Path.ChangeExtension(filename, ".bak"));
+      SaveData(ModelConfig.Instance);
+      MessageBox.Show($"Model configuration saved in {filename}");
+    }
   }
   #endregion
 
@@ -68,12 +85,12 @@ public class ModelConfigViewModel: ViewModel
 
   public bool CanRestoreData()
   {
-    return _Assembly!=null;
+    return _Assembly != null;
   }
 
-  public async void RestoreData()
+  public void RestoreData()
   {
-    await Task.Run(()=>ReloadData(ModelConfig.Instance));
+    ReloadData(ModelConfig.Instance);
     MessageBox.Show($"Model configuration restored from {ModelConfig.Instance.GetFilename()}");
   }
   #endregion
