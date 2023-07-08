@@ -18,5 +18,6 @@ public class EnumInfoViewModel : ViewModel<EnumInfo>
     }
   }
 
+  public int? Value => Model.Value;
 }
 
