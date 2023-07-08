@@ -8,5 +8,23 @@
     <DataTemplate x:Key="{x:Type vm:MainViewModel}" DataType="{x:Type vm:MainViewModel}">
       <views:MainWindow/>
     </DataTemplate>
+    <DataTemplate x:Key="CollectionCountColumnTemplate" >
+      <Grid>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Column="0"
+                  HorizontalAlignment="Right"
+                  Margin="5,0,5,0"
+                  Text="{Binding Count}"
+                  />
+        <Button Grid.Column="1"
+                Content=">>"
+                Command="{Binding Path=ShowDetailsCommand}"
+                CommandParameter="{Binding}"
+                />
+      </Grid>
+    </DataTemplate>    
   </Application.Resources>
 </Application>
