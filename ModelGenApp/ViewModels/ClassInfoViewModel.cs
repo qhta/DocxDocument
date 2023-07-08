@@ -1,23 +1,17 @@
-﻿namespace ModelGenApp.ViewModels;
+﻿using Qhta.MVVM;
+
+namespace ModelGenApp.ViewModels;
 
 public class ClassInfoViewModel : TypeInfoViewModel
 {
   public ClassInfoViewModel(TypeInfo typeInfo, bool original) : base(typeInfo, original)
   {
-    _Properties = new PropListViewModel(this, "Properties");
+    Properties = new PropListViewModel(this, "Properties");
+    if (typeInfo.Properties!=null)
+      foreach (var propInfo in typeInfo.Properties)
+        Properties.Add(new PropInfoViewModel(propInfo, original));
   }
 
-  public PropListViewModel Properties
-  {
-    get { return _Properties; }
-    set
-    {
-      if (_Properties != value)
-      {
-        _Properties = value;
-        NotifyPropertyChanged(nameof(Properties));
-      }
-    }
-  }
-  private PropListViewModel _Properties;
+  [DataGridColumn(DisplayIndex = 4)]
+  public PropListViewModel Properties { get; set; }
 }
