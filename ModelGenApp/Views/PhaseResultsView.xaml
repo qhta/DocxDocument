@@ -13,26 +13,6 @@
     <Style TargetType="ListViewItem">
       <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
     </Style>
-
-    <DataTemplate x:Key="SpecificColumnTemplate" DataType="{x:Type vm:TypeListViewModel}">
-      <Grid>
-        <Grid.ColumnDefinitions>
-          <ColumnDefinition Width="*"/>
-          <ColumnDefinition Width="20"/>
-        </Grid.ColumnDefinitions>
-        <TextBlock Grid.Column="0"
-                  HorizontalAlignment="Right"
-                  Margin="5,0,5,0"
-                  Text="{Binding Count}"
-                  />
-        <Button Grid.Column="1"
-                Content=">>"
-                Command="{Binding Path=ShowDetailsCommand}"
-                CommandParameter="{Binding}"
-                />
-      </Grid>
-    </DataTemplate>
-
     <vh:ColumnTemplateSelector x:Key="AllTypesSelector" PropertyName="AllTypes" ItemType="{x:Type vm:NamespaceViewModel}" />
   </UserControl.Resources>
   <Grid>
@@ -60,9 +40,6 @@
               AutoGeneratingColumn="DataGrid_AutoGeneratingColumn"
               ClipboardCopyMode="IncludeHeader"
               ItemsSource="{Binding Path=NamespacesVM}">
-      <DataGrid.Columns>
-        <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
-      </DataGrid.Columns>
     </DataGrid>
   </Grid>
 </UserControl>

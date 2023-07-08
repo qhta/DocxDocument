@@ -4,21 +4,12 @@ public class EnumTypeInfoViewModel : TypeInfoViewModel
 {
   public EnumTypeInfoViewModel(TypeInfo typeInfo, bool original) : base(typeInfo, original)
   {
-    _EnumValues = new EnumListViewModel(this, "Enum values");
+    EnumValues = new EnumListViewModel(this, "Enum values");
+    if (typeInfo.EnumValues != null)
+      foreach (var enumVal in typeInfo.EnumValues)
+        EnumValues.Add(new EnumInfoViewModel(enumVal, original));
   }
 
-  [DataGridColumn(Header = "Enum values")]
-  public EnumListViewModel EnumValues
-  {
-    get { return _EnumValues; }
-    set
-    {
-      if (_EnumValues != value)
-      {
-        _EnumValues = value;
-        NotifyPropertyChanged(nameof(EnumValues));
-      }
-    }
-  }
-  private EnumListViewModel _EnumValues;
+  [DataGridColumn(Header = "Enum values", DisplayIndex = 4)]
+  public EnumListViewModel EnumValues { get; set; }
 }
