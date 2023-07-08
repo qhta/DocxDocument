@@ -19,5 +19,16 @@ public class PropInfoViewModel : ViewModel<PropInfo>
     }
   }
 
+  public string Type
+  {
+    get
+    {
+      var propType = Model.PropertyType;
+      if (propType!=null)
+        return propType.GetFullName(IsOriginal);
+      return string.Empty;
+
+    }
+  }
 }
 
