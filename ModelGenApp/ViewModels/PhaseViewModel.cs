@@ -1,6 +1,4 @@
-﻿using ModelGenApp.Views;
-
-namespace ModelGenApp.ViewModels;
+﻿namespace ModelGenApp.ViewModels;
 
 /// <summary>
 /// Observable monitor for a single process phase

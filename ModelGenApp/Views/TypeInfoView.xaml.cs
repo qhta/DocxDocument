@@ -1,10 +1,10 @@
 ﻿namespace ModelGenApp.Views;
 /// <summary>
-/// Interaction logic for TypeListView.xaml
+/// Interaction logic for TypeInfoView.xaml
 /// </summary>
-public partial class TypeListView : UserControl
+public partial class TypeInfoView : UserControl
 {
-  public TypeListView()
+  public TypeInfoView()
   {
     InitializeComponent();
   }

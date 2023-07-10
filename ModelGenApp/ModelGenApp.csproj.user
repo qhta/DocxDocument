@@ -28,9 +28,6 @@
     <Compile Update="Views\ProcessOptionsView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\TypeListCountView.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="Views\TypeListView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -63,10 +60,13 @@
     <Page Update="Views\ProcessOptionsView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\TypeListCountView.xaml">
+    <Page Update="Views\TypeInfoView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\TypeListView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\TypeInfoWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\TypeListWindow.xaml">

@@ -1,6 +1,4 @@
-﻿using System.ComponentModel;
-
-namespace ModelGenApp.ViewModels;
+﻿namespace ModelGenApp.ViewModels;
 public class NamespaceConfigViewModel : ViewModel, IEditableObject
 {
 

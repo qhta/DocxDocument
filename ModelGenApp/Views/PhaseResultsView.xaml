@@ -4,7 +4,6 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:views="clr-namespace:ModelGenApp.Views"
-             xmlns:vh="clr-namespace:ModelGenApp.ViewHelpers"
              xmlns:vm="clr-namespace:ModelGenApp.ViewModels"
              mc:Ignorable="d" 
              d:DataContext="{d:DesignInstance Type=vm:PhaseViewModel}"
@@ -13,7 +12,6 @@
     <Style TargetType="ListViewItem">
       <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
     </Style>
-    <vh:ColumnTemplateSelector x:Key="AllTypesSelector" PropertyName="AllTypes" ItemType="{x:Type vm:NamespaceViewModel}" />
   </UserControl.Resources>
   <Grid>
     <Grid.RowDefinitions>

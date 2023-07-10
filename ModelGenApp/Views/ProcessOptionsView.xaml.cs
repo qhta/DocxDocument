@@ -1,6 +1,4 @@
-﻿using System.Windows.Controls;
-
-namespace ModelGenApp.Views;
+﻿namespace ModelGenApp.Views;
 /// <summary>
 /// Interaction logic for ProcessOptionsView.xaml
 /// </summary>

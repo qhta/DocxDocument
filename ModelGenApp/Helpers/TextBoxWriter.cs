@@ -1,11 +1,9 @@
-﻿using System.Windows.Controls;
-
-namespace ModelGenApp.ViewModels;
-public class TextBoxOutputter : TextWriter
+﻿namespace ModelGenApp.Helpers;
+public class TextBoxWriter : TextWriter
 {
   TextBox textBox = null!;
 
-  public TextBoxOutputter(TextBox output)
+  public TextBoxWriter(TextBox output)
   {
     textBox = output;
   }

@@ -1,6 +1,4 @@
-﻿using ModelGenApp.Views;
-
-namespace ModelGenApp.ViewModels;
+﻿namespace ModelGenApp.Helpers;
 
 public partial class ProcessMonitor : ModelMonitor
 {

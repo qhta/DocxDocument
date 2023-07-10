@@ -151,7 +151,7 @@
             },
             "Qhta.MVVM": {
               "target": "Package",
-              "version": "[2.4.1, )"
+              "version": "[2.5.0, )"
             },
             "Qhta.TextUtils": {
               "target": "Package",
@@ -576,7 +576,7 @@
           "dependencies": {
             "Qhta.MVVM": {
               "target": "Package",
-              "version": "[2.4.1, )"
+              "version": "[2.5.0, )"
             },
             "Qhta.TextUtils": {
               "target": "Package",

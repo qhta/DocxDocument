@@ -1,6 +1,4 @@
-﻿using ModelGenApp.Views;
-
-namespace ModelGenApp.ViewModels;
+﻿namespace ModelGenApp.ViewModels;
 
 public class MainViewModel : ViewModel
 {
