@@ -5,13 +5,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:views="clr-namespace:ModelGenApp.Views"
              xmlns:vm="clr-namespace:ModelGenApp.ViewModels"
-             xmlns:vc="clr-namespace:Qhta.WPF.Converters;assembly=Qhta.WPF.Converters"
              mc:Ignorable="d" 
              d:DataContext="{d:DesignInstance Type={x:Type vm:ModelConfigViewModel}}"
              d:DesignHeight="450" d:DesignWidth="800">
-  <UserControl.Resources>
-    <vc:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
-  </UserControl.Resources>
   <Grid>
     <DataGrid 
       AutoGenerateColumns="False"

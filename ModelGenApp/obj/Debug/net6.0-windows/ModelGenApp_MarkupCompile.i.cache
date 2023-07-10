@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 D:\VS\Projects\DocxDocument\ModelGenApp\App.xaml
-11151547813
+12-259707228
 
-50382939905
-219-391217363
-Views\MainWindow.xaml;Views\ModelConfigView.xaml;Views\NamespacesConfigView.xaml;Views\PhaseProgressView.xaml;Views\PhaseResultsView.xaml;Views\PhaseResultsWindow.xaml;Views\ProcessMonitorView.xaml;Views\ProcessOptionsView.xaml;Views\TypeListCountView.xaml;Views\TypeListView.xaml;Views\TypeListWindow.xaml;
+50-831529724
+219175830163
+Views\MainWindow.xaml;Views\ModelConfigView.xaml;Views\NamespacesConfigView.xaml;Views\PhaseProgressView.xaml;Views\PhaseResultsView.xaml;Views\PhaseResultsWindow.xaml;Views\ProcessMonitorView.xaml;Views\ProcessOptionsView.xaml;Views\TypeInfoView.xaml;Views\TypeInfoWindow.xaml;Views\TypeListView.xaml;Views\TypeListWindow.xaml;
 
 True
 

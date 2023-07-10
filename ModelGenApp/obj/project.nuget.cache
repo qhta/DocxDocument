@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "n+gNv54C1ESVqnCZwsWAdaSEfrgK5zJXl7IiqSC9dloELq1HCKS+leL9UGCNADvj2moYt/FiZTNzlDlCnTQWBA==",
+  "dgSpecHash": "pClB7q1gfw3TI2HYOH16DycrBeZs1NrJ2/0bnFo+wDP9/DzRw6EEFzVPVVOiPVDgzPJoNeycI1oTMRkZ2bVBbg==",
   "success": true,
   "projectFilePath": "D:\\VS\\Projects\\DocxDocument\\ModelGenApp\\ModelGenApp.csproj",
   "expectedPackageFiles": [
@@ -17,7 +17,7 @@
     "C:\\Users\\qhta1\\.nuget\\packages\\qhta.collections\\3.2.0\\qhta.collections.3.2.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\qhta.dispatchedobjects\\2.1.0\\qhta.dispatchedobjects.2.1.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\qhta.htmlutils\\2.1.0\\qhta.htmlutils.2.1.0.nupkg.sha512",
-    "C:\\Users\\qhta1\\.nuget\\packages\\qhta.mvvm\\2.4.1\\qhta.mvvm.2.4.1.nupkg.sha512",
+    "C:\\Users\\qhta1\\.nuget\\packages\\qhta.mvvm\\2.5.0\\qhta.mvvm.2.5.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\qhta.testhelper\\2.2.0\\qhta.testhelper.2.2.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\qhta.textutils\\3.1.1\\qhta.textutils.3.1.1.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\qhta.typeutils\\1.3.10.1\\qhta.typeutils.1.3.10.1.nupkg.sha512",
