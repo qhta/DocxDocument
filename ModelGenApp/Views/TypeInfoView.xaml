@@ -6,37 +6,41 @@
              xmlns:local="clr-namespace:ModelGenApp.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+  <UserControl.Resources>
+    <Style x:Key="noHeaderStyle" TargetType="{x:Type GridViewColumnHeader}">
+      <Setter Property="Visibility" Value="Collapsed" />
+    </Style>
+  </UserControl.Resources>
   <Grid>
     <Grid.RowDefinitions>
       <RowDefinition Height="Auto"/>
       <RowDefinition Height="*"/>
     </Grid.RowDefinitions>
-    <Grid>
-      <Grid.ColumnDefinitions>
-        <ColumnDefinition Width="Auto"/>
-        <ColumnDefinition Width="*"/>
-      </Grid.ColumnDefinitions>
-      <Grid.RowDefinitions>
-        <RowDefinition MinHeight="25"/>
-        <RowDefinition MinHeight="25"/>
-      </Grid.RowDefinitions>
-      <Label Grid.Column="0" Grid.Row="0"
-             Margin="0,0,5,0"
-             VerticalAlignment="Center"
-             FontWeight="Bold"
-             Content="Full type name"/>
-      <TextBlock Grid.Column="1" Grid.Row="0"
-                 VerticalAlignment="Center"
-                 Text="{Binding Path=FullName}"/>
-      <Label Grid.Column="0" Grid.Row="1"
-             Margin="0,0,5,0"
-             VerticalAlignment="Center"
-             FontWeight="Bold"
-             Content="Acceptance"/>
-      <TextBlock Grid.Column="1" Grid.Row="1"
-                 VerticalAlignment="Center"
-                 Text="{Binding Path=Acceptance}"/>
-    </Grid>
+    <ListView ItemsSource="{Binding Path=TypeSummaryVM}" >
+      <ListView.ItemContainerStyle>
+        <Style TargetType="ListViewItem">
+          <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+              <Setter Property="Background" Value="Transparent" />
+              <Setter Property="BorderBrush" Value="Transparent" />
+            </Trigger>
+          </Style.Triggers>
+        </Style>
+      </ListView.ItemContainerStyle>
+      <ListView.View>
+        <GridView ColumnHeaderContainerStyle="{StaticResource noHeaderStyle}">
+          <GridViewColumn Header="Name" Width="Auto">
+            <GridViewColumn.CellTemplate>
+              <DataTemplate>
+                <TextBlock Text="{Binding Name}" FontWeight="Bold"/>
+              </DataTemplate>
+            </GridViewColumn.CellTemplate>
+          </GridViewColumn>
+          <GridViewColumn Header="Value" Width="Auto" 
+                          DisplayMemberBinding="{Binding Value}" />
+        </GridView>
+      </ListView.View>
+    </ListView>
     <Grid Grid.Row="1"
           Visibility="{Binding Path=Members.Visible, Converter={StaticResource BoolToVisibilityConverter}}"
           >

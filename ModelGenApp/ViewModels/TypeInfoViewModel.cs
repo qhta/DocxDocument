@@ -4,6 +4,7 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
   public TypeInfoViewModel(TypeInfo typeInfo, bool isOriginal) : base(typeInfo)
   {
     IsOriginal = isOriginal;
+    FillTypeSummaryVM();
     ShowTypeCommand = new RelayCommand(ShowTypeExecute, ShowTypeCanExecute) { Name = "ShowTypeCommand" };
   }
 
@@ -70,6 +71,16 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
     {
       return Model.GetFullName(IsOriginal);
     }
+  }
+
+  public TypeSummaryViewModel TypeSummaryVM { get; } = new TypeSummaryViewModel();
+
+  private void FillTypeSummaryVM()
+  {
+    TypeSummaryVM.Clear();
+    TypeSummaryVM.Add(new TypePropViewModel("Acceptance", Acceptance));
+    TypeSummaryVM.Add(new TypePropViewModel("Kind", TypeKind));
+    TypeSummaryVM.Add(new TypePropViewModel("Name", Name));
   }
 
   /// <summary>
