@@ -45,7 +45,7 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
     }
   }
 
-  [DataGridColumn(ResourceDataTemplateKey = "TypeInfoColumnTemplate",
+  [DataGridColumn(ResourceDataTemplateKey = "TypeInfoLinkTemplate",
     SortMemberPath = "Type.Name", ClipboardContentPath = "Type.Name")]
   public TypeInfoViewModel? Type
   {
