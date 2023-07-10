@@ -17,21 +17,21 @@ public class NamespaceListViewModel: DispatchedCollection<NamespaceViewModel>
           nsTypes = nsTypes.Where(item => item.IsRejected).ToList();
       }
       var nsTypesVM = nsTypes.Select(item=>new TypeInfoViewModel(item, nts.HasFlag(NTS.Origin))).ToList();
-      nsVM.AllTypes.AddRange(nsTypesVM);
+      nsVM.AllTypes.Items.AddRange(nsTypesVM);
       var nsClassesVM = nsTypes.Where(item=>item.TypeKind==TypeKind.Class)
         .Select(item=>new ClassInfoViewModel(item, nts.HasFlag(NTS.Origin))).ToList();
-      nsVM.Classes.AddRange(nsClassesVM);
+      nsVM.Classes.Items.AddRange(nsClassesVM);
       var nsEnumsVM = nsTypes.Where(item=>item.TypeKind==TypeKind.Enum)
         .Select(item=>new EnumTypeInfoViewModel(item, nts.HasFlag(NTS.Origin))).ToList();
-      nsVM.Enums.AddRange(nsEnumsVM);
+      nsVM.Enums.Items.AddRange(nsEnumsVM);
       var nsInterfacesVM = nsTypes.Where(item=>item.TypeKind==TypeKind.Interface)
         .Select(item=>new ClassInfoViewModel(item, nts.HasFlag(NTS.Origin))).ToList();
-      nsVM.Interfaces.AddRange(nsInterfacesVM);
+      nsVM.Interfaces.Items.AddRange(nsInterfacesVM);
       var nsStructsVM = nsTypes.Where(item=>item.TypeKind==TypeKind.Struct)
         .Select(item=>new ClassInfoViewModel(item, nts.HasFlag(NTS.Origin))).ToList();
-      nsVM.Structs.AddRange(nsStructsVM);
+      nsVM.Structs.Items.AddRange(nsStructsVM);
       var nsOthersVM = nsTypesVM.Where(item=>item.TypeKind==TypeKind.Type).ToList();
-      nsVM.Others.AddRange(nsOthersVM);
+      nsVM.Others.Items.AddRange(nsOthersVM);
       Add(nsVM);
     }
   }

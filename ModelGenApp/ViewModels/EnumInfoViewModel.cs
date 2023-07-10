@@ -8,6 +8,7 @@ public class EnumInfoViewModel : ViewModel<EnumInfo>
 
   private bool IsOriginal;
 
+  [DataGridColumn]
   public string Name
   {
     get
@@ -18,6 +19,7 @@ public class EnumInfoViewModel : ViewModel<EnumInfo>
     }
   }
 
+  [DataGridColumn]
   public int? Value => Model.Value;
 }
 

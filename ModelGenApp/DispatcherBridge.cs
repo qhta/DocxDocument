@@ -1,6 +1,4 @@
-﻿using Qhta.DispatchedObjects;
-
-namespace ModelGenApp;
+﻿namespace ModelGenApp;
 
 public class DispatcherBridge : IDispatcherBridge
 {

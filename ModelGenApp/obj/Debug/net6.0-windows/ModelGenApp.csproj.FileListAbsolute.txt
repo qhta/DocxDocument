@@ -82,8 +82,6 @@ D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\TypeListV
 D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\TypeListWindow.g.cs
 D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\TypeListView.baml
 D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\TypeListWindow.baml
-D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\TypeListCountView.g.cs
-D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\TypeListCountView.baml
 D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\ModelConfigView.g.cs
 D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\NamespacesConfigView.g.cs
 D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\ModelConfigView.baml
@@ -91,3 +89,7 @@ D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\Namespace
 D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Qhta.WPF.Converters.dll
 D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Qhta.WPF.DataGridUtils.dll
 D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Qhta.WPF.DataGridUtils.pdb
+D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\TypeInfoView.g.cs
+D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\TypeInfoWindow.g.cs
+D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\TypeInfoView.baml
+D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\TypeInfoWindow.baml

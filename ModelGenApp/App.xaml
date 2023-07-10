@@ -3,8 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:views="clr-namespace:ModelGenApp.Views"
              xmlns:vm="clr-namespace:ModelGenApp.ViewModels"
+             xmlns:vc="clr-namespace:Qhta.WPF.Converters;assembly=Qhta.WPF.Converters"
              StartupUri="Views\MainWindow.xaml">
   <Application.Resources>
+      <vc:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
     <DataTemplate x:Key="{x:Type vm:MainViewModel}" DataType="{x:Type vm:MainViewModel}">
       <views:MainWindow/>
     </DataTemplate>
@@ -22,6 +24,24 @@
         <Button Grid.Column="1"
                 Content=">>"
                 Command="{Binding Path=ShowDetailsCommand}"
+                CommandParameter="{Binding}"
+                />
+      </Grid>
+    </DataTemplate>
+    <DataTemplate x:Key="TypeInfoColumnTemplate" >
+      <Grid>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Column="0"
+                  HorizontalAlignment="Left"
+                  Margin="5,0,5,0"
+                  Text="{Binding Path=FullName}"
+                  />
+        <Button Grid.Column="1"
+                Content=">>"
+                Command="{Binding Path=ShowTypeCommand}"
                 CommandParameter="{Binding}"
                 />
       </Grid>
