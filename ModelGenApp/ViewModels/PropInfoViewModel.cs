@@ -32,7 +32,7 @@ public class PropInfoViewModel : ViewModel<PropInfo>
     }
   }
 
-  [DataGridColumn(ResourceDataTemplateKey = "TypeInfoColumnTemplate",
+  [DataGridColumn(ResourceDataTemplateKey = "TypeInfoLinkTemplate",
     SortMemberPath = "Type.FullName", ClipboardContentPath = "Type.FullName")]
   public TypeInfoViewModel? Type
   {
