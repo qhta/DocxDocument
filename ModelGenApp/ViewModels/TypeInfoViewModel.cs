@@ -26,6 +26,18 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
     }
   }
 
+  public string? Validity
+  {
+    get
+    {
+      if (Model.IsValid)
+        return "valid";
+      if (Model.IsInvalid)
+        return "invalid";
+      return null;
+    }
+  }
+
   public string? Name
   {
     get
@@ -78,7 +90,8 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
   protected virtual void FillTypeSummaryVM()
   {
     TypeSummaryVM.Clear();
-    TypeSummaryVM.Add(new TypePropViewModel("Acceptance", Acceptance));
+    TypeSummaryVM.Add(new TypePropViewModel("Acceptance", Acceptance, Model.IsRejected));
+    TypeSummaryVM.Add(new TypePropViewModel("Validity", Validity, Model.IsInvalid));
     TypeSummaryVM.Add(new TypePropViewModel("Kind", TypeKind));
     TypeSummaryVM.Add(new TypePropViewModel("Name", Name));
     TypeSummaryVM.Add(new TypePropViewModel("Description", Model.Description));
