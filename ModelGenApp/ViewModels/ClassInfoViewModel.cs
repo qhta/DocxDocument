@@ -16,4 +16,17 @@ public class ClassInfoViewModel : TypeInfoViewModel
   public PropListViewModel Properties { get; set; }
 
   public override object? Members => Properties;
+
+  protected override void FillTypeSummaryVM()
+  {
+    base.FillTypeSummaryVM();
+    var baseClasses = Model.GetOutgoingRelationships(Semantics.Inheritance);
+    if (baseClasses.Any())
+      foreach (var item in baseClasses)
+      {
+        var targetType = item.Target as TypeInfo;
+        if (targetType!=null)
+          TypeSummaryVM.Add(new TypePropViewModel("Inheritance", new TypeInfoViewModel(targetType, Original)));
+      }
+  }
 }
