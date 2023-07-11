@@ -1,12 +1,20 @@
-﻿using DocumentFormat.OpenXml.EMMA;
-
-namespace ModelGen;
+﻿namespace ModelGen;
 
 /// <summary>
 /// Represents the common data of TypeInfo, PropInfo, EnumInfo.
 /// </summary>
 public class ModelElement: IOwnedElement
 {
+  /// <summary>
+  /// Initializing constructor
+  /// </summary>
+  /// <param name="name"></param>
+  public ModelElement(string name)
+  {
+    Name = name;
+    CustomAttributes = new OwnedCollection<CustomAttribInfo>(this);
+  }
+  
   /// <summary>
   /// Owner of the element (can be of any object).
   /// </summary>
@@ -85,6 +93,17 @@ public class ModelElement: IOwnedElement
   /// </summary>
   public virtual ElementDocs? Documentation { get; set; }
 
+  public string? Description
+  {
+    get
+    {
+      var summary = Documentation?.Summary;
+      if (summary!=null)
+        return summary.Value;
+      return null;
+    }
+  }
+
   /// <summary>
   /// Schema for OpenXml format
   /// </summary>
@@ -100,11 +119,5 @@ public class ModelElement: IOwnedElement
   /// </summary>
   public OwnedCollection<CustomAttribInfo> CustomAttributes { get; }
 
-  
-  public ModelElement(string name)
-  {
-    Name = name;
-    CustomAttributes = new OwnedCollection<CustomAttribInfo>(this);
-  }
 
 }

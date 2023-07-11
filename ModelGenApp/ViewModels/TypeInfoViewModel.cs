@@ -1,9 +1,9 @@
 ﻿namespace ModelGenApp.ViewModels;
 public class TypeInfoViewModel : ViewModel<TypeInfo>
 {
-  public TypeInfoViewModel(TypeInfo typeInfo, bool isOriginal) : base(typeInfo)
+  public TypeInfoViewModel(TypeInfo typeInfo, bool original) : base(typeInfo)
   {
-    IsOriginal = isOriginal;
+    Original = original;
     FillTypeSummaryVM();
     ShowTypeCommand = new RelayCommand(ShowTypeExecute, ShowTypeCanExecute) { Name = "ShowTypeCommand" };
   }
@@ -11,7 +11,7 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
   [DataGridColumn]
   public TypeKind TypeKind => Model.TypeKind;
 
-  public bool IsOriginal { get; set; }
+  public bool Original { get; set; }
 
   [DataGridColumn]
   public string? Acceptance
@@ -30,7 +30,7 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
   {
     get
     {
-      var name = Model.GetFullName(IsOriginal);
+      var name = Model.GetFullName(Original);
       if (name != null)
       {
         var str = name.ToString();
@@ -56,10 +56,10 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
       if (thisType!=null)
       {
         if (thisType.TypeKind == TypeKind.Enum)
-          return new EnumTypeInfoViewModel(thisType, IsOriginal);
+          return new EnumTypeInfoViewModel(thisType, Original);
         if (thisType.TypeKind == TypeKind.Type)
-          return new TypeInfoViewModel(thisType, IsOriginal);
-        return new ClassInfoViewModel(thisType, IsOriginal);
+          return new TypeInfoViewModel(thisType, Original);
+        return new ClassInfoViewModel(thisType, Original);
       }
       return null;
     }
@@ -69,24 +69,25 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
   {
     get
     {
-      return Model.GetFullName(IsOriginal);
+      return Model.GetFullName(Original);
     }
   }
 
   public TypeSummaryViewModel TypeSummaryVM { get; } = new TypeSummaryViewModel();
 
-  private void FillTypeSummaryVM()
+  protected virtual void FillTypeSummaryVM()
   {
     TypeSummaryVM.Clear();
     TypeSummaryVM.Add(new TypePropViewModel("Acceptance", Acceptance));
     TypeSummaryVM.Add(new TypePropViewModel("Kind", TypeKind));
     TypeSummaryVM.Add(new TypePropViewModel("Name", Name));
+    TypeSummaryVM.Add(new TypePropViewModel("Description", Model.Description));
   }
 
   /// <summary>
   /// Shown as Window.Title.
   /// </summary>
-  public string Caption => TypeKind + " " + Model.GetFullName(IsOriginal);
+  public string Caption => TypeKind + " " + Model.GetFullName(Original);
 
   public virtual object? Members => null;
 
