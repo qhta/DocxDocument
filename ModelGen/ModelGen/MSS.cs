@@ -13,6 +13,6 @@ public enum MSS
   Unused        = 0x08,
   Valid         = 0x10,
   Invalid       = 0x20,
-  Converted   = 0x40,
-  ConvertedTo = 0x80,
+  Converted     = 0x40,
+  ConvertedTo   = 0x80,
 }

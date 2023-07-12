@@ -20,4 +20,6 @@ public enum TDS
   Properties                = 0x00800,
   ElementSchema             = 0x01000,
   ConversionInfo            = 0x02000,
+
+  All                       = 0x03FFF,
 }
