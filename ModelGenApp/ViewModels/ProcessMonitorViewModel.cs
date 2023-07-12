@@ -8,11 +8,15 @@ public class ProcessMonitorViewModel : ViewModel
     PhaseMonitors = new PhaseViewModel[numPhases];
     for (int i = 0; i < numPhases; i++)
     {
-      switch (i)
+      PPS phase = (PPS)Enum.ToObject(typeof(PPS),i+1);
+      switch (phase)
       {
-        case 0:
-          PhaseMonitors[i] = new ScanPhaseViewModel { PhaseNumber = i + 1, PhaseName = Enum.ToObject(typeof(PPS), i + 1).ToString() };
+        case PPS.ScanTypes:
+          PhaseMonitors[i] = new ScanPhaseViewModel { PhaseNumber = i + 1, PhaseName = phase.ToString() };
           break;
+        //case PPS.ScanValidation:
+        //  PhaseMonitors[i] = new ScanValidationPhaseViewModel { PhaseNumber = i + 1, PhaseName = phase.ToString() };
+        //  break;
     }
   }
 

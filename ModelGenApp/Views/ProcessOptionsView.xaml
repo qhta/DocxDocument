@@ -109,7 +109,7 @@
                   Margin="5,0,5,0" Height="25"
                   Padding="5,0"
                   Content="Show results" 
-                  Command="{Binding Path=ProcessMonitorVM.PhaseMonitors[0].ShowResultsCommand}"/>
+                  Command="{Binding Path=ProcessMonitorVM.PhaseMonitors[1].ShowResultsCommand}"/>
 
         </Grid>
       </Grid>

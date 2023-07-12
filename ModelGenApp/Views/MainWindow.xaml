@@ -24,7 +24,7 @@
         <ColumnDefinition Width="400"/>
         <ColumnDefinition Width="*"/>
       </Grid.ColumnDefinitions>
-      <views:ProcessOptionsView Grid.Column="0" x:Name="ProcessOptionsView"
+      <views:ProcessOptionsView Grid.Column="0" x:Name="ProcessOptionsView" Loaded="ProcessOptionsView_Loaded"
                       />
       <views:ProcessMonitorView Grid.Column="1"
                     Margin="5,0,0,0"
