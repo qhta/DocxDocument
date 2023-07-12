@@ -15,6 +15,8 @@ public class NamespaceListViewModel: DispatchedCollection<NamespaceViewModel>
           nsTypes = nsTypes.Where(item => item.IsAccepted).ToList();
         if (filter == SummaryInfoKind.RejectedTypes.ToString())
           nsTypes = nsTypes.Where(item => item.IsRejected).ToList();
+        if (filter == SummaryInfoKind.InvalidTypes.ToString())
+          nsTypes = nsTypes.Where(item => item.IsInvalid).ToList();
       }
       var nsTypesVM = nsTypes.Select(item=>new TypeInfoViewModel(item, nts.HasFlag(NTS.Origin))).ToList();
       nsVM.AllTypes.Items.AddRange(nsTypesVM);

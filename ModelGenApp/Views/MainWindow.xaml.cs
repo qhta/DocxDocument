@@ -33,4 +33,8 @@ public partial class MainWindow : Window
 
   public MainViewModel MainViewModel { get; }
 
+  private void ProcessOptionsView_Loaded(object sender, RoutedEventArgs e)
+  {
+
+  }
 }

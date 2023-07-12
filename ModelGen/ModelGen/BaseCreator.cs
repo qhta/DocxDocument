@@ -62,11 +62,11 @@ public abstract class BaseCreator
       totalTime += ScanType(type);
       if (monitorDisplaySelector.HasFlag(MDS.ScannedNamespaces))
         ModelMonitor?.ShowNamespaceSummary(NTS.Origin);
-    }
+    //}
 
-    if (stopAtPhase >= PPS.ScanValidation)
-    {
-      totalTime += ValidateScan(NTS.Origin, displayOptions.TypeStatusSelector, displayOptions.TypeDataSelector);
+    //if (stopAtPhase >= PPS.ScanValidation)
+    //{
+      //totalTime += ValidateScan(NTS.Origin, MSS.Accepted);
       if (monitorDisplaySelector.HasFlag(MDS.ScannedTypes))
         ModelMonitor?.ShowNamespacesDetails(displayOptions with { NamespaceTypeSelector = NTS.Origin });
     }
@@ -105,6 +105,12 @@ public abstract class BaseCreator
     ModelManager.OnScanningType += ModelManager_OnScanningType;
     ModelManager.ScanType(type);
     ModelManager.OnScanningType -= ModelManager_OnScanningType;
+
+    var ModelValidator = new ModelValidator(NTS.Origin, MSS.Accepted, TDS.Metadata);
+    ModelValidator.OnValidatingType += ModelValidator_OnValidatingType;
+    ModelValidator.ValidateTypes();
+    ModelValidator.OnValidatingType += ModelValidator_OnValidatingType;
+
     DateTime t2 = DateTime.Now;
     var ts = t2 - t1;
     var allTypesCount = TypeManager.AllTypes.Count();
@@ -117,7 +123,8 @@ public abstract class BaseCreator
       Summary = new Dictionary<SummaryInfoKind, object>{
         {SummaryInfoKind.RegisteredTypes, allTypesCount },
         {SummaryInfoKind.AcceptedTypes, acceptedTypesCount },
-        {SummaryInfoKind.RejectedTypes, rejectedTypesCount }
+        {SummaryInfoKind.RejectedTypes, rejectedTypesCount },
+        {SummaryInfoKind.InvalidTypes, ModelValidator.CheckedTypesCount-ModelValidator.ValidTypesCount }, 
         }
     });
     return ts;
@@ -136,36 +143,36 @@ public abstract class BaseCreator
       PostStr = $"{info.Current?.OriginalNamespace}.{info.Current?.OriginalName}"
     });
   }
-  protected TimeSpan ValidateScan(NTS nameTypeSelector, MSS typeStatusSelector, TDS typeDataSelector)
-  {
-    ModelMonitor?.ShowPhaseStart(PPS.ScanValidation, "Validating scan");
-    DateTime t1 = DateTime.Now;
-    var ModelValidator = new ModelValidator(nameTypeSelector, typeStatusSelector, typeDataSelector);
-    ModelValidator.OnValidatingType += ModelValidator_OnValidatingType;
-    ModelValidator.ValidateTypes();
-    ModelValidator.OnValidatingType += ModelValidator_OnValidatingType;
-    DateTime t2 = DateTime.Now;
-    var ts = t2 - t1;
-    var summary = new Dictionary<SummaryInfoKind, object>{
-        {SummaryInfoKind.ValidatedTypes, ModelValidator.CheckedTypesCount },
-        {SummaryInfoKind.ValidTypes, ModelValidator.ValidTypesCount }, 
-        {SummaryInfoKind.InvalidTypes, ModelValidator.CheckedTypesCount-ModelValidator.ValidTypesCount }, 
-      };
-    if (ModelValidator.NoDocsTypesCount > 0)
-      summary.Add(SummaryInfoKind.TypesWithoutDocumentation, ModelValidator.NoDocsTypesCount);
-    if (ModelValidator.NoSummaryTypesCount > 0)
-      summary.Add(SummaryInfoKind.TypesWithoutSummary, ModelValidator.NoSummaryTypesCount);
-    ModelMonitor?.ShowPhaseEnd(PPS.ScanValidation, new SummaryInfo
-    {
-      Time = ts,
-      Summary = summary
-    });
-    return ts;
-  }
+  //protected TimeSpan ValidateScan(NTS nameTypeSelector, MSS typeStatusSelector, TDS typeDataSelector = TDS.All)
+  //{
+  //  ModelMonitor?.ShowPhaseStart(PPS.ScanTypes, "Validating scan");
+  //  DateTime t1 = DateTime.Now;
+  //  var ModelValidator = new ModelValidator(nameTypeSelector, typeStatusSelector, typeDataSelector);
+  //  ModelValidator.OnValidatingType += ModelValidator_OnValidatingType;
+  //  ModelValidator.ValidateTypes();
+  //  ModelValidator.OnValidatingType += ModelValidator_OnValidatingType;
+  //  DateTime t2 = DateTime.Now;
+  //  var ts = t2 - t1;
+  //  var summary = new Dictionary<SummaryInfoKind, object>{
+  //      {SummaryInfoKind.ValidatedTypes, ModelValidator.CheckedTypesCount },
+  //      {SummaryInfoKind.ValidTypes, ModelValidator.ValidTypesCount }, 
+  //      {SummaryInfoKind.InvalidTypes, ModelValidator.CheckedTypesCount-ModelValidator.ValidTypesCount }, 
+  //    };
+  //  if (ModelValidator.NoDocsTypesCount > 0)
+  //    summary.Add(SummaryInfoKind.TypesWithoutDocumentation, ModelValidator.NoDocsTypesCount);
+  //  if (ModelValidator.NoSummaryTypesCount > 0)
+  //    summary.Add(SummaryInfoKind.TypesWithoutSummary, ModelValidator.NoSummaryTypesCount);
+  //  ModelMonitor?.ShowPhaseEnd(PPS.ScanTypes, new SummaryInfo
+  //  {
+  //    Time = ts,
+  //    Summary = summary
+  //  });
+  //  return ts;
+  //}
 
   private void ModelValidator_OnValidatingType(ModelValidator sender, ValidatingTypeInfo info)
   {
-    ModelMonitor?.ShowPhaseProgress(PPS.ScanValidation, new ProgressInfo
+    ModelMonitor?.ShowPhaseProgress(PPS.ScanTypes, new ProgressInfo
     {
       PreStr = "validated",
       Done = info.CheckedTypes,
