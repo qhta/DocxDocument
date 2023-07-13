@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:views="clr-namespace:ModelGenApp.Views"
              xmlns:vm="clr-namespace:ModelGenApp.ViewModels"
+             xmlns:hlp="clr-namespace:ModelGenApp.Helpers"
              mc:Ignorable="d" 
              d:DataContext="{d:DesignInstance Type=vm:PhaseViewModel}"
              d:DesignHeight="450" d:DesignWidth="800">
@@ -33,11 +34,22 @@
         </GridView>
       </ListView.View>
     </ListView>
+    <FrameworkElement x:Name="dummyElement" Visibility="Collapsed"/>
     <DataGrid Grid.Row="1"
               AutoGenerateColumns="true"
               AutoGeneratingColumn="DataGrid_AutoGeneratingColumn"
               ClipboardCopyMode="IncludeHeader"
               ItemsSource="{Binding Path=NamespacesVM}">
+      <DataGrid.Resources>
+        <hlp:BindingProxy x:Key="proxy" Data="{Binding}"/>
+      </DataGrid.Resources>
+      <DataGrid.Columns>
+        <DataGridTextColumn Header="Name" Binding="{Binding Path=Name}"/>
+        <DataGridTextColumn Header="TargetName" Binding="{Binding Path=TargetName}" 
+                            Visibility="{Binding DataContext.IsTargetNameVisible,
+                                         Source={x:Reference dummyElement}, 
+                                         Converter={StaticResource BoolToVisibilityConverter}}"/>
+      </DataGrid.Columns>
     </DataGrid>
   </Grid>
 </UserControl>

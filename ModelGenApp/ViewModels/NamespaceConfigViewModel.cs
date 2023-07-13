@@ -76,7 +76,6 @@ public class NamespaceConfigViewModel : ViewModel, IEditableObject
   }
   private string? _TranslatedName;
 
-
   public string? TranslatedShortcut
   {
     get { return _TranslatedShortcut; }
@@ -91,7 +90,6 @@ public class NamespaceConfigViewModel : ViewModel, IEditableObject
   }
   private string? _TranslatedShortcut;
 
-
   public new bool IsValid
   {
     get { return _IsValid; }
@@ -105,7 +103,6 @@ public class NamespaceConfigViewModel : ViewModel, IEditableObject
     }
   }
   private bool _IsValid = true;
-
 
   public string? ValidationMsg
   {

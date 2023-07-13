@@ -1,9 +1,10 @@
 ﻿namespace ModelGenApp.ViewModels;
-public class ScanPhaseViewModel: PhaseViewModel
+public class RenamePhaseViewModel : PhaseViewModel
 {
-  public ScanPhaseViewModel(string name): base (PPS.ScanTypes, name)
-  { 
-    NamespaceTypeSelector = NTS.Origin | NTS.System;
+  public RenamePhaseViewModel(string name) : base(PPS.RenameTypes, name)
+  {
+    NamespaceTypeSelector = NTS.Origin | NTS.Target;
+    IsTargetNameVisible = true;
   }
 
   Window? window;

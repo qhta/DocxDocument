@@ -12,12 +12,12 @@ public class ProcessMonitorViewModel : ViewModel
       switch (phase)
       {
         case PPS.ScanTypes:
-          PhaseMonitors[i] = new ScanPhaseViewModel { PhaseNumber = i + 1, PhaseName = phase.ToString() };
+          PhaseMonitors[i] = new ScanPhaseViewModel (phase.ToString());
           break;
-        //case PPS.ScanValidation:
-        //  PhaseMonitors[i] = new ScanValidationPhaseViewModel { PhaseNumber = i + 1, PhaseName = phase.ToString() };
-        //  break;
-    }
+        case PPS.RenameTypes:
+          PhaseMonitors[i] = new RenamePhaseViewModel(phase.ToString());
+          break;
+      }
   }
 
 }
@@ -51,7 +51,6 @@ public ObservableCollection<string> Lines
 }
 private ObservableCollection<string> _Lines = new();
 
-
 public string? StatusLine
 {
   get { return _StatusLine; }
@@ -65,7 +64,6 @@ public string? StatusLine
   }
 }
 private string? _StatusLine;
-
 
 public PhaseViewModel[] PhaseMonitors
 {

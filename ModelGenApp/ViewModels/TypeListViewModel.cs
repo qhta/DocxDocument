@@ -1,10 +1,12 @@
 ﻿namespace ModelGenApp.ViewModels;
 public class TypeListViewModel: ViewModel
 {
-  public TypeListViewModel(NamespaceViewModel owner, string name)
+  public TypeListViewModel(NamespaceViewModel owner, string name, NTS nameTypeSelector, TKS typeKindSelector)
   {
     Owner = owner;
     Name = name;
+    NameTypeSelector = nameTypeSelector;
+    TypeKindSelector = typeKindSelector;
     ShowDetailsCommand = new RelayCommand(ShowDetailsExecute, ShowDetailsCanExecute) { Name = "ShowDetailsCommand" };
   }
 
@@ -14,9 +16,11 @@ public class TypeListViewModel: ViewModel
 
   public string Caption => Owner.Caption +": "+this.Name?.ToLower();
 
-  public virtual IList Items { get;} = new DispatchedCollection<TypeInfoViewModel>();
+  public NTS NameTypeSelector { get; private set; }
 
-  public int Count => Items.Count;
+  public TKS TypeKindSelector { get; private set; }
+
+  public virtual IList Items { get;} = new DispatchedCollection<TypeInfoViewModel>();
 
   #region ShowDetailsCommand
   public Command ShowDetailsCommand { get; private set; }
@@ -42,6 +46,5 @@ public class TypeListViewModel: ViewModel
     }
   }
   #endregion
-
 
 }

@@ -43,7 +43,6 @@ public class MainViewModel : ViewModel
   }
   private ProcessOptionsViewModel _ProcessOptionsVM;
 
-
   public Window? StartWindow
   {
     get { return _StartWindow; }
@@ -57,7 +56,6 @@ public class MainViewModel : ViewModel
     }
   }
   private Window? _StartWindow;
-
 
 
   private IWindowService windowService;

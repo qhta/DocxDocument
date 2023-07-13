@@ -103,7 +103,7 @@
 
           <Label Grid.Column="1" Grid.Row="2" 
                    VerticalAlignment="Center"
-                   Content="Validate scan" />
+                   Content="Rename types" />
           <Button Grid.Column="2" Grid.Row="2" 
                   VerticalAlignment="Center"
                   Margin="5,0,5,0" Height="25"

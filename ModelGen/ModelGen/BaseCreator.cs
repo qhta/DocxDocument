@@ -62,18 +62,16 @@ public abstract class BaseCreator
       totalTime += ScanType(type);
       if (monitorDisplaySelector.HasFlag(MDS.ScannedNamespaces))
         ModelMonitor?.ShowNamespaceSummary(NTS.Origin);
-    //}
-
-    //if (stopAtPhase >= PPS.ScanValidation)
-    //{
-      //totalTime += ValidateScan(NTS.Origin, MSS.Accepted);
       if (monitorDisplaySelector.HasFlag(MDS.ScannedTypes))
         ModelMonitor?.ShowNamespacesDetails(displayOptions with { NamespaceTypeSelector = NTS.Origin });
     }
 
-    //totalTime += RenameTypes();
-    //if (monitorDisplaySelector.HasFlag(MDS.TypeRename))
-    //  ModelMonitor?.ShowTypeRenames();
+    if (stopAtPhase >= PPS.RenameTypes)
+    {
+     totalTime += RenameTypes();
+     if (monitorDisplaySelector.HasFlag(MDS.TypeRename))
+       ModelMonitor?.ShowTypeRenames();
+    }
 
     //totalTime += SetTypeConversions();
     //if (monitorDisplaySelector.HasFlag(MDS.TypeConversions))
@@ -184,27 +182,40 @@ public abstract class BaseCreator
     });
   }
 
-  //protected TimeSpan RenameTypes()
-  //{
-  //  ModelMonitor?.ShowPhaseStart(TypeRename,"Renaming types");
-  //  DateTime t1 = DateTime.Now;
-  //  var renamedTypesCount = ModelManager.RenameSpecificTypes();
-  //  foreach (var type in TypeManager.AllTypes.ToArray())
-  //  {
-  //    ModelManager.RenameType(type);
-  //  }
-  //  DateTime t2 = DateTime.Now;
-  //  var ts = t2 - t1;
-  //  ModelMonitor?.ShowPhaseEnd("Renaming types", new SummaryInfo
-  //  {
-  //    Time = ts,
-  //    Summary = new Dictionary<string, object>{
-  //      {"Renamed types", renamedTypesCount },
-  //      }
-  //  });
-  //  return ts;
-  //}
+  protected TimeSpan RenameTypes()
+  {
+    ModelMonitor?.ShowPhaseStart(PPS.RenameTypes, "Renaming types");
+    DateTime t1 = DateTime.Now;
+    ModelManager.OnRenamingType += ModelManager_OnRenamingType;
+    var renamedTypesCount = ModelManager.RenameNamespacesAndTypes();
+    ModelManager.OnRenamingType -= ModelManager_OnRenamingType;
 
+    DateTime t2 = DateTime.Now;
+    var ts = t2 - t1;
+    ModelMonitor?.ShowPhaseEnd(PPS.RenameTypes, new SummaryInfo
+    {
+      Time = ts,
+      Summary = new Dictionary<SummaryInfoKind, object>{
+        {SummaryInfoKind.AcceptedTypes, TypeManager.AcceptedTypes.Count() },
+        {SummaryInfoKind.RenamedTypes, renamedTypesCount },
+        }
+    });
+    return ts;
+  }
+
+  private void ModelManager_OnRenamingType(RenamingTypeInfo info)
+  {
+    ModelMonitor?.ShowPhaseProgress(PPS.RenameTypes, new ProgressInfo
+    {
+      Total = TotalTypesCount,
+      PreStr = "renamed",
+      Done = info.RenamedTypes,
+      MidStr = "types",
+      //Summary = new Dictionary<string, object>{
+      //  {"in {0} namespaces", info.RenamedTypes ?? 0 } },
+      PostStr = $"{info.Current?.OriginalNamespace}.{info.Current?.OriginalName} -> {info.Current?.TargetNamespace}.{info.Current?.Name}"
+    });
+  }
   //protected TimeSpan SetTypeConversions()
   //{
   //  ModelMonitor?.ShowPhaseStart("Converting types");

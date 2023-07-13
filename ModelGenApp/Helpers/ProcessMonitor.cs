@@ -9,7 +9,6 @@ public partial class ProcessMonitor : ModelMonitor
 
   public int IndentSize { get; set; } = 2;
 
-
   public override void WriteLine()
   {
     VM.WriteLine();
@@ -41,29 +40,29 @@ public partial class ProcessMonitor : ModelMonitor
     base.ShowProcessStart(line);
   }
 
-  public override void ShowPhaseStart(PPS phaseNumber, string phaseName)
+  public override void ShowPhaseStart(PPS phase, string phaseName)
   {
-    base.ShowPhaseStart(phaseNumber, phaseName);
+    base.ShowPhaseStart(phase, phaseName);
     var numPhases = VM.PhaseMonitors.Length;
-    if (VM.PhaseMonitors[(int)phaseNumber - 1] != null)
-      VM.PhaseMonitors[(int)phaseNumber - 1].Percentage = 0;
+    if (VM.PhaseMonitors[(int)phase - 1] != null)
+      VM.PhaseMonitors[(int)phase - 1].Percentage = 0;
   }
 
-  public override void ShowPhaseProgress(PPS phaseNumber, ProgressInfo info)
+  public override void ShowPhaseProgress(PPS phase, ProgressInfo info)
   {
-    base.ShowPhaseProgress(phaseNumber, info);
+    base.ShowPhaseProgress(phase, info);
     var percentage = (info.Done ?? 0) * 100 / (info.Total ?? 100);
-    if (VM.PhaseMonitors[(int)phaseNumber - 1] != null)
-      VM.PhaseMonitors[(int)phaseNumber - 1].Percentage = percentage;
+    if (VM.PhaseMonitors[(int)phase - 1] != null)
+      VM.PhaseMonitors[(int)phase - 1].Percentage = percentage;
   }
 
-  public override void ShowPhaseEnd(PPS phaseNumber, SummaryInfo info)
+  public override void ShowPhaseEnd(PPS phase, SummaryInfo info)
   {
-    base.ShowPhaseEnd(phaseNumber, info);
-    if (VM.PhaseMonitors[(int)phaseNumber - 1] != null)
+    base.ShowPhaseEnd(phase, info);
+    if (VM.PhaseMonitors[(int)phase - 1] != null)
     {
-      VM.PhaseMonitors[(int)phaseNumber - 1].Percentage = 100;
-      VM.PhaseMonitors[(int)phaseNumber - 1].SetSummary(info);
+      VM.PhaseMonitors[(int)phase - 1].Percentage = 100;
+      VM.PhaseMonitors[(int)phase - 1].SetSummary(info);
     }
   }
 
