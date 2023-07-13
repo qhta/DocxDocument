@@ -2,7 +2,6 @@
 public partial class ProcessOptionsViewModel: ViewModel
 {
 
-
   public int StopAtPhase
   {
     get { return Options.StopAtPhase; }
@@ -30,7 +29,6 @@ public partial class ProcessOptionsViewModel: ViewModel
   }
   private ProcessOptions _Options;
 
-
   public ObservableCollection<string> MainTypeNames
   {
     get { return _MainTypeNames; }
@@ -44,7 +42,6 @@ public partial class ProcessOptionsViewModel: ViewModel
     }
   }
   private ObservableCollection<string> _MainTypeNames;
-
 
   public ProcessOptionsViewModel()
   {

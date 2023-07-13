@@ -1,7 +1,8 @@
 ﻿namespace ModelGenApp.ViewModels;
 public class ClassListViewModel: TypeListViewModel
 {
-  public ClassListViewModel(NamespaceViewModel owner, string name): base(owner, name)
+  public ClassListViewModel(NamespaceViewModel owner, string name, NTS nameTypeSelector, TKS typeKindSelector): 
+    base(owner, name, nameTypeSelector, typeKindSelector)
   {
   }
 

@@ -17,8 +17,17 @@ public static class TypeManager
 {
   public static event RegisteringEvent? OnRegistering;
 
-  internal static Dictionary<Type, TypeInfo> KnownTypes = new();
-  internal static Dictionary<string, Namespace> KnownNamespaces = new();
+  public static Dictionary<Type, TypeInfo> KnownTypes { get; } = new();
+  public static Dictionary<string, Namespace> KnownNamespaces { get; } = new();
+
+  public static IEnumerable<Namespace> AllNamespaces
+  {
+    get
+    {
+      lock (NamespacesLock)
+        return TypeManager.KnownNamespaces.Values.Select(item => item);
+    }
+  }
 
   public static int TotalTypesCount => KnownTypes.Count;
 

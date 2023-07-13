@@ -11,4 +11,5 @@ public enum SummaryInfoKind
   InvalidTypes,
   TypesWithoutDocumentation,
   TypesWithoutSummary,
+  RenamedTypes,
 }

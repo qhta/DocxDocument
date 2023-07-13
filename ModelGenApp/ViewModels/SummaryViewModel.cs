@@ -28,7 +28,6 @@ public class SummaryViewModel: DispatchedCollection<SummaryValueViewModel>
     }
   }
 
-
   public string? Filter
   {
     get { return _Filter; }

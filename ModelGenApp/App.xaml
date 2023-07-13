@@ -11,7 +11,25 @@
     <DataTemplate x:Key="{x:Type vm:MainViewModel}" DataType="{x:Type vm:MainViewModel}">
       <views:MainWindow/>
     </DataTemplate>
-    <DataTemplate x:Key="CollectionCountColumnTemplate" >
+    <DataTemplate x:Key="ItemsCountColumnTemplate" >
+      <Grid>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Column="0"
+                  HorizontalAlignment="Right"
+                  Margin="5,0,5,0"
+                  Text="{Binding Items.Count}"
+                  />
+        <Button Grid.Column="1"
+                Content=">>"
+                Command="{Binding Path=ShowDetailsCommand}"
+                CommandParameter="{Binding}"
+                />
+      </Grid>
+    </DataTemplate>
+    <DataTemplate x:Key="CountColumnTemplate" >
       <Grid>
         <Grid.ColumnDefinitions>
           <ColumnDefinition Width="*"/>
@@ -55,7 +73,7 @@
                   Command="{Binding Path=ShowTypeCommand}"
                   CommandParameter="{Binding}"
                   >
-            <TextBlock Text="{Binding Path=FullName}"/>
+            <TextBlock Text="{Binding Path=FullName}" Foreground="Black" />
           </Hyperlink>
         </TextBlock>
       </Grid>
