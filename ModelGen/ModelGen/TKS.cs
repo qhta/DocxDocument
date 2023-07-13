@@ -11,4 +11,5 @@ public enum TKS
   Struct = 2,
   Class = 4,
   Interface = 8,
+  Other = 16,
 }

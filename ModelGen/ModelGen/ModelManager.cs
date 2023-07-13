@@ -645,7 +645,33 @@ public static class ModelManager
 
   #region Rename types
 
-  public static bool RenameType(TypeInfo typeInfo)
+  public static int RenameNamespacesAndTypes()
+  {
+    RenameNamespaces();
+    var n = RenameSpecificTypes();
+    foreach (var type in TypeManager.AllTypes.ToArray())
+    {
+      if (ModelManager.RenameType(type))
+        n++;
+    }
+    return n;
+  }
+
+  public static int RenameNamespaces()
+  {
+    int n=0;
+    foreach (var ns in TypeManager.AllNamespaces)
+    {
+      if (ModelConfig.Instance.TranslatedNamespaces.TryGetValue(ns.OrigName, out var targetName))
+      {
+        ns.TargetName = targetName;
+        n++;
+      }
+    }
+    return n;
+  }
+
+  private static bool RenameType(TypeInfo typeInfo)
   {
     CheckedRenameTypesCount++;
     var typeName = typeInfo.Type.FullName ?? "";

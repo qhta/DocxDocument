@@ -42,5 +42,4 @@ public class PropListViewModel: ObservableCollection<PropInfoViewModel>
   }
   #endregion
 
-
 }

@@ -7,7 +7,7 @@ public enum PPS
 {
   None = 0,
   ScanTypes =1,
-  //ScanValidation = 2,
+  RenameTypes = 2,
   TypeConversion = 3,
   UsageCheck = 4,
   FinalValidation = 5,

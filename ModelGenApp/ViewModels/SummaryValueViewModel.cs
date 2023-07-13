@@ -7,7 +7,6 @@ public class SummaryValueViewModel: ViewModel
 
   public object? Value { get; set; }
 
-
   public bool IsChecked
   {
     get { return _IsChecked; }

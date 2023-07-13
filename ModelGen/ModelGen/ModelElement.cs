@@ -79,6 +79,11 @@ public class ModelElement: IOwnedElement
   /// <summary>
 
   /// <summary>
+  /// Specifies whether the new name is different from original name.
+  /// </summary>
+  public bool IsRenamed => NewName!=null && NewName != Name;
+
+  /// <summary>
   /// Specifies whether the element is converted to other element.
   /// </summary>
   public bool IsConverted { get; set; }
