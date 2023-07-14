@@ -58,6 +58,14 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
     }
   }
 
+  public string? TargetName
+  {
+    get
+    {
+      return Model.NewName;
+    }
+  }
+
   [DataGridColumn(ResourceDataTemplateKey = "TypeInfoLinkTemplate",
     SortMemberPath = "Type.Name", ClipboardContentPath = "Type.Name")]
   public TypeInfoViewModel? Type
@@ -94,6 +102,7 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
     TypeSummaryVM.Add(new TypePropViewModel("Validity", Validity, Model.IsInvalid));
     TypeSummaryVM.Add(new TypePropViewModel("Kind", TypeKind));
     TypeSummaryVM.Add(new TypePropViewModel("Name", Name));
+    TypeSummaryVM.Add(new TypePropViewModel("Target name", TargetName));
     TypeSummaryVM.Add(new TypePropViewModel("Description", Model.Description));
   }
 
