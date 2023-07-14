@@ -33,11 +33,10 @@ public static class ModelManager
   public static event RenamingTypeEvent? OnRenamingType;
   public static event CheckingUsageEvent? OnCheckingUsage;
 
-  public static int CheckedRenameTypesCount {get; private set; }
-  public static int RenamedTypesCount {get; private set; }
-
-  public static int CheckedUsageTypesCount {get; private set; }
-  public static int UsedTypesCount {get; private set; }
+  public static int CheckedRenameTypesCount { get; private set; }
+  public static int RenamedTypesCount { get; private set; }
+  public static int CheckedUsageTypesCount { get; private set; }
+  public static int UsedTypesCount { get; private set; }
 
   #region Type conversion
   public static bool TryAddTypeConversion(this TypeInfo typeInfo)
@@ -230,7 +229,7 @@ public static class ModelManager
     if (typeInfo.TargetType != null)
       return typeInfo.TargetType;
     var result = GetConversionTargetOrSelf(typeInfo);
-    if (result.TargetType!=null)
+    if (result.TargetType != null)
     {
       typeInfo.TargetType = result.TargetType;
       return typeInfo.TargetType;
@@ -304,7 +303,7 @@ public static class ModelManager
     var typeInfo = propInfo.PropertyType;
     TypeInfo targetTypeInfo = null!;
     Type? targetType = null;
-    var propName = propInfo.DeclaringType?.TargetNamespace+"."+propInfo.DeclaringType?.Name+"."+propInfo.Name; 
+    var propName = propInfo.DeclaringType?.TargetNamespace + "." + propInfo.DeclaringType?.Name + "." + propInfo.Name;
     if (ModelConfig.Instance.TryGetPropertyType(propName, out targetType))
       targetTypeInfo = TypeManager.RegisterType(targetType, typeInfo, Semantics.TypeChange);
     else
@@ -431,11 +430,12 @@ public static class ModelManager
 
   private static void TypeManager_OnRegistering(RegisteringInfo info)
   {
-    OnScanningType?.Invoke(new ScanningTypeInfo{ 
+    OnScanningType?.Invoke(new ScanningTypeInfo
+    {
       RegisteredNamespaces = info.RegisteredNamespaces,
       RegisteredTypes = info.RegisteredTypes,
       Current = info.Current,
-      });
+    });
   }
 
   public static Task CheckTypeUsageAsync(this TypeInfo typeInfo)
@@ -458,7 +458,7 @@ public static class ModelManager
       return false;
     typeInfo.IsUsed = true;
     UsedTypesCount++;
-    OnCheckingUsage?.Invoke(new CheckingUsageInfo{ CheckedTypes = CheckedUsageTypesCount, UsedTypes = UsedTypesCount, Current = typeInfo });
+    OnCheckingUsage?.Invoke(new CheckingUsageInfo { CheckedTypes = CheckedUsageTypesCount, UsedTypes = UsedTypesCount, Current = typeInfo });
 
 
     if (typeInfo.BaseTypeInfo != null)
@@ -648,7 +648,7 @@ public static class ModelManager
   public static int RenameNamespacesAndTypes()
   {
     RenameNamespaces();
-    var n = RenameSpecificTypes();
+    var n = 0;
     foreach (var type in TypeManager.AllTypes.ToArray())
     {
       if (ModelManager.RenameType(type))
@@ -659,7 +659,7 @@ public static class ModelManager
 
   public static int RenameNamespaces()
   {
-    int n=0;
+    int n = 0;
     foreach (var ns in TypeManager.AllNamespaces)
     {
       if (ModelConfig.Instance.TranslatedNamespaces.TryGetValue(ns.OrigName, out var targetName))
@@ -681,7 +681,7 @@ public static class ModelManager
       typeInfo.NewName = newName.Substring(k + 1);
       typeInfo.TargetNamespace = newName.Substring(0, k);
       RenamedTypesCount++;
-      OnRenamingType?.Invoke(new RenamingTypeInfo{ CheckedTypes = CheckedRenameTypesCount, RenamedTypes = RenamedTypesCount, Current = typeInfo });
+      OnRenamingType?.Invoke(new RenamingTypeInfo { CheckedTypes = CheckedRenameTypesCount, RenamedTypes = RenamedTypesCount, Current = typeInfo });
       return true;
     }
     var aNamespace = TypeManager.TranslateNamespace(typeInfo.TargetNamespace);
@@ -692,9 +692,14 @@ public static class ModelManager
       var nspace = TypeManager.GetNamespace(aNamespace);
       if (nspace.TryGetTypesWithSameName(typeInfo, out var otherTypes))
       {
-        foreach (var sameNameType in otherTypes)
-          RenameTypeWithNamespace(sameNameType);
-        RenameTypeWithNamespace(typeInfo);
+        var sameNameTypes = otherTypes.ToList();
+        sameNameTypes.Add(typeInfo);
+        foreach (var sameNameType in sameNameTypes.ToArray())
+          if (RenameTypeWithNamespace(sameNameType))
+            sameNameTypes.Remove(sameNameType);
+        if (sameNameTypes.Count > 1)
+          foreach (var sameNameType in sameNameTypes)
+            sameNameType.IsInvalid = false;
       }
       nspace.Types.Add(typeInfo);
     }
@@ -705,86 +710,30 @@ public static class ModelManager
       {
         typeInfo.NewName = newName;
         RenamedTypesCount++;
-        OnRenamingType?.Invoke(new RenamingTypeInfo{ CheckedTypes = CheckedRenameTypesCount, RenamedTypes = RenamedTypesCount, Current = typeInfo });
+        OnRenamingType?.Invoke(new RenamingTypeInfo { CheckedTypes = CheckedRenameTypesCount, RenamedTypes = RenamedTypesCount, Current = typeInfo });
         return true;
       }
     }
-    //else
-    //{
-    //  if (ModelData.TypeNameConversion.TryGetValue(typeInfo.GetFullName(false), out var newName))
-    //  {
-    //    var qualifiedName = new FullTypeName(newName);
-    //    typeInfo.Name = qualifiedName.Name;
-    //  }
-    //}
     return false;
   }
 
-  public static int RenameSpecificTypes()
-  {
-    var count = 0;
-    if (TypeManager.TryGetTypeInfo(typeof(System.IO.Packaging.PackageProperties), out var corePropertiesTypeInfo))
-    {
-      corePropertiesTypeInfo.NewName = "CoreProperties";
-      corePropertiesTypeInfo.TargetNamespace = "DocumentModel.Properties";
-      count++;
-    }
-    if (TypeManager.TryGetTypeInfo(typeof(DocumentFormat.OpenXml.ExtendedProperties.Properties), out var extendedPropertiesTypeInfo))
-    {
-      extendedPropertiesTypeInfo.NewName = "ExtendedProperties";
-      extendedPropertiesTypeInfo.TargetNamespace = "DocumentModel.Properties";
-      count++;
-    }
-    if (TypeManager.TryGetTypeInfo(typeof(DocumentFormat.OpenXml.CustomProperties.Properties), out var customPropertiesTypeInfo))
-    {
-      customPropertiesTypeInfo.NewName = "CustomProperties";
-      customPropertiesTypeInfo.TargetNamespace = "DocumentModel.Properties";
-      count++;
-    }
-    CheckedRenameTypesCount = count;
-    RenamedTypesCount = count;
-    return count;
-  }
 
-  private static void RenameTypeWithNamespace(TypeInfo typeInfo)
+  private static bool RenameTypeWithNamespace(TypeInfo typeInfo)
   {
     var origNamespace = typeInfo.OriginalNamespace;
-    if (origNamespace.Contains("2010"))
+    int k = origNamespace.IndexOf("20");
+    if (k >= 0 && k <= origNamespace.Length - 4)
     {
-      typeInfo.NewName = typeInfo.Name+"2";
-      RenamedTypesCount++;
+      var yearStr = origNamespace.Substring(k, 4);
+      if (int.TryParse(yearStr, out var year))
+      {
+        typeInfo.NewName = typeInfo.Name + year.ToString();
+        RenamedTypesCount++;
+        OnRenamingType?.Invoke(new RenamingTypeInfo { CheckedTypes = CheckedRenameTypesCount, RenamedTypes = RenamedTypesCount, Current = typeInfo });
+        return true;
+      }
     }
-    else
-    if (origNamespace.Contains("2013"))
-    {
-      typeInfo.NewName = typeInfo.Name + "3";
-      RenamedTypesCount++;
-    }
-    else
-    if (origNamespace.Contains("2016"))
-    {
-      typeInfo.NewName = typeInfo.Name + "4";
-      RenamedTypesCount++;
-    }
-    else
-    if (origNamespace.Contains("2019"))
-    {
-      typeInfo.NewName = typeInfo.Name + "5";
-      RenamedTypesCount++;
-    }
-    else
-    if (origNamespace.Contains("2021"))
-    {
-      typeInfo.NewName = typeInfo.Name + "6";
-      RenamedTypesCount++;
-    }
-    else
-    if (origNamespace.Contains("2022"))
-    {
-      typeInfo.NewName = typeInfo.Name + "7";
-      RenamedTypesCount++;
-    }
-    OnRenamingType?.Invoke(new RenamingTypeInfo{ CheckedTypes = CheckedRenameTypesCount, RenamedTypes = RenamedTypesCount, Current = typeInfo });
+    return false;
   }
 
   private static string NewEnumTypeName(Type type)

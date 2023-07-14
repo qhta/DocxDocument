@@ -18,20 +18,16 @@
         <DataGridTextColumn Header="Kind" Binding="{Binding Path=TypeKind}"
                             IsReadOnly="true" />
         <DataGridTextColumn Header="Acceptance" Binding="{Binding Path=Acceptance}"
-                            IsReadOnly="true"
-                            Visibility="{Binding DataContext.IsAcceptanceVisible,
-                                         Source={x:Reference dummyElement}, 
-                                         Converter={StaticResource BoolToVisibilityConverter}}"/>
+                            IsReadOnly="true"/>
         <DataGridTextColumn Header="Validity" Binding="{Binding Path=Validity}"
-                            Visibility="{Binding DataContext.IsValidityVisible,
-                                         Source={x:Reference dummyElement}, 
-                                         Converter={StaticResource BoolToVisibilityConverter}}"/>
+                            IsReadOnly="true"/>
         <DataGridTextColumn Header="Name" Binding="{Binding Path=Type.Name}"
                             IsReadOnly="true"/>
         <DataGridTextColumn Header="Target name" Binding="{Binding Path=TargetName}"
                             Visibility="{Binding DataContext.IsTargetNameVisible,
-                                         Source={x:Reference dummyElement}, 
-                                         Converter={StaticResource BoolToVisibilityConverter}}"/>
+                                Source={x:Reference dummyElement}, 
+                                Converter={StaticResource BoolToVisibilityConverter}}"
+                            IsReadOnly="true"/>
         <utils:DataGridContentBoundColumn Binding="{Binding Path=Type}"
                                           ContentTemplate="{StaticResource TypeInfoButtonTemplate}">
         </utils:DataGridContentBoundColumn>

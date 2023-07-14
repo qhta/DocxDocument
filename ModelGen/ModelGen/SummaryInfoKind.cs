@@ -3,6 +3,7 @@
 public enum SummaryInfoKind
 {
   None,
+  AllTypes,
   RegisteredTypes,
   AcceptedTypes,
   RejectedTypes,
