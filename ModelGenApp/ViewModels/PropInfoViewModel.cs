@@ -1,10 +1,13 @@
 ﻿namespace ModelGenApp.ViewModels;
 public class PropInfoViewModel : ViewModel<PropInfo>
 {
-  public PropInfoViewModel(PropInfo propInfo, bool isOriginal) : base(propInfo)
+  public PropInfoViewModel(TypeInfoViewModel ownerType, PropInfo propInfo, bool isOriginal) : base(propInfo)
   {
+    OwnerType = ownerType;
     IsOriginal = isOriginal;
   }
+
+  public TypeInfoViewModel OwnerType { get; private set; }
 
   public bool IsOriginal { get; set; }
 

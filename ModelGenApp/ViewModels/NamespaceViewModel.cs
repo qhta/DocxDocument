@@ -52,7 +52,7 @@ public class NamespaceViewModel : ViewModel<Namespace>
     SortMemberPath = "Others.Count", ClipboardContentPath = "Others.Count")]
   public TypeListViewModel Others { get; set; }
 
-  public async void GetTypes()
+  public async void LoadTypes()
   {
     await Task.Run(()=>{
     var nsTypes = Model.Types.OrderBy(item => item.Name).ToList();
@@ -69,22 +69,12 @@ public class NamespaceViewModel : ViewModel<Namespace>
         nsTypes = nsTypes.Where(item => item.IsRenamed).ToList();
     }
     var nts = Phase.NamespaceTypeSelector;
-    var nsTypesVM = nsTypes.Select(item => new TypeInfoViewModel(item, nts.HasFlag(NTS.Origin))).ToList();
-    AllTypes.Items.AddRange(nsTypesVM);
-    var nsClassesVM = nsTypes.Where(item => item.TypeKind == TypeKind.Class)
-      .Select(item => new ClassInfoViewModel(item, nts.HasFlag(NTS.Origin))).ToList();
-    Classes.Items.AddRange(nsClassesVM);
-    var nsEnumsVM = nsTypes.Where(item => item.TypeKind == TypeKind.Enum)
-      .Select(item => new EnumTypeInfoViewModel(item, nts.HasFlag(NTS.Origin))).ToList();
-    Enums.Items.AddRange(nsEnumsVM);
-    var nsInterfacesVM = nsTypes.Where(item => item.TypeKind == TypeKind.Interface)
-      .Select(item => new ClassInfoViewModel(item, nts.HasFlag(NTS.Origin))).ToList();
-    Interfaces.Items.AddRange(nsInterfacesVM);
-    var nsStructsVM = nsTypes.Where(item => item.TypeKind == TypeKind.Struct)
-      .Select(item => new ClassInfoViewModel(item, nts.HasFlag(NTS.Origin))).ToList();
-    Structs.Items.AddRange(nsStructsVM);
-    var nsOthersVM = nsTypesVM.Where(item => item.TypeKind == TypeKind.Type).ToList();
-    Others.Items.AddRange(nsOthersVM);
+    AllTypes.LoadTypes(nsTypes);
+    Classes.LoadTypes(nsTypes);
+    Enums.LoadTypes(nsTypes);
+    Interfaces.LoadTypes(nsTypes);
+    Structs.LoadTypes(nsTypes);
+    Others.LoadTypes(nsTypes);
     });
   }
 }

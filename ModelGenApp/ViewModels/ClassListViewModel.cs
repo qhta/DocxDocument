@@ -7,4 +7,9 @@ public class ClassListViewModel: TypeListViewModel
   }
 
   public override IList Items { get; } = new DispatchedCollection<ClassInfoViewModel>();
+
+  protected override TypeInfoViewModel CreateItemViewModel(TypeInfo item)
+  {
+    return new ClassInfoViewModel(item, NameTypeSelector.HasFlag(NTS.Origin));
+  }
 }

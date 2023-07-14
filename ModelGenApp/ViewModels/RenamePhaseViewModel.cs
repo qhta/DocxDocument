@@ -4,6 +4,7 @@ public class RenamePhaseViewModel : PhaseViewModel
   public RenamePhaseViewModel(string name) : base(PPS.RenameTypes, name)
   {
     NamespaceTypeSelector = NTS.Origin | NTS.Target;
+    IsAcceptanceVisible = true;
     IsTargetNameVisible = true;
   }
 

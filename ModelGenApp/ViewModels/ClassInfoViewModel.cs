@@ -7,7 +7,7 @@ public class ClassInfoViewModel : TypeInfoViewModel
     Properties = new PropListViewModel(this, "Properties");
     if (typeInfo.Properties != null)
       foreach (var propInfo in typeInfo.Properties)
-        Properties.Add(new PropInfoViewModel(propInfo, original));
+        Properties.Add(new PropInfoViewModel(this, propInfo, original));
   }
 
   [DataGridColumn(ResourceDataTemplateKey = "CountColumnTemplate",

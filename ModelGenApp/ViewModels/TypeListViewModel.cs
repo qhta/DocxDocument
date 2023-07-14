@@ -22,8 +22,29 @@ public class TypeListViewModel: ViewModel
 
   public virtual IList Items { get;} = new DispatchedCollection<TypeInfoViewModel>();
 
+  public bool IsAcceptanceVisible { get; set; } = true;
+
+  public bool IsValidityVisible { get; set; } = false;
+
+  public bool IsTargetNameVisible => Owner.Phase.IsTargetNameVisible;
+
   #region ShowDetailsCommand
   public Command ShowDetailsCommand { get; private set; }
+
+  public void LoadTypes(IEnumerable<TypeInfo> nsTypes)
+  {
+    if (TypeKindSelector!=TKS.Any)
+      Items.AddRange(nsTypes.Where(item=>item.IsTypeKindSelected(TypeKindSelector))
+      .Select(item => CreateItemViewModel(item)));
+    else
+      Items.AddRange(nsTypes.Select(item => CreateItemViewModel(item)));
+  }
+
+  protected virtual TypeInfoViewModel CreateItemViewModel(TypeInfo item)
+  {
+    return new TypeInfoViewModel(item, NameTypeSelector.HasFlag(NTS.Origin));
+  }
+
 
   protected virtual bool ShowDetailsCanExecute()
   {
@@ -41,7 +62,7 @@ public class TypeListViewModel: ViewModel
     else
     {
       window = new TypeListWindow();
-      window.DataContext = Items;
+      window.DataContext = this;
       window.Show();
     }
   }

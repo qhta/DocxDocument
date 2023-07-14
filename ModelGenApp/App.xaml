@@ -62,6 +62,17 @@
                 Content=">>"
                 Command="{Binding Path=ShowTypeCommand}"
                 CommandParameter="{Binding}"
+                ToolTip="Details"
+                />
+      </Grid>
+    </DataTemplate>
+    <DataTemplate x:Key="TypeInfoButtonTemplate" >
+      <Grid Width="20">
+        <Button
+                Content=">>"
+                Command="{Binding Path=ShowTypeCommand}"
+                CommandParameter="{Binding}"
+                ToolTip="Details"
                 />
       </Grid>
     </DataTemplate>
@@ -71,8 +82,7 @@
           <Hyperlink 
                   NavigateUri="{Binding Path=FullName}" 
                   Command="{Binding Path=ShowTypeCommand}"
-                  CommandParameter="{Binding}"
-                  >
+                  CommandParameter="{Binding}">
             <TextBlock Text="{Binding Path=FullName}" Foreground="Black" />
           </Hyperlink>
         </TextBlock>

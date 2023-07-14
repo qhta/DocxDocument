@@ -195,6 +195,10 @@ public abstract partial class PhaseViewModel : ViewModel
   }
   #endregion
 
+  public bool IsAcceptanceVisible { get; protected set; }
+
+  public bool IsValidityVisible { get; protected set; }
+
   public bool IsTargetNameVisible { get; protected set; }
 
 }

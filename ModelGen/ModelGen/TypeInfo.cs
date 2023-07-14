@@ -174,4 +174,15 @@ public class TypeInfo : ModelElement
   }
 
   public override string ToString() => $"{TargetNamespace}.{Name}";
+
+  public bool IsTypeKindSelected(TKS tks)
+  {
+    if (tks==TKS.Any) return true;
+    if (tks.HasFlag(TKS.Class) && TypeKind==TypeKind.Class) return true;
+    if (tks.HasFlag(TKS.Enum) && TypeKind==TypeKind.Enum) return true;
+    if (tks.HasFlag(TKS.Interface) && TypeKind==TypeKind.Interface) return true;
+    if (tks.HasFlag(TKS.Struct) && TypeKind==TypeKind.Struct) return true;
+    if (tks.HasFlag(TKS.Other) && TypeKind==TypeKind.Type) return true;
+    return false;
+  }
 }
