@@ -18,6 +18,15 @@ public record RenamingTypeInfo
 
 public delegate void RenamingTypeEvent(RenamingTypeInfo info);
 
+public record ConvertingTypeInfo
+{
+  public int? CheckedTypes;
+  public int? ConvertedTypes;
+  public TypeInfo? Current;
+}
+
+public delegate void ConvertingTypeEvent(ConvertingTypeInfo info);
+
 public record CheckingUsageInfo
 {
   public int? CheckedTypes;
@@ -31,15 +40,34 @@ public static class ModelManager
 {
   public static event ScanningTypeEvent? OnScanningType;
   public static event RenamingTypeEvent? OnRenamingType;
+  public static event ConvertingTypeEvent? OnConvertingType;
   public static event CheckingUsageEvent? OnCheckingUsage;
 
   public static int CheckedRenameTypesCount { get; private set; }
   public static int RenamedTypesCount { get; private set; }
+  public static int ConvertedTypesCount { get; private set; }
+
   public static int CheckedUsageTypesCount { get; private set; }
   public static int UsedTypesCount { get; private set; }
 
   #region Type conversion
-  public static bool TryAddTypeConversion(this TypeInfo typeInfo)
+
+  public static int ConvertTypes()
+  {
+    var n = 0;
+    foreach (var typeInfo in TypeManager.AllTypes.ToArray())
+    {
+      if (ModelManager.TryConvertType(typeInfo))
+      {
+        ConvertedTypesCount++;
+        OnConvertingType?.Invoke(new ConvertingTypeInfo { CheckedTypes = CheckedRenameTypesCount, ConvertedTypes = ConvertedTypesCount, Current = typeInfo });
+        n++;
+      }
+    }
+    return n;
+  }
+
+  public static bool TryConvertType(this TypeInfo typeInfo)
   {
     if (typeInfo.IsConverted)
       return false;
@@ -62,22 +90,13 @@ public static class ModelManager
       return false;
     if (ModelConfig.Instance.TypeConversion.TryGetValue2(typeInfo.Type.FullName ?? "", out var targetName))
     {
-      //if (target.Rename)
-      //{
-      //  var targetType = target.Type;
-      //  typeInfo.NewName = new QualifiedName(targetType.Name, targetType.Namespace ?? "");
-      //  return true;
-      //}
-      //else
-      {
-        var targetType = Type.GetType(targetName);
-        if (targetType == null) return false;
-        var targetTypeInfo = TypeManager.RegisterType(targetType, typeInfo, Semantics.TypeChange);
-        if (targetTypeInfo != null)
-          targetTypeInfo.IsConvertedTo = true;
-        typeInfo.IsConverted = true;
-        return true;
-      }
+      var targetType = Type.GetType(targetName);
+      if (targetType == null) return false;
+      var targetTypeInfo = TypeManager.RegisterType(targetType, typeInfo, Semantics.TypeChange);
+      if (targetTypeInfo != null)
+        targetTypeInfo.IsConvertedTo = true;
+      typeInfo.IsConverted = true;
+      return true;
     }
     return false;
   }
@@ -151,7 +170,7 @@ public static class ModelManager
         if (sourceArgType != null)
         {
           var genericParamTypeInfo = TypeManager.RegisterType(sourceArgType);
-          genericParamTypeInfo.TryAddTypeConversion();
+          genericParamTypeInfo.TryConvertType();
           if (genericParamTypeInfo.IsConverted)
             sourceArgType = genericParamTypeInfo.GetConversionTargetOrSelf().Type;
           sourceArgType = typeof(Collection<>).MakeGenericType(new Type[] { sourceArgType });
@@ -168,7 +187,7 @@ public static class ModelManager
         if (sourceArgType != null)
         {
           var genericParamTypeInfo = TypeManager.RegisterType(sourceArgType);
-          genericParamTypeInfo.TryAddTypeConversion();
+          genericParamTypeInfo.TryConvertType();
           if (genericParamTypeInfo.IsConverted)
           {
             sourceArgType = genericParamTypeInfo.GetConversionTargetOrSelf().Type;
@@ -187,7 +206,7 @@ public static class ModelManager
         if (sourceArgType != null)
         {
           var genericParamTypeInfo = TypeManager.RegisterType(sourceArgType);
-          genericParamTypeInfo.TryAddTypeConversion();
+          genericParamTypeInfo.TryConvertType();
           if (genericParamTypeInfo.IsConverted)
             sourceArgType = genericParamTypeInfo.GetConversionTargetOrSelf().Type;
           sourceArgType = typeof(DocumentModel.ListOf<>).MakeGenericType(new Type[] { sourceArgType });
@@ -340,7 +359,7 @@ public static class ModelManager
     return targetTypeInfo;
   }
 
-  public static TypeInfo GetOriginType(this TypeInfo typeInfo)
+  public static TypeInfo? GetOriginType(this TypeInfo typeInfo)
   {
     if (typeInfo.Name == "Settings")
       TestTools.Stop();
@@ -394,25 +413,34 @@ public static class ModelManager
         result = targetType;
     if (result != null)
     {
-      result.TryAddTypeConversion();
+      result.TryConvertType();
       if (result.IsConverted)
         result = GetConversionTargetOrSelf(result);
     }
     return result ?? typeInfo;
   }
 
-  public static TypeInfo GetConversionSource(this TypeInfo typeInfo)
+  public static TypeInfo? GetConversionTarget(this TypeInfo typeInfo)
+  {
+    var result = TypeManager.GetRelatedTypes(typeInfo, Semantics.TypeChange).FirstOrDefault();
+    if (result == null && typeInfo.IsConstructedGenericType)
+      if (TryAddGenericTypeConversion(typeInfo, out var targetType))
+        result = targetType;
+    if (result != null)
+    {
+      result.TryConvertType();
+      if (result.IsConverted)
+        result = GetConversionTarget(result);
+    }
+    return result;
+  }
+
+  public static TypeInfo? GetConversionSource(this TypeInfo typeInfo)
   {
     if (typeInfo.IsConvertedTo)
       return typeInfo;
     var result = TypeManager.GetRevRelatedTypes(typeInfo, Semantics.TypeChange).FirstOrDefault();
-    return result ?? typeInfo;
-  }
-
-  public static TypeInfo GetRenameTarget(this TypeInfo typeInfo)
-  {
-    var result = TypeManager.GetRelatedTypes(typeInfo, Semantics.Rename).FirstOrDefault();
-    return result ?? typeInfo;
+    return result;
   }
 
   #endregion
@@ -651,7 +679,7 @@ public static class ModelManager
     var n = 0;
     foreach (var type in TypeManager.AllTypes.ToArray())
     {
-      if (ModelManager.RenameType(type))
+      if (ModelManager.TryRenameType(type))
         n++;
     }
     return n;
@@ -671,7 +699,7 @@ public static class ModelManager
     return n;
   }
 
-  private static bool RenameType(TypeInfo typeInfo)
+  private static bool TryRenameType(TypeInfo typeInfo)
   {
     CheckedRenameTypesCount++;
     var typeName = typeInfo.Type.FullName ?? "";

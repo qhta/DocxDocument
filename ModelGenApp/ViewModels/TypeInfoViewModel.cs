@@ -1,4 +1,6 @@
-﻿namespace ModelGenApp.ViewModels;
+﻿using ModelGen;
+
+namespace ModelGenApp.ViewModels;
 public class TypeInfoViewModel : ViewModel<TypeInfo>
 {
   public TypeInfoViewModel(TypeInfo typeInfo, bool original) : base(typeInfo)
@@ -73,7 +75,7 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
     get
     {
       var thisType = this.Model;
-      if (thisType!=null)
+      if (thisType != null)
       {
         if (thisType.TypeKind == TypeKind.Enum)
           return new EnumTypeInfoViewModel(thisType, Original);
@@ -100,11 +102,19 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
     TypeSummaryVM.Clear();
     TypeSummaryVM.Add(new TypePropViewModel("Acceptance", Acceptance, Model.IsRejected));
     TypeSummaryVM.Add(new TypePropViewModel("Validity", Validity, Model.IsInvalid));
-    TypeSummaryVM.Add(new TypePropViewModel("Kind", TypeKind));
+    TypeSummaryVM.Add(new TypePropViewModel("Kind", TypeKind.ToString().ToLower()));
     TypeSummaryVM.Add(new TypePropViewModel("Namespace", Model.OriginalNamespace));
     TypeSummaryVM.Add(new TypePropViewModel("Name", Name));
-    TypeSummaryVM.Add(new TypePropViewModel("Target namespace", Model.TargetNamespace));
-    TypeSummaryVM.Add(new TypePropViewModel("Target name", TargetName));
+    if (!String.IsNullOrEmpty(Model.TargetNamespace))
+      TypeSummaryVM.Add(new TypePropViewModel("Target namespace", Model.TargetNamespace));
+    if (!String.IsNullOrEmpty(Model.NewName))
+      TypeSummaryVM.Add(new TypePropViewModel("New name", Model.NewName));
+    if (Model.IsConverted)
+    {
+      var targetType = Model.GetConversionTarget();
+      if (targetType != null)
+        TypeSummaryVM.Add(new TypePropViewModel("Converted to", new TypeInfoViewModel(targetType, true)));
+    }
     TypeSummaryVM.Add(new TypePropViewModel("Description", Model.Description));
   }
 

@@ -67,6 +67,8 @@ public class NamespaceViewModel : ViewModel<Namespace>
         nsTypes = nsTypes.Where(item => item.IsInvalid).ToList();
       if (filter == SummaryInfoKind.RenamedTypes.ToString())
         nsTypes = nsTypes.Where(item => item.IsRenamed).ToList();
+      if (filter == SummaryInfoKind.ConvertedTypes.ToString())
+        nsTypes = nsTypes.Where(item => item.IsConverted).ToList();
     }
     var nts = Phase.NamespaceTypeSelector;
     AllTypes.LoadTypes(nsTypes);
