@@ -1,7 +1,4 @@
-﻿using DocumentFormat.OpenXml.Math;
-using DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle;
-
-namespace ModelGen;
+﻿namespace ModelGen;
 
 /// <summary>
 /// Base creator containing common methods for both specific creators.
@@ -73,9 +70,12 @@ public abstract class BaseCreator
        ModelMonitor?.ShowTypeRenames();
     }
 
-    //totalTime += SetTypeConversions();
-    //if (monitorDisplaySelector.HasFlag(MDS.TypeConversions))
-    //  ModelMonitor?.ShowTypeConversions();
+    if (stopAtPhase >= PPS.ConvertTypes)
+    {
+     totalTime += ConvertTypes();
+     if (monitorDisplaySelector.HasFlag(MDS.TypeConversions))
+       ModelMonitor?.ShowTypeConversions();
+    }
 
     //totalTime += CheckTypeUsage();
     //if (monitorDisplaySelector.HasFlag(MDS.TypeUsage))
@@ -112,7 +112,6 @@ public abstract class BaseCreator
     DateTime t2 = DateTime.Now;
     var ts = t2 - t1;
     var allTypesCount = TypeManager.AllTypes.Count();
-    //var reflectedTypesCount = TypeManager.AllTypes.Where(item => item.IsReflected).Count();
     var acceptedTypesCount = TypeManager.AcceptedTypes.Count();
     var rejectedTypesCount = TypeManager.RejectedTypes.Count();
     ModelMonitor?.ShowPhaseEnd(PPS.ScanTypes, new SummaryInfo
@@ -186,45 +185,43 @@ public abstract class BaseCreator
       PreStr = "renamed",
       Done = info.RenamedTypes,
       MidStr = "types",
-      //Summary = new Dictionary<string, object>{
-      //  {"in {0} namespaces", info.RenamedTypes ?? 0 } },
       PostStr = $"{info.Current?.OriginalNamespace}.{info.Current?.OriginalName} -> {info.Current?.TargetNamespace}.{info.Current?.Name}"
     });
   }
 
-  //protected TimeSpan SetTypeConversions()
-  //{
-  //  ModelMonitor?.ShowPhaseStart("Converting types");
-  //  DateTime t1 = DateTime.Now;
-  //  var converterTypesCount = 0;
-  //  foreach (var type in TypeManager.AllTypes.ToArray())
-  //  {
-  //    if (ModelManager.TryAddTypeConversion(type))
-  //    {
-  //      converterTypesCount++;
-  //      ModelMonitor?.ShowPhaseProgress("Converting types", new ProgressInfo
-  //      {
-  //        PreStr = "checked",
-  //        Done = checkedTypesCount,
-  //        MidStr = "types",
-  //        Summary = new Dictionary<string, object>{
-  //      {"converted", converterTypesCount } },
-  //        PostStr = $"{type.GetFullName()}"
-  //      });
-  //    }
-  //  }
-  //  DateTime t2 = DateTime.Now;
-  //  var ts = t2 - t1;
-  //  var convertedTypesCount = TypeManager.ConvertedTypes.Count();
-  //  ModelMonitor?.ShowPhaseEnd("Converting types", new SummaryInfo
-  //  {
-  //    Time = ts,
-  //    Summary = new Dictionary<string, object>{
-  //      {"Converted types", convertedTypesCount },
-  //      }
-  //  });
-  //  return ts;
-  //}
+  protected TimeSpan ConvertTypes()
+  {
+    ModelMonitor?.ShowPhaseStart(PPS.ConvertTypes, "Converting types");
+    DateTime t1 = DateTime.Now;
+    ModelManager.OnConvertingType += ModelManager_OnConvertingType;
+    var renamedTypesCount = ModelManager.ConvertTypes();
+    ModelManager.OnConvertingType -= ModelManager_OnConvertingType;
+
+    DateTime t2 = DateTime.Now;
+    var ts = t2 - t1;
+    ModelMonitor?.ShowPhaseEnd(PPS.ConvertTypes, new SummaryInfo
+    {
+      Time = ts,
+      Summary = new Dictionary<SummaryInfoKind, object>{
+        {SummaryInfoKind.AllTypes, TypeManager.AllTypes.Count() },
+        {SummaryInfoKind.ConvertedTypes, renamedTypesCount },
+        {SummaryInfoKind.InvalidTypes, TypeManager.AllTypes.Count(item=>item.IsInvalid)}, 
+        }
+    });
+    return ts;
+  }
+
+  private void ModelManager_OnConvertingType(ConvertingTypeInfo info)
+  {
+    ModelMonitor?.ShowPhaseProgress(PPS.ConvertTypes, new ProgressInfo
+    {
+      Total = TotalTypesCount,
+      PreStr = "converted",
+      Done = info.ConvertedTypes,
+      MidStr = "types",
+      PostStr = $"{info.Current?.OriginalNamespace}.{info.Current?.OriginalName} -> {info.Current?.TargetNamespace}.{info.Current?.Name}"
+    });
+  }
 
   //protected TimeSpan CheckTypeUsage()
   //{
