@@ -3,11 +3,39 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:ModelGenApp.Views"
+             xmlns:views="clr-namespace:ModelGenApp.Views"
+             xmlns:vm="clr-namespace:ModelGenApp.ViewModels"
+             xmlns:hlp="clr-namespace:ModelGenApp.Helpers"
+             xmlns:utils="clr-namespace:Qhta.WPF.DataGridUtils;assembly=Qhta.WPF.DataGridUtils"
              mc:Ignorable="d" 
+             d:DataContext="{d:DesignInstance Type={x:Type vm:TypeListViewModel}}"
              d:DesignHeight="450" d:DesignWidth="800">
   <Grid>
-    <DataGrid AutoGeneratingColumn="DataGrid_AutoGeneratingColumn"
-      ItemsSource="{Binding}"/>
+    <FrameworkElement x:Name="dummyElement" Visibility="Collapsed"/>
+    <DataGrid AutoGenerateColumns="False"
+      ItemsSource="{Binding Items}">
+      <DataGrid.Columns>
+        <DataGridTextColumn Header="Kind" Binding="{Binding Path=TypeKind}"
+                            IsReadOnly="true" />
+        <DataGridTextColumn Header="Acceptance" Binding="{Binding Path=Acceptance}"
+                            IsReadOnly="true"
+                            Visibility="{Binding DataContext.IsAcceptanceVisible,
+                                         Source={x:Reference dummyElement}, 
+                                         Converter={StaticResource BoolToVisibilityConverter}}"/>
+        <DataGridTextColumn Header="Validity" Binding="{Binding Path=Validity}"
+                            Visibility="{Binding DataContext.IsValidityVisible,
+                                         Source={x:Reference dummyElement}, 
+                                         Converter={StaticResource BoolToVisibilityConverter}}"/>
+        <DataGridTextColumn Header="Name" Binding="{Binding Path=Type.Name}"
+                            IsReadOnly="true"/>
+        <DataGridTextColumn Header="Target name" Binding="{Binding Path=TargetName}"
+                            Visibility="{Binding DataContext.IsTargetNameVisible,
+                                         Source={x:Reference dummyElement}, 
+                                         Converter={StaticResource BoolToVisibilityConverter}}"/>
+        <utils:DataGridContentBoundColumn Binding="{Binding Path=Type}"
+                                          ContentTemplate="{StaticResource TypeInfoButtonTemplate}">
+        </utils:DataGridContentBoundColumn>
+      </DataGrid.Columns>
+    </DataGrid>
   </Grid>
 </UserControl>
