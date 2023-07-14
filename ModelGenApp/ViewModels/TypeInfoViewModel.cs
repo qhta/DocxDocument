@@ -101,7 +101,9 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
     TypeSummaryVM.Add(new TypePropViewModel("Acceptance", Acceptance, Model.IsRejected));
     TypeSummaryVM.Add(new TypePropViewModel("Validity", Validity, Model.IsInvalid));
     TypeSummaryVM.Add(new TypePropViewModel("Kind", TypeKind));
+    TypeSummaryVM.Add(new TypePropViewModel("Namespace", Model.OriginalNamespace));
     TypeSummaryVM.Add(new TypePropViewModel("Name", Name));
+    TypeSummaryVM.Add(new TypePropViewModel("Target namespace", Model.TargetNamespace));
     TypeSummaryVM.Add(new TypePropViewModel("Target name", TargetName));
     TypeSummaryVM.Add(new TypePropViewModel("Description", Model.Description));
   }

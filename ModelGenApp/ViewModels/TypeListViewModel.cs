@@ -22,10 +22,6 @@ public class TypeListViewModel: ViewModel
 
   public virtual IList Items { get;} = new DispatchedCollection<TypeInfoViewModel>();
 
-  public bool IsAcceptanceVisible { get; set; } = true;
-
-  public bool IsValidityVisible { get; set; } = false;
-
   public bool IsTargetNameVisible => Owner.Phase.IsTargetNameVisible;
 
   #region ShowDetailsCommand
