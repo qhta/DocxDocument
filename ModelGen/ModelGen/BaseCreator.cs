@@ -122,7 +122,7 @@ public abstract class BaseCreator
         {SummaryInfoKind.RegisteredTypes, allTypesCount },
         {SummaryInfoKind.AcceptedTypes, acceptedTypesCount },
         {SummaryInfoKind.RejectedTypes, rejectedTypesCount },
-        {SummaryInfoKind.InvalidTypes, ModelValidator.CheckedTypesCount-ModelValidator.ValidTypesCount }, 
+        {SummaryInfoKind.InvalidTypes, ModelValidator.CheckedTypesCount-ModelValidator.ValidTypesCount}, 
         }
     });
     return ts;
@@ -141,32 +141,6 @@ public abstract class BaseCreator
       PostStr = $"{info.Current?.OriginalNamespace}.{info.Current?.OriginalName}"
     });
   }
-  //protected TimeSpan ValidateScan(NTS nameTypeSelector, MSS typeStatusSelector, TDS typeDataSelector = TDS.All)
-  //{
-  //  ModelMonitor?.ShowPhaseStart(PPS.ScanTypes, "Validating scan");
-  //  DateTime t1 = DateTime.Now;
-  //  var ModelValidator = new ModelValidator(nameTypeSelector, typeStatusSelector, typeDataSelector);
-  //  ModelValidator.OnValidatingType += ModelValidator_OnValidatingType;
-  //  ModelValidator.ValidateTypes();
-  //  ModelValidator.OnValidatingType += ModelValidator_OnValidatingType;
-  //  DateTime t2 = DateTime.Now;
-  //  var ts = t2 - t1;
-  //  var summary = new Dictionary<SummaryInfoKind, object>{
-  //      {SummaryInfoKind.ValidatedTypes, ModelValidator.CheckedTypesCount },
-  //      {SummaryInfoKind.ValidTypes, ModelValidator.ValidTypesCount }, 
-  //      {SummaryInfoKind.InvalidTypes, ModelValidator.CheckedTypesCount-ModelValidator.ValidTypesCount }, 
-  //    };
-  //  if (ModelValidator.NoDocsTypesCount > 0)
-  //    summary.Add(SummaryInfoKind.TypesWithoutDocumentation, ModelValidator.NoDocsTypesCount);
-  //  if (ModelValidator.NoSummaryTypesCount > 0)
-  //    summary.Add(SummaryInfoKind.TypesWithoutSummary, ModelValidator.NoSummaryTypesCount);
-  //  ModelMonitor?.ShowPhaseEnd(PPS.ScanTypes, new SummaryInfo
-  //  {
-  //    Time = ts,
-  //    Summary = summary
-  //  });
-  //  return ts;
-  //}
 
   private void ModelValidator_OnValidatingType(ModelValidator sender, ValidatingTypeInfo info)
   {
@@ -196,8 +170,9 @@ public abstract class BaseCreator
     {
       Time = ts,
       Summary = new Dictionary<SummaryInfoKind, object>{
-        {SummaryInfoKind.AcceptedTypes, TypeManager.AcceptedTypes.Count() },
+        {SummaryInfoKind.AllTypes, TypeManager.AllTypes.Count() },
         {SummaryInfoKind.RenamedTypes, renamedTypesCount },
+        {SummaryInfoKind.InvalidTypes, TypeManager.AllTypes.Count(item=>item.IsInvalid)}, 
         }
     });
     return ts;
@@ -216,6 +191,7 @@ public abstract class BaseCreator
       PostStr = $"{info.Current?.OriginalNamespace}.{info.Current?.OriginalName} -> {info.Current?.TargetNamespace}.{info.Current?.Name}"
     });
   }
+
   //protected TimeSpan SetTypeConversions()
   //{
   //  ModelMonitor?.ShowPhaseStart("Converting types");
