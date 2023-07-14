@@ -8,7 +8,7 @@ public enum PPS
   None = 0,
   ScanTypes =1,
   RenameTypes = 2,
-  TypeConversion = 3,
+  ConvertTypes = 3,
   UsageCheck = 4,
   FinalValidation = 5,
   CodeGeneration = 6,
