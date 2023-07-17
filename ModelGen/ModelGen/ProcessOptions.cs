@@ -5,6 +5,11 @@ public record ProcessOptions
 
   public string ScanTypeName { get; set; } = "DocumentFormat.OpenXml.Packaging.WordprocessingDocument";
 
+  public bool UseDocxFile { get; set; }
+
+  public string DocxFileName { get; set; } = "DocumentFormat.OpenXml.Packaging.WordprocessingDocument";
+
+
   public MDS Display { get; set; }
 
   public DisplayOptions? DisplayOptions { get; set; }

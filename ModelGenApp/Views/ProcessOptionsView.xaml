@@ -38,10 +38,34 @@
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="*"/>
           </Grid.ColumnDefinitions>
-          <Label Grid.Row="1" Grid.Column="0" 
+          <Label Grid.Row="0" Grid.Column="0" 
                 Margin="5"
                 VerticalAlignment="Center"
                 Content="Scan type" 
+                />
+          <ComboBox Grid.Row="0" Grid.Column="1" 
+                Margin="5"
+                MinWidth="300" 
+                VerticalContentAlignment="Center"
+                IsEditable="True"
+                Text="{Binding Path=ProcessOptionsVM.Options.ScanTypeName}"
+                ItemsSource="{Binding Path=ProcessOptionsVM.MainTypeNames}"
+                />
+          <Label Grid.Row="1" Grid.Column="0" 
+                Margin="5"
+                VerticalAlignment="Center"
+                Content="Use docx file" 
+                />
+          <CheckBox Grid.Row="1" Grid.Column="1" 
+                Margin="5"
+                MinWidth="300" 
+                VerticalContentAlignment="Center"
+                IsChecked="{Binding Path=ProcessOptionsVM.Options.GetSummaryFromDocumentation}"
+                />
+          <Label Grid.Row="1" Grid.Column="0" 
+                Margin="5"
+                VerticalAlignment="Center"
+                Content="Get summary from doc" 
                 />
           <ComboBox Grid.Row="1" Grid.Column="1" 
                 Margin="5"
