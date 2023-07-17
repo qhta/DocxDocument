@@ -163,8 +163,11 @@
           }
         }
       },
-      "Qhta.Collections/3.2.0": {
+      "Qhta.Collections/4.0.0": {
         "type": "package",
+        "dependencies": {
+          "Qhta.TextUtils": "3.1.1"
+        },
         "compile": {
           "lib/netstandard2.0/Qhta.Collections.dll": {
             "related": ".xml"
@@ -1532,6 +1535,20 @@
           "bin/placeholder/DocumentModel.Attributes.dll": {}
         }
       },
+      "ModelGenDataConfig/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Qhta.Collections": "4.0.0",
+          "Qhta.TextUtils": "3.1.1"
+        },
+        "compile": {
+          "bin/placeholder/ModelGenDataConfig.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ModelGenDataConfig.dll": {}
+        }
+      },
       "Qhta.Conversion/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -1901,15 +1918,15 @@
         "packageIcon.png"
       ]
     },
-    "Qhta.Collections/3.2.0": {
-      "sha512": "xjOPfC7TYRnTm7UPEvZ/rxyK3XExWu+ZoSDeWNr28qrXyEmHdxq5Lq2QtCLyOL+B1f+etQSAi9a4qdhq4P/j1g==",
+    "Qhta.Collections/4.0.0": {
+      "sha512": "Miz2GAQsHeVKYKxJryzG8AWAQ0ciQRPHX39qJOxhqpp1rn+xz6L1HIW9wSM5PwexIFzWs0F0ut2gaJfiojzw1g==",
       "type": "package",
-      "path": "qhta.collections/3.2.0",
+      "path": "qhta.collections/4.0.0",
       "files": [
         ".nupkg.metadata",
         "lib/netstandard2.0/Qhta.Collections.dll",
         "lib/netstandard2.0/Qhta.Collections.xml",
-        "qhta.collections.3.2.0.nupkg.sha512",
+        "qhta.collections.4.0.0.nupkg.sha512",
         "qhta.collections.nuspec",
         "readme.md"
       ]
@@ -5127,6 +5144,11 @@
       "path": "../DocumentModel.Attributes/DocumentModel.Attributes.csproj",
       "msbuildProject": "../DocumentModel.Attributes/DocumentModel.Attributes.csproj"
     },
+    "ModelGenDataConfig/1.0.0": {
+      "type": "project",
+      "path": "../../ModelGenDataConfig/ModelGenDataConfig.csproj",
+      "msbuildProject": "../../ModelGenDataConfig/ModelGenDataConfig.csproj"
+    },
     "Qhta.Conversion/1.0.0": {
       "type": "project",
       "path": "../../../MyLib/Qhta.Conversion/Qhta.Conversion.csproj",
@@ -5154,8 +5176,9 @@
       "DocumentModel >= 1.0.0",
       "DocumentModel.Attributes >= 1.0.0",
       "IgnoresAccessChecksToGenerator >= 0.6.0",
+      "ModelGenDataConfig >= 1.0.0",
       "Namotion.Reflection >= 2.1.2",
-      "Qhta.Collections >= 3.2.0",
+      "Qhta.Collections >= 4.0.0",
       "Qhta.HtmlUtils >= 2.1.0",
       "Qhta.TypeUtils >= 1.3.10.1",
       "Snork.TextWrap >= 1.0.1301",
@@ -5198,6 +5221,9 @@
             "D:\\VS\\Projects\\DocxDocument\\DocumentModel\\DocumentModel.csproj": {
               "projectPath": "D:\\VS\\Projects\\DocxDocument\\DocumentModel\\DocumentModel.csproj"
             },
+            "D:\\VS\\Projects\\DocxDocument\\ModelGenDataConfig\\ModelGenDataConfig.csproj": {
+              "projectPath": "D:\\VS\\Projects\\DocxDocument\\ModelGenDataConfig\\ModelGenDataConfig.csproj"
+            },
             "D:\\VS\\Projects\\DocxDocument\\ModelGen\\DocumentModel.Attributes\\DocumentModel.Attributes.csproj": {
               "projectPath": "D:\\VS\\Projects\\DocxDocument\\ModelGen\\DocumentModel.Attributes\\DocumentModel.Attributes.csproj"
             }
@@ -5229,7 +5255,7 @@
           },
           "Qhta.Collections": {
             "target": "Package",
-            "version": "[3.2.0, )"
+            "version": "[4.0.0, )"
           },
           "Qhta.HtmlUtils": {
             "target": "Package",
