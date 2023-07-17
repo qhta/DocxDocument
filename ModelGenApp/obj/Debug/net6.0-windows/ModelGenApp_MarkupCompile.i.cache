@@ -16,5 +16,5 @@ D:\VS\Projects\DocxDocument\ModelGenApp\App.xaml
 219-1340025078
 Views\MainWindow.xaml;Views\ModelConfigView.xaml;Views\NamespacesConfigView.xaml;Views\PhaseProgressView.xaml;Views\PhaseResultsView.xaml;Views\PhaseResultsWindow.xaml;Views\ProcessMonitorView.xaml;Views\ProcessOptionsView.xaml;Views\TypeInfoView.xaml;Views\TypeInfoWindow.xaml;Views\TypeListView.xaml;Views\TypeListWindow.xaml;
 
-False
+True
 
