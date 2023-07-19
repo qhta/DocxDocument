@@ -11,6 +11,8 @@ namespace ModelGenDataConfig;
 public class ModelConfig
 {
 
+  private ModelConfig(){ }
+
   public static ModelConfig Instance
   {
     get
