@@ -1,12 +1,6 @@
-﻿using System.Collections.Generic;
+﻿namespace ExtractReferenceDocumentation;
 
-using Microsoft.Office.Interop.Word;
-
-using Word = Microsoft.Office.Interop.Word;
-
-namespace ExtractReferenceDocumentation;
-
-public class Range
+internal class Range
 {
   public Range(int start, int end)
   {
