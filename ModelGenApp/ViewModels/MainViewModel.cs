@@ -76,7 +76,7 @@ public class MainViewModel : ViewModel
     CommandManager.InvalidateRequerySuggested();
   }
 
-  #region OpenConfigCommand    -
+  #region OpenConfigCommand
   public Command OpenConfigCommand { get; }
   
   public bool CanOpenConfig()
@@ -110,7 +110,7 @@ public class MainViewModel : ViewModel
 
   public async void StartProcess()
   {
-    var options = this.ProcessOptionsVM.Options;
+    var options = this.ProcessOptionsVM.Model;
     if (options != null)
     {
       ProcessOptionsMgr.SaveInstance((ProcessOptions)options);

@@ -462,6 +462,11 @@
             A <see cref="T:System.String" /> that represents this instance.
             </returns>
         </member>
+        <member name="P:Qhta.Xml.Reflection.SerializationItemInfo.QualifiedName">
+            <summary>
+            Gets the the qualified name (XmlName, XmlNamespace) of the element
+            </summary>
+        </member>
         <member name="T:Qhta.Xml.Reflection.SerializationMemberInfo">
             <summary>
               Represents the information about property or field needed for serialization/deserialization.
@@ -834,6 +839,11 @@
             <returns>
             A <see cref="T:System.String" /> that represents this instance.
             </returns>
+        </member>
+        <member name="P:Qhta.Xml.Reflection.SerializationTypeInfo.QualifiedName">
+            <summary>
+            Gets the the qualified name (XmlName, XmlNamespace) of the element
+            </summary>
         </member>
         <member name="T:Qhta.Xml.Reflection.TypeInfoCollection`1">
             <summary>

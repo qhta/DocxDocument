@@ -41,14 +41,21 @@ public abstract class BaseCreator
     Debug.Assert(assembly != null);
     Type? rootType = assembly.GetType(options.ScanTypeName, true);
     Debug.Assert(rootType != null);
-    RunOn(rootType, (PPS)Enum.ToObject(typeof(PPS), options.StopAtPhase), options.Display, options.DisplayOptions);
+    RunOn(rootType, options);//(PPS)Enum.ToObject(typeof(PPS), options.StopAtPhase), options.Display, options.DisplayOptions);
   }
 
-  public void RunOn(Type type, PPS stopAtPhase, MDS monitorDisplaySelector = MDS.None, DisplayOptions? displayOptions = null)
+  protected ProcessOptions Options { get; set; } = new ProcessOptions();
+
+  public void RunOn(Type type, ProcessOptions options)
   {
+    Options = options;
     IsRun = true;
+    var displayOptions = Options.DisplayOptions;
     if (displayOptions == null)
       displayOptions = new DisplayOptions();
+    var stopAtPhase = (PPS)Enum.ToObject(typeof(PPS), Options.StopAtPhase);
+    var monitorDisplaySelector = Options.Display;
+
     ModelMonitor?.ShowProcessStart($"Start processing {type}");
     SourceAssembly = type.Assembly;
     TotalTypesCount = SourceAssembly.ExportedTypes.Count();
@@ -104,6 +111,14 @@ public abstract class BaseCreator
     ModelManager.ScanType(type);
     ModelManager.OnScanningType -= ModelManager_OnScanningType;
 
+    if (Options.UseModelDocFile)
+    {
+    var ModelDocumenter = new ModelDocumenter(NTS.Origin, MSS.Accepted, TDS.Metadata);
+      //ModelDocumenter.OnDocumentingType += ModelDocumenter_OnDocumentingType;
+      //ModelDocumenter.DocumentTypes();
+      //ModelDocumenter.OnDocumentingType += ModelDocumenter_OnDocumentingType;
+    }
+
     var ModelValidator = new ModelValidator(NTS.Origin, MSS.Accepted, TDS.Metadata);
     ModelValidator.OnValidatingType += ModelValidator_OnValidatingType;
     ModelValidator.ValidateTypes();
@@ -137,6 +152,20 @@ public abstract class BaseCreator
       MidStr = "types",
       Summary = new Dictionary<string, object>{
         {"in {0} namespaces", info.RegisteredNamespaces ?? 0 } },
+      PostStr = $"{info.Current?.OriginalNamespace}.{info.Current?.OriginalName}"
+    });
+  }
+
+  private void ModelDocumenter_OnDocumentingType(ModelDocumenter sender, DocumentingTypeInfo info)
+  {
+    ModelMonitor?.ShowPhaseProgress(PPS.ScanTypes, new ProgressInfo
+    {
+      PreStr = "documenting",
+      Done = info.CheckedTypes,
+      Total = info.TotalTypes,
+      MidStr = "types",
+      Summary = new Dictionary<string, object>{
+        {"documented", info.DocumentedTypes ?? 0 } },
       PostStr = $"{info.Current?.OriginalNamespace}.{info.Current?.OriginalName}"
     });
   }
