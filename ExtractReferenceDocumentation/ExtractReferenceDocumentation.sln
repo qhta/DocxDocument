@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtractReferenceDocumentati
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModelGenDataConfig", "..\ModelGenDataConfig\ModelGenDataConfig.csproj", "{051ACBFA-C1F2-4DDF-9B61-08969C010B7C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelDocumentation", "..\ModelDocumentation\ModelDocumentation.csproj", "{F6BA4AA2-3B60-4CF8-8482-CE9F8D3F415B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModelDocumentation", "..\ModelDocumentation\ModelDocumentation.csproj", "{F6BA4AA2-3B60-4CF8-8482-CE9F8D3F415B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

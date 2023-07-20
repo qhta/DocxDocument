@@ -22,6 +22,7 @@ global using Qhta.DispatchedObjects;
 global using Qhta.TextUtils;
 global using Qhta.TypeUtils;
 
+global using ModelGenDataConfig;
 global using ModelGen;
 global using ModelGenApp.Commands;
 global using ModelGenApp.Helpers;

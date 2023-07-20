@@ -191,7 +191,7 @@
           "lib/netstandard2.0/Qhta.HtmlUtils.dll": {}
         }
       },
-      "Qhta.TestHelper/2.2.0": {
+      "Qhta.TestHelper/3.0.0": {
         "type": "package",
         "compile": {
           "lib/net6.0/Qhta.TestHelper.dll": {
@@ -229,6 +229,29 @@
         },
         "runtime": {
           "lib/net6.0/Qhta.TypeUtils.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Qhta.Xml.Serialization/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Qhta.Conversion": "2.0.0",
+          "Qhta.TextUtils": "3.1.1",
+          "Qhta.TypeUtils": "1.3.10.1",
+          "Qhta.Xml": "2.1.0",
+          "Qhta.Xml.Reflection": "2.0.0",
+          "System.CodeDom": "7.0.0",
+          "System.Collections.Specialized": "4.3.0",
+          "System.Security.Permissions": "7.0.0"
+        },
+        "compile": {
+          "lib/net6.0/Qhta.Xml.Serialization.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Qhta.Xml.Serialization.dll": {
             "related": ".xml"
           }
         }
@@ -1535,6 +1558,19 @@
           "bin/placeholder/DocumentModel.Attributes.dll": {}
         }
       },
+      "ModelDocumentation/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Qhta.Xml.Serialization": "2.1.0"
+        },
+        "compile": {
+          "bin/placeholder/ModelDocumentation.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ModelDocumentation.dll": {}
+        }
+      },
       "ModelGenDataConfig/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -1595,28 +1631,6 @@
         },
         "runtime": {
           "bin/placeholder/Qhta.Xml.Reflection.dll": {}
-        }
-      },
-      "Qhta.Xml.Serialization/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "Qhta.Collections": "2.0.0",
-          "Qhta.Conversion": "1.0.0",
-          "Qhta.TestHelper": "2.2.0",
-          "Qhta.TextUtils": "3.1.1",
-          "Qhta.TypeUtils": "1.3.10",
-          "Qhta.Xml": "1.0.0",
-          "Qhta.Xml.Reflection": "1.0.0",
-          "System.CodeDom": "7.0.0",
-          "System.Collections.Specialized": "4.3.0",
-          "System.Security.Permissions": "7.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Qhta.Xml.Serialization.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Qhta.Xml.Serialization.dll": {}
         }
       }
     }
@@ -1942,17 +1956,19 @@
         "qhta.htmlutils.nuspec"
       ]
     },
-    "Qhta.TestHelper/2.2.0": {
-      "sha512": "BHE3QymuDXMf2aKqBrPCuXDJvqniP9AzmUXJklCk5O/2eN3QzFy3weuI4SK0+quPlEfVY/lRQPGSH/7I6zcAww==",
+    "Qhta.TestHelper/3.0.0": {
+      "sha512": "bZfG6c38uAORKjTytJ22GZ0ZgMU4QE0jYVEe/eXYlfHh1DeSnKZpBJi+F9RoU9kowwUWA76U9vY90YTrUOs3og==",
       "type": "package",
-      "path": "qhta.testhelper/2.2.0",
+      "path": "qhta.testhelper/3.0.0",
       "files": [
         ".nupkg.metadata",
         "lib/net6.0/Qhta.TestHelper.dll",
         "lib/net6.0/Qhta.TestHelper.xml",
         "lib/net7.0/Qhta.TestHelper.dll",
         "lib/net7.0/Qhta.TestHelper.xml",
-        "qhta.testhelper.2.2.0.nupkg.sha512",
+        "lib/netstandard2.0/Qhta.TestHelper.dll",
+        "lib/netstandard2.0/Qhta.TestHelper.xml",
+        "qhta.testhelper.3.0.0.nupkg.sha512",
         "qhta.testhelper.nuspec",
         "readme.md"
       ]
@@ -1986,6 +2002,21 @@
         "lib/netstandard2.0/Qhta.TypeUtils.xml",
         "qhta.typeutils.1.3.10.1.nupkg.sha512",
         "qhta.typeutils.nuspec",
+        "readme.md"
+      ]
+    },
+    "Qhta.Xml.Serialization/2.1.0": {
+      "sha512": "0yITLkoqYOr36EFjS6YAzokbq9eNj2ktQutm+GTgqH3dCeW5NiJrzfJO3MtWlnnIVhBo0dUcGcCBy2leZeI0vg==",
+      "type": "package",
+      "path": "qhta.xml.serialization/2.1.0",
+      "files": [
+        ".nupkg.metadata",
+        "lib/net6.0/Qhta.Xml.Serialization.dll",
+        "lib/net6.0/Qhta.Xml.Serialization.xml",
+        "lib/netstandard2.0/Qhta.Xml.Serialization.dll",
+        "lib/netstandard2.0/Qhta.Xml.Serialization.xml",
+        "qhta.xml.serialization.2.1.0.nupkg.sha512",
+        "qhta.xml.serialization.nuspec",
         "readme.md"
       ]
     },
@@ -5144,6 +5175,11 @@
       "path": "../DocumentModel.Attributes/DocumentModel.Attributes.csproj",
       "msbuildProject": "../DocumentModel.Attributes/DocumentModel.Attributes.csproj"
     },
+    "ModelDocumentation/1.0.0": {
+      "type": "project",
+      "path": "../../ModelDocumentation/ModelDocumentation.csproj",
+      "msbuildProject": "../../ModelDocumentation/ModelDocumentation.csproj"
+    },
     "ModelGenDataConfig/1.0.0": {
       "type": "project",
       "path": "../../ModelGenDataConfig/ModelGenDataConfig.csproj",
@@ -5163,11 +5199,6 @@
       "type": "project",
       "path": "../../../MyLib/Qhta.Xml.Reflection/Qhta.Xml.Reflection.csproj",
       "msbuildProject": "../../../MyLib/Qhta.Xml.Reflection/Qhta.Xml.Reflection.csproj"
-    },
-    "Qhta.Xml.Serialization/1.0.0": {
-      "type": "project",
-      "path": "../../../MyLib/Qhta.Serialization/Qhta.Xml.Serialization.csproj",
-      "msbuildProject": "../../../MyLib/Qhta.Serialization/Qhta.Xml.Serialization.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -5176,10 +5207,12 @@
       "DocumentModel >= 1.0.0",
       "DocumentModel.Attributes >= 1.0.0",
       "IgnoresAccessChecksToGenerator >= 0.6.0",
+      "ModelDocumentation >= 1.0.0",
       "ModelGenDataConfig >= 1.0.0",
       "Namotion.Reflection >= 2.1.2",
       "Qhta.Collections >= 4.0.0",
       "Qhta.HtmlUtils >= 2.1.0",
+      "Qhta.TestHelper >= 3.0.0",
       "Qhta.TypeUtils >= 1.3.10.1",
       "Snork.TextWrap >= 1.0.1301",
       "System.IO.Packaging >= 7.0.0"
@@ -5221,6 +5254,9 @@
             "D:\\VS\\Projects\\DocxDocument\\DocumentModel\\DocumentModel.csproj": {
               "projectPath": "D:\\VS\\Projects\\DocxDocument\\DocumentModel\\DocumentModel.csproj"
             },
+            "D:\\VS\\Projects\\DocxDocument\\ModelDocumentation\\ModelDocumentation.csproj": {
+              "projectPath": "D:\\VS\\Projects\\DocxDocument\\ModelDocumentation\\ModelDocumentation.csproj"
+            },
             "D:\\VS\\Projects\\DocxDocument\\ModelGenDataConfig\\ModelGenDataConfig.csproj": {
               "projectPath": "D:\\VS\\Projects\\DocxDocument\\ModelGenDataConfig\\ModelGenDataConfig.csproj"
             },
@@ -5260,6 +5296,10 @@
           "Qhta.HtmlUtils": {
             "target": "Package",
             "version": "[2.1.0, )"
+          },
+          "Qhta.TestHelper": {
+            "target": "Package",
+            "version": "[3.0.0, )"
           },
           "Qhta.TypeUtils": {
             "target": "Package",

@@ -17,6 +17,7 @@ global using Qhta.TypeUtils;
 global using DocumentModel;
 global using Task = System.Threading.Tasks.Task;
 global using ModelGenDataConfig;
+global using ModelDocumentation;
 
 
 global using DX = DocumentFormat.OpenXml;

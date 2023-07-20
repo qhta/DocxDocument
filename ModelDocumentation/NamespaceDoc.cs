@@ -1,13 +1,16 @@
 ﻿namespace ModelDocumentation;
 public class NamespaceDoc
 {
+  public NamespaceDoc() { }
+
   public NamespaceDoc(string name)
   {
     Name = name;
   }
 
-  public string Name {get; private set; }
-  public string? Summary {get; private set;}
+  public string Name {get; set; } = null!;
 
-  public Types Types {get; private set;} = new();
+  public string? Summary {get; set;}
+
+  public Types Types {get; set;} = new();
 }

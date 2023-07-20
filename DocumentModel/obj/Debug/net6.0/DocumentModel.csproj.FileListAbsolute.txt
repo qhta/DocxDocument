@@ -23,3 +23,5 @@ D:\VS\Projects\DocxDocument\DocumentModel\obj\Debug\net6.0\refint\DocumentModel.
 D:\VS\Projects\DocxDocument\DocumentModel\obj\Debug\net6.0\DocumentModel.xml
 D:\VS\Projects\DocxDocument\DocumentModel\obj\Debug\net6.0\DocumentModel.pdb
 D:\VS\Projects\DocxDocument\DocumentModel\obj\Debug\net6.0\ref\DocumentModel.dll
+D:\VS\Projects\DocxDocument\DocumentModel\bin\Debug\net6.0\Qhta.Xml.xml
+D:\VS\Projects\DocxDocument\DocumentModel\bin\Debug\net6.0\Qhta.Conversion.xml

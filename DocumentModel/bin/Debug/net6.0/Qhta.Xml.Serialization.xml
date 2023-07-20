@@ -6,12 +6,17 @@
     <members>
         <member name="T:Qhta.Xml.Serialization.QXmlReader">
             <summary>
-            Wrapper for system XmlReader used by QXmlSerializer
+            Wrapper for system XmlReader used by QXmlSerializer.
             </summary>
         </member>
         <member name="M:Qhta.Xml.Serialization.QXmlReader.#ctor(System.Xml.XmlReader)">
             <summary>
             Initializing constructor
+            </summary>
+        </member>
+        <member name="P:Qhta.Xml.Serialization.QXmlReader.BaseXmlReader">
+            <summary>
+            Base XmlReader reference.
             </summary>
         </member>
         <member name="M:Qhta.Xml.Serialization.QXmlReader.op_Implicit(Qhta.Xml.Serialization.QXmlReader)~System.Xml.XmlReader">
@@ -112,6 +117,16 @@
         <member name="P:Qhta.Xml.Serialization.QXmlReader.XmlLang">
             <summary>
             Wrapper for XmlLang property.
+            </summary>
+        </member>
+        <member name="P:Qhta.Xml.Serialization.QXmlReader.LineNumber">
+            <summary>
+            Gets line number of XML text file where the exception occured.
+            </summary>
+        </member>
+        <member name="P:Qhta.Xml.Serialization.QXmlReader.LinePosition">
+            <summary>
+            Gets the position in line of XML text file where the exception occured.
             </summary>
         </member>
         <member name="P:Qhta.Xml.Serialization.QXmlReader.Settings">
@@ -393,6 +408,11 @@
         <member name="M:Qhta.Xml.Serialization.QXmlSerializer.DeserializeObject(System.Xml.XmlReader)">
             <summary>
               Main deserialization entry
+            </summary>
+        </member>
+        <member name="M:Qhta.Xml.Serialization.QXmlSerializer.DeserializeObject(Qhta.Xml.IXmlReader)">
+            <summary>
+              Secondary deserialization entry
             </summary>
         </member>
         <member name="P:Qhta.Xml.Serialization.QXmlSerializer.XmlReaderSettings">
@@ -899,7 +919,14 @@
         </member>
         <member name="M:Qhta.Xml.Serialization.QXmlSerializer.SerializeObject(System.Xml.XmlWriter,System.Object)">
             <summary>
-              Main serialization entry.
+              Main serialization entry for System.Xml.XmlWriter.
+            </summary>
+            <param name="xmlWriter">The target of serialization.</param>
+            <param name="obj">Serialized object.</param>
+        </member>
+        <member name="M:Qhta.Xml.Serialization.QXmlSerializer.SerializeObject(Qhta.Xml.IXmlWriter,System.Object)">
+            <summary>
+              Main serialization entry for IXmlWriter.
             </summary>
             <param name="xmlWriter">The target of serialization.</param>
             <param name="obj">Serialized object.</param>
@@ -1286,7 +1313,14 @@
         </member>
         <member name="M:Qhta.Xml.Serialization.QXmlSerializer.Serialize(System.Xml.XmlWriter,System.Object)">
             <summary>
-            Serializes an object to the XmlWriter.
+            Serializes an object to System.XmlWriter.
+            </summary>
+            <param name="xmlWriter">The target of serialization.</param>
+            <param name="obj">Serialized object.</param>
+        </member>
+        <member name="M:Qhta.Xml.Serialization.QXmlSerializer.Serialize(Qhta.Xml.IXmlWriter,System.Object)">
+            <summary>
+            Serializes an object to IXmlWriter.
             </summary>
             <param name="xmlWriter">The target of serialization.</param>
             <param name="obj">Serialized object.</param>
@@ -1307,7 +1341,14 @@
         </member>
         <member name="M:Qhta.Xml.Serialization.QXmlSerializer.Deserialize(System.Xml.XmlReader)">
             <summary>
-            Deserialized and object from the XmlReader.
+            Deserialized and object from the System.XmlReader.
+            </summary>
+            <param name="xmlReader">Source of serialized data.</param>
+            <returns>Deserialized object.</returns>
+        </member>
+        <member name="M:Qhta.Xml.Serialization.QXmlSerializer.Deserialize(Qhta.Xml.IXmlReader)">
+            <summary>
+            Deserialized and object from the IXmlReader.
             </summary>
             <param name="xmlReader">Source of serialized data.</param>
             <returns>Deserialized object.</returns>
@@ -1392,12 +1433,17 @@
         </member>
         <member name="T:Qhta.Xml.Serialization.QXmlWriter">
             <summary>
-            Wrapper for system XmlWriter used by QXmlSerializer
+            Wrapper for system XmlWriter used by QXmlSerializer.
             </summary>
         </member>
         <member name="M:Qhta.Xml.Serialization.QXmlWriter.#ctor(System.Xml.XmlWriter)">
             <summary>
             Initializing constructor
+            </summary>
+        </member>
+        <member name="P:Qhta.Xml.Serialization.QXmlWriter.BaseXmlWriter">
+            <summary>
+            Base XmlWriter reference.
             </summary>
         </member>
         <member name="M:Qhta.Xml.Serialization.QXmlWriter.op_Implicit(Qhta.Xml.Serialization.QXmlWriter)~System.Xml.XmlWriter">
@@ -1646,7 +1692,7 @@
         </member>
         <member name="T:Qhta.Xml.Serialization.SerializationCase">
             <summary>
-            Specifies mode for name case change
+            Specifies modes for name case change.
             </summary>
         </member>
         <member name="F:Qhta.Xml.Serialization.SerializationCase.Unchanged">
@@ -1865,7 +1911,7 @@
               <see cref="P:Qhta.Xml.Serialization.XmlInvalidOperationException.LineNumber" /> and <see cref="P:Qhta.Xml.Serialization.XmlInvalidOperationException.LinePosition" />.
             </summary>
         </member>
-        <member name="M:Qhta.Xml.Serialization.XmlInvalidOperationException.#ctor(System.String,System.Xml.XmlReader,System.Exception,System.String)">
+        <member name="M:Qhta.Xml.Serialization.XmlInvalidOperationException.#ctor(System.String,Qhta.Xml.IXmlReader,System.Exception,System.String)">
             <summary>
               Extending constructor.
               If <paramref name="xmlReader" /> is <see cref="T:System.Xml.XmlTextReader" />
@@ -1887,6 +1933,11 @@
             </summary>
         </member>
         <member name="M:Qhta.Xml.Serialization.XmlInvalidOperationException.ComposeMessage(System.String,System.Xml.XmlReader)">
+            <summary>
+            Composes message adding "in line ... at position ...
+            </summary>
+        </member>
+        <member name="M:Qhta.Xml.Serialization.XmlInvalidOperationException.ComposeMessage(System.String,Qhta.Xml.IXmlReader)">
             <summary>
             Composes message adding "in line ... at position ...
             </summary>

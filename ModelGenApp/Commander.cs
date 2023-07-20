@@ -14,7 +14,7 @@ public class Commander
   private BaseCreator? creator { get; set; }
   public Task? Runner { get; set; }
 
-  public CancellationToken StartGenerateModelTypes(Type rootType, MDS display = MDS.None, DisplayOptions? options = null)
+  public CancellationToken StartGenerateModelTypes(Type rootType, ProcessOptions options)
   {
     var filePath = Assembly.GetExecutingAssembly().Location;
     var index = filePath.IndexOf(@"\bin");
@@ -27,7 +27,7 @@ public class Commander
     //creator.ModelMonitor=new ModelDisplay();
     var cancellationToken = new CancellationToken();
     Runner = Task.Factory.StartNew(() =>
-      { creator.RunOn(rootType, PPS.CodeGeneration, display, options); }, cancellationToken);
+      { creator.RunOn(rootType, options); }, cancellationToken);
     return cancellationToken;
   }
 

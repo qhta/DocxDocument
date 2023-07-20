@@ -30,6 +30,7 @@ internal class DocXmlBuilder
     ModelDoc = new ModelDoc();
     ProcessChapters(chapters);
     ModelDoc.SaveData();
+    ModelDoc.LoadData();
   }
 
 

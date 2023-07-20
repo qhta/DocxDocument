@@ -20,7 +20,6 @@ D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Namotion.Reflec
 D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
 D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Qhta.Collections.dll
 D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Qhta.HtmlUtils.dll
-D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Qhta.TestHelper.dll
 D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Qhta.TextUtils.dll
 D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Qhta.TypeUtils.dll
 D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Snork.TextWrap.dll
@@ -50,8 +49,6 @@ D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\DocumentModel.A
 D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Qhta.Conversion.pdb
 D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Qhta.Xml.Reflection.pdb
 D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Qhta.Xml.Reflection.xml
-D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Qhta.Xml.Serialization.pdb
-D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Qhta.Xml.Serialization.xml
 D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Qhta.Xml.pdb
 D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\ProcessOptionsView.baml
 D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\ModelGenApp.g.resources
@@ -93,3 +90,10 @@ D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\TypeInfoV
 D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\TypeInfoWindow.g.cs
 D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\TypeInfoView.baml
 D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\TypeInfoWindow.baml
+D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\ModelGenDataConfig.dll
+D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\ModelGenDataConfig.pdb
+D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Qhta.Conversion.xml
+D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Qhta.Xml.xml
+D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\ModelDocumentation.dll
+D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\ModelDocumentation.pdb
+D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Qhta.TestHelper.dll

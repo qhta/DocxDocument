@@ -125,8 +125,6 @@ public class ConverterGenerator : BaseCodeGenerator
   private bool GenerateConverterClass(TypeInfo type)
   {
     var typeName = type.Name;
-    if (typeName == "Rsids")
-      TestTools.Stop();
     var aNamespace = type.TargetNamespace;
     aNamespace = aNamespace.Replace("DocumentModel.", "");
     var implOutputPath = Path.Combine(OutputPath, aNamespace);

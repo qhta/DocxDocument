@@ -39,7 +39,7 @@ namespace DocumentModel;
 [XmlItemElement(typeof(Boolean))]
 [XmlItemElement(typeof(Decimal))]
 [XmlItemElement(typeof(HexInt))]
-[XmlItemElement("null", Value = null)]
+[XmlItemElement("null", null)]
 [XmlItemElement(typeof(Guid))]
 [XmlItemElement(typeof(byte[]), ConverterType = typeof(Base64TypeConverter), ElementName="Blob")]
 [XmlItemElement(typeof(Variant))]

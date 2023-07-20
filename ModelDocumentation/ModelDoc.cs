@@ -5,7 +5,7 @@ using ModelDocumentation;
 
 using Qhta.Xml.Serialization;
 
-namespace ModelGenDataConfig;
+namespace ModelDocumentation;
 public class ModelDoc
 {
   public ModelDoc() { }
@@ -27,6 +27,11 @@ public class ModelDoc
   public void SaveData()
   {
     SaveData(GetFilename());
+  }
+
+  public void LoadData()
+  {
+    LoadData(GetFilename());
   }
 
   public string GetFilename()
