@@ -1,33 +1,66 @@
-﻿namespace ModelGenApp.ViewModels;
-public partial class ProcessOptionsViewModel: ViewModel
+﻿using Microsoft.Win32;
+
+namespace ModelGenApp.ViewModels;
+public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
 {
+
+  public ProcessOptionsViewModel() : base(ProcessOptionsMgr.GetInstance())
+  {
+    _MainTypeNames = GetMainTypeNames();
+    BrowseModelDocFileCommand = new RelayCommand(BrowseModelDoc) { Name = "BrowseModelDocFile" };
+  }
 
   public int StopAtPhase
   {
-    get { return Options.StopAtPhase; }
+    get { return Model.StopAtPhase; }
     set
     {
-      if (Options.StopAtPhase != value)
+      if (Model.StopAtPhase != value)
       {
-        Options.StopAtPhase = value;
+        Model.StopAtPhase = value;
         NotifyPropertyChanged(nameof(StopAtPhase));
       }
     }
   }
 
-  public ProcessOptions Options
+  public string ScanTypeName
   {
-    get { return _Options; }
+    get { return Model.ScanTypeName; }
     set
     {
-      if (_Options != value)
+      if (Model.ScanTypeName != value)
       {
-        _Options = value;
-        NotifyPropertyChanged(nameof(Options));
+        Model.ScanTypeName = value;
+        NotifyPropertyChanged(nameof(ScanTypeName));
       }
     }
   }
-  private ProcessOptions _Options;
+
+  public bool UseModelDocFile
+  {
+    get { return Model.UseModelDocFile; }
+    set
+    {
+      if (Model.UseModelDocFile != value)
+      {
+        Model.UseModelDocFile = value;
+        NotifyPropertyChanged(nameof(UseModelDocFile));
+      }
+    }
+  }
+
+  public string ModelDocFileName
+  {
+    get { return Model.ModelDocFileName; }
+    set
+    {
+      if (Model.ModelDocFileName != value)
+      {
+        Model.ModelDocFileName = value;
+        NotifyPropertyChanged(nameof(ModelDocFileName));
+      }
+    }
+  }
 
   public ObservableCollection<string> MainTypeNames
   {
@@ -43,21 +76,34 @@ public partial class ProcessOptionsViewModel: ViewModel
   }
   private ObservableCollection<string> _MainTypeNames;
 
-  public ProcessOptionsViewModel()
-  {
-    _Options = ProcessOptionsMgr.GetInstance();
-    _MainTypeNames = GetMainTypeNames();
-  }
-
   private ObservableCollection<string> GetMainTypeNames()
   {
     var assembly = Assembly.Load("DocumentFormat.OpenXml");
     var typeNames = assembly.GetTypes().Where(type => !type.IsCompilerGenerated() && !type.IsAbstract)
     .Select(type => type.FullName ?? "")
-    .Where(name=>name.StartsWith("DocumentFormat.OpenXml.Packaging")).ToList();
+    .Where(name => name.StartsWith("DocumentFormat.OpenXml.Packaging")).ToList();
     typeNames.Sort();
-    var sortedTypeNames = typeNames.Where(name=>name.EndsWith("Document")).ToList();
-    sortedTypeNames.AddRange(typeNames.Where(name=>name.EndsWith("Part")).ToList());
+    var sortedTypeNames = typeNames.Where(name => name.EndsWith("Document")).ToList();
+    sortedTypeNames.AddRange(typeNames.Where(name => name.EndsWith("Part")).ToList());
     return new ObservableCollection<string>(sortedTypeNames);
   }
+
+  #region BrowseModelDocFileCommand
+  /// <summary>
+  /// A command to store config data
+  /// </summary>
+  public Command BrowseModelDocFileCommand { get; }
+
+  /// <summary>
+  /// Execute method of config data store.
+  /// </summary>
+  public void BrowseModelDoc()
+  {
+    var dialog = new OpenFileDialog();
+    dialog.Filter = "Xml file (*.xml)|*.xlm|All files (*.*)|*.*";
+    if (dialog.ShowDialog() == true)
+    {
+    }
+  }
+  #endregion
 }

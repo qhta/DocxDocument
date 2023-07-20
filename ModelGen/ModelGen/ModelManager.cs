@@ -315,8 +315,6 @@ public static class ModelManager
 
   public static TypeInfo GetTargetType(this PropInfo propInfo)
   {
-    if (propInfo.Name == "DocumentId")
-      TestTools.Stop();
     if (propInfo.TargetType != null)
       return propInfo.TargetType;
     var typeInfo = propInfo.PropertyType;
