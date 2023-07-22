@@ -104,7 +104,7 @@ public static class DocumentationReader
     var isDocsModified = false;
     var schema = element.Schema ?? new ElementSchema();
     var isSchemaModified = false;
-    var items = new List<XElement>();
+    string? summaryText = null;
     foreach (var xElement in documentation.Elements())
     {
       if (xElement.Name == "summary")
@@ -113,63 +113,44 @@ public static class DocumentationReader
         {
           foreach (var subElement in xElement.Elements())
           {
+            var text = subElement.Value.Trim();
             if (subElement.Name == "para")
             {
-              var text = subElement.Value.Trim();
-              if (text.StartsWith("Represents the following"))
+              if (RecognizeTagContainingString(text, "Represents the following", out var tag, out var attrib))
               {
-                int k = text.IndexOf(':');
-                if (k >= 0)
-                {
-                  var tag = text.Substring(k + 1).Trim();
-                  if (tag.EndsWith('.'))
-                    tag = tag.Substring(0, tag.Length - 1).Trim();
-                  if (text.Contains("attribute"))
-                    schema.SchemaIsAttrib = true;
-                  schema.SchemaTag = tag;
-                  isSchemaModified = true;
-                }
-              }
-              else if (text.StartsWith("When the object is serialized out as xml, it's qualified name is "))
-              {
-                int k = "When the object is serialized out as xml, it's qualified name is ".Length;
-                var tag = text.Substring(k).Trim();
-                if (tag.EndsWith('.'))
-                  tag = tag.Substring(0, tag.Length - 1).Trim();
+                schema.SchemaIsAttrib = attrib;
                 schema.SchemaTag = tag;
                 isSchemaModified = true;
               }
-              else if (text.StartsWith("This class is available in "))
+              else if (RecognizeTagContainingString(text, "When the object is serialized out as xml, it's qualified name is", out tag, out attrib))
               {
-                int k = "This class is available in ".Length;
-                text = text.Substring(k).Trim();
-                if (text.EndsWith('.'))
-                  text = text.Substring(0, text.Length - 1).Trim();
+                schema.SchemaIsAttrib = attrib;
+                schema.SchemaTag = tag;
+                isSchemaModified = true;
+              }
+              else if (RecognizeAvailabilityContainingString(text, "This class is available in ", out var availability))
+              {
                 element.Availability = text;
               }
-              else
+              else if (RecognizeAvailabilityContainingString(text, "this property is only available in ", out availability))
               {
-                int k = text.IndexOf("this property is only available in ");
-                if (k >= 0)
-                {
-                  k += "this property is only available in ".Length;
-                  text = text.Substring(k).Trim();
-                  if (text.EndsWith('.'))
-                    text = text.Substring(0, text.Length - 1).Trim();
                 element.Availability = text;
-                }
-                else
-                  items.Add(subElement);
               }
+              else if (summaryText == null)
+                summaryText = text;
             }
             else
-              items.Add(subElement);
+            {
+              if (summaryText == null)
+                summaryText = text;
+            }
           }
         }
         else
         {
           var text = xElement.Value.Trim();
-          items.Add(new XElement("para", text));
+          if (summaryText == null)
+            summaryText = text;
         }
       }
       else if (xElement.Name == "remark")
@@ -188,29 +169,66 @@ public static class DocumentationReader
           }
         }
       }
-      //else 
-      //if (xElement.Name == "inheritdoc"  || xElement.Name == "typeparam")
-      //{
-      //  // ignore
-      //}
-      //else
-      //  ;
     }
-    if (items.Count == 1 && items.First().Name == "para")
-    {
-      docs.SummaryText = items.First().Value;
-      isDocsModified = true;
-    }
-    else if (items.Count > 0)
+    if (summaryText != null)
     {
       docs.Summary = new XElement("summary");
-      foreach (var item in items)
-        docs.Summary.Add(item);
+      docs.Summary.Add(new XElement("para", summaryText));
       isDocsModified = true;
     }
     if (isDocsModified)
       element.Documentation = docs;
     if (isSchemaModified)
       element.Schema = schema;
+  }
+
+  private static bool RecognizeTagContainingString(string text, string startingText, out string? tag, out bool attrib)
+  {
+    tag = null;
+    attrib = false;
+    if (text.StartsWith(startingText))
+    {
+      var restStr = text.Substring(startingText.Length).Trim();
+      if (restStr.StartsWith(":"))
+        restStr = text.Substring(1).Trim();
+      if (restStr.EndsWith('.'))
+        restStr = restStr.Substring(0, restStr.Length - 1).Trim();
+      if (text.Contains("attribute"))
+        attrib = true;
+      tag = GetTag(restStr);
+      return true;
+    }
+    return false;
+  }
+
+  private static string? GetTag(string str)
+  {
+    int k = str.IndexOf(':');
+    if (k >= 0)
+    {
+      var restStr = str.Substring(k + 1).Trim();
+      if (restStr.EndsWith('.'))
+        restStr = restStr.Substring(0, restStr.Length - 1).Trim();
+      return restStr;
+    }
+    else
+      return str;
+  }
+
+  private static bool RecognizeAvailabilityContainingString(string text, string specificText, out string? availability)
+  {
+    availability = null;
+    int k = text.IndexOf(specificText);
+    if (text.StartsWith(specificText))
+    {
+      var restStr = text.Substring(k+specificText.Length).Trim();
+      if (restStr.StartsWith(":"))
+        restStr = text.Substring(1).Trim();
+      if (restStr.EndsWith('.'))
+        restStr = restStr.Substring(0, restStr.Length - 1).Trim();
+      availability = GetTag(restStr);
+      return true;
+    }
+    return false;
   }
 }

@@ -15,29 +15,29 @@ public delegate void DocumentingTypeEvent(ModelDocumenter sender, DocumentingTyp
 /// </summary>
 public class ModelDocumenter
 {
-  public ModelDocumenter(NTS namespaceTypeSelector, MSS typeStatusSelector, TDS typeDataSelector)
+  public ModelDocumenter(NTS namespaceTypeSelector, MSS typeStatusSelector, string modelDocFilename)
   {
     NamespaceTypeSelector = namespaceTypeSelector;
     TypeStatusSelector = typeStatusSelector;
-    TypeDataSelector = typeDataSelector;
-    ModelDoc.Instance.LoadData();
+    ModelDoc.Instance.LoadData(modelDocFilename);
   }
 
   public NTS NamespaceTypeSelector { get; private set; }
   public MSS TypeStatusSelector { get; private set; }
-  public TDS TypeDataSelector { get; private set; }
 
   public int TotalTypesCount { get; private set; }
   public int CheckedTypesCount { get; private set; }
   public int DocumentedTypesCount { get; private set; }
 
+  public List<string> NamespacesNotFound { get; private set; } = new List<string>();
+  public List<string> TypesNotFound { get; private set; } = new List<string>();
+
   public event DocumentingTypeEvent? OnDocumentingType;
 
-  public bool DocumentTypes()
+  public int DocumentTypes()
   {
-    bool ok = true;
     var nspaces = TypeManager.GetNamespaces(NamespaceTypeSelector);
-    List<TypeInfo>  types = new List<TypeInfo>();
+    List<TypeInfo> types = new List<TypeInfo>();
     foreach (var nspace in nspaces)
     {
       var nSpaceTypes = TypeManager.GetNamespaceTypes(nspace).ToList();
@@ -50,10 +50,9 @@ public class ModelDocumenter
     TotalTypesCount = types.Count();
     foreach (var typeInfo in types)
     {
-      if (!DocumentSingleType(typeInfo))
-        ok = false;
+      DocumentSingleType(typeInfo);
     }
-    return ok;
+    return DocumentedTypesCount;
   }
 
   public bool DocumentSingleType(TypeInfo typeInfo)
@@ -61,15 +60,14 @@ public class ModelDocumenter
     CheckedTypesCount++;
     OnDocumentingType?.Invoke(this, new DocumentingTypeInfo
     {
-      TotalTypes =  TotalTypesCount,
+      TotalTypes = TotalTypesCount,
       CheckedTypes = CheckedTypesCount,
       DocumentedTypes = DocumentedTypesCount,
       Current = typeInfo
     });
     var ok = true;
-    if (typeInfo.IsConstructedGenericType)
+    if (!typeInfo.IsConstructedGenericType)
       ok = TryAddTypeDocumentation(typeInfo);
-    typeInfo.IsValid = ok;
     if (ok)
       DocumentedTypesCount++;
     return ok;
@@ -77,23 +75,52 @@ public class ModelDocumenter
 
   public bool TryAddTypeDocumentation(TypeInfo typeInfo)
   {
-    //var documentation = typeInfo.Documentation;
-    //if (documentation != null)
-    //{
-    //  bool ok = true;
-    //  if (documentation.Summary == null)
-    //  {
-    //    NoSummaryTypesCount++;
-    //    ok = false;
-    //  }
-    //  return ok;
-    //}
-    //else
-    //{
-    //  NoDocsTypesCount++;
-    //  return false;
-    //}
-    return true;
+    if (!ModelDoc.Instance.Namespaces.TryGetValue(typeInfo.OriginalNamespace, out var ns))
+    {
+      if (!NamespacesNotFound.Contains(typeInfo.OriginalNamespace))
+      {
+        Debug.WriteLine($"NamespaceDoc {typeInfo.OriginalNamespace} not found");
+        NamespacesNotFound.Add(typeInfo.OriginalNamespace);
+      }
+    }
+    else
+    {
+      if (!ns.Types.TryFindName(typeInfo.OriginalName, out var typeDoc))
+      {
+        var tag = typeInfo.Schema?.SchemaTag;
+        //if (tag=="Application")
+        //  Debug.Assert(true);
+        if (tag == null || !ns.Types.TryFindTag(tag, out typeDoc))
+        {
+          if (!TypesNotFound.Contains(typeInfo.OriginalName))
+          {
+            TypesNotFound.Add(typeInfo.OriginalName);
+            Debug.WriteLine($"TypeDoc not found for {typeInfo.OriginalNamespace}.{typeInfo.OriginalName}");
+          }
+        }
+      }
+      if (typeDoc != null)
+      {
+        var ok = false;
+        if (typeDoc.Summary != null && typeDoc.Summary.Any())
+        {
+          var documentation = typeInfo.Documentation;
+          if (documentation == null)
+            typeInfo.Documentation = documentation = new ElementDocs();
+          if (typeDoc.Summary.Count == 1)
+            documentation.Summary = new XElement("summary", typeDoc.Summary.First());
+          else
+          {
+            documentation.Summary = new XElement("summary");
+            foreach (var str in typeDoc.Summary)
+              documentation.Summary.Add(new XElement("para", str));
+          }
+          ok = true;
+        }
+        return ok;
+      }
+    }
+    return false;
   }
 
 }

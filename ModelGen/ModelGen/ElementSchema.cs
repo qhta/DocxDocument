@@ -17,23 +17,6 @@ public class ElementSchema
   public bool SchemaIsAttrib { get; set; }
 
   /// <summary>
-  /// Prefix extracted from SchemaTag
-  /// </summary>
-  public string? SchemaPrefix
-  {
-    get
-    {
-      if (SchemaTag != null)
-      {
-        var k = SchemaTag.IndexOf(':');
-        if (k>0)
-          return SchemaTag.Substring(0, k);
-      }
-      return null;
-    }
-  }
-
-  /// <summary>
   /// Url for the schema tag namespace.
   /// </summary>
   public string? SchemaUrl { get; set; }

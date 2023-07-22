@@ -101,8 +101,11 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
   {
     var dialog = new OpenFileDialog();
     dialog.Filter = "Xml file (*.xml)|*.xlm|All files (*.*)|*.*";
+    dialog.InitialDirectory = Path.GetDirectoryName(ModelDocFileName);
+    dialog.FileName = Path.GetFileName(ModelDocFileName);
     if (dialog.ShowDialog() == true)
     {
+      ModelDocFileName = dialog.FileName.Trim();
     }
   }
   #endregion

@@ -7,6 +7,7 @@ public enum SummaryInfoKind
   RegisteredTypes,
   AcceptedTypes,
   RejectedTypes,
+  DocumentedTypes,
   ValidatedTypes,
   ValidTypes,
   InvalidTypes,

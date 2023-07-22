@@ -185,9 +185,15 @@ internal class DocXmlBuilder
                   foreach (var para in cell2.Range.Paragraphs.Cast<Word.Paragraph>())
                     summaryString += para.Range.Text.Trim();
                   if (summaryString.EndsWith("\a"))
-                    summaryString = summaryString.Substring(0, summaryString.Length - 1);
-                  (tag,name)=SplitTagAndName(tagAndNameString);
+                    summaryString = summaryString.Substring(0, summaryString.Length - 1).Trim();
+                  (tag, name) = SplitTagAndName(tagAndNameString);
                   var propDoc = new PropDoc(tag, name);
+                  if (summaryString!="")
+                  {
+                    if (propDoc.Summary==null)
+                      propDoc.Summary = new Summary();
+                    propDoc.Summary.Add(summaryString);
+                  }
                   properties.Add(propDoc);
                 }
               }
@@ -221,6 +227,16 @@ internal class DocXmlBuilder
       name = text.Substring(k + 1).Trim();
       if (name.EndsWith(")"))
         name = name.Substring(0, name.Length - 1).TrimEnd();
+    }
+    else
+    if (text.Contains(' '))
+    {
+      name = text;
+      tag = text.Replace(" ","");
+    }
+    else
+    {
+      name = text;
     }
     return (tag, name);
   }
