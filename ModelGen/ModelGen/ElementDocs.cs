@@ -18,9 +18,9 @@ public class ElementDocs: List<XElement>
     {
       var summary = Summary;
       if (summary != null)
-        summary.Remove();
-      if (value!=null)
-        this.Insert(0,value);
+        this.Remove(summary);
+      if (value != null)
+        this.Insert(0, value);
     }
   }
 
@@ -30,12 +30,12 @@ public class ElementDocs: List<XElement>
   public string? SummaryText
   {
     get => Summary?.Value;
-    set
-    {
-      if (value != null)
-        Summary = new XElement("summary", value);
-      else
-        Summary = null;
-    }
+    //set
+    //{
+    //  if (value != null)
+    //    Summary = new XElement("summary", value);
+    //  else
+    //    Summary = null;
+    //}
   }
 }

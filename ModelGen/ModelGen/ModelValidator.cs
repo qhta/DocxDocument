@@ -68,7 +68,7 @@ public class ModelValidator
       Current = typeInfo
     });
     var ok = true;
-    if (typeInfo.IsConstructedGenericType)
+    if (!typeInfo.IsConstructedGenericType)
       ok = ValidateDocumentation(typeInfo);
     typeInfo.IsValid = ok;
     if (ok)
