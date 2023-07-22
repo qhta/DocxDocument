@@ -179,6 +179,26 @@
           }
         }
       },
+      "Qhta.Conversion/2.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Qhta.Collections": "2.0.0",
+          "Qhta.TextUtils": "3.1.1",
+          "Qhta.TypeUtils": "1.3.10",
+          "Qhta.Xml": "2.0.0",
+          "System.Configuration.ConfigurationManager": "7.0.0"
+        },
+        "compile": {
+          "lib/net6.0/Qhta.Conversion.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Qhta.Conversion.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Qhta.HtmlUtils/2.1.0": {
         "type": "package",
         "dependencies": {
@@ -233,7 +253,44 @@
           }
         }
       },
-      "Qhta.Xml.Serialization/2.1.0": {
+      "Qhta.Xml/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Qhta.Collections": "2.0.0",
+          "Qhta.TextUtils": "3.1.1",
+          "Qhta.TypeUtils": "1.3.10"
+        },
+        "compile": {
+          "lib/net6.0/Qhta.Xml.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Qhta.Xml.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Qhta.Xml.Reflection/2.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Qhta.Collections": "2.0.0",
+          "Qhta.TextUtils": "3.1.1",
+          "Qhta.TypeUtils": "1.3.10",
+          "Qhta.Xml": "1.0.0"
+        },
+        "compile": {
+          "lib/net6.0/Qhta.Xml.Reflection.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Qhta.Xml.Reflection.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Qhta.Xml.Serialization/2.2.0": {
         "type": "package",
         "dependencies": {
           "Qhta.Conversion": "2.0.0",
@@ -1537,8 +1594,7 @@
           "JsonKnownTypes": "0.5.5",
           "Newtonsoft.Json": "13.0.3",
           "Qhta.TypeUtils": "1.3.10.1",
-          "Qhta.Xml": "1.0.0",
-          "Qhta.Xml.Serialization": "1.0.0",
+          "Qhta.Xml.Serialization": "2.2.0",
           "System.IO.Packaging": "7.0.0"
         },
         "compile": {
@@ -1562,7 +1618,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Qhta.Xml.Serialization": "2.1.0"
+          "Qhta.Xml.Serialization": "2.2.0"
         },
         "compile": {
           "bin/placeholder/ModelDocumentation.dll": {}
@@ -1583,54 +1639,6 @@
         },
         "runtime": {
           "bin/placeholder/ModelGenDataConfig.dll": {}
-        }
-      },
-      "Qhta.Conversion/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "Qhta.Collections": "2.0.0",
-          "Qhta.TextUtils": "3.1.1",
-          "Qhta.TypeUtils": "1.3.10",
-          "Qhta.Xml": "1.0.0",
-          "System.Configuration.ConfigurationManager": "7.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Qhta.Conversion.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Qhta.Conversion.dll": {}
-        }
-      },
-      "Qhta.Xml/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "Qhta.Collections": "2.0.0",
-          "Qhta.TextUtils": "3.1.1",
-          "Qhta.TypeUtils": "1.3.10"
-        },
-        "compile": {
-          "bin/placeholder/Qhta.Xml.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Qhta.Xml.dll": {}
-        }
-      },
-      "Qhta.Xml.Reflection/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "Qhta.Collections": "2.0.0",
-          "Qhta.TextUtils": "3.1.1",
-          "Qhta.TypeUtils": "1.3.10",
-          "Qhta.Xml": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Qhta.Xml.Reflection.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Qhta.Xml.Reflection.dll": {}
         }
       }
     }
@@ -1945,6 +1953,21 @@
         "readme.md"
       ]
     },
+    "Qhta.Conversion/2.0.0": {
+      "sha512": "Bjk9RZw1BCmKwJb+JgUWDNd0zpt2AR8ZINIfd1rR2a/K9FqiWVV3QuKlw+pN0HYim5YF6EnRtGq/EYwdUbs1+Q==",
+      "type": "package",
+      "path": "qhta.conversion/2.0.0",
+      "files": [
+        ".nupkg.metadata",
+        "lib/net6.0/Qhta.Conversion.dll",
+        "lib/net6.0/Qhta.Conversion.xml",
+        "lib/netstandard2.0/Qhta.Conversion.dll",
+        "lib/netstandard2.0/Qhta.Conversion.xml",
+        "qhta.conversion.2.0.0.nupkg.sha512",
+        "qhta.conversion.nuspec",
+        "readme.md"
+      ]
+    },
     "Qhta.HtmlUtils/2.1.0": {
       "sha512": "jN/EcMPo0Hut3Kh4K6pLkozSoTTy6P5Cdgb9nbAp8CUk20tipykCfQUbmtvNteUpGOk0ClE+iuCv39pwooO6Lg==",
       "type": "package",
@@ -2005,17 +2028,47 @@
         "readme.md"
       ]
     },
-    "Qhta.Xml.Serialization/2.1.0": {
-      "sha512": "0yITLkoqYOr36EFjS6YAzokbq9eNj2ktQutm+GTgqH3dCeW5NiJrzfJO3MtWlnnIVhBo0dUcGcCBy2leZeI0vg==",
+    "Qhta.Xml/2.1.0": {
+      "sha512": "QmrRjUjCKyGpXk6V0kB5gX8+MNxOFrTn6n4134UrJSCoUYXK6/ZvZoDGjEM3RDmuhBIvTo3MbjK9yVL8ojS+Lg==",
       "type": "package",
-      "path": "qhta.xml.serialization/2.1.0",
+      "path": "qhta.xml/2.1.0",
+      "files": [
+        ".nupkg.metadata",
+        "lib/net6.0/Qhta.Xml.dll",
+        "lib/net6.0/Qhta.Xml.xml",
+        "lib/netstandard2.0/Qhta.Xml.dll",
+        "lib/netstandard2.0/Qhta.Xml.xml",
+        "qhta.xml.2.1.0.nupkg.sha512",
+        "qhta.xml.nuspec",
+        "readme.md"
+      ]
+    },
+    "Qhta.Xml.Reflection/2.0.0": {
+      "sha512": "Qfi+igRqCZuhRJpz1KRGiSWIZj0ennbG35bWzQYekCFa7m4TNTE+rE3KXFRWRxll4LiYBmNxmrTBBGPIX+8xHw==",
+      "type": "package",
+      "path": "qhta.xml.reflection/2.0.0",
+      "files": [
+        ".nupkg.metadata",
+        "lib/net6.0/Qhta.Xml.Reflection.dll",
+        "lib/net6.0/Qhta.Xml.Reflection.xml",
+        "lib/netstandard2.0/Qhta.Xml.Reflection.dll",
+        "lib/netstandard2.0/Qhta.Xml.Reflection.xml",
+        "qhta.xml.reflection.2.0.0.nupkg.sha512",
+        "qhta.xml.reflection.nuspec",
+        "readme.md"
+      ]
+    },
+    "Qhta.Xml.Serialization/2.2.0": {
+      "sha512": "DK7CZCe68eE54ZnaCNCVi+Hot7t2XpSRj349zst/p86bWd08OD0evV34mYGGQ4yrKhqvnwIE5mes5GSeTiHeKg==",
+      "type": "package",
+      "path": "qhta.xml.serialization/2.2.0",
       "files": [
         ".nupkg.metadata",
         "lib/net6.0/Qhta.Xml.Serialization.dll",
         "lib/net6.0/Qhta.Xml.Serialization.xml",
         "lib/netstandard2.0/Qhta.Xml.Serialization.dll",
         "lib/netstandard2.0/Qhta.Xml.Serialization.xml",
-        "qhta.xml.serialization.2.1.0.nupkg.sha512",
+        "qhta.xml.serialization.2.2.0.nupkg.sha512",
         "qhta.xml.serialization.nuspec",
         "readme.md"
       ]
@@ -5184,21 +5237,6 @@
       "type": "project",
       "path": "../../ModelGenDataConfig/ModelGenDataConfig.csproj",
       "msbuildProject": "../../ModelGenDataConfig/ModelGenDataConfig.csproj"
-    },
-    "Qhta.Conversion/1.0.0": {
-      "type": "project",
-      "path": "../../../MyLib/Qhta.Conversion/Qhta.Conversion.csproj",
-      "msbuildProject": "../../../MyLib/Qhta.Conversion/Qhta.Conversion.csproj"
-    },
-    "Qhta.Xml/1.0.0": {
-      "type": "project",
-      "path": "../../../MyLib/Qhta.Xml/Qhta.Xml.csproj",
-      "msbuildProject": "../../../MyLib/Qhta.Xml/Qhta.Xml.csproj"
-    },
-    "Qhta.Xml.Reflection/1.0.0": {
-      "type": "project",
-      "path": "../../../MyLib/Qhta.Xml.Reflection/Qhta.Xml.Reflection.csproj",
-      "msbuildProject": "../../../MyLib/Qhta.Xml.Reflection/Qhta.Xml.Reflection.csproj"
     }
   },
   "projectFileDependencyGroups": {

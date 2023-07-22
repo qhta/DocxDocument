@@ -46,10 +46,6 @@ D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\ModelGen.pdb
 D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\DocumentModel.pdb
 D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\DocumentModel.xml
 D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\DocumentModel.Attributes.pdb
-D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Qhta.Conversion.pdb
-D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Qhta.Xml.Reflection.pdb
-D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Qhta.Xml.Reflection.xml
-D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Qhta.Xml.pdb
 D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\ProcessOptionsView.baml
 D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\ModelGenApp.g.resources
 D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\ModelGenApp.GeneratedMSBuildEditorConfig.editorconfig
@@ -92,8 +88,6 @@ D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\TypeInfoV
 D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\TypeInfoWindow.baml
 D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\ModelGenDataConfig.dll
 D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\ModelGenDataConfig.pdb
-D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Qhta.Conversion.xml
-D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Qhta.Xml.xml
 D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\ModelDocumentation.dll
 D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\ModelDocumentation.pdb
 D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Qhta.TestHelper.dll

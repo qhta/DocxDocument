@@ -72,16 +72,16 @@ public abstract class BaseCreator
 
     if (stopAtPhase >= PPS.RenameTypes)
     {
-     totalTime += RenameTypes();
-     if (monitorDisplaySelector.HasFlag(MDS.TypeRename))
-       ModelMonitor?.ShowTypeRenames();
+      totalTime += RenameTypes();
+      if (monitorDisplaySelector.HasFlag(MDS.TypeRename))
+        ModelMonitor?.ShowTypeRenames();
     }
 
     if (stopAtPhase >= PPS.ConvertTypes)
     {
-     totalTime += ConvertTypes();
-     if (monitorDisplaySelector.HasFlag(MDS.TypeConversions))
-       ModelMonitor?.ShowTypeConversions();
+      totalTime += ConvertTypes();
+      if (monitorDisplaySelector.HasFlag(MDS.TypeConversions))
+        ModelMonitor?.ShowTypeConversions();
     }
 
     //totalTime += CheckTypeUsage();
@@ -111,12 +111,13 @@ public abstract class BaseCreator
     ModelManager.ScanType(type);
     ModelManager.OnScanningType -= ModelManager_OnScanningType;
 
-    if (Options.UseModelDocFile)
+    int? documentedTypesCount = null;
+    if (Options.UseModelDocFile && !String.IsNullOrEmpty(Options.ModelDocFileName))
     {
-    var ModelDocumenter = new ModelDocumenter(NTS.Origin, MSS.Accepted, TDS.Metadata);
-      //ModelDocumenter.OnDocumentingType += ModelDocumenter_OnDocumentingType;
-      //ModelDocumenter.DocumentTypes();
-      //ModelDocumenter.OnDocumentingType += ModelDocumenter_OnDocumentingType;
+      var ModelDocumenter = new ModelDocumenter(NTS.Origin, MSS.Accepted, Options.ModelDocFileName);
+      ModelDocumenter.OnDocumentingType += ModelDocumenter_OnDocumentingType;
+      documentedTypesCount = ModelDocumenter.DocumentTypes();
+      ModelDocumenter.OnDocumentingType += ModelDocumenter_OnDocumentingType;
     }
 
     var ModelValidator = new ModelValidator(NTS.Origin, MSS.Accepted, TDS.Metadata);
@@ -129,16 +130,20 @@ public abstract class BaseCreator
     var allTypesCount = TypeManager.AllTypes.Count();
     var acceptedTypesCount = TypeManager.AcceptedTypes.Count();
     var rejectedTypesCount = TypeManager.RejectedTypes.Count();
-    ModelMonitor?.ShowPhaseEnd(PPS.ScanTypes, new SummaryInfo
+    var summaryInfo = new SummaryInfo
     {
       Time = ts,
       Summary = new Dictionary<SummaryInfoKind, object>{
         {SummaryInfoKind.RegisteredTypes, allTypesCount },
         {SummaryInfoKind.AcceptedTypes, acceptedTypesCount },
         {SummaryInfoKind.RejectedTypes, rejectedTypesCount },
-        {SummaryInfoKind.InvalidTypes, ModelValidator.CheckedTypesCount-ModelValidator.ValidTypesCount}, 
         }
-    });
+    };
+    if (documentedTypesCount!=null)
+      summaryInfo.Summary.Add(SummaryInfoKind.DocumentedTypes, documentedTypesCount);
+    summaryInfo.Summary.Add(SummaryInfoKind.InvalidTypes, ModelValidator.CheckedTypesCount-ModelValidator.ValidTypesCount);
+
+    ModelMonitor?.ShowPhaseEnd(PPS.ScanTypes, summaryInfo);
     return ts;
   }
 
@@ -200,7 +205,7 @@ public abstract class BaseCreator
       Summary = new Dictionary<SummaryInfoKind, object>{
         {SummaryInfoKind.AllTypes, TypeManager.AllTypes.Count() },
         {SummaryInfoKind.RenamedTypes, renamedTypesCount },
-        {SummaryInfoKind.InvalidTypes, TypeManager.AllTypes.Count(item=>item.IsInvalid)}, 
+        {SummaryInfoKind.InvalidTypes, TypeManager.AllTypes.Count(item=>item.IsInvalid)},
         }
     });
     return ts;
@@ -234,7 +239,7 @@ public abstract class BaseCreator
       Summary = new Dictionary<SummaryInfoKind, object>{
         {SummaryInfoKind.AllTypes, TypeManager.AllTypes.Count() },
         {SummaryInfoKind.ConvertedTypes, renamedTypesCount },
-        {SummaryInfoKind.InvalidTypes, TypeManager.AllTypes.Count(item=>item.IsInvalid)}, 
+        {SummaryInfoKind.InvalidTypes, TypeManager.AllTypes.Count(item=>item.IsInvalid)},
         }
     });
     return ts;
