@@ -179,10 +179,6 @@
       <Project>{f6ba4aa2-3b60-4cf8-8482-ce9f8d3f415b}</Project>
       <Name>ModelDocumentation</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\ModelGenDataConfig\ModelGenDataConfig.csproj">
-      <Project>{051acbfa-c1f2-4ddf-9b61-08969c010b7c}</Project>
-      <Name>ModelGenDataConfig</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

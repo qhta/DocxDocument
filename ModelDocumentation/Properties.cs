@@ -54,7 +54,7 @@ public class Properties : ObservableCollection<PropDoc>
   /// <param name="name"></param>
   /// <param name="value"></param>
   /// <returns></returns>
-  public bool TryGetTagValue(string name, [NotNullWhen(true)] out PropDoc value) => _TagIndex.TryGetValue(name, out value);
+  public bool TryFindTag(string name, [NotNullWhen(true)] out PropDoc value) => _TagIndex.TryGetValue(name, out value);
 
   /// <summary>
   /// Checks if an item with the same name was already added.
@@ -69,7 +69,7 @@ public class Properties : ObservableCollection<PropDoc>
   /// <param name="name"></param>
   /// <param name="value"></param>
   /// <returns></returns>
-  public bool TryGetValue(string name, [NotNullWhen(true)] out PropDoc value) => _TagIndex.TryGetValue(name, out value);
+  public bool TryFindName(string name, [NotNullWhen(true)] out PropDoc value) => _TagIndex.TryGetValue(name, out value);
 
   /// <summary>
   /// Checks if an item with the same tag and name was already added.
@@ -84,7 +84,7 @@ public class Properties : ObservableCollection<PropDoc>
   /// <param name="name"></param>
   /// <param name="value"></param>
   /// <returns></returns>
-  public bool TryGetValue((string, string) key, [NotNullWhen(true)] out PropDoc value) => _TagAndNameIndex.TryGetValue(key, out value);
+  public bool TryFindTagAndName((string, string) key, [NotNullWhen(true)] out PropDoc value) => _TagAndNameIndex.TryGetValue(key, out value);
 
 }
 
