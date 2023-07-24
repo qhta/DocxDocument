@@ -189,29 +189,6 @@ public class ModelConfig
   };
 
   /// <summary>
-  /// Documentation headings to namespaces conversion table.
-  /// </summary>
-  public Dictionary<string, string> Headings2Namespaces = new Dictionary<string, string>()
-    {
-      { "WordprocessingML Reference Material", "DocumentFormat.OpenXml.Wordprocessing" },
-      { "DrawingML - Main", "DocumentFormat.OpenXml.Drawing" },
-      { "DrawingML - Picture", "DocumentFormat.OpenXml.Drawing.Pictures" },
-      { "DrawingML - Locked Canvas", "DocumentFormat.OpenXml.Drawing.LockedCanvas" },
-      { "DrawingML - WordprocessingML Drawing", "DocumentFormat.OpenXml.Drawing.Wordprocessing" },
-      { "DrawingML - SpreadsheetML Drawing", "DocumentFormat.OpenXml.Drawing.Spreadsheet" },
-      { "DrawingML - Charts", "DocumentFormat.OpenXml.Drawing.Charts" },
-      { "DrawingML - Chart Drawings", "DocumentFormat.OpenXml.Drawing.ChartDrawing" },
-      { "DrawingML - Diagrams", "DocumentFormat.OpenXml.Drawing.Diagrams" },
-      { "Math", "DocumentFormat.OpenXml.Math" },
-      { "Extended Properties", "DocumentFormat.OpenXml.ExtendedProperties" },
-      { "Custom Properties", "DocumentFormat.OpenXml.CustomProperties" },
-      { "Variant Types", "DocumentFormat.OpenXml.VariantTypes" },
-      { "Custom XML Data Properties", "DocumentFormat.OpenXml.CustomXmlDataProperties" },
-      { "Bibliography", "DocumentFormat.OpenXml.Bibliography" },
-      { "Additional Characteristics", "DocumentFormat.OpenXml.AdditionalCharacteristics" },
-    };
-
-  /// <summary>
   /// Shortcuts for DocumentFormat.OpenXml namespaces. 
   /// Shortcuts for DocumentModel namespaces can be translated by replacing starting "DX" with "DM".
   /// Shortcuts for DocumentModel.OpenXml namespaces can be translated by replacing starting "DX" with "DXM".
@@ -771,7 +748,6 @@ public class ModelConfig
   };
   #endregion
 
-
   #region Save & Load
   public void SaveData()
   {
@@ -801,7 +777,6 @@ public class ModelConfig
       WriteStrings(textWriter, "ExcludedNamespaces", ExcludedNamespaces);
       WriteDictionary(textWriter, "TranslatedNamespaces", TranslatedNamespaces);
       WriteDictionary(textWriter, "NamespaceShortcuts", NamespaceShortcuts);
-      WriteDictionary(textWriter, "Heading2Namespaces", Headings2Namespaces);
       WriteStrings(textWriter, "IncludedTypes", IncludedTypes);
       WriteStrings(textWriter, "ExcludedTypes", ExcludedTypes);
       WriteStrings(textWriter, "ExcludedAttributes", ExcludedAttributes);
@@ -837,8 +812,6 @@ public class ModelConfig
             ReadDictionary(textReader, TranslatedNamespaces, ref lineNumber);
           else if (key == "NamespaceShortcuts")
             ReadDictionary(textReader, NamespaceShortcuts, ref lineNumber);
-          else if (key == "Headings2Namespaces")
-            ReadDictionary(textReader, Headings2Namespaces, ref lineNumber);
           else if (key == "IncludedTypes")
             ReadStrings(textReader, IncludedTypes, ref lineNumber);
           else if (key == "ExcludedTypes")
@@ -868,7 +841,6 @@ public class ModelConfig
       }
     }
   }
-
 
   private void WriteStrings(TextWriter textWriter, string caption, ICollection<string> data)
   {
