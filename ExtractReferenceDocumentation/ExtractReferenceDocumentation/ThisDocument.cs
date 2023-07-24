@@ -1,11 +1,4 @@
 ﻿#nullable enable
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-
-using ModelGenDataConfig;
-
-using Word = Microsoft.Office.Interop.Word;
 
 namespace ExtractReferenceDocumentation
 {
