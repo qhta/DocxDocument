@@ -1,7 +1,4 @@
-﻿using System.Buffers;
-using System.Diagnostics;
-
-namespace ModelGen;
+﻿namespace ModelGen;
 
 public class Namespace
 {

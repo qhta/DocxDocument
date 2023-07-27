@@ -114,19 +114,17 @@ public class ModelDocumenter
     var ok = false;
     if (typeDoc.Summary != null && typeDoc.Summary.Any())
     {
-      var documentation = typeInfo.Documentation;
-      if (documentation == null)
-        typeInfo.Documentation = documentation = new ElementDocs();
+      //var documentation = typeInfo.Documentation;
+      //if (documentation == null)
+      //  typeInfo.Documentation = documentation = new ElementDocs();
       if (typeDoc.Summary.Count == 1)
       {
-        documentation.Summary = new XElement("summary", typeDoc.Summary.First());
+        typeInfo.Description = typeDoc.Summary.First();
         ok = true;
       }
       else
       {
-        documentation.Summary = new XElement("summary");
-        foreach (var str in typeDoc.Summary)
-          documentation.Summary.Add(new XElement("para", str));
+        typeInfo.Summary = typeDoc.Summary;
         ok = true;
       }
       if (TrySetPropertiesDocumentation(typeInfo, typeDoc))
@@ -179,19 +177,15 @@ public class ModelDocumenter
     var ok = false;
     if (propDoc.Summary != null && propDoc.Summary.Any())
     {
-      var documentation = propInfo.Documentation;
-      if (documentation == null)
-        propInfo.Documentation = documentation = new ElementDocs();
+      var documentation = propInfo.GetDocumentation();
       if (propDoc.Summary.Count == 1)
       {
-        documentation.Summary = new XElement("summary", propDoc.Summary.First());
+        propInfo.Description = propDoc.Summary.First();
         ok = true;
       }
       else
       {
-        documentation.Summary = new XElement("summary");
-        foreach (var str in propDoc.Summary)
-          documentation.Summary.Add(new XElement("para", str));
+        propInfo.Summary = propDoc.Summary;
         ok = true;
       }
     }

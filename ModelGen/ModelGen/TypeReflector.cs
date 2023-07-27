@@ -106,19 +106,15 @@ public static class TypeReflector
     var type = typeInfo.Type;
     if (type.IsEnum)
     {
-      if (typeInfo.EnumValues == null)
-        typeInfo.EnumValues = new OwnedCollection<EnumInfo>(typeInfo);
       foreach (var item in type.GetFields(BindingFlags.Static | BindingFlags.Public))
-        typeInfo.EnumValues.Add(new EnumInfo(item));
+        typeInfo.Add(new EnumInfo(item));
     }
     else if ((type.IsClass || type.IsInterface || type.IsValueType) && type != typeof(string) && type != typeof(object))
     {
-      if (typeInfo.Properties == null)
-        typeInfo.Properties = new OwnedCollection<PropInfo>(typeInfo);
       foreach (var item in type.GetProperties(BindingFlags.Instance | BindingFlags.Public | BindingFlags.DeclaredOnly))
       {
         if (!item.PropertyType.Name.EndsWith('&'))
-          typeInfo.Properties.Add(new PropInfo(item));
+          typeInfo.Add(new PropInfo(item));
       }
       if (type.BaseType != null && type.BaseType != typeof(object) && type.BaseType != typeof(ValueType))
       {
@@ -218,7 +214,7 @@ public static class TypeReflector
   {
     //if (typeInfo.Name == "DocParts")
     //  Debug.Assert(true);
-    if (schema.Main!=null)
+    if (schema.Main != null)
       ProcessSchemaParticle(typeInfo, schema.Main);
   }
 
@@ -239,17 +235,17 @@ public static class TypeReflector
     else
     if (particle is ItemsChoiceParticle itemsChoiceParticle)
     {
-        ScanItemsParticle(typeInfo, itemsChoiceParticle);
+      ScanItemsParticle(typeInfo, itemsChoiceParticle);
     }
     else
     if (particle is ItemsSequenceParticle itemsSequenceParticle)
     {
-        ScanItemsParticle(typeInfo, itemsSequenceParticle);
+      ScanItemsParticle(typeInfo, itemsSequenceParticle);
     }
     else
     if (particle is ItemsAllParticle itemsAllParticle)
     {
-        ScanItemsParticle(typeInfo, itemsAllParticle);
+      ScanItemsParticle(typeInfo, itemsAllParticle);
     }
   }
 
@@ -261,22 +257,20 @@ public static class TypeReflector
 
   public static PropInfo? CreateProperty(this TypeInfo typeInfo, ItemElementParticle particle)
   {
-    if (typeInfo.Properties == null)
-      typeInfo.Properties = new OwnedCollection<PropInfo>(typeInfo);
     var targetType = particle.ItemType;
     if (particle.IsMultiple)
     {
       var propName = PluralizeName(targetType.Name);
       if (typeInfo.Name == propName)
         propName = "Items";
-      var existingProp = typeInfo.Properties.FirstOrDefault(item => item.Name == propName);
+      var existingProp = typeInfo.Properties?.FirstOrDefault(item => item.Name == propName);
       if (existingProp == null)
       {
         var propInfo = new PropInfo(propName, targetType);
         Type propertyType = typeof(System.Collections.ObjectModel.Collection<>).MakeGenericType(new Type[] { targetType.Type });
         if (particle.MaxOccurs != null || particle.MinOccurs != null)
         {
-          propInfo.CustomAttributes.Add(new CustomAttribInfo(
+          propInfo.Add(new CustomAttrib(
             new DocumentModel.Attributes.CollectionConstraintAttribute
             {
               MinCount = particle.MinOccurs,
@@ -285,7 +279,7 @@ public static class TypeReflector
         }
         propInfo.PropertyType = TypeManager.RegisterType(propertyType);
         propInfo.IsConstrained = true;
-        typeInfo.Properties.Add(propInfo);
+        typeInfo.Add(propInfo);
         return propInfo;
       }
       else
@@ -299,21 +293,24 @@ public static class TypeReflector
       var propName = targetType.Name;
       if (typeInfo.Name == propName)
         propName = "Child" + propName;
-      var existingProp = typeInfo.Properties.FirstOrDefault(item => item.Name == propName);
-      if (existingProp == null)
+      if (typeInfo.Properties != null)
       {
-        var propInfo = new PropInfo(propName, targetType);
-        propInfo.IsConstrained = true;
-        typeInfo.Properties.Add(propInfo);
-        return propInfo;
-      }
-      else
-      {
-        existingProp.IsConstrained = true;
-        return existingProp;
+        var existingProp = typeInfo.Properties.FirstOrDefault(item => item.Name == propName);
+        if (existingProp == null)
+        {
+          var propInfo = new PropInfo(propName, targetType);
+          propInfo.IsConstrained = true;
+          typeInfo.Properties.Add(propInfo);
+          return propInfo;
+        }
+        else
+        {
+          existingProp.IsConstrained = true;
+          return existingProp;
+        }
       }
     }
-    //return null;
+    return null;
   }
 
   public static string PluralizeName(string aName)

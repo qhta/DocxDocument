@@ -194,12 +194,12 @@ public abstract class ModelMonitor
     //  ShowDocumentation(typeInfo, options);
     if (options.TypeDataSelector.HasFlag(TDS.Metadata))
       ShowMetadata(typeInfo, options);
-    string str = AcceptedMark(typeInfo.Acceptance);
+    string str = AcceptedMark(typeInfo.Accepted);
     var originNames = options.NamespaceTypeSelector == NTS.Origin || options.TypeDataSelector.HasFlag(TDS.OriginalNames);
     str += $"{typeInfo.TypeKind.ToString().ToLower()} {typeInfo.GetFullName(originNames)}";
     List<string> status = new List<string>();
-    if (typeInfo.Validity != null)
-      status.Add(ValidStr(typeInfo.Validity));
+    if (typeInfo.Valid != null)
+      status.Add(ValidStr(typeInfo.Valid));
     if (status.Count > 0)
       str += " { " + string.Join(", ", status) + " }";
     if (options.TypeDataSelector.HasFlag(TDS.ConversionInfo))
@@ -448,7 +448,7 @@ public abstract class ModelMonitor
 
   public virtual void ShowMetadata(ModelElement element, DisplayOptions options)
   {
-    var documentation = element.Documentation;
+    var documentation = element.GetDocumentation();
     if (documentation != null)
     {
       WriteLine();
@@ -471,8 +471,8 @@ public abstract class ModelMonitor
       if (schema.SchemaUrl != null)
         WriteLine($"/// <schemaUrl>{schema.SchemaUrl}</schemaUrl>");
     }
-    if (element.Availability != null)
-      WriteLine($"/// <availability>{element.Availability}</availability>");
+    if (element.OfficeVersion != null)
+      WriteLine($"/// <availability>{element.OfficeVersion}</availability>");
     if (element is PropInfo propInfo)
     {
       if (propInfo.IsRequired)
@@ -580,7 +580,7 @@ public abstract class ModelMonitor
   {
     if (particle is ItemElementParticle itemElementParticle)
     {
-      WriteLine($"<xsd:element type=\"{itemElementParticle.ItemType.GetFullName(true, true)}\"" +
+      WriteLine($"<xsd:element type=\"{itemElementParticle.ItemType.GetFullName(true, true, true)}\"" +
         $" {ParticleAttribs(particle)}/>");
     }
     else

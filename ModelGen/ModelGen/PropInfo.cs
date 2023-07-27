@@ -1,43 +1,71 @@
-﻿using Namotion.Reflection;
+﻿using System.ComponentModel;
+
+using Namotion.Reflection;
 
 namespace ModelGen;
 
 public class PropInfo : ModelElement
 {
+  [XmlIgnore]
   public TypeInfo? DeclaringType => (TypeInfo?)Owner;
+  [XmlIgnore]
   public PropertyInfo? PropertyInfo { get; set; }
+  [XmlIgnore]
   public TypeInfo PropertyType { get; set; }
+
+  public string OriginalType
+  {
+    get => PropertyType.OriginalName;
+    set { }
+  }
+
+  [XmlIgnore]
   public TypeInfo? TargetType { get; set; }
 
+  [DefaultValue(false)]
   public bool IsReadonly { get; set; }
-  public bool IsStatic { get; set; }
-  public bool IsAbstract { get; set; }
-  public bool IsVirtual { get; set; }
-  public bool IsOverriden { get; set; }
-  public bool IsNew { get; set; }
-  public bool IsConstrained { get; set; }
-  public bool IsRequired { get; set; }
-  public bool IsEnum { get; set; }
-  public bool IsList { get; set; }
-  public string? RealTypeName { get; set; }
-  public Constraints? Constraints { get; set; }
 
-  ///// <summary>
-  ///// Xml documentation assigned to this element.
-  ///// </summary>
-  //public override XElement? Documentation
-  //{
-  //  get => base.Documentation ?? DeclaringType?.Documentation;
-  //  set => base.Documentation = value;
-  //}
+  [DefaultValue(false)]
+  public bool IsStatic { get; set; }
+
+  [DefaultValue(false)]
+  public bool IsAbstract { get; set; }
+
+  [DefaultValue(false)]
+  public bool IsVirtual { get; set; }
+
+  [DefaultValue(false)]
+  public bool IsOverriden { get; set; }
+
+  [DefaultValue(false)]
+  public bool IsNew { get; set; }
+
+  [DefaultValue(false)]
+  public bool IsConstrained { get; set; }
+
+  [DefaultValue(false)]
+  public bool IsRequired { get; set; }
+
+  [DefaultValue(false)]
+  public bool IsEnum { get; set; }
+
+  [DefaultValue(false)]
+  public bool IsList { get; set; }
+
+  public string? RealTypeName { get; set; }
+
+  [XmlIgnore]
+  public Constraints? Constraints { get; set; }
 
   /// <summary>
   /// Xml documentation assigned to this element.
   /// </summary>
-  public override ElementDocs? Documentation 
+  public override IEnumerable<XElement>? GetDocumentation()
   {
-    get => base.Documentation ?? DeclaringType?.Documentation;
-    set => base.Documentation = value;
+    var result = base.GetDocumentation();
+    if (result==null)
+      return TargetType?.GetDocumentation();
+    return result;
   }
 
   public PropInfo(string name, Type type) : base(name)
@@ -71,8 +99,13 @@ public class PropInfo : ModelElement
     var xmlDocsElement = propertyInfo.GetXmlDocsElement();
     if (xmlDocsElement != null)
       DocumentationReader.ParseDocumentation(this, xmlDocsElement);
-    foreach (var item in propertyInfo.CustomAttributes)
-      CustomAttributes.Add(new CustomAttribInfo(item));
+    if (propertyInfo.CustomAttributes.Any())
+    {
+      if (CustomAttributes == null)
+        CustomAttributes = new CustomAttributes(this);
+      foreach (var item in propertyInfo.CustomAttributes)
+        CustomAttributes.Add(new CustomAttrib(item));
+    }
   }
 
   public PropInfo(string name, TypeInfo typeInfo) : this(name, typeInfo.Type)
