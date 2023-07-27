@@ -78,15 +78,10 @@ public class ModelValidator
 
   public bool ValidateDocumentation(TypeInfo typeInfo)
   {
-    var documentation = typeInfo.Documentation;
+    var documentation = typeInfo.GetDocumentation();
     if (documentation != null)
     {
       bool ok = true;
-      if (documentation.Summary == null)
-      {
-        NoSummaryTypesCount++;
-        ok = false;
-      }
       return ok;
     }
     else

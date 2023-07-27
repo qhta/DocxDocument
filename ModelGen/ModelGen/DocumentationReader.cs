@@ -100,8 +100,6 @@ public static class DocumentationReader
 
   public static void ParseDocumentation(ModelElement element, XElement documentation)
   {
-    ElementDocs docs = element.Documentation ?? new ElementDocs();
-    var isDocsModified = false;
     var schema = element.Schema ?? new ElementSchema();
     var isSchemaModified = false;
     string? summaryText = null;
@@ -130,11 +128,11 @@ public static class DocumentationReader
               }
               else if (RecognizeAvailabilityContainingString(text, "This class is available in ", out var availability))
               {
-                element.Availability = text;
+                element.OfficeVersion = text;
               }
               else if (RecognizeAvailabilityContainingString(text, "this property is only available in ", out availability))
               {
-                element.Availability = text;
+                element.OfficeVersion = text;
               }
               else if (summaryText == null)
                 summaryText = text;
@@ -172,12 +170,8 @@ public static class DocumentationReader
     }
     if (summaryText != null)
     {
-      docs.Summary = new XElement("summary");
-      docs.Summary.Add(new XElement("para", summaryText));
-      isDocsModified = true;
+      element.Description = summaryText;
     }
-    if (isDocsModified)
-      element.Documentation = docs;
     if (isSchemaModified)
       element.Schema = schema;
   }

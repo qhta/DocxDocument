@@ -84,6 +84,7 @@
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="*"/>
           </Grid.ColumnDefinitions>
           <Grid.RowDefinitions>
@@ -130,6 +131,12 @@
                   Padding="5,0"
                   Content="Show results" 
                   Command="{Binding Path=ProcessMonitorVM.PhaseMonitors[0].ShowResultsCommand}"/>
+          <Button Grid.Column="3" Grid.Row="1" 
+                  VerticalAlignment="Center"
+                  Margin="5,0,5,0" Height="25"
+                  Padding="5,0"
+                  Content="Save results" 
+                  Command="{Binding Path=ProcessMonitorVM.PhaseMonitors[0].SaveResultsCommand}"/>
 
           <Label Grid.Column="1" Grid.Row="2" 
                    VerticalAlignment="Center"
@@ -140,7 +147,13 @@
                   Padding="5,0"
                   Content="Show results" 
                   Command="{Binding Path=ProcessMonitorVM.PhaseMonitors[1].ShowResultsCommand}"/>
-
+          <Button Grid.Column="3" Grid.Row="2" 
+                  VerticalAlignment="Center"
+                  Margin="5,0,5,0" Height="25"
+                  Padding="5,0"
+                  Content="Save results" 
+                  Command="{Binding Path=ProcessMonitorVM.PhaseMonitors[1].SaveResultsCommand}"/>
+          
           <Label Grid.Column="1" Grid.Row="3" 
                    VerticalAlignment="Center"
                    Content="Convert types" />
@@ -150,7 +163,12 @@
                   Padding="5,0"
                   Content="Show results" 
                   Command="{Binding Path=ProcessMonitorVM.PhaseMonitors[2].ShowResultsCommand}"/>
-
+          <Button Grid.Column="3" Grid.Row="3" 
+                  VerticalAlignment="Center"
+                  Margin="5,0,5,0" Height="25"
+                  Padding="5,0"
+                  Content="Save results" 
+                  Command="{Binding Path=ProcessMonitorVM.PhaseMonitors[2].SaveResultsCommand}"/>
         </Grid>
       </Grid>
     </Border>

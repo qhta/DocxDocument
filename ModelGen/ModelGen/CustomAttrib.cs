@@ -3,24 +3,27 @@
 /// <summary>
 /// Represents CustomAttribute assigned to element.
 /// </summary>
-public class CustomAttribInfo: ModelElement
+public class CustomAttrib: ModelElement
 {
   /// <summary>
   /// Type of the CustomAttribute.
   /// </summary>
+  [XmlIgnore]
   public TypeInfo AttributeTypeInfo { get; }
 
   /// <summary>
   /// Represents arguments passed in the constructor of the CustomAttribute.
   /// </summary>
+  [XmlIgnore]
   public OwnedCollection<CustomAttribTypedArgument> ConstructorArguments { get; }
 
   /// <summary>
   /// Represents name arguments set to the CustomAttribute.
   /// </summary>
+  [XmlIgnore]
   public OwnedCollection<CustomAttribNamedArgument> NamedArguments { get; set; }
 
-  public CustomAttribInfo(Attribute attribute) : base(attribute.GetType().Name)
+  public CustomAttrib(Attribute attribute) : base(attribute.GetType().Name)
   {
     AttributeTypeInfo = TypeManager.RegisterType(attribute.GetType());
     ConstructorArguments = new OwnedCollection<CustomAttribTypedArgument>(this);
@@ -29,14 +32,14 @@ public class CustomAttribInfo: ModelElement
       NamedArguments.Add(new CustomAttribNamedArgument(prop.Name, prop.PropertyType, prop.GetValue(attribute)));
   }
 
-  public CustomAttribInfo(Type attributeType): base(attributeType.Name)
+  public CustomAttrib(Type attributeType): base(attributeType.Name)
   {
     ConstructorArguments = new OwnedCollection<CustomAttribTypedArgument>(this);
     NamedArguments = new OwnedCollection<CustomAttribNamedArgument>(this);
     AttributeTypeInfo = TypeManager.RegisterType(attributeType);
   }
 
-  public CustomAttribInfo(Type attributeType, 
+  public CustomAttrib(Type attributeType, 
     IEnumerable<CustomAttributeTypedArgument>? constructorArguments = null, IEnumerable<CustomAttributeNamedArgument>? namedArguments = null): this(attributeType)
   {
     if (constructorArguments != null)
@@ -47,7 +50,7 @@ public class CustomAttribInfo: ModelElement
         NamedArguments.Add(new CustomAttribNamedArgument(item));
   }
 
-  public CustomAttribInfo(CustomAttributeData data) : this(data.AttributeType, data.ConstructorArguments, data.NamedArguments)
+  public CustomAttrib(CustomAttributeData data) : this(data.AttributeType, data.ConstructorArguments, data.NamedArguments)
   {
   }
 

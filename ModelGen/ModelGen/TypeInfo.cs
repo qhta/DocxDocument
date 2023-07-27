@@ -1,38 +1,71 @@
-﻿namespace ModelGen;
+﻿using Qhta.Xml;
+
+namespace ModelGen;
 
 /// <summary>
 /// Represents information of scanned and generated type.
 /// </summary>
+[XmlRoot("Type")]
 public class TypeInfo : ModelElement
 {
   /// <summary>
   /// Type read from source library or declared explicitly on creation.
   /// </summary>
-  public Type Type { get; private set; }
+  [XmlIgnore]
+  public Type Type { get; private set; } = null!;
 
   /// <summary>
   /// Original namespace - get from type.
   /// </summary>
   public string OriginalNamespace => Type.Namespace ?? "";
 
+  [XmlIgnore]
+  public new string Name { get => base.Name; set => base.Name = value; }
+
   /// <summary>
   /// Original type name - get from Type.
   /// </summary>
-  public string OriginalName => Type.Name;
+  [SerializationOrder(-1)]
+  public string OriginalName
+  {
+    get
+    {
+      var result = Type.Name;
+      var k = result.IndexOf('`');
+      if (k >= 0)
+        result = result.Substring(0, k);
+      Type[] genericArguments = Type.GetGenericArguments();
+      if (genericArguments.Length > 0)
+      {
+        result = result + "<" + string.Join(", ", genericArguments.Select(x => x.Name)) + ">";
+      }
+      return result;
+    }
+    set
+    {
+      var fullName = FullTypeName.Parse(value);
+      base.Name = fullName.Name;
+    }
+  }
 
   /// <summary>
   /// Target type info - used in conversion.
   /// </summary>
+  [XmlIgnore]
   public TypeInfo? TargetType { get; set; }
 
   /// <summary>
   /// Target namespace - when generated.
   /// </summary>
-  public string TargetNamespace { get => _TargetNamespace ?? OriginalNamespace; set { _TargetNamespace = value; } }
+  public string? TargetNamespace
+  {
+    get;
+    set;
+  }
 
-  private string? _TargetNamespace;
+  public string GetTargetNamespace() => TargetNamespace ?? (Owner as Namespace)?.TargetName ?? OriginalNamespace;
 
-
+  [XmlIgnore]
   public bool IsReflected { get; internal set; }
 
   public bool IsValueOrStringType => Type.IsValueType || Type == typeof(string) || Type == typeof(System.Uri);
@@ -44,22 +77,45 @@ public class TypeInfo : ModelElement
                                     (BaseTypeInfo.IsConstructedGenericType || BaseTypeInfo.IsGenericTypeBased);
   public bool IsGenericTypeParameter => Type.IsGenericTypeParameter;
 
+  [SerializationOrder(-1)]
   public TypeKind TypeKind
   {
     get;
     set;
   }
 
+  [XmlIgnore]
   public bool IsInterface => TypeKind == TypeKind.Interface;
+  [XmlIgnore]
   public bool IsClass => TypeKind == TypeKind.Class;
 
-  public OwnedCollection<EnumInfo>? EnumValues { get; set; }
-  public OwnedCollection<PropInfo>? Properties { get; set; }
+  public OwnedCollection<EnumInfo>? EnumValues { get; private set; }
+
+  public void Add(EnumInfo enumInfo)
+  {
+    if (EnumValues == null)
+      EnumValues = new OwnedCollection<EnumInfo>(this);
+    EnumValues.Add(enumInfo);
+  }
+
+  public OwnedCollection<PropInfo>? Properties { get; private set; }
+
+  public void Add(PropInfo propInfo)
+  {
+    if (Properties == null)
+      Properties = new OwnedCollection<PropInfo>(this);
+    Properties.Add(propInfo);
+  }
+
+  [XmlIgnore]
   public Collection<TypeRelationship> OutgoingRelationships { get; set; } = new();
+  [XmlIgnore]
   public Collection<TypeRelationship> IncomingRelationships { get; set; } = new();
 
+  [XmlIgnore]
   public IEnumerable<PropInfo>? AcceptedProperties => Properties?.Where(item => item.IsAccepted != false);
 
+  [XmlIgnore]
   public TypeInfo? BaseTypeInfo { get; set; }
 
   public bool IsSimple()
@@ -78,13 +134,17 @@ public class TypeInfo : ModelElement
     return false;
   }
 
-  public bool UsesEvaluated { get; set; }
+  [XmlIgnore]
+  public bool UsageEvaluated { get; set; }
+
+  [XmlIgnore]
   public int AcceptedPropsCount { get; set; }
+
+  public TypeInfo() { }
 
   public TypeInfo(Type type) : base(type.Name)
   {
     Type = type;
-    TargetNamespace = type.Namespace ?? "";
     TypeKind = (type.IsEnum) ? TypeKind.Enum
                : (type.IsInterface) ? TypeKind.Interface
                : (type.IsClass) ? TypeKind.Class
@@ -114,38 +174,43 @@ public class TypeInfo : ModelElement
     }
     else
     {
-      aNamespace = this.TargetNamespace;
-      aNamespace = TypeManager.TranslateNamespace(aNamespace);
+      aNamespace = this.GetTargetNamespace();
     }
     if (shortcut)
       aNamespace = NamespaceShortcut(aNamespace);
     return aNamespace;
   }
 
-  public FullTypeName GetFullName(bool original = false, bool shortcut = true)
+  public FullTypeName GetFullName(bool original = false, bool withNamespace = true, bool shortcutNamespace = true)
   {
     string aName;
-    string aNamespace;
+    string? aNamespace = null;
     if (original)
     {
-      aName = this.OriginalName;
-      aNamespace = this.OriginalNamespace;
+      aName = this.Type.Name;
+      if (withNamespace)
+        aNamespace = this.OriginalNamespace;
     }
     else
     {
       aName = this.Name;
-      aNamespace = this.TargetNamespace;
-      aNamespace = TypeManager.TranslateNamespace(aNamespace);
+      if (withNamespace)
+      {
+        aNamespace = this.GetTargetNamespace();
+      }
     }
-    if (shortcut)
-      aNamespace = NamespaceShortcut(aNamespace);
+    if (withNamespace)
+    {
+      if (aNamespace != null && shortcutNamespace)
+        aNamespace = NamespaceShortcut(aNamespace);
+    }
     if (IsGenericTypeParameter)
       return new FullTypeName(Name, null);
     var result = new FullTypeName(aName, aNamespace);
+
     var apos = aName.IndexOf('`');
     if (apos >= 0)
     {
-
       var genericParams = this.GetGenericParamTypes();
       var genericArgs = this.GetGenericTypeArguments();
       var argNames = new List<FullTypeName>();
@@ -177,12 +242,13 @@ public class TypeInfo : ModelElement
 
   public bool IsTypeKindSelected(TKS tks)
   {
-    if (tks==TKS.Any) return true;
-    if (tks.HasFlag(TKS.Class) && TypeKind==TypeKind.Class) return true;
-    if (tks.HasFlag(TKS.Enum) && TypeKind==TypeKind.Enum) return true;
-    if (tks.HasFlag(TKS.Interface) && TypeKind==TypeKind.Interface) return true;
-    if (tks.HasFlag(TKS.Struct) && TypeKind==TypeKind.Struct) return true;
-    if (tks.HasFlag(TKS.Other) && TypeKind==TypeKind.Type) return true;
+    if (tks == TKS.Any) return true;
+    if (tks.HasFlag(TKS.Class) && TypeKind == TypeKind.Class) return true;
+    if (tks.HasFlag(TKS.Enum) && TypeKind == TypeKind.Enum) return true;
+    if (tks.HasFlag(TKS.Interface) && TypeKind == TypeKind.Interface) return true;
+    if (tks.HasFlag(TKS.Struct) && TypeKind == TypeKind.Struct) return true;
+    if (tks.HasFlag(TKS.Other) && TypeKind == TypeKind.Type) return true;
     return false;
   }
+
 }

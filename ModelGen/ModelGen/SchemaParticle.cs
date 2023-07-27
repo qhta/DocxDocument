@@ -1,5 +1,9 @@
-﻿namespace ModelGen;
+﻿using System.Runtime.Serialization;
 
+namespace ModelGen;
+
+[KnownType(typeof(ItemElementParticle))]
+[KnownType(typeof(ItemsParticle))]
 public abstract class SchemaParticle
 {
   public ParticleType ParticleType { get; protected set; }

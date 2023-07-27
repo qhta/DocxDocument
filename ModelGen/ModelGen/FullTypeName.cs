@@ -40,20 +40,10 @@ public record FullTypeName
     return namespaces.ToArray();
   }
 
-  //public void RemoveNamespace(string nspace)
-  //{
-  //  if (nspace == Namespace)
-  //    Namespace = null;
-  //  if (ArgNames != null)
-  //    foreach (var arg in ArgNames)
-  //      arg.RemoveNamespace(nspace);
-  //}
-
   public override string ToString()
   {
     string name;
     if (ArgNames == null)
-
       name = Name;
     else
     {

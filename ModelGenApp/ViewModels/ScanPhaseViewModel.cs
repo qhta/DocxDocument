@@ -1,4 +1,5 @@
 ﻿namespace ModelGenApp.ViewModels;
+
 public class ScanPhaseViewModel: PhaseViewModel
 {
   public ScanPhaseViewModel(string name): base (PPS.ScanTypes, name)

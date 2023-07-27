@@ -1,8 +1,14 @@
-﻿namespace ModelGen;
+﻿using System.Runtime.Serialization;
+
+namespace ModelGen;
 
 /// <summary>
 /// Abstract <see cref="SchemaParticle"/> which holds item particles.
 /// </summary>
+[KnownType(typeof(ItemsSequenceParticle))]
+[KnownType(typeof(ItemsChoiceParticle))]
+[KnownType(typeof(ItemsGroupParticle))]
+[KnownType(typeof(ItemsAllParticle))]
 public abstract class ItemsParticle : SchemaParticle
 {
   public Collection<SchemaParticle> Items { get; } = new Collection<SchemaParticle>();

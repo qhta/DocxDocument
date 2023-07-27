@@ -10,6 +10,7 @@ public abstract partial class PhaseViewModel : ViewModel
   {
     Phase = phase;
     PhaseName = name;
+    SaveResultsCommand = new RelayCommand(SaveResultsExecute, SaveResultsCanExecute) { Name = "SaveResultsCommand" };
     ShowResultsCommand = new RelayCommand(ShowResultsExecute, ShowResultsCanExecute) { Name = "ShowResultsCommand" };
     ShowOverviewCommand = new RelayCommand(ShowOverviewExecute, ShowOverviewCanExecute) { Name = "ShowOverviewCommand" };
     PropertyChanged += PhaseMonitor_PropertyChanged;
@@ -19,8 +20,10 @@ public abstract partial class PhaseViewModel : ViewModel
   {
     NotifyCanExecuteChanged();
   }
+
   public void NotifyCanExecuteChanged()
   {
+    SaveResultsCommand.NotifyCanExecuteChanged();
     ShowResultsCommand.NotifyCanExecuteChanged();
     ShowOverviewCommand.NotifyCanExecuteChanged();
   }
@@ -97,7 +100,7 @@ public abstract partial class PhaseViewModel : ViewModel
   #endregion
 
   #region Namespaces
-  public NamespaceListViewModel NamespacesVM
+  public NamespacesViewModel NamespacesVM
   {
     get { return _Namespaces; }
     set
@@ -109,15 +112,46 @@ public abstract partial class PhaseViewModel : ViewModel
       }
     }
   }
-  private NamespaceListViewModel _Namespaces = null!;
+  private NamespacesViewModel _Namespaces = null!;
 
   public virtual void GetNamespaces()
   {
-    NamespacesVM = new NamespaceListViewModel(this, NamespaceTypeSelector, Filter);
+    NamespacesVM = new NamespacesViewModel(this, NamespaceTypeSelector, Filter);
   }
 
   public NTS NamespaceTypeSelector { get; protected set; }
 
+  #endregion
+
+  #region SaveResultsCommand
+  /// <summary>
+  /// Command to show phase result window.
+  /// </summary>
+  public Command SaveResultsCommand
+  {
+    get { return _SaveResultsCommand; }
+    set
+    {
+      if (_SaveResultsCommand != value)
+      {
+        _SaveResultsCommand = value;
+        NotifyPropertyChanged(nameof(_SaveResultsCommand));
+      }
+    }
+  }
+  private Command _SaveResultsCommand = null!;
+
+  protected virtual void SaveResultsExecute()
+  {
+    var filename = GetFilename();
+    SaveData(filename);
+    MessageBox.Show($"Data saved to \"{filename}\"");
+  }
+
+  protected virtual bool SaveResultsCanExecute()
+  {
+    return Percentage == 100;
+  }
   #endregion
 
   #region ShowResultsCommand
@@ -196,5 +230,23 @@ public abstract partial class PhaseViewModel : ViewModel
   #endregion
 
   public bool IsTargetNameVisible { get; protected set; }
+
+  #region SaveData
+  public void SaveData(string filename)
+  {
+    TypeManager.SaveData(filename);
+  }
+
+  public string GetFilename()
+  {
+    var path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+    path = Path.Combine(path, "ModelGen");
+    if (!Directory.Exists(path))
+      Directory.CreateDirectory(path);
+    path = Path.Combine(path, $"Phase {Convert.ChangeType(Phase, typeof(int))} result.xml");
+    return path;
+  }
+  #endregion
+
 
 }

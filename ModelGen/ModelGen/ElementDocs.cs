@@ -3,11 +3,12 @@
 /// <summary>
 ///   Docs Comments assigned to model element.
 /// </summary>
-public class ElementDocs: List<XElement>
+public class ElementDocs: Collection<XElement>
 {
   /// <summary>
   /// XElement representation of summary.
   /// </summary>
+  [XmlIgnore]
   public XElement? Summary 
   {
     get

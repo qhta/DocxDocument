@@ -1,7 +1,7 @@
 ﻿namespace ModelGenApp.ViewModels;
-public class NamespaceListViewModel : DispatchedCollection<NamespaceViewModel>
+public class NamespacesViewModel : DispatchedCollection<NamespaceViewModel>
 {
-  public NamespaceListViewModel(PhaseViewModel phase, NTS nts, string? filter)
+  public NamespacesViewModel(PhaseViewModel phase, NTS nts, string? filter)
   {
     Phase = phase;
     var namespaces = new List<Namespace>();
@@ -36,4 +36,5 @@ public class NamespaceListViewModel : DispatchedCollection<NamespaceViewModel>
   private NTS _Kind;
 
   public bool IsTargetNameVisible => Phase.IsTargetNameVisible;
+
 }
