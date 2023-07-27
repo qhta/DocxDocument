@@ -66,7 +66,7 @@ public class ModelGenerator : BaseCodeGenerator
   private bool GenerateClassType(TypeInfo type)
   {
     var typeName = type.Name;
-    var aNamespace = type.TargetNamespace;
+    var aNamespace = type.GetTargetNamespace();
     aNamespace = TrimDocumentModel(aNamespace);
     var outputPath = Path.Combine(OutputPath, aNamespace);
     return GenerateClassOrInterface(type, typeName, Path.Combine(outputPath, "Classes", typeName + ".cs"), TypeKind.Class);
@@ -85,7 +85,7 @@ public class ModelGenerator : BaseCodeGenerator
 
   private bool GenerateClassOrInterface(TypeInfo typeInfo, string typeName, TypeKind kind)
   {
-    var aNamespace = typeInfo.TargetNamespace;
+    var aNamespace = typeInfo.GetTargetNamespace();
     if (aNamespace != null)
     {
       Writer.WriteLine($"namespace {aNamespace};");
@@ -179,7 +179,7 @@ public class ModelGenerator : BaseCodeGenerator
   private bool GenerateEnumType(TypeInfo type)
   {
     var outputPath = OutputPath;
-    var aNamespace = type.TargetNamespace;
+    var aNamespace = type.GetTargetNamespace();
     aNamespace = TrimDocumentModel(aNamespace);
     outputPath = Path.Combine(outputPath, aNamespace);
     var typeName = type.Name;

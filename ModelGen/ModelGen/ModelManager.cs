@@ -320,7 +320,10 @@ public static class ModelManager
     var typeInfo = propInfo.PropertyType;
     TypeInfo targetTypeInfo = null!;
     Type? targetType = null;
-    var propName = propInfo.DeclaringType?.TargetNamespace + "." + propInfo.DeclaringType?.Name + "." + propInfo.Name;
+    string propName = "";
+    if (propInfo.DeclaringType!=null)
+      propName=propInfo.DeclaringType.GetTargetNamespace() + "." + propInfo.DeclaringType.Name + ".";
+    propName += propInfo.Name;
     if (ModelConfig.Instance.TryGetPropertyType(propName, out targetType))
       targetTypeInfo = TypeManager.RegisterType(targetType, typeInfo, Semantics.TypeChange);
     else
@@ -372,7 +375,7 @@ public static class ModelManager
     string aName = typeInfo.Name;
     if (typeInfo.IsGenericTypeParameter)
       return new FullTypeName(aName, null);
-    string aNamespace = typeInfo.TargetNamespace;
+    string aNamespace = typeInfo.GetTargetNamespace();
 
     aNamespace = TypeManager.TranslateNamespace(aNamespace);
     var apos = aName.IndexOf('`');
@@ -471,16 +474,16 @@ public static class ModelManager
 
   public static bool CheckTypeUsage(this TypeInfo typeInfo)
   {
-    if (typeInfo.UsesEvaluated)
+    if (typeInfo.UsageEvaluated)
       return typeInfo.IsUsed;
-    typeInfo.UsesEvaluated = true;
+    typeInfo.UsageEvaluated = true;
     CheckedUsageTypesCount++;
 
     if (typeInfo.IsAccepted == false)
       return false;
     if (ModelConfig.Instance.IsExcluded(typeInfo.Type))
       return false;
-    if (ModelConfig.Instance.ExcludedNamespaces.Contains(typeInfo.TargetNamespace ?? ""))
+    if (ModelConfig.Instance.ExcludedNamespaces.Contains(typeInfo.GetTargetNamespace() ?? ""))
       return false;
     typeInfo.IsUsed = true;
     UsedTypesCount++;
@@ -525,7 +528,7 @@ public static class ModelManager
 
   private static bool HasExcludedNamespace(this TypeInfo typeInfo)
   {
-    if (ModelConfig.Instance.ExcludedNamespaces.Contains(typeInfo.TargetNamespace))
+    if (ModelConfig.Instance.ExcludedNamespaces.Contains(typeInfo.GetTargetNamespace()))
       return true;
     if (typeInfo.IsConstructedGenericType)
     {
@@ -700,22 +703,26 @@ public static class ModelManager
   private static bool TryRenameType(TypeInfo typeInfo)
   {
     CheckedRenameTypesCount++;
-    var typeName = typeInfo.Type.FullName ?? "";
+    var typeName = typeInfo.OriginalName ?? "";
+    string newNamespace;
     if (ModelConfig.Instance.TypeConversion.TryGetValue2(typeName, out var newName))
     {
       var k = newName.LastIndexOf(".");
       typeInfo.NewName = newName.Substring(k + 1);
-      typeInfo.TargetNamespace = newName.Substring(0, k);
+      newNamespace = newName.Substring(0, k);
+      typeInfo.TargetNamespace = newNamespace;
       RenamedTypesCount++;
       OnRenamingType?.Invoke(new RenamingTypeInfo { CheckedTypes = CheckedRenameTypesCount, RenamedTypes = RenamedTypesCount, Current = typeInfo });
       return true;
     }
-    var aNamespace = TypeManager.TranslateNamespace(typeInfo.TargetNamespace);
-    if (aNamespace != typeInfo.TargetNamespace)
+    var originalNamespace = typeInfo.OriginalNamespace;
+    newNamespace = TypeManager.TranslateNamespace(originalNamespace);
+    var targetNamespace = typeInfo.GetTargetNamespace();
+    if (newNamespace != targetNamespace)
     {
-      TypeManager.RegisterNamespace(aNamespace);
-      typeInfo.TargetNamespace = aNamespace;
-      var nspace = TypeManager.GetNamespace(aNamespace);
+      TypeManager.RegisterNamespace(newNamespace);
+      typeInfo.TargetNamespace = newNamespace;
+      var nspace = TypeManager.GetNamespace(newNamespace);
       if (nspace.TryGetTypesWithSameName(typeInfo, out var otherTypes))
       {
         var sameNameTypes = otherTypes.ToList();
@@ -804,12 +811,12 @@ public static class ModelManager
   {
     if (type.Name.Contains('`'))
       return false;
-    return TypeManager.GetNamespaceTypes(type.TargetNamespace).Where(Item => Item.Name == type.Name).Count() > 1;
+    return TypeManager.GetNamespaceTypes(type.GetTargetNamespace()).Where(Item => Item.Name == type.Name).Count() > 1;
   }
 
   public static TypeInfo[] GetDuplicatesInNamespace(this TypeInfo type)
   {
-    return TypeManager.GetNamespaceTypes(type.TargetNamespace).Where(Item => Item.Name == type.Name).ToArray();
+    return TypeManager.GetNamespaceTypes(type.GetTargetNamespace()).Where(Item => Item.Name == type.Name).ToArray();
   }
   #endregion
 

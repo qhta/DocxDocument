@@ -1,6 +1,4 @@
-﻿using System.Collections;
-
-namespace ModelGen;
+﻿namespace ModelGen;
 
 public class OwnedCollection<T> : ICollection, ICollection<T> where T : class, IOwnedElement
 {

@@ -91,3 +91,5 @@ D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\ModelGenDataCon
 D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\ModelDocumentation.dll
 D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\ModelDocumentation.pdb
 D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Qhta.TestHelper.dll
+D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Qhta.Xml.Serialization.pdb
+D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Qhta.Xml.Serialization.xml

@@ -1,4 +1,6 @@
-﻿namespace ModelGen;
+﻿
+
+namespace ModelGen;
 
 /// <summary>
 /// Base creator containing common methods for both specific creators.
@@ -26,6 +28,8 @@ public abstract class BaseCreator
   protected string OutputPath { get; set; }
 
   public bool IsRun { get; set; }
+
+  public PPS PhaseDone { get; private set; }
 
   public ModelMonitor? ModelMonitor { get; set; }
 
@@ -61,6 +65,7 @@ public abstract class BaseCreator
     TotalTypesCount = SourceAssembly.ExportedTypes.Count();
     TimeSpan totalTime = TimeSpan.Zero;
 
+    PhaseDone = PPS.None;
     if (stopAtPhase >= PPS.ScanTypes)
     {
       totalTime += ScanType(type);
@@ -68,6 +73,7 @@ public abstract class BaseCreator
         ModelMonitor?.ShowNamespaceSummary(NTS.Origin);
       if (monitorDisplaySelector.HasFlag(MDS.ScannedTypes))
         ModelMonitor?.ShowNamespacesDetails(displayOptions with { NamespaceTypeSelector = NTS.Origin });
+      PhaseDone = PPS.ScanTypes;
     }
 
     if (stopAtPhase >= PPS.RenameTypes)
@@ -75,6 +81,7 @@ public abstract class BaseCreator
       totalTime += RenameTypes();
       if (monitorDisplaySelector.HasFlag(MDS.TypeRename))
         ModelMonitor?.ShowTypeRenames();
+      PhaseDone = PPS.ScanTypes;
     }
 
     if (stopAtPhase >= PPS.ConvertTypes)
@@ -82,6 +89,7 @@ public abstract class BaseCreator
       totalTime += ConvertTypes();
       if (monitorDisplaySelector.HasFlag(MDS.TypeConversions))
         ModelMonitor?.ShowTypeConversions();
+      PhaseDone = PPS.ConvertTypes;
     }
 
     //totalTime += CheckTypeUsage();
@@ -219,7 +227,7 @@ public abstract class BaseCreator
       PreStr = "renamed",
       Done = info.RenamedTypes,
       MidStr = "types",
-      PostStr = $"{info.Current?.OriginalNamespace}.{info.Current?.OriginalName} -> {info.Current?.TargetNamespace}.{info.Current?.Name}"
+      PostStr = $"{info.Current?.OriginalNamespace}.{info.Current?.OriginalName} -> {info.Current?.GetTargetNamespace()}.{info.Current?.Name}"
     });
   }
 
@@ -253,7 +261,7 @@ public abstract class BaseCreator
       PreStr = "converted",
       Done = info.ConvertedTypes,
       MidStr = "types",
-      PostStr = $"{info.Current?.OriginalNamespace}.{info.Current?.OriginalName} -> {info.Current?.TargetNamespace}.{info.Current?.Name}"
+      PostStr = $"{info.Current?.OriginalNamespace}.{info.Current?.OriginalName} -> {info.Current?.GetTargetNamespace()}.{info.Current?.Name}"
     });
   }
 
@@ -355,5 +363,32 @@ public abstract class BaseCreator
   }
 
   #endregion
+
+  #region SaveData
+  public void SaveData()
+  {
+    SaveData(GetFilename());
+  }
+
+  public void SaveData(string filename)
+  {
+    using (var xmlWriter = XmlWriter.Create(filename, new XmlWriterSettings{ Indent=true }))
+    {
+      var xmlSerializer = new QXmlSerializer(typeof(BaseCreator));
+      xmlSerializer.Serialize(xmlWriter, this);
+    }
+  }
+
+  public string GetFilename()
+  {
+    var path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+    path = Path.Combine(path, "ModelGen");
+    if (!Directory.Exists(path))
+      Directory.CreateDirectory(path);
+    path = Path.Combine(path, $"Phase {PhaseDone} result.xml");
+    return path;
+  }
+  #endregion
+
 }
 

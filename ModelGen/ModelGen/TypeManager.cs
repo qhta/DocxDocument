@@ -1,8 +1,4 @@
-﻿using System.Reflection;
-
-using Qhta.TypeUtils;
-
-namespace ModelGen;
+﻿namespace ModelGen;
 
 public record RegisteringInfo
 {
@@ -401,5 +397,16 @@ public static class TypeManager
 
     itemType = null;
     return false;
+  }
+
+  public static void SaveData(string filename)
+  {
+    using (var xmlWriter = XmlWriter.Create(filename, new XmlWriterSettings{ Indent=true }))
+    {
+      var namespaces = new Namespaces(TypeManager.AllNamespaces);
+      var xmlSerializer = new QXmlSerializer(typeof(Namespaces));
+      //xmlSerializer.Options.AllowUnregisteredTypes = true;
+      xmlSerializer.Serialize(xmlWriter, namespaces);
+    }
   }
 }

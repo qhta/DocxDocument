@@ -87,7 +87,7 @@ namespace ModelGen;
 ///   <see cref="DXFwork.SimpleTypeValidator{TSimpleType}"/> is converted as <see cref="DXFwork.EnumValidator"/> 
 ///   (only <see cref="DX.EnumValue{T}"/> appears).
 ///   <see cref="DXFwork.NameProviderValidator"/> is converted to <see cref="PropInfo.RealTypeName"/> property, 
-///   and <see cref="DXFwork.OfficeVersionValidator"/> is converted to <see cref="ModelElement.Availability"/> property.
+///   and <see cref="DXFwork.OfficeVersionValidator"/> is converted to <see cref="ModelElement.OfficeVersion"/> property.
 /// </para>
 /// </summary>
 public static class OpenXmlMetadataReader
@@ -196,8 +196,7 @@ public static class OpenXmlMetadataReader
         if (accessProperty == null)
         {
           accessProperty = new PropInfo(elementTypeInfo.Name, elementTypeInfo);
-          Debug.Assert(ownerTypeInfo.Properties != null);
-          ownerTypeInfo.Properties.Add(accessProperty);
+          ownerTypeInfo.Add(accessProperty);
         }
       }
     }
@@ -310,7 +309,7 @@ public static class OpenXmlMetadataReader
       string? itemName = null;
       if (item is ItemElementParticle itemElementParticle)
       {
-        itemName = itemElementParticle.ItemType.GetFullName(true, true);
+        itemName = itemElementParticle.ItemType.GetFullName(true, true, true);
       }
       else
       if (item is ItemsParticle itemParticle)
@@ -484,7 +483,7 @@ public static class OpenXmlMetadataReader
       else
       if (validator is DXFwork.OfficeVersionValidator officeVersionValidator)
       {
-        propInfo.Availability = officeVersionValidator.OfficeVersion.ToString();
+        propInfo.OfficeVersion = officeVersionValidator.OfficeVersion.ToString();
       }
       else
       if (validator is DXFwork.NameProviderValidator nameProviderValidator)

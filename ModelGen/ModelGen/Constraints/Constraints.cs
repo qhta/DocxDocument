@@ -1,6 +1,6 @@
 ﻿namespace ModelGen;
 
-public class Constraints: List<Constraint>
+public class Constraints: Collection<Constraint>
 {
 
 }

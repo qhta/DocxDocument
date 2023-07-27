@@ -15,12 +15,14 @@ global using System.Windows.Controls;
 global using System.Windows.Input;
 global using System.Windows.Threading;
 global using System.CodeDom.Compiler;
+global using System.Xml;
 
 global using Qhta.Collections;
 global using Qhta.MVVM;
 global using Qhta.DispatchedObjects;
 global using Qhta.TextUtils;
 global using Qhta.TypeUtils;
+global using Qhta.Xml.Serialization;
 
 global using ModelGenDataConfig;
 global using ModelGen;
