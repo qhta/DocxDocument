@@ -270,7 +270,7 @@ public static class TypeReflector
         Type propertyType = typeof(System.Collections.ObjectModel.Collection<>).MakeGenericType(new Type[] { targetType.Type });
         if (particle.MaxOccurs != null || particle.MinOccurs != null)
         {
-          propInfo.Add(new CustomAttrib(
+          propInfo.Add(new CustomAttribInfo(
             new DocumentModel.Attributes.CollectionConstraintAttribute
             {
               MinCount = particle.MinOccurs,

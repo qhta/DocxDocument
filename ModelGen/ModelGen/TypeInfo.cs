@@ -1,4 +1,6 @@
-﻿using Qhta.Xml;
+﻿using System.IO.Packaging;
+
+using Qhta.Xml;
 
 namespace ModelGen;
 
@@ -28,23 +30,10 @@ public class TypeInfo : ModelElement
   [SerializationOrder(-1)]
   public string OriginalName
   {
-    get
-    {
-      var result = Type.Name;
-      var k = result.IndexOf('`');
-      if (k >= 0)
-        result = result.Substring(0, k);
-      Type[] genericArguments = Type.GetGenericArguments();
-      if (genericArguments.Length > 0)
-      {
-        result = result + "<" + string.Join(", ", genericArguments.Select(x => x.Name)) + ">";
-      }
-      return result;
-    }
+    get => TypeManager.GetOriginalName(this);
     set
     {
-      var fullName = FullTypeName.Parse(value);
-      base.Name = fullName.Name;
+      // Do nothing. This accessor is needed only for Serializer.
     }
   }
 
@@ -63,7 +52,21 @@ public class TypeInfo : ModelElement
     set;
   }
 
-  public string GetTargetNamespace() => TargetNamespace ?? (Owner as Namespace)?.TargetName ?? OriginalNamespace;
+  public string GetTargetNamespace()
+  {
+    if (TargetNamespace!=null) return TargetNamespace;
+    if (Owner is Namespace nspace)
+    {
+      if (nspace.TargetName!=null) return nspace.TargetName;
+      return nspace.OriginalName;
+    }
+    return OriginalNamespace;
+  }
+  /// <summary>
+  /// Original type name - get from Type.
+  /// </summary>
+  [XmlIgnore]
+  public string TargetName => TypeManager.GetTargetName(this);
 
   [XmlIgnore]
   public bool IsReflected { get; internal set; }
@@ -127,7 +130,7 @@ public class TypeInfo : ModelElement
   {
     if (Type.Name.StartsWith("EnumValue`"))
     {
-      enumType = TypeManager.GetGenericTypeArguments(this).FirstOrDefault();
+      enumType = TypeManager.GetGenericArguments(this).FirstOrDefault();
       return (enumType != null);
     }
     enumType = null;
@@ -165,43 +168,43 @@ public class TypeInfo : ModelElement
     //}
   }
 
-  public string GetNamespace(bool original = false, bool shortcut = true)
+  public string GetNamespace(bool target, bool shortcut)
   {
     string aNamespace;
-    if (original)
-    {
-      aNamespace = this.OriginalNamespace;
-    }
-    else
-    {
+    if (target)
       aNamespace = this.GetTargetNamespace();
-    }
+    else
+      aNamespace = this.OriginalNamespace;
     if (shortcut)
       aNamespace = NamespaceShortcut(aNamespace);
     return aNamespace;
   }
 
-  public FullTypeName GetFullName(bool original = false, bool withNamespace = true, bool shortcutNamespace = true)
+  public FullTypeName GetFullName(bool target, bool withNamespace, bool nsShortcut)
+    => GetFullName(new TNS(target, withNamespace, nsShortcut));
+
+  public FullTypeName GetFullName(TNS nameTypeSelector)
   {
     string aName;
     string? aNamespace = null;
-    if (original)
-    {
-      aName = this.Type.Name;
-      if (withNamespace)
-        aNamespace = this.OriginalNamespace;
-    }
-    else
+    if (nameTypeSelector.Target)
     {
       aName = this.Name;
-      if (withNamespace)
+      if (nameTypeSelector.Namespace)
       {
         aNamespace = this.GetTargetNamespace();
       }
     }
-    if (withNamespace)
+    else
     {
-      if (aNamespace != null && shortcutNamespace)
+      aName = this.Type.Name;
+      if (nameTypeSelector.Namespace)
+        aNamespace = this.OriginalNamespace;
+    }
+
+    if (nameTypeSelector.Namespace)
+    {
+      if (aNamespace != null && nameTypeSelector.NsShortcut)
         aNamespace = NamespaceShortcut(aNamespace);
     }
     if (IsGenericTypeParameter)
@@ -212,7 +215,7 @@ public class TypeInfo : ModelElement
     if (apos >= 0)
     {
       var genericParams = this.GetGenericParamTypes();
-      var genericArgs = this.GetGenericTypeArguments();
+      var genericArgs = this.GetGenericArguments();
       var argNames = new List<FullTypeName>();
       if (genericParams.Any())
         foreach (var genericParam in genericParams.ToList())
@@ -222,7 +225,7 @@ public class TypeInfo : ModelElement
       else if (genericArgs.Any())
         foreach (var genericArg in genericArgs.ToList())
         {
-          argNames.Add(genericArg.GetFullName(original));
+          argNames.Add(genericArg.GetFullName(nameTypeSelector));
         }
       if (argNames.Count > 0)
       {
@@ -238,7 +241,7 @@ public class TypeInfo : ModelElement
     return ModelConfig.NamespaceShortcut(ns);
   }
 
-  public override string ToString() => $"{TargetNamespace}.{Name}";
+  public override string ToString() => $"{OriginalNamespace}.{OriginalName}";
 
   public bool IsTypeKindSelected(TKS tks)
   {

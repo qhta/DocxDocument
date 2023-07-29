@@ -1,15 +1,18 @@
 ﻿namespace ModelGenApp.ViewModels;
 public class PropInfoViewModel : ViewModel<PropInfo>
 {
-  public PropInfoViewModel(TypeInfoViewModel ownerType, PropInfo propInfo, bool isOriginal) : base(propInfo)
+  public PropInfoViewModel(PhaseViewModel phase, TypeInfoViewModel ownerType, PropInfo propInfo, TNS typeNameSelector) : base(propInfo)
   {
     OwnerType = ownerType;
-    IsOriginal = isOriginal;
+    TypeNameSelector = typeNameSelector;
+    Phase = phase;
   }
 
   public TypeInfoViewModel OwnerType { get; private set; }
 
-  public bool IsOriginal { get; set; }
+  public TNS TypeNameSelector { get; private set; }
+
+  public PhaseViewModel Phase { get; private set; }
 
   [DataGridColumn]
   public string? Acceptance
@@ -29,9 +32,9 @@ public class PropInfoViewModel : ViewModel<PropInfo>
   {
     get
     {
-      if (IsOriginal)
-        return Model.Name;
-      return Model.GetTargetName();
+      if (TypeNameSelector.Target)
+        return Model.GetTargetName();
+      return Model.Name;
     }
   }
 
@@ -45,10 +48,10 @@ public class PropInfoViewModel : ViewModel<PropInfo>
       if (propType!=null)
       {
         if (propType.TypeKind == TypeKind.Enum)
-          return new EnumTypeInfoViewModel(propType, IsOriginal);
+          return new EnumTypeInfoViewModel(Phase, propType, TypeNameSelector);
         if (propType.TypeKind == TypeKind.Type)
-          return new TypeInfoViewModel(propType, IsOriginal);
-        return new ClassInfoViewModel(propType, IsOriginal);
+          return new TypeInfoViewModel(Phase, propType, TypeNameSelector);
+        return new ClassInfoViewModel(Phase, propType, TypeNameSelector);
       }
       return null;
     }

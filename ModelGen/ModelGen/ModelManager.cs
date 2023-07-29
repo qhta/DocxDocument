@@ -45,6 +45,7 @@ public static class ModelManager
 
   public static int CheckedRenameTypesCount { get; private set; }
   public static int RenamedTypesCount { get; private set; }
+  public static int DuplicateTypeNamesCount { get; private set; }
   public static int ConvertedTypesCount { get; private set; }
 
   public static int CheckedUsageTypesCount { get; private set; }
@@ -321,8 +322,8 @@ public static class ModelManager
     TypeInfo targetTypeInfo = null!;
     Type? targetType = null;
     string propName = "";
-    if (propInfo.DeclaringType!=null)
-      propName=propInfo.DeclaringType.GetTargetNamespace() + "." + propInfo.DeclaringType.Name + ".";
+    if (propInfo.DeclaringType != null)
+      propName = propInfo.DeclaringType.GetTargetNamespace() + "." + propInfo.DeclaringType.Name + ".";
     propName += propInfo.Name;
     if (ModelConfig.Instance.TryGetPropertyType(propName, out targetType))
       targetTypeInfo = TypeManager.RegisterType(targetType, typeInfo, Semantics.TypeChange);
@@ -389,7 +390,7 @@ public static class ModelManager
     if (apos >= 0)
     {
       var genericParams = typeInfo.GetGenericParamTypes();
-      var genericArgs = typeInfo.GetGenericTypeArguments();
+      var genericArgs = typeInfo.GetGenericArguments();
       if (genericParams.Any())
       {
         result.ArgNames = new();
@@ -443,7 +444,6 @@ public static class ModelManager
     var result = TypeManager.GetRevRelatedTypes(typeInfo, Semantics.TypeChange).FirstOrDefault();
     return result;
   }
-
   #endregion
 
   #region Checking types
@@ -532,7 +532,7 @@ public static class ModelManager
       return true;
     if (typeInfo.IsConstructedGenericType)
     {
-      foreach (var arg in typeInfo.GetGenericTypeArguments())
+      foreach (var arg in typeInfo.GetGenericArguments())
       {
         if (HasExcludedNamespace(arg))
           return true;
@@ -668,17 +668,20 @@ public static class ModelManager
     }
     return duplicatedTypesCount;
   }
-
-
   #endregion
 
   #region Rename types
 
+  /// <summary>
+  /// First rename namespaces, then rename types.
+  /// </summary>
+  /// <returns></returns>
   public static int RenameNamespacesAndTypes()
   {
     RenameNamespaces();
     var n = 0;
-    foreach (var type in TypeManager.AllTypes.ToArray())
+    DuplicateTypeNamesCount = 0;
+    foreach (var type in TypeManager.AcceptedTypes.ToArray())
     {
       if (ModelManager.TryRenameType(type))
         n++;
@@ -689,11 +692,12 @@ public static class ModelManager
   public static int RenameNamespaces()
   {
     int n = 0;
-    foreach (var ns in TypeManager.AllNamespaces)
+    foreach (var ns in TypeManager.AllNamespaces.ToList())
     {
-      if (ModelConfig.Instance.TranslatedNamespaces.TryGetValue(ns.OrigName, out var targetName))
+      if (ModelConfig.Instance.TranslatedNamespaces.TryGetValue(ns.OriginalName, out var targetName))
       {
         ns.TargetName = targetName;
+        TypeManager.RegisterNamespace(targetName);
         n++;
       }
     }
@@ -705,16 +709,17 @@ public static class ModelManager
     CheckedRenameTypesCount++;
     var typeName = typeInfo.OriginalName ?? "";
     string newNamespace;
-    if (ModelConfig.Instance.TypeConversion.TryGetValue2(typeName, out var newName))
-    {
-      var k = newName.LastIndexOf(".");
-      typeInfo.NewName = newName.Substring(k + 1);
-      newNamespace = newName.Substring(0, k);
-      typeInfo.TargetNamespace = newNamespace;
-      RenamedTypesCount++;
-      OnRenamingType?.Invoke(new RenamingTypeInfo { CheckedTypes = CheckedRenameTypesCount, RenamedTypes = RenamedTypesCount, Current = typeInfo });
-      return true;
-    }
+    string? newName;
+    //if (ModelConfig.Instance.TypeConversion.TryGetValue2(typeName, out newName))
+    //{
+    //  var k = newName.LastIndexOf(".");
+    //  typeInfo.NewName = newName.Substring(k + 1);
+    //  newNamespace = newName.Substring(0, k);
+    //  typeInfo.TargetNamespace = newNamespace;
+    //  RenamedTypesCount++;
+    //  OnRenamingType?.Invoke(new RenamingTypeInfo { CheckedTypes = CheckedRenameTypesCount, RenamedTypes = RenamedTypesCount, Current = typeInfo });
+    //  return true;
+    //}
     var originalNamespace = typeInfo.OriginalNamespace;
     newNamespace = TypeManager.TranslateNamespace(originalNamespace);
     var targetNamespace = typeInfo.GetTargetNamespace();
@@ -722,20 +727,28 @@ public static class ModelManager
     {
       TypeManager.RegisterNamespace(newNamespace);
       typeInfo.TargetNamespace = newNamespace;
-      var nspace = TypeManager.GetNamespace(newNamespace);
+    }
+    var nspace = TypeManager.GetNamespace(newNamespace);
+    if (!typeInfo.IsConstructedGenericType)
+    {
       if (nspace.TryGetTypesWithSameName(typeInfo, out var otherTypes))
       {
         var sameNameTypes = otherTypes.ToList();
         sameNameTypes.Add(typeInfo);
-        foreach (var sameNameType in sameNameTypes.ToArray())
-          if (RenameTypeWithNamespace(sameNameType))
-            sameNameTypes.Remove(sameNameType);
+        //foreach (var sameNameType in sameNameTypes.ToArray())
+        //  if (RenameTypeWithNamespace(sameNameType))
+        //    sameNameTypes.Remove(sameNameType);
         if (sameNameTypes.Count > 1)
           foreach (var sameNameType in sameNameTypes)
-            sameNameType.IsInvalid = false;
+          {
+            sameNameType.IsInvalid = true;
+            sameNameType.AddErrorMsg(PPS.RenameTypes, "Target namespace has multiple types with the same name");
+            DuplicateTypeNamesCount++;
+          }
       }
-      nspace.Types.Add(typeInfo);
     }
+    nspace.Types.Add(typeInfo);
+
     if (typeInfo.TypeKind == TypeKind.Enum)
     {
       newName = NewEnumTypeName(typeInfo.Type);
@@ -765,6 +778,14 @@ public static class ModelManager
         OnRenamingType?.Invoke(new RenamingTypeInfo { CheckedTypes = CheckedRenameTypesCount, RenamedTypes = RenamedTypesCount, Current = typeInfo });
         return true;
       }
+    }
+    else if (typeInfo.Name=="Properties" && origNamespace.EndsWith("Properties"))
+    {
+      k = origNamespace.LastIndexOf('.');
+      typeInfo.NewName = origNamespace.Substring(k+1);
+      RenamedTypesCount++;
+      OnRenamingType?.Invoke(new RenamingTypeInfo { CheckedTypes = CheckedRenameTypesCount, RenamedTypes = RenamedTypesCount, Current = typeInfo });
+      return true;
     }
     return false;
   }
@@ -798,7 +819,7 @@ public static class ModelManager
     {
       if (prop.Name == "Count")
         Debug.Assert(true);
-      var fullName = prop.DeclaringType.GetFullName(true) + "." + prop.Name;
+      var fullName = prop.DeclaringType.GetFullName(false, true, true) + "." + prop.Name;
       if (ModelConfig.Instance.PropertyTranslateTable.TryGetValue(fullName, out var newName))
         return newName;
     }
@@ -820,4 +841,38 @@ public static class ModelManager
   }
   #endregion
 
+  //#region Documentation methods
+  ///// <summary>
+  ///// Gets a collection of XElement from <see cref="Description"/> and <see cref="Summary"/>.
+  ///// </summary>
+  ///// <returns></returns>
+  //public static IEnumerable<XElement>? GetDocumentation(this ModelElement element)
+  //{
+  //  if (element.Description == null && element.Summary == null)
+  //    return null;
+  //  var documentation = new Collection<XElement>();
+  //  XElement? summary = null;
+  //  if (element.Description != null)
+  //    documentation.Add(summary = new XElement("summary", element.Description));
+  //  if (element.Summary != null)
+  //  {
+  //    if (summary == null)
+  //      documentation.Add(summary = new XElement("summary"));
+  //    foreach (var item in element.Summary)
+  //      summary.Add(new XElement("para", item));
+  //  }
+  //  return documentation;
+  //}
+
+  ///// <summary>
+  ///// Xml documentation assigned to this element.
+  ///// </summary>
+  //public static IEnumerable<XElement>? GetDocumentation(this PropInfo propInfo)
+  //{
+  //  var result = GetDocumentation((ModelElement)propInfo);
+  //  if (result == null)
+  //    return propInfo.TargetType?.GetDocumentation();
+  //  return result;
+  //}
+  //#endregion
 }

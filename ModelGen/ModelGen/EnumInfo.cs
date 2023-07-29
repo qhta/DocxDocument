@@ -23,7 +23,7 @@ public class EnumInfo : ModelElement
         CustomAttributes = new CustomAttributes(this);
       foreach (var item in fieldInfo.CustomAttributes)
       {
-        CustomAttributes.Add(new CustomAttrib(item));
+        CustomAttributes.Add(new CustomAttribInfo(item));
       }
     }
   }

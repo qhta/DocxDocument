@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ModelGen;
-public class CustomAttributes : OwnedCollection<CustomAttrib>
+public class CustomAttributes : OwnedCollection<CustomAttribInfo>
 {
   public CustomAttributes(Object owner) : base(owner)
   {

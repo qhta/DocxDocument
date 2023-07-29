@@ -104,7 +104,7 @@ public class PropInfo : ModelElement
       if (CustomAttributes == null)
         CustomAttributes = new CustomAttributes(this);
       foreach (var item in propertyInfo.CustomAttributes)
-        CustomAttributes.Add(new CustomAttrib(item));
+        CustomAttributes.Add(new CustomAttribInfo(item));
     }
   }
 

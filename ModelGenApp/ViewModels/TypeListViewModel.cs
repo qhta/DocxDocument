@@ -1,28 +1,42 @@
 ﻿namespace ModelGenApp.ViewModels;
 public class TypeListViewModel: ViewModel
 {
-  public TypeListViewModel(NamespaceViewModel owner, string name, NTS nameTypeSelector, TKS typeKindSelector)
+  public TypeListViewModel(PhaseViewModel phase, NamespaceViewModel nspace, string name, TNS typeNameSelector, TKS typeKindSelector)
   {
-    Owner = owner;
+    Namespace = nspace;
     Name = name;
-    NameTypeSelector = nameTypeSelector;
+    TypeNameSelector = typeNameSelector;
     TypeKindSelector = typeKindSelector;
+    Phase = phase;
     ShowDetailsCommand = new RelayCommand(ShowDetailsExecute, ShowDetailsCanExecute) { Name = "ShowDetailsCommand" };
   }
 
-  public NamespaceViewModel Owner { get; private set; }
+  public TypeListViewModel(PhaseViewModel phase, NamespaceViewModel nspace, string name, TNS typeNameSelector, IEnumerable<TypeInfoViewModel> list)
+  {
+    Namespace = nspace;
+    Name = name;
+    TypeNameSelector = typeNameSelector;
+    Items.AddRange(list);
+    Phase = phase;
+    ShowDetailsCommand = new RelayCommand(ShowDetailsExecute, ShowDetailsCanExecute) { Name = "ShowDetailsCommand" };
+  }
+
+  public NamespaceViewModel Namespace { get; private set; }
 
   public string Name { get; private set; }
 
-  public string Caption => Owner.Caption +": "+this.Name?.ToLower();
+  public string Caption => Namespace.Caption +": "+this.Name?.ToLower();
 
-  public NTS NameTypeSelector { get; private set; }
+  public TNS TypeNameSelector { get; private set; }
 
   public TKS TypeKindSelector { get; private set; }
 
+  public PhaseViewModel Phase { get; private set; }
+
   public virtual IList Items { get;} = new DispatchedCollection<TypeInfoViewModel>();
 
-  public bool IsTargetNameVisible => Owner.Phase.IsTargetNameVisible;
+  public bool IsTargetNameVisible => Namespace.Phase.IsTargetNameVisible;
+  public bool IsInvalidMarkVisible => Namespace.Phase.IsInvalidMarkVisible;
 
   #region ShowDetailsCommand
   public Command ShowDetailsCommand { get; private set; }
@@ -31,14 +45,14 @@ public class TypeListViewModel: ViewModel
   {
     if (TypeKindSelector!=TKS.Any)
       Items.AddRange(nsTypes.Where(item=>item.IsTypeKindSelected(TypeKindSelector))
-      .Select(item => CreateItemViewModel(item)));
+      .Select(item => CreateItemViewModel(item, Phase)));
     else
-      Items.AddRange(nsTypes.Select(item => CreateItemViewModel(item)));
+      Items.AddRange(nsTypes.Select(item => CreateItemViewModel(item, Phase)));
   }
 
-  protected virtual TypeInfoViewModel CreateItemViewModel(TypeInfo item)
+  protected virtual TypeInfoViewModel CreateItemViewModel(TypeInfo item, PhaseViewModel phase)
   {
-    return new TypeInfoViewModel(item, NameTypeSelector.HasFlag(NTS.Origin));
+    return new TypeInfoViewModel(phase, item, TypeNameSelector);
   }
 
 
