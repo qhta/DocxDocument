@@ -19,7 +19,7 @@ public class ConverterCreator: BaseCreator
   //  var invalidTypesCount = 0;
   //  foreach (var typeInfo in TypeManager.AllTypes.ToArray())
   //  {
-  //    ModelDisplay.WriteSameLine($"Checked {++checkedTypesCount} types. {typeInfo.GetFullName()}");
+  //    ModelDisplay.WriteSameLine($"Checked {++checkedTypesCount} types. {typeInfo.GetFullName(true, true, true)}");
   //    if (!ModelManager.ValidateType(typeInfo))
   //      invalidTypesCount++;
   //  }
@@ -51,7 +51,7 @@ public class ConverterCreator: BaseCreator
   //  var renamedCount = ModelManager.RenameSpecificTypes();
   //  foreach (var type in TypeManager.AllTypes.ToArray())
   //  {
-  //    ModelDisplay.WriteSameLine($"Checked {++checkedCount} types. {type.GetFullName()}");
+  //    ModelDisplay.WriteSameLine($"Checked {++checkedCount} types. {type.GetFullName(true, true, true)}");
   //    if (ModelManager.RenameType(type))
   //      renamedCount++;
   //  }
@@ -73,7 +73,7 @@ public class ConverterCreator: BaseCreator
   //  foreach (var type in TypeManager.AllTypes.ToArray())
   //  {
   //    checkedCount++;
-  //    ModelDisplay.WriteSameLine($"Checked {checkedCount} types. {type.GetFullName()}");
+  //    ModelDisplay.WriteSameLine($"Checked {checkedCount} types. {type.GetFullName(true, true, true)}");
   //    ModelManager.TryAddTypeConversion(type);
   //  }
   //  DateTime t2 = DateTime.Now;
@@ -97,7 +97,7 @@ public class ConverterCreator: BaseCreator
   //  foreach (var type in acceptedTypes)
   //  {
   //    ModelManager.CheckTypeUsage(type,
-  //      (item) => { ModelDisplay.WriteSameLine($"Checked {++checkCount} types. {item.GetFullName()}"); });
+  //      (item) => { ModelDisplay.WriteSameLine($"Checked {++checkCount} types. {item.GetFullName(true, true, true)}"); });
   //  }
   //  DateTime t2 = DateTime.Now;
   //  var ts = t2 - t1;

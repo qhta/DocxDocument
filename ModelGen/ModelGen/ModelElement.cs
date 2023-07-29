@@ -85,17 +85,26 @@ public class ModelElement : IOwnedElement
   }
 
   /// <summary>
-  /// Specifies whether the element is accepted for further processing.
+  /// Specifies whether the element is valid after current phase.
   /// </summary>
   [XmlIgnore]
   public bool IsValid { get => Valid == true; set { if (value) Valid = true; else Valid = false; } }
 
   /// <summary>
-  /// Specifies whether the element is rejected from further processing.
+  /// Specifies whether the element is invalid after current phase.
   /// </summary>
   [XmlIgnore]
   public bool IsInvalid { get => Valid == false; set { if (value) Valid = false; else Valid = true; } }
   /// <summary>
+
+  public Collection<(PPS, string)>? Errors { get; set; }
+
+  public void AddErrorMsg(PPS pps, string message)
+  {
+    if (Errors==null)
+      Errors = new Collection<(PPS, string)>();
+    Errors.Add((pps, message));
+  }
 
   /// <summary>
   /// Specifies whether the new name is different from original name.
@@ -171,10 +180,10 @@ public class ModelElement : IOwnedElement
   public CustomAttributes? CustomAttributes { get; protected set; } = null!;
 
   /// <summary>
-  /// Adds a <see cref="CustomAttrib"/> creating <see cref="CustomAttributes"/>.
+  /// Adds a <see cref="CustomAttribInfo"/> creating <see cref="CustomAttributes"/>.
   /// </summary>
   /// <param name="attribInfo"></param>
-  public void Add(CustomAttrib attribInfo)
+  public void Add(CustomAttribInfo attribInfo)
   {
     if (CustomAttributes == null)
       CustomAttributes = new CustomAttributes(this);

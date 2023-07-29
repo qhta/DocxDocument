@@ -165,7 +165,7 @@ public abstract class ModelMonitor
     var originNames = options.NamespaceTypeSelector == NTS.Origin || options.TypeDataSelector.HasFlag(TDS.OriginalNames);
     if (nSpaceTypes.Count() > 0)
     {
-      nSpaceTypes.Sort((item1, item2) => item1.GetFullName(originNames).Name.CompareTo(item2.GetFullName(originNames).Name));
+      nSpaceTypes.Sort((item1, item2) => item1.GetFullName(originNames, true, true).Name.CompareTo(item2.GetFullName(originNames, true, true).Name));
       var listCount = 0;
       var listCont = false;
       WriteLine();
@@ -196,7 +196,7 @@ public abstract class ModelMonitor
       ShowMetadata(typeInfo, options);
     string str = AcceptedMark(typeInfo.Accepted);
     var originNames = options.NamespaceTypeSelector == NTS.Origin || options.TypeDataSelector.HasFlag(TDS.OriginalNames);
-    str += $"{typeInfo.TypeKind.ToString().ToLower()} {typeInfo.GetFullName(originNames)}";
+    str += $"{typeInfo.TypeKind.ToString().ToLower()} {typeInfo.GetFullName(!originNames, true, true)}";
     List<string> status = new List<string>();
     if (typeInfo.Valid != null)
       status.Add(ValidStr(typeInfo.Valid));
@@ -206,18 +206,18 @@ public abstract class ModelMonitor
     {
       var changedToType = ModelManager.GetConversionTargetOrSelf(typeInfo);
       if (changedToType != null)
-        str += $" => {changedToType.GetFullName()}";
+        str += $" => {changedToType.GetFullName(true, true, true)}";
     }
     WriteLine(str);
     Indent();
     if (options.TypeDataSelector.HasFlag(TDS.BaseTypes) && typeInfo.BaseTypeInfo != null)
     {
-      str = $"based on: {typeInfo.BaseTypeInfo.GetFullName(originNames)}";
+      str = $"based on: {typeInfo.BaseTypeInfo.GetFullName(!originNames, true, true)}";
       if (options.TypeDataSelector.HasFlag(TDS.ConversionInfo))
       {
         var changedToType = ModelManager.GetConversionTargetOrSelf(typeInfo.BaseTypeInfo);
         if (changedToType != null)
-          str += $" => {changedToType.GetFullName()}";
+          str += $" => {changedToType.GetFullName(true, true, true)}";
       }
       WriteLine(str);
     }
@@ -252,7 +252,7 @@ public abstract class ModelMonitor
         var genericTypeParamsConstraints = genericTypeParam.GetGenericTypeParamConstraints();
         if (genericTypeParamsConstraints != null)
           foreach (var item in genericTypeParamsConstraints.ToArray())
-            ls.Add(item.GetFullName(originNames));
+            ls.Add(item.GetFullName(!originNames, true, true));
         var genericParamConstraints = genericTypeParam.GetGenericParamConstraints();
         if (genericParamConstraints != null)
           foreach (var item in genericParamConstraints.ToArray())
@@ -272,7 +272,7 @@ public abstract class ModelMonitor
     var implementedInterfaces = typeInfo.GetImplementedInterfaces().ToList();
     if (implementedInterfaces.Any())
     {
-      implementedInterfaces.Sort((item1, item2) => item1.GetFullName(originNames).ToString().CompareTo(item2.GetFullName(originNames)));
+      implementedInterfaces.Sort((item1, item2) => item1.GetFullName(!originNames, true, true).ToString().CompareTo(item2.GetFullName(!originNames, true, true)));
       var listCount = 0;
       var listCont = false;
       foreach (var intfType in implementedInterfaces)
@@ -282,7 +282,7 @@ public abstract class ModelMonitor
           listCont = true;
           break;
         }
-        var str = $"implements {intfType.GetFullName(originNames)}";
+        var str = $"implements {intfType.GetFullName(!originNames, true, true)}";
         WriteLine(str);
       }
       if (listCont)
@@ -296,7 +296,7 @@ public abstract class ModelMonitor
     var includedTypes = typeInfo.GetIElementsTypes().ToList();
     if (includedTypes.Any())
     {
-      includedTypes.Sort((item1, item2) => item1.GetFullName(originNames).ToString().CompareTo(item2.GetFullName(originNames)));
+      includedTypes.Sort((item1, item2) => item1.GetFullName(!originNames, true, true).ToString().CompareTo(item2.GetFullName(!originNames, true, true)));
       var listCount = 0;
       var listCont = false;
       foreach (var intfType in includedTypes)
@@ -306,7 +306,7 @@ public abstract class ModelMonitor
           listCont = true;
           break;
         }
-        var str = $"includes {intfType.GetFullName(originNames)}";
+        var str = $"includes {intfType.GetFullName(!originNames, true, true)}";
         WriteLine(str);
       }
       if (listCont)
@@ -430,12 +430,12 @@ public abstract class ModelMonitor
       {
         if (options.TypeDataSelector.HasFlag(TDS.Metadata))
           ShowMetadata(property, options);
-        var str = $"{property.Name}: {property.PropertyType.GetFullName(originNames)}";
+        var str = $"{property.Name}: {property.PropertyType.GetFullName(originNames, true, true)}";
         if (options.TypeDataSelector.HasFlag(TDS.ConversionInfo))
         {
           var changedToType = ModelManager.GetConversionTargetOrSelf(property.PropertyType);
           if (changedToType != null)
-            str += $" => {changedToType.GetFullName()}";
+            str += $" => {changedToType.GetFullName(true, true, true  )}";
         }
         WriteLine(str);
       }

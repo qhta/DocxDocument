@@ -202,7 +202,7 @@ public class ModelGenerator : BaseCodeGenerator
 
   private bool GenerateEnumType(TypeInfo type, string typeName)
   {
-    var aNamespace = type.GetNamespace();
+    var aNamespace = type.GetNamespace(true, true);
     if (aNamespace != null)
     {
       Writer.WriteLine($"namespace {aNamespace};");

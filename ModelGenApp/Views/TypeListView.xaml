@@ -31,6 +31,9 @@
         <utils:DataGridContentBoundColumn Binding="{Binding Path=Type}"
                                           ContentTemplate="{StaticResource TypeInfoButtonTemplate}">
         </utils:DataGridContentBoundColumn>
+        <utils:DataGridContentBoundColumn Binding="{Binding Path=Type}"
+                                          ContentTemplate="{StaticResource InvalidItemButtonTemplate}">
+        </utils:DataGridContentBoundColumn>
       </DataGrid.Columns>
     </DataGrid>
   </Grid>

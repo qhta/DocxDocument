@@ -6,21 +6,11 @@ public class ConvertPhaseViewModel : PhaseViewModel
     NamespaceTypeSelector = NTS.Origin | NTS.Target;
   }
 
-  Window? window;
   protected override async void ShowResultsExecute()
   {
-    if (window != null && window.IsVisible)
-    {
-      window.Topmost = true;
-      window.Focus();
-    }
-    else
-    {
-      window = new PhaseResultsWindow();
-      window.DataContext = this;
-      window.Show();
+    WindowsManager.ShowWindow<PhaseResultsWindow>(this);
+    if (NamespacesVM == null)
       await Task.Run(() => ShowOverviewExecute());
-    }
   }
 
   protected override async void ShowOverviewExecute()

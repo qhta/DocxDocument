@@ -1,15 +1,15 @@
 ﻿namespace ModelGenApp.ViewModels;
 public class ClassListViewModel: TypeListViewModel
 {
-  public ClassListViewModel(NamespaceViewModel owner, string name, NTS nameTypeSelector, TKS typeKindSelector): 
-    base(owner, name, nameTypeSelector, typeKindSelector)
+  public ClassListViewModel(PhaseViewModel phase, NamespaceViewModel nspace, string name, TNS typeNameSelector, TKS typeKindSelector): 
+    base(phase, nspace, name, typeNameSelector, typeKindSelector)
   {
   }
 
   public override IList Items { get; } = new DispatchedCollection<ClassInfoViewModel>();
 
-  protected override TypeInfoViewModel CreateItemViewModel(TypeInfo item)
+  protected override TypeInfoViewModel CreateItemViewModel(TypeInfo item, PhaseViewModel phase)
   {
-    return new ClassInfoViewModel(item, NameTypeSelector.HasFlag(NTS.Origin));
+    return new ClassInfoViewModel(phase, item, TypeNameSelector);
   }
 }

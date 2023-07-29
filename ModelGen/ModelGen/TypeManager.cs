@@ -77,7 +77,7 @@ public static class TypeManager
     lock (NamespacesLock)
       if (!KnownNamespaces.ContainsKey(nspace))
       {
-        KnownNamespaces.Add(nspace, new(nspace));
+        KnownNamespaces.Add(nspace, new Namespace(nspace));
         OnRegistering?.Invoke(new RegisteringInfo { RegisteredNamespaces = KnownNamespaces.Count, RegisteredTypes = AllTypes.Count() });
       }
   }
@@ -247,19 +247,6 @@ public static class TypeManager
     }
   }
 
-  //public static TypeInfo[] GetOriginalNamespaceTypes(string nspace)
-  //{
-  //  lock (KnownTypesLock)
-  //  {
-  //    int nspaceIndex = -1;
-  //    if (KnownNamespaces.TryGetValue1(nspace, out var ns))
-  //      nspaceIndex = ns;
-  //    if (nspaceIndex != -1)
-  //      return KnownTypes.Where(item => item.Value.NamespaceIndex == nspaceIndex).Select(item => item.Value).ToArray();
-  //    return KnownTypes.Where(item => item.Value.OriginalNamespace == nspace).Select(item => item.Value).ToArray();
-  //  }
-  //}
-
   public static TypeInfo[] GetImplementedInterfaces(this TypeInfo typeInfo)
   {
     if (!typeInfo.IsReflected)
@@ -273,16 +260,16 @@ public static class TypeManager
       TypeReflector.WaitForReflection(typeInfo);
     return TypeManager.GetRelatedTypes(typeInfo, Semantics.Include).ToArray();
   }
-  public static TypeInfo[] GetGenericTypeArguments(this TypeInfo typeInfo)
+  public static TypeInfo[] GetGenericArguments(this TypeInfo typeInfo)
   {
-    if (!typeInfo.IsReflected)
-      TypeReflector.WaitForReflection(typeInfo);
+    //if (!typeInfo.IsReflected)
+    //  TypeReflector.WaitForReflection(typeInfo);
     var args = TypeManager.GetRelatedTypes(typeInfo, Semantics.GenericTypeArg).ToArray();
     if (args.Length != 0)
       return args;
     var baseType = typeInfo.BaseTypeInfo;
     if (baseType != null)
-      return GetGenericTypeArguments(baseType);
+      return GetGenericArguments(baseType);
     return new TypeInfo[0];
   }
 
@@ -322,27 +309,33 @@ public static class TypeManager
     return list;
   }
 
-  public static string GetNameWithParams(this TypeInfo typeInfo)
+  public static string GetOriginalName(this TypeInfo typeInfo)
   {
-    var result = typeInfo.Name;
-    int k = result.IndexOf('`');
+    var result = typeInfo.Type.Name;
+    var k = result.IndexOf('`');
     if (k >= 0)
-    {
       result = result.Substring(0, k);
-      if (typeInfo.IsReflected)
-      {
-        if (typeInfo.IsConstructedGenericType)
-          result += GetGenericParamsNames(typeInfo.GetGenericTypeArguments());
-        if (typeInfo.IsGenericTypeDefinition)
-          result += GetGenericParamsNames(typeInfo.GetGenericParamTypes());
-      }
-      else
-      {
-        if (typeInfo.IsConstructedGenericType)
-          result += GetGenericParamsNames(typeInfo.Type.GenericTypeArguments);
-        if (typeInfo.IsGenericTypeDefinition)
-          result += GetGenericParamsNames(typeInfo.Type.GetTypeInfo().GenericTypeParameters);
-      }
+    Type[] genericArguments = typeInfo.Type.GetGenericArguments();
+    if (genericArguments.Length > 0)
+    {
+      result = result + "<" + string.Join(", ", genericArguments.Select(x => x.Name)) + ">";
+    }
+    return result;
+  }
+
+  public static string GetTargetName(this TypeInfo typeInfo)
+  {
+    var result = typeInfo.TargetType?.TargetName;
+    if (result != null)
+      return result;
+    result = typeInfo.NewName ?? typeInfo.Name;
+    var k = result.IndexOf('`');
+    if (k >= 0)
+      result = result.Substring(0, k);
+    TypeInfo[] genericArguments = GetGenericArguments(typeInfo);
+    if (genericArguments.Length > 0)
+    {
+      result = result + "<" + string.Join(", ", genericArguments.Select(x => x.TargetName)) + ">";
     }
     return result;
   }
@@ -371,14 +364,14 @@ public static class TypeManager
   {
     if (aType.Name.StartsWith("Collection`1"))
     {
-      itemType = aType.GetGenericTypeArguments()[0];
+      itemType = aType.GetGenericArguments()[0];
       return true;
     }
 
     var type = aType.GetImplementedInterfaces().FirstOrDefault((TypeInfo item) => item.Name.StartsWith("ICollection`1"));
     if (type != null)
     {
-      itemType = type.GetGenericTypeArguments()[0];
+      itemType = type.GetGenericArguments()[0];
       return true;
     }
 
@@ -391,7 +384,7 @@ public static class TypeManager
     var type = aType.GetImplementedInterfaces().FirstOrDefault((TypeInfo item) => item.Name.StartsWith("IEnumerable`1"));
     if (type != null)
     {
-      itemType = type.GetGenericTypeArguments()[0];
+      itemType = type.GetGenericArguments()[0];
       return true;
     }
 
@@ -401,7 +394,7 @@ public static class TypeManager
 
   public static void SaveData(string filename)
   {
-    using (var xmlWriter = XmlWriter.Create(filename, new XmlWriterSettings{ Indent=true }))
+    using (var xmlWriter = XmlWriter.Create(filename, new XmlWriterSettings { Indent = true }))
     {
       var namespaces = new Namespaces(TypeManager.AllNamespaces);
       var xmlSerializer = new QXmlSerializer(typeof(Namespaces));

@@ -43,7 +43,7 @@ public class BaseCodeGenerator
 
   #region CustomAttributes generation
 
-  protected bool GenerateCustomAttributes(IEnumerable<CustomAttrib>? attributes)
+  protected bool GenerateCustomAttributes(IEnumerable<CustomAttribInfo>? attributes)
   {
     if (attributes?.Any() == true)
     {
@@ -59,7 +59,7 @@ public class BaseCodeGenerator
     return false;
   }
 
-  protected bool GenerateCustomAttribute(CustomAttrib attrData)
+  protected bool GenerateCustomAttribute(CustomAttribInfo attrData)
   {
     var kind = TypeKind.Type;
     var attributeType = attrData.AttributeTypeInfo;

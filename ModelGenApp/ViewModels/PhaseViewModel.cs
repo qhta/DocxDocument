@@ -10,6 +10,7 @@ public abstract partial class PhaseViewModel : ViewModel
   {
     Phase = phase;
     PhaseName = name;
+    TypeNameSelector = new TNS(false, false, false);
     SaveResultsCommand = new RelayCommand(SaveResultsExecute, SaveResultsCanExecute) { Name = "SaveResultsCommand" };
     ShowResultsCommand = new RelayCommand(ShowResultsExecute, ShowResultsCanExecute) { Name = "ShowResultsCommand" };
     ShowOverviewCommand = new RelayCommand(ShowOverviewExecute, ShowOverviewCanExecute) { Name = "ShowOverviewCommand" };
@@ -121,6 +122,8 @@ public abstract partial class PhaseViewModel : ViewModel
 
   public NTS NamespaceTypeSelector { get; protected set; }
 
+  public TNS TypeNameSelector { get; protected set; }
+
   #endregion
 
   #region SaveResultsCommand
@@ -231,6 +234,8 @@ public abstract partial class PhaseViewModel : ViewModel
 
   public bool IsTargetNameVisible { get; protected set; }
 
+  public bool IsInvalidMarkVisible { get; protected set; }
+
   #region SaveData
   public void SaveData(string filename)
   {
@@ -248,5 +253,9 @@ public abstract partial class PhaseViewModel : ViewModel
   }
   #endregion
 
+  public virtual void ShowErrorFor(TypeInfoViewModel typeInfoViewModel)
+  {
+    WindowsManager.ShowWindow<TypeInfoWindow>(this);
+  }
 
 }

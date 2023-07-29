@@ -3,17 +3,21 @@
 namespace ModelGenApp.ViewModels;
 public class TypeInfoViewModel : ViewModel<TypeInfo>
 {
-  public TypeInfoViewModel(TypeInfo typeInfo, bool original) : base(typeInfo)
+  public TypeInfoViewModel(PhaseViewModel phase, TypeInfo typeInfo, TNS typeNameSelector) : base(typeInfo)
   {
-    Original = original;
+    TypeNameSelector = typeNameSelector;
+    Phase = phase;
     FillTypeSummaryVM();
     ShowTypeCommand = new RelayCommand(ShowTypeExecute, ShowTypeCanExecute) { Name = "ShowTypeCommand" };
+    ShowErrorCommand = new RelayCommand(ShowErrorExecute, ShowErrorCanExecute) { Name = "ShowErrorCommand" };
   }
 
   [DataGridColumn]
   public TypeKind TypeKind => Model.TypeKind;
 
-  public bool Original { get; set; }
+  public TNS TypeNameSelector { get; private set; }
+
+  public PhaseViewModel Phase { get; private set; }
 
   [DataGridColumn]
   public string? Acceptance
@@ -44,29 +48,18 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
   {
     get
     {
-      var name = Model.GetFullName(Original);
-      if (name != null)
-      {
-        var str = name.ToString();
-        var k = str.IndexOf('.');
-        var l = str.IndexOf('<');
-        if (l == -1)
-          l = str.Length;
-        if (k != -1 && k < l)
-          str = str.Substring(k + 1);
-        return str;
-      }
-      return null;
+      if (TypeNameSelector.Target)
+        return TargetName;
+      else
+        return OriginalName;
     }
   }
 
-  public string? TargetName
-  {
-    get
-    {
-      return Model.NewName;
-    }
-  }
+  public string? OriginalName => Model.GetFullName(false, TypeNameSelector.Namespace, TypeNameSelector.NsShortcut);
+
+  public string? TargetName => Model.GetFullName(true, TypeNameSelector.Namespace, TypeNameSelector.NsShortcut);
+
+  public string? ErrorMsg => Model.Errors?.FirstOrDefault(item => item.Item1==Phase.Phase).Item2;
 
   [DataGridColumn(ResourceDataTemplateKey = "TypeInfoLinkTemplate",
     SortMemberPath = "Type.Name", ClipboardContentPath = "Type.Name")]
@@ -78,10 +71,10 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
       if (thisType != null)
       {
         if (thisType.TypeKind == TypeKind.Enum)
-          return new EnumTypeInfoViewModel(thisType, Original);
+          return new EnumTypeInfoViewModel(Phase, thisType, TypeNameSelector);
         if (thisType.TypeKind == TypeKind.Type)
-          return new TypeInfoViewModel(thisType, Original);
-        return new ClassInfoViewModel(thisType, Original);
+          return new TypeInfoViewModel(Phase, thisType, TypeNameSelector);
+        return new ClassInfoViewModel(Phase, thisType, TypeNameSelector);
       }
       return null;
     }
@@ -91,7 +84,7 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
   {
     get
     {
-      return Model.GetFullName(Original);
+      return Model.GetFullName(TypeNameSelector.Target, true, false);
     }
   }
 
@@ -113,7 +106,7 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
     {
       var targetType = Model.GetConversionTarget();
       if (targetType != null)
-        TypeSummaryVM.Add(new TypePropViewModel("Converted to", new TypeInfoViewModel(targetType, true)));
+        TypeSummaryVM.Add(new TypePropViewModel("Converted to", new TypeInfoViewModel(Phase, targetType, TypeNameSelector)));
     }
     TypeSummaryVM.Add(new TypePropViewModel("Description", Model.Description));
   }
@@ -121,7 +114,7 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
   /// <summary>
   /// Shown as Window.Title.
   /// </summary>
-  public string Caption => TypeKind + " " + Model.GetFullName(Original);
+  public string Caption => TypeKind + " " + Model.GetFullName(TypeNameSelector.Target, true, false);
 
   public virtual object? Members => null;
 
@@ -133,20 +126,23 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
     return Model != null;
   }
 
-  Window? window;
   protected virtual void ShowTypeExecute()
   {
-    if (window != null && window.IsVisible)
-    {
-      window.Topmost = true;
-      window.Focus();
-    }
-    else
-    {
-      window = new TypeInfoWindow();
-      window.DataContext = this;
-      window.Show();
-    }
+    WindowsManager.ShowWindow<TypeInfoWindow>(this);
+  }
+  #endregion
+
+  #region ShowErrorCommand
+  public Command ShowErrorCommand { get; private set; }
+
+  protected virtual bool ShowErrorCanExecute()
+  {
+    return ErrorMsg!=null;
+  }
+
+  protected virtual void ShowErrorExecute()
+  {
+    Phase.ShowErrorFor(this);
   }
   #endregion
 

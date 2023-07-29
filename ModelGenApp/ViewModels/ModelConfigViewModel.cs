@@ -45,6 +45,7 @@ public class ModelConfigViewModel : ViewModel
   public void GetData(ModelConfig configData, Assembly assembly)
   {
     _Assembly = assembly;
+    configData.LoadData();
     Namespaces = new NamespacesConfigViewModel();
     Namespaces.GetData(configData, assembly);
   }

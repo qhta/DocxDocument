@@ -76,6 +76,17 @@
                 />
       </Grid>
     </DataTemplate>
+    <DataTemplate x:Key="InvalidItemButtonTemplate" >
+      <Grid Width="20">
+        <Button
+                Command="{Binding Path=ShowErrorCommand}"
+                CommandParameter="{Binding}"
+                ToolTip="{Binding ErrorMsg}"
+                >
+          <Image Source="Images\ErrorMark.png"/>
+        </Button>
+      </Grid>
+    </DataTemplate>
     <DataTemplate x:Key="TypeInfoLinkTemplate" >
       <Grid>
         <TextBlock Margin="2,0,2,0">

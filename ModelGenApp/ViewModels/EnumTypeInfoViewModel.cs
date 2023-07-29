@@ -2,12 +2,12 @@
 
 public class EnumTypeInfoViewModel : TypeInfoViewModel
 {
-  public EnumTypeInfoViewModel(TypeInfo typeInfo, bool original) : base(typeInfo, original)
+  public EnumTypeInfoViewModel(PhaseViewModel phase, TypeInfo typeInfo, TNS typeNameSelector) : base(phase, typeInfo, typeNameSelector)
   {
     EnumValues = new EnumListViewModel(this, "EnumValues");
     if (typeInfo.EnumValues != null)
       foreach (var enumVal in typeInfo.EnumValues)
-        EnumValues.Add(new EnumInfoViewModel(enumVal, original));
+        EnumValues.Add(new EnumInfoViewModel(phase, enumVal, typeNameSelector));
   }
 
   [DataGridColumn(ResourceDataTemplateKey = "CountColumnTemplate",

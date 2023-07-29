@@ -213,7 +213,7 @@ public abstract class BaseCreator
       Summary = new Dictionary<SummaryInfoKind, object>{
         {SummaryInfoKind.AllTypes, TypeManager.AllTypes.Count() },
         {SummaryInfoKind.RenamedTypes, renamedTypesCount },
-        {SummaryInfoKind.InvalidTypes, TypeManager.AllTypes.Count(item=>item.IsInvalid)},
+        {SummaryInfoKind.InvalidTypes, ModelManager.DuplicateTypeNamesCount},
         }
     });
     return ts;
@@ -300,7 +300,7 @@ public abstract class BaseCreator
   //  var duplicateTypesCount = 0;
   //  foreach (var typeInfo in TypeManager.AllTypes.ToArray())
   //  {
-  //    ModelMonitor?.WriteSameLine($"Checked {++checkedTypesCount} types. {typeInfo.GetFullName()}");
+  //    ModelMonitor?.WriteSameLine($"Checked {++checkedTypesCount} types. {typeInfo.GetFullName(true, true, true)}");
   //    if (!ModelManager.ValidateType(typeInfo))
   //      fixedTypesCount++;
   //  }

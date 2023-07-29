@@ -2,12 +2,12 @@
 
 public class ClassInfoViewModel : TypeInfoViewModel
 {
-  public ClassInfoViewModel(TypeInfo typeInfo, bool original) : base(typeInfo, original)
+  public ClassInfoViewModel(PhaseViewModel phase, TypeInfo typeInfo, TNS typeNameSelector) : base(phase, typeInfo, typeNameSelector)
   {
     Properties = new PropListViewModel(this, "Properties");
     if (typeInfo.Properties != null)
       foreach (var propInfo in typeInfo.Properties)
-        Properties.Add(new PropInfoViewModel(this, propInfo, original));
+        Properties.Add(new PropInfoViewModel(phase, this, propInfo, typeNameSelector));
   }
 
   [DataGridColumn(ResourceDataTemplateKey = "CountColumnTemplate",
@@ -26,7 +26,7 @@ public class ClassInfoViewModel : TypeInfoViewModel
       {
         var targetType = item.Target as TypeInfo;
         if (targetType!=null)
-          TypeSummaryVM.Add(new TypePropViewModel("Inheritance", new TypeInfoViewModel(targetType, Original)));
+          TypeSummaryVM.Add(new TypePropViewModel("Inheritance", new TypeInfoViewModel(Phase, targetType, TypeNameSelector)));
       }
   }
 }
