@@ -3,7 +3,8 @@
 /// <summary>
 /// Represents CustomAttribute assigned to element.
 /// </summary>
-public class CustomAttrib: ModelElement
+[XmlRoot("CustomAttrib")]
+public class CustomAttribInfo: ModelElement
 {
   /// <summary>
   /// Type of the CustomAttribute.
@@ -23,7 +24,7 @@ public class CustomAttrib: ModelElement
   [XmlIgnore]
   public OwnedCollection<CustomAttribNamedArgument> NamedArguments { get; set; }
 
-  public CustomAttrib(Attribute attribute) : base(attribute.GetType().Name)
+  public CustomAttribInfo(Attribute attribute) : base(attribute.GetType().Name)
   {
     AttributeTypeInfo = TypeManager.RegisterType(attribute.GetType());
     ConstructorArguments = new OwnedCollection<CustomAttribTypedArgument>(this);
@@ -32,14 +33,14 @@ public class CustomAttrib: ModelElement
       NamedArguments.Add(new CustomAttribNamedArgument(prop.Name, prop.PropertyType, prop.GetValue(attribute)));
   }
 
-  public CustomAttrib(Type attributeType): base(attributeType.Name)
+  public CustomAttribInfo(Type attributeType): base(attributeType.Name)
   {
     ConstructorArguments = new OwnedCollection<CustomAttribTypedArgument>(this);
     NamedArguments = new OwnedCollection<CustomAttribNamedArgument>(this);
     AttributeTypeInfo = TypeManager.RegisterType(attributeType);
   }
 
-  public CustomAttrib(Type attributeType, 
+  public CustomAttribInfo(Type attributeType, 
     IEnumerable<CustomAttributeTypedArgument>? constructorArguments = null, IEnumerable<CustomAttributeNamedArgument>? namedArguments = null): this(attributeType)
   {
     if (constructorArguments != null)
@@ -50,7 +51,7 @@ public class CustomAttrib: ModelElement
         NamedArguments.Add(new CustomAttribNamedArgument(item));
   }
 
-  public CustomAttrib(CustomAttributeData data) : this(data.AttributeType, data.ConstructorArguments, data.NamedArguments)
+  public CustomAttribInfo(CustomAttributeData data) : this(data.AttributeType, data.ConstructorArguments, data.NamedArguments)
   {
   }
 

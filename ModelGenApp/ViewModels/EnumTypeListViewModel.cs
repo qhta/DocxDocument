@@ -1,15 +1,15 @@
 ﻿namespace ModelGenApp.ViewModels;
 public class EnumTypeListViewModel: TypeListViewModel
 {
-  public EnumTypeListViewModel(NamespaceViewModel owner, string name, NTS nameTypeSelector, TKS typeKindSelector): 
-    base(owner, name, nameTypeSelector, typeKindSelector)
+  public EnumTypeListViewModel(PhaseViewModel phase, NamespaceViewModel nspace, string name, TNS typeNameSelector, TKS typeKindSelector): 
+    base(phase, nspace, name, typeNameSelector, typeKindSelector)
   {
   }
 
   public override IList Items { get; } = new DispatchedCollection<EnumTypeInfoViewModel>();
 
-  protected override TypeInfoViewModel CreateItemViewModel(TypeInfo item)
+  protected override TypeInfoViewModel CreateItemViewModel(TypeInfo item, PhaseViewModel phase)
   {
-    return new EnumTypeInfoViewModel(item, NameTypeSelector.HasFlag(NTS.Origin));
+    return new EnumTypeInfoViewModel(phase, item, TypeNameSelector);
   }
 }

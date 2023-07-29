@@ -1,21 +1,22 @@
 ﻿namespace ModelGenApp.ViewModels;
 public class EnumInfoViewModel : ViewModel<EnumInfo>
 {
-  public EnumInfoViewModel(EnumInfo EnumInfo, bool isOriginal) : base(EnumInfo)
+  public EnumInfoViewModel(PhaseViewModel phase, EnumInfo enumInfo, TNS typeNameSelector) : base(enumInfo)
   {
-    IsOriginal = isOriginal;
+    NameTypeSelector = typeNameSelector;
   }
 
-  private bool IsOriginal;
+  private TNS NameTypeSelector;
 
   [DataGridColumn]
   public string Name
   {
     get
     {
-      if (IsOriginal)
-        return Model.Name;
-      return Model.NewName ?? Model.Name;
+      if (NameTypeSelector.Target)
+        return Model.NewName ?? Model.Name;
+      return Model.Name;
+
     }
   }
 

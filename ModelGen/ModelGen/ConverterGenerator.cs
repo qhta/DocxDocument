@@ -191,9 +191,9 @@ public class ConverterGenerator : BaseCodeGenerator
   {
     if (typeInfo.Name == "Rsids")
       TestTools.Stop();
-    var origTypeName = typeInfo.GetFullName(true);
+    var origTypeName = typeInfo.GetFullName(false, true, true);
     var targetType = typeInfo.GetTargetType();
-    var targetTypeName = targetType.GetFullName();
+    var targetTypeName = targetType.GetFullName(true, true, true);
     Writer.WriteLine($"public static {targetType}? CreateModelElement({origTypeName}? openXmlElement)");
     Writer.WriteLine($"{{");
     Writer.Indent++;
@@ -218,8 +218,8 @@ public class ConverterGenerator : BaseCodeGenerator
 
   private bool GenerateCompareModelElementMethod(TypeInfo typeInfo)
   {
-    var origTypeName = typeInfo.GetFullName(true);
-    var targetTypeName = typeInfo.GetConversionTargetOrSelf().GetFullName();
+    var origTypeName = typeInfo.GetFullName(false, true, true);
+    var targetTypeName = typeInfo.GetConversionTargetOrSelf().GetFullName(true, true, true);
     Writer.WriteLine($"");
     Writer.WriteLine(
       $"public static bool CompareModelElement({origTypeName}? openXmlElement, " +
@@ -248,8 +248,8 @@ public class ConverterGenerator : BaseCodeGenerator
 
   private bool GenerateCreateOpenXmlElementMethod(TypeInfo typeInfo)
   {
-    var origTypeName = typeInfo.GetFullName(true);
-    var targetTypeName = typeInfo.GetConversionTargetOrSelf().GetFullName();
+    var origTypeName = typeInfo.GetFullName(false, true, true);
+    var targetTypeName = typeInfo.GetConversionTargetOrSelf().GetFullName(true, true, true);
     Writer.WriteLine($"");
     Writer.WriteLine(
       $"public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>({targetTypeName} value)");
@@ -266,8 +266,8 @@ public class ConverterGenerator : BaseCodeGenerator
 
   private bool GenerateUpdateOpenXmlElementMethod(TypeInfo typeInfo)
   {
-    var origTypeName = typeInfo.GetFullName(true);
-    var targetTypeName = typeInfo.GetConversionTargetOrSelf().GetFullName();
+    var origTypeName = typeInfo.GetFullName(false, true, true);
+    var targetTypeName = typeInfo.GetConversionTargetOrSelf().GetFullName(true, true, true);
     Writer.WriteLine($"");
     Writer.WriteLine(
       $"public static void UpdateOpenXmlElement({origTypeName} openXmlElement, {targetTypeName} value)");
@@ -358,12 +358,12 @@ public class ConverterGenerator : BaseCodeGenerator
       TestTools.Stop();
     var ok = false;
     var origPropName = prop.Name;
-    var origTypeName = prop.DeclaringType?.GetFullName(true) ?? "";
+    var origTypeName = prop.DeclaringType?.GetFullName(false, true, true) ?? "";
     var origPropType = prop.PropertyType;
     var targetPropName = prop.GetTargetName();
     var targetPropType = prop.GetTargetType();
-    var targetPropTypeName = targetPropType.GetFullName();
-    var origPropTypeName = prop.PropertyType.GetFullName(true);
+    var targetPropTypeName = targetPropType.GetFullName(true, true, true);
+    var origPropTypeName = prop.PropertyType.GetFullName(false, true, true);
     var qm = "?";
     if (targetPropType.Type.Name.StartsWith("Collection`")
       && prop.DeclaringType?.Type.IsEqualOrSubclassOf(typeof(OpenXmlPart)) == true
@@ -406,12 +406,12 @@ public class ConverterGenerator : BaseCodeGenerator
       TestTools.Stop();
     var ok = false;
     var origPropName = prop.Name;
-    var origTypeName = prop.DeclaringType?.GetFullName(true) ?? "";
+    var origTypeName = prop.DeclaringType?.GetFullName(false, true, true) ?? "";
     //var origPropType = prop.PropertyType;
     var targetPropName = prop.GetTargetName();
     var targetPropType = prop.GetTargetType();
-    var targetPropTypeName = targetPropType.GetFullName();
-    //var origPropTypeName = prop.PropertyType.GetFullName(true);
+    var targetPropTypeName = targetPropType.GetFullName(true, true, true);
+    //var origPropTypeName = prop.PropertyType.GetFullName(false, true, true);
     //var qm = "?";
     //if (targetPropType.Type.Name.StartsWith("Collection`"))
     //  qm = "";
@@ -449,12 +449,12 @@ public class ConverterGenerator : BaseCodeGenerator
   {
     var ok = false;
     var origPropName = prop.Name;
-    var origTypeName = prop.DeclaringType?.GetFullName(true) ?? "";
+    var origTypeName = prop.DeclaringType?.GetFullName(false, true, true) ?? "";
     var origPropType = prop.PropertyType;
     var targetPropName = prop.GetTargetName();
     var targetPropType = prop.GetTargetType();
-    var targetPropTypeName = targetPropType.GetFullName();
-    var origPropTypeName = prop.PropertyType.GetFullName(true);
+    var targetPropTypeName = targetPropType.GetFullName(true, true, true);
+    var origPropTypeName = prop.PropertyType.GetFullName(false, true, true);
     Writer.WriteLine($"");
     Writer.WriteLine($"private static void Set{targetPropName}({origTypeName} openXmlElement, {targetPropTypeName}? value)");
     Writer.WriteLine($"{{");
@@ -668,7 +668,7 @@ public class ConverterGenerator : BaseCodeGenerator
 
   private bool GenerateSimpleValPropertyGetCode(PropInfo prop)
   {
-    var origPropTypeName = prop.PropertyType.GetFullName(true);
+    var origPropTypeName = prop.PropertyType.GetFullName(false, true, true);
     Writer.WriteLine($"return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<{origPropTypeName}>()?.Val);");
     return true;
   }
@@ -676,14 +676,14 @@ public class ConverterGenerator : BaseCodeGenerator
   private bool GenerateSimpleValPropertyCmpCode(PropInfo prop)
   {
     var origPropName = prop.PropertyType.Name;
-    var origPropTypeName = prop.PropertyType.GetFullName(true);
+    var origPropTypeName = prop.PropertyType.GetFullName(false, true, true);
     Writer.WriteLine($"return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<{origPropTypeName}>()?.Val, value, diffs, objName, \"{origPropName}\");");
     return true;
   }
 
   private bool GenerateSimpleValPropertySetCode(PropInfo prop)
   {
-    var origPropTypeName = prop.PropertyType.GetFullName(true);
+    var origPropTypeName = prop.PropertyType.GetFullName(false, true, true);
     var propTargetType = prop.PropertyType.GetTargetType();
     Writer.WriteLine($"SimpleValueConverter.SetValue<{origPropTypeName},{propTargetType}>(openXmlElement, value);");
 
@@ -709,7 +709,7 @@ public class ConverterGenerator : BaseCodeGenerator
   #region GenerateGuidProperty code
   private bool GenerateGuidPropertyGetCode(PropInfo prop)
   {
-    var origPropTypeName = prop.PropertyType.GetFullName(true);
+    var origPropTypeName = prop.PropertyType.GetFullName(false, true, true);
     Writer.WriteLine($"var itemElement = openXmlElement?.GetFirstChild<{origPropTypeName}>();");
     Writer.WriteLine($"if (itemElement?.Val?.Value != null)");
     Writer.WriteLine($"  return Guid.Parse(itemElement.Val.Value);");
@@ -720,7 +720,7 @@ public class ConverterGenerator : BaseCodeGenerator
   private bool GenerateGuidPropertyCmpCode(PropInfo prop)
   {
     var origPropName = prop.Name;
-    var origPropTypeName = prop.PropertyType.GetFullName(true);
+    var origPropTypeName = prop.PropertyType.GetFullName(false, true, true);
     Writer.WriteLine($"var itemElement = openXmlElement?.GetFirstChild<{origPropTypeName}>();");
     Writer.WriteLine($"if (itemElement?.Val?.Value != null)");
     Writer.WriteLine($"{{");
@@ -735,7 +735,7 @@ public class ConverterGenerator : BaseCodeGenerator
 
   private bool GenerateGuidPropertySetCode(PropInfo prop)
   {
-    var origPropTypeName = prop.PropertyType.GetFullName(true);
+    var origPropTypeName = prop.PropertyType.GetFullName(false, true, true);
     Writer.WriteLine($"var itemElement = openXmlElement.GetFirstChild<{origPropTypeName}>();");
     Writer.WriteLine($"if (itemElement != null)");
     Writer.WriteLine($"  itemElement.Remove();");
@@ -942,7 +942,7 @@ public class ConverterGenerator : BaseCodeGenerator
   private bool GenerateValUInt32PropertySetCode(PropInfo prop)
   {
     var origPropName = prop.Name;
-    var origPropTypeName = prop.PropertyType.GetFullName(true);
+    var origPropTypeName = prop.PropertyType.GetFullName(false, true, true);
     Writer.WriteLine($"if (value != null)");
     Writer.WriteLine($"  openXmlElement.{origPropName} = new {origPropTypeName} {{ Val = ((UInt32)value).ToString(\"X8\") }};");
     Writer.WriteLine($"else");
@@ -965,7 +965,7 @@ public class ConverterGenerator : BaseCodeGenerator
     }
     else
     {
-      var origPropTypeName = prop.PropertyType.GetFullName(true);
+      var origPropTypeName = prop.PropertyType.GetFullName(false, true, true);
       Writer.WriteLine($"return HexIntConverter.GetValue(openXmlElement?.GetFirstChild<{origPropTypeName}>()?.Val);");
     }
     return true;
@@ -987,7 +987,7 @@ public class ConverterGenerator : BaseCodeGenerator
     else
     {
       var origPropName = prop.Name;
-      var origPropTypeName = prop.PropertyType.GetFullName(true);
+      var origPropTypeName = prop.PropertyType.GetFullName(false, true, true);
       Writer.WriteLine($"return HexIntConverter.CmpValue(openXmlElement?.GetFirstChild<{origPropTypeName}>()?.Val, value, diffs, objName, \"{origPropName}\");");
     }
     return true;
@@ -1005,7 +1005,7 @@ public class ConverterGenerator : BaseCodeGenerator
     }
     else
     {
-      var origPropTypeName = prop.PropertyType.GetFullName(true);
+      var origPropTypeName = prop.PropertyType.GetFullName(false, true, true);
       Writer.WriteLine($"HexIntConverter.SetValue<{origPropTypeName}>(openXmlElement, value);");
     }
     return true;
@@ -1147,14 +1147,14 @@ public class ConverterGenerator : BaseCodeGenerator
   private bool GenerateListValuePropertyGetCode(PropInfo prop)
   {
     var origPropName = prop.Name;
-    var origPropItemType = prop.PropertyType.GetGenericTypeArguments().FirstOrDefault();
+    var origPropItemType = prop.PropertyType.GetGenericArguments().FirstOrDefault();
     if (origPropItemType != null)
     {
-      var origPropItemTypeName = origPropItemType.GetFullName(true);
+      var origPropItemTypeName = origPropItemType.GetFullName(false, true, true);
       var isEnum = origPropItemType.IsEnumValue(out var enumType);
       if (isEnum && enumType != null)
-        Writer.WriteLine($"return ListValueConverter.GetValue<{enumType.GetFullName(true)}, " +
-                         $"{enumType.GetFullName()}>(openXmlElement?.{origPropName});");
+        Writer.WriteLine($"return ListValueConverter.GetValue<{enumType.GetFullName(false, true, true)}, " +
+                         $"{enumType.GetFullName(true, true, true)}>(openXmlElement?.{origPropName});");
       else
         Writer.WriteLine($"return ListValueConverter.GetValue(openXmlElement?.{origPropName});");
       return true;
@@ -1165,14 +1165,14 @@ public class ConverterGenerator : BaseCodeGenerator
   private bool GenerateListValuePropertyCmpCode(PropInfo prop)
   {
     var origPropName = prop.Name;
-    var origPropItemType = prop.PropertyType.GetGenericTypeArguments().FirstOrDefault();
+    var origPropItemType = prop.PropertyType.GetGenericArguments().FirstOrDefault();
     if (origPropItemType != null)
     {
-      var origPropItemTypeName = origPropItemType.GetFullName(true);
+      var origPropItemTypeName = origPropItemType.GetFullName(false, true, true);
       var isEnum = origPropItemType.IsEnumValue(out var enumType);
       if (isEnum && enumType != null)
-        Writer.WriteLine($"return ListValueConverter.CmpValue<{enumType.GetFullName(true)}, " +
-                         $"{enumType.GetFullName()}>(openXmlElement?.{origPropName}, value, diffs, objName);");
+        Writer.WriteLine($"return ListValueConverter.CmpValue<{enumType.GetFullName(false, true, true)}, " +
+                         $"{enumType.GetFullName(true, true, true)}>(openXmlElement?.{origPropName}, value, diffs, objName);");
       else
         Writer.WriteLine($"return ListValueConverter.CmpValue(openXmlElement?.{origPropName}, value, diffs, objName);");
       return true;
@@ -1184,15 +1184,15 @@ public class ConverterGenerator : BaseCodeGenerator
   private bool GenerateListValuePropertySetCode(PropInfo prop)
   {
     var origPropName = prop.Name;
-    var origPropItemType = prop.PropertyType.GetGenericTypeArguments().FirstOrDefault();
+    var origPropItemType = prop.PropertyType.GetGenericArguments().FirstOrDefault();
     if (origPropItemType != null)
     {
-      var origPropItemTypeName = origPropItemType.GetFullName(true);
+      var origPropItemTypeName = origPropItemType.GetFullName(false, true, true);
       var isEnum = origPropItemType.IsEnumValue(out var enumType);
       Writer.WriteLine($"if (value != null)");
       if (isEnum && enumType != null)
-        Writer.WriteLine($"  openXmlElement.{origPropName} = ListValueConverter.CreateListValue<{enumType.GetFullName(true)}, " +
-                         $"{enumType.GetFullName()}>(value);");
+        Writer.WriteLine($"  openXmlElement.{origPropName} = ListValueConverter.CreateListValue<{enumType.GetFullName(false, true, true)}, " +
+                         $"{enumType.GetFullName(true, true, true)}>(value);");
       else
         Writer.WriteLine($"  openXmlElement.{origPropName} = ListValueConverter.CreateListValue<{origPropItemTypeName}>(value);");
       Writer.WriteLine($"else");
@@ -1262,9 +1262,9 @@ public class ConverterGenerator : BaseCodeGenerator
   {
     var origPropName = prop.Name;
     var origPropType = prop.PropertyType;
-    var origPropTypeName = origPropType.GetFullName(true);
+    var origPropTypeName = origPropType.GetFullName(false, true, true);
     var targetPropType = prop.GetTargetType();
-    var targetPropTypeName = targetPropType.GetFullName();
+    var targetPropTypeName = targetPropType.GetFullName(true, true, true);
     Writer.WriteLine($"if (openXmlElement?.{origPropName} != null)");
     Writer.WriteLine($"  return EnumValueConverter.GetValue<{origPropTypeName}, {targetPropTypeName}>(openXmlElement?.{origPropName});");
     Writer.WriteLine($"return null;");
@@ -1275,9 +1275,9 @@ public class ConverterGenerator : BaseCodeGenerator
   {
     var origPropName = prop.Name;
     var origPropType = prop.PropertyType;
-    var origPropTypeName = origPropType.GetFullName(true);
+    var origPropTypeName = origPropType.GetFullName(false, true, true);
     var targetPropType = prop.GetTargetType();
-    var targetPropTypeName = targetPropType.GetFullName();
+    var targetPropTypeName = targetPropType.GetFullName(true, true, true);
     Writer.WriteLine($"if (openXmlElement?.{origPropName} != null)");
     Writer.WriteLine($"  return EnumValueConverter.CmpValue<{origPropTypeName}, " +
                      $"{targetPropTypeName}>(openXmlElement?.{origPropName}, value, diffs, objName?.Concat2(\".\",openXmlElement?.GetType().Name));");
@@ -1291,9 +1291,9 @@ public class ConverterGenerator : BaseCodeGenerator
   {
     var origPropName = prop.Name;
     var origPropType = prop.PropertyType;
-    var origPropTypeName = origPropType.GetFullName(true);
+    var origPropTypeName = origPropType.GetFullName(false, true, true);
     var targetPropType = prop.GetTargetType();
-    var targetPropTypeName = targetPropType.GetFullName();
+    var targetPropTypeName = targetPropType.GetFullName(true, true, true);
     Writer.WriteLine($"if (value != null)");
     Writer.WriteLine($"  openXmlElement.{origPropName} = EnumValueConverter.GetValue<{targetPropTypeName}, {origPropTypeName}>(value);");
     return true;
@@ -1304,14 +1304,14 @@ public class ConverterGenerator : BaseCodeGenerator
   private bool GenerateEnumTypePropertyGetCode(PropInfo prop)
   {
     var origPropName = prop.Name;
-    var origPropTypeName = prop.PropertyType.GetFullName(true);
+    var origPropTypeName = prop.PropertyType.GetFullName(false, true, true);
     var origPropType = prop.PropertyType.Type;
     var origPropValueType = GetOpenXmlEnumValueType(origPropType);
     var targetPropType = prop.GetTargetType();
     if (origPropValueType != null && targetPropType != null)
     {
       var origPropValueTypeName = origPropValueType.FullName;
-      var targetPropTypeName = targetPropType.GetFullName();
+      var targetPropTypeName = targetPropType.GetFullName(true, true, true);
       Writer.WriteLine(
         $"return EnumValueConverter.GetValue<{origPropValueTypeName}, {targetPropTypeName}>(openXmlElement?.{origPropName}?.Value);");
       return true;
@@ -1322,14 +1322,14 @@ public class ConverterGenerator : BaseCodeGenerator
   private bool GenerateEnumTypePropertyCmpCode(PropInfo prop)
   {
     var origPropName = prop.Name;
-    var origPropTypeName = prop.PropertyType.GetFullName(true);
+    var origPropTypeName = prop.PropertyType.GetFullName(false, true, true);
     var origPropType = prop.PropertyType.Type;
     var origPropValueType = GetOpenXmlEnumValueType(origPropType);
     var targetPropType = prop.GetTargetType();
     if (origPropValueType != null && targetPropType != null)
     {
       var origPropValueTypeName = origPropValueType.FullName;
-      var targetPropTypeName = targetPropType.GetFullName();
+      var targetPropTypeName = targetPropType.GetFullName(true, true, true);
       Writer.WriteLine(
         $"return EnumValueConverter.CmpValue<{origPropValueTypeName}, " +
         $"{targetPropTypeName}>(openXmlElement?.{origPropName}?.Value, value, diffs, objName?.Concat2(\".\",openXmlElement?.GetType().Name));");
@@ -1341,14 +1341,14 @@ public class ConverterGenerator : BaseCodeGenerator
   private bool GenerateEnumTypePropertySetCode(PropInfo prop)
   {
     var origPropName = prop.Name;
-    var origPropTypeName = prop.PropertyType.GetFullName(true);
+    var origPropTypeName = prop.PropertyType.GetFullName(false, true, true);
     var origPropType = prop.PropertyType.Type;
     var origPropValueType = GetOpenXmlEnumValueType(origPropType);
     var targetPropType = prop.GetTargetType();
     if (origPropValueType != null && targetPropType != null)
     {
       var origPropValueTypeName = origPropValueType.FullName;
-      var targetPropTypeName = targetPropType.GetFullName();
+      var targetPropTypeName = targetPropType.GetFullName(true, true, true);
       Writer.WriteLine($"openXmlElement.{origPropName} = EnumValueConverter.CreateEnumValue<{origPropValueTypeName}, {targetPropTypeName}>(value);");
       return true;
     }
@@ -1464,14 +1464,14 @@ public class ConverterGenerator : BaseCodeGenerator
   #region GenerateStringTypeProperty code
   private bool GenerateStringTypePropertyGetCode(PropInfo prop)
   {
-    var origElementTypeName = prop.PropertyType.GetFullName(true);
+    var origElementTypeName = prop.PropertyType.GetFullName(false, true, true);
     Writer.WriteLine($"return openXmlElement.GetFirstChild<{origElementTypeName}>()?.Val?.Value;");
     return true;
   }
 
   private bool GenerateStringTypePropertyCmpCode(PropInfo prop)
   {
-    var origElementTypeName = prop.PropertyType.GetFullName(true);
+    var origElementTypeName = prop.PropertyType.GetFullName(false, true, true);
     Writer.WriteLine($"var itemElement = openXmlElement.GetFirstChild<{origElementTypeName}>();");
     Writer.WriteLine($"if (itemElement?.Val?.Value == value) return true;");
     Writer.WriteLine($"diffs?.Add(objName, \"{origElementTypeName.Name}\", itemElement?.Val?.Value, value);");
@@ -1481,7 +1481,7 @@ public class ConverterGenerator : BaseCodeGenerator
 
   private bool GenerateStringTypePropertySetCode(PropInfo prop)
   {
-    var origElementTypeName = prop.PropertyType.GetFullName(true);
+    var origElementTypeName = prop.PropertyType.GetFullName(false, true, true);
     Writer.WriteLine($"var itemElement = openXmlElement.GetFirstChild<{origElementTypeName}>();");
     Writer.WriteLine($"if (itemElement != null)");
     Writer.WriteLine($"  itemElement.Remove();");
@@ -1514,7 +1514,7 @@ public class ConverterGenerator : BaseCodeGenerator
   private bool GenerateTextPropertySetCode(PropInfo prop)
   {
     var origPropName = prop.Name;
-    var origPropTypeName = prop.PropertyType.GetFullName(true);
+    var origPropTypeName = prop.PropertyType.GetFullName(false, true, true);
     Writer.WriteLine($"if (value != null)");
     Writer.WriteLine($"  openXmlElement.{origPropName} = new {origPropTypeName}(value);");
     Writer.WriteLine($"else");
@@ -1526,21 +1526,21 @@ public class ConverterGenerator : BaseCodeGenerator
   #region GenerateStringLeafTextTypeProperty code
   private bool GenerateStringLeafTextTypePropertyGetCode(PropInfo prop)
   {
-    var origPropTypeName = prop.PropertyType.GetFullName(true);
+    var origPropTypeName = prop.PropertyType.GetFullName(false, true, true);
     Writer.WriteLine($"  return openXmlElement?.GetFirstChild<{origPropTypeName}>()?.Text;");
     return true;
   }
 
   private bool GenerateStringLeafTextTypePropertyCmpCode(PropInfo prop)
   {
-    var origPropTypeName = prop.PropertyType.GetFullName(true);
+    var origPropTypeName = prop.PropertyType.GetFullName(false, true, true);
     Writer.WriteLine($"  return openXmlElement?.GetFirstChild<{origPropTypeName}>()?.Text == value;");
     return true;
   }
 
   private bool GenerateStringLeafTextTypePropertySetCode(PropInfo prop)
   {
-    var origPropTypeName = prop.PropertyType.GetFullName(true);
+    var origPropTypeName = prop.PropertyType.GetFullName(false, true, true);
     Writer.WriteLine($"var itemElement = openXmlElement.GetFirstChild<{origPropTypeName}>();");
     Writer.WriteLine($"if (itemElement != null)");
     Writer.WriteLine($"  itemElement.Remove();");
@@ -1556,7 +1556,7 @@ public class ConverterGenerator : BaseCodeGenerator
   #region GenerateStringOpenXmlLeafElementProperty code
   private bool GenerateStringOpenXmlLeafElementPropertyGetCode(PropInfo prop)
   {
-    var origPropTypeName = prop.PropertyType.GetFullName(true);
+    var origPropTypeName = prop.PropertyType.GetFullName(false, true, true);
     Writer.WriteLine($"return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<{origPropTypeName}>()?.Val);");
     return true;
   }
@@ -1564,14 +1564,14 @@ public class ConverterGenerator : BaseCodeGenerator
   private bool GenerateStringOpenXmlLeafElementPropertyCmpCode(PropInfo prop)
   {
     var origPropName = prop.PropertyType.Name;
-    var origPropTypeName = prop.PropertyType.GetFullName(true);
+    var origPropTypeName = prop.PropertyType.GetFullName(false, true, true);
     Writer.WriteLine($"return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<{origPropTypeName}>()?.Val, value, diffs, objName, \"{origPropName}\");");
     return true;
   }
 
   private bool GenerateStringOpenXmlLeafElementPropertySetCode(PropInfo prop)
   {
-    var origPropTypeName = prop.PropertyType.GetFullName(true);
+    var origPropTypeName = prop.PropertyType.GetFullName(false, true, true);
     Writer.WriteLine($"StringValueConverter.SetValue<{origPropTypeName}>(openXmlElement, value);");
     return true;
   }
@@ -1792,7 +1792,7 @@ public class ConverterGenerator : BaseCodeGenerator
   private bool GenerateBooleanOnOffTypePropertyGetCode(PropInfo prop)
   {
     var origPropType = prop.PropertyType;
-    var origPropTypeName = origPropType.GetFullName(true);
+    var origPropTypeName = origPropType.GetFullName(false, true, true);
     Writer.WriteLine($"return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<{origPropTypeName}>());");
     return true;
   }
@@ -1801,7 +1801,7 @@ public class ConverterGenerator : BaseCodeGenerator
   {
     var origPropName = prop.PropertyType.Name;
     var origPropType = prop.PropertyType;
-    var origPropTypeName = origPropType.GetFullName(true);
+    var origPropTypeName = origPropType.GetFullName(false, true, true);
     Writer.WriteLine($"return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<{origPropTypeName}>(), value, " +
       $"diffs, objName);");
     return true;
@@ -1810,7 +1810,7 @@ public class ConverterGenerator : BaseCodeGenerator
   private bool GenerateBooleanOnOffTypePropertySetCode(PropInfo prop)
   {
     var origPropType = prop.PropertyType;
-    var origPropTypeName = origPropType.GetFullName(true);
+    var origPropTypeName = origPropType.GetFullName(false, true, true);
     Writer.WriteLine($"BooleanValueConverter.SetOnOffType<{origPropTypeName}>(openXmlElement, value);");
     return true;
   }
@@ -1820,7 +1820,7 @@ public class ConverterGenerator : BaseCodeGenerator
   private bool GenerateBooleanOnOffOnlyTypePropertyGetCode(PropInfo prop)
   {
     var origPropType = prop.PropertyType;
-    var origPropTypeName = origPropType.GetFullName(true);
+    var origPropTypeName = origPropType.GetFullName(false, true, true);
     Writer.WriteLine($"return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<{origPropTypeName}>());");
     return true;
   }
@@ -1829,7 +1829,7 @@ public class ConverterGenerator : BaseCodeGenerator
   {
     var origPropName = prop.PropertyType.Name;
     var origPropType = prop.PropertyType;
-    var origPropTypeName = origPropType.GetFullName(true);
+    var origPropTypeName = origPropType.GetFullName(false, true, true);
     Writer.WriteLine($"return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<{origPropTypeName}>(), value, " +
       $"diffs, objName);");
     return true;
@@ -1838,7 +1838,7 @@ public class ConverterGenerator : BaseCodeGenerator
   private bool GenerateBooleanOnOffOnlyTypePropertySetCode(PropInfo prop)
   {
     var origPropType = prop.PropertyType;
-    var origPropTypeName = origPropType.GetFullName(true);
+    var origPropTypeName = origPropType.GetFullName(false, true, true);
     Writer.WriteLine($"BooleanValueConverter.SetOnOffOnlyType<{origPropTypeName}>(openXmlElement, value);");
     return true;
   }
@@ -1848,7 +1848,7 @@ public class ConverterGenerator : BaseCodeGenerator
   private bool GenerateBooleanEmptyTypeElementPropertyGetCode(PropInfo prop)
   {
     var origPropType = prop.PropertyType;
-    var origPropTypeName = origPropType.GetFullName(true);
+    var origPropTypeName = origPropType.GetFullName(false, true, true);
     Writer.WriteLine($"var element = openXmlElement.GetFirstChild<{origPropTypeName}>();");
     Writer.WriteLine($"return (element != null) ? true : null;");
     return true;
@@ -1857,7 +1857,7 @@ public class ConverterGenerator : BaseCodeGenerator
   private bool GenerateBooleanEmptyTypeElementPropertyCmpCode(PropInfo prop)
   {
     var origPropType = prop.PropertyType;
-    var origPropTypeName = origPropType.GetFullName(true);
+    var origPropTypeName = origPropType.GetFullName(false, true, true);
     Writer.WriteLine($"var element = openXmlElement.GetFirstChild<{origPropTypeName}>();");
     Writer.WriteLine($"bool? val = (element != null) ? true : null;");
     Writer.WriteLine($"if (val == value) return true;");
@@ -1869,7 +1869,7 @@ public class ConverterGenerator : BaseCodeGenerator
   private bool GenerateBooleanEmptyTypeElementPropertySetCode(PropInfo prop)
   {
     var origPropType = prop.PropertyType;
-    var origPropTypeName = origPropType.GetFullName(true);
+    var origPropTypeName = origPropType.GetFullName(false, true, true);
     Writer.WriteLine($"if (value == false)");
     Writer.WriteLine($"{{");
     Writer.WriteLine($"  var itemElement = openXmlElement.GetFirstChild<{origPropTypeName}>();");
@@ -1889,7 +1889,7 @@ public class ConverterGenerator : BaseCodeGenerator
   private bool GenerateBooleanTypedOpenXmlLeafElementPropertyGetCode(PropInfo prop)
   {
     var origPropType = prop.PropertyType;
-    var origPropTypeName = origPropType.GetFullName(true);
+    var origPropTypeName = origPropType.GetFullName(false, true, true);
     Writer.WriteLine($"return openXmlElement.GetFirstChild<{origPropTypeName}>() != null;");
     return true;
   }
@@ -1897,7 +1897,7 @@ public class ConverterGenerator : BaseCodeGenerator
   private bool GenerateBooleanTypedOpenXmlLeafElementPropertyCmpCode(PropInfo prop)
   {
     var origPropType = prop.PropertyType;
-    var origPropTypeName = origPropType.GetFullName(true);
+    var origPropTypeName = origPropType.GetFullName(false, true, true);
     Writer.WriteLine($"var val = openXmlElement.GetFirstChild<{origPropTypeName}>() != null;");
     Writer.WriteLine($"if (val == value) return true;");
     Writer.WriteLine($"diffs?.Add(objName, \"{origPropTypeName}\", val, value);");
@@ -1908,9 +1908,9 @@ public class ConverterGenerator : BaseCodeGenerator
   private bool GenerateBooleanTypedOpenXmlLeafElementPropertySetCode(PropInfo prop)
   {
     //var origPropName = prop.Name;
-    //var origTypeName = prop.DeclaringType?.GetFullName(true) ?? "";
+    //var origTypeName = prop.DeclaringType?.GetFullName(false, true, true) ?? "";
     var origPropType = prop.PropertyType;
-    var origPropTypeName = origPropType.GetFullName(true);
+    var origPropTypeName = origPropType.GetFullName(false, true, true);
     //var targetPropType = prop.PropertyType.GetConversionTarget();
     //var targetPropTypeName = targetPropType.GetFullName(false);
     Writer.WriteLine($"if (value == false)");
@@ -1964,8 +1964,8 @@ public class ConverterGenerator : BaseCodeGenerator
   #region GenerateContentElementProperty code
   private bool GenerateContentElementPropertyGetCode(PropInfo prop)
   {
-    var targetPropTypeName = prop.GetTargetType().GetFullName();
-    var origPropElementTypeName = prop.PropertyType.GetFullName(true);
+    var targetPropTypeName = prop.GetTargetType().GetFullName(true, true, true);
+    var origPropElementTypeName = prop.PropertyType.GetFullName(false, true, true);
     Writer.WriteLine($"var element = openXmlElement?.GetFirstChild<{origPropElementTypeName}>();");
     Writer.WriteLine($"if (element != null)");
     Writer.WriteLine($"  return {ConverterGetMethodName(prop)}(element);");
@@ -1975,8 +1975,8 @@ public class ConverterGenerator : BaseCodeGenerator
 
   private bool GenerateContentElementPropertyCmpCode(PropInfo prop)
   {
-    var targetPropTypeName = prop.GetTargetType().GetFullName();
-    var origPropElementTypeName = prop.PropertyType.GetFullName(true);
+    var targetPropTypeName = prop.GetTargetType().GetFullName(true, true, true);
+    var origPropElementTypeName = prop.PropertyType.GetFullName(false, true, true);
     Writer.WriteLine($"return {ConverterCompareMethodName(prop)}(openXmlElement.GetFirstChild<{origPropElementTypeName}>(), " +
                      $"value, diffs, objName?.Concat2(\".\",openXmlElement?.GetType().Name));");
     return true;
@@ -1984,9 +1984,9 @@ public class ConverterGenerator : BaseCodeGenerator
 
   private bool GenerateContentElementPropertySetCode(PropInfo prop)
   {
-    var origPropElementTypeName = prop.PropertyType.GetFullName(true);
+    var origPropElementTypeName = prop.PropertyType.GetFullName(false, true, true);
     var targetPropType = prop.GetTargetType();
-    var targetPropTypeName = targetPropType.GetFullName();
+    var targetPropTypeName = targetPropType.GetFullName(true, true, true);
     //if (targetPropTypeName.Name == "AdjustPoint2DType")
     //  Debug.Assert(true);
     //var generic = targetPropType.GetIncomingRelationships(Semantics.Inheritance).Count() > 0;
@@ -2008,14 +2008,14 @@ public class ConverterGenerator : BaseCodeGenerator
   {
     //if (prop.Name.StartsWith("Grouping"))
     //  Debug.Assert(true);
-    var origPropTypeName = prop.PropertyType.GetFullName(true);
+    var origPropTypeName = prop.PropertyType.GetFullName(false, true, true);
     var origPropType = prop.PropertyType.Type;
     var origPropValueType = GetOpenXmlLeafEnumValueType(origPropType);
     var targetPropType = prop.GetTargetType();
     if (origPropValueType != null && targetPropType != null)
     {
       var origPropValueTypeName = origPropValueType.FullName;
-      var targetPropTypeName = targetPropType.GetFullName();
+      var targetPropTypeName = targetPropType.GetFullName(true, true, true);
       Writer.WriteLine($"return EnumValueConverter.GetValue<{origPropValueTypeName}, {targetPropTypeName}>(openXmlElement.GetFirstChild<{origPropTypeName}>()?.Val?.Value);");
       return true;
     }
@@ -2026,14 +2026,14 @@ public class ConverterGenerator : BaseCodeGenerator
   {
     //if (prop.Name.StartsWith("Grouping"))
     //  Debug.Assert(true);
-    var origPropTypeName = prop.PropertyType.GetFullName(true);
+    var origPropTypeName = prop.PropertyType.GetFullName(false, true, true);
     var origPropType = prop.PropertyType.Type;
     var origPropValueType = GetOpenXmlLeafEnumValueType(origPropType);
     var targetPropType = prop.GetTargetType();
     if (origPropValueType != null && targetPropType != null)
     {
       var origPropValueTypeName = origPropValueType.FullName;
-      var targetPropTypeName = targetPropType.GetFullName();
+      var targetPropTypeName = targetPropType.GetFullName(true, true, true);
       Writer.WriteLine($"return EnumValueConverter.CmpValue<{origPropValueTypeName}, {targetPropTypeName}>(openXmlElement.GetFirstChild<{origPropTypeName}>()?.Val?.Value, " +
                        $"value, diffs, objName?.Concat2(\".\",openXmlElement?.GetType().Name));");
       return true;
@@ -2043,14 +2043,14 @@ public class ConverterGenerator : BaseCodeGenerator
 
   private bool GenerateContentEnumValPropertySetCode(PropInfo prop)
   {
-    var origPropTypeName = prop.PropertyType.GetFullName(true);
+    var origPropTypeName = prop.PropertyType.GetFullName(false, true, true);
     var origPropType = prop.PropertyType.Type;
     var origPropValueType = GetOpenXmlLeafEnumValueType(origPropType);
     var targetPropType = prop.GetTargetType();
     if (origPropValueType != null && targetPropType != null)
     {
       var origPropValueTypeName = origPropValueType.FullName;
-      var targetPropTypeName = targetPropType.GetFullName();
+      var targetPropTypeName = targetPropType.GetFullName(true, true, true);
       Writer.WriteLine($"var itemElement = openXmlElement.GetFirstChild<{origPropTypeName}>();");
       Writer.WriteLine($"if (itemElement != null)");
       Writer.WriteLine($"{{");
@@ -2080,11 +2080,11 @@ public class ConverterGenerator : BaseCodeGenerator
     var origPropType = prop.PropertyType;
     if (origPropType.Name == "PartExtensionProvider")
       Debug.Assert(true);
-    var args = origPropType.GetGenericTypeArguments();
+    var args = origPropType.GetGenericArguments();
     if (args.Length == 1)
     {
       var origItemType = args[0];
-      var origItemTypeName = origItemType.GetFullName(true);
+      var origItemTypeName = origItemType.GetFullName(false, true, true);
       if (origItemTypeName.Name.EndsWith("Part"))
         return GenerateCollectionOfPartsGetCode(prop);
       if (origItemTypeName.Name.EndsWith("IdPartPair"))
@@ -2101,11 +2101,11 @@ public class ConverterGenerator : BaseCodeGenerator
   private bool GenerateCollectionCmpCode(PropInfo prop)
   {
     var origPropType = prop.PropertyType;
-    var args = origPropType.GetGenericTypeArguments();
+    var args = origPropType.GetGenericArguments();
     if (args.Length == 1)
     {
       var origItemType = args[0];
-      var origItemTypeName = origItemType.GetFullName(true);
+      var origItemTypeName = origItemType.GetFullName(false, true, true);
       if (origItemTypeName.Name.EndsWith("Part"))
         return GenerateCollectionOfPartsCmpCode(prop);
       if (origItemTypeName.Name.EndsWith("IdPartPair"))
@@ -2122,11 +2122,11 @@ public class ConverterGenerator : BaseCodeGenerator
   private bool GenerateCollectionSetCode(PropInfo prop)
   {
     var origPropType = prop.PropertyType;
-    var args = origPropType.GetGenericTypeArguments();
+    var args = origPropType.GetGenericArguments();
     if (args.Length == 1)
     {
       var origItemType = args[0];
-      var origItemTypeName = origItemType.GetFullName(true);
+      var origItemTypeName = origItemType.GetFullName(false, true, true);
       if (origItemTypeName.Name.EndsWith("Part"))
         return GenerateCollectionOfPartsSetCode(prop);
       if (origItemTypeName.Name.EndsWith("IdPartPair"))
@@ -2147,21 +2147,21 @@ public class ConverterGenerator : BaseCodeGenerator
   {
     if (prop.Name == "Items")
       TestTools.Stop();
-    var origPropTypeName = prop.PropertyType.GetFullName(true);
+    var origPropTypeName = prop.PropertyType.GetFullName(false, true, true);
     var origPropType = prop.PropertyType;
-    var origItemType = origPropType.GetGenericTypeArguments().FirstOrDefault();
+    var origItemType = origPropType.GetGenericArguments().FirstOrDefault();
     origItemType = origItemType?.GetOriginType();
-    var origItemTypeName = origItemType?.GetFullName(true);
+    var origItemTypeName = origItemType?.GetFullName(false, true, true);
     var targetPropType = prop.GetTargetType();
     if (targetPropType.IsConstructedGenericType)
     {
-      var targetItemType = targetPropType.GetGenericTypeArguments().FirstOrDefault();
-      var targetItemTypeName = targetItemType?.GetFullName();
+      var targetItemType = targetPropType.GetGenericArguments().FirstOrDefault();
+      var targetItemTypeName = targetItemType?.GetFullName(true, true, true);
       Writer.WriteLine($"var collection = new Collection<{targetItemTypeName}>();");
     }
     else
     {
-      var targetTypeName = targetPropType.GetFullName();
+      var targetTypeName = targetPropType.GetFullName(true, true, true);
       Writer.WriteLine($"var collection = new {targetTypeName}();");
     }
     Writer.WriteLine($"foreach (var item in openXmlElement.Elements<{origItemTypeName}>())");
@@ -2178,17 +2178,17 @@ public class ConverterGenerator : BaseCodeGenerator
 
   private bool GenerateCollectionOfElementsCmpCode(PropInfo prop)
   {
-    var origPropTypeName = prop.PropertyType.GetFullName(true);
+    var origPropTypeName = prop.PropertyType.GetFullName(false, true, true);
     var origPropType = prop.PropertyType;
-    var origItemType = origPropType.GetGenericTypeArguments().First();
+    var origItemType = origPropType.GetGenericArguments().First();
     var targetPropType = prop.GetTargetType();
-    var targetItemType = targetPropType.GetGenericTypeArguments().FirstOrDefault();
+    var targetItemType = targetPropType.GetGenericArguments().FirstOrDefault();
     if (targetItemType == null)
       if (targetPropType.IsCollection(out var targetItemType1))
         targetItemType = targetItemType1;
     Debug.Assert(targetItemType != null);
-    var origItemTypeName = origItemType.GetFullName(true);
-    var targetItemTypeName = targetItemType.GetFullName();
+    var origItemTypeName = origItemType.GetFullName(false, true, true);
+    var targetItemTypeName = targetItemType.GetFullName(true, true, true);
     Writer.WriteLine($"var origElements = openXmlElement.Elements<{origItemTypeName}>();");
     Writer.WriteLine($"var origElementsCount = origElements.Count();");
     Writer.WriteLine($"var modelElementsCount = value?.Count() ?? 0;");
@@ -2218,28 +2218,28 @@ public class ConverterGenerator : BaseCodeGenerator
 
   private bool GenerateCollectionOfElementsSetCode(PropInfo prop)
   {
-    var origPropTypeName = prop.PropertyType.GetFullName(true);
+    var origPropTypeName = prop.PropertyType.GetFullName(false, true, true);
     var origPropType = prop.PropertyType;
-    var origItemType = origPropType.GetGenericTypeArguments().FirstOrDefault();
+    var origItemType = origPropType.GetGenericArguments().FirstOrDefault();
     var targetPropType = prop.GetTargetType();
-    var targetItemType = targetPropType.GetGenericTypeArguments().FirstOrDefault();
-    var origItemTypeName = origItemType?.GetFullName(true);
-    //var targetItemTypeName = targetItemType?.GetFullName();
-    //var origPropTypeName = prop.PropertyType.GetFullName(true);
+    var targetItemType = targetPropType.GetGenericArguments().FirstOrDefault();
+    var origItemTypeName = origItemType?.GetFullName(false, true, true);
+    //var targetItemTypeName = targetItemType?.GetFullName(true, true, true);
+    //var origPropTypeName = prop.PropertyType.GetFullName(false, true, true);
     //var origPropType = prop.PropertyType;
     //var origItemType = origPropType.GetGenericTypeArguments().FirstOrDefault();
     //origItemType = origItemType?.GetOriginType();
-    //var origItemTypeName = origItemType?.GetFullName(true);
+    //var origItemTypeName = origItemType?.GetFullName(false, true, true);
     //var targetPropType = prop.GetTargetType();
     //if (targetPropType.IsConstructedGenericType)
     //{
     //  var targetItemType = targetPropType.GetGenericTypeArguments().FirstOrDefault();
-    //  var targetItemTypeName = targetItemType?.GetFullName();
+    //  var targetItemTypeName = targetItemType?.GetFullName(true, true, true);
     //  Writer.WriteLine($"var collection = new Collection<{targetItemTypeName}>();");
     //}
     //else
     //{
-    //  var targetTypeName = targetPropType.GetFullName();
+    //  var targetTypeName = targetPropType.GetFullName(true, true, true);
     //  Writer.WriteLine($"var collection = new {targetTypeName}();");
     //}
     Writer.WriteLine($"openXmlElement.RemoveAllChildren<{origItemTypeName}>();");
@@ -2259,13 +2259,13 @@ public class ConverterGenerator : BaseCodeGenerator
   #region GenerateCollectionOfParts code
   private bool GenerateCollectionOfPartsGetCode(PropInfo prop)
   {
-    var origPropTypeName = prop.PropertyType.GetFullName(true);
+    var origPropTypeName = prop.PropertyType.GetFullName(false, true, true);
     var origPropType = prop.PropertyType;
-    var origItemType = origPropType.GetGenericTypeArguments().FirstOrDefault();
+    var origItemType = origPropType.GetGenericArguments().FirstOrDefault();
     var targetPropType = prop.GetTargetType();
-    var targetItemType = targetPropType.GetGenericTypeArguments().FirstOrDefault();
-    var origItemTypeName = origItemType?.GetFullName(true);
-    var targetItemTypeName = targetItemType?.GetFullName();
+    var targetItemType = targetPropType.GetGenericArguments().FirstOrDefault();
+    var origItemTypeName = origItemType?.GetFullName(false, true, true);
+    var targetItemTypeName = targetItemType?.GetFullName(true, true, true);
     Writer.WriteLine($"var collection = new Collection<{targetItemTypeName}>();");
     if (origItemTypeName?.Name == "IdPartPair")
       Writer.WriteLine($"foreach (var item in openXmlElement.Parts)");
@@ -2284,13 +2284,13 @@ public class ConverterGenerator : BaseCodeGenerator
 
   private bool GenerateCollectionOfPartsCmpCode(PropInfo prop)
   {
-    var origPropTypeName = prop.PropertyType.GetFullName(true);
+    var origPropTypeName = prop.PropertyType.GetFullName(false, true, true);
     var origPropType = prop.PropertyType;
-    var origItemType = origPropType.GetGenericTypeArguments().FirstOrDefault();
+    var origItemType = origPropType.GetGenericArguments().FirstOrDefault();
     var targetPropType = prop.GetTargetType();
-    var targetItemType = targetPropType.GetGenericTypeArguments().FirstOrDefault();
-    var origItemTypeName = origItemType?.GetFullName(true);
-    var targetItemTypeName = targetItemType?.GetFullName();
+    var targetItemType = targetPropType.GetGenericArguments().FirstOrDefault();
+    var origItemTypeName = origItemType?.GetFullName(false, true, true);
+    var targetItemTypeName = targetItemType?.GetFullName(true, true, true);
     //Writer.WriteLine($"var collection = new Collection<{targetItemTypeName}>();");
     //if (origItemTypeName?.Name == "IdPartPair")
     //  Writer.WriteLine($"foreach (var item in openXmlElement.Parts)");
@@ -2309,13 +2309,13 @@ public class ConverterGenerator : BaseCodeGenerator
   }
   private bool GenerateCollectionOfPartsSetCode(PropInfo prop)
   {
-    var origPropTypeName = prop.PropertyType.GetFullName(true);
+    var origPropTypeName = prop.PropertyType.GetFullName(false, true, true);
     var origPropType = prop.PropertyType;
-    var origItemType = origPropType.GetGenericTypeArguments().FirstOrDefault();
+    var origItemType = origPropType.GetGenericArguments().FirstOrDefault();
     var targetPropType = prop.GetTargetType();
-    var targetItemType = targetPropType.GetGenericTypeArguments().FirstOrDefault();
-    var origItemTypeName = origItemType?.GetFullName(true);
-    var targetItemTypeName = targetItemType?.GetFullName();
+    var targetItemType = targetPropType.GetGenericArguments().FirstOrDefault();
+    var origItemTypeName = origItemType?.GetFullName(false, true, true);
+    var targetItemTypeName = targetItemType?.GetFullName(true, true, true);
     Writer.WriteLine($"openXmlElement.RemoveAllChildren<{origItemTypeName}>();");
     Writer.WriteLine($"if (value != null)");
     Writer.WriteLine($"{{");
@@ -2333,13 +2333,13 @@ public class ConverterGenerator : BaseCodeGenerator
   #region GenerateCollectionOfRelationship code
   private bool GenerateCollectionOfRelationshipGetCode(PropInfo prop)
   {
-    var origPropTypeName = prop.PropertyType.GetFullName(true);
+    var origPropTypeName = prop.PropertyType.GetFullName(false, true, true);
     var origPropType = prop.PropertyType;
-    var origItemType = origPropType.GetGenericTypeArguments().FirstOrDefault();
+    var origItemType = origPropType.GetGenericArguments().FirstOrDefault();
     var targetPropType = prop.GetTargetType();
-    var targetItemType = targetPropType.GetGenericTypeArguments().FirstOrDefault();
-    var origItemTypeName = origItemType?.GetFullName(true);
-    var targetItemTypeName = targetItemType?.GetFullName();
+    var targetItemType = targetPropType.GetGenericArguments().FirstOrDefault();
+    var origItemTypeName = origItemType?.GetFullName(false, true, true);
+    var targetItemTypeName = targetItemType?.GetFullName(true, true, true);
     Writer.WriteLine($"var collection = new Collection<{targetItemTypeName}>();");
     Writer.WriteLine($"foreach (var item in openXmlElement.{origItemTypeName?.Name}s)");
     Writer.WriteLine($"{{");
@@ -2353,13 +2353,13 @@ public class ConverterGenerator : BaseCodeGenerator
 
   private bool GenerateCollectionOfRelationshipCmpCode(PropInfo prop)
   {
-    var origPropTypeName = prop.PropertyType.GetFullName(true);
+    var origPropTypeName = prop.PropertyType.GetFullName(false, true, true);
     var origPropType = prop.PropertyType;
-    var origItemType = origPropType.GetGenericTypeArguments().FirstOrDefault();
+    var origItemType = origPropType.GetGenericArguments().FirstOrDefault();
     var targetPropType = prop.GetTargetType();
-    var targetItemType = targetPropType.GetGenericTypeArguments().FirstOrDefault();
-    var origItemTypeName = origItemType?.GetFullName(true);
-    var targetItemTypeName = targetItemType?.GetFullName();
+    var targetItemType = targetPropType.GetGenericArguments().FirstOrDefault();
+    var origItemTypeName = origItemType?.GetFullName(false, true, true);
+    var targetItemTypeName = targetItemType?.GetFullName(true, true, true);
     //Writer.WriteLine($"var collection = new Collection<{targetItemTypeName}>();");
     //Writer.WriteLine($"foreach (var item in openXmlElement.{origItemTypeName?.Name}s)");
     //Writer.WriteLine($"{{");
@@ -2374,13 +2374,13 @@ public class ConverterGenerator : BaseCodeGenerator
 
   private bool GenerateCollectionOfRelationshipSetCode(PropInfo prop)
   {
-    var origPropTypeName = prop.PropertyType.GetFullName(true);
+    var origPropTypeName = prop.PropertyType.GetFullName(false, true, true);
     var origPropType = prop.PropertyType;
-    var origItemType = origPropType.GetGenericTypeArguments().FirstOrDefault();
+    var origItemType = origPropType.GetGenericArguments().FirstOrDefault();
     var targetPropType = prop.GetTargetType();
-    var targetItemType = targetPropType.GetGenericTypeArguments().FirstOrDefault();
-    var origItemTypeName = origItemType?.GetFullName(true);
-    var targetItemTypeName = targetItemType?.GetFullName();
+    var targetItemType = targetPropType.GetGenericArguments().FirstOrDefault();
+    var origItemTypeName = origItemType?.GetFullName(false, true, true);
+    var targetItemTypeName = targetItemType?.GetFullName(true, true, true);
     Writer.WriteLine($"openXmlElement.RemoveAllChildren<{origItemTypeName}>();");
     Writer.WriteLine($"if (value != null)");
     Writer.WriteLine($"{{");
@@ -2399,14 +2399,14 @@ public class ConverterGenerator : BaseCodeGenerator
 
   private bool GeneratePartRootElementPropertyGetCode(PropInfo prop)
   {
-    var origPropTypeName = prop.PropertyType.GetFullName(true);
+    var origPropTypeName = prop.PropertyType.GetFullName(false, true, true);
     Writer.WriteLine($"  return {ConverterGetMethodName(prop)}(openXmlElement?.RootElement as {origPropTypeName});");
     return true;
   }
 
   private bool GeneratePartRootElementPropertyCmpCode(PropInfo prop)
   {
-    var origPropTypeName = prop.PropertyType.GetFullName(true);
+    var origPropTypeName = prop.PropertyType.GetFullName(false, true, true);
     Writer.WriteLine($"  return true;");
     return true;
   }
@@ -2414,7 +2414,7 @@ public class ConverterGenerator : BaseCodeGenerator
   private bool GeneratePartRootElementPropertySetCode(PropInfo prop)
   {
     var origPropName = prop.Name;
-    var origPropTypeName = prop.PropertyType.GetFullName(true);
+    var origPropTypeName = prop.PropertyType.GetFullName(false, true, true);
     Writer.WriteLine($"if (value != null)");
     Writer.WriteLine($"{{");
     Writer.WriteLine($"   var rootElement = {ConverterCreateMethodName(prop)}(value);");
@@ -2441,16 +2441,16 @@ public class ConverterGenerator : BaseCodeGenerator
 
   private string ConverterGetMethodName(TypeInfo targetPropType, TypeInfo origPropType)
   {
-    var targetPropTypeName = targetPropType.GetFullName();
-    var origPropTypeName = origPropType.GetFullName(true);
+    var targetPropTypeName = targetPropType.GetFullName(true, true, true);
+    var origPropTypeName = origPropType.GetFullName(false, true, true);
     if (targetPropType.IsSimple())
       return SimpleTypeConverterGetMethodName(targetPropTypeName, origPropTypeName);
     FullTypeName convPropName;
     if (targetPropType.IsCollection(out var targetItemType))
     {
-      var origItemType = origPropType.GetGenericTypeArguments().FirstOrDefault();
+      var origItemType = origPropType.GetGenericArguments().FirstOrDefault();
       if (origItemType != null && targetItemType.IsSimple())
-        return SimpleTypeConverterGetMethodName(targetItemType.GetFullName(), origItemType.GetFullName());
+        return SimpleTypeConverterGetMethodName(targetItemType.GetFullName(true, true, true), origItemType.GetFullName(true, true, true));
 
       convPropName = new FullTypeName(targetItemType.Name + "Converter",
         TypeInfo.NamespaceShortcut(targetItemType.GetTargetNamespace().ReplaceStart("DocumentModel", "DocumentModel.OpenXml")));
@@ -2517,21 +2517,21 @@ public class ConverterGenerator : BaseCodeGenerator
   {
     var targetPropType = prop.GetTargetType();
     var origPropType = prop.PropertyType;
-    var targetPropTypeName = targetPropType.GetFullName();
-    var origPropTypeName = origPropType.GetFullName(true);
+    var targetPropTypeName = targetPropType.GetFullName(true, true, true);
+    var origPropTypeName = origPropType.GetFullName(false, true, true);
     var generic = true;
     if (targetPropType.IsSimple())
       return SimpleTypeConverterCreateMethodName(targetPropTypeName, origPropTypeName);
     FullTypeName convPropName;
-    var origItemType = origPropType.GetGenericTypeArguments().FirstOrDefault();
+    var origItemType = origPropType.GetGenericArguments().FirstOrDefault();
     if (origItemType != null && targetPropType.IsCollection(out var targetItemType))
     {
       if (targetItemType.IsSimple())
-        return SimpleTypeConverterCreateMethodName(targetItemType.GetFullName(), origItemType.GetFullName(true));
+        return SimpleTypeConverterCreateMethodName(targetItemType.GetFullName(true, true, true), origItemType.GetFullName(false, true, true));
 
       convPropName = new FullTypeName(targetItemType.Name + "Converter",
         TypeInfo.NamespaceShortcut((targetItemType?.GetTargetNamespace() ?? "").ReplaceStart("DocumentModel", "DocumentModel.OpenXml")));
-      origPropTypeName = origItemType.GetFullName(true);
+      origPropTypeName = origItemType.GetFullName(false, true, true);
     }
     else if (targetPropTypeName.Name == "Byte[]")
     {
@@ -2578,15 +2578,15 @@ public class ConverterGenerator : BaseCodeGenerator
 
   private string? ConverterTypeCast(TypeInfo targetPropType, TypeInfo origPropType)
   {
-    var targetPropTypeName = targetPropType.GetFullName();
+    var targetPropTypeName = targetPropType.GetFullName(true, true, true);
     if (targetPropType.IsSimple())
       return SimpleTypeConverterTypeCast(targetPropTypeName);
     if (targetPropTypeName.Name == "Collection")
     {
-      var origItemType = origPropType.GetGenericTypeArguments().First();
-      var targetItemType = targetPropType.GetGenericTypeArguments().First();
+      var origItemType = origPropType.GetGenericArguments().First();
+      var targetItemType = targetPropType.GetGenericArguments().First();
       if (targetItemType.IsSimple())
-        return SimpleTypeConverterTypeCast(targetItemType.GetFullName());
+        return SimpleTypeConverterTypeCast(targetItemType.GetFullName(true, true, true));
     }
     return null;
   }
