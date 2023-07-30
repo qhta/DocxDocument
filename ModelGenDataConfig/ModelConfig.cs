@@ -11,7 +11,7 @@ namespace ModelGenDataConfig;
 public class ModelConfig
 {
 
-  private ModelConfig(){ }
+  private ModelConfig() { }
 
   public static ModelConfig Instance
   {
@@ -25,13 +25,6 @@ public class ModelConfig
   private static ModelConfig _Instance = null!;
 
   #region Namespaces
-
-  /// <summary>
-  /// List of DocumentFormat namespaces that should be included in processing.
-  /// </summary>
-  public WildcardStrings IncludedNamespaces { get; } = new WildcardStrings
-  {
-  };
 
   /// <summary>
   /// List of DocumentFormat namespaces that should be excluded from processing.
@@ -434,17 +427,17 @@ public class ModelConfig
       if (item.Value.StartsWith("Collection<"))
       {
         var k = "Collection<".Length;
-        var str = item.Value.Substring(k, item.Value.Length-k-1);
+        var str = item.Value.Substring(k, item.Value.Length - k - 1);
         var type = Type.GetType(str);
-        Debug.Assert(type!=null);
+        Debug.Assert(type != null);
         type = typeof(Collection<>).MakeGenericType(type);
         PropertyTypes.Add(item.Key, type);
       }
       else
       {
         var type = Type.GetType(item.Value);
-        Debug.Assert(type!=null);
-        if (type!=null)
+        Debug.Assert(type != null);
+        if (type != null)
           PropertyTypes.Add(item.Key, type);
       }
     }
@@ -452,7 +445,7 @@ public class ModelConfig
 
   public bool TryGetPropertyType(string propertyName, [MaybeNullWhen(false)][NotNullWhen(true)] out Type propertyType)
   {
-    if (PropertyTypes.Count==0)
+    if (PropertyTypes.Count == 0)
       BuildPropertyTypesDictionary();
     if (PropertyTypes.TryGetValue(propertyName, out propertyType))
       return true;
@@ -473,12 +466,27 @@ public class ModelConfig
   #region Types
   public bool IsExcluded(Type type)
   {
-    if (IncludedTypes.Contains(type.Name))
-      return false;
-    if (ExcludedNamespaces.Contains(type.Namespace ?? ""))
-      return true;
-    if (ExcludedTypes.Contains(type.Name))
-      return true;
+    var fullNameComparison = IncludedTypes.FirstOrDefault(item => item.Contains('.')) != null
+                          || ExcludedTypes.FirstOrDefault(item => item.Contains('.')) != null;
+    if (fullNameComparison)
+    {
+      var fullName = type.Namespace ?? "" + "." + type.Name;
+      if (IncludedTypes.Contains(fullName))
+        return false;
+      if (ExcludedNamespaces.Contains(type.Namespace ?? ""))
+        return true;
+      if (ExcludedTypes.Contains(fullName))
+        return true;
+    }
+    else
+    {
+      if (IncludedTypes.Contains(type.Name))
+        return false;
+      if (ExcludedNamespaces.Contains(type.Namespace ?? ""))
+        return true;
+      if (ExcludedTypes.Contains(type.Name))
+        return true;
+    }
     return false;
   }
 
@@ -513,27 +521,17 @@ public class ModelConfig
     "CustomUIPart",
     "TypedOpenXmlPackage",
     "OnOffType",
+    "OfficeAvailabilityAttribute", "NullableContextAttribute", "SchemaAttrAttribute", "NullableAttribute", "SerializableAttribute",
+    "DebuggerDisplayAttribute", "DebuggerNonUserCodeAttribute", "CLSCompliantAttribute", "EditorBrowsableAttribute",
   };
 
   public WildcardStrings IncludedTypes { get; } = new WildcardStrings
   {
     "CustomXmlAttribute",
     "DocPart",
-    //"Wordprocessing*",
-    //"WordprocessingDocumentType",
     "EnumValue*",
     "OpenXmlSimpleValue*",
     "ListValue*",
-    //"OpenXmlSolidColorFillPropertiesElement",
-    //"OpenXmlValueColorEndPositionElement", "OpenXmlTaskAssignUnassignUserElement", "OpenXmlTaskUserElement",
-    //"OpenXmlPartRootElement",
-    //"OpenXmlFormulaElement",
-  };
-
-  public WildcardStrings ExcludedAttributes { get; } = new WildcardStrings
-  {
-    "OfficeAvailability", "NullableContext", "SchemaAttr", "Nullable", "Serializable",
-    "DebuggerDisplay", "DebuggerNonUserCode", "CLSCompliant", "EditorBrowsable",
   };
 
   public BiDiDictionary<string, string> TypeConversion { get; } = new()
@@ -773,15 +771,13 @@ public class ModelConfig
   {
     using (var textWriter = File.CreateText(filename))
     {
-      WriteStrings(textWriter, "IncludedNamespaces", IncludedNamespaces);
       WriteStrings(textWriter, "ExcludedNamespaces", ExcludedNamespaces);
       WriteDictionary(textWriter, "TranslatedNamespaces", TranslatedNamespaces);
       WriteDictionary(textWriter, "NamespaceShortcuts", NamespaceShortcuts);
       WriteStrings(textWriter, "IncludedTypes", IncludedTypes);
       WriteStrings(textWriter, "ExcludedTypes", ExcludedTypes);
-      WriteStrings(textWriter, "ExcludedAttributes", ExcludedAttributes);
       WriteDictionary(textWriter, "TypeConversion", TypeConversion);
-      WriteDictionary(textWriter, "PropertyTypeTranslation", PropertyTypeConversion);
+      WriteDictionary(textWriter, "PropertyTypeConversion", PropertyTypeConversion);
       WriteDictionary(textWriter, "BuiltInTypeTranslation", BuiltInTypeTranslation);
       WriteStrings(textWriter, "SimpleTypes", SimpleTypes);
       WriteStrings(textWriter, "RealTypes", RealTypes);
@@ -804,9 +800,7 @@ public class ModelConfig
         if (line.StartsWith("[") && line.EndsWith("]"))
         {
           var key = line.Substring(1, line.Length - 2);
-          if (key == "IncludedNamespaces")
-            ReadStrings(textReader, IncludedNamespaces, ref lineNumber);
-          else if (key == "ExcludedNamespaces")
+          if (key == "ExcludedNamespaces")
             ReadStrings(textReader, ExcludedNamespaces, ref lineNumber);
           else if (key == "TranslatedNamespaces")
             ReadDictionary(textReader, TranslatedNamespaces, ref lineNumber);
@@ -816,8 +810,6 @@ public class ModelConfig
             ReadStrings(textReader, IncludedTypes, ref lineNumber);
           else if (key == "ExcludedTypes")
             ReadStrings(textReader, ExcludedTypes, ref lineNumber);
-          else if (key == "ExcludedAttributes")
-            ReadStrings(textReader, ExcludedAttributes, ref lineNumber);
           else if (key == "TypeConversion")
             ReadDictionary(textReader, TypeConversion, ref lineNumber);
           else if (key == "PropertyTypeConversion")

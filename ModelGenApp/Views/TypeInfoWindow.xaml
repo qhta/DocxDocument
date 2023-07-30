@@ -7,6 +7,6 @@
         mc:Ignorable="d"
         Title="{Binding Caption}" Height="450" Width="800">
   <Grid>
-    <views:TypeInfoView/>
+    <views:TypeInfoView HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
   </Grid>
 </Window>

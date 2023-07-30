@@ -2,7 +2,7 @@
 public class NamespaceConfigViewModel : ViewModel, IEditableObject
 {
 
-  public string Name
+  public string OrigName
   {
     get { return _OrigName; }
     set
@@ -10,7 +10,7 @@ public class NamespaceConfigViewModel : ViewModel, IEditableObject
       if (_OrigName != value)
       {
         _OrigName = value;
-        NotifyPropertyChanged(nameof(Name));
+        NotifyPropertyChanged(nameof(OrigName));
       }
     }
   }
@@ -62,61 +62,89 @@ public class NamespaceConfigViewModel : ViewModel, IEditableObject
   }
   private string? _Shortcut;
 
-  public string? TranslatedName
+  public bool IsShortcutValid
   {
-    get { return _TranslatedName; }
+    get { return _IsShortcutValid; }
     set
     {
-      if (_TranslatedName != value)
+      if (_IsShortcutValid != value)
       {
-        _TranslatedName = value;
-        NotifyPropertyChanged(nameof(TranslatedName));
+        _IsShortcutValid = value;
+        NotifyPropertyChanged(nameof(IsShortcutValid));
       }
     }
   }
-  private string? _TranslatedName;
+  private bool _IsShortcutValid = true;
 
-  public string? TranslatedShortcut
+  public string? ShortcutErrorMsg
   {
-    get { return _TranslatedShortcut; }
+    get { return _ShortcutErrorMsg; }
     set
     {
-      if (_TranslatedShortcut != value)
+      if (_ShortcutErrorMsg != value)
       {
-        _TranslatedShortcut = value;
-        NotifyPropertyChanged(nameof(TranslatedShortcut));
+        _ShortcutErrorMsg = value;
+        NotifyPropertyChanged(nameof(ShortcutErrorMsg));
       }
     }
   }
-  private string? _TranslatedShortcut;
+  private string? _ShortcutErrorMsg;
 
-  public new bool IsValid
+  public string? TargetName
   {
-    get { return _IsValid; }
+    get { return _TargetName; }
     set
     {
-      if (_IsValid != value)
+      if (_TargetName != value)
       {
-        _IsValid = value;
-        NotifyPropertyChanged(nameof(IsValid));
+        _TargetName = value;
+        NotifyPropertyChanged(nameof(TargetName));
       }
     }
   }
-  private bool _IsValid = true;
+  private string? _TargetName;
 
-  public string? ValidationMsg
+  public string? TargetShortcut
   {
-    get { return _ValidationMsg; }
+    get { return _TargetShortcut; }
     set
     {
-      if (_ValidationMsg != value)
+      if (_TargetShortcut != value)
       {
-        _ValidationMsg = value;
-        NotifyPropertyChanged(nameof(ValidationMsg));
+        _TargetShortcut = value;
+        NotifyPropertyChanged(nameof(TargetShortcut));
       }
     }
   }
-  private string? _ValidationMsg;
+  private string? _TargetShortcut;
+
+  public bool IsTargetShortcutValid
+  {
+    get { return _IsTargetShortcutValid; }
+    set
+    {
+      if (_IsTargetShortcutValid != value)
+      {
+        _IsTargetShortcutValid = value;
+        NotifyPropertyChanged(nameof(IsTargetShortcutValid));
+      }
+    }
+  }
+  private bool _IsTargetShortcutValid = true;
+
+  public string? TargetShortcutErrorMsg
+  {
+    get { return _TargetShortcutErrorMsg; }
+    set
+    {
+      if (_TargetShortcutErrorMsg != value)
+      {
+        _TargetShortcutErrorMsg = value;
+        NotifyPropertyChanged(nameof(TargetShortcutErrorMsg));
+      }
+    }
+  }
+  private string? _TargetShortcutErrorMsg;
 
   public void BeginEdit()
   {

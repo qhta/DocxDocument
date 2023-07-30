@@ -10,7 +10,10 @@
     <Compile Update="Views\ModelConfigView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\NamespacesConfigView.xaml.cs">
+    <Compile Update="Views\ModelConfigWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\ItemsConfigView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\PhaseProgressView.xaml.cs">
@@ -42,7 +45,10 @@
     <Page Update="Views\ModelConfigView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\NamespacesConfigView.xaml">
+    <Page Update="Views\ModelConfigWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ItemsConfigView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\PhaseProgressView.xaml">
