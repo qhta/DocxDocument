@@ -2,14 +2,10 @@
 /// <summary>
 /// Interaction logic for ModelConfigView.xaml
 /// </summary>
-public partial class ModelConfigView : Window
+public partial class ModelConfigView : UserControl
 {
   public ModelConfigView()
   {
     InitializeComponent();
-    ModelConfigViewModel modelView = new ModelConfigViewModel();
-    var assembly = Assembly.Load("DocumentFormat.OpenXml");
-    modelView.GetData(ModelConfig.Instance, assembly);
-    DataContext = modelView;
   }
 }

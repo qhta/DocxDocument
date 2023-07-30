@@ -16,7 +16,10 @@
       <RowDefinition Height="24"/>
     </Grid.RowDefinitions>
     <Menu Grid.Row="0" >
-      <MenuItem Header="Config" Command="{Binding OpenConfigCommand}"/>
+      <MenuItem Header="Config" >
+        <MenuItem Header="Namespaces" Command="{Binding OpenConfigCommand}" CommandParameter="Namespaces"/>
+        <MenuItem Header="Types" Command="{Binding OpenConfigCommand}" CommandParameter="Types"/>
+      </MenuItem>
       <MenuItem Header="Start" Command="{Binding StartProcessCommand}"/>
     </Menu>
     <Grid Grid.Row="1">
