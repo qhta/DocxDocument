@@ -65,13 +65,13 @@ public class BaseCodeGenerator
     var attributeType = attrData.AttributeTypeInfo;
     var attributeTypeName = attributeType.GetConvertedName(kind);
     var attrTypeName = attributeTypeName.Name;
-    if (attrTypeName.EndsWith("Attribute"))
-      attrTypeName = attrTypeName.Substring(0, attrTypeName.Length - "Attribute".Length);
+    //if (attrTypeName.EndsWith("Attribute"))
+    //  attrTypeName = attrTypeName.Substring(0, attrTypeName.Length - "Attribute".Length);
     if (attrTypeName == string.Empty)
       return false;
-    if (ModelConfig.Instance.ExcludedAttributes.Contains(attrTypeName))
+    if (ModelConfig.Instance.ExcludedTypes.Contains(attrTypeName))
       return false;
-    var attrString = attrTypeName;
+    var attrString = attrTypeName.Substring(0, attrTypeName.Length - "Attribute".Length);
     if (attrData.ConstructorArguments?.Count + attrData.NamedArguments?.Count > 0)
     {
       var strList = new List<string>();

@@ -64,7 +64,7 @@ public class MainViewModel : ViewModel
   {
     this.windowService = new WindowService();
     _ProcessOptionsVM = new ProcessOptionsViewModel();
-    OpenConfigCommand = new RelayCommand(OpenConfig, CanOpenConfig){ Name = "OpenConfigCommand" };
+    OpenConfigCommand = new RelayCommand<string>(OpenConfig, CanOpenConfig){ Name = "OpenConfigCommand" };
     StartProcessCommand = new RelayCommand(StartProcess, CanStartProcess){ Name = "StartProcessCommand" };
     StopProcessCommand = new RelayCommand(StopProcess, CanStopProcess){ Name = "StopProcessCommand" };
     ProcessOptionsVM.PropertyChanged += ProcessOptionsVM_PropertyChanged;
@@ -79,24 +79,18 @@ public class MainViewModel : ViewModel
   #region OpenConfigCommand
   public Command OpenConfigCommand { get; }
   
-  public bool CanOpenConfig()
+  public bool CanOpenConfig(string parameter)
   {
     return true;
   }
 
-  Window? window;
-  protected void OpenConfig()
+  protected void OpenConfig(string parameter)
   {
-    if (window != null && window.IsVisible)
-    {
-      window.Topmost=true;
-      window.Focus();
-    }
+    if (parameter=="Namespaces")
+      WindowsManager.ShowWindow<ModelConfigWindow>(new NamespacesConfigViewModel(ModelConfig.Instance));
     else
-    {
-      window = new ModelConfigView();
-      window.Show();
-    }
+    if (parameter=="Types")
+      WindowsManager.ShowWindow<ModelConfigWindow>(new TypesConfigViewModel(ModelConfig.Instance));
   }
   #endregion
 

@@ -1,93 +1,75 @@
 ﻿namespace ModelGenApp.ViewModels;
 
 /// <summary>
-/// View model of model config data. Used to edit this data in application.
+/// Abstract view model of model config data. Inherited classes specify some group of settings.
 /// </summary>
-public class ModelConfigViewModel : ViewModel
+public abstract class ModelConfigViewModel: ViewModel
 {
   /// <summary>
   /// Default initializing constructor
   /// </summary>
-  public ModelConfigViewModel()
+  public ModelConfigViewModel(ModelConfig configData)
   {
+    _Assembly = Assembly.Load("DocumentFormat.OpenXml");
     StoreDataCommand = new RelayCommand(StoreData, CanStoreData) { Name = "StoreDataCommand" };
     RestoreDataCommand = new RelayCommand(RestoreData, CanRestoreData) { Name = "RestoreDataCommand" };
-
   }
 
-  /// <summary>
-  /// ViewModel of namespaces defined in the assembly.
-  /// </summary>
-  public NamespacesConfigViewModel Namespaces
-  {
-    get { return _Namespaces; }
-    set
-    {
-      if (_Namespaces != value)
-      {
-        _Namespaces = value;
-        NotifyPropertyChanged(nameof(Namespaces));
-      }
-    }
-  }
-  private NamespacesConfigViewModel _Namespaces = null!;
+  public virtual string Caption { get; protected set; } = "Model configuration";
+
+  public abstract void AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs args);
+
+   public virtual IList Items { get; protected set; } = null!;
 
   /// <summary>
   /// Stores loaded assembly reference. Used in <see cref="ReloadData"/>
   /// </summary>
-  private Assembly? _Assembly;
+  protected Assembly _Assembly;
 
   /// <summary>
   /// Loads namespaces defined in the assembly.
   /// </summary>
   /// <param name="configData"></param>
   /// <param name="assembly"></param>
-  public void GetData(ModelConfig configData, Assembly assembly)
+  public virtual void GetData(ModelConfig configData)
   {
-    _Assembly = assembly;
     configData.LoadData();
-    Namespaces = new NamespacesConfigViewModel();
-    Namespaces.GetData(configData, assembly);
   }
 
   /// <summary>
   /// Reload namespaces after config data reload.
   /// </summary>
   /// <param name="configData"></param>
-  public void ReloadData(ModelConfig configData)
+  public virtual void ReloadData(ModelConfig configData)
   {
-    if (_Assembly != null)
-    {
-      configData.LoadData();
-      var assembly = _Assembly;
-      Namespaces = new NamespacesConfigViewModel();
-      Namespaces.GetData(configData, assembly);
-    }
+    configData.LoadData();
+    GetData(configData);
   }
 
   /// <summary>
   /// Stores config data in the config file.
   /// </summary>
   /// <param name="configData"></param>
-  public void SaveData(ModelConfig configData)
+  public virtual void SaveData(ModelConfig configData)
   {
-    Namespaces.SetData(configData);
+    SetData(configData);
     configData.SaveData();
     ReloadData(configData);
   }
+
+  /// <summary>
+  /// Sets config data. Used in <see cref="SaveData"/> method.
+  /// </summary>
+  /// <param name="configData"></param>
+  /// <returns></returns>
+  public abstract void SetData(ModelConfig configData);
 
   /// <summary>
   /// Validates config data. Used in <see cref="StoreData"/> method.
   /// </summary>
   /// <param name="configData"></param>
   /// <returns></returns>
-  public bool ValidateData(ModelConfig configData)
-  {
-    var ok = true;
-    if (!Namespaces.ValidateData(configData))
-      ok = false;
-    return ok;
-  }
+  public abstract bool ValidateData(ModelConfig configData);
 
   #region StoreDataCommand
   /// <summary>

@@ -87,6 +87,65 @@
         </Button>
       </Grid>
     </DataTemplate>
+    <DataTemplate x:Key="InvalidItemImageTemplate" >
+      <Grid Width="20">
+        <Image Source="Images\ErrorMark.png"
+               Visibility="{Binding Path=IsValid, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter='Hidden,Visible'}"
+                 ToolTip="{Binding ErrorMsg}"/>
+      </Grid>
+    </DataTemplate>
+    <DataTemplate x:Key="ShortcutCellTemplate">
+      <Grid>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="{Binding Shortcut}"/>
+        <Image Grid.Column="1"
+                       Width="16"
+                       Height="16"
+                       Source="/Images/ErrorMark.png"
+                       Visibility="{Binding Path=IsShortcutValid, 
+                       Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter='Collapsed,Visible'}"
+                       ToolTip="{Binding Path=ShortcutErrorMsg}"
+                       />
+      </Grid>
+    </DataTemplate>
+    <DataTemplate x:Key="ShortcutCellEditingTemplate">
+      <TextBox Text="{Binding Shortcut, UpdateSourceTrigger=PropertyChanged}">
+        <TextBox.Style>
+          <Style TargetType="TextBox">
+            <Setter Property="BorderThickness" Value="0"/>
+          </Style>
+        </TextBox.Style>
+      </TextBox>
+    </DataTemplate>
+    <DataTemplate x:Key="TargetShortcutCellTemplate">
+      <Grid>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="{Binding TargetShortcut}"/>
+        <Image Grid.Column="1"
+                       Width="16"
+                       Height="16"
+                       Source="/Images/ErrorMark.png"
+                       Visibility="{Binding Path=IsTargetShortcutValid, 
+                       Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter='Collapsed,Visible'}"
+                       ToolTip="{Binding Path=TargetShortcutErrorMsg}"
+                       />
+      </Grid>
+    </DataTemplate>
+    <DataTemplate x:Key="TargetShortcutCellEditingTemplate">
+      <TextBox Text="{Binding TargetShortcut, UpdateSourceTrigger=PropertyChanged}">
+        <TextBox.Style>
+          <Style TargetType="TextBox">
+            <Setter Property="BorderThickness" Value="0"/>
+          </Style>
+        </TextBox.Style>
+      </TextBox>
+    </DataTemplate>    
     <DataTemplate x:Key="TypeInfoLinkTemplate" >
       <Grid>
         <TextBlock Margin="2,0,2,0">
@@ -103,7 +162,7 @@
       <Grid>
         <TextBlock Margin="2,0,2,0" 
                      Text="{Binding}"/>
-        </Grid>
+      </Grid>
     </DataTemplate>
     <hlp:DynamicDataTemplateSelector x:Key="DynamicDataTemplateSelector"/>
   </Application.Resources>
