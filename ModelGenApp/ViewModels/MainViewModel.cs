@@ -91,6 +91,9 @@ public class MainViewModel : ViewModel
     else
     if (parameter=="Types")
       WindowsManager.ShowWindow<ModelConfigWindow>(new TypesConfigViewModel(ModelConfig.Instance));
+    else
+    if (parameter=="Properties")
+      WindowsManager.ShowWindow<ModelConfigWindow>(new PropertiesConfigViewModel(ModelConfig.Instance));
   }
   #endregion
 

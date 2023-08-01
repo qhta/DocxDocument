@@ -364,7 +364,6 @@ public class ModelConfig
     "OpenXmlElementContext", "HasAttributes", "ExtendedAttributes", "ChildElements",
     "Parent", "NamespaceUri", "LocalName", "Prefix", "NamespaceDeclarations",
     "XmlQualifiedName", "XName", "OuterXml", "MCAttributes",
-    //"RootElement", 
     "IsRootElementLoaded",
     "RelationshipErrorHandlerFactory",
     "AddError",
@@ -379,46 +378,35 @@ public class ModelConfig
 
   public Dictionary<string, string> PropertyTranslateTable = new()
   {
-    { "DXW.LatentStyles.Count", "TotalCount" },
-    { "DXW.LatentStyles.LatentStyleExceptionInfos", "Items" },
-    //{ "DXW.LatentStyle.Default", "IsDefault" },
-    { "DXW.Style.Default", "IsDefault" },
-    { "DXW.Style.CustomStyle", "IsCustom" },
-    { "DXW.Style.AutoRedefine", "IsAutoRedefined" },
-    { "DXW.Style.StyleHidden", "IsHidden" },
-    { "DXW.Style.SemiHidden", "IsSemiHidden" },
-    { "DXW.Style.UnhideWhenUsed", "IsUnhiddenWhenUsed" },
-    { "DXW.Style.PrimaryStyle", "IsPrimary" },
-    { "DXW.Style.Locked", "IsLocked" },
-    { "DXW.Style.Personal", "IsPersonal" },
-    { "DXW.Style.PersonalCompose", "IsPersonalCompose" },
-    { "DXW.Style.PersonalReply", "IsPersonalReply" },
-    { "DXW.Font.Panose1Number", "Panose"},
+    { "DocumentFormat.OpenXml.Wordprocessing.LatentStyles.Count", "TotalCount" },
+    { "DocumentFormat.OpenXml.Wordprocessing.LatentStyles.LatentStyleExceptionInfos", "Items" },
+    { "DocumentFormat.OpenXml.Wordprocessing.Style.Default", "IsDefault" },
+    { "DocumentFormat.OpenXml.Wordprocessing.Style.CustomStyle", "IsCustom" },
+    { "DocumentFormat.OpenXml.Wordprocessing.Style.AutoRedefine", "IsAutoRedefined" },
+    { "DocumentFormat.OpenXml.Wordprocessing.Style.StyleHidden", "IsHidden" },
+    { "DocumentFormat.OpenXml.Wordprocessing.Style.SemiHidden", "IsSemiHidden" },
+    { "DocumentFormat.OpenXml.Wordprocessing.Style.UnhideWhenUsed", "IsUnhiddenWhenUsed" },
+    { "DocumentFormat.OpenXml.Wordprocessing.Style.PrimaryStyle", "IsPrimary" },
+    { "DocumentFormat.OpenXml.Wordprocessing.Style.Locked", "IsLocked" },
+    { "DocumentFormat.OpenXml.Wordprocessing.Style.Personal", "IsPersonal" },
+    { "DocumentFormat.OpenXml.Wordprocessing.Style.PersonalCompose", "IsPersonalCompose" },
+    { "DocumentFormat.OpenXml.Wordprocessing.Style.PersonalReply", "IsPersonalReply" },
+    { "DocumentFormat.OpenXml.Wordprocessing.Font.Panose1Number", "Panose"},
     };
 
   public Dictionary<string, string> PropertyTypeConversion { get; } = new()
   {
-    { "DocumentModel.DocumentSettings.DocumentId", "HexInt" },
-    { "DocumentModel.DocumentSettings.PersistentDocumentId", "Guid" },
-    { "DocumentModel.Wordprocessing.CheckBoxSymbolType.Val", "HexChar" },
-    { "DocumentModel.Wordprocessing.Mcd.BEncrypt", "HexChar" },
-    { "DocumentModel.Wordprocessing.Mcd.Cmg", "HexChar" },
+    { "DocumentFormat.OpenXml.Wordprocessing.DocumentSettings.DocumentId", "HexInt" },
+    { "DocumentFormat.OpenXml.Wordprocessing.DocumentSettings.PersistentDocumentId", "Guid" },
+    { "DocumentFormat.OpenXml.Wordprocessing.CheckBoxSymbolType.Val", "HexChar" },
+    { "DocumentFormat.OpenXml.Wordprocessing.Mcd.BEncrypt", "HexChar" },
+    { "DocumentFormat.OpenXml.Wordprocessing.Mcd.Cmg", "HexChar" },
     { "*.Rsid", "HexInt" },
-    { "DocumentModel.Wordprocessing.Rsids.RsidRoot", "HexInt" },
-    { "DocumentModel.Wordprocessing.Rsids.Items", "Collection<HexInt>" },
+    { "DocumentFormat.OpenXml.Wordprocessing.Rsids.RsidRoot", "HexInt" },
+    { "DocumentFormat.OpenXml.Wordprocessing.Rsids.Items", "Collection<HexInt>" },
   };
 
-  public Dictionary<string, Type> PropertyTypes { get; } = new()
-  {
-    //{ "DocumentModel.DocumentSettings.DocumentId", typeof(HexInt) },
-    //{ "DocumentModel.DocumentSettings.PersistentDocumentId", typeof(Guid) },
-    //{ "DocumentModel.Wordprocessing.CheckBoxSymbolType.Val", typeof(HexChar) },
-    //{ "DocumentModel.Wordprocessing.Mcd.BEncrypt", typeof(HexChar) },
-    //{ "DocumentModel.Wordprocessing.Mcd.Cmg", typeof(HexChar) },
-    //{ "*.Rsid", typeof(HexInt) },
-    //{ "DocumentModel.Wordprocessing.Rsids.RsidRoot", typeof(HexInt) },
-    //{ "DocumentModel.Wordprocessing.Rsids.Items", typeof(Collection<HexInt>) },
-  };
+  public Dictionary<string, Type> PropertyTypes { get; } = new();
 
   public void BuildPropertyTypesDictionary()
   {
@@ -777,7 +765,10 @@ public class ModelConfig
       WriteStrings(textWriter, "IncludedTypes", IncludedTypes);
       WriteStrings(textWriter, "ExcludedTypes", ExcludedTypes);
       WriteDictionary(textWriter, "TypeConversion", TypeConversion);
+      WriteStrings(textWriter, "ExcludedProperties", ExcludedProperties);
+      WriteDictionary(textWriter, "PropertyTranslateTable", PropertyTranslateTable);
       WriteDictionary(textWriter, "PropertyTypeConversion", PropertyTypeConversion);
+
       WriteDictionary(textWriter, "BuiltInTypeTranslation", BuiltInTypeTranslation);
       WriteStrings(textWriter, "SimpleTypes", SimpleTypes);
       WriteStrings(textWriter, "RealTypes", RealTypes);
@@ -812,6 +803,10 @@ public class ModelConfig
             ReadStrings(textReader, ExcludedTypes, ref lineNumber);
           else if (key == "TypeConversion")
             ReadDictionary(textReader, TypeConversion, ref lineNumber);
+          else if (key == "ExcludedProperties")
+            ReadStrings(textReader, ExcludedProperties, ref lineNumber);
+          else if (key == "PropertyTranslateTable")
+            ReadDictionary(textReader, PropertyTranslateTable, ref lineNumber);
           else if (key == "PropertyTypeConversion")
           {
             ReadDictionary(textReader, PropertyTypeConversion, ref lineNumber);
@@ -888,6 +883,26 @@ public class ModelConfig
     }
     lineNumber++;
 
+  }
+  #endregion
+
+  #region utils
+
+  public static (string, string) SplitNameToTypeAndProperty(string fullPropName)
+  {
+    var k = fullPropName.LastIndexOf('.');
+    if (k > 0 && k < fullPropName.Length - 1)
+      return (fullPropName.Substring(0, k), fullPropName.Substring(k + 1));
+    else
+      return ("", fullPropName);
+  }
+
+  public static string JoinTypeAndProperty(string typeName, string propName)
+  {
+    if (!String.IsNullOrEmpty(typeName))
+      return typeName + "." + propName;
+    else
+      return propName;
   }
   #endregion
 }
