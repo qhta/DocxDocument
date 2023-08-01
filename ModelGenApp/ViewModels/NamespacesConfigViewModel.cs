@@ -126,47 +126,4 @@ public class NamespacesConfigViewModel : ModelConfigViewModel
     return ok;
   }
 
-  public override void AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs args)
-  {
-    if (args.PropertyName == nameof(NamespaceConfigViewModel.OrigName))
-    {
-      args.Column.Header = "Original name";
-      args.Column.IsReadOnly = true;
-      args.Cancel = false;
-    }
-    else
-    if (args.PropertyName == nameof(NamespaceConfigViewModel.Excluded))
-    {
-      args.Cancel = false;
-    }
-    else
-    if (args.PropertyName == nameof(NamespaceConfigViewModel.Shortcut))
-    {
-      var column = new DataGridTemplateColumn();
-      column.Header = "Shortcut";
-      column.CellTemplate = Application.Current.FindResource("ShortcutCellTemplate") as DataTemplate;
-      column.CellEditingTemplate = Application.Current.FindResource("ShortcutCellEditingTemplate") as DataTemplate;
-      args.Column = column;
-      args.Cancel = false;
-    }
-    else
-    if (args.PropertyName == nameof(NamespaceConfigViewModel.TargetName))
-    {
-      args.Column.Header = "Target name";
-      args.Cancel = false;
-    }
-    else
-    if (args.PropertyName == nameof(NamespaceConfigViewModel.TargetShortcut))
-    {
-      var column = new DataGridTemplateColumn();
-      column.Header = "Target shortcut";
-      column.CellTemplate = Application.Current.FindResource("TargetShortcutCellTemplate") as DataTemplate;
-      column.CellEditingTemplate = Application.Current.FindResource("TargetShortcutCellEditingTemplate") as DataTemplate;
-      args.Column = column;
-      args.Cancel = false;
-    }
-    else
-      args.Cancel = true;
-  }
-
 }

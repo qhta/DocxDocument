@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 D:\VS\Projects\DocxDocument\ModelGenApp\App.xaml
-14-715072527
+15978768322
 
-61974084357
+64-1422846533
 221272918698
-Views\MainWindow.xaml;Views\ModelConfigView.xaml;Views\ModelConfigWindow.xaml;Views\NamespacesConfigView.xaml;Views\PhaseProgressView.xaml;Views\PhaseResultsView.xaml;Views\PhaseResultsWindow.xaml;Views\ProcessMonitorView.xaml;Views\ProcessOptionsView.xaml;Views\TypeInfoView.xaml;Views\TypeInfoWindow.xaml;Views\TypeListView.xaml;Views\TypeListWindow.xaml;Views\TypesConfigView.xaml;
+Views\MainWindow.xaml;Views\ModelConfigView.xaml;Views\ModelConfigWindow.xaml;Views\NamespacesConfigView.xaml;Views\PhaseProgressView.xaml;Views\PhaseResultsView.xaml;Views\PhaseResultsWindow.xaml;Views\ProcessMonitorView.xaml;Views\ProcessOptionsView.xaml;Views\PropertiesConfigView.xaml;Views\TypeInfoView.xaml;Views\TypeInfoWindow.xaml;Views\TypeListView.xaml;Views\TypeListWindow.xaml;Views\TypesConfigView.xaml;
 
 False
 

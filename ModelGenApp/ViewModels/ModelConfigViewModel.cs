@@ -17,8 +17,6 @@ public abstract class ModelConfigViewModel: ViewModel
 
   public virtual string Caption { get; protected set; } = "Model configuration";
 
-  public abstract void AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs args);
-
    public virtual IList Items { get; protected set; } = null!;
 
   /// <summary>

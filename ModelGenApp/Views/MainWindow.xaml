@@ -19,6 +19,7 @@
       <MenuItem Header="Config" >
         <MenuItem Header="Namespaces" Command="{Binding OpenConfigCommand}" CommandParameter="Namespaces"/>
         <MenuItem Header="Types" Command="{Binding OpenConfigCommand}" CommandParameter="Types"/>
+        <MenuItem Header="Properties" Command="{Binding OpenConfigCommand}" CommandParameter="Properties"/>
       </MenuItem>
       <MenuItem Header="Start" Command="{Binding StartProcessCommand}"/>
     </Menu>
