@@ -9,10 +9,4 @@ public partial class NamespacesConfigView : UserControl
     InitializeComponent();
   }
 
-  private void DataGrid_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs args)
-  {
-    var viewModel = DataContext as ModelConfigViewModel;
-    if (viewModel != null)
-      viewModel.AutoGeneratingColumn(sender, args);
-  }
 }
