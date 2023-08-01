@@ -275,7 +275,7 @@
           }
         }
       },
-      "Qhta.WPF.Converters/1.0.0": {
+      "Qhta.WPF.Converters/1.2.0": {
         "type": "package",
         "dependencies": {
           "Qhta.TextUtils": "3.1.1",
@@ -328,6 +328,29 @@
         },
         "runtime": {
           "lib/net6.0/Qhta.Xml.Reflection.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Qhta.Xml.Serialization/2.3.0": {
+        "type": "package",
+        "dependencies": {
+          "Qhta.Conversion": "2.0.0",
+          "Qhta.TextUtils": "3.1.1",
+          "Qhta.TypeUtils": "1.3.10.1",
+          "Qhta.Xml": "2.1.0",
+          "Qhta.Xml.Reflection": "2.0.0",
+          "System.CodeDom": "7.0.0",
+          "System.Collections.Specialized": "4.3.0",
+          "System.Security.Permissions": "7.0.0"
+        },
+        "compile": {
+          "lib/net6.0/Qhta.Xml.Serialization.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Qhta.Xml.Serialization.dll": {
             "related": ".xml"
           }
         }
@@ -1613,7 +1636,7 @@
           "JsonKnownTypes": "0.5.5",
           "Newtonsoft.Json": "13.0.3",
           "Qhta.TypeUtils": "1.3.10.1",
-          "Qhta.Xml.Serialization": "2.2.0",
+          "Qhta.Xml.Serialization": "2.3.0",
           "System.IO.Packaging": "7.0.0"
         },
         "compile": {
@@ -1637,7 +1660,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Qhta.Xml.Serialization": "2.2.0"
+          "Qhta.Xml.Serialization": "2.3.0"
         },
         "compile": {
           "bin/placeholder/ModelDocumentation.dll": {}
@@ -1661,7 +1684,6 @@
           "Qhta.TestHelper": "3.0.0",
           "Qhta.TypeUtils": "1.3.10.1",
           "Qhta.Xml": "2.1.0",
-          "Qhta.Xml.Serialization": "2.3.0",
           "Snork.TextWrap": "1.0.1301",
           "System.IO.Packaging": "7.0.0"
         },
@@ -1703,26 +1725,6 @@
         "frameworkReferences": [
           "Microsoft.WindowsDesktop.App.WPF"
         ]
-      },
-      "Qhta.Xml.Serialization/2.3.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "Qhta.Conversion": "2.0.0",
-          "Qhta.TextUtils": "3.1.1",
-          "Qhta.TypeUtils": "1.3.10.1",
-          "Qhta.Xml": "2.1.0",
-          "Qhta.Xml.Reflection": "2.0.0",
-          "System.CodeDom": "7.0.0",
-          "System.Collections.Specialized": "4.3.0",
-          "System.Security.Permissions": "7.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Qhta.Xml.Serialization.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Qhta.Xml.Serialization.dll": {}
-        }
       }
     }
   },
@@ -2111,17 +2113,17 @@
         "readme.md"
       ]
     },
-    "Qhta.WPF.Converters/1.0.0": {
-      "sha512": "yp1hXbfBy1pnV3zwmg3H1CwLqXYWKYn0D6ifReQhagax0PdBafKHXfOyfKXyXjABQTpH85zNtMq1lB3Fd4gFWg==",
+    "Qhta.WPF.Converters/1.2.0": {
+      "sha512": "NyQtXCsqQ2z3cVc4FGK3KIgWvp8zKs5rGJtHpgp8rd5Q6zMcaQ/so9H6cSfzhsBUO2vgpGurMeFCb3NywsHahA==",
       "type": "package",
-      "path": "qhta.wpf.converters/1.0.0",
+      "path": "qhta.wpf.converters/1.2.0",
       "files": [
         ".nupkg.metadata",
         "lib/net6.0-windows7.0/Qhta.WPF.Converters.dll",
         "lib/net6.0-windows7.0/Qhta.WPF.Converters.xml",
         "lib/net7.0-windows7.0/Qhta.WPF.Converters.dll",
         "lib/net7.0-windows7.0/Qhta.WPF.Converters.xml",
-        "qhta.wpf.converters.1.0.0.nupkg.sha512",
+        "qhta.wpf.converters.1.2.0.nupkg.sha512",
         "qhta.wpf.converters.nuspec",
         "readme.md"
       ]
@@ -2153,6 +2155,21 @@
         "lib/netstandard2.0/Qhta.Xml.Reflection.xml",
         "qhta.xml.reflection.2.0.0.nupkg.sha512",
         "qhta.xml.reflection.nuspec",
+        "readme.md"
+      ]
+    },
+    "Qhta.Xml.Serialization/2.3.0": {
+      "sha512": "EGr7CfJSWeR/fwEyMzw9vSiuf+OLulZmrPglnxp4ztZWXpLw+v8Tq7VtwWd01Xdjf5iHEWGcDb/6DPXzUE+ZQA==",
+      "type": "package",
+      "path": "qhta.xml.serialization/2.3.0",
+      "files": [
+        ".nupkg.metadata",
+        "lib/net6.0/Qhta.Xml.Serialization.dll",
+        "lib/net6.0/Qhta.Xml.Serialization.xml",
+        "lib/netstandard2.0/Qhta.Xml.Serialization.dll",
+        "lib/netstandard2.0/Qhta.Xml.Serialization.xml",
+        "qhta.xml.serialization.2.3.0.nupkg.sha512",
+        "qhta.xml.serialization.nuspec",
         "readme.md"
       ]
     },
@@ -5330,11 +5347,6 @@
       "type": "project",
       "path": "../../MyLib/Qhta.WPF.DataGridUtils/Qhta.WPF.DataGridUtils.csproj",
       "msbuildProject": "../../MyLib/Qhta.WPF.DataGridUtils/Qhta.WPF.DataGridUtils.csproj"
-    },
-    "Qhta.Xml.Serialization/2.3.0": {
-      "type": "project",
-      "path": "../../MyLib/Qhta.Xml.Serialization/Qhta.Xml.Serialization.csproj",
-      "msbuildProject": "../../MyLib/Qhta.Xml.Serialization/Qhta.Xml.Serialization.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -5345,7 +5357,7 @@
       "Qhta.MVVM >= 2.5.0",
       "Qhta.TextUtils >= 3.1.1",
       "Qhta.TypeUtils >= 1.3.10.1",
-      "Qhta.WPF.Converters >= 1.0.0",
+      "Qhta.WPF.Converters >= 1.2.0",
       "Qhta.WPF.DataGridUtils >= 1.0.0"
     ]
   },
@@ -5423,7 +5435,7 @@
           },
           "Qhta.WPF.Converters": {
             "target": "Package",
-            "version": "[1.0.0, )"
+            "version": "[1.2.0, )"
           }
         },
         "imports": [

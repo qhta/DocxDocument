@@ -63,7 +63,7 @@
             },
             "Qhta.Xml.Serialization": {
               "target": "Package",
-              "version": "[2.2.0, )"
+              "version": "[2.3.0, )"
             },
             "System.IO.Packaging": {
               "target": "Package",

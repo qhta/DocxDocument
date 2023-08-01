@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ZyEdYlAFc1WWeYNVowM6JHlBWmrzHTdAveUiZlB6TkQuEfnTWZNZqi6euoS7O4bfPRHCk1ysLHw7W+bkPOfqgw==",
+  "dgSpecHash": "Q4g95uNxxPYGeINg1gppz0FKrytMlk4J55+mRuNQPu7Dnfznpju/z1zG/+npgpFHNRe5M1A/kbXAPvm0ZoO/oQ==",
   "success": true,
   "projectFilePath": "D:\\VS\\Projects\\DocxDocument\\ModelGen\\ModelGen\\ModelGen.csproj",
   "expectedPackageFiles": [
@@ -23,6 +23,7 @@
     "C:\\Users\\qhta1\\.nuget\\packages\\qhta.typeutils\\1.3.10.1\\qhta.typeutils.1.3.10.1.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\qhta.xml\\2.1.0\\qhta.xml.2.1.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\qhta.xml.reflection\\2.0.0\\qhta.xml.reflection.2.0.0.nupkg.sha512",
+    "C:\\Users\\qhta1\\.nuget\\packages\\qhta.xml.serialization\\2.3.0\\qhta.xml.serialization.2.3.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
