@@ -1,10 +1,10 @@
 ﻿namespace ModelGenApp.Views;
 /// <summary>
-/// Interaction logic for ItemsConfigView.xaml
+/// Interaction logic for NamespacesConfigView.xaml
 /// </summary>
-public partial class ItemsConfigView : UserControl
+public partial class NamespacesConfigView : UserControl
 {
-  public ItemsConfigView()
+  public NamespacesConfigView()
   {
     InitializeComponent();
   }

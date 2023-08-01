@@ -1,15 +1,45 @@
 ﻿<Application x:Class="ModelGenApp.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:ModelGenApp"
              xmlns:views="clr-namespace:ModelGenApp.Views"
              xmlns:vm="clr-namespace:ModelGenApp.ViewModels"
              xmlns:vc="clr-namespace:Qhta.WPF.Converters;assembly=Qhta.WPF.Converters"
              xmlns:hlp="clr-namespace:ModelGenApp.Helpers"
              StartupUri="Views\MainWindow.xaml">
   <Application.Resources>
+    <local:CommonStringsAccessor x:Key="CommonStringsAccessor"/>
     <vc:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+    <vc:AppendingConverter x:Key="AppendingConverter"/>
+    <vc:IndirectPropertyConverter x:Key="IndirectPropertyConverter"/>
+    <Style x:Key="NoBorderTextBoxStyle" TargetType="TextBox">
+        <Setter Property="BorderThickness" Value="0"/>
+    </Style>
     <DataTemplate x:Key="{x:Type vm:MainViewModel}" DataType="{x:Type vm:MainViewModel}">
       <views:MainWindow/>
+    </DataTemplate>
+    <DataTemplate x:Key="ColumnHeaderTemplate">
+      <Grid>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="Auto"/>
+          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Image Grid.Column="0"
+                       Width="16"
+                       Height="16"
+                       Source="/Images/InfoMark.png"
+                       >
+          <Image.ToolTip>
+            <MultiBinding Converter="{StaticResource IndirectPropertyConverter}">
+              <Binding Source="{StaticResource CommonStringsAccessor}"/>
+              <Binding Converter="{StaticResource AppendingConverter}" ConverterParameter='ToolTip'/>
+            </MultiBinding>
+          </Image.ToolTip>
+        </Image>
+        <TextBlock Grid.Column="1" Text="{Binding}"/>
+
+      </Grid>
     </DataTemplate>
     <DataTemplate x:Key="ItemsCountColumnTemplate" >
       <Grid>
@@ -111,8 +141,9 @@
                        />
       </Grid>
     </DataTemplate>
-    <DataTemplate x:Key="ShortcutCellEditingTemplate">
-      <TextBox Text="{Binding Shortcut, UpdateSourceTrigger=PropertyChanged}">
+    <DataTemplate x:Key="TextEditCellTemplate">
+      <TextBox Text="{Binding Path=DataContext,RelativeSource={RelativeSource AncestorType={x:Type DataGridColumn}}, 
+                     UpdateSourceTrigger=PropertyChanged}">
         <TextBox.Style>
           <Style TargetType="TextBox">
             <Setter Property="BorderThickness" Value="0"/>
@@ -145,7 +176,7 @@
           </Style>
         </TextBox.Style>
       </TextBox>
-    </DataTemplate>    
+    </DataTemplate>
     <DataTemplate x:Key="TypeInfoLinkTemplate" >
       <Grid>
         <TextBlock Margin="2,0,2,0">

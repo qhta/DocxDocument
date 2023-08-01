@@ -45,7 +45,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\MyLib\Qhta.Xml.Serialization\Qhta.Xml.Serialization.csproj" />
     <ProjectReference Include="..\..\DocumentModel\DocumentModel.csproj" />
     <ProjectReference Include="..\..\ModelDocumentation\ModelDocumentation.csproj" />
     <ProjectReference Include="..\..\ModelGenDataConfig\ModelGenDataConfig.csproj" />

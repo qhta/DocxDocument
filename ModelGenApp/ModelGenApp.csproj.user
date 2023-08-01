@@ -13,7 +13,7 @@
     <Compile Update="Views\ModelConfigWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\ItemsConfigView.xaml.cs">
+    <Compile Update="Views\NamespacesConfigView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\PhaseProgressView.xaml.cs">
@@ -37,6 +37,9 @@
     <Compile Update="Views\TypeListWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\TypesConfigView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Views\MainWindow.xaml">
@@ -48,7 +51,7 @@
     <Page Update="Views\ModelConfigWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\ItemsConfigView.xaml">
+    <Page Update="Views\NamespacesConfigView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\PhaseProgressView.xaml">
@@ -76,6 +79,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\TypeListWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\TypesConfigView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
