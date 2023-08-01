@@ -5,9 +5,46 @@ public class TypesConfigViewModel : ModelConfigViewModel
   {
     Caption = "Model configuration: types";
     Types = new DispatchedCollection<TypeConfigViewModel>();
+    Types.CollectionChanged += Types_CollectionChanged;
     Items = Types;
     GetData(configData);
   }
+
+  #region Populate ExcludedNamespace for all items on change of one
+  private void Types_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
+  {
+    if (args.Action == NotifyCollectionChangedAction.Add)
+    {
+      if (args.NewItems != null)
+        foreach (var item in args.NewItems)
+        {
+          if (item is TypeConfigViewModel typeConfigViewModel)
+            typeConfigViewModel.PropertyChanged += TypeConfigViewModel_PropertyChanged;
+        }
+    }
+  }
+
+  private bool IsExcludedNamespaceChanged;
+  private bool IgnorePropertyChanged;
+  private void TypeConfigViewModel_PropertyChanged(object? sender, PropertyChangedEventArgs args)
+  {
+    if (IgnorePropertyChanged) return;
+    IgnorePropertyChanged = true;
+    if (sender is TypeConfigViewModel typeConfigViewModel)
+    {
+      IsExcludedNamespaceChanged = true;
+      if (args.PropertyName == nameof(TypeConfigViewModel.ExcludedNamespace))
+      {
+        var value = typeConfigViewModel.ExcludedNamespace;
+        var ns = typeConfigViewModel.OrigNamespace;
+        foreach (var item in Types)
+          if (item.OrigNamespace == ns)
+            item.ExcludedNamespace = value;
+      }
+    }
+    IgnorePropertyChanged = false;
+  }
+  #endregion
 
   public DispatchedCollection<TypeConfigViewModel> Types { get; private set; }
 
@@ -29,13 +66,13 @@ public class TypesConfigViewModel : ModelConfigViewModel
         item.ExcludedNamespace = configData.ExcludedNamespaces.Contains(type.Namespace ?? "");
         if (fullNameComparison)
         {
-          item.Excluded = configData.ExcludedTypes.Contains(fullTypeName);
-          item.Included = configData.IncludedTypes.Contains(fullTypeName);
+          item.ExcludedType = configData.ExcludedTypes.Contains(fullTypeName);
+          item.IncludedType = configData.IncludedTypes.Contains(fullTypeName);
         }
         else
         {
-          item.Excluded = configData.ExcludedTypes.Contains(type.Name);
-          item.Included = configData.IncludedTypes.Contains(type.Name);
+          item.ExcludedType = configData.ExcludedTypes.Contains(type.Name);
+          item.IncludedType = configData.IncludedTypes.Contains(type.Name);
         }
         if (configData.TypeConversion.TryGetValue(fullTypeName, out var conversion))
         {
@@ -53,20 +90,24 @@ public class TypesConfigViewModel : ModelConfigViewModel
 
   public override void SetData(ModelConfig configData)
   {
+    if (IsExcludedNamespaceChanged)
+    {
+      configData.ExcludedNamespaces.Clear();
+      foreach (var nsGrouping in Types.Where(item => item.ExcludedNamespace).GroupBy(item => item.OrigNamespace))
+        configData.ExcludedNamespaces.Add(nsGrouping.Key);
+    }
     configData.IncludedTypes.Clear();
     configData.ExcludedTypes.Clear();
     configData.TypeConversion.Clear();
     foreach (var item in Types)
     {
       var fullTypeName = item.OrigNamespace + "." + item.OrigName;
-      if (item.Included)
+      if (item.IncludedType)
         configData.IncludedTypes.Add(fullTypeName);
-      if (item.Excluded)
+      if (item.ExcludedType)
         configData.ExcludedTypes.Add(fullTypeName);
       if (item.TargetNamespace != null && item.TargetName != null)
-      {
-        configData.TypeConversion.Add(fullTypeName, item.TargetNamespace+"."+item.TargetName);
-      }
+        configData.TypeConversion.Add(fullTypeName, item.TargetNamespace + "." + item.TargetName);
     }
   }
 
@@ -99,13 +140,15 @@ public class TypesConfigViewModel : ModelConfigViewModel
       args.Cancel = false;
     }
     else
-    if (args.PropertyName == nameof(TypeConfigViewModel.Included))
+    if (args.PropertyName == nameof(TypeConfigViewModel.IncludedType))
     {
+      args.Column.HeaderTemplate = Application.Current.FindResource("ColumnHeaderTemplate") as DataTemplate;
       args.Cancel = false;
     }
     else
-    if (args.PropertyName == nameof(TypeConfigViewModel.Excluded))
+    if (args.PropertyName == nameof(TypeConfigViewModel.ExcludedType))
     {
+      args.Column.HeaderTemplate = Application.Current.FindResource("ColumnHeaderTemplate") as DataTemplate;
       args.Cancel = false;
     }
     else

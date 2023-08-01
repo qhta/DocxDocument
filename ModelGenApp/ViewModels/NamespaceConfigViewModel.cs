@@ -16,22 +16,6 @@ public class NamespaceConfigViewModel : ViewModel, IEditableObject
   }
   private string _OrigName = string.Empty;
 
-  public bool Included
-  {
-    get { return _Included; }
-    set
-    {
-      if (_Included != value)
-      {
-        _Included = value;
-        NotifyPropertyChanged(nameof(Included));
-        if (value)
-          Excluded = false;
-      }
-    }
-  }
-  private bool _Included;
-
   public bool Excluded
   {
     get { return _Excluded; }
@@ -41,8 +25,6 @@ public class NamespaceConfigViewModel : ViewModel, IEditableObject
       {
         _Excluded = value;
         NotifyPropertyChanged(nameof(Excluded));
-        if (value)
-          Included = false;
        }
     }
   }

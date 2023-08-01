@@ -13,7 +13,17 @@
       <RowDefinition Height="*"/>
       <RowDefinition Height="40"/>
     </Grid.RowDefinitions>
-    <views:ItemsConfigView/>
+    <ContentControl Content="{Binding}">
+      <ContentControl.Resources>
+        <DataTemplate DataType="{x:Type vm:NamespacesConfigViewModel}">
+          <views:NamespacesConfigView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:TypesConfigViewModel}">
+          <views:TypesConfigView/>
+        </DataTemplate>
+      </ContentControl.Resources>
+    </ContentControl>
+
     <Border  Grid.Row="1"
              Background="WhiteSmoke">
       <StackPanel 

@@ -44,7 +44,7 @@ public class TypeConfigViewModel : ViewModel, IEditableObject
   }
   private bool _ExcludedNamespace;
 
-  public bool Included
+  public bool IncludedType
   {
     get { return _Included; }
     set
@@ -52,15 +52,15 @@ public class TypeConfigViewModel : ViewModel, IEditableObject
       if (_Included != value)
       {
         _Included = value;
-        NotifyPropertyChanged(nameof(Included));
+        NotifyPropertyChanged(nameof(IncludedType));
         if (value)
-          Excluded = false;
+          ExcludedType = false;
       }
     }
   }
   private bool _Included;
 
-  public bool Excluded
+  public bool ExcludedType
   {
     get { return _Excluded; }
     set
@@ -68,7 +68,7 @@ public class TypeConfigViewModel : ViewModel, IEditableObject
       if (_Excluded != value)
       {
         _Excluded = value;
-        NotifyPropertyChanged(nameof(Excluded));
+        NotifyPropertyChanged(nameof(ExcludedType));
       }
     }
   }
