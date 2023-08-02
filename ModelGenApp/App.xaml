@@ -108,11 +108,17 @@
     </DataTemplate>
     <DataTemplate x:Key="InvalidItemButtonTemplate" >
       <Grid Width="20">
-        <Button
-                Command="{Binding Path=ShowErrorCommand}"
+        <Button Command="{Binding Path=ShowErrorCommand}"
                 CommandParameter="{Binding}"
+                Visibility="{Binding Path=IsValid, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter='Hidden,Visible'}"
                 ToolTip="{Binding ErrorMsg}"
                 >
+          <Button.Style>
+            <Style TargetType="Button">
+              <Setter Property="Background" Value="Transparent"/>
+              <Setter Property="BorderBrush" Value="Transparent"/>
+            </Style>
+          </Button.Style>
           <Image Source="Images\ErrorMark.png"/>
         </Button>
       </Grid>
