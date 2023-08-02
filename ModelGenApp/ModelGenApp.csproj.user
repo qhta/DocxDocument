@@ -43,6 +43,9 @@
     <Compile Update="Views\TypesConfigView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\TypeSummaryView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Views\MainWindow.xaml">
@@ -88,6 +91,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\TypesConfigView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\TypeSummaryView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

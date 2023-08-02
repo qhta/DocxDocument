@@ -32,6 +32,7 @@ public static class TypeReflector
   }
 
   private static bool isStarted => ReflectionTasks is not null;
+  private static bool isDone;
   private static int TaskCount = 2;
   private static Task[] ReflectionTasks = null!;
   private static int RunTrials = 100;
@@ -78,17 +79,21 @@ public static class TypeReflector
     if (ReflectionTasks is not null)
       while (TypeQueue.Count > 0)
         Task.WaitAll(ReflectionTasks, 1000);
+    isDone = true;
   }
 
   public static void WaitForReflection(this TypeInfo typeInfo)
   {
-    int count = 10;
-    while (typeInfo.IsReflected == false && (count--) > 0)
+    if (isStarted && !isDone)
     {
-      Thread.Sleep(10);
+      int count = 10;
+      while (typeInfo.IsReflected == false && (count--) > 0)
+      {
+        Thread.Sleep(10);
+      }
+      if (!typeInfo.IsReflected)
+        ReflectType(typeInfo);
     }
-    if (!typeInfo.IsReflected)
-      ReflectType(typeInfo);
   }
 
   public static object reflectedLock = new();

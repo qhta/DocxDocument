@@ -128,7 +128,7 @@ public abstract class BaseCreator
       ModelDocumenter.OnDocumentingType += ModelDocumenter_OnDocumentingType;
     }
 
-    var ModelValidator = new ModelValidator(NTS.Origin, MSS.Accepted, TDS.Metadata);
+    var ModelValidator = new ModelValidator(PPS.ScanTypes, NTS.Origin, MSS.Accepted, TDS.Metadata);
     ModelValidator.OnValidatingType += ModelValidator_OnValidatingType;
     ModelValidator.ValidateTypes();
     ModelValidator.OnValidatingType += ModelValidator_OnValidatingType;
@@ -149,7 +149,7 @@ public abstract class BaseCreator
     };
     if (documentedTypesCount!=null)
       summaryInfo.Summary.Add(SummaryInfoKind.DocumentedTypes, documentedTypesCount);
-    summaryInfo.Summary.Add(SummaryInfoKind.InvalidTypes, ModelValidator.CheckedTypesCount-ModelValidator.ValidTypesCount);
+    summaryInfo.Summary.Add(SummaryInfoKind.InvalidTypes, ModelValidator.InvalidTypesCount);
 
     ModelMonitor?.ShowPhaseEnd(PPS.ScanTypes, summaryInfo);
     return ts;
@@ -247,7 +247,7 @@ public abstract class BaseCreator
       Summary = new Dictionary<SummaryInfoKind, object>{
         {SummaryInfoKind.AllTypes, TypeManager.AllTypes.Count() },
         {SummaryInfoKind.ConvertedTypes, renamedTypesCount },
-        {SummaryInfoKind.InvalidTypes, TypeManager.AllTypes.Count(item=>item.IsInvalid)},
+        {SummaryInfoKind.InvalidTypes, TypeManager.AllTypes.Count(item=>!item.IsValid(PhaseDone))},
         }
     });
     return ts;

@@ -5,10 +5,17 @@ public class TypeListViewModel: ViewModel
   {
     Namespace = nspace;
     Name = name;
+    if (Items is INotifyCollectionChanged observableCollection)
+      observableCollection.CollectionChanged += ObservableCollection_CollectionChanged;
     TypeNameSelector = typeNameSelector;
     TypeKindSelector = typeKindSelector;
     Phase = phase;
     ShowDetailsCommand = new RelayCommand(ShowDetailsExecute, ShowDetailsCanExecute) { Name = "ShowDetailsCommand" };
+  }
+
+  private void ObservableCollection_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs e)
+  {
+    NotifyPropertyChanged(nameof(Count));
   }
 
   public TypeListViewModel(PhaseViewModel phase, NamespaceViewModel nspace, string name, TNS typeNameSelector, IEnumerable<TypeInfoViewModel> list)
@@ -33,10 +40,13 @@ public class TypeListViewModel: ViewModel
 
   public PhaseViewModel Phase { get; private set; }
 
+  public int Count => Items.Count;
+
   public virtual IList Items { get;} = new DispatchedCollection<TypeInfoViewModel>();
 
   public bool IsTargetNameVisible => Namespace.Phase.IsTargetNameVisible;
   public bool IsInvalidMarkVisible => Namespace.Phase.IsInvalidMarkVisible;
+  public bool CanShowErrorDetails => Namespace.Phase.CanShowErrorDetails;
 
   #region ShowDetailsCommand
   public Command ShowDetailsCommand { get; private set; }
@@ -61,20 +71,9 @@ public class TypeListViewModel: ViewModel
     return Items.Count>0;
   }
 
-  Window? window;
   protected virtual void ShowDetailsExecute()
   {
-    if (window != null && window.IsVisible)
-    {
-      window.Topmost=true;
-      window.Focus();
-    }
-    else
-    {
-      window = new TypeListWindow();
-      window.DataContext = this;
-      window.Show();
-    }
+    Helpers.WindowsManager.ShowWindow<TypeListWindow>(this);
   }
   #endregion
 

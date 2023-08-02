@@ -1,12 +1,12 @@
 ﻿namespace ModelGenApp.ViewModels;
 public class NamespaceViewModel : ViewModel<Namespace>
 {
-  public NamespaceViewModel(PhaseViewModel phaseViewModel, Namespace ns, string? filter=null) : base(ns)
+  public NamespaceViewModel(PhaseViewModel phaseViewModel, Namespace ns, string? filter = null) : base(ns)
   {
     Phase = phaseViewModel;
     Filter = filter;
     Name = ns.OriginalName;
-    if (phaseViewModel.Phase == PPS.RenameTypes)
+    if (phaseViewModel.PhaseNum == PPS.RenameTypes)
       TargetName = ns.TargetName;
     AllTypes = new TypeListViewModel(phaseViewModel, this, "All types", phaseViewModel.TypeNameSelector, TKS.Any);
     Classes = new ClassListViewModel(phaseViewModel, this, "Classes", phaseViewModel.TypeNameSelector, TKS.Class);
@@ -54,29 +54,30 @@ public class NamespaceViewModel : ViewModel<Namespace>
 
   public async void LoadTypes()
   {
-    await Task.Run(()=>{
-    var nsTypes = Model.Types.OrderBy(item => item.Name).ToList();
-    var filter = Filter;
-    if (filter != null)
+    await Task.Run(() =>
     {
-      if (filter == SummaryInfoKind.AcceptedTypes.ToString())
-        nsTypes = nsTypes.Where(item => item.IsAccepted).ToList();
-      if (filter == SummaryInfoKind.RejectedTypes.ToString())
-        nsTypes = nsTypes.Where(item => item.IsRejected).ToList();
-      if (filter == SummaryInfoKind.InvalidTypes.ToString())
-        nsTypes = nsTypes.Where(item => item.IsInvalid).ToList();
-      if (filter == SummaryInfoKind.RenamedTypes.ToString())
-        nsTypes = nsTypes.Where(item => item.IsRenamed).ToList();
-      if (filter == SummaryInfoKind.ConvertedTypes.ToString())
-        nsTypes = nsTypes.Where(item => item.IsConverted).ToList();
-    }
-    var nts = Phase.NamespaceTypeSelector;
-    AllTypes.LoadTypes(nsTypes);
-    Classes.LoadTypes(nsTypes);
-    Enums.LoadTypes(nsTypes);
-    Interfaces.LoadTypes(nsTypes);
-    Structs.LoadTypes(nsTypes);
-    Others.LoadTypes(nsTypes);
+      var nsTypes = Model.Types.OrderBy(item => item.Name).ToList();
+      var filter = Filter;
+      if (filter != null)
+      {
+        if (filter == SummaryInfoKind.AcceptedTypes.ToString())
+          nsTypes = nsTypes.Where(item => item.IsAccepted).ToList();
+        if (filter == SummaryInfoKind.RejectedTypes.ToString())
+          nsTypes = nsTypes.Where(item => item.IsRejected).ToList();
+        if (filter == SummaryInfoKind.InvalidTypes.ToString())
+          nsTypes = nsTypes.Where(item => !item.IsValid(Phase.PhaseNum)).ToList();
+        if (filter == SummaryInfoKind.RenamedTypes.ToString())
+          nsTypes = nsTypes.Where(item => item.IsRenamed).ToList();
+        if (filter == SummaryInfoKind.ConvertedTypes.ToString())
+          nsTypes = nsTypes.Where(item => item.IsConverted).ToList();
+      }
+      var nts = Phase.NamespaceTypeSelector;
+      AllTypes.LoadTypes(nsTypes);
+      Classes.LoadTypes(nsTypes);
+      Enums.LoadTypes(nsTypes);
+      Interfaces.LoadTypes(nsTypes);
+      Structs.LoadTypes(nsTypes);
+      Others.LoadTypes(nsTypes);
     });
   }
 }

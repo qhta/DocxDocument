@@ -7,9 +7,9 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
   {
     TypeNameSelector = typeNameSelector;
     Phase = phase;
-    FillTypeSummaryVM();
     ShowTypeCommand = new RelayCommand(ShowTypeExecute, ShowTypeCanExecute) { Name = "ShowTypeCommand" };
     ShowErrorCommand = new RelayCommand(ShowErrorExecute, ShowErrorCanExecute) { Name = "ShowErrorCommand" };
+    FillTypeSummaryAsync();
   }
 
   [DataGridColumn]
@@ -32,15 +32,16 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
     }
   }
 
+  public new bool IsValid => Model.IsValid(Phase.PhaseNum);
+
   public string? Validity
   {
     get
     {
-      if (Model.IsValid)
+      if (Model.IsValid(Phase.PhaseNum))
         return "valid";
-      if (Model.IsInvalid)
+      else
         return "invalid";
-      return null;
     }
   }
 
@@ -59,7 +60,7 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
 
   public string? TargetName => Model.GetFullName(true, TypeNameSelector.Namespace, TypeNameSelector.NsShortcut);
 
-  public string? ErrorMsg => Model.Errors?.FirstOrDefault(item => item.Item1==Phase.Phase).Item2;
+  public string? ErrorMsg => Model.Errors?.FirstOrDefault(item => item.Item1 == Phase.PhaseNum).Item2;
 
   [DataGridColumn(ResourceDataTemplateKey = "TypeInfoLinkTemplate",
     SortMemberPath = "Type.Name", ClipboardContentPath = "Type.Name")]
@@ -90,11 +91,25 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
 
   public TypeSummaryViewModel TypeSummaryVM { get; } = new TypeSummaryViewModel();
 
+  protected void FillTypeSummaryAsync()
+  {
+    Task.Run(() =>
+    FillTypeSummaryVM());
+  }
+
   protected virtual void FillTypeSummaryVM()
   {
     TypeSummaryVM.Clear();
-    TypeSummaryVM.Add(new TypePropViewModel("Acceptance", Acceptance, Model.IsRejected));
-    TypeSummaryVM.Add(new TypePropViewModel("Validity", Validity, Model.IsInvalid));
+    if (Model.IsAccepted)
+      TypeSummaryVM.Add(new TypePropViewModel("Acceptance", Acceptance));
+    else
+      TypeSummaryVM.Add(new TypePropViewModel("Acceptance", new ErrString(Acceptance)));
+
+    if (Model.IsValid(Phase.PhaseNum))
+      TypeSummaryVM.Add(new TypePropViewModel("Validation", "valid"));
+    else
+      TypeSummaryVM.Add(new TypePropViewModel("Validation", new ErrString(ErrorMsg ?? "invalid")));
+
     TypeSummaryVM.Add(new TypePropViewModel("Kind", TypeKind.ToString().ToLower()));
     TypeSummaryVM.Add(new TypePropViewModel("Namespace", Model.OriginalNamespace));
     TypeSummaryVM.Add(new TypePropViewModel("Name", Name));
@@ -108,7 +123,7 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
       if (targetType != null)
         TypeSummaryVM.Add(new TypePropViewModel("Converted to", new TypeInfoViewModel(Phase, targetType, TypeNameSelector)));
     }
-    TypeSummaryVM.Add(new TypePropViewModel("Description", Model.Description));
+    TypeSummaryVM.Add(new TypePropViewModel("Description", new Description(Model.Description??"")));
   }
 
   /// <summary>
@@ -117,6 +132,7 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
   public string Caption => TypeKind + " " + Model.GetFullName(TypeNameSelector.Target, true, false);
 
   public virtual object? Members => null;
+
 
   #region ShowTypeCommand
   public Command ShowTypeCommand { get; private set; }
@@ -137,7 +153,7 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
 
   protected virtual bool ShowErrorCanExecute()
   {
-    return ErrorMsg!=null;
+    return ErrorMsg != null;
   }
 
   protected virtual void ShowErrorExecute()

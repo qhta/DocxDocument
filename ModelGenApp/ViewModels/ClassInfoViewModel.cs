@@ -25,7 +25,7 @@ public class ClassInfoViewModel : TypeInfoViewModel
       foreach (var item in baseClasses)
       {
         var targetType = item.Target as TypeInfo;
-        if (targetType!=null)
+        if (targetType != null)
           TypeSummaryVM.Add(new TypePropViewModel("Inheritance", new TypeInfoViewModel(Phase, targetType, TypeNameSelector)));
       }
   }

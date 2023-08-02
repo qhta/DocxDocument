@@ -1,17 +1,10 @@
 ﻿namespace ModelGenApp.ViewModels;
 public class TypePropViewModel: ViewModel
 {
-  public TypePropViewModel(string propName, object? value, bool invalid=false)
+  public TypePropViewModel(string propName, object? value)
   {
     Name = propName;
-    if (invalid)
-    {
-      var str = value?.ToString();
-      if (str != null)
-        Value = new ErrString(str);
-    }
-    else
-      Value = value;
+    Value = value;
   }
 
   public string Name { get; set; }
