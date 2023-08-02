@@ -1,5 +1,5 @@
 ﻿namespace ModelGenApp.ViewModels;
-public class TypeListViewModel: ViewModel
+public class TypeListViewModel : ViewModel
 {
   public TypeListViewModel(PhaseViewModel phase, NamespaceViewModel nspace, string name, TNS typeNameSelector, TKS typeKindSelector)
   {
@@ -32,7 +32,7 @@ public class TypeListViewModel: ViewModel
 
   public string Name { get; private set; }
 
-  public string Caption => Namespace.Caption +": "+this.Name?.ToLower();
+  public string Caption => Namespace.Caption + ": " + this.Name?.ToLower();
 
   public TNS TypeNameSelector { get; private set; }
 
@@ -42,19 +42,36 @@ public class TypeListViewModel: ViewModel
 
   public int Count => Items.Count;
 
-  public virtual IList Items { get;} = new DispatchedCollection<TypeInfoViewModel>();
+  public virtual IList Items { get; } = new DispatchedCollection<TypeInfoViewModel>();
 
-  public bool IsTargetNameVisible => Namespace.Phase.IsTargetNameVisible;
-  public bool IsInvalidMarkVisible => Namespace.Phase.IsInvalidMarkVisible;
-  public bool CanShowErrorDetails => Namespace.Phase.CanShowErrorDetails;
+  public bool IsTargetNameVisible
+  {
+    get => _isTargetNameVisible ?? Namespace.Phase.IsTargetNameVisible;
+    set => _isTargetNameVisible = value;
+  }
+  private bool? _isTargetNameVisible;
+
+  public bool IsInvalidMarkVisible 
+    {
+    get => _isInvalidMarkVisible ?? Namespace.Phase.IsInvalidMarkVisible;
+    set => _isInvalidMarkVisible = value;
+  }
+  private bool? _isInvalidMarkVisible;
+
+  public bool CanShowErrorDetails
+  {
+    get => _canShowErrorDetails ?? Namespace.Phase.CanShowErrorDetails;
+    set => _canShowErrorDetails = value;
+  }
+  private bool? _canShowErrorDetails;
 
   #region ShowDetailsCommand
   public Command ShowDetailsCommand { get; private set; }
 
   public void LoadTypes(IEnumerable<TypeInfo> nsTypes)
   {
-    if (TypeKindSelector!=TKS.Any)
-      Items.AddRange(nsTypes.Where(item=>item.IsTypeKindSelected(TypeKindSelector))
+    if (TypeKindSelector != TKS.Any)
+      Items.AddRange(nsTypes.Where(item => item.IsTypeKindSelected(TypeKindSelector))
       .Select(item => CreateItemViewModel(item, Phase)));
     else
       Items.AddRange(nsTypes.Select(item => CreateItemViewModel(item, Phase)));
@@ -68,7 +85,7 @@ public class TypeListViewModel: ViewModel
 
   protected virtual bool ShowDetailsCanExecute()
   {
-    return Items.Count>0;
+    return Items.Count > 0;
   }
 
   protected virtual void ShowDetailsExecute()

@@ -162,7 +162,8 @@ public static class TypeManager
       else
         typeInfo.IsRejected = true;
 
-      TypeReflector.ReflectType(typeInfo);
+      if (accept)
+        TypeReflector.ReflectType(typeInfo);
       return typeInfo;
     }
   }

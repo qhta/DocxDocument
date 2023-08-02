@@ -14,6 +14,7 @@ public class RenamePhaseViewModel : PhaseViewModel
     var list = nspace.AcceptedTypes.Where(item=> item.GetTargetName() == typeInfoViewModel.Model.GetTargetName())
       .Select(item=>new TypeInfoViewModel(this, item, tns)).ToList();
     var viewModel = new TypeListViewModel(this, new NamespaceViewModel(this, nspace), "Types with duplicated names", tns,list);
+    viewModel.IsInvalidMarkVisible = false;
     WindowsManager.ShowWindow<TypeListWindow>(viewModel);
   }
 }
