@@ -220,8 +220,6 @@ public abstract partial class PhaseViewModel : ViewModel
 
   public bool CanShowErrorDetails { get; protected set; }
 
-  public bool CanShowError { get; protected set; }
-
   #region SaveData
   public void SaveData(string filename)
   {
@@ -241,7 +239,8 @@ public abstract partial class PhaseViewModel : ViewModel
 
   public virtual void ShowErrorFor(TypeInfoViewModel typeInfoViewModel)
   {
-    WindowsManager.ShowWindow<TypeInfoWindow>(this);
+    if (CanShowErrorDetails)
+      WindowsManager.ShowWindow<TypeInfoWindow>(this);
   }
 
 }
