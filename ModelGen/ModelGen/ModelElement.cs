@@ -75,29 +75,36 @@ public class ModelElement : IOwnedElement
   [XmlIgnore]
   public bool IsUnused { get => Used == false; set { if (value) Used = false; else Used = true; } }
 
-  /// <summary>
-  /// Status of validity check.
-  /// </summary>
-  public bool? Valid
-  {
-    get;
-    set;
+  ///// <summary>
+  ///// Status of validity check.
+  ///// </summary>
+  //public bool? Valid
+  //{
+  //  get;
+  //  set;
+  //}
+
+  ///// <summary>
+  ///// Specifies whether the element is valid after current phase.
+  ///// </summary>
+  //[XmlIgnore]
+  //public bool IsValid { get => Valid == true; set { if (value) Valid = true; else Valid = false; } }
+
+  ///// <summary>
+  ///// Specifies whether the element is invalid after current phase.
+  ///// </summary>
+  //[XmlIgnore]
+  //public bool IsInvalid { get => Valid == false; set { if (value) Valid = false; else Valid = true; } }
+  ///// <summary>
+
+  public bool IsValid(PPS pps)
+  { 
+    var result = Errors?.Where(item=>item.Item1== pps).Any()!=true;
+    if (!result)
+      return false;
+    return true;
   }
-
-  /// <summary>
-  /// Specifies whether the element is valid after current phase.
-  /// </summary>
-  [XmlIgnore]
-  public bool IsValid { get => Valid == true; set { if (value) Valid = true; else Valid = false; } }
-
-  /// <summary>
-  /// Specifies whether the element is invalid after current phase.
-  /// </summary>
-  [XmlIgnore]
-  public bool IsInvalid { get => Valid == false; set { if (value) Valid = false; else Valid = true; } }
-  /// <summary>
-
-  public Collection<(PPS, string)>? Errors { get; set; }
+  public Collection<(PPS, string)>? Errors { get; private set;}
 
   public void AddErrorMsg(PPS pps, string message)
   {

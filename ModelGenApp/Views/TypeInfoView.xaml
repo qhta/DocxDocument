@@ -19,48 +19,7 @@
       <RowDefinition Height="Auto"/>
       <RowDefinition Height="*"/>
     </Grid.RowDefinitions>
-    <DataGrid AutoGenerateColumns="False" 
-              HeadersVisibility="None"
-              GridLinesVisibility="None"
-              SelectionMode="Single"
-              SelectionUnit="Cell"
-              ItemsSource="{Binding Path=TypeSummaryVM}" >
-      <DataGrid.Columns>
-        <DataGridTextColumn Header="Name" FontWeight="Bold" IsReadOnly="True" 
-                            Binding="{Binding Name}"/>
-        <DataGridTemplateColumn Header="Value">
-          <DataGridTemplateColumn.CellTemplate>
-            <DataTemplate>
-              <ContentPresenter Content="{Binding Value}">
-                <ContentPresenter.Resources>
-                  <DataTemplate DataType="{x:Type vm:TypeInfoViewModel}">
-                    <TextBlock Margin="2,0,2,0">
-                      <Hyperlink 
-                              NavigateUri="{Binding Path=FullName}" 
-                              Command="{Binding Path=ShowTypeCommand}"
-                              CommandParameter="{Binding}">
-                        <TextBlock Text="{Binding Path=FullName}"/>
-                      </Hyperlink>
-                    </TextBlock>
-                  </DataTemplate>
-                  <DataTemplate DataType="{x:Type hlp:ErrString}">
-                    <TextBlock Margin="2,0,2,0" 
-                               Foreground="Red"
-                               Text="{Binding}">
-                    </TextBlock>
-                  </DataTemplate>
-                  <DataTemplate DataType="{x:Type sys:String}">
-                    <TextBlock Margin="2,0,2,0" 
-                               Text="{Binding}">
-                    </TextBlock>
-                  </DataTemplate>
-                </ContentPresenter.Resources>
-              </ContentPresenter>
-            </DataTemplate>
-          </DataGridTemplateColumn.CellTemplate>
-        </DataGridTemplateColumn>
-      </DataGrid.Columns>
-    </DataGrid>
+    <views:TypeSummaryView />
     <Grid Grid.Row="1"
           Visibility="{Binding Path=Members.Visible, Converter={StaticResource BoolToVisibilityConverter}}"
           >

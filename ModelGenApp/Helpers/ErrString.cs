@@ -2,12 +2,12 @@
 {
   public struct ErrString
   {
-    public ErrString(string value)
+    public ErrString(string? value)
     {
       Value = value;
     }
-    public string Value { get; set; }
+    public string? Value { get; set; }
 
-    public override string ToString() => Value;
+    public override string? ToString() => Value;
   }
 }

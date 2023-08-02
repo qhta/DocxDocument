@@ -16,27 +16,31 @@ public delegate void ValidatingTypeEvent(ModelValidator sender, ValidatingTypeIn
 /// </summary>
 public class ModelValidator
 {
-  public ModelValidator(NTS namespaceTypeSelector, MSS typeStatusSelector, TDS typeDataSelector)
+  public ModelValidator(PPS phase, NTS namespaceTypeSelector, MSS typeStatusSelector, TDS typeDataSelector)
   {
+    PhaseNum = phase;
     NamespaceTypeSelector = namespaceTypeSelector;
     TypeStatusSelector = typeStatusSelector;
     TypeDataSelector = typeDataSelector;
   }
+
+  public PPS PhaseNum { get; private set; }
   public NTS NamespaceTypeSelector { get; private set; }
   public MSS TypeStatusSelector { get; private set; }
   public TDS TypeDataSelector { get; private set; }
 
   public int TotalTypesCount { get; private set; }
   public int CheckedTypesCount { get; private set; }
-  public int NoDocsTypesCount { get; private set; }
-  public int NoSummaryTypesCount { get; private set; }
   public int ValidTypesCount { get; private set; }
+  public int InvalidTypesCount { get; private set; }
 
   public event ValidatingTypeEvent? OnValidatingType;
 
   public bool ValidateTypes()
   {
     bool ok = true;
+    ValidTypesCount = 0;
+    InvalidTypesCount = 0;
     var nspaces = TypeManager.GetNamespaces(NamespaceTypeSelector);
     List<TypeInfo>  types = new List<TypeInfo>();
     foreach (var nspace in nspaces)
@@ -70,9 +74,10 @@ public class ModelValidator
     var ok = true;
     if (!typeInfo.IsConstructedGenericType)
       ok = ValidateDocumentation(typeInfo);
-    typeInfo.IsValid = ok;
     if (ok)
       ValidTypesCount++;
+    else
+      InvalidTypesCount++;
     return ok;
   }
 
@@ -86,7 +91,7 @@ public class ModelValidator
     }
     else
     {
-      NoDocsTypesCount++;
+      typeInfo.AddErrorMsg(PhaseNum, "Documentation missing");
       return false;
     }
   }
