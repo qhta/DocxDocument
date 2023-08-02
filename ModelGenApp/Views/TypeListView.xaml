@@ -25,14 +25,23 @@
                             IsReadOnly="true"/>
         <DataGridTextColumn Header="Target name" Binding="{Binding Path=TargetName}"
                             Visibility="{Binding DataContext.IsTargetNameVisible,
-                                Source={x:Reference dummyElement}, 
-                                Converter={StaticResource BoolToVisibilityConverter}}"
+                            Source={x:Reference dummyElement}, 
+                            Converter={StaticResource BoolToVisibilityConverter}}"
                             IsReadOnly="true"/>
         <utils:DataGridContentBoundColumn Binding="{Binding Path=Type}"
                                           ContentTemplate="{StaticResource TypeInfoButtonTemplate}">
         </utils:DataGridContentBoundColumn>
         <utils:DataGridContentBoundColumn Binding="{Binding Path=Type}"
-                                          ContentTemplate="{StaticResource InvalidItemButtonTemplate}">
+                            Visibility="{Binding DataContext.IsInvalidMarkVisible,
+                            Source={x:Reference dummyElement}, 
+                            Converter={StaticResource BoolToVisibilityConverter}}"
+                            ContentTemplate="{StaticResource InvalidItemImageTemplate}">
+        </utils:DataGridContentBoundColumn>
+        <utils:DataGridContentBoundColumn Binding="{Binding Path=Type}"
+                            Visibility="{Binding DataContext.CanShowErrorDetails,
+                            Source={x:Reference dummyElement}, 
+                            Converter={StaticResource BoolToVisibilityConverter}}"
+                            ContentTemplate="{StaticResource InvalidItemButtonTemplate}">
         </utils:DataGridContentBoundColumn>
       </DataGrid.Columns>
     </DataGrid>

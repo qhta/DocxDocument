@@ -741,7 +741,7 @@ public static class ModelManager
         if (sameNameTypes.Count > 1)
           foreach (var sameNameType in sameNameTypes)
           {
-            sameNameType.IsInvalid = true;
+            //sameNameType.IsInvalid = true;
             sameNameType.AddErrorMsg(PPS.RenameTypes, "Target namespace has multiple types with the same name");
             DuplicateTypeNamesCount++;
           }

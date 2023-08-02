@@ -8,12 +8,11 @@ public abstract partial class PhaseViewModel : ViewModel
 
   public PhaseViewModel(PPS phase, string name)
   {
-    Phase = phase;
+    PhaseNum = phase;
     PhaseName = name;
     TypeNameSelector = new TNS(false, false, false);
     SaveResultsCommand = new RelayCommand(SaveResultsExecute, SaveResultsCanExecute) { Name = "SaveResultsCommand" };
     ShowResultsCommand = new RelayCommand(ShowResultsExecute, ShowResultsCanExecute) { Name = "ShowResultsCommand" };
-    ShowOverviewCommand = new RelayCommand(ShowOverviewExecute, ShowOverviewCanExecute) { Name = "ShowOverviewCommand" };
     PropertyChanged += PhaseMonitor_PropertyChanged;
   }
 
@@ -26,13 +25,12 @@ public abstract partial class PhaseViewModel : ViewModel
   {
     SaveResultsCommand.NotifyCanExecuteChanged();
     ShowResultsCommand.NotifyCanExecuteChanged();
-    ShowOverviewCommand.NotifyCanExecuteChanged();
   }
 
   /// <summary>
   /// ID of the process phase.
   /// </summary>
-  public PPS Phase { get; private set; }
+  public PPS PhaseNum { get; private set; }
 
   ///// <summary>
   ///// Number of the process phase.
@@ -175,35 +173,19 @@ public abstract partial class PhaseViewModel : ViewModel
   }
   private Command _ShowResultsCommand = null!;
 
-  protected abstract void ShowResultsExecute();
+  protected async void ShowResultsExecute()
+  {
+    WindowsManager.ShowWindow<PhaseResultsWindow>(this);
+    await Task.Run(() =>
+    {
+      GetNamespaces();
+    });
+  }
 
   protected virtual bool ShowResultsCanExecute()
   {
     return Percentage == 100;
   }
-  #endregion
-
-  #region ShowOverviewCommand
-  public Command ShowOverviewCommand
-  {
-    get { return _ShowOverviewCommand; }
-    set
-    {
-      if (_ShowOverviewCommand != value)
-      {
-        _ShowOverviewCommand = value;
-        NotifyPropertyChanged(nameof(ShowOverviewCommand));
-      }
-    }
-  }
-  private Command _ShowOverviewCommand = null!;
-
-  protected virtual bool ShowOverviewCanExecute()
-  {
-    return Percentage == 100;
-  }
-
-  protected abstract void ShowOverviewExecute();
   #endregion
 
   #region Filter namespaces
@@ -234,7 +216,11 @@ public abstract partial class PhaseViewModel : ViewModel
 
   public bool IsTargetNameVisible { get; protected set; }
 
-  public bool IsInvalidMarkVisible { get; protected set; }
+  public bool IsInvalidMarkVisible { get; protected set; } = true;
+
+  public bool CanShowErrorDetails { get; protected set; }
+
+  public bool CanShowError { get; protected set; }
 
   #region SaveData
   public void SaveData(string filename)
@@ -248,7 +234,7 @@ public abstract partial class PhaseViewModel : ViewModel
     path = Path.Combine(path, "ModelGen");
     if (!Directory.Exists(path))
       Directory.CreateDirectory(path);
-    path = Path.Combine(path, $"Phase {Convert.ChangeType(Phase, typeof(int))} result.xml");
+    path = Path.Combine(path, $"Phase {Convert.ChangeType(PhaseNum, typeof(int))} result.xml");
     return path;
   }
   #endregion

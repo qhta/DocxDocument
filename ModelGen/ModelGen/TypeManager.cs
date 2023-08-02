@@ -162,8 +162,7 @@ public static class TypeManager
       else
         typeInfo.IsRejected = true;
 
-      if (accept)
-        TypeReflector.ReflectType(typeInfo);
+      TypeReflector.ReflectType(typeInfo);
       return typeInfo;
     }
   }
@@ -262,8 +261,8 @@ public static class TypeManager
   }
   public static TypeInfo[] GetGenericArguments(this TypeInfo typeInfo)
   {
-    //if (!typeInfo.IsReflected)
-    //  TypeReflector.WaitForReflection(typeInfo);
+    if (!typeInfo.IsReflected)
+      TypeReflector.WaitForReflection(typeInfo);
     var args = TypeManager.GetRelatedTypes(typeInfo, Semantics.GenericTypeArg).ToArray();
     if (args.Length != 0)
       return args;
