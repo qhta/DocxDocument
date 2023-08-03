@@ -28,6 +28,8 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
 
   public PhaseViewModel Phase { get; private set; }
 
+  public bool IsTypeKindSelected(TKS tks) => Model.IsTypeKindSelected(tks);
+
   [DataGridColumn]
   public string Acceptance
   {

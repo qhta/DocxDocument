@@ -15,7 +15,7 @@ public class NamespacesViewModel : DispatchedCollection<NamespaceViewModel>
     {
       var nsVM = new NamespaceViewModel(phase, ns, filter);
       Add(nsVM);
-      nsVM.LoadTypes();
+      nsVM.LoadTypesAsync();
     }
   }
 

@@ -1,7 +1,4 @@
 ﻿namespace ModelGenApp.Views;
-/// <summary>
-/// Interaction logic for PhaseResultsView.xaml
-/// </summary>
 public partial class PhaseResultsView : UserControl
 {
   public PhaseResultsView()
@@ -9,8 +6,4 @@ public partial class PhaseResultsView : UserControl
     InitializeComponent();
   }
 
-  private void DataGrid_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
-  {
-    Qhta.WPF.DataGridUtils.AutoGenerating.UseDataGridColumnAttribute(sender, e);
-  }
 }

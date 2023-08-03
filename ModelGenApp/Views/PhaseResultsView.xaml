@@ -19,37 +19,7 @@
       <RowDefinition Height="Auto"/>
       <RowDefinition Height="*"/>
     </Grid.RowDefinitions>
-    <ListView ItemsSource="{Binding Path=SummaryVM}">
-      <ListView.View>
-        <GridView>
-          <GridViewColumn Header="Name" Width="120" DisplayMemberBinding="{Binding Name}" />
-          <GridViewColumn Header="Value" Width="50" DisplayMemberBinding="{Binding Value}" />
-          <GridViewColumn Header="Filter">
-            <GridViewColumn.CellTemplate>
-              <DataTemplate>
-                <CheckBox IsChecked="{Binding IsChecked}"/>
-              </DataTemplate>
-            </GridViewColumn.CellTemplate>
-          </GridViewColumn>
-        </GridView>
-      </ListView.View>
-    </ListView>
-    <FrameworkElement x:Name="dummyElement" Visibility="Collapsed"/>
-    <DataGrid Grid.Row="1"
-              AutoGenerateColumns="true"
-              AutoGeneratingColumn="DataGrid_AutoGeneratingColumn"
-              ClipboardCopyMode="IncludeHeader"
-              ItemsSource="{Binding Path=NamespacesVM}">
-      <DataGrid.Resources>
-        <hlp:BindingProxy x:Key="proxy" Data="{Binding}"/>
-      </DataGrid.Resources>
-      <DataGrid.Columns>
-        <DataGridTextColumn Header="Name" Binding="{Binding Path=Name}"/>
-        <DataGridTextColumn Header="TargetName" Binding="{Binding Path=TargetName}" 
-                            Visibility="{Binding DataContext.IsTargetNameVisible,
-                                         Source={x:Reference dummyElement}, 
-                                         Converter={StaticResource BoolToVisibilityConverter}}"/>
-      </DataGrid.Columns>
-    </DataGrid>
+    <views:PhaseSummaryView/>
+    <views:NamespacesListView Grid.Row="1" DataContext="{Binding Namespaces}"/>
   </Grid>
 </UserControl>
