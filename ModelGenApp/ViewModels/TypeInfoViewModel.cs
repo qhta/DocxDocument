@@ -3,7 +3,7 @@
 namespace ModelGenApp.ViewModels;
 public class TypeInfoViewModel : ViewModel<TypeInfo>
 {
-  public TypeInfoViewModel(PhaseViewModel phase, TypeInfo typeInfo, TNS typeNameSelector) : base(typeInfo)
+  protected TypeInfoViewModel(PhaseViewModel phase, TypeInfo typeInfo, NKS typeNameSelector) : base(typeInfo)
   {
     TypeNameSelector = typeNameSelector;
     Phase = phase;
@@ -12,23 +12,30 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
     FillTypeSummaryAsync();
   }
 
+  public static TypeInfoViewModel Create(PhaseViewModel phase, TypeInfo typeInfo, NKS typeNameSelector)
+  {
+    if (typeInfo.TypeKind==TypeKind.Enum)
+      return new EnumTypeInfoViewModel(phase, typeInfo, typeNameSelector);
+    if (typeInfo.TypeKind==TypeKind.Type)
+      return new TypeInfoViewModel(phase, typeInfo, typeNameSelector);
+    return new ClassInfoViewModel(phase, typeInfo, typeNameSelector);
+  }
+
   [DataGridColumn]
   public TypeKind TypeKind => Model.TypeKind;
 
-  public TNS TypeNameSelector { get; private set; }
+  public NKS TypeNameSelector { get; private set; }
 
   public PhaseViewModel Phase { get; private set; }
 
   [DataGridColumn]
-  public string? Acceptance
+  public string Acceptance
   {
     get
     {
-      if (Model.IsAccepted)
+      if (Model.IsAcceptedAfter(Phase.PhaseNum))
         return "accepted";
-      if (Model.IsRejected)
-        return "rejected";
-      return null;
+      return "rejected";
     }
   }
 
@@ -89,41 +96,49 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
     }
   }
 
-  public TypeSummaryViewModel TypeSummaryVM { get; } = new TypeSummaryViewModel();
+  public TypeSummaryViewModel TypeSummary { get; } = new TypeSummaryViewModel();
 
-  protected void FillTypeSummaryAsync()
+  protected async void FillTypeSummaryAsync()
   {
-    Task.Run(() =>
-    FillTypeSummaryVM());
+    await Task.Run(() => FillTypeSummary());
   }
 
-  protected virtual void FillTypeSummaryVM()
+  protected virtual void FillTypeSummary()
   {
-    TypeSummaryVM.Clear();
-    if (Model.IsAccepted)
-      TypeSummaryVM.Add(new TypePropViewModel("Acceptance", Acceptance));
+    TypeSummary.Clear();
+    if (Model.IsAcceptedAfter(Phase.PhaseNum))
+      TypeSummary.Add(new TypePropViewModel("Acceptance", Acceptance));
     else
-      TypeSummaryVM.Add(new TypePropViewModel("Acceptance", new ErrString(Acceptance)));
+      TypeSummary.Add(new TypePropViewModel("Acceptance", new ErrString(Acceptance)));
 
     if (Model.IsValid(Phase.PhaseNum))
-      TypeSummaryVM.Add(new TypePropViewModel("Validation", "valid"));
+      TypeSummary.Add(new TypePropViewModel("Validation", "valid"));
     else
-      TypeSummaryVM.Add(new TypePropViewModel("Validation", new ErrString(ErrorMsg ?? "invalid")));
+      TypeSummary.Add(new TypePropViewModel("Validation", new ErrString(ErrorMsg ?? "invalid")));
 
-    TypeSummaryVM.Add(new TypePropViewModel("Kind", TypeKind.ToString().ToLower()));
-    TypeSummaryVM.Add(new TypePropViewModel("Namespace", Model.OriginalNamespace));
-    TypeSummaryVM.Add(new TypePropViewModel("Name", Name));
+    TypeSummary.Add(new TypePropViewModel("Kind", TypeKind.ToString().ToLower()));
+    TypeSummary.Add(new TypePropViewModel("Namespace", Model.OriginalNamespace));
+    TypeSummary.Add(new TypePropViewModel("Name", Name));
     if (!String.IsNullOrEmpty(Model.TargetNamespace))
-      TypeSummaryVM.Add(new TypePropViewModel("Target namespace", Model.TargetNamespace));
+      TypeSummary.Add(new TypePropViewModel("Target namespace", Model.TargetNamespace));
     if (!String.IsNullOrEmpty(Model.NewName))
-      TypeSummaryVM.Add(new TypePropViewModel("New name", Model.NewName));
+      TypeSummary.Add(new TypePropViewModel("New name", Model.NewName));
     if (Model.IsConverted)
     {
       var targetType = Model.GetConversionTarget();
       if (targetType != null)
-        TypeSummaryVM.Add(new TypePropViewModel("Converted to", new TypeInfoViewModel(Phase, targetType, TypeNameSelector)));
+        TypeSummary.Add(new TypePropViewModel("Converted to", new TypeInfoViewModel(Phase, targetType, TypeNameSelector)));
     }
-    TypeSummaryVM.Add(new TypePropViewModel("Description", new Description(Model.Description??"")));
+    TypeSummary.Add(new TypePropViewModel("Description", new Description(Model.Description??"")));
+  }
+
+  public async void FillDetailsAsync()
+  {
+    await Task.Run(() => FillDetails());
+  }
+
+  public virtual void FillDetails()
+  {
   }
 
   /// <summary>
@@ -144,6 +159,8 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
 
   protected virtual void ShowTypeExecute()
   {
+    this.FillTypeSummary();
+    this.FillDetails();
     WindowsManager.ShowWindow<TypeInfoWindow>(this);
   }
   #endregion

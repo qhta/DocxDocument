@@ -1,5 +1,5 @@
 ﻿namespace ModelGenApp.ViewModels;
-public class PropListViewModel: ObservableCollection<PropInfoViewModel>
+public class PropListViewModel: DispatchedCollection<PropInfoViewModel>
 {
   public PropListViewModel(ClassInfoViewModel owner, string name)
   {

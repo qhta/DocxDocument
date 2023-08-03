@@ -37,22 +37,33 @@ public class ModelElement : IOwnedElement
   /// </summary>
   public string? NewName { get; set; }
 
-  /// <summary>
-  /// Status of acceptance for the further processing.
-  /// </summary>
-  public bool? Accepted { get; set; }
+  ///// <summary>
+  ///// Specifies whether the element is accepted in any phase.
+  ///// </summary>
+  //public bool IsAccepted => RejectedAfterPhase == PPS.None;
 
   /// <summary>
-  /// Specifies whether the element is accepted for further processing.
+  /// Specifies whether the element is accepted to processing in specific phase
   /// </summary>
-  [XmlIgnore]
-  public bool IsAccepted { get => Accepted == true; set { if (value) Accepted = true; else Accepted = false; } }
+  public bool IsAcceptedTo(PPS phase) => RejectedAfterPhase == PPS.None || RejectedAfterPhase>=phase;
 
   /// <summary>
-  /// Specifies whether the element is rejected from further processing.
+  /// Specifies whether the element is accepted to further processing after specific phase
   /// </summary>
-  [XmlIgnore]
-  public bool IsRejected { get => Accepted == false; set { if (value) Accepted = false; else Accepted = true; } }
+  public bool IsAcceptedAfter(PPS phase) => RejectedAfterPhase == PPS.None || RejectedAfterPhase>phase;
+
+  /// <summary>
+  /// Specifies whether the element is rejected from further processing after specific phase
+  /// </summary>
+  public bool IsRejectedAfter(PPS phase) => RejectedAfterPhase != PPS.None && RejectedAfterPhase<=phase;
+
+  /// <summary>
+  /// Sets <see cref="RejectedAfterPhase"/> to the specific phase.
+  /// </summary>
+  /// <param name="phase"></param>
+  public void SetRejected(PPS phase) { RejectedAfterPhase = phase; }
+
+  private PPS RejectedAfterPhase = PPS.None;
 
   /// <summary>
   /// Status of acceptance for the further processing.
@@ -75,30 +86,10 @@ public class ModelElement : IOwnedElement
   [XmlIgnore]
   public bool IsUnused { get => Used == false; set { if (value) Used = false; else Used = true; } }
 
-  ///// <summary>
-  ///// Status of validity check.
-  ///// </summary>
-  //public bool? Valid
-  //{
-  //  get;
-  //  set;
-  //}
-
-  ///// <summary>
-  ///// Specifies whether the element is valid after current phase.
-  ///// </summary>
-  //[XmlIgnore]
-  //public bool IsValid { get => Valid == true; set { if (value) Valid = true; else Valid = false; } }
-
-  ///// <summary>
-  ///// Specifies whether the element is invalid after current phase.
-  ///// </summary>
-  //[XmlIgnore]
-  //public bool IsInvalid { get => Valid == false; set { if (value) Valid = false; else Valid = true; } }
-  ///// <summary>
-
   public bool IsValid(PPS pps)
   { 
+    //DocumentFormat.OpenXml.OpenXmlLeafTextElement
+
     var result = Errors?.Where(item=>item.Item1== pps).Any()!=true;
     if (!result)
       return false;
@@ -153,7 +144,8 @@ public class ModelElement : IOwnedElement
   /// <returns></returns>
   public virtual IEnumerable<XElement>? GetDocumentation()
   {
-    if (Description == null && Summary == null)
+    //DocumentFormat.OpenXml.OpenXmlComparableSimpleValue
+    if (String.IsNullOrEmpty(Description) && (Summary == null || Summary.IsEmpty))
       return null;
     var documentation = new Collection<XElement>();
     XElement? summary = null;

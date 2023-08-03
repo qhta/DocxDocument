@@ -52,6 +52,7 @@ public abstract class BaseCreator
 
   public void RunOn(Type type, ProcessOptions options)
   {
+    TypeManager.Clear();
     Options = options;
     IsRun = true;
     var displayOptions = Options.DisplayOptions;
@@ -70,9 +71,9 @@ public abstract class BaseCreator
     {
       totalTime += ScanType(type);
       if (monitorDisplaySelector.HasFlag(MDS.ScannedNamespaces))
-        ModelMonitor?.ShowNamespaceSummary(NTS.Origin);
+        ModelMonitor?.ShowNamespaceSummary(PPS.ScanTypes, NTS.Origin);
       if (monitorDisplaySelector.HasFlag(MDS.ScannedTypes))
-        ModelMonitor?.ShowNamespacesDetails(displayOptions with { NamespaceTypeSelector = NTS.Origin });
+        ModelMonitor?.ShowNamespacesDetails(PPS.ScanTypes, displayOptions with { NamespaceTypeSelector = NTS.Origin });
       PhaseDone = PPS.ScanTypes;
     }
 
@@ -124,20 +125,20 @@ public abstract class BaseCreator
     {
       var ModelDocumenter = new ModelDocumenter(NTS.Origin, MSS.Accepted, Options.ModelDocFileName);
       ModelDocumenter.OnDocumentingType += ModelDocumenter_OnDocumentingType;
-      documentedTypesCount = ModelDocumenter.DocumentTypes();
+      documentedTypesCount = ModelDocumenter.DocumentTypes(PPS.ScanTypes);
       ModelDocumenter.OnDocumentingType += ModelDocumenter_OnDocumentingType;
     }
 
     var ModelValidator = new ModelValidator(PPS.ScanTypes, NTS.Origin, MSS.Accepted, TDS.Metadata);
     ModelValidator.OnValidatingType += ModelValidator_OnValidatingType;
-    ModelValidator.ValidateTypes();
+    ModelValidator.ValidateTypes(PPS.ScanTypes);
     ModelValidator.OnValidatingType += ModelValidator_OnValidatingType;
 
     DateTime t2 = DateTime.Now;
     var ts = t2 - t1;
     var allTypesCount = TypeManager.AllTypes.Count();
-    var acceptedTypesCount = TypeManager.AcceptedTypes.Count();
-    var rejectedTypesCount = TypeManager.RejectedTypes.Count();
+    var acceptedTypesCount = TypeManager.TypesAcceptedAfter(PPS.ScanTypes).Count();
+    var rejectedTypesCount = TypeManager.TypesRejectedAfter(PPS.ScanTypes).Count();
     var summaryInfo = new SummaryInfo
     {
       Time = ts,

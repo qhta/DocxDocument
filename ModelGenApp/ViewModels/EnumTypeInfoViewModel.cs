@@ -2,7 +2,7 @@
 
 public class EnumTypeInfoViewModel : TypeInfoViewModel
 {
-  public EnumTypeInfoViewModel(PhaseViewModel phase, TypeInfo typeInfo, TNS typeNameSelector) : base(phase, typeInfo, typeNameSelector)
+  public EnumTypeInfoViewModel(PhaseViewModel phase, TypeInfo typeInfo, NKS typeNameSelector) : base(phase, typeInfo, typeNameSelector)
   {
     EnumValues = new EnumListViewModel(this, "EnumValues");
     if (typeInfo.EnumValues != null)

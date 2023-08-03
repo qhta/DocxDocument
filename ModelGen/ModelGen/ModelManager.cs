@@ -41,7 +41,6 @@ public static class ModelManager
   public static event ScanningTypeEvent? OnScanningType;
   public static event RenamingTypeEvent? OnRenamingType;
   public static event ConvertingTypeEvent? OnConvertingType;
-  public static event CheckingUsageEvent? OnCheckingUsage;
 
   public static int CheckedRenameTypesCount { get; private set; }
   public static int RenamedTypesCount { get; private set; }
@@ -110,7 +109,7 @@ public static class ModelManager
       return false;
     if (typeInfo.Name == "Byte[]")
       return false;
-    if (typeInfo.AcceptedProperties?.Any() != true && !typeInfo.GetRelatedTypes(Semantics.Include).Any())
+    if (typeInfo.AcceptedProperties(PPS.ConvertTypes).Any() != true && !typeInfo.GetRelatedTypes(Semantics.Include).Any())
     {
       if (typeInfo.BaseTypeInfo != null)
       {
@@ -126,9 +125,9 @@ public static class ModelManager
   {
     if (typeInfo.IsConverted)
       return false;
-    if (typeInfo.AcceptedProperties?.Count() == 1)
+    if (typeInfo.AcceptedProperties(PPS.ConvertTypes)?.Count() == 1)
     {
-      var firstProp = typeInfo.AcceptedProperties?.FirstOrDefault();
+      var firstProp = typeInfo.AcceptedProperties(PPS.ConvertTypes)?.FirstOrDefault();
       if (firstProp != null && firstProp.Name == "Val")
       {
         TypeManager.AddRelationship(typeInfo, firstProp.PropertyType, Semantics.TypeChange);
@@ -467,64 +466,64 @@ public static class ModelManager
     });
   }
 
-  public static Task CheckTypeUsageAsync(this TypeInfo typeInfo)
-  {
-    return Task.Run(() => CheckTypeUsage(typeInfo));
-  }
+  //public static Task CheckTypeUsageAsync(this TypeInfo typeInfo)
+  //{
+  //  return Task.Run(() => CheckTypeUsage(typeInfo));
+  //}
 
-  public static bool CheckTypeUsage(this TypeInfo typeInfo)
-  {
-    if (typeInfo.UsageEvaluated)
-      return typeInfo.IsUsed;
-    typeInfo.UsageEvaluated = true;
-    CheckedUsageTypesCount++;
+  //public static bool CheckTypeUsage(this TypeInfo typeInfo)
+  //{
+  //  if (typeInfo.UsageEvaluated)
+  //    return typeInfo.IsUsed;
+  //  typeInfo.UsageEvaluated = true;
+  //  CheckedUsageTypesCount++;
 
-    if (typeInfo.IsAccepted == false)
-      return false;
-    if (ModelConfig.Instance.IsExcluded(typeInfo.Type))
-      return false;
-    if (ModelConfig.Instance.ExcludedNamespaces.Contains(typeInfo.GetTargetNamespace() ?? ""))
-      return false;
-    typeInfo.IsUsed = true;
-    UsedTypesCount++;
-    OnCheckingUsage?.Invoke(new CheckingUsageInfo { CheckedTypes = CheckedUsageTypesCount, UsedTypes = UsedTypesCount, Current = typeInfo });
+  //  if (typeInfo.IsAccepted == false)
+  //    return false;
+  //  if (ModelConfig.Instance.IsExcluded(typeInfo.Type))
+  //    return false;
+  //  if (ModelConfig.Instance.ExcludedNamespaces.Contains(typeInfo.GetTargetNamespace() ?? ""))
+  //    return false;
+  //  typeInfo.IsUsed = true;
+  //  UsedTypesCount++;
+  //  OnCheckingUsage?.Invoke(new CheckingUsageInfo { CheckedTypes = CheckedUsageTypesCount, UsedTypes = UsedTypesCount, Current = typeInfo });
 
 
-    if (typeInfo.BaseTypeInfo != null)
-    {
-      var baseType = typeInfo.BaseTypeInfo.GetConversionTargetOrSelf();
-      CheckTypeUsage(baseType);
-    }
+  //  if (typeInfo.BaseTypeInfo != null)
+  //  {
+  //    var baseType = typeInfo.BaseTypeInfo.GetConversionTargetOrSelf();
+  //    CheckTypeUsage(baseType);
+  //  }
 
-    if (typeInfo.Properties != null)
-      foreach (var prop in typeInfo.Properties.ToArray())
-      {
-        //if (prop.Name == "RsidRoot")
-        //  Debug.Assert(true);
-        if (!prop.IsRejected)
-        {
-          var propType = prop.PropertyType.GetConversionTargetOrSelf();
-          if (propType.HasExcludedNamespace())
-            prop.IsRejected = true;
-          else if (!propType.IsRejected)
-          {
-            CheckTypeUsage(propType);
-          }
-        }
-      }
+  //  if (typeInfo.Properties != null)
+  //    foreach (var prop in typeInfo.Properties.ToArray())
+  //    {
+  //      //if (prop.Name == "RsidRoot")
+  //      //  Debug.Assert(true);
+  //      if (!prop.IsRejected)
+  //      {
+  //        var propType = prop.PropertyType.GetConversionTargetOrSelf();
+  //        if (propType.HasExcludedNamespace())
+  //          prop.IsRejected = true;
+  //        else if (!propType.IsRejected)
+  //        {
+  //          CheckTypeUsage(propType);
+  //        }
+  //      }
+  //    }
 
-    var interfaces = typeInfo.GetImplementedInterfaces();
-    if (interfaces.Any())
-      foreach (var intfType in interfaces.ToArray())
-      {
-        if (!intfType.IsRejected)
-        {
-          CheckTypeUsage(intfType);
-        }
-      }
+  //  var interfaces = typeInfo.GetImplementedInterfaces();
+  //  if (interfaces.Any())
+  //    foreach (var intfType in interfaces.ToArray())
+  //    {
+  //      if (!intfType.IsRejected)
+  //      {
+  //        CheckTypeUsage(intfType);
+  //      }
+  //    }
 
-    return typeInfo.IsUsed;
-  }
+  //  return typeInfo.IsUsed;
+  //}
 
   private static bool HasExcludedNamespace(this TypeInfo typeInfo)
   {
@@ -541,15 +540,15 @@ public static class ModelManager
     return false;
   }
 
-  public static bool ValidateType(this TypeInfo typeInfo)
+  public static bool ValidateType(PPS phase, TypeInfo typeInfo)
   {
     var isValid = true;
-    if (!ValidateProperties(typeInfo))
+    if (!ValidateProperties(phase, typeInfo))
       isValid = false;
     return isValid;
   }
 
-  public static bool ValidateProperties(this TypeInfo typeInfo)
+  public static bool ValidateProperties(PPS phase, TypeInfo typeInfo)
   {
     var isValid = true;
     if (typeInfo.Type.IsEqualOrSubclassOf(typeof(DocumentFormat.OpenXml.OpenXmlPartRootElement)))
@@ -557,27 +556,27 @@ public static class ModelManager
       var partProperty = typeInfo.Properties?.FirstOrDefault(item => item.Name.EndsWith("Part"));
       if (partProperty != null)
       {
-        partProperty.IsAccepted = false;
+        partProperty.SetRejected(phase);
         isValid = false;
       }
     }
     var baseTypes = typeInfo.GetBaseTypes();
     foreach (var baseType in baseTypes)
     {
-      if (!CheckPropertyOverrides(typeInfo, baseType))
+      if (!CheckPropertyOverrides(phase, typeInfo, baseType))
         isValid = false;
     }
     return isValid;
   }
 
-  public static bool CheckPropertyOverrides(this TypeInfo thisTypeInfo, TypeInfo baseTypeInfo)
+  public static bool CheckPropertyOverrides(PPS phase, TypeInfo thisTypeInfo, TypeInfo baseTypeInfo)
   {
     //if (thisTypeInfo.Name == "CategoryAxisData")
     //  Debug.Assert(true);
     if (baseTypeInfo != null && thisTypeInfo.Properties != null && baseTypeInfo.Properties != null)
     {
-      var thisPropNames = thisTypeInfo.Properties.Where(item => item.IsAccepted != false).Select(item => item.Name).ToArray();
-      var basePropNames = baseTypeInfo.Properties.Where(item => item.IsAccepted != false).Select(item => item.Name).ToArray();
+      var thisPropNames = thisTypeInfo.Properties.Where(item => item.IsAcceptedTo(phase)).Select(item => item.Name).ToArray();
+      var basePropNames = baseTypeInfo.Properties.Where(item => item.IsAcceptedTo(phase)).Select(item => item.Name).ToArray();
       var commonPropNames = thisPropNames.Intersect(basePropNames).ToArray();
       var hasSamePropNames = commonPropNames.Any();
       if (hasSamePropNames)
@@ -681,7 +680,7 @@ public static class ModelManager
     RenameNamespaces();
     var n = 0;
     DuplicateTypeNamesCount = 0;
-    foreach (var type in TypeManager.AcceptedTypes.ToArray())
+    foreach (var type in TypeManager.TypesAcceptedTo(PPS.RenameTypes).ToArray())
     {
       if (ModelManager.TryRenameType(type))
         n++;

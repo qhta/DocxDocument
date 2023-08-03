@@ -93,7 +93,7 @@ public class ModelCreator: BaseCreator
     int generatedCount = 0;
     ModelMonitor?.ShowPhaseStart(PPS.CodeGeneration,"Generating model types");
     DateTime t1 = DateTime.Now;
-    foreach (var typeInfo in TypeManager.AcceptedTypes.ToArray())
+    foreach (var typeInfo in TypeManager.TypesAcceptedTo(PPS.CodeGeneration).ToArray())
     {
       if (typeInfo.GetTargetNamespace().StartsWith("System"))
         continue;

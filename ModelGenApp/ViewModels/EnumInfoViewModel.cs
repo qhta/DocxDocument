@@ -1,12 +1,12 @@
 ﻿namespace ModelGenApp.ViewModels;
 public class EnumInfoViewModel : ViewModel<EnumInfo>
 {
-  public EnumInfoViewModel(PhaseViewModel phase, EnumInfo enumInfo, TNS typeNameSelector) : base(enumInfo)
+  public EnumInfoViewModel(PhaseViewModel phase, EnumInfo enumInfo, NKS typeNameSelector) : base(enumInfo)
   {
     NameTypeSelector = typeNameSelector;
   }
 
-  private TNS NameTypeSelector;
+  private NKS NameTypeSelector;
 
   [DataGridColumn]
   public string Name

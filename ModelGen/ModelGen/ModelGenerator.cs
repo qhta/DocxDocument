@@ -122,10 +122,9 @@ public class ModelGenerator : BaseCodeGenerator
 
   private bool GenerateAcceptedProperties(TypeInfo typeInfo, string? inNamespace, TypeKind kind)
   {
-    if (typeInfo.AcceptedProperties != null)
-      foreach (var prop in typeInfo.AcceptedProperties)
-        if (!GenerateProperty(prop, inNamespace, kind))
-          return false;
+    foreach (var prop in typeInfo.AcceptedProperties(PPS.CodeGeneration))
+      if (!GenerateProperty(prop, inNamespace, kind))
+        return false;
     return true;
   }
 
@@ -168,7 +167,7 @@ public class ModelGenerator : BaseCodeGenerator
     //if (prop.IsReadonly)
     //  Writer.WriteLine($"public {propTypeName}{qm} {prop.Name} {{ get; }}");
     //else
-      Writer.WriteLine($"public {propTypeName}{qm} {prop.Name} {{ get; set; }}");
+    Writer.WriteLine($"public {propTypeName}{qm} {prop.Name} {{ get; set; }}");
     Writer.WriteLine();
     GeneratedPropertiesCount += 1;
     return true;

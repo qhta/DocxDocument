@@ -8,7 +8,7 @@ public class Namespace
 
   public OwnedCollection<TypeInfo> Types { get; private set; }
 
-  public IEnumerable<TypeInfo> AcceptedTypes => Types.Where(x => x.IsAccepted);
+  public IEnumerable<TypeInfo> AcceptedTypes(PPS phase) => Types.Where(x => x.IsAcceptedTo(phase));
 
   public Namespace(string name)
   {
@@ -19,7 +19,7 @@ public class Namespace
   public bool TryGetTypesWithSameName(TypeInfo typeInfo, out IEnumerable<TypeInfo> types)
   {
     var name = typeInfo.GetTargetName();
-    types = AcceptedTypes.ToArray().Where(item => item!=typeInfo && item.GetTargetName() == name).ToList();
+    types = AcceptedTypes(PPS.RenameTypes).ToArray().Where(item => item!=typeInfo && item.GetTargetName() == name).ToList();
     return types.Count() > 0;
   }
 }

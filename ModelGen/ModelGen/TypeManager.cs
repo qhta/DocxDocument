@@ -13,9 +13,14 @@ public static class TypeManager
 {
   public static event RegisteringEvent? OnRegistering;
 
-  public static Dictionary<Type, TypeInfo> KnownTypes { get; } = new();
-  public static Dictionary<string, Namespace> KnownNamespaces { get; } = new();
+  public static Dictionary<Type, TypeInfo> KnownTypes { get; private set; } = new();
+  public static Dictionary<string, Namespace> KnownNamespaces { get; private set; } = new();
 
+  public static void Clear()
+  {
+    KnownTypes = new();
+    KnownNamespaces = new();
+  }
   public static IEnumerable<Namespace> AllNamespaces
   {
     get
@@ -36,22 +41,22 @@ public static class TypeManager
     }
   }
 
-  public static IEnumerable<TypeInfo> AcceptedTypes
+  public static IEnumerable<TypeInfo> TypesAcceptedTo(PPS phase)
   {
-    get
-    {
-      lock (NamespacesLock)
-        return TypeManager.KnownTypes.Values.Where(item => item.IsAccepted == true);
-    }
+    lock (NamespacesLock)
+      return TypeManager.KnownTypes.Values.Where(item => item.IsAcceptedTo(phase));
   }
 
-  public static IEnumerable<TypeInfo> RejectedTypes
+  public static IEnumerable<TypeInfo> TypesAcceptedAfter(PPS phase)
   {
-    get
-    {
-      lock (NamespacesLock)
-        return TypeManager.KnownTypes.Values.Where(item => item.IsRejected == true);
-    }
+    lock (NamespacesLock)
+      return TypeManager.KnownTypes.Values.Where(item => item.IsAcceptedAfter(phase));
+  }
+
+  public static IEnumerable<TypeInfo> TypesRejectedAfter(PPS phase)
+  {
+    lock (NamespacesLock)
+      return TypeManager.KnownTypes.Values.Where(item => item.IsRejectedAfter(phase));
   }
 
   public static IEnumerable<TypeInfo> ConvertedTypes
@@ -138,6 +143,10 @@ public static class TypeManager
 
   public static TypeInfo RegisterType(Type type, bool? acceptance = null)
   {
+    //if (type.Name.StartsWith("OpenXmlComparableSimpleValue") && type.IsConstructedGenericType)
+    //  Debug.Assert(true);
+    //if (type.Name.StartsWith("OpenXmlSimpleValue"))
+    //  Debug.Assert(true);
     lock (KnownTypesLock)
     {
 
@@ -157,10 +166,8 @@ public static class TypeManager
         OnRegistering?.Invoke(new RegisteringInfo { RegisteredNamespaces = KnownNamespaces.Count + 1, RegisteredTypes = AllTypes.Count(), Current = typeInfo });
       }
       bool accept = acceptance == true || !ModelConfig.Instance.IsExcluded(type);
-      if (accept)
-        typeInfo.IsAccepted = true;
-      else
-        typeInfo.IsRejected = true;
+      if (!accept)
+        typeInfo.SetRejected(PPS.ScanTypes);
 
       if (accept)
         TypeReflector.ReflectType(typeInfo);
