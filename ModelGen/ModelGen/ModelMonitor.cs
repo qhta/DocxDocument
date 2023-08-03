@@ -87,7 +87,7 @@ public abstract class ModelMonitor
 
   }
 
-  public virtual void ShowNamespaceSummary(NTS originTargetSelector)
+  public virtual void ShowNamespaceSummary(PPS phase, NTS originTargetSelector)
   {
     WriteLine();
     WriteLine("Scanned namespaces:");
@@ -103,8 +103,8 @@ public abstract class ModelMonitor
           aSpace = aSpace + new string(' ', maxNamespaceLength - aSpace.Length);
         var nSpaceTypes = TypeManager.GetNamespaceTypes(nspace).ToArray();
         var totalTypesCount = nSpaceTypes.Count();
-        var acceptedTypesCount = nSpaceTypes.Count(item => item.IsAccepted);
-        var rejectedTypesCount = nSpaceTypes.Count(item => item.IsRejected);
+        var acceptedTypesCount = nSpaceTypes.Count(item => !item.IsAcceptedAfter(phase));
+        var rejectedTypesCount = nSpaceTypes.Count(item => item.IsRejectedAfter(phase));
         var classTypesCount = nSpaceTypes.Count(item => item.TypeKind == TypeKind.Class);
         var enumTypesCount = nSpaceTypes.Count(item => item.TypeKind == TypeKind.Enum);
         var otherTypesCount = nSpaceTypes.Count(item => item.TypeKind != TypeKind.Class && item.TypeKind != TypeKind.Enum);
@@ -123,7 +123,7 @@ public abstract class ModelMonitor
     }
   }
 
-  public virtual void ShowNamespacesDetails(DisplayOptions options)
+  public virtual void ShowNamespacesDetails(PPS phase, DisplayOptions options)
   {
     WriteLine();
     string? filter = null;
@@ -138,12 +138,12 @@ public abstract class ModelMonitor
     foreach (var nspace in namespaces)
     {
       Indent();
-      ShowNamespaceTypes(nspace, options);
+      ShowNamespaceTypes(phase, nspace, options);
       Unindent();
     }
   }
 
-  public virtual void ShowNamespaceTypes(string nspace, DisplayOptions options)
+  public virtual void ShowNamespaceTypes(PPS phase, string nspace, DisplayOptions options)
   {
     var nSpaceTypes = TypeManager.GetNamespaceTypes(nspace).ToList();
     if (options.Typenames != null)
@@ -155,8 +155,8 @@ public abstract class ModelMonitor
     {
       if (options.TypeStatusSelector.HasFlag(MSS.Accepted) || options.TypeStatusSelector.HasFlag(MSS.Rejected))
         nSpaceTypes = nSpaceTypes.Where(item =>
-          options.TypeStatusSelector.HasFlag(MSS.Accepted) && item.IsAccepted
-          || options.TypeStatusSelector.HasFlag(MSS.Rejected) && item.IsRejected).ToList();
+          options.TypeStatusSelector.HasFlag(MSS.Accepted) && item.IsAcceptedAfter(phase)
+          || options.TypeStatusSelector.HasFlag(MSS.Rejected) && item.IsRejectedAfter(phase)).ToList();
       if (options.TypeStatusSelector.HasFlag(MSS.Valid) || options.TypeStatusSelector.HasFlag(MSS.Invalid))
         nSpaceTypes = nSpaceTypes.Where(item =>
           options.TypeStatusSelector.HasFlag(MSS.Valid) && item.IsValid(PhaseNum)
@@ -180,7 +180,7 @@ public abstract class ModelMonitor
           listCont = true;
           break;
         }
-        ShowTypeInfo(typeInfo, options);
+        ShowTypeInfo(phase, typeInfo, options);
       }
       if (listCont)
         WriteLine("...");
@@ -188,13 +188,13 @@ public abstract class ModelMonitor
     }
   }
 
-  public virtual void ShowTypeInfo(TypeInfo typeInfo, DisplayOptions options)
+  public virtual void ShowTypeInfo(PPS phase, TypeInfo typeInfo, DisplayOptions options)
   {
     //if (options.TypeDataSelector.HasFlag(TDS.Documentation))
     //  ShowDocumentation(typeInfo, options);
     if (options.TypeDataSelector.HasFlag(TDS.Metadata))
       ShowMetadata(typeInfo, options);
-    string str = AcceptedMark(typeInfo.Accepted);
+    string str = AcceptedMark(typeInfo.IsAcceptedAfter(phase));
     var originNames = options.NamespaceTypeSelector == NTS.Origin || options.TypeDataSelector.HasFlag(TDS.OriginalNames);
     str += $"{typeInfo.TypeKind.ToString().ToLower()} {typeInfo.GetFullName(!originNames, true, true)}";
     List<string> status = new List<string>();
@@ -237,7 +237,7 @@ public abstract class ModelMonitor
     if (options.TypeDataSelector.HasFlag(TDS.EnumValues))
       ShowEnumValues(typeInfo, options);
     if (options.TypeDataSelector.HasFlag(TDS.Properties))
-      ShowProperties(typeInfo, options);
+      ShowProperties(phase,typeInfo, options);
   }
 
   public virtual void ShowGenericParamsConstraints(TypeInfo typeInfo, DisplayOptions options)
@@ -403,7 +403,7 @@ public abstract class ModelMonitor
     }
   }
 
-  public virtual void ShowProperties(TypeInfo typeInfo, DisplayOptions options)
+  public virtual void ShowProperties(PPS phase, TypeInfo typeInfo, DisplayOptions options)
   {
     if (typeInfo.Properties == null)
       return;
@@ -414,8 +414,8 @@ public abstract class ModelMonitor
       if (options.MemberStatusSelector != MSS.Any)
       {
         properties = properties.Where(item =>
-          options.MemberStatusSelector.HasFlag(MSS.Accepted) && item.IsAccepted ||
-          options.MemberStatusSelector.HasFlag(MSS.Rejected) && item.IsRejected ||
+          options.MemberStatusSelector.HasFlag(MSS.Accepted) && item.IsAcceptedAfter(phase) ||
+          options.MemberStatusSelector.HasFlag(MSS.Rejected) && item.IsRejectedAfter(phase) ||
           options.MemberStatusSelector.HasFlag(MSS.Used) && item.IsUsed ||
           options.MemberStatusSelector.HasFlag(MSS.Unused) && !item.IsUsed ||
           options.MemberStatusSelector.HasFlag(MSS.Valid) && item.IsValid(PhaseNum) ||

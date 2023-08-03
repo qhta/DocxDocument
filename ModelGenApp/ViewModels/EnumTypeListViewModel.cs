@@ -1,7 +1,7 @@
 ﻿namespace ModelGenApp.ViewModels;
 public class EnumTypeListViewModel: TypeListViewModel
 {
-  public EnumTypeListViewModel(PhaseViewModel phase, NamespaceViewModel nspace, string name, TNS typeNameSelector, TKS typeKindSelector): 
+  public EnumTypeListViewModel(PhaseViewModel phase, NamespaceViewModel nspace, string name, NKS typeNameSelector, TKS typeKindSelector): 
     base(phase, nspace, name, typeNameSelector, typeKindSelector)
   {
   }

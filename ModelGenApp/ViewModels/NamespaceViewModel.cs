@@ -61,9 +61,9 @@ public class NamespaceViewModel : ViewModel<Namespace>
       if (filter != null)
       {
         if (filter == SummaryInfoKind.AcceptedTypes.ToString())
-          nsTypes = nsTypes.Where(item => item.IsAccepted).ToList();
+          nsTypes = nsTypes.Where(item => item.IsAcceptedAfter(Phase.PhaseNum)).ToList();
         if (filter == SummaryInfoKind.RejectedTypes.ToString())
-          nsTypes = nsTypes.Where(item => item.IsRejected).ToList();
+          nsTypes = nsTypes.Where(item => item.IsRejectedAfter(Phase.PhaseNum)).ToList();
         if (filter == SummaryInfoKind.InvalidTypes.ToString())
           nsTypes = nsTypes.Where(item => !item.IsValid(Phase.PhaseNum)).ToList();
         if (filter == SummaryInfoKind.RenamedTypes.ToString())

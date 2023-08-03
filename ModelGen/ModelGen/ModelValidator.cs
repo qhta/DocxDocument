@@ -36,20 +36,18 @@ public class ModelValidator
 
   public event ValidatingTypeEvent? OnValidatingType;
 
-  public bool ValidateTypes()
+  public bool ValidateTypes(PPS phase)
   {
     bool ok = true;
     ValidTypesCount = 0;
     InvalidTypesCount = 0;
     var nspaces = TypeManager.GetNamespaces(NamespaceTypeSelector);
-    List<TypeInfo>  types = new List<TypeInfo>();
+    List<TypeInfo> types = new List<TypeInfo>();
     foreach (var nspace in nspaces)
     {
       var nSpaceTypes = TypeManager.GetNamespaceTypes(nspace).ToList();
-      if (TypeStatusSelector.HasFlag(MSS.Accepted) || TypeStatusSelector.HasFlag(MSS.Rejected))
-        nSpaceTypes = nSpaceTypes.Where(item =>
-          TypeStatusSelector.HasFlag(MSS.Accepted) && item.IsAccepted
-          || TypeStatusSelector.HasFlag(MSS.Rejected) && item.IsRejected).ToList();
+      nSpaceTypes = nSpaceTypes.Where(item =>
+        item.IsAcceptedTo(phase)).ToList();
       types.AddRange(nSpaceTypes);
     }
     TotalTypesCount = types.Count();
@@ -66,7 +64,7 @@ public class ModelValidator
     CheckedTypesCount++;
     OnValidatingType?.Invoke(this, new ValidatingTypeInfo
     {
-      TotalTypes =  TotalTypesCount,
+      TotalTypes = TotalTypesCount,
       CheckedTypes = CheckedTypesCount,
       InvalidTypes = CheckedTypesCount - ValidTypesCount,
       Current = typeInfo

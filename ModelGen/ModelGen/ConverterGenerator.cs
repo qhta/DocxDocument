@@ -202,7 +202,7 @@ public class ConverterGenerator : BaseCodeGenerator
     Writer.Indent++;
     Writer.WriteLine($"var value = new {targetType}();");
     if (typeInfo.Properties != null)
-      foreach (var prop in typeInfo.Properties.Where(item => item.IsAccepted != false))
+      foreach (var prop in typeInfo.Properties.Where(item => item.IsAcceptedTo(PPS.CodeGeneration)))
       {
         var targetPropName = prop.GetTargetName();
         Writer.WriteLine($"value.{targetPropName} = Get{targetPropName}(openXmlElement);");
@@ -229,13 +229,12 @@ public class ConverterGenerator : BaseCodeGenerator
     Writer.WriteLine($"if (openXmlElement != null && value != null)");
     Writer.WriteLine($"{{");
     Writer.WriteLine($"  var ok = true;");
-    if (typeInfo.Properties != null)
-      foreach (var prop in typeInfo.Properties.Where(item => item.IsAccepted != false))
-      {
-        var targetPropName = prop.GetTargetName();
-        Writer.WriteLine($"  if (!Cmp{targetPropName}(openXmlElement, value.{targetPropName}, diffs, objName))");
-        Writer.WriteLine($"    ok = false;");
-      }
+    foreach (var prop in typeInfo.AcceptedProperties(PPS.CodeGeneration))
+    {
+      var targetPropName = prop.GetTargetName();
+      Writer.WriteLine($"  if (!Cmp{targetPropName}(openXmlElement, value.{targetPropName}, diffs, objName))");
+      Writer.WriteLine($"    ok = false;");
+    }
     Writer.WriteLine($"  return ok;");
     Writer.WriteLine($"}}");
     Writer.WriteLine($"if (openXmlElement == null && value == null) return true;");
@@ -273,8 +272,7 @@ public class ConverterGenerator : BaseCodeGenerator
       $"public static void UpdateOpenXmlElement({origTypeName} openXmlElement, {targetTypeName} value)");
     Writer.WriteLine($"{{");
     Writer.Indent++;
-    if (typeInfo.Properties != null)
-      foreach (var prop in typeInfo.Properties.Where(item => item.IsAccepted != false))
+      foreach (var prop in typeInfo.AcceptedProperties(PPS.CodeGeneration))
       {
         var targetPropName = prop.GetTargetName();
         if (prop.IsReadonly)
@@ -292,8 +290,8 @@ public class ConverterGenerator : BaseCodeGenerator
     if (typeInfo.Name == "Rsids")
       TestTools.Stop();
     var ok = true;
-    if (typeInfo.AcceptedProperties != null)
-      foreach (var prop in typeInfo.AcceptedProperties)
+    if (typeInfo.AcceptedProperties(PPS.CodeGeneration).Any())
+      foreach (var prop in typeInfo.AcceptedProperties(PPS.CodeGeneration))
         //if (kind == TypeKind.Interface || !prop.IsConstrained)
         if (!GeneratePropertyAccessors(prop, inNamespace))
           ok = false;

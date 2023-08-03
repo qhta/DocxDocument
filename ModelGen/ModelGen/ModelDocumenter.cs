@@ -35,7 +35,7 @@ public class ModelDocumenter
 
   public event DocumentingTypeEvent? OnDocumentingType;
 
-  public int DocumentTypes()
+  public int DocumentTypes(PPS phaseNum)
   {
     var nspaces = TypeManager.GetNamespaces(NamespaceTypeSelector);
     List<TypeInfo> types = new List<TypeInfo>();
@@ -44,8 +44,8 @@ public class ModelDocumenter
       var nSpaceTypes = TypeManager.GetNamespaceTypes(nspace).ToList();
       if (TypeStatusSelector.HasFlag(MSS.Accepted) || TypeStatusSelector.HasFlag(MSS.Rejected))
         nSpaceTypes = nSpaceTypes.Where(item =>
-          TypeStatusSelector.HasFlag(MSS.Accepted) && item.IsAccepted
-          || TypeStatusSelector.HasFlag(MSS.Rejected) && item.IsRejected).ToList();
+          TypeStatusSelector.HasFlag(MSS.Accepted) && item.IsAcceptedAfter(phaseNum)
+          || TypeStatusSelector.HasFlag(MSS.Rejected) && item.IsRejectedAfter(phaseNum)).ToList();
       types.AddRange(nSpaceTypes);
     }
     TotalTypesCount = types.Count();

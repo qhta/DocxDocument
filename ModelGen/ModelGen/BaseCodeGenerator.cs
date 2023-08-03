@@ -50,7 +50,7 @@ public class BaseCodeGenerator
       bool generated = false;
       foreach (var customAttrib in attributes)
       {
-        if (customAttrib.IsAccepted is true)
+        if (customAttrib.IsAcceptedTo(PPS.CodeGeneration) is true)
           if (GenerateCustomAttribute(customAttrib))
             generated = true;
       }

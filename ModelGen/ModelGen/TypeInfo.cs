@@ -1,4 +1,5 @@
 ﻿using System.IO.Packaging;
+using System.Reflection;
 
 using Qhta.Xml;
 
@@ -54,10 +55,10 @@ public class TypeInfo : ModelElement
 
   public string GetTargetNamespace()
   {
-    if (TargetNamespace!=null) return TargetNamespace;
+    if (TargetNamespace != null) return TargetNamespace;
     if (Owner is Namespace nspace)
     {
-      if (nspace.TargetName!=null) return nspace.TargetName;
+      if (nspace.TargetName != null) return nspace.TargetName;
       return nspace.OriginalName;
     }
     return OriginalNamespace;
@@ -110,13 +111,33 @@ public class TypeInfo : ModelElement
     Properties.Add(propInfo);
   }
 
+  public IEnumerable<PropInfo> GetAllProperties()
+  {
+    var result = new List<PropInfo>();
+    if (Properties!=null)
+      foreach (var propInfo in Properties)
+        result.Add(propInfo);
+    if (BaseTypeInfo!=null)
+    {
+      var subProps = BaseTypeInfo.GetAllProperties();
+      foreach (var subProp in subProps)
+      {
+        var thisProp = result.FirstOrDefault(item=>item.Name==subProp.Name);
+        if (thisProp==null || thisProp.IsNew)
+          result.Add(subProp);
+      }
+    }
+    return result;
+  }
+
   [XmlIgnore]
   public Collection<TypeRelationship> OutgoingRelationships { get; set; } = new();
   [XmlIgnore]
   public Collection<TypeRelationship> IncomingRelationships { get; set; } = new();
 
-  [XmlIgnore]
-  public IEnumerable<PropInfo>? AcceptedProperties => Properties?.Where(item => item.IsAccepted != false);
+  public IEnumerable<PropInfo> AcceptedProperties(PPS phase) => Properties?.Where(item => item.IsAcceptedTo(phase)) ?? EmptyPropertiesSet;
+
+  private static IEnumerable<PropInfo> EmptyPropertiesSet = new PropInfo[0];
 
   [XmlIgnore]
   public TypeInfo? BaseTypeInfo { get; set; }
@@ -181,41 +202,25 @@ public class TypeInfo : ModelElement
   }
 
   public FullTypeName GetFullName(bool target, bool withNamespace, bool nsShortcut)
-    => GetFullName(new TNS(target, withNamespace, nsShortcut));
+    => GetFullName(new NKS(target, withNamespace, nsShortcut));
 
-  public FullTypeName GetFullName(TNS nameTypeSelector)
+  public static FullTypeName GetFullName(Type aType, NKS nameKindSelector)
   {
     string aName;
     string? aNamespace = null;
-    if (nameTypeSelector.Target)
-    {
-      aName = this.Name;
-      if (nameTypeSelector.Namespace)
-      {
-        aNamespace = this.GetTargetNamespace();
-      }
-    }
-    else
-    {
-      aName = this.Type.Name;
-      if (nameTypeSelector.Namespace)
-        aNamespace = this.OriginalNamespace;
-    }
-
-    if (nameTypeSelector.Namespace)
-    {
-      if (aNamespace != null && nameTypeSelector.NsShortcut)
-        aNamespace = NamespaceShortcut(aNamespace);
-    }
-    if (IsGenericTypeParameter)
-      return new FullTypeName(Name, null);
+    aName = aType.Name;
+    if (nameKindSelector.Namespace)
+      aNamespace = aType.Namespace;
+    if (aNamespace != null && nameKindSelector.NsShortcut)
+      aNamespace = NamespaceShortcut(aNamespace);
+    if (aType.IsGenericTypeParameter)
+      return new FullTypeName(aName, null);
     var result = new FullTypeName(aName, aNamespace);
-
     var apos = aName.IndexOf('`');
     if (apos >= 0)
     {
-      var genericParams = this.GetGenericParamTypes();
-      var genericArgs = this.GetGenericArguments();
+      var genericParams = aType.GetGenericArguments();
+      var genericArgs = aType.GenericTypeArguments;
       var argNames = new List<FullTypeName>();
       if (genericParams.Any())
         foreach (var genericParam in genericParams.ToList())
@@ -225,7 +230,7 @@ public class TypeInfo : ModelElement
       else if (genericArgs.Any())
         foreach (var genericArg in genericArgs.ToList())
         {
-          argNames.Add(genericArg.GetFullName(nameTypeSelector));
+          argNames.Add(GetFullName(genericArg, nameKindSelector));
         }
       if (argNames.Count > 0)
       {
@@ -234,6 +239,53 @@ public class TypeInfo : ModelElement
       }
     }
     return result;
+  }
+
+  public FullTypeName GetFullName(NKS nameKindSelector)
+  {
+    string aName;
+    string? aNamespace = null;
+    if (!nameKindSelector.Target)
+      return GetFullName(Type, nameKindSelector);
+    else
+    {
+      aName = this.Name;
+      if (nameKindSelector.Namespace)
+        aNamespace = this.GetTargetNamespace();
+
+      if (nameKindSelector.Namespace)
+      {
+        if (aNamespace != null && nameKindSelector.NsShortcut)
+          aNamespace = NamespaceShortcut(aNamespace);
+      }
+      if (IsGenericTypeParameter)
+        return new FullTypeName(Name, null);
+      var result = new FullTypeName(aName, aNamespace);
+
+      var apos = aName.IndexOf('`');
+      if (apos >= 0)
+      {
+        var genericParams = this.GetGenericParamTypes();
+        var genericArgs = this.GetGenericArguments();
+        var argNames = new List<FullTypeName>();
+        if (genericParams.Any())
+          foreach (var genericParam in genericParams.ToList())
+          {
+            argNames.Add(new FullTypeName(genericParam.Name, null));
+          }
+        else if (genericArgs.Any())
+          foreach (var genericArg in genericArgs.ToList())
+          {
+            argNames.Add(genericArg.GetFullName(nameKindSelector));
+          }
+        if (argNames.Count > 0)
+        {
+          result.Name = aName.Substring(0, apos);
+          result.ArgNames = argNames;
+        }
+      }
+      return result;
+    }
   }
 
   public static string NamespaceShortcut(string ns)
