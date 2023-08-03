@@ -2,12 +2,10 @@
 
 public class ClassInfoViewModel : TypeInfoViewModel
 {
-  public ClassInfoViewModel(PhaseViewModel phase, TypeInfo typeInfo, TNS typeNameSelector) : base(phase, typeInfo, typeNameSelector)
+  public ClassInfoViewModel(PhaseViewModel phase, TypeInfo typeInfo, NKS typeNameSelector) : base(phase, typeInfo, typeNameSelector)
   {
     Properties = new PropListViewModel(this, "Properties");
-    if (typeInfo.Properties != null)
-      foreach (var propInfo in typeInfo.Properties)
-        Properties.Add(new PropInfoViewModel(phase, this, propInfo, typeNameSelector));
+    //FillProperties();
   }
 
   [DataGridColumn(ResourceDataTemplateKey = "CountColumnTemplate",
@@ -17,16 +15,22 @@ public class ClassInfoViewModel : TypeInfoViewModel
 
   public override object? Members => Properties;
 
-  protected override void FillTypeSummaryVM()
+  public override void FillDetails() => FillProperties();
+
+  public void FillProperties()
   {
-    base.FillTypeSummaryVM();
-    var baseClasses = Model.GetOutgoingRelationships(Semantics.Inheritance);
-    if (baseClasses.Any())
-      foreach (var item in baseClasses)
-      {
-        var targetType = item.Target as TypeInfo;
-        if (targetType != null)
-          TypeSummaryVM.Add(new TypePropViewModel("Inheritance", new TypeInfoViewModel(Phase, targetType, TypeNameSelector)));
-      }
+    Properties.Clear();
+    foreach (var propInfo in Model.GetAllProperties())
+      Properties.Add(new PropInfoViewModel(Phase, this, propInfo, TypeNameSelector));
+  }
+
+  protected override void FillTypeSummary()
+  {
+    if (Model.Type.Name.StartsWith("OpenXmlComparableSimpleValue") && Model.Type.IsConstructedGenericType)
+      Debug.Assert(true);
+    base.FillTypeSummary();
+    var baseClass = Model.BaseTypeInfo;
+    if (baseClass != null)
+      TypeSummary.Add(new TypePropViewModel("Inheritance", TypeInfoViewModel.Create(Phase, baseClass, TypeNameSelector)));
   }
 }

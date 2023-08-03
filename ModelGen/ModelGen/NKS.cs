@@ -1,9 +1,9 @@
 ﻿namespace ModelGen;
 
 /// <summary>
-/// Type Name Selector. Used to get <see cref="TypeInfo"/> full name.
+/// Name Kind Selector. Used to get <see cref="TypeInfo"/> full name.
 /// </summary>
-public record TNS
+public record NKS
 {
   /// <summary>
   /// Specifies whether to get Target or Origin name.
@@ -20,7 +20,7 @@ public record TNS
   /// </summary>
   public bool NsShortcut { get; set; }
 
-  public TNS (bool target, bool withNamespace, bool nsShortcut)
+  public NKS (bool target, bool withNamespace, bool nsShortcut)
   {
     Target = target;
     Namespace = withNamespace;

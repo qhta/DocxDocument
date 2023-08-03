@@ -15,7 +15,7 @@
               GridLinesVisibility="None"
               SelectionMode="Single"
               SelectionUnit="Cell"
-              ItemsSource="{Binding Path=TypeSummaryVM}" >
+              ItemsSource="{Binding Path=TypeSummary}" >
       <DataGrid.Columns>
         <DataGridTextColumn Header="Name" FontWeight="Bold" IsReadOnly="True" 
                             Binding="{Binding Name}"/>

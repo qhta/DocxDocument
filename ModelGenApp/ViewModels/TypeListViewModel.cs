@@ -1,7 +1,7 @@
 ﻿namespace ModelGenApp.ViewModels;
 public class TypeListViewModel : ViewModel
 {
-  public TypeListViewModel(PhaseViewModel phase, NamespaceViewModel nspace, string name, TNS typeNameSelector, TKS typeKindSelector)
+  public TypeListViewModel(PhaseViewModel phase, NamespaceViewModel nspace, string name, NKS typeNameSelector, TKS typeKindSelector)
   {
     Namespace = nspace;
     Name = name;
@@ -18,7 +18,7 @@ public class TypeListViewModel : ViewModel
     NotifyPropertyChanged(nameof(Count));
   }
 
-  public TypeListViewModel(PhaseViewModel phase, NamespaceViewModel nspace, string name, TNS typeNameSelector, IEnumerable<TypeInfoViewModel> list)
+  public TypeListViewModel(PhaseViewModel phase, NamespaceViewModel nspace, string name, NKS typeNameSelector, IEnumerable<TypeInfoViewModel> list)
   {
     Namespace = nspace;
     Name = name;
@@ -34,7 +34,7 @@ public class TypeListViewModel : ViewModel
 
   public string Caption => Namespace.Caption + ": " + this.Name?.ToLower();
 
-  public TNS TypeNameSelector { get; private set; }
+  public NKS TypeNameSelector { get; private set; }
 
   public TKS TypeKindSelector { get; private set; }
 
@@ -79,7 +79,7 @@ public class TypeListViewModel : ViewModel
 
   protected virtual TypeInfoViewModel CreateItemViewModel(TypeInfo item, PhaseViewModel phase)
   {
-    return new TypeInfoViewModel(phase, item, TypeNameSelector);
+    return TypeInfoViewModel.Create(phase, item, TypeNameSelector);
   }
 
 
