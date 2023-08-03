@@ -8,12 +8,12 @@ public class NamespaceViewModel : ViewModel<Namespace>
     Name = ns.OriginalName;
     if (phaseViewModel.PhaseNum == PPS.RenameTypes)
       TargetName = ns.TargetName;
-    AllTypes = new TypeListViewModel(phaseViewModel, this, "All types", phaseViewModel.TypeNameSelector, TKS.Any);
-    Classes = new ClassListViewModel(phaseViewModel, this, "Classes", phaseViewModel.TypeNameSelector, TKS.Class);
-    Enums = new EnumTypeListViewModel(phaseViewModel, this, "Enums", phaseViewModel.TypeNameSelector, TKS.Enum);
-    Interfaces = new ClassListViewModel(phaseViewModel, this, "Interfaces", phaseViewModel.TypeNameSelector, TKS.Interface);
-    Structs = new ClassListViewModel(phaseViewModel, this, "Structs", phaseViewModel.TypeNameSelector, TKS.Struct);
-    Others = new TypeListViewModel(phaseViewModel, this, "Others", phaseViewModel.TypeNameSelector, TKS.Other);
+    AllTypes = new TypeListViewModel(phaseViewModel, this, "All types", phaseViewModel.NameKindSelector, TKS.Any);
+    Classes = new ClassListViewModel(phaseViewModel, this, "Classes", phaseViewModel.NameKindSelector, TKS.Class);
+    Enums = new EnumTypeListViewModel(phaseViewModel, this, "Enums", phaseViewModel.NameKindSelector, TKS.Enum);
+    Interfaces = new ClassListViewModel(phaseViewModel, this, "Interfaces", phaseViewModel.NameKindSelector, TKS.Interface);
+    Structs = new ClassListViewModel(phaseViewModel, this, "Structs", phaseViewModel.NameKindSelector, TKS.Struct);
+    Others = new TypeListViewModel(phaseViewModel, this, "Others", phaseViewModel.NameKindSelector, TKS.Other);
   }
 
   public PhaseViewModel Phase { get; private set; }
@@ -52,32 +52,35 @@ public class NamespaceViewModel : ViewModel<Namespace>
     SortMemberPath = "Others.Count", ClipboardContentPath = "Others.Count")]
   public TypeListViewModel Others { get; set; }
 
-  public async void LoadTypes()
+  public async void LoadTypesAsync()
   {
-    await Task.Run(() =>
-    {
-      var nsTypes = Model.Types.OrderBy(item => item.Name).ToList();
-      var filter = Filter;
-      if (filter != null)
-      {
-        if (filter == SummaryInfoKind.AcceptedTypes.ToString())
-          nsTypes = nsTypes.Where(item => item.IsAcceptedAfter(Phase.PhaseNum)).ToList();
-        if (filter == SummaryInfoKind.RejectedTypes.ToString())
-          nsTypes = nsTypes.Where(item => item.IsRejectedAfter(Phase.PhaseNum)).ToList();
-        if (filter == SummaryInfoKind.InvalidTypes.ToString())
-          nsTypes = nsTypes.Where(item => !item.IsValid(Phase.PhaseNum)).ToList();
-        if (filter == SummaryInfoKind.RenamedTypes.ToString())
-          nsTypes = nsTypes.Where(item => item.IsRenamed).ToList();
-        if (filter == SummaryInfoKind.ConvertedTypes.ToString())
-          nsTypes = nsTypes.Where(item => item.IsConverted).ToList();
-      }
-      var nts = Phase.NamespaceTypeSelector;
-      AllTypes.LoadTypes(nsTypes);
-      Classes.LoadTypes(nsTypes);
-      Enums.LoadTypes(nsTypes);
-      Interfaces.LoadTypes(nsTypes);
-      Structs.LoadTypes(nsTypes);
-      Others.LoadTypes(nsTypes);
-    });
+    await Task.Run(() => LoadTypes());
   }
+
+  public void LoadTypes()
+  {
+    var types = Model.Types.OrderBy(item => item.Name).ToList();
+    var filter = Filter;
+    if (filter != null)
+    {
+      if (filter == SummaryInfoKind.AcceptedTypes.ToString())
+        types = types.Where(item => item.IsAcceptedAfter(Phase.PhaseNum)).ToList();
+      if (filter == SummaryInfoKind.RejectedTypes.ToString())
+        types = types.Where(item => item.IsRejectedAfter(Phase.PhaseNum)).ToList();
+      if (filter == SummaryInfoKind.InvalidTypes.ToString())
+        types = types.Where(item => !item.IsValid(Phase.PhaseNum)).ToList();
+      if (filter == SummaryInfoKind.RenamedTypes.ToString())
+        types = types.Where(item => item.IsRenamed).ToList();
+      if (filter == SummaryInfoKind.ConvertedTypes.ToString())
+        types = types.Where(item => item.IsConverted).ToList();
+    }
+    var nts = Phase.NamespaceTypeSelector;
+    AllTypes.CreateItems(types);
+    Classes.FilterItems(AllTypes.Types);
+    Enums.FilterItems(AllTypes.Types);
+    Interfaces.FilterItems(AllTypes.Types);
+    Structs.FilterItems(AllTypes.Types);
+    Others.FilterItems(AllTypes.Types);
+  }
+
 }

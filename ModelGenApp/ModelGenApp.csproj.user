@@ -16,6 +16,9 @@
     <Compile Update="Views\NamespacesConfigView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\NamespacesListView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\PhaseProgressView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -23,6 +26,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\PhaseResultsWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\PhaseSummaryView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\ProcessMonitorView.xaml.cs">
@@ -60,6 +66,9 @@
     <Page Update="Views\NamespacesConfigView.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Views\NamespacesListView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\PhaseProgressView.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -67,6 +76,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\PhaseResultsWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\PhaseSummaryView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\ProcessMonitorView.xaml">
