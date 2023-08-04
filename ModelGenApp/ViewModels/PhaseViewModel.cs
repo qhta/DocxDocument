@@ -112,9 +112,15 @@ public abstract partial class PhaseViewModel : ViewModel
   }
   private NamespacesViewModel _Namespaces = null!;
 
-  public virtual void GetNamespaces()
+  public async void FillNamespacesAsync()
+  {
+    await Task.Run(() => FillNamespaces());
+  }
+
+  public virtual void FillNamespaces()
   {
     Namespaces = new NamespacesViewModel(this, NamespaceTypeSelector, Filter);
+    Namespaces.Populate();
   }
   #endregion
 
@@ -188,13 +194,10 @@ public abstract partial class PhaseViewModel : ViewModel
   }
   private Command _ShowResultsCommand = null!;
 
-  protected async void ShowResultsExecute()
+  protected void ShowResultsExecute()
   {
     WindowsManager.ShowWindow<PhaseResultsWindow>(this);
-    await Task.Run(() =>
-    {
-      GetNamespaces();
-    });
+    FillNamespacesAsync();
   }
 
   protected virtual bool ShowResultsCanExecute()
@@ -219,13 +222,10 @@ public abstract partial class PhaseViewModel : ViewModel
   }
   private string? _Filter;
 
-  public async void SetFilter(string? filter)
+  public void SetFilter(string? filter)
   {
     Filter = filter;
-    await Task.Run(() =>
-    {
-      GetNamespaces();
-    });
+    FillNamespacesAsync();
   }
   #endregion
 

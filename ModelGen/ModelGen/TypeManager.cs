@@ -149,11 +149,8 @@ public static class TypeManager
     //  Debug.Assert(true);
     lock (KnownTypesLock)
     {
-
       if (KnownTypes.TryGetValue(type, out var typeInfo))
         return typeInfo;
-      //if (type.Name.StartsWith("OpenXmlSimpleValue"))
-      //  Debug.Assert(true);
       var nspace = type.Namespace ?? "";
       lock (NamespacesLock)
       {
@@ -162,14 +159,14 @@ public static class TypeManager
         typeInfo = new TypeInfo(type);
         KnownTypes.Add(type, typeInfo);
         var NamespaceDictionary = TypeManager.GetNamespace(nspace);
-        NamespaceDictionary.Types.Add(typeInfo);
+        NamespaceDictionary.AddType(typeInfo);
         OnRegistering?.Invoke(new RegisteringInfo { RegisteredNamespaces = KnownNamespaces.Count + 1, RegisteredTypes = AllTypes.Count(), Current = typeInfo });
       }
       bool accept = acceptance == true || !ModelConfig.Instance.IsExcluded(type);
       if (!accept)
         typeInfo.SetRejected(PPS.ScanTypes);
 
-      if (accept)
+      if (accept && type.Namespace!=null && !type.Namespace.StartsWith("System"))
         TypeReflector.ReflectType(typeInfo);
       return typeInfo;
     }

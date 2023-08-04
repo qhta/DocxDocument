@@ -161,8 +161,8 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
 
   protected virtual void ShowTypeExecute()
   {
-    this.FillTypeSummary();
-    this.FillDetails();
+    this.FillTypeSummaryAsync();
+    this.FillDetailsAsync();
     WindowsManager.ShowWindow<TypeInfoWindow>(this);
   }
   #endregion
