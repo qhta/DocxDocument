@@ -1,39 +1,37 @@
 ﻿namespace ModelGenApp.ViewModels;
 public class NamespacesViewModel : DispatchedCollection<NamespaceViewModel>
 {
-  public NamespacesViewModel(PhaseViewModel phase, NTS nts, string? filter)
+  public NamespacesViewModel(PhaseViewModel phase, NTS namespacesTypeSelector, string? filter)
   {
     Phase = phase;
-    var namespaces = new List<Namespace>();
-    if (nts.HasFlag(NTS.Origin))
-      namespaces.AddRange(TypeManager.KnownNamespaces.Where(item => item.Key.StartsWith("DocumentFormat")).Select(item => item.Value));
-    else if (nts.HasFlag(NTS.Target))
-      namespaces.AddRange(TypeManager.KnownNamespaces.Where(item => item.Key.StartsWith("DocumentModel")).Select(item => item.Value));
-    if (nts.HasFlag(NTS.System))
-      namespaces.AddRange(TypeManager.KnownNamespaces.Where(item => item.Key.StartsWith("System")).Select(item => item.Value));
-    foreach (var ns in namespaces)
-    {
-      var nsVM = new NamespaceViewModel(phase, ns, filter);
-      Add(nsVM);
-      nsVM.LoadTypesAsync();
-    }
+    NamespacesTypeSelector = namespacesTypeSelector;
+    Filter = filter;
   }
 
   public PhaseViewModel Phase { get; private set; }
 
-  public NTS Kind
+  public NTS NamespacesTypeSelector { get; private set; }
+
+  public string? Filter { get; private set; }
+
+
+
+  public void Populate() // We can't populate it asynchronously
   {
-    get { return _Kind; }
-    set
+    var namespaces = new List<Namespace>();
+    if (NamespacesTypeSelector.HasFlag(NTS.Origin))
+      namespaces.AddRange(TypeManager.KnownNamespaces.Where(item => item.Key.StartsWith("DocumentFormat")).Select(item => item.Value));
+    else if (NamespacesTypeSelector.HasFlag(NTS.Target))
+      namespaces.AddRange(TypeManager.KnownNamespaces.Where(item => item.Key.StartsWith("DocumentModel")).Select(item => item.Value));
+    if (NamespacesTypeSelector.HasFlag(NTS.System))
+      namespaces.AddRange(TypeManager.KnownNamespaces.Where(item => item.Key.StartsWith("System")).Select(item => item.Value));
+    foreach (var ns in namespaces)
     {
-      if (_Kind != value)
-      {
-        _Kind = value;
-        NotifyPropertyChanged(nameof(Kind));
-      }
+      var nsVM = new NamespaceViewModel(Phase, ns, Filter);
+      Add(nsVM);
+      nsVM.LoadTypesAsync();
     }
   }
-  private NTS _Kind;
 
   public bool IsTargetNameVisible => Phase.IsTargetNameVisible;
 

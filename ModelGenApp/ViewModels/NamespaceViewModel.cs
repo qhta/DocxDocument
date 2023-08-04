@@ -74,7 +74,10 @@ public class NamespaceViewModel : ViewModel<Namespace>
       if (filter == SummaryInfoKind.ConvertedTypes.ToString())
         types = types.Where(item => item.IsConverted).ToList();
     }
-    var nts = Phase.NamespaceTypeSelector;
+    var subItems = types.Where(item=>item.Name=="Boolean").ToArray();
+    var count = subItems.Length;
+    if (count>0)
+      Debug.Assert(true);
     AllTypes.CreateItems(types);
     Classes.FilterItems(AllTypes.Types);
     Enums.FilterItems(AllTypes.Types);

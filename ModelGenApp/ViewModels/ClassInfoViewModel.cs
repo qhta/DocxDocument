@@ -5,7 +5,6 @@ public class ClassInfoViewModel : TypeInfoViewModel
   public ClassInfoViewModel(PhaseViewModel phase, TypeInfo typeInfo, NKS typeNameSelector) : base(phase, typeInfo, typeNameSelector)
   {
     Properties = new PropListViewModel(this, "Properties");
-    //FillProperties();
   }
 
   [DataGridColumn(ResourceDataTemplateKey = "CountColumnTemplate",
@@ -16,6 +15,11 @@ public class ClassInfoViewModel : TypeInfoViewModel
   public override object? Members => Properties;
 
   public override void FillDetails() => FillProperties();
+
+  public async void FillPropertiesAsync()
+  {
+    await Task.Run(() => FillProperties());
+  }
 
   public void FillProperties()
   {

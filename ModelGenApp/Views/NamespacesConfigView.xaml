@@ -12,6 +12,7 @@
     <DataGrid 
       AutoGenerateColumns="False"
       HorizontalContentAlignment="Stretch"
+      CanUserAddRows="False"
       ItemsSource="{Binding Path=Items}">
       <DataGrid.Columns>
         <DataGridTextColumn Header="Original name" Binding="{Binding OrigName}"/>

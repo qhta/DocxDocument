@@ -1,9 +1,10 @@
-﻿
+﻿D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
 FD:\VS\Projects\DocxDocument\ModelGenApp\App.xaml;;
 FD:\VS\Projects\DocxDocument\ModelGenApp\Views\MainWindow.xaml;;
 FD:\VS\Projects\DocxDocument\ModelGenApp\Views\ModelConfigView.xaml;;
 FD:\VS\Projects\DocxDocument\ModelGenApp\Views\ModelConfigWindow.xaml;;
 FD:\VS\Projects\DocxDocument\ModelGenApp\Views\NamespacesConfigView.xaml;;
+FD:\VS\Projects\DocxDocument\ModelGenApp\Views\NamespacesListView.xaml;;
 FD:\VS\Projects\DocxDocument\ModelGenApp\Views\PhaseProgressView.xaml;;
 FD:\VS\Projects\DocxDocument\ModelGenApp\Views\PhaseResultsView.xaml;;
 FD:\VS\Projects\DocxDocument\ModelGenApp\Views\PhaseResultsWindow.xaml;;
@@ -17,5 +18,4 @@ FD:\VS\Projects\DocxDocument\ModelGenApp\Views\TypeListView.xaml;;
 FD:\VS\Projects\DocxDocument\ModelGenApp\Views\TypeListWindow.xaml;;
 FD:\VS\Projects\DocxDocument\ModelGenApp\Views\TypesConfigView.xaml;;
 FD:\VS\Projects\DocxDocument\ModelGenApp\Views\TypeSummaryView.xaml;;
-FD:\VS\Projects\DocxDocument\ModelGenApp\Views\NamespacesListView.xaml;;
 

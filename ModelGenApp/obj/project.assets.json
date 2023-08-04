@@ -295,6 +295,27 @@
           "Microsoft.WindowsDesktop.App.WPF"
         ]
       },
+      "Qhta.WPF.DataGridUtils/1.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Qhta.MVVM": "2.5.0",
+          "Qhta.TextUtils": "3.1.1",
+          "Qhta.TypeUtils": "1.3.10.1"
+        },
+        "compile": {
+          "lib/net6.0-windows7.0/Qhta.WPF.DataGridUtils.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-windows7.0/Qhta.WPF.DataGridUtils.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
       "Qhta.Xml/2.1.0": {
         "type": "package",
         "dependencies": {
@@ -1707,24 +1728,6 @@
         "runtime": {
           "bin/placeholder/ModelGenDataConfig.dll": {}
         }
-      },
-      "Qhta.WPF.DataGridUtils/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "Qhta.MVVM": "2.5.0",
-          "Qhta.TextUtils": "3.1.1",
-          "Qhta.TypeUtils": "1.3.10.1"
-        },
-        "compile": {
-          "bin/placeholder/Qhta.WPF.DataGridUtils.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Qhta.WPF.DataGridUtils.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WPF"
-        ]
       }
     }
   },
@@ -2125,6 +2128,19 @@
         "lib/net7.0-windows7.0/Qhta.WPF.Converters.xml",
         "qhta.wpf.converters.1.2.0.nupkg.sha512",
         "qhta.wpf.converters.nuspec",
+        "readme.md"
+      ]
+    },
+    "Qhta.WPF.DataGridUtils/1.2.0": {
+      "sha512": "8gCO+78kCPRRgweqw5Rr/MQpC3MojDCh1P8V/g7OXL1jSdcF8RsKjgknY8UwGZv99fWrzAqVDZh+1eISS0jZLQ==",
+      "type": "package",
+      "path": "qhta.wpf.datagridutils/1.2.0",
+      "files": [
+        ".nupkg.metadata",
+        "lib/net6.0-windows7.0/Qhta.WPF.DataGridUtils.dll",
+        "lib/net6.0-windows7.0/Qhta.WPF.DataGridUtils.xml",
+        "qhta.wpf.datagridutils.1.2.0.nupkg.sha512",
+        "qhta.wpf.datagridutils.nuspec",
         "readme.md"
       ]
     },
@@ -5342,11 +5358,6 @@
       "type": "project",
       "path": "../ModelGenDataConfig/ModelGenDataConfig.csproj",
       "msbuildProject": "../ModelGenDataConfig/ModelGenDataConfig.csproj"
-    },
-    "Qhta.WPF.DataGridUtils/1.0.0": {
-      "type": "project",
-      "path": "../../MyLib/Qhta.WPF.DataGridUtils/Qhta.WPF.DataGridUtils.csproj",
-      "msbuildProject": "../../MyLib/Qhta.WPF.DataGridUtils/Qhta.WPF.DataGridUtils.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -5358,7 +5369,7 @@
       "Qhta.TextUtils >= 3.1.1",
       "Qhta.TypeUtils >= 1.3.10.1",
       "Qhta.WPF.Converters >= 1.2.0",
-      "Qhta.WPF.DataGridUtils >= 1.0.0"
+      "Qhta.WPF.DataGridUtils >= 1.2.0"
     ]
   },
   "packageFolders": {
@@ -5396,9 +5407,6 @@
           "projectReferences": {
             "D:\\VS\\Projects\\DocxDocument\\ModelGen\\ModelGen\\ModelGen.csproj": {
               "projectPath": "D:\\VS\\Projects\\DocxDocument\\ModelGen\\ModelGen\\ModelGen.csproj"
-            },
-            "D:\\VS\\Projects\\MyLib\\Qhta.WPF.DataGridUtils\\Qhta.WPF.DataGridUtils.csproj": {
-              "projectPath": "D:\\VS\\Projects\\MyLib\\Qhta.WPF.DataGridUtils\\Qhta.WPF.DataGridUtils.csproj"
             }
           }
         }
@@ -5434,6 +5442,10 @@
             "version": "[1.3.10.1, )"
           },
           "Qhta.WPF.Converters": {
+            "target": "Package",
+            "version": "[1.2.0, )"
+          },
+          "Qhta.WPF.DataGridUtils": {
             "target": "Package",
             "version": "[1.2.0, )"
           }
