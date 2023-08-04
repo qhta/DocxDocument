@@ -79,6 +79,7 @@ public class TypeListViewModel : ViewModel
 
   public void CreateItems(IEnumerable<TypeInfo> types)
   {
+    Items.Clear();
     if (TypeKindSelector != TKS.Any)
       Items.AddRange(types.Where(item => item.IsTypeKindSelected(TypeKindSelector))
       .Select(item => CreateItemViewModel(item, Phase)));
@@ -88,6 +89,7 @@ public class TypeListViewModel : ViewModel
 
   public void FilterItems(IEnumerable<TypeInfoViewModel> types)
   {
+    Items.Clear();
     if (TypeKindSelector != TKS.Any)
       Items.AddRange(types.Where(item => item.IsTypeKindSelected(TypeKindSelector)));
     else

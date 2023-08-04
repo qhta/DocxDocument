@@ -16,6 +16,12 @@ public class Namespace
     Types = new OwnedCollection<TypeInfo>(this);
   }
 
+  public void AddType(TypeInfo type)
+  {
+    if (!Types.Contains(type))
+      Types.Add(type);
+  }
+
   public bool TryGetTypesWithSameName(TypeInfo typeInfo, out IEnumerable<TypeInfo> types)
   {
     var name = typeInfo.GetTargetName();

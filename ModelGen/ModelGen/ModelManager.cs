@@ -746,7 +746,7 @@ public static class ModelManager
           }
       }
     }
-    nspace.Types.Add(typeInfo);
+    nspace.AddType(typeInfo);
 
     if (typeInfo.TypeKind == TypeKind.Enum)
     {

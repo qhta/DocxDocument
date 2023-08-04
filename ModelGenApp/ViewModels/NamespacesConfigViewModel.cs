@@ -4,12 +4,12 @@ public class NamespacesConfigViewModel : ModelConfigViewModel
   public NamespacesConfigViewModel(ModelConfig configData) : base(configData)
   {
     Caption = "Model configuration: namespaces";
-    Namespaces = new DispatchedCollection<NamespaceConfigViewModel>();
+    Namespaces = new ObservableCollection<NamespaceConfigViewModel>();
     Items = Namespaces;
     GetData(configData);
   }
 
-  public DispatchedCollection<NamespaceConfigViewModel> Namespaces { get; private set; }
+  public ObservableCollection<NamespaceConfigViewModel> Namespaces { get; private set; }
 
   public override void GetData(ModelConfig configData)
   {
