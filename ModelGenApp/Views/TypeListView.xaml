@@ -29,14 +29,18 @@
                             Converter={StaticResource BoolToVisibilityConverter}}"
                             IsReadOnly="true"/>
         <utils:DataGridContentBoundColumn Binding="{Binding Path=Type}"
-                            ContentTemplate="{StaticResource TypeInfoButtonTemplate}">
-        </utils:DataGridContentBoundColumn>
+                            Header="Go"
+                            CanUserSort="False"
+                            ContentTemplate="{StaticResource TypeInfoButtonTemplate}"/>
         <utils:DataGridContentBoundColumn Binding="{Binding Path=Type}"
+                            Header="Err"
+                            SortMemberPath="ErrorMsg"
                             Visibility="{Binding DataContext.IsInvalidMarkVisible,
                             Source={x:Reference dummyElement}, 
                             Converter={StaticResource BoolToVisibilityConverter}}"
-                            ContentTemplate="{StaticResource InvalidItemButtonTemplate}">
-        </utils:DataGridContentBoundColumn>
+                            ContentTemplate="{StaticResource InvalidItemButtonTemplate}"/>
+        <DataGridTextColumn Header="Description" Binding="{Binding Path=Description}"
+                            IsReadOnly="true"/>
       </DataGrid.Columns>
     </DataGrid>
   </Grid>

@@ -192,19 +192,6 @@
           }
         }
       },
-      "Qhta.DispatchedObjects/2.1.0": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/Qhta.DispatchedObjects.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/Qhta.DispatchedObjects.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "Qhta.HtmlUtils/2.1.0": {
         "type": "package",
         "dependencies": {
@@ -1728,6 +1715,16 @@
         "runtime": {
           "bin/placeholder/ModelGenDataConfig.dll": {}
         }
+      },
+      "Qhta.DispatchedObjects/2.2.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Qhta.DispatchedObjects.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Qhta.DispatchedObjects.dll": {}
+        }
       }
     }
   },
@@ -2027,19 +2024,6 @@
         "lib/netstandard2.0/Qhta.Conversion.xml",
         "qhta.conversion.2.0.0.nupkg.sha512",
         "qhta.conversion.nuspec",
-        "readme.md"
-      ]
-    },
-    "Qhta.DispatchedObjects/2.1.0": {
-      "sha512": "oHeaDC9i0mORjKz5zIfDSIMdaCNKQG3o7eYvjQ4emH0+hgczllHYs8kJ9WJjaoS1f5EEwYCjCpfp7le4XSIUxg==",
-      "type": "package",
-      "path": "qhta.dispatchedobjects/2.1.0",
-      "files": [
-        ".nupkg.metadata",
-        "lib/netstandard2.0/Qhta.DispatchedObjects.dll",
-        "lib/netstandard2.0/Qhta.DispatchedObjects.xml",
-        "qhta.dispatchedobjects.2.1.0.nupkg.sha512",
-        "qhta.dispatchedobjects.nuspec",
         "readme.md"
       ]
     },
@@ -5358,12 +5342,17 @@
       "type": "project",
       "path": "../ModelGenDataConfig/ModelGenDataConfig.csproj",
       "msbuildProject": "../ModelGenDataConfig/ModelGenDataConfig.csproj"
+    },
+    "Qhta.DispatchedObjects/2.2.0": {
+      "type": "project",
+      "path": "../../MyLib/Qhta.DispatchedObjects/Qhta.DispatchedObjects.csproj",
+      "msbuildProject": "../../MyLib/Qhta.DispatchedObjects/Qhta.DispatchedObjects.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0-windows7.0": [
       "ModelGen >= 1.0.0",
-      "Qhta.DispatchedObjects >= 2.1.0",
+      "Qhta.DispatchedObjects >= 2.2.0",
       "Qhta.HtmlUtils >= 2.1.0",
       "Qhta.MVVM >= 2.5.0",
       "Qhta.TextUtils >= 3.1.1",
@@ -5407,6 +5396,9 @@
           "projectReferences": {
             "D:\\VS\\Projects\\DocxDocument\\ModelGen\\ModelGen\\ModelGen.csproj": {
               "projectPath": "D:\\VS\\Projects\\DocxDocument\\ModelGen\\ModelGen\\ModelGen.csproj"
+            },
+            "D:\\VS\\Projects\\MyLib\\Qhta.DispatchedObjects\\Qhta.DispatchedObjects.csproj": {
+              "projectPath": "D:\\VS\\Projects\\MyLib\\Qhta.DispatchedObjects\\Qhta.DispatchedObjects.csproj"
             }
           }
         }
@@ -5421,10 +5413,6 @@
       "net6.0-windows7.0": {
         "targetAlias": "net6.0-windows",
         "dependencies": {
-          "Qhta.DispatchedObjects": {
-            "target": "Package",
-            "version": "[2.1.0, )"
-          },
           "Qhta.HtmlUtils": {
             "target": "Package",
             "version": "[2.1.0, )"
