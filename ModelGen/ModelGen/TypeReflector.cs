@@ -4,18 +4,9 @@ using Namotion.Reflection;
 
 namespace ModelGen;
 
-public record ReflectionInfo
-{
-  public int? Done;
-  public int? Waiting;
-  public TypeInfo? Current;
-}
-
-public delegate void ReflectionEvent(ReflectionInfo info);
-
 public static class TypeReflector
 {
-  public static event ReflectionEvent? OnReflection;
+  public static event ReflectionProgressEvent? OnReflection;
 
   private static Queue<TypeInfo> TypeQueue = new Queue<TypeInfo>();
 
@@ -106,7 +97,7 @@ public static class TypeReflector
     lock (reflectedLock)
     {
       reflected++;
-      OnReflection?.Invoke(new ReflectionInfo { Done = reflected, Waiting = TypeQueue.Count, Current = typeInfo });
+      OnReflection?.Invoke(new ReflectionProgressInfo { Done = reflected, Waiting = TypeQueue.Count, Current = typeInfo });
     }
     var type = typeInfo.Type;
     if (type.IsEnum)
