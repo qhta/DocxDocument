@@ -24,6 +24,7 @@
     <Compile Remove="Managers.cs" />
     <Compile Remove="ModelConfig.cs" />
     <Compile Remove="ModelGenerator - Copy.cs" />
+    <Compile Remove="ModelManager.Conversion.cs" />
     <Compile Remove="MyParticleConstraint.cs" />
     <Compile Remove="PropKind.cs" />
     <Compile Remove="SchemaGenerator.cs" />

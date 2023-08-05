@@ -124,7 +124,7 @@ public abstract class BaseCreator
     if (Options.UseModelDocFile && !String.IsNullOrEmpty(Options.ModelDocFileName))
     {
       var ModelDocumenter = new ModelDocumenter(NTS.Origin, MSS.Accepted, Options.ModelDocFileName);
-      ModelDocumenter.OnDocumentingType += ModelDocumenter_OnDocumentingType;
+      ModelDocumenter.OnDocumentingType += ModelDocumenter_OnDocumentingType; 
       documentedTypesCount = ModelDocumenter.DocumentTypes(PPS.ScanTypes);
       ModelDocumenter.OnDocumentingType += ModelDocumenter_OnDocumentingType;
     }
@@ -156,7 +156,7 @@ public abstract class BaseCreator
     return ts;
   }
 
-  private void ModelManager_OnScanningType(ScanningTypeInfo info)
+  private void ModelManager_OnScanningType(RegisterProgressInfo info)
   {
     ModelMonitor?.ShowPhaseProgress(PPS.ScanTypes, new ProgressInfo
     {
@@ -170,16 +170,15 @@ public abstract class BaseCreator
     });
   }
 
-  private void ModelDocumenter_OnDocumentingType(ModelDocumenter sender, DocumentingTypeInfo info)
+  private void ModelDocumenter_OnDocumentingType(ProgressTypeInfo info)
   {
     ModelMonitor?.ShowPhaseProgress(PPS.ScanTypes, new ProgressInfo
     {
       PreStr = "documenting",
       Done = info.CheckedTypes,
-      Total = info.TotalTypes,
       MidStr = "types",
       Summary = new Dictionary<string, object>{
-        {"documented", info.DocumentedTypes ?? 0 } },
+        {"documented", info.ProcessedTypes ?? 0 } },
       PostStr = $"{info.Current?.OriginalNamespace}.{info.Current?.OriginalName}"
     });
   }
@@ -220,13 +219,13 @@ public abstract class BaseCreator
     return ts;
   }
 
-  private void ModelManager_OnRenamingType(RenamingTypeInfo info)
+  private void ModelManager_OnRenamingType(ProgressTypeInfo info)
   {
     ModelMonitor?.ShowPhaseProgress(PPS.RenameTypes, new ProgressInfo
     {
       Total = TotalTypesCount,
       PreStr = "renamed",
-      Done = info.RenamedTypes,
+      Done = info.ProcessedTypes,
       MidStr = "types",
       PostStr = $"{info.Current?.OriginalNamespace}.{info.Current?.OriginalName} -> {info.Current?.GetTargetNamespace()}.{info.Current?.Name}"
     });
@@ -254,13 +253,13 @@ public abstract class BaseCreator
     return ts;
   }
 
-  private void ModelManager_OnConvertingType(ConvertingTypeInfo info)
+  private void ModelManager_OnConvertingType(ProgressTypeInfo info)
   {
     ModelMonitor?.ShowPhaseProgress(PPS.ConvertTypes, new ProgressInfo
     {
       Total = TotalTypesCount,
       PreStr = "converted",
-      Done = info.ConvertedTypes,
+      Done = info.ProcessedTypes,
       MidStr = "types",
       PostStr = $"{info.Current?.OriginalNamespace}.{info.Current?.OriginalName} -> {info.Current?.GetTargetNamespace()}.{info.Current?.Name}"
     });
@@ -350,18 +349,18 @@ public abstract class BaseCreator
   //}
 
 
-  private void ModelManager_OnCheckingUsage(CheckingUsageInfo info)
-  {
-    ModelMonitor?.ShowPhaseProgress(PPS.UsageCheck, new ProgressInfo
-    {
-      PreStr = "checked",
-      Done = info.CheckedTypes,
-      MidStr = "types",
-      Summary = new Dictionary<string, object>{
-        {"used", info.UsedTypes ?? 0 } },
-      PostStr = $"{info.Current?.OriginalNamespace}.{info.Current?.OriginalName}"
-    });
-  }
+  //private void ModelManager_OnCheckingUsage(TypeProcessInfo info)
+  //{
+  //  ModelMonitor?.ShowPhaseProgress(PPS.UsageCheck, new ProgressInfo
+  //  {
+  //    PreStr = "checked",
+  //    Done = info.CheckedTypes,
+  //    MidStr = "types",
+  //    Summary = new Dictionary<string, object>{
+  //      {"used", info.UsedTypes ?? 0 } },
+  //    PostStr = $"{info.Current?.OriginalNamespace}.{info.Current?.OriginalName}"
+  //  });
+  //}
 
   #endregion
 

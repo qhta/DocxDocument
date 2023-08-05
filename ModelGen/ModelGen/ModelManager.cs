@@ -1,46 +1,10 @@
 ﻿namespace ModelGen;
 
-public record ScanningTypeInfo
-{
-  public int? RegisteredNamespaces;
-  public int? RegisteredTypes;
-  public TypeInfo? Current;
-}
-
-public delegate void ScanningTypeEvent(ScanningTypeInfo info);
-
-public record RenamingTypeInfo
-{
-  public int? CheckedTypes;
-  public int? RenamedTypes;
-  public TypeInfo? Current;
-}
-
-public delegate void RenamingTypeEvent(RenamingTypeInfo info);
-
-public record ConvertingTypeInfo
-{
-  public int? CheckedTypes;
-  public int? ConvertedTypes;
-  public TypeInfo? Current;
-}
-
-public delegate void ConvertingTypeEvent(ConvertingTypeInfo info);
-
-public record CheckingUsageInfo
-{
-  public int? CheckedTypes;
-  public int? UsedTypes;
-  public TypeInfo? Current;
-}
-
-public delegate void CheckingUsageEvent(CheckingUsageInfo info);
-
 public static class ModelManager
 {
-  public static event ScanningTypeEvent? OnScanningType;
-  public static event RenamingTypeEvent? OnRenamingType;
-  public static event ConvertingTypeEvent? OnConvertingType;
+  public static event RegisterProgressEvent? OnScanningType;
+  public static event ProgressTypeEvent? OnRenamingType;
+  public static event ProgressTypeEvent? OnConvertingType;
 
   public static int CheckedRenameTypesCount { get; private set; }
   public static int RenamedTypesCount { get; private set; }
@@ -60,7 +24,7 @@ public static class ModelManager
       if (ModelManager.TryConvertType(typeInfo))
       {
         ConvertedTypesCount++;
-        OnConvertingType?.Invoke(new ConvertingTypeInfo { CheckedTypes = CheckedRenameTypesCount, ConvertedTypes = ConvertedTypesCount, Current = typeInfo });
+        OnConvertingType?.Invoke(new ProgressTypeInfo { CheckedTypes = CheckedRenameTypesCount, ProcessedTypes = ConvertedTypesCount, Current = typeInfo });
         n++;
       }
     }
@@ -456,14 +420,9 @@ public static class ModelManager
     return true;
   }
 
-  private static void TypeManager_OnRegistering(RegisteringInfo info)
+  private static void TypeManager_OnRegistering(RegisterProgressInfo info)
   {
-    OnScanningType?.Invoke(new ScanningTypeInfo
-    {
-      RegisteredNamespaces = info.RegisteredNamespaces,
-      RegisteredTypes = info.RegisteredTypes,
-      Current = info.Current,
-    });
+    OnScanningType?.Invoke(info);
   }
 
   //public static Task CheckTypeUsageAsync(this TypeInfo typeInfo)
@@ -755,7 +714,7 @@ public static class ModelManager
       {
         typeInfo.NewName = newName;
         RenamedTypesCount++;
-        OnRenamingType?.Invoke(new RenamingTypeInfo { CheckedTypes = CheckedRenameTypesCount, RenamedTypes = RenamedTypesCount, Current = typeInfo });
+        OnRenamingType?.Invoke(new ProgressTypeInfo { CheckedTypes = CheckedRenameTypesCount, ProcessedTypes = RenamedTypesCount, Current = typeInfo });
         return true;
       }
     }
@@ -774,7 +733,7 @@ public static class ModelManager
       {
         typeInfo.NewName = typeInfo.Name + year.ToString();
         RenamedTypesCount++;
-        OnRenamingType?.Invoke(new RenamingTypeInfo { CheckedTypes = CheckedRenameTypesCount, RenamedTypes = RenamedTypesCount, Current = typeInfo });
+        OnRenamingType?.Invoke(new ProgressTypeInfo { CheckedTypes = CheckedRenameTypesCount, ProcessedTypes = RenamedTypesCount, Current = typeInfo });
         return true;
       }
     }
@@ -783,7 +742,7 @@ public static class ModelManager
       k = origNamespace.LastIndexOf('.');
       typeInfo.NewName = origNamespace.Substring(k+1);
       RenamedTypesCount++;
-      OnRenamingType?.Invoke(new RenamingTypeInfo { CheckedTypes = CheckedRenameTypesCount, RenamedTypes = RenamedTypesCount, Current = typeInfo });
+      OnRenamingType?.Invoke(new ProgressTypeInfo { CheckedTypes = CheckedRenameTypesCount, ProcessedTypes = RenamedTypesCount, Current = typeInfo });
       return true;
     }
     return false;
