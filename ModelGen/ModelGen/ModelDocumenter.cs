@@ -1,14 +1,5 @@
 ﻿namespace ModelGen;
 
-public record DocumentingTypeInfo
-{
-  public int? TotalTypes;
-  public int? CheckedTypes;
-  public int? DocumentedTypes;
-  public TypeInfo? Current;
-}
-
-public delegate void DocumentingTypeEvent(ModelDocumenter sender, DocumentingTypeInfo info);
 
 /// <summary>
 /// This class adds documentation from model documentation type to types and properties.
@@ -33,7 +24,7 @@ public class ModelDocumenter
   public List<string> TypesNotFound { get; private set; } = new List<string>();
   public List<string> PropertiesNotFound { get; private set; } = new List<string>();
 
-  public event DocumentingTypeEvent? OnDocumentingType;
+  public event ProgressTypeEvent? OnDocumentingType;
 
   public int DocumentTypes(PPS phaseNum)
   {
@@ -60,11 +51,10 @@ public class ModelDocumenter
   public bool DocumentSingleType(TypeInfo typeInfo)
   {
     CheckedTypesCount++;
-    OnDocumentingType?.Invoke(this, new DocumentingTypeInfo
+    OnDocumentingType?.Invoke( new ProgressTypeInfo
     {
-      TotalTypes = TotalTypesCount,
       CheckedTypes = CheckedTypesCount,
-      DocumentedTypes = DocumentedTypesCount,
+      ProcessedTypes = DocumentedTypesCount,
       Current = typeInfo
     });
     var ok = true;

@@ -1,17 +1,8 @@
 ﻿namespace ModelGen;
 
-public record RegisteringInfo
-{
-  public int? RegisteredNamespaces;
-  public int? RegisteredTypes;
-  public TypeInfo? Current;
-}
-
-public delegate void RegisteringEvent(RegisteringInfo info);
-
 public static class TypeManager
 {
-  public static event RegisteringEvent? OnRegistering;
+  public static event RegisterProgressEvent? OnRegistering;
 
   public static Dictionary<Type, TypeInfo> KnownTypes { get; private set; } = new();
   public static Dictionary<string, Namespace> KnownNamespaces { get; private set; } = new();
@@ -83,7 +74,7 @@ public static class TypeManager
       if (!KnownNamespaces.ContainsKey(nspace))
       {
         KnownNamespaces.Add(nspace, new Namespace(nspace));
-        OnRegistering?.Invoke(new RegisteringInfo { RegisteredNamespaces = KnownNamespaces.Count, RegisteredTypes = AllTypes.Count() });
+        OnRegistering?.Invoke(new RegisterProgressInfo { RegisteredNamespaces = KnownNamespaces.Count, RegisteredTypes = AllTypes.Count() });
       }
   }
 
@@ -160,7 +151,7 @@ public static class TypeManager
         KnownTypes.Add(type, typeInfo);
         var NamespaceDictionary = TypeManager.GetNamespace(nspace);
         NamespaceDictionary.AddType(typeInfo);
-        OnRegistering?.Invoke(new RegisteringInfo { RegisteredNamespaces = KnownNamespaces.Count + 1, RegisteredTypes = AllTypes.Count(), Current = typeInfo });
+        OnRegistering?.Invoke(new RegisterProgressInfo { RegisteredNamespaces = KnownNamespaces.Count + 1, RegisteredTypes = AllTypes.Count(), Current = typeInfo });
       }
       bool accept = acceptance == true || !ModelConfig.Instance.IsExcluded(type);
       if (!accept)
