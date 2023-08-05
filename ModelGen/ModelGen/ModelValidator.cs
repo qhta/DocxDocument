@@ -70,8 +70,12 @@ public class ModelValidator
       Current = typeInfo
     });
     var ok = true;
-    if (!typeInfo.IsConstructedGenericType)
-      ok = ValidateDocumentation(typeInfo);
+    if (PhaseNum == PPS.ScanTypes)
+    {
+      if (!typeInfo.IsConstructedGenericType)
+        if (!ValidateSummary(typeInfo))
+          ok = false;
+    }
     if (ok)
       ValidTypesCount++;
     else
@@ -79,19 +83,28 @@ public class ModelValidator
     return ok;
   }
 
-  public bool ValidateDocumentation(TypeInfo typeInfo)
+  public bool ValidateSummary(TypeInfo typeInfo)
   {
-    var documentation = typeInfo.GetDocumentation();
-    if (documentation != null)
+
+    var description = typeInfo.Description?.Trim();
+    if (String.IsNullOrEmpty(description))
     {
-      bool ok = true;
-      return ok;
-    }
-    else
-    {
-      typeInfo.AddErrorMsg(PhaseNum, "Documentation missing");
+      typeInfo.AddErrorMsg(PhaseNum, "Description missing");
       return false;
     }
+    String str = description;
+    if (str.EndsWith("."))
+      str = str.Substring(0, str.Length - 1).TrimEnd();
+    str = str.Replace(" the ", " ").Replace(" a ", "");
+    if (str.StartsWith("Defines "))
+    {
+      var rest = str.Substring("Defines ".Length).TrimStart();
+      var restWithoutSpaces = rest.Replace(" ", "");
+      if (restWithoutSpaces.ToLower() == typeInfo.Name.ToLower())
+        typeInfo.AddErrorMsg(PhaseNum, "Meaningless description");
+      return false;
+    }
+    return true;
   }
 
 }

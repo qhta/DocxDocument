@@ -15,6 +15,16 @@
     <Style x:Key="NoBorderTextBoxStyle" TargetType="TextBox">
         <Setter Property="BorderThickness" Value="0"/>
     </Style>
+    <Style x:Key="Field_Hyperlink" TargetType="Hyperlink" >
+      <Style.Triggers>
+        <DataTrigger Binding="{Binding IsSelected, 
+         RelativeSource= {RelativeSource 
+                            AncestorType={x:Type DataGridRow}}}" 
+         Value="True">
+          <Setter Property="Foreground" Value="White" />
+        </DataTrigger>
+      </Style.Triggers>
+    </Style>
     <DataTemplate x:Key="{x:Type vm:MainViewModel}" DataType="{x:Type vm:MainViewModel}">
       <views:MainWindow/>
     </DataTemplate>
@@ -38,7 +48,6 @@
           </Image.ToolTip>
         </Image>
         <TextBlock Grid.Column="1" Text="{Binding}"/>
-
       </Grid>
     </DataTemplate>
     <DataTemplate x:Key="ItemsCountColumnTemplate" >
@@ -138,6 +147,7 @@
       <Grid>
         <TextBlock Margin="2,0,2,0">
           <Hyperlink 
+                  Style="{StaticResource Field_Hyperlink}"
                   NavigateUri="{Binding Path=FullName}" 
                   Command="{Binding Path=ShowTypeCommand}"
                   CommandParameter="{Binding}">
