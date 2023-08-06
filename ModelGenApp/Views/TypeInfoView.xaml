@@ -27,12 +27,26 @@
         <RowDefinition Height="Auto"/>
         <RowDefinition Height="*"/>
       </Grid.RowDefinitions>
-      <Label Grid.Row="0"
+      <StackPanel Orientation="Horizontal">
+        <Label Margin="2,0"
             FontWeight="Bold"
             Content="{Binding Path=Members.Label}"/>
+        <CheckBox Margin="2,0"
+                  VerticalAlignment="Center"
+                  IsChecked="{Binding Path=Members.ShowAcceptedOnly}"
+                  Content="Accepted only"
+                  Visibility="{Binding Path=Members.ShowAcceptedOnlyVisible,
+                               Converter={StaticResource BoolToVisibilityConverter}}"/>
+        <CheckBox Margin="20,0"
+                  VerticalAlignment="Center"
+                  IsChecked="{Binding Path=Members.ShowDeclaringType}"
+                  Content="Show declaring type"
+                  Visibility="{Binding Path=Members.ShowDeclaringTypeVisible,
+                               Converter={StaticResource BoolToVisibilityConverter}}"/>
+      </StackPanel>
       <DataGrid Grid.Row="1"
               AutoGeneratingColumn="DataGrid_AutoGeneratingColumn"
-              ItemsSource="{Binding Path=Members}"/>
+              ItemsSource="{Binding Path=Members.Items}"/>
     </Grid>
   </Grid>
 </UserControl>

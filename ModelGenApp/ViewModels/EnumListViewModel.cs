@@ -1,46 +1,8 @@
 ﻿namespace ModelGenApp.ViewModels;
-public class EnumListViewModel: ObservableCollection<EnumInfoViewModel>
+public class EnumListViewModel: MemberListViewModel<EnumInfoViewModel>
 {
-  public EnumListViewModel(EnumTypeInfoViewModel owner, string name)
+  public EnumListViewModel(EnumTypeInfoViewModel owner, string name): base(owner, name)
   {
-    Owner = owner;
-    Name = name;
-    ShowDetailsCommand = new RelayCommand(ShowDetailsExecute, ShowDetailsCanExecute) { Name = "ShowDetailsCommand" };
   }
-
-  public EnumTypeInfoViewModel Owner { get; private set; }
-
-  public string Name { get; private set; }
-
-  public string Caption => Owner.Caption +"."+this.Name?.ToLower();
-
-  public string Label => this.Name+":";
-
-  public bool Visible => true;
-
-  #region ShowDetailsCommand
-  public Command ShowDetailsCommand  { get; private set; }
-
-  protected virtual bool ShowDetailsCanExecute()
-  {
-    return Count>0;
-  }
-
-  Window? window;
-  protected virtual void ShowDetailsExecute()
-  {
-    if (window != null && window.IsVisible)
-    {
-      window.Topmost=true;
-      window.Focus();
-    }
-    else
-    {
-      window = new TypeInfoWindow();
-      window.DataContext = Owner;
-      window.Show();
-    }
-  }
-  #endregion
 
 }

@@ -200,19 +200,6 @@
           }
         }
       },
-      "Qhta.WPF.DataGridUtils/1.2.0": {
-        "dependencies": {
-          "Qhta.MVVM": "2.5.0",
-          "Qhta.TextUtils": "3.1.1",
-          "Qhta.TypeUtils": "1.3.10.1"
-        },
-        "runtime": {
-          "lib/net6.0-windows7.0/Qhta.WPF.DataGridUtils.dll": {
-            "assemblyVersion": "1.2.0.0",
-            "fileVersion": "1.2.0.0"
-          }
-        }
-      },
       "Qhta.Xml/2.1.0": {
         "dependencies": {
           "Qhta.Collections": "4.0.0",
@@ -1402,13 +1389,6 @@
       "sha512": "sha512-NyQtXCsqQ2z3cVc4FGK3KIgWvp8zKs5rGJtHpgp8rd5Q6zMcaQ/so9H6cSfzhsBUO2vgpGurMeFCb3NywsHahA==",
       "path": "qhta.wpf.converters/1.2.0",
       "hashPath": "qhta.wpf.converters.1.2.0.nupkg.sha512"
-    },
-    "Qhta.WPF.DataGridUtils/1.2.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-8gCO+78kCPRRgweqw5Rr/MQpC3MojDCh1P8V/g7OXL1jSdcF8RsKjgknY8UwGZv99fWrzAqVDZh+1eISS0jZLQ==",
-      "path": "qhta.wpf.datagridutils/1.2.0",
-      "hashPath": "qhta.wpf.datagridutils.1.2.0.nupkg.sha512"
     },
     "Qhta.Xml/2.1.0": {
       "type": "package",
