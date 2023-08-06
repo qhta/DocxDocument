@@ -1,12 +1,15 @@
 ﻿namespace ModelGenApp.ViewModels;
-public class EnumInfoViewModel : ViewModel<EnumInfo>
+public class EnumInfoViewModel : ViewModel<EnumInfo>, IAcceptable
 {
   public EnumInfoViewModel(PhaseViewModel phase, EnumInfo enumInfo, NKS typeNameSelector) : base(enumInfo)
   {
+    Phase = phase;
     NameTypeSelector = typeNameSelector;
   }
 
-  private NKS NameTypeSelector;
+  public PhaseViewModel Phase {get; private set; }
+
+  public NKS NameTypeSelector {get; private set; }
 
   [DataGridColumn]
   public string Name
@@ -22,5 +25,7 @@ public class EnumInfoViewModel : ViewModel<EnumInfo>
 
   [DataGridColumn]
   public int? Value => Model.Value;
+
+  public bool IsAccepted => Model.IsAcceptedAfter(Phase.PhaseNum);
 }
 

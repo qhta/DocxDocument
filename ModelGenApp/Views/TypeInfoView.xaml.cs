@@ -1,7 +1,9 @@
-﻿namespace ModelGenApp.Views;
-/// <summary>
-/// Interaction logic for TypeInfoView.xaml
-/// </summary>
+﻿using System.Windows.Data;
+
+using Qhta.WPF.Converters;
+
+namespace ModelGenApp.Views;
+
 public partial class TypeInfoView : UserControl
 {
   public TypeInfoView()
@@ -9,8 +11,21 @@ public partial class TypeInfoView : UserControl
     InitializeComponent();
   }
 
-  private void DataGrid_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
+  private void DataGrid_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs args)
   {
-    Qhta.WPF.DataGridUtils.AutoGenerating.UseDataGridColumnAttribute(sender, e);
+    Qhta.WPF.DataGridUtils.AutoGenerating.UseDataGridColumnAttribute(sender, args);
+    if (sender is DataGrid dataGrid)
+      if (DataContext is ClassInfoViewModel)
+      {
+        if (args.Column is DataGridBoundColumn dataGridBoundColumn)
+        {
+          if (dataGridBoundColumn.Binding is Binding binding
+              && binding.Path.Path.EndsWith("DeclaringType"))
+          {
+            BindingOperations.SetBinding(dataGridBoundColumn, DataGridColumn.VisibilityProperty,
+              new Binding("Properties.ShowDeclaringType") { Source = DataContext, Converter = (IValueConverter)dataGrid.FindResource("BoolToVisibilityConverter") });
+          }
+        }
+      }
   }
 }
