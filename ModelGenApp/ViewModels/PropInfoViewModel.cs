@@ -1,12 +1,12 @@
 ﻿namespace ModelGenApp.ViewModels;
-public class PropInfoViewModel : ViewModel<PropInfo>
+public class PropInfoViewModel : ViewModel<PropInfo>, IAcceptable
 {
-  public PropInfoViewModel(PhaseViewModel phase, TypeInfoViewModel? ownerViewModel, PropInfo propInfo, NKS nameKindSelector) : base(propInfo)
+  public PropInfoViewModel(PhaseViewModel phase, ClassInfoViewModel? ownerViewModel, PropInfo propInfo, NKS nameKindSelector) : base(propInfo)
   {
     OwnerType = ownerViewModel;
     NameKindSelector = nameKindSelector;
     Phase = phase;
-    if (propInfo.DeclaringType!= null && propInfo.DeclaringType != ownerViewModel?.Model)
+    if (ownerViewModel?.Properties?.ShowDeclaringType == true && propInfo.DeclaringType != null)
       DeclaringType = TypeInfoViewModel.Create(phase, propInfo.DeclaringType, nameKindSelector);
   }
 
@@ -15,6 +15,8 @@ public class PropInfoViewModel : ViewModel<PropInfo>
   public NKS NameKindSelector { get; private set; }
 
   public PhaseViewModel Phase { get; private set; }
+
+  public bool IsAccepted => Model.IsAcceptedAfter(Phase.PhaseNum);
 
   [DataGridColumn]
   public string Acceptance
