@@ -413,6 +413,7 @@ public static class ModelManager
 
   public static bool ScanType(Type type)
   {
+    //TypeManager.UseAsynReflection = true;
     TypeManager.OnRegistering += TypeManager_OnRegistering;
     var typeName = type.ToString();
     TypeManager.RegisterType(type);
