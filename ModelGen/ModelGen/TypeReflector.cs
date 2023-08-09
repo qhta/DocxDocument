@@ -9,7 +9,8 @@ public static class TypeReflector
   public static event ReflectionProgressEvent? OnReflection;
 
   private static Queue<TypeInfo> TypeQueue = new Queue<TypeInfo>();
-
+  
+ 
   public static void ReflectTypeAsync(this TypeInfo typeInfo)
   {
     if (typeInfo.IsReflected)
@@ -18,13 +19,15 @@ public static class TypeReflector
     {
       if (!TypeQueue.Contains(typeInfo))
         TypeQueue.Enqueue(typeInfo);
+      else
+        Debug.Fail($"Type{typeInfo.Name} already in reflection queue");
       if (!isStarted) Start();
     }
   }
 
   private static bool isStarted => ReflectionTasks is not null;
   private static bool isDone;
-  private static int TaskCount = 2;
+  private static int TaskCount = 10;
   private static Task[] ReflectionTasks = null!;
   private static int RunTrials = 100;
   public static void Start()

@@ -2,6 +2,9 @@
 
 public static class TypeManager
 {
+
+  public static bool UseAsynReflection { get; set; }
+
   public static event RegisterProgressEvent? OnRegistering;
 
   public static Dictionary<Type, TypeInfo> KnownTypes { get; private set; } = new();
@@ -158,7 +161,12 @@ public static class TypeManager
         typeInfo.SetRejected(PPS.ScanTypes);
 
       if (accept && type.Namespace!=null && !type.Namespace.StartsWith("System"))
+      {
+        if (UseAsynReflection)
+        TypeReflector.ReflectTypeAsync(typeInfo);
+
         TypeReflector.ReflectType(typeInfo);
+      }
       return typeInfo;
     }
   }
