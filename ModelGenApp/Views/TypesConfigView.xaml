@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:views="clr-namespace:ModelGenApp.Views"
              xmlns:vm="clr-namespace:ModelGenApp.ViewModels"
+             xmlns:bhv="clr-namespace:Qhta.WPF.Behaviors;assembly=Qhta.WPF.Behaviors"
              mc:Ignorable="d" 
              d:DataContext="{d:DesignInstance Type={x:Type vm:TypeConfigViewModel}}"
              d:DesignHeight="450" d:DesignWidth="800">
@@ -12,6 +13,7 @@
     <DataGrid 
       AutoGenerateColumns="False"
       HorizontalContentAlignment="Stretch"
+      bhv:CollectionViewBehavior.EnableCollectionSynchronization="True"
       ItemsSource="{Binding Path=Items}">
       <DataGrid.Columns>
         <DataGridTextColumn Header="Original namespace" Binding="{Binding Path=OrigNamespace}"/>

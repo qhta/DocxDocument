@@ -7,12 +7,14 @@
              xmlns:vm="clr-namespace:ModelGenApp.ViewModels"
              xmlns:hlp="clr-namespace:ModelGenApp.Helpers"
              xmlns:utils="clr-namespace:Qhta.WPF.DataGridUtils;assembly=Qhta.WPF.DataGridUtils"
+             xmlns:bhv="clr-namespace:Qhta.WPF.Behaviors;assembly=Qhta.WPF.Behaviors"
              mc:Ignorable="d" 
              d:DataContext="{d:DesignInstance Type={x:Type vm:TypeListViewModel}}"
              d:DesignHeight="450" d:DesignWidth="800">
   <Grid>
     <FrameworkElement x:Name="dummyElement" Visibility="Collapsed"/>
     <DataGrid AutoGenerateColumns="False"
+      bhv:CollectionViewBehavior.EnableCollectionSynchronization="True"
       ItemsSource="{Binding Items}">
       <DataGrid.Columns>
         <DataGridTextColumn Header="Kind" Binding="{Binding Path=TypeKind}"
@@ -40,6 +42,8 @@
                             Converter={StaticResource BoolToVisibilityConverter}}"
                             ContentTemplate="{StaticResource InvalidItemButtonTemplate}"/>
         <DataGridTextColumn Header="Description" Binding="{Binding Path=Description}"
+                            IsReadOnly="true"/>
+        <DataGridTextColumn Header="Documentation" Binding="{Binding Path=Documentation}"
                             IsReadOnly="true"/>
       </DataGrid.Columns>
     </DataGrid>

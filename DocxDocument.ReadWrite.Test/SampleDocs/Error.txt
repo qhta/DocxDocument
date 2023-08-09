@@ -1,0 +1,19 @@
+System.InvalidOperationException: 'Element ItemsControl jest niespójny ze źródłem elementów.\n  Aby uzyskać więcej informacji, przejdź do wyjątków wewnętrznych.'
+
+
+Inner Exception:
+Exception: Informacje dla deweloperów (aby przeczytać, skorzystaj z narzędzia Text Visualizer):
+Wystąpił wyjątek, ponieważ generator formantu „System.Windows.Controls.DataGrid Items.Count:53” o nazwie „(bez nazwy)” otrzymał serię zdarzeń CollectionChanged, które są niezgodne z bieżącym stanem kolekcji elementów.  Wykryto następujące różnice:
+  Liczba zebranych elementów 6 jest różna od bieżącej 53. [Liczba zebranych elementów to (Liczba elementów zebranych podczas ostatniego resetowania + Liczba dodatków - Liczba elementów usuniętych od ostatniego resetowania).]
+
+Jedno lub więcej z następujących źródeł mogło wywołać nieprawidłowe zdarzenia:
+     System.Windows.Controls.ItemContainerGenerator
+      System.Windows.Controls.ItemCollection
+       System.Windows.Data.ListCollectionView
+  *     ModelGenApp.ViewModels.NamespacesViewModel
+(W przypadku źródeł oznaczonych gwiazdką są bardziej prawdopodobną przyczyną problemu).
+
+Najczęstszymi przyczynami są: (a) zmiana kolekcji lub jej liczby bez zmiany odpowiadającego jej zdarzenia i (b) wywołanie zdarzenia z nieprawidłowym indeksem lub parametrem elementu.
+
+Śledzenie stosu wyjątków umożliwia sprawdzenie sposobu wykrycia niespójności, a nie ich przyczyny.  Aby uzyskać bardziej aktualny wyjątek, ustaw wartość „High” dla właściwości „PresentationTraceSources.TraceLevel” na generatorze i ponownie uruchom scenariusz.  Aby to zrobić, można na przykład wywołać polecenie podobne do następującego:\n   System.Diagnostics.PresentationTraceSources.SetTraceLevel(myItemsControl.ItemContainerGenerator, System.Diagnostics.PresentationTraceLevel.High)
+w oknie bezpośrednim. Powoduje ona, że logika wykrywania jest uruchamiana po każdym zdarzeniu CollectionChanged, co spowolni działanie aplikacji.

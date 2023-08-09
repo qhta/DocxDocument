@@ -6,10 +6,15 @@ public class ClassListViewModel: TypeListViewModel
   {
   }
 
-  public override IList Items { get; } = new DispatchedCollection<ClassInfoViewModel>();
+  public override IList Items { get; } = new ObservableList<ClassInfoViewModel>();
 
   protected override TypeInfoViewModel CreateItemViewModel(TypeInfo item, PhaseViewModel phase)
   {
     return new ClassInfoViewModel(phase, item, TypeNameSelector);
+  }
+
+  protected override void AddRange(IEnumerable<TypeInfoViewModel> list)
+  {
+     (Items as ObservableList<ClassInfoViewModel>)?.AddRange(list.Cast<ClassInfoViewModel>());
   }
 }

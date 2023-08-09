@@ -3,17 +3,17 @@
 /// <summary>
 ///   Docs Comments assigned to model element.
 /// </summary>
-public class ElementDocs: Collection<XElement>
+public class ElementDocs : Collection<XElement>
 {
   /// <summary>
   /// XElement representation of summary.
   /// </summary>
   [XmlIgnore]
-  public XElement? Summary 
+  public XElement? Summary
   {
     get
-    { 
-      return this.FirstOrDefault(item=>item.Name == "summary");
+    {
+      return this.FirstOrDefault(item => item.Name == "summary");
     }
     set
     {
@@ -25,18 +25,10 @@ public class ElementDocs: Collection<XElement>
     }
   }
 
-  /// <summary>
-  /// Short text description of this element.
-  /// </summary>
-  public string? SummaryText
+  public bool IsEmpty => Count == 0;
+
+  public override string ToString()
   {
-    get => Summary?.Value;
-    //set
-    //{
-    //  if (value != null)
-    //    Summary = new XElement("summary", value);
-    //  else
-    //    Summary = null;
-    //}
+    return String.Join("\r\n", Items.Select(item => item.ToString()));
   }
 }

@@ -1,4 +1,4 @@
 ﻿namespace ModelGenApp.ViewModels;
-public class TypeSummaryViewModel: DispatchedCollection<TypePropViewModel>
+public class TypeSummaryViewModel: ObservableList<TypePropViewModel>
 {
 }

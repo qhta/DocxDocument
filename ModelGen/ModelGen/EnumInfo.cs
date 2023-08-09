@@ -16,7 +16,7 @@ public class EnumInfo : ModelElement
   {
     var xmlDocsElement = fieldInfo.GetXmlDocsElement();
     if (xmlDocsElement != null)
-      DocumentationReader.ParseDocumentation(this, xmlDocsElement);
+      CommentDocsParser.ParseDocumentation(this, xmlDocsElement);
     if (fieldInfo.CustomAttributes.Any())
     {
       if (CustomAttributes == null)
