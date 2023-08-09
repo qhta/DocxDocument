@@ -6,16 +6,17 @@ public class TypeListViewModel : ViewModel
     Namespace = nspace;
     Name = name;
     if (Items is INotifyCollectionChanged observableCollection)
-      observableCollection.CollectionChanged += ObservableCollection_CollectionChanged;
+      observableCollection.CollectionChanged += Items_CollectionChanged;
     TypeNameSelector = typeNameSelector;
     TypeKindSelector = typeKindSelector;
     Phase = phase;
     ShowDetailsCommand = new RelayCommand(ShowDetailsExecute, ShowDetailsCanExecute) { Name = "ShowDetailsCommand" };
   }
 
-  private void ObservableCollection_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs e)
+  private void Items_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs e)
   {
     NotifyPropertyChanged(nameof(Count));
+    ShowDetailsCommand?.NotifyCanExecuteChanged();
   }
 
   public TypeListViewModel(PhaseViewModel phase, NamespaceViewModel? nspace, string name, NKS typeNameSelector, IEnumerable<TypeInfoViewModel> list)
@@ -24,6 +25,8 @@ public class TypeListViewModel : ViewModel
     Name = name;
     TypeNameSelector = typeNameSelector;
     AddRange(list);
+    if (Items is INotifyCollectionChanged observableCollection)
+      observableCollection.CollectionChanged += Items_CollectionChanged;
     Phase = phase;
     ShowDetailsCommand = new RelayCommand(ShowDetailsExecute, ShowDetailsCanExecute) { Name = "ShowDetailsCommand" };
   }
