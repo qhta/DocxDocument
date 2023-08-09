@@ -27,20 +27,20 @@ public class ProcessMonitorViewModel : ViewModel
 
 public void WriteLine()
 {
-  DispatcherHelper.Invoke(() => Lines.Add(string.Empty));
+  Dispatcher?.Invoke(() => Lines.Add(string.Empty));
 }
 
 public void WriteLine(string line)
 {
-  DispatcherHelper.Invoke(() => Lines.Add(line));
+  Dispatcher?.Invoke(() => Lines.Add(line));
 }
 
 public void WriteSameLine(string line)
 {
-  DispatcherHelper.Invoke(() => StatusLine = line);
+  Dispatcher?.Invoke(() => StatusLine = line);
 }
 
-public ObservableCollection<string> Lines
+public ObservableList<string> Lines
 {
   get { return _Lines; }
   set
@@ -52,7 +52,7 @@ public ObservableCollection<string> Lines
     }
   }
 }
-private ObservableCollection<string> _Lines = new();
+private ObservableList<string> _Lines = new();
 
 public string? StatusLine
 {

@@ -1,4 +1,7 @@
-﻿namespace ModelGenApp.Views;
+﻿using Qhta.MVVM;
+using Qhta.WPF.Behaviors;
+
+namespace ModelGenApp.Views;
 /// <summary>
 /// Interaction logic for MainWindow.xaml
 /// </summary>
@@ -7,9 +10,10 @@ public partial class MainWindow : Window
   public MainWindow()
   {
     InitializeComponent();
+    ObservableObject.CommonDispatcher = new DispatcherBridge(Dispatcher.CurrentDispatcher);
+    Command.CanExecuteChangedListener = new CommandManagerBridge();
     MainViewModel = new MainViewModel();
     DataContext = MainViewModel;
-    DispatchedObject.DispatcherBridge = new DispatcherBridge();
     var modelDataFilename = ModelConfig.Instance.GetFilename();
     if (File.Exists(modelDataFilename))
       try

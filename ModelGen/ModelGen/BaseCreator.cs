@@ -123,9 +123,9 @@ public abstract class BaseCreator
     int? documentedTypesCount = null;
     if (Options.UseModelDocFile && !String.IsNullOrEmpty(Options.ModelDocFileName))
     {
-      var ModelDocumenter = new ModelDocumenter(NTS.Origin, MSS.Accepted, Options.ModelDocFileName);
+      var ModelDocumenter = new ModelDocsManager(PPS.ScanTypes, NTS.Origin, MSS.Accepted, Options.ModelDocFileName);
       ModelDocumenter.OnDocumentingType += ModelDocumenter_OnDocumentingType; 
-      documentedTypesCount = ModelDocumenter.DocumentTypes(PPS.ScanTypes);
+      documentedTypesCount = ModelDocumenter.DocumentTypes();
       ModelDocumenter.OnDocumentingType += ModelDocumenter_OnDocumentingType;
     }
 

@@ -10,11 +10,13 @@
         "dependencies": {
           "ModelGen": "1.0.0",
           "Qhta.HtmlUtils": "2.1.0",
-          "Qhta.MVVM": "2.6.0",
+          "Qhta.MVVM": "3.1.0",
+          "Qhta.ObservableObjects": "2.6.1",
           "Qhta.TextUtils": "3.1.1",
           "Qhta.TypeUtils": "1.3.10.1",
+          "Qhta.WPF.Behaviors": "1.4.0",
           "Qhta.WPF.Converters": "1.2.0",
-          "Qhta.WPF.DataGridUtils": "1.3.0"
+          "Qhta.WPF.DataGridUtils": "1.5.0"
         },
         "runtime": {
           "ModelGenApp.dll": {}
@@ -147,14 +149,6 @@
           }
         }
       },
-      "Qhta.DispatchedObjects/2.0.0": {
-        "runtime": {
-          "lib/netstandard2.0/Qhta.DispatchedObjects.dll": {
-            "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.0.0.0"
-          }
-        }
-      },
       "Qhta.HtmlUtils/2.1.0": {
         "dependencies": {
           "HtmlAgilityPack": "1.8.9"
@@ -163,17 +157,6 @@
           "lib/netstandard2.0/Qhta.HtmlUtils.dll": {
             "assemblyVersion": "2.1.0.0",
             "fileVersion": "2.1.0.0"
-          }
-        }
-      },
-      "Qhta.MVVM/2.6.0": {
-        "dependencies": {
-          "Qhta.DispatchedObjects": "2.0.0"
-        },
-        "runtime": {
-          "lib/netstandard2.0/Qhta.MVVM.dll": {
-            "assemblyVersion": "2.6.0.0",
-            "fileVersion": "2.6.0.0"
           }
         }
       },
@@ -216,16 +199,16 @@
           }
         }
       },
-      "Qhta.WPF.DataGridUtils/1.3.0": {
+      "Qhta.WPF.DataGridUtils/1.5.0": {
         "dependencies": {
-          "Qhta.MVVM": "2.6.0",
+          "Qhta.MVVM": "3.1.0",
           "Qhta.TextUtils": "3.1.1",
           "Qhta.TypeUtils": "1.3.10.1"
         },
         "runtime": {
           "lib/net6.0-windows7.0/Qhta.WPF.DataGridUtils.dll": {
-            "assemblyVersion": "1.3.0.0",
-            "fileVersion": "1.3.0.0"
+            "assemblyVersion": "1.5.0.0",
+            "fileVersion": "1.5.0.0"
           }
         }
       },
@@ -351,6 +334,17 @@
           "System.Runtime.Extensions": "4.3.0",
           "System.Threading": "4.3.0",
           "System.Threading.Tasks": "4.3.0"
+        }
+      },
+      "System.Collections.Immutable/7.0.0": {
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/System.Collections.Immutable.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51805"
+          }
         }
       },
       "System.Collections.NonGeneric/4.3.0": {
@@ -651,6 +645,7 @@
           "Microsoft.NETCore.Targets": "1.1.0"
         }
       },
+      "System.Runtime.CompilerServices.Unsafe/6.0.0": {},
       "System.Runtime.Extensions/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.1.0",
@@ -1012,6 +1007,32 @@
         "runtime": {
           "ModelGenDataConfig.dll": {}
         }
+      },
+      "Qhta.MVVM/3.1.0": {
+        "dependencies": {
+          "Qhta.ObservableObjects": "2.6.1"
+        },
+        "runtime": {
+          "Qhta.MVVM.dll": {}
+        }
+      },
+      "Qhta.ObservableObjects/2.6.1": {
+        "dependencies": {
+          "System.Collections.Concurrent": "4.3.0",
+          "System.Collections.Immutable": "7.0.0"
+        },
+        "runtime": {
+          "Qhta.ObservableObjects.dll": {}
+        }
+      },
+      "Qhta.WPF.Behaviors/1.4.0": {
+        "dependencies": {
+          "Qhta.MVVM": "3.1.0",
+          "Qhta.ObservableObjects": "2.6.1"
+        },
+        "runtime": {
+          "Qhta.WPF.Behaviors.dll": {}
+        }
       }
     }
   },
@@ -1105,26 +1126,12 @@
       "path": "qhta.conversion/2.0.0",
       "hashPath": "qhta.conversion.2.0.0.nupkg.sha512"
     },
-    "Qhta.DispatchedObjects/2.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-/IeXjwJOF0QzNIdyT3csjqouD9w0dmKkm/VNP5lHzoUSyMpoTnMgGbDBftmh40B9Hh/dnV4s03QEXqiCBVAmGw==",
-      "path": "qhta.dispatchedobjects/2.0.0",
-      "hashPath": "qhta.dispatchedobjects.2.0.0.nupkg.sha512"
-    },
     "Qhta.HtmlUtils/2.1.0": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-jN/EcMPo0Hut3Kh4K6pLkozSoTTy6P5Cdgb9nbAp8CUk20tipykCfQUbmtvNteUpGOk0ClE+iuCv39pwooO6Lg==",
       "path": "qhta.htmlutils/2.1.0",
       "hashPath": "qhta.htmlutils.2.1.0.nupkg.sha512"
-    },
-    "Qhta.MVVM/2.6.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-TExrq5qe7FFR6/GlNzsp/tLymLjLs5qPq8BqN01kcjgM8kqeBCzEdY+S0+sFas7s0Iph0lg/h8xeu8F0I8aiJg==",
-      "path": "qhta.mvvm/2.6.0",
-      "hashPath": "qhta.mvvm.2.6.0.nupkg.sha512"
     },
     "Qhta.TestHelper/3.0.0": {
       "type": "package",
@@ -1154,12 +1161,12 @@
       "path": "qhta.wpf.converters/1.2.0",
       "hashPath": "qhta.wpf.converters.1.2.0.nupkg.sha512"
     },
-    "Qhta.WPF.DataGridUtils/1.3.0": {
+    "Qhta.WPF.DataGridUtils/1.5.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Hc25b4/8giokRSmXq9CPwvdHw16ud8pdBlHmaR/zrl6GeGuTvoqwfeHAMvwDUJ/KyS3b2aGueMLXGScXDjiFdg==",
-      "path": "qhta.wpf.datagridutils/1.3.0",
-      "hashPath": "qhta.wpf.datagridutils.1.3.0.nupkg.sha512"
+      "sha512": "sha512-alvW7Si5B9pkj6TQzOaj6Te/29gK09O2ZAXOLmp9QsIe3dBKpKAieOB6vzrGSGrbOITO4BuhWPwayx03iYHSAg==",
+      "path": "qhta.wpf.datagridutils/1.5.0",
+      "hashPath": "qhta.wpf.datagridutils.1.5.0.nupkg.sha512"
     },
     "Qhta.Xml/2.1.0": {
       "type": "package",
@@ -1314,6 +1321,13 @@
       "sha512": "sha512-ztl69Xp0Y/UXCL+3v3tEU+lIy+bvjKNUmopn1wep/a291pVPK7dxBd6T7WnlQqRog+d1a/hSsgRsmFnIBKTPLQ==",
       "path": "system.collections.concurrent/4.3.0",
       "hashPath": "system.collections.concurrent.4.3.0.nupkg.sha512"
+    },
+    "System.Collections.Immutable/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-dQPcs0U1IKnBdRDBkrCTi1FoajSTBzLcVTpjO4MBCMC7f4pDOIPzgBoX8JjG7X6uZRJ8EBxsi8+DR1JuwjnzOQ==",
+      "path": "system.collections.immutable/7.0.0",
+      "hashPath": "system.collections.immutable.7.0.0.nupkg.sha512"
     },
     "System.Collections.NonGeneric/4.3.0": {
       "type": "package",
@@ -1518,6 +1532,13 @@
       "path": "system.runtime/4.3.0",
       "hashPath": "system.runtime.4.3.0.nupkg.sha512"
     },
+    "System.Runtime.CompilerServices.Unsafe/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/iUeP3tq1S0XdNNoMz5C9twLSrM/TH+qElHkXWaPvuNOt+99G75NrV0OS2EqHx5wMN7popYjpc8oTjC1y16DLg==",
+      "path": "system.runtime.compilerservices.unsafe/6.0.0",
+      "hashPath": "system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+    },
     "System.Runtime.Extensions/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -1707,6 +1728,21 @@
       "sha512": ""
     },
     "ModelGenDataConfig/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Qhta.MVVM/3.1.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Qhta.ObservableObjects/2.6.1": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Qhta.WPF.Behaviors/1.4.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

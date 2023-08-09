@@ -101,6 +101,9 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
   [DataGridColumn]
   public string? Description => Model.Description;
 
+  [DataGridColumn]
+  public string? Documentation => Model.Documentation?.ToString();
+
   public TypeSummaryViewModel TypeSummary { get; } = new TypeSummaryViewModel();
 
   protected async void FillTypeSummaryAsync()

@@ -73,7 +73,7 @@ public class ModelValidator
     if (PhaseNum == PPS.ScanTypes)
     {
       if (!typeInfo.IsConstructedGenericType)
-        if (!ValidateSummary(typeInfo))
+        if (!ValidateDescription(typeInfo))
           ok = false;
     }
     if (ok)
@@ -83,10 +83,10 @@ public class ModelValidator
     return ok;
   }
 
-  public bool ValidateSummary(TypeInfo typeInfo)
+  public bool ValidateDescription(TypeInfo typeInfo)
   {
 
-    var description = typeInfo.Description?.Trim();
+    var description = typeInfo.GetDescription()?.Trim();
     if (String.IsNullOrEmpty(description))
     {
       typeInfo.AddErrorMsg(PhaseNum, "Description missing");

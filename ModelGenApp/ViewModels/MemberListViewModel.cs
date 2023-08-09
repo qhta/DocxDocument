@@ -1,5 +1,5 @@
 ﻿namespace ModelGenApp.ViewModels;
-public class MemberListViewModel<T> : DispatchedCollection<T> where T : ViewModel, IAcceptable
+public class MemberListViewModel<T> : ObservableList<T> where T : ViewModel, IAcceptable
 {
   public MemberListViewModel(TypeInfoViewModel owner, string name)
   {
@@ -24,7 +24,7 @@ public class MemberListViewModel<T> : DispatchedCollection<T> where T : ViewMode
 
   public bool Visible => true;
 
-  public new IEnumerable<T> Items
+  public IEnumerable<T> Items
   {
     get
     {

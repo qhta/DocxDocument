@@ -24,7 +24,7 @@ public partial class PhaseProgressView : UserControl
     var instance = (PhaseProgressView)sender;
     var phaseProgressVM = instance.FindResource("PhaseProgressVM") as ViewModels.PhaseProgressViewModel;
     if (phaseProgressVM!=null && !double.IsNaN(instance.ActualHeight) && instance.ActualHeight!=0)
-      DispatcherHelper.Invoke(()=>
+      Dispatcher.CurrentDispatcher.Invoke(()=>
        phaseProgressVM.InnerHeight = (int)((int)arg.NewValue*instance.ActualHeight/100)
       );
   }
