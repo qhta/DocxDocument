@@ -4,7 +4,7 @@ public class TypesConfigViewModel : ModelConfigViewModel
   public TypesConfigViewModel(ModelConfig configData) : base(configData)
   {
     Caption = "Model configuration: types";
-    Types = new DispatchedCollection<TypeConfigViewModel>();
+    Types = new ObservableList<TypeConfigViewModel>();
     Types.CollectionChanged += Types_CollectionChanged;
     Items = Types;
     GetData(configData);
@@ -46,7 +46,7 @@ public class TypesConfigViewModel : ModelConfigViewModel
   }
   #endregion
 
-  public DispatchedCollection<TypeConfigViewModel> Types { get; private set; }
+  public ObservableList<TypeConfigViewModel> Types { get; private set; }
 
   public override void GetData(ModelConfig configData)
   {

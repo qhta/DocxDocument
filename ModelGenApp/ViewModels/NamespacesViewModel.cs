@@ -1,5 +1,5 @@
 ﻿namespace ModelGenApp.ViewModels;
-public class NamespacesViewModel : DispatchedCollection<NamespaceViewModel>
+public class NamespacesViewModel : ObservableList<NamespaceViewModel>
 {
   public NamespacesViewModel(PhaseViewModel phase, NTS namespacesTypeSelector, string? filter)
   {
@@ -18,6 +18,7 @@ public class NamespacesViewModel : DispatchedCollection<NamespaceViewModel>
 
   public void Populate() // We can't populate it asynchronously
   {
+    Clear();
     var namespaces = new List<Namespace>();
     if (NamespacesTypeSelector.HasFlag(NTS.Origin))
       namespaces.AddRange(TypeManager.KnownNamespaces.Where(item => item.Key.StartsWith("DocumentFormat")).Select(item => item.Value));
@@ -25,12 +26,14 @@ public class NamespacesViewModel : DispatchedCollection<NamespaceViewModel>
       namespaces.AddRange(TypeManager.KnownNamespaces.Where(item => item.Key.StartsWith("DocumentModel")).Select(item => item.Value));
     if (NamespacesTypeSelector.HasFlag(NTS.System))
       namespaces.AddRange(TypeManager.KnownNamespaces.Where(item => item.Key.StartsWith("System")).Select(item => item.Value));
+    var viewModels = new List<NamespaceViewModel>();
     foreach (var ns in namespaces)
     {
       var nsVM = new NamespaceViewModel(Phase, ns, Filter);
-      Add(nsVM);
+      viewModels.Add(nsVM);
       nsVM.LoadTypesAsync();
     }
+    AddRange(viewModels);
   }
 
   public bool IsTargetNameVisible => Phase.IsTargetNameVisible;

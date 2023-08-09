@@ -4,12 +4,12 @@ public class PropertiesConfigViewModel : ModelConfigViewModel
   public PropertiesConfigViewModel(ModelConfig configData) : base(configData)
   {
     Caption = "Model configuration: properties";
-    Properties = new DispatchedCollection<PropertyConfigViewModel>();
+    Properties = new ObservableList<PropertyConfigViewModel>();
     Items = Properties;
     GetData(configData);
   }
 
-  public DispatchedCollection<PropertyConfigViewModel> Properties { get; private set; }
+  public ObservableList<PropertyConfigViewModel> Properties { get; private set; }
 
   public override void GetData(ModelConfig configData)
   {

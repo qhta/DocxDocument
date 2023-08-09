@@ -2,17 +2,19 @@
 
 
 /// <summary>
-/// This class adds documentation from model documentation type to types and properties.
+/// This class manages documentation in types and properties.
 /// </summary>
-public class ModelDocumenter
+public class ModelDocsManager
 {
-  public ModelDocumenter(NTS namespaceTypeSelector, MSS typeStatusSelector, string modelDocFilename)
+  public ModelDocsManager(PPS phaseNum, NTS namespaceTypeSelector, MSS typeStatusSelector, string modelDocFilename)
   {
+    PhaseNum = phaseNum;
     NamespaceTypeSelector = namespaceTypeSelector;
     TypeStatusSelector = typeStatusSelector;
     ModelDoc.Instance.LoadData(modelDocFilename);
   }
 
+  public PPS PhaseNum { get; private set; }
   public NTS NamespaceTypeSelector { get; private set; }
   public MSS TypeStatusSelector { get; private set; }
 
@@ -26,7 +28,7 @@ public class ModelDocumenter
 
   public event ProgressTypeEvent? OnDocumentingType;
 
-  public int DocumentTypes(PPS phaseNum)
+  public int DocumentTypes()
   {
     var nspaces = TypeManager.GetNamespaces(NamespaceTypeSelector);
     List<TypeInfo> types = new List<TypeInfo>();
@@ -35,8 +37,8 @@ public class ModelDocumenter
       var nSpaceTypes = TypeManager.GetNamespaceTypes(nspace).ToList();
       if (TypeStatusSelector.HasFlag(MSS.Accepted) || TypeStatusSelector.HasFlag(MSS.Rejected))
         nSpaceTypes = nSpaceTypes.Where(item =>
-          TypeStatusSelector.HasFlag(MSS.Accepted) && item.IsAcceptedAfter(phaseNum)
-          || TypeStatusSelector.HasFlag(MSS.Rejected) && item.IsRejectedAfter(phaseNum)).ToList();
+          TypeStatusSelector.HasFlag(MSS.Accepted) && item.IsAcceptedAfter(PhaseNum)
+          || TypeStatusSelector.HasFlag(MSS.Rejected) && item.IsRejectedAfter(PhaseNum)).ToList();
       types.AddRange(nSpaceTypes);
     }
     TotalTypesCount = types.Count();
@@ -51,7 +53,7 @@ public class ModelDocumenter
   public bool DocumentSingleType(TypeInfo typeInfo)
   {
     CheckedTypesCount++;
-    OnDocumentingType?.Invoke( new ProgressTypeInfo
+    OnDocumentingType?.Invoke(new ProgressTypeInfo
     {
       CheckedTypes = CheckedTypesCount,
       ProcessedTypes = DocumentedTypesCount,
@@ -59,7 +61,9 @@ public class ModelDocumenter
     });
     var ok = true;
     if (!typeInfo.IsConstructedGenericType)
+    {
       ok = TryAddTypeDocumentation(typeInfo);
+    }
     if (ok)
       DocumentedTypesCount++;
     return ok;
@@ -104,9 +108,6 @@ public class ModelDocumenter
     var ok = false;
     if (typeDoc.Summary != null && typeDoc.Summary.Any())
     {
-      //var documentation = typeInfo.Documentation;
-      //if (documentation == null)
-      //  typeInfo.Documentation = documentation = new ElementDocs();
       if (typeDoc.Summary.Count == 1)
       {
         typeInfo.Description = typeDoc.Summary.First();
@@ -114,7 +115,11 @@ public class ModelDocumenter
       }
       else
       {
-        typeInfo.Summary = typeDoc.Summary;
+        var documentation = typeInfo.Documentation;
+        if (documentation == null)
+          typeInfo.Documentation = documentation = new ElementDocs();
+        foreach (var str in typeDoc.Summary)
+          documentation.Add(new XElement("para", str));
         ok = true;
       }
       if (TrySetPropertiesDocumentation(typeInfo, typeDoc))
@@ -167,7 +172,6 @@ public class ModelDocumenter
     var ok = false;
     if (propDoc.Summary != null && propDoc.Summary.Any())
     {
-      var documentation = propInfo.GetDocumentation();
       if (propDoc.Summary.Count == 1)
       {
         propInfo.Description = propDoc.Summary.First();
@@ -175,11 +179,97 @@ public class ModelDocumenter
       }
       else
       {
-        propInfo.Summary = propDoc.Summary;
+        var documentation = propInfo.Documentation;
+        if (documentation == null)
+          propInfo.Documentation = documentation = new ElementDocs();
+        foreach (var str in propDoc.Summary)
+          documentation.Add(new XElement("para", str));
         ok = true;
       }
+
     }
     return ok;
+  }
+
+  public static string? GetDescription(ModelElement element)
+  {
+    if (!String.IsNullOrEmpty(element.Description))
+    {
+      return element.Description;
+    }
+    if (element.Documentation != null && !element.Documentation.IsEmpty)
+    {
+      var summary = element.Documentation.FirstOrDefault(item => item.Name == "summary");
+      if (summary != null)
+        return GetDescription(summary);
+      var remarks = element.Documentation.FirstOrDefault(item => item.Name == "remarks");
+      if (remarks != null)
+        return GetDescription(remarks);
+    }
+    return null;
+  }
+
+  public static string? GetDescription(XElement element)
+  {
+    if (element.HasElements)
+    {
+      var firstParas = new List<XElement>();
+      foreach (var item in element.Elements())
+      {
+        if (item.Name == "para")
+          firstParas.Add(item);
+        else
+          break;
+      }
+      return string.Join("", firstParas.Select(item => item.Value));
+    }
+    else
+    {
+      var str = element.Value.Trim();
+      if (!string.IsNullOrEmpty(str))
+        return str;
+      return null;
+    }
+  }
+
+  public static IEnumerable<XElement>? GetDocumentation(ModelElement element)
+  {
+    if (!String.IsNullOrEmpty(element.Description) && element.Documentation != null && !element.Documentation.IsEmpty)
+    {
+      XElement summary;
+      var oldSummary = element.Documentation.FirstOrDefault(item => item.Name == "summary");
+      if (oldSummary != null)
+      {
+        summary = new XElement("summary");
+        summary.Add(new XElement("para", element.Description));
+        if (oldSummary.HasElements)
+          foreach (var subItem in oldSummary.Elements())
+            summary.Add(subItem);
+        else
+        {
+          var text = oldSummary.Value.Trim();
+          if (!String.IsNullOrEmpty(text))
+            summary.Add(new XElement("para", text));
+        }
+      }
+      else
+        summary = new XElement("summary", element.Description);
+      var documentation = new List<XElement>();
+      documentation.Add(summary);
+      foreach (var item in element.Documentation)
+        if (item != oldSummary)
+          documentation.Add(item);
+      return documentation;
+    }
+    if (!String.IsNullOrEmpty(element.Description))
+    {
+      var documentation = new List<XElement>();
+      documentation.Add(new XElement("summary", element.Description));
+      return documentation;
+    }
+    if (element.Documentation != null && !element.Documentation.IsEmpty)
+      return element.Documentation;
+    return null;
   }
 
   public void SaveErrors()

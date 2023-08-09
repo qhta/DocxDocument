@@ -58,7 +58,18 @@ public class PropInfo : ModelElement
   public Constraints? Constraints { get; set; }
 
   /// <summary>
-  /// Xml documentation assigned to this element.
+  /// String description assigned to this element or to target type.
+  /// </summary>
+  public override string? GetDescription()
+  {
+    var result = base.GetDescription();
+    if (result==null)
+      return TargetType?.GetDescription();
+    return result;
+  }
+
+  /// <summary>
+  /// Xml documentation assigned to this element or to target type.
   /// </summary>
   public override IEnumerable<XElement>? GetDocumentation()
   {
@@ -98,7 +109,7 @@ public class PropInfo : ModelElement
       SetRejected(PPS.ScanTypes);
     var xmlDocsElement = propertyInfo.GetXmlDocsElement();
     if (xmlDocsElement != null)
-      DocumentationReader.ParseDocumentation(this, xmlDocsElement);
+      CommentDocsParser.ParseDocumentation(this, xmlDocsElement);
     if (propertyInfo.CustomAttributes.Any())
     {
       if (CustomAttributes == null)

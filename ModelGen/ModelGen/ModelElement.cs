@@ -45,17 +45,17 @@ public class ModelElement : IOwnedElement
   /// <summary>
   /// Specifies whether the element is accepted to processing in specific phase
   /// </summary>
-  public bool IsAcceptedTo(PPS phase) => RejectedAfterPhase == PPS.None || RejectedAfterPhase>=phase;
+  public bool IsAcceptedTo(PPS phase) => RejectedAfterPhase == PPS.None || RejectedAfterPhase >= phase;
 
   /// <summary>
   /// Specifies whether the element is accepted to further processing after specific phase
   /// </summary>
-  public bool IsAcceptedAfter(PPS phase) => RejectedAfterPhase == PPS.None || RejectedAfterPhase>phase;
+  public bool IsAcceptedAfter(PPS phase) => RejectedAfterPhase == PPS.None || RejectedAfterPhase > phase;
 
   /// <summary>
   /// Specifies whether the element is rejected from further processing after specific phase
   /// </summary>
-  public bool IsRejectedAfter(PPS phase) => RejectedAfterPhase != PPS.None && RejectedAfterPhase<=phase;
+  public bool IsRejectedAfter(PPS phase) => RejectedAfterPhase != PPS.None && RejectedAfterPhase <= phase;
 
   /// <summary>
   /// Sets <see cref="RejectedAfterPhase"/> to the specific phase.
@@ -87,19 +87,19 @@ public class ModelElement : IOwnedElement
   public bool IsUnused { get => Used == false; set { if (value) Used = false; else Used = true; } }
 
   public bool IsValid(PPS pps)
-  { 
+  {
     //DocumentFormat.OpenXml.OpenXmlLeafTextElement
 
-    var result = Errors?.Where(item=>item.Item1== pps).Any()!=true;
+    var result = Errors?.Where(item => item.Item1 == pps).Any() != true;
     if (!result)
       return false;
     return true;
   }
-  public Collection<(PPS, string)>? Errors { get; private set;}
+  public Collection<(PPS, string)>? Errors { get; private set; }
 
   public void AddErrorMsg(PPS pps, string message)
   {
-    if (Errors==null)
+    if (Errors == null)
       Errors = new Collection<(PPS, string)>();
     Errors.Add((pps, message));
   }
@@ -136,29 +136,24 @@ public class ModelElement : IOwnedElement
   /// <summary>
   /// Multi-paragraph description.
   /// </summary>
-  public Summary? Summary { get; set; }
+  public ElementDocs? Documentation { get; set; }
 
   /// <summary>
-  /// Gets a collection of XElement from <see cref="Description"/> and <see cref="Summary"/>.
+  /// Gets a string of <see cref="Description"/> or <see cref="Documentation"/>.
+  /// </summary>
+  /// <returns></returns>
+  public virtual string? GetDescription()
+  {
+    return ModelDocsManager.GetDescription(this);
+  }
+
+  /// <summary>
+  /// Gets a collection of XElement from <see cref="Description"/> and <see cref="Documentation"/>.
   /// </summary>
   /// <returns></returns>
   public virtual IEnumerable<XElement>? GetDocumentation()
   {
-    //DocumentFormat.OpenXml.OpenXmlComparableSimpleValue
-    if (String.IsNullOrEmpty(Description) && (Summary == null || Summary.IsEmpty))
-      return null;
-    var documentation = new Collection<XElement>();
-    XElement? summary = null;
-    if (this.Description != null)
-      documentation.Add(summary = new XElement("summary", this.Description));
-    if (this.Summary != null)
-    {
-      if (summary == null)
-        documentation.Add(summary = new XElement("summary"));
-      foreach (var item in this.Summary)
-        summary.Add(new XElement("para", item));
-    }
-    return documentation;
+    return ModelDocsManager.GetDocumentation(this);
   }
 
   /// <summary>

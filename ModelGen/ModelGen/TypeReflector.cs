@@ -160,7 +160,7 @@ public static class TypeReflector
 
     var xmlDocsElement = type.GetXmlDocsElement();
     if (xmlDocsElement != null)
-      DocumentationReader.ParseDocumentation(typeInfo, xmlDocsElement);
+      CommentDocsParser.ParseDocumentation(typeInfo, xmlDocsElement);
 
     OpenXmlMetadataReader.GetOpenXmlElementSchema(typeInfo);
 

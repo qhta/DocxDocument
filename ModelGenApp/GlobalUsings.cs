@@ -20,7 +20,7 @@ global using System.Xml;
 
 global using Qhta.Collections;
 global using Qhta.MVVM;
-global using Qhta.DispatchedObjects;
+global using Qhta.ObservableObjects;
 global using Qhta.TextUtils;
 global using Qhta.TypeUtils;
 global using Qhta.Xml.Serialization;

@@ -23,11 +23,15 @@ public class TypeListViewModel : ViewModel
     Namespace = nspace;
     Name = name;
     TypeNameSelector = typeNameSelector;
-    Items.AddRange(list);
+    AddRange(list);
     Phase = phase;
     ShowDetailsCommand = new RelayCommand(ShowDetailsExecute, ShowDetailsCanExecute) { Name = "ShowDetailsCommand" };
   }
 
+  protected virtual void AddRange(IEnumerable<TypeInfoViewModel> list)
+  {
+     (Items as ObservableList<TypeInfoViewModel>)?.AddRange(list);
+  }
   public NamespaceViewModel? Namespace { get; private set; }
 
   public string Name { get; private set; }
@@ -49,7 +53,7 @@ public class TypeListViewModel : ViewModel
 
   public int Count => Items.Count;
 
-  public virtual IList Items { get; } = new DispatchedCollection<TypeInfoViewModel>();
+  public virtual IList Items { get; } = new ObservableList<TypeInfoViewModel>();
 
   public IEnumerable<TypeInfoViewModel> Types => Items.Cast<TypeInfoViewModel>();
 
@@ -81,19 +85,19 @@ public class TypeListViewModel : ViewModel
   {
     Items.Clear();
     if (TypeKindSelector != TKS.Any)
-      Items.AddRange(types.Where(item => item.IsTypeKindSelected(TypeKindSelector))
+      AddRange(types.Where(item => item.IsTypeKindSelected(TypeKindSelector))
       .Select(item => CreateItemViewModel(item, Phase)));
     else
-      Items.AddRange(types.Select(item => CreateItemViewModel(item, Phase)));
+      AddRange(types.Select(item => CreateItemViewModel(item, Phase)));
   }
 
   public void FilterItems(IEnumerable<TypeInfoViewModel> types)
   {
     Items.Clear();
     if (TypeKindSelector != TKS.Any)
-      Items.AddRange(types.Where(item => item.IsTypeKindSelected(TypeKindSelector)));
+      AddRange(types.Where(item => item.IsTypeKindSelected(TypeKindSelector)));
     else
-      Items.AddRange(types);
+      AddRange(types);
   }
 
   protected virtual TypeInfoViewModel CreateItemViewModel(TypeInfo item, PhaseViewModel phase)
