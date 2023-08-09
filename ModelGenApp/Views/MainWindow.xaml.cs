@@ -9,9 +9,9 @@ public partial class MainWindow : Window
 {
   public MainWindow()
   {
-    InitializeComponent();
     ObservableObject.CommonDispatcher = new DispatcherBridge(Dispatcher.CurrentDispatcher);
     Command.CanExecuteChangedListener = new CommandManagerBridge();
+    InitializeComponent();
     MainViewModel = new MainViewModel();
     DataContext = MainViewModel;
     var modelDataFilename = ModelConfig.Instance.GetFilename();
