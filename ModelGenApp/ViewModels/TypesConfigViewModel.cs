@@ -3,7 +3,7 @@ public class TypesConfigViewModel : ModelConfigViewModel
 {
   public TypesConfigViewModel(ModelConfig configData) : base(configData)
   {
-    Caption = "Model configuration: types";
+    Caption = CommonStrings.ModelConfiguration_+" "+CommonStrings.Types.ToLower();
     Types = new ObservableList<TypeConfigViewModel>();
     Types.CollectionChanged += Types_CollectionChanged;
     Items = Types;
@@ -111,7 +111,7 @@ public class TypesConfigViewModel : ModelConfigViewModel
     }
   }
 
-  public override bool ValidateData(ModelConfig configData)
+  public override bool ValidateData()
   {
     var ok = true;
     return ok;

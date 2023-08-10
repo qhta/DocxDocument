@@ -10,7 +10,7 @@ public class EnumTypeInfoViewModel : TypeInfoViewModel
         EnumValues.Add(new EnumInfoViewModel(phase, enumVal, typeNameSelector));
   }
 
-  [DataGridColumn(ResourceDataTemplateKey = "CountColumnTemplate",
+  [DataGridColumn(DataTemplateResourceKey = "CountColumnTemplate",
     SortMemberPath = "EnumValues.Count", ClipboardContentPath = "EnumValues.Count",
     DisplayIndex = 3, Header = "Enum vals")]
   public EnumListViewModel EnumValues { get; set; }

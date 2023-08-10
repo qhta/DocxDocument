@@ -7,7 +7,7 @@ public class ClassInfoViewModel : TypeInfoViewModel
     Properties = new PropListViewModel(this, "Properties");
   }
 
-  [DataGridColumn(ResourceDataTemplateKey = "CountColumnTemplate",
+  [DataGridColumn(DataTemplateResourceKey = "CountColumnTemplate",
     SortMemberPath = "Properties.Count", ClipboardContentPath = "Properties.Count",
     DisplayIndex = 3)]
   public PropListViewModel Properties { get; set; }

@@ -204,6 +204,19 @@
           "lib/netstandard2.0/Qhta.HtmlUtils.dll": {}
         }
       },
+      "Qhta.MVVM/3.3.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Qhta.ObservableObjects": "2.6.1"
+        },
+        "compile": {
+          "bin/placeholder/Qhta.MVVM.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Qhta.MVVM.dll": {}
+        }
+      },
       "Qhta.TestHelper/3.0.0": {
         "type": "package",
         "compile": {
@@ -246,7 +259,7 @@
           }
         }
       },
-      "Qhta.WPF.Converters/1.2.0": {
+      "Qhta.WPF.Converters/1.3.1": {
         "type": "package",
         "dependencies": {
           "Qhta.TextUtils": "3.1.1",
@@ -259,27 +272,6 @@
         },
         "runtime": {
           "lib/net6.0-windows7.0/Qhta.WPF.Converters.dll": {
-            "related": ".xml"
-          }
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WPF"
-        ]
-      },
-      "Qhta.WPF.DataGridUtils/1.5.0": {
-        "type": "package",
-        "dependencies": {
-          "Qhta.MVVM": "2.6.0",
-          "Qhta.TextUtils": "3.1.1",
-          "Qhta.TypeUtils": "1.3.10.1"
-        },
-        "compile": {
-          "lib/net6.0-windows7.0/Qhta.WPF.DataGridUtils.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0-windows7.0/Qhta.WPF.DataGridUtils.dll": {
             "related": ".xml"
           }
         },
@@ -1735,19 +1727,6 @@
           "bin/placeholder/ModelGenDataConfig.dll": {}
         }
       },
-      "Qhta.MVVM/3.1.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Qhta.ObservableObjects": "2.6.1"
-        },
-        "compile": {
-          "bin/placeholder/Qhta.MVVM.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Qhta.MVVM.dll": {}
-        }
-      },
       "Qhta.ObservableObjects/2.6.1": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -1766,7 +1745,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "Qhta.MVVM": "3.1.0",
+          "Qhta.MVVM": "3.3.0",
           "Qhta.ObservableObjects": "2.6.1"
         },
         "compile": {
@@ -1774,6 +1753,24 @@
         },
         "runtime": {
           "bin/placeholder/Qhta.WPF.Behaviors.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "Qhta.WPF.DataGridUtils/1.6.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Qhta.MVVM": "3.3.0",
+          "Qhta.TextUtils": "3.1.1",
+          "Qhta.TypeUtils": "1.3.10.1"
+        },
+        "compile": {
+          "bin/placeholder/Qhta.WPF.DataGridUtils.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Qhta.WPF.DataGridUtils.dll": {}
         },
         "frameworkReferences": [
           "Microsoft.WindowsDesktop.App.WPF"
@@ -2091,6 +2088,11 @@
         "qhta.htmlutils.nuspec"
       ]
     },
+    "Qhta.MVVM/3.3.0": {
+      "type": "project",
+      "path": "../../MyLib/Qhta.MVVM/Qhta.MVVM.csproj",
+      "msbuildProject": "../../MyLib/Qhta.MVVM/Qhta.MVVM.csproj"
+    },
     "Qhta.TestHelper/3.0.0": {
       "sha512": "bZfG6c38uAORKjTytJ22GZ0ZgMU4QE0jYVEe/eXYlfHh1DeSnKZpBJi+F9RoU9kowwUWA76U9vY90YTrUOs3og==",
       "type": "package",
@@ -2140,31 +2142,18 @@
         "readme.md"
       ]
     },
-    "Qhta.WPF.Converters/1.2.0": {
-      "sha512": "NyQtXCsqQ2z3cVc4FGK3KIgWvp8zKs5rGJtHpgp8rd5Q6zMcaQ/so9H6cSfzhsBUO2vgpGurMeFCb3NywsHahA==",
+    "Qhta.WPF.Converters/1.3.1": {
+      "sha512": "Q3TUnTD3JBxb/RFl9yHu/WA4NYl/VY1gzXCheBbC5wSbF61fQNPMBAKl7iFjirRPNH0CGfULuSIVDy0rZyF/dg==",
       "type": "package",
-      "path": "qhta.wpf.converters/1.2.0",
+      "path": "qhta.wpf.converters/1.3.1",
       "files": [
         ".nupkg.metadata",
         "lib/net6.0-windows7.0/Qhta.WPF.Converters.dll",
         "lib/net6.0-windows7.0/Qhta.WPF.Converters.xml",
         "lib/net7.0-windows7.0/Qhta.WPF.Converters.dll",
         "lib/net7.0-windows7.0/Qhta.WPF.Converters.xml",
-        "qhta.wpf.converters.1.2.0.nupkg.sha512",
+        "qhta.wpf.converters.1.3.1.nupkg.sha512",
         "qhta.wpf.converters.nuspec",
-        "readme.md"
-      ]
-    },
-    "Qhta.WPF.DataGridUtils/1.5.0": {
-      "sha512": "alvW7Si5B9pkj6TQzOaj6Te/29gK09O2ZAXOLmp9QsIe3dBKpKAieOB6vzrGSGrbOITO4BuhWPwayx03iYHSAg==",
-      "type": "package",
-      "path": "qhta.wpf.datagridutils/1.5.0",
-      "files": [
-        ".nupkg.metadata",
-        "lib/net6.0-windows7.0/Qhta.WPF.DataGridUtils.dll",
-        "lib/net6.0-windows7.0/Qhta.WPF.DataGridUtils.xml",
-        "qhta.wpf.datagridutils.1.5.0.nupkg.sha512",
-        "qhta.wpf.datagridutils.nuspec",
         "readme.md"
       ]
     },
@@ -5436,11 +5425,6 @@
       "path": "../ModelGenDataConfig/ModelGenDataConfig.csproj",
       "msbuildProject": "../ModelGenDataConfig/ModelGenDataConfig.csproj"
     },
-    "Qhta.MVVM/3.1.0": {
-      "type": "project",
-      "path": "../../MyLib/Qhta.MVVM/Qhta.MVVM.csproj",
-      "msbuildProject": "../../MyLib/Qhta.MVVM/Qhta.MVVM.csproj"
-    },
     "Qhta.ObservableObjects/2.6.1": {
       "type": "project",
       "path": "../../MyLib/Qhta.ObservableObjects/Qhta.ObservableObjects.csproj",
@@ -5450,19 +5434,24 @@
       "type": "project",
       "path": "../../MyLib/Qhta.WPF.Behaviors/Qhta.WPF.Behaviors.csproj",
       "msbuildProject": "../../MyLib/Qhta.WPF.Behaviors/Qhta.WPF.Behaviors.csproj"
+    },
+    "Qhta.WPF.DataGridUtils/1.6.0": {
+      "type": "project",
+      "path": "../../MyLib/Qhta.WPF.DataGridUtils/Qhta.WPF.DataGridUtils.csproj",
+      "msbuildProject": "../../MyLib/Qhta.WPF.DataGridUtils/Qhta.WPF.DataGridUtils.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0-windows7.0": [
       "ModelGen >= 1.0.0",
       "Qhta.HtmlUtils >= 2.1.0",
-      "Qhta.MVVM >= 3.1.0",
+      "Qhta.MVVM >= 3.3.0",
       "Qhta.ObservableObjects >= 2.6.1",
       "Qhta.TextUtils >= 3.1.1",
       "Qhta.TypeUtils >= 1.3.10.1",
       "Qhta.WPF.Behaviors >= 1.4.0",
-      "Qhta.WPF.Converters >= 1.2.0",
-      "Qhta.WPF.DataGridUtils >= 1.5.0"
+      "Qhta.WPF.Converters >= 1.3.1",
+      "Qhta.WPF.DataGridUtils >= 1.6.0"
     ]
   },
   "packageFolders": {
@@ -5509,6 +5498,9 @@
             },
             "D:\\VS\\Projects\\MyLib\\Qhta.WPF.Behaviors\\Qhta.WPF.Behaviors.csproj": {
               "projectPath": "D:\\VS\\Projects\\MyLib\\Qhta.WPF.Behaviors\\Qhta.WPF.Behaviors.csproj"
+            },
+            "D:\\VS\\Projects\\MyLib\\Qhta.WPF.DataGridUtils\\Qhta.WPF.DataGridUtils.csproj": {
+              "projectPath": "D:\\VS\\Projects\\MyLib\\Qhta.WPF.DataGridUtils\\Qhta.WPF.DataGridUtils.csproj"
             }
           }
         }
@@ -5537,11 +5529,7 @@
           },
           "Qhta.WPF.Converters": {
             "target": "Package",
-            "version": "[1.2.0, )"
-          },
-          "Qhta.WPF.DataGridUtils": {
-            "target": "Package",
-            "version": "[1.5.0, )"
+            "version": "[1.3.1, )"
           }
         },
         "imports": [

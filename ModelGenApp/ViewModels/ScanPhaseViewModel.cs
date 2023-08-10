@@ -2,7 +2,7 @@
 
 public class ScanPhaseViewModel: PhaseViewModel
 {
-  public ScanPhaseViewModel(string name): base (PPS.ScanTypes, name)
+  public ScanPhaseViewModel(string name): base (PPS.ScanSource, name)
   { 
     NamespaceTypeSelector = NTS.Origin | NTS.System;
   }

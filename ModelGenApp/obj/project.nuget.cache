@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "5nqTZHHfN8QTK4M5SpizhV6m74ienFDuqE5673AQGBSq7Aw5fVFZon+B1tHYRKKmQ72EhOqUERVfMPXZ/3Jhiw==",
+  "dgSpecHash": "rIsOK62koicJdcxHGbDmtsprAmpaX4RE3trhGhmhwvqln/hfi53G+1hxT9RDwlAkkNoOtbkC3mJyRhvpbossgA==",
   "success": true,
   "projectFilePath": "D:\\VS\\Projects\\DocxDocument\\ModelGenApp\\ModelGenApp.csproj",
   "expectedPackageFiles": [
@@ -17,11 +17,11 @@
     "C:\\Users\\qhta1\\.nuget\\packages\\qhta.collections\\4.0.0\\qhta.collections.4.0.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\qhta.conversion\\2.0.0\\qhta.conversion.2.0.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\qhta.htmlutils\\2.1.0\\qhta.htmlutils.2.1.0.nupkg.sha512",
+    "C:\\Users\\qhta1\\.nuget\\packages\\qhta.mvvm\\3.3.0\\qhta.mvvm.3.3.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\qhta.testhelper\\3.0.0\\qhta.testhelper.3.0.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\qhta.textutils\\3.1.1\\qhta.textutils.3.1.1.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\qhta.typeutils\\1.3.10.1\\qhta.typeutils.1.3.10.1.nupkg.sha512",
-    "C:\\Users\\qhta1\\.nuget\\packages\\qhta.wpf.converters\\1.2.0\\qhta.wpf.converters.1.2.0.nupkg.sha512",
-    "C:\\Users\\qhta1\\.nuget\\packages\\qhta.wpf.datagridutils\\1.5.0\\qhta.wpf.datagridutils.1.5.0.nupkg.sha512",
+    "C:\\Users\\qhta1\\.nuget\\packages\\qhta.wpf.converters\\1.3.1\\qhta.wpf.converters.1.3.1.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\qhta.xml\\2.1.0\\qhta.xml.2.1.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\qhta.xml.reflection\\2.0.0\\qhta.xml.reflection.2.0.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\qhta.xml.serialization\\2.3.0\\qhta.xml.serialization.2.3.0.nupkg.sha512",
@@ -99,8 +99,8 @@
     "C:\\Users\\qhta1\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\system.xml.xpath\\4.3.0\\system.xml.xpath.4.3.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\system.xml.xpath.xmldocument\\4.3.0\\system.xml.xpath.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\qhta1\\.nuget\\packages\\qhta.mvvm\\3.1.0\\qhta.mvvm.3.1.0.nupkg.sha512",
-    "C:\\Users\\qhta1\\.nuget\\packages\\qhta.observableobjects\\2.6.1\\qhta.observableobjects.2.6.1.nupkg.sha512"
+    "C:\\Users\\qhta1\\.nuget\\packages\\qhta.observableobjects\\2.6.1\\qhta.observableobjects.2.6.1.nupkg.sha512",
+    "C:\\Users\\qhta1\\.nuget\\packages\\qhta.wpf.datagridutils\\1.6.0\\qhta.wpf.datagridutils.1.6.0.nupkg.sha512"
   ],
   "logs": []
 }

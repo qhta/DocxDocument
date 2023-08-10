@@ -106,7 +106,7 @@ public class PropInfo : ModelElement
       IsReadonly = true;
 
     if (ModelConfig.Instance.ExcludedProperties.Contains(propertyInfo.Name))
-      SetRejected(PPS.ScanTypes);
+      SetRejected(PPS.ScanSource);
     var xmlDocsElement = propertyInfo.GetXmlDocsElement();
     if (xmlDocsElement != null)
       CommentDocsParser.ParseDocumentation(this, xmlDocsElement);
@@ -122,7 +122,7 @@ public class PropInfo : ModelElement
   public PropInfo(string name, TypeInfo typeInfo) : this(name, typeInfo.Type)
   {
     if (ModelConfig.Instance.ExcludedProperties.Contains(typeInfo.Name))
-      SetRejected(PPS.ScanTypes);
+      SetRejected(PPS.ScanSource);
   }
 
   public override string ToString() => $"Prop({Name}: {PropertyType})"

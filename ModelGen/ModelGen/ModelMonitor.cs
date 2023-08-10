@@ -504,8 +504,8 @@ public abstract class ModelMonitor
       attribs.Add($" minLength=\"{stringConstraint.MinLength}\"");
     if (stringConstraint.MaxLength != null)
       attribs.Add($" minLength=\"{stringConstraint.MaxLength}\"");
-    if (stringConstraint.Length != null)
-      attribs.Add($" length=\"{stringConstraint.Length}\"");
+    if (stringConstraint.FixLength != null)
+      attribs.Add($" length=\"{stringConstraint.FixLength}\"");
     if (stringConstraint.Regex != null)
       attribs.Add($" regex=\"{stringConstraint.Regex}\"");
     if (stringConstraint.XsdType != null)

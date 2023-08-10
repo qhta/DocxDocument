@@ -61,20 +61,371 @@ namespace ModelGenApp {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Excluded types are included even if their namespaces are included..
+        ///   Looks up a localized string similar to Add docs.
         /// </summary>
-        public static string ExcludedTypeToolTip {
+        public static string AddDocs {
             get {
-                return ResourceManager.GetString("ExcludedTypeToolTip", resourceCulture);
+                return ResourceManager.GetString("AddDocs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        public static string Cancel {
+            get {
+                return ResourceManager.GetString("Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Configuration.
+        /// </summary>
+        public static string Config {
+            get {
+                return ResourceManager.GetString("Config", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Excluded.
+        /// </summary>
+        public static string ExcludedNamespace {
+            get {
+                return ResourceManager.GetString("ExcludedNamespace", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Excluded namespace is rejected from scanning..
+        /// </summary>
+        public static string ExcludedNamespaceTooltip {
+            get {
+                return ResourceManager.GetString("ExcludedNamespaceTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Excluded types are rejected even if their namespaces are included..
+        /// </summary>
+        public static string ExcludedTypeTooltip {
+            get {
+                return ResourceManager.GetString("ExcludedTypeTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to File with docs.
+        /// </summary>
+        public static string FileWithDocs {
+            get {
+                return ResourceManager.GetString("FileWithDocs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This is XML file with types and properties descriptions. It should be prepared by an external tool..
+        /// </summary>
+        public static string FileWithDocsTooltip {
+            get {
+                return ResourceManager.GetString("FileWithDocsTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You can use or omit adding docs from file..
+        /// </summary>
+        public static string FileWithDocsUseTooltip {
+            get {
+                return ResourceManager.GetString("FileWithDocsUseTooltip", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Included types are accepted even if their namespaces are excluded..
         /// </summary>
-        public static string IncludedTypeToolTip {
+        public static string IncludedTypeTooltip {
             get {
-                return ResourceManager.GetString("IncludedTypeToolTip", resourceCulture);
+                return ResourceManager.GetString("IncludedTypeTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Document model generator.
+        /// </summary>
+        public static string MainWindowTitle {
+            get {
+                return ResourceManager.GetString("MainWindowTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Meaningless description.
+        /// </summary>
+        public static string MeaninglessDescription {
+            get {
+                return ResourceManager.GetString("MeaninglessDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Missing description.
+        /// </summary>
+        public static string MissingDescription {
+            get {
+                return ResourceManager.GetString("MissingDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Model configuration:.
+        /// </summary>
+        public static string ModelConfiguration_ {
+            get {
+                return ResourceManager.GetString("ModelConfiguration_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Model configuration is invalid. See marks in the table..
+        /// </summary>
+        public static string ModelConfigurationIsInvalid {
+            get {
+                return ResourceManager.GetString("ModelConfigurationIsInvalid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Model configuration reloaded from {0}.
+        /// </summary>
+        public static string ModelConfigurationReloadedFrom_1 {
+            get {
+                return ResourceManager.GetString("ModelConfigurationReloadedFrom_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Model configuration saved in {0}.
+        /// </summary>
+        public static string ModelConfigurationSaved_1 {
+            get {
+                return ResourceManager.GetString("ModelConfigurationSaved_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Owner namespace hase multiple types with the same name..
+        /// </summary>
+        public static string MultiplicatedName {
+            get {
+                return ResourceManager.GetString("MultiplicatedName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Namespaces.
+        /// </summary>
+        public static string Namespaces {
+            get {
+                return ResourceManager.GetString("Namespaces", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No error.
+        /// </summary>
+        public static string NoError {
+            get {
+                return ResourceManager.GetString("NoError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Original name.
+        /// </summary>
+        public static string OriginalName {
+            get {
+                return ResourceManager.GetString("OriginalName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Original name is a name read from source..
+        /// </summary>
+        public static string OriginalNameTooltip {
+            get {
+                return ResourceManager.GetString("OriginalNameTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Process phases:.
+        /// </summary>
+        public static string ProcessPhases_ {
+            get {
+                return ResourceManager.GetString("ProcessPhases_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Properties.
+        /// </summary>
+        public static string Properties {
+            get {
+                return ResourceManager.GetString("Properties", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rename.
+        /// </summary>
+        public static string Rename {
+            get {
+                return ResourceManager.GetString("Rename", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save.
+        /// </summary>
+        public static string Save {
+            get {
+                return ResourceManager.GetString("Save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save results.
+        /// </summary>
+        public static string SaveResults {
+            get {
+                return ResourceManager.GetString("SaveResults", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Scan source.
+        /// </summary>
+        public static string ScanSource {
+            get {
+                return ResourceManager.GetString("ScanSource", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Shortcut.
+        /// </summary>
+        public static string Shortcut {
+            get {
+                return ResourceManager.GetString("Shortcut", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Duplicated shortcut.
+        /// </summary>
+        public static string ShortcutErrorMsg {
+            get {
+                return ResourceManager.GetString("ShortcutErrorMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Shortcut replaces its name (if shortcuts are enabled)..
+        /// </summary>
+        public static string ShortcutTooltip {
+            get {
+                return ResourceManager.GetString("ShortcutTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show results.
+        /// </summary>
+        public static string ShowResults {
+            get {
+                return ResourceManager.GetString("ShowResults", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start.
+        /// </summary>
+        public static string Start {
+            get {
+                return ResourceManager.GetString("Start", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Target name.
+        /// </summary>
+        public static string TargetName {
+            get {
+                return ResourceManager.GetString("TargetName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Target name is a name written to output..
+        /// </summary>
+        public static string TargetNameTooltip {
+            get {
+                return ResourceManager.GetString("TargetNameTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Target shortcut.
+        /// </summary>
+        public static string TargetShortcut {
+            get {
+                return ResourceManager.GetString("TargetShortcut", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Target shortcuts must be different in different target names..
+        /// </summary>
+        public static string TargetShortcutErrorMsg {
+            get {
+                return ResourceManager.GetString("TargetShortcutErrorMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Target shortcut replaces target name (if shortcuts are enabled)..
+        /// </summary>
+        public static string TargetShortcutTooltip {
+            get {
+                return ResourceManager.GetString("TargetShortcutTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Types.
+        /// </summary>
+        public static string Types {
+            get {
+                return ResourceManager.GetString("Types", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Type to scan.
+        /// </summary>
+        public static string TypeToScan {
+            get {
+                return ResourceManager.GetString("TypeToScan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This is the main type where scan begins. Its property types and item types are scanned next..
+        /// </summary>
+        public static string TypeToScanTooltip {
+            get {
+                return ResourceManager.GetString("TypeToScanTooltip", resourceCulture);
             }
         }
     }

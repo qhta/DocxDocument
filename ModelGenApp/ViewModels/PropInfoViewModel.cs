@@ -29,7 +29,7 @@ public class PropInfoViewModel : ViewModel<PropInfo>, IAcceptable
     }
   }
 
-  [DataGridColumn(ResourceDataTemplateKey = "TypeInfoLinkTemplate",
+  [DataGridColumn(DataTemplateResourceKey = "TypeInfoLinkTemplate",
     SortMemberPath = "DeclaringType.FullName", ClipboardContentPath = "DeclaringType.FullName")]
   public TypeInfoViewModel? DeclaringType
   {
@@ -47,7 +47,7 @@ public class PropInfoViewModel : ViewModel<PropInfo>, IAcceptable
     }
   }
 
-  [DataGridColumn(ResourceDataTemplateKey = "TypeInfoLinkTemplate",
+  [DataGridColumn(DataTemplateResourceKey = "TypeInfoLinkTemplate",
     SortMemberPath = "Type.FullName", ClipboardContentPath = "Type.FullName")]
   public TypeInfoViewModel? Type
   {

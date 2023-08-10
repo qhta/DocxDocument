@@ -414,9 +414,9 @@ public static class OpenXmlMetadataReader
         {
           StringConstraint constraint = new StringConstraint
           {
-            Length = NonZeroOrNull(stringValidator.Length),
-            MinLength = NonZeroOrNull(stringValidator.MinLength),
-            MaxLength = NonZeroOrNull(stringValidator.MaxLength)
+            FixLength = (int?)NonZeroOrNull(stringValidator.Length),
+            MinLength = (int?)NonZeroOrNull(stringValidator.MinLength),
+            MaxLength = (int?)NonZeroOrNull(stringValidator.MaxLength)
           };
           if (stringValidator.Regex != null)
             constraint.Regex = stringValidator.Regex.ToString();

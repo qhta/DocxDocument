@@ -10,6 +10,7 @@
   <Application.Resources>
     <local:CommonStringsAccessor x:Key="CommonStringsAccessor"/>
     <vc:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+    <vc:NotNullToVisibilityConverter x:Key="NotNullToVisibilityConverter"/>
     <vc:AppendingConverter x:Key="AppendingConverter"/>
     <vc:IndirectPropertyConverter x:Key="IndirectPropertyConverter"/>
     <Style x:Key="NoBorderTextBoxStyle" TargetType="TextBox">
@@ -132,6 +133,7 @@
         </Button>
       </Grid>
     </DataTemplate>
+    
     <DataTemplate x:Key="InvalidItemImageTemplate" >
       <Grid Width="20">
         <Image Source="Images\ErrorMark.png"
@@ -143,6 +145,42 @@
                ToolTip="{Binding ErrorMsg}"/>
       </Grid>
     </DataTemplate>
+
+    <DataTemplate x:Key="ErrorMsgMarkTemplate" >
+      <Grid Width="20">
+        <Image Source="Images\ErrorMark.png"
+               Width="16"
+               Height="16"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"
+               Visibility="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=DataContext, 
+               Converter={StaticResource NotNullToVisibilityConverter}}"
+               ToolTip="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=DataContext}"/>
+      </Grid>
+    </DataTemplate>
+    
+    <DataTemplate x:Key="ShortcutCellTemplate">
+      <Grid>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=DataContext.Item1}"/>
+        <Image Grid.Column="1"
+                       Width="16"
+                       Height="16"
+                       Source="/Images/ErrorMark.png"
+                       Visibility="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=DataContext.Item2, 
+                       Converter={StaticResource NotNullToVisibilityConverter}}"
+                       ToolTip="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=DataContext.Item2}"
+                       />
+      </Grid>
+    </DataTemplate>
+    <DataTemplate x:Key="ShortcutCellEditingTemplate">
+      <TextBox Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=DataContext.Item1, 
+               UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource NoBorderTextBoxStyle}"/>
+    </DataTemplate>
+
     <DataTemplate x:Key="TypeInfoLinkTemplate" >
       <Grid>
         <TextBlock Margin="2,0,2,0">

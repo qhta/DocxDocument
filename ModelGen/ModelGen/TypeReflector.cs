@@ -9,12 +9,12 @@ public static class TypeReflector
   public static event ReflectionProgressEvent? OnReflection;
 
   private static Queue<TypeInfo> TypeQueue = new Queue<TypeInfo>();
-  
- 
+
   public static void ReflectTypeAsync(this TypeInfo typeInfo)
   {
     if (typeInfo.IsReflected)
       return;
+    isStarted = true;
     lock (typeInfo)
     {
       if (!TypeQueue.Contains(typeInfo))
@@ -25,7 +25,7 @@ public static class TypeReflector
     }
   }
 
-  private static bool isStarted => ReflectionTasks is not null;
+  private static bool isStarted; //=> ReflectionTasks is not null;
   private static bool isDone;
   private static int TaskCount = 10;
   private static Task[] ReflectionTasks = null!;
@@ -96,7 +96,6 @@ public static class TypeReflector
   {
     if (typeInfo.IsReflected)
       return;
-    typeInfo.IsReflected = true;
     lock (reflectedLock)
     {
       reflected++;
@@ -207,6 +206,7 @@ public static class TypeReflector
 */
     //foreach (var item in type.CustomAttributes)
     //  typeInfo.CustomAttributes.Add(new CustomAttribData(item));
+    typeInfo.IsReflected = true;
   }
 
   public static void ProcessElementSchema(this TypeInfo typeInfo, ElementSchema schema)

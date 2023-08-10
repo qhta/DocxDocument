@@ -2,6 +2,10 @@
 public class NamespaceConfigViewModel : ViewModel, IEditableObject
 {
 
+  [DataGridColumn(
+    HeaderResourceKey = "ModelGenApp.CommonStrings.OriginalName",
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings.OriginalNameTooltip"
+    )]
   public string OrigName
   {
     get { return _OrigName; }
@@ -16,6 +20,10 @@ public class NamespaceConfigViewModel : ViewModel, IEditableObject
   }
   private string _OrigName = string.Empty;
 
+  [DataGridColumn(
+    HeaderResourceKey = "ModelGenApp.CommonStrings.ExcludedNamespace",
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings.ExcludedNamespaceTooltip"
+    )]
   public bool Excluded
   {
     get { return _Excluded; }
@@ -30,6 +38,10 @@ public class NamespaceConfigViewModel : ViewModel, IEditableObject
   }
   private bool _Excluded;
 
+  [DataGridColumn(
+    HeaderResourceKey = "ModelGenApp.CommonStrings.Shortcut",
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings.ShortcutTooltip"
+    )]
   public string? Shortcut
   {
     get { return _Shortcut; }
@@ -46,32 +58,29 @@ public class NamespaceConfigViewModel : ViewModel, IEditableObject
 
   public bool IsShortcutValid
   {
-    get { return _IsShortcutValid; }
+    get => _IsShortcutValid;
     set
     {
       if (_IsShortcutValid != value)
       {
         _IsShortcutValid = value;
         NotifyPropertyChanged(nameof(IsShortcutValid));
+        NotifyPropertyChanged(nameof(ShortcutErrorMsg));
       }
     }
   }
   private bool _IsShortcutValid = true;
 
-  public string? ShortcutErrorMsg
-  {
-    get { return _ShortcutErrorMsg; }
-    set
-    {
-      if (_ShortcutErrorMsg != value)
-      {
-        _ShortcutErrorMsg = value;
-        NotifyPropertyChanged(nameof(ShortcutErrorMsg));
-      }
-    }
-  }
-  private string? _ShortcutErrorMsg;
+  [DataGridColumn(
+    Header = "",
+    DataTemplateResourceKey ="ErrorMsgMarkTemplate"
+    )]
+  public string? ShortcutErrorMsg => IsShortcutValid ? (string?)null : CommonStrings.ShortcutErrorMsg;
 
+  [DataGridColumn(
+    HeaderResourceKey = "ModelGenApp.CommonStrings.TargetName",
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings.TargetNameTooltip"
+    )]
   public string? TargetName
   {
     get { return _TargetName; }
@@ -86,6 +95,10 @@ public class NamespaceConfigViewModel : ViewModel, IEditableObject
   }
   private string? _TargetName;
 
+  [DataGridColumn(
+    HeaderResourceKey = "ModelGenApp.CommonStrings.TargetShortcut",
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings.TargetShortcutTooltip"
+    )]
   public string? TargetShortcut
   {
     get { return _TargetShortcut; }
@@ -109,24 +122,17 @@ public class NamespaceConfigViewModel : ViewModel, IEditableObject
       {
         _IsTargetShortcutValid = value;
         NotifyPropertyChanged(nameof(IsTargetShortcutValid));
+        NotifyPropertyChanged(nameof(TargetShortcutErrorMsg));
       }
     }
   }
   private bool _IsTargetShortcutValid = true;
 
-  public string? TargetShortcutErrorMsg
-  {
-    get { return _TargetShortcutErrorMsg; }
-    set
-    {
-      if (_TargetShortcutErrorMsg != value)
-      {
-        _TargetShortcutErrorMsg = value;
-        NotifyPropertyChanged(nameof(TargetShortcutErrorMsg));
-      }
-    }
-  }
-  private string? _TargetShortcutErrorMsg;
+  [DataGridColumn(
+    Header = "",
+    DataTemplateResourceKey ="ErrorMsgMarkTemplate"
+    )]
+  public string? TargetShortcutErrorMsg => IsTargetShortcutValid ? (string?)null : CommonStrings.TargetShortcutErrorMsg;
 
   public void BeginEdit()
   {

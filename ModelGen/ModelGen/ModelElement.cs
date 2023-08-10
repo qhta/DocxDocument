@@ -88,20 +88,25 @@ public class ModelElement : IOwnedElement
 
   public bool IsValid(PPS pps)
   {
-    //DocumentFormat.OpenXml.OpenXmlLeafTextElement
-
-    var result = Errors?.Where(item => item.Item1 == pps).Any() != true;
+    var result = Errors?.Where(item => item.Phase == pps).Any() != true;
     if (!result)
       return false;
     return true;
   }
-  public Collection<(PPS, string)>? Errors { get; private set; }
+  public Errors? Errors { get; private set; }
 
-  public void AddErrorMsg(PPS pps, string message)
+  public void AddError(PPS pps, ErrorCode code)
   {
     if (Errors == null)
-      Errors = new Collection<(PPS, string)>();
-    Errors.Add((pps, message));
+      Errors = new Errors();
+    Errors.Add(new Error(pps, code));
+  }
+
+  public bool HasError(PPS pps, ErrorCode code)
+  {
+    if (Errors == null)
+      return false;
+    return Errors.Any(error => error.Phase == pps && error.Code == code);
   }
 
   /// <summary>

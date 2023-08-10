@@ -3,12 +3,37 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ModelGenApp"
         xmlns:views="clr-namespace:ModelGenApp.Views"
         xmlns:vm="clr-namespace:ModelGenApp.ViewModels"
         mc:Ignorable="d" 
         d:DataContext="{d:DesignInstance Type={x:Type vm:ModelConfigViewModel}}"
-        Title="{Binding Caption}" Height="450" Width="800">
+        Title="{Binding Caption}" Height="450" Width="900">
   <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="40"/>
+    </Grid.RowDefinitions>
     <views:ModelConfigView HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+    <Border  Grid.Row="1"
+             Background="WhiteSmoke">
+      <StackPanel 
+                Orientation="Horizontal" 
+                HorizontalAlignment="Center" 
+                Margin="10">
+        <Button x:Name="OkButton"
+              Content="{x:Static local:CommonStrings.Save}" 
+              Width="100"
+              Command="{Binding StoreDataCommand}"
+              />
+        <Button x:Name="CancelButton"
+              Content="{x:Static local:CommonStrings.Cancel}" 
+              Width="100" 
+              Margin="20,0,0,0"
+              Click="CancelButton_Click"
+              />
+      </StackPanel>
+    </Border>
+
   </Grid>
 </Window>

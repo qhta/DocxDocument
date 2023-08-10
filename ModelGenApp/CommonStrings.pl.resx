@@ -118,126 +118,126 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ExcludedTypeTooltip" xml:space="preserve">
-    <value>Excluded types are rejected even if their namespaces are included.</value>
+    <value>Typy wyłączone są odrzucane, nawet gdy ich przestrzenie nazw są włączone.</value>
   </data>
   <data name="IncludedTypeTooltip" xml:space="preserve">
-    <value>Included types are accepted even if their namespaces are excluded.</value>
+    <value>Typy włączone są akceptowane, nawet gdy ich przestrzenie nazw są wyłączone.</value>
   </data>
   <data name="MeaninglessDescription" xml:space="preserve">
-    <value>Meaningless description</value>
+    <value>Opis bez znaczenia</value>
   </data>
   <data name="MissingDescription" xml:space="preserve">
-    <value>Missing description</value>
+    <value>Brak opisu</value>
   </data>
   <data name="MultiplicatedName" xml:space="preserve">
-    <value>Owner namespace hase multiple types with the same name.</value>
+    <value>Przestrzeń nazw zawiera wiele typów o tej samej nazwie.</value>
   </data>
   <data name="Namespaces" xml:space="preserve">
-    <value>Namespaces</value>
+    <value>Przestrzenie nazw</value>
   </data>
   <data name="NoError" xml:space="preserve">
-    <value>No error</value>
+    <value>Brak błędu</value>
   </data>
   <data name="Config" xml:space="preserve">
-    <value>Configuration</value>
+    <value>Konfiguracja</value>
   </data>
   <data name="Types" xml:space="preserve">
-    <value>Types</value>
+    <value>Typy</value>
   </data>
   <data name="Properties" xml:space="preserve">
-    <value>Properties</value>
+    <value>Właściwości</value>
   </data>
   <data name="Start" xml:space="preserve">
     <value>Start</value>
   </data>
   <data name="MainWindowTitle" xml:space="preserve">
-    <value>Document model generator</value>
+    <value>Generator modelu dokumentu</value>
   </data>
   <data name="Cancel" xml:space="preserve">
-    <value>Cancel</value>
+    <value>Anuluj</value>
   </data>
   <data name="TypeToScan" xml:space="preserve">
-    <value>Type to scan</value>
+    <value>Typ do skanowania</value>
   </data>
   <data name="FileWithDocs" xml:space="preserve">
-    <value>File with docs</value>
+    <value>Plik z dokumentacją</value>
   </data>
   <data name="ProcessPhases_" xml:space="preserve">
-    <value>Process phases:</value>
+    <value>Fazy procesu:</value>
   </data>
   <data name="ShowResults" xml:space="preserve">
-    <value>Show results</value>
+    <value>Pokaż wyniki</value>
   </data>
   <data name="SaveResults" xml:space="preserve">
-    <value>Save results</value>
+    <value>Zapisz wyniki</value>
   </data>
   <data name="ScanSource" xml:space="preserve">
-    <value>Scan source</value>
+    <value>Skanowanie źródła</value>
   </data>
   <data name="AddDocs" xml:space="preserve">
-    <value>Add docs</value>
+    <value>Dodawanie opisów</value>
   </data>
   <data name="Rename" xml:space="preserve">
-    <value>Rename</value>
+    <value>Zmiana nazw</value>
   </data>
   <data name="TypeToScanTooltip" xml:space="preserve">
-    <value>This is the main type where scan begins. Its property types and item types are scanned next.</value>
+    <value>To jest główny typ, od którego rozpoczyna się skanowanie. Następnie skanowane są typy jego właściwości i elementów.</value>
   </data>
   <data name="FileWithDocsTooltip" xml:space="preserve">
-    <value>This is XML file with types and properties descriptions. It should be prepared by an external tool.</value>
+    <value>To jest plik XML z opisami typów i właściwości. Powinien być przygotowany uprzednio za pomocą osobnego narzędzia.</value>
   </data>
   <data name="FileWithDocsUseTooltip" xml:space="preserve">
-    <value>You can use or omit adding docs from file.</value>
+    <value>Możesz użyć lub pominąć dodawanie opisów z pliku.</value>
   </data>
   <data name="ModelConfiguration_" xml:space="preserve">
-    <value>Model configuration:</value>
+    <value>Konfiguracja modelu:</value>
   </data>
   <data name="OriginalName" xml:space="preserve">
-    <value>Original name</value>
+    <value>Nazwa oryginalna</value>
   </data>
   <data name="OriginalNameTooltip" xml:space="preserve">
-    <value>Original name is a name read from source.</value>
+    <value>Nazwa oryginalna to nazwa odczytana ze źródła.</value>
   </data>
   <data name="ExcludedNamespace" xml:space="preserve">
-    <value>Excluded</value>
+    <value>Wyłączona</value>
   </data>
   <data name="ExcludedNamespaceTooltip" xml:space="preserve">
-    <value>Excluded namespace is rejected from scanning.</value>
+    <value>Wyłączona przestrzeń nazw jest odrzucana podczas skanowania.</value>
   </data>
   <data name="Shortcut" xml:space="preserve">
-    <value>Shortcut</value>
+    <value>Skrót</value>
   </data>
   <data name="ShortcutTooltip" xml:space="preserve">
-    <value>Shortcut replaces its name (if shortcuts are enabled).</value>
+    <value>Skrót zastępuje nazwę (gdy jest to dozwolone).</value>
   </data>
   <data name="TargetName" xml:space="preserve">
-    <value>Target name</value>
+    <value>Nazwa docelowa</value>
   </data>
   <data name="TargetNameTooltip" xml:space="preserve">
-    <value>Target name is a name written to output.</value>
+    <value>Nazwa docelowa to nazwa zapisywana na wyjściu.</value>
   </data>
   <data name="TargetShortcutTooltip" xml:space="preserve">
-    <value>Target shortcut replaces target name (if shortcuts are enabled).</value>
+    <value>Skrót docelowy zastępuje nazwę docelową (gdy jest to dozwolone).</value>
   </data>
   <data name="TargetShortcut" xml:space="preserve">
-    <value>Target shortcut</value>
+    <value>Skrót docelowy</value>
   </data>
   <data name="ShortcutErrorMsg" xml:space="preserve">
-    <value>Duplicated shortcut</value>
+    <value>Zduplikowany skrót</value>
   </data>
   <data name="TargetShortcutErrorMsg" xml:space="preserve">
-    <value>Target shortcuts must be different in different target names.</value>
+    <value>Docelowe skróty nazw muszą być różne dla różnych nazw docelowych.</value>
   </data>
   <data name="Save" xml:space="preserve">
-    <value>Save</value>
+    <value>Zapisz</value>
   </data>
   <data name="ModelConfigurationSaved_1" xml:space="preserve">
-    <value>Model configuration saved in {0}</value>
+    <value>Konfiguracja modelu zapisana w {0}</value>
   </data>
   <data name="ModelConfigurationIsInvalid" xml:space="preserve">
-    <value>Model configuration is invalid. See marks in the table.</value>
+    <value>Konfiguracja modelu jest nieprawidłowa. Zobacz znaczniki w tabeli.</value>
   </data>
   <data name="ModelConfigurationReloadedFrom_1" xml:space="preserve">
-    <value>Model configuration reloaded from {0}</value>
+    <value>Konfiguracja modelu załadowana ponownie z {0}</value>
   </data>
 </root>
