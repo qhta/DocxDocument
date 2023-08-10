@@ -3,7 +3,7 @@ public class PropertiesConfigViewModel : ModelConfigViewModel
 {
   public PropertiesConfigViewModel(ModelConfig configData) : base(configData)
   {
-    Caption = "Model configuration: properties";
+    Caption = CommonStrings.ModelConfiguration_+" "+CommonStrings.Properties.ToLower();
     Properties = new ObservableList<PropertyConfigViewModel>();
     Items = Properties;
     GetData(configData);
@@ -64,7 +64,7 @@ public class PropertiesConfigViewModel : ModelConfigViewModel
 
   }
 
-  public override bool ValidateData(ModelConfig configData)
+  public override bool ValidateData()
   {
     var ok = true;
     return ok;

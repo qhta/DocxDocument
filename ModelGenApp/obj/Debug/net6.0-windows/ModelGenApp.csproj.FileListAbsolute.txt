@@ -112,3 +112,8 @@ D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Qhta.Observable
 D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Qhta.ObservableObjects.xml
 D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Qhta.WPF.Behaviors.pdb
 D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Qhta.WPF.Behaviors.xml
+D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\pl\ModelGenApp.resources.dll
+D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\ModelGenApp.CommonStrings.pl.resources
+D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\pl\ModelGenApp.resources.dll
+D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Qhta.WPF.DataGridUtils.pdb
+D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Qhta.WPF.DataGridUtils.xml

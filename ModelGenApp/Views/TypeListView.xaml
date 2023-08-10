@@ -21,8 +21,6 @@
                             IsReadOnly="true" />
         <DataGridTextColumn Header="Acceptance" Binding="{Binding Path=Acceptance}"
                             IsReadOnly="true"/>
-        <DataGridTextColumn Header="Validity" Binding="{Binding Path=Validity}"
-                            IsReadOnly="true"/>
         <DataGridTextColumn Header="Name" Binding="{Binding Path=Type.Name}"
                             IsReadOnly="true"/>
         <DataGridTextColumn Header="Target name" Binding="{Binding Path=TargetName}"

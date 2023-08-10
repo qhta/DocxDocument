@@ -10,69 +10,14 @@
              d:DataContext="{d:DesignInstance Type={x:Type vm:ModelConfigViewModel}}"
              d:DesignHeight="450" d:DesignWidth="800">
   <Grid>
+    <FrameworkElement x:Name="dummyElement" Visibility="Collapsed"/>
     <DataGrid 
-      AutoGenerateColumns="False"
+      AutoGenerateColumns="True"
+      AutoGeneratingColumn="DataGrid_AutoGeneratingColumn"
       HorizontalContentAlignment="Stretch"
       CanUserAddRows="False"
       bhv:CollectionViewBehavior.EnableCollectionSynchronization="True"
       ItemsSource="{Binding Path=Items}">
-      <DataGrid.Columns>
-        <DataGridTextColumn Header="Original name" Binding="{Binding OrigName}"/>
-        <DataGridCheckBoxColumn Header="Excluded" Binding="{Binding Excluded, UpdateSourceTrigger=PropertyChanged}" />
-        <DataGridTemplateColumn Header="Shortcut">
-          <DataGridTemplateColumn.CellTemplate>
-            <DataTemplate>
-              <Grid>
-                <Grid.ColumnDefinitions>
-                  <ColumnDefinition Width="*"/>
-                  <ColumnDefinition Width="Auto"/>
-                </Grid.ColumnDefinitions>
-                <TextBlock Text="{Binding Shortcut}"/>
-                <Image Grid.Column="1"
-                       Width="16"
-                       Height="16"
-                       Source="/Images/ErrorMark.png"
-                       Visibility="{Binding Path=IsShortcutValid, 
-                       Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter='Collapsed,Visible'}"
-                       ToolTip="{Binding Path=ShortcutErrorMsg}"
-                       />
-              </Grid>
-            </DataTemplate>
-          </DataGridTemplateColumn.CellTemplate>
-          <DataGridTemplateColumn.CellEditingTemplate>
-            <DataTemplate>
-              <TextBox Text="{Binding Shortcut, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource NoBorderTextBoxStyle}"/>
-            </DataTemplate>
-          </DataGridTemplateColumn.CellEditingTemplate>
-        </DataGridTemplateColumn>
-        <DataGridTextColumn Header="Target name" Binding="{Binding TargetName}"/>
-        <DataGridTemplateColumn Header="Target shortcut" >
-          <DataGridTemplateColumn.CellTemplate>
-            <DataTemplate>
-              <Grid>
-                <Grid.ColumnDefinitions>
-                  <ColumnDefinition Width="*"/>
-                  <ColumnDefinition Width="Auto"/>
-                </Grid.ColumnDefinitions>
-                <TextBlock Text="{Binding TargetShortcut}"/>
-                <Image Grid.Column="1"
-                       Width="16"
-                       Height="16"
-                       Source="/Images/ErrorMark.png"
-                       Visibility="{Binding Path=IsTargetShortcutValid, 
-                       Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter='Collapsed,Visible'}"
-                       ToolTip="{Binding Path=TargetShortcutErrorMsg}"
-                       />
-              </Grid>
-            </DataTemplate>
-          </DataGridTemplateColumn.CellTemplate>
-          <DataGridTemplateColumn.CellEditingTemplate>
-            <DataTemplate>
-              <TextBox Text="{Binding TargetShortcut, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource NoBorderTextBoxStyle}"/>
-            </DataTemplate>
-          </DataGridTemplateColumn.CellEditingTemplate>
-        </DataGridTemplateColumn>
-      </DataGrid.Columns>
     </DataGrid>
   </Grid>
 </UserControl>

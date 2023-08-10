@@ -70,7 +70,7 @@ public class ModelValidator
       Current = typeInfo
     });
     var ok = true;
-    if (PhaseNum == PPS.ScanTypes)
+    if (PhaseNum <= PPS.AddDocs)
     {
       if (!typeInfo.IsConstructedGenericType)
         if (!ValidateDescription(typeInfo))
@@ -89,7 +89,7 @@ public class ModelValidator
     var description = typeInfo.GetDescription()?.Trim();
     if (String.IsNullOrEmpty(description))
     {
-      typeInfo.AddErrorMsg(PhaseNum, "Description missing");
+      typeInfo.AddError(PhaseNum, ErrorCode.MissingDescription);
       return false;
     }
     String str = description;
@@ -101,7 +101,7 @@ public class ModelValidator
       var rest = str.Substring("Defines ".Length).TrimStart();
       var restWithoutSpaces = rest.Replace(" ", "");
       if (restWithoutSpaces.ToLower() == typeInfo.Name.ToLower())
-        typeInfo.AddErrorMsg(PhaseNum, "Meaningless description");
+        typeInfo.AddError(PhaseNum, ErrorCode.MeaninglessDescription);
       return false;
     }
     return true;

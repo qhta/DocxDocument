@@ -11,14 +11,14 @@ public class ProcessMonitorViewModel : ViewModel
       PPS phase = (PPS)Enum.ToObject(typeof(PPS),i+1);
       switch (phase)
       {
-        case PPS.ScanTypes:
+        case PPS.ScanSource:
           PhaseMonitors[i] = new ScanPhaseViewModel (phase.ToString());
           break;
-        case PPS.RenameTypes:
-          PhaseMonitors[i] = new RenamePhaseViewModel(phase.ToString());
+        case PPS.AddDocs:
+          PhaseMonitors[i] = new AddDocsPhaseViewModel (phase.ToString());
           break;
-        case PPS.ConvertTypes:
-          PhaseMonitors[i] = new ConvertPhaseViewModel(phase.ToString());
+        case PPS.Rename:
+          PhaseMonitors[i] = new RenamePhaseViewModel(phase.ToString());
           break;
       }
   }

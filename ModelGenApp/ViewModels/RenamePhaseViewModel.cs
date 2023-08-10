@@ -1,7 +1,7 @@
 ﻿namespace ModelGenApp.ViewModels;
 public class RenamePhaseViewModel : PhaseViewModel
 {
-  public RenamePhaseViewModel(string name) : base(PPS.RenameTypes, name)
+  public RenamePhaseViewModel(string name) : base(PPS.Rename, name)
   {
     NamespaceTypeSelector = NTS.Origin | NTS.Target;
     CanShowErrorDetails = true;

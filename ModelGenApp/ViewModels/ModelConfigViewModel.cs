@@ -67,7 +67,7 @@ public abstract class ModelConfigViewModel: ViewModel
   /// </summary>
   /// <param name="configData"></param>
   /// <returns></returns>
-  public abstract bool ValidateData(ModelConfig configData);
+  public abstract bool ValidateData();
 
   #region StoreDataCommand
   /// <summary>
@@ -89,15 +89,15 @@ public abstract class ModelConfigViewModel: ViewModel
   /// </summary>
   public void StoreData()
   {
-    if (!ValidateData(ModelConfig.Instance))
-      MessageBox.Show($"Model configuration is invalid. See marks in the table.");
+    if (!ValidateData())
+      MessageBox.Show(CommonStrings.ModelConfigurationIsInvalid);
     else
     {
       var filename = ModelConfig.Instance.GetFilename();
       if (!File.Exists(filename))
         File.Copy(filename, Path.ChangeExtension(filename, ".bak"));
       SaveData(ModelConfig.Instance);
-      MessageBox.Show($"Model configuration saved in {filename}");
+      MessageBox.Show(String.Format(CommonStrings.ModelConfigurationSaved_1, filename));
     }
   }
   #endregion
@@ -124,7 +124,7 @@ public abstract class ModelConfigViewModel: ViewModel
   public void RestoreData()
   {
     ReloadData(ModelConfig.Instance);
-    MessageBox.Show($"Model configuration restored from {ModelConfig.Instance.GetFilename()}");
+    MessageBox.Show(String.Format(CommonStrings.ModelConfigurationReloadedFrom_1, ModelConfig.Instance.GetFilename()));
   }
   #endregion
 

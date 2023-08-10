@@ -3,11 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ModelGenApp"
         xmlns:views="clr-namespace:ModelGenApp.Views"
         xmlns:vm="clr-namespace:ModelGenApp.ViewModels"
         mc:Ignorable="d"
         d:DataContext="{d:DesignInstance Type=vm:MainViewModel}"
-        Title="MainWindow" Height="600" Width="800">
+        Title="{x:Static local:CommonStrings.MainWindowTitle}" Height="600" Width="800">
   <Grid>
     <Grid.RowDefinitions>
       <RowDefinition Height="20" />
@@ -16,12 +17,16 @@
       <RowDefinition Height="24"/>
     </Grid.RowDefinitions>
     <Menu Grid.Row="0" >
-      <MenuItem Header="Config" >
-        <MenuItem Header="Namespaces" Command="{Binding OpenConfigCommand}" CommandParameter="Namespaces"/>
-        <MenuItem Header="Types" Command="{Binding OpenConfigCommand}" CommandParameter="Types"/>
-        <MenuItem Header="Properties" Command="{Binding OpenConfigCommand}" CommandParameter="Properties"/>
+      <MenuItem Header="{x:Static local:CommonStrings.Config}" >
+        <MenuItem Header="{x:Static local:CommonStrings.Namespaces}" 
+                  Command="{Binding OpenConfigCommand}" CommandParameter="Namespaces"/>
+        <MenuItem Header="{x:Static local:CommonStrings.Types}" 
+                  Command="{Binding OpenConfigCommand}" CommandParameter="Types"/>
+        <MenuItem Header="{x:Static local:CommonStrings.Properties}" 
+                  Command="{Binding OpenConfigCommand}" CommandParameter="Properties"/>
       </MenuItem>
-      <MenuItem Header="Start" Command="{Binding StartProcessCommand}"/>
+      <MenuItem Header="{x:Static local:CommonStrings.Start}" 
+                Command="{Binding StartProcessCommand}"/>
     </Menu>
     <Grid Grid.Row="1">
       <Grid.ColumnDefinitions>
@@ -46,11 +51,11 @@
                 Orientation="Horizontal" 
                 HorizontalAlignment="Center" 
                 Margin="10">
-        <Button Content="Start" 
+        <Button Content="{x:Static local:CommonStrings.Start}" 
               Width="100"
               Command="{Binding StartProcessCommand}"
               />
-        <Button Content="Cancel" 
+        <Button Content="{x:Static local:CommonStrings.Cancel}" 
               Width="100" 
               Margin="20,0,0,0"
               Command="{Binding StopProcessCommand}"

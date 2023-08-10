@@ -117,10 +117,127 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ExcludedTypeToolTip" xml:space="preserve">
-    <value>Excluded types are included even if their namespaces are included.</value>
+  <data name="ExcludedTypeTooltip" xml:space="preserve">
+    <value>Excluded types are rejected even if their namespaces are included.</value>
   </data>
-  <data name="IncludedTypeToolTip" xml:space="preserve">
+  <data name="IncludedTypeTooltip" xml:space="preserve">
     <value>Included types are accepted even if their namespaces are excluded.</value>
+  </data>
+  <data name="MeaninglessDescription" xml:space="preserve">
+    <value>Meaningless description</value>
+  </data>
+  <data name="MissingDescription" xml:space="preserve">
+    <value>Missing description</value>
+  </data>
+  <data name="MultiplicatedName" xml:space="preserve">
+    <value>Owner namespace hase multiple types with the same name.</value>
+  </data>
+  <data name="Namespaces" xml:space="preserve">
+    <value>Namespaces</value>
+  </data>
+  <data name="NoError" xml:space="preserve">
+    <value>No error</value>
+  </data>
+  <data name="Config" xml:space="preserve">
+    <value>Configuration</value>
+  </data>
+  <data name="Types" xml:space="preserve">
+    <value>Types</value>
+  </data>
+  <data name="Properties" xml:space="preserve">
+    <value>Properties</value>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="MainWindowTitle" xml:space="preserve">
+    <value>Document model generator</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="TypeToScan" xml:space="preserve">
+    <value>Type to scan</value>
+  </data>
+  <data name="FileWithDocs" xml:space="preserve">
+    <value>File with docs</value>
+  </data>
+  <data name="ProcessPhases_" xml:space="preserve">
+    <value>Process phases:</value>
+  </data>
+  <data name="ShowResults" xml:space="preserve">
+    <value>Show results</value>
+  </data>
+  <data name="SaveResults" xml:space="preserve">
+    <value>Save results</value>
+  </data>
+  <data name="ScanSource" xml:space="preserve">
+    <value>Scan source</value>
+  </data>
+  <data name="AddDocs" xml:space="preserve">
+    <value>Add docs</value>
+  </data>
+  <data name="Rename" xml:space="preserve">
+    <value>Rename</value>
+  </data>
+  <data name="TypeToScanTooltip" xml:space="preserve">
+    <value>This is the main type where scan begins. Its property types and item types are scanned next.</value>
+  </data>
+  <data name="FileWithDocsTooltip" xml:space="preserve">
+    <value>This is XML file with types and properties descriptions. It should be prepared by an external tool.</value>
+  </data>
+  <data name="FileWithDocsUseTooltip" xml:space="preserve">
+    <value>You can use or omit adding docs from file.</value>
+  </data>
+  <data name="ModelConfiguration_" xml:space="preserve">
+    <value>Model configuration:</value>
+  </data>
+  <data name="OriginalName" xml:space="preserve">
+    <value>Original name</value>
+  </data>
+  <data name="OriginalNameTooltip" xml:space="preserve">
+    <value>Original name is a name read from source.</value>
+  </data>
+  <data name="ExcludedNamespace" xml:space="preserve">
+    <value>Excluded</value>
+  </data>
+  <data name="ExcludedNamespaceTooltip" xml:space="preserve">
+    <value>Excluded namespace is rejected from scanning.</value>
+  </data>
+  <data name="Shortcut" xml:space="preserve">
+    <value>Shortcut</value>
+  </data>
+  <data name="ShortcutTooltip" xml:space="preserve">
+    <value>Shortcut replaces its name (if shortcuts are enabled).</value>
+  </data>
+  <data name="TargetName" xml:space="preserve">
+    <value>Target name</value>
+  </data>
+  <data name="TargetNameTooltip" xml:space="preserve">
+    <value>Target name is a name written to output.</value>
+  </data>
+  <data name="TargetShortcutTooltip" xml:space="preserve">
+    <value>Target shortcut replaces target name (if shortcuts are enabled).</value>
+  </data>
+  <data name="TargetShortcut" xml:space="preserve">
+    <value>Target shortcut</value>
+  </data>
+  <data name="ShortcutErrorMsg" xml:space="preserve">
+    <value>Duplicated shortcut</value>
+  </data>
+  <data name="TargetShortcutErrorMsg" xml:space="preserve">
+    <value>Target shortcuts must be different in different target names.</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="ModelConfigurationSaved_1" xml:space="preserve">
+    <value>Model configuration saved in {0}</value>
+  </data>
+  <data name="ModelConfigurationIsInvalid" xml:space="preserve">
+    <value>Model configuration is invalid. See marks in the table.</value>
+  </data>
+  <data name="ModelConfigurationReloadedFrom_1" xml:space="preserve">
+    <value>Model configuration reloaded from {0}</value>
   </data>
 </root>
