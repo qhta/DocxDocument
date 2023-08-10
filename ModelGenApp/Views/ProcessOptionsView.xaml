@@ -41,7 +41,8 @@
           <Label Grid.Row="0" Grid.Column="0" 
                 Margin="5"
                 VerticalAlignment="Center"
-                Content="Scan type" 
+                Content="{x:Static local:CommonStrings.TypeToScan}" 
+                ToolTip="{x:Static local:CommonStrings.TypeToScanTooltip}"
                 />
           <ComboBox Grid.Row="0" Grid.Column="1" 
                 Margin="5"
@@ -54,7 +55,8 @@
           <Label Grid.Row="1" Grid.Column="0" 
                 Margin="5"
                 VerticalAlignment="Center"
-                Content="Doc file" 
+                Content="{x:Static local:CommonStrings.FileWithDocs}"
+                ToolTip="{x:Static local:CommonStrings.FileWithDocsTooltip}"
                 />
           <Grid Grid.Row="1" Grid.Column="1">
             <Grid.ColumnDefinitions>
@@ -66,6 +68,7 @@
                       VerticalAlignment="Center"
                       HorizontalAlignment="Center"
                       IsChecked="{Binding Path=ProcessOptionsVM.UseModelDocFile}"
+                      ToolTip="{x:Static local:CommonStrings.FileWithDocsUseTooltip}"
                       />
             <TextBox Grid.Column="1"
                      Margin="5"
@@ -100,7 +103,7 @@
 
           <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="1"
                  VerticalAlignment="Center"
-                 Content="Phases:"/>
+                 Content="{x:Static local:CommonStrings.ProcessPhases_}"/>
 
           <views:PhaseProgressView Grid.Row="1" 
                        Percentage="{Binding Path=ProcessMonitor.VM.PhaseMonitors[0].Percentage}" 
@@ -124,51 +127,52 @@
                   />
           <Label Grid.Column="1" Grid.Row="1" 
                    VerticalAlignment="Center"
-                   Content="Scan types" />
+                   Content="{x:Static local:CommonStrings.ScanSource}" />
           <Button Grid.Column="2" Grid.Row="1" 
                   VerticalAlignment="Center"
                   Margin="5,0,5,0" Height="25"
                   Padding="5,0"
-                  Content="Show results" 
+                  Content="{x:Static local:CommonStrings.ShowResults}" 
                   Command="{Binding Path=ProcessMonitorVM.PhaseMonitors[0].ShowResultsCommand}"/>
           <Button Grid.Column="3" Grid.Row="1" 
                   VerticalAlignment="Center"
                   Margin="5,0,5,0" Height="25"
                   Padding="5,0"
-                  Content="Save results" 
+                  Content="{x:Static local:CommonStrings.SaveResults}" 
                   Command="{Binding Path=ProcessMonitorVM.PhaseMonitors[0].SaveResultsCommand}"/>
 
           <Label Grid.Column="1" Grid.Row="2" 
                    VerticalAlignment="Center"
-                   Content="Rename types" />
+                   Content="{x:Static local:CommonStrings.AddDocs}" />
           <Button Grid.Column="2" Grid.Row="2" 
                   VerticalAlignment="Center"
                   Margin="5,0,5,0" Height="25"
                   Padding="5,0"
-                  Content="Show results" 
+                  Content="{x:Static local:CommonStrings.ShowResults}" 
                   Command="{Binding Path=ProcessMonitorVM.PhaseMonitors[1].ShowResultsCommand}"/>
           <Button Grid.Column="3" Grid.Row="2" 
                   VerticalAlignment="Center"
                   Margin="5,0,5,0" Height="25"
                   Padding="5,0"
-                  Content="Save results" 
+                  Content="{x:Static local:CommonStrings.SaveResults}" 
                   Command="{Binding Path=ProcessMonitorVM.PhaseMonitors[1].SaveResultsCommand}"/>
-          
+
           <Label Grid.Column="1" Grid.Row="3" 
                    VerticalAlignment="Center"
-                   Content="Convert types" />
+                   Content="{x:Static local:CommonStrings.Rename}" />
           <Button Grid.Column="2" Grid.Row="3" 
                   VerticalAlignment="Center"
                   Margin="5,0,5,0" Height="25"
                   Padding="5,0"
-                  Content="Show results" 
+                  Content="{x:Static local:CommonStrings.ShowResults}" 
                   Command="{Binding Path=ProcessMonitorVM.PhaseMonitors[2].ShowResultsCommand}"/>
           <Button Grid.Column="3" Grid.Row="3" 
                   VerticalAlignment="Center"
                   Margin="5,0,5,0" Height="25"
                   Padding="5,0"
-                  Content="Save results" 
+                  Content="{x:Static local:CommonStrings.SaveResults}" 
                   Command="{Binding Path=ProcessMonitorVM.PhaseMonitors[2].SaveResultsCommand}"/>
+          
         </Grid>
       </Grid>
     </Border>

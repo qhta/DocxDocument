@@ -6,7 +6,7 @@ public class NamespaceViewModel : ViewModel<Namespace>
     Phase = phaseViewModel;
     Filter = filter;
     Name = ns.OriginalName;
-    if (phaseViewModel.PhaseNum == PPS.RenameTypes)
+    if (phaseViewModel.PhaseNum == PPS.Rename)
       TargetName = ns.TargetName;
     AllTypes = new TypeListViewModel(phaseViewModel, this, "All types", phaseViewModel.NameKindSelector, TKS.Any);
     Classes = new ClassListViewModel(phaseViewModel, this, "Classes", phaseViewModel.NameKindSelector, TKS.Class);
@@ -28,27 +28,27 @@ public class NamespaceViewModel : ViewModel<Namespace>
 
 
 
-  [DataGridColumn(ResourceDataTemplateKey = "ItemsCountColumnTemplate",
+  [DataGridColumn(DataTemplateResourceKey = "ItemsCountColumnTemplate",
     SortMemberPath = "AllTypes.Count", ClipboardContentPath = "AllTypes.Count")]
   public TypeListViewModel AllTypes { get; set; }
 
-  [DataGridColumn(ResourceDataTemplateKey = "ItemsCountColumnTemplate",
+  [DataGridColumn(DataTemplateResourceKey = "ItemsCountColumnTemplate",
     SortMemberPath = "Classes.Count", ClipboardContentPath = "Classes.Count")]
   public TypeListViewModel Classes { get; set; }
 
-  [DataGridColumn(ResourceDataTemplateKey = "ItemsCountColumnTemplate",
+  [DataGridColumn(DataTemplateResourceKey = "ItemsCountColumnTemplate",
     SortMemberPath = "Enums.Count", ClipboardContentPath = "Enums.Count")]
   public TypeListViewModel Enums { get; set; }
 
-  [DataGridColumn(ResourceDataTemplateKey = "ItemsCountColumnTemplate",
+  [DataGridColumn(DataTemplateResourceKey = "ItemsCountColumnTemplate",
     SortMemberPath = "Interfaces.Count", ClipboardContentPath = "Interfaces.Count")]
   public TypeListViewModel Interfaces { get; set; }
 
-  [DataGridColumn(ResourceDataTemplateKey = "ItemsCountColumnTemplate",
+  [DataGridColumn(DataTemplateResourceKey = "ItemsCountColumnTemplate",
     SortMemberPath = "Structs.Count", ClipboardContentPath = "Structs.Count")]
   public TypeListViewModel Structs { get; set; }
 
-  [DataGridColumn(ResourceDataTemplateKey = "ItemsCountColumnTemplate",
+  [DataGridColumn(DataTemplateResourceKey = "ItemsCountColumnTemplate",
     SortMemberPath = "Others.Count", ClipboardContentPath = "Others.Count")]
   public TypeListViewModel Others { get; set; }
 

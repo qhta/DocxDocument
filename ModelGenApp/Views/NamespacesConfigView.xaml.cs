@@ -1,7 +1,5 @@
 ﻿namespace ModelGenApp.Views;
-/// <summary>
-/// Interaction logic for NamespacesConfigView.xaml
-/// </summary>
+
 public partial class NamespacesConfigView : UserControl
 {
   public NamespacesConfigView()
@@ -9,4 +7,28 @@ public partial class NamespacesConfigView : UserControl
     InitializeComponent();
   }
 
+  private void DataGrid_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
+  {
+    Qhta.WPF.DataGridUtils.AutoGenerating.UseDataGridColumnAttribute(sender, e);
+    if (e.PropertyName==nameof(NamespaceConfigViewModel.ShortcutErrorMsg))
+    {
+      BindingOperations.SetBinding(e.Column, DataGridColumn.VisibilityProperty, 
+        new Binding("DataContext."+nameof(NamespacesConfigViewModel.AreAllShortcutsValid)) 
+        { 
+          Source = dummyElement,
+          Converter=new BoolToVisibilityConverter(), 
+          ConverterParameter="Visible,Collapsed" 
+          });;
+    }
+    if (e.PropertyName==nameof(NamespaceConfigViewModel.TargetShortcutErrorMsg))
+    {
+      BindingOperations.SetBinding(e.Column, DataGridColumn.VisibilityProperty, 
+        new Binding("DataContext."+nameof(NamespacesConfigViewModel.AreAllTargetShortcutsValid)) 
+        { 
+          Source = dummyElement,
+          Converter=new BoolToVisibilityConverter(), 
+          ConverterParameter="Visible,Collapsed" 
+          });;
+    }
+  }
 }

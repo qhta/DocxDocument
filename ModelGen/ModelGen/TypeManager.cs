@@ -158,7 +158,7 @@ public static class TypeManager
       }
       bool accept = acceptance == true || !ModelConfig.Instance.IsExcluded(type);
       if (!accept)
-        typeInfo.SetRejected(PPS.ScanTypes);
+        typeInfo.SetRejected(PPS.ScanSource);
 
       if (accept && type.Namespace!=null && !type.Namespace.StartsWith("System"))
       {

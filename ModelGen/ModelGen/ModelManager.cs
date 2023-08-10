@@ -300,13 +300,13 @@ public static class ModelManager
             propInfo.Constraints.FirstOrDefault(item => item.GetType() == typeof(StringConstraint));
           if (stringConstraint != null)
           {
-            if (stringConstraint.Length == 2)
+            if (stringConstraint.FixLength == 2)
               targetType = typeof(HexChar);
             else
-            if (stringConstraint.Length == 3)
+            if (stringConstraint.FixLength == 3)
               targetType = typeof(RGB);
             else
-            if (stringConstraint.Length == 4)
+            if (stringConstraint.FixLength == 4)
               targetType = typeof(HexInt);
           }
         }
@@ -413,11 +413,13 @@ public static class ModelManager
 
   public static bool ScanType(Type type)
   {
-    //TypeManager.UseAsynReflection = true;
+    TypeManager.UseAsynReflection = false;
     TypeManager.OnRegistering += TypeManager_OnRegistering;
     var typeName = type.ToString();
     TypeManager.RegisterType(type);
     TypeManager.OnRegistering -= TypeManager_OnRegistering;
+    if (TypeManager.UseAsynReflection)
+      TypeReflector.WaitDone();
     return true;
   }
 
@@ -640,7 +642,7 @@ public static class ModelManager
     RenameNamespaces();
     var n = 0;
     DuplicateTypeNamesCount = 0;
-    foreach (var type in TypeManager.TypesAcceptedTo(PPS.RenameTypes).ToArray())
+    foreach (var type in TypeManager.TypesAcceptedTo(PPS.Rename).ToArray())
     {
       if (ModelManager.TryRenameType(type))
         n++;
@@ -701,7 +703,7 @@ public static class ModelManager
           foreach (var sameNameType in sameNameTypes)
           {
             //sameNameType.IsInvalid = true;
-            sameNameType.AddErrorMsg(PPS.RenameTypes, "Target namespace has multiple types with the same name");
+            sameNameType.AddError(PPS.Rename, ErrorCode.MultiplicatedName);
             DuplicateTypeNamesCount++;
           }
       }

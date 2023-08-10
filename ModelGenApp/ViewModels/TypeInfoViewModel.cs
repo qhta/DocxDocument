@@ -1,6 +1,4 @@
-﻿using ModelGen;
-
-namespace ModelGenApp.ViewModels;
+﻿namespace ModelGenApp.ViewModels;
 public class TypeInfoViewModel : ViewModel<TypeInfo>
 {
   protected TypeInfoViewModel(PhaseViewModel phase, TypeInfo typeInfo, NKS typeNameSelector) : base(typeInfo)
@@ -14,9 +12,9 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
 
   public static TypeInfoViewModel Create(PhaseViewModel phase, TypeInfo typeInfo, NKS typeNameSelector)
   {
-    if (typeInfo.TypeKind==TypeKind.Enum)
+    if (typeInfo.TypeKind == TypeKind.Enum)
       return new EnumTypeInfoViewModel(phase, typeInfo, typeNameSelector);
-    if (typeInfo.TypeKind==TypeKind.Type)
+    if (typeInfo.TypeKind == TypeKind.Type)
       return new TypeInfoViewModel(phase, typeInfo, typeNameSelector);
     return new ClassInfoViewModel(phase, typeInfo, typeNameSelector);
   }
@@ -69,9 +67,22 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
 
   public string? TargetName => Model.GetFullName(true, TypeNameSelector.Namespace, TypeNameSelector.NsShortcut);
 
-  public string? ErrorMsg => Model.Errors?.FirstOrDefault(item => item.Item1 == Phase.PhaseNum).Item2;
+  public string? ErrorMsg
+  {
+    get
+    {
+      var errCode = Model.Errors?.FirstOrDefault(item => item.Phase == Phase.PhaseNum)?.Code;
+      if (errCode != null)
+      {
+        var errCodeName = errCode?.ToString();
+        if (errCodeName!=null)
+          return CommonStrings.ResourceManager.GetString(errCodeName);
+      }
+      return null;
+    }
+  }
 
-  [DataGridColumn(ResourceDataTemplateKey = "TypeInfoLinkTemplate",
+  [DataGridColumn(DataTemplateResourceKey = "TypeInfoLinkTemplate",
     SortMemberPath = "Type.Name", ClipboardContentPath = "Type.Name")]
   public TypeInfoViewModel? Type
   {
@@ -137,7 +148,7 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
       if (targetType != null)
         TypeSummary.Add(new TypePropViewModel("Converted to", new TypeInfoViewModel(Phase, targetType, TypeNameSelector)));
     }
-    TypeSummary.Add(new TypePropViewModel("Description", new Description(Model.Description??"")));
+    TypeSummary.Add(new TypePropViewModel("Description", new Description(Model.Description ?? "")));
   }
 
   public async void FillDetailsAsync()

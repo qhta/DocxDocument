@@ -6,4 +6,10 @@ public partial class ModelConfigWindow : Window
   {
     InitializeComponent();
   }
+
+  private void CancelButton_Click(object sender, RoutedEventArgs e)
+  {
+    (DataContext as ModelConfigViewModel)?.RestoreDataCommand.Execute(null);
+    Close();
+  }
 }
