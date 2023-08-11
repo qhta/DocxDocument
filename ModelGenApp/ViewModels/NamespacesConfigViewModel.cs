@@ -5,15 +5,13 @@ public class NamespacesConfigViewModel : ModelConfigViewModel
   {
     Caption = CommonStrings.ModelConfiguration + ": " + CommonStrings.Namespaces.ToLower();
     Namespaces = new ListViewModel<NamespaceConfigViewModel>();
-    Items = Namespaces;
+    VisibleItems = new FilteredCollection<NamespaceConfigViewModel>(Namespaces);
     GetData(configData);
-    CollectionView = CollectionViewSource.GetDefaultView(Namespaces);
   }
 
   public ListViewModel<NamespaceConfigViewModel> Namespaces { get; private set; }
 
-
-  public ICollectionView CollectionView { get; private set; } 
+  public FilteredCollection<NamespaceConfigViewModel> VisibleItems { get; private set; }
 
   public override void GetData(ModelConfig configData)
   {
@@ -150,8 +148,8 @@ public class NamespacesConfigViewModel : ModelConfigViewModel
     return ok;
   }
 
-  public bool AreAllShortcutsValid => Items.Cast<NamespaceConfigViewModel>().Any(item => !item.IsShortcutValid);
+  public bool AreAllShortcutsValid => Namespaces.Any(item => !item.IsShortcutValid);
 
-  public bool AreAllTargetShortcutsValid => Items.Cast<NamespaceConfigViewModel>().Any(item => !item.IsTargetShortcutValid);
+  public bool AreAllTargetShortcutsValid => Namespaces.Any(item => !item.IsTargetShortcutValid);
 
 }

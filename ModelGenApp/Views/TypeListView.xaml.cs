@@ -11,6 +11,6 @@ public partial class TypeListView : UserControl
 
   private void DataGrid_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
   {
-    Qhta.WPF.DataGridUtils.AutoGenerating.UseDataGridColumnAttribute(sender, e);
+    AutoGenerating.UseDataGridColumnAttribute(sender, e);
   }
 }

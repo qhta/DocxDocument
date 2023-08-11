@@ -150,6 +150,14 @@
           }
         }
       },
+      "Qhta.OrdNumbers/2.3.0": {
+        "runtime": {
+          "lib/netstandard2.0/Qhta.OrdNumbers.dll": {
+            "assemblyVersion": "2.3.0.0",
+            "fileVersion": "2.3.0.0"
+          }
+        }
+      },
       "Qhta.TestHelper/3.0.0": {
         "runtime": {
           "lib/net6.0/Qhta.TestHelper.dll": {
@@ -1362,6 +1370,13 @@
       "sha512": "sha512-jN/EcMPo0Hut3Kh4K6pLkozSoTTy6P5Cdgb9nbAp8CUk20tipykCfQUbmtvNteUpGOk0ClE+iuCv39pwooO6Lg==",
       "path": "qhta.htmlutils/2.1.0",
       "hashPath": "qhta.htmlutils.2.1.0.nupkg.sha512"
+    },
+    "Qhta.OrdNumbers/2.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-BSCWAelC/Edef+EUfphFgFWI7pHaPJYZWsCtbVRdZxSBgRqsn7z3oDbdGe3JjOS0qZsl3O54dZ6jeSmrti+kDg==",
+      "path": "qhta.ordnumbers/2.3.0",
+      "hashPath": "qhta.ordnumbers.2.3.0.nupkg.sha512"
     },
     "Qhta.TestHelper/3.0.0": {
       "type": "package",
