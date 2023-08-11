@@ -1,8 +1,9 @@
 ﻿namespace ModelGenApp.ViewModels;
-public class NamespaceConfigViewModel : ViewModel, IEditableObject
+public class NamespaceConfigViewModel : VisibleViewModel
 {
 
   [DataGridColumn(
+    IsReadOnly = true,
     HeaderResourceKey = "ModelGenApp.CommonStrings.OriginalName",
     HeaderTooltipResourceKey = "ModelGenApp.CommonStrings.OriginalNameTooltip"
     )]
@@ -134,18 +135,4 @@ public class NamespaceConfigViewModel : ViewModel, IEditableObject
     )]
   public string? TargetShortcutErrorMsg => IsTargetShortcutValid ? (string?)null : CommonStrings.TargetShortcutErrorMsg;
 
-  public void BeginEdit()
-  {
-    //throw new NotImplementedException();
-  }
-
-  public void CancelEdit()
-  {
-    //throw new NotImplementedException();
-  }
-
-  public void EndEdit()
-  {
-    //throw new NotImplementedException();
-  }
 }

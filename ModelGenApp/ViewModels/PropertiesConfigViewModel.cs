@@ -3,13 +3,13 @@ public class PropertiesConfigViewModel : ModelConfigViewModel
 {
   public PropertiesConfigViewModel(ModelConfig configData) : base(configData)
   {
-    Caption = CommonStrings.ModelConfiguration_+" "+CommonStrings.Properties.ToLower();
-    Properties = new ObservableList<PropertyConfigViewModel>();
+    Caption = CommonStrings.ModelConfiguration+": "+CommonStrings.Properties.ToLower();
+    Properties = new ListViewModel<PropertyConfigViewModel>();
     Items = Properties;
     GetData(configData);
   }
 
-  public ObservableList<PropertyConfigViewModel> Properties { get; private set; }
+  public ListViewModel<PropertyConfigViewModel> Properties { get; private set; }
 
   public override void GetData(ModelConfig configData)
   {

@@ -189,17 +189,14 @@
   <data name="FileWithDocsUseTooltip" xml:space="preserve">
     <value>You can use or omit adding docs from file.</value>
   </data>
-  <data name="ModelConfiguration_" xml:space="preserve">
-    <value>Model configuration:</value>
+  <data name="ModelConfiguration" xml:space="preserve">
+    <value>Model configuration</value>
   </data>
   <data name="OriginalName" xml:space="preserve">
     <value>Original name</value>
   </data>
   <data name="OriginalNameTooltip" xml:space="preserve">
     <value>Original name is a name read from source.</value>
-  </data>
-  <data name="ExcludedNamespace" xml:space="preserve">
-    <value>Excluded</value>
   </data>
   <data name="ExcludedNamespaceTooltip" xml:space="preserve">
     <value>Excluded namespace is rejected from scanning.</value>
@@ -239,5 +236,26 @@
   </data>
   <data name="ModelConfigurationReloadedFrom_1" xml:space="preserve">
     <value>Model configuration reloaded from {0}</value>
+  </data>
+  <data name="OriginalNamespace" xml:space="preserve">
+    <value>Original namespace</value>
+  </data>
+  <data name="OriginalNamespaceTooltip" xml:space="preserve">
+    <value>Original namespace is a namespace read from source.</value>
+  </data>
+  <data name="ExcludedNamespace" xml:space="preserve">
+    <value>Excluded</value>
+  </data>
+  <data name="IncludedType" xml:space="preserve">
+    <value>Included type</value>
+  </data>
+  <data name="ExcludedType" xml:space="preserve">
+    <value>Excluded type</value>
+  </data>
+  <data name="TargetNamespace" xml:space="preserve">
+    <value>Target namespace</value>
+  </data>
+  <data name="TargetNamespaceTooltip" xml:space="preserve">
+    <value>Target namespace is a namespace written to output.</value>
   </data>
 </root>

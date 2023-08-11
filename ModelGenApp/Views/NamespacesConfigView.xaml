@@ -7,7 +7,7 @@
              xmlns:vm="clr-namespace:ModelGenApp.ViewModels"
              xmlns:bhv="clr-namespace:Qhta.WPF.Behaviors;assembly=Qhta.WPF.Behaviors"
              mc:Ignorable="d" 
-             d:DataContext="{d:DesignInstance Type={x:Type vm:ModelConfigViewModel}}"
+             d:DataContext="{d:DesignInstance Type={x:Type vm:NamespacesConfigViewModel}}"
              d:DesignHeight="450" d:DesignWidth="800">
   <Grid>
     <FrameworkElement x:Name="dummyElement" Visibility="Collapsed"/>
@@ -17,7 +17,7 @@
       HorizontalContentAlignment="Stretch"
       CanUserAddRows="False"
       bhv:CollectionViewBehavior.EnableCollectionSynchronization="True"
-      ItemsSource="{Binding Path=Items}">
+      ItemsSource="{Binding Path=Namespaces}">
     </DataGrid>
   </Grid>
 </UserControl>

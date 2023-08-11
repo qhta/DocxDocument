@@ -1,7 +1,11 @@
 ﻿namespace ModelGenApp.ViewModels;
-public class TypeConfigViewModel : ViewModel, IEditableObject
+public class TypeConfigViewModel : VisibleViewModel
 {
 
+  [DataGridColumn(
+    HeaderResourceKey = "ModelGenApp.CommonStrings.OriginalNamespace",
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings.OriginalNamespaceTooltip"
+    )]
   public string OrigNamespace
   {
     get { return _OrigNamespace; }
@@ -16,20 +20,11 @@ public class TypeConfigViewModel : ViewModel, IEditableObject
   }
   private string _OrigNamespace = string.Empty;
 
-  public string OrigName
-  {
-    get { return _OrigName; }
-    set
-    {
-      if (_OrigName != value)
-      {
-        _OrigName = value;
-        NotifyPropertyChanged(nameof(OrigName));
-      }
-    }
-  }
-  private string _OrigName = string.Empty;
 
+  [DataGridColumn(
+    HeaderResourceKey = "ModelGenApp.CommonStrings.ExcludedNamespace",
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings.ExcludedNamespaceTooltip"
+    )]
   public bool ExcludedNamespace
   {
     get { return _ExcludedNamespace; }
@@ -44,6 +39,28 @@ public class TypeConfigViewModel : ViewModel, IEditableObject
   }
   private bool _ExcludedNamespace;
 
+  [DataGridColumn(
+    HeaderResourceKey = "ModelGenApp.CommonStrings.OriginalName",
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings.OriginalNameTooltip"
+    )]  
+  public string OrigName
+  {
+    get { return _OrigName; }
+    set
+    {
+      if (_OrigName != value)
+      {
+        _OrigName = value;
+        NotifyPropertyChanged(nameof(OrigName));
+      }
+    }
+  }
+  private string _OrigName = string.Empty;
+
+  [DataGridColumn(
+    HeaderResourceKey = "ModelGenApp.CommonStrings.IncludedType",
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings.IncludedTypeTooltip"
+    )]
   public bool IncludedType
   {
     get { return _Included; }
@@ -60,6 +77,10 @@ public class TypeConfigViewModel : ViewModel, IEditableObject
   }
   private bool _Included;
 
+  [DataGridColumn(
+    HeaderResourceKey = "ModelGenApp.CommonStrings.ExcludedType",
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings.ExcludedTypeTooltip"
+    )]
   public bool ExcludedType
   {
     get { return _Excluded; }
@@ -74,6 +95,10 @@ public class TypeConfigViewModel : ViewModel, IEditableObject
   }
   private bool _Excluded;
 
+  [DataGridColumn(
+    HeaderResourceKey = "ModelGenApp.CommonStrings.TargetNamespace",
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings.TargetNamespaceTooltip"
+    )]
   public string? TargetNamespace
   {
     get { return _TargetNamespace; }
@@ -88,6 +113,10 @@ public class TypeConfigViewModel : ViewModel, IEditableObject
   }
   private string? _TargetNamespace;
 
+  [DataGridColumn(
+    HeaderResourceKey = "ModelGenApp.CommonStrings.TargetName",
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings.TargetNameTooltip"
+    )]
   public string? TargetName
   {
     get { return _TargetName; }
@@ -102,46 +131,4 @@ public class TypeConfigViewModel : ViewModel, IEditableObject
   }
   private string? _TargetName;
 
-  public new bool IsValid
-  {
-    get { return _IsValid; }
-    set
-    {
-      if (_IsValid != value)
-      {
-        _IsValid = value;
-        NotifyPropertyChanged(nameof(IsValid));
-      }
-    }
-  }
-  private bool _IsValid = true;
-
-  public string? ValidationMsg
-  {
-    get { return _ValidationMsg; }
-    set
-    {
-      if (_ValidationMsg != value)
-      {
-        _ValidationMsg = value;
-        NotifyPropertyChanged(nameof(ValidationMsg));
-      }
-    }
-  }
-  private string? _ValidationMsg;
-
-  public void BeginEdit()
-  {
-    //throw new NotImplementedException();
-  }
-
-  public void CancelEdit()
-  {
-    //throw new NotImplementedException();
-  }
-
-  public void EndEdit()
-  {
-    //throw new NotImplementedException();
-  }
 }

@@ -3,13 +3,17 @@ public class NamespacesConfigViewModel : ModelConfigViewModel
 {
   public NamespacesConfigViewModel(ModelConfig configData) : base(configData)
   {
-    Caption = CommonStrings.ModelConfiguration_ + " " + CommonStrings.Namespaces.ToLower();
-    Namespaces = new ObservableCollection<NamespaceConfigViewModel>();
+    Caption = CommonStrings.ModelConfiguration + ": " + CommonStrings.Namespaces.ToLower();
+    Namespaces = new ListViewModel<NamespaceConfigViewModel>();
     Items = Namespaces;
     GetData(configData);
+    CollectionView = CollectionViewSource.GetDefaultView(Namespaces);
   }
 
-  public ObservableCollection<NamespaceConfigViewModel> Namespaces { get; private set; }
+  public ListViewModel<NamespaceConfigViewModel> Namespaces { get; private set; }
+
+
+  public ICollectionView CollectionView { get; private set; } 
 
   public override void GetData(ModelConfig configData)
   {

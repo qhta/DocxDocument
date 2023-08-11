@@ -15,7 +15,7 @@ public abstract class ModelConfigViewModel: ViewModel
     RestoreDataCommand = new RelayCommand(RestoreData, CanRestoreData) { Name = "RestoreDataCommand" };
   }
 
-  public virtual string Caption { get; protected set; } = "Model configuration";
+  public virtual string Caption { get; protected set; } = CommonStrings.ModelConfiguration;
 
    public virtual IList Items { get; protected set; } = null!;
 

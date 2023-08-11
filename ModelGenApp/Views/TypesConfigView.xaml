@@ -11,11 +11,12 @@
              d:DesignHeight="450" d:DesignWidth="800">
   <Grid>
     <DataGrid 
-      AutoGenerateColumns="False"
+      AutoGenerateColumns="True"
+      AutoGeneratingColumn="DataGrid_AutoGeneratingColumn"
       HorizontalContentAlignment="Stretch"
       bhv:CollectionViewBehavior.EnableCollectionSynchronization="True"
       ItemsSource="{Binding Path=Items}">
-      <DataGrid.Columns>
+      <!--<DataGrid.Columns>
         <DataGridTextColumn Header="Original namespace" Binding="{Binding Path=OrigNamespace}"/>
         <DataGridTextColumn Header="Original name" Binding="{Binding Path=OrigName}"/>
         <DataGridCheckBoxColumn Header="Excluded namespace" Binding="{Binding ExcludedNamespace, UpdateSourceTrigger=PropertyChanged}" />
@@ -23,7 +24,7 @@
         <DataGridCheckBoxColumn Header="Excluded type" Binding="{Binding ExcludedType, UpdateSourceTrigger=PropertyChanged}" />
         <DataGridTextColumn Header="Target namespace" Binding="{Binding TargetNamespace}"/>
         <DataGridTextColumn Header="Target name" Binding="{Binding TargetName}"/>
-      </DataGrid.Columns>
+      </DataGrid.Columns>-->
     </DataGrid>
   </Grid>
 </UserControl>
