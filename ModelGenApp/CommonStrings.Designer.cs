@@ -106,6 +106,15 @@ namespace ModelGenApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Excluded type.
+        /// </summary>
+        public static string ExcludedType {
+            get {
+                return ResourceManager.GetString("ExcludedType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Excluded types are rejected even if their namespaces are included..
         /// </summary>
         public static string ExcludedTypeTooltip {
@@ -138,6 +147,15 @@ namespace ModelGenApp {
         public static string FileWithDocsUseTooltip {
             get {
                 return ResourceManager.GetString("FileWithDocsUseTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Included type.
+        /// </summary>
+        public static string IncludedType {
+            get {
+                return ResourceManager.GetString("IncludedType", resourceCulture);
             }
         }
         
@@ -178,11 +196,11 @@ namespace ModelGenApp {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Model configuration:.
+        ///   Looks up a localized string similar to Model configuration.
         /// </summary>
-        public static string ModelConfiguration_ {
+        public static string ModelConfiguration {
             get {
-                return ResourceManager.GetString("ModelConfiguration_", resourceCulture);
+                return ResourceManager.GetString("ModelConfiguration", resourceCulture);
             }
         }
         
@@ -246,6 +264,24 @@ namespace ModelGenApp {
         public static string OriginalName {
             get {
                 return ResourceManager.GetString("OriginalName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Original namespace.
+        /// </summary>
+        public static string OriginalNamespace {
+            get {
+                return ResourceManager.GetString("OriginalNamespace", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Original namespace is a namespace read from source..
+        /// </summary>
+        public static string OriginalNamespaceTooltip {
+            get {
+                return ResourceManager.GetString("OriginalNamespaceTooltip", resourceCulture);
             }
         }
         
@@ -363,6 +399,24 @@ namespace ModelGenApp {
         public static string TargetName {
             get {
                 return ResourceManager.GetString("TargetName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Target namespace.
+        /// </summary>
+        public static string TargetNamespace {
+            get {
+                return ResourceManager.GetString("TargetNamespace", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Target namespace is a namespace written to output..
+        /// </summary>
+        public static string TargetNamespaceTooltip {
+            get {
+                return ResourceManager.GetString("TargetNamespaceTooltip", resourceCulture);
             }
         }
         
