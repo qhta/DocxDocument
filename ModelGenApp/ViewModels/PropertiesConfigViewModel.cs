@@ -5,11 +5,13 @@ public class PropertiesConfigViewModel : ModelConfigViewModel
   {
     Caption = CommonStrings.ModelConfiguration+": "+CommonStrings.Properties.ToLower();
     Properties = new ListViewModel<PropertyConfigViewModel>();
-    Items = Properties;
+    VisibleItems = new FilteredCollection<PropertyConfigViewModel>(Properties);
     GetData(configData);
   }
 
   public ListViewModel<PropertyConfigViewModel> Properties { get; private set; }
+
+  public FilteredCollection<PropertyConfigViewModel> VisibleItems { get; private set; }
 
   public override void GetData(ModelConfig configData)
   {

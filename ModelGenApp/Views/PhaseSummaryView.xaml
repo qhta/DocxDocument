@@ -6,7 +6,7 @@
              xmlns:views="clr-namespace:ModelGenApp.Views"
              xmlns:vm="clr-namespace:ModelGenApp.ViewModels"
              xmlns:hlp="clr-namespace:ModelGenApp.Helpers"
-             xmlns:bhv="clr-namespace:Qhta.WPF.Behaviors;assembly=Qhta.WPF.Behaviors"
+             xmlns:bhv="clr-namespace:Qhta.WPF.Utils;assembly=Qhta.WPF.Utils"
              mc:Ignorable="d" 
              d:DataContext="{d:DesignInstance Type=vm:PhaseViewModel}"
              d:DesignHeight="450" d:DesignWidth="800">

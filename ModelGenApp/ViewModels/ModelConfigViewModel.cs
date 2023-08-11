@@ -17,8 +17,6 @@ public abstract class ModelConfigViewModel: ViewModel
 
   public virtual string Caption { get; protected set; } = CommonStrings.ModelConfiguration;
 
-   public virtual IList Items { get; protected set; } = null!;
-
   /// <summary>
   /// Stores loaded assembly reference. Used in <see cref="ReloadData"/>
   /// </summary>

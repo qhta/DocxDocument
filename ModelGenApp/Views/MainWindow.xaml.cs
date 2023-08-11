@@ -1,5 +1,5 @@
 ﻿using Qhta.MVVM;
-using Qhta.WPF.Behaviors;
+using Qhta.WPF.Utils;
 
 namespace ModelGenApp.Views;
 /// <summary>

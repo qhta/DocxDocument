@@ -6,7 +6,7 @@ public class TypesConfigViewModel : ModelConfigViewModel
     Caption = CommonStrings.ModelConfiguration+": "+CommonStrings.Types.ToLower();
     Types = new ListViewModel<TypeConfigViewModel>();
     Types.CollectionChanged += Types_CollectionChanged;
-    Items = Types;
+    VisibleItems = new FilteredCollection<TypeConfigViewModel>(Types);
     GetData(configData);
   }
 
@@ -47,6 +47,8 @@ public class TypesConfigViewModel : ModelConfigViewModel
   #endregion
 
   public ListViewModel<TypeConfigViewModel> Types { get; private set; }
+
+  public FilteredCollection<TypeConfigViewModel> VisibleItems { get; private set; }
 
   public override void GetData(ModelConfig configData)
   {

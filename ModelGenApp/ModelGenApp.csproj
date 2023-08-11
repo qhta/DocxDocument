@@ -22,8 +22,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\MyLib\Qhta.MVVM\Qhta.MVVM.csproj" />
     <ProjectReference Include="..\..\MyLib\Qhta.ObservableObjects\Qhta.ObservableObjects.csproj" />
-    <ProjectReference Include="..\..\MyLib\Qhta.WPF.Behaviors\Qhta.WPF.Behaviors.csproj" />
-    <ProjectReference Include="..\..\MyLib\Qhta.WPF.DataGridUtils\Qhta.WPF.DataGridUtils.csproj" />
+    <ProjectReference Include="..\..\MyLib\Qhta.WPF.Utils\Qhta.WPF.Utils.csproj" />
     <ProjectReference Include="..\ModelGen\ModelGen\ModelGen.csproj" />
   </ItemGroup>
 
