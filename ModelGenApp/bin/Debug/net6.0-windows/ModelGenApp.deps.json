@@ -14,9 +14,8 @@
           "Qhta.ObservableObjects": "2.6.1",
           "Qhta.TextUtils": "3.1.1",
           "Qhta.TypeUtils": "1.3.10.1",
-          "Qhta.WPF.Behaviors": "1.4.0",
           "Qhta.WPF.Converters": "1.3.1",
-          "Qhta.WPF.DataGridUtils": "1.6.0"
+          "Qhta.WPF.Utils": "2.0.0"
         },
         "runtime": {
           "ModelGenApp.dll": {}
@@ -165,12 +164,12 @@
           }
         }
       },
-      "Qhta.MVVM/3.3.0": {
-        "dependencies": {
-          "Qhta.ObservableObjects": "2.6.1"
-        },
+      "Qhta.OrdNumbers/2.3.0": {
         "runtime": {
-          "Qhta.MVVM.dll": {}
+          "lib/netstandard2.0/Qhta.OrdNumbers.dll": {
+            "assemblyVersion": "2.3.0.0",
+            "fileVersion": "2.3.0.0"
+          }
         }
       },
       "Qhta.TestHelper/3.0.0": {
@@ -1008,6 +1007,14 @@
           "ModelGenDataConfig.dll": {}
         }
       },
+      "Qhta.MVVM/3.3.0": {
+        "dependencies": {
+          "Qhta.ObservableObjects": "2.6.1"
+        },
+        "runtime": {
+          "Qhta.MVVM.dll": {}
+        }
+      },
       "Qhta.ObservableObjects/2.6.1": {
         "dependencies": {
           "System.Collections.Concurrent": "4.3.0",
@@ -1017,23 +1024,18 @@
           "Qhta.ObservableObjects.dll": {}
         }
       },
-      "Qhta.WPF.Behaviors/1.4.0": {
+      "Qhta.WPF.Utils/2.0.0": {
         "dependencies": {
+          "Qhta.HtmlUtils": "2.1.0",
           "Qhta.MVVM": "3.3.0",
-          "Qhta.ObservableObjects": "2.6.1"
-        },
-        "runtime": {
-          "Qhta.WPF.Behaviors.dll": {}
-        }
-      },
-      "Qhta.WPF.DataGridUtils/1.6.0": {
-        "dependencies": {
-          "Qhta.MVVM": "3.3.0",
+          "Qhta.ObservableObjects": "2.6.1",
+          "Qhta.OrdNumbers": "2.3.0",
           "Qhta.TextUtils": "3.1.1",
-          "Qhta.TypeUtils": "1.3.10.1"
+          "Qhta.TypeUtils": "1.3.10.1",
+          "System.Drawing.Common": "7.0.0"
         },
         "runtime": {
-          "Qhta.WPF.DataGridUtils.dll": {}
+          "Qhta.WPF.Utils.dll": {}
         }
       }
     }
@@ -1135,10 +1137,12 @@
       "path": "qhta.htmlutils/2.1.0",
       "hashPath": "qhta.htmlutils.2.1.0.nupkg.sha512"
     },
-    "Qhta.MVVM/3.3.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
+    "Qhta.OrdNumbers/2.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-BSCWAelC/Edef+EUfphFgFWI7pHaPJYZWsCtbVRdZxSBgRqsn7z3oDbdGe3JjOS0qZsl3O54dZ6jeSmrti+kDg==",
+      "path": "qhta.ordnumbers/2.3.0",
+      "hashPath": "qhta.ordnumbers.2.3.0.nupkg.sha512"
     },
     "Qhta.TestHelper/3.0.0": {
       "type": "package",
@@ -1732,17 +1736,17 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Qhta.MVVM/3.3.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "Qhta.ObservableObjects/2.6.1": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "Qhta.WPF.Behaviors/1.4.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Qhta.WPF.DataGridUtils/1.6.0": {
+    "Qhta.WPF.Utils/2.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

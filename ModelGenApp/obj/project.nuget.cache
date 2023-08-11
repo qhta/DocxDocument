@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "KeGF2cVnsYHy/bSYpZBgcHKJkCGKtg/kdbYH/cvaLl0Q515jXEGOJjWw8uHQaVVq7vqCsrUstKNom2vt31Io6g==",
+  "dgSpecHash": "dkOuvGvRpbFMHvTmoTXG/FlvnG1AqdpaHb4xVYULlPXRmmB3/PMUpETAemCc3tgg+TdvoaHysJdL6denVdS6Ng==",
   "success": true,
   "projectFilePath": "D:\\VS\\Projects\\DocxDocument\\ModelGenApp\\ModelGenApp.csproj",
   "expectedPackageFiles": [
@@ -17,7 +17,7 @@
     "C:\\Users\\qhta1\\.nuget\\packages\\qhta.collections\\4.0.0\\qhta.collections.4.0.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\qhta.conversion\\2.0.0\\qhta.conversion.2.0.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\qhta.htmlutils\\2.1.0\\qhta.htmlutils.2.1.0.nupkg.sha512",
-    "C:\\Users\\qhta1\\.nuget\\packages\\qhta.mvvm\\3.3.0\\qhta.mvvm.3.3.0.nupkg.sha512",
+    "C:\\Users\\qhta1\\.nuget\\packages\\qhta.ordnumbers\\2.3.0\\qhta.ordnumbers.2.3.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\qhta.testhelper\\3.0.0\\qhta.testhelper.3.0.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\qhta.textutils\\3.1.1\\qhta.textutils.3.1.1.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\qhta.typeutils\\1.3.10.1\\qhta.typeutils.1.3.10.1.nupkg.sha512",
@@ -99,8 +99,8 @@
     "C:\\Users\\qhta1\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\system.xml.xpath\\4.3.0\\system.xml.xpath.4.3.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\system.xml.xpath.xmldocument\\4.3.0\\system.xml.xpath.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\qhta1\\.nuget\\packages\\qhta.observableobjects\\2.6.1\\qhta.observableobjects.2.6.1.nupkg.sha512",
-    "C:\\Users\\qhta1\\.nuget\\packages\\qhta.wpf.datagridutils\\1.6.0\\qhta.wpf.datagridutils.1.6.0.nupkg.sha512"
+    "C:\\Users\\qhta1\\.nuget\\packages\\qhta.mvvm\\3.3.0\\qhta.mvvm.3.3.0.nupkg.sha512",
+    "C:\\Users\\qhta1\\.nuget\\packages\\qhta.observableobjects\\2.6.1\\qhta.observableobjects.2.6.1.nupkg.sha512"
   ],
   "logs": []
 }

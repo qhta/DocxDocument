@@ -204,17 +204,17 @@
           "lib/netstandard2.0/Qhta.HtmlUtils.dll": {}
         }
       },
-      "Qhta.MVVM/3.3.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Qhta.ObservableObjects": "2.6.1"
-        },
+      "Qhta.OrdNumbers/2.3.0": {
+        "type": "package",
         "compile": {
-          "bin/placeholder/Qhta.MVVM.dll": {}
+          "lib/netstandard2.0/Qhta.OrdNumbers.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "bin/placeholder/Qhta.MVVM.dll": {}
+          "lib/netstandard2.0/Qhta.OrdNumbers.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Qhta.TestHelper/3.0.0": {
@@ -1727,6 +1727,19 @@
           "bin/placeholder/ModelGenDataConfig.dll": {}
         }
       },
+      "Qhta.MVVM/3.3.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Qhta.ObservableObjects": "2.6.1"
+        },
+        "compile": {
+          "bin/placeholder/Qhta.MVVM.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Qhta.MVVM.dll": {}
+        }
+      },
       "Qhta.ObservableObjects/2.6.1": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -1741,36 +1754,23 @@
           "bin/placeholder/Qhta.ObservableObjects.dll": {}
         }
       },
-      "Qhta.WPF.Behaviors/1.4.0": {
+      "Qhta.WPF.Utils/2.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "Qhta.HtmlUtils": "2.1.0",
           "Qhta.MVVM": "3.3.0",
-          "Qhta.ObservableObjects": "2.6.1"
-        },
-        "compile": {
-          "bin/placeholder/Qhta.WPF.Behaviors.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Qhta.WPF.Behaviors.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WPF"
-        ]
-      },
-      "Qhta.WPF.DataGridUtils/1.6.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "Qhta.MVVM": "3.3.0",
+          "Qhta.ObservableObjects": "2.6.1",
+          "Qhta.OrdNumbers": "2.3.0",
           "Qhta.TextUtils": "3.1.1",
-          "Qhta.TypeUtils": "1.3.10.1"
+          "Qhta.TypeUtils": "1.3.10.1",
+          "System.Drawing.Common": "7.0.0"
         },
         "compile": {
-          "bin/placeholder/Qhta.WPF.DataGridUtils.dll": {}
+          "bin/placeholder/Qhta.WPF.Utils.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Qhta.WPF.DataGridUtils.dll": {}
+          "bin/placeholder/Qhta.WPF.Utils.dll": {}
         },
         "frameworkReferences": [
           "Microsoft.WindowsDesktop.App.WPF"
@@ -2088,10 +2088,18 @@
         "qhta.htmlutils.nuspec"
       ]
     },
-    "Qhta.MVVM/3.3.0": {
-      "type": "project",
-      "path": "../../MyLib/Qhta.MVVM/Qhta.MVVM.csproj",
-      "msbuildProject": "../../MyLib/Qhta.MVVM/Qhta.MVVM.csproj"
+    "Qhta.OrdNumbers/2.3.0": {
+      "sha512": "BSCWAelC/Edef+EUfphFgFWI7pHaPJYZWsCtbVRdZxSBgRqsn7z3oDbdGe3JjOS0qZsl3O54dZ6jeSmrti+kDg==",
+      "type": "package",
+      "path": "qhta.ordnumbers/2.3.0",
+      "files": [
+        ".nupkg.metadata",
+        "lib/netstandard2.0/Qhta.OrdNumbers.dll",
+        "lib/netstandard2.0/Qhta.OrdNumbers.xml",
+        "qhta.ordnumbers.2.3.0.nupkg.sha512",
+        "qhta.ordnumbers.nuspec",
+        "readme.md"
+      ]
     },
     "Qhta.TestHelper/3.0.0": {
       "sha512": "bZfG6c38uAORKjTytJ22GZ0ZgMU4QE0jYVEe/eXYlfHh1DeSnKZpBJi+F9RoU9kowwUWA76U9vY90YTrUOs3og==",
@@ -5425,20 +5433,20 @@
       "path": "../ModelGenDataConfig/ModelGenDataConfig.csproj",
       "msbuildProject": "../ModelGenDataConfig/ModelGenDataConfig.csproj"
     },
+    "Qhta.MVVM/3.3.0": {
+      "type": "project",
+      "path": "../../MyLib/Qhta.MVVM/Qhta.MVVM.csproj",
+      "msbuildProject": "../../MyLib/Qhta.MVVM/Qhta.MVVM.csproj"
+    },
     "Qhta.ObservableObjects/2.6.1": {
       "type": "project",
       "path": "../../MyLib/Qhta.ObservableObjects/Qhta.ObservableObjects.csproj",
       "msbuildProject": "../../MyLib/Qhta.ObservableObjects/Qhta.ObservableObjects.csproj"
     },
-    "Qhta.WPF.Behaviors/1.4.0": {
+    "Qhta.WPF.Utils/2.0.0": {
       "type": "project",
-      "path": "../../MyLib/Qhta.WPF.Behaviors/Qhta.WPF.Behaviors.csproj",
-      "msbuildProject": "../../MyLib/Qhta.WPF.Behaviors/Qhta.WPF.Behaviors.csproj"
-    },
-    "Qhta.WPF.DataGridUtils/1.6.0": {
-      "type": "project",
-      "path": "../../MyLib/Qhta.WPF.DataGridUtils/Qhta.WPF.DataGridUtils.csproj",
-      "msbuildProject": "../../MyLib/Qhta.WPF.DataGridUtils/Qhta.WPF.DataGridUtils.csproj"
+      "path": "../../MyLib/Qhta.WPF.Utils/Qhta.WPF.Utils.csproj",
+      "msbuildProject": "../../MyLib/Qhta.WPF.Utils/Qhta.WPF.Utils.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -5449,9 +5457,8 @@
       "Qhta.ObservableObjects >= 2.6.1",
       "Qhta.TextUtils >= 3.1.1",
       "Qhta.TypeUtils >= 1.3.10.1",
-      "Qhta.WPF.Behaviors >= 1.4.0",
       "Qhta.WPF.Converters >= 1.3.1",
-      "Qhta.WPF.DataGridUtils >= 1.6.0"
+      "Qhta.WPF.Utils >= 2.0.0"
     ]
   },
   "packageFolders": {
@@ -5496,11 +5503,8 @@
             "D:\\VS\\Projects\\MyLib\\Qhta.ObservableObjects\\Qhta.ObservableObjects.csproj": {
               "projectPath": "D:\\VS\\Projects\\MyLib\\Qhta.ObservableObjects\\Qhta.ObservableObjects.csproj"
             },
-            "D:\\VS\\Projects\\MyLib\\Qhta.WPF.Behaviors\\Qhta.WPF.Behaviors.csproj": {
-              "projectPath": "D:\\VS\\Projects\\MyLib\\Qhta.WPF.Behaviors\\Qhta.WPF.Behaviors.csproj"
-            },
-            "D:\\VS\\Projects\\MyLib\\Qhta.WPF.DataGridUtils\\Qhta.WPF.DataGridUtils.csproj": {
-              "projectPath": "D:\\VS\\Projects\\MyLib\\Qhta.WPF.DataGridUtils\\Qhta.WPF.DataGridUtils.csproj"
+            "D:\\VS\\Projects\\MyLib\\Qhta.WPF.Utils\\Qhta.WPF.Utils.csproj": {
+              "projectPath": "D:\\VS\\Projects\\MyLib\\Qhta.WPF.Utils\\Qhta.WPF.Utils.csproj"
             }
           }
         }
