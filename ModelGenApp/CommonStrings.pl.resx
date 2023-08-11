@@ -189,17 +189,14 @@
   <data name="FileWithDocsUseTooltip" xml:space="preserve">
     <value>Możesz użyć lub pominąć dodawanie opisów z pliku.</value>
   </data>
-  <data name="ModelConfiguration_" xml:space="preserve">
-    <value>Konfiguracja modelu:</value>
+  <data name="ModelConfiguration" xml:space="preserve">
+    <value>Konfiguracja modelu</value>
   </data>
   <data name="OriginalName" xml:space="preserve">
     <value>Nazwa oryginalna</value>
   </data>
   <data name="OriginalNameTooltip" xml:space="preserve">
     <value>Nazwa oryginalna to nazwa odczytana ze źródła.</value>
-  </data>
-  <data name="ExcludedNamespace" xml:space="preserve">
-    <value>Wyłączona</value>
   </data>
   <data name="ExcludedNamespaceTooltip" xml:space="preserve">
     <value>Wyłączona przestrzeń nazw jest odrzucana podczas skanowania.</value>
@@ -239,5 +236,26 @@
   </data>
   <data name="ModelConfigurationReloadedFrom_1" xml:space="preserve">
     <value>Konfiguracja modelu załadowana ponownie z {0}</value>
+  </data>
+  <data name="OriginalNamespace" xml:space="preserve">
+    <value>Oryginalna przestrzeń nazw</value>
+  </data>
+  <data name="OriginalNamespaceTooltip" xml:space="preserve">
+    <value>Oryginalna przestrzeń nazw to przestrzeń nazw odczytana ze źródła.</value>
+  </data>
+  <data name="ExcludedNamespace" xml:space="preserve">
+    <value>Wyłączona</value>
+  </data>
+  <data name="IncludedType" xml:space="preserve">
+    <value>Typ włączony</value>
+  </data>
+  <data name="ExcludedType" xml:space="preserve">
+    <value>Typ wyłączony</value>
+  </data>
+  <data name="TargetNamespace" xml:space="preserve">
+    <value>Docelowa przestrzeń nazw</value>
+  </data>
+  <data name="TargetNamespaceTooltip" xml:space="preserve">
+    <value>Docelowa przestrzeń nazw to przestrzeń nazw zapisywana na wyjściu.</value>
   </data>
 </root>

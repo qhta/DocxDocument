@@ -3,8 +3,8 @@ public class TypesConfigViewModel : ModelConfigViewModel
 {
   public TypesConfigViewModel(ModelConfig configData) : base(configData)
   {
-    Caption = CommonStrings.ModelConfiguration_+" "+CommonStrings.Types.ToLower();
-    Types = new ObservableList<TypeConfigViewModel>();
+    Caption = CommonStrings.ModelConfiguration+": "+CommonStrings.Types.ToLower();
+    Types = new ListViewModel<TypeConfigViewModel>();
     Types.CollectionChanged += Types_CollectionChanged;
     Items = Types;
     GetData(configData);
@@ -46,7 +46,7 @@ public class TypesConfigViewModel : ModelConfigViewModel
   }
   #endregion
 
-  public ObservableList<TypeConfigViewModel> Types { get; private set; }
+  public ListViewModel<TypeConfigViewModel> Types { get; private set; }
 
   public override void GetData(ModelConfig configData)
   {

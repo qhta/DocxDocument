@@ -1,5 +1,5 @@
 ﻿namespace ModelGenApp.ViewModels;
-public class PropertyConfigViewModel : ViewModel, IEditableObject
+public class PropertyConfigViewModel : VisibleViewModel
 {
 
   public string OrigType
@@ -101,18 +101,4 @@ public class PropertyConfigViewModel : ViewModel, IEditableObject
   }
   private string? _ValidationMsg;
 
-  public void BeginEdit()
-  {
-    //throw new NotImplementedException();
-  }
-
-  public void CancelEdit()
-  {
-    //throw new NotImplementedException();
-  }
-
-  public void EndEdit()
-  {
-    //throw new NotImplementedException();
-  }
 }
