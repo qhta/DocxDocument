@@ -8,198 +8,203 @@
              xmlns:hlp="clr-namespace:ModelGenApp.Helpers"
              StartupUri="Views\MainWindow.xaml">
   <Application.Resources>
-    <local:CommonStringsAccessor x:Key="CommonStringsAccessor"/>
-    <vc:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
-    <vc:NotNullToVisibilityConverter x:Key="NotNullToVisibilityConverter"/>
-    <vc:AppendingConverter x:Key="AppendingConverter"/>
-    <vc:IndirectPropertyConverter x:Key="IndirectPropertyConverter"/>
-    <Style x:Key="NoBorderTextBoxStyle" TargetType="TextBox">
-        <Setter Property="BorderThickness" Value="0"/>
-    </Style>
-    <Style x:Key="Field_Hyperlink" TargetType="Hyperlink" >
-      <Style.Triggers>
-        <DataTrigger Binding="{Binding IsSelected, 
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/Qhta.WPF.Utils;component/Resources/DataGridStyle.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+      <local:CommonStringsAccessor x:Key="CommonStringsAccessor" />
+      <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+      <vc:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+      <vc:NotNullToVisibilityConverter x:Key="NotNullToVisibilityConverter" />
+      <vc:AppendingConverter x:Key="AppendingConverter" />
+      <vc:IndirectPropertyConverter x:Key="IndirectPropertyConverter" />
+      <Style x:Key="NoBorderTextBoxStyle"
+             TargetType="TextBox">
+        <Setter Property="BorderThickness"
+                Value="0" />
+      </Style>
+      <Style x:Key="Field_Hyperlink"
+             TargetType="Hyperlink">
+        <Style.Triggers>
+          <DataTrigger Binding="{Binding IsSelected, 
          RelativeSource= {RelativeSource 
-                            AncestorType={x:Type DataGridRow}}}" 
-         Value="True">
-          <Setter Property="Foreground" Value="White" />
-        </DataTrigger>
-      </Style.Triggers>
-    </Style>
-    <DataTemplate x:Key="{x:Type vm:MainViewModel}" DataType="{x:Type vm:MainViewModel}">
-      <views:MainWindow/>
-    </DataTemplate>
-    <DataTemplate x:Key="ColumnHeaderTemplate">
-      <Grid>
-        <Grid.ColumnDefinitions>
-          <ColumnDefinition Width="Auto"/>
-          <ColumnDefinition Width="*"/>
-          <ColumnDefinition Width="Auto"/>
-        </Grid.ColumnDefinitions>
-        <Image Grid.Column="0"
-                       Width="16"
-                       Height="16"
-                       Source="/Images/InfoMark.png"
-                       >
-          <Image.ToolTip>
-            <MultiBinding Converter="{StaticResource IndirectPropertyConverter}">
-              <Binding Source="{StaticResource CommonStringsAccessor}"/>
-              <Binding Converter="{StaticResource AppendingConverter}" ConverterParameter='ToolTip'/>
-            </MultiBinding>
-          </Image.ToolTip>
-        </Image>
-        <TextBlock Grid.Column="1" Text="{Binding}"/>
-      </Grid>
-    </DataTemplate>
-    <DataTemplate x:Key="ItemsCountColumnTemplate" >
-      <Grid>
-        <Grid.ColumnDefinitions>
-          <ColumnDefinition Width="*"/>
-          <ColumnDefinition Width="20"/>
-        </Grid.ColumnDefinitions>
-        <TextBlock Grid.Column="0"
-                  HorizontalAlignment="Right"
-                  Margin="5,0,5,0"
-                  Text="{Binding Items.Count}"
-                  />
-        <Button Grid.Column="1"
-                Content=">>"
-                Command="{Binding Path=ShowDetailsCommand}"
-                CommandParameter="{Binding}"
-                />
-      </Grid>
-    </DataTemplate>
-    <DataTemplate x:Key="CountColumnTemplate" >
-      <Grid>
-        <Grid.ColumnDefinitions>
-          <ColumnDefinition Width="*"/>
-          <ColumnDefinition Width="20"/>
-        </Grid.ColumnDefinitions>
-        <TextBlock Grid.Column="0"
-                  HorizontalAlignment="Right"
-                  Margin="5,0,5,0"
-                  Text="{Binding Count}"
-                  />
-        <Button Grid.Column="1"
-                Content=">>"
-                Command="{Binding Path=ShowDetailsCommand}"
-                CommandParameter="{Binding}"
-                />
-      </Grid>
-    </DataTemplate>
-    <DataTemplate x:Key="TypeInfoColumnTemplate" >
-      <Grid>
-        <Grid.ColumnDefinitions>
-          <ColumnDefinition Width="*"/>
-          <ColumnDefinition Width="20"/>
-        </Grid.ColumnDefinitions>
-        <TextBlock Grid.Column="0"
-                  HorizontalAlignment="Left"
-                  Margin="5,0,5,0"
-                  Text="{Binding Path=FullName}"
-                  />
-        <Button Grid.Column="1"
-                Content=">>"
-                Command="{Binding Path=ShowTypeCommand}"
-                CommandParameter="{Binding}"
-                ToolTip="Details"
-                />
-      </Grid>
-    </DataTemplate>
-    <DataTemplate x:Key="TypeInfoButtonTemplate" >
-      <Grid Width="20">
-        <Button
-                Content=">>"
-                Command="{Binding Path=ShowTypeCommand}"
-                CommandParameter="{Binding}"
-                ToolTip="Details"
-                />
-      </Grid>
-    </DataTemplate>
-    <DataTemplate x:Key="InvalidItemButtonTemplate" >
-      <Grid Width="20">
-        <Button Command="{Binding Path=ShowErrorCommand}"
-                CommandParameter="{Binding}"
-                Visibility="{Binding Path=IsValid, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter='Hidden,Visible'}"
-                ToolTip="{Binding ErrorMsg}"
-                >
-          <Button.Style>
-            <Style TargetType="Button">
-              <Setter Property="Background" Value="Transparent"/>
-              <Setter Property="BorderBrush" Value="Transparent"/>
-            </Style>
-          </Button.Style>
-          <Image Source="Images\ErrorMark.png"/>
-        </Button>
-      </Grid>
-    </DataTemplate>
-    
-    <DataTemplate x:Key="InvalidItemImageTemplate" >
-      <Grid Width="20">
-        <Image Source="Images\ErrorMark.png"
-               Width="16"
-               Height="16"
-               HorizontalAlignment="Center"
-               VerticalAlignment="Center"
-               Visibility="{Binding Path=IsValid, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter='Hidden,Visible'}"
-               ToolTip="{Binding ErrorMsg}"/>
-      </Grid>
-    </DataTemplate>
-
-    <DataTemplate x:Key="ErrorMsgMarkTemplate" >
-      <Grid Width="20">
-        <Image Source="Images\ErrorMark.png"
-               Width="16"
-               Height="16"
-               HorizontalAlignment="Center"
-               VerticalAlignment="Center"
-               Visibility="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=DataContext, 
-               Converter={StaticResource NotNullToVisibilityConverter}}"
-               ToolTip="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=DataContext}"/>
-      </Grid>
-    </DataTemplate>
-    
-    <DataTemplate x:Key="ShortcutCellTemplate">
-      <Grid>
-        <Grid.ColumnDefinitions>
-          <ColumnDefinition Width="*"/>
-          <ColumnDefinition Width="Auto"/>
-        </Grid.ColumnDefinitions>
-        <TextBlock Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=DataContext.Item1}"/>
-        <Image Grid.Column="1"
-                       Width="16"
-                       Height="16"
-                       Source="/Images/ErrorMark.png"
-                       Visibility="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=DataContext.Item2, 
-                       Converter={StaticResource NotNullToVisibilityConverter}}"
-                       ToolTip="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=DataContext.Item2}"
-                       />
-      </Grid>
-    </DataTemplate>
-    <DataTemplate x:Key="ShortcutCellEditingTemplate">
-      <TextBox Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=DataContext.Item1, 
-               UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource NoBorderTextBoxStyle}"/>
-    </DataTemplate>
-
-    <DataTemplate x:Key="TypeInfoLinkTemplate" >
-      <Grid>
-        <TextBlock Margin="2,0,2,0">
-          <Hyperlink 
-                  Style="{StaticResource Field_Hyperlink}"
-                  NavigateUri="{Binding Path=FullName}" 
+                            AncestorType={x:Type DataGridRow}}}"
+                       Value="True">
+            <Setter Property="Foreground"
+                    Value="White" />
+          </DataTrigger>
+        </Style.Triggers>
+      </Style>
+      <DataTemplate x:Key="{x:Type vm:MainViewModel}"
+                    DataType="{x:Type vm:MainViewModel}">
+        <views:MainWindow />
+      </DataTemplate>
+      <DataTemplate x:Key="ColumnHeaderTemplate">
+        <Grid>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+          </Grid.ColumnDefinitions>
+          <Image Grid.Column="0"
+                 Width="16"
+                 Height="16"
+                 Source="/Images/InfoMark.png">
+            <Image.ToolTip>
+              <MultiBinding Converter="{StaticResource IndirectPropertyConverter}">
+                <Binding Source="{StaticResource CommonStringsAccessor}" />
+                <Binding Converter="{StaticResource AppendingConverter}"
+                         ConverterParameter='ToolTip' />
+              </MultiBinding>
+            </Image.ToolTip>
+          </Image>
+          <TextBlock Grid.Column="1"
+                     Text="{Binding}" />
+        </Grid>
+      </DataTemplate>
+      <DataTemplate x:Key="ItemsCountColumnTemplate">
+        <Grid>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="20" />
+          </Grid.ColumnDefinitions>
+          <TextBlock Grid.Column="0"
+                     HorizontalAlignment="Right"
+                     Margin="5,0,5,0"
+                     Text="{Binding Items.Count}" />
+          <Button Grid.Column="1"
+                  Content=">>"
+                  Command="{Binding Path=ShowDetailsCommand}"
+                  CommandParameter="{Binding}" />
+        </Grid>
+      </DataTemplate>
+      <DataTemplate x:Key="CountColumnTemplate">
+        <Grid>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="20" />
+          </Grid.ColumnDefinitions>
+          <TextBlock Grid.Column="0"
+                     HorizontalAlignment="Right"
+                     Margin="5,0,5,0"
+                     Text="{Binding Count}" />
+          <Button Grid.Column="1"
+                  Content=">>"
+                  Command="{Binding Path=ShowDetailsCommand}"
+                  CommandParameter="{Binding}" />
+        </Grid>
+      </DataTemplate>
+      <DataTemplate x:Key="TypeInfoColumnTemplate">
+        <Grid>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="20" />
+          </Grid.ColumnDefinitions>
+          <TextBlock Grid.Column="0"
+                     HorizontalAlignment="Left"
+                     Margin="5,0,5,0"
+                     Text="{Binding Path=FullName}" />
+          <Button Grid.Column="1"
+                  Content=">>"
                   Command="{Binding Path=ShowTypeCommand}"
-                  CommandParameter="{Binding}">
-            <TextBlock Text="{Binding Path=FullName}" Foreground="Black" />
+                  CommandParameter="{Binding}"
+                  ToolTip="Details" />
+        </Grid>
+      </DataTemplate>
+      <DataTemplate x:Key="TypeInfoButtonTemplate">
+        <Grid Width="20">
+          <Button Content=">>"
+                  Command="{Binding Path=ShowTypeCommand}"
+                  CommandParameter="{Binding}"
+                  ToolTip="Details" />
+        </Grid>
+      </DataTemplate>
+      <DataTemplate x:Key="InvalidItemButtonTemplate">
+        <Grid Width="20">
+          <Button Command="{Binding Path=ShowErrorCommand}"
+                  CommandParameter="{Binding}"
+                  Visibility="{Binding Path=IsValid, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter='Hidden,Visible'}"
+                  ToolTip="{Binding ErrorMsg}">
+            <Button.Style>
+              <Style TargetType="Button">
+                <Setter Property="Background"
+                        Value="Transparent" />
+                <Setter Property="BorderBrush"
+                        Value="Transparent" />
+              </Style>
+            </Button.Style>
+            <Image Source="Images\ErrorMark.png" />
+          </Button>
+        </Grid>
+      </DataTemplate>
+
+      <DataTemplate x:Key="InvalidItemImageTemplate">
+        <Grid Width="20">
+          <Image Source="Images\ErrorMark.png"
+                 Width="16"
+                 Height="16"
+                 HorizontalAlignment="Center"
+                 VerticalAlignment="Center"
+                 Visibility="{Binding Path=IsValid, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter='Hidden,Visible'}"
+                 ToolTip="{Binding ErrorMsg}" />
+        </Grid>
+      </DataTemplate>
+
+      <DataTemplate x:Key="ErrorMsgMarkTemplate">
+        <Grid Width="20">
+          <Image Source="Images\ErrorMark.png"
+                 Width="16"
+                 Height="16"
+                 HorizontalAlignment="Center"
+                 VerticalAlignment="Center"
+                 Visibility="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=DataContext, 
+               Converter={StaticResource NotNullToVisibilityConverter}}"
+                 ToolTip="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=DataContext}" />
+        </Grid>
+      </DataTemplate>
+
+      <DataTemplate x:Key="ShortcutCellTemplate">
+        <Grid>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+          </Grid.ColumnDefinitions>
+          <TextBlock Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=DataContext.Item1}" />
+          <Image Grid.Column="1"
+                 Width="16"
+                 Height="16"
+                 Source="/Images/ErrorMark.png"
+                 Visibility="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=DataContext.Item2, 
+                       Converter={StaticResource NotNullToVisibilityConverter}}"
+                 ToolTip="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=DataContext.Item2}" />
+        </Grid>
+      </DataTemplate>
+      <DataTemplate x:Key="ShortcutCellEditingTemplate">
+        <TextBox Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=DataContext.Item1, 
+               UpdateSourceTrigger=PropertyChanged}"
+                 Style="{StaticResource NoBorderTextBoxStyle}" />
+      </DataTemplate>
+
+      <DataTemplate x:Key="TypeInfoLinkTemplate">
+        <Grid>
+          <TextBlock Margin="2,0,2,0">
+          <Hyperlink Style="{StaticResource Field_Hyperlink}"
+                     NavigateUri="{Binding Path=FullName}"
+                     Command="{Binding Path=ShowTypeCommand}"
+                     CommandParameter="{Binding}">
+            <TextBlock Text="{Binding Path=FullName}"
+                       Foreground="Black" />
           </Hyperlink>
         </TextBlock>
-      </Grid>
-    </DataTemplate>
-    <DataTemplate x:Key="TextBlockTemplate">
-      <Grid>
-        <TextBlock Margin="2,0,2,0" 
-                     Text="{Binding}"/>
-      </Grid>
-    </DataTemplate>
-    <hlp:DynamicDataTemplateSelector x:Key="DynamicDataTemplateSelector"/>
+        </Grid>
+      </DataTemplate>
+      <DataTemplate x:Key="TextBlockTemplate">
+        <Grid>
+          <TextBlock Margin="2,0,2,0"
+                     Text="{Binding}" />
+        </Grid>
+      </DataTemplate>
+      <hlp:DynamicDataTemplateSelector x:Key="DynamicDataTemplateSelector" />
+    </ResourceDictionary>
   </Application.Resources>
 </Application>

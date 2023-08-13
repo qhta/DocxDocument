@@ -9,7 +9,7 @@ public partial class NamespacesConfigView : UserControl
 
   private void DataGrid_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
   {
-    AutoGenerating.UseDataGridColumnAttribute(sender, e);
+    DataGridColumnCreator.GenerateColumn(sender, e);
     if (e.PropertyName==nameof(NamespaceConfigViewModel.ShortcutErrorMsg))
     {
       BindingOperations.SetBinding(e.Column, DataGridColumn.VisibilityProperty, 
@@ -30,5 +30,10 @@ public partial class NamespacesConfigView : UserControl
           ConverterParameter="Visible,Collapsed" 
           });;
     }
+  }
+
+  private void DataGrid_FilterButtonClick(object sender, RoutedEventArgs e)
+  {
+
   }
 }

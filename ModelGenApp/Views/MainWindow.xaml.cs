@@ -10,7 +10,7 @@ public partial class MainWindow : Window
   public MainWindow()
   {
     ObservableObject.CommonDispatcher = new DispatcherBridge(Dispatcher.CurrentDispatcher);
-    Command.CanExecuteChangedListener = new CommandManagerBridge();
+    Command.CommandManager = new CommandManagerBridge();
     InitializeComponent();
     MainViewModel = new MainViewModel();
     DataContext = MainViewModel;

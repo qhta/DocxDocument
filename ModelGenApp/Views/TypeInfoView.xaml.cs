@@ -13,7 +13,7 @@ public partial class TypeInfoView : UserControl
 
   private void DataGrid_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs args)
   {
-    AutoGenerating.UseDataGridColumnAttribute(sender, args);
+    DataGridColumnCreator.GenerateColumn(sender, args);
     if (sender is DataGrid dataGrid)
       if (DataContext is ClassInfoViewModel)
       {

@@ -6,7 +6,7 @@
              xmlns:views="clr-namespace:ModelGenApp.Views"
              xmlns:vm="clr-namespace:ModelGenApp.ViewModels"
              xmlns:hlp="clr-namespace:ModelGenApp.Helpers"
-             xmlns:bhv="clr-namespace:Qhta.WPF.Utils;assembly=Qhta.WPF.Utils"
+             xmlns:utl="clr-namespace:Qhta.WPF.Utils;assembly=Qhta.WPF.Utils"
              mc:Ignorable="d" 
              d:DataContext="{d:DesignInstance Type=vm:NamespacesViewModel}"
              d:DesignHeight="450" d:DesignWidth="800">
@@ -15,7 +15,7 @@
     <DataGrid AutoGenerateColumns="true"
               AutoGeneratingColumn="DataGrid_AutoGeneratingColumn"
               ClipboardCopyMode="IncludeHeader"
-              bhv:CollectionViewBehavior.EnableCollectionSynchronization="True"
+              utl:CollectionViewBehavior.EnableCollectionSynchronization="True"
               ItemsSource="{Binding}">
       <DataGrid.Resources>
         <hlp:BindingProxy x:Key="proxy" Data="{Binding}"/>
