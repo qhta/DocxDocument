@@ -10,7 +10,7 @@
              d:DataContext="{d:DesignInstance Type={x:Type vm:TypeConfigViewModel}}"
              d:DesignHeight="450" d:DesignWidth="800">
   <Grid>
-    <DataGrid 
+    <DataGrid x:Name="MainDataGrid"
       AutoGenerateColumns="True"
       AutoGeneratingColumn="DataGrid_AutoGeneratingColumn"
       HorizontalContentAlignment="Stretch"

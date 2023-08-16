@@ -5,11 +5,14 @@ public partial class NamespacesConfigView : UserControl
   public NamespacesConfigView()
   {
     InitializeComponent();
+    dataGridColumnCreator =  new DataGridColumnCreator(MainDataGrid, typeof(NamespacesConfigViewModel), typeof(NamespaceConfigViewModel)) { IsFilterButtonVisible = true };
   }
+
+  private DataGridColumnCreator dataGridColumnCreator = null!;
 
   private void DataGrid_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
   {
-    DataGridColumnCreator.GenerateColumn(sender, e);
+    dataGridColumnCreator.GenerateColumn(sender, e);
     if (e.PropertyName==nameof(NamespaceConfigViewModel.ShortcutErrorMsg))
     {
       BindingOperations.SetBinding(e.Column, DataGridColumn.VisibilityProperty, 
