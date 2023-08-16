@@ -13,17 +13,19 @@
   <Grid>
     <FrameworkElement x:Name="dummyElement"
                       Visibility="Collapsed" />
-    <DataGrid AutoGenerateColumns="True"
+    <DataGrid x:Name="MainDataGrid"
+              AutoGenerateColumns="True"
               AutoGeneratingColumn="DataGrid_AutoGeneratingColumn"
               HorizontalContentAlignment="Stretch"
               CanUserAddRows="False"
               utl:CollectionViewBehavior.EnableCollectionSynchronization="True"
-              utl:DataGridBehavior.UserCanFind="True"
-              utl:DataGridBehavior.ShowFindButton="True"
-              utl:DataGridBehavior.UserCanFilter="True"
-              utl:DataGridBehavior.ShowFilterButton="True"
-              utl:DataGridBehavior.FilterButtonClick="DataGrid_FilterButtonClick" 
+              utl:CollectionViewBehavior.UserCanFind="True"
+              utl:CollectionViewBehavior.ShowFindButton="True"
+              utl:CollectionViewBehavior.UserCanFilter="True"
+              utl:CollectionViewBehavior.ShowFilterButton="True"
               ItemsSource="{Binding Path=VisibleItems}">
     </DataGrid>
   </Grid>
+  <!--
+              utl:DataGridBehavior.FilterButtonClick="DataGrid_FilterButtonClick"-->
 </UserControl>

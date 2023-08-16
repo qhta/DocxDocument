@@ -1,8 +1,4 @@
-﻿using System.Windows.Data;
-
-using Qhta.WPF.Converters;
-
-namespace ModelGenApp.Views;
+﻿namespace ModelGenApp.Views;
 
 public partial class TypeInfoView : UserControl
 {
@@ -11,9 +7,22 @@ public partial class TypeInfoView : UserControl
     InitializeComponent();
   }
 
+  private DataGridColumnCreator dataGridColumnCreator = null!;
+
   private void DataGrid_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs args)
   {
-    DataGridColumnCreator.GenerateColumn(sender, args);
+    if (dataGridColumnCreator==null)
+    {
+      if (DataContext is ClassInfoViewModel)
+        dataGridColumnCreator = new DataGridColumnCreator(MainDataGrid,
+          typeof(PropListViewModel), typeof(PropInfoViewModel));
+      else if (DataContext is EnumTypeInfoViewModel)
+        dataGridColumnCreator = new DataGridColumnCreator(MainDataGrid, 
+          typeof(EnumListViewModel), typeof(EnumInfoViewModel));
+      else
+        return;
+    }
+    dataGridColumnCreator.GenerateColumn(sender, args);
     if (sender is DataGrid dataGrid)
       if (DataContext is ClassInfoViewModel)
       {

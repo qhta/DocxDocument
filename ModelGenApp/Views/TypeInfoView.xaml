@@ -45,7 +45,8 @@
                   Visibility="{Binding Path=Members.ShowDeclaringTypeVisible,
                                Converter={StaticResource BoolToVisibilityConverter}}"/>
       </StackPanel>
-      <DataGrid Grid.Row="1"
+      <DataGrid x:Name="MainDataGrid"
+              Grid.Row="1"
               AutoGeneratingColumn="DataGrid_AutoGeneratingColumn"
               utl:CollectionViewBehavior.EnableCollectionSynchronization="True"
               ItemsSource="{Binding Path=Members.Items}"/>
