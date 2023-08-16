@@ -1036,6 +1036,11 @@
         },
         "runtime": {
           "Qhta.WPF.Utils.dll": {}
+        },
+        "resources": {
+          "pl/Qhta.WPF.Utils.resources.dll": {
+            "locale": "pl"
+          }
         }
       }
     }

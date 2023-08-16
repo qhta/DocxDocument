@@ -5,10 +5,13 @@ public partial class TypesConfigView : UserControl
   public TypesConfigView()
   {
     InitializeComponent();
+    dataGridColumnCreator = new DataGridColumnCreator(MainDataGrid, typeof(TypesConfigViewModel), typeof(TypeConfigViewModel));
   }
+
+  private DataGridColumnCreator dataGridColumnCreator = null!;
 
   private void DataGrid_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
   {
-    DataGridColumnCreator.GenerateColumn(sender, e);
+    dataGridColumnCreator.GenerateColumn(sender, e);
   }
 }
