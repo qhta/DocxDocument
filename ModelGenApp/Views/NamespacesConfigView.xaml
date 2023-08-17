@@ -19,13 +19,8 @@
               HorizontalContentAlignment="Stretch"
               CanUserAddRows="False"
               utl:CollectionViewBehavior.EnableCollectionSynchronization="True"
-              utl:CollectionViewBehavior.UserCanFind="True"
-              utl:CollectionViewBehavior.ShowFindButton="True"
-              utl:CollectionViewBehavior.UserCanFilter="True"
               utl:CollectionViewBehavior.ShowFilterButton="True"
               ItemsSource="{Binding Path=VisibleItems}">
     </DataGrid>
   </Grid>
-  <!--
-              utl:DataGridBehavior.FilterButtonClick="DataGrid_FilterButtonClick"-->
 </UserControl>
