@@ -23,8 +23,7 @@ public class NamespaceConfigViewModel : VisibleViewModel
 
   [DataGridColumn(
     HeaderResourceKey = "ModelGenApp.CommonStrings.ExcludedNamespace",
-    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings.ExcludedNamespaceTooltip",
-    ShowFilterButtonEnabled = false
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings.ExcludedNamespaceTooltip"
     )]
   public bool Excluded
   {
