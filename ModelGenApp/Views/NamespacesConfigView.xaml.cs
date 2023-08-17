@@ -5,7 +5,8 @@ public partial class NamespacesConfigView : UserControl
   public NamespacesConfigView()
   {
     InitializeComponent();
-    dataGridColumnCreator =  new DataGridColumnCreator(MainDataGrid, typeof(NamespacesConfigViewModel), typeof(NamespaceConfigViewModel)) { IsFilterButtonVisible = true };
+    dataGridColumnCreator =  new DataGridColumnCreator(MainDataGrid, typeof(NamespacesConfigViewModel), typeof(NamespaceConfigViewModel)) 
+    { IsFilterButtonVisible = true };
   }
 
   private DataGridColumnCreator dataGridColumnCreator = null!;
@@ -33,10 +34,5 @@ public partial class NamespacesConfigView : UserControl
           ConverterParameter="Visible,Collapsed" 
           });;
     }
-  }
-
-  private void DataGrid_FilterButtonClick(object sender, RoutedEventArgs e)
-  {
-
   }
 }
