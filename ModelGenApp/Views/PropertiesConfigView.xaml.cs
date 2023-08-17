@@ -8,6 +8,15 @@
     public PropertiesConfigView()
     {
       InitializeComponent();
+      dataGridColumnCreator = new DataGridColumnCreator(MainDataGrid, typeof(PropertiesConfigViewModel), typeof(PropertyConfigViewModel))
+      { IsFilterButtonVisible = true };
+    }
+
+    private DataGridColumnCreator dataGridColumnCreator = null!;
+
+    private void DataGrid_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
+    {
+      dataGridColumnCreator.GenerateColumn(sender, e);
     }
   }
 }

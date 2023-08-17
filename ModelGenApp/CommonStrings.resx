@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ExcludedTypeTooltip" xml:space="preserve">
-    <value>Excluded types are rejected even if their namespaces are included.</value>
+    <value>Excluded type is rejected even if its namespace is included.</value>
   </data>
   <data name="IncludedTypeTooltip" xml:space="preserve">
-    <value>Included types are accepted even if their namespaces are excluded.</value>
+    <value>Included type is accepted even if its namespaces is excluded.</value>
   </data>
   <data name="MeaninglessDescription" xml:space="preserve">
     <value>Meaningless description</value>
@@ -184,7 +184,8 @@
     <value>This is the main type where scan begins. Its property types and item types are scanned next.</value>
   </data>
   <data name="FileWithDocsTooltip" xml:space="preserve">
-    <value>This is XML file with types and properties descriptions. It should be prepared by an external tool.</value>
+    <value>This is XML file with types and properties descriptions. 
+It should be prepared by an external tool.</value>
   </data>
   <data name="FileWithDocsUseTooltip" xml:space="preserve">
     <value>You can use or omit adding docs from file.</value>
@@ -257,5 +258,31 @@
   </data>
   <data name="TargetNamespaceTooltip" xml:space="preserve">
     <value>Target namespace is a namespace written to output.</value>
+  </data>
+  <data name="OriginalDeclarationType" xml:space="preserve">
+    <value>Original declaration type</value>
+  </data>
+  <data name="OriginalDeclarationTypeTooltip" xml:space="preserve">
+    <value>Original declaration type is a type where a property is declared. 
+If not defined then a property can be declared in any type.</value>
+  </data>
+  <data name="ExcludedProperty" xml:space="preserve">
+    <value>Excluded property</value>
+  </data>
+  <data name="ExcludedPropertyTooltip" xml:space="preserve">
+    <value>Excluded property is rejected even if its type is accepted.</value>
+  </data>
+  <data name="TargetPropertyType" xml:space="preserve">
+    <value>Target property type</value>
+  </data>
+  <data name="TargetPropertyTypeTooltip" xml:space="preserve">
+    <value>Target property type is a type of property value written to output.</value>
+  </data>
+  <data name="ConfigPropertyName" xml:space="preserve">
+    <value>Config property name</value>
+  </data>
+  <data name="ConfigPropertyNameTooltip" xml:space="preserve">
+    <value>Config property name is declared name of the property. 
+Can contain * as a wildcard.</value>
   </data>
 </root>

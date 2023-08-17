@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ExcludedTypeTooltip" xml:space="preserve">
-    <value>Typy wyłączone są odrzucane, nawet gdy ich przestrzenie nazw są włączone.</value>
+    <value>Typ wyłączony jest odrzucany, nawet gdy jego przestrzeń nazw jest włączona.</value>
   </data>
   <data name="IncludedTypeTooltip" xml:space="preserve">
-    <value>Typy włączone są akceptowane, nawet gdy ich przestrzenie nazw są wyłączone.</value>
+    <value>Typ włączony jest akceptowany, nawet gdy jego przestrzeń nazw jest wyłączona.</value>
   </data>
   <data name="MeaninglessDescription" xml:space="preserve">
     <value>Opis bez znaczenia</value>
@@ -184,7 +184,8 @@
     <value>To jest główny typ, od którego rozpoczyna się skanowanie. Następnie skanowane są typy jego właściwości i elementów.</value>
   </data>
   <data name="FileWithDocsTooltip" xml:space="preserve">
-    <value>To jest plik XML z opisami typów i właściwości. Powinien być przygotowany uprzednio za pomocą osobnego narzędzia.</value>
+    <value>To jest plik XML z opisami typów i właściwości. 
+Powinien być przygotowany uprzednio za pomocą osobnego narzędzia.</value>
   </data>
   <data name="FileWithDocsUseTooltip" xml:space="preserve">
     <value>Możesz użyć lub pominąć dodawanie opisów z pliku.</value>
@@ -257,5 +258,31 @@
   </data>
   <data name="TargetNamespaceTooltip" xml:space="preserve">
     <value>Docelowa przestrzeń nazw to przestrzeń nazw zapisywana na wyjściu.</value>
+  </data>
+  <data name="OriginalDeclarationType" xml:space="preserve">
+    <value>Oryginalny typ deklaracji</value>
+  </data>
+  <data name="OriginalDeclarationTypeTooltip" xml:space="preserve">
+    <value>Oryginalny typ deklaracji to typ, w którym deklarowana jest właściwość. 
+Jeśli nie jest zdefiniowany, to właściwość może być zadeklarowana w dowolnym typie.</value>
+  </data>
+  <data name="ExcludedProperty" xml:space="preserve">
+    <value>Właściwość wyłączona</value>
+  </data>
+  <data name="ExcludedPropertyTooltip" xml:space="preserve">
+    <value>Właściwość wyłączona jest odrzucana, nawet gdy jej typ jest zaakceptowany.</value>
+  </data>
+  <data name="TargetPropertyType" xml:space="preserve">
+    <value>Docelowy typ właściwości</value>
+  </data>
+  <data name="TargetPropertyTypeTooltip" xml:space="preserve">
+    <value>Docelowy typ właściwości jest typem wartości właściwości zapisywanym na wyjściu.</value>
+  </data>
+  <data name="ConfigPropertyName" xml:space="preserve">
+    <value>Konfigurowana nazwa właściwości</value>
+  </data>
+  <data name="ConfigPropertyNameTooltip" xml:space="preserve">
+    <value>Konfigurowana nazwa właściwości jest deklarowaną nazwą właściwości. 
+Może zawierać * jako symbol wieloznaczny.</value>
   </data>
 </root>

@@ -88,6 +88,25 @@ namespace ModelGenApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Config property name.
+        /// </summary>
+        public static string ConfigPropertyName {
+            get {
+                return ResourceManager.GetString("ConfigPropertyName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Config property name is declared name of the property. 
+        ///Can contain * as a wildcard..
+        /// </summary>
+        public static string ConfigPropertyNameTooltip {
+            get {
+                return ResourceManager.GetString("ConfigPropertyNameTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Excluded.
         /// </summary>
         public static string ExcludedNamespace {
@@ -106,6 +125,24 @@ namespace ModelGenApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Excluded property.
+        /// </summary>
+        public static string ExcludedProperty {
+            get {
+                return ResourceManager.GetString("ExcludedProperty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Excluded property is rejected even if its type is accepted..
+        /// </summary>
+        public static string ExcludedPropertyTooltip {
+            get {
+                return ResourceManager.GetString("ExcludedPropertyTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Excluded type.
         /// </summary>
         public static string ExcludedType {
@@ -115,7 +152,7 @@ namespace ModelGenApp {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Excluded types are rejected even if their namespaces are included..
+        ///   Looks up a localized string similar to Excluded type is rejected even if its namespace is included..
         /// </summary>
         public static string ExcludedTypeTooltip {
             get {
@@ -133,7 +170,8 @@ namespace ModelGenApp {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This is XML file with types and properties descriptions. It should be prepared by an external tool..
+        ///   Looks up a localized string similar to This is XML file with types and properties descriptions. 
+        ///It should be prepared by an external tool..
         /// </summary>
         public static string FileWithDocsTooltip {
             get {
@@ -160,7 +198,7 @@ namespace ModelGenApp {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Included types are accepted even if their namespaces are excluded..
+        ///   Looks up a localized string similar to Included type is accepted even if its namespaces is excluded..
         /// </summary>
         public static string IncludedTypeTooltip {
             get {
@@ -255,6 +293,25 @@ namespace ModelGenApp {
         public static string NoError {
             get {
                 return ResourceManager.GetString("NoError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Original declaration type.
+        /// </summary>
+        public static string OriginalDeclarationType {
+            get {
+                return ResourceManager.GetString("OriginalDeclarationType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Original declaration type is a type where a property is declared. 
+        ///If not defined then a property can be declared in any type..
+        /// </summary>
+        public static string OriginalDeclarationTypeTooltip {
+            get {
+                return ResourceManager.GetString("OriginalDeclarationTypeTooltip", resourceCulture);
             }
         }
         
@@ -426,6 +483,24 @@ namespace ModelGenApp {
         public static string TargetNameTooltip {
             get {
                 return ResourceManager.GetString("TargetNameTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Target property type.
+        /// </summary>
+        public static string TargetPropertyType {
+            get {
+                return ResourceManager.GetString("TargetPropertyType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Target property type is a type of property value written to output..
+        /// </summary>
+        public static string TargetPropertyTypeTooltip {
+            get {
+                return ResourceManager.GetString("TargetPropertyTypeTooltip", resourceCulture);
             }
         }
         
