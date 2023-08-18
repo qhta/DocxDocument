@@ -5,7 +5,8 @@ public partial class NamespacesListView : UserControl
   public NamespacesListView()
   {
     InitializeComponent();
-    dataGridColumnCreator =  new DataGridColumnCreator(MainDataGrid, typeof(NamespacesViewModel), typeof(NamespaceViewModel)) { IsFilterButtonVisible = true };
+    dataGridColumnCreator =  new DataGridColumnCreator(MainDataGrid, typeof(NamespacesViewModel), typeof(NamespaceViewModel)) 
+    { IsFilterButtonVisible = true };
   }
 
   private DataGridColumnCreator dataGridColumnCreator = null!;
