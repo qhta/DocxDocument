@@ -20,35 +20,48 @@ public class NamespaceViewModel : ViewModel<Namespace>
 
   public string? Filter { get; private set; }
 
+  //[DataGridColumn(
+  //  HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Original_namespace),
+  //  HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Original_namespace_tooltip)
+  //  )]
   public string Name { get; set; }
 
+  //[DataGridColumn(
+  //  HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Target_namespace),
+  //  HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Target_namespace_tooltip)
+  //  )]
   public string? TargetName { get; set; }
 
   public string Caption => Phase.PhaseName + " " + this.Name;
 
-
-
-  [DataGridColumn(DataTemplateResourceKey = "ItemsCountColumnTemplate",
+  [DataGridColumn(
+    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.AllTypes),
+    DataTemplateResourceKey = "ItemsCountColumnTemplate",
     SortMemberPath = "AllTypes.Count", ClipboardContentPath = "AllTypes.Count")]
   public TypeListViewModel AllTypes { get; set; }
 
   [DataGridColumn(DataTemplateResourceKey = "ItemsCountColumnTemplate",
+    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Classes),
     SortMemberPath = "Classes.Count", ClipboardContentPath = "Classes.Count")]
   public TypeListViewModel Classes { get; set; }
 
   [DataGridColumn(DataTemplateResourceKey = "ItemsCountColumnTemplate",
+    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.EnumTypes),
     SortMemberPath = "Enums.Count", ClipboardContentPath = "Enums.Count")]
   public TypeListViewModel Enums { get; set; }
 
   [DataGridColumn(DataTemplateResourceKey = "ItemsCountColumnTemplate",
+    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Interfaces),
     SortMemberPath = "Interfaces.Count", ClipboardContentPath = "Interfaces.Count")]
   public TypeListViewModel Interfaces { get; set; }
 
   [DataGridColumn(DataTemplateResourceKey = "ItemsCountColumnTemplate",
+    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.StructTypes),
     SortMemberPath = "Structs.Count", ClipboardContentPath = "Structs.Count")]
   public TypeListViewModel Structs { get; set; }
 
   [DataGridColumn(DataTemplateResourceKey = "ItemsCountColumnTemplate",
+    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.OtherTypes),
     SortMemberPath = "Others.Count", ClipboardContentPath = "Others.Count")]
   public TypeListViewModel Others { get; set; }
 

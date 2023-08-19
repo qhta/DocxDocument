@@ -15,7 +15,7 @@ public abstract class ModelConfigViewModel: ViewModel
     RestoreDataCommand = new RelayCommand(RestoreData, CanRestoreData) { Name = "RestoreDataCommand" };
   }
 
-  public virtual string Caption { get; protected set; } = CommonStrings.ModelConfiguration;
+  public virtual string Caption { get; protected set; } = CommonStrings.Model_configuration;
 
   /// <summary>
   /// Stores loaded assembly reference. Used in <see cref="ReloadData"/>
@@ -88,14 +88,14 @@ public abstract class ModelConfigViewModel: ViewModel
   public void StoreData()
   {
     if (!ValidateData())
-      MessageBox.Show(CommonStrings.ModelConfigurationIsInvalid);
+      MessageBox.Show(CommonStrings.Model_configuration_is_invalid);
     else
     {
       var filename = ModelConfig.Instance.GetFilename();
       if (!File.Exists(filename))
         File.Copy(filename, Path.ChangeExtension(filename, ".bak"));
       SaveData(ModelConfig.Instance);
-      MessageBox.Show(String.Format(CommonStrings.ModelConfigurationSaved_1, filename));
+      MessageBox.Show(String.Format(CommonStrings.Model_configuration_saved_in_0, filename));
     }
   }
   #endregion
@@ -122,7 +122,7 @@ public abstract class ModelConfigViewModel: ViewModel
   public void RestoreData()
   {
     ReloadData(ModelConfig.Instance);
-    MessageBox.Show(String.Format(CommonStrings.ModelConfigurationReloadedFrom_1, ModelConfig.Instance.GetFilename()));
+    MessageBox.Show(String.Format(CommonStrings.Model_configuration_reloaded_from_0, ModelConfig.Instance.GetFilename()));
   }
   #endregion
 

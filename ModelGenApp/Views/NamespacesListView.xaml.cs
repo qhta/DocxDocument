@@ -1,4 +1,5 @@
-﻿namespace ModelGenApp.Views;
+﻿
+namespace ModelGenApp.Views;
 
 public partial class NamespacesListView : UserControl
 {

@@ -12,7 +12,6 @@
       <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/Qhta.WPF.Utils;component/Resources/DataGridStyle.xaml" />
       </ResourceDictionary.MergedDictionaries>
-      <local:CommonStringsAccessor x:Key="CommonStringsAccessor" />
       <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
       <vc:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
       <vc:NotNullToVisibilityConverter x:Key="NotNullToVisibilityConverter" />
@@ -52,7 +51,7 @@
                  Source="/Images/InfoMark.png">
             <Image.ToolTip>
               <MultiBinding Converter="{StaticResource IndirectPropertyConverter}">
-                <Binding Source="{StaticResource CommonStringsAccessor}" />
+                <Binding Source="{StaticResource CommonStrings}" />
                 <Binding Converter="{StaticResource AppendingConverter}"
                          ConverterParameter='ToolTip' />
               </MultiBinding>

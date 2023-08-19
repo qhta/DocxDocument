@@ -8,6 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="CommonStringsAccessor.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Images\ErrorMark.png" />
     <None Remove="Images\InfoMark.png" />
   </ItemGroup>

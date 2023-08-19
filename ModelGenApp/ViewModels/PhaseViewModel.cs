@@ -6,6 +6,11 @@
 public abstract partial class PhaseViewModel : ViewModel
 {
 
+  /// <summary>
+  /// Initializing constructor. Needs a phase enum and name.
+  /// </summary>
+  /// <param name="phase"></param>
+  /// <param name="name"></param>
   public PhaseViewModel(PPS phase, string name)
   {
     PhaseNum = phase;
@@ -21,7 +26,7 @@ public abstract partial class PhaseViewModel : ViewModel
     NotifyCanExecuteChanged();
   }
 
-  public void NotifyCanExecuteChanged()
+  private void NotifyCanExecuteChanged()
   {
     SaveResultsCommand.NotifyCanExecuteChanged();
     ShowResultsCommand.NotifyCanExecuteChanged();
@@ -35,7 +40,10 @@ public abstract partial class PhaseViewModel : ViewModel
   /// <summary>
   /// Name of the process phase.
   /// </summary>
-  public string? PhaseName {get; set; }
+  public string PhaseName {get; set; }
+
+  public string Caption => 
+    CommonStrings.ResourceManager.GetString(PhaseName, CultureInfo.CurrentUICulture) ?? PhaseName;
 
   /// <summary>
   /// Percent of the phase advantage.
@@ -74,7 +82,11 @@ public abstract partial class PhaseViewModel : ViewModel
     Summary = new SummaryViewModel();
     if (summary.Summary != null)
       foreach (var info in summary.Summary)
-        Summary.Add(new SummaryValueViewModel { Name = info.Key.ToString().DeCamelCase(), InfoKind = info.Key, Value = info.Value });
+      {
+        var infoName = info.Key.ToString();
+        infoName = CommonStrings.ResourceManager.GetString(infoName, CultureInfo.CurrentUICulture) ?? infoName.DeCamelCase();
+        Summary.Add(new SummaryValueViewModel { Name = infoName, InfoKind = info.Key, Value = info.Value });
+      }
     Summary.PropertyChanged += Summary_PropertyChanged;
   }
 
@@ -202,7 +214,7 @@ public abstract partial class PhaseViewModel : ViewModel
 
   protected virtual bool ShowResultsCanExecute()
   {
-    return Percentage == 100;
+    return true;//Percentage == 100;
   }
   #endregion
 

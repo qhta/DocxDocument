@@ -41,8 +41,8 @@
           <Label Grid.Row="0" Grid.Column="0" 
                 Margin="5"
                 VerticalAlignment="Center"
-                Content="{x:Static local:CommonStrings.TypeToScan}" 
-                ToolTip="{x:Static local:CommonStrings.TypeToScanTooltip}"
+                Content="{x:Static local:CommonStrings.Type_to_scan}" 
+                ToolTip="{x:Static local:CommonStrings.Type_to_scan_tooltip}"
                 />
           <ComboBox Grid.Row="0" Grid.Column="1" 
                 Margin="5"
@@ -103,7 +103,7 @@
 
           <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="1"
                  VerticalAlignment="Center"
-                 Content="{x:Static local:CommonStrings.ProcessPhases_}"/>
+                 Content="{x:Static local:CommonStrings.Process_phases_}"/>
 
           <views:PhaseProgressView Grid.Row="1" 
                        Percentage="{Binding Path=ProcessMonitor.VM.PhaseMonitors[0].Percentage}" 

@@ -3,7 +3,7 @@ public class PropertiesConfigViewModel : ModelConfigViewModel
 {
   public PropertiesConfigViewModel(ModelConfig configData) : base(configData)
   {
-    Caption = CommonStrings.ModelConfiguration+": "+CommonStrings.Properties.ToLower();
+    Caption = CommonStrings.Model_configuration +": "+CommonStrings.Properties.ToLower();
     Properties = new ListViewModel<PropertyConfigViewModel>();
     VisibleItems = new FilteredCollection<PropertyConfigViewModel>(Properties);
     GetData(configData);
