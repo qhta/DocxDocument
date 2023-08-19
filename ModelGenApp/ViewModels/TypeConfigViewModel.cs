@@ -3,8 +3,8 @@ public class TypeConfigViewModel : VisibleViewModel
 {
 
   [DataGridColumn(
-    HeaderResourceKey = "ModelGenApp.CommonStrings.OriginalNamespace",
-    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings.OriginalNamespaceTooltip"
+    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Original_namespace),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Original_namespace_tooltip)
     )]
   public string OrigNamespace
   {
@@ -22,8 +22,8 @@ public class TypeConfigViewModel : VisibleViewModel
 
 
   [DataGridColumn(
-    HeaderResourceKey = "ModelGenApp.CommonStrings.ExcludedNamespace",
-    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings.ExcludedNamespaceTooltip"
+    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Excluded_namespace),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Excluded_namespace_tooltip)
     )]
   public bool ExcludedNamespace
   {
@@ -40,8 +40,8 @@ public class TypeConfigViewModel : VisibleViewModel
   private bool _ExcludedNamespace;
 
   [DataGridColumn(
-    HeaderResourceKey = "ModelGenApp.CommonStrings.OriginalName",
-    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings.OriginalNameTooltip"
+    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Original_name),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Original_name_tooltip)
     )]  
   public string OrigName
   {
@@ -58,8 +58,8 @@ public class TypeConfigViewModel : VisibleViewModel
   private string _OrigName = string.Empty;
 
   [DataGridColumn(
-    HeaderResourceKey = "ModelGenApp.CommonStrings.IncludedType",
-    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings.IncludedTypeTooltip"
+    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Included_type),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Included_type_tooltip)
     )]
   public bool IncludedType
   {
@@ -78,8 +78,8 @@ public class TypeConfigViewModel : VisibleViewModel
   private bool _Included;
 
   [DataGridColumn(
-    HeaderResourceKey = "ModelGenApp.CommonStrings.ExcludedType",
-    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings.ExcludedTypeTooltip"
+    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Excluded_type),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Excluded_type_tooltip)
     )]
   public bool ExcludedType
   {
@@ -96,8 +96,8 @@ public class TypeConfigViewModel : VisibleViewModel
   private bool _Excluded;
 
   [DataGridColumn(
-    HeaderResourceKey = "ModelGenApp.CommonStrings.TargetNamespace",
-    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings.TargetNamespaceTooltip"
+    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Target_namespace),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Target_namespace_tooltip)
     )]
   public string? TargetNamespace
   {
@@ -114,8 +114,8 @@ public class TypeConfigViewModel : VisibleViewModel
   private string? _TargetNamespace;
 
   [DataGridColumn(
-    HeaderResourceKey = "ModelGenApp.CommonStrings.TargetName",
-    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings.TargetNameTooltip"
+    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Target_name),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Target_name_tooltip)
     )]
   public string? TargetName
   {

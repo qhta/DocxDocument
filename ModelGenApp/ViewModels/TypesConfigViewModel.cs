@@ -3,7 +3,7 @@ public class TypesConfigViewModel : ModelConfigViewModel
 {
   public TypesConfigViewModel(ModelConfig configData) : base(configData)
   {
-    Caption = CommonStrings.ModelConfiguration+": "+CommonStrings.Types.ToLower();
+    Caption = CommonStrings.Model_configuration +": "+CommonStrings.Types.ToLower();
     Types = new ListViewModel<TypeConfigViewModel>();
     Types.CollectionChanged += Types_CollectionChanged;
     VisibleItems = new FilteredCollection<TypeConfigViewModel>(Types);

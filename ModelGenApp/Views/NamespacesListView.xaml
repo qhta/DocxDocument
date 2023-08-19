@@ -2,7 +2,8 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:ModelGenApp"
              xmlns:views="clr-namespace:ModelGenApp.Views"
              xmlns:vm="clr-namespace:ModelGenApp.ViewModels"
              xmlns:hlp="clr-namespace:ModelGenApp.Helpers"
@@ -22,8 +23,12 @@
         <hlp:BindingProxy x:Key="proxy" Data="{Binding}"/>
       </DataGrid.Resources>
       <DataGrid.Columns>
-        <DataGridTextColumn Header="Name" Binding="{Binding Path=Name}"/>
-        <DataGridTextColumn Header="TargetName" Binding="{Binding Path=TargetName}" 
+        <DataGridTextColumn Header="{x:Static local:CommonStrings.Original_namespace}" 
+                            utl:CollectionViewBehavior.ShowFilterButton="True"
+                            Binding="{Binding Path=Name}"/>
+        <DataGridTextColumn Header="{x:Static local:CommonStrings.Target_namespace}"
+                            utl:CollectionViewBehavior.ShowFilterButton="True"
+                            Binding="{Binding Path=TargetName}" 
                             Visibility="{Binding DataContext.IsTargetNameVisible,
                             Source={x:Reference dummyElement}, 
                             Converter={StaticResource BoolToVisibilityConverter}}"/>
