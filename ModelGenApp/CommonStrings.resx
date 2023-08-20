@@ -333,4 +333,10 @@ Can contain * as a wildcard.</value>
   <data name="TargetShortcutError" xml:space="preserve">
     <value>Target shortcut error</value>
   </data>
+  <data name="Kind" xml:space="preserve">
+    <value>Kind</value>
+  </data>
+  <data name="Acceptance" xml:space="preserve">
+    <value>Acceptance</value>
+  </data>
 </root>

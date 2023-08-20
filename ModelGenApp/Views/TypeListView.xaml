@@ -17,32 +17,33 @@
     <FrameworkElement x:Name="dummyElement"
                       Visibility="Collapsed" />
     <DataGrid x:Name="MainDataGrid"
-              AutoGenerateColumns="False"
+              AutoGenerateColumns="true"
+              AutoGeneratingColumn="DataGrid_AutoGeneratingColumn"
               utl:CollectionViewBehavior.EnableCollectionSynchronization="True"
               utl:CollectionViewBehavior.ShowFilterButton="True"
               ItemsSource="{Binding Items}">
-      <DataGrid.Columns>
-        <DataGridTextColumn Header="Kind"
+      <!--<DataGrid.Columns>
+        <DataGridTextColumn Header="{x:Static local:CommonStrings.Kind}"
                             Binding="{Binding Path=TypeKind}"
                             utl:CollectionViewBehavior.ShowFilterButton="True"
                             IsReadOnly="true" />
-        <DataGridTextColumn Header="Acceptance"
+        <DataGridTextColumn Header="{x:Static local:CommonStrings.Acceptance}"
                             Binding="{Binding Path=Acceptance}"
                             utl:CollectionViewBehavior.ShowFilterButton="True"
                             IsReadOnly="true" />
-        <DataGridTextColumn Header="Name"
+        <DataGridTextColumn Header="{x:Static local:CommonStrings.Name}"
                             Binding="{Binding Path=Type.Name}"
                             utl:CollectionViewBehavior.ShowFilterButton="True"
                             IsReadOnly="true" />
-        <DataGridTextColumn Header="Target name"
+        <DataGridTextColumn Header="{x:Static local:CommonStrings.Target_name}"
                             Binding="{Binding Path=TargetName}"
                             Visibility="{Binding DataContext.IsTargetNameVisible,
                             Source={x:Reference dummyElement}, 
                             Converter={StaticResource BoolToVisibilityConverter}}"
                             utl:CollectionViewBehavior.ShowFilterButton="True"
                             IsReadOnly="true" />
-        <utils:DataGridContentBoundColumn Binding="{Binding Path=Type}"
-                            Header=""
+        <utils:DataGridContentBoundColumn Header=""
+                            Binding="{Binding Path=Type}"
                             CanUserSort="False"
                             utl:CollectionViewBehavior.ShowFilterButton="False"
                             ContentTemplate="{StaticResource TypeInfoButtonTemplate}" />
@@ -63,7 +64,7 @@
                             utl:CollectionViewBehavior.ShowFilterButton="True"
                             Binding="{Binding Path=Documentation}"
                             IsReadOnly="true" />
-      </DataGrid.Columns>
+      </DataGrid.Columns>-->
     </DataGrid>
   </Grid>
 </UserControl>
