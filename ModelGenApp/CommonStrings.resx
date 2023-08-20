@@ -235,9 +235,6 @@ It should be prepared by an external tool.</value>
   <data name="Model_configuration_is_invalid" xml:space="preserve">
     <value>Model configuration is invalid. See marks in the table.</value>
   </data>
-  <data name="Model_configuration_reloaded_from_0" xml:space="preserve">
-    <value>Model configuration reloaded from {0}</value>
-  </data>
   <data name="Original_namespace" xml:space="preserve">
     <value>Original namespace</value>
   </data>
@@ -326,5 +323,14 @@ Can contain * as a wildcard.</value>
   </data>
   <data name="OtherTypes" xml:space="preserve">
     <value>Other types</value>
+  </data>
+  <data name="ValidationError" xml:space="preserve">
+    <value>Validation error</value>
+  </data>
+  <data name="ShortcutError" xml:space="preserve">
+    <value>Shortcut error</value>
+  </data>
+  <data name="TargetShortcutError" xml:space="preserve">
+    <value>Target shortcut error</value>
   </data>
 </root>

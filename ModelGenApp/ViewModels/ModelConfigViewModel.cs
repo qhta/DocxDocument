@@ -122,7 +122,6 @@ public abstract class ModelConfigViewModel: ViewModel
   public void RestoreData()
   {
     ReloadData(ModelConfig.Instance);
-    MessageBox.Show(String.Format(CommonStrings.Model_configuration_reloaded_from_0, ModelConfig.Instance.GetFilename()));
   }
   #endregion
 

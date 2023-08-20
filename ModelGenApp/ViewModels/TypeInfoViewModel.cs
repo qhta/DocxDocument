@@ -67,7 +67,7 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
 
   public string? TargetName => Model.GetFullName(true, TypeNameSelector.Namespace, TypeNameSelector.NsShortcut);
 
-  public string? ErrorMsg
+  public string? ValidationError
   {
     get
     {
@@ -133,7 +133,7 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
     if (Model.IsValid(Phase.PhaseNum))
       TypeSummary.Add(new TypePropViewModel("Validation", "valid"));
     else
-      TypeSummary.Add(new TypePropViewModel("Validation", new ErrString(ErrorMsg ?? "invalid")));
+      TypeSummary.Add(new TypePropViewModel("Validation", new ErrString(this.ValidationError ?? "invalid")));
 
     TypeSummary.Add(new TypePropViewModel("Kind", TypeKind.ToString().ToLower()));
     TypeSummary.Add(new TypePropViewModel("Namespace", Model.OriginalNamespace));
@@ -189,7 +189,7 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
 
   protected virtual bool ShowErrorCanExecute()
   {
-    return ErrorMsg != null;
+    return ValidationError != null;
   }
 
   protected virtual void ShowErrorExecute()
