@@ -333,4 +333,10 @@ Może zawierać * jako symbol wieloznaczny.</value>
   <data name="TargetShortcutError" xml:space="preserve">
     <value>Błąd skrótu docelowego</value>
   </data>
+  <data name="Kind" xml:space="preserve">
+    <value>Rodzaj</value>
+  </data>
+  <data name="Acceptance" xml:space="preserve">
+    <value>Akceptacja</value>
+  </data>
 </root>

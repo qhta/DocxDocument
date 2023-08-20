@@ -61,6 +61,15 @@ namespace ModelGenApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Acceptance.
+        /// </summary>
+        public static string Acceptance {
+            get {
+                return ResourceManager.GetString("Acceptance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Accepted types.
         /// </summary>
         public static string AcceptedTypes {
@@ -275,6 +284,15 @@ namespace ModelGenApp {
         public static string Interfaces {
             get {
                 return ResourceManager.GetString("Interfaces", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kind.
+        /// </summary>
+        public static string Kind {
+            get {
+                return ResourceManager.GetString("Kind", resourceCulture);
             }
         }
         

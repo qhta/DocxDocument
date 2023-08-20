@@ -1,6 +1,16 @@
 ﻿namespace ModelGenApp.ViewModels;
+
+/// <summary>
+/// View model to represent <see cref="ModelGen.TypeInfo"/>.
+/// </summary>
 public class TypeInfoViewModel : ViewModel<TypeInfo>
 {
+  /// <summary>
+  /// Initializating constructor.
+  /// </summary>
+  /// <param name="phase"><see cref="PhaseViewModel"/> that represents processing phase needed to evaluate <see cref="Acceptance"/> property.</param>
+  /// <param name="typeInfo"><see cref="ModelGen.TypeInfo"/> that holds type data.</param>
+  /// <param name="typeNameSelector"><see cref="ModelGen.NKS"/> object data to select, which name (original/target) to get from <paramref name="typeInfo"></param>
   protected TypeInfoViewModel(PhaseViewModel phase, TypeInfo typeInfo, NKS typeNameSelector) : base(typeInfo)
   {
     TypeNameSelector = typeNameSelector;
@@ -10,6 +20,13 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
     FillTypeSummaryAsync();
   }
 
+  /// <summary>
+  /// Method to create instance of specific type according to <paramref name="typeInfo"/> TypeKind.
+  /// </summary>
+  /// <param name="phase"><see cref="PhaseViewModel"/> that represents processing phase needed to evaluate <see cref="Acceptance"/> property.</param>
+  /// <param name="typeInfo"><see cref="ModelGen.TypeInfo"/> that holds type data.</param>
+  /// <param name="typeNameSelector"><see cref="ModelGen.NKS"/> object data to select, which name (original/target) to get from <paramref name="typeInfo"></param>
+  /// <returns></returns>
   public static TypeInfoViewModel Create(PhaseViewModel phase, TypeInfo typeInfo, NKS typeNameSelector)
   {
     if (typeInfo.TypeKind == TypeKind.Enum)
@@ -19,7 +36,9 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
     return new ClassInfoViewModel(phase, typeInfo, typeNameSelector);
   }
 
-  [DataGridColumn]
+  [DataGridColumn(
+    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Kind)
+    )]
   public TypeKind TypeKind => Model.TypeKind;
 
   public NKS TypeNameSelector { get; private set; }
@@ -28,14 +47,19 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
 
   public bool IsTypeKindSelected(TKS tks) => Model.IsTypeKindSelected(tks);
 
-  [DataGridColumn]
-  public string Acceptance
+  [DataGridColumn(
+    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Acceptance)
+    )]
+  public Acceptance Acceptance
   {
     get
     {
+      Acceptance result = 0;
       if (Model.IsAcceptedAfter(Phase.PhaseNum))
-        return "accepted";
-      return "rejected";
+        result |= Acceptance.Accepted;
+      if (Model.IsRejectedAfter(Phase.PhaseNum))
+        result |= Acceptance.Rejected;
+      return result;
     }
   }
 
@@ -82,8 +106,10 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
     }
   }
 
-  [DataGridColumn(DataTemplateResourceKey = "TypeInfoLinkTemplate",
-    SortMemberPath = "Type.Name", ClipboardContentPath = "Type.Name")]
+  [DataGridColumn(
+    DataTemplateResourceKey = "TypeInfoLinkTemplate",
+    SortMemberPath = "Type.Name", 
+    ClipboardContentPath = "Type.Name")]
   public TypeInfoViewModel? Type
   {
     get
@@ -128,7 +154,7 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
     if (Model.IsAcceptedAfter(Phase.PhaseNum))
       TypeSummary.Add(new TypePropViewModel("Acceptance", Acceptance));
     else
-      TypeSummary.Add(new TypePropViewModel("Acceptance", new ErrString(Acceptance)));
+      TypeSummary.Add(new TypePropViewModel("Acceptance", new ErrString(Acceptance.ToString()?.ToLower())));
 
     if (Model.IsValid(Phase.PhaseNum))
       TypeSummary.Add(new TypePropViewModel("Validation", "valid"));
