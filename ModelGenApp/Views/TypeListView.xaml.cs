@@ -27,6 +27,16 @@ public partial class TypeListView : UserControl
           typeof(TypeListViewModel), typeof(TypeInfoViewModel));
     }
     dataGridColumnCreator.GenerateColumn(sender, e);
+    if (e.PropertyName==nameof(TypeInfoViewModel.ValidationError))
+    {
+      BindingOperations.SetBinding(e.Column, DataGridColumn.VisibilityProperty, 
+        new Binding("DataContext."+nameof(TypeListViewModel.AreAllTypesValid)) 
+        { 
+          Source = dummyElement,
+          Converter=new BoolToVisibilityConverter(), 
+          ConverterParameter="Visible,Collapsed" 
+          });;
+    }
   }
 
 }

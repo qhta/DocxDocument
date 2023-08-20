@@ -120,4 +120,5 @@ public class TypeListViewModel : ViewModel
   }
   #endregion
 
+  public bool AreAllTypesValid => Types.Any(item => !item.IsValid);
 }
