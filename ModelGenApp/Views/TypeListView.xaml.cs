@@ -15,17 +15,18 @@ public partial class TypeListView : UserControl
   {
     if (dataGridColumnCreator == null)
     {
-      if (DataContext is ClassListViewModel)
-        dataGridColumnCreator = new DataGridColumnCreator(MainDataGrid, 
-          typeof(ClassListViewModel), typeof(ClassInfoViewModel));
-      else
-      if (DataContext is EnumTypeListViewModel)
-        dataGridColumnCreator = new DataGridColumnCreator(MainDataGrid,
-          typeof(EnumTypeListViewModel), typeof(EnumTypeInfoViewModel));
-      else
+      //if (DataContext is ClassListViewModel)
+      //  dataGridColumnCreator = new DataGridColumnCreator(MainDataGrid, 
+      //    typeof(ClassListViewModel), typeof(ClassInfoViewModel));
+      //else
+      //if (DataContext is EnumTypeListViewModel)
+      //  dataGridColumnCreator = new DataGridColumnCreator(MainDataGrid,
+      //    typeof(EnumTypeListViewModel), typeof(EnumTypeInfoViewModel));
+      //else
         dataGridColumnCreator = new DataGridColumnCreator(MainDataGrid, 
           typeof(TypeListViewModel), typeof(TypeInfoViewModel));
     }
     dataGridColumnCreator.GenerateColumn(sender, e);
   }
+
 }

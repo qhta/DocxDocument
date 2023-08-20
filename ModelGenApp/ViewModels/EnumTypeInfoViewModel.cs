@@ -6,7 +6,7 @@ public class EnumTypeInfoViewModel : TypeInfoViewModel
   {
     EnumValues = new EnumListViewModel(this, "EnumValues");
     if (typeInfo.EnumValues != null)
-      foreach (var enumVal in typeInfo.EnumValues)
+      foreach (var enumVal in typeInfo.EnumValues.ToArray())
         EnumValues.Add(new EnumInfoViewModel(phase, enumVal, typeNameSelector));
   }
 
