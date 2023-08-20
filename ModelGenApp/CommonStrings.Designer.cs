@@ -324,15 +324,6 @@ namespace ModelGenApp {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Model configuration reloaded from {0}.
-        /// </summary>
-        public static string Model_configuration_reloaded_from_0 {
-            get {
-                return ResourceManager.GetString("Model_configuration_reloaded_from_0", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Model configuration saved in {0}.
         /// </summary>
         public static string Model_configuration_saved_in_0 {
@@ -550,6 +541,15 @@ namespace ModelGenApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Shortcut error.
+        /// </summary>
+        public static string ShortcutError {
+            get {
+                return ResourceManager.GetString("ShortcutError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Show results.
         /// </summary>
         public static string ShowResults {
@@ -658,6 +658,15 @@ namespace ModelGenApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Target shortcut error.
+        /// </summary>
+        public static string TargetShortcutError {
+            get {
+                return ResourceManager.GetString("TargetShortcutError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Type to scan.
         /// </summary>
         public static string Type_to_scan {
@@ -681,6 +690,15 @@ namespace ModelGenApp {
         public static string Types {
             get {
                 return ResourceManager.GetString("Types", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Validation error.
+        /// </summary>
+        public static string ValidationError {
+            get {
+                return ResourceManager.GetString("ValidationError", resourceCulture);
             }
         }
     }

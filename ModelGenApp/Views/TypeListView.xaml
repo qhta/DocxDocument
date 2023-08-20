@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:ModelGenApp"
              xmlns:views="clr-namespace:ModelGenApp.Views"
              xmlns:vm="clr-namespace:ModelGenApp.ViewModels"
              xmlns:hlp="clr-namespace:ModelGenApp.Helpers"
@@ -41,13 +42,14 @@
                             utl:CollectionViewBehavior.ShowFilterButton="True"
                             IsReadOnly="true" />
         <utils:DataGridContentBoundColumn Binding="{Binding Path=Type}"
-                            Header="Go"
+                            Header=""
                             CanUserSort="False"
-                            utl:CollectionViewBehavior.ShowFilterButton="True"
+                            utl:CollectionViewBehavior.ShowFilterButton="False"
                             ContentTemplate="{StaticResource TypeInfoButtonTemplate}" />
         <utils:DataGridContentBoundColumn Binding="{Binding Path=Type}"
                             Header=""
-                            SortMemberPath="ErrorMsg"
+                            SortMemberPath="ValidationError"
+                            utl:CollectionViewBehavior.HiddenHeader="{x:Static local:CommonStrings.ValidationError}"
                             utl:CollectionViewBehavior.ShowFilterButton="True"
                             Visibility="{Binding DataContext.IsInvalidMarkVisible,
                             Source={x:Reference dummyElement}, 

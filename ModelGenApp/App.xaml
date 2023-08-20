@@ -123,7 +123,7 @@
           <Button Command="{Binding Path=ShowErrorCommand}"
                   CommandParameter="{Binding}"
                   Visibility="{Binding Path=IsValid, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter='Hidden,Visible'}"
-                  ToolTip="{Binding ErrorMsg}">
+                  ToolTip="{Binding ValidationError}">
             <Button.Style>
               <Style TargetType="Button">
                 <Setter Property="Background"
@@ -145,7 +145,7 @@
                  HorizontalAlignment="Center"
                  VerticalAlignment="Center"
                  Visibility="{Binding Path=IsValid, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter='Hidden,Visible'}"
-                 ToolTip="{Binding ErrorMsg}" />
+                 ToolTip="{Binding ValidationError}" />
         </Grid>
       </DataTemplate>
 

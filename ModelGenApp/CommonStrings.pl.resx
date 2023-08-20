@@ -235,9 +235,6 @@ Powinien być przygotowany uprzednio za pomocą osobnego narzędzia.</value>
   <data name="Model_configuration_is_invalid" xml:space="preserve">
     <value>Konfiguracja modelu jest nieprawidłowa. Zobacz znaczniki w tabeli.</value>
   </data>
-  <data name="Model_configuration_reloaded_from_0" xml:space="preserve">
-    <value>Konfiguracja modelu załadowana ponownie z {0}</value>
-  </data>
   <data name="Original_namespace" xml:space="preserve">
     <value>Oryginalna przestrzeń nazw</value>
   </data>
@@ -326,5 +323,14 @@ Może zawierać * jako symbol wieloznaczny.</value>
   </data>
   <data name="OtherTypes" xml:space="preserve">
     <value>Inne typy</value>
+  </data>
+  <data name="ValidationError" xml:space="preserve">
+    <value>Błąd walidacji</value>
+  </data>
+  <data name="ShortcutError" xml:space="preserve">
+    <value>Błąd skrótu</value>
+  </data>
+  <data name="TargetShortcutError" xml:space="preserve">
+    <value>Błąd skrótu docelowego</value>
   </data>
 </root>
