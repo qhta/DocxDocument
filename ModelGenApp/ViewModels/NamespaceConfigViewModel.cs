@@ -66,7 +66,7 @@ public class NamespaceConfigViewModel : VisibleViewModel
       {
         _IsShortcutValid = value;
         NotifyPropertyChanged(nameof(IsShortcutValid));
-        NotifyPropertyChanged(nameof(ShortcutErrorMsg));
+        NotifyPropertyChanged(nameof(ShortcutError));
       }
     }
   }
@@ -77,7 +77,7 @@ public class NamespaceConfigViewModel : VisibleViewModel
     HiddenHeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.ShortcutError),
     DataTemplateResourceKey ="ErrorMsgMarkTemplate"
     )]
-  public string? ShortcutErrorMsg => IsShortcutValid ? (string?)null : CommonStrings.Duplicated_shortcut;
+  public string? ShortcutError => IsShortcutValid ? (string?)null : CommonStrings.Duplicated_shortcut;
 
   [DataGridColumn(
     HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Target_name),
@@ -124,7 +124,7 @@ public class NamespaceConfigViewModel : VisibleViewModel
       {
         _IsTargetShortcutValid = value;
         NotifyPropertyChanged(nameof(IsTargetShortcutValid));
-        NotifyPropertyChanged(nameof(TargetShortcutErrorMsg));
+        NotifyPropertyChanged(nameof(TargetShortcutError));
       }
     }
   }
@@ -135,6 +135,6 @@ public class NamespaceConfigViewModel : VisibleViewModel
     HiddenHeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.TargetShortcutError),
     DataTemplateResourceKey ="ErrorMsgMarkTemplate"
     )]
-  public string? TargetShortcutErrorMsg => IsTargetShortcutValid ? (string?)null : CommonStrings.Target_shortcut_error;
+  public string? TargetShortcutError => IsTargetShortcutValid ? (string?)null : CommonStrings.Target_shortcut_error;
 
 }
