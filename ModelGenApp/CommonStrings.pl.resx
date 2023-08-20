@@ -339,4 +339,10 @@ Może zawierać * jako symbol wieloznaczny.</value>
   <data name="Acceptance" xml:space="preserve">
     <value>Akceptacja</value>
   </data>
+  <data name="Description" xml:space="preserve">
+    <value>Opis</value>
+  </data>
+  <data name="Documentation" xml:space="preserve">
+    <value>Dokumentacja</value>
+  </data>
 </root>

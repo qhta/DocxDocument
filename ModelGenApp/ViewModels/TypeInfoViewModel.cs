@@ -91,21 +91,6 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
 
   public string? TargetName => Model.GetFullName(true, TypeNameSelector.Namespace, TypeNameSelector.NsShortcut);
 
-  public string? ValidationError
-  {
-    get
-    {
-      var errCode = Model.Errors?.FirstOrDefault(item => item.Phase == Phase.PhaseNum)?.Code;
-      if (errCode != null)
-      {
-        var errCodeName = errCode?.ToString();
-        if (errCodeName!=null)
-          return CommonStrings.ResourceManager.GetString(errCodeName);
-      }
-      return null;
-    }
-  }
-
   [DataGridColumn(
     DataTemplateResourceKey = "TypeInfoLinkTemplate",
     SortMemberPath = "Type.Name", 
@@ -127,6 +112,26 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
     }
   }
 
+  [DataGridColumn(
+    Header = "",
+    HiddenHeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.ValidationError),
+    DataTemplateResourceKey ="ErrorMsgMarkTemplate"
+    )]
+  public string? ValidationError
+  {
+    get
+    {
+      var errCode = Model.Errors?.FirstOrDefault(item => item.Phase == Phase.PhaseNum)?.Code;
+      if (errCode != null)
+      {
+        var errCodeName = errCode?.ToString();
+        if (errCodeName!=null)
+          return CommonStrings.ResourceManager.GetString(errCodeName);
+      }
+      return null;
+    }
+  }
+
   public string? FullName
   {
     get
@@ -135,11 +140,10 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
     }
   }
 
-  [DataGridColumn]
+  [DataGridColumn(
+    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Description)
+    )]
   public string? Description => Model.Description;
-
-  [DataGridColumn]
-  public string? Documentation => Model.Documentation?.ToString();
 
   public TypeSummaryViewModel TypeSummary { get; } = new TypeSummaryViewModel();
 

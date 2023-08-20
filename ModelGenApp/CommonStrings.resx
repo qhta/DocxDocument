@@ -339,4 +339,10 @@ Can contain * as a wildcard.</value>
   <data name="Acceptance" xml:space="preserve">
     <value>Acceptance</value>
   </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Documentation" xml:space="preserve">
+    <value>Documentation</value>
+  </data>
 </root>

@@ -14,7 +14,7 @@ public partial class NamespacesConfigView : UserControl
   private void DataGrid_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
   {
     dataGridColumnCreator.GenerateColumn(sender, e);
-    if (e.PropertyName==nameof(NamespaceConfigViewModel.ShortcutErrorMsg))
+    if (e.PropertyName==nameof(NamespaceConfigViewModel.ShortcutError))
     {
       BindingOperations.SetBinding(e.Column, DataGridColumn.VisibilityProperty, 
         new Binding("DataContext."+nameof(NamespacesConfigViewModel.AreAllShortcutsValid)) 
@@ -24,7 +24,7 @@ public partial class NamespacesConfigView : UserControl
           ConverterParameter="Visible,Collapsed" 
           });;
     }
-    if (e.PropertyName==nameof(NamespaceConfigViewModel.TargetShortcutErrorMsg))
+    if (e.PropertyName==nameof(NamespaceConfigViewModel.TargetShortcutError))
     {
       BindingOperations.SetBinding(e.Column, DataGridColumn.VisibilityProperty, 
         new Binding("DataContext."+nameof(NamespacesConfigViewModel.AreAllTargetShortcutsValid)) 
