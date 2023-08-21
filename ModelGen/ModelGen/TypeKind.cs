@@ -2,10 +2,10 @@
 
 public enum TypeKind
 {
-  Type,
-  Enum,
-  Struct,
-  Class,
-  Interface,
-  EmbeddedClass,
+  type,
+  @enum,
+  @struct,
+  @class,
+  @interface,
+  @embedded,
 }

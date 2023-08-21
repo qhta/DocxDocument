@@ -52,7 +52,7 @@ public class ModelGenerator : BaseCodeGenerator
   {
     if (!typeInfo.IsConverted && !typeInfo.IsConvertedTo)
     {
-      if (typeInfo.TypeKind == TypeKind.Enum)
+      if (typeInfo.TypeKind == TypeKind.@enum)
         GenerateEnumType(typeInfo);
       else if (!typeInfo.IsGenericTypeParameter)
         GenerateClassType(typeInfo);
@@ -69,7 +69,7 @@ public class ModelGenerator : BaseCodeGenerator
     var aNamespace = type.GetTargetNamespace();
     aNamespace = TrimDocumentModel(aNamespace);
     var outputPath = Path.Combine(OutputPath, aNamespace);
-    return GenerateClassOrInterface(type, typeName, Path.Combine(outputPath, "Classes", typeName + ".cs"), TypeKind.Class);
+    return GenerateClassOrInterface(type, typeName, Path.Combine(outputPath, "Classes", typeName + ".cs"), TypeKind.@class);
   }
 
   private bool GenerateClassOrInterface(TypeInfo type, string typeName, string filename, TypeKind kind)
@@ -95,12 +95,12 @@ public class ModelGenerator : BaseCodeGenerator
     GenerateDocumentationComments(typeInfo);
     GenerateCustomAttributes(typeInfo.CustomAttributes);
 
-    if (kind == TypeKind.Interface)
+    if (kind == TypeKind.@interface)
     {
       var str = $"public partial interface {typeName}";
       Writer.WriteLine(str);
     }
-    else if (kind == TypeKind.Class)
+    else if (kind == TypeKind.@class)
     {
       var str = $"public partial class {typeName}";
       Writer.WriteLine(str);
@@ -113,9 +113,9 @@ public class ModelGenerator : BaseCodeGenerator
     var ok = GenerateAcceptedProperties(typeInfo, aNamespace, kind);
     Writer.Indent--;
     Writer.WriteLine("}");
-    if (kind == TypeKind.Interface)
+    if (kind == TypeKind.@interface)
       GeneratedInterfacesCount += 1;
-    else if (kind == TypeKind.Class)
+    else if (kind == TypeKind.@class)
       GeneratedClassesCount += 1;
     return ok;
   }
@@ -158,7 +158,7 @@ public class ModelGenerator : BaseCodeGenerator
   private bool GenerateProperty(PropInfo prop, string? inNamespace, TypeKind kind)
   {
     var targetPropType = prop.PropertyType.GetConversionTargetOrSelf();
-    FullTypeName targetPropTypeName = prop.PropertyType.GetConvertedName(TypeKind.Type);
+    FullTypeName targetPropTypeName = prop.PropertyType.GetConvertedName(TypeKind.type);
     TrimNamespace(targetPropTypeName);
     var propTypeName = targetPropTypeName.ToString();
     string qm = "?";

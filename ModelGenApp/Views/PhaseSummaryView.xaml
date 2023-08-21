@@ -17,7 +17,9 @@
               ItemsSource="{Binding Path=Summary}">
       <ListView.View>
         <GridView>
-          <GridViewColumn Header="{x:Static local:CommonStrings.Result_kind}" Width="120" DisplayMemberBinding="{Binding Name}" />
+          <GridViewColumn Header="{x:Static local:CommonStrings.ResultKind}" 
+                          Width="120" 
+                          DisplayMemberBinding="{Binding Name}" />
           <GridViewColumn Header="{x:Static local:CommonStrings.Count}"
                           Width="50">
             <GridViewColumn.CellTemplate>
@@ -27,7 +29,7 @@
               </DataTemplate>
             </GridViewColumn.CellTemplate>
           </GridViewColumn>
-          <GridViewColumn Header="{x:Static local:CommonStrings.Filter_results}">
+          <GridViewColumn Header="{x:Static local:CommonStrings.FilterResults}">
             <GridViewColumn.CellTemplate>
               <DataTemplate>
                 <CheckBox IsChecked="{Binding IsChecked}" HorizontalAlignment="Center"/>

@@ -8,15 +8,17 @@ public class NamespaceViewModel : ViewModel<Namespace>
     Name = ns.OriginalName;
     if (phaseViewModel.PhaseNum == PPS.Rename)
       TargetName = ns.TargetName;
-    AllTypes = new TypeListViewModel(phaseViewModel, this, "All types", phaseViewModel.NameKindSelector, TKS.Any);
-    Classes = new ClassListViewModel(phaseViewModel, this, "Classes", phaseViewModel.NameKindSelector, TKS.Class);
-    Enums = new EnumTypeListViewModel(phaseViewModel, this, "Enums", phaseViewModel.NameKindSelector, TKS.Enum);
-    Interfaces = new ClassListViewModel(phaseViewModel, this, "Interfaces", phaseViewModel.NameKindSelector, TKS.Interface);
-    Structs = new ClassListViewModel(phaseViewModel, this, "Structs", phaseViewModel.NameKindSelector, TKS.Struct);
-    Others = new TypeListViewModel(phaseViewModel, this, "Others", phaseViewModel.NameKindSelector, TKS.Other);
+    AllTypes = new TypeListViewModel(phaseViewModel, this, "AllTypes", phaseViewModel.NameKindSelector, TKS.Any);
+    Classes = new ClassListViewModel(phaseViewModel, this, "ClassTypes", phaseViewModel.NameKindSelector, TKS.Class);
+    Enums = new EnumTypeListViewModel(phaseViewModel, this, "EnumTypes", phaseViewModel.NameKindSelector, TKS.Enum);
+    Interfaces = new ClassListViewModel(phaseViewModel, this, "InterfaceTypes", phaseViewModel.NameKindSelector, TKS.Interface);
+    Structs = new ClassListViewModel(phaseViewModel, this, "StructTypes", phaseViewModel.NameKindSelector, TKS.Struct);
+    Others = new TypeListViewModel(phaseViewModel, this, "OtherTypes", phaseViewModel.NameKindSelector, TKS.Other);
   }
 
   public PhaseViewModel Phase { get; private set; }
+
+  public string PhaseName => Phase.PhaseName;
 
   public string? Filter { get; private set; }
 
@@ -32,37 +34,57 @@ public class NamespaceViewModel : ViewModel<Namespace>
   //  )]
   public string? TargetName { get; set; }
 
-  public string Caption => Phase.PhaseName + " " + this.Name;
+  public string Caption => CommonStrings.ResourceManager.GetString(PhaseName, CultureInfo.CurrentUICulture) ?? PhaseName 
+                           + " " + CommonStrings.ResourceManager.GetString(Name, CultureInfo.CurrentUICulture) ?? Name;
+
+  const int minColWith = 80;
 
   [DataGridColumn(
-    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.AllTypes),
+    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.All),
+    MinWidth = minColWith,
     DataTemplateResourceKey = "ItemsCountColumnTemplate",
-    SortMemberPath = "AllTypes.Count", ClipboardContentPath = "AllTypes.Count")]
+    SortMemberPath = "AllTypes.Count",
+    ClipboardContentPath = "AllTypes.Count")]
   public TypeListViewModel AllTypes { get; set; }
 
-  [DataGridColumn(DataTemplateResourceKey = "ItemsCountColumnTemplate",
+  [DataGridColumn(
     HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Classes),
-    SortMemberPath = "Classes.Count", ClipboardContentPath = "Classes.Count")]
+    MinWidth = minColWith,
+    DataTemplateResourceKey = "ItemsCountColumnTemplate",
+    SortMemberPath = "Classes.Count", 
+    ClipboardContentPath = "Classes.Count")]
   public TypeListViewModel Classes { get; set; }
 
-  [DataGridColumn(DataTemplateResourceKey = "ItemsCountColumnTemplate",
-    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.EnumTypes),
-    SortMemberPath = "Enums.Count", ClipboardContentPath = "Enums.Count")]
+  [DataGridColumn(
+    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Enums),
+    MinWidth = minColWith,
+    DataTemplateResourceKey = "ItemsCountColumnTemplate",
+    SortMemberPath = "Enums.Count", 
+    ClipboardContentPath = "Enums.Count")]
   public TypeListViewModel Enums { get; set; }
 
-  [DataGridColumn(DataTemplateResourceKey = "ItemsCountColumnTemplate",
+  [DataGridColumn(
     HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Interfaces),
-    SortMemberPath = "Interfaces.Count", ClipboardContentPath = "Interfaces.Count")]
+    MinWidth = minColWith,
+    DataTemplateResourceKey = "ItemsCountColumnTemplate",
+    SortMemberPath = "Interfaces.Count", 
+    ClipboardContentPath = "Interfaces.Count")]
   public TypeListViewModel Interfaces { get; set; }
 
-  [DataGridColumn(DataTemplateResourceKey = "ItemsCountColumnTemplate",
-    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.StructTypes),
-    SortMemberPath = "Structs.Count", ClipboardContentPath = "Structs.Count")]
+  [DataGridColumn(
+    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Structs),
+    MinWidth = minColWith,
+    DataTemplateResourceKey = "ItemsCountColumnTemplate",
+    SortMemberPath = "Structs.Count", 
+    ClipboardContentPath = "Structs.Count")]
   public TypeListViewModel Structs { get; set; }
 
-  [DataGridColumn(DataTemplateResourceKey = "ItemsCountColumnTemplate",
-    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.OtherTypes),
-    SortMemberPath = "Others.Count", ClipboardContentPath = "Others.Count")]
+  [DataGridColumn(
+    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Others),
+    MinWidth = minColWith,
+    DataTemplateResourceKey = "ItemsCountColumnTemplate",
+    SortMemberPath = "Others.Count", 
+    ClipboardContentPath = "Others.Count")]
   public TypeListViewModel Others { get; set; }
 
   public async void LoadTypesAsync()

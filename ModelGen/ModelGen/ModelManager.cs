@@ -345,7 +345,7 @@ public static class ModelManager
     var apos = aName.IndexOf('`');
     if (apos >= 0)
       aName = aName.Substring(0, apos);
-    if (kind == TypeKind.Class && typeInfo.TypeKind != TypeKind.Enum)
+    if (kind == TypeKind.@class && typeInfo.TypeKind != TypeKind.@enum)
     {
       aName += "Impl";
     }
@@ -710,7 +710,7 @@ public static class ModelManager
     }
     nspace.AddType(typeInfo);
 
-    if (typeInfo.TypeKind == TypeKind.Enum)
+    if (typeInfo.TypeKind == TypeKind.@enum)
     {
       newName = NewEnumTypeName(typeInfo.Type);
       if (newName != typeInfo.Name)

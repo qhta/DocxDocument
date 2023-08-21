@@ -23,10 +23,10 @@
         <hlp:BindingProxy x:Key="proxy" Data="{Binding}"/>
       </DataGrid.Resources>
       <DataGrid.Columns>
-        <DataGridTextColumn Header="{x:Static local:CommonStrings.Original_namespace}" 
+        <DataGridTextColumn Header="{x:Static local:CommonStrings.OriginalNamespace}" 
                             utl:CollectionViewBehavior.ShowFilterButton="True"
                             Binding="{Binding Path=Name}"/>
-        <DataGridTextColumn Header="{x:Static local:CommonStrings.Target_namespace}"
+        <DataGridTextColumn Header="{x:Static local:CommonStrings.TargetNamespace}"
                             utl:CollectionViewBehavior.ShowFilterButton="True"
                             Binding="{Binding Path=TargetName}" 
                             Visibility="{Binding DataContext.IsTargetNameVisible,
