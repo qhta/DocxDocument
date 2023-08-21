@@ -29,9 +29,9 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
   /// <returns></returns>
   public static TypeInfoViewModel Create(PhaseViewModel phase, TypeInfo typeInfo, NKS typeNameSelector)
   {
-    if (typeInfo.TypeKind == TypeKind.Enum)
+    if (typeInfo.TypeKind == TypeKind.@enum)
       return new EnumTypeInfoViewModel(phase, typeInfo, typeNameSelector);
-    if (typeInfo.TypeKind == TypeKind.Type)
+    if (typeInfo.TypeKind == TypeKind.type)
       return new TypeInfoViewModel(phase, typeInfo, typeNameSelector);
     return new ClassInfoViewModel(phase, typeInfo, typeNameSelector);
   }
@@ -48,7 +48,8 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
   public bool IsTypeKindSelected(TKS tks) => Model.IsTypeKindSelected(tks);
 
   [DataGridColumn(
-    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Acceptance)
+    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Acceptance),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.AcceptanceTooltip)
     )]
   public Acceptance Acceptance
   {
@@ -56,9 +57,9 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
     {
       Acceptance result = 0;
       if (Model.IsAcceptedAfter(Phase.PhaseNum))
-        result |= Acceptance.Accepted;
+        result |= Acceptance.accepted;
       if (Model.IsRejectedAfter(Phase.PhaseNum))
-        result |= Acceptance.Rejected;
+        result |= Acceptance.rejected;
       return result;
     }
   }
@@ -92,6 +93,8 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
   public string? TargetName => Model.GetFullName(true, TypeNameSelector.Namespace, TypeNameSelector.NsShortcut);
 
   [DataGridColumn(
+    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.TypeFullName),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.TypeFullNameTooltip),
     DataTemplateResourceKey = "TypeInfoLinkTemplate",
     SortMemberPath = "Type.Name", 
     ClipboardContentPath = "Type.Name")]
@@ -102,9 +105,9 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
       var thisType = this.Model;
       if (thisType != null)
       {
-        if (thisType.TypeKind == TypeKind.Enum)
+        if (thisType.TypeKind == TypeKind.@enum)
           return new EnumTypeInfoViewModel(Phase, thisType, TypeNameSelector);
-        if (thisType.TypeKind == TypeKind.Type)
+        if (thisType.TypeKind == TypeKind.type)
           return new TypeInfoViewModel(Phase, thisType, TypeNameSelector);
         return new ClassInfoViewModel(Phase, thisType, TypeNameSelector);
       }
@@ -141,7 +144,8 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
   }
 
   [DataGridColumn(
-    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Description)
+    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Description),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.DescriptionTooltip)
     )]
   public string? Description => Model.Description;
 
