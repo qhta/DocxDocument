@@ -41,8 +41,8 @@
           <Label Grid.Row="0" Grid.Column="0" 
                 Margin="5"
                 VerticalAlignment="Center"
-                Content="{x:Static local:CommonStrings.Type_to_scan}" 
-                ToolTip="{x:Static local:CommonStrings.Type_to_scan_tooltip}"
+                Content="{x:Static local:CommonStrings.TypeToScan}" 
+                ToolTip="{x:Static local:CommonStrings.TypeToScanTooltip}"
                 />
           <ComboBox Grid.Row="0" Grid.Column="1" 
                 Margin="5"

@@ -56,9 +56,9 @@ public class PropInfoViewModel : ViewModel<PropInfo>, IAcceptable
       var propType = Model.PropertyType;
       if (propType!=null)
       {
-        if (propType.TypeKind == TypeKind.Enum)
+        if (propType.TypeKind == TypeKind.@enum)
           return new EnumTypeInfoViewModel(Phase, propType, NameKindSelector);
-        if (propType.TypeKind == TypeKind.Type)
+        if (propType.TypeKind == TypeKind.type)
           return TypeInfoViewModel.Create(Phase, propType, NameKindSelector);
         return new ClassInfoViewModel(Phase, propType, NameKindSelector);
       }

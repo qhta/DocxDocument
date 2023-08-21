@@ -117,10 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Excluded_type_tooltip" xml:space="preserve">
+  <data name="ExcludedTypeTooltip" xml:space="preserve">
     <value>Excluded type is rejected even if its namespace is included.</value>
   </data>
-  <data name="Included_type_tooltip" xml:space="preserve">
+  <data name="IncludedTypeTooltip" xml:space="preserve">
     <value>Included type is accepted even if its namespaces is excluded.</value>
   </data>
   <data name="MeaninglessDescription" xml:space="preserve">
@@ -156,7 +156,7 @@
   <data name="Cancel" xml:space="preserve">
     <value>Cancel</value>
   </data>
-  <data name="Type_to_scan" xml:space="preserve">
+  <data name="TypeToScan" xml:space="preserve">
     <value>Type to scan</value>
   </data>
   <data name="FileWithDocs" xml:space="preserve">
@@ -180,7 +180,7 @@
   <data name="Rename" xml:space="preserve">
     <value>Rename</value>
   </data>
-  <data name="Type to scan tooltip" xml:space="preserve">
+  <data name="TypeToScanTooltip" xml:space="preserve">
     <value>This is the main type where scan begins. Its property types and item types are scanned next.</value>
   </data>
   <data name="FileWithDocsTooltip" xml:space="preserve">
@@ -190,34 +190,34 @@ It should be prepared by an external tool.</value>
   <data name="FileWithDocsUseTooltip" xml:space="preserve">
     <value>You can use or omit adding docs from file.</value>
   </data>
-  <data name="Model_configuration" xml:space="preserve">
+  <data name="ModelConfiguration" xml:space="preserve">
     <value>Model configuration</value>
   </data>
-  <data name="Original_name" xml:space="preserve">
+  <data name="OriginalName" xml:space="preserve">
     <value>Original name</value>
   </data>
-  <data name="Original_name_tooltip" xml:space="preserve">
+  <data name="OriginalNameTooltip" xml:space="preserve">
     <value>Original name is a name read from source.</value>
   </data>
-  <data name="Excluded_namespace_tooltip" xml:space="preserve">
+  <data name="ExcludedNamespaceTooltip" xml:space="preserve">
     <value>Excluded namespace is rejected from scanning.</value>
   </data>
   <data name="Shortcut" xml:space="preserve">
     <value>Shortcut</value>
   </data>
-  <data name="Shortcut_tooltip" xml:space="preserve">
+  <data name="ShortcutTooltip" xml:space="preserve">
     <value>Shortcut replaces its name (if shortcuts are enabled).</value>
   </data>
-  <data name="Target_name" xml:space="preserve">
+  <data name="TargetName" xml:space="preserve">
     <value>Target name</value>
   </data>
-  <data name="Target_name_tooltip" xml:space="preserve">
+  <data name="TargetNameTooltip" xml:space="preserve">
     <value>Target name is a name written to output.</value>
   </data>
-  <data name="Target_shortcut_tooltip" xml:space="preserve">
+  <data name="TargetShortcutTooltip" xml:space="preserve">
     <value>Target shortcut replaces target name (if shortcuts are enabled).</value>
   </data>
-  <data name="Target_shortcut" xml:space="preserve">
+  <data name="TargetShortcut" xml:space="preserve">
     <value>Target shortcut</value>
   </data>
   <data name="Duplicated shortcut" xml:space="preserve">
@@ -229,69 +229,69 @@ It should be prepared by an external tool.</value>
   <data name="Save" xml:space="preserve">
     <value>Save</value>
   </data>
-  <data name="Model configuration saved in 0" xml:space="preserve">
+  <data name="Model_configuration_saved_in_0" xml:space="preserve">
     <value>Model configuration saved in {0}</value>
   </data>
   <data name="Model_configuration_is_invalid" xml:space="preserve">
     <value>Model configuration is invalid. See marks in the table.</value>
   </data>
-  <data name="Original_namespace" xml:space="preserve">
+  <data name="OriginalNamespace" xml:space="preserve">
     <value>Original namespace</value>
   </data>
-  <data name="Original_namespace_tooltip" xml:space="preserve">
+  <data name="OriginalNamespaceTooltip" xml:space="preserve">
     <value>Original namespace is a namespace read from source.</value>
   </data>
-  <data name="Excluded_namespace" xml:space="preserve">
+  <data name="ExcludedNamespace" xml:space="preserve">
     <value>Excluded</value>
   </data>
-  <data name="Included_type" xml:space="preserve">
+  <data name="IncludedType" xml:space="preserve">
     <value>Included type</value>
   </data>
-  <data name="Excluded_type" xml:space="preserve">
+  <data name="ExcludedType" xml:space="preserve">
     <value>Excluded type</value>
   </data>
-  <data name="Target_namespace" xml:space="preserve">
+  <data name="TargetNamespace" xml:space="preserve">
     <value>Target namespace</value>
   </data>
-  <data name="Target_namespace_tooltip" xml:space="preserve">
+  <data name="TargetNamespaceTooltip" xml:space="preserve">
     <value>Target namespace is a namespace written to output.</value>
   </data>
-  <data name="Original_declaration_type" xml:space="preserve">
+  <data name="OriginalDeclarationType" xml:space="preserve">
     <value>Original declaration type</value>
   </data>
-  <data name="Original_declaration_type_tooltip" xml:space="preserve">
+  <data name="OriginalDeclarationTypeTooltip" xml:space="preserve">
     <value>Original declaration type is a type where a property is declared. 
 If not defined then a property can be declared in any type.</value>
   </data>
-  <data name="Excluded_property" xml:space="preserve">
+  <data name="ExcludedProperty" xml:space="preserve">
     <value>Excluded property</value>
   </data>
-  <data name="Excluded_property_tooltip" xml:space="preserve">
+  <data name="ExcludedPropertyTooltip" xml:space="preserve">
     <value>Excluded property is rejected even if its type is accepted.</value>
   </data>
-  <data name="Target_property_type" xml:space="preserve">
+  <data name="TargetPropertyType" xml:space="preserve">
     <value>Target property type</value>
   </data>
-  <data name="Target_property_type_tooltip" xml:space="preserve">
+  <data name="TargetPropertyTypeTooltip" xml:space="preserve">
     <value>Target property type is a type of property value written to output.</value>
   </data>
-  <data name="Config_property_name" xml:space="preserve">
+  <data name="ConfigPropertyName" xml:space="preserve">
     <value>Config property name</value>
   </data>
-  <data name="Config_property_name_tooltip" xml:space="preserve">
+  <data name="ConfigPropertyNameTooltip" xml:space="preserve">
     <value>Config property name is declared name of the property. 
 Can contain * as a wildcard.</value>
   </data>
   <data name="Name" xml:space="preserve">
     <value>Name</value>
   </data>
-  <data name="Result_kind" xml:space="preserve">
+  <data name="ResultKind" xml:space="preserve">
     <value>Result kind</value>
   </data>
   <data name="Count" xml:space="preserve">
     <value>Count</value>
   </data>
-  <data name="Filter_results" xml:space="preserve">
+  <data name="FilterResults" xml:space="preserve">
     <value>FIlter results</value>
   </data>
   <data name="RegisteredTypes" xml:space="preserve">
@@ -344,5 +344,38 @@ Can contain * as a wildcard.</value>
   </data>
   <data name="Documentation" xml:space="preserve">
     <value>Documentation</value>
+  </data>
+  <data name="AcceptanceTooltip" xml:space="preserve">
+    <value>Specifies whether the item was accepted or rejected at the end of the current phase.</value>
+  </data>
+  <data name="TypeName" xml:space="preserve">
+    <value>Type name</value>
+  </data>
+  <data name="TypeFullName" xml:space="preserve">
+    <value>Type full name</value>
+  </data>
+  <data name="TypeFullNameTooltip" xml:space="preserve">
+    <value>Type name preceded with namespace.</value>
+  </data>
+  <data name="DescriptionTooltip" xml:space="preserve">
+    <value>Short description.</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="Structs" xml:space="preserve">
+    <value>Structs</value>
+  </data>
+  <data name="Enums" xml:space="preserve">
+    <value>Enums</value>
+  </data>
+  <data name="InterfaceTypes" xml:space="preserve">
+    <value>InterfaceTypes</value>
+  </data>
+  <data name="Others" xml:space="preserve">
+    <value>Others</value>
+  </data>
+  <data name="ClassTypes" xml:space="preserve">
+    <value>Class types</value>
   </data>
 </root>

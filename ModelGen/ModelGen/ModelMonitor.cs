@@ -105,9 +105,9 @@ public abstract class ModelMonitor
         var totalTypesCount = nSpaceTypes.Count();
         var acceptedTypesCount = nSpaceTypes.Count(item => !item.IsAcceptedAfter(phase));
         var rejectedTypesCount = nSpaceTypes.Count(item => item.IsRejectedAfter(phase));
-        var classTypesCount = nSpaceTypes.Count(item => item.TypeKind == TypeKind.Class);
-        var enumTypesCount = nSpaceTypes.Count(item => item.TypeKind == TypeKind.Enum);
-        var otherTypesCount = nSpaceTypes.Count(item => item.TypeKind != TypeKind.Class && item.TypeKind != TypeKind.Enum);
+        var classTypesCount = nSpaceTypes.Count(item => item.TypeKind == TypeKind.@class);
+        var enumTypesCount = nSpaceTypes.Count(item => item.TypeKind == TypeKind.@enum);
+        var otherTypesCount = nSpaceTypes.Count(item => item.TypeKind != TypeKind.@class && item.TypeKind != TypeKind.@enum);
         var str = $"{aSpace} Total {totalTypesCount} types";
         str += $", {AllOrNoneOrValueStr(acceptedTypesCount, totalTypesCount)} accepted";
         if (rejectedTypesCount != 0)
@@ -624,15 +624,15 @@ public abstract class ModelMonitor
   {
     switch (typeKind)
     {
-      case TypeKind.Type:
+      case TypeKind.type:
         return selector == TKS.Any;
-      case TypeKind.Struct:
+      case TypeKind.@struct:
         return selector.HasFlag(TKS.Struct);
-      case TypeKind.Class:
+      case TypeKind.@class:
         return selector.HasFlag(TKS.Class);
-      case TypeKind.Enum:
+      case TypeKind.@enum:
         return selector.HasFlag(TKS.Enum);
-      case TypeKind.Interface:
+      case TypeKind.@interface:
         return selector.HasFlag(TKS.Interface);
     }
     return false;

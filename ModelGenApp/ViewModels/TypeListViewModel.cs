@@ -43,9 +43,11 @@ public class TypeListViewModel : ViewModel
   {
     get
     {
+      string? result = null;
       if (Namespace != null)
-        return Namespace.Caption + ": " + this.Name?.ToLower();
-      return this.Name;
+        result = Namespace.Caption + ": ";
+      result += (CommonStrings.ResourceManager.GetString(Name, CultureInfo.CurrentUICulture) ?? Name)?.ToLower();
+      return result;
     }
   }
   public NKS TypeNameSelector { get; private set; }

@@ -8,17 +8,17 @@ public enum Acceptance
   /// <summary>
   /// No IsAccepted and no IsRejected set,
   /// </summary>
-  Unspecified,
+  unspecified,
   /// <summary>
   /// IsAccepted set,
   /// </summary>
-  Accepted = 1,
+  accepted = 1,
   /// <summary>
   /// IsRejected set
   /// </summary>
-  Rejected = 2,
+  rejected = 2,
   /// <summary>
   /// IsAccepted set and IsRejected set,
   /// </summary>
-  Invalid = 3,
+  invalid = 3,
 }

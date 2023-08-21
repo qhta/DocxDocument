@@ -15,7 +15,7 @@ public abstract class ModelConfigViewModel: ViewModel
     RestoreDataCommand = new RelayCommand(RestoreData, CanRestoreData) { Name = "RestoreDataCommand" };
   }
 
-  public virtual string Caption { get; protected set; } = CommonStrings.Model_configuration;
+  public virtual string Caption { get; protected set; } = CommonStrings.ModelConfiguration;
 
   /// <summary>
   /// Stores loaded assembly reference. Used in <see cref="ReloadData"/>

@@ -3,7 +3,7 @@ public class NamespacesConfigViewModel : ModelConfigViewModel
 {
   public NamespacesConfigViewModel(ModelConfig configData) : base(configData)
   {
-    Caption = CommonStrings.Model_configuration + ": " + CommonStrings.Namespaces.ToLower();
+    Caption = CommonStrings.ModelConfiguration + ": " + CommonStrings.Namespaces.ToLower();
     Namespaces = new ListViewModel<NamespaceConfigViewModel>();
     CollectionViewSource = new CollectionViewSource<NamespaceConfigViewModel>(Namespaces);
     VisibleItems = CollectionViewSource.GetDefaultView(Namespaces);

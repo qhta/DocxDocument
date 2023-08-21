@@ -3,8 +3,8 @@ public class PropertyConfigViewModel : VisibleViewModel
 {
 
   [DataGridColumn(
-    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Original_declaration_type),
-    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Original_declaration_type_tooltip)
+    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.OriginalDeclarationType),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.OriginalDeclarationTypeTooltip)
     )]
   public string OrigType
   {
@@ -21,8 +21,8 @@ public class PropertyConfigViewModel : VisibleViewModel
   private string _OrigType = string.Empty;
 
   [DataGridColumn(
-    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Config_property_name),
-    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Config_property_name_tooltip)
+    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.ConfigPropertyName),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.ConfigPropertyNameTooltip)
     )]
   public string OrigName
   {
@@ -39,8 +39,8 @@ public class PropertyConfigViewModel : VisibleViewModel
   private string _OrigName = string.Empty;
 
   [DataGridColumn(
-    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Excluded_property),
-    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Excluded_property_tooltip)
+    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.ExcludedProperty),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.ExcludedPropertyTooltip)
     )]
   public bool ExcludedProperty
   {
@@ -57,8 +57,8 @@ public class PropertyConfigViewModel : VisibleViewModel
   private bool _Excluded;
 
   [DataGridColumn(
-    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Target_name),
-    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Target_name_tooltip)
+    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.TargetName),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.TargetNameTooltip)
     )]
   public string? TargetName
   {
@@ -76,8 +76,8 @@ public class PropertyConfigViewModel : VisibleViewModel
 
 
   [DataGridColumn(
-    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Target_property_type),
-    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Target_property_type_tooltip)
+    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.TargetPropertyType),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.TargetPropertyTypeTooltip)
     )]
   public string? TargetPropertyType
   {

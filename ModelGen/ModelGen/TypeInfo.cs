@@ -89,9 +89,9 @@ public class TypeInfo : ModelElement
   }
 
   [XmlIgnore]
-  public bool IsInterface => TypeKind == TypeKind.Interface;
+  public bool IsInterface => TypeKind == TypeKind.@interface;
   [XmlIgnore]
-  public bool IsClass => TypeKind == TypeKind.Class;
+  public bool IsClass => TypeKind == TypeKind.@class;
 
   public OwnedCollection<EnumInfo>? EnumValues { get; private set; }
 
@@ -169,11 +169,11 @@ public class TypeInfo : ModelElement
   public TypeInfo(Type type) : base(type.Name)
   {
     Type = type;
-    TypeKind = (type.IsEnum) ? TypeKind.Enum
-               : (type.IsInterface) ? TypeKind.Interface
-               : (type.IsClass) ? TypeKind.Class
-               : (type.IsStruct() ? TypeKind.Struct
-               : TypeKind.Type);
+    TypeKind = (type.IsEnum) ? TypeKind.@enum
+               : (type.IsInterface) ? TypeKind.@interface
+               : (type.IsClass) ? TypeKind.@class
+               : (type.IsStruct() ? TypeKind.@struct
+               : TypeKind.type);
     //if (Acceptance == null)
     //{
     //  var isAccepted = true;
@@ -298,11 +298,11 @@ public class TypeInfo : ModelElement
   public bool IsTypeKindSelected(TKS tks)
   {
     if (tks == TKS.Any) return true;
-    if (tks.HasFlag(TKS.Class) && TypeKind == TypeKind.Class) return true;
-    if (tks.HasFlag(TKS.Enum) && TypeKind == TypeKind.Enum) return true;
-    if (tks.HasFlag(TKS.Interface) && TypeKind == TypeKind.Interface) return true;
-    if (tks.HasFlag(TKS.Struct) && TypeKind == TypeKind.Struct) return true;
-    if (tks.HasFlag(TKS.Other) && TypeKind == TypeKind.Type) return true;
+    if (tks.HasFlag(TKS.Class) && TypeKind == TypeKind.@class) return true;
+    if (tks.HasFlag(TKS.Enum) && TypeKind == TypeKind.@enum) return true;
+    if (tks.HasFlag(TKS.Interface) && TypeKind == TypeKind.@interface) return true;
+    if (tks.HasFlag(TKS.Struct) && TypeKind == TypeKind.@struct) return true;
+    if (tks.HasFlag(TKS.Other) && TypeKind == TypeKind.type) return true;
     return false;
   }
 

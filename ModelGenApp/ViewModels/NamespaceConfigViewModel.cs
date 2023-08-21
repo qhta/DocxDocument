@@ -4,8 +4,8 @@ public class NamespaceConfigViewModel : VisibleViewModel
 
   [DataGridColumn(
     IsReadOnly = true,
-    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Original_name),
-    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Original_name_tooltip)
+    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.OriginalName),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.OriginalNameTooltip)
     )]
   public string OrigName
   {
@@ -22,8 +22,8 @@ public class NamespaceConfigViewModel : VisibleViewModel
   private string _OrigName = string.Empty;
 
   [DataGridColumn(
-    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Excluded_namespace),
-    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Excluded_namespace_tooltip)
+    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.ExcludedNamespace),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.ExcludedNamespaceTooltip)
     )]
   public bool Excluded
   {
@@ -41,7 +41,7 @@ public class NamespaceConfigViewModel : VisibleViewModel
 
   [DataGridColumn(
     HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Shortcut),
-    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Shortcut_tooltip)
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.ShortcutTooltip)
     )]
   public string? Shortcut
   {
@@ -80,8 +80,8 @@ public class NamespaceConfigViewModel : VisibleViewModel
   public string? ShortcutError => IsShortcutValid ? (string?)null : CommonStrings.Duplicated_shortcut;
 
   [DataGridColumn(
-    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Target_name),
-    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Target_name_tooltip)
+    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.TargetName),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.TargetNameTooltip)
     )]
   public string? TargetName
   {
@@ -98,8 +98,8 @@ public class NamespaceConfigViewModel : VisibleViewModel
   private string? _TargetName;
 
   [DataGridColumn(
-    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Target_shortcut),
-    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Target_shortcut_tooltip)
+    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.TargetShortcut),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.TargetShortcutTooltip)
     )]
   public string? TargetShortcut
   {
