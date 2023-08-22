@@ -384,4 +384,41 @@ Can contain * as a wildcard.</value>
   <data name="RefreshResults" xml:space="preserve">
     <value>Refresh results</value>
   </data>
+  <data name="DeclaringType" xml:space="preserve">
+    <value>Declaring type</value>
+  </data>
+  <data name="DeclaringTypeTooltip" xml:space="preserve">
+    <value>Declaring type is a type in which the property is declared. 
+It can be the current type or one of its base types.</value>
+  </data>
+  <data name="ValueType" xml:space="preserve">
+    <value>Value type</value>
+  </data>
+  <data name="ValueTypeTooltip" xml:space="preserve">
+    <value>Value type is declared type of property value.</value>
+  </data>
+  <data name="PropertyName" xml:space="preserve">
+    <value>Property name</value>
+  </data>
+  <data name="PropertyNameTooltip" xml:space="preserve">
+    <value>Property name is an original or target name of the property
+(depending on processing phase).</value>
+  </data>
+  <data name="PropertiesTooltip" xml:space="preserve">
+    <value>Properties define values assigned to the object of the class.</value>
+  </data>
+  <data name="EnumValName" xml:space="preserve">
+    <value>Enum value name</value>
+  </data>
+  <data name="EnumValNameTooltip" xml:space="preserve">
+    <value>Enum value name is an original or target name 
+defined in the enum type (depending on processing phase).</value>
+  </data>
+  <data name="EnumValue" xml:space="preserve">
+    <value>Enum value</value>
+  </data>
+  <data name="EnumValueTooltip" xml:space="preserve">
+    <value>Enum value is a numeric value of the named value
+defined in the enum type.</value>
+  </data>
 </root>

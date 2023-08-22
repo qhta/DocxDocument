@@ -102,6 +102,8 @@ public class TypeListViewModel : ViewModel
       FilterItems(Source.Types);
     else
       CreateItems(GetModelTypes());
+    foreach (var vm in Types)
+      vm.FillDetailsAsync();
   }
 
   private IEnumerable<TypeInfo> GetModelTypes()
@@ -150,6 +152,8 @@ public class TypeListViewModel : ViewModel
       RefreshFilteredItems(Source.Types);
     else
       RefreshCreatedItems(GetModelTypes());
+    foreach (var vm in Types)
+      vm.RefreshDetailsAsync();
   }
 
   private void RefreshCreatedItems(IEnumerable<TypeInfo> types)

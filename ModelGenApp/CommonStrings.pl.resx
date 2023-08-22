@@ -384,4 +384,41 @@ Może zawierać * jako symbol wieloznaczny.</value>
   <data name="RefreshResults" xml:space="preserve">
     <value>Odśwież wyniki</value>
   </data>
+  <data name="DeclaringType" xml:space="preserve">
+    <value>Typ deklarujący</value>
+  </data>
+  <data name="DeclaringTypeTooltip" xml:space="preserve">
+    <value>Typ deklarujący to typ, w którym zadeklarowana jest właściwość.
+Może to być typ bieżący lub jeden z jego typów podstawowych.</value>
+  </data>
+  <data name="ValueType" xml:space="preserve">
+    <value>Typ wartości</value>
+  </data>
+  <data name="ValueTypeTooltip" xml:space="preserve">
+    <value>Typ wartości jest zadeklarowanym typem wartości właściwości.</value>
+  </data>
+  <data name="PropertyName" xml:space="preserve">
+    <value>Nazwa właściwości</value>
+  </data>
+  <data name="PropertyNameTooltip" xml:space="preserve">
+    <value>Nazwa właściwości to oryginalna lub docelowa nazwa właściwości
+(w zależności od fazy przetwarzania).</value>
+  </data>
+  <data name="PropertiesTooltip" xml:space="preserve">
+    <value>Właściwości definiują wartości przypisane do obiektów danej klasy.</value>
+  </data>
+  <data name="EnumValName" xml:space="preserve">
+    <value>Nazwa wartości wyliczanej</value>
+  </data>
+  <data name="EnumValNameTooltip" xml:space="preserve">
+    <value>Nazwa wartości wyliczeniowej to nazwa oryginalna lub docelowa
+zdefiniowana w typie wyliczeniowym (w zależności od fazy przetwarzania).</value>
+  </data>
+  <data name="EnumValue" xml:space="preserve">
+    <value>Wartość wyliczeniowa</value>
+  </data>
+  <data name="EnumValueTooltip" xml:space="preserve">
+    <value>Wartość wyliczeniowa to wartość liczbowa wartości nazwanej
+zdefiniowanej w typie wyliczeniowym.</value>
+  </data>
 </root>
