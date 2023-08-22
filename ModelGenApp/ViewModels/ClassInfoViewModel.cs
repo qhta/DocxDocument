@@ -7,8 +7,12 @@ public class ClassInfoViewModel : TypeInfoViewModel
     Properties = new PropListViewModel(this, "Properties");
   }
 
-  [DataGridColumn(DataTemplateResourceKey = "CountColumnTemplate",
-    SortMemberPath = "Properties.Count", ClipboardContentPath = "Properties.Count",
+  [DataGridColumn(
+    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Properties),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.PropertiesTooltip),
+    DataTemplateResourceKey = "CountColumnTemplate",
+    SortMemberPath = "Properties.Count", 
+    ClipboardContentPath = "Properties.Count",
     DisplayIndex = 3)]
   public PropListViewModel Properties { get; set; }
 
@@ -24,7 +28,7 @@ public class ClassInfoViewModel : TypeInfoViewModel
   public void FillProperties()
   {
     Properties.Clear();
-    foreach (var propInfo in Model.GetAllProperties())
+    foreach (var propInfo in Model.GetAllProperties().ToList())
       Properties.Add(new PropInfoViewModel(Phase, this, propInfo, TypeNameSelector));
   }
 
@@ -36,5 +40,24 @@ public class ClassInfoViewModel : TypeInfoViewModel
     var baseClass = Model.BaseTypeInfo;
     if (baseClass != null)
       TypeSummary.Add(new TypePropViewModel("Inheritance", TypeInfoViewModel.Create(Phase, baseClass, TypeNameSelector)));
+  }
+
+  public override void RefreshDetails() => RefreshProperties();
+
+  public async void RefreshPropertiesAsync()
+  {
+    await Task.Run(() => RefreshProperties());
+  }
+
+  public void RefreshProperties()
+  {
+    var properties = Model.GetAllProperties().ToList();
+    var newProperties = new List<PropInfo>();
+    foreach (var propInfo in properties)
+      if (!Properties.Any(vm=>vm.Model==propInfo))
+        newProperties.Add(propInfo);
+
+    foreach (var propInfo in newProperties)
+      Properties.Add(new PropInfoViewModel(Phase, this, propInfo, TypeNameSelector));
   }
 }

@@ -134,7 +134,6 @@ public abstract partial class PhaseViewModel : ViewModel
   public virtual void FillNamespaces()
   {
     Namespaces = new NamespacesViewModel(this, NamespaceTypeSelector, Filter);
-    Namespaces.Populate();
   }
 
   public async void RefreshResultsAsync()
@@ -144,7 +143,7 @@ public abstract partial class PhaseViewModel : ViewModel
 
   public virtual void RefreshResults()
   {
-    Namespaces?.Refresh();
+    Namespaces?.RefreshItems();
   }
   #endregion
 
