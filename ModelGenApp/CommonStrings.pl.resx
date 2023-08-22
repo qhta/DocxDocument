@@ -378,4 +378,10 @@ Może zawierać * jako symbol wieloznaczny.</value>
   <data name="ClassTypes" xml:space="preserve">
     <value>Typy klas</value>
   </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>Odśwież</value>
+  </data>
+  <data name="RefreshResults" xml:space="preserve">
+    <value>Odśwież wyniki</value>
+  </data>
 </root>
