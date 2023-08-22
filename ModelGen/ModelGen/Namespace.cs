@@ -18,14 +18,17 @@ public class Namespace
 
   public void AddType(TypeInfo type)
   {
-    if (!Types.Contains(type))
-      Types.Add(type);
+    lock (Types)
+    {
+      if (!Types.Contains(type))
+        Types.Add(type);
+    }
   }
 
   public bool TryGetTypesWithSameName(TypeInfo typeInfo, out IEnumerable<TypeInfo> types)
   {
     var name = typeInfo.GetTargetName();
-    types = AcceptedTypes(PPS.Rename).ToArray().Where(item => item!=typeInfo && item.GetTargetName() == name).ToList();
+    types = AcceptedTypes(PPS.Rename).ToArray().Where(item => item != typeInfo && item.GetTargetName() == name).ToList();
     return types.Count() > 0;
   }
 }

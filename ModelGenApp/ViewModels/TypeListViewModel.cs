@@ -1,7 +1,8 @@
 ﻿namespace ModelGenApp.ViewModels;
 public class TypeListViewModel : ViewModel
 {
-  public TypeListViewModel(PhaseViewModel phase, NamespaceViewModel? nspace, string name, NKS typeNameSelector, TKS typeKindSelector)
+  public TypeListViewModel(PhaseViewModel phase, NamespaceViewModel? nspace, string name, 
+    NKS typeNameSelector, TKS typeKindSelector, TypeListViewModel? source = null)
   {
     Namespace = nspace;
     Name = name;
@@ -10,7 +11,9 @@ public class TypeListViewModel : ViewModel
     TypeNameSelector = typeNameSelector;
     TypeKindSelector = typeKindSelector;
     Phase = phase;
+    Source = source;
     ShowDetailsCommand = new RelayCommand(ShowDetailsExecute, ShowDetailsCanExecute) { Name = "ShowDetailsCommand" };
+    RefreshResultsCommand = new RelayCommand(RefreshResultsExecute, RefreshResultsCanExecute) { Name = "RefreshResultsCommand" };
   }
 
   private void Items_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs e)
@@ -19,17 +22,19 @@ public class TypeListViewModel : ViewModel
     ShowDetailsCommand?.NotifyCanExecuteChanged();
   }
 
-  public TypeListViewModel(PhaseViewModel phase, NamespaceViewModel? nspace, string name, NKS typeNameSelector, IEnumerable<TypeInfoViewModel> list)
-  {
-    Namespace = nspace;
-    Name = name;
-    TypeNameSelector = typeNameSelector;
-    AddRange(list);
-    if (Items is INotifyCollectionChanged observableCollection)
-      observableCollection.CollectionChanged += Items_CollectionChanged;
-    Phase = phase;
-    ShowDetailsCommand = new RelayCommand(ShowDetailsExecute, ShowDetailsCanExecute) { Name = "ShowDetailsCommand" };
-  }
+  //public TypeListViewModel(PhaseViewModel phase, NamespaceViewModel? nspace, string name, NKS typeNameSelector, TypeListViewModel source)
+  //{
+  //  Namespace = nspace;
+  //  Name = name;
+  //  TypeNameSelector = typeNameSelector;
+  //  AddRange(source.Types);
+  //  if (Items is INotifyCollectionChanged observableCollection)
+  //    observableCollection.CollectionChanged += Items_CollectionChanged;
+  //  Source = source;
+  //  Phase = phase;
+  //  ShowDetailsCommand = new RelayCommand(ShowDetailsExecute, ShowDetailsCanExecute) { Name = "ShowDetailsCommand" };
+  //  RefreshResultsCommand = new RelayCommand(RefreshResultsExecute, RefreshResultsCanExecute) { Name = "RefreshResultsCommand" };
+  //}
 
   protected virtual void AddRange(IEnumerable<TypeInfoViewModel> list)
   {
@@ -62,6 +67,10 @@ public class TypeListViewModel : ViewModel
 
   public IEnumerable<TypeInfoViewModel> Types => Items.Cast<TypeInfoViewModel>();
 
+  public string? Filter { get; set; }
+
+  public TypeListViewModel? Source {get; private set; }
+
   public bool IsTargetNameVisible
   {
     get => _isTargetNameVisible ?? Phase.IsTargetNameVisible;
@@ -84,9 +93,39 @@ public class TypeListViewModel : ViewModel
   private bool? _canShowErrorDetails;
 
   #region ShowDetailsCommand
+
   public Command ShowDetailsCommand { get; private set; }
 
-  public void CreateItems(IEnumerable<TypeInfo> types)
+  public void FillItems()
+  {
+    if (Source!=null)
+      FilterItems(Source.Types);
+    else
+      CreateItems(GetModelTypes());
+  }
+
+  private IEnumerable<TypeInfo> GetModelTypes()
+  {
+    var types = Namespace?.Model.Types.OrderBy(item => item.Name).ToList() 
+      ?? ModelGen.TypeManager.AllTypes.ToList();
+    var filter = Filter;
+    if (filter != null)
+    {
+      if (filter == SummaryInfoKind.AcceptedTypes.ToString())
+        types = types.Where(item => item.IsAcceptedAfter(Phase.PhaseNum)).ToList();
+      if (filter == SummaryInfoKind.RejectedTypes.ToString())
+        types = types.Where(item => item.IsRejectedAfter(Phase.PhaseNum)).ToList();
+      if (filter == SummaryInfoKind.InvalidTypes.ToString())
+        types = types.Where(item => !item.IsValid(Phase.PhaseNum)).ToList();
+      if (filter == SummaryInfoKind.RenamedTypes.ToString())
+        types = types.Where(item => item.IsRenamed).ToList();
+      if (filter == SummaryInfoKind.ConvertedTypes.ToString())
+        types = types.Where(item => item.IsConverted).ToList();
+    }
+    return types;
+  }
+
+  private void CreateItems(IEnumerable<TypeInfo> types)
   {
     Items.Clear();
     if (TypeKindSelector != TKS.Any)
@@ -96,13 +135,53 @@ public class TypeListViewModel : ViewModel
       AddRange(types.Select(item => CreateItemViewModel(item, Phase)));
   }
 
-  public void FilterItems(IEnumerable<TypeInfoViewModel> types)
+  private void FilterItems(IEnumerable<TypeInfoViewModel> types)
   {
     Items.Clear();
     if (TypeKindSelector != TKS.Any)
       AddRange(types.Where(item => item.IsTypeKindSelected(TypeKindSelector)));
     else
       AddRange(types);
+  }
+
+  public void RefreshItems()
+  {
+    if (Source!=null)
+      RefreshFilteredItems(Source.Types);
+    else
+      RefreshCreatedItems(GetModelTypes());
+  }
+
+  private void RefreshCreatedItems(IEnumerable<TypeInfo> types)
+  {
+    var newTypes = new List<TypeInfo>();
+    foreach (var typeInfo in types)
+      if (!Types.Any(vm=>vm.Model==typeInfo))
+        newTypes.Add(typeInfo);
+
+    if (TypeKindSelector != TKS.Any)
+      AddRange(newTypes.Where(item => item.IsTypeKindSelected(TypeKindSelector))
+      .Select(item => CreateItemViewModel(item, Phase)));
+    else
+      AddRange(newTypes.Select(item => CreateItemViewModel(item, Phase)));
+  }
+
+  private void RefreshFilteredItems(IEnumerable<TypeInfoViewModel> types)
+  {
+    var newTypes = new List<TypeInfoViewModel>();
+    foreach (var typeInfo in types)
+      if (!Types.Any(vm=>vm==typeInfo))
+        newTypes.Add(typeInfo);
+
+    if (TypeKindSelector != TKS.Any)
+      AddRange(newTypes.Where(item => item.IsTypeKindSelected(TypeKindSelector)));
+    else
+      AddRange(newTypes);
+  }
+
+  public async void RefreshItemsAsync()
+  {
+    await Task.Run(() => RefreshItems());
   }
 
   protected virtual TypeInfoViewModel CreateItemViewModel(TypeInfo item, PhaseViewModel phase)
@@ -118,9 +197,40 @@ public class TypeListViewModel : ViewModel
 
   protected virtual void ShowDetailsExecute()
   {
-    Helpers.WindowsManager.ShowWindow<TypeListWindow>(this);
+    WindowsManager.ShowWindow<TypeListWindow>(this);
+  }
+  #endregion
+
+  #region RefreshResultsCommand
+  /// <summary>
+  /// Command to show phase result window.
+  /// </summary>
+  public Command RefreshResultsCommand
+  {
+    get { return _RefreshResultsCommand; }
+    set
+    {
+      if (_RefreshResultsCommand != value)
+      {
+        _RefreshResultsCommand = value;
+        NotifyPropertyChanged(nameof(_RefreshResultsCommand));
+      }
+    }
+  }
+  private Command _RefreshResultsCommand = null!;
+
+  protected void RefreshResultsExecute()
+  {
+    RefreshItemsAsync();
+  }
+
+  protected virtual bool RefreshResultsCanExecute()
+  {
+    return true;//Percentage == 100;
   }
   #endregion
 
   public bool AreAllTypesValid => Types.Any(item => !item.IsValid);
+
+
 }

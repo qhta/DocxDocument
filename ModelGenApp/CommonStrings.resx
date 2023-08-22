@@ -378,4 +378,10 @@ Can contain * as a wildcard.</value>
   <data name="ClassTypes" xml:space="preserve">
     <value>Class types</value>
   </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="RefreshResults" xml:space="preserve">
+    <value>Refresh results</value>
+  </data>
 </root>
