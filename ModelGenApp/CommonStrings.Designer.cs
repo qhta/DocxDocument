@@ -559,6 +559,24 @@ namespace ModelGenApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Refresh.
+        /// </summary>
+        public static string Refresh {
+            get {
+                return ResourceManager.GetString("Refresh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Refresh results.
+        /// </summary>
+        public static string RefreshResults {
+            get {
+                return ResourceManager.GetString("RefreshResults", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Registered types.
         /// </summary>
         public static string RegisteredTypes {

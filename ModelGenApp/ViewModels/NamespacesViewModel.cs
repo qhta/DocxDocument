@@ -14,8 +14,6 @@ public class NamespacesViewModel : ObservableList<NamespaceViewModel>
 
   public string? Filter { get; private set; }
 
-
-
   public void Populate() // We can't populate it asynchronously
   {
     Clear();
@@ -31,7 +29,36 @@ public class NamespacesViewModel : ObservableList<NamespaceViewModel>
     {
       var nsVM = new NamespaceViewModel(Phase, ns, Filter);
       viewModels.Add(nsVM);
-      nsVM.LoadTypesAsync();
+      nsVM.FillTypesAsync();
+    }
+    AddRange(viewModels);
+  }
+
+  public void Refresh()
+  {
+    var namespaces = new List<Namespace>();
+    if (NamespacesTypeSelector.HasFlag(NTS.Origin))
+      namespaces.AddRange(TypeManager.KnownNamespaces.Where(item => item.Key.StartsWith("DocumentFormat")).Select(item => item.Value));
+    else if (NamespacesTypeSelector.HasFlag(NTS.Target))
+      namespaces.AddRange(TypeManager.KnownNamespaces.Where(item => item.Key.StartsWith("DocumentModel")).Select(item => item.Value));
+    if (NamespacesTypeSelector.HasFlag(NTS.System))
+      namespaces.AddRange(TypeManager.KnownNamespaces.Where(item => item.Key.StartsWith("System")).Select(item => item.Value));
+    var newNamespaces = new List<Namespace>();
+    foreach (var ns in namespaces)
+      if (!this.Any(item => item.Model == ns))
+        newNamespaces.Add(ns);
+
+    foreach (var nsVM in this)
+    {
+      nsVM.RefreshAsync();
+    }
+
+    var viewModels = new List<NamespaceViewModel>();
+    foreach (var ns in newNamespaces)
+    {
+      var nsVM = new NamespaceViewModel(Phase, ns, Filter);
+      viewModels.Add(nsVM);
+      nsVM.FillTypesAsync();
     }
     AddRange(viewModels);
   }

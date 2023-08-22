@@ -2,7 +2,8 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:ModelGenApp"
              xmlns:views="clr-namespace:ModelGenApp.Views"
              xmlns:vm="clr-namespace:ModelGenApp.ViewModels"
              xmlns:hlp="clr-namespace:ModelGenApp.Helpers"
@@ -19,7 +20,20 @@
       <RowDefinition Height="Auto"/>
       <RowDefinition Height="*"/>
     </Grid.RowDefinitions>
-    <views:PhaseSummaryView/>
-    <views:NamespacesListView Grid.Row="1" DataContext="{Binding Namespaces}"/>
+    <views:PhaseSummaryView />
+    <Button x:Name="RefreshButton" 
+            Background="Transparent"
+            BorderBrush="Transparent"
+            Width="24"
+            Height="24"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Right"
+            Command="{Binding Path=RefreshResultsCommand}">
+        <Image Source="/Images/Refresh.png"
+          ToolTip="{x:Static local:CommonStrings.Refresh}" />
+    </Button>
+    <views:NamespacesListView Grid.Row="1" 
+                              Grid.ColumnSpan="2"
+                              DataContext="{Binding Namespaces}"/>
   </Grid>
 </UserControl>

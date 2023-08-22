@@ -18,6 +18,7 @@ public abstract partial class PhaseViewModel : ViewModel
     NameKindSelector = new NKS(false, false, false);
     SaveResultsCommand = new RelayCommand(SaveResultsExecute, SaveResultsCanExecute) { Name = "SaveResultsCommand" };
     ShowResultsCommand = new RelayCommand(ShowResultsExecute, ShowResultsCanExecute) { Name = "ShowResultsCommand" };
+    RefreshResultsCommand = new RelayCommand(RefreshResultsExecute, RefreshResultsCanExecute) { Name = "RefreshResultsCommand" };
     PropertyChanged += PhaseMonitor_PropertyChanged;
   }
 
@@ -30,6 +31,7 @@ public abstract partial class PhaseViewModel : ViewModel
   {
     SaveResultsCommand.NotifyCanExecuteChanged();
     ShowResultsCommand.NotifyCanExecuteChanged();
+    RefreshResultsCommand.NotifyCanExecuteChanged();
   }
 
   /// <summary>
@@ -134,6 +136,16 @@ public abstract partial class PhaseViewModel : ViewModel
     Namespaces = new NamespacesViewModel(this, NamespaceTypeSelector, Filter);
     Namespaces.Populate();
   }
+
+  public async void RefreshResultsAsync()
+  {
+    await Task.Run(() => RefreshResults());
+  }
+
+  public virtual void RefreshResults()
+  {
+    Namespaces?.Refresh();
+  }
   #endregion
 
   #region Types
@@ -213,6 +225,35 @@ public abstract partial class PhaseViewModel : ViewModel
   }
 
   protected virtual bool ShowResultsCanExecute()
+  {
+    return true;//Percentage == 100;
+  }
+  #endregion
+
+  #region RefreshResultsCommand
+  /// <summary>
+  /// Command to show phase result window.
+  /// </summary>
+  public Command RefreshResultsCommand
+  {
+    get { return _RefreshResultsCommand; }
+    set
+    {
+      if (_RefreshResultsCommand != value)
+      {
+        _RefreshResultsCommand = value;
+        NotifyPropertyChanged(nameof(_RefreshResultsCommand));
+      }
+    }
+  }
+  private Command _RefreshResultsCommand = null!;
+
+  protected void RefreshResultsExecute()
+  {
+    RefreshResultsAsync();
+  }
+
+  protected virtual bool RefreshResultsCanExecute()
   {
     return true;//Percentage == 100;
   }

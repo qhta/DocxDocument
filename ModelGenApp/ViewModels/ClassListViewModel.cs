@@ -1,8 +1,9 @@
 ﻿namespace ModelGenApp.ViewModels;
 public class ClassListViewModel: TypeListViewModel
 {
-  public ClassListViewModel(PhaseViewModel phase, NamespaceViewModel nspace, string name, NKS typeNameSelector, TKS typeKindSelector): 
-    base(phase, nspace, name, typeNameSelector, typeKindSelector)
+  public ClassListViewModel(PhaseViewModel phase, NamespaceViewModel nspace, string name, 
+    NKS typeNameSelector, TKS typeKindSelector, TypeListViewModel source): 
+    base(phase, nspace, name, typeNameSelector, typeKindSelector, source)
   {
   }
 
