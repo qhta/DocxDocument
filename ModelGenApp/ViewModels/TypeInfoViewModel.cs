@@ -194,6 +194,15 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
   {
   }
 
+  public async void RefreshDetailsAsync()
+  {
+    await Task.Run(() => RefreshDetails());
+  }
+
+  public virtual void RefreshDetails()
+  {
+  }
+
   /// <summary>
   /// Shown as Window.Title.
   /// </summary>

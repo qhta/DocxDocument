@@ -1,4 +1,5 @@
 ﻿namespace ModelGenApp.ViewModels;
+
 public class NamespacesViewModel : ObservableList<NamespaceViewModel>
 {
   public NamespacesViewModel(PhaseViewModel phase, NTS namespacesTypeSelector, string? filter)
@@ -6,6 +7,7 @@ public class NamespacesViewModel : ObservableList<NamespaceViewModel>
     Phase = phase;
     NamespacesTypeSelector = namespacesTypeSelector;
     Filter = filter;
+    FillItems();
   }
 
   public PhaseViewModel Phase { get; private set; }
@@ -14,7 +16,7 @@ public class NamespacesViewModel : ObservableList<NamespaceViewModel>
 
   public string? Filter { get; private set; }
 
-  public void Populate() // We can't populate it asynchronously
+  public void FillItems() // We can't populate it asynchronously
   {
     Clear();
     var namespaces = new List<Namespace>();
@@ -34,7 +36,7 @@ public class NamespacesViewModel : ObservableList<NamespaceViewModel>
     AddRange(viewModels);
   }
 
-  public void Refresh()
+  public void RefreshItems()
   {
     var namespaces = new List<Namespace>();
     if (NamespacesTypeSelector.HasFlag(NTS.Origin))

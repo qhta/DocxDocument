@@ -11,7 +11,29 @@ public class EnumInfoViewModel : ViewModel<EnumInfo>, IAcceptable
 
   public NKS NameTypeSelector {get; private set; }
 
-  [DataGridColumn]
+  public bool IsAccepted => Model.IsAcceptedAfter(Phase.PhaseNum);
+
+  [DataGridColumn(
+    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Acceptance),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.AcceptanceTooltip)
+    )]
+  public Acceptance Acceptance
+  {
+    get
+    {
+      Acceptance result = 0;
+      if (Model.IsAcceptedAfter(Phase.PhaseNum))
+        result |= Acceptance.accepted;
+      if (Model.IsRejectedAfter(Phase.PhaseNum))
+        result |= Acceptance.rejected;
+      return result;
+    }
+  }
+
+  [DataGridColumn(
+    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.EnumValName),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.EnumValNameTooltip)
+  )]
   public string Name
   {
     get
@@ -23,9 +45,11 @@ public class EnumInfoViewModel : ViewModel<EnumInfo>, IAcceptable
     }
   }
 
-  [DataGridColumn]
+  [DataGridColumn(
+    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.EnumValue),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.EnumValueTooltip)
+  )]
   public int? Value => Model.Value;
 
-  public bool IsAccepted => Model.IsAcceptedAfter(Phase.PhaseNum);
 }
 

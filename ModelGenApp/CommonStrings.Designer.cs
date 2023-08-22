@@ -179,6 +179,25 @@ namespace ModelGenApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Declaring type.
+        /// </summary>
+        public static string DeclaringType {
+            get {
+                return ResourceManager.GetString("DeclaringType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Declaring type is a type in which the property is declared. 
+        ///It can be the current type or one of its base types..
+        /// </summary>
+        public static string DeclaringTypeTooltip {
+            get {
+                return ResourceManager.GetString("DeclaringTypeTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Description.
         /// </summary>
         public static string Description {
@@ -229,6 +248,44 @@ namespace ModelGenApp {
         public static string EnumTypes {
             get {
                 return ResourceManager.GetString("EnumTypes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enum value name.
+        /// </summary>
+        public static string EnumValName {
+            get {
+                return ResourceManager.GetString("EnumValName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enum value name is an original or target name 
+        ///defined in the enum type (depending on processing phase)..
+        /// </summary>
+        public static string EnumValNameTooltip {
+            get {
+                return ResourceManager.GetString("EnumValNameTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enum value.
+        /// </summary>
+        public static string EnumValue {
+            get {
+                return ResourceManager.GetString("EnumValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enum value is a numeric value of the named value
+        ///defined in the enum type..
+        /// </summary>
+        public static string EnumValueTooltip {
+            get {
+                return ResourceManager.GetString("EnumValueTooltip", resourceCulture);
             }
         }
         
@@ -559,6 +616,34 @@ namespace ModelGenApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Properties define values assigned to the object of the class..
+        /// </summary>
+        public static string PropertiesTooltip {
+            get {
+                return ResourceManager.GetString("PropertiesTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Property name.
+        /// </summary>
+        public static string PropertyName {
+            get {
+                return ResourceManager.GetString("PropertyName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Property name is an original or target name of the property
+        ///(depending on processing phase)..
+        /// </summary>
+        public static string PropertyNameTooltip {
+            get {
+                return ResourceManager.GetString("PropertyNameTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Refresh.
         /// </summary>
         public static string Refresh {
@@ -852,6 +937,24 @@ namespace ModelGenApp {
         public static string ValidationError {
             get {
                 return ResourceManager.GetString("ValidationError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Value type.
+        /// </summary>
+        public static string ValueType {
+            get {
+                return ResourceManager.GetString("ValueType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Value type is declared type of property value..
+        /// </summary>
+        public static string ValueTypeTooltip {
+            get {
+                return ResourceManager.GetString("ValueTypeTooltip", resourceCulture);
             }
         }
     }

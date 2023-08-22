@@ -18,25 +18,38 @@ public class PropInfoViewModel : ViewModel<PropInfo>, IAcceptable
 
   public bool IsAccepted => Model.IsAcceptedAfter(Phase.PhaseNum);
 
-  [DataGridColumn]
-  public string Acceptance
+  [DataGridColumn(
+    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Acceptance),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.AcceptanceTooltip)
+    )]
+  public Acceptance Acceptance
   {
     get
     {
+      Acceptance result = 0;
       if (Model.IsAcceptedAfter(Phase.PhaseNum))
-        return "accepted";
-      else return "rejected";
+        result |= Acceptance.accepted;
+      if (Model.IsRejectedAfter(Phase.PhaseNum))
+        result |= Acceptance.rejected;
+      return result;
     }
   }
 
-  [DataGridColumn(DataTemplateResourceKey = "TypeInfoLinkTemplate",
-    SortMemberPath = "DeclaringType.FullName", ClipboardContentPath = "DeclaringType.FullName")]
+  [DataGridColumn(
+    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.DeclaringType),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.DeclaringTypeTooltip),
+    DataTemplateResourceKey = "TypeInfoLinkTemplate",
+    SortMemberPath = "DeclaringType.FullName", 
+    ClipboardContentPath = "DeclaringType.FullName")]
   public TypeInfoViewModel? DeclaringType
   {
     get; set;
   }
 
-  [DataGridColumn]
+  [DataGridColumn(
+    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.PropertyName),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.PropertyNameTooltip)
+    )]
   public string Name
   {
     get
@@ -47,9 +60,13 @@ public class PropInfoViewModel : ViewModel<PropInfo>, IAcceptable
     }
   }
 
-  [DataGridColumn(DataTemplateResourceKey = "TypeInfoLinkTemplate",
-    SortMemberPath = "Type.FullName", ClipboardContentPath = "Type.FullName")]
-  public TypeInfoViewModel? Type
+  [DataGridColumn(
+    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.ValueType),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.ValueTypeTooltip),
+    DataTemplateResourceKey = "TypeInfoLinkTemplate",
+    SortMemberPath = "Type.FullName", 
+    ClipboardContentPath = "Type.FullName")]
+  public TypeInfoViewModel? ValueType
   {
     get
     {
