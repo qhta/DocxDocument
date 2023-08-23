@@ -415,10 +415,29 @@ Może to być typ bieżący lub jeden z jego typów podstawowych.</value>
 zdefiniowana w typie wyliczeniowym (w zależności od fazy przetwarzania).</value>
   </data>
   <data name="EnumValue" xml:space="preserve">
-    <value>Wartość wyliczeniowa</value>
+    <value>Wartość wyliczana</value>
   </data>
   <data name="EnumValueTooltip" xml:space="preserve">
-    <value>Wartość wyliczeniowa to wartość liczbowa wartości nazwanej
+    <value>Wartość wyliczana to wartość liczbowa wartości nazwanej
 zdefiniowanej w typie wyliczeniowym.</value>
+  </data>
+  <data name="TypeNameTooltip" xml:space="preserve">
+    <value>Nazwa typu to oryginalna lub docelowa nazwa typu
+(w zależności od fazy przetwarzania).</value>
+  </data>
+  <data name="DisplayOptions" xml:space="preserve">
+    <value>Opcje wyświetlania</value>
+  </data>
+  <data name="AcceptedOnly" xml:space="preserve">
+    <value>Tylko zaakceptowane</value>
+  </data>
+  <data name="ShowDeclaringType" xml:space="preserve">
+    <value>Pokaż typ deklarujący</value>
+  </data>
+  <data name="DisplayOptions_" xml:space="preserve">
+    <value>Opcje wyświetlania:</value>
+  </data>
+  <data name="ShowFullTypeName" xml:space="preserve">
+    <value>Pokaż pełną nazwę typu</value>
   </data>
 </root>
