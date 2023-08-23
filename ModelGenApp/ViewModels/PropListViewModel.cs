@@ -1,10 +1,9 @@
 ﻿namespace ModelGenApp.ViewModels;
 public class PropListViewModel : MemberListViewModel<PropInfoViewModel>
 {
-  public PropListViewModel(ClassInfoViewModel owner, string name): base(owner, name)
+  public PropListViewModel(ClassInfoViewModel owner, string name, NKS typeNameSelector): base(owner, name)
   {
-    ShowAcceptedOnlyVisible = true;
-    ShowDeclaringTypeVisible = true;
+    ShowDisplayOptions = true;
   }
 
 }

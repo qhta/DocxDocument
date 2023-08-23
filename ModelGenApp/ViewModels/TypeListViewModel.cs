@@ -1,7 +1,7 @@
 ﻿namespace ModelGenApp.ViewModels;
 public class TypeListViewModel : ViewModel
 {
-  public TypeListViewModel(PhaseViewModel phase, NamespaceViewModel? nspace, string name, 
+  public TypeListViewModel(PhaseViewModel phase, NamespaceViewModel? nspace, string name,
     NKS typeNameSelector, TKS typeKindSelector, TypeListViewModel? source = null)
   {
     Namespace = nspace;
@@ -38,7 +38,7 @@ public class TypeListViewModel : ViewModel
 
   protected virtual void AddRange(IEnumerable<TypeInfoViewModel> list)
   {
-     (Items as ObservableList<TypeInfoViewModel>)?.AddRange(list);
+    (Items as ObservableList<TypeInfoViewModel>)?.AddRange(list);
   }
   public NamespaceViewModel? Namespace { get; private set; }
 
@@ -69,7 +69,22 @@ public class TypeListViewModel : ViewModel
 
   public string? Filter { get; set; }
 
-  public TypeListViewModel? Source {get; private set; }
+  public TypeListViewModel? Source { get; private set; }
+
+
+  public bool ShowFullTypeName
+  {
+    get => TypeNameSelector.Namespace;
+    set
+    {
+      if (TypeNameSelector.Namespace != value)
+      {
+        TypeNameSelector.Namespace = value;
+        NotifyPropertyChanged(nameof(ShowFullTypeName));
+        RefreshItems();
+      }
+    }
+  }
 
   public bool IsTargetNameVisible
   {
@@ -98,7 +113,7 @@ public class TypeListViewModel : ViewModel
 
   public void FillItems()
   {
-    if (Source!=null)
+    if (Source != null)
       FilterItems(Source.Types);
     else
       CreateItems(GetModelTypes());
@@ -108,7 +123,7 @@ public class TypeListViewModel : ViewModel
 
   private IEnumerable<TypeInfo> GetModelTypes()
   {
-    var types = Namespace?.Model.Types.OrderBy(item => item.Name).ToList() 
+    var types = Namespace?.Model.Types.ToList()
       ?? ModelGen.TypeManager.AllTypes.ToList();
     var filter = Filter;
     if (filter != null)
@@ -148,7 +163,7 @@ public class TypeListViewModel : ViewModel
 
   public void RefreshItems()
   {
-    if (Source!=null)
+    if (Source != null)
       RefreshFilteredItems(Source.Types);
     else
       RefreshCreatedItems(GetModelTypes());
@@ -160,7 +175,7 @@ public class TypeListViewModel : ViewModel
   {
     var newTypes = new List<TypeInfo>();
     foreach (var typeInfo in types)
-      if (!Types.Any(vm=>vm.Model==typeInfo))
+      if (!Types.Any(vm => vm.Model == typeInfo))
         newTypes.Add(typeInfo);
 
     if (TypeKindSelector != TKS.Any)
@@ -174,7 +189,7 @@ public class TypeListViewModel : ViewModel
   {
     var newTypes = new List<TypeInfoViewModel>();
     foreach (var typeInfo in types)
-      if (!Types.Any(vm=>vm==typeInfo))
+      if (!Types.Any(vm => vm == typeInfo))
         newTypes.Add(typeInfo);
 
     if (TypeKindSelector != TKS.Any)

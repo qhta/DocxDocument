@@ -191,7 +191,7 @@
                      NavigateUri="{Binding Path=FullName}"
                      Command="{Binding Path=ShowTypeCommand}"
                      CommandParameter="{Binding}">
-            <TextBlock Text="{Binding Path=FullName}"
+            <TextBlock Text="{Binding Path=Name}"
                        Foreground="Black" />
           </Hyperlink>
         </TextBlock>

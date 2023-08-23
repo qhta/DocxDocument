@@ -51,5 +51,10 @@ public class EnumInfoViewModel : ViewModel<EnumInfo>, IAcceptable
   )]
   public int? Value => Model.Value;
 
+  [DataGridColumn(
+    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Description),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.DescriptionTooltip)
+    )]
+  public string? Description => Model.Description;
 }
 

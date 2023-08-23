@@ -16,13 +16,36 @@
   <Grid>
     <FrameworkElement x:Name="dummyElement"
                       Visibility="Collapsed" />
-    <DataGrid x:Name="MainDataGrid"
-              AutoGenerateColumns="true"
-              AutoGeneratingColumn="DataGrid_AutoGeneratingColumn"
-              utl:CollectionViewBehavior.EnableCollectionSynchronization="True"
-              utl:CollectionViewBehavior.ShowFilterButton="True"
-              ItemsSource="{Binding Items}">
-    </DataGrid>
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="*" />
+      </Grid.RowDefinitions>
+      <StackPanel Orientation="Horizontal">
+        <Label Margin="2,0"
+               FontWeight="Bold"
+               Content="{x:Static local:CommonStrings.DisplayOptions_}" />
+        <!--<CheckBox Margin="2,0"
+                  VerticalAlignment="Center"
+                  IsChecked="{Binding Path=Members.ShowAcceptedOnly}"
+                  Content="{x:Static local:CommonStrings.AcceptedOnly}"
+                  Visibility="{Binding Path=Members.ShowAcceptedOnlyVisible,
+                               Converter={StaticResource BoolToVisibilityConverter}}" />-->
+        <CheckBox Margin="2,0"
+                  VerticalAlignment="Center"
+                  IsChecked="{Binding Path=ShowFullTypeName}"
+                  Content="{x:Static local:CommonStrings.ShowFullTypeName}"
+                  />
+      </StackPanel>
+      <DataGrid x:Name="MainDataGrid"
+                Grid.Row="1"
+                AutoGenerateColumns="true"
+                AutoGeneratingColumn="DataGrid_AutoGeneratingColumn"
+                utl:CollectionViewBehavior.EnableCollectionSynchronization="True"
+                utl:CollectionViewBehavior.ShowFilterButton="True"
+                ItemsSource="{Binding Items}">
+      </DataGrid>
+    </Grid>
     <Button x:Name="RefreshButton"
             Background="Transparent"
             BorderBrush="Transparent"
@@ -34,6 +57,5 @@
       <Image Source="/Images/Refresh.png"
              ToolTip="{x:Static local:CommonStrings.Refresh}" />
     </Button>
-
   </Grid>
 </UserControl>

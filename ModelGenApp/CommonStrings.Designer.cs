@@ -79,6 +79,15 @@ namespace ModelGenApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to AcceptedOnly.
+        /// </summary>
+        public static string AcceptedOnly {
+            get {
+                return ResourceManager.GetString("AcceptedOnly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Accepted types.
         /// </summary>
         public static string AcceptedTypes {
@@ -212,6 +221,24 @@ namespace ModelGenApp {
         public static string DescriptionTooltip {
             get {
                 return ResourceManager.GetString("DescriptionTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Display options.
+        /// </summary>
+        public static string DisplayOptions {
+            get {
+                return ResourceManager.GetString("DisplayOptions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Display options:.
+        /// </summary>
+        public static string DisplayOptions_ {
+            get {
+                return ResourceManager.GetString("DisplayOptions_", resourceCulture);
             }
         }
         
@@ -752,6 +779,24 @@ namespace ModelGenApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Show declaring type.
+        /// </summary>
+        public static string ShowDeclaringType {
+            get {
+                return ResourceManager.GetString("ShowDeclaringType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show full type name.
+        /// </summary>
+        public static string ShowFullTypeName {
+            get {
+                return ResourceManager.GetString("ShowFullTypeName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Show results.
         /// </summary>
         public static string ShowResults {
@@ -901,6 +946,16 @@ namespace ModelGenApp {
         public static string TypeName {
             get {
                 return ResourceManager.GetString("TypeName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Type name is an original or target name of the type
+        ///(depending on processing phase)..
+        /// </summary>
+        public static string TypeNameTooltip {
+            get {
+                return ResourceManager.GetString("TypeNameTooltip", resourceCulture);
             }
         }
         

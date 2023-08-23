@@ -93,8 +93,8 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
   public string? TargetName => Model.GetFullName(true, TypeNameSelector.Namespace, TypeNameSelector.NsShortcut);
 
   [DataGridColumn(
-    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.TypeFullName),
-    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.TypeFullNameTooltip),
+    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.TypeName),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.TypeNameTooltip),
     DataTemplateResourceKey = "TypeInfoLinkTemplate",
     SortMemberPath = "Type.Name", 
     ClipboardContentPath = "Type.Name")]
@@ -135,13 +135,7 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
     }
   }
 
-  public string? FullName
-  {
-    get
-    {
-      return Model.GetFullName(TypeNameSelector.Target, true, false);
-    }
-  }
+  public string? FullName => Model.GetFullName(TypeNameSelector.Target, true, false);
 
   [DataGridColumn(
     HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Description),

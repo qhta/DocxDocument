@@ -83,5 +83,10 @@ public class PropInfoViewModel : ViewModel<PropInfo>, IAcceptable
     }
   }
 
+  [DataGridColumn(
+    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Description),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.DescriptionTooltip)
+    )]
+  public string? Description => Model.Description;
 }
 

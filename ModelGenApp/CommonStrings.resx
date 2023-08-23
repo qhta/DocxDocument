@@ -421,4 +421,23 @@ defined in the enum type (depending on processing phase).</value>
     <value>Enum value is a numeric value of the named value
 defined in the enum type.</value>
   </data>
+  <data name="TypeNameTooltip" xml:space="preserve">
+    <value>Type name is an original or target name of the type
+(depending on processing phase).</value>
+  </data>
+  <data name="DisplayOptions" xml:space="preserve">
+    <value>Display options</value>
+  </data>
+  <data name="AcceptedOnly" xml:space="preserve">
+    <value>AcceptedOnly</value>
+  </data>
+  <data name="ShowDeclaringType" xml:space="preserve">
+    <value>Show declaring type</value>
+  </data>
+  <data name="DisplayOptions_" xml:space="preserve">
+    <value>Display options:</value>
+  </data>
+  <data name="ShowFullTypeName" xml:space="preserve">
+    <value>Show full type name</value>
+  </data>
 </root>
