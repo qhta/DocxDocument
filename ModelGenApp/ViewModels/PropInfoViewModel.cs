@@ -1,16 +1,14 @@
 ﻿namespace ModelGenApp.ViewModels;
 public class PropInfoViewModel : ViewModel<PropInfo>, IAcceptable
 {
-  public PropInfoViewModel(PhaseViewModel phase, ClassInfoViewModel? ownerViewModel, PropInfo propInfo, NKS nameKindSelector) : base(propInfo)
+  public PropInfoViewModel(PhaseViewModel phase, ClassInfoViewModel? owner, PropInfo propInfo, NKS nameKindSelector) : base(propInfo)
   {
-    OwnerType = ownerViewModel;
+    Owner = owner;
     NameKindSelector = nameKindSelector;
     Phase = phase;
-    if (ownerViewModel?.Properties?.ShowDeclaringType == true && propInfo.DeclaringType != null)
-      DeclaringType = TypeInfoViewModel.Create(phase, propInfo.DeclaringType, nameKindSelector);
   }
 
-  public TypeInfoViewModel? OwnerType { get; private set; }
+  public ClassInfoViewModel? Owner { get; private set; }
 
   public NKS NameKindSelector { get; private set; }
 
@@ -19,8 +17,8 @@ public class PropInfoViewModel : ViewModel<PropInfo>, IAcceptable
   public bool IsAccepted => Model.IsAcceptedAfter(Phase.PhaseNum);
 
   [DataGridColumn(
-    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Acceptance),
-    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.AcceptanceTooltip)
+    HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.Acceptance),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.AcceptanceTooltip)
     )]
   public Acceptance Acceptance
   {
@@ -35,20 +33,49 @@ public class PropInfoViewModel : ViewModel<PropInfo>, IAcceptable
     }
   }
 
+  public bool ShowFullTypeName
+  {
+    get => _ShowFullTypeName;
+    set
+    {
+      if (_ShowFullTypeName != value)
+      {
+        _ShowFullTypeName = value;
+        NotifyPropertyChanged(nameof(ShowFullTypeName));
+        if (DeclaringType != null)
+          _DeclaringType = null;
+        NotifyPropertyChanged(nameof(DeclaringType));
+        if (ValueType != null)
+          _ValueType = null;
+        NotifyPropertyChanged(nameof(ValueType));
+      }
+    }
+  }
+  private bool _ShowFullTypeName;
+
   [DataGridColumn(
-    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.DeclaringType),
-    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.DeclaringTypeTooltip),
+    HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.DeclaringType),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.DeclaringTypeTooltip),
     DataTemplateResourceKey = "TypeInfoLinkTemplate",
-    SortMemberPath = "DeclaringType.FullName", 
+    SortMemberPath = "DeclaringType.FullName",
     ClipboardContentPath = "DeclaringType.FullName")]
   public TypeInfoViewModel? DeclaringType
   {
-    get; set;
+    get
+    {
+      if (_DeclaringType == null)
+      {
+        if (Owner?.Properties?.ShowDeclaringType == true && Model.DeclaringType != null)
+          _DeclaringType = TypeInfoViewModel.Create(Phase, Model.DeclaringType, NameKindSelector);
+      }
+      return _DeclaringType;
+    }
   }
+  private TypeInfoViewModel? _DeclaringType;
 
   [DataGridColumn(
-    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.PropertyName),
-    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.PropertyNameTooltip)
+    HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.PropertyName),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.PropertyNameTooltip)
     )]
   public string Name
   {
@@ -61,31 +88,34 @@ public class PropInfoViewModel : ViewModel<PropInfo>, IAcceptable
   }
 
   [DataGridColumn(
-    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.ValueType),
-    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.ValueTypeTooltip),
+    HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.ValueType),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.ValueTypeTooltip),
     DataTemplateResourceKey = "TypeInfoLinkTemplate",
-    SortMemberPath = "Type.FullName", 
+    SortMemberPath = "Type.FullName",
     ClipboardContentPath = "Type.FullName")]
   public TypeInfoViewModel? ValueType
   {
     get
     {
       var propType = Model.PropertyType;
-      if (propType!=null)
+      if (propType != null && _ValueType == null)
       {
         if (propType.TypeKind == TypeKind.@enum)
-          return new EnumTypeInfoViewModel(Phase, propType, NameKindSelector);
+          _ValueType = new EnumTypeInfoViewModel(Phase, propType, NameKindSelector);
+        else
         if (propType.TypeKind == TypeKind.type)
-          return TypeInfoViewModel.Create(Phase, propType, NameKindSelector);
-        return new ClassInfoViewModel(Phase, propType, NameKindSelector);
+          _ValueType = TypeInfoViewModel.Create(Phase, propType, NameKindSelector);
+        else
+          _ValueType = new ClassInfoViewModel(Phase, propType, NameKindSelector);
       }
-      return null;
+      return _ValueType;
     }
   }
+  private TypeInfoViewModel? _ValueType;
 
   [DataGridColumn(
-    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Description),
-    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.DescriptionTooltip)
+    HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.Description),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.DescriptionTooltip)
     )]
   public string? Description => Model.Description;
 }

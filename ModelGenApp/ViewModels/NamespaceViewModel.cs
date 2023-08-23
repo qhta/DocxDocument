@@ -95,11 +95,11 @@ public class NamespaceViewModel : ViewModel<Namespace>
   public void FillTypes()
   {
     AllTypes.FillItems();
-    Classes.FillItems();
-    Enums.FillItems();
-    Interfaces.FillItems();
-    Structs.FillItems();
-    Others.FillItems();
+    Classes.FillItemsAsync();
+    Enums.FillItemsAsync();
+    Interfaces.FillItemsAsync();
+    Structs.FillItemsAsync();
+    Others.FillItemsAsync();
   }
 
   public async void RefreshAsync()
@@ -111,12 +111,12 @@ public class NamespaceViewModel : ViewModel<Namespace>
   {
     lock (Model.Types)
     {
-      AllTypes.RefreshItems();
-      Classes.RefreshItems();
-      Enums.RefreshItems();
-      Interfaces.RefreshItems();
-      Structs.RefreshItems();
-      Others.RefreshItems();
+      AllTypes.RefreshItemsAsync();
+      Classes.RefreshItemsAsync();
+      Enums.RefreshItemsAsync();
+      Interfaces.RefreshItemsAsync();
+      Structs.RefreshItemsAsync();
+      Others.RefreshItemsAsync();
     }
   }
 

@@ -355,7 +355,7 @@ Może zawierać * jako symbol wieloznaczny.</value>
     <value>Pełna nazwa typu</value>
   </data>
   <data name="TypeFullNameTooltip" xml:space="preserve">
-    <value>Nazwa typu poprzedzona przestrzenią nazw.</value>
+    <value>Pełna nazwa typu to nazwa typu poprzedzona przestrzenią nazw.</value>
   </data>
   <data name="DescriptionTooltip" xml:space="preserve">
     <value>Krótki opis.</value>

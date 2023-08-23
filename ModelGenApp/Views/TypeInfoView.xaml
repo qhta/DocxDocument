@@ -40,7 +40,13 @@
         <CheckBox Margin="2,0"
                   VerticalAlignment="Center"
                   IsChecked="{Binding Path=Members.ShowDeclaringType}"
-                  Content="{x:Static local:CommonStrings.ShowDeclaringType}" />
+                  Content="{x:Static local:CommonStrings.ShowDeclaringType}"
+                  ToolTip="{x:Static local:CommonStrings.DeclaringTypeTooltip}"/>
+        <CheckBox Margin="2,0"
+                  VerticalAlignment="Center"
+                  IsChecked="{Binding Path=Members.ShowFullTypeName}"
+                  Content="{x:Static local:CommonStrings.ShowFullTypeName}"
+                  ToolTip="{x:Static local:CommonStrings.TypeFullNameTooltip}"/>
       </StackPanel>
       <DataGrid x:Name="MainDataGrid"
                 Grid.Row="1"

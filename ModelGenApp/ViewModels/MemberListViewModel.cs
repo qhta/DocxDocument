@@ -56,6 +56,7 @@ public class MemberListViewModel<T> : ObservableList<T> where T : ViewModel, IAc
     return Count > 0;
   }
 
+
   protected virtual void ShowDetailsExecute()
   {
     WindowsManager.ShowWindow<TypeInfoWindow>(Owner);

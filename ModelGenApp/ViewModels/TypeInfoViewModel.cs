@@ -143,6 +143,20 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
     )]
   public string? Description => Model.Description;
 
+  public bool ShowFullTypeName
+  {
+    get => TypeNameSelector.Namespace;
+    set
+    {
+      if (TypeNameSelector.Namespace != value)
+      {
+        TypeNameSelector.Namespace = value;
+        NotifyPropertyChanged(nameof(ShowFullTypeName));
+        RefreshDetailsAsync();
+      }
+    }
+  }
+
   public TypeSummaryViewModel TypeSummary { get; } = new TypeSummaryViewModel();
 
   protected async void FillTypeSummaryAsync()
