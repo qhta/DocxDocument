@@ -41,7 +41,6 @@ public class EnumInfoViewModel : ViewModel<EnumInfo>, IAcceptable
       if (NameTypeSelector.Target)
         return Model.NewName ?? Model.Name;
       return Model.Name;
-
     }
   }
 

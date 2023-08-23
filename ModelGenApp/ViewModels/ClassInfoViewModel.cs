@@ -1,4 +1,6 @@
-﻿namespace ModelGenApp.ViewModels;
+﻿using System.Buffers;
+
+namespace ModelGenApp.ViewModels;
 
 public class ClassInfoViewModel : TypeInfoViewModel
 {
@@ -18,7 +20,7 @@ public class ClassInfoViewModel : TypeInfoViewModel
 
   public override object? Members => Properties;
 
-  public override void FillDetails() => FillProperties();
+  public override void FillDetails() => FillPropertiesAsync();
 
   public async void FillPropertiesAsync()
   {
@@ -51,13 +53,14 @@ public class ClassInfoViewModel : TypeInfoViewModel
 
   public void RefreshProperties()
   {
+    Properties.ShowFullTypeName = this.ShowFullTypeName;
     var properties = Model.GetAllProperties().ToList();
     var newProperties = new List<PropInfo>();
     foreach (var propInfo in properties)
       if (!Properties.Any(vm=>vm.Model==propInfo))
         newProperties.Add(propInfo);
-
     foreach (var propInfo in newProperties)
       Properties.Add(new PropInfoViewModel(Phase, this, propInfo, TypeNameSelector));
+
   }
 }
