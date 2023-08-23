@@ -80,8 +80,10 @@ public class TypeListViewModel : ViewModel
       if (TypeNameSelector.Namespace != value)
       {
         TypeNameSelector.Namespace = value;
+        foreach(var typeInfo in Types)
+          typeInfo.ShowFullTypeName = value;
         NotifyPropertyChanged(nameof(ShowFullTypeName));
-        RefreshItems();
+        RefreshItemsAsync();
       }
     }
   }
@@ -110,6 +112,11 @@ public class TypeListViewModel : ViewModel
   #region ShowDetailsCommand
 
   public Command ShowDetailsCommand { get; private set; }
+
+  public async void FillItemsAsync()
+  {
+    await Task.Run(()=> FillItems());
+  }
 
   public void FillItems()
   {
@@ -161,6 +168,11 @@ public class TypeListViewModel : ViewModel
       AddRange(types);
   }
 
+  public async void RefreshItemsAsync()
+  {
+    await Task.Run(() => RefreshItems());
+  }
+
   public void RefreshItems()
   {
     if (Source != null)
@@ -196,11 +208,6 @@ public class TypeListViewModel : ViewModel
       AddRange(newTypes.Where(item => item.IsTypeKindSelected(TypeKindSelector)));
     else
       AddRange(newTypes);
-  }
-
-  public async void RefreshItemsAsync()
-  {
-    await Task.Run(() => RefreshItems());
   }
 
   protected virtual TypeInfoViewModel CreateItemViewModel(TypeInfo item, PhaseViewModel phase)
