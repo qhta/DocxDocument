@@ -24,32 +24,13 @@ public class MemberListViewModel<T> : ObservableList<T> where T : ViewModel, IAc
 
   public bool Visible => true;
 
-  public IEnumerable<T> Items
+  public IEnumerable<T> Items 
   {
     get
     {
-      if (ShowAcceptedOnly)
-        return this.Where(item=>item.IsAccepted);
       return this;
     }
   }
-
-  public bool ShowAcceptedOnly
-  {
-    get => _showAcceptedOnly;
-    set
-    {
-      if (value != _showAcceptedOnly)
-      {
-        _showAcceptedOnly = value;
-        NotifyPropertyChanged(nameof(ShowAcceptedOnly));
-        NotifyPropertyChanged(nameof(Items));
-      }
-    }
-  }
-  private static bool _showAcceptedOnly = true;
-
-  public bool ShowAcceptedOnlyVisible { get; protected set; }
 
   public bool ShowDeclaringType
   {
@@ -60,13 +41,12 @@ public class MemberListViewModel<T> : ObservableList<T> where T : ViewModel, IAc
       {
         _showDeclaringType = value;
         NotifyPropertyChanged(nameof(ShowDeclaringType));
-        NotifyPropertyChanged(nameof(Items));
       }
     }
   }
   private static bool _showDeclaringType = true;
 
-  public bool ShowDeclaringTypeVisible { get; protected set; }
+  public bool ShowDisplayOptions { get; protected set; }
 
   #region ShowDetailsCommand
   public Command ShowDetailsCommand { get; private set; }

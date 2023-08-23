@@ -4,7 +4,7 @@ public class ClassInfoViewModel : TypeInfoViewModel
 {
   public ClassInfoViewModel(PhaseViewModel phase, TypeInfo typeInfo, NKS typeNameSelector) : base(phase, typeInfo, typeNameSelector)
   {
-    Properties = new PropListViewModel(this, "Properties");
+    Properties = new PropListViewModel(this, "Properties", typeNameSelector);
   }
 
   [DataGridColumn(
