@@ -45,6 +45,13 @@ public class ModelDocsManager
     foreach (var typeInfo in types)
     {
       DocumentSingleType(typeInfo);
+      OnDocumentingType?.Invoke(new ProgressTypeInfo
+      {
+        TotalTypes = TotalTypesCount,
+        CheckedTypes = CheckedTypesCount,
+        ProcessedTypes = DocumentedTypesCount,
+        Current = typeInfo
+      });
     }
     SaveErrors();
     return DocumentedTypesCount;
@@ -53,12 +60,6 @@ public class ModelDocsManager
   public bool DocumentSingleType(TypeInfo typeInfo)
   {
     CheckedTypesCount++;
-    OnDocumentingType?.Invoke(new ProgressTypeInfo
-    {
-      CheckedTypes = CheckedTypesCount,
-      ProcessedTypes = DocumentedTypesCount,
-      Current = typeInfo
-    });
     var ok = true;
     if (!typeInfo.IsConstructedGenericType)
     {

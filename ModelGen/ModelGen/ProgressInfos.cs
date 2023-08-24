@@ -3,6 +3,7 @@
 
 public record ProgressTypeInfo
 {
+  public int? TotalTypes;
   public int? CheckedTypes;
   public int? ProcessedTypes;
   public TypeInfo? Current;
