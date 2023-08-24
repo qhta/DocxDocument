@@ -1,7 +1,7 @@
 ﻿namespace ModelGenApp.ViewModels;
 public class PropInfoViewModel : ViewModel<PropInfo>, IAcceptable
 {
-  public PropInfoViewModel(PhaseViewModel phase, ClassInfoViewModel? owner, PropInfo propInfo, NKS nameKindSelector) : base(propInfo)
+  public PropInfoViewModel(PhaseViewModel phase, ClassInfoViewModel? owner, PropInfo propInfo, TNS nameKindSelector) : base(propInfo)
   {
     Owner = owner;
     NameKindSelector = nameKindSelector;
@@ -10,7 +10,7 @@ public class PropInfoViewModel : ViewModel<PropInfo>, IAcceptable
 
   public ClassInfoViewModel? Owner { get; private set; }
 
-  public NKS NameKindSelector { get; private set; }
+  public TNS NameKindSelector { get; private set; }
 
   public PhaseViewModel Phase { get; private set; }
 

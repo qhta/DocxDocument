@@ -2,7 +2,7 @@
 public class ClassListViewModel: TypeListViewModel
 {
   public ClassListViewModel(PhaseViewModel phase, NamespaceViewModel nspace, string name, 
-    NKS typeNameSelector, TKS typeKindSelector, SummaryInfoKind? filter, TypeListViewModel source): 
+    TNS typeNameSelector, TKS typeKindSelector, SummaryInfoKind? filter, TypeListViewModel source): 
     base(phase, nspace, name, typeNameSelector, typeKindSelector, filter, source)
   {
   }

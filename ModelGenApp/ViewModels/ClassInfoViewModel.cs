@@ -4,7 +4,7 @@ namespace ModelGenApp.ViewModels;
 
 public class ClassInfoViewModel : TypeInfoViewModel
 {
-  public ClassInfoViewModel(PhaseViewModel phase, TypeInfo typeInfo, NKS typeNameSelector) : base(phase, typeInfo, typeNameSelector)
+  public ClassInfoViewModel(PhaseViewModel phase, TypeInfo typeInfo, TNS typeNameSelector) : base(phase, typeInfo, typeNameSelector)
   {
     Properties = new PropListViewModel(this, "Properties", typeNameSelector);
   }

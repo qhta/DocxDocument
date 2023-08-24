@@ -15,7 +15,7 @@ public abstract partial class PhaseViewModel : ViewModel
   {
     PhaseNum = phase;
     PhaseName = name;
-    NameKindSelector = new NKS(false, false, false);
+    TypeNameSelector = new TNS(false, false, false);
     SaveResultsCommand = new RelayCommand(SaveResultsExecute, SaveResultsCanExecute) { Name = "SaveResultsCommand" };
     ShowResultsCommand = new RelayCommand(ShowResultsExecute, ShowResultsCanExecute) { Name = "ShowResultsCommand" };
     RefreshResultsCommand = new RelayCommand(RefreshResultsExecute, RefreshResultsCanExecute) { Name = "RefreshResultsCommand" };
@@ -109,7 +109,7 @@ public abstract partial class PhaseViewModel : ViewModel
 
   public NTS NamespaceTypeSelector { get; protected set; }
 
-  public NKS NameKindSelector { get; protected set; }
+  public TNS TypeNameSelector { get; protected set; }
 
   #region Namespaces
   public NamespacesViewModel Namespaces

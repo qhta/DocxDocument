@@ -202,9 +202,9 @@ public class TypeInfo : ModelElement
   }
 
   public FullTypeName GetFullName(bool target, bool withNamespace, bool nsShortcut)
-    => GetFullName(new NKS(target, withNamespace, nsShortcut));
+    => GetFullName(new TNS(target, withNamespace, nsShortcut));
 
-  public static FullTypeName GetFullName(Type aType, NKS nameKindSelector)
+  public static FullTypeName GetFullName(Type aType, TNS nameKindSelector)
   {
     string aName;
     string? aNamespace = null;
@@ -241,7 +241,7 @@ public class TypeInfo : ModelElement
     return result;
   }
 
-  public FullTypeName GetFullName(NKS nameKindSelector)
+  public FullTypeName GetFullName(TNS nameKindSelector)
   {
     string aName;
     string? aNamespace = null;
