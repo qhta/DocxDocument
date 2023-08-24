@@ -19,12 +19,20 @@ public static class ModelManager
   public static int ConvertTypes()
   {
     var n = 0;
-    foreach (var typeInfo in TypeManager.AllTypes.ToArray())
+    var types = TypeManager.AllTypes.ToArray();
+    var totalTypes = types.Count();
+    foreach (var typeInfo in types)
     {
       if (ModelManager.TryConvertType(typeInfo))
       {
         ConvertedTypesCount++;
-        OnConvertingType?.Invoke(new ProgressTypeInfo { CheckedTypes = CheckedRenameTypesCount, ProcessedTypes = ConvertedTypesCount, Current = typeInfo });
+        OnConvertingType?.Invoke(new ProgressTypeInfo
+        {
+          TotalTypes = totalTypes,
+          CheckedTypes = CheckedRenameTypesCount,
+          ProcessedTypes = ConvertedTypesCount,
+          Current = typeInfo
+        });
         n++;
       }
     }
@@ -641,11 +649,20 @@ public static class ModelManager
   {
     RenameNamespaces();
     var n = 0;
+    var types = TypeManager.TypesAcceptedTo(PPS.Rename).ToArray();
+    var totalTypes = types.Count();
     DuplicateTypeNamesCount = 0;
-    foreach (var type in TypeManager.TypesAcceptedTo(PPS.Rename).ToArray())
+    foreach (var typeInfo in types)
     {
-      if (ModelManager.TryRenameType(type))
+      if (ModelManager.TryRenameType(typeInfo))
         n++;
+      OnRenamingType?.Invoke(new ProgressTypeInfo
+      {
+        TotalTypes = totalTypes,
+        CheckedTypes = CheckedRenameTypesCount,
+        ProcessedTypes = RenamedTypesCount,
+        Current = typeInfo
+      });
     }
     return n;
   }
@@ -717,7 +734,6 @@ public static class ModelManager
       {
         typeInfo.NewName = newName;
         RenamedTypesCount++;
-        OnRenamingType?.Invoke(new ProgressTypeInfo { CheckedTypes = CheckedRenameTypesCount, ProcessedTypes = RenamedTypesCount, Current = typeInfo });
         return true;
       }
     }
@@ -725,31 +741,30 @@ public static class ModelManager
   }
 
 
-  private static bool RenameTypeWithNamespace(TypeInfo typeInfo)
-  {
-    var origNamespace = typeInfo.OriginalNamespace;
-    int k = origNamespace.IndexOf("20");
-    if (k >= 0 && k <= origNamespace.Length - 4)
-    {
-      var yearStr = origNamespace.Substring(k, 4);
-      if (int.TryParse(yearStr, out var year))
-      {
-        typeInfo.NewName = typeInfo.Name + year.ToString();
-        RenamedTypesCount++;
-        OnRenamingType?.Invoke(new ProgressTypeInfo { CheckedTypes = CheckedRenameTypesCount, ProcessedTypes = RenamedTypesCount, Current = typeInfo });
-        return true;
-      }
-    }
-    else if (typeInfo.Name=="Properties" && origNamespace.EndsWith("Properties"))
-    {
-      k = origNamespace.LastIndexOf('.');
-      typeInfo.NewName = origNamespace.Substring(k+1);
-      RenamedTypesCount++;
-      OnRenamingType?.Invoke(new ProgressTypeInfo { CheckedTypes = CheckedRenameTypesCount, ProcessedTypes = RenamedTypesCount, Current = typeInfo });
-      return true;
-    }
-    return false;
-  }
+  //private static bool RenameTypeWithNamespace(TypeInfo typeInfo)
+  //{
+  //  var origNamespace = typeInfo.OriginalNamespace;
+  //  int k = origNamespace.IndexOf("20");
+  //  if (k >= 0 && k <= origNamespace.Length - 4)
+  //  {
+  //    var yearStr = origNamespace.Substring(k, 4);
+  //    if (int.TryParse(yearStr, out var year))
+  //    {
+  //      typeInfo.NewName = typeInfo.Name + year.ToString();
+  //      RenamedTypesCount++;
+  //      return true;
+  //    }
+  //  }
+  //  else if (typeInfo.Name == "Properties" && origNamespace.EndsWith("Properties"))
+  //  {
+  //    k = origNamespace.LastIndexOf('.');
+  //    typeInfo.NewName = origNamespace.Substring(k + 1);
+  //    RenamedTypesCount++;
+  //    OnRenamingType?.Invoke(new ProgressTypeInfo { CheckedTypes = CheckedRenameTypesCount, ProcessedTypes = RenamedTypesCount, Current = typeInfo });
+  //    return true;
+  //  }
+  //  return false;
+  //}
 
   private static string NewEnumTypeName(Type type)
   {

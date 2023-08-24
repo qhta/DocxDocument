@@ -12,8 +12,8 @@
              d:DesignHeight="450" d:DesignWidth="400">
   <UserControl.Resources>
     <Style x:Key="{x:Type views:PhaseProgressView}" TargetType="{x:Type views:PhaseProgressView}">
-      <Setter Property="Width" Value="5"/>
-      <Setter Property="HorizontalAlignment" Value="Right"/>
+      <Setter Property="Width" Value="8"/>
+      <Setter Property="HorizontalAlignment" Value="Left"/>
       <Setter Property="RenderTransform">
         <Setter.Value>
           <TranslateTransform Y="5"/>

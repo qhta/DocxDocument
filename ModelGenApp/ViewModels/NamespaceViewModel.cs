@@ -95,11 +95,11 @@ public class NamespaceViewModel : ViewModel<Namespace>
   public void FillTypes()
   {
     AllTypes.FillItems();
-    Classes.FillItemsAsync();
-    Enums.FillItemsAsync();
-    Interfaces.FillItemsAsync();
-    Structs.FillItemsAsync();
-    Others.FillItemsAsync();
+    Classes.FillItems();
+    Enums.FillItems();
+    Interfaces.FillItems();
+    Structs.FillItems();
+    Others.FillItems();
   }
 
   public async void RefreshAsync()

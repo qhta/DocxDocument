@@ -17,8 +17,9 @@ public static class ProcessOptionsMgr
             return result;
         }
       }
-      catch// (Exception ex)
+      catch (Exception ex)
       {
+        Debug.WriteLine($"Error reading {filename}: {ex.Message}");
       }
     }
     return new ProcessOptions();
