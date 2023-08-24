@@ -48,6 +48,13 @@ public record TypeInfoFilter
   }
 
   /// <summary>
+  /// Initializing constructor with known predicate.
+  public TypeInfoFilter(Predicate<TypeInfo> predicate)
+  {
+    Predicate = predicate;
+  }
+
+  /// <summary>
   /// Predicate to apply in filtering.
   /// </summary>
   public Predicate<TypeInfo> Predicate { get; private set; } = null!;
