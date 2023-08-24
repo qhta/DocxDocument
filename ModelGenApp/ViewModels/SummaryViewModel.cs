@@ -17,9 +17,9 @@ public class SummaryViewModel : ObservableList<SummaryValueViewModel>
       item.PropertyChanged += Item_PropertyChanged;
   }
 
-  private void Item_PropertyChanged(object? sender, System.ComponentModel.PropertyChangedEventArgs e)
+  private void Item_PropertyChanged(object? sender, System.ComponentModel.PropertyChangedEventArgs args)
   {
-    if (e.PropertyName == "IsChecked")
+    if (args.PropertyName == "IsChecked")
     {
       var current = (SummaryValueViewModel?)sender;
       if (current != null)
@@ -33,12 +33,15 @@ public class SummaryViewModel : ObservableList<SummaryValueViewModel>
               item.IsChecked = false;
           }
         }
-        Filter = current.InfoKind.ToString();
+        if (current.IsChecked)
+          Filter = current.InfoKind;
+        else
+          Filter = null;
       }
     }
   }
 
-  public string? Filter
+  public SummaryInfoKind? Filter
   {
     get { return _Filter; }
     set
@@ -50,5 +53,5 @@ public class SummaryViewModel : ObservableList<SummaryValueViewModel>
       }
     }
   }
-  private string? _Filter;
+  private SummaryInfoKind? _Filter;
 }

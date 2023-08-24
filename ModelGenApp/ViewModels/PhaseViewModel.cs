@@ -162,10 +162,10 @@ public abstract partial class PhaseViewModel : ViewModel
   }
   private TypeListViewModel _Types = null!;
 
-  public virtual void GetTypes()
-  {
-    Types = new TypeListViewModel(this, null, "", NameKindSelector, TKS.Any);
-  }
+  //public virtual void GetTypes()
+  //{
+  //  Types = new TypeListViewModel(this, null, "", NameKindSelector, TKS.Any);
+  //}
   #endregion
 
   #region SaveResultsCommand
@@ -260,7 +260,7 @@ public abstract partial class PhaseViewModel : ViewModel
 
   #region Filter namespaces
 
-  public string? Filter
+  public SummaryInfoKind? Filter
   {
     get { return _Filter; }
     set
@@ -272,9 +272,9 @@ public abstract partial class PhaseViewModel : ViewModel
       }
     }
   }
-  private string? _Filter;
+  private SummaryInfoKind? _Filter;
 
-  public void SetFilter(string? filter)
+  public void SetFilter(SummaryInfoKind? filter)
   {
     Filter = filter;
     FillNamespacesAsync();

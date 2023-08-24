@@ -1,26 +1,26 @@
 ﻿namespace ModelGenApp.ViewModels;
 public class NamespaceViewModel : ViewModel<Namespace>
 {
-  public NamespaceViewModel(PhaseViewModel phaseViewModel, Namespace ns, string? filter = null) : base(ns)
+  public NamespaceViewModel(PhaseViewModel phaseViewModel, Namespace ns, SummaryInfoKind? filter = null) : base(ns)
   {
     Phase = phaseViewModel;
     Filter = filter;
     Name = ns.OriginalName;
     if (phaseViewModel.PhaseNum == PPS.Rename)
       TargetName = ns.TargetName;
-    AllTypes = new TypeListViewModel(phaseViewModel, this, "AllTypes", phaseViewModel.NameKindSelector, TKS.Any);
-    Classes = new ClassListViewModel(phaseViewModel, this, "ClassTypes", phaseViewModel.NameKindSelector, TKS.Class, AllTypes);
-    Enums = new EnumTypeListViewModel(phaseViewModel, this, "EnumTypes", phaseViewModel.NameKindSelector, TKS.Enum, AllTypes);
-    Interfaces = new ClassListViewModel(phaseViewModel, this, "InterfaceTypes", phaseViewModel.NameKindSelector, TKS.Interface, AllTypes);
-    Structs = new ClassListViewModel(phaseViewModel, this, "StructTypes", phaseViewModel.NameKindSelector, TKS.Struct, AllTypes);
-    Others = new TypeListViewModel(phaseViewModel, this, "OtherTypes", phaseViewModel.NameKindSelector, TKS.Other, AllTypes);
+    AllTypes = new TypeListViewModel(phaseViewModel, this, "AllTypes", phaseViewModel.NameKindSelector, TKS.Any, Filter);
+    Classes = new ClassListViewModel(phaseViewModel, this, "ClassTypes", phaseViewModel.NameKindSelector, TKS.Class, Filter, AllTypes);
+    Enums = new EnumTypeListViewModel(phaseViewModel, this, "EnumTypes", phaseViewModel.NameKindSelector, TKS.Enum, Filter, AllTypes);
+    Interfaces = new ClassListViewModel(phaseViewModel, this, "InterfaceTypes", phaseViewModel.NameKindSelector, TKS.Interface, Filter, AllTypes);
+    Structs = new ClassListViewModel(phaseViewModel, this, "StructTypes", phaseViewModel.NameKindSelector, TKS.Struct, Filter, AllTypes);
+    Others = new TypeListViewModel(phaseViewModel, this, "OtherTypes", phaseViewModel.NameKindSelector, TKS.Other, Filter, AllTypes);
   }
 
   public PhaseViewModel Phase { get; private set; }
 
   public string PhaseName => Phase.PhaseName;
 
-  public string? Filter { get; private set; }
+  public SummaryInfoKind? Filter { get; private set; }
 
   //[DataGridColumn(
   //  HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Original_namespace),

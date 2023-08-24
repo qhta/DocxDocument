@@ -212,12 +212,13 @@ public abstract class BaseCreator
     {
       PreStr = "added docs to",
       Total = info.TotalTypes,
-      Done = info.CheckedTypes,
+      Checked = info.CheckedTypes,
+      Done =  info.ProcessedTypes,
       MidStr = "types",
       Summary = new Dictionary<string, object>{
         {"documented", info.ProcessedTypes ?? 0 } },
       PostStr = $"{info.Current?.OriginalNamespace}.{info.Current?.OriginalName}"
-    });
+    });;
   }
 
   private void ModelValidator_OnValidatingType(ModelValidator sender, ValidatingTypeInfo info)
@@ -260,8 +261,9 @@ public abstract class BaseCreator
   {
     ModelMonitor?.ShowPhaseProgress(PPS.Rename, new ProgressInfo
     {
-      Total = TotalTypesCount,
       PreStr = "renamed",
+      Total = TotalTypesCount,
+      Checked = info.CheckedTypes,
       Done = info.ProcessedTypes,
       MidStr = "types",
       PostStr = $"{info.Current?.OriginalNamespace}.{info.Current?.OriginalName} -> {info.Current?.GetTargetNamespace()}.{info.Current?.Name}"

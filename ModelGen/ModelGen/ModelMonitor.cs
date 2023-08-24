@@ -4,8 +4,9 @@
 public class ProgressInfo
 {
   public string? PreStr { get; set; }
-  public int? Done { get; set; }
   public int? Total { get; set; }
+  public int? Checked { get; set; }
+  public int? Done { get; set; }
   public string? MidStr { get; set; }
   public Dictionary<string, object>? Summary {get; set; }
   public string? PostStr { get; set; }

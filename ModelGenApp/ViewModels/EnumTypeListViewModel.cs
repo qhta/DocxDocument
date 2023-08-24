@@ -2,8 +2,8 @@
 public class EnumTypeListViewModel: TypeListViewModel
 {
   public EnumTypeListViewModel(PhaseViewModel phase, NamespaceViewModel nspace, string name, 
-    NKS typeNameSelector, TKS typeKindSelector, TypeListViewModel source): 
-    base(phase, nspace, name, typeNameSelector, typeKindSelector, source)
+    NKS typeNameSelector, TKS typeKindSelector, SummaryInfoKind? filter, TypeListViewModel source): 
+    base(phase, nspace, name, typeNameSelector, typeKindSelector, filter, source)
   {
   }
 
