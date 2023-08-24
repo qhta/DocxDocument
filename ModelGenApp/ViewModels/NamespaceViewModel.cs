@@ -1,7 +1,7 @@
 ﻿namespace ModelGenApp.ViewModels;
 public class NamespaceViewModel : ViewModel<Namespace>
 {
-  public NamespaceViewModel(PhaseViewModel phaseViewModel, Namespace ns, SummaryInfoKind? filter = null) : base(ns)
+  public NamespaceViewModel(PhaseViewModel phaseViewModel, Namespace ns, TypeInfoFilter? filter = null) : base(ns)
   {
     Phase = phaseViewModel;
     Filter = filter;
@@ -20,7 +20,7 @@ public class NamespaceViewModel : ViewModel<Namespace>
 
   public string PhaseName => Phase.PhaseName;
 
-  public SummaryInfoKind? Filter { get; private set; }
+  public TypeInfoFilter? Filter { get; private set; }
 
   //[DataGridColumn(
   //  HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Original_namespace),

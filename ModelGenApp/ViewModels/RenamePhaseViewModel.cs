@@ -10,11 +10,15 @@ public class RenamePhaseViewModel : PhaseViewModel
   public override void ShowErrorFor(TypeInfoViewModel typeInfoViewModel)
   {
     var nspace = TypeManager.GetNamespace(typeInfoViewModel.Model.GetTargetNamespace());
-    var list = nspace.Types
-      .Where(item => item.GetTargetName() == typeInfoViewModel.Model.GetTargetName())
-      .Select(item => TypeInfoViewModel.Create(this, item, TypeNameSelector)).ToList();
-    var viewModel = new TypeListViewModel(this, new NamespaceViewModel(this, nspace), "Types with duplicate names", this.TypeNameSelector, list);
+    //var list = nspace.Types
+    //  .Where(item => item.GetTargetName() == typeInfoViewModel.Model.GetTargetName())
+    //  .Select(item => TypeInfoViewModel.Create(this, item, TypeNameSelector)).ToList();
+    var name = typeInfoViewModel.Model.GetFullName(true, false, false);
+    var filter = new TypeInfoFilter(new Predicate<TypeInfo>(info => info.GetFullName(true, false, false) == name));
+    var viewModel = new TypeListViewModel(this, new NamespaceViewModel(this, nspace), "Types with duplicate names", this.TypeNameSelector, TKS.Any, 
+      filter);
     viewModel.IsInvalidMarkVisible = false;
+    viewModel.FillItems();
     WindowsManager.ShowWindow<TypeListWindow>(viewModel);
   }
 }

@@ -260,7 +260,7 @@ public abstract partial class PhaseViewModel : ViewModel
 
   #region Filter namespaces
 
-  public SummaryInfoKind? Filter
+  public TypeInfoFilter? Filter
   {
     get { return _Filter; }
     set
@@ -272,11 +272,14 @@ public abstract partial class PhaseViewModel : ViewModel
       }
     }
   }
-  private SummaryInfoKind? _Filter;
+  private TypeInfoFilter? _Filter;
 
   public void SetFilter(SummaryInfoKind? filter)
   {
-    Filter = filter;
+    if (filter != null)
+      Filter =  new TypeInfoFilter((SummaryInfoKind)filter, PhaseNum);
+    else
+      Filter = null;
     FillNamespacesAsync();
   }
   #endregion

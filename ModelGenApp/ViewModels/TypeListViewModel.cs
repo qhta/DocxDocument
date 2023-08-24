@@ -2,7 +2,7 @@
 public class TypeListViewModel : ViewModel
 {
   public TypeListViewModel(PhaseViewModel phase, NamespaceViewModel? nspace, string name,
-    TNS typeNameSelector, TKS typeKindSelector, SummaryInfoKind? filter, TypeListViewModel? source = null)
+    TNS typeNameSelector, TKS typeKindSelector, TypeInfoFilter? filter, TypeListViewModel? source = null)
   {
     Namespace = nspace;
     Name = name;
@@ -23,18 +23,18 @@ public class TypeListViewModel : ViewModel
     ShowDetailsCommand?.NotifyCanExecuteChanged();
   }
 
-  public TypeListViewModel(PhaseViewModel phase, NamespaceViewModel? nspace, string name, TNS typeNameSelector, IEnumerable<TypeInfoViewModel> source)
-  {
-    Namespace = nspace;
-    Name = name;
-    AddRange(source);
-    if (Items is INotifyCollectionChanged observableCollection)
-      observableCollection.CollectionChanged += Items_CollectionChanged;
-    TypeNameSelector = typeNameSelector;
-    Phase = phase;
-    ShowDetailsCommand = new RelayCommand(ShowDetailsExecute, ShowDetailsCanExecute) { Name = "ShowDetailsCommand" };
-    RefreshResultsCommand = new RelayCommand(RefreshResultsExecute, RefreshResultsCanExecute) { Name = "RefreshResultsCommand" };
-  }
+  //public TypeListViewModel(PhaseViewModel phase, NamespaceViewModel? nspace, string name, TNS typeNameSelector, IEnumerable<TypeInfoViewModel> source)
+  //{
+  //  Namespace = nspace;
+  //  Name = name;
+  //  AddRange(source);
+  //  if (Items is INotifyCollectionChanged observableCollection)
+  //    observableCollection.CollectionChanged += Items_CollectionChanged;
+  //  TypeNameSelector = typeNameSelector;
+  //  Phase = phase;
+  //  ShowDetailsCommand = new RelayCommand(ShowDetailsExecute, ShowDetailsCanExecute) { Name = "ShowDetailsCommand" };
+  //  RefreshResultsCommand = new RelayCommand(RefreshResultsExecute, RefreshResultsCanExecute) { Name = "RefreshResultsCommand" };
+  //}
 
   protected virtual void AddRange(IEnumerable<TypeInfoViewModel> list)
   {
@@ -67,7 +67,7 @@ public class TypeListViewModel : ViewModel
 
   public IEnumerable<TypeInfoViewModel> Types => Items.Cast<TypeInfoViewModel>();
 
-  public SummaryInfoKind? Filter { get; private set; }
+  public TypeInfoFilter? Filter { get; private set; }
 
   public TypeListViewModel? Source { get; private set; }
 
@@ -132,29 +132,8 @@ public class TypeListViewModel : ViewModel
   {
     var types = Namespace?.Model.Types.ToList()
       ?? ModelGen.TypeManager.AllTypes.ToList();
-    var filter = Filter;
-    if (filter != null)
-    {
-      if (filter == SummaryInfoKind.AcceptedTypes)
-        types = types.Where(item => item.IsAcceptedAfter(Phase.PhaseNum)).ToList();
-      if (filter == SummaryInfoKind.RejectedTypes)
-        types = types.Where(item => item.IsRejectedAfter(Phase.PhaseNum)).ToList();
-      if (filter == SummaryInfoKind.InvalidTypes)
-        types = types.Where(item => !item.IsValid(Phase.PhaseNum)).ToList();
-      if (filter == SummaryInfoKind.RenamedTypes)
-        types = types.Where(item => item.IsRenamed).ToList();
-      if (filter == SummaryInfoKind.ConvertedTypes)
-        types = types.Where(item => item.IsConverted).ToList();
-      if (filter == SummaryInfoKind.TypesWithDuplicateName)
-        if (filter == SummaryInfoKind.ConvertedTypes)
-          types = types.Where(item => item.IsConverted).ToList();
-      //if (filter == SummaryInfoKind.TypesWithDuplicateName)
-      //{
-      //  types = types
-      //    .Where(item => item.GetTargetName() == typeInfoViewModel.Model.GetTargetName())
-      //    .Select(item => TypeInfoViewModel.Create(this, item, tns)).ToList();
-      //}
-    }
+    if (Filter != null)
+        types = types.Where(item => Filter.Predicate(item)).ToList();
     return types;
   }
 
