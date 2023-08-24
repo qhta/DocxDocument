@@ -1,13 +1,13 @@
 ﻿namespace ModelGenApp.ViewModels;
 public class PropListViewModel : MemberListViewModel<PropInfoViewModel>
 {
-  public PropListViewModel(ClassInfoViewModel owner, string name, NKS typeNameSelector): base(owner, name)
+  public PropListViewModel(ClassInfoViewModel owner, string name, TNS typeNameSelector): base(owner, name)
   {
     ShowDisplayOptions = true;
     TypeNameSelector = typeNameSelector; 
   }
 
-  public NKS TypeNameSelector { get; private set; }
+  public TNS TypeNameSelector { get; private set; }
 
   public bool ShowFullTypeName
   {

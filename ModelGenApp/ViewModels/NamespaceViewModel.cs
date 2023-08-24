@@ -8,12 +8,12 @@ public class NamespaceViewModel : ViewModel<Namespace>
     Name = ns.OriginalName;
     if (phaseViewModel.PhaseNum == PPS.Rename)
       TargetName = ns.TargetName;
-    AllTypes = new TypeListViewModel(phaseViewModel, this, "AllTypes", phaseViewModel.NameKindSelector, TKS.Any, Filter);
-    Classes = new ClassListViewModel(phaseViewModel, this, "ClassTypes", phaseViewModel.NameKindSelector, TKS.Class, Filter, AllTypes);
-    Enums = new EnumTypeListViewModel(phaseViewModel, this, "EnumTypes", phaseViewModel.NameKindSelector, TKS.Enum, Filter, AllTypes);
-    Interfaces = new ClassListViewModel(phaseViewModel, this, "InterfaceTypes", phaseViewModel.NameKindSelector, TKS.Interface, Filter, AllTypes);
-    Structs = new ClassListViewModel(phaseViewModel, this, "StructTypes", phaseViewModel.NameKindSelector, TKS.Struct, Filter, AllTypes);
-    Others = new TypeListViewModel(phaseViewModel, this, "OtherTypes", phaseViewModel.NameKindSelector, TKS.Other, Filter, AllTypes);
+    AllTypes = new TypeListViewModel(phaseViewModel, this, "AllTypes", phaseViewModel.TypeNameSelector, TKS.Any, Filter);
+    Classes = new ClassListViewModel(phaseViewModel, this, "ClassTypes", phaseViewModel.TypeNameSelector, TKS.Class, Filter, AllTypes);
+    Enums = new EnumTypeListViewModel(phaseViewModel, this, "EnumTypes", phaseViewModel.TypeNameSelector, TKS.Enum, Filter, AllTypes);
+    Interfaces = new ClassListViewModel(phaseViewModel, this, "InterfaceTypes", phaseViewModel.TypeNameSelector, TKS.Interface, Filter, AllTypes);
+    Structs = new ClassListViewModel(phaseViewModel, this, "StructTypes", phaseViewModel.TypeNameSelector, TKS.Struct, Filter, AllTypes);
+    Others = new TypeListViewModel(phaseViewModel, this, "OtherTypes", phaseViewModel.TypeNameSelector, TKS.Other, Filter, AllTypes);
   }
 
   public PhaseViewModel Phase { get; private set; }

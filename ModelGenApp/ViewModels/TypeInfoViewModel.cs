@@ -10,8 +10,8 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
   /// </summary>
   /// <param name="phase"><see cref="PhaseViewModel"/> that represents processing phase needed to evaluate <see cref="Acceptance"/> property.</param>
   /// <param name="typeInfo"><see cref="ModelGen.TypeInfo"/> that holds type data.</param>
-  /// <param name="typeNameSelector"><see cref="ModelGen.NKS"/> object data to select, which name (original/target) to get from <paramref name="typeInfo"></param>
-  protected TypeInfoViewModel(PhaseViewModel phase, TypeInfo typeInfo, NKS typeNameSelector) : base(typeInfo)
+  /// <param name="typeNameSelector"><see cref="ModelGen.TNS"/> object data to select, which name (original/target) to get from <paramref name="typeInfo"></param>
+  protected TypeInfoViewModel(PhaseViewModel phase, TypeInfo typeInfo, TNS typeNameSelector) : base(typeInfo)
   {
     TypeNameSelector = typeNameSelector;
     Phase = phase;
@@ -25,9 +25,9 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
   /// </summary>
   /// <param name="phase"><see cref="PhaseViewModel"/> that represents processing phase needed to evaluate <see cref="Acceptance"/> property.</param>
   /// <param name="typeInfo"><see cref="ModelGen.TypeInfo"/> that holds type data.</param>
-  /// <param name="typeNameSelector"><see cref="ModelGen.NKS"/> object data to select, which name (original/target) to get from <paramref name="typeInfo"></param>
+  /// <param name="typeNameSelector"><see cref="ModelGen.TNS"/> object data to select, which name (original/target) to get from <paramref name="typeInfo"></param>
   /// <returns></returns>
-  public static TypeInfoViewModel Create(PhaseViewModel phase, TypeInfo typeInfo, NKS typeNameSelector)
+  public static TypeInfoViewModel Create(PhaseViewModel phase, TypeInfo typeInfo, TNS typeNameSelector)
   {
     if (typeInfo.TypeKind == TypeKind.@enum)
       return new EnumTypeInfoViewModel(phase, typeInfo, typeNameSelector);
@@ -41,7 +41,7 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
     )]
   public TypeKind TypeKind => Model.TypeKind;
 
-  public NKS TypeNameSelector { get; private set; }
+  public TNS TypeNameSelector { get; private set; }
 
   public PhaseViewModel Phase { get; private set; }
 

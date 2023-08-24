@@ -2,7 +2,7 @@
 public class TypeListViewModel : ViewModel
 {
   public TypeListViewModel(PhaseViewModel phase, NamespaceViewModel? nspace, string name,
-    NKS typeNameSelector, TKS typeKindSelector, SummaryInfoKind? filter, TypeListViewModel? source = null)
+    TNS typeNameSelector, TKS typeKindSelector, SummaryInfoKind? filter, TypeListViewModel? source = null)
   {
     Namespace = nspace;
     Name = name;
@@ -23,19 +23,18 @@ public class TypeListViewModel : ViewModel
     ShowDetailsCommand?.NotifyCanExecuteChanged();
   }
 
-  //public TypeListViewModel(PhaseViewModel phase, NamespaceViewModel? nspace, string name, NKS typeNameSelector, TypeListViewModel source)
-  //{
-  //  Namespace = nspace;
-  //  Name = name;
-  //  TypeNameSelector = typeNameSelector;
-  //  AddRange(source.Types);
-  //  if (Items is INotifyCollectionChanged observableCollection)
-  //    observableCollection.CollectionChanged += Items_CollectionChanged;
-  //  Source = source;
-  //  Phase = phase;
-  //  ShowDetailsCommand = new RelayCommand(ShowDetailsExecute, ShowDetailsCanExecute) { Name = "ShowDetailsCommand" };
-  //  RefreshResultsCommand = new RelayCommand(RefreshResultsExecute, RefreshResultsCanExecute) { Name = "RefreshResultsCommand" };
-  //}
+  public TypeListViewModel(PhaseViewModel phase, NamespaceViewModel? nspace, string name, TNS typeNameSelector, IEnumerable<TypeInfoViewModel> source)
+  {
+    Namespace = nspace;
+    Name = name;
+    AddRange(source);
+    if (Items is INotifyCollectionChanged observableCollection)
+      observableCollection.CollectionChanged += Items_CollectionChanged;
+    TypeNameSelector = typeNameSelector;
+    Phase = phase;
+    ShowDetailsCommand = new RelayCommand(ShowDetailsExecute, ShowDetailsCanExecute) { Name = "ShowDetailsCommand" };
+    RefreshResultsCommand = new RelayCommand(RefreshResultsExecute, RefreshResultsCanExecute) { Name = "RefreshResultsCommand" };
+  }
 
   protected virtual void AddRange(IEnumerable<TypeInfoViewModel> list)
   {
@@ -56,7 +55,7 @@ public class TypeListViewModel : ViewModel
       return result;
     }
   }
-  public NKS TypeNameSelector { get; private set; }
+  public TNS TypeNameSelector { get; private set; }
 
   public TKS TypeKindSelector { get; private set; }
 
@@ -81,7 +80,7 @@ public class TypeListViewModel : ViewModel
       if (TypeNameSelector.Namespace != value)
       {
         TypeNameSelector.Namespace = value;
-        foreach(var typeInfo in Types)
+        foreach (var typeInfo in Types)
           typeInfo.ShowFullTypeName = value;
         NotifyPropertyChanged(nameof(ShowFullTypeName));
         RefreshItemsAsync();
@@ -116,7 +115,7 @@ public class TypeListViewModel : ViewModel
 
   public async void FillItemsAsync()
   {
-    await Task.Run(()=> FillItems());
+    await Task.Run(() => FillItems());
   }
 
   public void FillItems()
@@ -146,6 +145,15 @@ public class TypeListViewModel : ViewModel
         types = types.Where(item => item.IsRenamed).ToList();
       if (filter == SummaryInfoKind.ConvertedTypes)
         types = types.Where(item => item.IsConverted).ToList();
+      if (filter == SummaryInfoKind.TypesWithDuplicateName)
+        if (filter == SummaryInfoKind.ConvertedTypes)
+          types = types.Where(item => item.IsConverted).ToList();
+      //if (filter == SummaryInfoKind.TypesWithDuplicateName)
+      //{
+      //  types = types
+      //    .Where(item => item.GetTargetName() == typeInfoViewModel.Model.GetTargetName())
+      //    .Select(item => TypeInfoViewModel.Create(this, item, tns)).ToList();
+      //}
     }
     return types;
   }

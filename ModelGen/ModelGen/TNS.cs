@@ -3,7 +3,7 @@
 /// <summary>
 /// Name Kind Selector. Used to get <see cref="TypeInfo"/> full name.
 /// </summary>
-public record NKS
+public record TNS
 {
   /// <summary>
   /// Specifies whether to get Target or Origin name.
@@ -20,7 +20,7 @@ public record NKS
   /// </summary>
   public bool NsShortcut { get; set; }
 
-  public NKS (bool target, bool withNamespace, bool nsShortcut)
+  public TNS (bool target, bool withNamespace, bool nsShortcut)
   {
     Target = target;
     Namespace = withNamespace;

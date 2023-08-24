@@ -1,7 +1,7 @@
 ﻿namespace ModelGenApp.ViewModels;
 public class EnumInfoViewModel : ViewModel<EnumInfo>, IAcceptable
 {
-  public EnumInfoViewModel(PhaseViewModel phase, EnumInfo enumInfo, NKS typeNameSelector) : base(enumInfo)
+  public EnumInfoViewModel(PhaseViewModel phase, EnumInfo enumInfo, TNS typeNameSelector) : base(enumInfo)
   {
     Phase = phase;
     NameTypeSelector = typeNameSelector;
@@ -9,7 +9,7 @@ public class EnumInfoViewModel : ViewModel<EnumInfo>, IAcceptable
 
   public PhaseViewModel Phase {get; private set; }
 
-  public NKS NameTypeSelector {get; private set; }
+  public TNS NameTypeSelector {get; private set; }
 
   public bool IsAccepted => Model.IsAcceptedAfter(Phase.PhaseNum);
 
