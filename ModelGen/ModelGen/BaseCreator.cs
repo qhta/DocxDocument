@@ -208,9 +208,10 @@ public abstract class BaseCreator
 
   private void ModelDocumenter_OnDocumentingType(ProgressTypeInfo info)
   {
-    ModelMonitor?.ShowPhaseProgress(PPS.ScanSource, new ProgressInfo
+    ModelMonitor?.ShowPhaseProgress(PPS.AddDocs, new ProgressInfo
     {
       PreStr = "added docs to",
+      Total = info.TotalTypes,
       Done = info.CheckedTypes,
       MidStr = "types",
       Summary = new Dictionary<string, object>{
@@ -221,16 +222,16 @@ public abstract class BaseCreator
 
   private void ModelValidator_OnValidatingType(ModelValidator sender, ValidatingTypeInfo info)
   {
-    ModelMonitor?.ShowPhaseProgress(PPS.ScanSource, new ProgressInfo
-    {
-      PreStr = "validated",
-      Done = info.CheckedTypes,
-      Total = info.TotalTypes,
-      MidStr = "types",
-      Summary = new Dictionary<string, object>{
-        {"invalid", info.InvalidTypes ?? 0 } },
-      PostStr = $"{info.Current?.OriginalNamespace}.{info.Current?.OriginalName}"
-    });
+    //ModelMonitor?.ShowPhaseProgress(PPS.ScanSource, new ProgressInfo
+    //{
+    //  PreStr = "validated",
+    //  Done = info.CheckedTypes,
+    //  Total = info.TotalTypes,
+    //  MidStr = "types",
+    //  Summary = new Dictionary<string, object>{
+    //    {"invalid", info.InvalidTypes ?? 0 } },
+    //  PostStr = $"{info.Current?.OriginalNamespace}.{info.Current?.OriginalName}"
+    //});
   }
 
   protected TimeSpan RenameTypes()
