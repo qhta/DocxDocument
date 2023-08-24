@@ -2,7 +2,7 @@
 
 public class NamespacesViewModel : ObservableList<NamespaceViewModel>
 {
-  public NamespacesViewModel(PhaseViewModel phase, NTS namespacesTypeSelector, string? filter)
+  public NamespacesViewModel(PhaseViewModel phase, NTS namespacesTypeSelector, SummaryInfoKind? filter)
   {
     Phase = phase;
     NamespacesTypeSelector = namespacesTypeSelector;
@@ -14,7 +14,7 @@ public class NamespacesViewModel : ObservableList<NamespaceViewModel>
 
   public NTS NamespacesTypeSelector { get; private set; }
 
-  public string? Filter { get; private set; }
+  public SummaryInfoKind? Filter { get; private set; }
 
   public void FillItems() // We can't populate it asynchronously
   {

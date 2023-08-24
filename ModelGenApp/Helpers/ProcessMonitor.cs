@@ -50,10 +50,10 @@ public partial class ProcessMonitor : ModelMonitor
 
   public override void ShowPhaseProgress(PPS phase, ProgressInfo info)
   {
-    if (info.Total==null)
-      Debug.WriteLine($"ShowPhaseProgress ({phase}, {info.Done}/{info.Total})");
     base.ShowPhaseProgress(phase, info);
-    var percentage = (info.Done ?? 0) * 100 / (info.Total ?? 100);
+    var done = info.Checked ?? info.Done ?? 0;
+    var total = info.Total ?? 100;
+    var percentage = done * 100 / total;
     if (VM.PhaseMonitors[(int)phase - 1] != null)
       VM.PhaseMonitors[(int)phase - 1].Percentage = percentage;
   }

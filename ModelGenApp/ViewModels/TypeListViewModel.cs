@@ -2,10 +2,11 @@
 public class TypeListViewModel : ViewModel
 {
   public TypeListViewModel(PhaseViewModel phase, NamespaceViewModel? nspace, string name,
-    NKS typeNameSelector, TKS typeKindSelector, TypeListViewModel? source = null)
+    NKS typeNameSelector, TKS typeKindSelector, SummaryInfoKind? filter, TypeListViewModel? source = null)
   {
     Namespace = nspace;
     Name = name;
+    Filter = filter;
     if (Items is INotifyCollectionChanged observableCollection)
       observableCollection.CollectionChanged += Items_CollectionChanged;
     TypeNameSelector = typeNameSelector;
@@ -67,7 +68,7 @@ public class TypeListViewModel : ViewModel
 
   public IEnumerable<TypeInfoViewModel> Types => Items.Cast<TypeInfoViewModel>();
 
-  public string? Filter { get; set; }
+  public SummaryInfoKind? Filter { get; private set; }
 
   public TypeListViewModel? Source { get; private set; }
 
@@ -135,15 +136,15 @@ public class TypeListViewModel : ViewModel
     var filter = Filter;
     if (filter != null)
     {
-      if (filter == SummaryInfoKind.AcceptedTypes.ToString())
+      if (filter == SummaryInfoKind.AcceptedTypes)
         types = types.Where(item => item.IsAcceptedAfter(Phase.PhaseNum)).ToList();
-      if (filter == SummaryInfoKind.RejectedTypes.ToString())
+      if (filter == SummaryInfoKind.RejectedTypes)
         types = types.Where(item => item.IsRejectedAfter(Phase.PhaseNum)).ToList();
-      if (filter == SummaryInfoKind.InvalidTypes.ToString())
+      if (filter == SummaryInfoKind.InvalidTypes)
         types = types.Where(item => !item.IsValid(Phase.PhaseNum)).ToList();
-      if (filter == SummaryInfoKind.RenamedTypes.ToString())
+      if (filter == SummaryInfoKind.RenamedTypes)
         types = types.Where(item => item.IsRenamed).ToList();
-      if (filter == SummaryInfoKind.ConvertedTypes.ToString())
+      if (filter == SummaryInfoKind.ConvertedTypes)
         types = types.Where(item => item.IsConverted).ToList();
     }
     return types;
