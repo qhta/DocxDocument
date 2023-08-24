@@ -151,14 +151,22 @@
 
       <DataTemplate x:Key="ErrorMsgMarkTemplate">
         <Grid Width="20">
-          <Image Source="Images\ErrorMark.png"
-                 Width="16"
-                 Height="16"
-                 HorizontalAlignment="Center"
-                 VerticalAlignment="Center"
-                 Visibility="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=DataContext, 
-               Converter={StaticResource NotNullToVisibilityConverter}}"
-                 ToolTip="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=DataContext}" />
+          <Button Background="Transparent"
+                  BorderBrush="Transparent"
+                  Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type DataGridRow}}, Path=DataContext.ShowErrorCommand}"
+                  CommandParameter="{Binding}"
+                  Visibility="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=DataContext, 
+                                 Converter={StaticResource NotNullToVisibilityConverter}}"
+                  >
+            <Image Source="Images\ErrorMark.png"
+                   Width="16"
+                   Height="16"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Visibility="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=DataContext, 
+                                  Converter={StaticResource NotNullToVisibilityConverter}}"
+                   ToolTip="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=DataContext}" />
+          </Button>
         </Grid>
       </DataTemplate>
 
