@@ -86,12 +86,10 @@ public class ModelElement : IOwnedElement
   [XmlIgnore]
   public bool IsUnused { get => Used == false; set { if (value) Used = false; else Used = true; } }
 
-  public bool IsValid(PPS pps)
+  public bool HasProblems(PPS pps)
   {
-    var result = Errors?.Where(item => item.Phase == pps).Any() != true;
-    if (!result)
-      return false;
-    return true;
+    var result = Errors?.Where(item => item.Phase == pps).Any() == true;
+    return result;
   }
   public Errors? Errors { get; private set; }
 

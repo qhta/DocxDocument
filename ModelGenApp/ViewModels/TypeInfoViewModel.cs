@@ -64,19 +64,6 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
     }
   }
 
-  public new bool IsValid => Model.IsValid(Phase.PhaseNum);
-
-  public string? Validity
-  {
-    get
-    {
-      if (Model.IsValid(Phase.PhaseNum))
-        return "valid";
-      else
-        return "invalid";
-    }
-  }
-
   public string? Name
   {
     get
@@ -117,10 +104,10 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
 
   [DataGridColumn(
     Header = "",
-    HiddenHeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.ValidationError),
-    DataTemplateResourceKey ="ErrorMsgMarkTemplate"
+    HiddenHeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Problem),
+    DataTemplateResourceKey ="ProblemMarkTemplate"
     )]
-  public string? ValidationError
+  public string? ValidationProblem
   {
     get
     {
@@ -170,12 +157,10 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
     if (Model.IsAcceptedAfter(Phase.PhaseNum))
       TypeSummary.Add(new TypePropViewModel("Acceptance", Acceptance));
     else
-      TypeSummary.Add(new TypePropViewModel("Acceptance", new ErrString(Acceptance.ToString()?.ToLower())));
+      TypeSummary.Add(new TypePropViewModel("Acceptance", new RedString(Acceptance.ToString()?.ToLower())));
 
-    if (Model.IsValid(Phase.PhaseNum))
-      TypeSummary.Add(new TypePropViewModel("Validation", "valid"));
-    else
-      TypeSummary.Add(new TypePropViewModel("Validation", new ErrString(this.ValidationError ?? "invalid")));
+    if (Model.HasProblems(Phase.PhaseNum))
+      TypeSummary.Add(new TypePropViewModel("Validation", new RedString(this.ValidationProblem ?? "invalid")));
 
     TypeSummary.Add(new TypePropViewModel("Kind", TypeKind.ToString().ToLower()));
     TypeSummary.Add(new TypePropViewModel("Namespace", Model.OriginalNamespace));
@@ -214,7 +199,7 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
   /// <summary>
   /// Shown as Window.Title.
   /// </summary>
-  public string Caption => TypeKind + " " + Model.GetFullName(TypeNameSelector.Target, true, false);
+  public string Caption => TypeKind + " | " + Model.GetFullName(TypeNameSelector.Target, true, false);
 
   public virtual object? Members => null;
 
@@ -240,7 +225,7 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
 
   protected virtual bool ShowErrorCanExecute()
   {
-    return ValidationError != null;
+    return ValidationProblem != null;
   }
 
   protected virtual void ShowErrorExecute()

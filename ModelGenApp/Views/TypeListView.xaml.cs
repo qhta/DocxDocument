@@ -27,14 +27,14 @@ public partial class TypeListView : UserControl
           typeof(TypeListViewModel), typeof(TypeInfoViewModel));
     }
     dataGridColumnCreator.GenerateColumn(sender, e);
-    if (e.PropertyName==nameof(TypeInfoViewModel.ValidationError))
+    if (e.PropertyName==nameof(TypeInfoViewModel.ValidationProblem))
     {
       BindingOperations.SetBinding(e.Column, DataGridColumn.VisibilityProperty, 
-        new Binding("DataContext."+nameof(TypeListViewModel.AreAllTypesValid)) 
+        new Binding("DataContext."+nameof(TypeListViewModel.HasAnyProblematicTypes)) 
         { 
           Source = dummyElement,
           Converter=new BoolToVisibilityConverter(), 
-          ConverterParameter="Visible,Collapsed" 
+          ConverterParameter="Collapsed,Visible" 
           });;
     }
   }

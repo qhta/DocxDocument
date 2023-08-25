@@ -4,11 +4,10 @@
 public class ProgressInfo
 {
   public string? PreStr { get; set; }
-  public int? Total { get; set; }
-  public int? Checked { get; set; }
-  public int? Done { get; set; }
-  public string? MidStr { get; set; }
-  public Dictionary<string, object>? Summary {get; set; }
+  public int? TotalTypes { get; set; }
+  public int? CheckedTypes { get; set; }
+  public int? ProcessedTypes { get; set; }
+  public int? Namespaces { get; set; }
   public string? PostStr { get; set; }
 }
 
@@ -51,22 +50,18 @@ public abstract class ModelMonitor
     var sl = new List<string>();
     if (info.PreStr != null)
       sl.Add(info.PreStr);
-    if (info.Done != null && info.Total != null)
-      sl.Add($"{info.Done}/{info.Total}");
-    else if (info.Done != null)
-      sl.Add($"{info.Done}");
-    if (info.MidStr != null)
-      sl.Add(info.MidStr);
-    if (info.Summary != null)
-      foreach (var item in info.Summary)
-      {
-        if (item.Key.Contains('{'))
-          sl.Add(String.Format(item.Key, item.Value));
-        else
-          sl.Add($"{item.Key} = {item.Value}");
-      }
+    if (info.ProcessedTypes != null && info.TotalTypes != null)
+      sl.Add($"{info.ProcessedTypes}/{info.TotalTypes}");
+    else if (info.ProcessedTypes != null)
+      sl.Add($"{info.ProcessedTypes}");
+    sl.Add("types");
+    if (info.Namespaces != null)
+      sl.Add($"in {info.Namespaces} namespaces");
     if (info.PostStr != null)
+    {
+      sl.Add("|");
       sl.Add(info.PostStr);
+    }
     var str = String.Join(" ", sl);
     if (str != "")
       WriteSameLine(str);
@@ -160,8 +155,8 @@ public abstract class ModelMonitor
           || options.TypeStatusSelector.HasFlag(MSS.Rejected) && item.IsRejectedAfter(phase)).ToList();
       if (options.TypeStatusSelector.HasFlag(MSS.Valid) || options.TypeStatusSelector.HasFlag(MSS.Invalid))
         nSpaceTypes = nSpaceTypes.Where(item =>
-          options.TypeStatusSelector.HasFlag(MSS.Valid) && item.IsValid(PhaseNum)
-          || options.TypeStatusSelector.HasFlag(MSS.Invalid) && !item.IsValid(PhaseNum)).ToList();
+          options.TypeStatusSelector.HasFlag(MSS.Valid) && !item.HasProblems(PhaseNum)
+          || options.TypeStatusSelector.HasFlag(MSS.Invalid) && item.HasProblems(PhaseNum)).ToList();
     }
     var originNames = options.NamespaceTypeSelector == NTS.Origin || options.TypeDataSelector.HasFlag(TDS.OriginalNames);
     if (nSpaceTypes.Count() > 0)
@@ -199,7 +194,7 @@ public abstract class ModelMonitor
     var originNames = options.NamespaceTypeSelector == NTS.Origin || options.TypeDataSelector.HasFlag(TDS.OriginalNames);
     str += $"{typeInfo.TypeKind.ToString().ToLower()} {typeInfo.GetFullName(!originNames, true, true)}";
     List<string> status = new List<string>();
-    if (!typeInfo.IsValid(PhaseNum))
+    if (typeInfo.HasProblems(PhaseNum))
       status.Add(ValidStr(false));
     if (status.Count > 0)
       str += " { " + string.Join(", ", status) + " }";
@@ -419,8 +414,8 @@ public abstract class ModelMonitor
           options.MemberStatusSelector.HasFlag(MSS.Rejected) && item.IsRejectedAfter(phase) ||
           options.MemberStatusSelector.HasFlag(MSS.Used) && item.IsUsed ||
           options.MemberStatusSelector.HasFlag(MSS.Unused) && !item.IsUsed ||
-          options.MemberStatusSelector.HasFlag(MSS.Valid) && item.IsValid(PhaseNum) ||
-          options.MemberStatusSelector.HasFlag(MSS.Invalid) && !item.IsValid(PhaseNum) ||
+          options.MemberStatusSelector.HasFlag(MSS.Valid) && !item.HasProblems(PhaseNum) ||
+          options.MemberStatusSelector.HasFlag(MSS.Invalid) && !item.HasProblems(PhaseNum) ||
           options.MemberStatusSelector.HasFlag(MSS.Converted) && item.IsConverted ||
           options.MemberStatusSelector.HasFlag(MSS.ConvertedTo) && item.IsConvertedTo
         ).ToList();
