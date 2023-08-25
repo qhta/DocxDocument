@@ -23,19 +23,6 @@ public class TypeListViewModel : ViewModel
     ShowDetailsCommand?.NotifyCanExecuteChanged();
   }
 
-  //public TypeListViewModel(PhaseViewModel phase, NamespaceViewModel? nspace, string name, TNS typeNameSelector, IEnumerable<TypeInfoViewModel> source)
-  //{
-  //  Namespace = nspace;
-  //  Name = name;
-  //  AddRange(source);
-  //  if (Items is INotifyCollectionChanged observableCollection)
-  //    observableCollection.CollectionChanged += Items_CollectionChanged;
-  //  TypeNameSelector = typeNameSelector;
-  //  Phase = phase;
-  //  ShowDetailsCommand = new RelayCommand(ShowDetailsExecute, ShowDetailsCanExecute) { Name = "ShowDetailsCommand" };
-  //  RefreshResultsCommand = new RelayCommand(RefreshResultsExecute, RefreshResultsCanExecute) { Name = "RefreshResultsCommand" };
-  //}
-
   protected virtual void AddRange(IEnumerable<TypeInfoViewModel> list)
   {
     (Items as ObservableList<TypeInfoViewModel>)?.AddRange(list);
@@ -50,8 +37,8 @@ public class TypeListViewModel : ViewModel
     {
       string? result = null;
       if (Namespace != null)
-        result = Namespace.Caption + ": ";
-      result += (CommonStrings.ResourceManager.GetString(Name, CultureInfo.CurrentUICulture) ?? Name)?.ToLower();
+        result = Namespace.Caption;
+      result += " | " +(CommonStrings.ResourceManager.GetString(Name, CultureInfo.CurrentUICulture) ?? Name);
       return result;
     }
   }
@@ -244,7 +231,7 @@ public class TypeListViewModel : ViewModel
   }
   #endregion
 
-  public bool AreAllTypesValid => Types.Any(item => !item.IsValid);
+  public bool HasAnyProblematicTypes => Types.Any(item => item.Model.HasProblems(this.Phase.PhaseNum));
 
 
 }

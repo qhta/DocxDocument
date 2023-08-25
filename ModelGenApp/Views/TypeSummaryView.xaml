@@ -36,7 +36,7 @@
                       </Hyperlink>
                     </TextBlock>
                   </DataTemplate>
-                  <DataTemplate DataType="{x:Type hlp:ErrString}">
+                  <DataTemplate DataType="{x:Type hlp:RedString}">
                     <TextBlock Margin="2,0,2,0" 
                                Foreground="Red"
                                Text="{Binding}">

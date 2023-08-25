@@ -133,6 +133,15 @@ namespace ModelGenApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Checked types.
+        /// </summary>
+        public static string CheckedTypes {
+            get {
+                return ResourceManager.GetString("CheckedTypes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Classes.
         /// </summary>
         public static string Classes {
@@ -175,6 +184,15 @@ namespace ModelGenApp {
         public static string ConfigPropertyNameTooltip {
             get {
                 return ResourceManager.GetString("ConfigPropertyNameTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Converted types.
+        /// </summary>
+        public static string ConverterTypes {
+            get {
+                return ResourceManager.GetString("ConverterTypes", resourceCulture);
             }
         }
         
@@ -444,6 +462,15 @@ namespace ModelGenApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Invalid types.
+        /// </summary>
+        public static string InvalidTypes {
+            get {
+                return ResourceManager.GetString("InvalidTypes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Kind.
         /// </summary>
         public static string Kind {
@@ -625,6 +652,24 @@ namespace ModelGenApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Problem.
+        /// </summary>
+        public static string Problem {
+            get {
+                return ResourceManager.GetString("Problem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Problematic types.
+        /// </summary>
+        public static string ProblematicTypes {
+            get {
+                return ResourceManager.GetString("ProblematicTypes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Process phases:.
         /// </summary>
         public static string Process_phases_ {
@@ -689,6 +734,15 @@ namespace ModelGenApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Registered namespaces.
+        /// </summary>
+        public static string RegisteredNamespaces {
+            get {
+                return ResourceManager.GetString("RegisteredNamespaces", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Registered types.
         /// </summary>
         public static string RegisteredTypes {
@@ -712,6 +766,15 @@ namespace ModelGenApp {
         public static string Rename {
             get {
                 return ResourceManager.GetString("Rename", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Renamed types.
+        /// </summary>
+        public static string RenamedTypes {
+            get {
+                return ResourceManager.GetString("RenamedTypes", resourceCulture);
             }
         }
         
@@ -969,6 +1032,51 @@ namespace ModelGenApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Types with added description.
+        /// </summary>
+        public static string TypesWithAddedDescription {
+            get {
+                return ResourceManager.GetString("TypesWithAddedDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Types with description.
+        /// </summary>
+        public static string TypesWithDescription {
+            get {
+                return ResourceManager.GetString("TypesWithDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Types with duplicate name.
+        /// </summary>
+        public static string TypesWithDuplicateName {
+            get {
+                return ResourceManager.GetString("TypesWithDuplicateName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Types with meaningless description.
+        /// </summary>
+        public static string TypesWithMeaninglessDescription {
+            get {
+                return ResourceManager.GetString("TypesWithMeaninglessDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Types without description.
+        /// </summary>
+        public static string TypesWithoutDescription {
+            get {
+                return ResourceManager.GetString("TypesWithoutDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Type to scan.
         /// </summary>
         public static string TypeToScan {
@@ -987,11 +1095,29 @@ namespace ModelGenApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Validated types.
+        /// </summary>
+        public static string ValidatedTypes {
+            get {
+                return ResourceManager.GetString("ValidatedTypes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Validation error.
         /// </summary>
         public static string ValidationError {
             get {
                 return ResourceManager.GetString("ValidationError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Valid types.
+        /// </summary>
+        public static string ValidTypes {
+            get {
+                return ResourceManager.GetString("ValidTypes", resourceCulture);
             }
         }
         

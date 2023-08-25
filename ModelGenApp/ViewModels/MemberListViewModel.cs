@@ -18,7 +18,7 @@ public class MemberListViewModel<T> : ObservableList<T> where T : ViewModel, IAc
 
   public string Name { get; private set; }
 
-  public string Caption => Owner.Caption + "." + this.Name?.ToLower();
+  public string Caption => Owner.Caption + " | " + this.Name;
 
   public string Label => this.Name + ":";
 
