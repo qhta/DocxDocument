@@ -34,8 +34,18 @@ public class NamespaceViewModel : ViewModel<Namespace>
   //  )]
   public string? TargetName { get; set; }
 
-  public string Caption => CommonStrings.ResourceManager.GetString(PhaseName, CultureInfo.CurrentUICulture) ?? PhaseName
-                           + " " + CommonStrings.ResourceManager.GetString(Name, CultureInfo.CurrentUICulture) ?? Name;
+  public string Caption
+  {
+    get
+    {
+      var result = CommonStrings.ResourceManager.GetString(PhaseName, CultureInfo.CurrentUICulture) ?? PhaseName
+                             + " " + CommonStrings.ResourceManager.GetString(Name, CultureInfo.CurrentUICulture) ?? Name;
+      if (Filter != null)
+        result += " | " + Filter.Caption;
+      return result;
+    }
+  }
+
 
   const int minColWith = 80;
 

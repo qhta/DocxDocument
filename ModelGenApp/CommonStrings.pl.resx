@@ -440,4 +440,46 @@ zdefiniowanej w typie wyliczeniowym.</value>
   <data name="ShowFullTypeName" xml:space="preserve">
     <value>Pokaż pełną nazwę typu</value>
   </data>
+  <data name="ValidatedTypes" xml:space="preserve">
+    <value>Walidowane typy</value>
+  </data>
+  <data name="ValidTypes" xml:space="preserve">
+    <value>Typy poprawne</value>
+  </data>
+  <data name="InvalidTypes" xml:space="preserve">
+    <value>Typy niepoprawne</value>
+  </data>
+  <data name="TypesWithDescription" xml:space="preserve">
+    <value>Typy z opisem</value>
+  </data>
+  <data name="TypesWithAddedDescription" xml:space="preserve">
+    <value>Typy z dodanym opisem</value>
+  </data>
+  <data name="TypesWithoutDescription" xml:space="preserve">
+    <value>Typy bez opisu</value>
+  </data>
+  <data name="TypesWithDuplicateName" xml:space="preserve">
+    <value>Typy z powtarzającymi się nazwami</value>
+  </data>
+  <data name="RenamedTypes" xml:space="preserve">
+    <value>Typy ze zmienioną nazwą</value>
+  </data>
+  <data name="ConverterTypes" xml:space="preserve">
+    <value>Typy przekonwertowane</value>
+  </data>
+  <data name="ProblematicTypes" xml:space="preserve">
+    <value>Typy problematyczne</value>
+  </data>
+  <data name="Problem" xml:space="preserve">
+    <value>Problem</value>
+  </data>
+  <data name="RegisteredNamespaces" xml:space="preserve">
+    <value>Zarejestrowane przestrzenie nazw</value>
+  </data>
+  <data name="CheckedTypes" xml:space="preserve">
+    <value>Sprawdzone typy</value>
+  </data>
+  <data name="TypesWithMeaninglessDescription" xml:space="preserve">
+    <value>Typy z nic nieznaczącym opisem</value>
+  </data>
 </root>

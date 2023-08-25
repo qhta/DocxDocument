@@ -153,14 +153,12 @@ public abstract class BaseCreator
   {
     ModelMonitor?.ShowPhaseProgress(PPS.ScanSource, new ProgressInfo
     {
-      Total = TotalTypesCount,
       PreStr = "registered",
-      Done = info.RegisteredTypes,
-      MidStr = "types",
-      Summary = new Dictionary<string, object>{
-        {"in {0} namespaces", info.RegisteredNamespaces ?? 0 } },
+      TotalTypes = TotalTypesCount,
+      ProcessedTypes = info.RegisteredTypes,
+      Namespaces = info.RegisteredNamespaces,
       PostStr = $"{info.Current?.OriginalNamespace}.{info.Current?.OriginalName}"
-    });
+    });;
   }
 
   protected TimeSpan AddDocs()
@@ -211,12 +209,9 @@ public abstract class BaseCreator
     ModelMonitor?.ShowPhaseProgress(PPS.AddDocs, new ProgressInfo
     {
       PreStr = "added docs to",
-      Total = info.TotalTypes,
-      Checked = info.CheckedTypes,
-      Done =  info.ProcessedTypes,
-      MidStr = "types",
-      Summary = new Dictionary<string, object>{
-        {"documented", info.ProcessedTypes ?? 0 } },
+      TotalTypes = info.TotalTypes,
+      CheckedTypes = info.CheckedTypes,
+      ProcessedTypes =  info.ProcessedTypes,
       PostStr = $"{info.Current?.OriginalNamespace}.{info.Current?.OriginalName}"
     });;
   }
@@ -251,7 +246,7 @@ public abstract class BaseCreator
       Summary = new Dictionary<SummaryInfoKind, object>{
         {SummaryInfoKind.AllTypes, TypeManager.AllTypes.Count() },
         {SummaryInfoKind.RenamedTypes, renamedTypesCount },
-        {SummaryInfoKind.InvalidTypes, ModelManager.DuplicateTypeNamesCount},
+        {SummaryInfoKind.ProblematicTypes, ModelManager.DuplicateTypeNamesCount},
         }
     });
     return ts;
@@ -262,10 +257,9 @@ public abstract class BaseCreator
     ModelMonitor?.ShowPhaseProgress(PPS.Rename, new ProgressInfo
     {
       PreStr = "renamed",
-      Total = TotalTypesCount,
-      Checked = info.CheckedTypes,
-      Done = info.ProcessedTypes,
-      MidStr = "types",
+      TotalTypes = TotalTypesCount,
+      CheckedTypes = info.CheckedTypes,
+      ProcessedTypes = info.ProcessedTypes,
       PostStr = $"{info.Current?.OriginalNamespace}.{info.Current?.OriginalName} -> {info.Current?.GetTargetNamespace()}.{info.Current?.Name}"
     });
   }
@@ -286,7 +280,7 @@ public abstract class BaseCreator
       Summary = new Dictionary<SummaryInfoKind, object>{
         {SummaryInfoKind.AllTypes, TypeManager.AllTypes.Count() },
         {SummaryInfoKind.ConvertedTypes, renamedTypesCount },
-        {SummaryInfoKind.InvalidTypes, TypeManager.AllTypes.Count(item=>!item.IsValid(PhaseDone))},
+        {SummaryInfoKind.ProblematicTypes, TypeManager.AllTypes.Count(item=>item.HasProblems(PhaseDone))},
         }
     });
     return ts;
@@ -296,10 +290,9 @@ public abstract class BaseCreator
   {
     ModelMonitor?.ShowPhaseProgress(PPS.ConvertTypes, new ProgressInfo
     {
-      Total = TotalTypesCount,
       PreStr = "converted",
-      Done = info.ProcessedTypes,
-      MidStr = "types",
+      TotalTypes = TotalTypesCount,
+      ProcessedTypes = info.ProcessedTypes,
       PostStr = $"{info.Current?.OriginalNamespace}.{info.Current?.OriginalName} -> {info.Current?.GetTargetNamespace()}.{info.Current?.Name}"
     });
   }

@@ -3,13 +3,13 @@
 public enum SummaryInfoKind
 {
   None,
+  CheckedTypes,
   AllTypes,
   RegisteredTypes,
+  Namespaces,
   AcceptedTypes,
   RejectedTypes,
-  ValidatedTypes,
-  ValidTypes,
-  InvalidTypes,
+  ProblematicTypes,
   TypesWithDescription,
   TypesWithAddedDescription,
   TypesWithoutDescription,

@@ -149,7 +149,7 @@
         </Grid>
       </DataTemplate>
 
-      <DataTemplate x:Key="ErrorMsgMarkTemplate">
+      <DataTemplate x:Key="ProblemMarkTemplate">
         <Grid Width="20">
           <Button Background="Transparent"
                   BorderBrush="Transparent"

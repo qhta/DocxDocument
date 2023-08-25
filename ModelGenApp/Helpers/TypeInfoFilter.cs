@@ -24,8 +24,8 @@ public record TypeInfoFilter
       if (filter == SummaryInfoKind.RejectedTypes)
         Predicate = new Predicate<TypeInfo>(item => item.IsRejectedAfter(phaseNum));
       else
-      if (filter == SummaryInfoKind.InvalidTypes)
-        Predicate = new Predicate<TypeInfo>(item => !item.IsValid(phaseNum));
+      if (filter == SummaryInfoKind.ProblematicTypes)
+        Predicate = new Predicate<TypeInfo>(item => item.HasProblems(phaseNum));
     }
     else
     if (value is string str)
@@ -44,8 +44,23 @@ public record TypeInfoFilter
     if (Predicate == null)
         throw new InvalidOperationException($"Can't create TypeInfoFilter with SummaryInfoKind.{filter}");
 
+    Caption = CommonStrings.ResourceManager.GetString(filter.ToString(), CultureInfo.CurrentUICulture) ?? filter.ToString();
+
     Value = value;
   }
+  
+
+  //ValidatedTypes,
+  //ValidTypes,
+  //InvalidTypes,
+  //TypesWithDescription,
+  //TypesWithAddedDescription,
+  //TypesWithoutDescription,
+  //TypesWithMeaninglessDescription,
+  //TypesWithDuplicateName,
+  //RenamedTypes,
+  //ConvertedTypes,
+  public string Caption { get; set; } = null!;
 
   /// <summary>
   /// Initializing constructor with known predicate.

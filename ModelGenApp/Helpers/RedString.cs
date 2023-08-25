@@ -1,8 +1,8 @@
 ﻿namespace ModelGenApp.Helpers
 {
-  public struct ErrString
+  public struct RedString
   {
-    public ErrString(string? value)
+    public RedString(string? value)
     {
       Value = value;
     }
