@@ -1,5 +1,5 @@
 ﻿namespace ModelGenApp.ViewModels;
-public class MemberListViewModel<T> : ObservableList<T> where T : ViewModel, IAcceptable
+public abstract class MemberListViewModel<T> : ObservableList<T> where T : ViewModel, IAcceptable
 {
   public MemberListViewModel(TypeInfoViewModel owner, string name)
   {
@@ -7,11 +7,13 @@ public class MemberListViewModel<T> : ObservableList<T> where T : ViewModel, IAc
     Name = name;
     CollectionChanged += MemberListViewModel_CollectionChanged;
     ShowDetailsCommand = new RelayCommand(ShowDetailsExecute, ShowDetailsCanExecute) { Name = "ShowDetailsCommand" };
+    VisibleItems = new FilteredCollection<T>(this);
+    ApplyAcceptedOnlyFilter(ShowAcceptedOnly);
   }
 
-  private void MemberListViewModel_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs e)
+  private void MemberListViewModel_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
-    NotifyPropertyChanged(nameof(Items));
+    NotifyPropertyChanged(nameof(VisibleItems));
   }
 
   public TypeInfoViewModel Owner { get; private set; }
@@ -24,13 +26,27 @@ public class MemberListViewModel<T> : ObservableList<T> where T : ViewModel, IAc
 
   public bool Visible => true;
 
-  public IEnumerable<T> Items 
+  public FilteredCollection<T> VisibleItems { get; private set; } = null!;
+
+  public bool ShowAcceptedOnly
   {
-    get
+    get => _ShowAcceptedOnly;
+    set
     {
-      return this;
+      if (value != _ShowAcceptedOnly)
+      {
+        _ShowAcceptedOnly = value;
+        NotifyPropertyChanged(nameof(ShowAcceptedOnly));
+        ApplyAcceptedOnlyFilter(value);
+      }
     }
   }
+  /// <summary>
+  /// As this field is static, all member lists have the same, common default value.
+  /// </summary>
+  private static bool _ShowAcceptedOnly = true;
+
+  protected abstract void ApplyAcceptedOnlyFilter(bool value);
 
   public bool ShowDeclaringType
   {
@@ -44,6 +60,9 @@ public class MemberListViewModel<T> : ObservableList<T> where T : ViewModel, IAc
       }
     }
   }
+  /// <summary>
+  /// As this field is static, all member lists have the same, common default value.
+  /// </summary>
   private static bool _showDeclaringType = true;
 
   public bool ShowDisplayOptions { get; protected set; }

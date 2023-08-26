@@ -485,4 +485,7 @@ zdefiniowanej w typie wyliczeniowym.</value>
   <data name="TypesWithSameName" xml:space="preserve">
     <value>Typy z tą samą nazwą</value>
   </data>
+  <data name="ShowAcceptedOnly" xml:space="preserve">
+    <value>Pokaż tylko zaakceptowane</value>
+  </data>
 </root>

@@ -109,5 +109,3 @@ D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\ModelGenApp.pdb
 D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\ModelGenApp.genruntimeconfig.cache
 D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\ref\ModelGenApp.dll
 D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\pl\Qhta.WPF.Utils.resources.dll
-D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Qhta.WPF.Utils.pdb
-D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\Qhta.WPF.Utils.xml
