@@ -11,30 +11,32 @@ public partial class TypeInfoView : UserControl
 
   private void DataGrid_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs args)
   {
-    if (dataGridColumnCreator==null)
+    if (dataGridColumnCreator == null)
     {
       if (DataContext is ClassInfoViewModel)
         dataGridColumnCreator = new DataGridColumnCreator(MainDataGrid,
           typeof(PropListViewModel), typeof(PropInfoViewModel));
       else if (DataContext is EnumTypeInfoViewModel)
-        dataGridColumnCreator = new DataGridColumnCreator(MainDataGrid, 
+        dataGridColumnCreator = new DataGridColumnCreator(MainDataGrid,
           typeof(EnumListViewModel), typeof(EnumInfoViewModel));
       else
         return;
     }
     dataGridColumnCreator.GenerateColumn(sender, args);
     if (sender is DataGrid dataGrid)
-      if (DataContext is ClassInfoViewModel)
+      if (args.PropertyName.EndsWith("DeclaringType"))
       {
-        if (args.Column is DataGridBoundColumn dataGridBoundColumn)
-        {
-          if (dataGridBoundColumn.Binding is Binding binding
-              && binding.Path.Path.EndsWith("DeclaringType"))
-          {
-            BindingOperations.SetBinding(dataGridBoundColumn, DataGridColumn.VisibilityProperty,
-              new Binding("Properties.ShowDeclaringType") { Source = DataContext, Converter = (IValueConverter)dataGrid.FindResource("BoolToVisibilityConverter") });
-          }
-        }
+        BindingOperations.SetBinding(args.Column, DataGridColumn.VisibilityProperty,
+          new Binding("Properties.ShowDeclaringType") 
+          { Source = DataContext, Converter = (IValueConverter)dataGrid.FindResource("BoolToVisibilityConverter") });
+      }
+      else
+      if (args.PropertyName == "Acceptance")
+      {
+        BindingOperations.SetBinding(args.Column, DataGridColumn.VisibilityProperty,
+          new Binding("Properties.ShowAcceptedOnly") 
+          { Source = DataContext, Converter = (IValueConverter)dataGrid.FindResource("BoolToVisibilityConverter"), ConverterParameter="Collapsed,Visible" });
       }
   }
 }
+

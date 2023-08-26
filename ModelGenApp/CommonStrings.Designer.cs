@@ -842,6 +842,15 @@ namespace ModelGenApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Show accepted only.
+        /// </summary>
+        public static string ShowAcceptedOnly {
+            get {
+                return ResourceManager.GetString("ShowAcceptedOnly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Show declaring type.
         /// </summary>
         public static string ShowDeclaringType {
