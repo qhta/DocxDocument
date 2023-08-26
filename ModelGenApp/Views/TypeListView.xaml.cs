@@ -34,8 +34,8 @@ public partial class TypeListView : UserControl
         { 
           Source = dummyElement,
           Converter=new BoolToVisibilityConverter(), 
-          ConverterParameter="Collapsed,Visible" 
-          });;
+          ConverterParameter="Visible,Collapsed" 
+          });
     }
   }
 
