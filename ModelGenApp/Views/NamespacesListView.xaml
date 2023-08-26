@@ -18,15 +18,18 @@
               AutoGeneratingColumn="DataGrid_AutoGeneratingColumn"
               ClipboardCopyMode="IncludeHeader"
               utl:CollectionViewBehavior.EnableCollectionSynchronization="True"
+              utl:CollectionViewBehavior.IsFocusable="True"
               ItemsSource="{Binding}">
       <DataGrid.Resources>
         <hlp:BindingProxy x:Key="proxy" Data="{Binding}"/>
       </DataGrid.Resources>
       <DataGrid.Columns>
         <DataGridTextColumn Header="{x:Static local:CommonStrings.OriginalNamespace}" 
+                            utl:CollectionViewBehavior.HeaderTooltip="{x:Static local:CommonStrings.OriginalNamespaceTooltip}"
                             utl:CollectionViewBehavior.ShowFilterButton="True"
                             Binding="{Binding Path=Name}"/>
         <DataGridTextColumn Header="{x:Static local:CommonStrings.TargetNamespace}"
+                            utl:CollectionViewBehavior.HeaderTooltip="{x:Static local:CommonStrings.TargetNamespaceTooltip}"
                             utl:CollectionViewBehavior.ShowFilterButton="True"
                             Binding="{Binding Path=TargetName}" 
                             Visibility="{Binding DataContext.IsTargetNameVisible,
