@@ -485,4 +485,7 @@ defined in the enum type.</value>
   <data name="TypesWithSameName" xml:space="preserve">
     <value>Types with same name</value>
   </data>
+  <data name="ShowAcceptedOnly" xml:space="preserve">
+    <value>Show accepted only</value>
+  </data>
 </root>
