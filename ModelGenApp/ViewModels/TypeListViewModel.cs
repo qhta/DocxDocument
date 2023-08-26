@@ -38,7 +38,7 @@ public class TypeListViewModel : ViewModel
       string? result = null;
       if (Namespace != null)
         result = Namespace.Caption;
-      result += " | " +(CommonStrings.ResourceManager.GetString(Name, CultureInfo.CurrentUICulture) ?? Name);
+      result += " | " +(CommonStrings.ResourceManager.GetString(Name, CultureInfo.CurrentUICulture) ?? Name?.DeCamelCase());
       return result;
     }
   }

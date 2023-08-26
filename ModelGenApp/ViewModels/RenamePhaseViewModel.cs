@@ -14,9 +14,10 @@ public class RenamePhaseViewModel : PhaseViewModel
     //  .Where(item => item.GetTargetName() == typeInfoViewModel.Model.GetTargetName())
     //  .Select(item => TypeInfoViewModel.Create(this, item, TypeNameSelector)).ToList();
     var name = typeInfoViewModel.Model.GetFullName(true, false, false);
-    var filter = new TypeInfoFilter(new Predicate<TypeInfo>(info => info.GetFullName(true, false, false) == name));
-    var viewModel = new TypeListViewModel(this, new NamespaceViewModel(this, nspace), "Types with duplicate names", this.TypeNameSelector, TKS.Any, 
-      filter);
+    //var filter = new TypeInfoFilter(new Predicate<TypeInfo>(info => info.GetFullName(true, false, false) == name));
+    var filter = new TypeInfoFilter(SummaryInfoKind.TypesWithSameName, name);
+    var viewModel = new TypeListViewModel(this, 
+      new NamespaceViewModel(this, nspace), SummaryInfoKind.TypesWithSameName.ToString(), this.TypeNameSelector, TKS.Any, filter);
     viewModel.IsInvalidMarkVisible = false;
     viewModel.FillItems();
     WindowsManager.ShowWindow<TypeListWindow>(viewModel);
