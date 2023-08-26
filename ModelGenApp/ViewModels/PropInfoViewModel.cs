@@ -91,8 +91,8 @@ public class PropInfoViewModel : ViewModel<PropInfo>, IAcceptable
     HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.ValueType),
     HeaderTooltipResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.ValueTypeTooltip),
     DataTemplateResourceKey = "TypeInfoLinkTemplate",
-    SortMemberPath = "Type.FullName",
-    ClipboardContentPath = "Type.FullName")]
+    SortMemberPath = "ValueType.Name",
+    ClipboardContentPath = "ValueType.Name")]
   public TypeInfoViewModel? ValueType
   {
     get
