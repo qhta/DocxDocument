@@ -458,8 +458,8 @@ zdefiniowanej w typie wyliczeniowym.</value>
   <data name="TypesWithoutDescription" xml:space="preserve">
     <value>Typy bez opisu</value>
   </data>
-  <data name="TypesWithDuplicateName" xml:space="preserve">
-    <value>Typy z powtarzającymi się nazwami</value>
+  <data name="TypesWithNonUniqueName" xml:space="preserve">
+    <value>Typy o nieunikalnej nazwie</value>
   </data>
   <data name="RenamedTypes" xml:space="preserve">
     <value>Typy ze zmienioną nazwą</value>
@@ -481,5 +481,8 @@ zdefiniowanej w typie wyliczeniowym.</value>
   </data>
   <data name="TypesWithMeaninglessDescription" xml:space="preserve">
     <value>Typy z nic nieznaczącym opisem</value>
+  </data>
+  <data name="TypesWithSameName" xml:space="preserve">
+    <value>Typy z tą samą nazwą</value>
   </data>
 </root>

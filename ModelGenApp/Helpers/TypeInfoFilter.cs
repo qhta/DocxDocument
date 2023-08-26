@@ -28,10 +28,10 @@ public record TypeInfoFilter
         Predicate = new Predicate<TypeInfo>(item => item.HasProblems(phaseNum));
     }
     else
-    if (value is string str)
+    if (value is FullTypeName typeName)
     {
-      if (filter == SummaryInfoKind.TypesWithDuplicateName)
-        Predicate = new Predicate<TypeInfo>(item => item.GetTargetName() == str);
+      if (filter == SummaryInfoKind.TypesWithSameName)
+        Predicate = new Predicate<TypeInfo>(item => item.GetFullName(true, false, false) == typeName);
     }
     else
     {
@@ -57,7 +57,7 @@ public record TypeInfoFilter
   //TypesWithAddedDescription,
   //TypesWithoutDescription,
   //TypesWithMeaninglessDescription,
-  //TypesWithDuplicateName,
+  //TypesWithSameName,
   //RenamedTypes,
   //ConvertedTypes,
   public string Caption { get; set; } = null!;
