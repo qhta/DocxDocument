@@ -52,6 +52,7 @@
                 Grid.Row="1"
                 AutoGeneratingColumn="DataGrid_AutoGeneratingColumn"
                 utl:CollectionViewBehavior.EnableCollectionSynchronization="True"
+                utl:CollectionViewBehavior.IsFocusable="True"
                 utl:CollectionViewBehavior.ShowFilterButton="True"
                 ItemsSource="{Binding Path=Members.Items}" />
     </Grid>

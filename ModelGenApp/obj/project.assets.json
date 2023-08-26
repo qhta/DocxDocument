@@ -312,37 +312,6 @@
           "Microsoft.WindowsDesktop.App.WPF"
         ]
       },
-      "Qhta.WPF.Utils/3.0.0": {
-        "type": "package",
-        "dependencies": {
-          "Qhta.HtmlUtils": "2.1.0",
-          "Qhta.MVVM": "3.4.0",
-          "Qhta.ObservableObjects": "2.7.0",
-          "Qhta.OrdNumbers": "2.3.0",
-          "Qhta.TextUtils": "3.1.1",
-          "Qhta.TypeUtils": "1.3.10.1",
-          "Qhta.WPF.Converters": "1.3.1",
-          "System.Drawing.Common": "7.0.0"
-        },
-        "compile": {
-          "lib/net6.0-windows7.0/Qhta.WPF.Utils.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0-windows7.0/Qhta.WPF.Utils.dll": {
-            "related": ".xml"
-          }
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WPF"
-        ],
-        "resource": {
-          "lib/net6.0-windows7.0/pl/Qhta.WPF.Utils.resources.dll": {
-            "locale": "pl"
-          }
-        }
-      },
       "Qhta.Xml/2.1.0": {
         "type": "package",
         "dependencies": {
@@ -1790,6 +1759,29 @@
         "runtime": {
           "bin/placeholder/ModelGenDataConfig.dll": {}
         }
+      },
+      "Qhta.WPF.Utils/3.1.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Qhta.HtmlUtils": "2.1.0",
+          "Qhta.MVVM": "3.4.0",
+          "Qhta.ObservableObjects": "2.7.0",
+          "Qhta.OrdNumbers": "2.3.0",
+          "Qhta.TextUtils": "3.1.1",
+          "Qhta.TypeUtils": "1.3.10.1",
+          "Qhta.WPF.Converters": "1.3.1",
+          "System.Drawing.Common": "7.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Qhta.WPF.Utils.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Qhta.WPF.Utils.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
       }
     }
   },
@@ -2203,20 +2195,6 @@
         "lib/net7.0-windows7.0/Qhta.WPF.Converters.xml",
         "qhta.wpf.converters.1.3.1.nupkg.sha512",
         "qhta.wpf.converters.nuspec",
-        "readme.md"
-      ]
-    },
-    "Qhta.WPF.Utils/3.0.0": {
-      "sha512": "4KFlpwbAhTkL/XsrEmSYC72Fl6IwbSEkYqn8E8zUpE6vVPYDw4uRrW+6g8QoO0qIM8UbgVcatrtdEcGRDeL3Yg==",
-      "type": "package",
-      "path": "qhta.wpf.utils/3.0.0",
-      "files": [
-        ".nupkg.metadata",
-        "lib/net6.0-windows7.0/Qhta.WPF.Utils.dll",
-        "lib/net6.0-windows7.0/Qhta.WPF.Utils.xml",
-        "lib/net6.0-windows7.0/pl/Qhta.WPF.Utils.resources.dll",
-        "qhta.wpf.utils.3.0.0.nupkg.sha512",
-        "qhta.wpf.utils.nuspec",
         "readme.md"
       ]
     },
@@ -5487,6 +5465,11 @@
       "type": "project",
       "path": "../ModelGenDataConfig/ModelGenDataConfig.csproj",
       "msbuildProject": "../ModelGenDataConfig/ModelGenDataConfig.csproj"
+    },
+    "Qhta.WPF.Utils/3.1.0": {
+      "type": "project",
+      "path": "../../MyLib/Qhta.WPF.Utils/Qhta.WPF.Utils.csproj",
+      "msbuildProject": "../../MyLib/Qhta.WPF.Utils/Qhta.WPF.Utils.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -5498,7 +5481,7 @@
       "Qhta.TextUtils >= 3.1.1",
       "Qhta.TypeUtils >= 1.3.10.1",
       "Qhta.WPF.Converters >= 1.3.1",
-      "Qhta.WPF.Utils >= 3.0.0"
+      "Qhta.WPF.Utils >= 3.1.0"
     ]
   },
   "packageFolders": {
@@ -5536,6 +5519,9 @@
           "projectReferences": {
             "D:\\VS\\Projects\\DocxDocument\\ModelGen\\ModelGen\\ModelGen.csproj": {
               "projectPath": "D:\\VS\\Projects\\DocxDocument\\ModelGen\\ModelGen\\ModelGen.csproj"
+            },
+            "D:\\VS\\Projects\\MyLib\\Qhta.WPF.Utils\\Qhta.WPF.Utils.csproj": {
+              "projectPath": "D:\\VS\\Projects\\MyLib\\Qhta.WPF.Utils\\Qhta.WPF.Utils.csproj"
             }
           }
         }
@@ -5573,10 +5559,6 @@
           "Qhta.WPF.Converters": {
             "target": "Package",
             "version": "[1.3.1, )"
-          },
-          "Qhta.WPF.Utils": {
-            "target": "Package",
-            "version": "[3.0.0, )"
           }
         },
         "imports": [

@@ -15,7 +15,7 @@
           "Qhta.TextUtils": "3.1.1",
           "Qhta.TypeUtils": "1.3.10.1",
           "Qhta.WPF.Converters": "1.3.1",
-          "Qhta.WPF.Utils": "3.0.0"
+          "Qhta.WPF.Utils": "3.1.0"
         },
         "runtime": {
           "ModelGenApp.dll": {}
@@ -231,29 +231,6 @@
           "lib/net6.0-windows7.0/Qhta.WPF.Converters.dll": {
             "assemblyVersion": "1.3.1.0",
             "fileVersion": "1.3.1.0"
-          }
-        }
-      },
-      "Qhta.WPF.Utils/3.0.0": {
-        "dependencies": {
-          "Qhta.HtmlUtils": "2.1.0",
-          "Qhta.MVVM": "3.4.0",
-          "Qhta.ObservableObjects": "2.7.0",
-          "Qhta.OrdNumbers": "2.3.0",
-          "Qhta.TextUtils": "3.1.1",
-          "Qhta.TypeUtils": "1.3.10.1",
-          "Qhta.WPF.Converters": "1.3.1",
-          "System.Drawing.Common": "7.0.0"
-        },
-        "runtime": {
-          "lib/net6.0-windows7.0/Qhta.WPF.Utils.dll": {
-            "assemblyVersion": "3.0.0.0",
-            "fileVersion": "3.0.0.0"
-          }
-        },
-        "resources": {
-          "lib/net6.0-windows7.0/pl/Qhta.WPF.Utils.resources.dll": {
-            "locale": "pl"
           }
         }
       },
@@ -1052,6 +1029,26 @@
         "runtime": {
           "ModelGenDataConfig.dll": {}
         }
+      },
+      "Qhta.WPF.Utils/3.1.0": {
+        "dependencies": {
+          "Qhta.HtmlUtils": "2.1.0",
+          "Qhta.MVVM": "3.4.0",
+          "Qhta.ObservableObjects": "2.7.0",
+          "Qhta.OrdNumbers": "2.3.0",
+          "Qhta.TextUtils": "3.1.1",
+          "Qhta.TypeUtils": "1.3.10.1",
+          "Qhta.WPF.Converters": "1.3.1",
+          "System.Drawing.Common": "7.0.0"
+        },
+        "runtime": {
+          "Qhta.WPF.Utils.dll": {}
+        },
+        "resources": {
+          "pl/Qhta.WPF.Utils.resources.dll": {
+            "locale": "pl"
+          }
+        }
       }
     }
   },
@@ -1200,13 +1197,6 @@
       "sha512": "sha512-Q3TUnTD3JBxb/RFl9yHu/WA4NYl/VY1gzXCheBbC5wSbF61fQNPMBAKl7iFjirRPNH0CGfULuSIVDy0rZyF/dg==",
       "path": "qhta.wpf.converters/1.3.1",
       "hashPath": "qhta.wpf.converters.1.3.1.nupkg.sha512"
-    },
-    "Qhta.WPF.Utils/3.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-4KFlpwbAhTkL/XsrEmSYC72Fl6IwbSEkYqn8E8zUpE6vVPYDw4uRrW+6g8QoO0qIM8UbgVcatrtdEcGRDeL3Yg==",
-      "path": "qhta.wpf.utils/3.0.0",
-      "hashPath": "qhta.wpf.utils.3.0.0.nupkg.sha512"
     },
     "Qhta.Xml/2.1.0": {
       "type": "package",
@@ -1768,6 +1758,11 @@
       "sha512": ""
     },
     "ModelGenDataConfig/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Qhta.WPF.Utils/3.1.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -37,7 +37,9 @@
                 AutoGenerateColumns="true"
                 AutoGeneratingColumn="DataGrid_AutoGeneratingColumn"
                 utl:CollectionViewBehavior.EnableCollectionSynchronization="True"
+                utl:CollectionViewBehavior.IsFocusable="True"
                 utl:CollectionViewBehavior.ShowFilterButton="True"
+                ClipboardCopyMode="IncludeHeader"
                 ItemsSource="{Binding Items}">
       </DataGrid>
     </Grid>
