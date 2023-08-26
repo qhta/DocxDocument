@@ -1050,15 +1050,6 @@ namespace ModelGenApp {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Types with duplicate name.
-        /// </summary>
-        public static string TypesWithDuplicateName {
-            get {
-                return ResourceManager.GetString("TypesWithDuplicateName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Types with meaningless description.
         /// </summary>
         public static string TypesWithMeaninglessDescription {
@@ -1068,11 +1059,29 @@ namespace ModelGenApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Types with non-unique name.
+        /// </summary>
+        public static string TypesWithNonUniqueName {
+            get {
+                return ResourceManager.GetString("TypesWithNonUniqueName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Types without description.
         /// </summary>
         public static string TypesWithoutDescription {
             get {
                 return ResourceManager.GetString("TypesWithoutDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Types with same name.
+        /// </summary>
+        public static string TypesWithSameName {
+            get {
+                return ResourceManager.GetString("TypesWithSameName", resourceCulture);
             }
         }
         
