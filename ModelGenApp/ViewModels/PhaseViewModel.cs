@@ -145,6 +145,29 @@ public abstract partial class PhaseViewModel : ViewModel
     Namespaces = new NamespacesViewModel(this, NamespaceTypeSelector, Filter);
   }
 
+  public async void FillTypesAsync()
+  {
+    await Task.Run(() => FillTypes());
+  }
+
+  public virtual void FillTypes()
+  {
+    Types = new TypeListViewModel(this, null, NamespaceTypeSelector.ToString(), TypeNameSelector, TKS.Any, Filter);
+    Types.FillItemsAsync();
+  }
+  public async void FillResultsAsync()
+  {
+    await Task.Run(() => FillResults());
+  }
+
+  public virtual void FillResults()
+  {
+    if (_Namespaces!=null)
+      FillNamespaces();
+    if (_Types!=null)
+      FillTypes();
+  }
+
   public async void RefreshResultsAsync()
   {
     await Task.Run(() => RefreshResults());
@@ -161,7 +184,8 @@ public abstract partial class PhaseViewModel : ViewModel
 
   public void InitTypes()
   {
-    Types = new TypeListViewModel(this, null, "AllTypes", TypeNameSelector, TKS.Any, Filter);
+    Types = new TypeListViewModel(this, null, NamespaceTypeSelector.ToString(), TypeNameSelector, TKS.Any, Filter);
+    Types.FillItemsAsync();
   }
 
   public TypeListViewModel Types
@@ -299,7 +323,7 @@ public abstract partial class PhaseViewModel : ViewModel
       Filter = new TypeInfoFilter((SummaryInfoKind)filter, PhaseNum);
     else
       Filter = null;
-    FillNamespacesAsync();
+    FillResultsAsync();
   }
   #endregion
 

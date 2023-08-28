@@ -20,7 +20,10 @@ public class ClassInfoViewModel : TypeInfoViewModel
     get
     {
       if (_Properties == null)
+      {
         _Properties = new PropListViewModel(this, "Properties", TypeNameSelector);
+        FillPropertiesAsync();
+      }
       return _Properties;
     }
   }
@@ -46,8 +49,6 @@ public class ClassInfoViewModel : TypeInfoViewModel
 
   protected override void FillTypeSummary()
   {
-    if (Model.Type.Name.StartsWith("OpenXmlComparableSimpleValue") && Model.Type.IsConstructedGenericType)
-      Debug.Assert(true);
     base.FillTypeSummary();
     var baseClass = Model.BaseTypeInfo;
     if (baseClass != null)
