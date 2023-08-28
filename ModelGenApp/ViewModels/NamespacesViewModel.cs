@@ -1,14 +1,17 @@
 ﻿namespace ModelGenApp.ViewModels;
 
-public class NamespacesViewModel : ObservableList<NamespaceViewModel>
+public class NamespacesViewModel : ViewModel
 {
   public NamespacesViewModel(PhaseViewModel phase, NTS namespacesTypeSelector, TypeInfoFilter? filter)
   {
     Phase = phase;
     NamespacesTypeSelector = namespacesTypeSelector;
     Filter = filter;
+    Items = new ObservableList<NamespaceViewModel>();
     FillItems();
   }
+
+  public ObservableList<NamespaceViewModel> Items {get; private set;}
 
   public PhaseViewModel Phase { get; private set; }
 
@@ -18,7 +21,7 @@ public class NamespacesViewModel : ObservableList<NamespaceViewModel>
 
   public void FillItems() // We can't populate it asynchronously
   {
-    Clear();
+    Items.Clear();
     var namespaces = new List<Namespace>();
     if (NamespacesTypeSelector.HasFlag(NTS.Origin))
       namespaces.AddRange(TypeManager.KnownNamespaces.Where(item => item.Key.StartsWith("DocumentFormat")).Select(item => item.Value));
@@ -33,7 +36,12 @@ public class NamespacesViewModel : ObservableList<NamespaceViewModel>
       viewModels.Add(nsVM);
       nsVM.FillTypesAsync();
     }
-    AddRange(viewModels);
+    Items.AddRange(viewModels);
+  }
+
+  public async void RefreshItemsAsync()
+  {
+    await Task.Run(() => RefreshItems() );
   }
 
   public void RefreshItems()
@@ -47,10 +55,10 @@ public class NamespacesViewModel : ObservableList<NamespaceViewModel>
       namespaces.AddRange(TypeManager.KnownNamespaces.Where(item => item.Key.StartsWith("System")).Select(item => item.Value));
     var newNamespaces = new List<Namespace>();
     foreach (var ns in namespaces)
-      if (!this.Any(item => item.Model == ns))
+      if (!Items.Any(item => item.Model == ns))
         newNamespaces.Add(ns);
 
-    foreach (var nsVM in this)
+    foreach (var nsVM in Items)
     {
       nsVM.RefreshAsync();
     }
@@ -62,7 +70,7 @@ public class NamespacesViewModel : ObservableList<NamespaceViewModel>
       viewModels.Add(nsVM);
       nsVM.FillTypesAsync();
     }
-    AddRange(viewModels);
+    Items.AddRange(viewModels);
   }
 
   public bool IsTargetNameVisible => Phase.IsTargetNameVisible;

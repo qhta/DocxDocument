@@ -19,7 +19,7 @@
               ClipboardCopyMode="IncludeHeader"
               utl:CollectionViewBehavior.EnableCollectionSynchronization="True"
               utl:CollectionViewBehavior.IsFocusable="True"
-              ItemsSource="{Binding}">
+              ItemsSource="{Binding Items}">
       <DataGrid.Resources>
         <hlp:BindingProxy x:Key="proxy" Data="{Binding}"/>
       </DataGrid.Resources>

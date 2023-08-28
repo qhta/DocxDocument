@@ -42,9 +42,9 @@ public abstract partial class PhaseViewModel : ViewModel
   /// <summary>
   /// Name of the process phase.
   /// </summary>
-  public string PhaseName {get; set; }
+  public string PhaseName { get; set; }
 
-  public string Caption => 
+  public string Caption =>
     CommonStrings.ResourceManager.GetString(PhaseName, CultureInfo.CurrentUICulture) ?? PhaseName;
 
   /// <summary>
@@ -144,13 +144,23 @@ public abstract partial class PhaseViewModel : ViewModel
   public virtual void RefreshResults()
   {
     Namespaces?.RefreshItems();
+    Types?.RefreshItems();
   }
   #endregion
 
   #region Types
+
+  public void InitTypes()
+  {
+    Types = new TypeListViewModel(this, null, "AllTypes", TypeNameSelector, TKS.Any, Filter);
+  }
+
   public TypeListViewModel Types
   {
-    get { return _Types; }
+    get
+    {
+      return _Types;
+    }
     set
     {
       if (_Types != value)
@@ -277,7 +287,7 @@ public abstract partial class PhaseViewModel : ViewModel
   public void SetFilter(SummaryInfoKind? filter)
   {
     if (filter != null)
-      Filter =  new TypeInfoFilter((SummaryInfoKind)filter, PhaseNum);
+      Filter = new TypeInfoFilter((SummaryInfoKind)filter, PhaseNum);
     else
       Filter = null;
     FillNamespacesAsync();
