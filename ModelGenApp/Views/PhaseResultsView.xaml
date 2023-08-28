@@ -21,6 +21,7 @@
       <RowDefinition Height="Auto" />
       <RowDefinition Height="*" />
     </Grid.RowDefinitions>
+    <views:PhaseSummaryView />
     <Button x:Name="RefreshButton" 
             Background="Transparent"
             BorderBrush="Transparent"
