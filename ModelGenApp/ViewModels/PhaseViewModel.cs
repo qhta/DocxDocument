@@ -20,6 +20,15 @@ public abstract partial class PhaseViewModel : ViewModel
     ShowResultsCommand = new RelayCommand(ShowResultsExecute, ShowResultsCanExecute) { Name = "ShowResultsCommand" };
     RefreshResultsCommand = new RelayCommand(RefreshResultsExecute, RefreshResultsCanExecute) { Name = "RefreshResultsCommand" };
     PropertyChanged += PhaseMonitor_PropertyChanged;
+    BusyMonitor.Instance.PropertyChanged += BusyMonitor_PropertyChanged;
+  }
+
+  public bool IsBusy => BusyMonitor.Instance.IsBusy;
+
+  private void BusyMonitor_PropertyChanged(object? sender, PropertyChangedEventArgs args)
+  {
+    if (args.PropertyName==nameof(BusyMonitor.IsBusy))
+      NotifyPropertyChanged(nameof(IsBusy));
   }
 
   private void PhaseMonitor_PropertyChanged(object? sender, System.ComponentModel.PropertyChangedEventArgs e)
