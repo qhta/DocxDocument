@@ -17,7 +17,16 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
     Phase = phase;
     ShowTypeCommand = new RelayCommand(ShowTypeExecute, ShowTypeCanExecute) { Name = "ShowTypeCommand" };
     ShowErrorCommand = new RelayCommand(ShowErrorExecute, ShowErrorCanExecute) { Name = "ShowErrorCommand" };
+    BusyMonitor.Instance.PropertyChanged += BusyMonitor_PropertyChanged;
     FillTypeSummaryAsync();
+  }
+
+  public bool IsBusy => BusyMonitor.Instance.IsBusy;
+
+  private void BusyMonitor_PropertyChanged(object? sender, PropertyChangedEventArgs args)
+  {
+    if (args.PropertyName==nameof(BusyMonitor.IsBusy))
+      NotifyPropertyChanged(nameof(IsBusy));
   }
 
   /// <summary>

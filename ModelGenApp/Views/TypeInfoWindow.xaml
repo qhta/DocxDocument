@@ -6,6 +6,19 @@
         xmlns:views="clr-namespace:ModelGenApp.Views"
         mc:Ignorable="d"
         Title="{Binding Caption}" Height="450" Width="800">
+  <Window.Style>
+    <Style TargetType="Window">
+      <Setter Property="ForceCursor"
+              Value="True" />
+      <Style.Triggers>
+        <DataTrigger Binding="{Binding IsBusy}"
+                     Value="True">
+          <Setter Property="Cursor"
+                  Value="Wait" />
+        </DataTrigger>
+      </Style.Triggers>
+    </Style>
+  </Window.Style>
   <Grid>
     <views:TypeInfoView HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
   </Grid>
