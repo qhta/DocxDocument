@@ -15,6 +15,15 @@ public class TypeListViewModel : ViewModel
     Source = source;
     ShowDetailsCommand = new RelayCommand(ShowDetailsExecute, ShowDetailsCanExecute) { Name = "ShowDetailsCommand" };
     RefreshResultsCommand = new RelayCommand(RefreshResultsExecute, RefreshResultsCanExecute) { Name = "RefreshResultsCommand" };
+    BusyMonitor.Instance.PropertyChanged += BusyMonitor_PropertyChanged;
+  }
+
+  public bool IsBusy => BusyMonitor.Instance.IsBusy;
+
+  private void BusyMonitor_PropertyChanged(object? sender, PropertyChangedEventArgs args)
+  {
+    if (args.PropertyName==nameof(BusyMonitor.IsBusy))
+      NotifyPropertyChanged(nameof(IsBusy));
   }
 
   private void Items_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs e)
