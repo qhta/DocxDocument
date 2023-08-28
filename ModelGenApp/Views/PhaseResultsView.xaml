@@ -17,10 +17,9 @@
   </UserControl.Resources>
   <Grid>
     <Grid.RowDefinitions>
-      <RowDefinition Height="Auto"/>
-      <RowDefinition Height="*"/>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
     </Grid.RowDefinitions>
-    <views:PhaseSummaryView />
     <Button x:Name="RefreshButton" 
             Background="Transparent"
             BorderBrush="Transparent"
@@ -32,8 +31,16 @@
         <Image Source="/Images/Refresh.png"
           ToolTip="{x:Static local:CommonStrings.Refresh}" />
     </Button>
-    <views:NamespacesListView Grid.Row="1" 
-                              Grid.ColumnSpan="2"
-                              DataContext="{Binding Namespaces}"/>
+    <TabControl TabStripPlacement="Bottom"
+                Grid.Row="1"
+                SelectionChanged="TabControl_SelectionChanged">
+      <TabItem Header="{x:Static local:CommonStrings.Namespaces}">
+        <views:NamespacesListView 
+                                DataContext="{Binding Namespaces}"/>
+      </TabItem>
+      <TabItem Header="{x:Static local:CommonStrings.Types}">
+        <views:TypeListView DataContext="{Binding Types}" />
+      </TabItem>
+    </TabControl>
   </Grid>
 </UserControl>
