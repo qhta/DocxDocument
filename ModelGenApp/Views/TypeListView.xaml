@@ -29,8 +29,7 @@
                   VerticalAlignment="Center"
                   IsChecked="{Binding Path=ShowFullTypeName}"
                   Content="{x:Static local:CommonStrings.ShowFullTypeName}"
-                  ToolTip="{x:Static local:CommonStrings.TypeFullNameTooltip}"
-                  />
+                  ToolTip="{x:Static local:CommonStrings.TypeFullNameTooltip}" />
       </StackPanel>
       <DataGrid x:Name="MainDataGrid"
                 Grid.Row="1"
@@ -43,16 +42,5 @@
                 ItemsSource="{Binding Items}">
       </DataGrid>
     </Grid>
-    <Button x:Name="RefreshButton"
-            Background="Transparent"
-            BorderBrush="Transparent"
-            Width="24"
-            Height="24"
-            VerticalAlignment="Top"
-            HorizontalAlignment="Right"
-            Command="{Binding Path=RefreshResultsCommand}">
-      <Image Source="/Images/Refresh.png"
-             ToolTip="{x:Static local:CommonStrings.Refresh}" />
-    </Button>
   </Grid>
 </UserControl>

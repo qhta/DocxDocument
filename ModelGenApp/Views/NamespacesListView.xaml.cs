@@ -8,17 +8,7 @@ public partial class NamespacesListView : UserControl
     InitializeComponent();
     dataGridColumnCreator = new DataGridColumnCreator(MainDataGrid, typeof(NamespacesViewModel), typeof(NamespaceViewModel))
     { IsFilterButtonVisible = true };
-    //MainDataGrid.CommandBindings.Add(new CommandBinding(ApplicationCommands.SelectAll, OnDataGridSelectAll));
   }
-
-  //private void OnDataGridSelectAll(object sender, ExecutedRoutedEventArgs e)
-  //{
-  //  if (sender is DataGrid grid)
-  //  {
-  //    grid.Focus();
-  //    grid.SelectAll();
-  //  }
-  //}
 
   private DataGridColumnCreator dataGridColumnCreator = null!;
 
