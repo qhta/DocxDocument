@@ -31,28 +31,16 @@
         <RowDefinition Height="Auto" />
         <RowDefinition Height="*" />
       </Grid.RowDefinitions>
-      <StackPanel Orientation="Horizontal"
-                  Visibility="{Binding Path=Members.ShowDisplayOptions,
-                  Converter={StaticResource BoolToVisibilityConverter}}">
-        <Label Margin="2,0"
-               FontWeight="Bold"
-               Content="{x:Static local:CommonStrings.DisplayOptions_}" />
-        <CheckBox Margin="2,0"
-                  VerticalAlignment="Center"
-                  IsChecked="{Binding Path=Members.ShowAcceptedOnly}"
-                  Content="{x:Static local:CommonStrings.ShowAcceptedOnly}"
-                  />
-        <CheckBox Margin="2,0"
-                  VerticalAlignment="Center"
-                  IsChecked="{Binding Path=Members.ShowDeclaringType}"
-                  Content="{x:Static local:CommonStrings.ShowDeclaringType}"
-                  ToolTip="{x:Static local:CommonStrings.DeclaringTypeTooltip}"/>
-        <CheckBox Margin="2,0"
-                  VerticalAlignment="Center"
-                  IsChecked="{Binding Path=Members.ShowFullTypeName}"
-                  Content="{x:Static local:CommonStrings.ShowFullTypeName}"
-                  ToolTip="{x:Static local:CommonStrings.TypeFullNameTooltip}"/>
-      </StackPanel>
+      <ContentControl>
+        <ContentControl.Resources>
+          <DataTemplate DataType="{x:Type vm:ClassInfoViewModel}">
+            <views:PropsDisplayOptionsView />
+          </DataTemplate>
+          <DataTemplate DataType="{x:Type vm:EnumInfoViewModel}">
+            <views:EnumsDisplayOptionsView />
+          </DataTemplate>
+        </ContentControl.Resources>
+      </ContentControl>
       <DataGrid x:Name="MainDataGrid"
                 Grid.Row="1"
                 AutoGeneratingColumn="DataGrid_AutoGeneratingColumn"

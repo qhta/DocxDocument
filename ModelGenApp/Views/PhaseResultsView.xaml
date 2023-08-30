@@ -43,6 +43,9 @@
       <TabItem Header="{x:Static local:CommonStrings.Types}">
         <views:TypeListView DataContext="{Binding Types}" />
       </TabItem>
+      <TabItem Header="{x:Static local:CommonStrings.Properties}">
+        <views:PropListView DataContext="{Binding Properties}" />
+      </TabItem>
     </TabControl>
   </Grid>
 </UserControl>

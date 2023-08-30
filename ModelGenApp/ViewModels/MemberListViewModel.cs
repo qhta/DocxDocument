@@ -1,14 +1,25 @@
 ﻿namespace ModelGenApp.ViewModels;
-public abstract class MemberListViewModel<T> : ObservableList<T> where T : ViewModel, IAcceptable
+public abstract class MemberListViewModel<T> : ObservableObject, IEnumerable<T> where T : ViewModel, IAcceptable
 {
-  public MemberListViewModel(TypeInfoViewModel owner, string name)
+  public MemberListViewModel(PhaseViewModel phase, TypeInfoViewModel? ownerType, string name)
   {
-    Owner = owner;
+    Phase = phase;
+    OwnerType = ownerType;
     Name = name;
-    CollectionChanged += MemberListViewModel_CollectionChanged;
+    Items = new ObservableList<T>();
+    Items.CollectionChanged += MemberListViewModel_CollectionChanged;
     ShowDetailsCommand = new RelayCommand(ShowDetailsExecute, ShowDetailsCanExecute) { Name = "ShowDetailsCommand" };
-    VisibleItems = new FilteredCollection<T>(this);
+    VisibleItems = new FilteredCollection<T>(Items);
     ApplyAcceptedOnlyFilter(ShowAcceptedOnly);
+
+  }
+
+  public bool IsBusy => BusyMonitor.Instance.IsBusy;
+
+  private void BusyMonitor_PropertyChanged(object? sender, PropertyChangedEventArgs args)
+  {
+    if (args.PropertyName==nameof(BusyMonitor.IsBusy))
+      NotifyPropertyChanged(nameof(IsBusy));
   }
 
   private void MemberListViewModel_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
@@ -16,15 +27,29 @@ public abstract class MemberListViewModel<T> : ObservableList<T> where T : ViewM
     NotifyPropertyChanged(nameof(VisibleItems));
   }
 
-  public TypeInfoViewModel Owner { get; private set; }
+  public PhaseViewModel Phase { get; private set; }
+
+  public TypeInfoViewModel? OwnerType { get; private set; }
 
   public string Name { get; private set; }
 
-  public string Caption => Owner.Caption + " | " + this.Name;
+  public string Caption
+  {
+    get
+    {
+      var result = OwnerType?.Caption;
+      if (result != null)
+        result += " | ";
+      result += this.Name;
+      return result;
+    }
+  }
 
   public string Label => this.Name + ":";
 
   public bool Visible => true;
+
+  public ObservableList<T> Items { get; private set; }
 
   public FilteredCollection<T> VisibleItems { get; private set; } = null!;
 
@@ -72,13 +97,54 @@ public abstract class MemberListViewModel<T> : ObservableList<T> where T : ViewM
 
   protected virtual bool ShowDetailsCanExecute()
   {
-    return Count > 0;
+
+    return OwnerType!=null && Items.Count > 0;
   }
 
 
   protected virtual void ShowDetailsExecute()
   {
-    WindowsManager.ShowWindow<TypeInfoWindow>(Owner);
+    if (OwnerType != null)
+      WindowsManager.ShowWindow<TypeInfoWindow>(OwnerType);
+  }
+
+  public void Add(T item)
+  {
+    ((ICollection<T>)Items).Add(item);
+  }
+
+  public void Clear()
+  {
+    ((ICollection<T>)Items).Clear();
+  }
+
+  public bool Contains(T item)
+  {
+    return ((ICollection<T>)Items).Contains(item);
+  }
+
+  public void CopyTo(T[] array, int arrayIndex)
+  {
+    ((ICollection<T>)Items).CopyTo(array, arrayIndex);
+  }
+
+  public bool Remove(T item)
+  {
+    return ((ICollection<T>)Items).Remove(item);
+  }
+
+  public int Count => ((ICollection<T>)Items).Count;
+
+  public bool IsReadOnly => ((ICollection<T>)Items).IsReadOnly;
+
+  public IEnumerator<T> GetEnumerator()
+  {
+    return ((IEnumerable<T>)Items).GetEnumerator();
+  }
+
+  IEnumerator IEnumerable.GetEnumerator()
+  {
+    return ((IEnumerable)Items).GetEnumerator();
   }
   #endregion
 

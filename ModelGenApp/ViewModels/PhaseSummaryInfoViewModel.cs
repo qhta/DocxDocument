@@ -1,7 +1,7 @@
 ﻿namespace ModelGenApp.ViewModels;
-public class SummaryValueViewModel: ViewModel
+public class PhaseSummaryInfoViewModel: ViewModel
 {
-  public SummaryInfoKind InfoKind { get; set; }
+  public TypeInfoKind InfoKind { get; set; }
 
   public string Name { get; set; } = null!;
 

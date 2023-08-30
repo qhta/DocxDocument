@@ -27,7 +27,7 @@ public abstract partial class PhaseViewModel : ViewModel
 
   private void BusyMonitor_PropertyChanged(object? sender, PropertyChangedEventArgs args)
   {
-    if (args.PropertyName==nameof(BusyMonitor.IsBusy))
+    if (args.PropertyName == nameof(BusyMonitor.IsBusy))
       NotifyPropertyChanged(nameof(IsBusy));
   }
 
@@ -74,7 +74,7 @@ public abstract partial class PhaseViewModel : ViewModel
   private int _Percentage;
 
   #region Summary
-  public SummaryViewModel Summary
+  public PhaseSummaryViewModel Summary
   {
     get { return _Summary; }
     set
@@ -86,17 +86,17 @@ public abstract partial class PhaseViewModel : ViewModel
       }
     }
   }
-  private SummaryViewModel _Summary = null!;
+  private PhaseSummaryViewModel _Summary = null!;
 
   public void SetSummary(SummaryInfo summary)
   {
-    Summary = new SummaryViewModel();
+    Summary = new PhaseSummaryViewModel();
     if (summary.Summary != null)
       foreach (var info in summary.Summary)
       {
         var infoName = info.Key.ToString();
         infoName = CommonStrings.ResourceManager.GetString(infoName, CultureInfo.CurrentUICulture) ?? infoName.DeCamelCase();
-        Summary.Add(new SummaryValueViewModel { Name = infoName, InfoKind = info.Key, Value = info.Value });
+        Summary.Add(new PhaseSummaryInfoViewModel { Name = infoName, InfoKind = info.Key, Value = info.Value });
       }
     Summary.PropertyChanged += Summary_PropertyChanged;
   }
@@ -105,7 +105,7 @@ public abstract partial class PhaseViewModel : ViewModel
   {
     if (e.PropertyName == nameof(Summary.Filter))
     {
-      var summary = sender as SummaryViewModel;
+      var summary = sender as PhaseSummaryViewModel;
       if (summary != null)
       {
         var filter = summary.Filter;
@@ -162,9 +162,9 @@ public abstract partial class PhaseViewModel : ViewModel
 
   public virtual void FillResults()
   {
-    if (_Namespaces!=null)
+    if (_Namespaces != null)
       FillNamespaces();
-    if (_Types!=null)
+    if (_Types != null)
       FillTypes();
   }
 
@@ -205,10 +205,33 @@ public abstract partial class PhaseViewModel : ViewModel
   }
   private TypeListViewModel _Types = null!;
 
-  //public virtual void GetTypes()
-  //{
-  //  Types = new TypeListViewModel(this, null, "", NameKindSelector, TKS.Any);
-  //}
+  #endregion
+
+  #region Properties
+
+  public void InitProperties()
+  {
+    Properties = new PropListViewModel(this, null, NamespaceTypeSelector.ToString(), TypeNameSelector);
+    Types.FillItemsAsync();
+  }
+
+  public PropListViewModel Properties
+  {
+    get
+    {
+      return _Properties;
+    }
+    set
+    {
+      if (_Properties != value)
+      {
+        _Properties = value;
+        NotifyPropertyChanged(nameof(Properties));
+      }
+    }
+  }
+  private PropListViewModel _Properties = null!;
+
   #endregion
 
   #region SaveResultsCommand
@@ -317,10 +340,10 @@ public abstract partial class PhaseViewModel : ViewModel
   }
   private TypeInfoFilter? _Filter;
 
-  public void SetFilter(SummaryInfoKind? filter)
+  public void SetFilter(TypeInfoKind? filter)
   {
     if (filter != null)
-      Filter = new TypeInfoFilter((SummaryInfoKind)filter, PhaseNum);
+      Filter = new TypeInfoFilter((TypeInfoKind)filter, PhaseNum);
     else
       Filter = null;
     FillResultsAsync();
