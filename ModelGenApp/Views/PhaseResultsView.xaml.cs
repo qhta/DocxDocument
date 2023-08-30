@@ -8,7 +8,7 @@ public partial class PhaseResultsView : UserControl
 
   private void TabControl_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs args)
   {
-    if (DataContext is PhaseViewModel phaseViewModel)
+    if (DataContext is PhaseResultsViewModel phaseViewModel)
     {
       if (args.AddedItems.Count > 0)
       {
@@ -20,6 +20,14 @@ public partial class PhaseResultsView : UserControl
             if (typeListView.DataContext == null)
             {
               phaseViewModel.InitTypes();
+            }
+          }
+          else
+          if (tabItem.Content is PropListView propListView)
+          {
+            if (propListView.DataContext == null)
+            {
+              phaseViewModel.InitProperties();
             }
           }
         }

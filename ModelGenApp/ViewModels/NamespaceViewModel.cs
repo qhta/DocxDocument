@@ -1,7 +1,7 @@
 ﻿namespace ModelGenApp.ViewModels;
 public class NamespaceViewModel : ViewModel<Namespace>
 {
-  public NamespaceViewModel(PhaseViewModel phaseViewModel, Namespace ns, TypeInfoFilter? filter = null) : base(ns)
+  public NamespaceViewModel(PhaseResultsViewModel phaseViewModel, Namespace ns, TypeInfoFilter? filter = null) : base(ns)
   {
     Phase = phaseViewModel;
     Filter = filter;
@@ -16,7 +16,7 @@ public class NamespaceViewModel : ViewModel<Namespace>
     Others = new TypeListViewModel(phaseViewModel, this, "OtherTypes", phaseViewModel.TypeNameSelector, TKS.Other, Filter, AllTypes);
   }
 
-  public PhaseViewModel Phase { get; private set; }
+  public PhaseResultsViewModel Phase { get; private set; }
 
   public string PhaseName => Phase.PhaseName;
 
