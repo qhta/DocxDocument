@@ -5,6 +5,8 @@ public static class WindowsManager
 
   public static void ShowWindow<WindowType>(Object dataContext) where WindowType : Window, new()
   {
+    //if (typeof(WindowType)==typeof(TypeListWindow))
+    //  Debug.WriteLine($"Open {typeof(WindowType)}");
     if (KnownWindows.TryGetValue(dataContext, out var knownWindow))
     {
       knownWindow.Activate();

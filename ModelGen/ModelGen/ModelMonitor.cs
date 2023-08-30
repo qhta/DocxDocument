@@ -14,7 +14,7 @@ public class ProgressInfo
 public class SummaryInfo
 {
   public TimeSpan Time { get; set; }
-  public Dictionary<SummaryInfoKind, object>? Summary {get; set; }
+  public Dictionary<TypeInfoKind, object>? Summary {get; set; }
 }
 
 public abstract class ModelMonitor

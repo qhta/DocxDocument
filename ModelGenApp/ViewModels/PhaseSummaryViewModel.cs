@@ -1,18 +1,18 @@
 ﻿namespace ModelGenApp.ViewModels;
-public class SummaryViewModel : ObservableList<SummaryValueViewModel>
+public class PhaseSummaryViewModel : ObservableList<PhaseSummaryInfoViewModel>
 {
-  public SummaryViewModel()
+  public PhaseSummaryViewModel()
   {
     CollectionChanged += SummaryViewModel_CollectionChanged;
   }
 
   private void SummaryViewModel_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
-    IEnumerable<SummaryValueViewModel> collection;
+    IEnumerable<PhaseSummaryInfoViewModel> collection;
     if (args.NewItems != null)
-      collection = args.NewItems.Cast<SummaryValueViewModel>();
+      collection = args.NewItems.Cast<PhaseSummaryInfoViewModel>();
     else
-      collection = this._items.Cast<SummaryValueViewModel>();
+      collection = this._items.Cast<PhaseSummaryInfoViewModel>();
     foreach (var item in collection)
       item.PropertyChanged += Item_PropertyChanged;
   }
@@ -21,7 +21,7 @@ public class SummaryViewModel : ObservableList<SummaryValueViewModel>
   {
     if (args.PropertyName == "IsChecked")
     {
-      var current = (SummaryValueViewModel?)sender;
+      var current = (PhaseSummaryInfoViewModel?)sender;
       if (current != null)
       {
         var isChecked = current.IsChecked;
@@ -41,7 +41,7 @@ public class SummaryViewModel : ObservableList<SummaryValueViewModel>
     }
   }
 
-  public SummaryInfoKind? Filter
+  public TypeInfoKind? Filter
   {
     get { return _Filter; }
     set
@@ -53,5 +53,5 @@ public class SummaryViewModel : ObservableList<SummaryValueViewModel>
       }
     }
   }
-  private SummaryInfoKind? _Filter;
+  private TypeInfoKind? _Filter;
 }

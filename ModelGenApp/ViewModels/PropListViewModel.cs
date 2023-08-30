@@ -1,11 +1,11 @@
 ﻿namespace ModelGenApp.ViewModels;
 public class PropListViewModel : MemberListViewModel<PropInfoViewModel>, IFilter<PropInfoViewModel>
 {
-  public PropListViewModel(ClassInfoViewModel owner, string name, TNS typeNameSelector): base(owner, name)
+  public PropListViewModel(PhaseViewModel phase, ClassInfoViewModel? owner, string name, TNS typeNameSelector): base(phase, owner, name)
   {
     ShowDisplayOptions = true;
     TypeNameSelector = typeNameSelector; 
-    _Predicate = new Predicate<PropInfoViewModel>(item=> item.Model.IsAcceptedAfter(owner.Phase.PhaseNum));
+    _Predicate = new Predicate<PropInfoViewModel>(item=> item.Model.IsAcceptedAfter(Phase.PhaseNum));
     _ObjectPredicate = new Predicate<object>(item=> (item is PropInfoViewModel vm) && _Predicate.Invoke(vm));
   }
 

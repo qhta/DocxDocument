@@ -1,9 +1,9 @@
 ﻿namespace ModelGenApp.ViewModels;
 public class EnumListViewModel: MemberListViewModel<EnumInfoViewModel>, IFilter<EnumInfoViewModel>
 {
-  public EnumListViewModel(EnumTypeInfoViewModel owner, string name): base(owner, name)
+  public EnumListViewModel(PhaseViewModel phase, EnumTypeInfoViewModel? owner, string name): base(phase, owner, name)
   {
-    _Predicate = new Predicate<EnumInfoViewModel>(item=> item.Model.IsAcceptedAfter(owner.Phase.PhaseNum));
+    _Predicate = new Predicate<EnumInfoViewModel>(item=> item.Model.IsAcceptedAfter(Phase.PhaseNum));
     _ObjectPredicate = new Predicate<object>(item=> (item is EnumInfoViewModel vm) && _Predicate.Invoke(vm));
   }
 

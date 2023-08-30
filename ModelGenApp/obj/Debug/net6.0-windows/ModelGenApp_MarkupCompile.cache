@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 D:\VS\Projects\DocxDocument\ModelGenApp\App.xaml
-18166591370
+221566238946
 
-70112894331
+75-671158495
 222-1931605409
-Views\MainWindow.xaml;Views\ModelConfigView.xaml;Views\ModelConfigWindow.xaml;Views\NamespacesConfigView.xaml;Views\NamespacesListView.xaml;Views\PhaseProgressView.xaml;Views\PhaseResultsView.xaml;Views\PhaseResultsWindow.xaml;Views\PhaseSummaryView.xaml;Views\ProcessMonitorView.xaml;Views\ProcessOptionsView.xaml;Views\PropertiesConfigView.xaml;Views\TypeInfoView.xaml;Views\TypeInfoWindow.xaml;Views\TypeListView.xaml;Views\TypeListWindow.xaml;Views\TypesConfigView.xaml;Views\TypeSummaryView.xaml;
+Views\DummyWindow.xaml;Views\EnumsDisplayOptionsView.xaml;Views\MainWindow.xaml;Views\ModelConfigView.xaml;Views\ModelConfigWindow.xaml;Views\NamespacesConfigView.xaml;Views\NamespacesListView.xaml;Views\PhaseProgressView.xaml;Views\PhaseResultsView.xaml;Views\PhaseResultsWindow.xaml;Views\PhaseSummaryView.xaml;Views\ProcessMonitorView.xaml;Views\ProcessOptionsView.xaml;Views\PropertiesConfigView.xaml;Views\PropListView.xaml;Views\PropsDisplayOptionsView.xaml;Views\TypeInfoView.xaml;Views\TypeInfoWindow.xaml;Views\TypeListView.xaml;Views\TypeListWindow.xaml;Views\TypesConfigView.xaml;Views\TypeSummaryView.xaml;
 
 False
 
