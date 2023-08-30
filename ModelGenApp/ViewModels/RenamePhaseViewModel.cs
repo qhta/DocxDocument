@@ -1,5 +1,5 @@
 ﻿namespace ModelGenApp.ViewModels;
-public class RenamePhaseViewModel : PhaseViewModel
+public class RenamePhaseViewModel : PhaseResultsViewModel
 {
   public RenamePhaseViewModel(string name) : base(PPS.Rename, name)
   {

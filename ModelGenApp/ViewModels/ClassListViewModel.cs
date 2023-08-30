@@ -1,7 +1,7 @@
 ﻿namespace ModelGenApp.ViewModels;
 public class ClassListViewModel: TypeListViewModel
 {
-  public ClassListViewModel(PhaseViewModel phase, NamespaceViewModel nspace, string name, 
+  public ClassListViewModel(PhaseResultsViewModel phase, NamespaceViewModel nspace, string name, 
     TNS typeNameSelector, TKS typeKindSelector, TypeInfoFilter? filter, TypeListViewModel source): 
     base(phase, nspace, name, typeNameSelector, typeKindSelector, filter, source)
   {
@@ -9,7 +9,7 @@ public class ClassListViewModel: TypeListViewModel
 
   public override IList Items { get; } = new ObservableList<ClassInfoViewModel>();
 
-  protected override TypeInfoViewModel CreateItemViewModel(TypeInfo item, PhaseViewModel phase)
+  protected override TypeInfoViewModel CreateItemViewModel(TypeInfo item, PhaseResultsViewModel phase)
   {
     return new ClassInfoViewModel(phase, item, TypeNameSelector);
   }

@@ -1,6 +1,6 @@
 ﻿namespace ModelGenApp.ViewModels;
 
-public class AddDocsPhaseViewModel: PhaseViewModel
+public class AddDocsPhaseViewModel: PhaseResultsViewModel
 {
   public AddDocsPhaseViewModel(string name): base (PPS.AddDocs, name)
   { 

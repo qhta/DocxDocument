@@ -1,5 +1,5 @@
 ﻿namespace ModelGenApp.ViewModels;
-public class ConvertPhaseViewModel : PhaseViewModel
+public class ConvertPhaseViewModel : PhaseResultsViewModel
 {
   public ConvertPhaseViewModel(string name) : base(PPS.ConvertTypes, name)
   {
