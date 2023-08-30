@@ -1,6 +1,6 @@
 ﻿namespace ModelGen;
 
-public enum SummaryInfoKind
+public enum TypeInfoKind
 {
   None,
   CheckedTypes,

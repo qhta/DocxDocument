@@ -1,5 +1,18 @@
 ﻿namespace ModelGenApp.ViewModels;
 
+//public class ShowTypeRoutedCommand: RoutedCommand
+//{
+//  public ShowTypeRoutedCommand(IRelayCommand relayCommand)
+//  {
+//    base.CanExecuteChanged += ShowTypeRoutedCommand_CanExecuteChanged;
+//  }
+
+//  private void ShowTypeRoutedCommand_CanExecuteChanged(object? sender, EventArgs e)
+//  {
+//    throw new NotImplementedException();
+//  }
+//}
+
 /// <summary>
 /// View model to represent <see cref="ModelGen.TypeInfo"/>.
 /// </summary>
@@ -25,7 +38,7 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
 
   private void BusyMonitor_PropertyChanged(object? sender, PropertyChangedEventArgs args)
   {
-    if (args.PropertyName==nameof(BusyMonitor.IsBusy))
+    if (args.PropertyName == nameof(BusyMonitor.IsBusy))
       NotifyPropertyChanged(nameof(IsBusy));
   }
 
@@ -46,7 +59,7 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
   }
 
   [DataGridColumn(
-    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Kind)
+    HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.Kind)
     )]
   public TypeKind TypeKind => Model.TypeKind;
 
@@ -57,8 +70,8 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
   public bool IsTypeKindSelected(TKS tks) => Model.IsTypeKindSelected(tks);
 
   [DataGridColumn(
-    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Acceptance),
-    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.AcceptanceTooltip)
+    HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.Acceptance),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.AcceptanceTooltip)
     )]
   public Acceptance Acceptance
   {
@@ -89,10 +102,10 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
   public string? TargetName => Model.GetFullName(true, TypeNameSelector.Namespace, TypeNameSelector.NsShortcut);
 
   [DataGridColumn(
-    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.TypeName),
-    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.TypeNameTooltip),
+    HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.TypeName),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.TypeNameTooltip),
     DataTemplateResourceKey = "TypeInfoLinkTemplate",
-    SortMemberPath = "Type.Name", 
+    SortMemberPath = "Type.Name",
     ClipboardContentPath = "Type.Name")]
   public TypeInfoViewModel? Type
   {
@@ -113,8 +126,8 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
 
   [DataGridColumn(
     Header = "",
-    HiddenHeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Problem),
-    DataTemplateResourceKey ="ProblemMarkTemplate"
+    HiddenHeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.Problem),
+    DataTemplateResourceKey = "ProblemMarkTemplate"
     )]
   public string? ValidationProblem
   {
@@ -124,7 +137,7 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
       if (errCode != null)
       {
         var errCodeName = errCode?.ToString();
-        if (errCodeName!=null)
+        if (errCodeName != null)
           return CommonStrings.ResourceManager.GetString(errCodeName);
       }
       return null;
@@ -134,8 +147,8 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
   public string? FullName => Model.GetFullName(TypeNameSelector.Target, true, false);
 
   [DataGridColumn(
-    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Description),
-    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.DescriptionTooltip)
+    HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.Description),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.DescriptionTooltip)
     )]
   public string? Description => Model.Description;
 
@@ -223,9 +236,14 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
 
   protected virtual void ShowTypeExecute()
   {
-    this.FillTypeSummaryAsync();
-    this.FillDetailsAsync();
-    WindowsManager.ShowWindow<TypeInfoWindow>(this);
+    // Note: Dispatcher?.BeginInvoke is needed to avoid activating the data grid after opening new window.
+    this.Dispatcher?.BeginInvoke(() =>
+    {
+      this.FillTypeSummaryAsync();
+      this.FillDetailsAsync();
+      WindowsManager.ShowWindow<TypeInfoWindow>(this);
+    });
+
   }
   #endregion
 

@@ -7,6 +7,12 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Views\DummyWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\EnumsDisplayOptionsView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\ModelConfigView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -40,6 +46,12 @@
     <Compile Update="Views\PropertiesConfigView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\PropListView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\PropsDisplayOptionsView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\TypeListView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -54,6 +66,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Views\DummyWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\EnumsDisplayOptionsView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -88,6 +106,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\PropertiesConfigView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\PropListView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\PropsDisplayOptionsView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\TypeInfoView.xaml">

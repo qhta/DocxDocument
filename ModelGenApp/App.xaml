@@ -102,7 +102,7 @@
           <TextBlock Grid.Column="0"
                      HorizontalAlignment="Left"
                      Margin="5,0,5,0"
-                     Text="{Binding Path=FullName}" />
+                     Text="{Binding Path=Name}" />
           <Button Grid.Column="1"
                   Content=">>"
                   Command="{Binding Path=ShowTypeCommand}"
@@ -218,7 +218,7 @@
           <TextBlock.InputBindings>
             <MouseBinding Command="{Binding Path=ShowTypeCommand}"
                           CommandParameter="{Binding}"
-                          MouseAction="LeftClick" />
+                          Gesture="LeftClick" />
           </TextBlock.InputBindings>
         </TextBlock>
       </DataTemplate>

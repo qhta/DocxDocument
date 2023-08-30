@@ -4,7 +4,7 @@ public class EnumTypeInfoViewModel : TypeInfoViewModel
 {
   public EnumTypeInfoViewModel(PhaseViewModel phase, TypeInfo typeInfo, TNS typeNameSelector) : base(phase, typeInfo, typeNameSelector)
   {
-    EnumValues = new EnumListViewModel(this, "EnumValues");
+    EnumValues = new EnumListViewModel(phase, this, "EnumValues");
   }
 
   [DataGridColumn(DataTemplateResourceKey = "CountColumnTemplate",

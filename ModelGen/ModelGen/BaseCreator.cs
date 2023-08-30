@@ -138,10 +138,10 @@ public abstract class BaseCreator
     var summaryInfo = new SummaryInfo
     {
       Time = ts,
-      Summary = new Dictionary<SummaryInfoKind, object>{
-        {SummaryInfoKind.RegisteredTypes, allTypesCount },
-        {SummaryInfoKind.AcceptedTypes, acceptedTypesCount },
-        {SummaryInfoKind.RejectedTypes, rejectedTypesCount },
+      Summary = new Dictionary<TypeInfoKind, object>{
+        {TypeInfoKind.RegisteredTypes, allTypesCount },
+        {TypeInfoKind.AcceptedTypes, acceptedTypesCount },
+        {TypeInfoKind.RejectedTypes, rejectedTypesCount },
         }
     };
 
@@ -192,11 +192,11 @@ public abstract class BaseCreator
     var summaryInfo = new SummaryInfo
     {
       Time = ts,
-      Summary = new Dictionary<SummaryInfoKind, object>{
-        {SummaryInfoKind.TypesWithDescription, typesWithDescriptionCount},
-        {SummaryInfoKind.TypesWithAddedDescription, typesWithAddedDescriptionCount},
-        {SummaryInfoKind.TypesWithoutDescription, typesWithoutDescriptionCount},
-        {SummaryInfoKind.TypesWithMeaninglessDescription, typesWithMeaninglessDescriptionCount},
+      Summary = new Dictionary<TypeInfoKind, object>{
+        {TypeInfoKind.TypesWithDescription, typesWithDescriptionCount},
+        {TypeInfoKind.TypesWithAddedDescription, typesWithAddedDescriptionCount},
+        {TypeInfoKind.TypesWithoutDescription, typesWithoutDescriptionCount},
+        {TypeInfoKind.TypesWithMeaninglessDescription, typesWithMeaninglessDescriptionCount},
         }
     };
 
@@ -243,10 +243,10 @@ public abstract class BaseCreator
     ModelMonitor?.ShowPhaseEnd(PPS.Rename, new SummaryInfo
     {
       Time = ts,
-      Summary = new Dictionary<SummaryInfoKind, object>{
-        {SummaryInfoKind.AllTypes, TypeManager.AllTypes.Count() },
-        {SummaryInfoKind.RenamedTypes, renamedTypesCount },
-        {SummaryInfoKind.ProblematicTypes, ModelManager.DuplicateTypeNamesCount},
+      Summary = new Dictionary<TypeInfoKind, object>{
+        {TypeInfoKind.AllTypes, TypeManager.AllTypes.Count() },
+        {TypeInfoKind.RenamedTypes, renamedTypesCount },
+        {TypeInfoKind.ProblematicTypes, ModelManager.DuplicateTypeNamesCount},
         }
     });
     return ts;
@@ -277,10 +277,10 @@ public abstract class BaseCreator
     ModelMonitor?.ShowPhaseEnd(PPS.ConvertTypes, new SummaryInfo
     {
       Time = ts,
-      Summary = new Dictionary<SummaryInfoKind, object>{
-        {SummaryInfoKind.AllTypes, TypeManager.AllTypes.Count() },
-        {SummaryInfoKind.ConvertedTypes, renamedTypesCount },
-        {SummaryInfoKind.ProblematicTypes, TypeManager.AllTypes.Count(item=>item.HasProblems(PhaseDone))},
+      Summary = new Dictionary<TypeInfoKind, object>{
+        {TypeInfoKind.AllTypes, TypeManager.AllTypes.Count() },
+        {TypeInfoKind.ConvertedTypes, renamedTypesCount },
+        {TypeInfoKind.ProblematicTypes, TypeManager.AllTypes.Count(item=>item.HasProblems(PhaseDone))},
         }
     });
     return ts;

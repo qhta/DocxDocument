@@ -21,7 +21,7 @@ public class ClassInfoViewModel : TypeInfoViewModel
     {
       if (_Properties == null)
       {
-        _Properties = new PropListViewModel(this, "Properties", TypeNameSelector);
+        _Properties = new PropListViewModel(Phase, this, "Properties", TypeNameSelector);
         FillPropertiesAsync();
       }
       return _Properties;
