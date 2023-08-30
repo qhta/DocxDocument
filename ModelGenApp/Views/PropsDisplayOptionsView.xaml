@@ -13,7 +13,7 @@
                   Converter={StaticResource BoolToVisibilityConverter}}">
       <Label Margin="2,0"
              FontWeight="Bold"
-             Content="{x:Static local:CommonStrings.DisplayOptions_}" />
+             Content="{x:Static local:CommonStrings.Properties}" />
       <CheckBox Margin="2,0"
                 VerticalAlignment="Center"
                 IsChecked="{Binding Path=Members.ShowAcceptedOnly}"
