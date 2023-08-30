@@ -34,7 +34,7 @@ public partial class TypeInfoView : UserControl
       if (args.PropertyName == "Acceptance")
       {
         BindingOperations.SetBinding(args.Column, DataGridColumn.VisibilityProperty,
-          new Binding("Properties.ShowAcceptedOnly") 
+          new Binding("Members.ShowAcceptedOnly") 
           { Source = DataContext, Converter = (IValueConverter)dataGrid.FindResource("BoolToVisibilityConverter"), ConverterParameter="Collapsed,Visible" });
       }
   }

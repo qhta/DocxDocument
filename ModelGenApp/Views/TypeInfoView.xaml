@@ -31,12 +31,12 @@
         <RowDefinition Height="Auto" />
         <RowDefinition Height="*" />
       </Grid.RowDefinitions>
-      <ContentControl>
+      <ContentControl Content="{Binding}">
         <ContentControl.Resources>
           <DataTemplate DataType="{x:Type vm:ClassInfoViewModel}">
             <views:PropsDisplayOptionsView />
           </DataTemplate>
-          <DataTemplate DataType="{x:Type vm:EnumInfoViewModel}">
+          <DataTemplate DataType="{x:Type vm:EnumTypeInfoViewModel}">
             <views:EnumsDisplayOptionsView />
           </DataTemplate>
         </ContentControl.Resources>
