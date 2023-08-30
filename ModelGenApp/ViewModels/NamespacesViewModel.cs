@@ -2,7 +2,7 @@
 
 public class NamespacesViewModel : ViewModel
 {
-  public NamespacesViewModel(PhaseViewModel phase, NTS namespacesTypeSelector, TypeInfoFilter? filter)
+  public NamespacesViewModel(PhaseResultsViewModel phase, NTS namespacesTypeSelector, TypeInfoFilter? filter)
   {
     Phase = phase;
     NamespacesTypeSelector = namespacesTypeSelector;
@@ -13,7 +13,7 @@ public class NamespacesViewModel : ViewModel
 
   public ObservableList<NamespaceViewModel> Items {get; private set;}
 
-  public PhaseViewModel Phase { get; private set; }
+  public PhaseResultsViewModel Phase { get; private set; }
 
   public NTS NamespacesTypeSelector { get; private set; }
 

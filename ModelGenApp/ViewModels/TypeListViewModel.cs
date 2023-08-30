@@ -1,7 +1,7 @@
 ﻿namespace ModelGenApp.ViewModels;
 public class TypeListViewModel : ViewModel
 {
-  public TypeListViewModel(PhaseViewModel phase, NamespaceViewModel? nspace, string name,
+  public TypeListViewModel(PhaseResultsViewModel phase, NamespaceViewModel? nspace, string name,
     TNS typeNameSelector, TKS typeKindSelector, TypeInfoFilter? filter, TypeListViewModel? source = null)
   {
     Namespace = nspace;
@@ -55,7 +55,7 @@ public class TypeListViewModel : ViewModel
 
   public TKS TypeKindSelector { get; private set; }
 
-  public PhaseViewModel Phase { get; private set; }
+  public PhaseResultsViewModel Phase { get; private set; }
 
   public int Count => Items.Count;
 
@@ -105,9 +105,6 @@ public class TypeListViewModel : ViewModel
   }
   private bool? _canShowErrorDetails;
 
-  #region ShowDetailsCommand
-
-  public Command ShowDetailsCommand { get; private set; }
 
   public async void FillItemsAsync()
   {
@@ -194,11 +191,14 @@ public class TypeListViewModel : ViewModel
       AddRange(newTypes);
   }
 
-  protected virtual TypeInfoViewModel CreateItemViewModel(TypeInfo item, PhaseViewModel phase)
+  protected virtual TypeInfoViewModel CreateItemViewModel(TypeInfo item, PhaseResultsViewModel phase)
   {
     return TypeInfoViewModel.Create(phase, item, TypeNameSelector);
   }
 
+  #region ShowDetailsCommand
+
+  public Command ShowDetailsCommand { get; private set; }
 
   protected virtual bool ShowDetailsCanExecute()
   {

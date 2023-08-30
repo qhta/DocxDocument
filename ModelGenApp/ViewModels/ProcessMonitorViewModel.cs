@@ -5,7 +5,7 @@ public class ProcessMonitorViewModel : ViewModel
   public ProcessMonitorViewModel()
   {
     const int numPhases = 6;
-    PhaseMonitors = new PhaseViewModel[numPhases];
+    PhaseMonitors = new PhaseResultsViewModel[numPhases];
     for (int i = 0; i < numPhases; i++)
     {
       PPS phase = (PPS)Enum.ToObject(typeof(PPS),i+1);
@@ -68,7 +68,7 @@ public string? StatusLine
 }
 private string? _StatusLine;
 
-public PhaseViewModel[] PhaseMonitors
+public PhaseResultsViewModel[] PhaseMonitors
 {
   get { return _PhaseMonitors; }
   set
@@ -80,7 +80,7 @@ public PhaseViewModel[] PhaseMonitors
     }
   }
 }
-private PhaseViewModel[] _PhaseMonitors = null!;
+private PhaseResultsViewModel[] _PhaseMonitors = null!;
 
 public int Percentage
 {

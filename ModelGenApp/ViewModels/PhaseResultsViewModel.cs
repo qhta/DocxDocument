@@ -3,7 +3,7 @@
 /// <summary>
 /// Observable monitor for a single process phase
 /// </summary>
-public abstract partial class PhaseViewModel : ViewModel
+public abstract partial class PhaseResultsViewModel : ViewModel
 {
 
   /// <summary>
@@ -11,7 +11,7 @@ public abstract partial class PhaseViewModel : ViewModel
   /// </summary>
   /// <param name="phase"></param>
   /// <param name="name"></param>
-  public PhaseViewModel(PPS phase, string name)
+  public PhaseResultsViewModel(PPS phase, string name)
   {
     PhaseNum = phase;
     PhaseName = name;
@@ -212,7 +212,8 @@ public abstract partial class PhaseViewModel : ViewModel
   public void InitProperties()
   {
     Properties = new PropListViewModel(this, null, NamespaceTypeSelector.ToString(), TypeNameSelector);
-    Types.FillItemsAsync();
+    //Properties.ShowDeclaringType = true;
+    Properties.FillItemsAsync();
   }
 
   public PropListViewModel Properties

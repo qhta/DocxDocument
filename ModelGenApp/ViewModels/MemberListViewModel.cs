@@ -1,7 +1,7 @@
 ﻿namespace ModelGenApp.ViewModels;
 public abstract class MemberListViewModel<T> : ObservableObject, IEnumerable<T> where T : ViewModel, IAcceptable
 {
-  public MemberListViewModel(PhaseViewModel phase, TypeInfoViewModel? ownerType, string name)
+  public MemberListViewModel(PhaseResultsViewModel phase, TypeInfoViewModel? ownerType, string name)
   {
     Phase = phase;
     OwnerType = ownerType;
@@ -27,7 +27,7 @@ public abstract class MemberListViewModel<T> : ObservableObject, IEnumerable<T> 
     NotifyPropertyChanged(nameof(VisibleItems));
   }
 
-  public PhaseViewModel Phase { get; private set; }
+  public PhaseResultsViewModel Phase { get; private set; }
 
   public TypeInfoViewModel? OwnerType { get; private set; }
 

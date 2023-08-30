@@ -1,13 +1,13 @@
 ﻿namespace ModelGenApp.ViewModels;
 public class EnumInfoViewModel : ViewModel<EnumInfo>, IAcceptable
 {
-  public EnumInfoViewModel(PhaseViewModel phase, EnumInfo enumInfo, TNS typeNameSelector) : base(enumInfo)
+  public EnumInfoViewModel(PhaseResultsViewModel phase, EnumInfo enumInfo, TNS typeNameSelector) : base(enumInfo)
   {
     Phase = phase;
     NameTypeSelector = typeNameSelector;
   }
 
-  public PhaseViewModel Phase {get; private set; }
+  public PhaseResultsViewModel Phase {get; private set; }
 
   public TNS NameTypeSelector {get; private set; }
 
