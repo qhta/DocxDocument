@@ -5,6 +5,7 @@ public class EnumListViewModel: MemberListViewModel<EnumInfoViewModel>, IFilter<
   {
     _Predicate = new Predicate<EnumInfoViewModel>(item=> item.Model.IsAcceptedAfter(Phase.PhaseNum));
     _ObjectPredicate = new Predicate<object>(item=> (item is EnumInfoViewModel vm) && _Predicate.Invoke(vm));
+    ShowDisplayOptions = true;
   }
 
   protected override void ApplyAcceptedOnlyFilter(bool value)
