@@ -32,6 +32,8 @@ public class PropListViewModel : MemberListViewModel<PropInfoViewModel>, IFilter
 
   public PropListViewModel Properties => this;
 
+  public PropListViewModel Members => this;
+
   protected override void ApplyAcceptedOnlyFilter(bool value)
   {
     if (value)
