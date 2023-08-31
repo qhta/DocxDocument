@@ -21,16 +21,7 @@
         <RowDefinition Height="Auto" />
         <RowDefinition Height="*" />
       </Grid.RowDefinitions>
-      <StackPanel Orientation="Horizontal">
-        <Label Margin="2,0"
-               FontWeight="Bold"
-               Content="{x:Static local:CommonStrings.DisplayOptions_}" />
-        <CheckBox Margin="2,0"
-                  VerticalAlignment="Center"
-                  IsChecked="{Binding Path=ShowFullTypeName}"
-                  Content="{x:Static local:CommonStrings.ShowFullTypeName}"
-                  ToolTip="{x:Static local:CommonStrings.TypeFullNameTooltip}" />
-      </StackPanel>
+      <views:TypesDisplayOptionsView />
       <DataGrid x:Name="MainDataGrid"
                 Grid.Row="1"
                 AutoGenerateColumns="true"
