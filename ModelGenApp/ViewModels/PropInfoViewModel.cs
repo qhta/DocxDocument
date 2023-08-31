@@ -68,7 +68,7 @@ public class PropInfoViewModel : ViewModel<PropInfo>, IAcceptable
     {
       if (_DeclaringType == null)
       {
-        if (Owner?.Properties?.ShowDeclaringType == true && Model.DeclaringType != null)
+        if (Model.DeclaringType != null)
           _DeclaringType = TypeInfoViewModel.Create(Phase, Model.DeclaringType, NameKindSelector);
       }
       return _DeclaringType;
