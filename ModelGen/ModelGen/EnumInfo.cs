@@ -3,7 +3,7 @@
 namespace ModelGen;
 
 [XmlRoot("Enum")]
-public class EnumInfo : ModelElement
+public class EnumInfo : MemberElement
 {
   public int? Value { get; set; }
 

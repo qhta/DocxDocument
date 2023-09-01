@@ -1,7 +1,7 @@
 ﻿namespace ModelGenApp.ViewModels;
 public abstract class MemberListViewModel<T> : ObservableObject, IEnumerable<T> where T : ViewModel, IAcceptable
 {
-  public MemberListViewModel(PhaseResultsViewModel phase, TypeInfoViewModel? ownerType, string name)
+  public MemberListViewModel(PhaseResultsViewModel phase, TypeInfoViewModel? ownerType, string name, MemberInfoViewModelFilter? filter = null)
   {
     Phase = phase;
     OwnerType = ownerType;
@@ -9,7 +9,8 @@ public abstract class MemberListViewModel<T> : ObservableObject, IEnumerable<T> 
     Items = new ObservableList<T>();
     Items.CollectionChanged += MemberListViewModel_CollectionChanged;
     ShowDetailsCommand = new RelayCommand(ShowDetailsExecute, ShowDetailsCanExecute) { Name = "ShowDetailsCommand" };
-    VisibleItems = new FilteredCollection<T>(Items);
+    VisibleItems = new FilteredCollection<T>(Items, filter);
+    VisibleItems.CollectionChanged += VisibleItems_CollectionChanged;
     ApplyAcceptedOnlyFilter(ShowAcceptedOnly);
 
   }
@@ -25,6 +26,12 @@ public abstract class MemberListViewModel<T> : ObservableObject, IEnumerable<T> 
   private void MemberListViewModel_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     NotifyPropertyChanged(nameof(VisibleItems));
+    NotifyPropertyChanged(nameof(Count));
+  }
+
+  private void VisibleItems_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
+  {
+    NotifyPropertyChanged(nameof(Count));
   }
 
   public PhaseResultsViewModel Phase { get; private set; }
@@ -108,6 +115,29 @@ public abstract class MemberListViewModel<T> : ObservableObject, IEnumerable<T> 
       WindowsManager.ShowWindow<TypeInfoWindow>(OwnerType);
   }
 
+  public MemberInfoViewModelFilter? Filter
+  {
+    get { return _Filter; }
+    set
+    {
+      if (_Filter != value)
+      {
+        _Filter = value;
+        NotifyPropertyChanged(nameof(Filter));
+        ApplyFilter();
+      }
+    }
+  }
+  private MemberInfoViewModelFilter? _Filter;
+
+  public void ApplyFilter()
+  {
+    if (VisibleItems != null)
+    {
+      VisibleItems.Filter = Filter;
+    }
+  }
+
   public void Add(T item)
   {
     ((ICollection<T>)Items).Add(item);
@@ -133,7 +163,7 @@ public abstract class MemberListViewModel<T> : ObservableObject, IEnumerable<T> 
     return ((ICollection<T>)Items).Remove(item);
   }
 
-  public int Count => ((ICollection<T>)Items).Count;
+  public int Count => VisibleItems.Count;
 
   public bool IsReadOnly => ((ICollection<T>)Items).IsReadOnly;
 
