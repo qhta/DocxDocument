@@ -10,12 +10,12 @@
         "dependencies": {
           "ModelGen": "1.0.0",
           "Qhta.HtmlUtils": "2.1.0",
-          "Qhta.MVVM": "3.5.0",
+          "Qhta.MVVM": "3.6.1",
           "Qhta.ObservableObjects": "2.7.0",
           "Qhta.TextUtils": "3.1.1",
           "Qhta.TypeUtils": "1.3.10.1",
           "Qhta.WPF.Converters": "1.3.1",
-          "Qhta.WPF.Utils": "3.1.0"
+          "Qhta.WPF.Utils": "3.2.0"
         },
         "runtime": {
           "ModelGenApp.dll": {}
@@ -108,14 +108,14 @@
           }
         }
       },
-      "Namotion.Reflection/2.1.2": {
+      "Namotion.Reflection/3.0.0": {
         "dependencies": {
           "Microsoft.CSharp": "4.3.0"
         },
         "runtime": {
           "lib/netstandard2.0/Namotion.Reflection.dll": {
-            "assemblyVersion": "2.1.2.0",
-            "fileVersion": "2.1.2.0"
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.0.0"
           }
         }
       },
@@ -164,15 +164,12 @@
           }
         }
       },
-      "Qhta.MVVM/3.5.0": {
+      "Qhta.MVVM/3.6.1": {
         "dependencies": {
           "Qhta.ObservableObjects": "2.7.0"
         },
         "runtime": {
-          "lib/netstandard2.0/Qhta.MVVM.dll": {
-            "assemblyVersion": "3.5.0.0",
-            "fileVersion": "3.5.0.0"
-          }
+          "Qhta.MVVM.dll": {}
         }
       },
       "Qhta.ObservableObjects/2.7.0": {
@@ -1008,7 +1005,7 @@
           "DocumentModel.Attributes": "1.0.0",
           "ModelDocumentation": "1.0.0",
           "ModelGenDataConfig": "1.0.0",
-          "Namotion.Reflection": "2.1.2",
+          "Namotion.Reflection": "3.0.0",
           "Qhta.Collections": "4.0.0",
           "Qhta.HtmlUtils": "2.1.0",
           "Qhta.TestHelper": "3.0.0",
@@ -1030,10 +1027,10 @@
           "ModelGenDataConfig.dll": {}
         }
       },
-      "Qhta.WPF.Utils/3.1.0": {
+      "Qhta.WPF.Utils/3.2.0": {
         "dependencies": {
           "Qhta.HtmlUtils": "2.1.0",
-          "Qhta.MVVM": "3.5.0",
+          "Qhta.MVVM": "3.6.1",
           "Qhta.ObservableObjects": "2.7.0",
           "Qhta.OrdNumbers": "2.3.0",
           "Qhta.TextUtils": "3.1.1",
@@ -1114,12 +1111,12 @@
       "path": "microsoft.win32.systemevents/7.0.0",
       "hashPath": "microsoft.win32.systemevents.7.0.0.nupkg.sha512"
     },
-    "Namotion.Reflection/2.1.2": {
+    "Namotion.Reflection/3.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-7tSHAzX8GWKy0qrW6OgQWD7kAZiqzhq+m1503qczuwuK6ZYhOGCQUxw+F3F4KkRM70aB6RMslsRVSCFeouIehw==",
-      "path": "namotion.reflection/2.1.2",
-      "hashPath": "namotion.reflection.2.1.2.nupkg.sha512"
+      "sha512": "sha512-LhonaYvJJtT1/biog/Is9NVlwHpjwzuUG6e+xR2I6kzy8Kg4mXC86xnZ/MOOgaZaUpoTPNRm7NWLCs4J4KgU1A==",
+      "path": "namotion.reflection/3.0.0",
+      "hashPath": "namotion.reflection.3.0.0.nupkg.sha512"
     },
     "Newtonsoft.Json/13.0.3": {
       "type": "package",
@@ -1149,12 +1146,10 @@
       "path": "qhta.htmlutils/2.1.0",
       "hashPath": "qhta.htmlutils.2.1.0.nupkg.sha512"
     },
-    "Qhta.MVVM/3.5.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-b8yV/bI/Mkid7Pd7OeJ6FcytuGZ6r/JLi7JRvU255QZ2vsHaXDbyQRxDXhEsfJN1Is7YMF9c2UafNzZGx4QgZg==",
-      "path": "qhta.mvvm/3.5.0",
-      "hashPath": "qhta.mvvm.3.5.0.nupkg.sha512"
+    "Qhta.MVVM/3.6.1": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "Qhta.ObservableObjects/2.7.0": {
       "type": "package",
@@ -1762,7 +1757,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Qhta.WPF.Utils/3.1.0": {
+    "Qhta.WPF.Utils/3.2.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

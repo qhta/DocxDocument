@@ -2,14 +2,13 @@
 public class TypeListViewModel<T> : ViewModel where T : TypeInfoViewModel
 {
   public TypeListViewModel(PhaseResultsViewModel phase, NamespaceViewModel? nspace, string name,
-    TNS typeNameSelector, TKS typeKindSelector, TypeInfoViewModelFilter<T>? filter, TypeListViewModel<TypeInfoViewModel>? source = null)
+    TNS typeNameSelector, TKS typeKindSelector, TypeInfoViewModelFilter? filter, TypeListViewModel<TypeInfoViewModel>? source)
   {
     Namespace = nspace;
     Name = name;
-    if (Items is INotifyCollectionChanged observableCollection)
-      observableCollection.CollectionChanged += Items_CollectionChanged;
-    VisibleItems = new FilteredCollection<T>(Items);
-    VisibleItems.Filter = filter;
+    Items.CollectionChanged += Items_CollectionChanged;
+    VisibleItems = new FilteredCollection<T>(Items, filter);
+    VisibleItems.CollectionChanged += VisibleItems_CollectionChanged;
     TypeNameSelector = typeNameSelector;
     TypeKindSelector = typeKindSelector;
     Phase = phase;
@@ -27,6 +26,40 @@ public class TypeListViewModel<T> : ViewModel where T : TypeInfoViewModel
       NotifyPropertyChanged(nameof(IsBusy));
   }
 
+    public TypeInfoViewModelFilter? Filter
+  {
+    get { return _Filter; }
+    set
+    {
+      if (_Filter != value)
+      {
+        _Filter = value;
+        NotifyPropertyChanged(nameof(Filter));
+        ApplyFilter();
+      }
+    }
+  }
+  private TypeInfoViewModelFilter? _Filter;
+
+  public void ApplyFilter()
+  {
+    if (VisibleItems!=null)
+    {
+      //var filter = Filter as IFilter<T>;
+      VisibleItems.Filter = Filter;
+      //VisibleItems.NotifyCollectionChanged(VisibleItems, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset));
+      //NotifyPropertyChanged(nameof(VisibleItems));
+      //NotifyPropertyChanged(nameof(Count));
+    }
+  }
+
+
+  private void VisibleItems_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs e)
+  {
+    NotifyPropertyChanged(nameof(Count));
+    ShowDetailsCommand?.NotifyCanExecuteChanged();
+  }
+
   private void Items_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs e)
   {
     NotifyPropertyChanged(nameof(Count));
@@ -35,7 +68,7 @@ public class TypeListViewModel<T> : ViewModel where T : TypeInfoViewModel
 
   protected virtual void AddRange(IEnumerable<TypeInfoViewModel> list)
   {
-    (Items as ObservableList<TypeInfoViewModel>)?.AddRange(list);
+    (Items).AddRange(list.Cast<T>());
   }
   public NamespaceViewModel? Namespace { get; private set; }
 
@@ -58,7 +91,7 @@ public class TypeListViewModel<T> : ViewModel where T : TypeInfoViewModel
 
   public PhaseResultsViewModel Phase { get; private set; }
 
-  public int Count => Items.Count;
+  public int Count => VisibleItems.Count;
 
   public virtual ObservableList<T> Items { get; } = new ObservableList<T>();
 
@@ -91,7 +124,7 @@ public class TypeListViewModel<T> : ViewModel where T : TypeInfoViewModel
   {
     if (value)
     {
-      VisibleItems.Filter = new TypeInfoViewModelFilter<T>(TypeInfoKind.AcceptedTypes, Phase.PhaseNum);
+      VisibleItems.Filter = new TypeInfoViewModelFilter(TypeInfoKind.AcceptedTypes, Phase.PhaseNum);
     }
     else
       VisibleItems.Filter = null;

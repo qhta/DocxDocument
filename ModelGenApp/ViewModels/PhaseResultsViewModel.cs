@@ -155,6 +155,18 @@ public abstract partial class PhaseResultsViewModel : ViewModel
     Types = new TypeListViewModel(this, null, NamespaceTypeSelector.ToString(), TypeNameSelector, TKS.Any, Filter);
     Types.FillItemsAsync();
   }
+
+    public async void FillPropertiesAsync()
+  {
+    await Task.Run(() => FillProperties());
+  }
+
+  public virtual void FillProperties()
+  {
+    Properties = new PropListViewModel(this, null, NamespaceTypeSelector.ToString(), TypeNameSelector);
+    Properties.FillItemsAsync();
+  }
+
   public async void FillResultsAsync()
   {
     await Task.Run(() => FillResults());
@@ -166,6 +178,8 @@ public abstract partial class PhaseResultsViewModel : ViewModel
       FillNamespaces();
     if (_Types != null)
       FillTypes();
+    if (_Properties != null)
+      FillProperties();
   }
 
   public async void RefreshResultsAsync()
@@ -177,6 +191,7 @@ public abstract partial class PhaseResultsViewModel : ViewModel
   {
     Namespaces?.RefreshItems();
     Types?.RefreshItems();
+    Properties?.RefreshItems();
   }
   #endregion
 
@@ -212,7 +227,6 @@ public abstract partial class PhaseResultsViewModel : ViewModel
   public void InitProperties()
   {
     Properties = new PropListViewModel(this, null, NamespaceTypeSelector.ToString(), TypeNameSelector);
-    //Properties.ShowDeclaringType = true;
     Properties.FillItemsAsync();
   }
 
@@ -347,8 +361,17 @@ public abstract partial class PhaseResultsViewModel : ViewModel
       Filter = new TypeInfoViewModelFilter((TypeInfoKind)filter, PhaseNum);
     else
       Filter = null;
-    FillResultsAsync();
+    ApplyFilter();
   }
+
+  public void ApplyFilter()
+  {
+    if (_Namespaces != null)
+      _Namespaces.Filter = Filter;
+    if (_Types != null)
+      FillTypes();
+    if (_Properties != null)
+      FillProperties();  }
   #endregion
 
   public bool IsTargetNameVisible { get; protected set; }

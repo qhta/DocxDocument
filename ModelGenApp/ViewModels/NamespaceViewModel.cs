@@ -3,16 +3,18 @@ public class NamespaceViewModel : ViewModel<Namespace>
 {
   public NamespaceViewModel(PhaseResultsViewModel phaseViewModel, Namespace ns, TypeInfoViewModelFilter? filter = null) : base(ns)
   {
+    if (filter!=null)
+      Debug.Assert(true);
     Phase = phaseViewModel;
     Filter = filter;
     Name = ns.OriginalName;
     if (phaseViewModel.PhaseNum == PPS.Rename)
       TargetName = ns.TargetName;
     AllTypes = new TypeListViewModel(phaseViewModel, this, "AllTypes", phaseViewModel.TypeNameSelector, TKS.Any, Filter);
-    Classes = new ClassListViewModel(phaseViewModel, this, "ClassTypes", phaseViewModel.TypeNameSelector, TKS.Class, AllTypes);
-    Enums = new EnumTypeListViewModel(phaseViewModel, this, "EnumTypes", phaseViewModel.TypeNameSelector, TKS.Enum, AllTypes);
-    Interfaces = new ClassListViewModel(phaseViewModel, this, "InterfaceTypes", phaseViewModel.TypeNameSelector, TKS.Interface, AllTypes);
-    Structs = new ClassListViewModel(phaseViewModel, this, "StructTypes", phaseViewModel.TypeNameSelector, TKS.Struct, AllTypes);
+    Classes = new ClassListViewModel(phaseViewModel, this, "ClassTypes", phaseViewModel.TypeNameSelector, TKS.Class, Filter, AllTypes);
+    Enums = new EnumTypeListViewModel(phaseViewModel, this, "EnumTypes", phaseViewModel.TypeNameSelector, TKS.Enum, Filter, AllTypes);
+    Interfaces = new ClassListViewModel(phaseViewModel, this, "InterfaceTypes", phaseViewModel.TypeNameSelector, TKS.Interface, Filter, AllTypes);
+    Structs = new ClassListViewModel(phaseViewModel, this, "StructTypes", phaseViewModel.TypeNameSelector, TKS.Struct, Filter, AllTypes);
     Others = new TypeListViewModel(phaseViewModel, this, "OtherTypes", phaseViewModel.TypeNameSelector, TKS.Other, Filter, AllTypes);
   }
 
@@ -20,7 +22,30 @@ public class NamespaceViewModel : ViewModel<Namespace>
 
   public string PhaseName => Phase.PhaseName;
 
-  public TypeInfoViewModelFilter? Filter { get; private set; }
+    public TypeInfoViewModelFilter? Filter
+  {
+    get { return _Filter; }
+    set
+    {
+      if (_Filter != value)
+      {
+        _Filter = value;
+        NotifyPropertyChanged(nameof(Filter));
+        ApplyFilter();
+      }
+    }
+  }
+  private TypeInfoViewModelFilter? _Filter;
+
+  public void ApplyFilter()
+  {
+    AllTypes.Filter = Filter;
+    Classes.Filter = Filter;
+    Enums.Filter = Filter;
+    Interfaces.Filter = Filter;
+    Structs.Filter = Filter;
+    Others.Filter = Filter;
+  }
 
   //[DataGridColumn(
   //  HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Original_namespace),
