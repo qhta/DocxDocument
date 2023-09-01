@@ -1,13 +1,11 @@
 ﻿namespace ModelGenApp.ViewModels;
-public class ClassListViewModel: TypeListViewModel
+public class ClassListViewModel: TypeListViewModel<ClassInfoViewModel>
 {
   public ClassListViewModel(PhaseResultsViewModel phase, NamespaceViewModel nspace, string name, 
-    TNS typeNameSelector, TKS typeKindSelector, TypeInfoFilter? filter, TypeListViewModel source): 
-    base(phase, nspace, name, typeNameSelector, typeKindSelector, filter, source)
+    TNS typeNameSelector, TKS typeKindSelector, TypeListViewModel<TypeInfoViewModel> source): 
+    base(phase, nspace, name, typeNameSelector, typeKindSelector, null, source)
   {
   }
-
-  public override IList Items { get; } = new ObservableList<ClassInfoViewModel>();
 
   protected override TypeInfoViewModel CreateItemViewModel(TypeInfo item, PhaseResultsViewModel phase)
   {

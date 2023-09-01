@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModelGenDataConfig", "..\..
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModelDocumentation", "..\..\ModelDocumentation\ModelDocumentation.csproj", "{7BC8B6C5-432B-4C01-A2B8-578D8BE9E405}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Qhta.WPF.Utils", "..\..\..\MyLib\Qhta.WPF.Utils\Qhta.WPF.Utils.csproj", "{C0204490-5CCC-488C-BF89-EB5769FDEB39}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{7BC8B6C5-432B-4C01-A2B8-578D8BE9E405}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7BC8B6C5-432B-4C01-A2B8-578D8BE9E405}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7BC8B6C5-432B-4C01-A2B8-578D8BE9E405}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0204490-5CCC-488C-BF89-EB5769FDEB39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0204490-5CCC-488C-BF89-EB5769FDEB39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0204490-5CCC-488C-BF89-EB5769FDEB39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0204490-5CCC-488C-BF89-EB5769FDEB39}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,13 +1,11 @@
 ﻿namespace ModelGenApp.ViewModels;
-public class EnumTypeListViewModel: TypeListViewModel
+public class EnumTypeListViewModel: TypeListViewModel<EnumTypeInfoViewModel>
 {
   public EnumTypeListViewModel(PhaseResultsViewModel phase, NamespaceViewModel nspace, string name, 
-    TNS typeNameSelector, TKS typeKindSelector, TypeInfoFilter? filter, TypeListViewModel source): 
-    base(phase, nspace, name, typeNameSelector, typeKindSelector, filter, source)
+    TNS typeNameSelector, TKS typeKindSelector, TypeListViewModel<TypeInfoViewModel> source): 
+    base(phase, nspace, name, typeNameSelector, typeKindSelector, null, source)
   {
   }
-
-  public override IList Items { get; } = new ObservableList<EnumTypeInfoViewModel>();
 
   protected override TypeInfoViewModel CreateItemViewModel(TypeInfo item, PhaseResultsViewModel phase)
   {
