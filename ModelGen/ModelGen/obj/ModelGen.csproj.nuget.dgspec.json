@@ -353,7 +353,7 @@
             },
             "Namotion.Reflection": {
               "target": "Package",
-              "version": "[2.1.2, )"
+              "version": "[3.0.0, )"
             },
             "Qhta.Collections": {
               "target": "Package",

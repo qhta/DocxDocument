@@ -127,7 +127,7 @@
           }
         }
       },
-      "Namotion.Reflection/2.1.2": {
+      "Namotion.Reflection/3.0.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.CSharp": "4.3.0"
@@ -204,20 +204,17 @@
           "lib/netstandard2.0/Qhta.HtmlUtils.dll": {}
         }
       },
-      "Qhta.MVVM/3.5.0": {
-        "type": "package",
+      "Qhta.MVVM/3.6.1": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Qhta.ObservableObjects": "2.7.0"
         },
         "compile": {
-          "lib/netstandard2.0/Qhta.MVVM.dll": {
-            "related": ".xml"
-          }
+          "bin/placeholder/Qhta.MVVM.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/Qhta.MVVM.dll": {
-            "related": ".xml"
-          }
+          "bin/placeholder/Qhta.MVVM.dll": {}
         }
       },
       "Qhta.ObservableObjects/2.7.0": {
@@ -1730,7 +1727,7 @@
           "DocumentModel.Attributes": "1.0.0",
           "ModelDocumentation": "1.0.0",
           "ModelGenDataConfig": "1.0.0",
-          "Namotion.Reflection": "2.1.2",
+          "Namotion.Reflection": "3.0.0",
           "Qhta.Collections": "4.0.0",
           "Qhta.HtmlUtils": "2.1.0",
           "Qhta.TestHelper": "3.0.0",
@@ -1765,7 +1762,7 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Qhta.HtmlUtils": "2.1.0",
-          "Qhta.MVVM": "3.5.0",
+          "Qhta.MVVM": "3.6.1",
           "Qhta.ObservableObjects": "2.7.0",
           "Qhta.OrdNumbers": "2.3.0",
           "Qhta.TextUtils": "3.1.1",
@@ -2007,22 +2004,18 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Namotion.Reflection/2.1.2": {
-      "sha512": "7tSHAzX8GWKy0qrW6OgQWD7kAZiqzhq+m1503qczuwuK6ZYhOGCQUxw+F3F4KkRM70aB6RMslsRVSCFeouIehw==",
+    "Namotion.Reflection/3.0.0": {
+      "sha512": "LhonaYvJJtT1/biog/Is9NVlwHpjwzuUG6e+xR2I6kzy8Kg4mXC86xnZ/MOOgaZaUpoTPNRm7NWLCs4J4KgU1A==",
       "type": "package",
-      "path": "namotion.reflection/2.1.2",
+      "path": "namotion.reflection/3.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "lib/net40/Namotion.Reflection.dll",
-        "lib/net40/Namotion.Reflection.xml",
-        "lib/net45/Namotion.Reflection.dll",
-        "lib/net45/Namotion.Reflection.xml",
-        "lib/netstandard1.0/Namotion.Reflection.dll",
-        "lib/netstandard1.0/Namotion.Reflection.xml",
+        "lib/net462/Namotion.Reflection.dll",
+        "lib/net462/Namotion.Reflection.xml",
         "lib/netstandard2.0/Namotion.Reflection.dll",
         "lib/netstandard2.0/Namotion.Reflection.xml",
-        "namotion.reflection.2.1.2.nupkg.sha512",
+        "namotion.reflection.3.0.0.nupkg.sha512",
         "namotion.reflection.nuspec"
       ]
     },
@@ -2095,18 +2088,10 @@
         "qhta.htmlutils.nuspec"
       ]
     },
-    "Qhta.MVVM/3.5.0": {
-      "sha512": "b8yV/bI/Mkid7Pd7OeJ6FcytuGZ6r/JLi7JRvU255QZ2vsHaXDbyQRxDXhEsfJN1Is7YMF9c2UafNzZGx4QgZg==",
-      "type": "package",
-      "path": "qhta.mvvm/3.5.0",
-      "files": [
-        ".nupkg.metadata",
-        "lib/netstandard2.0/Qhta.MVVM.dll",
-        "lib/netstandard2.0/Qhta.MVVM.xml",
-        "qhta.mvvm.3.5.0.nupkg.sha512",
-        "qhta.mvvm.nuspec",
-        "readme.md"
-      ]
+    "Qhta.MVVM/3.6.1": {
+      "type": "project",
+      "path": "../../MyLib/Qhta.MVVM/Qhta.MVVM.csproj",
+      "msbuildProject": "../../MyLib/Qhta.MVVM/Qhta.MVVM.csproj"
     },
     "Qhta.ObservableObjects/2.7.0": {
       "sha512": "KJbl90ggUs80WiIQvot+QZ+ijkC9DVow5DT7sguq6/9Phn9OwF9PweVx5vIvlKFgjR32+2JWNdFTFnqbmLRcVg==",
@@ -5476,7 +5461,7 @@
     "net6.0-windows7.0": [
       "ModelGen >= 1.0.0",
       "Qhta.HtmlUtils >= 2.1.0",
-      "Qhta.MVVM >= 3.5.0",
+      "Qhta.MVVM >= 3.6.1",
       "Qhta.ObservableObjects >= 2.7.0",
       "Qhta.TextUtils >= 3.1.1",
       "Qhta.TypeUtils >= 1.3.10.1",
@@ -5520,6 +5505,9 @@
             "D:\\VS\\Projects\\DocxDocument\\ModelGen\\ModelGen\\ModelGen.csproj": {
               "projectPath": "D:\\VS\\Projects\\DocxDocument\\ModelGen\\ModelGen\\ModelGen.csproj"
             },
+            "D:\\VS\\Projects\\MyLib\\Qhta.MVVM\\Qhta.MVVM.csproj": {
+              "projectPath": "D:\\VS\\Projects\\MyLib\\Qhta.MVVM\\Qhta.MVVM.csproj"
+            },
             "D:\\VS\\Projects\\MyLib\\Qhta.WPF.Utils\\Qhta.WPF.Utils.csproj": {
               "projectPath": "D:\\VS\\Projects\\MyLib\\Qhta.WPF.Utils\\Qhta.WPF.Utils.csproj"
             }
@@ -5539,10 +5527,6 @@
           "Qhta.HtmlUtils": {
             "target": "Package",
             "version": "[2.1.0, )"
-          },
-          "Qhta.MVVM": {
-            "target": "Package",
-            "version": "[3.5.0, )"
           },
           "Qhta.ObservableObjects": {
             "target": "Package",

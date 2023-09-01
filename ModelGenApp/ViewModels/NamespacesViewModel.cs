@@ -11,24 +11,48 @@ public class NamespacesViewModel : ViewModel
     FillItems();
   }
 
-  public ObservableList<NamespaceViewModel> Items {get; private set;}
+  public ObservableList<NamespaceViewModel> Items { get; private set; }
 
   public PhaseResultsViewModel Phase { get; private set; }
 
   public NTS NamespacesTypeSelector { get; private set; }
 
-  public TypeInfoViewModelFilter? Filter { get; private set; }
+
+  public TypeInfoViewModelFilter? Filter
+  {
+    get { return _Filter; }
+    set
+    {
+      if (_Filter != value)
+      {
+        _Filter = value;
+        NotifyPropertyChanged(nameof(Filter));
+        ApplyFilter();
+      }
+    }
+  }
+  private TypeInfoViewModelFilter? _Filter;
+
+  public void ApplyFilter()
+  {
+    if (Items!=null)
+      foreach (var item in Items)
+        item.Filter = Filter;
+  }
 
   public void FillItems() // We can't populate it asynchronously
   {
     Items.Clear();
     var namespaces = new List<Namespace>();
-    if (NamespacesTypeSelector.HasFlag(NTS.Origin))
-      namespaces.AddRange(TypeManager.KnownNamespaces.Where(item => item.Key.StartsWith("DocumentFormat")).Select(item => item.Value));
-    else if (NamespacesTypeSelector.HasFlag(NTS.Target))
-      namespaces.AddRange(TypeManager.KnownNamespaces.Where(item => item.Key.StartsWith("DocumentModel")).Select(item => item.Value));
-    if (NamespacesTypeSelector.HasFlag(NTS.System))
-      namespaces.AddRange(TypeManager.KnownNamespaces.Where(item => item.Key.StartsWith("System")).Select(item => item.Value));
+    lock (TypeManager.KnownNamespaces)
+    {
+      if (NamespacesTypeSelector.HasFlag(NTS.Origin))
+        namespaces.AddRange(TypeManager.KnownNamespaces.Where(item => item.Key.StartsWith("DocumentFormat")).Select(item => item.Value));
+      else if (NamespacesTypeSelector.HasFlag(NTS.Target))
+        namespaces.AddRange(TypeManager.KnownNamespaces.Where(item => item.Key.StartsWith("DocumentModel")).Select(item => item.Value));
+      if (NamespacesTypeSelector.HasFlag(NTS.System))
+        namespaces.AddRange(TypeManager.KnownNamespaces.Where(item => item.Key.StartsWith("System")).Select(item => item.Value));
+    }
     var viewModels = new List<NamespaceViewModel>();
     foreach (var ns in namespaces)
     {
@@ -41,7 +65,7 @@ public class NamespacesViewModel : ViewModel
 
   public async void RefreshItemsAsync()
   {
-    await Task.Run(() => RefreshItems() );
+    await Task.Run(() => RefreshItems());
   }
 
   public void RefreshItems()

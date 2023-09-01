@@ -3,7 +3,7 @@
 /// <summary>
 /// Helper class to represent filter for <see cref="ModelGenApp.TypeInfoViewModel"/>.
 /// </summary>
-public record TypeInfoViewModelFilter<T>: IFilter<T> where T: TypeInfoViewModel
+public record TypeInfoViewModelFilter<T>: IFilter where T: TypeInfoViewModel
 {
   /// <summary>
   /// Initializing constructor. Creates <see cref="Predicate"/> on base of <paramref name="filter"/>.
@@ -22,24 +22,24 @@ public record TypeInfoViewModelFilter<T>: IFilter<T> where T: TypeInfoViewModel
         Predicate = new Predicate<T>(item => item.Model.IsAcceptedAfter(phaseNum));
       else
       if (filter == TypeInfoKind.RejectedTypes)
-        Predicate = new Predicate<TypeInfoViewModel>(item => item.Model.IsRejectedAfter(phaseNum));
+        Predicate = new Predicate<T>(item => item.Model.IsRejectedAfter(phaseNum));
       else
       if (filter == TypeInfoKind.ProblematicTypes)
-        Predicate = new Predicate<TypeInfoViewModel>(item => item.Model.HasProblems(phaseNum));
+        Predicate = new Predicate<T>(item => item.Model.HasProblems(phaseNum));
     }
     else
     if (value is FullTypeName typeName)
     {
       if (filter == TypeInfoKind.TypesWithSameName)
-        Predicate = new Predicate<TypeInfoViewModel>(item => item.Model.GetFullName(true, false, false) == typeName);
+        Predicate = new Predicate<T>(item => item.Model.GetFullName(true, false, false) == typeName);
     }
     else
     {
       if (filter == TypeInfoKind.RenamedTypes)
-        Predicate = new Predicate<TypeInfoViewModel>(item => item.Model.IsConverted);
+        Predicate = new Predicate<T>(item => item.Model.IsConverted);
       else
       if (filter == TypeInfoKind.ConvertedTypes)
-        Predicate = new Predicate<TypeInfoViewModel>(item => item.Model.IsConverted);
+        Predicate = new Predicate<T>(item => item.Model.IsConverted);
     }
     if (Predicate == null)
         throw new InvalidOperationException($"Can't create TypeInfoViewModelFilter with TypeInfoKind.{filter}");

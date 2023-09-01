@@ -134,7 +134,7 @@
           }
         }
       },
-      "Namotion.Reflection/2.1.2": {
+      "Namotion.Reflection/3.0.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.CSharp": "4.3.0"
@@ -1891,22 +1891,18 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Namotion.Reflection/2.1.2": {
-      "sha512": "7tSHAzX8GWKy0qrW6OgQWD7kAZiqzhq+m1503qczuwuK6ZYhOGCQUxw+F3F4KkRM70aB6RMslsRVSCFeouIehw==",
+    "Namotion.Reflection/3.0.0": {
+      "sha512": "LhonaYvJJtT1/biog/Is9NVlwHpjwzuUG6e+xR2I6kzy8Kg4mXC86xnZ/MOOgaZaUpoTPNRm7NWLCs4J4KgU1A==",
       "type": "package",
-      "path": "namotion.reflection/2.1.2",
+      "path": "namotion.reflection/3.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "lib/net40/Namotion.Reflection.dll",
-        "lib/net40/Namotion.Reflection.xml",
-        "lib/net45/Namotion.Reflection.dll",
-        "lib/net45/Namotion.Reflection.xml",
-        "lib/netstandard1.0/Namotion.Reflection.dll",
-        "lib/netstandard1.0/Namotion.Reflection.xml",
+        "lib/net462/Namotion.Reflection.dll",
+        "lib/net462/Namotion.Reflection.xml",
         "lib/netstandard2.0/Namotion.Reflection.dll",
         "lib/netstandard2.0/Namotion.Reflection.xml",
-        "namotion.reflection.2.1.2.nupkg.sha512",
+        "namotion.reflection.3.0.0.nupkg.sha512",
         "namotion.reflection.nuspec"
       ]
     },
@@ -5247,7 +5243,7 @@
       "IgnoresAccessChecksToGenerator >= 0.6.0",
       "ModelDocumentation >= 1.0.0",
       "ModelGenDataConfig >= 1.0.0",
-      "Namotion.Reflection >= 2.1.2",
+      "Namotion.Reflection >= 3.0.0",
       "Qhta.Collections >= 4.0.0",
       "Qhta.HtmlUtils >= 2.1.0",
       "Qhta.TestHelper >= 3.0.0",
@@ -5326,7 +5322,7 @@
           },
           "Namotion.Reflection": {
             "target": "Package",
-            "version": "[2.1.2, )"
+            "version": "[3.0.0, )"
           },
           "Qhta.Collections": {
             "target": "Package",
