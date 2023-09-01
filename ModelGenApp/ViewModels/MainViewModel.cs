@@ -72,6 +72,13 @@ public class MainViewModel : ViewModel
 
   private void ProcessOptionsVM_PropertyChanged(object? sender, System.ComponentModel.PropertyChangedEventArgs args)
   {
+    if (args.PropertyName==nameof(ProcessOptionsVM.StopAtPhase))
+      if (ModelCreator!=null)
+      {
+        var phaseNum = (sender as ProcessOptionsViewModel)?.StopAtPhase;
+        if (phaseNum is int n)
+          ModelCreator.StopAtPhase = (PPS) Enum.ToObject(typeof(PPS), n);
+      }
     StartProcessCommand.NotifyCanExecuteChanged();
     CommandManager.InvalidateRequerySuggested();
   }
@@ -118,12 +125,14 @@ public class MainViewModel : ViewModel
       filePath = Path.GetDirectoryName(filePath) ?? "";
       filePath = Path.GetDirectoryName(filePath) ?? "";
       filePath = Path.Combine(filePath, @"ModelGen\DocumentModel");
-      var creator = new ModelCreator("DocumentModel", filePath);
-      creator.ModelMonitor = this.ProcessMonitor;
-      await Task.Run(() => creator.RunProcess(options));
+      ModelCreator = new ModelCreator("DocumentModel", filePath);
+      ModelCreator.ModelMonitor = this.ProcessMonitor;
+      await Task.Run(() => ModelCreator.RunProcess(options));
+      ModelCreator = null;
     }
   }
   #endregion
+  public ModelCreator? ModelCreator { get; set; }
 
   #region StopProcessCommand
   public Command StopProcessCommand { get; }
