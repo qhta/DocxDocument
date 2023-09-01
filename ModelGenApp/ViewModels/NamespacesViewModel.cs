@@ -2,7 +2,7 @@
 
 public class NamespacesViewModel : ViewModel
 {
-  public NamespacesViewModel(PhaseResultsViewModel phase, NTS namespacesTypeSelector, TypeInfoFilter? filter)
+  public NamespacesViewModel(PhaseResultsViewModel phase, NTS namespacesTypeSelector, TypeInfoViewModelFilter? filter)
   {
     Phase = phase;
     NamespacesTypeSelector = namespacesTypeSelector;
@@ -17,7 +17,7 @@ public class NamespacesViewModel : ViewModel
 
   public NTS NamespacesTypeSelector { get; private set; }
 
-  public TypeInfoFilter? Filter { get; private set; }
+  public TypeInfoViewModelFilter? Filter { get; private set; }
 
   public void FillItems() // We can't populate it asynchronously
   {

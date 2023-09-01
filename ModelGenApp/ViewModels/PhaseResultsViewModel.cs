@@ -327,7 +327,7 @@ public abstract partial class PhaseResultsViewModel : ViewModel
 
   #region Filter namespaces
 
-  public TypeInfoFilter? Filter
+  public TypeInfoViewModelFilter? Filter
   {
     get { return _Filter; }
     set
@@ -339,12 +339,12 @@ public abstract partial class PhaseResultsViewModel : ViewModel
       }
     }
   }
-  private TypeInfoFilter? _Filter;
+  private TypeInfoViewModelFilter? _Filter;
 
   public void SetFilter(TypeInfoKind? filter)
   {
     if (filter != null)
-      Filter = new TypeInfoFilter((TypeInfoKind)filter, PhaseNum);
+      Filter = new TypeInfoViewModelFilter((TypeInfoKind)filter, PhaseNum);
     else
       Filter = null;
     FillResultsAsync();

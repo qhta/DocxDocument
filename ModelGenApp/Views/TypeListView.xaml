@@ -30,7 +30,7 @@
                 utl:CollectionViewBehavior.IsFocusable="True"
                 utl:CollectionViewBehavior.ShowFilterButton="True"
                 ClipboardCopyMode="IncludeHeader"
-                ItemsSource="{Binding Items}">
+                ItemsSource="{Binding VisibleItems}">
       </DataGrid>
     </Grid>
   </Grid>

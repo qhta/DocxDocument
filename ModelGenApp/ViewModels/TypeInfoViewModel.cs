@@ -1,18 +1,5 @@
 ﻿namespace ModelGenApp.ViewModels;
 
-//public class ShowTypeRoutedCommand: RoutedCommand
-//{
-//  public ShowTypeRoutedCommand(IRelayCommand relayCommand)
-//  {
-//    base.CanExecuteChanged += ShowTypeRoutedCommand_CanExecuteChanged;
-//  }
-
-//  private void ShowTypeRoutedCommand_CanExecuteChanged(object? sender, EventArgs e)
-//  {
-//    throw new NotImplementedException();
-//  }
-//}
-
 /// <summary>
 /// View model to represent <see cref="ModelGen.TypeInfo"/>.
 /// </summary>
