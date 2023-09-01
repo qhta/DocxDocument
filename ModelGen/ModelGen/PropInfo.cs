@@ -4,12 +4,12 @@ using Namotion.Reflection;
 
 namespace ModelGen;
 
-public class PropInfo : ModelElement
+public class PropInfo : MemberElement
 {
+  //[XmlIgnore]
+  //public TypeInfo? DeclaringType => (TypeInfo?)Owner;
   [XmlIgnore]
-  public TypeInfo? DeclaringType => (TypeInfo?)Owner;
-  [XmlIgnore]
-  public PropertyInfo? PropertyInfo { get; set; }
+  public PropertyInfo? PropertyInfo { get => ReflectionInfo as PropertyInfo; set => ReflectionInfo = value; }
   [XmlIgnore]
   public TypeInfo PropertyType { get; set; }
 

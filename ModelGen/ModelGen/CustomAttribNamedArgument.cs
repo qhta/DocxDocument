@@ -21,7 +21,7 @@ public class CustomAttribNamedArgument: CustomAttribTypedArgument
   //}
   public CustomAttribNamedArgument(CustomAttributeNamedArgument namedArgument): base(namedArgument.TypedValue.ArgumentType, namedArgument.TypedValue.Value)
   {
-    Name = namedArgument.MemberInfo.Name ?? throw new ArgumentNullException(nameof(MemberInfo));
+    Name = namedArgument.MemberInfo.Name ?? throw new ArgumentNullException(nameof(MemberElement));
   }
 
   public override string ToString()
