@@ -3,7 +3,7 @@
 /// <summary>
 /// Helper class to represent filter for <see cref="ModelGen.PropInfo"/>.
 /// </summary>
-public record PropInfoFilter
+public record MemberInfoViewModelFilter: IFilter
 {
   /// <summary>
   /// Initializing constructor. Creates <see cref="Predicate"/> on base of <paramref name="filter"/>.
@@ -14,32 +14,44 @@ public record PropInfoFilter
   ///   Must be string for "MembersWithDuplicateName" filter.
   /// </param>
   /// <exception cref="InvalidOperationException"></exception>
-  public PropInfoFilter(MemberInfoKind filter, object? value)
+  public MemberInfoViewModelFilter(MemberInfoKind filter, object? value)
   {
     if (value is PPS phaseNum)
     {
       if (filter == MemberInfoKind.AcceptedMembers)
-        Predicate = new Predicate<PropInfo>(item => item.IsAcceptedAfter(phaseNum));
+        Predicate = new Predicate<object>(obj => 
+        (obj is PropInfoViewModel pvm) && pvm.Model.IsAcceptedAfter(phaseNum)
+        || (obj is EnumInfoViewModel evm) && evm.Model.IsAcceptedAfter(phaseNum));
       else
       if (filter == MemberInfoKind.RejectedMembers)
-        Predicate = new Predicate<PropInfo>(item => item.IsRejectedAfter(phaseNum));
+        Predicate = new Predicate<object>(obj => 
+        (obj is PropInfoViewModel pvm) && pvm.Model.IsRejectedAfter(phaseNum)
+        || (obj is EnumInfoViewModel evm) && evm.Model.IsRejectedAfter(phaseNum));
       else
       if (filter == MemberInfoKind.ProblematicMembers)
-        Predicate = new Predicate<PropInfo>(item => item.HasProblems(phaseNum));
+        Predicate = new Predicate<object>(obj => 
+        (obj is PropInfoViewModel pvm) && pvm.Model.HasProblems(phaseNum)
+        || (obj is EnumInfoViewModel evm) && evm.Model.HasProblems(phaseNum));
     }
     else
     if (value is FullTypeName propName)
     {
       if (filter == MemberInfoKind.MembersWithSameName)
-        Predicate = new Predicate<PropInfo>(item => item.GetTargetName() == propName);
+        Predicate = new Predicate<object>(obj => 
+        (obj is PropInfoViewModel pvm) && pvm.Model.GetTargetName() == propName
+        /*|| (obj is EnumInfoViewModel evm) && evm.Model.GetTargetName() == propName*/);
     }
     else
     {
       if (filter == MemberInfoKind.RenamedMembers)
-        Predicate = new Predicate<PropInfo>(item => item.IsConverted);
+        Predicate = new Predicate<object>(obj => 
+        (obj is PropInfoViewModel pvm) && pvm.Model.IsRenamed
+        || (obj is EnumInfoViewModel evm) && evm.Model.IsRenamed);
       else
       if (filter == MemberInfoKind.ConvertedMembers)
-        Predicate = new Predicate<PropInfo>(item => item.IsConverted);
+        Predicate = new Predicate<object>(obj => 
+        (obj is PropInfoViewModel pvm) && pvm.Model.IsConverted
+        || (obj is EnumInfoViewModel evm) && evm.Model.IsConverted);
     }
     if (Predicate == null)
         throw new InvalidOperationException($"Can't create PropInfoFilter with MemberInfoKind.{filter}");
@@ -64,7 +76,7 @@ public record PropInfoFilter
 
   /// <summary>
   /// Initializing constructor with known predicate.
-  public PropInfoFilter(Predicate<PropInfo> predicate)
+  public MemberInfoViewModelFilter(Predicate<object> predicate)
   {
     Predicate = predicate;
   }
@@ -72,10 +84,20 @@ public record PropInfoFilter
   /// <summary>
   /// Predicate to apply in filtering.
   /// </summary>
-  public Predicate<PropInfo> Predicate { get; private set; } = null!;
+  public Predicate<object> Predicate { get; private set; } = null!;
 
   /// <summary>
   /// A parameter for predicate.
   /// </summary>
   public object? Value { get; private set; }
+
+  public Predicate<object> GetPredicate()
+  {
+    return Predicate;
+  }
+
+  public bool Accept(object item)
+  {
+    return Predicate.Invoke(item);
+  }
 }

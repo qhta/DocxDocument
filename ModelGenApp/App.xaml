@@ -61,22 +61,7 @@
                      Text="{Binding}" />
         </Grid>
       </DataTemplate>
-      <DataTemplate x:Key="ItemsCountColumnTemplate">
-        <Grid>
-          <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="20" />
-          </Grid.ColumnDefinitions>
-          <TextBlock Grid.Column="0"
-                     HorizontalAlignment="Right"
-                     Margin="5,0,5,0"
-                     Text="{Binding Count}" />
-          <Button Grid.Column="1"
-                  Content=">>"
-                  Command="{Binding Path=ShowDetailsCommand}"
-                  CommandParameter="{Binding}" />
-        </Grid>
-      </DataTemplate>
+
       <DataTemplate x:Key="CountColumnTemplate">
         <Grid>
           <Grid.ColumnDefinitions>
@@ -93,6 +78,7 @@
                   CommandParameter="{Binding}" />
         </Grid>
       </DataTemplate>
+      
       <DataTemplate x:Key="TypeInfoColumnTemplate">
         <Grid>
           <Grid.ColumnDefinitions>

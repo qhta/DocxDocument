@@ -4,14 +4,14 @@
 /// This is a container for <see cref="PropInfoViewModel"/>. Can belong to <see cref="ClassInfoViewModel"/>
 /// or be used for all properties in all types.
 /// </summary>
-public class PropListViewModel : MemberListViewModel<PropInfoViewModel>, IFilter<PropInfoViewModel>
+public class PropListViewModel : MemberListViewModel<PropInfoViewModel>
 {
   public PropListViewModel(PhaseResultsViewModel phase, ClassInfoViewModel? owner, string name, TNS typeNameSelector): base(phase, owner, name)
   {
     ShowDisplayOptions = true;
     TypeNameSelector = typeNameSelector; 
-    _Predicate = new Predicate<PropInfoViewModel>(item=> item.Model.IsAcceptedAfter(Phase.PhaseNum));
-    _ObjectPredicate = new Predicate<object>(item=> (item is PropInfoViewModel vm) && _Predicate.Invoke(vm));
+    //_Predicate = new Predicate<PropInfoViewModel>(item=> item.Model.IsAcceptedAfter(Phase.PhaseNum));
+    //_Predicate = new Predicate<object>(obj=> obj_Predicate.Invoke(obj));
   }
 
   public TNS TypeNameSelector { get; private set; }
@@ -37,22 +37,22 @@ public class PropListViewModel : MemberListViewModel<PropInfoViewModel>, IFilter
   protected override void ApplyAcceptedOnlyFilter(bool value)
   {
     if (value)
-      VisibleItems.Filter = this as IFilter<PropInfoViewModel>;
+      VisibleItems.Filter = Filter;
     else
       VisibleItems.Filter = null;
   }
 
-  Predicate<PropInfoViewModel> IFilter<PropInfoViewModel>.GetPredicate() => _Predicate;
+  //Predicate<PropInfoViewModel> IFilter<PropInfoViewModel>.GetPredicate() => _Predicate;
 
-  bool IFilter<PropInfoViewModel>.Accept(PropInfoViewModel item) => _Predicate.Invoke(item);
+  //bool IFilter<PropInfoViewModel>.Accept(PropInfoViewModel item) => _Predicate.Invoke(item);
 
-  Predicate<object> IFilter.GetPredicate() => _ObjectPredicate;
+  //Predicate<object> IFilter.GetPredicate() => _Predicate;
 
-  bool IFilter.Accept(object item) => _ObjectPredicate.Invoke(item);
+  //bool IFilter.Accept(object item) => _Predicate.Invoke(item);
 
-  private Predicate<PropInfoViewModel> _Predicate;
+  //private Predicate<PropInfoViewModel> _Predicate;
 
-  private Predicate<object> _ObjectPredicate;
+  //private Predicate<object> _Predicate;
 
   public async void FillItemsAsync()
   {

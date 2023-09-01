@@ -77,7 +77,7 @@ public class NamespaceViewModel : ViewModel<Namespace>
   [DataGridColumn(
     HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.All),
     MinWidth = minColWith,
-    DataTemplateResourceKey = "ItemsCountColumnTemplate",
+    DataTemplateResourceKey = "CountColumnTemplate",
     SortMemberPath = "AllTypes.Count",
     ClipboardContentPath = "AllTypes.Count")]
   public TypeListViewModel AllTypes { get; set; }
@@ -85,7 +85,7 @@ public class NamespaceViewModel : ViewModel<Namespace>
   [DataGridColumn(
     HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.Classes),
     MinWidth = minColWith,
-    DataTemplateResourceKey = "ItemsCountColumnTemplate",
+    DataTemplateResourceKey = "CountColumnTemplate",
     SortMemberPath = "Classes.Count",
     ClipboardContentPath = "Classes.Count")]
   public ClassListViewModel Classes { get; set; }
@@ -93,7 +93,7 @@ public class NamespaceViewModel : ViewModel<Namespace>
   [DataGridColumn(
     HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.Enums),
     MinWidth = minColWith,
-    DataTemplateResourceKey = "ItemsCountColumnTemplate",
+    DataTemplateResourceKey = "CountColumnTemplate",
     SortMemberPath = "Enums.Count",
     ClipboardContentPath = "Enums.Count")]
   public EnumTypeListViewModel Enums { get; set; }
@@ -101,7 +101,7 @@ public class NamespaceViewModel : ViewModel<Namespace>
   [DataGridColumn(
     HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.Interfaces),
     MinWidth = minColWith,
-    DataTemplateResourceKey = "ItemsCountColumnTemplate",
+    DataTemplateResourceKey = "CountColumnTemplate",
     SortMemberPath = "Interfaces.Count",
     ClipboardContentPath = "Interfaces.Count")]
   public ClassListViewModel Interfaces { get; set; }
@@ -109,7 +109,7 @@ public class NamespaceViewModel : ViewModel<Namespace>
   [DataGridColumn(
     HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.Structs),
     MinWidth = minColWith,
-    DataTemplateResourceKey = "ItemsCountColumnTemplate",
+    DataTemplateResourceKey = "CountColumnTemplate",
     SortMemberPath = "Structs.Count",
     ClipboardContentPath = "Structs.Count")]
   public ClassListViewModel Structs { get; set; }
@@ -117,7 +117,7 @@ public class NamespaceViewModel : ViewModel<Namespace>
   [DataGridColumn(
     HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.Others),
     MinWidth = minColWith,
-    DataTemplateResourceKey = "ItemsCountColumnTemplate",
+    DataTemplateResourceKey = "CountColumnTemplate",
     SortMemberPath = "Others.Count",
     ClipboardContentPath = "Others.Count")]
   public TypeListViewModel Others { get; set; }

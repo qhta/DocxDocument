@@ -22,11 +22,11 @@ public class TypeListViewModel<T> : ViewModel where T : TypeInfoViewModel
 
   private void BusyMonitor_PropertyChanged(object? sender, PropertyChangedEventArgs args)
   {
-    if (args.PropertyName==nameof(BusyMonitor.IsBusy))
+    if (args.PropertyName == nameof(BusyMonitor.IsBusy))
       NotifyPropertyChanged(nameof(IsBusy));
   }
 
-    public TypeInfoViewModelFilter? Filter
+  public TypeInfoViewModelFilter? Filter
   {
     get { return _Filter; }
     set
@@ -43,13 +43,9 @@ public class TypeListViewModel<T> : ViewModel where T : TypeInfoViewModel
 
   public void ApplyFilter()
   {
-    if (VisibleItems!=null)
+    if (VisibleItems != null)
     {
-      //var filter = Filter as IFilter<T>;
       VisibleItems.Filter = Filter;
-      //VisibleItems.NotifyCollectionChanged(VisibleItems, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset));
-      //NotifyPropertyChanged(nameof(VisibleItems));
-      //NotifyPropertyChanged(nameof(Count));
     }
   }
 
@@ -81,7 +77,7 @@ public class TypeListViewModel<T> : ViewModel where T : TypeInfoViewModel
       string? result = null;
       if (Namespace != null)
         result = Namespace.Caption;
-      result += " | " +(CommonStrings.ResourceManager.GetString(Name, CultureInfo.CurrentUICulture) ?? Name?.DeCamelCase());
+      result += " | " + (CommonStrings.ResourceManager.GetString(Name, CultureInfo.CurrentUICulture) ?? Name?.DeCamelCase());
       return result;
     }
   }
