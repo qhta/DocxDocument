@@ -50,376 +50,387 @@ public abstract class BaseCreator
 
   protected ProcessOptions Options { get; set; } = new ProcessOptions();
 
-  public void RunOn(Type type, ProcessOptions options)
+  public PPS StopAtPhase
   {
-    TypeManager.Clear();
-    Options = options;
-    IsRun = true;
-    var displayOptions = Options.DisplayOptions;
-    if (displayOptions == null)
-      displayOptions = new DisplayOptions();
-    var stopAtPhase = (PPS)Enum.ToObject(typeof(PPS), Options.StopAtPhase);
-    var monitorDisplaySelector = Options.Display;
-
-    ModelMonitor?.ShowProcessStart($"Start processing {type}");
-    SourceAssembly = type.Assembly;
-    TotalTypesCount = SourceAssembly.ExportedTypes.Count();
-    TimeSpan totalTime = TimeSpan.Zero;
-
-    PhaseDone = PPS.None;
-    if (stopAtPhase >= PPS.ScanSource)
+    get
     {
-      totalTime += ScanType(type);
-      if (monitorDisplaySelector.HasFlag(MDS.ScannedNamespaces))
-        ModelMonitor?.ShowNamespaceSummary(PPS.ScanSource, NTS.Origin);
-      if (monitorDisplaySelector.HasFlag(MDS.ScannedTypes))
-        ModelMonitor?.ShowNamespacesDetails(PPS.ScanSource, displayOptions with { NamespaceTypeSelector = NTS.Origin });
-      PhaseDone = PPS.ScanSource;
+      return _StopAtPhase ??
+        (PPS) Enum.ToObject(typeof(PPS), Options.StopAtPhase);
     }
-
-    if (stopAtPhase >= PPS.AddDocs)
-    {
-      totalTime += AddDocs();
-      if (monitorDisplaySelector.HasFlag(MDS.ScannedNamespaces))
-        ModelMonitor?.ShowNamespaceSummary(PPS.ScanSource, NTS.Origin);
-      if (monitorDisplaySelector.HasFlag(MDS.ScannedTypes))
-        ModelMonitor?.ShowNamespacesDetails(PPS.ScanSource, displayOptions with { NamespaceTypeSelector = NTS.Origin });
-      PhaseDone = PPS.AddDocs;
-    }
-
-    if (stopAtPhase >= PPS.Rename)
-    {
-      totalTime += RenameTypes();
-      if (monitorDisplaySelector.HasFlag(MDS.TypeRename))
-        ModelMonitor?.ShowTypeRenames();
-      PhaseDone = PPS.ScanSource;
-    }
-
-    if (stopAtPhase >= PPS.ConvertTypes)
-    {
-      totalTime += ConvertTypes();
-      if (monitorDisplaySelector.HasFlag(MDS.TypeConversions))
-        ModelMonitor?.ShowTypeConversions();
-      PhaseDone = PPS.ConvertTypes;
-    }
-
-    //totalTime += CheckTypeUsage();
-    //if (monitorDisplaySelector.HasFlag(MDS.TypeUsage))
-    //  ModelMonitor?.ShowNamespacesDetails(displayOptions ?? new DisplayOptions());
-
-    //totalTime += ValidateTypes();
-    //if (monitorDisplaySelector.HasFlag(MDS.ValidatedTypes))
-    //  ModelMonitor?.ShowNamespacesDetails(displayOptions ?? new DisplayOptions());
-
-    //totalTime += GenerateCode();
-
-    ModelMonitor?.ShowProcessSummary(new SummaryInfo
-    {
-      Time = totalTime
-    });
-    IsRun = false;
+    set { _StopAtPhase = value; }
   }
 
-  #region Processing methods
+private PPS? _StopAtPhase = null!;
+public void RunOn(Type type, ProcessOptions options)
+{
+  TypeManager.Clear();
+  Options = options;
+  IsRun = true;
+  var displayOptions = Options.DisplayOptions;
+  if (displayOptions == null)
+    displayOptions = new DisplayOptions();
 
-  protected TimeSpan ScanType(Type type)
+  var monitorDisplaySelector = Options.Display;
+
+  ModelMonitor?.ShowProcessStart($"Start processing {type}");
+  SourceAssembly = type.Assembly;
+  TotalTypesCount = SourceAssembly.ExportedTypes.Count();
+  TimeSpan totalTime = TimeSpan.Zero;
+
+  PhaseDone = PPS.None;
+  if (StopAtPhase >= PPS.ScanSource)
   {
-    ModelMonitor?.ShowPhaseStart(PPS.ScanSource, "Scanning types");
-    DateTime t1 = DateTime.Now;
-    ModelManager.OnScanningType += ModelManager_OnScanningType;
-    ModelManager.ScanType(type);
-    ModelManager.OnScanningType -= ModelManager_OnScanningType;
+    totalTime += ScanType(type);
+    if (monitorDisplaySelector.HasFlag(MDS.ScannedNamespaces))
+      ModelMonitor?.ShowNamespaceSummary(PPS.ScanSource, NTS.Origin);
+    if (monitorDisplaySelector.HasFlag(MDS.ScannedTypes))
+      ModelMonitor?.ShowNamespacesDetails(PPS.ScanSource, displayOptions with { NamespaceTypeSelector = NTS.Origin });
+    PhaseDone = PPS.ScanSource;
+  }
 
-    DateTime t2 = DateTime.Now;
-    var ts = t2 - t1;
-    var allTypesCount = TypeManager.AllTypes.Count();
-    var acceptedTypesCount = TypeManager.TypesAcceptedAfter(PPS.ScanSource).Count();
-    var rejectedTypesCount = TypeManager.TypesRejectedAfter(PPS.ScanSource).Count();
-    var summaryInfo = new SummaryInfo
-    {
-      Time = ts,
-      Summary = new Dictionary<TypeInfoKind, object>{
+  if (StopAtPhase >= PPS.AddDocs)
+  {
+    totalTime += AddDocs();
+    if (monitorDisplaySelector.HasFlag(MDS.ScannedNamespaces))
+      ModelMonitor?.ShowNamespaceSummary(PPS.ScanSource, NTS.Origin);
+    if (monitorDisplaySelector.HasFlag(MDS.ScannedTypes))
+      ModelMonitor?.ShowNamespacesDetails(PPS.ScanSource, displayOptions with { NamespaceTypeSelector = NTS.Origin });
+    PhaseDone = PPS.AddDocs;
+  }
+
+  if (StopAtPhase >= PPS.Rename)
+  {
+    totalTime += RenameTypes();
+    if (monitorDisplaySelector.HasFlag(MDS.TypeRename))
+      ModelMonitor?.ShowTypeRenames();
+    PhaseDone = PPS.ScanSource;
+  }
+
+  if (StopAtPhase >= PPS.ConvertTypes)
+  {
+    totalTime += ConvertTypes();
+    if (monitorDisplaySelector.HasFlag(MDS.TypeConversions))
+      ModelMonitor?.ShowTypeConversions();
+    PhaseDone = PPS.ConvertTypes;
+  }
+
+  //totalTime += CheckTypeUsage();
+  //if (monitorDisplaySelector.HasFlag(MDS.TypeUsage))
+  //  ModelMonitor?.ShowNamespacesDetails(displayOptions ?? new DisplayOptions());
+
+  //totalTime += ValidateTypes();
+  //if (monitorDisplaySelector.HasFlag(MDS.ValidatedTypes))
+  //  ModelMonitor?.ShowNamespacesDetails(displayOptions ?? new DisplayOptions());
+
+  //totalTime += GenerateCode();
+
+  ModelMonitor?.ShowProcessSummary(new SummaryInfo
+  {
+    Time = totalTime
+  });
+  IsRun = false;
+}
+
+#region Processing methods
+
+protected TimeSpan ScanType(Type type)
+{
+  ModelMonitor?.ShowPhaseStart(PPS.ScanSource, "Scanning types");
+  DateTime t1 = DateTime.Now;
+  ModelManager.OnScanningType += ModelManager_OnScanningType;
+  ModelManager.ScanType(type);
+  ModelManager.OnScanningType -= ModelManager_OnScanningType;
+
+  DateTime t2 = DateTime.Now;
+  var ts = t2 - t1;
+  var allTypesCount = TypeManager.AllTypes.Count();
+  var acceptedTypesCount = TypeManager.TypesAcceptedAfter(PPS.ScanSource).Count();
+  var rejectedTypesCount = TypeManager.TypesRejectedAfter(PPS.ScanSource).Count();
+  var summaryInfo = new SummaryInfo
+  {
+    Time = ts,
+    Summary = new Dictionary<TypeInfoKind, object>{
         {TypeInfoKind.RegisteredTypes, allTypesCount },
         {TypeInfoKind.AcceptedTypes, acceptedTypesCount },
         {TypeInfoKind.RejectedTypes, rejectedTypesCount },
         }
-    };
+  };
 
-    ModelMonitor?.ShowPhaseEnd(PPS.ScanSource, summaryInfo);
-    return ts;
+  ModelMonitor?.ShowPhaseEnd(PPS.ScanSource, summaryInfo);
+  return ts;
+}
+
+private void ModelManager_OnScanningType(RegisterProgressInfo info)
+{
+  ModelMonitor?.ShowPhaseProgress(PPS.ScanSource, new ProgressInfo
+  {
+    PreStr = "registered",
+    TotalTypes = TotalTypesCount,
+    ProcessedTypes = info.RegisteredTypes,
+    Namespaces = info.RegisteredNamespaces,
+    PostStr = $"{info.Current?.OriginalNamespace}.{info.Current?.OriginalName}"
+  }); ;
+}
+
+protected TimeSpan AddDocs()
+{
+  ModelMonitor?.ShowPhaseStart(PPS.AddDocs, "Adding documentation");
+  DateTime t1 = DateTime.Now;
+
+  int typesWithAddedDescriptionCount = 0;
+  if (Options.UseModelDocFile && !String.IsNullOrEmpty(Options.ModelDocFileName))
+  {
+    var ModelDocumenter = new ModelDocsManager(PPS.AddDocs, NTS.Origin, MSS.Accepted, Options.ModelDocFileName);
+    ModelDocumenter.OnDocumentingType += ModelDocumenter_OnDocumentingType;
+    typesWithAddedDescriptionCount = ModelDocumenter.DocumentTypes();
+    ModelDocumenter.OnDocumentingType += ModelDocumenter_OnDocumentingType;
   }
 
-  private void ModelManager_OnScanningType(RegisterProgressInfo info)
+  var ModelValidator = new ModelValidator(PPS.AddDocs, NTS.Origin, MSS.Accepted, TDS.Metadata);
+  ModelValidator.OnValidatingType += ModelValidator_OnValidatingType;
+  ModelValidator.ValidateTypes(PPS.AddDocs);
+  ModelValidator.OnValidatingType += ModelValidator_OnValidatingType;
+
+  DateTime t2 = DateTime.Now;
+  var ts = t2 - t1;
+  var typesWithDescriptionCount = TypeManager.TypesAcceptedTo(PPS.AddDocs)
+    .Count(item => item.Description != null);
+  var typesWithoutDescriptionCount = TypeManager.TypesAcceptedTo(PPS.AddDocs)
+    .Count(item => item.HasError(PPS.AddDocs, ErrorCode.MissingDescription));
+  var typesWithMeaninglessDescriptionCount = TypeManager.TypesAcceptedTo(PPS.AddDocs)
+    .Count(item => item.HasError(PPS.AddDocs, ErrorCode.MeaninglessDescription));
+
+  var summaryInfo = new SummaryInfo
   {
-    ModelMonitor?.ShowPhaseProgress(PPS.ScanSource, new ProgressInfo
-    {
-      PreStr = "registered",
-      TotalTypes = TotalTypesCount,
-      ProcessedTypes = info.RegisteredTypes,
-      Namespaces = info.RegisteredNamespaces,
-      PostStr = $"{info.Current?.OriginalNamespace}.{info.Current?.OriginalName}"
-    });;
-  }
-
-  protected TimeSpan AddDocs()
-  {
-    ModelMonitor?.ShowPhaseStart(PPS.AddDocs, "Adding documentation");
-    DateTime t1 = DateTime.Now;
-
-    int typesWithAddedDescriptionCount = 0;
-    if (Options.UseModelDocFile && !String.IsNullOrEmpty(Options.ModelDocFileName))
-    {
-      var ModelDocumenter = new ModelDocsManager(PPS.AddDocs, NTS.Origin, MSS.Accepted, Options.ModelDocFileName);
-      ModelDocumenter.OnDocumentingType += ModelDocumenter_OnDocumentingType; 
-      typesWithAddedDescriptionCount = ModelDocumenter.DocumentTypes();
-      ModelDocumenter.OnDocumentingType += ModelDocumenter_OnDocumentingType;
-    }
-
-    var ModelValidator = new ModelValidator(PPS.AddDocs, NTS.Origin, MSS.Accepted, TDS.Metadata);
-    ModelValidator.OnValidatingType += ModelValidator_OnValidatingType;
-    ModelValidator.ValidateTypes(PPS.AddDocs);
-    ModelValidator.OnValidatingType += ModelValidator_OnValidatingType;
-
-    DateTime t2 = DateTime.Now;
-    var ts = t2 - t1;
-    var typesWithDescriptionCount = TypeManager.TypesAcceptedTo(PPS.AddDocs)
-      .Count(item=>item.Description!=null);
-    var typesWithoutDescriptionCount = TypeManager.TypesAcceptedTo(PPS.AddDocs)
-      .Count(item=>item.HasError(PPS.AddDocs, ErrorCode.MissingDescription));
-    var typesWithMeaninglessDescriptionCount = TypeManager.TypesAcceptedTo(PPS.AddDocs)
-      .Count(item=>item.HasError(PPS.AddDocs, ErrorCode.MeaninglessDescription));
-
-    var summaryInfo = new SummaryInfo
-    {
-      Time = ts,
-      Summary = new Dictionary<TypeInfoKind, object>{
+    Time = ts,
+    Summary = new Dictionary<TypeInfoKind, object>{
         {TypeInfoKind.TypesWithDescription, typesWithDescriptionCount},
         {TypeInfoKind.TypesWithAddedDescription, typesWithAddedDescriptionCount},
         {TypeInfoKind.TypesWithoutDescription, typesWithoutDescriptionCount},
         {TypeInfoKind.TypesWithMeaninglessDescription, typesWithMeaninglessDescriptionCount},
         }
-    };
+  };
 
-    ModelMonitor?.ShowPhaseEnd(PPS.AddDocs, summaryInfo);
-    return ts;
-  }
+  ModelMonitor?.ShowPhaseEnd(PPS.AddDocs, summaryInfo);
+  return ts;
+}
 
-  private void ModelDocumenter_OnDocumentingType(ProgressTypeInfo info)
+private void ModelDocumenter_OnDocumentingType(ProgressTypeInfo info)
+{
+  ModelMonitor?.ShowPhaseProgress(PPS.AddDocs, new ProgressInfo
   {
-    ModelMonitor?.ShowPhaseProgress(PPS.AddDocs, new ProgressInfo
-    {
-      PreStr = "added docs to",
-      TotalTypes = info.TotalTypes,
-      CheckedTypes = info.CheckedTypes,
-      ProcessedTypes =  info.ProcessedTypes,
-      PostStr = $"{info.Current?.OriginalNamespace}.{info.Current?.OriginalName}"
-    });;
-  }
+    PreStr = "added docs to",
+    TotalTypes = info.TotalTypes,
+    CheckedTypes = info.CheckedTypes,
+    ProcessedTypes = info.ProcessedTypes,
+    PostStr = $"{info.Current?.OriginalNamespace}.{info.Current?.OriginalName}"
+  }); ;
+}
 
-  private void ModelValidator_OnValidatingType(ModelValidator sender, ValidatingTypeInfo info)
+private void ModelValidator_OnValidatingType(ModelValidator sender, ValidatingTypeInfo info)
+{
+  //ModelMonitor?.ShowPhaseProgress(PPS.ScanSource, new ProgressInfo
+  //{
+  //  PreStr = "validated",
+  //  Done = info.CheckedTypes,
+  //  Total = info.TotalTypes,
+  //  MidStr = "types",
+  //  Summary = new Dictionary<string, object>{
+  //    {"invalid", info.InvalidTypes ?? 0 } },
+  //  PostStr = $"{info.Current?.OriginalNamespace}.{info.Current?.OriginalName}"
+  //});
+}
+
+protected TimeSpan RenameTypes()
+{
+  ModelMonitor?.ShowPhaseStart(PPS.Rename, "Renaming types");
+  DateTime t1 = DateTime.Now;
+  ModelManager.OnRenamingType += ModelManager_OnRenamingType;
+  var renamedTypesCount = ModelManager.RenameNamespacesAndTypes();
+  ModelManager.OnRenamingType -= ModelManager_OnRenamingType;
+
+  DateTime t2 = DateTime.Now;
+  var ts = t2 - t1;
+  ModelMonitor?.ShowPhaseEnd(PPS.Rename, new SummaryInfo
   {
-    //ModelMonitor?.ShowPhaseProgress(PPS.ScanSource, new ProgressInfo
-    //{
-    //  PreStr = "validated",
-    //  Done = info.CheckedTypes,
-    //  Total = info.TotalTypes,
-    //  MidStr = "types",
-    //  Summary = new Dictionary<string, object>{
-    //    {"invalid", info.InvalidTypes ?? 0 } },
-    //  PostStr = $"{info.Current?.OriginalNamespace}.{info.Current?.OriginalName}"
-    //});
-  }
-
-  protected TimeSpan RenameTypes()
-  {
-    ModelMonitor?.ShowPhaseStart(PPS.Rename, "Renaming types");
-    DateTime t1 = DateTime.Now;
-    ModelManager.OnRenamingType += ModelManager_OnRenamingType;
-    var renamedTypesCount = ModelManager.RenameNamespacesAndTypes();
-    ModelManager.OnRenamingType -= ModelManager_OnRenamingType;
-
-    DateTime t2 = DateTime.Now;
-    var ts = t2 - t1;
-    ModelMonitor?.ShowPhaseEnd(PPS.Rename, new SummaryInfo
-    {
-      Time = ts,
-      Summary = new Dictionary<TypeInfoKind, object>{
+    Time = ts,
+    Summary = new Dictionary<TypeInfoKind, object>{
         {TypeInfoKind.AllTypes, TypeManager.AllTypes.Count() },
         {TypeInfoKind.RenamedTypes, renamedTypesCount },
         {TypeInfoKind.ProblematicTypes, ModelManager.DuplicateTypeNamesCount},
         }
-    });
-    return ts;
-  }
+  });
+  return ts;
+}
 
-  private void ModelManager_OnRenamingType(ProgressTypeInfo info)
+private void ModelManager_OnRenamingType(ProgressTypeInfo info)
+{
+  ModelMonitor?.ShowPhaseProgress(PPS.Rename, new ProgressInfo
   {
-    ModelMonitor?.ShowPhaseProgress(PPS.Rename, new ProgressInfo
-    {
-      PreStr = "renamed",
-      TotalTypes = TotalTypesCount,
-      CheckedTypes = info.CheckedTypes,
-      ProcessedTypes = info.ProcessedTypes,
-      PostStr = $"{info.Current?.OriginalNamespace}.{info.Current?.OriginalName} -> {info.Current?.GetTargetNamespace()}.{info.Current?.Name}"
-    });
-  }
+    PreStr = "renamed",
+    TotalTypes = TotalTypesCount,
+    CheckedTypes = info.CheckedTypes,
+    ProcessedTypes = info.ProcessedTypes,
+    PostStr = $"{info.Current?.OriginalNamespace}.{info.Current?.OriginalName} -> {info.Current?.GetTargetNamespace()}.{info.Current?.Name}"
+  });
+}
 
-  protected TimeSpan ConvertTypes()
+protected TimeSpan ConvertTypes()
+{
+  ModelMonitor?.ShowPhaseStart(PPS.ConvertTypes, "Converting types");
+  DateTime t1 = DateTime.Now;
+  ModelManager.OnConvertingType += ModelManager_OnConvertingType;
+  var renamedTypesCount = ModelManager.ConvertTypes();
+  ModelManager.OnConvertingType -= ModelManager_OnConvertingType;
+
+  DateTime t2 = DateTime.Now;
+  var ts = t2 - t1;
+  ModelMonitor?.ShowPhaseEnd(PPS.ConvertTypes, new SummaryInfo
   {
-    ModelMonitor?.ShowPhaseStart(PPS.ConvertTypes, "Converting types");
-    DateTime t1 = DateTime.Now;
-    ModelManager.OnConvertingType += ModelManager_OnConvertingType;
-    var renamedTypesCount = ModelManager.ConvertTypes();
-    ModelManager.OnConvertingType -= ModelManager_OnConvertingType;
-
-    DateTime t2 = DateTime.Now;
-    var ts = t2 - t1;
-    ModelMonitor?.ShowPhaseEnd(PPS.ConvertTypes, new SummaryInfo
-    {
-      Time = ts,
-      Summary = new Dictionary<TypeInfoKind, object>{
+    Time = ts,
+    Summary = new Dictionary<TypeInfoKind, object>{
         {TypeInfoKind.AllTypes, TypeManager.AllTypes.Count() },
         {TypeInfoKind.ConvertedTypes, renamedTypesCount },
         {TypeInfoKind.ProblematicTypes, TypeManager.AllTypes.Count(item=>item.HasProblems(PhaseDone))},
         }
-    });
-    return ts;
-  }
+  });
+  return ts;
+}
 
-  private void ModelManager_OnConvertingType(ProgressTypeInfo info)
+private void ModelManager_OnConvertingType(ProgressTypeInfo info)
+{
+  ModelMonitor?.ShowPhaseProgress(PPS.ConvertTypes, new ProgressInfo
   {
-    ModelMonitor?.ShowPhaseProgress(PPS.ConvertTypes, new ProgressInfo
-    {
-      PreStr = "converted",
-      TotalTypes = TotalTypesCount,
-      ProcessedTypes = info.ProcessedTypes,
-      PostStr = $"{info.Current?.OriginalNamespace}.{info.Current?.OriginalName} -> {info.Current?.GetTargetNamespace()}.{info.Current?.Name}"
-    });
-  }
+    PreStr = "converted",
+    TotalTypes = TotalTypesCount,
+    ProcessedTypes = info.ProcessedTypes,
+    PostStr = $"{info.Current?.OriginalNamespace}.{info.Current?.OriginalName} -> {info.Current?.GetTargetNamespace()}.{info.Current?.Name}"
+  });
+}
 
-  //protected TimeSpan CheckTypeUsage()
-  //{
-  //  ModelMonitor?.ShowPhaseStart("Checking types usage");
-  //  DateTime t1 = DateTime.Now;
-  //  ModelManager.OnCheckingUsage += ModelManager_OnCheckingUsage;
-  //  foreach (var type in TypeManager.AcceptedTypes.ToArray())
-  //  {
-  //    ModelManager.CheckTypeUsage(type);
-  //  }
-  //  ModelManager.OnCheckingUsage -= ModelManager_OnCheckingUsage;
-  //  DateTime t2 = DateTime.Now;
-  //  var ts = t2 - t1;
-  //  var usedTypesCount = TypeManager.UsedTypes.Count();
-  //  var acceptedTypesCount = TypeManager.AcceptedTypes.Count();
-  //  ModelMonitor?.ShowPhaseEnd("Checking type usage", new SummaryInfo
-  //  {
-  //    Time = ts,
-  //    Summary = new Dictionary<string, object>{
-  //      {"Used types", usedTypesCount },
-  //      {"Accepted types", acceptedTypesCount },
-  //      }
-  //  });
-  //  return ts;
-  //}
+//protected TimeSpan CheckTypeUsage()
+//{
+//  ModelMonitor?.ShowPhaseStart("Checking types usage");
+//  DateTime t1 = DateTime.Now;
+//  ModelManager.OnCheckingUsage += ModelManager_OnCheckingUsage;
+//  foreach (var type in TypeManager.AcceptedTypes.ToArray())
+//  {
+//    ModelManager.CheckTypeUsage(type);
+//  }
+//  ModelManager.OnCheckingUsage -= ModelManager_OnCheckingUsage;
+//  DateTime t2 = DateTime.Now;
+//  var ts = t2 - t1;
+//  var usedTypesCount = TypeManager.UsedTypes.Count();
+//  var acceptedTypesCount = TypeManager.AcceptedTypes.Count();
+//  ModelMonitor?.ShowPhaseEnd("Checking type usage", new SummaryInfo
+//  {
+//    Time = ts,
+//    Summary = new Dictionary<string, object>{
+//      {"Used types", usedTypesCount },
+//      {"Accepted types", acceptedTypesCount },
+//      }
+//  });
+//  return ts;
+//}
 
-  //protected TimeSpan ValidateTypes()
-  //{
-  //  ModelMonitor?.ShowPhaseStart("Validating types & namespaces");
-  //  DateTime t1 = DateTime.Now;
-  //  var checkedTypesCount = 0;
-  //  var checkedNamespacesCount = 0;
-  //  var fixedTypesCount = 0;
-  //  var duplicateTypesCount = 0;
-  //  foreach (var typeInfo in TypeManager.AllTypes.ToArray())
-  //  {
-  //    ModelMonitor?.WriteSameLine($"Checked {++checkedTypesCount} types. {typeInfo.GetFullName(true, true, true)}");
-  //    if (!ModelManager.ValidateType(typeInfo))
-  //      fixedTypesCount++;
-  //  }
-  //  //invalidTypesCount += ModelManager.CheckNamespacesDuplicatedTypesAsync((int repaired, int waiting)
-  //  //  =>
-  //  //  ModelMonitor?.WriteSameLine($"Repaired {repaired} types. Waiting for {waiting} namespaces ")
-  //  //  );
-  //  foreach (var nspace in TypeManager.GetNamespaces(NTS.Target))
-  //  {
-  //    ModelMonitor?.WriteSameLine($"Checked {++checkedNamespacesCount} namespaces for duplicate type names. {nspace}");
-  //    int n = ModelManager.CheckNamespaceDuplicatedTypes(nspace);
-  //    if (n > 0)
-  //      duplicateTypesCount += n;
-  //  }
-  //  DateTime t2 = DateTime.Now;
-  //  var ts = t2 - t1;
-  //  ModelMonitor?.ShowPhaseEnd("Validating types & namespaces", new SummaryInfo
-  //  {
-  //    Time = ts,
-  //    Summary = new Dictionary<string, object>{
-  //      {"Fixed types", fixedTypesCount },
-  //      {"Duplicated types", duplicateTypesCount },
-  //      }
-  //  });
-  //  return ts;
-  //}
+//protected TimeSpan ValidateTypes()
+//{
+//  ModelMonitor?.ShowPhaseStart("Validating types & namespaces");
+//  DateTime t1 = DateTime.Now;
+//  var checkedTypesCount = 0;
+//  var checkedNamespacesCount = 0;
+//  var fixedTypesCount = 0;
+//  var duplicateTypesCount = 0;
+//  foreach (var typeInfo in TypeManager.AllTypes.ToArray())
+//  {
+//    ModelMonitor?.WriteSameLine($"Checked {++checkedTypesCount} types. {typeInfo.GetFullName(true, true, true)}");
+//    if (!ModelManager.ValidateType(typeInfo))
+//      fixedTypesCount++;
+//  }
+//  //invalidTypesCount += ModelManager.CheckNamespacesDuplicatedTypesAsync((int repaired, int waiting)
+//  //  =>
+//  //  ModelMonitor?.WriteSameLine($"Repaired {repaired} types. Waiting for {waiting} namespaces ")
+//  //  );
+//  foreach (var nspace in TypeManager.GetNamespaces(NTS.Target))
+//  {
+//    ModelMonitor?.WriteSameLine($"Checked {++checkedNamespacesCount} namespaces for duplicate type names. {nspace}");
+//    int n = ModelManager.CheckNamespaceDuplicatedTypes(nspace);
+//    if (n > 0)
+//      duplicateTypesCount += n;
+//  }
+//  DateTime t2 = DateTime.Now;
+//  var ts = t2 - t1;
+//  ModelMonitor?.ShowPhaseEnd("Validating types & namespaces", new SummaryInfo
+//  {
+//    Time = ts,
+//    Summary = new Dictionary<string, object>{
+//      {"Fixed types", fixedTypesCount },
+//      {"Duplicated types", duplicateTypesCount },
+//      }
+//  });
+//  return ts;
+//}
 
-  protected abstract TimeSpan GenerateCode();
-  #endregion
+protected abstract TimeSpan GenerateCode();
+#endregion
 
-  #region monitoring callbacks
+#region monitoring callbacks
 
 
 
-  //private void TypeReflector_OnReflection(ReflectionInfo info)
-  //{
-  //  ModelMonitor?.ShowPhaseProgress("Scanning types", new ProgressInfo
-  //  {
-  //    PreStr = "reflected",
-  //    Done = info.Done,
-  //    MidStr = "types",
-  //    Summary = new Dictionary<string, object>{
-  //      {"waiting", info.Waiting ?? 0 } },
-  //    PostStr = $"{info.Current?.OriginalNamespace}.{info.Current?.OriginalName}"
-  //  });
-  //}
+//private void TypeReflector_OnReflection(ReflectionInfo info)
+//{
+//  ModelMonitor?.ShowPhaseProgress("Scanning types", new ProgressInfo
+//  {
+//    PreStr = "reflected",
+//    Done = info.Done,
+//    MidStr = "types",
+//    Summary = new Dictionary<string, object>{
+//      {"waiting", info.Waiting ?? 0 } },
+//    PostStr = $"{info.Current?.OriginalNamespace}.{info.Current?.OriginalName}"
+//  });
+//}
 
 
-  //private void ModelManager_OnCheckingUsage(TypeProcessInfo info)
-  //{
-  //  ModelMonitor?.ShowPhaseProgress(PPS.UsageCheck, new ProgressInfo
-  //  {
-  //    PreStr = "checked",
-  //    Done = info.CheckedTypes,
-  //    MidStr = "types",
-  //    Summary = new Dictionary<string, object>{
-  //      {"used", info.UsedTypes ?? 0 } },
-  //    PostStr = $"{info.Current?.OriginalNamespace}.{info.Current?.OriginalName}"
-  //  });
-  //}
+//private void ModelManager_OnCheckingUsage(TypeProcessInfo info)
+//{
+//  ModelMonitor?.ShowPhaseProgress(PPS.UsageCheck, new ProgressInfo
+//  {
+//    PreStr = "checked",
+//    Done = info.CheckedTypes,
+//    MidStr = "types",
+//    Summary = new Dictionary<string, object>{
+//      {"used", info.UsedTypes ?? 0 } },
+//    PostStr = $"{info.Current?.OriginalNamespace}.{info.Current?.OriginalName}"
+//  });
+//}
 
-  #endregion
+#endregion
 
-  #region SaveData
-  public void SaveData()
+#region SaveData
+public void SaveData()
+{
+  SaveData(GetFilename());
+}
+
+public void SaveData(string filename)
+{
+  using (var xmlWriter = XmlWriter.Create(filename, new XmlWriterSettings { Indent = true }))
   {
-    SaveData(GetFilename());
+    var xmlSerializer = new QXmlSerializer(typeof(BaseCreator));
+    xmlSerializer.Serialize(xmlWriter, this);
   }
+}
 
-  public void SaveData(string filename)
-  {
-    using (var xmlWriter = XmlWriter.Create(filename, new XmlWriterSettings{ Indent=true }))
-    {
-      var xmlSerializer = new QXmlSerializer(typeof(BaseCreator));
-      xmlSerializer.Serialize(xmlWriter, this);
-    }
-  }
-
-  public string GetFilename()
-  {
-    var path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-    path = Path.Combine(path, "ModelGen");
-    if (!Directory.Exists(path))
-      Directory.CreateDirectory(path);
-    path = Path.Combine(path, $"Phase {PhaseDone} result.xml");
-    return path;
-  }
+public string GetFilename()
+{
+  var path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+  path = Path.Combine(path, "ModelGen");
+  if (!Directory.Exists(path))
+    Directory.CreateDirectory(path);
+  path = Path.Combine(path, $"Phase {PhaseDone} result.xml");
+  return path;
+}
   #endregion
 
 }
