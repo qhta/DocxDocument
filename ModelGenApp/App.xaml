@@ -70,7 +70,7 @@
           <TextBlock Grid.Column="0"
                      HorizontalAlignment="Right"
                      Margin="5,0,5,0"
-                     Text="{Binding Items.Count}" />
+                     Text="{Binding Count}" />
           <Button Grid.Column="1"
                   Content=">>"
                   Command="{Binding Path=ShowDetailsCommand}"

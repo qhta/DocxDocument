@@ -19,7 +19,7 @@ public static class TypeManager
   {
     get
     {
-      lock (NamespacesLock)
+      lock (KnownNamespaces)
         return TypeManager.KnownNamespaces.Values.Select(item => item);
     }
   }
@@ -30,26 +30,26 @@ public static class TypeManager
   {
     get
     {
-      lock (NamespacesLock)
+      lock (KnownNamespaces)
         return TypeManager.KnownTypes.Values.Select(item => item);
     }
   }
 
   public static IEnumerable<TypeInfo> TypesAcceptedTo(PPS phase)
   {
-    lock (NamespacesLock)
+    lock (KnownNamespaces)
       return TypeManager.KnownTypes.Values.Where(item => item.IsAcceptedTo(phase));
   }
 
   public static IEnumerable<TypeInfo> TypesAcceptedAfter(PPS phase)
   {
-    lock (NamespacesLock)
+    lock (KnownNamespaces)
       return TypeManager.KnownTypes.Values.Where(item => item.IsAcceptedAfter(phase));
   }
 
   public static IEnumerable<TypeInfo> TypesRejectedAfter(PPS phase)
   {
-    lock (NamespacesLock)
+    lock (KnownNamespaces)
       return TypeManager.KnownTypes.Values.Where(item => item.IsRejectedAfter(phase));
   }
 
@@ -57,7 +57,7 @@ public static class TypeManager
   {
     get
     {
-      lock (NamespacesLock)
+      lock (KnownNamespaces)
         return TypeManager.KnownTypes.Values.Where(item => item.IsConverted == true);
     }
   }
@@ -66,14 +66,14 @@ public static class TypeManager
   {
     get
     {
-      lock (NamespacesLock)
+      lock (KnownNamespaces)
         return TypeManager.KnownTypes.Values.Where(item => item.IsUsed == true);
     }
   }
 
   public static void RegisterNamespace(string nspace)
   {
-    lock (NamespacesLock)
+    lock (KnownNamespaces)
       if (!KnownNamespaces.ContainsKey(nspace))
       {
         KnownNamespaces.Add(nspace, new Namespace(nspace));
@@ -105,7 +105,7 @@ public static class TypeManager
 
   public static IEnumerable<string> GetNamespaces(NTS filter)
   {
-    lock (NamespacesLock)
+    lock (KnownNamespaces)
     {
       var knownNamespace = KnownNamespaces.ToArray();
       if (filter == 0)
@@ -121,13 +121,13 @@ public static class TypeManager
     }
   }
 
-  private static object KnownTypesLock = new object();
-  private static object NamespacesLock = new object();
+  //private static object KnownTypesLock = new object();
+  //private static object NamespacesLock = new object();
   private static object RelationshipsLock = new object();
 
   public static bool TryGetTypeInfo(Type type, [NotNullWhen(true)] out TypeInfo? info)
   {
-    lock (KnownTypesLock)
+    lock (KnownTypes)
     {
       if (KnownTypes.TryGetValue(type, out info))
         return true;
@@ -141,12 +141,12 @@ public static class TypeManager
     //  Debug.Assert(true);
     //if (type.Name.StartsWith("OpenXmlSimpleValue"))
     //  Debug.Assert(true);
-    lock (KnownTypesLock)
+    lock (KnownTypes)
     {
       if (KnownTypes.TryGetValue(type, out var typeInfo))
         return typeInfo;
       var nspace = type.Namespace ?? "";
-      lock (NamespacesLock)
+      lock (KnownNamespaces)
       {
         if (!KnownNamespaces.ContainsKey(nspace))
           RegisterNamespace(nspace);
@@ -236,7 +236,7 @@ public static class TypeManager
 
   public static Namespace GetNamespace(string nspace)
   {
-    lock (KnownTypesLock)
+    lock (KnownTypes)
     {
       return KnownNamespaces[nspace];
     }
@@ -244,7 +244,7 @@ public static class TypeManager
 
   public static IEnumerable<TypeInfo> GetNamespaceTypes(string nspace)
   {
-    lock (KnownTypesLock)
+    lock (KnownTypes)
     {
       return KnownNamespaces[nspace].Types;
     }
