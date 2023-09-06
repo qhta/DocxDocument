@@ -222,11 +222,14 @@ public static class OpenXmlMetadataReader
       if (itemParticle != null)
         schemaParticle.Items.Add(itemParticle);
     }
-    if (schemaParticle is ItemsSequenceParticle || schemaParticle is ItemsGroupParticle)
-      if (schemaParticle.Items.Count==1)
-      {
-        return schemaParticle.Items[0];
-      }
+    if ((schemaParticle is ItemsSequenceParticle || schemaParticle is ItemsGroupParticle)
+       && schemaParticle.Items.Count == 1/* && !schemaParticle.IsMultiple && !schemaParticle.IsOptional*/)
+    {
+      var item = schemaParticle.Items[0];
+      item.MinOccurs = schemaParticle.MinOccurs;
+      item.MaxOccurs = schemaParticle.MaxOccurs;
+      return item;
+    }
     return schemaParticle;
   }
 
@@ -434,11 +437,11 @@ public static class OpenXmlMetadataReader
             xsdType |= XsdType.QName;
           if (stringValidator.IsUri)
             xsdType |= XsdType.Uri;
-          if (xsdType!=0)
+          if (xsdType != 0)
             constraint.XsdType = xsdType;
           if (propInfo.Constraints == null)
             propInfo.Constraints = new Constraints();
-          if (propInfo.Constraints.FirstOrDefault(item => item.Equals(constraint))==null)
+          if (propInfo.Constraints.FirstOrDefault(item => item.Equals(constraint)) == null)
             propInfo.Constraints.Add(constraint);
           propInfo.IsConstrained = true;
         }
