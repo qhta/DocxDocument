@@ -600,9 +600,9 @@ public abstract class ModelMonitor
     attribs.Add($"required=\"{particle.IsRequired}\"");
     if (particle.IsMultiple)
       attribs.Add($"multiple=\"{particle.IsMultiple}\"");
-    if (particle.MinOccurs != null && particle.MinOccurs != particle.DefMinOccurs)
+    if (particle.MinOccurs != null && particle.MinOccurs != particle.DefaultMinOccurs)
       attribs.Add($"minOccurs=\"{particle.MinOccurs}\"");
-    if (particle.MaxOccurs != null && particle.MaxOccurs != particle.DefMaxOccurs)
+    if (particle.MaxOccurs != null && particle.MaxOccurs != particle.DefaultMaxOccurs)
       attribs.Add($"maxOccurs=\"{particle.MaxOccurs}\"");
     return String.Join(" ", attribs);
   }

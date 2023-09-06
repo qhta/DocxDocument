@@ -52,6 +52,9 @@
     <Compile Update="Views\PropsDisplayOptionsView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\SchemaView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\TypeListView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -115,6 +118,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\PropsDisplayOptionsView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\SchemaView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\TypeInfoView.xaml">
