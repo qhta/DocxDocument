@@ -164,7 +164,7 @@ public static class TypeReflector
     if (xmlDocsElement != null)
       CommentDocsParser.ParseDocumentation(typeInfo, xmlDocsElement);
 
-    OpenXmlMetadataReader.GetOpenXmlElementSchema(typeInfo);
+    typeInfo.Schema = OpenXmlMetadataReader.GetOpenXmlElementSchema(typeInfo);
 
     if (typeInfo.Schema != null)
       ProcessElementSchema(typeInfo, typeInfo.Schema);
@@ -226,9 +226,6 @@ public static class TypeReflector
     else
     if (particle is ItemsGroupParticle itemsGroupParticle)
     {
-      //if (itemsGroupParticle.Items.Count==1)
-      //{
-      //}
       ScanItemsParticle(typeInfo, itemsGroupParticle);
     }
     else
@@ -266,7 +263,7 @@ public static class TypeReflector
       if (existingProp == null)
       {
         var propInfo = new PropInfo(propName, targetType);
-        Type propertyType = typeof(System.Collections.ObjectModel.Collection<>).MakeGenericType(new Type[] { targetType.Type });
+        Type propertyType = typeof(Collection<>).MakeGenericType(new Type[] { targetType.Type });
         if (particle.MaxOccurs != null || particle.MinOccurs != null)
         {
           propInfo.Add(new CustomAttribInfo(

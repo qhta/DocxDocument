@@ -498,6 +498,15 @@ namespace ModelGenApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Members.
+        /// </summary>
+        public static string Members {
+            get {
+                return ResourceManager.GetString("Members", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Missing description.
         /// </summary>
         public static string MissingDescription {
@@ -811,6 +820,15 @@ namespace ModelGenApp {
         public static string ScanSource {
             get {
                 return ResourceManager.GetString("ScanSource", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Schema.
+        /// </summary>
+        public static string Schema {
+            get {
+                return ResourceManager.GetString("Schema", resourceCulture);
             }
         }
         

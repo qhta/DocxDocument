@@ -19,6 +19,8 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
     ShowErrorCommand = new RelayCommand(ShowErrorExecute, ShowErrorCanExecute) { Name = "ShowErrorCommand" };
     BusyMonitor.Instance.PropertyChanged += BusyMonitor_PropertyChanged;
     FillTypeSummaryAsync();
+    if (typeInfo.Schema!=null)
+      Schema = new ElementSchemaViewModel(typeInfo.Schema);
   }
 
   public bool IsBusy => BusyMonitor.Instance.IsBusy;
@@ -212,6 +214,7 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
 
   public virtual object? Members => null;
 
+  public ElementSchemaViewModel? Schema { get; private set; }
 
   #region ShowTypeCommand
   public Command ShowTypeCommand { get; private set; }
