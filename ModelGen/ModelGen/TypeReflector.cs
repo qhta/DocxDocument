@@ -264,7 +264,7 @@ public static class TypeReflector
       {
         var propInfo = new PropInfo(propName, targetType);
         Type propertyType = typeof(Collection<>).MakeGenericType(new Type[] { targetType.Type });
-        if (particle.MaxOccurs != null || particle.MinOccurs != null)
+        //if (particle.MaxOccurs != null || particle.MinOccurs != null)
         {
           propInfo.Add(new CustomAttribInfo(
             new DocumentModel.Attributes.CollectionConstraintAttribute

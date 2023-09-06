@@ -10,19 +10,35 @@ public class ElementParticleViewModel : ViewModel<ItemElementParticle>
       _DummyItems.Add(new ViewModel());
       _Items = _DummyItems;
     }
+    Name = elementParticle.Name;
   }
+
+
+  public string? Name
+  {
+    get { return _Name; }
+    set
+    {
+      if (_Name != value)
+      {
+        _Name = value;
+        NotifyPropertyChanged(nameof(Name));
+      }
+    }
+  }
+  private string? _Name;
 
   public string? Caption
   {
     get
     {
+      if (_Name!=null)
+        return _Name;
       var result = Model.ItemType.GetFullName(false, false, false);
       if (Model.AccessProperty != null)
         result = Model.AccessProperty.Name + ": " + result;
       var attribs = new List<string>();
-      if (Model.IsRequired)
-        attribs.Add("required");
-      else
+      if (Model.IsOptional)
         attribs.Add("optional");
       if (Model.IsMultiple)
         attribs.Add("multiple");

@@ -1,9 +1,26 @@
 ﻿namespace ModelGenApp.ViewModels;
 public class ElementSchemaViewModel : ViewModel<ElementSchema>
 {
-  public ElementSchemaViewModel(ElementSchema elementSchema) : base(elementSchema)
-  { }
+  public ElementSchemaViewModel(ElementSchema elementSchema, string? name = null) : base(elementSchema)
+  { 
+    Name = name;
+  }
 
+
+
+  public string? Name
+  {
+    get { return _Name; }
+    set
+    {
+      if (_Name != value)
+      {
+        _Name = value;
+        NotifyPropertyChanged(nameof(Name));
+      }
+    }
+  }
+  private string? _Name;
 
   /// <summary>
   /// Attribute/Element tag in schema.
@@ -15,7 +32,7 @@ public class ElementSchemaViewModel : ViewModel<ElementSchema>
   /// </summary>
   public bool IsAttrib => Model.SchemaIsAttrib;
 
-  public string? Caption => (IsAttrib) ? $"<attribute name={Tag}>" : $"<element name={Tag}>";
+  public string? Caption => Name ?? ((IsAttrib) ? $"<attribute name={Tag}>" : $"<element name={Tag}>");
 
   public ViewModel? Main
   {
@@ -24,10 +41,18 @@ public class ElementSchemaViewModel : ViewModel<ElementSchema>
       if (_Main == null && Model.Main != null)
       {
         if (Model.Main is ItemElementParticle itemElement)
-          _Main = new ElementParticleViewModel(itemElement);
+        {
+          var elementVM = new ElementParticleViewModel(itemElement);
+          elementVM.Name = Name;
+          _Main = elementVM;
+        }
         else
        if (Model.Main is ItemsParticle itemsParticle)
-          _Main = new ItemsParticleViewModel(itemsParticle);
+        {
+          var itemsVM = new ItemsParticleViewModel(itemsParticle);
+          itemsVM.Name = Name;
+          _Main = itemsVM;
+        }
       }
       return _Main;
     }

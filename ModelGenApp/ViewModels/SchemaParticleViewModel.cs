@@ -8,9 +8,4 @@ public class SchemaParticleViewModel: ViewModel<SchemaParticle>
 
   public string? Name => Model.Name;
 
-  public bool IsRequired => Model.IsRequired;
-  public bool IsMultiple => Model.IsMultiple;
-  public int? MinOccurs => Model.MinOccurs;
-  public int? MaxOccurs => Model.MaxOccurs;
-
 }

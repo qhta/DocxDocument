@@ -225,9 +225,6 @@ public static class OpenXmlMetadataReader
     if (schemaParticle is ItemsSequenceParticle || schemaParticle is ItemsGroupParticle)
       if (schemaParticle.Items.Count==1)
       {
-        schemaParticle.Items[0].ParticleType = schemaParticle.ParticleType;
-        schemaParticle.Items[0].MinOccurs = schemaParticle.MinOccurs;
-        schemaParticle.Items[0].MaxOccurs = schemaParticle.MaxOccurs;
         return schemaParticle.Items[0];
       }
     return schemaParticle;
