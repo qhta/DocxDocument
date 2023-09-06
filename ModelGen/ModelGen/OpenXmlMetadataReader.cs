@@ -100,9 +100,11 @@ public static class OpenXmlMetadataReader
   /// </summary>
   /// <param name="typeInfo">TypeInfo for which the element metadata is processed.</param>
   /// <returns>Created element schema</returns>
-  public static void GetOpenXmlElementSchema(this TypeInfo typeInfo)
+  public static ElementSchema? GetOpenXmlElementSchema(this TypeInfo typeInfo)
   {
-    ElementSchema? elementSchema = typeInfo.Schema ?? new();
+    ElementSchema? elementSchema = typeInfo.Schema;
+    if (elementSchema == null)
+      elementSchema = new();
     var isSchemaModified = false;
     var type = typeInfo.Type;
     if (type != null)
@@ -139,6 +141,7 @@ public static class OpenXmlMetadataReader
     }
     if (isSchemaModified)
       typeInfo.Schema = elementSchema;
+    return elementSchema;
   }
 
   #region CompiledParticle read methods
@@ -178,10 +181,8 @@ public static class OpenXmlMetadataReader
   {
     var schemaParticle = new ItemElementParticle
     {
-      IsRequired = elementParticle.MinOccurs > 0,
-      IsMultiple = (elementParticle.MinOccurs == 0 && elementParticle.MaxOccurs == 0) || elementParticle.MaxOccurs > 1,
-      MinOccurs = (elementParticle.MinOccurs > 0) ? elementParticle.MinOccurs : null,
-      MaxOccurs = (elementParticle.MaxOccurs > 0) ? elementParticle.MaxOccurs : null,
+      MinOccurs = elementParticle.MinOccurs,
+      MaxOccurs = elementParticle.MaxOccurs,
     };
     var elementType = elementParticle.ElementType;
     var elementTypeInfo = TypeManager.RegisterType(elementType);
@@ -210,19 +211,25 @@ public static class OpenXmlMetadataReader
   /// <param name="compositeParticle">Processed OpenXml composite particle</param>
   /// <param name="isMultiple">specifies whether many particles can appear.</param>
   /// <returns>Created schema items particle</returns>
-  private static SchemaParticle CreateItemsParticle(TypeInfo ownerTypeInfo, DXSchema.CompositeParticle compositeParticle, bool isMultiple)
+  private static SchemaParticle? CreateItemsParticle(TypeInfo ownerTypeInfo, DXSchema.CompositeParticle compositeParticle, bool isMultiple)
   {
     var schemaParticle = ItemsParticle.Create((ParticleType)compositeParticle.ParticleType);
-    schemaParticle.IsRequired = compositeParticle.MinOccurs > 0;
-    schemaParticle.IsMultiple = (compositeParticle.MinOccurs == 0 && compositeParticle.MaxOccurs == 0) || compositeParticle.MaxOccurs > 1;
-    schemaParticle.MinOccurs = (compositeParticle.MinOccurs > 0) ? compositeParticle.MinOccurs : null;
-    schemaParticle.MaxOccurs = (compositeParticle.MaxOccurs > 0) ? compositeParticle.MaxOccurs : null;
+    schemaParticle.MinOccurs = compositeParticle.MinOccurs;
+    schemaParticle.MaxOccurs = compositeParticle.MaxOccurs;
     foreach (var childParticle in compositeParticle.ChildrenParticles)
     {
       var itemParticle = GetSchemaParticle(ownerTypeInfo, childParticle, isMultiple);
       if (itemParticle != null)
         schemaParticle.Items.Add(itemParticle);
     }
+    if (schemaParticle is ItemsSequenceParticle || schemaParticle is ItemsGroupParticle)
+      if (schemaParticle.Items.Count==1)
+      {
+        schemaParticle.Items[0].ParticleType = schemaParticle.ParticleType;
+        schemaParticle.Items[0].MinOccurs = schemaParticle.MinOccurs;
+        schemaParticle.Items[0].MaxOccurs = schemaParticle.MaxOccurs;
+        return schemaParticle.Items[0];
+      }
     return schemaParticle;
   }
 
@@ -280,9 +287,8 @@ public static class OpenXmlMetadataReader
     {
       var subParticle = groupParticle.Items.First();
       if (groupParticle.IsMultiple == subParticle.IsMultiple
-        && subParticle.MinOccurs == subParticle.DefMinOccurs && subParticle.MaxOccurs == subParticle.DefMaxOccurs)
+        && subParticle.MinOccurs == subParticle.DefaultMinOccurs && subParticle.MaxOccurs == subParticle.DefaultMaxOccurs)
       {
-        subParticle.IsRequired = groupParticle.IsRequired;
         subParticle.MinOccurs = groupParticle.MinOccurs;
         subParticle.MaxOccurs = groupParticle.MaxOccurs;
         return subParticle.Name;

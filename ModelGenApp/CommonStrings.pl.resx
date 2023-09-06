@@ -488,4 +488,10 @@ zdefiniowanej w typie wyliczeniowym.</value>
   <data name="ShowAcceptedOnly" xml:space="preserve">
     <value>Pokaż tylko zaakceptowane</value>
   </data>
+  <data name="Members" xml:space="preserve">
+    <value>Składowe</value>
+  </data>
+  <data name="Schema" xml:space="preserve">
+    <value>Schemat</value>
+  </data>
 </root>
