@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="ModelGenApp.Views.EnumValuesView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:ModelGenApp"
+             xmlns:views="clr-namespace:ModelGenApp.Views"
+             xmlns:vm="clr-namespace:ModelGenApp.ViewModels"
+             xmlns:hlp="clr-namespace:ModelGenApp.Helpers"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:utl="clr-namespace:Qhta.WPF.Utils;assembly=Qhta.WPF.Utils"
+             mc:Ignorable="d"
+             d:DesignHeight="450"
+             d:DesignWidth="800">
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+    <views:EnumsDisplayOptionsView />
+    <DataGrid x:Name="MainDataGrid"
+              Grid.Row="1"
+              AutoGeneratingColumn="DataGrid_AutoGeneratingColumn"
+              utl:CollectionViewBehavior.EnableCollectionSynchronization="True"
+              utl:CollectionViewBehavior.IsFocusable="True"
+              utl:CollectionViewBehavior.ShowFilterButton="True"
+              ItemsSource="{Binding Path=Members.VisibleItems}" />
+  </Grid>
+</UserControl>

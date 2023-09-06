@@ -13,6 +13,9 @@
     <Compile Update="Views\EnumsDisplayOptionsView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\EnumValuesView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\ModelConfigView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -46,6 +49,9 @@
     <Compile Update="Views\PropertiesConfigView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\PropertiesView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\PropListView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -76,6 +82,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\EnumsDisplayOptionsView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\EnumValuesView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\MainWindow.xaml">
@@ -112,6 +121,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\PropertiesConfigView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\PropertiesView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\PropListView.xaml">
