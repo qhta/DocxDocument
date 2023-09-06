@@ -10,14 +10,14 @@ public abstract class SchemaParticle
 
   public string? Name { get; set; }
 
-  public bool IsRequired => MinOccurs > 0;
+  public bool IsOptional => MinOccurs == 0;
   public bool IsMultiple => MaxOccurs == 0 || MaxOccurs > 1;
 
   public int MinOccurs { get; set; }
   public int MaxOccurs { get; set; }
 
   public int DefaultMinOccurs 
-    => (IsRequired) ? 1 : 0;
+    => (IsOptional) ? 0 : 1;
   public int DefaultMaxOccurs 
     => (IsMultiple) ? 0 : 1;
 }
