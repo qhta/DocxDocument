@@ -20,7 +20,7 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
     BusyMonitor.Instance.PropertyChanged += BusyMonitor_PropertyChanged;
     FillTypeSummaryAsync();
     if (typeInfo.Schema!=null)
-      Schema = new ElementSchemaViewModel(typeInfo.Schema);
+      Schema = new ElementSchemaViewModel(typeInfo.Schema, typeInfo.Name);
   }
 
   public bool IsBusy => BusyMonitor.Instance.IsBusy;
