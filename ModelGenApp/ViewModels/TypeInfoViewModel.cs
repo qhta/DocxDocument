@@ -216,6 +216,8 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
 
   public ElementSchemaViewModel? Schema { get; private set; }
 
+  public bool IsSchemaVisible => Schema != null;
+
   #region ShowTypeCommand
   public Command ShowTypeCommand { get; private set; }
 

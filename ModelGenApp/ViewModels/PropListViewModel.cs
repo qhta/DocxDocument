@@ -37,9 +37,13 @@ public class PropListViewModel : MemberListViewModel<PropInfoViewModel>
   protected override void ApplyAcceptedOnlyFilter(bool value)
   {
     if (value)
-      VisibleItems.Filter = Filter;
+    {
+      VisibleItems.Filter = new MemberInfoViewModelFilter(MemberInfoKind.AcceptedMembers, Phase.PhaseNum);
+    }
     else
+    {
       VisibleItems.Filter = null;
+    }
   }
 
   //Predicate<PropInfoViewModel> IFilter<PropInfoViewModel>.GetPredicate() => _Predicate;

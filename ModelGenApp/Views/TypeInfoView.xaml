@@ -26,33 +26,21 @@
     </Grid.RowDefinitions>
     <views:TypeSummaryView />
     <TabControl Grid.Row="1" TabStripPlacement="Bottom">
-      <TabItem Header="{x:Static local:CommonStrings.Members}">
-        <Grid Visibility="{Binding Path=Members.Visible, Converter={StaticResource BoolToVisibilityConverter}}">
-          <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-          </Grid.RowDefinitions>
-          <ContentControl Content="{Binding}">
-            <ContentControl.Resources>
-              <DataTemplate DataType="{x:Type vm:ClassInfoViewModel}">
-                <views:PropsDisplayOptionsView />
-              </DataTemplate>
-              <DataTemplate DataType="{x:Type vm:EnumTypeInfoViewModel}">
-                <views:EnumsDisplayOptionsView />
-              </DataTemplate>
-            </ContentControl.Resources>
-          </ContentControl>
-
-          <DataGrid x:Name="MainDataGrid"
-                    Grid.Row="1"
-                    AutoGeneratingColumn="DataGrid_AutoGeneratingColumn"
-                    utl:CollectionViewBehavior.EnableCollectionSynchronization="True"
-                    utl:CollectionViewBehavior.IsFocusable="True"
-                    utl:CollectionViewBehavior.ShowFilterButton="True"
-                    ItemsSource="{Binding Path=Members.VisibleItems}" />
-        </Grid>
+      <TabItem Header="{x:Static local:CommonStrings.Members}"
+               Visibility="{Binding Path=Members.Visible, Converter={StaticResource BoolToVisibilityConverter}}">
+        <ContentControl Content="{Binding}">
+          <ContentControl.Resources>
+            <DataTemplate DataType="{x:Type vm:ClassInfoViewModel}">
+              <views:PropertiesView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:EnumTypeInfoViewModel}">
+              <views:EnumValuesView />
+            </DataTemplate>
+          </ContentControl.Resources>
+        </ContentControl>
       </TabItem>
-      <TabItem Header="{x:Static local:CommonStrings.Schema}">
+      <TabItem Header="{x:Static local:CommonStrings.Schema}"
+               Visibility="{Binding Path=IsSchemaVisible, Converter={StaticResource BoolToVisibilityConverter}}">
         <views:SchemaView DataContext="{Binding Path=Schema}" />
       </TabItem>
     </TabControl>

@@ -2,6 +2,7 @@
 FD:\VS\Projects\DocxDocument\ModelGenApp\App.xaml;;
 FD:\VS\Projects\DocxDocument\ModelGenApp\Views\DummyWindow.xaml;;
 FD:\VS\Projects\DocxDocument\ModelGenApp\Views\EnumsDisplayOptionsView.xaml;;
+FD:\VS\Projects\DocxDocument\ModelGenApp\Views\EnumValuesView.xaml;;
 FD:\VS\Projects\DocxDocument\ModelGenApp\Views\MainWindow.xaml;;
 FD:\VS\Projects\DocxDocument\ModelGenApp\Views\ModelConfigView.xaml;;
 FD:\VS\Projects\DocxDocument\ModelGenApp\Views\ModelConfigWindow.xaml;;
@@ -14,6 +15,7 @@ FD:\VS\Projects\DocxDocument\ModelGenApp\Views\PhaseSummaryView.xaml;;
 FD:\VS\Projects\DocxDocument\ModelGenApp\Views\ProcessMonitorView.xaml;;
 FD:\VS\Projects\DocxDocument\ModelGenApp\Views\ProcessOptionsView.xaml;;
 FD:\VS\Projects\DocxDocument\ModelGenApp\Views\PropertiesConfigView.xaml;;
+FD:\VS\Projects\DocxDocument\ModelGenApp\Views\PropertiesView.xaml;;
 FD:\VS\Projects\DocxDocument\ModelGenApp\Views\PropListView.xaml;;
 FD:\VS\Projects\DocxDocument\ModelGenApp\Views\PropsDisplayOptionsView.xaml;;
 FD:\VS\Projects\DocxDocument\ModelGenApp\Views\SchemaView.xaml;;
