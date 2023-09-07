@@ -543,6 +543,15 @@ namespace ModelGenApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Missing properties.
+        /// </summary>
+        public static string MissingProperties {
+            get {
+                return ResourceManager.GetString("MissingProperties", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Missing schema.
         /// </summary>
         public static string MissingSchema {
