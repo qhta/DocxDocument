@@ -54,7 +54,12 @@ public class ModelValidator
     foreach (var typeInfo in types)
     {
       if (!ValidateType(typeInfo))
+      {
         ok = false;
+        InvalidTypesCount++;
+      }
+      else
+        ValidTypesCount++;
     }
     return ok;
   }
@@ -70,22 +75,112 @@ public class ModelValidator
       Current = typeInfo
     });
     var ok = true;
-    if (PhaseNum <= PPS.AddDocs)
+    switch (PhaseNum)
     {
-      if (!typeInfo.IsConstructedGenericType)
-        if (!ValidateDescription(typeInfo))
+      case PPS.ScanSource:
+        if (!ValidateScan(typeInfo))
           ok = false;
+        break;
+
+      case PPS.AddDocs:
+        if (!typeInfo.IsConstructedGenericType)
+          if (!ValidateDescription(typeInfo))
+            ok = false;
+        break;
     }
-    if (ok)
-      ValidTypesCount++;
-    else
-      InvalidTypesCount++;
     return ok;
+  }
+
+  public bool ValidateScan(TypeInfo typeInfo)
+  {
+    var ok1 = CompareSchemaWithIncludeRelationships(typeInfo);
+    return ok1;
+  }
+
+  public bool CompareSchemaWithIncludeRelationships(TypeInfo typeInfo)
+  {
+    var includedTypesRels = typeInfo.GetOutgoingRelationships(Semantics.Include).Select(item => item.Target).ToList();
+    if (typeInfo.Schema == null && includedTypesRels.Count > 0)
+    {
+      typeInfo.AddError(PhaseNum, ErrorCode.MissingSchema);
+      return false;
+    }
+    if (typeInfo.Schema?.Main != null)
+    {
+      var includedTypesInSchema = GetItemTypes(typeInfo.Schema.Main);
+      if (includedTypesInSchema.Count > 0 && includedTypesRels.Count == 0)
+      {
+        typeInfo.AddError(PhaseNum, ErrorCode.MissingIncludedTypeRels);
+        return false;
+      }
+      else if (includedTypesInSchema.Count == 0 && includedTypesRels.Count > 0)
+      {
+        typeInfo.AddError(PhaseNum, ErrorCode.MissingIncludedTypeSchema);
+        return false;
+      }
+      else if (includedTypesInSchema.Count > 0 && includedTypesRels.Count > 0)
+      {
+        var includedTypesInSchemaMissing = new List<TypeInfo>();
+        for (int i = 0; i < includedTypesRels.Count; i++)
+        {
+          var itemType = includedTypesRels[i];
+          if (!includedTypesInSchema.Contains(itemType))
+            includedTypesInSchemaMissing.Add(itemType);
+        }
+        var includedTypesRelsMissing = new List<TypeInfo>();
+        for (int i = 0; i < includedTypesInSchema.Count; i++)
+        {
+          var itemType = includedTypesInSchema[i];
+          if (!includedTypesRels.Contains(itemType))
+            includedTypesRelsMissing.Add(itemType);
+        }
+        if (includedTypesRelsMissing.Count > 0)
+        {
+          typeInfo.AddError(PhaseNum, ErrorCode.MissingSomeIncludedTypeRels, includedTypesRelsMissing.Select(item => item.Name).ToArray());
+          return false;
+        }
+        if (includedTypesInSchemaMissing.Count > 0)
+        {
+          typeInfo.AddError(PhaseNum, ErrorCode.MissingSomeIncludedTypeSchema, includedTypesInSchemaMissing.Select(item => item.Name).ToArray());
+          return false;
+        }
+      }
+    }
+    return true;
+  }
+
+  /// <summary>
+  /// Returns flattened list of item types from schema.
+  /// Items in the list are unique.
+  /// </summary>
+  /// <param name="schema"></param>
+  /// <returns></returns>
+  private List<TypeInfo> GetItemTypes(SchemaParticle schema)
+  {
+    var types = new List<TypeInfo>();
+    if (schema is ItemElementParticle elementParticle)
+    {
+      if (elementParticle.ItemType != null)
+      {
+        if (!types.Contains(elementParticle.ItemType))
+          types.Add(elementParticle.ItemType);
+      }
+    }
+    else
+    if (schema is ItemsParticle itemsParticle)
+    {
+      foreach (var particle in itemsParticle.Items)
+      {
+        foreach (var itemType in GetItemTypes(particle))
+          if (!types.Contains(itemType))
+            types.Add(itemType);
+      }
+    }
+    return types;
   }
 
   public bool ValidateDescription(TypeInfo typeInfo)
   {
-
     var description = typeInfo.GetDescription()?.Trim();
     if (String.IsNullOrEmpty(description))
     {

@@ -3,8 +3,25 @@
 /// <summary>
 /// Helper class to represent filter for <see cref="ModelGenApp.TypeInfoViewModel"/>.
 /// </summary>
-public record TypeInfoViewModelFilter<T>: IFilter where T: TypeInfoViewModel
+public record TypeInfoViewModelFilter<T> : IFilter where T : TypeInfoViewModel
 {
+  public static bool CanFilter(TypeInfoKind filter)
+  {
+    if (filter == TypeInfoKind.AcceptedTypes)
+      return true;
+    if (filter == TypeInfoKind.RejectedTypes)
+      return true;
+    if (filter == TypeInfoKind.InvalidTypes)
+      return true;
+    if (filter == TypeInfoKind.TypesWithSameName)
+      return true;
+    if (filter == TypeInfoKind.RenamedTypes)
+      return true;
+    if (filter == TypeInfoKind.ConvertedTypes)
+      return true;
+    return false;
+  }
+
   /// <summary>
   /// Initializing constructor. Creates <see cref="Predicate"/> on base of <paramref name="filter"/>.
   /// </summary>
@@ -24,7 +41,7 @@ public record TypeInfoViewModelFilter<T>: IFilter where T: TypeInfoViewModel
       if (filter == TypeInfoKind.RejectedTypes)
         Predicate = new Predicate<T>(item => item.Model.IsRejectedAfter(phaseNum));
       else
-      if (filter == TypeInfoKind.ProblematicTypes)
+      if (filter == TypeInfoKind.InvalidTypes)
         Predicate = new Predicate<T>(item => item.Model.HasProblems(phaseNum));
     }
     else
@@ -42,13 +59,13 @@ public record TypeInfoViewModelFilter<T>: IFilter where T: TypeInfoViewModel
         Predicate = new Predicate<T>(item => item.Model.IsConverted);
     }
     if (Predicate == null)
-        throw new InvalidOperationException($"Can't create TypeInfoViewModelFilter with TypeInfoKind.{filter}");
+      throw new InvalidOperationException($"Can't create TypeInfoViewModelFilter with TypeInfoKind.{filter}");
 
     Caption = CommonStrings.ResourceManager.GetString(filter.ToString(), CultureInfo.CurrentUICulture) ?? filter.ToString();
 
     Value = value;
   }
-  
+
 
   public string Caption { get; set; } = null!;
 
