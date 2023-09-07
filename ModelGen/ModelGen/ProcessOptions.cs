@@ -40,10 +40,10 @@ public record ProcessOptions
   /// </summary>
   public MDS Display { get; set; }
 
-  /// <summary>
-  /// Specifies which data should be displayed in console application of ModelGenRun.
-  /// </summary>
-  public DisplayOptions? DisplayOptions { get; set; }
+  ///// <summary>
+  ///// Specifies which data should be displayed in console application of ModelGenRun.
+  ///// </summary>
+  //public DisplayOptions? DisplayOptions { get; set; }
 
 
 }
