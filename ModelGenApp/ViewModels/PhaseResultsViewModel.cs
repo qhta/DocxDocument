@@ -98,7 +98,7 @@ public abstract partial class PhaseResultsViewModel : ViewModel
         infoName = CommonStrings.ResourceManager.GetString(infoName, CultureInfo.CurrentUICulture) ?? infoName.DeCamelCase();
         Summary.Add(new PhaseSummaryInfoViewModel 
         { Name = infoName, InfoKind = info.Key, Value = info.Value, 
-          FilterEnabled = TypeInfoFilter.CanFilter(info.Key) });
+          FilterEnabled = TypeInfoViewModelFilter.CanFilter(info.Key) });
       }
     Summary.PropertyChanged += Summary_PropertyChanged;
   }

@@ -66,9 +66,9 @@ public abstract class BaseCreator
     TypeManager.Clear();
     Options = options;
     IsRun = true;
-    var displayOptions = Options.DisplayOptions;
-    if (displayOptions == null)
-      displayOptions = new DisplayOptions();
+    //var displayOptions = Options.DisplayOptions;
+    //if (displayOptions == null)
+    var  displayOptions = new DisplayOptions();
 
     var monitorDisplaySelector = Options.Display;
 

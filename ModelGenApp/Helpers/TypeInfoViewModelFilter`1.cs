@@ -5,6 +5,8 @@
 /// </summary>
 public record TypeInfoViewModelFilter<T> : IFilter where T : TypeInfoViewModel
 {
+
+
   public static bool CanFilter(TypeInfoKind filter)
   {
     if (filter == TypeInfoKind.AcceptedTypes)
@@ -18,6 +20,10 @@ public record TypeInfoViewModelFilter<T> : IFilter where T : TypeInfoViewModel
     if (filter == TypeInfoKind.RenamedTypes)
       return true;
     if (filter == TypeInfoKind.ConvertedTypes)
+      return true;
+    if (filter == TypeInfoKind.TypesWithoutDescription)
+      return true;
+    if (filter == TypeInfoKind.TypesWithMeaninglessDescription)
       return true;
     return false;
   }
@@ -43,6 +49,12 @@ public record TypeInfoViewModelFilter<T> : IFilter where T : TypeInfoViewModel
       else
       if (filter == TypeInfoKind.InvalidTypes)
         Predicate = new Predicate<T>(item => item.Model.HasProblems(phaseNum));
+      else
+      if (filter == TypeInfoKind.TypesWithoutDescription)
+        Predicate = new Predicate<T>(item => String.IsNullOrEmpty(item.Model.Description));
+      else
+      if (filter == TypeInfoKind.TypesWithMeaninglessDescription)
+        Predicate = new Predicate<T>(item => item.Model.HasProblems(phaseNum) && item.Model.Description!=null && item.Model.Description.Trim()!="");
     }
     else
     if (value is FullTypeName typeName)
