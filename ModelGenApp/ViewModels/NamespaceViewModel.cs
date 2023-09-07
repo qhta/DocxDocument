@@ -39,6 +39,8 @@ public class NamespaceViewModel : ViewModel<Namespace>
 
   public void ApplyFilter()
   {
+    if (AllTypes==null)
+      return;
     AllTypes.Filter = Filter;
     Classes.Filter = Filter;
     Enums.Filter = Filter;
