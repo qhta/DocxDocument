@@ -506,4 +506,25 @@ defined in the enum type.</value>
   <data name="EnumValues" xml:space="preserve">
     <value>Enum values</value>
   </data>
+  <data name="ValidateScan" xml:space="preserve">
+    <value>Validate scan</value>
+  </data>
+  <data name="ValidateDocs" xml:space="preserve">
+    <value>Validate docs</value>
+  </data>
+  <data name="MissingSchema" xml:space="preserve">
+    <value>Missing schema</value>
+  </data>
+  <data name="MissingIncludedTypeRels" xml:space="preserve">
+    <value>Missing included types relationships</value>
+  </data>
+  <data name="MissingIncludedTypeSchema" xml:space="preserve">
+    <value>Missing included types in schema</value>
+  </data>
+  <data name="MissingSomeIncludedTypeSchema" xml:space="preserve">
+    <value>Missing some included types in schema:</value>
+  </data>
+  <data name="MissingSomeIncludedTypeRels" xml:space="preserve">
+    <value>Missing some included types relationships:</value>
+  </data>
 </root>

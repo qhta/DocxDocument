@@ -525,6 +525,51 @@ namespace ModelGenApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Missing included types relationships.
+        /// </summary>
+        public static string MissingIncludedTypeRels {
+            get {
+                return ResourceManager.GetString("MissingIncludedTypeRels", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Missing included types in schema.
+        /// </summary>
+        public static string MissingIncludedTypeSchema {
+            get {
+                return ResourceManager.GetString("MissingIncludedTypeSchema", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Missing schema.
+        /// </summary>
+        public static string MissingSchema {
+            get {
+                return ResourceManager.GetString("MissingSchema", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Missing some included types relationships:.
+        /// </summary>
+        public static string MissingSomeIncludedTypeRels {
+            get {
+                return ResourceManager.GetString("MissingSomeIncludedTypeRels", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Missing some included types in schema:.
+        /// </summary>
+        public static string MissingSomeIncludedTypeSchema {
+            get {
+                return ResourceManager.GetString("MissingSomeIncludedTypeSchema", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Model configuration is invalid. See marks in the table..
         /// </summary>
         public static string Model_configuration_is_invalid {
@@ -1167,11 +1212,29 @@ namespace ModelGenApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Validate docs.
+        /// </summary>
+        public static string ValidateDocs {
+            get {
+                return ResourceManager.GetString("ValidateDocs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Validated types.
         /// </summary>
         public static string ValidatedTypes {
             get {
                 return ResourceManager.GetString("ValidatedTypes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Validate scan.
+        /// </summary>
+        public static string ValidateScan {
+            get {
+                return ResourceManager.GetString("ValidateScan", resourceCulture);
             }
         }
         

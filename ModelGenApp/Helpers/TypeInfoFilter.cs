@@ -5,6 +5,24 @@
 /// </summary>
 public record TypeInfoFilter
 {
+
+  public static bool CanFilter(TypeInfoKind filter)
+  {
+    if (filter == TypeInfoKind.AcceptedTypes)
+      return true;
+    if (filter == TypeInfoKind.RejectedTypes)
+      return true;
+    if (filter == TypeInfoKind.InvalidTypes)
+      return true;
+    if (filter == TypeInfoKind.TypesWithSameName)
+      return true;
+    if (filter == TypeInfoKind.RenamedTypes)
+      return true;
+    if (filter == TypeInfoKind.ConvertedTypes)
+      return true;
+    return false;
+  }
+
   /// <summary>
   /// Initializing constructor. Creates <see cref="Predicate"/> on base of <paramref name="filter"/>.
   /// </summary>
@@ -24,7 +42,7 @@ public record TypeInfoFilter
       if (filter == TypeInfoKind.RejectedTypes)
         Predicate = new Predicate<TypeInfo>(item => item.IsRejectedAfter(phaseNum));
       else
-      if (filter == TypeInfoKind.ProblematicTypes)
+      if (filter == TypeInfoKind.InvalidTypes)
         Predicate = new Predicate<TypeInfo>(item => item.HasProblems(phaseNum));
     }
     else

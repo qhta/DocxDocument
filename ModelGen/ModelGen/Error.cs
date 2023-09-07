@@ -15,9 +15,10 @@ public record Error
   /// </summary>
   /// <param name="phase"></param>
   /// <param name="code"></param>
-  public Error(PPS phase, ErrorCode code)
+  /// <param name="args"></param>
+  public Error(PPS phase, ErrorCode code, object[]? args = null)
   {
-    Phase = phase; Code = code;
+    Phase = phase; Code = code; Args = args;
   }
 
   /// <summary>
@@ -29,5 +30,10 @@ public record Error
   /// Error code
   /// </summary>
   public ErrorCode Code { get; set; }
+
+  /// <summary>
+  /// Additional info.
+  /// </summary>
+  public object[]? Args {get; set; }
 
 }
