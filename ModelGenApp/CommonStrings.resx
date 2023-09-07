@@ -527,4 +527,7 @@ defined in the enum type.</value>
   <data name="MissingSomeIncludedTypeRels" xml:space="preserve">
     <value>Missing some included types relationships:</value>
   </data>
+  <data name="MissingProperties" xml:space="preserve">
+    <value>Missing properties</value>
+  </data>
 </root>
