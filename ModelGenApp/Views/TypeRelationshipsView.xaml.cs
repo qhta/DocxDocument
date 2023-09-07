@@ -1,14 +1,14 @@
 ﻿namespace ModelGenApp.Views;
 /// <summary>
-/// Interaction logic for PropertiesView.xaml
+/// Interaction logic for TypeRelationshipsView.xaml
 /// </summary>
-public partial class PropertiesView : UserControl
+public partial class TypeRelationshipsView : UserControl
 {
-  public PropertiesView()
+  public TypeRelationshipsView()
   {
     InitializeComponent();
     dataGridColumnCreator = new DataGridColumnCreator(MainDataGrid,
-      typeof(PropListViewModel), typeof(PropInfoViewModel));
+              typeof(TypeRelationshipsListViewModel), typeof(TypeRelationshipViewModel));
   }
 
   private DataGridColumnCreator dataGridColumnCreator = null!;
@@ -17,13 +17,6 @@ public partial class PropertiesView : UserControl
   {
     dataGridColumnCreator.GenerateColumn(sender, args);
     if (sender is DataGrid dataGrid)
-      if (args.PropertyName.EndsWith("DeclaringType"))
-      {
-        BindingOperations.SetBinding(args.Column, DataGridColumn.VisibilityProperty,
-          new Binding("Properties.ShowDeclaringType")
-          { Source = DataContext, Converter = (IValueConverter)dataGrid.FindResource("BoolToVisibilityConverter") });
-      }
-      else
       if (args.PropertyName == "Acceptance")
       {
         BindingOperations.SetBinding(args.Column, DataGridColumn.VisibilityProperty,
@@ -31,4 +24,5 @@ public partial class PropertiesView : UserControl
           { Source = DataContext, Converter = (IValueConverter)dataGrid.FindResource("BoolToVisibilityConverter"), ConverterParameter = "Collapsed,Visible" });
       }
   }
+
 }

@@ -4,7 +4,7 @@
 /// This is a container for <see cref="PropInfoViewModel"/>. Can belong to <see cref="ClassInfoViewModel"/>
 /// or be used for all properties in all types.
 /// </summary>
-public class PropListViewModel : MemberListViewModel<PropInfoViewModel>
+public class PropListViewModel : ItemListViewModel<PropInfoViewModel>
 {
   public PropListViewModel(PhaseResultsViewModel phase, ClassInfoViewModel? owner, string name, TNS typeNameSelector): base(phase, owner, name)
   {

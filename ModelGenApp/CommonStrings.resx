@@ -494,4 +494,16 @@ defined in the enum type.</value>
   <data name="Schema" xml:space="preserve">
     <value>Schema</value>
   </data>
+  <data name="Semantics" xml:space="preserve">
+    <value>Semantics</value>
+  </data>
+  <data name="RelatedType" xml:space="preserve">
+    <value>Related type</value>
+  </data>
+  <data name="Relationships" xml:space="preserve">
+    <value>Relationships</value>
+  </data>
+  <data name="EnumValues" xml:space="preserve">
+    <value>Enum values</value>
+  </data>
 </root>

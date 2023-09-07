@@ -31,7 +31,11 @@ public class ClassInfoViewModel : TypeInfoViewModel
 
   public override object? Members => Properties;
 
-  public override void FillDetails() => FillPropertiesAsync();
+  public override void FillDetails()
+  {
+    base.FillDetails();
+    FillPropertiesAsync();
+  }
 
   public async void FillPropertiesAsync()
   {
@@ -46,16 +50,6 @@ public class ClassInfoViewModel : TypeInfoViewModel
     foreach (var propInfo in Model.GetAllProperties().ToList())
       Properties.Add(new PropInfoViewModel(Phase, this, propInfo, TypeNameSelector));
   }
-
-  protected override void FillTypeSummary()
-  {
-    base.FillTypeSummary();
-    var baseClass = Model.BaseTypeInfo;
-    if (baseClass != null)
-      TypeSummary.Add(new TypePropViewModel("Inheritance", TypeInfoViewModel.Create(Phase, baseClass, TypeNameSelector)));
-  }
-
-  public override void RefreshDetails() => RefreshProperties();
 
   public async void RefreshPropertiesAsync()
   {
@@ -74,6 +68,19 @@ public class ClassInfoViewModel : TypeInfoViewModel
         newProperties.Add(propInfo);
     foreach (var propInfo in newProperties)
       Properties.Add(new PropInfoViewModel(Phase, this, propInfo, TypeNameSelector));
+  }
 
+  protected override void FillTypeSummary()
+  {
+    base.FillTypeSummary();
+    var baseClass = Model.BaseTypeInfo;
+    if (baseClass != null)
+      TypeSummary.Add(new TypePropViewModel("Inheritance", TypeInfoViewModel.Create(Phase, baseClass, TypeNameSelector)));
+  }
+
+  public override void RefreshDetails()
+  {
+    base.RefreshDetails();
+    RefreshProperties();
   }
 }

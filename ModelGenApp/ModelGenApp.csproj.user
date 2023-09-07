@@ -67,6 +67,12 @@
     <Compile Update="Views\TypeListWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\TypeRelationshipsDisplayOptionsView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\TypeRelationshipsView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\TypesConfigView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -145,6 +151,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\TypeListWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\TypeRelationshipsDisplayOptionsView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\TypeRelationshipsView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\TypesConfigView.xaml">

@@ -1,5 +1,5 @@
 ﻿namespace ModelGenApp.ViewModels;
-public class EnumListViewModel: MemberListViewModel<EnumInfoViewModel>, IFilter<EnumInfoViewModel>
+public class EnumListViewModel: ItemListViewModel<EnumInfoViewModel>, IFilter<EnumInfoViewModel>
 {
   public EnumListViewModel(PhaseResultsViewModel phase, EnumTypeInfoViewModel? owner, string name): base(phase, owner, name)
   {

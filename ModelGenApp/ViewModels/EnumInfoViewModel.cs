@@ -1,15 +1,18 @@
 ﻿namespace ModelGenApp.ViewModels;
 public class EnumInfoViewModel : ViewModel<EnumInfo>, IAcceptable
 {
-  public EnumInfoViewModel(PhaseResultsViewModel phase, EnumInfo enumInfo, TNS typeNameSelector) : base(enumInfo)
+  public EnumInfoViewModel(PhaseResultsViewModel phase, EnumTypeInfoViewModel? owner, EnumInfo enumInfo, TNS nameKindSelector) : base(enumInfo)
   {
+    Owner = owner;
     Phase = phase;
-    NameTypeSelector = typeNameSelector;
+    NameKindSelector = nameKindSelector;
   }
 
   public PhaseResultsViewModel Phase {get; private set; }
 
-  public TNS NameTypeSelector {get; private set; }
+  public EnumTypeInfoViewModel? Owner { get; private set; }
+
+  public TNS NameKindSelector {get; private set; }
 
   public bool IsAccepted => Model.IsAcceptedAfter(Phase.PhaseNum);
 
@@ -38,7 +41,7 @@ public class EnumInfoViewModel : ViewModel<EnumInfo>, IAcceptable
   {
     get
     {
-      if (NameTypeSelector.Target)
+      if (NameKindSelector.Target)
         return Model.NewName ?? Model.Name;
       return Model.Name;
     }

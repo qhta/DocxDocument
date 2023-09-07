@@ -27,7 +27,7 @@
     <views:TypeSummaryView />
     <TabControl Grid.Row="1" TabStripPlacement="Bottom">
       <TabItem Header="{x:Static local:CommonStrings.Members}"
-               Visibility="{Binding Path=Members.Visible, Converter={StaticResource BoolToVisibilityConverter}}">
+               Visibility="{Binding Path=IsMembersVisible, Converter={StaticResource BoolToVisibilityConverter}}">
         <ContentControl Content="{Binding}">
           <ContentControl.Resources>
             <DataTemplate DataType="{x:Type vm:ClassInfoViewModel}">
@@ -42,6 +42,10 @@
       <TabItem Header="{x:Static local:CommonStrings.Schema}"
                Visibility="{Binding Path=IsSchemaVisible, Converter={StaticResource BoolToVisibilityConverter}}">
         <views:SchemaView DataContext="{Binding Path=Schema}" />
+      </TabItem>
+      <TabItem Header="{x:Static local:CommonStrings.Relationships}"
+               Visibility="{Binding Path=IsRelationshipsVisible, Converter={StaticResource BoolToVisibilityConverter}}">
+        <views:TypeRelationshipsView />
       </TabItem>
     </TabControl>
   </Grid>

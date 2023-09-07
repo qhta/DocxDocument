@@ -1,13 +1,13 @@
 ﻿namespace ModelGenApp.ViewModels;
-public abstract class MemberListViewModel<T> : ObservableObject, IEnumerable<T> where T : ViewModel, IAcceptable
+public abstract class ItemListViewModel<T> : ViewModel, IEnumerable<T> where T : ViewModel, IAcceptable
 {
-  public MemberListViewModel(PhaseResultsViewModel phase, TypeInfoViewModel? ownerType, string name, MemberInfoViewModelFilter? filter = null)
+  public ItemListViewModel(PhaseResultsViewModel phase, TypeInfoViewModel? ownerType, string name, MemberInfoViewModelFilter? filter = null)
   {
     Phase = phase;
     OwnerType = ownerType;
     Name = name;
     Items = new ObservableList<T>();
-    Items.CollectionChanged += MemberListViewModel_CollectionChanged;
+    Items.CollectionChanged += Item_CollectionChanged;
     ShowDetailsCommand = new RelayCommand(ShowDetailsExecute, ShowDetailsCanExecute) { Name = "ShowDetailsCommand" };
     VisibleItems = new FilteredCollection<T>(Items, filter);
     VisibleItems.CollectionChanged += VisibleItems_CollectionChanged;
@@ -23,7 +23,7 @@ public abstract class MemberListViewModel<T> : ObservableObject, IEnumerable<T> 
       NotifyPropertyChanged(nameof(IsBusy));
   }
 
-  private void MemberListViewModel_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
+  private void Item_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     NotifyPropertyChanged(nameof(VisibleItems));
     NotifyPropertyChanged(nameof(Count));
