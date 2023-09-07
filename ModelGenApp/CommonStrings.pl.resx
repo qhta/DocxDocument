@@ -527,4 +527,7 @@ zdefiniowanej w typie wyliczeniowym.</value>
   <data name="MissingSomeIncludedTypeRels" xml:space="preserve">
     <value>Brak niektórych relacji do typów zawartości:</value>
   </data>
+  <data name="MissingProperties" xml:space="preserve">
+    <value>Brak właściwości</value>
+  </data>
 </root>

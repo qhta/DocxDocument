@@ -94,54 +94,92 @@ public class ModelValidator
   public bool ValidateScan(TypeInfo typeInfo)
   {
     var ok1 = CompareSchemaWithIncludeRelationships(typeInfo);
-    return ok1;
+    var ok2 = ComparePropsWithIncludeRelationships(typeInfo);
+    return ok1 && ok2;
   }
 
-  public bool CompareSchemaWithIncludeRelationships(TypeInfo typeInfo)
+    public bool CompareSchemaWithIncludeRelationships(TypeInfo typeInfo)
   {
-    var includedTypesRels = typeInfo.GetOutgoingRelationships(Semantics.Include).Select(item => item.Target).ToList();
-    if (typeInfo.Schema == null && includedTypesRels.Count > 0)
+    var typesIncludedInRels = typeInfo.GetOutgoingRelationships(Semantics.Include).Select(item => item.Target).ToList();
+    if (typeInfo.Schema == null && typesIncludedInRels.Count > 0)
     {
       typeInfo.AddError(PhaseNum, ErrorCode.MissingSchema);
       return false;
     }
     if (typeInfo.Schema?.Main != null)
     {
-      var includedTypesInSchema = GetItemTypes(typeInfo.Schema.Main);
-      if (includedTypesInSchema.Count > 0 && includedTypesRels.Count == 0)
+      var typesIncludedInSchema = GetItemTypes(typeInfo.Schema.Main);
+      if (typesIncludedInSchema.Count > 0 && typesIncludedInRels.Count == 0)
       {
         typeInfo.AddError(PhaseNum, ErrorCode.MissingIncludedTypeRels);
         return false;
       }
-      else if (includedTypesInSchema.Count == 0 && includedTypesRels.Count > 0)
+      else if (typesIncludedInSchema.Count == 0 && typesIncludedInRels.Count > 0)
       {
         typeInfo.AddError(PhaseNum, ErrorCode.MissingIncludedTypeSchema);
         return false;
       }
-      else if (includedTypesInSchema.Count > 0 && includedTypesRels.Count > 0)
+      else if (typesIncludedInSchema.Count > 0 && typesIncludedInRels.Count > 0)
       {
-        var includedTypesInSchemaMissing = new List<TypeInfo>();
-        for (int i = 0; i < includedTypesRels.Count; i++)
+        var missingTypesIncludedInSchema = new List<TypeInfo>();
+        for (int i = 0; i < typesIncludedInRels.Count; i++)
         {
-          var itemType = includedTypesRels[i];
-          if (!includedTypesInSchema.Contains(itemType))
-            includedTypesInSchemaMissing.Add(itemType);
+          var itemType = typesIncludedInRels[i];
+          if (!typesIncludedInSchema.Contains(itemType))
+            missingTypesIncludedInSchema.Add(itemType);
         }
-        var includedTypesRelsMissing = new List<TypeInfo>();
-        for (int i = 0; i < includedTypesInSchema.Count; i++)
+        var missingTypesIncludedInRels = new List<TypeInfo>();
+        for (int i = 0; i < typesIncludedInSchema.Count; i++)
         {
-          var itemType = includedTypesInSchema[i];
-          if (!includedTypesRels.Contains(itemType))
-            includedTypesRelsMissing.Add(itemType);
+          var itemType = typesIncludedInSchema[i];
+          if (!typesIncludedInRels.Contains(itemType))
+            missingTypesIncludedInRels.Add(itemType);
         }
-        if (includedTypesRelsMissing.Count > 0)
+        if (missingTypesIncludedInRels.Count > 0)
         {
-          typeInfo.AddError(PhaseNum, ErrorCode.MissingSomeIncludedTypeRels, includedTypesRelsMissing.Select(item => item.Name).ToArray());
+          typeInfo.AddError(PhaseNum, ErrorCode.MissingSomeIncludedTypeRels, missingTypesIncludedInRels.Select(item => item.Name).ToArray());
           return false;
         }
-        if (includedTypesInSchemaMissing.Count > 0)
+        if (missingTypesIncludedInSchema.Count > 0)
         {
-          typeInfo.AddError(PhaseNum, ErrorCode.MissingSomeIncludedTypeSchema, includedTypesInSchemaMissing.Select(item => item.Name).ToArray());
+          typeInfo.AddError(PhaseNum, ErrorCode.MissingSomeIncludedTypeSchema, missingTypesIncludedInSchema.Select(item => item.Name).ToArray());
+          return false;
+        }
+      }
+    }
+    return true;
+  }
+
+  public bool ComparePropsWithIncludeRelationships(TypeInfo typeInfo)
+  {
+    var typesIncludedInRels = typeInfo.GetOutgoingRelationships(Semantics.Include)
+      .Where(item => !item.IsMultiple)
+      .Select(item => item.Target).ToList();
+    if (typeInfo.Properties == null && typesIncludedInRels.Count > 0)
+    {
+      typeInfo.AddError(PhaseNum, ErrorCode.MissingProperties);
+      return false;
+    }
+    if (typeInfo.Properties != null)
+    {
+      var typesIncludedInProps = typeInfo.Properties.Select(item=>item.PropertyType).ToList();
+      if (typesIncludedInProps.Count == 0 && typesIncludedInRels.Count > 0)
+      {
+        typeInfo.AddError(PhaseNum, ErrorCode.MissingProperties);
+        return false;
+      }
+      else if (typesIncludedInProps.Count > 0 && typesIncludedInRels.Count > 0)
+      {
+        var missingTypesInProperties = new List<TypeInfo>();
+        for (int i = 0; i < typesIncludedInRels.Count; i++)
+        {
+          var itemType = typesIncludedInRels[i];
+          if (!typesIncludedInProps.Contains(itemType))
+            missingTypesInProperties.Add(itemType);
+        }
+        if (missingTypesInProperties.Count > 0)
+        {
+          typeInfo.AddError(PhaseNum, ErrorCode.MissingSomeProperties, missingTypesInProperties.Select(item => item.Name).ToArray());
           return false;
         }
       }

@@ -2,6 +2,8 @@
 public enum ErrorCode
 {
   NoError,
+  MissingProperties,
+  MissingSomeProperties,
   MissingSchema,
   MissingIncludedTypeSchema,
   MissingIncludedTypeRels,
