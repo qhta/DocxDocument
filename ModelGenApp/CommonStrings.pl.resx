@@ -325,7 +325,7 @@ Może zawierać * jako symbol wieloznaczny.</value>
     <value>Inne typy</value>
   </data>
   <data name="ValidationError" xml:space="preserve">
-    <value>Błąd walidacji</value>
+    <value>Błąd weryfikacji</value>
   </data>
   <data name="ShortcutError" xml:space="preserve">
     <value>Błąd skrótu</value>
@@ -441,7 +441,7 @@ zdefiniowanej w typie wyliczeniowym.</value>
     <value>Pokaż pełną nazwę typu</value>
   </data>
   <data name="ValidatedTypes" xml:space="preserve">
-    <value>Walidowane typy</value>
+    <value>Zweryfikowane typy</value>
   </data>
   <data name="ValidTypes" xml:space="preserve">
     <value>Typy poprawne</value>
@@ -505,5 +505,26 @@ zdefiniowanej w typie wyliczeniowym.</value>
   </data>
   <data name="EnumValues" xml:space="preserve">
     <value>Wartości wyliczane</value>
+  </data>
+  <data name="ValidateScan" xml:space="preserve">
+    <value>Weryfikuj skanowanie</value>
+  </data>
+  <data name="ValidateDocs" xml:space="preserve">
+    <value>Weryfikuj opisy</value>
+  </data>
+  <data name="MissingSchema" xml:space="preserve">
+    <value>Brak schematu</value>
+  </data>
+  <data name="MissingIncludedTypeRels" xml:space="preserve">
+    <value>Brak relacji do typów zawartości</value>
+  </data>
+  <data name="MissingIncludedTypeSchema" xml:space="preserve">
+    <value>Brak typów zawartości na schemacie</value>
+  </data>
+  <data name="MissingSomeIncludedTypeSchema" xml:space="preserve">
+    <value>Brak niektórych typów zawartości na schemacie:</value>
+  </data>
+  <data name="MissingSomeIncludedTypeRels" xml:space="preserve">
+    <value>Brak niektórych relacji do typów zawartości:</value>
   </data>
 </root>

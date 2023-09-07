@@ -93,11 +93,11 @@ public class ModelElement : IOwnedElement
   }
   public Errors? Errors { get; private set; }
 
-  public void AddError(PPS pps, ErrorCode code)
+  public void AddError(PPS pps, ErrorCode code, object[]? args = null)
   {
     if (Errors == null)
       Errors = new Errors();
-    Errors.Add(new Error(pps, code));
+    Errors.Add(new Error(pps, code, args));
   }
 
   public bool HasError(PPS pps, ErrorCode code)

@@ -62,6 +62,32 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
     }
   }
 
+  public bool ValidateScan
+  {
+    get { return Model.ValidateScan; }
+    set
+    {
+      if (Model.ValidateScan != value)
+      {
+        Model.ValidateScan = value;
+        NotifyPropertyChanged(nameof(ValidateScan));
+      }
+    }
+  }
+
+  public bool ValidateDocs
+  {
+    get { return Model.ValidateDocs; }
+    set
+    {
+      if (Model.ValidateDocs != value)
+      {
+        Model.ValidateDocs = value;
+        NotifyPropertyChanged(nameof(ValidateDocs));
+      }
+    }
+  }
+
   public ObservableCollection<string> MainTypeNames
   {
     get { return _MainTypeNames; }

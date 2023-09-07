@@ -11,6 +11,16 @@ public record ProcessOptions
   public int StopAtPhase { get; set; } = 1;
 
   /// <summary>
+  /// Specifies whether results of the scan source phase should be validated.
+  /// </summary>
+  public bool ValidateScan { get; set; }
+
+  /// <summary>
+  /// Specifies whether results of the add docs phase should be validated.
+  /// </summary>
+  public bool ValidateDocs { get; set; }
+
+  /// <summary>
   /// Specifies the name of type used as a root for scan types phase.
   /// </summary>
   public string ScanTypeName { get; set; } = "DocumentFormat.OpenXml.Packaging.WordprocessingDocument";

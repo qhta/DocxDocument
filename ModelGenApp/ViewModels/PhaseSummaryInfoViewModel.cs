@@ -20,4 +20,6 @@ public class PhaseSummaryInfoViewModel: ViewModel
     }
   }
   private bool _IsChecked;
+
+  public bool FilterEnabled { get; set; }
 }

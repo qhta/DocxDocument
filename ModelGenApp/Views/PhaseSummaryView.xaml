@@ -32,7 +32,10 @@
           <GridViewColumn Header="{x:Static local:CommonStrings.FilterResults}">
             <GridViewColumn.CellTemplate>
               <DataTemplate>
-                <CheckBox IsChecked="{Binding IsChecked}" HorizontalAlignment="Center"/>
+                <CheckBox IsChecked="{Binding IsChecked}" 
+                          IsEnabled="{Binding FilterEnabled}"
+                          HorizontalAlignment="Center"
+                          />
               </DataTemplate>
             </GridViewColumn.CellTemplate>
           </GridViewColumn>
