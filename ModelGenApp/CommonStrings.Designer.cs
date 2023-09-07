@@ -325,6 +325,15 @@ namespace ModelGenApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Enum values.
+        /// </summary>
+        public static string EnumValues {
+            get {
+                return ResourceManager.GetString("EnumValues", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Enum value is a numeric value of the named value
         ///defined in the enum type..
         /// </summary>
@@ -770,6 +779,24 @@ namespace ModelGenApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Related type.
+        /// </summary>
+        public static string RelatedType {
+            get {
+                return ResourceManager.GetString("RelatedType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Relationships.
+        /// </summary>
+        public static string Relationships {
+            get {
+                return ResourceManager.GetString("Relationships", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Rename.
         /// </summary>
         public static string Rename {
@@ -829,6 +856,15 @@ namespace ModelGenApp {
         public static string Schema {
             get {
                 return ResourceManager.GetString("Schema", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Semantics.
+        /// </summary>
+        public static string Semantics {
+            get {
+                return ResourceManager.GetString("Semantics", resourceCulture);
             }
         }
         

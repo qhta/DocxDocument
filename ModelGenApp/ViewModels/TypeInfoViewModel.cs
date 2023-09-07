@@ -20,7 +20,7 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
     BusyMonitor.Instance.PropertyChanged += BusyMonitor_PropertyChanged;
     FillTypeSummaryAsync();
     if (typeInfo.Schema!=null)
-      Schema = new ElementSchemaViewModel(typeInfo.Schema, typeInfo.Name);
+      Schema = new ElementSchemaViewModel(typeInfo.Schema, typeInfo.Name);    
   }
 
   public bool IsBusy => BusyMonitor.Instance.IsBusy;
@@ -196,6 +196,7 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
 
   public virtual void FillDetails()
   {
+    FillRelationshipsAsync();
   }
 
   public async void RefreshDetailsAsync()
@@ -205,6 +206,7 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
 
   public virtual void RefreshDetails()
   {
+    RefreshRelationshipsAsync();
   }
 
   /// <summary>
@@ -214,9 +216,63 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
 
   public virtual object? Members => null;
 
+  public bool IsMembersVisible => Members != null;
+
   public ElementSchemaViewModel? Schema { get; private set; }
 
   public bool IsSchemaVisible => Schema != null;
+
+  #region Relationships
+
+  public TypeRelationshipsListViewModel Relationships
+  {
+    get
+    {
+      if (_Relationships == null)
+      {
+        _Relationships = new TypeRelationshipsListViewModel(Phase, this, "Relationships", TypeNameSelector);
+        FillRelationshipsAsync();
+      }
+      return _Relationships;
+    }
+  }
+  private TypeRelationshipsListViewModel _Relationships = null!;
+
+  public bool IsRelationshipsVisible => _Relationships != null;
+
+  public async void FillRelationshipsAsync()
+  {
+    await Task.Run(() => FillRelationships());
+  }
+
+  public void FillRelationships()
+  {
+    if (_Relationships == null)
+      _Relationships = new TypeRelationshipsListViewModel(Phase, this, "Relationships", TypeNameSelector);
+    Relationships.Clear();
+    foreach (var relationship in Model.GetOutgoingRelationships().ToList())
+      Relationships.Add(new TypeRelationshipViewModel(Phase, this, relationship, TypeNameSelector));
+  }
+
+  public async void RefreshRelationshipsAsync()
+  {
+    await Task.Run(() => RefreshRelationships());
+  }
+
+  public void RefreshRelationships()
+  {
+    if (_Relationships == null)
+      _Relationships = new TypeRelationshipsListViewModel(Phase, this, "Relationships", TypeNameSelector);
+    Relationships.ShowFullTypeName = this.ShowFullTypeName;
+    var relationships = Model.GetOutgoingRelationships().ToList();
+    var newRelationships = new List<TypeRelationship>();
+    foreach (var relationship in relationships)
+      if (!Relationships.Any(vm => vm.Model == relationship))
+        newRelationships.Add(relationship);
+    foreach (var relationship in newRelationships)
+      Relationships.Add(new TypeRelationshipViewModel(Phase, this, relationship, TypeNameSelector));
+  }
+  #endregion
 
   #region ShowTypeCommand
   public Command ShowTypeCommand { get; private set; }

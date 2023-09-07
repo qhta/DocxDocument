@@ -14,7 +14,11 @@ public class EnumTypeInfoViewModel : TypeInfoViewModel
 
   public override object? Members => EnumValues;
 
-  public override void FillDetails() => FillEnumValues();
+  public override void FillDetails()
+  {
+    base.FillDetails();
+    FillEnumValues();
+  }
 
   public async void FillEnumValuesAsync()
   {
@@ -26,11 +30,15 @@ public class EnumTypeInfoViewModel : TypeInfoViewModel
     EnumValues.Clear();
     if (Model.EnumValues != null)
       foreach (var enumVal in Model.EnumValues.ToList())
-        EnumValues.Add(new EnumInfoViewModel(Phase, enumVal, TypeNameSelector));
+        EnumValues.Add(new EnumInfoViewModel(Phase, this,enumVal, TypeNameSelector));
   }
 
 
-  public override void RefreshDetails() => RefreshEnumValues();
+  public override void RefreshDetails()
+  {
+    base.RefreshDetails();
+    RefreshEnumValues();
+  }
 
   public async void RefreshEnumValuesAsync()
   {
@@ -48,7 +56,7 @@ public class EnumTypeInfoViewModel : TypeInfoViewModel
           newEnumValues.Add(enumInfo);
 
       foreach (var enumVal in newEnumValues)
-        EnumValues.Add(new EnumInfoViewModel(Phase, enumVal, TypeNameSelector));
+        EnumValues.Add(new EnumInfoViewModel(Phase, this, enumVal, TypeNameSelector));
     }
   }
 
