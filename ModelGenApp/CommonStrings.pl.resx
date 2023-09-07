@@ -494,4 +494,16 @@ zdefiniowanej w typie wyliczeniowym.</value>
   <data name="Schema" xml:space="preserve">
     <value>Schemat</value>
   </data>
+  <data name="Semantics" xml:space="preserve">
+    <value>Semantyka</value>
+  </data>
+  <data name="RelatedType" xml:space="preserve">
+    <value>Typ powiązany</value>
+  </data>
+  <data name="Relationships" xml:space="preserve">
+    <value>Relacje</value>
+  </data>
+  <data name="EnumValues" xml:space="preserve">
+    <value>Wartości wyliczane</value>
+  </data>
 </root>
