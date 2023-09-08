@@ -530,4 +530,7 @@ defined in the enum type.</value>
   <data name="MissingProperties" xml:space="preserve">
     <value>Missing properties</value>
   </data>
+  <data name="ValidateNames" xml:space="preserve">
+    <value>Validate names</value>
+  </data>
 </root>

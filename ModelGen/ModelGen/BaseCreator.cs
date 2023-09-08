@@ -271,17 +271,36 @@ public abstract class BaseCreator
     var renamedTypesCount = ModelManager.RenameNamespacesAndTypes();
     ModelManager.OnRenamingType -= ModelManager_OnRenamingType;
 
+    var invalidTypesCount = 0;
+    if (Options.ValidateNames)
+    {
+      var ModelValidator = new ModelValidator(PPS.Rename, NTS.Origin, MSS.Accepted, TDS.Metadata);
+      ModelValidator.OnValidatingType += ModelValidator_OnValidatingType;
+      if (!ModelValidator.ValidateTypes(PPS.Rename))
+      {
+        invalidTypesCount = ModelManager.DuplicateTypeNamesCount;
+      }
+      invalidTypesCount = ModelManager.DuplicateTypeNamesCount;
+      ModelValidator.OnValidatingType += ModelValidator_OnValidatingType;
+    }
+
     DateTime t2 = DateTime.Now;
     var ts = t2 - t1;
-    ModelMonitor?.ShowPhaseEnd(PPS.Rename, new SummaryInfo
+    var summaryInfo = new SummaryInfo
     {
       Time = ts,
       Summary = new Dictionary<TypeInfoKind, object>{
         {TypeInfoKind.AllTypes, TypeManager.AllTypes.Count() },
         {TypeInfoKind.RenamedTypes, renamedTypesCount },
-        {TypeInfoKind.InvalidTypes, ModelManager.DuplicateTypeNamesCount},
         }
-    });
+    };
+
+    if (invalidTypesCount>0)
+    {
+      summaryInfo.Summary.Add(TypeInfoKind.InvalidTypes, invalidTypesCount);
+    }
+
+    ModelMonitor?.ShowPhaseEnd(PPS.Rename, summaryInfo);
     return ts;
   }
 
