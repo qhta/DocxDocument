@@ -530,4 +530,7 @@ zdefiniowanej w typie wyliczeniowym.</value>
   <data name="MissingProperties" xml:space="preserve">
     <value>Brak właściwości</value>
   </data>
+  <data name="ValidateNames" xml:space="preserve">
+    <value>Weryfikuj nazwy</value>
+  </data>
 </root>
