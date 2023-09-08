@@ -55,6 +55,9 @@ public record TypeInfoViewModelFilter<T> : IFilter where T : TypeInfoViewModel
       else
       if (filter == TypeInfoKind.TypesWithMeaninglessDescription)
         Predicate = new Predicate<T>(item => item.Model.HasProblems(phaseNum) && item.Model.Description!=null && item.Model.Description.Trim()!="");
+      else
+      if (filter == TypeInfoKind.RenamedTypes)
+        Predicate = new Predicate<T>(item => item.Model.NewName != null && item.Model.NewName!=item.Model.Name);
     }
     else
     if (value is FullTypeName typeName)

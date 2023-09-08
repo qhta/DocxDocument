@@ -88,6 +88,19 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
     }
   }
 
+  public bool ValidateNames
+  {
+    get { return Model.ValidateNames; }
+    set
+    {
+      if (Model.ValidateNames != value)
+      {
+        Model.ValidateNames = value;
+        NotifyPropertyChanged(nameof(ValidateNames));
+      }
+    }
+  }
+
   public ObservableCollection<string> MainTypeNames
   {
     get { return _MainTypeNames; }

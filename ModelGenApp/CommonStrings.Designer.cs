@@ -1239,6 +1239,15 @@ namespace ModelGenApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Validate names.
+        /// </summary>
+        public static string ValidateNames {
+            get {
+                return ResourceManager.GetString("ValidateNames", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Validate scan.
         /// </summary>
         public static string ValidateScan {
