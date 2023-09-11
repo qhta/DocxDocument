@@ -54,10 +54,13 @@ public record TypeInfoViewModelFilter<T> : IFilter where T : TypeInfoViewModel
         Predicate = new Predicate<T>(item => String.IsNullOrEmpty(item.Model.Description));
       else
       if (filter == TypeInfoKind.TypesWithMeaninglessDescription)
-        Predicate = new Predicate<T>(item => item.Model.HasProblems(phaseNum) && item.Model.Description!=null && item.Model.Description.Trim()!="");
+        Predicate = new Predicate<T>(item => item.Model.HasProblems(phaseNum) && item.Model.Description != null && item.Model.Description.Trim() != "");
       else
       if (filter == TypeInfoKind.RenamedTypes)
-        Predicate = new Predicate<T>(item => item.Model.NewName != null && item.Model.NewName!=item.Model.Name);
+        Predicate = new Predicate<T>(item => item.Model.NewName != null && item.Model.NewName != item.Model.Name);
+      else
+      if (filter == TypeInfoKind.TypesWithSameName)
+        Predicate = new Predicate<T>(item => HasDuplicateNames(item.Model));
     }
     else
     if (value is FullTypeName typeName)
@@ -81,6 +84,19 @@ public record TypeInfoViewModelFilter<T> : IFilter where T : TypeInfoViewModel
     Value = value;
   }
 
+  private bool HasDuplicateNames(TypeInfo typeInfo)
+  {
+    if (typeInfo.IsAcceptedAfter(PPS.Rename) && !typeInfo.IsConstructedGenericType)
+    {
+      var targetName = typeInfo.TargetName;
+      var sameNameTypes = TypeManager.AllTypes.Where(item => item.IsAcceptedAfter(PPS.Rename) && !item.IsConstructedGenericType)
+        .Where(item => item.TargetNamespace == typeInfo.TargetNamespace)
+        .Where(item => item.GetFullName(true, false, false) == targetName).ToList();
+      if (sameNameTypes.Count()>1)
+        return true;
+    }
+    return false;
+  }
 
   public string Caption { get; set; } = null!;
 

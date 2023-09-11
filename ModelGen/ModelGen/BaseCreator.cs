@@ -267,7 +267,6 @@ public abstract class BaseCreator
     var renamedTypesCount = ModelManager.RenameNamespacesAndTypes();
     ModelManager.OnRenamingType -= ModelManager_OnRenamingType;
 
-    var invalidTypesCount = 0;
     var typesWithSameNameCount = 0;
     if (Options.ValidateNames)
     {
@@ -275,9 +274,8 @@ public abstract class BaseCreator
       ModelValidator.OnValidatingType += ModelValidator_OnValidatingType;
       if (!ModelValidator.ValidateTypes(PPS.Rename))
       {
-        typesWithSameNameCount = ModelManager.DuplicateTypeNamesCount;
+        typesWithSameNameCount = ModelValidator.InvalidTypesCount;
       }
-      invalidTypesCount = ModelValidator.InvalidTypesCount;
       ModelValidator.OnValidatingType += ModelValidator_OnValidatingType;
     }
 
@@ -292,9 +290,8 @@ public abstract class BaseCreator
         }
     };
 
-    if (invalidTypesCount>0)
+    if (typesWithSameNameCount>0)
     {
-      summaryInfo.Summary.Add(TypeInfoKind.InvalidTypes, invalidTypesCount);
       summaryInfo.Summary.Add(TypeInfoKind.TypesWithSameName, typesWithSameNameCount);
     }
 
