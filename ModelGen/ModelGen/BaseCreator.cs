@@ -72,7 +72,7 @@ public abstract class BaseCreator
 
     var monitorDisplaySelector = Options.Display;
 
-    ModelMonitor?.ShowProcessStart($"Start processing {type}");
+    ModelMonitor?.ShowProcessStart(String.Format(CommonStrings.StartProcessing_0.DecodeEscapeSeq(), type.FullName));
     SourceAssembly = type.Assembly;
     TotalTypesCount = SourceAssembly.ExportedTypes.Count();
     TimeSpan totalTime = TimeSpan.Zero;
@@ -135,7 +135,7 @@ public abstract class BaseCreator
 
   protected TimeSpan ScanType(Type type)
   {
-    ModelMonitor?.ShowPhaseStart(PPS.ScanSource, "Scanning types");
+    ModelMonitor?.ShowPhaseStart(PPS.ScanSource, CommonStrings.ScanSource);
     DateTime t1 = DateTime.Now;
     ModelManager.OnScanningType += ModelManager_OnScanningType;
     ModelManager.ScanType(type);
@@ -183,17 +183,15 @@ public abstract class BaseCreator
   {
     ModelMonitor?.ShowPhaseProgress(PPS.ScanSource, new ProgressInfo
     {
-      PreStr = "registered",
-      TotalTypes = TotalTypesCount,
-      ProcessedTypes = info.RegisteredTypes,
-      Namespaces = info.RegisteredNamespaces,
+      FormatStr = CommonStrings.registered_0_of_1_types_in_2_namespaces,
+      Args = new object[] { info.RegisteredTypes ?? 0, TotalTypesCount, info.RegisteredNamespaces ?? 0 },
       PostStr = $"{info.Current?.OriginalNamespace}.{info.Current?.OriginalName}"
     }); ;
   }
 
   protected TimeSpan AddDocs()
   {
-    ModelMonitor?.ShowPhaseStart(PPS.AddDocs, "Adding documentation");
+    ModelMonitor?.ShowPhaseStart(PPS.AddDocs, CommonStrings.AddDocs);
     DateTime t1 = DateTime.Now;
 
     int typesWithAddedDescriptionCount = 0;
@@ -241,10 +239,8 @@ public abstract class BaseCreator
   {
     ModelMonitor?.ShowPhaseProgress(PPS.AddDocs, new ProgressInfo
     {
-      PreStr = "added docs to",
-      TotalTypes = info.TotalTypes,
-      CheckedTypes = info.CheckedTypes,
-      ProcessedTypes = info.ProcessedTypes,
+      FormatStr = CommonStrings.checked_0_of_1_types_added_docs_to_2_types,
+      Args = new object[] { info.CheckedTypes ?? 0, info.TotalTypes ?? 0, info.ProcessedTypes ?? 0 },
       PostStr = $"{info.Current?.OriginalNamespace}.{info.Current?.OriginalName}"
     }); ;
   }
@@ -265,22 +261,23 @@ public abstract class BaseCreator
 
   protected TimeSpan RenameTypes()
   {
-    ModelMonitor?.ShowPhaseStart(PPS.Rename, "Renaming types");
+    ModelMonitor?.ShowPhaseStart(PPS.Rename, CommonStrings.RenameTypes);
     DateTime t1 = DateTime.Now;
     ModelManager.OnRenamingType += ModelManager_OnRenamingType;
     var renamedTypesCount = ModelManager.RenameNamespacesAndTypes();
     ModelManager.OnRenamingType -= ModelManager_OnRenamingType;
 
     var invalidTypesCount = 0;
+    var typesWithSameNameCount = 0;
     if (Options.ValidateNames)
     {
       var ModelValidator = new ModelValidator(PPS.Rename, NTS.Origin, MSS.Accepted, TDS.Metadata);
       ModelValidator.OnValidatingType += ModelValidator_OnValidatingType;
       if (!ModelValidator.ValidateTypes(PPS.Rename))
       {
-        invalidTypesCount = ModelManager.DuplicateTypeNamesCount;
+        typesWithSameNameCount = ModelManager.DuplicateTypeNamesCount;
       }
-      invalidTypesCount = ModelManager.DuplicateTypeNamesCount;
+      invalidTypesCount = ModelValidator.InvalidTypesCount;
       ModelValidator.OnValidatingType += ModelValidator_OnValidatingType;
     }
 
@@ -298,6 +295,7 @@ public abstract class BaseCreator
     if (invalidTypesCount>0)
     {
       summaryInfo.Summary.Add(TypeInfoKind.InvalidTypes, invalidTypesCount);
+      summaryInfo.Summary.Add(TypeInfoKind.TypesWithSameName, typesWithSameNameCount);
     }
 
     ModelMonitor?.ShowPhaseEnd(PPS.Rename, summaryInfo);
@@ -308,17 +306,15 @@ public abstract class BaseCreator
   {
     ModelMonitor?.ShowPhaseProgress(PPS.Rename, new ProgressInfo
     {
-      PreStr = "renamed",
-      TotalTypes = TotalTypesCount,
-      CheckedTypes = info.CheckedTypes,
-      ProcessedTypes = info.ProcessedTypes,
+      FormatStr = CommonStrings.checked_0_of_1_types_renamed_2_types,
+      Args = new object[] { info.CheckedTypes ?? 0, info.TotalTypes ?? 0, info.ProcessedTypes ?? 0 },
       PostStr = $"{info.Current?.OriginalNamespace}.{info.Current?.OriginalName} -> {info.Current?.GetTargetNamespace()}.{info.Current?.Name}"
     });
   }
 
   protected TimeSpan ConvertTypes()
   {
-    ModelMonitor?.ShowPhaseStart(PPS.ConvertTypes, "Converting types");
+    ModelMonitor?.ShowPhaseStart(PPS.ConvertTypes, CommonStrings.ConvertTypes);
     DateTime t1 = DateTime.Now;
     ModelManager.OnConvertingType += ModelManager_OnConvertingType;
     var renamedTypesCount = ModelManager.ConvertTypes();
@@ -342,9 +338,9 @@ public abstract class BaseCreator
   {
     ModelMonitor?.ShowPhaseProgress(PPS.ConvertTypes, new ProgressInfo
     {
-      PreStr = "converted",
-      TotalTypes = TotalTypesCount,
-      ProcessedTypes = info.ProcessedTypes,
+      FormatStr = CommonStrings.checked_0_of_1_types_renamed_2_types,
+      Args = new object[] { info.CheckedTypes ?? 0, info.TotalTypes ?? 0, info.ProcessedTypes ?? 0 },
+
       PostStr = $"{info.Current?.OriginalNamespace}.{info.Current?.OriginalName} -> {info.Current?.GetTargetNamespace()}.{info.Current?.Name}"
     });
   }

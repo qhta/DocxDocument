@@ -15,7 +15,7 @@ public enum TypeInfoKind
   TypesWithAddedDescription,
   TypesWithoutDescription,
   TypesWithMeaninglessDescription,
-  TypesWithSameName,
   RenamedTypes,
+  TypesWithSameName,
   ConvertedTypes,
 }
