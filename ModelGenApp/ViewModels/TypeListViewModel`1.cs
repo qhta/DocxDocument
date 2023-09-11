@@ -298,7 +298,7 @@ public class TypeListViewModel<T> : ViewModel where T : TypeInfoViewModel
   }
   #endregion
 
-  public bool HasAnyProblematicTypes => Types.Any(item => item.Model.HasProblems(this.Phase.PhaseNum));
+  public bool HasAnyProblematicTypes => VisibleItems.Any(item => item.Model.HasProblems(this.Phase.PhaseNum));
 
 
 }

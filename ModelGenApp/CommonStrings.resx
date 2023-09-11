@@ -464,7 +464,7 @@ defined in the enum type.</value>
   <data name="RenamedTypes" xml:space="preserve">
     <value>Renamed types</value>
   </data>
-  <data name="ConverterTypes" xml:space="preserve">
+  <data name="ConvertedTypes" xml:space="preserve">
     <value>Converted types</value>
   </data>
   <data name="ProblematicTypes" xml:space="preserve">

@@ -9,7 +9,7 @@
 
   <ItemGroup>
     <PackageReference Include="Qhta.Collections" Version="4.0.0" />
-    <PackageReference Include="Qhta.TextUtils" Version="3.1.1" />
+    <PackageReference Include="Qhta.TextUtils" Version="3.2.0" />
   </ItemGroup>
 
 </Project>
