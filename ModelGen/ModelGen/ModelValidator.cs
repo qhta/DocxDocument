@@ -87,6 +87,13 @@ public class ModelValidator
           if (!ValidateDescription(typeInfo))
             ok = false;
         break;
+
+      case PPS.Rename:
+        if (!typeInfo.IsConstructedGenericType)
+          if (!ValidateTargetName(typeInfo))
+            ok = false;
+        break;
+
     }
     return ok;
   }
@@ -240,4 +247,15 @@ public class ModelValidator
     return true;
   }
 
+  public bool ValidateTargetName(TypeInfo typeInfo)
+  {
+    var targetName = typeInfo.TargetName;
+    var sameNameTypes = TypeManager.AllTypes.Where(item=>item.IsAcceptedAfter(PhaseNum))
+      .Where(item => item!=typeInfo && item.GetFullName(true, false, false) == targetName).ToList();
+    if (sameNameTypes.Any())
+    {
+      return false;
+    }
+    return true;
+  }
 }

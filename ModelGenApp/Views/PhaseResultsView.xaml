@@ -37,8 +37,7 @@
                 Grid.Row="1"
                 SelectionChanged="TabControl_SelectionChanged">
       <TabItem Header="{x:Static local:CommonStrings.Namespaces}">
-        <views:NamespacesListView 
-                                DataContext="{Binding Namespaces}"/>
+        <views:NamespacesListView DataContext="{Binding Namespaces}"/>
       </TabItem>
       <TabItem Header="{x:Static local:CommonStrings.Types}">
         <views:TypeListView DataContext="{Binding Types}" />

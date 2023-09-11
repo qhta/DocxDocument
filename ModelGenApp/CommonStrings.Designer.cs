@@ -190,9 +190,9 @@ namespace ModelGenApp {
         /// <summary>
         ///   Looks up a localized string similar to Converted types.
         /// </summary>
-        public static string ConverterTypes {
+        public static string ConvertedTypes {
             get {
-                return ResourceManager.GetString("ConverterTypes", resourceCulture);
+                return ResourceManager.GetString("ConvertedTypes", resourceCulture);
             }
         }
         

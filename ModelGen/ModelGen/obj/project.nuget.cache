@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "u2RWKmNUvJ2we9rrb55HdS/pcB4IH48EUHXk/uwwXA1AZA6vhOctFNCLrJWQcCmiklrKjFbnTd9zi9C3f/QaOQ==",
+  "dgSpecHash": "wo2/kPQ7+mEgDrFMF9FAFCcApmjc3LGHDVkCjGaRkgnq/J8Uv2VlQmyKom8dKOlQAXCQgcQswqAmJGBqtQJ+yA==",
   "success": true,
   "projectFilePath": "D:\\VS\\Projects\\DocxDocument\\ModelGen\\ModelGen\\ModelGen.csproj",
   "expectedPackageFiles": [
@@ -19,7 +19,7 @@
     "C:\\Users\\qhta1\\.nuget\\packages\\qhta.conversion\\2.0.0\\qhta.conversion.2.0.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\qhta.htmlutils\\2.1.0\\qhta.htmlutils.2.1.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\qhta.testhelper\\3.0.0\\qhta.testhelper.3.0.0.nupkg.sha512",
-    "C:\\Users\\qhta1\\.nuget\\packages\\qhta.textutils\\3.1.1\\qhta.textutils.3.1.1.nupkg.sha512",
+    "C:\\Users\\qhta1\\.nuget\\packages\\qhta.textutils\\3.2.0\\qhta.textutils.3.2.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\qhta.typeutils\\1.3.10.1\\qhta.typeutils.1.3.10.1.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\qhta.xml\\2.1.0\\qhta.xml.2.1.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\qhta.xml.reflection\\2.0.0\\qhta.xml.reflection.2.0.0.nupkg.sha512",

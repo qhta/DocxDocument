@@ -1,22 +1,5 @@
 ﻿namespace ModelGen;
 
-
-public class ProgressInfo
-{
-  public string? PreStr { get; set; }
-  public int? TotalTypes { get; set; }
-  public int? CheckedTypes { get; set; }
-  public int? ProcessedTypes { get; set; }
-  public int? Namespaces { get; set; }
-  public string? PostStr { get; set; }
-}
-
-public class SummaryInfo
-{
-  public TimeSpan Time { get; set; }
-  public Dictionary<TypeInfoKind, object>? Summary {get; set; }
-}
-
 public abstract class ModelMonitor
 {
   public abstract void WriteLine();
@@ -42,21 +25,14 @@ public abstract class ModelMonitor
     PhaseNum = phaseNumber;
     PhaseName = phaseName;
     WriteLine();
-    WriteLine($"Start {phaseName.ToLower()}");
+    WriteLine(String.Format(CommonStrings.Start_of_phase_0, phaseName));
   }
 
   public virtual void ShowPhaseProgress(PPS phaseNumber, ProgressInfo info)
   {
     var sl = new List<string>();
-    if (info.PreStr != null)
-      sl.Add(info.PreStr);
-    if (info.ProcessedTypes != null && info.TotalTypes != null)
-      sl.Add($"{info.ProcessedTypes}/{info.TotalTypes}");
-    else if (info.ProcessedTypes != null)
-      sl.Add($"{info.ProcessedTypes}");
-    sl.Add("types");
-    if (info.Namespaces != null)
-      sl.Add($"in {info.Namespaces} namespaces");
+    if (info.FormatStr != null)
+      sl.Add(String.Format(info.FormatStr, info.Args ?? new object[0]));
     if (info.PostStr != null)
     {
       sl.Add("|");
@@ -71,14 +47,15 @@ public abstract class ModelMonitor
   {
     WriteSameLine("");
     Debug.Assert(phaseNumber == PhaseNum);
-    WriteLine($"End {PhaseName?.ToLower()}, time={info.Time}");
+    WriteLine($"{String.Format(CommonStrings.End_of_phase_0, PhaseName)}, {CommonStrings.time_} {info.Time}");
     if (info.Summary != null)
       foreach (var item in info.Summary)
       {
-        //if (item.Key.Contains('{'))
-        //  WriteLine(String.Format(item.Key, item.Value));
-        //else
-        WriteLine($"{item.Key.ToString().DeCamelCase()} = {item.Value}");
+        var valKey = item.Key.ToString();
+        var valName = CommonStrings.ResourceManager.GetString(valKey);
+        if (valName==null)
+          valName = valKey.DeCamelCase();
+        WriteLine($"{valName} = {item.Value}");
       }
 
   }

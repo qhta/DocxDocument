@@ -17,6 +17,8 @@ public class NamespacesViewModel : ViewModel
 
   public NTS NamespacesTypeSelector { get; private set; }
 
+  public bool ShowOriginalName => NamespacesTypeSelector.HasFlag(NTS.Origin);
+  public bool ShowTargetName => NamespacesTypeSelector.HasFlag(NTS.Target);
 
   public TypeInfoViewModelFilter? Filter
   {

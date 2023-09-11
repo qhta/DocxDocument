@@ -210,7 +210,7 @@
             },
             "Qhta.TextUtils": {
               "target": "Package",
-              "version": "[3.1.1, )"
+              "version": "[3.2.0, )"
             }
           },
           "imports": [
@@ -366,6 +366,10 @@
             "Qhta.TestHelper": {
               "target": "Package",
               "version": "[3.0.0, )"
+            },
+            "Qhta.TextUtils": {
+              "target": "Package",
+              "version": "[3.2.0, )"
             },
             "Qhta.TypeUtils": {
               "target": "Package",

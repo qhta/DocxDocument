@@ -464,7 +464,7 @@ zdefiniowanej w typie wyliczeniowym.</value>
   <data name="RenamedTypes" xml:space="preserve">
     <value>Typy ze zmienioną nazwą</value>
   </data>
-  <data name="ConverterTypes" xml:space="preserve">
+  <data name="ConvertedTypes" xml:space="preserve">
     <value>Typy przekonwertowane</value>
   </data>
   <data name="ProblematicTypes" xml:space="preserve">
@@ -480,7 +480,7 @@ zdefiniowanej w typie wyliczeniowym.</value>
     <value>Sprawdzone typy</value>
   </data>
   <data name="TypesWithMeaninglessDescription" xml:space="preserve">
-    <value>Typy z nic nieznaczącym opisem</value>
+    <value>Typy z nieznaczącymi opisami</value>
   </data>
   <data name="TypesWithSameName" xml:space="preserve">
     <value>Typy z tą samą nazwą</value>
