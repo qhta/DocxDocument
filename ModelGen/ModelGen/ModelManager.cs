@@ -8,7 +8,6 @@ public static class ModelManager
 
   public static int CheckedRenameTypesCount { get; private set; }
   public static int RenamedTypesCount { get; private set; }
-  public static int DuplicateTypeNamesCount { get; private set; }
   public static int ConvertedTypesCount { get; private set; }
 
   public static int CheckedUsageTypesCount { get; private set; }
@@ -651,7 +650,7 @@ public static class ModelManager
     var n = 0;
     var types = TypeManager.TypesAcceptedTo(PPS.Rename).ToArray();
     var totalTypes = types.Count();
-    DuplicateTypeNamesCount = 0;
+    RenamedTypesCount = 0;
     foreach (var typeInfo in types)
     {
       if (ModelManager.TryRenameType(typeInfo))
@@ -707,24 +706,6 @@ public static class ModelManager
       typeInfo.TargetNamespace = newNamespace;
     }
     var nspace = TypeManager.GetNamespace(newNamespace);
-    if (!typeInfo.IsConstructedGenericType)
-    {
-      if (nspace.TryGetTypesWithSameName(typeInfo, out var otherTypes))
-      {
-        var sameNameTypes = otherTypes.ToList();
-        sameNameTypes.Add(typeInfo);
-        //foreach (var sameNameType in sameNameTypes.ToArray())
-        //  if (RenameTypeWithNamespace(sameNameType))
-        //    sameNameTypes.Remove(sameNameType);
-        if (sameNameTypes.Count > 1)
-          foreach (var sameNameType in sameNameTypes)
-          {
-            //sameNameType.IsInvalid = true;
-            sameNameType.AddError(PPS.Rename, ErrorCode.MultiplicatedName);
-            DuplicateTypeNamesCount++;
-          }
-      }
-    }
     nspace.AddType(typeInfo);
 
     if (typeInfo.TypeKind == TypeKind.@enum)

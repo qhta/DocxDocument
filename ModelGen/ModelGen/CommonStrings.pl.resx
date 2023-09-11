@@ -148,7 +148,7 @@
     <value>sprawdzono {0} z {1} typów, dodano opisy do {2} typów</value>
   </data>
   <data name="RenameTypes" xml:space="preserve">
-    <value>zmiana nazw typów</value>
+    <value>Zmiana nazw typów</value>
   </data>
   <data name="checked_0_of_1_types_renamed_2_types" xml:space="preserve">
     <value>sprawdzono {0} z {1} typów, zmieniono nazwy {2} typów</value>

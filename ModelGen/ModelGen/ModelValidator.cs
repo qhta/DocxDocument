@@ -83,15 +83,13 @@ public class ModelValidator
         break;
 
       case PPS.AddDocs:
-        if (!typeInfo.IsConstructedGenericType)
-          if (!ValidateDescription(typeInfo))
-            ok = false;
+        if (!ValidateDescription(typeInfo))
+          ok = false;
         break;
 
       case PPS.Rename:
-        if (!typeInfo.IsConstructedGenericType)
-          if (!ValidateTargetName(typeInfo))
-            ok = false;
+        if (!ValidateTargetName(typeInfo))
+          ok = false;
         break;
 
     }
@@ -105,7 +103,7 @@ public class ModelValidator
     return ok1 && ok2;
   }
 
-    public bool CompareSchemaWithIncludeRelationships(TypeInfo typeInfo)
+  public bool CompareSchemaWithIncludeRelationships(TypeInfo typeInfo)
   {
     var typesIncludedInRels = typeInfo.GetOutgoingRelationships(Semantics.Include).Select(item => item.Target).ToList();
     if (typeInfo.Schema == null && typesIncludedInRels.Count > 0)
@@ -169,7 +167,7 @@ public class ModelValidator
     }
     if (typeInfo.Properties != null)
     {
-      var typesIncludedInProps = typeInfo.Properties.Select(item=>item.PropertyType).ToList();
+      var typesIncludedInProps = typeInfo.Properties.Select(item => item.PropertyType).ToList();
       if (typesIncludedInProps.Count == 0 && typesIncludedInRels.Count > 0)
       {
         typeInfo.AddError(PhaseNum, ErrorCode.MissingProperties);
@@ -226,35 +224,43 @@ public class ModelValidator
 
   public bool ValidateDescription(TypeInfo typeInfo)
   {
-    var description = typeInfo.GetDescription()?.Trim();
-    if (String.IsNullOrEmpty(description))
+    if (!typeInfo.IsConstructedGenericType)
     {
-      typeInfo.AddError(PhaseNum, ErrorCode.MissingDescription);
-      return false;
-    }
-    String str = description;
-    if (str.EndsWith("."))
-      str = str.Substring(0, str.Length - 1).TrimEnd();
-    str = str.Replace(" the ", " ").Replace(" a ", "");
-    if (str.StartsWith("Defines "))
-    {
-      var rest = str.Substring("Defines ".Length).TrimStart();
-      var restWithoutSpaces = rest.Replace(" ", "");
-      if (restWithoutSpaces.ToLower() == typeInfo.Name.ToLower())
-        typeInfo.AddError(PhaseNum, ErrorCode.MeaninglessDescription);
-      return false;
+      var description = typeInfo.GetDescription()?.Trim();
+      if (String.IsNullOrEmpty(description))
+      {
+        typeInfo.AddError(PhaseNum, ErrorCode.MissingDescription);
+        return false;
+      }
+      String str = description;
+      if (str.EndsWith("."))
+        str = str.Substring(0, str.Length - 1).TrimEnd();
+      str = str.Replace(" the ", " ").Replace(" a ", "");
+      if (str.StartsWith("Defines "))
+      {
+        var rest = str.Substring("Defines ".Length).TrimStart();
+        var restWithoutSpaces = rest.Replace(" ", "");
+        if (restWithoutSpaces.ToLower() == typeInfo.Name.ToLower())
+          typeInfo.AddError(PhaseNum, ErrorCode.MeaninglessDescription);
+        return false;
+      }
     }
     return true;
   }
 
   public bool ValidateTargetName(TypeInfo typeInfo)
   {
-    var targetName = typeInfo.TargetName;
-    var sameNameTypes = TypeManager.AllTypes.Where(item=>item.IsAcceptedAfter(PhaseNum))
-      .Where(item => item!=typeInfo && item.GetFullName(true, false, false) == targetName).ToList();
-    if (sameNameTypes.Any())
+    if (typeInfo.IsAcceptedAfter(PPS.Rename) && !typeInfo.IsConstructedGenericType)
     {
-      return false;
+      var targetName = typeInfo.TargetName;
+      var sameNameTypes = TypeManager.AllTypes.Where(item => item.IsAcceptedAfter(PhaseNum) && !item.IsConstructedGenericType)
+        .Where(item => item.TargetNamespace == typeInfo.TargetNamespace)
+        .Where(item => item.GetFullName(true, false, false) == targetName).ToList();
+      if (sameNameTypes.Count>1)
+      {
+        typeInfo.AddError(PhaseNum, ErrorCode.MultiplicatedName);
+        return false;
+      }
     }
     return true;
   }

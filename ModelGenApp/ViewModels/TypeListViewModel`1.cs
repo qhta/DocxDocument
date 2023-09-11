@@ -183,8 +183,6 @@ public class TypeListViewModel<T> : ViewModel where T : TypeInfoViewModel
   {
     var types = Namespace?.Model.Types.ToList()
       ?? ModelGen.TypeManager.AllTypes.ToList();
-    //if (VisibleItems.Filter != null)
-    //    types = types.Where(item => Filter.Predicate(item)).ToList();
     return types;
   }
 
