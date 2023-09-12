@@ -13,9 +13,8 @@ public class NamespacesConfigViewModel : ModelConfigViewModel
 
   public ListViewModel<NamespaceConfigViewModel> Namespaces { get; private set; }
 
-  //public FilteredCollection<NamespaceConfigViewModel> VisibleItems { get; private set; }
-
   private CollectionViewSource<NamespaceConfigViewModel> CollectionViewSource;
+
   /// <summary>
   /// This is the result collection view to be used in DataGrid.
   /// </summary>

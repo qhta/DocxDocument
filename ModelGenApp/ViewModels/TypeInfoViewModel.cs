@@ -120,7 +120,7 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
   [DataGridColumn(
     Header = "",
     HiddenHeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.Problem),
-    DataTemplateResourceKey = "ProblemMarkTemplate"
+    DataTemplateResourceKey = "ErrorMarkButtonTemplate"
     )]
   public string? ValidationProblem
   {
