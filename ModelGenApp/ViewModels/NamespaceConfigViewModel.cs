@@ -75,7 +75,7 @@ public class NamespaceConfigViewModel : VisibleViewModel
   [DataGridColumn(
     Header = "",
     HiddenHeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.ShortcutError),
-    DataTemplateResourceKey ="ErrorMsgMarkTemplate"
+    DataTemplateResourceKey ="ErrorMarkTemplate"
     )]
   public string? ShortcutError => IsShortcutValid ? (string?)null : CommonStrings.Duplicated_shortcut;
 
@@ -133,7 +133,7 @@ public class NamespaceConfigViewModel : VisibleViewModel
   [DataGridColumn(
     Header = "",
     HiddenHeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.TargetShortcutError),
-    DataTemplateResourceKey ="ErrorMsgMarkTemplate"
+    DataTemplateResourceKey ="ErrorMarkTemplate"
     )]
   public string? TargetShortcutError => IsTargetShortcutValid ? (string?)null : CommonStrings.Target_shortcut_error;
 
