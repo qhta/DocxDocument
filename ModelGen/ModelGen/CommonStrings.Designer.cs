@@ -79,38 +79,20 @@ namespace ModelGen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to adding docs to {0} of {1} types, added to {2} types.
+        /// </summary>
+        internal static string adding_docs_0_of_1_types_added_to_2_types {
+            get {
+                return ResourceManager.GetString("adding_docs_0_of_1_types_added_to_2_types", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to All types.
         /// </summary>
         internal static string AllTypes {
             get {
                 return ResourceManager.GetString("AllTypes", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to checked {0} of {1} types, added docs to {2} types.
-        /// </summary>
-        internal static string checked_0_of_1_types_added_docs_to_2_types {
-            get {
-                return ResourceManager.GetString("checked_0_of_1_types_added_docs_to_2_types", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to checked {0} of {1} types, converted {2} types.
-        /// </summary>
-        internal static string checked_0_of_1_types_converted_2_types {
-            get {
-                return ResourceManager.GetString("checked_0_of_1_types_converted_2_types", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to checked {0} of {1} types, renamed {2} types.
-        /// </summary>
-        internal static string checked_0_of_1_types_renamed_2_types {
-            get {
-                return ResourceManager.GetString("checked_0_of_1_types_renamed_2_types", resourceCulture);
             }
         }
         
@@ -129,6 +111,15 @@ namespace ModelGen {
         internal static string ConvertedTypes {
             get {
                 return ResourceManager.GetString("ConvertedTypes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to converting {0} of {1} types, converted {2} types.
+        /// </summary>
+        internal static string converting_0_of_1_types_converted_2_types {
+            get {
+                return ResourceManager.GetString("converting_0_of_1_types_converted_2_types", resourceCulture);
             }
         }
         
@@ -210,6 +201,15 @@ namespace ModelGen {
         internal static string RenameTypes {
             get {
                 return ResourceManager.GetString("RenameTypes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to renaming {0} of {1} types, renamed {2} types.
+        /// </summary>
+        internal static string renaming_0_of_1_types_renamed_2_types {
+            get {
+                return ResourceManager.GetString("renaming_0_of_1_types_renamed_2_types", resourceCulture);
             }
         }
         
@@ -309,6 +309,15 @@ namespace ModelGen {
         internal static string ValidTypes {
             get {
                 return ResourceManager.GetString("ValidTypes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to verifying {0} of {1} types, invalid {2} types.
+        /// </summary>
+        internal static string verifying_0_of_1_types_invalid_2_types {
+            get {
+                return ResourceManager.GetString("verifying_0_of_1_types_invalid_2_types", resourceCulture);
             }
         }
     }

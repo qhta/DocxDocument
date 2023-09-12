@@ -367,7 +367,7 @@ Może zawierać * jako symbol wieloznaczny.</value>
     <value>Struktury</value>
   </data>
   <data name="Enums" xml:space="preserve">
-    <value>Wyliczane</value>
+    <value>Wyliczenia</value>
   </data>
   <data name="InterfaceTypes" xml:space="preserve">
     <value>Typy interfejsowe</value>
@@ -532,5 +532,8 @@ zdefiniowanej w typie wyliczeniowym.</value>
   </data>
   <data name="ValidateNames" xml:space="preserve">
     <value>Weryfikuj nazwy</value>
+  </data>
+  <data name="EnumVals" xml:space="preserve">
+    <value>Wartości</value>
   </data>
 </root>

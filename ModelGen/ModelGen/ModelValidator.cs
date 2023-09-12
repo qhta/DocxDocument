@@ -1,4 +1,6 @@
-﻿namespace ModelGen;
+﻿using DocumentFormat.OpenXml.Drawing;
+
+namespace ModelGen;
 
 public record ValidatingTypeInfo
 {
@@ -250,11 +252,12 @@ public class ModelValidator
 
   public bool ValidateTargetName(TypeInfo typeInfo)
   {
-    if (typeInfo.IsAcceptedAfter(PPS.Rename) && !typeInfo.IsConstructedGenericType)
+    if (typeInfo.IsAcceptedAfter(PPS.Rename) && !typeInfo.IsConstructedGenericType && !typeInfo.OriginalNamespace.StartsWith("System"))
     {
+      var targetNamespace = typeInfo.TargetNamespace;
       var targetName = typeInfo.TargetName;
       var sameNameTypes = TypeManager.AllTypes.Where(item => item.IsAcceptedAfter(PhaseNum) && !item.IsConstructedGenericType)
-        .Where(item => item.TargetNamespace == typeInfo.TargetNamespace)
+        .Where(item => item.TargetNamespace == targetNamespace)
         .Where(item => item.GetFullName(true, false, false) == targetName).ToList();
       if (sameNameTypes.Count>1)
       {

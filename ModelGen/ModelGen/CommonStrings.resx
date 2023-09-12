@@ -144,20 +144,20 @@
   <data name="in_0_namespaces" xml:space="preserve">
     <value>in {0} namespaces</value>
   </data>
-  <data name="checked_0_of_1_types_added_docs_to_2_types" xml:space="preserve">
-    <value>checked {0} of {1} types, added docs to {2} types</value>
+  <data name="adding_docs_0_of_1_types_added_to_2_types" xml:space="preserve">
+    <value>adding docs to {0} of {1} types, added to {2} types</value>
   </data>
   <data name="RenameTypes" xml:space="preserve">
     <value>Rename types</value>
   </data>
-  <data name="checked_0_of_1_types_renamed_2_types" xml:space="preserve">
-    <value>checked {0} of {1} types, renamed {2} types</value>
+  <data name="renaming_0_of_1_types_renamed_2_types" xml:space="preserve">
+    <value>renaming {0} of {1} types, renamed {2} types</value>
   </data>
   <data name="ConvertTypes" xml:space="preserve">
     <value>Convert types</value>
   </data>
-  <data name="checked_0_of_1_types_converted_2_types" xml:space="preserve">
-    <value>checked {0} of {1} types, converted {2} types</value>
+  <data name="converting_0_of_1_types_converted_2_types" xml:space="preserve">
+    <value>converting {0} of {1} types, converted {2} types</value>
   </data>
   <data name="AcceptedTypes" xml:space="preserve">
     <value>Accepted types</value>
@@ -200,5 +200,8 @@
   </data>
   <data name="ConvertedTypes" xml:space="preserve">
     <value>Converted types</value>
+  </data>
+  <data name="verifying_0_of_1_types_invalid_2_types" xml:space="preserve">
+    <value>verifying {0} of {1} types, invalid {2} types</value>
   </data>
 </root>

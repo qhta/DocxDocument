@@ -316,6 +316,15 @@ namespace ModelGenApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Enum vals.
+        /// </summary>
+        public static string EnumVals {
+            get {
+                return ResourceManager.GetString("EnumVals", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Enum value.
         /// </summary>
         public static string EnumValue {

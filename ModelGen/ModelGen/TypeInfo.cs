@@ -249,7 +249,10 @@ public class TypeInfo : ModelElement
       return GetFullName(Type, nameKindSelector);
     else
     {
-      aName = this.Name;
+      if (nameKindSelector.Target)
+        aName = this.TargetName ?? this.Name;
+      else
+        aName = this.Name;
       if (nameKindSelector.Namespace)
         aNamespace = this.GetTargetNamespace();
 

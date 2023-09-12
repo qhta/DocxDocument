@@ -82,8 +82,9 @@ public class TypeListViewModel<T> : ViewModel where T : TypeInfoViewModel
     }
   }
   public TNS TypeNameSelector { get; private set; }
-
   public TKS TypeKindSelector { get; private set; }
+
+  public bool ShowTargetName => Phase.NamespaceTypeSelector.HasFlag(NTS.Origin) && Phase.NamespaceTypeSelector.HasFlag(NTS.Target);
 
   public PhaseResultsViewModel Phase { get; private set; }
 
@@ -296,7 +297,7 @@ public class TypeListViewModel<T> : ViewModel where T : TypeInfoViewModel
   }
   #endregion
 
-  public bool HasAnyProblematicTypes => VisibleItems.Any(item => item.Model.HasProblems(this.Phase.PhaseNum));
+  public bool HasAnyInvalidTypes => VisibleItems.Any(item => item.Model.HasProblems(this.Phase.PhaseNum));
 
 
 }

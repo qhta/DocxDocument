@@ -239,7 +239,7 @@ public abstract class BaseCreator
   {
     ModelMonitor?.ShowPhaseProgress(PPS.AddDocs, new ProgressInfo
     {
-      FormatStr = CommonStrings.checked_0_of_1_types_added_docs_to_2_types,
+      FormatStr = CommonStrings.adding_docs_0_of_1_types_added_to_2_types,
       Args = new object[] { info.CheckedTypes ?? 0, info.TotalTypes ?? 0, info.ProcessedTypes ?? 0 },
       PostStr = $"{info.Current?.OriginalNamespace}.{info.Current?.OriginalName}"
     }); ;
@@ -247,16 +247,12 @@ public abstract class BaseCreator
 
   private void ModelValidator_OnValidatingType(ModelValidator sender, ValidatingTypeInfo info)
   {
-    //ModelMonitor?.ShowPhaseProgress(PPS.ScanSource, new ProgressInfo
-    //{
-    //  PreStr = "validated",
-    //  Done = info.CheckedTypes,
-    //  Total = info.TotalTypes,
-    //  MidStr = "types",
-    //  Summary = new Dictionary<string, object>{
-    //    {"invalid", info.InvalidTypes ?? 0 } },
-    //  PostStr = $"{info.Current?.OriginalNamespace}.{info.Current?.OriginalName}"
-    //});
+    ModelMonitor?.ShowPhaseProgress(sender.PhaseNum, new ProgressInfo
+    {
+      FormatStr = CommonStrings.verifying_0_of_1_types_invalid_2_types,
+      Args = new object[] { info.CheckedTypes ?? 0, info.TotalTypes ?? 0, info.InvalidTypes ?? 0 },
+      PostStr = $"{info.Current?.OriginalNamespace}.{info.Current?.OriginalName}"
+    });
   }
 
   protected TimeSpan RenameTypes()
@@ -292,7 +288,7 @@ public abstract class BaseCreator
 
     if (typesWithSameNameCount>0)
     {
-      summaryInfo.Summary.Add(TypeInfoKind.TypesWithSameName, typesWithSameNameCount);
+      summaryInfo.Summary.Add(TypeInfoKind.InvalidTypes, typesWithSameNameCount);
     }
 
     ModelMonitor?.ShowPhaseEnd(PPS.Rename, summaryInfo);
@@ -303,7 +299,7 @@ public abstract class BaseCreator
   {
     ModelMonitor?.ShowPhaseProgress(PPS.Rename, new ProgressInfo
     {
-      FormatStr = CommonStrings.checked_0_of_1_types_renamed_2_types,
+      FormatStr = CommonStrings.renaming_0_of_1_types_renamed_2_types,
       Args = new object[] { info.CheckedTypes ?? 0, info.TotalTypes ?? 0, info.ProcessedTypes ?? 0 },
       PostStr = $"{info.Current?.OriginalNamespace}.{info.Current?.OriginalName} -> {info.Current?.GetTargetNamespace()}.{info.Current?.Name}"
     });
@@ -335,9 +331,8 @@ public abstract class BaseCreator
   {
     ModelMonitor?.ShowPhaseProgress(PPS.ConvertTypes, new ProgressInfo
     {
-      FormatStr = CommonStrings.checked_0_of_1_types_renamed_2_types,
+      FormatStr = CommonStrings.converting_0_of_1_types_converted_2_types,
       Args = new object[] { info.CheckedTypes ?? 0, info.TotalTypes ?? 0, info.ProcessedTypes ?? 0 },
-
       PostStr = $"{info.Current?.OriginalNamespace}.{info.Current?.OriginalName} -> {info.Current?.GetTargetNamespace()}.{info.Current?.Name}"
     });
   }

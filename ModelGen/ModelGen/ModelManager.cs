@@ -703,10 +703,11 @@ public static class ModelManager
     if (newNamespace != targetNamespace)
     {
       TypeManager.RegisterNamespace(newNamespace);
-      typeInfo.TargetNamespace = newNamespace;
     }
     var nspace = TypeManager.GetNamespace(newNamespace);
     nspace.AddType(typeInfo);
+    typeInfo.TargetNamespace = newNamespace;
+
 
     if (typeInfo.TypeKind == TypeKind.@enum)
     {
