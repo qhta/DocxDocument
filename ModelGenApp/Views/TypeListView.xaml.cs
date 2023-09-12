@@ -27,10 +27,30 @@ public partial class TypeListView : UserControl
           typeof(TypeListViewModel), typeof(TypeInfoViewModel));
     }
     dataGridColumnCreator.GenerateColumn(sender, args);
+    //if (args.PropertyName==nameof(NamespaceViewModel.Name))
+    //{
+    //  BindingOperations.SetBinding(args.Column, DataGridColumn.VisibilityProperty, 
+    //    new Binding("DataContext."+nameof(NamespacesViewModel.ShowOriginalName)) 
+    //    { 
+    //      Source = dummyElement,
+    //      Converter=new BoolToVisibilityConverter(), 
+    //      ConverterParameter="Visible,Collapsed" 
+    //      });
+    //}
+    if (args.PropertyName==nameof(NamespaceViewModel.TargetName))
+    {
+      BindingOperations.SetBinding(args.Column, DataGridColumn.VisibilityProperty, 
+        new Binding("DataContext."+nameof(NamespacesViewModel.ShowTargetName)) 
+        { 
+          Source = dummyElement,
+          Converter=new BoolToVisibilityConverter(), 
+          ConverterParameter="Visible,Collapsed" 
+          });
+    }
     if (args.PropertyName==nameof(TypeInfoViewModel.ValidationProblem))
     {
       BindingOperations.SetBinding(args.Column, DataGridColumn.VisibilityProperty, 
-        new Binding("DataContext."+nameof(TypeListViewModel.HasAnyProblematicTypes)) 
+        new Binding("DataContext."+nameof(TypeListViewModel.HasAnyInvalidTypes)) 
         { 
           Source = dummyElement,
           Converter=new BoolToVisibilityConverter(), 
