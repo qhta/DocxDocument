@@ -270,14 +270,14 @@ public abstract class BaseCreator
     var renamedTypesCount = ModelManager.RenameNamespacesAndTypes();
     ModelManager.OnRenamingType -= ModelManager_OnRenamingType;
 
-    var typesWithSameNameCount = 0;
+    var invalidTypes = 0;
     if (Options.ValidateNames)
     {
       var ModelValidator = new ModelValidator(PPS.Rename, NTS.Origin, MSS.Accepted, TDS.Metadata);
       ModelValidator.OnValidatingType += ModelValidator_OnValidatingType;
       if (!ModelValidator.ValidateTypes(PPS.Rename))
       {
-        typesWithSameNameCount = ModelValidator.InvalidTypesCount;
+        invalidTypes = ModelValidator.InvalidTypesCount;
       }
       ModelValidator.OnValidatingType += ModelValidator_OnValidatingType;
     }
@@ -293,10 +293,8 @@ public abstract class BaseCreator
         }
     };
 
-    if (typesWithSameNameCount > 0)
-    {
-      summaryInfo.Summary.Add(TypeInfoKind.InvalidTypes, typesWithSameNameCount);
-    }
+    if (invalidTypes > 0)
+      summaryInfo.Summary.Add(TypeInfoKind.InvalidTypes, invalidTypes);
 
     ModelMonitor?.ShowPhaseEnd(PPS.Rename, summaryInfo);
     return ts;
@@ -317,20 +315,36 @@ public abstract class BaseCreator
     ModelMonitor?.ShowPhaseStart(PPS.ConvertTypes, CommonStrings.ConvertTypes);
     DateTime t1 = DateTime.Now;
     ModelManager.OnConvertingType += ModelManager_OnConvertingType;
-    var renamedTypesCount = ModelManager.ConvertTypes();
+    var convertedTypesCount = ModelManager.ConvertTypes();
     ModelManager.OnConvertingType -= ModelManager_OnConvertingType;
+
+    var invalidTypes = 0;
+    if (Options.ValidateNames)
+    {
+      var ModelValidator = new ModelValidator(PPS.ConvertTypes, NTS.Origin, MSS.Accepted, TDS.Metadata);
+      ModelValidator.OnValidatingType += ModelValidator_OnValidatingType;
+      if (!ModelValidator.ValidateTypes(PPS.Rename))
+      {
+        invalidTypes = ModelValidator.InvalidTypesCount;
+      }
+      ModelValidator.OnValidatingType += ModelValidator_OnValidatingType;
+    }
 
     DateTime t2 = DateTime.Now;
     var ts = t2 - t1;
-    ModelMonitor?.ShowPhaseEnd(PPS.ConvertTypes, new SummaryInfo
+    var summaryInfo = new SummaryInfo
     {
       Time = ts,
       Summary = new Dictionary<TypeInfoKind, object>{
         {TypeInfoKind.AllTypes, TypeManager.AllTypes.Count() },
-        {TypeInfoKind.ConvertedTypes, renamedTypesCount },
-        {TypeInfoKind.InvalidTypes, TypeManager.AllTypes.Count(item=>item.HasProblems(PhaseDone))},
+        {TypeInfoKind.ConvertedTypes, convertedTypesCount },
         }
-    });
+    };
+
+    if (invalidTypes > 0)
+      summaryInfo.Summary.Add(TypeInfoKind.InvalidTypes, invalidTypes);
+
+    ModelMonitor?.ShowPhaseEnd(PPS.ConvertTypes, summaryInfo);
     return ts;
   }
 

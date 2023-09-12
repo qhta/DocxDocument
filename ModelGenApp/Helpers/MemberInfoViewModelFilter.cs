@@ -30,8 +30,8 @@ public record MemberInfoViewModelFilter: IFilter
       else
       if (filter == MemberInfoKind.ProblematicMembers)
         Predicate = new Predicate<object>(obj => 
-        (obj is PropInfoViewModel pvm) && pvm.Model.HasProblems(phaseNum)
-        || (obj is EnumInfoViewModel evm) && evm.Model.HasProblems(phaseNum));
+        (obj is PropInfoViewModel pvm) && pvm.Model.IsInvalid(phaseNum)
+        || (obj is EnumInfoViewModel evm) && evm.Model.IsInvalid(phaseNum));
     }
     else
     if (value is FullTypeName propName)

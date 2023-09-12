@@ -20,6 +20,9 @@ public class ProcessMonitorViewModel : ViewModel
         case PPS.Rename:
           PhaseMonitors[i] = new RenamePhaseViewModel(phase.ToString());
           break;
+        case PPS.ConvertTypes:
+          PhaseMonitors[i] = new RenamePhaseViewModel(phase.ToString());
+          break;
       }
   }
 

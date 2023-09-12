@@ -536,4 +536,10 @@ zdefiniowanej w typie wyliczeniowym.</value>
   <data name="EnumVals" xml:space="preserve">
     <value>Wartości</value>
   </data>
+  <data name="ValidateConversion" xml:space="preserve">
+    <value>Weryfikuj konwersję</value>
+  </data>
+  <data name="ConvertTypes" xml:space="preserve">
+    <value>Konwertuj typy</value>
+  </data>
 </root>

@@ -174,7 +174,7 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
     else
       TypeSummary.Add(new TypePropViewModel("Acceptance", new RedString(Acceptance.ToString()?.ToLower())));
 
-    if (Model.HasProblems(Phase.PhaseNum))
+    if (Model.IsInvalid(Phase.PhaseNum))
       TypeSummary.Add(new TypePropViewModel("Validation", new RedString(this.ValidationProblem ?? "invalid")));
 
     TypeSummary.Add(new TypePropViewModel("Kind", TypeKind.ToString().ToLower()));

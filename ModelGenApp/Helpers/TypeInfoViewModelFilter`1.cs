@@ -48,13 +48,13 @@ public record TypeInfoViewModelFilter<T> : IFilter where T : TypeInfoViewModel
         Predicate = new Predicate<T>(item => item.Model.IsRejectedAfter(phaseNum));
       else
       if (filter == TypeInfoKind.InvalidTypes)
-        Predicate = new Predicate<T>(item => item.Model.HasProblems(phaseNum));
+        Predicate = new Predicate<T>(item => item.Model.IsInvalid(phaseNum));
       else
       if (filter == TypeInfoKind.TypesWithoutDescription)
         Predicate = new Predicate<T>(item => String.IsNullOrEmpty(item.Model.Description));
       else
       if (filter == TypeInfoKind.TypesWithMeaninglessDescription)
-        Predicate = new Predicate<T>(item => item.Model.HasProblems(phaseNum) && item.Model.Description != null && item.Model.Description.Trim() != "");
+        Predicate = new Predicate<T>(item => item.Model.IsInvalid(phaseNum) && item.Model.Description != null && item.Model.Description.Trim() != "");
       else
       if (filter == TypeInfoKind.RenamedTypes)
         Predicate = new Predicate<T>(item => item.Model.NewName != null && item.Model.NewName != item.Model.Name);

@@ -132,8 +132,8 @@ public abstract class ModelMonitor
           || options.TypeStatusSelector.HasFlag(MSS.Rejected) && item.IsRejectedAfter(phase)).ToList();
       if (options.TypeStatusSelector.HasFlag(MSS.Valid) || options.TypeStatusSelector.HasFlag(MSS.Invalid))
         nSpaceTypes = nSpaceTypes.Where(item =>
-          options.TypeStatusSelector.HasFlag(MSS.Valid) && !item.HasProblems(PhaseNum)
-          || options.TypeStatusSelector.HasFlag(MSS.Invalid) && item.HasProblems(PhaseNum)).ToList();
+          options.TypeStatusSelector.HasFlag(MSS.Valid) && !item.IsInvalid(PhaseNum)
+          || options.TypeStatusSelector.HasFlag(MSS.Invalid) && item.IsInvalid(PhaseNum)).ToList();
     }
     var originNames = options.NamespaceTypeSelector == NTS.Origin || options.TypeDataSelector.HasFlag(TDS.OriginalNames);
     if (nSpaceTypes.Count() > 0)
@@ -171,7 +171,7 @@ public abstract class ModelMonitor
     var originNames = options.NamespaceTypeSelector == NTS.Origin || options.TypeDataSelector.HasFlag(TDS.OriginalNames);
     str += $"{typeInfo.TypeKind.ToString().ToLower()} {typeInfo.GetFullName(!originNames, true, true)}";
     List<string> status = new List<string>();
-    if (typeInfo.HasProblems(PhaseNum))
+    if (typeInfo.IsInvalid(PhaseNum))
       status.Add(ValidStr(false));
     if (status.Count > 0)
       str += " { " + string.Join(", ", status) + " }";
@@ -391,8 +391,8 @@ public abstract class ModelMonitor
           options.MemberStatusSelector.HasFlag(MSS.Rejected) && item.IsRejectedAfter(phase) ||
           options.MemberStatusSelector.HasFlag(MSS.Used) && item.IsUsed ||
           options.MemberStatusSelector.HasFlag(MSS.Unused) && !item.IsUsed ||
-          options.MemberStatusSelector.HasFlag(MSS.Valid) && !item.HasProblems(PhaseNum) ||
-          options.MemberStatusSelector.HasFlag(MSS.Invalid) && !item.HasProblems(PhaseNum) ||
+          options.MemberStatusSelector.HasFlag(MSS.Valid) && !item.IsInvalid(PhaseNum) ||
+          options.MemberStatusSelector.HasFlag(MSS.Invalid) && !item.IsInvalid(PhaseNum) ||
           options.MemberStatusSelector.HasFlag(MSS.Converted) && item.IsConverted ||
           options.MemberStatusSelector.HasFlag(MSS.ConvertedTo) && item.IsConvertedTo
         ).ToList();
