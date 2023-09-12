@@ -205,6 +205,31 @@
                   Content="{x:Static local:CommonStrings.SaveResults}"
                   Command="{Binding Path=ProcessMonitorVM.PhaseMonitors[2].SaveResultsCommand}" />
 
+          <StackPanel Grid.Column="1"
+                      Grid.Row="4"
+                      VerticalAlignment="Center"
+                      Margin="0,0,5,0">
+            <Label Content="{x:Static local:CommonStrings.ConvertTypes}" />
+            <CheckBox Content="{x:Static local:CommonStrings.ValidateConversion}"
+                      IsChecked="{Binding Path=ProcessOptionsVM.ValidateConversion}" />
+          </StackPanel>
+          <Button Grid.Column="2"
+                  Grid.Row="4"
+                  VerticalAlignment="Center"
+                  Margin="5,0,5,0"
+                  Height="25"
+                  Padding="5,0"
+                  Content="{x:Static local:CommonStrings.ShowResults}"
+                  Command="{Binding Path=ProcessMonitorVM.PhaseMonitors[3].ShowResultsCommand}" />
+          <Button Grid.Column="3"
+                  Grid.Row="4"
+                  VerticalAlignment="Center"
+                  Margin="5,0,5,0"
+                  Height="25"
+                  Padding="5,0"
+                  Content="{x:Static local:CommonStrings.SaveResults}"
+                  Command="{Binding Path=ProcessMonitorVM.PhaseMonitors[3].SaveResultsCommand}" />
+
         </Grid>
       </Grid>
     </Border>
