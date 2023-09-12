@@ -68,7 +68,7 @@ public abstract class BaseCreator
     IsRun = true;
     //var displayOptions = Options.DisplayOptions;
     //if (displayOptions == null)
-    var  displayOptions = new DisplayOptions();
+    var displayOptions = new DisplayOptions();
 
     var monitorDisplaySelector = Options.Display;
 
@@ -169,7 +169,7 @@ public abstract class BaseCreator
         {TypeInfoKind.RejectedTypes, rejectedTypesCount },
         }
     };
-    if (checkedTypesCount>0 || validTypesCount>0 || invalidTypesCount>0)
+    if (checkedTypesCount > 0 || validTypesCount > 0 || invalidTypesCount > 0)
     {
       summaryInfo.Summary.Add(TypeInfoKind.CheckedTypes, checkedTypesCount);
       summaryInfo.Summary.Add(TypeInfoKind.ValidTypes, validTypesCount);
@@ -203,22 +203,27 @@ public abstract class BaseCreator
       ModelDocumenter.OnDocumentingType += ModelDocumenter_OnDocumentingType;
     }
 
+    bool validated = false;
+    var typesWithoutDescriptionCount = 0;
+    var typesWithMeaninglessDescriptionCount = 0;
     if (Options.ValidateDocs)
     {
       var ModelValidator = new ModelValidator(PPS.AddDocs, NTS.Origin, MSS.Accepted, TDS.Metadata);
       ModelValidator.OnValidatingType += ModelValidator_OnValidatingType;
       ModelValidator.ValidateTypes(PPS.AddDocs);
-      ModelValidator.OnValidatingType += ModelValidator_OnValidatingType;
+      typesWithoutDescriptionCount = TypeManager.TypesAcceptedTo(PPS.AddDocs)
+        .Count(item => item.HasError(PPS.AddDocs, ErrorCode.MissingDescription));
+      typesWithMeaninglessDescriptionCount = TypeManager.TypesAcceptedTo(PPS.AddDocs)
+        .Count(item => item.HasError(PPS.AddDocs, ErrorCode.MeaninglessDescription));
+      validated = true;
+      ModelValidator.OnValidatingType -= ModelValidator_OnValidatingType;
     }
 
     DateTime t2 = DateTime.Now;
     var ts = t2 - t1;
     var typesWithDescriptionCount = TypeManager.TypesAcceptedTo(PPS.AddDocs)
       .Count(item => item.Description != null);
-    var typesWithoutDescriptionCount = TypeManager.TypesAcceptedTo(PPS.AddDocs)
-      .Count(item => item.HasError(PPS.AddDocs, ErrorCode.MissingDescription));
-    var typesWithMeaninglessDescriptionCount = TypeManager.TypesAcceptedTo(PPS.AddDocs)
-      .Count(item => item.HasError(PPS.AddDocs, ErrorCode.MeaninglessDescription));
+
 
     var summaryInfo = new SummaryInfo
     {
@@ -226,11 +231,13 @@ public abstract class BaseCreator
       Summary = new Dictionary<TypeInfoKind, object>{
         {TypeInfoKind.TypesWithDescription, typesWithDescriptionCount},
         {TypeInfoKind.TypesWithAddedDescription, typesWithAddedDescriptionCount},
-        {TypeInfoKind.TypesWithoutDescription, typesWithoutDescriptionCount},
-        {TypeInfoKind.TypesWithMeaninglessDescription, typesWithMeaninglessDescriptionCount},
         }
     };
-
+    if (validated)
+    {
+      summaryInfo.Summary.Add(TypeInfoKind.TypesWithoutDescription, typesWithoutDescriptionCount);
+      summaryInfo.Summary.Add(TypeInfoKind.TypesWithMeaninglessDescription, typesWithMeaninglessDescriptionCount);
+      }
     ModelMonitor?.ShowPhaseEnd(PPS.AddDocs, summaryInfo);
     return ts;
   }
@@ -286,7 +293,7 @@ public abstract class BaseCreator
         }
     };
 
-    if (typesWithSameNameCount>0)
+    if (typesWithSameNameCount > 0)
     {
       summaryInfo.Summary.Add(TypeInfoKind.InvalidTypes, typesWithSameNameCount);
     }
