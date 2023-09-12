@@ -20,10 +20,15 @@ public record ProcessOptions
   /// </summary>
   public bool ValidateDocs { get; set; }
 
-    /// <summary>
+  /// <summary>
   /// Specifies whether results of the rename phase should be validated.
   /// </summary>
   public bool ValidateNames { get; set; }
+
+  /// <summary>
+  /// Specifies whether results of the conversion phase should be validated.
+  /// </summary>
+  public bool ValidateConversion { get; set; }
 
   /// <summary>
   /// Specifies the name of type used as a root for scan types phase.

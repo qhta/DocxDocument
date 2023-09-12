@@ -101,6 +101,19 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
     }
   }
 
+  public bool ValidateConversion
+  {
+    get { return Model.ValidateConversion; }
+    set
+    {
+      if (Model.ValidateConversion != value)
+      {
+        Model.ValidateConversion = value;
+        NotifyPropertyChanged(nameof(ValidateConversion));
+      }
+    }
+  }
+
   public ObservableCollection<string> MainTypeNames
   {
     get { return _MainTypeNames; }

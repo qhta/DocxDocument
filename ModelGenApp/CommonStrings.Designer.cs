@@ -197,6 +197,15 @@ namespace ModelGenApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Convert types.
+        /// </summary>
+        public static string ConvertTypes {
+            get {
+                return ResourceManager.GetString("ConvertTypes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Count.
         /// </summary>
         public static string Count {
@@ -1226,6 +1235,15 @@ namespace ModelGenApp {
         public static string TypeToScanTooltip {
             get {
                 return ResourceManager.GetString("TypeToScanTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Validate conversion.
+        /// </summary>
+        public static string ValidateConversion {
+            get {
+                return ResourceManager.GetString("ValidateConversion", resourceCulture);
             }
         }
         

@@ -536,4 +536,10 @@ defined in the enum type.</value>
   <data name="EnumVals" xml:space="preserve">
     <value>Enum vals</value>
   </data>
+  <data name="ValidateConversion" xml:space="preserve">
+    <value>Validate conversion</value>
+  </data>
+  <data name="ConvertTypes" xml:space="preserve">
+    <value>Convert types</value>
+  </data>
 </root>
