@@ -71,14 +71,18 @@ public static class TypeManager
     }
   }
 
-  public static void RegisterNamespace(string nspace)
+  public static Namespace RegisterNamespace(string ns)
   {
     lock (KnownNamespaces)
-      if (!KnownNamespaces.ContainsKey(nspace))
+    {
+      if (!KnownNamespaces.TryGetValue(ns, out var nspace))
       {
-        KnownNamespaces.Add(nspace, new Namespace(nspace));
+        nspace = new Namespace(ns);
+        KnownNamespaces.Add(ns, nspace);
         OnRegistering?.Invoke(new RegisterProgressInfo { RegisteredNamespaces = KnownNamespaces.Count, RegisteredTypes = AllTypes.Count() });
       }
+      return nspace;
+    }
   }
 
   public static string TranslateNamespace(string nspace)
@@ -160,10 +164,10 @@ public static class TypeManager
       if (!accept)
         typeInfo.SetRejected(PPS.ScanSource);
 
-      if (accept && type.Namespace!=null && !type.Namespace.StartsWith("System"))
+      if (accept && type.Namespace != null && !type.Namespace.StartsWith("System"))
       {
         if (UseAsynReflection)
-        TypeReflector.ReflectTypeAsync(typeInfo);
+          TypeReflector.ReflectTypeAsync(typeInfo);
 
         TypeReflector.ReflectType(typeInfo);
       }
