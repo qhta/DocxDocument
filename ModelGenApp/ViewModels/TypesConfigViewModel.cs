@@ -7,8 +7,6 @@ public class TypesConfigViewModel : ModelConfigViewModel
     Types = new ListViewModel<TypeConfigViewModel>();
     CollectionViewSource = new CollectionViewSource<TypeConfigViewModel>(Types);
     VisibleItems = CollectionViewSource.GetDefaultView(Types);
-    //Types.CollectionChanged += Types_CollectionChanged;
-    //VisibleItems = new FilteredCollection<TypeConfigViewModel>(Types);
     GetData(configData);
   }
 

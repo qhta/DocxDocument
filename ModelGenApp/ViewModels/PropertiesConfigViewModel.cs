@@ -5,13 +5,20 @@ public class PropertiesConfigViewModel : ModelConfigViewModel
   {
     Caption = CommonStrings.ModelConfiguration +": "+CommonStrings.Properties.ToLower();
     Properties = new ListViewModel<PropertyConfigViewModel>();
-    VisibleItems = new FilteredCollection<PropertyConfigViewModel>(Properties);
+    CollectionViewSource = new CollectionViewSource<PropertyConfigViewModel>(Properties);
+    VisibleItems = CollectionViewSource.GetDefaultView(Properties);
     GetData(configData);
   }
 
   public ListViewModel<PropertyConfigViewModel> Properties { get; private set; }
 
-  public FilteredCollection<PropertyConfigViewModel> VisibleItems { get; private set; }
+  private CollectionViewSource<PropertyConfigViewModel> CollectionViewSource;
+
+  /// <summary>
+  /// This is the result collection view to be used in DataGrid.
+  /// </summary>
+  public ICollectionView VisibleItems { get; private set; }
+
 
   public override void GetData(ModelConfig configData)
   {

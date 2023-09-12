@@ -16,7 +16,9 @@
               AutoGeneratingColumn="DataGrid_AutoGeneratingColumn"
               HorizontalContentAlignment="Stretch"
               utl:CollectionViewBehavior.EnableCollectionSynchronization="True"
+              utl:CollectionViewBehavior.IsFocusable="True"
               utl:CollectionViewBehavior.ShowFilterButton="True"
+              ClipboardCopyMode="IncludeHeader"
               ItemsSource="{Binding Path=VisibleItems}">
     </DataGrid>
   </Grid>

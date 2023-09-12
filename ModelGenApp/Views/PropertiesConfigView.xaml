@@ -16,20 +16,10 @@
               AutoGeneratingColumn="DataGrid_AutoGeneratingColumn"
               HorizontalContentAlignment="Stretch"
               utl:CollectionViewBehavior.EnableCollectionSynchronization="True"
+              utl:CollectionViewBehavior.IsFocusable="True"
               utl:CollectionViewBehavior.ShowFilterButton="True"
+              ClipboardCopyMode="IncludeHeader"
               ItemsSource="{Binding Path=VisibleItems}">
-      <!--<DataGrid.Columns>
-        <DataGridTextColumn Header="Original type"
-                            Binding="{Binding Path=OrigType}" />
-        <DataGridTextColumn Header="Original name"
-                            Binding="{Binding Path=OrigName}" />
-        <DataGridCheckBoxColumn Header="Excluded property"
-                                Binding="{Binding ExcludedProperty, UpdateSourceTrigger=PropertyChanged}" />
-        <DataGridTextColumn Header="Target name"
-                            Binding="{Binding TargetName}" />
-        <DataGridTextColumn Header="Target prop type"
-                            Binding="{Binding TargetPropertyType}" />
-      </DataGrid.Columns>-->
     </DataGrid>
   </Grid>
 </UserControl>
