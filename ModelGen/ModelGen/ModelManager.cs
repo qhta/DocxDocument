@@ -754,13 +754,13 @@ public static class ModelManager
     if (typeName.EndsWith("Values"))
     {
       typeName = typeName.Substring(0, typeName.Length - "Values".Length);
-      if (typeName.EndsWith("Type"))
-      {
-        typeName = typeName.Substring(0, typeName.Length - "Type".Length);
-        typeName = typeName + "Kind";
-      }
-      else
-      if (!typeName.EndsWith("Mode"))
+      //if (typeName.EndsWith("Type"))
+      //{
+      //  typeName = typeName.Substring(0, typeName.Length - "Type".Length);
+      //  typeName = typeName + "Kind";
+      //}
+      //else
+      if (!typeName.EndsWith("Mode")/* && !typeName.EndsWith("Type")*/)
       {
         typeName = typeName + "Kind";
       }

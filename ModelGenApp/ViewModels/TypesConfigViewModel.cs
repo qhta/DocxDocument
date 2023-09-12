@@ -5,8 +5,10 @@ public class TypesConfigViewModel : ModelConfigViewModel
   {
     Caption = CommonStrings.ModelConfiguration +": "+CommonStrings.Types.ToLower();
     Types = new ListViewModel<TypeConfigViewModel>();
-    Types.CollectionChanged += Types_CollectionChanged;
-    VisibleItems = new FilteredCollection<TypeConfigViewModel>(Types);
+    CollectionViewSource = new CollectionViewSource<TypeConfigViewModel>(Types);
+    VisibleItems = CollectionViewSource.GetDefaultView(Types);
+    //Types.CollectionChanged += Types_CollectionChanged;
+    //VisibleItems = new FilteredCollection<TypeConfigViewModel>(Types);
     GetData(configData);
   }
 
@@ -48,7 +50,12 @@ public class TypesConfigViewModel : ModelConfigViewModel
 
   public ListViewModel<TypeConfigViewModel> Types { get; private set; }
 
-  public FilteredCollection<TypeConfigViewModel> VisibleItems { get; private set; }
+  private CollectionViewSource<TypeConfigViewModel> CollectionViewSource;
+
+  /// <summary>
+  /// This is the result collection view to be used in DataGrid.
+  /// </summary>
+  public ICollectionView VisibleItems { get; private set; }
 
   public override void GetData(ModelConfig configData)
   {

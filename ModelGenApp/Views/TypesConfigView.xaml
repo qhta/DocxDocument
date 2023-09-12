@@ -18,15 +18,6 @@
               utl:CollectionViewBehavior.EnableCollectionSynchronization="True"
               utl:CollectionViewBehavior.ShowFilterButton="True"
               ItemsSource="{Binding Path=VisibleItems}">
-      <!--<DataGrid.Columns>
-        <DataGridTextColumn Header="Original namespace" Binding="{Binding Path=OrigNamespace}"/>
-        <DataGridTextColumn Header="Original name" Binding="{Binding Path=OrigName}"/>
-        <DataGridCheckBoxColumn Header="Excluded namespace" Binding="{Binding ExcludedNamespace, UpdateSourceTrigger=PropertyChanged}" />
-        <DataGridCheckBoxColumn Header="Included type" Binding="{Binding IncludedType, UpdateSourceTrigger=PropertyChanged}" />
-        <DataGridCheckBoxColumn Header="Excluded type" Binding="{Binding ExcludedType, UpdateSourceTrigger=PropertyChanged}" />
-        <DataGridTextColumn Header="Target namespace" Binding="{Binding TargetNamespace}"/>
-        <DataGridTextColumn Header="Target name" Binding="{Binding TargetName}"/>
-      </DataGrid.Columns>-->
     </DataGrid>
   </Grid>
 </UserControl>

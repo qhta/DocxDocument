@@ -206,7 +206,7 @@
       },
       "Qhta.MVVM/3.6.1": {
         "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
+        "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Qhta.ObservableObjects": "2.7.0"
         },
