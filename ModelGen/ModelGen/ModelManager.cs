@@ -1,4 +1,6 @@
-﻿namespace ModelGen;
+﻿using System.Data;
+
+namespace ModelGen;
 
 public static class ModelManager
 {
@@ -648,7 +650,7 @@ public static class ModelManager
   {
     RenameNamespaces();
     var n = 0;
-    var types = TypeManager.TypesAcceptedTo(PPS.Rename).ToArray();
+    var types = TypeManager.TypesAcceptedTo(PPS.Rename).Where(type => !type.OriginalNamespace.StartsWith("System")).ToArray();
     var totalTypes = types.Count();
     RenamedTypesCount = 0;
     foreach (var typeInfo in types)
@@ -697,18 +699,7 @@ public static class ModelManager
     //  OnRenamingType?.Invoke(new RenamingTypeInfo { CheckedTypes = CheckedRenameTypesCount, RenamedTypes = RenamedTypesCount, Current = typeInfo });
     //  return true;
     //}
-    var originalNamespace = typeInfo.OriginalNamespace;
-    newNamespace = TypeManager.TranslateNamespace(originalNamespace);
-    var targetNamespace = typeInfo.GetTargetNamespace();
-    if (newNamespace != targetNamespace)
-    {
-      TypeManager.RegisterNamespace(newNamespace);
-    }
-    var nspace = TypeManager.GetNamespace(newNamespace);
-    nspace.AddType(typeInfo);
-    typeInfo.TargetNamespace = newNamespace;
-
-
+    bool renamed = false;
     if (typeInfo.TypeKind == TypeKind.@enum)
     {
       newName = NewEnumTypeName(typeInfo.Type);
@@ -716,37 +707,67 @@ public static class ModelManager
       {
         typeInfo.NewName = newName;
         RenamedTypesCount++;
-        return true;
+        renamed = true;
       }
     }
-    return false;
+
+    var originalNamespace = typeInfo.OriginalNamespace;
+    newNamespace = TypeManager.TranslateNamespace(originalNamespace);
+    var targetNamespace = typeInfo.GetTargetNamespace();
+    Namespace nspace;
+    if (newNamespace != targetNamespace)
+    {
+      nspace = TypeManager.RegisterNamespace(newNamespace);
+      nspace.IsTarget = true;
+
+    }
+    else
+      nspace = TypeManager.GetNamespace(newNamespace);
+    if (nspace.TypeNames.TryGetValue(typeName, out var oldTypeInfo))
+    {
+      newName = GetNewNameFromNamespace(typeInfo);
+      if (newName == null)
+      {
+        newName = GetNewNameFromNamespace(oldTypeInfo);
+        if (newName == null)
+          throw new DuplicateNameException(typeName);
+        nspace.Types.Remove(oldTypeInfo);
+        oldTypeInfo.NewName = newName;
+        nspace.Types.Add(oldTypeInfo);
+      }
+      else
+      {
+        if (nspace.TypeNames.ContainsKey(newName))
+          throw new DuplicateNameException(typeName);
+        typeInfo.NewName = newName;
+      }
+    }
+    nspace.AddType(typeInfo);
+    typeInfo.TargetNamespace = newNamespace;
+
+    return renamed;
   }
 
 
-  //private static bool RenameTypeWithNamespace(TypeInfo typeInfo)
-  //{
-  //  var origNamespace = typeInfo.OriginalNamespace;
-  //  int k = origNamespace.IndexOf("20");
-  //  if (k >= 0 && k <= origNamespace.Length - 4)
-  //  {
-  //    var yearStr = origNamespace.Substring(k, 4);
-  //    if (int.TryParse(yearStr, out var year))
-  //    {
-  //      typeInfo.NewName = typeInfo.Name + year.ToString();
-  //      RenamedTypesCount++;
-  //      return true;
-  //    }
-  //  }
-  //  else if (typeInfo.Name == "Properties" && origNamespace.EndsWith("Properties"))
-  //  {
-  //    k = origNamespace.LastIndexOf('.');
-  //    typeInfo.NewName = origNamespace.Substring(k + 1);
-  //    RenamedTypesCount++;
-  //    OnRenamingType?.Invoke(new ProgressTypeInfo { CheckedTypes = CheckedRenameTypesCount, ProcessedTypes = RenamedTypesCount, Current = typeInfo });
-  //    return true;
-  //  }
-  //  return false;
-  //}
+  private static string GetNewNameFromNamespace(TypeInfo typeInfo)
+  {
+    var origNamespace = typeInfo.OriginalNamespace;
+    int k = origNamespace.IndexOf("20");
+    if (k >= 0 && k <= origNamespace.Length - 4)
+    {
+      var yearStr = origNamespace.Substring(k, 4);
+      if (int.TryParse(yearStr, out var year))
+      {
+        return typeInfo.Name + year.ToString();
+      }
+    }
+    else if (typeInfo.Name == "Properties" && origNamespace.EndsWith("Properties"))
+    {
+      k = origNamespace.LastIndexOf('.');
+      return origNamespace.Substring(k + 1);
+    }
+    return null;
+  }
 
   private static string NewEnumTypeName(Type type)
   {
