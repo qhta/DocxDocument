@@ -533,4 +533,7 @@ defined in the enum type.</value>
   <data name="ValidateNames" xml:space="preserve">
     <value>Validate names</value>
   </data>
+  <data name="EnumVals" xml:space="preserve">
+    <value>Enum vals</value>
+  </data>
 </root>

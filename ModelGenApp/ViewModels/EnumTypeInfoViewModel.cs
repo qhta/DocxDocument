@@ -7,9 +7,12 @@ public class EnumTypeInfoViewModel : TypeInfoViewModel
     EnumValues = new EnumListViewModel(phase, this, "EnumValues");
   }
 
-  [DataGridColumn(DataTemplateResourceKey = "CountColumnTemplate",
-    SortMemberPath = "EnumValues.Count", ClipboardContentPath = "EnumValues.Count",
-    DisplayIndex = 3, Header = "Enum vals")]
+  [DataGridColumn(
+    HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.EnumVals),
+    DataTemplateResourceKey = "CountColumnTemplate",
+    SortMemberPath = "EnumValues.Count", 
+    ClipboardContentPath = "EnumValues.Count",
+    DisplayIndex = 4)]
   public EnumListViewModel EnumValues { get; set; }
 
   public override object? Members => EnumValues;
