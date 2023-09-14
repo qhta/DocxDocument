@@ -192,7 +192,7 @@ public class ConverterGenerator : BaseCodeGenerator
     if (typeInfo.Name == "Rsids")
       TestTools.Stop();
     var origTypeName = typeInfo.GetFullName(false, true, true);
-    var targetType = typeInfo.GetTargetType();
+    var targetType = typeInfo.GetConversionTargetOrSelf();
     var targetTypeName = targetType.GetFullName(true, true, true);
     Writer.WriteLine($"public static {targetType}? CreateModelElement({origTypeName}? openXmlElement)");
     Writer.WriteLine($"{{");
@@ -682,7 +682,7 @@ public class ConverterGenerator : BaseCodeGenerator
   private bool GenerateSimpleValPropertySetCode(PropInfo prop)
   {
     var origPropTypeName = prop.PropertyType.GetFullName(false, true, true);
-    var propTargetType = prop.PropertyType.GetTargetType();
+    var propTargetType = prop.PropertyType.GetConversionTargetOrSelf();
     Writer.WriteLine($"SimpleValueConverter.SetValue<{origPropTypeName},{propTargetType}>(openXmlElement, value);");
 
     //Writer.WriteLine($"var itemElement = openXmlElement.GetFirstChild<{origPropTypeName}>();");
@@ -2432,7 +2432,7 @@ public class ConverterGenerator : BaseCodeGenerator
   {
     if (prop.Name == "Items" && prop.DeclaringType?.Name == "Rsids")
       TestTools.Stop();
-    var targetPropType = prop.PropertyType.GetTargetType();
+    var targetPropType = prop.PropertyType.GetConversionTargetOrSelf();
     var origPropType = prop.PropertyType;
     return ConverterGetMethodName(targetPropType, origPropType);
   }

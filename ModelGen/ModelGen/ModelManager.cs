@@ -17,10 +17,9 @@ public static class ModelManager
 
   #region Type conversion
 
-  public static int ConvertTypes()
+  public static int ConvertTypes(IEnumerable<TypeInfo> types)
   {
     var n = 0;
-    var types = TypeManager.AllTypes.ToArray();
     var totalTypes = types.Count();
     foreach (var typeInfo in types)
     {
@@ -216,31 +215,31 @@ public static class ModelManager
     return false;
   }
 
-  public static TypeInfo GetTargetType(this TypeInfo typeInfo)
-  {
-    if (typeInfo.TargetType != null)
-      return typeInfo.TargetType;
-    var result = GetConversionTargetOrSelf(typeInfo);
-    if (result.TargetType != null)
-    {
-      typeInfo.TargetType = result.TargetType;
-      return typeInfo.TargetType;
-    }
-    //var targetTypeName = result.GetFullName(false, false);
-    //var type = Type.GetType(targetTypeName);
-    //if (type==null)
-    //{
-    //  if (ModelData.ModelTypes.Count==0)
-    //    ModelData.LoadModelTypes(Assembly.Load("DocumentModel"));
-    //  ModelData.ModelTypes.TryGetValue(targetTypeName, out type);
-    //}
-    //if (type != null)
-    //{
-    //  result = TypeManager.RegisterTargetType(type);
-    //}
-    typeInfo.TargetType = result;
-    return result;
-  }
+  //public static TypeInfo GetTargetType(this TypeInfo typeInfo)
+  //{
+  //  if (typeInfo.TargetType != null)
+  //    return typeInfo.TargetType;
+  //  var result = GetConversionTargetOrSelf(typeInfo);
+  //  if (result.TargetType != null)
+  //  {
+  //    typeInfo.TargetType = result.TargetType;
+  //    return typeInfo.TargetType;
+  //  }
+  //  //var targetTypeName = result.GetFullName(false, false);
+  //  //var type = Type.GetType(targetTypeName);
+  //  //if (type==null)
+  //  //{
+  //  //  if (ModelData.ModelTypes.Count==0)
+  //  //    ModelData.LoadModelTypes(Assembly.Load("DocumentModel"));
+  //  //  ModelData.ModelTypes.TryGetValue(targetTypeName, out type);
+  //  //}
+  //  //if (type != null)
+  //  //{
+  //  //  result = TypeManager.RegisterTargetType(type);
+  //  //}
+  //  typeInfo.TargetType = result;
+  //  return result;
+  //}
 
   //public static TypeInfo GetTargetType(this PropInfo propInfo, bool getFromDeclaringType = true)
   //{
@@ -646,11 +645,10 @@ public static class ModelManager
   /// First rename namespaces, then rename types.
   /// </summary>
   /// <returns></returns>
-  public static int RenameNamespacesAndTypes()
+  public static int RenameNamespacesAndTypes(IEnumerable<TypeInfo> types)
   {
     RenameNamespaces();
     var n = 0;
-    var types = TypeManager.TypesAcceptedTo(PPS.Rename).Where(type => !type.OriginalNamespace.StartsWith("System")).ToArray();
     var totalTypes = types.Count();
     RenamedTypesCount = 0;
     foreach (var typeInfo in types)
@@ -748,8 +746,7 @@ public static class ModelManager
     return renamed;
   }
 
-
-  private static string GetNewNameFromNamespace(TypeInfo typeInfo)
+  private static string? GetNewNameFromNamespace(TypeInfo typeInfo)
   {
     var origNamespace = typeInfo.OriginalNamespace;
     int k = origNamespace.IndexOf("20");
@@ -775,12 +772,6 @@ public static class ModelManager
     if (typeName.EndsWith("Values"))
     {
       typeName = typeName.Substring(0, typeName.Length - "Values".Length);
-      //if (typeName.EndsWith("Type"))
-      //{
-      //  typeName = typeName.Substring(0, typeName.Length - "Type".Length);
-      //  typeName = typeName + "Kind";
-      //}
-      //else
       if (!typeName.EndsWith("Mode")/* && !typeName.EndsWith("Type")*/)
       {
         typeName = typeName + "Kind";

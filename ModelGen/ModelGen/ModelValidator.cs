@@ -38,20 +38,20 @@ public class ModelValidator
 
   public event ValidatingTypeEvent? OnValidatingType;
 
-  public bool ValidateTypes(PPS phase)
+  public bool ValidateTypes(PPS phase, IEnumerable<TypeInfo> types)
   {
     bool ok = true;
     ValidTypesCount = 0;
     InvalidTypesCount = 0;
-    var nspaces = TypeManager.GetNamespaces(NamespaceTypeSelector);
-    List<TypeInfo> types = new List<TypeInfo>();
-    foreach (var nspace in nspaces)
-    {
-      var nSpaceTypes = TypeManager.GetNamespaceTypes(nspace).ToList();
-      nSpaceTypes = nSpaceTypes.Where(item =>
-        item.IsAcceptedTo(phase)).ToList();
-      types.AddRange(nSpaceTypes);
-    }
+    //var nspaces = TypeManager.GetNamespaces(NamespaceTypeSelector);
+    //List<TypeInfo> types = new List<TypeInfo>();
+    //foreach (var nspace in nspaces)
+    //{
+    //  var nSpaceTypes = TypeManager.GetNamespaceTypes(nspace).ToList();
+    //  nSpaceTypes = nSpaceTypes.Where(item =>
+    //    item.IsAcceptedTo(phase)).ToList();
+    //  types.AddRange(nSpaceTypes);
+    //}
     TotalTypesCount = types.Count();
     foreach (var typeInfo in types)
     {
@@ -63,6 +63,7 @@ public class ModelValidator
       else
         ValidTypesCount++;
     }
+
     return ok;
   }
 
@@ -94,6 +95,10 @@ public class ModelValidator
           ok = false;
         break;
 
+      case PPS.ConvertTypes:
+        if (!ValidateConversion(typeInfo))
+          ok = false;
+        break;
     }
     return ok;
   }
@@ -255,13 +260,28 @@ public class ModelValidator
     if (typeInfo.IsAcceptedAfter(PPS.Rename) && !typeInfo.IsConstructedGenericType && !typeInfo.OriginalNamespace.StartsWith("System"))
     {
       var targetNamespace = typeInfo.TargetNamespace;
-      var targetName = typeInfo.TargetName;
+      var targetName = typeInfo.GetFullName(true, false, false);
       var sameNameTypes = TypeManager.AllTypes.Where(item => item.IsAcceptedAfter(PhaseNum) && !item.IsConstructedGenericType)
         .Where(item => item.TargetNamespace == targetNamespace)
         .Where(item => item.GetFullName(true, false, false) == targetName).ToList();
-      if (sameNameTypes.Count>1)
+      if (sameNameTypes.Count > 1)
       {
         typeInfo.AddError(PhaseNum, ErrorCode.MultiplicatedName);
+        return false;
+      }
+    }
+    return true;
+  }
+
+  public bool ValidateConversion(TypeInfo typeInfo)
+  {
+    if (typeInfo.IsAcceptedAfter(PPS.ConvertTypes) && !typeInfo.IsConstructedGenericType && !typeInfo.OriginalNamespace.StartsWith("System"))
+    {
+      //var targetNamespace = typeInfo.TargetNamespace;
+      var targetType = typeInfo.TargetType;
+      if (targetType == null)
+      {
+        typeInfo.AddError(PhaseNum, ErrorCode.MissingTargetType);
         return false;
       }
     }

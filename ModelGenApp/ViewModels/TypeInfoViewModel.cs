@@ -19,8 +19,8 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
     ShowErrorCommand = new RelayCommand(ShowErrorExecute, ShowErrorCanExecute) { Name = "ShowErrorCommand" };
     BusyMonitor.Instance.PropertyChanged += BusyMonitor_PropertyChanged;
     FillTypeSummaryAsync();
-    if (typeInfo.Schema!=null)
-      Schema = new ElementSchemaViewModel(typeInfo.Schema, typeInfo.Name);    
+    if (typeInfo.Schema != null)
+      Schema = new ElementSchemaViewModel(typeInfo.Schema, typeInfo.Name);
   }
 
   public bool IsBusy => BusyMonitor.Instance.IsBusy;
@@ -80,7 +80,7 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
     get
     {
       if (TypeNameSelector.Target)
-        return TargetName;
+        return TargetTypeName;
       else
         return OriginalName;
     }
@@ -115,7 +115,27 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
   [DataGridColumn(
     HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.TargetName),
     HeaderTooltipResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.TargetNameTooltip))]
-  public string? TargetName => Model.GetFullName(true, TypeNameSelector.Namespace, TypeNameSelector.NsShortcut);
+  public string? TargetName => Model.NewName;
+
+  [DataGridColumn(
+    HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.TargetType),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.TargetTypeTooltip),
+    DataTemplateResourceKey = "TypeInfoTargetLinkTemplate",
+    SortMemberPath = "TargetTypeName",
+    ClipboardContentPath = "TargetTypeName")
+    ]
+  public TypeInfoViewModel? TargetType
+  {
+    get
+    {
+      if (_TargetType==null && Model.TargetType != null)
+        _TargetType = new TypeInfoViewModel(Phase, Model.TargetType, TypeNameSelector);
+      return _TargetType;
+    }
+  }
+  public TypeInfoViewModel? _TargetType;
+
+  public string? TargetTypeName => Model.GetFullName(true, TypeNameSelector.Namespace, TypeNameSelector.NsShortcut);
 
   [DataGridColumn(
     Header = "",

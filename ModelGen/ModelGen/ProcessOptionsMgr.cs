@@ -3,33 +3,40 @@
 namespace ModelGen;
 public static class ProcessOptionsMgr
 {
+  private static object LockObj = new object();
   public static ProcessOptions GetInstance()
   {
-    var filename = GetFilename();
-    if (File.Exists(filename))
+    lock (LockObj)
     {
-      try
+      var filename = GetFilename();
+      if (File.Exists(filename))
       {
-        using (var stream = File.OpenRead(filename))
+        try
         {
-          var result = JsonSerializer.Deserialize<ProcessOptions>(stream);
-          if (result != null)
-            return result;
+          using (var stream = File.OpenRead(filename))
+          {
+            var result = JsonSerializer.Deserialize<ProcessOptions>(stream);
+            if (result != null)
+              return result;
+          }
+        }
+        catch (Exception ex)
+        {
+          Debug.WriteLine($"Error reading {filename}: {ex.Message}");
         }
       }
-      catch (Exception ex)
-      {
-        Debug.WriteLine($"Error reading {filename}: {ex.Message}");
-      }
+      return new ProcessOptions();
     }
-    return new ProcessOptions();
   }
 
   public static void SaveInstance(ProcessOptions value)
   {
-    var filename = GetFilename();
-    using (var stream = File.OpenWrite(filename))
-      JsonSerializer.Serialize<ProcessOptions>(stream, value);
+    lock (LockObj)
+    {
+      var filename = GetFilename();
+      using (var stream = File.OpenWrite(filename))
+        JsonSerializer.Serialize<ProcessOptions>(stream, value);
+    }
   }
 
   public static string GetFilename()

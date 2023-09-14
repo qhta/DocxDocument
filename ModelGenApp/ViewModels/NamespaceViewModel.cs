@@ -8,8 +8,7 @@ public class NamespaceViewModel : ViewModel<Namespace>
     Phase = phaseViewModel;
     Filter = filter;
     Name = ns.OriginalName;
-    if (phaseViewModel.PhaseNum == PPS.Rename)
-      TargetName = ns.TargetName;
+    TargetName = ns.TargetName;
     AllTypes = new TypeListViewModel(phaseViewModel, this, "AllTypes", phaseViewModel.TypeNameSelector, TKS.Any, Filter);
     Classes = new ClassListViewModel(phaseViewModel, this, "ClassTypes", phaseViewModel.TypeNameSelector, TKS.Class, Filter, AllTypes);
     Enums = new EnumTypeListViewModel(phaseViewModel, this, "EnumTypes", phaseViewModel.TypeNameSelector, TKS.Enum, Filter, AllTypes);

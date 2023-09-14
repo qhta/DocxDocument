@@ -542,4 +542,10 @@ defined in the enum type.</value>
   <data name="ConvertTypes" xml:space="preserve">
     <value>Convert types</value>
   </data>
+  <data name="TargetType" xml:space="preserve">
+    <value>Target type</value>
+  </data>
+  <data name="TargetTypeTooltip" xml:space="preserve">
+    <value>Target type results from conversion phase.</value>
+  </data>
 </root>

@@ -36,18 +36,18 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
     }
   }
 
-  public bool UseModelDocFile
-  {
-    get { return Model.UseModelDocFile; }
-    set
-    {
-      if (Model.UseModelDocFile != value)
-      {
-        Model.UseModelDocFile = value;
-        NotifyPropertyChanged(nameof(UseModelDocFile));
-      }
-    }
-  }
+  //public bool UseModelDocFile
+  //{
+  //  get { return Model.UseModelDocFile; }
+  //  set
+  //  {
+  //    if (Model.UseModelDocFile != value)
+  //    {
+  //      Model.UseModelDocFile = value;
+  //      NotifyPropertyChanged(nameof(UseModelDocFile));
+  //    }
+  //  }
+  //}
 
   public string ModelDocFileName
   {

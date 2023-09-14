@@ -36,19 +36,14 @@ public record ProcessOptions
   public string ScanTypeName { get; set; } = "DocumentFormat.OpenXml.Packaging.WordprocessingDocument";
 
   /// <summary>
-  /// Specifies whether to use a model doc file to get model element documentation.
-  /// </summary>
-  public bool UseModelDocFile { get; set; }
-
-  /// <summary>
   /// Specifies a name of model doc file. It must contain XML-serialized ModelDoc.
   /// </summary>
   public string ModelDocFileName { get; set; } = @"c:\Users\qhta1\AppData\Roaming\ModelGen\ModelDoc.xml";
 
-  /// <summary>
-  /// Selection of data displayed in console application of ModelGenRun.
-  /// </summary>
-  public MDS Display { get; set; }
+  ///// <summary>
+  ///// Selection of data displayed in console application of ModelGenRun.
+  ///// </summary>
+  //public MDS Display { get; set; }
 
   ///// <summary>
   ///// Specifies which data should be displayed in console application of ModelGenRun.

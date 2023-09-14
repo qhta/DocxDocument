@@ -12,4 +12,5 @@ public enum ErrorCode
   MissingDescription,
   MeaninglessDescription,
   MultiplicatedName,
+  MissingTargetType,
 }

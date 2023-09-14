@@ -67,20 +67,20 @@
           <Grid Grid.Row="1"
                 Grid.Column="1">
             <Grid.ColumnDefinitions>
-              <ColumnDefinition Width="Auto" />
+              <!--<ColumnDefinition Width="Auto" />-->
               <ColumnDefinition Width="*" />
               <ColumnDefinition Width="40" />
             </Grid.ColumnDefinitions>
-            <CheckBox Grid.Column="0"
+            <!--<CheckBox Grid.Column="0"
                       VerticalAlignment="Center"
                       HorizontalAlignment="Center"
                       IsChecked="{Binding Path=ProcessOptionsVM.UseModelDocFile}"
-                      ToolTip="{x:Static local:CommonStrings.FileWithDocsUseTooltip}" />
-            <TextBox Grid.Column="1"
+                      ToolTip="{x:Static local:CommonStrings.FileWithDocsUseTooltip}" />-->
+            <TextBox Grid.Column="0"
                      Margin="5"
                      VerticalContentAlignment="Center"
                      Text="{Binding Path=ProcessOptionsVM.ModelDocFileName}" />
-            <Button Grid.Column="2"
+            <Button Grid.Column="1"
                     Margin="5"
                     Content="..."
                     Command="{Binding Path=ProcessOptionsVM.BrowseModelDocFileCommand}" />
@@ -118,6 +118,8 @@
                                    Percentage="{Binding Path=ProcessMonitor.VM.PhaseMonitors[1].Percentage}" />
           <views:PhaseProgressView Grid.Row="3"
                                    Percentage="{Binding Path=ProcessMonitor.VM.PhaseMonitors[2].Percentage}" />
+          <views:PhaseProgressView Grid.Row="4"
+                                   Percentage="{Binding Path=ProcessMonitor.VM.PhaseMonitors[3].Percentage}" />
 
           <Slider Grid.Column="0"
                   Grid.Row="1"

@@ -199,8 +199,6 @@
               <Style.Triggers>
                 <Trigger Trigger.Property="UIElement.IsMouseOver"
                          Trigger.Value="True">
-                  <!--<Setter Setter.Property="Foreground"
-                          Setter.Value="Magenta" />-->
                   <Setter Property="Effect">
                     <Setter.Value>
                       <DropShadowEffect ShadowDepth="0"
@@ -220,6 +218,35 @@
           </TextBlock.InputBindings>
         </TextBlock>
       </DataTemplate>
+
+      <DataTemplate x:Key="TypeInfoTargetLinkTemplate">
+        <TextBlock Text="{Binding Path=TargetTypeName}"
+                   TextDecorations="Underline">
+          <TextBlock.Style>
+            <Style TargetType="{x:Type TextBlock}">
+              <Style.Triggers>
+                <Trigger Trigger.Property="UIElement.IsMouseOver"
+                         Trigger.Value="True">
+                  <Setter Property="Effect">
+                    <Setter.Value>
+                      <DropShadowEffect ShadowDepth="0"
+                                        Color="Lime"
+                                        Opacity="1"
+                                        BlurRadius="10" />
+                    </Setter.Value>
+                  </Setter>
+                </Trigger>
+              </Style.Triggers>
+            </Style>
+          </TextBlock.Style>
+          <TextBlock.InputBindings>
+            <MouseBinding Command="{Binding Path=ShowTypeCommand}"
+                          CommandParameter="{Binding}"
+                          Gesture="LeftClick" />
+          </TextBlock.InputBindings>
+        </TextBlock>
+      </DataTemplate>
+
       <DataTemplate x:Key="TextBlockTemplate">
         <Grid>
           <TextBlock Margin="2,0,2,0"

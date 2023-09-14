@@ -42,7 +42,7 @@ public class TypeInfo : ModelElement
   /// Target type info - used in conversion.
   /// </summary>
   [XmlIgnore]
-  public TypeInfo? TargetType { get; set; }
+  public TypeInfo? TargetType => this.GetConversionTarget();
 
   /// <summary>
   /// Target namespace - when generated.
