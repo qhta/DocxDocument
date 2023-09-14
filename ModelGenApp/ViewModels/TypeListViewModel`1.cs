@@ -84,7 +84,10 @@ public class TypeListViewModel<T> : ViewModel where T : TypeInfoViewModel
   public TNS TypeNameSelector { get; private set; }
   public TKS TypeKindSelector { get; private set; }
 
-  public bool ShowTargetName => Phase.NamespaceTypeSelector.HasFlag(NTS.Origin) && Phase.NamespaceTypeSelector.HasFlag(NTS.Target);
+  public bool ShowTargetName => Phase.PhaseNum>=PPS.Rename;
+
+  public bool ShowTargetType => Phase.PhaseNum>=PPS.ConvertTypes;
+
 
   public PhaseResultsViewModel Phase { get; private set; }
 

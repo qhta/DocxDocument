@@ -57,10 +57,13 @@ public record TypeInfoViewModelFilter<T> : IFilter where T : TypeInfoViewModel
         Predicate = new Predicate<T>(item => item.Model.IsInvalid(phaseNum) && item.Model.Description != null && item.Model.Description.Trim() != "");
       else
       if (filter == TypeInfoKind.RenamedTypes)
-        Predicate = new Predicate<T>(item => item.Model.NewName != null && item.Model.NewName != item.Model.Name);
+        Predicate = new Predicate<T>(item => item.Model.NewName != null);
       else
       if (filter == TypeInfoKind.TypesWithSameName)
         Predicate = new Predicate<T>(item => HasDuplicateNames(item.Model));
+      else
+      if (filter == TypeInfoKind.ConvertedTypes)
+        Predicate = new Predicate<T>(item => item.Model.TargetType!= null);
     }
     else
     if (value is FullTypeName typeName)

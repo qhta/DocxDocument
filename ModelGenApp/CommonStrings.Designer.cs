@@ -1121,6 +1121,24 @@ namespace ModelGenApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Target type.
+        /// </summary>
+        public static string TargetType {
+            get {
+                return ResourceManager.GetString("TargetType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Target type results from conversion phase..
+        /// </summary>
+        public static string TargetTypeTooltip {
+            get {
+                return ResourceManager.GetString("TargetTypeTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Type full name.
         /// </summary>
         public static string TypeFullName {

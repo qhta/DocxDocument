@@ -70,7 +70,7 @@ public abstract class BaseCreator
     //if (displayOptions == null)
     var displayOptions = new DisplayOptions();
 
-    var monitorDisplaySelector = Options.Display;
+    var monitorDisplaySelector = MDS.None;
 
     ModelMonitor?.ShowProcessStart(String.Format(CommonStrings.StartProcessing_0.DecodeEscapeSeq(), type.FullName));
     SourceAssembly = type.Assembly;
@@ -148,7 +148,8 @@ public abstract class BaseCreator
     {
       var ModelValidator = new ModelValidator(PPS.ScanSource, NTS.Origin, MSS.Accepted, TDS.Metadata);
       ModelValidator.OnValidatingType += ModelValidator_OnValidatingType;
-      if (!ModelValidator.ValidateTypes(PPS.ScanSource))
+      var types = TypeManager.AllTypes.Where(type => type.IsAcceptedAfter(PPS.ScanSource)).ToArray();
+      if (!ModelValidator.ValidateTypes(PPS.ScanSource, types))
         invalidTypesCount = ModelValidator.InvalidTypesCount;
       checkedTypesCount = ModelValidator.CheckedTypesCount;
       validTypesCount = ModelValidator.ValidTypesCount;
@@ -191,17 +192,20 @@ public abstract class BaseCreator
 
   protected TimeSpan AddDocs()
   {
+    if (String.IsNullOrEmpty(Options.ModelDocFileName))
+      return new TimeSpan(0);
     ModelMonitor?.ShowPhaseStart(PPS.AddDocs, CommonStrings.AddDocs);
     DateTime t1 = DateTime.Now;
-
+    int checkedTypesCount = 0;
     int typesWithAddedDescriptionCount = 0;
-    if (Options.UseModelDocFile && !String.IsNullOrEmpty(Options.ModelDocFileName))
-    {
-      var ModelDocumenter = new ModelDocsManager(PPS.AddDocs, NTS.Origin, MSS.Accepted, Options.ModelDocFileName);
-      ModelDocumenter.OnDocumentingType += ModelDocumenter_OnDocumentingType;
-      typesWithAddedDescriptionCount = ModelDocumenter.DocumentTypes();
-      ModelDocumenter.OnDocumentingType += ModelDocumenter_OnDocumentingType;
-    }
+    var ModelDocumenter = new ModelDocsManager(PPS.AddDocs, NTS.Origin, MSS.Accepted, Options.ModelDocFileName);
+    ModelDocumenter.OnDocumentingType += ModelDocumenter_OnDocumentingType;
+    var types = TypeManager.AllTypes.Where(typeInfo => typeInfo.IsAcceptedTo(PPS.AddDocs)
+              && typeInfo.OriginalNamespace.StartsWith("DocumentFormat")
+              && !typeInfo.IsGenericTypeDefinition).ToArray();
+    checkedTypesCount = TotalTypesCount = types.Count();
+    typesWithAddedDescriptionCount = ModelDocumenter.DocumentTypes(types);
+    ModelDocumenter.OnDocumentingType += ModelDocumenter_OnDocumentingType;
 
     bool validated = false;
     var typesWithoutDescriptionCount = 0;
@@ -210,7 +214,7 @@ public abstract class BaseCreator
     {
       var ModelValidator = new ModelValidator(PPS.AddDocs, NTS.Origin, MSS.Accepted, TDS.Metadata);
       ModelValidator.OnValidatingType += ModelValidator_OnValidatingType;
-      ModelValidator.ValidateTypes(PPS.AddDocs);
+      ModelValidator.ValidateTypes(PPS.AddDocs, types);
       typesWithoutDescriptionCount = TypeManager.TypesAcceptedTo(PPS.AddDocs)
         .Count(item => item.HasError(PPS.AddDocs, ErrorCode.MissingDescription));
       typesWithMeaninglessDescriptionCount = TypeManager.TypesAcceptedTo(PPS.AddDocs)
@@ -229,6 +233,7 @@ public abstract class BaseCreator
     {
       Time = ts,
       Summary = new Dictionary<TypeInfoKind, object>{
+        {TypeInfoKind.CheckedTypes, checkedTypesCount},
         {TypeInfoKind.TypesWithDescription, typesWithDescriptionCount},
         {TypeInfoKind.TypesWithAddedDescription, typesWithAddedDescriptionCount},
         }
@@ -237,7 +242,7 @@ public abstract class BaseCreator
     {
       summaryInfo.Summary.Add(TypeInfoKind.TypesWithoutDescription, typesWithoutDescriptionCount);
       summaryInfo.Summary.Add(TypeInfoKind.TypesWithMeaninglessDescription, typesWithMeaninglessDescriptionCount);
-      }
+    }
     ModelMonitor?.ShowPhaseEnd(PPS.AddDocs, summaryInfo);
     return ts;
   }
@@ -247,9 +252,9 @@ public abstract class BaseCreator
     ModelMonitor?.ShowPhaseProgress(PPS.AddDocs, new ProgressInfo
     {
       FormatStr = CommonStrings.adding_docs_0_of_1_types_added_to_2_types,
-      Args = new object[] { info.CheckedTypes ?? 0, info.TotalTypes ?? 0, info.ProcessedTypes ?? 0 },
+      Args = new object[] { info.CheckedTypes ?? 0, TotalTypesCount, info.ProcessedTypes ?? 0 },
       PostStr = $"{info.Current?.OriginalNamespace}.{info.Current?.OriginalName}"
-    }); ;
+    });
   }
 
   private void ModelValidator_OnValidatingType(ModelValidator sender, ValidatingTypeInfo info)
@@ -267,7 +272,11 @@ public abstract class BaseCreator
     ModelMonitor?.ShowPhaseStart(PPS.Rename, CommonStrings.RenameTypes);
     DateTime t1 = DateTime.Now;
     ModelManager.OnRenamingType += ModelManager_OnRenamingType;
-    var renamedTypesCount = ModelManager.RenameNamespacesAndTypes();
+    var types = TypeManager.AllTypes.Where(typeInfo => typeInfo.IsAcceptedTo(PPS.Rename)
+              && typeInfo.OriginalNamespace.StartsWith("DocumentFormat")
+              && !typeInfo.IsGenericTypeDefinition).ToArray();
+    TotalTypesCount = types.Count();
+    var renamedTypesCount = ModelManager.RenameNamespacesAndTypes(types);
     ModelManager.OnRenamingType -= ModelManager_OnRenamingType;
 
     var invalidTypes = 0;
@@ -275,7 +284,7 @@ public abstract class BaseCreator
     {
       var ModelValidator = new ModelValidator(PPS.Rename, NTS.Origin, MSS.Accepted, TDS.Metadata);
       ModelValidator.OnValidatingType += ModelValidator_OnValidatingType;
-      if (!ModelValidator.ValidateTypes(PPS.Rename))
+      if (!ModelValidator.ValidateTypes(PPS.Rename, types))
       {
         invalidTypes = ModelValidator.InvalidTypesCount;
       }
@@ -288,7 +297,7 @@ public abstract class BaseCreator
     {
       Time = ts,
       Summary = new Dictionary<TypeInfoKind, object>{
-        {TypeInfoKind.AllTypes, TypeManager.AllTypes.Count() },
+        {TypeInfoKind.CheckedTypes, TotalTypesCount},
         {TypeInfoKind.RenamedTypes, renamedTypesCount },
         }
     };
@@ -315,15 +324,18 @@ public abstract class BaseCreator
     ModelMonitor?.ShowPhaseStart(PPS.ConvertTypes, CommonStrings.ConvertTypes);
     DateTime t1 = DateTime.Now;
     ModelManager.OnConvertingType += ModelManager_OnConvertingType;
-    var convertedTypesCount = ModelManager.ConvertTypes();
+    var types = TypeManager.AllTypes.Where(typeInfo => typeInfo.IsAcceptedTo(PPS.Rename)
+              && typeInfo.OriginalNamespace.StartsWith("DocumentFormat")
+              && !typeInfo.IsGenericTypeDefinition).ToArray();
+    var convertedTypesCount = ModelManager.ConvertTypes(types);
     ModelManager.OnConvertingType -= ModelManager_OnConvertingType;
 
     var invalidTypes = 0;
-    if (Options.ValidateNames)
+    if (Options.ValidateConversion)
     {
       var ModelValidator = new ModelValidator(PPS.ConvertTypes, NTS.Origin, MSS.Accepted, TDS.Metadata);
       ModelValidator.OnValidatingType += ModelValidator_OnValidatingType;
-      if (!ModelValidator.ValidateTypes(PPS.Rename))
+      if (!ModelValidator.ValidateTypes(PPS.ConvertTypes, types))
       {
         invalidTypes = ModelValidator.InvalidTypesCount;
       }
@@ -336,7 +348,7 @@ public abstract class BaseCreator
     {
       Time = ts,
       Summary = new Dictionary<TypeInfoKind, object>{
-        {TypeInfoKind.AllTypes, TypeManager.AllTypes.Count() },
+        {TypeInfoKind.CheckedTypes, TotalTypesCount },
         {TypeInfoKind.ConvertedTypes, convertedTypesCount },
         }
     };
