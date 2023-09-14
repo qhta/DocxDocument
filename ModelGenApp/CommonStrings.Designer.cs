@@ -124,6 +124,15 @@ namespace ModelGenApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Base type.
+        /// </summary>
+        public static string BaseType {
+            get {
+                return ResourceManager.GetString("BaseType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
         public static string Cancel {
@@ -230,6 +239,15 @@ namespace ModelGenApp {
         public static string DeclaringTypeTooltip {
             get {
                 return ResourceManager.GetString("DeclaringTypeTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Derived types.
+        /// </summary>
+        public static string DerivedTypes {
+            get {
+                return ResourceManager.GetString("DerivedTypes", resourceCulture);
             }
         }
         

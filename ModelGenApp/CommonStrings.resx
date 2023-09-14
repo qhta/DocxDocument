@@ -548,4 +548,10 @@ defined in the enum type.</value>
   <data name="TargetTypeTooltip" xml:space="preserve">
     <value>Target type results from conversion phase.</value>
   </data>
+  <data name="BaseType" xml:space="preserve">
+    <value>Base type</value>
+  </data>
+  <data name="DerivedTypes" xml:space="preserve">
+    <value>Derived types</value>
+  </data>
 </root>

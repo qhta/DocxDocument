@@ -548,4 +548,10 @@ zdefiniowanej w typie wyliczeniowym.</value>
   <data name="TargetTypeTooltip" xml:space="preserve">
     <value>Typ docelowy jest wynikiem fazy konwersji.</value>
   </data>
+  <data name="BaseType" xml:space="preserve">
+    <value>Typ bazowy</value>
+  </data>
+  <data name="DerivedTypes" xml:space="preserve">
+    <value>Typy pochodne</value>
+  </data>
 </root>

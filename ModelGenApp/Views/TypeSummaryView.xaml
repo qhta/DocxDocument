@@ -1,26 +1,29 @@
 ﻿<UserControl x:Class="ModelGenApp.Views.TypeSummaryView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:views="clr-namespace:ModelGenApp.Views"
              xmlns:vm="clr-namespace:ModelGenApp.ViewModels"
              xmlns:hlp="clr-namespace:ModelGenApp.Helpers"
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
              xmlns:utl="clr-namespace:Qhta.WPF.Utils;assembly=Qhta.WPF.Utils"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             mc:Ignorable="d"
+             d:DesignHeight="450"
+             d:DesignWidth="800">
   <Grid>
-    <DataGrid AutoGenerateColumns="False" 
+    <DataGrid AutoGenerateColumns="False"
               HeadersVisibility="None"
               GridLinesVisibility="None"
               SelectionMode="Single"
               SelectionUnit="Cell"
               utl:CollectionViewBehavior.EnableCollectionSynchronization="True"
-              ItemsSource="{Binding Path=TypeSummary}" >
+              ItemsSource="{Binding Path=TypeSummary}">
       <DataGrid.Columns>
-        <DataGridTextColumn Header="Name" FontWeight="Bold" IsReadOnly="True" 
-                            Binding="{Binding Name}"/>
+        <DataGridTextColumn Header="Name"
+                            FontWeight="Bold"
+                            IsReadOnly="True"
+                            Binding="{Binding Name}" />
         <DataGridTemplateColumn Header="Value">
           <DataGridTemplateColumn.CellTemplate>
             <DataTemplate>
@@ -28,30 +31,34 @@
                 <ContentPresenter.Resources>
                   <DataTemplate DataType="{x:Type vm:TypeInfoViewModel}">
                     <TextBlock Margin="2,0,2,0">
-                      <Hyperlink 
-                              NavigateUri="{Binding Path=FullName}" 
-                              Command="{Binding Path=ShowTypeCommand}"
-                              CommandParameter="{Binding}">
-                        <TextBlock Text="{Binding Path=FullName}"/>
+                      <Hyperlink NavigateUri="{Binding Path=FullName}"
+                                 Command="{Binding Path=ShowTypeCommand}"
+                                 CommandParameter="{Binding}">
+                        <TextBlock Text="{Binding Path=FullName}" />
                       </Hyperlink>
                     </TextBlock>
                   </DataTemplate>
                   <DataTemplate DataType="{x:Type hlp:RedString}">
-                    <TextBlock Margin="2,0,2,0" 
+                    <TextBlock Margin="2,0,2,0"
                                Foreground="Red"
                                Text="{Binding}">
                     </TextBlock>
                   </DataTemplate>
                   <DataTemplate DataType="{x:Type hlp:Description}">
-                    <TextBlock Margin="2,0,2,0" 
+                    <TextBlock Margin="2,0,2,0"
                                MaxWidth="600"
                                TextWrapping="Wrap"
                                Text="{Binding}">
                     </TextBlock>
-                  </DataTemplate>                  <DataTemplate DataType="{x:Type sys:String}">
-                    <TextBlock Margin="2,0,2,0" 
+                  </DataTemplate>
+                  <DataTemplate DataType="{x:Type sys:String}">
+                    <TextBlock Margin="2,0,2,0"
                                Text="{Binding}">
                     </TextBlock>
+                  </DataTemplate>
+                  <DataTemplate DataType="{x:Type vm:TypeListViewModel}">
+                    <ListView ItemsSource="{Binding VisibleItems}" MaxHeight="100">
+                    </ListView>
                   </DataTemplate>
                 </ContentPresenter.Resources>
               </ContentPresenter>

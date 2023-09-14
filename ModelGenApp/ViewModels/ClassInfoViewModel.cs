@@ -75,7 +75,14 @@ public class ClassInfoViewModel : TypeInfoViewModel
     base.FillTypeSummary();
     var baseClass = Model.BaseTypeInfo;
     if (baseClass != null)
-      TypeSummary.Add(new TypePropViewModel("Inheritance", TypeInfoViewModel.Create(Phase, baseClass, TypeNameSelector)));
+      _TypeSummary.Add(new TypePropViewModel(CommonStrings.BaseType, TypeInfoViewModel.Create(Phase, baseClass, TypeNameSelector)));
+    var derivedClasses = Model.GetIncomingRelationships(Semantics.Inheritance).Select(item=>item.Source).ToList();
+    if (derivedClasses.Any())
+    {
+      var info= new TypeListViewModel(Phase, null, "derived types", TypeNameSelector, TKS.Class, null);
+      info.Items.AddRange(derivedClasses.Select(item=>TypeInfoViewModel.Create(Phase, item, TypeNameSelector)));
+      _TypeSummary.Add(new TypePropViewModel(CommonStrings.DerivedTypes, info));
+    }
   }
 
   public override void RefreshDetails()
