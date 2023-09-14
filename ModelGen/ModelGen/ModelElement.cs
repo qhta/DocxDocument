@@ -134,7 +134,11 @@ public class ModelElement : IOwnedElement
   /// <summary>
   /// Single-paragraph description.
   /// </summary>
-  public string? Description { get; set; }
+  public string? Description 
+    { 
+    get; 
+    set; 
+    }
 
   /// <summary>
   /// Multi-paragraph description.

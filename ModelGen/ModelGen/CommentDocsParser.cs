@@ -54,7 +54,8 @@ public static class CommentDocsParser
         else
         {
           var text = xElement.Value.Trim();
-          modelElement.Description = text;
+          if (text!="")
+            modelElement.Description = text;
         }
       }
       else if (xElement.Name == "remark")
@@ -114,7 +115,8 @@ public static class CommentDocsParser
       if (summary != null)
       {
         var newDescription = summary.GetText();
-        if (newDescription!=null && (modelElement.Description == null || modelElement.Description.Length != newDescription.Length))
+        if (newDescription!=null && (modelElement.Description == null || modelElement.Description.Length != newDescription.Length)
+          && newDescription != "")
         {
           modelElement.Description = newDescription;
           modelElement.Documentation.Remove(summary);
