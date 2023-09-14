@@ -93,6 +93,8 @@ public class TypeInfo : ModelElement
   [XmlIgnore]
   public bool IsClass => TypeKind == TypeKind.@class;
 
+  public bool IsAbstract => Type.IsAbstract;
+
   public OwnedCollection<EnumInfo>? EnumValues { get; private set; }
 
   public void Add(EnumInfo enumInfo)

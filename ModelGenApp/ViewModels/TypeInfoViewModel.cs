@@ -18,7 +18,7 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
     ShowTypeCommand = new RelayCommand(ShowTypeExecute, ShowTypeCanExecute) { Name = "ShowTypeCommand" };
     ShowErrorCommand = new RelayCommand(ShowErrorExecute, ShowErrorCanExecute) { Name = "ShowErrorCommand" };
     BusyMonitor.Instance.PropertyChanged += BusyMonitor_PropertyChanged;
-    FillTypeSummaryAsync();
+    //FillTypeSummaryAsync();
     if (typeInfo.Schema != null)
       Schema = new ElementSchemaViewModel(typeInfo.Schema, typeInfo.Name);
   }
@@ -75,6 +75,8 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
     }
   }
 
+  public bool IsAbstract => Model.IsAbstract;
+
   public string? Name
   {
     get
@@ -128,7 +130,7 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
   {
     get
     {
-      if (_TargetType==null && Model.TargetType != null)
+      if (_TargetType == null && Model.TargetType != null)
         _TargetType = new TypeInfoViewModel(Phase, Model.TargetType, TypeNameSelector);
       return _TargetType;
     }
@@ -142,7 +144,7 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
     HiddenHeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.Problem),
     DataTemplateResourceKey = "ErrorMarkButtonTemplate"
     )]
-  public string? ValidationProblem
+  public string? ValidationError
   {
     get
     {
@@ -179,8 +181,17 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
     }
   }
 
-  public TypeSummaryViewModel TypeSummary { get; } = new TypeSummaryViewModel();
+  public TypeSummaryViewModel TypeSummary
+  {
+    get
+    {
+      if (_TypeSummary.IsEmpty)
+        FillTypeSummaryAsync();
+      return _TypeSummary;
+    }
+  }
 
+  protected TypeSummaryViewModel _TypeSummary = new TypeSummaryViewModel();
   protected async void FillTypeSummaryAsync()
   {
     await Task.Run(() => FillTypeSummary());
@@ -188,29 +199,40 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
 
   protected virtual void FillTypeSummary()
   {
-    TypeSummary.Clear();
-    if (Model.IsAcceptedAfter(Phase.PhaseNum))
-      TypeSummary.Add(new TypePropViewModel("Acceptance", Acceptance));
-    else
-      TypeSummary.Add(new TypePropViewModel("Acceptance", new RedString(Acceptance.ToString()?.ToLower())));
-
-    if (Model.IsInvalid(Phase.PhaseNum))
-      TypeSummary.Add(new TypePropViewModel("Validation", new RedString(this.ValidationProblem ?? "invalid")));
-
-    TypeSummary.Add(new TypePropViewModel("Kind", TypeKind.ToString().ToLower()));
-    TypeSummary.Add(new TypePropViewModel("Namespace", Model.OriginalNamespace));
-    TypeSummary.Add(new TypePropViewModel("Name", Name));
-    if (!String.IsNullOrEmpty(Model.TargetNamespace))
-      TypeSummary.Add(new TypePropViewModel("Target namespace", Model.TargetNamespace));
-    if (!String.IsNullOrEmpty(Model.NewName))
-      TypeSummary.Add(new TypePropViewModel("New name", Model.NewName));
-    if (Model.IsConverted)
+    if (_TypeSummary.IsEmpty)
     {
-      var targetType = Model.GetConversionTarget();
-      if (targetType != null)
-        TypeSummary.Add(new TypePropViewModel("Converted to", new TypeInfoViewModel(Phase, targetType, TypeNameSelector)));
+      _TypeSummary.Clear();
+      _TypeSummary.Add(new TypePropViewModel(CommonStrings.Name, Name));
+      if (Model.IsAcceptedAfter(Phase.PhaseNum))
+        _TypeSummary.Add(new TypePropViewModel(CommonStrings.Acceptance, Acceptance));
+      else
+        _TypeSummary.Add(new TypePropViewModel(CommonStrings.Acceptance, new RedString(Acceptance.ToString()?.ToLower())));
+
+      if (Model.IsInvalid(Phase.PhaseNum))
+        _TypeSummary.Add(new TypePropViewModel(CommonStrings.ValidationError, new RedString(this.ValidationError)));
+
+      var kindStr = TypeKind.ToString().ToLower();
+      if (IsAbstract) kindStr = "abstract " + kindStr;
+      _TypeSummary.Add(new TypePropViewModel(CommonStrings.Kind, kindStr));
+
+      _TypeSummary.Add(new TypePropViewModel(CommonStrings.Namespace, Model.OriginalNamespace));
+
+      if (!String.IsNullOrEmpty(Model.TargetNamespace))
+        _TypeSummary.Add(new TypePropViewModel(CommonStrings.TargetNamespace, Model.TargetNamespace));
+
+      if (!String.IsNullOrEmpty(Model.NewName))
+        TypeSummary.Add(new TypePropViewModel(CommonStrings.TargetName, Model.NewName));
+
+      if (Model.IsConverted)
+      {
+        var targetType = Model.GetConversionTarget();
+        if (targetType != null)
+          _TypeSummary.Add(new TypePropViewModel(CommonStrings.TargetType, new TypeInfoViewModel(Phase, targetType, TypeNameSelector)));
+      }
+
+      if (Model.Description!=null)
+        _TypeSummary.Add(new TypePropViewModel(CommonStrings.Description, new Description(Model.Description)));
     }
-    TypeSummary.Add(new TypePropViewModel("Description", new Description(Model.Description ?? "")));
   }
 
   public async void FillDetailsAsync()
@@ -324,7 +346,7 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
 
   protected virtual bool ShowErrorCanExecute()
   {
-    return ValidationProblem != null;
+    return ValidationError != null;
   }
 
   protected virtual void ShowErrorExecute()

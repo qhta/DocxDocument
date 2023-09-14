@@ -46,7 +46,7 @@ public partial class TypeListView : UserControl
           Converter=new BoolToVisibilityConverter(), 
           ConverterParameter="Visible,Collapsed" 
           });
-    }    if (args.PropertyName==nameof(TypeInfoViewModel.ValidationProblem))
+    }    if (args.PropertyName==nameof(TypeInfoViewModel.ValidationError))
     {
       BindingOperations.SetBinding(args.Column, DataGridColumn.VisibilityProperty, 
         new Binding("DataContext."+nameof(TypeListViewModel.HasAnyInvalidTypes)) 
