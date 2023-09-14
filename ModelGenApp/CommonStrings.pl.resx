@@ -542,4 +542,10 @@ zdefiniowanej w typie wyliczeniowym.</value>
   <data name="ConvertTypes" xml:space="preserve">
     <value>Konwertuj typy</value>
   </data>
+  <data name="TargetType" xml:space="preserve">
+    <value>Typ docelowy</value>
+  </data>
+  <data name="TargetTypeTooltip" xml:space="preserve">
+    <value>Typ docelowy jest wynikiem fazy konwersji.</value>
+  </data>
 </root>

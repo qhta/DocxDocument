@@ -28,20 +28,8 @@ public class ModelDocsManager
 
   public event ProgressTypeEvent? OnDocumentingType;
 
-  public int DocumentTypes()
+  public int DocumentTypes(IEnumerable<TypeInfo> types)
   {
-    var nspaces = TypeManager.GetNamespaces(NamespaceTypeSelector);
-    List<TypeInfo> types = new List<TypeInfo>();
-    foreach (var nspace in nspaces)
-    {
-      var nSpaceTypes = TypeManager.GetNamespaceTypes(nspace).ToList();
-      if (TypeStatusSelector.HasFlag(MSS.Accepted) || TypeStatusSelector.HasFlag(MSS.Rejected))
-        nSpaceTypes = nSpaceTypes.Where(item =>
-          TypeStatusSelector.HasFlag(MSS.Accepted) && item.IsAcceptedAfter(PhaseNum)
-          || TypeStatusSelector.HasFlag(MSS.Rejected) && item.IsRejectedAfter(PhaseNum)).ToList();
-      types.AddRange(nSpaceTypes);
-    }
-    TotalTypesCount = types.Count();
     foreach (var typeInfo in types)
     {
       DocumentSingleType(typeInfo);
@@ -53,7 +41,6 @@ public class ModelDocsManager
         Current = typeInfo
       });
     }
-    SaveErrors();
     return DocumentedTypesCount;
   }
 
