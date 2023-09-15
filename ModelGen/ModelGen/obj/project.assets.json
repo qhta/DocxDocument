@@ -5244,6 +5244,7 @@
       "ModelDocumentation >= 1.0.0",
       "ModelGenDataConfig >= 1.0.0",
       "Namotion.Reflection >= 3.0.0",
+      "Newtonsoft.Json >= 13.0.3",
       "Qhta.Collections >= 4.0.0",
       "Qhta.HtmlUtils >= 2.1.0",
       "Qhta.TestHelper >= 3.0.0",
@@ -5324,6 +5325,10 @@
           "Namotion.Reflection": {
             "target": "Package",
             "version": "[3.0.0, )"
+          },
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "[13.0.3, )"
           },
           "Qhta.Collections": {
             "target": "Package",

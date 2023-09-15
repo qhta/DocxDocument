@@ -55,6 +55,12 @@
               Width="100"
               Command="{Binding StartProcessCommand}"
               />
+        
+        <Button Content="{x:Static local:CommonStrings.Continue}"
+                Width="100"
+                Margin="20,0,0,0"
+                Command="{Binding ContinueProcessCommand}" />
+
         <Button Content="{x:Static local:CommonStrings.Cancel}" 
               Width="100" 
               Margin="20,0,0,0"

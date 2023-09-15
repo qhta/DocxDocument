@@ -115,8 +115,8 @@ public static class CommentDocsParser
       if (summary != null)
       {
         var newDescription = summary.GetText();
-        if (newDescription!=null && (modelElement.Description == null || modelElement.Description.Length != newDescription.Length)
-          && newDescription != "")
+        if (!String.IsNullOrEmpty(newDescription)
+          && (modelElement.Description == null || modelElement.Description != newDescription))
         {
           modelElement.Description = newDescription;
           modelElement.Documentation.Remove(summary);

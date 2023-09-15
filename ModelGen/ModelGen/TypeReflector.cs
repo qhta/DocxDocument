@@ -10,6 +10,8 @@ public static class TypeReflector
 
   private static Queue<TypeInfo> TypeQueue = new Queue<TypeInfo>();
 
+  public static bool CancelRequest { get; set; }
+
   public static void ReflectTypeAsync(this TypeInfo typeInfo)
   {
     if (typeInfo.IsReflected)
@@ -71,17 +73,17 @@ public static class TypeReflector
   public static void WaitDone()
   {
     if (ReflectionTasks is not null)
-      while (TypeQueue.Count > 0)
+      while (TypeQueue.Count > 0 && !CancelRequest)
         Task.WaitAll(ReflectionTasks, 1000);
     isDone = true;
   }
 
   public static void WaitForReflection(this TypeInfo typeInfo)
   {
-    if (isStarted && !isDone)
+    if (isStarted && !isDone && !CancelRequest)
     {
       int count = 10;
-      while (typeInfo.IsReflected == false && (count--) > 0)
+      while (typeInfo.IsReflected == false && (count--) > 0 && !CancelRequest)
       {
         Thread.Sleep(10);
       }
@@ -105,12 +107,18 @@ public static class TypeReflector
     if (type.IsEnum)
     {
       foreach (var item in type.GetFields(BindingFlags.Static | BindingFlags.Public))
+      {
+        if (CancelRequest)
+          return;
         typeInfo.Add(new EnumInfo(item));
+      }
     }
     else if ((type.IsClass || type.IsInterface || type.IsValueType) && type != typeof(string) && type != typeof(object))
     {
       foreach (var item in type.GetProperties(BindingFlags.Instance | BindingFlags.Public | BindingFlags.DeclaredOnly))
       {
+        if (CancelRequest)
+          return;
         if (!item.PropertyType.Name.EndsWith('&'))
           typeInfo.Add(new PropInfo(item));
       }
@@ -125,7 +133,11 @@ public static class TypeReflector
         if (genericTypeParameters.Any())
         {
           foreach (var argType in genericTypeParameters)
+          {
+            if (CancelRequest)
+              return;
             TypeManager.RegisterType(argType, typeInfo, Semantics.GenericTypeParam);
+          }
         }
       }
 
@@ -135,7 +147,11 @@ public static class TypeReflector
         if (genericTypeParamConstraints.Any())
         {
           foreach (var constraint in genericTypeParamConstraints)
+          {
+            if (CancelRequest)
+              return;
             TypeManager.RegisterType(constraint, type, Semantics.GenericTypeParamConstraint);
+          }
         }
       }
 
@@ -145,6 +161,8 @@ public static class TypeReflector
         int cnt = 0;
         foreach (var argType in genericTypeArguments)
         {
+          if (CancelRequest)
+            return;
           var argTypeInfo = TypeManager.RegisterType(argType);
           var rel = TypeManager.AddRelationship(typeInfo, argTypeInfo, Semantics.GenericTypeArg, ++cnt);
         }
@@ -155,6 +173,8 @@ public static class TypeReflector
       {
         foreach (var intf in implementedInterfaces)
         {
+          if (CancelRequest)
+            return;
           TypeManager.RegisterType(intf, typeInfo, Semantics.Implementation);
         }
       }
@@ -211,8 +231,6 @@ public static class TypeReflector
 
   public static void ProcessElementSchema(this TypeInfo typeInfo, ElementSchema schema)
   {
-    //if (typeInfo.Name == "DocParts")
-    //  Debug.Assert(true);
     if (schema.Main != null)
       ProcessSchemaParticle(typeInfo, schema.Main);
   }
@@ -248,7 +266,11 @@ public static class TypeReflector
   public static void ScanItemsParticle(this TypeInfo typeInfo, ItemsParticle particle)
   {
     foreach (var item in particle.Items)
+    {
+      if (CancelRequest)
+        return;
       ProcessSchemaParticle(typeInfo, item);
+    }
   }
 
   public static PropInfo? CreateProperty(this TypeInfo typeInfo, ItemElementParticle particle)
