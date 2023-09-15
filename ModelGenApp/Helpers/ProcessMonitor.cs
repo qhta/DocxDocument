@@ -35,6 +35,13 @@ public partial class ProcessMonitor : ModelMonitor
       IndentLevel--;
   }
 
+  public void Clear()
+  {
+    foreach (var phaseMonitor in VM.PhaseMonitors)
+      if (phaseMonitor != null)
+        phaseMonitor.Clear();
+  }
+
   public override void ShowProcessStart(string line)
   {
     base.ShowProcessStart(line);

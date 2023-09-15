@@ -554,4 +554,7 @@ defined in the enum type.</value>
   <data name="DerivedTypes" xml:space="preserve">
     <value>Derived types</value>
   </data>
+  <data name="Continue" xml:space="preserve">
+    <value>Continue</value>
+  </data>
 </root>

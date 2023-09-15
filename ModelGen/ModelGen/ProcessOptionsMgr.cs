@@ -1,4 +1,4 @@
-﻿using System.Text.Json;
+﻿using Newtonsoft.Json;
 
 namespace ModelGen;
 public static class ProcessOptionsMgr
@@ -13,9 +13,11 @@ public static class ProcessOptionsMgr
       {
         try
         {
-          using (var stream = File.OpenRead(filename))
+          using (var text = File.OpenText(filename))
+          using (var reader = new Newtonsoft.Json.JsonTextReader(text))
           {
-            var result = JsonSerializer.Deserialize<ProcessOptions>(stream);
+            var serializer = new Newtonsoft.Json.JsonSerializer();
+            var result = serializer.Deserialize<ProcessOptions>(reader);
             if (result != null)
               return result;
           }
@@ -34,11 +36,27 @@ public static class ProcessOptionsMgr
     lock (LockObj)
     {
       var filename = GetFilename();
-      using (var stream = File.OpenWrite(filename))
-        JsonSerializer.Serialize<ProcessOptions>(stream, value);
+      using (var text = File.CreateText(filename))
+      {
+        var serializer = new Newtonsoft.Json.JsonSerializer();
+        serializer.Serialize(text, value);
+      }
     }
   }
 
+  public static void SaveInstanceToXml(ProcessOptions value)
+  {
+    lock (LockObj)
+    {
+      var filename = GetFilename();
+      filename = Path.ChangeExtension(filename, ".xml");
+      using (var stream = File.OpenWrite(filename))
+      {
+        var serializer = new QXmlSerializer(typeof(ProcessOptions));
+        serializer.Serialize(stream, value);
+      }
+    }
+  }
   public static string GetFilename()
   {
     var path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);

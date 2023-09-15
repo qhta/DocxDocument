@@ -2,7 +2,7 @@
 
 public class MainViewModel : ViewModel
 {
-    public ProcessMonitorViewModel ProcessMonitorVM
+  public ProcessMonitorViewModel ProcessMonitorVM
   {
     get { return ProcessMonitor.VM; }
     set
@@ -64,20 +64,21 @@ public class MainViewModel : ViewModel
   {
     this.windowService = new WindowService();
     _ProcessOptionsVM = new ProcessOptionsViewModel();
-    OpenConfigCommand = new RelayCommand<string>(OpenConfig, CanOpenConfig){ Name = "OpenConfigCommand" };
-    StartProcessCommand = new RelayCommand(StartProcess, CanStartProcess){ Name = "StartProcessCommand" };
-    StopProcessCommand = new RelayCommand(StopProcess, CanStopProcess){ Name = "StopProcessCommand" };
+    OpenConfigCommand = new RelayCommand<string>(OpenConfig, CanOpenConfig) { Name = "OpenConfigCommand" };
+    StartProcessCommand = new RelayCommand(StartProcess, CanStartProcess) { Name = "StartProcessCommand" };
+    StopProcessCommand = new RelayCommand(StopProcess, CanStopProcess) { Name = "StopProcessCommand" };
+    ContinueProcessCommand = new RelayCommand(ContinueProcess, CanContinueProcess) { Name = "ContinueProcessCommand" };
     ProcessOptionsVM.PropertyChanged += ProcessOptionsVM_PropertyChanged;
   }
 
   private void ProcessOptionsVM_PropertyChanged(object? sender, System.ComponentModel.PropertyChangedEventArgs args)
   {
-    if (args.PropertyName==nameof(ProcessOptionsVM.StopAtPhase))
-      if (ModelCreator!=null)
+    if (args.PropertyName == nameof(ProcessOptionsVM.StopAtPhase))
+      if (ModelCreator != null)
       {
         var phaseNum = (sender as ProcessOptionsViewModel)?.StopAtPhase;
         if (phaseNum is int n)
-          ModelCreator.StopAtPhase = (PPS) Enum.ToObject(typeof(PPS), n);
+          ModelCreator.StopAtPhase = (PPS)Enum.ToObject(typeof(PPS), n);
       }
     StartProcessCommand.NotifyCanExecuteChanged();
     CommandManager.InvalidateRequerySuggested();
@@ -85,7 +86,7 @@ public class MainViewModel : ViewModel
 
   #region OpenConfigCommand
   public Command OpenConfigCommand { get; }
-  
+
   public bool CanOpenConfig(string parameter)
   {
     return true;
@@ -93,31 +94,54 @@ public class MainViewModel : ViewModel
 
   protected void OpenConfig(string parameter)
   {
-    if (parameter=="Namespaces")
+    if (parameter == "Namespaces")
       WindowsManager.ShowWindow<ModelConfigWindow>(new NamespacesConfigViewModel(ModelConfig.Instance));
     else
-    if (parameter=="Types")
+    if (parameter == "Types")
       WindowsManager.ShowWindow<ModelConfigWindow>(new TypesConfigViewModel(ModelConfig.Instance));
     else
-    if (parameter=="Properties")
+    if (parameter == "Properties")
       WindowsManager.ShowWindow<ModelConfigWindow>(new PropertiesConfigViewModel(ModelConfig.Instance));
   }
   #endregion
 
-  #region StartProcessCommand
+  #region StartStopProcess commands
+
+  public bool ProcessStarted
+  {
+    get { return _ProcessStarted; }
+    set
+    {
+      if (_ProcessStarted != value)
+      {
+        _ProcessStarted = value;
+        NotifyPropertyChanged(nameof(ProcessStarted));
+        StartProcessCommand.NotifyCanExecuteChanged();
+        CommandManager.InvalidateRequerySuggested();
+      }
+    }
+  }
+  private bool _ProcessStarted;
+
   public Command StartProcessCommand { get; }
-  
+
   public bool CanStartProcess()
   {
-    return ProcessOptionsVM.StopAtPhase>0;
+    return ProcessOptionsVM.StopAtPhase > 0 && !ProcessStarted;
   }
 
   public async void StartProcess()
   {
+    await StartProcess(false);
+  }
+
+  public async Task StartProcess(bool continueProcess)
+  {
+    ProcessStarted = true;
     var options = this.ProcessOptionsVM.Model;
-    if (options != null)
+    ProcessOptionsMgr.SaveInstance((ProcessOptions)options);
+    if (!continueProcess)
     {
-      ProcessOptionsMgr.SaveInstance((ProcessOptions)options);
       var filePath = Assembly.GetExecutingAssembly().Location;
       var index = filePath.IndexOf(@"\bin");
       if (index > 0)
@@ -126,24 +150,45 @@ public class MainViewModel : ViewModel
       filePath = Path.GetDirectoryName(filePath) ?? "";
       filePath = Path.Combine(filePath, @"ModelGen\DocumentModel");
       ModelCreator = new ModelCreator("DocumentModel", filePath);
-      ModelCreator.ModelMonitor = this.ProcessMonitor;
-      await Task.Run(() => ModelCreator.RunProcess(options));
-      ModelCreator = null;
     }
+    if (ModelCreator != null)
+    {
+      if (!continueProcess)
+        this.ProcessMonitor.Clear();
+      ModelCreator.ModelMonitor = this.ProcessMonitor;
+      await Task.Run(() => ModelCreator.RunProcess(options, continueProcess));
+      ModelCreator.CancelRequest = false;
+    }
+    ProcessStarted = false;
   }
-  #endregion
+
   public ModelCreator? ModelCreator { get; set; }
 
-  #region StopProcessCommand
   public Command StopProcessCommand { get; }
 
   public bool CanStopProcess()
   {
-    return false;
+    return ModelCreator != null && ProcessStarted;
   }
 
   public void StopProcess()
   {
+    if (ModelCreator != null)
+      ModelCreator.CancelRequest = true;
+  }
+
+  public Command ContinueProcessCommand { get; }
+
+  public bool CanContinueProcess()
+  {
+    return ModelCreator != null && ModelCreator.CanContinue && !ProcessStarted;
+  }
+
+
+  public async void ContinueProcess()
+  {
+    await StartProcess(true);
+
   }
   #endregion
 }

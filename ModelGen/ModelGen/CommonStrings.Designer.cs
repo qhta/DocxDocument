@@ -160,6 +160,42 @@ namespace ModelGen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Process cancelled.
+        /// </summary>
+        internal static string ProcessCancelled {
+            get {
+                return ResourceManager.GetString("ProcessCancelled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Process continuation.
+        /// </summary>
+        internal static string ProcessContinue {
+            get {
+                return ResourceManager.GetString("ProcessContinue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Process finished.
+        /// </summary>
+        internal static string ProcessFinished {
+            get {
+                return ResourceManager.GetString("ProcessFinished", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start processing.
+        /// </summary>
+        internal static string ProcessStart {
+            get {
+                return ResourceManager.GetString("ProcessStart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to registered {0} of {1} types in {2} namespaces.
         /// </summary>
         internal static string registered_0_of_1_types_in_2_namespaces {
@@ -241,20 +277,20 @@ namespace ModelGen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Start processing:\n{0}.
-        /// </summary>
-        internal static string StartProcessing_0 {
-            get {
-                return ResourceManager.GetString("StartProcessing_0", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to time:.
         /// </summary>
         internal static string time_ {
             get {
                 return ResourceManager.GetString("time_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total time.
+        /// </summary>
+        internal static string TotalTime {
+            get {
+                return ResourceManager.GetString("TotalTime", resourceCulture);
             }
         }
         

@@ -536,7 +536,7 @@ public abstract class ModelMonitor
   public virtual void ShowProcessSummary(SummaryInfo info)
   {
     WriteLine();
-    WriteLine($"Total time = {info.Time}");
+    WriteLine($"{(info.ProcessCancelled ? CommonStrings.ProcessCancelled : CommonStrings.ProcessFinished)}, {CommonStrings.TotalTime} = {info.Time}");
   }
 
   public virtual void ShowElementSchema(TypeInfo typeInfo, DisplayOptions options)
