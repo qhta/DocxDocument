@@ -139,6 +139,8 @@ public static class TypeManager
     return false;
   }
 
+  public static bool CancelRequest { get => TypeReflector.CancelRequest; set=>TypeReflector.CancelRequest = value; }
+
   public static TypeInfo RegisterType(Type type, bool? acceptance = null)
   {
     //if (type.Name.StartsWith("OpenXmlComparableSimpleValue") && type.IsConstructedGenericType)
@@ -164,7 +166,7 @@ public static class TypeManager
       if (!accept)
         typeInfo.SetRejected(PPS.ScanSource);
 
-      if (accept && type.Namespace != null && !type.Namespace.StartsWith("System"))
+      if (accept && type.Namespace != null && !type.Namespace.StartsWith("System") && !CancelRequest)
       {
         if (UseAsynReflection)
           TypeReflector.ReflectTypeAsync(typeInfo);

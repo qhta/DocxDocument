@@ -23,6 +23,12 @@ public abstract partial class PhaseResultsViewModel : ViewModel
     BusyMonitor.Instance.PropertyChanged += BusyMonitor_PropertyChanged;
   }
 
+  public void Clear()
+  {
+    Percentage = 0;
+    BusyMonitor.Instance.IsBusy = false;
+  }
+
   public bool IsBusy => BusyMonitor.Instance.IsBusy;
 
   private void BusyMonitor_PropertyChanged(object? sender, PropertyChangedEventArgs args)

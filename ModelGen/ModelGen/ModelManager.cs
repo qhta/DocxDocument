@@ -15,6 +15,8 @@ public static class ModelManager
   public static int CheckedUsageTypesCount { get; private set; }
   public static int UsedTypesCount { get; private set; }
 
+  public static bool CancelRequest { get => TypeManager.CancelRequest; set => TypeManager.CancelRequest = value; }
+
   #region Type conversion
 
   public static int ConvertTypes(IEnumerable<TypeInfo> types)
@@ -417,7 +419,7 @@ public static class ModelManager
   }
   #endregion
 
-  #region Checking types
+  #region Scan Source
 
   public static bool ScanType(Type type)
   {
@@ -674,7 +676,8 @@ public static class ModelManager
       if (ModelConfig.Instance.TranslatedNamespaces.TryGetValue(ns.OriginalName, out var targetName))
       {
         ns.TargetName = targetName;
-        TypeManager.RegisterNamespace(targetName);
+        var nspace = TypeManager.RegisterNamespace(targetName);
+        nspace.Clear();
         n++;
       }
     }

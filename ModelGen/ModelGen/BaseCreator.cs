@@ -27,6 +27,9 @@ public abstract class BaseCreator
   /// </summary>
   protected string OutputPath { get; set; }
 
+
+  public bool CancelRequest { get => ModelManager.CancelRequest; set => ModelManager.CancelRequest = value; }
+
   public bool IsRun { get; set; }
 
   public PPS PhaseDone { get; private set; }
@@ -39,16 +42,26 @@ public abstract class BaseCreator
     OutputPath = outputPath;
   }
 
-  public void RunProcess(ProcessOptions options)
+  public void RunProcess(ProcessOptions options, bool continueProcess = false)
   {
-    var assembly = Assembly.Load("DocumentFormat.OpenXml");
-    Debug.Assert(assembly != null);
-    Type? rootType = assembly.GetType(options.ScanTypeName, true);
-    Debug.Assert(rootType != null);
-    RunOn(rootType, options);//(PPS)Enum.ToObject(typeof(PPS), options.StopAtPhase), options.Display, options.DisplayOptions);
+    if (continueProcess && PhaseDone > PPS.None)
+    {
+      Debug.Assert(RootType != null);
+      RunOn(RootType, options, true);
+    }
+    else
+    {
+      var assembly = Assembly.Load("DocumentFormat.OpenXml");
+      Debug.Assert(assembly != null);
+      RootType = assembly.GetType(options.ScanTypeName, true);
+      Debug.Assert(RootType != null);
+      RunOn(RootType, options);
+    }
   }
 
   protected ProcessOptions Options { get; set; } = new ProcessOptions();
+
+  protected Type? RootType = null!;
 
   public PPS StopAtPhase
   {
@@ -59,11 +72,12 @@ public abstract class BaseCreator
     }
     set { _StopAtPhase = value; }
   }
-
   private PPS? _StopAtPhase = null!;
-  public void RunOn(Type type, ProcessOptions options)
+
+  public bool CanContinue => PhaseDone < StopAtPhase;
+
+  public void RunOn(Type type, ProcessOptions options, bool continueProcess = false)
   {
-    TypeManager.Clear();
     Options = options;
     IsRun = true;
     //var displayOptions = Options.DisplayOptions;
@@ -72,60 +86,62 @@ public abstract class BaseCreator
 
     var monitorDisplaySelector = MDS.None;
 
-    ModelMonitor?.ShowProcessStart(String.Format(CommonStrings.StartProcessing_0.DecodeEscapeSeq(), type.FullName));
+    if (CancelRequest)
+      return;
+    ModelMonitor?.ShowProcessStart(
+        (continueProcess ? CommonStrings.ProcessContinue :CommonStrings.ProcessStart) +":\n" + type.FullName);
     SourceAssembly = type.Assembly;
     TotalTypesCount = SourceAssembly.ExportedTypes.Count();
     TimeSpan totalTime = TimeSpan.Zero;
+    if (!continueProcess)
+      PhaseDone = PPS.None;
 
-    PhaseDone = PPS.None;
-    if (StopAtPhase >= PPS.ScanSource)
+    if (!continueProcess)
+      TypeManager.Clear();
+
+    if (StopAtPhase >= PPS.ScanSource && PhaseDone < PPS.ScanSource && !CancelRequest)
     {
       totalTime += ScanType(type);
       if (monitorDisplaySelector.HasFlag(MDS.ScannedNamespaces))
         ModelMonitor?.ShowNamespaceSummary(PPS.ScanSource, NTS.Origin);
       if (monitorDisplaySelector.HasFlag(MDS.ScannedTypes))
         ModelMonitor?.ShowNamespacesDetails(PPS.ScanSource, displayOptions with { NamespaceTypeSelector = NTS.Origin });
-      PhaseDone = PPS.ScanSource;
+      if (!CancelRequest)
+        PhaseDone = PPS.ScanSource;
     }
 
-    if (StopAtPhase >= PPS.AddDocs)
+    if (StopAtPhase >= PPS.AddDocs && PhaseDone < PPS.AddDocs && !CancelRequest)
     {
       totalTime += AddDocs();
       if (monitorDisplaySelector.HasFlag(MDS.ScannedNamespaces))
         ModelMonitor?.ShowNamespaceSummary(PPS.ScanSource, NTS.Origin);
       if (monitorDisplaySelector.HasFlag(MDS.ScannedTypes))
         ModelMonitor?.ShowNamespacesDetails(PPS.ScanSource, displayOptions with { NamespaceTypeSelector = NTS.Origin });
-      PhaseDone = PPS.AddDocs;
+      if (!CancelRequest)
+        PhaseDone = PPS.AddDocs;
     }
 
-    if (StopAtPhase >= PPS.Rename)
+    if (StopAtPhase >= PPS.Rename && PhaseDone < PPS.Rename && !CancelRequest)
     {
-      totalTime += RenameTypes();
+      totalTime += RenameNamespacesAndTypes();
       if (monitorDisplaySelector.HasFlag(MDS.TypeRename))
         ModelMonitor?.ShowTypeRenames();
-      PhaseDone = PPS.ScanSource;
+      if (!CancelRequest)
+        PhaseDone = PPS.Rename;
     }
 
-    if (StopAtPhase >= PPS.ConvertTypes)
+    if (StopAtPhase >= PPS.ConvertTypes && PhaseDone < PPS.ConvertTypes && !CancelRequest)
     {
       totalTime += ConvertTypes();
       if (monitorDisplaySelector.HasFlag(MDS.TypeConversions))
         ModelMonitor?.ShowTypeConversions();
-      PhaseDone = PPS.ConvertTypes;
+      if (!CancelRequest)
+        PhaseDone = PPS.ConvertTypes;
     }
-
-    //totalTime += CheckTypeUsage();
-    //if (monitorDisplaySelector.HasFlag(MDS.TypeUsage))
-    //  ModelMonitor?.ShowNamespacesDetails(displayOptions ?? new DisplayOptions());
-
-    //totalTime += ValidateTypes();
-    //if (monitorDisplaySelector.HasFlag(MDS.ValidatedTypes))
-    //  ModelMonitor?.ShowNamespacesDetails(displayOptions ?? new DisplayOptions());
-
-    //totalTime += GenerateCode();
 
     ModelMonitor?.ShowProcessSummary(new SummaryInfo
     {
+      ProcessCancelled = CancelRequest,
       Time = totalTime
     });
     IsRun = false;
@@ -144,7 +160,7 @@ public abstract class BaseCreator
     var checkedTypesCount = 0;
     var validTypesCount = 0;
     var invalidTypesCount = 0;
-    if (Options.ValidateScan)
+    if (Options.ValidateScan && !CancelRequest)
     {
       var ModelValidator = new ModelValidator(PPS.ScanSource, NTS.Origin, MSS.Accepted, TDS.Metadata);
       ModelValidator.OnValidatingType += ModelValidator_OnValidatingType;
@@ -210,7 +226,7 @@ public abstract class BaseCreator
     bool validated = false;
     var typesWithoutDescriptionCount = 0;
     var typesWithMeaninglessDescriptionCount = 0;
-    if (Options.ValidateDocs)
+    if (Options.ValidateDocs && !CancelRequest)
     {
       var ModelValidator = new ModelValidator(PPS.AddDocs, NTS.Origin, MSS.Accepted, TDS.Metadata);
       ModelValidator.OnValidatingType += ModelValidator_OnValidatingType;
@@ -267,7 +283,7 @@ public abstract class BaseCreator
     });
   }
 
-  protected TimeSpan RenameTypes()
+  protected TimeSpan RenameNamespacesAndTypes()
   {
     ModelMonitor?.ShowPhaseStart(PPS.Rename, CommonStrings.RenameTypes);
     DateTime t1 = DateTime.Now;
@@ -280,7 +296,7 @@ public abstract class BaseCreator
     ModelManager.OnRenamingType -= ModelManager_OnRenamingType;
 
     var invalidTypes = 0;
-    if (Options.ValidateNames)
+    if (Options.ValidateNames && !CancelRequest)
     {
       var ModelValidator = new ModelValidator(PPS.Rename, NTS.Origin, MSS.Accepted, TDS.Metadata);
       ModelValidator.OnValidatingType += ModelValidator_OnValidatingType;
@@ -331,7 +347,7 @@ public abstract class BaseCreator
     ModelManager.OnConvertingType -= ModelManager_OnConvertingType;
 
     var invalidTypes = 0;
-    if (Options.ValidateConversion)
+    if (Options.ValidateConversion && !CancelRequest)
     {
       var ModelValidator = new ModelValidator(PPS.ConvertTypes, NTS.Origin, MSS.Accepted, TDS.Metadata);
       ModelValidator.OnValidatingType += ModelValidator_OnValidatingType;

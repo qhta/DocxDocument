@@ -554,4 +554,7 @@ zdefiniowanej w typie wyliczeniowym.</value>
   <data name="DerivedTypes" xml:space="preserve">
     <value>Typy pochodne</value>
   </data>
+  <data name="Continue" xml:space="preserve">
+    <value>Kontynuuj</value>
+  </data>
 </root>

@@ -74,4 +74,10 @@ public class Namespace
     types = AcceptedTypes(PPS.Rename).ToArray().Where(item => item != typeInfo && item.GetTargetName() == name).ToList();
     return types.Count() > 0;
   }
+
+  public void Clear()
+  {
+    Types.Clear();
+    TypeNames.Clear();
+  }
 }

@@ -450,6 +450,10 @@
               "target": "Package",
               "version": "[3.0.0, )"
             },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
             "Qhta.Collections": {
               "target": "Package",
               "version": "[4.0.0, )"

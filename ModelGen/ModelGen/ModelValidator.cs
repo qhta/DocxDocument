@@ -43,15 +43,6 @@ public class ModelValidator
     bool ok = true;
     ValidTypesCount = 0;
     InvalidTypesCount = 0;
-    //var nspaces = TypeManager.GetNamespaces(NamespaceTypeSelector);
-    //List<TypeInfo> types = new List<TypeInfo>();
-    //foreach (var nspace in nspaces)
-    //{
-    //  var nSpaceTypes = TypeManager.GetNamespaceTypes(nspace).ToList();
-    //  nSpaceTypes = nSpaceTypes.Where(item =>
-    //    item.IsAcceptedTo(phase)).ToList();
-    //  types.AddRange(nSpaceTypes);
-    //}
     TotalTypesCount = types.Count();
     foreach (var typeInfo in types)
     {
@@ -112,6 +103,7 @@ public class ModelValidator
 
   public bool CompareSchemaWithIncludeRelationships(TypeInfo typeInfo)
   {
+    var ok = true;
     var typesIncludedInRels = typeInfo.GetOutgoingRelationships(Semantics.Include).Select(item => item.Target).ToList();
     if (typeInfo.Schema == null && typesIncludedInRels.Count > 0)
     {
@@ -120,7 +112,7 @@ public class ModelValidator
     }
     if (typeInfo.Schema?.Main != null)
     {
-      var typesIncludedInSchema = GetItemTypes(typeInfo.Schema.Main);
+      var typesIncludedInSchema = typeInfo.Schema.Main.GetItemTypes();
       if (typesIncludedInSchema.Count > 0 && typesIncludedInRels.Count == 0)
       {
         typeInfo.AddError(PhaseNum, ErrorCode.MissingIncludedTypeRels);
@@ -134,36 +126,37 @@ public class ModelValidator
       else if (typesIncludedInSchema.Count > 0 && typesIncludedInRels.Count > 0)
       {
         var missingTypesIncludedInSchema = new List<TypeInfo>();
-        for (int i = 0; i < typesIncludedInRels.Count; i++)
+        foreach (var itemType in typesIncludedInRels)
         {
-          var itemType = typesIncludedInRels[i];
           if (!typesIncludedInSchema.Contains(itemType))
             missingTypesIncludedInSchema.Add(itemType);
         }
-        var missingTypesIncludedInRels = new List<TypeInfo>();
-        for (int i = 0; i < typesIncludedInSchema.Count; i++)
+        if (missingTypesIncludedInSchema.Count > 0)
         {
-          var itemType = typesIncludedInSchema[i];
+          typeInfo.AddError(PhaseNum, ErrorCode.MissingSomeIncludedTypeSchema, missingTypesIncludedInSchema.Select(item => item.Name).ToArray());
+          ok = false;
+        }
+
+        var missingTypesIncludedInRels = new List<TypeInfo>();
+        foreach (var itemType in typesIncludedInSchema)
+        {
           if (!typesIncludedInRels.Contains(itemType))
             missingTypesIncludedInRels.Add(itemType);
         }
         if (missingTypesIncludedInRels.Count > 0)
         {
           typeInfo.AddError(PhaseNum, ErrorCode.MissingSomeIncludedTypeRels, missingTypesIncludedInRels.Select(item => item.Name).ToArray());
-          return false;
+          ok = false;
         }
-        if (missingTypesIncludedInSchema.Count > 0)
-        {
-          typeInfo.AddError(PhaseNum, ErrorCode.MissingSomeIncludedTypeSchema, missingTypesIncludedInSchema.Select(item => item.Name).ToArray());
-          return false;
-        }
+
       }
     }
-    return true;
+    return ok;
   }
 
   public bool ComparePropsWithIncludeRelationships(TypeInfo typeInfo)
   {
+    var ok = true;
     var typesIncludedInRels = typeInfo.GetOutgoingRelationships(Semantics.Include)
       .Where(item => !item.IsMultiple)
       .Select(item => item.Target).ToList();
@@ -183,50 +176,19 @@ public class ModelValidator
       else if (typesIncludedInProps.Count > 0 && typesIncludedInRels.Count > 0)
       {
         var missingTypesInProperties = new List<TypeInfo>();
-        for (int i = 0; i < typesIncludedInRels.Count; i++)
+        foreach (var itemType in typesIncludedInRels)
         {
-          var itemType = typesIncludedInRels[i];
           if (!typesIncludedInProps.Contains(itemType))
             missingTypesInProperties.Add(itemType);
         }
         if (missingTypesInProperties.Count > 0)
         {
           typeInfo.AddError(PhaseNum, ErrorCode.MissingSomeProperties, missingTypesInProperties.Select(item => item.Name).ToArray());
-          return false;
+          ok = false;
         }
       }
     }
-    return true;
-  }
-
-  /// <summary>
-  /// Returns flattened list of item types from schema.
-  /// Items in the list are unique.
-  /// </summary>
-  /// <param name="schema"></param>
-  /// <returns></returns>
-  private List<TypeInfo> GetItemTypes(SchemaParticle schema)
-  {
-    var types = new List<TypeInfo>();
-    if (schema is ItemElementParticle elementParticle)
-    {
-      if (elementParticle.ItemType != null)
-      {
-        if (!types.Contains(elementParticle.ItemType))
-          types.Add(elementParticle.ItemType);
-      }
-    }
-    else
-    if (schema is ItemsParticle itemsParticle)
-    {
-      foreach (var particle in itemsParticle.Items)
-      {
-        foreach (var itemType in GetItemTypes(particle))
-          if (!types.Contains(itemType))
-            types.Add(itemType);
-      }
-    }
-    return types;
+    return ok;
   }
 
   public bool ValidateDescription(TypeInfo typeInfo)

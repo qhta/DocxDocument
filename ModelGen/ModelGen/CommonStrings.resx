@@ -117,8 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="StartProcessing_0" xml:space="preserve">
-    <value>Start processing:\n{0}</value>
+  <data name="ProcessStart" xml:space="preserve">
+    <value>Start processing</value>
   </data>
   <data name="ScanSource" xml:space="preserve">
     <value>Scan source</value>
@@ -203,5 +203,17 @@
   </data>
   <data name="verifying_0_of_1_types_invalid_2_types" xml:space="preserve">
     <value>verifying {0} of {1} types, invalid {2} types</value>
+  </data>
+  <data name="TotalTime" xml:space="preserve">
+    <value>Total time</value>
+  </data>
+  <data name="ProcessCancelled" xml:space="preserve">
+    <value>Process cancelled</value>
+  </data>
+  <data name="ProcessFinished" xml:space="preserve">
+    <value>Process finished</value>
+  </data>
+  <data name="ProcessContinue" xml:space="preserve">
+    <value>Process continuation</value>
   </data>
 </root>
