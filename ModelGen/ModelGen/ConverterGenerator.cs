@@ -8,7 +8,6 @@ using Qhta.TextUtils;
 using Text = DocumentFormat.OpenXml.Drawing.Text;
 using System.Reflection;
 using System.Xml.Linq;
-using DocumentModel.OpenXml;
 using InvalidOperationException = System.InvalidOperationException;
 
 namespace ModelGen;

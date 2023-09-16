@@ -55,6 +55,7 @@ public static class ModelManager
       return true;
     if (TryAddGenericTypeConversion(typeInfo))
       return true;
+    TryAddItemsProperty(typeInfo);
     return false;
   }
 
@@ -183,7 +184,7 @@ public static class ModelManager
           genericParamTypeInfo.TryConvertType();
           if (genericParamTypeInfo.IsConverted)
             sourceArgType = genericParamTypeInfo.GetConversionTargetOrSelf().Type;
-          sourceArgType = typeof(DocumentModel.ListOf<>).MakeGenericType(new Type[] { sourceArgType });
+          sourceArgType = typeof(ListOf<>).MakeGenericType(new Type[] { sourceArgType });
           targetType = TypeManager.RegisterType(sourceArgType, typeInfo, Semantics.TypeChange);
           typeInfo.IsConverted = true;
           return true;
@@ -213,6 +214,32 @@ public static class ModelManager
           return true;
         }
       }
+    }
+    return false;
+  }
+
+  private static bool TryAddItemsProperty(TypeInfo typeInfo)
+  {
+    if (typeInfo.IsConverted)
+      return false;
+    var itemsProperty = typeInfo.AcceptedProperties(PPS.ConvertTypes)?.FirstOrDefault(item => item.Name == "Items");
+    if (itemsProperty != null)
+      return false;
+    var itemRels = typeInfo.GetOutgoingRelationships(Semantics.Include).Where(rel=>rel.IsMultiple);
+    if (itemRels.Any())
+    {
+      var relsCount = itemRels.Count();
+      if (relsCount>1)
+        itemsProperty = new PropInfo("Items", typeof(DocumentModel.ElementCollection<IModelElement>));
+      else
+      {
+        var collectionType = typeof(DocumentModel.ElementCollection<>);
+        collectionType = collectionType.MakeGenericType(new Type[]{itemRels.First().Target.Type });
+        itemsProperty = new PropInfo("Items", collectionType);
+      }
+      itemsProperty.AddedInPhase = PPS.ConvertTypes;
+      typeInfo.Add(itemsProperty);
+      return true;
     }
     return false;
   }

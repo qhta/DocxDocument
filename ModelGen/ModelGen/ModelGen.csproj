@@ -48,16 +48,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\DocumentModel\DocumentModel.csproj" />
     <ProjectReference Include="..\..\ModelDocumentation\ModelDocumentation.csproj" />
     <ProjectReference Include="..\..\ModelGenDataConfig\ModelGenDataConfig.csproj" />
     <ProjectReference Include="..\DocumentModel.Attributes\DocumentModel.Attributes.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="DocumentModel.OpenXml">
-      <HintPath>..\..\DocumentModel.OpenXml\bin\Debug\net6.0\DocumentModel.OpenXml.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\DocumentModel.BaseTypes\DocumentModel.BaseTypes.csproj" />
   </ItemGroup>
 
   <ItemGroup>
