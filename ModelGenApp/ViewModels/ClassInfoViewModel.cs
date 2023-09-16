@@ -47,7 +47,7 @@ public class ClassInfoViewModel : TypeInfoViewModel
     if (_Properties == null)
       return;
     Properties.Clear();
-    foreach (var propInfo in Model.GetAllProperties().ToList())
+    foreach (var propInfo in Model.GetAllProperties().Where(item=>item.AddedInPhase<=Phase.PhaseNum).ToList())
       Properties.Add(new PropInfoViewModel(Phase, this, propInfo, TypeNameSelector));
   }
 

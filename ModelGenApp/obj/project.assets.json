@@ -2,15 +2,6 @@
   "version": 3,
   "targets": {
     "net6.0-windows7.0": {
-      "DeepEqual/4.2.1": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/DeepEqual.dll": {}
-        },
-        "runtime": {
-          "lib/net6.0/DeepEqual.dll": {}
-        }
-      },
       "DocumentFormat.OpenXml/2.20.0": {
         "type": "package",
         "dependencies": {
@@ -44,18 +35,6 @@
           "lib/netstandard2.0/HtmlAgilityPack.dll": {
             "related": ".deps.json;.pdb;.xml"
           }
-        }
-      },
-      "JsonKnownTypes/0.5.5": {
-        "type": "package",
-        "dependencies": {
-          "Newtonsoft.Json": "12.0.3"
-        },
-        "compile": {
-          "lib/netstandard2.0/JsonKnownTypes.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/JsonKnownTypes.dll": {}
         }
       },
       "Microsoft.CSharp/4.3.0": {
@@ -1677,24 +1656,6 @@
           "lib/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {}
         }
       },
-      "DocumentModel/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "DeepEqual": "4.2.1",
-          "JsonKnownTypes": "0.5.5",
-          "Newtonsoft.Json": "13.0.3",
-          "Qhta.TypeUtils": "1.3.10.1",
-          "Qhta.Xml.Serialization": "2.3.0",
-          "System.IO.Packaging": "7.0.0"
-        },
-        "compile": {
-          "bin/placeholder/DocumentModel.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/DocumentModel.dll": {}
-        }
-      },
       "DocumentModel.Attributes/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -1703,6 +1664,16 @@
         },
         "runtime": {
           "bin/placeholder/DocumentModel.Attributes.dll": {}
+        }
+      },
+      "DocumentModel.BaseTypes/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/DocumentModel.BaseTypes.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DocumentModel.BaseTypes.dll": {}
         }
       },
       "ModelDocumentation/1.0.0": {
@@ -1723,8 +1694,8 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "DocumentFormat.OpenXml": "2.20.0",
-          "DocumentModel": "1.0.0",
           "DocumentModel.Attributes": "1.0.0",
+          "DocumentModel.BaseTypes": "1.0.0",
           "ModelDocumentation": "1.0.0",
           "ModelGenDataConfig": "1.0.0",
           "Namotion.Reflection": "3.0.0",
@@ -1785,22 +1756,6 @@
     }
   },
   "libraries": {
-    "DeepEqual/4.2.1": {
-      "sha512": "aaBFzb5mQdYyZ4hVWcVobS+iq9+aHpgcYgQXcV1l54vjAVONVq6H5F4nnGiyb+ErBhyy8eRvIPkJ3BGSWiflgg==",
-      "type": "package",
-      "path": "deepequal/4.2.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Readme.md",
-        "deepequal.4.2.1.nupkg.sha512",
-        "deepequal.nuspec",
-        "lib/net6.0/DeepEqual.dll",
-        "lib/netcoreapp3.1/DeepEqual.dll",
-        "lib/netstandard2.0/DeepEqual.dll",
-        "lib/netstandard2.1/DeepEqual.dll"
-      ]
-    },
     "DocumentFormat.OpenXml/2.20.0": {
       "sha512": "+oFMsEppo/W6KpGTRXaJl2jTFYn9zeon4FaZuDoCijQ1/0JaPENaCef7d4Y3f8v116eKhVBwd4Ya+/NDglxkjw==",
       "type": "package",
@@ -1871,19 +1826,6 @@
         "lib/uap10.0/HtmlAgilityPack.dll",
         "lib/uap10.0/HtmlAgilityPack.pdb",
         "lib/uap10.0/HtmlAgilityPack.pri"
-      ]
-    },
-    "JsonKnownTypes/0.5.5": {
-      "sha512": "karxW7+PYD15Du7Bz8OIS8g+PCbz+SONUmJDYaH/UWRPIpDuRPbd3BlsD16gUf7OxIT5RGfxlLk6krq5il6g5A==",
-      "type": "package",
-      "path": "jsonknowntypes/0.5.5",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE",
-        "jsonknowntypes.0.5.5.nupkg.sha512",
-        "jsonknowntypes.nuspec",
-        "lib/netstandard2.0/JsonKnownTypes.dll"
       ]
     },
     "Microsoft.CSharp/4.3.0": {
@@ -5428,15 +5370,15 @@
         "system.xml.xpath.xmldocument.nuspec"
       ]
     },
-    "DocumentModel/1.0.0": {
-      "type": "project",
-      "path": "../DocumentModel/DocumentModel.csproj",
-      "msbuildProject": "../DocumentModel/DocumentModel.csproj"
-    },
     "DocumentModel.Attributes/1.0.0": {
       "type": "project",
       "path": "../ModelGen/DocumentModel.Attributes/DocumentModel.Attributes.csproj",
       "msbuildProject": "../ModelGen/DocumentModel.Attributes/DocumentModel.Attributes.csproj"
+    },
+    "DocumentModel.BaseTypes/1.0.0": {
+      "type": "project",
+      "path": "../ModelGen/DocumentModel.BaseTypes/DocumentModel.BaseTypes.csproj",
+      "msbuildProject": "../ModelGen/DocumentModel.BaseTypes/DocumentModel.BaseTypes.csproj"
     },
     "ModelDocumentation/1.0.0": {
       "type": "project",

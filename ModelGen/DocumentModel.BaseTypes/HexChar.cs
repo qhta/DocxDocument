@@ -1,28 +1,36 @@
-﻿namespace DocumentModel;
+﻿using System.ComponentModel;
+using DocumentModel;
+
+namespace DocumentModel;
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
-public struct HexInt : IConvertible, IEquatable<HexInt>
+public struct HexChar : IConvertible, IEquatable<HexChar>
 {
-  private readonly int Value;
+  private readonly ushort Value;
 
-  public HexInt(string val)
+  public HexChar(string val)
   {
-    Value = int.Parse(val, NumberStyles.HexNumber);
+    Value = ushort.Parse(val, NumberStyles.HexNumber);
   }
 
-  public HexInt(int value)
+  public HexChar(Byte value)
   {
     Value = value;
   }
 
-  public HexInt(uint value)
+  public HexChar(char value)
   {
-    Value = (int)value;
+    Value = value;
   }
 
-  public HexInt(ulong value)
+  public HexChar(ushort value)
   {
-    Value = (int)value;
+    Value = value;
+  }
+
+  public HexChar(int value)
+  {
+    Value = (ushort)value;
   }
 
   public TypeCode GetTypeCode()
@@ -113,7 +121,7 @@ public struct HexInt : IConvertible, IEquatable<HexInt>
       return Value;
     if (targetType == typeof(UInt32))
       return Value;
-    if (targetType == typeof(Int64))
+    if (targetType == typeof(UInt64))
       return Value;
     if (targetType == typeof(UInt64))
       return Value;
@@ -131,70 +139,68 @@ public struct HexInt : IConvertible, IEquatable<HexInt>
       return Value;
     if (targetType == typeof(String))
       return ToString();
-    if (targetType == typeof(HexInt))
-      return new HexInt(Value);
+    if (targetType == typeof(HexChar))
+      return new HexChar(Value);
     return ((IConvertible)Value).ToType(targetType, provider);
   }
 
-  public static implicit operator HexInt(string val)
+  public static implicit operator HexChar(string val)
   {
-    return new HexInt(val);
+    return new HexChar(val);
   }
 
+  public static implicit operator string?(HexChar? val)
+  {
+    return val?.ToString();
+  }
 
-  public static implicit operator ushort(HexInt val)
+  public static implicit operator ushort(HexChar val)
   {
     return (ushort)val.Value;
   }
 
-  public static implicit operator uint(HexInt val)
+  public static implicit operator uint(HexChar val)
   {
     return (uint)val.Value;
   }
 
-  public static implicit operator Int32(HexInt val)
+  public static implicit operator uint?(HexChar? val)
   {
-    return val.Value;
+    return (val is not null) ? (uint)val.Value : null;
   }
 
-  public static implicit operator ulong(HexInt val)
+  public static implicit operator ulong(HexChar val)
   {
     return (ulong)val.Value;
   }
 
-  public static implicit operator HexInt(ushort val)
+  public static implicit operator HexChar(ushort val)
   {
-    return new HexInt((ulong)val);
+    return new HexChar((ushort)val);
   }
 
-  public static implicit operator HexInt(uint val)
+  public static implicit operator HexChar(uint val)
   {
-    return new HexInt((ulong)val);
+    if (val>ushort.MaxValue)
+      throw new InvalidCastException($"Type {val} out of range to cast to HexChar");
+    return new HexChar((ushort)val);
   }
 
-  public static implicit operator HexInt(Int32 val)
+  public static implicit operator HexChar(ulong val)
   {
-    return new HexInt((ulong)val);
+    if (val>ushort.MaxValue)
+      throw new InvalidCastException($"Type {val} out of range to cast to HexChar");
+    return new HexChar((ushort)val);
   }
 
-  public static implicit operator HexInt(ulong val)
-  {
-    return new HexInt(val);
-  }
-
-  public static implicit operator HexBinary(HexInt value) => new HexBinary(value.ToString());
-  public static implicit operator HexInt(HexBinary value) => new HexInt(value.ToString());
-
-  //public static implicit operator HexBinary?(HexInt? value) => (value == null) ? (HexBinary?)null : new HexBinary(value.ToString());
-  //public static implicit operator HexInt?(HexBinary? value) => (value == null) ? (HexInt?)null : new HexInt(value.ToString());
   public override string ToString()
   {
-    //if (Value > uint.MaxValue)
-    //  return Value.ToString("X16");
-    return Value.ToString("X8");
+    if (Value > 255)
+      return Value.ToString("X4");
+    return Value.ToString("X2");
   }
 
-    public bool Equals(HexInt other)
+  public bool Equals(HexChar other)
   {
     return Value == other.Value;
   }

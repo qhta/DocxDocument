@@ -32,7 +32,7 @@ public class EnumTypeInfoViewModel : TypeInfoViewModel
   {
     EnumValues.Clear();
     if (Model.EnumValues != null)
-      foreach (var enumVal in Model.EnumValues.ToList())
+      foreach (var enumVal in Model.EnumValues.Where(item=>item.AddedInPhase<=Phase.PhaseNum).ToList())
         EnumValues.Add(new EnumInfoViewModel(Phase, this,enumVal, TypeNameSelector));
   }
 
