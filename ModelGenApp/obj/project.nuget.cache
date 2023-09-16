@@ -1,13 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "xWobVas+gcuUbKrKgnSqy1RyXIApy7s7eEezYOO5LWziMH4jV/9vhb2jaLvV1+FQV4bzylKH53orSg0aS+lcVg==",
+  "dgSpecHash": "0o0zIHnVUylYWNro2XRJSPBP++yUROgiBh4E0Rslg/MkHl7IBy5IN69DzaxOElTq0fkz2IkQlq+Tb9YwJ8hsCA==",
   "success": true,
   "projectFilePath": "D:\\VS\\Projects\\DocxDocument\\ModelGenApp\\ModelGenApp.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\qhta1\\.nuget\\packages\\deepequal\\4.2.1\\deepequal.4.2.1.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\documentformat.openxml\\2.20.0\\documentformat.openxml.2.20.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\htmlagilitypack\\1.8.9\\htmlagilitypack.1.8.9.nupkg.sha512",
-    "C:\\Users\\qhta1\\.nuget\\packages\\jsonknowntypes\\0.5.5\\jsonknowntypes.0.5.5.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\microsoft.csharp\\4.3.0\\microsoft.csharp.4.3.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
