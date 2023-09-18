@@ -688,16 +688,19 @@ public static class ModelManager
           throw new DuplicateNameException(typeName);
         nspace.Types.Remove(oldTypeInfo);
         oldTypeInfo.NewName = newName;
-        nspace.Types.Add(oldTypeInfo);
+        RenamedTypesCount++;
+        renamed = true;
       }
       else
       {
         if (nspace.TypeNames.ContainsKey(newName))
           throw new DuplicateNameException(typeName);
         typeInfo.NewName = newName;
+        RenamedTypesCount++;
+        renamed = true;
       }
     }
-    nspace.AddType(typeInfo);
+    //nspace.AddType(typeInfo);
     typeInfo.TargetNamespace = newNamespace;
 
     return renamed;
