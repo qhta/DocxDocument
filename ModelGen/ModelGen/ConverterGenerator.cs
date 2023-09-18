@@ -119,6 +119,11 @@ public class ConverterGenerator : BaseCodeGenerator
   }
   #endregion
 
+  public override TimeSpan GenerateCode(IEnumerable<Namespace> nspaces)
+  {
+    throw new NotImplementedException();
+  }
+
   #region Converter class generation
 
   private bool GenerateConverterClass(TypeInfo type)

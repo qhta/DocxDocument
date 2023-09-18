@@ -216,4 +216,13 @@
   <data name="ProcessContinue" xml:space="preserve">
     <value>Kontynuacja przetwarzania</value>
   </data>
+  <data name="GenerateCode" xml:space="preserve">
+    <value>Generowanie kodu</value>
+  </data>
+  <data name="GeneratedTypes" xml:space="preserve">
+    <value>Wygenerowane typy</value>
+  </data>
+  <data name="TargetTypes" xml:space="preserve">
+    <value>Typy docelowe</value>
+  </data>
 </root>

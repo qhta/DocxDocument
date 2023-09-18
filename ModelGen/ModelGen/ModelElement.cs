@@ -125,12 +125,6 @@ public class ModelElement : IOwnedElement
   [XmlIgnore]
   public bool IsConvertedTo { get; set; }
 
-  /////// <summary>
-  /////// Xml documentation assigned to this element.
-  /////// </summary>
-  //[XmlIgnore]
-  //public ElementDocs? Documentation { get; set; }
-
   /// <summary>
   /// Single-paragraph description.
   /// </summary>

@@ -8,7 +8,6 @@ namespace ModelGen;
 /// <summary>
 /// Represents information of scanned and generated type.
 /// </summary>
-[XmlRoot("Type")]
 public class TypeInfo : ModelElement
 {
   /// <summary>

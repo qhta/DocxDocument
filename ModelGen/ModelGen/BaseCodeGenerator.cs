@@ -3,11 +3,14 @@
 
 namespace ModelGen;
 
-public class BaseCodeGenerator
+public abstract class BaseCodeGenerator
 {
   public string ProjectName { get; protected set; } = null!;
   public string OutputPath { get; protected set; } = null!;
 
+  public bool CancelRequest { get; set; }
+
+  public event ProgressTypeEvent? OnGeneratingType;
 
   public int GeneratedClassesCount { get; protected set; }
   public int GeneratedInterfacesCount { get; protected set; }
@@ -40,6 +43,11 @@ public class BaseCodeGenerator
     }
     return nspace;
   }
+
+  public abstract TimeSpan GenerateCode(IEnumerable<Namespace> types);
+
+  //protected abstract TimeSpan GenerateCode(IEnumerable<TypeInfo> types);
+
 
   #region CustomAttributes generation
 
