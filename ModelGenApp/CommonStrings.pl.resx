@@ -557,4 +557,7 @@ zdefiniowanej w typie wyliczeniowym.</value>
   <data name="Continue" xml:space="preserve">
     <value>Kontynuuj</value>
   </data>
+  <data name="ShowTargetNamespaces" xml:space="preserve">
+    <value>Pokaż docelowe przestrzenie nazw</value>
+  </data>
 </root>

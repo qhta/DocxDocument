@@ -6,14 +6,6 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v6.0": {
-      "DeepEqual/4.2.1": {
-        "runtime": {
-          "lib/net6.0/DeepEqual.dll": {
-            "assemblyVersion": "4.2.1.0",
-            "fileVersion": "4.2.1.0"
-          }
-        }
-      },
       "DocumentFormat.OpenXml/2.20.0": {
         "dependencies": {
           "System.IO.Packaging": "7.0.0"
@@ -36,17 +28,6 @@
           "lib/netstandard2.0/HtmlAgilityPack.dll": {
             "assemblyVersion": "1.8.9.0",
             "fileVersion": "1.8.9.0"
-          }
-        }
-      },
-      "JsonKnownTypes/0.5.5": {
-        "dependencies": {
-          "Newtonsoft.Json": "13.0.3"
-        },
-        "runtime": {
-          "lib/netstandard2.0/JsonKnownTypes.dll": {
-            "assemblyVersion": "0.5.2.0",
-            "fileVersion": "0.5.2.0"
           }
         }
       },
@@ -1292,13 +1273,6 @@
     }
   },
   "libraries": {
-    "DeepEqual/4.2.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-aaBFzb5mQdYyZ4hVWcVobS+iq9+aHpgcYgQXcV1l54vjAVONVq6H5F4nnGiyb+ErBhyy8eRvIPkJ3BGSWiflgg==",
-      "path": "deepequal/4.2.1",
-      "hashPath": "deepequal.4.2.1.nupkg.sha512"
-    },
     "DocumentFormat.OpenXml/2.20.0": {
       "type": "package",
       "serviceable": true,
@@ -1312,13 +1286,6 @@
       "sha512": "sha512-qrgNgaJIuOSNxUGEHwRjDgR2yOdJ7UIU/C9mLg3y10IiCgXXFWacbC0+DBT5Je9NF4AdvuSRwFY5SLmhm3vUEQ==",
       "path": "htmlagilitypack/1.8.9",
       "hashPath": "htmlagilitypack.1.8.9.nupkg.sha512"
-    },
-    "JsonKnownTypes/0.5.5": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-karxW7+PYD15Du7Bz8OIS8g+PCbz+SONUmJDYaH/UWRPIpDuRPbd3BlsD16gUf7OxIT5RGfxlLk6krq5il6g5A==",
-      "path": "jsonknowntypes/0.5.5",
-      "hashPath": "jsonknowntypes.0.5.5.nupkg.sha512"
     },
     "Microsoft.CSharp/4.3.0": {
       "type": "package",
