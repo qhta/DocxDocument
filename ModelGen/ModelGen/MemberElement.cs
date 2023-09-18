@@ -19,7 +19,8 @@ public class MemberElement : ModelElement
   }
 
   [XmlIgnore]
-  public TypeInfo? DeclaringType => (TypeInfo?)Owner;
+  public TypeInfo? DeclaringType { get => (TypeInfo?)Owner; set => Owner = value; }
+
   [XmlIgnore]
   public System.Reflection.MemberInfo? ReflectionInfo { get; set; }
 

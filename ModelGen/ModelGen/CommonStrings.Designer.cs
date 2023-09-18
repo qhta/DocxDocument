@@ -142,6 +142,24 @@ namespace ModelGen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Generate code.
+        /// </summary>
+        internal static string GenerateCode {
+            get {
+                return ResourceManager.GetString("GenerateCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Generated types.
+        /// </summary>
+        internal static string GeneratedTypes {
+            get {
+                return ResourceManager.GetString("GeneratedTypes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to in {0} namespaces.
         /// </summary>
         internal static string in_0_namespaces {
@@ -273,6 +291,15 @@ namespace ModelGen {
         internal static string Start_of_phase_0 {
             get {
                 return ResourceManager.GetString("Start_of_phase_0", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Target types.
+        /// </summary>
+        internal static string TargetTypes {
+            get {
+                return ResourceManager.GetString("TargetTypes", resourceCulture);
             }
         }
         

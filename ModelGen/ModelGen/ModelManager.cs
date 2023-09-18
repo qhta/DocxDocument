@@ -244,76 +244,6 @@ public static class ModelManager
     return false;
   }
 
-  //public static TypeInfo GetTargetType(this TypeInfo typeInfo)
-  //{
-  //  if (typeInfo.TargetType != null)
-  //    return typeInfo.TargetType;
-  //  var result = GetConversionTargetOrSelf(typeInfo);
-  //  if (result.TargetType != null)
-  //  {
-  //    typeInfo.TargetType = result.TargetType;
-  //    return typeInfo.TargetType;
-  //  }
-  //  //var targetTypeName = result.GetFullName(false, false);
-  //  //var type = Type.GetType(targetTypeName);
-  //  //if (type==null)
-  //  //{
-  //  //  if (ModelData.ModelTypes.Count==0)
-  //  //    ModelData.LoadModelTypes(Assembly.Load("DocumentModel"));
-  //  //  ModelData.ModelTypes.TryGetValue(targetTypeName, out type);
-  //  //}
-  //  //if (type != null)
-  //  //{
-  //  //  result = TypeManager.RegisterTargetType(type);
-  //  //}
-  //  typeInfo.TargetType = result;
-  //  return result;
-  //}
-
-  //public static TypeInfo GetTargetType(this PropInfo propInfo, bool getFromDeclaringType = true)
-  //{
-  //  if (propInfo.Name == "DocumentId")
-  //    TestTools.Stop();
-  //  if (propInfo.TargetType != null)
-  //    return propInfo.TargetType;
-  //  if (getFromDeclaringType)
-  //    propInfo.TargetType = GetTargetTypeFromDeclaringType(propInfo);
-  //  if (propInfo.TargetType !=null)
-  //    return propInfo.TargetType;
-  //  else
-  //    return propInfo.TargetType = GetTargetTypeFromMetadata(propInfo);
-  //}
-
-  //public static TypeInfo? GetTargetTypeFromDeclaringType(this PropInfo propInfo)
-  //{
-  //  if (propInfo.DeclaringType != null)
-  //  {
-  //    Type? modelType = null;
-  //    if (propInfo.DeclaringType.TargetType == null)
-  //    {
-  //      var targetTypeName = propInfo.DeclaringType.Namespace + "." + propInfo.DeclaringType.Name;
-  //      modelType = Type.GetType(targetTypeName);
-  //      if (modelType == null)
-  //      {
-  //        var assembly = Assembly.Load("DocumentModel");
-  //        modelType = assembly?.GetType(targetTypeName);
-  //      }
-  //      if (modelType == null)
-  //        TestTools.Stop();
-  //      propInfo.DeclaringType.TargetType = modelType;
-  //    }
-  //    var targetType = modelType?.GetProperty(propInfo.Name)?.PropertyType;
-  //    if (targetType != null && targetType.Name.StartsWith("Nullable`"))
-  //      targetType = targetType.GenericTypeArguments.FirstOrDefault();
-  //    if (targetType != null)
-  //    {
-  //      if (TypeManager.TryGetTypeInfo(targetType, out var targetTypeInfo))
-  //        return targetTypeInfo;
-  //    }
-  //  }
-  //  return null;
-  //}
-
   public static TypeInfo GetTargetType(this PropInfo propInfo)
   {
     if (propInfo.TargetType != null)
@@ -363,8 +293,6 @@ public static class ModelManager
 
   public static TypeInfo? GetOriginType(this TypeInfo typeInfo)
   {
-    if (typeInfo.Name == "Settings")
-      TestTools.Stop();
     var result = GetConversionSource(typeInfo);
     return result;
   }
@@ -704,6 +632,7 @@ public static class ModelManager
       {
         ns.TargetName = targetName;
         var nspace = TypeManager.RegisterNamespace(targetName);
+        nspace.TargetName = targetName;
         nspace.Clear();
         n++;
       }
@@ -746,8 +675,6 @@ public static class ModelManager
     if (newNamespace != targetNamespace)
     {
       nspace = TypeManager.RegisterNamespace(newNamespace);
-      nspace.IsTarget = true;
-
     }
     else
       nspace = TypeManager.GetNamespace(newNamespace);

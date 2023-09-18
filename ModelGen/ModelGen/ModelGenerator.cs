@@ -1,13 +1,4 @@
-﻿using System.CodeDom.Compiler;
-
-using DocumentFormat.OpenXml;
-
-using Namotion.Reflection;
-
-using Qhta.TypeUtils;
-
-
-namespace ModelGen;
+﻿namespace ModelGen;
 
 public class ModelGenerator : BaseCodeGenerator
 {
@@ -15,6 +6,12 @@ public class ModelGenerator : BaseCodeGenerator
   {
     ProjectName = projectName;
     OutputPath = outputPath;
+  }
+
+
+  public override TimeSpan GenerateCode(IEnumerable<Namespace> nspaces)
+  {
+    throw new NotImplementedException();
   }
 
   //public void PrepareProjects()

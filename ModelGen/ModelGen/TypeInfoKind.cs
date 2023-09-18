@@ -18,4 +18,6 @@ public enum TypeInfoKind
   RenamedTypes,
   TypesWithSameName,
   ConvertedTypes,
+  TargetTypes,
+  GeneratedTypes,
 }

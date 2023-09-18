@@ -8,6 +8,7 @@ public class Namespace
 
   public OwnedCollection<TypeInfo> Types { get; private set; }
 
+  [XmlIgnore]
   public Dictionary<string, TypeInfo> TypeNames { get; private set; }
 
   public IEnumerable<TypeInfo> AcceptedTypes(PPS phase) => Types.Where(x => x.IsAcceptedTo(phase));
@@ -20,7 +21,7 @@ public class Namespace
     TypeNames = new Dictionary<string, TypeInfo>();
   }
 
-  public bool IsTarget { get; set; }
+  public bool IsTarget => this.TargetName == this.OriginalName;
 
   private void Types_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {

@@ -237,16 +237,16 @@ public class ModelValidator
 
   public bool ValidateConversion(TypeInfo typeInfo)
   {
-    if (typeInfo.IsAcceptedAfter(PPS.ConvertTypes) && !typeInfo.IsConstructedGenericType && !typeInfo.OriginalNamespace.StartsWith("System"))
-    {
-      //var targetNamespace = typeInfo.TargetNamespace;
-      var targetType = typeInfo.TargetType;
-      if (targetType == null)
-      {
-        typeInfo.AddError(PhaseNum, ErrorCode.MissingTargetType);
-        return false;
-      }
-    }
+    //if (typeInfo.IsAcceptedAfter(PPS.ConvertTypes) && !typeInfo.IsConstructedGenericType && !typeInfo.OriginalNamespace.StartsWith("System"))
+    //{
+    //  //var targetNamespace = typeInfo.TargetNamespace;
+    //  var targetType = typeInfo.TargetType;
+    //  if (targetType == null)
+    //  {
+    //    typeInfo.AddError(PhaseNum, ErrorCode.MissingTargetType);
+    //    return false;
+    //  }
+    //}
     return true;
   }
 }

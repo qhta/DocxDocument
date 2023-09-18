@@ -28,13 +28,23 @@ public abstract class BaseCreator
   protected string OutputPath { get; set; }
 
 
-  public bool CancelRequest { get => ModelManager.CancelRequest; set => ModelManager.CancelRequest = value; }
+  public bool CancelRequest
+  {
+    get => ModelManager.CancelRequest;
+    set
+    {
+      ModelManager.CancelRequest = value;
+      CodeGenerator.CancelRequest = value;
+    }
+  }
 
   public bool IsRun { get; set; }
 
   public PPS PhaseDone { get; private set; }
 
   public ModelMonitor? ModelMonitor { get; set; }
+
+  public BaseCodeGenerator CodeGenerator { get; set; } = null!;
 
   public BaseCreator(string projectName, string outputPath)
   {
@@ -76,12 +86,11 @@ public abstract class BaseCreator
 
   public bool CanContinue => PhaseDone < StopAtPhase;
 
-  public void RunOn(Type type, ProcessOptions options, bool continueProcess = false)
+  public virtual void RunOn(Type type, ProcessOptions options, bool continueProcess = false)
   {
     Options = options;
     IsRun = true;
-    //var displayOptions = Options.DisplayOptions;
-    //if (displayOptions == null)
+
     var displayOptions = new DisplayOptions();
 
     var monitorDisplaySelector = MDS.None;
@@ -89,7 +98,7 @@ public abstract class BaseCreator
     if (CancelRequest)
       return;
     ModelMonitor?.ShowProcessStart(
-        (continueProcess ? CommonStrings.ProcessContinue :CommonStrings.ProcessStart) +":\n" + type.FullName);
+        (continueProcess ? CommonStrings.ProcessContinue : CommonStrings.ProcessStart) + ":\n" + type.FullName);
     SourceAssembly = type.Assembly;
     TotalTypesCount = SourceAssembly.ExportedTypes.Count();
     TimeSpan totalTime = TimeSpan.Zero;
@@ -340,20 +349,26 @@ public abstract class BaseCreator
     ModelMonitor?.ShowPhaseStart(PPS.ConvertTypes, CommonStrings.ConvertTypes);
     DateTime t1 = DateTime.Now;
     ModelManager.OnConvertingType += ModelManager_OnConvertingType;
-    var types = TypeManager.AllTypes.Where(typeInfo => typeInfo.IsAcceptedTo(PPS.Rename)
+    var types = TypeManager.AllTypes.Where(typeInfo => typeInfo.IsAcceptedTo(PPS.ConvertTypes)
               && typeInfo.OriginalNamespace.StartsWith("DocumentFormat")
               && !typeInfo.IsGenericTypeDefinition).ToArray();
     var convertedTypesCount = ModelManager.ConvertTypes(types);
     ModelManager.OnConvertingType -= ModelManager_OnConvertingType;
 
-    var invalidTypes = 0;
+    var targetTypesCount = 0;
+    var invalidTypesCount = 0;
     if (Options.ValidateConversion && !CancelRequest)
     {
-      var ModelValidator = new ModelValidator(PPS.ConvertTypes, NTS.Origin, MSS.Accepted, TDS.Metadata);
+      var ModelValidator = new ModelValidator(PPS.ConvertTypes, NTS.Target, MSS.Accepted, TDS.Metadata);
+      var newNS = TypeManager.AllNamespaces.Where(ns => ns.IsTarget).ToArray();
+      var newTypes = TypeManager.AllNamespaces.Where(ns => ns.IsTarget)
+        .SelectMany(ns=>ns.Types)
+        .Where(typeInfo=>!typeInfo.IsGenericTypeDefinition).ToArray().ToArray();
+      targetTypesCount = newTypes.Count();
       ModelValidator.OnValidatingType += ModelValidator_OnValidatingType;
-      if (!ModelValidator.ValidateTypes(PPS.ConvertTypes, types))
+      if (!ModelValidator.ValidateTypes(PPS.ConvertTypes, newTypes))
       {
-        invalidTypes = ModelValidator.InvalidTypesCount;
+        invalidTypesCount = ModelValidator.InvalidTypesCount;
       }
       ModelValidator.OnValidatingType += ModelValidator_OnValidatingType;
     }
@@ -369,8 +384,10 @@ public abstract class BaseCreator
         }
     };
 
-    if (invalidTypes > 0)
-      summaryInfo.Summary.Add(TypeInfoKind.InvalidTypes, invalidTypes);
+    if (targetTypesCount > 0)
+      summaryInfo.Summary.Add(TypeInfoKind.TargetTypes, targetTypesCount);
+    if (invalidTypesCount > 0)
+      summaryInfo.Summary.Add(TypeInfoKind.InvalidTypes, invalidTypesCount);
 
     ModelMonitor?.ShowPhaseEnd(PPS.ConvertTypes, summaryInfo);
     return ts;
@@ -386,70 +403,54 @@ public abstract class BaseCreator
     });
   }
 
-  //protected TimeSpan CheckTypeUsage()
-  //{
-  //  ModelMonitor?.ShowPhaseStart("Checking types usage");
-  //  DateTime t1 = DateTime.Now;
-  //  ModelManager.OnCheckingUsage += ModelManager_OnCheckingUsage;
-  //  foreach (var type in TypeManager.AcceptedTypes.ToArray())
-  //  {
-  //    ModelManager.CheckTypeUsage(type);
-  //  }
-  //  ModelManager.OnCheckingUsage -= ModelManager_OnCheckingUsage;
-  //  DateTime t2 = DateTime.Now;
-  //  var ts = t2 - t1;
-  //  var usedTypesCount = TypeManager.UsedTypes.Count();
-  //  var acceptedTypesCount = TypeManager.AcceptedTypes.Count();
-  //  ModelMonitor?.ShowPhaseEnd("Checking type usage", new SummaryInfo
-  //  {
-  //    Time = ts,
-  //    Summary = new Dictionary<string, object>{
-  //      {"Used types", usedTypesCount },
-  //      {"Accepted types", acceptedTypesCount },
-  //      }
-  //  });
-  //  return ts;
-  //}
+  protected TimeSpan GenerateCode()
+  {
+    ModelMonitor?.ShowPhaseStart(PPS.ConvertTypes, CommonStrings.GenerateCode);
+    DateTime t1 = DateTime.Now;
+    CodeGenerator.OnGeneratingType += ModelManager_OnConvertingType;
+    var nspaces = TypeManager.AllNamespaces.Where(item=>item.IsTarget);
+    var generatedTypesCount = CodeGenerator.GenerateCode(nspaces);
+    CodeGenerator.OnGeneratingType -= ModelManager_OnConvertingType;
 
-  //protected TimeSpan ValidateTypes()
-  //{
-  //  ModelMonitor?.ShowPhaseStart("Validating types & namespaces");
-  //  DateTime t1 = DateTime.Now;
-  //  var checkedTypesCount = 0;
-  //  var checkedNamespacesCount = 0;
-  //  var fixedTypesCount = 0;
-  //  var duplicateTypesCount = 0;
-  //  foreach (var typeInfo in TypeManager.AllTypes.ToArray())
-  //  {
-  //    ModelMonitor?.WriteSameLine($"Checked {++checkedTypesCount} types. {typeInfo.GetFullName(true, true, true)}");
-  //    if (!ModelManager.ValidateType(typeInfo))
-  //      fixedTypesCount++;
-  //  }
-  //  //invalidTypesCount += ModelManager.CheckNamespacesDuplicatedTypesAsync((int repaired, int waiting)
-  //  //  =>
-  //  //  ModelMonitor?.WriteSameLine($"Repaired {repaired} types. Waiting for {waiting} namespaces ")
-  //  //  );
-  //  foreach (var nspace in TypeManager.GetNamespaces(NTS.Target))
-  //  {
-  //    ModelMonitor?.WriteSameLine($"Checked {++checkedNamespacesCount} namespaces for duplicate type names. {nspace}");
-  //    int n = ModelManager.CheckNamespaceDuplicatedTypes(nspace);
-  //    if (n > 0)
-  //      duplicateTypesCount += n;
-  //  }
-  //  DateTime t2 = DateTime.Now;
-  //  var ts = t2 - t1;
-  //  ModelMonitor?.ShowPhaseEnd("Validating types & namespaces", new SummaryInfo
-  //  {
-  //    Time = ts,
-  //    Summary = new Dictionary<string, object>{
-  //      {"Fixed types", fixedTypesCount },
-  //      {"Duplicated types", duplicateTypesCount },
-  //      }
-  //  });
-  //  return ts;
-  //}
+    var invalidTypes = 0;
+    if (Options.ValidateConversion && !CancelRequest)
+    {
+      //var ModelValidator = new ModelValidator(PPS.ConvertTypes, NTS.Origin, MSS.Accepted, TDS.Metadata);
+      //ModelValidator.OnValidatingType += ModelValidator_OnValidatingType;
+      //if (!ModelValidator.ValidateTypes(PPS.ConvertTypes, types))
+      //{
+      //  invalidTypes = ModelValidator.InvalidTypesCount;
+      //}
+      //ModelValidator.OnValidatingType += ModelValidator_OnValidatingType;
+    }
 
-  protected abstract TimeSpan GenerateCode();
+    DateTime t2 = DateTime.Now;
+    var ts = t2 - t1;
+    var summaryInfo = new SummaryInfo
+    {
+      Time = ts,
+      Summary = new Dictionary<TypeInfoKind, object>{
+        {TypeInfoKind.CheckedTypes, TotalTypesCount },
+        {TypeInfoKind.GeneratedTypes, generatedTypesCount },
+        }
+    };
+
+    if (invalidTypes > 0)
+      summaryInfo.Summary.Add(TypeInfoKind.InvalidTypes, invalidTypes);
+
+    ModelMonitor?.ShowPhaseEnd(PPS.CodeGeneration, summaryInfo);
+    return ts;
+  }
+
+  private void ModelManager_OnGeneratingCode(ProgressTypeInfo info)
+  {
+    ModelMonitor?.ShowPhaseProgress(PPS.ConvertTypes, new ProgressInfo
+    {
+      FormatStr = CommonStrings.converting_0_of_1_types_converted_2_types,
+      Args = new object[] { info.CheckedTypes ?? 0, info.TotalTypes ?? 0, info.ProcessedTypes ?? 0 },
+      PostStr = $"{info.Current?.OriginalNamespace}.{info.Current?.OriginalName} -> {info.Current?.GetTargetNamespace()}.{info.Current?.Name}"
+    });
+  }
   #endregion
 
   #region monitoring callbacks
