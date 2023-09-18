@@ -45,8 +45,9 @@ public static class CommentDocsParser
               else
                 AddToSummary(modelElement, subElement);
             }
-            else
+            else if (subElement.Name!="see")
             {
+              //Debug.WriteLine(subElement.Name);
               AddToSummary(modelElement, subElement);
             }
           }
@@ -189,6 +190,8 @@ public static class CommentDocsParser
 
   private static void AddToSummary(ModelElement modelElement, XElement xElement)
   {
+    if (modelElement.Name=="TypedOpenXmlPart")
+      Debug.Assert(true);
     if (modelElement.Documentation == null)
       modelElement.Documentation = new ElementDocs();
     var summary = modelElement.Documentation.FirstOrDefault(item => item.Name == "summary");
@@ -207,6 +210,8 @@ public static class CommentDocsParser
   /// <param name="xElement"></param>
   private static void AddToRemarks(ModelElement modelElement, XElement xElement)
   {
+    if (modelElement.Name=="TypedOpenXmlPart")
+      Debug.Assert(true);
     if (modelElement.Documentation == null)
       modelElement.Documentation = new ElementDocs();
     var remarks = modelElement.Documentation.FirstOrDefault(item => item.Name == "remarks");

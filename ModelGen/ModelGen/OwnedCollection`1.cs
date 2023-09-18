@@ -7,7 +7,23 @@ public class OwnedCollection<T> : ObservableCollection<T>, ICollection, ICollect
   private object Owner { get; }
 
   public OwnedCollection(object owner)
-  { this.Owner = owner; }
+  { 
+    this.Owner = owner;
+    CollectionChanged += OwnedCollection_CollectionChanged;
+  }
+
+  private void OwnedCollection_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
+  {
+    if (args.Action == NotifyCollectionChangedAction.Add)
+    {
+      if (args.NewItems!=null)
+        foreach (var item in args.NewItems)
+        {
+          if (item is IOwnedElement iOwnedElement)
+            iOwnedElement.Owner = Owner;
+        }
+    }
+  }
 
   //public IEnumerator<T> GetEnumerator()
   //{

@@ -73,6 +73,10 @@ public class PropInfoViewModel : ViewModel<PropInfo>, IAcceptable
       }
       return _DeclaringType;
     }
+    //set
+    //{
+    //  _DeclaringType = value;
+    //}
   }
   private TypeInfoViewModel? _DeclaringType;
 

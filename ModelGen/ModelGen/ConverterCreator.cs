@@ -2,7 +2,6 @@
 
 public class ConverterCreator: BaseCreator
 {
-  private ConverterGenerator CodeGenerator = null!;
 
   public ConverterCreator(string projectName, string outputPath): base(projectName, outputPath)
   {
@@ -109,37 +108,5 @@ public class ConverterCreator: BaseCreator
   //  //ModelMonitorDisplay.ShowUnusedTypes();
   //  return ts;
   //}
-
-  protected override TimeSpan GenerateCode()
-  {
-    //CodeGenerator.PrepareProjects();
-    int generatedCount = 0;
-    ModelMonitor?.ShowPhaseStart(PPS.CodeGeneration,"Generating converters");
-    DateTime t1 = DateTime.Now;
-    foreach (var typeInfo in TypeManager.TypesAcceptedTo(PPS.CodeGeneration).ToArray())
-    {
-      if (typeInfo.GetTargetNamespace().StartsWith("System"))
-        continue;
-      if (typeInfo.Name.Contains('`'))
-        continue;
-      if (!typeInfo.IsUsed)
-        continue;
-      //ModelMonitor?.WriteSameLine($"Generated {generatedCount} types. {typeInfo.GetFullName(false)}");
-      if (CodeGenerator.GenerateConverterFile(typeInfo))
-        generatedCount++;
-    }
-    //CodeGenerator.GenerateGlobalUsings();
-    DateTime t2 = DateTime.Now;
-    var ts = t2 - t1;
-    //ModelMonitor?.ShowPhaseEnd(PPS.CodeGeneration, new SummaryInfo{ Time = ts, 
-    //  Summary = new Dictionary<string, object>{ 
-    //    {"Generated interfaces", CodeGenerator.GeneratedInterfacesCount }, 
-    //    {"Generated classes", CodeGenerator.GeneratedClassesCount }, 
-    //    {"Skipped types", CodeGenerator.SkippedTypesCount }, 
-    //    {"Total properties", CodeGenerator.GeneratedPropertiesCount }, 
-    //    {"Total enum values", CodeGenerator.GeneratedEnumValuesCount }, 
-    //    }});
-    return ts;
-  }
 
 }
