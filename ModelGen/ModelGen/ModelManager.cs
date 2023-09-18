@@ -45,18 +45,52 @@ public static class ModelManager
   {
     if (typeInfo.IsConverted)
       return false;
+    var converted = false;
     if (TryAddTypeTableConversion(typeInfo))
-      return true;
+      converted = true;
+    else
     if (TryAddBaseTypeConversion(typeInfo))
-      return true;
+      converted = true;
+    else
     if (TryAddValTypeConversion(typeInfo))
-      return true;
+      converted = true;
+    else
     if (TryAddValTypeConversion(typeInfo))
-      return true;
+      converted = true;
+    else
     if (TryAddGenericTypeConversion(typeInfo))
-      return true;
-    TryAddItemsProperty(typeInfo);
-    return false;
+      converted = true;
+    else
+      TryAddItemsProperty(typeInfo);
+    if (converted)
+    {
+      var targetType = typeInfo.TargetType;
+      if (targetType != null)
+      {
+        if (targetType.TargetNamespace!=null)
+        {
+          var targetNamespace = TypeManager.GetNamespace(targetType.TargetNamespace);
+          var targetTypeName = targetType.NewName ?? targetType.Name;
+          if (!targetNamespace.TypeNames.ContainsKey(targetTypeName))
+            targetNamespace.AddType(targetType);
+        }
+      }
+    }
+    else
+    {
+      var targetType = typeInfo;
+      if (targetType != null)
+      {
+        if (targetType.TargetNamespace!=null)
+        {
+          var targetNamespace = TypeManager.GetNamespace(targetType.TargetNamespace);
+          var targetTypeName = targetType.NewName ?? targetType.Name;
+          if (!targetNamespace.TypeNames.ContainsKey(targetTypeName))
+            targetNamespace.AddType(targetType);
+        }
+      }
+    }
+    return converted;
   }
 
   private static bool TryAddTypeTableConversion(TypeInfo typeInfo)
@@ -225,16 +259,16 @@ public static class ModelManager
     var itemsProperty = typeInfo.AcceptedProperties(PPS.ConvertTypes)?.FirstOrDefault(item => item.Name == "Items");
     if (itemsProperty != null)
       return false;
-    var itemRels = typeInfo.GetOutgoingRelationships(Semantics.Include).Where(rel=>rel.IsMultiple);
+    var itemRels = typeInfo.GetOutgoingRelationships(Semantics.Include).Where(rel => rel.IsMultiple);
     if (itemRels.Any())
     {
       var relsCount = itemRels.Count();
-      if (relsCount>1)
+      if (relsCount > 1)
         itemsProperty = new PropInfo("Items", typeof(DocumentModel.ElementCollection<IModelElement>));
       else
       {
         var collectionType = typeof(DocumentModel.ElementCollection<>);
-        collectionType = collectionType.MakeGenericType(new Type[]{itemRels.First().Target.Type });
+        collectionType = collectionType.MakeGenericType(new Type[] { itemRels.First().Target.Type });
         itemsProperty = new PropInfo("Items", collectionType);
       }
       itemsProperty.AddedInPhase = PPS.ConvertTypes;
