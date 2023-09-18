@@ -295,11 +295,20 @@ namespace ModelGen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Target namespaces.
+        /// </summary>
+        internal static string TargetNamespacesOnly {
+            get {
+                return ResourceManager.GetString("TargetNamespacesOnly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Target types.
         /// </summary>
-        internal static string TargetTypes {
+        internal static string TargetTypesOnly {
             get {
-                return ResourceManager.GetString("TargetTypes", resourceCulture);
+                return ResourceManager.GetString("TargetTypesOnly", resourceCulture);
             }
         }
         
