@@ -1,4 +1,4 @@
-﻿D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
+﻿
 FD:\VS\Projects\DocxDocument\ModelGenApp\App.xaml;;
 FD:\VS\Projects\DocxDocument\ModelGenApp\Views\DummyWindow.xaml;;
 FD:\VS\Projects\DocxDocument\ModelGenApp\Views\EnumsDisplayOptionsView.xaml;;
@@ -7,6 +7,7 @@ FD:\VS\Projects\DocxDocument\ModelGenApp\Views\MainWindow.xaml;;
 FD:\VS\Projects\DocxDocument\ModelGenApp\Views\ModelConfigView.xaml;;
 FD:\VS\Projects\DocxDocument\ModelGenApp\Views\ModelConfigWindow.xaml;;
 FD:\VS\Projects\DocxDocument\ModelGenApp\Views\NamespacesConfigView.xaml;;
+FD:\VS\Projects\DocxDocument\ModelGenApp\Views\NamespacesDisplayOptionsView.xaml;;
 FD:\VS\Projects\DocxDocument\ModelGenApp\Views\NamespacesListView.xaml;;
 FD:\VS\Projects\DocxDocument\ModelGenApp\Views\PhaseProgressView.xaml;;
 FD:\VS\Projects\DocxDocument\ModelGenApp\Views\PhaseResultsView.xaml;;

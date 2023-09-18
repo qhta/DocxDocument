@@ -1,6 +1,4 @@
-﻿
-
-namespace ModelGen;
+﻿namespace ModelGen;
 
 /// <summary>
 /// Base creator containing common methods for both specific creators.

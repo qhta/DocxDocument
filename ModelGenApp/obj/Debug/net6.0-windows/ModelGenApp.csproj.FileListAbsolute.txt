@@ -132,3 +132,5 @@ D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\TypeRelat
 D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\pl\ModelGen.resources.dll
 D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\DocumentModel.BaseTypes.dll
 D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\DocumentModel.BaseTypes.pdb
+D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\NamespacesDisplayOptionsView.g.cs
+D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\NamespacesDisplayOptionsView.baml

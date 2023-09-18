@@ -557,4 +557,7 @@ defined in the enum type.</value>
   <data name="Continue" xml:space="preserve">
     <value>Continue</value>
   </data>
+  <data name="ShowTargetNamespaces" xml:space="preserve">
+    <value>Show target namespaces</value>
+  </data>
 </root>

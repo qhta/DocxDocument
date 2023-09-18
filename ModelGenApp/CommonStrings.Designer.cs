@@ -1031,6 +1031,15 @@ namespace ModelGenApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Show target namespaces.
+        /// </summary>
+        public static string ShowTargetNamespaces {
+            get {
+                return ResourceManager.GetString("ShowTargetNamespaces", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Start.
         /// </summary>
         public static string Start {

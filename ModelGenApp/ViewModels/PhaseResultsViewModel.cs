@@ -102,9 +102,13 @@ public abstract partial class PhaseResultsViewModel : ViewModel
       {
         var infoName = info.Key.ToString();
         infoName = CommonStrings.ResourceManager.GetString(infoName, CultureInfo.CurrentUICulture) ?? infoName.DeCamelCase();
-        Summary.Add(new PhaseSummaryInfoViewModel 
-        { Name = infoName, InfoKind = info.Key, Value = info.Value, 
-          FilterEnabled = TypeInfoViewModelFilter.CanFilter(info.Key) });
+        Summary.Add(new PhaseSummaryInfoViewModel
+        {
+          Name = infoName,
+          InfoKind = info.Key,
+          Value = info.Value,
+          FilterEnabled = TypeInfoViewModelFilter.CanFilter(info.Key)
+        });
       }
     Summary.PropertyChanged += Summary_PropertyChanged;
   }
@@ -164,7 +168,7 @@ public abstract partial class PhaseResultsViewModel : ViewModel
     Types.FillItemsAsync();
   }
 
-    public async void FillPropertiesAsync()
+  public async void FillPropertiesAsync()
   {
     await Task.Run(() => FillProperties());
   }
@@ -365,11 +369,19 @@ public abstract partial class PhaseResultsViewModel : ViewModel
 
   public void SetFilter(TypeInfoKind? filter)
   {
-    if (filter != null)
-      Filter = new TypeInfoViewModelFilter((TypeInfoKind)filter, PhaseNum);
+    if (filter == TypeInfoKind.TargetTypes)
+    {
+      ShowTargetTypesOnly = true;
+    }
     else
-      Filter = null;
-    ApplyFilter();
+    {
+      ShowTargetTypesOnly = false;
+      if (filter != null)
+        Filter = new TypeInfoViewModelFilter((TypeInfoKind)filter, PhaseNum);
+      else
+        Filter = null;
+      ApplyFilter();
+    }
   }
 
   public void ApplyFilter()
@@ -379,7 +391,8 @@ public abstract partial class PhaseResultsViewModel : ViewModel
     if (_Types != null)
       FillTypes();
     if (_Properties != null)
-      FillProperties();  }
+      FillProperties();
+  }
   #endregion
 
   public bool IsTargetNameVisible { get; protected set; }
@@ -388,6 +401,30 @@ public abstract partial class PhaseResultsViewModel : ViewModel
 
   public bool CanShowErrorDetails { get; protected set; }
 
+
+  public bool ShowTargetTypesOnly
+  {
+    get { return _ShowTargetTypesOnly; }
+    set
+    {
+      if (_ShowTargetTypesOnly != value)
+      {
+        _ShowTargetTypesOnly = value;
+        NotifyPropertyChanged(nameof(ShowTargetTypesOnly));
+        ReloadNamespaces();
+      }
+    }
+  }
+  private bool _ShowTargetTypesOnly;
+
+  public void ReloadNamespaces()
+  {
+    if (ShowTargetTypesOnly)
+      NamespaceTypeSelector = NTS.Target;
+    else
+      NamespaceTypeSelector = NTS.Origin;
+    FillNamespaces();
+  }
   #region SaveData
   public void SaveData(string filename)
   {

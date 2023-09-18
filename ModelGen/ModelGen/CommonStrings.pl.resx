@@ -222,7 +222,10 @@
   <data name="GeneratedTypes" xml:space="preserve">
     <value>Wygenerowane typy</value>
   </data>
-  <data name="TargetTypes" xml:space="preserve">
+  <data name="TargetTypesOnly" xml:space="preserve">
     <value>Typy docelowe</value>
+  </data>
+  <data name="TargetNamespacesOnly" xml:space="preserve">
+    <value>Docelowe przestrzenie</value>
   </data>
 </root>
