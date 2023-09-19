@@ -6,19 +6,11 @@ public record ProgressTypeInfo
   public int? TotalTypes;
   public int? CheckedTypes;
   public int? ProcessedTypes;
+  public int? Namespaces;
   public TypeInfo? Current;
 }
 
 public delegate void ProgressTypeEvent(ProgressTypeInfo info);
-
-public record RegisterProgressInfo
-{
-  public int? RegisteredNamespaces;
-  public int? RegisteredTypes;
-  public TypeInfo? Current;
-}
-
-public delegate void RegisterProgressEvent(RegisterProgressInfo info);
 
 public record ReflectionProgressInfo
 {

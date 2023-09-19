@@ -22,6 +22,7 @@ public class NamespacesConfigViewModel : ModelConfigViewModel
 
   public override void GetData(ModelConfig configData)
   {
+    Namespaces.Clear();
     base.GetData(configData);
     var nsNames = _Assembly.GetExportedTypes()
       .Select(t => t.Namespace)

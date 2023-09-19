@@ -228,4 +228,7 @@
   <data name="TargetNamespacesOnly" xml:space="preserve">
     <value>Target namespaces</value>
   </data>
+  <data name="generated_0_of_1_types_in_2_namespaces" xml:space="preserve">
+    <value>generated {0} of {1} types in {2} namespaces</value>
+  </data>
 </root>

@@ -1,0 +1,19 @@
+namespace DocumentModel.Wordprocessing;
+
+
+/// <summary>
+///   This element specifies that the nearest ancestor structured document tag shall be a drop-down list when displayed in the document.
+/// </summary>
+public partial class SdtContentDropDownList
+{
+  
+  /// <summary>
+  ///   Drop-down List Last Saved Value
+  /// </summary>
+  [Nullable((Byte)2)]
+  [SchemaAttr("w:lastValue")]
+  public String? LastValue { get; set; }
+  
+  public DocumentModel.ElementCollection<DocumentModel.Wordprocessing.ListItem>? Items { get; set; }
+  
+}

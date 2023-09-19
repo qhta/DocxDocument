@@ -1,0 +1,13 @@
+namespace DocumentModel.Drawings;
+
+
+/// <summary>
+///   This element specifies the hyperlink information to be activated when the user's mouse is hovered over the corresponding object. The operation of the hyperlink is to have the specified action be activated when the mouse of the user hovers over the object. When this action is activated then additional attributes can be used to specify other tasks that should be performed along with the action.
+/// </summary>
+public partial class HyperlinkOnHover
+{
+  public DocumentModel.Drawings.EmbeddedWavAudioFileType? HyperlinkSound { get; set; }
+  
+  public DocumentModel.Drawings.HyperlinkExtensionList? HyperlinkExtensionList { get; set; }
+  
+}

@@ -4,7 +4,7 @@ namespace ModelGen;
 
 public static class ModelManager
 {
-  public static event RegisterProgressEvent? OnScanningType;
+  public static event ProgressTypeEvent? OnScanningType;
   public static event ProgressTypeEvent? OnRenamingType;
   public static event ProgressTypeEvent? OnConvertingType;
 
@@ -422,7 +422,7 @@ public static class ModelManager
     return true;
   }
 
-  private static void TypeManager_OnRegistering(RegisterProgressInfo info)
+  private static void TypeManager_OnRegistering(ProgressTypeInfo info)
   {
     OnScanningType?.Invoke(info);
   }
@@ -660,7 +660,8 @@ public static class ModelManager
   public static int RenameNamespaces()
   {
     int n = 0;
-    foreach (var ns in TypeManager.AllNamespaces.ToList())
+    foreach (var ns in TypeManager.AllNamespaces
+      .Where(nspace => !ModelConfig.Instance.ExcludedNamespaces.Contains(nspace.OriginalName)).ToList())
     {
       if (ModelConfig.Instance.TranslatedNamespaces.TryGetValue(ns.OriginalName, out var targetName))
       {

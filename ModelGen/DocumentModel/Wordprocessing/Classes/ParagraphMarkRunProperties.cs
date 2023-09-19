@@ -1,0 +1,141 @@
+namespace DocumentModel.Wordprocessing;
+
+
+/// <summary>
+///   This element specifies the set of run properties applied to the glyph used to represent the physical location of the paragraph mark for this paragraph. This paragraph mark, being a physical character in the document, can be formatted, and therefore shall be capable of representing this formatting like any other character in the document.
+/// </summary>
+public partial class ParagraphMarkRunProperties
+{
+  
+  /// <summary>
+  ///   Inserted Paragraph.
+  /// </summary>
+  public DocumentModel.Wordprocessing.TrackChangeType? Inserted { get; set; }
+  
+  
+  /// <summary>
+  ///   Deleted Paragraph.
+  /// </summary>
+  public DocumentModel.Wordprocessing.TrackChangeType? Deleted { get; set; }
+  
+  
+  /// <summary>
+  ///   Move Source Paragraph.
+  /// </summary>
+  public DocumentModel.Wordprocessing.TrackChangeType? MoveFrom { get; set; }
+  
+  
+  /// <summary>
+  ///   Move Destination Paragraph.
+  /// </summary>
+  public DocumentModel.Wordprocessing.TrackChangeType? MoveTo { get; set; }
+  
+  public DocumentModel.Wordprocessing.TrackChangeType? ConflictInsertion { get; set; }
+  
+  public DocumentModel.Wordprocessing.TrackChangeType? ConflictDeletion { get; set; }
+  
+  public String? RunStyle { get; set; }
+  
+  public DocumentModel.Wordprocessing.RunFonts? RunFonts { get; set; }
+  
+  public Boolean? Bold { get; set; }
+  
+  public Boolean? BoldComplexScript { get; set; }
+  
+  public Boolean? Italic { get; set; }
+  
+  public Boolean? ItalicComplexScript { get; set; }
+  
+  public Boolean? Caps { get; set; }
+  
+  public Boolean? SmallCaps { get; set; }
+  
+  public Boolean? Strike { get; set; }
+  
+  public Boolean? DoubleStrike { get; set; }
+  
+  public Boolean? Outline { get; set; }
+  
+  public Boolean? Shadow { get; set; }
+  
+  public Boolean? Emboss { get; set; }
+  
+  public Boolean? Imprint { get; set; }
+  
+  public Boolean? NoProof { get; set; }
+  
+  public Boolean? SnapToGrid { get; set; }
+  
+  public Boolean? Vanish { get; set; }
+  
+  public Boolean? WebHidden { get; set; }
+  
+  public DocumentModel.Wordprocessing.Color? Color { get; set; }
+  
+  public Int32? Spacing { get; set; }
+  
+  public Int64? CharacterScale { get; set; }
+  
+  public UInt32? Kern { get; set; }
+  
+  public String? Position { get; set; }
+  
+  public String? FontSize { get; set; }
+  
+  public String? FontSizeComplexScript { get; set; }
+  
+  public DocumentModel.Wordprocessing.HighlightColorValues? Highlight { get; set; }
+  
+  public DocumentModel.Wordprocessing.Underline? Underline { get; set; }
+  
+  public DocumentModel.Wordprocessing.TextEffectValues? TextEffect { get; set; }
+  
+  public DocumentModel.Wordprocessing.BorderType? Border { get; set; }
+  
+  public DocumentModel.Wordprocessing.Shading? Shading { get; set; }
+  
+  public DocumentModel.Wordprocessing.FitText? FitText { get; set; }
+  
+  public DocumentModel.Wordprocessing.VerticalPositionValues? VerticalTextAlignment { get; set; }
+  
+  public Boolean? RightToLeftText { get; set; }
+  
+  public Boolean? ComplexScript { get; set; }
+  
+  public DocumentModel.Wordprocessing.EmphasisMarkValues? Emphasis { get; set; }
+  
+  public DocumentModel.Wordprocessing.LanguageType? Languages { get; set; }
+  
+  public DocumentModel.Wordprocessing.EastAsianLayout? EastAsianLayout { get; set; }
+  
+  public Boolean? SpecVanish { get; set; }
+  
+  public DocumentModel.Wordprocessing.Glow? Glow { get; set; }
+  
+  public DocumentModel.Wordprocessing.Shadow? Shadow { get; set; }
+  
+  public DocumentModel.Wordprocessing.Reflection? Reflection { get; set; }
+  
+  public DocumentModel.Wordprocessing.TextOutlineEffect? TextOutlineEffect { get; set; }
+  
+  public DocumentModel.Wordprocessing.FillTextEffect? FillTextEffect { get; set; }
+  
+  public DocumentModel.Wordprocessing.Scene3D? Scene3D { get; set; }
+  
+  public DocumentModel.Wordprocessing.Properties3D? Properties3D { get; set; }
+  
+  public DocumentModel.Wordprocessing.LigaturesValues? Ligatures { get; set; }
+  
+  public DocumentModel.Wordprocessing.NumberFormValues? NumberingFormat { get; set; }
+  
+  public DocumentModel.Wordprocessing.NumberSpacingValues? NumberSpacing { get; set; }
+  
+  public DocumentModel.Wordprocessing.StylisticSets? StylisticSets { get; set; }
+  
+  public DocumentModel.Wordprocessing.OnOffValues? ContextualAlternatives { get; set; }
+  
+  public Boolean? OfficeMath { get; set; }
+  
+  public DocumentModel.Wordprocessing.ParagraphMarkRunPropertiesChange? ParagraphMarkRunPropertiesChange { get; set; }
+  
+}

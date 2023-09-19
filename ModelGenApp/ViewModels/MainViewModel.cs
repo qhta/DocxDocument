@@ -142,14 +142,14 @@ public class MainViewModel : ViewModel
     ProcessOptionsMgr.SaveInstance((ProcessOptions)options);
     if (!continueProcess)
     {
-      var filePath = Assembly.GetExecutingAssembly().Location;
-      var index = filePath.IndexOf(@"\bin");
-      if (index > 0)
-        filePath = filePath.Substring(0, index);
-      filePath = Path.GetDirectoryName(filePath) ?? "";
-      filePath = Path.GetDirectoryName(filePath) ?? "";
-      filePath = Path.Combine(filePath, @"ModelGen\DocumentModel");
-      ModelCreator = new ModelCreator("DocumentModel", filePath);
+      //var filePath = Assembly.GetExecutingAssembly().Location;
+      //var index = filePath.IndexOf(@"\bin");
+      //if (index > 0)
+      //  filePath = filePath.Substring(0, index);
+      //filePath = Path.GetDirectoryName(filePath) ?? "";
+      //filePath = Path.GetDirectoryName(filePath) ?? "";
+      //filePath = Path.Combine(filePath, @"ModelGen\DocumentModel");
+      ModelCreator = new ModelCreator("DocumentModel", this.ProcessOptionsVM.ModelCodeOutputPath);
     }
     if (ModelCreator != null)
     {

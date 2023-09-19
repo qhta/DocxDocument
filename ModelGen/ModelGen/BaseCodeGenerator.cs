@@ -10,7 +10,12 @@ public abstract class BaseCodeGenerator
 
   public bool CancelRequest { get; set; }
 
-  public event ProgressTypeEvent? OnGeneratingType;
+  public event ProgressTypeEvent? OnGeneratingType
+  {
+    add { _onGeneratingType += value; }
+    remove { _onGeneratingType -= value; }
+  }
+  protected ProgressTypeEvent? _onGeneratingType;
 
   public int GeneratedClassesCount { get; protected set; }
   public int GeneratedInterfacesCount { get; protected set; }
@@ -44,9 +49,7 @@ public abstract class BaseCodeGenerator
     return nspace;
   }
 
-  public abstract TimeSpan GenerateCode(IEnumerable<Namespace> types);
-
-  //protected abstract TimeSpan GenerateCode(IEnumerable<TypeInfo> types);
+  public abstract int GenerateCode(IEnumerable<Namespace> types);
 
 
   #region CustomAttributes generation
@@ -58,7 +61,7 @@ public abstract class BaseCodeGenerator
       bool generated = false;
       foreach (var customAttrib in attributes)
       {
-        if (customAttrib.IsAcceptedTo(PPS.CodeGeneration) is true)
+        if (customAttrib.IsAcceptedTo(PPS.CodeGen) is true)
           if (GenerateCustomAttribute(customAttrib))
             generated = true;
       }

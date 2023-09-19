@@ -1,0 +1,30 @@
+namespace DXW;
+
+
+/// <summary>
+///   Defines the LevelSuffixValues enumeration.
+/// </summary>
+public enum LevelSuffixValues
+{
+  
+  /// <summary>
+  ///   When the item is serialized out as xml, its value is &quot;tab&quot;.
+  /// </summary>
+  [EnumString("tab")]
+  Tab,
+  
+  
+  /// <summary>
+  ///   When the item is serialized out as xml, its value is &quot;space&quot;.
+  /// </summary>
+  [EnumString("space")]
+  Space,
+  
+  
+  /// <summary>
+  ///   When the item is serialized out as xml, its value is &quot;nothing&quot;.
+  /// </summary>
+  [EnumString("nothing")]
+  Nothing,
+  
+}

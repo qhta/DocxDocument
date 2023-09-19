@@ -1,0 +1,63 @@
+namespace DocumentModel.Math;
+
+
+/// <summary>
+///   Border Box Properties.
+/// </summary>
+public partial class BorderBoxProperties
+{
+  
+  /// <summary>
+  ///   Hide Top Edge.
+  /// </summary>
+  public DocumentModel.Math.BooleanValues? HideTop { get; set; }
+  
+  
+  /// <summary>
+  ///   Hide Bottom Edge.
+  /// </summary>
+  public DocumentModel.Math.BooleanValues? HideBottom { get; set; }
+  
+  
+  /// <summary>
+  ///   Hide Left Edge.
+  /// </summary>
+  public DocumentModel.Math.BooleanValues? HideLeft { get; set; }
+  
+  
+  /// <summary>
+  ///   Hide Right Edge.
+  /// </summary>
+  public DocumentModel.Math.BooleanValues? HideRight { get; set; }
+  
+  
+  /// <summary>
+  ///   Border Box Strikethrough Horizontal.
+  /// </summary>
+  public DocumentModel.Math.BooleanValues? StrikeHorizontal { get; set; }
+  
+  
+  /// <summary>
+  ///   Border Box Strikethrough Vertical.
+  /// </summary>
+  public DocumentModel.Math.BooleanValues? StrikeVertical { get; set; }
+  
+  
+  /// <summary>
+  ///   Border Box Strikethrough Bottom-Left to Top-Right.
+  /// </summary>
+  public DocumentModel.Math.BooleanValues? StrikeBottomLeftToTopRight { get; set; }
+  
+  
+  /// <summary>
+  ///   Border Box Strikethrough Top-Left to Bottom-Right.
+  /// </summary>
+  public DocumentModel.Math.BooleanValues? StrikeTopLeftToBottomRight { get; set; }
+  
+  
+  /// <summary>
+  ///   ControlProperties.
+  /// </summary>
+  public DocumentModel.Math.ControlProperties? ControlProperties { get; set; }
+  
+}

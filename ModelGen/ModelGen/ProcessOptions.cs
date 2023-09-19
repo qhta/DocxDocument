@@ -31,6 +31,11 @@ public record ProcessOptions
   public bool ValidateConversion { get; set; }
 
   /// <summary>
+  /// Specifies whether results of the code generation phase should be validated.
+  /// </summary>
+  public bool ValidateGeneration { get; set; }
+
+  /// <summary>
   /// Specifies the name of type used as a root for scan types phase.
   /// </summary>
   public string ScanTypeName { get; set; } = "DocumentFormat.OpenXml.Packaging.WordprocessingDocument";
@@ -39,6 +44,11 @@ public record ProcessOptions
   /// Specifies a name of model doc file. It must contain XML-serialized ModelDoc.
   /// </summary>
   public string ModelDocFileName { get; set; } = @"c:\Users\qhta1\AppData\Roaming\ModelGen\ModelDoc.xml";
+
+  /// <summary>
+  /// Specifies a path for the generated model code.
+  /// </summary>
+  public string ModelCodeOutputPath { get; set; } = @"DocumentModel";
 
   ///// <summary>
   ///// Selection of data displayed in console application of ModelGenRun.

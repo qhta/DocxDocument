@@ -146,6 +146,15 @@ public abstract class BaseCreator
         PhaseDone = PPS.ConvertTypes;
     }
 
+    if (StopAtPhase >= PPS.CodeGen && PhaseDone < PPS.CodeGen && !CancelRequest)
+    {
+      totalTime += GenerateCode();
+      //if (monitorDisplaySelector.HasFlag(MDS.CodeGen))
+      //  ModelMonitor?.Show();
+      if (!CancelRequest)
+        PhaseDone = PPS.CodeGen;
+    }
+
     ModelMonitor?.ShowProcessSummary(new SummaryInfo
     {
       ProcessCancelled = CancelRequest,
@@ -203,12 +212,12 @@ public abstract class BaseCreator
     return ts;
   }
 
-  private void ModelManager_OnScanningType(RegisterProgressInfo info)
+  private void ModelManager_OnScanningType(ProgressTypeInfo info)
   {
     ModelMonitor?.ShowPhaseProgress(PPS.ScanSource, new ProgressInfo
     {
       FormatStr = CommonStrings.registered_0_of_1_types_in_2_namespaces,
-      Args = new object[] { info.RegisteredTypes ?? 0, TotalTypesCount, info.RegisteredNamespaces ?? 0 },
+      Args = new object[] { info.ProcessedTypes ?? 0, TotalTypesCount, info.Namespaces ?? 0 },
       PostStr = $"{info.Current?.OriginalNamespace}.{info.Current?.OriginalName}"
     }); ;
   }
@@ -403,12 +412,12 @@ public abstract class BaseCreator
 
   protected TimeSpan GenerateCode()
   {
-    ModelMonitor?.ShowPhaseStart(PPS.ConvertTypes, CommonStrings.GenerateCode);
+    ModelMonitor?.ShowPhaseStart(PPS.CodeGen, CommonStrings.GenerateCode);
     DateTime t1 = DateTime.Now;
-    CodeGenerator.OnGeneratingType += ModelManager_OnConvertingType;
+    CodeGenerator.OnGeneratingType += CodeGenerator_OnGeneratingCode;
     var nspaces = TypeManager.AllNamespaces.Where(item=>item.IsTarget);
     var generatedTypesCount = CodeGenerator.GenerateCode(nspaces);
-    CodeGenerator.OnGeneratingType -= ModelManager_OnConvertingType;
+    CodeGenerator.OnGeneratingType -= CodeGenerator_OnGeneratingCode;
 
     var invalidTypes = 0;
     if (Options.ValidateConversion && !CancelRequest)
@@ -436,18 +445,17 @@ public abstract class BaseCreator
     if (invalidTypes > 0)
       summaryInfo.Summary.Add(TypeInfoKind.InvalidTypes, invalidTypes);
 
-    ModelMonitor?.ShowPhaseEnd(PPS.CodeGeneration, summaryInfo);
+    ModelMonitor?.ShowPhaseEnd(PPS.CodeGen, summaryInfo);
     return ts;
   }
 
-  private void ModelManager_OnGeneratingCode(ProgressTypeInfo info)
+  private void CodeGenerator_OnGeneratingCode(ProgressTypeInfo info)
   {
-    ModelMonitor?.ShowPhaseProgress(PPS.ConvertTypes, new ProgressInfo
+    ModelMonitor?.ShowPhaseProgress(PPS.CodeGen, new ProgressInfo
     {
-      FormatStr = CommonStrings.converting_0_of_1_types_converted_2_types,
-      Args = new object[] { info.CheckedTypes ?? 0, info.TotalTypes ?? 0, info.ProcessedTypes ?? 0 },
-      PostStr = $"{info.Current?.OriginalNamespace}.{info.Current?.OriginalName} -> {info.Current?.GetTargetNamespace()}.{info.Current?.Name}"
-    });
+      FormatStr = CommonStrings.registered_0_of_1_types_in_2_namespaces,
+      Args = new object[] { info.ProcessedTypes ?? 0, TotalTypesCount, info.Namespaces ?? 0 },
+      PostStr = $"{info.Current?.OriginalNamespace}.{info.Current?.OriginalName}"    });
   }
   #endregion
 

@@ -151,6 +151,15 @@ namespace ModelGen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to generated {0} of {1} types in {2} namespaces.
+        /// </summary>
+        internal static string generated_0_of_1_types_in_2_namespaces {
+            get {
+                return ResourceManager.GetString("generated_0_of_1_types_in_2_namespaces", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Generated types.
         /// </summary>
         internal static string GeneratedTypes {

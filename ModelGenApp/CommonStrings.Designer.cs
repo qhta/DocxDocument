@@ -169,6 +169,15 @@ namespace ModelGenApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Code generation.
+        /// </summary>
+        public static string CodeGen {
+            get {
+                return ResourceManager.GetString("CodeGen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Configuration.
         /// </summary>
         public static string Config {
@@ -638,6 +647,15 @@ namespace ModelGenApp {
         public static string Model_configuration_saved_in_0 {
             get {
                 return ResourceManager.GetString("Model_configuration_saved_in_0", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Model output path.
+        /// </summary>
+        public static string ModelCodeOutputPath {
+            get {
+                return ResourceManager.GetString("ModelCodeOutputPath", resourceCulture);
             }
         }
         
@@ -1316,6 +1334,15 @@ namespace ModelGenApp {
         public static string ValidatedTypes {
             get {
                 return ResourceManager.GetString("ValidatedTypes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Validate generation.
+        /// </summary>
+        public static string ValidateGeneration {
+            get {
+                return ResourceManager.GetString("ValidateGeneration", resourceCulture);
             }
         }
         

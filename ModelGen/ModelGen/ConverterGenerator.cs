@@ -119,7 +119,7 @@ public class ConverterGenerator : BaseCodeGenerator
   }
   #endregion
 
-  public override TimeSpan GenerateCode(IEnumerable<Namespace> nspaces)
+  public override int GenerateCode(IEnumerable<Namespace> nspaces)
   {
     throw new NotImplementedException();
   }
@@ -206,7 +206,7 @@ public class ConverterGenerator : BaseCodeGenerator
     Writer.Indent++;
     Writer.WriteLine($"var value = new {targetType}();");
     if (typeInfo.Properties != null)
-      foreach (var prop in typeInfo.Properties.Where(item => item.IsAcceptedTo(PPS.CodeGeneration)))
+      foreach (var prop in typeInfo.Properties.Where(item => item.IsAcceptedTo(PPS.CodeGen)))
       {
         var targetPropName = prop.GetTargetName();
         Writer.WriteLine($"value.{targetPropName} = Get{targetPropName}(openXmlElement);");
@@ -233,7 +233,7 @@ public class ConverterGenerator : BaseCodeGenerator
     Writer.WriteLine($"if (openXmlElement != null && value != null)");
     Writer.WriteLine($"{{");
     Writer.WriteLine($"  var ok = true;");
-    foreach (var prop in typeInfo.AcceptedProperties(PPS.CodeGeneration))
+    foreach (var prop in typeInfo.AcceptedProperties(PPS.CodeGen))
     {
       var targetPropName = prop.GetTargetName();
       Writer.WriteLine($"  if (!Cmp{targetPropName}(openXmlElement, value.{targetPropName}, diffs, objName))");
@@ -276,7 +276,7 @@ public class ConverterGenerator : BaseCodeGenerator
       $"public static void UpdateOpenXmlElement({origTypeName} openXmlElement, {targetTypeName} value)");
     Writer.WriteLine($"{{");
     Writer.Indent++;
-      foreach (var prop in typeInfo.AcceptedProperties(PPS.CodeGeneration))
+      foreach (var prop in typeInfo.AcceptedProperties(PPS.CodeGen))
       {
         var targetPropName = prop.GetTargetName();
         if (prop.IsReadonly)
@@ -294,8 +294,8 @@ public class ConverterGenerator : BaseCodeGenerator
     if (typeInfo.Name == "Rsids")
       TestTools.Stop();
     var ok = true;
-    if (typeInfo.AcceptedProperties(PPS.CodeGeneration).Any())
-      foreach (var prop in typeInfo.AcceptedProperties(PPS.CodeGeneration))
+    if (typeInfo.AcceptedProperties(PPS.CodeGen).Any())
+      foreach (var prop in typeInfo.AcceptedProperties(PPS.CodeGen))
         //if (kind == TypeKind.Interface || !prop.IsConstrained)
         if (!GeneratePropertyAccessors(prop, inNamespace))
           ok = false;

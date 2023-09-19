@@ -1,0 +1,16 @@
+namespace DocumentModel;
+
+
+/// <summary>
+///   Defines the TaskProgressEventInfo Class.
+/// </summary>
+public partial class TaskProgressEventInfo
+{
+  
+  /// <summary>
+  ///   percentComplete, this property is only available in Office 2021 and later.
+  /// </summary>
+  [SchemaAttr("percentComplete")]
+  public Int32? PercentComplete { get; set; }
+  
+}
