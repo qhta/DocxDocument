@@ -22,6 +22,7 @@ public class PropertiesConfigViewModel : ModelConfigViewModel
 
   public override void GetData(ModelConfig configData)
   {
+    Properties.Clear();
     base.GetData(configData);
     foreach (var propName in configData.ExcludedProperties)
     {

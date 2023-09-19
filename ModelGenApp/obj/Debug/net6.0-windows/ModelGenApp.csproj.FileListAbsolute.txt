@@ -134,3 +134,4 @@ D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\DocumentModel.B
 D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\DocumentModel.BaseTypes.pdb
 D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\NamespacesDisplayOptionsView.g.cs
 D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\NamespacesDisplayOptionsView.baml
+D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\WPFFolderBrowser.dll

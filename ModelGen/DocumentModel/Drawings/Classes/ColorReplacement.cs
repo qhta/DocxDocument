@@ -1,0 +1,45 @@
+namespace DocumentModel.Drawings;
+
+
+/// <summary>
+///   This element specifies a solid color replacement value. All effect colors are changed to a fixed color. Alpha values are unaffected.
+/// </summary>
+public partial class ColorReplacement
+{
+  
+  /// <summary>
+  ///   RGB Color Model - Percentage Variant.
+  /// </summary>
+  public DocumentModel.Drawings.RgbColorModelPercentage? RgbColorModelPercentage { get; set; }
+  
+  
+  /// <summary>
+  ///   RGB Color Model - Hex Variant.
+  /// </summary>
+  public DocumentModel.Drawings.RgbColorModelHex? RgbColorModelHex { get; set; }
+  
+  
+  /// <summary>
+  ///   Hue, Saturation, Luminance Color Model.
+  /// </summary>
+  public DocumentModel.Drawings.HslColor? HslColor { get; set; }
+  
+  
+  /// <summary>
+  ///   System Color.
+  /// </summary>
+  public DocumentModel.Drawings.SystemColor? SystemColor { get; set; }
+  
+  
+  /// <summary>
+  ///   Scheme Color.
+  /// </summary>
+  public DocumentModel.Drawings.SchemeColorValues? SchemeColor { get; set; }
+  
+  
+  /// <summary>
+  ///   Preset Color.
+  /// </summary>
+  public DocumentModel.Drawings.PresetColorValues? PresetColor { get; set; }
+  
+}

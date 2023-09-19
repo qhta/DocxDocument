@@ -23,7 +23,10 @@ public class ProcessMonitorViewModel : ViewModel
         case PPS.ConvertTypes:
           PhaseMonitors[i] = new ConvertPhaseViewModel(phase.ToString());
           break;
-      }
+        case PPS.CodeGen:
+          PhaseMonitors[i] = new CodeGenPhaseViewModel(phase.ToString());
+          break;
+    }
   }
 
 }

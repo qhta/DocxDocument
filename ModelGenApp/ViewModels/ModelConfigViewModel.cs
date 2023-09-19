@@ -38,7 +38,6 @@ public abstract class ModelConfigViewModel: ViewModel
   /// <param name="configData"></param>
   public virtual void ReloadData(ModelConfig configData)
   {
-    configData.LoadData();
     GetData(configData);
   }
 

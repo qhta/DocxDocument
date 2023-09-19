@@ -5,7 +5,7 @@ public static class TypeManager
 
   public static bool UseAsynReflection { get; set; }
 
-  public static event RegisterProgressEvent? OnRegistering;
+  public static event ProgressTypeEvent? OnRegistering;
 
   public static Dictionary<Type, TypeInfo> KnownTypes { get; private set; } = new();
   public static Dictionary<string, Namespace> KnownNamespaces { get; private set; } = new();
@@ -79,7 +79,7 @@ public static class TypeManager
       {
         nspace = new Namespace(ns);
         KnownNamespaces.Add(ns, nspace);
-        OnRegistering?.Invoke(new RegisterProgressInfo { RegisteredNamespaces = KnownNamespaces.Count, RegisteredTypes = AllTypes.Count() });
+        OnRegistering?.Invoke(new ProgressTypeInfo { Namespaces = KnownNamespaces.Count, ProcessedTypes = AllTypes.Count() });
       }
       return nspace;
     }
@@ -160,7 +160,7 @@ public static class TypeManager
         KnownTypes.Add(type, typeInfo);
         var NamespaceDictionary = TypeManager.GetNamespace(nspace);
         NamespaceDictionary.AddType(typeInfo);
-        OnRegistering?.Invoke(new RegisterProgressInfo { RegisteredNamespaces = KnownNamespaces.Count + 1, RegisteredTypes = AllTypes.Count(), Current = typeInfo });
+        OnRegistering?.Invoke(new ProgressTypeInfo { Namespaces = KnownNamespaces.Count + 1, ProcessedTypes = AllTypes.Count(), Current = typeInfo });
       }
       bool accept = acceptance == true || !ModelConfig.Instance.IsExcluded(type);
       if (!accept)
