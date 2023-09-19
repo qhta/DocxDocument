@@ -20,7 +20,7 @@ public class ModelGenerator : BaseCodeGenerator
       CreateNamespaceFolder(nspace.TargetName);
       var types = nspace.AcceptedTypes(PPS.CodeGen).Where(item => !item.IsConstructedGenericType).ToArray();
       nsTypes.Add(nspace, types);
-      totalTypesCount+=types.Count();
+      totalTypesCount += types.Count();
     }
     var nspacesCount = 0;
     var typesCount = 0;
@@ -50,33 +50,32 @@ public class ModelGenerator : BaseCodeGenerator
     var subfolders = Directory.GetDirectories(path);
     foreach (var subfolder in subfolders)
     {
+      ClearProjectFolder(subfolder);
+    }
+    if (!path.EndsWith("Extensions"))
+    {
+      foreach (var file in Directory.GetFiles(path))
+      {
+        if (file.EndsWith(".cs") && file.Count(ch => ch == '.') == 1)
+        {
+          try
+          {
+            File.Delete(file);
+          }
+          catch
+          {
+            Debug.WriteLine($"Could not delete file \"{file}\"");
+          }
+        }
+      }
       try
       {
-        ClearProjectFolder(subfolder);
-        if (!subfolder.EndsWith("Extensions"))
-        {
-          foreach (var file in Directory.GetFiles(subfolder))
-          {
-            if (file.EndsWith(".cs") && file.Count(ch => ch == '.') == 1)
-            {
-              try
-              {
-                File.Delete(file);
-              }
-              catch
-              {
-                Debug.WriteLine($"Could not delete file \"{file}\"");
-              }
-            }
-          }
-          var files = Directory.GetFiles(subfolder);
-          if (files.Count() == 0)
-            Directory.Delete(subfolder, false);
-        }
+        if (Directory.GetFiles(path).Count() == 0 && Directory.GetDirectories(path).Count() == 0)
+          Directory.Delete(path, false);
       }
       catch
       {
-        Debug.WriteLine($"Could not delete subfolder \"{subfolder}\"");
+        Debug.WriteLine($"Could not delete folder \"{path}\"");
       }
     }
   }
