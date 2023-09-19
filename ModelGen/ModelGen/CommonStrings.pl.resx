@@ -228,4 +228,7 @@
   <data name="TargetNamespacesOnly" xml:space="preserve">
     <value>Docelowe przestrzenie</value>
   </data>
+  <data name="generated_0_of_1_types_in_2_namespaces" xml:space="preserve">
+    <value>wygenerowano {0} z {1} typów w {2} przestrzeniach nazw</value>
+  </data>
 </root>

@@ -1,4 +1,5 @@
 ﻿using Microsoft.Win32;
+using WPFFolderBrowser;
 
 namespace ModelGenApp.ViewModels;
 public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
@@ -8,6 +9,7 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
   {
     _MainTypeNames = GetMainTypeNames();
     BrowseModelDocFileCommand = new RelayCommand(BrowseModelDoc) { Name = "BrowseModelDocFile" };
+    BrowseModelOutputPathCommand = new RelayCommand(BrowseModelOutputPath) { Name = "BrowseModelOutputPath" };
   }
 
   public int StopAtPhase
@@ -36,19 +38,6 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
     }
   }
 
-  //public bool UseModelDocFile
-  //{
-  //  get { return Model.UseModelDocFile; }
-  //  set
-  //  {
-  //    if (Model.UseModelDocFile != value)
-  //    {
-  //      Model.UseModelDocFile = value;
-  //      NotifyPropertyChanged(nameof(UseModelDocFile));
-  //    }
-  //  }
-  //}
-
   public string ModelDocFileName
   {
     get { return Model.ModelDocFileName; }
@@ -58,6 +47,19 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
       {
         Model.ModelDocFileName = value;
         NotifyPropertyChanged(nameof(ModelDocFileName));
+      }
+    }
+  }
+
+  public string ModelCodeOutputPath
+  {
+    get { return Model.ModelCodeOutputPath; }
+    set
+    {
+      if (Model.ModelCodeOutputPath != value)
+      {
+        Model.ModelCodeOutputPath = value;
+        NotifyPropertyChanged(nameof(ModelCodeOutputPath));
       }
     }
   }
@@ -114,6 +116,19 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
     }
   }
 
+  public bool ValidateGeneration
+  {
+    get { return Model.ValidateGeneration; }
+    set
+    {
+      if (Model.ValidateGeneration != value)
+      {
+        Model.ValidateGeneration = value;
+        NotifyPropertyChanged(nameof(ValidateGeneration));
+      }
+    }
+  }
+
   public ObservableCollection<string> MainTypeNames
   {
     get { return _MainTypeNames; }
@@ -158,6 +173,30 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
     if (dialog.ShowDialog() == true)
     {
       ModelDocFileName = dialog.FileName.Trim();
+    }
+  }
+  #endregion
+
+  #region BrowseModelOutputPathCommand
+  /// <summary>
+  /// A command to store config data
+  /// </summary>
+  public Command BrowseModelOutputPathCommand { get; }
+
+  /// <summary>
+  /// Execute method of config data store.
+  /// </summary>
+  public void BrowseModelOutputPath()
+  {
+    var dialog = new WPFFolderBrowserDialog ();
+    if (Directory.Exists(ModelCodeOutputPath))
+      dialog.InitialDirectory = ModelCodeOutputPath;
+    else
+      dialog.InitialDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+    if (dialog.ShowDialog() == true)
+    {
+      var filename = dialog.FileName.Trim();
+      ModelCodeOutputPath = filename;
     }
   }
   #endregion

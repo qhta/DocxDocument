@@ -9,41 +9,112 @@ public class ModelGenerator : BaseCodeGenerator
   }
 
 
-  public override TimeSpan GenerateCode(IEnumerable<Namespace> nspaces)
+  public override int GenerateCode(IEnumerable<Namespace> nspaces)
   {
-    throw new NotImplementedException();
+    PrepareProject();
+    var nsTypes = new Dictionary<Namespace, TypeInfo[]>();
+    var totalTypesCount = 0;
+    foreach (var nspace in nspaces)
+    {
+      Debug.Assert(nspace.TargetName != null);
+      CreateNamespaceFolder(nspace.TargetName);
+      var types = nspace.AcceptedTypes(PPS.CodeGen).Where(item => !item.IsConstructedGenericType).ToArray();
+      nsTypes.Add(nspace, types);
+      totalTypesCount+=types.Count();
+    }
+    var nspacesCount = 0;
+    var typesCount = 0;
+    foreach (var nsType in nsTypes)
+    {
+      nspacesCount++;
+      foreach (var type in nsType.Value)
+      {
+        typesCount++;
+        _onGeneratingType?.Invoke(new ProgressTypeInfo { Namespaces = nspacesCount, ProcessedTypes = typesCount, TotalTypes = totalTypesCount });
+        GenerateTypeFile(type);
+      }
+    }
+    return typesCount;
   }
 
-  //public void PrepareProjects()
-  //{
-  //  if (!Directory.Exists(OutputPath))
-  //    Directory.CreateDirectory(OutputPath);
-  //  ClearProjectFolder(OutputPath);
-  //  GenerateProjectFile(ProjectName, System.IO.Path.Combine(OutputPath, ProjectName + ".csproj"));
-  //}
+  public void PrepareProject()
+  {
+    if (!Directory.Exists(OutputPath))
+      Directory.CreateDirectory(OutputPath);
+    ClearProjectFolder(OutputPath);
+    GenerateProjectFile(ProjectName, System.IO.Path.Combine(OutputPath, ProjectName + ".csproj"));
+  }
 
-  //private void ClearProjectFolder(string projectPath)
-  //{
-  //  var subfolders = Directory.GetDirectories(projectPath);
-  //  foreach (var subfolder in subfolders)
-  //    try
-  //    {
-  //      if (!subfolder.EndsWith("Extensions"))
-  //        Directory.Delete(subfolder, true);
-  //    }
-  //    catch { }
-  //}
+  private void ClearProjectFolder(string path)
+  {
+    var subfolders = Directory.GetDirectories(path);
+    foreach (var subfolder in subfolders)
+    {
+      try
+      {
+        ClearProjectFolder(subfolder);
+        if (!subfolder.EndsWith("Extensions"))
+        {
+          foreach (var file in Directory.GetFiles(subfolder))
+          {
+            if (file.EndsWith(".cs") && file.Count(ch => ch == '.') == 1)
+            {
+              try
+              {
+                File.Delete(file);
+              }
+              catch
+              {
+                Debug.WriteLine($"Could not delete file \"{file}\"");
+              }
+            }
+          }
+          var files = Directory.GetFiles(subfolder);
+          if (files.Count() == 0)
+            Directory.Delete(subfolder, false);
+        }
+      }
+      catch
+      {
+        Debug.WriteLine($"Could not delete subfolder \"{subfolder}\"");
+      }
+    }
+  }
 
-  //private bool GenerateProjectFile(string projectName, string filename)
-  //{
-  //  AssurePathExists(filename);
-  //  using (var writer = File.CreateText(filename))
-  //  using (var reader = File.OpenText(projectName + ".csproj.xml"))
-  //  {
-  //    Writer.Write(reader.ReadToEnd());
-  //  }
-  //  return true;
-  //}
+  private bool GenerateProjectFile(string projectName, string filename)
+  {
+    var projectFilename = projectName + ".csproj.xml";
+    if (!File.Exists(projectFilename))
+    {
+      Debug.WriteLine($"Project template file \"{projectFilename}\" not found");
+      return false;
+    }
+    AssurePathExists(filename);
+    using (var writer = File.CreateText(filename))
+    using (var reader = File.OpenText(projectFilename))
+    {
+      var s = reader.ReadToEnd();
+      writer.Write(s);
+    }
+    return true;
+  }
+
+  private bool CreateNamespaceFolder(string ns)
+  {
+    if (ns.StartsWith(ProjectName + "."))
+      ns = ns.Substring(ProjectName.Length + 1);
+    else
+    if (ns == ProjectName)
+      ns = "";
+    return CreateNamespaceFolder(ProjectName, System.IO.Path.Combine(OutputPath, ns));
+  }
+
+  private bool CreateNamespaceFolder(string projectName, string nsPath)
+  {
+    if (!Directory.Exists(nsPath))
+      Directory.CreateDirectory(nsPath);
+    return true;
+  }
 
   public bool GenerateTypeFile(TypeInfo typeInfo)
   {
@@ -119,7 +190,7 @@ public class ModelGenerator : BaseCodeGenerator
 
   private bool GenerateAcceptedProperties(TypeInfo typeInfo, string? inNamespace, TypeKind kind)
   {
-    foreach (var prop in typeInfo.AcceptedProperties(PPS.CodeGeneration))
+    foreach (var prop in typeInfo.AcceptedProperties(PPS.CodeGen))
       if (!GenerateProperty(prop, inNamespace, kind))
         return false;
     return true;

@@ -1,0 +1,21 @@
+namespace DocumentModel.Wordprocessing;
+
+
+/// <summary>
+///   Glossary Document Root Element.
+/// </summary>
+public partial class GlossaryDocument
+{
+  
+  /// <summary>
+  ///   Document Background.
+  /// </summary>
+  public DocumentModel.Wordprocessing.DocumentBackground? DocumentBackground { get; set; }
+  
+  
+  /// <summary>
+  ///   List of Glossary Document Entries.
+  /// </summary>
+  public DocumentModel.Wordprocessing.DocParts? DocParts { get; set; }
+  
+}

@@ -15,7 +15,8 @@
           "Qhta.TextUtils": "3.2.0",
           "Qhta.TypeUtils": "1.3.10.1",
           "Qhta.WPF.Converters": "1.3.1",
-          "Qhta.WPF.Utils": "3.2.0"
+          "Qhta.WPF.Utils": "3.2.0",
+          "WPFFolderBrowser": "1.0.2"
         },
         "runtime": {
           "ModelGenApp.dll": {}
@@ -953,6 +954,14 @@
           }
         }
       },
+      "WPFFolderBrowser/1.0.2": {
+        "runtime": {
+          "lib/WPFFolderBrowser.dll": {
+            "assemblyVersion": "1.0.2.0",
+            "fileVersion": "1.0.2.0"
+          }
+        }
+      },
       "DocumentModel.Attributes/1.0.0": {
         "runtime": {
           "DocumentModel.Attributes.dll": {}
@@ -1697,6 +1706,13 @@
       "sha512": "sha512-A/uxsWi/Ifzkmd4ArTLISMbfFs6XpRPsXZonrIqyTY70xi8t+mDtvSM5Os0RqyRDobjMBwIDHDL4NOIbkDwf7A==",
       "path": "system.xml.xpath.xmldocument/4.3.0",
       "hashPath": "system.xml.xpath.xmldocument.4.3.0.nupkg.sha512"
+    },
+    "WPFFolderBrowser/1.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-qANImIRr4OzaARj1EQMqgaxXmvy4jUlWwFb4VNOauEA/lbFHbXK651IdigtozgOan9nikzqYxy4+leI14aWtgA==",
+      "path": "wpffolderbrowser/1.0.2",
+      "hashPath": "wpffolderbrowser.1.0.2.nupkg.sha512"
     },
     "DocumentModel.Attributes/1.0.0": {
       "type": "project",

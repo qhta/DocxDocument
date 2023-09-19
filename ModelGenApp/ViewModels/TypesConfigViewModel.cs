@@ -57,6 +57,7 @@ public class TypesConfigViewModel : ModelConfigViewModel
 
   public override void GetData(ModelConfig configData)
   {
+    Types.Clear();
     base.GetData(configData);
     var types = _Assembly.GetExportedTypes()
       .OrderBy(ti => ti.Name)

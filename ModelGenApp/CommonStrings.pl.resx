@@ -560,4 +560,13 @@ zdefiniowanej w typie wyliczeniowym.</value>
   <data name="ShowTargetNamespaces" xml:space="preserve">
     <value>Pokaż docelowe przestrzenie nazw</value>
   </data>
+  <data name="ModelCodeOutputPath" xml:space="preserve">
+    <value>Ścieżka kodu modelu</value>
+  </data>
+  <data name="CodeGen" xml:space="preserve">
+    <value>Generowanie kodu</value>
+  </data>
+  <data name="ValidateGeneration" xml:space="preserve">
+    <value>Weryfikuj kod</value>
+  </data>
 </root>

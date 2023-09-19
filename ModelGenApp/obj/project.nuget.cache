@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "0o0zIHnVUylYWNro2XRJSPBP++yUROgiBh4E0Rslg/MkHl7IBy5IN69DzaxOElTq0fkz2IkQlq+Tb9YwJ8hsCA==",
+  "dgSpecHash": "bWtxa6hByhJmdy0gidGiDsdaE25muVDYcfWGZUWm93E9pUBcBZmmdZ6yHfaArPKt9Tow8PV80Vep/FhR1l2goQ==",
   "success": true,
   "projectFilePath": "D:\\VS\\Projects\\DocxDocument\\ModelGenApp\\ModelGenApp.csproj",
   "expectedPackageFiles": [
@@ -98,7 +98,8 @@
     "C:\\Users\\qhta1\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\system.xml.xpath\\4.3.0\\system.xml.xpath.4.3.0.nupkg.sha512",
-    "C:\\Users\\qhta1\\.nuget\\packages\\system.xml.xpath.xmldocument\\4.3.0\\system.xml.xpath.xmldocument.4.3.0.nupkg.sha512"
+    "C:\\Users\\qhta1\\.nuget\\packages\\system.xml.xpath.xmldocument\\4.3.0\\system.xml.xpath.xmldocument.4.3.0.nupkg.sha512",
+    "C:\\Users\\qhta1\\.nuget\\packages\\wpffolderbrowser\\1.0.2\\wpffolderbrowser.1.0.2.nupkg.sha512"
   ],
   "logs": []
 }

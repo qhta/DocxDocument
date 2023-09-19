@@ -560,4 +560,13 @@ defined in the enum type.</value>
   <data name="ShowTargetNamespaces" xml:space="preserve">
     <value>Show target namespaces</value>
   </data>
+  <data name="ModelCodeOutputPath" xml:space="preserve">
+    <value>Model output path</value>
+  </data>
+  <data name="CodeGen" xml:space="preserve">
+    <value>Code generation</value>
+  </data>
+  <data name="ValidateGeneration" xml:space="preserve">
+    <value>Validate generation</value>
+  </data>
 </root>
