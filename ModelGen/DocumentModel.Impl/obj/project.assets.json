@@ -34,6 +34,21 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
+      "DocumentModel/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "DocumentModel.Attributes": "1.0.0",
+          "DocumentModel.BaseTypes": "1.0.0",
+          "DocumentModel.VariantTypes": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DocumentModel.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DocumentModel.dll": {}
+        }
+      },
       "DocumentModel.Attributes/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -65,6 +80,19 @@
         },
         "runtime": {
           "bin/placeholder/DocumentModel.Internal.Impl.dll": {}
+        }
+      },
+      "DocumentModel.VariantTypes/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "DocumentModel.BaseTypes": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DocumentModel.VariantTypes.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DocumentModel.VariantTypes.dll": {}
         }
       }
     }
@@ -121,6 +149,11 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "DocumentModel/1.0.0": {
+      "type": "project",
+      "path": "../DocumentModel/DocumentModel.csproj",
+      "msbuildProject": "../DocumentModel/DocumentModel.csproj"
+    },
     "DocumentModel.Attributes/1.0.0": {
       "type": "project",
       "path": "../DocumentModel.Attributes/DocumentModel.Attributes.csproj",
@@ -135,12 +168,17 @@
       "type": "project",
       "path": "../DocumentModel.Internal.Impl/DocumentModel.Internal.Impl.csproj",
       "msbuildProject": "../DocumentModel.Internal.Impl/DocumentModel.Internal.Impl.csproj"
+    },
+    "DocumentModel.VariantTypes/1.0.0": {
+      "type": "project",
+      "path": "../DocumentModel.VariantTypes/DocumentModel.VariantTypes.csproj",
+      "msbuildProject": "../DocumentModel.VariantTypes/DocumentModel.VariantTypes.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "D:\\VS\\Projects\\DocxDocument\\ModelGen\\DocumentModel.BaseTypes.Impl\\DocumentModel.BaseTypes.Impl.csproj",
-      "D:\\VS\\Projects\\DocxDocument\\ModelGen\\DocumentModel\\DocumentModel.csproj",
+      "DocumentModel >= 1.0.0",
       "DocumentModel.Attributes >= 1.0.0",
       "DocumentModel.BaseTypes >= 1.0.0",
       "DocumentModel.Internal.Impl >= 1.0.0",
@@ -229,20 +267,11 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   },
   "logs": [
-    {
-      "code": "NU1104",
-      "level": "Error",
-      "message": "Unable to find project 'D:\\VS\\Projects\\DocxDocument\\ModelGen\\DocumentModel\\DocumentModel.csproj'. Check that the project reference is valid and that the project file exists.",
-      "libraryId": "D:\\VS\\Projects\\DocxDocument\\ModelGen\\DocumentModel\\DocumentModel.csproj",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    },
     {
       "code": "NU1104",
       "level": "Error",

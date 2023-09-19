@@ -37,9 +37,9 @@
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
           <Grid.RowDefinitions>
-            <RowDefinition Height="40" />
-            <RowDefinition Height="40" />
-            <RowDefinition Height="40" />
+            <RowDefinition Height="35" />
+            <RowDefinition Height="35" />
+            <RowDefinition Height="35" />
           </Grid.RowDefinitions>
           <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
@@ -139,6 +139,8 @@
                                    Percentage="{Binding Path=ProcessMonitor.VM.PhaseMonitors[2].Percentage}" />
           <views:PhaseProgressView Grid.Row="4"
                                    Percentage="{Binding Path=ProcessMonitor.VM.PhaseMonitors[3].Percentage}" />
+          <views:PhaseProgressView Grid.Row="5"
+                                   Percentage="{Binding Path=ProcessMonitor.VM.PhaseMonitors[4].Percentage}" />
 
           <Slider Grid.Column="0"
                   Grid.Row="1"

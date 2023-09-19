@@ -71,15 +71,19 @@ public class DocumentationWriter
     }
     else if (text != null)
     {
-      if (LineWrapLimit > 0)
+      var ss = text.Split('\n');
+      foreach (var str in ss)
       {
-        var wrapLimit = LineWrapLimit - LineIndent - 4; // 4 = "/// ".Length;
-        List<string> lines = Snork.TextWrap.TextWrapper.Wrap(text, wrapLimit);
-        foreach (var line in lines)
-          Writer.WriteLine($"/// {indentStr + "  "}{line}");
+        if (LineWrapLimit > 0)
+        {
+          var wrapLimit = LineWrapLimit - LineIndent - 4; // 4 = "/// ".Length;
+          List<string> lines = Snork.TextWrap.TextWrapper.Wrap(str, wrapLimit);
+          foreach (var line in lines)
+            Writer.WriteLine($"/// {indentStr + "  "}{line}");
+        }
+        else
+          Writer.WriteLine($"/// {indentStr + "  "}{str}");
       }
-      else
-        Writer.WriteLine($"/// {indentStr + "  "}{text}");
     }
     Writer.WriteLine($"/// {indentStr}</{xElement.Name}>");
   }
