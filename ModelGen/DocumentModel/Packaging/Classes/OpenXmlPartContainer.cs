@@ -9,7 +9,7 @@ public partial class OpenXmlPartContainer
   
   /// <summary>
   ///   Gets all external relationships.
-            Hyperlink relationships are not included, use HyperlinkRelationship property to enumerate hyperlink relationships.
+  ///               Hyperlink relationships are not included, use HyperlinkRelationship property to enumerate hyperlink relationships.
   /// </summary>
   public Collection? ExternalRelationships { get; set; }
   

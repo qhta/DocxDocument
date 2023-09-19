@@ -22,7 +22,7 @@ public partial class OpenXmlPackage
   
   /// <summary>
   ///   Gets the FileAccess setting for the document.
-            The current I/O access settings are: Read, Write, or ReadWrite.
+  ///               The current I/O access settings are: Read, Write, or ReadWrite.
   /// </summary>
   public FileAccess? FileOpenAccess { get; set; }
   

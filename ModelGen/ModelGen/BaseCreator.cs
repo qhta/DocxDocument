@@ -453,7 +453,7 @@ public abstract class BaseCreator
   {
     ModelMonitor?.ShowPhaseProgress(PPS.CodeGen, new ProgressInfo
     {
-      FormatStr = CommonStrings.registered_0_of_1_types_in_2_namespaces,
+      FormatStr = CommonStrings.generated_0_of_1_types_in_2_namespaces,
       Args = new object[] { info.ProcessedTypes ?? 0, TotalTypesCount, info.Namespaces ?? 0 },
       PostStr = $"{info.Current?.OriginalNamespace}.{info.Current?.OriginalName}"    });
   }

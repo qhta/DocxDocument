@@ -27,7 +27,7 @@ public partial class OpenXmlPart
   
   /// <summary>
   ///   Gets the root element of the current part.
-            Returns null when the current part is empty or is not an XML content type.
+  ///               Returns null when the current part is empty or is not an XML content type.
   /// </summary>
   [Nullable((Byte)2)]
   public DocumentModel.OpenXmlElement? RootElement { get; set; }
