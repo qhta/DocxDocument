@@ -149,7 +149,8 @@ public class MainViewModel : ViewModel
       //filePath = Path.GetDirectoryName(filePath) ?? "";
       //filePath = Path.GetDirectoryName(filePath) ?? "";
       //filePath = Path.Combine(filePath, @"ModelGen\DocumentModel");
-      ModelCreator = new ModelCreator("DocumentModel", this.ProcessOptionsVM.ModelCodeOutputPath);
+      var configPath = Path.GetDirectoryName(ModelGenDataConfig.ModelConfig.Instance.GetFilename());
+      ModelCreator = new ModelCreator("DocumentModel", this.ProcessOptionsVM.ModelCodeOutputPath, configPath);
     }
     if (ModelCreator != null)
     {

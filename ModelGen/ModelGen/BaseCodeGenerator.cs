@@ -7,6 +7,7 @@ public abstract class BaseCodeGenerator
 {
   public string ProjectName { get; protected set; } = null!;
   public string OutputPath { get; protected set; } = null!;
+  public string? ConfigPath { get; protected set; } = null!;
 
   public bool CancelRequest { get; set; }
 

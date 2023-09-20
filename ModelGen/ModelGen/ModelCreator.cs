@@ -6,9 +6,9 @@
 public class ModelCreator : BaseCreator
 {
 
-  public ModelCreator(string projectName, string outputPath) : base(projectName, outputPath)
+  public ModelCreator(string projectName, string outputPath, string? configPath) : base(projectName, outputPath)
   {
-    CodeGenerator = new ModelGenerator(ProjectName, OutputPath);
+    CodeGenerator = new ModelGenerator(projectName, outputPath, configPath);
   }
 
   //public override TimeSpan GenerateCode(IEnumerable<Namespace> nspaces)
