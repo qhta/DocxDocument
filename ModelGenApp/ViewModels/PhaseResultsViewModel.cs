@@ -318,7 +318,7 @@ public abstract partial class PhaseResultsViewModel : ViewModel
 
   protected virtual bool ShowResultsCanExecute()
   {
-    return true;//Percentage == 100;
+    return Percentage == 100;
   }
   #endregion
 
