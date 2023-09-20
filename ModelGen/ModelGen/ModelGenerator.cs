@@ -2,10 +2,11 @@
 
 public class ModelGenerator : BaseCodeGenerator
 {
-  public ModelGenerator(string projectName, string outputPath)
+  public ModelGenerator(string projectName, string outputPath, string? configPath)
   {
     ProjectName = projectName;
     OutputPath = outputPath;
+    ConfigPath = configPath;
   }
 
 
@@ -42,7 +43,8 @@ public class ModelGenerator : BaseCodeGenerator
     if (!Directory.Exists(OutputPath))
       Directory.CreateDirectory(OutputPath);
     ClearProjectFolder(OutputPath);
-    GenerateProjectFile(ProjectName, System.IO.Path.Combine(OutputPath, ProjectName + ".csproj"));
+    CopyProjectFile(ProjectName, OutputPath, ConfigPath);
+    CopyGlobalUsingsFile(ProjectName, OutputPath, ConfigPath);
   }
 
   private void ClearProjectFolder(string path)
@@ -80,17 +82,45 @@ public class ModelGenerator : BaseCodeGenerator
     }
   }
 
-  private bool GenerateProjectFile(string projectName, string filename)
+  private bool CopyProjectFile(string projectName, string outputPath, string? configPath)
   {
-    var projectFilename = projectName + ".csproj.xml";
-    if (!File.Exists(projectFilename))
+    string? sourceFilename;
+    if (configPath != null)
+      sourceFilename = Path.Combine(configPath, projectName + ".csproj.xml");
+    else
+      sourceFilename = projectName + ".csproj.xml";
+    if (!File.Exists(sourceFilename))
     {
-      Debug.WriteLine($"Project template file \"{projectFilename}\" not found");
+      Debug.WriteLine($"Project template file \"{sourceFilename}\" not found");
       return false;
     }
-    AssurePathExists(filename);
-    using (var writer = File.CreateText(filename))
-    using (var reader = File.OpenText(projectFilename))
+    var outputFilename = Path.Combine (outputPath, projectName+".csproj");
+    AssurePathExists(outputFilename);
+    using (var writer = File.CreateText(outputFilename))
+    using (var reader = File.OpenText(sourceFilename))
+    {
+      var s = reader.ReadToEnd();
+      writer.Write(s);
+    }
+    return true;
+  }
+
+  private bool CopyGlobalUsingsFile(string projectName, string outputPath, string? configPath)
+  {
+    string? sourceFilename;
+    if (configPath != null)
+      sourceFilename = Path.Combine(configPath, projectName+".globalUsings.cs.txt");
+    else
+      sourceFilename = projectName+".globalUsings.cs.txt";
+    if (!File.Exists(sourceFilename))
+    {
+      Debug.WriteLine($"Global usings file \"{sourceFilename}\" not found");
+      return false;
+    }
+    var outputFilename = Path.Combine (outputPath, "globalUsings.csproj");
+    AssurePathExists(outputFilename);
+    using (var writer = File.CreateText(outputFilename))
+    using (var reader = File.OpenText(sourceFilename))
     {
       var s = reader.ReadToEnd();
       writer.Write(s);
