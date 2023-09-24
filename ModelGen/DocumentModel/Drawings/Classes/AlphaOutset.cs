@@ -10,7 +10,6 @@ public partial class AlphaOutset
   /// <summary>
   ///   Specifies the radius of outset/inset.
   /// </summary>
-  [SchemaAttr("rad")]
   public Int64? Radius { get; set; }
   
 }

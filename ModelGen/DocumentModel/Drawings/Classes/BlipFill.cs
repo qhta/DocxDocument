@@ -10,30 +10,28 @@ public partial class BlipFill
   /// <summary>
   ///   Specifies the DPI (dots per inch) used to calculate the size of the blip. If not present or zero, the DPI in the blip is used.
   /// </summary>
-  [SchemaAttr("dpi")]
   public UInt32? Dpi { get; set; }
   
   
   /// <summary>
   ///   Rotate With Shape
   /// </summary>
-  [SchemaAttr("rotWithShape")]
   public Boolean? RotateWithShape { get; set; }
   
   
   /// <summary>
   ///   Blip.
   /// </summary>
-  public DocumentModel.Drawings.Blip? Blip { get; set; }
+  public Blip? Blip { get; set; }
   
   
   /// <summary>
   ///   Source Rectangle.
   /// </summary>
-  public DocumentModel.Drawings.RelativeRectangleType? SourceRectangle { get; set; }
+  public RelativeRectangleType? SourceRectangle { get; set; }
   
-  public DocumentModel.Drawings.Tile? Tile { get; set; }
+  public Tile? Tile { get; set; }
   
-  public DocumentModel.Drawings.Stretch? Stretch { get; set; }
+  public Stretch? Stretch { get; set; }
   
 }

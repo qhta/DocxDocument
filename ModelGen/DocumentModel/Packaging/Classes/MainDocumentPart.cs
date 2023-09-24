@@ -58,7 +58,7 @@ public partial class MainDocumentPart
   /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.Wordprocessing.Document? Document { get; set; }
+  public Document? Document { get; set; }
   
   
   /// <summary>

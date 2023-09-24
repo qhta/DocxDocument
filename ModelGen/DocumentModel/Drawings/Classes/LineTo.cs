@@ -10,7 +10,6 @@ public partial class LineTo
   /// <summary>
   ///   Line end point.
   /// </summary>
-  [Nullable((Byte)2)]
-  public DocumentModel.Drawings.AdjustPoint2DType? Point { get; set; }
+  public AdjustPoint2DType? Point { get; set; }
   
 }

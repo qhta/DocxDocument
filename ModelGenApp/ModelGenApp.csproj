@@ -26,6 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Qhta.Collections" Version="4.6.0" />
     <PackageReference Include="Qhta.HtmlUtils" Version="2.1.0" />
     <PackageReference Include="Qhta.ObservableObjects" Version="2.7.0" />
     <PackageReference Include="Qhta.TextUtils" Version="3.2.0" />

@@ -10,11 +10,10 @@ public partial class GradientFillProperties
   /// <summary>
   ///   GradientStopList.
   /// </summary>
-  [Nullable((Byte)2)]
-  public DocumentModel.Wordprocessing.GradientStopList? GradientStopList { get; set; }
+  public GradientStopList? GradientStopList { get; set; }
   
-  public DocumentModel.Wordprocessing.LinearShadeProperties? LinearShadeProperties { get; set; }
+  public LinearShadeProperties? LinearShadeProperties { get; set; }
   
-  public DocumentModel.Wordprocessing.PathShadeProperties? PathShadeProperties { get; set; }
+  public PathShadeProperties? PathShadeProperties { get; set; }
   
 }

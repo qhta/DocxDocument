@@ -10,18 +10,18 @@ public partial class Radical
   /// <summary>
   ///   Radical Properties.
   /// </summary>
-  public DocumentModel.Math.RadicalProperties? RadicalProperties { get; set; }
+  public RadicalProperties? RadicalProperties { get; set; }
   
   
   /// <summary>
   ///   Degree.
   /// </summary>
-  public DocumentModel.Math.Degree? Degree { get; set; }
+  public Degree? Degree { get; set; }
   
   
   /// <summary>
   ///   Base.
   /// </summary>
-  public DocumentModel.Math.Base? Base { get; set; }
+  public Base? Base { get; set; }
   
 }

@@ -6,10 +6,10 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class Table
 {
-  public DocumentModel.Wordprocessing.TableProperties? TableProperties { get; set; }
+  public TableProperties? TableProperties { get; set; }
   
-  public DocumentModel.Wordprocessing.TableGrid? TableGrid { get; set; }
+  public TableGrid? TableGrid { get; set; }
   
-  public DocumentModel.ElementCollection<DocumentModel.IModelElement>? Items { get; set; }
+  public ElementCollection<IModelElement>? Items { get; set; }
   
 }

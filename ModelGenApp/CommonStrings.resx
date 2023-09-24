@@ -569,4 +569,10 @@ defined in the enum type.</value>
   <data name="ValidateGeneration" xml:space="preserve">
     <value>Validate generation</value>
   </data>
+  <data name="OutgoingRelationships" xml:space="preserve">
+    <value>Outgoing relationships</value>
+  </data>
+  <data name="IncomingRelationships" xml:space="preserve">
+    <value>Incoming relationships</value>
+  </data>
 </root>

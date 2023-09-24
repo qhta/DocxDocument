@@ -10,7 +10,6 @@ public partial class TableLayout
   /// <summary>
   ///   Table Layout Setting
   /// </summary>
-  [SchemaAttr("w:type")]
-  public DocumentModel.Wordprocessing.TableLayoutValues? Type { get; set; }
+  public TableLayoutKind? Type { get; set; }
   
 }

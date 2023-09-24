@@ -10,19 +10,19 @@ public partial class Settings
   /// <summary>
   ///   Write Protection.
   /// </summary>
-  public DocumentModel.Wordprocessing.WriteProtection? WriteProtection { get; set; }
+  public WriteProtection? WriteProtection { get; set; }
   
   
   /// <summary>
   ///   Document View Setting.
   /// </summary>
-  public DocumentModel.Wordprocessing.ViewValues? View { get; set; }
+  public ViewKind? View { get; set; }
   
   
   /// <summary>
   ///   Magnification Setting.
   /// </summary>
-  public DocumentModel.Wordprocessing.Zoom? Zoom { get; set; }
+  public Zoom? Zoom { get; set; }
   
   
   /// <summary>
@@ -132,23 +132,23 @@ public partial class Settings
   /// </summary>
   public Boolean? HideGrammaticalErrors { get; set; }
   
-  public DocumentModel.Wordprocessing.ProofState? ProofState { get; set; }
+  public ProofState? ProofState { get; set; }
   
   public Boolean? FormsDesign { get; set; }
   
-  public DocumentModel.Wordprocessing.RelationshipType? AttachedTemplate { get; set; }
+  public RelationshipType? AttachedTemplate { get; set; }
   
   public Boolean? LinkStyles { get; set; }
   
-  public DocumentModel.Wordprocessing.StylePaneFormatFilter? StylePaneFormatFilter { get; set; }
+  public StylePaneFormatFilter? StylePaneFormatFilter { get; set; }
   
-  public String? StylePaneSortMethods { get; set; }
+  public StylePaneSortMethods? StylePaneSortMethods { get; set; }
   
-  public DocumentModel.Wordprocessing.DocumentTypeValues? DocumentType { get; set; }
+  public DocumentTypeKind? DocumentType { get; set; }
   
-  public DocumentModel.Wordprocessing.MailMerge? MailMerge { get; set; }
+  public MailMerge? MailMerge { get; set; }
   
-  public DocumentModel.Wordprocessing.RevisionView? RevisionView { get; set; }
+  public RevisionView? RevisionView { get; set; }
   
   public Boolean? TrackRevisions { get; set; }
   
@@ -156,7 +156,7 @@ public partial class Settings
   
   public Boolean? DoNotTrackFormatting { get; set; }
   
-  public DocumentModel.Wordprocessing.DocumentProtection? DocumentProtection { get; set; }
+  public DocumentProtection? DocumentProtection { get; set; }
   
   public Boolean? AutoFormatOverride { get; set; }
   
@@ -190,9 +190,9 @@ public partial class Settings
   
   public String? DrawingGridVerticalSpacing { get; set; }
   
-  public Int32? DisplayHorizontalDrawingGrid { get; set; }
+  public HexInt? DisplayHorizontalDrawingGrid { get; set; }
   
-  public Int32? DisplayVerticalDrawingGrid { get; set; }
+  public HexInt? DisplayVerticalDrawingGrid { get; set; }
   
   public Boolean? DoNotUseMarginsForDrawingGridOrigin { get; set; }
   
@@ -204,15 +204,15 @@ public partial class Settings
   
   public Boolean? NoPunctuationKerning { get; set; }
   
-  public DocumentModel.Wordprocessing.CharacterSpacingValues? CharacterSpacingControl { get; set; }
+  public CharacterSpacingKind? CharacterSpacingControl { get; set; }
   
   public Boolean? PrintTwoOnOne { get; set; }
   
   public Boolean? StrictFirstAndLastChars { get; set; }
   
-  public DocumentModel.Wordprocessing.NoLineBreaksAfterKinsoku? NoLineBreaksAfterKinsoku { get; set; }
+  public NoLineBreaksAfterKinsoku? NoLineBreaksAfterKinsoku { get; set; }
   
-  public DocumentModel.Wordprocessing.NoLineBreaksBeforeKinsoku? NoLineBreaksBeforeKinsoku { get; set; }
+  public NoLineBreaksBeforeKinsoku? NoLineBreaksBeforeKinsoku { get; set; }
   
   public Boolean? SavePreviewPicture { get; set; }
   
@@ -230,7 +230,7 @@ public partial class Settings
   
   public Boolean? UseXsltWhenSaving { get; set; }
   
-  public DocumentModel.Wordprocessing.SaveThroughXslt? SaveThroughXslt { get; set; }
+  public SaveThroughXslt? SaveThroughXslt { get; set; }
   
   public Boolean? ShowXmlTags { get; set; }
   
@@ -238,25 +238,25 @@ public partial class Settings
   
   public Boolean? UpdateFieldsOnOpen { get; set; }
   
-  public DocumentModel.Wordprocessing.HeaderShapeDefaults? HeaderShapeDefaults { get; set; }
+  public HeaderShapeDefaults? HeaderShapeDefaults { get; set; }
   
-  public DocumentModel.Wordprocessing.FootnoteDocumentWideProperties? FootnoteDocumentWideProperties { get; set; }
+  public FootnoteDocumentWideProperties? FootnoteDocumentWideProperties { get; set; }
   
-  public DocumentModel.Wordprocessing.EndnoteDocumentWideProperties? EndnoteDocumentWideProperties { get; set; }
+  public EndnoteDocumentWideProperties? EndnoteDocumentWideProperties { get; set; }
   
-  public DocumentModel.Wordprocessing.Compatibility? Compatibility { get; set; }
+  public Compatibility? Compatibility { get; set; }
   
-  public DocumentModel.Wordprocessing.DocumentVariables? DocumentVariables { get; set; }
+  public DocumentVariables? DocumentVariables { get; set; }
   
-  public DocumentModel.Wordprocessing.Rsids? Rsids { get; set; }
+  public Rsids? Rsids { get; set; }
   
-  public DocumentModel.Math.MathProperties? MathProperties { get; set; }
+  public MathProperties? MathProperties { get; set; }
   
   public Boolean? UICompatibleWith97To2003 { get; set; }
   
-  public DocumentModel.Wordprocessing.LanguageType? ThemeFontLanguages { get; set; }
+  public LanguageType? ThemeFontLanguages { get; set; }
   
-  public DocumentModel.Wordprocessing.ColorSchemeMapping? ColorSchemeMapping { get; set; }
+  public ColorSchemeMapping? ColorSchemeMapping { get; set; }
   
   public Boolean? DoNotIncludeSubdocsInStats { get; set; }
   
@@ -264,30 +264,30 @@ public partial class Settings
   
   public Boolean? ForceUpgrade { get; set; }
   
-  public DocumentModel.Wordprocessing.Captions? Captions { get; set; }
+  public Captions? Captions { get; set; }
   
-  public DocumentModel.Wordprocessing.ReadModeInkLockDown? ReadModeInkLockDown { get; set; }
+  public ReadModeInkLockDown? ReadModeInkLockDown { get; set; }
   
-  public DocumentModel.CustomXml.SchemaLibrary? SchemaLibrary { get; set; }
+  public SchemaLibrary? SchemaLibrary { get; set; }
   
-  public DocumentModel.Wordprocessing.ShapeDefaults? ShapeDefaults { get; set; }
+  public ShapeDefaults? ShapeDefaults { get; set; }
   
   public String? DecimalSymbol { get; set; }
   
   public String? ListSeparator { get; set; }
   
-  public DocumentModel.HexBinaryValue? DocumentId { get; set; }
+  public HexBinary? DocumentId { get; set; }
   
-  public DocumentModel.Wordprocessing.OnOffValues? DiscardImageEditingData { get; set; }
+  public Boolean? DiscardImageEditingData { get; set; }
   
   public Int32? DefaultImageDpi { get; set; }
   
-  public DocumentModel.Wordprocessing.OnOffValues? ConflictMode { get; set; }
+  public Boolean? ConflictMode { get; set; }
   
   public Boolean? ChartTrackingRefBased { get; set; }
   
   public String? PersistentDocumentId { get; set; }
   
-  public DocumentModel.ElementCollection<DocumentModel.IModelElement>? Items { get; set; }
+  public ElementCollection<IModelElement>? Items { get; set; }
   
 }

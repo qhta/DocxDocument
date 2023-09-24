@@ -6,6 +6,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class AdjustValueList
 {
-  public DocumentModel.ElementCollection<DocumentModel.Drawings.ShapeGuide>? Items { get; set; }
+  public ElementCollection<ShapeGuide>? Items { get; set; }
   
 }

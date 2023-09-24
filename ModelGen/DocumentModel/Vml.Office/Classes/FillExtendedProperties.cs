@@ -10,14 +10,12 @@ public partial class FillExtendedProperties
   /// <summary>
   ///   VML Extension Handling Behavior
   /// </summary>
-  [SchemaAttr("v:ext")]
-  public DocumentModel.Vml.ExtensionHandlingBehaviorValues? Extension { get; set; }
+  public ExtensionHandlingBehaviorKind? Extension { get; set; }
   
   
   /// <summary>
   ///   Fill Type
   /// </summary>
-  [SchemaAttr("type")]
-  public DocumentModel.Vml.Office.FillValues? Type { get; set; }
+  public FillKind? Type { get; set; }
   
 }

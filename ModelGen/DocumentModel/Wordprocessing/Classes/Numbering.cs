@@ -8,6 +8,6 @@ public partial class Numbering
 {
   public Int32? NumberingIdMacAtCleanup { get; set; }
   
-  public DocumentModel.ElementCollection<DocumentModel.IModelElement>? Items { get; set; }
+  public ElementCollection<IModelElement>? Items { get; set; }
   
 }

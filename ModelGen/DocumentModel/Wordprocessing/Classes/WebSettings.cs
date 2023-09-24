@@ -10,13 +10,13 @@ public partial class WebSettings
   /// <summary>
   ///   Frameset.
   /// </summary>
-  public DocumentModel.Wordprocessing.Frameset? Frameset { get; set; }
+  public Frameset? Frameset { get; set; }
   
   
   /// <summary>
   ///   Divs.
   /// </summary>
-  public DocumentModel.Wordprocessing.Divs? Divs { get; set; }
+  public Divs? Divs { get; set; }
   
   
   /// <summary>
@@ -76,6 +76,6 @@ public partial class WebSettings
   /// <summary>
   ///   TargetScreenSize.
   /// </summary>
-  public DocumentModel.Wordprocessing.TargetScreenSizeValues? TargetScreenSize { get; set; }
+  public TargetScreenSizeKind? TargetScreenSize { get; set; }
   
 }

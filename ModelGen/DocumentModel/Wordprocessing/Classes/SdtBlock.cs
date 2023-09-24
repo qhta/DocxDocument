@@ -10,13 +10,12 @@ public partial class SdtBlock
   /// <summary>
   ///   Block-Level Structured Document Tag Content.
   /// </summary>
-  [Nullable((Byte)2)]
-  public DocumentModel.Wordprocessing.SdtContentBlock? SdtContentBlock { get; set; }
+  public SdtContentBlock? SdtContentBlock { get; set; }
   
-  public DocumentModel.Wordprocessing.SdtProperties? SdtProperties { get; set; }
+  public SdtProperties? SdtProperties { get; set; }
   
-  public DocumentModel.Wordprocessing.SdtEndCharProperties? SdtEndCharProperties { get; set; }
+  public SdtEndCharProperties? SdtEndCharProperties { get; set; }
   
-  public DocumentModel.ElementCollection<DocumentModel.IModelElement>? Items { get; set; }
+  public ElementCollection<IModelElement>? Items { get; set; }
   
 }

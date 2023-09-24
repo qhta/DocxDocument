@@ -14,13 +14,12 @@ public partial class Person
   /// <summary>
   ///   author, this property is only available in Office 2013 and later.
   /// </summary>
-  [SchemaAttr("w15:author")]
   public String? Author { get; set; }
   
   
   /// <summary>
   ///   PresenceInfo.
   /// </summary>
-  public DocumentModel.Wordprocessing.PresenceInfo? PresenceInfo { get; set; }
+  public PresenceInfo? PresenceInfo { get; set; }
   
 }

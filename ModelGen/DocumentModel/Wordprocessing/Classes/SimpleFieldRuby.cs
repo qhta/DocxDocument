@@ -10,21 +10,18 @@ public partial class SimpleFieldRuby
   /// <summary>
   ///   instr
   /// </summary>
-  [SchemaAttr("w:instr")]
   public String? Instruction { get; set; }
   
   
   /// <summary>
   ///   fldLock
   /// </summary>
-  [SchemaAttr("w:fldLock")]
   public Boolean? FieldLock { get; set; }
   
   
   /// <summary>
   ///   dirty
   /// </summary>
-  [SchemaAttr("w:dirty")]
   public Boolean? Dirty { get; set; }
   
   
@@ -33,6 +30,6 @@ public partial class SimpleFieldRuby
   /// </summary>
   public String? FieldData { get; set; }
   
-  public DocumentModel.ElementCollection<DocumentModel.IModelElement>? Items { get; set; }
+  public ElementCollection<IModelElement>? Items { get; set; }
   
 }

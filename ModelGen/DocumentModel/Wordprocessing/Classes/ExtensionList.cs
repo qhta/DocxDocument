@@ -6,6 +6,6 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class ExtensionList
 {
-  public DocumentModel.ElementCollection<DocumentModel.Wordprocessing.Extension>? Items { get; set; }
+  public ElementCollection<Extension>? Items { get; set; }
   
 }

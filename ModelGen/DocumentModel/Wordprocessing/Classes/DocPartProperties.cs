@@ -10,7 +10,7 @@ public partial class DocPartProperties
   /// <summary>
   ///   Entry Name.
   /// </summary>
-  public DocumentModel.Wordprocessing.DocPartName? DocPartName { get; set; }
+  public DocPartName? DocPartName { get; set; }
   
   
   /// <summary>
@@ -22,19 +22,19 @@ public partial class DocPartProperties
   /// <summary>
   ///   Entry Categorization.
   /// </summary>
-  public DocumentModel.Wordprocessing.Category? Category { get; set; }
+  public Category? Category { get; set; }
   
   
   /// <summary>
   ///   Entry Types.
   /// </summary>
-  public DocumentModel.Wordprocessing.DocPartTypes? DocPartTypes { get; set; }
+  public DocPartTypes? DocPartTypes { get; set; }
   
   
   /// <summary>
   ///   Entry Insertion Behaviors.
   /// </summary>
-  public DocumentModel.Wordprocessing.Behaviors? Behaviors { get; set; }
+  public Behaviors? Behaviors { get; set; }
   
   
   /// <summary>
@@ -46,6 +46,6 @@ public partial class DocPartProperties
   /// <summary>
   ///   Entry ID.
   /// </summary>
-  public String? DocPartId { get; set; }
+  public HexInt? DocPartId { get; set; }
   
 }

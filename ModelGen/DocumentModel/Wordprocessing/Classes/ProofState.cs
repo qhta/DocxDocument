@@ -10,14 +10,12 @@ public partial class ProofState
   /// <summary>
   ///   Spell Checking State
   /// </summary>
-  [SchemaAttr("w:spelling")]
-  public DocumentModel.Wordprocessing.ProofingStateValues? Spelling { get; set; }
+  public ProofingStateKind? Spelling { get; set; }
   
   
   /// <summary>
   ///   Grammatical Checking State
   /// </summary>
-  [SchemaAttr("w:grammar")]
-  public DocumentModel.Wordprocessing.ProofingStateValues? Grammar { get; set; }
+  public ProofingStateKind? Grammar { get; set; }
   
 }

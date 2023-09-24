@@ -10,31 +10,30 @@ public partial class FormatScheme
   /// <summary>
   ///   Defines the name for the format scheme.  The name is simply a human readable string which identifies the format scheme in the user interface.
   /// </summary>
-  [SchemaAttr("name")]
   public String? Name { get; set; }
   
   
   /// <summary>
   ///   Fill Style List.
   /// </summary>
-  public DocumentModel.Drawings.FillStyleList? FillStyleList { get; set; }
+  public FillStyleList? FillStyleList { get; set; }
   
   
   /// <summary>
   ///   Line Style List.
   /// </summary>
-  public DocumentModel.Drawings.LineStyleList? LineStyleList { get; set; }
+  public LineStyleList? LineStyleList { get; set; }
   
   
   /// <summary>
   ///   Effect Style List.
   /// </summary>
-  public DocumentModel.Drawings.EffectStyleList? EffectStyleList { get; set; }
+  public EffectStyleList? EffectStyleList { get; set; }
   
   
   /// <summary>
   ///   Background Fill Style List.
   /// </summary>
-  public DocumentModel.Drawings.BackgroundFillStyleList? BackgroundFillStyleList { get; set; }
+  public BackgroundFillStyleList? BackgroundFillStyleList { get; set; }
   
 }

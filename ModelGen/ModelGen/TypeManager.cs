@@ -1,4 +1,6 @@
-﻿namespace ModelGen;
+﻿using System.IO.Pipes;
+
+namespace ModelGen;
 
 public static class TypeManager
 {
@@ -139,14 +141,71 @@ public static class TypeManager
     return false;
   }
 
-  public static bool CancelRequest { get => TypeReflector.CancelRequest; set=>TypeReflector.CancelRequest = value; }
+  public static bool TryGetTypeInfo(string fullTypeName, [NotNullWhen(true)] out TypeInfo? info)
+  {
+    info = null;
+    var type = GetType(fullTypeName);
+    if (type == null) return false;
+    return TryGetTypeInfo(type, out info);
+  }
+
+  public static Type? GetType(string fullTypeName)
+  {
+    string? ns;
+    string typeName;
+    string? argTypeName;
+    (ns, typeName, argTypeName) = SplitTypeName(fullTypeName);
+    if (ns == null)
+      ns = "System";
+    fullTypeName = ns + "." + typeName;
+    if (argTypeName != null)
+      fullTypeName += "`1";
+    Type? result;
+    if (ns == "System")
+      result = Type.GetType(fullTypeName + ", mscorlib");
+    else
+      result = Type.GetType(fullTypeName + ", DocumentModel.BaseTypes")
+      ?? Type.GetType(fullTypeName + ", DocumentModel.Attributes");
+    if (result==null)
+      return null;
+    //Debug.Assert(result != null);
+    if (argTypeName != null)
+    {
+      Type? argType;
+      if (!argTypeName.Contains("."))
+        argType = Type.GetType("System." + argTypeName + ", mscorlib");
+      else
+        argType = Type.GetType(argTypeName + ", DocumentModel.BaseTypes")
+        ?? Type.GetType(argTypeName + ", DocumentModel.Attributes");
+      Debug.Assert(argType != null);
+      result = result.MakeGenericType(new Type[]{ argType });
+    }
+    return result;
+  }
+
+  public static (string? ns, string typeName, string? argTypeName) SplitTypeName(string typeName)
+  {
+    string? ns = null;
+    string? argTypeName = null;
+    var k = typeName.IndexOf('<');
+    if (k >= 0)
+    {
+      argTypeName = typeName.Substring(k + 1, typeName.Length - k - 1);
+      typeName = typeName.Substring(0, k);
+    }
+    k = typeName.LastIndexOf(".");
+    if (k >= 0)
+    {
+      ns = typeName.Substring(0,k);
+      typeName = typeName.Substring(k + 1);
+    }
+    return (ns, typeName, argTypeName);
+  }
+
+  public static bool CancelRequest { get => TypeReflector.CancelRequest; set => TypeReflector.CancelRequest = value; }
 
   public static TypeInfo RegisterType(Type type, bool? acceptance = null)
   {
-    //if (type.Name.StartsWith("OpenXmlComparableSimpleValue") && type.IsConstructedGenericType)
-    //  Debug.Assert(true);
-    //if (type.Name.StartsWith("OpenXmlSimpleValue"))
-    //  Debug.Assert(true);
     lock (KnownTypes)
     {
       if (KnownTypes.TryGetValue(type, out var typeInfo))
@@ -162,7 +221,7 @@ public static class TypeManager
         NamespaceDictionary.AddType(typeInfo);
         OnRegistering?.Invoke(new ProgressTypeInfo { Namespaces = KnownNamespaces.Count + 1, ProcessedTypes = AllTypes.Count(), Current = typeInfo });
       }
-      bool accept = acceptance == true || !ModelConfig.Instance.IsExcluded(type);
+      var accept = acceptance == true || !ModelConfig.Instance.IsExcluded(type);
       if (!accept)
         typeInfo.SetRejected(PPS.ScanSource);
 

@@ -210,8 +210,8 @@ public static class CommentDocsParser
   /// <param name="xElement"></param>
   private static void AddToRemarks(ModelElement modelElement, XElement xElement)
   {
-    if (modelElement.Name=="TypedOpenXmlPart")
-      Debug.Assert(true);
+    //if (modelElement.Name=="TypedOpenXmlPart")
+    //  Debug.Assert(true);
     if (modelElement.Documentation == null)
       modelElement.Documentation = new ElementDocs();
     var remarks = modelElement.Documentation.FirstOrDefault(item => item.Name == "remarks");

@@ -1,4 +1,4 @@
-namespace DXW;
+namespace DocumentModel.Wordprocessing;
 
 
 /// <summary>

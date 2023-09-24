@@ -14,7 +14,7 @@ public partial class WebExTaskpanesPart
   /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.WebExtensions.UI.Taskpanes? Taskpanes { get; set; }
+  public Taskpanes? Taskpanes { get; set; }
   
   
   /// <summary>

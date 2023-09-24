@@ -10,14 +10,12 @@ public partial class TableRowHeight
   /// <summary>
   ///   Table Row Height
   /// </summary>
-  [SchemaAttr("w:val")]
   public UInt32? Val { get; set; }
   
   
   /// <summary>
   ///   Table Row Height Type
   /// </summary>
-  [SchemaAttr("w:hRule")]
-  public DocumentModel.Wordprocessing.HeightRuleValues? HeightType { get; set; }
+  public HeightRuleKind? HeightType { get; set; }
   
 }

@@ -10,64 +10,56 @@ public partial class Paragraph
   /// <summary>
   ///   Revision Identifier for Paragraph Glyph Formatting
   /// </summary>
-  [SchemaAttr("w:rsidRPr")]
-  public DocumentModel.HexBinaryValue? RsidParagraphMarkRevision { get; set; }
+  public HexBinary? RsidParagraphMarkRevision { get; set; }
   
   
   /// <summary>
   ///   Revision Identifier for Paragraph
   /// </summary>
-  [SchemaAttr("w:rsidR")]
-  public DocumentModel.HexBinaryValue? RsidParagraphAddition { get; set; }
+  public HexBinary? RsidParagraphAddition { get; set; }
   
   
   /// <summary>
   ///   Revision Identifier for Paragraph Deletion
   /// </summary>
-  [SchemaAttr("w:rsidDel")]
-  public DocumentModel.HexBinaryValue? RsidParagraphDeletion { get; set; }
+  public HexBinary? RsidParagraphDeletion { get; set; }
   
   
   /// <summary>
   ///   Revision Identifier for Paragraph Properties
   /// </summary>
-  [SchemaAttr("w:rsidP")]
-  public DocumentModel.HexBinaryValue? RsidParagraphProperties { get; set; }
+  public HexBinary? RsidParagraphProperties { get; set; }
   
   
   /// <summary>
   ///   Default Revision Identifier for Runs
   /// </summary>
-  [SchemaAttr("w:rsidRDefault")]
-  public DocumentModel.HexBinaryValue? RsidRunAdditionDefault { get; set; }
+  public HexBinary? RsidRunAdditionDefault { get; set; }
   
   
   /// <summary>
   ///   paraId, this property is only available in Office 2010 and later.
   /// </summary>
-  [SchemaAttr("w14:paraId")]
-  public DocumentModel.HexBinaryValue? ParagraphId { get; set; }
+  public HexBinary? ParagraphId { get; set; }
   
   
   /// <summary>
   ///   textId, this property is only available in Office 2010 and later.
   /// </summary>
-  [SchemaAttr("w14:textId")]
-  public DocumentModel.HexBinaryValue? TextId { get; set; }
+  public HexBinary? TextId { get; set; }
   
   
   /// <summary>
   ///   noSpellErr, this property is only available in Office 2010 and later.
   /// </summary>
-  [SchemaAttr("w14:noSpellErr")]
   public Boolean? NoSpellError { get; set; }
   
   
   /// <summary>
   ///   Paragraph Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.ParagraphProperties? ParagraphProperties { get; set; }
+  public ParagraphProperties? ParagraphProperties { get; set; }
   
-  public DocumentModel.ElementCollection<DocumentModel.IModelElement>? Items { get; set; }
+  public ElementCollection<IModelElement>? Items { get; set; }
   
 }

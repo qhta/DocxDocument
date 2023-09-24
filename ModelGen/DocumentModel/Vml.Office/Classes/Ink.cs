@@ -10,14 +10,12 @@ public partial class Ink
   /// <summary>
   ///   Ink Data
   /// </summary>
-  [SchemaAttr("i")]
-  public DocumentModel.Base64BinaryValue? InkData { get; set; }
+  public Base64Binary? InkData { get; set; }
   
   
   /// <summary>
   ///   Annotation Flag
   /// </summary>
-  [SchemaAttr("annotation")]
   public Boolean? AnnotationFlag { get; set; }
   
 }

@@ -6,6 +6,6 @@ namespace DocumentModel;
 /// </summary>
 public partial class SimpleGroups
 {
-  public DocumentModel.ElementCollection<DocumentModel.IModelElement>? Items { get; set; }
+  public ElementCollection<IModelElement>? Items { get; set; }
   
 }

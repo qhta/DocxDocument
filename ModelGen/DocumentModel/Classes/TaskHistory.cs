@@ -6,6 +6,6 @@ namespace DocumentModel;
 /// </summary>
 public partial class TaskHistory
 {
-  public DocumentModel.ElementCollection<DocumentModel.TaskHistoryEvent>? Items { get; set; }
+  public ElementCollection<TaskHistoryEvent>? Items { get; set; }
   
 }

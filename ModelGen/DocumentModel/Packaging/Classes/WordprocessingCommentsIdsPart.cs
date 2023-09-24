@@ -22,7 +22,7 @@ public partial class WordprocessingCommentsIdsPart
   /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.Wordprocessing.CommentsIds? CommentsIds { get; set; }
+  public CommentsIds? CommentsIds { get; set; }
   
   public String? ContentType { get; set; }
   

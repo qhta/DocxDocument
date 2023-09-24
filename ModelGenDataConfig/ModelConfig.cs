@@ -12,7 +12,10 @@ namespace ModelGenDataConfig;
 public class ModelConfig
 {
 
-  private ModelConfig() { }
+  private ModelConfig() 
+  { 
+    InitPredefinedTypes();
+  }
 
   public static ModelConfig Instance
   {
@@ -395,22 +398,23 @@ public class ModelConfig
     { "DocumentFormat.OpenXml.Wordprocessing.Font.Panose1Number", "Panose"},
     };
 
-  public Dictionary<string, string> PropertyTypeConversion { get; } = new()
+  public WildcardSortedStringDictionary PropertyTypeConversion { get; } = new()
   {
     { "DocumentFormat.OpenXml.Wordprocessing.DocumentSettings.DocumentId", "HexInt" },
     { "DocumentFormat.OpenXml.Wordprocessing.DocumentSettings.PersistentDocumentId", "Guid" },
     { "DocumentFormat.OpenXml.Wordprocessing.CheckBoxSymbolType.Val", "HexChar" },
     { "DocumentFormat.OpenXml.Wordprocessing.Mcd.BEncrypt", "HexChar" },
     { "DocumentFormat.OpenXml.Wordprocessing.Mcd.Cmg", "HexChar" },
-    { "*.Rsid", "HexInt" },
+    { "Rsid", "HexInt" },
     { "DocumentFormat.OpenXml.Wordprocessing.Rsids.RsidRoot", "HexInt" },
     { "DocumentFormat.OpenXml.Wordprocessing.Rsids.Items", "Collection<HexInt>" },
   };
 
-  public Dictionary<string, Type> PropertyTypes { get; } = new();
+  public WildcardSortedStringDictionary<Type> PropertyTypes { get; } = new ();
 
   public void BuildPropertyTypesDictionary()
   {
+    PropertyTypes.Clear();
     foreach (var item in PropertyTypeConversion)
     {
       if (item.Value.StartsWith("Collection<"))
@@ -459,10 +463,13 @@ public class ModelConfig
                           || ExcludedTypes.FirstOrDefault(item => item.Contains('.')) != null;
     if (fullNameComparison)
     {
-      var fullName = type.Namespace ?? "" + "." + type.Name;
+      var fullName = type.Name;
+      var ns = type.Namespace ?? "";
+      if (type.Namespace!=null)
+        fullName = type.Namespace+"." + fullName;
       if (IncludedTypes.Contains(fullName))
         return false;
-      if (ExcludedNamespaces.Contains(type.Namespace ?? ""))
+      if (ExcludedNamespaces.Contains(ns))
         return true;
       if (ExcludedTypes.Contains(fullName))
         return true;
@@ -560,6 +567,10 @@ public class ModelConfig
     { "DocumentFormat.OpenXml.VariantTypes.VTVector", "DocumentModel.VectorVariant"},
     { "DocumentFormat.OpenXml.Base64BinaryValue", "DocumentModel.Base64Binary"},
     { "DocumentFormat.OpenXml.HexBinaryValue", "DocumentModel.HexBinary"},
+  };
+
+  public WildcardStrings PredefinedTypes { get; } = new WildcardStrings
+  {
   };
 
   public Dictionary<string, Type> ModelTypes { get; } = new();
@@ -830,6 +841,25 @@ public class ModelConfig
     }
   }
 
+  public void InitPredefinedTypes()
+  {
+    PredefinedTypes.Clear();
+    LoadPredefinedTypes(Assembly.Load("DocumentModel.BaseTypes"));
+    LoadPredefinedTypes(Assembly.Load("DocumentModel.Attributes"));
+    //foreach (var str in PredefinedTypes)
+    //  Debug.WriteLine(str);
+  }
+
+  /// <summary>
+  /// Adds types in imported assembly to excluded types.
+  /// </summary>
+  public void LoadPredefinedTypes(Assembly assembly)
+  {
+    foreach (var type in assembly.ExportedTypes)
+      if (!type.IsConstructedGenericType)
+        PredefinedTypes.Add(type.FullName);
+  }
+
   private void WriteStrings(TextWriter textWriter, string caption, ICollection<string> data)
   {
     textWriter.WriteLine("[" + caption + "]");
@@ -872,6 +902,8 @@ public class ModelConfig
     {
       lineNumber++;
       var ss = line.Trim().Split('\t');
+      if (line.StartsWith("*Id"))
+        Debug.Assert(true);
       try
       {
         if (ss.Length > 1)

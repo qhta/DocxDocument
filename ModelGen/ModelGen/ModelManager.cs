@@ -25,7 +25,7 @@ public static class ModelManager
     var totalTypes = types.Count();
     foreach (var typeInfo in types)
     {
-      if (ModelManager.TryConvertType(typeInfo))
+      if (TryConvertType(typeInfo))
       {
         ConvertedTypesCount++;
         OnConvertingType?.Invoke(new ProgressTypeInfo
@@ -46,19 +46,19 @@ public static class ModelManager
     if (typeInfo.IsConverted)
       return false;
     var converted = false;
-    if (TryAddTypeTableConversion(typeInfo))
+    if (TryTableTypeConversion(typeInfo))
       converted = true;
     else
-    if (TryAddBaseTypeConversion(typeInfo))
+    if (TryBaseTypeConversion(typeInfo))
       converted = true;
     else
-    if (TryAddValTypeConversion(typeInfo))
+    if (TryValTypeConversion(typeInfo))
       converted = true;
     else
-    if (TryAddValTypeConversion(typeInfo))
+    if (TryValTypeConversion(typeInfo))
       converted = true;
     else
-    if (TryAddGenericTypeConversion(typeInfo))
+    if (TryGenericTypeConversion(typeInfo))
       converted = true;
     else
       TryAddItemsProperty(typeInfo);
@@ -67,7 +67,7 @@ public static class ModelManager
       var targetType = typeInfo.TargetType;
       if (targetType != null)
       {
-        if (targetType.TargetNamespace!=null)
+        if (targetType.TargetNamespace != null)
         {
           var targetNamespace = TypeManager.GetNamespace(targetType.TargetNamespace);
           var targetTypeName = targetType.NewName ?? targetType.Name;
@@ -81,7 +81,7 @@ public static class ModelManager
       var targetType = typeInfo;
       if (targetType != null)
       {
-        if (targetType.TargetNamespace!=null)
+        if (targetType.TargetNamespace != null)
         {
           var targetNamespace = TypeManager.GetNamespace(targetType.TargetNamespace);
           var targetTypeName = targetType.NewName ?? targetType.Name;
@@ -90,17 +90,19 @@ public static class ModelManager
         }
       }
     }
+    TryConvertProperties(typeInfo);
     return converted;
   }
 
-  private static bool TryAddTypeTableConversion(TypeInfo typeInfo)
+  private static bool TryTableTypeConversion(TypeInfo typeInfo)
   {
     if (typeInfo.IsConverted)
       return false;
     if (ModelConfig.Instance.TypeConversion.TryGetValue2(typeInfo.Type.FullName ?? "", out var targetName))
     {
-      var targetType = Type.GetType(targetName);
+      var targetType = TypeManager.GetType(targetName);
       if (targetType == null) return false;
+      //Debug.Assert(targetType != null);
       var targetTypeInfo = TypeManager.RegisterType(targetType, typeInfo, Semantics.TypeChange);
       if (targetTypeInfo != null)
         targetTypeInfo.IsConvertedTo = true;
@@ -110,7 +112,7 @@ public static class ModelManager
     return false;
   }
 
-  private static bool TryAddBaseTypeConversion(TypeInfo typeInfo)
+  private static bool TryBaseTypeConversion(TypeInfo typeInfo)
   {
     if (typeInfo.IsConverted)
       return false;
@@ -130,7 +132,7 @@ public static class ModelManager
     return false;
   }
 
-  private static bool TryAddValTypeConversion(TypeInfo typeInfo)
+  private static bool TryValTypeConversion(TypeInfo typeInfo)
   {
     if (typeInfo.IsConverted)
       return false;
@@ -147,12 +149,12 @@ public static class ModelManager
     return false;
   }
 
-  private static bool TryAddGenericTypeConversion(TypeInfo typeInfo)
+  private static bool TryGenericTypeConversion(TypeInfo typeInfo)
   {
-    return TryAddGenericTypeConversion(typeInfo, out _);
+    return TryGenericTypeConversion(typeInfo, out _);
   }
 
-  private static bool TryAddGenericTypeConversion(TypeInfo typeInfo, out TypeInfo? targetType)
+  private static bool TryGenericTypeConversion(TypeInfo typeInfo, out TypeInfo? targetType)
   {
     targetType = null;
     if (typeInfo.IsConverted)
@@ -278,6 +280,32 @@ public static class ModelManager
     return false;
   }
 
+  private static bool TryConvertProperties(TypeInfo typeInfo)
+  {
+    bool ok = false;
+    if (typeInfo.Properties != null)
+    {
+      foreach (var property in typeInfo.Properties)
+      {
+        var propName = typeInfo.OriginalNamespace + "." + property.Name;
+        var typeTranslate = ModelConfig.Instance.PropertyTypeConversion.TryGetValue(propName, out var newTypeName);
+        if (!typeTranslate)
+          typeTranslate = ModelConfig.Instance.PropertyTypeConversion.TryGetValue(property.Name, out newTypeName);
+        if (typeTranslate && newTypeName != null)
+        {
+          property.TargetPropertyTypeName = newTypeName;
+          //if (TypeManager.TryGetTypeInfo(newTypeName, out var targetTypeInfo))
+          //{
+          //  Debug.Assert(targetTypeInfo != null);
+          //  property.TargetPropertyType = targetTypeInfo;
+          //}
+          ok = true;
+        }
+      }
+    }
+    return ok;
+  }
+
   public static TypeInfo GetTargetType(this PropInfo propInfo)
   {
     if (propInfo.TargetType != null)
@@ -373,7 +401,7 @@ public static class ModelManager
   {
     var result = TypeManager.GetRelatedTypes(typeInfo, Semantics.TypeChange).FirstOrDefault();
     if (result == null && typeInfo.IsConstructedGenericType)
-      if (TryAddGenericTypeConversion(typeInfo, out var targetType))
+      if (TryGenericTypeConversion(typeInfo, out var targetType))
         result = targetType;
     if (result != null)
     {
@@ -388,7 +416,7 @@ public static class ModelManager
   {
     var result = TypeManager.GetRelatedTypes(typeInfo, Semantics.TypeChange).FirstOrDefault();
     if (result == null && typeInfo.IsConstructedGenericType)
-      if (TryAddGenericTypeConversion(typeInfo, out var targetType))
+      if (TryGenericTypeConversion(typeInfo, out var targetType))
         result = targetType;
     if (result != null)
     {

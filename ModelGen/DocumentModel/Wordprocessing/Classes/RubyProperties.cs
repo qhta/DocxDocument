@@ -10,7 +10,7 @@ public partial class RubyProperties
   /// <summary>
   ///   Phonetic Guide Text Alignment.
   /// </summary>
-  public DocumentModel.Wordprocessing.RubyAlignValues? RubyAlign { get; set; }
+  public RubyAlignKind? RubyAlign { get; set; }
   
   
   /// <summary>

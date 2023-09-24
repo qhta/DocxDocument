@@ -19,8 +19,8 @@ namespace DocumentModel.Attributes
   /// Defines the attribute which is used to decorate a property for its corresponding attribute information.
   /// </summary>
   [AttributeUsage(AttributeTargets.Class | AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-  [Obsolete("This attribute is no longer used to identify schema information. It didn't contain everything and a new API will be forthcoming.")]
-  public sealed class SchemaAttrAttribute : Attribute
+  //[Obsolete("This attribute is no longer used to identify schema information. It didn't contain everything and a new API will be forthcoming.")]
+  public sealed class SchemaAttrAttribute : System.Attribute
   {
     private readonly XmlQualifiedName _qname;
 

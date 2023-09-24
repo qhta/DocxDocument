@@ -10,12 +10,12 @@ public partial class SdtElement
   /// <summary>
   ///   Gets or sets the SdtProperties.
   /// </summary>
-  public DocumentModel.Wordprocessing.SdtProperties? SdtProperties { get; set; }
+  public SdtProperties? SdtProperties { get; set; }
   
   
   /// <summary>
   ///   Gets or sets the SdtEndCharProperties.
   /// </summary>
-  public DocumentModel.Wordprocessing.SdtEndCharProperties? SdtEndCharProperties { get; set; }
+  public SdtEndCharProperties? SdtEndCharProperties { get; set; }
   
 }

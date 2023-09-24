@@ -10,7 +10,6 @@ public partial class SdtPlaceholder
   /// <summary>
   ///   Document Part Reference.
   /// </summary>
-  [Nullable((Byte)2)]
   public String? DocPartReference { get; set; }
   
 }

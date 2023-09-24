@@ -10,9 +10,8 @@ public partial class TableCell
   /// <summary>
   ///   Table Cell Properties.
   /// </summary>
-  [Nullable((Byte)2)]
-  public DocumentModel.Wordprocessing.TableCellProperties? TableCellProperties { get; set; }
+  public TableCellProperties? TableCellProperties { get; set; }
   
-  public DocumentModel.ElementCollection<DocumentModel.IModelElement>? Items { get; set; }
+  public ElementCollection<IModelElement>? Items { get; set; }
   
 }

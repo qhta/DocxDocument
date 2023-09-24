@@ -6,6 +6,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class TabStopList
 {
-  public DocumentModel.ElementCollection<DocumentModel.Drawings.TabStop>? Items { get; set; }
+  public ElementCollection<TabStop>? Items { get; set; }
   
 }

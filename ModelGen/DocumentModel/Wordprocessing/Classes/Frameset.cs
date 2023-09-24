@@ -16,14 +16,14 @@ public partial class Frameset
   /// <summary>
   ///   Frameset Splitter Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.FramesetSplitbar? FramesetSplitbar { get; set; }
+  public FramesetSplitbar? FramesetSplitbar { get; set; }
   
   
   /// <summary>
   ///   Frameset Layout.
   /// </summary>
-  public DocumentModel.Wordprocessing.FrameLayoutValues? FrameLayout { get; set; }
+  public FrameLayoutKind? FrameLayout { get; set; }
   
-  public DocumentModel.ElementCollection<DocumentModel.IModelElement>? Items { get; set; }
+  public ElementCollection<IModelElement>? Items { get; set; }
   
 }

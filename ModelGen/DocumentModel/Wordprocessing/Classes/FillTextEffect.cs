@@ -16,12 +16,12 @@ public partial class FillTextEffect
   /// <summary>
   ///   SolidColorFillProperties.
   /// </summary>
-  public DocumentModel.Wordprocessing.SolidColorFillProperties? SolidColorFillProperties { get; set; }
+  public SolidColorFillProperties? SolidColorFillProperties { get; set; }
   
   
   /// <summary>
   ///   GradientFillProperties.
   /// </summary>
-  public DocumentModel.Wordprocessing.GradientFillProperties? GradientFillProperties { get; set; }
+  public GradientFillProperties? GradientFillProperties { get; set; }
   
 }

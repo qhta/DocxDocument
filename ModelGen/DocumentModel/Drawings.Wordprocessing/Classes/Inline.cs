@@ -10,72 +10,66 @@ public partial class Inline
   /// <summary>
   ///   Distance From Text on Top Edge
   /// </summary>
-  [SchemaAttr("distT")]
   public UInt32? DistanceFromTop { get; set; }
   
   
   /// <summary>
   ///   Distance From Text on Bottom Edge
   /// </summary>
-  [SchemaAttr("distB")]
   public UInt32? DistanceFromBottom { get; set; }
   
   
   /// <summary>
   ///   Distance From Text on Left Edge
   /// </summary>
-  [SchemaAttr("distL")]
   public UInt32? DistanceFromLeft { get; set; }
   
   
   /// <summary>
   ///   Distance From Text on Right Edge
   /// </summary>
-  [SchemaAttr("distR")]
   public UInt32? DistanceFromRight { get; set; }
   
   
   /// <summary>
   ///   anchorId, this property is only available in Office 2010 and later.
   /// </summary>
-  [SchemaAttr("wp14:anchorId")]
-  public DocumentModel.HexBinaryValue? AnchorId { get; set; }
+  public HexInt? AnchorId { get; set; }
   
   
   /// <summary>
   ///   editId, this property is only available in Office 2010 and later.
   /// </summary>
-  [SchemaAttr("wp14:editId")]
-  public DocumentModel.HexBinaryValue? EditId { get; set; }
+  public HexInt? EditId { get; set; }
   
   
   /// <summary>
   ///   Drawing Object Size.
   /// </summary>
-  public DocumentModel.Drawings.Wordprocessing.Extent? Extent { get; set; }
+  public Extent? Extent { get; set; }
   
   
   /// <summary>
   ///   Inline Wrapping Extent.
   /// </summary>
-  public DocumentModel.Drawings.Wordprocessing.EffectExtent? EffectExtent { get; set; }
+  public EffectExtent? EffectExtent { get; set; }
   
   
   /// <summary>
   ///   Drawing Object Non-Visual Properties.
   /// </summary>
-  public DocumentModel.Drawings.Wordprocessing.DocProperties? DocProperties { get; set; }
+  public DocProperties? DocProperties { get; set; }
   
   
   /// <summary>
   ///   Common DrawingML Non-Visual Properties.
   /// </summary>
-  public DocumentModel.Drawings.Wordprocessing.NonVisualGraphicFrameDrawingProperties? NonVisualGraphicFrameDrawingProperties { get; set; }
+  public NonVisualGraphicFrameDrawingProperties? NonVisualGraphicFrameDrawingProperties { get; set; }
   
   
   /// <summary>
   ///   Graphic.
   /// </summary>
-  public DocumentModel.Drawings.Graphic? Graphic { get; set; }
+  public Graphic? Graphic { get; set; }
   
 }

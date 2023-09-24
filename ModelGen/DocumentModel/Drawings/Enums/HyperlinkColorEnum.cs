@@ -1,4 +1,4 @@
-namespace DocumentFormat.OpenXml.Drawings;
+namespace DocumentModel.Drawings;
 
 
 /// <summary>

@@ -8,26 +8,26 @@ public partial class Outline
 {
   public Boolean? NoFill { get; set; }
   
-  public DocumentModel.Drawings.SolidFill? SolidFill { get; set; }
+  public SolidFill? SolidFill { get; set; }
   
-  public DocumentModel.Drawings.GradientFill? GradientFill { get; set; }
+  public GradientFill? GradientFill { get; set; }
   
-  public DocumentModel.Drawings.PatternFill? PatternFill { get; set; }
+  public PatternFill? PatternFill { get; set; }
   
-  public DocumentModel.Drawings.PresetLineDashValues? PresetDash { get; set; }
+  public PresetLineDashKind? PresetDash { get; set; }
   
-  public DocumentModel.Drawings.CustomDash? CustomDash { get; set; }
+  public CustomDash? CustomDash { get; set; }
   
   public Boolean? Round { get; set; }
   
   public Boolean? LineJoinBevel { get; set; }
   
-  public DocumentModel.Drawings.Miter? Miter { get; set; }
+  public Miter? Miter { get; set; }
   
-  public DocumentModel.Drawings.LineEndPropertiesType? HeadEnd { get; set; }
+  public LineEndPropertiesType? HeadEnd { get; set; }
   
-  public DocumentModel.Drawings.LineEndPropertiesType? TailEnd { get; set; }
+  public LineEndPropertiesType? TailEnd { get; set; }
   
-  public DocumentModel.Drawings.LinePropertiesExtensionList? LinePropertiesExtensionList { get; set; }
+  public LinePropertiesExtensionList? LinePropertiesExtensionList { get; set; }
   
 }
