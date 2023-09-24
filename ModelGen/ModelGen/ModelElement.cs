@@ -37,11 +37,6 @@ public class ModelElement : IOwnedElement
   /// </summary>
   public string? NewName { get; set; }
 
-  ///// <summary>
-  ///// Specifies whether the element is accepted in any phase.
-  ///// </summary>
-  //public bool IsAccepted => RejectedAfterPhase == PPS.None;
-
   /// <summary>
   /// Specifies whether the element is accepted to processing in specific phase
   /// </summary>
@@ -128,11 +123,11 @@ public class ModelElement : IOwnedElement
   /// <summary>
   /// Single-paragraph description.
   /// </summary>
-  public string? Description 
-    { 
-    get; 
-    set; 
-    }
+  public string? Description
+  {
+    get;
+    set;
+  }
 
   /// <summary>
   /// Multi-paragraph description.

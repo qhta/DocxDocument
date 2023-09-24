@@ -19,7 +19,13 @@ public class ModelGenerator : BaseCodeGenerator
     {
       Debug.Assert(nspace.TargetName != null);
       CreateNamespaceFolder(nspace.TargetName);
-      var types = nspace.AcceptedTypes(PPS.CodeGen).Where(item => !item.IsConstructedGenericType).ToArray();
+      var types = nspace.AcceptedTypes(PPS.CodeGen).Where(item => !item.IsConstructedGenericType
+      && !ModelConfig.Instance.PredefinedTypes.Contains(item.Type.FullName!)).ToArray();
+
+      var iModelElement = types.FirstOrDefault(typeInfo=>typeInfo.Name=="IModelElement");
+      if (iModelElement!=null)
+        Debug.Assert(true);
+
       nsTypes.Add(nspace, types);
       totalTypesCount += types.Count();
     }
@@ -117,7 +123,7 @@ public class ModelGenerator : BaseCodeGenerator
       Debug.WriteLine($"Global usings file \"{sourceFilename}\" not found");
       return false;
     }
-    var outputFilename = Path.Combine (outputPath, "globalUsings.csproj");
+    var outputFilename = Path.Combine (outputPath, "globalUsings.cs");
     AssurePathExists(outputFilename);
     using (var writer = File.CreateText(outputFilename))
     using (var reader = File.OpenText(sourceFilename))
@@ -151,7 +157,8 @@ public class ModelGenerator : BaseCodeGenerator
     {
       if (typeInfo.TypeKind == TypeKind.@enum)
         GenerateEnumType(typeInfo);
-      else if (!typeInfo.IsGenericTypeParameter)
+      else 
+      if (!typeInfo.IsConstructedGenericType)
         GenerateClassType(typeInfo);
       return true;
     }
@@ -162,7 +169,9 @@ public class ModelGenerator : BaseCodeGenerator
 
   private bool GenerateClassType(TypeInfo type)
   {
-    var typeName = type.Name;
+    var typeName = type.TargetName;
+    if (typeName.Contains('<'))
+      return false;
     var aNamespace = type.GetTargetNamespace();
     aNamespace = TrimDocumentModel(aNamespace);
     var outputPath = Path.Combine(OutputPath, aNamespace);
@@ -254,16 +263,15 @@ public class ModelGenerator : BaseCodeGenerator
 
   private bool GenerateProperty(PropInfo prop, string? inNamespace, TypeKind kind)
   {
+    if (prop.Name=="AnchorId")
+      Debug.Assert(true);
     var targetPropType = prop.PropertyType.GetConversionTargetOrSelf();
-    FullTypeName targetPropTypeName = prop.PropertyType.GetConvertedName(TypeKind.type);
+    var targetPropTypeName = prop.TargetPropertyTypeName ?? targetPropType.TargetName;
     TrimNamespace(targetPropTypeName);
     var propTypeName = targetPropTypeName.ToString();
     string qm = "?";
     GenerateDocumentationComments(prop);
     GenerateCustomAttributes(prop.CustomAttributes);
-    //if (prop.IsReadonly)
-    //  Writer.WriteLine($"public {propTypeName}{qm} {prop.Name} {{ get; }}");
-    //else
     Writer.WriteLine($"public {propTypeName}{qm} {prop.Name} {{ get; set; }}");
     Writer.WriteLine();
     GeneratedPropertiesCount += 1;
@@ -278,7 +286,7 @@ public class ModelGenerator : BaseCodeGenerator
     var aNamespace = type.GetTargetNamespace();
     aNamespace = TrimDocumentModel(aNamespace);
     outputPath = Path.Combine(outputPath, aNamespace);
-    var typeName = type.Name;
+    var typeName = type.TargetName;
     var fileName = ValidateFilename(typeName);
     if (!GenerateEnumType(type, typeName, Path.Combine(outputPath, "Enums", fileName + ".cs")))
       return false;
@@ -298,7 +306,7 @@ public class ModelGenerator : BaseCodeGenerator
 
   private bool GenerateEnumType(TypeInfo type, string typeName)
   {
-    var aNamespace = type.GetNamespace(true, true);
+    var aNamespace = type.GetNamespace(true, false);
     if (aNamespace != null)
     {
       Writer.WriteLine($"namespace {aNamespace};");

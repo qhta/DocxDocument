@@ -10,13 +10,13 @@ public partial class TableStyleConditionalFormattingTableCellProperties
   /// <summary>
   ///   TableCellBorders.
   /// </summary>
-  public DocumentModel.Wordprocessing.TableCellBorders? TableCellBorders { get; set; }
+  public TableCellBorders? TableCellBorders { get; set; }
   
   
   /// <summary>
   ///   Shading.
   /// </summary>
-  public DocumentModel.Wordprocessing.Shading? Shading { get; set; }
+  public Shading? Shading { get; set; }
   
   
   /// <summary>
@@ -28,12 +28,12 @@ public partial class TableStyleConditionalFormattingTableCellProperties
   /// <summary>
   ///   TableCellMargin.
   /// </summary>
-  public DocumentModel.Wordprocessing.TableCellMargin? TableCellMargin { get; set; }
+  public TableCellMargin? TableCellMargin { get; set; }
   
   
   /// <summary>
   ///   TableCellVerticalAlignment.
   /// </summary>
-  public DocumentModel.Wordprocessing.TableVerticalAlignmentValues? TableCellVerticalAlignment { get; set; }
+  public TableVerticalAlignmentKind? TableCellVerticalAlignment { get; set; }
   
 }

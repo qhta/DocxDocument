@@ -10,7 +10,6 @@ public partial class ImageProperties
   /// <summary>
   ///   ImageLayer.
   /// </summary>
-  [Nullable((Byte)2)]
-  public DocumentModel.Drawings.ImageLayer? ImageLayer { get; set; }
+  public ImageLayer? ImageLayer { get; set; }
   
 }

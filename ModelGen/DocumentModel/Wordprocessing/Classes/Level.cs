@@ -10,21 +10,18 @@ public partial class Level
   /// <summary>
   ///   Numbering Level
   /// </summary>
-  [SchemaAttr("w:ilvl")]
   public Int32? LevelIndex { get; set; }
   
   
   /// <summary>
   ///   Template Code
   /// </summary>
-  [SchemaAttr("w:tplc")]
-  public DocumentModel.HexBinaryValue? TemplateCode { get; set; }
+  public HexBinary? TemplateCode { get; set; }
   
   
   /// <summary>
   ///   Tentative Numbering
   /// </summary>
-  [SchemaAttr("w:tentative")]
   public Boolean? Tentative { get; set; }
   
   
@@ -37,7 +34,7 @@ public partial class Level
   /// <summary>
   ///   Numbering Format.
   /// </summary>
-  public DocumentModel.Wordprocessing.NumberingFormat? NumberingFormat { get; set; }
+  public NumberingFormat? NumberingFormat { get; set; }
   
   
   /// <summary>
@@ -61,13 +58,13 @@ public partial class Level
   /// <summary>
   ///   Content Between Numbering Symbol and Paragraph Text.
   /// </summary>
-  public DocumentModel.Wordprocessing.LevelSuffixValues? LevelSuffix { get; set; }
+  public LevelSuffixKind? LevelSuffix { get; set; }
   
   
   /// <summary>
   ///   Numbering Level Text.
   /// </summary>
-  public DocumentModel.Wordprocessing.LevelText? LevelText { get; set; }
+  public LevelText? LevelText { get; set; }
   
   
   /// <summary>
@@ -79,24 +76,24 @@ public partial class Level
   /// <summary>
   ///   Legacy Numbering Level Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.LegacyNumbering? LegacyNumbering { get; set; }
+  public LegacyNumbering? LegacyNumbering { get; set; }
   
   
   /// <summary>
   ///   Justification.
   /// </summary>
-  public DocumentModel.Wordprocessing.LevelJustificationValues? LevelJustification { get; set; }
+  public LevelJustificationKind? LevelJustification { get; set; }
   
   
   /// <summary>
   ///   Numbering Level Associated Paragraph Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.PreviousParagraphProperties? PreviousParagraphProperties { get; set; }
+  public PreviousParagraphProperties? PreviousParagraphProperties { get; set; }
   
   
   /// <summary>
   ///   Numbering Symbol Run Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.NumberingSymbolRunProperties? NumberingSymbolRunProperties { get; set; }
+  public NumberingSymbolRunProperties? NumberingSymbolRunProperties { get; set; }
   
 }

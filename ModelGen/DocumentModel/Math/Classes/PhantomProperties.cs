@@ -10,36 +10,36 @@ public partial class PhantomProperties
   /// <summary>
   ///   Phantom Show.
   /// </summary>
-  public DocumentModel.Math.BooleanValues? ShowPhantom { get; set; }
+  public Boolean? ShowPhantom { get; set; }
   
   
   /// <summary>
   ///   Phantom Zero Width.
   /// </summary>
-  public DocumentModel.Math.BooleanValues? ZeroWidth { get; set; }
+  public Boolean? ZeroWidth { get; set; }
   
   
   /// <summary>
   ///   Phantom Zero Ascent.
   /// </summary>
-  public DocumentModel.Math.BooleanValues? ZeroAscent { get; set; }
+  public Boolean? ZeroAscent { get; set; }
   
   
   /// <summary>
   ///   Phantom Zero Descent.
   /// </summary>
-  public DocumentModel.Math.BooleanValues? ZeroDescent { get; set; }
+  public Boolean? ZeroDescent { get; set; }
   
   
   /// <summary>
   ///   Transparent (Phantom).
   /// </summary>
-  public DocumentModel.Math.BooleanValues? Transparent { get; set; }
+  public Boolean? Transparent { get; set; }
   
   
   /// <summary>
   ///   ControlProperties.
   /// </summary>
-  public DocumentModel.Math.ControlProperties? ControlProperties { get; set; }
+  public ControlProperties? ControlProperties { get; set; }
   
 }

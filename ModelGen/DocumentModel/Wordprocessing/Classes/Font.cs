@@ -10,7 +10,6 @@ public partial class Font
   /// <summary>
   ///   name
   /// </summary>
-  [SchemaAttr("w:name")]
   public String? Name { get; set; }
   
   
@@ -23,19 +22,19 @@ public partial class Font
   /// <summary>
   ///   Panose1Number.
   /// </summary>
-  public DocumentModel.HexBinaryValue? Panose1Number { get; set; }
+  public HexBinary? Panose1Number { get; set; }
   
   
   /// <summary>
   ///   FontCharSet.
   /// </summary>
-  public DocumentModel.Wordprocessing.FontCharSet? FontCharSet { get; set; }
+  public FontCharSet? FontCharSet { get; set; }
   
   
   /// <summary>
   ///   FontFamily.
   /// </summary>
-  public DocumentModel.Wordprocessing.FontFamilyValues? FontFamily { get; set; }
+  public FontFamilyKind? FontFamily { get; set; }
   
   
   /// <summary>
@@ -47,36 +46,36 @@ public partial class Font
   /// <summary>
   ///   Pitch.
   /// </summary>
-  public DocumentModel.Wordprocessing.FontPitchValues? Pitch { get; set; }
+  public FontPitchKind? Pitch { get; set; }
   
   
   /// <summary>
   ///   FontSignature.
   /// </summary>
-  public DocumentModel.Wordprocessing.FontSignature? FontSignature { get; set; }
+  public FontSignature? FontSignature { get; set; }
   
   
   /// <summary>
   ///   EmbedRegularFont.
   /// </summary>
-  public DocumentModel.Wordprocessing.FontRelationshipType? EmbedRegularFont { get; set; }
+  public FontRelationshipType? EmbedRegularFont { get; set; }
   
   
   /// <summary>
   ///   EmbedBoldFont.
   /// </summary>
-  public DocumentModel.Wordprocessing.FontRelationshipType? EmbedBoldFont { get; set; }
+  public FontRelationshipType? EmbedBoldFont { get; set; }
   
   
   /// <summary>
   ///   EmbedItalicFont.
   /// </summary>
-  public DocumentModel.Wordprocessing.FontRelationshipType? EmbedItalicFont { get; set; }
+  public FontRelationshipType? EmbedItalicFont { get; set; }
   
   
   /// <summary>
   ///   EmbedBoldItalicFont.
   /// </summary>
-  public DocumentModel.Wordprocessing.FontRelationshipType? EmbedBoldItalicFont { get; set; }
+  public FontRelationshipType? EmbedBoldItalicFont { get; set; }
   
 }

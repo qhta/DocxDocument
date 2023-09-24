@@ -10,14 +10,12 @@ public partial class Picture
   /// <summary>
   ///   anchorId, this property is only available in Office 2010 and later.
   /// </summary>
-  [Nullable((Byte)2)]
-  [SchemaAttr("w14:anchorId")]
-  public DocumentModel.HexBinaryValue? AnchorId { get; set; }
+  public HexInt? AnchorId { get; set; }
   
-  public DocumentModel.Wordprocessing.RelationshipType? MovieReference { get; set; }
+  public RelationshipType? MovieReference { get; set; }
   
-  public DocumentModel.Wordprocessing.Control? Control { get; set; }
+  public Control? Control { get; set; }
   
-  public DocumentModel.ElementCollection<DocumentModel.IModelElement>? Items { get; set; }
+  public ElementCollection<IModelElement>? Items { get; set; }
   
 }

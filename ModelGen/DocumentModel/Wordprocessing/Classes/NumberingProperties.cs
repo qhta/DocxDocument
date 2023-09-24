@@ -22,12 +22,12 @@ public partial class NumberingProperties
   /// <summary>
   ///   Previous Paragraph Numbering Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.NumberingChange? NumberingChange { get; set; }
+  public NumberingChange? NumberingChange { get; set; }
   
   
   /// <summary>
   ///   Inserted Numbering Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.TrackChangeType? Inserted { get; set; }
+  public TrackChangeType? Inserted { get; set; }
   
 }

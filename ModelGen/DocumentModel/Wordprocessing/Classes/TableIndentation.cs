@@ -10,14 +10,12 @@ public partial class TableIndentation
   /// <summary>
   ///   w
   /// </summary>
-  [SchemaAttr("w:w")]
   public Int32? Width { get; set; }
   
   
   /// <summary>
   ///   type
   /// </summary>
-  [SchemaAttr("w:type")]
-  public DocumentModel.Wordprocessing.TableWidthUnitValues? Type { get; set; }
+  public TableWidthUnitKind? Type { get; set; }
   
 }

@@ -16,7 +16,7 @@ public partial class FramesetSplitbar
   /// <summary>
   ///   Frameset Splitter Color.
   /// </summary>
-  public DocumentModel.Wordprocessing.Color? Color { get; set; }
+  public Color? Color { get; set; }
   
   
   /// <summary>

@@ -10,18 +10,18 @@ public partial class Fraction
   /// <summary>
   ///   Fraction Properties.
   /// </summary>
-  public DocumentModel.Math.FractionProperties? FractionProperties { get; set; }
+  public FractionProperties? FractionProperties { get; set; }
   
   
   /// <summary>
   ///   Numerator.
   /// </summary>
-  public DocumentModel.Math.Numerator? Numerator { get; set; }
+  public Numerator? Numerator { get; set; }
   
   
   /// <summary>
   ///   Denominator.
   /// </summary>
-  public DocumentModel.Math.Denominator? Denominator { get; set; }
+  public Denominator? Denominator { get; set; }
   
 }

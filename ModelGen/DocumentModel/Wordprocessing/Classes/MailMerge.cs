@@ -10,7 +10,7 @@ public partial class MailMerge
   /// <summary>
   ///   Source Document Type.
   /// </summary>
-  public DocumentModel.Wordprocessing.MailMergeDocumentValues? MainDocumentType { get; set; }
+  public MailMergeDocumentKind? MainDocumentType { get; set; }
   
   
   /// <summary>
@@ -22,7 +22,7 @@ public partial class MailMerge
   /// <summary>
   ///   Data Source Type.
   /// </summary>
-  public DocumentModel.Wordprocessing.MailMergeDataValues? DataType { get; set; }
+  public MailMergeDataKind? DataType { get; set; }
   
   
   /// <summary>
@@ -40,13 +40,13 @@ public partial class MailMerge
   /// <summary>
   ///   Data Source File Path.
   /// </summary>
-  public DocumentModel.Wordprocessing.RelationshipType? DataSourceReference { get; set; }
+  public RelationshipType? DataSourceReference { get; set; }
   
   
   /// <summary>
   ///   Header Definition File Path.
   /// </summary>
-  public DocumentModel.Wordprocessing.RelationshipType? HeaderSource { get; set; }
+  public RelationshipType? HeaderSource { get; set; }
   
   
   /// <summary>
@@ -58,7 +58,7 @@ public partial class MailMerge
   /// <summary>
   ///   Merged Document Destination.
   /// </summary>
-  public DocumentModel.Wordprocessing.MailMergeDestinationValues? Destination { get; set; }
+  public MailMergeDestinationKind? Destination { get; set; }
   
   
   /// <summary>
@@ -100,6 +100,6 @@ public partial class MailMerge
   /// <summary>
   ///   Office Data Source Object Settings.
   /// </summary>
-  public DocumentModel.Wordprocessing.DataSourceObject? DataSourceObject { get; set; }
+  public DataSourceObject? DataSourceObject { get; set; }
   
 }

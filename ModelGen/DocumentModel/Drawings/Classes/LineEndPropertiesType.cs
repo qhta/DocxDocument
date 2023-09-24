@@ -10,21 +10,18 @@ public partial class LineEndPropertiesType
   /// <summary>
   ///   Line Head/End Type
   /// </summary>
-  [SchemaAttr("type")]
-  public DocumentModel.Drawings.LineEndValues? Type { get; set; }
+  public LineEndKind? Type { get; set; }
   
   
   /// <summary>
   ///   Width of Head/End
   /// </summary>
-  [SchemaAttr("w")]
-  public DocumentModel.Drawings.LineEndWidthValues? Width { get; set; }
+  public LineEndWidthKind? Width { get; set; }
   
   
   /// <summary>
   ///   Length of Head/End
   /// </summary>
-  [SchemaAttr("len")]
-  public DocumentModel.Drawings.LineEndLengthValues? Length { get; set; }
+  public LineEndLengthKind? Length { get; set; }
   
 }

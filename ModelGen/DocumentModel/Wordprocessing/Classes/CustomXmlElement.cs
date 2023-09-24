@@ -22,6 +22,6 @@ public partial class CustomXmlElement
   /// <summary>
   ///   Gets or sets the CustomXmlProperties which represents the element tag in schema: w:customXmlPr.
   /// </summary>
-  public DocumentModel.Wordprocessing.CustomXmlProperties? CustomXmlProperties { get; set; }
+  public CustomXmlProperties? CustomXmlProperties { get; set; }
   
 }

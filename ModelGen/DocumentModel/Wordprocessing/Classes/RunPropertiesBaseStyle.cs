@@ -10,7 +10,7 @@ public partial class RunPropertiesBaseStyle
   /// <summary>
   ///   RunFonts.
   /// </summary>
-  public DocumentModel.Wordprocessing.RunFonts? RunFonts { get; set; }
+  public RunFonts? RunFonts { get; set; }
   
   
   /// <summary>
@@ -112,7 +112,7 @@ public partial class RunPropertiesBaseStyle
   /// <summary>
   ///   Color.
   /// </summary>
-  public DocumentModel.Wordprocessing.Color? Color { get; set; }
+  public Color? Color { get; set; }
   
   
   /// <summary>
@@ -154,55 +154,55 @@ public partial class RunPropertiesBaseStyle
   /// <summary>
   ///   Underline.
   /// </summary>
-  public DocumentModel.Wordprocessing.Underline? Underline { get; set; }
+  public Underline? Underline { get; set; }
   
   
   /// <summary>
   ///   TextEffect.
   /// </summary>
-  public DocumentModel.Wordprocessing.TextEffectValues? TextEffect { get; set; }
+  public TextEffectKind? TextEffect { get; set; }
   
   
   /// <summary>
   ///   Border.
   /// </summary>
-  public DocumentModel.Wordprocessing.BorderType? Border { get; set; }
+  public BorderType? Border { get; set; }
   
   
   /// <summary>
   ///   Shading.
   /// </summary>
-  public DocumentModel.Wordprocessing.Shading? Shading { get; set; }
+  public Shading? Shading { get; set; }
   
   
   /// <summary>
   ///   FitText.
   /// </summary>
-  public DocumentModel.Wordprocessing.FitText? FitText { get; set; }
+  public FitText? FitText { get; set; }
   
   
   /// <summary>
   ///   VerticalTextAlignment.
   /// </summary>
-  public DocumentModel.Wordprocessing.VerticalPositionValues? VerticalTextAlignment { get; set; }
+  public VerticalPositionKind? VerticalTextAlignment { get; set; }
   
   
   /// <summary>
   ///   Emphasis.
   /// </summary>
-  public DocumentModel.Wordprocessing.EmphasisMarkValues? Emphasis { get; set; }
+  public EmphasisMarkKind? Emphasis { get; set; }
   
   
   /// <summary>
   ///   Languages.
   /// </summary>
-  public DocumentModel.Wordprocessing.LanguageType? Languages { get; set; }
+  public LanguageType? Languages { get; set; }
   
   
   /// <summary>
   ///   EastAsianLayout.
   /// </summary>
-  public DocumentModel.Wordprocessing.EastAsianLayout? EastAsianLayout { get; set; }
+  public EastAsianLayout? EastAsianLayout { get; set; }
   
   
   /// <summary>

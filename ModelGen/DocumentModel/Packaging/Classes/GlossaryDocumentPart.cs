@@ -84,7 +84,7 @@ public partial class GlossaryDocumentPart
   /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.Wordprocessing.GlossaryDocument? GlossaryDocument { get; set; }
+  public GlossaryDocument? GlossaryDocument { get; set; }
   
   
   /// <summary>

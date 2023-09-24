@@ -10,60 +10,60 @@ public partial class TableCellBorders
   /// <summary>
   ///   Table Cell Top Border.
   /// </summary>
-  public DocumentModel.Wordprocessing.BorderType? TopBorder { get; set; }
+  public BorderType? TopBorder { get; set; }
   
   
   /// <summary>
   ///   Table Cell Left Border.
   /// </summary>
-  public DocumentModel.Wordprocessing.BorderType? LeftBorder { get; set; }
+  public BorderType? LeftBorder { get; set; }
   
   
   /// <summary>
   ///   StartBorder, this property is only available in Office 2010 and later..
   /// </summary>
-  public DocumentModel.Wordprocessing.BorderType? StartBorder { get; set; }
+  public BorderType? StartBorder { get; set; }
   
   
   /// <summary>
   ///   Table Cell Bottom Border.
   /// </summary>
-  public DocumentModel.Wordprocessing.BorderType? BottomBorder { get; set; }
+  public BorderType? BottomBorder { get; set; }
   
   
   /// <summary>
   ///   Table Cell Right Border.
   /// </summary>
-  public DocumentModel.Wordprocessing.BorderType? RightBorder { get; set; }
+  public BorderType? RightBorder { get; set; }
   
   
   /// <summary>
   ///   EndBorder, this property is only available in Office 2010 and later..
   /// </summary>
-  public DocumentModel.Wordprocessing.BorderType? EndBorder { get; set; }
+  public BorderType? EndBorder { get; set; }
   
   
   /// <summary>
   ///   Table Cell Inside Horizontal Edges Border.
   /// </summary>
-  public DocumentModel.Wordprocessing.BorderType? InsideHorizontalBorder { get; set; }
+  public BorderType? InsideHorizontalBorder { get; set; }
   
   
   /// <summary>
   ///   Table Cell Inside Vertical Edges Border.
   /// </summary>
-  public DocumentModel.Wordprocessing.BorderType? InsideVerticalBorder { get; set; }
+  public BorderType? InsideVerticalBorder { get; set; }
   
   
   /// <summary>
   ///   Table Cell Top Left to Bottom Right Diagonal Border.
   /// </summary>
-  public DocumentModel.Wordprocessing.BorderType? TopLeftToBottomRightCellBorder { get; set; }
+  public BorderType? TopLeftToBottomRightCellBorder { get; set; }
   
   
   /// <summary>
   ///   Table Cell Top Right to Bottom Left Diagonal Border.
   /// </summary>
-  public DocumentModel.Wordprocessing.BorderType? TopRightToBottomLeftCellBorder { get; set; }
+  public BorderType? TopRightToBottomLeftCellBorder { get; set; }
   
 }

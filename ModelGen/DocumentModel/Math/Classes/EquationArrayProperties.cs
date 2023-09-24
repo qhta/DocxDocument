@@ -10,19 +10,19 @@ public partial class EquationArrayProperties
   /// <summary>
   ///   Equation Array Base Justification.
   /// </summary>
-  public DocumentModel.Math.VerticalAlignmentValues? BaseJustification { get; set; }
+  public VerticalAlignmentKind? BaseJustification { get; set; }
   
   
   /// <summary>
   ///   Maximum Distribution.
   /// </summary>
-  public DocumentModel.Math.BooleanValues? MaxDistribution { get; set; }
+  public Boolean? MaxDistribution { get; set; }
   
   
   /// <summary>
   ///   Object Distribution.
   /// </summary>
-  public DocumentModel.Math.BooleanValues? ObjectDistribution { get; set; }
+  public Boolean? ObjectDistribution { get; set; }
   
   
   /// <summary>
@@ -40,6 +40,6 @@ public partial class EquationArrayProperties
   /// <summary>
   ///   ControlProperties.
   /// </summary>
-  public DocumentModel.Math.ControlProperties? ControlProperties { get; set; }
+  public ControlProperties? ControlProperties { get; set; }
   
 }

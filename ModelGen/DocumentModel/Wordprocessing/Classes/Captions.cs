@@ -6,8 +6,8 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class Captions
 {
-  public DocumentModel.Wordprocessing.AutoCaptions? AutoCaptions { get; set; }
+  public AutoCaptions? AutoCaptions { get; set; }
   
-  public DocumentModel.ElementCollection<DocumentModel.Wordprocessing.Caption>? Items { get; set; }
+  public ElementCollection<Caption>? Items { get; set; }
   
 }

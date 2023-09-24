@@ -10,8 +10,7 @@ public partial class RelativeWidth
   /// <summary>
   ///   relativeFrom, this property is only available in Office 2010 and later.
   /// </summary>
-  [SchemaAttr("relativeFrom")]
-  public DocumentModel.Wordprocessing.Drawings.SizeRelativeHorizontallyValues? ObjectId { get; set; }
+  public HexInt? ObjectId { get; set; }
   
   
   /// <summary>

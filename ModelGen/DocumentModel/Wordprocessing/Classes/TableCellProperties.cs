@@ -10,13 +10,13 @@ public partial class TableCellProperties
   /// <summary>
   ///   ConditionalFormatStyle.
   /// </summary>
-  public DocumentModel.Wordprocessing.ConditionalFormatStyle? ConditionalFormatStyle { get; set; }
+  public ConditionalFormatStyle? ConditionalFormatStyle { get; set; }
   
   
   /// <summary>
   ///   TableCellWidth.
   /// </summary>
-  public DocumentModel.Wordprocessing.TableWidthType? TableCellWidth { get; set; }
+  public TableWidthType? TableCellWidth { get; set; }
   
   
   /// <summary>
@@ -28,25 +28,25 @@ public partial class TableCellProperties
   /// <summary>
   ///   HorizontalMerge.
   /// </summary>
-  public DocumentModel.Wordprocessing.MergedCellValues? HorizontalMerge { get; set; }
+  public MergedCellKind? HorizontalMerge { get; set; }
   
   
   /// <summary>
   ///   VerticalMerge.
   /// </summary>
-  public DocumentModel.Wordprocessing.MergedCellValues? VerticalMerge { get; set; }
+  public MergedCellKind? VerticalMerge { get; set; }
   
   
   /// <summary>
   ///   TableCellBorders.
   /// </summary>
-  public DocumentModel.Wordprocessing.TableCellBorders? TableCellBorders { get; set; }
+  public TableCellBorders? TableCellBorders { get; set; }
   
   
   /// <summary>
   ///   Shading.
   /// </summary>
-  public DocumentModel.Wordprocessing.Shading? Shading { get; set; }
+  public Shading? Shading { get; set; }
   
   
   /// <summary>
@@ -58,13 +58,13 @@ public partial class TableCellProperties
   /// <summary>
   ///   TableCellMargin.
   /// </summary>
-  public DocumentModel.Wordprocessing.TableCellMargin? TableCellMargin { get; set; }
+  public TableCellMargin? TableCellMargin { get; set; }
   
   
   /// <summary>
   ///   TextDirection.
   /// </summary>
-  public DocumentModel.Wordprocessing.TextDirectionValues? TextDirection { get; set; }
+  public TextDirectionKind? TextDirection { get; set; }
   
   
   /// <summary>
@@ -76,7 +76,7 @@ public partial class TableCellProperties
   /// <summary>
   ///   TableCellVerticalAlignment.
   /// </summary>
-  public DocumentModel.Wordprocessing.TableVerticalAlignmentValues? TableCellVerticalAlignment { get; set; }
+  public TableVerticalAlignmentKind? TableCellVerticalAlignment { get; set; }
   
   
   /// <summary>
@@ -84,12 +84,12 @@ public partial class TableCellProperties
   /// </summary>
   public Boolean? HideMark { get; set; }
   
-  public DocumentModel.Wordprocessing.TrackChangeType? CellInsertion { get; set; }
+  public TrackChangeType? CellInsertion { get; set; }
   
-  public DocumentModel.Wordprocessing.TrackChangeType? CellDeletion { get; set; }
+  public TrackChangeType? CellDeletion { get; set; }
   
-  public DocumentModel.Wordprocessing.CellMerge? CellMerge { get; set; }
+  public CellMerge? CellMerge { get; set; }
   
-  public DocumentModel.Wordprocessing.TableCellPropertiesChange? TableCellPropertiesChange { get; set; }
+  public TableCellPropertiesChange? TableCellPropertiesChange { get; set; }
   
 }

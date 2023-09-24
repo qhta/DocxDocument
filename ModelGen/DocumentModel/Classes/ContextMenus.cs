@@ -6,6 +6,6 @@ namespace DocumentModel;
 /// </summary>
 public partial class ContextMenus
 {
-  public DocumentModel.ElementCollection<DocumentModel.ContextMenu>? Items { get; set; }
+  public ElementCollection<ContextMenu>? Items { get; set; }
   
 }

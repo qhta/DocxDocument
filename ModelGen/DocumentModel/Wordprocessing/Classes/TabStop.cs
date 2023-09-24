@@ -10,21 +10,18 @@ public partial class TabStop
   /// <summary>
   ///   Tab Stop Type
   /// </summary>
-  [SchemaAttr("w:val")]
-  public DocumentModel.Wordprocessing.TabStopValues? Val { get; set; }
+  public TabStopKind? Val { get; set; }
   
   
   /// <summary>
   ///   Tab Leader Character
   /// </summary>
-  [SchemaAttr("w:leader")]
-  public DocumentModel.Wordprocessing.TabStopLeaderCharValues? Leader { get; set; }
+  public TabStopLeaderCharKind? Leader { get; set; }
   
   
   /// <summary>
   ///   Tab Stop Position
   /// </summary>
-  [SchemaAttr("w:pos")]
   public Int32? Position { get; set; }
   
 }

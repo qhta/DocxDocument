@@ -10,7 +10,6 @@ public partial class RelationshipType
   /// <summary>
   ///   Relationship to Part
   /// </summary>
-  [SchemaAttr("r:id")]
   public String? Id { get; set; }
   
 }

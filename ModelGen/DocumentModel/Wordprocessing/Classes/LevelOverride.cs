@@ -10,7 +10,6 @@ public partial class LevelOverride
   /// <summary>
   ///   Numbering Level ID
   /// </summary>
-  [SchemaAttr("w:ilvl")]
   public Int32? LevelIndex { get; set; }
   
   
@@ -23,6 +22,6 @@ public partial class LevelOverride
   /// <summary>
   ///   Numbering Level Override Definition.
   /// </summary>
-  public DocumentModel.Wordprocessing.Level? Level { get; set; }
+  public Level? Level { get; set; }
   
 }

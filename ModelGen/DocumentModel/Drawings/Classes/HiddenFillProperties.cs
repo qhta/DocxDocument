@@ -16,25 +16,25 @@ public partial class HiddenFillProperties
   /// <summary>
   ///   SolidFill.
   /// </summary>
-  public DocumentModel.Drawings.SolidFill? SolidFill { get; set; }
+  public SolidFill? SolidFill { get; set; }
   
   
   /// <summary>
   ///   GradientFill.
   /// </summary>
-  public DocumentModel.Drawings.GradientFill? GradientFill { get; set; }
+  public GradientFill? GradientFill { get; set; }
   
   
   /// <summary>
   ///   BlipFill.
   /// </summary>
-  public DocumentModel.Drawings.BlipFill? BlipFill { get; set; }
+  public BlipFill? BlipFill { get; set; }
   
   
   /// <summary>
   ///   Pattern Fill.
   /// </summary>
-  public DocumentModel.Drawings.PatternFill? PatternFill { get; set; }
+  public PatternFill? PatternFill { get; set; }
   
   
   /// <summary>

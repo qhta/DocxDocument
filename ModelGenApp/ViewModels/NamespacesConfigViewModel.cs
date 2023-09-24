@@ -24,17 +24,18 @@ public class NamespacesConfigViewModel : ModelConfigViewModel
   {
     Namespaces.Clear();
     base.GetData(configData);
-    var nsNames = _Assembly.GetExportedTypes()
+    var namespaces = _Assembly.GetTypes()
       .Select(t => t.Namespace)
       .GroupBy(ns => ns)
-      .Select(grp => grp.Key)
-      .OrderBy(name => name)
+      .OrderBy(grp => grp.Key)
       .ToList();
-    foreach (var ns in nsNames)
+    foreach (var group in namespaces)
     {
-      if (ns != null)
+      if (group.Key != null)
       {
+        var ns = group.Key;
         var item = new NamespaceConfigViewModel { OrigName = ns };
+        item.TypesCount = group.Count();
         item.Excluded = configData.ExcludedNamespaces.Contains(ns);
         if (configData.NamespaceShortcuts.TryGetValue(ns, out var shortcut))
           item.Shortcut = shortcut;

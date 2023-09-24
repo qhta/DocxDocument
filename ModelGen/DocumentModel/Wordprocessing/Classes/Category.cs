@@ -16,6 +16,6 @@ public partial class Category
   /// <summary>
   ///   Gallery Associated With Entry.
   /// </summary>
-  public DocumentModel.Wordprocessing.DocPartGalleryValues? Gallery { get; set; }
+  public DocPartGalleryKind? Gallery { get; set; }
   
 }

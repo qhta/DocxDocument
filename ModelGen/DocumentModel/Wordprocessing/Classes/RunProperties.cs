@@ -16,7 +16,7 @@ public partial class RunProperties
   /// <summary>
   ///   RunFonts.
   /// </summary>
-  public DocumentModel.Wordprocessing.RunFonts? RunFonts { get; set; }
+  public RunFonts? RunFonts { get; set; }
   
   
   /// <summary>
@@ -118,7 +118,7 @@ public partial class RunProperties
   /// <summary>
   ///   Color.
   /// </summary>
-  public DocumentModel.Wordprocessing.Color? Color { get; set; }
+  public Color? Color { get; set; }
   
   
   /// <summary>
@@ -160,43 +160,43 @@ public partial class RunProperties
   /// <summary>
   ///   Highlight.
   /// </summary>
-  public DocumentModel.Wordprocessing.HighlightColorValues? Highlight { get; set; }
+  public HighlightColorKind? Highlight { get; set; }
   
   
   /// <summary>
   ///   Underline.
   /// </summary>
-  public DocumentModel.Wordprocessing.Underline? Underline { get; set; }
+  public Underline? Underline { get; set; }
   
   
   /// <summary>
   ///   TextEffect.
   /// </summary>
-  public DocumentModel.Wordprocessing.TextEffectValues? TextEffect { get; set; }
+  public TextEffectKind? TextEffect { get; set; }
   
   
   /// <summary>
   ///   Border.
   /// </summary>
-  public DocumentModel.Wordprocessing.BorderType? Border { get; set; }
+  public BorderType? Border { get; set; }
   
   
   /// <summary>
   ///   Shading.
   /// </summary>
-  public DocumentModel.Wordprocessing.Shading? Shading { get; set; }
+  public Shading? Shading { get; set; }
   
   
   /// <summary>
   ///   FitText.
   /// </summary>
-  public DocumentModel.Wordprocessing.FitText? FitText { get; set; }
+  public FitText? FitText { get; set; }
   
   
   /// <summary>
   ///   VerticalTextAlignment.
   /// </summary>
-  public DocumentModel.Wordprocessing.VerticalPositionValues? VerticalTextAlignment { get; set; }
+  public VerticalPositionKind? VerticalTextAlignment { get; set; }
   
   
   /// <summary>
@@ -214,19 +214,19 @@ public partial class RunProperties
   /// <summary>
   ///   Emphasis.
   /// </summary>
-  public DocumentModel.Wordprocessing.EmphasisMarkValues? Emphasis { get; set; }
+  public EmphasisMarkKind? Emphasis { get; set; }
   
   
   /// <summary>
   ///   Languages.
   /// </summary>
-  public DocumentModel.Wordprocessing.LanguageType? Languages { get; set; }
+  public LanguageType? Languages { get; set; }
   
   
   /// <summary>
   ///   EastAsianLayout.
   /// </summary>
-  public DocumentModel.Wordprocessing.EastAsianLayout? EastAsianLayout { get; set; }
+  public EastAsianLayout? EastAsianLayout { get; set; }
   
   
   /// <summary>
@@ -238,78 +238,78 @@ public partial class RunProperties
   /// <summary>
   ///   Glow, this property is only available in Office 2010 and later..
   /// </summary>
-  public DocumentModel.Wordprocessing.Glow? Glow { get; set; }
+  public Glow? Glow { get; set; }
   
   
   /// <summary>
   ///   Shadow14, this property is only available in Office 2010 and later..
   /// </summary>
-  public DocumentModel.Wordprocessing.Shadow? Shadow14 { get; set; }
+  public Shadow? Shadow14 { get; set; }
   
   
   /// <summary>
   ///   Reflection, this property is only available in Office 2010 and later..
   /// </summary>
-  public DocumentModel.Wordprocessing.Reflection? Reflection { get; set; }
+  public Reflection? Reflection { get; set; }
   
   
   /// <summary>
   ///   TextOutlineEffect, this property is only available in Office 2010 and later..
   /// </summary>
-  public DocumentModel.Wordprocessing.TextOutlineEffect? TextOutlineEffect { get; set; }
+  public TextOutlineEffect? TextOutlineEffect { get; set; }
   
   
   /// <summary>
   ///   FillTextEffect, this property is only available in Office 2010 and later..
   /// </summary>
-  public DocumentModel.Wordprocessing.FillTextEffect? FillTextEffect { get; set; }
+  public FillTextEffect? FillTextEffect { get; set; }
   
   
   /// <summary>
   ///   Scene3D, this property is only available in Office 2010 and later..
   /// </summary>
-  public DocumentModel.Wordprocessing.Scene3D? Scene3D { get; set; }
+  public Scene3D? Scene3D { get; set; }
   
   
   /// <summary>
   ///   Properties3D, this property is only available in Office 2010 and later..
   /// </summary>
-  public DocumentModel.Wordprocessing.Properties3D? Properties3D { get; set; }
+  public Properties3D? Properties3D { get; set; }
   
   
   /// <summary>
   ///   Ligatures, this property is only available in Office 2010 and later..
   /// </summary>
-  public DocumentModel.Wordprocessing.LigaturesValues? Ligatures { get; set; }
+  public LigaturesKind? Ligatures { get; set; }
   
   
   /// <summary>
   ///   NumberingFormat, this property is only available in Office 2010 and later..
   /// </summary>
-  public DocumentModel.Wordprocessing.NumberFormValues? NumberingFormat { get; set; }
+  public NumberFormKind? NumberingFormat { get; set; }
   
   
   /// <summary>
   ///   NumberSpacing, this property is only available in Office 2010 and later..
   /// </summary>
-  public DocumentModel.Wordprocessing.NumberSpacingValues? NumberSpacing { get; set; }
+  public NumberSpacingKind? NumberSpacing { get; set; }
   
   
   /// <summary>
   ///   StylisticSets, this property is only available in Office 2010 and later..
   /// </summary>
-  public DocumentModel.Wordprocessing.StylisticSets? StylisticSets { get; set; }
+  public StylisticSets? StylisticSets { get; set; }
   
   
   /// <summary>
   ///   ContextualAlternatives, this property is only available in Office 2010 and later..
   /// </summary>
-  public DocumentModel.Wordprocessing.OnOffValues? ContextualAlternatives { get; set; }
+  public Boolean? ContextualAlternatives { get; set; }
   
   
   /// <summary>
   ///   RunPropertiesChange.
   /// </summary>
-  public DocumentModel.Wordprocessing.RunPropertiesChange? RunPropertiesChange { get; set; }
+  public RunPropertiesChange? RunPropertiesChange { get; set; }
   
 }

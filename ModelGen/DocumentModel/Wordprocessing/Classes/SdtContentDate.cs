@@ -10,7 +10,6 @@ public partial class SdtContentDate
   /// <summary>
   ///   Last Known Date in XML Schema DateTime Format
   /// </summary>
-  [SchemaAttr("w:fullDate")]
   public DateTime? FullDate { get; set; }
   
   
@@ -29,12 +28,12 @@ public partial class SdtContentDate
   /// <summary>
   ///   Custom XML Data Date Storage Format.
   /// </summary>
-  public DocumentModel.Wordprocessing.DateFormatValues? SdtDateMappingType { get; set; }
+  public DateFormatKind? SdtDateMappingType { get; set; }
   
   
   /// <summary>
   ///   Date Picker Calendar Type.
   /// </summary>
-  public DocumentModel.Wordprocessing.CalendarValues? Calendar { get; set; }
+  public CalendarKind? Calendar { get; set; }
   
 }

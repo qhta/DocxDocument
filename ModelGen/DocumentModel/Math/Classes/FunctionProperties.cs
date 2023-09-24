@@ -10,7 +10,6 @@ public partial class FunctionProperties
   /// <summary>
   ///   ControlProperties.
   /// </summary>
-  [Nullable((Byte)2)]
-  public DocumentModel.Math.ControlProperties? ControlProperties { get; set; }
+  public ControlProperties? ControlProperties { get; set; }
   
 }

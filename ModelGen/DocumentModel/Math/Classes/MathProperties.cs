@@ -16,25 +16,25 @@ public partial class MathProperties
   /// <summary>
   ///   Break on Binary Operators.
   /// </summary>
-  public DocumentModel.Math.BreakBinaryOperatorValues? BreakBinary { get; set; }
+  public BreakBinaryOperatorKind? BreakBinary { get; set; }
   
   
   /// <summary>
   ///   Break on Binary Subtraction.
   /// </summary>
-  public DocumentModel.Math.BreakBinarySubtractionValues? BreakBinarySubtraction { get; set; }
+  public BreakBinarySubtractionKind? BreakBinarySubtraction { get; set; }
   
   
   /// <summary>
   ///   Small Fraction.
   /// </summary>
-  public DocumentModel.Math.BooleanValues? SmallFraction { get; set; }
+  public Boolean? SmallFraction { get; set; }
   
   
   /// <summary>
   ///   Use Display Math Defaults.
   /// </summary>
-  public DocumentModel.Math.BooleanValues? DisplayDefaults { get; set; }
+  public Boolean? DisplayDefaults { get; set; }
   
   
   /// <summary>
@@ -52,7 +52,7 @@ public partial class MathProperties
   /// <summary>
   ///   Default Justification.
   /// </summary>
-  public DocumentModel.Math.JustificationValues? DefaultJustification { get; set; }
+  public JustificationKind? DefaultJustification { get; set; }
   
   
   /// <summary>
@@ -80,10 +80,10 @@ public partial class MathProperties
   
   public UInt32? WrapIndent { get; set; }
   
-  public DocumentModel.Math.BooleanValues? WrapRight { get; set; }
+  public Boolean? WrapRight { get; set; }
   
-  public DocumentModel.Math.LimitLocationValues? IntegralLimitLocation { get; set; }
+  public LimitLocationKind? IntegralLimitLocation { get; set; }
   
-  public DocumentModel.Math.LimitLocationValues? NaryLimitLocation { get; set; }
+  public LimitLocationKind? NaryLimitLocation { get; set; }
   
 }

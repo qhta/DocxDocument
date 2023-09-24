@@ -10,22 +10,20 @@ public partial class BlipExtension
   /// <summary>
   ///   Specifies the URI, or uniform resource identifier that represents the data stored under this tag. The URI is used to identify the correct 'server' that can process the contents of this tag.
   /// </summary>
-  [Nullable((Byte)2)]
-  [SchemaAttr("uri")]
   public String? Uri { get; set; }
   
-  public DocumentModel.Drawings.ImageProperties? ImageProperties { get; set; }
+  public ImageProperties? ImageProperties { get; set; }
   
   public Boolean? UseLocalDpi { get; set; }
   
-  public DocumentModel.Drawings.Wordprocessing.WebVideoProperty? WebVideoProperty { get; set; }
+  public WebVideoProperty? WebVideoProperty { get; set; }
   
-  public DocumentModel.Drawings.SVG.SVGBlip? SVGBlip { get; set; }
+  public SVGBlip? SVGBlip { get; set; }
   
-  public DocumentModel.Drawings.PictureAttributionSourceURL? PictureAttributionSourceURL { get; set; }
+  public PictureAttributionSourceURL? PictureAttributionSourceURL { get; set; }
   
-  public DocumentModel.Wordprocessing.OEmbed.OEmbed? OEmbed { get; set; }
+  public OEmbed? OEmbed { get; set; }
   
-  public DocumentModel.Drawings.Office.OEmbed.OEmbedShared? OEmbedShared { get; set; }
+  public OEmbedShared? OEmbedShared { get; set; }
   
 }

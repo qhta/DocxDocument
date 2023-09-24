@@ -10,14 +10,12 @@ public partial class ColorMostRecentlyUsed
   /// <summary>
   ///   VML Extension Handling Behavior
   /// </summary>
-  [SchemaAttr("v:ext")]
-  public DocumentModel.Vml.ExtensionHandlingBehaviorValues? Extension { get; set; }
+  public ExtensionHandlingBehaviorKind? Extension { get; set; }
   
   
   /// <summary>
   ///   Recent colors
   /// </summary>
-  [SchemaAttr("colors")]
   public String? Colors { get; set; }
   
 }

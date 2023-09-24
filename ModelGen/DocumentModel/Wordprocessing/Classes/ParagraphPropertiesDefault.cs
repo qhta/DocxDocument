@@ -10,7 +10,6 @@ public partial class ParagraphPropertiesDefault
   /// <summary>
   ///   Paragraph Properties.
   /// </summary>
-  [Nullable((Byte)2)]
-  public DocumentModel.Wordprocessing.ParagraphPropertiesBaseStyle? ParagraphPropertiesBaseStyle { get; set; }
+  public ParagraphPropertiesBaseStyle? ParagraphPropertiesBaseStyle { get; set; }
   
 }

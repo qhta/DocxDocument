@@ -10,7 +10,6 @@ public partial class Complex
   /// <summary>
   ///   VML Extension Handling Behavior
   /// </summary>
-  [SchemaAttr("v:ext")]
-  public DocumentModel.Vml.ExtensionHandlingBehaviorValues? Extension { get; set; }
+  public ExtensionHandlingBehaviorKind? Extension { get; set; }
   
 }

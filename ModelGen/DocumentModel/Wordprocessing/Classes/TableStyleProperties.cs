@@ -10,37 +10,36 @@ public partial class TableStyleProperties
   /// <summary>
   ///   Table Style Conditional Formatting Type
   /// </summary>
-  [SchemaAttr("w:type")]
-  public DocumentModel.Wordprocessing.TableStyleOverrideValues? Type { get; set; }
+  public TableStyleOverrideKind? Type { get; set; }
   
   
   /// <summary>
   ///   Table Style Conditional Formatting Paragraph Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.StyleParagraphProperties? StyleParagraphProperties { get; set; }
+  public StyleParagraphProperties? StyleParagraphProperties { get; set; }
   
   
   /// <summary>
   ///   Table Style Conditional Formatting Run Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.RunPropertiesBaseStyle? RunPropertiesBaseStyle { get; set; }
+  public RunPropertiesBaseStyle? RunPropertiesBaseStyle { get; set; }
   
   
   /// <summary>
   ///   Table Style Conditional Formatting Table Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.TableStyleConditionalFormattingTableProperties? TableStyleConditionalFormattingTableProperties { get; set; }
+  public TableStyleConditionalFormattingTableProperties? TableStyleConditionalFormattingTableProperties { get; set; }
   
   
   /// <summary>
   ///   Table Style Conditional Formatting Table Row Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.TableStyleConditionalFormattingTableRowProperties? TableStyleConditionalFormattingTableRowProperties { get; set; }
+  public TableStyleConditionalFormattingTableRowProperties? TableStyleConditionalFormattingTableRowProperties { get; set; }
   
   
   /// <summary>
   ///   Table Style Conditional Formatting Table Cell Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.TableStyleConditionalFormattingTableCellProperties? TableStyleConditionalFormattingTableCellProperties { get; set; }
+  public TableStyleConditionalFormattingTableCellProperties? TableStyleConditionalFormattingTableCellProperties { get; set; }
   
 }

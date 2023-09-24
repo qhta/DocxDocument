@@ -10,7 +10,6 @@ public partial class ParagraphProperties
   /// <summary>
   ///   Justification.
   /// </summary>
-  [Nullable((Byte)2)]
-  public DocumentModel.Math.JustificationValues? Justification { get; set; }
+  public JustificationKind? Justification { get; set; }
   
 }

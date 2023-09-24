@@ -10,44 +10,38 @@ public partial class LayoutContainer
   /// <summary>
   ///   id, this property is only available in Office 2010 and later.
   /// </summary>
-  [SchemaAttr("id")]
-  public String? Id { get; set; }
+  public HexInt? Id { get; set; }
   
   
   /// <summary>
   ///   idQ, this property is only available in Office 2010 and later.
   /// </summary>
-  [SchemaAttr("idQ")]
-  public String? QualifiedId { get; set; }
+  public HexInt? QualifiedId { get; set; }
   
   
   /// <summary>
   ///   tag, this property is only available in Office 2010 and later.
   /// </summary>
-  [SchemaAttr("tag")]
   public String? Tag { get; set; }
   
   
   /// <summary>
   ///   align, this property is only available in Office 2010 and later.
   /// </summary>
-  [SchemaAttr("align")]
-  public DocumentModel.ExpandValues? Align { get; set; }
+  public ExpandKind? Align { get; set; }
   
   
   /// <summary>
   ///   expand, this property is only available in Office 2010 and later.
   /// </summary>
-  [SchemaAttr("expand")]
-  public DocumentModel.ExpandValues? Expand { get; set; }
+  public ExpandKind? Expand { get; set; }
   
   
   /// <summary>
   ///   layoutChildren, this property is only available in Office 2010 and later.
   /// </summary>
-  [SchemaAttr("layoutChildren")]
-  public DocumentModel.LayoutChildrenValues? LayoutChildren { get; set; }
+  public LayoutChildrenKind? LayoutChildren { get; set; }
   
-  public DocumentModel.ElementCollection<DocumentModel.IModelElement>? Items { get; set; }
+  public ElementCollection<IModelElement>? Items { get; set; }
   
 }

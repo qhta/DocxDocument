@@ -10,7 +10,6 @@ public partial class DialogBoxLauncher
   /// <summary>
   ///   UnsizedButton.
   /// </summary>
-  [Nullable((Byte)2)]
-  public DocumentModel.UI.UnsizedButton? UnsizedButton { get; set; }
+  public UnsizedButton? UnsizedButton { get; set; }
   
 }

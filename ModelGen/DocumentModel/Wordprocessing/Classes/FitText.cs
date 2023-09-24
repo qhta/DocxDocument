@@ -10,14 +10,12 @@ public partial class FitText
   /// <summary>
   ///   Value
   /// </summary>
-  [SchemaAttr("w:val")]
   public UInt32? Val { get; set; }
   
   
   /// <summary>
   ///   Fit Text Run ID
   /// </summary>
-  [SchemaAttr("w:id")]
   public Int32? Id { get; set; }
   
 }

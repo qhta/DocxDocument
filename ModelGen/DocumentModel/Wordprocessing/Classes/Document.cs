@@ -10,19 +10,18 @@ public partial class Document
   /// <summary>
   ///   conformance
   /// </summary>
-  [SchemaAttr("w:conformance")]
-  public DocumentModel.Wordprocessing.DocumentConformance? Conformance { get; set; }
+  public DocumentConformance? Conformance { get; set; }
   
   
   /// <summary>
   ///   Document Background.
   /// </summary>
-  public DocumentModel.Wordprocessing.DocumentBackground? DocumentBackground { get; set; }
+  public DocumentBackground? DocumentBackground { get; set; }
   
   
   /// <summary>
   ///   Body.
   /// </summary>
-  public DocumentModel.Wordprocessing.Body? Body { get; set; }
+  public Body? Body { get; set; }
   
 }

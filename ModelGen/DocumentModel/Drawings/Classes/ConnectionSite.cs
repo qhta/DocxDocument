@@ -10,13 +10,12 @@ public partial class ConnectionSite
   /// <summary>
   ///   Specifies the incoming connector angle. This angle is the angle around the connection site that an incoming connector tries to be routed to. This allows connectors to know where the shape is in relation to the connection site and route connectors so as to avoid any overlap with the shape.
   /// </summary>
-  [SchemaAttr("ang")]
   public String? Angle { get; set; }
   
   
   /// <summary>
   ///   Position.
   /// </summary>
-  public DocumentModel.Drawings.AdjustPoint2DType? Position { get; set; }
+  public AdjustPoint2DType? Position { get; set; }
   
 }

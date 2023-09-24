@@ -10,9 +10,8 @@ public partial class Paragraph
   /// <summary>
   ///   Office Math Paragraph Properties.
   /// </summary>
-  [Nullable((Byte)2)]
-  public DocumentModel.Math.ParagraphProperties? ParagraphProperties { get; set; }
+  public ParagraphProperties? ParagraphProperties { get; set; }
   
-  public DocumentModel.ElementCollection<DocumentModel.IModelElement>? Items { get; set; }
+  public ElementCollection<IModelElement>? Items { get; set; }
   
 }

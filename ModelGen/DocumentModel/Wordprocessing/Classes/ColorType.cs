@@ -10,12 +10,12 @@ public partial class ColorType
   /// <summary>
   ///   RgbColorModelHex.
   /// </summary>
-  public DocumentModel.HexBinaryValue? RgbColorModelHex { get; set; }
+  public HexBinary? RgbColorModelHex { get; set; }
   
   
   /// <summary>
   ///   SchemeColor.
   /// </summary>
-  public DocumentModel.Wordprocessing.SchemeColorValues? SchemeColor { get; set; }
+  public SchemeColorKind? SchemeColor { get; set; }
   
 }

@@ -6,6 +6,6 @@ namespace DocumentModel;
 /// </summary>
 public partial class BottomItemsGroupControls
 {
-  public DocumentModel.ElementCollection<DocumentModel.IModelElement>? Items { get; set; }
+  public ElementCollection<IModelElement>? Items { get; set; }
   
 }

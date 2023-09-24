@@ -16,30 +16,30 @@ public partial class NaryProperties
   /// <summary>
   ///   n-ary Limit Location.
   /// </summary>
-  public DocumentModel.Math.LimitLocationValues? LimitLocation { get; set; }
+  public LimitLocationKind? LimitLocation { get; set; }
   
   
   /// <summary>
   ///   n-ary Grow.
   /// </summary>
-  public DocumentModel.Math.BooleanValues? GrowOperators { get; set; }
+  public Boolean? GrowOperators { get; set; }
   
   
   /// <summary>
   ///   Hide Subscript (n-ary).
   /// </summary>
-  public DocumentModel.Math.BooleanValues? HideSubArgument { get; set; }
+  public Boolean? HideSubArgument { get; set; }
   
   
   /// <summary>
   ///   Hide Superscript (n-ary).
   /// </summary>
-  public DocumentModel.Math.BooleanValues? HideSuperArgument { get; set; }
+  public Boolean? HideSuperArgument { get; set; }
   
   
   /// <summary>
   ///   ControlProperties.
   /// </summary>
-  public DocumentModel.Math.ControlProperties? ControlProperties { get; set; }
+  public ControlProperties? ControlProperties { get; set; }
   
 }

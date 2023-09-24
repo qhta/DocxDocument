@@ -20,6 +20,6 @@ public partial class ThemePart
   /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.Drawings.Theme? Theme { get; set; }
+  public Theme? Theme { get; set; }
   
 }

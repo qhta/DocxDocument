@@ -135,18 +135,18 @@
           }
         }
       },
-      "Qhta.Collections/4.0.0": {
+      "Qhta.Collections/4.6.0": {
         "type": "package",
         "dependencies": {
-          "Qhta.TextUtils": "3.1.1"
+          "Qhta.TextUtils": "3.2.0"
         },
         "compile": {
-          "lib/netstandard2.0/Qhta.Collections.dll": {
+          "lib/net6.0/Qhta.Collections.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netstandard2.0/Qhta.Collections.dll": {
+          "lib/net6.0/Qhta.Collections.dll": {
             "related": ".xml"
           }
         }
@@ -1709,7 +1709,7 @@
           "ModelGenDataConfig": "1.0.0",
           "Namotion.Reflection": "3.0.0",
           "Newtonsoft.Json": "13.0.3",
-          "Qhta.Collections": "4.0.0",
+          "Qhta.Collections": "4.6.0",
           "Qhta.HtmlUtils": "2.1.0",
           "Qhta.TestHelper": "3.0.0",
           "Qhta.TextUtils": "3.2.0",
@@ -1729,7 +1729,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Qhta.Collections": "4.0.0",
+          "Qhta.Collections": "4.6.0",
           "Qhta.TextUtils": "3.2.0"
         },
         "compile": {
@@ -2002,15 +2002,17 @@
         "packageIcon.png"
       ]
     },
-    "Qhta.Collections/4.0.0": {
-      "sha512": "Miz2GAQsHeVKYKxJryzG8AWAQ0ciQRPHX39qJOxhqpp1rn+xz6L1HIW9wSM5PwexIFzWs0F0ut2gaJfiojzw1g==",
+    "Qhta.Collections/4.6.0": {
+      "sha512": "RWgpiVd5BpsQXCjTh02EwGqYd0ba6rZeA3dctWIuSQkPbhwCaU7bEA4O5StypoV9F1DwhBPmONz4RvR0w7LgIA==",
       "type": "package",
-      "path": "qhta.collections/4.0.0",
+      "path": "qhta.collections/4.6.0",
       "files": [
         ".nupkg.metadata",
+        "lib/net6.0/Qhta.Collections.dll",
+        "lib/net6.0/Qhta.Collections.xml",
         "lib/netstandard2.0/Qhta.Collections.dll",
         "lib/netstandard2.0/Qhta.Collections.xml",
-        "qhta.collections.4.0.0.nupkg.sha512",
+        "qhta.collections.4.6.0.nupkg.sha512",
         "qhta.collections.nuspec",
         "readme.md"
       ]
@@ -5425,6 +5427,7 @@
   "projectFileDependencyGroups": {
     "net6.0-windows7.0": [
       "ModelGen >= 1.0.0",
+      "Qhta.Collections >= 4.6.0",
       "Qhta.HtmlUtils >= 2.1.0",
       "Qhta.MVVM >= 3.6.1",
       "Qhta.ObservableObjects >= 2.7.0",
@@ -5493,6 +5496,10 @@
       "net6.0-windows7.0": {
         "targetAlias": "net6.0-windows",
         "dependencies": {
+          "Qhta.Collections": {
+            "target": "Package",
+            "version": "[4.6.0, )"
+          },
           "Qhta.HtmlUtils": {
             "target": "Package",
             "version": "[2.1.0, )"
