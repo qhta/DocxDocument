@@ -10,7 +10,7 @@ public partial class FieldMapData
   /// <summary>
   ///   Merge Field Mapping.
   /// </summary>
-  public DocumentModel.Wordprocessing.MailMergeOdsoFieldValues? MailMergeFieldType { get; set; }
+  public MailMergeOdsoFieldKind? MailMergeFieldType { get; set; }
   
   
   /// <summary>

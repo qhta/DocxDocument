@@ -569,4 +569,10 @@ zdefiniowanej w typie wyliczeniowym.</value>
   <data name="ValidateGeneration" xml:space="preserve">
     <value>Weryfikuj kod</value>
   </data>
+  <data name="OutgoingRelationships" xml:space="preserve">
+    <value>Relacje wychodzące</value>
+  </data>
+  <data name="IncomingRelationships" xml:space="preserve">
+    <value>Relacje przychodzące</value>
+  </data>
 </root>

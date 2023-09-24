@@ -6,6 +6,6 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class Footnotes
 {
-  public DocumentModel.ElementCollection<DocumentModel.Wordprocessing.Footnote>? Items { get; set; }
+  public ElementCollection<Footnote>? Items { get; set; }
   
 }

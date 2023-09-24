@@ -10,27 +10,24 @@ public partial class CommentExtensible
   /// <summary>
   ///   durableId, this property is only available in Office 2021 and later.
   /// </summary>
-  [SchemaAttr("w16cex:durableId")]
-  public DocumentModel.HexBinaryValue? DurableId { get; set; }
+  public HexInt? DurableId { get; set; }
   
   
   /// <summary>
   ///   dateUtc, this property is only available in Office 2021 and later.
   /// </summary>
-  [SchemaAttr("w16cex:dateUtc")]
   public DateTime? DateUtc { get; set; }
   
   
   /// <summary>
   ///   intelligentPlaceholder, this property is only available in Office 2021 and later.
   /// </summary>
-  [SchemaAttr("w16cex:intelligentPlaceholder")]
   public Boolean? IntelligentPlaceholder { get; set; }
   
   
   /// <summary>
   ///   ExtensionList.
   /// </summary>
-  public DocumentModel.Wordprocessing.ExtensionList? ExtensionList { get; set; }
+  public ExtensionList? ExtensionList { get; set; }
   
 }

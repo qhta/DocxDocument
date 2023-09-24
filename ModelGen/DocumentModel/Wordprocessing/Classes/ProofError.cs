@@ -10,7 +10,6 @@ public partial class ProofError
   /// <summary>
   ///   Proofing Error Anchor Type
   /// </summary>
-  [SchemaAttr("w:type")]
-  public DocumentModel.Wordprocessing.ProofingErrorValues? Type { get; set; }
+  public ProofingErrorKind? Type { get; set; }
   
 }

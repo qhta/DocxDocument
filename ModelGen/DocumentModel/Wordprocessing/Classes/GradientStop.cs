@@ -10,19 +10,18 @@ public partial class GradientStop
   /// <summary>
   ///   pos, this property is only available in Office 2010 and later.
   /// </summary>
-  [SchemaAttr("w14:pos")]
   public Int32? StopPosition { get; set; }
   
   
   /// <summary>
   ///   RgbColorModelHex.
   /// </summary>
-  public DocumentModel.HexBinaryValue? RgbColorModelHex { get; set; }
+  public HexBinary? RgbColorModelHex { get; set; }
   
   
   /// <summary>
   ///   SchemeColor.
   /// </summary>
-  public DocumentModel.Wordprocessing.SchemeColorValues? SchemeColor { get; set; }
+  public SchemeColorKind? SchemeColor { get; set; }
   
 }

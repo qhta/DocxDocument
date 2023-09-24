@@ -10,14 +10,12 @@ public partial class ListItem
   /// <summary>
   ///   List Entry Display Text
   /// </summary>
-  [SchemaAttr("w:displayText")]
   public String? DisplayText { get; set; }
   
   
   /// <summary>
   ///   List Entry Value
   /// </summary>
-  [SchemaAttr("w:value")]
   public String? Value { get; set; }
   
 }

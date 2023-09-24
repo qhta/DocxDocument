@@ -10,14 +10,12 @@ public partial class LuminanceEffect
   /// <summary>
   ///   Specifies the percent to change the brightness.
   /// </summary>
-  [SchemaAttr("bright")]
   public Int32? Brightness { get; set; }
   
   
   /// <summary>
   ///   Specifies the percent to change the contrast.
   /// </summary>
-  [SchemaAttr("contrast")]
   public Int32? Contrast { get; set; }
   
 }

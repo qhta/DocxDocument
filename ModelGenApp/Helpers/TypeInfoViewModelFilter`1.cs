@@ -41,8 +41,8 @@ public record TypeInfoViewModelFilter<T> : IFilter where T : TypeInfoViewModel
   /// <exception cref="InvalidOperationException"></exception>
   public TypeInfoViewModelFilter(TypeInfoKind filter, object? value)
   {
-    if (filter == TypeInfoKind.TargetTypes)
-      Debug.Assert(true);
+    //if (filter == TypeInfoKind.TargetTypes)
+    //  Debug.Assert(true);
     if (value is PPS phaseNum)
     {
       if (filter == TypeInfoKind.AcceptedTypes)

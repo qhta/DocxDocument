@@ -10,7 +10,6 @@ public partial class MarkupType
   /// <summary>
   ///   Annotation Identifier
   /// </summary>
-  [SchemaAttr("w:id")]
   public String? Id { get; set; }
   
 }

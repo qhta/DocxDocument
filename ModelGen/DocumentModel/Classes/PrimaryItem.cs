@@ -10,12 +10,12 @@ public partial class PrimaryItem
   /// <summary>
   ///   BackstageRegularButton.
   /// </summary>
-  public DocumentModel.BackstageRegularButton? BackstageRegularButton { get; set; }
+  public BackstageRegularButton? BackstageRegularButton { get; set; }
   
   
   /// <summary>
   ///   BackstagePrimaryMenu.
   /// </summary>
-  public DocumentModel.BackstagePrimaryMenu? BackstagePrimaryMenu { get; set; }
+  public BackstagePrimaryMenu? BackstagePrimaryMenu { get; set; }
   
 }

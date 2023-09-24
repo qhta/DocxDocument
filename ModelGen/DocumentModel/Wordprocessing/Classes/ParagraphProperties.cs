@@ -34,7 +34,7 @@ public partial class ParagraphProperties
   /// <summary>
   ///   FrameProperties.
   /// </summary>
-  public DocumentModel.Wordprocessing.FrameProperties? FrameProperties { get; set; }
+  public FrameProperties? FrameProperties { get; set; }
   
   
   /// <summary>
@@ -46,7 +46,7 @@ public partial class ParagraphProperties
   /// <summary>
   ///   NumberingProperties.
   /// </summary>
-  public DocumentModel.Wordprocessing.NumberingProperties? NumberingProperties { get; set; }
+  public NumberingProperties? NumberingProperties { get; set; }
   
   
   /// <summary>
@@ -58,19 +58,19 @@ public partial class ParagraphProperties
   /// <summary>
   ///   ParagraphBorders.
   /// </summary>
-  public DocumentModel.Wordprocessing.ParagraphBorders? ParagraphBorders { get; set; }
+  public ParagraphBorders? ParagraphBorders { get; set; }
   
   
   /// <summary>
   ///   Shading.
   /// </summary>
-  public DocumentModel.Wordprocessing.Shading? Shading { get; set; }
+  public Shading? Shading { get; set; }
   
   
   /// <summary>
   ///   Tabs.
   /// </summary>
-  public DocumentModel.Wordprocessing.Tabs? Tabs { get; set; }
+  public Tabs? Tabs { get; set; }
   
   
   /// <summary>
@@ -136,13 +136,13 @@ public partial class ParagraphProperties
   /// <summary>
   ///   SpacingBetweenLines.
   /// </summary>
-  public DocumentModel.Wordprocessing.SpacingBetweenLines? SpacingBetweenLines { get; set; }
+  public SpacingBetweenLines? SpacingBetweenLines { get; set; }
   
   
   /// <summary>
   ///   Indentation.
   /// </summary>
-  public DocumentModel.Wordprocessing.Indentation? Indentation { get; set; }
+  public Indentation? Indentation { get; set; }
   
   
   /// <summary>
@@ -166,25 +166,25 @@ public partial class ParagraphProperties
   /// <summary>
   ///   Justification.
   /// </summary>
-  public DocumentModel.Wordprocessing.JustificationValues? Justification { get; set; }
+  public JustificationKind? Justification { get; set; }
   
   
   /// <summary>
   ///   TextDirection.
   /// </summary>
-  public DocumentModel.Wordprocessing.TextDirectionValues? TextDirection { get; set; }
+  public TextDirectionKind? TextDirection { get; set; }
   
   
   /// <summary>
   ///   TextAlignment.
   /// </summary>
-  public DocumentModel.Wordprocessing.VerticalTextAlignmentValues? TextAlignment { get; set; }
+  public VerticalTextAlignmentKind? TextAlignment { get; set; }
   
   
   /// <summary>
   ///   TextBoxTightWrap.
   /// </summary>
-  public DocumentModel.Wordprocessing.TextBoxTightWrapValues? TextBoxTightWrap { get; set; }
+  public TextBoxTightWrapKind? TextBoxTightWrap { get; set; }
   
   
   /// <summary>
@@ -196,30 +196,30 @@ public partial class ParagraphProperties
   /// <summary>
   ///   DivId.
   /// </summary>
-  public String? DivId { get; set; }
+  public HexInt? DivId { get; set; }
   
   
   /// <summary>
   ///   ConditionalFormatStyle.
   /// </summary>
-  public DocumentModel.Wordprocessing.ConditionalFormatStyle? ConditionalFormatStyle { get; set; }
+  public ConditionalFormatStyle? ConditionalFormatStyle { get; set; }
   
   
   /// <summary>
   ///   Run Properties for the Paragraph Mark.
   /// </summary>
-  public DocumentModel.Wordprocessing.ParagraphMarkRunProperties? ParagraphMarkRunProperties { get; set; }
+  public ParagraphMarkRunProperties? ParagraphMarkRunProperties { get; set; }
   
   
   /// <summary>
   ///   Section Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.SectionProperties? SectionProperties { get; set; }
+  public SectionProperties? SectionProperties { get; set; }
   
   
   /// <summary>
   ///   ParagraphPropertiesChange.
   /// </summary>
-  public DocumentModel.Wordprocessing.ParagraphPropertiesChange? ParagraphPropertiesChange { get; set; }
+  public ParagraphPropertiesChange? ParagraphPropertiesChange { get; set; }
   
 }

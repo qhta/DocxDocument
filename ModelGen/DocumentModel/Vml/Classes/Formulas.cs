@@ -6,6 +6,6 @@ namespace DocumentModel.Vml;
 /// </summary>
 public partial class Formulas
 {
-  public DocumentModel.ElementCollection<DocumentModel.Vml.Formula>? Items { get; set; }
+  public ElementCollection<Formula>? Items { get; set; }
   
 }

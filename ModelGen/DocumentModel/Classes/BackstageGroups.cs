@@ -6,8 +6,8 @@ namespace DocumentModel;
 /// </summary>
 public partial class BackstageGroups
 {
-  public DocumentModel.TaskFormGroup? TaskFormGroup { get; set; }
+  public TaskFormGroup? TaskFormGroup { get; set; }
   
-  public DocumentModel.ElementCollection<DocumentModel.IModelElement>? Items { get; set; }
+  public ElementCollection<IModelElement>? Items { get; set; }
   
 }

@@ -10,10 +10,8 @@ public partial class Rules
   /// <summary>
   ///   VML Extension Handling Behavior
   /// </summary>
-  [Nullable((Byte)2)]
-  [SchemaAttr("v:ext")]
-  public DocumentModel.Vml.ExtensionHandlingBehaviorValues? Extension { get; set; }
+  public ExtensionHandlingBehaviorKind? Extension { get; set; }
   
-  public DocumentModel.ElementCollection<DocumentModel.Vml.Office.Rule>? Items { get; set; }
+  public ElementCollection<Rule>? Items { get; set; }
   
 }

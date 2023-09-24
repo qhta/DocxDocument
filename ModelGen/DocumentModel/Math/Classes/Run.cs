@@ -10,14 +10,14 @@ public partial class Run
   /// <summary>
   ///   Run Properties.
   /// </summary>
-  public DocumentModel.Math.RunProperties? MathRunProperties { get; set; }
+  public RunProperties? MathRunProperties { get; set; }
   
   
   /// <summary>
   ///   Run Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.RunProperties? RunProperties { get; set; }
+  public RunProperties? RunProperties { get; set; }
   
-  public DocumentModel.ElementCollection<DocumentModel.IModelElement>? Items { get; set; }
+  public ElementCollection<IModelElement>? Items { get; set; }
   
 }

@@ -10,6 +10,6 @@ public partial class CustomUIPart
   /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.UI.CustomUI? CustomUI { get; set; }
+  public CustomUI? CustomUI { get; set; }
   
 }

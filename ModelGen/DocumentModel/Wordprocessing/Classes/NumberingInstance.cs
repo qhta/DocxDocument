@@ -10,22 +10,20 @@ public partial class NumberingInstance
   /// <summary>
   ///   numId
   /// </summary>
-  [SchemaAttr("w:numId")]
   public Int32? NumberID { get; set; }
   
   
   /// <summary>
   ///   durableId
   /// </summary>
-  [SchemaAttr("w:durableId")]
   public Int32? DurableId { get; set; }
   
   
   /// <summary>
   ///   AbstractNumId.
   /// </summary>
-  public Int32? AbstractNumId { get; set; }
+  public HexInt? AbstractNumId { get; set; }
   
-  public DocumentModel.ElementCollection<DocumentModel.Wordprocessing.LevelOverride>? Items { get; set; }
+  public ElementCollection<LevelOverride>? Items { get; set; }
   
 }

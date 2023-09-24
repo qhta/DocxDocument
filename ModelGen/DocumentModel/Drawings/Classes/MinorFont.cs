@@ -6,14 +6,14 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class MinorFont
 {
-  public DocumentModel.Drawings.TextFontType? LatinFont { get; set; }
+  public TextFontType? LatinFont { get; set; }
   
-  public DocumentModel.Drawings.TextFontType? EastAsianFont { get; set; }
+  public TextFontType? EastAsianFont { get; set; }
   
-  public DocumentModel.Drawings.TextFontType? ComplexScriptFont { get; set; }
+  public TextFontType? ComplexScriptFont { get; set; }
   
-  public DocumentModel.Drawings.ExtensionList? ExtensionList { get; set; }
+  public ExtensionList? ExtensionList { get; set; }
   
-  public DocumentModel.ElementCollection<DocumentModel.Drawings.SupplementalFont>? Items { get; set; }
+  public ElementCollection<SupplementalFont>? Items { get; set; }
   
 }

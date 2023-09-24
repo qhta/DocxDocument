@@ -10,8 +10,7 @@ public partial class FillOverlay
   /// <summary>
   ///   Specifies how to blend the fill with the base effect.
   /// </summary>
-  [SchemaAttr("blend")]
-  public DocumentModel.Drawings.BlendModeValues? Blend { get; set; }
+  public BlendMode? Blend { get; set; }
   
   
   /// <summary>
@@ -23,25 +22,25 @@ public partial class FillOverlay
   /// <summary>
   ///   SolidFill.
   /// </summary>
-  public DocumentModel.Drawings.SolidFill? SolidFill { get; set; }
+  public SolidFill? SolidFill { get; set; }
   
   
   /// <summary>
   ///   GradientFill.
   /// </summary>
-  public DocumentModel.Drawings.GradientFill? GradientFill { get; set; }
+  public GradientFill? GradientFill { get; set; }
   
   
   /// <summary>
   ///   BlipFill.
   /// </summary>
-  public DocumentModel.Drawings.BlipFill? BlipFill { get; set; }
+  public BlipFill? BlipFill { get; set; }
   
   
   /// <summary>
   ///   Pattern Fill.
   /// </summary>
-  public DocumentModel.Drawings.PatternFill? PatternFill { get; set; }
+  public PatternFill? PatternFill { get; set; }
   
   
   /// <summary>

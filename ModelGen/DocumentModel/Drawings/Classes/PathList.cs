@@ -6,6 +6,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class PathList
 {
-  public DocumentModel.ElementCollection<DocumentModel.Drawings.Path>? Items { get; set; }
+  public ElementCollection<Path>? Items { get; set; }
   
 }

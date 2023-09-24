@@ -6,6 +6,6 @@ namespace DocumentModel;
 /// </summary>
 public partial class Tabs
 {
-  public DocumentModel.ElementCollection<DocumentModel.Tab>? Items { get; set; }
+  public ElementCollection<Tab>? Items { get; set; }
   
 }

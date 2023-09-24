@@ -6,6 +6,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class ColorMap
 {
-  public DocumentModel.Drawings.ExtensionList? ExtensionList { get; set; }
+  public ExtensionList? ExtensionList { get; set; }
   
 }

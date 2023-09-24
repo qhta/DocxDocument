@@ -6,6 +6,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class EffectStyleList
 {
-  public DocumentModel.ElementCollection<DocumentModel.Drawings.EffectStyle>? Items { get; set; }
+  public ElementCollection<EffectStyle>? Items { get; set; }
   
 }

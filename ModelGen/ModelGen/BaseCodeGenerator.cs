@@ -62,9 +62,12 @@ public abstract class BaseCodeGenerator
       bool generated = false;
       foreach (var customAttrib in attributes)
       {
-        if (customAttrib.IsAcceptedTo(PPS.CodeGen) is true)
-          if (GenerateCustomAttribute(customAttrib))
-            generated = true;
+        if (!customAttrib.Name.StartsWith("Nullable") && !customAttrib.Name.StartsWith("SchemaAttr"))
+        {
+          if (customAttrib.IsAcceptedTo(PPS.CodeGen) is true)
+            if (GenerateCustomAttribute(customAttrib))
+              generated = true;
+        }
       }
       return (generated);
     }

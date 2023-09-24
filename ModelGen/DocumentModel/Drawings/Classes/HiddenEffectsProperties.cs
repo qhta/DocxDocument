@@ -10,12 +10,12 @@ public partial class HiddenEffectsProperties
   /// <summary>
   ///   Effect Container.
   /// </summary>
-  public DocumentModel.Drawings.EffectList? EffectList { get; set; }
+  public EffectList? EffectList { get; set; }
   
   
   /// <summary>
   ///   Effect Container.
   /// </summary>
-  public DocumentModel.Drawings.EffectDag? EffectDag { get; set; }
+  public EffectDag? EffectDag { get; set; }
   
 }

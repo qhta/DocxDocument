@@ -10,29 +10,26 @@ public partial class Run
   /// <summary>
   ///   Revision Identifier for Run Properties
   /// </summary>
-  [SchemaAttr("w:rsidRPr")]
-  public DocumentModel.HexBinaryValue? RsidRunProperties { get; set; }
+  public HexBinary? RsidRunProperties { get; set; }
   
   
   /// <summary>
   ///   Revision Identifier for Run Deletion
   /// </summary>
-  [SchemaAttr("w:rsidDel")]
-  public DocumentModel.HexBinaryValue? RsidRunDeletion { get; set; }
+  public HexBinary? RsidRunDeletion { get; set; }
   
   
   /// <summary>
   ///   Revision Identifier for Run
   /// </summary>
-  [SchemaAttr("w:rsidR")]
-  public DocumentModel.HexBinaryValue? RsidRunAddition { get; set; }
+  public HexBinary? RsidRunAddition { get; set; }
   
   
   /// <summary>
   ///   Run Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.RunProperties? RunProperties { get; set; }
+  public RunProperties? RunProperties { get; set; }
   
-  public DocumentModel.ElementCollection<DocumentModel.IModelElement>? Items { get; set; }
+  public ElementCollection<IModelElement>? Items { get; set; }
   
 }

@@ -28,18 +28,18 @@ public partial class DelimiterProperties
   /// <summary>
   ///   Delimiter Grow.
   /// </summary>
-  public DocumentModel.Math.BooleanValues? GrowOperators { get; set; }
+  public Boolean? GrowOperators { get; set; }
   
   
   /// <summary>
   ///   Shape (Delimiters).
   /// </summary>
-  public DocumentModel.Math.ShapeDelimiterValues? Shape { get; set; }
+  public ShapeDelimiterKind? Shape { get; set; }
   
   
   /// <summary>
   ///   ControlProperties.
   /// </summary>
-  public DocumentModel.Math.ControlProperties? ControlProperties { get; set; }
+  public ControlProperties? ControlProperties { get; set; }
   
 }

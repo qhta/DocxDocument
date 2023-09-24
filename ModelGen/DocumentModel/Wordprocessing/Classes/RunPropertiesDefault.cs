@@ -10,7 +10,6 @@ public partial class RunPropertiesDefault
   /// <summary>
   ///   Run Properties.
   /// </summary>
-  [Nullable((Byte)2)]
-  public DocumentModel.Wordprocessing.RunPropertiesBaseStyle? RunPropertiesBaseStyle { get; set; }
+  public RunPropertiesBaseStyle? RunPropertiesBaseStyle { get; set; }
   
 }

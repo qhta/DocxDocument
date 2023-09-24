@@ -10,21 +10,18 @@ public partial class DataBinding
   /// <summary>
   ///   XML Namespace Prefix Mappings
   /// </summary>
-  [SchemaAttr("w:prefixMappings")]
   public String? PrefixMappings { get; set; }
   
   
   /// <summary>
   ///   XPath
   /// </summary>
-  [SchemaAttr("w:xpath")]
   public String? XPath { get; set; }
   
   
   /// <summary>
   ///   Custom XML Data Storage ID
   /// </summary>
-  [SchemaAttr("w:storeItemID")]
   public String? StoreItemId { get; set; }
   
 }

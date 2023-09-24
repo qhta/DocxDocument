@@ -10,28 +10,24 @@ public partial class Style
   /// <summary>
   ///   Style Type
   /// </summary>
-  [SchemaAttr("w:type")]
-  public DocumentModel.Wordprocessing.StyleValues? Type { get; set; }
+  public StyleKind? Type { get; set; }
   
   
   /// <summary>
   ///   Style ID
   /// </summary>
-  [SchemaAttr("w:styleId")]
   public String? StyleId { get; set; }
   
   
   /// <summary>
   ///   Default Style
   /// </summary>
-  [SchemaAttr("w:default")]
   public Boolean? Default { get; set; }
   
   
   /// <summary>
   ///   User-Defined Style
   /// </summary>
-  [SchemaAttr("w:customStyle")]
   public Boolean? CustomStyle { get; set; }
   
   
@@ -128,38 +124,38 @@ public partial class Style
   /// <summary>
   ///   Revision Identifier for Style Definition.
   /// </summary>
-  public UInt32? Rsid { get; set; }
+  public HexInt? Rsid { get; set; }
   
   
   /// <summary>
   ///   Style Paragraph Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.StyleParagraphProperties? StyleParagraphProperties { get; set; }
+  public StyleParagraphProperties? StyleParagraphProperties { get; set; }
   
   
   /// <summary>
   ///   Run Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.StyleRunProperties? StyleRunProperties { get; set; }
+  public StyleRunProperties? StyleRunProperties { get; set; }
   
   
   /// <summary>
   ///   Style Table Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.StyleTableProperties? StyleTableProperties { get; set; }
+  public StyleTableProperties? StyleTableProperties { get; set; }
   
   
   /// <summary>
   ///   Style Table Row Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.TableStyleConditionalFormattingTableRowProperties? TableStyleConditionalFormattingTableRowProperties { get; set; }
+  public TableStyleConditionalFormattingTableRowProperties? TableStyleConditionalFormattingTableRowProperties { get; set; }
   
   
   /// <summary>
   ///   Style Table Cell Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.StyleTableCellProperties? StyleTableCellProperties { get; set; }
+  public StyleTableCellProperties? StyleTableCellProperties { get; set; }
   
-  public DocumentModel.ElementCollection<DocumentModel.Wordprocessing.TableStyleProperties>? Items { get; set; }
+  public ElementCollection<TableStyleProperties>? Items { get; set; }
   
 }

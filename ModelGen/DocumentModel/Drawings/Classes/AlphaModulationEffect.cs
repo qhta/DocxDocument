@@ -10,7 +10,6 @@ public partial class AlphaModulationEffect
   /// <summary>
   ///   EffectContainer.
   /// </summary>
-  [Nullable((Byte)2)]
-  public DocumentModel.Drawings.EffectContainer? EffectContainer { get; set; }
+  public EffectContainer? EffectContainer { get; set; }
   
 }

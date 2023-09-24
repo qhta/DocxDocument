@@ -10,14 +10,12 @@ public partial class RelativeOffset
   /// <summary>
   ///   Specifies the X offset.
   /// </summary>
-  [SchemaAttr("tx")]
   public Int32? OffsetX { get; set; }
   
   
   /// <summary>
   ///   Specifies the Y offset.
   /// </summary>
-  [SchemaAttr("ty")]
   public Int32? OffsetY { get; set; }
   
 }

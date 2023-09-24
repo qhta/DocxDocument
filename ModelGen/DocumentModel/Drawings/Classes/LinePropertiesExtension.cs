@@ -10,10 +10,8 @@ public partial class LinePropertiesExtension
   /// <summary>
   ///   Specifies the URI, or uniform resource identifier that represents the data stored under this tag. The URI is used to identify the correct 'server' that can process the contents of this tag.
   /// </summary>
-  [Nullable((Byte)2)]
-  [SchemaAttr("uri")]
   public String? Uri { get; set; }
   
-  public DocumentModel.Drawings.LineSketchStyleProperties? LineSketchStyleProperties { get; set; }
+  public LineSketchStyleProperties? LineSketchStyleProperties { get; set; }
   
 }

@@ -10,7 +10,6 @@ public partial class Div
   /// <summary>
   ///   div Data ID
   /// </summary>
-  [SchemaAttr("w:id")]
   public String? Id { get; set; }
   
   
@@ -53,8 +52,8 @@ public partial class Div
   /// <summary>
   ///   Set of Borders for HTML div.
   /// </summary>
-  public DocumentModel.Wordprocessing.DivBorder? DivBorder { get; set; }
+  public DivBorder? DivBorder { get; set; }
   
-  public DocumentModel.ElementCollection<DocumentModel.Wordprocessing.DivsChild>? Items { get; set; }
+  public ElementCollection<DivsChild>? Items { get; set; }
   
 }

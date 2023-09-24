@@ -10,18 +10,16 @@ public partial class LineSketchStyleProperties
   /// <summary>
   ///   sd, this property is only available in Office 2021 and later.
   /// </summary>
-  [Nullable((Byte)2)]
-  [SchemaAttr("sd")]
   public UInt32? Sd { get; set; }
   
-  public DocumentModel.Drawings.CustomGeometry? CustomGeometry { get; set; }
+  public CustomGeometry? CustomGeometry { get; set; }
   
-  public DocumentModel.Drawings.PresetGeometry? PresetGeometry { get; set; }
+  public PresetGeometry? PresetGeometry { get; set; }
   
-  public DocumentModel.Drawings.LineSketchTypeProperties? LineSketchTypeProperties { get; set; }
+  public LineSketchTypeProperties? LineSketchTypeProperties { get; set; }
   
   public String? LineSketchSeed { get; set; }
   
-  public DocumentModel.Drawings.OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
+  public OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
   
 }

@@ -10,7 +10,6 @@ public partial class BiLevel
   /// <summary>
   ///   Specifies the luminance threshold for the Bi-Level effect. Values greater than or equal to the threshold are set to white. Values lesser than the threshold are set to black.
   /// </summary>
-  [SchemaAttr("thresh")]
   public Int32? Threshold { get; set; }
   
 }

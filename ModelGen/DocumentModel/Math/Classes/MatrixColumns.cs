@@ -6,6 +6,6 @@ namespace DocumentModel.Math;
 /// </summary>
 public partial class MatrixColumns
 {
-  public DocumentModel.ElementCollection<DocumentModel.Math.MatrixColumn>? Items { get; set; }
+  public ElementCollection<MatrixColumn>? Items { get; set; }
   
 }

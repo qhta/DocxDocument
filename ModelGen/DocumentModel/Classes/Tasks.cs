@@ -6,8 +6,8 @@ namespace DocumentModel;
 /// </summary>
 public partial class Tasks
 {
-  public DocumentModel.ExtensionList? ExtensionList { get; set; }
+  public ExtensionList? ExtensionList { get; set; }
   
-  public DocumentModel.ElementCollection<DocumentModel.Task>? Items { get; set; }
+  public ElementCollection<Task>? Items { get; set; }
   
 }

@@ -6,8 +6,8 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class HyperlinkOnMouseOver
 {
-  public DocumentModel.Drawings.EmbeddedWavAudioFileType? HyperlinkSound { get; set; }
+  public EmbeddedWavAudioFileType? HyperlinkSound { get; set; }
   
-  public DocumentModel.Drawings.HyperlinkExtensionList? HyperlinkExtensionList { get; set; }
+  public HyperlinkExtensionList? HyperlinkExtensionList { get; set; }
   
 }

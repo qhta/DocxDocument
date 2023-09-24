@@ -10,34 +10,30 @@ public partial class DocumentBackground
   /// <summary>
   ///   color
   /// </summary>
-  [SchemaAttr("w:color")]
   public String? Color { get; set; }
   
   
   /// <summary>
   ///   themeColor
   /// </summary>
-  [SchemaAttr("w:themeColor")]
-  public DocumentModel.Wordprocessing.ThemeColorValues? ThemeColor { get; set; }
+  public ThemeColorKind? ThemeColor { get; set; }
   
   
   /// <summary>
   ///   themeTint
   /// </summary>
-  [SchemaAttr("w:themeTint")]
   public String? ThemeTint { get; set; }
   
   
   /// <summary>
   ///   themeShade
   /// </summary>
-  [SchemaAttr("w:themeShade")]
   public String? ThemeShade { get; set; }
   
   
   /// <summary>
   ///   Background.
   /// </summary>
-  public DocumentModel.Vml.Background? Background { get; set; }
+  public Background? Background { get; set; }
   
 }

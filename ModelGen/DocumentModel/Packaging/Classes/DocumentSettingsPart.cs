@@ -20,6 +20,6 @@ public partial class DocumentSettingsPart
   /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.Wordprocessing.Settings? Settings { get; set; }
+  public Settings? Settings { get; set; }
   
 }

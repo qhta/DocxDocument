@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "IOe/dM42ysmQkEOZg1uP3zkbNOWueUxQSeV1pXftxTz8d2lvBE4O4bCrLn7Kb7q10ycOsli1XUyh2Uwxl6IbTw==",
+  "dgSpecHash": "5BSaF6pij6Bc7GMxkL/j+2equVoWcqu51H0WrRvXJ8ShlebGVyAr4JJDxfAHoaG7ElRVFvIjEKwPh0rqA6ohmw==",
   "success": true,
   "projectFilePath": "D:\\VS\\Projects\\DocxDocument\\ModelGen\\ModelGen\\ModelGen.csproj",
   "expectedPackageFiles": [
@@ -13,7 +13,7 @@
     "C:\\Users\\qhta1\\.nuget\\packages\\microsoft.win32.systemevents\\7.0.0\\microsoft.win32.systemevents.7.0.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\namotion.reflection\\3.0.0\\namotion.reflection.3.0.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
-    "C:\\Users\\qhta1\\.nuget\\packages\\qhta.collections\\4.0.0\\qhta.collections.4.0.0.nupkg.sha512",
+    "C:\\Users\\qhta1\\.nuget\\packages\\qhta.collections\\4.6.0\\qhta.collections.4.6.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\qhta.conversion\\2.0.0\\qhta.conversion.2.0.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\qhta.htmlutils\\2.1.0\\qhta.htmlutils.2.1.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\qhta.testhelper\\3.0.0\\qhta.testhelper.3.0.0.nupkg.sha512",

@@ -6,6 +6,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class ExtraColorSchemeList
 {
-  public DocumentModel.ElementCollection<DocumentModel.Drawings.ExtraColorScheme>? Items { get; set; }
+  public ElementCollection<ExtraColorScheme>? Items { get; set; }
   
 }

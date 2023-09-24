@@ -6,6 +6,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class FillStyleList
 {
-  public DocumentModel.ElementCollection<DocumentModel.IModelElement>? Items { get; set; }
+  public ElementCollection<IModelElement>? Items { get; set; }
   
 }

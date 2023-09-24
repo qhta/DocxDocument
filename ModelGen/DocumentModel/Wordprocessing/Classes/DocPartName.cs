@@ -10,14 +10,12 @@ public partial class DocPartName
   /// <summary>
   ///   Name Value
   /// </summary>
-  [SchemaAttr("w:val")]
   public String? Val { get; set; }
   
   
   /// <summary>
   ///   Built-In Entry
   /// </summary>
-  [SchemaAttr("w:decorated")]
   public Boolean? Decorated { get; set; }
   
 }

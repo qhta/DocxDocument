@@ -22,7 +22,7 @@ public partial class Frame
   /// <summary>
   ///   Source File for Frame.
   /// </summary>
-  public DocumentModel.Wordprocessing.RelationshipType? SourceFileReference { get; set; }
+  public RelationshipType? SourceFileReference { get; set; }
   
   
   /// <summary>
@@ -40,7 +40,7 @@ public partial class Frame
   /// <summary>
   ///   Scrollbar Display Option.
   /// </summary>
-  public DocumentModel.Wordprocessing.FrameScrollbarVisibilityValues? ScrollbarVisibility { get; set; }
+  public FrameScrollbarVisibilityKind? ScrollbarVisibility { get; set; }
   
   
   /// <summary>

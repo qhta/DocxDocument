@@ -10,14 +10,12 @@ public partial class SymbolChar
   /// <summary>
   ///   Symbol Character Font
   /// </summary>
-  [SchemaAttr("w:font")]
   public String? Font { get; set; }
   
   
   /// <summary>
   ///   Symbol Character Code
   /// </summary>
-  [SchemaAttr("w:char")]
-  public DocumentModel.HexBinaryValue? Char { get; set; }
+  public HexBinary? Char { get; set; }
   
 }

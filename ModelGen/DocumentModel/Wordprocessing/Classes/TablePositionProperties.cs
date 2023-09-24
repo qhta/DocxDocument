@@ -10,70 +10,60 @@ public partial class TablePositionProperties
   /// <summary>
   ///   Distance From Left of Table to Text
   /// </summary>
-  [SchemaAttr("w:leftFromText")]
   public Int16? LeftFromText { get; set; }
   
   
   /// <summary>
   ///   (Distance From Right of Table to Text
   /// </summary>
-  [SchemaAttr("w:rightFromText")]
   public Int16? RightFromText { get; set; }
   
   
   /// <summary>
   ///   Distance From Top of Table to Text
   /// </summary>
-  [SchemaAttr("w:topFromText")]
   public Int16? TopFromText { get; set; }
   
   
   /// <summary>
   ///   Distance From Bottom of Table to Text
   /// </summary>
-  [SchemaAttr("w:bottomFromText")]
   public Int16? BottomFromText { get; set; }
   
   
   /// <summary>
   ///   Table Vertical Anchor
   /// </summary>
-  [SchemaAttr("w:vertAnchor")]
-  public DocumentModel.Wordprocessing.VerticalAnchorValues? VerticalAnchor { get; set; }
+  public VerticalAnchorKind? VerticalAnchor { get; set; }
   
   
   /// <summary>
   ///   Table Horizontal Anchor
   /// </summary>
-  [SchemaAttr("w:horzAnchor")]
-  public DocumentModel.Wordprocessing.HorizontalAnchorValues? HorizontalAnchor { get; set; }
+  public HorizontalAnchorKind? HorizontalAnchor { get; set; }
   
   
   /// <summary>
   ///   Relative Horizontal Alignment From Anchor
   /// </summary>
-  [SchemaAttr("w:tblpXSpec")]
-  public DocumentModel.Wordprocessing.HorizontalAlignmentValues? TablePositionXAlignment { get; set; }
+  public HorizontalAlignmentKind? TablePositionXAlignment { get; set; }
   
   
   /// <summary>
   ///   Absolute Horizontal Distance From Anchor
   /// </summary>
-  [SchemaAttr("w:tblpX")]
   public Int32? TablePositionX { get; set; }
   
   
   /// <summary>
   ///   Relative Vertical Alignment from Anchor
   /// </summary>
-  [SchemaAttr("w:tblpYSpec")]
-  public DocumentModel.Wordprocessing.VerticalAlignmentValues? TablePositionYAlignment { get; set; }
+  public VerticalAlignmentKind? TablePositionYAlignment { get; set; }
   
   
   /// <summary>
   ///   Absolute Vertical Distance From Anchor
   /// </summary>
-  [SchemaAttr("w:tblpY")]
   public Int32? TablePositionY { get; set; }
   
 }

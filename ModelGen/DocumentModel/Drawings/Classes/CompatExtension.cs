@@ -10,7 +10,6 @@ public partial class CompatExtension
   /// <summary>
   ///   spid, this property is only available in Office 2010 and later.
   /// </summary>
-  [SchemaAttr("spid")]
-  public String? ShapeId { get; set; }
+  public HexInt? ShapeId { get; set; }
   
 }

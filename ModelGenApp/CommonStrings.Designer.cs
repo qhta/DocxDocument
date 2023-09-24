@@ -507,6 +507,15 @@ namespace ModelGenApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Incoming relationships.
+        /// </summary>
+        public static string IncomingRelationships {
+            get {
+                return ResourceManager.GetString("IncomingRelationships", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Interfaces.
         /// </summary>
         public static string Interfaces {
@@ -783,6 +792,15 @@ namespace ModelGenApp {
         public static string OtherTypes {
             get {
                 return ResourceManager.GetString("OtherTypes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Outgoing relationships.
+        /// </summary>
+        public static string OutgoingRelationships {
+            get {
+                return ResourceManager.GetString("OutgoingRelationships", resourceCulture);
             }
         }
         

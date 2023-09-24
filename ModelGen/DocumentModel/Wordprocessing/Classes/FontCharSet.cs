@@ -10,14 +10,12 @@ public partial class FontCharSet
   /// <summary>
   ///   val
   /// </summary>
-  [SchemaAttr("w:val")]
   public String? Val { get; set; }
   
   
   /// <summary>
   ///   characterSet
   /// </summary>
-  [SchemaAttr("w:characterSet")]
-  public DocumentModel.Wordprocessing.StrictCharacterSet? StrictCharacterSet { get; set; }
+  public StrictCharacterSet? StrictCharacterSet { get; set; }
   
 }

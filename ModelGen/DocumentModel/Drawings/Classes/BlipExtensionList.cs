@@ -6,6 +6,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class BlipExtensionList
 {
-  public DocumentModel.ElementCollection<DocumentModel.Drawings.BlipExtension>? Items { get; set; }
+  public ElementCollection<BlipExtension>? Items { get; set; }
   
 }

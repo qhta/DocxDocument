@@ -137,4 +137,20 @@ public class NamespaceConfigViewModel : VisibleViewModel
     )]
   public string? TargetShortcutError => IsTargetShortcutValid ? (string?)null : CommonStrings.Target_shortcut_error;
 
+  [DataGridColumn(
+    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Types)
+    )]
+  public int TypesCount
+  {
+    get { return _TypesCount; }
+    set
+    {
+      if (_TypesCount != value)
+      {
+        _TypesCount = value;
+        NotifyPropertyChanged(nameof(TypesCount));
+      }
+    }
+  }
+  private int _TypesCount;
 }

@@ -10,36 +10,36 @@ public partial class BoxProperties
   /// <summary>
   ///   Operator Emulator.
   /// </summary>
-  public DocumentModel.Math.BooleanValues? OperatorEmulator { get; set; }
+  public Boolean? OperatorEmulator { get; set; }
   
   
   /// <summary>
   ///   No Break.
   /// </summary>
-  public DocumentModel.Math.BooleanValues? NoBreak { get; set; }
+  public Boolean? NoBreak { get; set; }
   
   
   /// <summary>
   ///   Differential.
   /// </summary>
-  public DocumentModel.Math.BooleanValues? Differential { get; set; }
+  public Boolean? Differential { get; set; }
   
   
   /// <summary>
   ///   Break.
   /// </summary>
-  public DocumentModel.Math.Break? Break { get; set; }
+  public Break? Break { get; set; }
   
   
   /// <summary>
   ///   Alignment.
   /// </summary>
-  public DocumentModel.Math.BooleanValues? Alignment { get; set; }
+  public Boolean? Alignment { get; set; }
   
   
   /// <summary>
   ///   ControlProperties.
   /// </summary>
-  public DocumentModel.Math.ControlProperties? ControlProperties { get; set; }
+  public ControlProperties? ControlProperties { get; set; }
   
 }

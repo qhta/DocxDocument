@@ -10,8 +10,7 @@ public partial class HorizontalPosition
   /// <summary>
   ///   Horizontal Position Relative Base
   /// </summary>
-  [SchemaAttr("relativeFrom")]
-  public DocumentModel.Drawings.Wordprocessing.HorizontalRelativePositionValues? RelativeFrom { get; set; }
+  public HorizontalRelativePositionKind? RelativeFrom { get; set; }
   
   
   /// <summary>

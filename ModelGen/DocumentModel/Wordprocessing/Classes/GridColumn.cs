@@ -10,7 +10,6 @@ public partial class GridColumn
   /// <summary>
   ///   Grid Column Width
   /// </summary>
-  [SchemaAttr("w:w")]
   public String? Width { get; set; }
   
 }

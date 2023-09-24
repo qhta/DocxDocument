@@ -10,8 +10,7 @@ public partial class AbstractNum
   /// <summary>
   ///   Abstract Numbering Definition ID
   /// </summary>
-  [SchemaAttr("w:abstractNumId")]
-  public Int32? AbstractNumberId { get; set; }
+  public HexInt? AbstractNumberId { get; set; }
   
   
   /// <summary>
@@ -23,7 +22,7 @@ public partial class AbstractNum
   /// <summary>
   ///   Abstract Numbering Definition Type.
   /// </summary>
-  public DocumentModel.Wordprocessing.MultiLevelValues? MultiLevelType { get; set; }
+  public MultiLevelKind? MultiLevelType { get; set; }
   
   
   /// <summary>
@@ -49,6 +48,6 @@ public partial class AbstractNum
   /// </summary>
   public String? NumberingStyleLink { get; set; }
   
-  public DocumentModel.ElementCollection<DocumentModel.Wordprocessing.Level>? Items { get; set; }
+  public ElementCollection<Level>? Items { get; set; }
   
 }

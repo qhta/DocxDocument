@@ -10,24 +10,24 @@ public partial class ObjectDefaults
   /// <summary>
   ///   Shape Default.
   /// </summary>
-  public DocumentModel.Drawings.ShapeDefault? ShapeDefault { get; set; }
+  public ShapeDefault? ShapeDefault { get; set; }
   
   
   /// <summary>
   ///   Line Default.
   /// </summary>
-  public DocumentModel.Drawings.LineDefault? LineDefault { get; set; }
+  public LineDefault? LineDefault { get; set; }
   
   
   /// <summary>
   ///   Text Default.
   /// </summary>
-  public DocumentModel.Drawings.TextDefault? TextDefault { get; set; }
+  public TextDefault? TextDefault { get; set; }
   
   
   /// <summary>
   ///   ExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.ExtensionList? ExtensionList { get; set; }
+  public ExtensionList? ExtensionList { get; set; }
   
 }

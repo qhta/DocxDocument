@@ -10,21 +10,18 @@ public partial class CustomXmlAttribute
   /// <summary>
   ///   uri
   /// </summary>
-  [SchemaAttr("w:uri")]
   public String? Uri { get; set; }
   
   
   /// <summary>
   ///   name
   /// </summary>
-  [SchemaAttr("w:name")]
   public String? Name { get; set; }
   
   
   /// <summary>
   ///   val
   /// </summary>
-  [SchemaAttr("w:val")]
   public String? Val { get; set; }
   
 }

@@ -10,16 +10,14 @@ public partial class RgbColorModelHex
   /// <summary>
   ///   The actual color value. Expressed as a sequence of hex digits RRGGBB.
   /// </summary>
-  [SchemaAttr("val")]
-  public DocumentModel.HexBinaryValue? Val { get; set; }
+  public HexBinary? Val { get; set; }
   
   
   /// <summary>
   ///   legacySpreadsheetColorIndex, this property is only available in Office 2010 and later.
   /// </summary>
-  [SchemaAttr("a14:legacySpreadsheetColorIndex")]
   public Int32? LegacySpreadsheetColorIndex { get; set; }
   
-  public DocumentModel.ElementCollection<DocumentModel.IModelElement>? Items { get; set; }
+  public ElementCollection<IModelElement>? Items { get; set; }
   
 }

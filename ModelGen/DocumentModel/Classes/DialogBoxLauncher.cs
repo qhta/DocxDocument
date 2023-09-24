@@ -10,7 +10,6 @@ public partial class DialogBoxLauncher
   /// <summary>
   ///   ButtonRegular.
   /// </summary>
-  [Nullable((Byte)2)]
-  public DocumentModel.ButtonRegular? ButtonRegular { get; set; }
+  public ButtonRegular? ButtonRegular { get; set; }
   
 }

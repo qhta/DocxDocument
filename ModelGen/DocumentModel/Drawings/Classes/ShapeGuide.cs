@@ -10,14 +10,12 @@ public partial class ShapeGuide
   /// <summary>
   ///   Specifies the name that is used to reference to this guide. This name can be used just as a variable would within an equation. That is this name can be substituted for literal values within other guides or the specification of the shape path.
   /// </summary>
-  [SchemaAttr("name")]
   public String? Name { get; set; }
   
   
   /// <summary>
   ///   Specifies the formula that is used to calculate the value for a guide. Each formula has a certain number of arguments and a specific set of operations to perform on these arguments in order to generate a value for a guide. There are a total of 17 different formulas available. These are shown below with the usage for each defined.
   /// </summary>
-  [SchemaAttr("fmla")]
   public String? Formula { get; set; }
   
 }

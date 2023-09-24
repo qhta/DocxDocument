@@ -16,13 +16,13 @@ public partial class TableProperties
   /// <summary>
   ///   TablePositionProperties.
   /// </summary>
-  public DocumentModel.Wordprocessing.TablePositionProperties? TablePositionProperties { get; set; }
+  public TablePositionProperties? TablePositionProperties { get; set; }
   
   
   /// <summary>
   ///   TableOverlap.
   /// </summary>
-  public DocumentModel.Wordprocessing.TableOverlapValues? TableOverlap { get; set; }
+  public TableOverlapKind? TableOverlap { get; set; }
   
   
   /// <summary>
@@ -34,55 +34,55 @@ public partial class TableProperties
   /// <summary>
   ///   TableWidth.
   /// </summary>
-  public DocumentModel.Wordprocessing.TableWidthType? TableWidth { get; set; }
+  public TableWidthType? TableWidth { get; set; }
   
   
   /// <summary>
   ///   TableJustification.
   /// </summary>
-  public DocumentModel.Wordprocessing.TableRowAlignmentValues? TableJustification { get; set; }
+  public TableRowAlignmentKind? TableJustification { get; set; }
   
   
   /// <summary>
   ///   TableCellSpacing.
   /// </summary>
-  public DocumentModel.Wordprocessing.TableWidthType? TableCellSpacing { get; set; }
+  public TableWidthType? TableCellSpacing { get; set; }
   
   
   /// <summary>
   ///   TableIndentation.
   /// </summary>
-  public DocumentModel.Wordprocessing.TableIndentation? TableIndentation { get; set; }
+  public TableIndentation? TableIndentation { get; set; }
   
   
   /// <summary>
   ///   TableBorders.
   /// </summary>
-  public DocumentModel.Wordprocessing.TableBorders? TableBorders { get; set; }
+  public TableBorders? TableBorders { get; set; }
   
   
   /// <summary>
   ///   Shading.
   /// </summary>
-  public DocumentModel.Wordprocessing.Shading? Shading { get; set; }
+  public Shading? Shading { get; set; }
   
   
   /// <summary>
   ///   TableLayout.
   /// </summary>
-  public DocumentModel.Wordprocessing.TableLayout? TableLayout { get; set; }
+  public TableLayout? TableLayout { get; set; }
   
   
   /// <summary>
   ///   TableCellMarginDefault.
   /// </summary>
-  public DocumentModel.Wordprocessing.TableCellMarginDefault? TableCellMarginDefault { get; set; }
+  public TableCellMarginDefault? TableCellMarginDefault { get; set; }
   
   
   /// <summary>
   ///   TableLook.
   /// </summary>
-  public DocumentModel.Wordprocessing.TableLook? TableLook { get; set; }
+  public TableLook? TableLook { get; set; }
   
   
   /// <summary>
@@ -100,6 +100,6 @@ public partial class TableProperties
   /// <summary>
   ///   Revision Information for Table Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.TablePropertiesChange? TablePropertiesChange { get; set; }
+  public TablePropertiesChange? TablePropertiesChange { get; set; }
   
 }

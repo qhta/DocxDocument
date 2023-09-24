@@ -10,13 +10,13 @@ public partial class MatrixProperties
   /// <summary>
   ///   Matrix Base Justification.
   /// </summary>
-  public DocumentModel.Math.VerticalAlignmentValues? BaseJustification { get; set; }
+  public VerticalAlignmentKind? BaseJustification { get; set; }
   
   
   /// <summary>
   ///   Hide Placeholders (Matrix).
   /// </summary>
-  public DocumentModel.Math.BooleanValues? HidePlaceholder { get; set; }
+  public Boolean? HidePlaceholder { get; set; }
   
   
   /// <summary>
@@ -52,12 +52,12 @@ public partial class MatrixProperties
   /// <summary>
   ///   Matrix Columns.
   /// </summary>
-  public DocumentModel.Math.MatrixColumns? MatrixColumns { get; set; }
+  public MatrixColumns? MatrixColumns { get; set; }
   
   
   /// <summary>
   ///   ControlProperties.
   /// </summary>
-  public DocumentModel.Math.ControlProperties? ControlProperties { get; set; }
+  public ControlProperties? ControlProperties { get; set; }
   
 }

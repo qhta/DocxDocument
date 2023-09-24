@@ -18,6 +18,6 @@ public partial class DropDownListFormField
   /// </summary>
   public Int32? DefaultDropDownListItemIndex { get; set; }
   
-  public DocumentModel.ElementCollection<System.String>? Items { get; set; }
+  public ElementCollection<String>? Items { get; set; }
   
 }

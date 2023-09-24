@@ -43,9 +43,13 @@
                Visibility="{Binding Path=IsSchemaVisible, Converter={StaticResource BoolToVisibilityConverter}}">
         <views:SchemaView DataContext="{Binding Path=Schema}" />
       </TabItem>
-      <TabItem Header="{x:Static local:CommonStrings.Relationships}"
-               Visibility="{Binding Path=IsRelationshipsVisible, Converter={StaticResource BoolToVisibilityConverter}}">
-        <views:TypeRelationshipsView />
+      <TabItem Header="{x:Static local:CommonStrings.OutgoingRelationships}"
+               Visibility="{Binding Path=HasOutgoingRelationships, Converter={StaticResource BoolToVisibilityConverter}}">
+        <views:TypeRelationshipsView DataContext="{Binding Path=OutgoingRelationships}"/>
+      </TabItem>
+      <TabItem Header="{x:Static local:CommonStrings.IncomingRelationships}"
+               Visibility="{Binding Path=HasIncomingRelationships, Converter={StaticResource BoolToVisibilityConverter}}">
+        <views:TypeRelationshipsView DataContext="{Binding Path=IncomingRelationships}"/>
       </TabItem>
     </TabControl>
   </Grid>

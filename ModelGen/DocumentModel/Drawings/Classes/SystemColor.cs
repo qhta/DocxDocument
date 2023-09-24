@@ -10,16 +10,14 @@ public partial class SystemColor
   /// <summary>
   ///   Specifies the system color value.
   /// </summary>
-  [SchemaAttr("val")]
-  public DocumentModel.Drawings.SystemColorValues? Val { get; set; }
+  public SystemColorKind? Val { get; set; }
   
   
   /// <summary>
   ///   Specifies the color value that was last computed by the generating application.
   /// </summary>
-  [SchemaAttr("lastClr")]
-  public DocumentModel.HexBinaryValue? LastColor { get; set; }
+  public HexBinary? LastColor { get; set; }
   
-  public DocumentModel.ElementCollection<DocumentModel.IModelElement>? Items { get; set; }
+  public ElementCollection<IModelElement>? Items { get; set; }
   
 }

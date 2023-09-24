@@ -10,12 +10,12 @@ public partial class RadicalProperties
   /// <summary>
   ///   Hide Degree.
   /// </summary>
-  public DocumentModel.Math.BooleanValues? HideDegree { get; set; }
+  public Boolean? HideDegree { get; set; }
   
   
   /// <summary>
   ///   ControlProperties.
   /// </summary>
-  public DocumentModel.Math.ControlProperties? ControlProperties { get; set; }
+  public ControlProperties? ControlProperties { get; set; }
   
 }

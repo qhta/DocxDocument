@@ -10,21 +10,18 @@ public partial class BackstageItemType
   /// <summary>
   ///   id, this property is only available in Office 2010 and later.
   /// </summary>
-  [SchemaAttr("id")]
-  public String? Id { get; set; }
+  public HexInt? Id { get; set; }
   
   
   /// <summary>
   ///   label, this property is only available in Office 2010 and later.
   /// </summary>
-  [SchemaAttr("label")]
   public String? Label { get; set; }
   
   
   /// <summary>
   ///   getLabel, this property is only available in Office 2010 and later.
   /// </summary>
-  [SchemaAttr("getLabel")]
   public String? GetLabel { get; set; }
   
 }

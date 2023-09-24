@@ -18,7 +18,7 @@ public partial class FontTablePart
   /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.Wordprocessing.Fonts? Fonts { get; set; }
+  public Fonts? Fonts { get; set; }
   
   public String? RelationshipType { get; set; }
   

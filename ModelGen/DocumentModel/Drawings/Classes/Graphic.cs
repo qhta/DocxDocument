@@ -10,7 +10,6 @@ public partial class Graphic
   /// <summary>
   ///   Graphic Object Data.
   /// </summary>
-  [Nullable((Byte)2)]
-  public DocumentModel.Drawings.GraphicData? GraphicData { get; set; }
+  public GraphicData? GraphicData { get; set; }
   
 }

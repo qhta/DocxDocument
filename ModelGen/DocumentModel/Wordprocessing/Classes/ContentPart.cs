@@ -10,7 +10,6 @@ public partial class ContentPart
   /// <summary>
   ///   id
   /// </summary>
-  [SchemaAttr("r:id")]
   public String? Id { get; set; }
   
 }

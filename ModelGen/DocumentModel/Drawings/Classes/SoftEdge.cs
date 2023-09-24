@@ -10,7 +10,6 @@ public partial class SoftEdge
   /// <summary>
   ///   Specifies the radius of blur to apply to the edges.
   /// </summary>
-  [SchemaAttr("rad")]
   public Int64? Radius { get; set; }
   
 }

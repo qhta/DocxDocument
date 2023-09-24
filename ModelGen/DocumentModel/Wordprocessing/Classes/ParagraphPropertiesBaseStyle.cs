@@ -28,7 +28,7 @@ public partial class ParagraphPropertiesBaseStyle
   /// <summary>
   ///   FrameProperties.
   /// </summary>
-  public DocumentModel.Wordprocessing.FrameProperties? FrameProperties { get; set; }
+  public FrameProperties? FrameProperties { get; set; }
   
   
   /// <summary>
@@ -40,7 +40,7 @@ public partial class ParagraphPropertiesBaseStyle
   /// <summary>
   ///   NumberingProperties.
   /// </summary>
-  public DocumentModel.Wordprocessing.NumberingProperties? NumberingProperties { get; set; }
+  public NumberingProperties? NumberingProperties { get; set; }
   
   
   /// <summary>
@@ -52,19 +52,19 @@ public partial class ParagraphPropertiesBaseStyle
   /// <summary>
   ///   ParagraphBorders.
   /// </summary>
-  public DocumentModel.Wordprocessing.ParagraphBorders? ParagraphBorders { get; set; }
+  public ParagraphBorders? ParagraphBorders { get; set; }
   
   
   /// <summary>
   ///   Shading.
   /// </summary>
-  public DocumentModel.Wordprocessing.Shading? Shading { get; set; }
+  public Shading? Shading { get; set; }
   
   
   /// <summary>
   ///   Tabs.
   /// </summary>
-  public DocumentModel.Wordprocessing.Tabs? Tabs { get; set; }
+  public Tabs? Tabs { get; set; }
   
   
   /// <summary>
@@ -130,13 +130,13 @@ public partial class ParagraphPropertiesBaseStyle
   /// <summary>
   ///   SpacingBetweenLines.
   /// </summary>
-  public DocumentModel.Wordprocessing.SpacingBetweenLines? SpacingBetweenLines { get; set; }
+  public SpacingBetweenLines? SpacingBetweenLines { get; set; }
   
   
   /// <summary>
   ///   Indentation.
   /// </summary>
-  public DocumentModel.Wordprocessing.Indentation? Indentation { get; set; }
+  public Indentation? Indentation { get; set; }
   
   
   /// <summary>
@@ -160,25 +160,25 @@ public partial class ParagraphPropertiesBaseStyle
   /// <summary>
   ///   Justification.
   /// </summary>
-  public DocumentModel.Wordprocessing.JustificationValues? Justification { get; set; }
+  public JustificationKind? Justification { get; set; }
   
   
   /// <summary>
   ///   TextDirection.
   /// </summary>
-  public DocumentModel.Wordprocessing.TextDirectionValues? TextDirection { get; set; }
+  public TextDirectionKind? TextDirection { get; set; }
   
   
   /// <summary>
   ///   TextAlignment.
   /// </summary>
-  public DocumentModel.Wordprocessing.VerticalTextAlignmentValues? TextAlignment { get; set; }
+  public VerticalTextAlignmentKind? TextAlignment { get; set; }
   
   
   /// <summary>
   ///   TextBoxTightWrap.
   /// </summary>
-  public DocumentModel.Wordprocessing.TextBoxTightWrapValues? TextBoxTightWrap { get; set; }
+  public TextBoxTightWrapKind? TextBoxTightWrap { get; set; }
   
   
   /// <summary>

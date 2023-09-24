@@ -6,6 +6,6 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class GradientStopList
 {
-  public DocumentModel.ElementCollection<DocumentModel.Wordprocessing.GradientStop>? Items { get; set; }
+  public ElementCollection<GradientStop>? Items { get; set; }
   
 }

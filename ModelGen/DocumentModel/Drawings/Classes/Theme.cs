@@ -10,44 +10,42 @@ public partial class Theme
   /// <summary>
   ///   Specifies the name given to the theme.
   /// </summary>
-  [SchemaAttr("name")]
   public String? Name { get; set; }
   
   
   /// <summary>
   ///   id, this property is only available in Office 2013 and later.
   /// </summary>
-  [SchemaAttr("thm15:id")]
-  public String? ThemeId { get; set; }
+  public HexInt? ThemeId { get; set; }
   
   
   /// <summary>
   ///   ThemeElements.
   /// </summary>
-  public DocumentModel.Drawings.ThemeElements? ThemeElements { get; set; }
+  public ThemeElements? ThemeElements { get; set; }
   
   
   /// <summary>
   ///   ObjectDefaults.
   /// </summary>
-  public DocumentModel.Drawings.ObjectDefaults? ObjectDefaults { get; set; }
+  public ObjectDefaults? ObjectDefaults { get; set; }
   
   
   /// <summary>
   ///   ExtraColorSchemeList.
   /// </summary>
-  public DocumentModel.Drawings.ExtraColorSchemeList? ExtraColorSchemeList { get; set; }
+  public ExtraColorSchemeList? ExtraColorSchemeList { get; set; }
   
   
   /// <summary>
   ///   CustomColorList.
   /// </summary>
-  public DocumentModel.Drawings.CustomColorList? CustomColorList { get; set; }
+  public CustomColorList? CustomColorList { get; set; }
   
   
   /// <summary>
   ///   OfficeStyleSheetExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.OfficeStyleSheetExtensionList? OfficeStyleSheetExtensionList { get; set; }
+  public OfficeStyleSheetExtensionList? OfficeStyleSheetExtensionList { get; set; }
   
 }

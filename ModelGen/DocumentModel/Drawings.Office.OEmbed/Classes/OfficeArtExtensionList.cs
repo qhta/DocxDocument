@@ -6,6 +6,6 @@ namespace DocumentModel.Drawings.Office.OEmbed;
 /// </summary>
 public partial class OfficeArtExtensionList
 {
-  public DocumentModel.ElementCollection<DocumentModel.Drawings.Extension>? Items { get; set; }
+  public ElementCollection<Extension>? Items { get; set; }
   
 }

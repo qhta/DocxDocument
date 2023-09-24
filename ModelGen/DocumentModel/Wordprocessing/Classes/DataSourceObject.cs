@@ -22,7 +22,7 @@ public partial class DataSourceObject
   /// <summary>
   ///   ODSO Data Source File Path.
   /// </summary>
-  public DocumentModel.Wordprocessing.RelationshipType? SourceReference { get; set; }
+  public RelationshipType? SourceReference { get; set; }
   
   
   /// <summary>
@@ -34,7 +34,7 @@ public partial class DataSourceObject
   /// <summary>
   ///   ODSO Data Source Type.
   /// </summary>
-  public DocumentModel.Wordprocessing.MailMergeSourceValues? MailMergeSource { get; set; }
+  public MailMergeSourceKind? MailMergeSource { get; set; }
   
   
   /// <summary>
@@ -42,8 +42,8 @@ public partial class DataSourceObject
   /// </summary>
   public Boolean? FirstRowHeader { get; set; }
   
-  public DocumentModel.Wordprocessing.RelationshipType? RecipientDataReference { get; set; }
+  public RelationshipType? RecipientDataReference { get; set; }
   
-  public DocumentModel.ElementCollection<DocumentModel.Wordprocessing.FieldMapData>? Items { get; set; }
+  public ElementCollection<FieldMapData>? Items { get; set; }
   
 }

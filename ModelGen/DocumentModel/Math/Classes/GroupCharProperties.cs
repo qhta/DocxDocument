@@ -16,18 +16,18 @@ public partial class GroupCharProperties
   /// <summary>
   ///   Position (Group Character).
   /// </summary>
-  public DocumentModel.Math.VerticalJustificationValues? Position { get; set; }
+  public VerticalJustificationKind? Position { get; set; }
   
   
   /// <summary>
   ///   Vertical Justification.
   /// </summary>
-  public DocumentModel.Math.VerticalJustificationValues? VerticalJustification { get; set; }
+  public VerticalJustificationKind? VerticalJustification { get; set; }
   
   
   /// <summary>
   ///   ControlProperties.
   /// </summary>
-  public DocumentModel.Math.ControlProperties? ControlProperties { get; set; }
+  public ControlProperties? ControlProperties { get; set; }
   
 }

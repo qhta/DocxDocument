@@ -10,14 +10,14 @@ public partial class Styles
   /// <summary>
   ///   Document Default Paragraph and Run Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.DocDefaults? DocDefaults { get; set; }
+  public DocDefaults? DocDefaults { get; set; }
   
   
   /// <summary>
   ///   Latent Style Information.
   /// </summary>
-  public DocumentModel.Wordprocessing.LatentStyles? LatentStyles { get; set; }
+  public LatentStyles? LatentStyles { get; set; }
   
-  public DocumentModel.ElementCollection<DocumentModel.Wordprocessing.Style>? Items { get; set; }
+  public ElementCollection<Style>? Items { get; set; }
   
 }

@@ -10,7 +10,6 @@ public partial class AltChunkProperties
   /// <summary>
   ///   Keep Source Formatting on Import.
   /// </summary>
-  [Nullable((Byte)2)]
   public Boolean? MatchSource { get; set; }
   
 }

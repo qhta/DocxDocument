@@ -16,6 +16,6 @@ public partial class AccentProperties
   /// <summary>
   ///   Control Properties.
   /// </summary>
-  public DocumentModel.Math.ControlProperties? ControlProperties { get; set; }
+  public ControlProperties? ControlProperties { get; set; }
   
 }

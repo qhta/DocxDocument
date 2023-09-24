@@ -10,14 +10,12 @@ public partial class EffectContainerType
   /// <summary>
   ///   Effect Container Type
   /// </summary>
-  [SchemaAttr("type")]
-  public DocumentModel.Drawings.EffectContainerValues? Type { get; set; }
+  public EffectContainerKind? Type { get; set; }
   
   
   /// <summary>
   ///   Name
   /// </summary>
-  [SchemaAttr("name")]
   public String? Name { get; set; }
   
 }

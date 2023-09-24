@@ -21,16 +21,4 @@ public class TypeRelationship
     return $"{Source} --> ({Semantics}) --> {Target}";
   }
 
-  //public override bool Equals(object? obj)
-  //{
-  //  if (obj is TypeRelationship other)
-  //  {
-  //    return this.Source == other.Source && this.Target == other.Target && this.Semantics == other.Semantics && this.Order == other.Order;
-  //  }
-  //  return false;
-  //}
-  //public override int GetHashCode()
-  //{
-  //  return System.HashCode.Combine(Source.GetHashCode(), Target.GetHashCode(), Semantics.GetHashCode(), Order.GetHashCode());
-  //}
 }

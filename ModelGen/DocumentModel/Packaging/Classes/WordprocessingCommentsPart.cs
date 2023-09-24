@@ -22,7 +22,7 @@ public partial class WordprocessingCommentsPart
   /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.Wordprocessing.Comments? Comments { get; set; }
+  public Comments? Comments { get; set; }
   
   public String? ContentType { get; set; }
   

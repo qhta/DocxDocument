@@ -10,10 +10,8 @@ public partial class SdtContentComboBox
   /// <summary>
   ///   Combo Box Last Saved Value
   /// </summary>
-  [Nullable((Byte)2)]
-  [SchemaAttr("w:lastValue")]
   public String? LastValue { get; set; }
   
-  public DocumentModel.ElementCollection<DocumentModel.Wordprocessing.ListItem>? Items { get; set; }
+  public ElementCollection<ListItem>? Items { get; set; }
   
 }

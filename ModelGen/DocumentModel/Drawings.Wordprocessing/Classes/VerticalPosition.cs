@@ -10,8 +10,7 @@ public partial class VerticalPosition
   /// <summary>
   ///   Vertical Position Relative Base
   /// </summary>
-  [SchemaAttr("relativeFrom")]
-  public DocumentModel.Drawings.Wordprocessing.VerticalRelativePositionValues? RelativeFrom { get; set; }
+  public VerticalRelativePositionKind? RelativeFrom { get; set; }
   
   
   /// <summary>

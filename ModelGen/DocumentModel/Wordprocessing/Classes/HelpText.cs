@@ -10,14 +10,12 @@ public partial class HelpText
   /// <summary>
   ///   Help Text Type
   /// </summary>
-  [SchemaAttr("w:type")]
-  public DocumentModel.Wordprocessing.InfoTextValues? Type { get; set; }
+  public InfoTextKind? Type { get; set; }
   
   
   /// <summary>
   ///   Help Text Value
   /// </summary>
-  [SchemaAttr("w:val")]
   public String? Val { get; set; }
   
 }

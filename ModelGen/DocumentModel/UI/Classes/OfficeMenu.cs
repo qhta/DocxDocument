@@ -6,6 +6,6 @@ namespace DocumentModel.UI;
 /// </summary>
 public partial class OfficeMenu
 {
-  public DocumentModel.ElementCollection<DocumentModel.IModelElement>? Items { get; set; }
+  public ElementCollection<IModelElement>? Items { get; set; }
   
 }

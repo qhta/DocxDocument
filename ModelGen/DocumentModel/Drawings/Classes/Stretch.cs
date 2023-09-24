@@ -10,7 +10,6 @@ public partial class Stretch
   /// <summary>
   ///   Fill Rectangle.
   /// </summary>
-  [Nullable((Byte)2)]
-  public DocumentModel.Drawings.RelativeRectangleType? FillRectangle { get; set; }
+  public RelativeRectangleType? FillRectangle { get; set; }
   
 }

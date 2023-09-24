@@ -10,7 +10,7 @@ public partial class TextInput
   /// <summary>
   ///   Text Box Form Field Type.
   /// </summary>
-  public DocumentModel.Wordprocessing.TextBoxFormFieldValues? TextBoxFormFieldType { get; set; }
+  public TextBoxFormFieldKind? TextBoxFormFieldType { get; set; }
   
   
   /// <summary>
