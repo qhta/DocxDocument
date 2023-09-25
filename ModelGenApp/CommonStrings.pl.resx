@@ -575,4 +575,10 @@ zdefiniowanej w typie wyliczeniowym.</value>
   <data name="IncomingRelationships" xml:space="preserve">
     <value>Relacje przychodzące</value>
   </data>
+  <data name="Duplicated_types_in_target_namespace" xml:space="preserve">
+    <value>Zduplikowane typy w docelowej przestrzeni nazw</value>
+  </data>
+  <data name="TargetNamespaceError" xml:space="preserve">
+    <value>Błąd docelowej przestrzeni nazw</value>
+  </data>
 </root>

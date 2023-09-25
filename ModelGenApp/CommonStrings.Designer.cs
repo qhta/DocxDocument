@@ -324,6 +324,15 @@ namespace ModelGenApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Duplicated types in target namespace.
+        /// </summary>
+        public static string Duplicated_types_in_target_namespace {
+            get {
+                return ResourceManager.GetString("Duplicated_types_in_target_namespace", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Enums.
         /// </summary>
         public static string Enums {
@@ -1126,6 +1135,15 @@ namespace ModelGenApp {
         public static string TargetNamespace {
             get {
                 return ResourceManager.GetString("TargetNamespace", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Target namespace error.
+        /// </summary>
+        public static string TargetNamespaceError {
+            get {
+                return ResourceManager.GetString("TargetNamespaceError", resourceCulture);
             }
         }
         
