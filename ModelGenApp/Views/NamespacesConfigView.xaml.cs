@@ -24,6 +24,16 @@ public partial class NamespacesConfigView : UserControl
           ConverterParameter="Visible,Collapsed" 
           });;
     }
+    if (e.PropertyName==nameof(NamespaceConfigViewModel.TargetNameError))
+    {
+      BindingOperations.SetBinding(e.Column, DataGridColumn.VisibilityProperty, 
+        new Binding("DataContext."+nameof(NamespacesConfigViewModel.AreAllTypesUnique)) 
+        { 
+          Source = dummyElement,
+          Converter=new BoolToVisibilityConverter(), 
+          ConverterParameter="Visible,Collapsed" 
+          });;
+    }
     if (e.PropertyName==nameof(NamespaceConfigViewModel.TargetShortcutError))
     {
       BindingOperations.SetBinding(e.Column, DataGridColumn.VisibilityProperty, 

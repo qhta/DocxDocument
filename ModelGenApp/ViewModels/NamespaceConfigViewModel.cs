@@ -1,11 +1,13 @@
-﻿namespace ModelGenApp.ViewModels;
+﻿using DocumentFormat.OpenXml.Drawing;
+
+namespace ModelGenApp.ViewModels;
 public class NamespaceConfigViewModel : VisibleViewModel
 {
 
   [DataGridColumn(
     IsReadOnly = true,
-    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.OriginalName),
-    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.OriginalNameTooltip)
+    HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.OriginalName),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.OriginalNameTooltip)
     )]
   public string OrigName
   {
@@ -22,8 +24,8 @@ public class NamespaceConfigViewModel : VisibleViewModel
   private string _OrigName = string.Empty;
 
   [DataGridColumn(
-    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.ExcludedNamespace),
-    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.ExcludedNamespaceTooltip)
+    HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.ExcludedNamespace),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.ExcludedNamespaceTooltip)
     )]
   public bool Excluded
   {
@@ -34,14 +36,14 @@ public class NamespaceConfigViewModel : VisibleViewModel
       {
         _Excluded = value;
         NotifyPropertyChanged(nameof(Excluded));
-       }
+      }
     }
   }
   private bool _Excluded;
 
   [DataGridColumn(
-    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Shortcut),
-    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.ShortcutTooltip)
+    HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.Shortcut),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.ShortcutTooltip)
     )]
   public string? Shortcut
   {
@@ -74,14 +76,14 @@ public class NamespaceConfigViewModel : VisibleViewModel
 
   [DataGridColumn(
     Header = "",
-    HiddenHeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.ShortcutError),
-    DataTemplateResourceKey ="ErrorMarkTemplate"
+    HiddenHeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.ShortcutError),
+    DataTemplateResourceKey = "ErrorMarkTemplate"
     )]
   public string? ShortcutError => IsShortcutValid ? (string?)null : CommonStrings.Duplicated_shortcut;
 
   [DataGridColumn(
-    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.TargetName),
-    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.TargetNameTooltip)
+    HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.TargetName),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.TargetNameTooltip)
     )]
   public string? TargetName
   {
@@ -98,8 +100,16 @@ public class NamespaceConfigViewModel : VisibleViewModel
   private string? _TargetName;
 
   [DataGridColumn(
-    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.TargetShortcut),
-    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.TargetShortcutTooltip)
+    Header = "",
+    HiddenHeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.TargetNamespaceError),
+    DataTemplateResourceKey = "ErrorMarkTemplate"
+    )]
+  public string? TargetNameError => HasUniqueTypes ? (string?)null : CommonStrings.Duplicated_types_in_target_namespace
+    +": "+ string.Join(", ",DuplicatedTypes.Select(item=>item.Key));
+
+  [DataGridColumn(
+    HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.TargetShortcut),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.TargetShortcutTooltip)
     )]
   public string? TargetShortcut
   {
@@ -132,25 +142,32 @@ public class NamespaceConfigViewModel : VisibleViewModel
 
   [DataGridColumn(
     Header = "",
-    HiddenHeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.TargetShortcutError),
-    DataTemplateResourceKey ="ErrorMarkTemplate"
+    HiddenHeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.TargetShortcutError),
+    DataTemplateResourceKey = "ErrorMarkTemplate"
     )]
   public string? TargetShortcutError => IsTargetShortcutValid ? (string?)null : CommonStrings.Target_shortcut_error;
 
-  [DataGridColumn(
-    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.Types)
-    )]
-  public int TypesCount
+  public bool HasUniqueTypes
   {
-    get { return _TypesCount; }
+    get { return _HasUniqueTypes; }
     set
     {
-      if (_TypesCount != value)
+      if (_HasUniqueTypes != value)
       {
-        _TypesCount = value;
-        NotifyPropertyChanged(nameof(TypesCount));
+        _HasUniqueTypes = value;
+        NotifyPropertyChanged(nameof(_HasUniqueTypes));
+        NotifyPropertyChanged(nameof(TargetNameError));
       }
     }
   }
-  private int _TypesCount;
+  private bool _HasUniqueTypes = true;
+
+  public Type[] Types { get; set; } = null!;
+
+  public SortedList<string, Type> DuplicatedTypes { get; set; } = new();
+
+  [DataGridColumn(
+    HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.Types)
+    )]
+  public int TypesCount => Types.Count();
 }
