@@ -24,9 +24,9 @@ public class NamespacesConfigViewModel : ModelConfigViewModel
   {
     Namespaces.Clear();
     base.GetData(configData);
-    var namespaces = _Assembly.GetTypes()
-      .Select(t => t.Namespace)
-      .GroupBy(ns => ns)
+    var namespaces = _Assembly.GetExportedTypes()
+      .Where(type=>!type.IsConstructedGenericType)
+      .GroupBy(item => item.Namespace)
       .OrderBy(grp => grp.Key)
       .ToList();
     foreach (var group in namespaces)
@@ -35,7 +35,7 @@ public class NamespacesConfigViewModel : ModelConfigViewModel
       {
         var ns = group.Key;
         var item = new NamespaceConfigViewModel { OrigName = ns };
-        item.TypesCount = group.Count();
+        item.Types = group.ToArray();
         item.Excluded = configData.ExcludedNamespaces.Contains(ns);
         if (configData.NamespaceShortcuts.TryGetValue(ns, out var shortcut))
           item.Shortcut = shortcut;
@@ -87,8 +87,11 @@ public class NamespacesConfigViewModel : ModelConfigViewModel
       ok = false;
     if (!ValidateTargetShortcuts())
       ok = false;
+    if (!ValidateUniqueTypes())
+      ok = false;
     NotifyPropertyChanged(nameof(AreAllShortcutsValid));
     NotifyPropertyChanged(nameof(AreAllTargetShortcutsValid));
+    NotifyPropertyChanged(nameof(AreAllTypesUnique));
     return ok;
   }
 
@@ -157,8 +160,56 @@ public class NamespacesConfigViewModel : ModelConfigViewModel
     return ok;
   }
 
+  /// <summary>
+  /// Checks whether target namespace of different original namespaces does not contain duplicated type names.
+  /// </summary>
+  /// <returns></returns>
+  public bool ValidateUniqueTypes()
+  {
+    foreach (var ns in Namespaces)
+    {
+      ns.HasUniqueTypes = true;
+      ns.DuplicatedTypes.Clear();
+    }
+    var ok = true;
+    var knownTargetNamespaces = new Dictionary<string, Dictionary<string,Type>>(); // target namespaces with typenames
+    foreach (var newNamespace in Namespaces)
+    {
+      if (!String.IsNullOrWhiteSpace(newNamespace.TargetName))
+      {
+        if (!knownTargetNamespaces.TryGetValue(newNamespace.TargetName, out var targetTypes))
+        {
+          targetTypes = new Dictionary<string,Type>(newNamespace.Types.ToDictionary(type=>type.Name));
+          knownTargetNamespaces.Add(newNamespace.TargetName, targetTypes);
+        }
+        else
+        {
+          var newTargetTypes = newNamespace.Types;
+          foreach (var newType in newTargetTypes)
+          {
+            if (targetTypes.TryGetValue(newType.Name, out var oldType))
+            {
+              var oldNamespace = Namespaces.First(ns => ns.OrigName == oldType.Namespace);
+              oldNamespace.HasUniqueTypes = false;
+              if (!oldNamespace.DuplicatedTypes.ContainsKey(oldType.Name))
+                oldNamespace.DuplicatedTypes.Add(oldType.Name, oldType);
+              newNamespace.HasUniqueTypes = false;
+              if (!newNamespace.DuplicatedTypes.ContainsKey(newType.Name))
+                newNamespace.DuplicatedTypes.Add(newType.Name, newType);
+              ok = false;
+            }
+            else
+              targetTypes.Add(newType.Name, newType);
+          }
+        }
+      }
+    }
+    return ok;
+  }
+
   public bool AreAllShortcutsValid => Namespaces.Any(item => !item.IsShortcutValid);
 
   public bool AreAllTargetShortcutsValid => Namespaces.Any(item => !item.IsTargetShortcutValid);
 
+  public bool AreAllTypesUnique => Namespaces.Any(item => !item.HasUniqueTypes);
 }

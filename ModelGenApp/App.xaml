@@ -11,12 +11,72 @@
     <ResourceDictionary>
       <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/Qhta.WPF.Utils;component/Resources/DataGridStyle.xaml" />
+        <ResourceDictionary Source="AppColors.xaml" />
       </ResourceDictionary.MergedDictionaries>
       <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
       <vc:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
       <vc:NotNullToVisibilityConverter x:Key="NotNullToVisibilityConverter" />
       <vc:AppendingConverter x:Key="AppendingConverter" />
       <vc:IndirectPropertyConverter x:Key="IndirectPropertyConverter" />
+      <Style x:Key="{x:Type ToolTip}"
+             TargetType="ToolTip">
+        <Setter Property="OverridesDefaultStyle"
+                Value="true" />
+        <Setter Property="HasDropShadow"
+                Value="True" />
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="ToolTip">
+              <Border Name="Border"
+                      BorderThickness="1"
+                      Width="{TemplateBinding Width}"
+                      Height="{TemplateBinding Height}">
+                <Border.Background>
+                  <LinearGradientBrush StartPoint="0,0"
+                                       EndPoint="0,1">
+                    <LinearGradientBrush.GradientStops>
+                      <GradientStopCollection>
+                        <GradientStop Color="{DynamicResource ControlLightColor}"
+                                      Offset="0.0" />
+                        <GradientStop Color="{DynamicResource ControlMediumColor}"
+                                      Offset="1.0" />
+                      </GradientStopCollection>
+                    </LinearGradientBrush.GradientStops>
+                  </LinearGradientBrush>
+
+                </Border.Background>
+                <Border.BorderBrush>
+                  <SolidColorBrush Color="{DynamicResource BorderMediumColor}" />
+                </Border.BorderBrush>
+                <ContentPresenter Margin="4"
+                                  HorizontalAlignment="Left"
+                                  VerticalAlignment="Top">
+                  <ContentPresenter.ContentTemplate>
+                    <DataTemplate>
+                        <TextBlock x:Name="ToolTipTextBlock"
+                                   Text="{Binding Mode=OneTime}"
+                                   MaxWidth="400"
+                                   TextWrapping="Wrap"/>
+                    </DataTemplate>
+                  </ContentPresenter.ContentTemplate>
+                </ContentPresenter>
+              </Border>
+              <ControlTemplate.Triggers>
+                <Trigger Property="HasDropShadow"
+                         Value="true">
+                  <Setter TargetName="Border"
+                          Property="CornerRadius"
+                          Value="0" />
+                  <Setter TargetName="Border"
+                          Property="SnapsToDevicePixels"
+                          Value="true" />
+                </Trigger>
+              </ControlTemplate.Triggers>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+
       <Style x:Key="NoBorderTextBoxStyle"
              TargetType="TextBox">
         <Setter Property="BorderThickness"
@@ -78,7 +138,7 @@
                   CommandParameter="{Binding}" />
         </Grid>
       </DataTemplate>
-      
+
       <DataTemplate x:Key="TypeInfoColumnTemplate">
         <Grid>
           <Grid.ColumnDefinitions>
@@ -137,14 +197,14 @@
 
       <DataTemplate x:Key="ErrorMarkTemplate">
         <Grid Width="20">
-            <Image Source="Images\ErrorMark.png"
-                   Width="16"
-                   Height="16"
-                   HorizontalAlignment="Center"
-                   VerticalAlignment="Center"
-                   Visibility="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=DataContext, 
+          <Image Source="Images\ErrorMark.png"
+                 Width="16"
+                 Height="16"
+                 HorizontalAlignment="Center"
+                 VerticalAlignment="Center"
+                 Visibility="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=DataContext, 
                                   Converter={StaticResource NotNullToVisibilityConverter}}"
-                   ToolTip="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=DataContext}" />
+                 ToolTip="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=DataContext}" />
         </Grid>
       </DataTemplate>
 
@@ -167,7 +227,7 @@
           </Button>
         </Grid>
       </DataTemplate>
-      
+
       <DataTemplate x:Key="ShortcutCellTemplate">
         <Grid>
           <Grid.ColumnDefinitions>
@@ -192,8 +252,7 @@
 
       <DataTemplate x:Key="TypeInfoLinkTemplate">
         <TextBlock Text="{Binding Path=Name}"
-                   TextDecorations="Underline"
-                   >
+                   TextDecorations="Underline">
           <TextBlock.Style>
             <Style TargetType="{x:Type TextBlock}">
               <Style.Triggers>

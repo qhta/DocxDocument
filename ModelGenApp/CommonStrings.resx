@@ -575,4 +575,10 @@ defined in the enum type.</value>
   <data name="IncomingRelationships" xml:space="preserve">
     <value>Incoming relationships</value>
   </data>
+  <data name="Duplicated_types_in_target_namespace" xml:space="preserve">
+    <value>Duplicated types in target namespace</value>
+  </data>
+  <data name="TargetNamespaceError" xml:space="preserve">
+    <value>Target namespace error</value>
+  </data>
 </root>

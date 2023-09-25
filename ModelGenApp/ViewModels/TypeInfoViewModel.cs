@@ -299,7 +299,7 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
   }
   private TypeRelationshipsListViewModel _OutgoingRelationships = null!;
 
-  public bool HasOutingRelationships => _OutgoingRelationships != null;
+  public bool HasOutgoingRelationships => _OutgoingRelationships != null;
 
   public async void FillIncomingRelationshipsAsync()
   {

@@ -6,4 +6,5 @@ public partial class App : Application
   {
     CultureInfo.CurrentUICulture = new CultureInfo("pl-PL");
   }
+
 }

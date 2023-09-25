@@ -87,6 +87,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="AppColors.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\DummyWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
