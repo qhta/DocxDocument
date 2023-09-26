@@ -44,6 +44,8 @@ public static class ModelManager
 
   public static bool TryConvertType(this TypeInfo typeInfo)
   {
+    if (typeInfo.Name=="AttributionTaskUser")
+      Debug.Assert(true);
     if (typeInfo.IsConverted)
       return false;
     var converted = false;
@@ -51,9 +53,6 @@ public static class ModelManager
       converted = true;
     else
     if (TryBaseTypeConversion(typeInfo))
-      converted = true;
-    else
-    if (TryValTypeConversion(typeInfo))
       converted = true;
     else
     if (TryValTypeConversion(typeInfo))
@@ -121,9 +120,9 @@ public static class ModelManager
       return false;
     if (typeInfo.Name == "Byte[]")
       return false;
-    if (typeInfo.AcceptedProperties(PPS.ConvertTypes).Any() != true && !typeInfo.GetRelatedTypes(Semantics.Include).Any())
+    if (!typeInfo.AcceptedProperties(PPS.ConvertTypes).Any() && !typeInfo.GetRelatedTypes(Semantics.Include).Any())
     {
-      if (typeInfo.BaseTypeInfo != null)
+      if (typeInfo.BaseTypeInfo != null && !typeInfo.BaseTypeInfo.IsAbstract)
       {
         TypeManager.AddRelationship(typeInfo, typeInfo.BaseTypeInfo, Semantics.TypeChange);
         typeInfo.IsConverted = true;
@@ -228,19 +227,7 @@ public static class ModelManager
         }
       }
       else
-      if (typeInfo.Name.Contains("Enum"))
-      {
-        var sourceArgTypes = typeInfo.Type.GetGenericArguments();
-        var sourceArgType = sourceArgTypes.FirstOrDefault();
-        if (sourceArgType != null)
-        {
-          targetType = TypeManager.RegisterType(sourceArgType, typeInfo, Semantics.TypeChange);
-          typeInfo.IsConverted = true;
-          return true;
-        }
-      }
-      else
-      if (typeInfo.Name == "OpenXmlSimpleValue`1")
+      if (typeInfo.IsConstructedGenericType)
       {
         var sourceArgTypes = typeInfo.Type.GetGenericArguments();
         var sourceArgType = sourceArgTypes.FirstOrDefault();

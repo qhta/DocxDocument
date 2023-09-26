@@ -16,7 +16,7 @@
           "Qhta.TextUtils": "3.2.0",
           "Qhta.TypeUtils": "1.3.10.1",
           "Qhta.WPF.Converters": "1.3.1",
-          "Qhta.WPF.Utils": "3.2.0",
+          "Qhta.WPF.Utils": "3.3.0",
           "WPFFolderBrowser": "1.0.2"
         },
         "runtime": {
@@ -1017,7 +1017,7 @@
           "ModelGenDataConfig.dll": {}
         }
       },
-      "Qhta.WPF.Utils/3.2.0": {
+      "Qhta.WPF.Utils/3.3.0": {
         "dependencies": {
           "Qhta.HtmlUtils": "2.1.0",
           "Qhta.MVVM": "3.6.1",
@@ -1740,7 +1740,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Qhta.WPF.Utils/3.2.0": {
+    "Qhta.WPF.Utils/3.3.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
