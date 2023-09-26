@@ -403,15 +403,15 @@ public static class ModelManager
   public static TypeInfo? GetConversionTarget(this TypeInfo typeInfo)
   {
     var result = TypeManager.GetRelatedTypes(typeInfo, Semantics.TypeChange).FirstOrDefault();
-    if (result == null && typeInfo.IsConstructedGenericType)
-      if (TryGenericTypeConversion(typeInfo, out var targetType))
-        result = targetType;
-    if (result != null)
-    {
-      result.TryConvertType();
-      if (result.IsConverted)
-        result = GetConversionTarget(result);
-    }
+    //if (result == null && typeInfo.IsConstructedGenericType)
+    //  if (TryGenericTypeConversion(typeInfo, out var targetType))
+    //    result = targetType;
+    //if (result != null)
+    //{
+    //  result.TryConvertType();
+    //  if (result.IsConverted)
+    //    result = GetConversionTarget(result);
+    //}
     return result;
   }
 
