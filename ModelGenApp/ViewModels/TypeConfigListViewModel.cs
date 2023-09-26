@@ -1,13 +1,15 @@
 ﻿namespace ModelGenApp.ViewModels;
-public class TypesConfigViewModel : ModelConfigViewModel
+public class TypeConfigListViewModel : ModelConfigViewModel
 {
-  public TypesConfigViewModel(ModelConfig configData) : base(configData)
+  public TypeConfigListViewModel(ModelConfig configData) : base(configData)
   {
     Caption = CommonStrings.ModelConfiguration +": "+CommonStrings.Types.ToLower();
     Types = new ListViewModel<TypeConfigViewModel>();
     CollectionViewSource = new CollectionViewSource<TypeConfigViewModel>(Types);
     VisibleItems = CollectionViewSource.GetDefaultView(Types);
     GetData(configData);
+    ExcludeTypesCommand = new RelayCommand<string>(ExcludeTypesExecute, ExcludeTypesCanExecute) { Name = "ExcludeTypesCommand" };
+    IncludeTypesCommand = new RelayCommand<string>(IncludeTypesExecute, IncludeTypesCanExecute) { Name = "IncludeTypesCommand" };
   }
 
   #region Populate ExcludedNamespace for all items on change of one
@@ -74,13 +76,13 @@ public class TypesConfigViewModel : ModelConfigViewModel
         item.ExcludedNamespace = configData.ExcludedNamespaces.Contains(type.Namespace ?? "");
         if (fullNameComparison)
         {
-          item.ExcludedType = configData.ExcludedTypes.Contains(fullTypeName);
-          item.IncludedType = configData.IncludedTypes.Contains(fullTypeName);
+          item.IsExcluded = configData.ExcludedTypes.Contains(fullTypeName);
+          item.IsIncluded = configData.IncludedTypes.Contains(fullTypeName);
         }
         else
         {
-          item.ExcludedType = configData.ExcludedTypes.Contains(type.Name);
-          item.IncludedType = configData.IncludedTypes.Contains(type.Name);
+          item.IsExcluded = configData.ExcludedTypes.Contains(type.Name);
+          item.IsIncluded = configData.IncludedTypes.Contains(type.Name);
         }
         if (configData.TypeConversion.TryGetValue(fullTypeName, out var conversion))
         {
@@ -110,9 +112,9 @@ public class TypesConfigViewModel : ModelConfigViewModel
     foreach (var item in Types)
     {
       var fullTypeName = item.OrigNamespace + "." + item.OrigName;
-      if (item.IncludedType)
+      if (item.IsIncluded)
         configData.IncludedTypes.Add(fullTypeName);
-      if (item.ExcludedType)
+      if (item.IsExcluded)
         configData.ExcludedTypes.Add(fullTypeName);
       if (item.TargetNamespace != null && item.TargetName != null)
         configData.TypeConversion.Add(fullTypeName, item.TargetNamespace + "." + item.TargetName);
@@ -124,5 +126,48 @@ public class TypesConfigViewModel : ModelConfigViewModel
     var ok = true;
     return ok;
   }
+
+  #region ExcludeTypesCommand
+  /// <summary>
+  /// Command to show phase result window.
+  /// </summary>
+  public Command ExcludeTypesCommand { get; private set; }
+
+  protected virtual void ExcludeTypesExecute(string parameter)
+  {
+    foreach (var item in Types)
+    {
+      if (item.OrigName.IsLike(parameter))
+        item.IsExcluded = true;
+    }
+  }
+
+  protected virtual bool ExcludeTypesCanExecute(string parameter)
+  {
+    return !String.IsNullOrEmpty(parameter);
+  }
+  #endregion
+
+  #region IncludeTypesCommand
+  /// <summary>
+  /// Command to show phase result window.
+  /// </summary>
+  public Command IncludeTypesCommand { get; private set; }
+
+  protected virtual void IncludeTypesExecute(string parameter)
+  {
+    foreach (var item in Types)
+    {
+      if (item.OrigName.IsLike(parameter))
+        item.IsIncluded = true;
+    }
+  }
+
+  protected virtual bool IncludeTypesCanExecute(string parameter)
+  {
+    return !String.IsNullOrEmpty(parameter);
+  }
+  #endregion
+
 
 }

@@ -57,31 +57,12 @@ public class TypeConfigViewModel : VisibleViewModel
   }
   private string _OrigName = string.Empty;
 
-  [DataGridColumn(
-    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.IncludedType),
-    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.IncludedTypeTooltip)
-    )]
-  public bool IncludedType
-  {
-    get { return _Included; }
-    set
-    {
-      if (_Included != value)
-      {
-        _Included = value;
-        NotifyPropertyChanged(nameof(IncludedType));
-        if (value)
-          ExcludedType = false;
-      }
-    }
-  }
-  private bool _Included;
 
   [DataGridColumn(
     HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.ExcludedType),
     HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.ExcludedTypeTooltip)
     )]
-  public bool ExcludedType
+  public bool IsExcluded
   {
     get { return _Excluded; }
     set
@@ -89,11 +70,31 @@ public class TypeConfigViewModel : VisibleViewModel
       if (_Excluded != value)
       {
         _Excluded = value;
-        NotifyPropertyChanged(nameof(ExcludedType));
+        NotifyPropertyChanged(nameof(IsExcluded));
       }
     }
   }
   private bool _Excluded;
+
+  [DataGridColumn(
+    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.IncludedType),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.IncludedTypeTooltip)
+    )]
+  public bool IsIncluded
+  {
+    get { return _Included; }
+    set
+    {
+      if (_Included != value)
+      {
+        _Included = value;
+        NotifyPropertyChanged(nameof(IsIncluded));
+        if (value)
+          IsExcluded = false;
+      }
+    }
+  }
+  private bool _Included;
 
   [DataGridColumn(
     HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.TargetNamespace),

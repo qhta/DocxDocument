@@ -95,13 +95,13 @@ public class MainViewModel : ViewModel
   protected void OpenConfig(string parameter)
   {
     if (parameter == "Namespaces")
-      WindowsManager.ShowWindow<ModelConfigWindow>(new NamespacesConfigViewModel(ModelConfig.Instance));
+      WindowsManager.ShowWindow<ModelConfigWindow>(new NamespaceConfigListViewModel(ModelConfig.Instance));
     else
     if (parameter == "Types")
-      WindowsManager.ShowWindow<ModelConfigWindow>(new TypesConfigViewModel(ModelConfig.Instance));
+      WindowsManager.ShowWindow<ModelConfigWindow>(new TypeConfigListViewModel(ModelConfig.Instance));
     else
     if (parameter == "Properties")
-      WindowsManager.ShowWindow<ModelConfigWindow>(new PropertiesConfigViewModel(ModelConfig.Instance));
+      WindowsManager.ShowWindow<ModelConfigWindow>(new PropertyConfigListViewModel(ModelConfig.Instance));
   }
   #endregion
 

@@ -5,7 +5,7 @@ public partial class TypesConfigView : UserControl
   public TypesConfigView()
   {
     InitializeComponent();
-    dataGridColumnCreator = new DataGridColumnCreator(MainDataGrid, typeof(TypesConfigViewModel), typeof(TypeConfigViewModel))
+    dataGridColumnCreator = new DataGridColumnCreator(MainDataGrid, typeof(TypeConfigListViewModel), typeof(TypeConfigViewModel))
     { IsFilterButtonVisible = true };
   }
 

@@ -8,7 +8,7 @@
     public PropertiesConfigView()
     {
       InitializeComponent();
-      dataGridColumnCreator = new DataGridColumnCreator(MainDataGrid, typeof(PropertiesConfigViewModel), typeof(PropertyConfigViewModel))
+      dataGridColumnCreator = new DataGridColumnCreator(MainDataGrid, typeof(PropertyConfigListViewModel), typeof(PropertyConfigViewModel))
       { IsFilterButtonVisible = true };
     }
 

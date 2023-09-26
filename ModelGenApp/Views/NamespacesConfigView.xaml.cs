@@ -5,7 +5,7 @@ public partial class NamespacesConfigView : UserControl
   public NamespacesConfigView()
   {
     InitializeComponent();
-    dataGridColumnCreator =  new DataGridColumnCreator(MainDataGrid, typeof(NamespacesConfigViewModel), typeof(NamespaceConfigViewModel)) 
+    dataGridColumnCreator =  new DataGridColumnCreator(MainDataGrid, typeof(NamespaceConfigListViewModel), typeof(NamespaceConfigViewModel)) 
     { IsFilterButtonVisible = true };
   }
 
@@ -17,7 +17,7 @@ public partial class NamespacesConfigView : UserControl
     if (e.PropertyName==nameof(NamespaceConfigViewModel.ShortcutError))
     {
       BindingOperations.SetBinding(e.Column, DataGridColumn.VisibilityProperty, 
-        new Binding("DataContext."+nameof(NamespacesConfigViewModel.AreAllShortcutsValid)) 
+        new Binding("DataContext."+nameof(NamespaceConfigListViewModel.AreAllShortcutsValid)) 
         { 
           Source = dummyElement,
           Converter=new BoolToVisibilityConverter(), 
@@ -27,7 +27,7 @@ public partial class NamespacesConfigView : UserControl
     if (e.PropertyName==nameof(NamespaceConfigViewModel.TargetNameError))
     {
       BindingOperations.SetBinding(e.Column, DataGridColumn.VisibilityProperty, 
-        new Binding("DataContext."+nameof(NamespacesConfigViewModel.AreAllTypesUnique)) 
+        new Binding("DataContext."+nameof(NamespaceConfigListViewModel.AreAllTypesUnique)) 
         { 
           Source = dummyElement,
           Converter=new BoolToVisibilityConverter(), 
@@ -37,7 +37,7 @@ public partial class NamespacesConfigView : UserControl
     if (e.PropertyName==nameof(NamespaceConfigViewModel.TargetShortcutError))
     {
       BindingOperations.SetBinding(e.Column, DataGridColumn.VisibilityProperty, 
-        new Binding("DataContext."+nameof(NamespacesConfigViewModel.AreAllTargetShortcutsValid)) 
+        new Binding("DataContext."+nameof(NamespaceConfigListViewModel.AreAllTargetShortcutsValid)) 
         { 
           Source = dummyElement,
           Converter=new BoolToVisibilityConverter(), 

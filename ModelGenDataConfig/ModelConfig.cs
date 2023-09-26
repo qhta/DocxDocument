@@ -398,7 +398,7 @@ public class ModelConfig
     { "DocumentFormat.OpenXml.Wordprocessing.Font.Panose1Number", "Panose"},
     };
 
-  public WildcardSortedStringDictionary PropertyTypeConversion { get; } = new()
+  public WildcardStringDictionary PropertyTypeConversion { get; } = new()
   {
     { "DocumentFormat.OpenXml.Wordprocessing.DocumentSettings.DocumentId", "HexInt" },
     { "DocumentFormat.OpenXml.Wordprocessing.DocumentSettings.PersistentDocumentId", "Guid" },
@@ -410,7 +410,7 @@ public class ModelConfig
     { "DocumentFormat.OpenXml.Wordprocessing.Rsids.Items", "Collection<HexInt>" },
   };
 
-  public WildcardSortedStringDictionary<Type> PropertyTypes { get; } = new ();
+  public WildcardStringDictionary<Type> PropertyTypes { get; } = new ();
 
   public void BuildPropertyTypesDictionary()
   {
@@ -902,8 +902,8 @@ public class ModelConfig
     {
       lineNumber++;
       var ss = line.Trim().Split('\t');
-      if (line.StartsWith("*Id"))
-        Debug.Assert(true);
+      //if (line.StartsWith("*Id"))
+      //  Debug.Assert(true);
       try
       {
         if (ss.Length > 1)
