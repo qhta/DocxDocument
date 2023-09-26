@@ -72,6 +72,7 @@ public class ClassInfoViewModel : TypeInfoViewModel
 
   protected override void FillTypeSummary()
   {
+    if (!_TypeSummary.IsEmpty) return;
     base.FillTypeSummary();
     var baseClass = Model.BaseTypeInfo;
     if (baseClass != null)
