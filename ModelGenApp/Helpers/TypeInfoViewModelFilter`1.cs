@@ -64,7 +64,7 @@ public record TypeInfoViewModelFilter<T> : IFilter where T : TypeInfoViewModel
         Predicate = new Predicate<T>(item => item.Model.NewName != null);
       else
       if (filter == TypeInfoKind.TypesWithSameName)
-        Predicate = new Predicate<T>(item => HasDuplicateNames(item.Model));
+        Predicate = new Predicate<T>(item => item.Model.HasError(PPS.Rename, ErrorCode.MultiplicatedName));
       else
       if (filter == TypeInfoKind.ConvertedTypes)
         Predicate = new Predicate<T>(item => item.Model.TargetType!= null);

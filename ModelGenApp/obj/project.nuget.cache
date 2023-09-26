@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "OO0JfFSbL4M18Xg3lWmi85J0EIGRuoQtjfr9rFVrncAtJcNwrSf4p8nuHB1r+y1b7Sl9wCEqn7DTNXjY+nDVCA==",
+  "dgSpecHash": "jcZgnYdguGkq67WnvARTWS3LiLWoRrPOcOlU2B/ugdsHkMKP35kY+sde/KOHrc85hSGRaOniWRK9GHa/BycnTQ==",
   "success": true,
   "projectFilePath": "D:\\VS\\Projects\\DocxDocument\\ModelGenApp\\ModelGenApp.csproj",
   "expectedPackageFiles": [
@@ -41,9 +41,6 @@
     "C:\\Users\\qhta1\\.nuget\\packages\\runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\snork.textwrap\\1.0.1301\\snork.textwrap.1.0.1301.nupkg.sha512",
-    "C:\\Users\\qhta1\\.nuget\\packages\\syncfusion.licensing\\23.1.36\\syncfusion.licensing.23.1.36.nupkg.sha512",
-    "C:\\Users\\qhta1\\.nuget\\packages\\syncfusion.sfdiagram.wpf\\23.1.36\\syncfusion.sfdiagram.wpf.23.1.36.nupkg.sha512",
-    "C:\\Users\\qhta1\\.nuget\\packages\\syncfusion.shared.wpf\\23.1.36\\syncfusion.shared.wpf.23.1.36.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\system.codedom\\7.0.0\\system.codedom.7.0.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\system.collections.concurrent\\4.3.0\\system.collections.concurrent.4.3.0.nupkg.sha512",

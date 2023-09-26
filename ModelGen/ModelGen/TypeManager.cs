@@ -204,7 +204,7 @@ public static class TypeManager
 
   public static bool CancelRequest { get => TypeReflector.CancelRequest; set => TypeReflector.CancelRequest = value; }
 
-  public static TypeInfo RegisterType(Type type, bool? acceptance = null)
+  public static TypeInfo RegisterType(Type type)
   {
     lock (KnownTypes)
     {
@@ -221,7 +221,7 @@ public static class TypeManager
         NamespaceDictionary.AddType(typeInfo);
         OnRegistering?.Invoke(new ProgressTypeInfo { Namespaces = KnownNamespaces.Count + 1, ProcessedTypes = AllTypes.Count(), Current = typeInfo });
       }
-      var accept = acceptance == true || !ModelConfig.Instance.IsExcluded(type);
+      var accept = !type.IsInterface && !ModelConfig.Instance.IsExcluded(type);
       if (!accept)
         typeInfo.SetRejected(PPS.ScanSource);
 
