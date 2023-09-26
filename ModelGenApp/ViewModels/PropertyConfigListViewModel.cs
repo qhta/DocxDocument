@@ -1,7 +1,7 @@
 ﻿namespace ModelGenApp.ViewModels;
-public class PropertiesConfigViewModel : ModelConfigViewModel
+public class PropertyConfigListViewModel : ModelConfigViewModel
 {
-  public PropertiesConfigViewModel(ModelConfig configData) : base(configData)
+  public PropertyConfigListViewModel(ModelConfig configData) : base(configData)
   {
     Caption = CommonStrings.ModelConfiguration +": "+CommonStrings.Properties.ToLower();
     Properties = new ListViewModel<PropertyConfigViewModel>();

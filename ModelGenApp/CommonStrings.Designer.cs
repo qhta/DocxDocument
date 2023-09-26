@@ -407,6 +407,15 @@ namespace ModelGenApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Exclude.
+        /// </summary>
+        public static string Exclude {
+            get {
+                return ResourceManager.GetString("Exclude", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Excluded.
         /// </summary>
         public static string ExcludedNamespace {
@@ -494,6 +503,15 @@ namespace ModelGenApp {
         public static string FilterResults {
             get {
                 return ResourceManager.GetString("FilterResults", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Include.
+        /// </summary>
+        public static string Include {
+            get {
+                return ResourceManager.GetString("Include", resourceCulture);
             }
         }
         
@@ -1252,6 +1270,25 @@ namespace ModelGenApp {
         public static string TypeName {
             get {
                 return ResourceManager.GetString("TypeName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Type name pattern.
+        /// </summary>
+        public static string TypeNamePattern {
+            get {
+                return ResourceManager.GetString("TypeNamePattern", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to With type name pattern you can exclude/include many types. 
+        ///Use &apos;*&apos; wildcard character to match many characters..
+        /// </summary>
+        public static string TypeNamePatternTooltip {
+            get {
+                return ResourceManager.GetString("TypeNamePatternTooltip", resourceCulture);
             }
         }
         

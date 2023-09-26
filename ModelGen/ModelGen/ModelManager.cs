@@ -868,7 +868,7 @@ public static class ModelManager
   }
   #endregion
 
-  //#region Documentation methods
+  #region Documentation methods
   ///// <summary>
   ///// Gets a collection of XElement from <see cref="Description"/> and <see cref="Summary"/>.
   ///// </summary>
@@ -901,5 +901,5 @@ public static class ModelManager
   //    return propInfo.TargetType?.GetDocumentation();
   //  return result;
   //}
-  //#endregion
+  #endregion
 }

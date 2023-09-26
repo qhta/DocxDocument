@@ -581,4 +581,17 @@ defined in the enum type.</value>
   <data name="TargetNamespaceError" xml:space="preserve">
     <value>Target namespace error</value>
   </data>
+  <data name="TypeNamePattern" xml:space="preserve">
+    <value>Type name pattern</value>
+  </data>
+  <data name="TypeNamePatternTooltip" xml:space="preserve">
+    <value>With type name pattern you can exclude/include many types. 
+Use '*' wildcard character to match many characters.</value>
+  </data>
+  <data name="Exclude" xml:space="preserve">
+    <value>Exclude</value>
+  </data>
+  <data name="Include" xml:space="preserve">
+    <value>Include</value>
+  </data>
 </root>
