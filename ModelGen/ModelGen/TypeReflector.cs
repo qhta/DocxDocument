@@ -94,6 +94,7 @@ public static class TypeReflector
 
   public static object reflectedLock = new();
   public static int reflected;
+
   public static void ReflectType(this TypeInfo typeInfo)
   {
     if (typeInfo.IsReflected)
@@ -227,6 +228,8 @@ public static class TypeReflector
     //foreach (var item in type.CustomAttributes)
     //  typeInfo.CustomAttributes.Add(new CustomAttribData(item));
     typeInfo.IsReflected = true;
+    if (typeInfo.IsConstructedGenericType)
+      typeInfo.SetRejected(PPS.ScanSource);
   }
 
   public static void ProcessElementSchema(this TypeInfo typeInfo, ElementSchema schema)
