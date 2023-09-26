@@ -310,7 +310,7 @@ public abstract class BaseCreator
     TotalTypesCount = types.Count();
     var renamedTypesCount = ModelManager.RenameNamespacesAndTypes(types);
     ModelManager.OnRenamingType -= ModelManager_OnRenamingType;
-
+    var duplicatedNamesCount = ModelManager.DuplicatedNamesCount;
     var invalidTypes = 0;
     if (Options.ValidateNames && !CancelRequest)
     {
@@ -333,7 +333,8 @@ public abstract class BaseCreator
         {TypeInfoKind.RenamedTypes, renamedTypesCount },
         }
     };
-
+    if (duplicatedNamesCount > 0)
+      summaryInfo.Summary.Add(TypeInfoKind.TypesWithSameName, duplicatedNamesCount);
     if (invalidTypes > 0)
       summaryInfo.Summary.Add(TypeInfoKind.InvalidTypes, invalidTypes);
 

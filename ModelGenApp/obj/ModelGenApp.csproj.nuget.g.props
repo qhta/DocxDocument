@@ -13,8 +13,4 @@
     <SourceRoot Include="C:\Users\qhta1\.nuget\packages\" />
     <SourceRoot Include="C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages\" />
   </ItemGroup>
-  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <PkgSyncfusion_Shared_WPF Condition=" '$(PkgSyncfusion_Shared_WPF)' == '' ">C:\Users\qhta1\.nuget\packages\syncfusion.shared.wpf\23.1.36</PkgSyncfusion_Shared_WPF>
-    <PkgSyncfusion_SfDiagram_WPF Condition=" '$(PkgSyncfusion_SfDiagram_WPF)' == '' ">C:\Users\qhta1\.nuget\packages\syncfusion.sfdiagram.wpf\23.1.36</PkgSyncfusion_SfDiagram_WPF>
-  </PropertyGroup>
 </Project>
