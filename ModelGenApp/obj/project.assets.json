@@ -515,48 +515,6 @@
           "lib/netstandard2.1/Snork.TextWrap.dll": {}
         }
       },
-      "Syncfusion.Licensing/23.1.36": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/Syncfusion.Licensing.dll": {}
-        },
-        "runtime": {
-          "lib/net6.0/Syncfusion.Licensing.dll": {}
-        }
-      },
-      "Syncfusion.SfDiagram.WPF/23.1.36": {
-        "type": "package",
-        "dependencies": {
-          "Syncfusion.Licensing": "23.1.36",
-          "Syncfusion.Shared.WPF": "23.1.36"
-        },
-        "compile": {
-          "lib/net6.0-windows7.0/Syncfusion.SfDiagram.WPF.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0-windows7.0/Syncfusion.SfDiagram.WPF.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "Syncfusion.Shared.WPF/23.1.36": {
-        "type": "package",
-        "dependencies": {
-          "Syncfusion.Licensing": "23.1.36"
-        },
-        "compile": {
-          "lib/net6.0-windows7.0/Syncfusion.Shared.WPF.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0-windows7.0/Syncfusion.Shared.WPF.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "System.CodeDom/7.0.0": {
         "type": "package",
         "compile": {
@@ -2447,120 +2405,6 @@
         "lib/netstandard2.1/Snork.TextWrap.dll",
         "snork.textwrap.1.0.1301.nupkg.sha512",
         "snork.textwrap.nuspec"
-      ]
-    },
-    "Syncfusion.Licensing/23.1.36": {
-      "sha512": "MKXVxD6nr86rs5bT88gxnmSQYt0zfN8DIS2X9ZxfWHxRNZDWHHkTUqftvKf4k+3o7086LvBSVTZAHVMtXBUqlA==",
-      "type": "package",
-      "path": "syncfusion.licensing/23.1.36",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.txt",
-        "lib/MonoAndroid90/Syncfusion.Licensing.dll",
-        "lib/Xamarin.Mac/Syncfusion.Licensing.dll",
-        "lib/Xamarin.iOS10/Syncfusion.Licensing.dll",
-        "lib/net40/Syncfusion.Licensing.dll",
-        "lib/net45/Syncfusion.Licensing.dll",
-        "lib/net451/Syncfusion.Licensing.dll",
-        "lib/net46/Syncfusion.Licensing.dll",
-        "lib/net6.0/Syncfusion.Licensing.dll",
-        "lib/net7.0/Syncfusion.Licensing.dll",
-        "lib/netstandard2.0/Syncfusion.Licensing.dll",
-        "lib/uap10.0/Syncfusion.Licensing.dll",
-        "syncfusion.licensing.23.1.36.nupkg.sha512",
-        "syncfusion.licensing.nuspec",
-        "syncfusion_logo.png"
-      ]
-    },
-    "Syncfusion.SfDiagram.WPF/23.1.36": {
-      "sha512": "E+KwE1epHs5hPLIs0xwYH4T6ii9Ti3AMwCZhJv7ckRLbS4DeSG5B0wCBRmBAkZd4P5lHdqWVdjGZR1E+M29kbg==",
-      "type": "package",
-      "path": "syncfusion.sfdiagram.wpf/23.1.36",
-      "hasTools": true,
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.txt",
-        "README.md",
-        "lib/net40/Design/Syncfusion.Design.Wpf.dll",
-        "lib/net40/Design/Syncfusion.SfDiagram.WPF.DesignTools.dll",
-        "lib/net40/Design/Syncfusion.SfDiagram.WPF.Expression.Design.dll",
-        "lib/net40/Design/Syncfusion.SfDiagram.WPF.VisualStudio.Design.dll",
-        "lib/net40/Syncfusion.SfDiagram.WPF.dll",
-        "lib/net40/Syncfusion.SfDiagram.WPF.xml",
-        "lib/net45/Design/Syncfusion.Design.Wpf.dll",
-        "lib/net45/Design/Syncfusion.SfDiagram.WPF.DesignTools.dll",
-        "lib/net45/Design/Syncfusion.SfDiagram.WPF.Expression.Design.dll",
-        "lib/net45/Design/Syncfusion.SfDiagram.WPF.VisualStudio.Design.dll",
-        "lib/net45/Syncfusion.SfDiagram.WPF.dll",
-        "lib/net45/Syncfusion.SfDiagram.WPF.xml",
-        "lib/net451/Design/Syncfusion.Design.Wpf.dll",
-        "lib/net451/Design/Syncfusion.SfDiagram.WPF.DesignTools.dll",
-        "lib/net451/Design/Syncfusion.SfDiagram.WPF.Expression.Design.dll",
-        "lib/net451/Design/Syncfusion.SfDiagram.WPF.VisualStudio.Design.dll",
-        "lib/net451/Syncfusion.SfDiagram.WPF.dll",
-        "lib/net451/Syncfusion.SfDiagram.WPF.xml",
-        "lib/net46/Design/Syncfusion.Design.Wpf.dll",
-        "lib/net46/Design/Syncfusion.SfDiagram.WPF.DesignTools.dll",
-        "lib/net46/Design/Syncfusion.SfDiagram.WPF.Expression.Design.dll",
-        "lib/net46/Design/Syncfusion.SfDiagram.WPF.VisualStudio.Design.dll",
-        "lib/net46/Syncfusion.SfDiagram.WPF.dll",
-        "lib/net46/Syncfusion.SfDiagram.WPF.xml",
-        "lib/net6.0-windows7.0/Design/Syncfusion.SfDiagram.WPF.DesignTools.dll",
-        "lib/net6.0-windows7.0/Syncfusion.SfDiagram.WPF.dll",
-        "lib/net6.0-windows7.0/Syncfusion.SfDiagram.WPF.xml",
-        "syncfusion.sfdiagram.wpf.23.1.36.nupkg.sha512",
-        "syncfusion.sfdiagram.wpf.nuspec",
-        "syncfusion_logo.png",
-        "tools/VisualStudioToolsManifest.xml"
-      ]
-    },
-    "Syncfusion.Shared.WPF/23.1.36": {
-      "sha512": "1zAF6BJrgLZ4NY9hamTCKQ1Y/j1FrsGNRgzYvC+yPVkYSiPmJKzghTi5Zn7kq8pszJtpXkPnWvnjlZuroUduqQ==",
-      "type": "package",
-      "path": "syncfusion.shared.wpf/23.1.36",
-      "hasTools": true,
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.txt",
-        "README.md",
-        "lib/net40/Design/Syncfusion.Design.Wpf.dll",
-        "lib/net40/Design/Syncfusion.Shared.WPF.DesignTools.dll",
-        "lib/net40/Design/Syncfusion.Shared.Wpf.Expression.Design.dll",
-        "lib/net40/Design/Syncfusion.Shared.Wpf.VisualStudio.Design.dll",
-        "lib/net40/Design/Syncfusion.Shared.Wpf.dll.Design.dll",
-        "lib/net40/Syncfusion.Shared.WPF.dll",
-        "lib/net40/Syncfusion.Shared.WPF.xml",
-        "lib/net45/Design/Syncfusion.Design.Wpf.dll",
-        "lib/net45/Design/Syncfusion.Shared.WPF.DesignTools.dll",
-        "lib/net45/Design/Syncfusion.Shared.Wpf.Expression.Design.dll",
-        "lib/net45/Design/Syncfusion.Shared.Wpf.VisualStudio.Design.dll",
-        "lib/net45/Design/Syncfusion.Shared.Wpf.dll.Design.dll",
-        "lib/net45/Syncfusion.Shared.WPF.dll",
-        "lib/net45/Syncfusion.Shared.WPF.xml",
-        "lib/net451/Design/Syncfusion.Design.Wpf.dll",
-        "lib/net451/Design/Syncfusion.Shared.WPF.DesignTools.dll",
-        "lib/net451/Design/Syncfusion.Shared.Wpf.Expression.Design.dll",
-        "lib/net451/Design/Syncfusion.Shared.Wpf.VisualStudio.Design.dll",
-        "lib/net451/Design/Syncfusion.Shared.Wpf.dll.Design.dll",
-        "lib/net451/Syncfusion.Shared.WPF.dll",
-        "lib/net451/Syncfusion.Shared.WPF.xml",
-        "lib/net46/Design/Syncfusion.Design.Wpf.dll",
-        "lib/net46/Design/Syncfusion.Shared.WPF.DesignTools.dll",
-        "lib/net46/Design/Syncfusion.Shared.Wpf.Expression.Design.dll",
-        "lib/net46/Design/Syncfusion.Shared.Wpf.VisualStudio.Design.dll",
-        "lib/net46/Design/Syncfusion.Shared.Wpf.dll.Design.dll",
-        "lib/net46/Syncfusion.Shared.WPF.dll",
-        "lib/net46/Syncfusion.Shared.WPF.xml",
-        "lib/net6.0-windows7.0/Design/Syncfusion.Shared.WPF.DesignTools.dll",
-        "lib/net6.0-windows7.0/Syncfusion.Shared.WPF.dll",
-        "lib/net6.0-windows7.0/Syncfusion.Shared.WPF.xml",
-        "syncfusion.shared.wpf.23.1.36.nupkg.sha512",
-        "syncfusion.shared.wpf.nuspec",
-        "syncfusion_logo.png",
-        "tools/VisualStudioToolsManifest.xml"
       ]
     },
     "System.CodeDom/7.0.0": {
@@ -5591,7 +5435,6 @@
       "Qhta.TypeUtils >= 1.3.10.1",
       "Qhta.WPF.Converters >= 1.3.1",
       "Qhta.WPF.Utils >= 3.2.0",
-      "Syncfusion.SfDiagram.WPF >= 23.1.36",
       "WPFFolderBrowser >= 1.0.2"
     ]
   },
@@ -5676,10 +5519,6 @@
           "Qhta.WPF.Converters": {
             "target": "Package",
             "version": "[1.3.1, )"
-          },
-          "Syncfusion.SfDiagram.WPF": {
-            "target": "Package",
-            "version": "[23.1.36, )"
           },
           "WPFFolderBrowser": {
             "target": "Package",

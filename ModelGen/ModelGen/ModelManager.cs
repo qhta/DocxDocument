@@ -10,6 +10,7 @@ public static class ModelManager
 
   public static int CheckedRenameTypesCount { get; private set; }
   public static int RenamedTypesCount { get; private set; }
+  public static int DuplicatedNamesCount { get; private set; }
   public static int ConvertedTypesCount { get; private set; }
 
   public static int CheckedUsageTypesCount { get; private set; }
@@ -670,6 +671,7 @@ public static class ModelManager
     var n = 0;
     var totalTypes = types.Count();
     RenamedTypesCount = 0;
+    DuplicatedNamesCount = 0;
     foreach (var typeInfo in types)
     {
       if (ModelManager.TryRenameType(typeInfo))
@@ -709,16 +711,6 @@ public static class ModelManager
     var typeName = typeInfo.OriginalName ?? "";
     string newNamespace;
     string? newName;
-    //if (ModelConfig.Instance.TypeConversion.TryGetValue2(typeName, out newName))
-    //{
-    //  var k = newName.LastIndexOf(".");
-    //  typeInfo.NewName = newName.Substring(k + 1);
-    //  newNamespace = newName.Substring(0, k);
-    //  typeInfo.TargetNamespace = newNamespace;
-    //  RenamedTypesCount++;
-    //  OnRenamingType?.Invoke(new RenamingTypeInfo { CheckedTypes = CheckedRenameTypesCount, RenamedTypes = RenamedTypesCount, Current = typeInfo });
-    //  return true;
-    //}
     bool renamed = false;
     if (typeInfo.TypeKind == TypeKind.@enum)
     {
@@ -731,8 +723,27 @@ public static class ModelManager
       }
     }
 
+    bool addToNewNamespace = true;
+    bool checkDuplicatedName = true;
+
     var originalNamespace = typeInfo.OriginalNamespace;
     newNamespace = TypeManager.TranslateNamespace(originalNamespace);
+    var oldName = originalNamespace + "." + typeName;
+    if (ModelConfig.Instance.TypeConversion.TryGetValue2(oldName, out newName))
+    {
+      var k = newName.LastIndexOf(".");
+      if (k > 0)
+      {
+        typeInfo.NewName = newName.Substring(k + 1);
+        newNamespace = newName.Substring(0, k);
+      }
+      else
+        typeInfo.NewName = newName;
+      renamed = true;
+      RenamedTypesCount++;
+      checkDuplicatedName = false;
+    }
+
     var targetNamespace = typeInfo.GetTargetNamespace();
     Namespace nspace;
     if (newNamespace != targetNamespace)
@@ -741,29 +752,52 @@ public static class ModelManager
     }
     else
       nspace = TypeManager.GetNamespace(newNamespace);
+
     if (nspace.TypeNames.TryGetValue(typeName, out var oldTypeInfo))
     {
-      newName = GetNewNameFromNamespace(typeInfo);
-      if (newName == null)
+      if (checkDuplicatedName)
       {
-        newName = GetNewNameFromNamespace(oldTypeInfo);
-        if (newName == null)
-          throw new DuplicateNameException(typeName);
-        nspace.Types.Remove(oldTypeInfo);
-        oldTypeInfo.NewName = newName;
-        RenamedTypesCount++;
-        renamed = true;
+        if (!oldTypeInfo.HasError(PPS.Rename, ErrorCode.MultiplicatedName))
+        {
+          oldTypeInfo.AddError(PPS.Rename, ErrorCode.MultiplicatedName);
+          DuplicatedNamesCount++;
+        }
+        typeInfo.AddError(PPS.Rename, ErrorCode.MultiplicatedName);
+        DuplicatedNamesCount++;
+        oldTypeInfo.AddRelationship(typeInfo, Semantics.SameName);
+        //newName = GetNewNameFromNamespace(typeInfo);
+        //if (newName == null)
+        //{
+        //  newName = GetNewNameFromNamespace(oldTypeInfo);
+        //  if (newName != null)
+        //  {
+        //    nspace.Types.Remove(oldTypeInfo);
+        //    oldTypeInfo.NewName = newName;
+        //    RenamedTypesCount++;
+        //    renamed = true;
+        //  }
+        //  else
+        //    addToNewNamespace = false;
+        //}
+        //else
+        //{
+        //  if (!nspace.TypeNames.ContainsKey(newName))
+        //  {
+        //    typeInfo.NewName = newName;
+        //    RenamedTypesCount++;
+        //    renamed = true;
+        //  }
+        //  else
+        //    addToNewNamespace = false;
+        //}
+        addToNewNamespace = false;
       }
       else
-      {
-        if (nspace.TypeNames.ContainsKey(newName))
-          throw new DuplicateNameException(typeName);
-        typeInfo.NewName = newName;
-        RenamedTypesCount++;
-        renamed = true;
-      }
+        addToNewNamespace = false;
     }
-    //nspace.AddType(typeInfo);
+    if (addToNewNamespace)
+      nspace.AddType(typeInfo);
+
     typeInfo.TargetNamespace = newNamespace;
 
     return renamed;
