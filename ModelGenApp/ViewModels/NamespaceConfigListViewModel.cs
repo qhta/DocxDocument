@@ -1,7 +1,7 @@
 ﻿namespace ModelGenApp.ViewModels;
-public class NamespacesConfigViewModel : ModelConfigViewModel
+public class NamespaceConfigListViewModel : ModelConfigViewModel
 {
-  public NamespacesConfigViewModel(ModelConfig configData) : base(configData)
+  public NamespaceConfigListViewModel(ModelConfig configData) : base(configData)
   {
     Caption = CommonStrings.ModelConfiguration + " | " + CommonStrings.Namespaces.ToLower();
     Namespaces = new ListViewModel<NamespaceConfigViewModel>();

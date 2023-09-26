@@ -581,4 +581,17 @@ zdefiniowanej w typie wyliczeniowym.</value>
   <data name="TargetNamespaceError" xml:space="preserve">
     <value>Błąd docelowej przestrzeni nazw</value>
   </data>
+  <data name="TypeNamePattern" xml:space="preserve">
+    <value>Wzorzec nazwy typu</value>
+  </data>
+  <data name="TypeNamePatternTooltip" xml:space="preserve">
+    <value>Wzorzec nazwy typu umożliwia wyłączenie/włączenie wielu typów.
+Użyj znaku '*' aby dopasować wzorzec do wielu znaków.</value>
+  </data>
+  <data name="Exclude" xml:space="preserve">
+    <value>Wyłącz</value>
+  </data>
+  <data name="Include" xml:space="preserve">
+    <value>Włącz</value>
+  </data>
 </root>
