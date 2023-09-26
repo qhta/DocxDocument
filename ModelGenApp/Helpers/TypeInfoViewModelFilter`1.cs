@@ -78,10 +78,10 @@ public record TypeInfoViewModelFilter<T> : IFilter where T : TypeInfoViewModel
     else
     {
       if (filter == TypeInfoKind.RenamedTypes)
-        Predicate = new Predicate<T>(item => item.Model.IsConverted);
+        Predicate = new Predicate<T>(item => item.Model.TargetName!=null);
       else
       if (filter == TypeInfoKind.ConvertedTypes)
-        Predicate = new Predicate<T>(item => item.Model.IsConverted);
+        Predicate = new Predicate<T>(item => item.Model.TargetType!=null);
     }
     if (Predicate == null)
       throw new InvalidOperationException($"Can't create TypeInfoViewModelFilter with TypeInfoKind.{filter}");

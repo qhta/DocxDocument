@@ -3,7 +3,7 @@ public class ConvertPhaseViewModel : PhaseResultsViewModel
 {
   public ConvertPhaseViewModel(string name) : base(PPS.ConvertTypes, name)
   {
-    NamespaceTypeSelector = NTS.Target;
+    NamespaceTypeSelector = NTS.Origin | NTS.Target;
     CanShowErrorDetails = true;
   }
 
