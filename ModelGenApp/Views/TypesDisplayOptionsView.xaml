@@ -3,24 +3,40 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:local="clr-namespace:ModelGenApp"
+             xmlns:app="clr-namespace:ModelGenApp"
+             xmlns:views="clr-namespace:ModelGenApp.Views"
+             xmlns:vm="clr-namespace:ModelGenApp.ViewModels"
+             xmlns:hlp="clr-namespace:ModelGenApp.Helpers"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:utl="clr-namespace:Qhta.WPF.Utils;assembly=Qhta.WPF.Utils"
              mc:Ignorable="d"
+             d:DataContext="{d:DesignInstance Type=vm:TypeListViewModel}"
              d:DesignHeight="450"
              d:DesignWidth="800">
   <Grid>
     <StackPanel Orientation="Horizontal">
       <Label Margin="2,0"
              FontWeight="Bold"
-             Content="{x:Static local:CommonStrings.Types}" />
+             Content="{x:Static app:CommonStrings.Types}" />
+      <CheckBox Margin="2,0"
+                VerticalAlignment="Center"
+                IsChecked="{Binding Path=ShowTargetsOnly}"
+                Content="{x:Static app:CommonStrings.TargetsOnly}"
+                Visibility="{Binding Path=ShowTargetsOnlyEnabled,
+                Converter={StaticResource BoolToVisibilityConverter}}"
+                />
       <CheckBox Margin="2,0"
                 VerticalAlignment="Center"
                 IsChecked="{Binding Path=ShowAcceptedOnly}"
-                Content="{x:Static local:CommonStrings.ShowAcceptedOnly}" />
+                Content="{x:Static app:CommonStrings.ShowAcceptedOnly}"
+                Visibility="{Binding Path=ShowTargetsOnlyEnabled,
+                Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter='Visible,Collapsed'}" 
+                />
       <CheckBox Margin="2,0"
                 VerticalAlignment="Center"
                 IsChecked="{Binding Path=ShowFullTypeName}"
-                Content="{x:Static local:CommonStrings.ShowFullTypeName}"
-                ToolTip="{x:Static local:CommonStrings.TypeFullNameTooltip}" />
+                Content="{x:Static app:CommonStrings.ShowFullTypeName}"
+                ToolTip="{x:Static app:CommonStrings.TypeFullNameTooltip}" />
     </StackPanel>
   </Grid>
 </UserControl>

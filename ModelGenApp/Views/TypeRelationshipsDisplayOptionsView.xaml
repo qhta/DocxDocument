@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:local="clr-namespace:ModelGenApp"
+             xmlns:app="clr-namespace:ModelGenApp"
              xmlns:views="clr-namespace:ModelGenApp.Views"
              xmlns:vm="clr-namespace:ModelGenApp.ViewModels"
              xmlns:hlp="clr-namespace:ModelGenApp.Helpers"
@@ -17,16 +17,16 @@
     <StackPanel Orientation="Horizontal">
       <Label Margin="2,0"
              FontWeight="Bold"
-             Content="{x:Static local:CommonStrings.Relationships}" />
+             Content="{x:Static app:CommonStrings.Relationships}" />
       <CheckBox Margin="2,0"
                 VerticalAlignment="Center"
                 IsChecked="{Binding Path=ShowAcceptedOnly}"
-                Content="{x:Static local:CommonStrings.ShowAcceptedOnly}" />
+                Content="{x:Static app:CommonStrings.ShowAcceptedOnly}" />
       <CheckBox Margin="2,0"
                 VerticalAlignment="Center"
                 IsChecked="{Binding Path=ShowFullTypeName}"
-                Content="{x:Static local:CommonStrings.ShowFullTypeName}"
-                ToolTip="{x:Static local:CommonStrings.TypeFullNameTooltip}" />
+                Content="{x:Static app:CommonStrings.ShowFullTypeName}"
+                ToolTip="{x:Static app:CommonStrings.TypeFullNameTooltip}" />
     </StackPanel>
   </Grid>
 </UserControl>

@@ -62,6 +62,21 @@ public abstract partial class PhaseResultsViewModel : ViewModel
   public string Caption =>
     CommonStrings.ResourceManager.GetString(PhaseName, CultureInfo.CurrentUICulture) ?? PhaseName;
 
+
+  public bool ShowTargetsOnlyEnabled
+  {
+    get { return _ShowTargetsOnlyEnabled; }
+    set
+    {
+      if (_ShowTargetsOnlyEnabled != value)
+      {
+        _ShowTargetsOnlyEnabled = value;
+        NotifyPropertyChanged(nameof(ShowTargetsOnlyEnabled));
+      }
+    }
+  }
+  private bool _ShowTargetsOnlyEnabled;
+
   /// <summary>
   /// Percent of the phase advantage.
   /// </summary>
@@ -154,7 +169,7 @@ public abstract partial class PhaseResultsViewModel : ViewModel
 
   public virtual void FillNamespaces()
   {
-    Namespaces = new NamespacesViewModel(this, NamespaceTypeSelector, Filter);
+    Namespaces = new NamespacesViewModel(this, Filter);
   }
 
   public async void FillTypesAsync()
@@ -371,11 +386,11 @@ public abstract partial class PhaseResultsViewModel : ViewModel
   {
     if (filter == TypeInfoKind.TargetTypes)
     {
-      ShowTargetTypesOnly = true;
+      ShowTargetsOnly = true;
     }
     else
     {
-      ShowTargetTypesOnly = false;
+      ShowTargetsOnly = false;
       if (filter != null)
         Filter = new TypeInfoViewModelFilter((TypeInfoKind)filter, PhaseNum);
       else
@@ -402,29 +417,30 @@ public abstract partial class PhaseResultsViewModel : ViewModel
   public bool CanShowErrorDetails { get; protected set; }
 
 
-  public bool ShowTargetTypesOnly
+  public bool ShowTargetsOnly
   {
-    get { return _ShowTargetTypesOnly; }
+    get { return _ShowTargetsOnly; }
     set
     {
-      if (_ShowTargetTypesOnly != value)
+      if (_ShowTargetsOnly != value)
       {
-        _ShowTargetTypesOnly = value;
-        NotifyPropertyChanged(nameof(ShowTargetTypesOnly));
+        _ShowTargetsOnly = value;
+        NotifyPropertyChanged(nameof(ShowTargetsOnly));
         ReloadNamespaces();
       }
     }
   }
-  private bool _ShowTargetTypesOnly;
+  private bool _ShowTargetsOnly;
 
   public void ReloadNamespaces()
   {
-    if (ShowTargetTypesOnly)
+    if (ShowTargetsOnly)
       NamespaceTypeSelector = NTS.Target;
     else
       NamespaceTypeSelector = NTS.Origin;
     FillNamespaces();
   }
+
   #region SaveData
   public void SaveData(string filename)
   {

@@ -2,10 +2,9 @@
 
 public class NamespacesViewModel : ViewModel
 {
-  public NamespacesViewModel(PhaseResultsViewModel phase, NTS namespacesTypeSelector, TypeInfoViewModelFilter? filter)
+  public NamespacesViewModel(PhaseResultsViewModel phase, TypeInfoViewModelFilter? filter)
   {
     Phase = phase;
-    NamespacesTypeSelector = namespacesTypeSelector;
     Filter = filter;
     Items = new ObservableList<NamespaceViewModel>();
     FillItems();
@@ -15,7 +14,12 @@ public class NamespacesViewModel : ViewModel
 
   public PhaseResultsViewModel Phase { get; private set; }
 
-  public NTS NamespacesTypeSelector { get; private set; }
+  public NTS NamespacesTypeSelector => Phase.NamespaceTypeSelector;
+
+
+  public bool ShowTargetsOnlyEnabled => Phase.ShowTargetsOnlyEnabled;
+
+  public bool ShowTargetsOnly { get => Phase.ShowTargetsOnly; set => Phase.ShowTargetsOnly = value; }
 
   public bool ShowOriginalName => NamespacesTypeSelector.HasFlag(NTS.Origin);
   public bool ShowTargetName => NamespacesTypeSelector.HasFlag(NTS.Target);

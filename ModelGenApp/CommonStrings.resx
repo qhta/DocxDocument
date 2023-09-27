@@ -594,4 +594,10 @@ Use '*' wildcard character to match many characters.</value>
   <data name="Include" xml:space="preserve">
     <value>Include</value>
   </data>
+  <data name="TargetNamespacesOnly" xml:space="preserve">
+    <value>target namespaces only</value>
+  </data>
+  <data name="TargetsOnly" xml:space="preserve">
+    <value>targets only</value>
+  </data>
 </root>

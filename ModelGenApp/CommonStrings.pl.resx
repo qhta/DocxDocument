@@ -594,4 +594,10 @@ Użyj znaku '*' aby dopasować wzorzec do wielu znaków.</value>
   <data name="Include" xml:space="preserve">
     <value>Włącz</value>
   </data>
+  <data name="TargetNamespacesOnly" xml:space="preserve">
+    <value>tylko docelowe przestrzenie nazw</value>
+  </data>
+  <data name="TargetsOnly" xml:space="preserve">
+    <value>tylko docelowe</value>
+  </data>
 </root>
