@@ -5,6 +5,7 @@ public class ConvertPhaseViewModel : PhaseResultsViewModel
   {
     NamespaceTypeSelector = NTS.Origin | NTS.Target;
     CanShowErrorDetails = true;
+    ShowTargetsOnlyEnabled = true;
   }
 
 }

@@ -16,7 +16,10 @@ public class TypeListViewModel<T> : ViewModel where T : TypeInfoViewModel
     ShowDetailsCommand = new RelayCommand(ShowDetailsExecute, ShowDetailsCanExecute) { Name = "ShowDetailsCommand" };
     RefreshResultsCommand = new RelayCommand(RefreshResultsExecute, RefreshResultsCanExecute) { Name = "RefreshResultsCommand" };
     BusyMonitor.Instance.PropertyChanged += BusyMonitor_PropertyChanged;
+    phase.PropertyChanged += Phase_PropertyChanged;
   }
+
+
 
   public bool IsBusy => BusyMonitor.Instance.IsBusy;
 
@@ -24,6 +27,21 @@ public class TypeListViewModel<T> : ViewModel where T : TypeInfoViewModel
   {
     if (args.PropertyName == nameof(BusyMonitor.IsBusy))
       NotifyPropertyChanged(nameof(IsBusy));
+  }
+
+
+  private void Phase_PropertyChanged(object? sender, PropertyChangedEventArgs args)
+  {
+    if (args.PropertyName==nameof(PhaseResultsViewModel.ShowTargetsOnly))
+    {
+      NotifyPropertyChanged(nameof(ShowTargetsOnly));
+      if (ShowTargetsOnly)
+      {
+        ShowTargetsOnly = true;
+        ShowAcceptedOnly = true;
+      }
+      NotifyPropertyChanged(nameof(ShowTargetsOnlyEnabled));
+    }
   }
 
   public TypeInfoViewModelFilter? Filter
@@ -101,6 +119,10 @@ public class TypeListViewModel<T> : ViewModel where T : TypeInfoViewModel
 
   public TypeListViewModel<TypeInfoViewModel>? Source { get; private set; }
 
+
+  public bool ShowTargetsOnlyEnabled => Phase.ShowTargetsOnlyEnabled;
+
+  public bool ShowTargetsOnly { get => Phase.ShowTargetsOnly; set => Phase.ShowTargetsOnly = value; }
 
   public bool ShowAcceptedOnly
   {

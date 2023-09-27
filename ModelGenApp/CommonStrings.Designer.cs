@@ -1166,6 +1166,15 @@ namespace ModelGenApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to target namespaces only.
+        /// </summary>
+        public static string TargetNamespacesOnly {
+            get {
+                return ResourceManager.GetString("TargetNamespacesOnly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Target namespace is a namespace written to output..
         /// </summary>
         public static string TargetNamespaceTooltip {
@@ -1225,6 +1234,15 @@ namespace ModelGenApp {
         public static string TargetShortcutTooltip {
             get {
                 return ResourceManager.GetString("TargetShortcutTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to targets only.
+        /// </summary>
+        public static string TargetsOnly {
+            get {
+                return ResourceManager.GetString("TargetsOnly", resourceCulture);
             }
         }
         
