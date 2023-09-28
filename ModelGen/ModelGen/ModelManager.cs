@@ -64,7 +64,7 @@ public static class ModelManager
       TryAddItemsProperty(typeInfo);
     if (converted)
     {
-      var targetType = typeInfo.TargetType;
+      var targetType = typeInfo.ConversionTarget;
       if (targetType != null)
       {
         if (targetType.TargetNamespace != null)

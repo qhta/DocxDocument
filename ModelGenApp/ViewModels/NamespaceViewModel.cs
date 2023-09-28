@@ -3,18 +3,17 @@ public class NamespaceViewModel : ViewModel<Namespace>
 {
   public NamespaceViewModel(PhaseResultsViewModel phaseViewModel, Namespace ns, TypeInfoViewModelFilter? filter = null) : base(ns)
   {
-    if (filter!=null)
-      Debug.Assert(true);
+
     Phase = phaseViewModel;
     Filter = filter;
     Name = ns.OriginalName;
     TargetName = ns.TargetName;
-    AllTypes = new TypeListViewModel(phaseViewModel, this, "AllTypes", phaseViewModel.TypeNameSelector, TKS.Any, Filter);
-    Classes = new ClassListViewModel(phaseViewModel, this, "ClassTypes", phaseViewModel.TypeNameSelector, TKS.Class, Filter, AllTypes);
-    Enums = new EnumTypeListViewModel(phaseViewModel, this, "EnumTypes", phaseViewModel.TypeNameSelector, TKS.Enum, Filter, AllTypes);
-    Interfaces = new ClassListViewModel(phaseViewModel, this, "InterfaceTypes", phaseViewModel.TypeNameSelector, TKS.Interface, Filter, AllTypes);
-    Structs = new ClassListViewModel(phaseViewModel, this, "StructTypes", phaseViewModel.TypeNameSelector, TKS.Struct, Filter, AllTypes);
-    Others = new TypeListViewModel(phaseViewModel, this, "OtherTypes", phaseViewModel.TypeNameSelector, TKS.Other, Filter, AllTypes);
+    AllTypes = new TypeListViewModel(phaseViewModel, this, ns.OriginalName+":AllTypes", phaseViewModel.TypeNameSelector, TKS.Any, Filter);
+    Classes = new ClassListViewModel(phaseViewModel, this, ns.OriginalName+":ClassTypes", phaseViewModel.TypeNameSelector, TKS.Class, Filter, AllTypes);
+    Enums = new EnumTypeListViewModel(phaseViewModel, this, ns.OriginalName+":EnumTypes", phaseViewModel.TypeNameSelector, TKS.Enum, Filter, AllTypes);
+    Interfaces = new ClassListViewModel(phaseViewModel, this, ns.OriginalName+":InterfaceTypes", phaseViewModel.TypeNameSelector, TKS.Interface, Filter, AllTypes);
+    Structs = new ClassListViewModel(phaseViewModel, this, ns.OriginalName+":StructTypes", phaseViewModel.TypeNameSelector, TKS.Struct, Filter, AllTypes);
+    Others = new TypeListViewModel(phaseViewModel, this, ns.OriginalName+":OtherTypes", phaseViewModel.TypeNameSelector, TKS.Other, Filter, AllTypes);
   }
 
   public PhaseResultsViewModel Phase { get; private set; }
@@ -125,22 +124,25 @@ public class NamespaceViewModel : ViewModel<Namespace>
 
   public async void FillTypesAsync()
   {
-    await Task.Run(() => FillTypes());
+    //Debug.WriteLine($"NamespaceViewModel({Name}).FillTypesAsync");
+    await Task.Factory.StartNew(() => FillTypes());
   }
 
   public void FillTypes()
   {
+    //Debug.WriteLine($"NamespaceViewModel({Name}).FillTypes.Start. Thread={Thread.CurrentThread.ManagedThreadId}");
     AllTypes.FillItems();
     Classes.FillItems();
     Enums.FillItems();
     Interfaces.FillItems();
     Structs.FillItems();
     Others.FillItems();
+    //Debug.WriteLine($"NamespaceViewModel({Name}).FillTypes.End. Thread={Thread.CurrentThread.ManagedThreadId}");
   }
 
   public async void RefreshAsync()
   {
-    await Task.Run(() => Refresh());
+    await Task.Factory.StartNew(() => Refresh());
   }
 
   public void Refresh()

@@ -157,7 +157,7 @@ public class MainViewModel : ViewModel
       if (!continueProcess)
         this.ProcessMonitor.Clear();
       ModelCreator.ModelMonitor = this.ProcessMonitor;
-      await Task.Run(() => ModelCreator.RunProcess(options, continueProcess));
+      await Task.Factory.StartNew(() => ModelCreator.RunProcess(options, continueProcess));
       ModelCreator.CancelRequest = false;
     }
     ProcessStarted = false;

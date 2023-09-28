@@ -393,7 +393,7 @@ public static class TypeManager
 
   public static string GetTargetName(this TypeInfo typeInfo)
   {
-    var result = typeInfo.TargetType?.TargetName;
+    var result = typeInfo.ConversionTarget?.TargetName;
     if (result != null)
       return result;
     result = typeInfo.NewName ?? typeInfo.Name;

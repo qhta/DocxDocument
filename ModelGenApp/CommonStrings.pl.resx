@@ -600,4 +600,10 @@ Użyj znaku '*' aby dopasować wzorzec do wielu znaków.</value>
   <data name="TargetsOnly" xml:space="preserve">
     <value>tylko docelowe</value>
   </data>
+  <data name="ConversionTarget" xml:space="preserve">
+    <value>Wynik konwersji</value>
+  </data>
+  <data name="ConversionTargetTooltip" xml:space="preserve">
+    <value>Wynik konwersji to typ określony przez fazę konwersji.</value>
+  </data>
 </root>

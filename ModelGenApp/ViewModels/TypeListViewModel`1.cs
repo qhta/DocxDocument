@@ -17,6 +17,8 @@ public class TypeListViewModel<T> : ViewModel where T : TypeInfoViewModel
     RefreshResultsCommand = new RelayCommand(RefreshResultsExecute, RefreshResultsCanExecute) { Name = "RefreshResultsCommand" };
     BusyMonitor.Instance.PropertyChanged += BusyMonitor_PropertyChanged;
     phase.PropertyChanged += Phase_PropertyChanged;
+    if (phase.PhaseNum > PPS.ScanSource)
+      ShowAcceptedOnly = true;
   }
 
 
@@ -32,15 +34,18 @@ public class TypeListViewModel<T> : ViewModel where T : TypeInfoViewModel
 
   private void Phase_PropertyChanged(object? sender, PropertyChangedEventArgs args)
   {
-    if (args.PropertyName==nameof(PhaseResultsViewModel.ShowTargetsOnly))
+    if (sender == Phase && args.PropertyName == nameof(PhaseResultsViewModel.ShowTargetsOnly))
     {
       NotifyPropertyChanged(nameof(ShowTargetsOnly));
       if (ShowTargetsOnly)
       {
-        ShowTargetsOnly = true;
         ShowAcceptedOnly = true;
+        ShowAcceptedOnlyEnabled = false;
+        ApplyAcceptedOnlyFilterAsync(true);
       }
-      NotifyPropertyChanged(nameof(ShowTargetsOnlyEnabled));
+      else
+        ShowAcceptedOnlyEnabled = true;
+
     }
   }
 
@@ -64,17 +69,18 @@ public class TypeListViewModel<T> : ViewModel where T : TypeInfoViewModel
     if (VisibleItems != null)
     {
       VisibleItems.Filter = Filter;
+      RefreshItems();
     }
   }
 
 
-  private void VisibleItems_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs e)
+  private void VisibleItems_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     NotifyPropertyChanged(nameof(Count));
     ShowDetailsCommand?.NotifyCanExecuteChanged();
   }
 
-  private void Items_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs e)
+  private void Items_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     NotifyPropertyChanged(nameof(Count));
     ShowDetailsCommand?.NotifyCanExecuteChanged();
@@ -102,9 +108,9 @@ public class TypeListViewModel<T> : ViewModel where T : TypeInfoViewModel
   public TNS TypeNameSelector { get; private set; }
   public TKS TypeKindSelector { get; private set; }
 
-  public bool ShowTargetName => Phase.PhaseNum>=PPS.Rename;
+  public bool ShowTargetName => Phase.PhaseNum >= PPS.Rename;
 
-  public bool ShowTargetType => Phase.PhaseNum>=PPS.ConvertTypes;
+  public bool ShowTargetType => Phase.PhaseNum >= PPS.ConvertTypes;
 
 
   public PhaseResultsViewModel Phase { get; private set; }
@@ -133,14 +139,31 @@ public class TypeListViewModel<T> : ViewModel where T : TypeInfoViewModel
       {
         _ShowAcceptedOnly = value;
         NotifyPropertyChanged(nameof(ShowAcceptedOnly));
-        ApplyAcceptedOnlyFilter(value);
+        ApplyAcceptedOnlyFilterAsync(value);
       }
     }
   }
-  /// <summary>
-  /// As this field is static, all member lists have the same, common default value.
-  /// </summary>
-  private static bool _ShowAcceptedOnly = false;
+  private bool _ShowAcceptedOnly = false;
+
+
+  public bool ShowAcceptedOnlyEnabled
+  {
+    get { return _ShowAcceptedOnlyEnabled; }
+    set
+    {
+      if (_ShowAcceptedOnlyEnabled != value)
+      {
+        _ShowAcceptedOnlyEnabled = value;
+        NotifyPropertyChanged(nameof(ShowAcceptedOnlyEnabled));
+      }
+    }
+  }
+  private bool _ShowAcceptedOnlyEnabled = true;
+
+  protected async void ApplyAcceptedOnlyFilterAsync(bool value)
+  {
+    await Task.Factory.StartNew(() => ApplyAcceptedOnlyFilter(value));
+  }
 
   protected void ApplyAcceptedOnlyFilter(bool value)
   {
@@ -192,7 +215,7 @@ public class TypeListViewModel<T> : ViewModel where T : TypeInfoViewModel
 
   public async void FillItemsAsync()
   {
-    await Task.Run(() => FillItems());
+    await Task.Factory.StartNew(() => FillItems());
   }
 
   public void FillItems()
@@ -233,7 +256,7 @@ public class TypeListViewModel<T> : ViewModel where T : TypeInfoViewModel
 
   public async void RefreshItemsAsync()
   {
-    await Task.Run(() => RefreshItems());
+    await Task.Factory.StartNew(() => RefreshItems());
   }
 
   public void RefreshItems()

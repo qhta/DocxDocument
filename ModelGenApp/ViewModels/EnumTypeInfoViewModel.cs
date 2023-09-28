@@ -25,7 +25,7 @@ public class EnumTypeInfoViewModel : TypeInfoViewModel
 
   public async void FillEnumValuesAsync()
   {
-    await Task.Run(() => FillEnumValues());
+    await Task.Factory.StartNew(() => FillEnumValues());
   }
 
   public void FillEnumValues()
@@ -45,7 +45,7 @@ public class EnumTypeInfoViewModel : TypeInfoViewModel
 
   public async void RefreshEnumValuesAsync()
   {
-    await Task.Run(() => RefreshEnumValues());
+    await Task.Factory.StartNew(() => RefreshEnumValues());
   }
 
   public void RefreshEnumValues()

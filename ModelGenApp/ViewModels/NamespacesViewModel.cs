@@ -48,6 +48,7 @@ public class NamespacesViewModel : ViewModel
 
   public void FillItems() // We can't populate it asynchronously
   {
+    //Debug.WriteLine($"NamespacesViewModel.FillItems.Start");
     Items.Clear();
     var namespaces = new List<Namespace>();
     lock (TypeManager.KnownNamespaces)
@@ -67,11 +68,12 @@ public class NamespacesViewModel : ViewModel
       nsVM.FillTypesAsync();
     }
     Items.AddRange(viewModels);
+    //Debug.WriteLine($"NamespacesViewModel.FillItems.End");
   }
 
   public async void RefreshItemsAsync()
   {
-    await Task.Run(() => RefreshItems());
+    await Task.Factory.StartNew(() => RefreshItems());
   }
 
   public void RefreshItems()

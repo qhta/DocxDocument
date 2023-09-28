@@ -60,7 +60,7 @@ public class PropListViewModel : ItemListViewModel<PropInfoViewModel>
 
   public async void FillItemsAsync()
   {
-    await Task.Run(() => FillItems());
+    await Task.Factory.StartNew(() => FillItems());
   }
 
   public void FillItems()
@@ -97,7 +97,7 @@ public class PropListViewModel : ItemListViewModel<PropInfoViewModel>
 
   public async void RefreshItemsAsync()
   {
-    await Task.Run(() => RefreshItems());
+    await Task.Factory.StartNew(() => RefreshItems());
   }
 
   public void RefreshItems()

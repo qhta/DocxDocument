@@ -27,10 +27,30 @@ public partial class TypeListView : UserControl
           typeof(TypeListViewModel), typeof(TypeInfoViewModel));
     }
     dataGridColumnCreator.GenerateColumn(sender, args);
+    if (args.PropertyName==nameof(TypeInfoViewModel.Type))
+    {
+      BindingOperations.SetBinding(args.Column, DataGridColumn.VisibilityProperty, 
+        new Binding("DataContext."+nameof(TypeListViewModel.ShowTargetsOnly)) 
+        { 
+          Source = dummyElement,
+          Converter=new BoolToVisibilityConverter(), 
+          ConverterParameter="Collapsed,Visible" 
+          });
+    }
     if (args.PropertyName==nameof(TypeInfoViewModel.TargetName))
     {
       BindingOperations.SetBinding(args.Column, DataGridColumn.VisibilityProperty, 
         new Binding("DataContext."+nameof(TypeListViewModel.ShowTargetName)) 
+        { 
+          Source = dummyElement,
+          Converter=new BoolToVisibilityConverter(), 
+          ConverterParameter="Visible,Collapsed" 
+          });
+    }
+    if (args.PropertyName==nameof(TypeInfoViewModel.ConversionTarget))
+    {
+      BindingOperations.SetBinding(args.Column, DataGridColumn.VisibilityProperty, 
+        new Binding("DataContext."+nameof(TypeListViewModel.ShowTargetType)) 
         { 
           Source = dummyElement,
           Converter=new BoolToVisibilityConverter(), 
@@ -46,7 +66,8 @@ public partial class TypeListView : UserControl
           Converter=new BoolToVisibilityConverter(), 
           ConverterParameter="Visible,Collapsed" 
           });
-    }    if (args.PropertyName==nameof(TypeInfoViewModel.ValidationError))
+    }
+    if (args.PropertyName==nameof(TypeInfoViewModel.ValidationError))
     {
       BindingOperations.SetBinding(args.Column, DataGridColumn.VisibilityProperty, 
         new Binding("DataContext."+nameof(TypeListViewModel.HasAnyInvalidTypes)) 

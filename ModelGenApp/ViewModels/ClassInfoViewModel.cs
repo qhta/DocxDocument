@@ -39,7 +39,7 @@ public class ClassInfoViewModel : TypeInfoViewModel
 
   public async void FillPropertiesAsync()
   {
-    await Task.Run(() => FillProperties());
+    await Task.Factory.StartNew(() => FillProperties());
   }
 
   public void FillProperties()
@@ -53,7 +53,7 @@ public class ClassInfoViewModel : TypeInfoViewModel
 
   public async void RefreshPropertiesAsync()
   {
-    await Task.Run(() => RefreshProperties());
+    await Task.Factory.StartNew(() => RefreshProperties());
   }
 
   public void RefreshProperties()
