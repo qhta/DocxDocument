@@ -120,6 +120,15 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
   public string? TargetName => Model.NewName;
 
   [DataGridColumn(
+    HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.ConversionTarget),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.TargetTypeTooltip))
+    ]
+  public String? ConversionTarget
+  {
+    get => Model.ConversionTarget?.Name;
+  }
+
+  [DataGridColumn(
     HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.TargetType),
     HeaderTooltipResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.TargetTypeTooltip),
     DataTemplateResourceKey = "TypeInfoTargetLinkTemplate",
@@ -130,7 +139,7 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
   {
     get
     {
-      if (_TargetType == null && Model.TargetType != null)
+      if (_TargetType == null && Model.IsAcceptedAfter(PPS.ConvertTypes) && Model.TargetType != null)
         _TargetType = new TypeInfoViewModel(Phase, Model.TargetType, TypeNameSelector);
       return _TargetType;
     }
@@ -194,7 +203,7 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
   protected TypeSummaryViewModel _TypeSummary = new TypeSummaryViewModel();
   protected async void FillTypeSummaryAsync()
   {
-    await Task.Run(() => FillTypeSummary());
+    await Task.Factory.StartNew(() => FillTypeSummary());
   }
 
   protected virtual void FillTypeSummary()
@@ -237,7 +246,7 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
 
   public async void FillDetailsAsync()
   {
-    await Task.Run(() => FillDetails());
+    await Task.Factory.StartNew(() => FillDetails());
   }
 
   public virtual void FillDetails()
@@ -247,7 +256,7 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
 
   public async void RefreshDetailsAsync()
   {
-    await Task.Run(() => RefreshDetails());
+    await Task.Factory.StartNew(() => RefreshDetails());
   }
 
   public virtual void RefreshDetails()
@@ -303,7 +312,7 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
 
   public async void FillIncomingRelationshipsAsync()
   {
-    await Task.Run(() => FillIncomingRelationships());
+    await Task.Factory.StartNew(() => FillIncomingRelationships());
   }
   public void FillIncomingRelationships()
   {
@@ -316,7 +325,7 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
 
   public async void FillOutgoingRelationshipsAsync()
   {
-    await Task.Run(() => FillOutgoingRelationships());
+    await Task.Factory.StartNew(() => FillOutgoingRelationships());
   }
 
   public void FillOutgoingRelationships()
@@ -330,7 +339,7 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
 
   public async void RefreshRelationshipsAsync()
   {
-    await Task.Run(() => RefreshRelationships());
+    await Task.Factory.StartNew(() => RefreshRelationships());
   }
 
   public void RefreshRelationships()

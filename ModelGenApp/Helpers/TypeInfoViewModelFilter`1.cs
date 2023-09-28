@@ -67,7 +67,7 @@ public record TypeInfoViewModelFilter<T> : IFilter where T : TypeInfoViewModel
         Predicate = new Predicate<T>(item => item.Model.HasError(PPS.Rename, ErrorCode.MultiplicatedName));
       else
       if (filter == TypeInfoKind.ConvertedTypes)
-        Predicate = new Predicate<T>(item => item.Model.TargetType!= null);
+        Predicate = new Predicate<T>(item => item.Model.ConversionTarget!= null);
     }
     else
     if (value is FullTypeName typeName)
@@ -81,7 +81,7 @@ public record TypeInfoViewModelFilter<T> : IFilter where T : TypeInfoViewModel
         Predicate = new Predicate<T>(item => item.Model.TargetName!=null);
       else
       if (filter == TypeInfoKind.ConvertedTypes)
-        Predicate = new Predicate<T>(item => item.Model.TargetType!=null);
+        Predicate = new Predicate<T>(item => item.Model.ConversionTarget!=null);
     }
     if (Predicate == null)
       throw new InvalidOperationException($"Can't create TypeInfoViewModelFilter with TypeInfoKind.{filter}");

@@ -215,6 +215,24 @@ namespace ModelGenApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Conversion target.
+        /// </summary>
+        public static string ConversionTarget {
+            get {
+                return ResourceManager.GetString("ConversionTarget", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Conversion target is a type resulted from conversion phase..
+        /// </summary>
+        public static string ConversionTargetTooltip {
+            get {
+                return ResourceManager.GetString("ConversionTargetTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Converted types.
         /// </summary>
         public static string ConvertedTypes {
