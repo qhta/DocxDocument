@@ -41,7 +41,13 @@ public class TypeInfo : ModelElement
   /// Target type info - used in conversion.
   /// </summary>
   [XmlIgnore]
-  public TypeInfo? TargetType => this.GetConversionTarget();
+  public TypeInfo? ConversionTarget => this.GetConversionTarget();
+
+  /// <summary>
+  /// Conversion type target or self.
+  /// </summary>
+  [XmlIgnore]
+  public TypeInfo TargetType => this.GetConversionTarget() ?? this;
 
   /// <summary>
   /// Target namespace - when generated.
