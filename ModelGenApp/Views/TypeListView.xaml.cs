@@ -27,6 +27,26 @@ public partial class TypeListView : UserControl
           typeof(TypeListViewModel), typeof(TypeInfoViewModel));
     }
     dataGridColumnCreator.GenerateColumn(sender, args);
+    if (args.PropertyName==nameof(TypeInfoViewModel.Acceptance))
+    {
+      BindingOperations.SetBinding(args.Column, DataGridColumn.VisibilityProperty, 
+        new Binding("DataContext."+nameof(TypeListViewModel.ShowAcceptance)) 
+        { 
+          Source = dummyElement,
+          Converter=new BoolToVisibilityConverter(), 
+          ConverterParameter="Visible,Collapsed" 
+          });
+    }
+    if (args.PropertyName==nameof(TypeInfoViewModel.Namespace))
+    {
+      BindingOperations.SetBinding(args.Column, DataGridColumn.VisibilityProperty, 
+        new Binding("DataContext."+nameof(TypeListViewModel.ShowNamespaces)) 
+        { 
+          Source = dummyElement,
+          Converter=new BoolToVisibilityConverter(), 
+          ConverterParameter="Visible,Collapsed" 
+          });
+    }
     if (args.PropertyName==nameof(TypeInfoViewModel.Type))
     {
       BindingOperations.SetBinding(args.Column, DataGridColumn.VisibilityProperty, 
@@ -50,7 +70,7 @@ public partial class TypeListView : UserControl
     if (args.PropertyName==nameof(TypeInfoViewModel.ConversionTarget))
     {
       BindingOperations.SetBinding(args.Column, DataGridColumn.VisibilityProperty, 
-        new Binding("DataContext."+nameof(TypeListViewModel.ShowTargetType)) 
+        new Binding("DataContext."+nameof(TypeListViewModel.ShowConversionTarget)) 
         { 
           Source = dummyElement,
           Converter=new BoolToVisibilityConverter(), 

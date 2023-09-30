@@ -242,13 +242,13 @@ It should be prepared by an external tool.</value>
     <value>Original namespace is a namespace read from source.</value>
   </data>
   <data name="ExcludedNamespace" xml:space="preserve">
-    <value>Excluded</value>
+    <value>Is excluded?</value>
   </data>
   <data name="IncludedType" xml:space="preserve">
-    <value>Included type</value>
+    <value>Is type included?</value>
   </data>
   <data name="ExcludedType" xml:space="preserve">
-    <value>Excluded type</value>
+    <value>Is type excluded?</value>
   </data>
   <data name="TargetNamespace" xml:space="preserve">
     <value>Target namespace</value>
@@ -264,7 +264,7 @@ It should be prepared by an external tool.</value>
 If not defined then a property can be declared in any type.</value>
   </data>
   <data name="ExcludedProperty" xml:space="preserve">
-    <value>Excluded property</value>
+    <value>Is excluded?</value>
   </data>
   <data name="ExcludedPropertyTooltip" xml:space="preserve">
     <value>Excluded property is rejected even if its type is accepted.</value>
@@ -605,5 +605,11 @@ Use '*' wildcard character to match many characters.</value>
   </data>
   <data name="ConversionTargetTooltip" xml:space="preserve">
     <value>Conversion target is a type resulted from conversion phase.</value>
+  </data>
+  <data name="OriginalTypeName" xml:space="preserve">
+    <value>Original type name</value>
+  </data>
+  <data name="SaveConfigurationAnyway" xml:space="preserve">
+    <value>Save configuration anyway?</value>
   </data>
 </root>

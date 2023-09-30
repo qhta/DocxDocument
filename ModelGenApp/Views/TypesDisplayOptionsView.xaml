@@ -31,11 +31,11 @@
                 Content="{x:Static app:CommonStrings.ShowAcceptedOnly}"
                 IsEnabled="{Binding Path=ShowAcceptedOnlyEnabled}" 
                 />
-      <CheckBox Margin="2,0"
+      <!--<CheckBox Margin="2,0"
                 VerticalAlignment="Center"
                 IsChecked="{Binding Path=ShowFullTypeName}"
                 Content="{x:Static app:CommonStrings.ShowFullTypeName}"
-                ToolTip="{x:Static app:CommonStrings.TypeFullNameTooltip}" />
+                ToolTip="{x:Static app:CommonStrings.TypeFullNameTooltip}" />-->
     </StackPanel>
   </Grid>
 </UserControl>
