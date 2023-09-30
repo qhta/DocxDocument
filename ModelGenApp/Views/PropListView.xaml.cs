@@ -15,7 +15,7 @@ public partial class PropListView : UserControl
   private void DataGrid_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs args)
   {
     if (args.PropertyName==nameof(PropInfoViewModel.Owner)
-     || args.PropertyName==nameof(PropInfoViewModel.NameKindSelector))
+     || args.PropertyName==nameof(PropInfoViewModel.TypeNameSelector))
     {
       args.Cancel = true;
       return;

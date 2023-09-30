@@ -11,11 +11,11 @@ public abstract partial class PhaseResultsViewModel : ViewModel
   /// </summary>
   /// <param name="phase"></param>
   /// <param name="name"></param>
-  public PhaseResultsViewModel(PPS phase, string name)
+  public PhaseResultsViewModel(PPS phase, string name, NTS nameTypeSelector)
   {
     PhaseNum = phase;
     PhaseName = name;
-    TypeNameSelector = new TNS(false, false, false);
+    TypeNameSelector = new TNS(nameTypeSelector.HasFlag(NTS.Target), false, false);
     SaveResultsCommand = new RelayCommand(SaveResultsExecute, SaveResultsCanExecute) { Name = "SaveResultsCommand" };
     ShowResultsCommand = new RelayCommand(ShowResultsExecute, ShowResultsCanExecute) { Name = "ShowResultsCommand" };
     RefreshResultsCommand = new RelayCommand(RefreshResultsExecute, RefreshResultsCanExecute) { Name = "RefreshResultsCommand" };
