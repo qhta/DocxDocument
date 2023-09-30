@@ -4,6 +4,7 @@ public class TypeListViewModel<T> : ViewModel where T : TypeInfoViewModel
   public TypeListViewModel(PhaseResultsViewModel phase, NamespaceViewModel? nspace, string name,
     TNS typeNameSelector, TKS typeKindSelector, TypeInfoViewModelFilter? filter, TypeListViewModel<TypeInfoViewModel>? source)
   {
+    //Debug.WriteLine($"TypeListViewModel.Ctor({name}, \"{nspace?.Name}\")");
     Namespace = nspace;
     Name = name;
     Items.CollectionChanged += Items_CollectionChanged;
@@ -108,7 +109,11 @@ public class TypeListViewModel<T> : ViewModel where T : TypeInfoViewModel
   public TNS TypeNameSelector { get; private set; }
   public TKS TypeKindSelector { get; private set; }
 
-  public bool ShowTargetName => Phase.PhaseNum >= PPS.Rename;
+  public bool ShowAcceptance => !ShowAcceptedOnly;
+
+  public bool ShowTargetName => Phase.PhaseNum >= PPS.Rename && !Phase.ShowTargetsOnly;
+
+  public bool ShowConversionTarget => Phase.PhaseNum >= PPS.ConvertTypes && !Phase.ShowTargetsOnly;
 
   public bool ShowTargetType => Phase.PhaseNum >= PPS.ConvertTypes;
 
@@ -126,6 +131,8 @@ public class TypeListViewModel<T> : ViewModel where T : TypeInfoViewModel
   public TypeListViewModel<TypeInfoViewModel>? Source { get; private set; }
 
 
+  public bool ShowNamespaces => Namespace == null;
+
   public bool ShowTargetsOnlyEnabled => Phase.ShowTargetsOnlyEnabled;
 
   public bool ShowTargetsOnly { get => Phase.ShowTargetsOnly; set => Phase.ShowTargetsOnly = value; }
@@ -139,6 +146,7 @@ public class TypeListViewModel<T> : ViewModel where T : TypeInfoViewModel
       {
         _ShowAcceptedOnly = value;
         NotifyPropertyChanged(nameof(ShowAcceptedOnly));
+        NotifyPropertyChanged(nameof(ShowAcceptance));
         ApplyAcceptedOnlyFilterAsync(value);
       }
     }

@@ -56,7 +56,7 @@ namespace ModelGenApp.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/ModelGenApp;V1.0.0.0;component/views/processoptionsview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/ModelGenApp;component/views/processoptionsview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\ProcessOptionsView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

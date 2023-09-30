@@ -14,7 +14,7 @@ public class ClassInfoViewModel : TypeInfoViewModel
     DataTemplateResourceKey = "CountColumnTemplate",
     SortMemberPath = "Properties.Count",
     ClipboardContentPath = "Properties.Count",
-    DisplayIndex = 4)]
+    DisplayIndex = 5)]
   public PropListViewModel Properties
   {
     get

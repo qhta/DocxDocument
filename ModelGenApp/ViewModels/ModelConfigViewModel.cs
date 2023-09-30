@@ -86,9 +86,10 @@ public abstract class ModelConfigViewModel: ViewModel
   /// </summary>
   public void StoreData()
   {
+    MessageBoxResult dlgResult = MessageBoxResult.Yes;
     if (!ValidateData())
-      MessageBox.Show(CommonStrings.Model_configuration_is_invalid);
-    else
+      dlgResult = MessageBox.Show(CommonStrings.Model_configuration_is_invalid+" "+CommonStrings.SaveConfigurationAnyway, null, MessageBoxButton.YesNo);
+    if (dlgResult == MessageBoxResult.Yes)
     {
       var filename = ModelConfig.Instance.GetFilename();
       if (!File.Exists(filename))

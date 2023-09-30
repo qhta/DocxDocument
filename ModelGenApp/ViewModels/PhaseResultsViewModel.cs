@@ -164,43 +164,34 @@ public abstract partial class PhaseResultsViewModel : ViewModel
 
   public async void FillNamespacesAsync()
   {
-    //Debug.WriteLine($"PhaseResultsViewModel.FillNamespacesAsync");
     await Task.Factory.StartNew(() => FillNamespaces());
   }
 
   public virtual void FillNamespaces()
   {
-    //Debug.WriteLine($"PhaseResultsViewModel.FillNamespaces.Start");
     Namespaces = new NamespacesViewModel(this, Filter);
-    //Debug.WriteLine($"PhaseResultsViewModel.FillNamespaces.End");
   }
 
   public async void FillTypesAsync()
   {
-    //Debug.WriteLine($"PhaseResultsViewModel.FillTypes.Async");
     await Task.Factory.StartNew(() => FillTypes());
   }
 
   public virtual void FillTypes()
   {
-    //Debug.WriteLine($"PhaseResultsViewModel.FillTypes.Start");
     Types = new TypeListViewModel(this, null, NamespaceTypeSelector.ToString(), TypeNameSelector, TKS.Any, Filter);
     Types.FillItemsAsync();
-    //Debug.WriteLine($"PhaseResultsViewModel.FillTypes.End");
   }
 
   public async void FillPropertiesAsync()
   {
-    //Debug.WriteLine($"PhaseResultsViewModel.FillPropertiesAsync");
     await Task.Factory.StartNew(() => FillProperties());
   }
 
   public virtual void FillProperties()
   {
-    //Debug.WriteLine($"PhaseResultsViewModel.FillProperties.Start");
     Properties = new PropListViewModel(this, null, NamespaceTypeSelector.ToString(), TypeNameSelector);
     Properties.FillItemsAsync();
-    //Debug.WriteLine($"PhaseResultsViewModel.FillProperties.End");
   }
 
   public async void FillResultsAsync()
