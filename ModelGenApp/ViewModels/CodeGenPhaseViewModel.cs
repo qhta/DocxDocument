@@ -1,9 +1,8 @@
 ﻿namespace ModelGenApp.ViewModels;
 public class CodeGenPhaseViewModel : PhaseResultsViewModel
 {
-  public CodeGenPhaseViewModel(string name) : base(PPS.CodeGen, name)
+  public CodeGenPhaseViewModel(string name) : base(PPS.CodeGen, name, NTS.Target)
   {
-    NamespaceTypeSelector = NTS.Target;
     CanShowErrorDetails = true;
   }
 
