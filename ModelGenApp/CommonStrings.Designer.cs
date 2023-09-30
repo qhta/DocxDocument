@@ -434,7 +434,7 @@ namespace ModelGenApp {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Excluded.
+        ///   Looks up a localized string similar to Is excluded?.
         /// </summary>
         public static string ExcludedNamespace {
             get {
@@ -452,7 +452,7 @@ namespace ModelGenApp {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Excluded property.
+        ///   Looks up a localized string similar to Is excluded?.
         /// </summary>
         public static string ExcludedProperty {
             get {
@@ -470,7 +470,7 @@ namespace ModelGenApp {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Excluded type.
+        ///   Looks up a localized string similar to Is type excluded?.
         /// </summary>
         public static string ExcludedType {
             get {
@@ -534,7 +534,7 @@ namespace ModelGenApp {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Included type.
+        ///   Looks up a localized string similar to Is type included?.
         /// </summary>
         public static string IncludedType {
             get {
@@ -823,6 +823,15 @@ namespace ModelGenApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Original type name.
+        /// </summary>
+        public static string OriginalTypeName {
+            get {
+                return ResourceManager.GetString("OriginalTypeName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Others.
         /// </summary>
         public static string Others {
@@ -1009,6 +1018,15 @@ namespace ModelGenApp {
         public static string Save {
             get {
                 return ResourceManager.GetString("Save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save configuration anyway?.
+        /// </summary>
+        public static string SaveConfigurationAnyway {
+            get {
+                return ResourceManager.GetString("SaveConfigurationAnyway", resourceCulture);
             }
         }
         

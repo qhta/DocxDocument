@@ -40,11 +40,11 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
   /// <returns></returns>
   public static TypeInfoViewModel Create(PhaseResultsViewModel phase, TypeInfo typeInfo, TNS typeNameSelector)
   {
+    if (typeInfo.TypeKind == TypeKind.@class || typeInfo.TypeKind == TypeKind.@interface || typeInfo.TypeKind == TypeKind.@struct)
+      return new ClassInfoViewModel(phase, typeInfo, typeNameSelector);
     if (typeInfo.TypeKind == TypeKind.@enum)
       return new EnumTypeInfoViewModel(phase, typeInfo, typeNameSelector);
-    if (typeInfo.TypeKind == TypeKind.type)
-      return new TypeInfoViewModel(phase, typeInfo, typeNameSelector);
-    return new ClassInfoViewModel(phase, typeInfo, typeNameSelector);
+    return new TypeInfoViewModel(phase, typeInfo, typeNameSelector);
   }
 
   [DataGridColumn(
@@ -87,6 +87,10 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
         return OriginalName;
     }
   }
+
+  [DataGridColumn(
+    HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.Namespace))]
+  public String? Namespace => Model.OriginalNamespace.ToString();
 
   [DataGridColumn(
     HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.TypeName),
@@ -140,7 +144,7 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
     get
     {
       if (_TargetType == null && Model.IsAcceptedAfter(PPS.ConvertTypes) && Model.TargetType != null)
-        _TargetType = new TypeInfoViewModel(Phase, Model.TargetType, TypeNameSelector);
+        _TargetType = TypeInfoViewModel.Create(Phase, Model.TargetType, TypeNameSelector);
       return _TargetType;
     }
   }
@@ -391,6 +395,7 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
     {
       this.FillTypeSummaryAsync();
       this.FillDetailsAsync();
+      Debug.WriteLine($"TypeInfoViewModel.ShowTypeExecute({this.GetType()})");
       WindowsManager.ShowWindow<TypeInfoWindow>(this);
     });
 

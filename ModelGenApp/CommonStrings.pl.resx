@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ExcludedTypeTooltip" xml:space="preserve">
-    <value>Typ wyłączony jest odrzucany, nawet gdy jego przestrzeń nazw jest włączona.</value>
+    <value>Typ wykluczony jest odrzucany, nawet gdy jego przestrzeń nazw jest akceptowalna.</value>
   </data>
   <data name="IncludedTypeTooltip" xml:space="preserve">
-    <value>Typ włączony jest akceptowany, nawet gdy jego przestrzeń nazw jest wyłączona.</value>
+    <value>Typ dołączony jest akceptowany, nawet gdy jego przestrzeń nazw jest wykluczona.</value>
   </data>
   <data name="MeaninglessDescription" xml:space="preserve">
     <value>Opis bez znaczenia</value>
@@ -200,7 +200,7 @@ Powinien być przygotowany uprzednio za pomocą osobnego narzędzia.</value>
     <value>Nazwa oryginalna to nazwa odczytana ze źródła.</value>
   </data>
   <data name="ExcludedNamespaceTooltip" xml:space="preserve">
-    <value>Wyłączona przestrzeń nazw jest odrzucana podczas skanowania.</value>
+    <value>Wykluczona przestrzeń nazw jest odrzucana podczas skanowania.</value>
   </data>
   <data name="Shortcut" xml:space="preserve">
     <value>Skrót</value>
@@ -242,13 +242,13 @@ Powinien być przygotowany uprzednio za pomocą osobnego narzędzia.</value>
     <value>Oryginalna przestrzeń nazw to przestrzeń nazw odczytana ze źródła.</value>
   </data>
   <data name="ExcludedNamespace" xml:space="preserve">
-    <value>Wyłączona</value>
+    <value>Czy wykluczona?</value>
   </data>
   <data name="IncludedType" xml:space="preserve">
-    <value>Typ włączony</value>
+    <value>Czy typ jest dołączony?</value>
   </data>
   <data name="ExcludedType" xml:space="preserve">
-    <value>Typ wyłączony</value>
+    <value>Czy typ wykluczony?</value>
   </data>
   <data name="TargetNamespace" xml:space="preserve">
     <value>Docelowa przestrzeń nazw</value>
@@ -264,10 +264,10 @@ Powinien być przygotowany uprzednio za pomocą osobnego narzędzia.</value>
 Jeśli nie jest zdefiniowany, to właściwość może być zadeklarowana w dowolnym typie.</value>
   </data>
   <data name="ExcludedProperty" xml:space="preserve">
-    <value>Właściwość wyłączona</value>
+    <value>Czy wykluczona?</value>
   </data>
   <data name="ExcludedPropertyTooltip" xml:space="preserve">
-    <value>Właściwość wyłączona jest odrzucana, nawet gdy jej typ jest zaakceptowany.</value>
+    <value>Właściwość wykluczona jest odrzucana, nawet gdy jej typ jest zaakceptowany.</value>
   </data>
   <data name="TargetPropertyType" xml:space="preserve">
     <value>Docelowy typ właściwości</value>
@@ -589,10 +589,10 @@ zdefiniowanej w typie wyliczeniowym.</value>
 Użyj znaku '*' aby dopasować wzorzec do wielu znaków.</value>
   </data>
   <data name="Exclude" xml:space="preserve">
-    <value>Wyłącz</value>
+    <value>Wyklucz</value>
   </data>
   <data name="Include" xml:space="preserve">
-    <value>Włącz</value>
+    <value>Dołącz</value>
   </data>
   <data name="TargetNamespacesOnly" xml:space="preserve">
     <value>tylko docelowe przestrzenie nazw</value>
@@ -605,5 +605,11 @@ Użyj znaku '*' aby dopasować wzorzec do wielu znaków.</value>
   </data>
   <data name="ConversionTargetTooltip" xml:space="preserve">
     <value>Wynik konwersji to typ określony przez fazę konwersji.</value>
+  </data>
+  <data name="OriginalTypeName" xml:space="preserve">
+    <value>Oryginalna nazwa type</value>
+  </data>
+  <data name="SaveConfigurationAnyway" xml:space="preserve">
+    <value>Czy na pewno zapisać konfigurację?</value>
   </data>
 </root>

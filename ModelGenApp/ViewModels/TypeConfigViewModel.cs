@@ -40,7 +40,7 @@ public class TypeConfigViewModel : VisibleViewModel
   private bool _ExcludedNamespace;
 
   [DataGridColumn(
-    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.OriginalName),
+    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.OriginalTypeName),
     HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.OriginalNameTooltip)
     )]  
   public string OrigName

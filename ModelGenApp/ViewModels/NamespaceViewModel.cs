@@ -124,20 +124,17 @@ public class NamespaceViewModel : ViewModel<Namespace>
 
   public async void FillTypesAsync()
   {
-    //Debug.WriteLine($"NamespaceViewModel({Name}).FillTypesAsync");
     await Task.Factory.StartNew(() => FillTypes());
   }
 
   public void FillTypes()
   {
-    //Debug.WriteLine($"NamespaceViewModel({Name}).FillTypes.Start. Thread={Thread.CurrentThread.ManagedThreadId}");
     AllTypes.FillItems();
     Classes.FillItems();
     Enums.FillItems();
     Interfaces.FillItems();
     Structs.FillItems();
     Others.FillItems();
-    //Debug.WriteLine($"NamespaceViewModel({Name}).FillTypes.End. Thread={Thread.CurrentThread.ManagedThreadId}");
   }
 
   public async void RefreshAsync()
