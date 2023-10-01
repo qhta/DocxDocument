@@ -357,9 +357,9 @@ public abstract class BaseCreator
     ModelMonitor?.ShowPhaseStart(PPS.ConvertTypes, CommonStrings.ConvertTypes);
     DateTime t1 = DateTime.Now;
     ModelManager.OnConvertingType += ModelManager_OnConvertingType;
-    var types = TypeManager.AllTypes.Where(typeInfo => typeInfo.IsAcceptedTo(PPS.ConvertTypes)
-              && typeInfo.OriginalNamespace.StartsWith("DocumentFormat")
-              && !typeInfo.IsGenericTypeDefinition).ToArray();
+    var types = TypeManager.AllTypes.Where(typeInfo => /*typeInfo.IsAcceptedTo(PPS.ConvertTypes)*/
+              /*&& */typeInfo.OriginalNamespace.StartsWith("DocumentFormat")
+              /*&& !typeInfo.IsGenericTypeDefinition*/).ToArray();
     var convertedTypesCount = ModelManager.ConvertTypes(types);
     ModelManager.OnConvertingType -= ModelManager_OnConvertingType;
 
