@@ -44,7 +44,9 @@ public static class ModelManager
 
   public static bool TryConvertType(this TypeInfo typeInfo)
   {
-    if (typeInfo.Name=="AttributionTaskUser")
+    if (typeInfo.Name.StartsWith("EnumValue"))
+      Debug.Assert(true);
+    if (typeInfo.Name == "AttributionTaskUser")
       Debug.Assert(true);
     if (typeInfo.IsConverted)
       return false;
@@ -124,6 +126,8 @@ public static class ModelManager
     {
       if (typeInfo.BaseTypeInfo != null && !typeInfo.BaseTypeInfo.IsAbstract)
       {
+        if (typeInfo.BaseTypeInfo.Name.StartsWith("EnumValue"))
+          Debug.Assert(true);
         TypeManager.AddRelationship(typeInfo, typeInfo.BaseTypeInfo, Semantics.TypeChange);
         typeInfo.IsConverted = true;
         return true;
