@@ -406,6 +406,8 @@ public static class ModelManager
 
   public static TypeInfo? GetConversionTarget(this TypeInfo typeInfo)
   {
+    if (typeInfo.Name=="IEnumerable")
+      Debug.Assert(true);
     var result = TypeManager.GetRelatedTypes(typeInfo, Semantics.TypeChange).FirstOrDefault();
     //if (result == null && typeInfo.IsConstructedGenericType)
     //  if (TryGenericTypeConversion(typeInfo, out var targetType))
@@ -432,7 +434,7 @@ public static class ModelManager
 
   public static bool ScanType(Type type)
   {
-    TypeManager.UseAsynReflection = false;
+    TypeManager.UseAsynReflection = true;
     TypeManager.OnRegistering += TypeManager_OnRegistering;
     var typeName = type.ToString();
     TypeManager.RegisterType(type);

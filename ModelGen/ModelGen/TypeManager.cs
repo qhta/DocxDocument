@@ -1,6 +1,4 @@
-﻿using System.IO.Pipes;
-
-namespace ModelGen;
+﻿namespace ModelGen;
 
 public static class TypeManager
 {
@@ -210,6 +208,7 @@ public static class TypeManager
     {
       if (KnownTypes.TryGetValue(type, out var typeInfo))
         return typeInfo;
+      //Debug.WriteLine($"RegisterType({type.Name})");
       var nspace = type.Namespace ?? "";
       lock (KnownNamespaces)
       {
