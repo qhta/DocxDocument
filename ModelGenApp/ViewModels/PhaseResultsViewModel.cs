@@ -15,6 +15,7 @@ public abstract partial class PhaseResultsViewModel : ViewModel
   {
     PhaseNum = phase;
     PhaseName = name;
+    NamespaceTypeSelector = nameTypeSelector;
     TypeNameSelector = new TNS(nameTypeSelector.HasFlag(NTS.Target), false, false);
     SaveResultsCommand = new RelayCommand(SaveResultsExecute, SaveResultsCanExecute) { Name = "SaveResultsCommand" };
     ShowResultsCommand = new RelayCommand(ShowResultsExecute, ShowResultsCanExecute) { Name = "ShowResultsCommand" };

@@ -116,6 +116,8 @@ public class PropInfoViewModel : ViewModel<PropInfo>, IAcceptable
     get
     {
       var propType = Model.PropertyType;
+      if (TypeNameSelector.Target)
+        propType = Model.TargetPropertyType ?? propType.TargetType;
       if (propType != null && _ValueType == null)
       {
         if (propType.TypeKind == TypeKind.@enum)
