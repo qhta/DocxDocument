@@ -18,7 +18,7 @@ public static class TypeReflector
     if (typeInfo.IsReflected)
       return;
     isStarted = true;
-    lock (typeInfo)
+    //lock (typeInfo)
     {
       if (!_queue.Contains(typeInfo))
       {
@@ -147,7 +147,8 @@ public static class TypeReflector
       {
         if (CancelRequest)
           return;
-        typeInfo.Add(new EnumInfo(item));
+        if (item!=null)
+          typeInfo.Add(new EnumInfo(item));
       }
     }
     else if ((type.IsClass || type.IsInterface || type.IsValueType) && type != typeof(string) && type != typeof(object))

@@ -150,7 +150,13 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
   }
   public TypeInfoViewModel? _TargetType;
 
-  public string? TargetTypeName => Model.GetFullName(true, TypeNameSelector.Namespace, TypeNameSelector.NsShortcut);
+  public string? TargetTypeName
+  {
+    get
+    {
+      return Model.GetFullName(true, TypeNameSelector.Namespace, TypeNameSelector.NsShortcut);
+    }
+  }
 
   [DataGridColumn(
     Header = "",
@@ -243,7 +249,7 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
           _TypeSummary.Add(new TypePropViewModel(CommonStrings.TargetType, new TypeInfoViewModel(Phase, targetType, TypeNameSelector)));
       }
 
-      if (Model.Description!=null)
+      if (Model.Description != null)
         _TypeSummary.Add(new TypePropViewModel(CommonStrings.Description, new Description(Model.Description)));
     }
   }
