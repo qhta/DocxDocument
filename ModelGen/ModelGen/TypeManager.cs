@@ -220,11 +220,11 @@ public static class TypeManager
         NamespaceDictionary.AddType(typeInfo);
         OnRegistering?.Invoke(new ProgressTypeInfo { Namespaces = KnownNamespaces.Count + 1, ProcessedTypes = AllTypes.Count(), Current = typeInfo });
       }
-      var accept = !type.IsInterface && !ModelConfig.Instance.IsExcluded(type);
+      var accept = !ModelConfig.Instance.IsExcluded(type);
       if (!accept)
         typeInfo.SetRejected(PPS.ScanSource);
 
-      if (accept && type.Namespace != null && !type.Namespace.StartsWith("System") && !CancelRequest)
+      if (accept && type.Namespace != null && !CancelRequest)
       {
         if (UseAsynReflection)
           TypeReflector.ReflectTypeAsync(typeInfo);

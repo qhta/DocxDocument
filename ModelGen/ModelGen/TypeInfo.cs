@@ -100,12 +100,14 @@ public class TypeInfo : ModelElement
 
   public bool IsAbstract => Type.IsAbstract;
 
-  public OwnedCollection<EnumInfo>? EnumValues { get; private set; }
+  public List<EnumInfo>? EnumValues { get; private set; }
 
   public void Add(EnumInfo enumInfo)
   {
+    if (enumInfo == null)
+      throw new ArgumentNullException(nameof(enumInfo));
     if (EnumValues == null)
-      EnumValues = new OwnedCollection<EnumInfo>(this);
+      EnumValues = new List<EnumInfo>();
     EnumValues.Add(enumInfo);
   }
 
@@ -121,16 +123,16 @@ public class TypeInfo : ModelElement
   public IEnumerable<PropInfo> GetAllProperties()
   {
     var result = new List<PropInfo>();
-    if (Properties!=null)
+    if (Properties != null)
       foreach (var propInfo in Properties)
         result.Add(propInfo);
-    if (BaseTypeInfo!=null)
+    if (BaseTypeInfo != null)
     {
       var subProps = BaseTypeInfo.GetAllProperties();
       foreach (var subProp in subProps)
       {
-        var thisProp = result.FirstOrDefault(item=>item.Name==subProp.Name);
-        if (thisProp==null || thisProp.IsNew)
+        var thisProp = result.FirstOrDefault(item => item.Name == subProp.Name);
+        if (thisProp == null || thisProp.IsNew)
           result.Add(subProp);
       }
     }
@@ -273,8 +275,9 @@ public class TypeInfo : ModelElement
       var result = new FullTypeName(aName, aNamespace);
 
       var apos = aName.IndexOf('`');
-      if (apos >= 0)
+      if (apos > 0)
       {
+        result.Name = aName.Substring(0, apos);
         var genericParams = this.GetGenericParamTypes();
         var genericArgs = this.GetGenericArguments();
         var argNames = new List<FullTypeName>();
@@ -289,10 +292,7 @@ public class TypeInfo : ModelElement
             argNames.Add(genericArg.GetFullName(nameKindSelector));
           }
         if (argNames.Count > 0)
-        {
-          result.Name = aName.Substring(0, apos);
           result.ArgNames = argNames;
-        }
       }
       return result;
     }

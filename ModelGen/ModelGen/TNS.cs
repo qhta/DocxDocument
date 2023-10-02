@@ -20,6 +20,7 @@ public record TNS
   /// </summary>
   public bool NsShortcut { get; set; }
 
+  [DebuggerStepThrough]
   public TNS (bool target, bool withNamespace, bool nsShortcut)
   {
     Target = target;
