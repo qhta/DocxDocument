@@ -459,6 +459,8 @@ public class ModelConfig
   #region Types
   public bool IsExcluded(Type type)
   {
+    if (type.Namespace.StartsWith("System") && !type.IsConstructedGenericType)
+      return true;
     var fullNameComparison = IncludedTypes.FirstOrDefault(item => item.Contains('.')) != null
                           || ExcludedTypes.FirstOrDefault(item => item.Contains('.')) != null;
     if (fullNameComparison)
@@ -814,7 +816,9 @@ public class ModelConfig
           else if (key == "ExcludedTypes")
             ReadStrings(textReader, ExcludedTypes, ref lineNumber);
           else if (key == "TypeConversion")
+          {
             ReadDictionary(textReader, TypeConversion, ref lineNumber);
+          }
           else if (key == "ExcludedProperties")
             ReadStrings(textReader, ExcludedProperties, ref lineNumber);
           else if (key == "PropertyTranslateTable")

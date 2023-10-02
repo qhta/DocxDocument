@@ -103,7 +103,11 @@ public static class ModelManager
     if (ModelConfig.Instance.TypeConversion.TryGetValue2(typeInfo.Type.FullName ?? "", out var targetName))
     {
       var targetType = TypeManager.GetType(targetName);
-      if (targetType == null) return false;
+      if (targetType == null)
+      {
+        Debug.WriteLine($"Unregistered target type {typeInfo.Type.FullName} -> {targetName}");
+        return false;
+      }
       //Debug.Assert(targetType != null);
       var targetTypeInfo = TypeManager.RegisterType(targetType, typeInfo, Semantics.TypeChange);
       if (targetTypeInfo != null)
@@ -406,7 +410,7 @@ public static class ModelManager
 
   public static TypeInfo? GetConversionTarget(this TypeInfo typeInfo)
   {
-    if (typeInfo.Name=="IEnumerable")
+    if (typeInfo.Name == "IEnumerable")
       Debug.Assert(true);
     var result = TypeManager.GetRelatedTypes(typeInfo, Semantics.TypeChange).FirstOrDefault();
     //if (result == null && typeInfo.IsConstructedGenericType)
@@ -434,7 +438,7 @@ public static class ModelManager
 
   public static bool ScanType(Type type)
   {
-    TypeManager.UseAsynReflection = true;
+    TypeManager.UseAsynReflection = false;
     TypeManager.OnRegistering += TypeManager_OnRegistering;
     var typeName = type.ToString();
     TypeManager.RegisterType(type);
