@@ -10,7 +10,7 @@ public class TypeListViewModel<T> : ViewModel where T : TypeInfoViewModel
     Items.CollectionChanged += Items_CollectionChanged;
     VisibleItems = new FilteredCollection<T>(Items, filter);
     VisibleItems.CollectionChanged += VisibleItems_CollectionChanged;
-    TypeNameSelector = typeNameSelector;
+    //TypeNameSelector = typeNameSelector;
     TypeKindSelector = typeKindSelector;
     Phase = phase;
     Source = source;
@@ -106,7 +106,11 @@ public class TypeListViewModel<T> : ViewModel where T : TypeInfoViewModel
       return result;
     }
   }
-  public TNS TypeNameSelector { get; private set; }
+
+  public NTS NamespacesSelector => Phase.NamespacesSelector;
+
+  public TNS TypeNameSelector => Phase.TypeNameSelector;
+
   public TKS TypeKindSelector { get; private set; }
 
   public bool ShowAcceptance => !ShowAcceptedOnly;

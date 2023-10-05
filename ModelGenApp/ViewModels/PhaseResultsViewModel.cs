@@ -15,8 +15,7 @@ public abstract partial class PhaseResultsViewModel : ViewModel
   {
     PhaseNum = phase;
     PhaseName = name;
-    NamespaceTypeSelector = nameTypeSelector;
-    TypeNameSelector = new TNS(nameTypeSelector.HasFlag(NTS.Target), false, false);
+    NamespacesSelector = nameTypeSelector;
     SaveResultsCommand = new RelayCommand(SaveResultsExecute, SaveResultsCanExecute) { Name = "SaveResultsCommand" };
     ShowResultsCommand = new RelayCommand(ShowResultsExecute, ShowResultsCanExecute) { Name = "ShowResultsCommand" };
     RefreshResultsCommand = new RelayCommand(RefreshResultsExecute, RefreshResultsCanExecute) { Name = "RefreshResultsCommand" };
@@ -76,7 +75,7 @@ public abstract partial class PhaseResultsViewModel : ViewModel
       }
     }
   }
-  private bool _ShowTargetsOnlyEnabled;
+  protected bool _ShowTargetsOnlyEnabled;
 
   /// <summary>
   /// Percent of the phase advantage.
@@ -144,9 +143,19 @@ public abstract partial class PhaseResultsViewModel : ViewModel
   #endregion
 
 
-  public NTS NamespaceTypeSelector { get; protected set; }
+  public NTS NamespacesSelector { get; protected set; }
 
-  public TNS TypeNameSelector { get; protected set; }
+  public TNS TypeNameSelector
+  {
+    get
+    {
+      if (NamespacesSelector == NTS.Target)
+        return new TNS(true, false, false);
+      if (!NamespacesSelector.HasFlag(NTS.Target))
+        return new TNS(false, false, false);
+      return new TNS(ShowTargetsOnly, false, false);
+    }
+  }
 
   #region Namespaces
   public NamespacesViewModel Namespaces
@@ -165,12 +174,15 @@ public abstract partial class PhaseResultsViewModel : ViewModel
 
   public async void FillNamespacesAsync()
   {
+    Debug.WriteLine($"PhaseResultsViewModel.FillNamespacesAsync");
     await Task.Factory.StartNew(() => FillNamespaces());
   }
 
   public virtual void FillNamespaces()
   {
+    Debug.WriteLine($"PhaseResultsViewModel.FillNamespaces.Start");
     Namespaces = new NamespacesViewModel(this, Filter);
+    Debug.WriteLine($"PhaseResultsViewModel.FillNamespaces.End");
   }
 
   public async void FillTypesAsync()
@@ -180,7 +192,7 @@ public abstract partial class PhaseResultsViewModel : ViewModel
 
   public virtual void FillTypes()
   {
-    Types = new TypeListViewModel(this, null, NamespaceTypeSelector.ToString(), TypeNameSelector, TKS.Any, Filter);
+    Types = new TypeListViewModel(this, null, NamespacesSelector.ToString(), TypeNameSelector, TKS.Any, Filter);
     Types.FillItemsAsync();
   }
 
@@ -191,7 +203,7 @@ public abstract partial class PhaseResultsViewModel : ViewModel
 
   public virtual void FillProperties()
   {
-    Properties = new PropListViewModel(this, null, NamespaceTypeSelector.ToString(), TypeNameSelector);
+    Properties = new PropListViewModel(this, null, NamespacesSelector.ToString(), TypeNameSelector);
     Properties.FillItemsAsync();
   }
 
@@ -227,7 +239,7 @@ public abstract partial class PhaseResultsViewModel : ViewModel
 
   public void InitTypes()
   {
-    Types = new TypeListViewModel(this, null, NamespaceTypeSelector.ToString(), TypeNameSelector, TKS.Any, Filter);
+    Types = new TypeListViewModel(this, null, NamespacesSelector.ToString(), TypeNameSelector, TKS.Any, Filter);
     Types.FillItemsAsync();
   }
 
@@ -254,7 +266,7 @@ public abstract partial class PhaseResultsViewModel : ViewModel
 
   public void InitProperties()
   {
-    Properties = new PropListViewModel(this, null, NamespaceTypeSelector.ToString(), TypeNameSelector);
+    Properties = new PropListViewModel(this, null, NamespacesSelector.ToString(), TypeNameSelector);
     Properties.FillItemsAsync();
   }
 
@@ -425,21 +437,24 @@ public abstract partial class PhaseResultsViewModel : ViewModel
     {
       if (_ShowTargetsOnly != value)
       {
+        Debug.WriteLine($"PhaseResultsViewModel.ShowTargetsOnly.Set({value})");
         _ShowTargetsOnly = value;
         NotifyPropertyChanged(nameof(ShowTargetsOnly));
-        ReloadNamespaces();
+        if (Namespaces!=null)
+          ReloadNamespaces();
       }
     }
   }
-  private bool _ShowTargetsOnly;
+  protected bool _ShowTargetsOnly;
 
   public void ReloadNamespaces()
   {
-    if (ShowTargetsOnly)
-      NamespaceTypeSelector = NTS.Target;
-    else
-      NamespaceTypeSelector = NTS.Origin;
-    FillNamespaces();
+    //if (ShowTargetsOnly)
+    //  NameTypeSelector = NTS.Target;
+    //else
+    //  NameTypeSelector = NTS.Origin;
+    Debug.WriteLine($"PhaseResultsViewModel.ReloadNamespaces");
+    FillNamespacesAsync();
   }
 
   #region SaveData
