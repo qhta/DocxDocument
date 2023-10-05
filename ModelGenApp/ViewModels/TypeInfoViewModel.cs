@@ -90,7 +90,16 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
 
   [DataGridColumn(
     HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.Namespace))]
-  public String? Namespace => Model.OriginalNamespace.ToString();
+  public String? Namespace 
+  {
+    get
+    {
+      if (TypeNameSelector.Target)
+        return Model.TargetNamespace?.ToString() ?? Model.OriginalNamespace.ToString();
+      else
+        return Model.OriginalNamespace.ToString();
+    }
+  }
 
   [DataGridColumn(
     HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.TypeName),
