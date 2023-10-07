@@ -42,9 +42,9 @@ public static class TypeReflector
 
   private static bool isStarted; //=> ReflectionTasks is not null;
   private static bool isDone;
-  private static int TaskCount = 10;
-  private static Task[] ReflectionTasks = null!;
-  private static int RunTrials = 100;
+  //private static int TaskCount = 10;
+  //private static Task[] ReflectionTasks = null!;
+  //private static int RunTrials = 100;
   //public static void Start()
   //{
   //  ReflectionTasks = new Task[TaskCount];

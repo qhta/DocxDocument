@@ -42,7 +42,7 @@ public class NamespacesViewModel : ViewModel
 
   public void ApplyFilter()
   {
-    Debug.WriteLine($"NamespacesViewModel.ApplyFilter");
+    //Debug.WriteLine($"NamespacesViewModel.ApplyFilter");
     if (Items!=null)
       foreach (var item in Items)
         item.Filter = Filter;
@@ -50,13 +50,13 @@ public class NamespacesViewModel : ViewModel
 
   public async void FillItemsAsync()
   {
-    Debug.WriteLine($"NamespacesViewModel.FillItemsAsync");
+    //Debug.WriteLine($"NamespacesViewModel.FillItemsAsync");
     await Task.Factory.StartNew(() => FillItems());
   }
 
   public void FillItems()
   {
-    Debug.WriteLine($"NamespacesViewModel.FillItems.Start at {DateTime.Now.TimeOfDay}");
+    //Debug.WriteLine($"NamespacesViewModel.FillItems.Start at {DateTime.Now.TimeOfDay}");
     Items.Clear();
     var namespaces = new List<Namespace>();
     lock (TypeManager.KnownNamespaces)
@@ -78,18 +78,18 @@ public class NamespacesViewModel : ViewModel
     Items.AddRange(viewModels);
     foreach (var nsVM in viewModels) 
       nsVM.FillTypesAsync();
-    Debug.WriteLine($"NamespacesViewModel.FillItems.End  at {DateTime.Now.TimeOfDay}");
+    //Debug.WriteLine($"NamespacesViewModel.FillItems.End  at {DateTime.Now.TimeOfDay}");
   }
 
   public async void RefreshItemsAsync()
   {
-    Debug.WriteLine($"NamespacesViewModel.RefreshItemsAsync");
+    //Debug.WriteLine($"NamespacesViewModel.RefreshItemsAsync");
     await Task.Factory.StartNew(() => RefreshItems());
   }
 
   public void RefreshItems()
   {
-    Debug.WriteLine($"NamespacesViewModel.RefreshItems.Start at {DateTime.Now.TimeOfDay}");
+    //Debug.WriteLine($"NamespacesViewModel.RefreshItems.Start at {DateTime.Now.TimeOfDay}");
     var namespaces = new List<Namespace>();
     if (TypeNameSelector.Target)
       namespaces.AddRange(TypeManager.KnownNamespaces.Where(item => item.Key.StartsWith("DocumentModel")).Select(item => item.Value));
@@ -115,7 +115,7 @@ public class NamespacesViewModel : ViewModel
       nsVM.FillTypesAsync();
     }
     Items.AddRange(viewModels);
-    Debug.WriteLine($"NamespacesViewModel.RefreshItems.End at {DateTime.Now.TimeOfDay}");
+    //Debug.WriteLine($"NamespacesViewModel.RefreshItems.End at {DateTime.Now.TimeOfDay}");
   }
 
   public bool IsTargetNameVisible => Phase.IsTargetNameVisible;

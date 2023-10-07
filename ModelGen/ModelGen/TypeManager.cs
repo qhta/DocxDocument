@@ -208,16 +208,19 @@ public static class TypeManager
     {
       if (KnownTypes.TryGetValue(type, out var typeInfo))
         return typeInfo;
-      //Debug.WriteLine($"RegisterType({type.Name})");
-      var nspace = type.Namespace ?? "";
+      //if (type.Name=="FileFormatVersions")
+      //  Debug.WriteLine($"RegisterType({type.Name})");
+      var ns = type.Namespace ?? "";
       lock (KnownNamespaces)
       {
-        if (!KnownNamespaces.ContainsKey(nspace))
-          RegisterNamespace(nspace);
+        if (!KnownNamespaces.TryGetValue(ns, out var nspace))
+          nspace = RegisterNamespace(ns);
         typeInfo = new TypeInfo(type);
         KnownTypes.Add(type, typeInfo);
-        var NamespaceDictionary = TypeManager.GetNamespace(nspace);
+        var NamespaceDictionary = TypeManager.GetNamespace(ns);
         NamespaceDictionary.AddType(typeInfo);
+        if (nspace.IsTarget)
+          typeInfo.TargetNamespace = ns;
         OnRegistering?.Invoke(new ProgressTypeInfo { Namespaces = KnownNamespaces.Count + 1, ProcessedTypes = AllTypes.Count(), Current = typeInfo });
       }
       var accept = !ModelConfig.Instance.IsExcluded(type);
