@@ -172,17 +172,17 @@ public abstract partial class PhaseResultsViewModel : ViewModel
   }
   private NamespacesViewModel _Namespaces = null!;
 
-  public async void FillNamespacesAsync()
+  public async Task FillNamespacesAsync()
   {
-    Debug.WriteLine($"PhaseResultsViewModel.FillNamespacesAsync");
+    //Debug.WriteLine($"PhaseResultsViewModel.FillNamespacesAsync");
     await Task.Factory.StartNew(() => FillNamespaces());
   }
 
   public virtual void FillNamespaces()
   {
-    Debug.WriteLine($"PhaseResultsViewModel.FillNamespaces.Start");
+    //Debug.WriteLine($"PhaseResultsViewModel.FillNamespaces.Start");
     Namespaces = new NamespacesViewModel(this, Filter);
-    Debug.WriteLine($"PhaseResultsViewModel.FillNamespaces.End");
+    //Debug.WriteLine($"PhaseResultsViewModel.FillNamespaces.End");
   }
 
   public async void FillTypesAsync()
@@ -338,10 +338,10 @@ public abstract partial class PhaseResultsViewModel : ViewModel
   }
   private Command _ShowResultsCommand = null!;
 
-  protected void ShowResultsExecute()
+  protected async void ShowResultsExecute()
   {
     WindowsManager.ShowWindow<PhaseResultsWindow>(this);
-    FillNamespacesAsync();
+    await FillNamespacesAsync();
   }
 
   protected virtual bool ShowResultsCanExecute()
@@ -437,25 +437,41 @@ public abstract partial class PhaseResultsViewModel : ViewModel
     {
       if (_ShowTargetsOnly != value)
       {
-        Debug.WriteLine($"PhaseResultsViewModel.ShowTargetsOnly.Set({value})");
+        //Debug.WriteLine($"PhaseResultsViewModel.ShowTargetsOnly.Set({value})");
         _ShowTargetsOnly = value;
         NotifyPropertyChanged(nameof(ShowTargetsOnly));
         if (Namespaces!=null)
-          ReloadNamespaces();
+          ReloadNamespacesAsync();
       }
     }
   }
   protected bool _ShowTargetsOnly;
 
-  public void ReloadNamespaces()
+  public async void ReloadNamespacesAsync()
   {
-    //if (ShowTargetsOnly)
-    //  NameTypeSelector = NTS.Target;
-    //else
-    //  NameTypeSelector = NTS.Origin;
-    Debug.WriteLine($"PhaseResultsViewModel.ReloadNamespaces");
-    FillNamespacesAsync();
+    Debug.WriteLine($"ReloadNamespacesAsync");
+    var task1 = FillNamespacesAsync();
+    if (_Types==null)
+      await task1;
+    var task2 = task1.ContinueWith((t) => ReloadTypes());
+    if (_Properties==null) 
+      await task2;
+    var task3 = task2.ContinueWith((t) => ReloadProperties());
+    await task3;
   }
+
+  public void ReloadTypes()
+  {
+    Debug.WriteLine($"ReloadTypes");
+    FillTypes();
+  }
+
+  public void ReloadProperties()
+  {
+    Debug.WriteLine($"ReloadProperties");
+    FillProperties();
+  }
+
 
   #region SaveData
   public void SaveData(string filename)

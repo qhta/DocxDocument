@@ -44,13 +44,14 @@ public static class ModelManager
 
   public static bool TryConvertType(this TypeInfo typeInfo)
   {
-    if (typeInfo.Name.StartsWith("EnumValue"))
-      Debug.Assert(true);
-    if (typeInfo.Name == "AttributionTaskUser")
+    if (typeInfo.TypeKind==TypeKind.@enum)
       Debug.Assert(true);
     if (typeInfo.IsConverted)
       return false;
     var converted = false;
+    if (TryEnumTypeConversion(typeInfo))
+      converted = true;
+    else
     if (TryTableTypeConversion(typeInfo))
       converted = true;
     else
@@ -96,6 +97,35 @@ public static class ModelManager
     return converted;
   }
 
+  public static void SetTargetType(this TypeInfo typeInfo, Type targetType)
+  {
+    var targetTypeInfo = TypeManager.RegisterType(targetType, typeInfo, Semantics.TypeChange);
+    SetTargetType(typeInfo, targetTypeInfo);
+  }
+
+  public static void SetTargetType(this TypeInfo typeInfo, TypeInfo targetTypeInfo)
+  {
+    typeInfo.IsConverted = true;
+    if (targetTypeInfo != null)
+    {
+      targetTypeInfo.IsConvertedTo = true;
+      targetTypeInfo.SetTargetNamespace(targetTypeInfo.TargetNamespace ?? targetTypeInfo.OriginalNamespace);
+    }
+  }
+
+  private static bool TryEnumTypeConversion(TypeInfo typeInfo)
+  {
+    if (typeInfo.IsConverted)
+      return false;
+    if (typeInfo.TypeKind==TypeKind.@enum)
+    {
+      //if (typeInfo.TargetName.EndsWith("Kind"))
+      //  Debug.Assert(true);
+      return true;
+    }
+    return false;
+  }
+
   private static bool TryTableTypeConversion(TypeInfo typeInfo)
   {
     if (typeInfo.IsConverted)
@@ -108,11 +138,7 @@ public static class ModelManager
         Debug.WriteLine($"Unregistered target type {typeInfo.Type.FullName} -> {targetName}");
         return false;
       }
-      //Debug.Assert(targetType != null);
-      var targetTypeInfo = TypeManager.RegisterType(targetType, typeInfo, Semantics.TypeChange);
-      if (targetTypeInfo != null)
-        targetTypeInfo.IsConvertedTo = true;
-      typeInfo.IsConverted = true;
+      typeInfo.SetTargetType(targetType);
       return true;
     }
     return false;
@@ -132,8 +158,7 @@ public static class ModelManager
       {
         if (typeInfo.BaseTypeInfo.Name.StartsWith("EnumValue"))
           Debug.Assert(true);
-        TypeManager.AddRelationship(typeInfo, typeInfo.BaseTypeInfo, Semantics.TypeChange);
-        typeInfo.IsConverted = true;
+        typeInfo.SetTargetType(typeInfo.BaseTypeInfo);
         return true;
       }
     }
@@ -149,8 +174,7 @@ public static class ModelManager
       var firstProp = typeInfo.AcceptedProperties(PPS.ConvertTypes)?.FirstOrDefault();
       if (firstProp != null && firstProp.Name == "Val")
       {
-        TypeManager.AddRelationship(typeInfo, firstProp.PropertyType, Semantics.TypeChange);
-        typeInfo.IsConverted = true;
+        typeInfo.SetTargetType(firstProp.PropertyType);
         return true;
       }
     }
@@ -176,8 +200,7 @@ public static class ModelManager
         var sourceArgType = sourceArgTypes.FirstOrDefault();
         if (sourceArgType != null)
         {
-          targetType = TypeManager.RegisterType(sourceArgType, typeInfo, Semantics.TypeChange);
-          typeInfo.IsConverted = true;
+          typeInfo.SetTargetType(sourceArgType);
           return true;
         }
       }
@@ -193,8 +216,7 @@ public static class ModelManager
           if (genericParamTypeInfo.IsConverted)
             sourceArgType = genericParamTypeInfo.GetConversionTargetOrSelf().Type;
           sourceArgType = typeof(Collection<>).MakeGenericType(new Type[] { sourceArgType });
-          targetType = TypeManager.RegisterType(sourceArgType, typeInfo, Semantics.TypeChange);
-          typeInfo.IsConverted = true;
+          typeInfo.SetTargetType(sourceArgType);
           return true;
         }
       }
@@ -211,8 +233,7 @@ public static class ModelManager
           {
             sourceArgType = genericParamTypeInfo.GetConversionTargetOrSelf().Type;
             sourceArgType = typeof(Collection<>).MakeGenericType(new Type[] { sourceArgType });
-            targetType = TypeManager.RegisterType(sourceArgType, typeInfo, Semantics.TypeChange);
-            typeInfo.IsConverted = true;
+            typeInfo.SetTargetType(sourceArgType);
             return true;
           }
         }
@@ -229,8 +250,7 @@ public static class ModelManager
           if (genericParamTypeInfo.IsConverted)
             sourceArgType = genericParamTypeInfo.GetConversionTargetOrSelf().Type;
           sourceArgType = typeof(ListOf<>).MakeGenericType(new Type[] { sourceArgType });
-          targetType = TypeManager.RegisterType(sourceArgType, typeInfo, Semantics.TypeChange);
-          typeInfo.IsConverted = true;
+          typeInfo.SetTargetType(sourceArgType);
           return true;
         }
       }
@@ -241,8 +261,7 @@ public static class ModelManager
         var sourceArgType = sourceArgTypes.FirstOrDefault();
         if (sourceArgType != null)
         {
-          targetType = TypeManager.RegisterType(sourceArgType, typeInfo, Semantics.TypeChange);
-          typeInfo.IsConverted = true;
+          typeInfo.SetTargetType(sourceArgType);
           return true;
         }
       }
@@ -706,7 +725,8 @@ public static class ModelManager
   {
     CheckedRenameTypesCount++;
     var typeName = typeInfo.OriginalName ?? "";
-    string newNamespace;
+    var originalNamespace = typeInfo.OriginalNamespace;
+    var newNamespace = TypeManager.TranslateNamespace(originalNamespace);
     string? newName;
     bool renamed = false;
     if (typeInfo.TypeKind == TypeKind.@enum)
@@ -715,6 +735,7 @@ public static class ModelManager
       if (newName != typeInfo.Name)
       {
         typeInfo.NewName = newName;
+        typeInfo.TargetNamespace = newNamespace;
         RenamedTypesCount++;
         renamed = true;
       }
@@ -723,8 +744,7 @@ public static class ModelManager
     bool addToNewNamespace = true;
     bool checkDuplicatedName = true;
 
-    var originalNamespace = typeInfo.OriginalNamespace;
-    newNamespace = TypeManager.TranslateNamespace(originalNamespace);
+
     var oldName = originalNamespace + "." + typeName;
     if (ModelConfig.Instance.TypeConversion.TryGetValue2(oldName, out newName))
     {

@@ -21,7 +21,7 @@ public class Namespace
     TypeNames = new Dictionary<string, TypeInfo>();
   }
 
-  public bool IsTarget => this.TargetName == this.OriginalName;
+  public bool IsTarget => OriginalName.StartsWith("DocumentModel");
 
   private void Types_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {

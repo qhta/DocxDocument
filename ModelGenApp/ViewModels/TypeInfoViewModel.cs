@@ -95,7 +95,7 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
     get
     {
       if (TypeNameSelector.Target)
-        return Model.TargetNamespace?.ToString() ?? Model.OriginalNamespace.ToString();
+        return Model.TargetNamespace?.ToString();
       else
         return Model.OriginalNamespace.ToString();
     }
@@ -410,7 +410,7 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
     {
       this.FillTypeSummaryAsync();
       this.FillDetailsAsync();
-      Debug.WriteLine($"TypeInfoViewModel.ShowTypeExecute({this.GetType()})");
+      //Debug.WriteLine($"TypeInfoViewModel.ShowTypeExecute({this.GetType()})");
       WindowsManager.ShowWindow<TypeInfoWindow>(this);
     });
 

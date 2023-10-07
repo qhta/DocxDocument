@@ -68,6 +68,14 @@ public class TypeInfo : ModelElement
     }
     return OriginalNamespace;
   }
+
+  public void SetTargetNamespace(string ns)
+  {
+    var nspace = TypeManager.RegisterNamespace(ns);
+    nspace.AddType(this);
+    this.TargetNamespace = ns;
+  }
+
   /// <summary>
   /// Original type name - get from Type.
   /// </summary>
