@@ -142,7 +142,7 @@ public partial class UnsizedGallery
   /// <summary>
   ///   getItemID
   /// </summary>
-  public HexInt? GetItemID { get; set; }
+  public String? GetItemID { get; set; }
   
   
   /// <summary>
@@ -154,7 +154,7 @@ public partial class UnsizedGallery
   /// <summary>
   ///   getSelectedItemID
   /// </summary>
-  public HexInt? GetSelectedItemID { get; set; }
+  public String? GetSelectedItemID { get; set; }
   
   
   /// <summary>
@@ -166,7 +166,7 @@ public partial class UnsizedGallery
   /// <summary>
   ///   id
   /// </summary>
-  public HexInt? Id { get; set; }
+  public String? Id { get; set; }
   
   
   /// <summary>
@@ -294,6 +294,6 @@ public partial class UnsizedGallery
   /// </summary>
   public String? GetShowImage { get; set; }
   
-  public ElementCollection<IModelElement>? Items { get; set; }
+  public DM.ElementCollection<IModelElement>? Items { get; set; }
   
 }

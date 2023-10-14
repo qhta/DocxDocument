@@ -22,7 +22,7 @@ public partial class PageSize
   /// <summary>
   ///   Page Orientation
   /// </summary>
-  public PageOrientationKind? Orient { get; set; }
+  public DocumentModel.Wordprocessing.PageOrientationKind? Orient { get; set; }
   
   
   /// <summary>

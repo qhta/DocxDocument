@@ -6,14 +6,14 @@ namespace DocumentModel.Math;
 /// </summary>
 public partial class ControlProperties
 {
-  public RunProperties? RunProperties { get; set; }
+  public DocumentModel.Wordprocessing.RunProperties? RunProperties { get; set; }
   
-  public InsertedMathControl? InsertedMathControl { get; set; }
+  public DocumentModel.Wordprocessing.InsertedMathControl? InsertedMathControl { get; set; }
   
-  public DeletedMathControl? DeletedMathControl { get; set; }
+  public DocumentModel.Wordprocessing.DeletedMathControl? DeletedMathControl { get; set; }
   
-  public MoveFromMathControl? MoveFromMathControl { get; set; }
+  public DocumentModel.Wordprocessing.MoveFromMathControl? MoveFromMathControl { get; set; }
   
-  public MoveToMathControl? MoveToMathControl { get; set; }
+  public DocumentModel.Wordprocessing.MoveToMathControl? MoveToMathControl { get; set; }
   
 }

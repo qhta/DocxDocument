@@ -34,6 +34,6 @@ public partial class TablePropertiesChange
   /// <summary>
   ///   Previous Table Properties.
   /// </summary>
-  public PreviousTableProperties? PreviousTableProperties { get; set; }
+  public DocumentModel.Wordprocessing.PreviousTableProperties? PreviousTableProperties { get; set; }
   
 }

@@ -6,13 +6,9 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class TextCharacterPropertiesType
 {
-  [Obsolete("Please use the property 'SmartTagClean' as this property will be removed in a future version")]
-  [EditorBrowsable((System.ComponentModel.EditorBrowsableState)1)]
   public Boolean? SmtClean { get; set; }
   
-  [Obsolete("Please use the property 'SmartTagId' as this property will be removed in a future version")]
-  [EditorBrowsable((System.ComponentModel.EditorBrowsableState)1)]
-  public HexInt? SmtId { get; set; }
+  public UInt32? SmtId { get; set; }
   
   
   /// <summary>
@@ -54,13 +50,13 @@ public partial class TextCharacterPropertiesType
   /// <summary>
   ///   u
   /// </summary>
-  public TextUnderlineKind? Underline { get; set; }
+  public DocumentModel.Drawings.TextUnderlineKind? Underline { get; set; }
   
   
   /// <summary>
   ///   strike
   /// </summary>
-  public TextStrikeKind? Strike { get; set; }
+  public DocumentModel.Drawings.TextStrikeKind? Strike { get; set; }
   
   
   /// <summary>
@@ -72,7 +68,7 @@ public partial class TextCharacterPropertiesType
   /// <summary>
   ///   cap
   /// </summary>
-  public TextCapsKind? Capital { get; set; }
+  public DocumentModel.Drawings.TextCapsKind? Capital { get; set; }
   
   
   /// <summary>
@@ -120,7 +116,7 @@ public partial class TextCharacterPropertiesType
   /// <summary>
   ///   smtId
   /// </summary>
-  public HexInt? SmartTagId { get; set; }
+  public UInt32? SmartTagId { get; set; }
   
   
   /// <summary>
@@ -132,6 +128,6 @@ public partial class TextCharacterPropertiesType
   /// <summary>
   ///   Outline.
   /// </summary>
-  public Outline? Outline { get; set; }
+  public DocumentModel.Drawings.Outline? Outline { get; set; }
   
 }

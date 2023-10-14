@@ -10,7 +10,7 @@ public partial class DocProperties
   /// <summary>
   ///   Application defined unique identifier.
   /// </summary>
-  public HexInt? Id { get; set; }
+  public UInt32? Id { get; set; }
   
   
   /// <summary>
@@ -40,18 +40,18 @@ public partial class DocProperties
   /// <summary>
   ///   Hyperlink associated with clicking or selecting the element..
   /// </summary>
-  public HyperlinkOnClick? HyperlinkOnClick { get; set; }
+  public DocumentModel.Drawings.HyperlinkOnClick? HyperlinkOnClick { get; set; }
   
   
   /// <summary>
   ///   Hyperlink associated with hovering over the element..
   /// </summary>
-  public HyperlinkOnHover? HyperlinkOnHover { get; set; }
+  public DocumentModel.Drawings.HyperlinkOnHover? HyperlinkOnHover { get; set; }
   
   
   /// <summary>
   ///   Future extension.
   /// </summary>
-  public NonVisualDrawingPropertiesExtensionList? NonVisualDrawingPropertiesExtensionList { get; set; }
+  public DocumentModel.Drawings.NonVisualDrawingPropertiesExtensionList? NonVisualDrawingPropertiesExtensionList { get; set; }
   
 }

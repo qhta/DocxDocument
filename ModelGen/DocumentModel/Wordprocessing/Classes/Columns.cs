@@ -30,6 +30,6 @@ public partial class Columns
   /// </summary>
   public Boolean? Separator { get; set; }
   
-  public ElementCollection<Column>? Items { get; set; }
+  public DM.ElementCollection<Column>? Items { get; set; }
   
 }

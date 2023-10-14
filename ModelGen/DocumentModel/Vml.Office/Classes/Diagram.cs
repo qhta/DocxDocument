@@ -10,7 +10,7 @@ public partial class Diagram
   /// <summary>
   ///   VML Extension Handling Behavior
   /// </summary>
-  public ExtensionHandlingBehaviorKind? Extension { get; set; }
+  public DocumentModel.Vml.ExtensionHandlingBehaviorKind? Extension { get; set; }
   
   
   /// <summary>
@@ -22,19 +22,19 @@ public partial class Diagram
   /// <summary>
   ///   Diagram Automatic Format
   /// </summary>
-  public Boolean? AutoFormat { get; set; }
+  public DM.TrueFalseValue? AutoFormat { get; set; }
   
   
   /// <summary>
   ///   Diagram Reverse Direction
   /// </summary>
-  public Boolean? Reverse { get; set; }
+  public DM.TrueFalseValue? Reverse { get; set; }
   
   
   /// <summary>
   ///   Diagram Automatic Layout
   /// </summary>
-  public Boolean? AutoLayout { get; set; }
+  public DM.TrueFalseValue? AutoLayout { get; set; }
   
   
   /// <summary>
@@ -70,6 +70,6 @@ public partial class Diagram
   /// <summary>
   ///   Diagram Relationship Table.
   /// </summary>
-  public RelationTable? RelationTable { get; set; }
+  public DocumentModel.Vml.Office.RelationTable? RelationTable { get; set; }
   
 }

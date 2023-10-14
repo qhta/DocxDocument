@@ -11,7 +11,7 @@ namespace DocumentModel;
 /// <summary>Represents the list value attributes (xsd:list).</summary>
 [DebuggerDisplay("{InnerText}")]
 public class ListOf<T>: IEnumerable<T>, IEnumerable
-  where T : IConvertible
+ // where T : IConvertible
 {
   private string? TextValue;
   private const string _listSeparator = " ";

@@ -10,18 +10,18 @@ public partial class PatternFill
   /// <summary>
   ///   Specifies one of a set of preset patterns to fill the object.
   /// </summary>
-  public PresetPatternKind? Preset { get; set; }
+  public DocumentModel.Drawings.PresetPatternKind? Preset { get; set; }
   
   
   /// <summary>
   ///   Foreground color.
   /// </summary>
-  public ForegroundColor? ForegroundColor { get; set; }
+  public DocumentModel.Drawings.ForegroundColor? ForegroundColor { get; set; }
   
   
   /// <summary>
   ///   Background color.
   /// </summary>
-  public BackgroundColor? BackgroundColor { get; set; }
+  public DocumentModel.Drawings.BackgroundColor? BackgroundColor { get; set; }
   
 }

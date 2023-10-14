@@ -12,13 +12,13 @@ public partial class RibbonAndBackstageCustomizationsPart
   /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>
-  public CustomUI? CustomUI { get; set; }
+  public DM.CustomUI? CustomUI { get; set; }
   
   
   /// <summary>
   ///   Gets the ImageParts of the RibbonAndBackstageCustomizationsPart
   /// </summary>
-  public Collection? ImageParts { get; set; }
+  public Collection<ImagePart>? ImageParts { get; set; }
   
   public String? RelationshipType { get; set; }
   

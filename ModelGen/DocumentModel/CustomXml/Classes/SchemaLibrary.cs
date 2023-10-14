@@ -6,6 +6,6 @@ namespace DocumentModel.CustomXml;
 /// </summary>
 public partial class SchemaLibrary
 {
-  public ElementCollection<Schema>? Items { get; set; }
+  public DM.ElementCollection<Schema>? Items { get; set; }
   
 }

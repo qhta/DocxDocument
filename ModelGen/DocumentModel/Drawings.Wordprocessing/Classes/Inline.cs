@@ -34,42 +34,42 @@ public partial class Inline
   /// <summary>
   ///   anchorId, this property is only available in Office 2010 and later.
   /// </summary>
-  public HexInt? AnchorId { get; set; }
+  public DM.HexBinary? AnchorId { get; set; }
   
   
   /// <summary>
   ///   editId, this property is only available in Office 2010 and later.
   /// </summary>
-  public HexInt? EditId { get; set; }
+  public DM.HexBinary? EditId { get; set; }
   
   
   /// <summary>
   ///   Drawing Object Size.
   /// </summary>
-  public Extent? Extent { get; set; }
+  public DocumentModel.Drawings.Wordprocessing.Extent? Extent { get; set; }
   
   
   /// <summary>
   ///   Inline Wrapping Extent.
   /// </summary>
-  public EffectExtent? EffectExtent { get; set; }
+  public DocumentModel.Drawings.Wordprocessing.EffectExtent? EffectExtent { get; set; }
   
   
   /// <summary>
   ///   Drawing Object Non-Visual Properties.
   /// </summary>
-  public DocProperties? DocProperties { get; set; }
+  public DocumentModel.Drawings.Wordprocessing.DocProperties? DocProperties { get; set; }
   
   
   /// <summary>
   ///   Common DrawingML Non-Visual Properties.
   /// </summary>
-  public NonVisualGraphicFrameDrawingProperties? NonVisualGraphicFrameDrawingProperties { get; set; }
+  public DocumentModel.Drawings.Wordprocessing.NonVisualGraphicFrameDrawingProperties? NonVisualGraphicFrameDrawingProperties { get; set; }
   
   
   /// <summary>
   ///   Graphic.
   /// </summary>
-  public Graphic? Graphic { get; set; }
+  public DocumentModel.Drawings.Graphic? Graphic { get; set; }
   
 }

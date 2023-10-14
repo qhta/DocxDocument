@@ -10,19 +10,19 @@ public partial class Skew
   /// <summary>
   ///   VML Extension Handling Behavior
   /// </summary>
-  public ExtensionHandlingBehaviorKind? Extension { get; set; }
+  public DocumentModel.Vml.ExtensionHandlingBehaviorKind? Extension { get; set; }
   
   
   /// <summary>
   ///   Skew ID
   /// </summary>
-  public HexInt? Id { get; set; }
+  public String? Id { get; set; }
   
   
   /// <summary>
   ///   Skew Toggle
   /// </summary>
-  public Boolean? On { get; set; }
+  public DM.TrueFalseValue? On { get; set; }
   
   
   /// <summary>

@@ -10,13 +10,13 @@ public partial class TextInput
   /// <summary>
   ///   Text Box Form Field Type.
   /// </summary>
-  public TextBoxFormFieldKind? TextBoxFormFieldType { get; set; }
+  public DocumentModel.Wordprocessing.TextBoxFormFieldKind? TextBoxFormFieldType { get; set; }
   
   
   /// <summary>
   ///   Default Text Box Form Field String.
   /// </summary>
-  public String? DefaultTextBoxFormFieldString { get; set; }
+  public DocumentModel.Wordprocessing.DefaultTextBoxFormFieldString? DefaultTextBoxFormFieldString { get; set; }
   
   
   /// <summary>

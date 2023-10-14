@@ -15,7 +15,7 @@ public class PropInfo : MemberElement
   [XmlIgnore]
   public TypeInfo? TargetPropertyType { get; set; }
   [XmlIgnore]
-  public string? TargetPropertyTypeName { get; set; }
+  public FullTypeName? TargetPropertyTypeName { get; set; }
 
   public string OriginalType
   {
@@ -116,10 +116,8 @@ public class PropInfo : MemberElement
       CommentDocsParser.ParseDocumentation(this, xmlDocsElement);
     if (propertyInfo.CustomAttributes.Any())
     {
-      if (CustomAttributes == null)
-        CustomAttributes = new CustomAttributes(this);
       foreach (var item in propertyInfo.CustomAttributes)
-        CustomAttributes.Add(new CustomAttribInfo(item));
+        Add(new CustomAttribInfo(item));
     }
   }
 

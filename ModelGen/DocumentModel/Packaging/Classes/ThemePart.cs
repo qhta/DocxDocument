@@ -12,7 +12,7 @@ public partial class ThemePart
   /// <summary>
   ///   Gets the ImageParts of the ThemePart
   /// </summary>
-  public Collection? ImageParts { get; set; }
+  public Collection<ImagePart>? ImageParts { get; set; }
   
   public String? RelationshipType { get; set; }
   
@@ -20,6 +20,6 @@ public partial class ThemePart
   /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>
-  public Theme? Theme { get; set; }
+  public DocumentModel.Drawings.Theme? Theme { get; set; }
   
 }

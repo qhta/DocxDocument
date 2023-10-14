@@ -10,6 +10,6 @@ public partial class ImageProperties
   /// <summary>
   ///   ImageLayer.
   /// </summary>
-  public ImageLayer? ImageLayer { get; set; }
+  public DocumentModel.Drawings.ImageLayer? ImageLayer { get; set; }
   
 }

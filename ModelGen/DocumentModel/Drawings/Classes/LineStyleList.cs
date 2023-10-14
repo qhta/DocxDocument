@@ -6,6 +6,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class LineStyleList
 {
-  public ElementCollection<Outline>? Items { get; set; }
+  public DM.ElementCollection<Outline>? Items { get; set; }
   
 }

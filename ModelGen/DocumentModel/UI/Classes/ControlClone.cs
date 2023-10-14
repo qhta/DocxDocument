@@ -10,7 +10,7 @@ public partial class ControlClone
   /// <summary>
   ///   size
   /// </summary>
-  public SizeKind? Size { get; set; }
+  public DMUI.SizeKind? Size { get; set; }
   
   
   /// <summary>

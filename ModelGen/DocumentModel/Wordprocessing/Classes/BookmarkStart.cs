@@ -28,7 +28,7 @@ public partial class BookmarkStart
   /// <summary>
   ///   displacedByCustomXml
   /// </summary>
-  public DisplacedByCustomXmlKind? DisplacedByCustomXml { get; set; }
+  public DocumentModel.Wordprocessing.DisplacedByCustomXmlKind? DisplacedByCustomXml { get; set; }
   
   
   /// <summary>

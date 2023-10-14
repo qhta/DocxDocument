@@ -16,12 +16,12 @@ public partial class NumberingPictureBullet
   /// <summary>
   ///   PictureBulletBase.
   /// </summary>
-  public PictureBulletBase? PictureBulletBase { get; set; }
+  public DocumentModel.Wordprocessing.PictureBulletBase? PictureBulletBase { get; set; }
   
   
   /// <summary>
   ///   Drawing.
   /// </summary>
-  public Drawing? Drawing { get; set; }
+  public DocumentModel.Wordprocessing.Drawing? Drawing { get; set; }
   
 }

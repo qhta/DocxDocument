@@ -46,7 +46,7 @@ public partial class ComboBox
   /// <summary>
   ///   getItemID
   /// </summary>
-  public HexInt? GetItemID { get; set; }
+  public String? GetItemID { get; set; }
   
   
   /// <summary>
@@ -112,7 +112,7 @@ public partial class ComboBox
   /// <summary>
   ///   id
   /// </summary>
-  public HexInt? Id { get; set; }
+  public String? Id { get; set; }
   
   
   /// <summary>
@@ -240,6 +240,6 @@ public partial class ComboBox
   /// </summary>
   public String? GetShowImage { get; set; }
   
-  public ElementCollection<Item>? Items { get; set; }
+  public DM.ElementCollection<Item>? Items { get; set; }
   
 }

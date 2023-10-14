@@ -10,6 +10,6 @@ public partial class SubscriptProperties
   /// <summary>
   ///   ControlProperties.
   /// </summary>
-  public ControlProperties? ControlProperties { get; set; }
+  public DocumentModel.Math.ControlProperties? ControlProperties { get; set; }
   
 }

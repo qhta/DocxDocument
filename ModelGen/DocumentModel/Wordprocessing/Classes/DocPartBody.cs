@@ -6,8 +6,8 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class DocPartBody
 {
-  public SectionProperties? SectionProperties { get; set; }
+  public DocumentModel.Wordprocessing.SectionProperties? SectionProperties { get; set; }
   
-  public ElementCollection<IModelElement>? Items { get; set; }
+  public DM.ElementCollection<IModelElement>? Items { get; set; }
   
 }

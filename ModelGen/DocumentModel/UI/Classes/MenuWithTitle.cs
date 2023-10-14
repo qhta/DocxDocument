@@ -10,7 +10,7 @@ public partial class MenuWithTitle
   /// <summary>
   ///   id
   /// </summary>
-  public HexInt? Id { get; set; }
+  public String? Id { get; set; }
   
   
   /// <summary>
@@ -34,7 +34,7 @@ public partial class MenuWithTitle
   /// <summary>
   ///   itemSize
   /// </summary>
-  public ItemSizeKind? ItemSize { get; set; }
+  public DMUI.ItemSizeKind? ItemSize { get; set; }
   
   
   /// <summary>
@@ -186,6 +186,6 @@ public partial class MenuWithTitle
   /// </summary>
   public String? GetShowImage { get; set; }
   
-  public ElementCollection<IModelElement>? Items { get; set; }
+  public DM.ElementCollection<IModelElement>? Items { get; set; }
   
 }

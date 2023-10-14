@@ -22,7 +22,7 @@ public partial class Path
   /// <summary>
   ///   Path Fill
   /// </summary>
-  public PathFillMode? Fill { get; set; }
+  public DocumentModel.Drawings.PathFillMode? Fill { get; set; }
   
   
   /// <summary>
@@ -36,6 +36,6 @@ public partial class Path
   /// </summary>
   public Boolean? ExtrusionOk { get; set; }
   
-  public ElementCollection<IModelElement>? Items { get; set; }
+  public DM.ElementCollection<IModelElement>? Items { get; set; }
   
 }

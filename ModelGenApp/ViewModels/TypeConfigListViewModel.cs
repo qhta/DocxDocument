@@ -116,8 +116,12 @@ public class TypeConfigListViewModel : ModelConfigViewModel
         configData.IncludedTypes.Add(fullTypeName);
       if (item.IsExcluded)
         configData.ExcludedTypes.Add(fullTypeName);
-      if (item.TargetNamespace != null && item.TargetName != null)
-        configData.TypeConversion.Add(fullTypeName, item.TargetNamespace + "." + item.TargetName);
+      if (item.TargetNamespace != null || item.TargetName != null)
+      {
+        var targetNamespace = item.TargetNamespace ?? item.OrigNamespace.Replace("DocumentFormat.OpenXml","DocumentModel");
+        var targetName = item.TargetName ?? item.OrigName;
+        configData.TypeConversion.Add(fullTypeName, targetNamespace + "." + targetName);
+      }
     }
   }
 

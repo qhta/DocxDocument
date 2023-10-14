@@ -10,6 +10,6 @@ public partial class RunPropertiesDefault
   /// <summary>
   ///   Run Properties.
   /// </summary>
-  public RunPropertiesBaseStyle? RunPropertiesBaseStyle { get; set; }
+  public DocumentModel.Wordprocessing.RunPropertiesBaseStyle? RunPropertiesBaseStyle { get; set; }
   
 }

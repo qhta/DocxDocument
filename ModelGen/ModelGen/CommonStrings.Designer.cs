@@ -97,6 +97,15 @@ namespace ModelGen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to checked {0} of {1} types.
+        /// </summary>
+        internal static string checked_0_of_1_types {
+            get {
+                return ResourceManager.GetString("checked_0_of_1_types", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Checked types.
         /// </summary>
         internal static string CheckedTypes {
@@ -138,6 +147,15 @@ namespace ModelGen {
         internal static string End_of_phase_0 {
             get {
                 return ResourceManager.GetString("End_of_phase_0", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Final check.
+        /// </summary>
+        internal static string FinalCheck {
+            get {
+                return ResourceManager.GetString("FinalCheck", resourceCulture);
             }
         }
         

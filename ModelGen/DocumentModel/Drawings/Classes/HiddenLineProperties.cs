@@ -16,42 +16,42 @@ public partial class HiddenLineProperties
   /// <summary>
   ///   line cap
   /// </summary>
-  public LineCapKind? CapType { get; set; }
+  public DocumentModel.Drawings.LineCapKind? CapType { get; set; }
   
   
   /// <summary>
   ///   compound line type
   /// </summary>
-  public CompoundLineKind? CompoundLineType { get; set; }
+  public DocumentModel.Drawings.CompoundLineKind? CompoundLineType { get; set; }
   
   
   /// <summary>
   ///   pen alignment
   /// </summary>
-  public PenAlignmentKind? Alignment { get; set; }
+  public DocumentModel.Drawings.PenAlignmentKind? Alignment { get; set; }
   
-  public Boolean? NoFill { get; set; }
+  public DocumentModel.Drawings.NoFill? NoFill { get; set; }
   
-  public SolidFill? SolidFill { get; set; }
+  public DocumentModel.Drawings.SolidFill? SolidFill { get; set; }
   
-  public GradientFill? GradientFill { get; set; }
+  public DocumentModel.Drawings.GradientFill? GradientFill { get; set; }
   
-  public PatternFill? PatternFill { get; set; }
+  public DocumentModel.Drawings.PatternFill? PatternFill { get; set; }
   
-  public PresetLineDashKind? PresetDash { get; set; }
+  public DocumentModel.Drawings.PresetLineDashKind? PresetDash { get; set; }
   
-  public CustomDash? CustomDash { get; set; }
+  public DocumentModel.Drawings.CustomDash? CustomDash { get; set; }
   
-  public Boolean? Round { get; set; }
+  public DocumentModel.Drawings.Round? Round { get; set; }
   
-  public Boolean? LineJoinBevel { get; set; }
+  public DocumentModel.Drawings.LineJoinBevel? LineJoinBevel { get; set; }
   
-  public Miter? Miter { get; set; }
+  public DocumentModel.Drawings.Miter? Miter { get; set; }
   
-  public LineEndPropertiesType? HeadEnd { get; set; }
+  public DocumentModel.Drawings.HeadEnd? HeadEnd { get; set; }
   
-  public LineEndPropertiesType? TailEnd { get; set; }
+  public DocumentModel.Drawings.TailEnd? TailEnd { get; set; }
   
-  public LinePropertiesExtensionList? LinePropertiesExtensionList { get; set; }
+  public DocumentModel.Drawings.LinePropertiesExtensionList? LinePropertiesExtensionList { get; set; }
   
 }

@@ -10,12 +10,12 @@ public partial class QuickAccessToolbar
   /// <summary>
   ///   SharedQatControls.
   /// </summary>
-  public SharedQatControls? SharedQatControls { get; set; }
+  public DMUI.SharedQatControls? SharedQatControls { get; set; }
   
   
   /// <summary>
   ///   DocumentSpecificQuickAccessToolbarControls.
   /// </summary>
-  public DocumentSpecificQuickAccessToolbarControls? DocumentSpecificQuickAccessToolbarControls { get; set; }
+  public DMUI.DocumentSpecificQuickAccessToolbarControls? DocumentSpecificQuickAccessToolbarControls { get; set; }
   
 }

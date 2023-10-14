@@ -10,7 +10,7 @@ public partial class FootnoteEndnoteType
   /// <summary>
   ///   Footnote/Endnote Type
   /// </summary>
-  public FootnoteEndnoteKind? Type { get; set; }
+  public DocumentModel.Wordprocessing.FootnoteEndnoteKind? Type { get; set; }
   
   
   /// <summary>

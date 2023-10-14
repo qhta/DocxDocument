@@ -12,14 +12,14 @@ public partial class LineSketchStyleProperties
   /// </summary>
   public UInt32? Sd { get; set; }
   
-  public CustomGeometry? CustomGeometry { get; set; }
+  public DocumentModel.Drawings.CustomGeometry? CustomGeometry { get; set; }
   
-  public PresetGeometry? PresetGeometry { get; set; }
+  public DocumentModel.Drawings.PresetGeometry? PresetGeometry { get; set; }
   
-  public LineSketchTypeProperties? LineSketchTypeProperties { get; set; }
+  public DocumentModel.Drawings.LineSketchTypeProperties? LineSketchTypeProperties { get; set; }
   
-  public String? LineSketchSeed { get; set; }
+  public DocumentModel.Drawings.LineSketchSeed? LineSketchSeed { get; set; }
   
-  public OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
+  public DocumentModel.Drawings.OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
   
 }

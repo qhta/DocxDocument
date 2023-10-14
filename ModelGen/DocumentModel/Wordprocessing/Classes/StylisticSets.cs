@@ -6,6 +6,6 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class StylisticSets
 {
-  public ElementCollection<StyleSet>? Items { get; set; }
+  public DM.ElementCollection<StyleSet>? Items { get; set; }
   
 }

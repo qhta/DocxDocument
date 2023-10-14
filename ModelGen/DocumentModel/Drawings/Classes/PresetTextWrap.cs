@@ -10,12 +10,12 @@ public partial class PresetTextWrap
   /// <summary>
   ///   Specifies the preset geometry that is used for a shape warp on a piece of text. This preset can have any of the values in the enumerated list for ST_TextShapeType. This attribute is required in order for a text warp to be rendered.
   /// </summary>
-  public TextShapeKind? Preset { get; set; }
+  public DocumentModel.Drawings.TextShapeKind? Preset { get; set; }
   
   
   /// <summary>
   ///   Adjust Value List.
   /// </summary>
-  public AdjustValueList? AdjustValueList { get; set; }
+  public DocumentModel.Drawings.AdjustValueList? AdjustValueList { get; set; }
   
 }

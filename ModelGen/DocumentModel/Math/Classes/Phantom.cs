@@ -10,12 +10,12 @@ public partial class Phantom
   /// <summary>
   ///   Phantom Properties.
   /// </summary>
-  public PhantomProperties? PhantomProperties { get; set; }
+  public DocumentModel.Math.PhantomProperties? PhantomProperties { get; set; }
   
   
   /// <summary>
   ///   Base.
   /// </summary>
-  public Base? Base { get; set; }
+  public DocumentModel.Math.Base? Base { get; set; }
   
 }

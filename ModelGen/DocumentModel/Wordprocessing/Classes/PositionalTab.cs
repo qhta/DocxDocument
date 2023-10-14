@@ -10,18 +10,18 @@ public partial class PositionalTab
   /// <summary>
   ///   Positional Tab Stop Alignment
   /// </summary>
-  public AbsolutePositionTabAlignmentKind? Alignment { get; set; }
+  public DocumentModel.Wordprocessing.AbsolutePositionTabAlignmentKind? Alignment { get; set; }
   
   
   /// <summary>
   ///   Positional Tab Base
   /// </summary>
-  public AbsolutePositionTabPositioningBaseKind? RelativeTo { get; set; }
+  public DocumentModel.Wordprocessing.AbsolutePositionTabPositioningBaseKind? RelativeTo { get; set; }
   
   
   /// <summary>
   ///   Tab Leader Character
   /// </summary>
-  public AbsolutePositionTabLeaderCharKind? Leader { get; set; }
+  public DocumentModel.Wordprocessing.AbsolutePositionTabLeaderCharKind? Leader { get; set; }
   
 }

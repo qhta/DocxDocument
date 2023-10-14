@@ -10,6 +10,6 @@ public partial class OfficeMathArgumentType
   /// <summary>
   ///   Argument Properties.
   /// </summary>
-  public ArgumentProperties? ArgumentProperties { get; set; }
+  public DocumentModel.Math.ArgumentProperties? ArgumentProperties { get; set; }
   
 }

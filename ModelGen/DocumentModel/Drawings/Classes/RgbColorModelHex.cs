@@ -10,7 +10,7 @@ public partial class RgbColorModelHex
   /// <summary>
   ///   The actual color value. Expressed as a sequence of hex digits RRGGBB.
   /// </summary>
-  public HexBinary? Val { get; set; }
+  public DM.HexBinary? Val { get; set; }
   
   
   /// <summary>
@@ -18,6 +18,6 @@ public partial class RgbColorModelHex
   /// </summary>
   public Int32? LegacySpreadsheetColorIndex { get; set; }
   
-  public ElementCollection<IModelElement>? Items { get; set; }
+  public DM.ElementCollection<IModelElement>? Items { get; set; }
   
 }

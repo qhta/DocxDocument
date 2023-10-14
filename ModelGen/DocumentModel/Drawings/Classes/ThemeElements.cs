@@ -10,24 +10,24 @@ public partial class ThemeElements
   /// <summary>
   ///   ColorScheme.
   /// </summary>
-  public ColorScheme? ColorScheme { get; set; }
+  public DocumentModel.Drawings.ColorScheme? ColorScheme { get; set; }
   
   
   /// <summary>
   ///   Font Scheme.
   /// </summary>
-  public FontScheme? FontScheme { get; set; }
+  public DocumentModel.Drawings.FontScheme? FontScheme { get; set; }
   
   
   /// <summary>
   ///   Format Scheme.
   /// </summary>
-  public FormatScheme? FormatScheme { get; set; }
+  public DocumentModel.Drawings.FormatScheme? FormatScheme { get; set; }
   
   
   /// <summary>
   ///   ExtensionList.
   /// </summary>
-  public ExtensionList? ExtensionList { get; set; }
+  public DocumentModel.Drawings.ExtensionList? ExtensionList { get; set; }
   
 }

@@ -249,7 +249,7 @@ public static class TypeManager
   public static TypeInfo RegisterType(Type type, TypeInfo source, Semantics semantics)
   {
     var result = RegisterType(type);
-    AddRelationship(source, result, semantics);
+    //////AddRelationship(source, result, semantics);
     return result;
   }
 
@@ -257,6 +257,8 @@ public static class TypeManager
   {
     lock (RelationshipsLock)
     {
+      //if (semantics==Semantics.TypeChange && target.Name=="Schema")
+      //  Debug.Assert(true);
       var rel = new TypeRelationship(source, target, semantics);
       source.OutgoingRelationships.Add(rel);
       target.IncomingRelationships.Add(rel);

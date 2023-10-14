@@ -6,8 +6,6 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class Person
 {
-  [Obsolete("This property will not persist to the document and will be removed in a future version")]
-  [EditorBrowsable((System.ComponentModel.EditorBrowsableState)1)]
   public String? Contact { get; set; }
   
   
@@ -20,6 +18,6 @@ public partial class Person
   /// <summary>
   ///   PresenceInfo.
   /// </summary>
-  public PresenceInfo? PresenceInfo { get; set; }
+  public DocumentModel.Wordprocessing.PresenceInfo? PresenceInfo { get; set; }
   
 }

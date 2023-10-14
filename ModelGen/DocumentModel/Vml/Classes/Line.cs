@@ -10,7 +10,7 @@ public partial class Line
   /// <summary>
   ///   Unique Identifier
   /// </summary>
-  public HexInt? Id { get; set; }
+  public String? Id { get; set; }
   
   
   /// <summary>
@@ -70,7 +70,7 @@ public partial class Line
   /// <summary>
   ///   Print Toggle
   /// </summary>
-  public Boolean? Print { get; set; }
+  public DM.TrueFalseValue? Print { get; set; }
   
   
   /// <summary>
@@ -82,55 +82,55 @@ public partial class Line
   /// <summary>
   ///   Shape Handle Toggle
   /// </summary>
-  public Boolean? Oned { get; set; }
+  public DM.TrueFalseValue? Oned { get; set; }
   
   
   /// <summary>
   ///   Regroup ID
   /// </summary>
-  public HexInt? RegroupId { get; set; }
+  public Int64? RegroupId { get; set; }
   
   
   /// <summary>
   ///   Double-click Notification Toggle
   /// </summary>
-  public Boolean? DoubleClickNotify { get; set; }
+  public DM.TrueFalseValue? DoubleClickNotify { get; set; }
   
   
   /// <summary>
   ///   Button Behavior Toggle
   /// </summary>
-  public Boolean? Button { get; set; }
+  public DM.TrueFalseValue? Button { get; set; }
   
   
   /// <summary>
   ///   Hide Script Anchors
   /// </summary>
-  public Boolean? UserHidden { get; set; }
+  public DM.TrueFalseValue? UserHidden { get; set; }
   
   
   /// <summary>
   ///   Graphical Bullet
   /// </summary>
-  public Boolean? Bullet { get; set; }
+  public DM.TrueFalseValue? Bullet { get; set; }
   
   
   /// <summary>
   ///   Horizontal Rule Toggle
   /// </summary>
-  public Boolean? Horizontal { get; set; }
+  public DM.TrueFalseValue? Horizontal { get; set; }
   
   
   /// <summary>
   ///   Horizontal Rule Standard Display Toggle
   /// </summary>
-  public Boolean? HorizontalStandard { get; set; }
+  public DM.TrueFalseValue? HorizontalStandard { get; set; }
   
   
   /// <summary>
   ///   Horizontal Rule 3D Shading Toggle
   /// </summary>
-  public Boolean? HorizontalNoShade { get; set; }
+  public DM.TrueFalseValue? HorizontalNoShade { get; set; }
   
   
   /// <summary>
@@ -142,25 +142,25 @@ public partial class Line
   /// <summary>
   ///   Horizontal Rule Alignment
   /// </summary>
-  public HorizontalRuleAlignmentKind? HorizontalAlignment { get; set; }
+  public DocumentModel.Vml.Office.HorizontalRuleAlignmentKind? HorizontalAlignment { get; set; }
   
   
   /// <summary>
   ///   Allow in Table Cell
   /// </summary>
-  public Boolean? AllowInCell { get; set; }
+  public DM.TrueFalseValue? AllowInCell { get; set; }
   
   
   /// <summary>
   ///   Allow Shape Overlap
   /// </summary>
-  public Boolean? AllowOverlap { get; set; }
+  public DM.TrueFalseValue? AllowOverlap { get; set; }
   
   
   /// <summary>
   ///   Exists In Master Slide
   /// </summary>
-  public Boolean? UserDrawn { get; set; }
+  public DM.TrueFalseValue? UserDrawn { get; set; }
   
   
   /// <summary>
@@ -208,13 +208,13 @@ public partial class Line
   /// <summary>
   ///   Text Inset Mode
   /// </summary>
-  public InsetMarginKind? InsetMode { get; set; }
+  public DocumentModel.Vml.Office.InsetMarginKind? InsetMode { get; set; }
   
   
   /// <summary>
   ///   Shape Fill Toggle
   /// </summary>
-  public Boolean? Filled { get; set; }
+  public DM.TrueFalseValue? Filled { get; set; }
   
   
   /// <summary>
@@ -226,7 +226,7 @@ public partial class Line
   /// <summary>
   ///   Shape Stroke Toggle
   /// </summary>
-  public Boolean? Stroked { get; set; }
+  public DM.TrueFalseValue? Stroked { get; set; }
   
   
   /// <summary>
@@ -244,7 +244,7 @@ public partial class Line
   /// <summary>
   ///   Inset Border From Path
   /// </summary>
-  public Boolean? InsetPen { get; set; }
+  public DM.TrueFalseValue? InsetPen { get; set; }
   
   
   /// <summary>
@@ -256,67 +256,67 @@ public partial class Line
   /// <summary>
   ///   Shape Connector Type
   /// </summary>
-  public ConnectorKind? ConnectorType { get; set; }
+  public DocumentModel.Vml.Office.ConnectorKind? ConnectorType { get; set; }
   
   
   /// <summary>
   ///   Black-and-White Mode
   /// </summary>
-  public BlackAndWhiteMode? BlackWhiteMode { get; set; }
+  public DocumentModel.Vml.Office.BlackAndWhiteMode? BlackWhiteMode { get; set; }
   
   
   /// <summary>
   ///   Pure Black-and-White Mode
   /// </summary>
-  public BlackAndWhiteMode? PureBlackWhiteMode { get; set; }
+  public DocumentModel.Vml.Office.BlackAndWhiteMode? PureBlackWhiteMode { get; set; }
   
   
   /// <summary>
   ///   Normal Black-and-White Mode
   /// </summary>
-  public BlackAndWhiteMode? NormalBlackWhiteMode { get; set; }
+  public DocumentModel.Vml.Office.BlackAndWhiteMode? NormalBlackWhiteMode { get; set; }
   
   
   /// <summary>
   ///   Force Dashed Outline
   /// </summary>
-  public Boolean? ForceDash { get; set; }
+  public DM.TrueFalseValue? ForceDash { get; set; }
   
   
   /// <summary>
   ///   Embedded Object Icon Toggle
   /// </summary>
-  public Boolean? OleIcon { get; set; }
+  public DM.TrueFalseValue? OleIcon { get; set; }
   
   
   /// <summary>
   ///   Embedded Object Toggle
   /// </summary>
-  public Boolean? Ole { get; set; }
+  public DM.TrueFalseBlankValue? Ole { get; set; }
   
   
   /// <summary>
   ///   Relative Resize Toggle
   /// </summary>
-  public Boolean? PreferRelative { get; set; }
+  public DM.TrueFalseValue? PreferRelative { get; set; }
   
   
   /// <summary>
   ///   Clip to Wrapping Polygon
   /// </summary>
-  public Boolean? ClipToWrap { get; set; }
+  public DM.TrueFalseValue? ClipToWrap { get; set; }
   
   
   /// <summary>
   ///   Clipping Toggle
   /// </summary>
-  public Boolean? Clip { get; set; }
+  public DM.TrueFalseValue? Clip { get; set; }
   
   
   /// <summary>
   ///   Encoded Package
   /// </summary>
-  public Base64Binary? Gfxdata { get; set; }
+  public DM.Base64Binary? Gfxdata { get; set; }
   
   
   /// <summary>
@@ -330,6 +330,6 @@ public partial class Line
   /// </summary>
   public String? To { get; set; }
   
-  public ElementCollection<IModelElement>? Items { get; set; }
+  public DM.ElementCollection<IModelElement>? Items { get; set; }
   
 }

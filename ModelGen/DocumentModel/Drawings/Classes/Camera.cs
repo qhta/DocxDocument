@@ -10,7 +10,7 @@ public partial class Camera
   /// <summary>
   ///   Defines the preset camera that is being used by the camera element.  The preset camera defines a starting point for common preset rotations in space.
   /// </summary>
-  public PresetCameraKind? Preset { get; set; }
+  public DocumentModel.Drawings.PresetCameraKind? Preset { get; set; }
   
   
   /// <summary>
@@ -28,6 +28,6 @@ public partial class Camera
   /// <summary>
   ///   Rotation.
   /// </summary>
-  public Rotation? Rotation { get; set; }
+  public DocumentModel.Drawings.Rotation? Rotation { get; set; }
   
 }

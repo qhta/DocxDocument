@@ -10,7 +10,7 @@ public partial class Underline
   /// <summary>
   ///   Underline Style
   /// </summary>
-  public UnderlineKind? Val { get; set; }
+  public DocumentModel.Wordprocessing.UnderlineKind? Val { get; set; }
   
   
   /// <summary>
@@ -22,7 +22,7 @@ public partial class Underline
   /// <summary>
   ///   Underline Theme Color
   /// </summary>
-  public ThemeColorKind? ThemeColor { get; set; }
+  public DocumentModel.Wordprocessing.ThemeColorKind? ThemeColor { get; set; }
   
   
   /// <summary>

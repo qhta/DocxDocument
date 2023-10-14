@@ -6,12 +6,32 @@ public class Namespace
 
   public string? TargetName { get; set; }
 
+  public string? TargetPrefix
+  {
+    get
+    {
+      if (TargetName != null)
+      {
+        if (_TargetPrefix == null)
+        {
+          if (!ModelConfig.Instance.NamespaceShortcuts.TryGetValue2(TargetName, out _TargetPrefix))
+            _TargetPrefix = string.Empty;
+        }
+        if (_TargetPrefix == string.Empty)
+          return null;
+      }
+      return _TargetPrefix;
+    }
+  }
+
+  private string? _TargetPrefix;
+
   public OwnedCollection<TypeInfo> Types { get; private set; }
 
   [XmlIgnore]
   public Dictionary<string, TypeInfo> TypeNames { get; private set; }
 
-  public IEnumerable<TypeInfo> AcceptedTypes(PPS phase) => Types.Where(x => x.IsAcceptedTo(phase));
+  public IEnumerable<TypeInfo> AcceptedTypesTo(PPS phase) => Types.Where(x => x.IsAcceptedTo(phase));
 
   public Namespace(string name)
   {
@@ -69,10 +89,18 @@ public class Namespace
     }
   }
 
+  public void RemoveType(TypeInfo type)
+  {
+    lock (Types)
+    {
+      Types.Remove(type);
+    }
+  }
+
   public bool TryGetTypesWithSameName(TypeInfo typeInfo, out IEnumerable<TypeInfo> types)
   {
     var name = typeInfo.GetTargetName();
-    types = AcceptedTypes(PPS.Rename).ToArray().Where(item => item != typeInfo && item.GetTargetName() == name).ToList();
+    types = AcceptedTypesTo(PPS.Rename).ToArray().Where(item => item != typeInfo && item.GetTargetName() == name).ToList();
     return types.Count() > 0;
   }
 

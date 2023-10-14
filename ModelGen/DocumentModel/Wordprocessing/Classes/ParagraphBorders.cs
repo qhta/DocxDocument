@@ -10,36 +10,36 @@ public partial class ParagraphBorders
   /// <summary>
   ///   Paragraph Border Above Identical Paragraphs.
   /// </summary>
-  public BorderType? TopBorder { get; set; }
+  public DocumentModel.Wordprocessing.TopBorder? TopBorder { get; set; }
   
   
   /// <summary>
   ///   Left Paragraph Border.
   /// </summary>
-  public BorderType? LeftBorder { get; set; }
+  public DocumentModel.Wordprocessing.LeftBorder? LeftBorder { get; set; }
   
   
   /// <summary>
   ///   Paragraph Border Between Identical Paragraphs.
   /// </summary>
-  public BorderType? BottomBorder { get; set; }
+  public DocumentModel.Wordprocessing.BottomBorder? BottomBorder { get; set; }
   
   
   /// <summary>
   ///   Right Paragraph Border.
   /// </summary>
-  public BorderType? RightBorder { get; set; }
+  public DocumentModel.Wordprocessing.RightBorder? RightBorder { get; set; }
   
   
   /// <summary>
   ///   Paragraph Border Between Identical Paragraphs.
   /// </summary>
-  public BorderType? BetweenBorder { get; set; }
+  public DocumentModel.Wordprocessing.BetweenBorder? BetweenBorder { get; set; }
   
   
   /// <summary>
   ///   Paragraph Border Between Facing Pages.
   /// </summary>
-  public BorderType? BarBorder { get; set; }
+  public DocumentModel.Wordprocessing.BarBorder? BarBorder { get; set; }
   
 }

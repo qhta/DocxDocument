@@ -10,12 +10,12 @@ public partial class NonVisualGraphicFrameDrawingProperties
   /// <summary>
   ///   Graphic Frame Locks.
   /// </summary>
-  public GraphicFrameLocks? GraphicFrameLocks { get; set; }
+  public DocumentModel.Drawings.GraphicFrameLocks? GraphicFrameLocks { get; set; }
   
   
   /// <summary>
   ///   ExtensionList.
   /// </summary>
-  public ExtensionList? ExtensionList { get; set; }
+  public DocumentModel.Drawings.ExtensionList? ExtensionList { get; set; }
   
 }

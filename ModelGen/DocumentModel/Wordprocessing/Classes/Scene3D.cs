@@ -10,12 +10,12 @@ public partial class Scene3D
   /// <summary>
   ///   Camera.
   /// </summary>
-  public Camera? Camera { get; set; }
+  public DocumentModel.Wordprocessing.Camera? Camera { get; set; }
   
   
   /// <summary>
   ///   LightRig.
   /// </summary>
-  public LightRig? LightRig { get; set; }
+  public DocumentModel.Wordprocessing.LightRig? LightRig { get; set; }
   
 }

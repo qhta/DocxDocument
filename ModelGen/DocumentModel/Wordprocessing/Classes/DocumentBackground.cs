@@ -16,7 +16,7 @@ public partial class DocumentBackground
   /// <summary>
   ///   themeColor
   /// </summary>
-  public ThemeColorKind? ThemeColor { get; set; }
+  public DocumentModel.Wordprocessing.ThemeColorKind? ThemeColor { get; set; }
   
   
   /// <summary>
@@ -34,6 +34,6 @@ public partial class DocumentBackground
   /// <summary>
   ///   Background.
   /// </summary>
-  public Background? Background { get; set; }
+  public DocumentModel.Vml.Background? Background { get; set; }
   
 }

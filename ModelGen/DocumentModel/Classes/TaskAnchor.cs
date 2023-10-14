@@ -10,12 +10,12 @@ public partial class TaskAnchor
   /// <summary>
   ///   CommentAnchor.
   /// </summary>
-  public CommentAnchor? CommentAnchor { get; set; }
+  public DM.CommentAnchor? CommentAnchor { get; set; }
   
   
   /// <summary>
   ///   ExtensionList.
   /// </summary>
-  public ExtensionList? ExtensionList { get; set; }
+  public DM.ExtensionList? ExtensionList { get; set; }
   
 }

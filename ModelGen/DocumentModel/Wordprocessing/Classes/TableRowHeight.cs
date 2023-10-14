@@ -16,6 +16,6 @@ public partial class TableRowHeight
   /// <summary>
   ///   Table Row Height Type
   /// </summary>
-  public HeightRuleKind? HeightType { get; set; }
+  public DocumentModel.Wordprocessing.HeightRuleKind? HeightType { get; set; }
   
 }

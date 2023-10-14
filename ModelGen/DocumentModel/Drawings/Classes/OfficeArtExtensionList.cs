@@ -6,6 +6,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class OfficeArtExtensionList
 {
-  public ElementCollection<Extension>? Items { get; set; }
+  public DM.ElementCollection<Extension>? Items { get; set; }
   
 }

@@ -10,7 +10,7 @@ public partial class RunFonts
   /// <summary>
   ///   Font Content Type
   /// </summary>
-  public FontTypeHintKind? Hint { get; set; }
+  public DocumentModel.Wordprocessing.FontTypeHintKind? Hint { get; set; }
   
   
   /// <summary>
@@ -40,24 +40,24 @@ public partial class RunFonts
   /// <summary>
   ///   ASCII Theme Font
   /// </summary>
-  public ThemeFontKind? AsciiTheme { get; set; }
+  public DocumentModel.Wordprocessing.ThemeFontKind? AsciiTheme { get; set; }
   
   
   /// <summary>
   ///   High ANSI Theme Font
   /// </summary>
-  public ThemeFontKind? HighAnsiTheme { get; set; }
+  public DocumentModel.Wordprocessing.ThemeFontKind? HighAnsiTheme { get; set; }
   
   
   /// <summary>
   ///   East Asian Theme Font
   /// </summary>
-  public ThemeFontKind? EastAsiaTheme { get; set; }
+  public DocumentModel.Wordprocessing.ThemeFontKind? EastAsiaTheme { get; set; }
   
   
   /// <summary>
   ///   Complex Script Theme Font
   /// </summary>
-  public ThemeFontKind? ComplexScriptTheme { get; set; }
+  public DocumentModel.Wordprocessing.ThemeFontKind? ComplexScriptTheme { get; set; }
   
 }

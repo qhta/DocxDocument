@@ -10,90 +10,90 @@ public partial class PreviousTableProperties
   /// <summary>
   ///   TableStyle.
   /// </summary>
-  public String? TableStyle { get; set; }
+  public DocumentModel.Wordprocessing.TableStyle? TableStyle { get; set; }
   
   
   /// <summary>
   ///   TablePositionProperties.
   /// </summary>
-  public TablePositionProperties? TablePositionProperties { get; set; }
+  public DocumentModel.Wordprocessing.TablePositionProperties? TablePositionProperties { get; set; }
   
   
   /// <summary>
   ///   TableOverlap.
   /// </summary>
-  public TableOverlapKind? TableOverlap { get; set; }
+  public DocumentModel.Wordprocessing.TableOverlapKind? TableOverlap { get; set; }
   
   
   /// <summary>
   ///   BiDiVisual.
   /// </summary>
-  public Boolean? BiDiVisual { get; set; }
+  public DocumentModel.Wordprocessing.BiDiVisual? BiDiVisual { get; set; }
   
   
   /// <summary>
   ///   TableWidth.
   /// </summary>
-  public TableWidthType? TableWidth { get; set; }
+  public DocumentModel.Wordprocessing.TableWidth? TableWidth { get; set; }
   
   
   /// <summary>
   ///   TableJustification.
   /// </summary>
-  public TableRowAlignmentKind? TableJustification { get; set; }
+  public DocumentModel.Wordprocessing.TableRowAlignmentKind? TableJustification { get; set; }
   
   
   /// <summary>
   ///   TableCellSpacing.
   /// </summary>
-  public TableWidthType? TableCellSpacing { get; set; }
+  public DocumentModel.Wordprocessing.TableCellSpacing? TableCellSpacing { get; set; }
   
   
   /// <summary>
   ///   TableIndentation.
   /// </summary>
-  public TableIndentation? TableIndentation { get; set; }
+  public DocumentModel.Wordprocessing.TableIndentation? TableIndentation { get; set; }
   
   
   /// <summary>
   ///   TableBorders.
   /// </summary>
-  public TableBorders? TableBorders { get; set; }
+  public DocumentModel.Wordprocessing.TableBorders? TableBorders { get; set; }
   
   
   /// <summary>
   ///   Shading.
   /// </summary>
-  public Shading? Shading { get; set; }
+  public DocumentModel.Wordprocessing.Shading? Shading { get; set; }
   
   
   /// <summary>
   ///   TableLayout.
   /// </summary>
-  public TableLayout? TableLayout { get; set; }
+  public DocumentModel.Wordprocessing.TableLayout? TableLayout { get; set; }
   
   
   /// <summary>
   ///   TableCellMarginDefault.
   /// </summary>
-  public TableCellMarginDefault? TableCellMarginDefault { get; set; }
+  public DocumentModel.Wordprocessing.TableCellMarginDefault? TableCellMarginDefault { get; set; }
   
   
   /// <summary>
   ///   TableLook.
   /// </summary>
-  public TableLook? TableLook { get; set; }
+  public DocumentModel.Wordprocessing.TableLook? TableLook { get; set; }
   
   
   /// <summary>
   ///   TableCaption, this property is only available in Office 2010 and later..
   /// </summary>
-  public String? TableCaption { get; set; }
+  public DocumentModel.Wordprocessing.TableCaption? TableCaption { get; set; }
   
   
   /// <summary>
   ///   TableDescription, this property is only available in Office 2010 and later..
   /// </summary>
-  public String? TableDescription { get; set; }
+  public DocumentModel.Wordprocessing.TableDescription? TableDescription { get; set; }
   
 }

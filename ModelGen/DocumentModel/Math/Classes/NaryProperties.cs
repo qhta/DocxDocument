@@ -10,36 +10,36 @@ public partial class NaryProperties
   /// <summary>
   ///   n-ary Operator Character.
   /// </summary>
-  public String? AccentChar { get; set; }
+  public DocumentModel.Math.AccentChar? AccentChar { get; set; }
   
   
   /// <summary>
   ///   n-ary Limit Location.
   /// </summary>
-  public LimitLocationKind? LimitLocation { get; set; }
+  public DocumentModel.Math.LimitLocation? LimitLocation { get; set; }
   
   
   /// <summary>
   ///   n-ary Grow.
   /// </summary>
-  public Boolean? GrowOperators { get; set; }
+  public DocumentModel.Math.GrowOperators? GrowOperators { get; set; }
   
   
   /// <summary>
   ///   Hide Subscript (n-ary).
   /// </summary>
-  public Boolean? HideSubArgument { get; set; }
+  public DocumentModel.Math.HideSubArgument? HideSubArgument { get; set; }
   
   
   /// <summary>
   ///   Hide Superscript (n-ary).
   /// </summary>
-  public Boolean? HideSuperArgument { get; set; }
+  public DocumentModel.Math.HideSuperArgument? HideSuperArgument { get; set; }
   
   
   /// <summary>
   ///   ControlProperties.
   /// </summary>
-  public ControlProperties? ControlProperties { get; set; }
+  public DocumentModel.Math.ControlProperties? ControlProperties { get; set; }
   
 }

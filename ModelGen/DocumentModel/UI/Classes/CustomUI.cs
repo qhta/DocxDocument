@@ -22,12 +22,12 @@ public partial class CustomUI
   /// <summary>
   ///   RepurposedCommands.
   /// </summary>
-  public RepurposedCommands? RepurposedCommands { get; set; }
+  public DMUI.RepurposedCommands? RepurposedCommands { get; set; }
   
   
   /// <summary>
   ///   Ribbon.
   /// </summary>
-  public Ribbon? Ribbon { get; set; }
+  public DMUI.Ribbon? Ribbon { get; set; }
   
 }

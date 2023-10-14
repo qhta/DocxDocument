@@ -42,6 +42,6 @@ public partial class Hyperlink
   /// </summary>
   public String? Id { get; set; }
   
-  public ElementCollection<IModelElement>? Items { get; set; }
+  public DM.ElementCollection<IModelElement>? Items { get; set; }
   
 }

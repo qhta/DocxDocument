@@ -16,18 +16,18 @@ public partial class FontScheme
   /// <summary>
   ///   Major Font.
   /// </summary>
-  public MajorFont? MajorFont { get; set; }
+  public DocumentModel.Drawings.MajorFont? MajorFont { get; set; }
   
   
   /// <summary>
   ///   Minor fonts.
   /// </summary>
-  public MinorFont? MinorFont { get; set; }
+  public DocumentModel.Drawings.MinorFont? MinorFont { get; set; }
   
   
   /// <summary>
   ///   ExtensionList.
   /// </summary>
-  public ExtensionList? ExtensionList { get; set; }
+  public DocumentModel.Drawings.ExtensionList? ExtensionList { get; set; }
   
 }

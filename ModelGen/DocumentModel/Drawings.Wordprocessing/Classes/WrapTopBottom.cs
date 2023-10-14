@@ -22,6 +22,6 @@ public partial class WrapTopBottom
   /// <summary>
   ///   Wrapping Boundaries.
   /// </summary>
-  public EffectExtent? EffectExtent { get; set; }
+  public DocumentModel.Drawings.Wordprocessing.EffectExtent? EffectExtent { get; set; }
   
 }

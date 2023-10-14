@@ -53,7 +53,7 @@ public abstract class ModelMonitor
       {
         var valKey = item.Key.ToString();
         var valName = CommonStrings.ResourceManager.GetString(valKey);
-        if (valName==null)
+        if (valName == null)
           valName = valKey.DeCamelCase();
         WriteLine($"{valName} = {item.Value}");
       }
@@ -210,7 +210,7 @@ public abstract class ModelMonitor
     if (options.TypeDataSelector.HasFlag(TDS.EnumValues))
       ShowEnumValues(typeInfo, options);
     if (options.TypeDataSelector.HasFlag(TDS.Properties))
-      ShowProperties(phase,typeInfo, options);
+      ShowProperties(phase, typeInfo, options);
   }
 
   public virtual void ShowGenericParamsConstraints(TypeInfo typeInfo, DisplayOptions options)
@@ -394,7 +394,7 @@ public abstract class ModelMonitor
           options.MemberStatusSelector.HasFlag(MSS.Valid) && !item.IsInvalid(PhaseNum) ||
           options.MemberStatusSelector.HasFlag(MSS.Invalid) && !item.IsInvalid(PhaseNum) ||
           options.MemberStatusSelector.HasFlag(MSS.Converted) && item.IsConverted ||
-          options.MemberStatusSelector.HasFlag(MSS.ConvertedTo) && item.IsConvertedTo
+          options.MemberStatusSelector.HasFlag(MSS.ConvertedTo) && item.IsConversionTarget
         ).ToList();
       }
       WriteLine("{");
@@ -408,7 +408,7 @@ public abstract class ModelMonitor
         {
           var changedToType = ModelManager.GetConversionTargetOrSelf(property.PropertyType);
           if (changedToType != null)
-            str += $" => {changedToType.GetFullName(true, true, true  )}";
+            str += $" => {changedToType.GetFullName(true, true, true)}";
         }
         WriteLine(str);
       }
@@ -458,7 +458,7 @@ public abstract class ModelMonitor
         WriteLine($"/// <realTypeName>{propInfo.RealTypeName}</realTypeName>");
       if (propInfo.IsConstrained)
         WriteLine($"/// <isConstrained>True</isConstrained>");
-      if (propInfo.Constraints!=null)
+      if (propInfo.Constraints != null)
         foreach (var constraint in propInfo.Constraints)
         {
           if (constraint is StringConstraint stringConstraint)
@@ -483,10 +483,10 @@ public abstract class ModelMonitor
       attribs.Add($" regex=\"{stringConstraint.Regex}\"");
     if (stringConstraint.XsdType != null)
       attribs.Add($" xsdType=\"{stringConstraint.XsdType}\"");
-    WriteLine($"/// <stringConstraint{string.Join("",attribs)}/>");
+    WriteLine($"/// <stringConstraint{string.Join("", attribs)}/>");
   }
 
-    private void ShowNumberConstraint(NumberConstraint number)
+  private void ShowNumberConstraint(NumberConstraint number)
   {
     var attribs = new List<string>();
     if (number.MinInclusive != null)
@@ -497,8 +497,25 @@ public abstract class ModelMonitor
       attribs.Add($" minExclusive=\"{number.MinExclusive}\"");
     if (number.MaxExclusive != null)
       attribs.Add($" minExclusive=\"{number.MaxExclusive}\"");
-    WriteLine($"/// <stringConstraint{string.Join("",attribs)}/>");
+    WriteLine($"/// <stringConstraint{string.Join("", attribs)}/>");
   }
+
+  public virtual void ShowFinalCheck()
+  {
+    foreach (var nspace in TypeManager.AllNamespaces.Where(nspace => nspace.IsTarget))
+    {
+      foreach (var type in nspace.Types)
+      {
+        ShowFinalCheck(type);
+      }
+    }
+  }
+
+  public virtual void ShowFinalCheck(TypeInfo type)
+  {
+     WriteLine($"{type}");
+  }
+
   public virtual void ShowTypeConversions()
   {
     foreach (var type in TypeManager.AllTypes)

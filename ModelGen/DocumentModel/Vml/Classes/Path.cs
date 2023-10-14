@@ -10,7 +10,7 @@ public partial class Path
   /// <summary>
   ///   Unique Identifier
   /// </summary>
-  public HexInt? Id { get; set; }
+  public String? Id { get; set; }
   
   
   /// <summary>
@@ -34,49 +34,49 @@ public partial class Path
   /// <summary>
   ///   Shape Fill Toggle
   /// </summary>
-  public Boolean? AllowFill { get; set; }
+  public DM.TrueFalseValue? AllowFill { get; set; }
   
   
   /// <summary>
   ///   Stroke Toggle
   /// </summary>
-  public Boolean? AllowStroke { get; set; }
+  public DM.TrueFalseValue? AllowStroke { get; set; }
   
   
   /// <summary>
   ///   Shadow Toggle
   /// </summary>
-  public Boolean? AllowShading { get; set; }
+  public DM.TrueFalseValue? AllowShading { get; set; }
   
   
   /// <summary>
   ///   Arrowhead Display Toggle
   /// </summary>
-  public Boolean? ShowArrowhead { get; set; }
+  public DM.TrueFalseValue? ShowArrowhead { get; set; }
   
   
   /// <summary>
   ///   Gradient Shape Toggle
   /// </summary>
-  public Boolean? AllowGradientShape { get; set; }
+  public DM.TrueFalseValue? AllowGradientShape { get; set; }
   
   
   /// <summary>
   ///   Text Path Toggle
   /// </summary>
-  public Boolean? AllowTextPath { get; set; }
+  public DM.TrueFalseValue? AllowTextPath { get; set; }
   
   
   /// <summary>
   ///   Inset Stroke From Path Flag
   /// </summary>
-  public Boolean? AllowInsetPen { get; set; }
+  public DM.TrueFalseValue? AllowInsetPen { get; set; }
   
   
   /// <summary>
   ///   Connection Point Type
   /// </summary>
-  public ConnectKind? ConnectionPointType { get; set; }
+  public DocumentModel.Vml.Office.ConnectKind? ConnectionPointType { get; set; }
   
   
   /// <summary>
@@ -94,6 +94,6 @@ public partial class Path
   /// <summary>
   ///   Extrusion Toggle
   /// </summary>
-  public Boolean? AllowExtrusion { get; set; }
+  public DM.TrueFalseValue? AllowExtrusion { get; set; }
   
 }

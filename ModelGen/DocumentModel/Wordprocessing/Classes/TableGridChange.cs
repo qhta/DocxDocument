@@ -16,6 +16,6 @@ public partial class TableGridChange
   /// <summary>
   ///   Previous Table Grid.
   /// </summary>
-  public PreviousTableGrid? PreviousTableGrid { get; set; }
+  public DocumentModel.Wordprocessing.PreviousTableGrid? PreviousTableGrid { get; set; }
   
 }

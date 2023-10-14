@@ -22,7 +22,7 @@ public partial class EastAsianLayout
   /// <summary>
   ///   Display Brackets Around Two Lines in One
   /// </summary>
-  public CombineBracketKind? CombineBrackets { get; set; }
+  public DocumentModel.Wordprocessing.CombineBracketKind? CombineBrackets { get; set; }
   
   
   /// <summary>

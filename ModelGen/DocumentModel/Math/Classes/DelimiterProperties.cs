@@ -10,36 +10,36 @@ public partial class DelimiterProperties
   /// <summary>
   ///   Delimiter Beginning Character.
   /// </summary>
-  public String? BeginChar { get; set; }
+  public DocumentModel.Math.BeginChar? BeginChar { get; set; }
   
   
   /// <summary>
   ///   Delimiter Separator Character.
   /// </summary>
-  public String? SeparatorChar { get; set; }
+  public DocumentModel.Math.SeparatorChar? SeparatorChar { get; set; }
   
   
   /// <summary>
   ///   Delimiter Ending Character.
   /// </summary>
-  public String? EndChar { get; set; }
+  public DocumentModel.Math.EndChar? EndChar { get; set; }
   
   
   /// <summary>
   ///   Delimiter Grow.
   /// </summary>
-  public Boolean? GrowOperators { get; set; }
+  public DocumentModel.Math.GrowOperators? GrowOperators { get; set; }
   
   
   /// <summary>
   ///   Shape (Delimiters).
   /// </summary>
-  public ShapeDelimiterKind? Shape { get; set; }
+  public DocumentModel.Math.ShapeDelimiterKind? Shape { get; set; }
   
   
   /// <summary>
   ///   ControlProperties.
   /// </summary>
-  public ControlProperties? ControlProperties { get; set; }
+  public DocumentModel.Math.ControlProperties? ControlProperties { get; set; }
   
 }

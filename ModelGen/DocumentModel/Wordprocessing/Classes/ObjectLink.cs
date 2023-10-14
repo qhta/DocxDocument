@@ -10,7 +10,7 @@ public partial class ObjectLink
   /// <summary>
   ///   updateMode
   /// </summary>
-  public ObjectUpdateMode? UpdateMode { get; set; }
+  public DocumentModel.Wordprocessing.ObjectUpdateMode? UpdateMode { get; set; }
   
   
   /// <summary>
@@ -22,7 +22,7 @@ public partial class ObjectLink
   /// <summary>
   ///   Specifies how the object is represented visually in the application.
   /// </summary>
-  public ObjectDrawAspect? drawAspect { get; set; }
+  public DocumentModel.Wordprocessing.ObjectDrawAspect? drawAspect { get; set; }
   
   
   /// <summary>

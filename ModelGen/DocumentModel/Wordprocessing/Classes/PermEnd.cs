@@ -16,6 +16,6 @@ public partial class PermEnd
   /// <summary>
   ///   Annotation Displaced By Custom XML Markup
   /// </summary>
-  public DisplacedByCustomXmlKind? DisplacedByCustomXml { get; set; }
+  public DocumentModel.Wordprocessing.DisplacedByCustomXmlKind? DisplacedByCustomXml { get; set; }
   
 }

@@ -10,12 +10,12 @@ public partial class PathGradientFill
   /// <summary>
   ///   Specifies the shape of the path to follow.
   /// </summary>
-  public PathShadeKind? Path { get; set; }
+  public DocumentModel.Drawings.PathShadeKind? Path { get; set; }
   
   
   /// <summary>
   ///   Fill To Rectangle.
   /// </summary>
-  public RelativeRectangleType? FillToRectangle { get; set; }
+  public DocumentModel.Drawings.FillToRectangle? FillToRectangle { get; set; }
   
 }

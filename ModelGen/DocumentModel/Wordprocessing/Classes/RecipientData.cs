@@ -10,18 +10,18 @@ public partial class RecipientData
   /// <summary>
   ///   Record Is Included in Mail Merge.
   /// </summary>
-  public Boolean? Active { get; set; }
+  public DocumentModel.Wordprocessing.Active? Active { get; set; }
   
   
   /// <summary>
   ///   Index of Column Containing Unique Values for Record.
   /// </summary>
-  public UInt32? ColumnIndex { get; set; }
+  public DocumentModel.Wordprocessing.ColumnIndex? ColumnIndex { get; set; }
   
   
   /// <summary>
   ///   Unique Value for Record.
   /// </summary>
-  public Base64Binary? UniqueTag { get; set; }
+  public DM.Base64Binary? UniqueTag { get; set; }
   
 }

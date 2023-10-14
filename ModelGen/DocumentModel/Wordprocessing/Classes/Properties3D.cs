@@ -22,30 +22,30 @@ public partial class Properties3D
   /// <summary>
   ///   prstMaterial, this property is only available in Office 2010 and later.
   /// </summary>
-  public PresetMaterialTypeKind? PresetMaterialType { get; set; }
+  public DocumentModel.Wordprocessing.PresetMaterialTypeKind? PresetMaterialType { get; set; }
   
   
   /// <summary>
   ///   BevelTop.
   /// </summary>
-  public BevelType? BevelTop { get; set; }
+  public DocumentModel.Wordprocessing.BevelTop? BevelTop { get; set; }
   
   
   /// <summary>
   ///   BevelBottom.
   /// </summary>
-  public BevelType? BevelBottom { get; set; }
+  public DocumentModel.Wordprocessing.BevelBottom? BevelBottom { get; set; }
   
   
   /// <summary>
   ///   ExtrusionColor.
   /// </summary>
-  public ExtrusionColor? ExtrusionColor { get; set; }
+  public DocumentModel.Wordprocessing.ExtrusionColor? ExtrusionColor { get; set; }
   
   
   /// <summary>
   ///   ContourColor.
   /// </summary>
-  public ContourColor? ContourColor { get; set; }
+  public DocumentModel.Wordprocessing.ContourColor? ContourColor { get; set; }
   
 }

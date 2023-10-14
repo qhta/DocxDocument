@@ -40,12 +40,12 @@ public partial class WebExtensionTaskpane
   /// <summary>
   ///   WebExtensionPartReference.
   /// </summary>
-  public WebExtensionPartReference? WebExtensionPartReference { get; set; }
+  public DocumentModel.WebExtensions.UI.WebExtensionPartReference? WebExtensionPartReference { get; set; }
   
   
   /// <summary>
   ///   OfficeArtExtensionList.
   /// </summary>
-  public OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
+  public DocumentModel.WebExtensions.UI.OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
   
 }

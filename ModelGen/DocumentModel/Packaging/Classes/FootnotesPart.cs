@@ -10,13 +10,13 @@ public partial class FootnotesPart
   /// <summary>
   ///   Gets the AlternativeFormatImportParts of the FootnotesPart
   /// </summary>
-  public Collection? AlternativeFormatImportParts { get; set; }
+  public Collection<AlternativeFormatImportPart>? AlternativeFormatImportParts { get; set; }
   
   
   /// <summary>
   ///   Gets the ChartParts of the FootnotesPart
   /// </summary>
-  public Collection? ChartParts { get; set; }
+  public Collection<ChartPart>? ChartParts { get; set; }
   
   public String? ContentType { get; set; }
   
@@ -24,73 +24,73 @@ public partial class FootnotesPart
   /// <summary>
   ///   Gets the DiagramColorsParts of the FootnotesPart
   /// </summary>
-  public Collection? DiagramColorsParts { get; set; }
+  public Collection<DiagramColorsPart>? DiagramColorsParts { get; set; }
   
   
   /// <summary>
   ///   Gets the DiagramDataParts of the FootnotesPart
   /// </summary>
-  public Collection? DiagramDataParts { get; set; }
+  public Collection<DiagramDataPart>? DiagramDataParts { get; set; }
   
   
   /// <summary>
   ///   Gets the DiagramLayoutDefinitionParts of the FootnotesPart
   /// </summary>
-  public Collection? DiagramLayoutDefinitionParts { get; set; }
+  public Collection<DiagramLayoutDefinitionPart>? DiagramLayoutDefinitionParts { get; set; }
   
   
   /// <summary>
   ///   Gets the DiagramPersistLayoutParts of the FootnotesPart
   /// </summary>
-  public Collection? DiagramPersistLayoutParts { get; set; }
+  public Collection<DiagramPersistLayoutPart>? DiagramPersistLayoutParts { get; set; }
   
   
   /// <summary>
   ///   Gets the DiagramStyleParts of the FootnotesPart
   /// </summary>
-  public Collection? DiagramStyleParts { get; set; }
+  public Collection<DiagramStylePart>? DiagramStyleParts { get; set; }
   
   
   /// <summary>
   ///   Gets the EmbeddedControlPersistenceParts of the FootnotesPart
   /// </summary>
-  public Collection? EmbeddedControlPersistenceParts { get; set; }
+  public Collection<EmbeddedControlPersistencePart>? EmbeddedControlPersistenceParts { get; set; }
   
   
   /// <summary>
   ///   Gets the EmbeddedObjectParts of the FootnotesPart
   /// </summary>
-  public Collection? EmbeddedObjectParts { get; set; }
+  public Collection<EmbeddedObjectPart>? EmbeddedObjectParts { get; set; }
   
   
   /// <summary>
   ///   Gets the EmbeddedPackageParts of the FootnotesPart
   /// </summary>
-  public Collection? EmbeddedPackageParts { get; set; }
+  public Collection<EmbeddedPackagePart>? EmbeddedPackageParts { get; set; }
   
   
   /// <summary>
   ///   Gets the ExtendedChartParts of the FootnotesPart
   /// </summary>
-  public Collection? ExtendedChartParts { get; set; }
+  public Collection<ExtendedChartPart>? ExtendedChartParts { get; set; }
   
   
   /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>
-  public Footnotes? Footnotes { get; set; }
+  public DocumentModel.Wordprocessing.Footnotes? Footnotes { get; set; }
   
   
   /// <summary>
   ///   Gets the ImageParts of the FootnotesPart
   /// </summary>
-  public Collection? ImageParts { get; set; }
+  public Collection<ImagePart>? ImageParts { get; set; }
   
   
   /// <summary>
   ///   Gets the Model3DReferenceRelationshipParts of the FootnotesPart
   /// </summary>
-  public Collection? Model3DReferenceRelationshipParts { get; set; }
+  public Collection<Model3DReferenceRelationshipPart>? Model3DReferenceRelationshipParts { get; set; }
   
   public String? RelationshipType { get; set; }
   

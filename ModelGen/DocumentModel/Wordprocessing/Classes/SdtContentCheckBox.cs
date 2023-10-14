@@ -10,18 +10,18 @@ public partial class SdtContentCheckBox
   /// <summary>
   ///   Checked.
   /// </summary>
-  public Boolean? Checked { get; set; }
+  public DocumentModel.Wordprocessing.Checked? Checked { get; set; }
   
   
   /// <summary>
   ///   CheckedState.
   /// </summary>
-  public CheckBoxSymbolType? CheckedState { get; set; }
+  public DocumentModel.Wordprocessing.CheckedState? CheckedState { get; set; }
   
   
   /// <summary>
   ///   UncheckedState.
   /// </summary>
-  public CheckBoxSymbolType? UncheckedState { get; set; }
+  public DocumentModel.Wordprocessing.UncheckedState? UncheckedState { get; set; }
   
 }

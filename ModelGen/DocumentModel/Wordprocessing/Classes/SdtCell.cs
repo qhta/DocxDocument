@@ -10,12 +10,12 @@ public partial class SdtCell
   /// <summary>
   ///   Cell-Level Structured Document Tag Content.
   /// </summary>
-  public SdtContentCell? SdtContentCell { get; set; }
+  public DocumentModel.Wordprocessing.SdtContentCell? SdtContentCell { get; set; }
   
-  public SdtProperties? SdtProperties { get; set; }
+  public DocumentModel.Wordprocessing.SdtProperties? SdtProperties { get; set; }
   
-  public SdtEndCharProperties? SdtEndCharProperties { get; set; }
+  public DocumentModel.Wordprocessing.SdtEndCharProperties? SdtEndCharProperties { get; set; }
   
-  public ElementCollection<IModelElement>? Items { get; set; }
+  public DM.ElementCollection<IModelElement>? Items { get; set; }
   
 }

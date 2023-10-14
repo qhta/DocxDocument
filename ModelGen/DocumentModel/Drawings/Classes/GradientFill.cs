@@ -10,7 +10,7 @@ public partial class GradientFill
   /// <summary>
   ///   Specifies the direction(s) in which to flip the gradient while tiling.
   /// </summary>
-  public TileFlipKind? Flip { get; set; }
+  public DocumentModel.Drawings.TileFlipKind? Flip { get; set; }
   
   
   /// <summary>
@@ -22,12 +22,12 @@ public partial class GradientFill
   /// <summary>
   ///   Gradient Stop List.
   /// </summary>
-  public GradientStopList? GradientStopList { get; set; }
+  public DocumentModel.Drawings.GradientStopList? GradientStopList { get; set; }
   
-  public LinearGradientFill? LinearGradientFill { get; set; }
+  public DocumentModel.Drawings.LinearGradientFill? LinearGradientFill { get; set; }
   
-  public PathGradientFill? PathGradientFill { get; set; }
+  public DocumentModel.Drawings.PathGradientFill? PathGradientFill { get; set; }
   
-  public RelativeRectangleType? TileRectangle { get; set; }
+  public DocumentModel.Drawings.TileRectangle? TileRectangle { get; set; }
   
 }

@@ -1,0 +1,9 @@
+namespace DocumentModel.Wordprocessing;
+
+
+/// <summary>
+///   This element specifies that this structured document tag is being used to encapsulate a built-in document part (i.e. this element appears as a child element of the docPartObj element).
+/// </summary>
+public partial class DocPartUnique
+{
+}

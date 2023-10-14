@@ -22,16 +22,16 @@ public partial class EmbeddedObject
   /// <summary>
   ///   anchorId, this property is only available in Office 2010 and later.
   /// </summary>
-  public HexInt? AnchorId { get; set; }
+  public DM.HexBinary? AnchorId { get; set; }
   
-  public Drawing? Drawing { get; set; }
+  public DocumentModel.Wordprocessing.Drawing? Drawing { get; set; }
   
-  public Control? Control { get; set; }
+  public DocumentModel.Wordprocessing.Control? Control { get; set; }
   
-  public ObjectEmbed? ObjectEmbed { get; set; }
+  public DocumentModel.Wordprocessing.ObjectEmbed? ObjectEmbed { get; set; }
   
-  public ObjectLink? ObjectLink { get; set; }
+  public DocumentModel.Wordprocessing.ObjectLink? ObjectLink { get; set; }
   
-  public ElementCollection<IModelElement>? Items { get; set; }
+  public DM.ElementCollection<IModelElement>? Items { get; set; }
   
 }

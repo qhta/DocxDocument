@@ -19,11 +19,9 @@ public class EnumInfo : MemberElement
       CommentDocsParser.ParseDocumentation(this, xmlDocsElement);
     if (fieldInfo.CustomAttributes.Any())
     {
-      if (CustomAttributes == null)
-        CustomAttributes = new CustomAttributes(this);
       foreach (var item in fieldInfo.CustomAttributes)
       {
-        CustomAttributes.Add(new CustomAttribInfo(item));
+        Add(new CustomAttribInfo(item));
       }
     }
   }

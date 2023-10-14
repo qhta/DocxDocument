@@ -6,6 +6,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class GradientStopList
 {
-  public ElementCollection<GradientStop>? Items { get; set; }
+  public DM.ElementCollection<GradientStop>? Items { get; set; }
   
 }

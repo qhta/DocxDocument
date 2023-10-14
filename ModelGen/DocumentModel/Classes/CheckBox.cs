@@ -46,13 +46,13 @@ public partial class CheckBox
   /// <summary>
   ///   id, this property is only available in Office 2010 and later.
   /// </summary>
-  public HexInt? Id { get; set; }
+  public String? Id { get; set; }
   
   
   /// <summary>
   ///   idQ, this property is only available in Office 2010 and later.
   /// </summary>
-  public HexInt? QualifiedId { get; set; }
+  public String? QualifiedId { get; set; }
   
   
   /// <summary>
@@ -118,13 +118,13 @@ public partial class CheckBox
   /// <summary>
   ///   insertAfterQ, this property is only available in Office 2010 and later.
   /// </summary>
-  public HexInt? InsertAfterQulifiedId { get; set; }
+  public String? InsertAfterQulifiedId { get; set; }
   
   
   /// <summary>
   ///   insertBeforeQ, this property is only available in Office 2010 and later.
   /// </summary>
-  public HexInt? InsertBeforeQulifiedId { get; set; }
+  public String? InsertBeforeQulifiedId { get; set; }
   
   
   /// <summary>
