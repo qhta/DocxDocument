@@ -10,13 +10,13 @@ public partial class FootnoteDocumentWideProperties
   /// <summary>
   ///   Footnote Placement.
   /// </summary>
-  public FootnotePositionKind? FootnotePosition { get; set; }
+  public DocumentModel.Wordprocessing.FootnotePositionKind? FootnotePosition { get; set; }
   
   
   /// <summary>
   ///   Footnote Numbering Format.
   /// </summary>
-  public NumberingFormat? NumberingFormat { get; set; }
+  public DocumentModel.Wordprocessing.NumberingFormat? NumberingFormat { get; set; }
   
   
   /// <summary>
@@ -28,8 +28,8 @@ public partial class FootnoteDocumentWideProperties
   /// <summary>
   ///   Footnote and Endnote Numbering Restart Location.
   /// </summary>
-  public RestartNumberKind? NumberingRestart { get; set; }
+  public DocumentModel.Wordprocessing.RestartNumberKind? NumberingRestart { get; set; }
   
-  public ElementCollection<FootnoteEndnoteSeparatorReferenceType>? Items { get; set; }
+  public DM.ElementCollection<FootnoteSpecialReference>? Items { get; set; }
   
 }

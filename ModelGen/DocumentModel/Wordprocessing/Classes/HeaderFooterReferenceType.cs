@@ -10,7 +10,7 @@ public partial class HeaderFooterReferenceType
   /// <summary>
   ///   type
   /// </summary>
-  public HeaderFooterKind? Type { get; set; }
+  public DocumentModel.Wordprocessing.HeaderFooterKind? Type { get; set; }
   
   
   /// <summary>

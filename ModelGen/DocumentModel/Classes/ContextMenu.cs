@@ -12,6 +12,6 @@ public partial class ContextMenu
   /// </summary>
   public String? IdMso { get; set; }
   
-  public ElementCollection<IModelElement>? Items { get; set; }
+  public DM.ElementCollection<IModelElement>? Items { get; set; }
   
 }

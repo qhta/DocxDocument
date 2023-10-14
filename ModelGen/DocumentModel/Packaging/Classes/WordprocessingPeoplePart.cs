@@ -12,7 +12,7 @@ public partial class WordprocessingPeoplePart
   /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>
-  public People? People { get; set; }
+  public DocumentModel.Wordprocessing.People? People { get; set; }
   
   public String? RelationshipType { get; set; }
   

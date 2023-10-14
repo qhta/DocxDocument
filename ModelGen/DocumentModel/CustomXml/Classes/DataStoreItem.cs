@@ -1,0 +1,21 @@
+namespace DocumentModel.CustomXml;
+
+
+/// <summary>
+///   Custom XML Data Properties.
+/// </summary>
+public partial class DataStoreItem
+{
+  
+  /// <summary>
+  ///   Custom XML Data ID
+  /// </summary>
+  public String? ItemId { get; set; }
+  
+  
+  /// <summary>
+  ///   Set of Associated XML Schemas.
+  /// </summary>
+  public DMCX.SchemaReferences? SchemaReferences { get; set; }
+  
+}

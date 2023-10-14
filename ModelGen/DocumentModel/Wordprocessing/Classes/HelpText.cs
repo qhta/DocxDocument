@@ -10,7 +10,7 @@ public partial class HelpText
   /// <summary>
   ///   Help Text Type
   /// </summary>
-  public InfoTextKind? Type { get; set; }
+  public DocumentModel.Wordprocessing.InfoTextKind? Type { get; set; }
   
   
   /// <summary>

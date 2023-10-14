@@ -327,36 +327,38 @@ public class ModelConfig
   };
 
 
-  public static string NamespaceShortcut(string ns)
+  public static string? NamespaceShortcut(string ns)
   {
     if (ns.StartsWith("System"))
-      return string.Empty;
-    if (ns.StartsWith("DocumentFormat"))
-    {
-      if (ModelConfig.Instance.NamespaceShortcuts.TryGetValue2(ns, out var shortcut))
+      return null;
+    if (ModelConfig.Instance.NamespaceShortcuts.TryGetValue2(ns, out var shortcut))
         return shortcut;
-    }
-    else
-    if (ns.StartsWith("DocumentModel.OpenXml"))
-    {
-      ns = ns.ReplaceStart("DocumentModel", "DocumentFormat");
-      if (ModelConfig.Instance.NamespaceShortcuts.TryGetValue2(ns, out var shortcut))
-      {
-        shortcut.ReplaceStart("DX", "DXM");
-        return shortcut;
-      }
-    }
-    else
-    if (ns.StartsWith("DocumentModel"))
-    {
-      ns = ns.ReplaceStart("DocumentModel", "DocumentFormat.OpenXml");
-      if (ModelConfig.Instance.NamespaceShortcuts.TryGetValue2(ns, out var shortcut))
-      {
-        shortcut.ReplaceStart("DX", "DM");
-        return shortcut;
-      }
-    }
-    return ns;
+    //if (ns.StartsWith("DocumentFormat"))
+    //{
+    //  if (ModelConfig.Instance.NamespaceShortcuts.TryGetValue2(ns, out var shortcut))
+    //    return shortcut;
+    //}
+    //else
+    //if (ns.StartsWith("DocumentModel.OpenXml"))
+    //{
+    //  ns = ns.ReplaceStart("DocumentModel", "DocumentFormat");
+    //  if (ModelConfig.Instance.NamespaceShortcuts.TryGetValue2(ns, out var shortcut))
+    //  {
+    //    shortcut.ReplaceStart("DX", "DXM");
+    //    return shortcut;
+    //  }
+    //}
+    //else
+    //if (ns.StartsWith("DocumentModel"))
+    //{
+    //  ns = ns.ReplaceStart("DocumentModel", "DocumentFormat.OpenXml");
+    //  if (ModelConfig.Instance.NamespaceShortcuts.TryGetValue2(ns, out var shortcut))
+    //  {
+    //    shortcut.ReplaceStart("DX", "DM");
+    //    return shortcut;
+    //  }
+    //}
+    return null;
   }
   #endregion
 

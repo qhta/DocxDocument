@@ -10,6 +10,6 @@ public partial class AltChunkProperties
   /// <summary>
   ///   Keep Source Formatting on Import.
   /// </summary>
-  public Boolean? MatchSource { get; set; }
+  public DocumentModel.Wordprocessing.MatchSource? MatchSource { get; set; }
   
 }

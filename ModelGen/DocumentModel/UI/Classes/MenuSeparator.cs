@@ -10,7 +10,7 @@ public partial class MenuSeparator
   /// <summary>
   ///   id
   /// </summary>
-  public HexInt? Id { get; set; }
+  public String? Id { get; set; }
   
   
   /// <summary>

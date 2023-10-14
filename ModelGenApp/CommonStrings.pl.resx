@@ -612,4 +612,7 @@ Użyj znaku '*' aby dopasować wzorzec do wielu znaków.</value>
   <data name="SaveConfigurationAnyway" xml:space="preserve">
     <value>Czy na pewno zapisać konfigurację?</value>
   </data>
+  <data name="FinalCheck" xml:space="preserve">
+    <value>Końcowe sprawdzenie</value>
+  </data>
 </root>

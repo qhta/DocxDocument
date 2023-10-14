@@ -6,6 +6,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class LinePropertiesExtensionList
 {
-  public ElementCollection<LinePropertiesExtension>? Items { get; set; }
+  public DM.ElementCollection<LinePropertiesExtension>? Items { get; set; }
   
 }

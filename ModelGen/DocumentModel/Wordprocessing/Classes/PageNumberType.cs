@@ -10,7 +10,7 @@ public partial class PageNumberType
   /// <summary>
   ///   Page Number Format
   /// </summary>
-  public NumberFormatKind? Format { get; set; }
+  public DocumentModel.Wordprocessing.NumberFormatKind? Format { get; set; }
   
   
   /// <summary>
@@ -28,6 +28,6 @@ public partial class PageNumberType
   /// <summary>
   ///   Chapter Separator Character
   /// </summary>
-  public ChapterSeparatorKind? ChapterSeparator { get; set; }
+  public DocumentModel.Wordprocessing.ChapterSeparatorKind? ChapterSeparator { get; set; }
   
 }

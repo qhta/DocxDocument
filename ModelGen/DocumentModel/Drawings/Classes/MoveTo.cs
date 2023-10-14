@@ -10,6 +10,6 @@ public partial class MoveTo
   /// <summary>
   ///   Move end point.
   /// </summary>
-  public AdjustPoint2DType? Point { get; set; }
+  public DocumentModel.Drawings.Point? Point { get; set; }
   
 }

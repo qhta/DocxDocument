@@ -34,7 +34,7 @@ public partial class TextParagraphPropertiesType
   /// <summary>
   ///   Alignment
   /// </summary>
-  public TextAlignmentTypeKind? Alignment { get; set; }
+  public DocumentModel.Drawings.TextAlignmentTypeKind? Alignment { get; set; }
   
   
   /// <summary>
@@ -58,7 +58,7 @@ public partial class TextParagraphPropertiesType
   /// <summary>
   ///   Font Alignment
   /// </summary>
-  public TextFontAlignmentKind? FontAlignment { get; set; }
+  public DocumentModel.Drawings.TextFontAlignmentKind? FontAlignment { get; set; }
   
   
   /// <summary>
@@ -76,18 +76,18 @@ public partial class TextParagraphPropertiesType
   /// <summary>
   ///   Line Spacing.
   /// </summary>
-  public LineSpacing? LineSpacing { get; set; }
+  public DocumentModel.Drawings.LineSpacing? LineSpacing { get; set; }
   
   
   /// <summary>
   ///   Space Before.
   /// </summary>
-  public SpaceBefore? SpaceBefore { get; set; }
+  public DocumentModel.Drawings.SpaceBefore? SpaceBefore { get; set; }
   
   
   /// <summary>
   ///   Space After.
   /// </summary>
-  public SpaceAfter? SpaceAfter { get; set; }
+  public DocumentModel.Drawings.SpaceAfter? SpaceAfter { get; set; }
   
 }

@@ -28,12 +28,12 @@ public partial class Transform2D
   /// <summary>
   ///   Offset.
   /// </summary>
-  public Point2DType? Offset { get; set; }
+  public DocumentModel.Drawings.Offset? Offset { get; set; }
   
   
   /// <summary>
   ///   Extents.
   /// </summary>
-  public PositiveSize2DType? Extents { get; set; }
+  public DocumentModel.Drawings.Extents? Extents { get; set; }
   
 }

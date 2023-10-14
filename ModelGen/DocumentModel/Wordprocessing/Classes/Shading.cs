@@ -10,7 +10,7 @@ public partial class Shading
   /// <summary>
   ///   Shading Pattern
   /// </summary>
-  public ShadingPatternKind? Val { get; set; }
+  public DocumentModel.Wordprocessing.ShadingPatternKind? Val { get; set; }
   
   
   /// <summary>
@@ -22,7 +22,7 @@ public partial class Shading
   /// <summary>
   ///   Shading Pattern Theme Color
   /// </summary>
-  public ThemeColorKind? ThemeColor { get; set; }
+  public DocumentModel.Wordprocessing.ThemeColorKind? ThemeColor { get; set; }
   
   
   /// <summary>
@@ -46,7 +46,7 @@ public partial class Shading
   /// <summary>
   ///   Shading Background Theme Color
   /// </summary>
-  public ThemeColorKind? ThemeFill { get; set; }
+  public DocumentModel.Wordprocessing.ThemeColorKind? ThemeFill { get; set; }
   
   
   /// <summary>

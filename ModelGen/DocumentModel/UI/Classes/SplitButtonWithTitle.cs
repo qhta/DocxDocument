@@ -22,7 +22,7 @@ public partial class SplitButtonWithTitle
   /// <summary>
   ///   id
   /// </summary>
-  public HexInt? Id { get; set; }
+  public String? Id { get; set; }
   
   
   /// <summary>
@@ -102,10 +102,10 @@ public partial class SplitButtonWithTitle
   /// </summary>
   public String? GetShowLabel { get; set; }
   
-  public VisibleButton? VisibleButton { get; set; }
+  public DMUI.VisibleButton? VisibleButton { get; set; }
   
-  public VisibleToggleButton? VisibleToggleButton { get; set; }
+  public DMUI.VisibleToggleButton? VisibleToggleButton { get; set; }
   
-  public MenuWithTitle? MenuWithTitle { get; set; }
+  public DMUI.MenuWithTitle? MenuWithTitle { get; set; }
   
 }

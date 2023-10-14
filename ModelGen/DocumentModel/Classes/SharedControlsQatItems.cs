@@ -6,6 +6,6 @@ namespace DocumentModel;
 /// </summary>
 public partial class SharedControlsQatItems
 {
-  public ElementCollection<IModelElement>? Items { get; set; }
+  public DM.ElementCollection<IModelElement>? Items { get; set; }
   
 }

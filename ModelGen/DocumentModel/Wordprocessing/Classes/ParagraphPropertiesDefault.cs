@@ -10,6 +10,6 @@ public partial class ParagraphPropertiesDefault
   /// <summary>
   ///   Paragraph Properties.
   /// </summary>
-  public ParagraphPropertiesBaseStyle? ParagraphPropertiesBaseStyle { get; set; }
+  public DocumentModel.Wordprocessing.ParagraphPropertiesBaseStyle? ParagraphPropertiesBaseStyle { get; set; }
   
 }

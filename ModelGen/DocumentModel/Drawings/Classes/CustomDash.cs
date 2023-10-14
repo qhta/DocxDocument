@@ -6,6 +6,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class CustomDash
 {
-  public ElementCollection<DashStop>? Items { get; set; }
+  public DM.ElementCollection<DashStop>? Items { get; set; }
   
 }

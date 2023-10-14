@@ -10,7 +10,7 @@ public partial class WrapThrough
   /// <summary>
   ///   Text Wrapping Location
   /// </summary>
-  public WrapTextKind? WrapText { get; set; }
+  public DocumentModel.Drawings.Wordprocessing.WrapTextKind? WrapText { get; set; }
   
   
   /// <summary>
@@ -28,6 +28,6 @@ public partial class WrapThrough
   /// <summary>
   ///   Wrapping Polygon.
   /// </summary>
-  public WrapPolygon? WrapPolygon { get; set; }
+  public DocumentModel.Drawings.Wordprocessing.WrapPolygon? WrapPolygon { get; set; }
   
 }

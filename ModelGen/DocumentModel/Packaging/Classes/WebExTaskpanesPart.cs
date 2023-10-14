@@ -14,12 +14,12 @@ public partial class WebExTaskpanesPart
   /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>
-  public Taskpanes? Taskpanes { get; set; }
+  public DocumentModel.WebExtensions.UI.Taskpanes? Taskpanes { get; set; }
   
   
   /// <summary>
   ///   Gets the WebExtensionParts of the WebExTaskpanesPart
   /// </summary>
-  public Collection? WebExtensionParts { get; set; }
+  public Collection<WebExtensionPart>? WebExtensionParts { get; set; }
   
 }

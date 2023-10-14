@@ -6,8 +6,8 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class CommentsExtensible
 {
-  public ExtensionList? ExtensionList { get; set; }
+  public DocumentModel.Wordprocessing.ExtensionList? ExtensionList { get; set; }
   
-  public ElementCollection<CommentExtensible>? Items { get; set; }
+  public DM.ElementCollection<CommentExtensible>? Items { get; set; }
   
 }

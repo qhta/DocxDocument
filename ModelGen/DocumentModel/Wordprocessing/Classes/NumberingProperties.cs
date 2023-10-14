@@ -16,18 +16,18 @@ public partial class NumberingProperties
   /// <summary>
   ///   Numbering Definition Instance Reference.
   /// </summary>
-  public Int32? NumberingId { get; set; }
+  public DocumentModel.Wordprocessing.NumberingId? NumberingId { get; set; }
   
   
   /// <summary>
   ///   Previous Paragraph Numbering Properties.
   /// </summary>
-  public NumberingChange? NumberingChange { get; set; }
+  public DocumentModel.Wordprocessing.NumberingChange? NumberingChange { get; set; }
   
   
   /// <summary>
   ///   Inserted Numbering Properties.
   /// </summary>
-  public TrackChangeType? Inserted { get; set; }
+  public DocumentModel.Wordprocessing.Inserted? Inserted { get; set; }
   
 }

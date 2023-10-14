@@ -10,12 +10,12 @@ public partial class Drawing
   /// <summary>
   ///   Drawing Element Anchor.
   /// </summary>
-  public Anchor? Anchor { get; set; }
+  public DocumentModel.Drawings.Wordprocessing.Anchor? Anchor { get; set; }
   
   
   /// <summary>
   ///   Inline Drawing Object.
   /// </summary>
-  public Inline? Inline { get; set; }
+  public DocumentModel.Drawings.Wordprocessing.Inline? Inline { get; set; }
   
 }

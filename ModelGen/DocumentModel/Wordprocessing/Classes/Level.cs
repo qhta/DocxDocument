@@ -16,7 +16,7 @@ public partial class Level
   /// <summary>
   ///   Template Code
   /// </summary>
-  public HexBinary? TemplateCode { get; set; }
+  public DM.HexBinary? TemplateCode { get; set; }
   
   
   /// <summary>
@@ -28,72 +28,72 @@ public partial class Level
   /// <summary>
   ///   Starting Value.
   /// </summary>
-  public Int32? StartNumberingValue { get; set; }
+  public DocumentModel.Wordprocessing.StartNumberingValue? StartNumberingValue { get; set; }
   
   
   /// <summary>
   ///   Numbering Format.
   /// </summary>
-  public NumberingFormat? NumberingFormat { get; set; }
+  public DocumentModel.Wordprocessing.NumberingFormat? NumberingFormat { get; set; }
   
   
   /// <summary>
   ///   Restart Numbering Level Symbol.
   /// </summary>
-  public Int32? LevelRestart { get; set; }
+  public DocumentModel.Wordprocessing.LevelRestart? LevelRestart { get; set; }
   
   
   /// <summary>
   ///   Paragraph Style's Associated Numbering Level.
   /// </summary>
-  public String? ParagraphStyleIdInLevel { get; set; }
+  public DocumentModel.Wordprocessing.ParagraphStyleIdInLevel? ParagraphStyleIdInLevel { get; set; }
   
   
   /// <summary>
   ///   Display All Levels Using Arabic Numerals.
   /// </summary>
-  public Boolean? IsLegalNumberingStyle { get; set; }
+  public DocumentModel.Wordprocessing.IsLegalNumberingStyle? IsLegalNumberingStyle { get; set; }
   
   
   /// <summary>
   ///   Content Between Numbering Symbol and Paragraph Text.
   /// </summary>
-  public LevelSuffixKind? LevelSuffix { get; set; }
+  public DocumentModel.Wordprocessing.LevelSuffixKind? LevelSuffix { get; set; }
   
   
   /// <summary>
   ///   Numbering Level Text.
   /// </summary>
-  public LevelText? LevelText { get; set; }
+  public DocumentModel.Wordprocessing.LevelText? LevelText { get; set; }
   
   
   /// <summary>
   ///   Picture Numbering Symbol Definition Reference.
   /// </summary>
-  public Int32? LevelPictureBulletId { get; set; }
+  public DocumentModel.Wordprocessing.LevelPictureBulletId? LevelPictureBulletId { get; set; }
   
   
   /// <summary>
   ///   Legacy Numbering Level Properties.
   /// </summary>
-  public LegacyNumbering? LegacyNumbering { get; set; }
+  public DocumentModel.Wordprocessing.LegacyNumbering? LegacyNumbering { get; set; }
   
   
   /// <summary>
   ///   Justification.
   /// </summary>
-  public LevelJustificationKind? LevelJustification { get; set; }
+  public DocumentModel.Wordprocessing.LevelJustificationKind? LevelJustification { get; set; }
   
   
   /// <summary>
   ///   Numbering Level Associated Paragraph Properties.
   /// </summary>
-  public PreviousParagraphProperties? PreviousParagraphProperties { get; set; }
+  public DocumentModel.Wordprocessing.PreviousParagraphProperties? PreviousParagraphProperties { get; set; }
   
   
   /// <summary>
   ///   Numbering Symbol Run Properties.
   /// </summary>
-  public NumberingSymbolRunProperties? NumberingSymbolRunProperties { get; set; }
+  public DocumentModel.Wordprocessing.NumberingSymbolRunProperties? NumberingSymbolRunProperties { get; set; }
   
 }

@@ -10,12 +10,12 @@ public partial class QuickAccessToolbar
   /// <summary>
   ///   SharedControlsQatItems.
   /// </summary>
-  public SharedControlsQatItems? SharedControlsQatItems { get; set; }
+  public DM.SharedControlsQatItems? SharedControlsQatItems { get; set; }
   
   
   /// <summary>
   ///   DocumentControlsQatItems.
   /// </summary>
-  public DocumentControlsQatItems? DocumentControlsQatItems { get; set; }
+  public DM.DocumentControlsQatItems? DocumentControlsQatItems { get; set; }
   
 }

@@ -10,44 +10,44 @@ public partial class AbstractNum
   /// <summary>
   ///   Abstract Numbering Definition ID
   /// </summary>
-  public HexInt? AbstractNumberId { get; set; }
+  public Int32? AbstractNumberId { get; set; }
   
   
   /// <summary>
   ///   Abstract Numbering Definition Identifier.
   /// </summary>
-  public UInt32? Nsid { get; set; }
+  public DocumentModel.Wordprocessing.Nsid? Nsid { get; set; }
   
   
   /// <summary>
   ///   Abstract Numbering Definition Type.
   /// </summary>
-  public MultiLevelKind? MultiLevelType { get; set; }
+  public DocumentModel.Wordprocessing.MultiLevelKind? MultiLevelType { get; set; }
   
   
   /// <summary>
   ///   Numbering Template Code.
   /// </summary>
-  public UInt32? TemplateCode { get; set; }
+  public DocumentModel.Wordprocessing.TemplateCode? TemplateCode { get; set; }
   
   
   /// <summary>
   ///   Abstract Numbering Definition Name.
   /// </summary>
-  public String? AbstractNumDefinitionName { get; set; }
+  public DocumentModel.Wordprocessing.AbstractNumDefinitionName? AbstractNumDefinitionName { get; set; }
   
   
   /// <summary>
   ///   Numbering Style Definition.
   /// </summary>
-  public String? StyleLink { get; set; }
+  public DocumentModel.Wordprocessing.StyleLink? StyleLink { get; set; }
   
   
   /// <summary>
   ///   Numbering Style Reference.
   /// </summary>
-  public String? NumberingStyleLink { get; set; }
+  public DocumentModel.Wordprocessing.NumberingStyleLink? NumberingStyleLink { get; set; }
   
-  public ElementCollection<Level>? Items { get; set; }
+  public DM.ElementCollection<Level>? Items { get; set; }
   
 }

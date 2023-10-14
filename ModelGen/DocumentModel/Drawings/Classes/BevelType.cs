@@ -22,6 +22,6 @@ public partial class BevelType
   /// <summary>
   ///   Preset Bevel
   /// </summary>
-  public BevelPresetKind? Preset { get; set; }
+  public DocumentModel.Drawings.BevelPresetKind? Preset { get; set; }
   
 }

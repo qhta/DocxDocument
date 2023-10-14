@@ -10,7 +10,7 @@ public partial class Zoom
   /// <summary>
   ///   Zoom Type
   /// </summary>
-  public PresetZoomKind? Val { get; set; }
+  public DocumentModel.Wordprocessing.PresetZoomKind? Val { get; set; }
   
   
   /// <summary>

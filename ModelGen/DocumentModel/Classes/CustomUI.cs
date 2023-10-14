@@ -22,24 +22,24 @@ public partial class CustomUI
   /// <summary>
   ///   Commands.
   /// </summary>
-  public Commands? Commands { get; set; }
+  public DM.Commands? Commands { get; set; }
   
   
   /// <summary>
   ///   Ribbon.
   /// </summary>
-  public Ribbon? Ribbon { get; set; }
+  public DM.Ribbon? Ribbon { get; set; }
   
   
   /// <summary>
   ///   Backstage.
   /// </summary>
-  public Backstage? Backstage { get; set; }
+  public DM.Backstage? Backstage { get; set; }
   
   
   /// <summary>
   ///   ContextMenus.
   /// </summary>
-  public ContextMenus? ContextMenus { get; set; }
+  public DM.ContextMenus? ContextMenus { get; set; }
   
 }

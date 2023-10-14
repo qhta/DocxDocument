@@ -10,7 +10,7 @@ public partial class NumberingFormat
   /// <summary>
   ///   Numbering Format Type
   /// </summary>
-  public NumberFormatKind? Val { get; set; }
+  public DocumentModel.Wordprocessing.NumberFormatKind? Val { get; set; }
   
   
   /// <summary>

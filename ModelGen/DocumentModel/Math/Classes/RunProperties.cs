@@ -10,16 +10,16 @@ public partial class RunProperties
   /// <summary>
   ///   Literal.
   /// </summary>
-  public Boolean? Literal { get; set; }
+  public DocumentModel.Math.Literal? Literal { get; set; }
   
-  public Boolean? NormalText { get; set; }
+  public DocumentModel.Math.NormalText? NormalText { get; set; }
   
-  public ScriptKind? Script { get; set; }
+  public DocumentModel.Math.ScriptKind? Script { get; set; }
   
-  public StyleKind? Style { get; set; }
+  public DocumentModel.Math.StyleKind? Style { get; set; }
   
-  public Break? Break { get; set; }
+  public DocumentModel.Math.Break? Break { get; set; }
   
-  public Boolean? Alignment { get; set; }
+  public DocumentModel.Math.Alignment? Alignment { get; set; }
   
 }

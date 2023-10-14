@@ -6,6 +6,6 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class MoveToRun
 {
-  public ElementCollection<IModelElement>? Items { get; set; }
+  public DM.ElementCollection<IModelElement>? Items { get; set; }
   
 }

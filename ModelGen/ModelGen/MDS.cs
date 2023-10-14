@@ -12,7 +12,8 @@ public enum MDS
   ScannedTypes          = 0x0004,
   TypeRename            = 0x0008,
   TypeConversions       = 0x0010,
-  CodeGen               = 0x0020,
-  ValidatedTypes        = 0x0040,
+  FinalCheck            = 0x0020,
+  CodeGen               = 0x0040,
+  //ValidatedTypes        = 0x0040,
   All                   = 0x007F
 }

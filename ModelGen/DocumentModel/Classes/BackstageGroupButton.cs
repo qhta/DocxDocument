@@ -10,13 +10,13 @@ public partial class BackstageGroupButton
   /// <summary>
   ///   expand, this property is only available in Office 2010 and later.
   /// </summary>
-  public ExpandKind? Expand { get; set; }
+  public DM.ExpandKind? Expand { get; set; }
   
   
   /// <summary>
   ///   style, this property is only available in Office 2010 and later.
   /// </summary>
-  public Style2Kind? Style { get; set; }
+  public DM.Style2Kind? Style { get; set; }
   
   
   /// <summary>
@@ -46,13 +46,13 @@ public partial class BackstageGroupButton
   /// <summary>
   ///   id, this property is only available in Office 2010 and later.
   /// </summary>
-  public HexInt? Id { get; set; }
+  public String? Id { get; set; }
   
   
   /// <summary>
   ///   idQ, this property is only available in Office 2010 and later.
   /// </summary>
-  public HexInt? QualifiedId { get; set; }
+  public String? QualifiedId { get; set; }
   
   
   /// <summary>

@@ -19,5 +19,8 @@ public enum TypeInfoKind
   TypesWithSameName,
   ConvertedTypes,
   TargetTypes,
+  FixedTypes,
+  FixedProperties,
   GeneratedTypes,
+  CompilationErrors,
 }

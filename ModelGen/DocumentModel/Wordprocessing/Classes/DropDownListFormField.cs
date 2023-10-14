@@ -10,7 +10,7 @@ public partial class DropDownListFormField
   /// <summary>
   ///   Drop-Down List Selection.
   /// </summary>
-  public Int32? DropDownListSelection { get; set; }
+  public DocumentModel.Wordprocessing.DropDownListSelection? DropDownListSelection { get; set; }
   
   
   /// <summary>
@@ -18,6 +18,6 @@ public partial class DropDownListFormField
   /// </summary>
   public Int32? DefaultDropDownListItemIndex { get; set; }
   
-  public ElementCollection<String>? Items { get; set; }
+  public DM.ElementCollection<ListEntryFormField>? Items { get; set; }
   
 }

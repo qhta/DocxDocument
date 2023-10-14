@@ -16,6 +16,6 @@ public partial class TableWidthType
   /// <summary>
   ///   Table Width Type
   /// </summary>
-  public TableWidthUnitKind? Type { get; set; }
+  public DocumentModel.Wordprocessing.TableWidthUnitKind? Type { get; set; }
   
 }

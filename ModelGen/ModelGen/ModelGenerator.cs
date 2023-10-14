@@ -9,6 +9,44 @@ public class ModelGenerator : BaseCodeGenerator
     ConfigPath = configPath;
   }
 
+  public override int ValidateCode()
+  {
+    var solutionName = "GeneratedModel";
+    var outputPath = Path.GetDirectoryName(OutputPath);
+    return CompileProject(outputPath, solutionName+".sln", solutionName+".txt");
+  }
+
+  public int CompileProject(string solutionPath, string solutionName, string outputTxtFile)
+  {
+    Directory.SetCurrentDirectory(solutionPath);
+    File.Delete(outputTxtFile);
+    var compileExe = "c:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\devenv.exe";
+    var args = $"/build debug {solutionName} /out {outputTxtFile}";
+    var process = Process.Start(compileExe, args);
+    process.WaitForExit();
+    using (var reader = File.OpenText(outputTxtFile))
+    {
+      List<string> errors = new List<string>();
+      string? line;
+      while ((line = reader.ReadLine()) != null)
+      {
+        var k = line.IndexOf("error");
+        if (k != -1)
+        {
+          k = line.IndexOf(": ", k);
+          if (k != -1)
+          {
+            var errMsg = line.Substring(k+2).Trim();
+            errors.Add(errMsg);
+          }
+        }
+      }
+      CompilationErrors = errors.ToArray();
+    }
+   return CompilationErrors.Count();
+  }
+
+  public string[]? CompilationErrors { get; protected set; }
 
   public override int GenerateCode(IEnumerable<Namespace> nspaces)
   {
@@ -16,19 +54,19 @@ public class ModelGenerator : BaseCodeGenerator
     var nsTypes = new Dictionary<Namespace, TypeInfo[]>();
     var totalTypesCount = 0;
     foreach (var nspace in nspaces)
-    {
-      Debug.Assert(nspace.TargetName != null);
-      CreateNamespaceFolder(nspace.TargetName);
-      var types = nspace.AcceptedTypes(PPS.CodeGen).Where(item => !item.IsConstructedGenericType
-      && !ModelConfig.Instance.PredefinedTypes.Contains(item.Type.FullName!)).ToArray();
+      if (nspace.TargetName != null)
+      {
+        CreateNamespaceFolder(nspace.TargetName);
+        var types = nspace.AcceptedTypesTo(PPS.CodeGen).Where(item => !item.IsConstructedGenericType
+        && !ModelConfig.Instance.PredefinedTypes.Contains(item.Type.FullName!)).ToArray();
 
-      var iModelElement = types.FirstOrDefault(typeInfo=>typeInfo.Name=="IModelElement");
-      if (iModelElement!=null)
-        Debug.Assert(true);
+        var iModelElement = types.FirstOrDefault(typeInfo => typeInfo.Name == "IModelElement");
+        if (iModelElement != null)
+          Debug.Assert(true);
 
-      nsTypes.Add(nspace, types);
-      totalTypesCount += types.Count();
-    }
+        nsTypes.Add(nspace, types);
+        totalTypesCount += types.Count();
+      }
     var nspacesCount = 0;
     var typesCount = 0;
     foreach (var nsType in nsTypes)
@@ -37,7 +75,13 @@ public class ModelGenerator : BaseCodeGenerator
       foreach (var type in nsType.Value)
       {
         typesCount++;
-        _onGeneratingType?.Invoke(new ProgressTypeInfo { Namespaces = nspacesCount, ProcessedTypes = typesCount, TotalTypes = totalTypesCount });
+        _OnGeneratingType?.Invoke(new ProgressTypeInfo
+        {
+          Namespaces = nspacesCount,
+          ProcessedTypes = typesCount,
+          TotalTypes = totalTypesCount,
+          Current = type
+        });
         GenerateTypeFile(type);
       }
     }
@@ -64,7 +108,7 @@ public class ModelGenerator : BaseCodeGenerator
     {
       foreach (var file in Directory.GetFiles(path))
       {
-        if (file.EndsWith(".cs") && file.Count(ch => ch == '.') == 1)
+        if (file.EndsWith(".cs") && Path.GetFileName(file).Count(ch => ch == '.') == 1)
         {
           try
           {
@@ -100,7 +144,7 @@ public class ModelGenerator : BaseCodeGenerator
       Debug.WriteLine($"Project template file \"{sourceFilename}\" not found");
       return false;
     }
-    var outputFilename = Path.Combine (outputPath, projectName+".csproj");
+    var outputFilename = Path.Combine(outputPath, projectName + ".csproj");
     AssurePathExists(outputFilename);
     using (var writer = File.CreateText(outputFilename))
     using (var reader = File.OpenText(sourceFilename))
@@ -115,21 +159,36 @@ public class ModelGenerator : BaseCodeGenerator
   {
     string? sourceFilename;
     if (configPath != null)
-      sourceFilename = Path.Combine(configPath, projectName+".globalUsings.cs.txt");
+      sourceFilename = Path.Combine(configPath, projectName + ".globalUsings.cs.txt");
     else
-      sourceFilename = projectName+".globalUsings.cs.txt";
+      sourceFilename = projectName + ".globalUsings.cs.txt";
     if (!File.Exists(sourceFilename))
     {
       Debug.WriteLine($"Global usings file \"{sourceFilename}\" not found");
       return false;
     }
-    var outputFilename = Path.Combine (outputPath, "globalUsings.cs");
+    var outputFilename = Path.Combine(outputPath, "globalUsings.cs");
     AssurePathExists(outputFilename);
     using (var writer = File.CreateText(outputFilename))
-    using (var reader = File.OpenText(sourceFilename))
     {
-      var s = reader.ReadToEnd();
-      writer.Write(s);
+      using (var reader = File.OpenText(sourceFilename))
+      {
+        var s = reader.ReadToEnd();
+        writer.Write(s);
+      }
+      var nspaces = TypeManager.AllNamespaces.Where(item => item.IsTarget);
+      foreach (var nspace in nspaces)
+      {
+        if (nspace.TargetName != null)
+        {
+          if (nspace.AcceptedTypesTo(PPS.CodeGen).Any(item => !item.IsConstructedGenericType))
+          {
+            var prefix = nspace.TargetPrefix;
+            if (prefix != null)
+              writer.WriteLine($"global using {prefix} = {nspace.TargetName};");
+          }
+        }
+      }
     }
     return true;
   }
@@ -153,16 +212,18 @@ public class ModelGenerator : BaseCodeGenerator
 
   public bool GenerateTypeFile(TypeInfo typeInfo)
   {
-    if (!typeInfo.IsConverted && !typeInfo.IsConvertedTo)
+    //if (typeInfo.TargetName == "RegionLabelLayout")
+    //  Debug.Assert(true);
+    //if (!typeInfo.IsConverted && !typeInfo.IsConvertedTo)
     {
       if (typeInfo.TypeKind == TypeKind.@enum)
-        GenerateEnumType(typeInfo);
-      else 
+        return GenerateEnumType(typeInfo);
+      else
       if (!typeInfo.IsConstructedGenericType)
-        GenerateClassType(typeInfo);
-      return true;
+        return GenerateClassType(typeInfo);
+      return false;
     }
-    return false;
+    //return false;
   }
 
   #region Class type generation
@@ -263,16 +324,23 @@ public class ModelGenerator : BaseCodeGenerator
 
   private bool GenerateProperty(PropInfo prop, string? inNamespace, TypeKind kind)
   {
-    if (prop.Name=="AnchorId")
-      Debug.Assert(true);
     var targetPropType = prop.PropertyType.GetConversionTargetOrSelf();
-    var targetPropTypeName = prop.TargetPropertyTypeName ?? targetPropType.TargetName;
-    TrimNamespace(targetPropTypeName);
-    var propTypeName = targetPropTypeName.ToString();
+    //if (prop.Name == "Items" && targetPropType.IsConstructedGenericType && targetPropType.GetGenericArguments().FirstOrDefault()?.Name=="Schema")
+    //  Debug.Assert(true);
+    var targetPropTypeName = prop.TargetPropertyTypeName ??
+      targetPropType.GetFullName(true, true, true);
+    var propTypeName = targetPropTypeName.Name;
+    string? px = null;
+    var ns = targetPropTypeName.Namespace;
+    if (ns != null)
+    {
+      if (!ns.StartsWith("System"))
+        px = ns + ".";
+    }
     string qm = "?";
     GenerateDocumentationComments(prop);
     GenerateCustomAttributes(prop.CustomAttributes);
-    Writer.WriteLine($"public {propTypeName}{qm} {prop.Name} {{ get; set; }}");
+    Writer.WriteLine($"public {px}{propTypeName}{qm} {prop.Name} {{ get; set; }}");
     Writer.WriteLine();
     GeneratedPropertiesCount += 1;
     return true;

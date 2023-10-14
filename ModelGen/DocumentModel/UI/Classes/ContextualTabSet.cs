@@ -24,6 +24,6 @@ public partial class ContextualTabSet
   /// </summary>
   public String? GetVisible { get; set; }
   
-  public ElementCollection<Tab>? Items { get; set; }
+  public DM.ElementCollection<Tab>? Items { get; set; }
   
 }

@@ -10,6 +10,6 @@ public partial class Text
   /// <summary>
   ///   space
   /// </summary>
-  public SpaceProcessingMode? Space { get; set; }
+  public DM.SpaceProcessingMode? Space { get; set; }
   
 }

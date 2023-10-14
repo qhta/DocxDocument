@@ -10,7 +10,7 @@ public partial class Group
   /// <summary>
   ///   id
   /// </summary>
-  public HexInt? Id { get; set; }
+  public String? Id { get; set; }
   
   
   /// <summary>
@@ -132,8 +132,8 @@ public partial class Group
   /// </summary>
   public String? GetKeytip { get; set; }
   
-  public DialogBoxLauncher? DialogBoxLauncher { get; set; }
+  public DMUI.DialogBoxLauncher? DialogBoxLauncher { get; set; }
   
-  public ElementCollection<IModelElement>? Items { get; set; }
+  public DM.ElementCollection<IModelElement>? Items { get; set; }
   
 }

@@ -14,6 +14,6 @@ public partial class DocumentTasksPart
   /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>
-  public Tasks? Tasks { get; set; }
+  public DM.Tasks? Tasks { get; set; }
   
 }

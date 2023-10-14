@@ -16,8 +16,8 @@ public partial class WrapPolygon
   /// <summary>
   ///   Wrapping Polygon Start.
   /// </summary>
-  public Point2DType? StartPoint { get; set; }
+  public DocumentModel.Drawings.Wordprocessing.StartPoint? StartPoint { get; set; }
   
-  public ElementCollection<Point2DType>? Items { get; set; }
+  public DM.ElementCollection<LineTo>? Items { get; set; }
   
 }

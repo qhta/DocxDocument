@@ -10,186 +10,186 @@ public partial class StyleParagraphProperties
   /// <summary>
   ///   KeepNext.
   /// </summary>
-  public Boolean? KeepNext { get; set; }
+  public DocumentModel.Wordprocessing.KeepNext? KeepNext { get; set; }
   
   
   /// <summary>
   ///   KeepLines.
   /// </summary>
-  public Boolean? KeepLines { get; set; }
+  public DocumentModel.Wordprocessing.KeepLines? KeepLines { get; set; }
   
   
   /// <summary>
   ///   PageBreakBefore.
   /// </summary>
-  public Boolean? PageBreakBefore { get; set; }
+  public DocumentModel.Wordprocessing.PageBreakBefore? PageBreakBefore { get; set; }
   
   
   /// <summary>
   ///   FrameProperties.
   /// </summary>
-  public FrameProperties? FrameProperties { get; set; }
+  public DocumentModel.Wordprocessing.FrameProperties? FrameProperties { get; set; }
   
   
   /// <summary>
   ///   WidowControl.
   /// </summary>
-  public Boolean? WidowControl { get; set; }
+  public DocumentModel.Wordprocessing.WidowControl? WidowControl { get; set; }
   
   
   /// <summary>
   ///   NumberingProperties.
   /// </summary>
-  public NumberingProperties? NumberingProperties { get; set; }
+  public DocumentModel.Wordprocessing.NumberingProperties? NumberingProperties { get; set; }
   
   
   /// <summary>
   ///   SuppressLineNumbers.
   /// </summary>
-  public Boolean? SuppressLineNumbers { get; set; }
+  public DocumentModel.Wordprocessing.SuppressLineNumbers? SuppressLineNumbers { get; set; }
   
   
   /// <summary>
   ///   ParagraphBorders.
   /// </summary>
-  public ParagraphBorders? ParagraphBorders { get; set; }
+  public DocumentModel.Wordprocessing.ParagraphBorders? ParagraphBorders { get; set; }
   
   
   /// <summary>
   ///   Shading.
   /// </summary>
-  public Shading? Shading { get; set; }
+  public DocumentModel.Wordprocessing.Shading? Shading { get; set; }
   
   
   /// <summary>
   ///   Tabs.
   /// </summary>
-  public Tabs? Tabs { get; set; }
+  public DocumentModel.Wordprocessing.Tabs? Tabs { get; set; }
   
   
   /// <summary>
   ///   SuppressAutoHyphens.
   /// </summary>
-  public Boolean? SuppressAutoHyphens { get; set; }
+  public DocumentModel.Wordprocessing.SuppressAutoHyphens? SuppressAutoHyphens { get; set; }
   
   
   /// <summary>
   ///   Kinsoku.
   /// </summary>
-  public Boolean? Kinsoku { get; set; }
+  public DocumentModel.Wordprocessing.Kinsoku? Kinsoku { get; set; }
   
   
   /// <summary>
   ///   WordWrap.
   /// </summary>
-  public Boolean? WordWrap { get; set; }
+  public DocumentModel.Wordprocessing.WordWrap? WordWrap { get; set; }
   
   
   /// <summary>
   ///   OverflowPunctuation.
   /// </summary>
-  public Boolean? OverflowPunctuation { get; set; }
+  public DocumentModel.Wordprocessing.OverflowPunctuation? OverflowPunctuation { get; set; }
   
   
   /// <summary>
   ///   TopLinePunctuation.
   /// </summary>
-  public Boolean? TopLinePunctuation { get; set; }
+  public DocumentModel.Wordprocessing.TopLinePunctuation? TopLinePunctuation { get; set; }
   
   
   /// <summary>
   ///   AutoSpaceDE.
   /// </summary>
-  public Boolean? AutoSpaceDE { get; set; }
+  public DocumentModel.Wordprocessing.AutoSpaceDE? AutoSpaceDE { get; set; }
   
   
   /// <summary>
   ///   AutoSpaceDN.
   /// </summary>
-  public Boolean? AutoSpaceDN { get; set; }
+  public DocumentModel.Wordprocessing.AutoSpaceDN? AutoSpaceDN { get; set; }
   
   
   /// <summary>
   ///   BiDi.
   /// </summary>
-  public Boolean? BiDi { get; set; }
+  public DocumentModel.Wordprocessing.BiDi? BiDi { get; set; }
   
   
   /// <summary>
   ///   AdjustRightIndent.
   /// </summary>
-  public Boolean? AdjustRightIndent { get; set; }
+  public DocumentModel.Wordprocessing.AdjustRightIndent? AdjustRightIndent { get; set; }
   
   
   /// <summary>
   ///   SnapToGrid.
   /// </summary>
-  public Boolean? SnapToGrid { get; set; }
+  public DocumentModel.Wordprocessing.SnapToGrid? SnapToGrid { get; set; }
   
   
   /// <summary>
   ///   SpacingBetweenLines.
   /// </summary>
-  public SpacingBetweenLines? SpacingBetweenLines { get; set; }
+  public DocumentModel.Wordprocessing.SpacingBetweenLines? SpacingBetweenLines { get; set; }
   
   
   /// <summary>
   ///   Indentation.
   /// </summary>
-  public Indentation? Indentation { get; set; }
+  public DocumentModel.Wordprocessing.Indentation? Indentation { get; set; }
   
   
   /// <summary>
   ///   ContextualSpacing.
   /// </summary>
-  public Boolean? ContextualSpacing { get; set; }
+  public DocumentModel.Wordprocessing.ContextualSpacing? ContextualSpacing { get; set; }
   
   
   /// <summary>
   ///   MirrorIndents.
   /// </summary>
-  public Boolean? MirrorIndents { get; set; }
+  public DocumentModel.Wordprocessing.MirrorIndents? MirrorIndents { get; set; }
   
   
   /// <summary>
   ///   SuppressOverlap.
   /// </summary>
-  public Boolean? SuppressOverlap { get; set; }
+  public DocumentModel.Wordprocessing.SuppressOverlap? SuppressOverlap { get; set; }
   
   
   /// <summary>
   ///   Justification.
   /// </summary>
-  public JustificationKind? Justification { get; set; }
+  public DocumentModel.Wordprocessing.JustificationKind? Justification { get; set; }
   
   
   /// <summary>
   ///   TextDirection.
   /// </summary>
-  public TextDirectionKind? TextDirection { get; set; }
+  public DocumentModel.Wordprocessing.TextDirectionKind? TextDirection { get; set; }
   
   
   /// <summary>
   ///   TextAlignment.
   /// </summary>
-  public VerticalTextAlignmentKind? TextAlignment { get; set; }
+  public DocumentModel.Wordprocessing.VerticalTextAlignmentKind? TextAlignment { get; set; }
   
   
   /// <summary>
   ///   TextBoxTightWrap.
   /// </summary>
-  public TextBoxTightWrapKind? TextBoxTightWrap { get; set; }
+  public DocumentModel.Wordprocessing.TextBoxTightWrapKind? TextBoxTightWrap { get; set; }
   
   
   /// <summary>
   ///   OutlineLevel.
   /// </summary>
-  public Int32? OutlineLevel { get; set; }
+  public DocumentModel.Wordprocessing.OutlineLevel? OutlineLevel { get; set; }
   
   
   /// <summary>
   ///   ParagraphPropertiesChange.
   /// </summary>
-  public ParagraphPropertiesChange? ParagraphPropertiesChange { get; set; }
+  public DocumentModel.Wordprocessing.ParagraphPropertiesChange? ParagraphPropertiesChange { get; set; }
   
 }

@@ -1,4 +1,6 @@
-﻿namespace ModelGen;
+﻿using Namotion.Reflection;
+
+namespace ModelGen;
 
 /// <summary>
 /// Base creator containing common methods for both specific creators.
@@ -144,6 +146,15 @@ public abstract class BaseCreator
         ModelMonitor?.ShowTypeConversions();
       if (!CancelRequest)
         PhaseDone = PPS.ConvertTypes;
+    }
+
+    if (StopAtPhase >= PPS.FinalCheck && PhaseDone < PPS.FinalCheck && !CancelRequest)
+    {
+      totalTime += FinalCheck();
+      if (monitorDisplaySelector.HasFlag(MDS.FinalCheck))
+        ModelMonitor?.ShowFinalCheck();
+      if (!CancelRequest)
+        PhaseDone = PPS.FinalCheck;
     }
 
     if (StopAtPhase >= PPS.CodeGen && PhaseDone < PPS.CodeGen && !CancelRequest)
@@ -411,6 +422,66 @@ public abstract class BaseCreator
     });
   }
 
+  protected TimeSpan FinalCheck()
+  {
+    ModelMonitor?.ShowPhaseStart(PPS.FinalCheck, CommonStrings.FinalCheck);
+    DateTime t1 = DateTime.Now;
+    ModelManager.OnCheckingType += ModelManager_OnFinalCheck;
+    var types = new List<TypeInfo>();
+    foreach (var nspace in TypeManager.AllNamespaces.Where(nspace=>nspace.IsTarget))
+      types.AddRange(nspace.Types);
+    ModelManager.FinalCheck(types);
+    var fixedTypesCount = ModelManager.FixedTypesCount;
+    ModelManager.OnCheckingType -= ModelManager_OnFinalCheck;
+
+    //var targetTypesCount = 0;
+    //var invalidTypesCount = 0;
+    //if (Options.ValidateConversion && !CancelRequest)
+    //{
+    //  var ModelValidator = new ModelValidator(PPS.ConvertTypes, NTS.Target, MSS.Accepted, TDS.Metadata);
+    //  var newNS = TypeManager.AllNamespaces.Where(ns => ns.IsTarget).ToArray();
+    //  var newTypes = TypeManager.AllNamespaces.Where(ns => ns.IsTarget)
+    //    .SelectMany(ns=>ns.Types)
+    //    .Where(typeInfo=>!typeInfo.IsGenericTypeDefinition).ToArray().ToArray();
+    //  targetTypesCount = newTypes.Count();
+    //  ModelValidator.OnValidatingType += ModelValidator_OnValidatingType;
+    //  if (!ModelValidator.ValidateTypes(PPS.ConvertTypes, newTypes))
+    //  {
+    //    invalidTypesCount = ModelValidator.InvalidTypesCount;
+    //  }
+    //  ModelValidator.OnValidatingType += ModelValidator_OnValidatingType;
+    //}
+
+    DateTime t2 = DateTime.Now;
+    var ts = t2 - t1;
+    var summaryInfo = new SummaryInfo
+    {
+      Time = ts,
+      Summary = new Dictionary<TypeInfoKind, object>{
+        {TypeInfoKind.CheckedTypes, TotalTypesCount },
+        {TypeInfoKind.FixedTypes, fixedTypesCount },
+        {TypeInfoKind.FixedProperties, ModelManager.FixedPropertiesCount },
+        }
+    };
+
+    //if (targetTypesCount > 0)
+    //  summaryInfo.Summary.Add(TypeInfoKind.TargetTypes, targetTypesCount);
+    //if (invalidTypesCount > 0)
+    //  summaryInfo.Summary.Add(TypeInfoKind.InvalidTypes, invalidTypesCount);
+
+    ModelMonitor?.ShowPhaseEnd(PPS.FinalCheck, summaryInfo);
+    return ts;
+  }
+
+  private void ModelManager_OnFinalCheck(ProgressTypeInfo info)
+  {
+    ModelMonitor?.ShowPhaseProgress(PPS.FinalCheck, new ProgressInfo
+    {
+      FormatStr = CommonStrings.checked_0_of_1_types,
+      Args = new object[] { info.CheckedTypes ?? 0, info.TotalTypes ?? 0 },
+      PostStr = $"{info.Current?.GetTargetNamespace()}.{info.Current?.Name}"
+    });
+  }
   protected TimeSpan GenerateCode()
   {
     ModelMonitor?.ShowPhaseStart(PPS.CodeGen, CommonStrings.GenerateCode);
@@ -420,16 +491,10 @@ public abstract class BaseCreator
     var generatedTypesCount = CodeGenerator.GenerateCode(nspaces);
     CodeGenerator.OnGeneratingType -= CodeGenerator_OnGeneratingCode;
 
-    var invalidTypes = 0;
-    if (Options.ValidateConversion && !CancelRequest)
+    var compilationErrors = 0;
+    if (Options.ValidateGeneration && !CancelRequest)
     {
-      //var ModelValidator = new ModelValidator(PPS.ConvertTypes, NTS.Origin, MSS.Accepted, TDS.Metadata);
-      //ModelValidator.OnValidatingType += ModelValidator_OnValidatingType;
-      //if (!ModelValidator.ValidateTypes(PPS.ConvertTypes, types))
-      //{
-      //  invalidTypes = ModelValidator.InvalidTypesCount;
-      //}
-      //ModelValidator.OnValidatingType += ModelValidator_OnValidatingType;
+      compilationErrors = CodeGenerator.ValidateCode();
     }
 
     DateTime t2 = DateTime.Now;
@@ -443,8 +508,8 @@ public abstract class BaseCreator
         }
     };
 
-    if (invalidTypes > 0)
-      summaryInfo.Summary.Add(TypeInfoKind.InvalidTypes, invalidTypes);
+    if (compilationErrors > 0)
+      summaryInfo.Summary.Add(TypeInfoKind.CompilationErrors, compilationErrors);
 
     ModelMonitor?.ShowPhaseEnd(PPS.CodeGen, summaryInfo);
     return ts;
@@ -456,7 +521,7 @@ public abstract class BaseCreator
     {
       FormatStr = CommonStrings.generated_0_of_1_types_in_2_namespaces,
       Args = new object[] { info.ProcessedTypes ?? 0, TotalTypesCount, info.Namespaces ?? 0 },
-      PostStr = $"{info.Current?.OriginalNamespace}.{info.Current?.OriginalName}"    });
+      PostStr = $"{info.Current?.TargetNamespace}.{info.Current?.TargetName}"    });
   }
   #endregion
 

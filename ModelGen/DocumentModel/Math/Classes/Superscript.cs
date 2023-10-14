@@ -10,18 +10,18 @@ public partial class Superscript
   /// <summary>
   ///   Superscript Properties.
   /// </summary>
-  public SuperscriptProperties? SuperscriptProperties { get; set; }
+  public DocumentModel.Math.SuperscriptProperties? SuperscriptProperties { get; set; }
   
   
   /// <summary>
   ///   Base.
   /// </summary>
-  public Base? Base { get; set; }
+  public DocumentModel.Math.Base? Base { get; set; }
   
   
   /// <summary>
   ///   Superscript (Superscript function).
   /// </summary>
-  public SuperArgument? SuperArgument { get; set; }
+  public DocumentModel.Math.SuperArgument? SuperArgument { get; set; }
   
 }

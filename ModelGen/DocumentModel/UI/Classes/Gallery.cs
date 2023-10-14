@@ -10,7 +10,7 @@ public partial class Gallery
   /// <summary>
   ///   size
   /// </summary>
-  public SizeKind? Size { get; set; }
+  public DMUI.SizeKind? Size { get; set; }
   
   
   /// <summary>
@@ -154,7 +154,7 @@ public partial class Gallery
   /// <summary>
   ///   getItemID
   /// </summary>
-  public HexInt? GetItemID { get; set; }
+  public String? GetItemID { get; set; }
   
   
   /// <summary>
@@ -166,7 +166,7 @@ public partial class Gallery
   /// <summary>
   ///   getSelectedItemID
   /// </summary>
-  public HexInt? GetSelectedItemID { get; set; }
+  public String? GetSelectedItemID { get; set; }
   
   
   /// <summary>
@@ -178,7 +178,7 @@ public partial class Gallery
   /// <summary>
   ///   id
   /// </summary>
-  public HexInt? Id { get; set; }
+  public String? Id { get; set; }
   
   
   /// <summary>
@@ -306,6 +306,6 @@ public partial class Gallery
   /// </summary>
   public String? GetShowImage { get; set; }
   
-  public ElementCollection<IModelElement>? Items { get; set; }
+  public DM.ElementCollection<IModelElement>? Items { get; set; }
   
 }

@@ -12,6 +12,6 @@ public partial class LinePropertiesExtension
   /// </summary>
   public String? Uri { get; set; }
   
-  public LineSketchStyleProperties? LineSketchStyleProperties { get; set; }
+  public DocumentModel.Drawings.LineSketchStyleProperties? LineSketchStyleProperties { get; set; }
   
 }

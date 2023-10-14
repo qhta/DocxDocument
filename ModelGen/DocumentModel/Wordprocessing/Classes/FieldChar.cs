@@ -10,7 +10,7 @@ public partial class FieldChar
   /// <summary>
   ///   Field Character Type
   /// </summary>
-  public FieldCharKind? FieldCharType { get; set; }
+  public DocumentModel.Wordprocessing.FieldCharKind? FieldCharType { get; set; }
   
   
   /// <summary>
@@ -28,18 +28,18 @@ public partial class FieldChar
   /// <summary>
   ///   Custom Field Data.
   /// </summary>
-  public String? FieldData { get; set; }
+  public DocumentModel.Wordprocessing.FieldData? FieldData { get; set; }
   
   
   /// <summary>
   ///   Form Field Properties.
   /// </summary>
-  public FormFieldData? FormFieldData { get; set; }
+  public DocumentModel.Wordprocessing.FormFieldData? FormFieldData { get; set; }
   
   
   /// <summary>
   ///   Previous Numbering Field Properties.
   /// </summary>
-  public NumberingChange? NumberingChange { get; set; }
+  public DocumentModel.Wordprocessing.NumberingChange? NumberingChange { get; set; }
   
 }

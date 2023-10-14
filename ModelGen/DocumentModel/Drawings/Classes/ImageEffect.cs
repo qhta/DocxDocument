@@ -16,162 +16,162 @@ public partial class ImageEffect
   /// <summary>
   ///   ArtisticBlur.
   /// </summary>
-  public ArtisticBlur? ArtisticBlur { get; set; }
+  public DocumentModel.Drawings.ArtisticBlur? ArtisticBlur { get; set; }
   
   
   /// <summary>
   ///   ArtisticCement.
   /// </summary>
-  public ArtisticCement? ArtisticCement { get; set; }
+  public DocumentModel.Drawings.ArtisticCement? ArtisticCement { get; set; }
   
   
   /// <summary>
   ///   ArtisticChalkSketch.
   /// </summary>
-  public ArtisticChalkSketch? ArtisticChalkSketch { get; set; }
+  public DocumentModel.Drawings.ArtisticChalkSketch? ArtisticChalkSketch { get; set; }
   
   
   /// <summary>
   ///   ArtisticCrisscrossEtching.
   /// </summary>
-  public ArtisticCrisscrossEtching? ArtisticCrisscrossEtching { get; set; }
+  public DocumentModel.Drawings.ArtisticCrisscrossEtching? ArtisticCrisscrossEtching { get; set; }
   
   
   /// <summary>
   ///   ArtisticCutout.
   /// </summary>
-  public ArtisticCutout? ArtisticCutout { get; set; }
+  public DocumentModel.Drawings.ArtisticCutout? ArtisticCutout { get; set; }
   
   
   /// <summary>
   ///   ArtisticFilmGrain.
   /// </summary>
-  public ArtisticFilmGrain? ArtisticFilmGrain { get; set; }
+  public DocumentModel.Drawings.ArtisticFilmGrain? ArtisticFilmGrain { get; set; }
   
   
   /// <summary>
   ///   ArtisticGlass.
   /// </summary>
-  public ArtisticGlass? ArtisticGlass { get; set; }
+  public DocumentModel.Drawings.ArtisticGlass? ArtisticGlass { get; set; }
   
   
   /// <summary>
   ///   ArtisticGlowDiffused.
   /// </summary>
-  public ArtisticGlowDiffused? ArtisticGlowDiffused { get; set; }
+  public DocumentModel.Drawings.ArtisticGlowDiffused? ArtisticGlowDiffused { get; set; }
   
   
   /// <summary>
   ///   ArtisticGlowEdges.
   /// </summary>
-  public ArtisticGlowEdges? ArtisticGlowEdges { get; set; }
+  public DocumentModel.Drawings.ArtisticGlowEdges? ArtisticGlowEdges { get; set; }
   
   
   /// <summary>
   ///   ArtisticLightScreen.
   /// </summary>
-  public ArtisticLightScreen? ArtisticLightScreen { get; set; }
+  public DocumentModel.Drawings.ArtisticLightScreen? ArtisticLightScreen { get; set; }
   
   
   /// <summary>
   ///   ArtisticLineDrawing.
   /// </summary>
-  public ArtisticLineDrawing? ArtisticLineDrawing { get; set; }
+  public DocumentModel.Drawings.ArtisticLineDrawing? ArtisticLineDrawing { get; set; }
   
   
   /// <summary>
   ///   ArtisticMarker.
   /// </summary>
-  public ArtisticMarker? ArtisticMarker { get; set; }
+  public DocumentModel.Drawings.ArtisticMarker? ArtisticMarker { get; set; }
   
   
   /// <summary>
   ///   ArtisticMosaicBubbles.
   /// </summary>
-  public ArtisticMosaicBubbles? ArtisticMosaicBubbles { get; set; }
+  public DocumentModel.Drawings.ArtisticMosaicBubbles? ArtisticMosaicBubbles { get; set; }
   
   
   /// <summary>
   ///   ArtisticPaintStrokes.
   /// </summary>
-  public ArtisticPaintStrokes? ArtisticPaintStrokes { get; set; }
+  public DocumentModel.Drawings.ArtisticPaintStrokes? ArtisticPaintStrokes { get; set; }
   
   
   /// <summary>
   ///   ArtisticPaintBrush.
   /// </summary>
-  public ArtisticPaintBrush? ArtisticPaintBrush { get; set; }
+  public DocumentModel.Drawings.ArtisticPaintBrush? ArtisticPaintBrush { get; set; }
   
   
   /// <summary>
   ///   ArtisticPastelsSmooth.
   /// </summary>
-  public ArtisticPastelsSmooth? ArtisticPastelsSmooth { get; set; }
+  public DocumentModel.Drawings.ArtisticPastelsSmooth? ArtisticPastelsSmooth { get; set; }
   
   
   /// <summary>
   ///   ArtisticPencilGrayscale.
   /// </summary>
-  public ArtisticPencilGrayscale? ArtisticPencilGrayscale { get; set; }
+  public DocumentModel.Drawings.ArtisticPencilGrayscale? ArtisticPencilGrayscale { get; set; }
   
   
   /// <summary>
   ///   ArtisticPencilSketch.
   /// </summary>
-  public ArtisticPencilSketch? ArtisticPencilSketch { get; set; }
+  public DocumentModel.Drawings.ArtisticPencilSketch? ArtisticPencilSketch { get; set; }
   
   
   /// <summary>
   ///   ArtisticPhotocopy.
   /// </summary>
-  public ArtisticPhotocopy? ArtisticPhotocopy { get; set; }
+  public DocumentModel.Drawings.ArtisticPhotocopy? ArtisticPhotocopy { get; set; }
   
   
   /// <summary>
   ///   ArtisticPlasticWrap.
   /// </summary>
-  public ArtisticPlasticWrap? ArtisticPlasticWrap { get; set; }
+  public DocumentModel.Drawings.ArtisticPlasticWrap? ArtisticPlasticWrap { get; set; }
   
   
   /// <summary>
   ///   ArtisticTexturizer.
   /// </summary>
-  public ArtisticTexturizer? ArtisticTexturizer { get; set; }
+  public DocumentModel.Drawings.ArtisticTexturizer? ArtisticTexturizer { get; set; }
   
   
   /// <summary>
   ///   ArtisticWatercolorSponge.
   /// </summary>
-  public ArtisticWatercolorSponge? ArtisticWatercolorSponge { get; set; }
+  public DocumentModel.Drawings.ArtisticWatercolorSponge? ArtisticWatercolorSponge { get; set; }
   
   
   /// <summary>
   ///   BackgroundRemoval.
   /// </summary>
-  public BackgroundRemoval? BackgroundRemoval { get; set; }
+  public DocumentModel.Drawings.BackgroundRemoval? BackgroundRemoval { get; set; }
   
   
   /// <summary>
   ///   BrightnessContrast.
   /// </summary>
-  public BrightnessContrast? BrightnessContrast { get; set; }
+  public DocumentModel.Drawings.BrightnessContrast? BrightnessContrast { get; set; }
   
   
   /// <summary>
   ///   ColorTemperature.
   /// </summary>
-  public ColorTemperature? ColorTemperature { get; set; }
+  public DocumentModel.Drawings.ColorTemperature? ColorTemperature { get; set; }
   
   
   /// <summary>
   ///   Saturation.
   /// </summary>
-  public Saturation? Saturation { get; set; }
+  public DocumentModel.Drawings.Saturation? Saturation { get; set; }
   
   
   /// <summary>
   ///   SharpenSoften.
   /// </summary>
-  public SharpenSoften? SharpenSoften { get; set; }
+  public DocumentModel.Drawings.SharpenSoften? SharpenSoften { get; set; }
   
 }

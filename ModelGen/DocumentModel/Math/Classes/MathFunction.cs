@@ -10,18 +10,18 @@ public partial class MathFunction
   /// <summary>
   ///   Function Properties.
   /// </summary>
-  public FunctionProperties? FunctionProperties { get; set; }
+  public DocumentModel.Math.FunctionProperties? FunctionProperties { get; set; }
   
   
   /// <summary>
   ///   Function Name.
   /// </summary>
-  public FunctionName? FunctionName { get; set; }
+  public DocumentModel.Math.FunctionName? FunctionName { get; set; }
   
   
   /// <summary>
   ///   Base (Argument).
   /// </summary>
-  public Base? Base { get; set; }
+  public DocumentModel.Math.Base? Base { get; set; }
   
 }

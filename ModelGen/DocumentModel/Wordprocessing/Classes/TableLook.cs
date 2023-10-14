@@ -10,7 +10,7 @@ public partial class TableLook
   /// <summary>
   ///   val
   /// </summary>
-  public HexBinary? Val { get; set; }
+  public DM.HexBinary? Val { get; set; }
   
   
   /// <summary>

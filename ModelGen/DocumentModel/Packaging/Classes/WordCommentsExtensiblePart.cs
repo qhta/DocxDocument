@@ -10,7 +10,7 @@ public partial class WordCommentsExtensiblePart
   /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>
-  public CommentsExtensible? CommentsExtensible { get; set; }
+  public DocumentModel.Wordprocessing.CommentsExtensible? CommentsExtensible { get; set; }
   
   public String? ContentType { get; set; }
   

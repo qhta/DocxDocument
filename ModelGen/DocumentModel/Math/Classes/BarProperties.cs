@@ -10,12 +10,12 @@ public partial class BarProperties
   /// <summary>
   ///   Position (Bar).
   /// </summary>
-  public VerticalJustificationKind? Position { get; set; }
+  public DocumentModel.Math.Position? Position { get; set; }
   
   
   /// <summary>
   ///   ControlProperties.
   /// </summary>
-  public ControlProperties? ControlProperties { get; set; }
+  public DocumentModel.Math.ControlProperties? ControlProperties { get; set; }
   
 }

@@ -16,7 +16,7 @@ public partial class SdtContentDate
   /// <summary>
   ///   Date Display Mask.
   /// </summary>
-  public String? DateFormat { get; set; }
+  public DocumentModel.Wordprocessing.DateFormat? DateFormat { get; set; }
   
   
   /// <summary>
@@ -28,12 +28,12 @@ public partial class SdtContentDate
   /// <summary>
   ///   Custom XML Data Date Storage Format.
   /// </summary>
-  public DateFormatKind? SdtDateMappingType { get; set; }
+  public DocumentModel.Wordprocessing.DateFormatKind? SdtDateMappingType { get; set; }
   
   
   /// <summary>
   ///   Date Picker Calendar Type.
   /// </summary>
-  public CalendarKind? Calendar { get; set; }
+  public DocumentModel.Wordprocessing.CalendarKind? Calendar { get; set; }
   
 }

@@ -10,7 +10,7 @@ public partial class TextPath
   /// <summary>
   ///   Unique Identifier
   /// </summary>
-  public HexInt? Id { get; set; }
+  public String? Id { get; set; }
   
   
   /// <summary>
@@ -22,31 +22,31 @@ public partial class TextPath
   /// <summary>
   ///   Text Path Toggle
   /// </summary>
-  public Boolean? On { get; set; }
+  public DM.TrueFalseValue? On { get; set; }
   
   
   /// <summary>
   ///   Shape Fit Toggle
   /// </summary>
-  public Boolean? FitShape { get; set; }
+  public DM.TrueFalseValue? FitShape { get; set; }
   
   
   /// <summary>
   ///   Path Fit Toggle
   /// </summary>
-  public Boolean? FitPath { get; set; }
+  public DM.TrueFalseValue? FitPath { get; set; }
   
   
   /// <summary>
   ///   Text Path Trim Toggle
   /// </summary>
-  public Boolean? Trim { get; set; }
+  public DM.TrueFalseValue? Trim { get; set; }
   
   
   /// <summary>
   ///   Text X-Scaling
   /// </summary>
-  public Boolean? XScale { get; set; }
+  public DM.TrueFalseValue? XScale { get; set; }
   
   
   /// <summary>

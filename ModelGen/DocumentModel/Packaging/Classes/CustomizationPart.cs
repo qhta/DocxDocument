@@ -10,10 +10,4 @@ public partial class CustomizationPart
   
   public String? RelationshipType { get; set; }
   
-  
-  /// <summary>
-  ///   Gets or sets the root element of this part.
-  /// </summary>
-  public TemplateCommandGroup? TemplateCommandGroup { get; set; }
-  
 }

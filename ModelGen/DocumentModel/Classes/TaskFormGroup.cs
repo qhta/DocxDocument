@@ -10,13 +10,13 @@ public partial class TaskFormGroup
   /// <summary>
   ///   id, this property is only available in Office 2010 and later.
   /// </summary>
-  public HexInt? Id { get; set; }
+  public String? Id { get; set; }
   
   
   /// <summary>
   ///   idQ, this property is only available in Office 2010 and later.
   /// </summary>
-  public HexInt? QualifiedId { get; set; }
+  public String? QualifiedId { get; set; }
   
   
   /// <summary>
@@ -82,8 +82,8 @@ public partial class TaskFormGroup
   /// <summary>
   ///   allowedTaskSizes, this property is only available in Office 2010 and later.
   /// </summary>
-  public TaskSizesKind? AllowedTaskSizes { get; set; }
+  public DM.TaskSizesKind? AllowedTaskSizes { get; set; }
   
-  public ElementCollection<TaskFormGroupCategory>? Items { get; set; }
+  public DM.ElementCollection<TaskFormGroupCategory>? Items { get; set; }
   
 }

@@ -10,7 +10,7 @@ public partial class ImageData
   /// <summary>
   ///   Unique Identifier
   /// </summary>
-  public HexInt? Id { get; set; }
+  public String? Id { get; set; }
   
   
   /// <summary>
@@ -64,13 +64,13 @@ public partial class ImageData
   /// <summary>
   ///   Image Grayscale Toggle
   /// </summary>
-  public Boolean? Grayscale { get; set; }
+  public DM.TrueFalseValue? Grayscale { get; set; }
   
   
   /// <summary>
   ///   Image Bilevel Toggle
   /// </summary>
-  public Boolean? BiLevel { get; set; }
+  public DM.TrueFalseValue? BiLevel { get; set; }
   
   
   /// <summary>
@@ -94,19 +94,19 @@ public partial class ImageData
   /// <summary>
   ///   Detect Mouse Click
   /// </summary>
-  public Boolean? DetectMouseClick { get; set; }
+  public DM.TrueFalseValue? DetectMouseClick { get; set; }
   
   
   /// <summary>
   ///   Relationship to Part
   /// </summary>
-  public HexInt? RelId { get; set; }
+  public String? RelId { get; set; }
   
   
   /// <summary>
   ///   Explicit Relationship to Image Data
   /// </summary>
-  public HexInt? RelationshipId { get; set; }
+  public String? RelationshipId { get; set; }
   
   
   /// <summary>

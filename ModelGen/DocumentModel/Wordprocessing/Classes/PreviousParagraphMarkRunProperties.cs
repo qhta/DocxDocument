@@ -10,30 +10,30 @@ public partial class PreviousParagraphMarkRunProperties
   /// <summary>
   ///   Inserted Paragraph.
   /// </summary>
-  public TrackChangeType? Inserted { get; set; }
+  public DocumentModel.Wordprocessing.Inserted? Inserted { get; set; }
   
   
   /// <summary>
   ///   Deleted Paragraph.
   /// </summary>
-  public TrackChangeType? Deleted { get; set; }
+  public DocumentModel.Wordprocessing.Deleted? Deleted { get; set; }
   
   
   /// <summary>
   ///   Move Source Paragraph.
   /// </summary>
-  public TrackChangeType? MoveFrom { get; set; }
+  public DocumentModel.Wordprocessing.MoveFrom? MoveFrom { get; set; }
   
   
   /// <summary>
   ///   Move Destination Paragraph.
   /// </summary>
-  public TrackChangeType? MoveTo { get; set; }
+  public DocumentModel.Wordprocessing.MoveTo? MoveTo { get; set; }
   
-  public TrackChangeType? ConflictInsertion { get; set; }
+  public DocumentModel.Wordprocessing.ConflictInsertion? ConflictInsertion { get; set; }
   
-  public TrackChangeType? ConflictDeletion { get; set; }
+  public DocumentModel.Wordprocessing.ConflictDeletion? ConflictDeletion { get; set; }
   
-  public ElementCollection<IModelElement>? Items { get; set; }
+  public DM.ElementCollection<IModelElement>? Items { get; set; }
   
 }

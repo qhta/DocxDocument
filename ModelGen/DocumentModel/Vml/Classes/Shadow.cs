@@ -10,25 +10,25 @@ public partial class Shadow
   /// <summary>
   ///   Unique Identifier
   /// </summary>
-  public HexInt? Id { get; set; }
+  public String? Id { get; set; }
   
   
   /// <summary>
   ///   Shadow Toggle
   /// </summary>
-  public Boolean? On { get; set; }
+  public DM.TrueFalseValue? On { get; set; }
   
   
   /// <summary>
   ///   Shadow Type
   /// </summary>
-  public ShadowKind? Type { get; set; }
+  public DocumentModel.Vml.ShadowKind? Type { get; set; }
   
   
   /// <summary>
   ///   Shadow Transparency
   /// </summary>
-  public Boolean? Obscured { get; set; }
+  public DM.TrueFalseValue? Obscured { get; set; }
   
   
   /// <summary>

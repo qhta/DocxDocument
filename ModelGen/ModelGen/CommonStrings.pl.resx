@@ -231,4 +231,10 @@
   <data name="generated_0_of_1_types_in_2_namespaces" xml:space="preserve">
     <value>wygenerowano {0} z {1} typów w {2} przestrzeniach nazw</value>
   </data>
+  <data name="FinalCheck" xml:space="preserve">
+    <value>Końcowe sprawdzenie</value>
+  </data>
+  <data name="checked_0_of_1_types" xml:space="preserve">
+    <value>sprawdzono {0} z {1} plików</value>
+  </data>
 </root>

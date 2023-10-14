@@ -6,6 +6,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class HyperlinkExtensionList
 {
-  public ElementCollection<HyperlinkExtension>? Items { get; set; }
+  public DM.ElementCollection<HyperlinkExtension>? Items { get; set; }
   
 }

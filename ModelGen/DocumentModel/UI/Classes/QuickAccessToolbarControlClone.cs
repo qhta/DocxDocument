@@ -10,7 +10,7 @@ public partial class QuickAccessToolbarControlClone
   /// <summary>
   ///   id
   /// </summary>
-  public HexInt? Id { get; set; }
+  public String? Id { get; set; }
   
   
   /// <summary>
@@ -40,7 +40,7 @@ public partial class QuickAccessToolbarControlClone
   /// <summary>
   ///   size
   /// </summary>
-  public SizeKind? Size { get; set; }
+  public DMUI.SizeKind? Size { get; set; }
   
   
   /// <summary>

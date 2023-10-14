@@ -10,6 +10,6 @@ public partial class DialogBoxLauncher
   /// <summary>
   ///   UnsizedButton.
   /// </summary>
-  public UnsizedButton? UnsizedButton { get; set; }
+  public DMUI.UnsizedButton? UnsizedButton { get; set; }
   
 }

@@ -22,25 +22,25 @@ public partial class BodyProperties
   /// <summary>
   ///   Determines whether the text can flow out of the bounding box vertically. This is used to determine what happens in the event that the text within a shape is too large for the bounding box it is contained within. If this attribute is omitted, then a value of overflow is implied.
   /// </summary>
-  public TextVerticalOverflowKind? VerticalOverflow { get; set; }
+  public DocumentModel.Drawings.TextVerticalOverflowKind? VerticalOverflow { get; set; }
   
   
   /// <summary>
   ///   Determines whether the text can flow out of the bounding box horizontally. This is used to determine what happens in the event that the text within a shape is too large for the bounding box it is contained within. If this attribute is omitted, then a value of overflow is implied.
   /// </summary>
-  public TextHorizontalOverflowKind? HorizontalOverflow { get; set; }
+  public DocumentModel.Drawings.TextHorizontalOverflowKind? HorizontalOverflow { get; set; }
   
   
   /// <summary>
   ///   Determines if the text within the given text body should be displayed vertically. If this attribute is omitted, then a value of horz, or no vertical text is implied.
   /// </summary>
-  public TextVerticalKind? Vertical { get; set; }
+  public DocumentModel.Drawings.TextVerticalKind? Vertical { get; set; }
   
   
   /// <summary>
   ///   Specifies the wrapping options to be used for this text body. If this attribute is omitted, then a value of square is implied which wraps the text using the bounding text box.
   /// </summary>
-  public TextWrappingKind? Wrap { get; set; }
+  public DocumentModel.Drawings.TextWrappingKind? Wrap { get; set; }
   
   
   /// <summary>
@@ -94,7 +94,7 @@ public partial class BodyProperties
   /// <summary>
   ///   Specifies the anchoring position of the txBody within the shape. If this attribute is omitted, then a value of t, or top is implied.
   /// </summary>
-  public TextAnchoringTypeKind? Anchor { get; set; }
+  public DocumentModel.Drawings.TextAnchoringTypeKind? Anchor { get; set; }
   
   
   /// <summary>
@@ -124,20 +124,20 @@ public partial class BodyProperties
   /// <summary>
   ///   Preset Text Shape.
   /// </summary>
-  public PresetTextWrap? PresetTextWrap { get; set; }
+  public DocumentModel.Drawings.PresetTextWrap? PresetTextWrap { get; set; }
   
-  public Boolean? NoAutoFit { get; set; }
+  public DocumentModel.Drawings.NoAutoFit? NoAutoFit { get; set; }
   
-  public NormalAutoFit? NormalAutoFit { get; set; }
+  public DocumentModel.Drawings.NormalAutoFit? NormalAutoFit { get; set; }
   
-  public Boolean? ShapeAutoFit { get; set; }
+  public DocumentModel.Drawings.ShapeAutoFit? ShapeAutoFit { get; set; }
   
-  public Scene3DType? Scene3DType { get; set; }
+  public DocumentModel.Drawings.Scene3DType? Scene3DType { get; set; }
   
-  public Shape3DType? Shape3DType { get; set; }
+  public DocumentModel.Drawings.Shape3DType? Shape3DType { get; set; }
   
-  public FlatText? FlatText { get; set; }
+  public DocumentModel.Drawings.FlatText? FlatText { get; set; }
   
-  public ExtensionList? ExtensionList { get; set; }
+  public DocumentModel.Drawings.ExtensionList? ExtensionList { get; set; }
   
 }

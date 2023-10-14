@@ -10,7 +10,7 @@ public partial class WrapSquare
   /// <summary>
   ///   Text Wrapping Location
   /// </summary>
-  public WrapTextKind? WrapText { get; set; }
+  public DocumentModel.Drawings.Wordprocessing.WrapTextKind? WrapText { get; set; }
   
   
   /// <summary>
@@ -40,6 +40,6 @@ public partial class WrapSquare
   /// <summary>
   ///   Object Extents Including Effects.
   /// </summary>
-  public EffectExtent? EffectExtent { get; set; }
+  public DocumentModel.Drawings.Wordprocessing.EffectExtent? EffectExtent { get; set; }
   
 }

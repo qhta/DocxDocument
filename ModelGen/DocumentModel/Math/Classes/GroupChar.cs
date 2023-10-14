@@ -10,12 +10,12 @@ public partial class GroupChar
   /// <summary>
   ///   Group-Character Properties.
   /// </summary>
-  public GroupCharProperties? GroupCharProperties { get; set; }
+  public DocumentModel.Math.GroupCharProperties? GroupCharProperties { get; set; }
   
   
   /// <summary>
   ///   Base.
   /// </summary>
-  public Base? Base { get; set; }
+  public DocumentModel.Math.Base? Base { get; set; }
   
 }

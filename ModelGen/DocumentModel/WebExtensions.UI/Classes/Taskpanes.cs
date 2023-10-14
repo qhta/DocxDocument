@@ -6,6 +6,6 @@ namespace DocumentModel.WebExtensions.UI;
 /// </summary>
 public partial class Taskpanes
 {
-  public ElementCollection<WebExtensionTaskpane>? Items { get; set; }
+  public DM.ElementCollection<WebExtensionTaskpane>? Items { get; set; }
   
 }

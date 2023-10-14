@@ -10,6 +10,6 @@ public partial class WebExtensionPartReference
   /// <summary>
   ///   id, this property is only available in Office 2013 and later.
   /// </summary>
-  public HexInt? Id { get; set; }
+  public String? Id { get; set; }
   
 }

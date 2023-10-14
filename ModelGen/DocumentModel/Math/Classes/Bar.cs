@@ -10,12 +10,12 @@ public partial class Bar
   /// <summary>
   ///   Bar Properties.
   /// </summary>
-  public BarProperties? BarProperties { get; set; }
+  public DocumentModel.Math.BarProperties? BarProperties { get; set; }
   
   
   /// <summary>
   ///   Base.
   /// </summary>
-  public Base? Base { get; set; }
+  public DocumentModel.Math.Base? Base { get; set; }
   
 }

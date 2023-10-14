@@ -10,68 +10,68 @@ public partial class SectionProperties
   /// <summary>
   ///   Physical Section Mark Character Revision ID
   /// </summary>
-  public HexBinary? RsidRPr { get; set; }
+  public DM.HexBinary? RsidRPr { get; set; }
   
   
   /// <summary>
   ///   Section Deletion Revision ID
   /// </summary>
-  public HexBinary? RsidDel { get; set; }
+  public DM.HexBinary? RsidDel { get; set; }
   
   
   /// <summary>
   ///   Section Addition Revision ID
   /// </summary>
-  public HexBinary? RsidR { get; set; }
+  public DM.HexBinary? RsidR { get; set; }
   
   
   /// <summary>
   ///   Section Properties Revision ID
   /// </summary>
-  public HexBinary? RsidSect { get; set; }
+  public DM.HexBinary? RsidSect { get; set; }
   
-  public FootnoteProperties? FootnoteProperties { get; set; }
+  public DocumentModel.Wordprocessing.FootnoteProperties? FootnoteProperties { get; set; }
   
-  public EndnoteProperties? EndnoteProperties { get; set; }
+  public DocumentModel.Wordprocessing.EndnoteProperties? EndnoteProperties { get; set; }
   
-  public SectionMarkKind? SectionType { get; set; }
+  public DocumentModel.Wordprocessing.SectionMarkKind? SectionType { get; set; }
   
-  public PageSize? PageSize { get; set; }
+  public DocumentModel.Wordprocessing.PageSize? PageSize { get; set; }
   
-  public PageMargin? PageMargin { get; set; }
+  public DocumentModel.Wordprocessing.PageMargin? PageMargin { get; set; }
   
-  public PaperSource? PaperSource { get; set; }
+  public DocumentModel.Wordprocessing.PaperSource? PaperSource { get; set; }
   
-  public PageBorders? PageBorders { get; set; }
+  public DocumentModel.Wordprocessing.PageBorders? PageBorders { get; set; }
   
-  public LineNumberType? LineNumberType { get; set; }
+  public DocumentModel.Wordprocessing.LineNumberType? LineNumberType { get; set; }
   
-  public PageNumberType? PageNumberType { get; set; }
+  public DocumentModel.Wordprocessing.PageNumberType? PageNumberType { get; set; }
   
-  public Columns? Columns { get; set; }
+  public DocumentModel.Wordprocessing.Columns? Columns { get; set; }
   
-  public Boolean? FormProtection { get; set; }
+  public DocumentModel.Wordprocessing.FormProtection? FormProtection { get; set; }
   
-  public VerticalJustificationKind? VerticalTextAlignmentOnPage { get; set; }
+  public DocumentModel.Wordprocessing.VerticalJustificationKind? VerticalTextAlignmentOnPage { get; set; }
   
-  public Boolean? NoEndnote { get; set; }
+  public DocumentModel.Wordprocessing.NoEndnote? NoEndnote { get; set; }
   
-  public Boolean? TitlePage { get; set; }
+  public DocumentModel.Wordprocessing.TitlePage? TitlePage { get; set; }
   
-  public TextDirectionKind? TextDirection { get; set; }
+  public DocumentModel.Wordprocessing.TextDirectionKind? TextDirection { get; set; }
   
-  public Boolean? BiDi { get; set; }
+  public DocumentModel.Wordprocessing.BiDi? BiDi { get; set; }
   
-  public Boolean? GutterOnRight { get; set; }
+  public DocumentModel.Wordprocessing.GutterOnRight? GutterOnRight { get; set; }
   
-  public HexInt? DocGrid { get; set; }
+  public DocumentModel.Wordprocessing.DocGrid? DocGrid { get; set; }
   
-  public RelationshipType? PrinterSettingsReference { get; set; }
+  public DocumentModel.Wordprocessing.PrinterSettingsReference? PrinterSettingsReference { get; set; }
   
   public Int32? FootnoteColumns { get; set; }
   
-  public SectionPropertiesChange? SectionPropertiesChange { get; set; }
+  public DocumentModel.Wordprocessing.SectionPropertiesChange? SectionPropertiesChange { get; set; }
   
-  public ElementCollection<IModelElement>? Items { get; set; }
+  public DM.ElementCollection<IModelElement>? Items { get; set; }
   
 }

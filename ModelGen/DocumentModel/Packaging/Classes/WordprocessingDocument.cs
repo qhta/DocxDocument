@@ -10,6 +10,6 @@ public partial class WordprocessingDocument
   /// <summary>
   ///   Gets the type of the WordprocessingDocument.
   /// </summary>
-  public WordprocessingDocumentType? DocumentType { get; set; }
+  public DM.WordprocessingDocumentType? DocumentType { get; set; }
   
 }

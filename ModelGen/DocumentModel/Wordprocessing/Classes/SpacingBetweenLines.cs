@@ -52,6 +52,6 @@ public partial class SpacingBetweenLines
   /// <summary>
   ///   Type of Spacing Between Lines
   /// </summary>
-  public LineSpacingRuleKind? LineRule { get; set; }
+  public DocumentModel.Wordprocessing.LineSpacingRuleKind? LineRule { get; set; }
   
 }

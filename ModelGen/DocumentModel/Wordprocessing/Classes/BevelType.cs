@@ -22,6 +22,6 @@ public partial class BevelType
   /// <summary>
   ///   prst, this property is only available in Office 2010 and later.
   /// </summary>
-  public BevelPresetTypeKind? PresetProfileType { get; set; }
+  public DocumentModel.Wordprocessing.BevelPresetTypeKind? PresetProfileType { get; set; }
   
 }

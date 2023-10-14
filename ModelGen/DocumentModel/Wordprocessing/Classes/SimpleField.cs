@@ -28,8 +28,8 @@ public partial class SimpleField
   /// <summary>
   ///   Custom Field Data.
   /// </summary>
-  public String? FieldData { get; set; }
+  public DocumentModel.Wordprocessing.FieldData? FieldData { get; set; }
   
-  public ElementCollection<IModelElement>? Items { get; set; }
+  public DM.ElementCollection<IModelElement>? Items { get; set; }
   
 }

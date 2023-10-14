@@ -6,6 +6,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class ShapePropertiesExtensionList
 {
-  public ElementCollection<ShapePropertiesExtension>? Items { get; set; }
+  public DM.ElementCollection<ShapePropertiesExtension>? Items { get; set; }
   
 }

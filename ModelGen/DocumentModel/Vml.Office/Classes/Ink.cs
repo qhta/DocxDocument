@@ -10,12 +10,12 @@ public partial class Ink
   /// <summary>
   ///   Ink Data
   /// </summary>
-  public Base64Binary? InkData { get; set; }
+  public DM.Base64Binary? InkData { get; set; }
   
   
   /// <summary>
   ///   Annotation Flag
   /// </summary>
-  public Boolean? AnnotationFlag { get; set; }
+  public DM.TrueFalseValue? AnnotationFlag { get; set; }
   
 }

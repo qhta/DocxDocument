@@ -10,7 +10,7 @@ public partial class SplitButton
   /// <summary>
   ///   size
   /// </summary>
-  public SizeKind? Size { get; set; }
+  public DMUI.SizeKind? Size { get; set; }
   
   
   /// <summary>
@@ -34,7 +34,7 @@ public partial class SplitButton
   /// <summary>
   ///   id
   /// </summary>
-  public HexInt? Id { get; set; }
+  public String? Id { get; set; }
   
   
   /// <summary>
@@ -114,10 +114,10 @@ public partial class SplitButton
   /// </summary>
   public String? GetShowLabel { get; set; }
   
-  public VisibleButton? VisibleButton { get; set; }
+  public DMUI.VisibleButton? VisibleButton { get; set; }
   
-  public VisibleToggleButton? VisibleToggleButton { get; set; }
+  public DMUI.VisibleToggleButton? VisibleToggleButton { get; set; }
   
-  public UnsizedMenu? UnsizedMenu { get; set; }
+  public DMUI.UnsizedMenu? UnsizedMenu { get; set; }
   
 }

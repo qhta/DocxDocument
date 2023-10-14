@@ -10,86 +10,86 @@ public partial class TableCellProperties
   /// <summary>
   ///   ConditionalFormatStyle.
   /// </summary>
-  public ConditionalFormatStyle? ConditionalFormatStyle { get; set; }
+  public DocumentModel.Wordprocessing.ConditionalFormatStyle? ConditionalFormatStyle { get; set; }
   
   
   /// <summary>
   ///   TableCellWidth.
   /// </summary>
-  public TableWidthType? TableCellWidth { get; set; }
+  public DocumentModel.Wordprocessing.TableCellWidth? TableCellWidth { get; set; }
   
   
   /// <summary>
   ///   GridSpan.
   /// </summary>
-  public Int32? GridSpan { get; set; }
+  public DocumentModel.Wordprocessing.GridSpan? GridSpan { get; set; }
   
   
   /// <summary>
   ///   HorizontalMerge.
   /// </summary>
-  public MergedCellKind? HorizontalMerge { get; set; }
+  public DocumentModel.Wordprocessing.MergedCellKind? HorizontalMerge { get; set; }
   
   
   /// <summary>
   ///   VerticalMerge.
   /// </summary>
-  public MergedCellKind? VerticalMerge { get; set; }
+  public DocumentModel.Wordprocessing.MergedCellKind? VerticalMerge { get; set; }
   
   
   /// <summary>
   ///   TableCellBorders.
   /// </summary>
-  public TableCellBorders? TableCellBorders { get; set; }
+  public DocumentModel.Wordprocessing.TableCellBorders? TableCellBorders { get; set; }
   
   
   /// <summary>
   ///   Shading.
   /// </summary>
-  public Shading? Shading { get; set; }
+  public DocumentModel.Wordprocessing.Shading? Shading { get; set; }
   
   
   /// <summary>
   ///   NoWrap.
   /// </summary>
-  public Boolean? NoWrap { get; set; }
+  public DocumentModel.Wordprocessing.NoWrap? NoWrap { get; set; }
   
   
   /// <summary>
   ///   TableCellMargin.
   /// </summary>
-  public TableCellMargin? TableCellMargin { get; set; }
+  public DocumentModel.Wordprocessing.TableCellMargin? TableCellMargin { get; set; }
   
   
   /// <summary>
   ///   TextDirection.
   /// </summary>
-  public TextDirectionKind? TextDirection { get; set; }
+  public DocumentModel.Wordprocessing.TextDirectionKind? TextDirection { get; set; }
   
   
   /// <summary>
   ///   TableCellFitText.
   /// </summary>
-  public Boolean? TableCellFitText { get; set; }
+  public DocumentModel.Wordprocessing.TableCellFitText? TableCellFitText { get; set; }
   
   
   /// <summary>
   ///   TableCellVerticalAlignment.
   /// </summary>
-  public TableVerticalAlignmentKind? TableCellVerticalAlignment { get; set; }
+  public DocumentModel.Wordprocessing.TableVerticalAlignmentKind? TableCellVerticalAlignment { get; set; }
   
   
   /// <summary>
   ///   HideMark.
   /// </summary>
-  public Boolean? HideMark { get; set; }
+  public DocumentModel.Wordprocessing.HideMark? HideMark { get; set; }
   
-  public TrackChangeType? CellInsertion { get; set; }
+  public DocumentModel.Wordprocessing.CellInsertion? CellInsertion { get; set; }
   
-  public TrackChangeType? CellDeletion { get; set; }
+  public DocumentModel.Wordprocessing.CellDeletion? CellDeletion { get; set; }
   
-  public CellMerge? CellMerge { get; set; }
+  public DocumentModel.Wordprocessing.CellMerge? CellMerge { get; set; }
   
-  public TableCellPropertiesChange? TableCellPropertiesChange { get; set; }
+  public DocumentModel.Wordprocessing.TableCellPropertiesChange? TableCellPropertiesChange { get; set; }
   
 }

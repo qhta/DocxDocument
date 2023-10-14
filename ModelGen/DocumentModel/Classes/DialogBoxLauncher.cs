@@ -10,6 +10,6 @@ public partial class DialogBoxLauncher
   /// <summary>
   ///   ButtonRegular.
   /// </summary>
-  public ButtonRegular? ButtonRegular { get; set; }
+  public DM.ButtonRegular? ButtonRegular { get; set; }
   
 }

@@ -10,7 +10,7 @@ public partial class HyperlinkType
   /// <summary>
   ///   relationship identifier to find target URI
   /// </summary>
-  public HexInt? Id { get; set; }
+  public String? Id { get; set; }
   
   
   /// <summary>
@@ -58,12 +58,12 @@ public partial class HyperlinkType
   /// <summary>
   ///   Sound to play..
   /// </summary>
-  public EmbeddedWavAudioFileType? HyperlinkSound { get; set; }
+  public DocumentModel.Drawings.HyperlinkSound? HyperlinkSound { get; set; }
   
   
   /// <summary>
   ///   Future extensions..
   /// </summary>
-  public HyperlinkExtensionList? HyperlinkExtensionList { get; set; }
+  public DocumentModel.Drawings.HyperlinkExtensionList? HyperlinkExtensionList { get; set; }
   
 }

@@ -16,42 +16,42 @@ public partial class TaskHistoryEvent
   /// <summary>
   ///   id, this property is only available in Office 2021 and later.
   /// </summary>
-  public HexInt? Id { get; set; }
+  public String? Id { get; set; }
   
   
   /// <summary>
   ///   AttributionTaskUser.
   /// </summary>
-  public OpenXmlTaskUserElement? AttributionTaskUser { get; set; }
+  public DM.AttributionTaskUser? AttributionTaskUser { get; set; }
   
   
   /// <summary>
   ///   TaskAnchor.
   /// </summary>
-  public TaskAnchor? TaskAnchor { get; set; }
+  public DM.TaskAnchor? TaskAnchor { get; set; }
   
-  public OpenXmlTaskUserElement? AssignTaskUser { get; set; }
+  public DM.AssignTaskUser? AssignTaskUser { get; set; }
   
-  public OpenXmlTaskUserElement? UnassignTaskUser { get; set; }
+  public DM.UnassignTaskUser? UnassignTaskUser { get; set; }
   
-  public Boolean? TaskCreateEventInfo { get; set; }
+  public DM.TaskCreateEventInfo? TaskCreateEventInfo { get; set; }
   
-  public TaskTitleEventInfo? TaskTitleEventInfo { get; set; }
+  public DM.TaskTitleEventInfo? TaskTitleEventInfo { get; set; }
   
-  public TaskScheduleEventInfo? TaskScheduleEventInfo { get; set; }
+  public DM.TaskScheduleEventInfo? TaskScheduleEventInfo { get; set; }
   
-  public TaskProgressEventInfo? TaskProgressEventInfo { get; set; }
+  public DM.TaskProgressEventInfo? TaskProgressEventInfo { get; set; }
   
-  public TaskPriorityEventInfo? TaskPriorityEventInfo { get; set; }
+  public DM.TaskPriorityEventInfo? TaskPriorityEventInfo { get; set; }
   
-  public Boolean? TaskDeleteEventInfo { get; set; }
+  public DM.TaskDeleteEventInfo? TaskDeleteEventInfo { get; set; }
   
-  public Boolean? TaskUndeleteEventInfo { get; set; }
+  public DM.TaskUndeleteEventInfo? TaskUndeleteEventInfo { get; set; }
   
-  public Boolean? TaskUnassignAll { get; set; }
+  public DM.TaskUnassignAll? TaskUnassignAll { get; set; }
   
-  public TaskUndo? TaskUndo { get; set; }
+  public DM.TaskUndo? TaskUndo { get; set; }
   
-  public ExtensionList? ExtensionList { get; set; }
+  public DM.ExtensionList? ExtensionList { get; set; }
   
 }

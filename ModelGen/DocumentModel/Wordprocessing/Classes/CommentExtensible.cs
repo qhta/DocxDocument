@@ -10,7 +10,7 @@ public partial class CommentExtensible
   /// <summary>
   ///   durableId, this property is only available in Office 2021 and later.
   /// </summary>
-  public HexInt? DurableId { get; set; }
+  public DM.HexBinary? DurableId { get; set; }
   
   
   /// <summary>
@@ -28,6 +28,6 @@ public partial class CommentExtensible
   /// <summary>
   ///   ExtensionList.
   /// </summary>
-  public ExtensionList? ExtensionList { get; set; }
+  public DocumentModel.Wordprocessing.ExtensionList? ExtensionList { get; set; }
   
 }

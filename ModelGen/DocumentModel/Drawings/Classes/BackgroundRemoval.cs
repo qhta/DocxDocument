@@ -30,6 +30,6 @@ public partial class BackgroundRemoval
   /// </summary>
   public Int32? MarqueeRight { get; set; }
   
-  public ElementCollection<IModelElement>? Items { get; set; }
+  public DM.ElementCollection<IModelElement>? Items { get; set; }
   
 }

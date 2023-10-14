@@ -10,12 +10,12 @@ public partial class SdtRunRuby
   /// <summary>
   ///   SdtContentRunRuby.
   /// </summary>
-  public SdtContentRunRuby? SdtContentRunRuby { get; set; }
+  public DocumentModel.Wordprocessing.SdtContentRunRuby? SdtContentRunRuby { get; set; }
   
-  public SdtProperties? SdtProperties { get; set; }
+  public DocumentModel.Wordprocessing.SdtProperties? SdtProperties { get; set; }
   
-  public SdtEndCharProperties? SdtEndCharProperties { get; set; }
+  public DocumentModel.Wordprocessing.SdtEndCharProperties? SdtEndCharProperties { get; set; }
   
-  public ElementCollection<IModelElement>? Items { get; set; }
+  public DM.ElementCollection<IModelElement>? Items { get; set; }
   
 }

@@ -10,42 +10,42 @@ public partial class FontReference
   /// <summary>
   ///   Specifies the identifier of the font to reference.
   /// </summary>
-  public FontCollectionIndexKind? Index { get; set; }
+  public DocumentModel.Drawings.FontCollectionIndexKind? Index { get; set; }
   
   
   /// <summary>
   ///   RGB Color Model - Percentage Variant.
   /// </summary>
-  public RgbColorModelPercentage? RgbColorModelPercentage { get; set; }
+  public DocumentModel.Drawings.RgbColorModelPercentage? RgbColorModelPercentage { get; set; }
   
   
   /// <summary>
   ///   RGB Color Model - Hex Variant.
   /// </summary>
-  public RgbColorModelHex? RgbColorModelHex { get; set; }
+  public DocumentModel.Drawings.RgbColorModelHex? RgbColorModelHex { get; set; }
   
   
   /// <summary>
   ///   Hue, Saturation, Luminance Color Model.
   /// </summary>
-  public HslColor? HslColor { get; set; }
+  public DocumentModel.Drawings.HslColor? HslColor { get; set; }
   
   
   /// <summary>
   ///   System Color.
   /// </summary>
-  public SystemColor? SystemColor { get; set; }
+  public DocumentModel.Drawings.SystemColor? SystemColor { get; set; }
   
   
   /// <summary>
   ///   Scheme Color.
   /// </summary>
-  public SchemeColorKind? SchemeColor { get; set; }
+  public DocumentModel.Drawings.SchemeColorKind? SchemeColor { get; set; }
   
   
   /// <summary>
   ///   Preset Color.
   /// </summary>
-  public PresetColorKind? PresetColor { get; set; }
+  public DocumentModel.Drawings.PresetColorKind? PresetColor { get; set; }
   
 }

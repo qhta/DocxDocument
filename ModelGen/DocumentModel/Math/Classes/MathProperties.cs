@@ -16,74 +16,74 @@ public partial class MathProperties
   /// <summary>
   ///   Break on Binary Operators.
   /// </summary>
-  public BreakBinaryOperatorKind? BreakBinary { get; set; }
+  public DocumentModel.Math.BreakBinaryOperatorKind? BreakBinary { get; set; }
   
   
   /// <summary>
   ///   Break on Binary Subtraction.
   /// </summary>
-  public BreakBinarySubtractionKind? BreakBinarySubtraction { get; set; }
+  public DocumentModel.Math.BreakBinarySubtractionKind? BreakBinarySubtraction { get; set; }
   
   
   /// <summary>
   ///   Small Fraction.
   /// </summary>
-  public Boolean? SmallFraction { get; set; }
+  public DocumentModel.Math.SmallFraction? SmallFraction { get; set; }
   
   
   /// <summary>
   ///   Use Display Math Defaults.
   /// </summary>
-  public Boolean? DisplayDefaults { get; set; }
+  public DocumentModel.Math.DisplayDefaults? DisplayDefaults { get; set; }
   
   
   /// <summary>
   ///   Left Margin.
   /// </summary>
-  public UInt32? LeftMargin { get; set; }
+  public DocumentModel.Math.LeftMargin? LeftMargin { get; set; }
   
   
   /// <summary>
   ///   Right Margin.
   /// </summary>
-  public UInt32? RightMargin { get; set; }
+  public DocumentModel.Math.RightMargin? RightMargin { get; set; }
   
   
   /// <summary>
   ///   Default Justification.
   /// </summary>
-  public JustificationKind? DefaultJustification { get; set; }
+  public DocumentModel.Math.DefaultJustification? DefaultJustification { get; set; }
   
   
   /// <summary>
   ///   Pre-Equation Spacing.
   /// </summary>
-  public UInt32? PreSpacing { get; set; }
+  public DocumentModel.Math.PreSpacing? PreSpacing { get; set; }
   
   
   /// <summary>
   ///   Post-Equation Spacing.
   /// </summary>
-  public UInt32? PostSpacing { get; set; }
+  public DocumentModel.Math.PostSpacing? PostSpacing { get; set; }
   
   
   /// <summary>
   ///   Inter-Equation Spacing.
   /// </summary>
-  public UInt32? InterSpacing { get; set; }
+  public DocumentModel.Math.InterSpacing? InterSpacing { get; set; }
   
   
   /// <summary>
   ///   Intra-Equation Spacing.
   /// </summary>
-  public UInt32? IntraSpacing { get; set; }
+  public DocumentModel.Math.IntraSpacing? IntraSpacing { get; set; }
   
-  public UInt32? WrapIndent { get; set; }
+  public DocumentModel.Math.WrapIndent? WrapIndent { get; set; }
   
-  public Boolean? WrapRight { get; set; }
+  public DocumentModel.Math.WrapRight? WrapRight { get; set; }
   
-  public LimitLocationKind? IntegralLimitLocation { get; set; }
+  public DocumentModel.Math.IntegralLimitLocation? IntegralLimitLocation { get; set; }
   
-  public LimitLocationKind? NaryLimitLocation { get; set; }
+  public DocumentModel.Math.NaryLimitLocation? NaryLimitLocation { get; set; }
   
 }

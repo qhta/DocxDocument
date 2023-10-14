@@ -12,15 +12,15 @@ public partial class ShapePropertiesExtension
   /// </summary>
   public String? Uri { get; set; }
   
-  public HiddenFillProperties? HiddenFillProperties { get; set; }
+  public DocumentModel.Drawings.HiddenFillProperties? HiddenFillProperties { get; set; }
   
-  public HiddenLineProperties? HiddenLineProperties { get; set; }
+  public DocumentModel.Drawings.HiddenLineProperties? HiddenLineProperties { get; set; }
   
-  public HiddenEffectsProperties? HiddenEffectsProperties { get; set; }
+  public DocumentModel.Drawings.HiddenEffectsProperties? HiddenEffectsProperties { get; set; }
   
-  public HiddenScene3D? HiddenScene3D { get; set; }
+  public DocumentModel.Drawings.HiddenScene3D? HiddenScene3D { get; set; }
   
-  public HiddenShape3D? HiddenShape3D { get; set; }
+  public DocumentModel.Drawings.HiddenShape3D? HiddenShape3D { get; set; }
   
   public Boolean? ShadowObscured { get; set; }
   

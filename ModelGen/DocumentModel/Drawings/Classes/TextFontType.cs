@@ -16,7 +16,7 @@ public partial class TextFontType
   /// <summary>
   ///   Panose Setting
   /// </summary>
-  public HexBinary? Panose { get; set; }
+  public DM.HexBinary? Panose { get; set; }
   
   
   /// <summary>

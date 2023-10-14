@@ -10,13 +10,13 @@ public partial class BackstageComboBox
   /// <summary>
   ///   id, this property is only available in Office 2010 and later.
   /// </summary>
-  public HexInt? Id { get; set; }
+  public String? Id { get; set; }
   
   
   /// <summary>
   ///   idQ, this property is only available in Office 2010 and later.
   /// </summary>
-  public HexInt? QualifiedId { get; set; }
+  public String? QualifiedId { get; set; }
   
   
   /// <summary>
@@ -28,13 +28,13 @@ public partial class BackstageComboBox
   /// <summary>
   ///   alignLabel, this property is only available in Office 2010 and later.
   /// </summary>
-  public ExpandKind? AlignLabel { get; set; }
+  public DM.ExpandKind? AlignLabel { get; set; }
   
   
   /// <summary>
   ///   expand, this property is only available in Office 2010 and later.
   /// </summary>
-  public ExpandKind? Expand { get; set; }
+  public DM.ExpandKind? Expand { get; set; }
   
   
   /// <summary>
@@ -118,8 +118,8 @@ public partial class BackstageComboBox
   /// <summary>
   ///   getItemID, this property is only available in Office 2010 and later.
   /// </summary>
-  public HexInt? GetItemID { get; set; }
+  public String? GetItemID { get; set; }
   
-  public ElementCollection<BackstageItemType>? Items { get; set; }
+  public DM.ElementCollection<ItemBackstageItem>? Items { get; set; }
   
 }

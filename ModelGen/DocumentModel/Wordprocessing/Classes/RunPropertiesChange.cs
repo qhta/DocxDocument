@@ -34,6 +34,6 @@ public partial class RunPropertiesChange
   /// <summary>
   ///   Previous Run Properties.
   /// </summary>
-  public PreviousRunProperties? PreviousRunProperties { get; set; }
+  public DocumentModel.Wordprocessing.PreviousRunProperties? PreviousRunProperties { get; set; }
   
 }

@@ -16,6 +16,6 @@ public partial class SymbolChar
   /// <summary>
   ///   Symbol Character Code
   /// </summary>
-  public HexBinary? Char { get; set; }
+  public DM.HexBinary? Char { get; set; }
   
 }

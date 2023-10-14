@@ -10,7 +10,7 @@ public partial class AutoNumberedBullet
   /// <summary>
   ///   Bullet Autonumbering Type
   /// </summary>
-  public TextAutoNumberSchemeKind? Type { get; set; }
+  public DocumentModel.Drawings.TextAutoNumberSchemeKind? Type { get; set; }
   
   
   /// <summary>

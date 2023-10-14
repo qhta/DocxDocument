@@ -1,0 +1,1 @@
+"c:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\devenv.exe" /build debug %1.sln /out %1.txt

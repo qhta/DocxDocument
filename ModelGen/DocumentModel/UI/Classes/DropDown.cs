@@ -82,7 +82,7 @@ public partial class DropDown
   /// <summary>
   ///   getItemID
   /// </summary>
-  public HexInt? GetItemID { get; set; }
+  public String? GetItemID { get; set; }
   
   
   /// <summary>
@@ -94,7 +94,7 @@ public partial class DropDown
   /// <summary>
   ///   getSelectedItemID
   /// </summary>
-  public HexInt? GetSelectedItemID { get; set; }
+  public String? GetSelectedItemID { get; set; }
   
   
   /// <summary>
@@ -112,7 +112,7 @@ public partial class DropDown
   /// <summary>
   ///   id
   /// </summary>
-  public HexInt? Id { get; set; }
+  public String? Id { get; set; }
   
   
   /// <summary>
@@ -240,6 +240,6 @@ public partial class DropDown
   /// </summary>
   public String? GetShowImage { get; set; }
   
-  public ElementCollection<IModelElement>? Items { get; set; }
+  public DM.ElementCollection<IModelElement>? Items { get; set; }
   
 }

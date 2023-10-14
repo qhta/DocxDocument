@@ -10,12 +10,12 @@ public partial class StyleSet
   /// <summary>
   ///   id, this property is only available in Office 2010 and later.
   /// </summary>
-  public HexInt? Id { get; set; }
+  public UInt32? Id { get; set; }
   
   
   /// <summary>
   ///   val, this property is only available in Office 2010 and later.
   /// </summary>
-  public OnOffKind? Val { get; set; }
+  public DocumentModel.Wordprocessing.OnOffKind? Val { get; set; }
   
 }

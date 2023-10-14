@@ -16,24 +16,24 @@ public partial class Ribbon
   /// <summary>
   ///   OfficeMenu.
   /// </summary>
-  public OfficeMenu? OfficeMenu { get; set; }
+  public DMUI.OfficeMenu? OfficeMenu { get; set; }
   
   
   /// <summary>
   ///   QuickAccessToolbar.
   /// </summary>
-  public QuickAccessToolbar? QuickAccessToolbar { get; set; }
+  public DMUI.QuickAccessToolbar? QuickAccessToolbar { get; set; }
   
   
   /// <summary>
   ///   Tabs.
   /// </summary>
-  public Tabs? Tabs { get; set; }
+  public DMUI.Tabs? Tabs { get; set; }
   
   
   /// <summary>
   ///   ContextualTabSets.
   /// </summary>
-  public ContextualTabSets? ContextualTabSets { get; set; }
+  public DMUI.ContextualTabSets? ContextualTabSets { get; set; }
   
 }

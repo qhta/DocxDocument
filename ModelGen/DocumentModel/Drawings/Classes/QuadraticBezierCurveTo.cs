@@ -6,6 +6,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class QuadraticBezierCurveTo
 {
-  public ElementCollection<AdjustPoint2DType>? Items { get; set; }
+  public DM.ElementCollection<Point>? Items { get; set; }
   
 }

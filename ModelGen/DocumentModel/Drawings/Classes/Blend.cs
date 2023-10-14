@@ -10,12 +10,12 @@ public partial class Blend
   /// <summary>
   ///   Specifies how to blend the two effects.
   /// </summary>
-  public BlendMode? BlendMode { get; set; }
+  public DocumentModel.Drawings.BlendMode? BlendMode { get; set; }
   
   
   /// <summary>
   ///   Effect to blend.
   /// </summary>
-  public EffectContainer? EffectContainer { get; set; }
+  public DocumentModel.Drawings.EffectContainer? EffectContainer { get; set; }
   
 }

@@ -34,19 +34,19 @@ public partial class TablePositionProperties
   /// <summary>
   ///   Table Vertical Anchor
   /// </summary>
-  public VerticalAnchorKind? VerticalAnchor { get; set; }
+  public DocumentModel.Wordprocessing.VerticalAnchorKind? VerticalAnchor { get; set; }
   
   
   /// <summary>
   ///   Table Horizontal Anchor
   /// </summary>
-  public HorizontalAnchorKind? HorizontalAnchor { get; set; }
+  public DocumentModel.Wordprocessing.HorizontalAnchorKind? HorizontalAnchor { get; set; }
   
   
   /// <summary>
   ///   Relative Horizontal Alignment From Anchor
   /// </summary>
-  public HorizontalAlignmentKind? TablePositionXAlignment { get; set; }
+  public DocumentModel.Wordprocessing.HorizontalAlignmentKind? TablePositionXAlignment { get; set; }
   
   
   /// <summary>
@@ -58,7 +58,7 @@ public partial class TablePositionProperties
   /// <summary>
   ///   Relative Vertical Alignment from Anchor
   /// </summary>
-  public VerticalAlignmentKind? TablePositionYAlignment { get; set; }
+  public DocumentModel.Wordprocessing.VerticalAlignmentKind? TablePositionYAlignment { get; set; }
   
   
   /// <summary>

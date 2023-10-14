@@ -10,13 +10,13 @@ public partial class Proxy
   /// <summary>
   ///   Start Point Connection Flag
   /// </summary>
-  public Boolean? Start { get; set; }
+  public DM.TrueFalseBlankValue? Start { get; set; }
   
   
   /// <summary>
   ///   End Point Connection Flag
   /// </summary>
-  public Boolean? End { get; set; }
+  public DM.TrueFalseBlankValue? End { get; set; }
   
   
   /// <summary>

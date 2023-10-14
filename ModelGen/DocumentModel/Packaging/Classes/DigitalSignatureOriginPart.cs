@@ -14,6 +14,6 @@ public partial class DigitalSignatureOriginPart
   /// <summary>
   ///   Gets the XmlSignatureParts of the DigitalSignatureOriginPart
   /// </summary>
-  public Collection? XmlSignatureParts { get; set; }
+  public Collection<XmlSignaturePart>? XmlSignatureParts { get; set; }
   
 }

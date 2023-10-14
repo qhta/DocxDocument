@@ -10,12 +10,12 @@ public partial class ExtraColorScheme
   /// <summary>
   ///   ColorScheme.
   /// </summary>
-  public ColorScheme? ColorScheme { get; set; }
+  public DocumentModel.Drawings.ColorScheme? ColorScheme { get; set; }
   
   
   /// <summary>
   ///   ColorMap.
   /// </summary>
-  public ColorMap? ColorMap { get; set; }
+  public DocumentModel.Drawings.ColorMap? ColorMap { get; set; }
   
 }

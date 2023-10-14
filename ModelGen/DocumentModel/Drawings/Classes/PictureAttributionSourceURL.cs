@@ -10,6 +10,6 @@ public partial class PictureAttributionSourceURL
   /// <summary>
   ///   id, this property is only available in Office 2019 and later.
   /// </summary>
-  public HexInt? Id { get; set; }
+  public String? Id { get; set; }
   
 }

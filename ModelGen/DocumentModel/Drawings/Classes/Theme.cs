@@ -16,36 +16,36 @@ public partial class Theme
   /// <summary>
   ///   id, this property is only available in Office 2013 and later.
   /// </summary>
-  public HexInt? ThemeId { get; set; }
+  public String? ThemeId { get; set; }
   
   
   /// <summary>
   ///   ThemeElements.
   /// </summary>
-  public ThemeElements? ThemeElements { get; set; }
+  public DocumentModel.Drawings.ThemeElements? ThemeElements { get; set; }
   
   
   /// <summary>
   ///   ObjectDefaults.
   /// </summary>
-  public ObjectDefaults? ObjectDefaults { get; set; }
+  public DocumentModel.Drawings.ObjectDefaults? ObjectDefaults { get; set; }
   
   
   /// <summary>
   ///   ExtraColorSchemeList.
   /// </summary>
-  public ExtraColorSchemeList? ExtraColorSchemeList { get; set; }
+  public DocumentModel.Drawings.ExtraColorSchemeList? ExtraColorSchemeList { get; set; }
   
   
   /// <summary>
   ///   CustomColorList.
   /// </summary>
-  public CustomColorList? CustomColorList { get; set; }
+  public DocumentModel.Drawings.CustomColorList? CustomColorList { get; set; }
   
   
   /// <summary>
   ///   OfficeStyleSheetExtensionList.
   /// </summary>
-  public OfficeStyleSheetExtensionList? OfficeStyleSheetExtensionList { get; set; }
+  public DocumentModel.Drawings.OfficeStyleSheetExtensionList? OfficeStyleSheetExtensionList { get; set; }
   
 }

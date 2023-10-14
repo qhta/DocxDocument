@@ -10,8 +10,8 @@ public partial class Paragraph
   /// <summary>
   ///   Office Math Paragraph Properties.
   /// </summary>
-  public ParagraphProperties? ParagraphProperties { get; set; }
+  public DocumentModel.Math.ParagraphProperties? ParagraphProperties { get; set; }
   
-  public ElementCollection<IModelElement>? Items { get; set; }
+  public DM.ElementCollection<IModelElement>? Items { get; set; }
   
 }

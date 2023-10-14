@@ -16,18 +16,18 @@ public partial class Ribbon
   /// <summary>
   ///   QuickAccessToolbar.
   /// </summary>
-  public QuickAccessToolbar? QuickAccessToolbar { get; set; }
+  public DM.QuickAccessToolbar? QuickAccessToolbar { get; set; }
   
   
   /// <summary>
   ///   Tabs.
   /// </summary>
-  public Tabs? Tabs { get; set; }
+  public DM.Tabs? Tabs { get; set; }
   
   
   /// <summary>
   ///   ContextualTabs.
   /// </summary>
-  public ContextualTabs? ContextualTabs { get; set; }
+  public DM.ContextualTabs? ContextualTabs { get; set; }
   
 }

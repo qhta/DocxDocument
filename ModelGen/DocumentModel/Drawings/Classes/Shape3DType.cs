@@ -28,36 +28,36 @@ public partial class Shape3DType
   /// <summary>
   ///   Defines the preset material which is combined with the lighting properties to give the final look and feel of a shape.
   /// </summary>
-  public PresetMaterialTypeKind? PresetMaterial { get; set; }
+  public DocumentModel.Drawings.PresetMaterialTypeKind? PresetMaterial { get; set; }
   
   
   /// <summary>
   ///   Top Bevel.
   /// </summary>
-  public BevelType? BevelTop { get; set; }
+  public DocumentModel.Drawings.BevelTop? BevelTop { get; set; }
   
   
   /// <summary>
   ///   Bottom Bevel.
   /// </summary>
-  public BevelType? BevelBottom { get; set; }
+  public DocumentModel.Drawings.BevelBottom? BevelBottom { get; set; }
   
   
   /// <summary>
   ///   Extrusion Color.
   /// </summary>
-  public ExtrusionColor? ExtrusionColor { get; set; }
+  public DocumentModel.Drawings.ExtrusionColor? ExtrusionColor { get; set; }
   
   
   /// <summary>
   ///   Contour Color.
   /// </summary>
-  public ContourColor? ContourColor { get; set; }
+  public DocumentModel.Drawings.ContourColor? ContourColor { get; set; }
   
   
   /// <summary>
   ///   ExtensionList.
   /// </summary>
-  public ExtensionList? ExtensionList { get; set; }
+  public DocumentModel.Drawings.ExtensionList? ExtensionList { get; set; }
   
 }

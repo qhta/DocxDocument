@@ -22,10 +22,10 @@ public partial class Blip
   /// <summary>
   ///   Compression state for blips.
   /// </summary>
-  public BlipCompressionKind? CompressionState { get; set; }
+  public DocumentModel.Drawings.BlipCompressionKind? CompressionState { get; set; }
   
-  public BlipExtensionList? BlipExtensionList { get; set; }
+  public DocumentModel.Drawings.BlipExtensionList? BlipExtensionList { get; set; }
   
-  public ElementCollection<IModelElement>? Items { get; set; }
+  public DM.ElementCollection<IModelElement>? Items { get; set; }
   
 }

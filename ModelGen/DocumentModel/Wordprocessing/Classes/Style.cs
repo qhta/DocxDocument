@@ -10,7 +10,7 @@ public partial class Style
   /// <summary>
   ///   Style Type
   /// </summary>
-  public StyleKind? Type { get; set; }
+  public DocumentModel.Wordprocessing.StyleKind? Type { get; set; }
   
   
   /// <summary>
@@ -40,37 +40,37 @@ public partial class Style
   /// <summary>
   ///   Alternate Style Names.
   /// </summary>
-  public String? Aliases { get; set; }
+  public DocumentModel.Wordprocessing.Aliases? Aliases { get; set; }
   
   
   /// <summary>
   ///   Parent Style ID.
   /// </summary>
-  public String? BasedOn { get; set; }
+  public DocumentModel.Wordprocessing.BasedOn? BasedOn { get; set; }
   
   
   /// <summary>
   ///   Style For Next Paragraph.
   /// </summary>
-  public String? NextParagraphStyle { get; set; }
+  public DocumentModel.Wordprocessing.NextParagraphStyle? NextParagraphStyle { get; set; }
   
   
   /// <summary>
   ///   Linked Style Reference.
   /// </summary>
-  public String? LinkedStyle { get; set; }
+  public DocumentModel.Wordprocessing.LinkedStyle? LinkedStyle { get; set; }
   
   
   /// <summary>
   ///   Automatically Merge User Formatting Into Style Definition.
   /// </summary>
-  public Boolean? AutoRedefine { get; set; }
+  public DocumentModel.Wordprocessing.AutoRedefine? AutoRedefine { get; set; }
   
   
   /// <summary>
   ///   Hide Style From User Interface.
   /// </summary>
-  public Boolean? StyleHidden { get; set; }
+  public DocumentModel.Wordprocessing.StyleHidden? StyleHidden { get; set; }
   
   
   /// <summary>
@@ -82,43 +82,43 @@ public partial class Style
   /// <summary>
   ///   Hide Style From Main User Interface.
   /// </summary>
-  public Boolean? SemiHidden { get; set; }
+  public DocumentModel.Wordprocessing.SemiHidden? SemiHidden { get; set; }
   
   
   /// <summary>
   ///   Remove Semi-Hidden Property When Style Is Used.
   /// </summary>
-  public Boolean? UnhideWhenUsed { get; set; }
+  public DocumentModel.Wordprocessing.UnhideWhenUsed? UnhideWhenUsed { get; set; }
   
   
   /// <summary>
   ///   Primary Style.
   /// </summary>
-  public Boolean? PrimaryStyle { get; set; }
+  public DocumentModel.Wordprocessing.PrimaryStyle? PrimaryStyle { get; set; }
   
   
   /// <summary>
   ///   Style Cannot Be Applied.
   /// </summary>
-  public Boolean? Locked { get; set; }
+  public DocumentModel.Wordprocessing.Locked? Locked { get; set; }
   
   
   /// <summary>
   ///   E-Mail Message Text Style.
   /// </summary>
-  public Boolean? Personal { get; set; }
+  public DocumentModel.Wordprocessing.Personal? Personal { get; set; }
   
   
   /// <summary>
   ///   E-Mail Message Composition Style.
   /// </summary>
-  public Boolean? PersonalCompose { get; set; }
+  public DocumentModel.Wordprocessing.PersonalCompose? PersonalCompose { get; set; }
   
   
   /// <summary>
   ///   E-Mail Message Reply Style.
   /// </summary>
-  public Boolean? PersonalReply { get; set; }
+  public DocumentModel.Wordprocessing.PersonalReply? PersonalReply { get; set; }
   
   
   /// <summary>
@@ -130,32 +130,32 @@ public partial class Style
   /// <summary>
   ///   Style Paragraph Properties.
   /// </summary>
-  public StyleParagraphProperties? StyleParagraphProperties { get; set; }
+  public DocumentModel.Wordprocessing.StyleParagraphProperties? StyleParagraphProperties { get; set; }
   
   
   /// <summary>
   ///   Run Properties.
   /// </summary>
-  public StyleRunProperties? StyleRunProperties { get; set; }
+  public DocumentModel.Wordprocessing.StyleRunProperties? StyleRunProperties { get; set; }
   
   
   /// <summary>
   ///   Style Table Properties.
   /// </summary>
-  public StyleTableProperties? StyleTableProperties { get; set; }
+  public DocumentModel.Wordprocessing.StyleTableProperties? StyleTableProperties { get; set; }
   
   
   /// <summary>
   ///   Style Table Row Properties.
   /// </summary>
-  public TableStyleConditionalFormattingTableRowProperties? TableStyleConditionalFormattingTableRowProperties { get; set; }
+  public DocumentModel.Wordprocessing.TableStyleConditionalFormattingTableRowProperties? TableStyleConditionalFormattingTableRowProperties { get; set; }
   
   
   /// <summary>
   ///   Style Table Cell Properties.
   /// </summary>
-  public StyleTableCellProperties? StyleTableCellProperties { get; set; }
+  public DocumentModel.Wordprocessing.StyleTableCellProperties? StyleTableCellProperties { get; set; }
   
-  public ElementCollection<TableStyleProperties>? Items { get; set; }
+  public DM.ElementCollection<TableStyleProperties>? Items { get; set; }
   
 }

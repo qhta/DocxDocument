@@ -16,6 +16,6 @@ public partial class TableWidthDxaNilType
   /// <summary>
   ///   type
   /// </summary>
-  public TableWidthKind? Type { get; set; }
+  public DocumentModel.Wordprocessing.TableWidthKind? Type { get; set; }
   
 }

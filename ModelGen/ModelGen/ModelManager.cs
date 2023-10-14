@@ -1,4 +1,5 @@
 ﻿using System.Data;
+using System.Runtime.CompilerServices;
 
 namespace ModelGen;
 
@@ -7,11 +8,14 @@ public static class ModelManager
   public static event ProgressTypeEvent? OnScanningType;
   public static event ProgressTypeEvent? OnRenamingType;
   public static event ProgressTypeEvent? OnConvertingType;
+  public static event ProgressTypeEvent? OnCheckingType;
 
   public static int CheckedRenameTypesCount { get; private set; }
   public static int RenamedTypesCount { get; private set; }
   public static int DuplicatedNamesCount { get; private set; }
   public static int ConvertedTypesCount { get; private set; }
+  public static int FixedTypesCount { get; private set; }
+  public static int FixedPropertiesCount { get; private set; }
 
   public static int CheckedUsageTypesCount { get; private set; }
   public static int UsedTypesCount { get; private set; }
@@ -44,7 +48,7 @@ public static class ModelManager
 
   public static bool TryConvertType(this TypeInfo typeInfo)
   {
-    if (typeInfo.TypeKind==TypeKind.@enum)
+    if (typeInfo.Name == "StringValue")
       Debug.Assert(true);
     if (typeInfo.IsConverted)
       return false;
@@ -105,19 +109,18 @@ public static class ModelManager
 
   public static void SetTargetType(this TypeInfo typeInfo, TypeInfo targetTypeInfo)
   {
+    typeInfo.AddRelationship(targetTypeInfo, Semantics.TypeChange);
     typeInfo.IsConverted = true;
-    if (targetTypeInfo != null)
-    {
-      targetTypeInfo.IsConvertedTo = true;
-      targetTypeInfo.SetTargetNamespace(targetTypeInfo.TargetNamespace ?? targetTypeInfo.OriginalNamespace);
-    }
+    targetTypeInfo.IsConversionTarget = true;
+    targetTypeInfo.SetTargetNamespace(targetTypeInfo.TargetNamespace ?? targetTypeInfo.OriginalNamespace);
+    typeInfo.RemoveFromTargetNamespace();
   }
 
   private static bool TryEnumTypeConversion(TypeInfo typeInfo)
   {
     if (typeInfo.IsConverted)
       return false;
-    if (typeInfo.TypeKind==TypeKind.@enum)
+    if (typeInfo.TypeKind == TypeKind.@enum)
     {
       //if (typeInfo.TargetName.EndsWith("Kind"))
       //  Debug.Assert(true);
@@ -167,6 +170,8 @@ public static class ModelManager
 
   private static bool TryValTypeConversion(TypeInfo typeInfo)
   {
+    if (typeInfo.Name == "StringValue")
+      Debug.Assert(true);
     if (typeInfo.IsConverted)
       return false;
     if (typeInfo.AcceptedProperties(PPS.ConvertTypes)?.Count() == 1)
@@ -192,6 +197,8 @@ public static class ModelManager
     if (typeInfo.IsConverted)
       return false;
 
+    //if (typeInfo.Name.StartsWith("EnumValue") && typeInfo.GetGenericArguments().FirstOrDefault()?.Name.StartsWith("RegionLabel")==true)
+    //  Debug.Assert(true);
     if (typeInfo.Type.Name.Contains('`'))
     {
       if (typeInfo.Name == "Nullable`1")
@@ -255,7 +262,7 @@ public static class ModelManager
         }
       }
       else
-      if (typeInfo.IsConstructedGenericType)
+      if (typeInfo.IsConstructedGenericType && typeInfo.Name.StartsWith("EnumValue"))
       {
         var sourceArgTypes = typeInfo.Type.GetGenericArguments();
         var sourceArgType = sourceArgTypes.FirstOrDefault();
@@ -446,11 +453,101 @@ public static class ModelManager
 
   public static TypeInfo? GetConversionSource(this TypeInfo typeInfo)
   {
-    if (typeInfo.IsConvertedTo)
+    if (typeInfo.IsConversionTarget)
       return typeInfo;
     var result = TypeManager.GetRevRelatedTypes(typeInfo, Semantics.TypeChange).FirstOrDefault();
     return result;
   }
+
+  public static void FinalCheck(IEnumerable<TypeInfo> types)
+  {
+    var totalTypes = types.Count();
+    var checkedTypes = 0;
+    foreach (var type in types)
+    {
+      OnCheckingType?.Invoke(new ProgressTypeInfo{ TotalTypes=totalTypes, CheckedTypes=checkedTypes, ProcessedTypes=FixedTypesCount, Current=type});
+      FixProperties(type);
+      checkedTypes++;
+      //FixFields(type);
+      //FixCustomAttributes(type);
+    }
+  }
+
+  public static bool FixProperties(TypeInfo type)
+  {
+    var changed = false;
+    if (type.Properties != null)
+    {
+      foreach (var propInfo in type.Properties)
+      {
+        //FixCustomAttributes(propInfo);
+        if (propInfo.GetTargetPropertyType() == null)
+        {
+          Debug.WriteLine($"Reject property {propInfo.Name}: {propInfo.PropertyType}");
+          propInfo.SetRejected(PPS.FinalCheck);
+          FixedPropertiesCount++;
+          changed = true;
+        }
+      }
+    }
+    FixedTypesCount++;
+    return changed;
+  }
+
+  public static TypeInfo? GetTargetPropertyType(this PropInfo propInfo)
+  {
+    //if (propInfo.Name == "StylePaneSortMethods")
+    //  Debug.Assert(true);
+    var result = propInfo.PropertyType;
+    if (result != null)
+    {
+      if (result.IsAcceptedAfter(PPS.CodeGen) || result.IsConversionTarget)
+        return result;
+      if (result.OriginalNamespace.StartsWith("System"))
+        return result;
+      if (result.TargetNamespace!=null)
+      {  
+        if (result.TargetNamespace.StartsWith("System") || TypeManager.GetNamespace(result.TargetNamespace).IsTarget)
+          return result;
+      }
+      result = result.GetConversionTarget();
+    }
+    return result;
+  }
+
+  //public static bool FixFields(TypeInfo type)
+  //{
+  //  var changed = false;
+  //  if (type.EnumValues != null)
+  //  {
+  //    foreach (var enumValueInfo in type.EnumValues)
+  //    {
+  //      FixCustomAttributes(enumValueInfo);
+  //    }
+  //  }
+  //  FixedTypesCount++;
+  //  return changed;
+  //}
+
+  //public static bool FixCustomAttributes(ModelElement type)
+  //{
+  //  var changed = false;
+  //  if (type.CustomAttributes!=null)
+  //  {
+  //    foreach (var attrInfo in type.CustomAttributes)
+  //    {
+  //      if (!attrInfo.AttributeTypeInfo.IsAcceptedTo(PPS.FinalCheck))
+  //      {
+  //        Debug.WriteLine($"Reject attribute {attrInfo.Name}: {attrInfo.AttributeTypeInfo}");
+  //        attrInfo.SetRejected(PPS.FinalCheck);
+  //        FixedAttributesCount++;
+  //        changed = true;
+  //      }
+  //    }
+  //  }
+  //  FixedTypesCount++;
+  //  return changed;
+  //}
   #endregion
 
   #region Scan Source
@@ -463,7 +560,14 @@ public static class ModelManager
     TypeManager.RegisterType(type);
     TypeManager.OnRegistering -= TypeManager_OnRegistering;
     if (TypeManager.UseAsynReflection)
+    {
       TypeReflector.WaitDone();
+      double tps = TimeSpan.TicksPerSecond;
+      Debug.WriteLine($"TypeReflector ThreadsUsed={TypeReflector.ThreadsUsed.Count}, TotalTime={TypeReflector.ThreadsUsed.Values.Sum() / tps:F3} s");
+      foreach (var item in TypeReflector.ThreadsUsed)
+        Debug.WriteLine($"  Thread {item.Key} = {item.Value / tps:F3} s");
+    }
+    TypeManager.UseAsynReflection = false;
     return true;
   }
 

@@ -10,7 +10,7 @@ public partial class Box
   /// <summary>
   ///   id
   /// </summary>
-  public HexInt? Id { get; set; }
+  public String? Id { get; set; }
   
   
   /// <summary>
@@ -58,8 +58,8 @@ public partial class Box
   /// <summary>
   ///   boxStyle
   /// </summary>
-  public BoxStyleKind? BoxStyle { get; set; }
+  public DMUI.BoxStyleKind? BoxStyle { get; set; }
   
-  public ElementCollection<IModelElement>? Items { get; set; }
+  public DM.ElementCollection<IModelElement>? Items { get; set; }
   
 }

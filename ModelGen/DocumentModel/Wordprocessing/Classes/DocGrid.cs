@@ -10,7 +10,7 @@ public partial class DocGrid
   /// <summary>
   ///   Document Grid Type
   /// </summary>
-  public DocGridKind? Type { get; set; }
+  public DocumentModel.Wordprocessing.DocGridKind? Type { get; set; }
   
   
   /// <summary>

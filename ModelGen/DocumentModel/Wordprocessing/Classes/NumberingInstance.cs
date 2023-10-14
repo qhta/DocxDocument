@@ -22,8 +22,8 @@ public partial class NumberingInstance
   /// <summary>
   ///   AbstractNumId.
   /// </summary>
-  public HexInt? AbstractNumId { get; set; }
+  public DocumentModel.Wordprocessing.AbstractNumId? AbstractNumId { get; set; }
   
-  public ElementCollection<LevelOverride>? Items { get; set; }
+  public DM.ElementCollection<LevelOverride>? Items { get; set; }
   
 }

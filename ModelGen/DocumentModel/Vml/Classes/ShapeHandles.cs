@@ -6,6 +6,6 @@ namespace DocumentModel.Vml;
 /// </summary>
 public partial class ShapeHandles
 {
-  public ElementCollection<ShapeHandle>? Items { get; set; }
+  public DM.ElementCollection<ShapeHandle>? Items { get; set; }
   
 }

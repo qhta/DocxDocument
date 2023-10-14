@@ -10,7 +10,7 @@ public partial class Menu
   /// <summary>
   ///   size
   /// </summary>
-  public SizeKind? Size { get; set; }
+  public DMUI.SizeKind? Size { get; set; }
   
   
   /// <summary>
@@ -22,7 +22,7 @@ public partial class Menu
   /// <summary>
   ///   itemSize
   /// </summary>
-  public ItemSizeKind? ItemSize { get; set; }
+  public DMUI.ItemSizeKind? ItemSize { get; set; }
   
   
   /// <summary>
@@ -40,7 +40,7 @@ public partial class Menu
   /// <summary>
   ///   id
   /// </summary>
-  public HexInt? Id { get; set; }
+  public String? Id { get; set; }
   
   
   /// <summary>
@@ -198,6 +198,6 @@ public partial class Menu
   /// </summary>
   public String? GetShowImage { get; set; }
   
-  public ElementCollection<IModelElement>? Items { get; set; }
+  public DM.ElementCollection<IModelElement>? Items { get; set; }
   
 }

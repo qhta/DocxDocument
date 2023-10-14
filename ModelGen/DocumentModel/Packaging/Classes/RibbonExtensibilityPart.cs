@@ -12,7 +12,7 @@ public partial class RibbonExtensibilityPart
   /// <summary>
   ///   Gets the ImageParts of the RibbonExtensibilityPart
   /// </summary>
-  public Collection? ImageParts { get; set; }
+  public Collection<ImagePart>? ImageParts { get; set; }
   
   public String? RelationshipType { get; set; }
   

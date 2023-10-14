@@ -10,13 +10,13 @@ public partial class GroupBox
   /// <summary>
   ///   id, this property is only available in Office 2010 and later.
   /// </summary>
-  public HexInt? Id { get; set; }
+  public String? Id { get; set; }
   
   
   /// <summary>
   ///   idQ, this property is only available in Office 2010 and later.
   /// </summary>
-  public HexInt? QualifiedId { get; set; }
+  public String? QualifiedId { get; set; }
   
   
   /// <summary>
@@ -28,7 +28,7 @@ public partial class GroupBox
   /// <summary>
   ///   expand, this property is only available in Office 2010 and later.
   /// </summary>
-  public ExpandKind? Expand { get; set; }
+  public DM.ExpandKind? Expand { get; set; }
   
   
   /// <summary>
@@ -42,6 +42,6 @@ public partial class GroupBox
   /// </summary>
   public String? GetLabel { get; set; }
   
-  public ElementCollection<IModelElement>? Items { get; set; }
+  public DM.ElementCollection<IModelElement>? Items { get; set; }
   
 }

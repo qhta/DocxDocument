@@ -12,7 +12,7 @@ public partial class DocumentSettingsPart
   /// <summary>
   ///   Gets the ImageParts of the DocumentSettingsPart
   /// </summary>
-  public Collection? ImageParts { get; set; }
+  public Collection<ImagePart>? ImageParts { get; set; }
   
   public String? RelationshipType { get; set; }
   
@@ -20,6 +20,6 @@ public partial class DocumentSettingsPart
   /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>
-  public Settings? Settings { get; set; }
+  public DM.DocumentSettings? Settings { get; set; }
   
 }

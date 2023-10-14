@@ -141,7 +141,8 @@
                                    Percentage="{Binding Path=ProcessMonitor.VM.PhaseMonitors[3].Percentage}" />
           <views:PhaseProgressView Grid.Row="5"
                                    Percentage="{Binding Path=ProcessMonitor.VM.PhaseMonitors[4].Percentage}" />
-
+          <views:PhaseProgressView Grid.Row="6"
+                                   Percentage="{Binding Path=ProcessMonitor.VM.PhaseMonitors[5].Percentage}" />
           <Slider Grid.Column="0"
                   Grid.Row="1"
                   Grid.RowSpan="7"
@@ -257,9 +258,9 @@
                       Grid.Row="5"
                       VerticalAlignment="Center"
                       Margin="0,0,5,0">
-            <Label Content="{x:Static local:CommonStrings.CodeGen}" />
-            <CheckBox Content="{x:Static local:CommonStrings.ValidateGeneration}"
-                      IsChecked="{Binding Path=ProcessOptionsVM.ValidateGeneration}" />
+            <Label Content="{x:Static local:CommonStrings.FinalCheck}" />
+            <!--<CheckBox Content="{x:Static local:CommonStrings.ValidateGeneration}"
+                      IsChecked="{Binding Path=ProcessOptionsVM.ValidateGeneration}" />-->
           </StackPanel>
           <Button Grid.Column="2"
                   Grid.Row="5"
@@ -277,7 +278,32 @@
                   Padding="5,0"
                   Content="{x:Static local:CommonStrings.SaveResults}"
                   Command="{Binding Path=ProcessMonitorVM.PhaseMonitors[4].SaveResultsCommand}" />
-          
+
+          <StackPanel Grid.Column="1"
+                      Grid.Row="6"
+                      VerticalAlignment="Center"
+                      Margin="0,0,5,0">
+            <Label Content="{x:Static local:CommonStrings.CodeGen}" />
+            <CheckBox Content="{x:Static local:CommonStrings.ValidateGeneration}"
+                      IsChecked="{Binding Path=ProcessOptionsVM.ValidateGeneration}" />
+          </StackPanel>
+          <Button Grid.Column="2"
+                  Grid.Row="6"
+                  VerticalAlignment="Center"
+                  Margin="5,0,5,0"
+                  Height="25"
+                  Padding="5,0"
+                  Content="{x:Static local:CommonStrings.ShowResults}"
+                  Command="{Binding Path=ProcessMonitorVM.PhaseMonitors[5].ShowResultsCommand}" />
+          <Button Grid.Column="3"
+                  Grid.Row="6"
+                  VerticalAlignment="Center"
+                  Margin="5,0,5,0"
+                  Height="25"
+                  Padding="5,0"
+                  Content="{x:Static local:CommonStrings.SaveResults}"
+                  Command="{Binding Path=ProcessMonitorVM.PhaseMonitors[5].SaveResultsCommand}" />
+
         </Grid>
       </Grid>
     </Border>

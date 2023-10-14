@@ -10,8 +10,8 @@ public partial class Matrix
   /// <summary>
   ///   Matrix Properties.
   /// </summary>
-  public MatrixProperties? MatrixProperties { get; set; }
+  public DocumentModel.Math.MatrixProperties? MatrixProperties { get; set; }
   
-  public ElementCollection<MatrixRow>? Items { get; set; }
+  public DM.ElementCollection<MatrixRow>? Items { get; set; }
   
 }

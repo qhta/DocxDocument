@@ -10,6 +10,6 @@ public partial class Complex
   /// <summary>
   ///   VML Extension Handling Behavior
   /// </summary>
-  public ExtensionHandlingBehaviorKind? Extension { get; set; }
+  public DocumentModel.Vml.ExtensionHandlingBehaviorKind? Extension { get; set; }
   
 }

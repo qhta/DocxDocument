@@ -6,8 +6,8 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class TableGrid
 {
-  public TableGridChange? TableGridChange { get; set; }
+  public DocumentModel.Wordprocessing.TableGridChange? TableGridChange { get; set; }
   
-  public ElementCollection<GridColumn>? Items { get; set; }
+  public DM.ElementCollection<GridColumn>? Items { get; set; }
   
 }

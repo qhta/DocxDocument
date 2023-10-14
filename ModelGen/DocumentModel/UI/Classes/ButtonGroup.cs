@@ -10,7 +10,7 @@ public partial class ButtonGroup
   /// <summary>
   ///   id
   /// </summary>
-  public HexInt? Id { get; set; }
+  public String? Id { get; set; }
   
   
   /// <summary>
@@ -54,6 +54,6 @@ public partial class ButtonGroup
   /// </summary>
   public String? InsertBeforeQ { get; set; }
   
-  public ElementCollection<IModelElement>? Items { get; set; }
+  public DM.ElementCollection<IModelElement>? Items { get; set; }
   
 }

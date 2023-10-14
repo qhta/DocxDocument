@@ -10,42 +10,42 @@ public partial class DocPartProperties
   /// <summary>
   ///   Entry Name.
   /// </summary>
-  public DocPartName? DocPartName { get; set; }
+  public DocumentModel.Wordprocessing.DocPartName? DocPartName { get; set; }
   
   
   /// <summary>
   ///   Associated Paragraph Style Name.
   /// </summary>
-  public String? StyleId { get; set; }
+  public DocumentModel.Wordprocessing.StyleId? StyleId { get; set; }
   
   
   /// <summary>
   ///   Entry Categorization.
   /// </summary>
-  public Category? Category { get; set; }
+  public DocumentModel.Wordprocessing.Category? Category { get; set; }
   
   
   /// <summary>
   ///   Entry Types.
   /// </summary>
-  public DocPartTypes? DocPartTypes { get; set; }
+  public DocumentModel.Wordprocessing.DocPartTypes? DocPartTypes { get; set; }
   
   
   /// <summary>
   ///   Entry Insertion Behaviors.
   /// </summary>
-  public Behaviors? Behaviors { get; set; }
+  public DocumentModel.Wordprocessing.Behaviors? Behaviors { get; set; }
   
   
   /// <summary>
   ///   Description for Entry.
   /// </summary>
-  public String? Description { get; set; }
+  public DocumentModel.Wordprocessing.Description? Description { get; set; }
   
   
   /// <summary>
   ///   Entry ID.
   /// </summary>
-  public HexInt? DocPartId { get; set; }
+  public String? DocPartId { get; set; }
   
 }

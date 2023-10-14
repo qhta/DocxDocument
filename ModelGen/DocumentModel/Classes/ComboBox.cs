@@ -46,7 +46,7 @@ public partial class ComboBox
   /// <summary>
   ///   getItemID, this property is only available in Office 2010 and later.
   /// </summary>
-  public HexInt? GetItemID { get; set; }
+  public String? GetItemID { get; set; }
   
   
   /// <summary>
@@ -112,13 +112,13 @@ public partial class ComboBox
   /// <summary>
   ///   id, this property is only available in Office 2010 and later.
   /// </summary>
-  public HexInt? Id { get; set; }
+  public String? Id { get; set; }
   
   
   /// <summary>
   ///   idQ, this property is only available in Office 2010 and later.
   /// </summary>
-  public HexInt? QualifiedId { get; set; }
+  public String? QualifiedId { get; set; }
   
   
   /// <summary>
@@ -184,13 +184,13 @@ public partial class ComboBox
   /// <summary>
   ///   insertAfterQ, this property is only available in Office 2010 and later.
   /// </summary>
-  public HexInt? InsertAfterQulifiedId { get; set; }
+  public String? InsertAfterQulifiedId { get; set; }
   
   
   /// <summary>
   ///   insertBeforeQ, this property is only available in Office 2010 and later.
   /// </summary>
-  public HexInt? InsertBeforeQulifiedId { get; set; }
+  public String? InsertBeforeQulifiedId { get; set; }
   
   
   /// <summary>
@@ -240,6 +240,6 @@ public partial class ComboBox
   /// </summary>
   public String? GetShowImage { get; set; }
   
-  public ElementCollection<Item>? Items { get; set; }
+  public DM.ElementCollection<Item>? Items { get; set; }
   
 }

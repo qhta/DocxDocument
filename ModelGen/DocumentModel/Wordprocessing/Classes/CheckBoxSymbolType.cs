@@ -16,6 +16,6 @@ public partial class CheckBoxSymbolType
   /// <summary>
   ///   val, this property is only available in Office 2010 and later.
   /// </summary>
-  public HexBinary? Val { get; set; }
+  public DM.HexBinary? Val { get; set; }
   
 }

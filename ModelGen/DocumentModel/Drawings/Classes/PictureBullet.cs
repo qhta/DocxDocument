@@ -10,6 +10,6 @@ public partial class PictureBullet
   /// <summary>
   ///   Blip.
   /// </summary>
-  public Blip? Blip { get; set; }
+  public DocumentModel.Drawings.Blip? Blip { get; set; }
   
 }

@@ -6,6 +6,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class ShapeGuideList
 {
-  public ElementCollection<ShapeGuide>? Items { get; set; }
+  public DM.ElementCollection<ShapeGuide>? Items { get; set; }
   
 }

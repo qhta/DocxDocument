@@ -6,8 +6,8 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class Numbering
 {
-  public Int32? NumberingIdMacAtCleanup { get; set; }
+  public DocumentModel.Wordprocessing.NumberingIdMacAtCleanup? NumberingIdMacAtCleanup { get; set; }
   
-  public ElementCollection<IModelElement>? Items { get; set; }
+  public DM.ElementCollection<IModelElement>? Items { get; set; }
   
 }

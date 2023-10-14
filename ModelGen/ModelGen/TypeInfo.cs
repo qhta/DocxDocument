@@ -64,6 +64,8 @@ public class TypeInfo : ModelElement
     if (Owner is Namespace nspace)
     {
       if (nspace.TargetName != null) return nspace.TargetName;
+      if (ModelConfig.Instance.TranslatedNamespaces.TryGetValue2(nspace.OriginalName, out var targetNamespace))
+        return targetNamespace;
       return nspace.OriginalName;
     }
     return OriginalNamespace;
@@ -74,6 +76,16 @@ public class TypeInfo : ModelElement
     var nspace = TypeManager.RegisterNamespace(ns);
     nspace.AddType(this);
     this.TargetNamespace = ns;
+  }
+
+  public void RemoveFromTargetNamespace()
+  {
+    if (this.TargetNamespace != null)
+    {
+      var nspace = TypeManager.GetNamespace(this.TargetNamespace);
+      nspace.RemoveType(this);
+      this.TargetNamespace = null;
+    }
   }
 
   /// <summary>
@@ -214,7 +226,7 @@ public class TypeInfo : ModelElement
     else
       aNamespace = this.OriginalNamespace;
     if (shortcut)
-      aNamespace = NamespaceShortcut(aNamespace);
+      aNamespace = NamespaceShortcut(aNamespace) ?? aNamespace;
     return aNamespace;
   }
 
@@ -271,12 +283,10 @@ public class TypeInfo : ModelElement
       else
         aName = this.Name;
       if (nameKindSelector.Namespace)
-        aNamespace = this.GetTargetNamespace();
-
-      if (nameKindSelector.Namespace)
       {
+        aNamespace = this.GetTargetNamespace();
         if (aNamespace != null && nameKindSelector.NsShortcut)
-          aNamespace = NamespaceShortcut(aNamespace);
+          aNamespace = NamespaceShortcut(aNamespace) ?? aNamespace;
       }
       if (IsGenericTypeParameter)
         return new FullTypeName(Name, null);
@@ -306,7 +316,7 @@ public class TypeInfo : ModelElement
     }
   }
 
-  public static string NamespaceShortcut(string ns)
+  public static string? NamespaceShortcut(string ns)
   {
     return ModelConfig.NamespaceShortcut(ns);
   }
