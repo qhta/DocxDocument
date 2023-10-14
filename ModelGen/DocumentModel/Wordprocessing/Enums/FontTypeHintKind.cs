@@ -10,21 +10,18 @@ public enum FontTypeHintKind
   /// <summary>
   ///   When the item is serialized out as xml, its value is &quot;default&quot;.
   /// </summary>
-  [EnumString("default")]
   Default,
   
   
   /// <summary>
   ///   When the item is serialized out as xml, its value is &quot;eastAsia&quot;.
   /// </summary>
-  [EnumString("eastAsia")]
   EastAsia,
   
   
   /// <summary>
   ///   When the item is serialized out as xml, its value is &quot;cs&quot;.
   /// </summary>
-  [EnumString("cs")]
   ComplexScript,
   
 }

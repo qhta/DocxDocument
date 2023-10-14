@@ -10,13 +10,13 @@ public partial class TabStop
   /// <summary>
   ///   Tab Stop Type
   /// </summary>
-  public TabStopKind? Val { get; set; }
+  public DocumentModel.Wordprocessing.TabStopKind? Val { get; set; }
   
   
   /// <summary>
   ///   Tab Leader Character
   /// </summary>
-  public TabStopLeaderCharKind? Leader { get; set; }
+  public DocumentModel.Wordprocessing.TabStopLeaderCharKind? Leader { get; set; }
   
   
   /// <summary>

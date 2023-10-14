@@ -12,6 +12,6 @@ public partial class SdtContentDropDownList
   /// </summary>
   public String? LastValue { get; set; }
   
-  public ElementCollection<ListItem>? Items { get; set; }
+  public DM.ElementCollection<ListItem>? Items { get; set; }
   
 }

@@ -6,6 +6,6 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class Behaviors
 {
-  public ElementCollection<DocPartBehaviorKind>? Items { get; set; }
+  public DM.ElementCollection<DocPartBehaviorKind>? Items { get; set; }
   
 }

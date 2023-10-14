@@ -10,43 +10,43 @@ public partial class SignatureLine
   /// <summary>
   ///   VML Extension Handling Behavior
   /// </summary>
-  public ExtensionHandlingBehaviorKind? Extension { get; set; }
+  public DocumentModel.Vml.ExtensionHandlingBehaviorKind? Extension { get; set; }
   
   
   /// <summary>
   ///   Signature Line Flag
   /// </summary>
-  public Boolean? IsSignatureLine { get; set; }
+  public DM.TrueFalseValue? IsSignatureLine { get; set; }
   
   
   /// <summary>
   ///   Unique ID
   /// </summary>
-  public HexInt? Id { get; set; }
+  public String? Id { get; set; }
   
   
   /// <summary>
   ///   Signature Provider ID
   /// </summary>
-  public HexInt? ProviderId { get; set; }
+  public String? ProviderId { get; set; }
   
   
   /// <summary>
   ///   Use Signing Instructions Flag
   /// </summary>
-  public Boolean? SigningInstructionsSet { get; set; }
+  public DM.TrueFalseValue? SigningInstructionsSet { get; set; }
   
   
   /// <summary>
   ///   User-specified Comments Flag
   /// </summary>
-  public Boolean? AllowComments { get; set; }
+  public DM.TrueFalseValue? AllowComments { get; set; }
   
   
   /// <summary>
   ///   Show Signed Date Flag
   /// </summary>
-  public Boolean? ShowSignDate { get; set; }
+  public DM.TrueFalseValue? ShowSignDate { get; set; }
   
   
   /// <summary>

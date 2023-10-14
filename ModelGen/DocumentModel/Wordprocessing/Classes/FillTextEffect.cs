@@ -10,18 +10,18 @@ public partial class FillTextEffect
   /// <summary>
   ///   NoFillEmpty.
   /// </summary>
-  public Boolean? NoFillEmpty { get; set; }
+  public DocumentModel.Wordprocessing.NoFillEmpty? NoFillEmpty { get; set; }
   
   
   /// <summary>
   ///   SolidColorFillProperties.
   /// </summary>
-  public SolidColorFillProperties? SolidColorFillProperties { get; set; }
+  public DocumentModel.Wordprocessing.SolidColorFillProperties? SolidColorFillProperties { get; set; }
   
   
   /// <summary>
   ///   GradientFillProperties.
   /// </summary>
-  public GradientFillProperties? GradientFillProperties { get; set; }
+  public DocumentModel.Wordprocessing.GradientFillProperties? GradientFillProperties { get; set; }
   
 }

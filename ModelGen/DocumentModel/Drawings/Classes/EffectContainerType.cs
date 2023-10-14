@@ -10,7 +10,7 @@ public partial class EffectContainerType
   /// <summary>
   ///   Effect Container Type
   /// </summary>
-  public EffectContainerKind? Type { get; set; }
+  public DocumentModel.Drawings.EffectContainerKind? Type { get; set; }
   
   
   /// <summary>

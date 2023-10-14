@@ -6,8 +6,8 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class CustomXmlRun
 {
-  public CustomXmlProperties? CustomXmlProperties { get; set; }
+  public DocumentModel.Wordprocessing.CustomXmlProperties? CustomXmlProperties { get; set; }
   
-  public ElementCollection<IModelElement>? Items { get; set; }
+  public DM.ElementCollection<IModelElement>? Items { get; set; }
   
 }

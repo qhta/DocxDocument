@@ -10,24 +10,24 @@ public partial class BackgroundProperties
   /// <summary>
   ///   bwMode, this property is only available in Office 2013 and later.
   /// </summary>
-  public BlackWhiteMode? Mode { get; set; }
+  public DocumentModel.Drawings.BlackWhiteMode? Mode { get; set; }
   
   
   /// <summary>
   ///   bwPure, this property is only available in Office 2013 and later.
   /// </summary>
-  public BlackWhiteMode? Pure { get; set; }
+  public DocumentModel.Drawings.BlackWhiteMode? Pure { get; set; }
   
   
   /// <summary>
   ///   bwNormal, this property is only available in Office 2013 and later.
   /// </summary>
-  public BlackWhiteMode? Normal { get; set; }
+  public DocumentModel.Drawings.BlackWhiteMode? Normal { get; set; }
   
   
   /// <summary>
   ///   targetScreenSize, this property is only available in Office 2013 and later.
   /// </summary>
-  public TargetScreenSize? TargetScreenSize { get; set; }
+  public DocumentModel.Drawings.TargetScreenSize? TargetScreenSize { get; set; }
   
 }

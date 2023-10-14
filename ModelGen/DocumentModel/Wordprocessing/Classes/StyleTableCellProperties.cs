@@ -10,24 +10,24 @@ public partial class StyleTableCellProperties
   /// <summary>
   ///   Shading.
   /// </summary>
-  public Shading? Shading { get; set; }
+  public DocumentModel.Wordprocessing.Shading? Shading { get; set; }
   
   
   /// <summary>
   ///   NoWrap.
   /// </summary>
-  public Boolean? NoWrap { get; set; }
+  public DocumentModel.Wordprocessing.NoWrap? NoWrap { get; set; }
   
   
   /// <summary>
   ///   TableCellMargin.
   /// </summary>
-  public TableCellMargin? TableCellMargin { get; set; }
+  public DocumentModel.Wordprocessing.TableCellMargin? TableCellMargin { get; set; }
   
   
   /// <summary>
   ///   TableCellVerticalAlignment.
   /// </summary>
-  public TableVerticalAlignmentKind? TableCellVerticalAlignment { get; set; }
+  public DocumentModel.Wordprocessing.TableVerticalAlignmentKind? TableCellVerticalAlignment { get; set; }
   
 }

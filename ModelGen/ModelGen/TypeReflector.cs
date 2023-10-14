@@ -1,4 +1,5 @@
 ﻿using DocumentFormat.OpenXml;
+using DocumentFormat.OpenXml.ExtendedProperties;
 
 using Namotion.Reflection;
 
@@ -8,8 +9,10 @@ public static class TypeReflector
 {
   public static event ReflectionProgressEvent? OnReflection;
 
-  //private static Queue<TypeInfo> TypeQueue = new Queue<TypeInfo>();
-  private static HashSet<TypeInfo> _queue = new HashSet<TypeInfo>();
+  private static Queue<TypeInfo> TypeQueue = new Queue<TypeInfo>();
+  private static HashSet<TypeInfo> WorkingSet = new HashSet<TypeInfo>();
+
+  public static Dictionary<int, long> ThreadsUsed = new();
 
   public static bool CancelRequest { get; set; }
 
@@ -17,70 +20,94 @@ public static class TypeReflector
   {
     if (typeInfo.IsReflected)
       return;
-    isStarted = true;
-    //lock (typeInfo)
-    {
-      if (!_queue.Contains(typeInfo))
-      {
-        lock (_queue)
-          _queue.Add(typeInfo);
-        //TypeQueue.Enqueue(typeInfo);
-        //Debug.WriteLine($"EnqueReflectType({typeInfo.Type.Name}), Count = {_queue.Count}");
-        Task.Factory.StartNew(()=>
-         { 
-           ReflectType(typeInfo);
-           lock (_queue)
-             _queue.Remove(typeInfo);
-           //Debug.WriteLine($"DequeReflectType({typeInfo.Type.Name}), Count = {_queue.Count}");
-         });
-      }
-      else
-        Debug.Fail($"Type{typeInfo.Name} already in reflection queue");
-      //if (!isStarted) Start();
-    }
+    if (!isStarted)
+      Start();
+    TypeQueue.Enqueue(typeInfo);
   }
 
   private static bool isStarted; //=> ReflectionTasks is not null;
+  private static Task? ReflectionTask = null!;
   private static bool isDone;
   //private static int TaskCount = 10;
   //private static Task[] ReflectionTasks = null!;
   //private static int RunTrials = 100;
-  //public static void Start()
-  //{
-  //  ReflectionTasks = new Task[TaskCount];
-  //  for (int i = 0; i < TaskCount; i++)
-  //  {
-  //    ReflectionTasks[i] = new Task(() =>
-  //    {
-  //      var trials = RunTrials;
-  //      do
-  //      {
-  //        trials--;
-  //        if (TypeQueue.Any())
-  //        {
-  //          TypeInfo? typeInfo = null;
-  //          lock (TypeQueue)
-  //          {
-  //            if (TypeQueue.Count > 0)
-  //              typeInfo = TypeQueue.Dequeue();
-  //            else
-  //            {
-  //              typeInfo = null;
-  //            }
-  //          }
-  //          if (typeInfo != null)
-  //          {
-  //            ReflectType(typeInfo);
-  //            trials = RunTrials;
-  //          }
-  //          else
-  //            Thread.Sleep(10);
-  //        }
-  //      } while (trials > 0);
-  //    });
-  //    ReflectionTasks[i].Start();
-  //  }
-  //}
+  public static void Start()
+  {
+    isStarted = true;
+    ReflectionTask = Task.Factory.StartNew(() =>
+    {
+      var t1 = DateTime.Now.Ticks;
+      var threadId = Thread.CurrentThread.ManagedThreadId;
+      ThreadsUsed.Add(threadId, 0);
+      while (!CancelRequest && !isDone)
+      {
+        if (TypeQueue.Any())
+        {
+          var typeInfo = TypeQueue.Dequeue();
+          if (!typeInfo.IsReflected)
+          {
+            if (!WorkingSet.Contains(typeInfo))
+            {
+              lock (WorkingSet)
+                WorkingSet.Add(typeInfo);
+              //TypeQueue.Enqueue(typeInfo);
+              //Debug.WriteLine($"EnqueReflectType({typeInfo.Type.Name}), Count = {_queue.Count}");
+              Task.Factory.StartNew(() =>
+               {
+                 ReflectType(typeInfo);
+                 lock (WorkingSet)
+                   WorkingSet.Remove(typeInfo);
+                 //Debug.WriteLine($"DequeReflectType({typeInfo.Type.Name}), Count = {_queue.Count}");
+               });
+            }
+            else
+              Debug.Fail($"Type{typeInfo.Name} already in reflection queue");
+            //if (!isStarted) Start();
+          }
+        }
+      }
+      var t2 = DateTime.Now.Ticks;
+      var t = (t2 - t1);
+      lock (ThreadsUsed)
+        if (!ThreadsUsed.ContainsKey(threadId))
+          ThreadsUsed.Add(threadId, t);
+        else
+          ThreadsUsed[threadId] += t;
+    });
+    //ReflectionTasks = new Task[TaskCount];
+    //for (int i = 0; i < TaskCount; i++)
+    //{
+    //  ReflectionTasks[i] = new Task(() =>
+    //  {
+    //    var trials = RunTrials;
+    //    do
+    //    {
+    //      trials--;
+    //      if (TypeQueue.Any())
+    //      {
+    //        TypeInfo? typeInfo = null;
+    //        lock (TypeQueue)
+    //        {
+    //          if (TypeQueue.Count > 0)
+    //            typeInfo = TypeQueue.Dequeue();
+    //          else
+    //          {
+    //            typeInfo = null;
+    //          }
+    //        }
+    //        if (typeInfo != null)
+    //        {
+    //          ReflectType(typeInfo);
+    //          trials = RunTrials;
+    //        }
+    //        else
+    //          Thread.Sleep(10);
+    //      }
+    //    } while (trials > 0);
+    //  });
+    //  ReflectionTasks[i].Start();
+    //}
+  }
 
 
   //public static void WaitDone()
@@ -94,7 +121,7 @@ public static class TypeReflector
   public static void WaitDone()
   {
     //var count = _queue.Count;
-    while (_queue.Count > 0 && !CancelRequest)
+    while (WorkingSet.Count > 0 && !CancelRequest)
     {
       Thread.Sleep(100);
 
@@ -110,6 +137,7 @@ public static class TypeReflector
       //}
     }
     isDone = true;
+    ReflectionTask = null;
   }
 
   public static void WaitForReflection(this TypeInfo typeInfo)
@@ -131,14 +159,16 @@ public static class TypeReflector
 
   public static void ReflectType(this TypeInfo typeInfo)
   {
+    var t1 = DateTime.Now.Ticks;
     //Debug.WriteLine($"ReflectType({typeInfo.Type.Name}). Thread={Thread.CurrentThread.ManagedThreadId}");
     if (typeInfo.IsReflected)
       return;
-    lock (reflectedLock)
-    {
-      reflected++;
-      OnReflection?.Invoke(new ReflectionProgressInfo { Done = reflected, Waiting = _queue.Count, Current = typeInfo });
-    }
+    if (OnReflection!=null)
+      lock (reflectedLock)
+      {
+        reflected++;
+        OnReflection?.Invoke(new ReflectionProgressInfo { Done = reflected, Waiting = WorkingSet.Count, Current = typeInfo });
+      }
     //Debug.WriteLine($"ReflectType({typeInfo.Type.Name}).Start. Thread={Thread.CurrentThread.ManagedThreadId}");
     var type = typeInfo.Type;
     if (type.IsEnum)
@@ -147,7 +177,7 @@ public static class TypeReflector
       {
         if (CancelRequest)
           return;
-        if (item!=null)
+        if (item != null)
           typeInfo.Add(new EnumInfo(item));
       }
     }
@@ -269,6 +299,15 @@ public static class TypeReflector
       typeInfo.SetRejected(PPS.ScanSource);
     typeInfo.IsReflected = true;
     //Debug.WriteLine($"ReflectType({typeInfo.Type.Name}).End. Thread={Thread.CurrentThread.ManagedThreadId}");
+    var t2 = DateTime.Now.Ticks;
+    var t = (t2 - t1);
+    var threadId = Thread.CurrentThread.ManagedThreadId;
+
+    lock (ThreadsUsed)
+      if (!ThreadsUsed.ContainsKey(threadId))
+        ThreadsUsed.Add(threadId, t);
+      else
+        ThreadsUsed[threadId] += t;
   }
 
   public static void ProcessElementSchema(this TypeInfo typeInfo, ElementSchema schema)

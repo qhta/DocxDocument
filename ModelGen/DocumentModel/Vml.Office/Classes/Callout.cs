@@ -10,13 +10,13 @@ public partial class Callout
   /// <summary>
   ///   VML Extension Handling Behavior
   /// </summary>
-  public ExtensionHandlingBehaviorKind? Extension { get; set; }
+  public DocumentModel.Vml.ExtensionHandlingBehaviorKind? Extension { get; set; }
   
   
   /// <summary>
   ///   Callout toggle
   /// </summary>
-  public Boolean? On { get; set; }
+  public DM.TrueFalseValue? On { get; set; }
   
   
   /// <summary>
@@ -34,13 +34,13 @@ public partial class Callout
   /// <summary>
   ///   Callout angle
   /// </summary>
-  public AngleKind? Angle { get; set; }
+  public DocumentModel.Vml.Office.AngleKind? Angle { get; set; }
   
   
   /// <summary>
   ///   Callout automatic drop toggle
   /// </summary>
-  public Boolean? DropAuto { get; set; }
+  public DM.TrueFalseValue? DropAuto { get; set; }
   
   
   /// <summary>
@@ -58,7 +58,7 @@ public partial class Callout
   /// <summary>
   ///   Callout length toggle
   /// </summary>
-  public Boolean? LengthSpecified { get; set; }
+  public DM.TrueFalseValue? LengthSpecified { get; set; }
   
   
   /// <summary>
@@ -70,24 +70,24 @@ public partial class Callout
   /// <summary>
   ///   Callout accent bar toggle
   /// </summary>
-  public Boolean? AccentBar { get; set; }
+  public DM.TrueFalseValue? AccentBar { get; set; }
   
   
   /// <summary>
   ///   Callout text border toggle
   /// </summary>
-  public Boolean? TextBorder { get; set; }
+  public DM.TrueFalseValue? TextBorder { get; set; }
   
   
   /// <summary>
   ///   Callout flip x
   /// </summary>
-  public Boolean? MinusX { get; set; }
+  public DM.TrueFalseValue? MinusX { get; set; }
   
   
   /// <summary>
   ///   Callout flip y
   /// </summary>
-  public Boolean? MinusY { get; set; }
+  public DM.TrueFalseValue? MinusY { get; set; }
   
 }

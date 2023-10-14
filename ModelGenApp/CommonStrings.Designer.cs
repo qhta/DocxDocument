@@ -525,6 +525,15 @@ namespace ModelGenApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Final check.
+        /// </summary>
+        public static string FinalCheck {
+            get {
+                return ResourceManager.GetString("FinalCheck", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Include.
         /// </summary>
         public static string Include {

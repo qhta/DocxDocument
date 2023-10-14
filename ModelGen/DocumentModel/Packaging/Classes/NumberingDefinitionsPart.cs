@@ -12,13 +12,13 @@ public partial class NumberingDefinitionsPart
   /// <summary>
   ///   Gets the ImageParts of the NumberingDefinitionsPart
   /// </summary>
-  public Collection? ImageParts { get; set; }
+  public Collection<ImagePart>? ImageParts { get; set; }
   
   
   /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>
-  public Numbering? Numbering { get; set; }
+  public DocumentModel.Wordprocessing.Numbering? Numbering { get; set; }
   
   public String? RelationshipType { get; set; }
   

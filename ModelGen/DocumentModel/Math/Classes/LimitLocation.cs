@@ -1,0 +1,9 @@
+namespace DocumentModel.Math;
+
+
+/// <summary>
+///   n-ary Limit Location.
+/// </summary>
+public partial class LimitLocation
+{
+}

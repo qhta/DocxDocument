@@ -10,8 +10,8 @@ public partial class EquationArray
   /// <summary>
   ///   Equation Array Properties.
   /// </summary>
-  public EquationArrayProperties? EquationArrayProperties { get; set; }
+  public DocumentModel.Math.EquationArrayProperties? EquationArrayProperties { get; set; }
   
-  public ElementCollection<Base>? Items { get; set; }
+  public DM.ElementCollection<Base>? Items { get; set; }
   
 }

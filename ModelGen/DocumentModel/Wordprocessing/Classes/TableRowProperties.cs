@@ -6,16 +6,16 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class TableRowProperties
 {
-  public TrackChangeType? Inserted { get; set; }
+  public DocumentModel.Wordprocessing.Inserted? Inserted { get; set; }
   
-  public TrackChangeType? Deleted { get; set; }
+  public DocumentModel.Wordprocessing.Deleted? Deleted { get; set; }
   
-  public TableRowPropertiesChange? TableRowPropertiesChange { get; set; }
+  public DocumentModel.Wordprocessing.TableRowPropertiesChange? TableRowPropertiesChange { get; set; }
   
-  public TrackChangeType? ConflictInsertion { get; set; }
+  public DocumentModel.Wordprocessing.ConflictInsertion? ConflictInsertion { get; set; }
   
-  public TrackChangeType? ConflictDeletion { get; set; }
+  public DocumentModel.Wordprocessing.ConflictDeletion? ConflictDeletion { get; set; }
   
-  public ElementCollection<IModelElement>? Items { get; set; }
+  public DM.ElementCollection<IModelElement>? Items { get; set; }
   
 }

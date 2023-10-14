@@ -118,7 +118,7 @@ public class ModelElement : IOwnedElement
   /// Specifies whether some other element is converted to this element.
   /// </summary>
   [XmlIgnore]
-  public bool IsConvertedTo { get; set; }
+  public bool IsConversionTarget { get; set; }
 
   /// <summary>
   /// Single-paragraph description.

@@ -10,30 +10,30 @@ public partial class DefaultShapeDefinitionType
   /// <summary>
   ///   Visual Properties.
   /// </summary>
-  public ShapeProperties? ShapeProperties { get; set; }
+  public DocumentModel.Drawings.ShapeProperties? ShapeProperties { get; set; }
   
   
   /// <summary>
   ///   BodyProperties.
   /// </summary>
-  public BodyProperties? BodyProperties { get; set; }
+  public DocumentModel.Drawings.BodyProperties? BodyProperties { get; set; }
   
   
   /// <summary>
   ///   ListStyle.
   /// </summary>
-  public ListStyle? ListStyle { get; set; }
+  public DocumentModel.Drawings.ListStyle? ListStyle { get; set; }
   
   
   /// <summary>
   ///   ShapeStyle.
   /// </summary>
-  public ShapeStyle? ShapeStyle { get; set; }
+  public DocumentModel.Drawings.ShapeStyle? ShapeStyle { get; set; }
   
   
   /// <summary>
   ///   ExtensionList.
   /// </summary>
-  public ExtensionList? ExtensionList { get; set; }
+  public DocumentModel.Drawings.ExtensionList? ExtensionList { get; set; }
   
 }

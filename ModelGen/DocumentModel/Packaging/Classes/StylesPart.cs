@@ -10,6 +10,6 @@ public partial class StylesPart
   /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>
-  public Styles? Styles { get; set; }
+  public DocumentModel.Wordprocessing.Styles? Styles { get; set; }
   
 }

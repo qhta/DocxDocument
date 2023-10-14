@@ -10,6 +10,6 @@ public partial class CommentAnchor
   /// <summary>
   ///   id, this property is only available in Office 2021 and later.
   /// </summary>
-  public HexInt? Id { get; set; }
+  public String? Id { get; set; }
   
 }

@@ -10,7 +10,7 @@ public partial class BorderType
   /// <summary>
   ///   Border Style
   /// </summary>
-  public BorderKind? Val { get; set; }
+  public DocumentModel.Wordprocessing.BorderKind? Val { get; set; }
   
   
   /// <summary>
@@ -22,7 +22,7 @@ public partial class BorderType
   /// <summary>
   ///   Border Theme Color
   /// </summary>
-  public ThemeColorKind? ThemeColor { get; set; }
+  public DocumentModel.Wordprocessing.ThemeColorKind? ThemeColor { get; set; }
   
   
   /// <summary>

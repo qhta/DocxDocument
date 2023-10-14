@@ -10,8 +10,8 @@ public partial class Delimiter
   /// <summary>
   ///   Delimiter Properties.
   /// </summary>
-  public DelimiterProperties? DelimiterProperties { get; set; }
+  public DocumentModel.Math.DelimiterProperties? DelimiterProperties { get; set; }
   
-  public ElementCollection<Base>? Items { get; set; }
+  public DM.ElementCollection<Base>? Items { get; set; }
   
 }

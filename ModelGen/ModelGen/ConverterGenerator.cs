@@ -26,7 +26,7 @@ public class ConverterGenerator : BaseCodeGenerator
   {
     if (typeInfo.Name.EndsWith("Settings"))
       Debug.Assert(true);
-    if (!typeInfo.IsConverted && !typeInfo.IsConvertedTo)
+    if (!typeInfo.IsConverted && !typeInfo.IsConversionTarget)
     {
       if (!typeInfo.IsGenericTypeParameter)
       {
@@ -120,6 +120,11 @@ public class ConverterGenerator : BaseCodeGenerator
   #endregion
 
   public override int GenerateCode(IEnumerable<Namespace> nspaces)
+  {
+    throw new NotImplementedException();
+  }
+
+  public override int ValidateCode()
   {
     throw new NotImplementedException();
   }

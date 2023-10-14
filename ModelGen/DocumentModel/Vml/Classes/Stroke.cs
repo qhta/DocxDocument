@@ -10,13 +10,13 @@ public partial class Stroke
   /// <summary>
   ///   Unique Identifier
   /// </summary>
-  public HexInt? Id { get; set; }
+  public String? Id { get; set; }
   
   
   /// <summary>
   ///   Stroke Toggle
   /// </summary>
-  public Boolean? On { get; set; }
+  public DM.TrueFalseValue? On { get; set; }
   
   
   /// <summary>
@@ -40,7 +40,7 @@ public partial class Stroke
   /// <summary>
   ///   Stroke Line Style
   /// </summary>
-  public StrokeLineStyleKind? LineStyle { get; set; }
+  public DocumentModel.Vml.StrokeLineStyleKind? LineStyle { get; set; }
   
   
   /// <summary>
@@ -52,13 +52,13 @@ public partial class Stroke
   /// <summary>
   ///   Line End Join Style
   /// </summary>
-  public StrokeJoinStyleKind? JoinStyle { get; set; }
+  public DocumentModel.Vml.StrokeJoinStyleKind? JoinStyle { get; set; }
   
   
   /// <summary>
   ///   Line End Cap
   /// </summary>
-  public StrokeEndCapKind? EndCap { get; set; }
+  public DocumentModel.Vml.StrokeEndCapKind? EndCap { get; set; }
   
   
   /// <summary>
@@ -70,7 +70,7 @@ public partial class Stroke
   /// <summary>
   ///   Stroke Image Style
   /// </summary>
-  public StrokeFillTypeKind? FillType { get; set; }
+  public DocumentModel.Vml.StrokeFillTypeKind? FillType { get; set; }
   
   
   /// <summary>
@@ -82,7 +82,7 @@ public partial class Stroke
   /// <summary>
   ///   Stroke Image Aspect Ratio
   /// </summary>
-  public ImageAspectKind? ImageAspect { get; set; }
+  public DocumentModel.Vml.ImageAspectKind? ImageAspect { get; set; }
   
   
   /// <summary>
@@ -94,7 +94,7 @@ public partial class Stroke
   /// <summary>
   ///   Stoke Image Alignment
   /// </summary>
-  public Boolean? ImageAlignShape { get; set; }
+  public DM.TrueFalseValue? ImageAlignShape { get; set; }
   
   
   /// <summary>
@@ -106,37 +106,37 @@ public partial class Stroke
   /// <summary>
   ///   Line Start Arrowhead
   /// </summary>
-  public StrokeArrowKind? StartArrow { get; set; }
+  public DocumentModel.Vml.StrokeArrowKind? StartArrow { get; set; }
   
   
   /// <summary>
   ///   Line Start Arrowhead Width
   /// </summary>
-  public StrokeArrowWidthKind? StartArrowWidth { get; set; }
+  public DocumentModel.Vml.StrokeArrowWidthKind? StartArrowWidth { get; set; }
   
   
   /// <summary>
   ///   Line Start Arrowhead Length
   /// </summary>
-  public StrokeArrowLengthKind? StartArrowLength { get; set; }
+  public DocumentModel.Vml.StrokeArrowLengthKind? StartArrowLength { get; set; }
   
   
   /// <summary>
   ///   Line End Arrowhead
   /// </summary>
-  public StrokeArrowKind? EndArrow { get; set; }
+  public DocumentModel.Vml.StrokeArrowKind? EndArrow { get; set; }
   
   
   /// <summary>
   ///   Line End Arrowhead Width
   /// </summary>
-  public StrokeArrowWidthKind? EndArrowWidth { get; set; }
+  public DocumentModel.Vml.StrokeArrowWidthKind? EndArrowWidth { get; set; }
   
   
   /// <summary>
   ///   Line End Arrowhead Length
   /// </summary>
-  public StrokeArrowLengthKind? EndArrowLength { get; set; }
+  public DocumentModel.Vml.StrokeArrowLengthKind? EndArrowLength { get; set; }
   
   
   /// <summary>
@@ -160,48 +160,48 @@ public partial class Stroke
   /// <summary>
   ///   Force Dashed Outline
   /// </summary>
-  public Boolean? ForceDash { get; set; }
+  public DM.TrueFalseValue? ForceDash { get; set; }
   
   
   /// <summary>
   ///   Relationship
   /// </summary>
-  public HexInt? RelationshipId { get; set; }
+  public String? RelationshipId { get; set; }
   
   
   /// <summary>
   ///   Inset Border From Path
   /// </summary>
-  public Boolean? Insetpen { get; set; }
+  public DM.TrueFalseValue? Insetpen { get; set; }
   
   
   /// <summary>
   ///   LeftStroke.
   /// </summary>
-  public StrokeChildType? LeftStroke { get; set; }
+  public DocumentModel.Vml.Office.LeftStroke? LeftStroke { get; set; }
   
   
   /// <summary>
   ///   TopStroke.
   /// </summary>
-  public StrokeChildType? TopStroke { get; set; }
+  public DocumentModel.Vml.Office.TopStroke? TopStroke { get; set; }
   
   
   /// <summary>
   ///   RightStroke.
   /// </summary>
-  public StrokeChildType? RightStroke { get; set; }
+  public DocumentModel.Vml.Office.RightStroke? RightStroke { get; set; }
   
   
   /// <summary>
   ///   BottomStroke.
   /// </summary>
-  public StrokeChildType? BottomStroke { get; set; }
+  public DocumentModel.Vml.Office.BottomStroke? BottomStroke { get; set; }
   
   
   /// <summary>
   ///   ColumnStroke.
   /// </summary>
-  public StrokeChildType? ColumnStroke { get; set; }
+  public DocumentModel.Vml.Office.ColumnStroke? ColumnStroke { get; set; }
   
 }

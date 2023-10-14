@@ -10,13 +10,13 @@ public partial class ShapeDefaults
   /// <summary>
   ///   VML Extension Handling Behavior
   /// </summary>
-  public ExtensionHandlingBehaviorKind? Extension { get; set; }
+  public DocumentModel.Vml.ExtensionHandlingBehaviorKind? Extension { get; set; }
   
   
   /// <summary>
   ///   Shape ID Optional Storage
   /// </summary>
-  public HexInt? MaxShapeId { get; set; }
+  public Int64? MaxShapeId { get; set; }
   
   
   /// <summary>
@@ -28,7 +28,7 @@ public partial class ShapeDefaults
   /// <summary>
   ///   Shape Fill Toggle
   /// </summary>
-  public Boolean? BeFilled { get; set; }
+  public DM.TrueFalseValue? BeFilled { get; set; }
   
   
   /// <summary>
@@ -40,7 +40,7 @@ public partial class ShapeDefaults
   /// <summary>
   ///   Shape Stroke Toggle
   /// </summary>
-  public Boolean? IsStroke { get; set; }
+  public DM.TrueFalseValue? IsStroke { get; set; }
   
   
   /// <summary>
@@ -52,84 +52,84 @@ public partial class ShapeDefaults
   /// <summary>
   ///   Allow in Table Cell
   /// </summary>
-  public Boolean? AllowInCell { get; set; }
+  public DM.TrueFalseValue? AllowInCell { get; set; }
   
   
   /// <summary>
   ///   allowoverlap
   /// </summary>
-  public Boolean? AllowOverlap { get; set; }
+  public DM.TrueFalseValue? AllowOverlap { get; set; }
   
   
   /// <summary>
   ///   insetmode
   /// </summary>
-  public InsetMarginKind? InsetMode { get; set; }
+  public DocumentModel.Vml.Office.InsetMarginKind? InsetMode { get; set; }
   
   
   /// <summary>
   ///   Fill.
   /// </summary>
-  public Fill? Fill { get; set; }
+  public DocumentModel.Vml.Fill? Fill { get; set; }
   
   
   /// <summary>
   ///   ImageData.
   /// </summary>
-  public ImageData? ImageData { get; set; }
+  public DocumentModel.Vml.ImageData? ImageData { get; set; }
   
   
   /// <summary>
   ///   Stroke.
   /// </summary>
-  public Stroke? Stroke { get; set; }
+  public DocumentModel.Vml.Stroke? Stroke { get; set; }
   
   
   /// <summary>
   ///   TextBox.
   /// </summary>
-  public TextBox? TextBox { get; set; }
+  public DocumentModel.Vml.TextBox? TextBox { get; set; }
   
   
   /// <summary>
   ///   Shadow.
   /// </summary>
-  public Shadow? Shadow { get; set; }
+  public DocumentModel.Vml.Shadow? Shadow { get; set; }
   
   
   /// <summary>
   ///   Skew.
   /// </summary>
-  public Skew? Skew { get; set; }
+  public DocumentModel.Vml.Office.Skew? Skew { get; set; }
   
   
   /// <summary>
   ///   Extrusion.
   /// </summary>
-  public Extrusion? Extrusion { get; set; }
+  public DocumentModel.Vml.Office.Extrusion? Extrusion { get; set; }
   
   
   /// <summary>
   ///   Callout.
   /// </summary>
-  public Callout? Callout { get; set; }
+  public DocumentModel.Vml.Office.Callout? Callout { get; set; }
   
   
   /// <summary>
   ///   Shape Protections.
   /// </summary>
-  public Lock? Lock { get; set; }
+  public DocumentModel.Vml.Office.Lock? Lock { get; set; }
   
   
   /// <summary>
   ///   Most Recently Used Colors.
   /// </summary>
-  public ColorMostRecentlyUsed? ColorMostRecentlyUsed { get; set; }
+  public DocumentModel.Vml.Office.ColorMostRecentlyUsed? ColorMostRecentlyUsed { get; set; }
   
   
   /// <summary>
   ///   UI Default Colors.
   /// </summary>
-  public ColorMenu? ColorMenu { get; set; }
+  public DocumentModel.Vml.Office.ColorMenu? ColorMenu { get; set; }
   
 }

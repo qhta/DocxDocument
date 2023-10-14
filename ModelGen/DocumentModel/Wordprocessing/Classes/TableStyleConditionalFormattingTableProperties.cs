@@ -10,36 +10,36 @@ public partial class TableStyleConditionalFormattingTableProperties
   /// <summary>
   ///   TableJustification.
   /// </summary>
-  public TableRowAlignmentKind? TableJustification { get; set; }
+  public DocumentModel.Wordprocessing.TableRowAlignmentKind? TableJustification { get; set; }
   
   
   /// <summary>
   ///   TableCellSpacing.
   /// </summary>
-  public TableWidthType? TableCellSpacing { get; set; }
+  public DocumentModel.Wordprocessing.TableCellSpacing? TableCellSpacing { get; set; }
   
   
   /// <summary>
   ///   TableIndentation.
   /// </summary>
-  public TableIndentation? TableIndentation { get; set; }
+  public DocumentModel.Wordprocessing.TableIndentation? TableIndentation { get; set; }
   
   
   /// <summary>
   ///   TableBorders.
   /// </summary>
-  public TableBorders? TableBorders { get; set; }
+  public DocumentModel.Wordprocessing.TableBorders? TableBorders { get; set; }
   
   
   /// <summary>
   ///   Shading.
   /// </summary>
-  public Shading? Shading { get; set; }
+  public DocumentModel.Wordprocessing.Shading? Shading { get; set; }
   
   
   /// <summary>
   ///   TableCellMarginDefault.
   /// </summary>
-  public TableCellMarginDefault? TableCellMarginDefault { get; set; }
+  public DocumentModel.Wordprocessing.TableCellMarginDefault? TableCellMarginDefault { get; set; }
   
 }

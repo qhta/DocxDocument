@@ -42,6 +42,6 @@ public partial class LatentStyles
   /// </summary>
   public Int32? Count { get; set; }
   
-  public ElementCollection<LatentStyleExceptionInfo>? Items { get; set; }
+  public DM.ElementCollection<LatentStyleExceptionInfo>? Items { get; set; }
   
 }

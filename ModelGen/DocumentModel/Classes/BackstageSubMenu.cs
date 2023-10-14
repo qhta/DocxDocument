@@ -22,13 +22,13 @@ public partial class BackstageSubMenu
   /// <summary>
   ///   id, this property is only available in Office 2010 and later.
   /// </summary>
-  public HexInt? Id { get; set; }
+  public String? Id { get; set; }
   
   
   /// <summary>
   ///   idQ, this property is only available in Office 2010 and later.
   /// </summary>
-  public HexInt? QualifiedId { get; set; }
+  public String? QualifiedId { get; set; }
   
   
   /// <summary>
@@ -102,6 +102,6 @@ public partial class BackstageSubMenu
   /// </summary>
   public String? GetKeytip { get; set; }
   
-  public ElementCollection<BackstageMenuGroup>? Items { get; set; }
+  public DM.ElementCollection<BackstageMenuGroup>? Items { get; set; }
   
 }

@@ -10,24 +10,24 @@ public partial class ShapeStyle
   /// <summary>
   ///   LineReference.
   /// </summary>
-  public LineReference? LineReference { get; set; }
+  public DocumentModel.Drawings.LineReference? LineReference { get; set; }
   
   
   /// <summary>
   ///   FillReference.
   /// </summary>
-  public FillReference? FillReference { get; set; }
+  public DocumentModel.Drawings.FillReference? FillReference { get; set; }
   
   
   /// <summary>
   ///   EffectReference.
   /// </summary>
-  public EffectReference? EffectReference { get; set; }
+  public DocumentModel.Drawings.EffectReference? EffectReference { get; set; }
   
   
   /// <summary>
   ///   Font Reference.
   /// </summary>
-  public FontReference? FontReference { get; set; }
+  public DocumentModel.Drawings.FontReference? FontReference { get; set; }
   
 }

@@ -10,7 +10,7 @@ public partial class BackstageCheckBox
   /// <summary>
   ///   expand, this property is only available in Office 2010 and later.
   /// </summary>
-  public ExpandKind? Expand { get; set; }
+  public DM.ExpandKind? Expand { get; set; }
   
   
   /// <summary>
@@ -52,13 +52,13 @@ public partial class BackstageCheckBox
   /// <summary>
   ///   id, this property is only available in Office 2010 and later.
   /// </summary>
-  public HexInt? Id { get; set; }
+  public String? Id { get; set; }
   
   
   /// <summary>
   ///   idQ, this property is only available in Office 2010 and later.
   /// </summary>
-  public HexInt? QualifiedId { get; set; }
+  public String? QualifiedId { get; set; }
   
   
   /// <summary>

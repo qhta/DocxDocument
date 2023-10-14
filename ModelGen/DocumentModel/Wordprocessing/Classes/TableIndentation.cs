@@ -16,6 +16,6 @@ public partial class TableIndentation
   /// <summary>
   ///   type
   /// </summary>
-  public TableWidthUnitKind? Type { get; set; }
+  public DocumentModel.Wordprocessing.TableWidthUnitKind? Type { get; set; }
   
 }

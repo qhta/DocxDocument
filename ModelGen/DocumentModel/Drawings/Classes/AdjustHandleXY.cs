@@ -46,6 +46,6 @@ public partial class AdjustHandleXY
   /// <summary>
   ///   Position.
   /// </summary>
-  public AdjustPoint2DType? Position { get; set; }
+  public DocumentModel.Drawings.Position? Position { get; set; }
   
 }

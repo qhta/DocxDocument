@@ -10,7 +10,7 @@ public partial class BorderType
   /// <summary>
   ///   Border Style
   /// </summary>
-  public BorderKind? Type { get; set; }
+  public DocumentModel.Vml.Wordprocessing.BorderKind? Type { get; set; }
   
   
   /// <summary>
@@ -22,6 +22,6 @@ public partial class BorderType
   /// <summary>
   ///   Border shadow
   /// </summary>
-  public Boolean? Shadow { get; set; }
+  public DM.TrueFalseValue? Shadow { get; set; }
   
 }

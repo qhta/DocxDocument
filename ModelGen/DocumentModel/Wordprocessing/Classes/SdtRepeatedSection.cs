@@ -16,6 +16,6 @@ public partial class SdtRepeatedSection
   /// <summary>
   ///   DoNotAllowInsertDeleteSection.
   /// </summary>
-  public Boolean? DoNotAllowInsertDeleteSection { get; set; }
+  public DocumentModel.Wordprocessing.DoNotAllowInsertDeleteSection? DoNotAllowInsertDeleteSection { get; set; }
   
 }

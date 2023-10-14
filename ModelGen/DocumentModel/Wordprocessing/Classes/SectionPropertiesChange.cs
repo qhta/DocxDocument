@@ -34,6 +34,6 @@ public partial class SectionPropertiesChange
   /// <summary>
   ///   Previous Section Properties.
   /// </summary>
-  public PreviousSectionProperties? PreviousSectionProperties { get; set; }
+  public DocumentModel.Wordprocessing.PreviousSectionProperties? PreviousSectionProperties { get; set; }
   
 }

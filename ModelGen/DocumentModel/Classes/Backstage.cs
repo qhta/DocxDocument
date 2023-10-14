@@ -18,6 +18,6 @@ public partial class Backstage
   /// </summary>
   public String? OnHide { get; set; }
   
-  public ElementCollection<IModelElement>? Items { get; set; }
+  public DM.ElementCollection<IModelElement>? Items { get; set; }
   
 }

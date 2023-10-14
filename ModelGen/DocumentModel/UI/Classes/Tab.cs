@@ -10,7 +10,7 @@ public partial class Tab
   /// <summary>
   ///   id
   /// </summary>
-  public HexInt? Id { get; set; }
+  public String? Id { get; set; }
   
   
   /// <summary>
@@ -90,6 +90,6 @@ public partial class Tab
   /// </summary>
   public String? GetKeytip { get; set; }
   
-  public ElementCollection<Group>? Items { get; set; }
+  public DM.ElementCollection<Group>? Items { get; set; }
   
 }

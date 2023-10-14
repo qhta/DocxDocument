@@ -34,6 +34,6 @@ public partial class ParagraphPropertiesChange
   /// <summary>
   ///   Previous Paragraph Properties.
   /// </summary>
-  public ParagraphPropertiesExtended? ParagraphPropertiesExtended { get; set; }
+  public DocumentModel.Wordprocessing.ParagraphPropertiesExtended? ParagraphPropertiesExtended { get; set; }
   
 }

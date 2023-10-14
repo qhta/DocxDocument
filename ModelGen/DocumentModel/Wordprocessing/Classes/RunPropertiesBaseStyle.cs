@@ -10,109 +10,109 @@ public partial class RunPropertiesBaseStyle
   /// <summary>
   ///   RunFonts.
   /// </summary>
-  public RunFonts? RunFonts { get; set; }
+  public DocumentModel.Wordprocessing.RunFonts? RunFonts { get; set; }
   
   
   /// <summary>
   ///   Bold.
   /// </summary>
-  public Boolean? Bold { get; set; }
+  public DocumentModel.Wordprocessing.Bold? Bold { get; set; }
   
   
   /// <summary>
   ///   BoldComplexScript.
   /// </summary>
-  public Boolean? BoldComplexScript { get; set; }
+  public DocumentModel.Wordprocessing.BoldComplexScript? BoldComplexScript { get; set; }
   
   
   /// <summary>
   ///   Italic.
   /// </summary>
-  public Boolean? Italic { get; set; }
+  public DocumentModel.Wordprocessing.Italic? Italic { get; set; }
   
   
   /// <summary>
   ///   ItalicComplexScript.
   /// </summary>
-  public Boolean? ItalicComplexScript { get; set; }
+  public DocumentModel.Wordprocessing.ItalicComplexScript? ItalicComplexScript { get; set; }
   
   
   /// <summary>
   ///   Caps.
   /// </summary>
-  public Boolean? Caps { get; set; }
+  public DocumentModel.Wordprocessing.Caps? Caps { get; set; }
   
   
   /// <summary>
   ///   SmallCaps.
   /// </summary>
-  public Boolean? SmallCaps { get; set; }
+  public DocumentModel.Wordprocessing.SmallCaps? SmallCaps { get; set; }
   
   
   /// <summary>
   ///   Strike.
   /// </summary>
-  public Boolean? Strike { get; set; }
+  public DocumentModel.Wordprocessing.Strike? Strike { get; set; }
   
   
   /// <summary>
   ///   DoubleStrike.
   /// </summary>
-  public Boolean? DoubleStrike { get; set; }
+  public DocumentModel.Wordprocessing.DoubleStrike? DoubleStrike { get; set; }
   
   
   /// <summary>
   ///   Outline.
   /// </summary>
-  public Boolean? Outline { get; set; }
+  public DocumentModel.Wordprocessing.Outline? Outline { get; set; }
   
   
   /// <summary>
   ///   Shadow.
   /// </summary>
-  public Boolean? Shadow { get; set; }
+  public DocumentModel.Wordprocessing.Shadow? Shadow { get; set; }
   
   
   /// <summary>
   ///   Emboss.
   /// </summary>
-  public Boolean? Emboss { get; set; }
+  public DocumentModel.Wordprocessing.Emboss? Emboss { get; set; }
   
   
   /// <summary>
   ///   Imprint.
   /// </summary>
-  public Boolean? Imprint { get; set; }
+  public DocumentModel.Wordprocessing.Imprint? Imprint { get; set; }
   
   
   /// <summary>
   ///   NoProof.
   /// </summary>
-  public Boolean? NoProof { get; set; }
+  public DocumentModel.Wordprocessing.NoProof? NoProof { get; set; }
   
   
   /// <summary>
   ///   SnapToGrid.
   /// </summary>
-  public Boolean? SnapToGrid { get; set; }
+  public DocumentModel.Wordprocessing.SnapToGrid? SnapToGrid { get; set; }
   
   
   /// <summary>
   ///   Vanish.
   /// </summary>
-  public Boolean? Vanish { get; set; }
+  public DocumentModel.Wordprocessing.Vanish? Vanish { get; set; }
   
   
   /// <summary>
   ///   WebHidden.
   /// </summary>
-  public Boolean? WebHidden { get; set; }
+  public DocumentModel.Wordprocessing.WebHidden? WebHidden { get; set; }
   
   
   /// <summary>
   ///   Color.
   /// </summary>
-  public Color? Color { get; set; }
+  public DocumentModel.Wordprocessing.Color? Color { get; set; }
   
   
   /// <summary>
@@ -142,72 +142,72 @@ public partial class RunPropertiesBaseStyle
   /// <summary>
   ///   FontSize.
   /// </summary>
-  public String? FontSize { get; set; }
+  public DocumentModel.Wordprocessing.FontSize? FontSize { get; set; }
   
   
   /// <summary>
   ///   FontSizeComplexScript.
   /// </summary>
-  public String? FontSizeComplexScript { get; set; }
+  public DocumentModel.Wordprocessing.FontSizeComplexScript? FontSizeComplexScript { get; set; }
   
   
   /// <summary>
   ///   Underline.
   /// </summary>
-  public Underline? Underline { get; set; }
+  public DocumentModel.Wordprocessing.Underline? Underline { get; set; }
   
   
   /// <summary>
   ///   TextEffect.
   /// </summary>
-  public TextEffectKind? TextEffect { get; set; }
+  public DocumentModel.Wordprocessing.TextEffectKind? TextEffect { get; set; }
   
   
   /// <summary>
   ///   Border.
   /// </summary>
-  public BorderType? Border { get; set; }
+  public DocumentModel.Wordprocessing.Border? Border { get; set; }
   
   
   /// <summary>
   ///   Shading.
   /// </summary>
-  public Shading? Shading { get; set; }
+  public DocumentModel.Wordprocessing.Shading? Shading { get; set; }
   
   
   /// <summary>
   ///   FitText.
   /// </summary>
-  public FitText? FitText { get; set; }
+  public DocumentModel.Wordprocessing.FitText? FitText { get; set; }
   
   
   /// <summary>
   ///   VerticalTextAlignment.
   /// </summary>
-  public VerticalPositionKind? VerticalTextAlignment { get; set; }
+  public DocumentModel.Wordprocessing.VerticalPositionKind? VerticalTextAlignment { get; set; }
   
   
   /// <summary>
   ///   Emphasis.
   /// </summary>
-  public EmphasisMarkKind? Emphasis { get; set; }
+  public DocumentModel.Wordprocessing.EmphasisMarkKind? Emphasis { get; set; }
   
   
   /// <summary>
   ///   Languages.
   /// </summary>
-  public LanguageType? Languages { get; set; }
+  public DocumentModel.Wordprocessing.Languages? Languages { get; set; }
   
   
   /// <summary>
   ///   EastAsianLayout.
   /// </summary>
-  public EastAsianLayout? EastAsianLayout { get; set; }
+  public DocumentModel.Wordprocessing.EastAsianLayout? EastAsianLayout { get; set; }
   
   
   /// <summary>
   ///   SpecVanish.
   /// </summary>
-  public Boolean? SpecVanish { get; set; }
+  public DocumentModel.Wordprocessing.SpecVanish? SpecVanish { get; set; }
   
 }

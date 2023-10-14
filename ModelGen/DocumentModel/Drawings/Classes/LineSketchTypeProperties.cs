@@ -10,24 +10,24 @@ public partial class LineSketchTypeProperties
   /// <summary>
   ///   LineSketchNoneEmpty.
   /// </summary>
-  public Boolean? LineSketchNoneEmpty { get; set; }
+  public DocumentModel.Drawings.LineSketchNoneEmpty? LineSketchNoneEmpty { get; set; }
   
   
   /// <summary>
   ///   LineSketchCurvedEmpty.
   /// </summary>
-  public Boolean? LineSketchCurvedEmpty { get; set; }
+  public DocumentModel.Drawings.LineSketchCurvedEmpty? LineSketchCurvedEmpty { get; set; }
   
   
   /// <summary>
   ///   LineSketchFreehandEmpty.
   /// </summary>
-  public Boolean? LineSketchFreehandEmpty { get; set; }
+  public DocumentModel.Drawings.LineSketchFreehandEmpty? LineSketchFreehandEmpty { get; set; }
   
   
   /// <summary>
   ///   LineSketchScribbleEmpty.
   /// </summary>
-  public Boolean? LineSketchScribbleEmpty { get; set; }
+  public DocumentModel.Drawings.LineSketchScribbleEmpty? LineSketchScribbleEmpty { get; set; }
   
 }

@@ -10,19 +10,19 @@ public partial class Fill
   /// <summary>
   ///   Unique Identifier
   /// </summary>
-  public HexInt? Id { get; set; }
+  public String? Id { get; set; }
   
   
   /// <summary>
   ///   Fill Type
   /// </summary>
-  public FillTypeKind? Type { get; set; }
+  public DocumentModel.Vml.FillTypeKind? Type { get; set; }
   
   
   /// <summary>
   ///   Fill Toggle
   /// </summary>
-  public Boolean? On { get; set; }
+  public DM.TrueFalseValue? On { get; set; }
   
   
   /// <summary>
@@ -82,7 +82,7 @@ public partial class Fill
   /// <summary>
   ///   Image Aspect Ratio
   /// </summary>
-  public ImageAspectKind? Aspect { get; set; }
+  public DocumentModel.Vml.ImageAspectKind? Aspect { get; set; }
   
   
   /// <summary>
@@ -100,7 +100,7 @@ public partial class Fill
   /// <summary>
   ///   Align Image With Shape
   /// </summary>
-  public Boolean? AlignShape { get; set; }
+  public DM.TrueFalseValue? AlignShape { get; set; }
   
   
   /// <summary>
@@ -124,13 +124,13 @@ public partial class Fill
   /// <summary>
   ///   Gradient Fill Method
   /// </summary>
-  public FillMethodKind? Method { get; set; }
+  public DocumentModel.Vml.FillMethodKind? Method { get; set; }
   
   
   /// <summary>
   ///   Detect Mouse Click
   /// </summary>
-  public Boolean? DetectMouseClick { get; set; }
+  public DM.TrueFalseValue? DetectMouseClick { get; set; }
   
   
   /// <summary>
@@ -148,24 +148,24 @@ public partial class Fill
   /// <summary>
   ///   Recolor Fill as Picture
   /// </summary>
-  public Boolean? Recolor { get; set; }
+  public DM.TrueFalseValue? Recolor { get; set; }
   
   
   /// <summary>
   ///   Rotate Fill with Shape
   /// </summary>
-  public Boolean? Rotate { get; set; }
+  public DM.TrueFalseValue? Rotate { get; set; }
   
   
   /// <summary>
   ///   Relationship to Part
   /// </summary>
-  public HexInt? RelationshipId { get; set; }
+  public String? RelationshipId { get; set; }
   
   
   /// <summary>
   ///   FillExtendedProperties.
   /// </summary>
-  public FillExtendedProperties? FillExtendedProperties { get; set; }
+  public DocumentModel.Vml.Office.FillExtendedProperties? FillExtendedProperties { get; set; }
   
 }

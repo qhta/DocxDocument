@@ -6,12 +6,12 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class CheckBox
 {
-  public String? FormFieldSize { get; set; }
+  public DocumentModel.Wordprocessing.FormFieldSize? FormFieldSize { get; set; }
   
-  public Boolean? AutomaticallySizeFormField { get; set; }
+  public DocumentModel.Wordprocessing.AutomaticallySizeFormField? AutomaticallySizeFormField { get; set; }
   
-  public Boolean? DefaultCheckBoxFormFieldState { get; set; }
+  public DocumentModel.Wordprocessing.DefaultCheckBoxFormFieldState? DefaultCheckBoxFormFieldState { get; set; }
   
-  public Boolean? Checked { get; set; }
+  public DocumentModel.Wordprocessing.Checked? Checked { get; set; }
   
 }

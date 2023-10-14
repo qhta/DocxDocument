@@ -6,6 +6,6 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class SdtEndCharProperties
 {
-  public ElementCollection<RunProperties>? Items { get; set; }
+  public DM.ElementCollection<RunProperties>? Items { get; set; }
   
 }

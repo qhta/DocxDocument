@@ -6,8 +6,8 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class ContourColor
 {
-  public HexBinary? RgbColorModelHex { get; set; }
+  public DM.HexBinary? RgbColorModelHex { get; set; }
   
-  public SchemeColorKind? SchemeColor { get; set; }
+  public DocumentModel.Wordprocessing.SchemeColorKind? SchemeColor { get; set; }
   
 }

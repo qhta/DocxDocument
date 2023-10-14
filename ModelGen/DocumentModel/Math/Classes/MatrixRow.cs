@@ -6,6 +6,6 @@ namespace DocumentModel.Math;
 /// </summary>
 public partial class MatrixRow
 {
-  public ElementCollection<Base>? Items { get; set; }
+  public DM.ElementCollection<Base>? Items { get; set; }
   
 }

@@ -10,25 +10,25 @@ public partial class Extrusion
   /// <summary>
   ///   VML Extension Handling Behavior
   /// </summary>
-  public ExtensionHandlingBehaviorKind? Extension { get; set; }
+  public DocumentModel.Vml.ExtensionHandlingBehaviorKind? Extension { get; set; }
   
   
   /// <summary>
   ///   Extrusion Toggle
   /// </summary>
-  public Boolean? On { get; set; }
+  public DM.TrueFalseValue? On { get; set; }
   
   
   /// <summary>
   ///   Extrusion Type
   /// </summary>
-  public ExtrusionKind? Type { get; set; }
+  public DocumentModel.Vml.Office.ExtrusionKind? Type { get; set; }
   
   
   /// <summary>
   ///   Extrusion Render Mode
   /// </summary>
-  public ExtrusionRenderKind? Render { get; set; }
+  public DocumentModel.Vml.Office.ExtrusionRenderKind? Render { get; set; }
   
   
   /// <summary>
@@ -82,13 +82,13 @@ public partial class Extrusion
   /// <summary>
   ///   Rotation Toggle
   /// </summary>
-  public Boolean? LockRotationCenter { get; set; }
+  public DM.TrueFalseValue? LockRotationCenter { get; set; }
   
   
   /// <summary>
   ///   Center of Rotation Toggle
   /// </summary>
-  public Boolean? AutoRotationCenter { get; set; }
+  public DM.TrueFalseValue? AutoRotationCenter { get; set; }
   
   
   /// <summary>
@@ -130,7 +130,7 @@ public partial class Extrusion
   /// <summary>
   ///   Metallic Surface Toggle
   /// </summary>
-  public Boolean? Metal { get; set; }
+  public DM.TrueFalseValue? Metal { get; set; }
   
   
   /// <summary>
@@ -148,7 +148,7 @@ public partial class Extrusion
   /// <summary>
   ///   Shape Face Lighting Toggle
   /// </summary>
-  public Boolean? LightFace { get; set; }
+  public DM.TrueFalseValue? LightFace { get; set; }
   
   
   /// <summary>
@@ -172,7 +172,7 @@ public partial class Extrusion
   /// <summary>
   ///   Primary Light Harshness Toggle
   /// </summary>
-  public Boolean? LightHarsh { get; set; }
+  public DM.TrueFalseValue? LightHarsh { get; set; }
   
   
   /// <summary>
@@ -190,6 +190,6 @@ public partial class Extrusion
   /// <summary>
   ///   Secondary Light Harshness Toggle
   /// </summary>
-  public Boolean? LightHarsh2 { get; set; }
+  public DM.TrueFalseValue? LightHarsh2 { get; set; }
   
 }

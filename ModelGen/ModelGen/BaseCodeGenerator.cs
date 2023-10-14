@@ -13,10 +13,10 @@ public abstract class BaseCodeGenerator
 
   public event ProgressTypeEvent? OnGeneratingType
   {
-    add { _onGeneratingType += value; }
-    remove { _onGeneratingType -= value; }
+    add { _OnGeneratingType += value; }
+    remove { _OnGeneratingType -= value; }
   }
-  protected ProgressTypeEvent? _onGeneratingType;
+  protected ProgressTypeEvent? _OnGeneratingType;
 
   public int GeneratedClassesCount { get; protected set; }
   public int GeneratedInterfacesCount { get; protected set; }
@@ -52,6 +52,7 @@ public abstract class BaseCodeGenerator
 
   public abstract int GenerateCode(IEnumerable<Namespace> types);
 
+  public abstract int ValidateCode();
 
   #region CustomAttributes generation
 
@@ -64,7 +65,7 @@ public abstract class BaseCodeGenerator
       {
         if (!customAttrib.Name.StartsWith("Nullable") && !customAttrib.Name.StartsWith("SchemaAttr"))
         {
-          if (customAttrib.IsAcceptedTo(PPS.CodeGen) is true)
+          if (customAttrib.IsAcceptedTo(PPS.CodeGen))
             if (GenerateCustomAttribute(customAttrib))
               generated = true;
         }
@@ -84,7 +85,9 @@ public abstract class BaseCodeGenerator
     //  attrTypeName = attrTypeName.Substring(0, attrTypeName.Length - "Attribute".Length);
     if (attrTypeName == string.Empty)
       return false;
-    if (ModelConfig.Instance.ExcludedTypes.Contains(attrTypeName))
+    //if (ModelConfig.Instance.ExcludedTypes.Contains(attrTypeName))
+    //  return false;
+    if (!attributeType.IsAcceptedTo(PPS.CodeGen))
       return false;
     var attrString = attrTypeName.Substring(0, attrTypeName.Length - "Attribute".Length);
     if (attrData.ConstructorArguments?.Count + attrData.NamedArguments?.Count > 0)

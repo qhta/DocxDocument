@@ -10,13 +10,13 @@ public partial class StrokeChildType
   /// <summary>
   ///   VML Extension Handling Behavior
   /// </summary>
-  public ExtensionHandlingBehaviorKind? Extension { get; set; }
+  public DocumentModel.Vml.ExtensionHandlingBehaviorKind? Extension { get; set; }
   
   
   /// <summary>
   ///   Stroke Toggle
   /// </summary>
-  public Boolean? On { get; set; }
+  public DM.TrueFalseValue? On { get; set; }
   
   
   /// <summary>
@@ -46,7 +46,7 @@ public partial class StrokeChildType
   /// <summary>
   ///   Stroke Line Style
   /// </summary>
-  public StrokeLineStyleKind? LineStyle { get; set; }
+  public DocumentModel.Vml.StrokeLineStyleKind? LineStyle { get; set; }
   
   
   /// <summary>
@@ -58,13 +58,13 @@ public partial class StrokeChildType
   /// <summary>
   ///   Line End Join Style)
   /// </summary>
-  public StrokeJoinStyleKind? JoinStyle { get; set; }
+  public DocumentModel.Vml.StrokeJoinStyleKind? JoinStyle { get; set; }
   
   
   /// <summary>
   ///   Line End Cap
   /// </summary>
-  public StrokeEndCapKind? EndCap { get; set; }
+  public DocumentModel.Vml.StrokeEndCapKind? EndCap { get; set; }
   
   
   /// <summary>
@@ -76,13 +76,13 @@ public partial class StrokeChildType
   /// <summary>
   ///   Inset Border From Path
   /// </summary>
-  public Boolean? InsetPen { get; set; }
+  public DM.TrueFalseValue? InsetPen { get; set; }
   
   
   /// <summary>
   ///   Stroke Image Style
   /// </summary>
-  public FillTypeKind? FillType { get; set; }
+  public DocumentModel.Vml.FillTypeKind? FillType { get; set; }
   
   
   /// <summary>
@@ -94,7 +94,7 @@ public partial class StrokeChildType
   /// <summary>
   ///   Stroke Image Aspect Ratio
   /// </summary>
-  public ImageAspectKind? ImageAspect { get; set; }
+  public DocumentModel.Vml.ImageAspectKind? ImageAspect { get; set; }
   
   
   /// <summary>
@@ -106,43 +106,43 @@ public partial class StrokeChildType
   /// <summary>
   ///   Stoke Image Alignment
   /// </summary>
-  public Boolean? ImageAlignShape { get; set; }
+  public DM.TrueFalseValue? ImageAlignShape { get; set; }
   
   
   /// <summary>
   ///   Line Start Arrowhead
   /// </summary>
-  public StrokeArrowKind? StartArrow { get; set; }
+  public DocumentModel.Vml.StrokeArrowKind? StartArrow { get; set; }
   
   
   /// <summary>
   ///   Line Start Arrowhead Width
   /// </summary>
-  public StrokeArrowWidthKind? StartArrowWidth { get; set; }
+  public DocumentModel.Vml.StrokeArrowWidthKind? StartArrowWidth { get; set; }
   
   
   /// <summary>
   ///   Line Start Arrowhead Length
   /// </summary>
-  public StrokeArrowLengthKind? StartArrowLength { get; set; }
+  public DocumentModel.Vml.StrokeArrowLengthKind? StartArrowLength { get; set; }
   
   
   /// <summary>
   ///   Line End Arrowhead
   /// </summary>
-  public StrokeArrowKind? EndArrow { get; set; }
+  public DocumentModel.Vml.StrokeArrowKind? EndArrow { get; set; }
   
   
   /// <summary>
   ///   Line End Arrowhead Width
   /// </summary>
-  public StrokeArrowWidthKind? EndArrowWidth { get; set; }
+  public DocumentModel.Vml.StrokeArrowWidthKind? EndArrowWidth { get; set; }
   
   
   /// <summary>
   ///   Line End Arrowhead Length
   /// </summary>
-  public StrokeArrowLengthKind? EndArrowLength { get; set; }
+  public DocumentModel.Vml.StrokeArrowLengthKind? EndArrowLength { get; set; }
   
   
   /// <summary>
@@ -166,6 +166,6 @@ public partial class StrokeChildType
   /// <summary>
   ///   Force Dashed Outline
   /// </summary>
-  public Boolean? ForceDash { get; set; }
+  public DM.TrueFalseValue? ForceDash { get; set; }
   
 }

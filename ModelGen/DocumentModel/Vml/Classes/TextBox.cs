@@ -10,7 +10,7 @@ public partial class TextBox
   /// <summary>
   ///   Unique Identifier
   /// </summary>
-  public HexInt? Id { get; set; }
+  public String? Id { get; set; }
   
   
   /// <summary>
@@ -28,8 +28,8 @@ public partial class TextBox
   /// <summary>
   ///   Text Box Single-Click Selection Toggle
   /// </summary>
-  public Boolean? SingleClick { get; set; }
+  public DM.TrueFalseValue? SingleClick { get; set; }
   
-  public TextBoxContent? TextBoxContent { get; set; }
+  public DocumentModel.Wordprocessing.TextBoxContent? TextBoxContent { get; set; }
   
 }

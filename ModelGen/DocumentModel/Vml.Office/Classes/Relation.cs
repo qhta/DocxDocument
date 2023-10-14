@@ -10,24 +10,24 @@ public partial class Relation
   /// <summary>
   ///   VML Extension Handling Behavior
   /// </summary>
-  public ExtensionHandlingBehaviorKind? Extension { get; set; }
+  public DocumentModel.Vml.ExtensionHandlingBehaviorKind? Extension { get; set; }
   
   
   /// <summary>
   ///   Diagram Relationship Source Shape
   /// </summary>
-  public HexInt? SourceId { get; set; }
+  public String? SourceId { get; set; }
   
   
   /// <summary>
   ///   Diagram Relationship Destination Shape
   /// </summary>
-  public HexInt? DestinationId { get; set; }
+  public String? DestinationId { get; set; }
   
   
   /// <summary>
   ///   Diagram Relationship Center Shape
   /// </summary>
-  public HexInt? CenterShapeId { get; set; }
+  public String? CenterShapeId { get; set; }
   
 }

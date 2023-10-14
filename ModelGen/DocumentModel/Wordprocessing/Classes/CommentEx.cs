@@ -10,13 +10,13 @@ public partial class CommentEx
   /// <summary>
   ///   paraId, this property is only available in Office 2013 and later.
   /// </summary>
-  public HexInt? ParaId { get; set; }
+  public DM.HexBinary? ParaId { get; set; }
   
   
   /// <summary>
   ///   paraIdParent, this property is only available in Office 2013 and later.
   /// </summary>
-  public HexBinary? ParaIdParent { get; set; }
+  public DM.HexBinary? ParaIdParent { get; set; }
   
   
   /// <summary>

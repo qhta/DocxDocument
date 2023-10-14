@@ -12,6 +12,6 @@ public partial class DocPartTypes
   /// </summary>
   public Boolean? All { get; set; }
   
-  public ElementCollection<DocPartKind>? Items { get; set; }
+  public DM.ElementCollection<DocPartKind>? Items { get; set; }
   
 }

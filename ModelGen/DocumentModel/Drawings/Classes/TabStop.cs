@@ -16,6 +16,6 @@ public partial class TabStop
   /// <summary>
   ///   Tab Alignment
   /// </summary>
-  public TextTabAlignmentKind? Alignment { get; set; }
+  public DocumentModel.Drawings.TextTabAlignmentKind? Alignment { get; set; }
   
 }

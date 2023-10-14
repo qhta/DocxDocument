@@ -10,13 +10,13 @@ public partial class BackstageGroup
   /// <summary>
   ///   id, this property is only available in Office 2010 and later.
   /// </summary>
-  public HexInt? Id { get; set; }
+  public String? Id { get; set; }
   
   
   /// <summary>
   ///   idQ, this property is only available in Office 2010 and later.
   /// </summary>
-  public HexInt? QualifiedId { get; set; }
+  public String? QualifiedId { get; set; }
   
   
   /// <summary>
@@ -46,13 +46,13 @@ public partial class BackstageGroup
   /// <summary>
   ///   insertAfterQ, this property is only available in Office 2010 and later.
   /// </summary>
-  public HexInt? InsertAfterQulifiedId { get; set; }
+  public String? InsertAfterQulifiedId { get; set; }
   
   
   /// <summary>
   ///   insertBeforeQ, this property is only available in Office 2010 and later.
   /// </summary>
-  public HexInt? InsertBeforeQulifiedId { get; set; }
+  public String? InsertBeforeQulifiedId { get; set; }
   
   
   /// <summary>
@@ -82,7 +82,7 @@ public partial class BackstageGroup
   /// <summary>
   ///   style, this property is only available in Office 2010 and later.
   /// </summary>
-  public StyleKind? Style { get; set; }
+  public DM.StyleKind? Style { get; set; }
   
   
   /// <summary>
@@ -114,10 +114,10 @@ public partial class BackstageGroup
   /// </summary>
   public String? GetShowLabel { get; set; }
   
-  public PrimaryItem? PrimaryItem { get; set; }
+  public DM.PrimaryItem? PrimaryItem { get; set; }
   
-  public TopItemsGroupControls? TopItemsGroupControls { get; set; }
+  public DM.TopItemsGroupControls? TopItemsGroupControls { get; set; }
   
-  public BottomItemsGroupControls? BottomItemsGroupControls { get; set; }
+  public DM.BottomItemsGroupControls? BottomItemsGroupControls { get; set; }
   
 }

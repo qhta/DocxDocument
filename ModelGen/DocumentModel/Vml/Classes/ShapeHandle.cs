@@ -28,19 +28,19 @@ public partial class ShapeHandle
   /// <summary>
   ///   Invert Handle's X Position
   /// </summary>
-  public Boolean? InvertX { get; set; }
+  public DM.TrueFalseBlankValue? InvertX { get; set; }
   
   
   /// <summary>
   ///   Invert Handle's Y Position
   /// </summary>
-  public Boolean? InvertY { get; set; }
+  public DM.TrueFalseBlankValue? InvertY { get; set; }
   
   
   /// <summary>
   ///   Handle Inversion Toggle
   /// </summary>
-  public Boolean? Switch { get; set; }
+  public DM.TrueFalseBlankValue? Switch { get; set; }
   
   
   /// <summary>

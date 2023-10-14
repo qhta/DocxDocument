@@ -82,6 +82,6 @@ public partial class Reflection
   /// <summary>
   ///   algn, this property is only available in Office 2010 and later.
   /// </summary>
-  public RectangleAlignmentKind? Alignment { get; set; }
+  public DocumentModel.Wordprocessing.RectangleAlignmentKind? Alignment { get; set; }
   
 }

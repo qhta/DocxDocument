@@ -10,8 +10,8 @@ public partial class RelationTable
   /// <summary>
   ///   VML Extension Handling Behavior
   /// </summary>
-  public ExtensionHandlingBehaviorKind? Extension { get; set; }
+  public DocumentModel.Vml.ExtensionHandlingBehaviorKind? Extension { get; set; }
   
-  public ElementCollection<Relation>? Items { get; set; }
+  public DM.ElementCollection<Relation>? Items { get; set; }
   
 }

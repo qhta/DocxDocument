@@ -14,6 +14,6 @@ public partial class WebSettingsPart
   /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>
-  public WebSettings? WebSettings { get; set; }
+  public DM.WebSettings? WebSettings { get; set; }
   
 }

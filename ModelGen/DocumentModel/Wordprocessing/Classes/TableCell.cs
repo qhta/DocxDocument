@@ -10,8 +10,8 @@ public partial class TableCell
   /// <summary>
   ///   Table Cell Properties.
   /// </summary>
-  public TableCellProperties? TableCellProperties { get; set; }
+  public DocumentModel.Wordprocessing.TableCellProperties? TableCellProperties { get; set; }
   
-  public ElementCollection<IModelElement>? Items { get; set; }
+  public DM.ElementCollection<IModelElement>? Items { get; set; }
   
 }

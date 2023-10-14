@@ -10,13 +10,13 @@ public partial class BackstageMenuGroup
   /// <summary>
   ///   id, this property is only available in Office 2010 and later.
   /// </summary>
-  public HexInt? Id { get; set; }
+  public String? Id { get; set; }
   
   
   /// <summary>
   ///   idQ, this property is only available in Office 2010 and later.
   /// </summary>
-  public HexInt? QualifiedId { get; set; }
+  public String? QualifiedId { get; set; }
   
   
   /// <summary>
@@ -40,8 +40,8 @@ public partial class BackstageMenuGroup
   /// <summary>
   ///   itemSize, this property is only available in Office 2010 and later.
   /// </summary>
-  public ItemSizeKind? ItemSize { get; set; }
+  public DM.ItemSizeKind? ItemSize { get; set; }
   
-  public ElementCollection<IModelElement>? Items { get; set; }
+  public DM.ElementCollection<IModelElement>? Items { get; set; }
   
 }

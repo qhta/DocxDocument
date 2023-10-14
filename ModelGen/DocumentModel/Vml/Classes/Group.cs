@@ -10,7 +10,7 @@ public partial class Group
   /// <summary>
   ///   Unique Identifier
   /// </summary>
-  public HexInt? Id { get; set; }
+  public String? Id { get; set; }
   
   
   /// <summary>
@@ -70,7 +70,7 @@ public partial class Group
   /// <summary>
   ///   Print Toggle
   /// </summary>
-  public Boolean? Print { get; set; }
+  public DM.TrueFalseValue? Print { get; set; }
   
   
   /// <summary>
@@ -82,55 +82,55 @@ public partial class Group
   /// <summary>
   ///   oned
   /// </summary>
-  public Boolean? Oned { get; set; }
+  public DM.TrueFalseValue? Oned { get; set; }
   
   
   /// <summary>
   ///   regroupid
   /// </summary>
-  public HexInt? RegroupId { get; set; }
+  public Int64? RegroupId { get; set; }
   
   
   /// <summary>
   ///   doubleclicknotify
   /// </summary>
-  public Boolean? DoubleClickNotify { get; set; }
+  public DM.TrueFalseValue? DoubleClickNotify { get; set; }
   
   
   /// <summary>
   ///   button
   /// </summary>
-  public Boolean? Button { get; set; }
+  public DM.TrueFalseValue? Button { get; set; }
   
   
   /// <summary>
   ///   userhidden
   /// </summary>
-  public Boolean? UserHidden { get; set; }
+  public DM.TrueFalseValue? UserHidden { get; set; }
   
   
   /// <summary>
   ///   bullet
   /// </summary>
-  public Boolean? Bullet { get; set; }
+  public DM.TrueFalseValue? Bullet { get; set; }
   
   
   /// <summary>
   ///   hr
   /// </summary>
-  public Boolean? Horizontal { get; set; }
+  public DM.TrueFalseValue? Horizontal { get; set; }
   
   
   /// <summary>
   ///   hrstd
   /// </summary>
-  public Boolean? HorizontalStandard { get; set; }
+  public DM.TrueFalseValue? HorizontalStandard { get; set; }
   
   
   /// <summary>
   ///   hrnoshade
   /// </summary>
-  public Boolean? HorizontalNoShade { get; set; }
+  public DM.TrueFalseValue? HorizontalNoShade { get; set; }
   
   
   /// <summary>
@@ -142,25 +142,25 @@ public partial class Group
   /// <summary>
   ///   hralign
   /// </summary>
-  public HorizontalRuleAlignmentKind? HorizontalAlignment { get; set; }
+  public DocumentModel.Vml.Office.HorizontalRuleAlignmentKind? HorizontalAlignment { get; set; }
   
   
   /// <summary>
   ///   allowincell
   /// </summary>
-  public Boolean? AllowInCell { get; set; }
+  public DM.TrueFalseValue? AllowInCell { get; set; }
   
   
   /// <summary>
   ///   allowoverlap
   /// </summary>
-  public Boolean? AllowOverlap { get; set; }
+  public DM.TrueFalseValue? AllowOverlap { get; set; }
   
   
   /// <summary>
   ///   userdrawn
   /// </summary>
-  public Boolean? UserDrawn { get; set; }
+  public DM.TrueFalseValue? UserDrawn { get; set; }
   
   
   /// <summary>
@@ -184,19 +184,19 @@ public partial class Group
   /// <summary>
   ///   insetmode
   /// </summary>
-  public InsetMarginKind? InsetMode { get; set; }
+  public DocumentModel.Vml.Office.InsetMarginKind? InsetMode { get; set; }
   
   
   /// <summary>
   ///   Encoded Package
   /// </summary>
-  public Base64Binary? Gfxdata { get; set; }
+  public DM.Base64Binary? Gfxdata { get; set; }
   
   
   /// <summary>
   ///   Group Diagram Type
   /// </summary>
-  public EditAsKind? EditAs { get; set; }
+  public DocumentModel.Vml.EditAsKind? EditAs { get; set; }
   
   
   /// <summary>
@@ -210,6 +210,6 @@ public partial class Group
   /// </summary>
   public String? TableLimits { get; set; }
   
-  public ElementCollection<IModelElement>? Items { get; set; }
+  public DM.ElementCollection<IModelElement>? Items { get; set; }
   
 }

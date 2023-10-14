@@ -82,7 +82,7 @@ public partial class Reflection
   /// <summary>
   ///   Specifies shadow alignment.
   /// </summary>
-  public RectangleAlignmentKind? Alignment { get; set; }
+  public DocumentModel.Drawings.RectangleAlignmentKind? Alignment { get; set; }
   
   
   /// <summary>

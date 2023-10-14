@@ -16,24 +16,24 @@ public partial class FormatScheme
   /// <summary>
   ///   Fill Style List.
   /// </summary>
-  public FillStyleList? FillStyleList { get; set; }
+  public DocumentModel.Drawings.FillStyleList? FillStyleList { get; set; }
   
   
   /// <summary>
   ///   Line Style List.
   /// </summary>
-  public LineStyleList? LineStyleList { get; set; }
+  public DocumentModel.Drawings.LineStyleList? LineStyleList { get; set; }
   
   
   /// <summary>
   ///   Effect Style List.
   /// </summary>
-  public EffectStyleList? EffectStyleList { get; set; }
+  public DocumentModel.Drawings.EffectStyleList? EffectStyleList { get; set; }
   
   
   /// <summary>
   ///   Background Fill Style List.
   /// </summary>
-  public BackgroundFillStyleList? BackgroundFillStyleList { get; set; }
+  public DocumentModel.Drawings.BackgroundFillStyleList? BackgroundFillStyleList { get; set; }
   
 }

@@ -16,18 +16,18 @@ public partial class ThemeFamily
   /// <summary>
   ///   id, this property is only available in Office 2013 and later.
   /// </summary>
-  public HexInt? Id { get; set; }
+  public String? Id { get; set; }
   
   
   /// <summary>
   ///   vid, this property is only available in Office 2013 and later.
   /// </summary>
-  public HexInt? Vid { get; set; }
+  public String? Vid { get; set; }
   
   
   /// <summary>
   ///   OfficeArtExtensionList.
   /// </summary>
-  public OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
+  public DM.OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
   
 }

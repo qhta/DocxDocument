@@ -10,7 +10,7 @@ public partial class MarkupRangeType
   /// <summary>
   ///   displacedByCustomXml
   /// </summary>
-  public DisplacedByCustomXmlKind? DisplacedByCustomXml { get; set; }
+  public DocumentModel.Wordprocessing.DisplacedByCustomXmlKind? DisplacedByCustomXml { get; set; }
   
   
   /// <summary>

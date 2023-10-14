@@ -10,8 +10,8 @@ public partial class Rsids
   /// <summary>
   ///   Original Document Revision Save ID.
   /// </summary>
-  public UInt32? RsidRoot { get; set; }
+  public DocumentModel.Wordprocessing.RsidRoot? RsidRoot { get; set; }
   
-  public ElementCollection<UInt32>? Items { get; set; }
+  public DM.ElementCollection<Rsid>? Items { get; set; }
   
 }

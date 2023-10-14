@@ -10,54 +10,54 @@ public partial class MatrixProperties
   /// <summary>
   ///   Matrix Base Justification.
   /// </summary>
-  public VerticalAlignmentKind? BaseJustification { get; set; }
+  public DocumentModel.Math.VerticalAlignmentKind? BaseJustification { get; set; }
   
   
   /// <summary>
   ///   Hide Placeholders (Matrix).
   /// </summary>
-  public Boolean? HidePlaceholder { get; set; }
+  public DocumentModel.Math.HidePlaceholder? HidePlaceholder { get; set; }
   
   
   /// <summary>
   ///   Row Spacing Rule.
   /// </summary>
-  public Int64? RowSpacingRule { get; set; }
+  public DocumentModel.Math.RowSpacingRule? RowSpacingRule { get; set; }
   
   
   /// <summary>
   ///   Matrix Column Gap Rule.
   /// </summary>
-  public Int64? ColumnGapRule { get; set; }
+  public DocumentModel.Math.ColumnGapRule? ColumnGapRule { get; set; }
   
   
   /// <summary>
   ///   Row Spacing (Matrix).
   /// </summary>
-  public UInt16? RowSpacing { get; set; }
+  public DocumentModel.Math.RowSpacing? RowSpacing { get; set; }
   
   
   /// <summary>
   ///   Matrix Column Spacing.
   /// </summary>
-  public UInt32? ColumnSpacing { get; set; }
+  public DocumentModel.Math.ColumnSpacing? ColumnSpacing { get; set; }
   
   
   /// <summary>
   ///   Matrix Column Gap.
   /// </summary>
-  public UInt16? ColumnGap { get; set; }
+  public DocumentModel.Math.ColumnGap? ColumnGap { get; set; }
   
   
   /// <summary>
   ///   Matrix Columns.
   /// </summary>
-  public MatrixColumns? MatrixColumns { get; set; }
+  public DocumentModel.Math.MatrixColumns? MatrixColumns { get; set; }
   
   
   /// <summary>
   ///   ControlProperties.
   /// </summary>
-  public ControlProperties? ControlProperties { get; set; }
+  public DocumentModel.Math.ControlProperties? ControlProperties { get; set; }
   
 }
