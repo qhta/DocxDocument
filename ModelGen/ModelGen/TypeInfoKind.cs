@@ -23,4 +23,5 @@ public enum TypeInfoKind
   FixedProperties,
   GeneratedTypes,
   CompilationErrors,
+  CompilationErrorList,
 }

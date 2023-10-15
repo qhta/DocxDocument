@@ -7,6 +7,12 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Views\CodeResultsView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\CodeResultsWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\DummyWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -14,6 +20,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\EnumValuesView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\ErrorListView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\ModelConfigView.xaml.cs">
@@ -90,6 +99,12 @@
     <Page Update="AppColors.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Views\CodeResultsView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\CodeResultsWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\DummyWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -97,6 +112,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\EnumValuesView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ErrorListView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\MainWindow.xaml">

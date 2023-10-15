@@ -8,7 +8,8 @@
         xmlns:vm="clr-namespace:ModelGenApp.ViewModels"
         mc:Ignorable="d"
         d:DataContext="{d:DesignInstance Type={x:Type vm:TypeListViewModel}}"
-        Title="{Binding Caption}" Height="450" Width="800">
+        Title="{Binding Caption}"
+        Height="450" Width="800">
   <Window.Style>
     <Style TargetType="Window">
       <Setter Property="ForceCursor"
