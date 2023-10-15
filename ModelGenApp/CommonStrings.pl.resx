@@ -615,4 +615,19 @@ Użyj znaku '*' aby dopasować wzorzec do wielu znaków.</value>
   <data name="FinalCheck" xml:space="preserve">
     <value>Końcowe sprawdzenie</value>
   </data>
+  <data name="CompilationErrorList" xml:space="preserve">
+    <value>Lista błędów kompilacji</value>
+  </data>
+  <data name="FixedTypes" xml:space="preserve">
+    <value>Typy poprawione</value>
+  </data>
+  <data name="CompilationErrors" xml:space="preserve">
+    <value>Błędy kompilacji</value>
+  </data>
+  <data name="ResultsOfPhase" xml:space="preserve">
+    <value>Wyniki fazy</value>
+  </data>
+  <data name="Filename" xml:space="preserve">
+    <value>Nazwa pliku</value>
+  </data>
 </root>

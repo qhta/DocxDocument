@@ -5,6 +5,7 @@ namespace ModelGen;
 
 public abstract class BaseCodeGenerator
 {
+  public string SolutionName { get; protected set; } = null!;
   public string ProjectName { get; protected set; } = null!;
   public string OutputPath { get; protected set; } = null!;
   public string? ConfigPath { get; protected set; } = null!;
@@ -52,7 +53,64 @@ public abstract class BaseCodeGenerator
 
   public abstract int GenerateCode(IEnumerable<Namespace> types);
 
-  public abstract int ValidateCode();
+  public int ValidateCode()
+  {
+    string outputPath = Path.GetDirectoryName(OutputPath)!;
+    var compilationErrorsCount = CompileProject(outputPath, SolutionName + ".sln", SolutionName + ".txt");
+
+    if (compilationErrorsCount != 0)
+    {
+      var compilationErrors = CompilationErrors;
+      if (compilationErrors != null)
+        foreach (var error in compilationErrors)
+        {
+        }
+    }
+    return compilationErrorsCount;
+  }
+
+  #region Compilation
+  public int CompileProject(string solutionPath, string solutionName, string outputTxtFile)
+  {
+    Directory.SetCurrentDirectory(solutionPath);
+    File.Delete(outputTxtFile);
+    var compileExe = "c:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\devenv.exe";
+    var args = $"/build debug {solutionName} /out {outputTxtFile}";
+    var process = Process.Start(compileExe, args);
+    process.WaitForExit();
+    using (var reader = File.OpenText(outputTxtFile))
+    {
+      CompilationErrors errors = new();
+      string? line;
+      while ((line = reader.ReadLine()) != null)
+      {
+        var errorTag = ": error ";
+        var k = line.IndexOf(errorTag);
+        if (k != -1)
+        {
+          var filename = line.Substring(2, k - 2).Trim();
+          filename = filename.ReplaceStart(OutputPath + @"\", "");
+          var l = filename.IndexOf('(');
+          if (l != -1)
+            filename = filename.Substring(0,l).Trim();
+          k += errorTag.Length;
+          l = line.IndexOf(':', k);
+          var code = line.Substring(k, l - k).Trim();
+          var description = line.Substring(l + 2).Trim();
+          l = description.IndexOf('(');
+          if (l != -1)
+            description = description.Substring(0,l).Trim();
+          var error = new CompilationError { Filename = filename, Code = code, Description = description };
+          errors.Add(error);
+        }
+      }
+      CompilationErrors = errors;
+    }
+    return CompilationErrors.Count();
+  }
+
+  public CompilationErrors? CompilationErrors { get; protected set; }
+  #endregion
 
   #region CustomAttributes generation
 

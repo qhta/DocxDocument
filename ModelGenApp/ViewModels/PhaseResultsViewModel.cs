@@ -37,7 +37,7 @@ public abstract partial class PhaseResultsViewModel : ViewModel
       NotifyPropertyChanged(nameof(IsBusy));
   }
 
-  private void PhaseMonitor_PropertyChanged(object? sender, System.ComponentModel.PropertyChangedEventArgs e)
+  private void PhaseMonitor_PropertyChanged(object? sender, PropertyChangedEventArgs e)
   {
     NotifyCanExecuteChanged();
   }
@@ -59,7 +59,7 @@ public abstract partial class PhaseResultsViewModel : ViewModel
   /// </summary>
   public string PhaseName { get; set; }
 
-  public string Caption =>
+  public string Caption => CommonStrings.ResultsOfPhase +": "+
     CommonStrings.ResourceManager.GetString(PhaseName, CultureInfo.CurrentUICulture) ?? PhaseName;
 
 
@@ -109,7 +109,7 @@ public abstract partial class PhaseResultsViewModel : ViewModel
   }
   private PhaseSummaryViewModel _Summary = null!;
 
-  public void SetSummary(SummaryInfo summary)
+  public virtual void SetSummary(SummaryInfo summary)
   {
     Summary = new PhaseSummaryViewModel();
     if (summary.Summary != null)
@@ -338,7 +338,7 @@ public abstract partial class PhaseResultsViewModel : ViewModel
   }
   private Command _ShowResultsCommand = null!;
 
-  protected async void ShowResultsExecute()
+  protected virtual async void ShowResultsExecute()
   {
     WindowsManager.ShowWindow<PhaseResultsWindow>(this);
     await FillNamespacesAsync();
@@ -368,7 +368,7 @@ public abstract partial class PhaseResultsViewModel : ViewModel
   }
   private Command _RefreshResultsCommand = null!;
 
-  protected void RefreshResultsExecute()
+  protected virtual void RefreshResultsExecute()
   {
     RefreshResultsAsync();
   }

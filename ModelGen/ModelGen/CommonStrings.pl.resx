@@ -237,4 +237,10 @@
   <data name="checked_0_of_1_types" xml:space="preserve">
     <value>sprawdzono {0} z {1} plików</value>
   </data>
+  <data name="CompilationErrorList" xml:space="preserve">
+    <value>Lista błędów kompilacji</value>
+  </data>
+  <data name="CompilationErrors" xml:space="preserve">
+    <value>Błędy kompilacji</value>
+  </data>
 </root>
