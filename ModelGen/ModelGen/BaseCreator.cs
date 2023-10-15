@@ -491,10 +491,10 @@ public abstract class BaseCreator
     var generatedTypesCount = CodeGenerator.GenerateCode(nspaces);
     CodeGenerator.OnGeneratingType -= CodeGenerator_OnGeneratingCode;
 
-    var compilationErrors = 0;
+    var compilationErrorsCount = 0;
     if (Options.ValidateGeneration && !CancelRequest)
     {
-      compilationErrors = CodeGenerator.ValidateCode();
+      compilationErrorsCount = CodeGenerator.ValidateCode();
     }
 
     DateTime t2 = DateTime.Now;
@@ -508,8 +508,13 @@ public abstract class BaseCreator
         }
     };
 
-    if (compilationErrors > 0)
-      summaryInfo.Summary.Add(TypeInfoKind.CompilationErrors, compilationErrors);
+    if (compilationErrorsCount > 0)
+    {
+      summaryInfo.Summary.Add(TypeInfoKind.CompilationErrors, compilationErrorsCount);
+      if (CodeGenerator.CompilationErrors!=null)
+        summaryInfo.Summary.Add(TypeInfoKind.CompilationErrorList, CodeGenerator.CompilationErrors);
+    }
+
 
     ModelMonitor?.ShowPhaseEnd(PPS.CodeGen, summaryInfo);
     return ts;
@@ -523,39 +528,6 @@ public abstract class BaseCreator
       Args = new object[] { info.ProcessedTypes ?? 0, TotalTypesCount, info.Namespaces ?? 0 },
       PostStr = $"{info.Current?.TargetNamespace}.{info.Current?.TargetName}"    });
   }
-  #endregion
-
-  #region monitoring callbacks
-
-
-
-  //private void TypeReflector_OnReflection(ReflectionInfo info)
-  //{
-  //  ModelMonitor?.ShowPhaseProgress("Scanning types", new ProgressInfo
-  //  {
-  //    PreStr = "reflected",
-  //    Done = info.Done,
-  //    MidStr = "types",
-  //    Summary = new Dictionary<string, object>{
-  //      {"waiting", info.Waiting ?? 0 } },
-  //    PostStr = $"{info.Current?.OriginalNamespace}.{info.Current?.OriginalName}"
-  //  });
-  //}
-
-
-  //private void ModelManager_OnCheckingUsage(TypeProcessInfo info)
-  //{
-  //  ModelMonitor?.ShowPhaseProgress(PPS.UsageCheck, new ProgressInfo
-  //  {
-  //    PreStr = "checked",
-  //    Done = info.CheckedTypes,
-  //    MidStr = "types",
-  //    Summary = new Dictionary<string, object>{
-  //      {"used", info.UsedTypes ?? 0 } },
-  //    PostStr = $"{info.Current?.OriginalNamespace}.{info.Current?.OriginalName}"
-  //  });
-  //}
-
   #endregion
 
   #region SaveData

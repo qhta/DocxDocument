@@ -4,49 +4,11 @@ public class ModelGenerator : BaseCodeGenerator
 {
   public ModelGenerator(string projectName, string outputPath, string? configPath)
   {
+    SolutionName = "GeneratedModel";
     ProjectName = projectName;
     OutputPath = outputPath;
     ConfigPath = configPath;
   }
-
-  public override int ValidateCode()
-  {
-    var solutionName = "GeneratedModel";
-    var outputPath = Path.GetDirectoryName(OutputPath);
-    return CompileProject(outputPath, solutionName+".sln", solutionName+".txt");
-  }
-
-  public int CompileProject(string solutionPath, string solutionName, string outputTxtFile)
-  {
-    Directory.SetCurrentDirectory(solutionPath);
-    File.Delete(outputTxtFile);
-    var compileExe = "c:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\devenv.exe";
-    var args = $"/build debug {solutionName} /out {outputTxtFile}";
-    var process = Process.Start(compileExe, args);
-    process.WaitForExit();
-    using (var reader = File.OpenText(outputTxtFile))
-    {
-      List<string> errors = new List<string>();
-      string? line;
-      while ((line = reader.ReadLine()) != null)
-      {
-        var k = line.IndexOf("error");
-        if (k != -1)
-        {
-          k = line.IndexOf(": ", k);
-          if (k != -1)
-          {
-            var errMsg = line.Substring(k+2).Trim();
-            errors.Add(errMsg);
-          }
-        }
-      }
-      CompilationErrors = errors.ToArray();
-    }
-   return CompilationErrors.Count();
-  }
-
-  public string[]? CompilationErrors { get; protected set; }
 
   public override int GenerateCode(IEnumerable<Namespace> nspaces)
   {

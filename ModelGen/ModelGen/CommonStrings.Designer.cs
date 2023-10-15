@@ -115,6 +115,24 @@ namespace ModelGen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Compilation error list.
+        /// </summary>
+        internal static string CompilationErrorList {
+            get {
+                return ResourceManager.GetString("CompilationErrorList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Compilation errors.
+        /// </summary>
+        internal static string CompilationErrors {
+            get {
+                return ResourceManager.GetString("CompilationErrors", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Converted types.
         /// </summary>
         internal static string ConvertedTypes {

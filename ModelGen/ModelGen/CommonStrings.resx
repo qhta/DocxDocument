@@ -237,4 +237,10 @@
   <data name="checked_0_of_1_types" xml:space="preserve">
     <value>checked {0} of {1} types</value>
   </data>
+  <data name="CompilationErrorList" xml:space="preserve">
+    <value>Compilation error list</value>
+  </data>
+  <data name="CompilationErrors" xml:space="preserve">
+    <value>Compilation errors</value>
+  </data>
 </root>

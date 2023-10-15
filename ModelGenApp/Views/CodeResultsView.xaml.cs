@@ -1,8 +1,11 @@
 ﻿namespace ModelGenApp.Views;
 
-public partial class PhaseResultsView : UserControl
+/// <summary>
+/// Interaction logic for CodeResultsView.xaml
+/// </summary>
+public partial class CodeResultsView : UserControl
 {
-  public PhaseResultsView()
+  public CodeResultsView()
   {
     InitializeComponent();
   }

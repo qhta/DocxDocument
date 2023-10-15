@@ -124,11 +124,6 @@ public class ConverterGenerator : BaseCodeGenerator
     throw new NotImplementedException();
   }
 
-  public override int ValidateCode()
-  {
-    throw new NotImplementedException();
-  }
-
   #region Converter class generation
 
   private bool GenerateConverterClass(TypeInfo type)

@@ -178,6 +178,24 @@ namespace ModelGenApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Compilation error list.
+        /// </summary>
+        public static string CompilationErrorList {
+            get {
+                return ResourceManager.GetString("CompilationErrorList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Compilation errors.
+        /// </summary>
+        public static string CompilationErrors {
+            get {
+                return ResourceManager.GetString("CompilationErrors", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Configuration.
         /// </summary>
         public static string Config {
@@ -425,6 +443,15 @@ namespace ModelGenApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Error code.
+        /// </summary>
+        public static string ErrorCode {
+            get {
+                return ResourceManager.GetString("ErrorCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Exclude.
         /// </summary>
         public static string Exclude {
@@ -488,6 +515,15 @@ namespace ModelGenApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Filename.
+        /// </summary>
+        public static string Filename {
+            get {
+                return ResourceManager.GetString("Filename", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to File with docs.
         /// </summary>
         public static string FileWithDocs {
@@ -530,6 +566,15 @@ namespace ModelGenApp {
         public static string FinalCheck {
             get {
                 return ResourceManager.GetString("FinalCheck", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fixed types.
+        /// </summary>
+        public static string FixedTypes {
+            get {
+                return ResourceManager.GetString("FixedTypes", resourceCulture);
             }
         }
         
@@ -1018,6 +1063,15 @@ namespace ModelGenApp {
         public static string ResultKind {
             get {
                 return ResourceManager.GetString("ResultKind", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Results of phase.
+        /// </summary>
+        public static string ResultsOfPhase {
+            get {
+                return ResourceManager.GetString("ResultsOfPhase", resourceCulture);
             }
         }
         

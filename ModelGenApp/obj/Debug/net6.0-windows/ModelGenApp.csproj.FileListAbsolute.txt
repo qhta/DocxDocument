@@ -136,3 +136,9 @@ D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\Namespace
 D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\NamespacesDisplayOptionsView.baml
 D:\VS\Projects\DocxDocument\ModelGenApp\bin\Debug\net6.0-windows\WPFFolderBrowser.dll
 D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\AppColors.baml
+D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\CodeResultsWindow.g.cs
+D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\CodeResultsWindow.baml
+D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\ErrorListView.g.cs
+D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\ErrorListView.baml
+D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\CodeResultsView.g.cs
+D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\CodeResultsView.baml

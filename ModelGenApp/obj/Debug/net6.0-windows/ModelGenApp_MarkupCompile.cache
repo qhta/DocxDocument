@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 D:\VS\Projects\DocxDocument\ModelGenApp\App.xaml
-3055850264
+332124646129
 
-921835167311
+971304801076
 221797130097
-AppColors.xaml;Views\DummyWindow.xaml;Views\EnumsDisplayOptionsView.xaml;Views\EnumValuesView.xaml;Views\MainWindow.xaml;Views\ModelConfigView.xaml;Views\ModelConfigWindow.xaml;Views\NamespacesConfigView.xaml;Views\NamespacesDisplayOptionsView.xaml;Views\NamespacesListView.xaml;Views\PhaseProgressView.xaml;Views\PhaseResultsView.xaml;Views\PhaseResultsWindow.xaml;Views\PhaseSummaryView.xaml;Views\ProcessMonitorView.xaml;Views\ProcessOptionsView.xaml;Views\PropertiesConfigView.xaml;Views\PropertiesView.xaml;Views\PropListView.xaml;Views\PropsDisplayOptionsView.xaml;Views\SchemaView.xaml;Views\TypeInfoView.xaml;Views\TypeInfoWindow.xaml;Views\TypeListView.xaml;Views\TypeListWindow.xaml;Views\TypeRelationshipsDisplayOptionsView.xaml;Views\TypeRelationshipsView.xaml;Views\TypesConfigView.xaml;Views\TypesDisplayOptionsView.xaml;Views\TypeSummaryView.xaml;
+AppColors.xaml;Views\CodeResultsView.xaml;Views\CodeResultsWindow.xaml;Views\DummyWindow.xaml;Views\EnumsDisplayOptionsView.xaml;Views\EnumValuesView.xaml;Views\ErrorListView.xaml;Views\MainWindow.xaml;Views\ModelConfigView.xaml;Views\ModelConfigWindow.xaml;Views\NamespacesConfigView.xaml;Views\NamespacesDisplayOptionsView.xaml;Views\NamespacesListView.xaml;Views\PhaseProgressView.xaml;Views\PhaseResultsView.xaml;Views\PhaseResultsWindow.xaml;Views\PhaseSummaryView.xaml;Views\ProcessMonitorView.xaml;Views\ProcessOptionsView.xaml;Views\PropertiesConfigView.xaml;Views\PropertiesView.xaml;Views\PropListView.xaml;Views\PropsDisplayOptionsView.xaml;Views\SchemaView.xaml;Views\TypeInfoView.xaml;Views\TypeInfoWindow.xaml;Views\TypeListView.xaml;Views\TypeListWindow.xaml;Views\TypeRelationshipsDisplayOptionsView.xaml;Views\TypeRelationshipsView.xaml;Views\TypesConfigView.xaml;Views\TypesDisplayOptionsView.xaml;Views\TypeSummaryView.xaml;
 
 False
 

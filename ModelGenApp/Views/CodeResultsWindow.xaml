@@ -1,15 +1,13 @@
-﻿<Window x:Class="ModelGenApp.Views.TypeListWindow"
+﻿<Window x:Class="ModelGenApp.Views.CodeResultsWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ModelGenApp"
         xmlns:views="clr-namespace:ModelGenApp.Views"
-        xmlns:vm="clr-namespace:ModelGenApp.ViewModels"
         mc:Ignorable="d"
-        d:DataContext="{d:DesignInstance Type={x:Type vm:TypeListViewModel}}"
-        Title="{Binding Caption}"
-        Height="450" Width="800">
+        Height="450"
+        Width="800"
+        Title="{Binding Caption}">
   <Window.Style>
     <Style TargetType="Window">
       <Setter Property="ForceCursor"
@@ -24,17 +22,6 @@
     </Style>
   </Window.Style>
   <Grid>
-    <views:TypeListView/>
-    <Button x:Name="RefreshButton"
-            Background="Transparent"
-            BorderBrush="Transparent"
-            Width="24"
-            Height="24"
-            VerticalAlignment="Top"
-            HorizontalAlignment="Right"
-            Command="{Binding Path=RefreshResultsCommand}">
-      <Image Source="/Images/Refresh.png"
-             ToolTip="{x:Static local:CommonStrings.Refresh}" />
-    </Button>    
+    <views:CodeResultsView />
   </Grid>
 </Window>
