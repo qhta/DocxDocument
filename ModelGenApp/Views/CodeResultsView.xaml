@@ -37,6 +37,9 @@
     <TabControl TabStripPlacement="Bottom"
                 Grid.Row="1"
                 SelectionChanged="TabControl_SelectionChanged">
+      <TabItem Header="{x:Static local:CommonStrings.FileTree}">
+        <views:FileTreeView DataContext="{Binding CompilationFiles}" />
+      </TabItem>
       <TabItem Header="{x:Static local:CommonStrings.CompilationErrorList}">
         <views:ErrorListView DataContext="{Binding CompilationErrors}" />
       </TabItem>

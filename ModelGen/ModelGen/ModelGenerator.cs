@@ -13,9 +13,12 @@ public class ModelGenerator : BaseCodeGenerator
   public override int GenerateCode(IEnumerable<Namespace> nspaces)
   {
     PrepareProject();
-    var nsTypes = new Dictionary<Namespace, TypeInfo[]>();
+    var allTypes = new Dictionary<Namespace, TypeInfo[]>();
     var totalTypesCount = 0;
-    foreach (var nspace in nspaces)
+    var nspacesCount = 0;
+    var genTypesCount = 0;
+    foreach (var nspace in nspaces.ToArray())
+    {
       if (nspace.TargetName != null)
       {
         CreateNamespaceFolder(nspace.TargetName);
@@ -26,150 +29,38 @@ public class ModelGenerator : BaseCodeGenerator
         if (iModelElement != null)
           Debug.Assert(true);
 
-        nsTypes.Add(nspace, types);
+        allTypes.Add(nspace, types);
         totalTypesCount += types.Count();
       }
-    var nspacesCount = 0;
-    var typesCount = 0;
-    foreach (var nsType in nsTypes)
+    }
+    foreach (var item in allTypes)
     {
-      nspacesCount++;
-      foreach (var type in nsType.Value)
+      var nspace = item.Key;
+      var nsTypesCount = 0;
+      foreach (var type in item.Value)
       {
-        typesCount++;
         _OnGeneratingType?.Invoke(new ProgressTypeInfo
         {
           Namespaces = nspacesCount,
-          ProcessedTypes = typesCount,
+          ProcessedTypes = genTypesCount,
           TotalTypes = totalTypesCount,
           Current = type
         });
-        GenerateTypeFile(type);
-      }
-    }
-    return typesCount;
-  }
-
-  public void PrepareProject()
-  {
-    if (!Directory.Exists(OutputPath))
-      Directory.CreateDirectory(OutputPath);
-    ClearProjectFolder(OutputPath);
-    CopyProjectFile(ProjectName, OutputPath, ConfigPath);
-    CopyGlobalUsingsFile(ProjectName, OutputPath, ConfigPath);
-  }
-
-  private void ClearProjectFolder(string path)
-  {
-    var subfolders = Directory.GetDirectories(path);
-    foreach (var subfolder in subfolders)
-    {
-      ClearProjectFolder(subfolder);
-    }
-    if (!path.EndsWith("Extensions"))
-    {
-      foreach (var file in Directory.GetFiles(path))
-      {
-        if (file.EndsWith(".cs") && Path.GetFileName(file).Count(ch => ch == '.') == 1)
+        if (GenerateTypeFile(type))
         {
-          try
-          {
-            File.Delete(file);
-          }
-          catch
-          {
-            Debug.WriteLine($"Could not delete file \"{file}\"");
-          }
+          nsTypesCount++;
+          genTypesCount++;
         }
       }
-      try
+      if (nsTypesCount > 0)
       {
-        if (Directory.GetFiles(path).Count() == 0 && Directory.GetDirectories(path).Count() == 0)
-          Directory.Delete(path, false);
-      }
-      catch
-      {
-        Debug.WriteLine($"Could not delete folder \"{path}\"");
+        AddGlobalUsing(nspace.TargetName!);
+        nspacesCount++;
       }
     }
-  }
 
-  private bool CopyProjectFile(string projectName, string outputPath, string? configPath)
-  {
-    string? sourceFilename;
-    if (configPath != null)
-      sourceFilename = Path.Combine(configPath, projectName + ".csproj.xml");
-    else
-      sourceFilename = projectName + ".csproj.xml";
-    if (!File.Exists(sourceFilename))
-    {
-      Debug.WriteLine($"Project template file \"{sourceFilename}\" not found");
-      return false;
-    }
-    var outputFilename = Path.Combine(outputPath, projectName + ".csproj");
-    AssurePathExists(outputFilename);
-    using (var writer = File.CreateText(outputFilename))
-    using (var reader = File.OpenText(sourceFilename))
-    {
-      var s = reader.ReadToEnd();
-      writer.Write(s);
-    }
-    return true;
-  }
-
-  private bool CopyGlobalUsingsFile(string projectName, string outputPath, string? configPath)
-  {
-    string? sourceFilename;
-    if (configPath != null)
-      sourceFilename = Path.Combine(configPath, projectName + ".globalUsings.cs.txt");
-    else
-      sourceFilename = projectName + ".globalUsings.cs.txt";
-    if (!File.Exists(sourceFilename))
-    {
-      Debug.WriteLine($"Global usings file \"{sourceFilename}\" not found");
-      return false;
-    }
-    var outputFilename = Path.Combine(outputPath, "globalUsings.cs");
-    AssurePathExists(outputFilename);
-    using (var writer = File.CreateText(outputFilename))
-    {
-      using (var reader = File.OpenText(sourceFilename))
-      {
-        var s = reader.ReadToEnd();
-        writer.Write(s);
-      }
-      var nspaces = TypeManager.AllNamespaces.Where(item => item.IsTarget);
-      foreach (var nspace in nspaces)
-      {
-        if (nspace.TargetName != null)
-        {
-          if (nspace.AcceptedTypesTo(PPS.CodeGen).Any(item => !item.IsConstructedGenericType))
-          {
-            var prefix = nspace.TargetPrefix;
-            if (prefix != null)
-              writer.WriteLine($"global using {prefix} = {nspace.TargetName};");
-          }
-        }
-      }
-    }
-    return true;
-  }
-
-  private bool CreateNamespaceFolder(string ns)
-  {
-    if (ns.StartsWith(ProjectName + "."))
-      ns = ns.Substring(ProjectName.Length + 1);
-    else
-    if (ns == ProjectName)
-      ns = "";
-    return CreateNamespaceFolder(ProjectName, System.IO.Path.Combine(OutputPath, ns));
-  }
-
-  private bool CreateNamespaceFolder(string projectName, string nsPath)
-  {
-    if (!Directory.Exists(nsPath))
-      Directory.CreateDirectory(nsPath);
-    return true;
+    GenerateGlobalUsings();
+    return genTypesCount;
   }
 
   public bool GenerateTypeFile(TypeInfo typeInfo)
@@ -372,19 +263,5 @@ public class ModelGenerator : BaseCodeGenerator
   }
   #endregion
 
-  protected override bool AssurePathExists(string filename)
-  {
-    //if (File.Exists(filename))
-    //  return false;
-    var filePath = Path.GetDirectoryName(filename) ?? string.Empty;
-    if (filePath.Contains(@"\Properties"))
-      return false;
-    if (filePath != null)
-      if (!Directory.Exists(filePath))
-      {
-        Directory.CreateDirectory(filePath);
-      }
-    return true;
-  }
 }
 

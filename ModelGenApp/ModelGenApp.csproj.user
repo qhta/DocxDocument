@@ -25,6 +25,9 @@
     <Compile Update="Views\ErrorListView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\FileTreeView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\ModelConfigView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -115,6 +118,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\ErrorListView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\FileTreeView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\MainWindow.xaml">
