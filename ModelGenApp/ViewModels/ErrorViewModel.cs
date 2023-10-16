@@ -1,7 +1,6 @@
 ﻿namespace ModelGenApp.ViewModels;
 
 public class ErrorViewModel : VisibleViewModel<CompilationError>
-
 {
   public ErrorViewModel(CompilationError model) : base(model)
   {

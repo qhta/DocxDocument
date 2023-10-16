@@ -24,4 +24,6 @@ public enum TypeInfoKind
   GeneratedTypes,
   CompilationErrors,
   CompilationErrorList,
+  CompilationFiles,
+  CompilationFileList,
 }

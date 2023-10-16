@@ -243,4 +243,22 @@
   <data name="CompilationErrors" xml:space="preserve">
     <value>Błędy kompilacji</value>
   </data>
+  <data name="CodeCompilation" xml:space="preserve">
+    <value>Kompilacja kodu</value>
+  </data>
+  <data name="FixedTypes" xml:space="preserve">
+    <value>Typy poprawione</value>
+  </data>
+  <data name="FixedProperties" xml:space="preserve">
+    <value>Właściwości poprawione</value>
+  </data>
+  <data name="RemovedProperties" xml:space="preserve">
+    <value>Właściwości usunięte</value>
+  </data>
+  <data name="CompilationFiles" xml:space="preserve">
+    <value>Pliki kompilowane</value>
+  </data>
+  <data name="CompilationFileList" xml:space="preserve">
+    <value>Lista plików kompilowanych</value>
+  </data>
 </root>

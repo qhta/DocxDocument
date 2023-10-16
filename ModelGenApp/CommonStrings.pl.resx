@@ -630,4 +630,16 @@ Użyj znaku '*' aby dopasować wzorzec do wielu znaków.</value>
   <data name="Filename" xml:space="preserve">
     <value>Nazwa pliku</value>
   </data>
+  <data name="ErrorCode" xml:space="preserve">
+    <value>Kod błędu</value>
+  </data>
+  <data name="CodeCompilation" xml:space="preserve">
+    <value>Kompilacja kodu</value>
+  </data>
+  <data name="FileTree" xml:space="preserve">
+    <value>Drzewo plików</value>
+  </data>
+  <data name="CompilationFiles" xml:space="preserve">
+    <value>Pliki kompilowane</value>
+  </data>
 </root>

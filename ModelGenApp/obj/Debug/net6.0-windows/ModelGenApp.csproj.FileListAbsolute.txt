@@ -142,3 +142,5 @@ D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\ErrorList
 D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\ErrorListView.baml
 D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\CodeResultsView.g.cs
 D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\CodeResultsView.baml
+D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\FileTreeView.g.cs
+D:\VS\Projects\DocxDocument\ModelGenApp\obj\Debug\net6.0-windows\Views\FileTreeView.baml

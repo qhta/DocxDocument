@@ -10,8 +10,6 @@ public class ErrorListViewModel : ViewModel<CompilationErrors>
     GetData(model);
   }
 
-  public virtual string Caption { get; protected set; } = CommonStrings.CompilationErrorList;
-
   public ListViewModel<ErrorViewModel> Errors { get; private set; }
 
   private CollectionViewSource<ErrorViewModel> CollectionViewSource;

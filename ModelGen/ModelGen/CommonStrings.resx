@@ -243,4 +243,22 @@
   <data name="CompilationErrors" xml:space="preserve">
     <value>Compilation errors</value>
   </data>
+  <data name="CodeCompilation" xml:space="preserve">
+    <value>CodeCompilation</value>
+  </data>
+  <data name="FixedTypes" xml:space="preserve">
+    <value>Fixed types</value>
+  </data>
+  <data name="FixedProperties" xml:space="preserve">
+    <value>Fixed properties</value>
+  </data>
+  <data name="RemovedProperties" xml:space="preserve">
+    <value>Removed properties</value>
+  </data>
+  <data name="CompilationFiles" xml:space="preserve">
+    <value>Compilation files</value>
+  </data>
+  <data name="CompilationFileList" xml:space="preserve">
+    <value>Compilation file list</value>
+  </data>
 </root>

@@ -494,6 +494,7 @@ public abstract class BaseCreator
     var compilationErrorsCount = 0;
     if (Options.ValidateGeneration && !CancelRequest)
     {
+      ModelMonitor?.WriteLine(CommonStrings.CodeCompilation);
       compilationErrorsCount = CodeGenerator.ValidateCode();
     }
 
@@ -508,6 +509,13 @@ public abstract class BaseCreator
         }
     };
 
+    var compilationFilesCount = CodeGenerator.CompilationFiles.Count;
+    if (compilationFilesCount > 0)
+    {
+      summaryInfo.Summary.Add(TypeInfoKind.CompilationFiles, compilationFilesCount);
+      if (CodeGenerator.CompilationFiles!=null)
+        summaryInfo.Summary.Add(TypeInfoKind.CompilationFileList, CodeGenerator.CompilationFiles);
+    }
     if (compilationErrorsCount > 0)
     {
       summaryInfo.Summary.Add(TypeInfoKind.CompilationErrors, compilationErrorsCount);

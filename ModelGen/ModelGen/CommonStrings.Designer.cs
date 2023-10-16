@@ -115,6 +115,15 @@ namespace ModelGen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to CodeCompilation.
+        /// </summary>
+        internal static string CodeCompilation {
+            get {
+                return ResourceManager.GetString("CodeCompilation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Compilation error list.
         /// </summary>
         internal static string CompilationErrorList {
@@ -129,6 +138,24 @@ namespace ModelGen {
         internal static string CompilationErrors {
             get {
                 return ResourceManager.GetString("CompilationErrors", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Compilation file list.
+        /// </summary>
+        internal static string CompilationFileList {
+            get {
+                return ResourceManager.GetString("CompilationFileList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Compilation files.
+        /// </summary>
+        internal static string CompilationFiles {
+            get {
+                return ResourceManager.GetString("CompilationFiles", resourceCulture);
             }
         }
         
@@ -174,6 +201,24 @@ namespace ModelGen {
         internal static string FinalCheck {
             get {
                 return ResourceManager.GetString("FinalCheck", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fixed properties.
+        /// </summary>
+        internal static string FixedProperties {
+            get {
+                return ResourceManager.GetString("FixedProperties", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fixed types.
+        /// </summary>
+        internal static string FixedTypes {
+            get {
+                return ResourceManager.GetString("FixedTypes", resourceCulture);
             }
         }
         
@@ -282,6 +327,15 @@ namespace ModelGen {
         internal static string RejectedTypes {
             get {
                 return ResourceManager.GetString("RejectedTypes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Removed properties.
+        /// </summary>
+        internal static string RemovedProperties {
+            get {
+                return ResourceManager.GetString("RemovedProperties", resourceCulture);
             }
         }
         
