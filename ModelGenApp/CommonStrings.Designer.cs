@@ -169,6 +169,15 @@ namespace ModelGenApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Code compilation.
+        /// </summary>
+        public static string CodeCompilation {
+            get {
+                return ResourceManager.GetString("CodeCompilation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Code generation.
         /// </summary>
         public static string CodeGen {
@@ -192,6 +201,15 @@ namespace ModelGenApp {
         public static string CompilationErrors {
             get {
                 return ResourceManager.GetString("CompilationErrors", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Compilation files.
+        /// </summary>
+        public static string CompilationFiles {
+            get {
+                return ResourceManager.GetString("CompilationFiles", resourceCulture);
             }
         }
         
@@ -520,6 +538,15 @@ namespace ModelGenApp {
         public static string Filename {
             get {
                 return ResourceManager.GetString("Filename", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to File tree.
+        /// </summary>
+        public static string FileTree {
+            get {
+                return ResourceManager.GetString("FileTree", resourceCulture);
             }
         }
         

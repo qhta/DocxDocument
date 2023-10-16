@@ -53,23 +53,14 @@ public abstract class BaseCodeGenerator
 
   public abstract int GenerateCode(IEnumerable<Namespace> types);
 
+  #region Compilation
   public int ValidateCode()
   {
     string outputPath = Path.GetDirectoryName(OutputPath)!;
     var compilationErrorsCount = CompileProject(outputPath, SolutionName + ".sln", SolutionName + ".txt");
-
-    if (compilationErrorsCount != 0)
-    {
-      var compilationErrors = CompilationErrors;
-      if (compilationErrors != null)
-        foreach (var error in compilationErrors)
-        {
-        }
-    }
     return compilationErrorsCount;
   }
 
-  #region Compilation
   public int CompileProject(string solutionPath, string solutionName, string outputTxtFile)
   {
     Directory.SetCurrentDirectory(solutionPath);
@@ -92,14 +83,14 @@ public abstract class BaseCodeGenerator
           filename = filename.ReplaceStart(OutputPath + @"\", "");
           var l = filename.IndexOf('(');
           if (l != -1)
-            filename = filename.Substring(0,l).Trim();
+            filename = filename.Substring(0, l).Trim();
           k += errorTag.Length;
           l = line.IndexOf(':', k);
           var code = line.Substring(k, l - k).Trim();
           var description = line.Substring(l + 2).Trim();
           l = description.IndexOf('(');
           if (l != -1)
-            description = description.Substring(0,l).Trim();
+            description = description.Substring(0, l).Trim();
           var error = new CompilationError { Filename = filename, Code = code, Description = description };
           errors.Add(error);
         }
@@ -109,7 +100,78 @@ public abstract class BaseCodeGenerator
     return CompilationErrors.Count();
   }
 
+  public CompilationFiles CompilationFiles { get; protected set; } = new CompilationFiles();
   public CompilationErrors? CompilationErrors { get; protected set; }
+  #endregion
+
+  #region Main project generation methods
+  public void PrepareProject()
+  {
+    if (!Directory.Exists(OutputPath))
+      Directory.CreateDirectory(OutputPath);
+    ClearProjectFolder(OutputPath);
+    CopyProjectFile(ProjectName, OutputPath, ConfigPath);
+    InitGlobalUsings(ProjectName, ConfigPath);
+  }
+
+  protected void ClearProjectFolder(string path)
+  {
+    var subfolders = Directory.GetDirectories(path);
+    foreach (var subfolder in subfolders)
+    {
+      ClearProjectFolder(subfolder);
+    }
+    if (!path.EndsWith("Extensions"))
+    {
+      foreach (var file in Directory.GetFiles(path))
+      {
+        if (file.EndsWith(".cs") && Path.GetFileName(file).Count(ch => ch == '.') == 1)
+        {
+          try
+          {
+            File.Delete(file);
+          }
+          catch
+          {
+            Debug.WriteLine($"Could not delete file \"{file}\"");
+          }
+        }
+      }
+      try
+      {
+        if (Directory.GetFiles(path).Count() == 0 && Directory.GetDirectories(path).Count() == 0)
+          Directory.Delete(path, false);
+      }
+      catch
+      {
+        Debug.WriteLine($"Could not delete folder \"{path}\"");
+      }
+    }
+  }
+
+  protected bool CopyProjectFile(string projectName, string outputPath, string? configPath)
+  {
+    string? sourceFilename;
+    if (configPath != null)
+      sourceFilename = Path.Combine(configPath, projectName + ".csproj.xml");
+    else
+      sourceFilename = projectName + ".csproj.xml";
+    if (!File.Exists(sourceFilename))
+    {
+      Debug.WriteLine($"Project template file \"{sourceFilename}\" not found");
+      return false;
+    }
+    var outputFilename = Path.Combine(outputPath, projectName + ".csproj");
+    AssurePathExists(outputFilename);
+    using (var writer = File.CreateText(outputFilename))
+    using (var reader = File.OpenText(sourceFilename))
+    {
+      var s = reader.ReadToEnd();
+      writer.Write(s);
+    }
+    return true;
+  }
+
   #endregion
 
   #region CustomAttributes generation
@@ -188,6 +250,51 @@ public abstract class BaseCodeGenerator
 
   #region Global usings generation
 
+  protected bool InitGlobalUsings(string projectName, string? configPath)
+  {
+    string? sourceFilename;
+    if (configPath != null)
+      sourceFilename = Path.Combine(configPath, projectName + ".globalUsings.cs.txt");
+    else
+      sourceFilename = projectName + ".globalUsings.cs.txt";
+    if (!File.Exists(sourceFilename))
+    {
+      Debug.WriteLine($"Global usings file \"{sourceFilename}\" not found");
+      return false;
+    }
+    using (var reader = File.OpenText(sourceFilename))
+    {
+      string? line;
+      while ((line = reader.ReadLine()) != null)
+      {
+        var str = line.Trim();
+        if (str.Length != 0)
+        {
+          str = str.ReplaceStart("global using ", "");
+          str = str.Replace(";", "").Trim();
+          AddGlobalUsing(str);
+        }
+      }
+    }
+    return true;
+  }
+
+  protected bool CreateNamespaceFolder(string ns)
+  {
+    if (ns.StartsWith(ProjectName + "."))
+      ns = ns.Substring(ProjectName.Length + 1);
+    else
+    if (ns == ProjectName)
+      ns = "";
+    return CreateNamespaceFolder(ProjectName, System.IO.Path.Combine(OutputPath, ns));
+  }
+
+  protected bool CreateNamespaceFolder(string projectName, string nsPath)
+  {
+    if (!Directory.Exists(nsPath))
+      Directory.CreateDirectory(nsPath);
+    return true;
+  }
 
   SortedSet<string> GlobalUsings { get; } = new();
 
@@ -210,7 +317,12 @@ public abstract class BaseCodeGenerator
     using (var writer = File.CreateText(filename))
     {
       foreach (var item in GlobalUsings)
-        writer.WriteLine($"global using {item};");
+      {
+        if (ModelConfig.Instance.NamespaceShortcuts.TryGetValue(item, out var shortcut))
+          writer.WriteLine($"global using {shortcut} = {item};");
+        else
+          writer.WriteLine($"global using {item};");
+      }
     }
     return true;
   }
@@ -262,17 +374,54 @@ public abstract class BaseCodeGenerator
 
   #endregion
 
+  protected virtual bool AssureDirectoryExists(string dirName)
+  {
+    if (dirName.Contains(@"\Properties"))
+      return false;
+    if (!Directory.Exists(dirName))
+      Directory.CreateDirectory(dirName);
+    return true;
+  }
+
   protected virtual bool AssurePathExists(string filename)
   {
-    if (File.Exists(filename))
+
+    var filePath = Path.GetDirectoryName(filename) ?? string.Empty;
+    var fileName = Path.GetFileName(filename);
+    if (filePath.Contains(@"\Properties"))
       return false;
-    var filePath = Path.GetDirectoryName(filename);
-    if (filePath != null)
-      if (!Directory.Exists(filePath))
-      {
-        Directory.CreateDirectory(filePath);
-      }
+    if (filePath.EndsWith("Classes"))
+      Debug.Assert(true);
+    if (!Directory.Exists(filePath))
+      Directory.CreateDirectory(filePath);
+    var commonPath = Path.GetDirectoryName(OutputPath);
+    var folderName = filePath.ReplaceStart(commonPath + @"\", "");
+    if (CompilationFiles != null)
+    {
+      CompilationFolder? compilationFolder = RegisterCompilationFolder(CompilationFiles, folderName);
+      if (compilationFolder != null)
+        compilationFolder.Add(new CompilationFile(fileName));
+    }
     return true;
+  }
+
+  private CompilationFolder? RegisterCompilationFolder(CompilationFiles compilationFiles, string fullFolderName)
+  {
+    var ss = fullFolderName.Split(@"\");
+    var path = string.Empty;
+    CompilationFolder? compilationFolder = null;
+    foreach (var folderName in ss)
+    {
+      if (!compilationFiles.TryGetValue(folderName, out var compilationFile))
+      {
+        compilationFolder = new CompilationFolder(folderName);
+        compilationFiles.Add(folderName, compilationFolder);
+      }
+      else
+        compilationFolder = (CompilationFolder)compilationFile;
+      compilationFiles = compilationFolder.Items;
+    }
+    return compilationFolder;
   }
 
 }

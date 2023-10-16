@@ -1,12 +1,31 @@
+global using DM = DocumentModel;
+global using DocumentModel.Attributes;
+global using DMCX = DocumentModel.CustomXml;
+global using DocumentModel.Drawings;
+global using DocumentModel.Drawings.ChartDrawing;
+global using DocumentModel.Drawings.ChartDrawings;
+global using DocumentModel.Drawings.Charts;
+global using DocumentModel.Drawings.ChartsStyle;
+global using DocumentModel.Drawings.Diagram1;
+global using DocumentModel.Drawings.Diagram2;
+global using DocumentModel.Drawings.Diagrams;
+global using DocumentModel.Drawings.OEmbed;
+global using DocumentModel.Drawings.Office;
+global using DocumentModel.Drawings.ScriptLink;
+global using DocumentModel.Drawings.SVG;
+global using DocumentModel.Drawings.Wordprocessing;
+global using DocumentModel.Math;
+global using DocumentModel.Packaging;
+global using DMUI = DocumentModel.UI;
+global using DocumentModel.Vml;
+global using DocumentModel.Vml.Office;
+global using DocumentModel.Vml.Wordprocessing;
+global using DocumentModel.WebExtensions;
+global using DocumentModel.WebExtensions.UI;
+global using DocumentModel.Wordprocessing;
+global using DocumentModel.Wordprocessing.Drawings;
+global using DocumentModel.Wordprocessing.OEmbed;
 global using System;
 global using System.Collections.Generic;
 global using System.Collections.ObjectModel;
 global using System.Text;
-
-global using DocumentModel.Attributes;
-
-
-global using DM = DocumentModel;
-global using DMCX = DocumentModel.CustomXml;
-global using DMP = DocumentModel.Properties;
-global using DMUI = DocumentModel.UI;
