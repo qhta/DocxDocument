@@ -2,13 +2,18 @@
 
 public class FileListViewModel : ViewModel<FilesList>, IEnumerable<FileViewModel>
 {
-  public FileListViewModel(FilesList model) : base(model)
+  public FileListViewModel(FilesList model) : this(null, model) { }
+
+  public FileListViewModel(FolderViewModel? parent, FilesList model) : base(model)
   {
+    ParentFolder = parent;
     Files = new ListViewModel<FileViewModel>();
     CollectionViewSource = new CollectionViewSource<FileViewModel>(Files);
     VisibleItems = CollectionViewSource.GetDefaultView(Files);
     GetData(model);
   }
+
+  public FolderViewModel? ParentFolder { get; set; }
 
   public ListViewModel<FileViewModel> Files { get; private set; }
 
@@ -23,9 +28,9 @@ public class FileListViewModel : ViewModel<FilesList>, IEnumerable<FileViewModel
   {
     Files.Clear();
     foreach (var folder in compilationFiles.Where(item => item.Value is FolderModel).OrderBy(item => item.Key).Select(item => item.Value).Cast<FolderModel>())
-      Files.Add(new FolderViewModel(folder));
+      Files.Add(new FolderViewModel(ParentFolder, folder));
     foreach (var file in compilationFiles.Where(item => !(item.Value is FolderModel)).OrderBy(item => item.Key).Select(item => item.Value))
-      Files.Add(new FileViewModel(file));
+      Files.Add(new FileViewModel(ParentFolder, file));
   }
 
   public IEnumerator<FileViewModel> GetEnumerator()

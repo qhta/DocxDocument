@@ -1,24 +1,24 @@
 Build started...
 1>------ Build started: Project: DocumentModel.Attributes, Configuration: Debug Any CPU ------
 2>------ Build started: Project: DocumentModel.BaseTypes, Configuration: Debug Any CPU ------
-1>DocumentModel.Attributes -> D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.Attributes\bin\Debug\net6.0\DocumentModel.Attributes.dll
 2>DocumentModel.BaseTypes -> D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.BaseTypes\bin\Debug\net6.0\DocumentModel.BaseTypes.dll
-3>------ Build started: Project: DocumentModel, Configuration: Debug Any CPU ------
-Time Elapsed: 00:00:00.0293017
+1>DocumentModel.Attributes -> D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.Attributes\bin\Debug\net6.0\DocumentModel.Attributes.dll
+Time Elapsed: 00:00:00.0292053
 ========== Finished ==========
 
 
+3>------ Build started: Project: DocumentModel, Configuration: Debug Any CPU ------
 4>------ Build started: Project: DocumentModel.VariantTypes, Configuration: Debug Any CPU ------
+4>DocumentModel.VariantTypes -> D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.VariantTypes\bin\Debug\net6.0\DocumentModel.VariantTypes.dll
 3>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Packaging\CustomFilePropertiesPart.cs(15,10,15,13): error CS0246: The type or namespace name 'DMP' could not be found (are you missing a using directive or an assembly reference?)
 3>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Packaging\DiagramDataPart.cs(29,21,29,30): error CS0246: The type or namespace name 'SlidePart' could not be found (are you missing a using directive or an assembly reference?)
 3>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Packaging\DiagramDataPart.cs(35,21,35,34): error CS0246: The type or namespace name 'WorksheetPart' could not be found (are you missing a using directive or an assembly reference?)
 3>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Packaging\ExtendedFilePropertiesPart.cs(15,10,15,13): error CS0246: The type or namespace name 'DMP' could not be found (are you missing a using directive or an assembly reference?)
 3>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Drawings.Charts\ChartSpace.cs(29,16,29,21): error CS0102: The type 'ChartSpace' already contains a definition for 'Style'
-3>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Wordprocessing\ParagraphMarkRunProperties.cs(115,47,115,53): error CS0102: The type 'ParagraphMarkRunProperties' already contains a definition for 'Shadow'
 3>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Drawings.ChartsStyle\TextCharacterPropertiesType.cs(153,44,153,53): error CS0102: The type 'TextCharacterPropertiesType' already contains a definition for 'Underline'
+3>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Wordprocessing\ParagraphMarkRunProperties.cs(115,47,115,53): error CS0102: The type 'ParagraphMarkRunProperties' already contains a definition for 'Shadow'
 3>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Drawings.Wordprocessing\Anchor.cs(135,64,135,78): error CS0102: The type 'Anchor' already contains a definition for 'RelativeHeight'
 3>Done building project "DocumentModel.csproj" -- FAILED.
-4>DocumentModel.VariantTypes -> D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.VariantTypes\bin\Debug\net6.0\DocumentModel.VariantTypes.dll
 ========== Build: 3 succeeded, 1 failed, 0 up-to-date, 0 skipped ==========
-========== Build started at 09:54 and took 02,203 seconds ==========
+========== Build started at 19:36 and took 02,598 seconds ==========
 

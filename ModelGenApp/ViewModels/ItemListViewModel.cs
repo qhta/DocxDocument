@@ -114,7 +114,9 @@ public abstract class ItemListViewModel<T> : ViewModel, IEnumerable<T> where T :
     if (OwnerType != null)
       WindowsManager.ShowWindow<TypeInfoWindow>(OwnerType);
   }
+  #endregion
 
+  #region Filter
   public MemberInfoViewModelFilter? Filter
   {
     get { return _Filter; }
@@ -137,6 +139,9 @@ public abstract class ItemListViewModel<T> : ViewModel, IEnumerable<T> where T :
       VisibleItems.Filter = Filter;
     }
   }
+  #endregion
+
+  #region Collection methods
 
   public void Add(T item)
   {

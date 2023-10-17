@@ -142,24 +142,6 @@ namespace ModelGen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Compilation file list.
-        /// </summary>
-        internal static string CompilationFileList {
-            get {
-                return ResourceManager.GetString("CompilationFileList", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Compilation files.
-        /// </summary>
-        internal static string CompilationFiles {
-            get {
-                return ResourceManager.GetString("CompilationFiles", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Converted types.
         /// </summary>
         internal static string ConvertedTypes {
@@ -237,6 +219,24 @@ namespace ModelGen {
         internal static string generated_0_of_1_types_in_2_namespaces {
             get {
                 return ResourceManager.GetString("generated_0_of_1_types_in_2_namespaces", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Compilation file list.
+        /// </summary>
+        internal static string GeneratedFileList {
+            get {
+                return ResourceManager.GetString("GeneratedFileList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Compilation files.
+        /// </summary>
+        internal static string GeneratedFiles {
+            get {
+                return ResourceManager.GetString("GeneratedFiles", resourceCulture);
             }
         }
         
