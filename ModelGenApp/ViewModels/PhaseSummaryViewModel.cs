@@ -41,7 +41,7 @@ public class PhaseSummaryViewModel : ObservableList<PhaseSummaryInfoViewModel>
     }
   }
 
-  public TypeInfoKind? Filter
+  public SummaryInfoKind? Filter
   {
     get { return _Filter; }
     set
@@ -53,5 +53,5 @@ public class PhaseSummaryViewModel : ObservableList<PhaseSummaryInfoViewModel>
       }
     }
   }
-  private TypeInfoKind? _Filter;
+  private SummaryInfoKind? _Filter;
 }

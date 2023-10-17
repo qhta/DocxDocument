@@ -11,14 +11,14 @@ public class CodeGenPhaseViewModel : PhaseResultsViewModel
   {
     if (summary.Summary != null)
     {
-      if (summary.Summary.TryGetValue(TypeInfoKind.CompilationFileList, out var compilationFileList))
+      if (summary.Summary.TryGetValue(SummaryInfoKind.GeneratedFileList, out var compilationFileList))
       {
-        summary.Summary.Remove(TypeInfoKind.CompilationFileList);
-        _CompilationFiles = (CompilationFiles)compilationFileList;
+        summary.Summary.Remove(SummaryInfoKind.GeneratedFileList);
+        _CompilationFiles = (FilesList)compilationFileList;
       }
-      if (summary.Summary.TryGetValue(TypeInfoKind.CompilationErrorList, out var compilationErrorList))
+      if (summary.Summary.TryGetValue(SummaryInfoKind.CompilationErrorList, out var compilationErrorList))
       {
-        summary.Summary.Remove(TypeInfoKind.CompilationErrorList);
+        summary.Summary.Remove(SummaryInfoKind.CompilationErrorList);
         _CompilationErrors = (CompilationErrors)compilationErrorList;
       }
     }
@@ -28,7 +28,7 @@ public class CodeGenPhaseViewModel : PhaseResultsViewModel
   public FileListViewModel? CompilationFiles { get; set; }
   public ErrorListViewModel? CompilationErrors { get; set; }
 
-  private CompilationFiles? _CompilationFiles { get; set; }
+  private FilesList? _CompilationFiles { get; set; }
   private CompilationErrors? _CompilationErrors { get; set; }
 
   protected override void ShowResultsExecute()

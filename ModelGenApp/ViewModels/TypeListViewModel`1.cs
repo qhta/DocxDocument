@@ -181,7 +181,7 @@ public class TypeListViewModel<T> : ViewModel where T : TypeInfoViewModel
   {
     if (value)
     {
-      VisibleItems.Filter = new TypeInfoViewModelFilter(TypeInfoKind.AcceptedTypes, Phase.PhaseNum);
+      VisibleItems.Filter = new TypeInfoViewModelFilter(SummaryInfoKind.AcceptedTypes, Phase.PhaseNum);
     }
     else
       VisibleItems.Filter = null;

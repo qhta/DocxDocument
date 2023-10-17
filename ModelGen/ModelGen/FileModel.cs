@@ -1,8 +1,8 @@
 ﻿namespace ModelGen;
 
-public record CompilationFile
+public record FileModel
 {
-  public CompilationFile(string name)
+  public FileModel(string name)
   {
     Filename = name;
   }

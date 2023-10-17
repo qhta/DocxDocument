@@ -1,6 +1,6 @@
 ﻿namespace ModelGen;
 
-public enum TypeInfoKind
+public enum SummaryInfoKind
 {
   None,
   CheckedTypes,
@@ -22,8 +22,9 @@ public enum TypeInfoKind
   FixedTypes,
   FixedProperties,
   GeneratedTypes,
+  GeneratedFiles,
+  GeneratedFileList,
   CompilationErrors,
   CompilationErrorList,
-  CompilationFiles,
-  CompilationFileList,
+
 }
