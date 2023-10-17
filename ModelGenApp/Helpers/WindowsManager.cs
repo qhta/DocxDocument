@@ -18,6 +18,7 @@ public static class WindowsManager
       window.Closed += Window_Closed;
       KnownWindows.Add(dataContext, window);
       window.Show();
+      window.Activate();
     }
   }
 
