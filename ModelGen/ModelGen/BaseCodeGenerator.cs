@@ -100,7 +100,7 @@ public abstract class BaseCodeGenerator
     return CompilationErrors.Count();
   }
 
-  public CompilationFiles CompilationFiles { get; protected set; } = new CompilationFiles();
+  public FilesList CompilationFiles { get; protected set; } = new FilesList();
   public CompilationErrors? CompilationErrors { get; protected set; }
   #endregion
 
@@ -398,27 +398,27 @@ public abstract class BaseCodeGenerator
     var folderName = filePath.ReplaceStart(commonPath + @"\", "");
     if (CompilationFiles != null)
     {
-      CompilationFolder? compilationFolder = RegisterCompilationFolder(CompilationFiles, folderName);
+      FolderModel? compilationFolder = RegisterCompilationFolder(CompilationFiles, folderName);
       if (compilationFolder != null)
-        compilationFolder.Add(new CompilationFile(fileName));
+        compilationFolder.Add(new FileModel(fileName));
     }
     return true;
   }
 
-  private CompilationFolder? RegisterCompilationFolder(CompilationFiles compilationFiles, string fullFolderName)
+  private FolderModel? RegisterCompilationFolder(FilesList compilationFiles, string fullFolderName)
   {
     var ss = fullFolderName.Split(@"\");
     var path = string.Empty;
-    CompilationFolder? compilationFolder = null;
+    FolderModel? compilationFolder = null;
     foreach (var folderName in ss)
     {
       if (!compilationFiles.TryGetValue(folderName, out var compilationFile))
       {
-        compilationFolder = new CompilationFolder(folderName);
+        compilationFolder = new FolderModel(folderName);
         compilationFiles.Add(folderName, compilationFolder);
       }
       else
-        compilationFolder = (CompilationFolder)compilationFile;
+        compilationFolder = (FolderModel)compilationFile;
       compilationFiles = compilationFolder.Items;
     }
     return compilationFolder;

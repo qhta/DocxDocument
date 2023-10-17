@@ -10,9 +10,9 @@ public class RenamePhaseViewModel : PhaseResultsViewModel
   {
     var nspace = TypeManager.GetNamespace(typeInfoViewModel.Model.GetTargetNamespace());
     var name = typeInfoViewModel.Model.GetFullName(true, false, false);
-    var filter = new TypeInfoViewModelFilter(TypeInfoKind.TypesWithSameName, name);
+    var filter = new TypeInfoViewModelFilter(SummaryInfoKind.TypesWithSameName, name);
     var viewModel = new TypeListViewModel(this, 
-      new NamespaceViewModel(this, nspace), TypeInfoKind.TypesWithSameName.ToString(), this.TypeNameSelector, TKS.Any, null);
+      new NamespaceViewModel(this, nspace), SummaryInfoKind.TypesWithSameName.ToString(), this.TypeNameSelector, TKS.Any, null);
     viewModel.IsInvalidMarkVisible = false;
     viewModel.FillItems();
     viewModel.Filter = filter;

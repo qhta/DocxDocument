@@ -16,11 +16,17 @@
     <TreeView ItemsSource="{Binding}">
       <TreeView.Resources>
         <DataTemplate DataType="{x:Type vm:FileViewModel}">
-          <TextBlock Text="{Binding Path=Caption}" />
+          <StackPanel Orientation="Horizontal">
+            <Image Source="/Images/File.png" Margin="0,0,10,0"/>
+            <TextBlock Text="{Binding Path=Caption}"/>
+          </StackPanel>
         </DataTemplate>
         <HierarchicalDataTemplate DataType="{x:Type vm:FolderViewModel}"
                                   ItemsSource="{Binding Items}">
-          <TextBlock Text="{Binding Path=Caption}" />
+          <StackPanel Orientation="Horizontal">
+            <Image Source="/Images/Folder.png" Margin="0,0,10,0"/>
+            <TextBlock Text="{Binding Path=Caption}" />
+          </StackPanel>
         </HierarchicalDataTemplate>
       </TreeView.Resources>
     </TreeView>

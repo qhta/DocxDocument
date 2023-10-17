@@ -21,6 +21,8 @@
 
   <ItemGroup>
     <None Remove="Images\ErrorMark.png" />
+    <None Remove="Images\File.png" />
+    <None Remove="Images\Folder.png" />
     <None Remove="Images\InfoMark.png" />
     <None Remove="Images\Refresh.png" />
   </ItemGroup>
@@ -42,6 +44,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Images\File.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Folder.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Images\InfoMark.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>

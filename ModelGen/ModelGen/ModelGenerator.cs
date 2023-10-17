@@ -89,7 +89,7 @@ public class ModelGenerator : BaseCodeGenerator
     var aNamespace = type.GetTargetNamespace();
     aNamespace = TrimDocumentModel(aNamespace);
     var outputPath = Path.Combine(OutputPath, aNamespace);
-    return GenerateClassOrInterface(type, typeName, Path.Combine(outputPath, "Classes", typeName + ".cs"), TypeKind.@class);
+    return GenerateClassOrInterface(type, typeName, Path.Combine(outputPath, typeName + ".cs"), TypeKind.@class);
   }
 
   private bool GenerateClassOrInterface(TypeInfo type, string typeName, string filename, TypeKind kind)
@@ -209,7 +209,7 @@ public class ModelGenerator : BaseCodeGenerator
     outputPath = Path.Combine(outputPath, aNamespace);
     var typeName = type.TargetName;
     var fileName = ValidateFilename(typeName);
-    if (!GenerateEnumType(type, typeName, Path.Combine(outputPath, "Enums", fileName + ".cs")))
+    if (!GenerateEnumType(type, typeName, Path.Combine(outputPath, fileName + ".cs")))
       return false;
     GeneratedEnumTypesCount += 1;
     return true;

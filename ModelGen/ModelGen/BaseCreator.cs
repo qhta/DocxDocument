@@ -207,17 +207,17 @@ public abstract class BaseCreator
     var summaryInfo = new SummaryInfo
     {
       Time = ts,
-      Summary = new Dictionary<TypeInfoKind, object>{
-        {TypeInfoKind.RegisteredTypes, allTypesCount },
-        {TypeInfoKind.AcceptedTypes, acceptedTypesCount },
-        {TypeInfoKind.RejectedTypes, rejectedTypesCount },
+      Summary = new Dictionary<SummaryInfoKind, object>{
+        {SummaryInfoKind.RegisteredTypes, allTypesCount },
+        {SummaryInfoKind.AcceptedTypes, acceptedTypesCount },
+        {SummaryInfoKind.RejectedTypes, rejectedTypesCount },
         }
     };
     if (checkedTypesCount > 0 || validTypesCount > 0 || invalidTypesCount > 0)
     {
-      summaryInfo.Summary.Add(TypeInfoKind.CheckedTypes, checkedTypesCount);
-      summaryInfo.Summary.Add(TypeInfoKind.ValidTypes, validTypesCount);
-      summaryInfo.Summary.Add(TypeInfoKind.InvalidTypes, invalidTypesCount);
+      summaryInfo.Summary.Add(SummaryInfoKind.CheckedTypes, checkedTypesCount);
+      summaryInfo.Summary.Add(SummaryInfoKind.ValidTypes, validTypesCount);
+      summaryInfo.Summary.Add(SummaryInfoKind.InvalidTypes, invalidTypesCount);
     }
     ModelMonitor?.ShowPhaseEnd(PPS.ScanSource, summaryInfo);
     return ts;
@@ -275,16 +275,16 @@ public abstract class BaseCreator
     var summaryInfo = new SummaryInfo
     {
       Time = ts,
-      Summary = new Dictionary<TypeInfoKind, object>{
-        {TypeInfoKind.CheckedTypes, checkedTypesCount},
-        {TypeInfoKind.TypesWithDescription, typesWithDescriptionCount},
-        {TypeInfoKind.TypesWithAddedDescription, typesWithAddedDescriptionCount},
+      Summary = new Dictionary<SummaryInfoKind, object>{
+        {SummaryInfoKind.CheckedTypes, checkedTypesCount},
+        {SummaryInfoKind.TypesWithDescription, typesWithDescriptionCount},
+        {SummaryInfoKind.TypesWithAddedDescription, typesWithAddedDescriptionCount},
         }
     };
     if (validated)
     {
-      summaryInfo.Summary.Add(TypeInfoKind.TypesWithoutDescription, typesWithoutDescriptionCount);
-      summaryInfo.Summary.Add(TypeInfoKind.TypesWithMeaninglessDescription, typesWithMeaninglessDescriptionCount);
+      summaryInfo.Summary.Add(SummaryInfoKind.TypesWithoutDescription, typesWithoutDescriptionCount);
+      summaryInfo.Summary.Add(SummaryInfoKind.TypesWithMeaninglessDescription, typesWithMeaninglessDescriptionCount);
     }
     ModelMonitor?.ShowPhaseEnd(PPS.AddDocs, summaryInfo);
     return ts;
@@ -339,15 +339,15 @@ public abstract class BaseCreator
     var summaryInfo = new SummaryInfo
     {
       Time = ts,
-      Summary = new Dictionary<TypeInfoKind, object>{
-        {TypeInfoKind.CheckedTypes, TotalTypesCount},
-        {TypeInfoKind.RenamedTypes, renamedTypesCount },
+      Summary = new Dictionary<SummaryInfoKind, object>{
+        {SummaryInfoKind.CheckedTypes, TotalTypesCount},
+        {SummaryInfoKind.RenamedTypes, renamedTypesCount },
         }
     };
     if (duplicatedNamesCount > 0)
-      summaryInfo.Summary.Add(TypeInfoKind.TypesWithSameName, duplicatedNamesCount);
+      summaryInfo.Summary.Add(SummaryInfoKind.TypesWithSameName, duplicatedNamesCount);
     if (invalidTypes > 0)
-      summaryInfo.Summary.Add(TypeInfoKind.InvalidTypes, invalidTypes);
+      summaryInfo.Summary.Add(SummaryInfoKind.InvalidTypes, invalidTypes);
 
     ModelMonitor?.ShowPhaseEnd(PPS.Rename, summaryInfo);
     return ts;
@@ -397,16 +397,16 @@ public abstract class BaseCreator
     var summaryInfo = new SummaryInfo
     {
       Time = ts,
-      Summary = new Dictionary<TypeInfoKind, object>{
-        {TypeInfoKind.CheckedTypes, TotalTypesCount },
-        {TypeInfoKind.ConvertedTypes, convertedTypesCount },
+      Summary = new Dictionary<SummaryInfoKind, object>{
+        {SummaryInfoKind.CheckedTypes, TotalTypesCount },
+        {SummaryInfoKind.ConvertedTypes, convertedTypesCount },
         }
     };
 
     if (targetTypesCount > 0)
-      summaryInfo.Summary.Add(TypeInfoKind.TargetTypes, targetTypesCount);
+      summaryInfo.Summary.Add(SummaryInfoKind.TargetTypes, targetTypesCount);
     if (invalidTypesCount > 0)
-      summaryInfo.Summary.Add(TypeInfoKind.InvalidTypes, invalidTypesCount);
+      summaryInfo.Summary.Add(SummaryInfoKind.InvalidTypes, invalidTypesCount);
 
     ModelMonitor?.ShowPhaseEnd(PPS.ConvertTypes, summaryInfo);
     return ts;
@@ -457,10 +457,10 @@ public abstract class BaseCreator
     var summaryInfo = new SummaryInfo
     {
       Time = ts,
-      Summary = new Dictionary<TypeInfoKind, object>{
-        {TypeInfoKind.CheckedTypes, TotalTypesCount },
-        {TypeInfoKind.FixedTypes, fixedTypesCount },
-        {TypeInfoKind.FixedProperties, ModelManager.FixedPropertiesCount },
+      Summary = new Dictionary<SummaryInfoKind, object>{
+        {SummaryInfoKind.CheckedTypes, TotalTypesCount },
+        {SummaryInfoKind.FixedTypes, fixedTypesCount },
+        {SummaryInfoKind.FixedProperties, ModelManager.FixedPropertiesCount },
         }
     };
 
@@ -503,24 +503,24 @@ public abstract class BaseCreator
     var summaryInfo = new SummaryInfo
     {
       Time = ts,
-      Summary = new Dictionary<TypeInfoKind, object>{
-        {TypeInfoKind.CheckedTypes, TotalTypesCount },
-        {TypeInfoKind.GeneratedTypes, generatedTypesCount },
+      Summary = new Dictionary<SummaryInfoKind, object>{
+        {SummaryInfoKind.CheckedTypes, TotalTypesCount },
+        {SummaryInfoKind.GeneratedTypes, generatedTypesCount },
         }
     };
 
-    var compilationFilesCount = CodeGenerator.CompilationFiles.Count;
+    var compilationFilesCount = CodeGenerator.CompilationFiles.TotalCount;
     if (compilationFilesCount > 0)
     {
-      summaryInfo.Summary.Add(TypeInfoKind.CompilationFiles, compilationFilesCount);
+      summaryInfo.Summary.Add(SummaryInfoKind.GeneratedFiles, compilationFilesCount);
       if (CodeGenerator.CompilationFiles!=null)
-        summaryInfo.Summary.Add(TypeInfoKind.CompilationFileList, CodeGenerator.CompilationFiles);
+        summaryInfo.Summary.Add(SummaryInfoKind.GeneratedFileList, CodeGenerator.CompilationFiles);
     }
     if (compilationErrorsCount > 0)
     {
-      summaryInfo.Summary.Add(TypeInfoKind.CompilationErrors, compilationErrorsCount);
+      summaryInfo.Summary.Add(SummaryInfoKind.CompilationErrors, compilationErrorsCount);
       if (CodeGenerator.CompilationErrors!=null)
-        summaryInfo.Summary.Add(TypeInfoKind.CompilationErrorList, CodeGenerator.CompilationErrors);
+        summaryInfo.Summary.Add(SummaryInfoKind.CompilationErrorList, CodeGenerator.CompilationErrors);
     }
 
 

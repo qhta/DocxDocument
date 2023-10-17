@@ -7,25 +7,25 @@ public record TypeInfoViewModelFilter<T> : IFilter where T : TypeInfoViewModel
 {
 
 
-  public static bool CanFilter(TypeInfoKind filter)
+  public static bool CanFilter(SummaryInfoKind filter)
   {
-    if (filter == TypeInfoKind.AcceptedTypes)
+    if (filter == SummaryInfoKind.AcceptedTypes)
       return true;
-    if (filter == TypeInfoKind.RejectedTypes)
+    if (filter == SummaryInfoKind.RejectedTypes)
       return true;
-    if (filter == TypeInfoKind.InvalidTypes)
+    if (filter == SummaryInfoKind.InvalidTypes)
       return true;
-    if (filter == TypeInfoKind.TypesWithSameName)
+    if (filter == SummaryInfoKind.TypesWithSameName)
       return true;
-    if (filter == TypeInfoKind.RenamedTypes)
+    if (filter == SummaryInfoKind.RenamedTypes)
       return true;
-    if (filter == TypeInfoKind.ConvertedTypes)
+    if (filter == SummaryInfoKind.ConvertedTypes)
       return true;
-    if (filter == TypeInfoKind.TargetTypes)
+    if (filter == SummaryInfoKind.TargetTypes)
       return true;
-    if (filter == TypeInfoKind.TypesWithoutDescription)
+    if (filter == SummaryInfoKind.TypesWithoutDescription)
       return true;
-    if (filter == TypeInfoKind.TypesWithMeaninglessDescription)
+    if (filter == SummaryInfoKind.TypesWithMeaninglessDescription)
       return true;
     return false;
   }
@@ -33,54 +33,54 @@ public record TypeInfoViewModelFilter<T> : IFilter where T : TypeInfoViewModel
   /// <summary>
   /// Initializing constructor. Creates <see cref="Predicate"/> on base of <paramref name="filter"/>.
   /// </summary>
-  /// <param name="filter">Must be one of <see cref="TypeInfoKind"/> enumerations.</param>
+  /// <param name="filter">Must be one of <see cref="SummaryInfoKind"/> enumerations.</param>
   /// <param name="value">
   ///   Must be <see cref="ModelGen.PPS"/> for "AcceptedTypes", "RejectedTypes", and "InvalidTypes" filter.
   ///   Must be string for "TypesWithDuplicateName" filter.
   /// </param>
   /// <exception cref="InvalidOperationException"></exception>
-  public TypeInfoViewModelFilter(TypeInfoKind filter, object? value)
+  public TypeInfoViewModelFilter(SummaryInfoKind filter, object? value)
   {
     //if (filter == TypeInfoKind.TargetTypes)
     //  Debug.Assert(true);
     if (value is PPS phaseNum)
     {
-      if (filter == TypeInfoKind.AcceptedTypes)
+      if (filter == SummaryInfoKind.AcceptedTypes)
         Predicate = new Predicate<T>(item => item.Model.IsAcceptedAfter(phaseNum));
       else
-      if (filter == TypeInfoKind.RejectedTypes)
+      if (filter == SummaryInfoKind.RejectedTypes)
         Predicate = new Predicate<T>(item => item.Model.IsRejectedAfter(phaseNum));
       else
-      if (filter == TypeInfoKind.InvalidTypes)
+      if (filter == SummaryInfoKind.InvalidTypes)
         Predicate = new Predicate<T>(item => item.Model.IsInvalid(phaseNum));
       else
-      if (filter == TypeInfoKind.TypesWithoutDescription)
+      if (filter == SummaryInfoKind.TypesWithoutDescription)
         Predicate = new Predicate<T>(item => String.IsNullOrEmpty(item.Model.Description));
       else
-      if (filter == TypeInfoKind.TypesWithMeaninglessDescription)
+      if (filter == SummaryInfoKind.TypesWithMeaninglessDescription)
         Predicate = new Predicate<T>(item => item.Model.IsInvalid(phaseNum) && item.Model.Description != null && item.Model.Description.Trim() != "");
       else
-      if (filter == TypeInfoKind.RenamedTypes)
+      if (filter == SummaryInfoKind.RenamedTypes)
         Predicate = new Predicate<T>(item => item.Model.NewName != null);
       else
-      if (filter == TypeInfoKind.TypesWithSameName)
+      if (filter == SummaryInfoKind.TypesWithSameName)
         Predicate = new Predicate<T>(item => item.Model.HasError(PPS.Rename, ErrorCode.MultiplicatedName));
       else
-      if (filter == TypeInfoKind.ConvertedTypes)
+      if (filter == SummaryInfoKind.ConvertedTypes)
         Predicate = new Predicate<T>(item => item.Model.ConversionTarget!= null);
     }
     else
     if (value is FullTypeName typeName)
     {
-      if (filter == TypeInfoKind.TypesWithSameName)
+      if (filter == SummaryInfoKind.TypesWithSameName)
         Predicate = new Predicate<T>(item => item.Model.GetFullName(true, false, false) == typeName);
     }
     else
     {
-      if (filter == TypeInfoKind.RenamedTypes)
+      if (filter == SummaryInfoKind.RenamedTypes)
         Predicate = new Predicate<T>(item => item.Model.TargetName!=null);
       else
-      if (filter == TypeInfoKind.ConvertedTypes)
+      if (filter == SummaryInfoKind.ConvertedTypes)
         Predicate = new Predicate<T>(item => item.Model.ConversionTarget!=null);
     }
     if (Predicate == null)

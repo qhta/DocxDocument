@@ -1,8 +1,8 @@
 ﻿namespace ModelGenApp.ViewModels;
 
-public class FileListViewModel : ViewModel<CompilationFiles>, IEnumerable<FileViewModel>
+public class FileListViewModel : ViewModel<FilesList>, IEnumerable<FileViewModel>
 {
-  public FileListViewModel(CompilationFiles model) : base(model)
+  public FileListViewModel(FilesList model) : base(model)
   {
     Files = new ListViewModel<FileViewModel>();
     CollectionViewSource = new CollectionViewSource<FileViewModel>(Files);
@@ -19,17 +19,13 @@ public class FileListViewModel : ViewModel<CompilationFiles>, IEnumerable<FileVi
   /// </summary>
   public ICollectionView VisibleItems { get; private set; }
 
-  public void GetData(CompilationFiles compilationFiles)
+  public void GetData(FilesList compilationFiles)
   {
     Files.Clear();
-    foreach (var item in compilationFiles)
-    {
-      var file = item.Value;
-      if (file is CompilationFolder compilationFolder)
-        Files.Add(new FolderViewModel(compilationFolder));
-      else
-        Files.Add(new FileViewModel(file));
-    }
+    foreach (var folder in compilationFiles.Where(item => item.Value is FolderModel).OrderBy(item => item.Key).Select(item => item.Value).Cast<FolderModel>())
+      Files.Add(new FolderViewModel(folder));
+    foreach (var file in compilationFiles.Where(item => !(item.Value is FolderModel)).OrderBy(item => item.Key).Select(item => item.Value))
+      Files.Add(new FileViewModel(file));
   }
 
   public IEnumerator<FileViewModel> GetEnumerator()

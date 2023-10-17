@@ -395,9 +395,9 @@ public abstract partial class PhaseResultsViewModel : ViewModel
   }
   private TypeInfoViewModelFilter? _Filter;
 
-  public void SetFilter(TypeInfoKind? filter)
+  public void SetFilter(SummaryInfoKind? filter)
   {
-    if (filter == TypeInfoKind.TargetTypes)
+    if (filter == SummaryInfoKind.TargetTypes)
     {
       ShowTargetsOnly = true;
     }
@@ -405,7 +405,7 @@ public abstract partial class PhaseResultsViewModel : ViewModel
     {
       ShowTargetsOnly = false;
       if (filter != null)
-        Filter = new TypeInfoViewModelFilter((TypeInfoKind)filter, PhaseNum);
+        Filter = new TypeInfoViewModelFilter((SummaryInfoKind)filter, PhaseNum);
       else
         Filter = null;
       ApplyFilter();

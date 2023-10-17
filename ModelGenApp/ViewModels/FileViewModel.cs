@@ -1,8 +1,8 @@
 ﻿namespace ModelGenApp.ViewModels;
 
-public class FileViewModel : VisibleViewModel<CompilationFile>
+public class FileViewModel : VisibleViewModel<FileModel>
 {
-  public FileViewModel(CompilationFile model) : base(model)
+  public FileViewModel(FileModel model) : base(model)
   {
   }
 
