@@ -205,15 +205,6 @@ namespace ModelGenApp {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Compilation files.
-        /// </summary>
-        public static string CompilationFiles {
-            get {
-                return ResourceManager.GetString("CompilationFiles", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Configuration.
         /// </summary>
         public static string Config {
@@ -602,6 +593,24 @@ namespace ModelGenApp {
         public static string FixedTypes {
             get {
                 return ResourceManager.GetString("FixedTypes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Generated files.
+        /// </summary>
+        public static string GeneratedFiles {
+            get {
+                return ResourceManager.GetString("GeneratedFiles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Generated types.
+        /// </summary>
+        public static string GeneratedTypes {
+            get {
+                return ResourceManager.GetString("GeneratedTypes", resourceCulture);
             }
         }
         

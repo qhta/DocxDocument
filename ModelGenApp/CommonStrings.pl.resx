@@ -639,7 +639,10 @@ Użyj znaku '*' aby dopasować wzorzec do wielu znaków.</value>
   <data name="FileTree" xml:space="preserve">
     <value>Drzewo plików</value>
   </data>
-  <data name="CompilationFiles" xml:space="preserve">
-    <value>Pliki kompilowane</value>
+  <data name="GeneratedFiles" xml:space="preserve">
+    <value>Pliki wygenerowane</value>
+  </data>
+  <data name="GeneratedTypes" xml:space="preserve">
+    <value>Wygenerowane typy</value>
   </data>
 </root>

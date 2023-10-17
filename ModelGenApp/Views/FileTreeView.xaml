@@ -16,7 +16,8 @@
     <TreeView ItemsSource="{Binding}">
       <TreeView.Resources>
         <DataTemplate DataType="{x:Type vm:FileViewModel}">
-          <StackPanel Orientation="Horizontal">
+          <StackPanel x:Name="FileItem" Orientation="Horizontal"
+                      MouseLeftButtonDown="FileItem_MouseLeftButtonDown">
             <Image Source="/Images/File.png" Margin="0,0,10,0"/>
             <TextBlock Text="{Binding Path=Caption}"/>
           </StackPanel>

@@ -255,10 +255,10 @@
   <data name="RemovedProperties" xml:space="preserve">
     <value>Removed properties</value>
   </data>
-  <data name="CompilationFiles" xml:space="preserve">
+  <data name="GeneratedFiles" xml:space="preserve">
     <value>Compilation files</value>
   </data>
-  <data name="CompilationFileList" xml:space="preserve">
+  <data name="GeneratedFileList" xml:space="preserve">
     <value>Compilation file list</value>
   </data>
 </root>

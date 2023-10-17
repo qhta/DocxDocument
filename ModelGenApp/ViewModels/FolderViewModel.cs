@@ -2,9 +2,9 @@
 
 public class FolderViewModel : FileViewModel
 {
-  public FolderViewModel(FolderModel model) : base(model)
+  public FolderViewModel(FolderViewModel? parent, FolderModel model) : base(parent, model)
   {
-    Items = new FileListViewModel(model.Items);
+    Items = new FileListViewModel(this, model.Items);
     Count = model.Items.Count;
     TotalCount = model.Items.TotalCount;
   }
