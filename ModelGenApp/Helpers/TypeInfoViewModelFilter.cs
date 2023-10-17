@@ -5,5 +5,5 @@
 /// </summary>
 public record TypeInfoViewModelFilter: TypeInfoViewModelFilter<TypeInfoViewModel>
 {
-  public TypeInfoViewModelFilter(TypeInfoKind filter, object? value): base(filter, value){ }
+  public TypeInfoViewModelFilter(SummaryInfoKind filter, object? value): base(filter, value){ }
 }
