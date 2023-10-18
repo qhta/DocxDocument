@@ -26,13 +26,14 @@ public class ModelDocsManager
   public List<string> TypesNotFound { get; private set; } = new List<string>();
   public List<string> PropertiesNotFound { get; private set; } = new List<string>();
 
-  public event ProgressTypeEvent? OnDocumentingType;
 
-  public int DocumentTypes(IEnumerable<TypeInfo> types)
+  public SummaryInfo DocumentTypes(IEnumerable<TypeInfo> types, ProgressTypeEvent? OnDocumentingType)
   {
+    var documentedTypes = 0;
     foreach (var typeInfo in types)
     {
-      DocumentSingleType(typeInfo);
+      if (DocumentSingleType(typeInfo))
+        documentedTypes++;
       OnDocumentingType?.Invoke(new ProgressTypeInfo
       {
         TotalTypes = TotalTypesCount,
@@ -41,7 +42,22 @@ public class ModelDocsManager
         Current = typeInfo
       });
     }
-    return DocumentedTypesCount;
+    var typesWithDescriptionCount = TypeManager.TypesAcceptedTo(PPS.AddDocs)
+      .Count(item => item.Description != null);
+
+    //var typesWithoutDescriptionCount = TypeManager.TypesAcceptedTo(PPS.AddDocs)
+    //  .Count(item => item.HasError(PPS.AddDocs, ErrorCode.MissingDescription));
+    //var typesWithMeaninglessDescriptionCount = TypeManager.TypesAcceptedTo(PPS.AddDocs)
+    //  .Count(item => item.HasError(PPS.AddDocs, ErrorCode.MeaninglessDescription));
+    var summaryInfo = new SummaryInfo
+    {
+      Summary = new Dictionary<SummaryInfoKind, object>{
+        {SummaryInfoKind.CheckedTypes, CheckedTypesCount},
+        {SummaryInfoKind.TypesWithDescription, typesWithDescriptionCount},
+        {SummaryInfoKind.TypesWithAddedDescription, documentedTypes},
+        }
+    };
+    return summaryInfo;
   }
 
   public bool DocumentSingleType(TypeInfo typeInfo)

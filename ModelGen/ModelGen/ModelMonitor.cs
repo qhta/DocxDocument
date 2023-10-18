@@ -51,11 +51,15 @@ public abstract class ModelMonitor
     if (info.Summary != null)
       foreach (var item in info.Summary)
       {
-        var valKey = item.Key.ToString();
-        var valName = CommonStrings.ResourceManager.GetString(valKey);
-        if (valName == null)
-          valName = valKey.DeCamelCase();
-        WriteLine($"{valName} = {item.Value}");
+        var valType = item.Value.GetType();
+        if (valType == typeof(string) || !valType.IsClass)
+        {
+          var valKey = item.Key.ToString();
+          var valName = CommonStrings.ResourceManager.GetString(valKey);
+          if (valName == null)
+            valName = valKey.DeCamelCase();
+          WriteLine($"{valName} = {item.Value}");
+        }
       }
 
   }
@@ -513,7 +517,7 @@ public abstract class ModelMonitor
 
   public virtual void ShowFinalCheck(TypeInfo type)
   {
-     WriteLine($"{type}");
+    WriteLine($"{type}");
   }
 
   public virtual void ShowTypeConversions()

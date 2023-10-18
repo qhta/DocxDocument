@@ -22,6 +22,11 @@ public class ConverterGenerator : BaseCodeGenerator
 
   public int SkippedTypesCount { get; private set; }
 
+  public override bool GenerateTypeFile(TypeInfo typeInfo)
+  {
+    throw new NotImplementedException();
+  }
+
   public bool GenerateConverterFile(TypeInfo typeInfo)
   {
     if (typeInfo.Name.EndsWith("Settings"))
@@ -118,11 +123,6 @@ public class ConverterGenerator : BaseCodeGenerator
     return true;
   }
   #endregion
-
-  public override int GenerateCode(IEnumerable<Namespace> nspaces)
-  {
-    throw new NotImplementedException();
-  }
 
   #region Converter class generation
 

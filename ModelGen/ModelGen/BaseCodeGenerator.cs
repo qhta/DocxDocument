@@ -12,12 +12,6 @@ public abstract class BaseCodeGenerator
 
   public bool CancelRequest { get; set; }
 
-  public event ProgressTypeEvent? OnGeneratingType
-  {
-    add { _OnGeneratingType += value; }
-    remove { _OnGeneratingType -= value; }
-  }
-  protected ProgressTypeEvent? _OnGeneratingType;
 
   public int GeneratedClassesCount { get; protected set; }
   public int GeneratedInterfacesCount { get; protected set; }
@@ -51,60 +45,74 @@ public abstract class BaseCodeGenerator
     return nspace;
   }
 
-  public abstract int GenerateCode(IEnumerable<Namespace> types);
-
-  #region Compilation
-  public int ValidateCode()
+  #region Generation
+  public SummaryInfo GenerateCode(IEnumerable<Namespace> nspaces, ProgressTypeEvent? _OnGeneratingType)
   {
-    string outputPath = Path.GetDirectoryName(OutputPath)!;
-    var compilationErrorsCount = CompileProject(outputPath, SolutionName + ".sln", SolutionName + ".txt");
-    return compilationErrorsCount;
-  }
-
-  public int CompileProject(string solutionPath, string solutionName, string outputTxtFile)
-  {
-    Directory.SetCurrentDirectory(solutionPath);
-    File.Delete(outputTxtFile);
-    var compileExe = "c:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\devenv.exe";
-    var args = $"/build debug {solutionName} /out {outputTxtFile}";
-    var process = Process.Start(compileExe, args);
-    process.WaitForExit();
-    using (var reader = File.OpenText(outputTxtFile))
+    PrepareProject();
+    var allTypes = new Dictionary<Namespace, TypeInfo[]>();
+    var totalTypesCount = 0;
+    var nspacesCount = 0;
+    var generatedTypesCount = 0;
+    foreach (var nspace in nspaces.ToArray())
     {
-      CompilationErrors errors = new();
-      string? line;
-      while ((line = reader.ReadLine()) != null)
+      if (nspace.TargetName != null)
       {
-        var errorTag = ": error ";
-        var k = line.IndexOf(errorTag);
-        if (k != -1)
+        CreateNamespaceFolder(nspace.TargetName);
+        var types = nspace.AcceptedTypesTo(PPS.CodeGen).Where(item => !item.IsConstructedGenericType
+        && !ModelConfig.Instance.PredefinedTypes.Contains(item.Type.FullName!)).ToArray();
+
+        allTypes.Add(nspace, types);
+        totalTypesCount += types.Count();
+      }
+    }
+    foreach (var item in allTypes)
+    {
+      var nspace = item.Key;
+      var nsTypesCount = 0;
+      foreach (var type in item.Value)
+      {
+        _OnGeneratingType?.Invoke(new ProgressTypeInfo
         {
-          var filename = line.Substring(2, k - 2).Trim();
-          filename = filename.ReplaceStart(OutputPath + @"\", "");
-          var l = filename.IndexOf('(');
-          if (l != -1)
-            filename = filename.Substring(0, l).Trim();
-          k += errorTag.Length;
-          l = line.IndexOf(':', k);
-          var code = line.Substring(k, l - k).Trim();
-          var description = line.Substring(l + 2).Trim();
-          l = description.IndexOf('(');
-          if (l != -1)
-            description = description.Substring(0, l).Trim();
-          var error = new CompilationError { Filename = filename, Code = code, Description = description };
-          errors.Add(error);
+          Namespaces = nspacesCount,
+          ProcessedTypes = generatedTypesCount,
+          TotalTypes = totalTypesCount,
+          Current = type
+        });
+        if (GenerateTypeFile(type))
+        {
+          nsTypesCount++;
+          generatedTypesCount++;
         }
       }
-      CompilationErrors = errors;
+      if (nsTypesCount > 0)
+      {
+        AddGlobalUsing(nspace.TargetName!);
+        nspacesCount++;
+      }
     }
-    return CompilationErrors.Count();
+
+    GenerateGlobalUsings();
+    var summaryInfo = new SummaryInfo
+    {
+      Summary = new Dictionary<SummaryInfoKind, object>{
+        {SummaryInfoKind.CheckedTypes, totalTypesCount },
+        {SummaryInfoKind.GeneratedTypes, generatedTypesCount },
+        }
+    };
+    var generatedFilesCount = GeneratedFiles.TotalCount;
+    if (generatedFilesCount > 0)
+    {
+      summaryInfo.Summary.Add(SummaryInfoKind.GeneratedFiles, generatedFilesCount);
+      if (GeneratedFiles!=null)
+        summaryInfo.Summary.Add(SummaryInfoKind.GeneratedFileList, GeneratedFiles);
+    }
+    return summaryInfo;
   }
 
-  public FilesList CompilationFiles { get; protected set; } = new FilesList();
-  public CompilationErrors? CompilationErrors { get; protected set; }
-  #endregion
+  public abstract bool GenerateTypeFile(TypeInfo typeInfo);
 
-  #region Main project generation methods
+  public FilesList GeneratedFiles { get; protected set; } = new FilesList();
+
   public void PrepareProject()
   {
     if (!Directory.Exists(OutputPath))
@@ -396,9 +404,9 @@ public abstract class BaseCodeGenerator
       Directory.CreateDirectory(filePath);
     var commonPath = Path.GetDirectoryName(OutputPath);
     var folderName = filePath.ReplaceStart(commonPath + @"\", "");
-    if (CompilationFiles != null)
+    if (GeneratedFiles != null)
     {
-      FolderModel? compilationFolder = RegisterCompilationFolder(CompilationFiles, folderName);
+      FolderModel? compilationFolder = RegisterCompilationFolder(GeneratedFiles, folderName);
       if (compilationFolder != null)
         compilationFolder.Add(new FileModel(fileName));
     }
@@ -422,6 +430,48 @@ public abstract class BaseCodeGenerator
       compilationFiles = compilationFolder.Items;
     }
     return compilationFolder;
+  }
+
+  public CompilationErrors CompileCode()
+  {
+    string solutionPath = Path.GetDirectoryName(OutputPath)!;
+    var solutionName = SolutionName + ".sln";
+    var outputTxtFile = ProjectName + ".txt";
+
+    Directory.SetCurrentDirectory(solutionPath);
+    File.Delete(outputTxtFile);
+    var compileExe = "c:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\devenv.exe";
+    var args = $"/build debug {solutionName} /out {outputTxtFile}";
+    var process = Process.Start(compileExe, args);
+    process.WaitForExit();
+    CompilationErrors errors = new();
+    using (var reader = File.OpenText(outputTxtFile))
+    {
+      string? line;
+      while ((line = reader.ReadLine()) != null)
+      {
+        var errorTag = ": error ";
+        var k = line.IndexOf(errorTag);
+        if (k != -1)
+        {
+          var filename = line.Substring(2, k - 2).Trim();
+          filename = filename.ReplaceStart(solutionPath + @"\", "");
+          var l = filename.IndexOf('(');
+          if (l != -1)
+            filename = filename.Substring(0, l).Trim();
+          k += errorTag.Length;
+          l = line.IndexOf(':', k);
+          var code = line.Substring(k, l - k).Trim();
+          var description = line.Substring(l + 2).Trim();
+          l = description.IndexOf('(');
+          if (l != -1)
+            description = description.Substring(0, l).Trim();
+          var error = new CompilationError { Filename = filename, Code = code, Description = description };
+          errors.Add(error);
+        }
+      }
+    }
+    return errors;
   }
 
 }

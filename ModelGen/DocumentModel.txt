@@ -3,7 +3,7 @@ Build started...
 2>------ Build started: Project: DocumentModel.BaseTypes, Configuration: Debug Any CPU ------
 2>DocumentModel.BaseTypes -> D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.BaseTypes\bin\Debug\net6.0\DocumentModel.BaseTypes.dll
 1>DocumentModel.Attributes -> D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.Attributes\bin\Debug\net6.0\DocumentModel.Attributes.dll
-Time Elapsed: 00:00:00.0464969
+Time Elapsed: 00:00:00.0382426
 ========== Finished ==========
 
 
@@ -20,5 +20,5 @@ Time Elapsed: 00:00:00.0464969
 3>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Drawings.Wordprocessing\Anchor.cs(135,64,135,78): error CS0102: The type 'Anchor' already contains a definition for 'RelativeHeight'
 3>Done building project "DocumentModel.csproj" -- FAILED.
 ========== Build: 3 succeeded, 1 failed, 0 up-to-date, 0 skipped ==========
-========== Build started at 12:41 and took 04,498 seconds ==========
+========== Build started at 14:16 and took 04,305 seconds ==========
 
