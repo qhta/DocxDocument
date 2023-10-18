@@ -10,73 +10,14 @@ public class ModelGenerator : BaseCodeGenerator
     ConfigPath = configPath;
   }
 
-  public override int GenerateCode(IEnumerable<Namespace> nspaces)
+  public override bool GenerateTypeFile(TypeInfo typeInfo)
   {
-    PrepareProject();
-    var allTypes = new Dictionary<Namespace, TypeInfo[]>();
-    var totalTypesCount = 0;
-    var nspacesCount = 0;
-    var genTypesCount = 0;
-    foreach (var nspace in nspaces.ToArray())
-    {
-      if (nspace.TargetName != null)
-      {
-        CreateNamespaceFolder(nspace.TargetName);
-        var types = nspace.AcceptedTypesTo(PPS.CodeGen).Where(item => !item.IsConstructedGenericType
-        && !ModelConfig.Instance.PredefinedTypes.Contains(item.Type.FullName!)).ToArray();
-
-        var iModelElement = types.FirstOrDefault(typeInfo => typeInfo.Name == "IModelElement");
-        if (iModelElement != null)
-          Debug.Assert(true);
-
-        allTypes.Add(nspace, types);
-        totalTypesCount += types.Count();
-      }
-    }
-    foreach (var item in allTypes)
-    {
-      var nspace = item.Key;
-      var nsTypesCount = 0;
-      foreach (var type in item.Value)
-      {
-        _OnGeneratingType?.Invoke(new ProgressTypeInfo
-        {
-          Namespaces = nspacesCount,
-          ProcessedTypes = genTypesCount,
-          TotalTypes = totalTypesCount,
-          Current = type
-        });
-        if (GenerateTypeFile(type))
-        {
-          nsTypesCount++;
-          genTypesCount++;
-        }
-      }
-      if (nsTypesCount > 0)
-      {
-        AddGlobalUsing(nspace.TargetName!);
-        nspacesCount++;
-      }
-    }
-
-    GenerateGlobalUsings();
-    return genTypesCount;
-  }
-
-  public bool GenerateTypeFile(TypeInfo typeInfo)
-  {
-    //if (typeInfo.TargetName == "RegionLabelLayout")
-    //  Debug.Assert(true);
-    //if (!typeInfo.IsConverted && !typeInfo.IsConvertedTo)
-    {
-      if (typeInfo.TypeKind == TypeKind.@enum)
-        return GenerateEnumType(typeInfo);
-      else
-      if (!typeInfo.IsConstructedGenericType)
-        return GenerateClassType(typeInfo);
-      return false;
-    }
-    //return false;
+    if (typeInfo.TypeKind == TypeKind.@enum)
+      return GenerateEnumType(typeInfo);
+    else
+    if (!typeInfo.IsConstructedGenericType)
+      return GenerateClassType(typeInfo);
+    return false;
   }
 
   #region Class type generation
