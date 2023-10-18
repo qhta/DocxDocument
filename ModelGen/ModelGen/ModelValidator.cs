@@ -1,5 +1,7 @@
 ﻿using DocumentFormat.OpenXml.Drawing;
 
+using Path = System.IO.Path;
+
 namespace ModelGen;
 
 public record ValidatingTypeInfo
@@ -36,9 +38,9 @@ public class ModelValidator
   public int ValidTypesCount { get; private set; }
   public int InvalidTypesCount { get; private set; }
 
-  public event ValidatingTypeEvent? OnValidatingType;
+  //public event ValidatingTypeEvent? OnValidatingType;
 
-  public bool ValidateTypes(PPS phase, IEnumerable<TypeInfo> types)
+  public bool ValidateTypes(PPS phase, IEnumerable<TypeInfo> types, SummaryInfo info, ValidatingTypeEvent? OnValidatingType)
   {
     bool ok = true;
     ValidTypesCount = 0;
@@ -46,6 +48,13 @@ public class ModelValidator
     TotalTypesCount = types.Count();
     foreach (var typeInfo in types)
     {
+      OnValidatingType?.Invoke(this, new ValidatingTypeInfo
+      {
+        TotalTypes = TotalTypesCount,
+        CheckedTypes = CheckedTypesCount,
+        InvalidTypes = CheckedTypesCount - ValidTypesCount,
+        Current = typeInfo
+      });
       if (!ValidateType(typeInfo))
       {
         ok = false;
@@ -54,20 +63,16 @@ public class ModelValidator
       else
         ValidTypesCount++;
     }
-
+    info.Summary.Add(SummaryInfoKind.CheckedTypes, CheckedTypesCount);
+    info.Summary.Add(SummaryInfoKind.ValidTypes, ValidTypesCount);
+    if (InvalidTypesCount > 0)
+      info.Summary.Add(SummaryInfoKind.InvalidTypes, InvalidTypesCount);
     return ok;
   }
 
   public bool ValidateType(TypeInfo typeInfo)
   {
     CheckedTypesCount++;
-    OnValidatingType?.Invoke(this, new ValidatingTypeInfo
-    {
-      TotalTypes = TotalTypesCount,
-      CheckedTypes = CheckedTypesCount,
-      InvalidTypes = CheckedTypesCount - ValidTypesCount,
-      Current = typeInfo
-    });
     var ok = true;
     switch (PhaseNum)
     {
@@ -249,4 +254,5 @@ public class ModelValidator
     //}
     return true;
   }
+
 }
