@@ -475,6 +475,15 @@ namespace ModelGen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Validated types.
+        /// </summary>
+        internal static string ValidatedTypes {
+            get {
+                return ResourceManager.GetString("ValidatedTypes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Valid types.
         /// </summary>
         internal static string ValidTypes {

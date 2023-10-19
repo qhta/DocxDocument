@@ -441,7 +441,7 @@ zdefiniowanej w typie wyliczeniowym.</value>
     <value>Pokaż pełną nazwę typu</value>
   </data>
   <data name="ValidatedTypes" xml:space="preserve">
-    <value>Zweryfikowane typy</value>
+    <value>Typy zweryfikowane</value>
   </data>
   <data name="ValidTypes" xml:space="preserve">
     <value>Typy poprawne</value>

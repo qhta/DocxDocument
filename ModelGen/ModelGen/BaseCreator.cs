@@ -187,7 +187,11 @@ public abstract class BaseCreator
     {
       var ModelValidator = new ModelValidator(PPS.ScanSource, NTS.Origin, MSS.Accepted, TDS.Metadata);
       var types = TypeManager.AllTypes.Where(type => type.IsAcceptedAfter(PPS.ScanSource)).ToArray();
-      ModelValidator.ValidateTypes(PPS.ScanSource, types, summaryInfo, ModelValidator_OnValidatingType);
+      if (!ModelValidator.ValidateTypes(types, ModelValidator_OnValidatingType))
+      {
+        var invalidTypes = TypeManager.AllTypes.Count(item => item.IsInvalid(PPS.ScanSource));
+        summaryInfo.Summary.Add(SummaryInfoKind.InvalidTypes, invalidTypes);
+      }
     }
 
     DateTime t2 = DateTime.Now;
@@ -216,36 +220,40 @@ public abstract class BaseCreator
       return new TimeSpan(0);
     ModelMonitor?.ShowPhaseStart(PPS.AddDocs, CommonStrings.AddDocs);
     DateTime t1 = DateTime.Now;
-    int checkedTypesCount = 0;
     var ModelDocumenter = new ModelDocsManager(PPS.AddDocs, NTS.Origin, MSS.Accepted, Options.ModelDocFileName);
     var types = TypeManager.AllTypes.Where(typeInfo => typeInfo.IsAcceptedTo(PPS.AddDocs)
               && typeInfo.OriginalNamespace.StartsWith("DocumentFormat")
+              && !typeInfo.IsConstructedGenericType
               && !typeInfo.IsGenericTypeDefinition).ToArray();
-    checkedTypesCount = TotalTypesCount = types.Count();
-    var summaryInfo = ModelDocumenter.DocumentTypes(types, ModelDocumenter_OnDocumentingType);
+    var documentedTypesCount = ModelDocumenter.DocumentTypes(types, ModelDocumenter_OnDocumentingType);
+    var summaryInfo = new SummaryInfo
+    {
+      Summary = new Dictionary<SummaryInfoKind, object>{
+        {SummaryInfoKind.TypesWithAddedDescription, documentedTypesCount}
+      }
+    };
 
-    bool validated = false;
-    var typesWithoutDescriptionCount = 0;
-    var typesWithMeaninglessDescriptionCount = 0;
     if (Options.ValidateDocs && !CancelRequest)
     {
       var ModelValidator = new ModelValidator(PPS.AddDocs, NTS.Origin, MSS.Accepted, TDS.Metadata);
-      ModelValidator.ValidateTypes(PPS.AddDocs, types, summaryInfo, ModelValidator_OnValidatingType);
-      typesWithoutDescriptionCount = TypeManager.TypesAcceptedTo(PPS.AddDocs)
-        .Count(item => item.HasError(PPS.AddDocs, ErrorCode.MissingDescription));
-      typesWithMeaninglessDescriptionCount = TypeManager.TypesAcceptedTo(PPS.AddDocs)
-        .Count(item => item.HasError(PPS.AddDocs, ErrorCode.MeaninglessDescription));
-      validated = true;
+      if (!ModelValidator.ValidateTypes(types, ModelValidator_OnValidatingType))
+      {
+        var typesWithoutDescriptionCount = TypeManager.TypesAcceptedTo(PPS.AddDocs)
+          .Count(item => item.HasError(PPS.AddDocs, ErrorCode.MissingDescription));
+        if (typesWithoutDescriptionCount > 0)
+          summaryInfo.Summary.Add(SummaryInfoKind.TypesWithoutDescription, typesWithoutDescriptionCount);
+
+        var typesWithMeaninglessDescriptionCount = TypeManager.TypesAcceptedTo(PPS.AddDocs)
+          .Count(item => item.HasError(PPS.AddDocs, ErrorCode.MeaninglessDescription));
+        if (typesWithMeaninglessDescriptionCount > 0)
+          summaryInfo.Summary.Add(SummaryInfoKind.TypesWithMeaninglessDescription, typesWithMeaninglessDescriptionCount);
+      }
     }
 
     DateTime t2 = DateTime.Now;
     var ts = t2 - t1;
     summaryInfo.Time = ts;
-    if (validated)
-    {
-      summaryInfo.Summary.Add(SummaryInfoKind.TypesWithoutDescription, typesWithoutDescriptionCount);
-      summaryInfo.Summary.Add(SummaryInfoKind.TypesWithMeaninglessDescription, typesWithMeaninglessDescriptionCount);
-    }
+
     ModelMonitor?.ShowPhaseEnd(PPS.AddDocs, summaryInfo);
     return ts;
   }
@@ -267,27 +275,31 @@ public abstract class BaseCreator
     DateTime t1 = DateTime.Now;
     var types = TypeManager.AllTypes.Where(typeInfo => typeInfo.IsAcceptedTo(PPS.Rename)
               && typeInfo.OriginalNamespace.StartsWith("DocumentFormat")
+              && !typeInfo.IsConstructedGenericType
               && !typeInfo.IsGenericTypeDefinition).ToArray();
     TotalTypesCount = types.Count();
-    var summaryInfo = ModelManager.RenameNamespacesAndTypes(types, ModelManager_OnRenamingType);
-    var duplicatedNamesCount = ModelManager.DuplicatedNamesCount;
-    var invalidTypes = 0;
+    var renamedTypesCount = ModelManager.RenameNamespacesAndTypes(types, ModelManager_OnRenamingType);
+    var summaryInfo = new SummaryInfo
+    {
+      Summary = new Dictionary<SummaryInfoKind, object>{
+        {SummaryInfoKind.RenamedTypes, renamedTypesCount },
+        }
+    };
+
     if (Options.ValidateNames && !CancelRequest)
     {
       var ModelValidator = new ModelValidator(PPS.Rename, NTS.Origin, MSS.Accepted, TDS.Metadata);
-      if (!ModelValidator.ValidateTypes(PPS.Rename, types, summaryInfo, ModelValidator_OnValidatingType))
+      if (!ModelValidator.ValidateTypes(types, ModelValidator_OnValidatingType))
       {
-        invalidTypes = ModelValidator.InvalidTypesCount;
+        var duplicatedNamesCount = ModelValidator.InvalidTypesCount;
+        if (duplicatedNamesCount > 0)
+          summaryInfo.Summary.Add(SummaryInfoKind.TypesWithSameName, duplicatedNamesCount);
       }
     }
 
     DateTime t2 = DateTime.Now;
     var ts = t2 - t1;
     summaryInfo.Time = ts;
-    //if (duplicatedNamesCount > 0)
-    //  summaryInfo.Summary.Add(SummaryInfoKind.TypesWithSameName, duplicatedNamesCount);
-    //if (invalidTypes > 0)
-    //  summaryInfo.Summary.Add(SummaryInfoKind.InvalidTypes, invalidTypes);
 
     ModelMonitor?.ShowPhaseEnd(PPS.Rename, summaryInfo);
     return ts;
@@ -322,7 +334,7 @@ public abstract class BaseCreator
         .SelectMany(ns => ns.Types)
         .Where(typeInfo => !typeInfo.IsGenericTypeDefinition).ToArray().ToArray();
       targetTypesCount = newTypes.Count();
-      if (!ModelValidator.ValidateTypes(PPS.ConvertTypes, newTypes, summaryInfo, ModelValidator_OnValidatingType))
+      if (!ModelValidator.ValidateTypes(newTypes, ModelValidator_OnValidatingType))
       {
         invalidTypesCount = ModelValidator.InvalidTypesCount;
       }
@@ -372,7 +384,7 @@ public abstract class BaseCreator
         .SelectMany(ns => ns.Types)
         .Where(typeInfo => !typeInfo.IsGenericTypeDefinition).ToArray().ToArray();
       targetTypesCount = newTypes.Count();
-      if (!ModelValidator.ValidateTypes(PPS.ConvertTypes, newTypes, summaryInfo, ModelValidator_OnValidatingType))
+      if (!ModelValidator.ValidateTypes(newTypes, ModelValidator_OnValidatingType))
       {
         invalidTypesCount = ModelValidator.InvalidTypesCount;
       }

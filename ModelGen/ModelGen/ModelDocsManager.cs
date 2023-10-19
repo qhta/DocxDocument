@@ -27,13 +27,18 @@ public class ModelDocsManager
   public List<string> PropertiesNotFound { get; private set; } = new List<string>();
 
 
-  public SummaryInfo DocumentTypes(IEnumerable<TypeInfo> types, ProgressTypeEvent? OnDocumentingType)
+  /// <summary>
+  /// Adds descriptions to enumerated types. Descriptions are taken from type summaries.
+  /// </summary>
+  /// <param name="types"></param>
+  /// <param name="OnDocumentingType"></param>
+  /// <returns>Count of types with added docs</returns>
+  public int DocumentTypes(IEnumerable<TypeInfo> types, ProgressTypeEvent? OnDocumentingType)
   {
-    var documentedTypes = 0;
     foreach (var typeInfo in types)
     {
       if (DocumentSingleType(typeInfo))
-        documentedTypes++;
+        DocumentedTypesCount++;
       OnDocumentingType?.Invoke(new ProgressTypeInfo
       {
         TotalTypes = TotalTypesCount,
@@ -42,32 +47,14 @@ public class ModelDocsManager
         Current = typeInfo
       });
     }
-    var typesWithDescriptionCount = TypeManager.TypesAcceptedTo(PPS.AddDocs)
-      .Count(item => item.Description != null);
 
-    //var typesWithoutDescriptionCount = TypeManager.TypesAcceptedTo(PPS.AddDocs)
-    //  .Count(item => item.HasError(PPS.AddDocs, ErrorCode.MissingDescription));
-    //var typesWithMeaninglessDescriptionCount = TypeManager.TypesAcceptedTo(PPS.AddDocs)
-    //  .Count(item => item.HasError(PPS.AddDocs, ErrorCode.MeaninglessDescription));
-    var summaryInfo = new SummaryInfo
-    {
-      Summary = new Dictionary<SummaryInfoKind, object>{
-        {SummaryInfoKind.CheckedTypes, CheckedTypesCount},
-        {SummaryInfoKind.TypesWithDescription, typesWithDescriptionCount},
-        {SummaryInfoKind.TypesWithAddedDescription, documentedTypes},
-        }
-    };
-    return summaryInfo;
+    return DocumentedTypesCount;
   }
 
   public bool DocumentSingleType(TypeInfo typeInfo)
   {
     CheckedTypesCount++;
-    var ok = true;
-    if (!typeInfo.IsConstructedGenericType)
-    {
-      ok = TryAddTypeDocumentation(typeInfo);
-    }
+    var ok = TryAddTypeDocumentation(typeInfo);
     if (ok)
       DocumentedTypesCount++;
     return ok;
@@ -100,14 +87,14 @@ public class ModelDocsManager
       }
       if (typeDoc != null)
       {
-        var ok = TrySetSummary(typeInfo, typeDoc);
+        var ok = TrySetDescription(typeInfo, typeDoc);
         return ok;
       }
     }
     return false;
   }
 
-  private bool TrySetSummary(TypeInfo typeInfo, TypeDoc typeDoc)
+  private bool TrySetDescription(TypeInfo typeInfo, TypeDoc typeDoc)
   {
     var ok = false;
     if (typeDoc.Summary != null && typeDoc.Summary.Any())
@@ -165,13 +152,13 @@ public class ModelDocsManager
     }
     if (propDoc != null)
     {
-      var ok = TrySetSummary(propInfo, propDoc);
+      var ok = TrySetEDescription(propInfo, propDoc);
       return ok;
     }
     return false;
   }
 
-  private bool TrySetSummary(PropInfo propInfo, PropDoc propDoc)
+  private bool TrySetEDescription(PropInfo propInfo, PropDoc propDoc)
   {
     var ok = false;
     if (propDoc.Summary != null && propDoc.Summary.Any())

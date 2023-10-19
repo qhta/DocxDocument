@@ -1,14 +1,7 @@
-﻿using System.Data;
-using System.Runtime.CompilerServices;
-
-namespace ModelGen;
+﻿namespace ModelGen;
 
 public static class ModelManager
 {
-  //public static event ProgressTypeEvent? OnScanningType;
-  //public static event ProgressTypeEvent? OnRenamingType;
-  //public static event ProgressTypeEvent? OnConvertingType;
-
   public static int CheckedRenameTypesCount { get; private set; }
   public static int RenamedTypesCount { get; private set; }
   public static int DuplicatedNamesCount { get; private set; }
@@ -123,67 +116,67 @@ public static class ModelManager
     return false;
   }
 
-  public static bool ValidateType(PPS phase, TypeInfo typeInfo)
-  {
-    var isValid = true;
-    if (!ValidateProperties(phase, typeInfo))
-      isValid = false;
-    return isValid;
-  }
+  //public static bool ValidateType(PPS phase, TypeInfo typeInfo)
+  //{
+  //  var isValid = true;
+  //  if (!ValidateProperties(phase, typeInfo))
+  //    isValid = false;
+  //  return isValid;
+  //}
 
-  public static bool ValidateProperties(PPS phase, TypeInfo typeInfo)
-  {
-    var isValid = true;
-    if (typeInfo.Type.IsEqualOrSubclassOf(typeof(DocumentFormat.OpenXml.OpenXmlPartRootElement)))
-    {
-      var partProperty = typeInfo.Properties?.FirstOrDefault(item => item.Name.EndsWith("Part"));
-      if (partProperty != null)
-      {
-        partProperty.SetRejected(phase);
-        isValid = false;
-      }
-    }
-    var baseTypes = typeInfo.GetBaseTypes();
-    foreach (var baseType in baseTypes)
-    {
-      if (!CheckPropertyOverrides(phase, typeInfo, baseType))
-        isValid = false;
-    }
-    return isValid;
-  }
+  //public static bool ValidateProperties(PPS phase, TypeInfo typeInfo)
+  //{
+  //  var isValid = true;
+  //  if (typeInfo.Type.IsEqualOrSubclassOf(typeof(DocumentFormat.OpenXml.OpenXmlPartRootElement)))
+  //  {
+  //    var partProperty = typeInfo.Properties?.FirstOrDefault(item => item.Name.EndsWith("Part"));
+  //    if (partProperty != null)
+  //    {
+  //      partProperty.SetRejected(phase);
+  //      isValid = false;
+  //    }
+  //  }
+  //  var baseTypes = typeInfo.GetBaseTypes();
+  //  foreach (var baseType in baseTypes)
+  //  {
+  //    if (!CheckPropertyOverrides(phase, typeInfo, baseType))
+  //      isValid = false;
+  //  }
+  //  return isValid;
+  //}
 
-  public static bool CheckPropertyOverrides(PPS phase, TypeInfo thisTypeInfo, TypeInfo baseTypeInfo)
-  {
-    //if (thisTypeInfo.Name == "CategoryAxisData")
-    //  Debug.Assert(true);
-    if (baseTypeInfo != null && thisTypeInfo.Properties != null && baseTypeInfo.Properties != null)
-    {
-      var thisPropNames = thisTypeInfo.Properties.Where(item => item.IsAcceptedTo(phase)).Select(item => item.Name).ToArray();
-      var basePropNames = baseTypeInfo.Properties.Where(item => item.IsAcceptedTo(phase)).Select(item => item.Name).ToArray();
-      var commonPropNames = thisPropNames.Intersect(basePropNames).ToArray();
-      var hasSamePropNames = commonPropNames.Any();
-      if (hasSamePropNames)
-      {
-        foreach (var propName in commonPropNames)
-        {
-          var thisProperty = thisTypeInfo.Properties.Where(item => item.Name == propName).First();
-          var baseProperty = baseTypeInfo.Properties.Where(item => item.Name == propName).First();
-          if (thisProperty.PropertyType == baseProperty.PropertyType)
-          {
-            thisProperty.IsOverriden = true;
-            if (!baseProperty.IsOverriden && !baseProperty.IsAbstract)
-              baseProperty.IsVirtual = true;
-          }
-          else
-          {
-            thisProperty.IsNew = true;
-          }
-        }
-        return false;
-      }
-    }
-    return true;
-  }
+  //public static bool CheckPropertyOverrides(PPS phase, TypeInfo thisTypeInfo, TypeInfo baseTypeInfo)
+  //{
+  //  //if (thisTypeInfo.Name == "CategoryAxisData")
+  //  //  Debug.Assert(true);
+  //  if (baseTypeInfo != null && thisTypeInfo.Properties != null && baseTypeInfo.Properties != null)
+  //  {
+  //    var thisPropNames = thisTypeInfo.Properties.Where(item => item.IsAcceptedTo(phase)).Select(item => item.Name).ToArray();
+  //    var basePropNames = baseTypeInfo.Properties.Where(item => item.IsAcceptedTo(phase)).Select(item => item.Name).ToArray();
+  //    var commonPropNames = thisPropNames.Intersect(basePropNames).ToArray();
+  //    var hasSamePropNames = commonPropNames.Any();
+  //    if (hasSamePropNames)
+  //    {
+  //      foreach (var propName in commonPropNames)
+  //      {
+  //        var thisProperty = thisTypeInfo.Properties.Where(item => item.Name == propName).First();
+  //        var baseProperty = baseTypeInfo.Properties.Where(item => item.Name == propName).First();
+  //        if (thisProperty.PropertyType == baseProperty.PropertyType)
+  //        {
+  //          thisProperty.IsOverriden = true;
+  //          if (!baseProperty.IsOverriden && !baseProperty.IsAbstract)
+  //            baseProperty.IsVirtual = true;
+  //        }
+  //        else
+  //        {
+  //          thisProperty.IsNew = true;
+  //        }
+  //      }
+  //      return false;
+  //    }
+  //  }
+  //  return true;
+  //}
 
   public static List<TypeInfo> GetBaseTypes(this TypeInfo typeInfo)
   {
@@ -257,8 +250,8 @@ public static class ModelManager
   /// <summary>
   /// First rename namespaces, then rename types.
   /// </summary>
-  /// <returns></returns>
-  public static SummaryInfo RenameNamespacesAndTypes(IEnumerable<TypeInfo> types, ProgressTypeEvent? OnRenamingType)
+  /// <returns>Count of renamed types</returns>
+  public static int RenameNamespacesAndTypes(IEnumerable<TypeInfo> types, ProgressTypeEvent? OnRenamingType)
   {
     RenameNamespaces();
     var renamedTypes = 0;
@@ -277,14 +270,8 @@ public static class ModelManager
         Current = typeInfo
       });
     }
-    var summaryInfo = new SummaryInfo
-    {
-      Summary = new Dictionary<SummaryInfoKind, object>{
-        {SummaryInfoKind.CheckedTypes, totalTypes},
-        {SummaryInfoKind.RenamedTypes, RenamedTypesCount },
-        }
-    };
-    return summaryInfo;
+
+    return RenamedTypesCount;
   }
 
   public static int RenameNamespaces()
