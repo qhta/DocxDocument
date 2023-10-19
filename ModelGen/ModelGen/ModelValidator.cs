@@ -1,8 +1,4 @@
-﻿using DocumentFormat.OpenXml.Drawing;
-
-using Path = System.IO.Path;
-
-namespace ModelGen;
+﻿namespace ModelGen;
 
 public record ValidatingTypeInfo
 {
@@ -34,13 +30,11 @@ public class ModelValidator
   public TDS TypeDataSelector { get; private set; }
 
   public int TotalTypesCount { get; private set; }
-  public int CheckedTypesCount { get; private set; }
+  public int ValidatedTypesCount { get; private set; }
   public int ValidTypesCount { get; private set; }
   public int InvalidTypesCount { get; private set; }
 
-  //public event ValidatingTypeEvent? OnValidatingType;
-
-  public bool ValidateTypes(PPS phase, IEnumerable<TypeInfo> types, SummaryInfo info, ValidatingTypeEvent? OnValidatingType)
+  public bool ValidateTypes(IEnumerable<TypeInfo> types, ValidatingTypeEvent? OnValidatingType)
   {
     bool ok = true;
     ValidTypesCount = 0;
@@ -51,56 +45,41 @@ public class ModelValidator
       OnValidatingType?.Invoke(this, new ValidatingTypeInfo
       {
         TotalTypes = TotalTypesCount,
-        CheckedTypes = CheckedTypesCount,
-        InvalidTypes = CheckedTypesCount - ValidTypesCount,
+        CheckedTypes = ValidatedTypesCount,
+        InvalidTypes = ValidatedTypesCount - ValidTypesCount,
         Current = typeInfo
       });
-      if (!ValidateType(typeInfo))
+      var result = ValidateType(typeInfo);
+      if (result == false)
       {
         ok = false;
         InvalidTypesCount++;
       }
-      else
+      else if (result == true)
         ValidTypesCount++;
     }
-    info.Summary.Add(SummaryInfoKind.CheckedTypes, CheckedTypesCount);
-    info.Summary.Add(SummaryInfoKind.ValidTypes, ValidTypesCount);
-    if (InvalidTypesCount > 0)
-      info.Summary.Add(SummaryInfoKind.InvalidTypes, InvalidTypesCount);
     return ok;
   }
 
-  public bool ValidateType(TypeInfo typeInfo)
+  public bool? ValidateType(TypeInfo typeInfo)
   {
-    CheckedTypesCount++;
-    var ok = true;
     switch (PhaseNum)
     {
       case PPS.ScanSource:
-        if (!ValidateScan(typeInfo))
-          ok = false;
-        break;
-
+        return ValidateScan(typeInfo);
       case PPS.AddDocs:
-        if (!ValidateDescription(typeInfo))
-          ok = false;
-        break;
-
+        return ValidateDescription(typeInfo);
       case PPS.Rename:
-        if (!ValidateTargetName(typeInfo))
-          ok = false;
-        break;
-
+        return ValidateTargetName(typeInfo);
       case PPS.ConvertTypes:
-        if (!ValidateConversion(typeInfo))
-          ok = false;
-        break;
+        return ValidateConversion(typeInfo);
     }
-    return ok;
+    return null;
   }
 
   public bool ValidateScan(TypeInfo typeInfo)
   {
+    ValidatedTypesCount++;
     var ok1 = CompareSchemaWithIncludeRelationships(typeInfo);
     var ok2 = ComparePropsWithIncludeRelationships(typeInfo);
     return ok1 && ok2;
@@ -196,10 +175,11 @@ public class ModelValidator
     return ok;
   }
 
-  public bool ValidateDescription(TypeInfo typeInfo)
+  public bool? ValidateDescription(TypeInfo typeInfo)
   {
     if (!typeInfo.IsConstructedGenericType)
     {
+      ValidatedTypesCount++;
       var description = typeInfo.GetDescription()?.Trim();
       if (String.IsNullOrEmpty(description))
       {
@@ -213,6 +193,7 @@ public class ModelValidator
       if (str.StartsWith("Defines "))
       {
         var rest = str.Substring("Defines ".Length).TrimStart();
+        rest = rest.ReplaceEnd(" Class", "", StringComparison.OrdinalIgnoreCase);
         var restWithoutSpaces = rest.Replace(" ", "");
         if (restWithoutSpaces.ToLower() == typeInfo.Name.ToLower())
           typeInfo.AddError(PhaseNum, ErrorCode.MeaninglessDescription);
@@ -222,20 +203,18 @@ public class ModelValidator
     return true;
   }
 
-  public bool ValidateTargetName(TypeInfo typeInfo)
+  public bool? ValidateTargetName(TypeInfo typeInfo)
   {
-    if (typeInfo.IsAcceptedAfter(PPS.Rename) && !typeInfo.IsConstructedGenericType && !typeInfo.OriginalNamespace.StartsWith("System"))
+    ValidatedTypesCount++;
+    var targetNamespace = typeInfo.TargetNamespace;
+    var targetName = typeInfo.GetFullName(true, false, false);
+    var sameNameTypes = TypeManager.AllTypes.Where(item => item.IsAcceptedAfter(PhaseNum) && !item.IsConstructedGenericType)
+      .Where(item => item.TargetNamespace == targetNamespace)
+      .Where(item => item.GetFullName(true, false, false) == targetName).ToList();
+    if (sameNameTypes.Count > 1)
     {
-      var targetNamespace = typeInfo.TargetNamespace;
-      var targetName = typeInfo.GetFullName(true, false, false);
-      var sameNameTypes = TypeManager.AllTypes.Where(item => item.IsAcceptedAfter(PhaseNum) && !item.IsConstructedGenericType)
-        .Where(item => item.TargetNamespace == targetNamespace)
-        .Where(item => item.GetFullName(true, false, false) == targetName).ToList();
-      if (sameNameTypes.Count > 1)
-      {
-        typeInfo.AddError(PhaseNum, ErrorCode.MultiplicatedName);
-        return false;
-      }
+      typeInfo.AddError(PhaseNum, ErrorCode.MultiplicatedName);
+      return false;
     }
     return true;
   }

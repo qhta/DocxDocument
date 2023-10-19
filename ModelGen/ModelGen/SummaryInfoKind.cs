@@ -9,6 +9,7 @@ public enum SummaryInfoKind
   Namespaces,
   AcceptedTypes,
   RejectedTypes,
+  ValidatedTypes,
   ValidTypes,
   InvalidTypes,
   TypesWithDescription,

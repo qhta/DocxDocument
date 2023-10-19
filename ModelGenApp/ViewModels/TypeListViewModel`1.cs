@@ -135,7 +135,12 @@ public class TypeListViewModel<T> : ViewModel where T : TypeInfoViewModel
   public TypeListViewModel<TypeInfoViewModel>? Source { get; private set; }
 
 
-  public bool ShowNamespaces => Namespace == null;
+  public bool ShowNamespaces
+  {
+    get { return _ShowNamespace ?? Namespace == null; }
+    set { _ShowNamespace = value; }
+  }
+  private bool? _ShowNamespace;
 
   public bool ShowTargetsOnlyEnabled => Phase.ShowTargetsOnlyEnabled;
 

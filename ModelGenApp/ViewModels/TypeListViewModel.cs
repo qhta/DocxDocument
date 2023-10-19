@@ -8,8 +8,4 @@ public class TypeListViewModel: TypeListViewModel<TypeInfoViewModel>
   {
   }
 
-  //protected override void AddRange(IEnumerable<TypeInfoViewModel> list)
-  //{
-  //   (Items as ObservableList<TypeInfoViewModel>)?.AddRange(list.Cast<TypeInfoViewModel>());
-  //}
 }

@@ -261,4 +261,7 @@
   <data name="GeneratedFileList" xml:space="preserve">
     <value>Lista plików kompilowanych</value>
   </data>
+  <data name="ValidatedTypes" xml:space="preserve">
+    <value>Typy zweryfikowane</value>
+  </data>
 </root>
