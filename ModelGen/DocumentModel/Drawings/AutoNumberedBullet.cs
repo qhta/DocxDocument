@@ -8,12 +8,6 @@ public partial class AutoNumberedBullet
 {
   
   /// <summary>
-  ///   Bullet Autonumbering Type
-  /// </summary>
-  public DocumentModel.Drawings.TextAutoNumberSchemeKind? Type { get; set; }
-  
-  
-  /// <summary>
   ///   Start Numbering At
   /// </summary>
   public Int32? StartAt { get; set; }

@@ -32,6 +32,4 @@ public partial class BarChart
   
   public DocumentModel.Drawings.Charts.BarChartExtensionList? BarChartExtensionList { get; set; }
   
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
-  
 }

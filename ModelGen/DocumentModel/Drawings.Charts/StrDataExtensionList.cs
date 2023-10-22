@@ -6,6 +6,4 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class StrDataExtensionList
 {
-  public DM.ElementCollection<StrDataExtension>? Items { get; set; }
-  
 }

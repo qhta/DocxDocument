@@ -24,6 +24,4 @@ public partial class HslColor
   /// </summary>
   public Int32? LumValue { get; set; }
   
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
-  
 }

@@ -6,6 +6,4 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class People
 {
-  public DM.ElementCollection<Person>? Items { get; set; }
-  
 }

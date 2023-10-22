@@ -8,12 +8,6 @@ public partial class TableStyleProperties
 {
   
   /// <summary>
-  ///   Table Style Conditional Formatting Type
-  /// </summary>
-  public DocumentModel.Wordprocessing.TableStyleOverrideKind? Type { get; set; }
-  
-  
-  /// <summary>
   ///   Table Style Conditional Formatting Paragraph Properties.
   /// </summary>
   public DocumentModel.Wordprocessing.StyleParagraphProperties? StyleParagraphProperties { get; set; }

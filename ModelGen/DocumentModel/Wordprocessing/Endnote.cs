@@ -6,6 +6,4 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class Endnote
 {
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
-  
 }

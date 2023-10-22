@@ -46,6 +46,4 @@ public partial class ScatterChartSeries
   
   public DocumentModel.Drawings.Charts.ScatterSerExtensionList? ScatterSerExtensionList { get; set; }
   
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
-  
 }

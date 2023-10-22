@@ -6,6 +6,4 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class LineSerExtensionList
 {
-  public DM.ElementCollection<LineSerExtension>? Items { get; set; }
-  
 }

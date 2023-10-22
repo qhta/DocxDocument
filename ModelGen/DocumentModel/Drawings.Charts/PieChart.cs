@@ -18,6 +18,4 @@ public partial class PieChart
   
   public DocumentModel.Drawings.Charts.PieChartExtensionList? PieChartExtensionList { get; set; }
   
-  public DM.ElementCollection<PieChartSeries>? Items { get; set; }
-  
 }

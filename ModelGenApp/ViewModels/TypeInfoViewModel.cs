@@ -181,7 +181,12 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
       {
         var errCodeName = errCode?.ToString();
         if (errCodeName != null)
-          return CommonStrings.ResourceManager.GetString(errCodeName);
+        {
+          var msg = CommonStrings.ResourceManager.GetString(errCodeName);
+          if (String.IsNullOrEmpty(msg))
+            msg = errCodeName.DeCamelCase();
+          return msg;
+        }
       }
       return null;
     }

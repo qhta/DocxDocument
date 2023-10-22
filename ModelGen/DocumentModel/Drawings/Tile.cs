@@ -30,16 +30,4 @@ public partial class Tile
   /// </summary>
   public Int32? VerticalRatio { get; set; }
   
-  
-  /// <summary>
-  ///   Specifies the direction(s) in which to flip the source image while tiling. Images can be flipped horizontally, vertically, or in both directions to fill the entire region.
-  /// </summary>
-  public DocumentModel.Drawings.TileFlipKind? Flip { get; set; }
-  
-  
-  /// <summary>
-  ///   Specifies where to align the first tile with respect to the shape. Alignment happens after the scaling, but before the additional offset.
-  /// </summary>
-  public DocumentModel.Drawings.RectangleAlignmentKind? Alignment { get; set; }
-  
 }

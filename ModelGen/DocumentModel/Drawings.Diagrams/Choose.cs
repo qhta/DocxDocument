@@ -14,6 +14,4 @@ public partial class Choose
   
   public DocumentModel.Drawings.Diagrams.DiagramChooseElse? DiagramChooseElse { get; set; }
   
-  public DM.ElementCollection<DiagramChooseIf>? Items { get; set; }
-  
 }

@@ -6,6 +6,4 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class AdjustHandleList
 {
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
-  
 }

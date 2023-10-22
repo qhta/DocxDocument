@@ -26,18 +26,6 @@ public partial class RadioGroup
   
   
   /// <summary>
-  ///   alignLabel, this property is only available in Office 2010 and later.
-  /// </summary>
-  public DM.ExpandKind? AlignLabel { get; set; }
-  
-  
-  /// <summary>
-  ///   expand, this property is only available in Office 2010 and later.
-  /// </summary>
-  public DM.ExpandKind? Expand { get; set; }
-  
-  
-  /// <summary>
   ///   enabled, this property is only available in Office 2010 and later.
   /// </summary>
   public Boolean? Enabled { get; set; }
@@ -113,7 +101,5 @@ public partial class RadioGroup
   ///   getItemID, this property is only available in Office 2010 and later.
   /// </summary>
   public String? GetItemID { get; set; }
-  
-  public DM.ElementCollection<RadioButtonBackstageItem>? Items { get; set; }
   
 }

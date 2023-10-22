@@ -8,12 +8,6 @@ public partial class ControlClone
 {
   
   /// <summary>
-  ///   size
-  /// </summary>
-  public DMUI.SizeKind? Size { get; set; }
-  
-  
-  /// <summary>
   ///   getSize
   /// </summary>
   public String? GetSize { get; set; }

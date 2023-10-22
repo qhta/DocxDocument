@@ -18,6 +18,4 @@ public partial class Styles
   /// </summary>
   public DocumentModel.Wordprocessing.LatentStyles? LatentStyles { get; set; }
   
-  public DM.ElementCollection<Style>? Items { get; set; }
-  
 }

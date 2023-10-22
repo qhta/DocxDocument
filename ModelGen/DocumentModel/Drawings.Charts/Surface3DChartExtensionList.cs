@@ -6,6 +6,4 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class Surface3DChartExtensionList
 {
-  public DM.ElementCollection<Surface3DChartExtension>? Items { get; set; }
-  
 }

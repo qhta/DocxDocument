@@ -14,12 +14,6 @@ public partial class ContentPart
   
   
   /// <summary>
-  ///   bwMode, this property is only available in Office 2010 and later.
-  /// </summary>
-  public DocumentModel.Drawings.BlackWhiteMode? BlackWhiteMode { get; set; }
-  
-  
-  /// <summary>
   ///   NonVisualContentPartProperties.
   /// </summary>
   public DocumentModel.Drawings.ChartDrawings.NonVisualContentPartProperties? NonVisualContentPartProperties { get; set; }

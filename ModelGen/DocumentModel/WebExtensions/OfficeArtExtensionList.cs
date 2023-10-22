@@ -6,6 +6,4 @@ namespace DocumentModel.WebExtensions;
 /// </summary>
 public partial class OfficeArtExtensionList
 {
-  public DM.ElementCollection<Extension>? Items { get; set; }
-  
 }

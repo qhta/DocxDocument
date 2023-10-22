@@ -8,12 +8,6 @@ public partial class ObjectEmbed
 {
   
   /// <summary>
-  ///   Specifies how the object is represented visually in the application.
-  /// </summary>
-  public DocumentModel.Wordprocessing.ObjectDrawAspect? drawAspect { get; set; }
-  
-  
-  /// <summary>
   ///   id
   /// </summary>
   public String? Id { get; set; }

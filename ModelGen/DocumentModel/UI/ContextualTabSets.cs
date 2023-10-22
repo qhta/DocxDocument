@@ -6,6 +6,4 @@ namespace DocumentModel.UI;
 /// </summary>
 public partial class ContextualTabSets
 {
-  public DM.ElementCollection<ContextualTabSet>? Items { get; set; }
-  
 }

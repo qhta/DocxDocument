@@ -14,6 +14,4 @@ public partial class Data
   
   public DocumentModel.Drawings.ChartDrawings.ExtensionList? ExtensionList { get; set; }
   
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
-  
 }

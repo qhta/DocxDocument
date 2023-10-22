@@ -12,6 +12,4 @@ public partial class NumberLiteral
   
   public DocumentModel.Drawings.Charts.ExtensionList? ExtensionList { get; set; }
   
-  public DM.ElementCollection<NumericPoint>? Items { get; set; }
-  
 }

@@ -50,28 +50,14 @@ public partial class DiagramChooseIf
   
   
   /// <summary>
-  ///   Function
-  /// </summary>
-  public DocumentModel.Drawings.Diagrams.FunctionKind? Function { get; set; }
-  
-  
-  /// <summary>
   ///   Argument
   /// </summary>
   public String? Argument { get; set; }
   
   
   /// <summary>
-  ///   Operator
-  /// </summary>
-  public DocumentModel.Drawings.Diagrams.FunctionOperatorKind? Operator { get; set; }
-  
-  
-  /// <summary>
   ///   Value
   /// </summary>
   public String? Val { get; set; }
-  
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
   
 }

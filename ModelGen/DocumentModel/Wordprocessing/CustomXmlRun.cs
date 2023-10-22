@@ -8,6 +8,4 @@ public partial class CustomXmlRun
 {
   public DocumentModel.Wordprocessing.CustomXmlProperties? CustomXmlProperties { get; set; }
   
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
-  
 }

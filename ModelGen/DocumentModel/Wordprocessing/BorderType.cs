@@ -8,21 +8,9 @@ public partial class BorderType
 {
   
   /// <summary>
-  ///   Border Style
-  /// </summary>
-  public DocumentModel.Wordprocessing.BorderKind? Val { get; set; }
-  
-  
-  /// <summary>
   ///   Border Color
   /// </summary>
   public String? Color { get; set; }
-  
-  
-  /// <summary>
-  ///   Border Theme Color
-  /// </summary>
-  public DocumentModel.Wordprocessing.ThemeColorKind? ThemeColor { get; set; }
   
   
   /// <summary>

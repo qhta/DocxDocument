@@ -16,6 +16,4 @@ public partial class TableRowProperties
   
   public DocumentModel.Wordprocessing.ConflictDeletion? ConflictDeletion { get; set; }
   
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
-  
 }

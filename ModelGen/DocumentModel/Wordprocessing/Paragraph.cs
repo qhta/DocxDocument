@@ -60,6 +60,4 @@ public partial class Paragraph
   /// </summary>
   public DocumentModel.Wordprocessing.ParagraphProperties? ParagraphProperties { get; set; }
   
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
-  
 }

@@ -24,6 +24,4 @@ public partial class AreaChart
   
   public DocumentModel.Drawings.Charts.AreaChartExtensionList? AreaChartExtensionList { get; set; }
   
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
-  
 }

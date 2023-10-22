@@ -12,10 +12,4 @@ public partial class TableIndentation
   /// </summary>
   public Int32? Width { get; set; }
   
-  
-  /// <summary>
-  ///   type
-  /// </summary>
-  public DocumentModel.Wordprocessing.TableWidthUnitKind? Type { get; set; }
-  
 }

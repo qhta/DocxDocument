@@ -14,12 +14,6 @@ public partial class Connection
   
   
   /// <summary>
-  ///   Point Type
-  /// </summary>
-  public DocumentModel.Drawings.Diagrams.ConnectionKind? Type { get; set; }
-  
-  
-  /// <summary>
   ///   Source Identifier
   /// </summary>
   public String? SourceId { get; set; }

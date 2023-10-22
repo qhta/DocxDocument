@@ -8,12 +8,6 @@ public partial class StrokeChildType
 {
   
   /// <summary>
-  ///   VML Extension Handling Behavior
-  /// </summary>
-  public DocumentModel.Vml.ExtensionHandlingBehaviorKind? Extension { get; set; }
-  
-  
-  /// <summary>
   ///   Stroke Toggle
   /// </summary>
   public DM.TrueFalseValue? On { get; set; }
@@ -44,27 +38,9 @@ public partial class StrokeChildType
   
   
   /// <summary>
-  ///   Stroke Line Style
-  /// </summary>
-  public DocumentModel.Vml.StrokeLineStyleKind? LineStyle { get; set; }
-  
-  
-  /// <summary>
   ///   Miter Joint Limit
   /// </summary>
   public Decimal? MiterLimit { get; set; }
-  
-  
-  /// <summary>
-  ///   Line End Join Style)
-  /// </summary>
-  public DocumentModel.Vml.StrokeJoinStyleKind? JoinStyle { get; set; }
-  
-  
-  /// <summary>
-  ///   Line End Cap
-  /// </summary>
-  public DocumentModel.Vml.StrokeEndCapKind? EndCap { get; set; }
   
   
   /// <summary>
@@ -80,21 +56,9 @@ public partial class StrokeChildType
   
   
   /// <summary>
-  ///   Stroke Image Style
-  /// </summary>
-  public DocumentModel.Vml.FillTypeKind? FillType { get; set; }
-  
-  
-  /// <summary>
   ///   Stroke Image Location
   /// </summary>
   public String? Source { get; set; }
-  
-  
-  /// <summary>
-  ///   Stroke Image Aspect Ratio
-  /// </summary>
-  public DocumentModel.Vml.ImageAspectKind? ImageAspect { get; set; }
   
   
   /// <summary>
@@ -107,42 +71,6 @@ public partial class StrokeChildType
   ///   Stoke Image Alignment
   /// </summary>
   public DM.TrueFalseValue? ImageAlignShape { get; set; }
-  
-  
-  /// <summary>
-  ///   Line Start Arrowhead
-  /// </summary>
-  public DocumentModel.Vml.StrokeArrowKind? StartArrow { get; set; }
-  
-  
-  /// <summary>
-  ///   Line Start Arrowhead Width
-  /// </summary>
-  public DocumentModel.Vml.StrokeArrowWidthKind? StartArrowWidth { get; set; }
-  
-  
-  /// <summary>
-  ///   Line Start Arrowhead Length
-  /// </summary>
-  public DocumentModel.Vml.StrokeArrowLengthKind? StartArrowLength { get; set; }
-  
-  
-  /// <summary>
-  ///   Line End Arrowhead
-  /// </summary>
-  public DocumentModel.Vml.StrokeArrowKind? EndArrow { get; set; }
-  
-  
-  /// <summary>
-  ///   Line End Arrowhead Width
-  /// </summary>
-  public DocumentModel.Vml.StrokeArrowWidthKind? EndArrowWidth { get; set; }
-  
-  
-  /// <summary>
-  ///   Line End Arrowhead Length
-  /// </summary>
-  public DocumentModel.Vml.StrokeArrowLengthKind? EndArrowLength { get; set; }
   
   
   /// <summary>

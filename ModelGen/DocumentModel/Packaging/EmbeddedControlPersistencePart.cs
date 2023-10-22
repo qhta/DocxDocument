@@ -6,12 +6,6 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public partial class EmbeddedControlPersistencePart
 {
-  
-  /// <summary>
-  ///   Gets the EmbeddedControlPersistenceBinaryDataParts of the EmbeddedControlPersistencePart
-  /// </summary>
-  public Collection<EmbeddedControlPersistenceBinaryDataPart>? EmbeddedControlPersistenceBinaryDataParts { get; set; }
-  
   public String? RelationshipType { get; set; }
   
 }

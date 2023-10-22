@@ -6,6 +6,4 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class BubbleSerExtensionList
 {
-  public DM.ElementCollection<BubbleSerExtension>? Items { get; set; }
-  
 }

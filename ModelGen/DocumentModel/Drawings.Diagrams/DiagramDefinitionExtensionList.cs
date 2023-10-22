@@ -6,6 +6,4 @@ namespace DocumentModel.Drawings.Diagrams;
 /// </summary>
 public partial class DiagramDefinitionExtensionList
 {
-  public DM.ElementCollection<DiagramDefinitionExtension>? Items { get; set; }
-  
 }

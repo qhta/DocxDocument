@@ -50,12 +50,6 @@ public partial class OuterShadow
   
   
   /// <summary>
-  ///   Specifies shadow alignment; alignment happens first, effectively setting the origin for scale, skew, and offset.
-  /// </summary>
-  public DocumentModel.Drawings.RectangleAlignmentKind? Alignment { get; set; }
-  
-  
-  /// <summary>
   ///   Rotate With Shape
   /// </summary>
   public Boolean? RotateWithShape { get; set; }

@@ -12,8 +12,8 @@ public class PropInfo : MemberElement
   public PropertyInfo? PropertyInfo { get => ReflectionInfo as PropertyInfo; set => ReflectionInfo = value; }
   [XmlIgnore]
   public TypeInfo PropertyType { get; set; }
-  [XmlIgnore]
-  public TypeInfo? TargetPropertyType { get; set; }
+  //[XmlIgnore]
+  //public TypeInfo? TargetPropertyType { get; set; }
   [XmlIgnore]
   public FullTypeName? TargetPropertyTypeName { get; set; }
 

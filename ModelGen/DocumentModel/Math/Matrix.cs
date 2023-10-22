@@ -12,6 +12,4 @@ public partial class Matrix
   /// </summary>
   public DocumentModel.Math.MatrixProperties? MatrixProperties { get; set; }
   
-  public DM.ElementCollection<MatrixRow>? Items { get; set; }
-  
 }

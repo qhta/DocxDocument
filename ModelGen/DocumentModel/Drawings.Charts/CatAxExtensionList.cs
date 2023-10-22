@@ -6,6 +6,4 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class CatAxExtensionList
 {
-  public DM.ElementCollection<CatAxExtension>? Items { get; set; }
-  
 }

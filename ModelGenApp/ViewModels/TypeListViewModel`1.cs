@@ -362,7 +362,19 @@ public class TypeListViewModel<T> : ViewModel where T : TypeInfoViewModel
   }
   #endregion
 
-  public bool HasAnyInvalidTypes => VisibleItems.Any(item => item.Model.IsInvalid(this.Phase.PhaseNum));
+  public bool ShowErrorColumn => VisibleItems.Any(item => item.Model.IsInvalid(this.Phase.PhaseNum));
+  //{
+  //  get
+  //  {
+  //    var visibleItems = VisibleItems.ToArray();
+  //    foreach (var item in visibleItems)
+  //    {
+  //      if (item.Model.IsInvalid(this.Phase.PhaseNum))
+  //        return true;
+  //    }
+  //    return false;
+  //  }
+  //}
 
 
 }

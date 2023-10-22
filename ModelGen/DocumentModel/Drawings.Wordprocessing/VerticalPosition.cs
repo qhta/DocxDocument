@@ -8,12 +8,6 @@ public partial class VerticalPosition
 {
   
   /// <summary>
-  ///   Vertical Position Relative Base
-  /// </summary>
-  public DocumentModel.Drawings.Wordprocessing.VerticalRelativePositionKind? RelativeFrom { get; set; }
-  
-  
-  /// <summary>
   ///   Relative Vertical Alignment.
   /// </summary>
   public DocumentModel.Drawings.Wordprocessing.VerticalAlignment? VerticalAlignment { get; set; }

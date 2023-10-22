@@ -8,12 +8,6 @@ public partial class Style
 {
   
   /// <summary>
-  ///   Style Type
-  /// </summary>
-  public DocumentModel.Wordprocessing.StyleKind? Type { get; set; }
-  
-  
-  /// <summary>
   ///   Style ID
   /// </summary>
   public String? StyleId { get; set; }
@@ -155,7 +149,5 @@ public partial class Style
   ///   Style Table Cell Properties.
   /// </summary>
   public DocumentModel.Wordprocessing.StyleTableCellProperties? StyleTableCellProperties { get; set; }
-  
-  public DM.ElementCollection<TableStyleProperties>? Items { get; set; }
   
 }

@@ -14,12 +14,6 @@ public partial class Color
   
   
   /// <summary>
-  ///   Run Content Theme Color
-  /// </summary>
-  public DocumentModel.Wordprocessing.ThemeColorKind? ThemeColor { get; set; }
-  
-  
-  /// <summary>
   ///   Run Content Theme Color Tint
   /// </summary>
   public String? ThemeTint { get; set; }

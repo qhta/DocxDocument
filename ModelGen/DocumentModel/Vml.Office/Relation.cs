@@ -8,12 +8,6 @@ public partial class Relation
 {
   
   /// <summary>
-  ///   VML Extension Handling Behavior
-  /// </summary>
-  public DocumentModel.Vml.ExtensionHandlingBehaviorKind? Extension { get; set; }
-  
-  
-  /// <summary>
   ///   Diagram Relationship Source Shape
   /// </summary>
   public String? SourceId { get; set; }

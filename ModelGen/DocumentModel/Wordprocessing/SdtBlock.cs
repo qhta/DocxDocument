@@ -16,6 +16,4 @@ public partial class SdtBlock
   
   public DocumentModel.Wordprocessing.SdtEndCharProperties? SdtEndCharProperties { get; set; }
   
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
-  
 }

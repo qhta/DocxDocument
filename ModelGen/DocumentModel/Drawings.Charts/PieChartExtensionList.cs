@@ -6,6 +6,4 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class PieChartExtensionList
 {
-  public DM.ElementCollection<PieChartExtension>? Items { get; set; }
-  
 }

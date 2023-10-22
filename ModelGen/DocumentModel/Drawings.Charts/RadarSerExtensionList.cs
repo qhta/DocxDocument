@@ -6,6 +6,4 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class RadarSerExtensionList
 {
-  public DM.ElementCollection<RadarSerExtension>? Items { get; set; }
-  
 }

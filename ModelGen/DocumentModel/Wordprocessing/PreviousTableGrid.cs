@@ -6,6 +6,4 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class PreviousTableGrid
 {
-  public DM.ElementCollection<GridColumn>? Items { get; set; }
-  
 }

@@ -22,6 +22,4 @@ public partial class ColorsDefinition
   
   public DocumentModel.Drawings.Diagrams.ExtensionList? ExtensionList { get; set; }
   
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
-  
 }

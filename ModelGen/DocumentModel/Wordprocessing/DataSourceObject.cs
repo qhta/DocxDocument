@@ -44,6 +44,4 @@ public partial class DataSourceObject
   
   public DocumentModel.Wordprocessing.RecipientDataReference? RecipientDataReference { get; set; }
   
-  public DM.ElementCollection<FieldMapData>? Items { get; set; }
-  
 }

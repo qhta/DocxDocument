@@ -12,5 +12,11 @@ public enum ErrorCode
   MissingDescription,
   MeaninglessDescription,
   MultiplicatedName,
+  MissingTargetNamespace,
+  UnregisteredNamespace,
   MissingTargetType,
+  MissingGenericArgType,
+  InvalidGenericArgType,
+  MissingPropertyTargetType,
+  InvalidProperties,
 }

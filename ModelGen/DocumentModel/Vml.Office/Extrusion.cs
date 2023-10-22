@@ -8,27 +8,9 @@ public partial class Extrusion
 {
   
   /// <summary>
-  ///   VML Extension Handling Behavior
-  /// </summary>
-  public DocumentModel.Vml.ExtensionHandlingBehaviorKind? Extension { get; set; }
-  
-  
-  /// <summary>
   ///   Extrusion Toggle
   /// </summary>
   public DM.TrueFalseValue? On { get; set; }
-  
-  
-  /// <summary>
-  ///   Extrusion Type
-  /// </summary>
-  public DocumentModel.Vml.Office.ExtrusionKind? Type { get; set; }
-  
-  
-  /// <summary>
-  ///   Extrusion Render Mode
-  /// </summary>
-  public DocumentModel.Vml.Office.ExtrusionRenderKind? Render { get; set; }
   
   
   /// <summary>

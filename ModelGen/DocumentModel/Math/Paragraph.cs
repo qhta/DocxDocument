@@ -12,6 +12,4 @@ public partial class Paragraph
   /// </summary>
   public DocumentModel.Math.ParagraphProperties? ParagraphProperties { get; set; }
   
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
-  
 }

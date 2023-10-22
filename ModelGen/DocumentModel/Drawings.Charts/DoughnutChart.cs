@@ -20,6 +20,4 @@ public partial class DoughnutChart
   
   public DocumentModel.Drawings.Charts.ExtensionList? ExtensionList { get; set; }
   
-  public DM.ElementCollection<PieChartSeries>? Items { get; set; }
-  
 }

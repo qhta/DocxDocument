@@ -6,6 +6,4 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class OfficeStyleSheetExtensionList
 {
-  public DM.ElementCollection<OfficeStyleSheetExtension>? Items { get; set; }
-  
 }

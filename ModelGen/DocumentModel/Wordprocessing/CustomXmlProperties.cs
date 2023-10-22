@@ -12,6 +12,4 @@ public partial class CustomXmlProperties
   /// </summary>
   public DocumentModel.Wordprocessing.CustomXmlPlaceholder? CustomXmlPlaceholder { get; set; }
   
-  public DM.ElementCollection<CustomXmlAttribute>? Items { get; set; }
-  
 }

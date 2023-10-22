@@ -15,9 +15,7 @@ public class ModelGenerator : BaseCodeGenerator
     if (typeInfo.TypeKind == TypeKind.@enum)
       return GenerateEnumType(typeInfo);
     else
-    if (!typeInfo.IsConstructedGenericType)
       return GenerateClassType(typeInfo);
-    return false;
   }
 
   #region Class type generation
@@ -25,8 +23,6 @@ public class ModelGenerator : BaseCodeGenerator
   private bool GenerateClassType(TypeInfo type)
   {
     var typeName = type.TargetName;
-    if (typeName.Contains('<'))
-      return false;
     var aNamespace = type.GetTargetNamespace();
     aNamespace = TrimDocumentModel(aNamespace);
     var outputPath = Path.Combine(OutputPath, aNamespace);

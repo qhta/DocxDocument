@@ -12,6 +12,4 @@ public partial class TableCell
   /// </summary>
   public DocumentModel.Wordprocessing.TableCellProperties? TableCellProperties { get; set; }
   
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
-  
 }

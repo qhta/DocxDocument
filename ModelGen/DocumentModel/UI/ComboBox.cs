@@ -240,6 +240,4 @@ public partial class ComboBox
   /// </summary>
   public String? GetShowImage { get; set; }
   
-  public DM.ElementCollection<Item>? Items { get; set; }
-  
 }

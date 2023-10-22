@@ -8,12 +8,6 @@ public partial class ShapeDefaults
 {
   
   /// <summary>
-  ///   VML Extension Handling Behavior
-  /// </summary>
-  public DocumentModel.Vml.ExtensionHandlingBehaviorKind? Extension { get; set; }
-  
-  
-  /// <summary>
   ///   Shape ID Optional Storage
   /// </summary>
   public Int64? MaxShapeId { get; set; }
@@ -59,12 +53,6 @@ public partial class ShapeDefaults
   ///   allowoverlap
   /// </summary>
   public DM.TrueFalseValue? AllowOverlap { get; set; }
-  
-  
-  /// <summary>
-  ///   insetmode
-  /// </summary>
-  public DocumentModel.Vml.Office.InsetMarginKind? InsetMode { get; set; }
   
   
   /// <summary>

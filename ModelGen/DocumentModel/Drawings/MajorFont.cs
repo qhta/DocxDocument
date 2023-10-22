@@ -14,6 +14,4 @@ public partial class MajorFont
   
   public DocumentModel.Drawings.ExtensionList? ExtensionList { get; set; }
   
-  public DM.ElementCollection<SupplementalFont>? Items { get; set; }
-  
 }
