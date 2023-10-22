@@ -6,6 +6,4 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class Level
 {
-  public DM.ElementCollection<StringPoint>? Items { get; set; }
-  
 }

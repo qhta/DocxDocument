@@ -130,7 +130,7 @@
     <value>Brak opisu</value>
   </data>
   <data name="MultiplicatedName" xml:space="preserve">
-    <value>Przestrzeń nazw zawiera wiele typów o tej samej nazwie.</value>
+    <value>Docelowa przestrzeń nazw zawiera wiele typów o tej samej nazwie.</value>
   </data>
   <data name="Namespaces" xml:space="preserve">
     <value>Przestrzenie nazw</value>
@@ -644,5 +644,23 @@ Użyj znaku '*' aby dopasować wzorzec do wielu znaków.</value>
   </data>
   <data name="GeneratedTypes" xml:space="preserve">
     <value>Wygenerowane typy</value>
+  </data>
+  <data name="MissingTargetNamespace" xml:space="preserve">
+    <value>Brak docelowej przestrzeni nazw</value>
+  </data>
+  <data name="UnregisteredNamespace" xml:space="preserve">
+    <value>Niezarejestrowana przestrzeń nazw {0}</value>
+  </data>
+  <data name="InvalidProperties" xml:space="preserve">
+    <value>Błędne właściwości</value>
+  </data>
+  <data name="MissingGenericArgType" xml:space="preserve">
+    <value>Brak argumentu typu generycznego</value>
+  </data>
+  <data name="InvalidGenericArgType" xml:space="preserve">
+    <value>Błędny argument typu generycznego</value>
+  </data>
+  <data name="MissingPropertyTargetType" xml:space="preserve">
+    <value>Brak docelowego typu właściwości</value>
   </data>
 </root>

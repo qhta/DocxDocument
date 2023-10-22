@@ -12,6 +12,4 @@ public partial class ImageLayer
   /// </summary>
   public String? Embed { get; set; }
   
-  public DM.ElementCollection<ImageEffect>? Items { get; set; }
-  
 }

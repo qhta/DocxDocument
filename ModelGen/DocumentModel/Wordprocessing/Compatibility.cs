@@ -390,6 +390,4 @@ public partial class Compatibility
   /// </summary>
   public DocumentModel.Wordprocessing.CachedColumnBalance? CachedColumnBalance { get; set; }
   
-  public DM.ElementCollection<CompatibilitySetting>? Items { get; set; }
-  
 }

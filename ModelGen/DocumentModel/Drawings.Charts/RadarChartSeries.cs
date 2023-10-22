@@ -50,6 +50,4 @@ public partial class RadarChartSeries
   
   public DocumentModel.Drawings.Charts.RadarSerExtensionList? RadarSerExtensionList { get; set; }
   
-  public DM.ElementCollection<DataPoint>? Items { get; set; }
-  
 }

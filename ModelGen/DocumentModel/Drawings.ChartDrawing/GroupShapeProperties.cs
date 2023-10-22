@@ -8,12 +8,6 @@ public partial class GroupShapeProperties
 {
   
   /// <summary>
-  ///   Black and White Mode
-  /// </summary>
-  public DocumentModel.Drawings.BlackWhiteMode? BlackWhiteMode { get; set; }
-  
-  
-  /// <summary>
   ///   2D Transform for Grouped Objects.
   /// </summary>
   public DocumentModel.Drawings.TransformGroup? TransformGroup { get; set; }

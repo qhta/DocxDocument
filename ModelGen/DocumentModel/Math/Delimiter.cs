@@ -12,6 +12,4 @@ public partial class Delimiter
   /// </summary>
   public DocumentModel.Math.DelimiterProperties? DelimiterProperties { get; set; }
   
-  public DM.ElementCollection<Base>? Items { get; set; }
-  
 }

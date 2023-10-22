@@ -90,6 +90,4 @@ public partial class Tab
   /// </summary>
   public String? GetKeytip { get; set; }
   
-  public DM.ElementCollection<Group>? Items { get; set; }
-  
 }

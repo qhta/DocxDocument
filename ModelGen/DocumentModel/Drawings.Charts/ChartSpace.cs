@@ -26,8 +26,6 @@ public partial class ChartSpace
   
   public Byte? Style { get; set; }
   
-  public Byte? Style { get; set; }
-  
   public DocumentModel.Drawings.Charts.ColorMapOverride? ColorMapOverride { get; set; }
   
   public DocumentModel.Drawings.Charts.PivotSource? PivotSource { get; set; }

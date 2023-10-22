@@ -14,12 +14,6 @@ public partial class RibbonAndBackstageCustomizationsPart
   /// </summary>
   public DM.CustomUI? CustomUI { get; set; }
   
-  
-  /// <summary>
-  ///   Gets the ImageParts of the RibbonAndBackstageCustomizationsPart
-  /// </summary>
-  public Collection<ImagePart>? ImageParts { get; set; }
-  
   public String? RelationshipType { get; set; }
   
 }

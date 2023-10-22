@@ -10,12 +10,6 @@ public partial class DiagramLayoutDefinitionPart
   
   
   /// <summary>
-  ///   Gets the ImageParts of the DiagramLayoutDefinitionPart
-  /// </summary>
-  public Collection<ImagePart>? ImageParts { get; set; }
-  
-  
-  /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>
   public DocumentModel.Drawings.Diagrams.LayoutDefinition? LayoutDefinition { get; set; }

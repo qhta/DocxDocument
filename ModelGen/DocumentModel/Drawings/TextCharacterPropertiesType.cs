@@ -48,27 +48,9 @@ public partial class TextCharacterPropertiesType
   
   
   /// <summary>
-  ///   u
-  /// </summary>
-  public DocumentModel.Drawings.TextUnderlineKind? Underline { get; set; }
-  
-  
-  /// <summary>
-  ///   strike
-  /// </summary>
-  public DocumentModel.Drawings.TextStrikeKind? Strike { get; set; }
-  
-  
-  /// <summary>
   ///   kern
   /// </summary>
   public Int32? Kerning { get; set; }
-  
-  
-  /// <summary>
-  ///   cap
-  /// </summary>
-  public DocumentModel.Drawings.TextCapsKind? Capital { get; set; }
   
   
   /// <summary>

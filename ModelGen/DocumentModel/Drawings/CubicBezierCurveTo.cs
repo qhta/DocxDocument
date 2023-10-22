@@ -6,6 +6,4 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class CubicBezierCurveTo
 {
-  public DM.ElementCollection<Point>? Items { get; set; }
-  
 }

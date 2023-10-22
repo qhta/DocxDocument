@@ -14,12 +14,6 @@ public partial class Fill
   
   
   /// <summary>
-  ///   Fill Type
-  /// </summary>
-  public DocumentModel.Vml.FillTypeKind? Type { get; set; }
-  
-  
-  /// <summary>
   ///   Fill Toggle
   /// </summary>
   public DM.TrueFalseValue? On { get; set; }
@@ -80,12 +74,6 @@ public partial class Fill
   
   
   /// <summary>
-  ///   Image Aspect Ratio
-  /// </summary>
-  public DocumentModel.Vml.ImageAspectKind? Aspect { get; set; }
-  
-  
-  /// <summary>
   ///   Intermediate Colors
   /// </summary>
   public String? Colors { get; set; }
@@ -119,12 +107,6 @@ public partial class Fill
   ///   Radial Gradient Center
   /// </summary>
   public String? FocusPosition { get; set; }
-  
-  
-  /// <summary>
-  ///   Gradient Fill Method
-  /// </summary>
-  public DocumentModel.Vml.FillMethodKind? Method { get; set; }
   
   
   /// <summary>

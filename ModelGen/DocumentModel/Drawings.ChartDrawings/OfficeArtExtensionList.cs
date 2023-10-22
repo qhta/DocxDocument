@@ -6,6 +6,4 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// </summary>
 public partial class OfficeArtExtensionList
 {
-  public DM.ElementCollection<Extension>? Items { get; set; }
-  
 }

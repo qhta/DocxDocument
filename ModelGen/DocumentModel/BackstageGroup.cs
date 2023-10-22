@@ -80,12 +80,6 @@ public partial class BackstageGroup
   
   
   /// <summary>
-  ///   style, this property is only available in Office 2010 and later.
-  /// </summary>
-  public DM.StyleKind? Style { get; set; }
-  
-  
-  /// <summary>
   ///   getStyle, this property is only available in Office 2010 and later.
   /// </summary>
   public String? GetStyle { get; set; }

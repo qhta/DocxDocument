@@ -18,6 +18,4 @@ public partial class GroupShape
   /// </summary>
   public DocumentModel.Drawings.ChartDrawing.GroupShapeProperties? GroupShapeProperties { get; set; }
   
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
-  
 }

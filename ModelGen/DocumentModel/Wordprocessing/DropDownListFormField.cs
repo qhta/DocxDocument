@@ -18,6 +18,4 @@ public partial class DropDownListFormField
   /// </summary>
   public Int32? DefaultDropDownListItemIndex { get; set; }
   
-  public DM.ElementCollection<ListEntryFormField>? Items { get; set; }
-  
 }

@@ -6,6 +6,4 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class ConnectorLockingExtensionList
 {
-  public DM.ElementCollection<ConnectorLockingExtension>? Items { get; set; }
-  
 }

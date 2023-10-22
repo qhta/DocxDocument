@@ -78,7 +78,12 @@ public class MainViewModel : ViewModel
       {
         var phaseNum = (sender as ProcessOptionsViewModel)?.StopAtPhase;
         if (phaseNum is int n)
+        {
           ModelCreator.StopAtPhase = (PPS)Enum.ToObject(typeof(PPS), n);
+          var options = this.ProcessOptionsVM.Model;
+          options.StopAtPhase =n;
+          ProcessOptionsMgr.SaveInstance((ProcessOptions)options);
+        }
       }
     StartProcessCommand.NotifyCanExecuteChanged();
     CommandManager.InvalidateRequerySuggested();

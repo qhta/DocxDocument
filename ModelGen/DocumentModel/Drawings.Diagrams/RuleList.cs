@@ -6,6 +6,4 @@ namespace DocumentModel.Drawings.Diagrams;
 /// </summary>
 public partial class RuleList
 {
-  public DM.ElementCollection<Rule>? Items { get; set; }
-  
 }

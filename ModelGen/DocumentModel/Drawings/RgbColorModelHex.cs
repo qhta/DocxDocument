@@ -18,6 +18,4 @@ public partial class RgbColorModelHex
   /// </summary>
   public Int32? LegacySpreadsheetColorIndex { get; set; }
   
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
-  
 }

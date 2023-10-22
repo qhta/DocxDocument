@@ -26,12 +26,6 @@ public partial class GroupBox
   
   
   /// <summary>
-  ///   expand, this property is only available in Office 2010 and later.
-  /// </summary>
-  public DM.ExpandKind? Expand { get; set; }
-  
-  
-  /// <summary>
   ///   label, this property is only available in Office 2010 and later.
   /// </summary>
   public String? Label { get; set; }
@@ -41,7 +35,5 @@ public partial class GroupBox
   ///   getLabel, this property is only available in Office 2010 and later.
   /// </summary>
   public String? GetLabel { get; set; }
-  
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
   
 }

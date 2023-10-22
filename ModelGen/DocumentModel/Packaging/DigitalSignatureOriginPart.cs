@@ -10,10 +10,4 @@ public partial class DigitalSignatureOriginPart
   
   public String? RelationshipType { get; set; }
   
-  
-  /// <summary>
-  ///   Gets the XmlSignatureParts of the DigitalSignatureOriginPart
-  /// </summary>
-  public Collection<XmlSignaturePart>? XmlSignatureParts { get; set; }
-  
 }

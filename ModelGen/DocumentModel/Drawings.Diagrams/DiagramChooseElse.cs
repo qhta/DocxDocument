@@ -12,6 +12,4 @@ public partial class DiagramChooseElse
   /// </summary>
   public String? Name { get; set; }
   
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
-  
 }

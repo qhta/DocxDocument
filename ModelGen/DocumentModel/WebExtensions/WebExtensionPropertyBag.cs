@@ -6,6 +6,4 @@ namespace DocumentModel.WebExtensions;
 /// </summary>
 public partial class WebExtensionPropertyBag
 {
-  public DM.ElementCollection<WebExtensionProperty>? Items { get; set; }
-  
 }

@@ -24,10 +24,4 @@ public partial class LineNumberType
   /// </summary>
   public String? Distance { get; set; }
   
-  
-  /// <summary>
-  ///   Line Numbering Restart Setting
-  /// </summary>
-  public DocumentModel.Wordprocessing.LineNumberRestartKind? Restart { get; set; }
-  
 }

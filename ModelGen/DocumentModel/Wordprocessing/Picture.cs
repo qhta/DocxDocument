@@ -16,6 +16,4 @@ public partial class Picture
   
   public DocumentModel.Wordprocessing.Control? Control { get; set; }
   
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
-  
 }

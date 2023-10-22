@@ -6,6 +6,4 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class DeletedRun
 {
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
-  
 }

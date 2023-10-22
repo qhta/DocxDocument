@@ -8,12 +8,6 @@ public partial class FillOverlay
 {
   
   /// <summary>
-  ///   Specifies how to blend the fill with the base effect.
-  /// </summary>
-  public DocumentModel.Drawings.BlendMode? Blend { get; set; }
-  
-  
-  /// <summary>
   ///   NoFill.
   /// </summary>
   public DocumentModel.Drawings.NoFill? NoFill { get; set; }

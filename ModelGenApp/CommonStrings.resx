@@ -130,7 +130,7 @@
     <value>Missing description</value>
   </data>
   <data name="MultiplicatedName" xml:space="preserve">
-    <value>Owner namespace hase multiple types with the same name.</value>
+    <value>Target namespace has multiple types with the same name.</value>
   </data>
   <data name="Namespaces" xml:space="preserve">
     <value>Namespaces</value>
@@ -644,5 +644,23 @@ Use '*' wildcard character to match many characters.</value>
   </data>
   <data name="GeneratedTypes" xml:space="preserve">
     <value>Generated types</value>
+  </data>
+  <data name="MissingTargetNamespace" xml:space="preserve">
+    <value>Missing target namespace</value>
+  </data>
+  <data name="UnregisteredNamespace" xml:space="preserve">
+    <value>Unregistered namespace {0}</value>
+  </data>
+  <data name="InvalidProperties" xml:space="preserve">
+    <value>Invalid properties</value>
+  </data>
+  <data name="MissingGenericArgType" xml:space="preserve">
+    <value>Missing generic argument type</value>
+  </data>
+  <data name="InvalidGenericArgType" xml:space="preserve">
+    <value>Invalid generic argument type</value>
+  </data>
+  <data name="MissingPropertyTargetType" xml:space="preserve">
+    <value>Missing property target type</value>
   </data>
 </root>

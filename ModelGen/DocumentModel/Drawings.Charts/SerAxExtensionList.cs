@@ -6,6 +6,4 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class SerAxExtensionList
 {
-  public DM.ElementCollection<SerAxExtension>? Items { get; set; }
-  
 }

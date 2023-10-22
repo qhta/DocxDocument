@@ -26,12 +26,6 @@ public partial class HiddenShape3D
   
   
   /// <summary>
-  ///   Preset Material Type
-  /// </summary>
-  public DocumentModel.Drawings.PresetMaterialTypeKind? PresetMaterial { get; set; }
-  
-  
-  /// <summary>
   ///   Top Bevel.
   /// </summary>
   public DocumentModel.Drawings.BevelTop? BevelTop { get; set; }

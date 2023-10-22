@@ -140,12 +140,6 @@ public partial class Shapetype
   
   
   /// <summary>
-  ///   Horizontal Rule Alignment
-  /// </summary>
-  public DocumentModel.Vml.Office.HorizontalRuleAlignmentKind? HorizontalAlignment { get; set; }
-  
-  
-  /// <summary>
   ///   Allow in Table Cell
   /// </summary>
   public DM.TrueFalseValue? AllowInCell { get; set; }
@@ -206,12 +200,6 @@ public partial class Shapetype
   
   
   /// <summary>
-  ///   Text Inset Mode
-  /// </summary>
-  public DocumentModel.Vml.Office.InsetMarginKind? InsetMode { get; set; }
-  
-  
-  /// <summary>
   ///   Shape Fill Toggle
   /// </summary>
   public DM.TrueFalseValue? Filled { get; set; }
@@ -251,30 +239,6 @@ public partial class Shapetype
   ///   Optional Number
   /// </summary>
   public Int32? OptionalNumber { get; set; }
-  
-  
-  /// <summary>
-  ///   Shape Connector Type
-  /// </summary>
-  public DocumentModel.Vml.Office.ConnectorKind? ConnectorType { get; set; }
-  
-  
-  /// <summary>
-  ///   Black-and-White Mode
-  /// </summary>
-  public DocumentModel.Vml.Office.BlackAndWhiteMode? BlackWhiteMode { get; set; }
-  
-  
-  /// <summary>
-  ///   Pure Black-and-White Mode
-  /// </summary>
-  public DocumentModel.Vml.Office.BlackAndWhiteMode? PureBlackWhiteMode { get; set; }
-  
-  
-  /// <summary>
-  ///   Normal Black-and-White Mode
-  /// </summary>
-  public DocumentModel.Vml.Office.BlackAndWhiteMode? NormalBlackWhiteMode { get; set; }
   
   
   /// <summary>
@@ -331,7 +295,5 @@ public partial class Shapetype
   public String? Master { get; set; }
   
   public DocumentModel.Vml.Office.Complex? Complex { get; set; }
-  
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
   
 }

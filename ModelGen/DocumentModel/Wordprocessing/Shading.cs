@@ -8,21 +8,9 @@ public partial class Shading
 {
   
   /// <summary>
-  ///   Shading Pattern
-  /// </summary>
-  public DocumentModel.Wordprocessing.ShadingPatternKind? Val { get; set; }
-  
-  
-  /// <summary>
   ///   Shading Pattern Color
   /// </summary>
   public String? Color { get; set; }
-  
-  
-  /// <summary>
-  ///   Shading Pattern Theme Color
-  /// </summary>
-  public DocumentModel.Wordprocessing.ThemeColorKind? ThemeColor { get; set; }
   
   
   /// <summary>
@@ -41,12 +29,6 @@ public partial class Shading
   ///   Shading Background Color
   /// </summary>
   public String? Fill { get; set; }
-  
-  
-  /// <summary>
-  ///   Shading Background Theme Color
-  /// </summary>
-  public DocumentModel.Wordprocessing.ThemeColorKind? ThemeFill { get; set; }
   
   
   /// <summary>

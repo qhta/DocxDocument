@@ -8,21 +8,9 @@ public partial class Menu
 {
   
   /// <summary>
-  ///   size
-  /// </summary>
-  public DMUI.SizeKind? Size { get; set; }
-  
-  
-  /// <summary>
   ///   getSize
   /// </summary>
   public String? GetSize { get; set; }
-  
-  
-  /// <summary>
-  ///   itemSize
-  /// </summary>
-  public DMUI.ItemSizeKind? ItemSize { get; set; }
   
   
   /// <summary>
@@ -197,7 +185,5 @@ public partial class Menu
   ///   getShowImage
   /// </summary>
   public String? GetShowImage { get; set; }
-  
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
   
 }

@@ -6,10 +6,4 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class TextType
 {
-  
-  /// <summary>
-  ///   space
-  /// </summary>
-  public DM.SpaceProcessingMode? Space { get; set; }
-  
 }

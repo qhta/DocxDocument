@@ -8,12 +8,6 @@ public partial class DynamicMenu
 {
   
   /// <summary>
-  ///   size, this property is only available in Office 2010 and later.
-  /// </summary>
-  public DM.SizeKind? Size { get; set; }
-  
-  
-  /// <summary>
   ///   getSize, this property is only available in Office 2010 and later.
   /// </summary>
   public String? GetSize { get; set; }

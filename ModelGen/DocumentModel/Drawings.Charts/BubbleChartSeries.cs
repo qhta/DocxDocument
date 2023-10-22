@@ -54,6 +54,4 @@ public partial class BubbleChartSeries
   
   public DocumentModel.Drawings.Charts.BubbleSerExtensionList? BubbleSerExtensionList { get; set; }
   
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
-  
 }

@@ -6,6 +6,4 @@ namespace DocumentModel.Drawings.Diagram1;
 /// </summary>
 public partial class NumberDiagramInfoList
 {
-  public DM.ElementCollection<NumberDiagramInfo>? Items { get; set; }
-  
 }

@@ -18,6 +18,4 @@ public partial class PlotArea
   
   public DocumentModel.Drawings.Charts.ExtensionList? ExtensionList { get; set; }
   
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
-  
 }

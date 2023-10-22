@@ -80,12 +80,6 @@ public partial class Reflection
   
   
   /// <summary>
-  ///   Specifies shadow alignment.
-  /// </summary>
-  public DocumentModel.Drawings.RectangleAlignmentKind? Alignment { get; set; }
-  
-  
-  /// <summary>
   ///   Rotate With Shape
   /// </summary>
   public Boolean? RotateWithShape { get; set; }

@@ -30,15 +30,22 @@ public class ModelValidator
   public TDS TypeDataSelector { get; private set; }
 
   public int TotalTypesCount { get; private set; }
-  public int ValidatedTypesCount { get; private set; }
+
+  public HashSet<TypeInfo> ValidatedTypes { get; private set; } = new HashSet<TypeInfo>();
+  public int ValidatedTypesCount => ValidatedTypes.Count;
+
+  public HashSet<TypeInfo> InvalidTypes { get; private set; } = new HashSet<TypeInfo>();
+
+  public int InvalidTypesCount => InvalidTypes.Count;
+
   public int ValidTypesCount { get; private set; }
-  public int InvalidTypesCount { get; private set; }
 
   public bool ValidateTypes(IEnumerable<TypeInfo> types, ValidatingTypeEvent? OnValidatingType)
   {
     bool ok = true;
     ValidTypesCount = 0;
-    InvalidTypesCount = 0;
+    if (PhaseNum == PPS.ConvertTypes)
+      types = TypeManager.TypesAcceptedAfter(PhaseNum).Where(item => !item.IsConverted).Where(item=>item.TargetNamespace!=null);
     TotalTypesCount = types.Count();
     foreach (var typeInfo in types)
     {
@@ -53,7 +60,8 @@ public class ModelValidator
       if (result == false)
       {
         ok = false;
-        InvalidTypesCount++;
+        if (!InvalidTypes.Contains(typeInfo))
+          InvalidTypes.Add(typeInfo);
       }
       else if (result == true)
         ValidTypesCount++;
@@ -62,6 +70,16 @@ public class ModelValidator
   }
 
   public bool? ValidateType(TypeInfo typeInfo)
+  {
+    if (!ValidatedTypes.Contains(typeInfo))
+    {
+      ValidatedTypes.Add(typeInfo);
+      return ValidateTypeInPhase(typeInfo);
+    }
+    return null;
+  }
+
+  private bool? ValidateTypeInPhase(TypeInfo typeInfo)
   {
     switch (PhaseNum)
     {
@@ -77,9 +95,9 @@ public class ModelValidator
     return null;
   }
 
+  #region Validate scan
   public bool ValidateScan(TypeInfo typeInfo)
   {
-    ValidatedTypesCount++;
     var ok1 = CompareSchemaWithIncludeRelationships(typeInfo);
     var ok2 = ComparePropsWithIncludeRelationships(typeInfo);
     return ok1 && ok2;
@@ -174,12 +192,12 @@ public class ModelValidator
     }
     return ok;
   }
+  #endregion
 
   public bool? ValidateDescription(TypeInfo typeInfo)
   {
     if (!typeInfo.IsConstructedGenericType)
     {
-      ValidatedTypesCount++;
       var description = typeInfo.GetDescription()?.Trim();
       if (String.IsNullOrEmpty(description))
       {
@@ -205,7 +223,6 @@ public class ModelValidator
 
   public bool? ValidateTargetName(TypeInfo typeInfo)
   {
-    ValidatedTypesCount++;
     var targetNamespace = typeInfo.TargetNamespace;
     var targetName = typeInfo.GetFullName(true, false, false);
     var sameNameTypes = TypeManager.AllTypes.Where(item => item.IsAcceptedAfter(PhaseNum) && !item.IsConstructedGenericType)
@@ -221,17 +238,105 @@ public class ModelValidator
 
   public bool ValidateConversion(TypeInfo typeInfo)
   {
-    //if (typeInfo.IsAcceptedAfter(PPS.ConvertTypes) && !typeInfo.IsConstructedGenericType && !typeInfo.OriginalNamespace.StartsWith("System"))
-    //{
-    //  //var targetNamespace = typeInfo.TargetNamespace;
-    //  var targetType = typeInfo.TargetType;
-    //  if (targetType == null)
-    //  {
-    //    typeInfo.AddError(PhaseNum, ErrorCode.MissingTargetType);
-    //    return false;
-    //  }
-    //}
+    //if (typeInfo.Name.StartsWith("HeadingPairs"))
+    //  Debug.WriteLine($"ValidateConversion({typeInfo.Name})");
+    //var ok1 = ValidateTargetNamespace(typeInfo);
+    var ok2 = ValidateTargetType(typeInfo);
+    var ok3 = ValidatePropertiesTargets(typeInfo);
+    return /*ok1 &&*/ ok2 && ok3;
+  }
+
+  //public bool ValidateTargetNamespace(TypeInfo typeInfo)
+  //{
+  //  if (typeInfo.OriginalNamespace.StartsWith("System"))
+  //    return true;
+  //  if (typeInfo.IsConverted)
+  //    return true;
+  //  var targetNamespace = typeInfo.TargetNamespace;
+  //  if (targetNamespace == null)
+  //  {
+  //    typeInfo.AddError(PhaseNum, ErrorCode.MissingTargetNamespace);
+  //    return false;
+  //  }
+  //  var nsspace = TypeManager.GetNamespace(targetNamespace);
+  //  if (nsspace == null)
+  //  {
+  //    typeInfo.AddError(PhaseNum, ErrorCode.UnregisteredNamespace, targetNamespace);
+  //    return false;
+  //  }
+  //  return true;
+  //}
+
+  public bool ValidateTargetType(TypeInfo typeInfo)
+  {
+    var targetType = typeInfo.TargetType;
+    if (targetType == null)
+    {
+      typeInfo.AddError(PhaseNum, ErrorCode.MissingTargetType);
+      return false;
+    }
+    if (targetType.IsConstructedGenericType)
+    {
+      var argType = targetType.GetGenericArguments().FirstOrDefault();
+      if (argType == null)
+      {
+        typeInfo.AddError(PhaseNum, ErrorCode.MissingGenericArgType);
+        return false;
+      }
+      if (!(ValidateType(argType) ?? !argType.IsInvalid(PhaseNum)))
+      {
+        typeInfo.AddError(PhaseNum, ErrorCode.InvalidGenericArgType);
+        return false;
+      }
+    }
     return true;
   }
 
+  public bool ValidatePropertiesTargets(TypeInfo typeInfo)
+  {
+    if (typeInfo.Properties != null)
+    {
+      var ok = true;
+      foreach (var property in typeInfo.Properties.Where(item => item.IsAcceptedAfter(PhaseNum)))
+      {
+        if (!ValidatePropertyTargetType(property))
+        {
+          typeInfo.AddError(PhaseNum, ErrorCode.InvalidProperties);
+          ok = false;
+        }
+      }
+      return ok;
+    }
+    return true;
+  }
+
+  public bool ValidatePropertyTargetType(PropInfo propInfo)
+  {
+    //if (propInfo.PropertyType.Name.StartsWith("EnumValue"))
+    //  Debug.Assert(true);
+    var targetType = ModelManager.GetTargetPropertyType(propInfo);
+    if (targetType == null)
+    {
+      propInfo.AddError(PhaseNum, ErrorCode.MissingPropertyTargetType);
+      return false;
+    }
+    if (targetType.IsConstructedGenericType)
+    {
+      var argType = targetType.GetGenericArguments().FirstOrDefault();
+      if (argType == null)
+      {
+        propInfo.AddError(PhaseNum, ErrorCode.MissingGenericArgType);
+        return false;
+      }
+      if (!ValidatedTypes.Contains(argType))
+      {
+        if (!(ValidateType(argType) ?? !argType.IsInvalid(PhaseNum)))
+        {
+          propInfo.AddError(PhaseNum, ErrorCode.InvalidGenericArgType);
+          return false;
+        }
+      }
+    }
+    return true;
+  }
 }

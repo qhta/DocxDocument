@@ -16,6 +16,4 @@ public partial class SurfaceChart
   
   public DocumentModel.Drawings.Charts.SurfaceChartExtensionList? SurfaceChartExtensionList { get; set; }
   
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
-  
 }

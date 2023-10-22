@@ -6,6 +6,4 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class Bar3DChartExtensionList
 {
-  public DM.ElementCollection<Bar3DChartExtension>? Items { get; set; }
-  
 }

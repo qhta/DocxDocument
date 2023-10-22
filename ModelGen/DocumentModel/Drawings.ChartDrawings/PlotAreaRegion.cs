@@ -14,6 +14,4 @@ public partial class PlotAreaRegion
   
   public DocumentModel.Drawings.ChartDrawings.ExtensionList? ExtensionList { get; set; }
   
-  public DM.ElementCollection<Series>? Items { get; set; }
-  
 }

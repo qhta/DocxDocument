@@ -6,6 +6,4 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class AreaChartExtensionList
 {
-  public DM.ElementCollection<AreaChartExtension>? Items { get; set; }
-  
 }

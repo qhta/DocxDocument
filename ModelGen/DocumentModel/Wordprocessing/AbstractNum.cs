@@ -48,6 +48,4 @@ public partial class AbstractNum
   /// </summary>
   public DocumentModel.Wordprocessing.NumberingStyleLink? NumberingStyleLink { get; set; }
   
-  public DM.ElementCollection<Level>? Items { get; set; }
-  
 }

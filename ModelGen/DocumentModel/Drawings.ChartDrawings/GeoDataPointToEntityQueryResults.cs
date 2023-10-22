@@ -6,6 +6,4 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// </summary>
 public partial class GeoDataPointToEntityQueryResults
 {
-  public DM.ElementCollection<GeoDataPointToEntityQueryResult>? Items { get; set; }
-  
 }

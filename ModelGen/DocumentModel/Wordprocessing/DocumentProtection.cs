@@ -8,12 +8,6 @@ public partial class DocumentProtection
 {
   
   /// <summary>
-  ///   Document Editing Restrictions
-  /// </summary>
-  public DocumentModel.Wordprocessing.DocumentProtectionKind? Edit { get; set; }
-  
-  
-  /// <summary>
   ///   Only Allow Formatting With Unlocked Styles
   /// </summary>
   public Boolean? Formatting { get; set; }
@@ -23,24 +17,6 @@ public partial class DocumentProtection
   ///   Enforce Document Protection Settings
   /// </summary>
   public Boolean? Enforcement { get; set; }
-  
-  
-  /// <summary>
-  ///   Cryptographic Provider Type
-  /// </summary>
-  public DocumentModel.Wordprocessing.CryptProviderKind? CryptographicProviderType { get; set; }
-  
-  
-  /// <summary>
-  ///   Cryptographic Algorithm Class
-  /// </summary>
-  public DocumentModel.Wordprocessing.CryptAlgorithmClassKind? CryptographicAlgorithmClass { get; set; }
-  
-  
-  /// <summary>
-  ///   Cryptographic Algorithm Type
-  /// </summary>
-  public DocumentModel.Wordprocessing.CryptAlgorithmKind? CryptographicAlgorithmType { get; set; }
   
   
   /// <summary>

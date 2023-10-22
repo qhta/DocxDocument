@@ -6,6 +6,4 @@ namespace DocumentModel;
 /// </summary>
 public partial class Commands
 {
-  public DM.ElementCollection<Command>? Items { get; set; }
-  
 }

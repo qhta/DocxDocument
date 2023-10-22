@@ -6,6 +6,4 @@ namespace DocumentModel.WebExtensions;
 /// </summary>
 public partial class WebExtensionBindingList
 {
-  public DM.ElementCollection<WebExtensionBinding>? Items { get; set; }
-  
 }

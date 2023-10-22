@@ -6,6 +6,4 @@ namespace DocumentModel.Drawings.Diagrams;
 /// </summary>
 public partial class Constraints
 {
-  public DM.ElementCollection<Constraint>? Items { get; set; }
-  
 }

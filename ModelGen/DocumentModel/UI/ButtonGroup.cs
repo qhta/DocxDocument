@@ -54,6 +54,4 @@ public partial class ButtonGroup
   /// </summary>
   public String? InsertBeforeQ { get; set; }
   
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
-  
 }

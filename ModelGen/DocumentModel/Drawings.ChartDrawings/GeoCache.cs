@@ -12,6 +12,4 @@ public partial class GeoCache
   /// </summary>
   public String? Provider { get; set; }
   
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
-  
 }

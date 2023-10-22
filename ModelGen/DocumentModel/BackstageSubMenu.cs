@@ -102,6 +102,4 @@ public partial class BackstageSubMenu
   /// </summary>
   public String? GetKeytip { get; set; }
   
-  public DM.ElementCollection<BackstageMenuGroup>? Items { get; set; }
-  
 }

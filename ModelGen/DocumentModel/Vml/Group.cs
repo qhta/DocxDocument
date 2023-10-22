@@ -140,12 +140,6 @@ public partial class Group
   
   
   /// <summary>
-  ///   hralign
-  /// </summary>
-  public DocumentModel.Vml.Office.HorizontalRuleAlignmentKind? HorizontalAlignment { get; set; }
-  
-  
-  /// <summary>
   ///   allowincell
   /// </summary>
   public DM.TrueFalseValue? AllowInCell { get; set; }
@@ -182,21 +176,9 @@ public partial class Group
   
   
   /// <summary>
-  ///   insetmode
-  /// </summary>
-  public DocumentModel.Vml.Office.InsetMarginKind? InsetMode { get; set; }
-  
-  
-  /// <summary>
   ///   Encoded Package
   /// </summary>
   public DM.Base64Binary? Gfxdata { get; set; }
-  
-  
-  /// <summary>
-  ///   Group Diagram Type
-  /// </summary>
-  public DocumentModel.Vml.EditAsKind? EditAs { get; set; }
   
   
   /// <summary>
@@ -209,7 +191,5 @@ public partial class Group
   ///   Table Row Height Limits
   /// </summary>
   public String? TableLimits { get; set; }
-  
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
   
 }

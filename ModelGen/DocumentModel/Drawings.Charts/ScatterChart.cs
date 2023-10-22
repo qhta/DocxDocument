@@ -22,6 +22,4 @@ public partial class ScatterChart
   
   public DocumentModel.Drawings.Charts.ScatterChartExtensionList? ScatterChartExtensionList { get; set; }
   
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
-  
 }

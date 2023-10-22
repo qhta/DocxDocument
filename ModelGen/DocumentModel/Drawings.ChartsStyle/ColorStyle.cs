@@ -20,6 +20,4 @@ public partial class ColorStyle
   
   public DocumentModel.Drawings.ChartsStyle.OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
   
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
-  
 }

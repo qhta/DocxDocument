@@ -22,6 +22,4 @@ public partial class RadarChart
   
   public DocumentModel.Drawings.Charts.RadarChartExtensionList? RadarChartExtensionList { get; set; }
   
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
-  
 }

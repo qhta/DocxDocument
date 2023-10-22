@@ -10,6 +10,4 @@ public partial class RichText
   
   public DocumentModel.Drawings.ListStyle? ListStyle { get; set; }
   
-  public DM.ElementCollection<Paragraph>? Items { get; set; }
-  
 }

@@ -8,12 +8,6 @@ public partial class BorderType
 {
   
   /// <summary>
-  ///   Border Style
-  /// </summary>
-  public DocumentModel.Vml.Wordprocessing.BorderKind? Type { get; set; }
-  
-  
-  /// <summary>
   ///   Border Width
   /// </summary>
   public Int64? Width { get; set; }

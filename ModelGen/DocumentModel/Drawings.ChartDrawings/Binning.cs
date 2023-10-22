@@ -8,12 +8,6 @@ public partial class Binning
 {
   
   /// <summary>
-  ///   intervalClosed, this property is only available in Office 2016 and later.
-  /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.IntervalClosedSide? IntervalClosed { get; set; }
-  
-  
-  /// <summary>
   ///   underflow, this property is only available in Office 2016 and later.
   /// </summary>
   public String? Underflow { get; set; }

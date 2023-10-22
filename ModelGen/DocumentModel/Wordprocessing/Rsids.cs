@@ -12,6 +12,4 @@ public partial class Rsids
   /// </summary>
   public DocumentModel.Wordprocessing.RsidRoot? RsidRoot { get; set; }
   
-  public DM.ElementCollection<Rsid>? Items { get; set; }
-  
 }

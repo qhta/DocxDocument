@@ -68,12 +68,6 @@ public partial class GalleryRegular
   
   
   /// <summary>
-  ///   showInRibbon, this property is only available in Office 2010 and later.
-  /// </summary>
-  public DM.GalleryShowInRibbonKind? ShowInRibbon { get; set; }
-  
-  
-  /// <summary>
   ///   onAction, this property is only available in Office 2010 and later.
   /// </summary>
   public String? OnAction { get; set; }
@@ -299,7 +293,5 @@ public partial class GalleryRegular
   ///   getShowImage, this property is only available in Office 2010 and later.
   /// </summary>
   public String? GetShowImage { get; set; }
-  
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
   
 }

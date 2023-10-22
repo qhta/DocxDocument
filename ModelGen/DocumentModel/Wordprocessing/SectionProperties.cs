@@ -72,6 +72,4 @@ public partial class SectionProperties
   
   public DocumentModel.Wordprocessing.SectionPropertiesChange? SectionPropertiesChange { get; set; }
   
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
-  
 }

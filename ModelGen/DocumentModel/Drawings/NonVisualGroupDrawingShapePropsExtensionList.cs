@@ -6,6 +6,4 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class NonVisualGroupDrawingShapePropsExtensionList
 {
-  public DM.ElementCollection<NonVisualGroupDrawingShapePropsExtension>? Items { get; set; }
-  
 }

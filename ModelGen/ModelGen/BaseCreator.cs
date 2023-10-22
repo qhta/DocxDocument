@@ -285,17 +285,17 @@ public abstract class BaseCreator
         {SummaryInfoKind.RenamedTypes, renamedTypesCount },
         }
     };
+    var duplicatedNamesCount = ModelManager.DuplicatedNamesCount;
 
     if (Options.ValidateNames && !CancelRequest)
     {
       var ModelValidator = new ModelValidator(PPS.Rename, NTS.Origin, MSS.Accepted, TDS.Metadata);
       if (!ModelValidator.ValidateTypes(types, ModelValidator_OnValidatingType))
-      {
-        var duplicatedNamesCount = ModelValidator.InvalidTypesCount;
-        if (duplicatedNamesCount > 0)
-          summaryInfo.Summary.Add(SummaryInfoKind.TypesWithSameName, duplicatedNamesCount);
-      }
+        duplicatedNamesCount = ModelValidator.InvalidTypesCount;
     }
+
+    if (duplicatedNamesCount > 0)
+      summaryInfo.Summary.Add(SummaryInfoKind.TypesWithSameName, duplicatedNamesCount);
 
     DateTime t2 = DateTime.Now;
     var ts = t2 - t1;
@@ -319,13 +319,15 @@ public abstract class BaseCreator
   {
     ModelMonitor?.ShowPhaseStart(PPS.ConvertTypes, CommonStrings.ConvertTypes);
     DateTime t1 = DateTime.Now;
-    var types = TypeManager.AllTypes.Where(typeInfo => /*typeInfo.IsAcceptedTo(PPS.ConvertTypes)*/
-              /*&& */typeInfo.OriginalNamespace.StartsWith("DocumentFormat")
-              /*&& !typeInfo.IsGenericTypeDefinition*/).ToArray();
-    var summaryInfo = ModelManager.ConvertTypes(types, ModelManager_OnConvertingType);
 
-    var targetTypesCount = 0;
-    var invalidTypesCount = 0;
+    var convertedTypesCount = ModelManager.ConvertTypes(ModelManager_OnConvertingType);
+    var summaryInfo = new SummaryInfo
+    {
+      Summary = new Dictionary<SummaryInfoKind, object>{
+        {SummaryInfoKind.ConvertedTypes, convertedTypesCount },
+        }
+    };
+
     if (Options.ValidateConversion && !CancelRequest)
     {
       var ModelValidator = new ModelValidator(PPS.ConvertTypes, NTS.Target, MSS.Accepted, TDS.Metadata);
@@ -333,21 +335,17 @@ public abstract class BaseCreator
       var newTypes = TypeManager.AllNamespaces.Where(ns => ns.IsTarget)
         .SelectMany(ns => ns.Types)
         .Where(typeInfo => !typeInfo.IsGenericTypeDefinition).ToArray().ToArray();
-      targetTypesCount = newTypes.Count();
       if (!ModelValidator.ValidateTypes(newTypes, ModelValidator_OnValidatingType))
       {
-        invalidTypesCount = ModelValidator.InvalidTypesCount;
+        var invalidTypesCount = ModelValidator.InvalidTypesCount;
+       if (invalidTypesCount > 0)
+        summaryInfo.Summary.Add(SummaryInfoKind.InvalidTypes, invalidTypesCount);
       }
     }
 
     DateTime t2 = DateTime.Now;
     var ts = t2 - t1;
     summaryInfo.Time = ts;
-
-    if (targetTypesCount > 0)
-      summaryInfo.Summary.Add(SummaryInfoKind.TargetTypes, targetTypesCount);
-    if (invalidTypesCount > 0)
-      summaryInfo.Summary.Add(SummaryInfoKind.InvalidTypes, invalidTypesCount);
 
     ModelMonitor?.ShowPhaseEnd(PPS.ConvertTypes, summaryInfo);
     return ts;
@@ -374,21 +372,21 @@ public abstract class BaseCreator
       types.AddRange(nspace.Types);
     var summaryInfo = ModelManager.FinalCheck(types, ModelManager_OnFinalCheck);
 
-    var targetTypesCount = 0;
-    var invalidTypesCount = 0;
-    if (Options.ValidateConversion && !CancelRequest)
-    {
-      var ModelValidator = new ModelValidator(PPS.ConvertTypes, NTS.Target, MSS.Accepted, TDS.Metadata);
-      var newNS = TypeManager.AllNamespaces.Where(ns => ns.IsTarget).ToArray();
-      var newTypes = TypeManager.AllNamespaces.Where(ns => ns.IsTarget)
-        .SelectMany(ns => ns.Types)
-        .Where(typeInfo => !typeInfo.IsGenericTypeDefinition).ToArray().ToArray();
-      targetTypesCount = newTypes.Count();
-      if (!ModelValidator.ValidateTypes(newTypes, ModelValidator_OnValidatingType))
-      {
-        invalidTypesCount = ModelValidator.InvalidTypesCount;
-      }
-    }
+    //var targetTypesCount = 0;
+    //var invalidTypesCount = 0;
+    //if (Options.ValidateFinalCheck && !CancelRequest)
+    //{
+    //  var ModelValidator = new ModelValidator(PPS.FinalCheck, NTS.Target, MSS.Accepted, TDS.Metadata);
+    //  var newNS = TypeManager.AllNamespaces.Where(ns => ns.IsTarget).ToArray();
+    //  var newTypes = TypeManager.AllNamespaces.Where(ns => ns.IsTarget)
+    //    .SelectMany(ns => ns.Types)
+    //    .Where(typeInfo => !typeInfo.IsGenericTypeDefinition).ToArray().ToArray();
+    //  targetTypesCount = newTypes.Count();
+    //  if (!ModelValidator.ValidateTypes(newTypes, ModelValidator_OnValidatingType))
+    //  {
+    //    invalidTypesCount = ModelValidator.InvalidTypesCount;
+    //  }
+    //}
 
     DateTime t2 = DateTime.Now;
     var ts = t2 - t1;
@@ -415,8 +413,21 @@ public abstract class BaseCreator
     ModelMonitor?.ShowPhaseStart(PPS.CodeGen, CommonStrings.GenerateCode);
     DateTime t1 = DateTime.Now;
     var nspaces = TypeManager.AllNamespaces.Where(item => item.IsTarget);
-    var summaryInfo = CodeGenerator.GenerateCode(nspaces, CodeGenerator_OnGeneratingCode);
-
+    var generatedTypesCount = CodeGenerator.GenerateCode(nspaces, CodeGenerator_OnGeneratingCode);
+    var summaryInfo = new SummaryInfo
+    {
+      Summary = new Dictionary<SummaryInfoKind, object>{
+        {SummaryInfoKind.GeneratedTypes, generatedTypesCount },
+        }
+    };
+    var generatedFiles = CodeGenerator.GeneratedFiles;
+    var generatedFilesCount = generatedFiles.TotalCount;
+    if (generatedFilesCount > 0)
+    {
+      summaryInfo.Summary.Add(SummaryInfoKind.GeneratedFiles, generatedFilesCount);
+      if (generatedFiles != null)
+        summaryInfo.Summary.Add(SummaryInfoKind.GeneratedFileList, generatedFiles);
+    }
     if (Options.ValidateGeneration && !CancelRequest)
     {
       ModelMonitor?.WriteLine(CommonStrings.CodeCompilation);

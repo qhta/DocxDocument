@@ -8,12 +8,6 @@ public partial class Lock
 {
   
   /// <summary>
-  ///   VML Extension Handling Behavior
-  /// </summary>
-  public DocumentModel.Vml.ExtensionHandlingBehaviorKind? Extension { get; set; }
-  
-  
-  /// <summary>
   ///   Position Lock
   /// </summary>
   public DM.TrueFalseValue? Position { get; set; }

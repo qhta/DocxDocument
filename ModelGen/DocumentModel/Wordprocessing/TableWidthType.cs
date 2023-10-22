@@ -12,10 +12,4 @@ public partial class TableWidthType
   /// </summary>
   public String? Width { get; set; }
   
-  
-  /// <summary>
-  ///   Table Width Type
-  /// </summary>
-  public DocumentModel.Wordprocessing.TableWidthUnitKind? Type { get; set; }
-  
 }

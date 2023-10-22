@@ -32,33 +32,9 @@ public partial class TablePositionProperties
   
   
   /// <summary>
-  ///   Table Vertical Anchor
-  /// </summary>
-  public DocumentModel.Wordprocessing.VerticalAnchorKind? VerticalAnchor { get; set; }
-  
-  
-  /// <summary>
-  ///   Table Horizontal Anchor
-  /// </summary>
-  public DocumentModel.Wordprocessing.HorizontalAnchorKind? HorizontalAnchor { get; set; }
-  
-  
-  /// <summary>
-  ///   Relative Horizontal Alignment From Anchor
-  /// </summary>
-  public DocumentModel.Wordprocessing.HorizontalAlignmentKind? TablePositionXAlignment { get; set; }
-  
-  
-  /// <summary>
   ///   Absolute Horizontal Distance From Anchor
   /// </summary>
   public Int32? TablePositionX { get; set; }
-  
-  
-  /// <summary>
-  ///   Relative Vertical Alignment from Anchor
-  /// </summary>
-  public DocumentModel.Wordprocessing.VerticalAlignmentKind? TablePositionYAlignment { get; set; }
   
   
   /// <summary>

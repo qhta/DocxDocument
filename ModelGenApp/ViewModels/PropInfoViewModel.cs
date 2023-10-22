@@ -117,7 +117,7 @@ public class PropInfoViewModel : ViewModel<PropInfo>, IAcceptable
     {
       var propType = Model.PropertyType;
       if (TypeNameSelector.Target)
-        propType = Model.TargetPropertyType ?? propType.TargetType;
+        propType = Model.TargetType ?? propType.TargetType;
       if (propType != null && _ValueType == null)
       {
         if (propType.TypeKind == TypeKind.@enum)
@@ -134,9 +134,49 @@ public class PropInfoViewModel : ViewModel<PropInfo>, IAcceptable
   private TypeInfoViewModel? _ValueType;
 
   [DataGridColumn(
+    Header = "",
+    HiddenHeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.Problem),
+    DataTemplateResourceKey = "ErrorMarkButtonTemplate"
+  )]
+  public string? ValidationError
+  {
+    get
+    {
+      var errCode = Model.Errors?.FirstOrDefault(item => item.Phase == Phase.PhaseNum)?.Code;
+      if (errCode != null)
+      {
+        var errCodeName = errCode?.ToString();
+        if (errCodeName != null)
+        {
+          var msg = CommonStrings.ResourceManager.GetString(errCodeName);
+          if (String.IsNullOrEmpty(msg))
+            msg = errCodeName.DeCamelCase();
+          return msg;
+        }
+      }
+      return null;
+    }
+  }
+
+  [DataGridColumn(
     HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.Description),
     HeaderTooltipResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.DescriptionTooltip)
     )]
   public string? Description => Model.Description;
+
+  #region ShowErrorCommand
+
+  public Command? ShowErrorCommand => null;
+
+  //protected virtual bool ShowErrorCanExecute()
+  //{
+  //  return ValidationError != null;
+  //}
+
+  //protected virtual void ShowErrorExecute()
+  //{
+  //  Phase.ShowErrorFor(this);
+  //}
+  #endregion
 }
 

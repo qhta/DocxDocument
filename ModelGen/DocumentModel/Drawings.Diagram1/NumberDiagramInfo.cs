@@ -14,12 +14,6 @@ public partial class NumberDiagramInfo
   
   
   /// <summary>
-  ///   ptType, this property is only available in Office 2019 and later.
-  /// </summary>
-  public DocumentModel.Drawings.Diagram1.STorageType? PtType { get; set; }
-  
-  
-  /// <summary>
   ///   DiagramAutoBullet.
   /// </summary>
   public DocumentModel.Drawings.Diagram1.DiagramAutoBullet? DiagramAutoBullet { get; set; }

@@ -16,6 +16,4 @@ public partial class Pie3DChart
   
   public DocumentModel.Drawings.Charts.Pie3DChartExtensionList? Pie3DChartExtensionList { get; set; }
   
-  public DM.ElementCollection<PieChartSeries>? Items { get; set; }
-  
 }

@@ -6,6 +6,4 @@ namespace DocumentModel.Drawings.Diagrams;
 /// </summary>
 public partial class TextEffectColorList
 {
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
-  
 }

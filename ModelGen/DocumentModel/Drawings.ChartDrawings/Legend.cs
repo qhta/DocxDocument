@@ -8,18 +8,6 @@ public partial class Legend
 {
   
   /// <summary>
-  ///   pos, this property is only available in Office 2016 and later.
-  /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.SidePos? Pos { get; set; }
-  
-  
-  /// <summary>
-  ///   align, this property is only available in Office 2016 and later.
-  /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.PosAlign? Align { get; set; }
-  
-  
-  /// <summary>
   ///   overlay, this property is only available in Office 2016 and later.
   /// </summary>
   public Boolean? Overlay { get; set; }

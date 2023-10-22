@@ -10,6 +10,4 @@ public partial class TextProperties
   
   public DocumentModel.Drawings.ListStyle? ListStyle { get; set; }
   
-  public DM.ElementCollection<Paragraph>? Items { get; set; }
-  
 }

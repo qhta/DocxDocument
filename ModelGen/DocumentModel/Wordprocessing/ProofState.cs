@@ -6,16 +6,4 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class ProofState
 {
-  
-  /// <summary>
-  ///   Spell Checking State
-  /// </summary>
-  public DocumentModel.Wordprocessing.ProofingStateKind? Spelling { get; set; }
-  
-  
-  /// <summary>
-  ///   Grammatical Checking State
-  /// </summary>
-  public DocumentModel.Wordprocessing.ProofingStateKind? Grammar { get; set; }
-  
 }

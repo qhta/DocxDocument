@@ -16,6 +16,7 @@ global using DocumentModel.Drawings.SVG;
 global using DocumentModel.Drawings.Wordprocessing;
 global using DocumentModel.Math;
 global using DocumentModel.Packaging;
+global using DMP = DocumentModel.Properties;
 global using DMUI = DocumentModel.UI;
 global using DocumentModel.Vml;
 global using DocumentModel.Vml.Office;

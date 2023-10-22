@@ -20,12 +20,6 @@ public partial class PageSetup
   
   
   /// <summary>
-  ///   orientation, this property is only available in Office 2016 and later.
-  /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.PageOrientation? Orientation { get; set; }
-  
-  
-  /// <summary>
   ///   blackAndWhite, this property is only available in Office 2016 and later.
   /// </summary>
   public Boolean? BlackAndWhite { get; set; }

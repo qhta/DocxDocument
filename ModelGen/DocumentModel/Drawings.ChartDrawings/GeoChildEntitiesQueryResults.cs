@@ -6,6 +6,4 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// </summary>
 public partial class GeoChildEntitiesQueryResults
 {
-  public DM.ElementCollection<GeoChildEntitiesQueryResult>? Items { get; set; }
-  
 }

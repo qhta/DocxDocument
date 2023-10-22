@@ -6,6 +6,4 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class BandFormats
 {
-  public DM.ElementCollection<BandFormat>? Items { get; set; }
-  
 }

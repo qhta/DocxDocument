@@ -32,12 +32,6 @@ public partial class TextParagraphPropertiesType
   
   
   /// <summary>
-  ///   Alignment
-  /// </summary>
-  public DocumentModel.Drawings.TextAlignmentTypeKind? Alignment { get; set; }
-  
-  
-  /// <summary>
   ///   Default Tab Size
   /// </summary>
   public Int32? DefaultTabSize { get; set; }
@@ -53,12 +47,6 @@ public partial class TextParagraphPropertiesType
   ///   East Asian Line Break
   /// </summary>
   public Boolean? EastAsianLineBreak { get; set; }
-  
-  
-  /// <summary>
-  ///   Font Alignment
-  /// </summary>
-  public DocumentModel.Drawings.TextFontAlignmentKind? FontAlignment { get; set; }
   
   
   /// <summary>

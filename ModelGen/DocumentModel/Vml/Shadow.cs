@@ -20,12 +20,6 @@ public partial class Shadow
   
   
   /// <summary>
-  ///   Shadow Type
-  /// </summary>
-  public DocumentModel.Vml.ShadowKind? Type { get; set; }
-  
-  
-  /// <summary>
   ///   Shadow Transparency
   /// </summary>
   public DM.TrueFalseValue? Obscured { get; set; }

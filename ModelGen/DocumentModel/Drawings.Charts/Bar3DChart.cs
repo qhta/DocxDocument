@@ -34,6 +34,4 @@ public partial class Bar3DChart
   
   public DocumentModel.Drawings.Charts.Bar3DChartExtensionList? Bar3DChartExtensionList { get; set; }
   
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
-  
 }

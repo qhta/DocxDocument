@@ -6,6 +6,4 @@ namespace DocumentModel;
 /// </summary>
 public partial class DocumentControlsQatItems
 {
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
-  
 }

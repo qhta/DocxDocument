@@ -24,6 +24,4 @@ public partial class Frameset
   /// </summary>
   public DocumentModel.Wordprocessing.FrameLayoutKind? FrameLayout { get; set; }
   
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
-  
 }

@@ -12,6 +12,4 @@ public partial class EquationArray
   /// </summary>
   public DocumentModel.Math.EquationArrayProperties? EquationArrayProperties { get; set; }
   
-  public DM.ElementCollection<Base>? Items { get; set; }
-  
 }

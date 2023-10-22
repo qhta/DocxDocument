@@ -6,6 +6,4 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// </summary>
 public partial class FormatOverrides
 {
-  public DM.ElementCollection<FormatOverride>? Items { get; set; }
-  
 }

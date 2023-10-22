@@ -26,6 +26,4 @@ public partial class Area3DChart
   
   public DocumentModel.Drawings.Charts.Area3DChartExtensionList? Area3DChartExtensionList { get; set; }
   
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
-  
 }

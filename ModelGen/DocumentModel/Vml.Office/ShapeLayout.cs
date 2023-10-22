@@ -8,12 +8,6 @@ public partial class ShapeLayout
 {
   
   /// <summary>
-  ///   VML Extension Handling Behavior
-  /// </summary>
-  public DocumentModel.Vml.ExtensionHandlingBehaviorKind? Extension { get; set; }
-  
-  
-  /// <summary>
   ///   Shape ID Map.
   /// </summary>
   public DocumentModel.Vml.Office.ShapeIdMap? ShapeIdMap { get; set; }

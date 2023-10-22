@@ -8,12 +8,6 @@ public partial class Skew
 {
   
   /// <summary>
-  ///   VML Extension Handling Behavior
-  /// </summary>
-  public DocumentModel.Vml.ExtensionHandlingBehaviorKind? Extension { get; set; }
-  
-  
-  /// <summary>
   ///   Skew ID
   /// </summary>
   public String? Id { get; set; }

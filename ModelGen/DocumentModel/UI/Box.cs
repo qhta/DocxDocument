@@ -54,12 +54,4 @@ public partial class Box
   /// </summary>
   public String? InsertBeforeQ { get; set; }
   
-  
-  /// <summary>
-  ///   boxStyle
-  /// </summary>
-  public DMUI.BoxStyleKind? BoxStyle { get; set; }
-  
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
-  
 }

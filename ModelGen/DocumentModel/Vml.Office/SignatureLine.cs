@@ -8,12 +8,6 @@ public partial class SignatureLine
 {
   
   /// <summary>
-  ///   VML Extension Handling Behavior
-  /// </summary>
-  public DocumentModel.Vml.ExtensionHandlingBehaviorKind? Extension { get; set; }
-  
-  
-  /// <summary>
   ///   Signature Line Flag
   /// </summary>
   public DM.TrueFalseValue? IsSignatureLine { get; set; }

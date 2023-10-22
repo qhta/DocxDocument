@@ -16,6 +16,4 @@ public partial class StockChart
   
   public DocumentModel.Drawings.Charts.StockChartExtensionList? StockChartExtensionList { get; set; }
   
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
-  
 }

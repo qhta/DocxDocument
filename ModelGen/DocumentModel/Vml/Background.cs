@@ -26,30 +26,6 @@ public partial class Background
   
   
   /// <summary>
-  ///   Black-and-White Mode
-  /// </summary>
-  public DocumentModel.Vml.Office.BlackAndWhiteMode? BlackWhiteMode { get; set; }
-  
-  
-  /// <summary>
-  ///   Pure Black-and-White Mode
-  /// </summary>
-  public DocumentModel.Vml.Office.BlackAndWhiteMode? PureBlackWhiteMode { get; set; }
-  
-  
-  /// <summary>
-  ///   Normal Black-and-White Mode
-  /// </summary>
-  public DocumentModel.Vml.Office.BlackAndWhiteMode? NormalBlackWhiteMode { get; set; }
-  
-  
-  /// <summary>
-  ///   Target Screen Size
-  /// </summary>
-  public DocumentModel.Vml.Office.ScreenSizeKind? TargetScreenSize { get; set; }
-  
-  
-  /// <summary>
   ///   Fill.
   /// </summary>
   public DocumentModel.Vml.Fill? Fill { get; set; }

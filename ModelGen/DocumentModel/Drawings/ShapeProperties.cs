@@ -8,12 +8,6 @@ public partial class ShapeProperties
 {
   
   /// <summary>
-  ///   Specifies that the picture should be rendered using only black and white coloring. That is the coloring information for the picture should be converted to either black or white when rendering the picture.
-  /// </summary>
-  public DocumentModel.Drawings.BlackWhiteMode? BlackWhiteMode { get; set; }
-  
-  
-  /// <summary>
   ///   2D Transform for Individual Objects.
   /// </summary>
   public DocumentModel.Drawings.Transform2D? Transform2D { get; set; }

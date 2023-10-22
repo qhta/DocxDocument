@@ -74,12 +74,6 @@ public partial class Path
   
   
   /// <summary>
-  ///   Connection Point Type
-  /// </summary>
-  public DocumentModel.Vml.Office.ConnectKind? ConnectionPointType { get; set; }
-  
-  
-  /// <summary>
   ///   Connection Points
   /// </summary>
   public String? ConnectionPoints { get; set; }

@@ -44,6 +44,4 @@ public partial class AreaChartSeries
   
   public DocumentModel.Drawings.Charts.AreaSerExtensionList? AreaSerExtensionList { get; set; }
   
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
-  
 }

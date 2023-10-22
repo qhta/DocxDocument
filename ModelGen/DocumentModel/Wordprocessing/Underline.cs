@@ -8,21 +8,9 @@ public partial class Underline
 {
   
   /// <summary>
-  ///   Underline Style
-  /// </summary>
-  public DocumentModel.Wordprocessing.UnderlineKind? Val { get; set; }
-  
-  
-  /// <summary>
   ///   Underline Color
   /// </summary>
   public String? Color { get; set; }
-  
-  
-  /// <summary>
-  ///   Underline Theme Color
-  /// </summary>
-  public DocumentModel.Wordprocessing.ThemeColorKind? ThemeColor { get; set; }
   
   
   /// <summary>

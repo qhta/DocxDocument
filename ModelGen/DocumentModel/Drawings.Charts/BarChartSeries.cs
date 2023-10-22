@@ -54,6 +54,4 @@ public partial class BarChartSeries
   
   public DocumentModel.Drawings.Charts.BarSerExtensionList? BarSerExtensionList { get; set; }
   
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
-  
 }

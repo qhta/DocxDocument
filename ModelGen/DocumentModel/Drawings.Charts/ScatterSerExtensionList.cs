@@ -6,6 +6,4 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class ScatterSerExtensionList
 {
-  public DM.ElementCollection<ScatterSerExtension>? Items { get; set; }
-  
 }

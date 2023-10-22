@@ -12,24 +12,6 @@ public partial class TextOutlineEffect
   /// </summary>
   public Int32? LineWidth { get; set; }
   
-  
-  /// <summary>
-  ///   cap, this property is only available in Office 2010 and later.
-  /// </summary>
-  public DocumentModel.Wordprocessing.LineCapKind? CapType { get; set; }
-  
-  
-  /// <summary>
-  ///   cmpd, this property is only available in Office 2010 and later.
-  /// </summary>
-  public DocumentModel.Wordprocessing.CompoundLineKind? Compound { get; set; }
-  
-  
-  /// <summary>
-  ///   algn, this property is only available in Office 2010 and later.
-  /// </summary>
-  public DocumentModel.Wordprocessing.PenAlignmentKind? Alignment { get; set; }
-  
   public DocumentModel.Wordprocessing.NoFillEmpty? NoFillEmpty { get; set; }
   
   public DocumentModel.Wordprocessing.SolidColorFillProperties? SolidColorFillProperties { get; set; }

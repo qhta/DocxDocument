@@ -90,7 +90,7 @@ public partial class TypeListView : UserControl
     if (args.PropertyName==nameof(TypeInfoViewModel.ValidationError))
     {
       BindingOperations.SetBinding(args.Column, DataGridColumn.VisibilityProperty, 
-        new Binding("DataContext."+nameof(TypeListViewModel.HasAnyInvalidTypes)) 
+        new Binding("DataContext."+nameof(TypeListViewModel.ShowErrorColumn)) 
         { 
           Source = dummyElement,
           Converter=new BoolToVisibilityConverter(), 

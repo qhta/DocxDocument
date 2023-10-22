@@ -48,10 +48,4 @@ public partial class SpacingBetweenLines
   /// </summary>
   public String? Line { get; set; }
   
-  
-  /// <summary>
-  ///   Type of Spacing Between Lines
-  /// </summary>
-  public DocumentModel.Wordprocessing.LineSpacingRuleKind? LineRule { get; set; }
-  
 }

@@ -88,10 +88,12 @@ public class ModelElement : IOwnedElement
   }
   public Errors? Errors { get; private set; }
 
-  public void AddError(PPS pps, ErrorCode code, object[]? args = null)
+  public void AddError(PPS pps, ErrorCode code, params object[]? args)
   {
     if (Errors == null)
       Errors = new Errors();
+    if (args?.Length==0)
+      args = null;
     Errors.Add(new Error(pps, code, args));
   }
 

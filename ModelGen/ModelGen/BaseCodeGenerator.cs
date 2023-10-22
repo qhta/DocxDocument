@@ -46,7 +46,7 @@ public abstract class BaseCodeGenerator
   }
 
   #region Generation
-  public SummaryInfo GenerateCode(IEnumerable<Namespace> nspaces, ProgressTypeEvent? _OnGeneratingType)
+  public int GenerateCode(IEnumerable<Namespace> nspaces, ProgressTypeEvent? _OnGeneratingType)
   {
     PrepareProject();
     var allTypes = new Dictionary<Namespace, TypeInfo[]>();
@@ -92,21 +92,7 @@ public abstract class BaseCodeGenerator
     }
 
     GenerateGlobalUsings();
-    var summaryInfo = new SummaryInfo
-    {
-      Summary = new Dictionary<SummaryInfoKind, object>{
-        {SummaryInfoKind.CheckedTypes, totalTypesCount },
-        {SummaryInfoKind.GeneratedTypes, generatedTypesCount },
-        }
-    };
-    var generatedFilesCount = GeneratedFiles.TotalCount;
-    if (generatedFilesCount > 0)
-    {
-      summaryInfo.Summary.Add(SummaryInfoKind.GeneratedFiles, generatedFilesCount);
-      if (GeneratedFiles!=null)
-        summaryInfo.Summary.Add(SummaryInfoKind.GeneratedFileList, GeneratedFiles);
-    }
-    return summaryInfo;
+    return generatedTypesCount;
   }
 
   public abstract bool GenerateTypeFile(TypeInfo typeInfo);
@@ -396,8 +382,6 @@ public abstract class BaseCodeGenerator
 
     var filePath = Path.GetDirectoryName(filename) ?? string.Empty;
     var fileName = Path.GetFileName(filename);
-    if (filePath.Contains(@"\Properties"))
-      return false;
     if (filePath.EndsWith("Classes"))
       Debug.Assert(true);
     if (!Directory.Exists(filePath))

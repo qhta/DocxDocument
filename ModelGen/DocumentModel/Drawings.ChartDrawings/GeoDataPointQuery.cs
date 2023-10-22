@@ -8,12 +8,6 @@ public partial class GeoDataPointQuery
 {
   
   /// <summary>
-  ///   entityType, this property is only available in Office 2016 and later.
-  /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.EntityTypeEnum? EntityType { get; set; }
-  
-  
-  /// <summary>
   ///   latitude, this property is only available in Office 2016 and later.
   /// </summary>
   public Double? Latitude { get; set; }

@@ -295,8 +295,6 @@ public static class TypeReflector
     //foreach (var item in type.CustomAttributes)
     //  typeInfo.CustomAttributes.Add(new CustomAttribData(item));
 
-    if (typeInfo.IsConstructedGenericType)
-      typeInfo.SetRejected(PPS.ScanSource);
     typeInfo.IsReflected = true;
     //Debug.WriteLine($"ReflectType({typeInfo.Type.Name}).End. Thread={Thread.CurrentThread.ManagedThreadId}");
     var t2 = DateTime.Now.Ticks;

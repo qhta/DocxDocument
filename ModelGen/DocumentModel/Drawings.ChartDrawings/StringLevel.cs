@@ -18,6 +18,4 @@ public partial class StringLevel
   /// </summary>
   public String? Name { get; set; }
   
-  public DM.ElementCollection<ChartStringValue>? Items { get; set; }
-  
 }

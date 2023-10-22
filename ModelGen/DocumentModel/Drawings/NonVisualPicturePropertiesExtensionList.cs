@@ -6,6 +6,4 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class NonVisualPicturePropertiesExtensionList
 {
-  public DM.ElementCollection<NonVisualPicturePropertiesExtension>? Items { get; set; }
-  
 }

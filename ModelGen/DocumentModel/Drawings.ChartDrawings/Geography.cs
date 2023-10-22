@@ -8,18 +8,6 @@ public partial class Geography
 {
   
   /// <summary>
-  ///   projectionType, this property is only available in Office 2016 and later.
-  /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.GeoProjectionType? ProjectionType { get; set; }
-  
-  
-  /// <summary>
-  ///   viewedRegionType, this property is only available in Office 2016 and later.
-  /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.GeoMappingLevel? ViewedRegionType { get; set; }
-  
-  
-  /// <summary>
   ///   cultureLanguage, this property is only available in Office 2016 and later.
   /// </summary>
   public String? CultureLanguage { get; set; }

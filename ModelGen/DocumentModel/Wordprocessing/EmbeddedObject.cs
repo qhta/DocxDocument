@@ -32,6 +32,4 @@ public partial class EmbeddedObject
   
   public DocumentModel.Wordprocessing.ObjectLink? ObjectLink { get; set; }
   
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
-  
 }

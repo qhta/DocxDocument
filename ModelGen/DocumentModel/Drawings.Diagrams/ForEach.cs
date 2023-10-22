@@ -54,6 +54,4 @@ public partial class ForEach
   /// </summary>
   public DM.ListOf<Int32>? Step { get; set; }
   
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
-  
 }

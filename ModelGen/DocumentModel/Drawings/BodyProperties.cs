@@ -20,30 +20,6 @@ public partial class BodyProperties
   
   
   /// <summary>
-  ///   Determines whether the text can flow out of the bounding box vertically. This is used to determine what happens in the event that the text within a shape is too large for the bounding box it is contained within. If this attribute is omitted, then a value of overflow is implied.
-  /// </summary>
-  public DocumentModel.Drawings.TextVerticalOverflowKind? VerticalOverflow { get; set; }
-  
-  
-  /// <summary>
-  ///   Determines whether the text can flow out of the bounding box horizontally. This is used to determine what happens in the event that the text within a shape is too large for the bounding box it is contained within. If this attribute is omitted, then a value of overflow is implied.
-  /// </summary>
-  public DocumentModel.Drawings.TextHorizontalOverflowKind? HorizontalOverflow { get; set; }
-  
-  
-  /// <summary>
-  ///   Determines if the text within the given text body should be displayed vertically. If this attribute is omitted, then a value of horz, or no vertical text is implied.
-  /// </summary>
-  public DocumentModel.Drawings.TextVerticalKind? Vertical { get; set; }
-  
-  
-  /// <summary>
-  ///   Specifies the wrapping options to be used for this text body. If this attribute is omitted, then a value of square is implied which wraps the text using the bounding text box.
-  /// </summary>
-  public DocumentModel.Drawings.TextWrappingKind? Wrap { get; set; }
-  
-  
-  /// <summary>
   ///   Specifies the left inset of the bounding rectangle. Insets are used just as internal margins for text boxes within shapes. If this attribute is omitted, then a value of 91440 or 0.1 inches is implied.
   /// </summary>
   public Int32? LeftInset { get; set; }
@@ -89,12 +65,6 @@ public partial class BodyProperties
   ///   From WordArt
   /// </summary>
   public Boolean? FromWordArt { get; set; }
-  
-  
-  /// <summary>
-  ///   Specifies the anchoring position of the txBody within the shape. If this attribute is omitted, then a value of t, or top is implied.
-  /// </summary>
-  public DocumentModel.Drawings.TextAnchoringTypeKind? Anchor { get; set; }
   
   
   /// <summary>

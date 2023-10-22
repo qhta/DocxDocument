@@ -18,10 +18,4 @@ public partial class BevelType
   /// </summary>
   public Int64? Height { get; set; }
   
-  
-  /// <summary>
-  ///   Preset Bevel
-  /// </summary>
-  public DocumentModel.Drawings.BevelPresetKind? Preset { get; set; }
-  
 }

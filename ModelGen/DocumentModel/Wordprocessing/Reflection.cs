@@ -78,10 +78,4 @@ public partial class Reflection
   /// </summary>
   public Int32? VerticalSkewAngle { get; set; }
   
-  
-  /// <summary>
-  ///   algn, this property is only available in Office 2010 and later.
-  /// </summary>
-  public DocumentModel.Wordprocessing.RectangleAlignmentKind? Alignment { get; set; }
-  
 }

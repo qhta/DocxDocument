@@ -20,16 +20,8 @@ public partial class LayoutNode
   
   
   /// <summary>
-  ///   Child Order
-  /// </summary>
-  public DocumentModel.Drawings.Diagrams.ChildOrderKind? ChildOrder { get; set; }
-  
-  
-  /// <summary>
   ///   Move With
   /// </summary>
   public String? MoveWith { get; set; }
-  
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
   
 }

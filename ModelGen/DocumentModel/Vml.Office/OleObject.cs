@@ -8,12 +8,6 @@ public partial class OleObject
 {
   
   /// <summary>
-  ///   OLE Object Type
-  /// </summary>
-  public DocumentModel.Vml.Office.OleKind? Type { get; set; }
-  
-  
-  /// <summary>
   ///   OLE Object Application
   /// </summary>
   public String? ProgId { get; set; }
@@ -26,12 +20,6 @@ public partial class OleObject
   
   
   /// <summary>
-  ///   OLE Object Representation
-  /// </summary>
-  public DocumentModel.Vml.Office.OleDrawAspectKind? DrawAspect { get; set; }
-  
-  
-  /// <summary>
   ///   OLE Object Unique ID
   /// </summary>
   public String? ObjectId { get; set; }
@@ -41,12 +29,6 @@ public partial class OleObject
   ///   Relationship
   /// </summary>
   public String? Id { get; set; }
-  
-  
-  /// <summary>
-  ///   OLE Update Mode
-  /// </summary>
-  public DocumentModel.Vml.Office.OleUpdateMode? UpdateMode { get; set; }
   
   
   /// <summary>

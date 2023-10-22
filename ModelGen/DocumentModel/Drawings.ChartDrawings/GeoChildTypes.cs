@@ -6,6 +6,4 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// </summary>
 public partial class GeoChildTypes
 {
-  public DM.ElementCollection<EntityType>? Items { get; set; }
-  
 }

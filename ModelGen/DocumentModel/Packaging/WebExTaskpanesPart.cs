@@ -16,10 +16,4 @@ public partial class WebExTaskpanesPart
   /// </summary>
   public DocumentModel.WebExtensions.UI.Taskpanes? Taskpanes { get; set; }
   
-  
-  /// <summary>
-  ///   Gets the WebExtensionParts of the WebExTaskpanesPart
-  /// </summary>
-  public Collection<WebExtensionPart>? WebExtensionParts { get; set; }
-  
 }

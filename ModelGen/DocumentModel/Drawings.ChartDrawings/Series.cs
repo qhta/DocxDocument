@@ -8,12 +8,6 @@ public partial class Series
 {
   
   /// <summary>
-  ///   layoutId, this property is only available in Office 2016 and later.
-  /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.SeriesLayout? LayoutId { get; set; }
-  
-  
-  /// <summary>
   ///   hidden, this property is only available in Office 2016 and later.
   /// </summary>
   public Boolean? Hidden { get; set; }
@@ -67,7 +61,5 @@ public partial class Series
   public DocumentModel.Drawings.ChartDrawings.SeriesLayoutProperties? SeriesLayoutProperties { get; set; }
   
   public DocumentModel.Drawings.ChartDrawings.ExtensionList? ExtensionList { get; set; }
-  
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
   
 }

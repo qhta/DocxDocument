@@ -6,6 +6,4 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class DLblExtensionList
 {
-  public DM.ElementCollection<DLblExtension>? Items { get; set; }
-  
 }

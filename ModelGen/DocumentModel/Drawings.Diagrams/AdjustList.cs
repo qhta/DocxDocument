@@ -6,6 +6,4 @@ namespace DocumentModel.Drawings.Diagrams;
 /// </summary>
 public partial class AdjustList
 {
-  public DM.ElementCollection<Adjust>? Items { get; set; }
-  
 }

@@ -26,6 +26,4 @@ public partial class Line3DChart
   
   public DocumentModel.Drawings.Charts.Line3DChartExtensionList? Line3DChartExtensionList { get; set; }
   
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
-  
 }

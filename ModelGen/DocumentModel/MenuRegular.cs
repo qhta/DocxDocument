@@ -8,12 +8,6 @@ public partial class MenuRegular
 {
   
   /// <summary>
-  ///   itemSize, this property is only available in Office 2010 and later.
-  /// </summary>
-  public DM.ItemSizeKind? ItemSize { get; set; }
-  
-  
-  /// <summary>
   ///   description, this property is only available in Office 2010 and later.
   /// </summary>
   public String? Description { get; set; }
@@ -185,7 +179,5 @@ public partial class MenuRegular
   ///   getShowImage, this property is only available in Office 2010 and later.
   /// </summary>
   public String? GetShowImage { get; set; }
-  
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
   
 }

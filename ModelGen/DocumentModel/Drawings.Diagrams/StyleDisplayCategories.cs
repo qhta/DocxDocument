@@ -6,6 +6,4 @@ namespace DocumentModel.Drawings.Diagrams;
 /// </summary>
 public partial class StyleDisplayCategories
 {
-  public DM.ElementCollection<StyleDisplayCategory>? Items { get; set; }
-  
 }

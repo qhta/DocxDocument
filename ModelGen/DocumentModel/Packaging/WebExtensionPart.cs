@@ -8,12 +8,6 @@ public partial class WebExtensionPart
 {
   public String? ContentType { get; set; }
   
-  
-  /// <summary>
-  ///   Gets the ImageParts of the WebExtensionPart
-  /// </summary>
-  public Collection<ImagePart>? ImageParts { get; set; }
-  
   public String? RelationshipType { get; set; }
   
   

@@ -30,6 +30,4 @@ public partial class SimpleFieldRuby
   /// </summary>
   public DocumentModel.Wordprocessing.FieldData? FieldData { get; set; }
   
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
-  
 }

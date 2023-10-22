@@ -6,10 +6,4 @@ namespace DocumentModel.Math;
 /// </summary>
 public partial class Text
 {
-  
-  /// <summary>
-  ///   space
-  /// </summary>
-  public DM.SpaceProcessingMode? Space { get; set; }
-  
 }

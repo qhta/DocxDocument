@@ -6,10 +6,4 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class TableLayout
 {
-  
-  /// <summary>
-  ///   Table Layout Setting
-  /// </summary>
-  public DocumentModel.Wordprocessing.TableLayoutKind? Type { get; set; }
-  
 }

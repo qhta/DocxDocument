@@ -78,12 +78,4 @@ public partial class TaskFormGroup
   /// </summary>
   public String? GetShowLabel { get; set; }
   
-  
-  /// <summary>
-  ///   allowedTaskSizes, this property is only available in Office 2010 and later.
-  /// </summary>
-  public DM.TaskSizesKind? AllowedTaskSizes { get; set; }
-  
-  public DM.ElementCollection<TaskFormGroupCategory>? Items { get; set; }
-  
 }

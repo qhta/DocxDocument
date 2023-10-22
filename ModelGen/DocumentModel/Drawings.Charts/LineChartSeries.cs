@@ -54,6 +54,4 @@ public partial class LineChartSeries
   
   public DocumentModel.Drawings.Charts.LineSerExtensionList? LineSerExtensionList { get; set; }
   
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
-  
 }

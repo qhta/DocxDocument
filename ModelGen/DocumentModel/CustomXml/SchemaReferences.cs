@@ -6,6 +6,4 @@ namespace DocumentModel.CustomXml;
 /// </summary>
 public partial class SchemaReferences
 {
-  public DM.ElementCollection<SchemaReference>? Items { get; set; }
-  
 }

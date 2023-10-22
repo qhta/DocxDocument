@@ -30,6 +30,4 @@ public partial class EndnoteDocumentWideProperties
   /// </summary>
   public DocumentModel.Wordprocessing.RestartNumberKind? NumberingRestart { get; set; }
   
-  public DM.ElementCollection<EndnoteSpecialReference>? Items { get; set; }
-  
 }

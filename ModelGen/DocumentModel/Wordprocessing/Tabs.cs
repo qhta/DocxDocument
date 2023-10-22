@@ -6,6 +6,4 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class Tabs
 {
-  public DM.ElementCollection<TabStop>? Items { get; set; }
-  
 }

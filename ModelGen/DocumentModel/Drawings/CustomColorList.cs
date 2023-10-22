@@ -6,6 +6,4 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class CustomColorList
 {
-  public DM.ElementCollection<CustomColor>? Items { get; set; }
-  
 }

@@ -8,12 +8,6 @@ public partial class ColorMenu
 {
   
   /// <summary>
-  ///   VML Extension Handling Behavior
-  /// </summary>
-  public DocumentModel.Vml.ExtensionHandlingBehaviorKind? Extension { get; set; }
-  
-  
-  /// <summary>
   ///   Default stroke color
   /// </summary>
   public String? StrokeColor { get; set; }

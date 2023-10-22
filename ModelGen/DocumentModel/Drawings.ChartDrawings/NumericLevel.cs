@@ -24,6 +24,4 @@ public partial class NumericLevel
   /// </summary>
   public String? Name { get; set; }
   
-  public DM.ElementCollection<NumericValue>? Items { get; set; }
-  
 }

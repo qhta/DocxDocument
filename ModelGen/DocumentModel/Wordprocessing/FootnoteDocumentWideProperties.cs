@@ -30,6 +30,4 @@ public partial class FootnoteDocumentWideProperties
   /// </summary>
   public DocumentModel.Wordprocessing.RestartNumberKind? NumberingRestart { get; set; }
   
-  public DM.ElementCollection<FootnoteSpecialReference>? Items { get; set; }
-  
 }

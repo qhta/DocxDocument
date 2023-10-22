@@ -78,6 +78,4 @@ public partial class TaskFormGroupCategory
   /// </summary>
   public String? GetLabel { get; set; }
   
-  public DM.ElementCollection<TaskFormGroupTask>? Items { get; set; }
-  
 }

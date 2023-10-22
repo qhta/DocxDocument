@@ -8,6 +8,4 @@ public partial class Body
 {
   public DocumentModel.Wordprocessing.SectionProperties? SectionProperties { get; set; }
   
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
-  
 }

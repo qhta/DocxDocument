@@ -8,12 +8,6 @@ public partial class BackstageCheckBox
 {
   
   /// <summary>
-  ///   expand, this property is only available in Office 2010 and later.
-  /// </summary>
-  public DM.ExpandKind? Expand { get; set; }
-  
-  
-  /// <summary>
   ///   description, this property is only available in Office 2010 and later.
   /// </summary>
   public String? Description { get; set; }

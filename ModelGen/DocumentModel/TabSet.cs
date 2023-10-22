@@ -24,6 +24,4 @@ public partial class TabSet
   /// </summary>
   public String? GetVisible { get; set; }
   
-  public DM.ElementCollection<Tab>? Items { get; set; }
-  
 }

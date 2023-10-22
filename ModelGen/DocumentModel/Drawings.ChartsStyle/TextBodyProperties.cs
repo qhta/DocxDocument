@@ -20,30 +20,6 @@ public partial class TextBodyProperties
   
   
   /// <summary>
-  ///   Text Vertical Overflow
-  /// </summary>
-  public DocumentModel.Drawings.TextVerticalOverflowKind? VerticalOverflow { get; set; }
-  
-  
-  /// <summary>
-  ///   Text Horizontal Overflow
-  /// </summary>
-  public DocumentModel.Drawings.TextHorizontalOverflowKind? HorizontalOverflow { get; set; }
-  
-  
-  /// <summary>
-  ///   Vertical Text
-  /// </summary>
-  public DocumentModel.Drawings.TextVerticalKind? Vertical { get; set; }
-  
-  
-  /// <summary>
-  ///   Text Wrapping Type
-  /// </summary>
-  public DocumentModel.Drawings.TextWrappingKind? Wrap { get; set; }
-  
-  
-  /// <summary>
   ///   Left Inset
   /// </summary>
   public Int32? LeftInset { get; set; }
@@ -89,12 +65,6 @@ public partial class TextBodyProperties
   ///   From WordArt
   /// </summary>
   public Boolean? FromWordArt { get; set; }
-  
-  
-  /// <summary>
-  ///   Anchor
-  /// </summary>
-  public DocumentModel.Drawings.TextAnchoringTypeKind? Anchor { get; set; }
   
   
   /// <summary>

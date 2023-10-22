@@ -32,6 +32,4 @@ public partial class LineChart
   
   public DocumentModel.Drawings.Charts.LineChartExtensionList? LineChartExtensionList { get; set; }
   
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
-  
 }

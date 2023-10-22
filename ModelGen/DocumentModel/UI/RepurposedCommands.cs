@@ -6,6 +6,4 @@ namespace DocumentModel.UI;
 /// </summary>
 public partial class RepurposedCommands
 {
-  public DM.ElementCollection<RepurposedCommand>? Items { get; set; }
-  
 }

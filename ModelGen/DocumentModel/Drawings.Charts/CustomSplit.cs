@@ -6,6 +6,4 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class CustomSplit
 {
-  public DM.ElementCollection<SecondPiePoint>? Items { get; set; }
-  
 }
