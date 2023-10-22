@@ -140,12 +140,6 @@ public partial class Oval
   
   
   /// <summary>
-  ///   Horizontal Rule Alignment
-  /// </summary>
-  public DocumentModel.Vml.Office.HorizontalRuleAlignmentKind? HorizontalAlignment { get; set; }
-  
-  
-  /// <summary>
   ///   Allow in Table Cell
   /// </summary>
   public DM.TrueFalseValue? AllowInCell { get; set; }
@@ -206,12 +200,6 @@ public partial class Oval
   
   
   /// <summary>
-  ///   Text Inset Mode
-  /// </summary>
-  public DocumentModel.Vml.Office.InsetMarginKind? InsetMode { get; set; }
-  
-  
-  /// <summary>
   ///   Shape Fill Toggle
   /// </summary>
   public DM.TrueFalseValue? Filled { get; set; }
@@ -254,30 +242,6 @@ public partial class Oval
   
   
   /// <summary>
-  ///   Shape Connector Type
-  /// </summary>
-  public DocumentModel.Vml.Office.ConnectorKind? ConnectorType { get; set; }
-  
-  
-  /// <summary>
-  ///   Black-and-White Mode
-  /// </summary>
-  public DocumentModel.Vml.Office.BlackAndWhiteMode? BlackWhiteMode { get; set; }
-  
-  
-  /// <summary>
-  ///   Pure Black-and-White Mode
-  /// </summary>
-  public DocumentModel.Vml.Office.BlackAndWhiteMode? PureBlackWhiteMode { get; set; }
-  
-  
-  /// <summary>
-  ///   Normal Black-and-White Mode
-  /// </summary>
-  public DocumentModel.Vml.Office.BlackAndWhiteMode? NormalBlackWhiteMode { get; set; }
-  
-  
-  /// <summary>
   ///   Force Dashed Outline
   /// </summary>
   public DM.TrueFalseValue? ForceDash { get; set; }
@@ -317,7 +281,5 @@ public partial class Oval
   ///   Encoded Package
   /// </summary>
   public DM.Base64Binary? Gfxdata { get; set; }
-  
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
   
 }

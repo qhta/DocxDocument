@@ -8,12 +8,6 @@ public partial class Diagram
 {
   
   /// <summary>
-  ///   VML Extension Handling Behavior
-  /// </summary>
-  public DocumentModel.Vml.ExtensionHandlingBehaviorKind? Extension { get; set; }
-  
-  
-  /// <summary>
   ///   Diagram Style Options
   /// </summary>
   public Int64? Style { get; set; }

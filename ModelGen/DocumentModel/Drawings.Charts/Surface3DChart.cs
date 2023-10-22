@@ -22,6 +22,4 @@ public partial class Surface3DChart
   
   public DocumentModel.Drawings.Charts.Surface3DChartExtensionList? Surface3DChartExtensionList { get; set; }
   
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
-  
 }

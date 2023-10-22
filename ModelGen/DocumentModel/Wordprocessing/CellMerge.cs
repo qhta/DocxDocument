@@ -8,18 +8,6 @@ public partial class CellMerge
 {
   
   /// <summary>
-  ///   vMerge
-  /// </summary>
-  public DocumentModel.Wordprocessing.VerticalMergeRevisionKind? VerticalMerge { get; set; }
-  
-  
-  /// <summary>
-  ///   vMergeOrig
-  /// </summary>
-  public DocumentModel.Wordprocessing.VerticalMergeRevisionKind? VerticalMergeOriginal { get; set; }
-  
-  
-  /// <summary>
   ///   author
   /// </summary>
   public String? Author { get; set; }

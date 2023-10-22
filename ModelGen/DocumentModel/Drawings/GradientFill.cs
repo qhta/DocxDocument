@@ -8,12 +8,6 @@ public partial class GradientFill
 {
   
   /// <summary>
-  ///   Specifies the direction(s) in which to flip the gradient while tiling.
-  /// </summary>
-  public DocumentModel.Drawings.TileFlipKind? Flip { get; set; }
-  
-  
-  /// <summary>
   ///   Rotate With Shape
   /// </summary>
   public Boolean? RotateWithShape { get; set; }

@@ -14,6 +14,4 @@ public partial class MultiLevelStringCache
   
   public DocumentModel.Drawings.Charts.ExtensionList? ExtensionList { get; set; }
   
-  public DM.ElementCollection<Level>? Items { get; set; }
-  
 }

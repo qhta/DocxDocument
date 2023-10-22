@@ -669,6 +669,24 @@ namespace ModelGenApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Invalid generic argument type.
+        /// </summary>
+        public static string InvalidGenericArgType {
+            get {
+                return ResourceManager.GetString("InvalidGenericArgType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid properties.
+        /// </summary>
+        public static string InvalidProperties {
+            get {
+                return ResourceManager.GetString("InvalidProperties", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Invalid types.
         /// </summary>
         public static string InvalidTypes {
@@ -723,6 +741,15 @@ namespace ModelGenApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Missing generic argument type.
+        /// </summary>
+        public static string MissingGenericArgType {
+            get {
+                return ResourceManager.GetString("MissingGenericArgType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Missing included types relationships.
         /// </summary>
         public static string MissingIncludedTypeRels {
@@ -750,6 +777,15 @@ namespace ModelGenApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Missing property target type.
+        /// </summary>
+        public static string MissingPropertyTargetType {
+            get {
+                return ResourceManager.GetString("MissingPropertyTargetType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Missing schema.
         /// </summary>
         public static string MissingSchema {
@@ -773,6 +809,15 @@ namespace ModelGenApp {
         public static string MissingSomeIncludedTypeSchema {
             get {
                 return ResourceManager.GetString("MissingSomeIncludedTypeSchema", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Missing target namespace.
+        /// </summary>
+        public static string MissingTargetNamespace {
+            get {
+                return ResourceManager.GetString("MissingTargetNamespace", resourceCulture);
             }
         }
         
@@ -813,7 +858,7 @@ namespace ModelGenApp {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Owner namespace hase multiple types with the same name..
+        ///   Looks up a localized string similar to Target namespace has multiple types with the same name..
         /// </summary>
         public static string MultiplicatedName {
             get {
@@ -1533,6 +1578,15 @@ namespace ModelGenApp {
         public static string TypeToScanTooltip {
             get {
                 return ResourceManager.GetString("TypeToScanTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unregistered namespace {0}.
+        /// </summary>
+        public static string UnregisteredNamespace {
+            get {
+                return ResourceManager.GetString("UnregisteredNamespace", resourceCulture);
             }
         }
         

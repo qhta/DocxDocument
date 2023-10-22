@@ -249,7 +249,7 @@ public static class TypeManager
   public static TypeInfo RegisterType(Type type, TypeInfo source, Semantics semantics)
   {
     var result = RegisterType(type);
-    //////AddRelationship(source, result, semantics);
+    //AddRelationship(source, result, semantics);
     return result;
   }
 

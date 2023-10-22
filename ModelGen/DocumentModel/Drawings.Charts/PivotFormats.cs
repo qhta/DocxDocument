@@ -6,6 +6,4 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class PivotFormats
 {
-  public DM.ElementCollection<PivotFormat>? Items { get; set; }
-  
 }

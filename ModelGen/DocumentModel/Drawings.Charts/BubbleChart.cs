@@ -24,6 +24,4 @@ public partial class BubbleChart
   
   public DocumentModel.Drawings.Charts.BubbleChartExtensionList? BubbleChartExtensionList { get; set; }
   
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
-  
 }

@@ -8,12 +8,6 @@ public partial class DataLabels
 {
   
   /// <summary>
-  ///   pos, this property is only available in Office 2016 and later.
-  /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.DataLabelPos? Pos { get; set; }
-  
-  
-  /// <summary>
   ///   NumberFormat.
   /// </summary>
   public DocumentModel.Drawings.ChartDrawings.NumberFormat? NumberFormat { get; set; }
@@ -43,7 +37,5 @@ public partial class DataLabels
   public DocumentModel.Drawings.ChartDrawings.SeparatorXsdstring? SeparatorXsdstring { get; set; }
   
   public DocumentModel.Drawings.ChartDrawings.ExtensionList? ExtensionList { get; set; }
-  
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
   
 }

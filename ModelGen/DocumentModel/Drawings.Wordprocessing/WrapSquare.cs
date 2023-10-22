@@ -8,12 +8,6 @@ public partial class WrapSquare
 {
   
   /// <summary>
-  ///   Text Wrapping Location
-  /// </summary>
-  public DocumentModel.Drawings.Wordprocessing.WrapTextKind? WrapText { get; set; }
-  
-  
-  /// <summary>
   ///   Distance From Text (Top)
   /// </summary>
   public UInt32? DistanceFromTop { get; set; }

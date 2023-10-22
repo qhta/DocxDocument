@@ -8,6 +8,4 @@ public partial class TableGrid
 {
   public DocumentModel.Wordprocessing.TableGridChange? TableGridChange { get; set; }
   
-  public DM.ElementCollection<GridColumn>? Items { get; set; }
-  
 }

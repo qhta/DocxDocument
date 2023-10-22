@@ -6,6 +6,4 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class ValAxExtensionList
 {
-  public DM.ElementCollection<ValAxExtension>? Items { get; set; }
-  
 }

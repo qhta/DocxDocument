@@ -146,6 +146,4 @@ public partial class Group
   
   public DM.DialogBoxLauncher? DialogBoxLauncher { get; set; }
   
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
-  
 }

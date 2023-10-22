@@ -6,6 +6,4 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class DataLabelFieldTable
 {
-  public DM.ElementCollection<DataLabelFieldTableEntry>? Items { get; set; }
-  
 }

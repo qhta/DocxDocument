@@ -6,6 +6,4 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// </summary>
 public partial class GeoLocationQueryResults
 {
-  public DM.ElementCollection<GeoLocationQueryResult>? Items { get; set; }
-  
 }

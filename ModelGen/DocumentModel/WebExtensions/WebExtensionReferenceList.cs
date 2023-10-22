@@ -6,6 +6,4 @@ namespace DocumentModel.WebExtensions;
 /// </summary>
 public partial class WebExtensionReferenceList
 {
-  public DM.ElementCollection<WebExtensionStoreReference>? Items { get; set; }
-  
 }

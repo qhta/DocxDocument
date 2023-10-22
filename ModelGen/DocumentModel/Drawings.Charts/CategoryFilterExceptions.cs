@@ -6,6 +6,4 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class CategoryFilterExceptions
 {
-  public DM.ElementCollection<CategoryFilterException>? Items { get; set; }
-  
 }

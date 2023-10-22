@@ -30,6 +30,4 @@ public partial class Run
   /// </summary>
   public DocumentModel.Wordprocessing.RunProperties? RunProperties { get; set; }
   
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
-  
 }

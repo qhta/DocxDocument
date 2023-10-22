@@ -8,12 +8,6 @@ public partial class Gallery
 {
   
   /// <summary>
-  ///   size
-  /// </summary>
-  public DMUI.SizeKind? Size { get; set; }
-  
-  
-  /// <summary>
   ///   getSize
   /// </summary>
   public String? GetSize { get; set; }
@@ -305,7 +299,5 @@ public partial class Gallery
   ///   getShowImage
   /// </summary>
   public String? GetShowImage { get; set; }
-  
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
   
 }

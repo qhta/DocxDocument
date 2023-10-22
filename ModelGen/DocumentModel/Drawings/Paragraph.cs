@@ -14,6 +14,4 @@ public partial class Paragraph
   
   public DocumentModel.Drawings.EndParagraphRunProperties? EndParagraphRunProperties { get; set; }
   
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
-  
 }

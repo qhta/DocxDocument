@@ -6,6 +6,4 @@ namespace DocumentModel.UI;
 /// </summary>
 public partial class DocumentSpecificQuickAccessToolbarControls
 {
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
-  
 }

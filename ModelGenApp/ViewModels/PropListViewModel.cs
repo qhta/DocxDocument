@@ -133,6 +133,6 @@ public class PropListViewModel : ItemListViewModel<PropInfoViewModel>
     return new PropInfoViewModel(phase, null, item, TypeNameSelector);
   }
 
-
+  public bool ShowErrorColumn => VisibleItems.Any(item => item.Model.IsInvalid(this.Phase.PhaseNum));
 
 }

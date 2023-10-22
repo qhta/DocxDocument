@@ -8,12 +8,6 @@ public partial class FontReference
 {
   
   /// <summary>
-  ///   Specifies the identifier of the font to reference.
-  /// </summary>
-  public DocumentModel.Drawings.FontCollectionIndexKind? Index { get; set; }
-  
-  
-  /// <summary>
   ///   RGB Color Model - Percentage Variant.
   /// </summary>
   public DocumentModel.Drawings.RgbColorModelPercentage? RgbColorModelPercentage { get; set; }

@@ -10,12 +10,6 @@ public partial class FontTablePart
   
   
   /// <summary>
-  ///   Gets the FontParts of the FontTablePart
-  /// </summary>
-  public Collection<FontPart>? FontParts { get; set; }
-  
-  
-  /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>
   public DocumentModel.Wordprocessing.Fonts? Fonts { get; set; }

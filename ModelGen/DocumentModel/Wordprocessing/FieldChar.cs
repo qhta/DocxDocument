@@ -8,12 +8,6 @@ public partial class FieldChar
 {
   
   /// <summary>
-  ///   Field Character Type
-  /// </summary>
-  public DocumentModel.Wordprocessing.FieldCharKind? FieldCharType { get; set; }
-  
-  
-  /// <summary>
   ///   Field Should Not Be Recalculated
   /// </summary>
   public Boolean? FieldLock { get; set; }

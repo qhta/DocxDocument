@@ -397,19 +397,11 @@ public abstract partial class PhaseResultsViewModel : ViewModel
 
   public void SetFilter(SummaryInfoKind? filter)
   {
-    if (filter == SummaryInfoKind.TargetTypes)
-    {
-      ShowTargetsOnly = true;
-    }
+    if (filter != null)
+      Filter = new TypeInfoViewModelFilter((SummaryInfoKind)filter, PhaseNum);
     else
-    {
-      ShowTargetsOnly = false;
-      if (filter != null)
-        Filter = new TypeInfoViewModelFilter((SummaryInfoKind)filter, PhaseNum);
-      else
-        Filter = null;
-      ApplyFilter();
-    }
+      Filter = null;
+    ApplyFilter();
   }
 
   public void ApplyFilter()
@@ -449,7 +441,7 @@ public abstract partial class PhaseResultsViewModel : ViewModel
 
   public async void ReloadNamespacesAsync()
   {
-    Debug.WriteLine($"ReloadNamespacesAsync");
+    //Debug.WriteLine($"ReloadNamespacesAsync");
     var task1 = FillNamespacesAsync();
     if (_Types==null)
       await task1;
@@ -462,13 +454,13 @@ public abstract partial class PhaseResultsViewModel : ViewModel
 
   public void ReloadTypes()
   {
-    Debug.WriteLine($"ReloadTypes");
+    //Debug.WriteLine($"ReloadTypes");
     FillTypes();
   }
 
   public void ReloadProperties()
   {
-    Debug.WriteLine($"ReloadProperties");
+    //Debug.WriteLine($"ReloadProperties");
     FillProperties();
   }
 

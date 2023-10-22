@@ -16,6 +16,4 @@ public partial class PlotArea
   
   public DocumentModel.Drawings.ChartDrawings.ExtensionList? ExtensionList { get; set; }
   
-  public DM.ElementCollection<Axis>? Items { get; set; }
-  
 }

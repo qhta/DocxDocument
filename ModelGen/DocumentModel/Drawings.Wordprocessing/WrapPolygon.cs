@@ -18,6 +18,4 @@ public partial class WrapPolygon
   /// </summary>
   public DocumentModel.Drawings.Wordprocessing.StartPoint? StartPoint { get; set; }
   
-  public DM.ElementCollection<LineTo>? Items { get; set; }
-  
 }

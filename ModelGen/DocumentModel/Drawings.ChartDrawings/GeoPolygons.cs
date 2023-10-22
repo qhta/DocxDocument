@@ -6,6 +6,4 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// </summary>
 public partial class GeoPolygons
 {
-  public DM.ElementCollection<GeoPolygon>? Items { get; set; }
-  
 }

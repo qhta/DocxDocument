@@ -8,12 +8,6 @@ public partial class DocGrid
 {
   
   /// <summary>
-  ///   Document Grid Type
-  /// </summary>
-  public DocumentModel.Wordprocessing.DocGridKind? Type { get; set; }
-  
-  
-  /// <summary>
   ///   Document Grid Line Pitch
   /// </summary>
   public Int32? LinePitch { get; set; }

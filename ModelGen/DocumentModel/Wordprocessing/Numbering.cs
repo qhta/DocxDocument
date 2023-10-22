@@ -8,6 +8,4 @@ public partial class Numbering
 {
   public DocumentModel.Wordprocessing.NumberingIdMacAtCleanup? NumberingIdMacAtCleanup { get; set; }
   
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
-  
 }

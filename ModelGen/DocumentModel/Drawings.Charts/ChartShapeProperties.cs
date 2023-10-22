@@ -8,12 +8,6 @@ public partial class ChartShapeProperties
 {
   
   /// <summary>
-  ///   Black and White Mode
-  /// </summary>
-  public DocumentModel.Drawings.BlackWhiteMode? BlackWhiteMode { get; set; }
-  
-  
-  /// <summary>
   ///   2D Transform for Individual Objects.
   /// </summary>
   public DocumentModel.Drawings.Transform2D? Transform2D { get; set; }

@@ -26,12 +26,6 @@ public partial class Shape3DType
   
   
   /// <summary>
-  ///   Defines the preset material which is combined with the lighting properties to give the final look and feel of a shape.
-  /// </summary>
-  public DocumentModel.Drawings.PresetMaterialTypeKind? PresetMaterial { get; set; }
-  
-  
-  /// <summary>
   ///   Top Bevel.
   /// </summary>
   public DocumentModel.Drawings.BevelTop? BevelTop { get; set; }

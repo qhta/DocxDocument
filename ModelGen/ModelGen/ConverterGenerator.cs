@@ -1,5 +1,4 @@
-﻿using System.Runtime.CompilerServices;
-using DocumentFormat.OpenXml;
+﻿using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
 using DocumentModel;
@@ -9,6 +8,7 @@ using Text = DocumentFormat.OpenXml.Drawing.Text;
 using System.Reflection;
 using System.Xml.Linq;
 using InvalidOperationException = System.InvalidOperationException;
+using System.Runtime.CompilerServices;
 
 namespace ModelGen;
 

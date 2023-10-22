@@ -10,6 +10,4 @@ public partial class Degree
   
   public DocumentModel.Math.ControlProperties? ControlProperties { get; set; }
   
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
-  
 }

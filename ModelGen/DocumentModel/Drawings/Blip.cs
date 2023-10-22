@@ -18,14 +18,6 @@ public partial class Blip
   /// </summary>
   public String? Link { get; set; }
   
-  
-  /// <summary>
-  ///   Compression state for blips.
-  /// </summary>
-  public DocumentModel.Drawings.BlipCompressionKind? CompressionState { get; set; }
-  
   public DocumentModel.Drawings.BlipExtensionList? BlipExtensionList { get; set; }
-  
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
   
 }

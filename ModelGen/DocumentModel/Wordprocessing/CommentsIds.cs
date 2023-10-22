@@ -6,6 +6,4 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class CommentsIds
 {
-  public DM.ElementCollection<CommentId>? Items { get; set; }
-  
 }

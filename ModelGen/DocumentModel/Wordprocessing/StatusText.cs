@@ -8,12 +8,6 @@ public partial class StatusText
 {
   
   /// <summary>
-  ///   Status Text Type
-  /// </summary>
-  public DocumentModel.Wordprocessing.InfoTextKind? Type { get; set; }
-  
-  
-  /// <summary>
   ///   Status Text Value
   /// </summary>
   public String? Val { get; set; }

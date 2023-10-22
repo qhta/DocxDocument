@@ -36,6 +36,4 @@ public partial class LayoutDefinition
   
   public DocumentModel.Drawings.Diagrams.DiagramDefinitionExtensionList? DiagramDefinitionExtensionList { get; set; }
   
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
-  
 }

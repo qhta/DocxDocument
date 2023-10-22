@@ -6,6 +6,4 @@ namespace DocumentModel.Drawings.Diagrams;
 /// </summary>
 public partial class PointList
 {
-  public DM.ElementCollection<Point>? Items { get; set; }
-  
 }

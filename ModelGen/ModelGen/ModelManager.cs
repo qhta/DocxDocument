@@ -432,8 +432,6 @@ public static class ModelManager
   {
     if (prop.DeclaringType != null)
     {
-      if (prop.Name == "Count")
-        Debug.Assert(true);
       var fullName = prop.DeclaringType.GetFullName(false, true, true) + "." + prop.Name;
       if (ModelConfig.Instance.PropertyTranslateTable.TryGetValue(fullName, out var newName))
         return newName;
@@ -450,8 +448,8 @@ public static class ModelManager
         return result;
       if (result.OriginalNamespace.StartsWith("System"))
         return result;
-      if (result.TargetNamespace!=null)
-      {  
+      if (result.TargetNamespace != null)
+      {
         if (result.TargetNamespace.StartsWith("System") || TypeManager.GetNamespace(result.TargetNamespace).IsTarget)
           return result;
       }
@@ -512,8 +510,15 @@ public static class ModelManager
 
   #region Type conversion methods
 
-  public static SummaryInfo ConvertTypes(IEnumerable<TypeInfo> types, ProgressTypeEvent? OnConvertingType)
+  public static int ConvertTypes(ProgressTypeEvent? OnConvertingType)
   {
+    var types = TypeManager.AllTypes.Where(typeInfo => typeInfo.IsAcceptedTo(PPS.ConvertTypes)
+                                     && typeInfo.OriginalNamespace.StartsWith("DocumentFormat")
+                                     ).ToArray();
+    if (types.FirstOrDefault(item => item.Name.StartsWith("EnumValue")) == null)
+    {
+      var enumValueType = TypeManager.AllTypes.FirstOrDefault(item => item.Name.StartsWith("EnumValue"));
+    }
     var n = 0;
     var totalTypes = types.Count();
     foreach (var typeInfo in types)
@@ -531,20 +536,11 @@ public static class ModelManager
         n++;
       }
     }
-    var summaryInfo = new SummaryInfo
-    {
-      Summary = new Dictionary<SummaryInfoKind, object>{
-        {SummaryInfoKind.CheckedTypes, totalTypes },
-        {SummaryInfoKind.ConvertedTypes, ConvertedTypesCount },
-        }
-    };
-    return summaryInfo;
+    return ConvertedTypesCount;
   }
 
   public static bool TryConvertType(this TypeInfo typeInfo)
   {
-    if (typeInfo.Name == "StringValue")
-      Debug.Assert(true);
     if (typeInfo.IsConverted)
       return false;
     var converted = false;
@@ -633,8 +629,11 @@ public static class ModelManager
       var targetType = TypeManager.GetType(targetName);
       if (targetType == null)
       {
-        Debug.WriteLine($"Unregistered target type {typeInfo.Type.FullName} -> {targetName}");
-        return false;
+        var fullTargetName = new FullTypeName(targetName);
+        typeInfo.NewName = fullTargetName.Name;
+        if (fullTargetName.Namespace != null && fullTargetName.Namespace != typeInfo.OriginalNamespace)
+          typeInfo.SetTargetNamespace(fullTargetName.Namespace);
+        return true;
       }
       typeInfo.SetTargetType(targetType);
       return true;
@@ -654,8 +653,6 @@ public static class ModelManager
     {
       if (typeInfo.BaseTypeInfo != null && !typeInfo.BaseTypeInfo.IsAbstract)
       {
-        if (typeInfo.BaseTypeInfo.Name.StartsWith("EnumValue"))
-          Debug.Assert(true);
         typeInfo.SetTargetType(typeInfo.BaseTypeInfo);
         return true;
       }
@@ -665,8 +662,6 @@ public static class ModelManager
 
   private static bool TryValTypeConversion(TypeInfo typeInfo)
   {
-    if (typeInfo.Name == "StringValue")
-      Debug.Assert(true);
     if (typeInfo.IsConverted)
       return false;
     if (typeInfo.AcceptedProperties(PPS.ConvertTypes)?.Count() == 1)
@@ -692,8 +687,6 @@ public static class ModelManager
     if (typeInfo.IsConverted)
       return false;
 
-    //if (typeInfo.Name.StartsWith("EnumValue") && typeInfo.GetGenericArguments().FirstOrDefault()?.Name.StartsWith("RegionLabel")==true)
-    //  Debug.Assert(true);
     if (typeInfo.Type.Name.Contains('`'))
     {
       if (typeInfo.Name == "Nullable`1")
@@ -960,7 +953,7 @@ public static class ModelManager
     int fixedPropsCount = 0;
     foreach (var type in types)
     {
-      onCheckingType?.Invoke(new ProgressTypeInfo{ TotalTypes=totalTypes, CheckedTypes=checkedTypes, ProcessedTypes=fixedTypesCount, Current=type});
+      onCheckingType?.Invoke(new ProgressTypeInfo { TotalTypes = totalTypes, CheckedTypes = checkedTypes, ProcessedTypes = fixedTypesCount, Current = type });
       var fixedProperties = FixProperties(type);
       if (fixedProperties != 0)
       {
@@ -969,7 +962,7 @@ public static class ModelManager
       }
       checkedTypes++;
     }
-    return  new SummaryInfo
+    return new SummaryInfo
     {
       Summary = new Dictionary<SummaryInfoKind, object>{
         {SummaryInfoKind.CheckedTypes, totalTypes },
@@ -990,9 +983,36 @@ public static class ModelManager
     int fixedPropertiesCount = 0;
     if (type.Properties != null)
     {
+      var props = new Dictionary<string, PropInfo>();
       foreach (var propInfo in type.Properties)
       {
-        if (propInfo.GetTargetPropertyType() == null)
+        var ok = true;
+        var targetType = propInfo.GetTargetPropertyType();
+        if (targetType == null)
+          ok = false;
+        else
+        {
+          if (targetType.IsConstructedGenericType)
+          {
+            var argType = targetType.GetGenericArguments().FirstOrDefault();
+            if (argType == null)
+              ok = false;
+            else
+            {
+              targetType = argType.GetConversionTarget();
+              if (targetType == null)
+                ok = false;
+            }
+          }
+        }
+        if (ok)
+        {
+          if (!props.ContainsKey(propInfo.Name))
+            props.Add(propInfo.Name, propInfo);
+          else
+            ok = false;
+        }
+        if (!ok)
         {
           Debug.WriteLine($"Reject property {propInfo.Name}: {propInfo.PropertyType}");
           propInfo.SetRejected(PPS.FinalCheck);

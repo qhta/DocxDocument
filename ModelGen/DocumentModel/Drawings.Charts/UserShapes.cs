@@ -6,6 +6,4 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class UserShapes
 {
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
-  
 }

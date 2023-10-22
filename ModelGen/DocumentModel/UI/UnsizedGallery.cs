@@ -294,6 +294,4 @@ public partial class UnsizedGallery
   /// </summary>
   public String? GetShowImage { get; set; }
   
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
-  
 }

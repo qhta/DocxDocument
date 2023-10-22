@@ -54,6 +54,4 @@ public partial class TableRow
   /// </summary>
   public DocumentModel.Wordprocessing.TableRowProperties? TableRowProperties { get; set; }
   
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
-  
 }

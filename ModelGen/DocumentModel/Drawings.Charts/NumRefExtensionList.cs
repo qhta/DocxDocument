@@ -6,6 +6,4 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class NumRefExtensionList
 {
-  public DM.ElementCollection<NumRefExtension>? Items { get; set; }
-  
 }

@@ -32,12 +32,6 @@ public partial class MenuWithTitle
   
   
   /// <summary>
-  ///   itemSize
-  /// </summary>
-  public DMUI.ItemSizeKind? ItemSize { get; set; }
-  
-  
-  /// <summary>
   ///   title
   /// </summary>
   public String? Title { get; set; }
@@ -185,7 +179,5 @@ public partial class MenuWithTitle
   ///   getShowImage
   /// </summary>
   public String? GetShowImage { get; set; }
-  
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
   
 }

@@ -6,6 +6,4 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class Fonts
 {
-  public DM.ElementCollection<Font>? Items { get; set; }
-  
 }

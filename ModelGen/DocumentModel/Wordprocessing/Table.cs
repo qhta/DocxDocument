@@ -10,6 +10,4 @@ public partial class Table
   
   public DocumentModel.Wordprocessing.TableGrid? TableGrid { get; set; }
   
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
-  
 }

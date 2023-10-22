@@ -8,12 +8,6 @@ public partial class HeaderFooterReferenceType
 {
   
   /// <summary>
-  ///   type
-  /// </summary>
-  public DocumentModel.Wordprocessing.HeaderFooterKind? Type { get; set; }
-  
-  
-  /// <summary>
   ///   Relationship to Part
   /// </summary>
   public String? Id { get; set; }

@@ -8,12 +8,6 @@ public partial class FontReference
 {
   
   /// <summary>
-  ///   idx, this property is only available in Office 2013 and later.
-  /// </summary>
-  public DocumentModel.Drawings.FontCollectionIndexKind? Index { get; set; }
-  
-  
-  /// <summary>
   ///   mods, this property is only available in Office 2013 and later.
   /// </summary>
   public DM.ListOf<String>? Modifiers { get; set; }

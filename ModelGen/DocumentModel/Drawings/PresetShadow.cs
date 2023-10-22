@@ -8,12 +8,6 @@ public partial class PresetShadow
 {
   
   /// <summary>
-  ///   Specifies which preset shadow to use.
-  /// </summary>
-  public DocumentModel.Drawings.PresetShadowKind? Preset { get; set; }
-  
-  
-  /// <summary>
   ///   Specifies how far to offset the shadow.
   /// </summary>
   public Int64? Distance { get; set; }

@@ -8,12 +8,6 @@ public partial class HorizontalPosition
 {
   
   /// <summary>
-  ///   Horizontal Position Relative Base
-  /// </summary>
-  public DocumentModel.Drawings.Wordprocessing.HorizontalRelativePositionKind? RelativeFrom { get; set; }
-  
-  
-  /// <summary>
   ///   Relative Horizontal Alignment.
   /// </summary>
   public DocumentModel.Drawings.Wordprocessing.HorizontalAlignment? HorizontalAlignment { get; set; }

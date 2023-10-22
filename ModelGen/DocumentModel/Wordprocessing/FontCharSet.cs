@@ -12,10 +12,4 @@ public partial class FontCharSet
   /// </summary>
   public String? Val { get; set; }
   
-  
-  /// <summary>
-  ///   characterSet
-  /// </summary>
-  public DocumentModel.Wordprocessing.StrictCharacterSet? StrictCharacterSet { get; set; }
-  
 }

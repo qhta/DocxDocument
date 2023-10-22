@@ -6,6 +6,4 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// </summary>
 public partial class Copyrights
 {
-  public DM.ElementCollection<CopyrightXsdstring>? Items { get; set; }
-  
 }

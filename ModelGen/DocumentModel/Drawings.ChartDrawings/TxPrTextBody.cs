@@ -10,6 +10,4 @@ public partial class TxPrTextBody
   
   public DocumentModel.Drawings.ListStyle? ListStyle { get; set; }
   
-  public DM.ElementCollection<Paragraph>? Items { get; set; }
-  
 }

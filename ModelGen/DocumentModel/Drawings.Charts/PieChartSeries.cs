@@ -50,6 +50,4 @@ public partial class PieChartSeries
   
   public DocumentModel.Drawings.Charts.PieSerExtensionList? PieSerExtensionList { get; set; }
   
-  public DM.ElementCollection<DataPoint>? Items { get; set; }
-  
 }

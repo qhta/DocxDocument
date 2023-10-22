@@ -26,18 +26,6 @@ public partial class BackstageComboBox
   
   
   /// <summary>
-  ///   alignLabel, this property is only available in Office 2010 and later.
-  /// </summary>
-  public DM.ExpandKind? AlignLabel { get; set; }
-  
-  
-  /// <summary>
-  ///   expand, this property is only available in Office 2010 and later.
-  /// </summary>
-  public DM.ExpandKind? Expand { get; set; }
-  
-  
-  /// <summary>
   ///   enabled, this property is only available in Office 2010 and later.
   /// </summary>
   public Boolean? Enabled { get; set; }
@@ -119,7 +107,5 @@ public partial class BackstageComboBox
   ///   getItemID, this property is only available in Office 2010 and later.
   /// </summary>
   public String? GetItemID { get; set; }
-  
-  public DM.ElementCollection<ItemBackstageItem>? Items { get; set; }
   
 }

@@ -60,12 +60,4 @@ public partial class Box
   /// </summary>
   public String? InsertBeforeQulifiedId { get; set; }
   
-  
-  /// <summary>
-  ///   boxStyle, this property is only available in Office 2010 and later.
-  /// </summary>
-  public DM.BoxStyleKind? BoxStyle { get; set; }
-  
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
-  
 }

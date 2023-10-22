@@ -14,24 +14,6 @@ public partial class WriteProtection
   
   
   /// <summary>
-  ///   Cryptographic Provider Type
-  /// </summary>
-  public DocumentModel.Wordprocessing.CryptProviderKind? CryptographicProviderType { get; set; }
-  
-  
-  /// <summary>
-  ///   Cryptographic Algorithm Class
-  /// </summary>
-  public DocumentModel.Wordprocessing.CryptAlgorithmClassKind? CryptographicAlgorithmClass { get; set; }
-  
-  
-  /// <summary>
-  ///   Cryptographic Algorithm Type
-  /// </summary>
-  public DocumentModel.Wordprocessing.CryptAlgorithmKind? CryptographicAlgorithmType { get; set; }
-  
-  
-  /// <summary>
   ///   Cryptographic Hashing Algorithm
   /// </summary>
   public Int32? CryptographicAlgorithmSid { get; set; }

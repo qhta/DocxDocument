@@ -20,12 +20,6 @@ public partial class Path
   
   
   /// <summary>
-  ///   Path Fill
-  /// </summary>
-  public DocumentModel.Drawings.PathFillMode? Fill { get; set; }
-  
-  
-  /// <summary>
   ///   Path Stroke
   /// </summary>
   public Boolean? Stroke { get; set; }
@@ -35,7 +29,5 @@ public partial class Path
   ///   3D Extrusion Allowed
   /// </summary>
   public Boolean? ExtrusionOk { get; set; }
-  
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
   
 }

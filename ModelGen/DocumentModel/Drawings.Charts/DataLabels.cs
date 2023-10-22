@@ -36,6 +36,4 @@ public partial class DataLabels
   
   public DocumentModel.Drawings.Charts.DLblsExtensionList? DLblsExtensionList { get; set; }
   
-  public DM.ElementCollection<DataLabel>? Items { get; set; }
-  
 }

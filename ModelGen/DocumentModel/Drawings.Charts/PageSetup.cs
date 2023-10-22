@@ -20,12 +20,6 @@ public partial class PageSetup
   
   
   /// <summary>
-  ///   Orientation
-  /// </summary>
-  public DocumentModel.Drawings.Charts.PageSetupOrientationKind? Orientation { get; set; }
-  
-  
-  /// <summary>
   ///   Black and White
   /// </summary>
   public Boolean? BlackAndWhite { get; set; }

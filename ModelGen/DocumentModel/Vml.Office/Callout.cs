@@ -8,12 +8,6 @@ public partial class Callout
 {
   
   /// <summary>
-  ///   VML Extension Handling Behavior
-  /// </summary>
-  public DocumentModel.Vml.ExtensionHandlingBehaviorKind? Extension { get; set; }
-  
-  
-  /// <summary>
   ///   Callout toggle
   /// </summary>
   public DM.TrueFalseValue? On { get; set; }
@@ -29,12 +23,6 @@ public partial class Callout
   ///   Callout gap
   /// </summary>
   public String? Gap { get; set; }
-  
-  
-  /// <summary>
-  ///   Callout angle
-  /// </summary>
-  public DocumentModel.Vml.Office.AngleKind? Angle { get; set; }
   
   
   /// <summary>

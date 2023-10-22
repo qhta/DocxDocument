@@ -8,18 +8,6 @@ public partial class BackstageGroupButton
 {
   
   /// <summary>
-  ///   expand, this property is only available in Office 2010 and later.
-  /// </summary>
-  public DM.ExpandKind? Expand { get; set; }
-  
-  
-  /// <summary>
-  ///   style, this property is only available in Office 2010 and later.
-  /// </summary>
-  public DM.Style2Kind? Style { get; set; }
-  
-  
-  /// <summary>
   ///   screentip, this property is only available in Office 2010 and later.
   /// </summary>
   public String? Screentip { get; set; }

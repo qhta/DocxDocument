@@ -8,12 +8,6 @@ public partial class UnsizedMenu
 {
   
   /// <summary>
-  ///   itemSize
-  /// </summary>
-  public DMUI.ItemSizeKind? ItemSize { get; set; }
-  
-  
-  /// <summary>
   ///   description
   /// </summary>
   public String? Description { get; set; }
@@ -185,7 +179,5 @@ public partial class UnsizedMenu
   ///   getShowImage
   /// </summary>
   public String? GetShowImage { get; set; }
-  
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
   
 }

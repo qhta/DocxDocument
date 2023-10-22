@@ -14,8 +14,8 @@ public partial class PropListView : UserControl
 
   private void DataGrid_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs args)
   {
-    if (args.PropertyName==nameof(PropInfoViewModel.Owner)
-     || args.PropertyName==nameof(PropInfoViewModel.TypeNameSelector))
+    if (args.PropertyName == nameof(PropInfoViewModel.Owner)
+     || args.PropertyName == nameof(PropInfoViewModel.TypeNameSelector))
     {
       args.Cancel = true;
       return;
@@ -27,18 +27,29 @@ public partial class PropListView : UserControl
     }
     dataGridColumnCreator.GenerateColumn(sender, args);
     if (sender is DataGrid dataGrid)
+    {
       if (args.PropertyName.EndsWith("DeclaringType"))
       {
         BindingOperations.SetBinding(args.Column, DataGridColumn.VisibilityProperty,
-          new Binding("Properties.ShowDeclaringType") 
+          new Binding("Properties.ShowDeclaringType")
           { Source = DataContext, Converter = (IValueConverter)dataGrid.FindResource("BoolToVisibilityConverter") });
       }
-      else
-      if (args.PropertyName == "Acceptance")
+      else if (args.PropertyName == "Acceptance")
       {
         BindingOperations.SetBinding(args.Column, DataGridColumn.VisibilityProperty,
-          new Binding("Properties.ShowAcceptedOnly") 
-          { Source = DataContext, Converter = (IValueConverter)dataGrid.FindResource("BoolToVisibilityConverter"), ConverterParameter="Collapsed,Visible" });
+          new Binding("Properties.ShowAcceptedOnly")
+          { Source = DataContext, Converter = (IValueConverter)dataGrid.FindResource("BoolToVisibilityConverter"), ConverterParameter = "Collapsed,Visible" });
       }
+      if (args.PropertyName == nameof(TypeInfoViewModel.ValidationError))
+      {
+        BindingOperations.SetBinding(args.Column, DataGridColumn.VisibilityProperty,
+          new Binding("DataContext." + nameof(TypeListViewModel.ShowErrorColumn))
+          {
+            Source = dummyElement,
+            Converter = new BoolToVisibilityConverter(),
+            ConverterParameter = "Visible,Collapsed"
+          });
+      }
+    }
   }
 }

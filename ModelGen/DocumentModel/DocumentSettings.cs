@@ -286,6 +286,4 @@ public partial class DocumentSettings
   
   public String? PersistentDocumentId { get; set; }
   
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
-  
 }

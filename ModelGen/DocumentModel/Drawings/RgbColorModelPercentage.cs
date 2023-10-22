@@ -24,6 +24,4 @@ public partial class RgbColorModelPercentage
   /// </summary>
   public Int32? BluePortion { get; set; }
   
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
-  
 }

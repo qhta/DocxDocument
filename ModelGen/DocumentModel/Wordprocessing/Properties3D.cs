@@ -20,12 +20,6 @@ public partial class Properties3D
   
   
   /// <summary>
-  ///   prstMaterial, this property is only available in Office 2010 and later.
-  /// </summary>
-  public DocumentModel.Wordprocessing.PresetMaterialTypeKind? PresetMaterialType { get; set; }
-  
-  
-  /// <summary>
   ///   BevelTop.
   /// </summary>
   public DocumentModel.Wordprocessing.BevelTop? BevelTop { get; set; }

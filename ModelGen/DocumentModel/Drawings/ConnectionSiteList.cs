@@ -6,6 +6,4 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class ConnectionSiteList
 {
-  public DM.ElementCollection<ConnectionSite>? Items { get; set; }
-  
 }

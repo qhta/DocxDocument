@@ -12,10 +12,4 @@ public partial class TabStop
   /// </summary>
   public Int32? Position { get; set; }
   
-  
-  /// <summary>
-  ///   Tab Alignment
-  /// </summary>
-  public DocumentModel.Drawings.TextTabAlignmentKind? Alignment { get; set; }
-  
 }

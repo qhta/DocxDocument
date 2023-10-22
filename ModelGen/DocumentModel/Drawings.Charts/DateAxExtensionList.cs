@@ -6,6 +6,4 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class DateAxExtensionList
 {
-  public DM.ElementCollection<DateAxExtension>? Items { get; set; }
-  
 }

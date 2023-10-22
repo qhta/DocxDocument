@@ -14,12 +14,6 @@ public partial class DataLabel
   
   
   /// <summary>
-  ///   pos, this property is only available in Office 2016 and later.
-  /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.DataLabelPos? Pos { get; set; }
-  
-  
-  /// <summary>
   ///   NumberFormat.
   /// </summary>
   public DocumentModel.Drawings.ChartDrawings.NumberFormat? NumberFormat { get; set; }

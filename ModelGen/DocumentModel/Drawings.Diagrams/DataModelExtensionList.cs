@@ -6,6 +6,4 @@ namespace DocumentModel.Drawings.Diagrams;
 /// </summary>
 public partial class DataModelExtensionList
 {
-  public DM.ElementCollection<DataModelExtension>? Items { get; set; }
-  
 }

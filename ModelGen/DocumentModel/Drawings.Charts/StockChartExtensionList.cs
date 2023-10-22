@@ -6,6 +6,4 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class StockChartExtensionList
 {
-  public DM.ElementCollection<StockChartExtension>? Items { get; set; }
-  
 }

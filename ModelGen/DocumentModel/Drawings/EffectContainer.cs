@@ -6,6 +6,4 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class EffectContainer
 {
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
-  
 }

@@ -22,6 +22,4 @@ public partial class Legend
   
   public DocumentModel.Drawings.Charts.ExtensionList? ExtensionList { get; set; }
   
-  public DM.ElementCollection<LegendEntry>? Items { get; set; }
-  
 }

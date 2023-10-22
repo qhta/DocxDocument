@@ -132,6 +132,4 @@ public partial class Anchor
   
   public DocumentModel.Wordprocessing.Drawings.RelativeWidth? RelativeWidth { get; set; }
   
-  public DocumentModel.Wordprocessing.Drawings.RelativeHeight? RelativeHeight { get; set; }
-  
 }

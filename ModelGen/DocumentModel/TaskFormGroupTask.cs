@@ -132,6 +132,4 @@ public partial class TaskFormGroupTask
   /// </summary>
   public String? GetKeytip { get; set; }
   
-  public DM.ElementCollection<BackstageGroup>? Items { get; set; }
-  
 }

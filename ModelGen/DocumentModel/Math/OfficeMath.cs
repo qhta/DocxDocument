@@ -6,6 +6,4 @@ namespace DocumentModel.Math;
 /// </summary>
 public partial class OfficeMath
 {
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
-  
 }

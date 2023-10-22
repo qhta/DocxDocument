@@ -54,6 +54,4 @@ public partial class Div
   /// </summary>
   public DocumentModel.Wordprocessing.DivBorder? DivBorder { get; set; }
   
-  public DM.ElementCollection<DivsChild>? Items { get; set; }
-  
 }

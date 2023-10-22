@@ -14,12 +14,6 @@ public partial class DiagramPersistLayoutPart
   /// </summary>
   public DocumentModel.Drawings.Office.Drawing? Drawing { get; set; }
   
-  
-  /// <summary>
-  ///   Gets the ImageParts of the DiagramPersistLayoutPart
-  /// </summary>
-  public Collection<ImagePart>? ImageParts { get; set; }
-  
   public String? RelationshipType { get; set; }
   
 }

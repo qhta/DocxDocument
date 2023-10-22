@@ -112,8 +112,6 @@ public partial class ParagraphMarkRunProperties
   
   public DocumentModel.Wordprocessing.Glow? Glow { get; set; }
   
-  public DocumentModel.Wordprocessing.Shadow? Shadow { get; set; }
-  
   public DocumentModel.Wordprocessing.Reflection? Reflection { get; set; }
   
   public DocumentModel.Wordprocessing.TextOutlineEffect? TextOutlineEffect { get; set; }

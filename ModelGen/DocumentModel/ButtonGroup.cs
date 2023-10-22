@@ -60,6 +60,4 @@ public partial class ButtonGroup
   /// </summary>
   public String? InsertBeforeQulifiedId { get; set; }
   
-  public DM.ElementCollection<IModelElement>? Items { get; set; }
-  
 }

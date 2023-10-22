@@ -6,6 +6,4 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class DivsChild
 {
-  public DM.ElementCollection<Div>? Items { get; set; }
-  
 }
