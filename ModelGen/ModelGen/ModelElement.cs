@@ -81,13 +81,28 @@ public class ModelElement : IOwnedElement
   [XmlIgnore]
   public bool IsUnused { get => Used == false; set { if (value) Used = false; else Used = true; } }
 
+  /// <summary>
+  /// Determines whether the element has no error added in the specific phase.
+  /// </summary>
+  /// <param name="pps"></param>
+  /// <returns></returns>
   public bool IsInvalid(PPS pps)
   {
     var result = Errors?.Where(item => item.Phase == pps).Any() == true;
     return result;
   }
+
+  /// <summary>
+  /// Errors list.
+  /// </summary>
   public Errors? Errors { get; private set; }
 
+  /// <summary>
+  /// Adds an error to the element at the specific phase.
+  /// </summary>
+  /// <param name="pps"></param>
+  /// <param name="code"></param>
+  /// <param name="args"></param>
   public void AddError(PPS pps, ErrorCode code, params object[]? args)
   {
     if (Errors == null)
@@ -97,11 +112,48 @@ public class ModelElement : IOwnedElement
     Errors.Add(new Error(pps, code, args));
   }
 
+  /// <summary>
+  /// Determines whether the element has specific error added in the specific phase.
+  /// </summary>
+  /// <param name="pps"></param>
+  /// <param name="code"></param>
+  /// <returns></returns>
   public bool HasError(PPS pps, ErrorCode code)
   {
     if (Errors == null)
       return false;
     return Errors.Any(error => error.Phase == pps && error.Code == code);
+  }
+
+  /// <summary>
+  /// Specifies whether the element was fixed in the specific phase.
+  /// </summary>
+  /// <param name="pps"></param>
+  /// <returns></returns>
+  public bool IsFixed(PPS pps)
+  {
+    var result = Fixages?.Where(item => item.Phase == pps).Any() == true;
+    return result;
+  }
+
+  /// <summary>
+  /// Fixes list.
+  /// </summary>
+  public Fixages? Fixages { get; private set; }
+
+  /// <summary>
+  /// Adds an error to the element at the specific phase.
+  /// </summary>
+  /// <param name="pps"></param>
+  /// <param name="code"></param>
+  /// <param name="args"></param>
+  public void AddFixage(PPS pps, ErrorCode code, params object[]? args)
+  {
+    if (Fixages == null)
+      Fixages = new Fixages();
+    if (args?.Length==0)
+      args = null;
+    Fixages.Add(new Fixage(pps, code, args));
   }
 
   /// <summary>

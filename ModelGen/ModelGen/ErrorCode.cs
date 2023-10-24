@@ -11,7 +11,7 @@ public enum ErrorCode
   MissingSomeIncludedTypeRels,
   MissingDescription,
   MeaninglessDescription,
-  MultiplicatedName,
+  DuplicateName,
   MissingTargetNamespace,
   UnregisteredNamespace,
   MissingTargetType,
