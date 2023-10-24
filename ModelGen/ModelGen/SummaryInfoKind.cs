@@ -21,6 +21,8 @@ public enum SummaryInfoKind
   ConvertedTypes,
   TargetTypes,
   FixedTypes,
+  InvalidProperties,
+  RemovedProperties,
   FixedProperties,
   GeneratedTypes,
   GeneratedFiles,

@@ -30,6 +30,12 @@ public record ProcessOptions
   /// </summary>
   public bool ValidateConversion { get; set; }
 
+
+  /// <summary>
+  /// Specifies whether results of the fixage phase should be validated.
+  /// </summary>
+  public bool ValidateFix { get; set; }
+
   /// <summary>
   /// Specifies whether results of the code generation phase should be validated.
   /// </summary>

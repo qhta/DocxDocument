@@ -579,11 +579,11 @@ namespace ModelGenApp {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Final check.
+        ///   Looks up a localized string similar to Final fix.
         /// </summary>
-        public static string FinalCheck {
+        public static string FinalFix {
             get {
-                return ResourceManager.GetString("FinalCheck", resourceCulture);
+                return ResourceManager.GetString("FinalFix", resourceCulture);
             }
         }
         
@@ -1121,6 +1121,15 @@ namespace ModelGenApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Removed properties.
+        /// </summary>
+        public static string RemovedProperties {
+            get {
+                return ResourceManager.GetString("RemovedProperties", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Rename.
         /// </summary>
         public static string Rename {
@@ -1614,6 +1623,15 @@ namespace ModelGenApp {
         public static string ValidatedTypes {
             get {
                 return ResourceManager.GetString("ValidatedTypes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Validate fix.
+        /// </summary>
+        public static string ValidateFix {
+            get {
+                return ResourceManager.GetString("ValidateFix", resourceCulture);
             }
         }
         

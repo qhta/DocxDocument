@@ -1,0 +1,2227 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<w:styles xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml" xmlns:w16cid="http://schemas.microsoft.com/office/word/2016/wordml/cid" xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex" mc:Ignorable="w14 w15 w16se w16cid">
+  <w:docDefaults>
+    <w:rPrDefault>
+      <w:rPr>
+        <w:rFonts w:ascii="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+        <w:lang w:val="pl-PL" w:eastAsia="pl-PL" w:bidi="ar-SA" />
+      </w:rPr>
+    </w:rPrDefault>
+    <w:pPrDefault />
+  </w:docDefaults>
+  <w:latentStyles w:defLockedState="0" w:defUIPriority="0" w:defSemiHidden="0" w:defUnhideWhenUsed="0" w:defQFormat="0" w:count="376">
+    <w:lsdException w:name="Normal" w:qFormat="1" />
+    <w:lsdException w:name="heading 1" w:uiPriority="9" w:qFormat="1" />
+    <w:lsdException w:name="heading 2" w:qFormat="1" />
+    <w:lsdException w:name="heading 3" w:qFormat="1" />
+    <w:lsdException w:name="heading 4" w:qFormat="1" />
+    <w:lsdException w:name="heading 5" w:qFormat="1" />
+    <w:lsdException w:name="heading 6" w:semiHidden="1" w:unhideWhenUsed="1" w:qFormat="1" />
+    <w:lsdException w:name="heading 7" w:semiHidden="1" w:unhideWhenUsed="1" w:qFormat="1" />
+    <w:lsdException w:name="heading 8" w:semiHidden="1" w:unhideWhenUsed="1" w:qFormat="1" />
+    <w:lsdException w:name="heading 9" w:semiHidden="1" w:unhideWhenUsed="1" w:qFormat="1" />
+    <w:lsdException w:name="toc 1" w:uiPriority="39" />
+    <w:lsdException w:name="toc 2" w:uiPriority="39" />
+    <w:lsdException w:name="toc 3" w:uiPriority="39" />
+    <w:lsdException w:name="toc 4" w:uiPriority="39" />
+    <w:lsdException w:name="toc 5" w:uiPriority="39" />
+    <w:lsdException w:name="toc 6" w:uiPriority="39" />
+    <w:lsdException w:name="toc 7" w:uiPriority="39" />
+    <w:lsdException w:name="toc 8" w:uiPriority="39" />
+    <w:lsdException w:name="toc 9" w:uiPriority="39" />
+    <w:lsdException w:name="footer" w:uiPriority="99" />
+    <w:lsdException w:name="caption" w:semiHidden="1" w:unhideWhenUsed="1" w:qFormat="1" />
+    <w:lsdException w:name="List Bullet" w:qFormat="1" />
+    <w:lsdException w:name="List Number" w:qFormat="1" />
+    <w:lsdException w:name="List Bullet 2" w:qFormat="1" />
+    <w:lsdException w:name="List Bullet 3" w:qFormat="1" />
+    <w:lsdException w:name="Title" w:qFormat="1" />
+    <w:lsdException w:name="Default Paragraph Font" w:uiPriority="1" />
+    <w:lsdException w:name="Body Text" w:uiPriority="99" />
+    <w:lsdException w:name="List Continue" w:qFormat="1" />
+    <w:lsdException w:name="Subtitle" w:qFormat="1" />
+    <w:lsdException w:name="Hyperlink" w:uiPriority="99" />
+    <w:lsdException w:name="Strong" w:uiPriority="22" w:qFormat="1" />
+    <w:lsdException w:name="Emphasis" w:uiPriority="20" w:qFormat="1" />
+    <w:lsdException w:name="Normal (Web)" w:uiPriority="99" />
+    <w:lsdException w:name="HTML Cite" w:uiPriority="99" />
+    <w:lsdException w:name="HTML Sample" w:semiHidden="1" w:unhideWhenUsed="1" />
+    <w:lsdException w:name="HTML Typewriter" w:semiHidden="1" w:unhideWhenUsed="1" />
+    <w:lsdException w:name="HTML Variable" w:semiHidden="1" w:unhideWhenUsed="1" />
+    <w:lsdException w:name="Normal Table" w:semiHidden="1" w:unhideWhenUsed="1" />
+    <w:lsdException w:name="No List" w:uiPriority="99" />
+    <w:lsdException w:name="Outline List 1" w:semiHidden="1" w:unhideWhenUsed="1" />
+    <w:lsdException w:name="Outline List 2" w:semiHidden="1" w:unhideWhenUsed="1" />
+    <w:lsdException w:name="Outline List 3" w:semiHidden="1" w:unhideWhenUsed="1" />
+    <w:lsdException w:name="Table Simple 1" w:semiHidden="1" w:unhideWhenUsed="1" />
+    <w:lsdException w:name="Table Simple 2" w:semiHidden="1" w:unhideWhenUsed="1" />
+    <w:lsdException w:name="Table Simple 3" w:semiHidden="1" w:unhideWhenUsed="1" />
+    <w:lsdException w:name="Table Classic 1" w:semiHidden="1" w:unhideWhenUsed="1" />
+    <w:lsdException w:name="Table Classic 2" w:semiHidden="1" w:unhideWhenUsed="1" />
+    <w:lsdException w:name="Table Classic 3" w:semiHidden="1" w:unhideWhenUsed="1" />
+    <w:lsdException w:name="Table Classic 4" w:semiHidden="1" w:unhideWhenUsed="1" />
+    <w:lsdException w:name="Table Colorful 1" w:semiHidden="1" w:unhideWhenUsed="1" />
+    <w:lsdException w:name="Table Colorful 2" w:semiHidden="1" w:unhideWhenUsed="1" />
+    <w:lsdException w:name="Table Colorful 3" w:semiHidden="1" w:unhideWhenUsed="1" />
+    <w:lsdException w:name="Table Columns 1" w:semiHidden="1" w:unhideWhenUsed="1" />
+    <w:lsdException w:name="Table Columns 2" w:semiHidden="1" w:unhideWhenUsed="1" />
+    <w:lsdException w:name="Table Columns 3" w:semiHidden="1" w:unhideWhenUsed="1" />
+    <w:lsdException w:name="Table Columns 4" w:semiHidden="1" w:unhideWhenUsed="1" />
+    <w:lsdException w:name="Table Columns 5" w:semiHidden="1" w:unhideWhenUsed="1" />
+    <w:lsdException w:name="Table Grid 1" w:semiHidden="1" w:unhideWhenUsed="1" />
+    <w:lsdException w:name="Table Grid 2" w:semiHidden="1" w:unhideWhenUsed="1" />
+    <w:lsdException w:name="Table Grid 3" w:semiHidden="1" w:unhideWhenUsed="1" />
+    <w:lsdException w:name="Table Grid 4" w:semiHidden="1" w:unhideWhenUsed="1" />
+    <w:lsdException w:name="Table Grid 5" w:semiHidden="1" w:unhideWhenUsed="1" />
+    <w:lsdException w:name="Table Grid 6" w:semiHidden="1" w:unhideWhenUsed="1" />
+    <w:lsdException w:name="Table Grid 7" w:semiHidden="1" w:unhideWhenUsed="1" />
+    <w:lsdException w:name="Table Grid 8" w:semiHidden="1" w:unhideWhenUsed="1" />
+    <w:lsdException w:name="Table List 1" w:semiHidden="1" w:unhideWhenUsed="1" />
+    <w:lsdException w:name="Table List 2" w:semiHidden="1" w:unhideWhenUsed="1" />
+    <w:lsdException w:name="Table List 3" w:semiHidden="1" w:unhideWhenUsed="1" />
+    <w:lsdException w:name="Table List 4" w:semiHidden="1" w:unhideWhenUsed="1" />
+    <w:lsdException w:name="Table List 5" w:semiHidden="1" w:unhideWhenUsed="1" />
+    <w:lsdException w:name="Table List 6" w:semiHidden="1" w:unhideWhenUsed="1" />
+    <w:lsdException w:name="Table List 7" w:semiHidden="1" w:unhideWhenUsed="1" />
+    <w:lsdException w:name="Table List 8" w:semiHidden="1" w:unhideWhenUsed="1" />
+    <w:lsdException w:name="Table 3D effects 1" w:semiHidden="1" w:unhideWhenUsed="1" />
+    <w:lsdException w:name="Table 3D effects 2" w:semiHidden="1" w:unhideWhenUsed="1" />
+    <w:lsdException w:name="Table 3D effects 3" w:semiHidden="1" w:unhideWhenUsed="1" />
+    <w:lsdException w:name="Table Contemporary" w:semiHidden="1" w:unhideWhenUsed="1" />
+    <w:lsdException w:name="Table Elegant" w:semiHidden="1" w:unhideWhenUsed="1" />
+    <w:lsdException w:name="Table Professional" w:semiHidden="1" w:unhideWhenUsed="1" />
+    <w:lsdException w:name="Table Subtle 1" w:semiHidden="1" w:unhideWhenUsed="1" />
+    <w:lsdException w:name="Table Subtle 2" w:semiHidden="1" w:unhideWhenUsed="1" />
+    <w:lsdException w:name="Table Web 1" w:semiHidden="1" w:unhideWhenUsed="1" />
+    <w:lsdException w:name="Table Web 2" w:semiHidden="1" w:unhideWhenUsed="1" />
+    <w:lsdException w:name="Table Web 3" w:semiHidden="1" w:unhideWhenUsed="1" />
+    <w:lsdException w:name="Balloon Text" w:semiHidden="1" w:unhideWhenUsed="1" />
+    <w:lsdException w:name="Table Theme" w:semiHidden="1" w:unhideWhenUsed="1" />
+    <w:lsdException w:name="Placeholder Text" w:semiHidden="1" w:uiPriority="99" />
+    <w:lsdException w:name="No Spacing" w:uiPriority="1" w:qFormat="1" />
+    <w:lsdException w:name="Light Shading" w:uiPriority="60" />
+    <w:lsdException w:name="Light List" w:uiPriority="61" />
+    <w:lsdException w:name="Light Grid" w:uiPriority="62" />
+    <w:lsdException w:name="Medium Shading 1" w:uiPriority="63" />
+    <w:lsdException w:name="Medium Shading 2" w:uiPriority="64" />
+    <w:lsdException w:name="Medium List 1" w:uiPriority="65" />
+    <w:lsdException w:name="Medium List 2" w:uiPriority="66" />
+    <w:lsdException w:name="Medium Grid 1" w:uiPriority="67" />
+    <w:lsdException w:name="Medium Grid 2" w:uiPriority="68" />
+    <w:lsdException w:name="Medium Grid 3" w:uiPriority="69" />
+    <w:lsdException w:name="Dark List" w:uiPriority="70" />
+    <w:lsdException w:name="Colorful Shading" w:uiPriority="71" />
+    <w:lsdException w:name="Colorful List" w:uiPriority="72" />
+    <w:lsdException w:name="Colorful Grid" w:uiPriority="73" />
+    <w:lsdException w:name="Light Shading Accent 1" w:uiPriority="60" />
+    <w:lsdException w:name="Light List Accent 1" w:uiPriority="61" />
+    <w:lsdException w:name="Light Grid Accent 1" w:uiPriority="62" />
+    <w:lsdException w:name="Medium Shading 1 Accent 1" w:uiPriority="63" />
+    <w:lsdException w:name="Medium Shading 2 Accent 1" w:uiPriority="64" />
+    <w:lsdException w:name="Medium List 1 Accent 1" w:uiPriority="65" />
+    <w:lsdException w:name="Revision" w:semiHidden="1" w:uiPriority="99" />
+    <w:lsdException w:name="List Paragraph" w:uiPriority="34" w:qFormat="1" />
+    <w:lsdException w:name="Quote" w:uiPriority="29" w:qFormat="1" />
+    <w:lsdException w:name="Intense Quote" w:uiPriority="30" w:qFormat="1" />
+    <w:lsdException w:name="Medium List 2 Accent 1" w:uiPriority="66" />
+    <w:lsdException w:name="Medium Grid 1 Accent 1" w:uiPriority="67" />
+    <w:lsdException w:name="Medium Grid 2 Accent 1" w:uiPriority="68" />
+    <w:lsdException w:name="Medium Grid 3 Accent 1" w:uiPriority="69" />
+    <w:lsdException w:name="Dark List Accent 1" w:uiPriority="70" />
+    <w:lsdException w:name="Colorful Shading Accent 1" w:uiPriority="71" />
+    <w:lsdException w:name="Colorful List Accent 1" w:uiPriority="72" />
+    <w:lsdException w:name="Colorful Grid Accent 1" w:uiPriority="73" />
+    <w:lsdException w:name="Light Shading Accent 2" w:uiPriority="60" />
+    <w:lsdException w:name="Light List Accent 2" w:uiPriority="61" />
+    <w:lsdException w:name="Light Grid Accent 2" w:uiPriority="62" />
+    <w:lsdException w:name="Medium Shading 1 Accent 2" w:uiPriority="63" />
+    <w:lsdException w:name="Medium Shading 2 Accent 2" w:uiPriority="64" />
+    <w:lsdException w:name="Medium List 1 Accent 2" w:uiPriority="65" />
+    <w:lsdException w:name="Medium List 2 Accent 2" w:uiPriority="66" />
+    <w:lsdException w:name="Medium Grid 1 Accent 2" w:uiPriority="67" />
+    <w:lsdException w:name="Medium Grid 2 Accent 2" w:uiPriority="68" />
+    <w:lsdException w:name="Medium Grid 3 Accent 2" w:uiPriority="69" />
+    <w:lsdException w:name="Dark List Accent 2" w:uiPriority="70" />
+    <w:lsdException w:name="Colorful Shading Accent 2" w:uiPriority="71" />
+    <w:lsdException w:name="Colorful List Accent 2" w:uiPriority="72" />
+    <w:lsdException w:name="Colorful Grid Accent 2" w:uiPriority="73" />
+    <w:lsdException w:name="Light Shading Accent 3" w:uiPriority="60" />
+    <w:lsdException w:name="Light List Accent 3" w:uiPriority="61" />
+    <w:lsdException w:name="Light Grid Accent 3" w:uiPriority="62" />
+    <w:lsdException w:name="Medium Shading 1 Accent 3" w:uiPriority="63" />
+    <w:lsdException w:name="Medium Shading 2 Accent 3" w:uiPriority="64" />
+    <w:lsdException w:name="Medium List 1 Accent 3" w:uiPriority="65" />
+    <w:lsdException w:name="Medium List 2 Accent 3" w:uiPriority="66" />
+    <w:lsdException w:name="Medium Grid 1 Accent 3" w:uiPriority="67" />
+    <w:lsdException w:name="Medium Grid 2 Accent 3" w:uiPriority="68" />
+    <w:lsdException w:name="Medium Grid 3 Accent 3" w:uiPriority="69" />
+    <w:lsdException w:name="Dark List Accent 3" w:uiPriority="70" />
+    <w:lsdException w:name="Colorful Shading Accent 3" w:uiPriority="71" />
+    <w:lsdException w:name="Colorful List Accent 3" w:uiPriority="72" />
+    <w:lsdException w:name="Colorful Grid Accent 3" w:uiPriority="73" />
+    <w:lsdException w:name="Light Shading Accent 4" w:uiPriority="60" />
+    <w:lsdException w:name="Light List Accent 4" w:uiPriority="61" />
+    <w:lsdException w:name="Light Grid Accent 4" w:uiPriority="62" />
+    <w:lsdException w:name="Medium Shading 1 Accent 4" w:uiPriority="63" />
+    <w:lsdException w:name="Medium Shading 2 Accent 4" w:uiPriority="64" />
+    <w:lsdException w:name="Medium List 1 Accent 4" w:uiPriority="65" />
+    <w:lsdException w:name="Medium List 2 Accent 4" w:uiPriority="66" />
+    <w:lsdException w:name="Medium Grid 1 Accent 4" w:uiPriority="67" />
+    <w:lsdException w:name="Medium Grid 2 Accent 4" w:uiPriority="68" />
+    <w:lsdException w:name="Medium Grid 3 Accent 4" w:uiPriority="69" />
+    <w:lsdException w:name="Dark List Accent 4" w:uiPriority="70" />
+    <w:lsdException w:name="Colorful Shading Accent 4" w:uiPriority="71" />
+    <w:lsdException w:name="Colorful List Accent 4" w:uiPriority="72" />
+    <w:lsdException w:name="Colorful Grid Accent 4" w:uiPriority="73" />
+    <w:lsdException w:name="Light Shading Accent 5" w:uiPriority="60" />
+    <w:lsdException w:name="Light List Accent 5" w:uiPriority="61" />
+    <w:lsdException w:name="Light Grid Accent 5" w:uiPriority="62" />
+    <w:lsdException w:name="Medium Shading 1 Accent 5" w:uiPriority="63" />
+    <w:lsdException w:name="Medium Shading 2 Accent 5" w:uiPriority="64" />
+    <w:lsdException w:name="Medium List 1 Accent 5" w:uiPriority="65" />
+    <w:lsdException w:name="Medium List 2 Accent 5" w:uiPriority="66" />
+    <w:lsdException w:name="Medium Grid 1 Accent 5" w:uiPriority="67" />
+    <w:lsdException w:name="Medium Grid 2 Accent 5" w:uiPriority="68" />
+    <w:lsdException w:name="Medium Grid 3 Accent 5" w:uiPriority="69" />
+    <w:lsdException w:name="Dark List Accent 5" w:uiPriority="70" />
+    <w:lsdException w:name="Colorful Shading Accent 5" w:uiPriority="71" />
+    <w:lsdException w:name="Colorful List Accent 5" w:uiPriority="72" />
+    <w:lsdException w:name="Colorful Grid Accent 5" w:uiPriority="73" />
+    <w:lsdException w:name="Light Shading Accent 6" w:uiPriority="60" />
+    <w:lsdException w:name="Light List Accent 6" w:uiPriority="61" />
+    <w:lsdException w:name="Light Grid Accent 6" w:uiPriority="62" />
+    <w:lsdException w:name="Medium Shading 1 Accent 6" w:uiPriority="63" />
+    <w:lsdException w:name="Medium Shading 2 Accent 6" w:uiPriority="64" />
+    <w:lsdException w:name="Medium List 1 Accent 6" w:uiPriority="65" />
+    <w:lsdException w:name="Medium List 2 Accent 6" w:uiPriority="66" />
+    <w:lsdException w:name="Medium Grid 1 Accent 6" w:uiPriority="67" />
+    <w:lsdException w:name="Medium Grid 2 Accent 6" w:uiPriority="68" />
+    <w:lsdException w:name="Medium Grid 3 Accent 6" w:uiPriority="69" />
+    <w:lsdException w:name="Dark List Accent 6" w:uiPriority="70" />
+    <w:lsdException w:name="Colorful Shading Accent 6" w:uiPriority="71" />
+    <w:lsdException w:name="Colorful List Accent 6" w:uiPriority="72" />
+    <w:lsdException w:name="Colorful Grid Accent 6" w:uiPriority="73" />
+    <w:lsdException w:name="Subtle Emphasis" w:uiPriority="19" w:qFormat="1" />
+    <w:lsdException w:name="Intense Emphasis" w:uiPriority="21" w:qFormat="1" />
+    <w:lsdException w:name="Subtle Reference" w:uiPriority="31" w:qFormat="1" />
+    <w:lsdException w:name="Intense Reference" w:uiPriority="32" w:qFormat="1" />
+    <w:lsdException w:name="Book Title" w:uiPriority="33" w:qFormat="1" />
+    <w:lsdException w:name="Bibliography" w:semiHidden="1" w:uiPriority="37" w:unhideWhenUsed="1" />
+    <w:lsdException w:name="TOC Heading" w:semiHidden="1" w:uiPriority="39" w:unhideWhenUsed="1" w:qFormat="1" />
+    <w:lsdException w:name="Plain Table 1" w:uiPriority="41" />
+    <w:lsdException w:name="Plain Table 2" w:uiPriority="42" />
+    <w:lsdException w:name="Plain Table 3" w:uiPriority="43" />
+    <w:lsdException w:name="Plain Table 4" w:uiPriority="44" />
+    <w:lsdException w:name="Plain Table 5" w:uiPriority="45" />
+    <w:lsdException w:name="Grid Table Light" w:uiPriority="40" />
+    <w:lsdException w:name="Grid Table 1 Light" w:uiPriority="46" />
+    <w:lsdException w:name="Grid Table 2" w:uiPriority="47" />
+    <w:lsdException w:name="Grid Table 3" w:uiPriority="48" />
+    <w:lsdException w:name="Grid Table 4" w:uiPriority="49" />
+    <w:lsdException w:name="Grid Table 5 Dark" w:uiPriority="50" />
+    <w:lsdException w:name="Grid Table 6 Colorful" w:uiPriority="51" />
+    <w:lsdException w:name="Grid Table 7 Colorful" w:uiPriority="52" />
+    <w:lsdException w:name="Grid Table 1 Light Accent 1" w:uiPriority="46" />
+    <w:lsdException w:name="Grid Table 2 Accent 1" w:uiPriority="47" />
+    <w:lsdException w:name="Grid Table 3 Accent 1" w:uiPriority="48" />
+    <w:lsdException w:name="Grid Table 4 Accent 1" w:uiPriority="49" />
+    <w:lsdException w:name="Grid Table 5 Dark Accent 1" w:uiPriority="50" />
+    <w:lsdException w:name="Grid Table 6 Colorful Accent 1" w:uiPriority="51" />
+    <w:lsdException w:name="Grid Table 7 Colorful Accent 1" w:uiPriority="52" />
+    <w:lsdException w:name="Grid Table 1 Light Accent 2" w:uiPriority="46" />
+    <w:lsdException w:name="Grid Table 2 Accent 2" w:uiPriority="47" />
+    <w:lsdException w:name="Grid Table 3 Accent 2" w:uiPriority="48" />
+    <w:lsdException w:name="Grid Table 4 Accent 2" w:uiPriority="49" />
+    <w:lsdException w:name="Grid Table 5 Dark Accent 2" w:uiPriority="50" />
+    <w:lsdException w:name="Grid Table 6 Colorful Accent 2" w:uiPriority="51" />
+    <w:lsdException w:name="Grid Table 7 Colorful Accent 2" w:uiPriority="52" />
+    <w:lsdException w:name="Grid Table 1 Light Accent 3" w:uiPriority="46" />
+    <w:lsdException w:name="Grid Table 2 Accent 3" w:uiPriority="47" />
+    <w:lsdException w:name="Grid Table 3 Accent 3" w:uiPriority="48" />
+    <w:lsdException w:name="Grid Table 4 Accent 3" w:uiPriority="49" />
+    <w:lsdException w:name="Grid Table 5 Dark Accent 3" w:uiPriority="50" />
+    <w:lsdException w:name="Grid Table 6 Colorful Accent 3" w:uiPriority="51" />
+    <w:lsdException w:name="Grid Table 7 Colorful Accent 3" w:uiPriority="52" />
+    <w:lsdException w:name="Grid Table 1 Light Accent 4" w:uiPriority="46" />
+    <w:lsdException w:name="Grid Table 2 Accent 4" w:uiPriority="47" />
+    <w:lsdException w:name="Grid Table 3 Accent 4" w:uiPriority="48" />
+    <w:lsdException w:name="Grid Table 4 Accent 4" w:uiPriority="49" />
+    <w:lsdException w:name="Grid Table 5 Dark Accent 4" w:uiPriority="50" />
+    <w:lsdException w:name="Grid Table 6 Colorful Accent 4" w:uiPriority="51" />
+    <w:lsdException w:name="Grid Table 7 Colorful Accent 4" w:uiPriority="52" />
+    <w:lsdException w:name="Grid Table 1 Light Accent 5" w:uiPriority="46" />
+    <w:lsdException w:name="Grid Table 2 Accent 5" w:uiPriority="47" />
+    <w:lsdException w:name="Grid Table 3 Accent 5" w:uiPriority="48" />
+    <w:lsdException w:name="Grid Table 4 Accent 5" w:uiPriority="49" />
+    <w:lsdException w:name="Grid Table 5 Dark Accent 5" w:uiPriority="50" />
+    <w:lsdException w:name="Grid Table 6 Colorful Accent 5" w:uiPriority="51" />
+    <w:lsdException w:name="Grid Table 7 Colorful Accent 5" w:uiPriority="52" />
+    <w:lsdException w:name="Grid Table 1 Light Accent 6" w:uiPriority="46" />
+    <w:lsdException w:name="Grid Table 2 Accent 6" w:uiPriority="47" />
+    <w:lsdException w:name="Grid Table 3 Accent 6" w:uiPriority="48" />
+    <w:lsdException w:name="Grid Table 4 Accent 6" w:uiPriority="49" />
+    <w:lsdException w:name="Grid Table 5 Dark Accent 6" w:uiPriority="50" />
+    <w:lsdException w:name="Grid Table 6 Colorful Accent 6" w:uiPriority="51" />
+    <w:lsdException w:name="Grid Table 7 Colorful Accent 6" w:uiPriority="52" />
+    <w:lsdException w:name="List Table 1 Light" w:uiPriority="46" />
+    <w:lsdException w:name="List Table 2" w:uiPriority="47" />
+    <w:lsdException w:name="List Table 3" w:uiPriority="48" />
+    <w:lsdException w:name="List Table 4" w:uiPriority="49" />
+    <w:lsdException w:name="List Table 5 Dark" w:uiPriority="50" />
+    <w:lsdException w:name="List Table 6 Colorful" w:uiPriority="51" />
+    <w:lsdException w:name="List Table 7 Colorful" w:uiPriority="52" />
+    <w:lsdException w:name="List Table 1 Light Accent 1" w:uiPriority="46" />
+    <w:lsdException w:name="List Table 2 Accent 1" w:uiPriority="47" />
+    <w:lsdException w:name="List Table 3 Accent 1" w:uiPriority="48" />
+    <w:lsdException w:name="List Table 4 Accent 1" w:uiPriority="49" />
+    <w:lsdException w:name="List Table 5 Dark Accent 1" w:uiPriority="50" />
+    <w:lsdException w:name="List Table 6 Colorful Accent 1" w:uiPriority="51" />
+    <w:lsdException w:name="List Table 7 Colorful Accent 1" w:uiPriority="52" />
+    <w:lsdException w:name="List Table 1 Light Accent 2" w:uiPriority="46" />
+    <w:lsdException w:name="List Table 2 Accent 2" w:uiPriority="47" />
+    <w:lsdException w:name="List Table 3 Accent 2" w:uiPriority="48" />
+    <w:lsdException w:name="List Table 4 Accent 2" w:uiPriority="49" />
+    <w:lsdException w:name="List Table 5 Dark Accent 2" w:uiPriority="50" />
+    <w:lsdException w:name="List Table 6 Colorful Accent 2" w:uiPriority="51" />
+    <w:lsdException w:name="List Table 7 Colorful Accent 2" w:uiPriority="52" />
+    <w:lsdException w:name="List Table 1 Light Accent 3" w:uiPriority="46" />
+    <w:lsdException w:name="List Table 2 Accent 3" w:uiPriority="47" />
+    <w:lsdException w:name="List Table 3 Accent 3" w:uiPriority="48" />
+    <w:lsdException w:name="List Table 4 Accent 3" w:uiPriority="49" />
+    <w:lsdException w:name="List Table 5 Dark Accent 3" w:uiPriority="50" />
+    <w:lsdException w:name="List Table 6 Colorful Accent 3" w:uiPriority="51" />
+    <w:lsdException w:name="List Table 7 Colorful Accent 3" w:uiPriority="52" />
+    <w:lsdException w:name="List Table 1 Light Accent 4" w:uiPriority="46" />
+    <w:lsdException w:name="List Table 2 Accent 4" w:uiPriority="47" />
+    <w:lsdException w:name="List Table 3 Accent 4" w:uiPriority="48" />
+    <w:lsdException w:name="List Table 4 Accent 4" w:uiPriority="49" />
+    <w:lsdException w:name="List Table 5 Dark Accent 4" w:uiPriority="50" />
+    <w:lsdException w:name="List Table 6 Colorful Accent 4" w:uiPriority="51" />
+    <w:lsdException w:name="List Table 7 Colorful Accent 4" w:uiPriority="52" />
+    <w:lsdException w:name="List Table 1 Light Accent 5" w:uiPriority="46" />
+    <w:lsdException w:name="List Table 2 Accent 5" w:uiPriority="47" />
+    <w:lsdException w:name="List Table 3 Accent 5" w:uiPriority="48" />
+    <w:lsdException w:name="List Table 4 Accent 5" w:uiPriority="49" />
+    <w:lsdException w:name="List Table 5 Dark Accent 5" w:uiPriority="50" />
+    <w:lsdException w:name="List Table 6 Colorful Accent 5" w:uiPriority="51" />
+    <w:lsdException w:name="List Table 7 Colorful Accent 5" w:uiPriority="52" />
+    <w:lsdException w:name="List Table 1 Light Accent 6" w:uiPriority="46" />
+    <w:lsdException w:name="List Table 2 Accent 6" w:uiPriority="47" />
+    <w:lsdException w:name="List Table 3 Accent 6" w:uiPriority="48" />
+    <w:lsdException w:name="List Table 4 Accent 6" w:uiPriority="49" />
+    <w:lsdException w:name="List Table 5 Dark Accent 6" w:uiPriority="50" />
+    <w:lsdException w:name="List Table 6 Colorful Accent 6" w:uiPriority="51" />
+    <w:lsdException w:name="List Table 7 Colorful Accent 6" w:uiPriority="52" />
+    <w:lsdException w:name="Mention" w:semiHidden="1" w:uiPriority="99" w:unhideWhenUsed="1" />
+    <w:lsdException w:name="Smart Hyperlink" w:semiHidden="1" w:uiPriority="99" w:unhideWhenUsed="1" />
+    <w:lsdException w:name="Hashtag" w:semiHidden="1" w:uiPriority="99" w:unhideWhenUsed="1" />
+    <w:lsdException w:name="Unresolved Mention" w:semiHidden="1" w:uiPriority="99" w:unhideWhenUsed="1" />
+    <w:lsdException w:name="Smart Link" w:semiHidden="1" w:uiPriority="99" w:unhideWhenUsed="1" />
+  </w:latentStyles>
+  <w:style w:type="paragraph" w:default="1" w:styleId="Normalny">
+    <w:name w:val="Normal" />
+    <w:qFormat />
+    <w:rsid w:val="00EC3440" />
+    <w:pPr>
+      <w:spacing w:line="259" w:lineRule="auto" />
+    </w:pPr>
+    <w:rPr>
+      <w:rFonts w:eastAsiaTheme="minorHAnsi" />
+      <w:iCs />
+      <w:sz w:val="24" />
+      <w:szCs w:val="24" />
+      <w:lang w:eastAsia="en-US" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="paragraph" w:styleId="Nagwek1">
+    <w:name w:val="heading 1" />
+    <w:basedOn w:val="Normalny" />
+    <w:next w:val="Normalny" />
+    <w:link w:val="Nagwek1Znak" />
+    <w:uiPriority w:val="9" />
+    <w:qFormat />
+    <w:rsid w:val="00240B37" />
+    <w:pPr>
+      <w:keepNext />
+      <w:numPr>
+        <w:numId w:val="74" />
+      </w:numPr>
+      <w:spacing w:before="2400" w:after="2400" />
+      <w:contextualSpacing />
+      <w:jc w:val="center" />
+      <w:outlineLvl w:val="0" />
+    </w:pPr>
+    <w:rPr>
+      <w:rFonts w:ascii="Arial Narrow" w:hAnsi="Arial Narrow" />
+      <w:b />
+      <w:kern w:val="28" />
+      <w:sz w:val="52" />
+      <w:szCs w:val="36" />
+      <w:lang w:eastAsia="pl-PL" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="paragraph" w:styleId="Nagwek2">
+    <w:name w:val="heading 2" />
+    <w:basedOn w:val="Normalny" />
+    <w:next w:val="Normalny" />
+    <w:link w:val="Nagwek2Znak" />
+    <w:qFormat />
+    <w:rsid w:val="008D02FF" />
+    <w:pPr>
+      <w:keepNext />
+      <w:pageBreakBefore />
+      <w:numPr>
+        <w:ilvl w:val="1" />
+        <w:numId w:val="74" />
+      </w:numPr>
+      <w:spacing w:before="240" w:after="1080" />
+      <w:ind w:left="426" />
+      <w:outlineLvl w:val="1" />
+    </w:pPr>
+    <w:rPr>
+      <w:rFonts w:ascii="Arial Narrow" w:hAnsi="Arial Narrow" />
+      <w:b />
+      <w:sz w:val="44" />
+      <w:szCs w:val="52" />
+      <w:lang w:eastAsia="pl-PL" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="paragraph" w:styleId="Nagwek3">
+    <w:name w:val="heading 3" />
+    <w:basedOn w:val="Nagwek2" />
+    <w:next w:val="Normalny" />
+    <w:link w:val="Nagwek3Znak" />
+    <w:qFormat />
+    <w:rsid w:val="00B9699A" />
+    <w:pPr>
+      <w:pageBreakBefore w:val="0" />
+      <w:numPr>
+        <w:ilvl w:val="2" />
+      </w:numPr>
+      <w:spacing w:after="240" />
+      <w:ind w:left="567" />
+      <w:outlineLvl w:val="2" />
+    </w:pPr>
+    <w:rPr>
+      <w:sz w:val="32" />
+      <w:szCs w:val="56" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="paragraph" w:styleId="Nagwek4">
+    <w:name w:val="heading 4" />
+    <w:basedOn w:val="Normalny" />
+    <w:next w:val="Normalny" />
+    <w:link w:val="Nagwek4Znak" />
+    <w:qFormat />
+    <w:rsid w:val="003E6E0B" />
+    <w:pPr>
+      <w:keepNext />
+      <w:numPr>
+        <w:ilvl w:val="3" />
+        <w:numId w:val="74" />
+      </w:numPr>
+      <w:spacing w:before="120" w:after="120" />
+      <w:ind w:left="992" w:hanging="646" />
+      <w:outlineLvl w:val="3" />
+    </w:pPr>
+    <w:rPr>
+      <w:rFonts w:ascii="Arial Narrow" w:hAnsi="Arial Narrow" />
+      <w:b />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="paragraph" w:styleId="Nagwek5">
+    <w:name w:val="heading 5" />
+    <w:basedOn w:val="Normalny" />
+    <w:next w:val="Normalny" />
+    <w:link w:val="Nagwek5Znak" />
+    <w:qFormat />
+    <w:rsid w:val="00A12A71" />
+    <w:pPr>
+      <w:keepNext />
+      <w:numPr>
+        <w:ilvl w:val="4" />
+        <w:numId w:val="75" />
+      </w:numPr>
+      <w:spacing w:before="240" w:after="60" />
+      <w:outlineLvl w:val="4" />
+    </w:pPr>
+    <w:rPr>
+      <w:rFonts w:ascii="Arial" w:hAnsi="Arial" />
+      <w:b />
+      <w:i />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="paragraph" w:styleId="Nagwek6">
+    <w:name w:val="heading 6" />
+    <w:basedOn w:val="Normalny" />
+    <w:next w:val="Normalny" />
+    <w:link w:val="Nagwek6Znak" />
+    <w:semiHidden />
+    <w:unhideWhenUsed />
+    <w:qFormat />
+    <w:rsid w:val="00A12A71" />
+    <w:pPr>
+      <w:keepNext />
+      <w:keepLines />
+      <w:numPr>
+        <w:ilvl w:val="5" />
+        <w:numId w:val="75" />
+      </w:numPr>
+      <w:spacing w:before="40" />
+      <w:outlineLvl w:val="5" />
+    </w:pPr>
+    <w:rPr>
+      <w:rFonts w:asciiTheme="majorHAnsi" w:eastAsiaTheme="majorEastAsia" w:hAnsiTheme="majorHAnsi" w:cstheme="majorBidi" />
+      <w:color w:val="1F3763" w:themeColor="accent1" w:themeShade="7F" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="paragraph" w:styleId="Nagwek7">
+    <w:name w:val="heading 7" />
+    <w:basedOn w:val="Normalny" />
+    <w:next w:val="Normalny" />
+    <w:link w:val="Nagwek7Znak" />
+    <w:semiHidden />
+    <w:unhideWhenUsed />
+    <w:qFormat />
+    <w:rsid w:val="00A12A71" />
+    <w:pPr>
+      <w:keepNext />
+      <w:keepLines />
+      <w:numPr>
+        <w:ilvl w:val="6" />
+        <w:numId w:val="75" />
+      </w:numPr>
+      <w:spacing w:before="40" />
+      <w:outlineLvl w:val="6" />
+    </w:pPr>
+    <w:rPr>
+      <w:rFonts w:asciiTheme="majorHAnsi" w:eastAsiaTheme="majorEastAsia" w:hAnsiTheme="majorHAnsi" w:cstheme="majorBidi" />
+      <w:i />
+      <w:iCs w:val="0" />
+      <w:color w:val="1F3763" w:themeColor="accent1" w:themeShade="7F" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="paragraph" w:styleId="Nagwek8">
+    <w:name w:val="heading 8" />
+    <w:basedOn w:val="Normalny" />
+    <w:next w:val="Normalny" />
+    <w:link w:val="Nagwek8Znak" />
+    <w:semiHidden />
+    <w:unhideWhenUsed />
+    <w:qFormat />
+    <w:rsid w:val="00A12A71" />
+    <w:pPr>
+      <w:keepNext />
+      <w:keepLines />
+      <w:numPr>
+        <w:ilvl w:val="7" />
+        <w:numId w:val="75" />
+      </w:numPr>
+      <w:spacing w:before="40" />
+      <w:outlineLvl w:val="7" />
+    </w:pPr>
+    <w:rPr>
+      <w:rFonts w:asciiTheme="majorHAnsi" w:eastAsiaTheme="majorEastAsia" w:hAnsiTheme="majorHAnsi" w:cstheme="majorBidi" />
+      <w:color w:val="272727" w:themeColor="text1" w:themeTint="D8" />
+      <w:sz w:val="21" />
+      <w:szCs w:val="21" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="paragraph" w:styleId="Nagwek9">
+    <w:name w:val="heading 9" />
+    <w:basedOn w:val="Normalny" />
+    <w:next w:val="Normalny" />
+    <w:link w:val="Nagwek9Znak" />
+    <w:semiHidden />
+    <w:unhideWhenUsed />
+    <w:qFormat />
+    <w:rsid w:val="00A12A71" />
+    <w:pPr>
+      <w:keepNext />
+      <w:keepLines />
+      <w:numPr>
+        <w:ilvl w:val="8" />
+        <w:numId w:val="75" />
+      </w:numPr>
+      <w:spacing w:before="40" />
+      <w:outlineLvl w:val="8" />
+    </w:pPr>
+    <w:rPr>
+      <w:rFonts w:asciiTheme="majorHAnsi" w:eastAsiaTheme="majorEastAsia" w:hAnsiTheme="majorHAnsi" w:cstheme="majorBidi" />
+      <w:i />
+      <w:iCs w:val="0" />
+      <w:color w:val="272727" w:themeColor="text1" w:themeTint="D8" />
+      <w:sz w:val="21" />
+      <w:szCs w:val="21" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="character" w:default="1" w:styleId="Domylnaczcionkaakapitu">
+    <w:name w:val="Default Paragraph Font" />
+    <w:uiPriority w:val="1" />
+    <w:unhideWhenUsed />
+  </w:style>
+  <w:style w:type="table" w:default="1" w:styleId="Standardowy">
+    <w:name w:val="Normal Table" />
+    <w:uiPriority w:val="99" />
+    <w:semiHidden />
+    <w:unhideWhenUsed />
+    <w:tblPr>
+      <w:tblInd w:w="0" w:type="dxa" />
+      <w:tblCellMar>
+        <w:top w:w="0" w:type="dxa" />
+        <w:left w:w="108" w:type="dxa" />
+        <w:bottom w:w="0" w:type="dxa" />
+        <w:right w:w="108" w:type="dxa" />
+      </w:tblCellMar>
+    </w:tblPr>
+  </w:style>
+  <w:style w:type="numbering" w:default="1" w:styleId="Bezlisty">
+    <w:name w:val="No List" />
+    <w:uiPriority w:val="99" />
+    <w:semiHidden />
+    <w:unhideWhenUsed />
+  </w:style>
+  <w:style w:type="character" w:customStyle="1" w:styleId="Nagwek1Znak">
+    <w:name w:val="Nagłówek 1 Znak" />
+    <w:basedOn w:val="Domylnaczcionkaakapitu" />
+    <w:link w:val="Nagwek1" />
+    <w:uiPriority w:val="9" />
+    <w:rsid w:val="00240B37" />
+    <w:rPr>
+      <w:rFonts w:ascii="Arial Narrow" w:eastAsiaTheme="minorHAnsi" w:hAnsi="Arial Narrow" />
+      <w:b />
+      <w:iCs />
+      <w:kern w:val="28" />
+      <w:sz w:val="52" />
+      <w:szCs w:val="36" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="character" w:customStyle="1" w:styleId="Nagwek2Znak">
+    <w:name w:val="Nagłówek 2 Znak" />
+    <w:basedOn w:val="Domylnaczcionkaakapitu" />
+    <w:link w:val="Nagwek2" />
+    <w:rsid w:val="008D02FF" />
+    <w:rPr>
+      <w:rFonts w:ascii="Arial Narrow" w:eastAsiaTheme="minorHAnsi" w:hAnsi="Arial Narrow" />
+      <w:b />
+      <w:iCs />
+      <w:sz w:val="44" />
+      <w:szCs w:val="52" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="character" w:customStyle="1" w:styleId="Nagwek3Znak">
+    <w:name w:val="Nagłówek 3 Znak" />
+    <w:basedOn w:val="Domylnaczcionkaakapitu" />
+    <w:link w:val="Nagwek3" />
+    <w:rsid w:val="00B9699A" />
+    <w:rPr>
+      <w:rFonts w:ascii="Arial Narrow" w:eastAsiaTheme="minorHAnsi" w:hAnsi="Arial Narrow" />
+      <w:b />
+      <w:iCs />
+      <w:sz w:val="32" />
+      <w:szCs w:val="56" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="character" w:customStyle="1" w:styleId="Nagwek4Znak">
+    <w:name w:val="Nagłówek 4 Znak" />
+    <w:basedOn w:val="Domylnaczcionkaakapitu" />
+    <w:link w:val="Nagwek4" />
+    <w:rsid w:val="003E6E0B" />
+    <w:rPr>
+      <w:rFonts w:ascii="Arial Narrow" w:eastAsiaTheme="minorHAnsi" w:hAnsi="Arial Narrow" />
+      <w:b />
+      <w:iCs />
+      <w:sz w:val="24" />
+      <w:szCs w:val="24" />
+      <w:lang w:eastAsia="en-US" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="character" w:customStyle="1" w:styleId="Nagwek5Znak">
+    <w:name w:val="Nagłówek 5 Znak" />
+    <w:basedOn w:val="Domylnaczcionkaakapitu" />
+    <w:link w:val="Nagwek5" />
+    <w:rsid w:val="00A12A71" />
+    <w:rPr>
+      <w:rFonts w:ascii="Arial" w:eastAsiaTheme="minorHAnsi" w:hAnsi="Arial" />
+      <w:b />
+      <w:i />
+      <w:iCs />
+      <w:sz w:val="24" />
+      <w:szCs w:val="24" />
+      <w:lang w:eastAsia="en-US" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="character" w:customStyle="1" w:styleId="Nagwek6Znak">
+    <w:name w:val="Nagłówek 6 Znak" />
+    <w:basedOn w:val="Domylnaczcionkaakapitu" />
+    <w:link w:val="Nagwek6" />
+    <w:semiHidden />
+    <w:rsid w:val="00A12A71" />
+    <w:rPr>
+      <w:rFonts w:asciiTheme="majorHAnsi" w:eastAsiaTheme="majorEastAsia" w:hAnsiTheme="majorHAnsi" w:cstheme="majorBidi" />
+      <w:iCs />
+      <w:color w:val="1F3763" w:themeColor="accent1" w:themeShade="7F" />
+      <w:sz w:val="24" />
+      <w:szCs w:val="24" />
+      <w:lang w:eastAsia="en-US" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="character" w:customStyle="1" w:styleId="Nagwek7Znak">
+    <w:name w:val="Nagłówek 7 Znak" />
+    <w:basedOn w:val="Domylnaczcionkaakapitu" />
+    <w:link w:val="Nagwek7" />
+    <w:semiHidden />
+    <w:rsid w:val="00A12A71" />
+    <w:rPr>
+      <w:rFonts w:asciiTheme="majorHAnsi" w:eastAsiaTheme="majorEastAsia" w:hAnsiTheme="majorHAnsi" w:cstheme="majorBidi" />
+      <w:i />
+      <w:color w:val="1F3763" w:themeColor="accent1" w:themeShade="7F" />
+      <w:sz w:val="24" />
+      <w:szCs w:val="24" />
+      <w:lang w:eastAsia="en-US" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="character" w:customStyle="1" w:styleId="Nagwek8Znak">
+    <w:name w:val="Nagłówek 8 Znak" />
+    <w:basedOn w:val="Domylnaczcionkaakapitu" />
+    <w:link w:val="Nagwek8" />
+    <w:semiHidden />
+    <w:rsid w:val="00A12A71" />
+    <w:rPr>
+      <w:rFonts w:asciiTheme="majorHAnsi" w:eastAsiaTheme="majorEastAsia" w:hAnsiTheme="majorHAnsi" w:cstheme="majorBidi" />
+      <w:iCs />
+      <w:color w:val="272727" w:themeColor="text1" w:themeTint="D8" />
+      <w:sz w:val="21" />
+      <w:szCs w:val="21" />
+      <w:lang w:eastAsia="en-US" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="character" w:customStyle="1" w:styleId="Nagwek9Znak">
+    <w:name w:val="Nagłówek 9 Znak" />
+    <w:basedOn w:val="Domylnaczcionkaakapitu" />
+    <w:link w:val="Nagwek9" />
+    <w:semiHidden />
+    <w:rsid w:val="00A12A71" />
+    <w:rPr>
+      <w:rFonts w:asciiTheme="majorHAnsi" w:eastAsiaTheme="majorEastAsia" w:hAnsiTheme="majorHAnsi" w:cstheme="majorBidi" />
+      <w:i />
+      <w:color w:val="272727" w:themeColor="text1" w:themeTint="D8" />
+      <w:sz w:val="21" />
+      <w:szCs w:val="21" />
+      <w:lang w:eastAsia="en-US" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="paragraph" w:styleId="Bibliografia">
+    <w:name w:val="Bibliography" />
+    <w:basedOn w:val="Normalny" />
+    <w:uiPriority w:val="37" />
+    <w:rsid w:val="00F6567E" />
+    <w:pPr>
+      <w:numPr>
+        <w:numId w:val="97" />
+      </w:numPr>
+      <w:ind w:left="942" w:hanging="471" />
+    </w:pPr>
+    <w:rPr>
+      <w:noProof />
+      <w:sz w:val="20" />
+      <w:lang w:val="en-US" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="paragraph" w:styleId="Wcicienormalne">
+    <w:name w:val="Normal Indent" />
+    <w:basedOn w:val="Normalny" />
+    <w:link w:val="WcicienormalneZnak" />
+    <w:rsid w:val="00A12A71" />
+    <w:pPr>
+      <w:spacing w:before="120" w:after="120" />
+      <w:ind w:left="709" />
+      <w:jc w:val="both" />
+    </w:pPr>
+  </w:style>
+  <w:style w:type="character" w:customStyle="1" w:styleId="WcicienormalneZnak">
+    <w:name w:val="Wcięcie normalne Znak" />
+    <w:basedOn w:val="Domylnaczcionkaakapitu" />
+    <w:link w:val="Wcicienormalne" />
+    <w:rsid w:val="00DC5A5D" />
+    <w:rPr>
+      <w:rFonts w:eastAsiaTheme="minorHAnsi" />
+      <w:iCs />
+      <w:sz w:val="24" />
+      <w:szCs w:val="24" />
+      <w:lang w:val="en-US" w:eastAsia="en-US" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="paragraph" w:styleId="Listapunktowana">
+    <w:name w:val="List Bullet" />
+    <w:basedOn w:val="Wcicienormalne" />
+    <w:qFormat />
+    <w:rsid w:val="00AC7BCE" />
+    <w:pPr>
+      <w:numPr>
+        <w:numId w:val="2" />
+      </w:numPr>
+      <w:ind w:left="1429" />
+      <w:contextualSpacing />
+      <w:jc w:val="left" />
+    </w:pPr>
+    <w:rPr>
+      <w:rFonts w:eastAsia="Times New Roman" w:cstheme="minorHAnsi" />
+      <w:iCs w:val="0" />
+      <w:lang w:eastAsia="pl-PL" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="character" w:customStyle="1" w:styleId="angielskawstawka">
+    <w:name w:val="angielska wstawka" />
+    <w:basedOn w:val="Domylnaczcionkaakapitu" />
+    <w:rsid w:val="004A001A" />
+    <w:rPr>
+      <w:i />
+      <w:lang w:val="en-US" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="paragraph" w:customStyle="1" w:styleId="Figure">
+    <w:name w:val="Figure" />
+    <w:basedOn w:val="Normalny" />
+    <w:qFormat />
+    <w:rsid w:val="00A44230" />
+    <w:pPr>
+      <w:keepNext />
+      <w:spacing w:before="120" w:after="120" />
+      <w:ind w:left="709" />
+      <w:jc w:val="center" />
+    </w:pPr>
+  </w:style>
+  <w:style w:type="paragraph" w:customStyle="1" w:styleId="Intitle">
+    <w:name w:val="Intitle" />
+    <w:basedOn w:val="Normalny" />
+    <w:next w:val="Normalny" />
+    <w:link w:val="IntitleZnak" />
+    <w:qFormat />
+    <w:rsid w:val="00A12A71" />
+    <w:pPr>
+      <w:keepNext />
+      <w:spacing w:before="120" w:after="120" />
+      <w:ind w:left="426" />
+      <w:jc w:val="both" />
+    </w:pPr>
+    <w:rPr>
+      <w:b />
+      <w:i />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="character" w:customStyle="1" w:styleId="IntitleZnak">
+    <w:name w:val="Intitle Znak" />
+    <w:basedOn w:val="StandardowyakapitZnak" />
+    <w:link w:val="Intitle" />
+    <w:rsid w:val="00A12A71" />
+    <w:rPr>
+      <w:rFonts w:eastAsiaTheme="minorHAnsi" />
+      <w:b />
+      <w:i />
+      <w:iCs />
+      <w:sz w:val="24" />
+      <w:szCs w:val="24" />
+      <w:lang w:val="en-US" w:eastAsia="en-US" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="character" w:customStyle="1" w:styleId="StandardowyakapitZnak">
+    <w:name w:val="Standardowy akapit Znak" />
+    <w:basedOn w:val="Domylnaczcionkaakapitu" />
+    <w:link w:val="Standardowyakapit" />
+    <w:rsid w:val="00A12A71" />
+    <w:rPr>
+      <w:rFonts w:eastAsiaTheme="minorHAnsi" />
+      <w:iCs />
+      <w:sz w:val="24" />
+      <w:szCs w:val="24" />
+      <w:lang w:val="en-US" w:eastAsia="en-US" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="paragraph" w:customStyle="1" w:styleId="Standardowyakapit">
+    <w:name w:val="Standardowy akapit" />
+    <w:basedOn w:val="Normalny" />
+    <w:link w:val="StandardowyakapitZnak" />
+    <w:rsid w:val="00A12A71" />
+    <w:pPr>
+      <w:spacing w:before="120" w:after="120" />
+      <w:jc w:val="both" />
+    </w:pPr>
+  </w:style>
+  <w:style w:type="character" w:customStyle="1" w:styleId="keyword">
+    <w:name w:val="keyword" />
+    <w:basedOn w:val="Domylnaczcionkaakapitu" />
+    <w:rsid w:val="00A12A71" />
+    <w:rPr>
+      <w:b />
+      <w:noProof />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="character" w:customStyle="1" w:styleId="NazwaProgramowa">
+    <w:name w:val="NazwaProgramowa" />
+    <w:basedOn w:val="Domylnaczcionkaakapitu" />
+    <w:rsid w:val="00A12A71" />
+    <w:rPr>
+      <w:rFonts w:ascii="Tahoma" w:hAnsi="Tahoma" />
+      <w:noProof />
+      <w:sz w:val="20" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="paragraph" w:customStyle="1" w:styleId="source">
+    <w:name w:val="source" />
+    <w:basedOn w:val="Normalny" />
+    <w:rsid w:val="00A12A71" />
+    <w:pPr>
+      <w:spacing w:before="60" w:after="60" />
+      <w:ind w:left="1418" />
+      <w:jc w:val="both" />
+    </w:pPr>
+    <w:rPr>
+      <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" />
+      <w:noProof />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="paragraph" w:styleId="Tytu">
+    <w:name w:val="Title" />
+    <w:basedOn w:val="Normalny" />
+    <w:link w:val="TytuZnak" />
+    <w:qFormat />
+    <w:rsid w:val="00A12A71" />
+    <w:pPr>
+      <w:spacing w:before="240" w:after="60" />
+      <w:jc w:val="center" />
+    </w:pPr>
+    <w:rPr>
+      <w:rFonts w:ascii="Arial" w:hAnsi="Arial" />
+      <w:b />
+      <w:kern w:val="28" />
+      <w:sz w:val="40" />
+      <w:szCs w:val="40" />
+      <w:lang w:eastAsia="pl-PL" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="character" w:customStyle="1" w:styleId="TytuZnak">
+    <w:name w:val="Tytuł Znak" />
+    <w:basedOn w:val="Domylnaczcionkaakapitu" />
+    <w:link w:val="Tytu" />
+    <w:rsid w:val="00A12A71" />
+    <w:rPr>
+      <w:rFonts w:ascii="Arial" w:eastAsiaTheme="minorHAnsi" w:hAnsi="Arial" />
+      <w:b />
+      <w:iCs />
+      <w:kern w:val="28" />
+      <w:sz w:val="40" />
+      <w:szCs w:val="40" />
+      <w:lang w:val="en-US" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="paragraph" w:styleId="Akapitzlist">
+    <w:name w:val="List Paragraph" />
+    <w:basedOn w:val="Normalny" />
+    <w:uiPriority w:val="34" />
+    <w:qFormat />
+    <w:rsid w:val="00A12A71" />
+    <w:pPr>
+      <w:ind w:left="720" />
+      <w:contextualSpacing />
+    </w:pPr>
+    <w:rPr>
+      <w:lang w:eastAsia="pl-PL" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="paragraph" w:customStyle="1" w:styleId="Nagwek1nienumerowany">
+    <w:name w:val="Nagłówek 1 nienumerowany" />
+    <w:basedOn w:val="Nagwek1" />
+    <w:link w:val="Nagwek1nienumerowanyZnak" />
+    <w:qFormat />
+    <w:rsid w:val="00A12A71" />
+    <w:pPr>
+      <w:numPr>
+        <w:numId w:val="0" />
+      </w:numPr>
+    </w:pPr>
+  </w:style>
+  <w:style w:type="character" w:customStyle="1" w:styleId="Nagwek1nienumerowanyZnak">
+    <w:name w:val="Nagłówek 1 nienumerowany Znak" />
+    <w:basedOn w:val="Nagwek1Znak" />
+    <w:link w:val="Nagwek1nienumerowany" />
+    <w:rsid w:val="00A12A71" />
+    <w:rPr>
+      <w:rFonts w:ascii="Arial Narrow" w:eastAsiaTheme="minorHAnsi" w:hAnsi="Arial Narrow" />
+      <w:b />
+      <w:iCs />
+      <w:kern w:val="28" />
+      <w:sz w:val="36" />
+      <w:szCs w:val="36" />
+      <w:lang w:val="en-US" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="paragraph" w:customStyle="1" w:styleId="Wanauwaga">
+    <w:name w:val="Ważna uwaga" />
+    <w:basedOn w:val="Wcicienormalne" />
+    <w:qFormat />
+    <w:rsid w:val="00A12A71" />
+    <w:pPr>
+      <w:spacing w:before="360" w:after="360" />
+      <w:jc w:val="center" />
+    </w:pPr>
+    <w:rPr>
+      <w:b />
+      <w:bCs />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="paragraph" w:styleId="Legenda">
+    <w:name w:val="caption" />
+    <w:basedOn w:val="Normalny" />
+    <w:next w:val="Normalny" />
+    <w:unhideWhenUsed />
+    <w:qFormat />
+    <w:rsid w:val="00840C12" />
+    <w:pPr>
+      <w:keepLines />
+      <w:spacing w:before="120" w:after="120" />
+      <w:ind w:left="709" />
+      <w:jc w:val="center" />
+    </w:pPr>
+    <w:rPr>
+      <w:i />
+      <w:iCs w:val="0" />
+      <w:sz w:val="18" />
+      <w:szCs w:val="18" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="paragraph" w:styleId="Tekstprzypisudolnego">
+    <w:name w:val="footnote text" />
+    <w:basedOn w:val="Normalny" />
+    <w:link w:val="TekstprzypisudolnegoZnak" />
+    <w:rsid w:val="00160AA1" />
+    <w:pPr>
+      <w:spacing w:before="60" w:after="60" />
+    </w:pPr>
+    <w:rPr>
+      <w:sz w:val="20" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="character" w:customStyle="1" w:styleId="TekstprzypisudolnegoZnak">
+    <w:name w:val="Tekst przypisu dolnego Znak" />
+    <w:basedOn w:val="Domylnaczcionkaakapitu" />
+    <w:link w:val="Tekstprzypisudolnego" />
+    <w:rsid w:val="00160AA1" />
+    <w:rPr>
+      <w:rFonts w:eastAsiaTheme="minorHAnsi" />
+      <w:iCs />
+      <w:szCs w:val="24" />
+      <w:lang w:eastAsia="en-US" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="character" w:styleId="Odwoanieprzypisudolnego">
+    <w:name w:val="footnote reference" />
+    <w:basedOn w:val="Domylnaczcionkaakapitu" />
+    <w:rsid w:val="00A12A71" />
+    <w:rPr>
+      <w:vertAlign w:val="superscript" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="paragraph" w:styleId="NormalnyWeb">
+    <w:name w:val="Normal (Web)" />
+    <w:basedOn w:val="Normalny" />
+    <w:uiPriority w:val="99" />
+    <w:unhideWhenUsed />
+    <w:rsid w:val="00A12A71" />
+    <w:pPr>
+      <w:spacing w:before="100" w:beforeAutospacing="1" w:after="100" w:afterAutospacing="1" w:line="240" w:lineRule="auto" />
+    </w:pPr>
+    <w:rPr>
+      <w:rFonts w:eastAsia="Times New Roman" />
+      <w:iCs w:val="0" />
+      <w:lang w:eastAsia="pl-PL" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="character" w:styleId="Pogrubienie">
+    <w:name w:val="Strong" />
+    <w:basedOn w:val="Domylnaczcionkaakapitu" />
+    <w:uiPriority w:val="22" />
+    <w:qFormat />
+    <w:rsid w:val="00A12A71" />
+    <w:rPr>
+      <w:b />
+      <w:bCs />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="character" w:styleId="Hipercze">
+    <w:name w:val="Hyperlink" />
+    <w:basedOn w:val="Domylnaczcionkaakapitu" />
+    <w:uiPriority w:val="99" />
+    <w:unhideWhenUsed />
+    <w:rsid w:val="00A12A71" />
+    <w:rPr>
+      <w:color w:val="0000FF" />
+      <w:u w:val="single" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="character" w:styleId="Nierozpoznanawzmianka">
+    <w:name w:val="Unresolved Mention" />
+    <w:basedOn w:val="Domylnaczcionkaakapitu" />
+    <w:uiPriority w:val="99" />
+    <w:semiHidden />
+    <w:unhideWhenUsed />
+    <w:rsid w:val="00A12A71" />
+    <w:rPr>
+      <w:color w:val="605E5C" />
+      <w:shd w:val="clear" w:color="auto" w:fill="E1DFDD" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="paragraph" w:styleId="Nagwek">
+    <w:name w:val="header" />
+    <w:basedOn w:val="Normalny" />
+    <w:link w:val="NagwekZnak" />
+    <w:rsid w:val="00A12A71" />
+    <w:pPr>
+      <w:tabs>
+        <w:tab w:val="center" w:pos="4536" />
+        <w:tab w:val="right" w:pos="9072" />
+      </w:tabs>
+    </w:pPr>
+  </w:style>
+  <w:style w:type="character" w:customStyle="1" w:styleId="NagwekZnak">
+    <w:name w:val="Nagłówek Znak" />
+    <w:basedOn w:val="Domylnaczcionkaakapitu" />
+    <w:link w:val="Nagwek" />
+    <w:rsid w:val="00A12A71" />
+    <w:rPr>
+      <w:sz w:val="24" />
+      <w:lang w:eastAsia="en-US" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="paragraph" w:styleId="Stopka">
+    <w:name w:val="footer" />
+    <w:basedOn w:val="Normalny" />
+    <w:link w:val="StopkaZnak" />
+    <w:uiPriority w:val="99" />
+    <w:rsid w:val="00A12A71" />
+    <w:pPr>
+      <w:tabs>
+        <w:tab w:val="center" w:pos="4536" />
+        <w:tab w:val="right" w:pos="9072" />
+      </w:tabs>
+    </w:pPr>
+  </w:style>
+  <w:style w:type="character" w:customStyle="1" w:styleId="StopkaZnak">
+    <w:name w:val="Stopka Znak" />
+    <w:basedOn w:val="Domylnaczcionkaakapitu" />
+    <w:link w:val="Stopka" />
+    <w:uiPriority w:val="99" />
+    <w:rsid w:val="00A12A71" />
+    <w:rPr>
+      <w:sz w:val="24" />
+      <w:lang w:eastAsia="en-US" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="paragraph" w:styleId="Tekstpodstawowy">
+    <w:name w:val="Body Text" />
+    <w:basedOn w:val="Normalny" />
+    <w:link w:val="TekstpodstawowyZnak" />
+    <w:uiPriority w:val="99" />
+    <w:rsid w:val="00A12A71" />
+    <w:pPr>
+      <w:spacing w:before="120" w:after="120" />
+    </w:pPr>
+    <w:rPr>
+      <w:lang w:eastAsia="pl-PL" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="character" w:customStyle="1" w:styleId="TekstpodstawowyZnak">
+    <w:name w:val="Tekst podstawowy Znak" />
+    <w:basedOn w:val="Domylnaczcionkaakapitu" />
+    <w:link w:val="Tekstpodstawowy" />
+    <w:uiPriority w:val="99" />
+    <w:rsid w:val="00A12A71" />
+    <w:rPr>
+      <w:rFonts w:eastAsiaTheme="minorHAnsi" />
+      <w:iCs />
+      <w:sz w:val="24" />
+      <w:szCs w:val="24" />
+      <w:lang w:val="en-US" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="table" w:styleId="Tabela-Siatka">
+    <w:name w:val="Table Grid" />
+    <w:basedOn w:val="Standardowy" />
+    <w:rsid w:val="00934AAA" />
+    <w:rPr>
+      <w:rFonts w:asciiTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi" />
+    </w:rPr>
+    <w:tblPr>
+      <w:tblInd w:w="709" w:type="dxa" />
+      <w:tblBorders>
+        <w:top w:val="single" w:sz="4" w:space="0" w:color="auto" />
+        <w:left w:val="single" w:sz="4" w:space="0" w:color="auto" />
+        <w:bottom w:val="single" w:sz="4" w:space="0" w:color="auto" />
+        <w:right w:val="single" w:sz="4" w:space="0" w:color="auto" />
+        <w:insideH w:val="single" w:sz="4" w:space="0" w:color="auto" />
+        <w:insideV w:val="single" w:sz="4" w:space="0" w:color="auto" />
+      </w:tblBorders>
+      <w:tblCellMar>
+        <w:left w:w="28" w:type="dxa" />
+        <w:right w:w="28" w:type="dxa" />
+      </w:tblCellMar>
+    </w:tblPr>
+    <w:trPr>
+      <w:cantSplit />
+    </w:trPr>
+    <w:tblStylePr w:type="firstRow">
+      <w:rPr>
+        <w:b />
+      </w:rPr>
+      <w:tblPr />
+      <w:tcPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="D9D9D9" w:themeFill="background1" w:themeFillShade="D9" />
+      </w:tcPr>
+    </w:tblStylePr>
+  </w:style>
+  <w:style w:type="paragraph" w:customStyle="1" w:styleId="Tekstnarysunku">
+    <w:name w:val="Tekst na rysunku" />
+    <w:basedOn w:val="Normalny" />
+    <w:qFormat />
+    <w:rsid w:val="00A12A71" />
+    <w:rPr>
+      <w:rFonts w:asciiTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi" w:cstheme="minorHAnsi" />
+      <w:sz w:val="20" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="character" w:customStyle="1" w:styleId="tlid-translation">
+    <w:name w:val="tlid-translation" />
+    <w:basedOn w:val="Domylnaczcionkaakapitu" />
+    <w:rsid w:val="00A12A71" />
+  </w:style>
+  <w:style w:type="character" w:customStyle="1" w:styleId="reference-text">
+    <w:name w:val="reference-text" />
+    <w:basedOn w:val="Domylnaczcionkaakapitu" />
+    <w:rsid w:val="00A12A71" />
+  </w:style>
+  <w:style w:type="character" w:styleId="Tekstzastpczy">
+    <w:name w:val="Placeholder Text" />
+    <w:basedOn w:val="Domylnaczcionkaakapitu" />
+    <w:uiPriority w:val="99" />
+    <w:semiHidden />
+    <w:rsid w:val="00A12A71" />
+    <w:rPr>
+      <w:color w:val="808080" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="character" w:customStyle="1" w:styleId="mw-headline">
+    <w:name w:val="mw-headline" />
+    <w:basedOn w:val="Domylnaczcionkaakapitu" />
+    <w:rsid w:val="00A12A71" />
+  </w:style>
+  <w:style w:type="character" w:styleId="HTML-cytat">
+    <w:name w:val="HTML Cite" />
+    <w:basedOn w:val="Domylnaczcionkaakapitu" />
+    <w:uiPriority w:val="99" />
+    <w:unhideWhenUsed />
+    <w:rsid w:val="00A12A71" />
+    <w:rPr>
+      <w:i />
+      <w:iCs />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="paragraph" w:customStyle="1" w:styleId="Default">
+    <w:name w:val="Default" />
+    <w:rsid w:val="00A12A71" />
+    <w:pPr>
+      <w:autoSpaceDE w:val="0" />
+      <w:autoSpaceDN w:val="0" />
+      <w:adjustRightInd w:val="0" />
+    </w:pPr>
+    <w:rPr>
+      <w:rFonts w:ascii="Calibri" w:hAnsi="Calibri" w:cs="Calibri" />
+      <w:color w:val="000000" />
+      <w:sz w:val="24" />
+      <w:szCs w:val="24" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="paragraph" w:customStyle="1" w:styleId="indentfix">
+    <w:name w:val="indentfix" />
+    <w:basedOn w:val="Normalny" />
+    <w:rsid w:val="00A12A71" />
+    <w:pPr>
+      <w:spacing w:before="100" w:beforeAutospacing="1" w:after="100" w:afterAutospacing="1" />
+    </w:pPr>
+    <w:rPr>
+      <w:lang w:eastAsia="pl-PL" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="paragraph" w:styleId="Nagwekspisutreci">
+    <w:name w:val="TOC Heading" />
+    <w:basedOn w:val="Nagwek1" />
+    <w:next w:val="Normalny" />
+    <w:uiPriority w:val="39" />
+    <w:unhideWhenUsed />
+    <w:qFormat />
+    <w:rsid w:val="00A12A71" />
+    <w:pPr>
+      <w:keepLines />
+      <w:spacing w:before="1280" w:after="0" />
+      <w:outlineLvl w:val="9" />
+    </w:pPr>
+    <w:rPr>
+      <w:rFonts w:asciiTheme="majorHAnsi" w:eastAsiaTheme="majorEastAsia" w:hAnsiTheme="majorHAnsi" w:cstheme="majorBidi" />
+      <w:bCs />
+      <w:iCs w:val="0" />
+      <w:kern w:val="0" />
+      <w:sz w:val="32" />
+      <w:szCs w:val="32" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="paragraph" w:styleId="Spistreci1">
+    <w:name w:val="toc 1" />
+    <w:basedOn w:val="Normalny" />
+    <w:next w:val="Normalny" />
+    <w:autoRedefine />
+    <w:uiPriority w:val="39" />
+    <w:rsid w:val="00A12A71" />
+    <w:pPr>
+      <w:spacing w:after="100" />
+    </w:pPr>
+  </w:style>
+  <w:style w:type="paragraph" w:styleId="Spistreci2">
+    <w:name w:val="toc 2" />
+    <w:basedOn w:val="Normalny" />
+    <w:next w:val="Normalny" />
+    <w:autoRedefine />
+    <w:uiPriority w:val="39" />
+    <w:rsid w:val="00A12A71" />
+    <w:pPr>
+      <w:spacing w:after="100" />
+      <w:ind w:left="240" />
+    </w:pPr>
+  </w:style>
+  <w:style w:type="paragraph" w:styleId="Spistreci3">
+    <w:name w:val="toc 3" />
+    <w:basedOn w:val="Normalny" />
+    <w:next w:val="Normalny" />
+    <w:autoRedefine />
+    <w:uiPriority w:val="39" />
+    <w:rsid w:val="00A12A71" />
+    <w:pPr>
+      <w:spacing w:after="100" />
+      <w:ind w:left="480" />
+    </w:pPr>
+  </w:style>
+  <w:style w:type="character" w:styleId="Uwydatnienie">
+    <w:name w:val="Emphasis" />
+    <w:basedOn w:val="Domylnaczcionkaakapitu" />
+    <w:uiPriority w:val="20" />
+    <w:qFormat />
+    <w:rsid w:val="00A12A71" />
+    <w:rPr>
+      <w:i />
+      <w:iCs />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="paragraph" w:styleId="Listanumerowana">
+    <w:name w:val="List Number" />
+    <w:basedOn w:val="Normalny" />
+    <w:qFormat />
+    <w:rsid w:val="00A12A71" />
+    <w:pPr>
+      <w:numPr>
+        <w:numId w:val="1" />
+      </w:numPr>
+      <w:tabs>
+        <w:tab w:val="clear" w:pos="360" />
+      </w:tabs>
+      <w:spacing w:line="240" w:lineRule="auto" />
+      <w:contextualSpacing />
+    </w:pPr>
+    <w:rPr>
+      <w:rFonts w:eastAsia="Times New Roman" />
+      <w:iCs w:val="0" />
+      <w:szCs w:val="20" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="paragraph" w:customStyle="1" w:styleId="rdtytu">
+    <w:name w:val="Śródtytuł" />
+    <w:basedOn w:val="Intitle" />
+    <w:link w:val="rdtytuZnak" />
+    <w:qFormat />
+    <w:rsid w:val="00A12A71" />
+    <w:pPr>
+      <w:ind w:left="284" />
+    </w:pPr>
+    <w:rPr>
+      <w:b w:val="0" />
+      <w:bCs />
+      <w:i w:val="0" />
+      <w:iCs w:val="0" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="character" w:customStyle="1" w:styleId="rdtytuZnak">
+    <w:name w:val="Śródtytuł Znak" />
+    <w:basedOn w:val="Nagwek4Znak" />
+    <w:link w:val="rdtytu" />
+    <w:rsid w:val="00A12A71" />
+    <w:rPr>
+      <w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi" w:cstheme="minorHAnsi" />
+      <w:b w:val="0" />
+      <w:bCs />
+      <w:i />
+      <w:iCs w:val="0" />
+      <w:sz w:val="24" />
+      <w:szCs w:val="24" />
+      <w:lang w:val="en-US" w:eastAsia="en-US" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="character" w:styleId="UyteHipercze">
+    <w:name w:val="FollowedHyperlink" />
+    <w:basedOn w:val="Domylnaczcionkaakapitu" />
+    <w:rsid w:val="00A12A71" />
+    <w:rPr>
+      <w:color w:val="954F72" w:themeColor="followedHyperlink" />
+      <w:u w:val="single" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="character" w:customStyle="1" w:styleId="nolink">
+    <w:name w:val="nolink" />
+    <w:basedOn w:val="Domylnaczcionkaakapitu" />
+    <w:rsid w:val="00A12A71" />
+  </w:style>
+  <w:style w:type="paragraph" w:customStyle="1" w:styleId="Ramka">
+    <w:name w:val="Ramka" />
+    <w:basedOn w:val="Wcicienormalne" />
+    <w:qFormat />
+    <w:rsid w:val="00A12A71" />
+    <w:pPr>
+      <w:pBdr>
+        <w:top w:val="single" w:sz="4" w:space="1" w:color="auto" />
+        <w:left w:val="single" w:sz="4" w:space="4" w:color="auto" />
+        <w:bottom w:val="single" w:sz="4" w:space="1" w:color="auto" />
+        <w:right w:val="single" w:sz="4" w:space="4" w:color="auto" />
+      </w:pBdr>
+    </w:pPr>
+    <w:rPr>
+      <w:i />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="character" w:customStyle="1" w:styleId="citation">
+    <w:name w:val="citation" />
+    <w:basedOn w:val="Domylnaczcionkaakapitu" />
+    <w:rsid w:val="00A12A71" />
+  </w:style>
+  <w:style w:type="character" w:customStyle="1" w:styleId="cite-lastname">
+    <w:name w:val="cite-lastname" />
+    <w:basedOn w:val="Domylnaczcionkaakapitu" />
+    <w:rsid w:val="00A12A71" />
+  </w:style>
+  <w:style w:type="paragraph" w:styleId="Tekstprzypisukocowego">
+    <w:name w:val="endnote text" />
+    <w:basedOn w:val="Normalny" />
+    <w:link w:val="TekstprzypisukocowegoZnak" />
+    <w:rsid w:val="00A12A71" />
+    <w:rPr>
+      <w:sz w:val="20" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="character" w:customStyle="1" w:styleId="TekstprzypisukocowegoZnak">
+    <w:name w:val="Tekst przypisu końcowego Znak" />
+    <w:basedOn w:val="Domylnaczcionkaakapitu" />
+    <w:link w:val="Tekstprzypisukocowego" />
+    <w:rsid w:val="00A12A71" />
+    <w:rPr>
+      <w:lang w:eastAsia="en-US" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="character" w:styleId="Odwoanieprzypisukocowego">
+    <w:name w:val="endnote reference" />
+    <w:basedOn w:val="Domylnaczcionkaakapitu" />
+    <w:rsid w:val="00A12A71" />
+    <w:rPr>
+      <w:vertAlign w:val="superscript" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="paragraph" w:styleId="Tekstdymka">
+    <w:name w:val="Balloon Text" />
+    <w:basedOn w:val="Normalny" />
+    <w:link w:val="TekstdymkaZnak" />
+    <w:semiHidden />
+    <w:unhideWhenUsed />
+    <w:rsid w:val="00A12A71" />
+    <w:rPr>
+      <w:rFonts w:ascii="Segoe UI" w:hAnsi="Segoe UI" w:cs="Segoe UI" />
+      <w:sz w:val="18" />
+      <w:szCs w:val="18" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="character" w:customStyle="1" w:styleId="TekstdymkaZnak">
+    <w:name w:val="Tekst dymka Znak" />
+    <w:basedOn w:val="Domylnaczcionkaakapitu" />
+    <w:link w:val="Tekstdymka" />
+    <w:semiHidden />
+    <w:rsid w:val="00A12A71" />
+    <w:rPr>
+      <w:rFonts w:ascii="Segoe UI" w:hAnsi="Segoe UI" w:cs="Segoe UI" />
+      <w:sz w:val="18" />
+      <w:szCs w:val="18" />
+      <w:lang w:eastAsia="en-US" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="table" w:customStyle="1" w:styleId="Tabelabezsiatki">
+    <w:name w:val="Tabela bez siatki" />
+    <w:basedOn w:val="Standardowy" />
+    <w:uiPriority w:val="99" />
+    <w:rsid w:val="00A12A71" />
+    <w:rPr>
+      <w:rFonts w:asciiTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi" />
+    </w:rPr>
+    <w:tblPr />
+  </w:style>
+  <w:style w:type="character" w:customStyle="1" w:styleId="texhtml">
+    <w:name w:val="texhtml" />
+    <w:basedOn w:val="Domylnaczcionkaakapitu" />
+    <w:rsid w:val="00A12A71" />
+  </w:style>
+  <w:style w:type="paragraph" w:styleId="Listapunktowana2">
+    <w:name w:val="List Bullet 2" />
+    <w:basedOn w:val="Normalny" />
+    <w:qFormat />
+    <w:rsid w:val="00A12A71" />
+    <w:pPr>
+      <w:numPr>
+        <w:ilvl w:val="1" />
+        <w:numId w:val="3" />
+      </w:numPr>
+      <w:spacing w:before="120" w:after="120" w:line="240" w:lineRule="auto" />
+      <w:contextualSpacing />
+    </w:pPr>
+    <w:rPr>
+      <w:rFonts w:eastAsia="Times New Roman" />
+      <w:iCs w:val="0" />
+      <w:szCs w:val="20" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="paragraph" w:styleId="Listapunktowana3">
+    <w:name w:val="List Bullet 3" />
+    <w:basedOn w:val="Normalny" />
+    <w:qFormat />
+    <w:rsid w:val="00A12A71" />
+    <w:pPr>
+      <w:numPr>
+        <w:numId w:val="4" />
+      </w:numPr>
+      <w:spacing w:before="120" w:after="120" w:line="240" w:lineRule="auto" />
+      <w:contextualSpacing />
+    </w:pPr>
+    <w:rPr>
+      <w:rFonts w:eastAsia="Times New Roman" />
+      <w:iCs w:val="0" />
+      <w:szCs w:val="20" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="paragraph" w:customStyle="1" w:styleId="Ramkaprzykadu">
+    <w:name w:val="Ramka przykładu" />
+    <w:basedOn w:val="Ramka" />
+    <w:qFormat />
+    <w:rsid w:val="00A12A71" />
+  </w:style>
+  <w:style w:type="paragraph" w:customStyle="1" w:styleId="Ramkadozapamitania">
+    <w:name w:val="Ramka do zapamiętania" />
+    <w:basedOn w:val="Ramka" />
+    <w:qFormat />
+    <w:rsid w:val="00A12A71" />
+    <w:pPr>
+      <w:pBdr>
+        <w:top w:val="single" w:sz="4" w:space="12" w:color="auto" />
+        <w:bottom w:val="single" w:sz="4" w:space="12" w:color="auto" />
+      </w:pBdr>
+      <w:jc w:val="center" />
+    </w:pPr>
+    <w:rPr>
+      <w:b />
+      <w:bCs />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="paragraph" w:customStyle="1" w:styleId="Ramkacytatu">
+    <w:name w:val="Ramka cytatu" />
+    <w:basedOn w:val="Ramka" />
+    <w:qFormat />
+    <w:rsid w:val="00A12A71" />
+  </w:style>
+  <w:style w:type="character" w:styleId="Odwoaniedokomentarza">
+    <w:name w:val="annotation reference" />
+    <w:basedOn w:val="Domylnaczcionkaakapitu" />
+    <w:rsid w:val="00A12A71" />
+    <w:rPr>
+      <w:sz w:val="16" />
+      <w:szCs w:val="16" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="paragraph" w:styleId="Spistreci4">
+    <w:name w:val="toc 4" />
+    <w:basedOn w:val="Normalny" />
+    <w:next w:val="Normalny" />
+    <w:autoRedefine />
+    <w:uiPriority w:val="39" />
+    <w:unhideWhenUsed />
+    <w:rsid w:val="00A12A71" />
+    <w:pPr>
+      <w:spacing w:after="100" />
+      <w:ind w:left="660" />
+    </w:pPr>
+    <w:rPr>
+      <w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi" />
+      <w:sz w:val="22" />
+      <w:szCs w:val="22" />
+      <w:lang w:eastAsia="pl-PL" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="paragraph" w:styleId="Spistreci5">
+    <w:name w:val="toc 5" />
+    <w:basedOn w:val="Normalny" />
+    <w:next w:val="Normalny" />
+    <w:autoRedefine />
+    <w:uiPriority w:val="39" />
+    <w:unhideWhenUsed />
+    <w:rsid w:val="00A12A71" />
+    <w:pPr>
+      <w:spacing w:after="100" />
+      <w:ind w:left="880" />
+    </w:pPr>
+    <w:rPr>
+      <w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi" />
+      <w:sz w:val="22" />
+      <w:szCs w:val="22" />
+      <w:lang w:eastAsia="pl-PL" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="paragraph" w:styleId="Spistreci6">
+    <w:name w:val="toc 6" />
+    <w:basedOn w:val="Normalny" />
+    <w:next w:val="Normalny" />
+    <w:autoRedefine />
+    <w:uiPriority w:val="39" />
+    <w:unhideWhenUsed />
+    <w:rsid w:val="00A12A71" />
+    <w:pPr>
+      <w:spacing w:after="100" />
+      <w:ind w:left="1100" />
+    </w:pPr>
+    <w:rPr>
+      <w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi" />
+      <w:sz w:val="22" />
+      <w:szCs w:val="22" />
+      <w:lang w:eastAsia="pl-PL" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="paragraph" w:styleId="Spistreci7">
+    <w:name w:val="toc 7" />
+    <w:basedOn w:val="Normalny" />
+    <w:next w:val="Normalny" />
+    <w:autoRedefine />
+    <w:uiPriority w:val="39" />
+    <w:unhideWhenUsed />
+    <w:rsid w:val="00A12A71" />
+    <w:pPr>
+      <w:spacing w:after="100" />
+      <w:ind w:left="1320" />
+    </w:pPr>
+    <w:rPr>
+      <w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi" />
+      <w:sz w:val="22" />
+      <w:szCs w:val="22" />
+      <w:lang w:eastAsia="pl-PL" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="paragraph" w:styleId="Spistreci8">
+    <w:name w:val="toc 8" />
+    <w:basedOn w:val="Normalny" />
+    <w:next w:val="Normalny" />
+    <w:autoRedefine />
+    <w:uiPriority w:val="39" />
+    <w:unhideWhenUsed />
+    <w:rsid w:val="00A12A71" />
+    <w:pPr>
+      <w:spacing w:after="100" />
+      <w:ind w:left="1540" />
+    </w:pPr>
+    <w:rPr>
+      <w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi" />
+      <w:sz w:val="22" />
+      <w:szCs w:val="22" />
+      <w:lang w:eastAsia="pl-PL" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="paragraph" w:styleId="Spistreci9">
+    <w:name w:val="toc 9" />
+    <w:basedOn w:val="Normalny" />
+    <w:next w:val="Normalny" />
+    <w:autoRedefine />
+    <w:uiPriority w:val="39" />
+    <w:unhideWhenUsed />
+    <w:rsid w:val="00A12A71" />
+    <w:pPr>
+      <w:spacing w:after="100" />
+      <w:ind w:left="1760" />
+    </w:pPr>
+    <w:rPr>
+      <w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi" />
+      <w:sz w:val="22" />
+      <w:szCs w:val="22" />
+      <w:lang w:eastAsia="pl-PL" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="table" w:styleId="Tabelasiatki1jasna">
+    <w:name w:val="Grid Table 1 Light" />
+    <w:basedOn w:val="Standardowy" />
+    <w:uiPriority w:val="46" />
+    <w:rsid w:val="00A12A71" />
+    <w:tblPr>
+      <w:tblStyleRowBandSize w:val="1" />
+      <w:tblStyleColBandSize w:val="1" />
+      <w:tblBorders>
+        <w:top w:val="single" w:sz="4" w:space="0" w:color="999999" w:themeColor="text1" w:themeTint="66" />
+        <w:left w:val="single" w:sz="4" w:space="0" w:color="999999" w:themeColor="text1" w:themeTint="66" />
+        <w:bottom w:val="single" w:sz="4" w:space="0" w:color="999999" w:themeColor="text1" w:themeTint="66" />
+        <w:right w:val="single" w:sz="4" w:space="0" w:color="999999" w:themeColor="text1" w:themeTint="66" />
+        <w:insideH w:val="single" w:sz="4" w:space="0" w:color="999999" w:themeColor="text1" w:themeTint="66" />
+        <w:insideV w:val="single" w:sz="4" w:space="0" w:color="999999" w:themeColor="text1" w:themeTint="66" />
+      </w:tblBorders>
+    </w:tblPr>
+    <w:tblStylePr w:type="firstRow">
+      <w:rPr>
+        <w:b />
+        <w:bCs />
+      </w:rPr>
+      <w:tblPr />
+      <w:tcPr>
+        <w:tcBorders>
+          <w:bottom w:val="single" w:sz="12" w:space="0" w:color="666666" w:themeColor="text1" w:themeTint="99" />
+        </w:tcBorders>
+      </w:tcPr>
+    </w:tblStylePr>
+    <w:tblStylePr w:type="lastRow">
+      <w:rPr>
+        <w:b />
+        <w:bCs />
+      </w:rPr>
+      <w:tblPr />
+      <w:tcPr>
+        <w:tcBorders>
+          <w:top w:val="double" w:sz="2" w:space="0" w:color="666666" w:themeColor="text1" w:themeTint="99" />
+        </w:tcBorders>
+      </w:tcPr>
+    </w:tblStylePr>
+    <w:tblStylePr w:type="firstCol">
+      <w:rPr>
+        <w:b />
+        <w:bCs />
+      </w:rPr>
+    </w:tblStylePr>
+    <w:tblStylePr w:type="lastCol">
+      <w:rPr>
+        <w:b />
+        <w:bCs />
+      </w:rPr>
+    </w:tblStylePr>
+  </w:style>
+  <w:style w:type="paragraph" w:styleId="Tekstkomentarza">
+    <w:name w:val="annotation text" />
+    <w:basedOn w:val="Normalny" />
+    <w:link w:val="TekstkomentarzaZnak" />
+    <w:rsid w:val="00A12A71" />
+    <w:rPr>
+      <w:sz w:val="20" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="character" w:customStyle="1" w:styleId="TekstkomentarzaZnak">
+    <w:name w:val="Tekst komentarza Znak" />
+    <w:basedOn w:val="Domylnaczcionkaakapitu" />
+    <w:link w:val="Tekstkomentarza" />
+    <w:rsid w:val="00A12A71" />
+    <w:rPr>
+      <w:lang w:eastAsia="en-US" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="paragraph" w:styleId="Tematkomentarza">
+    <w:name w:val="annotation subject" />
+    <w:basedOn w:val="Tekstkomentarza" />
+    <w:next w:val="Tekstkomentarza" />
+    <w:link w:val="TematkomentarzaZnak" />
+    <w:rsid w:val="00A12A71" />
+    <w:rPr>
+      <w:b />
+      <w:bCs />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="character" w:customStyle="1" w:styleId="TematkomentarzaZnak">
+    <w:name w:val="Temat komentarza Znak" />
+    <w:basedOn w:val="TekstkomentarzaZnak" />
+    <w:link w:val="Tematkomentarza" />
+    <w:rsid w:val="00A12A71" />
+    <w:rPr>
+      <w:b />
+      <w:bCs />
+      <w:lang w:eastAsia="en-US" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="paragraph" w:customStyle="1" w:styleId="Przypiswtabeli">
+    <w:name w:val="Przypis w tabeli" />
+    <w:basedOn w:val="Tekstpodstawowy" />
+    <w:qFormat />
+    <w:rsid w:val="00A12A71" />
+    <w:pPr>
+      <w:keepNext />
+      <w:ind w:left="91" w:hanging="91" />
+    </w:pPr>
+    <w:rPr>
+      <w:rFonts w:asciiTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi" />
+      <w:sz w:val="16" />
+      <w:szCs w:val="16" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="paragraph" w:customStyle="1" w:styleId="Listapunktowanawtabeli">
+    <w:name w:val="Lista punktowana w tabeli" />
+    <w:basedOn w:val="Tekstpodstawowy" />
+    <w:qFormat />
+    <w:rsid w:val="00DC5A5D" />
+    <w:pPr>
+      <w:numPr>
+        <w:numId w:val="5" />
+      </w:numPr>
+      <w:ind w:left="372" />
+    </w:pPr>
+    <w:rPr>
+      <w:rFonts w:asciiTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi" />
+      <w:sz w:val="16" />
+      <w:szCs w:val="16" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="paragraph" w:customStyle="1" w:styleId="Separator">
+    <w:name w:val="Separator" />
+    <w:basedOn w:val="Wcicienormalne" />
+    <w:link w:val="SeparatorZnak" />
+    <w:qFormat />
+    <w:rsid w:val="00DC5A5D" />
+    <w:pPr>
+      <w:spacing w:before="0" w:after="0" w:line="60" w:lineRule="exact" />
+    </w:pPr>
+  </w:style>
+  <w:style w:type="character" w:customStyle="1" w:styleId="SeparatorZnak">
+    <w:name w:val="Separator Znak" />
+    <w:basedOn w:val="WcicienormalneZnak" />
+    <w:link w:val="Separator" />
+    <w:rsid w:val="00DC5A5D" />
+    <w:rPr>
+      <w:rFonts w:eastAsiaTheme="minorHAnsi" />
+      <w:iCs />
+      <w:sz w:val="24" />
+      <w:szCs w:val="24" />
+      <w:lang w:val="en-US" w:eastAsia="en-US" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="paragraph" w:customStyle="1" w:styleId="Celwtabeli">
+    <w:name w:val="Cel w tabeli" />
+    <w:basedOn w:val="Tekstpodstawowy" />
+    <w:link w:val="CelwtabeliZnak" />
+    <w:qFormat />
+    <w:rsid w:val="00DC5A5D" />
+    <w:pPr>
+      <w:keepNext />
+      <w:spacing w:before="60" w:after="60" />
+    </w:pPr>
+    <w:rPr>
+      <w:rFonts w:asciiTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi" />
+      <w:b />
+      <w:bCs />
+      <w:i />
+      <w:iCs w:val="0" />
+      <w:sz w:val="16" />
+      <w:szCs w:val="16" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="character" w:customStyle="1" w:styleId="CelwtabeliZnak">
+    <w:name w:val="Cel w tabeli Znak" />
+    <w:basedOn w:val="TekstpodstawowyZnak" />
+    <w:link w:val="Celwtabeli" />
+    <w:rsid w:val="00DC5A5D" />
+    <w:rPr>
+      <w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi" />
+      <w:b />
+      <w:bCs />
+      <w:i />
+      <w:iCs w:val="0" />
+      <w:sz w:val="16" />
+      <w:szCs w:val="16" />
+      <w:lang w:val="en-US" w:eastAsia="en-US" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="paragraph" w:customStyle="1" w:styleId="Praktykawtabeli">
+    <w:name w:val="Praktyka w tabeli" />
+    <w:basedOn w:val="Tekstpodstawowy" />
+    <w:link w:val="PraktykawtabeliZnak" />
+    <w:qFormat />
+    <w:rsid w:val="00DC5A5D" />
+    <w:pPr>
+      <w:keepLines />
+    </w:pPr>
+    <w:rPr>
+      <w:rFonts w:asciiTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi" />
+      <w:sz w:val="16" />
+      <w:szCs w:val="16" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="character" w:customStyle="1" w:styleId="PraktykawtabeliZnak">
+    <w:name w:val="Praktyka w tabeli Znak" />
+    <w:basedOn w:val="TekstpodstawowyZnak" />
+    <w:link w:val="Praktykawtabeli" />
+    <w:rsid w:val="00DC5A5D" />
+    <w:rPr>
+      <w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi" />
+      <w:iCs />
+      <w:sz w:val="16" />
+      <w:szCs w:val="16" />
+      <w:lang w:val="en-US" w:eastAsia="en-US" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="character" w:customStyle="1" w:styleId="wyrnienie">
+    <w:name w:val="wyróżnienie" />
+    <w:basedOn w:val="Domylnaczcionkaakapitu" />
+    <w:uiPriority w:val="1" />
+    <w:qFormat />
+    <w:rsid w:val="00DC5A5D" />
+    <w:rPr>
+      <w:b />
+      <w:bCs />
+      <w:i />
+      <w:iCs />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="paragraph" w:styleId="Lista-kontynuacja">
+    <w:name w:val="List Continue" />
+    <w:basedOn w:val="Normalny" />
+    <w:qFormat />
+    <w:rsid w:val="00A12A71" />
+    <w:pPr>
+      <w:spacing w:before="120" w:after="120" w:line="240" w:lineRule="auto" />
+      <w:ind w:left="1134" />
+      <w:jc w:val="both" />
+    </w:pPr>
+    <w:rPr>
+      <w:rFonts w:eastAsia="Times New Roman" />
+      <w:iCs w:val="0" />
+      <w:szCs w:val="20" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="paragraph" w:customStyle="1" w:styleId="Listanumerowanazrozwiniciem">
+    <w:name w:val="Lista numerowana z rozwinięciem" />
+    <w:basedOn w:val="Wcicienormalne" />
+    <w:qFormat />
+    <w:rsid w:val="00DC5A5D" />
+    <w:pPr>
+      <w:keepNext />
+      <w:numPr>
+        <w:numId w:val="6" />
+      </w:numPr>
+    </w:pPr>
+  </w:style>
+  <w:style w:type="table" w:customStyle="1" w:styleId="TableGrid">
+    <w:name w:val="TableGrid" />
+    <w:rsid w:val="00DC5A5D" />
+    <w:rPr>
+      <w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi" />
+      <w:sz w:val="22" />
+      <w:szCs w:val="22" />
+    </w:rPr>
+    <w:tblPr>
+      <w:tblCellMar>
+        <w:top w:w="0" w:type="dxa" />
+        <w:left w:w="0" w:type="dxa" />
+        <w:bottom w:w="0" w:type="dxa" />
+        <w:right w:w="0" w:type="dxa" />
+      </w:tblCellMar>
+    </w:tblPr>
+  </w:style>
+  <w:style w:type="table" w:styleId="Siatkatabelijasna">
+    <w:name w:val="Grid Table Light" />
+    <w:basedOn w:val="Standardowy" />
+    <w:uiPriority w:val="40" />
+    <w:rsid w:val="00DC5A5D" />
+    <w:tblPr>
+      <w:tblBorders>
+        <w:top w:val="single" w:sz="4" w:space="0" w:color="BFBFBF" w:themeColor="background1" w:themeShade="BF" />
+        <w:left w:val="single" w:sz="4" w:space="0" w:color="BFBFBF" w:themeColor="background1" w:themeShade="BF" />
+        <w:bottom w:val="single" w:sz="4" w:space="0" w:color="BFBFBF" w:themeColor="background1" w:themeShade="BF" />
+        <w:right w:val="single" w:sz="4" w:space="0" w:color="BFBFBF" w:themeColor="background1" w:themeShade="BF" />
+        <w:insideH w:val="single" w:sz="4" w:space="0" w:color="BFBFBF" w:themeColor="background1" w:themeShade="BF" />
+        <w:insideV w:val="single" w:sz="4" w:space="0" w:color="BFBFBF" w:themeColor="background1" w:themeShade="BF" />
+      </w:tblBorders>
+    </w:tblPr>
+  </w:style>
+  <w:style w:type="character" w:customStyle="1" w:styleId="sts-caption-label">
+    <w:name w:val="sts-caption-label" />
+    <w:basedOn w:val="Domylnaczcionkaakapitu" />
+    <w:rsid w:val="00A12A71" />
+  </w:style>
+  <w:style w:type="character" w:customStyle="1" w:styleId="sts-caption-title">
+    <w:name w:val="sts-caption-title" />
+    <w:basedOn w:val="Domylnaczcionkaakapitu" />
+    <w:rsid w:val="00A12A71" />
+  </w:style>
+  <w:style w:type="character" w:customStyle="1" w:styleId="sts-label">
+    <w:name w:val="sts-label" />
+    <w:basedOn w:val="Domylnaczcionkaakapitu" />
+    <w:rsid w:val="00A12A71" />
+  </w:style>
+  <w:style w:type="character" w:customStyle="1" w:styleId="sts-non-normative-note-label">
+    <w:name w:val="sts-non-normative-note-label" />
+    <w:basedOn w:val="Domylnaczcionkaakapitu" />
+    <w:rsid w:val="00A12A71" />
+  </w:style>
+  <w:style w:type="character" w:customStyle="1" w:styleId="sts-std-title">
+    <w:name w:val="sts-std-title" />
+    <w:basedOn w:val="Domylnaczcionkaakapitu" />
+    <w:rsid w:val="00A12A71" />
+  </w:style>
+  <w:style w:type="character" w:customStyle="1" w:styleId="sts-tbx-note-label">
+    <w:name w:val="sts-tbx-note-label" />
+    <w:basedOn w:val="Domylnaczcionkaakapitu" />
+    <w:rsid w:val="00A12A71" />
+  </w:style>
+  <w:style w:type="character" w:customStyle="1" w:styleId="v-captiontext">
+    <w:name w:val="v-captiontext" />
+    <w:basedOn w:val="Domylnaczcionkaakapitu" />
+    <w:rsid w:val="00A12A71" />
+  </w:style>
+  <w:style w:type="paragraph" w:customStyle="1" w:styleId="NagwekBezNumeracji">
+    <w:name w:val="NagłówekBezNumeracji" />
+    <w:basedOn w:val="Tekstpodstawowy" />
+    <w:qFormat />
+    <w:rsid w:val="00583038" />
+    <w:pPr>
+      <w:pageBreakBefore />
+      <w:outlineLvl w:val="7" />
+    </w:pPr>
+    <w:rPr>
+      <w:rFonts w:ascii="Arial Narrow" w:hAnsi="Arial Narrow" />
+      <w:b />
+      <w:sz w:val="40" />
+      <w:szCs w:val="40" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="character" w:customStyle="1" w:styleId="cs1-format">
+    <w:name w:val="cs1-format" />
+    <w:basedOn w:val="Domylnaczcionkaakapitu" />
+    <w:rsid w:val="00847A86" />
+  </w:style>
+  <w:style w:type="paragraph" w:styleId="Poprawka">
+    <w:name w:val="Revision" />
+    <w:hidden />
+    <w:uiPriority w:val="99" />
+    <w:semiHidden />
+    <w:rsid w:val="0031718A" />
+    <w:rPr>
+      <w:rFonts w:eastAsiaTheme="minorHAnsi" />
+      <w:iCs />
+      <w:sz w:val="24" />
+      <w:szCs w:val="24" />
+      <w:lang w:eastAsia="en-US" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="character" w:customStyle="1" w:styleId="gt-baf-cell">
+    <w:name w:val="gt-baf-cell" />
+    <w:basedOn w:val="Domylnaczcionkaakapitu" />
+    <w:rsid w:val="007C735F" />
+  </w:style>
+  <w:style w:type="character" w:customStyle="1" w:styleId="gt-baf-back">
+    <w:name w:val="gt-baf-back" />
+    <w:basedOn w:val="Domylnaczcionkaakapitu" />
+    <w:rsid w:val="007C735F" />
+  </w:style>
+  <w:style w:type="table" w:styleId="Tabelasiatki2">
+    <w:name w:val="Grid Table 2" />
+    <w:basedOn w:val="Standardowy" />
+    <w:uiPriority w:val="47" />
+    <w:rsid w:val="005577F7" />
+    <w:rPr>
+      <w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi" />
+      <w:sz w:val="22" />
+      <w:szCs w:val="22" />
+    </w:rPr>
+    <w:tblPr>
+      <w:tblStyleRowBandSize w:val="1" />
+      <w:tblStyleColBandSize w:val="1" />
+      <w:tblBorders>
+        <w:top w:val="single" w:sz="2" w:space="0" w:color="666666" w:themeColor="text1" w:themeTint="99" />
+        <w:bottom w:val="single" w:sz="2" w:space="0" w:color="666666" w:themeColor="text1" w:themeTint="99" />
+        <w:insideH w:val="single" w:sz="2" w:space="0" w:color="666666" w:themeColor="text1" w:themeTint="99" />
+        <w:insideV w:val="single" w:sz="2" w:space="0" w:color="666666" w:themeColor="text1" w:themeTint="99" />
+      </w:tblBorders>
+    </w:tblPr>
+    <w:tblStylePr w:type="firstRow">
+      <w:rPr>
+        <w:b />
+        <w:bCs />
+      </w:rPr>
+      <w:tblPr />
+      <w:tcPr>
+        <w:tcBorders>
+          <w:top w:val="nil" />
+          <w:bottom w:val="single" w:sz="12" w:space="0" w:color="666666" w:themeColor="text1" w:themeTint="99" />
+          <w:insideH w:val="nil" />
+          <w:insideV w:val="nil" />
+        </w:tcBorders>
+        <w:shd w:val="clear" w:color="auto" w:fill="FFFFFF" w:themeFill="background1" />
+      </w:tcPr>
+    </w:tblStylePr>
+    <w:tblStylePr w:type="lastRow">
+      <w:rPr>
+        <w:b />
+        <w:bCs />
+      </w:rPr>
+      <w:tblPr />
+      <w:tcPr>
+        <w:tcBorders>
+          <w:top w:val="double" w:sz="2" w:space="0" w:color="666666" w:themeColor="text1" w:themeTint="99" />
+          <w:bottom w:val="nil" />
+          <w:insideH w:val="nil" />
+          <w:insideV w:val="nil" />
+        </w:tcBorders>
+        <w:shd w:val="clear" w:color="auto" w:fill="FFFFFF" w:themeFill="background1" />
+      </w:tcPr>
+    </w:tblStylePr>
+    <w:tblStylePr w:type="firstCol">
+      <w:rPr>
+        <w:b />
+        <w:bCs />
+      </w:rPr>
+    </w:tblStylePr>
+    <w:tblStylePr w:type="lastCol">
+      <w:rPr>
+        <w:b />
+        <w:bCs />
+      </w:rPr>
+    </w:tblStylePr>
+    <w:tblStylePr w:type="band1Vert">
+      <w:tblPr />
+      <w:tcPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="CCCCCC" w:themeFill="text1" w:themeFillTint="33" />
+      </w:tcPr>
+    </w:tblStylePr>
+    <w:tblStylePr w:type="band1Horz">
+      <w:tblPr />
+      <w:tcPr>
+        <w:shd w:val="clear" w:color="auto" w:fill="CCCCCC" w:themeFill="text1" w:themeFillTint="33" />
+      </w:tcPr>
+    </w:tblStylePr>
+  </w:style>
+  <w:style w:type="table" w:styleId="Tabelasiatki1jasnaakcent6">
+    <w:name w:val="Grid Table 1 Light Accent 6" />
+    <w:basedOn w:val="Standardowy" />
+    <w:uiPriority w:val="46" />
+    <w:rsid w:val="005577F7" />
+    <w:tblPr>
+      <w:tblStyleRowBandSize w:val="1" />
+      <w:tblStyleColBandSize w:val="1" />
+      <w:tblBorders>
+        <w:top w:val="single" w:sz="4" w:space="0" w:color="C5E0B3" w:themeColor="accent6" w:themeTint="66" />
+        <w:left w:val="single" w:sz="4" w:space="0" w:color="C5E0B3" w:themeColor="accent6" w:themeTint="66" />
+        <w:bottom w:val="single" w:sz="4" w:space="0" w:color="C5E0B3" w:themeColor="accent6" w:themeTint="66" />
+        <w:right w:val="single" w:sz="4" w:space="0" w:color="C5E0B3" w:themeColor="accent6" w:themeTint="66" />
+        <w:insideH w:val="single" w:sz="4" w:space="0" w:color="C5E0B3" w:themeColor="accent6" w:themeTint="66" />
+        <w:insideV w:val="single" w:sz="4" w:space="0" w:color="C5E0B3" w:themeColor="accent6" w:themeTint="66" />
+      </w:tblBorders>
+    </w:tblPr>
+    <w:tblStylePr w:type="firstRow">
+      <w:rPr>
+        <w:b />
+        <w:bCs />
+      </w:rPr>
+      <w:tblPr />
+      <w:tcPr>
+        <w:tcBorders>
+          <w:bottom w:val="single" w:sz="12" w:space="0" w:color="A8D08D" w:themeColor="accent6" w:themeTint="99" />
+        </w:tcBorders>
+      </w:tcPr>
+    </w:tblStylePr>
+    <w:tblStylePr w:type="lastRow">
+      <w:rPr>
+        <w:b />
+        <w:bCs />
+      </w:rPr>
+      <w:tblPr />
+      <w:tcPr>
+        <w:tcBorders>
+          <w:top w:val="double" w:sz="2" w:space="0" w:color="A8D08D" w:themeColor="accent6" w:themeTint="99" />
+        </w:tcBorders>
+      </w:tcPr>
+    </w:tblStylePr>
+    <w:tblStylePr w:type="firstCol">
+      <w:rPr>
+        <w:b />
+        <w:bCs />
+      </w:rPr>
+    </w:tblStylePr>
+    <w:tblStylePr w:type="lastCol">
+      <w:rPr>
+        <w:b />
+        <w:bCs />
+      </w:rPr>
+    </w:tblStylePr>
+  </w:style>
+  <w:style w:type="character" w:customStyle="1" w:styleId="cs1-lock-registration">
+    <w:name w:val="cs1-lock-registration" />
+    <w:basedOn w:val="Domylnaczcionkaakapitu" />
+    <w:rsid w:val="00646FFB" />
+  </w:style>
+  <w:style w:type="character" w:customStyle="1" w:styleId="reference-accessdate">
+    <w:name w:val="reference-accessdate" />
+    <w:basedOn w:val="Domylnaczcionkaakapitu" />
+    <w:rsid w:val="00FD73BE" />
+  </w:style>
+  <w:style w:type="paragraph" w:customStyle="1" w:styleId="msonormal0">
+    <w:name w:val="msonormal" />
+    <w:basedOn w:val="Normalny" />
+    <w:rsid w:val="00286B19" />
+    <w:pPr>
+      <w:spacing w:before="100" w:beforeAutospacing="1" w:after="100" w:afterAutospacing="1" w:line="240" w:lineRule="auto" />
+    </w:pPr>
+    <w:rPr>
+      <w:rFonts w:eastAsiaTheme="minorEastAsia" />
+      <w:iCs w:val="0" />
+      <w:lang w:eastAsia="pl-PL" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="paragraph" w:customStyle="1" w:styleId="Dozapamitania">
+    <w:name w:val="Do zapamiętania" />
+    <w:basedOn w:val="Wcicienormalne" />
+    <w:qFormat />
+    <w:rsid w:val="00C4552B" />
+    <w:pPr>
+      <w:jc w:val="center" />
+    </w:pPr>
+    <w:rPr>
+      <w:b />
+      <w:bCs />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="character" w:customStyle="1" w:styleId="st">
+    <w:name w:val="st" />
+    <w:basedOn w:val="Domylnaczcionkaakapitu" />
+    <w:rsid w:val="00475160" />
+  </w:style>
+  <w:style w:type="paragraph" w:customStyle="1" w:styleId="Podpispodrysunkiem">
+    <w:name w:val="Podpis pod rysunkiem" />
+    <w:basedOn w:val="Legenda" />
+    <w:qFormat />
+    <w:rsid w:val="00116675" />
+  </w:style>
+  <w:style w:type="paragraph" w:customStyle="1" w:styleId="Podpisnadtabel">
+    <w:name w:val="Podpis nad tabelą" />
+    <w:basedOn w:val="Legenda" />
+    <w:next w:val="Normalny" />
+    <w:qFormat />
+    <w:rsid w:val="00116675" />
+    <w:pPr>
+      <w:keepNext />
+    </w:pPr>
+  </w:style>
+</w:styles>

@@ -1,0 +1,636 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dmw:Styles xmlns:dmw="DocumentModel.Wordprocessing">
+  <dmw:DocDefaults>
+    <dmw:RunPropertiesDefault FontSize="11pt">
+      <dmw:RunFonts AsciiTheme="MinorHighAnsi" HighAnsiTheme="MinorHighAnsi" EastAsiaTheme="MinorEastAsia" ComplexScriptTheme="MinorBidi" />
+      <dmw:Languages Regular="pl-PL" ComplexScript="ar-SA" EastAsia="ja-JP" />
+    </dmw:RunPropertiesDefault>
+    <dmw:ParagraphPropertiesDefault>
+      <dmw:ParagraphPropertiesBaseStyle>
+        <dmw:SpacingBetweenLines After="160" Line="259" LineRule="Auto" />
+      </dmw:ParagraphPropertiesBaseStyle>
+    </dmw:ParagraphPropertiesDefault>
+  </dmw:DocDefaults>
+  <dmw:LatentStyles DefaultLockedState="False" DefaultUiPriority="0" DefaultSemiHidden="False" DefaultUnhideWhenUsed="False" DefaultPrimaryStyle="False" TotalCount="376">
+    <dmw:LatentStyleExceptionInfo Name="Normal" PrimaryStyle="True" />
+    <dmw:LatentStyleExceptionInfo Name="heading 1" UiPriority="9" PrimaryStyle="True" />
+    <dmw:LatentStyleExceptionInfo Name="heading 2" UiPriority="9" PrimaryStyle="True" />
+    <dmw:LatentStyleExceptionInfo Name="heading 3" PrimaryStyle="True" />
+    <dmw:LatentStyleExceptionInfo Name="heading 4" PrimaryStyle="True" />
+    <dmw:LatentStyleExceptionInfo Name="heading 5" PrimaryStyle="True" />
+    <dmw:LatentStyleExceptionInfo Name="heading 6" SemiHidden="True" UnhideWhenUsed="True" PrimaryStyle="True" />
+    <dmw:LatentStyleExceptionInfo Name="heading 7" SemiHidden="True" UnhideWhenUsed="True" PrimaryStyle="True" />
+    <dmw:LatentStyleExceptionInfo Name="heading 8" SemiHidden="True" UnhideWhenUsed="True" PrimaryStyle="True" />
+    <dmw:LatentStyleExceptionInfo Name="heading 9" SemiHidden="True" UnhideWhenUsed="True" PrimaryStyle="True" />
+    <dmw:LatentStyleExceptionInfo Name="caption" UiPriority="35" SemiHidden="True" UnhideWhenUsed="True" PrimaryStyle="True" />
+    <dmw:LatentStyleExceptionInfo Name="Title" PrimaryStyle="True" />
+    <dmw:LatentStyleExceptionInfo Name="Subtitle" UiPriority="11" PrimaryStyle="True" />
+    <dmw:LatentStyleExceptionInfo Name="Strong" PrimaryStyle="True" />
+    <dmw:LatentStyleExceptionInfo Name="Emphasis" PrimaryStyle="True" />
+    <dmw:LatentStyleExceptionInfo Name="HTML Sample" SemiHidden="True" UnhideWhenUsed="True" />
+    <dmw:LatentStyleExceptionInfo Name="HTML Variable" SemiHidden="True" UnhideWhenUsed="True" />
+    <dmw:LatentStyleExceptionInfo Name="Normal Table" SemiHidden="True" UnhideWhenUsed="True" />
+    <dmw:LatentStyleExceptionInfo Name="Outline List 1" SemiHidden="True" UnhideWhenUsed="True" />
+    <dmw:LatentStyleExceptionInfo Name="Outline List 2" SemiHidden="True" UnhideWhenUsed="True" />
+    <dmw:LatentStyleExceptionInfo Name="Outline List 3" SemiHidden="True" UnhideWhenUsed="True" />
+    <dmw:LatentStyleExceptionInfo Name="Table Simple 1" SemiHidden="True" UnhideWhenUsed="True" />
+    <dmw:LatentStyleExceptionInfo Name="Table Simple 2" SemiHidden="True" UnhideWhenUsed="True" />
+    <dmw:LatentStyleExceptionInfo Name="Table Simple 3" SemiHidden="True" UnhideWhenUsed="True" />
+    <dmw:LatentStyleExceptionInfo Name="Table Classic 1" SemiHidden="True" UnhideWhenUsed="True" />
+    <dmw:LatentStyleExceptionInfo Name="Table Classic 2" SemiHidden="True" UnhideWhenUsed="True" />
+    <dmw:LatentStyleExceptionInfo Name="Table Classic 3" SemiHidden="True" UnhideWhenUsed="True" />
+    <dmw:LatentStyleExceptionInfo Name="Table Classic 4" SemiHidden="True" UnhideWhenUsed="True" />
+    <dmw:LatentStyleExceptionInfo Name="Table Colorful 1" SemiHidden="True" UnhideWhenUsed="True" />
+    <dmw:LatentStyleExceptionInfo Name="Table Colorful 2" SemiHidden="True" UnhideWhenUsed="True" />
+    <dmw:LatentStyleExceptionInfo Name="Table Colorful 3" SemiHidden="True" UnhideWhenUsed="True" />
+    <dmw:LatentStyleExceptionInfo Name="Table Columns 1" SemiHidden="True" UnhideWhenUsed="True" />
+    <dmw:LatentStyleExceptionInfo Name="Table Columns 2" SemiHidden="True" UnhideWhenUsed="True" />
+    <dmw:LatentStyleExceptionInfo Name="Table Columns 3" SemiHidden="True" UnhideWhenUsed="True" />
+    <dmw:LatentStyleExceptionInfo Name="Table Columns 4" SemiHidden="True" UnhideWhenUsed="True" />
+    <dmw:LatentStyleExceptionInfo Name="Table Columns 5" SemiHidden="True" UnhideWhenUsed="True" />
+    <dmw:LatentStyleExceptionInfo Name="Table Grid 1" SemiHidden="True" UnhideWhenUsed="True" />
+    <dmw:LatentStyleExceptionInfo Name="Table Grid 2" SemiHidden="True" UnhideWhenUsed="True" />
+    <dmw:LatentStyleExceptionInfo Name="Table Grid 3" SemiHidden="True" UnhideWhenUsed="True" />
+    <dmw:LatentStyleExceptionInfo Name="Table Grid 4" SemiHidden="True" UnhideWhenUsed="True" />
+    <dmw:LatentStyleExceptionInfo Name="Table Grid 5" SemiHidden="True" UnhideWhenUsed="True" />
+    <dmw:LatentStyleExceptionInfo Name="Table Grid 6" SemiHidden="True" UnhideWhenUsed="True" />
+    <dmw:LatentStyleExceptionInfo Name="Table Grid 7" SemiHidden="True" UnhideWhenUsed="True" />
+    <dmw:LatentStyleExceptionInfo Name="Table Grid 8" SemiHidden="True" UnhideWhenUsed="True" />
+    <dmw:LatentStyleExceptionInfo Name="Table List 1" SemiHidden="True" UnhideWhenUsed="True" />
+    <dmw:LatentStyleExceptionInfo Name="Table List 2" SemiHidden="True" UnhideWhenUsed="True" />
+    <dmw:LatentStyleExceptionInfo Name="Table List 3" SemiHidden="True" UnhideWhenUsed="True" />
+    <dmw:LatentStyleExceptionInfo Name="Table List 4" SemiHidden="True" UnhideWhenUsed="True" />
+    <dmw:LatentStyleExceptionInfo Name="Table List 5" SemiHidden="True" UnhideWhenUsed="True" />
+    <dmw:LatentStyleExceptionInfo Name="Table List 6" SemiHidden="True" UnhideWhenUsed="True" />
+    <dmw:LatentStyleExceptionInfo Name="Table List 7" SemiHidden="True" UnhideWhenUsed="True" />
+    <dmw:LatentStyleExceptionInfo Name="Table List 8" SemiHidden="True" UnhideWhenUsed="True" />
+    <dmw:LatentStyleExceptionInfo Name="Table 3D effects 1" SemiHidden="True" UnhideWhenUsed="True" />
+    <dmw:LatentStyleExceptionInfo Name="Table 3D effects 2" SemiHidden="True" UnhideWhenUsed="True" />
+    <dmw:LatentStyleExceptionInfo Name="Table 3D effects 3" SemiHidden="True" UnhideWhenUsed="True" />
+    <dmw:LatentStyleExceptionInfo Name="Table Contemporary" SemiHidden="True" UnhideWhenUsed="True" />
+    <dmw:LatentStyleExceptionInfo Name="Table Elegant" SemiHidden="True" UnhideWhenUsed="True" />
+    <dmw:LatentStyleExceptionInfo Name="Table Professional" SemiHidden="True" UnhideWhenUsed="True" />
+    <dmw:LatentStyleExceptionInfo Name="Table Subtle 1" SemiHidden="True" UnhideWhenUsed="True" />
+    <dmw:LatentStyleExceptionInfo Name="Table Subtle 2" SemiHidden="True" UnhideWhenUsed="True" />
+    <dmw:LatentStyleExceptionInfo Name="Table Web 1" SemiHidden="True" UnhideWhenUsed="True" />
+    <dmw:LatentStyleExceptionInfo Name="Table Web 2" SemiHidden="True" UnhideWhenUsed="True" />
+    <dmw:LatentStyleExceptionInfo Name="Table Web 3" SemiHidden="True" UnhideWhenUsed="True" />
+    <dmw:LatentStyleExceptionInfo Name="Balloon Text" SemiHidden="True" UnhideWhenUsed="True" />
+    <dmw:LatentStyleExceptionInfo Name="Table Grid" UiPriority="39" />
+    <dmw:LatentStyleExceptionInfo Name="Table Theme" SemiHidden="True" UnhideWhenUsed="True" />
+    <dmw:LatentStyleExceptionInfo Name="Placeholder Text" UiPriority="99" SemiHidden="True" />
+    <dmw:LatentStyleExceptionInfo Name="No Spacing" UiPriority="1" PrimaryStyle="True" />
+    <dmw:LatentStyleExceptionInfo Name="Light Shading" UiPriority="60" />
+    <dmw:LatentStyleExceptionInfo Name="Light List" UiPriority="61" />
+    <dmw:LatentStyleExceptionInfo Name="Light Grid" UiPriority="62" />
+    <dmw:LatentStyleExceptionInfo Name="Medium Shading 1" UiPriority="63" />
+    <dmw:LatentStyleExceptionInfo Name="Medium Shading 2" UiPriority="64" />
+    <dmw:LatentStyleExceptionInfo Name="Medium List 1" UiPriority="65" />
+    <dmw:LatentStyleExceptionInfo Name="Medium List 2" UiPriority="66" />
+    <dmw:LatentStyleExceptionInfo Name="Medium Grid 1" UiPriority="67" />
+    <dmw:LatentStyleExceptionInfo Name="Medium Grid 2" UiPriority="68" />
+    <dmw:LatentStyleExceptionInfo Name="Medium Grid 3" UiPriority="69" />
+    <dmw:LatentStyleExceptionInfo Name="Dark List" UiPriority="70" />
+    <dmw:LatentStyleExceptionInfo Name="Colorful Shading" UiPriority="71" />
+    <dmw:LatentStyleExceptionInfo Name="Colorful List" UiPriority="72" />
+    <dmw:LatentStyleExceptionInfo Name="Colorful Grid" UiPriority="73" />
+    <dmw:LatentStyleExceptionInfo Name="Light Shading Accent 1" UiPriority="60" />
+    <dmw:LatentStyleExceptionInfo Name="Light List Accent 1" UiPriority="61" />
+    <dmw:LatentStyleExceptionInfo Name="Light Grid Accent 1" UiPriority="62" />
+    <dmw:LatentStyleExceptionInfo Name="Medium Shading 1 Accent 1" UiPriority="63" />
+    <dmw:LatentStyleExceptionInfo Name="Medium Shading 2 Accent 1" UiPriority="64" />
+    <dmw:LatentStyleExceptionInfo Name="Medium List 1 Accent 1" UiPriority="65" />
+    <dmw:LatentStyleExceptionInfo Name="Revision" UiPriority="99" SemiHidden="True" />
+    <dmw:LatentStyleExceptionInfo Name="List Paragraph" UiPriority="34" PrimaryStyle="True" />
+    <dmw:LatentStyleExceptionInfo Name="Quote" UiPriority="29" PrimaryStyle="True" />
+    <dmw:LatentStyleExceptionInfo Name="Intense Quote" UiPriority="30" PrimaryStyle="True" />
+    <dmw:LatentStyleExceptionInfo Name="Medium List 2 Accent 1" UiPriority="66" />
+    <dmw:LatentStyleExceptionInfo Name="Medium Grid 1 Accent 1" UiPriority="67" />
+    <dmw:LatentStyleExceptionInfo Name="Medium Grid 2 Accent 1" UiPriority="68" />
+    <dmw:LatentStyleExceptionInfo Name="Medium Grid 3 Accent 1" UiPriority="69" />
+    <dmw:LatentStyleExceptionInfo Name="Dark List Accent 1" UiPriority="70" />
+    <dmw:LatentStyleExceptionInfo Name="Colorful Shading Accent 1" UiPriority="71" />
+    <dmw:LatentStyleExceptionInfo Name="Colorful List Accent 1" UiPriority="72" />
+    <dmw:LatentStyleExceptionInfo Name="Colorful Grid Accent 1" UiPriority="73" />
+    <dmw:LatentStyleExceptionInfo Name="Light Shading Accent 2" UiPriority="60" />
+    <dmw:LatentStyleExceptionInfo Name="Light List Accent 2" UiPriority="61" />
+    <dmw:LatentStyleExceptionInfo Name="Light Grid Accent 2" UiPriority="62" />
+    <dmw:LatentStyleExceptionInfo Name="Medium Shading 1 Accent 2" UiPriority="63" />
+    <dmw:LatentStyleExceptionInfo Name="Medium Shading 2 Accent 2" UiPriority="64" />
+    <dmw:LatentStyleExceptionInfo Name="Medium List 1 Accent 2" UiPriority="65" />
+    <dmw:LatentStyleExceptionInfo Name="Medium List 2 Accent 2" UiPriority="66" />
+    <dmw:LatentStyleExceptionInfo Name="Medium Grid 1 Accent 2" UiPriority="67" />
+    <dmw:LatentStyleExceptionInfo Name="Medium Grid 2 Accent 2" UiPriority="68" />
+    <dmw:LatentStyleExceptionInfo Name="Medium Grid 3 Accent 2" UiPriority="69" />
+    <dmw:LatentStyleExceptionInfo Name="Dark List Accent 2" UiPriority="70" />
+    <dmw:LatentStyleExceptionInfo Name="Colorful Shading Accent 2" UiPriority="71" />
+    <dmw:LatentStyleExceptionInfo Name="Colorful List Accent 2" UiPriority="72" />
+    <dmw:LatentStyleExceptionInfo Name="Colorful Grid Accent 2" UiPriority="73" />
+    <dmw:LatentStyleExceptionInfo Name="Light Shading Accent 3" UiPriority="60" />
+    <dmw:LatentStyleExceptionInfo Name="Light List Accent 3" UiPriority="61" />
+    <dmw:LatentStyleExceptionInfo Name="Light Grid Accent 3" UiPriority="62" />
+    <dmw:LatentStyleExceptionInfo Name="Medium Shading 1 Accent 3" UiPriority="63" />
+    <dmw:LatentStyleExceptionInfo Name="Medium Shading 2 Accent 3" UiPriority="64" />
+    <dmw:LatentStyleExceptionInfo Name="Medium List 1 Accent 3" UiPriority="65" />
+    <dmw:LatentStyleExceptionInfo Name="Medium List 2 Accent 3" UiPriority="66" />
+    <dmw:LatentStyleExceptionInfo Name="Medium Grid 1 Accent 3" UiPriority="67" />
+    <dmw:LatentStyleExceptionInfo Name="Medium Grid 2 Accent 3" UiPriority="68" />
+    <dmw:LatentStyleExceptionInfo Name="Medium Grid 3 Accent 3" UiPriority="69" />
+    <dmw:LatentStyleExceptionInfo Name="Dark List Accent 3" UiPriority="70" />
+    <dmw:LatentStyleExceptionInfo Name="Colorful Shading Accent 3" UiPriority="71" />
+    <dmw:LatentStyleExceptionInfo Name="Colorful List Accent 3" UiPriority="72" />
+    <dmw:LatentStyleExceptionInfo Name="Colorful Grid Accent 3" UiPriority="73" />
+    <dmw:LatentStyleExceptionInfo Name="Light Shading Accent 4" UiPriority="60" />
+    <dmw:LatentStyleExceptionInfo Name="Light List Accent 4" UiPriority="61" />
+    <dmw:LatentStyleExceptionInfo Name="Light Grid Accent 4" UiPriority="62" />
+    <dmw:LatentStyleExceptionInfo Name="Medium Shading 1 Accent 4" UiPriority="63" />
+    <dmw:LatentStyleExceptionInfo Name="Medium Shading 2 Accent 4" UiPriority="64" />
+    <dmw:LatentStyleExceptionInfo Name="Medium List 1 Accent 4" UiPriority="65" />
+    <dmw:LatentStyleExceptionInfo Name="Medium List 2 Accent 4" UiPriority="66" />
+    <dmw:LatentStyleExceptionInfo Name="Medium Grid 1 Accent 4" UiPriority="67" />
+    <dmw:LatentStyleExceptionInfo Name="Medium Grid 2 Accent 4" UiPriority="68" />
+    <dmw:LatentStyleExceptionInfo Name="Medium Grid 3 Accent 4" UiPriority="69" />
+    <dmw:LatentStyleExceptionInfo Name="Dark List Accent 4" UiPriority="70" />
+    <dmw:LatentStyleExceptionInfo Name="Colorful Shading Accent 4" UiPriority="71" />
+    <dmw:LatentStyleExceptionInfo Name="Colorful List Accent 4" UiPriority="72" />
+    <dmw:LatentStyleExceptionInfo Name="Colorful Grid Accent 4" UiPriority="73" />
+    <dmw:LatentStyleExceptionInfo Name="Light Shading Accent 5" UiPriority="60" />
+    <dmw:LatentStyleExceptionInfo Name="Light List Accent 5" UiPriority="61" />
+    <dmw:LatentStyleExceptionInfo Name="Light Grid Accent 5" UiPriority="62" />
+    <dmw:LatentStyleExceptionInfo Name="Medium Shading 1 Accent 5" UiPriority="63" />
+    <dmw:LatentStyleExceptionInfo Name="Medium Shading 2 Accent 5" UiPriority="64" />
+    <dmw:LatentStyleExceptionInfo Name="Medium List 1 Accent 5" UiPriority="65" />
+    <dmw:LatentStyleExceptionInfo Name="Medium List 2 Accent 5" UiPriority="66" />
+    <dmw:LatentStyleExceptionInfo Name="Medium Grid 1 Accent 5" UiPriority="67" />
+    <dmw:LatentStyleExceptionInfo Name="Medium Grid 2 Accent 5" UiPriority="68" />
+    <dmw:LatentStyleExceptionInfo Name="Medium Grid 3 Accent 5" UiPriority="69" />
+    <dmw:LatentStyleExceptionInfo Name="Dark List Accent 5" UiPriority="70" />
+    <dmw:LatentStyleExceptionInfo Name="Colorful Shading Accent 5" UiPriority="71" />
+    <dmw:LatentStyleExceptionInfo Name="Colorful List Accent 5" UiPriority="72" />
+    <dmw:LatentStyleExceptionInfo Name="Colorful Grid Accent 5" UiPriority="73" />
+    <dmw:LatentStyleExceptionInfo Name="Light Shading Accent 6" UiPriority="60" />
+    <dmw:LatentStyleExceptionInfo Name="Light List Accent 6" UiPriority="61" />
+    <dmw:LatentStyleExceptionInfo Name="Light Grid Accent 6" UiPriority="62" />
+    <dmw:LatentStyleExceptionInfo Name="Medium Shading 1 Accent 6" UiPriority="63" />
+    <dmw:LatentStyleExceptionInfo Name="Medium Shading 2 Accent 6" UiPriority="64" />
+    <dmw:LatentStyleExceptionInfo Name="Medium List 1 Accent 6" UiPriority="65" />
+    <dmw:LatentStyleExceptionInfo Name="Medium List 2 Accent 6" UiPriority="66" />
+    <dmw:LatentStyleExceptionInfo Name="Medium Grid 1 Accent 6" UiPriority="67" />
+    <dmw:LatentStyleExceptionInfo Name="Medium Grid 2 Accent 6" UiPriority="68" />
+    <dmw:LatentStyleExceptionInfo Name="Medium Grid 3 Accent 6" UiPriority="69" />
+    <dmw:LatentStyleExceptionInfo Name="Dark List Accent 6" UiPriority="70" />
+    <dmw:LatentStyleExceptionInfo Name="Colorful Shading Accent 6" UiPriority="71" />
+    <dmw:LatentStyleExceptionInfo Name="Colorful List Accent 6" UiPriority="72" />
+    <dmw:LatentStyleExceptionInfo Name="Colorful Grid Accent 6" UiPriority="73" />
+    <dmw:LatentStyleExceptionInfo Name="Subtle Emphasis" UiPriority="19" PrimaryStyle="True" />
+    <dmw:LatentStyleExceptionInfo Name="Intense Emphasis" UiPriority="21" PrimaryStyle="True" />
+    <dmw:LatentStyleExceptionInfo Name="Subtle Reference" UiPriority="31" PrimaryStyle="True" />
+    <dmw:LatentStyleExceptionInfo Name="Intense Reference" UiPriority="32" PrimaryStyle="True" />
+    <dmw:LatentStyleExceptionInfo Name="Book Title" UiPriority="33" PrimaryStyle="True" />
+    <dmw:LatentStyleExceptionInfo Name="Bibliography" UiPriority="37" SemiHidden="True" UnhideWhenUsed="True" />
+    <dmw:LatentStyleExceptionInfo Name="TOC Heading" UiPriority="39" SemiHidden="True" UnhideWhenUsed="True" PrimaryStyle="True" />
+    <dmw:LatentStyleExceptionInfo Name="Plain Table 1" UiPriority="41" />
+    <dmw:LatentStyleExceptionInfo Name="Plain Table 2" UiPriority="42" />
+    <dmw:LatentStyleExceptionInfo Name="Plain Table 3" UiPriority="43" />
+    <dmw:LatentStyleExceptionInfo Name="Plain Table 4" UiPriority="44" />
+    <dmw:LatentStyleExceptionInfo Name="Plain Table 5" UiPriority="45" />
+    <dmw:LatentStyleExceptionInfo Name="Grid Table Light" UiPriority="40" />
+    <dmw:LatentStyleExceptionInfo Name="Grid Table 1 Light" UiPriority="46" />
+    <dmw:LatentStyleExceptionInfo Name="Grid Table 2" UiPriority="47" />
+    <dmw:LatentStyleExceptionInfo Name="Grid Table 3" UiPriority="48" />
+    <dmw:LatentStyleExceptionInfo Name="Grid Table 4" UiPriority="49" />
+    <dmw:LatentStyleExceptionInfo Name="Grid Table 5 Dark" UiPriority="50" />
+    <dmw:LatentStyleExceptionInfo Name="Grid Table 6 Colorful" UiPriority="51" />
+    <dmw:LatentStyleExceptionInfo Name="Grid Table 7 Colorful" UiPriority="52" />
+    <dmw:LatentStyleExceptionInfo Name="Grid Table 1 Light Accent 1" UiPriority="46" />
+    <dmw:LatentStyleExceptionInfo Name="Grid Table 2 Accent 1" UiPriority="47" />
+    <dmw:LatentStyleExceptionInfo Name="Grid Table 3 Accent 1" UiPriority="48" />
+    <dmw:LatentStyleExceptionInfo Name="Grid Table 4 Accent 1" UiPriority="49" />
+    <dmw:LatentStyleExceptionInfo Name="Grid Table 5 Dark Accent 1" UiPriority="50" />
+    <dmw:LatentStyleExceptionInfo Name="Grid Table 6 Colorful Accent 1" UiPriority="51" />
+    <dmw:LatentStyleExceptionInfo Name="Grid Table 7 Colorful Accent 1" UiPriority="52" />
+    <dmw:LatentStyleExceptionInfo Name="Grid Table 1 Light Accent 2" UiPriority="46" />
+    <dmw:LatentStyleExceptionInfo Name="Grid Table 2 Accent 2" UiPriority="47" />
+    <dmw:LatentStyleExceptionInfo Name="Grid Table 3 Accent 2" UiPriority="48" />
+    <dmw:LatentStyleExceptionInfo Name="Grid Table 4 Accent 2" UiPriority="49" />
+    <dmw:LatentStyleExceptionInfo Name="Grid Table 5 Dark Accent 2" UiPriority="50" />
+    <dmw:LatentStyleExceptionInfo Name="Grid Table 6 Colorful Accent 2" UiPriority="51" />
+    <dmw:LatentStyleExceptionInfo Name="Grid Table 7 Colorful Accent 2" UiPriority="52" />
+    <dmw:LatentStyleExceptionInfo Name="Grid Table 1 Light Accent 3" UiPriority="46" />
+    <dmw:LatentStyleExceptionInfo Name="Grid Table 2 Accent 3" UiPriority="47" />
+    <dmw:LatentStyleExceptionInfo Name="Grid Table 3 Accent 3" UiPriority="48" />
+    <dmw:LatentStyleExceptionInfo Name="Grid Table 4 Accent 3" UiPriority="49" />
+    <dmw:LatentStyleExceptionInfo Name="Grid Table 5 Dark Accent 3" UiPriority="50" />
+    <dmw:LatentStyleExceptionInfo Name="Grid Table 6 Colorful Accent 3" UiPriority="51" />
+    <dmw:LatentStyleExceptionInfo Name="Grid Table 7 Colorful Accent 3" UiPriority="52" />
+    <dmw:LatentStyleExceptionInfo Name="Grid Table 1 Light Accent 4" UiPriority="46" />
+    <dmw:LatentStyleExceptionInfo Name="Grid Table 2 Accent 4" UiPriority="47" />
+    <dmw:LatentStyleExceptionInfo Name="Grid Table 3 Accent 4" UiPriority="48" />
+    <dmw:LatentStyleExceptionInfo Name="Grid Table 4 Accent 4" UiPriority="49" />
+    <dmw:LatentStyleExceptionInfo Name="Grid Table 5 Dark Accent 4" UiPriority="50" />
+    <dmw:LatentStyleExceptionInfo Name="Grid Table 6 Colorful Accent 4" UiPriority="51" />
+    <dmw:LatentStyleExceptionInfo Name="Grid Table 7 Colorful Accent 4" UiPriority="52" />
+    <dmw:LatentStyleExceptionInfo Name="Grid Table 1 Light Accent 5" UiPriority="46" />
+    <dmw:LatentStyleExceptionInfo Name="Grid Table 2 Accent 5" UiPriority="47" />
+    <dmw:LatentStyleExceptionInfo Name="Grid Table 3 Accent 5" UiPriority="48" />
+    <dmw:LatentStyleExceptionInfo Name="Grid Table 4 Accent 5" UiPriority="49" />
+    <dmw:LatentStyleExceptionInfo Name="Grid Table 5 Dark Accent 5" UiPriority="50" />
+    <dmw:LatentStyleExceptionInfo Name="Grid Table 6 Colorful Accent 5" UiPriority="51" />
+    <dmw:LatentStyleExceptionInfo Name="Grid Table 7 Colorful Accent 5" UiPriority="52" />
+    <dmw:LatentStyleExceptionInfo Name="Grid Table 1 Light Accent 6" UiPriority="46" />
+    <dmw:LatentStyleExceptionInfo Name="Grid Table 2 Accent 6" UiPriority="47" />
+    <dmw:LatentStyleExceptionInfo Name="Grid Table 3 Accent 6" UiPriority="48" />
+    <dmw:LatentStyleExceptionInfo Name="Grid Table 4 Accent 6" UiPriority="49" />
+    <dmw:LatentStyleExceptionInfo Name="Grid Table 5 Dark Accent 6" UiPriority="50" />
+    <dmw:LatentStyleExceptionInfo Name="Grid Table 6 Colorful Accent 6" UiPriority="51" />
+    <dmw:LatentStyleExceptionInfo Name="Grid Table 7 Colorful Accent 6" UiPriority="52" />
+    <dmw:LatentStyleExceptionInfo Name="List Table 1 Light" UiPriority="46" />
+    <dmw:LatentStyleExceptionInfo Name="List Table 2" UiPriority="47" />
+    <dmw:LatentStyleExceptionInfo Name="List Table 3" UiPriority="48" />
+    <dmw:LatentStyleExceptionInfo Name="List Table 4" UiPriority="49" />
+    <dmw:LatentStyleExceptionInfo Name="List Table 5 Dark" UiPriority="50" />
+    <dmw:LatentStyleExceptionInfo Name="List Table 6 Colorful" UiPriority="51" />
+    <dmw:LatentStyleExceptionInfo Name="List Table 7 Colorful" UiPriority="52" />
+    <dmw:LatentStyleExceptionInfo Name="List Table 1 Light Accent 1" UiPriority="46" />
+    <dmw:LatentStyleExceptionInfo Name="List Table 2 Accent 1" UiPriority="47" />
+    <dmw:LatentStyleExceptionInfo Name="List Table 3 Accent 1" UiPriority="48" />
+    <dmw:LatentStyleExceptionInfo Name="List Table 4 Accent 1" UiPriority="49" />
+    <dmw:LatentStyleExceptionInfo Name="List Table 5 Dark Accent 1" UiPriority="50" />
+    <dmw:LatentStyleExceptionInfo Name="List Table 6 Colorful Accent 1" UiPriority="51" />
+    <dmw:LatentStyleExceptionInfo Name="List Table 7 Colorful Accent 1" UiPriority="52" />
+    <dmw:LatentStyleExceptionInfo Name="List Table 1 Light Accent 2" UiPriority="46" />
+    <dmw:LatentStyleExceptionInfo Name="List Table 2 Accent 2" UiPriority="47" />
+    <dmw:LatentStyleExceptionInfo Name="List Table 3 Accent 2" UiPriority="48" />
+    <dmw:LatentStyleExceptionInfo Name="List Table 4 Accent 2" UiPriority="49" />
+    <dmw:LatentStyleExceptionInfo Name="List Table 5 Dark Accent 2" UiPriority="50" />
+    <dmw:LatentStyleExceptionInfo Name="List Table 6 Colorful Accent 2" UiPriority="51" />
+    <dmw:LatentStyleExceptionInfo Name="List Table 7 Colorful Accent 2" UiPriority="52" />
+    <dmw:LatentStyleExceptionInfo Name="List Table 1 Light Accent 3" UiPriority="46" />
+    <dmw:LatentStyleExceptionInfo Name="List Table 2 Accent 3" UiPriority="47" />
+    <dmw:LatentStyleExceptionInfo Name="List Table 3 Accent 3" UiPriority="48" />
+    <dmw:LatentStyleExceptionInfo Name="List Table 4 Accent 3" UiPriority="49" />
+    <dmw:LatentStyleExceptionInfo Name="List Table 5 Dark Accent 3" UiPriority="50" />
+    <dmw:LatentStyleExceptionInfo Name="List Table 6 Colorful Accent 3" UiPriority="51" />
+    <dmw:LatentStyleExceptionInfo Name="List Table 7 Colorful Accent 3" UiPriority="52" />
+    <dmw:LatentStyleExceptionInfo Name="List Table 1 Light Accent 4" UiPriority="46" />
+    <dmw:LatentStyleExceptionInfo Name="List Table 2 Accent 4" UiPriority="47" />
+    <dmw:LatentStyleExceptionInfo Name="List Table 3 Accent 4" UiPriority="48" />
+    <dmw:LatentStyleExceptionInfo Name="List Table 4 Accent 4" UiPriority="49" />
+    <dmw:LatentStyleExceptionInfo Name="List Table 5 Dark Accent 4" UiPriority="50" />
+    <dmw:LatentStyleExceptionInfo Name="List Table 6 Colorful Accent 4" UiPriority="51" />
+    <dmw:LatentStyleExceptionInfo Name="List Table 7 Colorful Accent 4" UiPriority="52" />
+    <dmw:LatentStyleExceptionInfo Name="List Table 1 Light Accent 5" UiPriority="46" />
+    <dmw:LatentStyleExceptionInfo Name="List Table 2 Accent 5" UiPriority="47" />
+    <dmw:LatentStyleExceptionInfo Name="List Table 3 Accent 5" UiPriority="48" />
+    <dmw:LatentStyleExceptionInfo Name="List Table 4 Accent 5" UiPriority="49" />
+    <dmw:LatentStyleExceptionInfo Name="List Table 5 Dark Accent 5" UiPriority="50" />
+    <dmw:LatentStyleExceptionInfo Name="List Table 6 Colorful Accent 5" UiPriority="51" />
+    <dmw:LatentStyleExceptionInfo Name="List Table 7 Colorful Accent 5" UiPriority="52" />
+    <dmw:LatentStyleExceptionInfo Name="List Table 1 Light Accent 6" UiPriority="46" />
+    <dmw:LatentStyleExceptionInfo Name="List Table 2 Accent 6" UiPriority="47" />
+    <dmw:LatentStyleExceptionInfo Name="List Table 3 Accent 6" UiPriority="48" />
+    <dmw:LatentStyleExceptionInfo Name="List Table 4 Accent 6" UiPriority="49" />
+    <dmw:LatentStyleExceptionInfo Name="List Table 5 Dark Accent 6" UiPriority="50" />
+    <dmw:LatentStyleExceptionInfo Name="List Table 6 Colorful Accent 6" UiPriority="51" />
+    <dmw:LatentStyleExceptionInfo Name="List Table 7 Colorful Accent 6" UiPriority="52" />
+    <dmw:LatentStyleExceptionInfo Name="Mention" UiPriority="99" SemiHidden="True" UnhideWhenUsed="True" />
+    <dmw:LatentStyleExceptionInfo Name="Smart Hyperlink" UiPriority="99" SemiHidden="True" UnhideWhenUsed="True" />
+    <dmw:LatentStyleExceptionInfo Name="Hashtag" UiPriority="99" SemiHidden="True" UnhideWhenUsed="True" />
+    <dmw:LatentStyleExceptionInfo Name="Unresolved Mention" UiPriority="99" SemiHidden="True" UnhideWhenUsed="True" />
+    <dmw:LatentStyleExceptionInfo Name="Smart Link" UiPriority="99" SemiHidden="True" UnhideWhenUsed="True" />
+  </dmw:LatentStyles>
+  <dmw:DefinedStyles>
+    <dmw:Style Type="Paragraph" StyleId="Normalny" StyleName="Normal" IsDefault="True" IsPrimary="True" Rsid="00E227FA" Name="Normal">
+      <dmw:StyleParagraphProperties>
+        <dmw:SpacingBetweenLines After="0" Line="240" LineRule="Auto" />
+      </dmw:StyleParagraphProperties>
+      <dmw:StyleRunProperties FontSize="12pt;">
+        <dmw:RunFonts AsciiTheme="MajorBidi" HighAnsiTheme="MajorBidi" />
+      </dmw:StyleRunProperties>
+    </dmw:Style>
+    <dmw:Style Type="Paragraph" StyleId="Nagwek1" StyleName="heading 1" BasedOn="Normalny" NextParagraphStyle="Normalny" LinkedStyle="Nagwek1Znak" UIPriority="9" IsPrimary="True" Rsid="00E227FA" Name="heading 1">
+      <dmw:StyleParagraphProperties KeepNext="True" OutlineLevel="0">
+        <dmw:SpacingBetweenLines Before="240" After="240" />
+        <dmw:Indentation Left="-6" />
+      </dmw:StyleParagraphProperties>
+      <dmw:StyleRunProperties Bold="true;" FontSize="24pt;18pt" Kern="14pt">
+        <dmw:RunFonts Ascii="Arial Narrow" HighAnsi="Arial Narrow" />
+      </dmw:StyleRunProperties>
+    </dmw:Style>
+    <dmw:Style Type="Paragraph" StyleId="Nagwek2" StyleName="heading 2" BasedOn="Normalny" NextParagraphStyle="Normalny" LinkedStyle="Nagwek2Znak" UIPriority="9" IsPrimary="True" Rsid="00E227FA" Name="heading 2">
+      <dmw:StyleParagraphProperties KeepNext="True" OutlineLevel="1">
+        <dmw:SpacingBetweenLines Before="240" After="120" />
+        <dmw:Indentation Left="142" />
+      </dmw:StyleParagraphProperties>
+      <dmw:StyleRunProperties Bold="true;" FontSize="18pt;16pt">
+        <dmw:RunFonts Ascii="Arial Narrow" HighAnsi="Arial Narrow" />
+      </dmw:StyleRunProperties>
+    </dmw:Style>
+    <dmw:Style Type="Paragraph" StyleId="Nagwek3" StyleName="heading 3" BasedOn="Nagwek2" NextParagraphStyle="Normalny" LinkedStyle="Nagwek3Znak" IsPrimary="True" Rsid="00E227FA" Name="heading 3">
+      <dmw:StyleParagraphProperties OutlineLevel="2">
+        <dmw:Indentation Left="284" />
+      </dmw:StyleParagraphProperties>
+      <dmw:StyleRunProperties FontSize="14pt;" />
+    </dmw:Style>
+    <dmw:Style Type="Paragraph" StyleId="Nagwek4" StyleName="heading 4" BasedOn="Normalny" NextParagraphStyle="Normalny" LinkedStyle="Nagwek4Znak" IsPrimary="True" Rsid="00E227FA" Name="heading 4">
+      <dmw:StyleParagraphProperties KeepNext="True" OutlineLevel="3">
+        <dmw:Indentation Left="709" />
+      </dmw:StyleParagraphProperties>
+      <dmw:StyleRunProperties Bold="true;">
+        <dmw:RunFonts Ascii="Arial" HighAnsi="Arial" />
+      </dmw:StyleRunProperties>
+    </dmw:Style>
+    <dmw:Style Type="Paragraph" StyleId="Nagwek5" StyleName="heading 5" BasedOn="Normalny" NextParagraphStyle="Normalny" LinkedStyle="Nagwek5Znak" IsPrimary="True" Rsid="00E227FA" Name="heading 5">
+      <dmw:StyleParagraphProperties KeepNext="True" OutlineLevel="4">
+        <dmw:SpacingBetweenLines Before="240" After="60" />
+      </dmw:StyleParagraphProperties>
+      <dmw:StyleRunProperties Bold="true;" Italic="true;" FontSize="11pt;">
+        <dmw:RunFonts Ascii="Arial" HighAnsi="Arial" />
+      </dmw:StyleRunProperties>
+    </dmw:Style>
+    <dmw:Style Type="Character" StyleId="Domylnaczcionkaakapitu" StyleName="Default Paragraph Font" IsDefault="True" IsSemiHidden="True" IsUnhiddenWhenUsed="True" UIPriority="1" Name="Default Paragraph Font" />
+    <dmw:Style Type="Table" StyleId="Standardowy" StyleName="Normal Table" IsDefault="True" IsSemiHidden="True" IsUnhiddenWhenUsed="True" UIPriority="99" Name="Normal Table">
+      <dmw:StyleTableProperties>
+        <dmw:TableIndentation Width="0" Type="Dxa" />
+        <dmw:TableCellMarginDefault>
+          <TopMargin>
+            <dmw:TableWidthType Width="0" Type="Dxa" />
+          </TopMargin>
+          <TableCellLeftMargin>
+            <dmw:TableWidthDxaNilType Width="108" Type="Dxa" />
+          </TableCellLeftMargin>
+          <BottomMargin>
+            <dmw:TableWidthType Width="0" Type="Dxa" />
+          </BottomMargin>
+          <TableCellRightMargin>
+            <dmw:TableWidthDxaNilType Width="108" Type="Dxa" />
+          </TableCellRightMargin>
+        </dmw:TableCellMarginDefault>
+      </dmw:StyleTableProperties>
+    </dmw:Style>
+    <dmw:Style Type="Numbering" StyleId="Bezlisty" StyleName="No List" IsDefault="True" IsSemiHidden="True" IsUnhiddenWhenUsed="True" UIPriority="99" Name="No List" />
+    <dmw:Style Type="Paragraph" StyleId="Bibliografia" StyleName="Bibliography" BasedOn="Normalny" Rsid="00E227FA" Name="Bibliography">
+      <dmw:StyleParagraphProperties>
+        <dmw:NumberingProperties NumberingId="12" />
+        <dmw:Tabs>
+          <dmw:TabStop Val="Clear" Position="1134" />
+          <dmw:TabStop Val="Number" Position="360" />
+        </dmw:Tabs>
+      </dmw:StyleParagraphProperties>
+      <dmw:StyleRunProperties FontSize="10pt;" />
+    </dmw:Style>
+    <dmw:Style Type="Paragraph" StyleId="Wcicienormalne" StyleName="Normal Indent" BasedOn="Normalny" Rsid="00E227FA" Name="Normal Indent">
+      <dmw:StyleParagraphProperties Justification="Both">
+        <dmw:SpacingBetweenLines Before="120" After="120" />
+        <dmw:Indentation Left="709" />
+      </dmw:StyleParagraphProperties>
+    </dmw:Style>
+    <dmw:Style Type="Paragraph" StyleId="Listapunktowana" StyleName="List Bullet" BasedOn="Normalny" Rsid="00E227FA" Name="List Bullet">
+      <dmw:StyleParagraphProperties ContextualSpacing="True">
+        <dmw:NumberingProperties NumberingId="13" />
+        <dmw:Tabs>
+          <dmw:TabStop Val="Clear" Position="992" />
+          <dmw:TabStop Val="Number" Position="360" />
+        </dmw:Tabs>
+      </dmw:StyleParagraphProperties>
+    </dmw:Style>
+    <dmw:Style Type="Character" StyleId="angielskawstawka" StyleName="angielska wstawka" IsCustom="True" BasedOn="Domylnaczcionkaakapitu" Rsid="00E227FA" Name="angielska wstawka">
+      <dmw:StyleRunProperties Italic="true;" NoProof="False">
+        <dmw:Languages Regular="en-US" />
+      </dmw:StyleRunProperties>
+    </dmw:Style>
+    <dmw:Style Type="Paragraph" StyleId="Figure" StyleName="Figure" IsCustom="True" BasedOn="Normalny" Rsid="00E227FA" Name="Figure">
+      <dmw:StyleParagraphProperties KeepNext="True" Justification="Center">
+        <dmw:SpacingBetweenLines Before="120" After="120" />
+        <dmw:Indentation Left="709" />
+      </dmw:StyleParagraphProperties>
+      <dmw:StyleRunProperties NoProof="True" />
+    </dmw:Style>
+    <dmw:Style Type="Paragraph" StyleId="Intitle" StyleName="Intitle" IsCustom="True" BasedOn="Normalny" NextParagraphStyle="Normalny" LinkedStyle="IntitleZnak" Rsid="00E227FA" Name="Intitle">
+      <dmw:StyleParagraphProperties KeepNext="True" Justification="Both">
+        <dmw:SpacingBetweenLines Before="120" After="120" />
+        <dmw:Indentation Left="426" />
+      </dmw:StyleParagraphProperties>
+      <dmw:StyleRunProperties Bold="true;" Italic=";true" FontSize=";12pt" />
+    </dmw:Style>
+    <dmw:Style Type="Character" StyleId="keyword" StyleName="keyword" IsCustom="True" BasedOn="Domylnaczcionkaakapitu" Rsid="00E227FA" Name="keyword">
+      <dmw:StyleRunProperties Bold="true;" NoProof="True" />
+    </dmw:Style>
+    <dmw:Style Type="Character" StyleId="NazwaProgramowa" StyleName="NazwaProgramowa" IsCustom="True" BasedOn="Domylnaczcionkaakapitu" Rsid="00E227FA" Name="NazwaProgramowa">
+      <dmw:StyleRunProperties NoProof="True">
+        <dmw:RunFonts AsciiTheme="MinorHighAnsi" HighAnsiTheme="MinorHighAnsi" />
+      </dmw:StyleRunProperties>
+    </dmw:Style>
+    <dmw:Style Type="Paragraph" StyleId="source" StyleName="source" IsCustom="True" BasedOn="Normalny" Rsid="00E227FA" Name="source">
+      <dmw:StyleParagraphProperties Justification="Both">
+        <dmw:SpacingBetweenLines Before="60" After="60" />
+        <dmw:Indentation Left="1418" />
+      </dmw:StyleParagraphProperties>
+      <dmw:StyleRunProperties NoProof="True">
+        <dmw:RunFonts Ascii="Courier New" HighAnsi="Courier New" />
+      </dmw:StyleRunProperties>
+    </dmw:Style>
+    <dmw:Style Type="Paragraph" StyleId="Standardowyakapit" StyleName="Standardowy akapit" IsCustom="True" BasedOn="Normalny" LinkedStyle="StandardowyakapitZnak" Rsid="00E227FA" Name="Standardowy akapit">
+      <dmw:StyleParagraphProperties Justification="Both">
+        <dmw:SpacingBetweenLines Before="120" After="120" />
+      </dmw:StyleParagraphProperties>
+    </dmw:Style>
+    <dmw:Style Type="Character" StyleId="StandardowyakapitZnak" StyleName="Standardowy akapit Znak" IsCustom="True" BasedOn="Domylnaczcionkaakapitu" LinkedStyle="Standardowyakapit" Rsid="00E227FA" Name="Standardowy akapit Znak">
+      <dmw:StyleRunProperties FontSize="12pt;">
+        <dmw:RunFonts AsciiTheme="MajorBidi" HighAnsiTheme="MajorBidi" />
+      </dmw:StyleRunProperties>
+    </dmw:Style>
+    <dmw:Style Type="Character" StyleId="IntitleZnak" StyleName="Intitle Znak" IsCustom="True" BasedOn="Domylnaczcionkaakapitu" LinkedStyle="Intitle" Rsid="00E227FA" Name="Intitle Znak">
+      <dmw:StyleRunProperties Bold="true;" Italic=";true" FontSize="12pt">
+        <dmw:RunFonts AsciiTheme="MajorBidi" HighAnsiTheme="MajorBidi" />
+      </dmw:StyleRunProperties>
+    </dmw:Style>
+    <dmw:Style Type="Paragraph" StyleId="Tytu" StyleName="Title" BasedOn="Normalny" LinkedStyle="TytuZnak" IsPrimary="True" Rsid="00E227FA" Name="Title">
+      <dmw:StyleParagraphProperties Justification="Center" OutlineLevel="0">
+        <dmw:SpacingBetweenLines Before="240" After="60" />
+      </dmw:StyleParagraphProperties>
+      <dmw:StyleRunProperties Bold="true;" FontSize="20pt" Kern="14pt">
+        <dmw:RunFonts Ascii="Arial" HighAnsi="Arial" />
+      </dmw:StyleRunProperties>
+    </dmw:Style>
+    <dmw:Style Type="Paragraph" StyleId="Autor" StyleName="Autor" IsCustom="True" BasedOn="Tytu" IsPrimary="True" Rsid="00E227FA" Name="Autor">
+      <dmw:StyleRunProperties FontSize="12pt;11pt" NoProof="True">
+        <dmw:RunFonts AsciiTheme="MajorBidi" HighAnsiTheme="MajorBidi" ComplexScriptTheme="MajorBidi" />
+      </dmw:StyleRunProperties>
+    </dmw:Style>
+    <dmw:Style Type="Character" StyleId="Nagwek2Znak" StyleName="Nagłówek 2 Znak" IsCustom="True" BasedOn="Domylnaczcionkaakapitu" LinkedStyle="Nagwek2" UIPriority="9" Rsid="00E227FA" Name="Nagłówek 2 Znak">
+      <dmw:StyleRunProperties Bold="true;" FontSize="18pt;16pt">
+        <dmw:RunFonts Ascii="Arial Narrow" HighAnsi="Arial Narrow" />
+      </dmw:StyleRunProperties>
+    </dmw:Style>
+    <dmw:Style Type="Character" StyleId="Nagwek1Znak" StyleName="Nagłówek 1 Znak" IsCustom="True" BasedOn="Domylnaczcionkaakapitu" LinkedStyle="Nagwek1" UIPriority="9" Rsid="00E227FA" Name="Nagłówek 1 Znak">
+      <dmw:StyleRunProperties Bold="true;" FontSize="24pt;18pt" Kern="14pt">
+        <dmw:RunFonts Ascii="Arial Narrow" HighAnsi="Arial Narrow" />
+      </dmw:StyleRunProperties>
+    </dmw:Style>
+    <dmw:Style Type="Paragraph" StyleId="SourceCode" StyleName="SourceCode" IsCustom="True" BasedOn="Normalny" IsPrimary="True" Rsid="00E227FA" Name="SourceCode">
+      <dmw:StyleParagraphProperties>
+        <dmw:Indentation Left="709" />
+      </dmw:StyleParagraphProperties>
+      <dmw:StyleRunProperties NoProof="True">
+        <dmw:RunFonts ComplexScriptTheme="MinorHighAnsi" />
+      </dmw:StyleRunProperties>
+    </dmw:Style>
+    <dmw:Style Type="Paragraph" StyleId="Abstrakt" StyleName="Abstrakt" IsCustom="True" BasedOn="Wcicienormalne" IsPrimary="True" Rsid="00E227FA" Name="Abstrakt">
+      <dmw:StyleRunProperties FontSize="10pt;">
+        <dmw:Languages Regular="pl" />
+      </dmw:StyleRunProperties>
+    </dmw:Style>
+    <dmw:Style Type="Paragraph" StyleId="Legenda" StyleName="caption" BasedOn="Normalny" NextParagraphStyle="Normalny" IsUnhiddenWhenUsed="True" UIPriority="35" IsPrimary="True" Rsid="00E227FA" Name="caption">
+      <dmw:StyleParagraphProperties Justification="Center">
+        <dmw:SpacingBetweenLines After="200" />
+        <dmw:Indentation Left="567" />
+      </dmw:StyleParagraphProperties>
+      <dmw:StyleRunProperties Italic="true" FontSize="9pt">
+        <dmw:Color RGB="44546A" ThemeColor="Text2" />
+      </dmw:StyleRunProperties>
+    </dmw:Style>
+    <dmw:Style Type="Paragraph" StyleId="Podtytu" StyleName="Subtitle" BasedOn="Tytu" NextParagraphStyle="Normalny" LinkedStyle="PodtytuZnak" UIPriority="11" IsPrimary="True" Rsid="00E227FA" Name="Subtitle">
+      <dmw:StyleRunProperties FontSize="16pt">
+        <dmw:Languages Regular="pl" />
+      </dmw:StyleRunProperties>
+    </dmw:Style>
+    <dmw:Style Type="Character" StyleId="PodtytuZnak" StyleName="Podtytuł Znak" IsCustom="True" BasedOn="Domylnaczcionkaakapitu" LinkedStyle="Podtytu" UIPriority="11" Rsid="00E227FA" Name="Podtytuł Znak">
+      <dmw:StyleRunProperties Bold="true;" FontSize="16pt" Kern="14pt">
+        <dmw:RunFonts Ascii="Arial" HighAnsi="Arial" />
+        <dmw:Languages Regular="pl" />
+      </dmw:StyleRunProperties>
+    </dmw:Style>
+    <dmw:Style Type="Paragraph" StyleId="AbstractTitle" StyleName="Abstract Title" IsCustom="True" BasedOn="Abstrakt" IsPrimary="True" Rsid="00E227FA" Name="Abstract Title">
+      <dmw:StyleRunProperties Bold="true" />
+    </dmw:Style>
+    <dmw:Style Type="Paragraph" StyleId="Afiliation" StyleName="Afiliation" IsCustom="True" BasedOn="Normalny" IsPrimary="True" Rsid="00E227FA" Name="Afiliation">
+      <dmw:StyleParagraphProperties Justification="Center">
+        <dmw:SpacingBetweenLines Line="263" LineRule="Auto" />
+        <dmw:Indentation Left="133" />
+      </dmw:StyleParagraphProperties>
+      <dmw:StyleRunProperties FontSize="10pt;7pt" NoProof="True">
+        <dmw:RunFonts Ascii="Cambria" HighAnsi="Cambria" EastAsia="Cambria" ComplexScript="Cambria" />
+      </dmw:StyleRunProperties>
+    </dmw:Style>
+    <dmw:Style Type="Character" StyleId="TytuZnak" StyleName="Tytuł Znak" IsCustom="True" BasedOn="Domylnaczcionkaakapitu" LinkedStyle="Tytu" Rsid="00E227FA" Name="Tytuł Znak">
+      <dmw:StyleRunProperties Bold="true;" FontSize="20pt" Kern="14pt">
+        <dmw:RunFonts Ascii="Arial" HighAnsi="Arial" />
+      </dmw:StyleRunProperties>
+    </dmw:Style>
+    <dmw:Style Type="Character" StyleId="Nagwek3Znak" StyleName="Nagłówek 3 Znak" IsCustom="True" BasedOn="Domylnaczcionkaakapitu" LinkedStyle="Nagwek3" Rsid="00E227FA" Name="Nagłówek 3 Znak">
+      <dmw:StyleRunProperties Bold="true;" FontSize="14pt;16pt">
+        <dmw:RunFonts Ascii="Arial Narrow" HighAnsi="Arial Narrow" />
+      </dmw:StyleRunProperties>
+    </dmw:Style>
+    <dmw:Style Type="Character" StyleId="Nagwek4Znak" StyleName="Nagłówek 4 Znak" IsCustom="True" BasedOn="Domylnaczcionkaakapitu" LinkedStyle="Nagwek4" Rsid="00E227FA" Name="Nagłówek 4 Znak">
+      <dmw:StyleRunProperties Bold="true;" FontSize="12pt;">
+        <dmw:RunFonts Ascii="Arial" HighAnsi="Arial" />
+      </dmw:StyleRunProperties>
+    </dmw:Style>
+    <dmw:Style Type="Character" StyleId="Nagwek5Znak" StyleName="Nagłówek 5 Znak" IsCustom="True" BasedOn="Domylnaczcionkaakapitu" LinkedStyle="Nagwek5" Rsid="00E227FA" Name="Nagłówek 5 Znak">
+      <dmw:StyleRunProperties Bold="true;" Italic="true;">
+        <dmw:RunFonts Ascii="Arial" HighAnsi="Arial" />
+      </dmw:StyleRunProperties>
+    </dmw:Style>
+    <dmw:Style Type="Table" StyleId="Tabela-Siatka" StyleName="Table Grid" BasedOn="Standardowy" UIPriority="39" Rsid="00E227FA" Name="Table Grid">
+      <dmw:StyleTableProperties>
+        <dmw:TableBorders>
+          <TopBorder>
+            <dmw:Border Type="Single" Width="1pt" Space="0">
+              <dmw:Color RGB="auto" />
+            </dmw:Border>
+          </TopBorder>
+          <LeftBorder>
+            <dmw:Border Type="Single" Width="1pt" Space="0">
+              <dmw:Color RGB="auto" />
+            </dmw:Border>
+          </LeftBorder>
+          <BottomBorder>
+            <dmw:Border Type="Single" Width="1pt" Space="0">
+              <dmw:Color RGB="auto" />
+            </dmw:Border>
+          </BottomBorder>
+          <RightBorder>
+            <dmw:Border Type="Single" Width="1pt" Space="0">
+              <dmw:Color RGB="auto" />
+            </dmw:Border>
+          </RightBorder>
+          <InsideHorizontalBorder>
+            <dmw:Border Type="Single" Width="1pt" Space="0">
+              <dmw:Color RGB="auto" />
+            </dmw:Border>
+          </InsideHorizontalBorder>
+          <InsideVerticalBorder>
+            <dmw:Border Type="Single" Width="1pt" Space="0">
+              <dmw:Color RGB="auto" />
+            </dmw:Border>
+          </InsideVerticalBorder>
+        </dmw:TableBorders>
+      </dmw:StyleTableProperties>
+    </dmw:Style>
+    <dmw:Style Type="Table" StyleId="TableGrid" StyleName="TableGrid" IsCustom="True" Rsid="00E227FA" Name="TableGrid">
+      <dmw:StyleTableProperties>
+        <dmw:TableCellMarginDefault>
+          <TopMargin>
+            <dmw:TableWidthType Width="0" Type="Dxa" />
+          </TopMargin>
+          <TableCellLeftMargin>
+            <dmw:TableWidthDxaNilType Width="0" Type="Dxa" />
+          </TableCellLeftMargin>
+          <BottomMargin>
+            <dmw:TableWidthType Width="0" Type="Dxa" />
+          </BottomMargin>
+          <TableCellRightMargin>
+            <dmw:TableWidthDxaNilType Width="0" Type="Dxa" />
+          </TableCellRightMargin>
+        </dmw:TableCellMarginDefault>
+      </dmw:StyleTableProperties>
+    </dmw:Style>
+    <dmw:Style Type="Paragraph" StyleId="Bibtitle" StyleName="Bibtitle" IsCustom="True" BasedOn="Nagwek1" IsPrimary="True" Rsid="00E227FA" Name="Bibtitle">
+      <dmw:StyleParagraphProperties>
+        <dmw:Indentation Left="0" />
+      </dmw:StyleParagraphProperties>
+    </dmw:Style>
+    <dmw:Style Type="Table" StyleId="Standardowatabela" StyleName="Standardowa tabela" IsCustom="True" BasedOn="Standardowy" UIPriority="99" Rsid="0060151F" Name="Standardowa tabela">
+      <dmw:StyleParagraphProperties KeepNext="True">
+        <dmw:SpacingBetweenLines After="0" Line="240" LineRule="Auto" />
+      </dmw:StyleParagraphProperties>
+      <dmw:StyleRunProperties FontSize="10pt;" />
+      <dmw:StyleTableProperties>
+        <dmw:TableBorders>
+          <TopBorder>
+            <dmw:Border Type="Single" Width="1pt" Space="0">
+              <dmw:Color RGB="auto" />
+            </dmw:Border>
+          </TopBorder>
+          <LeftBorder>
+            <dmw:Border Type="Single" Width="1pt" Space="0">
+              <dmw:Color RGB="auto" />
+            </dmw:Border>
+          </LeftBorder>
+          <BottomBorder>
+            <dmw:Border Type="Single" Width="1pt" Space="0">
+              <dmw:Color RGB="auto" />
+            </dmw:Border>
+          </BottomBorder>
+          <RightBorder>
+            <dmw:Border Type="Single" Width="1pt" Space="0">
+              <dmw:Color RGB="auto" />
+            </dmw:Border>
+          </RightBorder>
+          <InsideHorizontalBorder>
+            <dmw:Border Type="Single" Width="1pt" Space="0">
+              <dmw:Color RGB="auto" />
+            </dmw:Border>
+          </InsideHorizontalBorder>
+          <InsideVerticalBorder>
+            <dmw:Border Type="Single" Width="1pt" Space="0">
+              <dmw:Color RGB="auto" />
+            </dmw:Border>
+          </InsideVerticalBorder>
+        </dmw:TableBorders>
+      </dmw:StyleTableProperties>
+    </dmw:Style>
+  </dmw:DefinedStyles>
+</dmw:Styles>

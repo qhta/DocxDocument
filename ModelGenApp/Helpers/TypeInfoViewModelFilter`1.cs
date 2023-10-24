@@ -27,6 +27,8 @@ public record TypeInfoViewModelFilter<T> : IFilter where T : TypeInfoViewModel
       return true;
     if (filter == SummaryInfoKind.TypesWithMeaninglessDescription)
       return true;
+    if (filter == SummaryInfoKind.FixedTypes)
+      return true;
     return false;
   }
 
@@ -64,10 +66,13 @@ public record TypeInfoViewModelFilter<T> : IFilter where T : TypeInfoViewModel
         Predicate = new Predicate<T>(item => item.Model.NewName != null);
       else
       if (filter == SummaryInfoKind.TypesWithSameName)
-        Predicate = new Predicate<T>(item => item.Model.HasError(PPS.Rename, ErrorCode.MultiplicatedName));
+        Predicate = new Predicate<T>(item => item.Model.HasError(PPS.Rename, ErrorCode.DuplicateName));
       else
       if (filter == SummaryInfoKind.ConvertedTypes)
         Predicate = new Predicate<T>(item => item.Model.ConversionTarget!= null);
+      else
+      if (filter == SummaryInfoKind.FixedTypes)
+        Predicate = new Predicate<T>(item => item.Model.IsFixed(phaseNum));
     }
     else
     if (value is FullTypeName typeName)

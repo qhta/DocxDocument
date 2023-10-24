@@ -6,6 +6,11 @@ public static class ModelManager
   public static int RenamedTypesCount { get; private set; }
   public static int DuplicatedNamesCount { get; private set; }
   public static int ConvertedTypesCount { get; private set; }
+  public static HashSet<TypeInfo> FixedTypes { get; private set; } = new HashSet<TypeInfo>();
+  public static int FixedTypesCount => FixedTypes.Count;
+
+  public static HashSet<PropInfo> FixedProps { get; private set; } = new HashSet<PropInfo>();
+  public static int FixedPropsCount => FixedProps.Count;
 
   public static bool CancelRequest { get => TypeManager.CancelRequest; set => TypeManager.CancelRequest = value; }
 
@@ -345,12 +350,12 @@ public static class ModelManager
     {
       if (checkDuplicatedName)
       {
-        if (!oldTypeInfo.HasError(PPS.Rename, ErrorCode.MultiplicatedName))
+        if (!oldTypeInfo.HasError(PPS.Rename, ErrorCode.DuplicateName))
         {
-          oldTypeInfo.AddError(PPS.Rename, ErrorCode.MultiplicatedName);
+          oldTypeInfo.AddError(PPS.Rename, ErrorCode.DuplicateName);
           DuplicatedNamesCount++;
         }
-        typeInfo.AddError(PPS.Rename, ErrorCode.MultiplicatedName);
+        typeInfo.AddError(PPS.Rename, ErrorCode.DuplicateName);
         DuplicatedNamesCount++;
         oldTypeInfo.AddRelationship(typeInfo, Semantics.SameName);
         //newName = GetNewNameFromNamespace(typeInfo);
@@ -937,90 +942,101 @@ public static class ModelManager
   }
   #endregion
 
-  #region Final Check methods
+  #region Final fix methods
+
+  /// <summary>
+  /// Performs final check of enumerated types.
+  /// </summary>
+  /// <param name="onCheckingType">Callback method to invoke on each type</param>
+  /// <returns>Summary info on checked types</returns>
+  public static int FinalFix(ProgressTypeEvent? onCheckingType)
+  {
+    var types = new List<TypeInfo>();
+    foreach (var nspace in TypeManager.AllNamespaces.Where(nspace => nspace.IsTarget))
+      types.AddRange(nspace.Types);
+    return FinalFix(types, onCheckingType);
+  }
 
   /// <summary>
   /// Performs final check of enumerated types.
   /// </summary>
   /// <param name="types">List of types to check</param>
   /// <param name="onCheckingType">Callback method to invoke on each type</param>
-  /// <returns>Summary info on checked types</returns>
-  public static SummaryInfo FinalCheck(IEnumerable<TypeInfo> types, ProgressTypeEvent? onCheckingType)
+  /// <returns>Count of checked types</returns>
+  public static int FinalFix(IEnumerable<TypeInfo> types, ProgressTypeEvent? onCheckingType)
   {
     var totalTypes = types.Count();
     var checkedTypes = 0;
     int fixedTypesCount = 0;
-    int fixedPropsCount = 0;
+    int removedPropsCount = 0;
+
     foreach (var type in types)
     {
       onCheckingType?.Invoke(new ProgressTypeInfo { TotalTypes = totalTypes, CheckedTypes = checkedTypes, ProcessedTypes = fixedTypesCount, Current = type });
-      var fixedProperties = FixProperties(type);
-      if (fixedProperties != 0)
+      var removedProperties = RemoveUntargetedProperties(type);
+      if (removedProperties != 0)
       {
+        type.AddFixage(PPS.FinalFix, ErrorCode.InvalidProperties);
+        FixedTypes.AddUnique(type);
         fixedTypesCount++;
-        fixedPropsCount += fixedProperties;
+        removedPropsCount += removedProperties;
       }
       checkedTypes++;
     }
-    return new SummaryInfo
-    {
-      Summary = new Dictionary<SummaryInfoKind, object>{
-        {SummaryInfoKind.CheckedTypes, totalTypes },
-        {SummaryInfoKind.FixedTypes, fixedTypesCount },
-        {SummaryInfoKind.FixedProperties, fixedPropsCount },
-        }
-    };
+    return FixedTypesCount;
   }
 
   /// <summary>
-  /// Performs check of type properties. 
+  /// Performs check of properties. 
   /// These properties which have no target property type are rejected.
   /// </summary>
   /// <param name="type">Type info to process</param>
   /// <returns>Number of fixed properties</returns>
-  public static int FixProperties(TypeInfo type)
+  public static int RemoveUntargetedProperties(TypeInfo type)
   {
-    int fixedPropertiesCount = 0;
+    int removedPropertiesCount = 0;
     if (type.Properties != null)
     {
       var props = new Dictionary<string, PropInfo>();
       foreach (var propInfo in type.Properties)
       {
-        var ok = true;
-        var targetType = propInfo.GetTargetPropertyType();
-        if (targetType == null)
-          ok = false;
+        var err = ErrorCode.NoError;
+        if (props.ContainsKey(propInfo.Name))
+          err = ErrorCode.DuplicateName;
         else
         {
-          if (targetType.IsConstructedGenericType)
+          props.Add(propInfo.Name, propInfo);
+          var targetType = propInfo.GetTargetPropertyType();
+          if (targetType == null)
+            err = ErrorCode.MissingTargetType;
+          else
           {
-            var argType = targetType.GetGenericArguments().FirstOrDefault();
-            if (argType == null)
-              ok = false;
-            else
+            if (targetType.IsConstructedGenericType)
             {
-              targetType = argType.GetConversionTarget();
-              if (targetType == null)
-                ok = false;
+              var argType = targetType.GetGenericArguments().FirstOrDefault();
+              if (argType == null)
+                err = ErrorCode.MissingGenericArgType;
+              else
+              {
+                targetType = argType.GetConversionTarget();
+                if (targetType == null)
+                  err = ErrorCode.InvalidGenericArgType;
+              }
             }
           }
         }
-        if (ok)
+
+        if (err != 0)
         {
-          if (!props.ContainsKey(propInfo.Name))
-            props.Add(propInfo.Name, propInfo);
-          else
-            ok = false;
-        }
-        if (!ok)
-        {
-          Debug.WriteLine($"Reject property {propInfo.Name}: {propInfo.PropertyType}");
-          propInfo.SetRejected(PPS.FinalCheck);
-          fixedPropertiesCount++;
+          Debug.WriteLine($"Reject property {type.GetFullName(true, true, false)}.{propInfo.Name}: {propInfo.PropertyType}");
+          propInfo.SetRejected(PPS.FinalFix);
+          propInfo.AddFixage(PPS.FinalFix, err);
+          FixedProps.AddUnique(propInfo);
+          removedPropertiesCount++;
         }
       }
     }
-    return fixedPropertiesCount++;
+    return removedPropertiesCount++;
   }
 
   #endregion

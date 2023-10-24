@@ -612,8 +612,8 @@ Użyj znaku '*' aby dopasować wzorzec do wielu znaków.</value>
   <data name="SaveConfigurationAnyway" xml:space="preserve">
     <value>Czy na pewno zapisać konfigurację?</value>
   </data>
-  <data name="FinalCheck" xml:space="preserve">
-    <value>Końcowe sprawdzenie</value>
+  <data name="FinalFix" xml:space="preserve">
+    <value>Końcowe dopasowanie</value>
   </data>
   <data name="CompilationErrorList" xml:space="preserve">
     <value>Lista błędów kompilacji</value>
@@ -652,7 +652,7 @@ Użyj znaku '*' aby dopasować wzorzec do wielu znaków.</value>
     <value>Niezarejestrowana przestrzeń nazw {0}</value>
   </data>
   <data name="InvalidProperties" xml:space="preserve">
-    <value>Błędne właściwości</value>
+    <value>Niepoprawne właściwości</value>
   </data>
   <data name="MissingGenericArgType" xml:space="preserve">
     <value>Brak argumentu typu generycznego</value>
@@ -662,5 +662,11 @@ Użyj znaku '*' aby dopasować wzorzec do wielu znaków.</value>
   </data>
   <data name="MissingPropertyTargetType" xml:space="preserve">
     <value>Brak docelowego typu właściwości</value>
+  </data>
+  <data name="ValidateFix" xml:space="preserve">
+    <value>Weryfikuj dopasowanie</value>
+  </data>
+  <data name="RemovedProperties" xml:space="preserve">
+    <value>Właściwości usunięte</value>
   </data>
 </root>

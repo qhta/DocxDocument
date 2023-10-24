@@ -116,6 +116,19 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
     }
   }
 
+  public bool ValidateFix
+  {
+    get { return Model.ValidateFix; }
+    set
+    {
+      if (Model.ValidateFix != value)
+      {
+        Model.ValidateFix = value;
+        NotifyPropertyChanged(nameof(ValidateFix));
+      }
+    }
+  }
+
   public bool ValidateGeneration
   {
     get { return Model.ValidateGeneration; }

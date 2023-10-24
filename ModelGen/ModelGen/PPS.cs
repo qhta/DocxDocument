@@ -10,6 +10,6 @@ public enum PPS
   AddDocs = 2,
   Rename = 3,
   ConvertTypes = 4,
-  FinalCheck = 5,
+  FinalFix = 5,
   CodeGen = 6,
 }

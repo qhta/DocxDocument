@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.ObjectModel;
-using System.Collections.Specialized;
-using System.Diagnostics;
-
-
-
-namespace DocumentModel;
+﻿namespace DocumentModel;
 
 /// <summary>Represents the list value attributes (xsd:list).</summary>
 [DebuggerDisplay("{InnerText}")]
@@ -114,7 +106,7 @@ public class ListOf<T>: IEnumerable<T>, IEnumerable
         string str = string.Empty;
         foreach (T obj in (Collection<T>)_list)
         {
-          if ((object)obj != null)
+          if ((object?)obj != null)
           {
             stringBuilder.Append(str);
             stringBuilder.Append(obj.ToString());
