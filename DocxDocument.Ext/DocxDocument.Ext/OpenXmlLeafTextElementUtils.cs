@@ -1,8 +1,4 @@
-﻿using System.Globalization;
-
-using DX = DocumentFormat.OpenXml;
-
-namespace DocumentModel.Utils;
+﻿namespace DocumentModel.Utils;
 public static class OpenXmlLeafTextElementUtils
 {
   public static Boolean? AsBoolean(this DX.OpenXmlLeafTextElement? element)

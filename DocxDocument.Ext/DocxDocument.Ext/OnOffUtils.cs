@@ -1,7 +1,4 @@
-﻿using DX = DocumentFormat.OpenXml;
-using DXM = DocumentFormat.OpenXml.Math;
-
-namespace DocxDocumentExt;
+﻿namespace DocumentModel.Utils;
 public static class OnOffUtils
 {
   public static bool? AsBoolean(this DXM.OnOffType? element)

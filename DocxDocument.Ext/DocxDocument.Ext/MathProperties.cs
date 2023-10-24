@@ -1,6 +1,4 @@
-﻿using DXM = DocumentFormat.OpenXml.Math;
-
-namespace DocumentModel.Math;
+﻿namespace DocumentModel.Math;
 public class MathProperties
 {
   public MathProperties(DXM.MathProperties properties)
