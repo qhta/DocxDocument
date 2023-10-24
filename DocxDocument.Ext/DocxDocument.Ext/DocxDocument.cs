@@ -1,10 +1,4 @@
-﻿using System.IO.Packaging;
-
-using DX = DocumentFormat.OpenXml;
-using DXP = DocumentFormat.OpenXml.Packaging;
-using DXW = DocumentFormat.OpenXml.Wordprocessing;
-
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 public partial class DocxDocument : IDisposable
 {
 #pragma warning disable CS0618 // Type or member is obsolete

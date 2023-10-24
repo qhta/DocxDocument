@@ -1,10 +1,4 @@
-﻿using DocumentFormat.OpenXml.Packaging;
-using DXW = DocumentFormat. OpenXml.Wordprocessing;
-
-using Qhta.TextUtils;
-using DocumentModel.Utils;
-
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 public partial class DocxDocument
 {
 
@@ -26,7 +20,7 @@ public partial class DocxDocument
       var settingsPart = mainDocumentPart.DocumentSettingsPart;
       if (settingsPart == null)
       {
-        settingsPart = mainDocumentPart.AddNewPart<DocumentSettingsPart>();
+        settingsPart = mainDocumentPart.AddNewPart<DXP.DocumentSettingsPart>();
       }
       var settings = settingsPart.Settings;
       if (settings == null)

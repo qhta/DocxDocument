@@ -1,6 +1,4 @@
-﻿using DX = DocumentFormat.OpenXml;
-
-namespace DocumentModel.Utils;
+﻿namespace DocumentModel.Utils;
 public static class OpenXmlSimpleTypeUtils
 {
   public static Boolean? AsBoolean(this DX.OpenXmlSimpleType? element)

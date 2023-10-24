@@ -1,11 +1,5 @@
 ﻿namespace DocumentModel;
 
-using DocumentModel.Utils;
-
-using DX = DocumentFormat.OpenXml;
-using DXCP = DocumentFormat.OpenXml.CustomProperties;
-using DXVT = DocumentFormat.OpenXml.VariantTypes;
-
 public class CustomProperty
 {
   public CustomProperty(DXCP.CustomDocumentProperty property)

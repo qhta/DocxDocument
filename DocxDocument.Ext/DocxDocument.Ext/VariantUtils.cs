@@ -1,9 +1,4 @@
-﻿using System.Globalization;
-
-using DX = DocumentFormat.OpenXml;
-using DXVT = DocumentFormat.OpenXml.VariantTypes;
-
-namespace DocumentModel.Utils;
+﻿namespace DocumentModel.Utils;
 public static class VariantUtils
 {
   private static Dictionary<DXVT.VectorBaseValues, Type> VectorBaseValueToType = new Dictionary<DXVT.VectorBaseValues, Type>()

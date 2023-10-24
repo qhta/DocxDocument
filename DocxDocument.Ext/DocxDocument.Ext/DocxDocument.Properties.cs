@@ -1,11 +1,4 @@
-﻿using System.IO.Packaging;
-
-using DXEP = DocumentFormat.OpenXml.ExtendedProperties;
-using DXCP = DocumentFormat.OpenXml.CustomProperties;
-using DXP = DocumentFormat.OpenXml.Packaging;
-using DocumentModel.Utils;
-
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 public partial class DocxDocument
 {
 
