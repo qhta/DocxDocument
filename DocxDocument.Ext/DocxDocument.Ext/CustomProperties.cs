@@ -1,6 +1,4 @@
-﻿using System.Collections.ObjectModel;
-
-namespace DocumentModel;
+﻿namespace DocumentModel;
 public class CustomProperties: Collection<CustomProperty>
 {
   public CustomProperties(DocumentFormat.OpenXml.CustomProperties.Properties properties)
