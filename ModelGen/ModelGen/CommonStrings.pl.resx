@@ -264,4 +264,7 @@
   <data name="ValidatedTypes" xml:space="preserve">
     <value>Typy zweryfikowane</value>
   </data>
+  <data name="InvalidProperties" xml:space="preserve">
+    <value>Właściwości niepoprawne</value>
+  </data>
 </root>

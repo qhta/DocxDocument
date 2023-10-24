@@ -35,10 +35,12 @@ public class ModelValidator
   public int ValidatedTypesCount => ValidatedTypes.Count;
 
   public HashSet<TypeInfo> InvalidTypes { get; private set; } = new HashSet<TypeInfo>();
-
   public int InvalidTypesCount => InvalidTypes.Count;
 
   public int ValidTypesCount { get; private set; }
+
+  public HashSet<PropInfo> InvalidProps { get; private set; } = new HashSet<PropInfo>();
+  public int InvalidPropsCount => InvalidProps.Count;
 
   public bool ValidateTypes(IEnumerable<TypeInfo> types, ValidatingTypeEvent? OnValidatingType)
   {
@@ -60,8 +62,7 @@ public class ModelValidator
       if (result == false)
       {
         ok = false;
-        if (!InvalidTypes.Contains(typeInfo))
-          InvalidTypes.Add(typeInfo);
+        InvalidTypes.AddUnique(typeInfo);
       }
       else if (result == true)
         ValidTypesCount++;
@@ -230,7 +231,7 @@ public class ModelValidator
       .Where(item => item.GetFullName(true, false, false) == targetName).ToList();
     if (sameNameTypes.Count > 1)
     {
-      typeInfo.AddError(PhaseNum, ErrorCode.MultiplicatedName);
+      typeInfo.AddError(PhaseNum, ErrorCode.DuplicateName);
       return false;
     }
     return true;
@@ -238,34 +239,11 @@ public class ModelValidator
 
   public bool ValidateConversion(TypeInfo typeInfo)
   {
-    //if (typeInfo.Name.StartsWith("HeadingPairs"))
-    //  Debug.WriteLine($"ValidateConversion({typeInfo.Name})");
-    //var ok1 = ValidateTargetNamespace(typeInfo);
-    var ok2 = ValidateTargetType(typeInfo);
+    var ok1 = ValidateTargetType(typeInfo);
+    var ok2 = ValidateUniqueProperties(typeInfo);
     var ok3 = ValidatePropertiesTargets(typeInfo);
-    return /*ok1 &&*/ ok2 && ok3;
+    return ok1 && ok2 && ok3;
   }
-
-  //public bool ValidateTargetNamespace(TypeInfo typeInfo)
-  //{
-  //  if (typeInfo.OriginalNamespace.StartsWith("System"))
-  //    return true;
-  //  if (typeInfo.IsConverted)
-  //    return true;
-  //  var targetNamespace = typeInfo.TargetNamespace;
-  //  if (targetNamespace == null)
-  //  {
-  //    typeInfo.AddError(PhaseNum, ErrorCode.MissingTargetNamespace);
-  //    return false;
-  //  }
-  //  var nsspace = TypeManager.GetNamespace(targetNamespace);
-  //  if (nsspace == null)
-  //  {
-  //    typeInfo.AddError(PhaseNum, ErrorCode.UnregisteredNamespace, targetNamespace);
-  //    return false;
-  //  }
-  //  return true;
-  //}
 
   public bool ValidateTargetType(TypeInfo typeInfo)
   {
@@ -299,9 +277,32 @@ public class ModelValidator
       var ok = true;
       foreach (var property in typeInfo.Properties.Where(item => item.IsAcceptedAfter(PhaseNum)))
       {
-        if (!ValidatePropertyTargetType(property))
+        if (!(ValidatePropertyTargetType(property)))
         {
+          InvalidProps.AddUnique(property);
           typeInfo.AddError(PhaseNum, ErrorCode.InvalidProperties);
+          ok = false;
+        }
+      }
+      return ok;
+    }
+    return true;
+  }
+
+  public bool ValidateUniqueProperties(TypeInfo typeInfo)
+  {
+    if (typeInfo.Properties != null)
+    {
+      var ok = true;
+      var props = new HashSet<string>();
+      foreach (var propInfo in typeInfo.Properties.Where(item => item.IsAcceptedAfter(PhaseNum)))
+      {
+        if (!props.Contains(propInfo.Name))
+          props.Add(propInfo.Name);
+        else
+        {
+          propInfo.AddError(PhaseNum, ErrorCode.DuplicateName);
+          InvalidProps.AddUnique(propInfo);
           ok = false;
         }
       }

@@ -1,0 +1,699 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<w:glossaryDocument xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas" xmlns:cx="http://schemas.microsoft.com/office/drawing/2014/chartex" xmlns:cx1="http://schemas.microsoft.com/office/drawing/2015/9/8/chartex" xmlns:cx2="http://schemas.microsoft.com/office/drawing/2015/10/21/chartex" xmlns:cx3="http://schemas.microsoft.com/office/drawing/2016/5/9/chartex" xmlns:cx4="http://schemas.microsoft.com/office/drawing/2016/5/10/chartex" xmlns:cx5="http://schemas.microsoft.com/office/drawing/2016/5/11/chartex" xmlns:cx6="http://schemas.microsoft.com/office/drawing/2016/5/12/chartex" xmlns:cx7="http://schemas.microsoft.com/office/drawing/2016/5/13/chartex" xmlns:cx8="http://schemas.microsoft.com/office/drawing/2016/5/14/chartex" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:aink="http://schemas.microsoft.com/office/drawing/2016/ink" xmlns:am3d="http://schemas.microsoft.com/office/drawing/2017/model3d" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:oel="http://schemas.microsoft.com/office/2019/extlst" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml" xmlns:w16cex="http://schemas.microsoft.com/office/word/2018/wordml/cex" xmlns:w16cid="http://schemas.microsoft.com/office/word/2016/wordml/cid" xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml" xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash" xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex" xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup" xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk" xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml" xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape" mc:Ignorable="w14 w15 w16se w16cid w16 w16cex w16sdtdh wp14">
+  <w:docParts>
+    <w:docPart>
+      <w:docPartPr>
+        <w:name w:decorated="1" w:val="+-" />
+        <w:category>
+          <w:name w:val="Ogólne" />
+          <w:gallery w:val="autoTxt" />
+        </w:category>
+        <w:types>
+          <w:type w:val="autoExp" />
+          <w:type w:val="speller" />
+        </w:types>
+        <w:behaviors>
+          <w:behavior w:val="content" />
+        </w:behaviors>
+        <w:guid w:val="{F0D0271A-9BE4-434D-8FBD-8927AB003CE8}" />
+      </w:docPartPr>
+      <w:docPartBody>
+        <w:p w:rsidR="00813A65" w:rsidRDefault="00813A65">
+          <w:pPr>
+            <w:pStyle w:val="Autokorekta" />
+          </w:pPr>
+          <w:r w:rsidRPr="00D90787">
+            <w:sym w:font="Symbol" w:char="F0B1" />
+          </w:r>
+        </w:p>
+      </w:docPartBody>
+    </w:docPart>
+    <w:docPart>
+      <w:docPartPr>
+        <w:name w:decorated="1" w:val="--|" />
+        <w:category>
+          <w:name w:val="Ogólne" />
+          <w:gallery w:val="autoTxt" />
+        </w:category>
+        <w:types>
+          <w:type w:val="autoExp" />
+          <w:type w:val="speller" />
+        </w:types>
+        <w:behaviors>
+          <w:behavior w:val="content" />
+        </w:behaviors>
+        <w:guid w:val="{34C9CE2D-6C6A-4B37-9483-2DC7C1EF6CBE}" />
+      </w:docPartPr>
+      <w:docPartBody>
+        <w:p w:rsidR="00813A65" w:rsidRDefault="00813A65">
+          <w:pPr>
+            <w:pStyle w:val="Autokorekta" />
+          </w:pPr>
+          <w:r w:rsidRPr="00345ADF">
+            <w:rPr>
+              <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" />
+            </w:rPr>
+            <w:sym w:font="Symbol" w:char="F0D8" />
+          </w:r>
+        </w:p>
+      </w:docPartBody>
+    </w:docPart>
+    <w:docPart>
+      <w:docPartPr>
+        <w:name w:decorated="1" w:val="//" />
+        <w:category>
+          <w:name w:val="Ogólne" />
+          <w:gallery w:val="autoTxt" />
+        </w:category>
+        <w:types>
+          <w:type w:val="autoExp" />
+          <w:type w:val="speller" />
+        </w:types>
+        <w:behaviors>
+          <w:behavior w:val="content" />
+        </w:behaviors>
+        <w:guid w:val="{8A351F38-3623-475E-8F0B-CF4C9E728E6B}" />
+      </w:docPartPr>
+      <w:docPartBody>
+        <w:p w:rsidR="00813A65" w:rsidRDefault="00813A65">
+          <w:pPr>
+            <w:pStyle w:val="1" />
+          </w:pPr>
+          <w:r w:rsidRPr="00495A47">
+            <w:rPr>
+              <w:rStyle w:val="Comment" />
+            </w:rPr>
+            <w:t>//</w:t>
+          </w:r>
+        </w:p>
+      </w:docPartBody>
+    </w:docPart>
+    <w:docPart>
+      <w:docPartPr>
+        <w:name w:decorated="1" w:val="/=" />
+        <w:category>
+          <w:name w:val="Ogólne" />
+          <w:gallery w:val="autoTxt" />
+        </w:category>
+        <w:types>
+          <w:type w:val="autoExp" />
+          <w:type w:val="speller" />
+        </w:types>
+        <w:behaviors>
+          <w:behavior w:val="content" />
+        </w:behaviors>
+        <w:guid w:val="{B5C32E2D-D24E-49CE-8B24-A54D4625DF00}" />
+      </w:docPartPr>
+      <w:docPartBody>
+        <w:p w:rsidR="00813A65" w:rsidRDefault="00813A65">
+          <w:pPr>
+            <w:pStyle w:val="a1" />
+          </w:pPr>
+          <w:r w:rsidRPr="00896E7F">
+            <w:sym w:font="Symbol" w:char="F0B9" />
+          </w:r>
+        </w:p>
+      </w:docPartBody>
+    </w:docPart>
+    <w:docPart>
+      <w:docPartPr>
+        <w:name w:decorated="1" w:val="/\" />
+        <w:category>
+          <w:name w:val="Ogólne" />
+          <w:gallery w:val="autoTxt" />
+        </w:category>
+        <w:types>
+          <w:type w:val="autoExp" />
+          <w:type w:val="speller" />
+        </w:types>
+        <w:behaviors>
+          <w:behavior w:val="content" />
+        </w:behaviors>
+        <w:guid w:val="{B7000EEA-F53A-42DA-9ED3-092CAF389437}" />
+      </w:docPartPr>
+      <w:docPartBody>
+        <w:p w:rsidR="00813A65" w:rsidRDefault="00813A65">
+          <w:pPr>
+            <w:pStyle w:val="a0" />
+          </w:pPr>
+          <w:r w:rsidRPr="003B2A7C">
+            <w:sym w:font="Symbol" w:char="F0D9" />
+          </w:r>
+        </w:p>
+      </w:docPartBody>
+    </w:docPart>
+    <w:docPart>
+      <w:docPartPr>
+        <w:name w:decorated="1" w:val=":-" />
+        <w:category>
+          <w:name w:val="Ogólne" />
+          <w:gallery w:val="autoTxt" />
+        </w:category>
+        <w:types>
+          <w:type w:val="autoExp" />
+          <w:type w:val="speller" />
+        </w:types>
+        <w:behaviors>
+          <w:behavior w:val="content" />
+        </w:behaviors>
+        <w:guid w:val="{E4A2EDC8-730B-4016-AA02-A6F6DE805B4F}" />
+      </w:docPartPr>
+      <w:docPartBody>
+        <w:p w:rsidR="00813A65" w:rsidRDefault="00813A65">
+          <w:pPr>
+            <w:pStyle w:val="Autokorekta" />
+          </w:pPr>
+          <w:r w:rsidRPr="00166C98">
+            <w:rPr>
+              <w:sz w:val="20" />
+              <w:szCs w:val="20" />
+            </w:rPr>
+            <w:sym w:font="Symbol" w:char="F0B8" />
+          </w:r>
+        </w:p>
+      </w:docPartBody>
+    </w:docPart>
+    <w:docPart>
+      <w:docPartPr>
+        <w:name w:decorated="1" w:val="&lt; = &gt;" />
+        <w:category>
+          <w:name w:val="Ogólne" />
+          <w:gallery w:val="autoTxt" />
+        </w:category>
+        <w:types>
+          <w:type w:val="autoExp" />
+          <w:type w:val="speller" />
+        </w:types>
+        <w:behaviors>
+          <w:behavior w:val="content" />
+        </w:behaviors>
+        <w:guid w:val="{EA659CF7-CB6F-424D-B51B-AC802A7454EF}" />
+      </w:docPartPr>
+      <w:docPartBody>
+        <w:p w:rsidR="00813A65" w:rsidRDefault="00813A65">
+          <w:pPr>
+            <w:pStyle w:val="Autokorekta" />
+          </w:pPr>
+          <w:r w:rsidRPr="00276913">
+            <w:rPr>
+              <w:rStyle w:val="NazwaProgramowa" />
+              <w:sz w:val="16" />
+            </w:rPr>
+            <w:sym w:font="Symbol" w:char="F0DB" />
+          </w:r>
+        </w:p>
+      </w:docPartBody>
+    </w:docPart>
+    <w:docPart>
+      <w:docPartPr>
+        <w:name w:decorated="1" w:val="&lt;&lt;" />
+        <w:category>
+          <w:name w:val="Ogólne" />
+          <w:gallery w:val="autoTxt" />
+        </w:category>
+        <w:types>
+          <w:type w:val="autoExp" />
+          <w:type w:val="speller" />
+        </w:types>
+        <w:behaviors>
+          <w:behavior w:val="content" />
+        </w:behaviors>
+        <w:guid w:val="{6D52057E-0CDE-4434-A5EA-8BAE79D7A593}" />
+      </w:docPartPr>
+      <w:docPartBody>
+        <w:p w:rsidR="00813A65" w:rsidRDefault="00813A65">
+          <w:r w:rsidRPr="00DD7B12">
+            <w:t>«</w:t>
+          </w:r>
+        </w:p>
+      </w:docPartBody>
+    </w:docPart>
+    <w:docPart>
+      <w:docPartPr>
+        <w:name w:decorated="1" w:val="&lt;=" />
+        <w:category>
+          <w:name w:val="Ogólne" />
+          <w:gallery w:val="autoTxt" />
+        </w:category>
+        <w:types>
+          <w:type w:val="autoExp" />
+          <w:type w:val="speller" />
+        </w:types>
+        <w:behaviors>
+          <w:behavior w:val="content" />
+        </w:behaviors>
+        <w:guid w:val="{5DD48C79-7731-4D2B-A4C4-DDEB86ED3D76}" />
+      </w:docPartPr>
+      <w:docPartBody>
+        <w:p w:rsidR="00813A65" w:rsidRDefault="00813A65">
+          <w:pPr>
+            <w:pStyle w:val="Autokorekta" />
+          </w:pPr>
+          <w:r w:rsidRPr="00276913">
+            <w:sym w:font="Symbol" w:char="F0A3" />
+          </w:r>
+        </w:p>
+      </w:docPartBody>
+    </w:docPart>
+    <w:docPart>
+      <w:docPartPr>
+        <w:name w:decorated="1" w:val="=/" />
+        <w:category>
+          <w:name w:val="Ogólne" />
+          <w:gallery w:val="autoTxt" />
+        </w:category>
+        <w:types>
+          <w:type w:val="autoExp" />
+          <w:type w:val="speller" />
+        </w:types>
+        <w:behaviors>
+          <w:behavior w:val="content" />
+        </w:behaviors>
+        <w:guid w:val="{2B6B0DAD-30F8-4726-AFD0-B1201E04D45A}" />
+      </w:docPartPr>
+      <w:docPartBody>
+        <w:p w:rsidR="00813A65" w:rsidRDefault="00813A65">
+          <w:pPr>
+            <w:pStyle w:val="Autokorekta" />
+          </w:pPr>
+          <w:r w:rsidRPr="00031595">
+            <w:sym w:font="Symbol" w:char="F0B9" />
+          </w:r>
+        </w:p>
+      </w:docPartBody>
+    </w:docPart>
+    <w:docPart>
+      <w:docPartPr>
+        <w:name w:decorated="1" w:val="==&gt;" />
+        <w:category>
+          <w:name w:val="Ogólne" />
+          <w:gallery w:val="autoTxt" />
+        </w:category>
+        <w:types>
+          <w:type w:val="autoExp" />
+          <w:type w:val="speller" />
+        </w:types>
+        <w:behaviors>
+          <w:behavior w:val="content" />
+        </w:behaviors>
+        <w:guid w:val="{F030AE9E-CB47-416A-A098-B73D407AFA83}" />
+      </w:docPartPr>
+      <w:docPartBody>
+        <w:p w:rsidR="00813A65" w:rsidRDefault="00813A65">
+          <w:pPr>
+            <w:pStyle w:val="a" />
+          </w:pPr>
+          <w:r w:rsidRPr="00236904">
+            <w:sym w:font="Symbol" w:char="F0DE" />
+          </w:r>
+        </w:p>
+      </w:docPartBody>
+    </w:docPart>
+    <w:docPart>
+      <w:docPartPr>
+        <w:name w:decorated="1" w:val="&gt;=" />
+        <w:category>
+          <w:name w:val="Ogólne" />
+          <w:gallery w:val="autoTxt" />
+        </w:category>
+        <w:types>
+          <w:type w:val="autoExp" />
+          <w:type w:val="speller" />
+        </w:types>
+        <w:behaviors>
+          <w:behavior w:val="content" />
+        </w:behaviors>
+        <w:guid w:val="{9E635D97-FF71-4738-BCC1-C90E95171F38}" />
+      </w:docPartPr>
+      <w:docPartBody>
+        <w:p w:rsidR="00813A65" w:rsidRDefault="00813A65">
+          <w:pPr>
+            <w:pStyle w:val="Autokorekta" />
+          </w:pPr>
+          <w:r w:rsidRPr="00746F11">
+            <w:sym w:font="Symbol" w:char="F0B3" />
+          </w:r>
+        </w:p>
+      </w:docPartBody>
+    </w:docPart>
+    <w:docPart>
+      <w:docPartPr>
+        <w:name w:decorated="1" w:val="&gt;&gt;" />
+        <w:category>
+          <w:name w:val="Ogólne" />
+          <w:gallery w:val="autoTxt" />
+        </w:category>
+        <w:types>
+          <w:type w:val="autoExp" />
+          <w:type w:val="speller" />
+        </w:types>
+        <w:behaviors>
+          <w:behavior w:val="content" />
+        </w:behaviors>
+        <w:guid w:val="{D1A9DD0B-8368-40A6-95FA-182383E0EEA4}" />
+      </w:docPartPr>
+      <w:docPartBody>
+        <w:p w:rsidR="00813A65" w:rsidRDefault="00813A65">
+          <w:r w:rsidRPr="000549A0">
+            <w:t>»</w:t>
+          </w:r>
+        </w:p>
+      </w:docPartBody>
+    </w:docPart>
+    <w:docPart>
+      <w:docPartPr>
+        <w:name w:val="Kolekcja" />
+        <w:category>
+          <w:name w:val="Ogólne" />
+          <w:gallery w:val="autoTxt" />
+        </w:category>
+        <w:behaviors>
+          <w:behavior w:val="content" />
+        </w:behaviors>
+        <w:guid w:val="{E9EE8E09-D07C-4579-A20E-D044B763356E}" />
+      </w:docPartPr>
+      <w:docPartBody>
+        <w:p w:rsidR="00813A65" w:rsidRPr="005D6610" w:rsidRDefault="00813A65">
+          <w:pPr>
+            <w:pStyle w:val="Standardowyakapit" />
+            <w:ind w:firstLine="708" />
+            <w:pPrChange w:id="0" w:author="Unknown" w:date="2011-10-06T10:11:00Z">
+              <w:pPr>
+                <w:spacing w:line="200" w:lineRule="atLeast" />
+              </w:pPr>
+            </w:pPrChange>
+          </w:pPr>
+          <w:ins w:id="1" w:author="Unknown" w:date="2011-10-06T10:10:00Z">
+            <w:r>
+              <w:rPr>
+                <w:bCs />
+              </w:rPr>
+              <w:t>P</w:t>
+            </w:r>
+            <w:r w:rsidRPr="00961E10">
+              <w:rPr>
+                <w:bCs />
+              </w:rPr>
+              <w:t>rzycisk</w:t>
+            </w:r>
+            <w:r>
+              <w:rPr>
+                <w:bCs />
+              </w:rPr>
+              <w:t xml:space="preserve">i służące do przewracania strony są zdefiniowane w elementach &lt;Button&gt;  jak na listingu nr 2. </w:t>
+            </w:r>
+          </w:ins>
+          <w:r w:rsidRPr="005D6610">
+            <w:t xml:space="preserve">Definiując komponent Button, który jest przyciskiem, możemy utworzyć funkcje wyświetlania etykiety (chmurki) pojawiającej się po najechaniu myszą na przycisk. Jest to rozwiązanie przydatne, jeśli chcemy wyjaśnić użytkownikowi aplikacji do czego dany przycisk służy. Opis ustawiamy przypisując go do atrybutu „toolTip”. Przycisk posiada także możliwość wyświetlenia na nim ikony. W tym celu ustawiamy atrybut „icon”. Musimy wskazać, że plik graficzny jest wbudowany w aplikację i zawarty jest w strukturze katalogów aplikacji. Do tego celu służy adnotacja @Embed z parametrem „source” wskazującym ścieżkę względną do pliku graficznego. Należy unikać plików GIF, gdyż nie są one poprawnie wyświetlane we Flex – w szczególności pliki z animacjami. Czcionkę na przycisku możemy pogrubić ustawiając atrybut „fontWeight” na „bold”. Rozmiar czcionki w pikselach określa atrybut „fontSize”. Przycisk powinien wywoływać pewną akcje po kliknięciu w niego. Dlatego należy podłączyć metodę obsługująca to zdarzenie. W tym celu do atrybutu „click” – który służy do dodania metody do zdarzenia click klasy Button – przypisujemy nazwę metody obsługującej to zdarzenia. W naszym przykładzie metoda nazywa się „previous()”.   </w:t>
+          </w:r>
+        </w:p>
+        <w:p w:rsidR="00813A65" w:rsidRDefault="00813A65" />
+        <w:p w:rsidR="00813A65" w:rsidRDefault="00813A65" />
+      </w:docPartBody>
+    </w:docPart>
+    <w:docPart>
+      <w:docPartPr>
+        <w:name w:decorated="1" w:val="\-/" />
+        <w:category>
+          <w:name w:val="Ogólne" />
+          <w:gallery w:val="autoTxt" />
+        </w:category>
+        <w:types>
+          <w:type w:val="autoExp" />
+          <w:type w:val="speller" />
+        </w:types>
+        <w:behaviors>
+          <w:behavior w:val="content" />
+        </w:behaviors>
+        <w:guid w:val="{CA09E3F2-1DD8-4DBA-BA37-A645D215AB58}" />
+      </w:docPartPr>
+      <w:docPartBody>
+        <w:p w:rsidR="00813A65" w:rsidRDefault="00813A65">
+          <w:pPr>
+            <w:pStyle w:val="-" />
+          </w:pPr>
+          <w:r w:rsidRPr="00176A96">
+            <w:sym w:font="Symbol" w:char="F022" />
+          </w:r>
+        </w:p>
+      </w:docPartBody>
+    </w:docPart>
+    <w:docPart>
+      <w:docPartPr>
+        <w:name w:decorated="1" w:val="\." />
+        <w:category>
+          <w:name w:val="Ogólne" />
+          <w:gallery w:val="autoTxt" />
+        </w:category>
+        <w:types>
+          <w:type w:val="autoExp" />
+          <w:type w:val="speller" />
+        </w:types>
+        <w:behaviors>
+          <w:behavior w:val="content" />
+        </w:behaviors>
+        <w:guid w:val="{354FE43B-0E34-40F0-9307-E51F20B9CF36}" />
+      </w:docPartPr>
+      <w:docPartBody>
+        <w:p w:rsidR="00813A65" w:rsidRDefault="00813A65">
+          <w:pPr>
+            <w:pStyle w:val="Autokorekta" />
+          </w:pPr>
+          <w:r w:rsidRPr="000B6B48">
+            <w:rPr>
+              <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" />
+            </w:rPr>
+            <w:sym w:font="Symbol" w:char="F0D7" />
+          </w:r>
+        </w:p>
+      </w:docPartBody>
+    </w:docPart>
+    <w:docPart>
+      <w:docPartPr>
+        <w:name w:decorated="1" w:val="\/" />
+        <w:category>
+          <w:name w:val="Ogólne" />
+          <w:gallery w:val="autoTxt" />
+        </w:category>
+        <w:types>
+          <w:type w:val="autoExp" />
+          <w:type w:val="speller" />
+        </w:types>
+        <w:behaviors>
+          <w:behavior w:val="content" />
+        </w:behaviors>
+        <w:guid w:val="{3FA96C8A-9775-4671-8084-22E40AE1E1F6}" />
+      </w:docPartPr>
+      <w:docPartBody>
+        <w:p w:rsidR="00813A65" w:rsidRDefault="00813A65">
+          <w:pPr>
+            <w:pStyle w:val="Autokorekta" />
+          </w:pPr>
+          <w:r w:rsidRPr="00982531">
+            <w:rPr>
+              <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" />
+            </w:rPr>
+            <w:sym w:font="Symbol" w:char="F0DA" />
+          </w:r>
+        </w:p>
+      </w:docPartBody>
+    </w:docPart>
+    <w:docPart>
+      <w:docPartPr>
+        <w:name w:decorated="1" w:val="\and" />
+        <w:category>
+          <w:name w:val="Ogólne" />
+          <w:gallery w:val="autoTxt" />
+        </w:category>
+        <w:types>
+          <w:type w:val="autoExp" />
+          <w:type w:val="speller" />
+        </w:types>
+        <w:behaviors>
+          <w:behavior w:val="content" />
+        </w:behaviors>
+        <w:guid w:val="{7972EC7D-FED0-4A63-BF10-A4B93681FD4B}" />
+      </w:docPartPr>
+      <w:docPartBody>
+        <w:p w:rsidR="00813A65" w:rsidRDefault="00813A65">
+          <w:pPr>
+            <w:pStyle w:val="and" />
+          </w:pPr>
+          <w:r w:rsidRPr="002945C3">
+            <w:sym w:font="Symbol" w:char="F0D9" />
+          </w:r>
+        </w:p>
+      </w:docPartBody>
+    </w:docPart>
+    <w:docPart>
+      <w:docPartPr>
+        <w:name w:decorated="1" w:val="\mod" />
+        <w:category>
+          <w:name w:val="Ogólne" />
+          <w:gallery w:val="autoTxt" />
+        </w:category>
+        <w:types>
+          <w:type w:val="autoExp" />
+          <w:type w:val="speller" />
+        </w:types>
+        <w:behaviors>
+          <w:behavior w:val="content" />
+        </w:behaviors>
+        <w:guid w:val="{C2ED5605-5167-4C88-ABEA-66289CCE07A1}" />
+      </w:docPartPr>
+      <w:docPartBody>
+        <w:p w:rsidR="00813A65" w:rsidRDefault="00813A65">
+          <w:pPr>
+            <w:pStyle w:val="mod" />
+          </w:pPr>
+          <w:r w:rsidRPr="007947CB">
+            <w:sym w:font="Symbol" w:char="F0C5" />
+          </w:r>
+        </w:p>
+      </w:docPartBody>
+    </w:docPart>
+    <w:docPart>
+      <w:docPartPr>
+        <w:name w:decorated="1" w:val="\or" />
+        <w:category>
+          <w:name w:val="Ogólne" />
+          <w:gallery w:val="autoTxt" />
+        </w:category>
+        <w:types>
+          <w:type w:val="autoExp" />
+          <w:type w:val="speller" />
+        </w:types>
+        <w:behaviors>
+          <w:behavior w:val="content" />
+        </w:behaviors>
+        <w:guid w:val="{ECC42EE6-9CCE-4518-8E87-19C3D0A321B6}" />
+      </w:docPartPr>
+      <w:docPartBody>
+        <w:p w:rsidR="00813A65" w:rsidRDefault="00813A65">
+          <w:pPr>
+            <w:pStyle w:val="or" />
+          </w:pPr>
+          <w:r w:rsidRPr="00E4038C">
+            <w:sym w:font="Symbol" w:char="F0DA" />
+          </w:r>
+        </w:p>
+      </w:docPartBody>
+    </w:docPart>
+    <w:docPart>
+      <w:docPartPr>
+        <w:name w:decorated="1" w:val="||" />
+        <w:category>
+          <w:name w:val="Ogólne" />
+          <w:gallery w:val="autoTxt" />
+        </w:category>
+        <w:types>
+          <w:type w:val="autoExp" />
+          <w:type w:val="speller" />
+        </w:types>
+        <w:behaviors>
+          <w:behavior w:val="content" />
+        </w:behaviors>
+        <w:guid w:val="{6A0D699B-E204-4C7A-9AA3-A5B682CB94AC}" />
+      </w:docPartPr>
+      <w:docPartBody>
+        <w:p w:rsidR="00813A65" w:rsidRDefault="00813A65">
+          <w:pPr>
+            <w:pStyle w:val="a4" />
+          </w:pPr>
+          <w:r w:rsidRPr="00CE098B">
+            <w:rPr>
+              <w:rStyle w:val="keyword" />
+              <w:rFonts w:ascii="Arial Unicode MS" w:eastAsia="Arial Unicode MS" w:hAnsi="Arial Unicode MS" w:cs="Arial Unicode MS" w:hint="eastAsia" />
+              <w:b w:val="0" />
+            </w:rPr>
+            <w:t>∥</w:t>
+          </w:r>
+        </w:p>
+      </w:docPartBody>
+    </w:docPart>
+    <w:docPart>
+      <w:docPartPr>
+        <w:name w:decorated="1" w:val="~=" />
+        <w:category>
+          <w:name w:val="Ogólne" />
+          <w:gallery w:val="autoTxt" />
+        </w:category>
+        <w:types>
+          <w:type w:val="autoExp" />
+          <w:type w:val="speller" />
+        </w:types>
+        <w:behaviors>
+          <w:behavior w:val="content" />
+        </w:behaviors>
+        <w:guid w:val="{A96D9B1F-C619-499D-AFEF-6DA0869D1799}" />
+      </w:docPartPr>
+      <w:docPartBody>
+        <w:p w:rsidR="00813A65" w:rsidRDefault="00813A65">
+          <w:pPr>
+            <w:pStyle w:val="a2" />
+          </w:pPr>
+          <w:r w:rsidRPr="00090F10">
+            <w:rPr>
+              <w:bCs />
+            </w:rPr>
+            <w:sym w:font="Symbol" w:char="F040" />
+          </w:r>
+        </w:p>
+      </w:docPartBody>
+    </w:docPart>
+    <w:docPart>
+      <w:docPartPr>
+        <w:name w:decorated="1" w:val="~~" />
+        <w:category>
+          <w:name w:val="Ogólne" />
+          <w:gallery w:val="autoTxt" />
+        </w:category>
+        <w:types>
+          <w:type w:val="autoExp" />
+          <w:type w:val="speller" />
+        </w:types>
+        <w:behaviors>
+          <w:behavior w:val="content" />
+        </w:behaviors>
+        <w:guid w:val="{B6C55602-2430-4E85-BA9A-344F6A56EB7C}" />
+      </w:docPartPr>
+      <w:docPartBody>
+        <w:p w:rsidR="00813A65" w:rsidRDefault="00813A65">
+          <w:pPr>
+            <w:pStyle w:val="a3" />
+          </w:pPr>
+          <w:r w:rsidRPr="00815FA7">
+            <w:rPr>
+              <w:bCs />
+            </w:rPr>
+            <w:sym w:font="Symbol" w:char="F0BB" />
+          </w:r>
+        </w:p>
+      </w:docPartBody>
+    </w:docPart>
+    <w:docPart>
+      <w:docPartPr>
+        <w:name w:decorated="1" w:val="-&gt;" />
+        <w:category>
+          <w:name w:val="Ogólne" />
+          <w:gallery w:val="default" />
+        </w:category>
+        <w:types>
+          <w:type w:val="autoExp" />
+          <w:type w:val="speller" />
+        </w:types>
+        <w:behaviors>
+          <w:behavior w:val="content" />
+        </w:behaviors>
+        <w:guid w:val="{8FE5D62F-29CA-4911-8C59-E803650F0882}" />
+      </w:docPartPr>
+      <w:docPartBody>
+        <w:p w:rsidR="00D601AD" w:rsidRDefault="00941F30">
+          <w:r w:rsidRPr="00444427">
+            <w:t>→</w:t>
+          </w:r>
+        </w:p>
+      </w:docPartBody>
+    </w:docPart>
+  </w:docParts>
+</w:glossaryDocument>

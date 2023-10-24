@@ -23,8 +23,8 @@ public class ProcessMonitorViewModel : ViewModel
         case PPS.ConvertTypes:
           PhaseMonitors[i] = new ConvertPhaseViewModel(phase.ToString());
           break;
-        case PPS.FinalCheck:
-          PhaseMonitors[i] = new FinalCheckPhaseViewModel(phase.ToString());
+        case PPS.FinalFix:
+          PhaseMonitors[i] = new FinalFixPhaseViewModel(phase.ToString());
           break;
         case PPS.CodeGen:
           PhaseMonitors[i] = new CodeGenPhaseViewModel(phase.ToString());

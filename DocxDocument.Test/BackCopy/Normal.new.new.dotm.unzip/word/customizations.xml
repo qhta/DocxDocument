@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<wne:tcg xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml">
+  <wne:keymaps>
+    <wne:keymap wne:kcmPrimary="0220">
+      <wne:wch wne:val="000000A0" />
+    </wne:keymap>
+    <wne:keymap wne:mask="1" wne:kcmPrimary="0245" />
+    <wne:keymap wne:kcmPrimary="02BE">
+      <wne:wch wne:val="00002219" />
+    </wne:keymap>
+    <wne:keymap wne:kcmPrimary="0320">
+      <wne:wch wne:val="0000200D" />
+    </wne:keymap>
+    <wne:keymap wne:kcmPrimary="0341">
+      <wne:acd wne:acdName="acd4" />
+    </wne:keymap>
+    <wne:keymap wne:kcmPrimary="0342">
+      <wne:acd wne:acdName="acd6" />
+    </wne:keymap>
+    <wne:keymap wne:kcmPrimary="0343">
+      <wne:acd wne:acdName="acd37" />
+    </wne:keymap>
+    <wne:keymap wne:kcmPrimary="0345">
+      <wne:acd wne:acdName="acd20" />
+    </wne:keymap>
+    <wne:keymap wne:kcmPrimary="0346">
+      <wne:acd wne:acdName="acd23" />
+    </wne:keymap>
+    <wne:keymap wne:kcmPrimary="0347">
+      <wne:acd wne:acdName="acd19" />
+    </wne:keymap>
+    <wne:keymap wne:kcmPrimary="034B">
+      <wne:acd wne:acdName="acd30" />
+    </wne:keymap>
+    <wne:keymap wne:kcmPrimary="034D">
+      <wne:acd wne:acdName="acd31" />
+    </wne:keymap>
+    <wne:keymap wne:kcmPrimary="034E">
+      <wne:acd wne:acdName="acd5" />
+    </wne:keymap>
+    <wne:keymap wne:kcmPrimary="034F">
+      <wne:acd wne:acdName="acd17" />
+    </wne:keymap>
+    <wne:keymap wne:kcmPrimary="0350">
+      <wne:acd wne:acdName="acd22" />
+    </wne:keymap>
+    <wne:keymap wne:kcmPrimary="0353">
+      <wne:acd wne:acdName="acd21" />
+    </wne:keymap>
+    <wne:keymap wne:kcmPrimary="0358">
+      <wne:wch wne:val="000000D7" />
+    </wne:keymap>
+    <wne:keymap wne:kcmPrimary="036D">
+      <wne:wch wne:val="0000001E" />
+    </wne:keymap>
+    <wne:keymap wne:kcmPrimary="03BC">
+      <wne:acd wne:acdName="acd12" />
+    </wne:keymap>
+    <wne:keymap wne:kcmPrimary="03BD">
+      <wne:acd wne:acdName="acd15" />
+    </wne:keymap>
+    <wne:keymap wne:kcmPrimary="03BE">
+      <wne:acd wne:acdName="acd13" />
+    </wne:keymap>
+    <wne:keymap wne:kcmPrimary="042D">
+      <wne:macro wne:macroName="NORMAL.NEWMACROS.PASTEASTEXT" />
+    </wne:keymap>
+    <wne:keymap wne:kcmPrimary="0431">
+      <wne:acd wne:acdName="acd7" />
+    </wne:keymap>
+    <wne:keymap wne:kcmPrimary="0432">
+      <wne:acd wne:acdName="acd36" />
+    </wne:keymap>
+    <wne:keymap wne:kcmPrimary="0433">
+      <wne:acd wne:acdName="acd9" />
+    </wne:keymap>
+    <wne:keymap wne:kcmPrimary="0434">
+      <wne:acd wne:acdName="acd10" />
+    </wne:keymap>
+    <wne:keymap wne:kcmPrimary="0435">
+      <wne:acd wne:acdName="acd11" />
+    </wne:keymap>
+    <wne:keymap wne:kcmPrimary="0436">
+      <wne:acd wne:acdName="acd27" />
+    </wne:keymap>
+    <wne:keymap wne:kcmPrimary="0438">
+      <wne:acd wne:acdName="acd24" />
+    </wne:keymap>
+    <wne:keymap wne:kcmPrimary="0439">
+      <wne:acd wne:acdName="acd26" />
+    </wne:keymap>
+    <wne:keymap wne:kcmPrimary="0441">
+      <wne:acd wne:acdName="acd2" />
+    </wne:keymap>
+    <wne:keymap wne:kcmPrimary="0451">
+      <wne:acd wne:acdName="acd34" />
+    </wne:keymap>
+    <wne:keymap wne:kcmPrimary="0457">
+      <wne:acd wne:acdName="acd35" />
+    </wne:keymap>
+    <wne:keymap wne:kcmPrimary="045A">
+      <wne:acd wne:acdName="acd0" />
+    </wne:keymap>
+    <wne:keymap wne:kcmPrimary="04C0">
+      <wne:acd wne:acdName="acd16" />
+    </wne:keymap>
+    <wne:keymap wne:mask="1" wne:kcmPrimary="0544" />
+    <wne:keymap wne:kcmPrimary="0546">
+      <wne:acd wne:acdName="acd23" />
+    </wne:keymap>
+    <wne:keymap wne:mask="1" wne:kcmPrimary="0550" />
+    <wne:keymap wne:mask="1" wne:kcmPrimary="0554" />
+    <wne:keymap wne:mask="1" wne:kcmPrimary="0555" />
+    <wne:keymap wne:kcmPrimary="055A">
+      <wne:acd wne:acdName="acd1" />
+    </wne:keymap>
+    <wne:keymap wne:kcmPrimary="0644">
+      <wne:acd wne:acdName="acd32" />
+    </wne:keymap>
+    <wne:keymap wne:kcmPrimary="0646">
+      <wne:acd wne:acdName="acd23" />
+    </wne:keymap>
+    <wne:keymap wne:mask="1" wne:kcmPrimary="064A" />
+    <wne:keymap wne:mask="1" wne:kcmPrimary="064B" />
+    <wne:keymap wne:mask="1" wne:kcmPrimary="064D" />
+    <wne:keymap wne:mask="1" wne:kcmPrimary="0657" />
+    <wne:keymap wne:kcmPrimary="06BD">
+      <wne:wch wne:val="0000200C" />
+    </wne:keymap>
+    <wne:keymap wne:kcmPrimary="0745">
+      <wne:acd wne:acdName="acd14" />
+    </wne:keymap>
+    <wne:keymap wne:kcmPrimary="074B">
+      <wne:acd wne:acdName="acd29" />
+    </wne:keymap>
+    <wne:keymap wne:kcmPrimary="0753">
+      <wne:acd wne:acdName="acd28" />
+    </wne:keymap>
+    <wne:keymap wne:kcmPrimary="075A">
+      <wne:acd wne:acdName="acd18" />
+    </wne:keymap>
+  </wne:keymaps>
+  <wne:toolbars>
+    <wne:acdManifest>
+      <wne:acdEntry wne:acdName="acd0" />
+      <wne:acdEntry wne:acdName="acd1" />
+      <wne:acdEntry wne:acdName="acd2" />
+      <wne:acdEntry wne:acdName="acd3" />
+      <wne:acdEntry wne:acdName="acd4" />
+      <wne:acdEntry wne:acdName="acd5" />
+      <wne:acdEntry wne:acdName="acd6" />
+      <wne:acdEntry wne:acdName="acd7" />
+      <wne:acdEntry wne:acdName="acd8" />
+      <wne:acdEntry wne:acdName="acd9" />
+      <wne:acdEntry wne:acdName="acd10" />
+      <wne:acdEntry wne:acdName="acd11" />
+      <wne:acdEntry wne:acdName="acd12" />
+      <wne:acdEntry wne:acdName="acd13" />
+      <wne:acdEntry wne:acdName="acd14" />
+      <wne:acdEntry wne:acdName="acd15" />
+      <wne:acdEntry wne:acdName="acd16" />
+      <wne:acdEntry wne:acdName="acd17" />
+      <wne:acdEntry wne:acdName="acd18" />
+      <wne:acdEntry wne:acdName="acd19" />
+      <wne:acdEntry wne:acdName="acd20" />
+      <wne:acdEntry wne:acdName="acd21" />
+      <wne:acdEntry wne:acdName="acd22" />
+      <wne:acdEntry wne:acdName="acd23" />
+      <wne:acdEntry wne:acdName="acd24" />
+      <wne:acdEntry wne:acdName="acd25" />
+      <wne:acdEntry wne:acdName="acd26" />
+      <wne:acdEntry wne:acdName="acd27" />
+      <wne:acdEntry wne:acdName="acd28" />
+      <wne:acdEntry wne:acdName="acd29" />
+      <wne:acdEntry wne:acdName="acd30" />
+      <wne:acdEntry wne:acdName="acd31" />
+      <wne:acdEntry wne:acdName="acd32" />
+      <wne:acdEntry wne:acdName="acd33" />
+      <wne:acdEntry wne:acdName="acd34" />
+      <wne:acdEntry wne:acdName="acd35" />
+      <wne:acdEntry wne:acdName="acd36" />
+      <wne:acdEntry wne:acdName="acd37" />
+    </wne:acdManifest>
+    <wne:toolbarData r:id="rId1" />
+  </wne:toolbars>
+  <wne:acds>
+    <wne:acd wne:argValue="AQAAAAAA" wne:acdName="acd0" wne:fciIndexBasedOn="0065" />
+    <wne:acd wne:argValue="AQAAAGkA" wne:acdName="acd1" wne:fciIndexBasedOn="0065" />
+    <wne:acd wne:argValue="AgBTAHQAYQBuAGQAYQByAGQAbwB3AHkAIABhAGsAYQBwAGkAdAA=" wne:acdName="acd2" wne:fciIndexBasedOn="0065" />
+    <wne:acd wne:acdName="acd3" wne:fciIndexBasedOn="0065" />
+    <wne:acd wne:argValue="AgBhAG4AZwBpAGUAbABzAGsAYQAgAHcAcwB0AGEAdwBrAGEA" wne:acdName="acd4" wne:fciIndexBasedOn="0065" />
+    <wne:acd wne:argValue="AQAAADEA" wne:acdName="acd5" wne:fciIndexBasedOn="0065" />
+    <wne:acd wne:argValue="AQAAADAA" wne:acdName="acd6" wne:fciIndexBasedOn="0065" />
+    <wne:acd wne:argValue="AQAAAAEA" wne:acdName="acd7" wne:fciIndexBasedOn="0065" />
+    <wne:acd wne:acdName="acd8" wne:fciIndexBasedOn="0065" />
+    <wne:acd wne:argValue="AQAAAAMA" wne:acdName="acd9" wne:fciIndexBasedOn="0065" />
+    <wne:acd wne:argValue="AQAAAAQA" wne:acdName="acd10" wne:fciIndexBasedOn="0065" />
+    <wne:acd wne:argValue="AQAAAAUA" wne:acdName="acd11" wne:fciIndexBasedOn="0065" />
+    <wne:acd wne:argValue="OSBUAGkAbQBlAHMAIABOAGUAdwAgAFIAbwBtAGEAbgA=" wne:acdName="acd12" wne:fciBasedOn="Symbol" />
+    <wne:acd wne:argValue="OiBUAGkAbQBlAHMAIABOAGUAdwAgAFIAbwBtAGEAbgA=" wne:acdName="acd13" wne:fciBasedOn="Symbol" />
+    <wne:acd wne:argValue="AgBFAHgAYQBtAHAAbABlACAALQAgAGMAbwBtAG0AZQBuAHQA" wne:acdName="acd14" wne:fciIndexBasedOn="0065" />
+    <wne:acd wne:argValue="LfBTAHkAbQBiAG8AbAA=" wne:acdName="acd15" wne:fciBasedOn="Symbol" />
+    <wne:acd wne:argValue="AgBJAG4AdABpAHQAbABlAA==" wne:acdName="acd16" wne:fciIndexBasedOn="0065" />
+    <wne:acd wne:argValue="AgBPAHAAZQByAGEAdABvAHIA" wne:acdName="acd17" wne:fciIndexBasedOn="0065" />
+    <wne:acd wne:argValue="AgBaAGEAcwBhAGQAYQA=" wne:acdName="acd18" wne:fciIndexBasedOn="0065" />
+    <wne:acd wne:argValue="AgBHAHIAYQBtAG0AYQByAA==" wne:acdName="acd19" wne:fciIndexBasedOn="0065" />
+    <wne:acd wne:argValue="AgBFAHgAYQBtAHAAbABlAA==" wne:acdName="acd20" wne:fciIndexBasedOn="0065" />
+    <wne:acd wne:argValue="AgBOAGEAegB3AGEAUAByAG8AZwByAGEAbQBvAHcAYQA=" wne:acdName="acd21" wne:fciIndexBasedOn="0065" />
+    <wne:acd wne:argValue="AgBQAHIAbwBwAGUAcgB0AHkA" wne:acdName="acd22" wne:fciIndexBasedOn="0065" />
+    <wne:acd wne:argValue="AgBGAGkAZwB1AHIAZQA=" wne:acdName="acd23" wne:fciIndexBasedOn="0065" />
+    <wne:acd wne:argValue="AQAAAAgA" wne:acdName="acd24" wne:fciIndexBasedOn="0065" />
+    <wne:acd wne:acdName="acd25" wne:fciIndexBasedOn="0065" />
+    <wne:acd wne:argValue="AQAAAAkA" wne:acdName="acd26" wne:fciIndexBasedOn="0065" />
+    <wne:acd wne:argValue="AQAAAAYA" wne:acdName="acd27" wne:fciIndexBasedOn="0065" />
+    <wne:acd wne:argValue="AgBOAGEAegB3AGEAUAByAG8AZwByAGEAbQBvAHcAYQAtADgAcAB0AA==" wne:acdName="acd28" wne:fciIndexBasedOn="0065" />
+    <wne:acd wne:argValue="AgBLAGUAeQB3AG8AcgBkAC0AOABwAHQA" wne:acdName="acd29" wne:fciIndexBasedOn="0065" />
+    <wne:acd wne:argValue="AgBLAGUAeQB3AG8AcgBkAA==" wne:acdName="acd30" wne:fciIndexBasedOn="0065" />
+    <wne:acd wne:argValue="AgBNAGEAdABoAA==" wne:acdName="acd31" wne:fciIndexBasedOn="0065" />
+    <wne:acd wne:argValue="RPBTAHkAbQBiAG8AbAA=" wne:acdName="acd32" wne:fciBasedOn="Symbol" />
+    <wne:acd wne:acdName="acd33" wne:fciIndexBasedOn="0065" />
+    <wne:acd wne:argValue="AQAAABwA" wne:acdName="acd34" wne:fciIndexBasedOn="0065" />
+    <wne:acd wne:argValue="AgBQAHUAbgBrAHQAIAB3AHMAawBhAHoAYQBuAGkAYQA=" wne:acdName="acd35" wne:fciIndexBasedOn="0065" />
+    <wne:acd wne:argValue="AQAAAAIA" wne:acdName="acd36" wne:fciIndexBasedOn="0065" />
+    <wne:acd wne:argValue="AgBTAG8AdQByAGMAZQBDAG8AZABlAA==" wne:acdName="acd37" wne:fciIndexBasedOn="0065" />
+  </wne:acds>
+</wne:tcg>

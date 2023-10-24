@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
+  <Relationship Type="http://purl.oclc.org/ooxml/officeDocument/relationships/frame" Target="http://www.example.com/Uri" TargetMode="External" Id="Id1" />
+</Relationships>

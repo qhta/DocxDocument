@@ -259,6 +259,15 @@ namespace ModelGen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Invalid properties.
+        /// </summary>
+        internal static string InvalidProperties {
+            get {
+                return ResourceManager.GetString("InvalidProperties", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to InvalidTypes.
         /// </summary>
         internal static string InvalidTypes {
