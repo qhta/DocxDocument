@@ -87,6 +87,8 @@ public static class TypeManager
 
   public static string TranslateNamespace(string nspace)
   {
+    if (ModelConfig.Instance == null)
+      throw new System.InvalidOperationException(CommonStrings.Model_configuration_not_defined);
     var newNspace = nspace;
     foreach (var item in ModelConfig.Instance.TranslatedNamespaces)
     {
@@ -98,6 +100,8 @@ public static class TypeManager
 
   public static string TranslateNamespaceBack(string nspace)
   {
+    if (ModelConfig.Instance == null)
+      throw new System.InvalidOperationException(CommonStrings.Model_configuration_not_defined);
     var newNspace = nspace;
     foreach (var item in ModelConfig.Instance.TranslatedNamespaces)
     {
@@ -204,6 +208,8 @@ public static class TypeManager
 
   public static TypeInfo RegisterType(Type type)
   {
+    if (ModelConfig.Instance == null)
+      throw new System.InvalidOperationException(CommonStrings.Model_configuration_not_defined);
     lock (KnownTypes)
     {
       if (KnownTypes.TryGetValue(type, out var typeInfo))

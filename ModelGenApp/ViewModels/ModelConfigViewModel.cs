@@ -3,12 +3,12 @@
 /// <summary>
 /// Abstract view model of model config data. Inherited classes specify some group of settings.
 /// </summary>
-public abstract class ModelConfigViewModel: ViewModel
+public abstract class ModelConfigViewModel : ViewModel
 {
   /// <summary>
   /// Default initializing constructor
   /// </summary>
-  public ModelConfigViewModel(ModelConfig configData)
+  public ModelConfigViewModel(ModelConfigData configData)
   {
     _Assembly = Assembly.Load("DocumentFormat.OpenXml");
     StoreDataCommand = new RelayCommand(StoreData, CanStoreData) { Name = "StoreDataCommand" };
@@ -27,16 +27,16 @@ public abstract class ModelConfigViewModel: ViewModel
   /// </summary>
   /// <param name="configData"></param>
   /// <param name="assembly"></param>
-  public virtual void GetData(ModelConfig configData)
+  public virtual void GetData(ModelConfigData configData)
   {
-    configData.LoadData();
+    configData.ReloadData();
   }
 
   /// <summary>
   /// Reload namespaces after config data reload.
   /// </summary>
   /// <param name="configData"></param>
-  public virtual void ReloadData(ModelConfig configData)
+  public virtual void ReloadData(ModelConfigData configData)
   {
     GetData(configData);
   }
@@ -45,7 +45,7 @@ public abstract class ModelConfigViewModel: ViewModel
   /// Stores config data in the config file.
   /// </summary>
   /// <param name="configData"></param>
-  public virtual void SaveData(ModelConfig configData)
+  public virtual void SaveData(ModelConfigData configData)
   {
     SetData(configData);
     configData.SaveData();
@@ -57,7 +57,7 @@ public abstract class ModelConfigViewModel: ViewModel
   /// </summary>
   /// <param name="configData"></param>
   /// <returns></returns>
-  public abstract void SetData(ModelConfig configData);
+  public abstract void SetData(ModelConfigData configData);
 
   /// <summary>
   /// Validates config data. Used in <see cref="StoreData"/> method.
@@ -88,14 +88,19 @@ public abstract class ModelConfigViewModel: ViewModel
   {
     MessageBoxResult dlgResult = MessageBoxResult.Yes;
     if (!ValidateData())
-      dlgResult = MessageBox.Show(CommonStrings.Model_configuration_is_invalid+" "+CommonStrings.SaveConfigurationAnyway, null, MessageBoxButton.YesNo);
+      dlgResult = MessageBox.Show(CommonStrings.Model_configuration_is_invalid + " " + CommonStrings.SaveConfigurationAnyway, null, MessageBoxButton.YesNo);
     if (dlgResult == MessageBoxResult.Yes)
     {
-      var filename = ModelConfig.Instance.GetFilename();
-      if (!File.Exists(filename))
-        File.Copy(filename, Path.ChangeExtension(filename, ".bak"));
-      SaveData(ModelConfig.Instance);
-      MessageBox.Show(String.Format(CommonStrings.Model_configuration_saved_in_0, filename));
+      if (ModelConfig.Instance != null)
+      {
+        var filename = ModelConfig.Instance.GetFilename();
+        if (!File.Exists(filename))
+          File.Copy(filename, Path.ChangeExtension(filename, ".bak"));
+        SaveData(ModelConfig.Instance);
+        MessageBox.Show(String.Format(CommonStrings.Model_configuration_saved_in_0, filename));
+      }
+      else
+        MessageBox.Show(String.Format(CommonStrings.Model_configuration_not_defined));
     }
   }
   #endregion
@@ -121,7 +126,8 @@ public abstract class ModelConfigViewModel: ViewModel
   /// </summary>
   public void RestoreData()
   {
-    ReloadData(ModelConfig.Instance);
+    if (ModelConfig.Instance != null)
+      ReloadData(ModelConfig.Instance);
   }
   #endregion
 

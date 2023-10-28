@@ -108,6 +108,9 @@ public static class ModelManager
 
   private static bool HasExcludedNamespace(this TypeInfo typeInfo)
   {
+    if (ModelConfig.Instance == null)
+      throw new System.InvalidOperationException(CommonStrings.Model_configuration_not_defined);
+
     if (ModelConfig.Instance.ExcludedNamespaces.Contains(typeInfo.GetTargetNamespace()))
       return true;
     if (typeInfo.IsConstructedGenericType)
@@ -281,6 +284,9 @@ public static class ModelManager
 
   public static int RenameNamespaces()
   {
+    if (ModelConfig.Instance == null)
+      throw new System.InvalidOperationException(CommonStrings.Model_configuration_not_defined);
+
     int n = 0;
     foreach (var ns in TypeManager.AllNamespaces
       .Where(nspace => !ModelConfig.Instance.ExcludedNamespaces.Contains(nspace.OriginalName)).ToList())
@@ -299,6 +305,9 @@ public static class ModelManager
 
   private static bool TryRenameType(TypeInfo typeInfo)
   {
+    if (ModelConfig.Instance == null)
+      throw new System.InvalidOperationException(CommonStrings.Model_configuration_not_defined);
+
     CheckedRenameTypesCount++;
     var typeName = typeInfo.OriginalName ?? "";
     var originalNamespace = typeInfo.OriginalNamespace;
@@ -435,6 +444,9 @@ public static class ModelManager
 
   public static string GetTargetName(this PropInfo prop)
   {
+    if (ModelConfig.Instance == null)
+      throw new System.InvalidOperationException(CommonStrings.Model_configuration_not_defined);
+
     if (prop.DeclaringType != null)
     {
       var fullName = prop.DeclaringType.GetFullName(false, true, true) + "." + prop.Name;
@@ -629,6 +641,9 @@ public static class ModelManager
   {
     if (typeInfo.IsConverted)
       return false;
+    if (ModelConfig.Instance == null)
+      throw new System.InvalidOperationException(CommonStrings.Model_configuration_not_defined);
+
     if (ModelConfig.Instance.TypeConversion.TryGetValue2(typeInfo.Type.FullName ?? "", out var targetName))
     {
       var targetType = TypeManager.GetType(targetName);
@@ -797,6 +812,8 @@ public static class ModelManager
 
   private static bool TryConvertProperties(TypeInfo typeInfo)
   {
+    if (ModelConfig.Instance == null)
+      throw new System.InvalidOperationException(CommonStrings.Model_configuration_not_defined);
     bool ok = false;
     if (typeInfo.Properties != null)
     {
@@ -823,6 +840,9 @@ public static class ModelManager
 
   public static TypeInfo GetTargetType(this PropInfo propInfo)
   {
+    if (ModelConfig.Instance == null)
+      throw new System.InvalidOperationException(CommonStrings.Model_configuration_not_defined);
+
     if (propInfo.TargetType != null)
       return propInfo.TargetType;
     var typeInfo = propInfo.PropertyType;

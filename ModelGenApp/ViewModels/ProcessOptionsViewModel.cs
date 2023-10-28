@@ -1,4 +1,5 @@
 ﻿using Microsoft.Win32;
+
 using WPFFolderBrowser;
 
 namespace ModelGenApp.ViewModels;
@@ -8,10 +9,147 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
   public ProcessOptionsViewModel() : base(ProcessOptionsMgr.GetInstance())
   {
     _MainTypeNames = GetMainTypeNames();
-    BrowseModelDocFileCommand = new RelayCommand(BrowseModelDoc) { Name = "BrowseModelDocFile" };
-    BrowseModelOutputPathCommand = new RelayCommand(BrowseModelOutputPath) { Name = "BrowseModelOutputPath" };
+    BrowseModelDocFileCommand = new RelayCommand(BrowseModelDocFile) { Name = nameof(BrowseModelDocFile) };
+    BrowseCodeOutputPathCommand = new RelayCommand(BrowseCodeOutputPath) { Name = nameof(BrowseCodeOutputPath) };
+    BrowseAppDataFolderCommand = new RelayCommand(BrowseAppDataFolder) { Name = nameof(BrowseAppDataFolder) };
   }
 
+  #region Observable properties
+  /// <summary>
+  /// Specifies the name of the generator class.
+  /// </summary>
+  /// 
+
+  public string? GeneratorType
+  {
+    get { return Model.GeneratorType; }
+    set
+    {
+      if (Model.GeneratorType != value)
+      {
+        Model.GeneratorType = value;
+        NotifyPropertyChanged(nameof(GeneratorType));
+      }
+    }
+  }
+
+  /// <summary>
+  /// Specifies the name of the subfolder of user's AppData containing config files for input and produced log files .
+  /// </summary>
+  public string? AppDataFolder
+  {
+    get { return Model.AppDataFolder; }
+    set
+    {
+      if (Model.AppDataFolder != value)
+      {
+        Model.AppDataFolder = value;
+        NotifyPropertyChanged(nameof(AppDataFolder));
+      }
+    }
+  }
+
+  /// <summary>
+  /// Specifies a path for the generated code.
+  /// </summary>
+  public string? CodeOutputPath
+  {
+    get { return Model.CodeOutputPath; }
+    set
+    {
+      if (Model.CodeOutputPath != value)
+      {
+        Model.CodeOutputPath = value;
+        NotifyPropertyChanged(nameof(CodeOutputPath));
+      }
+    }
+  }
+
+  /// <summary>
+  /// Specifies the name of the generated C# project.
+  /// </summary>
+
+  public string? ProjectName
+  {
+    get { return Model.ProjectName; }
+    set
+    {
+      if (Model.ProjectName != value)
+      {
+        Model.ProjectName = value;
+        NotifyPropertyChanged(nameof(ProjectName));
+      }
+    }
+  }
+
+  /// <summary>
+  /// Specifies the name of the generated C# solution.
+  /// </summary>
+  public string? SolutionName
+  {
+    get { return Model.SolutionName; }
+    set
+    {
+      if (Model.SolutionName != value)
+      {
+        Model.SolutionName = value;
+        NotifyPropertyChanged(nameof(SolutionName));
+      }
+    }
+  }
+
+  /// <summary>
+  /// Specifies the name of the generated C# namespace root.
+  /// </summary>
+  public string? RootNamespace
+  {
+    get { return Model.RootNamespace; }
+    set
+    {
+      if (Model.RootNamespace != value)
+      {
+        Model.RootNamespace = value;
+        NotifyPropertyChanged(nameof(RootNamespace));
+      }
+    }
+  }
+
+  /// <summary>
+  /// Specifies the name of type used as a root for scan types phase.
+  /// </summary>
+  public string? ScanTypeName
+  {
+    get { return Model.ScanTypeName; }
+    set
+    {
+      if (Model.ScanTypeName != value)
+      {
+        Model.ScanTypeName = value;
+        NotifyPropertyChanged(nameof(ScanTypeName));
+      }
+    }
+  }
+
+  /// <summary>
+  /// Specifies a name of model doc file. It must contain XML-serialized ModelDoc.
+  /// </summary>
+  public string? ModelDocFileName
+  {
+    get { return Model.ModelDocFileName; }
+    set
+    {
+      if (Model.ModelDocFileName != value)
+      {
+        Model.ModelDocFileName = value;
+        NotifyPropertyChanged(nameof(ModelDocFileName));
+      }
+    }
+  }
+
+
+  /// <summary>
+  /// Specifies how many phases of process to run.
+  /// </summary>
   public int StopAtPhase
   {
     get { return Model.StopAtPhase; }
@@ -25,45 +163,9 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
     }
   }
 
-  public string ScanTypeName
-  {
-    get { return Model.ScanTypeName; }
-    set
-    {
-      if (Model.ScanTypeName != value)
-      {
-        Model.ScanTypeName = value;
-        NotifyPropertyChanged(nameof(ScanTypeName));
-      }
-    }
-  }
-
-  public string ModelDocFileName
-  {
-    get { return Model.ModelDocFileName; }
-    set
-    {
-      if (Model.ModelDocFileName != value)
-      {
-        Model.ModelDocFileName = value;
-        NotifyPropertyChanged(nameof(ModelDocFileName));
-      }
-    }
-  }
-
-  public string ModelCodeOutputPath
-  {
-    get { return Model.ModelCodeOutputPath; }
-    set
-    {
-      if (Model.ModelCodeOutputPath != value)
-      {
-        Model.ModelCodeOutputPath = value;
-        NotifyPropertyChanged(nameof(ModelCodeOutputPath));
-      }
-    }
-  }
-
+  /// <summary>
+  /// Specifies whether results of the scan source phase should be validated.
+  /// </summary>
   public bool ValidateScan
   {
     get { return Model.ValidateScan; }
@@ -77,6 +179,9 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
     }
   }
 
+  /// <summary>
+  /// Specifies whether results of the add docs phase should be validated.
+  /// </summary>
   public bool ValidateDocs
   {
     get { return Model.ValidateDocs; }
@@ -90,6 +195,9 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
     }
   }
 
+  /// <summary>
+  /// Specifies whether results of the rename phase should be validated.
+  /// </summary>
   public bool ValidateNames
   {
     get { return Model.ValidateNames; }
@@ -103,6 +211,9 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
     }
   }
 
+  /// <summary>
+  /// Specifies whether results of the conversion phase should be validated.
+  /// </summary>
   public bool ValidateConversion
   {
     get { return Model.ValidateConversion; }
@@ -116,6 +227,9 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
     }
   }
 
+  /// <summary>
+  /// Specifies whether results of the fixage phase should be validated.
+  /// </summary>
   public bool ValidateFix
   {
     get { return Model.ValidateFix; }
@@ -129,6 +243,9 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
     }
   }
 
+  /// <summary>
+  /// Specifies whether results of the code generation phase should be validated.
+  /// </summary>
   public bool ValidateGeneration
   {
     get { return Model.ValidateGeneration; }
@@ -141,6 +258,7 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
       }
     }
   }
+  #endregion
 
   public ObservableCollection<string> MainTypeNames
   {
@@ -177,39 +295,68 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
   /// <summary>
   /// Execute method of config data store.
   /// </summary>
-  public void BrowseModelDoc()
+  public void BrowseModelDocFile()
   {
     var dialog = new OpenFileDialog();
-    dialog.Filter = "Xml file (*.xml)|*.xlm|All files (*.*)|*.*";
+    dialog.Filter = "Xml file (*.xml)|*.xml|All files (*.*)|*.*";
     dialog.InitialDirectory = Path.GetDirectoryName(ModelDocFileName);
     dialog.FileName = Path.GetFileName(ModelDocFileName);
     if (dialog.ShowDialog() == true)
     {
-      ModelDocFileName = dialog.FileName.Trim();
+      ModelDocFileName = dialog.FileName?.Trim();
     }
   }
   #endregion
 
-  #region BrowseModelOutputPathCommand
+  #region BrowseCodeOutputPathCommand
   /// <summary>
   /// A command to store config data
   /// </summary>
-  public Command BrowseModelOutputPathCommand { get; }
+  public Command BrowseCodeOutputPathCommand { get; }
 
   /// <summary>
   /// Execute method of config data store.
   /// </summary>
-  public void BrowseModelOutputPath()
+  public void BrowseCodeOutputPath()
   {
-    var dialog = new WPFFolderBrowserDialog ();
-    if (Directory.Exists(ModelCodeOutputPath))
-      dialog.InitialDirectory = ModelCodeOutputPath;
+    var dialog = new WPFFolderBrowserDialog();
+    if (Directory.Exists(CodeOutputPath))
+      dialog.InitialDirectory = CodeOutputPath;
     else
       dialog.InitialDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
     if (dialog.ShowDialog() == true)
     {
       var filename = dialog.FileName.Trim();
-      ModelCodeOutputPath = filename;
+      CodeOutputPath = filename;
+    }
+  }
+  #endregion
+
+  #region BrowseAppDataFolderCommand
+  /// <summary>
+  /// A command to store config data
+  /// </summary>
+  public Command BrowseAppDataFolderCommand { get; }
+
+  /// <summary>
+  /// Execute method of config data store.
+  /// </summary>
+  public void BrowseAppDataFolder()
+  {
+    var appDataBase =  ModelConfig.GetAppDataBase();
+    var appDataPath = appDataBase;
+    appDataPath = Path.Combine(appDataPath, AppDataFolder ?? "");
+    var dialog = new WPFFolderBrowserDialog();
+    while (!String.IsNullOrEmpty(appDataPath) && !Directory.Exists(appDataPath))
+      appDataPath = Path.GetDirectoryName(appDataPath);
+    if (!String.IsNullOrEmpty(appDataPath))
+      dialog.InitialDirectory = appDataPath;
+    if (dialog.ShowDialog() == true)
+    {
+      var filename = dialog.FileName.Trim();
+      appDataPath = filename;
+      appDataPath = appDataPath.ReplaceStart(appDataBase,"").ReplaceStart("\\","");
+      AppDataFolder = appDataPath;
     }
   }
   #endregion

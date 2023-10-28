@@ -1,7 +1,7 @@
 ﻿namespace ModelGenApp.ViewModels;
 public class TypeConfigListViewModel : ModelConfigViewModel
 {
-  public TypeConfigListViewModel(ModelConfig configData) : base(configData)
+  public TypeConfigListViewModel(ModelConfigData configData) : base(configData)
   {
     Caption = CommonStrings.ModelConfiguration +": "+CommonStrings.Types.ToLower();
     Types = new ListViewModel<TypeConfigViewModel>();
@@ -57,7 +57,7 @@ public class TypeConfigListViewModel : ModelConfigViewModel
   /// </summary>
   public ICollectionView VisibleItems { get; private set; }
 
-  public override void GetData(ModelConfig configData)
+  public override void GetData(ModelConfigData configData)
   {
     Types.Clear();
     base.GetData(configData);
@@ -98,7 +98,7 @@ public class TypeConfigListViewModel : ModelConfigViewModel
     }
   }
 
-  public override void SetData(ModelConfig configData)
+  public override void SetData(ModelConfigData configData)
   {
     if (IsExcludedNamespaceChanged)
     {

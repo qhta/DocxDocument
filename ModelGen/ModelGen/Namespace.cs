@@ -10,6 +10,9 @@ public class Namespace
   {
     get
     {
+    if (ModelConfig.Instance == null)
+      throw new System.InvalidOperationException(CommonStrings.Model_configuration_not_defined);
+
       if (TargetName != null)
       {
         if (_TargetPrefix == null)

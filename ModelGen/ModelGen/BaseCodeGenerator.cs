@@ -48,6 +48,8 @@ public abstract class BaseCodeGenerator
   #region Generation
   public int GenerateCode(IEnumerable<Namespace> nspaces, ProgressTypeEvent? _OnGeneratingType)
   {
+    if (ModelConfig.Instance == null)
+      throw new System.InvalidOperationException(CommonStrings.Model_configuration_not_defined);
     PrepareProject();
     var allTypes = new Dictionary<Namespace, TypeInfo[]>();
     var totalTypesCount = 0;
@@ -307,6 +309,9 @@ public abstract class BaseCodeGenerator
 
   protected bool GenerateGlobalUsings(string filename)
   {
+    if (ModelConfig.Instance == null)
+      throw new System.InvalidOperationException(CommonStrings.Model_configuration_not_defined);
+
     AssurePathExists(filename);
     using (var writer = File.CreateText(filename))
     {

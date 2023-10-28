@@ -560,8 +560,8 @@ defined in the enum type.</value>
   <data name="ShowTargetNamespaces" xml:space="preserve">
     <value>Show target namespaces</value>
   </data>
-  <data name="ModelCodeOutputPath" xml:space="preserve">
-    <value>Model output path</value>
+  <data name="CodeOutputPath" xml:space="preserve">
+    <value>Code output path</value>
   </data>
   <data name="CodeGen" xml:space="preserve">
     <value>Code generation</value>
@@ -668,5 +668,41 @@ Use '*' wildcard character to match many characters.</value>
   </data>
   <data name="RemovedProperties" xml:space="preserve">
     <value>Removed properties</value>
+  </data>
+  <data name="OptionsExpanderHeader" xml:space="preserve">
+    <value>Main options</value>
+  </data>
+  <data name="RootNamespace" xml:space="preserve">
+    <value>Root namespace</value>
+  </data>
+  <data name="RootNamespaceTooltip" xml:space="preserve">
+    <value>Output code types will be generated into this namespace and its sub-namespace.</value>
+  </data>
+  <data name="SolutionName" xml:space="preserve">
+    <value>Solution name</value>
+  </data>
+  <data name="SolutionNameTooltip" xml:space="preserve">
+    <value>Name of generated C# solution</value>
+  </data>
+  <data name="ProjectName" xml:space="preserve">
+    <value>Project name</value>
+  </data>
+  <data name="ProjectNameTooltip" xml:space="preserve">
+    <value>Name of generated C# project</value>
+  </data>
+  <data name="AppDataFolder" xml:space="preserve">
+    <value>App data folder</value>
+  </data>
+  <data name="AppDataFolderTooltip" xml:space="preserve">
+    <value>Subfolder of AppData folder containing model configuration</value>
+  </data>
+  <data name="Model_configuration_not_defined" xml:space="preserve">
+    <value>Model configuration is not defined.</value>
+  </data>
+  <data name="Project_name_not_defined" xml:space="preserve">
+    <value>Project name not defined</value>
+  </data>
+  <data name="Code_output_path_not_defined" xml:space="preserve">
+    <value>Code output path is not defined</value>
   </data>
 </root>

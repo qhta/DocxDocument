@@ -8,7 +8,7 @@ public class FileViewModel : VisibleViewModel<FileModel>
   }
 
   public string FullName => ((this.ParentViewModel is FolderViewModel parentFolder) ? parentFolder?.FullName 
-    : Path.GetDirectoryName(ProcessOptionsMgr.GetInstance().ModelCodeOutputPath))+ @"\" + Name;
+    : Path.GetDirectoryName(ProcessOptionsMgr.GetInstance().CodeOutputPath))+ @"\" + Name;
 
   [DataGridColumn(
     HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.Filename)
