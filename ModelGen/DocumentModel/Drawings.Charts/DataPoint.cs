@@ -10,48 +10,48 @@ public partial class DataPoint
   /// <summary>
   ///   Index.
   /// </summary>
-  public DocumentModel.Drawings.Charts.Index? Index { get; set; }
+  public DMDC.Index? Index { get; set; }
   
   
   /// <summary>
   ///   Invert if Negative.
   /// </summary>
-  public DocumentModel.Drawings.Charts.InvertIfNegative? InvertIfNegative { get; set; }
+  public DMDC.InvertIfNegative? InvertIfNegative { get; set; }
   
   
   /// <summary>
   ///   Marker.
   /// </summary>
-  public DocumentModel.Drawings.Charts.Marker? Marker { get; set; }
+  public DMDC.Marker? Marker { get; set; }
   
   
   /// <summary>
   ///   3D Bubble.
   /// </summary>
-  public DocumentModel.Drawings.Charts.Bubble3D? Bubble3D { get; set; }
+  public DMDC.Bubble3D? Bubble3D { get; set; }
   
   
   /// <summary>
   ///   Explosion.
   /// </summary>
-  public DocumentModel.Drawings.Charts.Explosion? Explosion { get; set; }
+  public DMDC.Explosion? Explosion { get; set; }
   
   
   /// <summary>
   ///   ChartShapeProperties.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ChartShapeProperties? ChartShapeProperties { get; set; }
+  public DMDC.ChartShapeProperties? ChartShapeProperties { get; set; }
   
   
   /// <summary>
   ///   PictureOptions.
   /// </summary>
-  public DocumentModel.Drawings.Charts.PictureOptions? PictureOptions { get; set; }
+  public DMDC.PictureOptions? PictureOptions { get; set; }
   
   
   /// <summary>
   ///   Chart Extensibility.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ExtensionList? ExtensionList { get; set; }
+  public DMDC.ExtensionList? ExtensionList { get; set; }
   
 }

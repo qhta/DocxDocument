@@ -22,30 +22,30 @@ public partial class Theme
   /// <summary>
   ///   ThemeElements.
   /// </summary>
-  public DocumentModel.Drawings.ThemeElements? ThemeElements { get; set; }
+  public DMD.ThemeElements? ThemeElements { get; set; }
   
   
   /// <summary>
   ///   ObjectDefaults.
   /// </summary>
-  public DocumentModel.Drawings.ObjectDefaults? ObjectDefaults { get; set; }
+  public DMD.ObjectDefaults? ObjectDefaults { get; set; }
   
   
   /// <summary>
   ///   ExtraColorSchemeList.
   /// </summary>
-  public DocumentModel.Drawings.ExtraColorSchemeList? ExtraColorSchemeList { get; set; }
+  public DMD.ExtraColorSchemeList? ExtraColorSchemeList { get; set; }
   
   
   /// <summary>
   ///   CustomColorList.
   /// </summary>
-  public DocumentModel.Drawings.CustomColorList? CustomColorList { get; set; }
+  public DMD.CustomColorList? CustomColorList { get; set; }
   
   
   /// <summary>
   ///   OfficeStyleSheetExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.OfficeStyleSheetExtensionList? OfficeStyleSheetExtensionList { get; set; }
+  public DMD.OfficeStyleSheetExtensionList? OfficeStyleSheetExtensionList { get; set; }
   
 }

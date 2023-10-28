@@ -10,22 +10,22 @@ public partial class RelativeAnchorSize
   /// <summary>
   ///   Starting Anchor Point.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawing.FromAnchor? FromAnchor { get; set; }
+  public DMDCD.FromAnchor? FromAnchor { get; set; }
   
   
   /// <summary>
   ///   Ending Anchor Point.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawing.ToAnchor? ToAnchor { get; set; }
+  public DMDCD.ToAnchor? ToAnchor { get; set; }
   
-  public DocumentModel.Drawings.ChartDrawing.Shape? Shape { get; set; }
+  public DMDCD.Shape? Shape { get; set; }
   
-  public DocumentModel.Drawings.ChartDrawing.GroupShape? GroupShape { get; set; }
+  public DMDCD.GroupShape? GroupShape { get; set; }
   
-  public DocumentModel.Drawings.ChartDrawing.GraphicFrame? GraphicFrame { get; set; }
+  public DMDCD.GraphicFrame? GraphicFrame { get; set; }
   
-  public DocumentModel.Drawings.ChartDrawing.ConnectionShape? ConnectionShape { get; set; }
+  public DMDCD.ConnectionShape? ConnectionShape { get; set; }
   
-  public DocumentModel.Drawings.ChartDrawing.Picture? Picture { get; set; }
+  public DMDCD.Picture? Picture { get; set; }
   
 }

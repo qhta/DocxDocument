@@ -10,6 +10,6 @@ public partial class Matrix
   /// <summary>
   ///   Matrix Properties.
   /// </summary>
-  public DocumentModel.Math.MatrixProperties? MatrixProperties { get; set; }
+  public DMM.MatrixProperties? MatrixProperties { get; set; }
   
 }

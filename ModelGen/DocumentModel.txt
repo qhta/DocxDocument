@@ -1,16 +1,20 @@
 Build started...
 1>------ Build started: Project: DocumentModel.Attributes, Configuration: Debug Any CPU ------
 2>------ Build started: Project: DocumentModel.BaseTypes, Configuration: Debug Any CPU ------
-2>DocumentModel.BaseTypes -> D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.BaseTypes\bin\Debug\net6.0\DocumentModel.BaseTypes.dll
 1>DocumentModel.Attributes -> D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.Attributes\bin\Debug\net6.0\DocumentModel.Attributes.dll
-Time Elapsed: 00:00:00.0265500
+2>DocumentModel.BaseTypes -> D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.BaseTypes\bin\Debug\net6.0\DocumentModel.BaseTypes.dll
+3>------ Build started: Project: DocumentModel.VariantTypes, Configuration: Debug Any CPU ------
+4>------ Build started: Project: DocumentModel, Configuration: Debug Any CPU ------
+Restored D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.VariantTypes\DocumentModel.VariantTypes.csproj (in 46 ms).
+Restored D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\DocumentModel.csproj (in 47 ms).
+Time Elapsed: 00:00:00.2627505
 ========== Finished ==========
 
 
-3>------ Build started: Project: DocumentModel, Configuration: Debug Any CPU ------
-4>------ Build started: Project: DocumentModel.VariantTypes, Configuration: Debug Any CPU ------
-3>DocumentModel -> D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\bin\Debug\net6.0\DocumentModel.dll
-4>DocumentModel.VariantTypes -> D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.VariantTypes\bin\Debug\net6.0\DocumentModel.VariantTypes.dll
-========== Build: 4 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========
-========== Build started at 11:32 and took 04,950 seconds ==========
+3>DocumentModel.VariantTypes -> D:\VS\Projects\DocxDocument\ModelGen\DocumentModel.VariantTypes\bin\Debug\net6.0\DocumentModel.VariantTypes.dll
+4>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Packaging\CustomFilePropertiesPart.cs(15,24,15,34): error CS0234: The type or namespace name 'Properties' does not exist in the namespace 'DocumentModel' (are you missing an assembly reference?)
+4>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Packaging\ExtendedFilePropertiesPart.cs(15,24,15,34): error CS0234: The type or namespace name 'Properties' does not exist in the namespace 'DocumentModel' (are you missing an assembly reference?)
+4>Done building project "DocumentModel.csproj" -- FAILED.
+========== Build: 3 succeeded, 1 failed, 0 up-to-date, 0 skipped ==========
+========== Build started at 17:41 and took 05,297 seconds ==========
 

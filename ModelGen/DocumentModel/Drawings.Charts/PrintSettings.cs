@@ -10,24 +10,24 @@ public partial class PrintSettings
   /// <summary>
   ///   Header and Footer.
   /// </summary>
-  public DocumentModel.Drawings.Charts.HeaderFooter? HeaderFooter { get; set; }
+  public DMDC.HeaderFooter? HeaderFooter { get; set; }
   
   
   /// <summary>
   ///   Page Margins.
   /// </summary>
-  public DocumentModel.Drawings.Charts.PageMargins? PageMargins { get; set; }
+  public DMDC.PageMargins? PageMargins { get; set; }
   
   
   /// <summary>
   ///   Page Setup.
   /// </summary>
-  public DocumentModel.Drawings.Charts.PageSetup? PageSetup { get; set; }
+  public DMDC.PageSetup? PageSetup { get; set; }
   
   
   /// <summary>
   ///   Legacy Drawing for Headers and Footers.
   /// </summary>
-  public DocumentModel.Drawings.Charts.LegacyDrawingHeaderFooter? LegacyDrawingHeaderFooter { get; set; }
+  public DMDC.LegacyDrawingHeaderFooter? LegacyDrawingHeaderFooter { get; set; }
   
 }

@@ -84,6 +84,37 @@
                       Margin="5"
                       Content="..."
                       Command="{Binding Path=ProcessOptionsVM.BrowseAppDataFolderCommand}" />
+                              
+              <Label Grid.Row="1"
+                     Grid.Column="0"
+                     Margin="5"
+                     VerticalAlignment="Center"
+                     Content="{x:Static local:CommonStrings.GeneratorType}"
+                     ToolTip="{x:Static local:CommonStrings.GeneratorTypeTooltip}" />
+              <TextBox Grid.Row="1"
+                       Grid.Column="1"
+                       Margin="5"
+                       VerticalContentAlignment="Center"
+                       TextWrapping="Wrap"
+                       MinHeight="25"
+                       Height="Auto"
+                       Text="{Binding Path=ProcessOptionsVM.GeneratorType}" />
+              <ComboBox x:Name="GeneratorSelectionBox" 
+                      Grid.Row="1"
+                      Grid.Column="1"
+                      Grid.ColumnSpan="2"
+                      Margin="5"
+                      VerticalContentAlignment="Center"
+                      IsEditable="True"
+                      Visibility="Hidden"
+                      DropDownClosed="GeneratorSelectionBox_DropDownClosed"
+                      Text="{Binding Path=ProcessOptionsVM.GeneratorType}"
+                      ItemsSource="{Binding Path=ProcessOptionsVM.GeneratorTypeNames}"/>
+              <Button Grid.Row="1"
+                      Grid.Column="2"
+                      Margin="5"
+                      Content="..."
+                      Click="ShowGeneratorSelectionBox_Click" />
               
               <Label Grid.Row="2"
                      Grid.Column="0"

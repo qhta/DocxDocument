@@ -6,6 +6,6 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class DocPartBody
 {
-  public DocumentModel.Wordprocessing.SectionProperties? SectionProperties { get; set; }
+  public DMW.SectionProperties? SectionProperties { get; set; }
   
 }

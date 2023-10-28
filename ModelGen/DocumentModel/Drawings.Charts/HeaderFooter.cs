@@ -28,36 +28,36 @@ public partial class HeaderFooter
   /// <summary>
   ///   Odd Header.
   /// </summary>
-  public DocumentModel.Drawings.Charts.OddHeader? OddHeader { get; set; }
+  public DMDC.OddHeader? OddHeader { get; set; }
   
   
   /// <summary>
   ///   Odd Footer.
   /// </summary>
-  public DocumentModel.Drawings.Charts.OddFooter? OddFooter { get; set; }
+  public DMDC.OddFooter? OddFooter { get; set; }
   
   
   /// <summary>
   ///   Even Header.
   /// </summary>
-  public DocumentModel.Drawings.Charts.EvenHeader? EvenHeader { get; set; }
+  public DMDC.EvenHeader? EvenHeader { get; set; }
   
   
   /// <summary>
   ///   Even Footer.
   /// </summary>
-  public DocumentModel.Drawings.Charts.EvenFooter? EvenFooter { get; set; }
+  public DMDC.EvenFooter? EvenFooter { get; set; }
   
   
   /// <summary>
   ///   First Header.
   /// </summary>
-  public DocumentModel.Drawings.Charts.FirstHeader? FirstHeader { get; set; }
+  public DMDC.FirstHeader? FirstHeader { get; set; }
   
   
   /// <summary>
   ///   First Footer.
   /// </summary>
-  public DocumentModel.Drawings.Charts.FirstFooter? FirstFooter { get; set; }
+  public DMDC.FirstFooter? FirstFooter { get; set; }
   
 }

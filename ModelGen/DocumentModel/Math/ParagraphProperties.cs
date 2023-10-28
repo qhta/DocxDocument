@@ -10,6 +10,6 @@ public partial class ParagraphProperties
   /// <summary>
   ///   Justification.
   /// </summary>
-  public DocumentModel.Math.Justification? Justification { get; set; }
+  public DMM.Justification? Justification { get; set; }
   
 }

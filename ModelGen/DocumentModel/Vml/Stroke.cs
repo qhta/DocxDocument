@@ -112,30 +112,30 @@ public partial class Stroke
   /// <summary>
   ///   LeftStroke.
   /// </summary>
-  public DocumentModel.Vml.Office.LeftStroke? LeftStroke { get; set; }
+  public DMVML.LeftStroke? LeftStroke { get; set; }
   
   
   /// <summary>
   ///   TopStroke.
   /// </summary>
-  public DocumentModel.Vml.Office.TopStroke? TopStroke { get; set; }
+  public DMVML.TopStroke? TopStroke { get; set; }
   
   
   /// <summary>
   ///   RightStroke.
   /// </summary>
-  public DocumentModel.Vml.Office.RightStroke? RightStroke { get; set; }
+  public DMVML.RightStroke? RightStroke { get; set; }
   
   
   /// <summary>
   ///   BottomStroke.
   /// </summary>
-  public DocumentModel.Vml.Office.BottomStroke? BottomStroke { get; set; }
+  public DMVML.BottomStroke? BottomStroke { get; set; }
   
   
   /// <summary>
   ///   ColumnStroke.
   /// </summary>
-  public DocumentModel.Vml.Office.ColumnStroke? ColumnStroke { get; set; }
+  public DMVML.ColumnStroke? ColumnStroke { get; set; }
   
 }

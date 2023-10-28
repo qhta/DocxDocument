@@ -14,6 +14,6 @@ public partial class WebExtensionPart
   /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.WebExtensions.WebExtension? WebExtension { get; set; }
+  public DMEX.WebExtension? WebExtension { get; set; }
   
 }

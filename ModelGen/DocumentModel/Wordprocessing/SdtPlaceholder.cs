@@ -10,6 +10,6 @@ public partial class SdtPlaceholder
   /// <summary>
   ///   Document Part Reference.
   /// </summary>
-  public DocumentModel.Wordprocessing.DocPartReference? DocPartReference { get; set; }
+  public DMW.DocPartReference? DocPartReference { get; set; }
   
 }

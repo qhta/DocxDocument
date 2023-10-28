@@ -10,24 +10,24 @@ public partial class DisplayUnitsLabel
   /// <summary>
   ///   Layout.
   /// </summary>
-  public DocumentModel.Drawings.Charts.Layout? Layout { get; set; }
+  public DMDC.Layout? Layout { get; set; }
   
   
   /// <summary>
   ///   ChartText.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ChartText? ChartText { get; set; }
+  public DMDC.ChartText? ChartText { get; set; }
   
   
   /// <summary>
   ///   ChartShapeProperties.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ChartShapeProperties? ChartShapeProperties { get; set; }
+  public DMDC.ChartShapeProperties? ChartShapeProperties { get; set; }
   
   
   /// <summary>
   ///   TextProperties.
   /// </summary>
-  public DocumentModel.Drawings.Charts.TextProperties? TextProperties { get; set; }
+  public DMDC.TextProperties? TextProperties { get; set; }
   
 }

@@ -34,24 +34,24 @@ public partial class Shape
   /// <summary>
   ///   Non-Visual Shape Properties.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawing.NonVisualShapeProperties? NonVisualShapeProperties { get; set; }
+  public DMDCD.NonVisualShapeProperties? NonVisualShapeProperties { get; set; }
   
   
   /// <summary>
   ///   Shape Properties.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawing.ShapeProperties? ShapeProperties { get; set; }
+  public DMDCD.ShapeProperties? ShapeProperties { get; set; }
   
   
   /// <summary>
   ///   Shape Style.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawing.Style? Style { get; set; }
+  public DMDCD.Style? Style { get; set; }
   
   
   /// <summary>
   ///   Shape Text Body.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawing.TextBody? TextBody { get; set; }
+  public DMDCD.TextBody? TextBody { get; set; }
   
 }

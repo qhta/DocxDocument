@@ -30,6 +30,6 @@ public partial class DeletedMathControl
   /// </summary>
   public String? Id { get; set; }
   
-  public DocumentModel.Wordprocessing.RunProperties? RunProperties { get; set; }
+  public DMW.RunProperties? RunProperties { get; set; }
   
 }

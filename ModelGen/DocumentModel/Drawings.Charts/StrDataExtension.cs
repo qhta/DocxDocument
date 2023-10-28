@@ -12,6 +12,6 @@ public partial class StrDataExtension
   /// </summary>
   public String? Uri { get; set; }
   
-  public DocumentModel.Drawings.Charts.AutoGeneneratedCategories? AutoGeneneratedCategories { get; set; }
+  public DMDC13.AutoGeneneratedCategories? AutoGeneneratedCategories { get; set; }
   
 }

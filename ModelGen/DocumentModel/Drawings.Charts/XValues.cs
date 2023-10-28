@@ -6,14 +6,14 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class XValues
 {
-  public DocumentModel.Drawings.Charts.MultiLevelStringReference? MultiLevelStringReference { get; set; }
+  public DMDC.MultiLevelStringReference? MultiLevelStringReference { get; set; }
   
-  public DocumentModel.Drawings.Charts.NumberReference? NumberReference { get; set; }
+  public DMDC.NumberReference? NumberReference { get; set; }
   
-  public DocumentModel.Drawings.Charts.NumberLiteral? NumberLiteral { get; set; }
+  public DMDC.NumberLiteral? NumberLiteral { get; set; }
   
-  public DocumentModel.Drawings.Charts.StringReference? StringReference { get; set; }
+  public DMDC.StringReference? StringReference { get; set; }
   
-  public DocumentModel.Drawings.Charts.StringLiteral? StringLiteral { get; set; }
+  public DMDC.StringLiteral? StringLiteral { get; set; }
   
 }

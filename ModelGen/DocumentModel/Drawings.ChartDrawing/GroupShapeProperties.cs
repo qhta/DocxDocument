@@ -10,26 +10,26 @@ public partial class GroupShapeProperties
   /// <summary>
   ///   2D Transform for Grouped Objects.
   /// </summary>
-  public DocumentModel.Drawings.TransformGroup? TransformGroup { get; set; }
+  public DMD.TransformGroup? TransformGroup { get; set; }
   
-  public DocumentModel.Drawings.NoFill? NoFill { get; set; }
+  public DMD.NoFill? NoFill { get; set; }
   
-  public DocumentModel.Drawings.SolidFill? SolidFill { get; set; }
+  public DMD.SolidFill? SolidFill { get; set; }
   
-  public DocumentModel.Drawings.GradientFill? GradientFill { get; set; }
+  public DMD.GradientFill? GradientFill { get; set; }
   
-  public DocumentModel.Drawings.BlipFill? BlipFill { get; set; }
+  public DMD.BlipFill? BlipFill { get; set; }
   
-  public DocumentModel.Drawings.PatternFill? PatternFill { get; set; }
+  public DMD.PatternFill? PatternFill { get; set; }
   
-  public DocumentModel.Drawings.GroupFill? GroupFill { get; set; }
+  public DMD.GroupFill? GroupFill { get; set; }
   
-  public DocumentModel.Drawings.EffectList? EffectList { get; set; }
+  public DMD.EffectList? EffectList { get; set; }
   
-  public DocumentModel.Drawings.EffectDag? EffectDag { get; set; }
+  public DMD.EffectDag? EffectDag { get; set; }
   
-  public DocumentModel.Drawings.Scene3DType? Scene3DType { get; set; }
+  public DMD.Scene3DType? Scene3DType { get; set; }
   
-  public DocumentModel.Drawings.ExtensionList? ExtensionList { get; set; }
+  public DMD.ExtensionList? ExtensionList { get; set; }
   
 }

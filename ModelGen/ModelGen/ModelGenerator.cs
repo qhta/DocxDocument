@@ -2,12 +2,19 @@
 
 public class ModelGenerator : BaseCodeGenerator
 {
-  public ModelGenerator(string projectName, string outputPath, string? configPath)
+  public ModelGenerator(ProcessOptions options)
   {
     SolutionName = "GeneratedModel";
-    ProjectName = projectName;
-    OutputPath = outputPath;
-    ConfigPath = configPath;
+    if (options.ProjectName == null)
+      throw new InvalidOperationException(CommonStrings.Project_name_not_defined);
+    if (options.CodeOutputPath == null)
+      throw new InvalidOperationException(CommonStrings.Code_output_path_not_defined);
+    if (options.SolutionName == null)
+      throw new InvalidOperationException(CommonStrings.Solution_name_not_defined);
+    SolutionName = options.SolutionName;
+    ProjectName = options.ProjectName;
+    OutputPath = options.CodeOutputPath;
+    ConfigPath = Path.GetDirectoryName(ModelConfig.GetFilename());
   }
 
   public override bool GenerateTypeFile(TypeInfo typeInfo)

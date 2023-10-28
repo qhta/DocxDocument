@@ -8,10 +8,10 @@ public partial class BackWall
 {
   public Byte? Thickness { get; set; }
   
-  public DocumentModel.Drawings.Charts.ShapeProperties? ShapeProperties { get; set; }
+  public DMDC.ShapeProperties? ShapeProperties { get; set; }
   
-  public DocumentModel.Drawings.Charts.PictureOptions? PictureOptions { get; set; }
+  public DMDC.PictureOptions? PictureOptions { get; set; }
   
-  public DocumentModel.Drawings.Charts.ExtensionList? ExtensionList { get; set; }
+  public DMDC.ExtensionList? ExtensionList { get; set; }
   
 }

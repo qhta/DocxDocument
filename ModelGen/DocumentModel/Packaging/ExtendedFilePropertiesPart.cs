@@ -12,7 +12,7 @@ public partial class ExtendedFilePropertiesPart
   /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>
-  public DMP.ExtendedProperties? Properties { get; set; }
+  public DocumentModel.Properties.ExtendedProperties? Properties { get; set; }
   
   public String? RelationshipType { get; set; }
   

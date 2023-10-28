@@ -10,18 +10,18 @@ public partial class ChartText
   /// <summary>
   ///   String Reference.
   /// </summary>
-  public DocumentModel.Drawings.Charts.StringReference? StringReference { get; set; }
+  public DMDC.StringReference? StringReference { get; set; }
   
   
   /// <summary>
   ///   Rich Text.
   /// </summary>
-  public DocumentModel.Drawings.Charts.RichText? RichText { get; set; }
+  public DMDC.RichText? RichText { get; set; }
   
   
   /// <summary>
   ///   String Literal.
   /// </summary>
-  public DocumentModel.Drawings.Charts.StringLiteral? StringLiteral { get; set; }
+  public DMDC.StringLiteral? StringLiteral { get; set; }
   
 }

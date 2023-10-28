@@ -10,6 +10,6 @@ public partial class MatrixColumn
   /// <summary>
   ///   Matrix Column Properties.
   /// </summary>
-  public DocumentModel.Math.MatrixColumnProperties? MatrixColumnProperties { get; set; }
+  public DMM.MatrixColumnProperties? MatrixColumnProperties { get; set; }
   
 }

@@ -22,6 +22,6 @@ public partial class Camera
   /// <summary>
   ///   Rotation.
   /// </summary>
-  public DocumentModel.Drawings.Rotation? Rotation { get; set; }
+  public DMD.Rotation? Rotation { get; set; }
   
 }

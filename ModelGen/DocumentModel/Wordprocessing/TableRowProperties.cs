@@ -6,14 +6,14 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class TableRowProperties
 {
-  public DocumentModel.Wordprocessing.Inserted? Inserted { get; set; }
+  public DMW.Inserted? Inserted { get; set; }
   
-  public DocumentModel.Wordprocessing.Deleted? Deleted { get; set; }
+  public DMW.Deleted? Deleted { get; set; }
   
-  public DocumentModel.Wordprocessing.TableRowPropertiesChange? TableRowPropertiesChange { get; set; }
+  public DMW.TableRowPropertiesChange? TableRowPropertiesChange { get; set; }
   
-  public DocumentModel.Wordprocessing.ConflictInsertion? ConflictInsertion { get; set; }
+  public DMW10.ConflictInsertion? ConflictInsertion { get; set; }
   
-  public DocumentModel.Wordprocessing.ConflictDeletion? ConflictDeletion { get; set; }
+  public DMW10.ConflictDeletion? ConflictDeletion { get; set; }
   
 }

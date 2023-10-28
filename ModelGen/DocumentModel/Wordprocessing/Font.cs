@@ -16,7 +16,7 @@ public partial class Font
   /// <summary>
   ///   AltName.
   /// </summary>
-  public DocumentModel.Wordprocessing.AltName? AltName { get; set; }
+  public DMW.AltName? AltName { get; set; }
   
   
   /// <summary>
@@ -28,54 +28,54 @@ public partial class Font
   /// <summary>
   ///   FontCharSet.
   /// </summary>
-  public DocumentModel.Wordprocessing.FontCharSet? FontCharSet { get; set; }
+  public DMW.FontCharSet? FontCharSet { get; set; }
   
   
   /// <summary>
   ///   FontFamily.
   /// </summary>
-  public DocumentModel.Wordprocessing.FontFamilyKind? FontFamily { get; set; }
+  public DMW.FontFamilyKind? FontFamily { get; set; }
   
   
   /// <summary>
   ///   NotTrueType.
   /// </summary>
-  public DocumentModel.Wordprocessing.NotTrueType? NotTrueType { get; set; }
+  public DMW.NotTrueType? NotTrueType { get; set; }
   
   
   /// <summary>
   ///   Pitch.
   /// </summary>
-  public DocumentModel.Wordprocessing.FontPitchKind? Pitch { get; set; }
+  public DMW.FontPitchKind? Pitch { get; set; }
   
   
   /// <summary>
   ///   FontSignature.
   /// </summary>
-  public DocumentModel.Wordprocessing.FontSignature? FontSignature { get; set; }
+  public DMW.FontSignature? FontSignature { get; set; }
   
   
   /// <summary>
   ///   EmbedRegularFont.
   /// </summary>
-  public DocumentModel.Wordprocessing.EmbedRegularFont? EmbedRegularFont { get; set; }
+  public DMW.EmbedRegularFont? EmbedRegularFont { get; set; }
   
   
   /// <summary>
   ///   EmbedBoldFont.
   /// </summary>
-  public DocumentModel.Wordprocessing.EmbedBoldFont? EmbedBoldFont { get; set; }
+  public DMW.EmbedBoldFont? EmbedBoldFont { get; set; }
   
   
   /// <summary>
   ///   EmbedItalicFont.
   /// </summary>
-  public DocumentModel.Wordprocessing.EmbedItalicFont? EmbedItalicFont { get; set; }
+  public DMW.EmbedItalicFont? EmbedItalicFont { get; set; }
   
   
   /// <summary>
   ///   EmbedBoldItalicFont.
   /// </summary>
-  public DocumentModel.Wordprocessing.EmbedBoldItalicFont? EmbedBoldItalicFont { get; set; }
+  public DMW.EmbedBoldItalicFont? EmbedBoldItalicFont { get; set; }
   
 }

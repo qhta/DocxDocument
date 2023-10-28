@@ -30,6 +30,6 @@ public partial class TextBox
   /// </summary>
   public DM.TrueFalseValue? SingleClick { get; set; }
   
-  public DocumentModel.Wordprocessing.TextBoxContent? TextBoxContent { get; set; }
+  public DMW.TextBoxContent? TextBoxContent { get; set; }
   
 }

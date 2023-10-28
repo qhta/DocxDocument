@@ -110,6 +110,6 @@ public partial class TextCharacterPropertiesType
   /// <summary>
   ///   Outline.
   /// </summary>
-  public DocumentModel.Drawings.Outline? Outline { get; set; }
+  public DMD.Outline? Outline { get; set; }
   
 }

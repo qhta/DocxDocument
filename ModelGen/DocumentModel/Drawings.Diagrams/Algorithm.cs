@@ -12,6 +12,6 @@ public partial class Algorithm
   /// </summary>
   public UInt32? Revision { get; set; }
   
-  public DocumentModel.Drawings.Diagrams.ExtensionList? ExtensionList { get; set; }
+  public DMDD.ExtensionList? ExtensionList { get; set; }
   
 }

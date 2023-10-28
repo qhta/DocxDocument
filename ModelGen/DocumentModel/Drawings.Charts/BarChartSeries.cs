@@ -10,48 +10,48 @@ public partial class BarChartSeries
   /// <summary>
   ///   Index.
   /// </summary>
-  public DocumentModel.Drawings.Charts.Index? Index { get; set; }
+  public DMDC.Index? Index { get; set; }
   
   
   /// <summary>
   ///   Order.
   /// </summary>
-  public DocumentModel.Drawings.Charts.Order? Order { get; set; }
+  public DMDC.Order? Order { get; set; }
   
   
   /// <summary>
   ///   Series Text.
   /// </summary>
-  public DocumentModel.Drawings.Charts.SeriesText? SeriesText { get; set; }
+  public DMDC.SeriesText? SeriesText { get; set; }
   
   
   /// <summary>
   ///   ChartShapeProperties.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ChartShapeProperties? ChartShapeProperties { get; set; }
+  public DMDC.ChartShapeProperties? ChartShapeProperties { get; set; }
   
   
   /// <summary>
   ///   InvertIfNegative.
   /// </summary>
-  public DocumentModel.Drawings.Charts.InvertIfNegative? InvertIfNegative { get; set; }
+  public DMDC.InvertIfNegative? InvertIfNegative { get; set; }
   
   
   /// <summary>
   ///   PictureOptions.
   /// </summary>
-  public DocumentModel.Drawings.Charts.PictureOptions? PictureOptions { get; set; }
+  public DMDC.PictureOptions? PictureOptions { get; set; }
   
-  public DocumentModel.Drawings.Charts.DataLabels? DataLabels { get; set; }
+  public DMDC.DataLabels? DataLabels { get; set; }
   
-  public DocumentModel.Drawings.Charts.ErrorBars? ErrorBars { get; set; }
+  public DMDC.ErrorBars? ErrorBars { get; set; }
   
-  public DocumentModel.Drawings.Charts.CategoryAxisData? CategoryAxisData { get; set; }
+  public DMDC.CategoryAxisData? CategoryAxisData { get; set; }
   
-  public DocumentModel.Drawings.Charts.Values? Values { get; set; }
+  public DMDC.Values? Values { get; set; }
   
-  public DocumentModel.Drawings.Charts.ShapeKind? Shape { get; set; }
+  public DMDC.ShapeKind? Shape { get; set; }
   
-  public DocumentModel.Drawings.Charts.BarSerExtensionList? BarSerExtensionList { get; set; }
+  public DMDC.BarSerExtensionList? BarSerExtensionList { get; set; }
   
 }

@@ -12,18 +12,18 @@ public partial class DLblsExtension
   /// </summary>
   public String? Uri { get; set; }
   
-  public DocumentModel.Drawings.Charts.ChartText? ChartText { get; set; }
+  public DMDC13.ChartText? ChartText { get; set; }
   
-  public DocumentModel.Drawings.Charts.DataLabelFieldTable? DataLabelFieldTable { get; set; }
+  public DMDC13.DataLabelFieldTable? DataLabelFieldTable { get; set; }
   
-  public DocumentModel.Drawings.Charts.ShowDataLabelsRange? ShowDataLabelsRange { get; set; }
+  public DMDC13.ShowDataLabelsRange? ShowDataLabelsRange { get; set; }
   
-  public DocumentModel.Drawings.Charts.ShapeProperties? ShapeProperties { get; set; }
+  public DMDC13.ShapeProperties? ShapeProperties { get; set; }
   
-  public DocumentModel.Drawings.Charts.Layout? Layout { get; set; }
+  public DMDC13.Layout? Layout { get; set; }
   
-  public DocumentModel.Drawings.Charts.ShowLeaderLines? ShowLeaderLines { get; set; }
+  public DMDC13.ShowLeaderLines? ShowLeaderLines { get; set; }
   
-  public DocumentModel.Drawings.Charts.LeaderLines? LeaderLines { get; set; }
+  public DMDC13.LeaderLines? LeaderLines { get; set; }
   
 }

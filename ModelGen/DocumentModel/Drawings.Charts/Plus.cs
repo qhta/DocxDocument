@@ -6,8 +6,8 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class Plus
 {
-  public DocumentModel.Drawings.Charts.NumberReference? NumberReference { get; set; }
+  public DMDC.NumberReference? NumberReference { get; set; }
   
-  public DocumentModel.Drawings.Charts.NumberLiteral? NumberLiteral { get; set; }
+  public DMDC.NumberLiteral? NumberLiteral { get; set; }
   
 }

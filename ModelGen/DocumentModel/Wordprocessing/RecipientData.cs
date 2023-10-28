@@ -10,13 +10,13 @@ public partial class RecipientData
   /// <summary>
   ///   Record Is Included in Mail Merge.
   /// </summary>
-  public DocumentModel.Wordprocessing.Active? Active { get; set; }
+  public DMW.Active? Active { get; set; }
   
   
   /// <summary>
   ///   Index of Column Containing Unique Values for Record.
   /// </summary>
-  public DocumentModel.Wordprocessing.ColumnIndex? ColumnIndex { get; set; }
+  public DMW.ColumnIndex? ColumnIndex { get; set; }
   
   
   /// <summary>

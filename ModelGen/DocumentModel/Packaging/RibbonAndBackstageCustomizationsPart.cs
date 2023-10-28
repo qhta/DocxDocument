@@ -12,7 +12,7 @@ public partial class RibbonAndBackstageCustomizationsPart
   /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>
-  public DM.CustomUI? CustomUI { get; set; }
+  public DMCUI10.CustomUI? CustomUI { get; set; }
   
   public String? RelationshipType { get; set; }
   

@@ -12,12 +12,12 @@ public partial class BubbleSerExtension
   /// </summary>
   public String? Uri { get; set; }
   
-  public DocumentModel.Drawings.Charts.InvertSolidFillFormat? InvertSolidFillFormat { get; set; }
+  public DMDC10.InvertSolidFillFormat? InvertSolidFillFormat { get; set; }
   
-  public DocumentModel.Drawings.Charts.FilteredCategoryTitle? FilteredCategoryTitle { get; set; }
+  public DMDC13.FilteredCategoryTitle? FilteredCategoryTitle { get; set; }
   
-  public DocumentModel.Drawings.Charts.DataLabelsRange? DataLabelsRange { get; set; }
+  public DMDC13.DataLabelsRange? DataLabelsRange { get; set; }
   
-  public DocumentModel.Drawings.Charts.CategoryFilterExceptions? CategoryFilterExceptions { get; set; }
+  public DMDC13.CategoryFilterExceptions? CategoryFilterExceptions { get; set; }
   
 }

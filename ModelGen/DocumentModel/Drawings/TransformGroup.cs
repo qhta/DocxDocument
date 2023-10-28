@@ -28,24 +28,24 @@ public partial class TransformGroup
   /// <summary>
   ///   Offset.
   /// </summary>
-  public DocumentModel.Drawings.Offset? Offset { get; set; }
+  public DMD.Offset? Offset { get; set; }
   
   
   /// <summary>
   ///   Extents.
   /// </summary>
-  public DocumentModel.Drawings.Extents? Extents { get; set; }
+  public DMD.Extents? Extents { get; set; }
   
   
   /// <summary>
   ///   Child Offset.
   /// </summary>
-  public DocumentModel.Drawings.ChildOffset? ChildOffset { get; set; }
+  public DMD.ChildOffset? ChildOffset { get; set; }
   
   
   /// <summary>
   ///   Child Extents.
   /// </summary>
-  public DocumentModel.Drawings.ChildExtents? ChildExtents { get; set; }
+  public DMD.ChildExtents? ChildExtents { get; set; }
   
 }

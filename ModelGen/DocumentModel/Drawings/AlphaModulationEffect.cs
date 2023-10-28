@@ -10,6 +10,6 @@ public partial class AlphaModulationEffect
   /// <summary>
   ///   EffectContainer.
   /// </summary>
-  public DocumentModel.Drawings.EffectContainer? EffectContainer { get; set; }
+  public DMD.EffectContainer? EffectContainer { get; set; }
   
 }

@@ -34,115 +34,115 @@ public partial class PreviousSectionProperties
   /// <summary>
   ///   FootnoteProperties.
   /// </summary>
-  public DocumentModel.Wordprocessing.FootnoteProperties? FootnoteProperties { get; set; }
+  public DMW.FootnoteProperties? FootnoteProperties { get; set; }
   
   
   /// <summary>
   ///   EndnoteProperties.
   /// </summary>
-  public DocumentModel.Wordprocessing.EndnoteProperties? EndnoteProperties { get; set; }
+  public DMW.EndnoteProperties? EndnoteProperties { get; set; }
   
   
   /// <summary>
   ///   SectionType.
   /// </summary>
-  public DocumentModel.Wordprocessing.SectionMarkKind? SectionType { get; set; }
+  public DMW.SectionMarkKind? SectionType { get; set; }
   
   
   /// <summary>
   ///   PageSize.
   /// </summary>
-  public DocumentModel.Wordprocessing.PageSize? PageSize { get; set; }
+  public DMW.PageSize? PageSize { get; set; }
   
   
   /// <summary>
   ///   PageMargin.
   /// </summary>
-  public DocumentModel.Wordprocessing.PageMargin? PageMargin { get; set; }
+  public DMW.PageMargin? PageMargin { get; set; }
   
   
   /// <summary>
   ///   PaperSource.
   /// </summary>
-  public DocumentModel.Wordprocessing.PaperSource? PaperSource { get; set; }
+  public DMW.PaperSource? PaperSource { get; set; }
   
   
   /// <summary>
   ///   PageBorders.
   /// </summary>
-  public DocumentModel.Wordprocessing.PageBorders? PageBorders { get; set; }
+  public DMW.PageBorders? PageBorders { get; set; }
   
   
   /// <summary>
   ///   LineNumberType.
   /// </summary>
-  public DocumentModel.Wordprocessing.LineNumberType? LineNumberType { get; set; }
+  public DMW.LineNumberType? LineNumberType { get; set; }
   
   
   /// <summary>
   ///   PageNumberType.
   /// </summary>
-  public DocumentModel.Wordprocessing.PageNumberType? PageNumberType { get; set; }
+  public DMW.PageNumberType? PageNumberType { get; set; }
   
   
   /// <summary>
   ///   Columns.
   /// </summary>
-  public DocumentModel.Wordprocessing.Columns? Columns { get; set; }
+  public DMW.Columns? Columns { get; set; }
   
   
   /// <summary>
   ///   FormProtection.
   /// </summary>
-  public DocumentModel.Wordprocessing.FormProtection? FormProtection { get; set; }
+  public DMW.FormProtection? FormProtection { get; set; }
   
   
   /// <summary>
   ///   VerticalTextAlignmentOnPage.
   /// </summary>
-  public DocumentModel.Wordprocessing.VerticalJustificationKind? VerticalTextAlignmentOnPage { get; set; }
+  public DMW.VerticalJustificationKind? VerticalTextAlignmentOnPage { get; set; }
   
   
   /// <summary>
   ///   NoEndnote.
   /// </summary>
-  public DocumentModel.Wordprocessing.NoEndnote? NoEndnote { get; set; }
+  public DMW.NoEndnote? NoEndnote { get; set; }
   
   
   /// <summary>
   ///   TitlePage.
   /// </summary>
-  public DocumentModel.Wordprocessing.TitlePage? TitlePage { get; set; }
+  public DMW.TitlePage? TitlePage { get; set; }
   
   
   /// <summary>
   ///   TextDirection.
   /// </summary>
-  public DocumentModel.Wordprocessing.TextDirectionKind? TextDirection { get; set; }
+  public DMW.TextDirectionKind? TextDirection { get; set; }
   
   
   /// <summary>
   ///   BiDi.
   /// </summary>
-  public DocumentModel.Wordprocessing.BiDi? BiDi { get; set; }
+  public DMW.BiDi? BiDi { get; set; }
   
   
   /// <summary>
   ///   GutterOnRight.
   /// </summary>
-  public DocumentModel.Wordprocessing.GutterOnRight? GutterOnRight { get; set; }
+  public DMW.GutterOnRight? GutterOnRight { get; set; }
   
   
   /// <summary>
   ///   DocGrid.
   /// </summary>
-  public DocumentModel.Wordprocessing.DocGrid? DocGrid { get; set; }
+  public DMW.DocGrid? DocGrid { get; set; }
   
   
   /// <summary>
   ///   PrinterSettingsReference.
   /// </summary>
-  public DocumentModel.Wordprocessing.PrinterSettingsReference? PrinterSettingsReference { get; set; }
+  public DMW.PrinterSettingsReference? PrinterSettingsReference { get; set; }
   
   
   /// <summary>

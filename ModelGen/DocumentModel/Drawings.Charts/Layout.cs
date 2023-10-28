@@ -10,12 +10,12 @@ public partial class Layout
   /// <summary>
   ///   Manual Layout.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ManualLayout? ManualLayout { get; set; }
+  public DMDC.ManualLayout? ManualLayout { get; set; }
   
   
   /// <summary>
   ///   Chart Extensibility.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ExtensionList? ExtensionList { get; set; }
+  public DMDC.ExtensionList? ExtensionList { get; set; }
   
 }

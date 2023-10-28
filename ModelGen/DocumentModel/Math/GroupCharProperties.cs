@@ -10,24 +10,24 @@ public partial class GroupCharProperties
   /// <summary>
   ///   Group Character (Grouping Character).
   /// </summary>
-  public DocumentModel.Math.AccentChar? AccentChar { get; set; }
+  public DMM.AccentChar? AccentChar { get; set; }
   
   
   /// <summary>
   ///   Position (Group Character).
   /// </summary>
-  public DocumentModel.Math.Position? Position { get; set; }
+  public DMM.Position? Position { get; set; }
   
   
   /// <summary>
   ///   Vertical Justification.
   /// </summary>
-  public DocumentModel.Math.VerticalJustification? VerticalJustification { get; set; }
+  public DMM.VerticalJustification? VerticalJustification { get; set; }
   
   
   /// <summary>
   ///   ControlProperties.
   /// </summary>
-  public DocumentModel.Math.ControlProperties? ControlProperties { get; set; }
+  public DMM.ControlProperties? ControlProperties { get; set; }
   
 }

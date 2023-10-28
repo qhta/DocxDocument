@@ -34,37 +34,37 @@ public partial class Style
   /// <summary>
   ///   Alternate Style Names.
   /// </summary>
-  public DocumentModel.Wordprocessing.Aliases? Aliases { get; set; }
+  public DMW.Aliases? Aliases { get; set; }
   
   
   /// <summary>
   ///   Parent Style ID.
   /// </summary>
-  public DocumentModel.Wordprocessing.BasedOn? BasedOn { get; set; }
+  public DMW.BasedOn? BasedOn { get; set; }
   
   
   /// <summary>
   ///   Style For Next Paragraph.
   /// </summary>
-  public DocumentModel.Wordprocessing.NextParagraphStyle? NextParagraphStyle { get; set; }
+  public DMW.NextParagraphStyle? NextParagraphStyle { get; set; }
   
   
   /// <summary>
   ///   Linked Style Reference.
   /// </summary>
-  public DocumentModel.Wordprocessing.LinkedStyle? LinkedStyle { get; set; }
+  public DMW.LinkedStyle? LinkedStyle { get; set; }
   
   
   /// <summary>
   ///   Automatically Merge User Formatting Into Style Definition.
   /// </summary>
-  public DocumentModel.Wordprocessing.AutoRedefine? AutoRedefine { get; set; }
+  public DMW.AutoRedefine? AutoRedefine { get; set; }
   
   
   /// <summary>
   ///   Hide Style From User Interface.
   /// </summary>
-  public DocumentModel.Wordprocessing.StyleHidden? StyleHidden { get; set; }
+  public DMW.StyleHidden? StyleHidden { get; set; }
   
   
   /// <summary>
@@ -76,43 +76,43 @@ public partial class Style
   /// <summary>
   ///   Hide Style From Main User Interface.
   /// </summary>
-  public DocumentModel.Wordprocessing.SemiHidden? SemiHidden { get; set; }
+  public DMW.SemiHidden? SemiHidden { get; set; }
   
   
   /// <summary>
   ///   Remove Semi-Hidden Property When Style Is Used.
   /// </summary>
-  public DocumentModel.Wordprocessing.UnhideWhenUsed? UnhideWhenUsed { get; set; }
+  public DMW.UnhideWhenUsed? UnhideWhenUsed { get; set; }
   
   
   /// <summary>
   ///   Primary Style.
   /// </summary>
-  public DocumentModel.Wordprocessing.PrimaryStyle? PrimaryStyle { get; set; }
+  public DMW.PrimaryStyle? PrimaryStyle { get; set; }
   
   
   /// <summary>
   ///   Style Cannot Be Applied.
   /// </summary>
-  public DocumentModel.Wordprocessing.Locked? Locked { get; set; }
+  public DMW.Locked? Locked { get; set; }
   
   
   /// <summary>
   ///   E-Mail Message Text Style.
   /// </summary>
-  public DocumentModel.Wordprocessing.Personal? Personal { get; set; }
+  public DMW.Personal? Personal { get; set; }
   
   
   /// <summary>
   ///   E-Mail Message Composition Style.
   /// </summary>
-  public DocumentModel.Wordprocessing.PersonalCompose? PersonalCompose { get; set; }
+  public DMW.PersonalCompose? PersonalCompose { get; set; }
   
   
   /// <summary>
   ///   E-Mail Message Reply Style.
   /// </summary>
-  public DocumentModel.Wordprocessing.PersonalReply? PersonalReply { get; set; }
+  public DMW.PersonalReply? PersonalReply { get; set; }
   
   
   /// <summary>
@@ -124,30 +124,30 @@ public partial class Style
   /// <summary>
   ///   Style Paragraph Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.StyleParagraphProperties? StyleParagraphProperties { get; set; }
+  public DMW.StyleParagraphProperties? StyleParagraphProperties { get; set; }
   
   
   /// <summary>
   ///   Run Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.StyleRunProperties? StyleRunProperties { get; set; }
+  public DMW.StyleRunProperties? StyleRunProperties { get; set; }
   
   
   /// <summary>
   ///   Style Table Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.StyleTableProperties? StyleTableProperties { get; set; }
+  public DMW.StyleTableProperties? StyleTableProperties { get; set; }
   
   
   /// <summary>
   ///   Style Table Row Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.TableStyleConditionalFormattingTableRowProperties? TableStyleConditionalFormattingTableRowProperties { get; set; }
+  public DMW.TableStyleConditionalFormattingTableRowProperties? TableStyleConditionalFormattingTableRowProperties { get; set; }
   
   
   /// <summary>
   ///   Style Table Cell Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.StyleTableCellProperties? StyleTableCellProperties { get; set; }
+  public DMW.StyleTableCellProperties? StyleTableCellProperties { get; set; }
   
 }

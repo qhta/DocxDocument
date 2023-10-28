@@ -10,24 +10,24 @@ public partial class Backdrop
   /// <summary>
   ///   Anchor Point.
   /// </summary>
-  public DocumentModel.Drawings.Anchor? Anchor { get; set; }
+  public DMD.Anchor? Anchor { get; set; }
   
   
   /// <summary>
   ///   Normal.
   /// </summary>
-  public DocumentModel.Drawings.Normal? Normal { get; set; }
+  public DMD.Normal? Normal { get; set; }
   
   
   /// <summary>
   ///   Up Vector.
   /// </summary>
-  public DocumentModel.Drawings.UpVector? UpVector { get; set; }
+  public DMD.UpVector? UpVector { get; set; }
   
   
   /// <summary>
   ///   ExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.ExtensionList? ExtensionList { get; set; }
+  public DMD.ExtensionList? ExtensionList { get; set; }
   
 }

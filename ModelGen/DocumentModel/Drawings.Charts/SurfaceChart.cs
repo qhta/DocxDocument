@@ -10,10 +10,10 @@ public partial class SurfaceChart
   /// <summary>
   ///   Wireframe.
   /// </summary>
-  public DocumentModel.Drawings.Charts.Wireframe? Wireframe { get; set; }
+  public DMDC.Wireframe? Wireframe { get; set; }
   
-  public DocumentModel.Drawings.Charts.BandFormats? BandFormats { get; set; }
+  public DMDC.BandFormats? BandFormats { get; set; }
   
-  public DocumentModel.Drawings.Charts.SurfaceChartExtensionList? SurfaceChartExtensionList { get; set; }
+  public DMDC.SurfaceChartExtensionList? SurfaceChartExtensionList { get; set; }
   
 }

@@ -16,54 +16,54 @@ public partial class StyleEntry
   /// <summary>
   ///   LineReference.
   /// </summary>
-  public DocumentModel.Drawings.ChartsStyle.LineReference? LineReference { get; set; }
+  public DMDCS.LineReference? LineReference { get; set; }
   
   
   /// <summary>
   ///   LineWidthScale.
   /// </summary>
-  public DocumentModel.Drawings.ChartsStyle.LineWidthScale? LineWidthScale { get; set; }
+  public DMDCS.LineWidthScale? LineWidthScale { get; set; }
   
   
   /// <summary>
   ///   FillReference.
   /// </summary>
-  public DocumentModel.Drawings.ChartsStyle.FillReference? FillReference { get; set; }
+  public DMDCS.FillReference? FillReference { get; set; }
   
   
   /// <summary>
   ///   EffectReference.
   /// </summary>
-  public DocumentModel.Drawings.ChartsStyle.EffectReference? EffectReference { get; set; }
+  public DMDCS.EffectReference? EffectReference { get; set; }
   
   
   /// <summary>
   ///   FontReference.
   /// </summary>
-  public DocumentModel.Drawings.ChartsStyle.FontReference? FontReference { get; set; }
+  public DMDCS.FontReference? FontReference { get; set; }
   
   
   /// <summary>
   ///   ShapeProperties.
   /// </summary>
-  public DocumentModel.Drawings.ChartsStyle.ShapeProperties? ShapeProperties { get; set; }
+  public DMDCS.ShapeProperties? ShapeProperties { get; set; }
   
   
   /// <summary>
   ///   TextCharacterPropertiesType.
   /// </summary>
-  public DocumentModel.Drawings.ChartsStyle.TextCharacterPropertiesType? TextCharacterPropertiesType { get; set; }
+  public DMDCS.TextCharacterPropertiesType? TextCharacterPropertiesType { get; set; }
   
   
   /// <summary>
   ///   TextBodyProperties.
   /// </summary>
-  public DocumentModel.Drawings.ChartsStyle.TextBodyProperties? TextBodyProperties { get; set; }
+  public DMDCS.TextBodyProperties? TextBodyProperties { get; set; }
   
   
   /// <summary>
   ///   OfficeArtExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.ChartsStyle.OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
+  public DMDCS.OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
   
 }

@@ -10,6 +10,6 @@ public partial class Break
   /// <summary>
   ///   Text Run Properties.
   /// </summary>
-  public DocumentModel.Drawings.RunProperties? RunProperties { get; set; }
+  public DMD.RunProperties? RunProperties { get; set; }
   
 }

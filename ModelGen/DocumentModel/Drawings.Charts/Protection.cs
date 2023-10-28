@@ -10,30 +10,30 @@ public partial class Protection
   /// <summary>
   ///   Chart Object.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ChartObject? ChartObject { get; set; }
+  public DMDC.ChartObject? ChartObject { get; set; }
   
   
   /// <summary>
   ///   Data Cannot Be Changed.
   /// </summary>
-  public DocumentModel.Drawings.Charts.Data? Data { get; set; }
+  public DMDC.Data? Data { get; set; }
   
   
   /// <summary>
   ///   Formatting.
   /// </summary>
-  public DocumentModel.Drawings.Charts.Formatting? Formatting { get; set; }
+  public DMDC.Formatting? Formatting { get; set; }
   
   
   /// <summary>
   ///   Selection.
   /// </summary>
-  public DocumentModel.Drawings.Charts.Selection? Selection { get; set; }
+  public DMDC.Selection? Selection { get; set; }
   
   
   /// <summary>
   ///   User Interface.
   /// </summary>
-  public DocumentModel.Drawings.Charts.UserInterface? UserInterface { get; set; }
+  public DMDC.UserInterface? UserInterface { get; set; }
   
 }

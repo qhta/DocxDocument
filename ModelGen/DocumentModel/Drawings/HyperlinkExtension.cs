@@ -12,6 +12,6 @@ public partial class HyperlinkExtension
   /// </summary>
   public String? Uri { get; set; }
   
-  public DocumentModel.Drawings.HyperlinkColorEnum? HyperlinkColor { get; set; }
+  public DMD.HyperlinkColorEnum? HyperlinkColor { get; set; }
   
 }

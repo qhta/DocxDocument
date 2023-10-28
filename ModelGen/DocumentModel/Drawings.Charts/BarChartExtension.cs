@@ -12,6 +12,6 @@ public partial class BarChartExtension
   /// </summary>
   public String? Uri { get; set; }
   
-  public DocumentModel.Drawings.Charts.FilteredBarSeries? FilteredBarSeries { get; set; }
+  public DMDC13.FilteredBarSeries? FilteredBarSeries { get; set; }
   
 }

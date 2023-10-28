@@ -6,38 +6,38 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class Level8ParagraphProperties
 {
-  public DocumentModel.Drawings.LineSpacing? LineSpacing { get; set; }
+  public DMD.LineSpacing? LineSpacing { get; set; }
   
-  public DocumentModel.Drawings.SpaceBefore? SpaceBefore { get; set; }
+  public DMD.SpaceBefore? SpaceBefore { get; set; }
   
-  public DocumentModel.Drawings.SpaceAfter? SpaceAfter { get; set; }
+  public DMD.SpaceAfter? SpaceAfter { get; set; }
   
-  public DocumentModel.Drawings.BulletColorText? BulletColorText { get; set; }
+  public DMD.BulletColorText? BulletColorText { get; set; }
   
-  public DocumentModel.Drawings.BulletColor? BulletColor { get; set; }
+  public DMD.BulletColor? BulletColor { get; set; }
   
-  public DocumentModel.Drawings.BulletSizeText? BulletSizeText { get; set; }
+  public DMD.BulletSizeText? BulletSizeText { get; set; }
   
   public Int32? BulletSizePercentage { get; set; }
   
   public Int32? BulletSizePoints { get; set; }
   
-  public DocumentModel.Drawings.BulletFontText? BulletFontText { get; set; }
+  public DMD.BulletFontText? BulletFontText { get; set; }
   
-  public DocumentModel.Drawings.BulletFont? BulletFont { get; set; }
+  public DMD.BulletFont? BulletFont { get; set; }
   
-  public DocumentModel.Drawings.NoBullet? NoBullet { get; set; }
+  public DMD.NoBullet? NoBullet { get; set; }
   
-  public DocumentModel.Drawings.AutoNumberedBullet? AutoNumberedBullet { get; set; }
+  public DMD.AutoNumberedBullet? AutoNumberedBullet { get; set; }
   
-  public DocumentModel.Drawings.CharacterBullet? CharacterBullet { get; set; }
+  public DMD.CharacterBullet? CharacterBullet { get; set; }
   
-  public DocumentModel.Drawings.PictureBullet? PictureBullet { get; set; }
+  public DMD.PictureBullet? PictureBullet { get; set; }
   
-  public DocumentModel.Drawings.TabStopList? TabStopList { get; set; }
+  public DMD.TabStopList? TabStopList { get; set; }
   
-  public DocumentModel.Drawings.DefaultRunProperties? DefaultRunProperties { get; set; }
+  public DMD.DefaultRunProperties? DefaultRunProperties { get; set; }
   
-  public DocumentModel.Drawings.ExtensionList? ExtensionList { get; set; }
+  public DMD.ExtensionList? ExtensionList { get; set; }
   
 }

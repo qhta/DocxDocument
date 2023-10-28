@@ -10,12 +10,12 @@ public partial class Run
   /// <summary>
   ///   Text Character Properties.
   /// </summary>
-  public DocumentModel.Drawings.RunProperties? RunProperties { get; set; }
+  public DMD.RunProperties? RunProperties { get; set; }
   
   
   /// <summary>
   ///   Text String.
   /// </summary>
-  public DocumentModel.Drawings.Text? Text { get; set; }
+  public DMD.Text? Text { get; set; }
   
 }

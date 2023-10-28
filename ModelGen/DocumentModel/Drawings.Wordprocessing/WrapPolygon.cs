@@ -16,6 +16,6 @@ public partial class WrapPolygon
   /// <summary>
   ///   Wrapping Polygon Start.
   /// </summary>
-  public DocumentModel.Drawings.Wordprocessing.StartPoint? StartPoint { get; set; }
+  public DMDW.StartPoint? StartPoint { get; set; }
   
 }

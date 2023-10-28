@@ -6,6 +6,6 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class DownBars
 {
-  public DocumentModel.Drawings.Charts.ChartShapeProperties? ChartShapeProperties { get; set; }
+  public DMDC.ChartShapeProperties? ChartShapeProperties { get; set; }
   
 }

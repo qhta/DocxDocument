@@ -16,12 +16,12 @@ public partial class NonVisualPictureDrawingProperties
   /// <summary>
   ///   PictureLocks.
   /// </summary>
-  public DocumentModel.Drawings.PictureLocks? PictureLocks { get; set; }
+  public DMD.PictureLocks? PictureLocks { get; set; }
   
   
   /// <summary>
   ///   NonVisualPicturePropertiesExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.NonVisualPicturePropertiesExtensionList? NonVisualPicturePropertiesExtensionList { get; set; }
+  public DMD.NonVisualPicturePropertiesExtensionList? NonVisualPicturePropertiesExtensionList { get; set; }
   
 }
