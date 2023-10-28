@@ -4,22 +4,45 @@ namespace ModelGen;
 public static class ProcessOptionsMgr
 {
   private static object LockObj = new object();
-  public static ProcessOptions GetInstance()
+
+  public static string DataFolder = "";
+
+  private static Dictionary<string, ProcessOptions> Instances = new();
+
+  public static ProcessOptions GetInstance(string? dataFolder = null)
   {
     lock (LockObj)
     {
+      if (dataFolder != null)
+        DataFolder = dataFolder;
+      var instanceKey = dataFolder ?? "";
+      if (Instances.TryGetValue(instanceKey, out var result))
+        return result;
+
       var filename = GetFilename();
       if (File.Exists(filename))
       {
         try
         {
-          using (var text = File.OpenText(filename))
-          using (var reader = new Newtonsoft.Json.JsonTextReader(text))
+          using (var textFile = File.OpenText(filename))
           {
-            var serializer = new Newtonsoft.Json.JsonSerializer();
-            var result = serializer.Deserialize<ProcessOptions>(reader);
-            if (result != null)
-              return result;
+            var text = textFile.ReadToEnd();
+            //using (var reader = new Newtonsoft.Json.JsonTextReader(text))
+            {
+              //var serializer = new Newtonsoft.Json.JsonSerializer();
+              result = JsonConvert.DeserializeObject<ProcessOptions>(text);
+              if (result != null)
+              {
+                var aDataFolder = result.AppDataFolder;
+                if (!string.IsNullOrEmpty(aDataFolder) && aDataFolder!=DataFolder)
+                {
+                  result = GetInstance(aDataFolder);
+                  result.AppDataFolder = aDataFolder;
+                }
+                Instances.Add(instanceKey, result);
+                return result;
+              }
+            }
           }
         }
         catch (Exception ex)
@@ -57,13 +80,17 @@ public static class ProcessOptionsMgr
       }
     }
   }
-  public static string GetFilename()
+  public static string GetFilename(string? dataFolder)
   {
     var path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
     path = Path.Combine(path, "ModelGen");
     if (!Directory.Exists(path))
       Directory.CreateDirectory(path);
+    if (dataFolder != null)
+      path = Path.Combine(path, dataFolder);
     path = Path.Combine(path, "ProcessOptions.json");
     return path;
   }
+
+  public static string GetFilename() => GetFilename(DataFolder);
 }

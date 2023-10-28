@@ -1,7 +1,7 @@
 ﻿namespace ModelGenApp.ViewModels;
 public class NamespaceConfigListViewModel : ModelConfigViewModel
 {
-  public NamespaceConfigListViewModel(ModelConfig configData) : base(configData)
+  public NamespaceConfigListViewModel(ModelConfigData configData) : base(configData)
   {
     Caption = CommonStrings.ModelConfiguration + " | " + CommonStrings.Namespaces.ToLower();
     Namespaces = new ListViewModel<NamespaceConfigViewModel>();
@@ -20,7 +20,7 @@ public class NamespaceConfigListViewModel : ModelConfigViewModel
   /// </summary>
   public ICollectionView VisibleItems { get; private set; }
 
-  public override void GetData(ModelConfig configData)
+  public override void GetData(ModelConfigData configData)
   {
     Namespaces.Clear();
     base.GetData(configData);
@@ -59,7 +59,7 @@ public class NamespaceConfigListViewModel : ModelConfigViewModel
       ValidateData();
   }
 
-  public override void SetData(ModelConfig configData)
+  public override void SetData(ModelConfigData configData)
   {
     configData.ExcludedNamespaces.Clear();
     configData.NamespaceShortcuts.Clear();

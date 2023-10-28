@@ -1,7 +1,7 @@
 ﻿namespace ModelGenApp.ViewModels;
 public class PropertyConfigListViewModel : ModelConfigViewModel
 {
-  public PropertyConfigListViewModel(ModelConfig configData) : base(configData)
+  public PropertyConfigListViewModel(ModelConfigData configData) : base(configData)
   {
     Caption = CommonStrings.ModelConfiguration +": "+CommonStrings.Properties.ToLower();
     Properties = new ListViewModel<PropertyConfigViewModel>();
@@ -20,7 +20,7 @@ public class PropertyConfigListViewModel : ModelConfigViewModel
   public ICollectionView VisibleItems { get; private set; }
 
 
-  public override void GetData(ModelConfig configData)
+  public override void GetData(ModelConfigData configData)
   {
     Properties.Clear();
     base.GetData(configData);
@@ -58,7 +58,7 @@ public class PropertyConfigListViewModel : ModelConfigViewModel
     }
   }
 
-  public override void SetData(ModelConfig configData)
+  public override void SetData(ModelConfigData configData)
   {
     configData.ExcludedProperties.Clear();
     foreach (var item in Properties.Where(item => item.ExcludedProperty))

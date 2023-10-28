@@ -277,6 +277,15 @@ namespace ModelGen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Model configuration is not defined..
+        /// </summary>
+        internal static string Model_configuration_not_defined {
+            get {
+                return ResourceManager.GetString("Model_configuration_not_defined", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Process cancelled.
         /// </summary>
         internal static string ProcessCancelled {
@@ -372,6 +381,15 @@ namespace ModelGen {
         internal static string renaming_0_of_1_types_renamed_2_types {
             get {
                 return ResourceManager.GetString("renaming_0_of_1_types_renamed_2_types", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Scan type name not defined.
+        /// </summary>
+        internal static string Scan_type_name_not_defined {
+            get {
+                return ResourceManager.GetString("Scan_type_name_not_defined", resourceCulture);
             }
         }
         

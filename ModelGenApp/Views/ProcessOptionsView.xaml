@@ -35,77 +35,166 @@
           <RowDefinition Height="Auto" />
           <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0">
-          <Grid.RowDefinitions>
-            <RowDefinition Height="35" />
-            <RowDefinition Height="35" />
-            <RowDefinition Height="35" />
-          </Grid.RowDefinitions>
-          <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto" />
-            <ColumnDefinition Width="*" />
-          </Grid.ColumnDefinitions>
-          
-          <Label Grid.Row="0"
-                 Grid.Column="0"
-                 Margin="5"
-                 VerticalAlignment="Center"
-                 Content="{x:Static local:CommonStrings.TypeToScan}"
-                 ToolTip="{x:Static local:CommonStrings.TypeToScanTooltip}" />
-          <ComboBox Grid.Row="0"
-                    Grid.Column="1"
-                    Margin="5"
-                    MinWidth="300"
-                    VerticalContentAlignment="Center"
-                    IsEditable="True"
-                    Text="{Binding Path=ProcessOptionsVM.ScanTypeName}"
-                    ItemsSource="{Binding Path=ProcessOptionsVM.MainTypeNames}" />
-          
-          <Label Grid.Row="1"
-                 Grid.Column="0"
-                 Margin="5"
-                 VerticalAlignment="Center"
-                 Content="{x:Static local:CommonStrings.FileWithDocs}"
-                 ToolTip="{x:Static local:CommonStrings.FileWithDocsTooltip}" />
-          <Grid Grid.Row="1"
-                Grid.Column="1">
-            <Grid.ColumnDefinitions>
-              <ColumnDefinition Width="*" />
-              <ColumnDefinition Width="40" />
-            </Grid.ColumnDefinitions>
-            <TextBox Grid.Column="0"
+        <Border BorderBrush="Black"
+                BorderThickness="0,0,0,1">
+          <Expander Header="{x:Static local:CommonStrings.OptionsExpanderHeader}"
+                    VerticalAlignment="Bottom"
+                    ExpandDirection="Down">
+            <Grid x:Name="MainOptionsGrid">
+              <Grid.RowDefinitions>
+                <RowDefinition MinHeight="35"
+                               Height="Auto" />
+                <RowDefinition MinHeight="35"
+                               Height="Auto" />
+                <RowDefinition MinHeight="35"
+                               Height="Auto" />
+                <RowDefinition MinHeight="35"
+                               Height="Auto" />
+                <RowDefinition MinHeight="35"
+                               Height="Auto" />
+                <RowDefinition MinHeight="35"
+                               Height="Auto" />
+                <RowDefinition MinHeight="35"
+                               Height="Auto" />
+                <RowDefinition MinHeight="35"
+                               Height="Auto" />
+              </Grid.RowDefinitions>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="40" />
+              </Grid.ColumnDefinitions>
+                
+              <Label Grid.Row="0"
+                     Grid.Column="0"
                      Margin="5"
-                     VerticalContentAlignment="Center"
-                     Text="{Binding Path=ProcessOptionsVM.ModelDocFileName}" />
-            <Button Grid.Column="1"
-                    Margin="5"
-                    Content="..."
-                    Command="{Binding Path=ProcessOptionsVM.BrowseModelDocFileCommand}" />
-          </Grid>
-
-          <Label Grid.Row="2"
-                 Grid.Column="0"
-                 Margin="5"
-                 VerticalAlignment="Center"
-                 Content="{x:Static local:CommonStrings.ModelCodeOutputPath}"/>
-          <Grid Grid.Row="2"
-                Grid.Column="1">
-            <Grid.ColumnDefinitions>
-              <ColumnDefinition Width="*" />
-              <ColumnDefinition Width="40" />
-            </Grid.ColumnDefinitions>
-            <TextBox Grid.Column="0"
+                     VerticalAlignment="Center"
+                     Content="{x:Static local:CommonStrings.AppDataFolder}"
+                     ToolTip="{x:Static local:CommonStrings.AppDataFolderTooltip}" />
+              <TextBox Grid.Row="0"
+                       Grid.Column="1"
+                       Margin="5"
+                       VerticalContentAlignment="Center"
+                       TextWrapping="Wrap"
+                       MinHeight="25"
+                       Height="Auto"
+                       Text="{Binding Path=ProcessOptionsVM.AppDataFolder}" />
+              <Button Grid.Row="0"
+                      Grid.Column="2"
+                      Margin="5"
+                      Content="..."
+                      Command="{Binding Path=ProcessOptionsVM.BrowseAppDataFolderCommand}" />
+              
+              <Label Grid.Row="2"
+                     Grid.Column="0"
                      Margin="5"
-                     VerticalContentAlignment="Center"
-                     Text="{Binding Path=ProcessOptionsVM.ModelCodeOutputPath}" />
-            <Button Grid.Column="1"
-                    Margin="5"
-                    Content="..."
-                    Command="{Binding Path=ProcessOptionsVM.BrowseModelOutputPathCommand}" />
-          </Grid>
+                     VerticalAlignment="Center"
+                     Content="{x:Static local:CommonStrings.ProjectName}"
+                     ToolTip="{x:Static local:CommonStrings.ProjectNameTooltip}" />
+              <TextBox Grid.Row="2"
+                       Grid.Column="1"
+                       Margin="5"
+                       VerticalContentAlignment="Center"
+                       Text="{Binding Path=ProcessOptionsVM.ProjectName}" />
 
-        </Grid>
-        <Grid Grid.Row="1">
+              <Label Grid.Row="3"
+                     Grid.Column="0"
+                     Margin="5"
+                     VerticalAlignment="Center"
+                     Content="{x:Static local:CommonStrings.SolutionName}"
+                     ToolTip="{x:Static local:CommonStrings.SolutionNameTooltip}" />
+              <TextBox Grid.Row="3"
+                       Grid.Column="1"
+                       Margin="5"
+                       VerticalContentAlignment="Center"
+                       Text="{Binding Path=ProcessOptionsVM.SolutionName}" />
+
+              <Label Grid.Row="4"
+                     Grid.Column="0"
+                     Margin="5"
+                     VerticalAlignment="Center"
+                     Content="{x:Static local:CommonStrings.RootNamespace}"
+                     ToolTip="{x:Static local:CommonStrings.RootNamespaceTooltip}" />
+              <TextBox Grid.Row="4"
+                       Grid.Column="1"
+                       Margin="5"
+                       VerticalContentAlignment="Center"
+                       Text="{Binding Path=ProcessOptionsVM.RootNamespace}" />
+
+              <Label Grid.Row="5"
+                     Grid.Column="0"
+                     Margin="5"
+                     VerticalAlignment="Center"
+                     Content="{x:Static local:CommonStrings.TypeToScan}"
+                     ToolTip="{x:Static local:CommonStrings.TypeToScanTooltip}" />
+              <TextBox Grid.Row="5"
+                       Grid.Column="1"
+                       Margin="5"
+                       VerticalContentAlignment="Center"
+                       TextWrapping="Wrap"
+                       MinHeight="25"
+                       Height="Auto"
+                       Text="{Binding Path=ProcessOptionsVM.ScanTypeName}" />
+              <ComboBox x:Name="TypeSelectionBox" Grid.Row="5"
+                      Grid.Column="1"
+                      Grid.ColumnSpan="2"
+                      Margin="5"
+                      VerticalContentAlignment="Center"
+                      IsEditable="True"
+                      Visibility="Hidden"
+                      DropDownClosed="TypeSelectionBox_DropDownClosed"
+                      Text="{Binding Path=ProcessOptionsVM.ScanTypeName}"
+                      ItemsSource="{Binding Path=ProcessOptionsVM.MainTypeNames}"/>
+              <Button x:Name="ShowTypeSelectionBox" Grid.Row="5"
+                      Grid.Column="2"
+                      Margin="5"
+                      Content="..."
+                      Click="ShowTypeSelectionBox_Click" />
+                
+              <Label Grid.Row="6"
+                     Grid.Column="0"
+                     Margin="5"
+                     VerticalAlignment="Center"
+                     Content="{x:Static local:CommonStrings.FileWithDocs}"
+                     ToolTip="{x:Static local:CommonStrings.FileWithDocsTooltip}" />
+              <TextBox Grid.Row="6"
+                       Grid.Column="1"
+                       Margin="5"
+                       VerticalContentAlignment="Center"
+                       TextWrapping="Wrap"
+                       MinHeight="25"
+                       Height="Auto"
+                       Text="{Binding Path=ProcessOptionsVM.ModelDocFileName}" />
+              <Button Grid.Row="6"
+                      Grid.Column="2"
+                      Margin="5"
+                      Content="..."
+                      Command="{Binding Path=ProcessOptionsVM.BrowseModelDocFileCommand}" />
+
+              <Label Grid.Row="7"
+                     Grid.Column="0"
+                     Margin="5"
+                     VerticalAlignment="Center"
+                     Content="{x:Static local:CommonStrings.CodeOutputPath}" />
+              <TextBox Grid.Row="7"
+                       Grid.Column="1"
+                       Margin="5"
+                       VerticalContentAlignment="Center"
+                       TextWrapping="Wrap"
+                       MinHeight="25"
+                       Height="Auto"
+                       Text="{Binding Path=ProcessOptionsVM.CodeOutputPath}" />
+              <Button Grid.Row="7"
+                      Grid.Column="2"
+                      Margin="5"
+                      Content="..."
+                      Command="{Binding Path=ProcessOptionsVM.BrowseCodeOutputPathCommand}" />
+
+            </Grid>
+          </Expander>
+        </Border>
+        <Grid x:Name="ProcessControlGrid"
+              Grid.Row="1">
           <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
             <ColumnDefinition Width="Auto" />

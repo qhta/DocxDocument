@@ -148,8 +148,6 @@ public class ConverterGenerator : BaseCodeGenerator
 
   private bool GenerateConverterClass(TypeInfo typeInfo, string typeName)
   {
-    if (typeName == "Rsids")
-      TestTools.Stop();
     var aNamespace = typeInfo.GetTargetNamespace();
     if (aNamespace != null)
     {
@@ -193,8 +191,6 @@ public class ConverterGenerator : BaseCodeGenerator
 
   private bool GenerateCreateModelElementMethod(TypeInfo typeInfo)
   {
-    if (typeInfo.Name == "Rsids")
-      TestTools.Stop();
     var origTypeName = typeInfo.GetFullName(false, true, true);
     var targetType = typeInfo.GetConversionTargetOrSelf();
     var targetTypeName = targetType.GetFullName(true, true, true);
@@ -291,8 +287,6 @@ public class ConverterGenerator : BaseCodeGenerator
 
   private bool GenerateAcceptedPropertiesConversion(TypeInfo typeInfo, string? inNamespace)
   {
-    if (typeInfo.Name == "Rsids")
-      TestTools.Stop();
     var ok = true;
     if (typeInfo.AcceptedProperties(PPS.CodeGen).Any())
       foreach (var prop in typeInfo.AcceptedProperties(PPS.CodeGen))
@@ -356,8 +350,6 @@ public class ConverterGenerator : BaseCodeGenerator
 
   private bool GeneratePropertyGetter(PropInfo prop)
   {
-    if (prop.Name == "Items" && prop.DeclaringType?.Name == "Fonts")
-      TestTools.Stop();
     var ok = false;
     var origPropName = prop.Name;
     var origTypeName = prop.DeclaringType?.GetFullName(false, true, true) ?? "";
@@ -404,8 +396,6 @@ public class ConverterGenerator : BaseCodeGenerator
 
   private bool GeneratePropertyComparer(PropInfo prop)
   {
-    if (prop.Name == "UIPriority")
-      TestTools.Stop();
     var ok = false;
     var origPropName = prop.Name;
     var origTypeName = prop.DeclaringType?.GetFullName(false, true, true) ?? "";
@@ -2147,8 +2137,6 @@ public class ConverterGenerator : BaseCodeGenerator
   #region GenerateCollectionOfElements code
   private bool GenerateCollectionOfElementsGetCode(PropInfo prop)
   {
-    if (prop.Name == "Items")
-      TestTools.Stop();
     var origPropTypeName = prop.PropertyType.GetFullName(false, true, true);
     var origPropType = prop.PropertyType;
     var origItemType = origPropType.GetGenericArguments().FirstOrDefault();
@@ -2434,8 +2422,6 @@ public class ConverterGenerator : BaseCodeGenerator
 
   private string ConverterGetMethodName(PropInfo prop)
   {
-    if (prop.Name == "Items" && prop.DeclaringType?.Name == "Rsids")
-      TestTools.Stop();
     var targetPropType = prop.PropertyType.GetConversionTargetOrSelf();
     var origPropType = prop.PropertyType;
     return ConverterGetMethodName(targetPropType, origPropType);
