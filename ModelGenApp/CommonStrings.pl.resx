@@ -560,8 +560,8 @@ zdefiniowanej w typie wyliczeniowym.</value>
   <data name="ShowTargetNamespaces" xml:space="preserve">
     <value>Pokaż docelowe przestrzenie nazw</value>
   </data>
-  <data name="ModelCodeOutputPath" xml:space="preserve">
-    <value>Ścieżka kodu modelu</value>
+  <data name="CodeOutputPath" xml:space="preserve">
+    <value>Ścieżka kodu wynikowego</value>
   </data>
   <data name="CodeGen" xml:space="preserve">
     <value>Generowanie kodu</value>
@@ -668,5 +668,41 @@ Użyj znaku '*' aby dopasować wzorzec do wielu znaków.</value>
   </data>
   <data name="RemovedProperties" xml:space="preserve">
     <value>Właściwości usunięte</value>
+  </data>
+  <data name="OptionsExpanderHeader" xml:space="preserve">
+    <value>Główne opcje</value>
+  </data>
+  <data name="RootNamespace" xml:space="preserve">
+    <value>Przestrzeń nazw</value>
+  </data>
+  <data name="RootNamespaceTooltip" xml:space="preserve">
+    <value>Kod wynikowych typów będzie generowany do tej przestrzeni nazw i jej podrzędnych przestrzeni.</value>
+  </data>
+  <data name="SolutionName" xml:space="preserve">
+    <value>Nazwa rozwiązania</value>
+  </data>
+  <data name="SolutionNameTooltip" xml:space="preserve">
+    <value>Nazwa generowanego rozwiązania C#</value>
+  </data>
+  <data name="ProjectName" xml:space="preserve">
+    <value>Nazwa projektu</value>
+  </data>
+  <data name="ProjectNameTooltip" xml:space="preserve">
+    <value>Nazwa generowanego projektu C#</value>
+  </data>
+  <data name="AppDataFolder" xml:space="preserve">
+    <value>Folder danych aplikacji</value>
+  </data>
+  <data name="AppDataFolderTooltip" xml:space="preserve">
+    <value>Podfolder folderu AppData zawierający konfigurację modelu</value>
+  </data>
+  <data name="Model_configuration_not_defined" xml:space="preserve">
+    <value>Niezdefiniowana konfiguracja modelu.</value>
+  </data>
+  <data name="Project_name_not_defined" xml:space="preserve">
+    <value>Nie określono nazwy projektu</value>
+  </data>
+  <data name="Code_output_path_not_defined" xml:space="preserve">
+    <value>Nie określono ścieżki wyjściowej kodu</value>
   </data>
 </root>

@@ -60,6 +60,8 @@ public class TypeInfo : ModelElement
 
   public string GetTargetNamespace()
   {
+    if (ModelConfig.Instance == null)
+      throw new System.InvalidOperationException(CommonStrings.Model_configuration_not_defined);
     if (TargetNamespace != null) return TargetNamespace;
     if (Owner is Namespace nspace)
     {
@@ -318,7 +320,7 @@ public class TypeInfo : ModelElement
 
   public static string? NamespaceShortcut(string ns)
   {
-    return ModelConfig.NamespaceShortcut(ns);
+    return ModelConfig.Instance?.NamespaceShortcut(ns);
   }
 
   public override string ToString() => $"{OriginalNamespace}.{OriginalName}";

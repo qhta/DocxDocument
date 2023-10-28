@@ -309,6 +309,9 @@ public static class OpenXmlMetadataReader
   /// <returns>Common type name or items names joined with '|'.</returns>
   private static string SetItemsParticleName(ItemsParticle itemsParticle)
   {
+    if (ModelConfig.Instance == null)
+      throw new System.InvalidOperationException(CommonStrings.Model_configuration_not_defined);
+
     List<string> itemNames = new List<string>();
     foreach (var item in itemsParticle.Items)
     {
@@ -382,6 +385,9 @@ public static class OpenXmlMetadataReader
   /// <returns>True if could get common type name</returns>
   private static bool TryGetCommonTypeName(string name, [NotNullWhen(true)] out string? newName)
   {
+    if (ModelConfig.Instance == null)
+      throw new System.InvalidOperationException(CommonStrings.Model_configuration_not_defined);
+
     string prefix = string.Empty;
     if (ModelConfig.Instance.TryGetCommonTypeName(name, out newName))
       return true;
@@ -412,6 +418,9 @@ public static class OpenXmlMetadataReader
   /// <exception cref="System.InvalidOperationException">Raised when unexpected data is found.</exception>
   private static void CreateConstraints(PropInfo propInfo, IEnumerable<DXFwork.IValidator> validators)
   {
+    if (ModelConfig.Instance == null)
+      throw new System.InvalidOperationException(CommonStrings.Model_configuration_not_defined);
+
     foreach (var validator in validators)
     {
       if (validator is DXFwork.StringValidator stringValidator)

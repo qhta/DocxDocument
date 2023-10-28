@@ -124,6 +124,24 @@ namespace ModelGenApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to App data folder.
+        /// </summary>
+        public static string AppDataFolder {
+            get {
+                return ResourceManager.GetString("AppDataFolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Subfolder of AppData folder containing model configuration.
+        /// </summary>
+        public static string AppDataFolderTooltip {
+            get {
+                return ResourceManager.GetString("AppDataFolderTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Base type.
         /// </summary>
         public static string BaseType {
@@ -169,6 +187,15 @@ namespace ModelGenApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Code output path is not defined.
+        /// </summary>
+        public static string Code_output_path_not_defined {
+            get {
+                return ResourceManager.GetString("Code_output_path_not_defined", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Code compilation.
         /// </summary>
         public static string CodeCompilation {
@@ -183,6 +210,15 @@ namespace ModelGenApp {
         public static string CodeGen {
             get {
                 return ResourceManager.GetString("CodeGen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Code output path.
+        /// </summary>
+        public static string CodeOutputPath {
+            get {
+                return ResourceManager.GetString("CodeOutputPath", resourceCulture);
             }
         }
         
@@ -831,20 +867,20 @@ namespace ModelGenApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Model configuration is not defined..
+        /// </summary>
+        public static string Model_configuration_not_defined {
+            get {
+                return ResourceManager.GetString("Model_configuration_not_defined", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Model configuration saved in {0}.
         /// </summary>
         public static string Model_configuration_saved_in_0 {
             get {
                 return ResourceManager.GetString("Model_configuration_saved_in_0", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Model output path.
-        /// </summary>
-        public static string ModelCodeOutputPath {
-            get {
-                return ResourceManager.GetString("ModelCodeOutputPath", resourceCulture);
             }
         }
         
@@ -899,6 +935,15 @@ namespace ModelGenApp {
         public static string NoError {
             get {
                 return ResourceManager.GetString("NoError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Main options.
+        /// </summary>
+        public static string OptionsExpanderHeader {
+            get {
+                return ResourceManager.GetString("OptionsExpanderHeader", resourceCulture);
             }
         }
         
@@ -1017,6 +1062,33 @@ namespace ModelGenApp {
         public static string Process_phases_ {
             get {
                 return ResourceManager.GetString("Process phases_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Project name not defined.
+        /// </summary>
+        public static string Project_name_not_defined {
+            get {
+                return ResourceManager.GetString("Project_name_not_defined", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Project name.
+        /// </summary>
+        public static string ProjectName {
+            get {
+                return ResourceManager.GetString("ProjectName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name of generated C# project.
+        /// </summary>
+        public static string ProjectNameTooltip {
+            get {
+                return ResourceManager.GetString("ProjectNameTooltip", resourceCulture);
             }
         }
         
@@ -1166,6 +1238,24 @@ namespace ModelGenApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Root namespace.
+        /// </summary>
+        public static string RootNamespace {
+            get {
+                return ResourceManager.GetString("RootNamespace", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output code types will be generated into this namespace and its sub-namespace..
+        /// </summary>
+        public static string RootNamespaceTooltip {
+            get {
+                return ResourceManager.GetString("RootNamespaceTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Save.
         /// </summary>
         public static string Save {
@@ -1288,6 +1378,24 @@ namespace ModelGenApp {
         public static string ShowTargetNamespaces {
             get {
                 return ResourceManager.GetString("ShowTargetNamespaces", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Solution name.
+        /// </summary>
+        public static string SolutionName {
+            get {
+                return ResourceManager.GetString("SolutionName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name of generated C# solution.
+        /// </summary>
+        public static string SolutionNameTooltip {
+            get {
+                return ResourceManager.GetString("SolutionNameTooltip", resourceCulture);
             }
         }
         

@@ -73,18 +73,26 @@ public class MainViewModel : ViewModel
 
   private void ProcessOptionsVM_PropertyChanged(object? sender, System.ComponentModel.PropertyChangedEventArgs args)
   {
-    if (args.PropertyName == nameof(ProcessOptionsVM.StopAtPhase))
-      if (ModelCreator != null)
+    if (sender is ProcessOptionsViewModel processOptionsVM)
+    {
+      if (args.PropertyName == nameof(ProcessOptionsVM.AppDataFolder))
       {
-        var phaseNum = (sender as ProcessOptionsViewModel)?.StopAtPhase;
-        if (phaseNum is int n)
-        {
-          ModelCreator.StopAtPhase = (PPS)Enum.ToObject(typeof(PPS), n);
-          var options = this.ProcessOptionsVM.Model;
-          options.StopAtPhase =n;
-          ProcessOptionsMgr.SaveInstance((ProcessOptions)options);
-        }
+        ModelConfig.LoadInstance(processOptionsVM.AppDataFolder);
       }
+      else
+      if (args.PropertyName == nameof(ProcessOptionsVM.StopAtPhase))
+        if (ModelCreator != null)
+        {
+          var phaseNum = processOptionsVM.StopAtPhase;
+          if (phaseNum is int n)
+          {
+            ModelCreator.StopAtPhase = (PPS)Enum.ToObject(typeof(PPS), n);
+            var options = this.ProcessOptionsVM.Model;
+            options.StopAtPhase = n;
+            ProcessOptionsMgr.SaveInstance((ProcessOptions)options);
+          }
+        }
+    }
     StartProcessCommand.NotifyCanExecuteChanged();
     CommandManager.InvalidateRequerySuggested();
   }
@@ -99,6 +107,8 @@ public class MainViewModel : ViewModel
 
   protected void OpenConfig(string parameter)
   {
+      if (ModelConfig.Instance==null)
+        throw new InvalidOperationException(CommonStrings.Model_configuration_not_defined);
     if (parameter == "Namespaces")
       WindowsManager.ShowWindow<ModelConfigWindow>(new NamespaceConfigListViewModel(ModelConfig.Instance));
     else
@@ -132,7 +142,9 @@ public class MainViewModel : ViewModel
 
   public bool CanStartProcess()
   {
-    return ProcessOptionsVM.StopAtPhase > 0 && !ProcessStarted;
+    return ProcessOptionsVM.ProjectName!=null && ProcessOptionsVM.SolutionName!=null && ProcessOptionsVM.RootNamespace!=null
+      && ProcessOptionsVM.ScanTypeName!=null /*&& ProcessOptionsVM.ModelDocFileName!=null*/ && ProcessOptionsVM.CodeOutputPath != null
+      && ProcessOptionsVM.StopAtPhase > 0 && !ProcessStarted;
   }
 
   public async void StartProcess()
@@ -142,6 +154,10 @@ public class MainViewModel : ViewModel
 
   public async Task StartProcess(bool continueProcess)
   {
+    if (ProcessOptionsVM.ProjectName==null)
+      throw new System.InvalidOperationException(CommonStrings.Project_name_not_defined);
+    if (ProcessOptionsVM.CodeOutputPath==null)
+      throw new System.InvalidOperationException(CommonStrings.Code_output_path_not_defined);
     ProcessStarted = true;
     var options = this.ProcessOptionsVM.Model;
     ProcessOptionsMgr.SaveInstance((ProcessOptions)options);
@@ -154,8 +170,10 @@ public class MainViewModel : ViewModel
       //filePath = Path.GetDirectoryName(filePath) ?? "";
       //filePath = Path.GetDirectoryName(filePath) ?? "";
       //filePath = Path.Combine(filePath, @"ModelGen\DocumentModel");
-      var configPath = Path.GetDirectoryName(ModelGenDataConfig.ModelConfig.Instance.GetFilename());
-      ModelCreator = new ModelCreator("DocumentModel", this.ProcessOptionsVM.ModelCodeOutputPath, configPath);
+      if (ModelConfig.Instance==null)
+        throw new InvalidOperationException(CommonStrings.Model_configuration_not_defined);
+      var configPath = ModelConfig.Instance.GetConfigPath();
+      ModelCreator = new ModelCreator(ProcessOptionsVM.ProjectName, this.ProcessOptionsVM.CodeOutputPath, configPath);
     }
     if (ModelCreator != null)
     {

@@ -12,27 +12,39 @@ public partial class MainWindow : Window
     ObservableObject.CommonDispatcher = new DispatcherBridge(Dispatcher.CurrentDispatcher);
     Command.CommandManager = new CommandManagerBridge();
     InitializeComponent();
-    MainViewModel = new MainViewModel();
-    DataContext = MainViewModel;
-    var modelDataFilename = ModelConfig.Instance.GetFilename();
-    if (File.Exists(modelDataFilename))
+
+    var options = ProcessOptionsMgr.GetInstance();
+
+    //ModelConfig.SetDataFolder(options.AppDataFolder ?? "");
+    var modelDataFilename = ModelConfig.GetFilename(options.AppDataFolder);
+    if (!File.Exists(modelDataFilename))
+    {
+      ModelConfig.CreateInstance(options.AppDataFolder);
+      if (ModelConfig.Instance == null)
+        throw new InvalidOperationException(CommonStrings.Model_configuration_not_defined);
       try
       {
-        ModelConfig.Instance.LoadData(modelDataFilename);
-      }
-      catch (Exception ex)
-      {
-        MessageBox.Show($"Error while reading {modelDataFilename}: " + ex.ToString());
-      }
-    else
-      try
-      {
-        ModelConfig.Instance.SaveData(modelDataFilename);
+        ModelConfig.Instance.SaveDataInFile(modelDataFilename);
       }
       catch (Exception ex)
       {
         MessageBox.Show($"Error while writing {modelDataFilename}: " + ex.ToString());
       }
+    }
+    else
+    {
+      try
+      {
+        ModelConfig.LoadInstance(options.AppDataFolder);
+      }
+      catch (Exception ex)
+      {
+        MessageBox.Show($"Error while reading {modelDataFilename}: " + ex.ToString());
+      }
+    }
+
+    MainViewModel = new MainViewModel();
+    DataContext = MainViewModel;
   }
 
   public MainViewModel MainViewModel { get; }

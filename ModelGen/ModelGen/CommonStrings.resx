@@ -267,4 +267,10 @@
   <data name="InvalidProperties" xml:space="preserve">
     <value>Invalid properties</value>
   </data>
+  <data name="Model_configuration_not_defined" xml:space="preserve">
+    <value>Model configuration is not defined.</value>
+  </data>
+  <data name="Scan_type_name_not_defined" xml:space="preserve">
+    <value>Scan type name not defined</value>
+  </data>
 </root>

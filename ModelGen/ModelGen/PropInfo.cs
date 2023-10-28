@@ -90,6 +90,8 @@ public class PropInfo : MemberElement
 
   public PropInfo(PropertyInfo propertyInfo) : this(propertyInfo.Name, propertyInfo.PropertyType)
   {
+    if (ModelConfig.Instance == null)
+      throw new System.InvalidOperationException(CommonStrings.Model_configuration_not_defined);
     PropertyInfo = propertyInfo;
     //var getMethod = propertyInfo.GetMethod;
     //if (getMethod != null)
@@ -123,6 +125,8 @@ public class PropInfo : MemberElement
 
   public PropInfo(string name, TypeInfo typeInfo) : this(name, typeInfo.Type)
   {
+    if (ModelConfig.Instance == null)
+      throw new System.InvalidOperationException(CommonStrings.Model_configuration_not_defined);
     if (ModelConfig.Instance.ExcludedProperties.Contains(typeInfo.Name))
       SetRejected(PPS.ScanSource);
   }

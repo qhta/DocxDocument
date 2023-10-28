@@ -54,6 +54,8 @@ public abstract class BaseCreator
 
   public void RunProcess(ProcessOptions options, bool continueProcess = false)
   {
+    if (options.ScanTypeName == null)
+      throw new InvalidOperationException(CommonStrings.Scan_type_name_not_defined);
     if (continueProcess && PhaseDone > PPS.None)
     {
       Debug.Assert(RootType != null);
