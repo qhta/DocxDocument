@@ -28,6 +28,6 @@ public partial class DocumentBackground
   /// <summary>
   ///   Background.
   /// </summary>
-  public DocumentModel.Vml.Background? Background { get; set; }
+  public DMVML.Background? Background { get; set; }
   
 }

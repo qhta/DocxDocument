@@ -10,6 +10,6 @@ public partial class CustomXmlProperties
   /// <summary>
   ///   Custom XML Element Placeholder Text.
   /// </summary>
-  public DocumentModel.Wordprocessing.CustomXmlPlaceholder? CustomXmlPlaceholder { get; set; }
+  public DMW.CustomXmlPlaceholder? CustomXmlPlaceholder { get; set; }
   
 }

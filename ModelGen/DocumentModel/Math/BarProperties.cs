@@ -10,12 +10,12 @@ public partial class BarProperties
   /// <summary>
   ///   Position (Bar).
   /// </summary>
-  public DocumentModel.Math.Position? Position { get; set; }
+  public DMM.Position? Position { get; set; }
   
   
   /// <summary>
   ///   ControlProperties.
   /// </summary>
-  public DocumentModel.Math.ControlProperties? ControlProperties { get; set; }
+  public DMM.ControlProperties? ControlProperties { get; set; }
   
 }

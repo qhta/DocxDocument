@@ -10,6 +10,6 @@ public partial class PresetGeometry
   /// <summary>
   ///   List of Shape Adjust Values.
   /// </summary>
-  public DocumentModel.Drawings.AdjustValueList? AdjustValueList { get; set; }
+  public DMD.AdjustValueList? AdjustValueList { get; set; }
   
 }

@@ -16,6 +16,6 @@ public partial class MatrixColumnProperties
   /// <summary>
   ///   Matrix Column Justification.
   /// </summary>
-  public DocumentModel.Math.HorizontalAlignmentKind? MatrixColumnJustification { get; set; }
+  public DMM.HorizontalAlignmentKind? MatrixColumnJustification { get; set; }
   
 }

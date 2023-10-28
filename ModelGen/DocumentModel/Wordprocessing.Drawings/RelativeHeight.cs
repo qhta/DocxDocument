@@ -10,6 +10,6 @@ public partial class RelativeHeight
   /// <summary>
   ///   PercentageHeight.
   /// </summary>
-  public DocumentModel.Wordprocessing.Drawings.PercentageHeight? PercentageHeight { get; set; }
+  public DMWD.PercentageHeight? PercentageHeight { get; set; }
   
 }

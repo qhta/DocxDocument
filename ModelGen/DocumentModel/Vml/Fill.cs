@@ -148,6 +148,6 @@ public partial class Fill
   /// <summary>
   ///   FillExtendedProperties.
   /// </summary>
-  public DocumentModel.Vml.Office.FillExtendedProperties? FillExtendedProperties { get; set; }
+  public DMVML.FillExtendedProperties? FillExtendedProperties { get; set; }
   
 }

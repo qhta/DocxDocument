@@ -28,30 +28,30 @@ public partial class Shape3DType
   /// <summary>
   ///   Top Bevel.
   /// </summary>
-  public DocumentModel.Drawings.BevelTop? BevelTop { get; set; }
+  public DMD.BevelTop? BevelTop { get; set; }
   
   
   /// <summary>
   ///   Bottom Bevel.
   /// </summary>
-  public DocumentModel.Drawings.BevelBottom? BevelBottom { get; set; }
+  public DMD.BevelBottom? BevelBottom { get; set; }
   
   
   /// <summary>
   ///   Extrusion Color.
   /// </summary>
-  public DocumentModel.Drawings.ExtrusionColor? ExtrusionColor { get; set; }
+  public DMD.ExtrusionColor? ExtrusionColor { get; set; }
   
   
   /// <summary>
   ///   Contour Color.
   /// </summary>
-  public DocumentModel.Drawings.ContourColor? ContourColor { get; set; }
+  public DMD.ContourColor? ContourColor { get; set; }
   
   
   /// <summary>
   ///   ExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.ExtensionList? ExtensionList { get; set; }
+  public DMD.ExtensionList? ExtensionList { get; set; }
   
 }

@@ -10,7 +10,7 @@ public partial class Marker
   /// <summary>
   ///   Symbol.
   /// </summary>
-  public DocumentModel.Drawings.Charts.MarkerStyleKind? Symbol { get; set; }
+  public DMDC.MarkerStyleKind? Symbol { get; set; }
   
   
   /// <summary>
@@ -22,12 +22,12 @@ public partial class Marker
   /// <summary>
   ///   ChartShapeProperties.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ChartShapeProperties? ChartShapeProperties { get; set; }
+  public DMDC.ChartShapeProperties? ChartShapeProperties { get; set; }
   
   
   /// <summary>
   ///   Chart Extensibility.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ExtensionList? ExtensionList { get; set; }
+  public DMDC.ExtensionList? ExtensionList { get; set; }
   
 }

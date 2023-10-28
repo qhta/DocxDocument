@@ -16,18 +16,18 @@ public partial class SurfaceType
   /// <summary>
   ///   ShapeProperties.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ShapeProperties? ShapeProperties { get; set; }
+  public DMDC.ShapeProperties? ShapeProperties { get; set; }
   
   
   /// <summary>
   ///   Picture Options.
   /// </summary>
-  public DocumentModel.Drawings.Charts.PictureOptions? PictureOptions { get; set; }
+  public DMDC.PictureOptions? PictureOptions { get; set; }
   
   
   /// <summary>
   ///   Chart Extensibility.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ExtensionList? ExtensionList { get; set; }
+  public DMDC.ExtensionList? ExtensionList { get; set; }
   
 }

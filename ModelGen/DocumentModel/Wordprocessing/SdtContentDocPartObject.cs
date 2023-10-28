@@ -6,10 +6,10 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class SdtContentDocPartObject
 {
-  public DocumentModel.Wordprocessing.DocPartGallery? DocPartGallery { get; set; }
+  public DMW.DocPartGallery? DocPartGallery { get; set; }
   
-  public DocumentModel.Wordprocessing.DocPartCategory? DocPartCategory { get; set; }
+  public DMW.DocPartCategory? DocPartCategory { get; set; }
   
-  public DocumentModel.Wordprocessing.DocPartUnique? DocPartUnique { get; set; }
+  public DMW.DocPartUnique? DocPartUnique { get; set; }
   
 }

@@ -22,6 +22,6 @@ public partial class NumericPoint
   /// <summary>
   ///   Numeric Value.
   /// </summary>
-  public DocumentModel.Drawings.Charts.NumericValue? NumericValue { get; set; }
+  public DMDC.NumericValue? NumericValue { get; set; }
   
 }

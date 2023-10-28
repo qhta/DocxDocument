@@ -10,6 +10,6 @@ public partial class Delimiter
   /// <summary>
   ///   Delimiter Properties.
   /// </summary>
-  public DocumentModel.Math.DelimiterProperties? DelimiterProperties { get; set; }
+  public DMM.DelimiterProperties? DelimiterProperties { get; set; }
   
 }

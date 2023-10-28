@@ -16,30 +16,30 @@ public partial class StyleLabel
   /// <summary>
   ///   3-D Scene.
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.Scene3D? Scene3D { get; set; }
+  public DMDD.Scene3D? Scene3D { get; set; }
   
   
   /// <summary>
   ///   3-D Shape Properties.
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.Shape3D? Shape3D { get; set; }
+  public DMDD.Shape3D? Shape3D { get; set; }
   
   
   /// <summary>
   ///   Text Properties.
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.TextProperties? TextProperties { get; set; }
+  public DMDD.TextProperties? TextProperties { get; set; }
   
   
   /// <summary>
   ///   Shape Style.
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.Style? Style { get; set; }
+  public DMDD.Style? Style { get; set; }
   
   
   /// <summary>
   ///   ExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.ExtensionList? ExtensionList { get; set; }
+  public DMDD.ExtensionList? ExtensionList { get; set; }
   
 }

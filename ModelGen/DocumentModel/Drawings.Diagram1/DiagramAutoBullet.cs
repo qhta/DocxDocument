@@ -22,24 +22,24 @@ public partial class DiagramAutoBullet
   /// <summary>
   ///   No Bullet.
   /// </summary>
-  public DocumentModel.Drawings.NoBullet? NoBullet { get; set; }
+  public DMD.NoBullet? NoBullet { get; set; }
   
   
   /// <summary>
   ///   Auto-Numbered Bullet.
   /// </summary>
-  public DocumentModel.Drawings.AutoNumberedBullet? AutoNumberedBullet { get; set; }
+  public DMD.AutoNumberedBullet? AutoNumberedBullet { get; set; }
   
   
   /// <summary>
   ///   Character Bullet.
   /// </summary>
-  public DocumentModel.Drawings.CharacterBullet? CharacterBullet { get; set; }
+  public DMD.CharacterBullet? CharacterBullet { get; set; }
   
   
   /// <summary>
   ///   Picture Bullet.
   /// </summary>
-  public DocumentModel.Drawings.PictureBullet? PictureBullet { get; set; }
+  public DMD.PictureBullet? PictureBullet { get; set; }
   
 }

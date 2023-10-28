@@ -10,7 +10,7 @@ public partial class DropDownListFormField
   /// <summary>
   ///   Drop-Down List Selection.
   /// </summary>
-  public DocumentModel.Wordprocessing.DropDownListSelection? DropDownListSelection { get; set; }
+  public DMW.DropDownListSelection? DropDownListSelection { get; set; }
   
   
   /// <summary>

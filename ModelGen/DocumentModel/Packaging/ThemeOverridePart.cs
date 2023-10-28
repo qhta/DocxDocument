@@ -14,6 +14,6 @@ public partial class ThemeOverridePart
   /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.Drawings.ThemeOverride? ThemeOverride { get; set; }
+  public DMD.ThemeOverride? ThemeOverride { get; set; }
   
 }

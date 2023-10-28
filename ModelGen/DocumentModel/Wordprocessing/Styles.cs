@@ -10,12 +10,12 @@ public partial class Styles
   /// <summary>
   ///   Document Default Paragraph and Run Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.DocDefaults? DocDefaults { get; set; }
+  public DMW.DocDefaults? DocDefaults { get; set; }
   
   
   /// <summary>
   ///   Latent Style Information.
   /// </summary>
-  public DocumentModel.Wordprocessing.LatentStyles? LatentStyles { get; set; }
+  public DMW.LatentStyles? LatentStyles { get; set; }
   
 }

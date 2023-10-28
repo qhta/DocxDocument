@@ -6,48 +6,48 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class RunProperties
 {
-  public DocumentModel.Drawings.Outline? Outline { get; set; }
+  public DMD.Outline? Outline { get; set; }
   
-  public DocumentModel.Drawings.NoFill? NoFill { get; set; }
+  public DMD.NoFill? NoFill { get; set; }
   
-  public DocumentModel.Drawings.SolidFill? SolidFill { get; set; }
+  public DMD.SolidFill? SolidFill { get; set; }
   
-  public DocumentModel.Drawings.GradientFill? GradientFill { get; set; }
+  public DMD.GradientFill? GradientFill { get; set; }
   
-  public DocumentModel.Drawings.BlipFill? BlipFill { get; set; }
+  public DMD.BlipFill? BlipFill { get; set; }
   
-  public DocumentModel.Drawings.PatternFill? PatternFill { get; set; }
+  public DMD.PatternFill? PatternFill { get; set; }
   
-  public DocumentModel.Drawings.GroupFill? GroupFill { get; set; }
+  public DMD.GroupFill? GroupFill { get; set; }
   
-  public DocumentModel.Drawings.EffectList? EffectList { get; set; }
+  public DMD.EffectList? EffectList { get; set; }
   
-  public DocumentModel.Drawings.EffectDag? EffectDag { get; set; }
+  public DMD.EffectDag? EffectDag { get; set; }
   
-  public DocumentModel.Drawings.Highlight? Highlight { get; set; }
+  public DMD.Highlight? Highlight { get; set; }
   
-  public DocumentModel.Drawings.UnderlineFollowsText? UnderlineFollowsText { get; set; }
+  public DMD.UnderlineFollowsText? UnderlineFollowsText { get; set; }
   
-  public DocumentModel.Drawings.Underline? Underline { get; set; }
+  public DMD.Underline? Underline { get; set; }
   
-  public DocumentModel.Drawings.UnderlineFillText? UnderlineFillText { get; set; }
+  public DMD.UnderlineFillText? UnderlineFillText { get; set; }
   
-  public DocumentModel.Drawings.UnderlineFill? UnderlineFill { get; set; }
+  public DMD.UnderlineFill? UnderlineFill { get; set; }
   
-  public DocumentModel.Drawings.LatinFont? LatinFont { get; set; }
+  public DMD.LatinFont? LatinFont { get; set; }
   
-  public DocumentModel.Drawings.EastAsianFont? EastAsianFont { get; set; }
+  public DMD.EastAsianFont? EastAsianFont { get; set; }
   
-  public DocumentModel.Drawings.ComplexScriptFont? ComplexScriptFont { get; set; }
+  public DMD.ComplexScriptFont? ComplexScriptFont { get; set; }
   
-  public DocumentModel.Drawings.SymbolFont? SymbolFont { get; set; }
+  public DMD.SymbolFont? SymbolFont { get; set; }
   
-  public DocumentModel.Drawings.HyperlinkOnClick? HyperlinkOnClick { get; set; }
+  public DMD.HyperlinkOnClick? HyperlinkOnClick { get; set; }
   
-  public DocumentModel.Drawings.HyperlinkOnMouseOver? HyperlinkOnMouseOver { get; set; }
+  public DMD.HyperlinkOnMouseOver? HyperlinkOnMouseOver { get; set; }
   
   public Boolean? RightToLeft { get; set; }
   
-  public DocumentModel.Drawings.ExtensionList? ExtensionList { get; set; }
+  public DMD.ExtensionList? ExtensionList { get; set; }
   
 }

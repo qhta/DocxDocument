@@ -10,12 +10,12 @@ public partial class RadicalProperties
   /// <summary>
   ///   Hide Degree.
   /// </summary>
-  public DocumentModel.Math.HideDegree? HideDegree { get; set; }
+  public DMM.HideDegree? HideDegree { get; set; }
   
   
   /// <summary>
   ///   ControlProperties.
   /// </summary>
-  public DocumentModel.Math.ControlProperties? ControlProperties { get; set; }
+  public DMM.ControlProperties? ControlProperties { get; set; }
   
 }

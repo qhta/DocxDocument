@@ -10,36 +10,36 @@ public partial class Fill
   /// <summary>
   ///   NoFill.
   /// </summary>
-  public DocumentModel.Drawings.NoFill? NoFill { get; set; }
+  public DMD.NoFill? NoFill { get; set; }
   
   
   /// <summary>
   ///   SolidFill.
   /// </summary>
-  public DocumentModel.Drawings.SolidFill? SolidFill { get; set; }
+  public DMD.SolidFill? SolidFill { get; set; }
   
   
   /// <summary>
   ///   GradientFill.
   /// </summary>
-  public DocumentModel.Drawings.GradientFill? GradientFill { get; set; }
+  public DMD.GradientFill? GradientFill { get; set; }
   
   
   /// <summary>
   ///   BlipFill.
   /// </summary>
-  public DocumentModel.Drawings.BlipFill? BlipFill { get; set; }
+  public DMD.BlipFill? BlipFill { get; set; }
   
   
   /// <summary>
   ///   Pattern Fill.
   /// </summary>
-  public DocumentModel.Drawings.PatternFill? PatternFill { get; set; }
+  public DMD.PatternFill? PatternFill { get; set; }
   
   
   /// <summary>
   ///   Group Fill.
   /// </summary>
-  public DocumentModel.Drawings.GroupFill? GroupFill { get; set; }
+  public DMD.GroupFill? GroupFill { get; set; }
   
 }

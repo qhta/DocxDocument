@@ -12,6 +12,6 @@ public partial class NonVisualGroupDrawingShapePropsExtension
   /// </summary>
   public String? Uri { get; set; }
   
-  public DocumentModel.Drawings.NonVisualGroupProperties? NonVisualGroupProperties { get; set; }
+  public DMD.NonVisualGroupProperties? NonVisualGroupProperties { get; set; }
   
 }

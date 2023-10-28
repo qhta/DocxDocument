@@ -10,12 +10,12 @@ public partial class PatternFill
   /// <summary>
   ///   Foreground color.
   /// </summary>
-  public DocumentModel.Drawings.ForegroundColor? ForegroundColor { get; set; }
+  public DMD.ForegroundColor? ForegroundColor { get; set; }
   
   
   /// <summary>
   ///   Background color.
   /// </summary>
-  public DocumentModel.Drawings.BackgroundColor? BackgroundColor { get; set; }
+  public DMD.BackgroundColor? BackgroundColor { get; set; }
   
 }

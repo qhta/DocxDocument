@@ -10,48 +10,48 @@ public partial class EffectList
   /// <summary>
   ///   Blur Effect.
   /// </summary>
-  public DocumentModel.Drawings.Blur? Blur { get; set; }
+  public DMD.Blur? Blur { get; set; }
   
   
   /// <summary>
   ///   FillOverlay.
   /// </summary>
-  public DocumentModel.Drawings.FillOverlay? FillOverlay { get; set; }
+  public DMD.FillOverlay? FillOverlay { get; set; }
   
   
   /// <summary>
   ///   Glow.
   /// </summary>
-  public DocumentModel.Drawings.Glow? Glow { get; set; }
+  public DMD.Glow? Glow { get; set; }
   
   
   /// <summary>
   ///   InnerShadow.
   /// </summary>
-  public DocumentModel.Drawings.InnerShadow? InnerShadow { get; set; }
+  public DMD.InnerShadow? InnerShadow { get; set; }
   
   
   /// <summary>
   ///   OuterShadow.
   /// </summary>
-  public DocumentModel.Drawings.OuterShadow? OuterShadow { get; set; }
+  public DMD.OuterShadow? OuterShadow { get; set; }
   
   
   /// <summary>
   ///   PresetShadow.
   /// </summary>
-  public DocumentModel.Drawings.PresetShadow? PresetShadow { get; set; }
+  public DMD.PresetShadow? PresetShadow { get; set; }
   
   
   /// <summary>
   ///   Reflection.
   /// </summary>
-  public DocumentModel.Drawings.Reflection? Reflection { get; set; }
+  public DMD.Reflection? Reflection { get; set; }
   
   
   /// <summary>
   ///   SoftEdge.
   /// </summary>
-  public DocumentModel.Drawings.SoftEdge? SoftEdge { get; set; }
+  public DMD.SoftEdge? SoftEdge { get; set; }
   
 }

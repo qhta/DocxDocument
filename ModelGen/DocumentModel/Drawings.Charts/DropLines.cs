@@ -6,6 +6,6 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class DropLines
 {
-  public DocumentModel.Drawings.Charts.ChartShapeProperties? ChartShapeProperties { get; set; }
+  public DMDC.ChartShapeProperties? ChartShapeProperties { get; set; }
   
 }

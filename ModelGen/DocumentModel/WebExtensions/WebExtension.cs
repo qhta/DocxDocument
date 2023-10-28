@@ -24,36 +24,36 @@ public partial class WebExtension
   /// <summary>
   ///   WebExtensionStoreReference.
   /// </summary>
-  public DocumentModel.WebExtensions.WebExtensionStoreReference? WebExtensionStoreReference { get; set; }
+  public DMEX.WebExtensionStoreReference? WebExtensionStoreReference { get; set; }
   
   
   /// <summary>
   ///   WebExtensionReferenceList.
   /// </summary>
-  public DocumentModel.WebExtensions.WebExtensionReferenceList? WebExtensionReferenceList { get; set; }
+  public DMEX.WebExtensionReferenceList? WebExtensionReferenceList { get; set; }
   
   
   /// <summary>
   ///   WebExtensionPropertyBag.
   /// </summary>
-  public DocumentModel.WebExtensions.WebExtensionPropertyBag? WebExtensionPropertyBag { get; set; }
+  public DMEX.WebExtensionPropertyBag? WebExtensionPropertyBag { get; set; }
   
   
   /// <summary>
   ///   WebExtensionBindingList.
   /// </summary>
-  public DocumentModel.WebExtensions.WebExtensionBindingList? WebExtensionBindingList { get; set; }
+  public DMEX.WebExtensionBindingList? WebExtensionBindingList { get; set; }
   
   
   /// <summary>
   ///   Snapshot.
   /// </summary>
-  public DocumentModel.WebExtensions.Snapshot? Snapshot { get; set; }
+  public DMEX.Snapshot? Snapshot { get; set; }
   
   
   /// <summary>
   ///   OfficeArtExtensionList.
   /// </summary>
-  public DocumentModel.WebExtensions.OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
+  public DMEX.OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
   
 }

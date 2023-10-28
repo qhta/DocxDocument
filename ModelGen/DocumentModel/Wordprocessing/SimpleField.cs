@@ -28,6 +28,6 @@ public partial class SimpleField
   /// <summary>
   ///   Custom Field Data.
   /// </summary>
-  public DocumentModel.Wordprocessing.FieldData? FieldData { get; set; }
+  public DMW.FieldData? FieldData { get; set; }
   
 }

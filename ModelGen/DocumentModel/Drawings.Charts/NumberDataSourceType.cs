@@ -10,12 +10,12 @@ public partial class NumberDataSourceType
   /// <summary>
   ///   Number Reference.
   /// </summary>
-  public DocumentModel.Drawings.Charts.NumberReference? NumberReference { get; set; }
+  public DMDC.NumberReference? NumberReference { get; set; }
   
   
   /// <summary>
   ///   Number Literal.
   /// </summary>
-  public DocumentModel.Drawings.Charts.NumberLiteral? NumberLiteral { get; set; }
+  public DMDC.NumberLiteral? NumberLiteral { get; set; }
   
 }

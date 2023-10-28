@@ -28,6 +28,6 @@ public partial class CommentExtensible
   /// <summary>
   ///   ExtensionList.
   /// </summary>
-  public DocumentModel.Wordprocessing.ExtensionList? ExtensionList { get; set; }
+  public DMW.ExtensionList? ExtensionList { get; set; }
   
 }

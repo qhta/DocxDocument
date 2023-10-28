@@ -12,14 +12,14 @@ public partial class DLblExtension
   /// </summary>
   public String? Uri { get; set; }
   
-  public DocumentModel.Drawings.Charts.DataLabelFieldTable? DataLabelFieldTable { get; set; }
+  public DMDC13.DataLabelFieldTable? DataLabelFieldTable { get; set; }
   
-  public DocumentModel.Drawings.Charts.ExceptionForSave? ExceptionForSave { get; set; }
+  public DMDC13.ExceptionForSave? ExceptionForSave { get; set; }
   
-  public DocumentModel.Drawings.Charts.ShowDataLabelsRange? ShowDataLabelsRange { get; set; }
+  public DMDC13.ShowDataLabelsRange? ShowDataLabelsRange { get; set; }
   
-  public DocumentModel.Drawings.Charts.ShapeProperties? ShapeProperties { get; set; }
+  public DMDC13.ShapeProperties? ShapeProperties { get; set; }
   
-  public DocumentModel.Drawings.Charts.Layout? Layout { get; set; }
+  public DMDC13.Layout? Layout { get; set; }
   
 }

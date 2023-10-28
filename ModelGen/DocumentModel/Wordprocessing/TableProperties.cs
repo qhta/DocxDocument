@@ -10,96 +10,96 @@ public partial class TableProperties
   /// <summary>
   ///   TableStyle.
   /// </summary>
-  public DocumentModel.Wordprocessing.TableStyle? TableStyle { get; set; }
+  public DMW.TableStyle? TableStyle { get; set; }
   
   
   /// <summary>
   ///   TablePositionProperties.
   /// </summary>
-  public DocumentModel.Wordprocessing.TablePositionProperties? TablePositionProperties { get; set; }
+  public DMW.TablePositionProperties? TablePositionProperties { get; set; }
   
   
   /// <summary>
   ///   TableOverlap.
   /// </summary>
-  public DocumentModel.Wordprocessing.TableOverlapKind? TableOverlap { get; set; }
+  public DMW.TableOverlapKind? TableOverlap { get; set; }
   
   
   /// <summary>
   ///   BiDiVisual.
   /// </summary>
-  public DocumentModel.Wordprocessing.BiDiVisual? BiDiVisual { get; set; }
+  public DMW.BiDiVisual? BiDiVisual { get; set; }
   
   
   /// <summary>
   ///   TableWidth.
   /// </summary>
-  public DocumentModel.Wordprocessing.TableWidth? TableWidth { get; set; }
+  public DMW.TableWidth? TableWidth { get; set; }
   
   
   /// <summary>
   ///   TableJustification.
   /// </summary>
-  public DocumentModel.Wordprocessing.TableRowAlignmentKind? TableJustification { get; set; }
+  public DMW.TableRowAlignmentKind? TableJustification { get; set; }
   
   
   /// <summary>
   ///   TableCellSpacing.
   /// </summary>
-  public DocumentModel.Wordprocessing.TableCellSpacing? TableCellSpacing { get; set; }
+  public DMW.TableCellSpacing? TableCellSpacing { get; set; }
   
   
   /// <summary>
   ///   TableIndentation.
   /// </summary>
-  public DocumentModel.Wordprocessing.TableIndentation? TableIndentation { get; set; }
+  public DMW.TableIndentation? TableIndentation { get; set; }
   
   
   /// <summary>
   ///   TableBorders.
   /// </summary>
-  public DocumentModel.Wordprocessing.TableBorders? TableBorders { get; set; }
+  public DMW.TableBorders? TableBorders { get; set; }
   
   
   /// <summary>
   ///   Shading.
   /// </summary>
-  public DocumentModel.Wordprocessing.Shading? Shading { get; set; }
+  public DMW.Shading? Shading { get; set; }
   
   
   /// <summary>
   ///   TableLayout.
   /// </summary>
-  public DocumentModel.Wordprocessing.TableLayout? TableLayout { get; set; }
+  public DMW.TableLayout? TableLayout { get; set; }
   
   
   /// <summary>
   ///   TableCellMarginDefault.
   /// </summary>
-  public DocumentModel.Wordprocessing.TableCellMarginDefault? TableCellMarginDefault { get; set; }
+  public DMW.TableCellMarginDefault? TableCellMarginDefault { get; set; }
   
   
   /// <summary>
   ///   TableLook.
   /// </summary>
-  public DocumentModel.Wordprocessing.TableLook? TableLook { get; set; }
+  public DMW.TableLook? TableLook { get; set; }
   
   
   /// <summary>
   ///   TableCaption, this property is only available in Office 2010 and later..
   /// </summary>
-  public DocumentModel.Wordprocessing.TableCaption? TableCaption { get; set; }
+  public DMW.TableCaption? TableCaption { get; set; }
   
   
   /// <summary>
   ///   TableDescription, this property is only available in Office 2010 and later..
   /// </summary>
-  public DocumentModel.Wordprocessing.TableDescription? TableDescription { get; set; }
+  public DMW.TableDescription? TableDescription { get; set; }
   
   
   /// <summary>
   ///   Revision Information for Table Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.TablePropertiesChange? TablePropertiesChange { get; set; }
+  public DMW.TablePropertiesChange? TablePropertiesChange { get; set; }
   
 }

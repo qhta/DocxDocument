@@ -12,6 +12,6 @@ public partial class Choose
   /// </summary>
   public String? Name { get; set; }
   
-  public DocumentModel.Drawings.Diagrams.DiagramChooseElse? DiagramChooseElse { get; set; }
+  public DMDD.DiagramChooseElse? DiagramChooseElse { get; set; }
   
 }

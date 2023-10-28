@@ -18,8 +18,8 @@ public partial class ColorsDefinition
   /// </summary>
   public String? MinVersion { get; set; }
   
-  public DocumentModel.Drawings.Diagrams.ColorTransformCategories? ColorTransformCategories { get; set; }
+  public DMDD.ColorTransformCategories? ColorTransformCategories { get; set; }
   
-  public DocumentModel.Drawings.Diagrams.ExtensionList? ExtensionList { get; set; }
+  public DMDD.ExtensionList? ExtensionList { get; set; }
   
 }

@@ -12,6 +12,6 @@ public partial class OfficeStyleSheetExtension
   /// </summary>
   public String? Uri { get; set; }
   
-  public DM.ThemeFamily? ThemeFamily { get; set; }
+  public DMT.ThemeFamily? ThemeFamily { get; set; }
   
 }

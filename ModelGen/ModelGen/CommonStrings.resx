@@ -273,4 +273,22 @@
   <data name="Scan_type_name_not_defined" xml:space="preserve">
     <value>Scan type name not defined</value>
   </data>
+  <data name="Project_name_not_defined" xml:space="preserve">
+    <value>Project name not defined</value>
+  </data>
+  <data name="Code_output_path_not_defined" xml:space="preserve">
+    <value>Code output path not defined</value>
+  </data>
+  <data name="Generator_type_not_defined" xml:space="preserve">
+    <value>Generator type not defined</value>
+  </data>
+  <data name="Generator_type_not_found" xml:space="preserve">
+    <value>Generator type not found</value>
+  </data>
+  <data name="Generator_type_constructor_not_found" xml:space="preserve">
+    <value>Generator type constructor not found</value>
+  </data>
+  <data name="Solution_name_not_defined" xml:space="preserve">
+    <value>Solution name not defined</value>
+  </data>
 </root>

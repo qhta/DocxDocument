@@ -12,10 +12,10 @@ public partial class ChartSpaceExtension
   /// </summary>
   public String? Uri { get; set; }
   
-  public DocumentModel.Drawings.Charts.PivotOptions? PivotOptions { get; set; }
+  public DMDC10.PivotOptions? PivotOptions { get; set; }
   
-  public DocumentModel.Drawings.Charts.SketchOptions? SketchOptions { get; set; }
+  public DMDC10.SketchOptions? SketchOptions { get; set; }
   
-  public DocumentModel.Drawings.Charts.PivotSource? PivotSource { get; set; }
+  public DMDC13.PivotSource? PivotSource { get; set; }
   
 }

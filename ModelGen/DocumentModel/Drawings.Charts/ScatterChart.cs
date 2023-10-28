@@ -10,16 +10,16 @@ public partial class ScatterChart
   /// <summary>
   ///   ScatterStyle.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ScatterStyleKind? ScatterStyle { get; set; }
+  public DMDC.ScatterStyleKind? ScatterStyle { get; set; }
   
   
   /// <summary>
   ///   VaryColors.
   /// </summary>
-  public DocumentModel.Drawings.Charts.VaryColors? VaryColors { get; set; }
+  public DMDC.VaryColors? VaryColors { get; set; }
   
-  public DocumentModel.Drawings.Charts.DataLabels? DataLabels { get; set; }
+  public DMDC.DataLabels? DataLabels { get; set; }
   
-  public DocumentModel.Drawings.Charts.ScatterChartExtensionList? ScatterChartExtensionList { get; set; }
+  public DMDC.ScatterChartExtensionList? ScatterChartExtensionList { get; set; }
   
 }

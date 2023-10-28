@@ -10,6 +10,6 @@ public partial class MoveTo
   /// <summary>
   ///   Move end point.
   /// </summary>
-  public DocumentModel.Drawings.Point? Point { get; set; }
+  public DMD.Point? Point { get; set; }
   
 }

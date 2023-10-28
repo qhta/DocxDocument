@@ -93,4 +93,10 @@ public static class ProcessOptionsMgr
   }
 
   public static string GetFilename() => GetFilename(DataFolder);
+
+  public static Type[] GetGeneratorTypes()
+  {
+    var assembly = Assembly.GetAssembly(typeof(BaseCodeGenerator));
+    return assembly!.GetTypes().Where(item=>item.BaseType == typeof(BaseCodeGenerator)).ToArray();
+  }
 }

@@ -10,6 +10,6 @@ public partial class LineTo
   /// <summary>
   ///   Line end point.
   /// </summary>
-  public DocumentModel.Drawings.Point? Point { get; set; }
+  public DMD.Point? Point { get; set; }
   
 }

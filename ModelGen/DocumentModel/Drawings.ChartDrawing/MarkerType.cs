@@ -10,12 +10,12 @@ public partial class MarkerType
   /// <summary>
   ///   Relative X Coordinate.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawing.XPosition? XPosition { get; set; }
+  public DMDCD.XPosition? XPosition { get; set; }
   
   
   /// <summary>
   ///   Relative Y Coordinate.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawing.YPosition? YPosition { get; set; }
+  public DMDCD.YPosition? YPosition { get; set; }
   
 }

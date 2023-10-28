@@ -10,18 +10,18 @@ public partial class PivotSource
   /// <summary>
   ///   Pivot Name.
   /// </summary>
-  public DocumentModel.Drawings.Charts.PivotTableName? PivotTableName { get; set; }
+  public DMDC.PivotTableName? PivotTableName { get; set; }
   
   
   /// <summary>
   ///   Format ID.
   /// </summary>
-  public DocumentModel.Drawings.Charts.FormatId? FormatId { get; set; }
+  public DMDC.FormatId? FormatId { get; set; }
   
   
   /// <summary>
   ///   Chart Extensibility.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ExtensionList? ExtensionList { get; set; }
+  public DMDC.ExtensionList? ExtensionList { get; set; }
   
 }

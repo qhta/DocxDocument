@@ -6,14 +6,14 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class LiveFeedBackgroundProperties
 {
-  public DocumentModel.Drawings.BackgroundNormalProperties? BackgroundNormalProperties { get; set; }
+  public DMD.BackgroundNormalProperties? BackgroundNormalProperties { get; set; }
   
-  public DocumentModel.Drawings.BackgroundRemovedProperties? BackgroundRemovedProperties { get; set; }
+  public DMD.BackgroundRemovedProperties? BackgroundRemovedProperties { get; set; }
   
-  public DocumentModel.Drawings.BackgroundBlurProperties? BackgroundBlurProperties { get; set; }
+  public DMD.BackgroundBlurProperties? BackgroundBlurProperties { get; set; }
   
-  public DocumentModel.Drawings.BackgroundCustomProperties? BackgroundCustomProperties { get; set; }
+  public DMD.BackgroundCustomProperties? BackgroundCustomProperties { get; set; }
   
-  public DocumentModel.Drawings.OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
+  public DMD.OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
   
 }

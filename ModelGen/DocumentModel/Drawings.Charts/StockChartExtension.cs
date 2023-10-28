@@ -12,6 +12,6 @@ public partial class StockChartExtension
   /// </summary>
   public String? Uri { get; set; }
   
-  public DocumentModel.Drawings.Charts.FilteredLineSeriesExtension? FilteredLineSeriesExtension { get; set; }
+  public DMDC13.FilteredLineSeriesExtension? FilteredLineSeriesExtension { get; set; }
   
 }

@@ -10,7 +10,7 @@ public partial class ChartSpace
   /// <summary>
   ///   Date1904.
   /// </summary>
-  public DocumentModel.Drawings.Charts.Date1904? Date1904 { get; set; }
+  public DMDC.Date1904? Date1904 { get; set; }
   
   
   /// <summary>
@@ -22,28 +22,28 @@ public partial class ChartSpace
   /// <summary>
   ///   RoundedCorners.
   /// </summary>
-  public DocumentModel.Drawings.Charts.RoundedCorners? RoundedCorners { get; set; }
+  public DMDC.RoundedCorners? RoundedCorners { get; set; }
   
   public Byte? Style { get; set; }
   
-  public DocumentModel.Drawings.Charts.ColorMapOverride? ColorMapOverride { get; set; }
+  public DMDC.ColorMapOverride? ColorMapOverride { get; set; }
   
-  public DocumentModel.Drawings.Charts.PivotSource? PivotSource { get; set; }
+  public DMDC.PivotSource? PivotSource { get; set; }
   
-  public DocumentModel.Drawings.Charts.Protection? Protection { get; set; }
+  public DMDC.Protection? Protection { get; set; }
   
-  public DocumentModel.Drawings.Charts.Chart? Chart { get; set; }
+  public DMDC.Chart? Chart { get; set; }
   
-  public DocumentModel.Drawings.Charts.ShapeProperties? ShapeProperties { get; set; }
+  public DMDC.ShapeProperties? ShapeProperties { get; set; }
   
-  public DocumentModel.Drawings.Charts.TextProperties? TextProperties { get; set; }
+  public DMDC.TextProperties? TextProperties { get; set; }
   
-  public DocumentModel.Drawings.Charts.ExternalData? ExternalData { get; set; }
+  public DMDC.ExternalData? ExternalData { get; set; }
   
-  public DocumentModel.Drawings.Charts.PrintSettings? PrintSettings { get; set; }
+  public DMDC.PrintSettings? PrintSettings { get; set; }
   
-  public DocumentModel.Drawings.Charts.UserShapesReference? UserShapesReference { get; set; }
+  public DMDC.UserShapesReference? UserShapesReference { get; set; }
   
-  public DocumentModel.Drawings.Charts.ChartSpaceExtensionList? ChartSpaceExtensionList { get; set; }
+  public DMDC.ChartSpaceExtensionList? ChartSpaceExtensionList { get; set; }
   
 }

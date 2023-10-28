@@ -16,12 +16,12 @@ public partial class NonVisualShapeDrawingProperties
   /// <summary>
   ///   Shape Locks.
   /// </summary>
-  public DocumentModel.Drawings.ShapeLocks? ShapeLocks { get; set; }
+  public DMD.ShapeLocks? ShapeLocks { get; set; }
   
   
   /// <summary>
   ///   ExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.ExtensionList? ExtensionList { get; set; }
+  public DMD.ExtensionList? ExtensionList { get; set; }
   
 }

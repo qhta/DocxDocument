@@ -294,6 +294,6 @@ public partial class Shapetype
   /// </summary>
   public String? Master { get; set; }
   
-  public DocumentModel.Vml.Office.Complex? Complex { get; set; }
+  public DMVML.Complex? Complex { get; set; }
   
 }

@@ -12,18 +12,18 @@ public partial class BlipExtension
   /// </summary>
   public String? Uri { get; set; }
   
-  public DocumentModel.Drawings.ImageProperties? ImageProperties { get; set; }
+  public DMD10.ImageProperties? ImageProperties { get; set; }
   
   public Boolean? UseLocalDpi { get; set; }
   
-  public DocumentModel.Drawings.Wordprocessing.WebVideoProperty? WebVideoProperty { get; set; }
+  public DMDW.WebVideoProperty? WebVideoProperty { get; set; }
   
-  public DocumentModel.Drawings.SVG.SVGBlip? SVGBlip { get; set; }
+  public DMDSVG.SVGBlip? SVGBlip { get; set; }
   
-  public DocumentModel.Drawings.PictureAttributionSourceURL? PictureAttributionSourceURL { get; set; }
+  public DMD.PictureAttributionSourceURL? PictureAttributionSourceURL { get; set; }
   
-  public DocumentModel.Wordprocessing.OEmbed.OEmbed? OEmbed { get; set; }
+  public DMW20.OEmbed? OEmbed { get; set; }
   
-  public DocumentModel.Drawings.OEmbed.OEmbedShared? OEmbedShared { get; set; }
+  public DMDOE.OEmbedShared? OEmbedShared { get; set; }
   
 }

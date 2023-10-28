@@ -12,10 +12,10 @@ public partial class StrRefExtension
   /// </summary>
   public String? Uri { get; set; }
   
-  public DocumentModel.Drawings.Charts.FullReference? FullReference { get; set; }
+  public DMDC13.FullReference? FullReference { get; set; }
   
-  public DocumentModel.Drawings.Charts.LevelReference? LevelReference { get; set; }
+  public DMDC13.LevelReference? LevelReference { get; set; }
   
-  public DocumentModel.Drawings.Charts.FormulaReference? FormulaReference { get; set; }
+  public DMDC13.FormulaReference? FormulaReference { get; set; }
   
 }

@@ -360,4 +360,11 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
     }
   }
   #endregion
+
+  #region GeneratorType selection
+
+  public string[] GeneratorTypeNames => ProcessOptionsMgr.GetGeneratorTypes().Select(item=>item.Name).ToArray();
+
+
+  #endregion
 }

@@ -58,12 +58,12 @@ public partial class HyperlinkType
   /// <summary>
   ///   Sound to play..
   /// </summary>
-  public DocumentModel.Drawings.HyperlinkSound? HyperlinkSound { get; set; }
+  public DMD.HyperlinkSound? HyperlinkSound { get; set; }
   
   
   /// <summary>
   ///   Future extensions..
   /// </summary>
-  public DocumentModel.Drawings.HyperlinkExtensionList? HyperlinkExtensionList { get; set; }
+  public DMD.HyperlinkExtensionList? HyperlinkExtensionList { get; set; }
   
 }

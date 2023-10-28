@@ -10,6 +10,6 @@ public partial class PresetTextWrap
   /// <summary>
   ///   Adjust Value List.
   /// </summary>
-  public DocumentModel.Drawings.AdjustValueList? AdjustValueList { get; set; }
+  public DMD.AdjustValueList? AdjustValueList { get; set; }
   
 }

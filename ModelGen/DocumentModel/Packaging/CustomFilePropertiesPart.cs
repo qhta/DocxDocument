@@ -12,7 +12,7 @@ public partial class CustomFilePropertiesPart
   /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>
-  public DMP.CustomProperties? Properties { get; set; }
+  public DocumentModel.Properties.CustomProperties? Properties { get; set; }
   
   public String? RelationshipType { get; set; }
   

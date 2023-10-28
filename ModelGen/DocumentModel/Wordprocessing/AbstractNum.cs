@@ -16,36 +16,36 @@ public partial class AbstractNum
   /// <summary>
   ///   Abstract Numbering Definition Identifier.
   /// </summary>
-  public DocumentModel.Wordprocessing.Nsid? Nsid { get; set; }
+  public DMW.Nsid? Nsid { get; set; }
   
   
   /// <summary>
   ///   Abstract Numbering Definition Type.
   /// </summary>
-  public DocumentModel.Wordprocessing.MultiLevelKind? MultiLevelType { get; set; }
+  public DMW.MultiLevelKind? MultiLevelType { get; set; }
   
   
   /// <summary>
   ///   Numbering Template Code.
   /// </summary>
-  public DocumentModel.Wordprocessing.TemplateCode? TemplateCode { get; set; }
+  public DMW.TemplateCode? TemplateCode { get; set; }
   
   
   /// <summary>
   ///   Abstract Numbering Definition Name.
   /// </summary>
-  public DocumentModel.Wordprocessing.AbstractNumDefinitionName? AbstractNumDefinitionName { get; set; }
+  public DMW.AbstractNumDefinitionName? AbstractNumDefinitionName { get; set; }
   
   
   /// <summary>
   ///   Numbering Style Definition.
   /// </summary>
-  public DocumentModel.Wordprocessing.StyleLink? StyleLink { get; set; }
+  public DMW.StyleLink? StyleLink { get; set; }
   
   
   /// <summary>
   ///   Numbering Style Reference.
   /// </summary>
-  public DocumentModel.Wordprocessing.NumberingStyleLink? NumberingStyleLink { get; set; }
+  public DMW.NumberingStyleLink? NumberingStyleLink { get; set; }
   
 }

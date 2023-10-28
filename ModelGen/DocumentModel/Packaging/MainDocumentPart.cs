@@ -10,7 +10,7 @@ public partial class MainDocumentPart
   /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.Wordprocessing.Document? Document { get; set; }
+  public DMW.Document? Document { get; set; }
   
   public String? RelationshipType { get; set; }
   

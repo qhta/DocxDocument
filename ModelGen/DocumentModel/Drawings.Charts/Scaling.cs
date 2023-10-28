@@ -16,24 +16,24 @@ public partial class Scaling
   /// <summary>
   ///   Axis Orientation.
   /// </summary>
-  public DocumentModel.Drawings.Charts.OrientationKind? Orientation { get; set; }
+  public DMDC.OrientationKind? Orientation { get; set; }
   
   
   /// <summary>
   ///   Maximum.
   /// </summary>
-  public DocumentModel.Drawings.Charts.MaxAxisValue? MaxAxisValue { get; set; }
+  public DMDC.MaxAxisValue? MaxAxisValue { get; set; }
   
   
   /// <summary>
   ///   Minimum.
   /// </summary>
-  public DocumentModel.Drawings.Charts.MinAxisValue? MinAxisValue { get; set; }
+  public DMDC.MinAxisValue? MinAxisValue { get; set; }
   
   
   /// <summary>
   ///   Chart Extensibility.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ExtensionList? ExtensionList { get; set; }
+  public DMDC.ExtensionList? ExtensionList { get; set; }
   
 }

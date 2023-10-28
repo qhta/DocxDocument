@@ -10,10 +10,10 @@ public partial class SdtRun
   /// <summary>
   ///   Inline-Level Structured Document Tag Content.
   /// </summary>
-  public DocumentModel.Wordprocessing.SdtContentRun? SdtContentRun { get; set; }
+  public DMW.SdtContentRun? SdtContentRun { get; set; }
   
-  public DocumentModel.Wordprocessing.SdtProperties? SdtProperties { get; set; }
+  public DMW.SdtProperties? SdtProperties { get; set; }
   
-  public DocumentModel.Wordprocessing.SdtEndCharProperties? SdtEndCharProperties { get; set; }
+  public DMW.SdtEndCharProperties? SdtEndCharProperties { get; set; }
   
 }

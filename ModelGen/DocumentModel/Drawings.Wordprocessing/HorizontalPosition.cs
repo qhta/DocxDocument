@@ -10,18 +10,18 @@ public partial class HorizontalPosition
   /// <summary>
   ///   Relative Horizontal Alignment.
   /// </summary>
-  public DocumentModel.Drawings.Wordprocessing.HorizontalAlignment? HorizontalAlignment { get; set; }
+  public DMDW.HorizontalAlignment? HorizontalAlignment { get; set; }
   
   
   /// <summary>
   ///   Absolute Position Offset.
   /// </summary>
-  public DocumentModel.Drawings.Wordprocessing.PositionOffset? PositionOffset { get; set; }
+  public DMDW.PositionOffset? PositionOffset { get; set; }
   
   
   /// <summary>
   ///   PercentagePositionHeightOffset, this property is only available in Office 2010 and later..
   /// </summary>
-  public DocumentModel.Wordprocessing.Drawings.PercentagePositionHeightOffset? PercentagePositionHeightOffset { get; set; }
+  public DMWD.PercentagePositionHeightOffset? PercentagePositionHeightOffset { get; set; }
   
 }

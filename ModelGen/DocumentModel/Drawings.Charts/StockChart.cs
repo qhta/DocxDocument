@@ -6,14 +6,14 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class StockChart
 {
-  public DocumentModel.Drawings.Charts.DataLabels? DataLabels { get; set; }
+  public DMDC.DataLabels? DataLabels { get; set; }
   
-  public DocumentModel.Drawings.Charts.DropLines? DropLines { get; set; }
+  public DMDC.DropLines? DropLines { get; set; }
   
-  public DocumentModel.Drawings.Charts.HighLowLines? HighLowLines { get; set; }
+  public DMDC.HighLowLines? HighLowLines { get; set; }
   
-  public DocumentModel.Drawings.Charts.UpDownBars? UpDownBars { get; set; }
+  public DMDC.UpDownBars? UpDownBars { get; set; }
   
-  public DocumentModel.Drawings.Charts.StockChartExtensionList? StockChartExtensionList { get; set; }
+  public DMDC.StockChartExtensionList? StockChartExtensionList { get; set; }
   
 }

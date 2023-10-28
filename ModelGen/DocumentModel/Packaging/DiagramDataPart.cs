@@ -12,7 +12,7 @@ public partial class DiagramDataPart
   /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.DataModelRoot? DataModelRoot { get; set; }
+  public DMDD.DataModelRoot? DataModelRoot { get; set; }
   
   public String? RelationshipType { get; set; }
   

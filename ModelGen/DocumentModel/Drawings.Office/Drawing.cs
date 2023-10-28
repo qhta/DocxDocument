@@ -10,6 +10,6 @@ public partial class Drawing
   /// <summary>
   ///   ShapeTree.
   /// </summary>
-  public DocumentModel.Drawings.Office.ShapeTree? ShapeTree { get; set; }
+  public DMDO.ShapeTree? ShapeTree { get; set; }
   
 }

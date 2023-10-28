@@ -16,42 +16,42 @@ public partial class Div
   /// <summary>
   ///   Data for HTML blockquote Element.
   /// </summary>
-  public DocumentModel.Wordprocessing.BlockQuote? BlockQuote { get; set; }
+  public DMW.BlockQuote? BlockQuote { get; set; }
   
   
   /// <summary>
   ///   Data for HTML body Element.
   /// </summary>
-  public DocumentModel.Wordprocessing.BodyDiv? BodyDiv { get; set; }
+  public DMW.BodyDiv? BodyDiv { get; set; }
   
   
   /// <summary>
   ///   Left Margin for HTML div.
   /// </summary>
-  public DocumentModel.Wordprocessing.LeftMarginDiv? LeftMarginDiv { get; set; }
+  public DMW.LeftMarginDiv? LeftMarginDiv { get; set; }
   
   
   /// <summary>
   ///   Right Margin for HTML div.
   /// </summary>
-  public DocumentModel.Wordprocessing.RightMarginDiv? RightMarginDiv { get; set; }
+  public DMW.RightMarginDiv? RightMarginDiv { get; set; }
   
   
   /// <summary>
   ///   Top Margin for HTML div.
   /// </summary>
-  public DocumentModel.Wordprocessing.TopMarginDiv? TopMarginDiv { get; set; }
+  public DMW.TopMarginDiv? TopMarginDiv { get; set; }
   
   
   /// <summary>
   ///   Bottom Margin for HTML div.
   /// </summary>
-  public DocumentModel.Wordprocessing.BottomMarginDiv? BottomMarginDiv { get; set; }
+  public DMW.BottomMarginDiv? BottomMarginDiv { get; set; }
   
   
   /// <summary>
   ///   Set of Borders for HTML div.
   /// </summary>
-  public DocumentModel.Wordprocessing.DivBorder? DivBorder { get; set; }
+  public DMW.DivBorder? DivBorder { get; set; }
   
 }

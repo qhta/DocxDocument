@@ -12,7 +12,7 @@ public partial class FootnotesPart
   /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.Wordprocessing.Footnotes? Footnotes { get; set; }
+  public DMW.Footnotes? Footnotes { get; set; }
   
   public String? RelationshipType { get; set; }
   

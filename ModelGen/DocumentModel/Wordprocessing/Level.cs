@@ -28,72 +28,72 @@ public partial class Level
   /// <summary>
   ///   Starting Value.
   /// </summary>
-  public DocumentModel.Wordprocessing.StartNumberingValue? StartNumberingValue { get; set; }
+  public DMW.StartNumberingValue? StartNumberingValue { get; set; }
   
   
   /// <summary>
   ///   Numbering Format.
   /// </summary>
-  public DocumentModel.Wordprocessing.NumberingFormat? NumberingFormat { get; set; }
+  public DMW.NumberingFormat? NumberingFormat { get; set; }
   
   
   /// <summary>
   ///   Restart Numbering Level Symbol.
   /// </summary>
-  public DocumentModel.Wordprocessing.LevelRestart? LevelRestart { get; set; }
+  public DMW.LevelRestart? LevelRestart { get; set; }
   
   
   /// <summary>
   ///   Paragraph Style's Associated Numbering Level.
   /// </summary>
-  public DocumentModel.Wordprocessing.ParagraphStyleIdInLevel? ParagraphStyleIdInLevel { get; set; }
+  public DMW.ParagraphStyleIdInLevel? ParagraphStyleIdInLevel { get; set; }
   
   
   /// <summary>
   ///   Display All Levels Using Arabic Numerals.
   /// </summary>
-  public DocumentModel.Wordprocessing.IsLegalNumberingStyle? IsLegalNumberingStyle { get; set; }
+  public DMW.IsLegalNumberingStyle? IsLegalNumberingStyle { get; set; }
   
   
   /// <summary>
   ///   Content Between Numbering Symbol and Paragraph Text.
   /// </summary>
-  public DocumentModel.Wordprocessing.LevelSuffixKind? LevelSuffix { get; set; }
+  public DMW.LevelSuffixKind? LevelSuffix { get; set; }
   
   
   /// <summary>
   ///   Numbering Level Text.
   /// </summary>
-  public DocumentModel.Wordprocessing.LevelText? LevelText { get; set; }
+  public DMW.LevelText? LevelText { get; set; }
   
   
   /// <summary>
   ///   Picture Numbering Symbol Definition Reference.
   /// </summary>
-  public DocumentModel.Wordprocessing.LevelPictureBulletId? LevelPictureBulletId { get; set; }
+  public DMW.LevelPictureBulletId? LevelPictureBulletId { get; set; }
   
   
   /// <summary>
   ///   Legacy Numbering Level Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.LegacyNumbering? LegacyNumbering { get; set; }
+  public DMW.LegacyNumbering? LegacyNumbering { get; set; }
   
   
   /// <summary>
   ///   Justification.
   /// </summary>
-  public DocumentModel.Wordprocessing.LevelJustificationKind? LevelJustification { get; set; }
+  public DMW.LevelJustificationKind? LevelJustification { get; set; }
   
   
   /// <summary>
   ///   Numbering Level Associated Paragraph Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.PreviousParagraphProperties? PreviousParagraphProperties { get; set; }
+  public DMW.PreviousParagraphProperties? PreviousParagraphProperties { get; set; }
   
   
   /// <summary>
   ///   Numbering Symbol Run Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.NumberingSymbolRunProperties? NumberingSymbolRunProperties { get; set; }
+  public DMW.NumberingSymbolRunProperties? NumberingSymbolRunProperties { get; set; }
   
 }

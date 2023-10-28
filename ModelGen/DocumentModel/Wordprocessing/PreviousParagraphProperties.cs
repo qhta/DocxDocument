@@ -10,186 +10,186 @@ public partial class PreviousParagraphProperties
   /// <summary>
   ///   ParagraphStyleId.
   /// </summary>
-  public DocumentModel.Wordprocessing.ParagraphStyleId? ParagraphStyleId { get; set; }
+  public DMW.ParagraphStyleId? ParagraphStyleId { get; set; }
   
   
   /// <summary>
   ///   KeepNext.
   /// </summary>
-  public DocumentModel.Wordprocessing.KeepNext? KeepNext { get; set; }
+  public DMW.KeepNext? KeepNext { get; set; }
   
   
   /// <summary>
   ///   KeepLines.
   /// </summary>
-  public DocumentModel.Wordprocessing.KeepLines? KeepLines { get; set; }
+  public DMW.KeepLines? KeepLines { get; set; }
   
   
   /// <summary>
   ///   PageBreakBefore.
   /// </summary>
-  public DocumentModel.Wordprocessing.PageBreakBefore? PageBreakBefore { get; set; }
+  public DMW.PageBreakBefore? PageBreakBefore { get; set; }
   
   
   /// <summary>
   ///   FrameProperties.
   /// </summary>
-  public DocumentModel.Wordprocessing.FrameProperties? FrameProperties { get; set; }
+  public DMW.FrameProperties? FrameProperties { get; set; }
   
   
   /// <summary>
   ///   WidowControl.
   /// </summary>
-  public DocumentModel.Wordprocessing.WidowControl? WidowControl { get; set; }
+  public DMW.WidowControl? WidowControl { get; set; }
   
   
   /// <summary>
   ///   NumberingProperties.
   /// </summary>
-  public DocumentModel.Wordprocessing.NumberingProperties? NumberingProperties { get; set; }
+  public DMW.NumberingProperties? NumberingProperties { get; set; }
   
   
   /// <summary>
   ///   SuppressLineNumbers.
   /// </summary>
-  public DocumentModel.Wordprocessing.SuppressLineNumbers? SuppressLineNumbers { get; set; }
+  public DMW.SuppressLineNumbers? SuppressLineNumbers { get; set; }
   
   
   /// <summary>
   ///   ParagraphBorders.
   /// </summary>
-  public DocumentModel.Wordprocessing.ParagraphBorders? ParagraphBorders { get; set; }
+  public DMW.ParagraphBorders? ParagraphBorders { get; set; }
   
   
   /// <summary>
   ///   Shading.
   /// </summary>
-  public DocumentModel.Wordprocessing.Shading? Shading { get; set; }
+  public DMW.Shading? Shading { get; set; }
   
   
   /// <summary>
   ///   Tabs.
   /// </summary>
-  public DocumentModel.Wordprocessing.Tabs? Tabs { get; set; }
+  public DMW.Tabs? Tabs { get; set; }
   
   
   /// <summary>
   ///   SuppressAutoHyphens.
   /// </summary>
-  public DocumentModel.Wordprocessing.SuppressAutoHyphens? SuppressAutoHyphens { get; set; }
+  public DMW.SuppressAutoHyphens? SuppressAutoHyphens { get; set; }
   
   
   /// <summary>
   ///   Kinsoku.
   /// </summary>
-  public DocumentModel.Wordprocessing.Kinsoku? Kinsoku { get; set; }
+  public DMW.Kinsoku? Kinsoku { get; set; }
   
   
   /// <summary>
   ///   WordWrap.
   /// </summary>
-  public DocumentModel.Wordprocessing.WordWrap? WordWrap { get; set; }
+  public DMW.WordWrap? WordWrap { get; set; }
   
   
   /// <summary>
   ///   OverflowPunctuation.
   /// </summary>
-  public DocumentModel.Wordprocessing.OverflowPunctuation? OverflowPunctuation { get; set; }
+  public DMW.OverflowPunctuation? OverflowPunctuation { get; set; }
   
   
   /// <summary>
   ///   TopLinePunctuation.
   /// </summary>
-  public DocumentModel.Wordprocessing.TopLinePunctuation? TopLinePunctuation { get; set; }
+  public DMW.TopLinePunctuation? TopLinePunctuation { get; set; }
   
   
   /// <summary>
   ///   AutoSpaceDE.
   /// </summary>
-  public DocumentModel.Wordprocessing.AutoSpaceDE? AutoSpaceDE { get; set; }
+  public DMW.AutoSpaceDE? AutoSpaceDE { get; set; }
   
   
   /// <summary>
   ///   AutoSpaceDN.
   /// </summary>
-  public DocumentModel.Wordprocessing.AutoSpaceDN? AutoSpaceDN { get; set; }
+  public DMW.AutoSpaceDN? AutoSpaceDN { get; set; }
   
   
   /// <summary>
   ///   BiDi.
   /// </summary>
-  public DocumentModel.Wordprocessing.BiDi? BiDi { get; set; }
+  public DMW.BiDi? BiDi { get; set; }
   
   
   /// <summary>
   ///   AdjustRightIndent.
   /// </summary>
-  public DocumentModel.Wordprocessing.AdjustRightIndent? AdjustRightIndent { get; set; }
+  public DMW.AdjustRightIndent? AdjustRightIndent { get; set; }
   
   
   /// <summary>
   ///   SnapToGrid.
   /// </summary>
-  public DocumentModel.Wordprocessing.SnapToGrid? SnapToGrid { get; set; }
+  public DMW.SnapToGrid? SnapToGrid { get; set; }
   
   
   /// <summary>
   ///   SpacingBetweenLines.
   /// </summary>
-  public DocumentModel.Wordprocessing.SpacingBetweenLines? SpacingBetweenLines { get; set; }
+  public DMW.SpacingBetweenLines? SpacingBetweenLines { get; set; }
   
   
   /// <summary>
   ///   Indentation.
   /// </summary>
-  public DocumentModel.Wordprocessing.Indentation? Indentation { get; set; }
+  public DMW.Indentation? Indentation { get; set; }
   
   
   /// <summary>
   ///   ContextualSpacing.
   /// </summary>
-  public DocumentModel.Wordprocessing.ContextualSpacing? ContextualSpacing { get; set; }
+  public DMW.ContextualSpacing? ContextualSpacing { get; set; }
   
   
   /// <summary>
   ///   MirrorIndents.
   /// </summary>
-  public DocumentModel.Wordprocessing.MirrorIndents? MirrorIndents { get; set; }
+  public DMW.MirrorIndents? MirrorIndents { get; set; }
   
   
   /// <summary>
   ///   SuppressOverlap.
   /// </summary>
-  public DocumentModel.Wordprocessing.SuppressOverlap? SuppressOverlap { get; set; }
+  public DMW.SuppressOverlap? SuppressOverlap { get; set; }
   
   
   /// <summary>
   ///   Justification.
   /// </summary>
-  public DocumentModel.Wordprocessing.JustificationKind? Justification { get; set; }
+  public DMW.JustificationKind? Justification { get; set; }
   
   
   /// <summary>
   ///   TextDirection.
   /// </summary>
-  public DocumentModel.Wordprocessing.TextDirectionKind? TextDirection { get; set; }
+  public DMW.TextDirectionKind? TextDirection { get; set; }
   
   
   /// <summary>
   ///   TextAlignment.
   /// </summary>
-  public DocumentModel.Wordprocessing.VerticalTextAlignmentKind? TextAlignment { get; set; }
+  public DMW.VerticalTextAlignmentKind? TextAlignment { get; set; }
   
   
   /// <summary>
   ///   TextBoxTightWrap.
   /// </summary>
-  public DocumentModel.Wordprocessing.TextBoxTightWrapKind? TextBoxTightWrap { get; set; }
+  public DMW.TextBoxTightWrapKind? TextBoxTightWrap { get; set; }
   
   
   /// <summary>
   ///   OutlineLevel.
   /// </summary>
-  public DocumentModel.Wordprocessing.OutlineLevel? OutlineLevel { get; set; }
+  public DMW.OutlineLevel? OutlineLevel { get; set; }
   
 }

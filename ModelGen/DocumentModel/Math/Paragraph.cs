@@ -10,6 +10,6 @@ public partial class Paragraph
   /// <summary>
   ///   Office Math Paragraph Properties.
   /// </summary>
-  public DocumentModel.Math.ParagraphProperties? ParagraphProperties { get; set; }
+  public DMM.ParagraphProperties? ParagraphProperties { get; set; }
   
 }

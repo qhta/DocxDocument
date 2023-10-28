@@ -16,36 +16,36 @@ public partial class Shape
   /// <summary>
   ///   ShapeNonVisualProperties.
   /// </summary>
-  public DocumentModel.Drawings.Office.ShapeNonVisualProperties? ShapeNonVisualProperties { get; set; }
+  public DMDO.ShapeNonVisualProperties? ShapeNonVisualProperties { get; set; }
   
   
   /// <summary>
   ///   ShapeProperties.
   /// </summary>
-  public DocumentModel.Drawings.Office.ShapeProperties? ShapeProperties { get; set; }
+  public DMDO.ShapeProperties? ShapeProperties { get; set; }
   
   
   /// <summary>
   ///   ShapeStyle.
   /// </summary>
-  public DocumentModel.Drawings.Office.ShapeStyle? ShapeStyle { get; set; }
+  public DMDO.ShapeStyle? ShapeStyle { get; set; }
   
   
   /// <summary>
   ///   TextBody.
   /// </summary>
-  public DocumentModel.Drawings.Office.TextBody? TextBody { get; set; }
+  public DMDO.TextBody? TextBody { get; set; }
   
   
   /// <summary>
   ///   Transform2D.
   /// </summary>
-  public DocumentModel.Drawings.Office.Transform2D? Transform2D { get; set; }
+  public DMDO.Transform2D? Transform2D { get; set; }
   
   
   /// <summary>
   ///   OfficeArtExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.Office.OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
+  public DMDO.OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
   
 }

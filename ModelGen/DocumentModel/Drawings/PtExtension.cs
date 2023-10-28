@@ -12,6 +12,6 @@ public partial class PtExtension
   /// </summary>
   public String? Uri { get; set; }
   
-  public DocumentModel.Drawings.Diagrams.NonVisualDrawingProperties? NonVisualDrawingProperties { get; set; }
+  public DMDD.NonVisualDrawingProperties? NonVisualDrawingProperties { get; set; }
   
 }

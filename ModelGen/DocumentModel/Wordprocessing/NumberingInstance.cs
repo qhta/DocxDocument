@@ -22,6 +22,6 @@ public partial class NumberingInstance
   /// <summary>
   ///   AbstractNumId.
   /// </summary>
-  public DocumentModel.Wordprocessing.AbstractNumId? AbstractNumId { get; set; }
+  public DMW.AbstractNumId? AbstractNumId { get; set; }
   
 }

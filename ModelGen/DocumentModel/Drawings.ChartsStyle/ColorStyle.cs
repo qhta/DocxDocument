@@ -18,6 +18,6 @@ public partial class ColorStyle
   /// </summary>
   public UInt32? Id { get; set; }
   
-  public DocumentModel.Drawings.ChartsStyle.OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
+  public DMDCS.OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
   
 }

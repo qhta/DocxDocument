@@ -81,12 +81,12 @@ public class MainViewModel : ViewModel
       }
       else
       if (args.PropertyName == nameof(ProcessOptionsVM.StopAtPhase))
-        if (ModelCreator != null)
+        if (Creator != null)
         {
           var phaseNum = processOptionsVM.StopAtPhase;
           if (phaseNum is int n)
           {
-            ModelCreator.StopAtPhase = (PPS)Enum.ToObject(typeof(PPS), n);
+            Creator.StopAtPhase = (PPS)Enum.ToObject(typeof(PPS), n);
             var options = this.ProcessOptionsVM.Model;
             options.StopAtPhase = n;
             ProcessOptionsMgr.SaveInstance((ProcessOptions)options);
@@ -173,39 +173,39 @@ public class MainViewModel : ViewModel
       if (ModelConfig.Instance==null)
         throw new InvalidOperationException(CommonStrings.Model_configuration_not_defined);
       var configPath = ModelConfig.Instance.GetConfigPath();
-      ModelCreator = new ModelCreator(ProcessOptionsVM.ProjectName, this.ProcessOptionsVM.CodeOutputPath, configPath);
+      Creator = new Creator(ProcessOptionsVM.Model);
     }
-    if (ModelCreator != null)
+    if (Creator != null)
     {
       if (!continueProcess)
         this.ProcessMonitor.Clear();
-      ModelCreator.ModelMonitor = this.ProcessMonitor;
-      await Task.Factory.StartNew(() => ModelCreator.RunProcess(options, continueProcess));
-      ModelCreator.CancelRequest = false;
+      Creator.ModelMonitor = this.ProcessMonitor;
+      await Task.Factory.StartNew(() => Creator.RunProcess(options, continueProcess));
+      Creator.CancelRequest = false;
     }
     ProcessStarted = false;
   }
 
-  public ModelCreator? ModelCreator { get; set; }
+  public Creator? Creator { get; set; }
 
   public Command StopProcessCommand { get; }
 
   public bool CanStopProcess()
   {
-    return ModelCreator != null && ProcessStarted;
+    return Creator != null && ProcessStarted;
   }
 
   public void StopProcess()
   {
-    if (ModelCreator != null)
-      ModelCreator.CancelRequest = true;
+    if (Creator != null)
+      Creator.CancelRequest = true;
   }
 
   public Command ContinueProcessCommand { get; }
 
   public bool CanContinueProcess()
   {
-    return ModelCreator != null && ModelCreator.CanContinue && !ProcessStarted;
+    return Creator != null && Creator.CanContinue && !ProcessStarted;
   }
 
 

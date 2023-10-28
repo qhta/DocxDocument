@@ -5,16 +5,17 @@
 /// </summary>
 public record ProcessOptions
 {
-  /// <summary>
-  /// Specifies the name of the generator class.
-  /// </summary>
-  public string? GeneratorType { get; set; }
 
   /// <summary>
   /// Specifies the name of the subfolder of user's AppData containing config files for input and produced log files .
   /// </summary>
   public string? AppDataFolder { get; set; }
 
+  /// <summary>
+  /// Specifies the name of the generator class.
+  /// </summary>
+  public string? GeneratorType { get; set; }
+  
   /// <summary>
   /// Specifies a path for the generated code.
   /// </summary>

@@ -10,30 +10,30 @@ public partial class AxisDataSourceType
   /// <summary>
   ///   Multi Level String Reference.
   /// </summary>
-  public DocumentModel.Drawings.Charts.MultiLevelStringReference? MultiLevelStringReference { get; set; }
+  public DMDC.MultiLevelStringReference? MultiLevelStringReference { get; set; }
   
   
   /// <summary>
   ///   Number Reference.
   /// </summary>
-  public DocumentModel.Drawings.Charts.NumberReference? NumberReference { get; set; }
+  public DMDC.NumberReference? NumberReference { get; set; }
   
   
   /// <summary>
   ///   Number Literal.
   /// </summary>
-  public DocumentModel.Drawings.Charts.NumberLiteral? NumberLiteral { get; set; }
+  public DMDC.NumberLiteral? NumberLiteral { get; set; }
   
   
   /// <summary>
   ///   StringReference.
   /// </summary>
-  public DocumentModel.Drawings.Charts.StringReference? StringReference { get; set; }
+  public DMDC.StringReference? StringReference { get; set; }
   
   
   /// <summary>
   ///   String Literal.
   /// </summary>
-  public DocumentModel.Drawings.Charts.StringLiteral? StringLiteral { get; set; }
+  public DMDC.StringLiteral? StringLiteral { get; set; }
   
 }

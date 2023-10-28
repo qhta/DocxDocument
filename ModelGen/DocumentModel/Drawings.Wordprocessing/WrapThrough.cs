@@ -22,6 +22,6 @@ public partial class WrapThrough
   /// <summary>
   ///   Wrapping Polygon.
   /// </summary>
-  public DocumentModel.Drawings.Wordprocessing.WrapPolygon? WrapPolygon { get; set; }
+  public DMDW.WrapPolygon? WrapPolygon { get; set; }
   
 }

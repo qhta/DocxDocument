@@ -10,12 +10,12 @@ public partial class Document
   /// <summary>
   ///   Document Background.
   /// </summary>
-  public DocumentModel.Wordprocessing.DocumentBackground? DocumentBackground { get; set; }
+  public DMW.DocumentBackground? DocumentBackground { get; set; }
   
   
   /// <summary>
   ///   Body.
   /// </summary>
-  public DocumentModel.Wordprocessing.Body? Body { get; set; }
+  public DMW.Body? Body { get; set; }
   
 }

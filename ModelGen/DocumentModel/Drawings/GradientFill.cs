@@ -16,12 +16,12 @@ public partial class GradientFill
   /// <summary>
   ///   Gradient Stop List.
   /// </summary>
-  public DocumentModel.Drawings.GradientStopList? GradientStopList { get; set; }
+  public DMD.GradientStopList? GradientStopList { get; set; }
   
-  public DocumentModel.Drawings.LinearGradientFill? LinearGradientFill { get; set; }
+  public DMD.LinearGradientFill? LinearGradientFill { get; set; }
   
-  public DocumentModel.Drawings.PathGradientFill? PathGradientFill { get; set; }
+  public DMD.PathGradientFill? PathGradientFill { get; set; }
   
-  public DocumentModel.Drawings.TileRectangle? TileRectangle { get; set; }
+  public DMD.TileRectangle? TileRectangle { get; set; }
   
 }

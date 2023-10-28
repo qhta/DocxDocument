@@ -10,13 +10,13 @@ public partial class RubyProperties
   /// <summary>
   ///   Phonetic Guide Text Alignment.
   /// </summary>
-  public DocumentModel.Wordprocessing.RubyAlignKind? RubyAlign { get; set; }
+  public DMW.RubyAlignKind? RubyAlign { get; set; }
   
   
   /// <summary>
   ///   Phonetic Guide Text Font Size.
   /// </summary>
-  public DocumentModel.Wordprocessing.PhoneticGuideTextFontSize? PhoneticGuideTextFontSize { get; set; }
+  public DMW.PhoneticGuideTextFontSize? PhoneticGuideTextFontSize { get; set; }
   
   
   /// <summary>
@@ -28,7 +28,7 @@ public partial class RubyProperties
   /// <summary>
   ///   Phonetic Guide Base Text Font Size.
   /// </summary>
-  public DocumentModel.Wordprocessing.PhoneticGuideBaseTextSize? PhoneticGuideBaseTextSize { get; set; }
+  public DMW.PhoneticGuideBaseTextSize? PhoneticGuideBaseTextSize { get; set; }
   
   
   /// <summary>
@@ -40,6 +40,6 @@ public partial class RubyProperties
   /// <summary>
   ///   Invalidated Field Cache.
   /// </summary>
-  public DocumentModel.Wordprocessing.Dirty? Dirty { get; set; }
+  public DMW.Dirty? Dirty { get; set; }
   
 }

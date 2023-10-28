@@ -10,12 +10,12 @@ public partial class TextBody
   /// <summary>
   ///   Body Properties.
   /// </summary>
-  public DocumentModel.Drawings.BodyProperties? BodyProperties { get; set; }
+  public DMD.BodyProperties? BodyProperties { get; set; }
   
   
   /// <summary>
   ///   Text List Styles.
   /// </summary>
-  public DocumentModel.Drawings.ListStyle? ListStyle { get; set; }
+  public DMD.ListStyle? ListStyle { get; set; }
   
 }

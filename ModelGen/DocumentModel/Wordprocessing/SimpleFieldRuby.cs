@@ -28,6 +28,6 @@ public partial class SimpleFieldRuby
   /// <summary>
   ///   FieldData.
   /// </summary>
-  public DocumentModel.Wordprocessing.FieldData? FieldData { get; set; }
+  public DMW.FieldData? FieldData { get; set; }
   
 }
