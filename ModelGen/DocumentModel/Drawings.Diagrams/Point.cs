@@ -22,24 +22,24 @@ public partial class Point
   /// <summary>
   ///   Property Set.
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.PropertySet? PropertySet { get; set; }
+  public DMDD.PropertySet? PropertySet { get; set; }
   
   
   /// <summary>
   ///   Shape Properties.
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.ShapeProperties? ShapeProperties { get; set; }
+  public DMDD.ShapeProperties? ShapeProperties { get; set; }
   
   
   /// <summary>
   ///   Text Body.
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.TextBody? TextBody { get; set; }
+  public DMDD.TextBody? TextBody { get; set; }
   
   
   /// <summary>
   ///   PtExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.PtExtensionList? PtExtensionList { get; set; }
+  public DMDD.PtExtensionList? PtExtensionList { get; set; }
   
 }

@@ -16,12 +16,12 @@ public partial class LevelOverride
   /// <summary>
   ///   Numbering Level Starting Value Override.
   /// </summary>
-  public DocumentModel.Wordprocessing.StartOverrideNumberingValue? StartOverrideNumberingValue { get; set; }
+  public DMW.StartOverrideNumberingValue? StartOverrideNumberingValue { get; set; }
   
   
   /// <summary>
   ///   Numbering Level Override Definition.
   /// </summary>
-  public DocumentModel.Wordprocessing.Level? Level { get; set; }
+  public DMW.Level? Level { get; set; }
   
 }

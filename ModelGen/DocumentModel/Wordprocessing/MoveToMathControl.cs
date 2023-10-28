@@ -6,10 +6,10 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class MoveToMathControl
 {
-  public DocumentModel.Wordprocessing.RunProperties? RunProperties { get; set; }
+  public DMW.RunProperties? RunProperties { get; set; }
   
-  public DocumentModel.Wordprocessing.InsertedMathControl? InsertedMathControl { get; set; }
+  public DMW.InsertedMathControl? InsertedMathControl { get; set; }
   
-  public DocumentModel.Wordprocessing.DeletedMathControl? DeletedMathControl { get; set; }
+  public DMW.DeletedMathControl? DeletedMathControl { get; set; }
   
 }

@@ -10,36 +10,36 @@ public partial class TableCellMarginDefault
   /// <summary>
   ///   Table Cell Top Margin Default.
   /// </summary>
-  public DocumentModel.Wordprocessing.TopMargin? TopMargin { get; set; }
+  public DMW.TopMargin? TopMargin { get; set; }
   
   
   /// <summary>
   ///   Table Cell Left Margin Default.
   /// </summary>
-  public DocumentModel.Wordprocessing.TableCellLeftMargin? TableCellLeftMargin { get; set; }
+  public DMW.TableCellLeftMargin? TableCellLeftMargin { get; set; }
   
   
   /// <summary>
   ///   StartMargin, this property is only available in Office 2010 and later..
   /// </summary>
-  public DocumentModel.Wordprocessing.StartMargin? StartMargin { get; set; }
+  public DMW.StartMargin? StartMargin { get; set; }
   
   
   /// <summary>
   ///   Table Cell Bottom Margin Default.
   /// </summary>
-  public DocumentModel.Wordprocessing.BottomMargin? BottomMargin { get; set; }
+  public DMW.BottomMargin? BottomMargin { get; set; }
   
   
   /// <summary>
   ///   Table Cell Right Margin Default.
   /// </summary>
-  public DocumentModel.Wordprocessing.TableCellRightMargin? TableCellRightMargin { get; set; }
+  public DMW.TableCellRightMargin? TableCellRightMargin { get; set; }
   
   
   /// <summary>
   ///   EndMargin, this property is only available in Office 2010 and later..
   /// </summary>
-  public DocumentModel.Wordprocessing.EndMargin? EndMargin { get; set; }
+  public DMW.EndMargin? EndMargin { get; set; }
   
 }

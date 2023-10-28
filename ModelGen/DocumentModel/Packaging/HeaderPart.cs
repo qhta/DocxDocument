@@ -12,7 +12,7 @@ public partial class HeaderPart
   /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.Wordprocessing.Header? Header { get; set; }
+  public DMW.Header? Header { get; set; }
   
   public String? RelationshipType { get; set; }
   

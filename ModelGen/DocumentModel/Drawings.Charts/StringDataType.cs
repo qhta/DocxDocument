@@ -10,6 +10,6 @@ public partial class StringDataType
   /// <summary>
   ///   PointCount.
   /// </summary>
-  public DocumentModel.Drawings.Charts.PointCount? PointCount { get; set; }
+  public DMDC.PointCount? PointCount { get; set; }
   
 }

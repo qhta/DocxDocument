@@ -12,7 +12,7 @@ public partial class EndnotesPart
   /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.Wordprocessing.Endnotes? Endnotes { get; set; }
+  public DMW.Endnotes? Endnotes { get; set; }
   
   public String? RelationshipType { get; set; }
   

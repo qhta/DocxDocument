@@ -14,14 +14,14 @@ public partial class VariableList
   
   public Boolean? BulletEnabled { get; set; }
   
-  public DocumentModel.Drawings.Diagrams.DirectionKind? Direction { get; set; }
+  public DMDD.DirectionKind? Direction { get; set; }
   
-  public DocumentModel.Drawings.Diagrams.HierarchyBranchStyleKind? HierarchyBranch { get; set; }
+  public DMDD.HierarchyBranchStyleKind? HierarchyBranch { get; set; }
   
-  public DocumentModel.Drawings.Diagrams.AnimateOneByOneKind? AnimateOneByOne { get; set; }
+  public DMDD.AnimateOneByOneKind? AnimateOneByOne { get; set; }
   
-  public DocumentModel.Drawings.Diagrams.AnimationLevelStringKind? AnimationLevel { get; set; }
+  public DMDD.AnimationLevelStringKind? AnimationLevel { get; set; }
   
-  public DocumentModel.Drawings.Diagrams.ResizeHandlesStringKind? ResizeHandles { get; set; }
+  public DMDD.ResizeHandlesStringKind? ResizeHandles { get; set; }
   
 }

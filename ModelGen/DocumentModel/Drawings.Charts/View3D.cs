@@ -34,7 +34,7 @@ public partial class View3D
   /// <summary>
   ///   Right Angle Axes.
   /// </summary>
-  public DocumentModel.Drawings.Charts.RightAngleAxes? RightAngleAxes { get; set; }
+  public DMDC.RightAngleAxes? RightAngleAxes { get; set; }
   
   
   /// <summary>
@@ -46,6 +46,6 @@ public partial class View3D
   /// <summary>
   ///   Chart Extensibility.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ExtensionList? ExtensionList { get; set; }
+  public DMDC.ExtensionList? ExtensionList { get; set; }
   
 }

@@ -12,7 +12,7 @@ public partial class FooterPart
   /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.Wordprocessing.Footer? Footer { get; set; }
+  public DMW.Footer? Footer { get; set; }
   
   public String? RelationshipType { get; set; }
   

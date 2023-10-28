@@ -58,6 +58,6 @@ public partial class Connection
   /// <summary>
   ///   ExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.ExtensionList? ExtensionList { get; set; }
+  public DMDD.ExtensionList? ExtensionList { get; set; }
   
 }

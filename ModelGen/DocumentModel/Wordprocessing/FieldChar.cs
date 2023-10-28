@@ -22,18 +22,18 @@ public partial class FieldChar
   /// <summary>
   ///   Custom Field Data.
   /// </summary>
-  public DocumentModel.Wordprocessing.FieldData? FieldData { get; set; }
+  public DMW.FieldData? FieldData { get; set; }
   
   
   /// <summary>
   ///   Form Field Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.FormFieldData? FormFieldData { get; set; }
+  public DMW.FormFieldData? FormFieldData { get; set; }
   
   
   /// <summary>
   ///   Previous Numbering Field Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.NumberingChange? NumberingChange { get; set; }
+  public DMW.NumberingChange? NumberingChange { get; set; }
   
 }

@@ -705,4 +705,10 @@ Use '*' wildcard character to match many characters.</value>
   <data name="Code_output_path_not_defined" xml:space="preserve">
     <value>Code output path is not defined</value>
   </data>
+  <data name="GeneratorType" xml:space="preserve">
+    <value>Generator type</value>
+  </data>
+  <data name="GeneratorTypeTooltip" xml:space="preserve">
+    <value>Generator type specifies the way of output generation</value>
+  </data>
 </root>

@@ -10,18 +10,18 @@ public partial class MultiLevelStringReference
   /// <summary>
   ///   Formula.
   /// </summary>
-  public DocumentModel.Drawings.Charts.Formula? Formula { get; set; }
+  public DMDC.Formula? Formula { get; set; }
   
   
   /// <summary>
   ///   MultiLevelStringCache.
   /// </summary>
-  public DocumentModel.Drawings.Charts.MultiLevelStringCache? MultiLevelStringCache { get; set; }
+  public DMDC.MultiLevelStringCache? MultiLevelStringCache { get; set; }
   
   
   /// <summary>
   ///   MultiLvlStrRefExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.Charts.MultiLvlStrRefExtensionList? MultiLvlStrRefExtensionList { get; set; }
+  public DMDC.MultiLvlStrRefExtensionList? MultiLvlStrRefExtensionList { get; set; }
   
 }

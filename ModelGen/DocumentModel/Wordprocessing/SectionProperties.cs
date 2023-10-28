@@ -30,46 +30,46 @@ public partial class SectionProperties
   /// </summary>
   public DM.HexBinary? RsidSect { get; set; }
   
-  public DocumentModel.Wordprocessing.FootnoteProperties? FootnoteProperties { get; set; }
+  public DMW.FootnoteProperties? FootnoteProperties { get; set; }
   
-  public DocumentModel.Wordprocessing.EndnoteProperties? EndnoteProperties { get; set; }
+  public DMW.EndnoteProperties? EndnoteProperties { get; set; }
   
-  public DocumentModel.Wordprocessing.SectionMarkKind? SectionType { get; set; }
+  public DMW.SectionMarkKind? SectionType { get; set; }
   
-  public DocumentModel.Wordprocessing.PageSize? PageSize { get; set; }
+  public DMW.PageSize? PageSize { get; set; }
   
-  public DocumentModel.Wordprocessing.PageMargin? PageMargin { get; set; }
+  public DMW.PageMargin? PageMargin { get; set; }
   
-  public DocumentModel.Wordprocessing.PaperSource? PaperSource { get; set; }
+  public DMW.PaperSource? PaperSource { get; set; }
   
-  public DocumentModel.Wordprocessing.PageBorders? PageBorders { get; set; }
+  public DMW.PageBorders? PageBorders { get; set; }
   
-  public DocumentModel.Wordprocessing.LineNumberType? LineNumberType { get; set; }
+  public DMW.LineNumberType? LineNumberType { get; set; }
   
-  public DocumentModel.Wordprocessing.PageNumberType? PageNumberType { get; set; }
+  public DMW.PageNumberType? PageNumberType { get; set; }
   
-  public DocumentModel.Wordprocessing.Columns? Columns { get; set; }
+  public DMW.Columns? Columns { get; set; }
   
-  public DocumentModel.Wordprocessing.FormProtection? FormProtection { get; set; }
+  public DMW.FormProtection? FormProtection { get; set; }
   
-  public DocumentModel.Wordprocessing.VerticalJustificationKind? VerticalTextAlignmentOnPage { get; set; }
+  public DMW.VerticalJustificationKind? VerticalTextAlignmentOnPage { get; set; }
   
-  public DocumentModel.Wordprocessing.NoEndnote? NoEndnote { get; set; }
+  public DMW.NoEndnote? NoEndnote { get; set; }
   
-  public DocumentModel.Wordprocessing.TitlePage? TitlePage { get; set; }
+  public DMW.TitlePage? TitlePage { get; set; }
   
-  public DocumentModel.Wordprocessing.TextDirectionKind? TextDirection { get; set; }
+  public DMW.TextDirectionKind? TextDirection { get; set; }
   
-  public DocumentModel.Wordprocessing.BiDi? BiDi { get; set; }
+  public DMW.BiDi? BiDi { get; set; }
   
-  public DocumentModel.Wordprocessing.GutterOnRight? GutterOnRight { get; set; }
+  public DMW.GutterOnRight? GutterOnRight { get; set; }
   
-  public DocumentModel.Wordprocessing.DocGrid? DocGrid { get; set; }
+  public DMW.DocGrid? DocGrid { get; set; }
   
-  public DocumentModel.Wordprocessing.PrinterSettingsReference? PrinterSettingsReference { get; set; }
+  public DMW.PrinterSettingsReference? PrinterSettingsReference { get; set; }
   
   public Int32? FootnoteColumns { get; set; }
   
-  public DocumentModel.Wordprocessing.SectionPropertiesChange? SectionPropertiesChange { get; set; }
+  public DMW.SectionPropertiesChange? SectionPropertiesChange { get; set; }
   
 }

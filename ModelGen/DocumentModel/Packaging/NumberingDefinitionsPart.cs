@@ -12,7 +12,7 @@ public partial class NumberingDefinitionsPart
   /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.Wordprocessing.Numbering? Numbering { get; set; }
+  public DMW.Numbering? Numbering { get; set; }
   
   public String? RelationshipType { get; set; }
   

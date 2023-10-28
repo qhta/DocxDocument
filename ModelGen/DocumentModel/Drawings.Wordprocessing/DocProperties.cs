@@ -40,18 +40,18 @@ public partial class DocProperties
   /// <summary>
   ///   Hyperlink associated with clicking or selecting the element..
   /// </summary>
-  public DocumentModel.Drawings.HyperlinkOnClick? HyperlinkOnClick { get; set; }
+  public DMD.HyperlinkOnClick? HyperlinkOnClick { get; set; }
   
   
   /// <summary>
   ///   Hyperlink associated with hovering over the element..
   /// </summary>
-  public DocumentModel.Drawings.HyperlinkOnHover? HyperlinkOnHover { get; set; }
+  public DMD.HyperlinkOnHover? HyperlinkOnHover { get; set; }
   
   
   /// <summary>
   ///   Future extension.
   /// </summary>
-  public DocumentModel.Drawings.NonVisualDrawingPropertiesExtensionList? NonVisualDrawingPropertiesExtensionList { get; set; }
+  public DMD.NonVisualDrawingPropertiesExtensionList? NonVisualDrawingPropertiesExtensionList { get; set; }
   
 }

@@ -6,14 +6,14 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class LineDefault
 {
-  public DocumentModel.Drawings.ShapeProperties? ShapeProperties { get; set; }
+  public DMD.ShapeProperties? ShapeProperties { get; set; }
   
-  public DocumentModel.Drawings.BodyProperties? BodyProperties { get; set; }
+  public DMD.BodyProperties? BodyProperties { get; set; }
   
-  public DocumentModel.Drawings.ListStyle? ListStyle { get; set; }
+  public DMD.ListStyle? ListStyle { get; set; }
   
-  public DocumentModel.Drawings.ShapeStyle? ShapeStyle { get; set; }
+  public DMD.ShapeStyle? ShapeStyle { get; set; }
   
-  public DocumentModel.Drawings.ExtensionList? ExtensionList { get; set; }
+  public DMD.ExtensionList? ExtensionList { get; set; }
   
 }

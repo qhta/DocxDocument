@@ -6,8 +6,8 @@ namespace DocumentModel.Math;
 /// </summary>
 public partial class Denominator
 {
-  public DocumentModel.Math.ArgumentProperties? ArgumentProperties { get; set; }
+  public DMM.ArgumentProperties? ArgumentProperties { get; set; }
   
-  public DocumentModel.Math.ControlProperties? ControlProperties { get; set; }
+  public DMM.ControlProperties? ControlProperties { get; set; }
   
 }

@@ -22,16 +22,16 @@ public partial class BlipFill
   /// <summary>
   ///   Blip.
   /// </summary>
-  public DocumentModel.Drawings.Blip? Blip { get; set; }
+  public DMD.Blip? Blip { get; set; }
   
   
   /// <summary>
   ///   Source Rectangle.
   /// </summary>
-  public DocumentModel.Drawings.SourceRectangle? SourceRectangle { get; set; }
+  public DMD.SourceRectangle? SourceRectangle { get; set; }
   
-  public DocumentModel.Drawings.Tile? Tile { get; set; }
+  public DMD.Tile? Tile { get; set; }
   
-  public DocumentModel.Drawings.Stretch? Stretch { get; set; }
+  public DMD.Stretch? Stretch { get; set; }
   
 }

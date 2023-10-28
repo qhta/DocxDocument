@@ -10,30 +10,30 @@ public partial class Color2Type
   /// <summary>
   ///   RGB Color Model - Percentage Variant.
   /// </summary>
-  public DocumentModel.Drawings.RgbColorModelPercentage? RgbColorModelPercentage { get; set; }
+  public DMD.RgbColorModelPercentage? RgbColorModelPercentage { get; set; }
   
   
   /// <summary>
   ///   RGB Color Model - Hex Variant.
   /// </summary>
-  public DocumentModel.Drawings.RgbColorModelHex? RgbColorModelHex { get; set; }
+  public DMD.RgbColorModelHex? RgbColorModelHex { get; set; }
   
   
   /// <summary>
   ///   Hue, Saturation, Luminance Color Model.
   /// </summary>
-  public DocumentModel.Drawings.HslColor? HslColor { get; set; }
+  public DMD.HslColor? HslColor { get; set; }
   
   
   /// <summary>
   ///   System Color.
   /// </summary>
-  public DocumentModel.Drawings.SystemColor? SystemColor { get; set; }
+  public DMD.SystemColor? SystemColor { get; set; }
   
   
   /// <summary>
   ///   Preset Color.
   /// </summary>
-  public DocumentModel.Drawings.PresetColorKind? PresetColor { get; set; }
+  public DMD.PresetColorKind? PresetColor { get; set; }
   
 }

@@ -10,6 +10,6 @@ public partial class Rsids
   /// <summary>
   ///   Original Document Revision Save ID.
   /// </summary>
-  public DocumentModel.Wordprocessing.RsidRoot? RsidRoot { get; set; }
+  public DMW.RsidRoot? RsidRoot { get; set; }
   
 }

@@ -22,6 +22,6 @@ public partial class WrapTight
   /// <summary>
   ///   Tight Wrapping Extents Polygon.
   /// </summary>
-  public DocumentModel.Drawings.Wordprocessing.WrapPolygon? WrapPolygon { get; set; }
+  public DMDW.WrapPolygon? WrapPolygon { get; set; }
   
 }

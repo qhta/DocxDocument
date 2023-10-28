@@ -10,6 +10,6 @@ public partial class Stretch
   /// <summary>
   ///   Fill Rectangle.
   /// </summary>
-  public DocumentModel.Drawings.FillRectangle? FillRectangle { get; set; }
+  public DMD.FillRectangle? FillRectangle { get; set; }
   
 }

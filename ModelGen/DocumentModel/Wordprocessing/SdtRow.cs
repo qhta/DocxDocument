@@ -10,10 +10,10 @@ public partial class SdtRow
   /// <summary>
   ///   Row-Level Structured Document Tag Content.
   /// </summary>
-  public DocumentModel.Wordprocessing.SdtContentRow? SdtContentRow { get; set; }
+  public DMW.SdtContentRow? SdtContentRow { get; set; }
   
-  public DocumentModel.Wordprocessing.SdtProperties? SdtProperties { get; set; }
+  public DMW.SdtProperties? SdtProperties { get; set; }
   
-  public DocumentModel.Wordprocessing.SdtEndCharProperties? SdtEndCharProperties { get; set; }
+  public DMW.SdtEndCharProperties? SdtEndCharProperties { get; set; }
   
 }

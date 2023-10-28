@@ -10,30 +10,30 @@ public partial class TableStyleProperties
   /// <summary>
   ///   Table Style Conditional Formatting Paragraph Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.StyleParagraphProperties? StyleParagraphProperties { get; set; }
+  public DMW.StyleParagraphProperties? StyleParagraphProperties { get; set; }
   
   
   /// <summary>
   ///   Table Style Conditional Formatting Run Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.RunPropertiesBaseStyle? RunPropertiesBaseStyle { get; set; }
+  public DMW.RunPropertiesBaseStyle? RunPropertiesBaseStyle { get; set; }
   
   
   /// <summary>
   ///   Table Style Conditional Formatting Table Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.TableStyleConditionalFormattingTableProperties? TableStyleConditionalFormattingTableProperties { get; set; }
+  public DMW.TableStyleConditionalFormattingTableProperties? TableStyleConditionalFormattingTableProperties { get; set; }
   
   
   /// <summary>
   ///   Table Style Conditional Formatting Table Row Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.TableStyleConditionalFormattingTableRowProperties? TableStyleConditionalFormattingTableRowProperties { get; set; }
+  public DMW.TableStyleConditionalFormattingTableRowProperties? TableStyleConditionalFormattingTableRowProperties { get; set; }
   
   
   /// <summary>
   ///   Table Style Conditional Formatting Table Cell Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.TableStyleConditionalFormattingTableCellProperties? TableStyleConditionalFormattingTableCellProperties { get; set; }
+  public DMW.TableStyleConditionalFormattingTableCellProperties? TableStyleConditionalFormattingTableCellProperties { get; set; }
   
 }

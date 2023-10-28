@@ -28,12 +28,12 @@ public partial class Transform
   /// <summary>
   ///   Offset.
   /// </summary>
-  public DocumentModel.Drawings.Offset? Offset { get; set; }
+  public DMD.Offset? Offset { get; set; }
   
   
   /// <summary>
   ///   Extents.
   /// </summary>
-  public DocumentModel.Drawings.Extents? Extents { get; set; }
+  public DMD.Extents? Extents { get; set; }
   
 }

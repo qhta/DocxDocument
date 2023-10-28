@@ -88,48 +88,48 @@ public partial class Anchor
   /// <summary>
   ///   Simple Positioning Coordinates.
   /// </summary>
-  public DocumentModel.Drawings.Wordprocessing.SimplePosition? SimplePosition { get; set; }
+  public DMDW.SimplePosition? SimplePosition { get; set; }
   
   
   /// <summary>
   ///   Horizontal Positioning.
   /// </summary>
-  public DocumentModel.Drawings.Wordprocessing.HorizontalPosition? HorizontalPosition { get; set; }
+  public DMDW.HorizontalPosition? HorizontalPosition { get; set; }
   
   
   /// <summary>
   ///   Vertical Positioning.
   /// </summary>
-  public DocumentModel.Drawings.Wordprocessing.VerticalPosition? VerticalPosition { get; set; }
+  public DMDW.VerticalPosition? VerticalPosition { get; set; }
   
   
   /// <summary>
   ///   Inline Drawing Object Extents.
   /// </summary>
-  public DocumentModel.Drawings.Wordprocessing.Extent? Extent { get; set; }
+  public DMDW.Extent? Extent { get; set; }
   
   
   /// <summary>
   ///   EffectExtent.
   /// </summary>
-  public DocumentModel.Drawings.Wordprocessing.EffectExtent? EffectExtent { get; set; }
+  public DMDW.EffectExtent? EffectExtent { get; set; }
   
-  public DocumentModel.Drawings.Wordprocessing.WrapNone? WrapNone { get; set; }
+  public DMDW.WrapNone? WrapNone { get; set; }
   
-  public DocumentModel.Drawings.Wordprocessing.WrapSquare? WrapSquare { get; set; }
+  public DMDW.WrapSquare? WrapSquare { get; set; }
   
-  public DocumentModel.Drawings.Wordprocessing.WrapTight? WrapTight { get; set; }
+  public DMDW.WrapTight? WrapTight { get; set; }
   
-  public DocumentModel.Drawings.Wordprocessing.WrapThrough? WrapThrough { get; set; }
+  public DMDW.WrapThrough? WrapThrough { get; set; }
   
-  public DocumentModel.Drawings.Wordprocessing.WrapTopBottom? WrapTopBottom { get; set; }
+  public DMDW.WrapTopBottom? WrapTopBottom { get; set; }
   
-  public DocumentModel.Drawings.Wordprocessing.DocProperties? DocProperties { get; set; }
+  public DMDW.DocProperties? DocProperties { get; set; }
   
-  public DocumentModel.Drawings.Wordprocessing.NonVisualGraphicFrameDrawingProperties? NonVisualGraphicFrameDrawingProperties { get; set; }
+  public DMDW.NonVisualGraphicFrameDrawingProperties? NonVisualGraphicFrameDrawingProperties { get; set; }
   
-  public DocumentModel.Drawings.Graphic? Graphic { get; set; }
+  public DMD.Graphic? Graphic { get; set; }
   
-  public DocumentModel.Wordprocessing.Drawings.RelativeWidth? RelativeWidth { get; set; }
+  public DMWD.RelativeWidth? RelativeWidth { get; set; }
   
 }

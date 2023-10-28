@@ -24,16 +24,16 @@ public partial class LayoutDefinition
   /// </summary>
   public String? DefaultStyle { get; set; }
   
-  public DocumentModel.Drawings.Diagrams.CategoryList? CategoryList { get; set; }
+  public DMDD.CategoryList? CategoryList { get; set; }
   
-  public DocumentModel.Drawings.Diagrams.SampleData? SampleData { get; set; }
+  public DMDD.SampleData? SampleData { get; set; }
   
-  public DocumentModel.Drawings.Diagrams.StyleData? StyleData { get; set; }
+  public DMDD.StyleData? StyleData { get; set; }
   
-  public DocumentModel.Drawings.Diagrams.ColorData? ColorData { get; set; }
+  public DMDD.ColorData? ColorData { get; set; }
   
-  public DocumentModel.Drawings.Diagrams.LayoutNode? LayoutNode { get; set; }
+  public DMDD.LayoutNode? LayoutNode { get; set; }
   
-  public DocumentModel.Drawings.Diagrams.DiagramDefinitionExtensionList? DiagramDefinitionExtensionList { get; set; }
+  public DMDD.DiagramDefinitionExtensionList? DiagramDefinitionExtensionList { get; set; }
   
 }

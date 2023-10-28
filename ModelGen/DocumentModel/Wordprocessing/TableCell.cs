@@ -10,6 +10,6 @@ public partial class TableCell
   /// <summary>
   ///   Table Cell Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.TableCellProperties? TableCellProperties { get; set; }
+  public DMW.TableCellProperties? TableCellProperties { get; set; }
   
 }

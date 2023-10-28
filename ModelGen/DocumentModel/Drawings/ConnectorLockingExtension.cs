@@ -12,6 +12,6 @@ public partial class ConnectorLockingExtension
   /// </summary>
   public String? Uri { get; set; }
   
-  public DocumentModel.Drawings.Graphic? Graphic { get; set; }
+  public DMD.Graphic? Graphic { get; set; }
   
 }

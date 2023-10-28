@@ -94,20 +94,20 @@ public partial class TextBodyProperties
   /// <summary>
   ///   Preset Text Shape.
   /// </summary>
-  public DocumentModel.Drawings.PresetTextWrap? PresetTextWrap { get; set; }
+  public DMD.PresetTextWrap? PresetTextWrap { get; set; }
   
-  public DocumentModel.Drawings.NoAutoFit? NoAutoFit { get; set; }
+  public DMD.NoAutoFit? NoAutoFit { get; set; }
   
-  public DocumentModel.Drawings.NormalAutoFit? NormalAutoFit { get; set; }
+  public DMD.NormalAutoFit? NormalAutoFit { get; set; }
   
-  public DocumentModel.Drawings.ShapeAutoFit? ShapeAutoFit { get; set; }
+  public DMD.ShapeAutoFit? ShapeAutoFit { get; set; }
   
-  public DocumentModel.Drawings.Scene3DType? Scene3DType { get; set; }
+  public DMD.Scene3DType? Scene3DType { get; set; }
   
-  public DocumentModel.Drawings.Shape3DType? Shape3DType { get; set; }
+  public DMD.Shape3DType? Shape3DType { get; set; }
   
-  public DocumentModel.Drawings.FlatText? FlatText { get; set; }
+  public DMD.FlatText? FlatText { get; set; }
   
-  public DocumentModel.Drawings.ExtensionList? ExtensionList { get; set; }
+  public DMD.ExtensionList? ExtensionList { get; set; }
   
 }

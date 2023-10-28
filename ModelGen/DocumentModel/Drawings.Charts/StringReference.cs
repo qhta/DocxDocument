@@ -10,18 +10,18 @@ public partial class StringReference
   /// <summary>
   ///   Formula.
   /// </summary>
-  public DocumentModel.Drawings.Charts.Formula? Formula { get; set; }
+  public DMDC.Formula? Formula { get; set; }
   
   
   /// <summary>
   ///   StringCache.
   /// </summary>
-  public DocumentModel.Drawings.Charts.StringCache? StringCache { get; set; }
+  public DMDC.StringCache? StringCache { get; set; }
   
   
   /// <summary>
   ///   StrRefExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.Charts.StrRefExtensionList? StrRefExtensionList { get; set; }
+  public DMDC.StrRefExtensionList? StrRefExtensionList { get; set; }
   
 }

@@ -30,8 +30,8 @@ public partial class InsertedMathControl
   /// </summary>
   public String? Id { get; set; }
   
-  public DocumentModel.Wordprocessing.RunProperties? RunProperties { get; set; }
+  public DMW.RunProperties? RunProperties { get; set; }
   
-  public DocumentModel.Wordprocessing.DeletedMathControl? DeletedMathControl { get; set; }
+  public DMW.DeletedMathControl? DeletedMathControl { get; set; }
   
 }

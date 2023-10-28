@@ -25,4 +25,16 @@ public partial class ProcessOptionsView : UserControl
   {
     TypeSelectionBox.Visibility = System.Windows.Visibility.Collapsed;
   }
+
+
+  private void ShowGeneratorSelectionBox_Click(object sender, RoutedEventArgs e)
+  {
+    GeneratorSelectionBox.Visibility = System.Windows.Visibility.Visible;
+    GeneratorSelectionBox.IsDropDownOpen = true;
+  }
+
+  private void GeneratorSelectionBox_DropDownClosed(object sender, EventArgs e)
+  {
+    GeneratorSelectionBox.Visibility = System.Windows.Visibility.Collapsed;
+  }
 }

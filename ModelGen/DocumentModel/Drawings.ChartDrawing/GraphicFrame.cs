@@ -22,18 +22,18 @@ public partial class GraphicFrame
   /// <summary>
   ///   Non-Visual Graphic Frame Properties.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawing.NonVisualGraphicFrameProperties? NonVisualGraphicFrameProperties { get; set; }
+  public DMDCD.NonVisualGraphicFrameProperties? NonVisualGraphicFrameProperties { get; set; }
   
   
   /// <summary>
   ///   Graphic Frame Transform.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawing.Transform? Transform { get; set; }
+  public DMDCD.Transform? Transform { get; set; }
   
   
   /// <summary>
   ///   Graphical Object.
   /// </summary>
-  public DocumentModel.Drawings.Graphic? Graphic { get; set; }
+  public DMD.Graphic? Graphic { get; set; }
   
 }

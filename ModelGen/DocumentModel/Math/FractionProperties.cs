@@ -10,12 +10,12 @@ public partial class FractionProperties
   /// <summary>
   ///   Fraction type.
   /// </summary>
-  public DocumentModel.Math.FractionTypeKind? FractionType { get; set; }
+  public DMM.FractionTypeKind? FractionType { get; set; }
   
   
   /// <summary>
   ///   ControlProperties.
   /// </summary>
-  public DocumentModel.Math.ControlProperties? ControlProperties { get; set; }
+  public DMM.ControlProperties? ControlProperties { get; set; }
   
 }

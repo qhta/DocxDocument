@@ -10,18 +10,18 @@ public partial class NumberReference
   /// <summary>
   ///   Formula.
   /// </summary>
-  public DocumentModel.Drawings.Charts.Formula? Formula { get; set; }
+  public DMDC.Formula? Formula { get; set; }
   
   
   /// <summary>
   ///   NumberingCache.
   /// </summary>
-  public DocumentModel.Drawings.Charts.NumberingCache? NumberingCache { get; set; }
+  public DMDC.NumberingCache? NumberingCache { get; set; }
   
   
   /// <summary>
   ///   NumRefExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.Charts.NumRefExtensionList? NumRefExtensionList { get; set; }
+  public DMDC.NumRefExtensionList? NumRefExtensionList { get; set; }
   
 }

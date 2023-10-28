@@ -10,18 +10,18 @@ public partial class SdtDocPartType
   /// <summary>
   ///   Document Part Gallery Filter.
   /// </summary>
-  public DocumentModel.Wordprocessing.DocPartGallery? DocPartGallery { get; set; }
+  public DMW.DocPartGallery? DocPartGallery { get; set; }
   
   
   /// <summary>
   ///   Document Part Category Filter.
   /// </summary>
-  public DocumentModel.Wordprocessing.DocPartCategory? DocPartCategory { get; set; }
+  public DMW.DocPartCategory? DocPartCategory { get; set; }
   
   
   /// <summary>
   ///   Built-In Document Part.
   /// </summary>
-  public DocumentModel.Wordprocessing.DocPartUnique? DocPartUnique { get; set; }
+  public DMW.DocPartUnique? DocPartUnique { get; set; }
   
 }

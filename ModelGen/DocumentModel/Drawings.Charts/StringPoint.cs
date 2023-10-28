@@ -16,6 +16,6 @@ public partial class StringPoint
   /// <summary>
   ///   Text Value.
   /// </summary>
-  public DocumentModel.Drawings.Charts.NumericValue? NumericValue { get; set; }
+  public DMDC.NumericValue? NumericValue { get; set; }
   
 }

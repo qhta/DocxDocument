@@ -10,60 +10,60 @@ public partial class ManualLayout
   /// <summary>
   ///   Layout Target.
   /// </summary>
-  public DocumentModel.Drawings.Charts.LayoutTargetKind? LayoutTarget { get; set; }
+  public DMDC.LayoutTargetKind? LayoutTarget { get; set; }
   
   
   /// <summary>
   ///   Left Mode.
   /// </summary>
-  public DocumentModel.Drawings.Charts.LeftMode? LeftMode { get; set; }
+  public DMDC.LeftMode? LeftMode { get; set; }
   
   
   /// <summary>
   ///   Top Mode.
   /// </summary>
-  public DocumentModel.Drawings.Charts.TopMode? TopMode { get; set; }
+  public DMDC.TopMode? TopMode { get; set; }
   
   
   /// <summary>
   ///   Width Mode.
   /// </summary>
-  public DocumentModel.Drawings.Charts.WidthMode? WidthMode { get; set; }
+  public DMDC.WidthMode? WidthMode { get; set; }
   
   
   /// <summary>
   ///   Height Mode.
   /// </summary>
-  public DocumentModel.Drawings.Charts.HeightMode? HeightMode { get; set; }
+  public DMDC.HeightMode? HeightMode { get; set; }
   
   
   /// <summary>
   ///   Left.
   /// </summary>
-  public DocumentModel.Drawings.Charts.Left? Left { get; set; }
+  public DMDC.Left? Left { get; set; }
   
   
   /// <summary>
   ///   Top.
   /// </summary>
-  public DocumentModel.Drawings.Charts.Top? Top { get; set; }
+  public DMDC.Top? Top { get; set; }
   
   
   /// <summary>
   ///   Width.
   /// </summary>
-  public DocumentModel.Drawings.Charts.Width? Width { get; set; }
+  public DMDC.Width? Width { get; set; }
   
   
   /// <summary>
   ///   Height.
   /// </summary>
-  public DocumentModel.Drawings.Charts.Height? Height { get; set; }
+  public DMDC.Height? Height { get; set; }
   
   
   /// <summary>
   ///   Chart Extensibility.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ExtensionList? ExtensionList { get; set; }
+  public DMDC.ExtensionList? ExtensionList { get; set; }
   
 }

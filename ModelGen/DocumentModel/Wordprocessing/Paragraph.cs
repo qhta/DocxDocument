@@ -58,6 +58,6 @@ public partial class Paragraph
   /// <summary>
   ///   Paragraph Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.ParagraphProperties? ParagraphProperties { get; set; }
+  public DMW.ParagraphProperties? ParagraphProperties { get; set; }
   
 }

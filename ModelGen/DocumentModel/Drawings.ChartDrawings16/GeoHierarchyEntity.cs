@@ -1,0 +1,21 @@
+namespace DocumentModel.Drawings.ChartDrawings16;
+
+
+/// <summary>
+///   Defines the GeoHierarchyEntity Class.
+/// </summary>
+public partial class GeoHierarchyEntity
+{
+  
+  /// <summary>
+  ///   entityName, this property is only available in Office 2016 and later.
+  /// </summary>
+  public String? EntityName { get; set; }
+  
+  
+  /// <summary>
+  ///   entityId, this property is only available in Office 2016 and later.
+  /// </summary>
+  public String? EntityId { get; set; }
+  
+}

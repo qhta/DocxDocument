@@ -10,12 +10,12 @@ public partial class BandFormat
   /// <summary>
   ///   Index.
   /// </summary>
-  public DocumentModel.Drawings.Charts.Index? Index { get; set; }
+  public DMDC.Index? Index { get; set; }
   
   
   /// <summary>
   ///   ChartShapeProperties.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ChartShapeProperties? ChartShapeProperties { get; set; }
+  public DMDC.ChartShapeProperties? ChartShapeProperties { get; set; }
   
 }

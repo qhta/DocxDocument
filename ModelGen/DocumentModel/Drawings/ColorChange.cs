@@ -16,12 +16,12 @@ public partial class ColorChange
   /// <summary>
   ///   Change Color From.
   /// </summary>
-  public DocumentModel.Drawings.ColorFrom? ColorFrom { get; set; }
+  public DMD.ColorFrom? ColorFrom { get; set; }
   
   
   /// <summary>
   ///   Change Color To.
   /// </summary>
-  public DocumentModel.Drawings.ColorTo? ColorTo { get; set; }
+  public DMD.ColorTo? ColorTo { get; set; }
   
 }

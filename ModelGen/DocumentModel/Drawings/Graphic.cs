@@ -10,6 +10,6 @@ public partial class Graphic
   /// <summary>
   ///   Graphic Object Data.
   /// </summary>
-  public DocumentModel.Drawings.GraphicData? GraphicData { get; set; }
+  public DMD.GraphicData? GraphicData { get; set; }
   
 }

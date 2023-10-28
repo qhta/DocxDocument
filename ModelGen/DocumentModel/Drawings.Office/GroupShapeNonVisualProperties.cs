@@ -10,12 +10,12 @@ public partial class GroupShapeNonVisualProperties
   /// <summary>
   ///   NonVisualDrawingProperties.
   /// </summary>
-  public DocumentModel.Drawings.Office.NonVisualDrawingProperties? NonVisualDrawingProperties { get; set; }
+  public DMDO.NonVisualDrawingProperties? NonVisualDrawingProperties { get; set; }
   
   
   /// <summary>
   ///   NonVisualGroupDrawingShapeProperties.
   /// </summary>
-  public DocumentModel.Drawings.Office.NonVisualGroupDrawingShapeProperties? NonVisualGroupDrawingShapeProperties { get; set; }
+  public DMDO.NonVisualGroupDrawingShapeProperties? NonVisualGroupDrawingShapeProperties { get; set; }
   
 }

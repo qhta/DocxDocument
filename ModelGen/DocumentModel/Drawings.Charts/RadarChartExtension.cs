@@ -12,6 +12,6 @@ public partial class RadarChartExtension
   /// </summary>
   public String? Uri { get; set; }
   
-  public DocumentModel.Drawings.Charts.FilteredRadarSeries? FilteredRadarSeries { get; set; }
+  public DMDC13.FilteredRadarSeries? FilteredRadarSeries { get; set; }
   
 }

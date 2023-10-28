@@ -24,12 +24,12 @@ public partial class EmbeddedObject
   /// </summary>
   public DM.HexBinary? AnchorId { get; set; }
   
-  public DocumentModel.Wordprocessing.Drawing? Drawing { get; set; }
+  public DMW.Drawing? Drawing { get; set; }
   
-  public DocumentModel.Wordprocessing.Control? Control { get; set; }
+  public DMW.Control? Control { get; set; }
   
-  public DocumentModel.Wordprocessing.ObjectEmbed? ObjectEmbed { get; set; }
+  public DMW.ObjectEmbed? ObjectEmbed { get; set; }
   
-  public DocumentModel.Wordprocessing.ObjectLink? ObjectLink { get; set; }
+  public DMW.ObjectLink? ObjectLink { get; set; }
   
 }

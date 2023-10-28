@@ -10,12 +10,12 @@ public partial class AccentProperties
   /// <summary>
   ///   Accent Character.
   /// </summary>
-  public DocumentModel.Math.AccentChar? AccentChar { get; set; }
+  public DMM.AccentChar? AccentChar { get; set; }
   
   
   /// <summary>
   ///   Control Properties.
   /// </summary>
-  public DocumentModel.Math.ControlProperties? ControlProperties { get; set; }
+  public DMM.ControlProperties? ControlProperties { get; set; }
   
 }

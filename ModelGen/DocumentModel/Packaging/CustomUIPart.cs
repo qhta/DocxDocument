@@ -10,6 +10,6 @@ public partial class CustomUIPart
   /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>
-  public DMUI.CustomUI? CustomUI { get; set; }
+  public DMCUI.CustomUI? CustomUI { get; set; }
   
 }

@@ -6,10 +6,10 @@ namespace DocumentModel.Drawings.Office;
 /// </summary>
 public partial class ShapeTree
 {
-  public DocumentModel.Drawings.Office.GroupShapeNonVisualProperties? GroupShapeNonVisualProperties { get; set; }
+  public DMDO.GroupShapeNonVisualProperties? GroupShapeNonVisualProperties { get; set; }
   
-  public DocumentModel.Drawings.Office.GroupShapeProperties? GroupShapeProperties { get; set; }
+  public DMDO.GroupShapeProperties? GroupShapeProperties { get; set; }
   
-  public DocumentModel.Drawings.Office.OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
+  public DMDO.OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
   
 }

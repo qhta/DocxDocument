@@ -1,0 +1,21 @@
+namespace DocumentModel.Word10;
+
+
+/// <summary>
+///   Defines the BevelType Class.
+/// </summary>
+public partial class BevelType
+{
+  
+  /// <summary>
+  ///   w, this property is only available in Office 2010 and later.
+  /// </summary>
+  public Int64? Width { get; set; }
+  
+  
+  /// <summary>
+  ///   h, this property is only available in Office 2010 and later.
+  /// </summary>
+  public Int64? Height { get; set; }
+  
+}

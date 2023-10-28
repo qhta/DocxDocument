@@ -46,12 +46,12 @@ public partial class TableRow
   /// <summary>
   ///   Table-Level Property Exceptions.
   /// </summary>
-  public DocumentModel.Wordprocessing.TablePropertyExceptions? TablePropertyExceptions { get; set; }
+  public DMW.TablePropertyExceptions? TablePropertyExceptions { get; set; }
   
   
   /// <summary>
   ///   Table Row Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.TableRowProperties? TableRowProperties { get; set; }
+  public DMW.TableRowProperties? TableRowProperties { get; set; }
   
 }

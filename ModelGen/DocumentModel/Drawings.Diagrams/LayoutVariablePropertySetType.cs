@@ -34,30 +34,30 @@ public partial class LayoutVariablePropertySetType
   /// <summary>
   ///   Diagram Direction.
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.DirectionKind? Direction { get; set; }
+  public DMDD.DirectionKind? Direction { get; set; }
   
   
   /// <summary>
   ///   Organization Chart Branch Style.
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.HierarchyBranchStyleKind? HierarchyBranch { get; set; }
+  public DMDD.HierarchyBranchStyleKind? HierarchyBranch { get; set; }
   
   
   /// <summary>
   ///   One by One Animation String.
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.AnimateOneByOneKind? AnimateOneByOne { get; set; }
+  public DMDD.AnimateOneByOneKind? AnimateOneByOne { get; set; }
   
   
   /// <summary>
   ///   Level Animation.
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.AnimationLevelStringKind? AnimationLevel { get; set; }
+  public DMDD.AnimationLevelStringKind? AnimationLevel { get; set; }
   
   
   /// <summary>
   ///   Shape Resize Style.
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.ResizeHandlesStringKind? ResizeHandles { get; set; }
+  public DMDD.ResizeHandlesStringKind? ResizeHandles { get; set; }
   
 }

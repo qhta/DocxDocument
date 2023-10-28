@@ -12,7 +12,7 @@ public partial class DiagramLayoutDefinitionPart
   /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.LayoutDefinition? LayoutDefinition { get; set; }
+  public DMDD.LayoutDefinition? LayoutDefinition { get; set; }
   
   public String? RelationshipType { get; set; }
   

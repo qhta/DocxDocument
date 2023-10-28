@@ -10,12 +10,12 @@ public partial class PlotArea
   /// <summary>
   ///   Layout.
   /// </summary>
-  public DocumentModel.Drawings.Charts.Layout? Layout { get; set; }
+  public DMDC.Layout? Layout { get; set; }
   
-  public DocumentModel.Drawings.Charts.DataTable? DataTable { get; set; }
+  public DMDC.DataTable? DataTable { get; set; }
   
-  public DocumentModel.Drawings.Charts.ShapeProperties? ShapeProperties { get; set; }
+  public DMDC.ShapeProperties? ShapeProperties { get; set; }
   
-  public DocumentModel.Drawings.Charts.ExtensionList? ExtensionList { get; set; }
+  public DMDC.ExtensionList? ExtensionList { get; set; }
   
 }

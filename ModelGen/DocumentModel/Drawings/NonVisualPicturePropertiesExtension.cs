@@ -12,14 +12,14 @@ public partial class NonVisualPicturePropertiesExtension
   /// </summary>
   public String? Uri { get; set; }
   
-  public DocumentModel.Drawings.CameraTool? CameraTool { get; set; }
+  public DMD10.CameraTool? CameraTool { get; set; }
   
-  public DocumentModel.Drawings.SignatureLine? SignatureLine { get; set; }
+  public DMD.SignatureLine? SignatureLine { get; set; }
   
-  public DocumentModel.Drawings.ObjectProperties? ObjectProperties { get; set; }
+  public DMD.ObjectProperties? ObjectProperties { get; set; }
   
-  public DocumentModel.Drawings.LiveFeedProperties? LiveFeedProperties { get; set; }
+  public DMD.LiveFeedProperties? LiveFeedProperties { get; set; }
   
-  public DocumentModel.Drawings.ImageFormula? ImageFormula { get; set; }
+  public DMDIF.ImageFormula? ImageFormula { get; set; }
   
 }

@@ -6,10 +6,10 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class NumberLiteral
 {
-  public DocumentModel.Drawings.Charts.FormatCode? FormatCode { get; set; }
+  public DMDC.FormatCode? FormatCode { get; set; }
   
-  public DocumentModel.Drawings.Charts.PointCount? PointCount { get; set; }
+  public DMDC.PointCount? PointCount { get; set; }
   
-  public DocumentModel.Drawings.Charts.ExtensionList? ExtensionList { get; set; }
+  public DMDC.ExtensionList? ExtensionList { get; set; }
   
 }

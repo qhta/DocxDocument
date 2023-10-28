@@ -6,6 +6,6 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class Captions
 {
-  public DocumentModel.Wordprocessing.AutoCaptions? AutoCaptions { get; set; }
+  public DMW.AutoCaptions? AutoCaptions { get; set; }
   
 }

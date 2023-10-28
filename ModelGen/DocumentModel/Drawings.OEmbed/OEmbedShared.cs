@@ -22,6 +22,6 @@ public partial class OEmbedShared
   /// <summary>
   ///   OfficeArtExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.OEmbed.OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
+  public DMDOE.OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
   
 }

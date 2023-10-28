@@ -10,12 +10,12 @@ public partial class PieChart
   /// <summary>
   ///   VaryColors.
   /// </summary>
-  public DocumentModel.Drawings.Charts.VaryColors? VaryColors { get; set; }
+  public DMDC.VaryColors? VaryColors { get; set; }
   
-  public DocumentModel.Drawings.Charts.DataLabels? DataLabels { get; set; }
+  public DMDC.DataLabels? DataLabels { get; set; }
   
   public UInt16? FirstSliceAngle { get; set; }
   
-  public DocumentModel.Drawings.Charts.PieChartExtensionList? PieChartExtensionList { get; set; }
+  public DMDC.PieChartExtensionList? PieChartExtensionList { get; set; }
   
 }

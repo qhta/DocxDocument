@@ -28,6 +28,6 @@ public partial class WebExtensionBinding
   /// <summary>
   ///   OfficeArtExtensionList.
   /// </summary>
-  public DocumentModel.WebExtensions.OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
+  public DMEX.OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
   
 }

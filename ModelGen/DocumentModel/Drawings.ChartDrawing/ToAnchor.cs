@@ -6,8 +6,8 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// </summary>
 public partial class ToAnchor
 {
-  public DocumentModel.Drawings.ChartDrawing.XPosition? XPosition { get; set; }
+  public DMDCD.XPosition? XPosition { get; set; }
   
-  public DocumentModel.Drawings.ChartDrawing.YPosition? YPosition { get; set; }
+  public DMDCD.YPosition? YPosition { get; set; }
   
 }

@@ -10,16 +10,16 @@ public partial class RadarChart
   /// <summary>
   ///   RadarStyle.
   /// </summary>
-  public DocumentModel.Drawings.Charts.RadarStyleKind? RadarStyle { get; set; }
+  public DMDC.RadarStyleKind? RadarStyle { get; set; }
   
   
   /// <summary>
   ///   VaryColors.
   /// </summary>
-  public DocumentModel.Drawings.Charts.VaryColors? VaryColors { get; set; }
+  public DMDC.VaryColors? VaryColors { get; set; }
   
-  public DocumentModel.Drawings.Charts.DataLabels? DataLabels { get; set; }
+  public DMDC.DataLabels? DataLabels { get; set; }
   
-  public DocumentModel.Drawings.Charts.RadarChartExtensionList? RadarChartExtensionList { get; set; }
+  public DMDC.RadarChartExtensionList? RadarChartExtensionList { get; set; }
   
 }

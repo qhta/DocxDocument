@@ -10,6 +10,6 @@ public partial class PathGradientFill
   /// <summary>
   ///   Fill To Rectangle.
   /// </summary>
-  public DocumentModel.Drawings.FillToRectangle? FillToRectangle { get; set; }
+  public DMD.FillToRectangle? FillToRectangle { get; set; }
   
 }

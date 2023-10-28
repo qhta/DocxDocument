@@ -10,48 +10,48 @@ public partial class StyleTableProperties
   /// <summary>
   ///   TableStyleRowBandSize.
   /// </summary>
-  public DocumentModel.Wordprocessing.TableStyleRowBandSize? TableStyleRowBandSize { get; set; }
+  public DMW.TableStyleRowBandSize? TableStyleRowBandSize { get; set; }
   
   
   /// <summary>
   ///   TableStyleColumnBandSize.
   /// </summary>
-  public DocumentModel.Wordprocessing.TableStyleColumnBandSize? TableStyleColumnBandSize { get; set; }
+  public DMW.TableStyleColumnBandSize? TableStyleColumnBandSize { get; set; }
   
   
   /// <summary>
   ///   TableJustification.
   /// </summary>
-  public DocumentModel.Wordprocessing.TableRowAlignmentKind? TableJustification { get; set; }
+  public DMW.TableRowAlignmentKind? TableJustification { get; set; }
   
   
   /// <summary>
   ///   TableCellSpacing.
   /// </summary>
-  public DocumentModel.Wordprocessing.TableCellSpacing? TableCellSpacing { get; set; }
+  public DMW.TableCellSpacing? TableCellSpacing { get; set; }
   
   
   /// <summary>
   ///   TableIndentation.
   /// </summary>
-  public DocumentModel.Wordprocessing.TableIndentation? TableIndentation { get; set; }
+  public DMW.TableIndentation? TableIndentation { get; set; }
   
   
   /// <summary>
   ///   TableBorders.
   /// </summary>
-  public DocumentModel.Wordprocessing.TableBorders? TableBorders { get; set; }
+  public DMW.TableBorders? TableBorders { get; set; }
   
   
   /// <summary>
   ///   Shading.
   /// </summary>
-  public DocumentModel.Wordprocessing.Shading? Shading { get; set; }
+  public DMW.Shading? Shading { get; set; }
   
   
   /// <summary>
   ///   TableCellMarginDefault.
   /// </summary>
-  public DocumentModel.Wordprocessing.TableCellMarginDefault? TableCellMarginDefault { get; set; }
+  public DMW.TableCellMarginDefault? TableCellMarginDefault { get; set; }
   
 }

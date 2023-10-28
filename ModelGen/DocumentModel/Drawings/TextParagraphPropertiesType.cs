@@ -64,18 +64,18 @@ public partial class TextParagraphPropertiesType
   /// <summary>
   ///   Line Spacing.
   /// </summary>
-  public DocumentModel.Drawings.LineSpacing? LineSpacing { get; set; }
+  public DMD.LineSpacing? LineSpacing { get; set; }
   
   
   /// <summary>
   ///   Space Before.
   /// </summary>
-  public DocumentModel.Drawings.SpaceBefore? SpaceBefore { get; set; }
+  public DMD.SpaceBefore? SpaceBefore { get; set; }
   
   
   /// <summary>
   ///   Space After.
   /// </summary>
-  public DocumentModel.Drawings.SpaceAfter? SpaceAfter { get; set; }
+  public DMD.SpaceAfter? SpaceAfter { get; set; }
   
 }

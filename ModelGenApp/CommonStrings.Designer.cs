@@ -651,6 +651,24 @@ namespace ModelGenApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Generator type.
+        /// </summary>
+        public static string GeneratorType {
+            get {
+                return ResourceManager.GetString("GeneratorType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Generator type specifies the way of output generation.
+        /// </summary>
+        public static string GeneratorTypeTooltip {
+            get {
+                return ResourceManager.GetString("GeneratorTypeTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Include.
         /// </summary>
         public static string Include {

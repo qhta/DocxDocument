@@ -10,54 +10,54 @@ public partial class ErrorBars
   /// <summary>
   ///   Error Bar Direction.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ErrorBarDirectionKind? ErrorDirection { get; set; }
+  public DMDC.ErrorBarDirectionKind? ErrorDirection { get; set; }
   
   
   /// <summary>
   ///   Error Bar Type.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ErrorBarKind? ErrorBarType { get; set; }
+  public DMDC.ErrorBarKind? ErrorBarType { get; set; }
   
   
   /// <summary>
   ///   Error Bar Value Type.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ErrorKind? ErrorBarValueType { get; set; }
+  public DMDC.ErrorKind? ErrorBarValueType { get; set; }
   
   
   /// <summary>
   ///   No End Cap.
   /// </summary>
-  public DocumentModel.Drawings.Charts.NoEndCap? NoEndCap { get; set; }
+  public DMDC.NoEndCap? NoEndCap { get; set; }
   
   
   /// <summary>
   ///   Plus.
   /// </summary>
-  public DocumentModel.Drawings.Charts.Plus? Plus { get; set; }
+  public DMDC.Plus? Plus { get; set; }
   
   
   /// <summary>
   ///   Minus.
   /// </summary>
-  public DocumentModel.Drawings.Charts.Minus? Minus { get; set; }
+  public DMDC.Minus? Minus { get; set; }
   
   
   /// <summary>
   ///   Error Bar Value.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ErrorBarValue? ErrorBarValue { get; set; }
+  public DMDC.ErrorBarValue? ErrorBarValue { get; set; }
   
   
   /// <summary>
   ///   ChartShapeProperties.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ChartShapeProperties? ChartShapeProperties { get; set; }
+  public DMDC.ChartShapeProperties? ChartShapeProperties { get; set; }
   
   
   /// <summary>
   ///   Chart Extensibility.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ExtensionList? ExtensionList { get; set; }
+  public DMDC.ExtensionList? ExtensionList { get; set; }
   
 }

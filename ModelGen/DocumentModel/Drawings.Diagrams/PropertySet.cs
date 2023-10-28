@@ -178,12 +178,12 @@ public partial class PropertySet
   /// <summary>
   ///   Presentation Layout Variables.
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.PresentationLayoutVariables? PresentationLayoutVariables { get; set; }
+  public DMDD.PresentationLayoutVariables? PresentationLayoutVariables { get; set; }
   
   
   /// <summary>
   ///   Shape Style.
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.Style? Style { get; set; }
+  public DMDD.Style? Style { get; set; }
   
 }

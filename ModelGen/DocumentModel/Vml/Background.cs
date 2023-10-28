@@ -28,6 +28,6 @@ public partial class Background
   /// <summary>
   ///   Fill.
   /// </summary>
-  public DocumentModel.Vml.Fill? Fill { get; set; }
+  public DMVML.Fill? Fill { get; set; }
   
 }

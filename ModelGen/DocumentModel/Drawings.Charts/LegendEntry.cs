@@ -10,12 +10,12 @@ public partial class LegendEntry
   /// <summary>
   ///   Index.
   /// </summary>
-  public DocumentModel.Drawings.Charts.Index? Index { get; set; }
+  public DMDC.Index? Index { get; set; }
   
-  public DocumentModel.Drawings.Charts.Delete? Delete { get; set; }
+  public DMDC.Delete? Delete { get; set; }
   
-  public DocumentModel.Drawings.Charts.TextProperties? TextProperties { get; set; }
+  public DMDC.TextProperties? TextProperties { get; set; }
   
-  public DocumentModel.Drawings.Charts.ExtensionList? ExtensionList { get; set; }
+  public DMDC.ExtensionList? ExtensionList { get; set; }
   
 }

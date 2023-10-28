@@ -16,6 +16,6 @@ public partial class NumberDiagramInfo
   /// <summary>
   ///   DiagramAutoBullet.
   /// </summary>
-  public DocumentModel.Drawings.Diagram1.DiagramAutoBullet? DiagramAutoBullet { get; set; }
+  public DMDD1.DiagramAutoBullet? DiagramAutoBullet { get; set; }
   
 }

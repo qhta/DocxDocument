@@ -6,6 +6,6 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class MajorGridlines
 {
-  public DocumentModel.Drawings.Charts.ChartShapeProperties? ChartShapeProperties { get; set; }
+  public DMDC.ChartShapeProperties? ChartShapeProperties { get; set; }
   
 }

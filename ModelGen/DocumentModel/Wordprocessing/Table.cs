@@ -6,8 +6,8 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class Table
 {
-  public DocumentModel.Wordprocessing.TableProperties? TableProperties { get; set; }
+  public DMW.TableProperties? TableProperties { get; set; }
   
-  public DocumentModel.Wordprocessing.TableGrid? TableGrid { get; set; }
+  public DMW.TableGrid? TableGrid { get; set; }
   
 }

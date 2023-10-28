@@ -10,6 +10,6 @@ public partial class EquationArray
   /// <summary>
   ///   Equation Array Properties.
   /// </summary>
-  public DocumentModel.Math.EquationArrayProperties? EquationArrayProperties { get; set; }
+  public DMM.EquationArrayProperties? EquationArrayProperties { get; set; }
   
 }

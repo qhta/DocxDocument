@@ -12,18 +12,18 @@ public partial class NonVisualDrawingPropertiesExtension
   /// </summary>
   public String? Uri { get; set; }
   
-  public DocumentModel.Drawings.CompatExtension? CompatExtension { get; set; }
+  public DMD10.CompatExtension? CompatExtension { get; set; }
   
-  public DocumentModel.Drawings.BackgroundProperties? BackgroundProperties { get; set; }
+  public DMD.BackgroundProperties? BackgroundProperties { get; set; }
   
-  public DocumentModel.Drawings.CreationId? CreationId { get; set; }
+  public DMD.CreationId? CreationId { get; set; }
   
-  public DocumentModel.Drawings.PredecessorDrawingElementReference? PredecessorDrawingElementReference { get; set; }
+  public DMD.PredecessorDrawingElementReference? PredecessorDrawingElementReference { get; set; }
   
   public Boolean? Decorative { get; set; }
   
-  public DocumentModel.Drawings.ClassificationOutcome? ClassificationOutcome { get; set; }
+  public DMD.ClassificationOutcome? ClassificationOutcome { get; set; }
   
-  public DocumentModel.Drawings.ScriptLink.ScriptLink? ScriptLink { get; set; }
+  public DMDSL.ScriptLink? ScriptLink { get; set; }
   
 }

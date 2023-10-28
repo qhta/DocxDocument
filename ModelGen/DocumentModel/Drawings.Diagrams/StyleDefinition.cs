@@ -18,10 +18,10 @@ public partial class StyleDefinition
   /// </summary>
   public String? MinVersion { get; set; }
   
-  public DocumentModel.Drawings.Diagrams.StyleDisplayCategories? StyleDisplayCategories { get; set; }
+  public DMDD.StyleDisplayCategories? StyleDisplayCategories { get; set; }
   
-  public DocumentModel.Drawings.Diagrams.Scene3D? Scene3D { get; set; }
+  public DMDD.Scene3D? Scene3D { get; set; }
   
-  public DocumentModel.Drawings.Diagrams.ExtensionList? ExtensionList { get; set; }
+  public DMDD.ExtensionList? ExtensionList { get; set; }
   
 }

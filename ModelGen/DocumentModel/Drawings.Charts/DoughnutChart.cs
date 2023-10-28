@@ -10,14 +10,14 @@ public partial class DoughnutChart
   /// <summary>
   ///   VaryColors.
   /// </summary>
-  public DocumentModel.Drawings.Charts.VaryColors? VaryColors { get; set; }
+  public DMDC.VaryColors? VaryColors { get; set; }
   
-  public DocumentModel.Drawings.Charts.DataLabels? DataLabels { get; set; }
+  public DMDC.DataLabels? DataLabels { get; set; }
   
   public UInt16? FirstSliceAngle { get; set; }
   
   public Byte? HoleSize { get; set; }
   
-  public DocumentModel.Drawings.Charts.ExtensionList? ExtensionList { get; set; }
+  public DMDC.ExtensionList? ExtensionList { get; set; }
   
 }

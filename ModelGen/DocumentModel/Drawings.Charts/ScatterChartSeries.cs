@@ -10,40 +10,40 @@ public partial class ScatterChartSeries
   /// <summary>
   ///   Index.
   /// </summary>
-  public DocumentModel.Drawings.Charts.Index? Index { get; set; }
+  public DMDC.Index? Index { get; set; }
   
   
   /// <summary>
   ///   Order.
   /// </summary>
-  public DocumentModel.Drawings.Charts.Order? Order { get; set; }
+  public DMDC.Order? Order { get; set; }
   
   
   /// <summary>
   ///   Series Text.
   /// </summary>
-  public DocumentModel.Drawings.Charts.SeriesText? SeriesText { get; set; }
+  public DMDC.SeriesText? SeriesText { get; set; }
   
   
   /// <summary>
   ///   ChartShapeProperties.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ChartShapeProperties? ChartShapeProperties { get; set; }
+  public DMDC.ChartShapeProperties? ChartShapeProperties { get; set; }
   
   
   /// <summary>
   ///   Marker.
   /// </summary>
-  public DocumentModel.Drawings.Charts.Marker? Marker { get; set; }
+  public DMDC.Marker? Marker { get; set; }
   
-  public DocumentModel.Drawings.Charts.DataLabels? DataLabels { get; set; }
+  public DMDC.DataLabels? DataLabels { get; set; }
   
-  public DocumentModel.Drawings.Charts.XValues? XValues { get; set; }
+  public DMDC.XValues? XValues { get; set; }
   
-  public DocumentModel.Drawings.Charts.YValues? YValues { get; set; }
+  public DMDC.YValues? YValues { get; set; }
   
-  public DocumentModel.Drawings.Charts.Smooth? Smooth { get; set; }
+  public DMDC.Smooth? Smooth { get; set; }
   
-  public DocumentModel.Drawings.Charts.ScatterSerExtensionList? ScatterSerExtensionList { get; set; }
+  public DMDC.ScatterSerExtensionList? ScatterSerExtensionList { get; set; }
   
 }

@@ -6,12 +6,12 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class DisplayUnits
 {
-  public DocumentModel.Drawings.Charts.CustomDisplayUnit? CustomDisplayUnit { get; set; }
+  public DMDC.CustomDisplayUnit? CustomDisplayUnit { get; set; }
   
-  public DocumentModel.Drawings.Charts.BuiltInUnitKind? BuiltInUnit { get; set; }
+  public DMDC.BuiltInUnitKind? BuiltInUnit { get; set; }
   
-  public DocumentModel.Drawings.Charts.DisplayUnitsLabel? DisplayUnitsLabel { get; set; }
+  public DMDC.DisplayUnitsLabel? DisplayUnitsLabel { get; set; }
   
-  public DocumentModel.Drawings.Charts.ExtensionList? ExtensionList { get; set; }
+  public DMDC.ExtensionList? ExtensionList { get; set; }
   
 }

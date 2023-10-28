@@ -12,7 +12,7 @@ public partial class DiagramPersistLayoutPart
   /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.Drawings.Office.Drawing? Drawing { get; set; }
+  public DMDO.Drawing? Drawing { get; set; }
   
   public String? RelationshipType { get; set; }
   

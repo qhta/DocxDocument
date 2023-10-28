@@ -52,12 +52,12 @@ public partial class Shape
   /// <summary>
   ///   Shape Adjust List.
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.AdjustList? AdjustList { get; set; }
+  public DMDD.AdjustList? AdjustList { get; set; }
   
   
   /// <summary>
   ///   ExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.ExtensionList? ExtensionList { get; set; }
+  public DMDD.ExtensionList? ExtensionList { get; set; }
   
 }

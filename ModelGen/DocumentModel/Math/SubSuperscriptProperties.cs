@@ -10,12 +10,12 @@ public partial class SubSuperscriptProperties
   /// <summary>
   ///   Align Scripts.
   /// </summary>
-  public DocumentModel.Math.AlignScripts? AlignScripts { get; set; }
+  public DMM.AlignScripts? AlignScripts { get; set; }
   
   
   /// <summary>
   ///   ControlProperties.
   /// </summary>
-  public DocumentModel.Math.ControlProperties? ControlProperties { get; set; }
+  public DMM.ControlProperties? ControlProperties { get; set; }
   
 }

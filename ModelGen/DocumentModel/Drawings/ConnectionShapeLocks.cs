@@ -70,6 +70,6 @@ public partial class ConnectionShapeLocks
   /// <summary>
   ///   ConnectorLockingExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.ConnectorLockingExtensionList? ConnectorLockingExtensionList { get; set; }
+  public DMD.ConnectorLockingExtensionList? ConnectorLockingExtensionList { get; set; }
   
 }

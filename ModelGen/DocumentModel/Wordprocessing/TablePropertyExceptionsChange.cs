@@ -34,6 +34,6 @@ public partial class TablePropertyExceptionsChange
   /// <summary>
   ///   Previous Table-Level Property Exceptions.
   /// </summary>
-  public DocumentModel.Wordprocessing.PreviousTablePropertyExceptions? PreviousTablePropertyExceptions { get; set; }
+  public DMW.PreviousTablePropertyExceptions? PreviousTablePropertyExceptions { get; set; }
   
 }

@@ -12,6 +12,6 @@ public partial class Pie3DChartExtension
   /// </summary>
   public String? Uri { get; set; }
   
-  public DocumentModel.Drawings.Charts.FilteredPieSeries? FilteredPieSeries { get; set; }
+  public DMDC13.FilteredPieSeries? FilteredPieSeries { get; set; }
   
 }

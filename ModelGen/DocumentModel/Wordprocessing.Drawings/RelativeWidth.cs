@@ -10,6 +10,6 @@ public partial class RelativeWidth
   /// <summary>
   ///   PercentageWidth.
   /// </summary>
-  public DocumentModel.Wordprocessing.Drawings.PercentageWidth? PercentageWidth { get; set; }
+  public DMWD.PercentageWidth? PercentageWidth { get; set; }
   
 }

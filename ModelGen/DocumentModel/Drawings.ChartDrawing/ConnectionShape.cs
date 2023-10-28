@@ -22,18 +22,18 @@ public partial class ConnectionShape
   /// <summary>
   ///   Connector Non Visual Properties.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawing.NonVisualConnectorShapeDrawingProperties? NonVisualConnectorShapeDrawingProperties { get; set; }
+  public DMDCD.NonVisualConnectorShapeDrawingProperties? NonVisualConnectorShapeDrawingProperties { get; set; }
   
   
   /// <summary>
   ///   Shape Properties.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawing.ShapeProperties? ShapeProperties { get; set; }
+  public DMDCD.ShapeProperties? ShapeProperties { get; set; }
   
   
   /// <summary>
   ///   Connection Shape Style.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawing.Style? Style { get; set; }
+  public DMDCD.Style? Style { get; set; }
   
 }

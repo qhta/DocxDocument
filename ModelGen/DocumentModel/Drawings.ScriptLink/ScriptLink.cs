@@ -16,6 +16,6 @@ public partial class ScriptLink
   /// <summary>
   ///   OfficeArtExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.ScriptLink.OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
+  public DMDSL.OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
   
 }

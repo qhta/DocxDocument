@@ -10,19 +10,19 @@ public partial class Trendline
   /// <summary>
   ///   Trendline Name.
   /// </summary>
-  public DocumentModel.Drawings.Charts.TrendlineName? TrendlineName { get; set; }
+  public DMDC.TrendlineName? TrendlineName { get; set; }
   
   
   /// <summary>
   ///   ChartShapeProperties.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ChartShapeProperties? ChartShapeProperties { get; set; }
+  public DMDC.ChartShapeProperties? ChartShapeProperties { get; set; }
   
   
   /// <summary>
   ///   Trendline Type.
   /// </summary>
-  public DocumentModel.Drawings.Charts.TrendlineKind? TrendlineType { get; set; }
+  public DMDC.TrendlineKind? TrendlineType { get; set; }
   
   
   /// <summary>
@@ -40,42 +40,42 @@ public partial class Trendline
   /// <summary>
   ///   Forward.
   /// </summary>
-  public DocumentModel.Drawings.Charts.Forward? Forward { get; set; }
+  public DMDC.Forward? Forward { get; set; }
   
   
   /// <summary>
   ///   Backward.
   /// </summary>
-  public DocumentModel.Drawings.Charts.Backward? Backward { get; set; }
+  public DMDC.Backward? Backward { get; set; }
   
   
   /// <summary>
   ///   Intercept.
   /// </summary>
-  public DocumentModel.Drawings.Charts.Intercept? Intercept { get; set; }
+  public DMDC.Intercept? Intercept { get; set; }
   
   
   /// <summary>
   ///   Display R Squared Value.
   /// </summary>
-  public DocumentModel.Drawings.Charts.DisplayRSquaredValue? DisplayRSquaredValue { get; set; }
+  public DMDC.DisplayRSquaredValue? DisplayRSquaredValue { get; set; }
   
   
   /// <summary>
   ///   Display Equation.
   /// </summary>
-  public DocumentModel.Drawings.Charts.DisplayEquation? DisplayEquation { get; set; }
+  public DMDC.DisplayEquation? DisplayEquation { get; set; }
   
   
   /// <summary>
   ///   Trendline Label.
   /// </summary>
-  public DocumentModel.Drawings.Charts.TrendlineLabel? TrendlineLabel { get; set; }
+  public DMDC.TrendlineLabel? TrendlineLabel { get; set; }
   
   
   /// <summary>
   ///   Chart Extensibility.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ExtensionList? ExtensionList { get; set; }
+  public DMDC.ExtensionList? ExtensionList { get; set; }
   
 }

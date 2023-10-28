@@ -10,8 +10,8 @@ public partial class MultiLevelStringCache
   /// <summary>
   ///   PointCount.
   /// </summary>
-  public DocumentModel.Drawings.Charts.PointCount? PointCount { get; set; }
+  public DMDC.PointCount? PointCount { get; set; }
   
-  public DocumentModel.Drawings.Charts.ExtensionList? ExtensionList { get; set; }
+  public DMDC.ExtensionList? ExtensionList { get; set; }
   
 }

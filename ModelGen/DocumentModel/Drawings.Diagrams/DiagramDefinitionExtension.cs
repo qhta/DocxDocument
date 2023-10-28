@@ -12,8 +12,8 @@ public partial class DiagramDefinitionExtension
   /// </summary>
   public String? Uri { get; set; }
   
-  public DocumentModel.Drawings.Diagram1.NumberDiagramInfoList? NumberDiagramInfoList { get; set; }
+  public DMDD1.NumberDiagramInfoList? NumberDiagramInfoList { get; set; }
   
-  public DocumentModel.Drawings.Diagram2.TextListStyleType? TextListStyleType { get; set; }
+  public DMDD2.TextListStyleType? TextListStyleType { get; set; }
   
 }

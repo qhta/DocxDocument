@@ -10,25 +10,25 @@ public partial class PictureOptions
   /// <summary>
   ///   Apply To Front.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ApplyToFront? ApplyToFront { get; set; }
+  public DMDC.ApplyToFront? ApplyToFront { get; set; }
   
   
   /// <summary>
   ///   Apply To Sides.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ApplyToSides? ApplyToSides { get; set; }
+  public DMDC.ApplyToSides? ApplyToSides { get; set; }
   
   
   /// <summary>
   ///   Apply to End.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ApplyToEnd? ApplyToEnd { get; set; }
+  public DMDC.ApplyToEnd? ApplyToEnd { get; set; }
   
   
   /// <summary>
   ///   Picture Format.
   /// </summary>
-  public DocumentModel.Drawings.Charts.PictureFormatKind? PictureFormat { get; set; }
+  public DMDC.PictureFormatKind? PictureFormat { get; set; }
   
   
   /// <summary>

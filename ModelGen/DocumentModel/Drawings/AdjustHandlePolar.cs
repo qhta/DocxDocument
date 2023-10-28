@@ -46,6 +46,6 @@ public partial class AdjustHandlePolar
   /// <summary>
   ///   Shape Position Coordinate.
   /// </summary>
-  public DocumentModel.Drawings.Position? Position { get; set; }
+  public DMD.Position? Position { get; set; }
   
 }

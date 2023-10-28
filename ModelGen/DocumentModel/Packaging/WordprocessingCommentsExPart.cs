@@ -10,7 +10,7 @@ public partial class WordprocessingCommentsExPart
   /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.Wordprocessing.CommentsEx? CommentsEx { get; set; }
+  public DMW13.CommentsEx? CommentsEx { get; set; }
   
   public String? ContentType { get; set; }
   

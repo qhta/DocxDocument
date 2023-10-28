@@ -34,6 +34,6 @@ public partial class WrapSquare
   /// <summary>
   ///   Object Extents Including Effects.
   /// </summary>
-  public DocumentModel.Drawings.Wordprocessing.EffectExtent? EffectExtent { get; set; }
+  public DMDW.EffectExtent? EffectExtent { get; set; }
   
 }

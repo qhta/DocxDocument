@@ -115,6 +115,15 @@ namespace ModelGen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Code output path not defined.
+        /// </summary>
+        internal static string Code_output_path_not_defined {
+            get {
+                return ResourceManager.GetString("Code_output_path_not_defined", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to CodeCompilation.
         /// </summary>
         internal static string CodeCompilation {
@@ -250,6 +259,33 @@ namespace ModelGen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Generator type constructor not found.
+        /// </summary>
+        internal static string Generator_type_constructor_not_found {
+            get {
+                return ResourceManager.GetString("Generator_type_constructor_not_found", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Generator type not defined.
+        /// </summary>
+        internal static string Generator_type_not_defined {
+            get {
+                return ResourceManager.GetString("Generator_type_not_defined", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Generator type not found.
+        /// </summary>
+        internal static string Generator_type_not_found {
+            get {
+                return ResourceManager.GetString("Generator_type_not_found", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to in {0} namespaces.
         /// </summary>
         internal static string in_0_namespaces {
@@ -318,6 +354,15 @@ namespace ModelGen {
         internal static string ProcessStart {
             get {
                 return ResourceManager.GetString("ProcessStart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Project name not defined.
+        /// </summary>
+        internal static string Project_name_not_defined {
+            get {
+                return ResourceManager.GetString("Project_name_not_defined", resourceCulture);
             }
         }
         
@@ -408,6 +453,15 @@ namespace ModelGen {
         internal static string ScanSource {
             get {
                 return ResourceManager.GetString("ScanSource", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Solution name not defined.
+        /// </summary>
+        internal static string Solution_name_not_defined {
+            get {
+                return ResourceManager.GetString("Solution_name_not_defined", resourceCulture);
             }
         }
         

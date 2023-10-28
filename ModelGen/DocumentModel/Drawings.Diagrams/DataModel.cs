@@ -10,30 +10,30 @@ public partial class DataModel
   /// <summary>
   ///   Point List.
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.PointList? PointList { get; set; }
+  public DMDD.PointList? PointList { get; set; }
   
   
   /// <summary>
   ///   Connection List.
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.ConnectionList? ConnectionList { get; set; }
+  public DMDD.ConnectionList? ConnectionList { get; set; }
   
   
   /// <summary>
   ///   Background Formatting.
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.Background? Background { get; set; }
+  public DMDD.Background? Background { get; set; }
   
   
   /// <summary>
   ///   Whole E2O Formatting.
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.Whole? Whole { get; set; }
+  public DMDD.Whole? Whole { get; set; }
   
   
   /// <summary>
   ///   DataModelExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.DataModelExtensionList? DataModelExtensionList { get; set; }
+  public DMDD.DataModelExtensionList? DataModelExtensionList { get; set; }
   
 }

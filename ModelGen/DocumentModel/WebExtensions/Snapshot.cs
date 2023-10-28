@@ -18,6 +18,6 @@ public partial class Snapshot
   /// </summary>
   public String? Link { get; set; }
   
-  public DocumentModel.Drawings.BlipExtensionList? BlipExtensionList { get; set; }
+  public DMD.BlipExtensionList? BlipExtensionList { get; set; }
   
 }

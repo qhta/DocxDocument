@@ -16,6 +16,6 @@ public partial class ExternalData
   /// <summary>
   ///   Update Automatically.
   /// </summary>
-  public DocumentModel.Drawings.Charts.AutoUpdate? AutoUpdate { get; set; }
+  public DMDC.AutoUpdate? AutoUpdate { get; set; }
   
 }

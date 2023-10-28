@@ -6,6 +6,6 @@ namespace DocumentModel.Drawings.Diagrams;
 /// </summary>
 public partial class SampleData
 {
-  public DocumentModel.Drawings.Diagrams.DataModel? DataModel { get; set; }
+  public DMDD.DataModel? DataModel { get; set; }
   
 }

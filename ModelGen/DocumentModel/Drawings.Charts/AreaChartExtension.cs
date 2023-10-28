@@ -12,6 +12,6 @@ public partial class AreaChartExtension
   /// </summary>
   public String? Uri { get; set; }
   
-  public DocumentModel.Drawings.Charts.FilteredAreaSeries? FilteredAreaSeries { get; set; }
+  public DMDC13.FilteredAreaSeries? FilteredAreaSeries { get; set; }
   
 }

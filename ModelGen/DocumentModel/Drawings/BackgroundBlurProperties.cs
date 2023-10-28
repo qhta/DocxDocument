@@ -10,6 +10,6 @@ public partial class BackgroundBlurProperties
   /// <summary>
   ///   OfficeArtExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
+  public DMD.OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
   
 }

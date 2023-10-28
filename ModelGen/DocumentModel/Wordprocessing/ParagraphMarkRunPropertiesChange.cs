@@ -34,6 +34,6 @@ public partial class ParagraphMarkRunPropertiesChange
   /// <summary>
   ///   Previous Run Properties for the Paragraph Mark.
   /// </summary>
-  public DocumentModel.Wordprocessing.PreviousParagraphMarkRunProperties? PreviousParagraphMarkRunProperties { get; set; }
+  public DMW.PreviousParagraphMarkRunProperties? PreviousParagraphMarkRunProperties { get; set; }
   
 }

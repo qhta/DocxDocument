@@ -12,8 +12,8 @@ public partial class Picture
   /// </summary>
   public DM.HexBinary? AnchorId { get; set; }
   
-  public DocumentModel.Wordprocessing.MovieReference? MovieReference { get; set; }
+  public DMW.MovieReference? MovieReference { get; set; }
   
-  public DocumentModel.Wordprocessing.Control? Control { get; set; }
+  public DMW.Control? Control { get; set; }
   
 }

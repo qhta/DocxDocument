@@ -10,16 +10,16 @@ public partial class Surface3DChart
   /// <summary>
   ///   Wireframe.
   /// </summary>
-  public DocumentModel.Drawings.Charts.Wireframe? Wireframe { get; set; }
+  public DMDC.Wireframe? Wireframe { get; set; }
   
   
   /// <summary>
   ///   VaryColors.
   /// </summary>
-  public DocumentModel.Drawings.Charts.VaryColors? VaryColors { get; set; }
+  public DMDC.VaryColors? VaryColors { get; set; }
   
-  public DocumentModel.Drawings.Charts.BandFormats? BandFormats { get; set; }
+  public DMDC.BandFormats? BandFormats { get; set; }
   
-  public DocumentModel.Drawings.Charts.Surface3DChartExtensionList? Surface3DChartExtensionList { get; set; }
+  public DMDC.Surface3DChartExtensionList? Surface3DChartExtensionList { get; set; }
   
 }

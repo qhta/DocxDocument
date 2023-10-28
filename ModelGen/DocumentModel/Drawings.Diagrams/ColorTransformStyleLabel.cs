@@ -16,42 +16,42 @@ public partial class ColorTransformStyleLabel
   /// <summary>
   ///   Fill Color List.
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.FillColorList? FillColorList { get; set; }
+  public DMDD.FillColorList? FillColorList { get; set; }
   
   
   /// <summary>
   ///   Line Color List.
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.LineColorList? LineColorList { get; set; }
+  public DMDD.LineColorList? LineColorList { get; set; }
   
   
   /// <summary>
   ///   Effect Color List.
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.EffectColorList? EffectColorList { get; set; }
+  public DMDD.EffectColorList? EffectColorList { get; set; }
   
   
   /// <summary>
   ///   Text Line Color List.
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.TextLineColorList? TextLineColorList { get; set; }
+  public DMDD.TextLineColorList? TextLineColorList { get; set; }
   
   
   /// <summary>
   ///   Text Fill Color List.
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.TextFillColorList? TextFillColorList { get; set; }
+  public DMDD.TextFillColorList? TextFillColorList { get; set; }
   
   
   /// <summary>
   ///   Text Effect Color List.
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.TextEffectColorList? TextEffectColorList { get; set; }
+  public DMDD.TextEffectColorList? TextEffectColorList { get; set; }
   
   
   /// <summary>
   ///   ExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.ExtensionList? ExtensionList { get; set; }
+  public DMDD.ExtensionList? ExtensionList { get; set; }
   
 }

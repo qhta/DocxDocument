@@ -14,6 +14,6 @@ public partial class ChartDrawingPart
   /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.Drawings.Charts.UserShapes? UserShapes { get; set; }
+  public DMDC.UserShapes? UserShapes { get; set; }
   
 }

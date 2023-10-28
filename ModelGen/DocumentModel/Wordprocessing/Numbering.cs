@@ -6,6 +6,6 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class Numbering
 {
-  public DocumentModel.Wordprocessing.NumberingIdMacAtCleanup? NumberingIdMacAtCleanup { get; set; }
+  public DMW.NumberingIdMacAtCleanup? NumberingIdMacAtCleanup { get; set; }
   
 }

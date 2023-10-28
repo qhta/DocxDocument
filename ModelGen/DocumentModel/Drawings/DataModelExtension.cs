@@ -12,7 +12,7 @@ public partial class DataModelExtension
   /// </summary>
   public String? Uri { get; set; }
   
-  public DocumentModel.Drawings.Office.DataModelExtensionBlock? DataModelExtensionBlock { get; set; }
+  public DMDO.DataModelExtensionBlock? DataModelExtensionBlock { get; set; }
   
   public Boolean? RecolorImages { get; set; }
   

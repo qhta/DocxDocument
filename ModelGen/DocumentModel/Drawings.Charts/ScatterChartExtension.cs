@@ -12,6 +12,6 @@ public partial class ScatterChartExtension
   /// </summary>
   public String? Uri { get; set; }
   
-  public DocumentModel.Drawings.Charts.FilteredScatterSeries? FilteredScatterSeries { get; set; }
+  public DMDC13.FilteredScatterSeries? FilteredScatterSeries { get; set; }
   
 }

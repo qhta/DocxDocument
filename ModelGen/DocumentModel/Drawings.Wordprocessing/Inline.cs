@@ -46,30 +46,30 @@ public partial class Inline
   /// <summary>
   ///   Drawing Object Size.
   /// </summary>
-  public DocumentModel.Drawings.Wordprocessing.Extent? Extent { get; set; }
+  public DMDW.Extent? Extent { get; set; }
   
   
   /// <summary>
   ///   Inline Wrapping Extent.
   /// </summary>
-  public DocumentModel.Drawings.Wordprocessing.EffectExtent? EffectExtent { get; set; }
+  public DMDW.EffectExtent? EffectExtent { get; set; }
   
   
   /// <summary>
   ///   Drawing Object Non-Visual Properties.
   /// </summary>
-  public DocumentModel.Drawings.Wordprocessing.DocProperties? DocProperties { get; set; }
+  public DMDW.DocProperties? DocProperties { get; set; }
   
   
   /// <summary>
   ///   Common DrawingML Non-Visual Properties.
   /// </summary>
-  public DocumentModel.Drawings.Wordprocessing.NonVisualGraphicFrameDrawingProperties? NonVisualGraphicFrameDrawingProperties { get; set; }
+  public DMDW.NonVisualGraphicFrameDrawingProperties? NonVisualGraphicFrameDrawingProperties { get; set; }
   
   
   /// <summary>
   ///   Graphic.
   /// </summary>
-  public DocumentModel.Drawings.Graphic? Graphic { get; set; }
+  public DMD.Graphic? Graphic { get; set; }
   
 }

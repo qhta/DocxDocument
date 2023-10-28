@@ -10,12 +10,12 @@ public partial class GlossaryDocument
   /// <summary>
   ///   Document Background.
   /// </summary>
-  public DocumentModel.Wordprocessing.DocumentBackground? DocumentBackground { get; set; }
+  public DMW.DocumentBackground? DocumentBackground { get; set; }
   
   
   /// <summary>
   ///   List of Glossary Document Entries.
   /// </summary>
-  public DocumentModel.Wordprocessing.DocParts? DocParts { get; set; }
+  public DMW.DocParts? DocParts { get; set; }
   
 }

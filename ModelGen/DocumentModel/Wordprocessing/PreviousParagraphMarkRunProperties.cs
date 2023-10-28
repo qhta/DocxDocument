@@ -10,28 +10,28 @@ public partial class PreviousParagraphMarkRunProperties
   /// <summary>
   ///   Inserted Paragraph.
   /// </summary>
-  public DocumentModel.Wordprocessing.Inserted? Inserted { get; set; }
+  public DMW.Inserted? Inserted { get; set; }
   
   
   /// <summary>
   ///   Deleted Paragraph.
   /// </summary>
-  public DocumentModel.Wordprocessing.Deleted? Deleted { get; set; }
+  public DMW.Deleted? Deleted { get; set; }
   
   
   /// <summary>
   ///   Move Source Paragraph.
   /// </summary>
-  public DocumentModel.Wordprocessing.MoveFrom? MoveFrom { get; set; }
+  public DMW.MoveFrom? MoveFrom { get; set; }
   
   
   /// <summary>
   ///   Move Destination Paragraph.
   /// </summary>
-  public DocumentModel.Wordprocessing.MoveTo? MoveTo { get; set; }
+  public DMW.MoveTo? MoveTo { get; set; }
   
-  public DocumentModel.Wordprocessing.ConflictInsertion? ConflictInsertion { get; set; }
+  public DMW10.ConflictInsertion? ConflictInsertion { get; set; }
   
-  public DocumentModel.Wordprocessing.ConflictDeletion? ConflictDeletion { get; set; }
+  public DMW10.ConflictDeletion? ConflictDeletion { get; set; }
   
 }

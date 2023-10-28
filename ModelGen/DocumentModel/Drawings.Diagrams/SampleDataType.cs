@@ -16,6 +16,6 @@ public partial class SampleDataType
   /// <summary>
   ///   Data Model.
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.DataModel? DataModel { get; set; }
+  public DMDD.DataModel? DataModel { get; set; }
   
 }

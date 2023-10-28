@@ -705,4 +705,10 @@ Użyj znaku '*' aby dopasować wzorzec do wielu znaków.</value>
   <data name="Code_output_path_not_defined" xml:space="preserve">
     <value>Nie określono ścieżki wyjściowej kodu</value>
   </data>
+  <data name="GeneratorType" xml:space="preserve">
+    <value>Typ generatora</value>
+  </data>
+  <data name="GeneratorTypeTooltip" xml:space="preserve">
+    <value>Ty[p generatora określa sposób generowania kodu</value>
+  </data>
 </root>

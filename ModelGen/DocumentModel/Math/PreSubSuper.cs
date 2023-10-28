@@ -10,24 +10,24 @@ public partial class PreSubSuper
   /// <summary>
   ///   Pre-Sub-Superscript Properties.
   /// </summary>
-  public DocumentModel.Math.PreSubSuperProperties? PreSubSuperProperties { get; set; }
+  public DMM.PreSubSuperProperties? PreSubSuperProperties { get; set; }
   
   
   /// <summary>
   ///   Subscript (Pre-Sub-Superscript).
   /// </summary>
-  public DocumentModel.Math.SubArgument? SubArgument { get; set; }
+  public DMM.SubArgument? SubArgument { get; set; }
   
   
   /// <summary>
   ///   Superscript(Pre-Sub-Superscript function).
   /// </summary>
-  public DocumentModel.Math.SuperArgument? SuperArgument { get; set; }
+  public DMM.SuperArgument? SuperArgument { get; set; }
   
   
   /// <summary>
   ///   Base.
   /// </summary>
-  public DocumentModel.Math.Base? Base { get; set; }
+  public DMM.Base? Base { get; set; }
   
 }

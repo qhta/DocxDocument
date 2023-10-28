@@ -12,6 +12,6 @@ public partial class CatAxExtension
   /// </summary>
   public String? Uri { get; set; }
   
-  public DocumentModel.Drawings.Charts.NumberingFormat? NumberingFormat { get; set; }
+  public DMDC13.NumberingFormat? NumberingFormat { get; set; }
   
 }

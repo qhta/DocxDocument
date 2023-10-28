@@ -10,12 +10,12 @@ public partial class DocPart
   /// <summary>
   ///   Glossary Document Entry Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.DocPartProperties? DocPartProperties { get; set; }
+  public DMW.DocPartProperties? DocPartProperties { get; set; }
   
   
   /// <summary>
   ///   Contents of Glossary Document Entry.
   /// </summary>
-  public DocumentModel.Wordprocessing.DocPartBody? DocPartBody { get; set; }
+  public DMW.DocPartBody? DocPartBody { get; set; }
   
 }

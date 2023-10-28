@@ -16,6 +16,6 @@ public partial class AltChunk
   /// <summary>
   ///   External Content Import Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.AltChunkProperties? AltChunkProperties { get; set; }
+  public DMW.AltChunkProperties? AltChunkProperties { get; set; }
   
 }

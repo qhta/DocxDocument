@@ -6,6 +6,6 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class CustomXmlRun
 {
-  public DocumentModel.Wordprocessing.CustomXmlProperties? CustomXmlProperties { get; set; }
+  public DMW.CustomXmlProperties? CustomXmlProperties { get; set; }
   
 }

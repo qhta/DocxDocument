@@ -6,8 +6,8 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public partial class StringLiteral
 {
-  public DocumentModel.Drawings.Charts.PointCount? PointCount { get; set; }
+  public DMDC.PointCount? PointCount { get; set; }
   
-  public DocumentModel.Drawings.Charts.StrDataExtensionList? StrDataExtensionList { get; set; }
+  public DMDC.StrDataExtensionList? StrDataExtensionList { get; set; }
   
 }

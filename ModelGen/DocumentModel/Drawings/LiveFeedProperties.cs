@@ -10,12 +10,12 @@ public partial class LiveFeedProperties
   /// <summary>
   ///   LiveFeedBackgroundProperties.
   /// </summary>
-  public DocumentModel.Drawings.LiveFeedBackgroundProperties? LiveFeedBackgroundProperties { get; set; }
+  public DMD.LiveFeedBackgroundProperties? LiveFeedBackgroundProperties { get; set; }
   
   
   /// <summary>
   ///   OfficeArtExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
+  public DMD.OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
   
 }

@@ -10,18 +10,18 @@ public partial class FontCollectionType
   /// <summary>
   ///   Latin Font.
   /// </summary>
-  public DocumentModel.Drawings.LatinFont? LatinFont { get; set; }
+  public DMD.LatinFont? LatinFont { get; set; }
   
   
   /// <summary>
   ///   East Asian Font.
   /// </summary>
-  public DocumentModel.Drawings.EastAsianFont? EastAsianFont { get; set; }
+  public DMD.EastAsianFont? EastAsianFont { get; set; }
   
   
   /// <summary>
   ///   Complex Script Font.
   /// </summary>
-  public DocumentModel.Drawings.ComplexScriptFont? ComplexScriptFont { get; set; }
+  public DMD.ComplexScriptFont? ComplexScriptFont { get; set; }
   
 }

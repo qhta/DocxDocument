@@ -10,6 +10,6 @@ public partial class Blend
   /// <summary>
   ///   Effect to blend.
   /// </summary>
-  public DocumentModel.Drawings.EffectContainer? EffectContainer { get; set; }
+  public DMD.EffectContainer? EffectContainer { get; set; }
   
 }

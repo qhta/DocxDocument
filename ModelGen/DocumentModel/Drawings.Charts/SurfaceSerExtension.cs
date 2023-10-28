@@ -12,10 +12,10 @@ public partial class SurfaceSerExtension
   /// </summary>
   public String? Uri { get; set; }
   
-  public DocumentModel.Drawings.Charts.FilteredSeriesTitle? FilteredSeriesTitle { get; set; }
+  public DMDC13.FilteredSeriesTitle? FilteredSeriesTitle { get; set; }
   
-  public DocumentModel.Drawings.Charts.FilteredCategoryTitle? FilteredCategoryTitle { get; set; }
+  public DMDC13.FilteredCategoryTitle? FilteredCategoryTitle { get; set; }
   
-  public DocumentModel.Drawings.Charts.CategoryFilterExceptions? CategoryFilterExceptions { get; set; }
+  public DMDC13.CategoryFilterExceptions? CategoryFilterExceptions { get; set; }
   
 }
