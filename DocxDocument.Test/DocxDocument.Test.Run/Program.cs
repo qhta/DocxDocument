@@ -5,3 +5,4 @@ Console.WriteLine($"Opening directory: {test.SamplesPath}");
 Console.WriteLine();
 test.TestOpen();
 test.TestReadProperties();
+test.TestReadSettings();
