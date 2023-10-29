@@ -6,6 +6,7 @@ using DocumentFormat.OpenXml.Packaging;
 using DocumentModel.Utils;
 
 using Microsoft.VisualStudio.TestPlatform.Utilities;
+
 using DM = DocumentModel;
 
 namespace DocxDocument.Test;
@@ -121,7 +122,10 @@ public class ReadTest
           var settings = document.DocumentSettings;
           //settings.IgnoreUnknown = true;
           foreach (var item in settings)
-            Output.WriteLine($"  {item.Name}: {item.Value}");
+          {
+            var val = item.Value;
+            Output.WriteLine($"  {item.Name}: {DocumentModel.TestUtilities.ToDumpString(val)}");
+          }
         }
       }
     }

@@ -1,55 +1,46 @@
-﻿namespace DocumentModel;
+﻿using DocumentFormat.OpenXml.Wordprocessing;
 
-/// <summary>
-/// Specifies the set of document protection restrictions which have been applied to the contents of a WordprocessingML document. 
-/// These restrictions should be enforced by applications editing this document when the enforcement attribute is turned on, 
-/// and ignored (but persisted) otherwise. 
-/// Document protection is a set of restrictions used to prevent unintentional changes to all or part of a WordprocessingML document. 
-/// [Note: This protection does not encrypt the document, and malicious applications might circumvent its use. 
-/// This protection is not intended as a security feature. end note]
-/// </summary>
-public partial class DocumentProtection
+namespace DocumentModel;
+
+  /// <summary>
+  /// Specifies the write protection settings which have been applied to a WordprocessingML document. 
+  /// Write protection refers to a mode in which the document's contents cannot be edited, 
+  /// and the document cannot be resaved using the same file name. 
+  /// This setting is independent of the documentProtection (§17.15.1.29) element, 
+  /// but like document protection, this setting is not intended as a security feature and can be ignored.
+  /// When present, the write protection shall result in one of two write protection behaviors:
+  /// <list type="bullet">
+  ///   <item>
+  ///     If the password attribute is present, or both attributes are omitted, 
+  ///     then the application shall prompt for a password to exit write protection. 
+  ///     If the supplied password does not match the hash value in this attribute, then write protection shall be enabled.
+  ///   </item>
+  ///   <item>
+  ///    If only the recommended attribute is present, the application should provide user interface 
+  ///    recommending that the user open this document in write protected state. 
+  ///    If the user chooses to do so, the document shall be write protected, otherwise, it shall be opened fully editable.
+  ///  </item>
+  /// </list>
+  /// If this element is omitted, then no write protection shall be applied to the current document.
+  /// </summary>
+public partial class WriteProtection
 {
-  public DocumentProtection(DXW.DocumentProtection openXmlElement)
+  public WriteProtection(DXW.WriteProtection openXmlElement)
   {
     _Element = openXmlElement;
   }
 
-  internal DXW.DocumentProtection _Element { get; private set; }
+  internal DXW.WriteProtection _Element { get; private set; }
 
-  public DXW.DocumentProtectionValues? Edit
+  public Boolean? Recommended
   {
-    get => _Element.Edit?.Value;
+    get => _Element.Recommended?.Value;
     set
     {
       if (value != null)
-        _Element.Edit = new DX.EnumValue<DXW.DocumentProtectionValues> { Value = (DXW.DocumentProtectionValues)value };
+        _Element.Recommended = new DX.OnOffValue { Value = (bool)value };
       else
-        _Element.Edit = null;
-    }
-  }
-
-  public Boolean? Formatting
-  {
-    get => _Element.Formatting?.Value;
-    set
-    {
-      if (value != null)
-        _Element.Formatting = new DX.OnOffValue { Value = (bool)value };
-      else
-        _Element.Formatting = null;
-    }
-  }
-
-  public Boolean? Enforcement
-  {
-    get => _Element.Enforcement?.Value;
-    set
-    {
-      if (value != null)
-        _Element.Enforcement = new DX.OnOffValue { Value = (bool)value };
-      else
-        _Element.Enforcement = null;
+        _Element.Recommended = null;
     }
   }
 

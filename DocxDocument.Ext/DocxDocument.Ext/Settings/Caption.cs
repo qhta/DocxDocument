@@ -7,94 +7,94 @@
 /// </summary>
 public partial class Caption
 {
-  public Caption(DXW.Caption caption)
+  public Caption(DXW.Caption openXmlElement)
   {
-    _Caption = caption;
+    _Element = openXmlElement;
   }
 
-  internal DXW.Caption _Caption { get; private set; }
+  internal DXW.Caption _Element { get; private set; }
 
   public String? Name
   {
-    get => _Caption.Name?.Value;
+    get => _Element.Name?.Value;
     set
     {
       if (value != null)
-        _Caption.Name = new DX.StringValue { Value = (string)value };
+        _Element.Name = new DX.StringValue { Value = (string)value };
       else
-        _Caption.Name = null;
+        _Element.Name = null;
     }
   }
 
   public DXW.CaptionPositionValues? Position
   {
-    get => _Caption.Position?.Value;
+    get => _Element.Position?.Value;
     set
     {
       if (value != null)
-        _Caption.Position = new DX.EnumValue<DXW.CaptionPositionValues> { Value = (DXW.CaptionPositionValues)value };
+        _Element.Position = new DX.EnumValue<DXW.CaptionPositionValues> { Value = (DXW.CaptionPositionValues)value };
       else
-        _Caption.Position = null;
+        _Element.Position = null;
     }
   }
 
   public Boolean? ChapterNumber
   {
-    get => _Caption.ChapterNumber?.Value;
+    get => _Element.ChapterNumber?.Value;
     set
     {
       if (value != null)
-        _Caption.ChapterNumber = new DX.OnOffValue { Value = (bool)value };
+        _Element.ChapterNumber = new DX.OnOffValue { Value = (bool)value };
       else
-        _Caption.ChapterNumber = null;
+        _Element.ChapterNumber = null;
     }
   }
 
   public Int32? Heading
   {
-    get => _Caption.Heading?.Value;
+    get => _Element.Heading?.Value;
     set
     {
       if (value != null)
-        _Caption.Heading = new DX.Int32Value { Value = (Int32)value };
+        _Element.Heading = new DX.Int32Value { Value = (Int32)value };
       else
-        _Caption.Heading = null;
+        _Element.Heading = null;
     }
   }
 
   public Boolean? NoLabel
   {
-    get => _Caption.NoLabel?.Value;
+    get => _Element.NoLabel?.Value;
     set
     {
       if (value != null)
-        _Caption.NoLabel = new DX.OnOffValue { Value = (bool)value };
+        _Element.NoLabel = new DX.OnOffValue { Value = (bool)value };
       else
-        _Caption.NoLabel = null;
+        _Element.NoLabel = null;
     }
   }
 
   public DXW.NumberFormatValues? NumberFormat
   {
-    get => _Caption.NumberFormat?.Value;
+    get => _Element.NumberFormat?.Value;
     set
     {
       if (value != null)
-        _Caption.NumberFormat = new DX.EnumValue<DXW.NumberFormatValues> { Value = (DXW.NumberFormatValues)value };
+        _Element.NumberFormat = new DX.EnumValue<DXW.NumberFormatValues> { Value = (DXW.NumberFormatValues)value };
       else
-        _Caption.NumberFormat = null;
+        _Element.NumberFormat = null;
     }
   }
 
   public DXW.ChapterSeparatorValues? Separator
   {
-    get => _Caption.Separator?.Value;
+    get => _Element.Separator?.Value;
     set
     {
       if (value != null)
-        _Caption.Separator = new DX.EnumValue<DXW.ChapterSeparatorValues> { Value = (DXW.ChapterSeparatorValues)value };
+        _Element.Separator = new DX.EnumValue<DXW.ChapterSeparatorValues> { Value = (DXW.ChapterSeparatorValues)value };
       else
-        _Caption.Separator = null;
+        _Element.Separator = null;
     }
   }
 

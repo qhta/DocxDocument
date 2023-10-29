@@ -6,20 +6,20 @@ public partial class AutoCaptions: ICollection<AutoCaption>
   {
     if (value.Name == null)
       throw new InvalidOperationException($"Item.Name must not be null");
-    var _autoCaption = _AutoCaptions.Elements<DXW.AutoCaption>().FirstOrDefault(item=>item.Name == value.Name);
-    if (_autoCaption != null)
+    var _element = _Element.Elements<DXW.AutoCaption>().FirstOrDefault(item=>item.Name == value.Name);
+    if (_element != null)
       throw new InvalidOperationException($"Caption {value.Name} aready exists found");
-    _AutoCaptions.AddChild(value._AutoCaption);
+    _Element.AddChild(value._Element);
   }
 
   public void Clear()
   {
-    _AutoCaptions.RemoveAllChildren();
+    _Element.RemoveAllChildren();
   }
 
   public bool Contains(AutoCaption value)
   {
-    return _AutoCaptions.Elements<DXW.AutoCaption>().FirstOrDefault(item => item.Name == value.Name)!=null;
+    return _Element.Elements<DXW.AutoCaption>().FirstOrDefault(item => item.Name == value.Name)!=null;
   }
 
   public void CopyTo(AutoCaption[] array, int arrayIndex)
@@ -29,20 +29,20 @@ public partial class AutoCaptions: ICollection<AutoCaption>
 
   public bool Remove(AutoCaption value)
   {
-    var _autoCaption = _AutoCaptions.Elements<DXW.AutoCaption>().FirstOrDefault(item => item.Name == value.Name);
-    if (_autoCaption == null)
+    var _element = _Element.Elements<DXW.AutoCaption>().FirstOrDefault(item => item.Name == value.Name);
+    if (_element == null)
       return false;
-    _autoCaption.Remove();
+    _element.Remove();
     return true;
   }
 
-  public int Count => _AutoCaptions.Elements<DXW.AutoCaption>().Count();
+  public int Count => _Element.Elements<DXW.AutoCaption>().Count();
 
   public bool IsReadOnly => false;
 
   public IEnumerator<AutoCaption> GetEnumerator()
   {
-    foreach (var item in _AutoCaptions.Elements<DXW.AutoCaption>().ToArray())
+    foreach (var item in _Element.Elements<DXW.AutoCaption>().ToArray())
     {
       yield return new AutoCaption(item);
     }
