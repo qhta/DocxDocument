@@ -6,32 +6,32 @@ public partial class AutoCaptions : IDictionary<string, string?>
 {
   public void Add(string key, string? value)
   {
-    var _autoCaption = _AutoCaptions.Elements<DXW.AutoCaption>().FirstOrDefault(item => item.Name == key);
-    if (_autoCaption != null)
+    var _element = _Element.Elements<DXW.AutoCaption>().FirstOrDefault(item => item.Name == key);
+    if (_element != null)
       throw new InvalidOperationException($"Caption {key} aready exists found");
-    _AutoCaptions.AddChild(new DXW.AutoCaption { Name = key, Caption = value });
+    _Element.AddChild(new DXW.AutoCaption { Name = key, Caption = value });
   }
 
   public bool ContainsKey(string key)
   {
-    return _AutoCaptions.Elements<DXW.AutoCaption>().FirstOrDefault(item => item.Name == key) != null;
+    return _Element.Elements<DXW.AutoCaption>().FirstOrDefault(item => item.Name == key) != null;
   }
 
   public bool Remove(string key)
   {
-    var _autoCaption = _AutoCaptions.Elements<DXW.AutoCaption>().FirstOrDefault(item => item.Name == key);
-    if (_autoCaption == null)
+    var _element = _Element.Elements<DXW.AutoCaption>().FirstOrDefault(item => item.Name == key);
+    if (_element == null)
       return false;
-    _autoCaption.Remove();
+    _element.Remove();
     return true;
   }
 
   public bool TryGetValue(string key, [MaybeNullWhen(false)] out string? value)
   {
-    var _autoCaption = _AutoCaptions.Elements<DXW.AutoCaption>().FirstOrDefault(item => item.Name == key);
-    if (_autoCaption != null)
+    var _element = _Element.Elements<DXW.AutoCaption>().FirstOrDefault(item => item.Name == key);
+    if (_element != null)
     {
-      value = _autoCaption.Caption;
+      value = _element.Caption;
       return true;
     }
     value = null;
@@ -42,28 +42,28 @@ public partial class AutoCaptions : IDictionary<string, string?>
   {
     get
     {
-      var _autoCaption = _AutoCaptions.Elements<DXW.AutoCaption>().FirstOrDefault(item => item.Name == key);
-      if (_autoCaption != null)
-        return _autoCaption.Caption;
+      var _element = _Element.Elements<DXW.AutoCaption>().FirstOrDefault(item => item.Name == key);
+      if (_element != null)
+        return _element.Caption;
       return null;
     }
     set
     {
-      var _autoCaption = _AutoCaptions.Elements<DXW.AutoCaption>().FirstOrDefault(item => item.Name == key);
-      if (_autoCaption != null)
+      var _element = _Element.Elements<DXW.AutoCaption>().FirstOrDefault(item => item.Name == key);
+      if (_element != null)
       {
-        _autoCaption.Caption = value;
+        _element.Caption = value;
       }
       else
       {
-        _autoCaption = new DXW.AutoCaption { Name = key, Caption = value };
-        _AutoCaptions.AddAnnotation(_autoCaption);
+        _element = new DXW.AutoCaption { Name = key, Caption = value };
+        _Element.AddAnnotation(_element);
       }
     }
   }
 
-  public ICollection<string> Keys => (ICollection<string>)_AutoCaptions.Elements<DXW.AutoCaption>().Select(item=>item.Name).ToList();
-  public ICollection<string?> Values => (ICollection<string?>)_AutoCaptions.Elements<DXW.AutoCaption>().Select(item=>item.Caption).ToList();
+  public ICollection<string> Keys => (ICollection<string>)_Element.Elements<DXW.AutoCaption>().Select(item=>item.Name).ToList();
+  public ICollection<string?> Values => (ICollection<string?>)_Element.Elements<DXW.AutoCaption>().Select(item=>item.Caption).ToList();
 
   public void Add(KeyValuePair<string, string?> item)
   {

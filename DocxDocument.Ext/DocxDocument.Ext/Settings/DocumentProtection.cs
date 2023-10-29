@@ -10,176 +10,176 @@
 /// </summary>
 public partial class DocumentProtection
 {
-  public DocumentProtection(DXW.DocumentProtection documentProtection)
+  public DocumentProtection(DXW.DocumentProtection openXmlElement)
   {
-    _DocumentProtection = documentProtection;
+    _Element = openXmlElement;
   }
 
-  internal DXW.DocumentProtection _DocumentProtection { get; private set; }
+  internal DXW.DocumentProtection _Element { get; private set; }
 
   public DXW.DocumentProtectionValues? Edit
   {
-    get => _DocumentProtection.Edit?.Value;
+    get => _Element.Edit?.Value;
     set
     {
       if (value != null)
-        _DocumentProtection.Edit = new DX.EnumValue<DXW.DocumentProtectionValues> { Value = (DXW.DocumentProtectionValues)value };
+        _Element.Edit = new DX.EnumValue<DXW.DocumentProtectionValues> { Value = (DXW.DocumentProtectionValues)value };
       else
-        _DocumentProtection.Edit = null;
+        _Element.Edit = null;
     }
   }
 
   public Boolean? Formatting
   {
-    get => _DocumentProtection.Formatting?.Value;
+    get => _Element.Formatting?.Value;
     set
     {
       if (value != null)
-        _DocumentProtection.Formatting = new DX.OnOffValue { Value = (bool)value };
+        _Element.Formatting = new DX.OnOffValue { Value = (bool)value };
       else
-        _DocumentProtection.Formatting = null;
+        _Element.Formatting = null;
     }
   }
 
   public Boolean? Enforcement
   {
-    get => _DocumentProtection.Enforcement?.Value;
+    get => _Element.Enforcement?.Value;
     set
     {
       if (value != null)
-        _DocumentProtection.Enforcement = new DX.OnOffValue { Value = (bool)value };
+        _Element.Enforcement = new DX.OnOffValue { Value = (bool)value };
       else
-        _DocumentProtection.Enforcement = null;
+        _Element.Enforcement = null;
     }
   }
 
   public DXW.CryptProviderValues? CryptographicProviderType
   {
-    get => _DocumentProtection.CryptographicProviderType?.Value;
+    get => _Element.CryptographicProviderType?.Value;
     set
     {
       if (value != null)
-        _DocumentProtection.CryptographicProviderType = new DX.EnumValue<DXW.CryptProviderValues> { Value = (DXW.CryptProviderValues)value };
+        _Element.CryptographicProviderType = new DX.EnumValue<DXW.CryptProviderValues> { Value = (DXW.CryptProviderValues)value };
       else
-        _DocumentProtection.CryptographicProviderType = null;
+        _Element.CryptographicProviderType = null;
     }
   }
 
   public DXW.CryptAlgorithmClassValues? CryptographicAlgorithmClass
   {
-    get => _DocumentProtection.CryptographicAlgorithmClass?.Value;
+    get => _Element.CryptographicAlgorithmClass?.Value;
     set
     {
       if (value != null)
-        _DocumentProtection.CryptographicAlgorithmClass = new DX.EnumValue<DXW.CryptAlgorithmClassValues> { Value = (DXW.CryptAlgorithmClassValues)value };
+        _Element.CryptographicAlgorithmClass = new DX.EnumValue<DXW.CryptAlgorithmClassValues> { Value = (DXW.CryptAlgorithmClassValues)value };
       else
-        _DocumentProtection.CryptographicAlgorithmClass = null;
+        _Element.CryptographicAlgorithmClass = null;
     }
   }
 
   public DXW.CryptAlgorithmValues? CryptographicAlgorithmType
   {
-    get => _DocumentProtection.CryptographicAlgorithmType?.Value;
+    get => _Element.CryptographicAlgorithmType?.Value;
     set
     {
       if (value != null)
-        _DocumentProtection.CryptographicAlgorithmType = new DX.EnumValue<DXW.CryptAlgorithmValues> { Value = (DXW.CryptAlgorithmValues)value };
+        _Element.CryptographicAlgorithmType = new DX.EnumValue<DXW.CryptAlgorithmValues> { Value = (DXW.CryptAlgorithmValues)value };
       else
-        _DocumentProtection.CryptographicAlgorithmType = null;
+        _Element.CryptographicAlgorithmType = null;
     }
   }
 
   public Int32? CryptographicAlgorithmSid
   {
-    get => _DocumentProtection.CryptographicAlgorithmSid?.Value;
+    get => _Element.CryptographicAlgorithmSid?.Value;
     set
     {
       if (value != null)
-        _DocumentProtection.CryptographicAlgorithmSid = new DX.Int32Value { Value = (int)value };
+        _Element.CryptographicAlgorithmSid = new DX.Int32Value { Value = (int)value };
       else
-        _DocumentProtection.CryptographicAlgorithmSid = null;
+        _Element.CryptographicAlgorithmSid = null;
     }
   }
 
   public UInt32? CryptographicSpinCount
   {
-    get => _DocumentProtection.CryptographicSpinCount?.Value;
+    get => _Element.CryptographicSpinCount?.Value;
     set
     {
       if (value != null)
-        _DocumentProtection.CryptographicSpinCount = new DX.UInt32Value { Value = (uint)value };
+        _Element.CryptographicSpinCount = new DX.UInt32Value { Value = (uint)value };
       else
-        _DocumentProtection.CryptographicSpinCount = null;
+        _Element.CryptographicSpinCount = null;
     }
   }
 
   public String? CryptographicProvider
   {
-    get => _DocumentProtection.CryptographicProvider?.Value;
+    get => _Element.CryptographicProvider?.Value;
     set
     {
       if (value != null)
-        _DocumentProtection.CryptographicProvider = new DX.StringValue { Value = (string)value };
+        _Element.CryptographicProvider = new DX.StringValue { Value = (string)value };
       else
-        _DocumentProtection.CryptographicProvider = null;
+        _Element.CryptographicProvider = null;
     }
   }
 
-  public byte[]? AlgorithmIdExtensibility
+  public HexBinary? AlgorithmIdExtensibility
   {
     get
     {
-      var val = _DocumentProtection.AlgorithmIdExtensibility?.Value;
+      var val = _Element.AlgorithmIdExtensibility?.Value;
       if (val == null) return null;
-      return Convert.FromHexString(val);
+      return new HexBinary(val);
     }
     set
     {
       if (value != null)
-        _DocumentProtection.AlgorithmIdExtensibility = new DX.HexBinaryValue { Value = Convert.ToHexString((byte[])value) };
+        _Element.AlgorithmIdExtensibility = new DX.HexBinaryValue { Value = value.ToString() };
       else
-        _DocumentProtection.AlgorithmIdExtensibility = null;
+        _Element.AlgorithmIdExtensibility = null;
     }
   }
 
   public String? AlgorithmIdExtensibilitySource
   {
-    get => _DocumentProtection.AlgorithmIdExtensibilitySource?.Value;
+    get => _Element.AlgorithmIdExtensibilitySource?.Value;
     set
     {
       if (value != null)
-        _DocumentProtection.AlgorithmIdExtensibilitySource = new DX.StringValue { Value = (string)value };
+        _Element.AlgorithmIdExtensibilitySource = new DX.StringValue { Value = (string)value };
       else
-        _DocumentProtection.AlgorithmIdExtensibilitySource = null;
+        _Element.AlgorithmIdExtensibilitySource = null;
     }
   }
 
-  public byte[]? CryptographicProviderTypeExtensibility
+  public HexBinary? CryptographicProviderTypeExtensibility
   {
     get 
     {
-      var val = _DocumentProtection.CryptographicProviderTypeExtensibility?.Value;
+      var val = _Element.CryptographicProviderTypeExtensibility?.Value;
       if (val == null) return null;
-      return Convert.FromHexString(val);
+      return new HexBinary(val);
     }
     set
     {
       if (value != null)
-        _DocumentProtection.CryptographicProviderTypeExtensibility = new DX.HexBinaryValue { Value = Convert.ToHexString((byte[])value) };
+        _Element.CryptographicProviderTypeExtensibility = new DX.HexBinaryValue { Value = value.ToString() };
       else
-        _DocumentProtection.CryptographicProviderTypeExtensibility = null;
+        _Element.CryptographicProviderTypeExtensibility = null;
     }
   }
 
   public String? CryptographicProviderTypeExtSource
   {
-    get => _DocumentProtection.CryptographicProviderTypeExtSource?.Value;
+    get => _Element.CryptographicProviderTypeExtSource?.Value;
     set
     {
       if (value != null)
-        _DocumentProtection.CryptographicProviderTypeExtSource = new DX.StringValue { Value = (string)value };
+        _Element.CryptographicProviderTypeExtSource = new DX.StringValue { Value = (string)value };
       else
-        _DocumentProtection.CryptographicProviderTypeExtSource = null;
+        _Element.CryptographicProviderTypeExtSource = null;
     }
   }
 
@@ -187,16 +187,16 @@ public partial class DocumentProtection
   {
     get
     {
-      var val = _DocumentProtection.Hash?.Value;
+      var val = _Element.Hash?.Value;
       if (val == null) return null;
       return Convert.FromBase64String(val);
     }
     set
     {
       if (value != null)
-        _DocumentProtection.Hash = new DX.Base64BinaryValue { Value = Convert.ToBase64String((byte[])value) };
+        _Element.Hash = new DX.Base64BinaryValue { Value = Convert.ToBase64String((byte[])value) };
       else
-        _DocumentProtection.Hash = null;
+        _Element.Hash = null;
     }
   }
 
@@ -204,28 +204,28 @@ public partial class DocumentProtection
   {
     get
     {
-      var val = _DocumentProtection.Salt?.Value;
+      var val = _Element.Salt?.Value;
       if (val == null) return null;
       return Convert.FromBase64String(val);
     }
     set
     {
       if (value != null)
-        _DocumentProtection.Salt = new DX.Base64BinaryValue { Value = Convert.ToBase64String((byte[])value) };
+        _Element.Salt = new DX.Base64BinaryValue { Value = Convert.ToBase64String((byte[])value) };
       else
-        _DocumentProtection.Salt = null;
+        _Element.Salt = null;
     }
   }
 
   public String? AlgorithmName
   {
-    get => _DocumentProtection.AlgorithmName?.Value;
+    get => _Element.AlgorithmName?.Value;
     set
     {
       if (value != null)
-        _DocumentProtection.AlgorithmName = new DX.StringValue { Value = (string)value };
+        _Element.AlgorithmName = new DX.StringValue { Value = (string)value };
       else
-        _DocumentProtection.AlgorithmName = null;
+        _Element.AlgorithmName = null;
     }
   }
 
@@ -233,16 +233,16 @@ public partial class DocumentProtection
   {
     get
     {
-      var val = _DocumentProtection.HashValue?.Value;
+      var val = _Element.HashValue?.Value;
       if (val == null) return null;
       return Convert.FromBase64String(val);
     }
     set
     {
       if (value != null)
-        _DocumentProtection.HashValue = new DX.Base64BinaryValue { Value = Convert.ToBase64String((byte[])value) };
+        _Element.HashValue = new DX.Base64BinaryValue { Value = Convert.ToBase64String((byte[])value) };
       else
-        _DocumentProtection.HashValue = null;
+        _Element.HashValue = null;
     }
   }
 
@@ -250,28 +250,28 @@ public partial class DocumentProtection
   {
     get
     {
-      var val = _DocumentProtection.HashValue?.Value;
+      var val = _Element.HashValue?.Value;
       if (val == null) return null;
       return Convert.FromBase64String(val);
     }
     set
     {
       if (value != null)
-        _DocumentProtection.SaltValue = new DX.Base64BinaryValue { Value = Convert.ToBase64String((byte[])value) };
+        _Element.SaltValue = new DX.Base64BinaryValue { Value = Convert.ToBase64String((byte[])value) };
       else
-        _DocumentProtection.SaltValue = null;
+        _Element.SaltValue = null;
     }
   }
 
   public Int32? SpinCount
   {
-    get => _DocumentProtection.SpinCount?.Value;
+    get => _Element.SpinCount?.Value;
     set
     {
       if (value != null)
-        _DocumentProtection.SpinCount = new DX.Int32Value { Value = (Int32)value };
+        _Element.SpinCount = new DX.Int32Value { Value = (Int32)value };
       else
-        _DocumentProtection.SpinCount = null;
+        _Element.SpinCount = null;
     }
   }
 

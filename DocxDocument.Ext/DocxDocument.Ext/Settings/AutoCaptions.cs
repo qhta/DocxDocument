@@ -6,10 +6,10 @@
 /// </summary>
 public partial class AutoCaptions
 {
-  public AutoCaptions(DXW.AutoCaptions autocaptions)
+  public AutoCaptions(DXW.AutoCaptions openXmlElement)
   {
-    _AutoCaptions = autocaptions;
+    _Element = openXmlElement;
   }
 
-  internal DXW.AutoCaptions _AutoCaptions { get; private set; }
+  internal DXW.AutoCaptions _Element { get; private set; }
 }

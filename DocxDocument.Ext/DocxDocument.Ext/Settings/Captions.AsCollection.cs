@@ -6,15 +6,15 @@ public partial class Captions : ICollection<Caption>
   {
     if (value.Name == null)
       throw new InvalidOperationException($"Item.Name must not be null");
-    var _caption = _Captions.Elements<DXW.Caption>().FirstOrDefault(item => item.Name == value.Name);
-    if (_caption != null)
+    var _element = _Element.Elements<DXW.Caption>().FirstOrDefault(item => item.Name == value.Name);
+    if (_element != null)
       throw new InvalidOperationException($"Caption {value.Name} aready exists found");
-    _Captions.AddChild(value._Caption);
+    _Element.AddChild(value._Element);
   }
 
   public void Clear()
   {
-    var _captions = _Captions.Elements<DXW.Caption>().ToArray();
+    var _captions = _Element.Elements<DXW.Caption>().ToArray();
     foreach (var item in _captions)
       item.Remove();
   }
@@ -23,35 +23,35 @@ public partial class Captions : ICollection<Caption>
   {
     if (value.Name == null)
       throw new InvalidOperationException($"Item.Name must not be null");
-    var _caption = _Captions.Elements<DXW.Caption>().FirstOrDefault(item => item.Name == value.Name);
-    return _caption != null;
+    var _element = _Element.Elements<DXW.Caption>().FirstOrDefault(item => item.Name == value.Name);
+    return _element != null;
   }
 
   public void CopyTo(Caption[] array, int arrayIndex)
   {
-    var _captions = _Captions.Elements<DXW.Caption>().Select(item=>new Caption(item)).ToArray();
-    _captions.CopyTo(array, arrayIndex);
+    var _elements = _Element.Elements<DXW.Caption>().Select(item=>new Caption(item)).ToArray();
+    _elements.CopyTo(array, arrayIndex);
   }
 
   public bool Remove(Caption value)
   {
     if (value.Name == null)
       throw new InvalidOperationException($"Item.Name must not be null");
-    var _caption = _Captions.Elements<DXW.Caption>().FirstOrDefault(item => item.Name == value.Name);
-    if (_caption == null)
+    var _element = _Element.Elements<DXW.Caption>().FirstOrDefault(item => item.Name == value.Name);
+    if (_element == null)
       return false;
-    _caption.Remove();
+    _element.Remove();
     return true;
   }
 
-  public int Count => _Captions?.Elements<DXW.Caption>().Count() ?? 0;
+  public int Count => _Element?.Elements<DXW.Caption>().Count() ?? 0;
 
   public bool IsReadOnly => false;
 
   public IEnumerator<Caption> GetEnumerator()
   {
-    var _captions = _Captions.Elements<DXW.Caption>().ToArray();
-    foreach (var item in _captions)
+    var _elements = _Element.Elements<DXW.Caption>().ToArray();
+    foreach (var item in _elements)
     {
       yield return new Caption(item);
     }
