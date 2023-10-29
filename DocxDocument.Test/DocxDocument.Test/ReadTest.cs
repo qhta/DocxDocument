@@ -6,7 +6,7 @@ using DocumentFormat.OpenXml.Packaging;
 using DocumentModel.Utils;
 
 using Microsoft.VisualStudio.TestPlatform.Utilities;
-using DMW = DocumentModel.Wordprocessing;
+using DM = DocumentModel;
 
 namespace DocxDocument.Test;
 
@@ -33,7 +33,7 @@ public class ReadTest
       Output.WriteLine($"TestOpen: {file}");
       try
       {
-        using (var document = DMW.DocxDocument.Open(file, false))
+        using (var document = DM.Document.Open(file, false))
           Output.WriteLine($"  Type: {document.DocumentType}");
       }
       catch (Exception ex)
@@ -51,49 +51,49 @@ public class ReadTest
     Output.WriteLine($"TestReadProperties: {file}");
     try
     {
-      using (var document = DMW.DocxDocument.Open(file, false))
+      using (var document = DM.Document.Open(file, false))
       {
-        Output.WriteLine($"  Title: {document.Title}");
-        Output.WriteLine($"  CreatedBy: {document.CreatedBy}");
-        Output.WriteLine($"  CreatedAt: {document.CreatedAt}");
-        Output.WriteLine($"  LastModifiedBy: {document.LastModifiedBy}");
-        Output.WriteLine($"  LastModifiedAt: {document.LastModifiedAt}");
-        Output.WriteLine($"  LastPrintedAt: {document.LastPrintedAt}");
-        Output.WriteLine($"  Subject: {document.Subject}");
-        Output.WriteLine($"  Revision: {document.Revision}");
-        Output.WriteLine($"  Language: {document.Language}");
-        Output.WriteLine($"  Keywords: {document.Keywords}");
-        Output.WriteLine($"  CoreIdentifier: {document.CoreIdentifier}");
-        Output.WriteLine($"  ContentType: {document.ContentType}");
-        Output.WriteLine($"  ContentStatus: {document.ContentStatus}");
-        Output.WriteLine($"  Category: {document.Category}");
-        Output.WriteLine($"  Description: {document.Description}");
-        Output.WriteLine($"  Version: {document.Version}");
+        Output.WriteLine($"  Title: {document.BuiltInProperties.Title}");
+        Output.WriteLine($"  CreatedBy: {document.BuiltInProperties.CreatedBy}");
+        Output.WriteLine($"  CreatedAt: {document.BuiltInProperties.CreatedAt}");
+        Output.WriteLine($"  LastModifiedBy: {document.BuiltInProperties.LastModifiedBy}");
+        Output.WriteLine($"  LastModifiedAt: {document.BuiltInProperties.LastModifiedAt}");
+        Output.WriteLine($"  LastPrintedAt: {document.BuiltInProperties.LastPrintedAt}");
+        Output.WriteLine($"  Subject: {document.BuiltInProperties.Subject}");
+        Output.WriteLine($"  Revision: {document.BuiltInProperties.Revision}");
+        Output.WriteLine($"  Language: {document.BuiltInProperties.Language}");
+        Output.WriteLine($"  Keywords: {document.BuiltInProperties.Keywords}");
+        Output.WriteLine($"  CoreIdentifier: {document.BuiltInProperties.CoreIdentifier}");
+        Output.WriteLine($"  ContentType: {document.BuiltInProperties.ContentType}");
+        Output.WriteLine($"  ContentStatus: {document.BuiltInProperties.ContentStatus}");
+        Output.WriteLine($"  Category: {document.BuiltInProperties.Category}");
+        Output.WriteLine($"  Description: {document.BuiltInProperties.Description}");
+        Output.WriteLine($"  Version: {document.BuiltInProperties.Version}");
 
-        Output.WriteLine($"  DigitalSignature: {document.DigitalSignature}");
-        Output.WriteLine($"  TitlesOfParts: {document.TitlesOfParts?.AsString()}");
-        Output.WriteLine($"  HeadingPairs: {document.HeadingPairs?.AsString()}");
-        Output.WriteLine($"  HyperlinkList: {document.HyperlinkList}");
-        Output.WriteLine($"  DocumentSecurity: {document.DocumentSecurity}");
-        Output.WriteLine($"  ScaleCrop: {document.ScaleCrop}");
-        Output.WriteLine($"  LinksUpToDate: {document.LinksUpToDate}");
-        Output.WriteLine($"  SharedDocument: {document.SharedDocument}");
-        Output.WriteLine($"  HyperlinksChanged: {document.HyperlinksChanged}");
-        Output.WriteLine($"  HyperlinkBase: {document.HyperlinkBase}");
-        Output.WriteLine($"  Template: {document.Template}");
-        Output.WriteLine($"  Manager: {document.Manager}");
-        Output.WriteLine($"  Company: {document.Company}");
-        Output.WriteLine($"  PresentationFormat: {document.PresentationFormat}");
-        Output.WriteLine($"  Application: {document.Application}");
-        Output.WriteLine($"  ApplicationVersion: {document.ApplicationVersion}");
+        Output.WriteLine($"  DigitalSignature: {document.BuiltInProperties.DigitalSignature}");
+        Output.WriteLine($"  TitlesOfParts: {document.BuiltInProperties.TitlesOfParts?.AsString()}");
+        Output.WriteLine($"  HeadingPairs: {document.BuiltInProperties.HeadingPairs?.AsString()}");
+        Output.WriteLine($"  HyperlinkList: {document.BuiltInProperties.HyperlinkList}");
+        Output.WriteLine($"  DocumentSecurity: {document.BuiltInProperties.DocumentSecurity}");
+        Output.WriteLine($"  ScaleCrop: {document.BuiltInProperties.ScaleCrop}");
+        Output.WriteLine($"  LinksUpToDate: {document.BuiltInProperties.LinksUpToDate}");
+        Output.WriteLine($"  SharedDocument: {document.BuiltInProperties.SharedDocument}");
+        Output.WriteLine($"  HyperlinksChanged: {document.BuiltInProperties.HyperlinksChanged}");
+        Output.WriteLine($"  HyperlinkBase: {document.BuiltInProperties.HyperlinkBase}");
+        Output.WriteLine($"  Template: {document.BuiltInProperties.Template}");
+        Output.WriteLine($"  Manager: {document.BuiltInProperties.Manager}");
+        Output.WriteLine($"  Company: {document.BuiltInProperties.Company}");
+        Output.WriteLine($"  PresentationFormat: {document.BuiltInProperties.PresentationFormat}");
+        Output.WriteLine($"  Application: {document.BuiltInProperties.Application}");
+        Output.WriteLine($"  ApplicationVersion: {document.BuiltInProperties.ApplicationVersion}");
 
-        Output.WriteLine($"  Pages: {document.Pages}");
-        Output.WriteLine($"  Words: {document.Words}");
-        Output.WriteLine($"  Characters: {document.Characters}");
-        Output.WriteLine($"  CharactersWithSpaces: {document.CharactersWithSpaces}");
-        Output.WriteLine($"  Lines: {document.Lines}");
-        Output.WriteLine($"  Paragraphs: {document.Paragraphs}");
-        Output.WriteLine($"  TotalTime: {document.TotalTime}");
+        Output.WriteLine($"  Pages: {document.BuiltInProperties.Pages}");
+        Output.WriteLine($"  Words: {document.BuiltInProperties.Words}");
+        Output.WriteLine($"  Characters: {document.BuiltInProperties.Characters}");
+        Output.WriteLine($"  CharactersWithSpaces: {document.BuiltInProperties.CharactersWithSpaces}");
+        Output.WriteLine($"  Lines: {document.BuiltInProperties.Lines}");
+        Output.WriteLine($"  Paragraphs: {document.BuiltInProperties.Paragraphs}");
+        Output.WriteLine($"  TotalTime: {document.BuiltInProperties.TotalTime}");
 
         if (document.HasCustomProperties)
           foreach (var item in document.CustomProperties)
