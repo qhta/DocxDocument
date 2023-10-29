@@ -1,6 +1,4 @@
-﻿using DocumentFormat.OpenXml.Wordprocessing;
-
-namespace DocumentModel;
+﻿namespace DocumentModel;
 public partial class DocumentSettings
 {
 
@@ -41,6 +39,27 @@ public partial class DocumentSettings
     _DocumentSettings = settings;
   }
 
+  /// <summary>
+  /// Specifies the write protection settings which have been applied to a WordprocessingML document. 
+  /// Write protection refers to a mode in which the document's contents cannot be edited, 
+  /// and the document cannot be resaved using the same file name. 
+  /// This setting is independent of the documentProtection (§17.15.1.29) element, 
+  /// but like document protection, this setting is not intended as a security feature and can be ignored.
+  /// When present, the write protection shall result in one of two write protection behaviors:
+  /// <list type="bullet">
+  ///   <item>
+  ///     If the password attribute is present, or both attributes are omitted, 
+  ///     then the application shall prompt for a password to exit write protection. 
+  ///     If the supplied password does not match the hash value in this attribute, then write protection shall be enabled.
+  ///   </item>
+  ///   <item>
+  ///    If only the recommended attribute is present, the application should provide user interface 
+  ///    recommending that the user open this document in write protected state. 
+  ///    If the user chooses to do so, the document shall be write protected, otherwise, it shall be opened fully editable.
+  ///  </item>
+  /// </list>
+  /// If this element is omitted, then no write protection shall be applied to the current document.
+  /// </summary>
   public DXW.WriteProtection? WriteProtection
   {
     get => _DocumentSettings?.WriteProtection;
@@ -56,44 +75,6 @@ public partial class DocumentSettings
         _ExistingSettings.View = new DXW.View { Val = value };
       else
         _ExistingSettings.View = null;
-    }
-  }
-
-  public object? Zoom
-  {
-    get
-    {
-      var zoom = _DocumentSettings?.Zoom;
-      if (zoom != null)
-      {
-        if (zoom.Val != null)
-          return zoom.Val.Value;
-        else
-        {
-          var str = zoom.Percent?.Value;
-          if (str != null)
-          {
-            str = str.ReplaceEnd("%", "");
-            if (int.TryParse(str, out var val))
-              return val;
-          }
-        }
-      }
-      return null;
-    }
-    set
-    {
-      if (value != null)
-      {
-        if (value is DXW.PresetZoomValues preset)
-          _ExistingSettings.Zoom = new DXW.Zoom { Val = preset };
-        else if (value is int n)
-          _ExistingSettings.Zoom = new DXW.Zoom { Percent = n.ToString() + "%" };
-        else
-          throw new InvalidCastException("Zoom can be of Integer or PresetZoomValues type");
-      }
-      else
-        _ExistingSettings.Zoom = null;
     }
   }
 
@@ -446,14 +427,14 @@ public partial class DocumentSettings
         var setting = _ExistingSettings.Elements<DXW.DocumentProtection>().FirstOrDefault();
         if (setting != null)
         {
-          if (setting != value._DocumentProtection)
+          if (setting != value._Element)
           {
             setting.Remove();
-            _ExistingSettings.AddChild(value._DocumentProtection);
+            _ExistingSettings.AddChild(value._Element);
           }
         }
         else
-          _ExistingSettings.AddChild(value._DocumentProtection);
+          _ExistingSettings.AddChild(value._Element);
       }
       else
       {
@@ -466,6 +447,15 @@ public partial class DocumentSettings
     }
   }
 
+  /// <summary>
+  /// Specifies the presence of information about captions in a given WordprocessingML document. 
+  /// This information is divided into two components:
+  /// <list type="bullet">
+  ///   <item>The child elements Caption defines the format for a single type of caption to be automatically added to the document.</item>
+  ///   <item>The child element AutoCaptions defines the types of objects to which a caption format shall automatically be applied.</item>
+  /// </list>
+  ///  This information should be used to determine the captions which are automatically added to objects when they are inserted into a WordprocessingML document. [Note: This setting is typically ignored unless it is specified in an application's default template. end note]
+  /// </summary>
   public Captions? Captions
   {
     get
@@ -484,14 +474,14 @@ public partial class DocumentSettings
         var setting = _ExistingSettings.Elements<DXW.Captions>().FirstOrDefault();
         if (setting != null)
         {
-          if (setting != value._Captions)
+          if (setting != value._Element)
           {
             setting.Remove();
-            _ExistingSettings.AddChild(value._Captions);
+            _ExistingSettings.AddChild(value._Element);
           }
         }
         else
-          _ExistingSettings.AddChild(value._Captions);
+          _ExistingSettings.AddChild(value._Element);
       }
       else
       {
@@ -504,8 +494,140 @@ public partial class DocumentSettings
     }
   }
 
-  ///   <item><description><see cref=" DXW.ProofState" /> <c>&lt;w:proofState></c></description></item>
 
+  /// <summary>
+  /// This element specifies if the grammar and spell checking engines of the last application 
+  /// to process this document completed checking the grammar and spelling of a the document before the document was last saved. 
+  /// Applications which modify the document contents without checking spelling or grammar should reset these states as needed.
+  /// </summary>
+  public ProofState? ProofState
+  {
+    get
+    {
+      if (_DocumentSettings == null)
+        return null;
+      var setting = _DocumentSettings?.Elements<DXW.ProofState>().FirstOrDefault();
+      if (setting == null)
+        return null;
+      return new ProofState(setting);
+    }
+    set
+    {
+      if (value != null)
+      {
+        var setting = _ExistingSettings.Elements<DXW.ProofState>().FirstOrDefault();
+        if (setting != null)
+        {
+          if (setting != value._Element)
+          {
+            setting.Remove();
+            _ExistingSettings.AddChild(value._Element);
+          }
+        }
+        else
+          _ExistingSettings.AddChild(value._Element);
+      }
+      else
+      {
+        var setting = _ExistingSettings.Elements<DXW.ProofState>().FirstOrDefault();
+        if (setting != null)
+          setting.Remove();
+        else
+          return;
+      }
+    }
+  }
+
+
+  /// <summary>
+  /// This element specifies the magnification level which should be applied to a document when it is displayed by an application. 
+  /// The zoom level is specified with the use of two attributes stored on this element:
+  /// <list type="bullet">
+  ///   <item>val, which stores the type of zoom applied to the document</item>
+  ///   <item>percent, which stores the zoom percentage to be used when rendering the document</item>
+  /// </list>
+  /// If both attributes are present, then the percent attribute shall be treated as a 'cached' value and only used when the value none is specified for the val attribute.
+  /// </summary>
+  public Zoom? Zoom
+  {
+    get
+    {
+      if (_DocumentSettings == null)
+        return null;
+      var setting = _DocumentSettings?.Elements<DXW.Zoom>().FirstOrDefault();
+      if (setting == null)
+        return null;
+      return new Zoom(setting);
+    }
+    set
+    {
+      if (value != null)
+      {
+        var setting = _ExistingSettings.Elements<DXW.Zoom>().FirstOrDefault();
+        if (setting != null)
+        {
+          if (setting != value._Element)
+          {
+            setting.Remove();
+            _ExistingSettings.AddChild(value._Element);
+          }
+        }
+        else
+          _ExistingSettings.AddChild(value._Element);
+      }
+      else
+      {
+        var setting = _ExistingSettings.Elements<DXW.Zoom>().FirstOrDefault();
+        if (setting != null)
+          setting.Remove();
+        else
+          return;
+      }
+    }
+  }
+
+  /// <summary>
+  /// This element specifies if the grammar and spell checking engines of the last application 
+  /// to process this document completed checking the grammar and spelling of a the document before the document was last saved. 
+  /// Applications which modify the document contents without checking spelling or grammar should reset these states as needed.
+  /// </summary>
+  public StylePaneFormatFilter? StylePaneFormatFilter
+  {
+    get
+    {
+      if (_DocumentSettings == null)
+        return null;
+      var setting = _DocumentSettings?.Elements<DXW.StylePaneFormatFilter>().FirstOrDefault();
+      if (setting == null)
+        return null;
+      return new StylePaneFormatFilter(setting);
+    }
+    set
+    {
+      if (value != null)
+      {
+        var setting = _ExistingSettings.Elements<DXW.StylePaneFormatFilter>().FirstOrDefault();
+        if (setting != null)
+        {
+          if (setting != value._Element)
+          {
+            setting.Remove();
+            _ExistingSettings.AddChild(value._Element);
+          }
+        }
+        else
+          _ExistingSettings.AddChild(value._Element);
+      }
+      else
+      {
+        var setting = _ExistingSettings.Elements<DXW.StylePaneFormatFilter>().FirstOrDefault();
+        if (setting != null)
+          setting.Remove();
+        else
+          return;
+      }
+    }
+  }
 
   ///   <item><description><see cref="DocumentFormat.OpenXml.Math.MathProperties" /> <c>&lt;m:mathPr></c></description></item>
   ///   <item><description><see cref="DocumentFormat.OpenXml.CustomXmlSchemaReferences.SchemaLibrary" /> <c>&lt;sl:schemaLibrary></c></description></item>

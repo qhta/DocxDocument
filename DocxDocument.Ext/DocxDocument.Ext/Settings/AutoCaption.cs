@@ -6,22 +6,22 @@
 /// </summary>
 public partial class AutoCaption
 {
-  public AutoCaption(DXW.AutoCaption autoCaption)
+  public AutoCaption(DXW.AutoCaption openXmlElement)
   {
-    _AutoCaption = autoCaption;
+    _Element = openXmlElement;
   }
 
-  internal DXW.AutoCaption _AutoCaption { get; private set; }
+  internal DXW.AutoCaption _Element { get; private set; }
 
   public string? Name
   {
-    get => _AutoCaption.Name;
-    set => _AutoCaption.Name = value;
+    get => _Element.Name;
+    set => _Element.Name = value;
   }
 
   public string? Caption
   {
-    get => _AutoCaption.Caption;
-    set => _AutoCaption.Caption = value;
+    get => _Element.Caption;
+    set => _Element.Caption = value;
   }
 }

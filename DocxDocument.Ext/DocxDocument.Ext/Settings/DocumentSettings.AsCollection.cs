@@ -17,7 +17,7 @@ public partial class DocumentSettings : ICollection<Setting>
     }
     catch (Exception ex)
     {
-      Utilities.ThrowError(ex);
+      TestUtilities.ThrowError(ex);
     }
   }
 
@@ -65,7 +65,7 @@ public partial class DocumentSettings : ICollection<Setting>
         }
         catch (Exception ex)
         {
-          Utilities.ThrowError(ex);
+          TestUtilities.ThrowError(ex);
         }
         yield return new Setting { Name = propInfo.Name, Value = obj };
       }
