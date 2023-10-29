@@ -90,8 +90,10 @@ public partial class Document : IDisposable
     get
     {
       if (_BuiltInProperties==null)
+      {
         _BuiltInProperties = new BuiltInProperties(this);
         _BuiltInProperties.Load();
+      }
       return _BuiltInProperties;
     }
   }
@@ -105,10 +107,28 @@ public partial class Document : IDisposable
     get
     {
       if (_CustomProperties==null)
+      {
         _CustomProperties = new CustomProperties(this);
         _CustomProperties.Load();
+      }
       return _CustomProperties;
     }
   }
   private CustomProperties? _CustomProperties;
+
+  public bool HasDocumentSettings => WordprocessingDocument.MainDocumentPart?.DocumentSettingsPart?.Settings != null;
+
+  public DocumentSettings DocumentSettings
+  {
+    get
+    {
+      if (_DocumentSettings==null)
+      {
+        _DocumentSettings = new DocumentSettings(this);
+        _DocumentSettings.Load();
+      }
+      return _DocumentSettings;
+    }
+  }
+  private DocumentSettings? _DocumentSettings;
 }

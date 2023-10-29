@@ -106,6 +106,31 @@ public class ReadTest
     }
   }
 
+  [TestMethod]
+  public void TestReadSettings()
+  {
+    var samplesPath = SamplesPath;
+    var file = Path.Combine(samplesPath, "DocumentProperties.docx");
+    Output.WriteLine($"TestReadSettings: {file}");
+    try
+    {
+      using (var document = DM.Document.Open(file, false))
+      {
+        if (document.HasDocumentSettings)
+        {
+          var settings = document.DocumentSettings;
+          //settings.IgnoreUnknown = true;
+          foreach (var item in settings)
+            Output.WriteLine($"  {item.Name}: {item.Value}");
+        }
+      }
+    }
+    catch (Exception ex)
+    {
+      Output.WriteLine($"  {ex.GetType().Name}: {ex.Message}");
+    }
+  }
+
   private string GetSamplesPath()
   {
     string result = Environment.CurrentDirectory!;

@@ -1,4 +1,6 @@
-﻿namespace DocumentModel.Wordprocessing;
+﻿using DocumentFormat.OpenXml.Wordprocessing;
+
+namespace DocumentModel;
 public partial class DocumentSettings
 {
 
@@ -11,10 +13,8 @@ public partial class DocumentSettings
   internal DXP.WordprocessingDocument WordprocessingDocument { get; private set; }
 
   //#region DocumentSettings
-  public bool HasDocumentSettings => WordprocessingDocument.MainDocumentPart?.DocumentSettingsPart?.Settings != null;
-
-  private DXW.Settings? _DocumentSettings { get; set; }
-  private DXW.Settings _ExistingSettings
+  internal DXW.Settings? _DocumentSettings { get; private set; }
+  internal DXW.Settings _ExistingSettings
   {
     get
     {
@@ -313,21 +313,211 @@ public partial class DocumentSettings
     }
   }
 
+  public Boolean ForceUpgrade
+  {
+    get => _DocumentSettings?.Elements<DXW.ForceUpgrade>().FirstOrDefault() != null;
+    set
+    {
+      if (value)
+      {
+        if (_ExistingSettings.Elements<DXW.ForceUpgrade>().FirstOrDefault() != null)
+          return;
+        else
+          _ExistingSettings.AddChild(new DXW.ForceUpgrade());
+      }
+      else
+      {
+        var setting = _ExistingSettings.Elements<DXW.ForceUpgrade>().FirstOrDefault();
+        if (setting != null)
+          setting.Remove();
+        else
+          return;
+      }
+    }
+  }
+
+  /// <summary>
+  /// Specifies the set of characters which shall be restricted from ending a line for runs of text 
+  /// which shall be subject to custom line breaking logic using the kinsoku element (§17.3.1.16) 
+  /// when the contents of the document are displayed. 
+  /// This constraint shall only apply to text which has been flagged in the language of this rule via the lang element (§17.3.2.20) 
+  /// or automatic detection methods outside the scope of /IEC 29500.
+  /// </summary>
+  public NoBreakKinsoku? NoLineBreaksAfterKinsoku
+  {
+    get
+    {
+      if (_DocumentSettings == null)
+        return null;
+      var setting = _DocumentSettings?.Elements<DXW.NoLineBreaksAfterKinsoku>().FirstOrDefault();
+      if (setting == null)
+        return null;
+      return new NoBreakKinsoku { Lang = setting.Language, Val = setting.Val };
+    }
+    set
+    {
+      if (value != null)
+      {
+        var setting = _ExistingSettings.Elements<DXW.NoLineBreaksAfterKinsoku>().FirstOrDefault();
+        if (setting != null)
+        {
+          setting.Language = value.Lang;
+          setting.Val = value.Val;
+        }
+        else
+          _ExistingSettings.AddChild(new DXW.NoLineBreaksAfterKinsoku { Language = value.Lang, Val = value.Val });
+      }
+      else
+      {
+        var setting = _ExistingSettings.Elements<DXW.NoLineBreaksAfterKinsoku>().FirstOrDefault();
+        if (setting != null)
+          setting.Remove();
+        else
+          return;
+      }
+    }
+  }
+
+  /// <summary>
+  /// Specifies the set of characters which shall be restricted from beginning a new line for runs of text 
+  /// which shall be subject to custom line breaking logic using the kinsoku element (§17.3.1.16) 
+  /// when the contents of the document are displayed. 
+  /// This constraint shall only apply to text which has been flagged in the language of this rule via the lang element (§17.3.2.20) 
+  /// or automatic detection methods outside the scope of /IEC 29500.
+  /// </summary>
+  public NoBreakKinsoku? NoLineBreaksBeforeKinsoku
+  {
+    get
+    {
+      if (_DocumentSettings == null)
+        return null;
+      var setting = _DocumentSettings?.Elements<DXW.NoLineBreaksBeforeKinsoku>().FirstOrDefault();
+      if (setting == null)
+        return null;
+      return new NoBreakKinsoku { Lang = setting.Language, Val = setting.Val };
+    }
+    set
+    {
+      if (value != null)
+      {
+        var setting = _ExistingSettings.Elements<DXW.NoLineBreaksBeforeKinsoku>().FirstOrDefault();
+        if (setting != null)
+        {
+          setting.Language = value.Lang;
+          setting.Val = value.Val;
+        }
+        else
+          _ExistingSettings.AddChild(new DXW.NoLineBreaksBeforeKinsoku { Language = value.Lang, Val = value.Val });
+      }
+      else
+      {
+        var setting = _ExistingSettings.Elements<DXW.NoLineBreaksBeforeKinsoku>().FirstOrDefault();
+        if (setting != null)
+          setting.Remove();
+        else
+          return;
+      }
+    }
+  }
+
+  /// <summary>
+  /// Specifies the set of document protection restrictions which have been applied to the contents of a WordprocessingML document. 
+  /// These restrictions should be enforced by applications editing this document when the enforcement attribute is turned on, 
+  /// and ignored (but persisted) otherwise. 
+  /// Document protection is a set of restrictions used to prevent unintentional changes to all or part of a WordprocessingML document. 
+  /// [Note: This protection does not encrypt the document, and malicious applications might circumvent its use. 
+  /// This protection is not intended as a security feature. end note]
+  /// </summary>
+  public DocumentProtection? DocumentProtection
+  {
+    get
+    {
+      if (_DocumentSettings == null)
+        return null;
+      var setting = _DocumentSettings?.Elements<DXW.DocumentProtection>().FirstOrDefault();
+      if (setting == null)
+        return null;
+      return new DocumentProtection(setting);
+    }
+    set
+    {
+      if (value != null)
+      {
+        var setting = _ExistingSettings.Elements<DXW.DocumentProtection>().FirstOrDefault();
+        if (setting != null)
+        {
+          if (setting != value._DocumentProtection)
+          {
+            setting.Remove();
+            _ExistingSettings.AddChild(value._DocumentProtection);
+          }
+        }
+        else
+          _ExistingSettings.AddChild(value._DocumentProtection);
+      }
+      else
+      {
+        var setting = _ExistingSettings.Elements<DXW.DocumentProtection>().FirstOrDefault();
+        if (setting != null)
+          setting.Remove();
+        else
+          return;
+      }
+    }
+  }
+
+  public Captions? Captions
+  {
+    get
+    {
+      if (_DocumentSettings == null)
+        return null;
+      var setting = _DocumentSettings?.Elements<DXW.Captions>().FirstOrDefault();
+      if (setting == null)
+        return null;
+      return new Captions(setting);
+    }
+    set
+    {
+      if (value != null)
+      {
+        var setting = _ExistingSettings.Elements<DXW.Captions>().FirstOrDefault();
+        if (setting != null)
+        {
+          if (setting != value._Captions)
+          {
+            setting.Remove();
+            _ExistingSettings.AddChild(value._Captions);
+          }
+        }
+        else
+          _ExistingSettings.AddChild(value._Captions);
+      }
+      else
+      {
+        var setting = _ExistingSettings.Elements<DXW.Captions>().FirstOrDefault();
+        if (setting != null)
+          setting.Remove();
+        else
+          return;
+      }
+    }
+  }
+
+  ///   <item><description><see cref=" DXW.ProofState" /> <c>&lt;w:proofState></c></description></item>
+
+
   ///   <item><description><see cref="DocumentFormat.OpenXml.Math.MathProperties" /> <c>&lt;m:mathPr></c></description></item>
   ///   <item><description><see cref="DocumentFormat.OpenXml.CustomXmlSchemaReferences.SchemaLibrary" /> <c>&lt;sl:schemaLibrary></c></description></item>
-  ///   <item><description><see cref=" DXW.Captions" /> <c>&lt;w:captions></c></description></item>
   ///   <item><description><see cref=" DXW.CharacterSpacingControl" /> <c>&lt;w:characterSpacingControl></c></description></item>
   ///   <item><description><see cref=" DXW.ColorSchemeMapping" /> <c>&lt;w:clrSchemeMapping></c></description></item>
   ///   <item><description><see cref=" DXW.Compatibility" /> <c>&lt;w:compat></c></description></item>
-  ///   <item><description><see cref=" DXW.DocumentProtection" /> <c>&lt;w:documentProtection></c></description></item>
   ///   <item><description><see cref=" DXW.Rsids" /> <c>&lt;w:rsids></c></description></item>
   ///   <item><description><see cref=" DXW.DocumentType" /> <c>&lt;w:documentType></c></description></item>
   ///   <item><description><see cref=" DXW.DocumentVariables" /> <c>&lt;w:docVars></c></description></item>
   ///   <item><description><see cref=" DXW.EndnoteDocumentWideProperties" /> <c>&lt;w:endnotePr></c></description></item>
-  ///   <item><description><see cref=" DXW.ForceUpgrade" /> <c>&lt;w:forceUpgrade></c></description></item>
   ///   <item><description><see cref=" DXW.FootnoteDocumentWideProperties" /> <c>&lt;w:footnotePr></c></description></item>
-  ///   <item><description><see cref=" DXW.NoLineBreaksAfterKinsoku" /> <c>&lt;w:noLineBreaksAfter></c></description></item>
-  ///   <item><description><see cref=" DXW.NoLineBreaksBeforeKinsoku" /> <c>&lt;w:noLineBreaksBefore></c></description></item>
+
   ///   <item><description><see cref=" DXW.ThemeFontLanguages" /> <c>&lt;w:themeFontLang></c></description></item>
   ///   <item><description><see cref=" DXW.MailMerge" /> <c>&lt;w:mailMerge></c></description></item>
   ///   <item><description><see cref=" DXW.DefaultTabStop" /> <c>&lt;w:defaultTabStop></c></description></item>
@@ -384,7 +574,6 @@ public partial class DocumentSettings
   ///   <item><description><see cref=" DXW.DoNotIncludeSubdocsInStats" /> <c>&lt;w:doNotIncludeSubdocsInStats></c></description></item>
   ///   <item><description><see cref=" DXW.DoNotAutoCompressPictures" /> <c>&lt;w:doNotAutoCompressPictures></c></description></item>
   ///   <item><description><see cref="DocumentFormat.OpenXml.Office2013.Word.ChartTrackingRefBased" /> <c>&lt;w15:chartTrackingRefBased></c></description></item>
-  ///   <item><description><see cref=" DXW.ProofState" /> <c>&lt;w:proofState></c></description></item>
   ///   <item><description><see cref=" DXW.ReadModeInkLockDown" /> <c>&lt;w:readModeInkLockDown></c></description></item>
   ///   <item><description><see cref=" DXW.AttachedTemplate" /> <c>&lt;w:attachedTemplate></c></description></item>
   ///   <item><description><see cref=" DXW.SaveThroughXslt" /> <c>&lt;w:saveThroughXslt></c></description></item>
