@@ -1,4 +1,4 @@
-﻿namespace DocumentModel;
+﻿namespace DocumentModel.Wordprocessing;
 public partial class DocumentSettings : ICollection<Setting>
 {
   public void Add(Setting item)

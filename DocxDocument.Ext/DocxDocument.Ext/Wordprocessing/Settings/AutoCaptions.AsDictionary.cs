@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-namespace DocumentModel;
+namespace DocumentModel.Wordprocessing;
 
 public partial class AutoCaptions : IDictionary<string, string?>
 {

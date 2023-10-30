@@ -1,4 +1,4 @@
-﻿namespace DocumentModel;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// This element specifies the magnification level which should be applied to a document when it is displayed by an application. 

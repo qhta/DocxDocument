@@ -24,4 +24,5 @@ global using DXVT = DocumentFormat.OpenXml.VariantTypes;
 global using DocumentModel.Utils;
 
 global using DM = DocumentModel;
+global using DMW = DocumentModel.Wordprocessing;
 

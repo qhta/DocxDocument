@@ -1,4 +1,4 @@
-﻿namespace DocumentModel;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Specifies the presence of information about captions in a given WordprocessingML document. 

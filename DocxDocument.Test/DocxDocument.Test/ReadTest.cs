@@ -8,6 +8,7 @@ using DocumentModel.Utils;
 using Microsoft.VisualStudio.TestPlatform.Utilities;
 
 using DM = DocumentModel;
+using DMW = DocumentModel.Wordprocessing;
 
 namespace DocxDocument.Test;
 

@@ -1,4 +1,4 @@
-﻿namespace DocumentModel;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Specifies the contents and positioning for captions which can be used to automatically label objects in a WordprocessingML document. 
