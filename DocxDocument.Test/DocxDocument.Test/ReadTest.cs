@@ -61,16 +61,16 @@ public class ReadTest
       using (var document = DMW.Document.Open(file, false))
       {
         Output.WriteLine($"  Title: {document.BuiltInProperties.Title}");
-        Output.WriteLine($"  CreatedBy: {document.BuiltInProperties.CreatedBy}");
-        Output.WriteLine($"  CreatedAt: {document.BuiltInProperties.CreatedAt}");
+        Output.WriteLine($"  CreatedBy: {document.BuiltInProperties.Creator}");
+        Output.WriteLine($"  CreatedAt: {document.BuiltInProperties.Created}");
         Output.WriteLine($"  LastModifiedBy: {document.BuiltInProperties.LastModifiedBy}");
-        Output.WriteLine($"  LastModifiedAt: {document.BuiltInProperties.LastModifiedAt}");
-        Output.WriteLine($"  LastPrintedAt: {document.BuiltInProperties.LastPrintedAt}");
+        Output.WriteLine($"  LastModifiedAt: {document.BuiltInProperties.Modified}");
+        Output.WriteLine($"  LastPrintedAt: {document.BuiltInProperties.LastPrinted}");
         Output.WriteLine($"  Subject: {document.BuiltInProperties.Subject}");
         Output.WriteLine($"  Revision: {document.BuiltInProperties.Revision}");
         Output.WriteLine($"  Language: {document.BuiltInProperties.Language}");
         Output.WriteLine($"  Keywords: {document.BuiltInProperties.Keywords}");
-        Output.WriteLine($"  CoreIdentifier: {document.BuiltInProperties.CoreIdentifier}");
+        Output.WriteLine($"  CoreIdentifier: {document.BuiltInProperties.Identifier}");
         Output.WriteLine($"  ContentType: {document.BuiltInProperties.ContentType}");
         Output.WriteLine($"  ContentStatus: {document.BuiltInProperties.ContentStatus}");
         Output.WriteLine($"  Category: {document.BuiltInProperties.Category}");

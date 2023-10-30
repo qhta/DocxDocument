@@ -17,6 +17,20 @@ public static class TestUtilities
     if (value is string str)
       return "\"" + str + "\"";
     var type = value.GetType();
+    if (type.IsArray)
+    {
+      var ss = new List<string>();
+      Array array = (Array)value;
+      var n = array.Length;
+      for (int i = 0; i<System.Math.Min(n,10); i++)
+      {
+        var val = array.GetValue(i);
+        if (val != null)
+          ss.Add($"{ToDumpString(val)}");
+      }
+      return type.Name + " { " + string.Join(", ", ss) + " }";
+    }
+    else
     if (type.IsClass)
     {
       var ss = new List<string>();
@@ -33,7 +47,7 @@ public static class TestUtilities
           }
         }
       }
-      return type.Name + "{ " + string.Join(", ", ss) + " }";
+      return type.Name + " { " + string.Join(", ", ss) + " }";
     }
 
     return value.ToString();

@@ -34,7 +34,7 @@ public static class VariantUtils
       return null;
     baseType = element.BaseType?.Value;
     Type itemType = (baseType == null) ? typeof(object) : VectorBaseValueToType[(DXVT.VectorBaseValues)baseType];
-    var size = element.Size?.Value ?? 0;
+    var size = (int?)element.Size?.Value ?? element.Elements().Count();
     var array = Array.CreateInstance(itemType, size);
     var i = 0;
     foreach (var child in element.Elements())
@@ -44,6 +44,7 @@ public static class VariantUtils
     }
     return array;
   }
+
 
   private static Dictionary<Type, DXVT.VectorBaseValues> TypeToVectorBase = new Dictionary<Type, DXVT.VectorBaseValues>
   {
@@ -102,7 +103,7 @@ public static class VariantUtils
       var item = array.GetValue(i);
       var childElement = item.AsVTVariant(baseType);
       if (childElement != null)
-        vector.AddChild(childElement);
+        vector.AppendChild(childElement);
     }
     return vector;
   }
@@ -230,6 +231,9 @@ public static class VariantUtils
     {
       case DXVT.VectorBaseValues.Variant:
         var result = new DXVT.Variant();
+        var childElement = value.AsVTVariant();
+        if (childElement!=null)
+          result.AddChild(childElement);
         return result;
       case DXVT.VectorBaseValues.OneByteSignedInteger:
         return new DXVT.VTByte(value.ToString()!);
