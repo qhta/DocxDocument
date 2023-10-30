@@ -16,7 +16,7 @@ namespace DocxDocument.Test;
 public class ReadTest
 {
   public TextWriter Output { get; set; } = null!;
-  public string SamplesPath = null!;
+  public string SamplesPath { get; set; } = null!;
 
   [TestInitialize()]
   public void Initialize()
@@ -35,7 +35,7 @@ public class ReadTest
       Output.WriteLine($"TestOpen: {file}");
       try
       {
-        using (var document = DM.Document.Open(file, false))
+        using (var document = DMW.Document.Open(file, false))
           Output.WriteLine($"  Type: {document.DocumentType}");
       }
       catch (Exception ex)
@@ -53,7 +53,7 @@ public class ReadTest
     Output.WriteLine($"TestReadProperties: {file}");
     try
     {
-      using (var document = DM.Document.Open(file, false))
+      using (var document = DMW.Document.Open(file, false))
       {
         Output.WriteLine($"  Title: {document.BuiltInProperties.Title}");
         Output.WriteLine($"  CreatedBy: {document.BuiltInProperties.CreatedBy}");
@@ -116,7 +116,7 @@ public class ReadTest
     Output.WriteLine($"TestReadSettings: {file}");
     try
     {
-      using (var document = DM.Document.Open(file, false))
+      using (var document = DMW.Document.Open(file, false))
       {
         if (document.HasDocumentSettings)
         {
@@ -141,9 +141,7 @@ public class ReadTest
     string result = Environment.CurrentDirectory!;
     while (!result.EndsWith(".Test"))
       result = Path.GetDirectoryName(result)!;
-    var subResult = Path.GetDirectoryName(result)!;
-    while (subResult.EndsWith(".Test"))
-      return subResult;
+    result = Path.Combine(result,"Samples");
     return result;
   }
 

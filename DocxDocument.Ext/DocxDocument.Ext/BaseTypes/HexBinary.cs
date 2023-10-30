@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel;
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
-[TypeConverter(typeof(HexBinaryTypeXmlConverter))]
+[TypeConverter(typeof(HexBinaryTypeConverter))]
 public class HexBinary: IEquatable<HexBinary>
 {
   private readonly byte[] value;
