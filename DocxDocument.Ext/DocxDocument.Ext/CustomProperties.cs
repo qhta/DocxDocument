@@ -2,7 +2,7 @@
 public class CustomProperties: Collection<CustomProperty>
 {
 
-  public CustomProperties (DM.Document document)
+  public CustomProperties (DMW.Document document)
   {
     WordprocessingDocument = document.WordprocessingDocument;
   }

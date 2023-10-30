@@ -2,7 +2,7 @@
 public partial class DocumentSettings
 {
 
-  public DocumentSettings(DM.Document document)
+  public DocumentSettings(DMW.Document document)
   {
     WordprocessingDocument = document.WordprocessingDocument;
     Load();
@@ -301,9 +301,7 @@ public partial class DocumentSettings
     {
       if (value)
       {
-        if (_ExistingSettings.Elements<DXW.ForceUpgrade>().FirstOrDefault() != null)
-          return;
-        else
+        if (_ExistingSettings.Elements<DXW.ForceUpgrade>().FirstOrDefault() == null)
           _ExistingSettings.AddChild(new DXW.ForceUpgrade());
       }
       else
@@ -311,8 +309,6 @@ public partial class DocumentSettings
         var setting = _ExistingSettings.Elements<DXW.ForceUpgrade>().FirstOrDefault();
         if (setting != null)
           setting.Remove();
-        else
-          return;
       }
     }
   }
@@ -326,15 +322,7 @@ public partial class DocumentSettings
   /// </summary>
   public NoBreakKinsoku? NoLineBreaksAfterKinsoku
   {
-    get
-    {
-      if (_DocumentSettings == null)
-        return null;
-      var setting = _DocumentSettings?.Elements<DXW.NoLineBreaksAfterKinsoku>().FirstOrDefault();
-      if (setting == null)
-        return null;
-      return new NoBreakKinsoku { Lang = setting.Language, Val = setting.Val };
-    }
+    get => GetObject<NoBreakKinsoku, DXW.NoLineBreaksAfterKinsoku>();
     set
     {
       if (value != null)
@@ -353,8 +341,6 @@ public partial class DocumentSettings
         var setting = _ExistingSettings.Elements<DXW.NoLineBreaksAfterKinsoku>().FirstOrDefault();
         if (setting != null)
           setting.Remove();
-        else
-          return;
       }
     }
   }
@@ -395,8 +381,6 @@ public partial class DocumentSettings
         var setting = _ExistingSettings.Elements<DXW.NoLineBreaksBeforeKinsoku>().FirstOrDefault();
         if (setting != null)
           setting.Remove();
-        else
-          return;
       }
     }
   }
@@ -411,40 +395,8 @@ public partial class DocumentSettings
   /// </summary>
   public DocumentProtection? DocumentProtection
   {
-    get
-    {
-      if (_DocumentSettings == null)
-        return null;
-      var setting = _DocumentSettings?.Elements<DXW.DocumentProtection>().FirstOrDefault();
-      if (setting == null)
-        return null;
-      return new DocumentProtection(setting);
-    }
-    set
-    {
-      if (value != null)
-      {
-        var setting = _ExistingSettings.Elements<DXW.DocumentProtection>().FirstOrDefault();
-        if (setting != null)
-        {
-          if (setting != value._Element)
-          {
-            setting.Remove();
-            _ExistingSettings.AddChild(value._Element);
-          }
-        }
-        else
-          _ExistingSettings.AddChild(value._Element);
-      }
-      else
-      {
-        var setting = _ExistingSettings.Elements<DXW.DocumentProtection>().FirstOrDefault();
-        if (setting != null)
-          setting.Remove();
-        else
-          return;
-      }
-    }
+    get => GetObject<DocumentProtection, DXW.DocumentProtection>();
+    set => SetObject<DocumentProtection, DXW.DocumentProtection>(value);
   }
 
   /// <summary>
@@ -458,89 +410,24 @@ public partial class DocumentSettings
   /// </summary>
   public Captions? Captions
   {
-    get
-    {
-      if (_DocumentSettings == null)
-        return null;
-      var setting = _DocumentSettings?.Elements<DXW.Captions>().FirstOrDefault();
-      if (setting == null)
-        return null;
-      return new Captions(setting);
-    }
-    set
-    {
-      if (value != null)
-      {
-        var setting = _ExistingSettings.Elements<DXW.Captions>().FirstOrDefault();
-        if (setting != null)
-        {
-          if (setting != value._Element)
-          {
-            setting.Remove();
-            _ExistingSettings.AddChild(value._Element);
-          }
-        }
-        else
-          _ExistingSettings.AddChild(value._Element);
-      }
-      else
-      {
-        var setting = _ExistingSettings.Elements<DXW.Captions>().FirstOrDefault();
-        if (setting != null)
-          setting.Remove();
-        else
-          return;
-      }
-    }
+    get => GetObject<Captions, DXW.Captions>();
+    set => SetObject<Captions, DXW.Captions>(value);
   }
 
 
   /// <summary>
-  /// This element specifies if the grammar and spell checking engines of the last application 
+  /// Specifies if the grammar and spell checking engines of the last application 
   /// to process this document completed checking the grammar and spelling of a the document before the document was last saved. 
   /// Applications which modify the document contents without checking spelling or grammar should reset these states as needed.
   /// </summary>
   public ProofState? ProofState
   {
-    get
-    {
-      if (_DocumentSettings == null)
-        return null;
-      var setting = _DocumentSettings?.Elements<DXW.ProofState>().FirstOrDefault();
-      if (setting == null)
-        return null;
-      return new ProofState(setting);
-    }
-    set
-    {
-      if (value != null)
-      {
-        var setting = _ExistingSettings.Elements<DXW.ProofState>().FirstOrDefault();
-        if (setting != null)
-        {
-          if (setting != value._Element)
-          {
-            setting.Remove();
-            _ExistingSettings.AddChild(value._Element);
-          }
-        }
-        else
-          _ExistingSettings.AddChild(value._Element);
-      }
-      else
-      {
-        var setting = _ExistingSettings.Elements<DXW.ProofState>().FirstOrDefault();
-        if (setting != null)
-          setting.Remove();
-        else
-          return;
-      }
-    }
+    get => GetObject<ProofState, DXW.ProofState>();
+    set => SetObject<ProofState, DXW.ProofState>(value);
   }
 
-
   /// <summary>
-  /// This element specifies the magnification level which should be applied to a document when it is displayed by an application. 
+  /// Specifies the magnification level which should be applied to a document when it is displayed by an application. 
   /// The zoom level is specified with the use of two attributes stored on this element:
   /// <list type="bullet">
   ///   <item>val, which stores the type of zoom applied to the document</item>
@@ -550,83 +437,43 @@ public partial class DocumentSettings
   /// </summary>
   public Zoom? Zoom
   {
-    get
-    {
-      if (_DocumentSettings == null)
-        return null;
-      var setting = _DocumentSettings?.Elements<DXW.Zoom>().FirstOrDefault();
-      if (setting == null)
-        return null;
-      return new Zoom(setting);
-    }
-    set
-    {
-      if (value != null)
-      {
-        var setting = _ExistingSettings.Elements<DXW.Zoom>().FirstOrDefault();
-        if (setting != null)
-        {
-          if (setting != value._Element)
-          {
-            setting.Remove();
-            _ExistingSettings.AddChild(value._Element);
-          }
-        }
-        else
-          _ExistingSettings.AddChild(value._Element);
-      }
-      else
-      {
-        var setting = _ExistingSettings.Elements<DXW.Zoom>().FirstOrDefault();
-        if (setting != null)
-          setting.Remove();
-        else
-          return;
-      }
-    }
+    get => GetObject<Zoom, DXW.Zoom>();
+    set => SetObject<Zoom, DXW.Zoom>(value);
   }
 
   /// <summary>
-  /// This element specifies if the grammar and spell checking engines of the last application 
+  /// Specifies if the grammar and spell checking engines of the last application 
   /// to process this document completed checking the grammar and spelling of a the document before the document was last saved. 
   /// Applications which modify the document contents without checking spelling or grammar should reset these states as needed.
   /// </summary>
   public StylePaneFormatFilter? StylePaneFormatFilter
   {
-    get
-    {
-      if (_DocumentSettings == null)
-        return null;
-      var setting = _DocumentSettings?.Elements<DXW.StylePaneFormatFilter>().FirstOrDefault();
-      if (setting == null)
-        return null;
-      return new StylePaneFormatFilter(setting);
-    }
-    set
-    {
-      if (value != null)
-      {
-        var setting = _ExistingSettings.Elements<DXW.StylePaneFormatFilter>().FirstOrDefault();
-        if (setting != null)
-        {
-          if (setting != value._Element)
-          {
-            setting.Remove();
-            _ExistingSettings.AddChild(value._Element);
-          }
-        }
-        else
-          _ExistingSettings.AddChild(value._Element);
-      }
-      else
-      {
-        var setting = _ExistingSettings.Elements<DXW.StylePaneFormatFilter>().FirstOrDefault();
-        if (setting != null)
-          setting.Remove();
-        else
-          return;
-      }
-    }
+    get => GetObject<StylePaneFormatFilter, DXW.StylePaneFormatFilter>();
+    set => SetObject<StylePaneFormatFilter, DXW.StylePaneFormatFilter>(value);
+
+  }
+
+  /// <summary>
+  /// Specifies the value which shall be used as the multiplier to generate automatic tab stops in this document. 
+  /// Automatic tab stops refer to the tab stop locations which occur after all custom tab stops in the current paragraph have been surpassed.
+  /// </summary>
+  public Twips? DefaultTabStop
+  {
+    get => GetTwips<DXW.DefaultTabStop>();
+    set => SetTwips<DXW.DefaultTabStop>(value);
+  }
+
+  /// <summary>
+  ///  Specifies the hyphenation zone which shall be used when automatically or manually hyphenating the contents of this document. 
+  ///  The hyphenation zone is the amount of whitespace which can be left at the end of a line (or added to justified lines) 
+  ///  before hyphenation should be attempted on the next word in the document (in order to reduce the amount of whitespace on the line). 
+  ///  A smaller hyphenation zone should reduce the raggedness of the right edge of a given document's body text, as more words is hyphenated. 
+  ///  Conversely, a larger hyphenation zone should increase the raggedness of the right edge of a given document's text, as fewer words is hyphenated.
+  /// </summary>
+  public Twips? HyphenationZone
+  {
+    get => GetTwips<DXW.HyphenationZone>();
+    set => SetTwips<DXW.HyphenationZone>(value);
   }
 
   ///   <item><description><see cref="DocumentFormat.OpenXml.Math.MathProperties" /> <c>&lt;m:mathPr></c></description></item>
@@ -642,7 +489,6 @@ public partial class DocumentSettings
 
   ///   <item><description><see cref=" DXW.ThemeFontLanguages" /> <c>&lt;w:themeFontLang></c></description></item>
   ///   <item><description><see cref=" DXW.MailMerge" /> <c>&lt;w:mailMerge></c></description></item>
-  ///   <item><description><see cref=" DXW.DefaultTabStop" /> <c>&lt;w:defaultTabStop></c></description></item>
   ///   <item><description><see cref=" DXW.BookFoldPrintingSheets" /> <c>&lt;w:bookFoldPrintingSheets></c></description></item>
   ///   <item><description><see cref=" DXW.RemovePersonalInformation" /> <c>&lt;w:removePersonalInformation></c></description></item>
   ///   <item><description><see cref=" DXW.RemoveDateAndTime" /> <c>&lt;w:removeDateAndTime></c></description></item>
@@ -709,7 +555,6 @@ public partial class DocumentSettings
   ///   <item><description><see cref=" DXW.StylePaneFormatFilter" /> <c>&lt;w:stylePaneFormatFilter></c></description></item>
   ///   <item><description><see cref=" DXW.StylePaneSortMethods" /> <c>&lt;w:stylePaneSortMethod></c></description></item>
   ///   <item><description><see cref=" DXW.RevisionView" /> <c>&lt;w:revisionView></c></description></item>
-  ///   <item><description><see cref=" DXW.HyphenationZone" /> <c>&lt;w:hyphenationZone></c></description></item>
   ///   <item><description><see cref=" DXW.DrawingGridHorizontalSpacing" /> <c>&lt;w:drawingGridHorizontalSpacing></c></description></item>
   ///   <item><description><see cref=" DXW.DrawingGridVerticalSpacing" /> <c>&lt;w:drawingGridVerticalSpacing></c></description></item>
   ///   <item><description><see cref=" DXW.DrawingGridHorizontalOrigin" /> <c>&lt;w:drawingGridHorizontalOrigin></c></description></item>
