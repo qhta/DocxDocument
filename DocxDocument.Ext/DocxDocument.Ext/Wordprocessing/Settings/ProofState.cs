@@ -1,4 +1,4 @@
-﻿namespace DocumentModel;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Specifies if the grammar and spell checking engines of the last application 

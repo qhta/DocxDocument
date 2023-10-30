@@ -1,4 +1,4 @@
-﻿namespace DocumentModel;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Specifies what type(s) of objects shall automatically labelled with captions (§17.15.1.17), 

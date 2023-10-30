@@ -1,3 +1,4 @@
+
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
@@ -6,10 +7,6 @@
     <Nullable>enable</Nullable>
     <RootNamespace>DocumentModel</RootNamespace>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Remove="DocxDocument.Impl.cs" />
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="DocumentFormat.OpenXml" Version="2.20.0" />

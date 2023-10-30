@@ -1,4 +1,4 @@
-﻿namespace DocumentModel;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Specifies the set of document protection restrictions which have been applied to the contents of a WordprocessingML document. 
