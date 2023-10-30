@@ -60,15 +60,18 @@ public partial class DocumentSettings
   /// </list>
   /// If this element is omitted, then no write protection shall be applied to the current document.
   /// </summary>
-  public DXW.WriteProtection? WriteProtection
+  public DMW.WriteProtection? WriteProtection
   {
-    get => _DocumentSettings?.WriteProtection;
-    set => _ExistingSettings.WriteProtection = value;
+    get => GetObject<WriteProtection, DXW.WriteProtection>();
+    set => SetObject<WriteProtection, DXW.WriteProtection>(value);
   }
 
+  /// <summary>
+  /// Specifies the manner in which the contents of this document should be displayed when opened by an application.
+  /// </summary>
   public DXW.ViewValues? View
   {
-    get => _DocumentSettings?.View?.Val?.Value;
+    get => GetEnum<DXW.ViewValues, DXW.View>();
     set
     {
       if (value != null)

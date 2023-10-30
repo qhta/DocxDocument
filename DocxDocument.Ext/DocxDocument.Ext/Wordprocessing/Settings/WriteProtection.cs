@@ -23,8 +23,25 @@ namespace DocumentModel.Wordprocessing;
   /// </list>
   /// If this element is omitted, then no write protection shall be applied to the current document.
   /// </summary>
-public partial class WriteProtection
+public partial class WriteProtection: IOpenXmlElementMappedObject
 {
+  public WriteProtection()
+  {
+    _Element = new DXW.WriteProtection();
+  }
+
+  public WriteProtection(DX.OpenXmlElement openXmlElement)
+  {
+    _Element = (DXW.WriteProtection)openXmlElement;
+  }
+
+  public OpenXmlElementType GetElement<OpenXmlElementType>() where OpenXmlElementType: DX.OpenXmlElement
+  {
+    if (_Element is OpenXmlElementType validTypeElement)
+    return validTypeElement;
+      throw new ArgumentException($"Only {_Element.GetType()} type supported in GetElement of {this.GetType()}");
+  }
+
   public WriteProtection(DXW.WriteProtection openXmlElement)
   {
     _Element = openXmlElement;

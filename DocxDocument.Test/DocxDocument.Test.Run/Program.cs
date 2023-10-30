@@ -1,8 +1,10 @@
-﻿var test = new DocxDocument.Test.ReadTest();
+﻿var test = new DocxDocument.Test.ReadWriteTest();
 test.Output = Console.Out;
 test.Initialize();
 Console.WriteLine($"Opening directory: {test.SamplesPath}");
 Console.WriteLine();
-test.TestOpen();
-test.TestReadProperties();
-test.TestReadSettings();
+//test.TestOpen();
+test.TestCreate();
+test.TestCopyProperties();
+//test.TestReadProperties();
+//test.TestReadSettings();

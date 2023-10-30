@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using System.Text;
 
+using DocumentFormat.OpenXml.Office2019.Excel.RichData2;
 using DocumentFormat.OpenXml.Packaging;
 
 using DocumentModel.Utils;
@@ -50,6 +51,10 @@ public class ReadTest
   {
     var samplesPath = SamplesPath;
     var file = Path.Combine(samplesPath, "DocumentProperties.docx");
+    TestReadProperties(file);
+  }
+  public void TestReadProperties(string file)
+  {
     Output.WriteLine($"TestReadProperties: {file}");
     try
     {
@@ -112,7 +117,7 @@ public class ReadTest
   public void TestReadSettings()
   {
     var samplesPath = SamplesPath;
-    var file = Path.Combine(samplesPath, "DocumentProperties.docx");
+    var file = Path.Combine(samplesPath, "New.docx");
     Output.WriteLine($"TestReadSettings: {file}");
     try
     {
@@ -135,6 +140,34 @@ public class ReadTest
       Output.WriteLine($"  {ex.GetType().Name}: {ex.Message}");
     }
   }
+
+  //[TestMethod]
+  //public void TestReadWriteSettings()
+  //{
+  //  var samplesPath = SamplesPath;
+  //  var file = Path.Combine(samplesPath, "Temp.docx");
+  //  Output.WriteLine($"TestReadWriteSettings: {file}");
+  //  try
+  //  {
+  //    using (var document = DMW.Document.Create(file, false))
+  //    {
+  //      if (document.HasDocumentSettings)
+  //      {
+  //        var settings = document.DocumentSettings;
+  //        //settings.IgnoreUnknown = true;
+  //        foreach (var item in settings)
+  //        {
+  //          var val = item.Value;
+  //          Output.WriteLine($"  {item.Name}: {DocumentModel.TestUtilities.ToDumpString(val)}");
+  //        }
+  //      }
+  //    }
+  //  }
+  //  catch (Exception ex)
+  //  {
+  //    Output.WriteLine($"  {ex.GetType().Name}: {ex.Message}");
+  //  }
+  //}
 
   private string GetSamplesPath()
   {
