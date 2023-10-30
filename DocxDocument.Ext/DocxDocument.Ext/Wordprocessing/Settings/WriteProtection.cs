@@ -1,6 +1,6 @@
 ﻿using DocumentFormat.OpenXml.Wordprocessing;
 
-namespace DocumentModel;
+namespace DocumentModel.Wordprocessing;
 
   /// <summary>
   /// Specifies the write protection settings which have been applied to a WordprocessingML document. 
