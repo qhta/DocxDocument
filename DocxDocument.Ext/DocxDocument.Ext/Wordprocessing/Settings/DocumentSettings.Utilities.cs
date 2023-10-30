@@ -95,4 +95,21 @@ partial class DocumentSettings
     }
   }
 
+  private EnumType? GetEnum<EnumType, ElementType>() where EnumType : struct, IConvertible
+  where ElementType : DX.OpenXmlLeafElement
+  {
+    if (_DocumentSettings != null)
+    {
+      var _element = _DocumentSettings.Elements<ElementType>().FirstOrDefault();
+      if (_element != null)
+      {
+        var valProperty = typeof(ElementType).GetProperty("Val");
+        Debug.Assert(valProperty != null, $"\"Val\" property in {typeof(ElementType)} not found");
+        var val = valProperty.GetValue(_element);
+        Debug.Assert(val != null, $"\"Val\" property in {typeof(ElementType)} is null");
+        var valType = val.GetType();
+      }
+    }
+    return null;
+  }
 }

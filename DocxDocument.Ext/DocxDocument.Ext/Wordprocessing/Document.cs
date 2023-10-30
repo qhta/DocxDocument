@@ -15,6 +15,15 @@ public partial class Document : IDisposable
   public static Document Open(string path, bool isEditable)
     => Open(path, isEditable, new DXP.OpenSettings());
 
+  public static Document Create(string path)
+      => Create(path, DX.WordprocessingDocumentType.Document, true);
+
+  public static Document Create(Stream stream)
+      => Create(stream, DX.WordprocessingDocumentType.Document, true);
+
+  public static Document Create(Package package)
+      => Create(package, DX.WordprocessingDocumentType.Document, true);
+
   public static Document Open(string path, bool isEditable, DXP.OpenSettings openSettings)
   {
     var wordprocessingDocument = DXP.WordprocessingDocument.Open(path, isEditable, openSettings);
@@ -52,6 +61,8 @@ public partial class Document : IDisposable
   public static Document Create(string path, DX.WordprocessingDocumentType type, bool autoSave)
   {
     var wordprocessingDocument = DXP.WordprocessingDocument.Create(path, type, autoSave);
+    if (wordprocessingDocument.MainDocumentPart==null)
+      wordprocessingDocument.AddMainDocumentPart();
     return new Document(wordprocessingDocument);
   }
 

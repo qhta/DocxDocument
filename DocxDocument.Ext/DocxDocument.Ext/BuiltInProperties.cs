@@ -1,9 +1,9 @@
 ﻿using DocumentFormat.OpenXml.Packaging;
 
-namespace DocumentModel.Wordprocessing;
+namespace DocumentModel;
 public partial class BuiltInProperties
 {
-  public BuiltInProperties (DMW.Document document)
+  public BuiltInProperties(DMW.Document document)
   {
     WordprocessingDocument = document.WordprocessingDocument;
     Load();
@@ -15,7 +15,7 @@ public partial class BuiltInProperties
   public void Load()
   {
     LoadCoreProperties();
-    LoadExtendedProperties();
+    _ExtendedProperties = WordprocessingDocument.ExtendedFilePropertiesPart?.Properties;
   }
 
   #region CoreProperties
@@ -33,96 +33,112 @@ public partial class BuiltInProperties
 
   internal PackageProperties _CoreProperties { get; private set; }
 
+  [DataMember]
   public string? Title
   {
     get => _CoreProperties.Title;
     set => _CoreProperties.Title = value;
   }
 
+  [DataMember]
   public string? CreatedBy
   {
     get => _CoreProperties.Creator;
     set => _CoreProperties.Creator = value;
   }
 
+  [DataMember]
   public DateTime? CreatedAt
   {
     get => _CoreProperties.Created;
     set => _CoreProperties.Created = value;
   }
 
+  [DataMember]
   public string? LastModifiedBy
   {
     get => _CoreProperties.LastModifiedBy;
     set => _CoreProperties.LastModifiedBy = value;
   }
 
+  [DataMember]
   public DateTime? LastModifiedAt
   {
     get => _CoreProperties.Modified;
     set => _CoreProperties.Modified = value;
   }
 
+  [DataMember]
   public DateTime? LastPrintedAt
   {
     get => _CoreProperties.LastPrinted;
     set => _CoreProperties.LastPrinted = value;
   }
 
+  [DataMember]
   public string? Subject
   {
     get => _CoreProperties.Subject;
     set => _CoreProperties.Subject = value;
   }
 
+  [DataMember]
   public string? Revision
   {
     get => _CoreProperties.Revision;
     set => _CoreProperties.Revision = value;
   }
 
+  [DataMember]
   public string? Language
   {
     get => _CoreProperties.Language;
     set => _CoreProperties.Language = value;
   }
 
+  [DataMember]
   public string? Keywords
   {
     get => _CoreProperties.Keywords;
     set => _CoreProperties.Keywords = value;
   }
 
+  [DataMember]
   public string? CoreIdentifier
   {
     get => _CoreProperties.Identifier;
     set => _CoreProperties.Identifier = value;
   }
 
+  [DataMember]
   public string? ContentType
   {
     get => _CoreProperties.ContentType;
     set => _CoreProperties.ContentType = value;
   }
 
+  [DataMember]
   public string? ContentStatus
   {
     get => _CoreProperties.ContentStatus;
     set => _CoreProperties.ContentStatus = value;
   }
 
+  [DataMember]
   public string? Category
   {
     get => _CoreProperties.Category;
     set => _CoreProperties.Category = value;
   }
 
+  [DataMember]
   public string? Description
   {
     get => _CoreProperties.Description;
     set => _CoreProperties.Description = value;
   }
 
+  [DataMember]
   public string? Version
   {
     get => _CoreProperties.Version;
@@ -132,26 +148,11 @@ public partial class BuiltInProperties
 
   #region ExtendedProperties
 
-  internal void LoadExtendedProperties()
-  {
-    var extendedFilePropertiesPart = WordprocessingDocument.ExtendedFilePropertiesPart;
-    if (extendedFilePropertiesPart == null) 
-      extendedFilePropertiesPart = WordprocessingDocument.AddExtendedFilePropertiesPart();
-
-    var properties = extendedFilePropertiesPart.Properties;
-    if (properties == null)
-    {
-      properties = new DXEP.Properties();
-      extendedFilePropertiesPart.Properties = properties;
-    }
-    _ExtendedProperties = properties;
-  }
-
-  public bool HasExtendedProperties => WordprocessingDocument.ExtendedFilePropertiesPart?.Properties!=null;
+  public bool HasExtendedProperties => WordprocessingDocument.ExtendedFilePropertiesPart?.Properties != null;
 
   internal DXEP.Properties? _ExtendedProperties { get; private set; }
-  
-  private DXEP.Properties ExistedProperties
+
+  private DXEP.Properties ExistingProperties
   {
     get
     {
@@ -177,276 +178,298 @@ public partial class BuiltInProperties
     set
     {
       if (value != null)
-        ExistedProperties.DigitalSignature = new DXEP.DigitalSignature(value);
+        ExistingProperties.DigitalSignature = new DXEP.DigitalSignature(value);
       else
-        ExistedProperties.DigitalSignature = null;
+        ExistingProperties.DigitalSignature = null;
     }
   }
 
+  [DataMember]
   public Array? TitlesOfParts
   {
     get => _ExtendedProperties?.TitlesOfParts?.VTVector.AsArray();
     set
     {
       if (value != null)
-        ExistedProperties.TitlesOfParts = new DXEP.TitlesOfParts(value.AsChildArray()!);
+        ExistingProperties.TitlesOfParts = new DXEP.TitlesOfParts(value.AsChildArray()!);
       else
-        ExistedProperties.TitlesOfParts = null;
+        ExistingProperties.TitlesOfParts = null;
     }
   }
 
+  [DataMember]
   public Array? HeadingPairs
   {
     get => _ExtendedProperties?.HeadingPairs?.VTVector.AsArray();
     set
     {
       if (value != null)
-        ExistedProperties.HeadingPairs = new DXEP.HeadingPairs(value.AsChildArray()!);
+        ExistingProperties.HeadingPairs = new DXEP.HeadingPairs(value.AsChildArray()!);
       else
-        ExistedProperties.HeadingPairs = null;
+        ExistingProperties.HeadingPairs = null;
     }
   }
 
+  [DataMember]
   public Array? HyperlinkList
   {
     get => _ExtendedProperties?.HyperlinkList?.VTVector.AsArray();
     set
     {
       if (value != null)
-        ExistedProperties.HyperlinkList = new DXEP.HyperlinkList(value.AsChildArray()!);
+        ExistingProperties.HyperlinkList = new DXEP.HyperlinkList(value.AsChildArray()!);
       else
-        ExistedProperties.HyperlinkList = null;
+        ExistingProperties.HyperlinkList = null;
     }
   }
 
 
+  [DataMember]
   public int? DocumentSecurity
   {
     get => _ExtendedProperties?.DocumentSecurity?.AsInt();
     set
     {
       if (value != null)
-        ExistedProperties.DocumentSecurity = new DXEP.DocumentSecurity(value.ToString()!);
+        ExistingProperties.DocumentSecurity = new DXEP.DocumentSecurity(value.ToString()!);
       else
-        ExistedProperties.DocumentSecurity = null;
+        ExistingProperties.DocumentSecurity = null;
     }
   }
 
+  [DataMember]
   public Boolean? ScaleCrop
   {
     get => _ExtendedProperties?.ScaleCrop?.AsBoolean();
     set
     {
       if (value != null)
-        ExistedProperties.ScaleCrop = new DXEP.ScaleCrop(value.ToString()!);
+        ExistingProperties.ScaleCrop = new DXEP.ScaleCrop(value.ToString()!);
       else
-        ExistedProperties.ScaleCrop = null;
+        ExistingProperties.ScaleCrop = null;
     }
   }
 
+  [DataMember]
   public Boolean? LinksUpToDate
   {
     get => _ExtendedProperties?.LinksUpToDate?.AsBoolean();
     set
     {
       if (value != null)
-        ExistedProperties.LinksUpToDate = new DXEP.LinksUpToDate(value.ToString()!);
+        ExistingProperties.LinksUpToDate = new DXEP.LinksUpToDate(value.ToString()!);
       else
-        ExistedProperties.LinksUpToDate = null;
+        ExistingProperties.LinksUpToDate = null;
     }
   }
 
+  [DataMember]
   public Boolean? SharedDocument
   {
     get => _ExtendedProperties?.SharedDocument?.AsBoolean();
     set
     {
       if (value != null)
-        ExistedProperties.SharedDocument = new DXEP.SharedDocument(value.ToString()!);
+        ExistingProperties.SharedDocument = new DXEP.SharedDocument(value.ToString()!);
       else
-        ExistedProperties.SharedDocument = null;
+        ExistingProperties.SharedDocument = null;
     }
   }
 
+  [DataMember]
   public Boolean? HyperlinksChanged
   {
     get => _ExtendedProperties?.HyperlinksChanged?.AsBoolean();
     set
     {
       if (value != null)
-        ExistedProperties.HyperlinksChanged = new DXEP.HyperlinksChanged(value.ToString()!);
+        ExistingProperties.HyperlinksChanged = new DXEP.HyperlinksChanged(value.ToString()!);
       else
-        ExistedProperties.HyperlinksChanged = null;
+        ExistingProperties.HyperlinksChanged = null;
     }
   }
 
+  [DataMember]
   public string? HyperlinkBase
   {
     get => _ExtendedProperties?.HyperlinkBase?.InnerText;
     set
     {
       if (value != null)
-        ExistedProperties.HyperlinkBase = new DXEP.HyperlinkBase(value);
+        ExistingProperties.HyperlinkBase = new DXEP.HyperlinkBase(value);
       else
-        ExistedProperties.HyperlinkBase = null;
+        ExistingProperties.HyperlinkBase = null;
     }
   }
 
+  [DataMember]
   public string? Template
   {
     get => _ExtendedProperties?.Template?.InnerText;
     set
     {
       if (value != null)
-        ExistedProperties.Template = new DXEP.Template(value);
+        ExistingProperties.Template = new DXEP.Template(value);
       else
-        ExistedProperties.Template = null;
+        ExistingProperties.Template = null;
     }
   }
 
 
+  [DataMember]
   public string? Manager
   {
     get => _ExtendedProperties?.Manager?.InnerText;
     set
     {
       if (value != null)
-        ExistedProperties.Manager = new DXEP.Manager(value);
+        ExistingProperties.Manager = new DXEP.Manager(value);
       else
-        ExistedProperties.Manager = null;
+        ExistingProperties.Manager = null;
     }
   }
 
+  [DataMember]
   public string? Company
   {
     get => _ExtendedProperties?.Company?.InnerText;
     set
     {
       if (value != null)
-        ExistedProperties.Company = new DXEP.Company(value);
+        ExistingProperties.Company = new DXEP.Company(value);
       else
-        ExistedProperties.Company = null;
+        ExistingProperties.Company = null;
     }
   }
 
+  [DataMember]
   public string? PresentationFormat
   {
     get => _ExtendedProperties?.PresentationFormat?.InnerText;
     set
     {
       if (value != null)
-        ExistedProperties.PresentationFormat = new DXEP.PresentationFormat(value);
+        ExistingProperties.PresentationFormat = new DXEP.PresentationFormat(value);
       else
-        ExistedProperties.PresentationFormat = null;
+        ExistingProperties.PresentationFormat = null;
     }
   }
 
+  [DataMember]
   public string? Application
   {
     get => _ExtendedProperties?.Application?.InnerText;
     set
     {
       if (value != null)
-        ExistedProperties.Application = new DXEP.Application(value);
+        ExistingProperties.Application = new DXEP.Application(value);
       else
-        ExistedProperties.Application = null;
+        ExistingProperties.Application = null;
     }
   }
 
+  [DataMember]
   public string? ApplicationVersion
   {
     get => _ExtendedProperties?.ApplicationVersion?.InnerText;
     set
     {
       if (value != null)
-        ExistedProperties.ApplicationVersion = new DXEP.ApplicationVersion(value);
+        ExistingProperties.ApplicationVersion = new DXEP.ApplicationVersion(value);
       else
-        ExistedProperties.ApplicationVersion = null;
+        ExistingProperties.ApplicationVersion = null;
     }
   }
 
+  [DataMember]
   public int? Pages
   {
     get => _ExtendedProperties?.Pages?.AsInt();
     set
     {
       if (value != null)
-        ExistedProperties.Pages = new DXEP.Pages(value.ToString()!);
+        ExistingProperties.Pages = new DXEP.Pages(value.ToString()!);
       else
-        ExistedProperties.Pages = null;
+        ExistingProperties.Pages = null;
     }
   }
 
+  [DataMember]
   public int? Words
   {
     get => _ExtendedProperties?.Words?.AsInt();
     set
     {
       if (value != null)
-        ExistedProperties.Words = new DXEP.Words(value.ToString()!);
+        ExistingProperties.Words = new DXEP.Words(value.ToString()!);
       else
-        ExistedProperties.Words = null;
+        ExistingProperties.Words = null;
     }
   }
 
+  [DataMember]
   public int? Characters
   {
     get => _ExtendedProperties?.Characters?.AsInt();
     set
     {
       if (value != null)
-        ExistedProperties.Characters = new DXEP.Characters(value.ToString()!);
+        ExistingProperties.Characters = new DXEP.Characters(value.ToString()!);
       else
-        ExistedProperties.Characters = null;
+        ExistingProperties.Characters = null;
     }
   }
 
+  [DataMember]
   public int? CharactersWithSpaces
   {
     get => _ExtendedProperties?.CharactersWithSpaces?.AsInt();
     set
     {
       if (value != null)
-        ExistedProperties.CharactersWithSpaces = new DXEP.CharactersWithSpaces(value.ToString()!);
+        ExistingProperties.CharactersWithSpaces = new DXEP.CharactersWithSpaces(value.ToString()!);
       else
-        ExistedProperties.CharactersWithSpaces = null;
+        ExistingProperties.CharactersWithSpaces = null;
     }
   }
 
 
+  [DataMember]
   public int? Lines
   {
     get => _ExtendedProperties?.Lines?.AsInt();
     set
     {
       if (value != null)
-        ExistedProperties.Lines = new DXEP.Lines(value.ToString()!);
+        ExistingProperties.Lines = new DXEP.Lines(value.ToString()!);
       else
-        ExistedProperties.Lines = null;
+        ExistingProperties.Lines = null;
     }
   }
 
+  [DataMember]
   public int? Paragraphs
   {
     get => _ExtendedProperties?.Paragraphs?.AsInt();
     set
     {
       if (value != null)
-        ExistedProperties.Paragraphs = new DXEP.Paragraphs(value.ToString()!);
+        ExistingProperties.Paragraphs = new DXEP.Paragraphs(value.ToString()!);
       else
-        ExistedProperties.Paragraphs = null;
+        ExistingProperties.Paragraphs = null;
     }
   }
 
+  [DataMember]
   public int? TotalTime
   {
     get => _ExtendedProperties?.TotalTime?.AsInt();
     set
     {
       if (value != null)
-        ExistedProperties.TotalTime = new DXEP.TotalTime(value.ToString()!);
+        ExistingProperties.TotalTime = new DXEP.TotalTime(value.ToString()!);
       else
-        ExistedProperties.TotalTime = null;
+        ExistingProperties.TotalTime = null;
     }
   }
   #endregion
