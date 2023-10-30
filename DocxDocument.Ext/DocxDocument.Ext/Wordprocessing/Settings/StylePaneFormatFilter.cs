@@ -1,11 +1,30 @@
-﻿namespace DocumentModel.Wordprocessing;
+﻿using System.Runtime.Serialization;
+
+namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Specifies a set of suggested filters which should be applied to the list of document styles in this application 
 /// if the styles are displayed in a user interface.
 /// </summary>
-public partial class StylePaneFormatFilter
+public partial class StylePaneFormatFilter: IOpenXmlElementMappedObject
 {
+  public StylePaneFormatFilter()
+  {
+    _Element = new DXW.StylePaneFormatFilter();
+  }
+
+  public StylePaneFormatFilter(DX.OpenXmlElement openXmlElement)
+  {
+    _Element = (DXW.StylePaneFormatFilter)openXmlElement;
+  }
+
+  public OpenXmlElementType GetElement<OpenXmlElementType>() where OpenXmlElementType: DX.OpenXmlElement
+  {
+    if (_Element is OpenXmlElementType validTypeElement)
+    return validTypeElement;
+      throw new ArgumentException($"Only {_Element.GetType()} type supported in GetElement of {this.GetType()}");
+  }
+
   public StylePaneFormatFilter(DXW.StylePaneFormatFilter openXmlElement)
   {
     _Element = openXmlElement;
@@ -13,6 +32,7 @@ public partial class StylePaneFormatFilter
 
   internal DXW.StylePaneFormatFilter _Element { get; private set; }
 
+  [DataMember]
   public HexWord? Val
   {
     get
@@ -30,6 +50,7 @@ public partial class StylePaneFormatFilter
     }
   }
 
+  [DataMember]
   public Boolean? AllStyles
   {
     get => _Element.AllStyles?.Value;
@@ -42,6 +63,7 @@ public partial class StylePaneFormatFilter
     }
   }
 
+  [DataMember]
   public Boolean? CustomStyles
   {
     get => _Element.CustomStyles?.Value;
@@ -54,6 +76,7 @@ public partial class StylePaneFormatFilter
     }
   }
 
+  [DataMember]
   public Boolean? LatentStyles
   {
     get => _Element.LatentStyles?.Value;
@@ -66,6 +89,7 @@ public partial class StylePaneFormatFilter
     }
   }
 
+  [DataMember]
   public Boolean? StylesInUse
   {
     get => _Element.StylesInUse?.Value;
@@ -78,6 +102,7 @@ public partial class StylePaneFormatFilter
     }
   }
 
+  [DataMember]
   public Boolean? HeadingStyles
   {
     get => _Element.HeadingStyles?.Value;
@@ -90,6 +115,7 @@ public partial class StylePaneFormatFilter
     }
   }
 
+  [DataMember]
   public Boolean? NumberingStyles
   {
     get => _Element.HeadingStyles?.Value;
@@ -102,6 +128,7 @@ public partial class StylePaneFormatFilter
     }
   }
 
+  [DataMember]
   public Boolean? TableStyles
   {
     get => _Element.TableStyles?.Value;
@@ -114,6 +141,7 @@ public partial class StylePaneFormatFilter
     }
   }
 
+  [DataMember]
   public Boolean? DirectFormattingOnRuns
   {
     get => _Element.DirectFormattingOnRuns?.Value;
@@ -126,6 +154,7 @@ public partial class StylePaneFormatFilter
     }
   }
 
+  [DataMember]
   public Boolean? DirectFormattingOnParagraphs
   {
     get => _Element.DirectFormattingOnParagraphs?.Value;
@@ -138,6 +167,7 @@ public partial class StylePaneFormatFilter
     }
   }
 
+  [DataMember]
   public Boolean? DirectFormattingOnNumbering
   {
     get => _Element.DirectFormattingOnParagraphs?.Value;
@@ -150,6 +180,7 @@ public partial class StylePaneFormatFilter
     }
   }
 
+  [DataMember]
   public Boolean? DirectFormattingOnTables
   {
     get => _Element.DirectFormattingOnTables?.Value;
@@ -162,6 +193,7 @@ public partial class StylePaneFormatFilter
     }
   }
 
+  [DataMember]
   public Boolean? ClearFormatting
   {
     get => _Element.ClearFormatting?.Value;
@@ -174,6 +206,7 @@ public partial class StylePaneFormatFilter
     }
   }
 
+  [DataMember]
   public Boolean? Top3HeadingStyles
   {
     get => _Element.Top3HeadingStyles?.Value;
@@ -186,6 +219,7 @@ public partial class StylePaneFormatFilter
     }
   }
 
+  [DataMember]
   public Boolean? VisibleStyles
   {
     get => _Element.VisibleStyles?.Value;
@@ -198,6 +232,7 @@ public partial class StylePaneFormatFilter
     }
   }
 
+  [DataMember]
   public Boolean? AlternateStyleNames
   {
     get => _Element.AlternateStyleNames?.Value;

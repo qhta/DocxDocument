@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// This element specifies the magnification level which should be applied to a document when it is displayed by an application. 
+/// Specifies the magnification level which should be applied to a document when it is displayed by an application. 
 /// The zoom level is specified with the use of two attributes stored on this element:
 /// <list type="bullet">
 ///   <item>val, which stores the type of zoom applied to the document</item>
@@ -9,8 +9,25 @@
 /// </list>
 /// If both attributes are present, then the percent attribute shall be treated as a 'cached' value and only used when the value none is specified for the val attribute.
 /// </summary>
-public partial class Zoom
+public partial class Zoom: IOpenXmlElementMappedObject
 {
+  public Zoom()
+  {
+    _Element = new DXW.Zoom();
+  }
+
+  public Zoom(DX.OpenXmlElement openXmlElement)
+  {
+    _Element = (DXW.Zoom)openXmlElement;
+  }
+
+  public OpenXmlElementType GetElement<OpenXmlElementType>() where OpenXmlElementType: DX.OpenXmlElement
+  {
+    if (_Element is OpenXmlElementType validTypeElement)
+    return validTypeElement;
+      throw new ArgumentException($"Only {_Element.GetType()} type supported in GetElement of {this.GetType()}");
+  }
+
   public Zoom(DXW.Zoom openXmlElement)
   {
     _Element = openXmlElement;
@@ -18,7 +35,7 @@ public partial class Zoom
 
   internal DXW.Zoom _Element { get; private set; }
 
-
+  [DataMember]
   public DXW.PresetZoomValues? Val
   {
     get => _Element.Val?.Value;
@@ -31,6 +48,7 @@ public partial class Zoom
     }
   }
 
+  [DataMember]
   public Percent? Percent
   {
     get

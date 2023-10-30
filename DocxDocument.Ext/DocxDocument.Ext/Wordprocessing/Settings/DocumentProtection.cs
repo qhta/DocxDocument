@@ -1,4 +1,6 @@
-﻿namespace DocumentModel.Wordprocessing;
+﻿using DocumentFormat.OpenXml.Office2019.Excel.RichData2;
+
+namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Specifies the set of document protection restrictions which have been applied to the contents of a WordprocessingML document. 
@@ -8,8 +10,25 @@
 /// [Note: This protection does not encrypt the document, and malicious applications might circumvent its use. 
 /// This protection is not intended as a security feature. end note]
 /// </summary>
-public partial class DocumentProtection
+public partial class DocumentProtection: IOpenXmlElementMappedObject
 {
+  public DocumentProtection()
+  {
+    _Element = new DXW.DocumentProtection();
+  }
+
+  public DocumentProtection(DX.OpenXmlElement openXmlElement)
+  {
+    _Element = (DXW.DocumentProtection)openXmlElement;
+  }
+
+  public OpenXmlElementType GetElement<OpenXmlElementType>() where OpenXmlElementType: DX.OpenXmlElement
+  {
+    if (_Element is OpenXmlElementType validTypeElement)
+    return validTypeElement;
+      throw new ArgumentException($"Only {_Element.GetType()} type supported in GetElement of {this.GetType()}");
+  }
+
   public DocumentProtection(DXW.DocumentProtection openXmlElement)
   {
     _Element = openXmlElement;

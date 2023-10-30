@@ -3,7 +3,7 @@
 namespace DocumentModel.Wordprocessing;
 public partial class BuiltInProperties
 {
-  public BuiltInProperties (DM.Document document)
+  public BuiltInProperties (DMW.Document document)
   {
     WordprocessingDocument = document.WordprocessingDocument;
     Load();

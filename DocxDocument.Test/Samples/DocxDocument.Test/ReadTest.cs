@@ -16,7 +16,7 @@ namespace DocxDocument.Test;
 public class ReadTest
 {
   public TextWriter Output { get; set; } = null!;
-  public string SamplesPath { get; set; } = null!;
+  public string SamplesPath = null!;
 
   [TestInitialize()]
   public void Initialize()
@@ -125,7 +125,7 @@ public class ReadTest
           foreach (var item in settings)
           {
             var val = item.Value;
-            Output.WriteLine($"  {item.Name}: {DocumentModel.TestUtilities.ToDumpString(val)}");
+            Output.WriteLine($"  {item.Name}: {DM.TestUtilities.ToDumpString(val)}");
           }
         }
       }
@@ -141,7 +141,9 @@ public class ReadTest
     string result = Environment.CurrentDirectory!;
     while (!result.EndsWith(".Test"))
       result = Path.GetDirectoryName(result)!;
-    result = Path.Combine(result,"Samples");
+    var subResult = Path.GetDirectoryName(result)!;
+    while (subResult.EndsWith(".Test"))
+      return subResult;
     return result;
   }
 

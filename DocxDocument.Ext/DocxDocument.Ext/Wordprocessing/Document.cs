@@ -1,6 +1,4 @@
-﻿using DocumentModel.Wordprocessing;
-
-namespace DocumentModel;
+﻿namespace DocumentModel.Wordprocessing;
 
 public partial class Document : IDisposable
 {
