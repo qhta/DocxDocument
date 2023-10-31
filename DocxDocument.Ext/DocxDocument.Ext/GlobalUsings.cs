@@ -21,11 +21,16 @@ global using DXW = DocumentFormat.OpenXml.Wordprocessing;
 global using DXEP = DocumentFormat.OpenXml.ExtendedProperties;
 global using DXCP = DocumentFormat.OpenXml.CustomProperties;
 global using DXM = DocumentFormat.OpenXml.Math;
+global using DXV = DocumentFormat.OpenXml.Vml;
 global using DXVT = DocumentFormat.OpenXml.VariantTypes;
+global using DXVO = DocumentFormat.OpenXml.Vml.Office;
+global using DXW10 = DocumentFormat.OpenXml.Office2010.Word;
+global using DXW13 = DocumentFormat.OpenXml.Office2013.Word;
 
 global using DocumentModel.Utils;
 
 global using DM = DocumentModel;
 global using DMW = DocumentModel.Wordprocessing;
 global using DMM = DocumentModel.Math;
+global using DMV = DocumentModel.Vml;
 

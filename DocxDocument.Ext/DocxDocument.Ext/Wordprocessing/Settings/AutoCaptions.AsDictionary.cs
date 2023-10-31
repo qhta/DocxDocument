@@ -57,7 +57,7 @@ public partial class AutoCaptions : IDictionary<string, string?>
       else
       {
         _element = new DXW.AutoCaption { Name = key, Caption = value };
-        _Element.AddAnnotation(_element);
+        _Element.AppendChild(_element);
       }
     }
   }

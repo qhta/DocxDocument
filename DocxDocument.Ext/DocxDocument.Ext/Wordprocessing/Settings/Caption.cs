@@ -31,6 +31,7 @@ public partial class Caption: IOpenXmlElementMappedObject
 
   internal DXW.Caption _Element { get; private set; }
 
+  [DataMember]
   public String? Name
   {
     get => _Element.Name?.Value;
@@ -43,6 +44,7 @@ public partial class Caption: IOpenXmlElementMappedObject
     }
   }
 
+  [DataMember]
   public DXW.CaptionPositionValues? Position
   {
     get => _Element.Position?.Value;
@@ -55,6 +57,7 @@ public partial class Caption: IOpenXmlElementMappedObject
     }
   }
 
+  [DataMember]
   public Boolean? ChapterNumber
   {
     get => _Element.ChapterNumber?.Value;
@@ -67,6 +70,7 @@ public partial class Caption: IOpenXmlElementMappedObject
     }
   }
 
+  [DataMember]
   public Int32? Heading
   {
     get => _Element.Heading?.Value;
@@ -79,6 +83,7 @@ public partial class Caption: IOpenXmlElementMappedObject
     }
   }
 
+  [DataMember]
   public Boolean? NoLabel
   {
     get => _Element.NoLabel?.Value;
@@ -91,6 +96,7 @@ public partial class Caption: IOpenXmlElementMappedObject
     }
   }
 
+  [DataMember]
   public DXW.NumberFormatValues? NumberFormat
   {
     get => _Element.NumberFormat?.Value;
@@ -103,6 +109,7 @@ public partial class Caption: IOpenXmlElementMappedObject
     }
   }
 
+  [DataMember]
   public DXW.ChapterSeparatorValues? Separator
   {
     get => _Element.Separator?.Value;

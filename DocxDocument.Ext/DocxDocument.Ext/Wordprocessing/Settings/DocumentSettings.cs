@@ -1,4 +1,6 @@
-﻿namespace DocumentModel.Wordprocessing;
+﻿using DocumentFormat.OpenXml.Wordprocessing;
+
+namespace DocumentModel.Wordprocessing;
 public partial class DocumentSettings
 {
 
@@ -306,6 +308,27 @@ public partial class DocumentSettings
   }
 
   /// <summary>
+  /// The chartTrackingRefBased global element<21> is a CT_OnOff (as specified in [ISO/IEC-29500-1] section A.1) element 
+  /// that specifies how the datapoint properties and datalabels ([MS-ODRAWXML] section 2.2.1.2) 
+  /// in all charts ([ISO/IEC-29500-1] section 21.2) in this document behave.
+  /// <list type="bullet">
+  ///   <item>
+  ///     True - Datapoint properties and datalabels ( [MS-ODRAWXML] section 2.2.1.2) in all charts ([ISO/IEC-29500-1] section 21.2) 
+  ///     in this document follow their reference.
+  ///   </item>
+  ///   <item>
+  ///     False -Datapoint properties and datalabels ([MS-ODRAWXML] section 2.2.1.2) in all charts ([ISO/IEC-29500-1] section 21.2) 
+  ///     in this document follow their position in the chart.
+  ///   </item>
+  /// </list>
+  /// </summary>
+  public Boolean? ChartTrackingRefBased
+  {
+    get => _DocumentSettings?.GetBooleanVal<DXW13.ChartTrackingRefBased>();
+    set => _ExistingSettings.SetBooleanVal<DXW13.ChartTrackingRefBased>(value);
+  }
+
+  /// <summary>
   /// Specifies the set of characters which shall be restricted from ending a line for runs of text 
   /// which shall be subject to custom line breaking logic using the kinsoku element (§17.3.1.16) 
   /// when the contents of the document are displayed. 
@@ -314,27 +337,9 @@ public partial class DocumentSettings
   /// </summary>
   public NoBreakKinsoku? NoLineBreaksAfterKinsoku
   {
-    get => _DocumentSettings?.GetObject<NoBreakKinsoku, DXW.NoLineBreaksAfterKinsoku>();
-    set
-    {
-      if (value != null)
-      {
-        var setting = _ExistingSettings.Elements<DXW.NoLineBreaksAfterKinsoku>().FirstOrDefault();
-        if (setting != null)
-        {
-          setting.Language = value.Lang;
-          setting.Val = value.Val;
-        }
-        else
-          _ExistingSettings.AppendChild(new DXW.NoLineBreaksAfterKinsoku { Language = value.Lang, Val = value.Val });
-      }
-      else
-      {
-        var setting = _ExistingSettings.Elements<DXW.NoLineBreaksAfterKinsoku>().FirstOrDefault();
-        if (setting != null)
-          setting.Remove();
-      }
-    }
+    get => _DocumentSettings?.GetObject<NoBreakKinsoku,DXW.NoLineBreaksAfterKinsoku>();
+    set => _ExistingSettings.SetObject<NoBreakKinsoku,DXW.NoLineBreaksAfterKinsoku>(value);
+
   }
 
   /// <summary>
@@ -346,35 +351,8 @@ public partial class DocumentSettings
   /// </summary>
   public NoBreakKinsoku? NoLineBreaksBeforeKinsoku
   {
-    get
-    {
-      if (_DocumentSettings == null)
-        return null;
-      var setting = _DocumentSettings?.Elements<DXW.NoLineBreaksBeforeKinsoku>().FirstOrDefault();
-      if (setting == null)
-        return null;
-      return new NoBreakKinsoku { Lang = setting.Language, Val = setting.Val };
-    }
-    set
-    {
-      if (value != null)
-      {
-        var setting = _ExistingSettings.Elements<DXW.NoLineBreaksBeforeKinsoku>().FirstOrDefault();
-        if (setting != null)
-        {
-          setting.Language = value.Lang;
-          setting.Val = value.Val;
-        }
-        else
-          _ExistingSettings.AppendChild(new DXW.NoLineBreaksBeforeKinsoku { Language = value.Lang, Val = value.Val });
-      }
-      else
-      {
-        var setting = _ExistingSettings.Elements<DXW.NoLineBreaksBeforeKinsoku>().FirstOrDefault();
-        if (setting != null)
-          setting.Remove();
-      }
-    }
+    get => _DocumentSettings?.GetObject<NoBreakKinsoku,DXW.NoLineBreaksBeforeKinsoku>();
+    set => _ExistingSettings.SetObject<NoBreakKinsoku,DXW.NoLineBreaksBeforeKinsoku>(value);
   }
 
   /// <summary>
@@ -508,14 +486,98 @@ public partial class DocumentSettings
     set => _ExistingSettings.SetObject<DMM.MathProperties, DXM.MathProperties>(value);
   }
 
+  /// <summary>
+  ///  This element specifies the language which shall be used to determine the appropriate theme fonts 
+  ///  in the document's Theme part which map to the major/minor theme fonts. 
+  ///  Specifically, the bidi attribute is used to determine the theme font applied to complex script text, 
+  ///  the eastAsia attribute is used to determine the theme font applied to East Asian text, 
+  ///  and the val attribute is used to determine the theme font applied to all other text.
+  /// </summary>
+  public DMW.LanguageType? ThemeFontLanguages
+  {
+    get => _DocumentSettings?.GetObject<DMW.LanguageType, DXW.ThemeFontLanguages>();
+    set => _ExistingSettings.SetObject<DMW.LanguageType, DXW.ThemeFontLanguages>(value);
+  }
+
+  /// <summary>
+  /// This element specifies the theme color, stored in the document's Theme part to which the value of this theme color shall be mapped. 
+  /// This mapping enables multiple theme colors to be chained together.
+  /// </summary>
+  public DMW.ColorSchemeMapping? ColorSchemeMapping
+  {
+    get => _DocumentSettings?.GetObject<DMW.ColorSchemeMapping, DXW.ColorSchemeMapping>();
+    set => _ExistingSettings.SetObject<DMW.ColorSchemeMapping, DXW.ColorSchemeMapping>(value);
+  }
+
+  /// <summary>
+  /// This element specifies the default parameters for object using the VML syntax (§14.1) 
+  /// inserted in the body (the main document story, comments, footnotes, and endnotes) of the WordprocessingML document. 
+  /// The definition and semantics of these parameters is described in the VML - Office Drawing subclause (§14.2) of /IEC 29500.
+  /// </summary>
+  public DMW.ShapeDefaultsType? ShapeDefaults
+  {
+    get => _DocumentSettings?.GetObject<DMW.ShapeDefaultsType, DXW.ShapeDefaults>();
+    set => _ExistingSettings.SetObject<DMW.ShapeDefaultsType, DXW.ShapeDefaults>(value);
+  }
+
+  /// <summary>
+  /// This element specifies the character that shall be interpreted as the radix point 
+  /// when evaluating the contents of all fields in the current document.
+  /// [Rationale: When evaluating field instructions based on the contents of the current document, 
+  /// it is necessary to know the character which must be treated as the radix point 
+  /// in order to prevent changes to the calculation of the same field instructions based on the current user's locale. 
+  /// This element stores the radix point which must be used to evaluate fields in the contents of this document, 
+  /// irrespective of the locale of the application loading the file. end rationale]
+  /// </summary>
+  public String? DecimalSymbol
+  {
+    get => _DocumentSettings?.GetStringVal<DXW.DecimalSymbol>();
+    set => _ExistingSettings.SetStringVal<DXW.DecimalSymbol>(value);
+  }
+
+  /// <summary>
+  /// This element specifies the character that shall be interpreted as a list item separator 
+  /// when evaluating the contents of all fields in the current document.
+  /// [Rationale: When evaluating field instructions based on the contents of the current document, 
+  /// it is necessary to know the character which must be treated as the list separator 
+  /// in order to prevent changes to the calculation of the same field instructions based on the current user's locale. 
+  /// This element stores the list separator which must be used to evaluate fields in the contents of this document, 
+  /// irrespective of the locale of the application loading the file. end rationale]
+  /// </summary>
+  public String? ListSeparator
+  {
+    get => _DocumentSettings?.GetStringVal<DXW.ListSeparator>();
+    set => _ExistingSettings.SetStringVal<DXW.ListSeparator>(value);
+  }
+
+  /// <summary>
+  /// A CT_LongHexNumber element that specifies an arbitrary identifier for the context of the paragraph identifiers in the document. 
+  /// Values MUST be greater than 0 and less than 0x80000000. See section 2.2.2 for how this element integrates with [ISO/IEC-29500-1].
+  /// </summary>
+  public HexInt? DocumentId
+  {
+    get => _DocumentSettings?.GetHexIntVal<DXW10.DocumentId>();
+    set => _ExistingSettings.SetHexIntVal<DXW10.DocumentId>(value);
+  }
+
+  /// <summary>
+  /// The docId global element<23> is a CT_Guid (as specified in [ISO/IEC-29500-1] section A.1) element 
+  /// that specifies a unique identifier for a set of documents derived from a common source. 
+  /// The possible values for this attribute are defined by the ST_Guid simple type (as specified in [ISO/IEC-29500-1] Section 22.9.2.4). 
+  /// See section 2.2.2 for how this element integrates with [ISO/IEC-29500-1].
+  /// </summary>
+  public Guid? PersistentDocumentId
+  {
+    get => _DocumentSettings?.GetGuidVal<DXW13.PersistentDocumentId>();
+    set => _ExistingSettings.SetGuidVal<DXW13.PersistentDocumentId>(value);
+  }
+
   ///   <item><description><see cref="DocumentFormat.OpenXml.CustomXmlSchemaReferences.SchemaLibrary" /> <c>&lt;sl:schemaLibrary></c></description></item>
-  ///   <item><description><see cref=" DXW.ColorSchemeMapping" /> <c>&lt;w:clrSchemeMapping></c></description></item>
   ///   <item><description><see cref=" DXW.DocumentType" /> <c>&lt;w:documentType></c></description></item>
   ///   <item><description><see cref=" DXW.DocumentVariables" /> <c>&lt;w:docVars></c></description></item>
   ///   <item><description><see cref=" DXW.EndnoteDocumentWideProperties" /> <c>&lt;w:endnotePr></c></description></item>
   ///   <item><description><see cref=" DXW.FootnoteDocumentWideProperties" /> <c>&lt;w:footnotePr></c></description></item>
 
-  ///   <item><description><see cref=" DXW.ThemeFontLanguages" /> <c>&lt;w:themeFontLang></c></description></item>
   ///   <item><description><see cref=" DXW.MailMerge" /> <c>&lt;w:mailMerge></c></description></item>
   ///   <item><description><see cref=" DXW.BookFoldPrintingSheets" /> <c>&lt;w:bookFoldPrintingSheets></c></description></item>
   ///   <item><description><see cref=" DXW.RemovePersonalInformation" /> <c>&lt;w:removePersonalInformation></c></description></item>
@@ -576,8 +638,6 @@ public partial class DocumentSettings
   ///   <item><description><see cref=" DXW.HeaderShapeDefaults" /> <c>&lt;w:hdrShapeDefaults></c></description></item>
   ///   <item><description><see cref=" DXW.ShapeDefaults" /> <c>&lt;w:shapeDefaults></c></description></item>
   ///   <item><description><see cref=" DXW.AttachedSchema" /> <c>&lt;w:attachedSchema></c></description></item>
-  ///   <item><description><see cref=" DXW.DecimalSymbol" /> <c>&lt;w:decimalSymbol></c></description></item>
-  ///   <item><description><see cref=" DXW.ListSeparator" /> <c>&lt;w:listSeparator></c></description></item>
   ///   <item><description><see cref=" DXW.ClickAndTypeStyle" /> <c>&lt;w:clickAndTypeStyle></c></description></item>
   ///   <item><description><see cref=" DXW.DefaultTableStyle" /> <c>&lt;w:defaultTableStyle></c></description></item>
   ///   <item><description><see cref=" DXW.StylePaneFormatFilter" /> <c>&lt;w:stylePaneFormatFilter></c></description></item>
