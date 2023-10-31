@@ -200,6 +200,13 @@ public static class OpenXmlCompositeElementUtils
           return true;
         }
         else
+        if (_element is DXW13.OnOffType onOffType13)
+        {
+          if (onOffType13.Val?.HasValue == true)
+            return onOffType13.Val.Value;
+          return true;
+        }
+        else
         if (_element is DXM.OnOffType onOffTypeM)
         {
           if (onOffTypeM.Val?.HasValue == true)
@@ -209,7 +216,7 @@ public static class OpenXmlCompositeElementUtils
               onOffTypeM.Val.Value == DXM.BooleanValues.True ||
               onOffTypeM.Val.Value == DXM.BooleanValues.On)
               return true;
-            else 
+            else
             if (
               onOffTypeM.Val.Value == DXM.BooleanValues.Zero ||
               onOffTypeM.Val.Value == DXM.BooleanValues.False ||
@@ -234,16 +241,19 @@ public static class OpenXmlCompositeElementUtils
         _element = new ElementType();
         openXmlElement.AppendChild(_element);
       }
-     if (_element is DXW.OnOffType onOffType)
+      if (_element is DXW.OnOffType onOffType)
         onOffType.Val = value;
-     else
-     if (_element is DXM.OnOffType onOffTypeM)
-      {
-      if (value == true)
-        onOffTypeM.Val = DXM.BooleanValues.One;
       else
-      if (value == false)
-        onOffTypeM.Val = DXM.BooleanValues.Zero;
+      if (_element is DXW13.OnOffType onOffType13)
+        onOffType13.Val = value;
+      else
+      if (_element is DXM.OnOffType onOffTypeM)
+      {
+        if (value == true)
+          onOffTypeM.Val = DXM.BooleanValues.One;
+        else
+        if (value == false)
+          onOffTypeM.Val = DXM.BooleanValues.Zero;
       }
     }
     else
@@ -284,21 +294,39 @@ public static class OpenXmlCompositeElementUtils
   #endregion
 
   #region HexInt get/set methods
-  public static HexInt? GetHexIntVal<ElementType>(this DX.OpenXmlCompositeElement? openXmlElement) where ElementType : DXW.LongHexNumberType
+  public static HexInt? GetHexIntVal<ElementType>(this DX.OpenXmlCompositeElement? openXmlElement) where ElementType : DX.OpenXmlLeafElement
   {
     if (openXmlElement != null)
     {
       var _element = openXmlElement.Elements<ElementType>().FirstOrDefault();
+      if (_element is DXW.LongHexNumberType longHexNumberType)
+      {
+        if (longHexNumberType.Val?.Value != null)
+          return new HexInt(longHexNumberType.Val.Value!);
+      }
+      else
       if (_element != null)
       {
-        if (_element.Val?.Value != null)
-          return new HexInt(_element.Val.Value!);
+        var valProperty = typeof(ElementType).GetProperty("Val");
+        Debug.Assert(valProperty != null, $"\"Val\" property in {typeof(ElementType)} not found");
+        var val = valProperty.GetValue(_element);
+        if (val != null)
+        {
+          var valType = val.GetType();
+          var valueProperty = valType.GetProperty("Value");
+          Debug.Assert(valueProperty != null, $"\"Value\" property in {valType} not found");
+          var value = valueProperty.GetValue(val);
+          if (value is string str)
+          {
+            return new HexInt(str);
+          }
+        }
       }
     }
     return null;
   }
 
-  public static void SetHexIntVal<ElementType>(this DX.OpenXmlCompositeElement openXmlElement, HexInt? value) where ElementType : DXW.LongHexNumberType
+  public static void SetHexIntVal<ElementType>(this DX.OpenXmlCompositeElement openXmlElement, HexInt? value) where ElementType : DX.OpenXmlElement
   {
     if (value != null)
     {
@@ -310,7 +338,73 @@ public static class OpenXmlCompositeElementUtils
         _element = (ElementType)constructor.Invoke(new object[0]);
         openXmlElement.AppendChild(_element);
       }
-      _element.Val = new DX.HexBinaryValue(value.ToString());
+      var valProperty = typeof(ElementType).GetProperty("Val");
+      Debug.Assert(valProperty != null, $"\"Val\" property in {typeof(ElementType)} not found");
+      var valType = valProperty.PropertyType;
+      if (valType == typeof(DX.HexBinaryValue))
+        valProperty.SetValue(_element, new DX.HexBinaryValue(value.ToString()));
+      else
+      if (valType == typeof(DX.StringValue))
+        valProperty.SetValue(_element, new DX.StringValue(value.ToString()));
+      else
+        throw new InvalidOperationException($"\"Value\" property of type {valType} unsupported");
+    }
+    else
+    {
+      var _element = openXmlElement.Elements<ElementType>().FirstOrDefault();
+      if (_element != null)
+        _element.Remove();
+    }
+  }
+  #endregion
+
+
+  #region Guid get/set methods
+  public static Guid? GetGuidVal<ElementType>(this DX.OpenXmlCompositeElement? openXmlElement) where ElementType : DX.OpenXmlLeafElement
+  {
+    if (openXmlElement != null)
+    {
+      var _element = openXmlElement.Elements<ElementType>().FirstOrDefault();
+      if (_element != null)
+      {
+        var valProperty = typeof(ElementType).GetProperty("Val");
+        Debug.Assert(valProperty != null, $"\"Val\" property in {typeof(ElementType)} not found");
+        var val = valProperty.GetValue(_element);
+        if (val != null)
+        {
+          var valType = val.GetType();
+          var valueProperty = valType.GetProperty("Value");
+          Debug.Assert(valueProperty != null, $"\"Value\" property in {valType} not found");
+          var value = valueProperty.GetValue(val);
+          if (value is string str)
+          {
+            return new Guid(str);
+          }
+        }
+      }
+    }
+    return null;
+  }
+
+  public static void SetGuidVal<ElementType>(this DX.OpenXmlCompositeElement openXmlElement, Guid? value) where ElementType : DX.OpenXmlElement
+  {
+    if (value != null)
+    {
+      var _element = openXmlElement.Elements<ElementType>().FirstOrDefault();
+      if (_element == null)
+      {
+        var constructor = typeof(ElementType).GetConstructor(new Type[0]);
+        Debug.Assert(constructor != null, $"Type {typeof(ElementType)} must have constructor with no parameters");
+        _element = (ElementType)constructor.Invoke(new object[0]);
+        openXmlElement.AppendChild(_element);
+      }
+      var valProperty = typeof(ElementType).GetProperty("Val");
+      Debug.Assert(valProperty != null, $"\"Val\" property in {typeof(ElementType)} not found");
+      var valType = valProperty.PropertyType;
+      if (valType == typeof(DX.StringValue))
+        valProperty.SetValue(_element, new DX.StringValue(value.ToString()));
+      else
+        throw new InvalidOperationException($"\"Value\" property of type {valType} unsupported");
     }
     else
     {

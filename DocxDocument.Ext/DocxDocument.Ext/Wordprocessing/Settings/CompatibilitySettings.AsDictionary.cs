@@ -57,7 +57,7 @@ public partial class CompatibilitySettings : IDictionary<DXW.CompatSettingNameVa
       else
       {
         _element = new DXW.CompatibilitySetting { Name = key, Val = value };
-        _Element.AddAnnotation(_element);
+        _Element.AppendChild(_element);
       }
     }
   }
