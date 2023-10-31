@@ -13,6 +13,7 @@ global using System.Text;
 global using System.Threading.Tasks;
 
 global using Qhta.TextUtils;
+global using Qhta.TypeUtils;
 
 global using DX = DocumentFormat.OpenXml;
 global using DXP = DocumentFormat.OpenXml.Packaging;
@@ -26,4 +27,5 @@ global using DocumentModel.Utils;
 
 global using DM = DocumentModel;
 global using DMW = DocumentModel.Wordprocessing;
+global using DMM = DocumentModel.Math;
 

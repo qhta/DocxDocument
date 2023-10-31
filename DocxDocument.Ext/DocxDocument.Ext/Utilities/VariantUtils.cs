@@ -233,7 +233,7 @@ public static class VariantUtils
         var result = new DXVT.Variant();
         var childElement = value.AsVTVariant();
         if (childElement!=null)
-          result.AddChild(childElement);
+          result.AppendChild(childElement);
         return result;
       case DXVT.VectorBaseValues.OneByteSignedInteger:
         return new DXVT.VTByte(value.ToString()!);
