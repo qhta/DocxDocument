@@ -9,7 +9,7 @@ public partial class Captions : ICollection<Caption>
     var _element = _Element.Elements<DXW.Caption>().FirstOrDefault(item => item.Name == value.Name);
     if (_element != null)
       throw new InvalidOperationException($"Caption {value.Name} aready exists found");
-    _Element.AddChild(value._Element);
+    _Element.AppendChild(value._Element);
   }
 
   public void Clear()

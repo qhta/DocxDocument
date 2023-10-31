@@ -1,61 +1,246 @@
 ﻿namespace DocumentModel.Math;
-public class MathProperties
+
+/// <summary>
+///  Specifies the document-level properties for all math in the document. 
+/// </summary>
+public class MathProperties : IOpenXmlElementMappedObject
 {
+  public MathProperties()
+  {
+    _Element = new DXM.MathProperties();
+  }
+
+  public MathProperties(DX.OpenXmlElement openXmlElement)
+  {
+    _Element = (DXM.MathProperties)openXmlElement;
+  }
+
+  public OpenXmlElementType GetElement<OpenXmlElementType>() where OpenXmlElementType : DX.OpenXmlElement
+  {
+    if (_Element is OpenXmlElementType validTypeElement)
+      return validTypeElement;
+    throw new ArgumentException($"Only {_Element.GetType()} type supported in GetElement of {this.GetType()}");
+  }
+
   public MathProperties(DXM.MathProperties properties)
   {
-    _properties = properties;
+    _Element = properties;
   }
 
-  private DXM.MathProperties _properties;
+  private DXM.MathProperties _Element;
 
+  /// <summary>
+  /// This element specifies how binary operators are treated when they coincide with a line break. 
+  /// If this element is omitted, the line break occurs before the binary operator. 
+  /// That is, the binary operator is the first element on the wrapped line.
+  /// </summary>
+  [DataMember]
   public DXM.BreakBinaryOperatorValues? BreakBinary
   {
-    get => _properties.BreakBinary?.Val?.Value;
-    set
-    {
-      if (value != null)
-        _properties.BreakBinary = new DXM.BreakBinary { Val = value };
-      else
-        _properties.BreakBinary = null;
-    }
+    get => _Element.GetEnumVal<DXM.BreakBinaryOperatorValues, DXM.BreakBinary>();
+    set => _Element.SetEnumVal<DXM.BreakBinaryOperatorValues, DXM.BreakBinary>(value);
   }
 
+  /// <summary>
+  /// This element specifies how the subtraction operator is treated when it coincides with a line break, when brkBin is set to repeat. 
+  /// If this element is omitted, the subtraction operator is repeated before and after the break.
+  /// </summary>
+  [DataMember]
   public DXM.BreakBinarySubtractionValues? BreakBinarySubtraction
   {
-    get => _properties.BreakBinarySubtraction?.Val?.Value;
-    set
-    {
-      if (value != null)
-        _properties.BreakBinarySubtraction = new DXM.BreakBinarySubtraction { Val = value };
-      else
-        _properties.BreakBinarySubtraction = null;
-    }
+    get => _Element.GetEnumVal<DXM.BreakBinarySubtractionValues, DXM.BreakBinarySubtraction>();
+    set => _Element.SetEnumVal<DXM.BreakBinarySubtractionValues, DXM.BreakBinarySubtraction>(value);
   }
 
+  /// <summary>
+  /// This element specifies the default math font to be used in the document. 
+  /// If this element is omitted, font substitution (§17.8.2) should be used to determine the most appropriate font for use throughout the document.
+  /// </summary>
+  [DataMember]
   public string? MathFont
   {
-    get => _properties.MathFont?.Val?.Value;
-    set
-    {
-      if (value != null)
-        _properties.MathFont = new DXM.MathFont { Val = value };
-      else
-        _properties.MathFont = null;
-    }
+    get => _Element.GetStringVal<DXM.MathFont>();
+    set => _Element.SetStringVal<DXM.MathFont>(value);
   }
 
+  /// <summary>
+  /// This element specifies a reduced fraction size display math, such that the numerator and denominator are written in script size 
+  /// instead of at the size of regular text.
+  /// When the element is absent, the default value of the option is 0 meaning that this option is not applied.
+  /// When the element is present and the val attribute is absent, the default of the val attribute is 1 meaning that this option is applied.
+  /// </summary>
+  [DataMember]
+  public Boolean? SmallFraction
+  {
+    get => _Element.GetBooleanVal<DXM.SmallFraction>();
+    set => _Element.SetBooleanVal<DXM.SmallFraction>(value);
+  }
 
-            //builder.AddChild<DocumentFormat.OpenXml.Math.IntegralLimitLocation>();
-            //builder.AddChild<DocumentFormat.OpenXml.Math.NaryLimitLocation>();
-            //builder.AddChild<DocumentFormat.OpenXml.Math.DefaultJustification>();
-            //builder.AddChild<DocumentFormat.OpenXml.Math.SmallFraction>();
-            //builder.AddChild<DocumentFormat.OpenXml.Math.DisplayDefaults>();
-            //builder.AddChild<DocumentFormat.OpenXml.Math.WrapRight>();
-            //builder.AddChild<DocumentFormat.OpenXml.Math.LeftMargin>();
-            //builder.AddChild<DocumentFormat.OpenXml.Math.RightMargin>();
-            //builder.AddChild<DocumentFormat.OpenXml.Math.PreSpacing>();
-            //builder.AddChild<DocumentFormat.OpenXml.Math.PostSpacing>();
-            //builder.AddChild<DocumentFormat.OpenXml.Math.InterSpacing>();
-            //builder.AddChild<DocumentFormat.OpenXml.Math.IntraSpacing>();
-            //builder.AddChild<DocumentFormat.OpenXml.Math.WrapIndent>();
+  /// <summary>
+  /// This element specifies the document-level property to overwrite paragraph settings for mathematical text. 
+  /// When omitted, this element is set to 1 or true and special math settings are applied. 
+  /// Whether the element is absent or present without the val attribute, 
+  /// the default of the val attribute is 1 meaning that this option is applied.
+  /// </summary>
+  [DataMember]
+  public Boolean? DisplayDefaults
+  {
+    get => _Element.GetBooleanVal<DXM.DisplayDefaults>();
+    set => _Element.SetBooleanVal<DXM.DisplayDefaults>(value);
+  }
+
+  /// <summary>
+  /// This element specifies the left margin for math, in twips. 
+  /// If this element is omitted, no left margin is used. 
+  /// In other words, when the element is absent, the default value of the option is 0.
+  /// When the element is present and the val attribute is absent, the default of the val attribute is 1440 (or 1 inch).
+  /// </summary>
+  [DataMember]
+  public Twips? LeftMargin
+  {
+    get => _Element.GetTwips<DXM.LeftMargin>();
+    set => _Element.SetTwips<DXM.LeftMargin>(value);
+  }
+
+  /// <summary>
+  /// This element specifies the right margin for math, in twips. 
+  /// If this element is omitted, no right margin is used. 
+  /// In other words, when the element is absent, the default value of the option is 0.
+  /// When the element is present and the val attribute is absent, the default of the val attribute is 1440 (or 1 inch).
+  /// Math margins are added to the paragraph settings for margins. 
+  /// If the sum of lMargin and rMargin exceed the width available, lMargin should be ignored. I
+  /// f rMargin exceeds the width available, a default indent of 1440 twips should be used. 
+  /// </summary>
+  [DataMember]
+  public Twips? RightMargin
+  {
+    get => _Element.GetTwips<DXM.RightMargin>();
+    set => _Element.SetTwips<DXM.RightMargin>(value);
+  }
+
+  /// <summary>
+  /// This element specifies the default justification of display math, at the document level. 
+  /// ndividual instances of mathematical text can overrule the default setting. 
+  /// If this element is omitted, the default justification is centerGroup. 
+  /// Whether the element is absent or present without the val attribute, the default of the val attribute is centerGroup.
+  /// <para>
+  /// Display math can be left justified, right justified, centered, or centered as a group. 
+  /// When display math is centered as a group, the mathematical text is left aligned within a block, 
+  /// and the entire block is centered with respect to column margins. 
+  /// If this element is omitted, the mathematical text is centered as a group.
+  /// </para>
+  /// </summary>
+  [DataMember]
+  public DXM.JustificationValues? DefaultJustification
+  {
+    get => _Element.GetEnumVal<DXM.JustificationValues, DXM.DefaultJustification>();
+    set => _Element.SetEnumVal<DXM.JustificationValues, DXM.DefaultJustification>(value);
+  }
+
+  /// <summary>
+  /// This element specifies the spacing before a math paragraph, in twips. 
+  /// </summary>
+  [DataMember]
+  public Twips? PreSpacing
+  {
+    get => _Element.GetTwips<DXM.PreSpacing>();
+    set => _Element.SetTwips<DXM.PreSpacing>(value);
+  }
+
+  /// <summary>
+  /// This element specifies the spacing after a math paragraph, in twips. 
+  /// </summary>
+  [DataMember]
+  public Twips? PostSpacing
+  {
+    get => _Element.GetTwips<DXM.PostSpacing>();
+    set => _Element.SetTwips<DXM.PostSpacing>(value);
+  }
+
+  /// <summary>
+  /// This element specifies spacing between equations, expressions, 
+  /// or other instances of mathematical text within a display math paragraph, in twips.
+  /// </summary>
+  [DataMember]
+  public Twips? InterSpacing
+  {
+    get => _Element.GetTwips<DXM.InterSpacing>();
+    set => _Element.SetTwips<DXM.InterSpacing>(value);
+  }
+
+  /// <summary>
+  /// This element specifies the spacing between adjacent display math paragraphs, in twips. 
+  /// </summary>
+  [DataMember]
+  public Twips? IntraSpacing
+  {
+    get => _Element.GetTwips<DXM.IntraSpacing>();
+    set => _Element.SetTwips<DXM.IntraSpacing>(value);
+  }
+
+  /// <summary>
+  /// This element specifies the document setting for the default placement of integral limits, 
+  /// when converted from a linear form to a two-dimensional output (professional form). 
+  /// Limits can be either centered above and below the integral, or positioned just to the right of the operator, as in:
+  /// <para>
+  /// When this integral object is written linearly, as , the placement of limits is ambiguous. 
+  /// intLim is a document-level property that specifies the default positioning. When this element is omitted, 
+  /// the default placement of integral limits is subSup (that is, the location of subscripts and superscripts, 
+  /// or just to the right of the base or operator). Whether the element is absent or present without the val attribute, 
+  /// the default of the val attribute is subSup. 
+  /// </para>
+  /// </summary>
+  [DataMember]
+  public DXM.LimitLocationValues? IntegralLimitLocation
+  {
+    get => _Element.GetEnumVal<DXM.LimitLocationValues, DXM.IntegralLimitLocation>();
+    set => _Element.SetEnumVal<DXM.LimitLocationValues, DXM.IntegralLimitLocation>(value);
+  }
+
+  /// <summary>
+  /// This element specifies the document setting for the default placement of n-ary limits other than integrals 
+  /// (since integrals are most often written as subSup and other n-ary operators are most often written as undOvr), 
+  /// when converted from a built down form to a two-dimensional output (professional form). 
+  /// Limits can be either centered above and below the n-ary operator, or positioned just to the right of the operator, as in:
+  /// <para>
+  /// When this summation object is written in built down form, as in , for example, the placement of limits is ambiguous. 
+  /// naryLim specifies this positioning. When this element is omitted, the default placement of n-ary limits is undOvr 
+  /// (that is, the location of lower and upper limits). Whether the element is absent or present without the val attribute, 
+  /// the default of the val attribute is undOvr. 
+  /// </para>
+  /// </summary>
+  [DataMember]
+  public DXM.LimitLocationValues? NaryLimitLocation
+  {
+    get => _Element.GetEnumVal<DXM.LimitLocationValues, DXM.NaryLimitLocation>();
+    set => _Element.SetEnumVal<DXM.LimitLocationValues, DXM.NaryLimitLocation>(value);
+  }
+
+  /// <summary>
+  /// This element specifies the right justification of the wrapped line of an instance of mathematical text. 
+  /// The line or lines of a wrapped instance of mathematical text after the line break 
+  /// can either be indented by a specified amount from the left margin, or right aligned. 
+  /// If this element is present, the continuation is right aligned.
+  /// </summary>
+  [DataMember]
+  public Boolean? WrapRight
+  {
+    get => _Element.GetBooleanVal<DXM.WrapRight>();
+    set => _Element.SetBooleanVal<DXM.WrapRight>(value);
+  }
+
+  /// <summary>
+  /// This element specifies the indent of the wrapped line of an instance of mathematical text. 
+  /// The line or lines of a wrapped instance of mathematical text after the line break 
+  /// can either be indented by a specified amount from the left margin, or right aligned. 
+  /// The default indent is 1". In other words, whether the element is absent or present without the val attribute, 
+  /// the default of the val attribute is 1440 twips (or 1 inch).
+  /// </summary>
+  [DataMember]
+  public Twips? WrapIndent
+  {
+    get => _Element.GetTwips<DXM.WrapIndent>();
+    set => _Element.SetTwips<DXM.WrapIndent>(value);
+  }
+
 }

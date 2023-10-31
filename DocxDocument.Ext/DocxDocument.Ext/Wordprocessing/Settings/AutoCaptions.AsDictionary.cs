@@ -9,7 +9,7 @@ public partial class AutoCaptions : IDictionary<string, string?>
     var _element = _Element.Elements<DXW.AutoCaption>().FirstOrDefault(item => item.Name == key);
     if (_element != null)
       throw new InvalidOperationException($"Caption {key} aready exists found");
-    _Element.AddChild(new DXW.AutoCaption { Name = key, Caption = value });
+    _Element.AppendChild(new DXW.AutoCaption { Name = key, Caption = value });
   }
 
   public bool ContainsKey(string key)
@@ -62,31 +62,36 @@ public partial class AutoCaptions : IDictionary<string, string?>
     }
   }
 
-  public ICollection<string> Keys => (ICollection<string>)_Element.Elements<DXW.AutoCaption>().Select(item=>item.Name).ToList();
-  public ICollection<string?> Values => (ICollection<string?>)_Element.Elements<DXW.AutoCaption>().Select(item=>item.Caption).ToList();
+  public ICollection<string> Keys => (ICollection<string>)_Element.Elements<DXW.AutoCaption>().Select(item => item.Name).ToList();
+  public ICollection<string?> Values => (ICollection<string?>)_Element.Elements<DXW.AutoCaption>().Select(item => item.Caption).ToList();
 
   public void Add(KeyValuePair<string, string?> item)
   {
-    throw new NotImplementedException();
+    Add(item.Key, item.Value);
   }
 
   public bool Contains(KeyValuePair<string, string?> item)
   {
-    throw new NotImplementedException();
+    return TryGetValue(item.Key, out var value) && value == item.Value;
   }
 
   public void CopyTo(KeyValuePair<string, string?>[] array, int arrayIndex)
   {
-    throw new NotImplementedException();
+    var temp = _Element.Elements<DXW.AutoCaption>().Where(item=>item.Name!=null)
+      .Select(item=> new KeyValuePair<string, string?>(item.Name!, item.Caption)).ToArray();
+    temp.CopyTo(array, arrayIndex);
   }
 
   public bool Remove(KeyValuePair<string, string?> item)
   {
-    throw new NotImplementedException();
+    if (TryGetValue(item.Key, out var value) && value == item.Value)
+      return Remove(item.Key);
+    return false;
   }
 
   IEnumerator<KeyValuePair<string, string?>> IEnumerable<KeyValuePair<string, string?>>.GetEnumerator()
   {
-    throw new NotImplementedException();
+    foreach (var item in _Element.Elements<DXW.AutoCaption>().ToArray())
+      yield return new KeyValuePair<string, string?>(item.Name!, item.Caption);
   }
 }

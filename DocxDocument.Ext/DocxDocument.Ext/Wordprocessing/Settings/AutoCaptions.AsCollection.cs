@@ -8,8 +8,8 @@ public partial class AutoCaptions: ICollection<AutoCaption>
       throw new InvalidOperationException($"Item.Name must not be null");
     var _element = _Element.Elements<DXW.AutoCaption>().FirstOrDefault(item=>item.Name == value.Name);
     if (_element != null)
-      throw new InvalidOperationException($"Caption {value.Name} aready exists found");
-    _Element.AddChild(value._Element);
+      throw new InvalidOperationException($"Caption \"{value.Name}\" aready exists");
+    _Element.AppendChild(value._Element);
   }
 
   public void Clear()
@@ -24,7 +24,9 @@ public partial class AutoCaptions: ICollection<AutoCaption>
 
   public void CopyTo(AutoCaption[] array, int arrayIndex)
   {
-    throw new NotImplementedException();
+    var temp = _Element.Elements<DXW.AutoCaption>().ToArray();
+    temp.CopyTo(array, arrayIndex);
+
   }
 
   public bool Remove(AutoCaption value)
@@ -43,9 +45,7 @@ public partial class AutoCaptions: ICollection<AutoCaption>
   public IEnumerator<AutoCaption> GetEnumerator()
   {
     foreach (var item in _Element.Elements<DXW.AutoCaption>().ToArray())
-    {
       yield return new AutoCaption(item);
-    }
   }
 
   IEnumerator IEnumerable.GetEnumerator()

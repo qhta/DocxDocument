@@ -12,6 +12,8 @@ public static class TestUtilities
 
   public static string? ToDumpString(this object? value)
   {
+    if (value is DMW.CompatibilitySettings)
+      Debug.Assert(true);
     if (value is null)
       return null;
     if (value is string str)
@@ -22,11 +24,13 @@ public static class TestUtilities
       var ss = new List<string>();
       Array array = (Array)value;
       var n = array.Length;
-      for (int i = 0; i<System.Math.Min(n,10); i++)
+      for (int i = 0; i < System.Math.Min(n, 10); i++)
       {
         var val = array.GetValue(i);
         if (val != null)
           ss.Add($"{ToDumpString(val)}");
+        else
+          ss.Add("");
       }
       return type.Name + " { " + string.Join(", ", ss) + " }";
     }
@@ -45,6 +49,17 @@ public static class TestUtilities
             if (val != null)
               ss.Add($"{propInfo.Name} = {ToDumpString(val)}");
           }
+        }
+      }
+      var enumerable = value as IEnumerable;
+      if (enumerable != null)
+      {
+        foreach (var item in enumerable)
+        {
+          if (item != null)
+            ss.Add($"{ToDumpString(item)}");
+          else
+            ss.Add("");
         }
       }
       return type.Name + " { " + string.Join(", ", ss) + " }";
