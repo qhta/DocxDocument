@@ -1,14 +1,5 @@
-using System.Diagnostics;
-using System.Text;
-
-using DocumentFormat.OpenXml.Office2019.Excel.RichData2;
-using DocumentFormat.OpenXml.Packaging;
-
 using DocumentModel.Utils;
 
-using Microsoft.VisualStudio.TestPlatform.Utilities;
-
-using DM = DocumentModel;
 using DMW = DocumentModel.Wordprocessing;
 
 namespace DocxDocument.Test;
@@ -117,7 +108,7 @@ public class ReadTest
   public void TestReadSettings()
   {
     var samplesPath = SamplesPath;
-    var file = Path.Combine(samplesPath, "New.docx");
+    var file = Path.Combine(samplesPath, "DocumentSettings.docx");
     Output.WriteLine($"TestReadSettings: {file}");
     try
     {

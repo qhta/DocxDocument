@@ -62,8 +62,8 @@ public partial class DocumentSettings
   /// </summary>
   public DMW.WriteProtection? WriteProtection
   {
-    get => GetObject<WriteProtection, DXW.WriteProtection>();
-    set => SetObject<WriteProtection, DXW.WriteProtection>(value);
+    get => _DocumentSettings?.GetObject<WriteProtection, DXW.WriteProtection>();
+    set => _ExistingSettings.SetObject<WriteProtection, DXW.WriteProtection>(value);
   }
 
   /// <summary>
@@ -71,249 +71,238 @@ public partial class DocumentSettings
   /// </summary>
   public DXW.ViewValues? View
   {
-    get => GetEnum<DXW.ViewValues, DXW.View>();
-    set
-    {
-      if (value != null)
-        _ExistingSettings.View = new DXW.View { Val = value };
-      else
-        _ExistingSettings.View = null;
-    }
+    get => _DocumentSettings?.GetEnumVal<DXW.ViewValues, DXW.View>();
+    set => _ExistingSettings?.SetEnumVal<DXW.ViewValues, DXW.View>(value);
   }
 
+  /// <summary>
+  /// Specifies that hosting applications shall remove all personal information of document authors upon saving
+  /// a given WordprocessingML document. The definition and extent of personal information is not defined by /IEC 29500.
+  /// </summary>
   public Boolean? RemovePersonalInformation
   {
-    get => _DocumentSettings?.RemovePersonalInformation?.Val?.AsBoolean();
-    set
-    {
-      if (value != null)
-        _ExistingSettings.RemovePersonalInformation = new DXW.RemovePersonalInformation { Val = value };
-      else
-        _ExistingSettings.RemovePersonalInformation = null;
-    }
+    get => _DocumentSettings?.GetBooleanVal<DXW.RemovePersonalInformation>();
+    set => _ExistingSettings.SetBooleanVal<DXW.RemovePersonalInformation>(value);
   }
 
+  /// <summary>
+  /// Specifies that the date and time information shall be removed from all annotations 
+  /// which are present in the current document when it is saved. 
+  /// Annotations store this information in the date attribute on the annotation's XML element.
+  /// </summary>
   public Boolean? RemoveDateAndTime
   {
-    get => _DocumentSettings?.RemoveDateAndTime?.Val?.AsBoolean();
-    set
-    {
-      if (value != null)
-        _ExistingSettings.RemoveDateAndTime = new DXW.RemoveDateAndTime { Val = value };
-      else
-        _ExistingSettings.RemoveDateAndTime = null;
-    }
+    get => _DocumentSettings?.GetBooleanVal<DXW.RemoveDateAndTime>();
+    set => _ExistingSettings.SetBooleanVal<DXW.RemoveDateAndTime>(value);
   }
 
+  /// <summary>
+  /// Specifies whether applications displaying this document should display the contents of the header and footer 
+  /// when displaying the document in print layout view (§17.15.1.92) or should collapse those areas 
+  /// as well as the whitespace on all displayed pages so that the text extents are directly following one another. 
+  /// [Rationale: Collapsing the ends of pages makes it easier to read the contents of the document, 
+  /// since the text flows between pages without whitespace, while maintaining the WYSIWYG functionality 
+  /// of print layout view for the document's main content. end rationale]
+  /// </summary>
   public Boolean? DoNotDisplayPageBoundaries
   {
-    get => _DocumentSettings?.DoNotDisplayPageBoundaries?.Val?.AsBoolean();
-    set
-    {
-      if (value != null)
-        _ExistingSettings.DoNotDisplayPageBoundaries = new DXW.DoNotDisplayPageBoundaries { Val = value };
-      else
-        _ExistingSettings.DoNotDisplayPageBoundaries = null;
-    }
+    get => _DocumentSettings?.GetBooleanVal<DXW.DoNotDisplayPageBoundaries>();
+    set => _ExistingSettings.SetBooleanVal<DXW.DoNotDisplayPageBoundaries>(value);
   }
 
+  /// <summary>
+  /// Specifies whether the images and colors defined in the document's background using the background element (§17.2.1) 
+  /// shall be displayed when the document is displayed in print layout view as specified in the view element (§17.15.1.92).
+  /// </summary>
   public Boolean? DisplayBackgroundShape
   {
-    get => _DocumentSettings?.DisplayBackgroundShape?.Val?.AsBoolean();
-    set
-    {
-      if (value != null)
-        _ExistingSettings.DisplayBackgroundShape = new DXW.DisplayBackgroundShape { Val = value };
-      else
-        _ExistingSettings.DisplayBackgroundShape = null;
-    }
+    get => _DocumentSettings?.GetBooleanVal<DXW.DisplayBackgroundShape>();
+    set => _ExistingSettings.SetBooleanVal<DXW.DisplayBackgroundShape>(value);
   }
 
+  /// <summary>
+  /// Specifies that the PostScript codes specified in WordprocessingML documents containing PRINT fields shall be included in foreground 
+  /// (on the same Z-order as text) with the data printed in the contents of a given WordprocessingML document.
+  /// [Note: This setting is maintained to ensure compatibility of legacy word processing documents. 
+  /// The PRINT field should not be used in lieu of newer technologies in /IEC 29500. end note]
+  /// </summary>
   public Boolean? PrintPostScriptOverText
   {
-    get => _DocumentSettings?.PrintPostScriptOverText?.Val?.AsBoolean();
-    set
-    {
-      if (value != null)
-        _ExistingSettings.PrintPostScriptOverText = new DXW.PrintPostScriptOverText { Val = value };
-      else
-        _ExistingSettings.PrintPostScriptOverText = null;
-    }
+    get => _DocumentSettings?.GetBooleanVal<DXW.PrintPostScriptOverText>();
+    set => _ExistingSettings.SetBooleanVal<DXW.PrintPostScriptOverText>(value);
   }
 
+  /// <summary>
+  /// Specifies the contents of this document shall be printed with fractional character widths. 
+  /// Fractional character widths exist when the spacing between characters is not constant (i.e. a proportional font face is used).
+  /// [Note: Fractional character widths are generally used in conjunction with large font sizes 
+  /// to prevent characters from running together or having too much space between one another. end note]
+  /// </summary>
   public Boolean? PrintFractionalCharacterWidth
   {
-    get => _DocumentSettings?.PrintFractionalCharacterWidth?.Val?.AsBoolean();
-    set
-    {
-      if (value != null)
-        _ExistingSettings.PrintFractionalCharacterWidth = new DXW.PrintFractionalCharacterWidth { Val = value };
-      else
-        _ExistingSettings.PrintFractionalCharacterWidth = null;
-    }
+    get => _DocumentSettings?.GetBooleanVal<DXW.PrintFractionalCharacterWidth>();
+    set => _ExistingSettings.SetBooleanVal<DXW.PrintFractionalCharacterWidth>(value);
   }
 
+  /// <summary>
+  /// Specifies that printing the contents of this document shall only print the contents 
+  /// of WordprocessingML form fields defined using the FORMTEXT, FORMCHECKBOX, and FORMDROPDOWN field codes 
+  /// in their current locations on the page - all other document contents shall be suppressed.
+  /// [Rationale: This setting is typically used to allow duplication of paper forms in electronic WordprocessingML document form, 
+  /// allowing the resulting online document to be printed into the correct locations on the existing paper form. end rationale]
+  /// </summary>
   public Boolean? PrintFormsData
   {
-    get => _DocumentSettings?.PrintFormsData?.Val?.AsBoolean();
-    set
-    {
-      if (value != null)
-        _ExistingSettings.PrintFormsData = new DXW.PrintFormsData { Val = value };
-      else
-        _ExistingSettings.PrintFormsData = null;
-    }
+    get => _DocumentSettings?.GetBooleanVal<DXW.PrintFormsData>();
+    set => _ExistingSettings.SetBooleanVal<DXW.PrintFormsData>(value);
   }
 
+  /// <summary>
+  /// Specifies that applications shall embed the fonts in use in this document when it is saved. 
+  /// These fonts shall be embedded subject to the algorithm specified in §17.8.1.
+  /// </summary>
   public Boolean? EmbedTrueTypeFonts
   {
-    get => _DocumentSettings?.EmbedTrueTypeFonts?.Val?.AsBoolean();
-    set
-    {
-      if (value != null)
-        _ExistingSettings.EmbedTrueTypeFonts = new DXW.EmbedTrueTypeFonts { Val = value };
-      else
-        _ExistingSettings.EmbedTrueTypeFonts = null;
-    }
+    get => _DocumentSettings?.GetBooleanVal<DXW.EmbedTrueTypeFonts>();
+    set => _ExistingSettings.SetBooleanVal<DXW.EmbedTrueTypeFonts>(value);
   }
 
+  /// <summary>
+  /// Specifies that applications shall embed common system fonts when they are in use 
+  /// and font embedding is enabled for this document using the embedTrueTypeFonts element (§17.8.3.8). 
+  /// Common system fonts refer to a set of fonts which are typically always present on a machine, and are not defined by /IEC 29500.
+  /// </summary>
   public Boolean? EmbedSystemFonts
   {
-    get => _DocumentSettings?.EmbedSystemFonts?.Val?.AsBoolean();
-    set
-    {
-      if (value != null)
-        _ExistingSettings.EmbedSystemFonts = new DXW.EmbedSystemFonts { Val = value };
-      else
-        _ExistingSettings.EmbedSystemFonts = null;
-    }
+    get => _DocumentSettings?.GetBooleanVal<DXW.EmbedSystemFonts>();
+    set => _ExistingSettings.SetBooleanVal<DXW.EmbedSystemFonts>(value);
   }
 
+  /// <summary>
+  /// Specifies that applications shall subset fonts when font embedding is enabled 
+  /// for this document using the embedTrueTypeFonts element (§17.8.3.8). 
+  /// Subsetting is a mechanism by which only the glyphs used in the contents of this WordprocessingML document are stored in an embedded font, 
+  /// in order to prevent the file from becoming unnecessarily large from the use of a small number of glyphs from a large embedded font.
+  /// </summary>
   public Boolean? SaveSubsetFonts
   {
-    get => _DocumentSettings?.SaveSubsetFonts?.Val?.AsBoolean();
-    set
-    {
-      if (value != null)
-        _ExistingSettings.SaveSubsetFonts = new DXW.SaveSubsetFonts { Val = value };
-      else
-        _ExistingSettings.SaveSubsetFonts = null;
-    }
+    get => _DocumentSettings?.GetBooleanVal<DXW.SaveSubsetFonts>();
+    set => _ExistingSettings.SetBooleanVal<DXW.SaveSubsetFonts>(value);
   }
 
+  /// <summary>
+  /// Specifies that saving the contents of this document shall only save the contents of WordprocessingML form fields 
+  /// defined using the FORMTEXT, FORMCHECKBOX, and FORMDROPDOWN field codes in a comma-delimited text format
+  /// which does not conform to /IEC 29500 (i.e. it is a one-way export from a WordprocessingML document).
+  /// [Rationale: This setting is typically used to allow duplication of paper forms in electronic WordprocessingML document form, 
+  /// allowing the resulting content to be extracted as a comma-delimited text file. end rationale]
+  /// </summary>
   public Boolean? SaveFormsData
   {
-    get => _DocumentSettings?.SaveFormsData?.Val?.AsBoolean();
-    set
-    {
-      if (value != null)
-        _ExistingSettings.SaveFormsData = new DXW.SaveFormsData { Val = value };
-      else
-        _ExistingSettings.SaveFormsData = null;
-    }
+    get => _DocumentSettings?.GetBooleanVal<DXW.SaveFormsData>();
+    set => _ExistingSettings.SetBooleanVal<DXW.SaveFormsData>(value);
   }
 
+  /// <summary>
+  /// Specifies that the left and right margins defined in the section properties shall be swapped on facing pages.
+  /// [Guidance: This setting is generally used when printing on both sides of pages and binding them like a book. end guidance]
+  /// </summary>
   public Boolean? MirrorMargins
   {
-    get => _DocumentSettings?.MirrorMargins?.Val?.AsBoolean();
-    set
-    {
-      if (value != null)
-        _ExistingSettings.MirrorMargins = new DXW.MirrorMargins { Val = value };
-      else
-        _ExistingSettings.MirrorMargins = null;
-    }
+    get => _DocumentSettings?.GetBooleanVal<DXW.MirrorMargins>();
+    set => _ExistingSettings.SetBooleanVal<DXW.MirrorMargins>(value);
   }
 
+  /// <summary>
+  /// Specifies that paragraph borders specified using the pBdr element (§17.3.1.24) and table borders using the tblBorders element (§17.4.40) 
+  /// shall be adjusted to align with extents of the page border defined using the pgBorders element (§17.6.10) 
+  /// if the spacing between these borders is less than or equal to 10.5 points (one character width) or less from the page border. 
+  /// The presence of this setting shall ensure there are no gaps of one character width or less between adjoining page and paragraph/table borders, 
+  /// as borders which are perfectly aligning shall not be displayed in favor of the intervening page border.
+  /// </summary>
   public Boolean? AlignBorderAndEdges
   {
-    get => _DocumentSettings?.AlignBorderAndEdges?.Val?.AsBoolean();
-    set
-    {
-      if (value != null)
-        _ExistingSettings.AlignBorderAndEdges = new DXW.AlignBorderAndEdges { Val = value };
-      else
-        _ExistingSettings.AlignBorderAndEdges = null;
-    }
+    get => _DocumentSettings?.GetBooleanVal<DXW.AlignBorderAndEdges>();
+    set => _ExistingSettings.SetBooleanVal<DXW.AlignBorderAndEdges>(value);
   }
 
+  /// <summary>
+  /// Specifies that a given WordprocessingML document’s page border specified using the pgBorders element (§17.6.10) 
+  /// should not surround contents of the header.
+  /// If this element is omitted, then the page border shall not exclude the header on the page. 
+  /// As well, this element shall be ignored if the pgBorders element has an offsetFrom attribute which is not equal to text.
+  /// [Note: If the pgBorders element has a offsetFrom attribute equal to page, the bordersDoNotSurroundHeader element is ignored 
+  /// as specifying the pgBorders element with a offsetFrom attribute equal to page is to specify that the positioning of borders 
+  /// within the document shall be calculated relative to the edge of the page and therefore irrespective of document content in the header. end note]
+  /// </summary>
   public Boolean? BordersDoNotSurroundHeader
   {
-    get => _DocumentSettings?.BordersDoNotSurroundHeader?.Val?.AsBoolean();
-    set
-    {
-      if (value != null)
-        _ExistingSettings.BordersDoNotSurroundHeader = new DXW.BordersDoNotSurroundHeader { Val = value };
-      else
-        _ExistingSettings.BordersDoNotSurroundHeader = null;
-    }
+    get => _DocumentSettings?.GetBooleanVal<DXW.BordersDoNotSurroundHeader>();
+    set => _ExistingSettings.SetBooleanVal<DXW.BordersDoNotSurroundHeader>(value);
   }
 
+  /// <summary>
+  /// Specifies that a given WordprocessingML document’s page border specified using the pgBorders element (§17.6.10) 
+  /// should not surround contents of the footer.
+  /// <para>
+  /// If this element is omitted, then the page border shall not exclude the footer on the page. 
+  /// As well, this element shall be ignored if the pgBorders element has an offsetFrom attribute which is not equal to text.
+  /// </para>
+  /// [Note: If the pgBorders element has a offsetFrom attribute equal to page, the bordersDoNotSurroundFooter element is ignored
+  /// as specifying the pgBorders element with a offsetFrom attribute equal to page is to specify that the positioning of borders
+  /// within the document shall be calculated relative to the edge of the page and therefore irrespective of document content in the footer. end note]
+  /// </summary>
   public Boolean? BordersDoNotSurroundFooter
   {
-    get => _DocumentSettings?.BordersDoNotSurroundFooter?.Val?.AsBoolean();
-    set
-    {
-      if (value != null)
-        _ExistingSettings.BordersDoNotSurroundFooter = new DXW.BordersDoNotSurroundFooter { Val = value };
-      else
-        _ExistingSettings.BordersDoNotSurroundFooter = null;
-    }
+    get => _DocumentSettings?.GetBooleanVal<DXW.BordersDoNotSurroundFooter>();
+    set => _ExistingSettings.SetBooleanVal<DXW.BordersDoNotSurroundFooter>(value);
   }
 
+  /// <summary>
+  /// Specifies that a given WordprocessingML document’s gutter shall be positioned at the top of the document’s pages when the document is displayed. 
+  /// A gutter is the white space formed by the inner margins of two pages facing one another; 
+  /// such as the white space between the text on pages of a book when the book is opened.
+  /// <para>
+  /// If this element is omitted, then the gutter shall not be positioned at the top of the page. 
+  /// If the mirrorMargins (§17.15.1.57), bookFoldPrinting (§17.15.1.11), bookFoldRevPrinting (§17.15.1.13), or printTwoOnOne (§17.15.1.64) elements 
+  /// are used within a given document, the gutterAtTop element shall not be used. 
+  /// Rather, the gutter shall be positioned automatically as necessary to enable the printing and page layout capabilities of these settings.
+  /// </para>
+  /// </summary>
   public Boolean? GutterAtTop
   {
-    get => _DocumentSettings?.GutterAtTop?.Val?.AsBoolean();
-    set
-    {
-      if (value != null)
-        _ExistingSettings.GutterAtTop = new DXW.GutterAtTop { Val = value };
-      else
-        _ExistingSettings.GutterAtTop = null;
-    }
+    get => _DocumentSettings?.GetBooleanVal<DXW.GutterAtTop>();
+    set => _ExistingSettings.SetBooleanVal<DXW.GutterAtTop>(value);
   }
 
+  /// <summary>
+  /// Specifies whether a visual cue should be displayed around run content contained in a WordprocessingML document 
+  /// which has been flagged as a possible spelling error using the proofErr element (§17.13.8.1) or via the application's own spelling engine.
+  /// If this element is not present in a WordprocessingML document, visual cues shall be displayed on content 
+  /// contained in a WordprocessingML document which is considered to contain spelling errors.
+  /// </summary>
   public Boolean? HideSpellingErrors
   {
-    get => _DocumentSettings?.HideSpellingErrors?.Val?.AsBoolean();
-    set
-    {
-      if (value != null)
-        _ExistingSettings.HideSpellingErrors = new DXW.HideSpellingErrors { Val = value };
-      else
-        _ExistingSettings.HideSpellingErrors = null;
-    }
+    get => _DocumentSettings?.GetBooleanVal<DXW.HideSpellingErrors>();
+    set => _ExistingSettings.SetBooleanVal<DXW.HideSpellingErrors>(value);
   }
 
+  /// <summary>
+  /// Specifies whether a visual cue should be displayed around run content contained in a WordprocessingML document 
+  /// which has been flagged as a possible grammatical error using the proofErr element (§17.13.8.1) or via the application's own grammar engine.
+  /// If this element is not present in a WordprocessingML document, visual cues shall be displayed on content 
+  /// contained in a WordprocessingML document which is considered to contain grammatical errors.
+  /// </summary>
   public Boolean? HideGrammaticalErrors
   {
-    get => _DocumentSettings?.HideGrammaticalErrors?.Val?.AsBoolean();
-    set
-    {
-      if (value != null)
-        _ExistingSettings.HideGrammaticalErrors = new DXW.HideGrammaticalErrors { Val = value };
-      else
-        _ExistingSettings.HideGrammaticalErrors = null;
-    }
+    get => _DocumentSettings?.GetBooleanVal<DXW.HideGrammaticalErrors>();
+    set => _ExistingSettings.SetBooleanVal<DXW.HideGrammaticalErrors>(value);
   }
 
-  public Boolean ForceUpgrade
+  public Boolean? ForceUpgrade
   {
-    get => _DocumentSettings?.Elements<DXW.ForceUpgrade>().FirstOrDefault() != null;
-    set
-    {
-      if (value)
-      {
-        if (_ExistingSettings.Elements<DXW.ForceUpgrade>().FirstOrDefault() == null)
-          _ExistingSettings.AddChild(new DXW.ForceUpgrade());
-      }
-      else
-      {
-        var setting = _ExistingSettings.Elements<DXW.ForceUpgrade>().FirstOrDefault();
-        if (setting != null)
-          setting.Remove();
-      }
-    }
+    get => _DocumentSettings?.GetTrueIfExists<DXW.ForceUpgrade>();
+    set => _ExistingSettings.SetExistsIfTrue<DXW.ForceUpgrade>(value);
   }
 
   /// <summary>
@@ -325,7 +314,7 @@ public partial class DocumentSettings
   /// </summary>
   public NoBreakKinsoku? NoLineBreaksAfterKinsoku
   {
-    get => GetObject<NoBreakKinsoku, DXW.NoLineBreaksAfterKinsoku>();
+    get => _DocumentSettings?.GetObject<NoBreakKinsoku, DXW.NoLineBreaksAfterKinsoku>();
     set
     {
       if (value != null)
@@ -337,7 +326,7 @@ public partial class DocumentSettings
           setting.Val = value.Val;
         }
         else
-          _ExistingSettings.AddChild(new DXW.NoLineBreaksAfterKinsoku { Language = value.Lang, Val = value.Val });
+          _ExistingSettings.AppendChild(new DXW.NoLineBreaksAfterKinsoku { Language = value.Lang, Val = value.Val });
       }
       else
       {
@@ -377,7 +366,7 @@ public partial class DocumentSettings
           setting.Val = value.Val;
         }
         else
-          _ExistingSettings.AddChild(new DXW.NoLineBreaksBeforeKinsoku { Language = value.Lang, Val = value.Val });
+          _ExistingSettings.AppendChild(new DXW.NoLineBreaksBeforeKinsoku { Language = value.Lang, Val = value.Val });
       }
       else
       {
@@ -398,8 +387,8 @@ public partial class DocumentSettings
   /// </summary>
   public DocumentProtection? DocumentProtection
   {
-    get => GetObject<DocumentProtection, DXW.DocumentProtection>();
-    set => SetObject<DocumentProtection, DXW.DocumentProtection>(value);
+    get => _DocumentSettings?.GetObject<DocumentProtection, DXW.DocumentProtection>();
+    set => _ExistingSettings.SetObject<DocumentProtection, DXW.DocumentProtection>(value);
   }
 
   /// <summary>
@@ -413,8 +402,8 @@ public partial class DocumentSettings
   /// </summary>
   public Captions? Captions
   {
-    get => GetObject<Captions, DXW.Captions>();
-    set => SetObject<Captions, DXW.Captions>(value);
+    get => _DocumentSettings?.GetObject<Captions, DXW.Captions>();
+    set => _ExistingSettings.SetObject<Captions, DXW.Captions>(value);
   }
 
 
@@ -425,8 +414,8 @@ public partial class DocumentSettings
   /// </summary>
   public ProofState? ProofState
   {
-    get => GetObject<ProofState, DXW.ProofState>();
-    set => SetObject<ProofState, DXW.ProofState>(value);
+    get => _DocumentSettings?.GetObject<ProofState, DXW.ProofState>();
+    set => _ExistingSettings.SetObject<ProofState, DXW.ProofState>(value);
   }
 
   /// <summary>
@@ -440,8 +429,8 @@ public partial class DocumentSettings
   /// </summary>
   public Zoom? Zoom
   {
-    get => GetObject<Zoom, DXW.Zoom>();
-    set => SetObject<Zoom, DXW.Zoom>(value);
+    get => _DocumentSettings?.GetObject<Zoom, DXW.Zoom>();
+    set => _ExistingSettings.SetObject<Zoom, DXW.Zoom>(value);
   }
 
   /// <summary>
@@ -451,8 +440,8 @@ public partial class DocumentSettings
   /// </summary>
   public StylePaneFormatFilter? StylePaneFormatFilter
   {
-    get => GetObject<StylePaneFormatFilter, DXW.StylePaneFormatFilter>();
-    set => SetObject<StylePaneFormatFilter, DXW.StylePaneFormatFilter>(value);
+    get => _DocumentSettings?.GetObject<StylePaneFormatFilter, DXW.StylePaneFormatFilter>();
+    set => _ExistingSettings.SetObject<StylePaneFormatFilter, DXW.StylePaneFormatFilter>(value);
 
   }
 
@@ -462,8 +451,8 @@ public partial class DocumentSettings
   /// </summary>
   public Twips? DefaultTabStop
   {
-    get => GetTwips<DXW.DefaultTabStop>();
-    set => SetTwips<DXW.DefaultTabStop>(value);
+    get => _DocumentSettings?.GetTwips<DXW.DefaultTabStop>();
+    set => _ExistingSettings.SetTwips<DXW.DefaultTabStop>(value);
   }
 
   /// <summary>
@@ -475,16 +464,52 @@ public partial class DocumentSettings
   /// </summary>
   public Twips? HyphenationZone
   {
-    get => GetTwips<DXW.HyphenationZone>();
-    set => SetTwips<DXW.HyphenationZone>(value);
+    get => _DocumentSettings?.GetTwips<DXW.HyphenationZone>();
+    set => _ExistingSettings.SetTwips<DXW.HyphenationZone>(value);
   }
 
-  ///   <item><description><see cref="DocumentFormat.OpenXml.Math.MathProperties" /> <c>&lt;m:mathPr></c></description></item>
+  /// <summary>
+  /// Specifies the sets of characters which should be compressed when the contents of this document are displayed.
+  /// </summary>
+  public DXW.CharacterSpacingValues? CharacterSpacingControl
+  {
+    get => _DocumentSettings?.GetEnumVal<DXW.CharacterSpacingValues, DXW.CharacterSpacingControl>();
+    set => _ExistingSettings.SetEnumVal<DXW.CharacterSpacingValues, DXW.CharacterSpacingControl>(value);
+  }
+
+  /// <summary>
+  /// Specifies a set of optional compatibility options for the current document.
+  /// </summary>
+  public DMW.Compatibility? Compatibility
+  {
+    get => _DocumentSettings?.GetObject<DMW.Compatibility, DXW.Compatibility>();
+    set => _ExistingSettings.SetObject<DMW.Compatibility, DXW.Compatibility>(value);
+  }
+
+  /// <summary>
+  /// Specifies the set of revision save ID values for the current document. 
+  /// Revision save ID values refer to four digit hexadecimal values which uniquely identify an editing session in the life of the current document. 
+  /// An editing session is the period of time between two subsequent save operations by an application.
+  /// [Guidance: The set of revision save IDs stored with a document only supplies information about the editing session 
+  /// in which document components were last saved, which can be used by applications in any manner desired. end guidance]  
+  /// </summary>
+  public DMW.Rsids? Rsids
+  {
+    get => _DocumentSettings?.GetObject<DMW.Rsids, DXW.Rsids>();
+    set => _ExistingSettings.SetObject<DMW.Rsids, DXW.Rsids>(value);
+  }
+
+  /// <summary>
+  ///  Specifies the document-level properties for all math in the document. 
+  /// </summary>
+  public DMM.MathProperties? MathProperties
+  {
+    get => _DocumentSettings?.GetObject<DMM.MathProperties, DXM.MathProperties>();
+    set => _ExistingSettings.SetObject<DMM.MathProperties, DXM.MathProperties>(value);
+  }
+
   ///   <item><description><see cref="DocumentFormat.OpenXml.CustomXmlSchemaReferences.SchemaLibrary" /> <c>&lt;sl:schemaLibrary></c></description></item>
-  ///   <item><description><see cref=" DXW.CharacterSpacingControl" /> <c>&lt;w:characterSpacingControl></c></description></item>
   ///   <item><description><see cref=" DXW.ColorSchemeMapping" /> <c>&lt;w:clrSchemeMapping></c></description></item>
-  ///   <item><description><see cref=" DXW.Compatibility" /> <c>&lt;w:compat></c></description></item>
-  ///   <item><description><see cref=" DXW.Rsids" /> <c>&lt;w:rsids></c></description></item>
   ///   <item><description><see cref=" DXW.DocumentType" /> <c>&lt;w:documentType></c></description></item>
   ///   <item><description><see cref=" DXW.DocumentVariables" /> <c>&lt;w:docVars></c></description></item>
   ///   <item><description><see cref=" DXW.EndnoteDocumentWideProperties" /> <c>&lt;w:endnotePr></c></description></item>

@@ -277,7 +277,7 @@ public partial class BuiltInProperties
         var _element = new DXEP.TitlesOfParts();
         var childArray = value.AsVTVector();
         if (childArray != null)
-          _element.AddChild(childArray);
+          _element.AppendChild(childArray);
         ExistingProperties.TitlesOfParts = _element;
       }
       else
@@ -300,7 +300,7 @@ public partial class BuiltInProperties
         var _element = new DXEP.HeadingPairs();
         var childArray = value.AsVTVector();
         if (childArray != null)
-          _element.AddChild(childArray);
+          _element.AppendChild(childArray);
         ExistingProperties.HeadingPairs = _element;
       }
       else
@@ -322,7 +322,7 @@ public partial class BuiltInProperties
         var _element = new DXEP.HyperlinkList();
         var childArray = value.AsVTVector();
         if (childArray != null)
-          _element.AddChild(childArray);
+          _element.AppendChild(childArray);
         ExistingProperties.HyperlinkList = _element;
       }
       else
