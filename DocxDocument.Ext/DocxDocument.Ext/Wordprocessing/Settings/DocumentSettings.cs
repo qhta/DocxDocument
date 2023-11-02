@@ -4,13 +4,12 @@ namespace DocumentModel.Wordprocessing;
 public partial class DocumentSettings
 {
 
-  public DocumentSettings(DMW.Document document)
+  public DocumentSettings(DM.Document document)
   {
-    WordprocessingDocument = document.WordprocessingDocument;
-    Load();
+    _WordprocessingDocument = document._WordprocessingDocument;
   }
 
-  internal DXP.WordprocessingDocument WordprocessingDocument { get; private set; }
+  internal DXP.WordprocessingDocument? _WordprocessingDocument { get; private set; }
 
   //#region DocumentSettings
   internal DXW.Settings? _DocumentSettings { get; private set; }
@@ -18,28 +17,48 @@ public partial class DocumentSettings
   {
     get
     {
-      if (_DocumentSettings == null) Load();
+      if (_DocumentSettings == null)
+      {
+        if (_WordprocessingDocument != null)
+        {
+          var mainDocumentPart = _WordprocessingDocument.MainDocumentPart;
+          if (mainDocumentPart == null)
+            mainDocumentPart = _WordprocessingDocument.AddMainDocumentPart();
+          var settingsPart = mainDocumentPart.DocumentSettingsPart;
+          if (settingsPart == null)
+            settingsPart = mainDocumentPart.AddNewPart<DXP.DocumentSettingsPart>();
+          var settings = settingsPart.Settings;
+          if (settings == null)
+          {
+            settings = new DXW.Settings();
+            settingsPart.Settings = settings;
+          }
+          _DocumentSettings = settings;
+        }
+        else
+          _DocumentSettings = new DXW.Settings();
+      }
       Debug.Assert(_DocumentSettings != null);
       return _DocumentSettings;
     }
   }
 
-  public void Load()
-  {
-    var mainDocumentPart = WordprocessingDocument.MainDocumentPart;
-    if (mainDocumentPart == null)
-      mainDocumentPart = WordprocessingDocument.AddMainDocumentPart();
-    var settingsPart = mainDocumentPart.DocumentSettingsPart;
-    if (settingsPart == null)
-      settingsPart = mainDocumentPart.AddNewPart<DXP.DocumentSettingsPart>();
-    var settings = settingsPart.Settings;
-    if (settings == null)
-    {
-      settings = new DXW.Settings();
-      settingsPart.Settings = settings;
-    }
-    _DocumentSettings = settings;
-  }
+  //public void Load()
+  //{
+  //  var mainDocumentPart = WordprocessingDocument.MainDocumentPart;
+  //  if (mainDocumentPart == null)
+  //    mainDocumentPart = WordprocessingDocument.AddMainDocumentPart();
+  //  var settingsPart = mainDocumentPart.DocumentSettingsPart;
+  //  if (settingsPart == null)
+  //    settingsPart = mainDocumentPart.AddNewPart<DXP.DocumentSettingsPart>();
+  //  var settings = settingsPart.Settings;
+  //  if (settings == null)
+  //  {
+  //    settings = new DXW.Settings();
+  //    settingsPart.Settings = settings;
+  //  }
+  //  _DocumentSettings = settings;
+  //}
 
   /// <summary>
   /// Specifies the write protection settings which have been applied to a WordprocessingML document. 
@@ -337,8 +356,8 @@ public partial class DocumentSettings
   /// </summary>
   public NoBreakKinsoku? NoLineBreaksAfterKinsoku
   {
-    get => _DocumentSettings?.GetObject<NoBreakKinsoku,DXW.NoLineBreaksAfterKinsoku>();
-    set => _ExistingSettings.SetObject<NoBreakKinsoku,DXW.NoLineBreaksAfterKinsoku>(value);
+    get => _DocumentSettings?.GetObject<NoBreakKinsoku, DXW.NoLineBreaksAfterKinsoku>();
+    set => _ExistingSettings.SetObject<NoBreakKinsoku, DXW.NoLineBreaksAfterKinsoku>(value);
 
   }
 
@@ -351,8 +370,8 @@ public partial class DocumentSettings
   /// </summary>
   public NoBreakKinsoku? NoLineBreaksBeforeKinsoku
   {
-    get => _DocumentSettings?.GetObject<NoBreakKinsoku,DXW.NoLineBreaksBeforeKinsoku>();
-    set => _ExistingSettings.SetObject<NoBreakKinsoku,DXW.NoLineBreaksBeforeKinsoku>(value);
+    get => _DocumentSettings?.GetObject<NoBreakKinsoku, DXW.NoLineBreaksBeforeKinsoku>();
+    set => _ExistingSettings.SetObject<NoBreakKinsoku, DXW.NoLineBreaksBeforeKinsoku>(value);
   }
 
   /// <summary>
@@ -551,8 +570,8 @@ public partial class DocumentSettings
   }
 
   /// <summary>
-  /// A CT_LongHexNumber element that specifies an arbitrary identifier for the context of the paragraph identifiers in the document. 
-  /// Values MUST be greater than 0 and less than 0x80000000. See section 2.2.2 for how this element integrates with [ISO/IEC-29500-1].
+  /// LongHexNumber element that specifies an arbitrary identifier for the context of the paragraph identifiers in the document. 
+  /// Values MUST be greater than 0 and less than 0x80000000.
   /// </summary>
   public HexInt? DocumentId
   {
@@ -561,15 +580,35 @@ public partial class DocumentSettings
   }
 
   /// <summary>
-  /// The docId global element<23> is a CT_Guid (as specified in [ISO/IEC-29500-1] section A.1) element 
-  /// that specifies a unique identifier for a set of documents derived from a common source. 
-  /// The possible values for this attribute are defined by the ST_Guid simple type (as specified in [ISO/IEC-29500-1] Section 22.9.2.4). 
-  /// See section 2.2.2 for how this element integrates with [ISO/IEC-29500-1].
+  /// Specifies a unique identifier for a set of documents derived from a common source. 
+  /// The possible values for this attribute are defined by Guid simple type. 
   /// </summary>
   public Guid? PersistentDocumentId
   {
     get => _DocumentSettings?.GetGuidVal<DXW13.PersistentDocumentId>();
     set => _ExistingSettings.SetGuidVal<DXW13.PersistentDocumentId>(value);
+  }
+
+  /// <summary>
+  /// Specifies the resolution in dots per inch (DPI) at which images in the document will be saved. 
+  /// This setting is ignored by images that have dots per inch (DPI) specified by UseLocalDpi. 
+  /// This setting is also ignored when DoNotAutoCompressPictures is set to "true".
+  /// </summary>
+  public Int32? DefaultImageDpi
+  {
+    get => _DocumentSettings?.GetInt32Val<DXW10.DefaultImageDpi>();
+    set => _ExistingSettings.SetInt32Val<DXW10.DefaultImageDpi>(value);
+  }
+
+  /// <summary>
+  /// Boolean that specifies that when true, the cropped-out areas of the images are not to be saved. 
+  /// Rather, the images saved are the results of applying ImgProps on the original images. 
+  /// If this element is absent or if it has a value of "false", the cropped-out areas of images are saved.
+  /// </summary>
+  public Boolean? DiscardImageEditingData
+  {
+    get => _DocumentSettings?.GetBooleanVal<DXW10.DiscardImageEditingData>();
+    set => _ExistingSettings.SetBooleanVal<DXW10.DiscardImageEditingData>(value);
   }
 
   ///   <item><description><see cref="DocumentFormat.OpenXml.CustomXmlSchemaReferences.SchemaLibrary" /> <c>&lt;sl:schemaLibrary></c></description></item>
@@ -580,24 +619,6 @@ public partial class DocumentSettings
 
   ///   <item><description><see cref=" DXW.MailMerge" /> <c>&lt;w:mailMerge></c></description></item>
   ///   <item><description><see cref=" DXW.BookFoldPrintingSheets" /> <c>&lt;w:bookFoldPrintingSheets></c></description></item>
-  ///   <item><description><see cref=" DXW.RemovePersonalInformation" /> <c>&lt;w:removePersonalInformation></c></description></item>
-  ///   <item><description><see cref=" DXW.RemoveDateAndTime" /> <c>&lt;w:removeDateAndTime></c></description></item>
-  ///   <item><description><see cref=" DXW.DoNotDisplayPageBoundaries" /> <c>&lt;w:doNotDisplayPageBoundaries></c></description></item>
-  ///   <item><description><see cref=" DXW.DisplayBackgroundShape" /> <c>&lt;w:displayBackgroundShape></c></description></item>
-  ///   <item><description><see cref=" DXW.PrintPostScriptOverText" /> <c>&lt;w:printPostScriptOverText></c></description></item>
-  ///   <item><description><see cref=" DXW.PrintFractionalCharacterWidth" /> <c>&lt;w:printFractionalCharacterWidth></c></description></item>
-  ///   <item><description><see cref=" DXW.PrintFormsData" /> <c>&lt;w:printFormsData></c></description></item>
-  ///   <item><description><see cref=" DXW.EmbedTrueTypeFonts" /> <c>&lt;w:embedTrueTypeFonts></c></description></item>
-  ///   <item><description><see cref=" DXW.EmbedSystemFonts" /> <c>&lt;w:embedSystemFonts></c></description></item>
-  ///   <item><description><see cref=" DXW.SaveSubsetFonts" /> <c>&lt;w:saveSubsetFonts></c></description></item>
-  ///   <item><description><see cref=" DXW.SaveFormsData" /> <c>&lt;w:saveFormsData></c></description></item>
-  ///   <item><description><see cref=" DXW.MirrorMargins" /> <c>&lt;w:mirrorMargins></c></description></item>
-  ///   <item><description><see cref=" DXW.AlignBorderAndEdges" /> <c>&lt;w:alignBordersAndEdges></c></description></item>
-  ///   <item><description><see cref=" DXW.BordersDoNotSurroundHeader" /> <c>&lt;w:bordersDoNotSurroundHeader></c></description></item>
-  ///   <item><description><see cref=" DXW.BordersDoNotSurroundFooter" /> <c>&lt;w:bordersDoNotSurroundFooter></c></description></item>
-  ///   <item><description><see cref=" DXW.GutterAtTop" /> <c>&lt;w:gutterAtTop></c></description></item>
-  ///   <item><description><see cref=" DXW.HideSpellingErrors" /> <c>&lt;w:hideSpellingErrors></c></description></item>
-  ///   <item><description><see cref=" DXW.HideGrammaticalErrors" /> <c>&lt;w:hideGrammaticalErrors></c></description></item>
   ///   <item><description><see cref=" DXW.FormsDesign" /> <c>&lt;w:formsDesign></c></description></item>
   ///   <item><description><see cref=" DXW.LinkStyles" /> <c>&lt;w:linkStyles></c></description></item>
   ///   <item><description><see cref=" DXW.TrackRevisions" /> <c>&lt;w:trackRevisions></c></description></item>
@@ -636,11 +657,9 @@ public partial class DocumentSettings
   ///   <item><description><see cref=" DXW.AttachedTemplate" /> <c>&lt;w:attachedTemplate></c></description></item>
   ///   <item><description><see cref=" DXW.SaveThroughXslt" /> <c>&lt;w:saveThroughXslt></c></description></item>
   ///   <item><description><see cref=" DXW.HeaderShapeDefaults" /> <c>&lt;w:hdrShapeDefaults></c></description></item>
-  ///   <item><description><see cref=" DXW.ShapeDefaults" /> <c>&lt;w:shapeDefaults></c></description></item>
   ///   <item><description><see cref=" DXW.AttachedSchema" /> <c>&lt;w:attachedSchema></c></description></item>
   ///   <item><description><see cref=" DXW.ClickAndTypeStyle" /> <c>&lt;w:clickAndTypeStyle></c></description></item>
   ///   <item><description><see cref=" DXW.DefaultTableStyle" /> <c>&lt;w:defaultTableStyle></c></description></item>
-  ///   <item><description><see cref=" DXW.StylePaneFormatFilter" /> <c>&lt;w:stylePaneFormatFilter></c></description></item>
   ///   <item><description><see cref=" DXW.StylePaneSortMethods" /> <c>&lt;w:stylePaneSortMethod></c></description></item>
   ///   <item><description><see cref=" DXW.RevisionView" /> <c>&lt;w:revisionView></c></description></item>
   ///   <item><description><see cref=" DXW.DrawingGridHorizontalSpacing" /> <c>&lt;w:drawingGridHorizontalSpacing></c></description></item>
@@ -651,17 +670,9 @@ public partial class DocumentSettings
   ///   <item><description><see cref=" DXW.DisplayHorizontalDrawingGrid" /> <c>&lt;w:displayHorizontalDrawingGridEvery></c></description></item>
   ///   <item><description><see cref=" DXW.DisplayVerticalDrawingGrid" /> <c>&lt;w:displayVerticalDrawingGridEvery></c></description></item>
   ///   <item><description><see cref=" DXW.ConsecutiveHyphenLimit" /> <c>&lt;w:consecutiveHyphenLimit></c></description></item>
-  ///   <item><description><see cref=" DXW.View" /> <c>&lt;w:view></c></description></item>
-  ///   <item><description><see cref=" DXW.WriteProtection" /> <c>&lt;w:writeProtection></c></description></item>
   ///   <item><description><see cref=" DXW.ActiveWritingStyle" /> <c>&lt;w:activeWritingStyle></c></description></item>
-  ///   <item><description><see cref=" DXW.Zoom" /> <c>&lt;w:zoom></c></description></item>
-  ///   <item><description><see cref="DocumentFormat.OpenXml.Office2010.Word.DefaultImageDpi" /> <c>&lt;w14:defaultImageDpi></c></description></item>
-  ///   <item><description><see cref="DocumentFormat.OpenXml.Office2010.Word.DocumentId" /> <c>&lt;w14:docId></c></description></item>
-  ///   <item><description><see cref="DocumentFormat.OpenXml.Office2010.Word.DiscardImageEditingData" /> <c>&lt;w14:discardImageEditingData></c></description></item>
   ///   <item><description><see cref="DocumentFormat.OpenXml.Office2010.Word.ConflictMode" /> <c>&lt;w14:conflictMode></c></description></item>
-  ///   <item><description><see cref="DocumentFormat.OpenXml.Office2013.Word.PersistentDocumentId" /> <c>&lt;w15:docId></c></description></item>
 
   //#endregion
 }
-
 

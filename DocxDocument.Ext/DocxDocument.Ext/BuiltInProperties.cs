@@ -1,39 +1,24 @@
-﻿using DocumentFormat.OpenXml.Packaging;
-
-using DocumentModel.Wordprocessing;
+﻿using DocumentModel.Wordprocessing;
 
 namespace DocumentModel;
 public partial class BuiltInProperties
 {
-  public BuiltInProperties(DMW.Document document)
+  public BuiltInProperties()
   {
-    WordprocessingDocument = document.WordprocessingDocument;
-    Load();
-    Debug.Assert(_CoreProperties != null);
+    _ExtendedProperties = new DocumentFormat.OpenXml.ExtendedProperties.Properties();
   }
 
-  internal DXP.WordprocessingDocument WordprocessingDocument { get; private set; }
-
-  public void Load()
+  public BuiltInProperties(DM.Document document)
   {
-    LoadCoreProperties();
-    _ExtendedProperties = WordprocessingDocument.ExtendedFilePropertiesPart?.Properties;
+    _WordprocessingDocument = document._WordprocessingDocument;
+    _CoreProperties = _WordprocessingDocument?.PackageProperties;
+    _ExtendedProperties = _WordprocessingDocument?.ExtendedFilePropertiesPart?.Properties;
   }
+
+  internal DXP.WordprocessingDocument? _WordprocessingDocument { get; private set; }
 
   #region CoreProperties
-
-  internal void LoadCoreProperties()
-  {
-    var properties = WordprocessingDocument.PackageProperties;
-    if (properties == null)
-    {
-      var packagePropertiesPart = WordprocessingDocument.AddCoreFilePropertiesPart();
-      properties = WordprocessingDocument.PackageProperties;
-    }
-    _CoreProperties = properties;
-  }
-
-  internal PackageProperties _CoreProperties { get; private set; }
+  internal PackageProperties? _CoreProperties { get; private set; }
 
   /// <summary>
   /// The name given to the resource.
@@ -41,9 +26,10 @@ public partial class BuiltInProperties
   [DataMember]
   public string? Title
   {
-    get => _CoreProperties.Title;
-    set => _CoreProperties.Title = value;
+    get => _CoreProperties?.Title ?? _Title;
+    set { _Title = value; if (_CoreProperties != null) _CoreProperties.Title = value; }
   }
+  private string? _Title;
 
   /// <summary>
   /// An entity primarily responsible for making the content of the resource. 
@@ -51,9 +37,10 @@ public partial class BuiltInProperties
   [DataMember]
   public string? Creator
   {
-    get => _CoreProperties.Creator;
-    set => _CoreProperties.Creator = value;
+    get => _CoreProperties?.Creator ?? _Creator;
+    set { _Creator = value; if (_CoreProperties != null) _CoreProperties.Creator = value; }
   }
+  private string? _Creator;
 
   /// <summary>
   /// Date of creation of the resource. 
@@ -61,9 +48,10 @@ public partial class BuiltInProperties
   [DataMember]
   public DateTime? Created
   {
-    get => _CoreProperties.Created;
-    set => _CoreProperties.Created = value;
+    get => _CoreProperties?.Created ?? _Created;
+    set { _Created = value; if (_CoreProperties != null) _CoreProperties.Created = value; }
   }
+  private DateTime? _Created;
 
   /// <summary>
   /// The user who performed the last modification. The identification is environment-specific. 
@@ -73,9 +61,10 @@ public partial class BuiltInProperties
   [DataMember]
   public string? LastModifiedBy
   {
-    get => _CoreProperties.LastModifiedBy;
-    set => _CoreProperties.LastModifiedBy = value;
+    get => _CoreProperties?.LastModifiedBy ?? _LastModifiedBy;
+    set { _LastModifiedBy = value; if (_CoreProperties != null) _CoreProperties.LastModifiedBy = value; }
   }
+  private string? _LastModifiedBy;
 
   /// <summary>
   /// Date on which the resource was changed.
@@ -83,9 +72,10 @@ public partial class BuiltInProperties
   [DataMember]
   public DateTime? Modified
   {
-    get => _CoreProperties.Modified;
-    set => _CoreProperties.Modified = value;
+    get => _CoreProperties?.Modified ?? _Modified;
+    set { _Modified = value; if (_CoreProperties != null) _CoreProperties.Modified = value; }
   }
+  private DateTime? _Modified;
 
   /// <summary>
   /// The date and time of the last printing.
@@ -93,9 +83,10 @@ public partial class BuiltInProperties
   [DataMember]
   public DateTime? LastPrinted
   {
-    get => _CoreProperties.LastPrinted;
-    set => _CoreProperties.LastPrinted = value;
+    get => _CoreProperties?.LastPrinted ?? _LastPrinted;
+    set { _LastPrinted = value; if (_CoreProperties != null) _CoreProperties.LastPrinted = value; }
   }
+  private DateTime? _LastPrinted;
 
   /// <summary>
   /// The topic of the content of the resource.
@@ -103,9 +94,10 @@ public partial class BuiltInProperties
   [DataMember]
   public string? Subject
   {
-    get => _CoreProperties.Subject;
-    set => _CoreProperties.Subject = value;
+    get => _CoreProperties?.Subject ?? _Subject;
+    set { _Subject = value; if (_CoreProperties != null) _CoreProperties.Subject = value; }
   }
+  private string? _Subject;
 
   /// <summary>
   /// The revision number. 
@@ -115,9 +107,10 @@ public partial class BuiltInProperties
   [DataMember]
   public string? Revision
   {
-    get => _CoreProperties.Revision;
-    set => _CoreProperties.Revision = value;
+    get => _CoreProperties?.Revision ?? _Revision;
+    set { _Revision = value; if (_CoreProperties != null) _CoreProperties.Revision = value; }
   }
+  private string? _Revision;
 
   /// <summary>
   /// The language of the intellectual content of the resource. 
@@ -126,9 +119,10 @@ public partial class BuiltInProperties
   [DataMember]
   public string? Language
   {
-    get => _CoreProperties.Language;
-    set => _CoreProperties.Language = value;
+    get => _CoreProperties?.Language ?? _Language;
+    set { _Language = value; if (_CoreProperties != null) _CoreProperties.Language = value; }
   }
+  private string? _Language;
 
   /// <summary>
   /// A delimited set of keywords to support searching and indexing. This is typically a list of terms that are not available elsewhere in the properties.   
@@ -149,9 +143,10 @@ public partial class BuiltInProperties
   [DataMember]
   public string? Keywords
   {
-    get => _CoreProperties.Keywords;
-    set => _CoreProperties.Keywords = value;
+    get => _CoreProperties?.Keywords ?? _Keywords;
+    set { _Keywords = value; if (_CoreProperties != null) _CoreProperties.Keywords = value; }
   }
+  private string? _Keywords;
 
   /// <summary>
   /// Gets or sets a value that unambiguously identifies Package and its content.
@@ -159,9 +154,10 @@ public partial class BuiltInProperties
   [DataMember]
   public string? Identifier
   {
-    get => _CoreProperties.Identifier;
-    set => _CoreProperties.Identifier = value;
+    get => _CoreProperties?.Identifier ?? _Identifier;
+    set { _Identifier = value; if (_CoreProperties != null) _CoreProperties.Identifier = value; }
   }
+  private string? _Identifier;
 
   /// <summary>
   /// Gets or sets a value that represents the type of content that is contained in the Package.
@@ -169,9 +165,10 @@ public partial class BuiltInProperties
   [DataMember]
   public string? ContentType
   {
-    get => _CoreProperties.ContentType;
-    set => _CoreProperties.ContentType = value;
+    get => _CoreProperties?.ContentType ?? _ContentType;
+    set { _ContentType = value; if (_CoreProperties != null) _CoreProperties.ContentType = value; }
   }
+  private string? _ContentType;
 
   /// <summary>
   /// The status of the content. [Example: Values might include “Draft”, “Reviewed”, and “Final”.  end example] 
@@ -179,9 +176,10 @@ public partial class BuiltInProperties
   [DataMember]
   public string? ContentStatus
   {
-    get => _CoreProperties.ContentStatus;
-    set => _CoreProperties.ContentStatus = value;
+    get => _CoreProperties?.ContentStatus ?? _ContentStatus;
+    set { _ContentStatus = value; if (_CoreProperties != null) _CoreProperties.ContentStatus = value; }
   }
+  private string? _ContentStatus;
 
   /// <summary>
   /// A categorization of the content of this package. 
@@ -191,9 +189,10 @@ public partial class BuiltInProperties
   [DataMember]
   public string? Category
   {
-    get => _CoreProperties.Category;
-    set => _CoreProperties.Category = value;
+    get => _CoreProperties?.Category ?? _Category;
+    set { _Category = value; if (_CoreProperties != null) _CoreProperties.Category = value; }
   }
+  private string? _Category;
 
   /// <summary>
   /// An explanation of the content of the resource. 
@@ -203,9 +202,10 @@ public partial class BuiltInProperties
   [DataMember]
   public string? Description
   {
-    get => _CoreProperties.Description;
-    set => _CoreProperties.Description = value;
+    get => _CoreProperties?.Description ?? _Description;
+    set { _Description = value; if (_CoreProperties != null) _CoreProperties.Description = value; }
   }
+  private string? _Description;
 
   /// <summary>
   /// The version number. This value is set by the user or by the application.
@@ -213,33 +213,41 @@ public partial class BuiltInProperties
   [DataMember]
   public string? Version
   {
-    get => _CoreProperties.Version;
-    set => _CoreProperties.Version = value;
+    get => _CoreProperties?.Version ?? _Version;
+    set { _Version = value; if (_CoreProperties != null) _CoreProperties.Version = value; }
   }
   #endregion
+  private string? _Version;
 
   #region ExtendedProperties
 
-  public bool HasExtendedProperties => WordprocessingDocument.ExtendedFilePropertiesPart?.Properties != null;
+  public bool HasExtendedProperties => _WordprocessingDocument?.ExtendedFilePropertiesPart?.Properties != null;
 
   internal DXEP.Properties? _ExtendedProperties { get; private set; }
 
-  private DXEP.Properties ExistingProperties
+  private DXEP.Properties _ExistingExtendedProperties
   {
     get
     {
-      var propertiesPart = WordprocessingDocument.ExtendedFilePropertiesPart;
-      if (propertiesPart == null)
+      if (_ExtendedProperties == null)
       {
-        propertiesPart = WordprocessingDocument.AddExtendedFilePropertiesPart();
+        if (_WordprocessingDocument != null)
+        {
+          var propertiesPart = _WordprocessingDocument.ExtendedFilePropertiesPart;
+          if (propertiesPart == null)
+            propertiesPart = _WordprocessingDocument.AddExtendedFilePropertiesPart();
+          _ExtendedProperties = propertiesPart.Properties;
+          if (_ExtendedProperties == null)
+          {
+            _ExtendedProperties = new DXEP.Properties();
+            propertiesPart.Properties = _ExtendedProperties;
+          }
+        }
+        else
+          _ExtendedProperties = new DXEP.Properties();
       }
-      var properties = propertiesPart.Properties;
-      if (properties == null)
-      {
-        properties = new DXEP.Properties();
-        propertiesPart.Properties = properties;
-      }
-      return properties;
+      Debug.Assert(_ExtendedProperties != null);
+      return _ExtendedProperties;
     }
   }
 
@@ -256,9 +264,9 @@ public partial class BuiltInProperties
     set
     {
       if (value != null)
-        ExistingProperties.DigitalSignature = new DXEP.DigitalSignature(value);
+        _ExistingExtendedProperties.DigitalSignature = new DXEP.DigitalSignature(value);
       else
-        ExistingProperties.DigitalSignature = null;
+        _ExistingExtendedProperties.DigitalSignature = null;
     }
   }
 
@@ -267,21 +275,15 @@ public partial class BuiltInProperties
   /// These parts are not document parts but conceptual representations of document sections.
   /// </summary>
   [DataMember]
-  public Array? TitlesOfParts
+  public StringList? TitlesOfParts
   {
-    get => _ExtendedProperties?.TitlesOfParts?.VTVector.AsArray();
+    get => _ExtendedProperties?.TitlesOfParts?.VTVector.AsStringList();
     set
     {
       if (value != null)
-      {
-        var _element = new DXEP.TitlesOfParts();
-        var childArray = value.AsVTVector();
-        if (childArray != null)
-          _element.AppendChild(childArray);
-        ExistingProperties.TitlesOfParts = _element;
-      }
+        _ExistingExtendedProperties.TitlesOfParts = new DXEP.TitlesOfParts(value.AsVTVector()!);
       else
-        ExistingProperties.TitlesOfParts = null;
+        _ExistingExtendedProperties.TitlesOfParts = null;
     }
   }
 
@@ -290,21 +292,15 @@ public partial class BuiltInProperties
   /// These parts are not document parts but conceptual representations of document sections.
   /// </summary>
   [DataMember]
-  public Array? HeadingPairs
+  public HeadingPairs? HeadingPairs
   {
-    get => _ExtendedProperties?.HeadingPairs?.VTVector.AsArray();
+    get => _ExtendedProperties?.HeadingPairs?.VTVector.AsHeadingPairs();
     set
     {
       if (value != null)
-      {
-        var _element = new DXEP.HeadingPairs();
-        var childArray = value.AsVTVector();
-        if (childArray != null)
-          _element.AppendChild(childArray);
-        ExistingProperties.HeadingPairs = _element;
-      }
+        _ExistingExtendedProperties.HeadingPairs = new DXEP.HeadingPairs(value.AsVTVector()!);
       else
-        ExistingProperties.HeadingPairs = null;
+        _ExistingExtendedProperties.HeadingPairs = null;
     }
   }
 
@@ -312,21 +308,15 @@ public partial class BuiltInProperties
   /// This element specifies the set of hyperlinks that were in this document when last saved.
   /// </summary>
   [DataMember]
-  public Array? HyperlinkList
+  public HyperlinkList? HyperlinkList
   {
-    get => _ExtendedProperties?.HyperlinkList?.VTVector.AsArray();
+    get => _ExtendedProperties?.HyperlinkList?.VTVector.AsHyperlinkList();
     set
     {
       if (value != null)
-      {
-        var _element = new DXEP.HyperlinkList();
-        var childArray = value.AsVTVector();
-        if (childArray != null)
-          _element.AppendChild(childArray);
-        ExistingProperties.HyperlinkList = _element;
-      }
+        _ExistingExtendedProperties.HyperlinkList = new DXEP.HyperlinkList(value.AsVTVector()!);
       else
-        ExistingProperties.HyperlinkList = null;
+        _ExistingExtendedProperties.HyperlinkList = null;
     }
   }
 
@@ -338,26 +328,18 @@ public partial class BuiltInProperties
   /// 8	Document is locked for annotation.
   /// </summary>
   [DataMember]
-  public DocumentSecurity? DocumentSecurity
+  public int? DocumentSecurity
   {
-    get
-    {
-      var val = _ExtendedProperties?.DocumentSecurity?.AsInt();
-      if (val != null)
-      {
-        return (DocumentSecurity)Enum.ToObject(typeof(DocumentSecurity), val);
-      }
-      return null;
-    }
+    get => _ExtendedProperties?.DocumentSecurity?.AsInt();
     set
     {
       if (value != null)
       {
-        var val = Convert.ChangeType(value, typeof(int));
-        ExistingProperties.DocumentSecurity = new DXEP.DocumentSecurity(val.ToString()!);
+        var val = (uint)Convert.ChangeType(value, typeof(uint));
+        _ExistingExtendedProperties.DocumentSecurity = new DXEP.DocumentSecurity(val.ToString()!);
       }
       else
-        ExistingProperties.DocumentSecurity = null;
+        _ExistingExtendedProperties.DocumentSecurity = null;
     }
   }
 
@@ -373,9 +355,9 @@ public partial class BuiltInProperties
     set
     {
       if (value != null)
-        ExistingProperties.ScaleCrop = new DXEP.ScaleCrop(value.ToString()!);
+        _ExistingExtendedProperties.ScaleCrop = new DXEP.ScaleCrop(value.ToString()!);
       else
-        ExistingProperties.ScaleCrop = null;
+        _ExistingExtendedProperties.ScaleCrop = null;
     }
   }
 
@@ -390,9 +372,9 @@ public partial class BuiltInProperties
     set
     {
       if (value != null)
-        ExistingProperties.SharedDocument = new DXEP.SharedDocument(value.ToString()!);
+        _ExistingExtendedProperties.SharedDocument = new DXEP.SharedDocument(value.ToString()!);
       else
-        ExistingProperties.SharedDocument = null;
+        _ExistingExtendedProperties.SharedDocument = null;
     }
   }
 
@@ -408,9 +390,9 @@ public partial class BuiltInProperties
     set
     {
       if (value != null)
-        ExistingProperties.LinksUpToDate = new DXEP.LinksUpToDate(value.ToString()!);
+        _ExistingExtendedProperties.LinksUpToDate = new DXEP.LinksUpToDate(value.ToString()!);
       else
-        ExistingProperties.LinksUpToDate = null;
+        _ExistingExtendedProperties.LinksUpToDate = null;
     }
   }
 
@@ -425,9 +407,9 @@ public partial class BuiltInProperties
     set
     {
       if (value != null)
-        ExistingProperties.HyperlinksChanged = new DXEP.HyperlinksChanged(value.ToString()!);
+        _ExistingExtendedProperties.HyperlinksChanged = new DXEP.HyperlinksChanged(value.ToString()!);
       else
-        ExistingProperties.HyperlinksChanged = null;
+        _ExistingExtendedProperties.HyperlinksChanged = null;
     }
   }
 
@@ -441,9 +423,9 @@ public partial class BuiltInProperties
     set
     {
       if (value != null)
-        ExistingProperties.HyperlinkBase = new DXEP.HyperlinkBase(value);
+        _ExistingExtendedProperties.HyperlinkBase = new DXEP.HyperlinkBase(value);
       else
-        ExistingProperties.HyperlinkBase = null;
+        _ExistingExtendedProperties.HyperlinkBase = null;
     }
   }
 
@@ -457,9 +439,9 @@ public partial class BuiltInProperties
     set
     {
       if (value != null)
-        ExistingProperties.Template = new DXEP.Template(value);
+        _ExistingExtendedProperties.Template = new DXEP.Template(value);
       else
-        ExistingProperties.Template = null;
+        _ExistingExtendedProperties.Template = null;
     }
   }
 
@@ -473,9 +455,9 @@ public partial class BuiltInProperties
     set
     {
       if (value != null)
-        ExistingProperties.Manager = new DXEP.Manager(value);
+        _ExistingExtendedProperties.Manager = new DXEP.Manager(value);
       else
-        ExistingProperties.Manager = null;
+        _ExistingExtendedProperties.Manager = null;
     }
   }
 
@@ -489,9 +471,9 @@ public partial class BuiltInProperties
     set
     {
       if (value != null)
-        ExistingProperties.Company = new DXEP.Company(value);
+        _ExistingExtendedProperties.Company = new DXEP.Company(value);
       else
-        ExistingProperties.Company = null;
+        _ExistingExtendedProperties.Company = null;
     }
   }
 
@@ -506,9 +488,9 @@ public partial class BuiltInProperties
     set
     {
       if (value != null)
-        ExistingProperties.PresentationFormat = new DXEP.PresentationFormat(value);
+        _ExistingExtendedProperties.PresentationFormat = new DXEP.PresentationFormat(value);
       else
-        ExistingProperties.PresentationFormat = null;
+        _ExistingExtendedProperties.PresentationFormat = null;
     }
   }
 
@@ -522,9 +504,9 @@ public partial class BuiltInProperties
     set
     {
       if (value != null)
-        ExistingProperties.Application = new DXEP.Application(value);
+        _ExistingExtendedProperties.Application = new DXEP.Application(value);
       else
-        ExistingProperties.Application = null;
+        _ExistingExtendedProperties.Application = null;
     }
   }
 
@@ -543,9 +525,9 @@ public partial class BuiltInProperties
     set
     {
       if (value != null)
-        ExistingProperties.ApplicationVersion = new DXEP.ApplicationVersion(value);
+        _ExistingExtendedProperties.ApplicationVersion = new DXEP.ApplicationVersion(value);
       else
-        ExistingProperties.ApplicationVersion = null;
+        _ExistingExtendedProperties.ApplicationVersion = null;
     }
   }
 
@@ -559,9 +541,9 @@ public partial class BuiltInProperties
     set
     {
       if (value != null)
-        ExistingProperties.Pages = new DXEP.Pages(value.ToString()!);
+        _ExistingExtendedProperties.Pages = new DXEP.Pages(value.ToString()!);
       else
-        ExistingProperties.Pages = null;
+        _ExistingExtendedProperties.Pages = null;
     }
   }
 
@@ -572,9 +554,9 @@ public partial class BuiltInProperties
     set
     {
       if (value != null)
-        ExistingProperties.Words = new DXEP.Words(value.ToString()!);
+        _ExistingExtendedProperties.Words = new DXEP.Words(value.ToString()!);
       else
-        ExistingProperties.Words = null;
+        _ExistingExtendedProperties.Words = null;
     }
   }
 
@@ -588,9 +570,9 @@ public partial class BuiltInProperties
     set
     {
       if (value != null)
-        ExistingProperties.Characters = new DXEP.Characters(value.ToString()!);
+        _ExistingExtendedProperties.Characters = new DXEP.Characters(value.ToString()!);
       else
-        ExistingProperties.Characters = null;
+        _ExistingExtendedProperties.Characters = null;
     }
   }
 
@@ -604,9 +586,9 @@ public partial class BuiltInProperties
     set
     {
       if (value != null)
-        ExistingProperties.CharactersWithSpaces = new DXEP.CharactersWithSpaces(value.ToString()!);
+        _ExistingExtendedProperties.CharactersWithSpaces = new DXEP.CharactersWithSpaces(value.ToString()!);
       else
-        ExistingProperties.CharactersWithSpaces = null;
+        _ExistingExtendedProperties.CharactersWithSpaces = null;
     }
   }
 
@@ -621,9 +603,9 @@ public partial class BuiltInProperties
     set
     {
       if (value != null)
-        ExistingProperties.Lines = new DXEP.Lines(value.ToString()!);
+        _ExistingExtendedProperties.Lines = new DXEP.Lines(value.ToString()!);
       else
-        ExistingProperties.Lines = null;
+        _ExistingExtendedProperties.Lines = null;
     }
   }
 
@@ -637,9 +619,9 @@ public partial class BuiltInProperties
     set
     {
       if (value != null)
-        ExistingProperties.Paragraphs = new DXEP.Paragraphs(value.ToString()!);
+        _ExistingExtendedProperties.Paragraphs = new DXEP.Paragraphs(value.ToString()!);
       else
-        ExistingProperties.Paragraphs = null;
+        _ExistingExtendedProperties.Paragraphs = null;
     }
   }
 
@@ -653,9 +635,9 @@ public partial class BuiltInProperties
     set
     {
       if (value != null)
-        ExistingProperties.TotalTime = new DXEP.TotalTime(value.ToString()!);
+        _ExistingExtendedProperties.TotalTime = new DXEP.TotalTime(value.ToString()!);
       else
-        ExistingProperties.TotalTime = null;
+        _ExistingExtendedProperties.TotalTime = null;
     }
   }
   #endregion
