@@ -1,59 +1,91 @@
 ﻿namespace DocumentModel;
 
-public class CustomProperty
+[DataContract]
+public class CustomProperty: IOpenXmlElementMappedObject
 {
-  public CustomProperty(DXCP.CustomDocumentProperty property)
-  {
-    _property = property;
+  public CustomProperty() 
+  { 
+    _Element = new DXCP.CustomDocumentProperty();
   }
 
-  private DXCP.CustomDocumentProperty _property;
+  public CustomProperty(DX.OpenXmlElement openXmlElement)
+  {
+    _Element = (DXCP.CustomDocumentProperty)openXmlElement;
+  }
 
+  public OpenXmlElementType GetElement<OpenXmlElementType>() where OpenXmlElementType: DX.OpenXmlElement
+  {
+    if (_ExistingElement is OpenXmlElementType validTypeElement)
+    return validTypeElement;
+      throw new ArgumentException($"Only {_ExistingElement.GetType()} type supported in GetElement of {this.GetType()}");
+  }
+
+  public CustomProperty(DXCP.CustomDocumentProperty property)
+  {
+    _Element = property;
+  }
+
+  internal DXCP.CustomDocumentProperty? _Element { get; private set; }
+
+  internal DXCP.CustomDocumentProperty _ExistingElement 
+  { 
+    get
+    {
+      if (_Element == null)
+        _Element = new DXCP.CustomDocumentProperty();
+      return _Element;
+    }
+    private set => _Element=value;
+  }
+
+
+  [DataMember]
   public string? Name
   {
-    get => _property.Name?.Value;
+    get => _Element?.Name?.Value;
     set
     {
       if (value != null)
-        _property.Name = value;
+        _ExistingElement.Name = value;
       else
-        _property.Name = null;
+        _ExistingElement.Name = null;
     }
   }
 
+  [DataMember]
   public int? Id
   {
-    get => _property.PropertyId?.Value;
+    get => _Element?.PropertyId?.Value;
     set
     {
       if (value != null)
-        _property.PropertyId = value;
+        _ExistingElement.PropertyId = value;
       else
-        _property.PropertyId = null;
+        _ExistingElement.PropertyId = null;
     }
   }
 
   public Guid? FormatId
   {
-    get => _property.FormatId?.AsGuid();
+    get => _Element?.FormatId?.AsGuid();
     set
     {
       if (value != null)
-        _property.FormatId = value.ToString();
+        _ExistingElement.FormatId = value.ToString();
       else
-        _property.FormatId = null;
+        _ExistingElement.FormatId = null;
     }
   }
 
   public string? LinkTarget
   {
-    get => _property.LinkTarget?.Value;
+    get => _Element?.LinkTarget?.Value;
     set
     {
       if (value != null)
-        _property.LinkTarget = value;
+        _ExistingElement.LinkTarget = value;
       else
-        _property.LinkTarget = null;
+        _ExistingElement.LinkTarget = null;
     }
   }
 
@@ -61,7 +93,7 @@ public class CustomProperty
   {
     get
     {
-      var childItem = _property.ChildElements.FirstOrDefault();
+      var childItem = _ExistingElement.ChildElements.FirstOrDefault();
       if (childItem!=null)
       {
         if (childItem is DXVT.VTVector vtVector)

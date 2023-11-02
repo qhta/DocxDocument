@@ -1,18 +1,7 @@
-using System.Diagnostics;
 using System.Reflection;
 using System.Runtime.Serialization;
-using System.Text;
-
-using DocumentFormat.OpenXml.Office2019.Excel.RichData2;
-using DocumentFormat.OpenXml.Packaging;
 
 using DocumentModel;
-using DocumentModel.Utils;
-
-using Microsoft.VisualStudio.TestPlatform.Utilities;
-
-using DM = DocumentModel;
-using DMW = DocumentModel.Wordprocessing;
 
 namespace DocxDocument.Test;
 
@@ -27,7 +16,7 @@ public class ReadWriteTest : ReadTest
     Output.WriteLine($"TestCreate: {file}");
     try
     {
-      using (var document = DMW.Document.Create(file))
+      using (var document = DM.Document.Create(file))
         Output.WriteLine($"  Type: {document.DocumentType}");
     }
     catch (Exception ex)
@@ -46,8 +35,8 @@ public class ReadWriteTest : ReadTest
     Output.WriteLine($"TestCopyProperties: {sourceFile} -> {targetFile}");
     try
     {
-      using (var sourceDocument = DMW.Document.Open(sourceFile, false))
-      using (var targetDocument = DMW.Document.Create(targetFile))
+      using (var sourceDocument = DM.Document.Open(sourceFile, false))
+      using (var targetDocument = DM.Document.Create(targetFile))
       {
         var props = typeof(DM.BuiltInProperties).GetProperties().Where(p=>p.GetCustomAttribute<DataMemberAttribute>()!=null).ToArray();
         foreach (var property in props) 

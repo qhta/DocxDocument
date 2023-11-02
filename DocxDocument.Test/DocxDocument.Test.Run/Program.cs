@@ -2,21 +2,20 @@
 {
   public static void Main(params string[] args)
   {
-    RunReadTest();
+    //RunReadTest();
+    RunSerializationTest();
   }
 
   private static void RunReadTest()
-  {
   {
     var test = new DocxDocument.Test.ReadWriteTest();
     test.Output = Console.Out;
     test.Initialize();
     Console.WriteLine($"Opening directory: {test.SamplesPath}");
     Console.WriteLine();
-    test.TestOpen();
+    test.TestOpenAllFiles();
     test.TestReadProperties();
     test.TestReadSettings();
-  }
   }
 
   private static void RunReadWriteTest()
@@ -29,4 +28,15 @@
     test.TestCreate();
     test.TestCopyProperties();
   }
+
+    private static void RunSerializationTest()
+  {
+    var test = new DocxDocument.Test.SerializationTest();
+    test.Output = Console.Out;
+    test.Initialize();
+    Console.WriteLine($"Opening directory: {test.SamplesPath}");
+    Console.WriteLine();
+    test.TestSerializeAndDeserialize();
+  }
 }
+
