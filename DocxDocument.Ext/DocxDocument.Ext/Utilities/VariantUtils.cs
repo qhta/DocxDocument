@@ -34,7 +34,7 @@ public static class VariantUtils
       return null;
     baseType = element.BaseType?.Value;
     Type itemType = (baseType == null) ? typeof(object) : VectorBaseValueToType[(DXVT.VectorBaseValues)baseType];
-    var size = (int?)element.Size?.Value ?? element.Elements().Count();
+    var size = /*(int?)element.Size?.Value ?? */element.Elements().Count();
     var array = Array.CreateInstance(itemType, size);
     var i = 0;
     foreach (var child in element.Elements())
@@ -108,7 +108,7 @@ public static class VariantUtils
     return vector;
   }
 
-  internal static Dictionary< DXVT.ArrayBaseValues, Type> ArrayBaseValueToType = new Dictionary< DXVT.ArrayBaseValues, Type>()
+  internal static Dictionary<DXVT.ArrayBaseValues, Type> ArrayBaseValueToType = new Dictionary<DXVT.ArrayBaseValues, Type>()
   {
     {  DXVT.ArrayBaseValues.Variant, typeof(object) },
     {  DXVT.ArrayBaseValues.OneByteSignedInteger, typeof(sbyte) },
@@ -130,13 +130,13 @@ public static class VariantUtils
 
   public static Array? AsArray(this DXVT.VTArray? element) => AsArray(element, out _);
 
-  public static Array? AsArray(this DXVT.VTArray? element, out  DXVT.ArrayBaseValues? baseType)
+  public static Array? AsArray(this DXVT.VTArray? element, out DXVT.ArrayBaseValues? baseType)
   {
     baseType = null;
     if (element == null)
       return null;
     baseType = element.BaseType?.Value;
-    var itemType = (baseType == null) ? typeof(object) : ArrayBaseValueToType[( DXVT.ArrayBaseValues)baseType];
+    var itemType = (baseType == null) ? typeof(object) : ArrayBaseValueToType[(DXVT.ArrayBaseValues)baseType];
     var lowerBounds = element.LowerBounds?.Value ?? 0;
     var upperBounds = element.UpperBounds?.Value ?? 0;
     Array? array = Array.CreateInstance(itemType, lowerBounds, upperBounds);
@@ -232,7 +232,7 @@ public static class VariantUtils
       case DXVT.VectorBaseValues.Variant:
         var result = new DXVT.Variant();
         var childElement = value.AsVTVariant();
-        if (childElement!=null)
+        if (childElement != null)
           result.AppendChild(childElement);
         return result;
       case DXVT.VectorBaseValues.OneByteSignedInteger:
@@ -284,11 +284,150 @@ public static class VariantUtils
     for (int i = 0; i < array.Length; i++)
     {
       var item = array.GetValue(i);
-      var s = (item is string str) ? "\""+item+"\"" : item?.ToString();
+      var s = (item is string str) ? "\"" + item + "\"" : item?.ToString();
       ss.Add(s);
     }
     return "{ " + String.Join(", ", ss) + " }";
   }
+
+  public static StringList? AsStringList(this DXVT.VTVector? element)
+  {
+    var array = element?.AsArray();
+    if (array != null)
+    {
+      var result = new StringList();
+      foreach (var item in array)
+        if (item is string str)
+          result.Add(str);
+      return result;
+    }
+    return null;
+  }
+
+  public static DXVT.VTVector? AsVTVector(this StringList? list)
+  {
+    if (list == null) return null;
+    var result = new DXVT.VTVector
+    {
+      Size = new DX.UInt32Value((uint)list.Count()),
+      BaseType = new DX.EnumValue<DXVT.VectorBaseValues>(DXVT.VectorBaseValues.Lpstr)
+    };
+    foreach (var str in list)
+    {
+      var childItem = new DXVT.VTLPSTR(str);
+      result.AppendChild(childItem);
+    }
+    return result;
+  }
+
+  public static HeadingPairs? AsHeadingPairs(this DXVT.VTVector? element)
+  {
+    var array = element?.AsArray();
+    if (array != null)
+    {
+      var result = new HeadingPairs();
+      for (int i = 0; i < array.Length / 2; i++)
+      {
+        var item1 = array.GetValue(i);
+        var item2 = array.GetValue(i + 1);
+        if (item1 is string str && item2 is int num)
+          result.Add(new HeadingPair { Heading = str, Num = num });
+      }
+      return result;
+    }
+    return null;
+  }
+
+  public static DXVT.VTVector? AsVTVector(this HeadingPairs? list)
+  {
+    if (list == null) return null;
+    var result = new DXVT.VTVector
+    {
+      Size = new DX.UInt32Value((uint)list.Count() * 2),
+      BaseType = new DX.EnumValue<DXVT.VectorBaseValues>(DXVT.VectorBaseValues.Variant)
+    };
+    foreach (var item in list)
+    {
+      var childItem1 = new DXVT.VTLPSTR(item.Heading ?? "");
+      result.AppendChild(childItem1);
+      var childItem2 = new DXVT.VTInt32(item.Num.ToString());
+      result.AppendChild(childItem2);
+    }
+    return result;
+  }
+
+  public static HyperlinkList? AsHyperlinkList(this DXVT.VTVector? element)
+  {
+    var array = element?.AsArray();
+    if (array != null)
+    {
+      var result = new HyperlinkList();
+      int n = array.Length;
+      for (int i = 0; i < n / 6; i++)
+      {
+        var item = new HyperlinkInfo();
+        for (var k = 0; k < 6; k++)
+        {
+          var varItem = array.GetValue(i * 6 + k);
+          if (varItem is not null)
+          {
+            switch (k)
+            {
+              case 0:
+                item.N1 = (int)varItem;
+                break;
+              case 1:
+                item.N2 = (int)varItem;
+                break;
+              case 2:
+                item.N3 = (int)varItem;
+                break;
+              case 3:
+                var n4 = (int)varItem;
+                var n4l = (Int16)(n4 & 0xFFFF);
+                item.Attachment = (HyperlinkAttachment)Enum.ToObject(typeof(HyperlinkAttachment), n4l);
+                var n4h = (Int16)(n4 >> 16 & 0xFFFF);
+                item.Action = (HyperlinkAction)Enum.ToObject(typeof(HyperlinkAction), n4h);
+                break;
+              case 4:
+                item.Target = (string)varItem;
+                break;
+              case 5:
+                item.Location = (string?)varItem;
+                break;
+            }
+          }
+        }
+        result.Add(item);
+      }
+      return result;
+    }
+    return null;
+  }
+
+  public static DXVT.VTVector? AsVTVector(this HyperlinkList? list)
+  {
+    if (list == null) return null;
+    var result = new DXVT.VTVector
+    {
+      Size = new DX.UInt32Value((uint)list.Count() * 2),
+      BaseType = new DX.EnumValue<DXVT.VectorBaseValues>(DXVT.VectorBaseValues.Variant)
+    };
+    foreach (var item in list)
+    {
+      result.AppendChild(new DXVT.VTInt32(item.N1.ToString()));
+      result.AppendChild(new DXVT.VTInt32(item.N2.ToString()));
+      result.AppendChild(new DXVT.VTInt32(item.N3.ToString()));
+      var n4h = (uint)Convert.ChangeType(item.Action,typeof(uint));
+      var n4l = (uint)Convert.ChangeType(item.Attachment,typeof(uint));
+      var n4 = (n4h << 16) | (n4l);
+      result.AppendChild(new DXVT.VTInt32(n4.ToString()));
+      result.AppendChild(new DXVT.VTLPSTR(item.Target ?? ""));
+      result.AppendChild(new DXVT.VTLPSTR(item.Location ?? ""));
+    }
+    return result;
+  }
+
 }
 
 
