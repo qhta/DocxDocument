@@ -1,8 +1,9 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///  This element specifies the defaults that are used when creating new shapes. These defaults are stored once per document.
+///  This class specifies the defaults that are used when creating new shapes. These defaults are stored once per document.
 /// </summary>
+[DataContract]
 public partial class ShapeDefaultsType : IOpenXmlElementMappedObject
 {
   public ShapeDefaultsType()

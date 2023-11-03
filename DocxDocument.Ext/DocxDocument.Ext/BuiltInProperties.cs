@@ -1,6 +1,9 @@
-﻿using DocumentModel.Wordprocessing;
+﻿namespace DocumentModel;
 
-namespace DocumentModel;
+/// <summary>
+/// This class represents a set of document properties stored in openXml document package
+/// in CoreFilePropertiesPart and ExtendedFilePropertiesPart.
+/// </summary>
 public partial class BuiltInProperties
 {
   public BuiltInProperties()

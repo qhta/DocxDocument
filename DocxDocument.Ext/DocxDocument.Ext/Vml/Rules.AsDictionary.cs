@@ -10,7 +10,7 @@ public partial class Rules : IDictionary<string, Rule>
   {
     var _element = _Element.Elements<DXVO.Rule>().FirstOrDefault(item => item.Id == key);
     if (_element != null)
-      throw new InvalidOperationException($"Rule {key} aready exists found");
+      throw new InvalidOperationException($"Rule {key} already exists found");
     _Element.AppendChild(value._Element);
   }
 

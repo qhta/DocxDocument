@@ -1,5 +1,10 @@
 ﻿namespace DocumentModel;
 
+/// <summary>
+/// This class specifies a single custom file property. 
+/// Custom file property type is defined through child elements in the File Properties Variant Type namespace. 
+/// Custom file property value can be set by setting the appropriate Variant Type child element value.
+/// </summary>
 [DataContract]
 public class CustomProperty: IOpenXmlElementMappedObject
 {

@@ -3,9 +3,10 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Specifies a set of suggested filters which should be applied to the list of document styles in this application 
+/// This class specifies a set of suggested filters which should be applied to the list of document styles in this application 
 /// if the styles are displayed in a user interface.
 /// </summary>
+[DataContract]
 public partial class StylePaneFormatFilter: IOpenXmlElementMappedObject
 {
   public StylePaneFormatFilter()

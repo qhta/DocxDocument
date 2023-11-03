@@ -1,9 +1,10 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Specifies a custom compatibility setting. The semantics for this element are implementation-defined. 
+/// This class specifies a custom compatibility setting. The semantics for this element are implementation-defined. 
 /// [Note: This element can be used to store the transitional compatibility settings specified in Part 4 of /IEC 29500. end note]
 /// </summary>
+[DataContract]
 public partial class CompatibilitySetting: IOpenXmlElementMappedObject
 {
   public CompatibilitySetting()

@@ -1,4 +1,8 @@
 ﻿namespace DocumentModel.Utils;
+
+/// <summary>
+/// This static class contains extension operations to be performed on a OpenXmlLeafTextElement object.
+/// </summary>
 public static class OpenXmlLeafTextElementUtils
 {
   public static Boolean? AsBoolean(this DX.OpenXmlLeafTextElement? element)

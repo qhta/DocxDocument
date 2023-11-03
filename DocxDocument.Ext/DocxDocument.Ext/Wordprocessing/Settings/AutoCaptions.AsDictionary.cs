@@ -8,7 +8,7 @@ public partial class AutoCaptions : IDictionary<string, string?>
   {
     var _element = _Element.Elements<DXW.AutoCaption>().FirstOrDefault(item => item.Name == key);
     if (_element != null)
-      throw new InvalidOperationException($"Caption {key} aready exists found");
+      throw new InvalidOperationException($"Caption {key} already exists found");
     _Element.AppendChild(new DXW.AutoCaption { Name = key, Caption = value });
   }
 

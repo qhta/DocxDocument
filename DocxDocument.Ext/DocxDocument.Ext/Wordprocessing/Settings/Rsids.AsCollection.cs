@@ -6,7 +6,7 @@ public partial class Rsids: ICollection<HexInt>
   {
     var _element = _Element.Elements<DXW.Rsid>().FirstOrDefault(item => item.Val?.Value!=null && Int32.Parse(item.Val.Value, NumberStyles.HexNumber)==value);
     if (_element != null)
-      throw new InvalidOperationException($"Rsid \"{value}\" aready exists");
+      throw new InvalidOperationException($"Rsid \"{value}\" already exists");
     _Element.AppendChild(new DXW.Rsid{Val=value.ToString()});
   }
 

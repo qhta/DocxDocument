@@ -1,15 +1,14 @@
-﻿using DocumentFormat.OpenXml.Office2019.Excel.RichData2;
-
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Specifies the set of document protection restrictions which have been applied to the contents of a WordprocessingML document. 
+/// This class specifies the set of document protection restrictions which have been applied to the contents of a WordprocessingML document. 
 /// These restrictions should be enforced by applications editing this document when the enforcement attribute is turned on, 
 /// and ignored (but persisted) otherwise. 
 /// Document protection is a set of restrictions used to prevent unintentional changes to all or part of a WordprocessingML document. 
 /// [Note: This protection does not encrypt the document, and malicious applications might circumvent its use. 
 /// This protection is not intended as a security feature. end note]
 /// </summary>
+[DataContract]
 public partial class DocumentProtection: IOpenXmlElementMappedObject
 {
   public DocumentProtection()

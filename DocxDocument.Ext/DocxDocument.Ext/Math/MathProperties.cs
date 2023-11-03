@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Math;
 
 /// <summary>
-///  Specifies the document-level properties for all math in the document. 
+///  This class specifies the document-level properties for all math in the document. 
 /// </summary>
 public class MathProperties : IOpenXmlElementMappedObject
 {
@@ -98,8 +98,8 @@ public class MathProperties : IOpenXmlElementMappedObject
   [DataMember]
   public Twips? LeftMargin
   {
-    get => _Element.GetTwips<DXM.LeftMargin>();
-    set => _Element.SetTwips<DXM.LeftMargin>(value);
+    get => _Element.GetTwipsVal<DXM.LeftMargin>();
+    set => _Element.SetTwipsVal<DXM.LeftMargin>(value);
   }
 
   /// <summary>
@@ -114,8 +114,8 @@ public class MathProperties : IOpenXmlElementMappedObject
   [DataMember]
   public Twips? RightMargin
   {
-    get => _Element.GetTwips<DXM.RightMargin>();
-    set => _Element.SetTwips<DXM.RightMargin>(value);
+    get => _Element.GetTwipsVal<DXM.RightMargin>();
+    set => _Element.SetTwipsVal<DXM.RightMargin>(value);
   }
 
   /// <summary>
@@ -143,8 +143,8 @@ public class MathProperties : IOpenXmlElementMappedObject
   [DataMember]
   public Twips? PreSpacing
   {
-    get => _Element.GetTwips<DXM.PreSpacing>();
-    set => _Element.SetTwips<DXM.PreSpacing>(value);
+    get => _Element.GetTwipsVal<DXM.PreSpacing>();
+    set => _Element.SetTwipsVal<DXM.PreSpacing>(value);
   }
 
   /// <summary>
@@ -153,8 +153,8 @@ public class MathProperties : IOpenXmlElementMappedObject
   [DataMember]
   public Twips? PostSpacing
   {
-    get => _Element.GetTwips<DXM.PostSpacing>();
-    set => _Element.SetTwips<DXM.PostSpacing>(value);
+    get => _Element.GetTwipsVal<DXM.PostSpacing>();
+    set => _Element.SetTwipsVal<DXM.PostSpacing>(value);
   }
 
   /// <summary>
@@ -164,8 +164,8 @@ public class MathProperties : IOpenXmlElementMappedObject
   [DataMember]
   public Twips? InterSpacing
   {
-    get => _Element.GetTwips<DXM.InterSpacing>();
-    set => _Element.SetTwips<DXM.InterSpacing>(value);
+    get => _Element.GetTwipsVal<DXM.InterSpacing>();
+    set => _Element.SetTwipsVal<DXM.InterSpacing>(value);
   }
 
   /// <summary>
@@ -174,8 +174,8 @@ public class MathProperties : IOpenXmlElementMappedObject
   [DataMember]
   public Twips? IntraSpacing
   {
-    get => _Element.GetTwips<DXM.IntraSpacing>();
-    set => _Element.SetTwips<DXM.IntraSpacing>(value);
+    get => _Element.GetTwipsVal<DXM.IntraSpacing>();
+    set => _Element.SetTwipsVal<DXM.IntraSpacing>(value);
   }
 
   /// <summary>
@@ -239,8 +239,8 @@ public class MathProperties : IOpenXmlElementMappedObject
   [DataMember]
   public Twips? WrapIndent
   {
-    get => _Element.GetTwips<DXM.WrapIndent>();
-    set => _Element.SetTwips<DXM.WrapIndent>(value);
+    get => _Element.GetTwipsVal<DXM.WrapIndent>();
+    set => _Element.SetTwipsVal<DXM.WrapIndent>(value);
   }
 
 }

@@ -1,10 +1,11 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Specifies the contents and positioning for captions which can be used to automatically label objects in a WordprocessingML document. 
+/// This class specifies the contents and positioning for captions which can be used to automatically label objects in a WordprocessingML document. 
 /// A caption is a string that labels an object included in a WordprocessingML document, 
 /// and typically consists of a string plus a field which numbers this item within a collection of similar objects.
 /// </summary>
+[DataContract]
 public partial class Caption: IOpenXmlElementMappedObject
 {
   public Caption()

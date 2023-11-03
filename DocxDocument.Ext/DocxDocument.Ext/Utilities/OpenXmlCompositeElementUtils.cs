@@ -1,12 +1,12 @@
-﻿
-using DocumentFormat.OpenXml;
+﻿namespace DocumentModel;
 
-namespace DocumentModel;
-
+/// <summary>
+/// This static class contains extension operations to be performed on a OpenXmlCompositeElement object.
+/// </summary>
 public static class OpenXmlCompositeElementUtils
 {
   #region Twips get/set methods
-  public static Twips? GetTwips<ElementType>(this DX.OpenXmlCompositeElement? openXmlElement) where ElementType : DX.OpenXmlLeafElement
+  public static Twips? GetTwipsVal<ElementType>(this DX.OpenXmlCompositeElement? openXmlElement) where ElementType : DX.OpenXmlLeafElement
   {
     if (openXmlElement != null)
     {
@@ -40,7 +40,7 @@ public static class OpenXmlCompositeElementUtils
     return null;
   }
 
-  public static void SetTwips<ElementType>(this DX.OpenXmlCompositeElement openXmlElement, Twips? value) where ElementType : DX.OpenXmlLeafElement, new()
+  public static void SetTwipsVal<ElementType>(this DX.OpenXmlCompositeElement openXmlElement, Twips? value) where ElementType : DX.OpenXmlLeafElement, new()
   {
     if (value is not null)
     {
@@ -472,6 +472,61 @@ public static class OpenXmlCompositeElementUtils
         _element.Remove();
     }
   }
+  
+    public static String? GetStringId<ElementType>(this DX.OpenXmlCompositeElement? openXmlElement) where ElementType : DX.OpenXmlLeafElement
+  {
+    if (openXmlElement != null)
+    {
+      var _element = openXmlElement.Elements<ElementType>().FirstOrDefault();
+      if (_element != null)
+      {
+        var valProperty = typeof(ElementType).GetProperty("Id");
+        Debug.Assert(valProperty != null, $"\"Id\" property in {typeof(ElementType)} not found");
+        var val = valProperty.GetValue(_element);
+        if (val != null)
+        {
+          var valType = val.GetType();
+          var valueProperty = valType.GetProperty("Value");
+          Debug.Assert(valueProperty != null, $"\"Value\" property in {valType} not found");
+          var value = valueProperty.GetValue(val);
+          if (value is not null)
+          {
+            if (value is string str)
+              return str;
+            return value.ToString();
+          }
+        }
+      }
+    }
+    return null;
+  }
+
+  public static void SetStringId<ElementType>(this DX.OpenXmlCompositeElement openXmlElement, String? value) where ElementType : DX.OpenXmlLeafElement
+  {
+    if (value != null)
+    {
+      var _element = openXmlElement.Elements<ElementType>().FirstOrDefault();
+      if (_element == null)
+      {
+        var constructor = typeof(ElementType).GetConstructor(new Type[0]);
+        Debug.Assert(constructor != null, $"Type {typeof(ElementType)} must have constructor with no parameters");
+        _element = (ElementType)constructor.Invoke(new object[0]);
+        openXmlElement.AppendChild(_element);
+      }
+      var valProperty = typeof(ElementType).GetProperty("Id");
+      Debug.Assert(valProperty != null, $"\"Id\" property in {typeof(ElementType)} not found");
+      var valType = valProperty.PropertyType;
+      var valueProperty = valType.GetProperty("Value");
+      Debug.Assert(valueProperty != null, $"\"Value\" property in {valType} not found");
+      valProperty.SetValue(_element, value);
+    }
+    else
+    {
+      var _element = openXmlElement.Elements<ElementType>().FirstOrDefault();
+      if (_element != null)
+        _element.Remove();
+    }
+  }
   #endregion
 
   #region Int get/set methods
@@ -516,8 +571,62 @@ public static class OpenXmlCompositeElementUtils
         var valProperty = typeof(ElementType).GetProperty("Val");
         Debug.Assert(valProperty != null, $"\"Val\" property in {typeof(ElementType)} not found");
         var valType = valProperty.PropertyType;
-        if (valType == typeof (Int32Value))
-          valProperty.SetValue(_element, new Int32Value(value));
+        if (valType == typeof (DX.Int32Value))
+          valProperty.SetValue(_element, new DX.Int32Value(value));
+        else
+          throw new InvalidCastException($"Unsupported typecast operation from {value.GetType()} to int");
+    }
+    else
+    {
+      var _element = openXmlElement.Elements<ElementType>().FirstOrDefault();
+      if (_element != null)
+        _element.Remove();
+    }
+  }
+
+  public static Int32? GetInt32Id<ElementType>(this DX.OpenXmlCompositeElement? openXmlElement) where ElementType : DX.OpenXmlLeafElement
+  {
+    if (openXmlElement != null)
+    {
+      var _element = openXmlElement.Elements<ElementType>().FirstOrDefault();
+      if (_element != null)
+      {
+        var valProperty = typeof(ElementType).GetProperty("Id");
+        Debug.Assert(valProperty != null, $"\"Id\" property in {typeof(ElementType)} not found");
+        var val = valProperty.GetValue(_element);
+        if (val != null)
+        {
+          var valType = val.GetType();
+          var valueProperty = valType.GetProperty("Value");
+          Debug.Assert(valueProperty != null, $"\"Value\" property in {valType} not found");
+          var value = valueProperty.GetValue(val);
+          if (value != null)
+          {
+            if (value is Int32 n)
+              return n;
+            throw new InvalidCastException($"Unsupported typecast operation from {value.GetType()} to int");
+          }
+        }
+      }
+    }
+    return null;
+  }
+
+  public static void SetInt32Id<ElementType>(this DX.OpenXmlCompositeElement openXmlElement, Int32? value) where ElementType : DX.OpenXmlLeafElement, new()
+  {
+    if (value is not null)
+    {
+      var _element = openXmlElement.Elements<ElementType>().FirstOrDefault();
+      if (_element == null)
+      {
+        _element = new ElementType();
+        openXmlElement.AppendChild(_element);
+      }
+        var valProperty = typeof(ElementType).GetProperty("Id");
+        Debug.Assert(valProperty != null, $"\"Id\" property in {typeof(ElementType)} not found");
+        var valType = valProperty.PropertyType;
+        if (valType == typeof (DX.Int32Value))
+          valProperty.SetValue(_element, new DX.Int32Value(value));
         else
           throw new InvalidCastException($"Unsupported typecast operation from {value.GetType()} to int");
     }

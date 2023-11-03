@@ -1,6 +1,8 @@
-﻿using System.Runtime.Serialization;
+﻿namespace DocumentModel;
 
-namespace DocumentModel;
+/// <summary>
+/// This static class contains extension operations to be used for test/debug application.
+/// </summary>
 public static class TestUtilities
 {
   public static void ThrowError(this Exception ex)

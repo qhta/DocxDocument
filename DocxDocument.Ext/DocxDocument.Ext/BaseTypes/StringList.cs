@@ -1,12 +1,12 @@
 ﻿namespace DocumentModel;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-/// Represents the list of string
+/// Represents the list of string which can be converted to/from a single string of items separated with ','.
 /// </summary>
 [TypeConverter(typeof(StringListTypeConverter))]
 public class StringList : ICollection, ICollection<string>, IEnumerable, IEquatable<StringList>
 {
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   private readonly List<string> _list = new();
 
   /// <summary>

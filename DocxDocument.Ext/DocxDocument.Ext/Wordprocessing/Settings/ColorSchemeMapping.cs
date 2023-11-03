@@ -1,10 +1,10 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// This element specifies the theme color, stored in the document's Theme part to which the value of this theme color shall be mapped. 
+/// This class specifies the theme color, stored in the document's Theme part to which the value of this theme color shall be mapped. 
 /// This mapping enables multiple theme colors to be chained together.
 /// </summary>
-
+[DataContract]
 public partial class ColorSchemeMapping : IOpenXmlElementMappedObject
 {
   public ColorSchemeMapping()

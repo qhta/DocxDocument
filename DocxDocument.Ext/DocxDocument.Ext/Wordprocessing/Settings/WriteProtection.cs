@@ -1,29 +1,28 @@
-﻿using DocumentFormat.OpenXml.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
-namespace DocumentModel.Wordprocessing;
-
-  /// <summary>
-  /// Specifies the write protection settings which have been applied to a WordprocessingML document. 
-  /// Write protection refers to a mode in which the document's contents cannot be edited, 
-  /// and the document cannot be resaved using the same file name. 
-  /// This setting is independent of the documentProtection (§17.15.1.29) element, 
-  /// but like document protection, this setting is not intended as a security feature and can be ignored.
-  /// When present, the write protection shall result in one of two write protection behaviors:
-  /// <list type="bullet">
-  ///   <item>
-  ///     If the password attribute is present, or both attributes are omitted, 
-  ///     then the application shall prompt for a password to exit write protection. 
-  ///     If the supplied password does not match the hash value in this attribute, then write protection shall be enabled.
-  ///   </item>
-  ///   <item>
-  ///    If only the recommended attribute is present, the application should provide user interface 
-  ///    recommending that the user open this document in write protected state. 
-  ///    If the user chooses to do so, the document shall be write protected, otherwise, it shall be opened fully editable.
-  ///  </item>
-  /// </list>
-  /// If this element is omitted, then no write protection shall be applied to the current document.
-  /// </summary>
-public partial class WriteProtection: IOpenXmlElementMappedObject
+/// <summary>
+/// This class specifies the write protection settings which have been applied to a WordprocessingML document. 
+/// Write protection refers to a mode in which the document's contents cannot be edited, 
+/// and the document cannot be resaved using the same file name. 
+/// This setting is independent of the documentProtection (§17.15.1.29) element, 
+/// but like document protection, this setting is not intended as a security feature and can be ignored.
+/// When present, the write protection shall result in one of two write protection behaviors:
+/// <list type="bullet">
+///   <item>
+///     If the password attribute is present, or both attributes are omitted, 
+///     then the application shall prompt for a password to exit write protection. 
+///     If the supplied password does not match the hash value in this attribute, then write protection shall be enabled.
+///   </item>
+///   <item>
+///    If only the recommended attribute is present, the application should provide user interface 
+///    recommending that the user open this document in write protected state. 
+///    If the user chooses to do so, the document shall be write protected, otherwise, it shall be opened fully editable.
+///  </item>
+/// </list>
+/// If this element is omitted, then no write protection shall be applied to the current document.
+/// </summary>
+[DataContract]
+public partial class WriteProtection : IOpenXmlElementMappedObject
 {
   public WriteProtection()
   {
@@ -35,11 +34,11 @@ public partial class WriteProtection: IOpenXmlElementMappedObject
     _Element = (DXW.WriteProtection)openXmlElement;
   }
 
-  public OpenXmlElementType GetElement<OpenXmlElementType>() where OpenXmlElementType: DX.OpenXmlElement
+  public OpenXmlElementType GetElement<OpenXmlElementType>() where OpenXmlElementType : DX.OpenXmlElement
   {
     if (_Element is OpenXmlElementType validTypeElement)
-    return validTypeElement;
-      throw new ArgumentException($"Only {_Element.GetType()} type supported in GetElement of {this.GetType()}");
+      return validTypeElement;
+    throw new ArgumentException($"Only {_Element.GetType()} type supported in GetElement of {this.GetType()}");
   }
 
   public WriteProtection(DXW.WriteProtection openXmlElement)
@@ -49,6 +48,10 @@ public partial class WriteProtection: IOpenXmlElementMappedObject
 
   internal DXW.WriteProtection _Element { get; private set; }
 
+  /// <summary>
+  /// Recommend Write Protection in User Interface.
+  /// </summary>
+  [DataMember]
   public Boolean? Recommended
   {
     get => _Element.Recommended?.Value;
@@ -61,6 +64,10 @@ public partial class WriteProtection: IOpenXmlElementMappedObject
     }
   }
 
+  /// <summary>
+  /// Cryptographic Provider Type.
+  /// </summary>
+  [DataMember]
   public DXW.CryptProviderValues? CryptographicProviderType
   {
     get => _Element.CryptographicProviderType?.Value;
@@ -73,6 +80,10 @@ public partial class WriteProtection: IOpenXmlElementMappedObject
     }
   }
 
+  /// <summary>
+  /// Cryptographic Algorithm Class.
+  /// </summary>
+  [DataMember]
   public DXW.CryptAlgorithmClassValues? CryptographicAlgorithmClass
   {
     get => _Element.CryptographicAlgorithmClass?.Value;
@@ -85,6 +96,10 @@ public partial class WriteProtection: IOpenXmlElementMappedObject
     }
   }
 
+  /// <summary>
+  /// Cryptographic Algorithm Type.
+  /// </summary>
+  [DataMember]
   public DXW.CryptAlgorithmValues? CryptographicAlgorithmType
   {
     get => _Element.CryptographicAlgorithmType?.Value;
@@ -97,6 +112,10 @@ public partial class WriteProtection: IOpenXmlElementMappedObject
     }
   }
 
+  /// <summary>
+  /// Cryptographic Hashing Algorithm.
+  /// </summary>
+  [DataMember]
   public Int32? CryptographicAlgorithmSid
   {
     get => _Element.CryptographicAlgorithmSid?.Value;
@@ -109,6 +128,10 @@ public partial class WriteProtection: IOpenXmlElementMappedObject
     }
   }
 
+  /// <summary>
+  /// Iterations to Run Hashing Algorithm.
+  /// </summary>
+  [DataMember]
   public UInt32? CryptographicSpinCount
   {
     get => _Element.CryptographicSpinCount?.Value;
@@ -121,6 +144,10 @@ public partial class WriteProtection: IOpenXmlElementMappedObject
     }
   }
 
+  /// <summary>
+  /// Cryptographic Provider.
+  /// </summary>
+  [DataMember]
   public String? CryptographicProvider
   {
     get => _Element.CryptographicProvider?.Value;
@@ -133,6 +160,10 @@ public partial class WriteProtection: IOpenXmlElementMappedObject
     }
   }
 
+  /// <summary>
+  /// Cryptographic Algorithm Extensibility.
+  /// </summary>
+  [DataMember]
   public HexBinary? AlgorithmIdExtensibility
   {
     get
@@ -150,6 +181,10 @@ public partial class WriteProtection: IOpenXmlElementMappedObject
     }
   }
 
+  /// <summary>
+  /// Algorithm Extensibility Source.
+  /// </summary>
+  [DataMember]
   public String? AlgorithmIdExtensibilitySource
   {
     get => _Element.AlgorithmIdExtensibilitySource?.Value;
@@ -162,9 +197,13 @@ public partial class WriteProtection: IOpenXmlElementMappedObject
     }
   }
 
+  /// <summary>
+  /// Cryptographic Provider Type Extensibility.
+  /// </summary>
+  [DataMember]
   public HexBinary? CryptographicProviderTypeExtensibility
   {
-    get 
+    get
     {
       var val = _Element.CryptographicProviderTypeExtensibility?.Value;
       if (val == null) return null;
@@ -179,6 +218,10 @@ public partial class WriteProtection: IOpenXmlElementMappedObject
     }
   }
 
+  /// <summary>
+  /// Provider Type Extensibility Source.
+  /// </summary>
+  [DataMember]
   public String? CryptographicProviderTypeExtSource
   {
     get => _Element.CryptographicProviderTypeExtSource?.Value;
@@ -191,6 +234,10 @@ public partial class WriteProtection: IOpenXmlElementMappedObject
     }
   }
 
+  /// <summary>
+  /// Password Hash.
+  /// </summary>
+  [DataMember]
   public byte[]? Hash
   {
     get
@@ -208,6 +255,10 @@ public partial class WriteProtection: IOpenXmlElementMappedObject
     }
   }
 
+  /// <summary>
+  /// Salt for Password Verifier.
+  /// </summary>
+  [DataMember]
   public byte[]? Salt
   {
     get
@@ -225,6 +276,10 @@ public partial class WriteProtection: IOpenXmlElementMappedObject
     }
   }
 
+  /// <summary>
+  /// AlgorithmName, this property is only available in Office 2010 and later.
+  /// </summary>
+  [DataMember]
   public String? AlgorithmName
   {
     get => _Element.AlgorithmName?.Value;
@@ -237,6 +292,10 @@ public partial class WriteProtection: IOpenXmlElementMappedObject
     }
   }
 
+  /// <summary>
+  /// HashValue, this property is only available in Office 2010 and later.
+  /// </summary>
+  [DataMember]
   public byte[]? HashValue
   {
     get
@@ -254,6 +313,10 @@ public partial class WriteProtection: IOpenXmlElementMappedObject
     }
   }
 
+  /// <summary>
+  /// SaltValue, this property is only available in Office 2010 and later.
+  /// </summary>
+  [DataMember]
   public byte[]? SaltValue
   {
     get
@@ -271,6 +334,10 @@ public partial class WriteProtection: IOpenXmlElementMappedObject
     }
   }
 
+  /// <summary>
+  /// SpinCount, this property is only available in Office 2010 and later.
+  /// </summary>
+  [DataMember]
   public Int32? SpinCount
   {
     get => _Element.SpinCount?.Value;

@@ -1,12 +1,13 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
+[CollectionDataContract]
 public partial class CompatibilitySettings: ICollection<CompatibilitySetting>
 {
   public void Add(CompatibilitySetting value)
   {
     var _element = _Element.Elements<DXW.CompatibilitySetting>().FirstOrDefault(item=>item.Name!=null && item.Name==value.Name);
     if (_element != null)
-      throw new InvalidOperationException($"CompatibilitySetting \"{value.Name}\" aready exists");
+      throw new InvalidOperationException($"CompatibilitySetting \"{value.Name}\" already exists");
     _Element.AppendChild(value._Element);
   }
 

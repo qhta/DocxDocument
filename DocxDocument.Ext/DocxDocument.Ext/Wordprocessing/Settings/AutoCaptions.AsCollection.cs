@@ -8,7 +8,7 @@ public partial class AutoCaptions: ICollection<AutoCaption>
       throw new InvalidOperationException($"Item.Name must not be null");
     var _element = _Element.Elements<DXW.AutoCaption>().FirstOrDefault(item=>item.Name == value.Name);
     if (_element != null)
-      throw new InvalidOperationException($"Caption \"{value.Name}\" aready exists");
+      throw new InvalidOperationException($"Caption \"{value.Name}\" already exists");
     _Element.AppendChild(value._Element);
   }
 

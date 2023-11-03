@@ -1,4 +1,8 @@
 ﻿namespace DocumentModel.Utils;
+
+/// <summary>
+/// This static class contains extension operations to be performed on a DocumentFormat.OpenXml.VariantTypes objects.
+/// </summary>
 public static class VariantUtils
 {
   private static Dictionary<DXVT.VectorBaseValues, Type> VectorBaseValueToType = new Dictionary<DXVT.VectorBaseValues, Type>()

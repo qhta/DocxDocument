@@ -259,7 +259,7 @@ public class ReadTest
         if (document.HasDocumentSettings)
         {
           var settings = document.DocumentSettings;
-          //settings.IgnoreUnknown = true;
+          if (settings != null)
           foreach (var item in settings)
           {
             var val = item.Value;

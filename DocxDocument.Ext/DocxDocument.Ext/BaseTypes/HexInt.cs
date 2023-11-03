@@ -1,8 +1,12 @@
 ﻿namespace DocumentModel;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
+/// <summary>
+/// This class represents a type of integer that is stored in an Office document as StringValue in a hexadecimal format.
+/// It implements desirable conversion to/from other types. When converting to string, it is returned in 8-digit hexadecimal form.
+/// </summary>
 public struct HexInt : IConvertible, IEquatable<HexInt>
 {
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   private readonly int Value;
 
   public HexInt(string val)

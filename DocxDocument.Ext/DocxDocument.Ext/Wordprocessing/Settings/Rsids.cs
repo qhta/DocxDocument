@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Specifies the set of revision save ID values for the current document. 
+/// This class specifies the set of revision save ID values for the current document. 
 /// Revision save ID values refer to four digit hexadecimal values which uniquely identify an editing session in the life of the current document. 
 /// An editing session is the period of time between two subsequent save operations by an application.
 /// [Guidance: The set of revision save IDs stored with a document only supplies information about the editing session 
