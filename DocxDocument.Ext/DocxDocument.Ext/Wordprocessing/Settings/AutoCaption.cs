@@ -1,9 +1,10 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Specifies what type(s) of objects shall automatically labelled with captions (§17.15.1.17), 
+/// This class specifies what type(s) of objects shall automatically labelled with captions (§17.15.1.17), 
 /// and with which captions the specified objects shall be labelled as defined in the caption element (§17.15.1.16).
 /// </summary>
+[DataContract]
 public partial class AutoCaption: IOpenXmlElementMappedObject
 {
   public AutoCaption()

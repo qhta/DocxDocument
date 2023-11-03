@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Vml;
 
 /// <summary>
-/// This element specifies the defaults that are used when creating new shapes. These defaults are stored once per document.
+/// This class specifies the defaults that are used when creating new shapes. These defaults are stored once per document.
 /// </summary>
 public partial class ShapeDefaults : IOpenXmlElementMappedObject
 {

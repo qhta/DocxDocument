@@ -1,12 +1,11 @@
-﻿using System.Runtime.Serialization;
-
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Specifies if the grammar and spell checking engines of the last application 
+/// This class specifies if the grammar and spell checking engines of the last application 
 /// to process this document completed checking the grammar and spelling of a the document before the document was last saved. 
 /// Applications which modify the document contents without checking spelling or grammar should reset these states as needed.
 /// </summary>
+[DataContract]
 public partial class ProofState: IOpenXmlElementMappedObject
 {
   public ProofState()

@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Vml;
 
 /// <summary>
-/// This element specifies a list of entries which describe how shapes were previously grouped so they can be regrouped. 
+/// This class specifies a list of entries which describe how shapes were previously grouped so they can be regrouped. 
 /// The regroupid attribute of shapes indicates which shapes belong together when a regroup is performed. 
 /// The regrouptable tracks the previous regroupid that should be assigned to all shapes with the given current regroupid.
 /// </summary>

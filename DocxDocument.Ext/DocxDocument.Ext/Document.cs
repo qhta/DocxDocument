@@ -1,8 +1,8 @@
-﻿using System.ServiceModel;
-using System.Xml.Serialization;
+﻿namespace DocumentModel;
 
-namespace DocumentModel;
-
+/// <summary>
+/// The main class representing the whole wordprocessing document.
+/// </summary>
 [DataContract]
 [XmlSerializerFormat]
 public partial class Document : IDisposable
@@ -257,16 +257,24 @@ public partial class Document : IDisposable
 
   public bool HasDocumentSettings => _WordprocessingDocument?.MainDocumentPart?.DocumentSettingsPart?.Settings != null;
 
-  public DMW.DocumentSettings DocumentSettings
+  [DataMember]
+  public DMW.DocumentSettings? DocumentSettings
   {
     get
     {
-      if (_DocumentSettings == null)
-      {
+      if (HasDocumentSettings && _DocumentSettings == null)
         _DocumentSettings = new DMW.DocumentSettings(this);
-      }
       return _DocumentSettings;
     }
+    set
+    {
+      if (_DocumentSettings != value)
+      {
+        _DocumentSettings = value;
+      }
+    }
   }
-  private DMW.DocumentSettings? _DocumentSettings;
+  internal DMW.DocumentSettings? _DocumentSettings { get; private set; }
+
+
 }

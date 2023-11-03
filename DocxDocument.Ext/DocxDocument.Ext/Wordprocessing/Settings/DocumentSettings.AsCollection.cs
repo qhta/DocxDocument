@@ -1,4 +1,6 @@
 ﻿namespace DocumentModel.Wordprocessing;
+
+//[CollectionDataContract]
 partial class DocumentSettings : ICollection<Setting>
 {
   public void Add(Setting item)
@@ -47,6 +49,7 @@ partial class DocumentSettings : ICollection<Setting>
 
   public bool IgnoreUnknown { get; set; }
 
+  static string[] KnownProperties = new string[]{ "Zoom" };
   public IEnumerator<Setting> GetEnumerator()
   {
     var propNames = _ExistingSettings.Elements().Select(item => item.GetType().Name).ToArray();
@@ -55,6 +58,7 @@ partial class DocumentSettings : ICollection<Setting>
       var propInfo = typeof(DocumentSettings).GetProperty(propName);
       if (propInfo != null)
       {
+        if (!KnownProperties.Contains(propName)) continue;
         var getMethod = propInfo.GetGetMethod(false);
         if (getMethod == null)
           throw new InvalidOperationException($"get method for property {propInfo.Name} does not exits");

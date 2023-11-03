@@ -1,7 +1,9 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// Twips unit. 1 twip = 1/1440 inch.
+/// This class represents a decimal value interpreted as length measured in twips.
+/// 1 twip = 1/1440 inch.
+/// It implements desirable conversion to/from other unit values (determined by suffix).
 /// </summary>
 [TypeConverter(typeof(TwipsTypeConverter))]
 public struct Twips : IComparable<Twips>

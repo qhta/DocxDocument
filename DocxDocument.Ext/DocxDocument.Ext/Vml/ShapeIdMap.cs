@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Vml;
 
 /// <summary>
-/// This element specifies how shape IDs in the document have been generated. 
+/// This class specifies how shape IDs in the document have been generated. 
 /// This is an optional element included to allow applications a mechanism for storing information 
 /// they need to persist related to generating shape IDs.
 /// </summary>

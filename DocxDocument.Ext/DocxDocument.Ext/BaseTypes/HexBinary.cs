@@ -1,9 +1,13 @@
 ﻿namespace DocumentModel;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
+/// <summary>
+/// This class represents a type of byte array that is stored in an Office document as HexBinaryValue.
+/// It implements desirable conversion to/from integer types.
+/// </summary>
 [TypeConverter(typeof(HexBinaryTypeConverter))]
 public class HexBinary: IEquatable<HexBinary>
 {
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   private readonly byte[] value;
 
   public HexBinary(byte[] val)
@@ -24,6 +28,9 @@ public class HexBinary: IEquatable<HexBinary>
     value = result;
   }
 
+  /// <summary>
+  /// Gets length of byte array.
+  /// </summary>
   public int Length => value.Length;
 
   public static implicit operator string(HexBinary val) => val.ToString();
