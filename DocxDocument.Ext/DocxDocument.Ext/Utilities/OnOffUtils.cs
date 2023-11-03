@@ -1,4 +1,8 @@
 ﻿namespace DocumentModel.Utils;
+
+/// <summary>
+/// This static class contains extension operations to be performed on a OnOffType or OnOffValue element.
+/// </summary>
 public static class OnOffUtils
 {
   public static bool? AsBoolean(this DXM.OnOffType? element)

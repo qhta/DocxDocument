@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Specifies the presence of information about captions in a given WordprocessingML document. 
+/// This class specifies the presence of information about captions in a given WordprocessingML document. 
 /// This information is divided into two components:
 /// <list type="bullet">
 ///   <item>The child elements Caption defines the format for a single type of caption to be automatically added to the document.</item>

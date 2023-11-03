@@ -1,4 +1,8 @@
 ﻿namespace DocumentModel.Utils;
+
+/// <summary>
+/// This static class contains extension operations to be performed on a BuiltInProperties object.
+/// </summary>
 public static class BuiltInPropertiesUtils
 {
   public static void CopyTo(this BuiltInProperties source, PackageProperties target)
@@ -21,8 +25,4 @@ public static class BuiltInPropertiesUtils
     target.Version = source.Version;
   }
 
-  public static void CopyTo(this BuiltInProperties source, DXEP.Properties target)
-  {
-
-  }
 }

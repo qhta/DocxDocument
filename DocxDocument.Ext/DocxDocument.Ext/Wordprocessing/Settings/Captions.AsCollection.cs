@@ -1,4 +1,5 @@
 ﻿namespace DocumentModel.Wordprocessing;
+[CollectionDataContract]
 public partial class Captions : ICollection<Caption>
 {
 
@@ -8,15 +9,13 @@ public partial class Captions : ICollection<Caption>
       throw new InvalidOperationException($"Item.Name must not be null");
     var _element = _Element.Elements<DXW.Caption>().FirstOrDefault(item => item.Name == value.Name);
     if (_element != null)
-      throw new InvalidOperationException($"Caption {value.Name} aready exists found");
+      throw new InvalidOperationException($"Caption {value.Name} already exists found");
     _Element.AppendChild(value._Element);
   }
 
   public void Clear()
   {
-    var _captions = _Element.Elements<DXW.Caption>().ToArray();
-    foreach (var item in _captions)
-      item.Remove();
+    _Element.RemoveAllChildren<DXW.Caption>();
   }
 
   public bool Contains(Caption value)

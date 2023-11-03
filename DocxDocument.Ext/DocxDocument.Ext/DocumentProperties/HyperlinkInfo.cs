@@ -1,7 +1,8 @@
 namespace DocumentModel;
 
 /// <summary>
-///   Hyperlink info as HyperlinkList item.
+/// This class represents a hyperlink information that is an item of a HyperlinkList extended document property.
+/// Although in OpenXml this property is of Variant type, it must be converted to this class to enable proper serialization.
 /// </summary>
 public class HyperlinkInfo
 {

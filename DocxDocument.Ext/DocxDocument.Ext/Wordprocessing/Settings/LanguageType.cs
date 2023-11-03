@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
   /// <summary>
-  ///  This element specifies the language which shall be used to determine the appropriate theme fonts 
+  ///  This class specifies the language which shall be used to determine the appropriate theme fonts 
   ///  in the document's Theme part which map to the major/minor theme fonts. 
   ///  Specifically, the bidi attribute is used to determine the theme font applied to complex script text, 
   ///  the eastAsia attribute is used to determine the theme font applied to East Asian text, 
@@ -36,6 +36,7 @@
   ///   (§21.1.2.3.7; §21.1.2.3.3; §21.1.2.3.1) should be used.
   /// </para>
   /// </summary>
+[DataContract]
 public partial class LanguageType: IOpenXmlElementMappedObject
 {
   public LanguageType()

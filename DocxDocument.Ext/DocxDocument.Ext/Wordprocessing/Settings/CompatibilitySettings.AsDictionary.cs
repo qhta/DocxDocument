@@ -8,7 +8,7 @@ public partial class CompatibilitySettings : IDictionary<DXW.CompatSettingNameVa
   {
     var _element = _Element.Elements<DXW.CompatibilitySetting>().FirstOrDefault(item => item.Name!=null && item.Name == key);
     if (_element != null)
-      throw new InvalidOperationException($"CompatibilitySetting \"{key}\" aready exists");
+      throw new InvalidOperationException($"CompatibilitySetting \"{key}\" already exists");
     _Element.AppendChild(new DXW.CompatibilitySetting { Name = key, Val = value });
   }
 

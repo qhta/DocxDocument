@@ -8,7 +8,7 @@ public partial class Rules: ICollection<Rule>
       throw new InvalidOperationException($"Item.Id must not be null");
     var _element = _Element.Elements<DXVO.Rule>().FirstOrDefault(item=>item.Id == value.Id);
     if (_element != null)
-      throw new InvalidOperationException($"Caption \"{value.Id}\" aready exists");
+      throw new InvalidOperationException($"Caption \"{value.Id}\" already exists");
     _Element.AppendChild(value._Element);
   }
 

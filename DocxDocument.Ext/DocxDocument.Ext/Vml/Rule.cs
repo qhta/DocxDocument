@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Vml;
 
 /// <summary>
-/// This element specifies a rule entry in a rules element rule set that describes how a certain shape or set of shapes behaves during editing.
+/// This class specifies a rule entry in a rules element rule set that describes how a certain shape or set of shapes behaves during editing.
 /// </summary>
 public partial class Rule : IOpenXmlElementMappedObject
 {

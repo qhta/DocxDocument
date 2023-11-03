@@ -1,8 +1,9 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Specifies a set of optional compatibility options for the current document.
+/// This class specifies a set of optional compatibility options for the current document.
 /// </summary>
+[DataContract]
 public partial class Compatibility: IOpenXmlElementMappedObject
 {
   public Compatibility()
