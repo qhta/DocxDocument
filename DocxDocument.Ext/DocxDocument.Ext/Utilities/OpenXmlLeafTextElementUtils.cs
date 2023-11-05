@@ -5,7 +5,7 @@
 /// </summary>
 public static class OpenXmlLeafTextElementUtils
 {
-  public static Boolean? AsBoolean(this DX.OpenXmlLeafTextElement? element)
+  public static bool? AsBoolean(this DX.OpenXmlLeafTextElement? element)
   {
     var str = element?.InnerText;
     if (str!= null)

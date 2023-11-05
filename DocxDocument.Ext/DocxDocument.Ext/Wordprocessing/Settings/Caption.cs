@@ -33,7 +33,7 @@ public partial class Caption: IOpenXmlElementMappedObject
   internal DXW.Caption _Element { get; private set; }
 
   [DataMember]
-  public String? Name
+  public string? Name
   {
     get => _Element.Name?.Value;
     set
@@ -59,7 +59,7 @@ public partial class Caption: IOpenXmlElementMappedObject
   }
 
   [DataMember]
-  public Boolean? ChapterNumber
+  public bool? ChapterNumber
   {
     get => _Element.ChapterNumber?.Value;
     set
@@ -72,7 +72,7 @@ public partial class Caption: IOpenXmlElementMappedObject
   }
 
   [DataMember]
-  public Int32? Heading
+  public int? Heading
   {
     get => _Element.Heading?.Value;
     set
@@ -85,7 +85,7 @@ public partial class Caption: IOpenXmlElementMappedObject
   }
 
   [DataMember]
-  public Boolean? NoLabel
+  public bool? NoLabel
   {
     get => _Element.NoLabel?.Value;
     set

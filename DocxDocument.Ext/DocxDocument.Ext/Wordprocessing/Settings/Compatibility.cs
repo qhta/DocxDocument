@@ -34,650 +34,650 @@ public partial class Compatibility: IOpenXmlElementMappedObject
   /// Use Simplified Rules For Table Border Conflicts.
   /// </summary>
   [DataMember]
-  public Boolean? UseSingleBorderForContiguousCells
+  public bool? UseSingleBorderForContiguousCells
   {
-    get => _Element.GetBooleanVal<DXW.UseSingleBorderForContiguousCells>();
-    set => _Element.SetBooleanVal<DXW.UseSingleBorderForContiguousCells>(value);
+    get => _Element.GetBoolVal<DXW.UseSingleBorderForContiguousCells>();
+    set => _Element.SetBoolVal<DXW.UseSingleBorderForContiguousCells>(value);
   }
 
   /// <summary>
   /// Emulate WordPerfect 6.x Paragraph Justification.
   /// </summary>
   [DataMember]
-  public  Boolean? WordPerfectJustification
+  public  bool? WordPerfectJustification
   {
-    get => _Element.GetBooleanVal<DXW.WordPerfectJustification>();
-    set => _Element.SetBooleanVal<DXW.WordPerfectJustification>(value);
+    get => _Element.GetBoolVal<DXW.WordPerfectJustification>();
+    set => _Element.SetBoolVal<DXW.WordPerfectJustification>(value);
   }
 
   /// <summary>
   /// Do Not Create Custom Tab Stop for Hanging Indent.
   /// </summary>
   [DataMember]
-  public  Boolean? NoTabHangIndent
+  public  bool? NoTabHangIndent
   {
-    get => _Element.GetBooleanVal<DXW.NoTabHangIndent>();
-    set => _Element.SetBooleanVal<DXW.NoTabHangIndent>(value);
+    get => _Element.GetBoolVal<DXW.NoTabHangIndent>();
+    set => _Element.SetBoolVal<DXW.NoTabHangIndent>(value);
   }
 
   /// <summary>
   /// Do Not Add Leading Between Lines of Text.
   /// </summary>
   [DataMember]
-  public  Boolean? NoLeading
+  public  bool? NoLeading
   {
-    get => _Element.GetBooleanVal<DXW.NoLeading>();
-    set => _Element.SetBooleanVal<DXW.NoLeading>(value);
+    get => _Element.GetBoolVal<DXW.NoLeading>();
+    set => _Element.SetBoolVal<DXW.NoLeading>(value);
   }
 
   /// <summary>
   /// Add Additional Space Below Baseline For Underlined East Asian Text.
   /// </summary>
   [DataMember]
-  public  Boolean? SpaceForUnderline
+  public  bool? SpaceForUnderline
   {
-    get => _Element.GetBooleanVal<DXW.SpaceForUnderline>();
-    set => _Element.SetBooleanVal<DXW.SpaceForUnderline>(value);
+    get => _Element.GetBoolVal<DXW.SpaceForUnderline>();
+    set => _Element.SetBoolVal<DXW.SpaceForUnderline>(value);
   }
 
   /// <summary>
   /// Do Not Balance Text Columns within a Section.
   /// </summary>
   [DataMember]
-  public  Boolean? NoColumnBalance
+  public  bool? NoColumnBalance
   {
-    get => _Element.GetBooleanVal<DXW.NoColumnBalance>();
-    set => _Element.SetBooleanVal<DXW.NoColumnBalance>(value);
+    get => _Element.GetBoolVal<DXW.NoColumnBalance>();
+    set => _Element.SetBoolVal<DXW.NoColumnBalance>(value);
   }
 
   /// <summary>
   /// Balance Single Byte and Double Byte Characters.
   /// </summary>
   [DataMember]
-  public  Boolean? BalanceSingleByteDoubleByteWidth
+  public  bool? BalanceSingleByteDoubleByteWidth
   {
-    get => _Element.GetBooleanVal<DXW.BalanceSingleByteDoubleByteWidth>();
-    set => _Element.SetBooleanVal<DXW.BalanceSingleByteDoubleByteWidth>(value);
+    get => _Element.GetBoolVal<DXW.BalanceSingleByteDoubleByteWidth>();
+    set => _Element.SetBoolVal<DXW.BalanceSingleByteDoubleByteWidth>(value);
   }
 
   /// <summary>
   /// Do Not Center Content on Lines With Exact Line Height.
   /// </summary>
   [DataMember]
-  public  Boolean? NoExtraLineSpacing
+  public  bool? NoExtraLineSpacing
   {
-    get => _Element.GetBooleanVal<DXW.NoExtraLineSpacing>();
-    set => _Element.SetBooleanVal<DXW.NoExtraLineSpacing>(value);
+    get => _Element.GetBoolVal<DXW.NoExtraLineSpacing>();
+    set => _Element.SetBoolVal<DXW.NoExtraLineSpacing>(value);
   }
 
   /// <summary>
   /// Convert Backslash To Yen Sign When Entered.
   /// </summary>
   [DataMember]
-  public  Boolean? DoNotLeaveBackslashAlone
+  public  bool? DoNotLeaveBackslashAlone
   {
-    get => _Element.GetBooleanVal<DXW.DoNotLeaveBackslashAlone>();
-    set => _Element.SetBooleanVal<DXW.DoNotLeaveBackslashAlone>(value);
+    get => _Element.GetBoolVal<DXW.DoNotLeaveBackslashAlone>();
+    set => _Element.SetBoolVal<DXW.DoNotLeaveBackslashAlone>(value);
   }
 
   /// <summary>
   /// Underline All Trailing Spaces.
   /// </summary>
   [DataMember]
-  public  Boolean? UnderlineTrailingSpaces
+  public  bool? UnderlineTrailingSpaces
   {
-    get => _Element.GetBooleanVal<DXW.UnderlineTrailingSpaces>();
-    set => _Element.SetBooleanVal<DXW.UnderlineTrailingSpaces>(value);
+    get => _Element.GetBoolVal<DXW.UnderlineTrailingSpaces>();
+    set => _Element.SetBoolVal<DXW.UnderlineTrailingSpaces>(value);
   }
 
   /// <summary>
   /// Don't Justify Lines Ending in Soft Line Break.
   /// </summary>
   [DataMember]
-  public  Boolean? DoNotExpandShiftReturn
+  public  bool? DoNotExpandShiftReturn
   {
-    get => _Element.GetBooleanVal<DXW.DoNotExpandShiftReturn>();
-    set => _Element.SetBooleanVal<DXW.DoNotExpandShiftReturn>(value);
+    get => _Element.GetBoolVal<DXW.DoNotExpandShiftReturn>();
+    set => _Element.SetBoolVal<DXW.DoNotExpandShiftReturn>(value);
   }
 
   /// <summary>
   /// Only Expand/Condense Text By Whole Points.
   /// </summary>
   [DataMember]
-  public  Boolean? SpacingInWholePoints
+  public  bool? SpacingInWholePoints
   {
-    get => _Element.GetBooleanVal<DXW.SpacingInWholePoints>();
-    set => _Element.SetBooleanVal<DXW.SpacingInWholePoints>(value);
+    get => _Element.GetBoolVal<DXW.SpacingInWholePoints>();
+    set => _Element.SetBoolVal<DXW.SpacingInWholePoints>(value);
   }
 
   /// <summary>
   /// Emulate Word 6.0 Line Wrapping for East Asian Text.
   /// </summary>
   [DataMember]
-  public  Boolean? LineWrapLikeWord6
+  public  bool? LineWrapLikeWord6
   {
-    get => _Element.GetBooleanVal<DXW.LineWrapLikeWord6>();
-    set => _Element.SetBooleanVal<DXW.LineWrapLikeWord6>(value);
+    get => _Element.GetBoolVal<DXW.LineWrapLikeWord6>();
+    set => _Element.SetBoolVal<DXW.LineWrapLikeWord6>(value);
   }
 
   /// <summary>
   /// Print Body Text before Header/Footer Contents.
   /// </summary>
   [DataMember]
-  public  Boolean? PrintBodyTextBeforeHeader
+  public  bool? PrintBodyTextBeforeHeader
   {
-    get => _Element.GetBooleanVal<DXW.PrintBodyTextBeforeHeader>();
-    set => _Element.SetBooleanVal<DXW.PrintBodyTextBeforeHeader>(value);
+    get => _Element.GetBoolVal<DXW.PrintBodyTextBeforeHeader>();
+    set => _Element.SetBoolVal<DXW.PrintBodyTextBeforeHeader>(value);
   }
 
   /// <summary>
   /// Print Colors as Black And White without Dithering.
   /// </summary>
   [DataMember]
-  public  Boolean? PrintColorBlackWhite
+  public  bool? PrintColorBlackWhite
   {
-    get => _Element.GetBooleanVal<DXW.PrintColorBlackWhite>();
-    set => _Element.SetBooleanVal<DXW.PrintColorBlackWhite>(value);
+    get => _Element.GetBoolVal<DXW.PrintColorBlackWhite>();
+    set => _Element.SetBoolVal<DXW.PrintColorBlackWhite>(value);
   }
 
   /// <summary>
   /// Space width.
   /// </summary>
   [DataMember]
-  public  Boolean? WordPerfectSpaceWidth
+  public  bool? WordPerfectSpaceWidth
   {
-    get => _Element.GetBooleanVal<DXW.WordPerfectSpaceWidth>();
-    set => _Element.SetBooleanVal<DXW.WordPerfectSpaceWidth>(value);
+    get => _Element.GetBoolVal<DXW.WordPerfectSpaceWidth>();
+    set => _Element.SetBoolVal<DXW.WordPerfectSpaceWidth>(value);
   }
 
   /// <summary>
   /// Display Page/Column Breaks Present in Frames.
   /// </summary>
   [DataMember]
-  public  Boolean? ShowBreaksInFrames
+  public  bool? ShowBreaksInFrames
   {
-    get => _Element.GetBooleanVal<DXW.ShowBreaksInFrames>();
-    set => _Element.SetBooleanVal<DXW.ShowBreaksInFrames>(value);
+    get => _Element.GetBoolVal<DXW.ShowBreaksInFrames>();
+    set => _Element.SetBoolVal<DXW.ShowBreaksInFrames>(value);
   }
 
   /// <summary>
   /// Increase Priority Of Font Size During Font Substitution.
   /// </summary>
   [DataMember]
-  public  Boolean? SubFontBySize
+  public  bool? SubFontBySize
   {
-    get => _Element.GetBooleanVal<DXW.SubFontBySize>();
-    set => _Element.SetBooleanVal<DXW.SubFontBySize>(value);
+    get => _Element.GetBoolVal<DXW.SubFontBySize>();
+    set => _Element.SetBoolVal<DXW.SubFontBySize>(value);
   }
 
   /// <summary>
   /// Ignore Exact Line Height for Last Line on Page.
   /// </summary>
   [DataMember]
-  public  Boolean? SuppressBottomSpacing
+  public  bool? SuppressBottomSpacing
   {
-    get => _Element.GetBooleanVal<DXW.SuppressBottomSpacing>();
-    set => _Element.SetBooleanVal<DXW.SuppressBottomSpacing>(value);
+    get => _Element.GetBoolVal<DXW.SuppressBottomSpacing>();
+    set => _Element.SetBoolVal<DXW.SuppressBottomSpacing>(value);
   }
 
   /// <summary>
   /// Ignore Minimum and Exact Line Height for First Line on Page.
   /// </summary>
   [DataMember]
-  public  Boolean? SuppressTopSpacing
+  public  bool? SuppressTopSpacing
   {
-    get => _Element.GetBooleanVal<DXW.SuppressTopSpacing>();
-    set => _Element.SetBooleanVal<DXW.SuppressTopSpacing>(value);
+    get => _Element.GetBoolVal<DXW.SuppressTopSpacing>();
+    set => _Element.SetBoolVal<DXW.SuppressTopSpacing>(value);
   }
 
   /// <summary>
   /// Ignore Minimum Line Height for First Line on Page.
   /// </summary>
   [DataMember]
-  public  Boolean? SuppressSpacingAtTopOfPage
+  public  bool? SuppressSpacingAtTopOfPage
   {
-    get => _Element.GetBooleanVal<DXW.SuppressSpacingAtTopOfPage>();
-    set => _Element.SetBooleanVal<DXW.SuppressSpacingAtTopOfPage>(value);
+    get => _Element.GetBoolVal<DXW.SuppressSpacingAtTopOfPage>();
+    set => _Element.SetBoolVal<DXW.SuppressSpacingAtTopOfPage>(value);
   }
 
   /// <summary>
   /// Emulate WordPerfect 5.x Line Spacing.
   /// </summary>
   [DataMember]
-  public  Boolean? SuppressTopSpacingWordPerfect
+  public  bool? SuppressTopSpacingWordPerfect
   {
-    get => _Element.GetBooleanVal<DXW.SuppressTopSpacingWordPerfect>();
-    set => _Element.SetBooleanVal<DXW.SuppressTopSpacingWordPerfect>(value);
+    get => _Element.GetBoolVal<DXW.SuppressTopSpacingWordPerfect>();
+    set => _Element.SetBoolVal<DXW.SuppressTopSpacingWordPerfect>(value);
   }
 
   /// <summary>
   /// Do Not Use Space Before On First Line After a Page Break.
   /// </summary>
   [DataMember]
-  public  Boolean? SuppressSpacingBeforeAfterPageBreak
+  public  bool? SuppressSpacingBeforeAfterPageBreak
   {
-    get => _Element.GetBooleanVal<DXW.SuppressSpacingBeforeAfterPageBreak>();
-    set => _Element.SetBooleanVal<DXW.SuppressSpacingBeforeAfterPageBreak>(value);
+    get => _Element.GetBoolVal<DXW.SuppressSpacingBeforeAfterPageBreak>();
+    set => _Element.SetBoolVal<DXW.SuppressSpacingBeforeAfterPageBreak>(value);
   }
 
   /// <summary>
   /// Swap Paragraph Borders on Odd Numbered Pages.
   /// </summary>
   [DataMember]
-  public  Boolean? SwapBordersFacingPages
+  public  bool? SwapBordersFacingPages
   {
-    get => _Element.GetBooleanVal<DXW.SwapBordersFacingPages>();
-    set => _Element.SetBooleanVal<DXW.SwapBordersFacingPages>(value);
+    get => _Element.GetBoolVal<DXW.SwapBordersFacingPages>();
+    set => _Element.SetBoolVal<DXW.SwapBordersFacingPages>(value);
   }
 
   /// <summary>
   /// Treat Backslash Quotation Delimiter as Two Quotation Marks.
   /// </summary>
   [DataMember]
-  public  Boolean? ConvertMailMergeEscape
+  public  bool? ConvertMailMergeEscape
   {
-    get => _Element.GetBooleanVal<DXW.ConvertMailMergeEscape>();
-    set => _Element.SetBooleanVal<DXW.ConvertMailMergeEscape>(value);
+    get => _Element.GetBoolVal<DXW.ConvertMailMergeEscape>();
+    set => _Element.SetBoolVal<DXW.ConvertMailMergeEscape>(value);
   }
 
   /// <summary>
   /// Emulate WordPerfect 6.x Font Height Calculation.
   /// </summary>
   [DataMember]
-  public  Boolean? TruncateFontHeightsLikeWordPerfect
+  public  bool? TruncateFontHeightsLikeWordPerfect
   {
-    get => _Element.GetBooleanVal<DXW.TruncateFontHeightsLikeWordPerfect>();
-    set => _Element.SetBooleanVal<DXW.TruncateFontHeightsLikeWordPerfect>(value);
+    get => _Element.GetBoolVal<DXW.TruncateFontHeightsLikeWordPerfect>();
+    set => _Element.SetBoolVal<DXW.TruncateFontHeightsLikeWordPerfect>(value);
   }
 
   /// <summary>
   /// Emulate Word 5.x for the Macintosh Small Caps Formatting.
   /// </summary>
   [DataMember]
-  public  Boolean? MacWordSmallCaps
+  public  bool? MacWordSmallCaps
   {
-    get => _Element.GetBooleanVal<DXW.MacWordSmallCaps>();
-    set => _Element.SetBooleanVal<DXW.MacWordSmallCaps>(value);
+    get => _Element.GetBoolVal<DXW.MacWordSmallCaps>();
+    set => _Element.SetBoolVal<DXW.MacWordSmallCaps>(value);
   }
 
   /// <summary>
   /// Use Printer Metrics To Display Documents.
   /// </summary>
   [DataMember]
-  public  Boolean? UsePrinterMetrics
+  public  bool? UsePrinterMetrics
   {
-    get => _Element.GetBooleanVal<DXW.UsePrinterMetrics>();
-    set => _Element.SetBooleanVal<DXW.UsePrinterMetrics>(value);
+    get => _Element.GetBoolVal<DXW.UsePrinterMetrics>();
+    set => _Element.SetBoolVal<DXW.UsePrinterMetrics>(value);
   }
 
   /// <summary>
   /// Do Not Suppress Paragraph Borders Next To Frames.
   /// </summary>
   [DataMember]
-  public  Boolean? DoNotSuppressParagraphBorders
+  public  bool? DoNotSuppressParagraphBorders
   {
-    get => _Element.GetBooleanVal<DXW.DoNotSuppressParagraphBorders>();
-    set => _Element.SetBooleanVal<DXW.DoNotSuppressParagraphBorders>(value);
+    get => _Element.GetBoolVal<DXW.DoNotSuppressParagraphBorders>();
+    set => _Element.SetBoolVal<DXW.DoNotSuppressParagraphBorders>(value);
   }
 
   /// <summary>
   /// Line Wrap Trailing Spaces.
   /// </summary>
   [DataMember]
-  public  Boolean? WrapTrailSpaces
+  public  bool? WrapTrailSpaces
   {
-    get => _Element.GetBooleanVal<DXW.WrapTrailSpaces>();
-    set => _Element.SetBooleanVal<DXW.WrapTrailSpaces>(value);
+    get => _Element.GetBoolVal<DXW.WrapTrailSpaces>();
+    set => _Element.SetBoolVal<DXW.WrapTrailSpaces>(value);
   }
 
   /// <summary>
   /// Emulate Word 6.x/95/97 Footnote Placement.
   /// </summary>
   [DataMember]
-  public  Boolean? FootnoteLayoutLikeWord8
+  public  bool? FootnoteLayoutLikeWord8
   {
-    get => _Element.GetBooleanVal<DXW.FootnoteLayoutLikeWord8>();
-    set => _Element.SetBooleanVal<DXW.FootnoteLayoutLikeWord8>(value);
+    get => _Element.GetBoolVal<DXW.FootnoteLayoutLikeWord8>();
+    set => _Element.SetBoolVal<DXW.FootnoteLayoutLikeWord8>(value);
   }
 
   /// <summary>
   /// Emulate Word 97 Text Wrapping Around Floating Objects.
   /// </summary>
   [DataMember]
-  public  Boolean? ShapeLayoutLikeWord8
+  public  bool? ShapeLayoutLikeWord8
   {
-    get => _Element.GetBooleanVal<DXW.ShapeLayoutLikeWord8>();
-    set => _Element.SetBooleanVal<DXW.ShapeLayoutLikeWord8>(value);
+    get => _Element.GetBoolVal<DXW.ShapeLayoutLikeWord8>();
+    set => _Element.SetBoolVal<DXW.ShapeLayoutLikeWord8>(value);
   }
 
   /// <summary>
   /// Align Table Rows Independently.
   /// </summary>
   [DataMember]
-  public  Boolean? AlignTablesRowByRow
+  public  bool? AlignTablesRowByRow
   {
-    get => _Element.GetBooleanVal<DXW.AlignTablesRowByRow>();
-    set => _Element.SetBooleanVal<DXW.AlignTablesRowByRow>(value);
+    get => _Element.GetBoolVal<DXW.AlignTablesRowByRow>();
+    set => _Element.SetBoolVal<DXW.AlignTablesRowByRow>(value);
   }
 
   /// <summary>
   /// Ignore Width of Last Tab Stop When Aligning Paragraph If It Is Not Left Aligned.
   /// </summary>
   [DataMember]
-  public  Boolean? ForgetLastTabAlignment
+  public  bool? ForgetLastTabAlignment
   {
-    get => _Element.GetBooleanVal<DXW.ForgetLastTabAlignment>();
-    set => _Element.SetBooleanVal<DXW.ForgetLastTabAlignment>(value);
+    get => _Element.GetBoolVal<DXW.ForgetLastTabAlignment>();
+    set => _Element.SetBoolVal<DXW.ForgetLastTabAlignment>(value);
   }
 
   /// <summary>
   /// Add Document Grid Line Pitch To Lines in Table Cells.
   /// </summary>
   [DataMember]
-  public  Boolean? AdjustLineHeightInTable
+  public  bool? AdjustLineHeightInTable
   {
-    get => _Element.GetBooleanVal<DXW.AdjustLineHeightInTable>();
-    set => _Element.SetBooleanVal<DXW.AdjustLineHeightInTable>(value);
+    get => _Element.GetBoolVal<DXW.AdjustLineHeightInTable>();
+    set => _Element.SetBoolVal<DXW.AdjustLineHeightInTable>(value);
   }
 
   /// <summary>
   /// Emulate Word 95 Full-Width Character Spacing.
   /// </summary>
   [DataMember]
-  public  Boolean? AutoSpaceLikeWord95
+  public  bool? AutoSpaceLikeWord95
   {
-    get => _Element.GetBooleanVal<DXW.AutoSpaceLikeWord95>();
-    set => _Element.SetBooleanVal<DXW.AutoSpaceLikeWord95>(value);
+    get => _Element.GetBoolVal<DXW.AutoSpaceLikeWord95>();
+    set => _Element.SetBoolVal<DXW.AutoSpaceLikeWord95>(value);
   }
 
   /// <summary>
   /// Do Not Increase Line Height for Raised/Lowered Text.
   /// </summary>
   [DataMember]
-  public  Boolean? NoSpaceRaiseLower
+  public  bool? NoSpaceRaiseLower
   {
-    get => _Element.GetBooleanVal<DXW.NoSpaceRaiseLower>();
-    set => _Element.SetBooleanVal<DXW.NoSpaceRaiseLower>(value);
+    get => _Element.GetBoolVal<DXW.NoSpaceRaiseLower>();
+    set => _Element.SetBoolVal<DXW.NoSpaceRaiseLower>(value);
   }
 
   /// <summary>
   /// Use Fixed Paragraph Spacing for HTML Auto Setting.
   /// </summary>
   [DataMember]
-  public  Boolean? DoNotUseHTMLParagraphAutoSpacing
+  public  bool? DoNotUseHTMLParagraphAutoSpacing
   {
-    get => _Element.GetBooleanVal<DXW.DoNotUseHTMLParagraphAutoSpacing>();
-    set => _Element.SetBooleanVal<DXW.DoNotUseHTMLParagraphAutoSpacing>(value);
+    get => _Element.GetBoolVal<DXW.DoNotUseHTMLParagraphAutoSpacing>();
+    set => _Element.SetBoolVal<DXW.DoNotUseHTMLParagraphAutoSpacing>(value);
   }
 
   /// <summary>
   /// Ignore Space Before Table When Deciding If Table Should Wrap Floating Object.
   /// </summary>
   [DataMember]
-  public  Boolean? LayoutRawTableWidth
+  public  bool? LayoutRawTableWidth
   {
-    get => _Element.GetBooleanVal<DXW.LayoutRawTableWidth>();
-    set => _Element.SetBooleanVal<DXW.LayoutRawTableWidth>(value);
+    get => _Element.GetBoolVal<DXW.LayoutRawTableWidth>();
+    set => _Element.SetBoolVal<DXW.LayoutRawTableWidth>(value);
   }
 
   /// <summary>
   /// Allow Table Rows to Wrap Inline Objects Independently.
   /// </summary>
   [DataMember]
-  public  Boolean? LayoutTableRowsApart
+  public  bool? LayoutTableRowsApart
   {
-    get => _Element.GetBooleanVal<DXW.LayoutTableRowsApart>();
-    set => _Element.SetBooleanVal<DXW.LayoutTableRowsApart>(value);
+    get => _Element.GetBoolVal<DXW.LayoutTableRowsApart>();
+    set => _Element.SetBoolVal<DXW.LayoutTableRowsApart>(value);
   }
 
   /// <summary>
   /// Emulate Word 97 East Asian Line Breaking.
   /// </summary>
   [DataMember]
-  public  Boolean? UseWord97LineBreakRules
+  public  bool? UseWord97LineBreakRules
   {
-    get => _Element.GetBooleanVal<DXW.UseWord97LineBreakRules>();
-    set => _Element.SetBooleanVal<DXW.UseWord97LineBreakRules>(value);
+    get => _Element.GetBoolVal<DXW.UseWord97LineBreakRules>();
+    set => _Element.SetBoolVal<DXW.UseWord97LineBreakRules>(value);
   }
 
   /// <summary>
   /// Do Not Allow Floating Tables To Break Across Pages.
   /// </summary>
   [DataMember]
-  public  Boolean? DoNotBreakWrappedTables
+  public  bool? DoNotBreakWrappedTables
   {
-    get => _Element.GetBooleanVal<DXW.DoNotBreakWrappedTables>();
-    set => _Element.SetBooleanVal<DXW.DoNotBreakWrappedTables>(value);
+    get => _Element.GetBoolVal<DXW.DoNotBreakWrappedTables>();
+    set => _Element.SetBoolVal<DXW.DoNotBreakWrappedTables>(value);
   }
 
   /// <summary>
   /// Do Not Snap to Document Grid in Table Cells with Objects.
   /// </summary>
   [DataMember]
-  public  Boolean? DoNotSnapToGridInCell
+  public  bool? DoNotSnapToGridInCell
   {
-    get => _Element.GetBooleanVal<DXW.DoNotSnapToGridInCell>();
-    set => _Element.SetBooleanVal<DXW.DoNotSnapToGridInCell>(value);
+    get => _Element.GetBoolVal<DXW.DoNotSnapToGridInCell>();
+    set => _Element.SetBoolVal<DXW.DoNotSnapToGridInCell>(value);
   }
 
   /// <summary>
   /// Select Field When First or Last Character Is Selected.
   /// </summary>
   [DataMember]
-  public  Boolean? SelectFieldWithFirstOrLastChar
+  public  bool? SelectFieldWithFirstOrLastChar
   {
-    get => _Element.GetBooleanVal<DXW.SelectFieldWithFirstOrLastChar>();
-    set => _Element.SetBooleanVal<DXW.SelectFieldWithFirstOrLastChar>(value);
+    get => _Element.GetBoolVal<DXW.SelectFieldWithFirstOrLastChar>();
+    set => _Element.SetBoolVal<DXW.SelectFieldWithFirstOrLastChar>(value);
   }
 
   /// <summary>
   /// Use Legacy Ethiopic and Amharic Line Breaking Rules.
   /// </summary>
   [DataMember]
-  public  Boolean? ApplyBreakingRules
+  public  bool? ApplyBreakingRules
   {
-    get => _Element.GetBooleanVal<DXW.ApplyBreakingRules>();
-    set => _Element.SetBooleanVal<DXW.ApplyBreakingRules>(value);
+    get => _Element.GetBoolVal<DXW.ApplyBreakingRules>();
+    set => _Element.SetBoolVal<DXW.ApplyBreakingRules>(value);
   }
 
   /// <summary>
   /// Do Not Allow Hanging Punctuation With Character Grid.
   /// </summary>
   [DataMember]
-  public  Boolean? DoNotWrapTextWithPunctuation
+  public  bool? DoNotWrapTextWithPunctuation
   {
-    get => _Element.GetBooleanVal<DXW.DoNotWrapTextWithPunctuation>();
-    set => _Element.SetBooleanVal<DXW.DoNotWrapTextWithPunctuation>(value);
+    get => _Element.GetBoolVal<DXW.DoNotWrapTextWithPunctuation>();
+    set => _Element.SetBoolVal<DXW.DoNotWrapTextWithPunctuation>(value);
   }
 
   /// <summary>
   /// Do Not Compress Compressible Characters When Using Document Grid.
   /// </summary>
   [DataMember]
-  public  Boolean? DoNotUseEastAsianBreakRules
+  public  bool? DoNotUseEastAsianBreakRules
   {
-    get => _Element.GetBooleanVal<DXW.DoNotUseEastAsianBreakRules>();
-    set => _Element.SetBooleanVal<DXW.DoNotUseEastAsianBreakRules>(value);
+    get => _Element.GetBoolVal<DXW.DoNotUseEastAsianBreakRules>();
+    set => _Element.SetBoolVal<DXW.DoNotUseEastAsianBreakRules>(value);
   }
 
   /// <summary>
   /// Emulate Word 2002 Table Style Rules.
   /// </summary>
   [DataMember]
-  public  Boolean? UseWord2002TableStyleRules
+  public  bool? UseWord2002TableStyleRules
   {
-    get => _Element.GetBooleanVal<DXW.UseWord2002TableStyleRules>();
-    set => _Element.SetBooleanVal<DXW.UseWord2002TableStyleRules>(value);
+    get => _Element.GetBoolVal<DXW.UseWord2002TableStyleRules>();
+    set => _Element.SetBoolVal<DXW.UseWord2002TableStyleRules>(value);
   }
 
   /// <summary>
   /// Allow Tables to AutoFit Into Page Margins.
   /// </summary>
   [DataMember]
-  public  Boolean? GrowAutofit
+  public  bool? GrowAutofit
   {
-    get => _Element.GetBooleanVal<DXW.GrowAutofit>();
-    set => _Element.SetBooleanVal<DXW.GrowAutofit>(value);
+    get => _Element.GetBoolVal<DXW.GrowAutofit>();
+    set => _Element.SetBoolVal<DXW.GrowAutofit>(value);
   }
 
   /// <summary>
   /// Do Not Bypass East Asian/Complex Script Layout Code.
   /// </summary>
   [DataMember]
-  public  Boolean? UseFarEastLayout
+  public  bool? UseFarEastLayout
   {
-    get => _Element.GetBooleanVal<DXW.UseFarEastLayout>();
-    set => _Element.SetBooleanVal<DXW.UseFarEastLayout>(value);
+    get => _Element.GetBoolVal<DXW.UseFarEastLayout>();
+    set => _Element.SetBoolVal<DXW.UseFarEastLayout>(value);
   }
 
   /// <summary>
   /// Do Not Automatically Apply List Paragraph Style To Bulleted/Numbered Text.
   /// </summary>
   [DataMember]
-  public  Boolean? UseNormalStyleForList
+  public  bool? UseNormalStyleForList
   {
-    get => _Element.GetBooleanVal<DXW.UseNormalStyleForList>();
-    set => _Element.SetBooleanVal<DXW.UseNormalStyleForList>(value);
+    get => _Element.GetBoolVal<DXW.UseNormalStyleForList>();
+    set => _Element.SetBoolVal<DXW.UseNormalStyleForList>(value);
   }
 
   /// <summary>
   /// Ignore Hanging Indent When Creating Tab Stop After Numbering.
   /// </summary>
   [DataMember]
-  public  Boolean? DoNotUseIndentAsNumberingTabStop
+  public  bool? DoNotUseIndentAsNumberingTabStop
   {
-    get => _Element.GetBooleanVal<DXW.DoNotUseIndentAsNumberingTabStop>();
-    set => _Element.SetBooleanVal<DXW.DoNotUseIndentAsNumberingTabStop>(value);
+    get => _Element.GetBoolVal<DXW.DoNotUseIndentAsNumberingTabStop>();
+    set => _Element.SetBoolVal<DXW.DoNotUseIndentAsNumberingTabStop>(value);
   }
 
   /// <summary>
   /// Use Alternate Set of East Asian Line Breaking Rules.
   /// </summary>
   [DataMember]
-  public  Boolean? UseAltKinsokuLineBreakRules
+  public  bool? UseAltKinsokuLineBreakRules
   {
-    get => _Element.GetBooleanVal<DXW.UseAltKinsokuLineBreakRules>();
-    set => _Element.SetBooleanVal<DXW.UseAltKinsokuLineBreakRules>(value);
+    get => _Element.GetBoolVal<DXW.UseAltKinsokuLineBreakRules>();
+    set => _Element.SetBoolVal<DXW.UseAltKinsokuLineBreakRules>(value);
   }
 
   /// <summary>
   /// Allow Contextual Spacing of Paragraphs in Tables.
   /// </summary>
   [DataMember]
-  public  Boolean? AllowSpaceOfSameStyleInTable
+  public  bool? AllowSpaceOfSameStyleInTable
   {
-    get => _Element.GetBooleanVal<DXW.AllowSpaceOfSameStyleInTable>();
-    set => _Element.SetBooleanVal<DXW.AllowSpaceOfSameStyleInTable>(value);
+    get => _Element.GetBoolVal<DXW.AllowSpaceOfSameStyleInTable>();
+    set => _Element.SetBoolVal<DXW.AllowSpaceOfSameStyleInTable>(value);
   }
 
   /// <summary>
   /// Do Not Ignore Floating Objects When Calculating Paragraph Indentation.
   /// </summary>
   [DataMember]
-  public  Boolean? DoNotSuppressIndentation
+  public  bool? DoNotSuppressIndentation
   {
-    get => _Element.GetBooleanVal<DXW.DoNotSuppressIndentation>();
-    set => _Element.SetBooleanVal<DXW.DoNotSuppressIndentation>(value);
+    get => _Element.GetBoolVal<DXW.DoNotSuppressIndentation>();
+    set => _Element.SetBoolVal<DXW.DoNotSuppressIndentation>(value);
   }
 
   /// <summary>
   /// Do Not AutoFit Tables To Fit Next To Wrapped Objects.
   /// </summary>
   [DataMember]
-  public  Boolean? DoNotAutofitConstrainedTables
+  public  bool? DoNotAutofitConstrainedTables
   {
-    get => _Element.GetBooleanVal<DXW.DoNotAutofitConstrainedTables>();
-    set => _Element.SetBooleanVal<DXW.DoNotAutofitConstrainedTables>(value);
+    get => _Element.GetBoolVal<DXW.DoNotAutofitConstrainedTables>();
+    set => _Element.SetBoolVal<DXW.DoNotAutofitConstrainedTables>(value);
   }
 
   /// <summary>
   /// Allow Table Columns To Exceed Preferred Widths of Constituent Cells.
   /// </summary>
   [DataMember]
-  public  Boolean? AutofitToFirstFixedWidthCell
+  public  bool? AutofitToFirstFixedWidthCell
   {
-    get => _Element.GetBooleanVal<DXW.AutofitToFirstFixedWidthCell>();
-    set => _Element.SetBooleanVal<DXW.AutofitToFirstFixedWidthCell>(value);
+    get => _Element.GetBoolVal<DXW.AutofitToFirstFixedWidthCell>();
+    set => _Element.SetBoolVal<DXW.AutofitToFirstFixedWidthCell>(value);
   }
 
   /// <summary>
   /// Underline Following Character Following Numbering.
   /// </summary>
   [DataMember]
-  public  Boolean? UnderlineTabInNumberingList
+  public  bool? UnderlineTabInNumberingList
   {
-    get => _Element.GetBooleanVal<DXW.UnderlineTabInNumberingList>();
-    set => _Element.SetBooleanVal<DXW.UnderlineTabInNumberingList>(value);
+    get => _Element.GetBoolVal<DXW.UnderlineTabInNumberingList>();
+    set => _Element.SetBoolVal<DXW.UnderlineTabInNumberingList>(value);
   }
 
   /// <summary>
   /// Always Use Fixed Width for Hangul Characters.
   /// </summary>
   [DataMember]
-  public  Boolean? DisplayHangulFixedWidth
+  public  bool? DisplayHangulFixedWidth
   {
-    get => _Element.GetBooleanVal<DXW.DisplayHangulFixedWidth>();
-    set => _Element.SetBooleanVal<DXW.DisplayHangulFixedWidth>(value);
+    get => _Element.GetBoolVal<DXW.DisplayHangulFixedWidth>();
+    set => _Element.SetBoolVal<DXW.DisplayHangulFixedWidth>(value);
   }
 
   /// <summary>
   /// Always Move Paragraph Mark to Page after a Page Break.
   /// </summary>
   [DataMember]
-  public  Boolean? SplitPageBreakAndParagraphMark
+  public  bool? SplitPageBreakAndParagraphMark
   {
-    get => _Element.GetBooleanVal<DXW.SplitPageBreakAndParagraphMark>();
-    set => _Element.SetBooleanVal<DXW.SplitPageBreakAndParagraphMark>(value);
+    get => _Element.GetBoolVal<DXW.SplitPageBreakAndParagraphMark>();
+    set => _Element.SetBoolVal<DXW.SplitPageBreakAndParagraphMark>(value);
   }
 
   /// <summary>
   /// Don't Vertically Align Cells Containing Floating Objects.
   /// </summary>
   [DataMember]
-  public  Boolean? DoNotVerticallyAlignCellWithShape
+  public  bool? DoNotVerticallyAlignCellWithShape
   {
-    get => _Element.GetBooleanVal<DXW.DoNotVerticallyAlignCellWithShape>();
-    set => _Element.SetBooleanVal<DXW.DoNotVerticallyAlignCellWithShape>(value);
+    get => _Element.GetBoolVal<DXW.DoNotVerticallyAlignCellWithShape>();
+    set => _Element.SetBoolVal<DXW.DoNotVerticallyAlignCellWithShape>(value);
   }
 
   /// <summary>
   /// Don't Break Table Rows Around Floating Tables.
   /// </summary>
   [DataMember]
-  public  Boolean? DoNotBreakConstrainedForcedTable
+  public  bool? DoNotBreakConstrainedForcedTable
   {
-    get => _Element.GetBooleanVal<DXW.DoNotBreakConstrainedForcedTable>();
-    set => _Element.SetBooleanVal<DXW.DoNotBreakConstrainedForcedTable>(value);
+    get => _Element.GetBoolVal<DXW.DoNotBreakConstrainedForcedTable>();
+    set => _Element.SetBoolVal<DXW.DoNotBreakConstrainedForcedTable>(value);
   }
 
   /// <summary>
   /// Ignore Vertical Alignment in Textboxes.
   /// </summary>
   [DataMember]
-  public  Boolean? DoNotVerticallyAlignInTextBox
+  public  bool? DoNotVerticallyAlignInTextBox
   {
-    get => _Element.GetBooleanVal<DXW.DoNotVerticallyAlignInTextBox>();
-    set => _Element.SetBooleanVal<DXW.DoNotVerticallyAlignInTextBox>(value);
+    get => _Element.GetBoolVal<DXW.DoNotVerticallyAlignInTextBox>();
+    set => _Element.SetBoolVal<DXW.DoNotVerticallyAlignInTextBox>(value);
   }
 
   /// <summary>
   /// Use ANSI Kerning Pairs from Fonts.
   /// </summary>
   [DataMember]
-  public  Boolean? UseAnsiKerningPairs
+  public  bool? UseAnsiKerningPairs
   {
-    get => _Element.GetBooleanVal<DXW.UseAnsiKerningPairs>();
-    set => _Element.SetBooleanVal<DXW.UseAnsiKerningPairs>(value);
+    get => _Element.GetBoolVal<DXW.UseAnsiKerningPairs>();
+    set => _Element.SetBoolVal<DXW.UseAnsiKerningPairs>(value);
   }
 
   /// <summary>
   /// Use Cached Paragraph Information for Column Balancing.
   /// </summary>
   [DataMember]
-  public  Boolean? CachedColumnBalance
+  public  bool? CachedColumnBalance
   {
-    get => _Element.GetBooleanVal<DXW.CachedColumnBalance>();
-    set => _Element.SetBooleanVal<DXW.CachedColumnBalance>(value);
+    get => _Element.GetBoolVal<DXW.CachedColumnBalance>();
+    set => _Element.SetBoolVal<DXW.CachedColumnBalance>(value);
   }
 
   /// <summary>

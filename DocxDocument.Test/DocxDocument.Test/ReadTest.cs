@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Diagnostics;
 using System.Reflection;
 using System.Runtime.Serialization;
 
@@ -29,7 +30,7 @@ public class ReadTest
   public void TestOpenAllFiles()
   {
     var samplesPath = SamplesPath;
-    foreach (var file in Directory.GetFiles(samplesPath, "*.docx").Where(name=>!name.EndsWith(".new.docx")))
+    foreach (var file in Directory.GetFiles(samplesPath, "*.docx").Where(name => !name.EndsWith(".new.docx")))
     {
       Output.WriteLine($"TestOpen: {file}");
       try
@@ -183,6 +184,7 @@ public class ReadTest
 
   private bool CompareDeep(object? checkedValue, object? expectedValue, string? propertyName = null)
   {
+    var ok = true;
     if (checkedValue != null && expectedValue != null)
     {
       var checkedType = checkedValue.GetType();
@@ -195,55 +197,84 @@ public class ReadTest
         Output.WriteLine($"    expected value type is {expectedValue.GetType()}");
         return false;
       }
-      var canCheck = false;
-      var props = checkedType.GetProperties().Where(prop => prop.GetCustomAttribute<DataMemberAttribute>() != null).ToArray();
-      if (props.Length > 0)
+      if (checkedValue is string s1 && expectedValue is string s2)
       {
-        canCheck = true;
-        foreach (var prop in props)
+        if (s1 != s2)
+          return false;
+        return true;
+      }
+      if (checkedValue is byte[] b1 && expectedValue is byte[] b2)
+      {
+        if (b1.Length != b2.Length)
+          return false;
+        for (int i = 0; i < b1.Length; i++)
         {
-          var val1 = prop.GetValue(checkedValue);
-          var val2 = prop.GetValue(expectedValue);
-          if (!CompareProperty(prop.Name, val1, val2))
+          if (b1[i] != b2[i])
             return false;
         }
+        return true;
       }
-      if (checkedType.IsEnumerable())
+      else
       {
-        var enumIntf1 = checkedValue as IEnumerable;
-        var enumIntf2 = expectedValue as IEnumerable;
-        if (enumIntf1 != null && enumIntf2 != null)
+        var canCheck = false;
+        var props = checkedType.GetProperties().Where(prop => prop.GetCustomAttribute<DataMemberAttribute>() != null).ToArray();
+        if (props.Length > 0)
         {
-          var enumerator1 = enumIntf1.GetEnumerator();
-          var enumerator2 = enumIntf2.GetEnumerator();
-          if (enumerator1 != null && enumerator2 != null)
+          canCheck = true;
+          foreach (var prop in props)
           {
-            canCheck = true;
-            enumerator1.Reset();
-            enumerator2.Reset();
-            int n = 0;
-            while (enumerator1.MoveNext() && enumerator2.MoveNext())
+            var val1 = prop.GetValue(checkedValue);
+            var val2 = prop.GetValue(expectedValue);
+            var propName = String.Empty;
+            if (!String.IsNullOrEmpty(propertyName))
+              propName = propertyName + ".";
+            propName += prop.Name;
+            if (!CompareProperty(propName, val1, val2))
+              return false;
+          }
+        }
+        if (checkedType.IsEnumerable())
+        {
+          var enumIntf1 = checkedValue as IEnumerable;
+          var enumIntf2 = expectedValue as IEnumerable;
+          if (enumIntf1 != null && enumIntf2 != null)
+          {
+            var enumerator1 = enumIntf1.GetEnumerator();
+            var enumerator2 = enumIntf2.GetEnumerator();
+            if (enumerator1 != null && enumerator2 != null)
             {
-              var item1 = enumerator1.Current;
-              var item2 = enumerator2.Current;
-              if (!CompareProperty($"item[{n}]", item1, item2))
-                return false;
-            }
-            if (enumerator1.MoveNext() != enumerator2.MoveNext())
-            {
-              Output.WriteLine($"    unequal items count");
+              canCheck = true;
+              //enumerator1.Reset();
+              //enumerator2.Reset();
+              int n = 0;
+              while (enumerator1.MoveNext() && enumerator2.MoveNext())
+              {
+                var item1 = enumerator1.Current;
+                var item2 = enumerator2.Current;
+                var propName = String.Empty;
+                if (!String.IsNullOrEmpty(propertyName))
+                  propName = propertyName + ".";
+                propName += $"item[{n}]";
+
+                if (!CompareProperty(propName, item1, item2))
+                  ok = false;
+              }
+              if (enumerator1.MoveNext() != enumerator2.MoveNext())
+              {
+                Output.WriteLine($"    unequal items count");
+              }
+              return ok;
             }
           }
         }
+        if (!canCheck)
+        {
+          Output.WriteLine($"    checked  value type {checkedValue.GetType()} has no DataMember properties");
+          return false;
+        }
       }
-      if (!canCheck)
-      {
-        Output.WriteLine($"    checked  value type {checkedValue.GetType()} has no DataMember properties");
-        return false;
-      }
-
     }
-    return true;
+    return ok;
   }
 
   [TestMethod]
@@ -260,11 +291,13 @@ public class ReadTest
         {
           var settings = document.DocumentSettings;
           if (settings != null)
-          foreach (var item in settings)
-          {
-            var val = item.Value;
-            Output.WriteLine($"  {item.Name}: {DocumentModel.TestUtilities.ToDumpString(val)}");
-          }
+            foreach (var prop in settings.GetType().GetProperties()
+              .Where(prop => prop.GetCustomAttribute<DataMemberAttribute>() != null).ToArray())
+            {
+              var val = prop.GetValue(settings);
+              if (val != null)
+                Output.WriteLine($"  {prop.Name}: {DocumentModel.TestUtilities.ToDumpString(val)}");
+            }
         }
       }
     }
@@ -273,34 +306,6 @@ public class ReadTest
       Output.WriteLine($"  {ex.GetType().Name}: {ex.Message}");
     }
   }
-
-  //[TestMethod]
-  //public void TestReadWriteSettings()
-  //{
-  //  var samplesPath = SamplesPath;
-  //  var file = Path.Combine(samplesPath, "Temp.docx");
-  //  Output.WriteLine($"TestReadWriteSettings: {file}");
-  //  try
-  //  {
-  //    using (var document = DM.Document.Create(file, false))
-  //    {
-  //      if (document.HasDocumentSettings)
-  //      {
-  //        var settings = document.DocumentSettings;
-  //        //settings.IgnoreUnknown = true;
-  //        foreach (var item in settings)
-  //        {
-  //          var val = item.Value;
-  //          Output.WriteLine($"  {item.Name}: {DocumentModel.TestUtilities.ToDumpString(val)}");
-  //        }
-  //      }
-  //    }
-  //  }
-  //  catch (Exception ex)
-  //  {
-  //    Output.WriteLine($"  {ex.GetType().Name}: {ex.Message}");
-  //  }
-  //}
 
   private string GetSamplesPath()
   {

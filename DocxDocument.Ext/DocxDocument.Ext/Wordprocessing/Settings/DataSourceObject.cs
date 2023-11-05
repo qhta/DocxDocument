@@ -82,10 +82,10 @@ public partial class DataSourceObject : IOpenXmlElementMappedObject
   /// but shall indicate that the first row is not part of the mail merge when it is performed.
   /// </summary>
   [DataMember]
-  public Boolean? FirstRowHeader
+  public bool? FirstRowHeader
   {
-    get => _Element?.GetBooleanVal<DXW.FirstRowHeader>();
-    set => _Element.SetBooleanVal<DXW.FirstRowHeader>(value);
+    get => _Element?.GetBoolVal<DXW.FirstRowHeader>();
+    set => _Element.SetBoolVal<DXW.FirstRowHeader>(value);
   }
 
   /// <summary>
@@ -114,8 +114,8 @@ public partial class DataSourceObject : IOpenXmlElementMappedObject
   [DataMember]
   public Reference? SourceReference
   {
-    get => _Element?.GetStringId<DXW.SourceReference>();
-    set => _Element.SetStringId<DXW.SourceReference>(value);
+    get => _Element?.GetRefId<DXW.SourceReference>();
+    set => _Element.SetRefId<DXW.SourceReference>(value?.ToString());
   }
 
   /// <summary>
@@ -138,8 +138,8 @@ public partial class DataSourceObject : IOpenXmlElementMappedObject
   [DataMember]
   public Reference? RecipientDataReference
   {
-    get => _Element?.GetStringId<DXW.RecipientDataReference>();
-    set => _Element.SetStringId<DXW.RecipientDataReference>(value);
+    get => _Element?.GetRefId<DXW.RecipientDataReference>();
+    set => _Element.SetRefId<DXW.RecipientDataReference>(value?.ToString());
   }
 
   /// <summary>
@@ -167,7 +167,7 @@ public partial class DataSourceObject : IOpenXmlElementMappedObject
   /// </para>
   /// </summary>
   [DataMember]
-  public String? UdlConnectionString
+  public string? UdlConnectionString
   {
     get => _Element?.GetStringVal<DXW.UdlConnectionString>();
     set => _Element.SetStringVal<DXW.UdlConnectionString>(value);
@@ -181,7 +181,7 @@ public partial class DataSourceObject : IOpenXmlElementMappedObject
   /// from which data is imported from within the external data source.
   /// </summary>
   [DataMember]
-  public String? DataSourceTableName
+  public string? DataSourceTableName
   {
     get => _Element?.GetStringVal<DXW.DataSourceTableName>();
     set => _Element.SetStringVal<DXW.DataSourceTableName>(value);
@@ -195,7 +195,7 @@ public partial class DataSourceObject : IOpenXmlElementMappedObject
   [DataMember]
   public UInt16? ColumnDelimiter
   {
-    get => (UInt16?)_Element?.GetInt32Val<DXW.DataSourceTableName>();
-    set => _Element.SetInt32Val<DXW.DataSourceTableName>(value);
+    get => (UInt16?)_Element?.GetIntVal<DXW.DataSourceTableName>();
+    set => _Element.SetIntVal<DXW.DataSourceTableName>(value);
   }
 }

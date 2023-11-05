@@ -26,10 +26,10 @@ public struct Reference : IEquatable<Reference>
     return new Reference(val);
   }
 
-  public static implicit operator String(Reference val)
-  {
-    return val.Value;
-  }
+  //public static implicit operator String(Reference val)
+  //{
+  //  return val.Value;
+  //}
 
   /// <summary>
   /// Returns 8-digit hex string of the value.

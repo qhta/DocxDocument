@@ -34,7 +34,7 @@ public partial class Entry : IOpenXmlElementMappedObject
   /// Specifies the ID of the new group. Default is 0.
   /// </summary>
   [DataMember]
-  public Int32? New
+  public int? New
   {
     get => _Element.New?.Value;
     set => _Element.New = value;
@@ -44,7 +44,7 @@ public partial class Entry : IOpenXmlElementMappedObject
   /// Specifies the ID of the old group. Default is 0.
   /// </summary>
   [DataMember]
-  public Int32? Type
+  public int? Type
   {
     get => _Element.Old?.Value;
     set => _Element.Old = value;

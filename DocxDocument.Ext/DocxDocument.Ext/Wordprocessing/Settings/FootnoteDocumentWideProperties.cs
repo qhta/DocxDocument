@@ -51,10 +51,10 @@ public partial class FootnoteDocumentWideProperties : IOpenXmlElementMappedObjec
   /// If this element is omitted, then the starting value shall be 1.
   /// </summary>
   [DataMember]
-  public Int32? NumberingStart
+  public int? NumberingStart
   {
-    get => _Element?.GetInt32Val<DXW.NumberingStart>();
-    set => _Element.SetInt32Val<DXW.NumberingStart>(value);
+    get => _Element?.GetIntVal<DXW.NumberingStart>();
+    set => _Element.SetIntVal<DXW.NumberingStart>(value);
   }
 
   /// <summary>
@@ -64,10 +64,10 @@ public partial class FootnoteDocumentWideProperties : IOpenXmlElementMappedObjec
   /// then the document shall be considered non-conformant.
   /// </summary>
   [DataMember]
-  public Int32? FootnoteSpecialReference
+  public int? FootnoteSpecialReference
   {
-    get => _Element?.GetInt32Id<DXW.FootnoteSpecialReference>();
-    set => _Element.SetInt32Id<DXW.FootnoteSpecialReference>(value);
+    get => _Element?.GetIntId<DXW.FootnoteSpecialReference>();
+    set => _Element.SetIntId<DXW.FootnoteSpecialReference>(value);
   }
 
   /// <summary>

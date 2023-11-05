@@ -52,7 +52,7 @@ public partial class WriteProtection : IOpenXmlElementMappedObject
   /// Recommend Write Protection in User Interface.
   /// </summary>
   [DataMember]
-  public Boolean? Recommended
+  public bool? Recommended
   {
     get => _Element.Recommended?.Value;
     set
@@ -116,7 +116,7 @@ public partial class WriteProtection : IOpenXmlElementMappedObject
   /// Cryptographic Hashing Algorithm.
   /// </summary>
   [DataMember]
-  public Int32? CryptographicAlgorithmSid
+  public int? CryptographicAlgorithmSid
   {
     get => _Element.CryptographicAlgorithmSid?.Value;
     set
@@ -132,7 +132,7 @@ public partial class WriteProtection : IOpenXmlElementMappedObject
   /// Iterations to Run Hashing Algorithm.
   /// </summary>
   [DataMember]
-  public UInt32? CryptographicSpinCount
+  public uint? CryptographicSpinCount
   {
     get => _Element.CryptographicSpinCount?.Value;
     set
@@ -148,7 +148,7 @@ public partial class WriteProtection : IOpenXmlElementMappedObject
   /// Cryptographic Provider.
   /// </summary>
   [DataMember]
-  public String? CryptographicProvider
+  public string? CryptographicProvider
   {
     get => _Element.CryptographicProvider?.Value;
     set
@@ -185,7 +185,7 @@ public partial class WriteProtection : IOpenXmlElementMappedObject
   /// Algorithm Extensibility Source.
   /// </summary>
   [DataMember]
-  public String? AlgorithmIdExtensibilitySource
+  public string? AlgorithmIdExtensibilitySource
   {
     get => _Element.AlgorithmIdExtensibilitySource?.Value;
     set
@@ -222,7 +222,7 @@ public partial class WriteProtection : IOpenXmlElementMappedObject
   /// Provider Type Extensibility Source.
   /// </summary>
   [DataMember]
-  public String? CryptographicProviderTypeExtSource
+  public string? CryptographicProviderTypeExtSource
   {
     get => _Element.CryptographicProviderTypeExtSource?.Value;
     set
@@ -280,7 +280,7 @@ public partial class WriteProtection : IOpenXmlElementMappedObject
   /// AlgorithmName, this property is only available in Office 2010 and later.
   /// </summary>
   [DataMember]
-  public String? AlgorithmName
+  public string? AlgorithmName
   {
     get => _Element.AlgorithmName?.Value;
     set
@@ -338,7 +338,7 @@ public partial class WriteProtection : IOpenXmlElementMappedObject
   /// SpinCount, this property is only available in Office 2010 and later.
   /// </summary>
   [DataMember]
-  public Int32? SpinCount
+  public int? SpinCount
   {
     get => _Element.SpinCount?.Value;
     set

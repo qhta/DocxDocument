@@ -36,7 +36,8 @@
     test.Initialize();
     Console.WriteLine($"Opening directory: {test.SamplesPath}");
     Console.WriteLine();
-    test.TestSerializeAndDeserialize();
+    test.TestSerializeAndDeserializeOne();
+    test.TestSerializeAndDeserializeAll();
   }
 }
 

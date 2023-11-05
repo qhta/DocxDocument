@@ -50,11 +50,11 @@ public class HyperlinkInfo
   /// lpwstr - This specifies the hyperlink target.
   /// </summary>
   [DataMember]
-  public String? Target { get; set; }
+  public string? Target { get; set; }
 
   /// <summary>
   /// lpwstr	This specifies the location of the hyperlink.
   /// </summary>
   [DataMember]
-  public String? Location { get; set; }
+  public string? Location { get; set; }
 }

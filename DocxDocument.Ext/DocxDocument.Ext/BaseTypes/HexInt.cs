@@ -6,8 +6,19 @@
 /// </summary>
 public struct HexInt : IConvertible, IEquatable<HexInt>
 {
+  public HexInt()
+  {
+    Value = 0;
+  }
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
-  private readonly int Value;
+
+  public string Val
+  {
+    get => ToString();
+    set => Value = int.Parse(value, NumberStyles.HexNumber);
+  }
+
+  private int Value { get; set; }
 
   public HexInt(string val)
   {
@@ -198,7 +209,7 @@ public struct HexInt : IConvertible, IEquatable<HexInt>
     return Value.ToString("X8");
   }
 
-    public bool Equals(HexInt other)
+  public bool Equals(HexInt other)
   {
     return Value == other.Value;
   }
@@ -207,4 +218,6 @@ public struct HexInt : IConvertible, IEquatable<HexInt>
   {
     return Value;
   }
+
+
 }

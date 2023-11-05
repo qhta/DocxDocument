@@ -5,7 +5,7 @@ public partial class CustomProperties : ICollection<CustomProperty>
 {
   public void Add(CustomProperty value)
   {
-    _CustomFileProperties.AddChild(value._ExistingElement);
+    _CustomFileProperties.AppendChild(value._ExistingElement);
   }
 
   public void Clear()

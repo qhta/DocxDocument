@@ -36,7 +36,7 @@ public partial class RevisionView : IOpenXmlElementMappedObject
   /// Display Visual Indicator Of Markup Area
   /// </summary>
   [DataMember]
-  public Boolean? Markup
+  public bool? Markup
   {
     get => _Element.Markup?.Value;
     set => _Element.Markup = value;
@@ -46,7 +46,7 @@ public partial class RevisionView : IOpenXmlElementMappedObject
   /// Display Comments
   /// </summary>
   [DataMember]
-  public Boolean? Comments
+  public bool? Comments
   {
     get => _Element.Comments?.Value;
     set => _Element.Comments = value;
@@ -56,7 +56,7 @@ public partial class RevisionView : IOpenXmlElementMappedObject
   /// Display Content Revisions
   /// </summary>
   [DataMember]
-  public Boolean? DisplayRevision
+  public bool? DisplayRevision
   {
     get => _Element.DisplayRevision?.Value;
     set => _Element.DisplayRevision = value;
@@ -66,7 +66,7 @@ public partial class RevisionView : IOpenXmlElementMappedObject
   /// Display Formatting Revisions
   /// </summary>
   [DataMember]
-  public Boolean? Formatting
+  public bool? Formatting
   {
     get => _Element.Formatting?.Value;
     set => _Element.Formatting = value;
@@ -76,7 +76,7 @@ public partial class RevisionView : IOpenXmlElementMappedObject
   /// Display Ink Annotations
   /// </summary>
   [DataMember]
-  public Boolean? InkAnnotations
+  public bool? InkAnnotations
   {
     get => _Element.InkAnnotations?.Value;
     set => _Element.InkAnnotations = value;

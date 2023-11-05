@@ -37,7 +37,7 @@ public partial class DocumentVariable: IOpenXmlElementMappedObject
   internal DXW.DocumentVariable _Element { get; private set; }
 
   [DataMember]
-  public String? Name
+  public string? Name
   {
     get => _Element.Name?.Value;
     set
@@ -50,7 +50,7 @@ public partial class DocumentVariable: IOpenXmlElementMappedObject
   }
 
   [DataMember]
-  public String? Val
+  public string? Val
   {
     get => _Element.Val?.Value;
     set

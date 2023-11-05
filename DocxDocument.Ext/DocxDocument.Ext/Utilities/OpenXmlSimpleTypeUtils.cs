@@ -5,7 +5,7 @@
 /// </summary>
 public static class OpenXmlSimpleTypeUtils
 {
-  public static Boolean? AsBoolean(this DX.OpenXmlSimpleType? element)
+  public static bool? AsBoolean(this DX.OpenXmlSimpleType? element)
   {
     var str = element?.InnerText;
     if (str!= null)

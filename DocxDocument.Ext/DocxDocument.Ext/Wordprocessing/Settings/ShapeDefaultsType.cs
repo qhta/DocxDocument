@@ -38,12 +38,12 @@ public partial class ShapeDefaultsType : IOpenXmlElementMappedObject
     else
       throw new InvalidOperationException($"Element type {typeof(OpenXmlElementType)} not supported");
 
-    var shapeDefaultsVml = ShapeDefaults?.GetElement<DXVO.ShapeDefaults>();
-    if (shapeDefaultsVml != null)
-      result.AppendChild(shapeDefaultsVml);
-    var shapeLayout = ShapeLayout?.GetElement<DXVO.ShapeLayout>();
-    if (shapeLayout != null)
-      result.AppendChild(shapeLayout);
+    var vmlShapeDefaults = VmlShapeDefaults?.GetElement<DXVO.ShapeDefaults>();
+    if (vmlShapeDefaults != null)
+      result.AddChildElement(vmlShapeDefaults);
+    var vmlShapeLayout = VmlShapeLayout?.GetElement<DXVO.ShapeLayout>();
+    if (vmlShapeLayout != null)
+      result.AddChildElement(vmlShapeLayout);
 
     if (result is OpenXmlElementType obj)
       return obj;
@@ -59,14 +59,14 @@ public partial class ShapeDefaultsType : IOpenXmlElementMappedObject
   internal DXW.ShapeDefaultsType _Element { get; private set; }
 
   [DataMember]
-  public DMV.ShapeDefaults? ShapeDefaults
+  public DMV.ShapeDefaults? VmlShapeDefaults
   {
     get => _Element.GetObject<DMV.ShapeDefaults, DXVO.ShapeDefaults>();
     set => _Element.SetObject<DMV.ShapeDefaults, DXVO.ShapeDefaults>(value);
   }
 
   [DataMember]
-  public DMV.ShapeLayout? ShapeLayout
+  public DMV.ShapeLayout? VmlShapeLayout
   {
     get => _Element.GetObject<DMV.ShapeLayout, DXVO.ShapeLayout>();
     set => _Element.SetObject<DMV.ShapeLayout, DXVO.ShapeLayout>(value);
