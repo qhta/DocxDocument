@@ -47,7 +47,7 @@ public partial class DocumentProtection: IOpenXmlElementMappedObject
     }
   }
 
-  public Boolean? Formatting
+  public bool? Formatting
   {
     get => _Element.Formatting?.Value;
     set
@@ -59,7 +59,7 @@ public partial class DocumentProtection: IOpenXmlElementMappedObject
     }
   }
 
-  public Boolean? Enforcement
+  public bool? Enforcement
   {
     get => _Element.Enforcement?.Value;
     set
@@ -107,7 +107,7 @@ public partial class DocumentProtection: IOpenXmlElementMappedObject
     }
   }
 
-  public Int32? CryptographicAlgorithmSid
+  public int? CryptographicAlgorithmSid
   {
     get => _Element.CryptographicAlgorithmSid?.Value;
     set
@@ -119,7 +119,7 @@ public partial class DocumentProtection: IOpenXmlElementMappedObject
     }
   }
 
-  public UInt32? CryptographicSpinCount
+  public uint? CryptographicSpinCount
   {
     get => _Element.CryptographicSpinCount?.Value;
     set
@@ -131,7 +131,7 @@ public partial class DocumentProtection: IOpenXmlElementMappedObject
     }
   }
 
-  public String? CryptographicProvider
+  public string? CryptographicProvider
   {
     get => _Element.CryptographicProvider?.Value;
     set
@@ -160,7 +160,7 @@ public partial class DocumentProtection: IOpenXmlElementMappedObject
     }
   }
 
-  public String? AlgorithmIdExtensibilitySource
+  public string? AlgorithmIdExtensibilitySource
   {
     get => _Element.AlgorithmIdExtensibilitySource?.Value;
     set
@@ -189,7 +189,7 @@ public partial class DocumentProtection: IOpenXmlElementMappedObject
     }
   }
 
-  public String? CryptographicProviderTypeExtSource
+  public string? CryptographicProviderTypeExtSource
   {
     get => _Element.CryptographicProviderTypeExtSource?.Value;
     set
@@ -235,7 +235,7 @@ public partial class DocumentProtection: IOpenXmlElementMappedObject
     }
   }
 
-  public String? AlgorithmName
+  public string? AlgorithmName
   {
     get => _Element.AlgorithmName?.Value;
     set
@@ -281,7 +281,7 @@ public partial class DocumentProtection: IOpenXmlElementMappedObject
     }
   }
 
-  public Int32? SpinCount
+  public int? SpinCount
   {
     get => _Element.SpinCount?.Value;
     set

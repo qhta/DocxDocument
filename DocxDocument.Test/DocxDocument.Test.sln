@@ -16,6 +16,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Qhta.Xml.Serialization", "..\..\MyLib\Qhta.Xml.Serialization\Qhta.Xml.Serialization.csproj", "{D132FFA5-E394-4ED4-A082-B3CDBF97506C}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Qhta.Xml", "..\..\MyLib\Qhta.Xml\Qhta.Xml.csproj", "{3CFCA43D-25F5-4472-91B8-9F8038FF4D1C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Qhta.Xml.Reflection", "..\..\MyLib\Qhta.Xml.Reflection\Qhta.Xml.Reflection.csproj", "{16BF2FC8-8212-407C-8166-47941B818566}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,6 +42,14 @@ Global
 		{D132FFA5-E394-4ED4-A082-B3CDBF97506C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D132FFA5-E394-4ED4-A082-B3CDBF97506C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D132FFA5-E394-4ED4-A082-B3CDBF97506C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CFCA43D-25F5-4472-91B8-9F8038FF4D1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CFCA43D-25F5-4472-91B8-9F8038FF4D1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CFCA43D-25F5-4472-91B8-9F8038FF4D1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CFCA43D-25F5-4472-91B8-9F8038FF4D1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16BF2FC8-8212-407C-8166-47941B818566}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16BF2FC8-8212-407C-8166-47941B818566}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16BF2FC8-8212-407C-8166-47941B818566}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16BF2FC8-8212-407C-8166-47941B818566}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

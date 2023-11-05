@@ -352,7 +352,7 @@ public partial class BuiltInProperties
   /// Set this element to FALSE to enable cropping of the document thumbnail to show only sections that fits the display
   /// </summary>
   [DataMember]
-  public Boolean? ScaleCrop
+  public bool? ScaleCrop
   {
     get => _ExtendedProperties?.ScaleCrop?.AsBoolean();
     set
@@ -369,7 +369,7 @@ public partial class BuiltInProperties
   /// If this element is set to TRUE, producers should take care when updating the document.
   /// </summary>
   [DataMember]
-  public Boolean? SharedDocument
+  public bool? SharedDocument
   {
     get => _ExtendedProperties?.SharedDocument?.AsBoolean();
     set
@@ -387,7 +387,7 @@ public partial class BuiltInProperties
   /// Set this element to FALSE to indicate that hyperlinks are outdated.
   /// </summary>
   [DataMember]
-  public Boolean? LinksUpToDate
+  public bool? LinksUpToDate
   {
     get => _ExtendedProperties?.LinksUpToDate?.AsBoolean();
     set
@@ -404,7 +404,7 @@ public partial class BuiltInProperties
   /// The next producer to open this document shall update the hyperlink relationships with the new hyperlinks specified in this part.
   /// </summary>
   [DataMember]
-  public Boolean? HyperlinksChanged
+  public bool? HyperlinksChanged
   {
     get => _ExtendedProperties?.HyperlinksChanged?.AsBoolean();
     set

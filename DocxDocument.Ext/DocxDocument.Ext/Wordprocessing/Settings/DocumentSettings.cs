@@ -8,6 +8,8 @@
 public partial class DocumentSettings
 {
 
+  public DocumentSettings() { }
+
   public DocumentSettings(DM.Document document)
   {
     _WordprocessingDocument = document._WordprocessingDocument;
@@ -89,10 +91,10 @@ public partial class DocumentSettings
   /// a given WordprocessingML document. The definition and extent of personal information is not defined by /IEC 29500.
   /// </summary>
   [DataMember]
-  public Boolean? RemovePersonalInformation
+  public bool? RemovePersonalInformation
   {
-    get => _DocumentSettings?.GetBooleanVal<DXW.RemovePersonalInformation>();
-    set => _ExistingSettings.SetBooleanVal<DXW.RemovePersonalInformation>(value);
+    get => _DocumentSettings?.GetBoolVal<DXW.RemovePersonalInformation>();
+    set => _ExistingSettings.SetBoolVal<DXW.RemovePersonalInformation>(value);
   }
 
   /// <summary>
@@ -101,10 +103,10 @@ public partial class DocumentSettings
   /// Annotations store this information in the date attribute on the annotation's XML element.
   /// </summary>
   [DataMember]
-  public Boolean? RemoveDateAndTime
+  public bool? RemoveDateAndTime
   {
-    get => _DocumentSettings?.GetBooleanVal<DXW.RemoveDateAndTime>();
-    set => _ExistingSettings.SetBooleanVal<DXW.RemoveDateAndTime>(value);
+    get => _DocumentSettings?.GetBoolVal<DXW.RemoveDateAndTime>();
+    set => _ExistingSettings.SetBoolVal<DXW.RemoveDateAndTime>(value);
   }
 
   /// <summary>
@@ -118,10 +120,10 @@ public partial class DocumentSettings
   /// </para>
   /// </summary>
   [DataMember]
-  public Boolean? DoNotDisplayPageBoundaries
+  public bool? DoNotDisplayPageBoundaries
   {
-    get => _DocumentSettings?.GetBooleanVal<DXW.DoNotDisplayPageBoundaries>();
-    set => _ExistingSettings.SetBooleanVal<DXW.DoNotDisplayPageBoundaries>(value);
+    get => _DocumentSettings?.GetBoolVal<DXW.DoNotDisplayPageBoundaries>();
+    set => _ExistingSettings.SetBoolVal<DXW.DoNotDisplayPageBoundaries>(value);
   }
 
   /// <summary>
@@ -129,10 +131,10 @@ public partial class DocumentSettings
   /// shall be displayed when the document is displayed in print layout view as specified in the view element (§17.15.1.92).
   /// </summary>
   [DataMember]
-  public Boolean? DisplayBackgroundShape
+  public bool? DisplayBackgroundShape
   {
-    get => _DocumentSettings?.GetBooleanVal<DXW.DisplayBackgroundShape>();
-    set => _ExistingSettings.SetBooleanVal<DXW.DisplayBackgroundShape>(value);
+    get => _DocumentSettings?.GetBoolVal<DXW.DisplayBackgroundShape>();
+    set => _ExistingSettings.SetBoolVal<DXW.DisplayBackgroundShape>(value);
   }
 
   /// <summary>
@@ -144,10 +146,10 @@ public partial class DocumentSettings
   /// </para>
   /// </summary>
   [DataMember]
-  public Boolean? PrintPostScriptOverText
+  public bool? PrintPostScriptOverText
   {
-    get => _DocumentSettings?.GetBooleanVal<DXW.PrintPostScriptOverText>();
-    set => _ExistingSettings.SetBooleanVal<DXW.PrintPostScriptOverText>(value);
+    get => _DocumentSettings?.GetBoolVal<DXW.PrintPostScriptOverText>();
+    set => _ExistingSettings.SetBoolVal<DXW.PrintPostScriptOverText>(value);
   }
 
   /// <summary>
@@ -159,10 +161,10 @@ public partial class DocumentSettings
   /// </para>
   /// </summary>
   [DataMember]
-  public Boolean? PrintFractionalCharacterWidth
+  public bool? PrintFractionalCharacterWidth
   {
-    get => _DocumentSettings?.GetBooleanVal<DXW.PrintFractionalCharacterWidth>();
-    set => _ExistingSettings.SetBooleanVal<DXW.PrintFractionalCharacterWidth>(value);
+    get => _DocumentSettings?.GetBoolVal<DXW.PrintFractionalCharacterWidth>();
+    set => _ExistingSettings.SetBoolVal<DXW.PrintFractionalCharacterWidth>(value);
   }
 
   /// <summary>
@@ -175,10 +177,10 @@ public partial class DocumentSettings
   /// </summary>
   /// </para>
   [DataMember]
-  public Boolean? PrintFormsData
+  public bool? PrintFormsData
   {
-    get => _DocumentSettings?.GetBooleanVal<DXW.PrintFormsData>();
-    set => _ExistingSettings.SetBooleanVal<DXW.PrintFormsData>(value);
+    get => _DocumentSettings?.GetBoolVal<DXW.PrintFormsData>();
+    set => _ExistingSettings.SetBoolVal<DXW.PrintFormsData>(value);
   }
 
   /// <summary>
@@ -186,10 +188,10 @@ public partial class DocumentSettings
   /// These fonts shall be embedded subject to the algorithm specified in §17.8.1.
   /// </summary>
   [DataMember]
-  public Boolean? EmbedTrueTypeFonts
+  public bool? EmbedTrueTypeFonts
   {
-    get => _DocumentSettings?.GetBooleanVal<DXW.EmbedTrueTypeFonts>();
-    set => _ExistingSettings.SetBooleanVal<DXW.EmbedTrueTypeFonts>(value);
+    get => _DocumentSettings?.GetBoolVal<DXW.EmbedTrueTypeFonts>();
+    set => _ExistingSettings.SetBoolVal<DXW.EmbedTrueTypeFonts>(value);
   }
 
   /// <summary>
@@ -198,10 +200,10 @@ public partial class DocumentSettings
   /// Common system fonts refer to a set of fonts which are typically always present on a machine, and are not defined by /IEC 29500.
   /// </summary>
   [DataMember]
-  public Boolean? EmbedSystemFonts
+  public bool? EmbedSystemFonts
   {
-    get => _DocumentSettings?.GetBooleanVal<DXW.EmbedSystemFonts>();
-    set => _ExistingSettings.SetBooleanVal<DXW.EmbedSystemFonts>(value);
+    get => _DocumentSettings?.GetBoolVal<DXW.EmbedSystemFonts>();
+    set => _ExistingSettings.SetBoolVal<DXW.EmbedSystemFonts>(value);
   }
 
   /// <summary>
@@ -211,10 +213,10 @@ public partial class DocumentSettings
   /// in order to prevent the file from becoming unnecessarily large from the use of a small number of glyphs from a large embedded font.
   /// </summary>
   [DataMember]
-  public Boolean? SaveSubsetFonts
+  public bool? SaveSubsetFonts
   {
-    get => _DocumentSettings?.GetBooleanVal<DXW.SaveSubsetFonts>();
-    set => _ExistingSettings.SetBooleanVal<DXW.SaveSubsetFonts>(value);
+    get => _DocumentSettings?.GetBoolVal<DXW.SaveSubsetFonts>();
+    set => _ExistingSettings.SetBoolVal<DXW.SaveSubsetFonts>(value);
   }
 
   /// <summary>
@@ -227,10 +229,10 @@ public partial class DocumentSettings
   /// </para>
   /// </summary>
   [DataMember]
-  public Boolean? SaveFormsData
+  public bool? SaveFormsData
   {
-    get => _DocumentSettings?.GetBooleanVal<DXW.SaveFormsData>();
-    set => _ExistingSettings.SetBooleanVal<DXW.SaveFormsData>(value);
+    get => _DocumentSettings?.GetBoolVal<DXW.SaveFormsData>();
+    set => _ExistingSettings.SetBoolVal<DXW.SaveFormsData>(value);
   }
 
   /// <summary>
@@ -240,10 +242,10 @@ public partial class DocumentSettings
   /// </para>
   /// </summary>
   [DataMember]
-  public Boolean? MirrorMargins
+  public bool? MirrorMargins
   {
-    get => _DocumentSettings?.GetBooleanVal<DXW.MirrorMargins>();
-    set => _ExistingSettings.SetBooleanVal<DXW.MirrorMargins>(value);
+    get => _DocumentSettings?.GetBoolVal<DXW.MirrorMargins>();
+    set => _ExistingSettings.SetBoolVal<DXW.MirrorMargins>(value);
   }
 
   /// <summary>
@@ -254,10 +256,10 @@ public partial class DocumentSettings
   /// as borders which are perfectly aligning shall not be displayed in favor of the intervening page border.
   /// </summary>
   [DataMember]
-  public Boolean? AlignBorderAndEdges
+  public bool? AlignBorderAndEdges
   {
-    get => _DocumentSettings?.GetBooleanVal<DXW.AlignBorderAndEdges>();
-    set => _ExistingSettings.SetBooleanVal<DXW.AlignBorderAndEdges>(value);
+    get => _DocumentSettings?.GetBoolVal<DXW.AlignBorderAndEdges>();
+    set => _ExistingSettings.SetBoolVal<DXW.AlignBorderAndEdges>(value);
   }
 
   /// <summary>
@@ -272,10 +274,10 @@ public partial class DocumentSettings
   /// </para>
   /// </summary>
   [DataMember]
-  public Boolean? BordersDoNotSurroundHeader
+  public bool? BordersDoNotSurroundHeader
   {
-    get => _DocumentSettings?.GetBooleanVal<DXW.BordersDoNotSurroundHeader>();
-    set => _ExistingSettings.SetBooleanVal<DXW.BordersDoNotSurroundHeader>(value);
+    get => _DocumentSettings?.GetBoolVal<DXW.BordersDoNotSurroundHeader>();
+    set => _ExistingSettings.SetBoolVal<DXW.BordersDoNotSurroundHeader>(value);
   }
 
   /// <summary>
@@ -292,10 +294,10 @@ public partial class DocumentSettings
   /// </para>
   /// </summary>
   [DataMember]
-  public Boolean? BordersDoNotSurroundFooter
+  public bool? BordersDoNotSurroundFooter
   {
-    get => _DocumentSettings?.GetBooleanVal<DXW.BordersDoNotSurroundFooter>();
-    set => _ExistingSettings.SetBooleanVal<DXW.BordersDoNotSurroundFooter>(value);
+    get => _DocumentSettings?.GetBoolVal<DXW.BordersDoNotSurroundFooter>();
+    set => _ExistingSettings.SetBoolVal<DXW.BordersDoNotSurroundFooter>(value);
   }
 
   /// <summary>
@@ -310,10 +312,10 @@ public partial class DocumentSettings
   /// </para>
   /// </summary>
   [DataMember]
-  public Boolean? GutterAtTop
+  public bool? GutterAtTop
   {
-    get => _DocumentSettings?.GetBooleanVal<DXW.GutterAtTop>();
-    set => _ExistingSettings.SetBooleanVal<DXW.GutterAtTop>(value);
+    get => _DocumentSettings?.GetBoolVal<DXW.GutterAtTop>();
+    set => _ExistingSettings.SetBoolVal<DXW.GutterAtTop>(value);
   }
 
   /// <summary>
@@ -323,10 +325,10 @@ public partial class DocumentSettings
   /// contained in a WordprocessingML document which is considered to contain spelling errors.
   /// </summary>
   [DataMember]
-  public Boolean? HideSpellingErrors
+  public bool? HideSpellingErrors
   {
-    get => _DocumentSettings?.GetBooleanVal<DXW.HideSpellingErrors>();
-    set => _ExistingSettings.SetBooleanVal<DXW.HideSpellingErrors>(value);
+    get => _DocumentSettings?.GetBoolVal<DXW.HideSpellingErrors>();
+    set => _ExistingSettings.SetBoolVal<DXW.HideSpellingErrors>(value);
   }
 
   /// <summary>
@@ -336,10 +338,10 @@ public partial class DocumentSettings
   /// contained in a WordprocessingML document which is considered to contain grammatical errors.
   /// </summary>
   [DataMember]
-  public Boolean? HideGrammaticalErrors
+  public bool? HideGrammaticalErrors
   {
-    get => _DocumentSettings?.GetBooleanVal<DXW.HideGrammaticalErrors>();
-    set => _ExistingSettings.SetBooleanVal<DXW.HideGrammaticalErrors>(value);
+    get => _DocumentSettings?.GetBoolVal<DXW.HideGrammaticalErrors>();
+    set => _ExistingSettings.SetBoolVal<DXW.HideGrammaticalErrors>(value);
   }
 
   /// <summary>
@@ -360,7 +362,7 @@ public partial class DocumentSettings
   /// </para>
   /// </summary>
   [DataMember]
-  public Boolean? ForceUpgrade
+  public bool? ForceUpgrade
   {
     get => _DocumentSettings?.GetTrueIfExists<DXW.ForceUpgrade>();
     set => _ExistingSettings.SetExistsIfTrue<DXW.ForceUpgrade>(value);
@@ -605,7 +607,7 @@ public partial class DocumentSettings
   /// </para>
   /// </summary>
   [DataMember]
-  public String? DecimalSymbol
+  public string? DecimalSymbol
   {
     get => _DocumentSettings?.GetStringVal<DXW.DecimalSymbol>();
     set => _ExistingSettings.SetStringVal<DXW.DecimalSymbol>(value);
@@ -623,7 +625,7 @@ public partial class DocumentSettings
   /// </para>
   /// </summary>
   [DataMember]
-  public String? ListSeparator
+  public string? ListSeparator
   {
     get => _DocumentSettings?.GetStringVal<DXW.ListSeparator>();
     set => _ExistingSettings.SetStringVal<DXW.ListSeparator>(value);
@@ -657,10 +659,10 @@ public partial class DocumentSettings
   /// This setting is also ignored when DoNotAutoCompressPictures is set to "true".
   /// </summary>
   [DataMember]
-  public Int32? DefaultImageDpi
+  public int? DefaultImageDpi
   {
-    get => _DocumentSettings?.GetInt32Val<DXW10.DefaultImageDpi>();
-    set => _ExistingSettings.SetInt32Val<DXW10.DefaultImageDpi>(value);
+    get => _DocumentSettings?.GetIntVal<DXW10.DefaultImageDpi>();
+    set => _ExistingSettings.SetIntVal<DXW10.DefaultImageDpi>(value);
   }
 
   /// <summary>
@@ -669,20 +671,20 @@ public partial class DocumentSettings
   /// If this element is absent or if it has a value of "false", the cropped-out areas of images are saved.
   /// </summary>
   [DataMember]
-  public Boolean? DiscardImageEditingData
+  public bool? DiscardImageEditingData
   {
-    get => _DocumentSettings?.GetBooleanVal<DXW10.DiscardImageEditingData>();
-    set => _ExistingSettings.SetBooleanVal<DXW10.DiscardImageEditingData>(value);
+    get => _DocumentSettings?.GetBoolVal<DXW10.DiscardImageEditingData>();
+    set => _ExistingSettings.SetBoolVal<DXW10.DiscardImageEditingData>(value);
   }
 
   /// <summary>
   /// Element that, when true, specifies that the user was resolving conflicting edits when the document was saved. 
   /// </summary>
   [DataMember]
-  public Boolean? ConflictMode
+  public bool? ConflictMode
   {
-    get => _DocumentSettings?.GetBooleanVal<DXW10.ConflictMode>();
-    set => _ExistingSettings.SetBooleanVal<DXW10.ConflictMode>(value);
+    get => _DocumentSettings?.GetBoolVal<DXW10.ConflictMode>();
+    set => _ExistingSettings.SetBoolVal<DXW10.ConflictMode>(value);
   }
 
   /// <summary>
@@ -700,10 +702,10 @@ public partial class DocumentSettings
   /// </list>
   /// </summary>
   [DataMember]
-  public Boolean? ChartTrackingRefBased
+  public bool? ChartTrackingRefBased
   {
-    get => _DocumentSettings?.GetBooleanVal<DXW13.ChartTrackingRefBased>();
-    set => _ExistingSettings.SetBooleanVal<DXW13.ChartTrackingRefBased>(value);
+    get => _DocumentSettings?.GetBoolVal<DXW13.ChartTrackingRefBased>();
+    set => _ExistingSettings.SetBoolVal<DXW13.ChartTrackingRefBased>(value);
   }
 
   /// <summary>
@@ -713,10 +715,10 @@ public partial class DocumentSettings
   /// the resulting WordprocessingML markup in the Revisions subclause of this document describes the necessary syntax.
   /// </summary>
   [DataMember]
-  public Boolean? TrackRevisions
+  public bool? TrackRevisions
   {
-    get => _DocumentSettings?.GetBooleanVal<DXW.TrackRevisions>();
-    set => _ExistingSettings.SetBooleanVal<DXW.TrackRevisions>(value);
+    get => _DocumentSettings?.GetBoolVal<DXW.TrackRevisions>();
+    set => _ExistingSettings.SetBoolVal<DXW.TrackRevisions>(value);
   }
 
   /// <summary>
@@ -730,10 +732,10 @@ public partial class DocumentSettings
   /// </para>
   /// </summary>
   [DataMember]
-  public Boolean? DoNotTrackMoves
+  public bool? DoNotTrackMoves
   {
-    get => _DocumentSettings?.GetBooleanVal<DXW.DoNotTrackMoves>();
-    set => _ExistingSettings.SetBooleanVal<DXW.DoNotTrackMoves>(value);
+    get => _DocumentSettings?.GetBoolVal<DXW.DoNotTrackMoves>();
+    set => _ExistingSettings.SetBoolVal<DXW.DoNotTrackMoves>(value);
   }
 
   /// <summary>
@@ -741,10 +743,10 @@ public partial class DocumentSettings
   /// when the TrackRevisions is turned on.
   /// </summary>
   [DataMember]
-  public Boolean? DoNotTrackFormatting
+  public bool? DoNotTrackFormatting
   {
-    get => _DocumentSettings?.GetBooleanVal<DXW.DoNotTrackFormatting>();
-    set => _ExistingSettings.SetBooleanVal<DXW.DoNotTrackFormatting>(value);
+    get => _DocumentSettings?.GetBoolVal<DXW.DoNotTrackFormatting>();
+    set => _ExistingSettings.SetBoolVal<DXW.DoNotTrackFormatting>(value);
   }
 
   /// <summary>
@@ -756,10 +758,10 @@ public partial class DocumentSettings
   /// </para>
   /// </summary>
   [DataMember]
-  public Boolean? AutoFormatOverride
+  public bool? AutoFormatOverride
   {
-    get => _DocumentSettings?.GetBooleanVal<DXW.AutoFormatOverride>();
-    set => _ExistingSettings.SetBooleanVal<DXW.AutoFormatOverride>(value);
+    get => _DocumentSettings?.GetBoolVal<DXW.AutoFormatOverride>();
+    set => _ExistingSettings.SetBoolVal<DXW.AutoFormatOverride>(value);
   }
 
   /// <summary>
@@ -767,10 +769,10 @@ public partial class DocumentSettings
   /// by the hosting application before it is displayed, if the application supports this functionality.
   /// </summary>
   [DataMember]
-  public Boolean? AutoHyphenation
+  public bool? AutoHyphenation
   {
-    get => _DocumentSettings?.GetBooleanVal<DXW.AutoHyphenation>();
-    set => _ExistingSettings.SetBooleanVal<DXW.AutoHyphenation>(value);
+    get => _DocumentSettings?.GetBoolVal<DXW.AutoHyphenation>();
+    set => _ExistingSettings.SetBoolVal<DXW.AutoHyphenation>(value);
   }
 
   /// <summary>
@@ -781,10 +783,10 @@ public partial class DocumentSettings
   /// </para>
   /// </summary>
   [DataMember]
-  public Boolean? DoNotHyphenateCaps
+  public bool? DoNotHyphenateCaps
   {
-    get => _DocumentSettings?.GetBooleanVal<DXW.DoNotHyphenateCaps>();
-    set => _ExistingSettings.SetBooleanVal<DXW.DoNotHyphenateCaps>(value);
+    get => _DocumentSettings?.GetBoolVal<DXW.DoNotHyphenateCaps>();
+    set => _ExistingSettings.SetBoolVal<DXW.DoNotHyphenateCaps>(value);
   }
 
   /// <summary>
@@ -796,10 +798,10 @@ public partial class DocumentSettings
   /// </para>
   /// </summary>
   [DataMember]
-  public Boolean? ShowEnvelope
+  public bool? ShowEnvelope
   {
-    get => _DocumentSettings?.GetBooleanVal<DXW.ShowEnvelope>();
-    set => _ExistingSettings.SetBooleanVal<DXW.ShowEnvelope>(value);
+    get => _DocumentSettings?.GetBoolVal<DXW.ShowEnvelope>();
+    set => _ExistingSettings.SetBoolVal<DXW.ShowEnvelope>(value);
   }
 
   /// <summary>
@@ -823,10 +825,10 @@ public partial class DocumentSettings
   /// </para>
   /// </summary>
   [DataMember]
-  public Boolean? EvenAndOddHeaders
+  public bool? EvenAndOddHeaders
   {
-    get => _DocumentSettings?.GetBooleanVal<DXW.EvenAndOddHeaders>();
-    set => _ExistingSettings.SetBooleanVal<DXW.EvenAndOddHeaders>(value);
+    get => _DocumentSettings?.GetBoolVal<DXW.EvenAndOddHeaders>();
+    set => _ExistingSettings.SetBoolVal<DXW.EvenAndOddHeaders>(value);
   }
 
   /// <summary>
@@ -847,10 +849,10 @@ public partial class DocumentSettings
   /// </para>
   /// </summary>
   [DataMember]
-  public Boolean? BookFoldReversePrinting
+  public bool? BookFoldReversePrinting
   {
-    get => _DocumentSettings?.GetBooleanVal<DXW.BookFoldReversePrinting>();
-    set => _ExistingSettings.SetBooleanVal<DXW.BookFoldReversePrinting>(value);
+    get => _DocumentSettings?.GetBoolVal<DXW.BookFoldReversePrinting>();
+    set => _ExistingSettings.SetBoolVal<DXW.BookFoldReversePrinting>(value);
   }
 
   /// <summary>
@@ -874,10 +876,10 @@ public partial class DocumentSettings
   /// If the BookFoldRevPrinting element is also specified, then this element shall be ignored.
   /// </summary>
   [DataMember]
-  public Boolean? BookFoldPrinting
+  public bool? BookFoldPrinting
   {
-    get => _DocumentSettings?.GetBooleanVal<DXW.BookFoldPrinting>();
-    set => _ExistingSettings.SetBooleanVal<DXW.BookFoldPrinting>(value);
+    get => _DocumentSettings?.GetBoolVal<DXW.BookFoldPrinting>();
+    set => _ExistingSettings.SetBoolVal<DXW.BookFoldPrinting>(value);
   }
 
   /// <summary>
@@ -890,10 +892,10 @@ public partial class DocumentSettings
   /// </para>
   /// </summary>
   [DataMember]
-  public Boolean? DoNotUseMarginsForDrawingGridOrigin
+  public bool? DoNotUseMarginsForDrawingGridOrigin
   {
-    get => _DocumentSettings?.GetBooleanVal<DXW.DoNotUseMarginsForDrawingGridOrigin>();
-    set => _ExistingSettings.SetBooleanVal<DXW.DoNotUseMarginsForDrawingGridOrigin>(value);
+    get => _DocumentSettings?.GetBoolVal<DXW.DoNotUseMarginsForDrawingGridOrigin>();
+    set => _ExistingSettings.SetBoolVal<DXW.DoNotUseMarginsForDrawingGridOrigin>(value);
   }
 
   /// <summary>
@@ -904,10 +906,10 @@ public partial class DocumentSettings
   /// </para>
   /// </summary>
   [DataMember]
-  public Boolean? DoNotShadeFormData
+  public bool? DoNotShadeFormData
   {
-    get => _DocumentSettings?.GetBooleanVal<DXW.DoNotShadeFormData>();
-    set => _ExistingSettings.SetBooleanVal<DXW.DoNotShadeFormData>(value);
+    get => _DocumentSettings?.GetBoolVal<DXW.DoNotShadeFormData>();
+    set => _ExistingSettings.SetBoolVal<DXW.DoNotShadeFormData>(value);
   }
 
   /// <summary>
@@ -917,10 +919,10 @@ public partial class DocumentSettings
   /// </para>
   /// </summary>
   [DataMember]
-  public Boolean? NoPunctuationKerning
+  public bool? NoPunctuationKerning
   {
-    get => _DocumentSettings?.GetBooleanVal<DXW.NoPunctuationKerning>();
-    set => _ExistingSettings.SetBooleanVal<DXW.NoPunctuationKerning>(value);
+    get => _DocumentSettings?.GetBoolVal<DXW.NoPunctuationKerning>();
+    set => _ExistingSettings.SetBoolVal<DXW.NoPunctuationKerning>(value);
   }
 
   /// <summary>
@@ -933,10 +935,10 @@ public partial class DocumentSettings
   /// </para>
   /// </summary>
   [DataMember]
-  public Boolean? PrintTwoOnOne
+  public bool? PrintTwoOnOne
   {
-    get => _DocumentSettings?.GetBooleanVal<DXW.PrintTwoOnOne>();
-    set => _ExistingSettings.SetBooleanVal<DXW.PrintTwoOnOne>(value);
+    get => _DocumentSettings?.GetBoolVal<DXW.PrintTwoOnOne>();
+    set => _ExistingSettings.SetBoolVal<DXW.PrintTwoOnOne>(value);
   }
 
   /// <summary>
@@ -947,10 +949,10 @@ public partial class DocumentSettings
   /// </para>
   /// </summary>
   [DataMember]
-  public Boolean? StrictFirstAndLastChars
+  public bool? StrictFirstAndLastChars
   {
-    get => _DocumentSettings?.GetBooleanVal<DXW.StrictFirstAndLastChars>();
-    set => _ExistingSettings.SetBooleanVal<DXW.StrictFirstAndLastChars>(value);
+    get => _DocumentSettings?.GetBoolVal<DXW.StrictFirstAndLastChars>();
+    set => _ExistingSettings.SetBoolVal<DXW.StrictFirstAndLastChars>(value);
   }
 
   /// <summary>
@@ -962,10 +964,10 @@ public partial class DocumentSettings
   /// </para>
   /// </summary>
   [DataMember]
-  public Boolean? SavePreviewPicture
+  public bool? SavePreviewPicture
   {
-    get => _DocumentSettings?.GetBooleanVal<DXW.SavePreviewPicture>();
-    set => _ExistingSettings.SetBooleanVal<DXW.SavePreviewPicture>(value);
+    get => _DocumentSettings?.GetBoolVal<DXW.SavePreviewPicture>();
+    set => _ExistingSettings.SetBoolVal<DXW.SavePreviewPicture>(value);
   }
 
   /// <summary>
@@ -978,10 +980,10 @@ public partial class DocumentSettings
   /// </para>
   /// </summary>
   [DataMember]
-  public Boolean? DoNotValidateAgainstSchema
+  public bool? DoNotValidateAgainstSchema
   {
-    get => _DocumentSettings?.GetBooleanVal<DXW.DoNotValidateAgainstSchema>();
-    set => _ExistingSettings.SetBooleanVal<DXW.DoNotValidateAgainstSchema>(value);
+    get => _DocumentSettings?.GetBoolVal<DXW.DoNotValidateAgainstSchema>();
+    set => _ExistingSettings.SetBoolVal<DXW.DoNotValidateAgainstSchema>(value);
   }
 
   /// <summary>
@@ -1000,10 +1002,10 @@ public partial class DocumentSettings
   /// </para>
   /// </summary>
   [DataMember]
-  public Boolean? SaveInvalidXml
+  public bool? SaveInvalidXml
   {
-    get => _DocumentSettings?.GetBooleanVal<DXW.SaveInvalidXml>();
-    set => _ExistingSettings.SetBooleanVal<DXW.SaveInvalidXml>(value);
+    get => _DocumentSettings?.GetBoolVal<DXW.SaveInvalidXml>();
+    set => _ExistingSettings.SetBoolVal<DXW.SaveInvalidXml>(value);
   }
 
   /// <summary>
@@ -1017,10 +1019,10 @@ public partial class DocumentSettings
   /// </para>
   /// </summary>
   [DataMember]
-  public Boolean? IgnoreMixedContent
+  public bool? IgnoreMixedContent
   {
-    get => _DocumentSettings?.GetBooleanVal<DXW.IgnoreMixedContent>();
-    set => _ExistingSettings.SetBooleanVal<DXW.IgnoreMixedContent>(value);
+    get => _DocumentSettings?.GetBoolVal<DXW.IgnoreMixedContent>();
+    set => _ExistingSettings.SetBoolVal<DXW.IgnoreMixedContent>(value);
   }
 
   /// <summary>
@@ -1036,10 +1038,10 @@ public partial class DocumentSettings
   /// </para>
   /// </summary>
   [DataMember]
-  public Boolean? AlwaysShowPlaceholderText
+  public bool? AlwaysShowPlaceholderText
   {
-    get => _DocumentSettings?.GetBooleanVal<DXW.AlwaysShowPlaceholderText>();
-    set => _ExistingSettings.SetBooleanVal<DXW.AlwaysShowPlaceholderText>(value);
+    get => _DocumentSettings?.GetBoolVal<DXW.AlwaysShowPlaceholderText>();
+    set => _ExistingSettings.SetBoolVal<DXW.AlwaysShowPlaceholderText>(value);
   }
 
   /// <summary>
@@ -1053,10 +1055,10 @@ public partial class DocumentSettings
   /// </para>
   /// </summary>
   [DataMember]
-  public Boolean? DoNotDemarcateInvalidXml
+  public bool? DoNotDemarcateInvalidXml
   {
-    get => _DocumentSettings?.GetBooleanVal<DXW.DoNotDemarcateInvalidXml>();
-    set => _ExistingSettings.SetBooleanVal<DXW.DoNotDemarcateInvalidXml>(value);
+    get => _DocumentSettings?.GetBoolVal<DXW.DoNotDemarcateInvalidXml>();
+    set => _ExistingSettings.SetBoolVal<DXW.DoNotDemarcateInvalidXml>(value);
   }
 
   /// <summary>
@@ -1073,10 +1075,10 @@ public partial class DocumentSettings
   /// </para>
   /// </summary>
   [DataMember]
-  public Boolean? SaveXmlDataOnly
+  public bool? SaveXmlDataOnly
   {
-    get => _DocumentSettings?.GetBooleanVal<DXW.SaveXmlDataOnly>();
-    set => _ExistingSettings.SetBooleanVal<DXW.SaveXmlDataOnly>(value);
+    get => _DocumentSettings?.GetBoolVal<DXW.SaveXmlDataOnly>();
+    set => _ExistingSettings.SetBoolVal<DXW.SaveXmlDataOnly>(value);
   }
 
   /// <summary>
@@ -1096,10 +1098,10 @@ public partial class DocumentSettings
   /// </para>
   /// </summary>
   [DataMember]
-  public Boolean? UseXsltWhenSaving
+  public bool? UseXsltWhenSaving
   {
-    get => _DocumentSettings?.GetBooleanVal<DXW.UseXsltWhenSaving>();
-    set => _ExistingSettings.SetBooleanVal<DXW.UseXsltWhenSaving>(value);
+    get => _DocumentSettings?.GetBoolVal<DXW.UseXsltWhenSaving>();
+    set => _ExistingSettings.SetBoolVal<DXW.UseXsltWhenSaving>(value);
   }
 
   /// <summary>
@@ -1111,10 +1113,10 @@ public partial class DocumentSettings
   /// </para>
   /// </summary>
   [DataMember]
-  public Boolean? ShowXmlTags
+  public bool? ShowXmlTags
   {
-    get => _DocumentSettings?.GetBooleanVal<DXW.ShowXmlTags>();
-    set => _ExistingSettings.SetBooleanVal<DXW.ShowXmlTags>(value);
+    get => _DocumentSettings?.GetBoolVal<DXW.ShowXmlTags>();
+    set => _ExistingSettings.SetBoolVal<DXW.ShowXmlTags>(value);
   }
 
   /// <summary>
@@ -1128,10 +1130,10 @@ public partial class DocumentSettings
   /// </para>
   /// </summary>
   [DataMember]
-  public Boolean? AlwaysMergeEmptyNamespace
+  public bool? AlwaysMergeEmptyNamespace
   {
-    get => _DocumentSettings?.GetBooleanVal<DXW.AlwaysMergeEmptyNamespace>();
-    set => _ExistingSettings.SetBooleanVal<DXW.AlwaysMergeEmptyNamespace>(value);
+    get => _DocumentSettings?.GetBoolVal<DXW.AlwaysMergeEmptyNamespace>();
+    set => _ExistingSettings.SetBoolVal<DXW.AlwaysMergeEmptyNamespace>(value);
   }
 
   /// <summary>
@@ -1144,20 +1146,20 @@ public partial class DocumentSettings
   /// </para>
   /// </summary>
   [DataMember]
-  public Boolean? UpdateFieldsOnOpen
+  public bool? UpdateFieldsOnOpen
   {
-    get => _DocumentSettings?.GetBooleanVal<DXW.UpdateFieldsOnOpen>();
-    set => _ExistingSettings.SetBooleanVal<DXW.UpdateFieldsOnOpen>(value);
+    get => _DocumentSettings?.GetBoolVal<DXW.UpdateFieldsOnOpen>();
+    set => _ExistingSettings.SetBoolVal<DXW.UpdateFieldsOnOpen>(value);
   }
 
   /// <summary>
   /// Disable Features Incompatible With Earlier Word Processing Formats. 
   /// </summary>
   [DataMember]
-  public Boolean? UICompatibleWith97To2003
+  public bool? UICompatibleWith97To2003
   {
-    get => _DocumentSettings?.GetBooleanVal<DXW.UICompatibleWith97To2003>();
-    set => _ExistingSettings.SetBooleanVal<DXW.UICompatibleWith97To2003>(value);
+    get => _DocumentSettings?.GetBoolVal<DXW.UICompatibleWith97To2003>();
+    set => _ExistingSettings.SetBoolVal<DXW.UICompatibleWith97To2003>(value);
   }
 
   /// <summary>
@@ -1170,10 +1172,10 @@ public partial class DocumentSettings
   /// </para>
   /// </summary>
   [DataMember]
-  public Boolean? DoNotIncludeSubdocsInStats
+  public bool? DoNotIncludeSubdocsInStats
   {
-    get => _DocumentSettings?.GetBooleanVal<DXW.DoNotIncludeSubdocsInStats>();
-    set => _ExistingSettings.SetBooleanVal<DXW.DoNotIncludeSubdocsInStats>(value);
+    get => _DocumentSettings?.GetBoolVal<DXW.DoNotIncludeSubdocsInStats>();
+    set => _ExistingSettings.SetBoolVal<DXW.DoNotIncludeSubdocsInStats>(value);
   }
 
   /// <summary>
@@ -1184,10 +1186,10 @@ public partial class DocumentSettings
   /// </para>
   /// </summary>
   [DataMember]
-  public Boolean? DoNotAutoCompressPictures
+  public bool? DoNotAutoCompressPictures
   {
-    get => _DocumentSettings?.GetBooleanVal<DXW.DoNotAutoCompressPictures>();
-    set => _ExistingSettings.SetBooleanVal<DXW.DoNotAutoCompressPictures>(value);
+    get => _DocumentSettings?.GetBoolVal<DXW.DoNotAutoCompressPictures>();
+    set => _ExistingSettings.SetBoolVal<DXW.DoNotAutoCompressPictures>(value);
   }
 
   /// <summary>
@@ -1222,10 +1224,10 @@ public partial class DocumentSettings
   /// </list>
   /// </summary>
   [DataMember]
-  public Boolean? ReadModeInkLockDown
+  public bool? ReadModeInkLockDown
   {
-    get => _DocumentSettings?.GetBooleanVal<DXW.ReadModeInkLockDown>();
-    set => _ExistingSettings.SetBooleanVal<DXW.ReadModeInkLockDown>(value);
+    get => _DocumentSettings?.GetBoolVal<DXW.ReadModeInkLockDown>();
+    set => _ExistingSettings.SetBoolVal<DXW.ReadModeInkLockDown>(value);
   }
 
   /// <summary>
@@ -1316,10 +1318,10 @@ public partial class DocumentSettings
   /// </para>
   /// </summary>
   [DataMember]
-  public Int32? BookFoldPrintingSheets
+  public int? BookFoldPrintingSheets
   {
-    get => _DocumentSettings?.GetInt32Val<DXW.BookFoldPrintingSheets>();
-    set => _ExistingSettings.SetInt32Val<DXW.BookFoldPrintingSheets>(value);
+    get => _DocumentSettings?.GetIntVal<DXW.BookFoldPrintingSheets>();
+    set => _ExistingSettings.SetIntVal<DXW.BookFoldPrintingSheets>(value);
   }
 
   /// <summary>
@@ -1334,10 +1336,10 @@ public partial class DocumentSettings
   /// </para>
   /// </summary>
   [DataMember]
-  public Boolean? FormsDesign
+  public bool? FormsDesign
   {
-    get => _DocumentSettings?.GetBooleanVal<DXW.FormsDesign>();
-    set => _ExistingSettings.SetBooleanVal<DXW.FormsDesign>(value);
+    get => _DocumentSettings?.GetBoolVal<DXW.FormsDesign>();
+    set => _ExistingSettings.SetBoolVal<DXW.FormsDesign>(value);
   }
 
   /// <summary>
@@ -1351,10 +1353,10 @@ public partial class DocumentSettings
   /// </para>
   /// </summary>
   [DataMember]
-  public Boolean? LinkStyles
+  public bool? LinkStyles
   {
-    get => _DocumentSettings?.GetBooleanVal<DXW.LinkStyles>();
-    set => _ExistingSettings.SetBooleanVal<DXW.LinkStyles>(value);
+    get => _DocumentSettings?.GetBoolVal<DXW.LinkStyles>();
+    set => _ExistingSettings.SetBoolVal<DXW.LinkStyles>(value);
   }
 
   /// <summary>
@@ -1364,10 +1366,10 @@ public partial class DocumentSettings
   /// (either through a user interface or a programmatic operation).
   /// </summary>
   [DataMember]
-  public Boolean? StyleLockThemesPart
+  public bool? StyleLockThemesPart
   {
-    get => _DocumentSettings?.GetBooleanVal<DXW.StyleLockThemesPart>();
-    set => _ExistingSettings.SetBooleanVal<DXW.StyleLockThemesPart>(value);
+    get => _DocumentSettings?.GetBoolVal<DXW.StyleLockThemesPart>();
+    set => _ExistingSettings.SetBoolVal<DXW.StyleLockThemesPart>(value);
   }
 
   /// <summary>
@@ -1377,10 +1379,10 @@ public partial class DocumentSettings
   /// (either through a user interface or a programmatic operation).
   /// </summary>
   [DataMember]
-  public Boolean? StyleLockStylesPart
+  public bool? StyleLockStylesPart
   {
-    get => _DocumentSettings?.GetBooleanVal<DXW.StyleLockStylesPart>();
-    set => _ExistingSettings.SetBooleanVal<DXW.StyleLockStylesPart>(value);
+    get => _DocumentSettings?.GetBoolVal<DXW.StyleLockStylesPart>();
+    set => _ExistingSettings.SetBoolVal<DXW.StyleLockStylesPart>(value);
   }
 
   /// <summary>
@@ -1395,8 +1397,8 @@ public partial class DocumentSettings
   [DataMember]
   public Reference? AttachedTemplate
   {
-    get => _DocumentSettings?.GetStringId<DXW.AttachedTemplate>();
-    set => _ExistingSettings.SetStringId<DXW.AttachedTemplate>(value);
+    get => _DocumentSettings?.GetRefId<DXW.AttachedTemplate>();
+    set => _ExistingSettings.SetRefId<DXW.AttachedTemplate>(value);
   }
 
   /// <summary>
@@ -1421,7 +1423,7 @@ public partial class DocumentSettings
   /// </para>
   /// </summary>
   [DataMember]
-  public String? AttachedSchema
+  public string? AttachedSchema
   {
     get => _DocumentSettings?.GetStringVal<DXW.SaveThroughXslt>();
     set => _ExistingSettings.SetStringVal<DXW.SaveThroughXslt>(value);
@@ -1445,7 +1447,7 @@ public partial class DocumentSettings
   /// </para>
   /// </summary>
   [DataMember]
-  public String? ClickAndTypeStyle
+  public string? ClickAndTypeStyle
   {
     get => _DocumentSettings?.GetStringVal<DXW.ClickAndTypeStyle>();
     set => _ExistingSettings.SetStringVal<DXW.ClickAndTypeStyle>(value);
@@ -1463,7 +1465,7 @@ public partial class DocumentSettings
   /// </para>
   /// </summary>
   [DataMember]
-  public String? DefaultTableStyle
+  public string? DefaultTableStyle
   {
     get => _DocumentSettings?.GetStringVal<DXW.DefaultTableStyle>();
     set => _ExistingSettings.SetStringVal<DXW.DefaultTableStyle>(value);
@@ -1474,7 +1476,7 @@ public partial class DocumentSettings
   /// if the styles are displayed in a user interface.
   /// </summary>
   [DataMember]
-  public String? StylePaneSortMethods
+  public string? StylePaneSortMethods
   {
     get => _DocumentSettings?.GetStringVal<DXW.StylePaneSortMethods>();
     set => _ExistingSettings.SetStringVal<DXW.StylePaneSortMethods>(value);
@@ -1575,8 +1577,8 @@ public partial class DocumentSettings
   [DataMember]
   public int? DisplayHorizontalDrawingGrid
   {
-    get => _DocumentSettings?.GetInt32Val<DXW.DisplayHorizontalDrawingGrid>();
-    set => _ExistingSettings.SetInt32Val<DXW.DisplayHorizontalDrawingGrid>(value);
+    get => _DocumentSettings?.GetIntVal<DXW.DisplayHorizontalDrawingGrid>();
+    set => _ExistingSettings.SetIntVal<DXW.DisplayHorizontalDrawingGrid>(value);
   }
 
   /// <summary>
@@ -1594,8 +1596,8 @@ public partial class DocumentSettings
   [DataMember]
   public int? DisplayVerticalDrawingGrid
   {
-    get => _DocumentSettings?.GetInt32Val<DXW.DisplayVerticalDrawingGrid>();
-    set => _ExistingSettings.SetInt32Val<DXW.DisplayVerticalDrawingGrid>(value);
+    get => _DocumentSettings?.GetIntVal<DXW.DisplayVerticalDrawingGrid>();
+    set => _ExistingSettings.SetIntVal<DXW.DisplayVerticalDrawingGrid>(value);
   }
 
   /// <summary>
@@ -1612,8 +1614,8 @@ public partial class DocumentSettings
   [DataMember]
   public Percent? SummaryLength
   {
-    get => _DocumentSettings?.GetInt32Val<DXW.SummaryLength>();
-    set => _ExistingSettings.SetInt32Val<DXW.SummaryLength>(value);
+    get => _DocumentSettings?.GetIntVal<DXW.SummaryLength>();
+    set => _ExistingSettings.SetIntVal<DXW.SummaryLength>(value);
   }
 
   /// <summary>
@@ -1626,13 +1628,18 @@ public partial class DocumentSettings
   /// </para>
   /// </summary>
   [DataMember]
-  public Int32? ConsecutiveHyphenLimit
+  public int? ConsecutiveHyphenLimit
   {
-    get => _DocumentSettings?.GetInt32Val<DXW.ConsecutiveHyphenLimit>();
-    set => _ExistingSettings.SetInt32Val<DXW.ConsecutiveHyphenLimit>(value);
+    get => _DocumentSettings?.GetIntVal<DXW.ConsecutiveHyphenLimit>();
+    set => _ExistingSettings.SetIntVal<DXW.ConsecutiveHyphenLimit>(value);
   }
 
-  ///   <item><description><see cref=" DXW.ActiveWritingStyle" /> <c>&lt;w:activeWritingStyle></c></description></item>
+  [DataMember]
+  public ActiveWritingStyle? ActiveWritingStyle
+  {
+    get => _DocumentSettings?.GetObject<ActiveWritingStyle, DXW.ActiveWritingStyle>();
+    set => _ExistingSettings.SetObject<ActiveWritingStyle, DXW.ActiveWritingStyle>(value);
+  }
 
 }
 

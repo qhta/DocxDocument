@@ -37,7 +37,7 @@ public partial class FieldMapData : IOpenXmlElementMappedObject
   /// This element specifies the language which shall be used for this phonetic guide.
   /// </summary>
   [DataMember]
-  public String? LanguageId
+  public string? LanguageId
   {
     get => _Element?.GetStringVal<DXW.LanguageId>();
     set => _Element.SetStringVal<DXW.LanguageId>(value);
@@ -71,10 +71,10 @@ public partial class FieldMapData : IOpenXmlElementMappedObject
   /// </para>
   /// </summary>
   [DataMember]
-  public Boolean? DynamicAddress
+  public bool? DynamicAddress
   {
-    get => _Element?.GetBooleanVal<DXW.DynamicAddress>();
-    set => _Element.SetBooleanVal<DXW.DynamicAddress>(value);
+    get => _Element?.GetBoolVal<DXW.DynamicAddress>();
+    set => _Element.SetBoolVal<DXW.DynamicAddress>(value);
   }
 
   /// <summary>
@@ -83,7 +83,7 @@ public partial class FieldMapData : IOpenXmlElementMappedObject
   /// and shall only be used to classify and sort this entry (via an application or a user interface).
   /// </summary>
   [DataMember]
-  public String? Name
+  public string? Name
   {
     get => _Element?.GetStringVal<DXW.Name>();
     set => _Element.SetStringVal<DXW.Name>(value);
@@ -96,7 +96,7 @@ public partial class FieldMapData : IOpenXmlElementMappedObject
   /// </para>
   /// </summary>
   [DataMember]
-  public String? MappedName
+  public string? MappedName
   {
     get => _Element?.GetStringVal<DXW.MappedName>();
     set => _Element.SetStringVal<DXW.MappedName>(value);
@@ -112,10 +112,10 @@ public partial class FieldMapData : IOpenXmlElementMappedObject
   /// </para>
   /// </summary>
   [DataMember]
-  public Int32? ColumnIndex
+  public int? ColumnIndex
   {
-    get => _Element?.GetInt32Val<DXW.ColumnIndex>();
-    set => _Element.SetInt32Val<DXW.ColumnIndex>(value);
+    get => _Element?.GetIntVal<DXW.ColumnIndex>();
+    set => _Element.SetIntVal<DXW.ColumnIndex>(value);
   }
 
 }
