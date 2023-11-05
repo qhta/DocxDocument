@@ -51,10 +51,10 @@ public partial class EndnoteDocumentWideProperties : IOpenXmlElementMappedObject
   /// If this element is omitted, then the starting value shall be 1.
   /// </summary>
   [DataMember]
-  public Int32? NumberingStart
+  public int? NumberingStart
   {
-    get => _Element?.GetInt32Val<DXW.NumberingStart>();
-    set => _Element.SetInt32Val<DXW.NumberingStart>(value);
+    get => _Element?.GetIntVal<DXW.NumberingStart>();
+    set => _Element.SetIntVal<DXW.NumberingStart>(value);
   }
 
   /// <summary>
@@ -64,10 +64,10 @@ public partial class EndnoteDocumentWideProperties : IOpenXmlElementMappedObject
   /// then the document shall be considered non-conformant.
   /// </summary>
   [DataMember]
-  public Int32? EndnoteSpecialReference
+  public int? EndnoteSpecialReference
   {
-    get => _Element?.GetInt32Id<DXW.EndnoteSpecialReference>();
-    set => _Element.SetInt32Id<DXW.EndnoteSpecialReference>(value);
+    get => _Element?.GetIntId<DXW.EndnoteSpecialReference>();
+    set => _Element.SetIntId<DXW.EndnoteSpecialReference>(value);
   }
 
   /// <summary>

@@ -70,10 +70,10 @@ public class MathProperties : IOpenXmlElementMappedObject
   /// When the element is present and the val attribute is absent, the default of the val attribute is 1 meaning that this option is applied.
   /// </summary>
   [DataMember]
-  public Boolean? SmallFraction
+  public bool? SmallFraction
   {
-    get => _Element.GetBooleanVal<DXM.SmallFraction>();
-    set => _Element.SetBooleanVal<DXM.SmallFraction>(value);
+    get => _Element.GetBoolVal<DXM.SmallFraction>();
+    set => _Element.SetBoolVal<DXM.SmallFraction>(value);
   }
 
   /// <summary>
@@ -83,10 +83,10 @@ public class MathProperties : IOpenXmlElementMappedObject
   /// the default of the val attribute is 1 meaning that this option is applied.
   /// </summary>
   [DataMember]
-  public Boolean? DisplayDefaults
+  public bool? DisplayDefaults
   {
-    get => _Element.GetBooleanVal<DXM.DisplayDefaults>();
-    set => _Element.SetBooleanVal<DXM.DisplayDefaults>(value);
+    get => _Element.GetBoolVal<DXM.DisplayDefaults>();
+    set => _Element.SetBoolVal<DXM.DisplayDefaults>(value);
   }
 
   /// <summary>
@@ -223,10 +223,10 @@ public class MathProperties : IOpenXmlElementMappedObject
   /// If this element is present, the continuation is right aligned.
   /// </summary>
   [DataMember]
-  public Boolean? WrapRight
+  public bool? WrapRight
   {
-    get => _Element.GetBooleanVal<DXM.WrapRight>();
-    set => _Element.SetBooleanVal<DXM.WrapRight>(value);
+    get => _Element.GetBoolVal<DXM.WrapRight>();
+    set => _Element.SetBoolVal<DXM.WrapRight>(value);
   }
 
   /// <summary>

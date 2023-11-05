@@ -60,10 +60,10 @@ public partial class MailMerge : IOpenXmlElementMappedObject
   /// </para>
   /// </summary>
   [DataMember]
-  public Int32? ActiveRecord
+  public int? ActiveRecord
   {
-    get => _Element?.GetInt32Val<DXW.ActiveRecord>();
-    set => _Element.SetInt32Val<DXW.ActiveRecord>(value);
+    get => _Element?.GetIntVal<DXW.ActiveRecord>();
+    set => _Element.SetIntVal<DXW.ActiveRecord>(value);
   }
 
   /// <summary>
@@ -92,10 +92,10 @@ public partial class MailMerge : IOpenXmlElementMappedObject
   /// </para>
   /// </summary>
   [DataMember]
-  public Int32? CheckErrors
+  public int? CheckErrors
   {
-    get => _Element?.GetInt32Val<DXW.CheckErrors>();
-    set => _Element.SetInt32Val<DXW.CheckErrors>(value);
+    get => _Element?.GetIntVal<DXW.CheckErrors>();
+    set => _Element.SetIntVal<DXW.CheckErrors>(value);
   }
 
   /// <summary>

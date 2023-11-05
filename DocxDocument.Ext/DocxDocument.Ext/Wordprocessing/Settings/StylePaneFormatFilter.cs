@@ -52,7 +52,7 @@ public partial class StylePaneFormatFilter: IOpenXmlElementMappedObject
   }
 
   [DataMember]
-  public Boolean? AllStyles
+  public bool? AllStyles
   {
     get => _Element.AllStyles?.Value;
     set
@@ -65,7 +65,7 @@ public partial class StylePaneFormatFilter: IOpenXmlElementMappedObject
   }
 
   [DataMember]
-  public Boolean? CustomStyles
+  public bool? CustomStyles
   {
     get => _Element.CustomStyles?.Value;
     set
@@ -78,7 +78,7 @@ public partial class StylePaneFormatFilter: IOpenXmlElementMappedObject
   }
 
   [DataMember]
-  public Boolean? LatentStyles
+  public bool? LatentStyles
   {
     get => _Element.LatentStyles?.Value;
     set
@@ -91,7 +91,7 @@ public partial class StylePaneFormatFilter: IOpenXmlElementMappedObject
   }
 
   [DataMember]
-  public Boolean? StylesInUse
+  public bool? StylesInUse
   {
     get => _Element.StylesInUse?.Value;
     set
@@ -104,7 +104,7 @@ public partial class StylePaneFormatFilter: IOpenXmlElementMappedObject
   }
 
   [DataMember]
-  public Boolean? HeadingStyles
+  public bool? HeadingStyles
   {
     get => _Element.HeadingStyles?.Value;
     set
@@ -117,7 +117,7 @@ public partial class StylePaneFormatFilter: IOpenXmlElementMappedObject
   }
 
   [DataMember]
-  public Boolean? NumberingStyles
+  public bool? NumberingStyles
   {
     get => _Element.HeadingStyles?.Value;
     set
@@ -130,7 +130,7 @@ public partial class StylePaneFormatFilter: IOpenXmlElementMappedObject
   }
 
   [DataMember]
-  public Boolean? TableStyles
+  public bool? TableStyles
   {
     get => _Element.TableStyles?.Value;
     set
@@ -143,7 +143,7 @@ public partial class StylePaneFormatFilter: IOpenXmlElementMappedObject
   }
 
   [DataMember]
-  public Boolean? DirectFormattingOnRuns
+  public bool? DirectFormattingOnRuns
   {
     get => _Element.DirectFormattingOnRuns?.Value;
     set
@@ -156,7 +156,7 @@ public partial class StylePaneFormatFilter: IOpenXmlElementMappedObject
   }
 
   [DataMember]
-  public Boolean? DirectFormattingOnParagraphs
+  public bool? DirectFormattingOnParagraphs
   {
     get => _Element.DirectFormattingOnParagraphs?.Value;
     set
@@ -169,7 +169,7 @@ public partial class StylePaneFormatFilter: IOpenXmlElementMappedObject
   }
 
   [DataMember]
-  public Boolean? DirectFormattingOnNumbering
+  public bool? DirectFormattingOnNumbering
   {
     get => _Element.DirectFormattingOnParagraphs?.Value;
     set
@@ -182,7 +182,7 @@ public partial class StylePaneFormatFilter: IOpenXmlElementMappedObject
   }
 
   [DataMember]
-  public Boolean? DirectFormattingOnTables
+  public bool? DirectFormattingOnTables
   {
     get => _Element.DirectFormattingOnTables?.Value;
     set
@@ -195,7 +195,7 @@ public partial class StylePaneFormatFilter: IOpenXmlElementMappedObject
   }
 
   [DataMember]
-  public Boolean? ClearFormatting
+  public bool? ClearFormatting
   {
     get => _Element.ClearFormatting?.Value;
     set
@@ -208,7 +208,7 @@ public partial class StylePaneFormatFilter: IOpenXmlElementMappedObject
   }
 
   [DataMember]
-  public Boolean? Top3HeadingStyles
+  public bool? Top3HeadingStyles
   {
     get => _Element.Top3HeadingStyles?.Value;
     set
@@ -221,7 +221,7 @@ public partial class StylePaneFormatFilter: IOpenXmlElementMappedObject
   }
 
   [DataMember]
-  public Boolean? VisibleStyles
+  public bool? VisibleStyles
   {
     get => _Element.VisibleStyles?.Value;
     set
@@ -234,7 +234,7 @@ public partial class StylePaneFormatFilter: IOpenXmlElementMappedObject
   }
 
   [DataMember]
-  public Boolean? AlternateStyleNames
+  public bool? AlternateStyleNames
   {
     get => _Element.AlternateStyleNames?.Value;
     set

@@ -1,4 +1,6 @@
-﻿namespace DocumentModel;
+﻿using DocumentFormat.OpenXml;
+
+namespace DocumentModel;
 
 /// <summary>
 /// This static class contains extension operations to be performed on a OpenXmlCompositeElement object.
@@ -108,11 +110,12 @@ public static class OpenXmlCompositeElementUtils
     }
     else
     {
-      var setting = openXmlElement.Elements<ElementType>().FirstOrDefault();
-      if (setting != null)
-        setting.Remove();
+      var element = openXmlElement.Elements<ElementType>().FirstOrDefault();
+      if (element != null)
+        element.Remove();
     }
   }
+
   #endregion
 
   #region EnumType get/set methods
@@ -168,7 +171,7 @@ public static class OpenXmlCompositeElementUtils
       var valType = valProperty.PropertyType;
       Debug.Assert(valType.Name.StartsWith("EnumValue`1"), $"\"Val\" property in {typeof(ElementType)} must be EnumValue<>");
       var valueType = valType.GetGenericArguments()[0];
-      object newValue;
+      object? newValue;
       if (valueType != typeof(EnumType))
       {
         var n = (int)Convert.ChangeType(value, typeof(int));
@@ -176,6 +179,8 @@ public static class OpenXmlCompositeElementUtils
       }
       else
         newValue = value;
+      var enumValuesType = typeof(EnumValue<>).MakeGenericType(valueType);
+      newValue = enumValuesType.GetConstructor(new Type[] { valueType })?.Invoke(new object[] { newValue });
       valProperty.SetValue(_element, newValue);
     }
     else
@@ -188,7 +193,7 @@ public static class OpenXmlCompositeElementUtils
   #endregion
 
   #region Boolean get/set methods
-  public static Boolean? GetBooleanVal<ElementType>(this DX.OpenXmlCompositeElement? openXmlElement) where ElementType : DX.OpenXmlLeafElement
+  public static bool? GetBoolVal<ElementType>(this DX.OpenXmlCompositeElement? openXmlElement) where ElementType : DX.OpenXmlLeafElement
   {
     if (openXmlElement != null)
     {
@@ -233,7 +238,7 @@ public static class OpenXmlCompositeElementUtils
     return null;
   }
 
-  public static void SetBooleanVal<ElementType>(this DX.OpenXmlCompositeElement openXmlElement, Boolean? value) where ElementType : DX.OpenXmlLeafElement, new()
+  public static void SetBoolVal<ElementType>(this DX.OpenXmlCompositeElement openXmlElement, bool? value) where ElementType : DX.OpenXmlLeafElement, new()
   {
     if (value != null)
     {
@@ -266,7 +271,7 @@ public static class OpenXmlCompositeElementUtils
     }
   }
 
-  public static Boolean? GetTrueIfExists<ElementType>(this DX.OpenXmlCompositeElement? openXmlElement) where ElementType : DXW.EmptyType
+  public static bool? GetTrueIfExists<ElementType>(this DX.OpenXmlCompositeElement? openXmlElement) where ElementType : DXW.EmptyType
   {
     if (openXmlElement != null)
     {
@@ -276,7 +281,7 @@ public static class OpenXmlCompositeElementUtils
     return null;
   }
 
-  public static void SetExistsIfTrue<ElementType>(this DX.OpenXmlCompositeElement openXmlElement, Boolean? value) where ElementType : DXW.EmptyType, new()
+  public static void SetExistsIfTrue<ElementType>(this DX.OpenXmlCompositeElement openXmlElement, bool? value) where ElementType : DXW.EmptyType, new()
   {
     if (value != null)
     {
@@ -418,7 +423,7 @@ public static class OpenXmlCompositeElementUtils
   #endregion
 
   #region String get/set methods
-  public static String? GetStringVal<ElementType>(this DX.OpenXmlCompositeElement? openXmlElement) where ElementType : DX.OpenXmlLeafElement
+  public static string? GetStringVal<ElementType>(this DX.OpenXmlCompositeElement? openXmlElement) where ElementType : DX.OpenXmlLeafElement
   {
     if (openXmlElement != null)
     {
@@ -446,7 +451,7 @@ public static class OpenXmlCompositeElementUtils
     return null;
   }
 
-  public static void SetStringVal<ElementType>(this DX.OpenXmlCompositeElement openXmlElement, String? value) where ElementType : DX.OpenXmlLeafElement
+  public static void SetStringVal<ElementType>(this DX.OpenXmlCompositeElement openXmlElement, string? value) where ElementType : DX.OpenXmlLeafElement
   {
     if (value != null)
     {
@@ -463,7 +468,7 @@ public static class OpenXmlCompositeElementUtils
       var valType = valProperty.PropertyType;
       var valueProperty = valType.GetProperty("Value");
       Debug.Assert(valueProperty != null, $"\"Value\" property in {valType} not found");
-      valProperty.SetValue(_element, value);
+      valProperty.SetValue(_element, new StringValue(value));
     }
     else
     {
@@ -472,8 +477,8 @@ public static class OpenXmlCompositeElementUtils
         _element.Remove();
     }
   }
-  
-    public static String? GetStringId<ElementType>(this DX.OpenXmlCompositeElement? openXmlElement) where ElementType : DX.OpenXmlLeafElement
+
+  public static string? GetStringId<ElementType>(this DX.OpenXmlCompositeElement? openXmlElement) where ElementType : DX.OpenXmlLeafElement
   {
     if (openXmlElement != null)
     {
@@ -501,7 +506,64 @@ public static class OpenXmlCompositeElementUtils
     return null;
   }
 
-  public static void SetStringId<ElementType>(this DX.OpenXmlCompositeElement openXmlElement, String? value) where ElementType : DX.OpenXmlLeafElement
+  public static void SetStringId<ElementType>(this DX.OpenXmlCompositeElement openXmlElement, string? value) where ElementType : DX.OpenXmlLeafElement
+  {
+    if (value != null)
+    {
+      var _element = openXmlElement.Elements<ElementType>().FirstOrDefault();
+      if (_element == null)
+      {
+        var constructor = typeof(ElementType).GetConstructor(new Type[0]);
+        Debug.Assert(constructor != null, $"Type {typeof(ElementType)} must have constructor with no parameters");
+        _element = (ElementType)constructor.Invoke(new object[0]);
+        openXmlElement.AppendChild(_element);
+      }
+      var valProperty = typeof(ElementType).GetProperty("Id");
+      Debug.Assert(valProperty != null, $"\"Id\" property in {typeof(ElementType)} not found");
+      var valType = valProperty.PropertyType;
+      var valueProperty = valType.GetProperty("Value");
+      Debug.Assert(valueProperty != null, $"\"Value\" property in {valType} not found");
+      valProperty.SetValue(_element, value);
+    }
+    else
+    {
+      var _element = openXmlElement.Elements<ElementType>().FirstOrDefault();
+      if (_element != null)
+        _element.Remove();
+    }
+  }
+  #endregion
+
+  #region Reference get/set methods
+  public static Reference? GetRefId<ElementType>(this DX.OpenXmlCompositeElement? openXmlElement) where ElementType : DX.OpenXmlLeafElement
+  {
+    if (openXmlElement != null)
+    {
+      var _element = openXmlElement.Elements<ElementType>().FirstOrDefault();
+      if (_element != null)
+      {
+        var valProperty = typeof(ElementType).GetProperty("Id");
+        Debug.Assert(valProperty != null, $"\"Id\" property in {typeof(ElementType)} not found");
+        var val = valProperty.GetValue(_element);
+        if (val != null)
+        {
+          var valType = val.GetType();
+          var valueProperty = valType.GetProperty("Value");
+          Debug.Assert(valueProperty != null, $"\"Value\" property in {valType} not found");
+          var value = valueProperty.GetValue(val);
+          if (value is not null)
+          {
+            if (value is string str)
+              return new Reference(str);
+            return new Reference(value.ToString()!);
+          }
+        }
+      }
+    }
+    return null;
+  }
+
+  public static void SetRefId<ElementType>(this DX.OpenXmlCompositeElement openXmlElement, Reference? value) where ElementType : DX.OpenXmlLeafElement
   {
     if (value != null)
     {
@@ -530,7 +592,7 @@ public static class OpenXmlCompositeElementUtils
   #endregion
 
   #region Int get/set methods
-  public static Int32? GetInt32Val<ElementType>(this DX.OpenXmlCompositeElement? openXmlElement) where ElementType : DX.OpenXmlLeafElement
+  public static int? GetIntVal<ElementType>(this DX.OpenXmlCompositeElement? openXmlElement) where ElementType : DX.OpenXmlLeafElement
   {
     if (openXmlElement != null)
     {
@@ -550,7 +612,8 @@ public static class OpenXmlCompositeElementUtils
           {
             if (value is Int32 n)
               return n;
-            throw new InvalidCastException($"Unsupported typecast operation from {value.GetType()} to int");
+            n = Convert.ToInt32(value);
+            return n;
           }
         }
       }
@@ -558,7 +621,7 @@ public static class OpenXmlCompositeElementUtils
     return null;
   }
 
-  public static void SetInt32Val<ElementType>(this DX.OpenXmlCompositeElement openXmlElement, Int32? value) where ElementType : DX.OpenXmlLeafElement, new()
+  public static void SetIntVal<ElementType>(this DX.OpenXmlCompositeElement openXmlElement, int? value) where ElementType : DX.OpenXmlLeafElement, new()
   {
     if (value is not null)
     {
@@ -568,13 +631,13 @@ public static class OpenXmlCompositeElementUtils
         _element = new ElementType();
         openXmlElement.AppendChild(_element);
       }
-        var valProperty = typeof(ElementType).GetProperty("Val");
-        Debug.Assert(valProperty != null, $"\"Val\" property in {typeof(ElementType)} not found");
-        var valType = valProperty.PropertyType;
-        if (valType == typeof (DX.Int32Value))
-          valProperty.SetValue(_element, new DX.Int32Value(value));
-        else
-          throw new InvalidCastException($"Unsupported typecast operation from {value.GetType()} to int");
+      var valProperty = typeof(ElementType).GetProperty("Val");
+      Debug.Assert(valProperty != null, $"\"Val\" property in {typeof(ElementType)} not found");
+      var valType = valProperty.PropertyType;
+      if (valType == typeof(DX.Int32Value))
+        valProperty.SetValue(_element, new DX.Int32Value(value));
+      else
+        throw new InvalidCastException($"Unsupported typecast operation from {value.GetType()} to int");
     }
     else
     {
@@ -584,7 +647,7 @@ public static class OpenXmlCompositeElementUtils
     }
   }
 
-  public static Int32? GetInt32Id<ElementType>(this DX.OpenXmlCompositeElement? openXmlElement) where ElementType : DX.OpenXmlLeafElement
+  public static int? GetIntId<ElementType>(this DX.OpenXmlCompositeElement? openXmlElement) where ElementType : DX.OpenXmlLeafElement
   {
     if (openXmlElement != null)
     {
@@ -604,7 +667,8 @@ public static class OpenXmlCompositeElementUtils
           {
             if (value is Int32 n)
               return n;
-            throw new InvalidCastException($"Unsupported typecast operation from {value.GetType()} to int");
+            n = Convert.ToInt32(value);
+            return n;
           }
         }
       }
@@ -612,7 +676,7 @@ public static class OpenXmlCompositeElementUtils
     return null;
   }
 
-  public static void SetInt32Id<ElementType>(this DX.OpenXmlCompositeElement openXmlElement, Int32? value) where ElementType : DX.OpenXmlLeafElement, new()
+  public static void SetIntId<ElementType>(this DX.OpenXmlCompositeElement openXmlElement, int? value) where ElementType : DX.OpenXmlLeafElement, new()
   {
     if (value is not null)
     {
@@ -622,13 +686,16 @@ public static class OpenXmlCompositeElementUtils
         _element = new ElementType();
         openXmlElement.AppendChild(_element);
       }
-        var valProperty = typeof(ElementType).GetProperty("Id");
-        Debug.Assert(valProperty != null, $"\"Id\" property in {typeof(ElementType)} not found");
-        var valType = valProperty.PropertyType;
-        if (valType == typeof (DX.Int32Value))
-          valProperty.SetValue(_element, new DX.Int32Value(value));
-        else
-          throw new InvalidCastException($"Unsupported typecast operation from {value.GetType()} to int");
+      var valProperty = typeof(ElementType).GetProperty("Id");
+      Debug.Assert(valProperty != null, $"\"Id\" property in {typeof(ElementType)} not found");
+      var valType = valProperty.PropertyType;
+      if (valType == typeof(DX.Int32Value))
+        valProperty.SetValue(_element, new DX.Int32Value(value));
+      else
+      if (valType == typeof(DX.IntegerValue))
+        valProperty.SetValue(_element, new DX.IntegerValue(value));
+      else
+        throw new InvalidCastException($"Unsupported typecast operation from {value.GetType()} to int");
     }
     else
     {
@@ -639,5 +706,11 @@ public static class OpenXmlCompositeElementUtils
   }
 
   #endregion
+
+  public static void AddChildElement(this DX.OpenXmlCompositeElement openXmlElement, DX.OpenXmlElement childElement)
+  {
+    childElement.Remove();
+    openXmlElement.AppendChild(childElement);
+  }
 
 }

@@ -34,7 +34,7 @@ public partial class Schema: IOpenXmlElementMappedObject
   internal DXCXSR.Schema _Element { get; private set; }
 
   [DataMember]
-  public String? Uri
+  public string? Uri
   {
     get => _Element.Uri?.Value;
     set
@@ -47,7 +47,7 @@ public partial class Schema: IOpenXmlElementMappedObject
   }
 
   [DataMember]
-  public String? SchemaLocation
+  public string? SchemaLocation
   {
     get => _Element.SchemaLocation?.Value;
     set
@@ -60,7 +60,7 @@ public partial class Schema: IOpenXmlElementMappedObject
   }
 
   [DataMember]
-  public String? ManifestLocation
+  public string? ManifestLocation
   {
     get => _Element.ManifestLocation?.Value;
     set
