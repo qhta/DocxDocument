@@ -6,31 +6,13 @@
 /// Custom file property value can be set by setting the appropriate Variant Type child element value.
 /// </summary>
 [DataContract]
-public class CustomProperty: IOpenXmlElementMappedObject
+public class CustomProperty: ModelElement<DXCP.CustomDocumentProperty>
 {
-  public CustomProperty() 
-  { 
-    _Element = new DXCP.CustomDocumentProperty();
-  }
+  public CustomProperty(): base(){ }
 
-  public CustomProperty(DX.OpenXmlElement openXmlElement)
-  {
-    _Element = (DXCP.CustomDocumentProperty)openXmlElement;
-  }
+  public CustomProperty(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
 
-  public OpenXmlElementType GetElement<OpenXmlElementType>() where OpenXmlElementType: DX.OpenXmlElement
-  {
-    if (_ExistingElement is OpenXmlElementType validTypeElement)
-    return validTypeElement;
-      throw new ArgumentException($"Only {_ExistingElement.GetType()} type supported in GetElement of {this.GetType()}");
-  }
-
-  public CustomProperty(DXCP.CustomDocumentProperty property)
-  {
-    _Element = property;
-  }
-
-  internal DXCP.CustomDocumentProperty? _Element { get; private set; }
+  public CustomProperty(DXCP.CustomDocumentProperty openXmlElement): base(openXmlElement) { } 
 
   internal DXCP.CustomDocumentProperty _ExistingElement 
   { 

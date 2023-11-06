@@ -7,31 +7,13 @@
 /// [Guidance: The set of revision save IDs stored with a document only supplies information about the editing session 
 /// in which document components were last saved, which can be used by applications in any manner desired. end guidance]
 /// </summary>
-public partial class Rsids: IOpenXmlElementMappedObject
+public partial class Rsids : ModelElement<DXW.Rsids>
 {
-  public Rsids()
-  {
-    _Element = new DXW.Rsids();
-  }
+  public Rsids(): base(){ }
 
-  public Rsids(DX.OpenXmlElement openXmlElement)
-  {
-    _Element = (DXW.Rsids)openXmlElement;
-  }
+  public Rsids(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
 
-  public OpenXmlElementType GetElement<OpenXmlElementType>() where OpenXmlElementType: DX.OpenXmlElement
-  {
-    if (_Element is OpenXmlElementType validTypeElement)
-    return validTypeElement;
-      throw new ArgumentException($"Only {_Element.GetType()} type supported in GetElement of {this.GetType()}");
-  }
-
-  public Rsids(DXW.Rsids openXmlElement)
-  {
-    _Element = openXmlElement;
-  }
-
-  internal DXW.Rsids _Element { get; private set; }
+  public Rsids(DXW.Rsids openXmlElement): base(openXmlElement) { } 
 
   /// <summary>
   /// Specifies the revision save ID which was associated with the first editing session for this document. 

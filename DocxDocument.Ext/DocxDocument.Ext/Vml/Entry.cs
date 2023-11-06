@@ -4,31 +4,13 @@
 /// This class specifies a rule entry in a rules element rule set that describes how a certain shape or set of shapes 
 /// behaves during editing.
 /// </summary>
-public partial class Entry : IOpenXmlElementMappedObject
+public partial class Entry : ModelElement<DXVO.Entry>
 {
-  public Entry()
-  {
-    _Element = new DXVO.Entry();
-  }
+  public Entry(): base(){ }
 
-  public Entry(DX.OpenXmlElement openXmlElement)
-  {
-    _Element = (DXVO.Entry)openXmlElement;
-  }
+  public Entry(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
 
-  public OpenXmlElementType GetElement<OpenXmlElementType>() where OpenXmlElementType : DX.OpenXmlElement
-  {
-    if (_Element is OpenXmlElementType validTypeElement)
-      return validTypeElement;
-    throw new ArgumentException($"Only {_Element.GetType()} type supported in GetElement of {this.GetType()}");
-  }
-
-  public Entry(DXVO.Entry openXmlElement)
-  {
-    _Element = openXmlElement;
-  }
-
-  internal DXVO.Entry _Element { get; private set; }
+  public Entry(DXVO.Entry openXmlElement): base(openXmlElement) { } 
 
   /// <summary>
   /// Specifies the ID of the new group. Default is 0.

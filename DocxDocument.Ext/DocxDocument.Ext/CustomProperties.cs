@@ -4,7 +4,7 @@
 /// This class represents a set of document properties stored in openXml document package
 /// in CustomFilePropertiesPart.
 /// </summary>
-public partial class CustomProperties
+public partial class CustomProperties: ModelElement
 {
   public CustomProperties()
   {

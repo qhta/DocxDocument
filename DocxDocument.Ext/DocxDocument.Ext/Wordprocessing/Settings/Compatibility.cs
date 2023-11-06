@@ -4,31 +4,13 @@
 /// This class specifies a set of optional compatibility options for the current document.
 /// </summary>
 [DataContract]
-public partial class Compatibility: IOpenXmlElementMappedObject
+public partial class Compatibility: ModelElement<DXW.Compatibility>
 {
-  public Compatibility()
-  {
-    _Element = new DXW.Compatibility();
-  }
+  public Compatibility(): base(){ }
 
-  public Compatibility(DX.OpenXmlElement openXmlElement)
-  {
-    _Element = (DXW.Compatibility)openXmlElement;
-  }
+  public Compatibility(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
 
-  public OpenXmlElementType GetElement<OpenXmlElementType>() where OpenXmlElementType: DX.OpenXmlElement
-  {
-    if (_Element is OpenXmlElementType validTypeElement)
-    return validTypeElement;
-      throw new ArgumentException($"Only {_Element.GetType()} type supported in GetElement of {this.GetType()}");
-  }
-
-  public Compatibility(DXW.Compatibility openXmlElement)
-  {
-    _Element = openXmlElement;
-  }
-
-  internal DXW.Compatibility _Element { get; private set; }
+  public Compatibility(DXW.Compatibility openXmlElement): base(openXmlElement) { }
 
   /// <summary>
   /// Use Simplified Rules For Table Border Conflicts.

@@ -7,31 +7,13 @@
 /// to a single type of pre-defined MERGEFIELD field for the purposes of the mail merge in the current document.
 /// </summary>
 [DataContract]
-public partial class FieldMapData : IOpenXmlElementMappedObject
+public partial class FieldMapData : ModelElement<DXW.FieldMapData>
 {
-  public FieldMapData()
-  {
-    _Element = new DXW.FieldMapData();
-  }
+  public FieldMapData(): base(){ }
 
-  public FieldMapData(DX.OpenXmlElement openXmlElement)
-  {
-    _Element = (DXW.FieldMapData)openXmlElement;
-  }
+  public FieldMapData(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
 
-  public OpenXmlElementType GetElement<OpenXmlElementType>() where OpenXmlElementType : DX.OpenXmlElement
-  {
-    if (_Element is OpenXmlElementType validTypeElement)
-      return validTypeElement;
-    throw new ArgumentException($"Only {_Element.GetType()} type supported in GetElement of {this.GetType()}");
-  }
-
-  public FieldMapData(DXW.FieldMapData openXmlElement)
-  {
-    _Element = openXmlElement;
-  }
-
-  internal DXW.FieldMapData _Element { get; private set; }
+  public FieldMapData(DXW.FieldMapData openXmlElement): base(openXmlElement) { } 
 
   /// <summary>
   /// This element specifies the language which shall be used for this phonetic guide.

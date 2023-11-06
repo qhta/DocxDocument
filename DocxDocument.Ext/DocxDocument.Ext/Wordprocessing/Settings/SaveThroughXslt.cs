@@ -7,31 +7,13 @@
   ///  this behavior is optional. end guidance]
   /// </summary>
 [DataContract]
-public partial class SaveThroughXslt: IOpenXmlElementMappedObject
+public partial class SaveThroughXslt: ModelElement<DXW.SaveThroughXslt>
 {
-  public SaveThroughXslt()
-  {
-    _Element = new DXW.SaveThroughXslt();
-  }
+  public SaveThroughXslt(): base(){ }
 
-  public SaveThroughXslt(DX.OpenXmlElement openXmlElement)
-  {
-    _Element = (DXW.SaveThroughXslt)openXmlElement;
-  }
+  public SaveThroughXslt(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
 
-  public OpenXmlElementType GetElement<OpenXmlElementType>() where OpenXmlElementType : DX.OpenXmlElement
-  {
-    if (_Element is OpenXmlElementType validTypeElement)
-    return validTypeElement;
-      throw new ArgumentException($"Only {_Element.GetType()} type supported in GetElement of {this.GetType()}");
-  }
-
-  public SaveThroughXslt(DXW.SaveThroughXslt openXmlElement)
-  {
-    _Element = openXmlElement;
-  }
-
-  internal DXW.SaveThroughXslt _Element { get; private set; }
+  public SaveThroughXslt(DXW.SaveThroughXslt openXmlElement): base(openXmlElement) { } 
 
   [DataMember]
   public string? Id

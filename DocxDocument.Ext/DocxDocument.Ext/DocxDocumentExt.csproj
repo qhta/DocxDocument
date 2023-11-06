@@ -9,6 +9,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Wordprocessing\Fonts\**" />
+    <EmbeddedResource Remove="Wordprocessing\Fonts\**" />
+    <None Remove="Wordprocessing\Fonts\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Remove="Wordprocessing\Settings\CompatibilitySettings.AsDictionary.cs" />
   </ItemGroup>
 

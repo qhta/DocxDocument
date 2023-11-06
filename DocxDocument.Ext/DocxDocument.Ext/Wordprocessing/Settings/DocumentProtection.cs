@@ -9,31 +9,13 @@
 /// This protection is not intended as a security feature. end note]
 /// </summary>
 [DataContract]
-public partial class DocumentProtection: IOpenXmlElementMappedObject
+public partial class DocumentProtection: ModelElement<DXW.DocumentProtection>
 {
-  public DocumentProtection()
-  {
-    _Element = new DXW.DocumentProtection();
-  }
+  public DocumentProtection(): base(){ }
 
-  public DocumentProtection(DX.OpenXmlElement openXmlElement)
-  {
-    _Element = (DXW.DocumentProtection)openXmlElement;
-  }
+  public DocumentProtection(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
 
-  public OpenXmlElementType GetElement<OpenXmlElementType>() where OpenXmlElementType: DX.OpenXmlElement
-  {
-    if (_Element is OpenXmlElementType validTypeElement)
-    return validTypeElement;
-      throw new ArgumentException($"Only {_Element.GetType()} type supported in GetElement of {this.GetType()}");
-  }
-
-  public DocumentProtection(DXW.DocumentProtection openXmlElement)
-  {
-    _Element = openXmlElement;
-  }
-
-  internal DXW.DocumentProtection _Element { get; private set; }
+  public DocumentProtection(DXW.DocumentProtection openXmlElement): base(openXmlElement) { }
 
   public DMW.DocumentProtectionKind? Edit
   {

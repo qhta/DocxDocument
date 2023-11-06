@@ -5,32 +5,13 @@
 /// These properties can be overridden for a specific section via the section-wide FootnotePr element.
 /// </summary>
 [DataContract]
-public partial class FootnoteDocumentWideProperties : IOpenXmlElementMappedObject
+public partial class FootnoteDocumentWideProperties : ModelElement<DXW.FootnoteDocumentWideProperties>
 {
-  public FootnoteDocumentWideProperties()
-  {
-    _Element = new DXW.FootnoteDocumentWideProperties();
-  }
+  public FootnoteDocumentWideProperties(): base(){ }
 
-  public FootnoteDocumentWideProperties(DX.OpenXmlElement openXmlElement)
-  {
-    _Element = (DXW.FootnoteDocumentWideProperties)openXmlElement;
-  }
+  public FootnoteDocumentWideProperties(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
 
-  public OpenXmlElementType GetElement<OpenXmlElementType>() where OpenXmlElementType : DX.OpenXmlElement
-  {
-    if (_Element is OpenXmlElementType validTypeElement)
-      return validTypeElement;
-    throw new ArgumentException($"Only {_Element.GetType()} type supported in GetElement of {this.GetType()}");
-  }
-
-  public FootnoteDocumentWideProperties(DXW.FootnoteDocumentWideProperties openXmlElement)
-  {
-    _Element = openXmlElement;
-  }
-
-  internal DXW.FootnoteDocumentWideProperties _Element { get; private set; }
-
+  public FootnoteDocumentWideProperties(DXW.FootnoteDocumentWideProperties openXmlElement): base(openXmlElement) { } 
 
   /// <summary>
   /// This element specifies where endnotes shall be placed on the page when they are referenced by text in the current document.
