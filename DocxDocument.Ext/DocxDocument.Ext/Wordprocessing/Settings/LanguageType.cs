@@ -37,7 +37,7 @@
   /// </para>
   /// </summary>
 [DataContract]
-public partial class LanguageType: IOpenXmlElementMappedObject
+public partial class LanguageType: ModelElement, IOpenXmlElementMappedObject
 {
   public LanguageType()
   {

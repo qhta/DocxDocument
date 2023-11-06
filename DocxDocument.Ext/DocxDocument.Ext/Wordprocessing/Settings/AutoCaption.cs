@@ -5,31 +5,13 @@
 /// and with which captions the specified objects shall be labelled as defined in the caption element (§17.15.1.16).
 /// </summary>
 [DataContract]
-public partial class AutoCaption: IOpenXmlElementMappedObject
+public partial class AutoCaption: ModelElement<DXW.AutoCaption>
 {
-  public AutoCaption()
-  {
-    _Element = new DXW.AutoCaption();
-  }
+  public AutoCaption(): base(){ }
 
-  public AutoCaption(DX.OpenXmlElement openXmlElement)
-  {
-    _Element = (DXW.AutoCaption)openXmlElement;
-  }
+  public AutoCaption(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
 
-  public OpenXmlElementType GetElement<OpenXmlElementType>() where OpenXmlElementType: DX.OpenXmlElement
-  {
-    if (_Element is OpenXmlElementType validTypeElement)
-    return validTypeElement;
-      throw new ArgumentException($"Only {_Element.GetType()} type supported in GetElement of {this.GetType()}");
-  }
-
-  public AutoCaption(DXW.AutoCaption openXmlElement)
-  {
-    _Element = openXmlElement;
-  }
-
-  internal DXW.AutoCaption _Element { get; private set; }
+  public AutoCaption(DXW.AutoCaption openXmlElement): base(openXmlElement) { }
 
   [DataMember]
   public string? Name

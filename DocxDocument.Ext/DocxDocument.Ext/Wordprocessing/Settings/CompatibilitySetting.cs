@@ -5,31 +5,13 @@
 /// [Note: This element can be used to store the transitional compatibility settings specified in Part 4 of /IEC 29500. end note]
 /// </summary>
 [DataContract]
-public partial class CompatibilitySetting: IOpenXmlElementMappedObject
+public partial class CompatibilitySetting: ModelElement<DXW.CompatibilitySetting>
 {
-  public CompatibilitySetting()
-  {
-    _Element = new DXW.CompatibilitySetting();
-  }
+  public CompatibilitySetting(): base(){ }
 
-  public CompatibilitySetting(DX.OpenXmlElement openXmlElement)
-  {
-    _Element = (DXW.CompatibilitySetting)openXmlElement;
-  }
+  public CompatibilitySetting(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
 
-  public OpenXmlElementType GetElement<OpenXmlElementType>() where OpenXmlElementType: DX.OpenXmlElement
-  {
-    if (_Element is OpenXmlElementType validTypeElement)
-    return validTypeElement;
-      throw new ArgumentException($"Only {_Element.GetType()} type supported in GetElement of {this.GetType()}");
-  }
-
-  public CompatibilitySetting(DXW.CompatibilitySetting openXmlElement)
-  {
-    _Element = openXmlElement;
-  }
-
-  internal DXW.CompatibilitySetting _Element { get; private set; }
+  public CompatibilitySetting(DXW.CompatibilitySetting openXmlElement): base(openXmlElement) { }
 
   [DataMember]
   public DMW.CompatSettingNameKind Name

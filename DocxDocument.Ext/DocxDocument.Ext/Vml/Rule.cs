@@ -3,31 +3,13 @@
 /// <summary>
 /// This class specifies a rule entry in a rules element rule set that describes how a certain shape or set of shapes behaves during editing.
 /// </summary>
-public partial class Rule : IOpenXmlElementMappedObject
+public partial class Rule : ModelElement<DXVO.Rule>
 {
-  public Rule()
-  {
-    _Element = new DXVO.Rule();
-  }
+  public Rule(): base(){ }
 
-  public Rule(DX.OpenXmlElement openXmlElement)
-  {
-    _Element = (DXVO.Rule)openXmlElement;
-  }
+  public Rule(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
 
-  public OpenXmlElementType GetElement<OpenXmlElementType>() where OpenXmlElementType : DX.OpenXmlElement
-  {
-    if (_Element is OpenXmlElementType validTypeElement)
-      return validTypeElement;
-    throw new ArgumentException($"Only {_Element.GetType()} type supported in GetElement of {this.GetType()}");
-  }
-
-  public Rule(DXVO.Rule openXmlElement)
-  {
-    _Element = openXmlElement;
-  }
-
-  internal DXVO.Rule _Element { get; private set; }
+  public Rule(DXVO.Rule openXmlElement): base(openXmlElement) { } 
 
   /// <summary>
   /// Specifies an identifier for the rule. Default is no value.

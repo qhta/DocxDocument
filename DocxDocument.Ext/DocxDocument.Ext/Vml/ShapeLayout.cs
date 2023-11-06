@@ -3,31 +3,13 @@
 /// <summary>
 /// This class specifies the defaults that are used when creating new shapes. These defaults are stored once per document.
 /// </summary>
-public partial class ShapeLayout : IOpenXmlElementMappedObject
+public partial class ShapeLayout : ModelElement<DXVO.ShapeLayout>
 {
-  public ShapeLayout()
-  {
-    _Element = new DXVO.ShapeLayout();
-  }
+  public ShapeLayout(): base(){ }
 
-  public ShapeLayout(DX.OpenXmlElement openXmlElement)
-  {
-    _Element = (DXVO.ShapeLayout)openXmlElement;
-  }
+  public ShapeLayout(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
 
-  public OpenXmlElementType GetElement<OpenXmlElementType>() where OpenXmlElementType : DX.OpenXmlElement
-  {
-    if (_Element is OpenXmlElementType validTypeElement)
-      return validTypeElement;
-    throw new ArgumentException($"Only {_Element.GetType()} type supported in GetElement of {this.GetType()}");
-  }
-
-  public ShapeLayout(DXVO.ShapeLayout openXmlElement)
-  {
-    _Element = openXmlElement;
-  }
-
-  internal DXVO.ShapeLayout _Element { get; private set; }
+  public ShapeLayout(DXVO.ShapeLayout openXmlElement): base(openXmlElement) { } 
 
   /// <summary>
   /// Shape ID Optional Storage

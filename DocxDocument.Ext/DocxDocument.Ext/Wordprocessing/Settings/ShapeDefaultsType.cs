@@ -4,7 +4,7 @@
 ///  This class specifies the defaults that are used when creating new shapes. These defaults are stored once per document.
 /// </summary>
 [DataContract]
-public partial class ShapeDefaultsType : IOpenXmlElementMappedObject
+public partial class ShapeDefaultsType : ModelElement, IOpenXmlElementMappedObject
 {
   public ShapeDefaultsType()
   {
