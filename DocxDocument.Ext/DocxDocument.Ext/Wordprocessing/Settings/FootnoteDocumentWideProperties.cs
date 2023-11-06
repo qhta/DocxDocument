@@ -38,10 +38,10 @@ public partial class FootnoteDocumentWideProperties : IOpenXmlElementMappedObjec
   /// If this element is omitted at the document level, then endnotes shall be located at the end of the document.
   /// </summary>
   [DataMember]
-  public DXW.FootnotePositionValues? FootnotePosition
+  public DMW.FootnotePositionKind? FootnotePosition
   {
-    get => _Element?.GetEnumVal<DXW.FootnotePositionValues,DXW.FootnotePosition>();
-    set => _Element.SetEnumVal<DXW.FootnotePositionValues,DXW.FootnotePosition>(value);
+    get => _Element?.GetEnumVal<DMW.FootnotePositionKind,DXW.FootnotePosition>();
+    set => _Element.SetEnumVal<DMW.FootnotePositionKind,DXW.FootnotePosition>(value);
   }
 
   /// <summary>
@@ -84,10 +84,10 @@ public partial class FootnoteDocumentWideProperties : IOpenXmlElementMappedObjec
   /// </para>
   /// </summary>
   [DataMember]
-  public DXW.NumberFormatValues? NumberingFormat
+  public DMW.NumberFormatKind? NumberingFormat
   {
-    get => _Element?.GetEnumVal<DXW.NumberFormatValues,DXW.NumberingFormat>();
-    set => _Element.SetEnumVal<DXW.NumberFormatValues,DXW.NumberingFormat>(value);
+    get => _Element?.GetEnumVal<DMW.NumberFormatKind,DXW.NumberingFormat>();
+    set => _Element.SetEnumVal<DMW.NumberFormatKind,DXW.NumberingFormat>(value);
   }
 
   /// <summary>
@@ -99,9 +99,9 @@ public partial class FootnoteDocumentWideProperties : IOpenXmlElementMappedObjec
   /// </para>
   /// </summary>
   [DataMember]
-  public DXW.RestartNumberValues? NumberingRestart
+  public DMW.RestartNumberKind? NumberingRestart
   {
-    get => _Element?.GetEnumVal<DXW.RestartNumberValues,DXW.NumberingRestart>();
-    set => _Element.SetEnumVal<DXW.RestartNumberValues,DXW.NumberingRestart>(value);
+    get => _Element?.GetEnumVal<DMW.RestartNumberKind,DXW.NumberingRestart>();
+    set => _Element.SetEnumVal<DMW.RestartNumberKind,DXW.NumberingRestart>(value);
   }
 }

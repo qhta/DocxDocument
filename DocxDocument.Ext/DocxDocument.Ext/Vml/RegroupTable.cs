@@ -37,10 +37,10 @@ public partial class RegroupTable : IOpenXmlElementMappedObject
   /// VML Extension Handling Behavior
   /// </summary>
   [DataMember]
-  public DXV.ExtensionHandlingBehaviorValues? Extension
+  public DMV.ExtensionHandlingBehaviorKind? Extension
   {
-    get => _Element.Extension?.Value;
-    set => _Element.Extension = value;
+    get => _Element.Extension?.GetEnumValue<DMV.ExtensionHandlingBehaviorKind, DXV.ExtensionHandlingBehaviorValues>();
+    set => _Element.Extension = EVU.SetEnumValue<DMV.ExtensionHandlingBehaviorKind, DXV.ExtensionHandlingBehaviorValues>(value);
   }
 
 }

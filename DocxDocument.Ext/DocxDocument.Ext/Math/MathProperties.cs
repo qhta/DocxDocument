@@ -35,10 +35,10 @@ public class MathProperties : IOpenXmlElementMappedObject
   /// That is, the binary operator is the first element on the wrapped line.
   /// </summary>
   [DataMember]
-  public DXM.BreakBinaryOperatorValues? BreakBinary
+  public DMM.BreakBinaryOperatorKind? BreakBinary
   {
-    get => _Element.GetEnumVal<DXM.BreakBinaryOperatorValues, DXM.BreakBinary>();
-    set => _Element.SetEnumVal<DXM.BreakBinaryOperatorValues, DXM.BreakBinary>(value);
+    get => _Element.GetEnumVal<DMM.BreakBinaryOperatorKind, DXM.BreakBinary>();
+    set => _Element.SetEnumVal<DMM.BreakBinaryOperatorKind, DXM.BreakBinary>(value);
   }
 
   /// <summary>
@@ -46,10 +46,10 @@ public class MathProperties : IOpenXmlElementMappedObject
   /// If this element is omitted, the subtraction operator is repeated before and after the break.
   /// </summary>
   [DataMember]
-  public DXM.BreakBinarySubtractionValues? BreakBinarySubtraction
+  public DMM.BreakBinarySubtractionKind? BreakBinarySubtraction
   {
-    get => _Element.GetEnumVal<DXM.BreakBinarySubtractionValues, DXM.BreakBinarySubtraction>();
-    set => _Element.SetEnumVal<DXM.BreakBinarySubtractionValues, DXM.BreakBinarySubtraction>(value);
+    get => _Element.GetEnumVal<DMM.BreakBinarySubtractionKind, DXM.BreakBinarySubtraction>();
+    set => _Element.SetEnumVal<DMM.BreakBinarySubtractionKind, DXM.BreakBinarySubtraction>(value);
   }
 
   /// <summary>
@@ -131,10 +131,10 @@ public class MathProperties : IOpenXmlElementMappedObject
   /// </para>
   /// </summary>
   [DataMember]
-  public DXM.JustificationValues? DefaultJustification
+  public DMM.JustificationKind? DefaultJustification
   {
-    get => _Element.GetEnumVal<DXM.JustificationValues, DXM.DefaultJustification>();
-    set => _Element.SetEnumVal<DXM.JustificationValues, DXM.DefaultJustification>(value);
+    get => _Element.GetEnumVal<DMM.JustificationKind, DXM.DefaultJustification>();
+    set => _Element.SetEnumVal<DMM.JustificationKind, DXM.DefaultJustification>(value);
   }
 
   /// <summary>
@@ -191,10 +191,10 @@ public class MathProperties : IOpenXmlElementMappedObject
   /// </para>
   /// </summary>
   [DataMember]
-  public DXM.LimitLocationValues? IntegralLimitLocation
+  public DMM.LimitLocationKind? IntegralLimitLocation
   {
-    get => _Element.GetEnumVal<DXM.LimitLocationValues, DXM.IntegralLimitLocation>();
-    set => _Element.SetEnumVal<DXM.LimitLocationValues, DXM.IntegralLimitLocation>(value);
+    get => _Element.GetEnumVal<DMM.LimitLocationKind, DXM.IntegralLimitLocation>();
+    set => _Element.SetEnumVal<DMM.LimitLocationKind, DXM.IntegralLimitLocation>(value);
   }
 
   /// <summary>
@@ -210,10 +210,10 @@ public class MathProperties : IOpenXmlElementMappedObject
   /// </para>
   /// </summary>
   [DataMember]
-  public DXM.LimitLocationValues? NaryLimitLocation
+  public DMM.LimitLocationKind? NaryLimitLocation
   {
-    get => _Element.GetEnumVal<DXM.LimitLocationValues, DXM.NaryLimitLocation>();
-    set => _Element.SetEnumVal<DXM.LimitLocationValues, DXM.NaryLimitLocation>(value);
+    get => _Element.GetEnumVal<DMM.LimitLocationKind, DXM.NaryLimitLocation>();
+    set => _Element.SetEnumVal<DMM.LimitLocationKind, DXM.NaryLimitLocation>(value);
   }
 
   /// <summary>

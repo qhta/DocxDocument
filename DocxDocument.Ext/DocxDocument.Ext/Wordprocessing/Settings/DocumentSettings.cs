@@ -80,10 +80,10 @@ public partial class DocumentSettings
   /// This element specifies the manner in which the contents of this document should be displayed when opened by an application.
   /// </summary>
   [DataMember]
-  public DXW.ViewValues? View
+  public DMW.ViewKind? View
   {
-    get => _DocumentSettings?.GetEnumVal<DXW.ViewValues, DXW.View>();
-    set => _ExistingSettings?.SetEnumVal<DXW.ViewValues, DXW.View>(value);
+    get => _DocumentSettings?.GetEnumVal<DMW.ViewKind, DXW.View>();
+    set => _ExistingSettings?.SetEnumVal<DMW.ViewKind, DXW.View>(value);
   }
 
   /// <summary>
@@ -505,10 +505,10 @@ public partial class DocumentSettings
   /// This element specifies the sets of characters which should be compressed when the contents of this document are displayed.
   /// </summary>
   [DataMember]
-  public DXW.CharacterSpacingValues? CharacterSpacingControl
+  public DMW.CharacterSpacingKind? CharacterSpacingControl
   {
-    get => _DocumentSettings?.GetEnumVal<DXW.CharacterSpacingValues, DXW.CharacterSpacingControl>();
-    set => _ExistingSettings.SetEnumVal<DXW.CharacterSpacingValues, DXW.CharacterSpacingControl>(value);
+    get => _DocumentSettings?.GetEnumVal<DMW.CharacterSpacingKind, DXW.CharacterSpacingControl>();
+    set => _ExistingSettings.SetEnumVal<DMW.CharacterSpacingKind, DXW.CharacterSpacingControl>(value);
   }
 
   /// <summary>
@@ -1251,10 +1251,10 @@ public partial class DocumentSettings
   /// </para>
   /// </summary>
   [DataMember]
-  public DXW.DocumentTypeValues? DocumentType
+  public DMW.DocumentKind? DocumentType
   {
-    get => _DocumentSettings?.GetEnumVal<DXW.DocumentTypeValues, DXW.DocumentType>();
-    set => _ExistingSettings.SetEnumVal<DXW.DocumentTypeValues, DXW.DocumentType>(value);
+    get => _DocumentSettings?.GetEnumVal<DMW.DocumentKind, DXW.DocumentType>();
+    set => _ExistingSettings.SetEnumVal<DMW.DocumentKind, DXW.DocumentType>(value);
   }
 
   /// <summary>

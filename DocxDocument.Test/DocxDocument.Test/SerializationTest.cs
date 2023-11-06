@@ -25,8 +25,8 @@ public class SerializationTest : ReadWriteTest
   {
     TestReadProperties(inputFile);
     var outputXmlFile = Path.ChangeExtension(inputFile, ".xml");
-    //try
-    //{
+    try
+    {
       using (var inputDocument = DM.Document.Open(inputFile, false))
       {
 
@@ -44,18 +44,20 @@ public class SerializationTest : ReadWriteTest
         }
         Output.WriteLine($"");
       }
-    //}
-    //catch (Exception ex)
-    //{
-    //  Output.WriteLine($"  {ex.GetType().Name}: {ex.Message}");
-    //  return;
-    //}
+    }
+    catch (Exception ex)
+    {
+      Output.WriteLine($"  {ex.GetType().Name}: {ex.Message}");
+      return;
+    }
 
   }
 
   public void SerializeXml(DM.Document document, string fileName)
   {
-    var knownTypes = typeof(DM.Document).Assembly.GetTypes();
+    var knownTypes = typeof(DM.Document).Assembly.GetTypes()
+      .Where(type => !type.Name.Contains('<') &&
+      type.Namespace != null && type.Namespace.StartsWith("DocumentModel") && !type.Namespace.EndsWith("Utils")).ToArray();
     using (FileStream fileStream = new FileStream(fileName, FileMode.Create))
     {
       var xmlWriter = XmlTextWriter.Create(fileStream, new XmlWriterSettings { Indent = true });
@@ -66,7 +68,9 @@ public class SerializationTest : ReadWriteTest
 
   public void SerializeDataContract(DM.Document document, string fileName)
   {
-    var knownTypes = typeof(DM.Document).Assembly.GetTypes().Where(type=>!type.Name.Contains('<'));
+    var knownTypes = typeof(DM.Document).Assembly.GetTypes()
+      .Where(type => !type.Name.Contains('<') &&
+      type.Namespace != null && type.Namespace.StartsWith("DocumentModel") && !type.Namespace.EndsWith("Utils")).ToArray();
     using (FileStream fileStream = new FileStream(fileName, FileMode.Create))
     {
       DataContractSerializer serializer = new DataContractSerializer(typeof(DM.Document), knownTypes);
@@ -76,9 +80,13 @@ public class SerializationTest : ReadWriteTest
 
   public void DeserializeXml(DM.Document document, string fileName)
   {
-    var knownTypes = typeof(DM.Document).Assembly.GetTypes();
-    FileStream stream = new FileStream(fileName, FileMode.Open);
-    QXmlSerializer serializer = new QXmlSerializer(typeof(DM.Document), knownTypes);
-    serializer.Deserialize(stream, document);
+    var knownTypes = typeof(DM.Document).Assembly.GetTypes()
+      .Where(type => !type.Name.Contains('<') &&
+      type.Namespace != null && type.Namespace.StartsWith("DocumentModel") && !type.Namespace.EndsWith("Utils")).ToArray();
+    using (FileStream stream = new FileStream(fileName, FileMode.Open))
+    {
+      QXmlSerializer serializer = new QXmlSerializer(typeof(DM.Document), knownTypes);
+      serializer.Deserialize(stream, document);
+    }
   }
 }
