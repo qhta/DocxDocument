@@ -35,16 +35,10 @@ public partial class DocumentProtection: IOpenXmlElementMappedObject
 
   internal DXW.DocumentProtection _Element { get; private set; }
 
-  public DXW.DocumentProtectionValues? Edit
+  public DMW.DocumentProtectionKind? Edit
   {
-    get => _Element.Edit?.Value;
-    set
-    {
-      if (value != null)
-        _Element.Edit = new DX.EnumValue<DXW.DocumentProtectionValues> { Value = (DXW.DocumentProtectionValues)value };
-      else
-        _Element.Edit = null;
-    }
+    get => _Element.Edit?.GetEnumValue<DMW.DocumentProtectionKind, DXW.DocumentProtectionValues>();
+    set => _Element.Edit = EnumValueUtils.SetEnumValue<DMW.DocumentProtectionKind, DXW.DocumentProtectionValues>(value);
   }
 
   public bool? Formatting
@@ -71,40 +65,22 @@ public partial class DocumentProtection: IOpenXmlElementMappedObject
     }
   }
 
-  public DXW.CryptProviderValues? CryptographicProviderType
+  public DMW.CryptProviderKind? CryptographicProviderType
   {
-    get => _Element.CryptographicProviderType?.Value;
-    set
-    {
-      if (value != null)
-        _Element.CryptographicProviderType = new DX.EnumValue<DXW.CryptProviderValues> { Value = (DXW.CryptProviderValues)value };
-      else
-        _Element.CryptographicProviderType = null;
-    }
+    get => _Element.CryptographicProviderType?.GetEnumValue<DMW.CryptProviderKind, DXW.CryptProviderValues>();
+    set => _Element.CryptographicProviderType = EnumValueUtils.SetEnumValue<DMW.CryptProviderKind, DXW.CryptProviderValues>(value);
   }
 
-  public DXW.CryptAlgorithmClassValues? CryptographicAlgorithmClass
+  public DMW.CryptAlgorithmClassKind? CryptographicAlgorithmClass
   {
-    get => _Element.CryptographicAlgorithmClass?.Value;
-    set
-    {
-      if (value != null)
-        _Element.CryptographicAlgorithmClass = new DX.EnumValue<DXW.CryptAlgorithmClassValues> { Value = (DXW.CryptAlgorithmClassValues)value };
-      else
-        _Element.CryptographicAlgorithmClass = null;
-    }
+    get => _Element.CryptographicAlgorithmClass?.GetEnumValue<DMW.CryptAlgorithmClassKind, DXW.CryptAlgorithmClassValues>();
+    set => _Element.CryptographicAlgorithmClass = EnumValueUtils.SetEnumValue<DMW.CryptAlgorithmClassKind, DXW.CryptAlgorithmClassValues>(value);
   }
 
-  public DXW.CryptAlgorithmValues? CryptographicAlgorithmType
+  public DMW.CryptAlgorithmKind? CryptographicAlgorithmType
   {
-    get => _Element.CryptographicAlgorithmType?.Value;
-    set
-    {
-      if (value != null)
-        _Element.CryptographicAlgorithmType = new DX.EnumValue<DXW.CryptAlgorithmValues> { Value = (DXW.CryptAlgorithmValues)value };
-      else
-        _Element.CryptographicAlgorithmType = null;
-    }
+    get => _Element.CryptographicAlgorithmType?.GetEnumValue<DMW.CryptAlgorithmKind, DXW.CryptAlgorithmValues>();
+    set => _Element.CryptographicAlgorithmType = EnumValueUtils.SetEnumValue<DMW.CryptAlgorithmKind, DXW.CryptAlgorithmValues>(value);
   }
 
   public int? CryptographicAlgorithmSid

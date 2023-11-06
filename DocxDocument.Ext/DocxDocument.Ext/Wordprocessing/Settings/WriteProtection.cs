@@ -68,48 +68,32 @@ public partial class WriteProtection : IOpenXmlElementMappedObject
   /// Cryptographic Provider Type.
   /// </summary>
   [DataMember]
-  public DXW.CryptProviderValues? CryptographicProviderType
+  public DMW.CryptProviderKind? CryptographicProviderType
   {
-    get => _Element.CryptographicProviderType?.Value;
-    set
-    {
-      if (value != null)
-        _Element.CryptographicProviderType = new DX.EnumValue<DXW.CryptProviderValues> { Value = (DXW.CryptProviderValues)value };
-      else
-        _Element.CryptographicProviderType = null;
-    }
+    get => _Element.CryptographicProviderType?.GetEnumValue<DMW.CryptProviderKind, DXW.CryptProviderValues>();
+    set => _Element.CryptographicProviderType = EVU.SetEnumValue<DMW.CryptProviderKind, DXW.CryptProviderValues>(value);
   }
 
   /// <summary>
   /// Cryptographic Algorithm Class.
   /// </summary>
   [DataMember]
-  public DXW.CryptAlgorithmClassValues? CryptographicAlgorithmClass
+  public DMW.CryptAlgorithmClassKind? CryptographicAlgorithmClass
   {
-    get => _Element.CryptographicAlgorithmClass?.Value;
-    set
-    {
-      if (value != null)
-        _Element.CryptographicAlgorithmClass = new DX.EnumValue<DXW.CryptAlgorithmClassValues> { Value = (DXW.CryptAlgorithmClassValues)value };
-      else
-        _Element.CryptographicAlgorithmClass = null;
-    }
+    get => _Element.CryptographicAlgorithmClass?.GetEnumValue<DMW.CryptAlgorithmClassKind, DXW.CryptAlgorithmClassValues>();
+    set => _Element.CryptographicAlgorithmClass = EVU.SetEnumValue<DMW.CryptAlgorithmClassKind, DXW.CryptAlgorithmClassValues>(value);
+
   }
 
   /// <summary>
   /// Cryptographic Algorithm Type.
   /// </summary>
   [DataMember]
-  public DXW.CryptAlgorithmValues? CryptographicAlgorithmType
+  public DMW.CryptAlgorithmKind? CryptographicAlgorithmType
   {
-    get => _Element.CryptographicAlgorithmType?.Value;
-    set
-    {
-      if (value != null)
-        _Element.CryptographicAlgorithmType = new DX.EnumValue<DXW.CryptAlgorithmValues> { Value = (DXW.CryptAlgorithmValues)value };
-      else
-        _Element.CryptographicAlgorithmType = null;
-    }
+    get => _Element.CryptographicAlgorithmType?.GetEnumValue<DMW.CryptAlgorithmKind, DXW.CryptAlgorithmValues>();
+    set => _Element.CryptographicAlgorithmType = EVU.SetEnumValue<DMW.CryptAlgorithmKind, DXW.CryptAlgorithmValues>(value);
+
   }
 
   /// <summary>

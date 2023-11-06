@@ -50,10 +50,10 @@ public partial class FieldMapData : IOpenXmlElementMappedObject
   /// </para>
   /// </summary>
   [DataMember]
-  public DXW.MailMergeOdsoFieldValues? MailMergeFieldType
+  public DMW.MailMergeOdsoFieldKind? MailMergeFieldType
   {
-    get => _Element?.GetEnumVal<DXW.MailMergeOdsoFieldValues, DXW.MailMergeFieldType>();
-    set => _Element.SetEnumVal<DXW.MailMergeOdsoFieldValues, DXW.MailMergeFieldType>(value);
+    get => _Element?.GetEnumVal<DMW.MailMergeOdsoFieldKind, DXW.MailMergeFieldType>();
+    set => _Element.SetEnumVal<DMW.MailMergeOdsoFieldKind, DXW.MailMergeFieldType>(value);
   }
 
   /// <summary>

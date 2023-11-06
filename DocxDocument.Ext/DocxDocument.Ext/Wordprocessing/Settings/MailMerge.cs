@@ -106,10 +106,10 @@ public partial class MailMerge : IOpenXmlElementMappedObject
   /// </para>
   /// </summary>
   [DataMember]
-  public DXW.MailMergeDataValues? DataType
+  public DMW.MailMergeDataKind? DataType
   {
-    get => _Element?.GetEnumVal<DXW.MailMergeDataValues, DXW.DataType>();
-    set => _Element.SetEnumVal<DXW.MailMergeDataValues, DXW.DataType>(value);
+    get => _Element?.GetEnumVal<DMW.MailMergeDataKind, DXW.DataType>();
+    set => _Element.SetEnumVal<DMW.MailMergeDataKind, DXW.DataType>(value);
   }
 
   /// <summary>
@@ -119,10 +119,10 @@ public partial class MailMerge : IOpenXmlElementMappedObject
   /// </para>
   /// </summary>
   [DataMember]
-  public DXW.MailMergeDestinationValues? Destination
+  public DMW.MailMergeDestinationKind? Destination
   {
-    get => _Element?.GetEnumVal<DXW.MailMergeDestinationValues, DXW.Destination>();
-    set => _Element.SetEnumVal<DXW.MailMergeDestinationValues, DXW.Destination>(value);
+    get => _Element?.GetEnumVal<DMW.MailMergeDestinationKind, DXW.Destination>();
+    set => _Element.SetEnumVal<DMW.MailMergeDestinationKind, DXW.Destination>(value);
   }
 
   /// <summary>
@@ -141,10 +141,10 @@ public partial class MailMerge : IOpenXmlElementMappedObject
   /// </para>
   /// </summary>
   [DataMember]
-  public DXW.MailMergeDocumentValues? MainDocumentType
+  public DMW.MailMergeDocumentKind? MainDocumentType
   {
-    get => _Element?.GetEnumVal<DXW.MailMergeDocumentValues, DXW.MainDocumentType>();
-    set => _Element.SetEnumVal<DXW.MailMergeDocumentValues, DXW.MainDocumentType>(value);
+    get => _Element?.GetEnumVal<DMW.MailMergeDocumentKind, DXW.MainDocumentType>();
+    set => _Element.SetEnumVal<DMW.MailMergeDocumentKind, DXW.MainDocumentType>(value);
   }
 
   /// <summary>

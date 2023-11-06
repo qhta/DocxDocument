@@ -33,29 +33,17 @@ public partial class ProofState: IOpenXmlElementMappedObject
   internal DXW.ProofState _Element { get; private set; }
 
   [DataMember]
-  public DXW.ProofingStateValues? Spelling
+  public DMW.ProofingStateKind? Spelling
   {
-    get => _Element.Spelling?.Value;
-    set
-    {
-      if (value != null)
-        _Element.Spelling = new DX.EnumValue<DXW.ProofingStateValues> { Value = (DXW.ProofingStateValues)value };
-      else
-        _Element.Spelling = null;
-    }
+    get => _Element.Spelling?.GetEnumValue<DMW.ProofingStateKind, DXW.ProofingStateValues>();
+    set => _Element.Spelling = EVU.SetEnumValue<DMW.ProofingStateKind, DXW.ProofingStateValues>(value);
   }
 
   [DataMember]
-  public DXW.ProofingStateValues? Grammar
+  public DMW.ProofingStateKind? Grammar
   {
-    get => _Element.Grammar?.Value;
-    set
-    {
-      if (value != null)
-        _Element.Grammar = new DX.EnumValue<DXW.ProofingStateValues> { Value = (DXW.ProofingStateValues)value };
-      else
-        _Element.Grammar = null;
-    }
+    get => _Element.Grammar?.GetEnumValue<DMW.ProofingStateKind, DXW.ProofingStateValues>();
+    set => _Element.Grammar = EVU.SetEnumValue<DMW.ProofingStateKind, DXW.ProofingStateValues>(value);
   }
 
 }

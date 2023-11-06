@@ -32,6 +32,7 @@ global using DXW13 = DocumentFormat.OpenXml.Office2013.Word;
 global using DXCXSR = DocumentFormat.OpenXml.CustomXmlSchemaReferences;
 
 global using DocumentModel.Utils;
+global using EVU = DocumentModel.Utils.EnumValueUtils;
 
 global using DM = DocumentModel;
 global using DMW = DocumentModel.Wordprocessing;

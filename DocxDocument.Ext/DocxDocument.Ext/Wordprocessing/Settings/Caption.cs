@@ -46,16 +46,10 @@ public partial class Caption: IOpenXmlElementMappedObject
   }
 
   [DataMember]
-  public DXW.CaptionPositionValues? Position
+  public DMW.CaptionPositionKind? Position
   {
-    get => _Element.Position?.Value;
-    set
-    {
-      if (value != null)
-        _Element.Position = new DX.EnumValue<DXW.CaptionPositionValues> { Value = (DXW.CaptionPositionValues)value };
-      else
-        _Element.Position = null;
-    }
+    get => _Element.Position?.GetEnumValue<DMW.CaptionPositionKind, DXW.CaptionPositionValues>();
+    set => _Element.Position = EVU.SetEnumValue<DMW.CaptionPositionKind, DXW.CaptionPositionValues>(value);
   }
 
   [DataMember]
@@ -98,29 +92,17 @@ public partial class Caption: IOpenXmlElementMappedObject
   }
 
   [DataMember]
-  public DXW.NumberFormatValues? NumberFormat
+  public DMW.NumberFormatKind? NumberFormat
   {
-    get => _Element.NumberFormat?.Value;
-    set
-    {
-      if (value != null)
-        _Element.NumberFormat = new DX.EnumValue<DXW.NumberFormatValues> { Value = (DXW.NumberFormatValues)value };
-      else
-        _Element.NumberFormat = null;
-    }
+    get => _Element.NumberFormat?.GetEnumValue<DMW.NumberFormatKind, DXW.NumberFormatValues>();
+    set => _Element.NumberFormat = EVU.SetEnumValue<DMW.NumberFormatKind, DXW.NumberFormatValues>(value);
   }
 
   [DataMember]
-  public DXW.ChapterSeparatorValues? Separator
+  public DMW.ChapterSeparatorKind? Separator
   {
-    get => _Element.Separator?.Value;
-    set
-    {
-      if (value != null)
-        _Element.Separator = new DX.EnumValue<DXW.ChapterSeparatorValues> { Value = (DXW.ChapterSeparatorValues)value };
-      else
-        _Element.Separator = null;
-    }
+    get => _Element.Separator?.GetEnumValue<DMW.ChapterSeparatorKind, DXW.ChapterSeparatorValues>();
+    set => _Element.Separator = EVU.SetEnumValue<DMW.ChapterSeparatorKind, DXW.ChapterSeparatorValues>(value);
   }
 
 }

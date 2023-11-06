@@ -1,6 +1,4 @@
-﻿using DocumentFormat.OpenXml;
-
-namespace DocumentModel;
+﻿namespace DocumentModel;
 
 /// <summary>
 /// This static class contains extension operations to be performed on a OpenXmlCompositeElement object.
@@ -179,15 +177,15 @@ public static class OpenXmlCompositeElementUtils
       }
       else
         newValue = value;
-      var enumValuesType = typeof(EnumValue<>).MakeGenericType(valueType);
+      var enumValuesType = typeof(DX.EnumValue<>).MakeGenericType(valueType);
       newValue = enumValuesType.GetConstructor(new Type[] { valueType })?.Invoke(new object[] { newValue });
       valProperty.SetValue(_element, newValue);
     }
     else
     {
-      var setting = openXmlElement.Elements<ElementType>().FirstOrDefault();
-      if (setting != null)
-        setting.Remove();
+      var _element = openXmlElement.Elements<ElementType>().FirstOrDefault();
+      if (_element != null)
+        _element.Remove();
     }
   }
   #endregion
@@ -468,7 +466,7 @@ public static class OpenXmlCompositeElementUtils
       var valType = valProperty.PropertyType;
       var valueProperty = valType.GetProperty("Value");
       Debug.Assert(valueProperty != null, $"\"Value\" property in {valType} not found");
-      valProperty.SetValue(_element, new StringValue(value));
+      valProperty.SetValue(_element, new DX.StringValue(value));
     }
     else
     {

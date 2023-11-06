@@ -50,16 +50,10 @@ public partial class Zoom : IOpenXmlElementMappedObject
   }
 
   [DataMember]
-  public DXW.PresetZoomValues? Val
+  public DMW.PresetZoomKind? Val
   {
-    get => _Element?.Val?.Value;
-    set
-    {
-      if (value != null)
-        _ExistingElement.Val = new DX.EnumValue<DXW.PresetZoomValues> { Value = (DXW.PresetZoomValues)value };
-      else
-        _ExistingElement.Val = null;
-    }
+    get => _Element?.Val?.GetEnumValue<DMW.PresetZoomKind, DXW.PresetZoomValues>();
+    set => _ExistingElement.Val = EVU.SetEnumValue<DMW.PresetZoomKind, DXW.PresetZoomValues>(value);
   }
 
   [DataMember]

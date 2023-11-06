@@ -54,10 +54,10 @@ public partial class DataSourceObject : IOpenXmlElementMappedObject
   /// and can be ignored in favor of an alternative mechanism if one is present.
   /// </summary>
   [DataMember]
-  public DXW.MailMergeSourceValues? MailMergeSource
+  public DMW.MailMergeSourceKind? MailMergeSource
   {
-    get => _Element?.GetEnumVal<DXW.MailMergeSourceValues, DXW.MailMergeSource>();
-    set => _Element.SetEnumVal<DXW.MailMergeSourceValues, DXW.MailMergeSource>(value);
+    get => _Element?.GetEnumVal<DMW.MailMergeSourceKind, DXW.MailMergeSource>();
+    set => _Element.SetEnumVal<DMW.MailMergeSourceKind, DXW.MailMergeSource>(value);
   }
 
   /// <summary>
