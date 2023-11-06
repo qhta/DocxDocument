@@ -32,10 +32,10 @@ public partial class CompatibilitySetting: IOpenXmlElementMappedObject
   internal DXW.CompatibilitySetting _Element { get; private set; }
 
   [DataMember]
-  public DXW.CompatSettingNameValues Name
+  public DMW.CompatSettingNameKind Name
   {
-    get => _Element.Name ?? default(DXW.CompatSettingNameValues);
-    set => _Element.Name = value;
+    get => _Element.Name?.GetEnumValue<DMW.CompatSettingNameKind, DXW.CompatSettingNameValues>() ?? default(DMW.CompatSettingNameKind);
+    set => _Element.Name = EVU.SetEnumValue<DMW.CompatSettingNameKind, DXW.CompatSettingNameValues>(value);
   }
 
   [DataMember]

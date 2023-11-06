@@ -5,7 +5,13 @@ public partial class CompatibilitySettings: ICollection<CompatibilitySetting>
 {
   public void Add(CompatibilitySetting value)
   {
-    var _element = _Element.Elements<DXW.CompatibilitySetting>().FirstOrDefault(item=>item.Name!=null && item.Name==value.Name);
+    object valueName = value.Name;
+    if (valueName.GetType() != typeof(DXW.CompatSettingNameValues))
+    {
+      var n = (int)Convert.ChangeType(valueName, typeof(int));
+      valueName = Enum.ToObject(typeof(DXW.CompatSettingNameValues), n);
+    }
+    var _element = _Element.Elements<DXW.CompatibilitySetting>().FirstOrDefault(item=>item.Name!=null && item.Name==valueName);
     if (_element != null)
       throw new InvalidOperationException($"CompatibilitySetting \"{value.Name}\" already exists");
     _Element.AppendChild(value._Element);
@@ -18,7 +24,13 @@ public partial class CompatibilitySettings: ICollection<CompatibilitySetting>
 
   public bool Contains(CompatibilitySetting value)
   {
-    return _Element.Elements<DXW.CompatibilitySetting>().FirstOrDefault(item => item.Name!=null && item.Name == value.Name)!=null;
+    object valueName = value.Name;
+    if (valueName.GetType() != typeof(DXW.CompatSettingNameValues))
+    {
+      var n = (int)Convert.ChangeType(valueName, typeof(int));
+      valueName = Enum.ToObject(typeof(DXW.CompatSettingNameValues), n);
+    }
+    return _Element.Elements<DXW.CompatibilitySetting>().FirstOrDefault(item => item.Name!=null && item.Name == valueName)!=null;
   }
 
   public void CopyTo(CompatibilitySetting[] array, int arrayIndex)
@@ -29,7 +41,13 @@ public partial class CompatibilitySettings: ICollection<CompatibilitySetting>
 
   public bool Remove(CompatibilitySetting value)
   {
-    var _element = _Element.Elements<DXW.CompatibilitySetting>().FirstOrDefault(item => item.Name!=null && item.Name == value.Name);
+    object valueName = value.Name;
+    if (valueName.GetType() != typeof(DXW.CompatSettingNameValues))
+    {
+      var n = (int)Convert.ChangeType(valueName, typeof(int));
+      valueName = Enum.ToObject(typeof(DXW.CompatSettingNameValues), n);
+    }
+    var _element = _Element.Elements<DXW.CompatibilitySetting>().FirstOrDefault(item => item.Name!=null && item.Name == valueName);
     if (_element == null)
       return false;
     _element.Remove();

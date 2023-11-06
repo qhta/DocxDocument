@@ -35,120 +35,120 @@ public partial class ColorSchemeMapping : IOpenXmlElementMappedObject
   /// Background 1 Theme Color Mapping
   /// </summary>
   [DataMember]
-  public DXW.ColorSchemeIndexValues? Background1
+  public DMW.ColorSchemeIndexKind? Background1
   {
-    get => _Element.Background1?.Value;
-    set => _Element.Background1 = value;
+    get => _Element.Background1?.GetEnumValue<DMW.ColorSchemeIndexKind, DXW.ColorSchemeIndexValues>();
+    set => _Element.Background1 = EVU.SetEnumValue<DMW.ColorSchemeIndexKind, DXW.ColorSchemeIndexValues>(value);
   }
 
   /// <summary>
   /// Text 1 Theme Color Mapping
   /// </summary>
   [DataMember]
-  public DXW.ColorSchemeIndexValues? Text1
+  public DMW.ColorSchemeIndexKind? Text1
   {
-    get => _Element.Text1?.Value;
-    set => _Element.Text1 = value;
+    get => _Element.Text1?.GetEnumValue<DMW.ColorSchemeIndexKind, DXW.ColorSchemeIndexValues>();
+    set => _Element.Text1 = EVU.SetEnumValue<DMW.ColorSchemeIndexKind, DXW.ColorSchemeIndexValues>(value);
   }
 
   /// <summary>
   /// Background 2 Theme Color Mapping
   /// </summary>
   [DataMember]
-  public DXW.ColorSchemeIndexValues? Background2
+  public DMW.ColorSchemeIndexKind? Background2
   {
-    get => _Element.Background2?.Value;
-    set => _Element.Background2 = value;
+    get => _Element.Background2?.GetEnumValue<DMW.ColorSchemeIndexKind, DXW.ColorSchemeIndexValues>();
+    set => _Element.Background2 = EVU.SetEnumValue<DMW.ColorSchemeIndexKind, DXW.ColorSchemeIndexValues>(value);
   }
 
   /// <summary>
   /// Text 2 Theme Color Mapping
   /// </summary>
   [DataMember]
-  public DXW.ColorSchemeIndexValues? Text2
+  public DMW.ColorSchemeIndexKind? Text2
   {
-    get => _Element.Text2?.Value;
-    set => _Element.Text2 = value;
+    get => _Element.Text2?.GetEnumValue<DMW.ColorSchemeIndexKind, DXW.ColorSchemeIndexValues>();
+    set => _Element.Text2 = EVU.SetEnumValue<DMW.ColorSchemeIndexKind, DXW.ColorSchemeIndexValues>(value);
   }
 
   /// <summary>
   /// Accent 1 Theme Color Mapping
   /// </summary>
   [DataMember]
-  public DXW.ColorSchemeIndexValues? Accent1
+  public DMW.ColorSchemeIndexKind? Accent1
   {
-    get => _Element.Accent1?.Value;
-    set => _Element.Accent1 = value;
+    get => _Element.Accent1?.GetEnumValue<DMW.ColorSchemeIndexKind, DXW.ColorSchemeIndexValues>();
+    set => _Element.Accent1 = EVU.SetEnumValue<DMW.ColorSchemeIndexKind, DXW.ColorSchemeIndexValues>(value);
   }
 
   /// <summary>
   /// Accent 2 Theme Color Mapping
   /// </summary>
   [DataMember]
-  public DXW.ColorSchemeIndexValues? Accent2
+  public DMW.ColorSchemeIndexKind? Accent2
   {
-    get => _Element.Accent2?.Value;
-    set => _Element.Accent2 = value;
+    get => _Element.Accent2?.GetEnumValue<DMW.ColorSchemeIndexKind, DXW.ColorSchemeIndexValues>();
+    set => _Element.Accent2 = EVU.SetEnumValue<DMW.ColorSchemeIndexKind, DXW.ColorSchemeIndexValues>(value);
   }
 
   /// <summary>
   /// Accent3 Theme Color Mapping
   /// </summary>
   [DataMember]
-  public DXW.ColorSchemeIndexValues? Accent3
+  public DMW.ColorSchemeIndexKind? Accent3
   {
-    get => _Element.Accent3?.Value;
-    set => _Element.Accent3 = value;
+    get => _Element.Accent3?.GetEnumValue<DMW.ColorSchemeIndexKind, DXW.ColorSchemeIndexValues>();
+    set => _Element.Accent3 = EVU.SetEnumValue<DMW.ColorSchemeIndexKind, DXW.ColorSchemeIndexValues>(value);
   }
 
   /// <summary>
   /// Accent4 Theme Color Mapping
   /// </summary>
   [DataMember]
-  public DXW.ColorSchemeIndexValues? Accent4
+  public DMW.ColorSchemeIndexKind? Accent4
   {
-    get => _Element.Accent4?.Value;
-    set => _Element.Accent4 = value;
+    get => _Element.Accent4?.GetEnumValue<DMW.ColorSchemeIndexKind, DXW.ColorSchemeIndexValues>();
+    set => _Element.Accent4 = EVU.SetEnumValue<DMW.ColorSchemeIndexKind, DXW.ColorSchemeIndexValues>(value);
   }
 
   /// <summary>
   /// Accent5 Theme Color Mapping
   /// </summary>
   [DataMember]
-  public DXW.ColorSchemeIndexValues? Accent5
+  public DMW.ColorSchemeIndexKind? Accent5
   {
-    get => _Element.Accent5?.Value;
-    set => _Element.Accent5 = value;
+    get => _Element.Accent5?.GetEnumValue<DMW.ColorSchemeIndexKind, DXW.ColorSchemeIndexValues>();
+    set => _Element.Accent5 = EVU.SetEnumValue<DMW.ColorSchemeIndexKind, DXW.ColorSchemeIndexValues>(value);
   }
 
   /// <summary>
   /// Accent6 Theme Color Mapping
   /// </summary>
   [DataMember]
-  public DXW.ColorSchemeIndexValues? Accent6
+  public DMW.ColorSchemeIndexKind? Accent6
   {
-    get => _Element.Accent6?.Value;
-    set => _Element.Accent6 = value;
+    get => _Element.Accent6?.GetEnumValue<DMW.ColorSchemeIndexKind, DXW.ColorSchemeIndexValues>();
+    set => _Element.Accent6 = EVU.SetEnumValue<DMW.ColorSchemeIndexKind, DXW.ColorSchemeIndexValues>(value);
   }
 
   /// <summary>
   /// Hyperlink Theme Color Mapping
   /// </summary>
   [DataMember]
-  public DXW.ColorSchemeIndexValues? Hyperlink
+  public DMW.ColorSchemeIndexKind? Hyperlink
   {
-    get => _Element.Hyperlink?.Value;
-    set => _Element.Hyperlink = value;
+    get => _Element.Hyperlink?.GetEnumValue<DMW.ColorSchemeIndexKind, DXW.ColorSchemeIndexValues>();
+    set => _Element.Hyperlink = EVU.SetEnumValue<DMW.ColorSchemeIndexKind, DXW.ColorSchemeIndexValues>(value);
   }
 
   /// <summary>
   /// Followed Hyperlink Theme Color Mapping
   /// </summary>
   [DataMember]
-  public DXW.ColorSchemeIndexValues? FollowedHyperlink
+  public DMW.ColorSchemeIndexKind? FollowedHyperlink
   {
-    get => _Element.FollowedHyperlink?.Value;
-    set => _Element.FollowedHyperlink = value;
+    get => _Element.FollowedHyperlink?.GetEnumValue<DMW.ColorSchemeIndexKind, DXW.ColorSchemeIndexValues>();
+    set => _Element.FollowedHyperlink = EVU.SetEnumValue<DMW.ColorSchemeIndexKind, DXW.ColorSchemeIndexValues>(value);
   }
 
 }
