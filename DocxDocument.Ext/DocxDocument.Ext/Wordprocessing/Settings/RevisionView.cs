@@ -6,31 +6,13 @@
 /// it shall only affect the display of the annotations which exist in the document's contents (persisted or in memory).
 /// </summary>
 [DataContract]
-public partial class RevisionView : IOpenXmlElementMappedObject
+public partial class RevisionView : ModelElement<DXW.RevisionView>
 {
-  public RevisionView()
-  {
-    _Element = new DXW.RevisionView();
-  }
+  public RevisionView(): base(){ }
 
-  public RevisionView(DX.OpenXmlElement openXmlElement)
-  {
-    _Element = (DXW.RevisionView)openXmlElement;
-  }
+  public RevisionView(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
 
-  public OpenXmlElementType GetElement<OpenXmlElementType>() where OpenXmlElementType : DX.OpenXmlElement
-  {
-    if (_Element is OpenXmlElementType validTypeElement)
-      return validTypeElement;
-    throw new ArgumentException($"Only {_Element.GetType()} type supported in GetElement of {this.GetType()}");
-  }
-
-  public RevisionView(DXW.RevisionView openXmlElement)
-  {
-    _Element = openXmlElement;
-  }
-
-  internal DXW.RevisionView _Element { get; private set; }
+  public RevisionView(DXW.RevisionView openXmlElement): base(openXmlElement) { } 
 
   /// <summary>
   /// Display Visual Indicator Of Markup Area

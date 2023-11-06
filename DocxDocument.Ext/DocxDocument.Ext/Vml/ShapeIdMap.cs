@@ -5,31 +5,13 @@
 /// This is an optional element included to allow applications a mechanism for storing information 
 /// they need to persist related to generating shape IDs.
 /// </summary>
-public partial class ShapeIdMap : IOpenXmlElementMappedObject
+public partial class ShapeIdMap : ModelElement<DXVO.ShapeIdMap>
 {
-  public ShapeIdMap()
-  {
-    _Element = new DXVO.ShapeIdMap();
-  }
+  public ShapeIdMap(): base(){ }
 
-  public ShapeIdMap(DX.OpenXmlElement openXmlElement)
-  {
-    _Element = (DXVO.ShapeIdMap)openXmlElement;
-  }
+  public ShapeIdMap(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
 
-  public OpenXmlElementType GetElement<OpenXmlElementType>() where OpenXmlElementType : DX.OpenXmlElement
-  {
-    if (_Element is OpenXmlElementType validTypeElement)
-      return validTypeElement;
-    throw new ArgumentException($"Only {_Element.GetType()} type supported in GetElement of {this.GetType()}");
-  }
-
-  public ShapeIdMap(DXVO.ShapeIdMap openXmlElement)
-  {
-    _Element = openXmlElement;
-  }
-
-  internal DXVO.ShapeIdMap _Element { get; private set; }
+  public ShapeIdMap(DXVO.ShapeIdMap openXmlElement): base(openXmlElement) { } 
 
 
   /// <summary>

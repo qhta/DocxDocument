@@ -5,31 +5,13 @@
 /// This mapping enables multiple theme colors to be chained together.
 /// </summary>
 [DataContract]
-public partial class ColorSchemeMapping : IOpenXmlElementMappedObject
+public partial class ColorSchemeMapping : ModelElement<DXW.ColorSchemeMapping>
 {
-  public ColorSchemeMapping()
-  {
-    _Element = new DXW.ColorSchemeMapping();
-  }
+  public ColorSchemeMapping(): base(){ }
 
-  public ColorSchemeMapping(DX.OpenXmlElement openXmlElement)
-  {
-    _Element = (DXW.ColorSchemeMapping)openXmlElement;
-  }
+  public ColorSchemeMapping(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
 
-  public OpenXmlElementType GetElement<OpenXmlElementType>() where OpenXmlElementType : DX.OpenXmlElement
-  {
-    if (_Element is OpenXmlElementType validTypeElement)
-      return validTypeElement;
-    throw new ArgumentException($"Only {_Element.GetType()} type supported in GetElement of {this.GetType()}");
-  }
-
-  public ColorSchemeMapping(DXW.ColorSchemeMapping openXmlElement)
-  {
-    _Element = openXmlElement;
-  }
-
-  internal DXW.ColorSchemeMapping _Element { get; private set; }
+  public ColorSchemeMapping(DXW.ColorSchemeMapping openXmlElement): base(openXmlElement) { }
 
   /// <summary>
   /// Background 1 Theme Color Mapping

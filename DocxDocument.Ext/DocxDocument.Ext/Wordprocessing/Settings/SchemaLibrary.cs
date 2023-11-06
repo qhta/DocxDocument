@@ -6,29 +6,11 @@
 /// can be referenced within this element by a single schema element, regardless of the number of constituent XML schemas 
 /// which comprise that namespace.
 /// </summary>
-public partial class SchemaLibrary: IOpenXmlElementMappedObject
+public partial class SchemaLibrary: ModelElement<DXCXSR.SchemaLibrary>
 {
-  public SchemaLibrary()
-  {
-    _Element = new DXCXSR.SchemaLibrary();
-  }
+  public SchemaLibrary(): base(){ }
 
-  public SchemaLibrary(DX.OpenXmlElement openXmlElement)
-  {
-    _Element = (DXCXSR.SchemaLibrary)openXmlElement;
-  }
+  public SchemaLibrary(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
 
-  public OpenXmlElementType GetElement<OpenXmlElementType>() where OpenXmlElementType: DX.OpenXmlElement
-  {
-    if (_Element is OpenXmlElementType validTypeElement)
-    return validTypeElement;
-      throw new ArgumentException($"Only {_Element.GetType()} type supported in GetElement of {this.GetType()}");
-  }
-
-  public SchemaLibrary(DXCXSR.SchemaLibrary openXmlElement)
-  {
-    _Element = openXmlElement;
-  }
-
-  internal DXCXSR.SchemaLibrary _Element { get; private set; }
+  public SchemaLibrary(DXCXSR.SchemaLibrary openXmlElement): base(openXmlElement) { } 
 }

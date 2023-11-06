@@ -3,33 +3,13 @@
 /// <summary>
 /// This class specifies a list of rule entries which describe how a certain shape or sets of shapes should behave during editing.
 /// </summary>
-public partial class Rules : IOpenXmlElementMappedObject
+public partial class Rules : ModelElement<DXVO.Rules>
 {
-  public Rules()
-  {
-    _Element = new DXVO.Rules();
-  }
+  public Rules(): base(){ }
 
-  public Rules(DX.OpenXmlElement openXmlElement)
-  {
-    _Element = (DXVO.Rules)openXmlElement;
-  }
+  public Rules(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
 
-  public OpenXmlElementType GetElement<OpenXmlElementType>() where OpenXmlElementType : DX.OpenXmlElement
-  {
-    if (_Element is OpenXmlElementType validTypeElement)
-      return validTypeElement;
-    throw new ArgumentException($"Only {_Element.GetType()} type supported in GetElement of {this.GetType()}");
-  }
-
-  public Rules(DXVO.Rules openXmlElement)
-  {
-    _Element = openXmlElement;
-  }
-
-  internal DXVO.Rules _Element { get; private set; }
-
-
+  public Rules(DXVO.Rules openXmlElement): base(openXmlElement) { } 
 
   /// <summary>
   /// VML Extension Handling Behavior

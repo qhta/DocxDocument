@@ -10,7 +10,7 @@ namespace DocumentModel.Wordprocessing;
 /// or automatic detection methods outside the scope of /IEC 29500.
 /// </summary>
 [DataContract]
-public class NoBreakKinsoku : IOpenXmlElementMappedObject
+public class NoBreakKinsoku : ModelElement, IOpenXmlElementMappedObject
 {
   public NoBreakKinsoku()
   {

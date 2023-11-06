@@ -5,31 +5,13 @@
 /// These properties can be overridden for a specific section via the section-wide EndnotePr element.
 /// </summary>
 [DataContract]
-public partial class EndnoteDocumentWideProperties : IOpenXmlElementMappedObject
+public partial class EndnoteDocumentWideProperties : ModelElement<DXW.EndnoteDocumentWideProperties>
 {
-  public EndnoteDocumentWideProperties()
-  {
-    _Element = new DXW.EndnoteDocumentWideProperties();
-  }
+  public EndnoteDocumentWideProperties(): base(){ }
 
-  public EndnoteDocumentWideProperties(DX.OpenXmlElement openXmlElement)
-  {
-    _Element = (DXW.EndnoteDocumentWideProperties)openXmlElement;
-  }
+  public EndnoteDocumentWideProperties(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
 
-  public OpenXmlElementType GetElement<OpenXmlElementType>() where OpenXmlElementType : DX.OpenXmlElement
-  {
-    if (_Element is OpenXmlElementType validTypeElement)
-      return validTypeElement;
-    throw new ArgumentException($"Only {_Element.GetType()} type supported in GetElement of {this.GetType()}");
-  }
-
-  public EndnoteDocumentWideProperties(DXW.EndnoteDocumentWideProperties openXmlElement)
-  {
-    _Element = openXmlElement;
-  }
-
-  internal DXW.EndnoteDocumentWideProperties _Element { get; private set; }
+  public EndnoteDocumentWideProperties(DXW.EndnoteDocumentWideProperties openXmlElement): base(openXmlElement) { } 
 
 
   /// <summary>

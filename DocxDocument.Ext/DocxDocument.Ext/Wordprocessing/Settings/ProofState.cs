@@ -6,31 +6,13 @@
 /// Applications which modify the document contents without checking spelling or grammar should reset these states as needed.
 /// </summary>
 [DataContract]
-public partial class ProofState: IOpenXmlElementMappedObject
+public partial class ProofState : ModelElement<DXW.ProofState>
 {
-  public ProofState()
-  {
-    _Element = new DXW.ProofState();
-  }
+  public ProofState(): base(){ }
 
-  public ProofState(DX.OpenXmlElement openXmlElement)
-  {
-    _Element = (DXW.ProofState)openXmlElement;
-  }
+  public ProofState(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
 
-  public OpenXmlElementType GetElement<OpenXmlElementType>() where OpenXmlElementType: DX.OpenXmlElement
-  {
-    if (_Element is OpenXmlElementType validTypeElement)
-    return validTypeElement;
-      throw new ArgumentException($"Only {_Element.GetType()} type supported in GetElement of {this.GetType()}");
-  }
-
-  public ProofState(DXW.ProofState openXmlElement)
-  {
-    _Element = openXmlElement;
-  }
-
-  internal DXW.ProofState _Element { get; private set; }
+  public ProofState(DXW.ProofState openXmlElement): base(openXmlElement) { } 
 
   [DataMember]
   public DMW.ProofingStateKind? Spelling

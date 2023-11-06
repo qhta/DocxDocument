@@ -22,31 +22,13 @@
 /// If this element is omitted, then no write protection shall be applied to the current document.
 /// </summary>
 [DataContract]
-public partial class WriteProtection : IOpenXmlElementMappedObject
+public partial class WriteProtection : ModelElement<DXW.WriteProtection>
 {
-  public WriteProtection()
-  {
-    _Element = new DXW.WriteProtection();
-  }
+  public WriteProtection(): base(){ }
 
-  public WriteProtection(DX.OpenXmlElement openXmlElement)
-  {
-    _Element = (DXW.WriteProtection)openXmlElement;
-  }
+  public WriteProtection(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
 
-  public OpenXmlElementType GetElement<OpenXmlElementType>() where OpenXmlElementType : DX.OpenXmlElement
-  {
-    if (_Element is OpenXmlElementType validTypeElement)
-      return validTypeElement;
-    throw new ArgumentException($"Only {_Element.GetType()} type supported in GetElement of {this.GetType()}");
-  }
-
-  public WriteProtection(DXW.WriteProtection openXmlElement)
-  {
-    _Element = openXmlElement;
-  }
-
-  internal DXW.WriteProtection _Element { get; private set; }
+  public WriteProtection(DXW.WriteProtection openXmlElement): base(openXmlElement) { } 
 
   /// <summary>
   /// Recommend Write Protection in User Interface.

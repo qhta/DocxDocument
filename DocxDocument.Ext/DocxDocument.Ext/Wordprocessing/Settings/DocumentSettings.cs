@@ -5,7 +5,7 @@
 /// Each setting is represented by appropriate property.
 /// </summary>
 [DataContract]
-public partial class DocumentSettings
+public partial class DocumentSettings: ModelElement
 {
 
   public DocumentSettings() { }
@@ -19,6 +19,7 @@ public partial class DocumentSettings
   internal DXP.WordprocessingDocument? _WordprocessingDocument { get; private set; }
 
   internal DXW.Settings? _DocumentSettings { get; private set; }
+
   internal DXW.Settings _ExistingSettings
   {
     get

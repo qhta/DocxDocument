@@ -3,31 +3,13 @@
 /// <summary>
 ///  This class specifies the document-level properties for all math in the document. 
 /// </summary>
-public class MathProperties : IOpenXmlElementMappedObject
+public class MathProperties : ModelElement<DXM.MathProperties>
 {
-  public MathProperties()
-  {
-    _Element = new DXM.MathProperties();
-  }
+  public MathProperties(): base(){ }
 
-  public MathProperties(DX.OpenXmlElement openXmlElement)
-  {
-    _Element = (DXM.MathProperties)openXmlElement;
-  }
+  public MathProperties(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
 
-  public OpenXmlElementType GetElement<OpenXmlElementType>() where OpenXmlElementType : DX.OpenXmlElement
-  {
-    if (_Element is OpenXmlElementType validTypeElement)
-      return validTypeElement;
-    throw new ArgumentException($"Only {_Element.GetType()} type supported in GetElement of {this.GetType()}");
-  }
-
-  public MathProperties(DXM.MathProperties properties)
-  {
-    _Element = properties;
-  }
-
-  private DXM.MathProperties _Element;
+  public MathProperties(DXM.MathProperties openXmlElement): base(openXmlElement) { } 
 
   /// <summary>
   /// This element specifies how binary operators are treated when they coincide with a line break. 

@@ -1,3 +1,6 @@
+using DocumentModel;
+using DocumentModel.Utilities;
+
 namespace DocxDocument.Test;
 
 [TestClass]
@@ -39,8 +42,19 @@ public class SerializationTest : ReadWriteTest
           Output.WriteLine($"Deserialization from: {outputXmlFile}");
           DeserializeXml(outputDocument, outputXmlFile);
           Output.WriteLine($"Deserialization passed");
-          TestCompareProperties(outputDocument, inputDocument);
-          Output.WriteLine($"Properties are equal");
+          bool ok = outputDocument.Compare(inputDocument);
+          if (!ok)
+          {
+            var diffs = ModelObjectComparer.Diffs;
+            foreach (var diff in diffs)
+            {
+               Output.WriteLine($"{diff.ValuePath} {(diff.Reason ?? "are different")}");
+               Output.WriteLine($"  actual:   {(diff.ActualValue?.ToDumpString() ?? "null")}");
+               Output.WriteLine($"  expected: {(diff.ExpectedValue?.ToDumpString() ?? "null")}");
+            }
+          }
+          else
+            Output.WriteLine($"Properties are equal");
         }
         Output.WriteLine($"");
       }

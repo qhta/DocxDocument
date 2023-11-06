@@ -6,31 +6,13 @@
 /// and typically consists of a string plus a field which numbers this item within a collection of similar objects.
 /// </summary>
 [DataContract]
-public partial class Caption: IOpenXmlElementMappedObject
+public partial class Caption: ModelElement<DXW.Caption>
 {
-  public Caption()
-  {
-    _Element = new DXW.Caption();
-  }
+  public Caption(): base(){ }
 
-  public Caption(DX.OpenXmlElement openXmlElement)
-  {
-    _Element = (DXW.Caption)openXmlElement;
-  }
+  public Caption(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
 
-  public OpenXmlElementType GetElement<OpenXmlElementType>() where OpenXmlElementType: DX.OpenXmlElement
-  {
-    if (_Element is OpenXmlElementType validTypeElement)
-    return validTypeElement;
-      throw new ArgumentException($"Only {_Element.GetType()} type supported in GetElement of {this.GetType()}");
-  }
-
-  public Caption(DXW.Caption openXmlElement)
-  {
-    _Element = openXmlElement;
-  }
-
-  internal DXW.Caption _Element { get; private set; }
+  public Caption(DXW.Caption openXmlElement): base(openXmlElement) { }
 
   [DataMember]
   public string? Name

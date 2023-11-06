@@ -7,31 +7,13 @@
 /// /IEC 29500 does not require any particular XML schema language.
 /// </summary>
 [DataContract]
-public partial class Schema: IOpenXmlElementMappedObject
+public partial class Schema: ModelElement<DXCXSR.Schema>
 {
-  public Schema()
-  {
-    _Element = new DXCXSR.Schema();
-  }
+  public Schema(): base(){ }
 
-  public Schema(DX.OpenXmlElement openXmlElement)
-  {
-    _Element = (DXCXSR.Schema)openXmlElement;
-  }
+  public Schema(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
 
-  public OpenXmlElementType GetElement<OpenXmlElementType>() where OpenXmlElementType: DX.OpenXmlElement
-  {
-    if (_Element is OpenXmlElementType validTypeElement)
-    return validTypeElement;
-      throw new ArgumentException($"Only {_Element.GetType()} type supported in GetElement of {this.GetType()}");
-  }
-
-  public Schema(DXCXSR.Schema openXmlElement)
-  {
-    _Element = openXmlElement;
-  }
-
-  internal DXCXSR.Schema _Element { get; private set; }
+  public Schema(DXCXSR.Schema openXmlElement): base(openXmlElement) { } 
 
   [DataMember]
   public string? Uri

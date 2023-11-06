@@ -5,33 +5,13 @@
 /// The regroupid attribute of shapes indicates which shapes belong together when a regroup is performed. 
 /// The regrouptable tracks the previous regroupid that should be assigned to all shapes with the given current regroupid.
 /// </summary>
-public partial class RegroupTable : IOpenXmlElementMappedObject
+public partial class RegroupTable : ModelElement<DXVO.RegroupTable>
 {
-  public RegroupTable()
-  {
-    _Element = new DXVO.RegroupTable();
-  }
+  public RegroupTable(): base(){ }
 
-  public RegroupTable(DX.OpenXmlElement openXmlElement)
-  {
-    _Element = (DXVO.RegroupTable)openXmlElement;
-  }
+  public RegroupTable(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
 
-  public OpenXmlElementType GetElement<OpenXmlElementType>() where OpenXmlElementType : DX.OpenXmlElement
-  {
-    if (_Element is OpenXmlElementType validTypeElement)
-      return validTypeElement;
-    throw new ArgumentException($"Only {_Element.GetType()} type supported in GetElement of {this.GetType()}");
-  }
-
-  public RegroupTable(DXVO.RegroupTable openXmlElement)
-  {
-    _Element = openXmlElement;
-  }
-
-  internal DXVO.RegroupTable _Element { get; private set; }
-
-
+  public RegroupTable(DXVO.RegroupTable openXmlElement): base(openXmlElement) { } 
 
   /// <summary>
   /// VML Extension Handling Behavior

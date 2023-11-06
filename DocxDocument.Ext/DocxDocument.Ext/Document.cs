@@ -5,7 +5,7 @@
 /// </summary>
 [DataContract]
 [XmlSerializerFormat]
-public partial class Document : IDisposable
+public partial class Document : ModelElement, IDisposable
 {
 #pragma warning disable CS0618 // Type or member is obsolete
 

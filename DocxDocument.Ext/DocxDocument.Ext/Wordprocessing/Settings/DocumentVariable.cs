@@ -10,31 +10,13 @@
 /// </summary>
 [Obsolete]
 [DataContract]
-public partial class DocumentVariable: IOpenXmlElementMappedObject
+public partial class DocumentVariable: ModelElement<DXW.DocumentVariable>
 {
-  public DocumentVariable()
-  {
-    _Element = new DXW.DocumentVariable();
-  }
+  public DocumentVariable(): base(){ }
 
-  public DocumentVariable(DX.OpenXmlElement openXmlElement)
-  {
-    _Element = (DXW.DocumentVariable)openXmlElement;
-  }
+  public DocumentVariable(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
 
-  public OpenXmlElementType GetElement<OpenXmlElementType>() where OpenXmlElementType: DX.OpenXmlElement
-  {
-    if (_Element is OpenXmlElementType validTypeElement)
-    return validTypeElement;
-      throw new ArgumentException($"Only {_Element.GetType()} type supported in GetElement of {this.GetType()}");
-  }
-
-  public DocumentVariable(DXW.DocumentVariable openXmlElement)
-  {
-    _Element = openXmlElement;
-  }
-
-  internal DXW.DocumentVariable _Element { get; private set; }
+  public DocumentVariable(DXW.DocumentVariable openXmlElement): base(openXmlElement) { } 
 
   [DataMember]
   public string? Name

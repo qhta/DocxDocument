@@ -20,31 +20,13 @@
 /// </para>
 /// </summary>
 [DataContract]
-public partial class MailMerge : IOpenXmlElementMappedObject
+public partial class MailMerge :  ModelElement<DXW.MailMerge>
 {
-  public MailMerge()
-  {
-    _Element = new DXW.MailMerge();
-  }
+  public MailMerge(): base(){ }
 
-  public MailMerge(DX.OpenXmlElement openXmlElement)
-  {
-    _Element = (DXW.MailMerge)openXmlElement;
-  }
+  public MailMerge(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
 
-  public OpenXmlElementType GetElement<OpenXmlElementType>() where OpenXmlElementType : DX.OpenXmlElement
-  {
-    if (_Element is OpenXmlElementType validTypeElement)
-      return validTypeElement;
-    throw new ArgumentException($"Only {_Element.GetType()} type supported in GetElement of {this.GetType()}");
-  }
-
-  public MailMerge(DXW.MailMerge openXmlElement)
-  {
-    _Element = openXmlElement;
-  }
-
-  internal DXW.MailMerge _Element { get; private set; }
+  public MailMerge(DXW.MailMerge openXmlElement): base(openXmlElement) { } 
 
   /// <summary>
   /// This element specifies that the hosting application shall display the given record 

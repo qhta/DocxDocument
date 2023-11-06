@@ -21,31 +21,13 @@
 /// </list>
 /// </summary>
 [DataContract]
-public partial class DataSourceObject : IOpenXmlElementMappedObject
+public partial class DataSourceObject : ModelElement<DXW.DataSourceObject>
 {
-  public DataSourceObject()
-  {
-    _Element = new DXW.DataSourceObject();
-  }
+  public DataSourceObject(): base(){ }
 
-  public DataSourceObject(DX.OpenXmlElement openXmlElement)
-  {
-    _Element = (DXW.DataSourceObject)openXmlElement;
-  }
+  public DataSourceObject(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
 
-  public OpenXmlElementType GetElement<OpenXmlElementType>() where OpenXmlElementType : DX.OpenXmlElement
-  {
-    if (_Element is OpenXmlElementType validTypeElement)
-      return validTypeElement;
-    throw new ArgumentException($"Only {_Element.GetType()} type supported in GetElement of {this.GetType()}");
-  }
-
-  public DataSourceObject(DXW.DataSourceObject openXmlElement)
-  {
-    _Element = openXmlElement;
-  }
-
-  internal DXW.DataSourceObject _Element { get; private set; }
+  public DataSourceObject(DXW.DataSourceObject openXmlElement): base(openXmlElement) { }
 
   /// <summary>
   /// This element specifies the type of external data source to be connected to 

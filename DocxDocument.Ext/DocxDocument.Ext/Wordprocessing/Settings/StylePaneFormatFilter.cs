@@ -7,31 +7,13 @@ namespace DocumentModel.Wordprocessing;
 /// if the styles are displayed in a user interface.
 /// </summary>
 [DataContract]
-public partial class StylePaneFormatFilter: IOpenXmlElementMappedObject
+public partial class StylePaneFormatFilter: ModelElement<DXW.StylePaneFormatFilter>
 {
-  public StylePaneFormatFilter()
-  {
-    _Element = new DXW.StylePaneFormatFilter();
-  }
+  public StylePaneFormatFilter(): base(){ }
 
-  public StylePaneFormatFilter(DX.OpenXmlElement openXmlElement)
-  {
-    _Element = (DXW.StylePaneFormatFilter)openXmlElement;
-  }
+  public StylePaneFormatFilter(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
 
-  public OpenXmlElementType GetElement<OpenXmlElementType>() where OpenXmlElementType: DX.OpenXmlElement
-  {
-    if (_Element is OpenXmlElementType validTypeElement)
-    return validTypeElement;
-      throw new ArgumentException($"Only {_Element.GetType()} type supported in GetElement of {this.GetType()}");
-  }
-
-  public StylePaneFormatFilter(DXW.StylePaneFormatFilter openXmlElement)
-  {
-    _Element = openXmlElement;
-  }
-
-  internal DXW.StylePaneFormatFilter _Element { get; private set; }
+  public StylePaneFormatFilter(DXW.StylePaneFormatFilter openXmlElement): base(openXmlElement) { } 
 
   [DataMember]
   public HexWord? Val

@@ -4,31 +4,13 @@
 /// This class specifies information about the parameters of the grammar checking which was performed on the contents of the current WordprocessingML document. [Note: This information can be used as desired by applications; for example, to determine if the current grammar checking state, specified by the proofState element (§17.15.1.65) is sufficient. end note]
 /// </summary>
 [DataContract]
-public partial class ActiveWritingStyle : IOpenXmlElementMappedObject
+public partial class ActiveWritingStyle : ModelElement<DXW.ActiveWritingStyle>
 {
-  public ActiveWritingStyle()
-  {
-    _Element = new DXW.ActiveWritingStyle();
-  }
+  public ActiveWritingStyle(): base(){ }
 
-  public ActiveWritingStyle(DX.OpenXmlElement openXmlElement)
-  {
-    _Element = (DXW.ActiveWritingStyle)openXmlElement;
-  }
+  public ActiveWritingStyle(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
 
-  public OpenXmlElementType GetElement<OpenXmlElementType>() where OpenXmlElementType : DX.OpenXmlElement
-  {
-    if (_Element is OpenXmlElementType validTypeElement)
-      return validTypeElement;
-    throw new ArgumentException($"Only {_Element.GetType()} type supported in GetElement of {this.GetType()}");
-  }
-
-  public ActiveWritingStyle(DXW.ActiveWritingStyle openXmlElement)
-  {
-    _Element = openXmlElement;
-  }
-
-  internal DXW.ActiveWritingStyle _Element { get; private set; }
+  public ActiveWritingStyle(DXW.ActiveWritingStyle openXmlElement): base(openXmlElement) { }
 
   /// <summary>
   /// Writing Style Language

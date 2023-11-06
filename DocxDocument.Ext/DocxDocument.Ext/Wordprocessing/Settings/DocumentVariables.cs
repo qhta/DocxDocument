@@ -8,29 +8,11 @@
 /// in favor of the custom XML data support defined in /IEC 29500. end note]
 /// </summary>
 [Obsolete]
-public partial class DocumentVariables: IOpenXmlElementMappedObject
+public partial class DocumentVariables: ModelElement<DXW.DocumentVariables>
 {
-  public DocumentVariables()
-  {
-    _Element = new DXW.DocumentVariables();
-  }
+  public DocumentVariables(): base(){ }
 
-  public DocumentVariables(DX.OpenXmlElement openXmlElement)
-  {
-    _Element = (DXW.DocumentVariables)openXmlElement;
-  }
+  public DocumentVariables(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
 
-  public OpenXmlElementType GetElement<OpenXmlElementType>() where OpenXmlElementType: DX.OpenXmlElement
-  {
-    if (_Element is OpenXmlElementType validTypeElement)
-    return validTypeElement;
-      throw new ArgumentException($"Only {_Element.GetType()} type supported in GetElement of {this.GetType()}");
-  }
-
-  public DocumentVariables(DXW.DocumentVariables openXmlElement)
-  {
-    _Element = openXmlElement;
-  }
-
-  internal DXW.DocumentVariables _Element { get; private set; }
+  public DocumentVariables(DXW.DocumentVariables openXmlElement): base(openXmlElement) { } 
 }

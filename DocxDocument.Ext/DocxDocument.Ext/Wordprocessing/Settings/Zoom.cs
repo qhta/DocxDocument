@@ -11,31 +11,14 @@
 /// </summary>
 
 [DataContract]
-public partial class Zoom : IOpenXmlElementMappedObject
+public partial class Zoom : ModelElement<DXW.Zoom>
 {
-  public Zoom()
-  {
-    _Element = new DXW.Zoom();
-  }
+  public Zoom(): base(){ }
 
-  public Zoom(DX.OpenXmlElement openXmlElement)
-  {
-    _Element = (DXW.Zoom)openXmlElement;
-  }
+  public Zoom(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
 
-  public OpenXmlElementType GetElement<OpenXmlElementType>() where OpenXmlElementType : DX.OpenXmlElement
-  {
-    if (_ExistingElement is OpenXmlElementType validTypeElement)
-      return validTypeElement;
-    throw new ArgumentException($"Only {_ExistingElement.GetType()} type supported in GetElement of {this.GetType()}");
-  }
-
-  public Zoom(DXW.Zoom openXmlElement)
-  {
-    _Element = openXmlElement;
-  }
-
-  internal DXW.Zoom? _Element { get; private set; }
+  public Zoom(DXW.Zoom openXmlElement): base(openXmlElement) { } 
+  
   internal DXW.Zoom _ExistingElement
   {
     get
