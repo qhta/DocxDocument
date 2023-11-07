@@ -4,3 +4,5 @@ global using System.Xml;
 global using System.Xml.Serialization;
 global using Qhta.Xml.Serialization;
 global using System.Runtime.Serialization;
+global using System.Reflection;
+global using DocumentModel.Utilities;

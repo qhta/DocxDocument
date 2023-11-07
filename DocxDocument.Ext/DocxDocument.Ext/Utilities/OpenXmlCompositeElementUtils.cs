@@ -707,7 +707,8 @@ public static class OpenXmlCompositeElementUtils
 
   public static void AddChildElement(this DX.OpenXmlCompositeElement openXmlElement, DX.OpenXmlElement childElement)
   {
-    childElement.Remove();
+    if (childElement.Parent!=null)
+      childElement.Remove();
     openXmlElement.AppendChild(childElement);
   }
 

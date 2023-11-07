@@ -18,19 +18,6 @@ public partial class Zoom : ModelElement<DXW.Zoom>
   public Zoom(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
 
   public Zoom(DXW.Zoom openXmlElement): base(openXmlElement) { } 
-  
-  internal DXW.Zoom _ExistingElement
-  {
-    get
-    {
-      if (_Element == null)
-      {
-        _Element = new DXW.Zoom();
-      }
-      return _Element;
-    }
-    private set => _Element = value;
-  }
 
   [DataMember]
   public DMW.PresetZoomKind? Val
