@@ -14,14 +14,19 @@ public class StringList : ICollection, ICollection<string>, IEnumerable, IEquata
   /// </summary>
   public StringList() { }
 
-  public StringList(string? str)
+  public StringList(params string[] strings)
   {
-    if (str != null)
-    {
-      var ss = str.Split(',');
-      foreach (var s in ss)
-      { _list.Add(s); }
-    }
+    foreach (var str in strings)
+      if (str != null)
+      {
+        _list.Add(str);
+      }
+  }
+
+  public static StringList? CreateSplitted(string str)
+  {
+    var ss = str.Split(',');
+    return new StringList(ss);
   }
 
   /// <inheritdoc />
@@ -69,9 +74,9 @@ public class StringList : ICollection, ICollection<string>, IEnumerable, IEquata
     return String.Join(", ", _list.ToArray());
   }
 
-  public static implicit operator StringList?(string? str) => (str!=null) ? new StringList(str) : null;
+  public static implicit operator StringList?(string? str) => (str != null) ? StringList.CreateSplitted(str) : null;
 
-  public static implicit operator string? (StringList? value) => value?.ToString();
+  public static implicit operator string?(StringList? value) => value?.ToString();
 
   public override bool Equals(object? obj)
   {

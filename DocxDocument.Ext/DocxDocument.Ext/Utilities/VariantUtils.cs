@@ -332,8 +332,8 @@ public static class VariantUtils
       var result = new HeadingPairs();
       for (int i = 0; i < array.Length / 2; i++)
       {
-        var item1 = array.GetValue(i);
-        var item2 = array.GetValue(i + 1);
+        var item1 = array.GetValue(i*2);
+        var item2 = array.GetValue(i*2 + 1);
         if (item1 is string str && item2 is int num)
           result.Add(new HeadingPair { Heading = str, Num = num });
       }

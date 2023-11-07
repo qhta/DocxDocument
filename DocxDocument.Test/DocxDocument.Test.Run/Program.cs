@@ -3,7 +3,8 @@
   public static void Main(params string[] args)
   {
     //RunReadTest();
-    RunSerializationTest();
+    RunReadWriteTest();
+    //RunSerializationTest();
   }
 
   private static void RunReadTest()
@@ -26,7 +27,8 @@
     Console.WriteLine($"Opening directory: {test.SamplesPath}");
     Console.WriteLine();
     test.TestCreate();
-    test.TestCopyProperties();
+    test.TestCreateProperties();
+    //test.TestCopyPropertiesOne();
   }
 
     private static void RunSerializationTest()

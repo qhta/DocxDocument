@@ -14,18 +14,6 @@ public class CustomProperty: ModelElement<DXCP.CustomDocumentProperty>
 
   public CustomProperty(DXCP.CustomDocumentProperty openXmlElement): base(openXmlElement) { } 
 
-  internal DXCP.CustomDocumentProperty _ExistingElement 
-  { 
-    get
-    {
-      if (_Element == null)
-        _Element = new DXCP.CustomDocumentProperty();
-      return _Element;
-    }
-    private set => _Element=value;
-  }
-
-
   [DataMember]
   public string? Name
   {
@@ -52,6 +40,7 @@ public class CustomProperty: ModelElement<DXCP.CustomDocumentProperty>
     }
   }
 
+  [DataMember]
   public Guid? FormatId
   {
     get => _Element?.FormatId?.AsGuid();
@@ -64,6 +53,7 @@ public class CustomProperty: ModelElement<DXCP.CustomDocumentProperty>
     }
   }
 
+  [DataMember]
   public string? LinkTarget
   {
     get => _Element?.LinkTarget?.Value;
@@ -76,6 +66,7 @@ public class CustomProperty: ModelElement<DXCP.CustomDocumentProperty>
     }
   }
 
+  [DataMember]
   public object? Value
   {
     get
@@ -87,10 +78,18 @@ public class CustomProperty: ModelElement<DXCP.CustomDocumentProperty>
           return vtVector.AsArray();
         if (childItem is DXVT.VTArray vtArray)
           return vtArray.AsArray();
-        if (childItem is DX.OpenXmlLeafTextElement vtOther)
-          return vtOther.AsObject();
+        return childItem.AsObject();
       }
       return null;
+    }
+    set
+    {
+      var _element = _ExistingElement.Elements().FirstOrDefault();
+      if (_element!=null)
+        _element.Remove();
+      var childItem = value.AsVTVariant();
+      if (childItem != null) 
+        _ExistingElement.AddChildElement(childItem);
     }
   }
 }

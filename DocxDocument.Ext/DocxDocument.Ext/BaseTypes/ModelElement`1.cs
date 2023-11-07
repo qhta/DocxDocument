@@ -33,6 +33,15 @@ public class ModelElement<OpenXmlElementType> : ModelElement, IOpenXmlElementMap
 
   internal OpenXmlElementType _Element { get; set; }
 
-
-
+  internal OpenXmlElementType _ExistingElement 
+  { 
+    get
+    {
+      if (_Element == null)
+        _Element = new OpenXmlElementType();
+      return _Element;
+    }
+    private set => _Element=value;
+  }
+   
 }

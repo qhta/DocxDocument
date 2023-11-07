@@ -1,7 +1,12 @@
+using System.Diagnostics;
 using System.Reflection;
 using System.Runtime.Serialization;
 
+using DocumentFormat.OpenXml.Office.CustomUI;
+
 using DocumentModel;
+
+using Qhta.TypeUtils;
 
 namespace DocxDocument.Test;
 
@@ -27,11 +32,17 @@ public class ReadWriteTest : ReadTest
   }
 
   [TestMethod]
-  public void TestCopyProperties()
+  public void TestCopyPropertiesOne()
   {
     var samplesPath = SamplesPath;
-    var sourceFile = Path.Combine(samplesPath, "DocumentProperties.docx");
-    var targetFile = Path.Combine(samplesPath, "TestCopyProperties.docx");
+    var file = Path.Combine(samplesPath, "DocumentProperties.docx");
+    TestCopyProperties(file);
+  }
+
+  public void TestCopyProperties(string fileName)
+  {
+    var sourceFile = fileName;
+    var targetFile = Path.ChangeExtension(sourceFile,".new.docx");
     Output.WriteLine($"TestCopyProperties: {sourceFile} -> {targetFile}");
     try
     {
@@ -46,10 +57,14 @@ public class ReadWriteTest : ReadTest
           property.SetValue(targetDocument.BuiltInProperties, val);
         }
 
-        //if (sourceDocument.HasCustomProperties)
-        //  foreach (var item in sourceDocument.CustomProperties)
-        //    Output.WriteLine($"  {item.Name}: {item.Value}");
-
+        if (sourceDocument.HasCustomProperties)
+          foreach (var item in sourceDocument.CustomProperties!)
+          {
+            var val = item.Value;
+            Output.WriteLine($"  {item.Name}: {val.ToDumpString()}");
+            var newCustomProperty = (CustomProperty)item.Clone();
+            targetDocument.ExistingCustomProperties.Add(newCustomProperty);
+          }
       }
     }
     catch (Exception ex)
@@ -58,4 +73,99 @@ public class ReadWriteTest : ReadTest
     }
     TestReadProperties(targetFile);
   }
+
+  object?[] newCustomPropValues = new object?[]
+  { 
+    true, false,
+    "simpleString", String.Empty,
+    1, (byte)255, int.MaxValue, int.MinValue, long.MaxValue, long.MinValue,
+    2.1f, 3.2d, 4.3m,
+    DateTime.Parse("01.02.03 23:59"),
+    DBNull.Value,
+    null,
+  };
+
+  [TestMethod]
+  public void TestCreateProperties()
+  {
+    var samplesPath = SamplesPath;
+    var fileName = Path.Combine(samplesPath, "NewDocumentProperties.docx");
+    var targetFile = Path.ChangeExtension(fileName,".new.docx");
+    Output.WriteLine($"TestCreateProperties: {targetFile}");
+    //try
+    {
+      using (var targetDocument = DM.Document.Create(targetFile))
+      {
+        var props = typeof(DM.BuiltInProperties).GetProperties().Where(p=>p.GetCustomAttribute<DataMemberAttribute>()!=null).ToArray();
+        int n=0;
+        foreach (var prop in props) 
+        {          
+          var propType = prop.PropertyType;
+          if (propType.IsNullable(out var baseType))
+            propType = baseType;
+          object? val = null;
+          if (propType == typeof(bool))
+            val = true;
+          else
+          if (propType == typeof(string))
+            val = prop.Name+"_value";
+          else
+          if (propType == typeof(int))
+            val = 1000000000 + (++n);
+          else
+          if (propType == typeof(DateTime))
+            val = DateTime.Parse("01.02.03 23:59");
+          else
+          if (propType == typeof(StringList))
+            val = new StringList("str1", "str2", "str3");
+          else
+          if (propType == typeof(HeadingPairs))
+          {
+            var headingPairs = new HeadingPairs();
+            for (int i = 0; i < 3; i++)
+              headingPairs.Add(new HeadingPair{ Heading = "Heading"+i, Num=i*10 });
+            val = headingPairs;
+          }
+          else
+          if (propType == typeof(HyperlinkList))
+          {
+            var hyperlinkList = new HyperlinkList();
+            var actions = Enum.GetValues<HyperlinkAction>();
+            var attachments = Enum.GetValues<HyperlinkAttachment>();
+            for (int i = 0; i < Math.Max(actions.Length, attachments.Length); i++)
+              hyperlinkList.Add(new HyperlinkInfo
+              { 
+                N1 = 1, N2 = 2, N3 = 3, 
+                Action = actions[i % actions.Length],
+                Attachment = attachments[i % attachments.Length],
+                Location = "location" + (i + 1),
+                Target = "url://target" + (i + 1)
+              });
+            val = hyperlinkList;
+          }
+          else
+            throw new NotImplementedException($"Property type {propType} not supported");
+          Output.WriteLine($"  Setting {prop.Name} = {TestUtilities.ToDumpString(val)}");
+          prop.SetValue(targetDocument.BuiltInProperties, val);
+        }
+
+        n=0;
+        foreach (var item in newCustomPropValues)
+        {
+          var typeName = item?.GetType().Name ?? "null";
+          var val = item;
+
+          var propName = $"CustomProperty_{++n} ({typeName})";
+          Output.WriteLine($"  Setting {propName} = {TestUtilities.ToDumpString(val)}");
+          targetDocument.ExistingCustomProperties.Add(propName, val);
+        }
+      }
+    }
+    //catch (Exception ex)
+    //{
+    //  Output.WriteLine($"  {ex.GetType().Name}: {ex.Message}");
+    //}
+    TestReadProperties(targetFile);
+  }
+
 }

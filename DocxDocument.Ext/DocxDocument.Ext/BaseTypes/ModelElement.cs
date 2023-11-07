@@ -4,7 +4,7 @@
 /// Base class for all model elements. 
 /// Defines <see cref="Parent"/> property and <see cref="Equals"/> method.
 /// </summary>
-public class ModelElement : IEquatable<ModelElement>, IModelElement
+public class ModelElement : IEquatable<ModelElement>, ICloneable, IModelElement
 {
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
@@ -70,4 +70,20 @@ public class ModelElement : IEquatable<ModelElement>, IModelElement
 
   public bool Compare(ModelElement? other) => ModelObjectComparer.CompareObjects(this, other);
 
+  public object Clone()
+  {
+    var constructor = this.GetType().GetConstructor(new Type[]{ });
+    if (constructor==null)
+      throw new InvalidOperationException($"Type {this.GetType()} must have a parameterless constructor to clone");
+    var newInstance = constructor.Invoke(new object[]{ });
+    var props = this.GetType().GetProperties()
+      .Where(item => item.GetCustomAttribute<DataMemberAttribute>() != null && item.CanWrite).ToArray();
+    foreach (var prop in props)
+    {
+      var value = prop.GetValue(this);
+      if (value is not null)
+        prop.SetValue(newInstance, value);
+    }
+    return newInstance;
+  }
 }

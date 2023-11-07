@@ -1,4 +1,4 @@
-﻿namespace DocumentModel;
+﻿namespace DocumentModel.Utilities;
 
 /// <summary>
 /// This static class contains extension operations to be used for test/debug application.
@@ -14,8 +14,8 @@ public static class TestUtilities
 
   public static string? ToDumpString(this object? value)
   {
-    if (value is DMW.CompatibilitySettings)
-      Debug.Assert(true);
+    if (value==DBNull.Value)
+      return "DbNull";
     if (value is null)
       return null;
     if (value is string str)
@@ -64,9 +64,17 @@ public static class TestUtilities
             ss.Add("");
         }
       }
-      return type.Name + " { " + string.Join(", ", ss) + " }";
+      var result = type.Name + " { " + string.Join(", ", ss) + " }";
+    if (value is DM.HeadingPairs)
+      Debug.Assert(true);
+    return result;
     }
-
+    if (value is Single r4)
+      return r4.ToString(CultureInfo.InvariantCulture);
+    if (value is Double r8)
+      return r8.ToString(CultureInfo.InvariantCulture);
+    if (value is Decimal dm)
+      return dm.ToString(CultureInfo.InvariantCulture);
     return value.ToString();
   }
 }

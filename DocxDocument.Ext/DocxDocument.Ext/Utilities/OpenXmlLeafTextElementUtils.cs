@@ -109,7 +109,7 @@ public static class OpenXmlLeafTextElementUtils
     var str = element?.InnerText;
     if (str != null)
     {
-      if (float.TryParse(str, out var val))
+      if (float.TryParse(str, NumberStyles.Float, CultureInfo.InvariantCulture, out var val))
         return val;
     }
     return null;
@@ -120,7 +120,7 @@ public static class OpenXmlLeafTextElementUtils
     var str = element?.InnerText;
     if (str != null)
     {
-      if (double.TryParse(str, out var val))
+      if (double.TryParse(str, NumberStyles.Float, CultureInfo.InvariantCulture, out var val))
         return val;
     }
     return null;
@@ -131,7 +131,7 @@ public static class OpenXmlLeafTextElementUtils
     var str = element?.InnerText;
     if (str != null)
     {
-      if (decimal.TryParse(str, out var val))
+      if (decimal.TryParse(str, NumberStyles.Float, CultureInfo.InvariantCulture, out var val))
         return val;
     }
     return null;
