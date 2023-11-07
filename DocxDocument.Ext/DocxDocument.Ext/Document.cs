@@ -225,7 +225,7 @@ public partial class Document : ModelElement, IDisposable
   }
   internal CustomProperties? _CustomProperties { get; private set; }
 
-  internal CustomProperties ExistingCustomProperties
+  public CustomProperties ExistingCustomProperties
   {
     get
     {
