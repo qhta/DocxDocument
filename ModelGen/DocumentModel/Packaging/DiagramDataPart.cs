@@ -4,16 +4,60 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the DiagramDataPart
 /// </summary>
-public partial class DiagramDataPart
+public partial class DiagramDataPart: ModelElement<DXPack.DiagramDataPart>
 {
-  public String? ContentType { get; set; }
+  public DiagramDataPart(): base(){ }
+  
+  public DiagramDataPart(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public DiagramDataPart(DXPack.DiagramDataPart openXmlElement): base(openXmlElement) { }
+  
+  [DataMember]
+  public String? ContentType
+  {
+    get
+    {
+      return _Element?.ContentType;
+    }
+    set
+    {
+      _ExistingElement.ContentType = value;
+    }
+  }
   
   
   /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>
-  public DMDD.DataModelRoot? DataModelRoot { get; set; }
+  [DataMember]
+  public DMDD.DataModelRoot? DataModelRoot
+  {
+    get
+    {
+        return DataModelRootConverter.CreateModelElement(_Element?.RootElement as DXDDD.DataModelRoot);
+    }
+    set
+    {
+      if (value != null)
+      {
+         var rootElement = DataModelRootConverter.CreateOpenXmlElement<DXDDD.DataModelRoot>(value);
+         if (rootElement != null)
+           _ExistingElement.DataModelRoot = rootElement;
+      }
+    }
+  }
   
-  public String? RelationshipType { get; set; }
+  [DataMember]
+  public String? RelationshipType
+  {
+    get
+    {
+      return _Element?.RelationshipType;
+    }
+    set
+    {
+      _ExistingElement.RelationshipType = value;
+    }
+  }
   
 }

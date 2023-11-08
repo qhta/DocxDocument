@@ -4,36 +4,108 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Constraint.
 /// </summary>
-public partial class Constraint
+public partial class Constraint: ModelElement<DXDDD.Constraint>
 {
+  public Constraint(): base(){ }
+  
+  public Constraint(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public Constraint(DXDDD.Constraint openXmlElement): base(openXmlElement) { }
+  
   
   /// <summary>
   ///   For Name
   /// </summary>
-  public String? ForName { get; set; }
+  [DataMember]
+  public String? ForName
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.ForName);
+    }
+    set
+    {
+      _ExistingElement.ForName = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Reference For Name
   /// </summary>
-  public String? ReferenceForName { get; set; }
+  [DataMember]
+  public String? ReferenceForName
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.ReferenceForName);
+    }
+    set
+    {
+      _ExistingElement.ReferenceForName = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Value
   /// </summary>
-  public Double? Val { get; set; }
+  [DataMember]
+  public Double? Val
+  {
+    get
+    {
+      return _Element?.Val?.Value;
+    }
+    set
+    {
+      _ExistingElement.Val = value;
+    }
+  }
   
   
   /// <summary>
   ///   Factor
   /// </summary>
-  public Double? Fact { get; set; }
+  [DataMember]
+  public Double? Fact
+  {
+    get
+    {
+      return _Element?.Fact?.Value;
+    }
+    set
+    {
+      _ExistingElement.Fact = value;
+    }
+  }
   
   
   /// <summary>
   ///   ExtensionList.
   /// </summary>
-  public DMDD.ExtensionList? ExtensionList { get; set; }
+  [DataMember]
+  public DMDD.ExtensionList? ExtensionList
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXDDD.ExtensionList>();
+      if (element != null)
+        return ExtensionListConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXDDD.ExtensionList>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = ExtensionListConverter.CreateOpenXmlElement<DXDDD.ExtensionList>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
 }

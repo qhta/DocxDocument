@@ -14,7 +14,7 @@ public class TypeInfo : ModelElement
   /// Type read from source library or declared explicitly on creation.
   /// </summary>
   [XmlIgnore]
-  public Type Type { get; private set; } = null!;
+  public Type Type { [DebuggerStepThrough] get; private set; } = null!;
 
   /// <summary>
   /// Original namespace - get from type.
@@ -97,7 +97,7 @@ public class TypeInfo : ModelElement
   public string TargetName => TypeManager.GetTargetName(this);
 
   [XmlIgnore]
-  public bool IsReflected { get; internal set; }
+  public bool IsReflected { [DebuggerStepThrough] get; internal set; }
 
   public bool IsValueOrStringType => Type.IsValueType || Type == typeof(string) || Type == typeof(System.Uri);
 
@@ -122,7 +122,7 @@ public class TypeInfo : ModelElement
 
   public bool IsAbstract => Type.IsAbstract;
 
-  public List<EnumInfo>? EnumValues { get; private set; }
+  public List<EnumInfo>? EnumValues { [DebuggerStepThrough] get; private set; }
 
   public void Add(EnumInfo enumInfo)
   {
@@ -133,7 +133,7 @@ public class TypeInfo : ModelElement
     EnumValues.Add(enumInfo);
   }
 
-  public OwnedCollection<PropInfo>? Properties { get; private set; }
+  public OwnedCollection<PropInfo>? Properties { [DebuggerStepThrough] get; private set; }
 
   public void Add(PropInfo propInfo)
   {
@@ -162,16 +162,16 @@ public class TypeInfo : ModelElement
   }
 
   [XmlIgnore]
-  public Collection<TypeRelationship> OutgoingRelationships { get; set; } = new();
+  public Collection<TypeRelationship> OutgoingRelationships { [DebuggerStepThrough] get; set; } = new();
   [XmlIgnore]
-  public Collection<TypeRelationship> IncomingRelationships { get; set; } = new();
+  public Collection<TypeRelationship> IncomingRelationships { [DebuggerStepThrough] get; set; } = new();
 
   public IEnumerable<PropInfo> AcceptedProperties(PPS phase) => Properties?.Where(item => item.IsAcceptedTo(phase)) ?? EmptyPropertiesSet;
 
   private static IEnumerable<PropInfo> EmptyPropertiesSet = new PropInfo[0];
 
   [XmlIgnore]
-  public TypeInfo? BaseTypeInfo { get; set; }
+  public TypeInfo? BaseTypeInfo { [DebuggerStepThrough] get; set; }
 
   public bool IsSimple()
   {
@@ -190,10 +190,10 @@ public class TypeInfo : ModelElement
   }
 
   [XmlIgnore]
-  public bool UsageEvaluated { get; set; }
+  public bool UsageEvaluated { [DebuggerStepThrough] get; set; }
 
   [XmlIgnore]
-  public int AcceptedPropsCount { get; set; }
+  public int AcceptedPropsCount { [DebuggerStepThrough] get; set; }
 
   public TypeInfo() { }
 

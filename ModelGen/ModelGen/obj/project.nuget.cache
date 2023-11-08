@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "m9ey+8UjVaV4H0BvIgN0hjN3NT9216FkpiZL1aCNEDLykJe4mbKr3qofpSlhjrwk0n20DLlD7UCzYJhN+DJIiA==",
+  "dgSpecHash": "iycKTHU38z8l1CwdFlX8J24u3tu1ibAvDiGWqHiBnfdxgHc+WG+tCCcGYTMZKyLfAxWB5eUry+6QF3+caSxE5A==",
   "success": true,
   "projectFilePath": "D:\\VS\\Projects\\DocxDocument\\ModelGen\\ModelGen\\ModelGen.csproj",
   "expectedPackageFiles": [
@@ -11,7 +11,7 @@
     "C:\\Users\\qhta1\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\microsoft.win32.systemevents\\7.0.0\\microsoft.win32.systemevents.7.0.0.nupkg.sha512",
-    "C:\\Users\\qhta1\\.nuget\\packages\\namotion.reflection\\3.0.0\\namotion.reflection.3.0.0.nupkg.sha512",
+    "C:\\Users\\qhta1\\.nuget\\packages\\namotion.reflection\\3.1.0\\namotion.reflection.3.1.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\qhta.collections\\4.6.0\\qhta.collections.4.6.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\qhta.conversion\\2.0.0\\qhta.conversion.2.0.0.nupkg.sha512",

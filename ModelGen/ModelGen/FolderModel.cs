@@ -7,7 +7,7 @@ public record FolderModel: FileModel, ICollection<FileModel>
     Items = new FilesList();
   }
 
-  public FilesList Items { get; set; }
+  public FilesList Items { [DebuggerStepThrough] get; set; }
 
   public int TotalCount => Items.TotalCount+1;
 

@@ -4,54 +4,148 @@ namespace DocumentModel.CustomUI;
 /// <summary>
 ///   Defines the MenuSeparator Class.
 /// </summary>
-public partial class MenuSeparator
+public partial class MenuSeparator: ModelElement<DXOCUI.MenuSeparator>
 {
+  public MenuSeparator(): base(){ }
+  
+  public MenuSeparator(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public MenuSeparator(DXOCUI.MenuSeparator openXmlElement): base(openXmlElement) { }
+  
   
   /// <summary>
   ///   id
   /// </summary>
-  public String? Id { get; set; }
+  [DataMember]
+  public String? Id
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Id);
+    }
+    set
+    {
+      _ExistingElement.Id = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   idQ
   /// </summary>
-  public String? IdQ { get; set; }
+  [DataMember]
+  public String? IdQ
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.IdQ);
+    }
+    set
+    {
+      _ExistingElement.IdQ = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   insertAfterMso
   /// </summary>
-  public String? InsertAfterMso { get; set; }
+  [DataMember]
+  public String? InsertAfterMso
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.InsertAfterMso);
+    }
+    set
+    {
+      _ExistingElement.InsertAfterMso = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   insertBeforeMso
   /// </summary>
-  public String? InsertBeforeMso { get; set; }
+  [DataMember]
+  public String? InsertBeforeMso
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.InsertBeforeMso);
+    }
+    set
+    {
+      _ExistingElement.InsertBeforeMso = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   insertAfterQ
   /// </summary>
-  public String? InsertAfterQ { get; set; }
+  [DataMember]
+  public String? InsertAfterQ
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.InsertAfterQ);
+    }
+    set
+    {
+      _ExistingElement.InsertAfterQ = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   insertBeforeQ
   /// </summary>
-  public String? InsertBeforeQ { get; set; }
+  [DataMember]
+  public String? InsertBeforeQ
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.InsertBeforeQ);
+    }
+    set
+    {
+      _ExistingElement.InsertBeforeQ = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   title
   /// </summary>
-  public String? Title { get; set; }
+  [DataMember]
+  public String? Title
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Title);
+    }
+    set
+    {
+      _ExistingElement.Title = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   getTitle
   /// </summary>
-  public String? GetTitle { get; set; }
+  [DataMember]
+  public String? GetTitle
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.GetTitle);
+    }
+    set
+    {
+      _ExistingElement.GetTitle = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
 }

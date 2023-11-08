@@ -4,48 +4,131 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the BorderType Class.
 /// </summary>
-public partial class BorderType
+public partial class BorderType: ModelElement<DXW.BorderType>
 {
+  public BorderType(): base(){ }
+  
+  public BorderType(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public BorderType(DXW.BorderType openXmlElement): base(openXmlElement) { }
+  
   
   /// <summary>
   ///   Border Color
   /// </summary>
-  public String? Color { get; set; }
+  [DataMember]
+  public String? Color
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Color);
+    }
+    set
+    {
+      _ExistingElement.Color = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Border Theme Color Tint
   /// </summary>
-  public String? ThemeTint { get; set; }
+  [DataMember]
+  public String? ThemeTint
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.ThemeTint);
+    }
+    set
+    {
+      _ExistingElement.ThemeTint = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Border Theme Color Shade
   /// </summary>
-  public String? ThemeShade { get; set; }
+  [DataMember]
+  public String? ThemeShade
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.ThemeShade);
+    }
+    set
+    {
+      _ExistingElement.ThemeShade = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Border Width
   /// </summary>
-  public UInt32? Size { get; set; }
+  [DataMember]
+  public UInt32? Size
+  {
+    get
+    {
+      return _Element?.Size?.Value;
+    }
+    set
+    {
+      _ExistingElement.Size = value;
+    }
+  }
   
   
   /// <summary>
   ///   Border Spacing Measurement
   /// </summary>
-  public UInt32? Space { get; set; }
+  [DataMember]
+  public UInt32? Space
+  {
+    get
+    {
+      return _Element?.Space?.Value;
+    }
+    set
+    {
+      _ExistingElement.Space = value;
+    }
+  }
   
   
   /// <summary>
   ///   Border Shadow
   /// </summary>
-  public Boolean? Shadow { get; set; }
+  [DataMember]
+  public Boolean? Shadow
+  {
+    get
+    {
+      return BooleanValueConverter.GetValue(_Element?.Shadow);
+    }
+    set
+    {
+      _ExistingElement.Shadow = BooleanValueConverter.CreateOnOffValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Create Frame Effect
   /// </summary>
-  public Boolean? Frame { get; set; }
+  [DataMember]
+  public Boolean? Frame
+  {
+    get
+    {
+      return BooleanValueConverter.GetValue(_Element?.Frame);
+    }
+    set
+    {
+      _ExistingElement.Frame = BooleanValueConverter.CreateOnOffValue(value);
+    }
+  }
   
 }

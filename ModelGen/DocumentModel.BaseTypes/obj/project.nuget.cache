@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "VMFLBxnQhbOs8hpzpnenZDg4RAU2H+1dQqnCg0RXAH0jSYj8MEHQqWlJl2Oly/T7g+2TOOE3jh/iVmuL6gR4zQ==",
+  "dgSpecHash": "FY6QAsV6qlUJR5RuUvRcEhXsjHgS1W95zqU7b/5H+BWbfikma8de4KhuQofYxHyhcrJLKoNG4jgaMWQt+6qdcw==",
   "success": true,
   "projectFilePath": "D:\\VS\\Projects\\DocxDocument\\ModelGen\\DocumentModel.BaseTypes\\DocumentModel.BaseTypes.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\qhta1\\.nuget\\packages\\documentformat.openxml\\2.20.0\\documentformat.openxml.2.20.0.nupkg.sha512",
+    "C:\\Users\\qhta1\\.nuget\\packages\\qhta.textutils\\3.2.0\\qhta.textutils.3.2.0.nupkg.sha512",
+    "C:\\Users\\qhta1\\.nuget\\packages\\system.io.packaging\\4.7.0\\system.io.packaging.4.7.0.nupkg.sha512"
+  ],
   "logs": []
 }

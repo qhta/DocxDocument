@@ -2,14 +2,14 @@
 
 public static class ModelManager
 {
-  public static int CheckedRenameTypesCount { get; private set; }
-  public static int RenamedTypesCount { get; private set; }
-  public static int DuplicatedNamesCount { get; private set; }
-  public static int ConvertedTypesCount { get; private set; }
-  public static HashSet<TypeInfo> FixedTypes { get; private set; } = new HashSet<TypeInfo>();
+  public static int CheckedRenameTypesCount { [DebuggerStepThrough] get; private set; }
+  public static int RenamedTypesCount { [DebuggerStepThrough] get; private set; }
+  public static int DuplicatedNamesCount { [DebuggerStepThrough] get; private set; }
+  public static int ConvertedTypesCount { [DebuggerStepThrough] get; private set; }
+  public static HashSet<TypeInfo> FixedTypes { [DebuggerStepThrough] get; private set; } = new HashSet<TypeInfo>();
   public static int FixedTypesCount => FixedTypes.Count;
 
-  public static HashSet<PropInfo> FixedProps { get; private set; } = new HashSet<PropInfo>();
+  public static HashSet<PropInfo> FixedProps { [DebuggerStepThrough] get; private set; } = new HashSet<PropInfo>();
   public static int FixedPropsCount => FixedProps.Count;
 
   public static bool CancelRequest { get => TypeManager.CancelRequest; set => TypeManager.CancelRequest = value; }

@@ -4,72 +4,240 @@ namespace DocumentModel.Drawings10;
 /// <summary>
 ///   Defines the ContentPartLocks Class.
 /// </summary>
-public partial class ContentPartLocks
+public partial class ContentPartLocks: ModelElement<DXO10D.ContentPartLocks>
 {
+  public ContentPartLocks(): base(){ }
+  
+  public ContentPartLocks(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public ContentPartLocks(DXO10D.ContentPartLocks openXmlElement): base(openXmlElement) { }
+  
   
   /// <summary>
   ///   Disallow Shape Grouping
   /// </summary>
-  public Boolean? NoGrouping { get; set; }
+  [DataMember]
+  public Boolean? NoGrouping
+  {
+    get
+    {
+      return _Element?.NoGrouping?.Value;
+    }
+    set
+    {
+      if (value != null)
+        _ExistingElement.NoGrouping = new BooleanValue { Value = (Boolean)value };
+      else
+        _ExistingElement.NoGrouping = null;
+    }
+  }
   
   
   /// <summary>
   ///   Disallow Shape Selection
   /// </summary>
-  public Boolean? NoSelection { get; set; }
+  [DataMember]
+  public Boolean? NoSelection
+  {
+    get
+    {
+      return _Element?.NoSelection?.Value;
+    }
+    set
+    {
+      if (value != null)
+        _ExistingElement.NoSelection = new BooleanValue { Value = (Boolean)value };
+      else
+        _ExistingElement.NoSelection = null;
+    }
+  }
   
   
   /// <summary>
   ///   Disallow Shape Rotation
   /// </summary>
-  public Boolean? NoRotation { get; set; }
+  [DataMember]
+  public Boolean? NoRotation
+  {
+    get
+    {
+      return _Element?.NoRotation?.Value;
+    }
+    set
+    {
+      if (value != null)
+        _ExistingElement.NoRotation = new BooleanValue { Value = (Boolean)value };
+      else
+        _ExistingElement.NoRotation = null;
+    }
+  }
   
   
   /// <summary>
   ///   Disallow Aspect Ratio Change
   /// </summary>
-  public Boolean? NoChangeAspect { get; set; }
+  [DataMember]
+  public Boolean? NoChangeAspect
+  {
+    get
+    {
+      return _Element?.NoChangeAspect?.Value;
+    }
+    set
+    {
+      if (value != null)
+        _ExistingElement.NoChangeAspect = new BooleanValue { Value = (Boolean)value };
+      else
+        _ExistingElement.NoChangeAspect = null;
+    }
+  }
   
   
   /// <summary>
   ///   Disallow Shape Movement
   /// </summary>
-  public Boolean? NoMove { get; set; }
+  [DataMember]
+  public Boolean? NoMove
+  {
+    get
+    {
+      return _Element?.NoMove?.Value;
+    }
+    set
+    {
+      if (value != null)
+        _ExistingElement.NoMove = new BooleanValue { Value = (Boolean)value };
+      else
+        _ExistingElement.NoMove = null;
+    }
+  }
   
   
   /// <summary>
   ///   Disallow Shape Resize
   /// </summary>
-  public Boolean? NoResize { get; set; }
+  [DataMember]
+  public Boolean? NoResize
+  {
+    get
+    {
+      return _Element?.NoResize?.Value;
+    }
+    set
+    {
+      if (value != null)
+        _ExistingElement.NoResize = new BooleanValue { Value = (Boolean)value };
+      else
+        _ExistingElement.NoResize = null;
+    }
+  }
   
   
   /// <summary>
   ///   Disallow Shape Point Editing
   /// </summary>
-  public Boolean? NoEditPoints { get; set; }
+  [DataMember]
+  public Boolean? NoEditPoints
+  {
+    get
+    {
+      return _Element?.NoEditPoints?.Value;
+    }
+    set
+    {
+      if (value != null)
+        _ExistingElement.NoEditPoints = new BooleanValue { Value = (Boolean)value };
+      else
+        _ExistingElement.NoEditPoints = null;
+    }
+  }
   
   
   /// <summary>
   ///   Disallow Showing Adjust Handles
   /// </summary>
-  public Boolean? NoAdjustHandles { get; set; }
+  [DataMember]
+  public Boolean? NoAdjustHandles
+  {
+    get
+    {
+      return _Element?.NoAdjustHandles?.Value;
+    }
+    set
+    {
+      if (value != null)
+        _ExistingElement.NoAdjustHandles = new BooleanValue { Value = (Boolean)value };
+      else
+        _ExistingElement.NoAdjustHandles = null;
+    }
+  }
   
   
   /// <summary>
   ///   Disallow Arrowhead Changes
   /// </summary>
-  public Boolean? NoChangeArrowheads { get; set; }
+  [DataMember]
+  public Boolean? NoChangeArrowheads
+  {
+    get
+    {
+      return _Element?.NoChangeArrowheads?.Value;
+    }
+    set
+    {
+      if (value != null)
+        _ExistingElement.NoChangeArrowheads = new BooleanValue { Value = (Boolean)value };
+      else
+        _ExistingElement.NoChangeArrowheads = null;
+    }
+  }
   
   
   /// <summary>
   ///   Disallow Shape Type Change
   /// </summary>
-  public Boolean? NoChangeShapeType { get; set; }
+  [DataMember]
+  public Boolean? NoChangeShapeType
+  {
+    get
+    {
+      return _Element?.NoChangeShapeType?.Value;
+    }
+    set
+    {
+      if (value != null)
+        _ExistingElement.NoChangeShapeType = new BooleanValue { Value = (Boolean)value };
+      else
+        _ExistingElement.NoChangeShapeType = null;
+    }
+  }
   
   
   /// <summary>
   ///   OfficeArtExtensionList.
   /// </summary>
-  public DMD10.OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
+  [DataMember]
+  public DMD10.OfficeArtExtensionList? OfficeArtExtensionList
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXO10D.OfficeArtExtensionList>();
+      if (element != null)
+        return OfficeArtExtensionListConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXO10D.OfficeArtExtensionList>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = OfficeArtExtensionListConverter.CreateOpenXmlElement<DXO10D.OfficeArtExtensionList>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
 }

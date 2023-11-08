@@ -1,4 +1,6 @@
-﻿namespace ModelGenDataConfig;
+﻿using System.Diagnostics;
+
+namespace ModelGenDataConfig;
 
 public static class ModelConfig
 {
@@ -12,6 +14,8 @@ public static class ModelConfig
 
   public static void LoadInstance(string? dataFolder)
   {
+    Debug.WriteLine($"ModelConfig.LoadInstance({dataFolder})");
+
     DataFolder = dataFolder;
     Instance = new ModelConfigData(dataFolder);
     Instance.LoadData(dataFolder);

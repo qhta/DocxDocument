@@ -21,17 +21,17 @@ public class DocumentationWriter
   /// <summary>
   /// Text writer to write lines of text
   /// </summary>
-  public TextWriter Writer { get; }
+  public TextWriter Writer { [DebuggerStepThrough] get; }
 
   /// <summary>
   /// Start line indent to subtract from lineWrapLimit.
   /// </summary>
-  public int LineIndent { get; set; }
+  public int LineIndent { [DebuggerStepThrough] get; set; }
 
   /// <summary>
   /// Maximum length of line to wrap text. If 0 then .ext is not wrapped.
   /// </summary>
-  public int LineWrapLimit { get; set; }
+  public int LineWrapLimit { [DebuggerStepThrough] get; set; }
 
   /// <summary>
   /// Writes documentation element with starting indent

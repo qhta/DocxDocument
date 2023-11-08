@@ -4,24 +4,66 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the EmbeddedWavAudioFileType Class.
 /// </summary>
-public partial class EmbeddedWavAudioFileType
+public partial class EmbeddedWavAudioFileType: ModelElement<DXD.EmbeddedWavAudioFileType>
 {
+  public EmbeddedWavAudioFileType(): base(){ }
+  
+  public EmbeddedWavAudioFileType(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public EmbeddedWavAudioFileType(DXD.EmbeddedWavAudioFileType openXmlElement): base(openXmlElement) { }
+  
   
   /// <summary>
   ///   Embedded Audio File Relationship ID
   /// </summary>
-  public String? Embed { get; set; }
+  [DataMember]
+  public String? Embed
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Embed);
+    }
+    set
+    {
+      _ExistingElement.Embed = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Sound Name
   /// </summary>
-  public String? Name { get; set; }
+  [DataMember]
+  public String? Name
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Name);
+    }
+    set
+    {
+      _ExistingElement.Name = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Recognized Built-In Sound
   /// </summary>
-  public Boolean? BuiltIn { get; set; }
+  [DataMember]
+  public Boolean? BuiltIn
+  {
+    get
+    {
+      return _Element?.BuiltIn?.Value;
+    }
+    set
+    {
+      if (value != null)
+        _ExistingElement.BuiltIn = new BooleanValue { Value = (Boolean)value };
+      else
+        _ExistingElement.BuiltIn = null;
+    }
+  }
   
 }

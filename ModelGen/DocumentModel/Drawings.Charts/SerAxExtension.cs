@@ -4,14 +4,53 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the SerAxExtension Class.
 /// </summary>
-public partial class SerAxExtension
+public partial class SerAxExtension: ModelElement<DXDC.SerAxExtension>
 {
+  public SerAxExtension(): base(){ }
+  
+  public SerAxExtension(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public SerAxExtension(DXDC.SerAxExtension openXmlElement): base(openXmlElement) { }
+  
   
   /// <summary>
   ///   URI
   /// </summary>
-  public String? Uri { get; set; }
+  [DataMember]
+  public String? Uri
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Uri);
+    }
+    set
+    {
+      _ExistingElement.Uri = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
-  public DMDC13.NumberingFormat? NumberingFormat { get; set; }
+  [DataMember]
+  public DMDC13.NumberingFormat? NumberingFormat
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXO13DC.NumberingFormat>();
+      if (element != null)
+        return NumberingFormatConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXO13DC.NumberingFormat>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = NumberingFormatConverter.CreateOpenXmlElement<DXO13DC.NumberingFormat>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
 }

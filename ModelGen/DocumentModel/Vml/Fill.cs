@@ -4,150 +4,431 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Defines the Fill Class.
 /// </summary>
-public partial class Fill
+public partial class Fill: ModelElement<DXV.Fill>
 {
+  public Fill(): base(){ }
+  
+  public Fill(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public Fill(DXV.Fill openXmlElement): base(openXmlElement) { }
+  
   
   /// <summary>
   ///   Unique Identifier
   /// </summary>
-  public String? Id { get; set; }
+  [DataMember]
+  public String? Id
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Id);
+    }
+    set
+    {
+      _ExistingElement.Id = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Fill Toggle
   /// </summary>
-  public DM.TrueFalseValue? On { get; set; }
+  [DataMember]
+  public DM.TrueFalseValue? On
+  {
+    get
+    {
+      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+    }
+    set
+    {
+      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+    }
+  }
   
   
   /// <summary>
   ///   Primary Color
   /// </summary>
-  public String? Color { get; set; }
+  [DataMember]
+  public String? Color
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Color);
+    }
+    set
+    {
+      _ExistingElement.Color = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Primary Color Opacity
   /// </summary>
-  public String? Opacity { get; set; }
+  [DataMember]
+  public String? Opacity
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Opacity);
+    }
+    set
+    {
+      _ExistingElement.Opacity = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Secondary Color
   /// </summary>
-  public String? Color2 { get; set; }
+  [DataMember]
+  public String? Color2
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Color2);
+    }
+    set
+    {
+      _ExistingElement.Color2 = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Fill Image Source
   /// </summary>
-  public String? Source { get; set; }
+  [DataMember]
+  public String? Source
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Source);
+    }
+    set
+    {
+      _ExistingElement.Source = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Hyperlink Target
   /// </summary>
-  public String? Href { get; set; }
+  [DataMember]
+  public String? Href
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Href);
+    }
+    set
+    {
+      _ExistingElement.Href = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Alternate Image Reference Location
   /// </summary>
-  public String? AlternateImageReference { get; set; }
+  [DataMember]
+  public String? AlternateImageReference
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.AlternateImageReference);
+    }
+    set
+    {
+      _ExistingElement.AlternateImageReference = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Fill Image Size
   /// </summary>
-  public String? Size { get; set; }
+  [DataMember]
+  public String? Size
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Size);
+    }
+    set
+    {
+      _ExistingElement.Size = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Fill Image Origin
   /// </summary>
-  public String? Origin { get; set; }
+  [DataMember]
+  public String? Origin
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Origin);
+    }
+    set
+    {
+      _ExistingElement.Origin = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Fill Image Position
   /// </summary>
-  public String? Position { get; set; }
+  [DataMember]
+  public String? Position
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Position);
+    }
+    set
+    {
+      _ExistingElement.Position = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Intermediate Colors
   /// </summary>
-  public String? Colors { get; set; }
+  [DataMember]
+  public String? Colors
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Colors);
+    }
+    set
+    {
+      _ExistingElement.Colors = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Gradient Angle
   /// </summary>
-  public Decimal? Angle { get; set; }
+  [DataMember]
+  public Decimal? Angle
+  {
+    get
+    {
+      return _Element?.Angle?.Value;
+    }
+    set
+    {
+      _ExistingElement.Angle = value;
+    }
+  }
   
   
   /// <summary>
   ///   Align Image With Shape
   /// </summary>
-  public DM.TrueFalseValue? AlignShape { get; set; }
+  [DataMember]
+  public DM.TrueFalseValue? AlignShape
+  {
+    get
+    {
+      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+    }
+    set
+    {
+      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+    }
+  }
   
   
   /// <summary>
   ///   Gradient Center
   /// </summary>
-  public String? Focus { get; set; }
+  [DataMember]
+  public String? Focus
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Focus);
+    }
+    set
+    {
+      _ExistingElement.Focus = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Radial Gradient Size
   /// </summary>
-  public String? FocusSize { get; set; }
+  [DataMember]
+  public String? FocusSize
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.FocusSize);
+    }
+    set
+    {
+      _ExistingElement.FocusSize = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Radial Gradient Center
   /// </summary>
-  public String? FocusPosition { get; set; }
+  [DataMember]
+  public String? FocusPosition
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.FocusPosition);
+    }
+    set
+    {
+      _ExistingElement.FocusPosition = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Detect Mouse Click
   /// </summary>
-  public DM.TrueFalseValue? DetectMouseClick { get; set; }
+  [DataMember]
+  public DM.TrueFalseValue? DetectMouseClick
+  {
+    get
+    {
+      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+    }
+    set
+    {
+      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+    }
+  }
   
   
   /// <summary>
   ///   Title
   /// </summary>
-  public String? Title { get; set; }
+  [DataMember]
+  public String? Title
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Title);
+    }
+    set
+    {
+      _ExistingElement.Title = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Secondary Color Opacity
   /// </summary>
-  public String? Opacity2 { get; set; }
+  [DataMember]
+  public String? Opacity2
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Opacity2);
+    }
+    set
+    {
+      _ExistingElement.Opacity2 = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Recolor Fill as Picture
   /// </summary>
-  public DM.TrueFalseValue? Recolor { get; set; }
+  [DataMember]
+  public DM.TrueFalseValue? Recolor
+  {
+    get
+    {
+      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+    }
+    set
+    {
+      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+    }
+  }
   
   
   /// <summary>
   ///   Rotate Fill with Shape
   /// </summary>
-  public DM.TrueFalseValue? Rotate { get; set; }
+  [DataMember]
+  public DM.TrueFalseValue? Rotate
+  {
+    get
+    {
+      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+    }
+    set
+    {
+      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+    }
+  }
   
   
   /// <summary>
   ///   Relationship to Part
   /// </summary>
-  public String? RelationshipId { get; set; }
+  [DataMember]
+  public String? RelationshipId
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.RelationshipId);
+    }
+    set
+    {
+      _ExistingElement.RelationshipId = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   FillExtendedProperties.
   /// </summary>
-  public DMVML.FillExtendedProperties? FillExtendedProperties { get; set; }
+  [DataMember]
+  public DMVML.FillExtendedProperties? FillExtendedProperties
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXVO.FillExtendedProperties>();
+      if (element != null)
+        return FillExtendedPropertiesConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXVO.FillExtendedProperties>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = FillExtendedPropertiesConverter.CreateOpenXmlElement<DXVO.FillExtendedProperties>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
 }

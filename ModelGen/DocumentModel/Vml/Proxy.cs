@@ -4,30 +4,80 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Shape Reference.
 /// </summary>
-public partial class Proxy
+public partial class Proxy: ModelElement<DXVO.Proxy>
 {
+  public Proxy(): base(){ }
+  
+  public Proxy(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public Proxy(DXVO.Proxy openXmlElement): base(openXmlElement) { }
+  
   
   /// <summary>
   ///   Start Point Connection Flag
   /// </summary>
-  public DM.TrueFalseBlankValue? Start { get; set; }
+  [DataMember]
+  public DM.TrueFalseBlankValue? Start
+  {
+    get
+    {
+      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseBlankValue>()?.Val);
+    }
+    set
+    {
+      SimpleValueConverter.SetValue<DX.TrueFalseBlankValue,DocumentFormat.OpenXml.TrueFalseBlankValue>(openXmlElement, value);
+    }
+  }
   
   
   /// <summary>
   ///   End Point Connection Flag
   /// </summary>
-  public DM.TrueFalseBlankValue? End { get; set; }
+  [DataMember]
+  public DM.TrueFalseBlankValue? End
+  {
+    get
+    {
+      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseBlankValue>()?.Val);
+    }
+    set
+    {
+      SimpleValueConverter.SetValue<DX.TrueFalseBlankValue,DocumentFormat.OpenXml.TrueFalseBlankValue>(openXmlElement, value);
+    }
+  }
   
   
   /// <summary>
   ///   Proxy Shape Reference
   /// </summary>
-  public String? ShapeReference { get; set; }
+  [DataMember]
+  public String? ShapeReference
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.ShapeReference);
+    }
+    set
+    {
+      _ExistingElement.ShapeReference = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Connection Location
   /// </summary>
-  public Int32? ConnectionLocation { get; set; }
+  [DataMember]
+  public Int32? ConnectionLocation
+  {
+    get
+    {
+      return _Element?.ConnectionLocation?.Value;
+    }
+    set
+    {
+      _ExistingElement.ConnectionLocation = value;
+    }
+  }
   
 }

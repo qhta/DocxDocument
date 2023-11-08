@@ -11,11 +11,11 @@ public class PropInfo : MemberElement
   [XmlIgnore]
   public PropertyInfo? PropertyInfo { get => ReflectionInfo as PropertyInfo; set => ReflectionInfo = value; }
   [XmlIgnore]
-  public TypeInfo PropertyType { get; set; }
+  public TypeInfo PropertyType { [DebuggerStepThrough] get; set; }
   //[XmlIgnore]
-  //public TypeInfo? TargetPropertyType { get; set; }
+  //public TypeInfo? TargetPropertyType { [DebuggerStepThrough] get; set; }
   [XmlIgnore]
-  public FullTypeName? TargetPropertyTypeName { get; set; }
+  public FullTypeName? TargetPropertyTypeName { [DebuggerStepThrough] get; set; }
 
   public string OriginalType
   {
@@ -24,42 +24,42 @@ public class PropInfo : MemberElement
   }
 
   [XmlIgnore]
-  public TypeInfo? TargetType { get; set; }
+  public TypeInfo? TargetType { [DebuggerStepThrough] get; set; }
 
   [DefaultValue(false)]
-  public bool IsReadonly { get; set; }
+  public bool IsReadonly { [DebuggerStepThrough] get; set; }
 
   [DefaultValue(false)]
-  public bool IsStatic { get; set; }
+  public bool IsStatic { [DebuggerStepThrough] get; set; }
 
   [DefaultValue(false)]
-  public bool IsAbstract { get; set; }
+  public bool IsAbstract { [DebuggerStepThrough] get; set; }
 
   [DefaultValue(false)]
-  public bool IsVirtual { get; set; }
+  public bool IsVirtual { [DebuggerStepThrough] get; set; }
 
   [DefaultValue(false)]
-  public bool IsOverriden { get; set; }
+  public bool IsOverriden { [DebuggerStepThrough] get; set; }
 
   [DefaultValue(false)]
-  public bool IsNew { get; set; }
+  public bool IsNew { [DebuggerStepThrough] get; set; }
 
   [DefaultValue(false)]
-  public bool IsConstrained { get; set; }
+  public bool IsConstrained { [DebuggerStepThrough] get; set; }
 
   [DefaultValue(false)]
-  public bool IsRequired { get; set; }
+  public bool IsRequired { [DebuggerStepThrough] get; set; }
 
   [DefaultValue(false)]
-  public bool IsEnum { get; set; }
+  public bool IsEnum { [DebuggerStepThrough] get; set; }
 
   [DefaultValue(false)]
-  public bool IsList { get; set; }
+  public bool IsList { [DebuggerStepThrough] get; set; }
 
-  public string? RealTypeName { get; set; }
+  public string? RealTypeName { [DebuggerStepThrough] get; set; }
 
   [XmlIgnore]
-  public Constraints? Constraints { get; set; }
+  public Constraints? Constraints { [DebuggerStepThrough] get; set; }
 
   /// <summary>
   /// String description assigned to this element or to target type.

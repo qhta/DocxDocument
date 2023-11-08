@@ -4,120 +4,335 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Defines the ImageData Class.
 /// </summary>
-public partial class ImageData
+public partial class ImageData: ModelElement<DXV.ImageData>
 {
+  public ImageData(): base(){ }
+  
+  public ImageData(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public ImageData(DXV.ImageData openXmlElement): base(openXmlElement) { }
+  
   
   /// <summary>
   ///   Unique Identifier
   /// </summary>
-  public String? Id { get; set; }
+  [DataMember]
+  public String? Id
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Id);
+    }
+    set
+    {
+      _ExistingElement.Id = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Image Transparency Color
   /// </summary>
-  public String? ChromAKey { get; set; }
+  [DataMember]
+  public String? ChromAKey
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.ChromAKey);
+    }
+    set
+    {
+      _ExistingElement.ChromAKey = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Image Left Crop
   /// </summary>
-  public String? CropLeft { get; set; }
+  [DataMember]
+  public String? CropLeft
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.CropLeft);
+    }
+    set
+    {
+      _ExistingElement.CropLeft = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Image Top Crop
   /// </summary>
-  public String? CropTop { get; set; }
+  [DataMember]
+  public String? CropTop
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.CropTop);
+    }
+    set
+    {
+      _ExistingElement.CropTop = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Image Right Crop
   /// </summary>
-  public String? CropRight { get; set; }
+  [DataMember]
+  public String? CropRight
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.CropRight);
+    }
+    set
+    {
+      _ExistingElement.CropRight = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Image Bottom Crop
   /// </summary>
-  public String? CropBottom { get; set; }
+  [DataMember]
+  public String? CropBottom
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.CropBottom);
+    }
+    set
+    {
+      _ExistingElement.CropBottom = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Image Intensity
   /// </summary>
-  public String? Gain { get; set; }
+  [DataMember]
+  public String? Gain
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Gain);
+    }
+    set
+    {
+      _ExistingElement.Gain = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Image Brightness
   /// </summary>
-  public String? BlackLevel { get; set; }
+  [DataMember]
+  public String? BlackLevel
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.BlackLevel);
+    }
+    set
+    {
+      _ExistingElement.BlackLevel = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Image Gamma Correction
   /// </summary>
-  public String? Gamma { get; set; }
+  [DataMember]
+  public String? Gamma
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Gamma);
+    }
+    set
+    {
+      _ExistingElement.Gamma = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Image Grayscale Toggle
   /// </summary>
-  public DM.TrueFalseValue? Grayscale { get; set; }
+  [DataMember]
+  public DM.TrueFalseValue? Grayscale
+  {
+    get
+    {
+      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+    }
+    set
+    {
+      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+    }
+  }
   
   
   /// <summary>
   ///   Image Bilevel Toggle
   /// </summary>
-  public DM.TrueFalseValue? BiLevel { get; set; }
+  [DataMember]
+  public DM.TrueFalseValue? BiLevel
+  {
+    get
+    {
+      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+    }
+    set
+    {
+      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+    }
+  }
   
   
   /// <summary>
   ///   Embossed Color
   /// </summary>
-  public String? EmbossColor { get; set; }
+  [DataMember]
+  public String? EmbossColor
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.EmbossColor);
+    }
+    set
+    {
+      _ExistingElement.EmbossColor = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Black Recoloring Color
   /// </summary>
-  public String? RecolorTarget { get; set; }
+  [DataMember]
+  public String? RecolorTarget
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.RecolorTarget);
+    }
+    set
+    {
+      _ExistingElement.RecolorTarget = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Image Data Title
   /// </summary>
-  public String? Title { get; set; }
+  [DataMember]
+  public String? Title
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Title);
+    }
+    set
+    {
+      _ExistingElement.Title = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Detect Mouse Click
   /// </summary>
-  public DM.TrueFalseValue? DetectMouseClick { get; set; }
+  [DataMember]
+  public DM.TrueFalseValue? DetectMouseClick
+  {
+    get
+    {
+      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+    }
+    set
+    {
+      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+    }
+  }
   
   
   /// <summary>
   ///   Relationship to Part
   /// </summary>
-  public String? RelId { get; set; }
+  [DataMember]
+  public String? RelId
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.RelId);
+    }
+    set
+    {
+      _ExistingElement.RelId = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Explicit Relationship to Image Data
   /// </summary>
-  public String? RelationshipId { get; set; }
+  [DataMember]
+  public String? RelationshipId
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.RelationshipId);
+    }
+    set
+    {
+      _ExistingElement.RelationshipId = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Explicit Relationship to Alternate Image Data
   /// </summary>
-  public String? Picture { get; set; }
+  [DataMember]
+  public String? Picture
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Picture);
+    }
+    set
+    {
+      _ExistingElement.Picture = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Explicit Relationship to Hyperlink Target
   /// </summary>
-  public String? RelHref { get; set; }
+  [DataMember]
+  public String? RelHref
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.RelHref);
+    }
+    set
+    {
+      _ExistingElement.RelHref = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
 }

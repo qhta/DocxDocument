@@ -4,12 +4,29 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Associated Help Text.
 /// </summary>
-public partial class HelpText
+public partial class HelpText: ModelElement<DXW.HelpText>
 {
+  public HelpText(): base(){ }
+  
+  public HelpText(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public HelpText(DXW.HelpText openXmlElement): base(openXmlElement) { }
+  
   
   /// <summary>
   ///   Help Text Value
   /// </summary>
-  public String? Val { get; set; }
+  [DataMember]
+  public String? Val
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Val);
+    }
+    set
+    {
+      _ExistingElement.Val = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
 }

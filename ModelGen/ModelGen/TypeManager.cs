@@ -3,12 +3,12 @@
 public static class TypeManager
 {
 
-  public static bool UseAsynReflection { get; set; }
+  public static bool UseAsynReflection { [DebuggerStepThrough] get; set; }
 
   public static event ProgressTypeEvent? OnRegistering;
 
-  public static Dictionary<Type, TypeInfo> KnownTypes { get; private set; } = new();
-  public static Dictionary<string, Namespace> KnownNamespaces { get; private set; } = new();
+  public static Dictionary<Type, TypeInfo> KnownTypes { [DebuggerStepThrough] get; private set; } = new();
+  public static Dictionary<string, Namespace> KnownNamespaces { [DebuggerStepThrough] get; private set; } = new();
 
   public static void Clear()
   {

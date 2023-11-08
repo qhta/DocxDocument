@@ -4,8 +4,25 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the CustomXmlPart
 /// </summary>
-public partial class CustomXmlPart
+public partial class CustomXmlPart: ModelElement<DXPack.CustomXmlPart>
 {
-  public String? RelationshipType { get; set; }
+  public CustomXmlPart(): base(){ }
+  
+  public CustomXmlPart(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public CustomXmlPart(DXPack.CustomXmlPart openXmlElement): base(openXmlElement) { }
+  
+  [DataMember]
+  public String? RelationshipType
+  {
+    get
+    {
+      return _Element?.RelationshipType;
+    }
+    set
+    {
+      _ExistingElement.RelationshipType = value;
+    }
+  }
   
 }

@@ -24,12 +24,12 @@ public record Fixage
   /// <summary>
   /// Phase of the process that emmited this error
   /// </summary>
-  public PPS Phase { get; set; }
+  public PPS Phase { [DebuggerStepThrough] get; set; }
 
   /// <summary>
   /// Error code
   /// </summary>
-  public ErrorCode Code { get; set; }
+  public ErrorCode Code { [DebuggerStepThrough] get; set; }
 
   /// <summary>
   /// Additional info.

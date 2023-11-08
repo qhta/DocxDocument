@@ -4,12 +4,34 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines CustomUiPart. The CustomUiPart served as the base class of RibbonExtensibilityPart and QuickAccessToolbarCustomizationsPart.
 /// </summary>
-public partial class CustomUIPart
+public partial class CustomUIPart: ModelElement<DXPack.CustomUIPart>
 {
+  public CustomUIPart(): base(){ }
+  
+  public CustomUIPart(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public CustomUIPart(DXPack.CustomUIPart openXmlElement): base(openXmlElement) { }
+  
   
   /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>
-  public DMCUI.CustomUI? CustomUI { get; set; }
+  [DataMember]
+  public DMCUI.CustomUI? CustomUI
+  {
+    get
+    {
+        return CustomUIConverter.CreateModelElement(_Element?.RootElement as DXOCUI.CustomUI);
+    }
+    set
+    {
+      if (value != null)
+      {
+         var rootElement = CustomUIConverter.CreateOpenXmlElement<DXOCUI.CustomUI>(value);
+         if (rootElement != null)
+           _ExistingElement.CustomUI = rootElement;
+      }
+    }
+  }
   
 }

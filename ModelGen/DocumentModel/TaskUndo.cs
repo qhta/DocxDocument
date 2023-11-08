@@ -4,12 +4,29 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the TaskUndo Class.
 /// </summary>
-public partial class TaskUndo
+public partial class TaskUndo: ModelElement<DXO21DT.TaskUndo>
 {
+  public TaskUndo(): base(){ }
+  
+  public TaskUndo(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public TaskUndo(DXO21DT.TaskUndo openXmlElement): base(openXmlElement) { }
+  
   
   /// <summary>
   ///   id, this property is only available in Office 2021 and later.
   /// </summary>
-  public String? Id { get; set; }
+  [DataMember]
+  public String? Id
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Id);
+    }
+    set
+    {
+      _ExistingElement.Id = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
 }
