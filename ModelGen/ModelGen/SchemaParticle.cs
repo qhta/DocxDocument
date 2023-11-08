@@ -6,15 +6,15 @@ namespace ModelGen;
 [KnownType(typeof(ItemsParticle))]
 public abstract class SchemaParticle
 {
-  public ParticleType ParticleType { get; set; }
+  public ParticleType ParticleType { [DebuggerStepThrough] get; set; }
 
-  public string? Name { get; set; }
+  public string? Name { [DebuggerStepThrough] get; set; }
 
   public bool IsOptional => MinOccurs == 0;
   public bool IsMultiple => MaxOccurs == 0 || MaxOccurs > 1;
 
-  public int MinOccurs { get; set; }
-  public int MaxOccurs { get; set; }
+  public int MinOccurs { [DebuggerStepThrough] get; set; }
+  public int MaxOccurs { [DebuggerStepThrough] get; set; }
 
   public int DefaultMinOccurs 
     => (IsOptional) ? 0 : 1;

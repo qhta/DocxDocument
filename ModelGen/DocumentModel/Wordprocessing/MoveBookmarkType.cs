@@ -4,42 +4,114 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the MoveBookmarkType Class.
 /// </summary>
-public partial class MoveBookmarkType
+public partial class MoveBookmarkType: ModelElement<DXW.MoveBookmarkType>
 {
+  public MoveBookmarkType(): base(){ }
+  
+  public MoveBookmarkType(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public MoveBookmarkType(DXW.MoveBookmarkType openXmlElement): base(openXmlElement) { }
+  
   
   /// <summary>
   ///   author
   /// </summary>
-  public String? Author { get; set; }
+  [DataMember]
+  public String? Author
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Author);
+    }
+    set
+    {
+      _ExistingElement.Author = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   date
   /// </summary>
-  public DateTime? Date { get; set; }
+  [DataMember]
+  public DateTime? Date
+  {
+    get
+    {
+      return _Element?.Date?.Value;
+    }
+    set
+    {
+      _ExistingElement.Date = value;
+    }
+  }
   
   
   /// <summary>
   ///   name
   /// </summary>
-  public String? Name { get; set; }
+  [DataMember]
+  public String? Name
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Name);
+    }
+    set
+    {
+      _ExistingElement.Name = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   colFirst
   /// </summary>
-  public Int32? ColumnFirst { get; set; }
+  [DataMember]
+  public Int32? ColumnFirst
+  {
+    get
+    {
+      return _Element?.ColumnFirst?.Value;
+    }
+    set
+    {
+      _ExistingElement.ColumnFirst = value;
+    }
+  }
   
   
   /// <summary>
   ///   colLast
   /// </summary>
-  public Int32? ColumnLast { get; set; }
+  [DataMember]
+  public Int32? ColumnLast
+  {
+    get
+    {
+      return _Element?.ColumnLast?.Value;
+    }
+    set
+    {
+      _ExistingElement.ColumnLast = value;
+    }
+  }
   
   
   /// <summary>
   ///   Annotation Identifier
   /// </summary>
-  public String? Id { get; set; }
+  [DataMember]
+  public String? Id
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Id);
+    }
+    set
+    {
+      _ExistingElement.Id = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
 }

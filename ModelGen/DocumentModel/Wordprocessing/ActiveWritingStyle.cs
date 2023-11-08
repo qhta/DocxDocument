@@ -4,42 +4,114 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Grammar Checking Settings.
 /// </summary>
-public partial class ActiveWritingStyle
+public partial class ActiveWritingStyle: ModelElement<DXW.ActiveWritingStyle>
 {
+  public ActiveWritingStyle(): base(){ }
+  
+  public ActiveWritingStyle(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public ActiveWritingStyle(DXW.ActiveWritingStyle openXmlElement): base(openXmlElement) { }
+  
   
   /// <summary>
   ///   Writing Style Language
   /// </summary>
-  public String? Language { get; set; }
+  [DataMember]
+  public String? Language
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Language);
+    }
+    set
+    {
+      _ExistingElement.Language = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Grammatical Engine ID
   /// </summary>
-  public UInt16? VendorID { get; set; }
+  [DataMember]
+  public UInt16? VendorID
+  {
+    get
+    {
+      return _Element?.VendorID?.Value;
+    }
+    set
+    {
+      _ExistingElement.VendorID = value;
+    }
+  }
   
   
   /// <summary>
   ///   Grammatical Check Engine Version
   /// </summary>
-  public Int32? DllVersion { get; set; }
+  [DataMember]
+  public Int32? DllVersion
+  {
+    get
+    {
+      return _Element?.DllVersion?.Value;
+    }
+    set
+    {
+      _ExistingElement.DllVersion = value;
+    }
+  }
   
   
   /// <summary>
   ///   Natural Language Grammar Check
   /// </summary>
-  public Boolean? NaturalLanguageGrammarCheck { get; set; }
+  [DataMember]
+  public Boolean? NaturalLanguageGrammarCheck
+  {
+    get
+    {
+      return BooleanValueConverter.GetValue(_Element?.NaturalLanguageGrammarCheck);
+    }
+    set
+    {
+      _ExistingElement.NaturalLanguageGrammarCheck = BooleanValueConverter.CreateOnOffValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Check Stylistic Rules With Grammar
   /// </summary>
-  public Boolean? CheckStyle { get; set; }
+  [DataMember]
+  public Boolean? CheckStyle
+  {
+    get
+    {
+      return BooleanValueConverter.GetValue(_Element?.CheckStyle);
+    }
+    set
+    {
+      _ExistingElement.CheckStyle = BooleanValueConverter.CreateOnOffValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Application Name
   /// </summary>
-  public String? ApplicationName { get; set; }
+  [DataMember]
+  public String? ApplicationName
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.ApplicationName);
+    }
+    set
+    {
+      _ExistingElement.ApplicationName = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
 }

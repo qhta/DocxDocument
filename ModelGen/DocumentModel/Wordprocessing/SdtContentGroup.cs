@@ -4,6 +4,12 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   This element specifies that the nearest ancestor structured document tag shall be a restricted grouping when displayed in the document.
 /// </summary>
-public partial class SdtContentGroup
+public partial class SdtContentGroup: ModelElement<DXW.SdtContentGroup>
 {
+  public SdtContentGroup(): base(){ }
+  
+  public SdtContentGroup(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public SdtContentGroup(DXW.SdtContentGroup openXmlElement): base(openXmlElement) { }
+  
 }

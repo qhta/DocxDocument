@@ -4,18 +4,134 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   This element specifies the color which replaces the clrFrom in a clrChange effect. This is the &quot;target&quot; or &quot;to&quot; color in the color change effect.
 /// </summary>
-public partial class ColorTo
+public partial class ColorTo: ModelElement<DXD.ColorTo>
 {
-  public DMD.RgbColorModelPercentage? RgbColorModelPercentage { get; set; }
+  public ColorTo(): base(){ }
   
-  public DMD.RgbColorModelHex? RgbColorModelHex { get; set; }
+  public ColorTo(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
   
-  public DMD.HslColor? HslColor { get; set; }
+  public ColorTo(DXD.ColorTo openXmlElement): base(openXmlElement) { }
   
-  public DMD.SystemColor? SystemColor { get; set; }
+  [DataMember]
+  public DMD.RgbColorModelPercentage? RgbColorModelPercentage
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXD.RgbColorModelPercentage>();
+      if (element != null)
+        return RgbColorModelPercentageConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXD.RgbColorModelPercentage>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = RgbColorModelPercentageConverter.CreateOpenXmlElement<DXD.RgbColorModelPercentage>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
-  public DMD.SchemeColorKind? SchemeColor { get; set; }
+  [DataMember]
+  public DMD.RgbColorModelHex? RgbColorModelHex
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXD.RgbColorModelHex>();
+      if (element != null)
+        return RgbColorModelHexConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXD.RgbColorModelHex>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = RgbColorModelHexConverter.CreateOpenXmlElement<DXD.RgbColorModelHex>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
-  public DMD.PresetColorKind? PresetColor { get; set; }
+  [DataMember]
+  public DMD.HslColor? HslColor
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXD.HslColor>();
+      if (element != null)
+        return HslColorConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXD.HslColor>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = HslColorConverter.CreateOpenXmlElement<DXD.HslColor>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
+  
+  [DataMember]
+  public DMD.SystemColor? SystemColor
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXD.SystemColor>();
+      if (element != null)
+        return SystemColorConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXD.SystemColor>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = SystemColorConverter.CreateOpenXmlElement<DXD.SystemColor>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
+  
+  [DataMember]
+  public DMD.SchemeColorKind? SchemeColor
+  {
+    get
+    {
+      throw new NotImplementedException("Not implemented in GenerateEnumPropertyGetCode: propertyType is DocumentFormat.OpenXml.Drawing.SchemeColor");
+    }
+    set
+    {
+      throw new NotImplementedException("Not implemented in GenerateEnumPropertySetCode: propertyType is DocumentFormat.OpenXml.Drawing.SchemeColor");
+    }
+  }
+  
+  [DataMember]
+  public DMD.PresetColorKind? PresetColor
+  {
+    get
+    {
+      throw new NotImplementedException("Not implemented in GenerateEnumPropertyGetCode: propertyType is DocumentFormat.OpenXml.Drawing.PresetColor");
+    }
+    set
+    {
+      throw new NotImplementedException("Not implemented in GenerateEnumPropertySetCode: propertyType is DocumentFormat.OpenXml.Drawing.PresetColor");
+    }
+  }
   
 }

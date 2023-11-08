@@ -4,60 +4,211 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   This element specifies a paragraph of content in the document.
 /// </summary>
-public partial class Paragraph
+public partial class Paragraph: ModelElement<DXW.Paragraph>
 {
+  public Paragraph(): base(){ }
+  
+  public Paragraph(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public Paragraph(DXW.Paragraph openXmlElement): base(openXmlElement) { }
+  
   
   /// <summary>
   ///   Revision Identifier for Paragraph Glyph Formatting
   /// </summary>
-  public DM.HexBinary? RsidParagraphMarkRevision { get; set; }
+  [DataMember]
+  public DM.HexBinary? RsidParagraphMarkRevision
+  {
+    get
+    {
+      if (_Element?.RsidParagraphMarkRevision?.Value != null)
+        return HexIntConverter.GetValue(_ExistingElement.RsidParagraphMarkRevision.Value);
+      return null;
+    }
+    set
+    {
+      if (value != null)
+        _ExistingElement.RsidParagraphMarkRevision = value.ToString();
+      else
+        _ExistingElement.RsidParagraphMarkRevision = null;
+    }
+  }
   
   
   /// <summary>
   ///   Revision Identifier for Paragraph
   /// </summary>
-  public DM.HexBinary? RsidParagraphAddition { get; set; }
+  [DataMember]
+  public DM.HexBinary? RsidParagraphAddition
+  {
+    get
+    {
+      if (_Element?.RsidParagraphAddition?.Value != null)
+        return HexIntConverter.GetValue(_ExistingElement.RsidParagraphAddition.Value);
+      return null;
+    }
+    set
+    {
+      if (value != null)
+        _ExistingElement.RsidParagraphAddition = value.ToString();
+      else
+        _ExistingElement.RsidParagraphAddition = null;
+    }
+  }
   
   
   /// <summary>
   ///   Revision Identifier for Paragraph Deletion
   /// </summary>
-  public DM.HexBinary? RsidParagraphDeletion { get; set; }
+  [DataMember]
+  public DM.HexBinary? RsidParagraphDeletion
+  {
+    get
+    {
+      if (_Element?.RsidParagraphDeletion?.Value != null)
+        return HexIntConverter.GetValue(_ExistingElement.RsidParagraphDeletion.Value);
+      return null;
+    }
+    set
+    {
+      if (value != null)
+        _ExistingElement.RsidParagraphDeletion = value.ToString();
+      else
+        _ExistingElement.RsidParagraphDeletion = null;
+    }
+  }
   
   
   /// <summary>
   ///   Revision Identifier for Paragraph Properties
   /// </summary>
-  public DM.HexBinary? RsidParagraphProperties { get; set; }
+  [DataMember]
+  public DM.HexBinary? RsidParagraphProperties
+  {
+    get
+    {
+      if (_Element?.RsidParagraphProperties?.Value != null)
+        return HexIntConverter.GetValue(_ExistingElement.RsidParagraphProperties.Value);
+      return null;
+    }
+    set
+    {
+      if (value != null)
+        _ExistingElement.RsidParagraphProperties = value.ToString();
+      else
+        _ExistingElement.RsidParagraphProperties = null;
+    }
+  }
   
   
   /// <summary>
   ///   Default Revision Identifier for Runs
   /// </summary>
-  public DM.HexBinary? RsidRunAdditionDefault { get; set; }
+  [DataMember]
+  public DM.HexBinary? RsidRunAdditionDefault
+  {
+    get
+    {
+      if (_Element?.RsidRunAdditionDefault?.Value != null)
+        return HexIntConverter.GetValue(_ExistingElement.RsidRunAdditionDefault.Value);
+      return null;
+    }
+    set
+    {
+      if (value != null)
+        _ExistingElement.RsidRunAdditionDefault = value.ToString();
+      else
+        _ExistingElement.RsidRunAdditionDefault = null;
+    }
+  }
   
   
   /// <summary>
   ///   paraId, this property is only available in Office 2010 and later.
   /// </summary>
-  public DM.HexBinary? ParagraphId { get; set; }
+  [DataMember]
+  public DM.HexBinary? ParagraphId
+  {
+    get
+    {
+      if (_Element?.ParagraphId?.Value != null)
+        return HexIntConverter.GetValue(_ExistingElement.ParagraphId.Value);
+      return null;
+    }
+    set
+    {
+      if (value != null)
+        _ExistingElement.ParagraphId = value.ToString();
+      else
+        _ExistingElement.ParagraphId = null;
+    }
+  }
   
   
   /// <summary>
   ///   textId, this property is only available in Office 2010 and later.
   /// </summary>
-  public DM.HexBinary? TextId { get; set; }
+  [DataMember]
+  public DM.HexBinary? TextId
+  {
+    get
+    {
+      if (_Element?.TextId?.Value != null)
+        return HexIntConverter.GetValue(_ExistingElement.TextId.Value);
+      return null;
+    }
+    set
+    {
+      if (value != null)
+        _ExistingElement.TextId = value.ToString();
+      else
+        _ExistingElement.TextId = null;
+    }
+  }
   
   
   /// <summary>
   ///   noSpellErr, this property is only available in Office 2010 and later.
   /// </summary>
-  public Boolean? NoSpellError { get; set; }
+  [DataMember]
+  public Boolean? NoSpellError
+  {
+    get
+    {
+      return BooleanValueConverter.GetValue(_Element?.NoSpellError);
+    }
+    set
+    {
+      _ExistingElement.NoSpellError = BooleanValueConverter.CreateOnOffValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Paragraph Properties.
   /// </summary>
-  public DMW.ParagraphProperties? ParagraphProperties { get; set; }
+  [DataMember]
+  public DMW.ParagraphProperties? ParagraphProperties
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXW.ParagraphProperties>();
+      if (element != null)
+        return ParagraphPropertiesConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXW.ParagraphProperties>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = ParagraphPropertiesConverter.CreateOpenXmlElement<DXW.ParagraphProperties>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
 }

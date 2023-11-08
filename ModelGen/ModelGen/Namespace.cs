@@ -2,9 +2,9 @@
 
 public class Namespace
 {
-  public string OriginalName { get; private set; }
+  public string OriginalName { [DebuggerStepThrough] get; private set; }
 
-  public string? TargetName { get; set; }
+  public string? TargetName { [DebuggerStepThrough] get; set; }
 
   public string? TargetPrefix
   {
@@ -29,10 +29,10 @@ public class Namespace
 
   private string? _TargetPrefix;
 
-  public OwnedCollection<TypeInfo> Types { get; private set; }
+  public OwnedCollection<TypeInfo> Types { [DebuggerStepThrough] get; private set; }
 
   [XmlIgnore]
-  public Dictionary<string, TypeInfo> TypeNames { get; private set; }
+  public Dictionary<string, TypeInfo> TypeNames { [DebuggerStepThrough] get; private set; }
 
   public IEnumerable<TypeInfo> AcceptedTypesTo(PPS phase) => Types.Where(x => x.IsAcceptedTo(phase));
 

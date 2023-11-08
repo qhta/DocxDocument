@@ -5,22 +5,22 @@ namespace ModelGen;
 
 public abstract class BaseCodeGenerator
 {
-  public string SolutionName { get; protected set; } = null!;
-  public string ProjectName { get; protected set; } = null!;
-  public string OutputPath { get; protected set; } = null!;
-  public string? ConfigPath { get; protected set; } = null!;
+  public string SolutionName { [DebuggerStepThrough] get; protected set; } = null!;
+  public string ProjectName { [DebuggerStepThrough] get; protected set; } = null!;
+  public string OutputPath { [DebuggerStepThrough] get; protected set; } = null!;
+  public string? ConfigPath { [DebuggerStepThrough] get; protected set; } = null!;
 
-  public bool CancelRequest { get; set; }
+  public bool CancelRequest { [DebuggerStepThrough] get; set; }
 
 
-  public int GeneratedClassesCount { get; protected set; }
-  public int GeneratedInterfacesCount { get; protected set; }
-  public int GeneratedStructsCount { get; protected set; }
-  public int GeneratedEnumTypesCount { get; protected set; }
-  public int GeneratedPropertiesCount { get; protected set; }
-  public int GeneratedEnumValuesCount { get; protected set; }
+  public int GeneratedClassesCount { [DebuggerStepThrough] get; protected set; }
+  public int GeneratedInterfacesCount { [DebuggerStepThrough] get; protected set; }
+  public int GeneratedStructsCount { [DebuggerStepThrough] get; protected set; }
+  public int GeneratedEnumTypesCount { [DebuggerStepThrough] get; protected set; }
+  public int GeneratedPropertiesCount { [DebuggerStepThrough] get; protected set; }
+  public int GeneratedEnumValuesCount { [DebuggerStepThrough] get; protected set; }
 
-  protected IndentedTextWriter Writer { get; set; } = null!;
+  protected IndentedTextWriter Writer { [DebuggerStepThrough] get; set; } = null!;
 
   protected void TrimNamespace(FullTypeName typeName)
   {
@@ -99,7 +99,7 @@ public abstract class BaseCodeGenerator
 
   public abstract bool GenerateTypeFile(TypeInfo typeInfo);
 
-  public FilesList GeneratedFiles { get; protected set; } = new FilesList();
+  public FilesList GeneratedFiles { [DebuggerStepThrough] get; protected set; } = new FilesList();
 
   public void PrepareProject()
   {
@@ -292,7 +292,7 @@ public abstract class BaseCodeGenerator
     return true;
   }
 
-  SortedSet<string> GlobalUsings { get; } = new();
+  protected HashSet<string> GlobalUsings { [DebuggerStepThrough] get; } = new();
 
   protected void AddGlobalUsing(string aNamespace)
   {
@@ -307,7 +307,7 @@ public abstract class BaseCodeGenerator
     return GenerateGlobalUsings(Path.Combine(OutputPath, "GlobalUsings.cs"));
   }
 
-  protected bool GenerateGlobalUsings(string filename)
+  protected virtual bool GenerateGlobalUsings(string filename)
   {
     if (ModelConfig.Instance == null)
       throw new System.InvalidOperationException(CommonStrings.Model_configuration_not_defined);

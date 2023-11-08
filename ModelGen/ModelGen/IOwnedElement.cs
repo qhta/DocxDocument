@@ -8,5 +8,5 @@ public interface IOwnedElement
   /// <summary>
   /// Owner of the element (can be of any object).
   /// </summary>
-  public object? Owner { get; set; }
+  public object? Owner { [DebuggerStepThrough] get; set; }
 }

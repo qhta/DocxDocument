@@ -4,16 +4,60 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   An instance of this part type contains all the footnotes for the document.
 /// </summary>
-public partial class FootnotesPart
+public partial class FootnotesPart: ModelElement<DXPack.FootnotesPart>
 {
-  public String? ContentType { get; set; }
+  public FootnotesPart(): base(){ }
+  
+  public FootnotesPart(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public FootnotesPart(DXPack.FootnotesPart openXmlElement): base(openXmlElement) { }
+  
+  [DataMember]
+  public String? ContentType
+  {
+    get
+    {
+      return _Element?.ContentType;
+    }
+    set
+    {
+      _ExistingElement.ContentType = value;
+    }
+  }
   
   
   /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>
-  public DMW.Footnotes? Footnotes { get; set; }
+  [DataMember]
+  public DMW.Footnotes? Footnotes
+  {
+    get
+    {
+        return FootnotesConverter.CreateModelElement(_Element?.RootElement as DXW.Footnotes);
+    }
+    set
+    {
+      if (value != null)
+      {
+         var rootElement = FootnotesConverter.CreateOpenXmlElement<DXW.Footnotes>(value);
+         if (rootElement != null)
+           _ExistingElement.Footnotes = rootElement;
+      }
+    }
+  }
   
-  public String? RelationshipType { get; set; }
+  [DataMember]
+  public String? RelationshipType
+  {
+    get
+    {
+      return _Element?.RelationshipType;
+    }
+    set
+    {
+      _ExistingElement.RelationshipType = value;
+    }
+  }
   
 }

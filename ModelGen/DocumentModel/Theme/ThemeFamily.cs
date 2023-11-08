@@ -4,30 +4,91 @@ namespace DocumentModel.Theme;
 /// <summary>
 ///   Defines the ThemeFamily Class.
 /// </summary>
-public partial class ThemeFamily
+public partial class ThemeFamily: ModelElement<DXO13T.ThemeFamily>
 {
+  public ThemeFamily(): base(){ }
+  
+  public ThemeFamily(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public ThemeFamily(DXO13T.ThemeFamily openXmlElement): base(openXmlElement) { }
+  
   
   /// <summary>
   ///   name, this property is only available in Office 2013 and later.
   /// </summary>
-  public String? Name { get; set; }
+  [DataMember]
+  public String? Name
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Name);
+    }
+    set
+    {
+      _ExistingElement.Name = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   id, this property is only available in Office 2013 and later.
   /// </summary>
-  public String? Id { get; set; }
+  [DataMember]
+  public String? Id
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Id);
+    }
+    set
+    {
+      _ExistingElement.Id = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   vid, this property is only available in Office 2013 and later.
   /// </summary>
-  public String? Vid { get; set; }
+  [DataMember]
+  public String? Vid
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Vid);
+    }
+    set
+    {
+      _ExistingElement.Vid = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   OfficeArtExtensionList.
   /// </summary>
-  public DMT.OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
+  [DataMember]
+  public DMT.OfficeArtExtensionList? OfficeArtExtensionList
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXO13T.OfficeArtExtensionList>();
+      if (element != null)
+        return OfficeArtExtensionListConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXO13T.OfficeArtExtensionList>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = OfficeArtExtensionListConverter.CreateOpenXmlElement<DXO13T.OfficeArtExtensionList>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
 }

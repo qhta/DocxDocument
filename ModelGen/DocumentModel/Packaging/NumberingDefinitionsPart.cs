@@ -4,16 +4,60 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   An instance of this part type contains a definition for the structure of each unique numbering definition in this document.
 /// </summary>
-public partial class NumberingDefinitionsPart
+public partial class NumberingDefinitionsPart: ModelElement<DXPack.NumberingDefinitionsPart>
 {
-  public String? ContentType { get; set; }
+  public NumberingDefinitionsPart(): base(){ }
+  
+  public NumberingDefinitionsPart(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public NumberingDefinitionsPart(DXPack.NumberingDefinitionsPart openXmlElement): base(openXmlElement) { }
+  
+  [DataMember]
+  public String? ContentType
+  {
+    get
+    {
+      return _Element?.ContentType;
+    }
+    set
+    {
+      _ExistingElement.ContentType = value;
+    }
+  }
   
   
   /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>
-  public DMW.Numbering? Numbering { get; set; }
+  [DataMember]
+  public DMW.Numbering? Numbering
+  {
+    get
+    {
+        return NumberingConverter.CreateModelElement(_Element?.RootElement as DXW.Numbering);
+    }
+    set
+    {
+      if (value != null)
+      {
+         var rootElement = NumberingConverter.CreateOpenXmlElement<DXW.Numbering>(value);
+         if (rootElement != null)
+           _ExistingElement.Numbering = rootElement;
+      }
+    }
+  }
   
-  public String? RelationshipType { get; set; }
+  [DataMember]
+  public String? RelationshipType
+  {
+    get
+    {
+      return _Element?.RelationshipType;
+    }
+    set
+    {
+      _ExistingElement.RelationshipType = value;
+    }
+  }
   
 }

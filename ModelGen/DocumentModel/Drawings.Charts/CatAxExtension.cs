@@ -4,14 +4,53 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the CatAxExtension Class.
 /// </summary>
-public partial class CatAxExtension
+public partial class CatAxExtension: ModelElement<DXDC.CatAxExtension>
 {
+  public CatAxExtension(): base(){ }
+  
+  public CatAxExtension(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public CatAxExtension(DXDC.CatAxExtension openXmlElement): base(openXmlElement) { }
+  
   
   /// <summary>
   ///   URI
   /// </summary>
-  public String? Uri { get; set; }
+  [DataMember]
+  public String? Uri
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Uri);
+    }
+    set
+    {
+      _ExistingElement.Uri = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
-  public DMDC13.NumberingFormat? NumberingFormat { get; set; }
+  [DataMember]
+  public DMDC13.NumberingFormat? NumberingFormat
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXO13DC.NumberingFormat>();
+      if (element != null)
+        return NumberingFormatConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXO13DC.NumberingFormat>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = NumberingFormatConverter.CreateOpenXmlElement<DXO13DC.NumberingFormat>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
 }

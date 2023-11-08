@@ -2,7 +2,7 @@
 
 public class CustomAttribNamedArgument: CustomAttribTypedArgument
 {
-  public string Name { get; set; }
+  public string Name { [DebuggerStepThrough] get; set; }
 
   public CustomAttribNamedArgument(string name, Type type, object? value): base(type, value)
   {

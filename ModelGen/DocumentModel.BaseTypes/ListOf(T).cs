@@ -11,6 +11,11 @@ public class ListOf<T>: IEnumerable<T>, IEnumerable
 
 
   /// <summary>
+  /// Default constructor.
+  /// </summary>
+  public ListOf(){ }
+
+  /// <summary>
   /// Initializes a new instance of the <see cref="T:DocumentFormat.OpenXml.ListValue`1" /> class using the supplied list of values.
   /// </summary>
   /// <param name="list">The list of the values.</param>
@@ -39,6 +44,12 @@ public class ListOf<T>: IEnumerable<T>, IEnumerable
   {
     TextValue = str;
   }
+
+  /// <summary>
+  /// Add an item
+  /// </summary>
+  /// <param name="item"></param>
+  public void Add(T item) => _list?.Add(item);
 
   /// <summary>Gets the values.</summary>
   public ICollection<T> Items

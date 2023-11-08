@@ -4,222 +4,1005 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   This element specifies a set of paragraph properties which shall be applied to the contents of the parent paragraph after all style/numbering/table properties have been applied to the text. These properties are defined as direct formatting, since they are directly applied to the paragraph and supersede any formatting from styles.
 /// </summary>
-public partial class ParagraphProperties
+public partial class ParagraphProperties: ModelElement<DXW.ParagraphProperties>
 {
+  public ParagraphProperties(): base(){ }
+  
+  public ParagraphProperties(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public ParagraphProperties(DXW.ParagraphProperties openXmlElement): base(openXmlElement) { }
+  
   
   /// <summary>
   ///   ParagraphStyleId.
   /// </summary>
-  public DMW.ParagraphStyleId? ParagraphStyleId { get; set; }
+  [DataMember]
+  public DMW.ParagraphStyleId? ParagraphStyleId
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXW.ParagraphStyleId>();
+      if (element != null)
+        return ParagraphStyleIdConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXW.ParagraphStyleId>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = ParagraphStyleIdConverter.CreateOpenXmlElement<DXW.ParagraphStyleId>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
   
   /// <summary>
   ///   KeepNext.
   /// </summary>
-  public DMW.KeepNext? KeepNext { get; set; }
+  [DataMember]
+  public DMW.KeepNext? KeepNext
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXW.KeepNext>();
+      if (element != null)
+        return KeepNextConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXW.KeepNext>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = KeepNextConverter.CreateOpenXmlElement<DXW.KeepNext>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
   
   /// <summary>
   ///   KeepLines.
   /// </summary>
-  public DMW.KeepLines? KeepLines { get; set; }
+  [DataMember]
+  public DMW.KeepLines? KeepLines
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXW.KeepLines>();
+      if (element != null)
+        return KeepLinesConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXW.KeepLines>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = KeepLinesConverter.CreateOpenXmlElement<DXW.KeepLines>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
   
   /// <summary>
   ///   PageBreakBefore.
   /// </summary>
-  public DMW.PageBreakBefore? PageBreakBefore { get; set; }
+  [DataMember]
+  public DMW.PageBreakBefore? PageBreakBefore
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXW.PageBreakBefore>();
+      if (element != null)
+        return PageBreakBeforeConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXW.PageBreakBefore>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = PageBreakBeforeConverter.CreateOpenXmlElement<DXW.PageBreakBefore>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
   
   /// <summary>
   ///   FrameProperties.
   /// </summary>
-  public DMW.FrameProperties? FrameProperties { get; set; }
+  [DataMember]
+  public DMW.FrameProperties? FrameProperties
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXW.FrameProperties>();
+      if (element != null)
+        return FramePropertiesConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXW.FrameProperties>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = FramePropertiesConverter.CreateOpenXmlElement<DXW.FrameProperties>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
   
   /// <summary>
   ///   WidowControl.
   /// </summary>
-  public DMW.WidowControl? WidowControl { get; set; }
+  [DataMember]
+  public DMW.WidowControl? WidowControl
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXW.WidowControl>();
+      if (element != null)
+        return WidowControlConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXW.WidowControl>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = WidowControlConverter.CreateOpenXmlElement<DXW.WidowControl>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
   
   /// <summary>
   ///   NumberingProperties.
   /// </summary>
-  public DMW.NumberingProperties? NumberingProperties { get; set; }
+  [DataMember]
+  public DMW.NumberingProperties? NumberingProperties
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXW.NumberingProperties>();
+      if (element != null)
+        return NumberingPropertiesConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXW.NumberingProperties>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = NumberingPropertiesConverter.CreateOpenXmlElement<DXW.NumberingProperties>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
   
   /// <summary>
   ///   SuppressLineNumbers.
   /// </summary>
-  public DMW.SuppressLineNumbers? SuppressLineNumbers { get; set; }
+  [DataMember]
+  public DMW.SuppressLineNumbers? SuppressLineNumbers
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXW.SuppressLineNumbers>();
+      if (element != null)
+        return SuppressLineNumbersConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXW.SuppressLineNumbers>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = SuppressLineNumbersConverter.CreateOpenXmlElement<DXW.SuppressLineNumbers>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
   
   /// <summary>
   ///   ParagraphBorders.
   /// </summary>
-  public DMW.ParagraphBorders? ParagraphBorders { get; set; }
+  [DataMember]
+  public DMW.ParagraphBorders? ParagraphBorders
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXW.ParagraphBorders>();
+      if (element != null)
+        return ParagraphBordersConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXW.ParagraphBorders>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = ParagraphBordersConverter.CreateOpenXmlElement<DXW.ParagraphBorders>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
   
   /// <summary>
   ///   Shading.
   /// </summary>
-  public DMW.Shading? Shading { get; set; }
+  [DataMember]
+  public DMW.Shading? Shading
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXW.Shading>();
+      if (element != null)
+        return ShadingConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXW.Shading>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = ShadingConverter.CreateOpenXmlElement<DXW.Shading>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
   
   /// <summary>
   ///   Tabs.
   /// </summary>
-  public DMW.Tabs? Tabs { get; set; }
+  [DataMember]
+  public DMW.Tabs? Tabs
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXW.Tabs>();
+      if (element != null)
+        return TabsConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXW.Tabs>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = TabsConverter.CreateOpenXmlElement<DXW.Tabs>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
   
   /// <summary>
   ///   SuppressAutoHyphens.
   /// </summary>
-  public DMW.SuppressAutoHyphens? SuppressAutoHyphens { get; set; }
+  [DataMember]
+  public DMW.SuppressAutoHyphens? SuppressAutoHyphens
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXW.SuppressAutoHyphens>();
+      if (element != null)
+        return SuppressAutoHyphensConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXW.SuppressAutoHyphens>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = SuppressAutoHyphensConverter.CreateOpenXmlElement<DXW.SuppressAutoHyphens>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
   
   /// <summary>
   ///   Kinsoku.
   /// </summary>
-  public DMW.Kinsoku? Kinsoku { get; set; }
+  [DataMember]
+  public DMW.Kinsoku? Kinsoku
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXW.Kinsoku>();
+      if (element != null)
+        return KinsokuConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXW.Kinsoku>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = KinsokuConverter.CreateOpenXmlElement<DXW.Kinsoku>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
   
   /// <summary>
   ///   WordWrap.
   /// </summary>
-  public DMW.WordWrap? WordWrap { get; set; }
+  [DataMember]
+  public DMW.WordWrap? WordWrap
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXW.WordWrap>();
+      if (element != null)
+        return WordWrapConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXW.WordWrap>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = WordWrapConverter.CreateOpenXmlElement<DXW.WordWrap>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
   
   /// <summary>
   ///   OverflowPunctuation.
   /// </summary>
-  public DMW.OverflowPunctuation? OverflowPunctuation { get; set; }
+  [DataMember]
+  public DMW.OverflowPunctuation? OverflowPunctuation
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXW.OverflowPunctuation>();
+      if (element != null)
+        return OverflowPunctuationConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXW.OverflowPunctuation>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = OverflowPunctuationConverter.CreateOpenXmlElement<DXW.OverflowPunctuation>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
   
   /// <summary>
   ///   TopLinePunctuation.
   /// </summary>
-  public DMW.TopLinePunctuation? TopLinePunctuation { get; set; }
+  [DataMember]
+  public DMW.TopLinePunctuation? TopLinePunctuation
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXW.TopLinePunctuation>();
+      if (element != null)
+        return TopLinePunctuationConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXW.TopLinePunctuation>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = TopLinePunctuationConverter.CreateOpenXmlElement<DXW.TopLinePunctuation>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
   
   /// <summary>
   ///   AutoSpaceDE.
   /// </summary>
-  public DMW.AutoSpaceDE? AutoSpaceDE { get; set; }
+  [DataMember]
+  public DMW.AutoSpaceDE? AutoSpaceDE
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXW.AutoSpaceDE>();
+      if (element != null)
+        return AutoSpaceDEConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXW.AutoSpaceDE>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = AutoSpaceDEConverter.CreateOpenXmlElement<DXW.AutoSpaceDE>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
   
   /// <summary>
   ///   AutoSpaceDN.
   /// </summary>
-  public DMW.AutoSpaceDN? AutoSpaceDN { get; set; }
+  [DataMember]
+  public DMW.AutoSpaceDN? AutoSpaceDN
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXW.AutoSpaceDN>();
+      if (element != null)
+        return AutoSpaceDNConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXW.AutoSpaceDN>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = AutoSpaceDNConverter.CreateOpenXmlElement<DXW.AutoSpaceDN>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
   
   /// <summary>
   ///   BiDi.
   /// </summary>
-  public DMW.BiDi? BiDi { get; set; }
+  [DataMember]
+  public DMW.BiDi? BiDi
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXW.BiDi>();
+      if (element != null)
+        return BiDiConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXW.BiDi>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = BiDiConverter.CreateOpenXmlElement<DXW.BiDi>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
   
   /// <summary>
   ///   AdjustRightIndent.
   /// </summary>
-  public DMW.AdjustRightIndent? AdjustRightIndent { get; set; }
+  [DataMember]
+  public DMW.AdjustRightIndent? AdjustRightIndent
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXW.AdjustRightIndent>();
+      if (element != null)
+        return AdjustRightIndentConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXW.AdjustRightIndent>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = AdjustRightIndentConverter.CreateOpenXmlElement<DXW.AdjustRightIndent>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
   
   /// <summary>
   ///   SnapToGrid.
   /// </summary>
-  public DMW.SnapToGrid? SnapToGrid { get; set; }
+  [DataMember]
+  public DMW.SnapToGrid? SnapToGrid
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXW.SnapToGrid>();
+      if (element != null)
+        return SnapToGridConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXW.SnapToGrid>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = SnapToGridConverter.CreateOpenXmlElement<DXW.SnapToGrid>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
   
   /// <summary>
   ///   SpacingBetweenLines.
   /// </summary>
-  public DMW.SpacingBetweenLines? SpacingBetweenLines { get; set; }
+  [DataMember]
+  public DMW.SpacingBetweenLines? SpacingBetweenLines
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXW.SpacingBetweenLines>();
+      if (element != null)
+        return SpacingBetweenLinesConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXW.SpacingBetweenLines>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = SpacingBetweenLinesConverter.CreateOpenXmlElement<DXW.SpacingBetweenLines>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
   
   /// <summary>
   ///   Indentation.
   /// </summary>
-  public DMW.Indentation? Indentation { get; set; }
+  [DataMember]
+  public DMW.Indentation? Indentation
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXW.Indentation>();
+      if (element != null)
+        return IndentationConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXW.Indentation>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = IndentationConverter.CreateOpenXmlElement<DXW.Indentation>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
   
   /// <summary>
   ///   ContextualSpacing.
   /// </summary>
-  public DMW.ContextualSpacing? ContextualSpacing { get; set; }
+  [DataMember]
+  public DMW.ContextualSpacing? ContextualSpacing
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXW.ContextualSpacing>();
+      if (element != null)
+        return ContextualSpacingConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXW.ContextualSpacing>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = ContextualSpacingConverter.CreateOpenXmlElement<DXW.ContextualSpacing>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
   
   /// <summary>
   ///   MirrorIndents.
   /// </summary>
-  public DMW.MirrorIndents? MirrorIndents { get; set; }
+  [DataMember]
+  public DMW.MirrorIndents? MirrorIndents
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXW.MirrorIndents>();
+      if (element != null)
+        return MirrorIndentsConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXW.MirrorIndents>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = MirrorIndentsConverter.CreateOpenXmlElement<DXW.MirrorIndents>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
   
   /// <summary>
   ///   SuppressOverlap.
   /// </summary>
-  public DMW.SuppressOverlap? SuppressOverlap { get; set; }
+  [DataMember]
+  public DMW.SuppressOverlap? SuppressOverlap
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXW.SuppressOverlap>();
+      if (element != null)
+        return SuppressOverlapConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXW.SuppressOverlap>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = SuppressOverlapConverter.CreateOpenXmlElement<DXW.SuppressOverlap>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
   
   /// <summary>
   ///   Justification.
   /// </summary>
-  public DMW.JustificationKind? Justification { get; set; }
+  [DataMember]
+  public DMW.JustificationKind? Justification
+  {
+    get
+    {
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.JustificationValues, DMW.JustificationKind>(_ExistingElement.GetFirstChild<DXW.Justification>()?.Val?.Value);
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXW.Justification>();
+      if (itemElement != null)
+      {
+        if (value != null)
+          EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.JustificationValues, DMW.JustificationKind>(itemElement, (DMW.JustificationKind)value);
+        else
+          itemElement.Remove();
+      }
+      else
+      if (value != null)
+        _ExistingElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.Justification, DocumentFormat.OpenXml.Wordprocessing.JustificationValues, DMW.JustificationKind>((DMW.JustificationKind)value));
+    }
+  }
   
   
   /// <summary>
   ///   TextDirection.
   /// </summary>
-  public DMW.TextDirectionKind? TextDirection { get; set; }
+  [DataMember]
+  public DMW.TextDirectionKind? TextDirection
+  {
+    get
+    {
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TextDirectionValues, DMW.TextDirectionKind>(_ExistingElement.GetFirstChild<DXW.TextDirection>()?.Val?.Value);
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXW.TextDirection>();
+      if (itemElement != null)
+      {
+        if (value != null)
+          EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TextDirectionValues, DMW.TextDirectionKind>(itemElement, (DMW.TextDirectionKind)value);
+        else
+          itemElement.Remove();
+      }
+      else
+      if (value != null)
+        _ExistingElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.TextDirection, DocumentFormat.OpenXml.Wordprocessing.TextDirectionValues, DMW.TextDirectionKind>((DMW.TextDirectionKind)value));
+    }
+  }
   
   
   /// <summary>
   ///   TextAlignment.
   /// </summary>
-  public DMW.VerticalTextAlignmentKind? TextAlignment { get; set; }
+  [DataMember]
+  public DMW.VerticalTextAlignmentKind? TextAlignment
+  {
+    get
+    {
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.VerticalTextAlignmentValues, DMW.VerticalTextAlignmentKind>(_ExistingElement.GetFirstChild<DXW.TextAlignment>()?.Val?.Value);
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXW.TextAlignment>();
+      if (itemElement != null)
+      {
+        if (value != null)
+          EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.VerticalTextAlignmentValues, DMW.VerticalTextAlignmentKind>(itemElement, (DMW.VerticalTextAlignmentKind)value);
+        else
+          itemElement.Remove();
+      }
+      else
+      if (value != null)
+        _ExistingElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.TextAlignment, DocumentFormat.OpenXml.Wordprocessing.VerticalTextAlignmentValues, DMW.VerticalTextAlignmentKind>((DMW.VerticalTextAlignmentKind)value));
+    }
+  }
   
   
   /// <summary>
   ///   TextBoxTightWrap.
   /// </summary>
-  public DMW.TextBoxTightWrapKind? TextBoxTightWrap { get; set; }
+  [DataMember]
+  public DMW.TextBoxTightWrapKind? TextBoxTightWrap
+  {
+    get
+    {
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TextBoxTightWrapValues, DMW.TextBoxTightWrapKind>(_ExistingElement.GetFirstChild<DXW.TextBoxTightWrap>()?.Val?.Value);
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXW.TextBoxTightWrap>();
+      if (itemElement != null)
+      {
+        if (value != null)
+          EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TextBoxTightWrapValues, DMW.TextBoxTightWrapKind>(itemElement, (DMW.TextBoxTightWrapKind)value);
+        else
+          itemElement.Remove();
+      }
+      else
+      if (value != null)
+        _ExistingElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.TextBoxTightWrap, DocumentFormat.OpenXml.Wordprocessing.TextBoxTightWrapValues, DMW.TextBoxTightWrapKind>((DMW.TextBoxTightWrapKind)value));
+    }
+  }
   
   
   /// <summary>
   ///   OutlineLevel.
   /// </summary>
-  public DMW.OutlineLevel? OutlineLevel { get; set; }
+  [DataMember]
+  public DMW.OutlineLevel? OutlineLevel
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXW.OutlineLevel>();
+      if (element != null)
+        return OutlineLevelConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXW.OutlineLevel>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = OutlineLevelConverter.CreateOpenXmlElement<DXW.OutlineLevel>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
   
   /// <summary>
   ///   DivId.
   /// </summary>
-  public String? DivId { get; set; }
+  [DataMember]
+  public String? DivId
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.GetFirstChild<DXW.DivId>()?.Val);
+    }
+    set
+    {
+      StringValueConverter.SetValue<DXW.DivId>(openXmlElement, value);
+    }
+  }
   
   
   /// <summary>
   ///   ConditionalFormatStyle.
   /// </summary>
-  public DMW.ConditionalFormatStyle? ConditionalFormatStyle { get; set; }
+  [DataMember]
+  public DMW.ConditionalFormatStyle? ConditionalFormatStyle
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXW.ConditionalFormatStyle>();
+      if (element != null)
+        return ConditionalFormatStyleConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXW.ConditionalFormatStyle>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = ConditionalFormatStyleConverter.CreateOpenXmlElement<DXW.ConditionalFormatStyle>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
   
   /// <summary>
   ///   Run Properties for the Paragraph Mark.
   /// </summary>
-  public DMW.ParagraphMarkRunProperties? ParagraphMarkRunProperties { get; set; }
+  [DataMember]
+  public DMW.ParagraphMarkRunProperties? ParagraphMarkRunProperties
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXW.ParagraphMarkRunProperties>();
+      if (element != null)
+        return ParagraphMarkRunPropertiesConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXW.ParagraphMarkRunProperties>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = ParagraphMarkRunPropertiesConverter.CreateOpenXmlElement<DXW.ParagraphMarkRunProperties>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
   
   /// <summary>
   ///   Section Properties.
   /// </summary>
-  public DMW.SectionProperties? SectionProperties { get; set; }
+  [DataMember]
+  public DMW.SectionProperties? SectionProperties
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXW.SectionProperties>();
+      if (element != null)
+        return SectionPropertiesConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXW.SectionProperties>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = SectionPropertiesConverter.CreateOpenXmlElement<DXW.SectionProperties>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
   
   /// <summary>
   ///   ParagraphPropertiesChange.
   /// </summary>
-  public DMW.ParagraphPropertiesChange? ParagraphPropertiesChange { get; set; }
+  [DataMember]
+  public DMW.ParagraphPropertiesChange? ParagraphPropertiesChange
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXW.ParagraphPropertiesChange>();
+      if (element != null)
+        return ParagraphPropertiesChangeConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXW.ParagraphPropertiesChange>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = ParagraphPropertiesChangeConverter.CreateOpenXmlElement<DXW.ParagraphPropertiesChange>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
 }

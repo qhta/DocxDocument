@@ -4,30 +4,124 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   3-D Scene.
 /// </summary>
-public partial class Scene3D
+public partial class Scene3D: ModelElement<DXDDD.Scene3D>
 {
+  public Scene3D(): base(){ }
+  
+  public Scene3D(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public Scene3D(DXDDD.Scene3D openXmlElement): base(openXmlElement) { }
+  
   
   /// <summary>
   ///   Camera.
   /// </summary>
-  public DMD.Camera? Camera { get; set; }
+  [DataMember]
+  public DMD.Camera? Camera
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXD.Camera>();
+      if (element != null)
+        return CameraConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXD.Camera>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = CameraConverter.CreateOpenXmlElement<DXD.Camera>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
   
   /// <summary>
   ///   Light Rig.
   /// </summary>
-  public DMD.LightRig? LightRig { get; set; }
+  [DataMember]
+  public DMD.LightRig? LightRig
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXD.LightRig>();
+      if (element != null)
+        return LightRigConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXD.LightRig>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = LightRigConverter.CreateOpenXmlElement<DXD.LightRig>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
   
   /// <summary>
   ///   Backdrop Plane.
   /// </summary>
-  public DMD.Backdrop? Backdrop { get; set; }
+  [DataMember]
+  public DMD.Backdrop? Backdrop
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXD.Backdrop>();
+      if (element != null)
+        return BackdropConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXD.Backdrop>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = BackdropConverter.CreateOpenXmlElement<DXD.Backdrop>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
   
   /// <summary>
   ///   ExtensionList.
   /// </summary>
-  public DMD.ExtensionList? ExtensionList { get; set; }
+  [DataMember]
+  public DMD.ExtensionList? ExtensionList
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXD.ExtensionList>();
+      if (element != null)
+        return ExtensionListConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXD.ExtensionList>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = ExtensionListConverter.CreateOpenXmlElement<DXD.ExtensionList>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
 }

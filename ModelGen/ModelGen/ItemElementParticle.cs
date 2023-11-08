@@ -5,6 +5,6 @@
 /// </summary>
 public class ItemElementParticle: SchemaParticle
 {
-  public TypeInfo ItemType { get; set; } = null!;
-  public PropInfo? AccessProperty { get; set; }
+  public TypeInfo ItemType { [DebuggerStepThrough] get; set; } = null!;
+  public PropInfo? AccessProperty { [DebuggerStepThrough] get; set; }
 }

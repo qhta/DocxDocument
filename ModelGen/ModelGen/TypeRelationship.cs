@@ -2,11 +2,11 @@
 
 public class TypeRelationship
 {
-  public TypeInfo Source { get; }
-  public TypeInfo Target { get; }
-  public Semantics Semantics { get; }
-  public int Order { get; set; }
-  public bool IsMultiple { get; set; }
+  public TypeInfo Source { [DebuggerStepThrough] get; }
+  public TypeInfo Target { [DebuggerStepThrough] get; }
+  public Semantics Semantics { [DebuggerStepThrough] get; }
+  public int Order { [DebuggerStepThrough] get; set; }
+  public bool IsMultiple { [DebuggerStepThrough] get; set; }
 
   public TypeRelationship(TypeInfo source, TypeInfo target, Semantics semantics, int order = 0)
   {

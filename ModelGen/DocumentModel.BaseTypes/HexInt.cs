@@ -1,9 +1,24 @@
 ﻿namespace DocumentModel;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
+/// <summary>
+/// This class represents a type of integer that is stored in an Office document as StringValue in a hexadecimal format.
+/// It implements desirable conversion to/from other types. When converting to string, it is returned in 8-digit hexadecimal form.
+/// </summary>
 public struct HexInt : IConvertible, IEquatable<HexInt>
 {
-  private readonly int Value;
+  public HexInt()
+  {
+    Value = 0;
+  }
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+
+  public string Val
+  {
+    get => ToString();
+    set => Value = int.Parse(value, NumberStyles.HexNumber);
+  }
+
+  private int Value { get; set; }
 
   public HexInt(string val)
   {
@@ -185,16 +200,16 @@ public struct HexInt : IConvertible, IEquatable<HexInt>
   public static implicit operator HexBinary(HexInt value) => new HexBinary(value.ToString());
   public static implicit operator HexInt(HexBinary value) => new HexInt(value.ToString());
 
-  //public static implicit operator HexBinary?(HexInt? value) => (value == null) ? (HexBinary?)null : new HexBinary(value.ToString());
-  //public static implicit operator HexInt?(HexBinary? value) => (value == null) ? (HexInt?)null : new HexInt(value.ToString());
+  /// <summary>
+  /// Returns 8-digit hex string of the value.
+  /// </summary>
+  /// <returns></returns>
   public override string ToString()
   {
-    //if (Value > uint.MaxValue)
-    //  return Value.ToString("X16");
     return Value.ToString("X8");
   }
 
-    public bool Equals(HexInt other)
+  public bool Equals(HexInt other)
   {
     return Value == other.Value;
   }
@@ -203,4 +218,6 @@ public struct HexInt : IConvertible, IEquatable<HexInt>
   {
     return Value;
   }
+
+
 }

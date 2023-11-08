@@ -4,54 +4,184 @@ namespace DocumentModel.Drawings.Office;
 /// <summary>
 ///   Defines the NonVisualDrawingProperties Class.
 /// </summary>
-public partial class NonVisualDrawingProperties
+public partial class NonVisualDrawingProperties: ModelElement<DXOD.NonVisualDrawingProperties>
 {
+  public NonVisualDrawingProperties(): base(){ }
+  
+  public NonVisualDrawingProperties(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public NonVisualDrawingProperties(DXOD.NonVisualDrawingProperties openXmlElement): base(openXmlElement) { }
+  
   
   /// <summary>
   ///   Application defined unique identifier.
   /// </summary>
-  public UInt32? Id { get; set; }
+  [DataMember]
+  public UInt32? Id
+  {
+    get
+    {
+      return _Element?.Id?.Value;
+    }
+    set
+    {
+      _ExistingElement.Id = value;
+    }
+  }
   
   
   /// <summary>
   ///   Name compatible with Object Model (non-unique).
   /// </summary>
-  public String? Name { get; set; }
+  [DataMember]
+  public String? Name
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Name);
+    }
+    set
+    {
+      _ExistingElement.Name = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Description of the drawing element.
   /// </summary>
-  public String? Description { get; set; }
+  [DataMember]
+  public String? Description
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Description);
+    }
+    set
+    {
+      _ExistingElement.Description = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Flag determining to show or hide this element.
   /// </summary>
-  public Boolean? Hidden { get; set; }
+  [DataMember]
+  public Boolean? Hidden
+  {
+    get
+    {
+      return _Element?.Hidden?.Value;
+    }
+    set
+    {
+      if (value != null)
+        _ExistingElement.Hidden = new BooleanValue { Value = (Boolean)value };
+      else
+        _ExistingElement.Hidden = null;
+    }
+  }
   
   
   /// <summary>
   ///   Title
   /// </summary>
-  public String? Title { get; set; }
+  [DataMember]
+  public String? Title
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Title);
+    }
+    set
+    {
+      _ExistingElement.Title = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Hyperlink associated with clicking or selecting the element..
   /// </summary>
-  public DMD.HyperlinkOnClick? HyperlinkOnClick { get; set; }
+  [DataMember]
+  public DMD.HyperlinkOnClick? HyperlinkOnClick
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXD.HyperlinkOnClick>();
+      if (element != null)
+        return HyperlinkOnClickConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXD.HyperlinkOnClick>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = HyperlinkOnClickConverter.CreateOpenXmlElement<DXD.HyperlinkOnClick>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
   
   /// <summary>
   ///   Hyperlink associated with hovering over the element..
   /// </summary>
-  public DMD.HyperlinkOnHover? HyperlinkOnHover { get; set; }
+  [DataMember]
+  public DMD.HyperlinkOnHover? HyperlinkOnHover
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXD.HyperlinkOnHover>();
+      if (element != null)
+        return HyperlinkOnHoverConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXD.HyperlinkOnHover>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = HyperlinkOnHoverConverter.CreateOpenXmlElement<DXD.HyperlinkOnHover>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
   
   /// <summary>
   ///   Future extension.
   /// </summary>
-  public DMD.NonVisualDrawingPropertiesExtensionList? NonVisualDrawingPropertiesExtensionList { get; set; }
+  [DataMember]
+  public DMD.NonVisualDrawingPropertiesExtensionList? NonVisualDrawingPropertiesExtensionList
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXD.NonVisualDrawingPropertiesExtensionList>();
+      if (element != null)
+        return NonVisualDrawingPropertiesExtensionListConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXD.NonVisualDrawingPropertiesExtensionList>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = NonVisualDrawingPropertiesExtensionListConverter.CreateOpenXmlElement<DXD.NonVisualDrawingPropertiesExtensionList>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
 }

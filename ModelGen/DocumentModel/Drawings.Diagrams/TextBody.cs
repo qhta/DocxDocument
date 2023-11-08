@@ -4,18 +4,68 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Text Body.
 /// </summary>
-public partial class TextBody
+public partial class TextBody: ModelElement<DXDDD.TextBody>
 {
+  public TextBody(): base(){ }
+  
+  public TextBody(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public TextBody(DXDDD.TextBody openXmlElement): base(openXmlElement) { }
+  
   
   /// <summary>
   ///   Body Properties.
   /// </summary>
-  public DMD.BodyProperties? BodyProperties { get; set; }
+  [DataMember]
+  public DMD.BodyProperties? BodyProperties
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXD.BodyProperties>();
+      if (element != null)
+        return BodyPropertiesConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXD.BodyProperties>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = BodyPropertiesConverter.CreateOpenXmlElement<DXD.BodyProperties>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
   
   /// <summary>
   ///   Text List Styles.
   /// </summary>
-  public DMD.ListStyle? ListStyle { get; set; }
+  [DataMember]
+  public DMD.ListStyle? ListStyle
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXD.ListStyle>();
+      if (element != null)
+        return ListStyleConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXD.ListStyle>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = ListStyleConverter.CreateOpenXmlElement<DXD.ListStyle>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
 }

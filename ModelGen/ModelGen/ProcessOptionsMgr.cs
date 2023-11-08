@@ -34,7 +34,7 @@ public static class ProcessOptionsMgr
               if (result != null)
               {
                 var aDataFolder = result.AppDataFolder;
-                if (!string.IsNullOrEmpty(aDataFolder) && aDataFolder!=DataFolder)
+                if (!string.IsNullOrEmpty(aDataFolder) && string.IsNullOrEmpty(DataFolder) && aDataFolder!=DataFolder)
                 {
                   result = GetInstance(aDataFolder);
                   result.AppDataFolder = aDataFolder;
@@ -97,6 +97,6 @@ public static class ProcessOptionsMgr
   public static Type[] GetGeneratorTypes()
   {
     var assembly = Assembly.GetAssembly(typeof(BaseCodeGenerator));
-    return assembly!.GetTypes().Where(item=>item.BaseType == typeof(BaseCodeGenerator)).ToArray();
+    return assembly!.GetTypes().Where(item=>item.IsSubclassOf(typeof(BaseCodeGenerator))).ToArray();
   }
 }

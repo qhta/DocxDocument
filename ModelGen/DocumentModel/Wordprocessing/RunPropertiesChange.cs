@@ -4,36 +4,108 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the RunPropertiesChange Class.
 /// </summary>
-public partial class RunPropertiesChange
+public partial class RunPropertiesChange: ModelElement<DXW.RunPropertiesChange>
 {
+  public RunPropertiesChange(): base(){ }
+  
+  public RunPropertiesChange(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public RunPropertiesChange(DXW.RunPropertiesChange openXmlElement): base(openXmlElement) { }
+  
   
   /// <summary>
   ///   author
   /// </summary>
-  public String? Author { get; set; }
+  [DataMember]
+  public String? Author
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Author);
+    }
+    set
+    {
+      _ExistingElement.Author = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   date
   /// </summary>
-  public DateTime? Date { get; set; }
+  [DataMember]
+  public DateTime? Date
+  {
+    get
+    {
+      return _Element?.Date?.Value;
+    }
+    set
+    {
+      _ExistingElement.Date = value;
+    }
+  }
   
   
   /// <summary>
   ///   dateUtc, this property is only available in Microsoft365 and later.
   /// </summary>
-  public DateTime? DateUtc { get; set; }
+  [DataMember]
+  public DateTime? DateUtc
+  {
+    get
+    {
+      return _Element?.DateUtc?.Value;
+    }
+    set
+    {
+      _ExistingElement.DateUtc = value;
+    }
+  }
   
   
   /// <summary>
   ///   Annotation Identifier
   /// </summary>
-  public String? Id { get; set; }
+  [DataMember]
+  public String? Id
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Id);
+    }
+    set
+    {
+      _ExistingElement.Id = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Previous Run Properties.
   /// </summary>
-  public DMW.PreviousRunProperties? PreviousRunProperties { get; set; }
+  [DataMember]
+  public DMW.PreviousRunProperties? PreviousRunProperties
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXW.PreviousRunProperties>();
+      if (element != null)
+        return PreviousRunPropertiesConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXW.PreviousRunProperties>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = PreviousRunPropertiesConverter.CreateOpenXmlElement<DXW.PreviousRunProperties>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
 }

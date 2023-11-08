@@ -4,36 +4,97 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   This element specifies the visual properties, associated server application and refresh mode of an embedded linked object.
 /// </summary>
-public partial class ObjectLink
+public partial class ObjectLink: ModelElement<DXW.ObjectLink>
 {
+  public ObjectLink(): base(){ }
+  
+  public ObjectLink(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public ObjectLink(DXW.ObjectLink openXmlElement): base(openXmlElement) { }
+  
   
   /// <summary>
   ///   lockedField
   /// </summary>
-  public Boolean? LockedField { get; set; }
+  [DataMember]
+  public Boolean? LockedField
+  {
+    get
+    {
+      return BooleanValueConverter.GetValue(_Element?.LockedField);
+    }
+    set
+    {
+      _ExistingElement.LockedField = BooleanValueConverter.CreateOnOffValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   id
   /// </summary>
-  public String? Id { get; set; }
+  [DataMember]
+  public String? Id
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Id);
+    }
+    set
+    {
+      _ExistingElement.Id = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   progId
   /// </summary>
-  public String? ProgId { get; set; }
+  [DataMember]
+  public String? ProgId
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.ProgId);
+    }
+    set
+    {
+      _ExistingElement.ProgId = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   shapeId
   /// </summary>
-  public String? ShapeId { get; set; }
+  [DataMember]
+  public String? ShapeId
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.ShapeId);
+    }
+    set
+    {
+      _ExistingElement.ShapeId = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   fieldCodes
   /// </summary>
-  public String? FieldCodes { get; set; }
+  [DataMember]
+  public String? FieldCodes
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.FieldCodes);
+    }
+    set
+    {
+      _ExistingElement.FieldCodes = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
 }

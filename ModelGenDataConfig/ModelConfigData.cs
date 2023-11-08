@@ -416,15 +416,14 @@ public class ModelConfigData
       {
         var k = "Collection<".Length;
         var str = item.Value.Substring(k, item.Value.Length - k - 1);
-        var type = Type.GetType(str);
-        Debug.Assert(type != null);
+        var type = GetType(str);
         type = typeof(Collection<>).MakeGenericType(type);
         PropertyTypes.Add(item.Key, type);
       }
       else
       {
-        var type = Type.GetType(item.Value);
-        Debug.Assert(type != null);
+        var typeName = item.Value;
+        var type = GetType(typeName);
         if (type != null)
           PropertyTypes.Add(item.Key, type);
       }
@@ -454,7 +453,7 @@ public class ModelConfigData
   #region Types
   public bool IsExcluded(Type type)
   {
-    if (type.Namespace.StartsWith("System") && !type.IsConstructedGenericType)
+    if (type.Namespace?.StartsWith("System") == true && !type.IsConstructedGenericType)
       return true;
     var fullNameComparison = IncludedTypes.FirstOrDefault(item => item.Contains('.')) != null
                           || ExcludedTypes.FirstOrDefault(item => item.Contains('.')) != null;
@@ -756,6 +755,7 @@ public class ModelConfigData
 
   public void LoadData(string? dataFolder)
   {
+    Debug.WriteLine($"ModelConfigData.LoadData({dataFolder})");
     LoadDataFromFile(GetFilename(dataFolder));
     DataFolder = dataFolder;
   }
@@ -771,7 +771,8 @@ public class ModelConfigData
   {
     var path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
     path = Path.Combine(path, "ModelGen");
-    path = Path.Combine(path, DataFolder);
+    if (DataFolder != null)
+      path = Path.Combine(path, DataFolder);
     if (!Directory.Exists(path))
       Directory.CreateDirectory(path);
     return path;
@@ -783,7 +784,7 @@ public class ModelConfigData
   {
     var path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
     path = Path.Combine(path, "ModelGen");
-    if (dataFolder!=null)
+    if (dataFolder != null)
       path = Path.Combine(path, dataFolder);
     if (!Directory.Exists(path))
       Directory.CreateDirectory(path);
@@ -888,7 +889,7 @@ public class ModelConfigData
   {
     foreach (var type in assembly.ExportedTypes)
       if (!type.IsConstructedGenericType)
-        PredefinedTypes.Add(type.FullName);
+        PredefinedTypes.Add(type.FullName ?? "");
   }
 
   private void WriteStrings(TextWriter textWriter, string caption, ICollection<string> data)
@@ -950,4 +951,16 @@ public class ModelConfigData
   }
   #endregion
 
+  private Type GetType(string typeName)
+  {
+    var types = typeof(System.String).Assembly.GetTypes();
+    var type = types.FirstOrDefault(item => item.Name == typeName);
+    if (type == null)
+    {
+      types = typeof(DocumentModel.ModelElement).Assembly.GetTypes();
+      type = types.FirstOrDefault(item => item.Name == typeName);
+    }
+    Debug.Assert(type != null, $"Type {typeName} not found");
+    return type;
+  }
 }

@@ -4,134 +4,396 @@ namespace DocumentModel.CustomUI;
 /// <summary>
 ///   Defines the Group Class.
 /// </summary>
-public partial class Group
+public partial class Group: ModelElement<DXOCUI.Group>
 {
+  public Group(): base(){ }
+  
+  public Group(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public Group(DXOCUI.Group openXmlElement): base(openXmlElement) { }
+  
   
   /// <summary>
   ///   id
   /// </summary>
-  public String? Id { get; set; }
+  [DataMember]
+  public String? Id
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Id);
+    }
+    set
+    {
+      _ExistingElement.Id = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   idQ
   /// </summary>
-  public String? IdQ { get; set; }
+  [DataMember]
+  public String? IdQ
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.IdQ);
+    }
+    set
+    {
+      _ExistingElement.IdQ = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   idMso
   /// </summary>
-  public String? IdMso { get; set; }
+  [DataMember]
+  public String? IdMso
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.IdMso);
+    }
+    set
+    {
+      _ExistingElement.IdMso = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   tag
   /// </summary>
-  public String? Tag { get; set; }
+  [DataMember]
+  public String? Tag
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Tag);
+    }
+    set
+    {
+      _ExistingElement.Tag = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   label
   /// </summary>
-  public String? Label { get; set; }
+  [DataMember]
+  public String? Label
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Label);
+    }
+    set
+    {
+      _ExistingElement.Label = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   getLabel
   /// </summary>
-  public String? GetLabel { get; set; }
+  [DataMember]
+  public String? GetLabel
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.GetLabel);
+    }
+    set
+    {
+      _ExistingElement.GetLabel = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   image
   /// </summary>
-  public String? Image { get; set; }
+  [DataMember]
+  public String? Image
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Image);
+    }
+    set
+    {
+      _ExistingElement.Image = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   imageMso
   /// </summary>
-  public String? ImageMso { get; set; }
+  [DataMember]
+  public String? ImageMso
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.ImageMso);
+    }
+    set
+    {
+      _ExistingElement.ImageMso = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   getImage
   /// </summary>
-  public String? GetImage { get; set; }
+  [DataMember]
+  public String? GetImage
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.GetImage);
+    }
+    set
+    {
+      _ExistingElement.GetImage = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   insertAfterMso
   /// </summary>
-  public String? InsertAfterMso { get; set; }
+  [DataMember]
+  public String? InsertAfterMso
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.InsertAfterMso);
+    }
+    set
+    {
+      _ExistingElement.InsertAfterMso = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   insertBeforeMso
   /// </summary>
-  public String? InsertBeforeMso { get; set; }
+  [DataMember]
+  public String? InsertBeforeMso
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.InsertBeforeMso);
+    }
+    set
+    {
+      _ExistingElement.InsertBeforeMso = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   insertAfterQ
   /// </summary>
-  public String? InsertAfterQ { get; set; }
+  [DataMember]
+  public String? InsertAfterQ
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.InsertAfterQ);
+    }
+    set
+    {
+      _ExistingElement.InsertAfterQ = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   insertBeforeQ
   /// </summary>
-  public String? InsertBeforeQ { get; set; }
+  [DataMember]
+  public String? InsertBeforeQ
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.InsertBeforeQ);
+    }
+    set
+    {
+      _ExistingElement.InsertBeforeQ = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   screentip
   /// </summary>
-  public String? Screentip { get; set; }
+  [DataMember]
+  public String? Screentip
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Screentip);
+    }
+    set
+    {
+      _ExistingElement.Screentip = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   getScreentip
   /// </summary>
-  public String? GetScreentip { get; set; }
+  [DataMember]
+  public String? GetScreentip
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.GetScreentip);
+    }
+    set
+    {
+      _ExistingElement.GetScreentip = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   supertip
   /// </summary>
-  public String? Supertip { get; set; }
+  [DataMember]
+  public String? Supertip
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Supertip);
+    }
+    set
+    {
+      _ExistingElement.Supertip = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   getSupertip
   /// </summary>
-  public String? GetSupertip { get; set; }
+  [DataMember]
+  public String? GetSupertip
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.GetSupertip);
+    }
+    set
+    {
+      _ExistingElement.GetSupertip = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   visible
   /// </summary>
-  public Boolean? Visible { get; set; }
+  [DataMember]
+  public Boolean? Visible
+  {
+    get
+    {
+      return _Element?.Visible?.Value;
+    }
+    set
+    {
+      if (value != null)
+        _ExistingElement.Visible = new BooleanValue { Value = (Boolean)value };
+      else
+        _ExistingElement.Visible = null;
+    }
+  }
   
   
   /// <summary>
   ///   getVisible
   /// </summary>
-  public String? GetVisible { get; set; }
+  [DataMember]
+  public String? GetVisible
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.GetVisible);
+    }
+    set
+    {
+      _ExistingElement.GetVisible = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   keytip
   /// </summary>
-  public String? Keytip { get; set; }
+  [DataMember]
+  public String? Keytip
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Keytip);
+    }
+    set
+    {
+      _ExistingElement.Keytip = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   getKeytip
   /// </summary>
-  public String? GetKeytip { get; set; }
+  [DataMember]
+  public String? GetKeytip
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.GetKeytip);
+    }
+    set
+    {
+      _ExistingElement.GetKeytip = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
-  public DMCUI.DialogBoxLauncher? DialogBoxLauncher { get; set; }
+  [DataMember]
+  public DMCUI.DialogBoxLauncher? DialogBoxLauncher
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXOCUI.DialogBoxLauncher>();
+      if (element != null)
+        return DialogBoxLauncherConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXOCUI.DialogBoxLauncher>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DialogBoxLauncherConverter.CreateOpenXmlElement<DXOCUI.DialogBoxLauncher>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
 }

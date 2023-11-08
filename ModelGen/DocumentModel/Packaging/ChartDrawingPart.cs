@@ -4,16 +4,60 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the ChartDrawingPart
 /// </summary>
-public partial class ChartDrawingPart
+public partial class ChartDrawingPart: ModelElement<DXPack.ChartDrawingPart>
 {
-  public String? ContentType { get; set; }
+  public ChartDrawingPart(): base(){ }
   
-  public String? RelationshipType { get; set; }
+  public ChartDrawingPart(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public ChartDrawingPart(DXPack.ChartDrawingPart openXmlElement): base(openXmlElement) { }
+  
+  [DataMember]
+  public String? ContentType
+  {
+    get
+    {
+      return _Element?.ContentType;
+    }
+    set
+    {
+      _ExistingElement.ContentType = value;
+    }
+  }
+  
+  [DataMember]
+  public String? RelationshipType
+  {
+    get
+    {
+      return _Element?.RelationshipType;
+    }
+    set
+    {
+      _ExistingElement.RelationshipType = value;
+    }
+  }
   
   
   /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>
-  public DMDC.UserShapes? UserShapes { get; set; }
+  [DataMember]
+  public DMDC.UserShapes? UserShapes
+  {
+    get
+    {
+        return UserShapesConverter.CreateModelElement(_Element?.RootElement as DXDC.UserShapes);
+    }
+    set
+    {
+      if (value != null)
+      {
+         var rootElement = UserShapesConverter.CreateOpenXmlElement<DXDC.UserShapes>(value);
+         if (rootElement != null)
+           _ExistingElement.UserShapes = rootElement;
+      }
+    }
+  }
   
 }

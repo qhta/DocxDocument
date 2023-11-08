@@ -4,8 +4,36 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Defines the ColorData Class.
 /// </summary>
-public partial class ColorData
+public partial class ColorData: ModelElement<DXDDD.ColorData>
 {
-  public DMDD.DataModel? DataModel { get; set; }
+  public ColorData(): base(){ }
+  
+  public ColorData(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public ColorData(DXDDD.ColorData openXmlElement): base(openXmlElement) { }
+  
+  [DataMember]
+  public DMDD.DataModel? DataModel
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXDDD.DataModel>();
+      if (element != null)
+        return DataModelConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXDDD.DataModel>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = DataModelConverter.CreateOpenXmlElement<DXDDD.DataModel>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
 }

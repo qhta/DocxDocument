@@ -4,12 +4,29 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Most Recently Used Colors.
 /// </summary>
-public partial class ColorMostRecentlyUsed
+public partial class ColorMostRecentlyUsed: ModelElement<DXVO.ColorMostRecentlyUsed>
 {
+  public ColorMostRecentlyUsed(): base(){ }
+  
+  public ColorMostRecentlyUsed(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public ColorMostRecentlyUsed(DXVO.ColorMostRecentlyUsed openXmlElement): base(openXmlElement) { }
+  
   
   /// <summary>
   ///   Recent colors
   /// </summary>
-  public String? Colors { get; set; }
+  [DataMember]
+  public String? Colors
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Colors);
+    }
+    set
+    {
+      _ExistingElement.Colors = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
 }

@@ -4,10 +4,38 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the WordAttachedToolbarsPart
 /// </summary>
-public partial class WordAttachedToolbarsPart
+public partial class WordAttachedToolbarsPart: ModelElement<DXPack.WordAttachedToolbarsPart>
 {
-  public String? ContentType { get; set; }
+  public WordAttachedToolbarsPart(): base(){ }
   
-  public String? RelationshipType { get; set; }
+  public WordAttachedToolbarsPart(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public WordAttachedToolbarsPart(DXPack.WordAttachedToolbarsPart openXmlElement): base(openXmlElement) { }
+  
+  [DataMember]
+  public String? ContentType
+  {
+    get
+    {
+      return _Element?.ContentType;
+    }
+    set
+    {
+      _ExistingElement.ContentType = value;
+    }
+  }
+  
+  [DataMember]
+  public String? RelationshipType
+  {
+    get
+    {
+      return _Element?.RelationshipType;
+    }
+    set
+    {
+      _ExistingElement.RelationshipType = value;
+    }
+  }
   
 }

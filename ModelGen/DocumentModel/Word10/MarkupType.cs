@@ -4,12 +4,29 @@ namespace DocumentModel.Word10;
 /// <summary>
 ///   Defines the MarkupType Class.
 /// </summary>
-public partial class MarkupType
+public partial class MarkupType: ModelElement<DXO10W.MarkupType>
 {
+  public MarkupType(): base(){ }
+  
+  public MarkupType(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public MarkupType(DXO10W.MarkupType openXmlElement): base(openXmlElement) { }
+  
   
   /// <summary>
   ///   Annotation Identifier
   /// </summary>
-  public String? Id { get; set; }
+  [DataMember]
+  public String? Id
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Id);
+    }
+    set
+    {
+      _ExistingElement.Id = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
 }

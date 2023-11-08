@@ -4,18 +4,101 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the NumRefExtension Class.
 /// </summary>
-public partial class NumRefExtension
+public partial class NumRefExtension: ModelElement<DXDC.NumRefExtension>
 {
+  public NumRefExtension(): base(){ }
+  
+  public NumRefExtension(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public NumRefExtension(DXDC.NumRefExtension openXmlElement): base(openXmlElement) { }
+  
   
   /// <summary>
   ///   URI
   /// </summary>
-  public String? Uri { get; set; }
+  [DataMember]
+  public String? Uri
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Uri);
+    }
+    set
+    {
+      _ExistingElement.Uri = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
-  public DMDC13.FullReference? FullReference { get; set; }
+  [DataMember]
+  public DMDC13.FullReference? FullReference
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXO13DC.FullReference>();
+      if (element != null)
+        return FullReferenceConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXO13DC.FullReference>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = FullReferenceConverter.CreateOpenXmlElement<DXO13DC.FullReference>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
-  public DMDC13.LevelReference? LevelReference { get; set; }
+  [DataMember]
+  public DMDC13.LevelReference? LevelReference
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXO13DC.LevelReference>();
+      if (element != null)
+        return LevelReferenceConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXO13DC.LevelReference>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = LevelReferenceConverter.CreateOpenXmlElement<DXO13DC.LevelReference>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
-  public DMDC13.FormulaReference? FormulaReference { get; set; }
+  [DataMember]
+  public DMDC13.FormulaReference? FormulaReference
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXO13DC.FormulaReference>();
+      if (element != null)
+        return FormulaReferenceConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXO13DC.FormulaReference>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = FormulaReferenceConverter.CreateOpenXmlElement<DXO13DC.FormulaReference>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
 }

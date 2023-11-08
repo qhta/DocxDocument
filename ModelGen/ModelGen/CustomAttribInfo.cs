@@ -10,19 +10,19 @@ public class CustomAttribInfo: ModelElement
   /// Type of the CustomAttribute.
   /// </summary>
   [XmlIgnore]
-  public TypeInfo AttributeTypeInfo { get; }
+  public TypeInfo AttributeTypeInfo { [DebuggerStepThrough] get; }
 
   /// <summary>
   /// Represents arguments passed in the constructor of the CustomAttribute.
   /// </summary>
   [XmlIgnore]
-  public OwnedCollection<CustomAttribTypedArgument> ConstructorArguments { get; }
+  public OwnedCollection<CustomAttribTypedArgument> ConstructorArguments { [DebuggerStepThrough] get; }
 
   /// <summary>
   /// Represents name arguments set to the CustomAttribute.
   /// </summary>
   [XmlIgnore]
-  public OwnedCollection<CustomAttribNamedArgument> NamedArguments { get; set; }
+  public OwnedCollection<CustomAttribNamedArgument> NamedArguments { [DebuggerStepThrough] get; set; }
 
   public CustomAttribInfo(Attribute attribute) : base(attribute.GetType().Name)
   {

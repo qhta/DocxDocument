@@ -4,192 +4,544 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Shape Group.
 /// </summary>
-public partial class Group
+public partial class Group: ModelElement<DXV.Group>
 {
+  public Group(): base(){ }
+  
+  public Group(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public Group(DXV.Group openXmlElement): base(openXmlElement) { }
+  
   
   /// <summary>
   ///   Unique Identifier
   /// </summary>
-  public String? Id { get; set; }
+  [DataMember]
+  public String? Id
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Id);
+    }
+    set
+    {
+      _ExistingElement.Id = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Shape Styling Properties
   /// </summary>
-  public String? Style { get; set; }
+  [DataMember]
+  public String? Style
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Style);
+    }
+    set
+    {
+      _ExistingElement.Style = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Hyperlink Target
   /// </summary>
-  public String? Href { get; set; }
+  [DataMember]
+  public String? Href
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Href);
+    }
+    set
+    {
+      _ExistingElement.Href = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Hyperlink Display Target
   /// </summary>
-  public String? Target { get; set; }
+  [DataMember]
+  public String? Target
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Target);
+    }
+    set
+    {
+      _ExistingElement.Target = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   CSS Reference
   /// </summary>
-  public String? Class { get; set; }
+  [DataMember]
+  public String? Class
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Class);
+    }
+    set
+    {
+      _ExistingElement.Class = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Shape Title
   /// </summary>
-  public String? Title { get; set; }
+  [DataMember]
+  public String? Title
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Title);
+    }
+    set
+    {
+      _ExistingElement.Title = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Alternate Text
   /// </summary>
-  public String? Alternate { get; set; }
+  [DataMember]
+  public String? Alternate
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Alternate);
+    }
+    set
+    {
+      _ExistingElement.Alternate = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Coordinate Space Size
   /// </summary>
-  public String? CoordinateSize { get; set; }
+  [DataMember]
+  public String? CoordinateSize
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.CoordinateSize);
+    }
+    set
+    {
+      _ExistingElement.CoordinateSize = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Coordinate Space Origin
   /// </summary>
-  public String? CoordinateOrigin { get; set; }
+  [DataMember]
+  public String? CoordinateOrigin
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.CoordinateOrigin);
+    }
+    set
+    {
+      _ExistingElement.CoordinateOrigin = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Shape Bounding Polygon
   /// </summary>
-  public String? WrapCoordinates { get; set; }
+  [DataMember]
+  public String? WrapCoordinates
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.WrapCoordinates);
+    }
+    set
+    {
+      _ExistingElement.WrapCoordinates = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Print Toggle
   /// </summary>
-  public DM.TrueFalseValue? Print { get; set; }
+  [DataMember]
+  public DM.TrueFalseValue? Print
+  {
+    get
+    {
+      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+    }
+    set
+    {
+      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+    }
+  }
   
   
   /// <summary>
   ///   spid
   /// </summary>
-  public String? OptionalString { get; set; }
+  [DataMember]
+  public String? OptionalString
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.OptionalString);
+    }
+    set
+    {
+      _ExistingElement.OptionalString = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   oned
   /// </summary>
-  public DM.TrueFalseValue? Oned { get; set; }
+  [DataMember]
+  public DM.TrueFalseValue? Oned
+  {
+    get
+    {
+      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+    }
+    set
+    {
+      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+    }
+  }
   
   
   /// <summary>
   ///   regroupid
   /// </summary>
-  public Int64? RegroupId { get; set; }
+  [DataMember]
+  public Int64? RegroupId
+  {
+    get
+    {
+      return _Element?.RegroupId?.Value;
+    }
+    set
+    {
+      _ExistingElement.RegroupId = value;
+    }
+  }
   
   
   /// <summary>
   ///   doubleclicknotify
   /// </summary>
-  public DM.TrueFalseValue? DoubleClickNotify { get; set; }
+  [DataMember]
+  public DM.TrueFalseValue? DoubleClickNotify
+  {
+    get
+    {
+      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+    }
+    set
+    {
+      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+    }
+  }
   
   
   /// <summary>
   ///   button
   /// </summary>
-  public DM.TrueFalseValue? Button { get; set; }
+  [DataMember]
+  public DM.TrueFalseValue? Button
+  {
+    get
+    {
+      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+    }
+    set
+    {
+      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+    }
+  }
   
   
   /// <summary>
   ///   userhidden
   /// </summary>
-  public DM.TrueFalseValue? UserHidden { get; set; }
+  [DataMember]
+  public DM.TrueFalseValue? UserHidden
+  {
+    get
+    {
+      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+    }
+    set
+    {
+      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+    }
+  }
   
   
   /// <summary>
   ///   bullet
   /// </summary>
-  public DM.TrueFalseValue? Bullet { get; set; }
+  [DataMember]
+  public DM.TrueFalseValue? Bullet
+  {
+    get
+    {
+      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+    }
+    set
+    {
+      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+    }
+  }
   
   
   /// <summary>
   ///   hr
   /// </summary>
-  public DM.TrueFalseValue? Horizontal { get; set; }
+  [DataMember]
+  public DM.TrueFalseValue? Horizontal
+  {
+    get
+    {
+      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+    }
+    set
+    {
+      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+    }
+  }
   
   
   /// <summary>
   ///   hrstd
   /// </summary>
-  public DM.TrueFalseValue? HorizontalStandard { get; set; }
+  [DataMember]
+  public DM.TrueFalseValue? HorizontalStandard
+  {
+    get
+    {
+      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+    }
+    set
+    {
+      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+    }
+  }
   
   
   /// <summary>
   ///   hrnoshade
   /// </summary>
-  public DM.TrueFalseValue? HorizontalNoShade { get; set; }
+  [DataMember]
+  public DM.TrueFalseValue? HorizontalNoShade
+  {
+    get
+    {
+      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+    }
+    set
+    {
+      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+    }
+  }
   
   
   /// <summary>
   ///   hrpct
   /// </summary>
-  public Single? HorizontalPercentage { get; set; }
+  [DataMember]
+  public Single? HorizontalPercentage
+  {
+    get
+    {
+      return _Element?.HorizontalPercentage?.Value;
+    }
+    set
+    {
+      _ExistingElement.HorizontalPercentage = value;
+    }
+  }
   
   
   /// <summary>
   ///   allowincell
   /// </summary>
-  public DM.TrueFalseValue? AllowInCell { get; set; }
+  [DataMember]
+  public DM.TrueFalseValue? AllowInCell
+  {
+    get
+    {
+      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+    }
+    set
+    {
+      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+    }
+  }
   
   
   /// <summary>
   ///   allowoverlap
   /// </summary>
-  public DM.TrueFalseValue? AllowOverlap { get; set; }
+  [DataMember]
+  public DM.TrueFalseValue? AllowOverlap
+  {
+    get
+    {
+      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+    }
+    set
+    {
+      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+    }
+  }
   
   
   /// <summary>
   ///   userdrawn
   /// </summary>
-  public DM.TrueFalseValue? UserDrawn { get; set; }
+  [DataMember]
+  public DM.TrueFalseValue? UserDrawn
+  {
+    get
+    {
+      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+    }
+    set
+    {
+      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+    }
+  }
   
   
   /// <summary>
   ///   dgmlayout
   /// </summary>
-  public Int64? DiagramLayout { get; set; }
+  [DataMember]
+  public Int64? DiagramLayout
+  {
+    get
+    {
+      return _Element?.DiagramLayout?.Value;
+    }
+    set
+    {
+      _ExistingElement.DiagramLayout = value;
+    }
+  }
   
   
   /// <summary>
   ///   dgmnodekind
   /// </summary>
-  public Int64? DiagramNodeKind { get; set; }
+  [DataMember]
+  public Int64? DiagramNodeKind
+  {
+    get
+    {
+      return _Element?.DiagramNodeKind?.Value;
+    }
+    set
+    {
+      _ExistingElement.DiagramNodeKind = value;
+    }
+  }
   
   
   /// <summary>
   ///   dgmlayoutmru
   /// </summary>
-  public Int64? DiagramLayoutMostRecentUsed { get; set; }
+  [DataMember]
+  public Int64? DiagramLayoutMostRecentUsed
+  {
+    get
+    {
+      return _Element?.DiagramLayoutMostRecentUsed?.Value;
+    }
+    set
+    {
+      _ExistingElement.DiagramLayoutMostRecentUsed = value;
+    }
+  }
   
   
   /// <summary>
   ///   Encoded Package
   /// </summary>
-  public DM.Base64Binary? Gfxdata { get; set; }
+  [DataMember]
+  public DM.Base64Binary? Gfxdata
+  {
+    get
+    {
+      if (_Element?.Gfxdata?.Value != null)
+        return Convert.FromBase64String(_ExistingElement.Gfxdata.Value);
+      return null;
+    }
+    set
+    {
+      if (value != null)
+        _ExistingElement.Gfxdata = Convert.ToBase64String(value);
+      else
+        _ExistingElement.Gfxdata = null;
+    }
+  }
   
   
   /// <summary>
   ///   Table Properties
   /// </summary>
-  public String? TableProperties { get; set; }
+  [DataMember]
+  public String? TableProperties
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.TableProperties);
+    }
+    set
+    {
+      _ExistingElement.TableProperties = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Table Row Height Limits
   /// </summary>
-  public String? TableLimits { get; set; }
+  [DataMember]
+  public String? TableLimits
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.TableLimits);
+    }
+    set
+    {
+      _ExistingElement.TableLimits = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
 }

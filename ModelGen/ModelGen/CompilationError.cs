@@ -2,7 +2,7 @@
 
 public record CompilationError
 {
-  public string? Filename { get; set; }
-  public string? Code { get; set; }
-  public string? Description { get; set; }
+  public string? Filename { [DebuggerStepThrough] get; set; }
+  public string? Code { [DebuggerStepThrough] get; set; }
+  public string? Description { [DebuggerStepThrough] get; set; }
 }

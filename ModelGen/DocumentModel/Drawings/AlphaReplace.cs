@@ -4,12 +4,29 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   This element specifies an alpha replace effect.
 /// </summary>
-public partial class AlphaReplace
+public partial class AlphaReplace: ModelElement<DXD.AlphaReplace>
 {
+  public AlphaReplace(): base(){ }
+  
+  public AlphaReplace(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public AlphaReplace(DXD.AlphaReplace openXmlElement): base(openXmlElement) { }
+  
   
   /// <summary>
   ///   Specifies the new opacity value.
   /// </summary>
-  public Int32? Alpha { get; set; }
+  [DataMember]
+  public Int32? Alpha
+  {
+    get
+    {
+      return _Element?.Alpha?.Value;
+    }
+    set
+    {
+      _ExistingElement.Alpha = value;
+    }
+  }
   
 }

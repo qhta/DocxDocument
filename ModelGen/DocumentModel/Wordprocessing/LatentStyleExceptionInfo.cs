@@ -4,42 +4,114 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   This element specifies the properties which shall be applied a single latent style for this document. Latent styles refer to any set of known style definitions which have not been included in the current document.
 /// </summary>
-public partial class LatentStyleExceptionInfo
+public partial class LatentStyleExceptionInfo: ModelElement<DXW.LatentStyleExceptionInfo>
 {
+  public LatentStyleExceptionInfo(): base(){ }
+  
+  public LatentStyleExceptionInfo(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public LatentStyleExceptionInfo(DXW.LatentStyleExceptionInfo openXmlElement): base(openXmlElement) { }
+  
   
   /// <summary>
   ///   Primary Style Name
   /// </summary>
-  public String? Name { get; set; }
+  [DataMember]
+  public String? Name
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Name);
+    }
+    set
+    {
+      _ExistingElement.Name = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Latent Style Locking Setting
   /// </summary>
-  public Boolean? Locked { get; set; }
+  [DataMember]
+  public Boolean? Locked
+  {
+    get
+    {
+      return BooleanValueConverter.GetValue(_Element?.Locked);
+    }
+    set
+    {
+      _ExistingElement.Locked = BooleanValueConverter.CreateOnOffValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Override default sorting order
   /// </summary>
-  public Int32? UiPriority { get; set; }
+  [DataMember]
+  public Int32? UiPriority
+  {
+    get
+    {
+      return _Element?.UiPriority?.Value;
+    }
+    set
+    {
+      _ExistingElement.UiPriority = value;
+    }
+  }
   
   
   /// <summary>
   ///   Semi hidden text override
   /// </summary>
-  public Boolean? SemiHidden { get; set; }
+  [DataMember]
+  public Boolean? SemiHidden
+  {
+    get
+    {
+      return BooleanValueConverter.GetValue(_Element?.SemiHidden);
+    }
+    set
+    {
+      _ExistingElement.SemiHidden = BooleanValueConverter.CreateOnOffValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Unhide when used
   /// </summary>
-  public Boolean? UnhideWhenUsed { get; set; }
+  [DataMember]
+  public Boolean? UnhideWhenUsed
+  {
+    get
+    {
+      return BooleanValueConverter.GetValue(_Element?.UnhideWhenUsed);
+    }
+    set
+    {
+      _ExistingElement.UnhideWhenUsed = BooleanValueConverter.CreateOnOffValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Latent Style Primary Style Setting
   /// </summary>
-  public Boolean? PrimaryStyle { get; set; }
+  [DataMember]
+  public Boolean? PrimaryStyle
+  {
+    get
+    {
+      return BooleanValueConverter.GetValue(_Element?.PrimaryStyle);
+    }
+    set
+    {
+      _ExistingElement.PrimaryStyle = BooleanValueConverter.CreateOnOffValue(value);
+    }
+  }
   
 }

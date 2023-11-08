@@ -4,42 +4,114 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   This element specifies the shading applied to the contents of the paragraph.
 /// </summary>
-public partial class Shading
+public partial class Shading: ModelElement<DXW.Shading>
 {
+  public Shading(): base(){ }
+  
+  public Shading(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public Shading(DXW.Shading openXmlElement): base(openXmlElement) { }
+  
   
   /// <summary>
   ///   Shading Pattern Color
   /// </summary>
-  public String? Color { get; set; }
+  [DataMember]
+  public String? Color
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Color);
+    }
+    set
+    {
+      _ExistingElement.Color = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Shading Pattern Theme Color Tint
   /// </summary>
-  public String? ThemeTint { get; set; }
+  [DataMember]
+  public String? ThemeTint
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.ThemeTint);
+    }
+    set
+    {
+      _ExistingElement.ThemeTint = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Shading Pattern Theme Color Shade
   /// </summary>
-  public String? ThemeShade { get; set; }
+  [DataMember]
+  public String? ThemeShade
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.ThemeShade);
+    }
+    set
+    {
+      _ExistingElement.ThemeShade = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Shading Background Color
   /// </summary>
-  public String? Fill { get; set; }
+  [DataMember]
+  public String? Fill
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Fill);
+    }
+    set
+    {
+      _ExistingElement.Fill = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Shading Background Theme Color Tint
   /// </summary>
-  public String? ThemeFillTint { get; set; }
+  [DataMember]
+  public String? ThemeFillTint
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.ThemeFillTint);
+    }
+    set
+    {
+      _ExistingElement.ThemeFillTint = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Shading Background Theme Color Shade
   /// </summary>
-  public String? ThemeFillShade { get; set; }
+  [DataMember]
+  public String? ThemeFillShade
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.ThemeFillShade);
+    }
+    set
+    {
+      _ExistingElement.ThemeFillShade = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
 }

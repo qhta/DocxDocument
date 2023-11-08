@@ -4,24 +4,66 @@ namespace DocumentModel.CustomUI10;
 /// <summary>
 ///   Defines the TabSet Class.
 /// </summary>
-public partial class TabSet
+public partial class TabSet: ModelElement<DXO10CUI.TabSet>
 {
+  public TabSet(): base(){ }
+  
+  public TabSet(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public TabSet(DXO10CUI.TabSet openXmlElement): base(openXmlElement) { }
+  
   
   /// <summary>
   ///   idMso, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? IdMso { get; set; }
+  [DataMember]
+  public String? IdMso
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.IdMso);
+    }
+    set
+    {
+      _ExistingElement.IdMso = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   visible, this property is only available in Office 2010 and later.
   /// </summary>
-  public Boolean? Visible { get; set; }
+  [DataMember]
+  public Boolean? Visible
+  {
+    get
+    {
+      return _Element?.Visible?.Value;
+    }
+    set
+    {
+      if (value != null)
+        _ExistingElement.Visible = new BooleanValue { Value = (Boolean)value };
+      else
+        _ExistingElement.Visible = null;
+    }
+  }
   
   
   /// <summary>
   ///   getVisible, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? GetVisible { get; set; }
+  [DataMember]
+  public String? GetVisible
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.GetVisible);
+    }
+    set
+    {
+      _ExistingElement.GetVisible = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
 }

@@ -4,12 +4,29 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the CreationId Class.
 /// </summary>
-public partial class CreationId
+public partial class CreationId: ModelElement<DXO16D.CreationId>
 {
+  public CreationId(): base(){ }
+  
+  public CreationId(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public CreationId(DXO16D.CreationId openXmlElement): base(openXmlElement) { }
+  
   
   /// <summary>
   ///   id, this property is only available in Office 2016 and later.
   /// </summary>
-  public String? Id { get; set; }
+  [DataMember]
+  public String? Id
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Id);
+    }
+    set
+    {
+      _ExistingElement.Id = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
 }

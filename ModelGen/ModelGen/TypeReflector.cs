@@ -14,7 +14,7 @@ public static class TypeReflector
 
   public static Dictionary<int, long> ThreadsUsed = new();
 
-  public static bool CancelRequest { get; set; }
+  public static bool CancelRequest { [DebuggerStepThrough] get; set; }
 
   public static void ReflectTypeAsync(this TypeInfo typeInfo)
   {

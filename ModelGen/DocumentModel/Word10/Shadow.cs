@@ -4,60 +4,176 @@ namespace DocumentModel.Word10;
 /// <summary>
 ///   This element specifies the shadow effect. By default, text does not have shadow.
 /// </summary>
-public partial class Shadow
+public partial class Shadow: ModelElement<DXO10W.Shadow>
 {
+  public Shadow(): base(){ }
+  
+  public Shadow(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public Shadow(DXO10W.Shadow openXmlElement): base(openXmlElement) { }
+  
   
   /// <summary>
   ///   blurRad, this property is only available in Office 2010 and later.
   /// </summary>
-  public Int64? BlurRadius { get; set; }
+  [DataMember]
+  public Int64? BlurRadius
+  {
+    get
+    {
+      return _Element?.BlurRadius?.Value;
+    }
+    set
+    {
+      _ExistingElement.BlurRadius = value;
+    }
+  }
   
   
   /// <summary>
   ///   dist, this property is only available in Office 2010 and later.
   /// </summary>
-  public Int64? DistanceFromText { get; set; }
+  [DataMember]
+  public Int64? DistanceFromText
+  {
+    get
+    {
+      return _Element?.DistanceFromText?.Value;
+    }
+    set
+    {
+      _ExistingElement.DistanceFromText = value;
+    }
+  }
   
   
   /// <summary>
   ///   dir, this property is only available in Office 2010 and later.
   /// </summary>
-  public Int32? DirectionAngle { get; set; }
+  [DataMember]
+  public Int32? DirectionAngle
+  {
+    get
+    {
+      return _Element?.DirectionAngle?.Value;
+    }
+    set
+    {
+      _ExistingElement.DirectionAngle = value;
+    }
+  }
   
   
   /// <summary>
   ///   sx, this property is only available in Office 2010 and later.
   /// </summary>
-  public Int32? HorizontalScalingFactor { get; set; }
+  [DataMember]
+  public Int32? HorizontalScalingFactor
+  {
+    get
+    {
+      return _Element?.HorizontalScalingFactor?.Value;
+    }
+    set
+    {
+      _ExistingElement.HorizontalScalingFactor = value;
+    }
+  }
   
   
   /// <summary>
   ///   sy, this property is only available in Office 2010 and later.
   /// </summary>
-  public Int32? VerticalScalingFactor { get; set; }
+  [DataMember]
+  public Int32? VerticalScalingFactor
+  {
+    get
+    {
+      return _Element?.VerticalScalingFactor?.Value;
+    }
+    set
+    {
+      _ExistingElement.VerticalScalingFactor = value;
+    }
+  }
   
   
   /// <summary>
   ///   kx, this property is only available in Office 2010 and later.
   /// </summary>
-  public Int32? HorizontalSkewAngle { get; set; }
+  [DataMember]
+  public Int32? HorizontalSkewAngle
+  {
+    get
+    {
+      return _Element?.HorizontalSkewAngle?.Value;
+    }
+    set
+    {
+      _ExistingElement.HorizontalSkewAngle = value;
+    }
+  }
   
   
   /// <summary>
   ///   ky, this property is only available in Office 2010 and later.
   /// </summary>
-  public Int32? VerticalSkewAngle { get; set; }
+  [DataMember]
+  public Int32? VerticalSkewAngle
+  {
+    get
+    {
+      return _Element?.VerticalSkewAngle?.Value;
+    }
+    set
+    {
+      _ExistingElement.VerticalSkewAngle = value;
+    }
+  }
   
   
   /// <summary>
   ///   RgbColorModelHex.
   /// </summary>
-  public DM.HexBinary? RgbColorModelHex { get; set; }
+  [DataMember]
+  public DM.HexBinary? RgbColorModelHex
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXO10W.RgbColorModelHex>();
+      if (element != null)
+        return DMX.HexBinaryConverter.GetValue(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXO10W.RgbColorModelHex>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = HexBinaryConverter.CreateOpenXmlElement<DXO10W.RgbColorModelHex>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
   
   /// <summary>
   ///   SchemeColor.
   /// </summary>
-  public DMW10.SchemeColorKind? SchemeColor { get; set; }
+  [DataMember]
+  public DMW10.SchemeColorKind? SchemeColor
+  {
+    get
+    {
+      throw new NotImplementedException("Not implemented in GenerateEnumPropertyGetCode: propertyType is DocumentFormat.OpenXml.Office2010.Word.SchemeColor");
+    }
+    set
+    {
+      throw new NotImplementedException("Not implemented in GenerateEnumPropertySetCode: propertyType is DocumentFormat.OpenXml.Office2010.Word.SchemeColor");
+    }
+  }
   
 }

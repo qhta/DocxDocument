@@ -14,17 +14,17 @@ public class ModelDocsManager
     ModelDoc.Instance.LoadData(modelDocFilename);
   }
 
-  public PPS PhaseNum { get; private set; }
-  public NTS NamespaceTypeSelector { get; private set; }
-  public MSS TypeStatusSelector { get; private set; }
+  public PPS PhaseNum { [DebuggerStepThrough] get; private set; }
+  public NTS NamespaceTypeSelector { [DebuggerStepThrough] get; private set; }
+  public MSS TypeStatusSelector { [DebuggerStepThrough] get; private set; }
 
-  public int TotalTypesCount { get; private set; }
-  public int CheckedTypesCount { get; private set; }
-  public int DocumentedTypesCount { get; private set; }
+  public int TotalTypesCount { [DebuggerStepThrough] get; private set; }
+  public int CheckedTypesCount { [DebuggerStepThrough] get; private set; }
+  public int DocumentedTypesCount { [DebuggerStepThrough] get; private set; }
 
-  public List<string> NamespacesNotFound { get; private set; } = new List<string>();
-  public List<string> TypesNotFound { get; private set; } = new List<string>();
-  public List<string> PropertiesNotFound { get; private set; } = new List<string>();
+  public List<string> NamespacesNotFound { [DebuggerStepThrough] get; private set; } = new List<string>();
+  public List<string> TypesNotFound { [DebuggerStepThrough] get; private set; } = new List<string>();
+  public List<string> PropertiesNotFound { [DebuggerStepThrough] get; private set; } = new List<string>();
 
 
   /// <summary>

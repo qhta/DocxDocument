@@ -4,12 +4,29 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   This element defines the effect that can be applied to a table as a whole through a table style.
 /// </summary>
-public partial class Effect
+public partial class Effect: ModelElement<DXD.Effect>
 {
+  public Effect(): base(){ }
+  
+  public Effect(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public Effect(DXD.Effect openXmlElement): base(openXmlElement) { }
+  
   
   /// <summary>
   ///   Reference
   /// </summary>
-  public String? Reference { get; set; }
+  [DataMember]
+  public String? Reference
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Reference);
+    }
+    set
+    {
+      _ExistingElement.Reference = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
 }

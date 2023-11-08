@@ -4,10 +4,38 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the QuickAccessToolbarCustomizationsPart
 /// </summary>
-public partial class QuickAccessToolbarCustomizationsPart
+public partial class QuickAccessToolbarCustomizationsPart: ModelElement<DXPack.QuickAccessToolbarCustomizationsPart>
 {
-  public String? ContentType { get; set; }
+  public QuickAccessToolbarCustomizationsPart(): base(){ }
   
-  public String? RelationshipType { get; set; }
+  public QuickAccessToolbarCustomizationsPart(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public QuickAccessToolbarCustomizationsPart(DXPack.QuickAccessToolbarCustomizationsPart openXmlElement): base(openXmlElement) { }
+  
+  [DataMember]
+  public String? ContentType
+  {
+    get
+    {
+      return _Element?.ContentType;
+    }
+    set
+    {
+      _ExistingElement.ContentType = value;
+    }
+  }
+  
+  [DataMember]
+  public String? RelationshipType
+  {
+    get
+    {
+      return _Element?.RelationshipType;
+    }
+    set
+    {
+      _ExistingElement.RelationshipType = value;
+    }
+  }
   
 }

@@ -4,7 +4,7 @@ public class OwnedCollection<T> : ObservableCollection<T>, ICollection, ICollect
 {
   //private ObservableCollection<T> Items = new ObservableCollection<T>();
 
-  private object Owner { get; }
+  private object Owner { [DebuggerStepThrough] get; }
 
   public OwnedCollection(object owner)
   { 

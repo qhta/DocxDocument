@@ -4,18 +4,46 @@ namespace DocumentModel.Drawings.ChartDrawings16;
 /// <summary>
 ///   Defines the GeoHierarchyEntity Class.
 /// </summary>
-public partial class GeoHierarchyEntity
+public partial class GeoHierarchyEntity: ModelElement<DXO16DCD.GeoHierarchyEntity>
 {
+  public GeoHierarchyEntity(): base(){ }
+  
+  public GeoHierarchyEntity(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public GeoHierarchyEntity(DXO16DCD.GeoHierarchyEntity openXmlElement): base(openXmlElement) { }
+  
   
   /// <summary>
   ///   entityName, this property is only available in Office 2016 and later.
   /// </summary>
-  public String? EntityName { get; set; }
+  [DataMember]
+  public String? EntityName
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.EntityName);
+    }
+    set
+    {
+      _ExistingElement.EntityName = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   entityId, this property is only available in Office 2016 and later.
   /// </summary>
-  public String? EntityId { get; set; }
+  [DataMember]
+  public String? EntityId
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.EntityId);
+    }
+    set
+    {
+      _ExistingElement.EntityId = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
 }

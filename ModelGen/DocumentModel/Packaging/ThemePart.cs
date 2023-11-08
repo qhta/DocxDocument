@@ -4,16 +4,60 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the ThemePart
 /// </summary>
-public partial class ThemePart
+public partial class ThemePart: ModelElement<DXPack.ThemePart>
 {
-  public String? ContentType { get; set; }
+  public ThemePart(): base(){ }
   
-  public String? RelationshipType { get; set; }
+  public ThemePart(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public ThemePart(DXPack.ThemePart openXmlElement): base(openXmlElement) { }
+  
+  [DataMember]
+  public String? ContentType
+  {
+    get
+    {
+      return _Element?.ContentType;
+    }
+    set
+    {
+      _ExistingElement.ContentType = value;
+    }
+  }
+  
+  [DataMember]
+  public String? RelationshipType
+  {
+    get
+    {
+      return _Element?.RelationshipType;
+    }
+    set
+    {
+      _ExistingElement.RelationshipType = value;
+    }
+  }
   
   
   /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>
-  public DMD.Theme? Theme { get; set; }
+  [DataMember]
+  public DMD.Theme? Theme
+  {
+    get
+    {
+        return ThemeConverter.CreateModelElement(_Element?.RootElement as DXD.Theme);
+    }
+    set
+    {
+      if (value != null)
+      {
+         var rootElement = ThemeConverter.CreateOpenXmlElement<DXD.Theme>(value);
+         if (rootElement != null)
+           _ExistingElement.Theme = rootElement;
+      }
+    }
+  }
   
 }

@@ -18,26 +18,14 @@ public class CustomProperty: ModelElement<DXCP.CustomDocumentProperty>
   public string? Name
   {
     get => _Element?.Name?.Value;
-    set
-    {
-      if (value != null)
-        _ExistingElement.Name = value;
-      else
-        _ExistingElement.Name = null;
-    }
+    set => _ExistingElement.Name = value;
   }
 
   [DataMember]
   public int? Id
   {
     get => _Element?.PropertyId?.Value;
-    set
-    {
-      if (value != null)
-        _ExistingElement.PropertyId = value;
-      else
-        _ExistingElement.PropertyId = null;
-    }
+    set => _ExistingElement.PropertyId = value;
   }
 
   [DataMember]

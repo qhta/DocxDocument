@@ -4,32 +4,104 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Defines the TextBox Class.
 /// </summary>
-public partial class TextBox
+public partial class TextBox: ModelElement<DXV.TextBox>
 {
+  public TextBox(): base(){ }
+  
+  public TextBox(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public TextBox(DXV.TextBox openXmlElement): base(openXmlElement) { }
+  
   
   /// <summary>
   ///   Unique Identifier
   /// </summary>
-  public String? Id { get; set; }
+  [DataMember]
+  public String? Id
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Id);
+    }
+    set
+    {
+      _ExistingElement.Id = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Shape Styling Properties
   /// </summary>
-  public String? Style { get; set; }
+  [DataMember]
+  public String? Style
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Style);
+    }
+    set
+    {
+      _ExistingElement.Style = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Text Box Inset
   /// </summary>
-  public String? Inset { get; set; }
+  [DataMember]
+  public String? Inset
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Inset);
+    }
+    set
+    {
+      _ExistingElement.Inset = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Text Box Single-Click Selection Toggle
   /// </summary>
-  public DM.TrueFalseValue? SingleClick { get; set; }
+  [DataMember]
+  public DM.TrueFalseValue? SingleClick
+  {
+    get
+    {
+      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+    }
+    set
+    {
+      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+    }
+  }
   
-  public DMW.TextBoxContent? TextBoxContent { get; set; }
+  [DataMember]
+  public DMW.TextBoxContent? TextBoxContent
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXW.TextBoxContent>();
+      if (element != null)
+        return TextBoxContentConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXW.TextBoxContent>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = TextBoxContentConverter.CreateOpenXmlElement<DXW.TextBoxContent>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
 }

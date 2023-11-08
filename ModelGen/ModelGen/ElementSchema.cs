@@ -9,20 +9,20 @@ public class ElementSchema
   /// <summary>
   /// Attribute/Element tag in schema.
   /// </summary>
-  public string? SchemaTag { get; set; }
+  public string? SchemaTag { [DebuggerStepThrough] get; set; }
 
   /// <summary>
   /// SchemaTag is attrib
   /// </summary>
-  public bool SchemaIsAttrib { get; set; }
+  public bool SchemaIsAttrib { [DebuggerStepThrough] get; set; }
 
   /// <summary>
   /// Url for the schema tag namespace.
   /// </summary>
-  public string? SchemaUrl { get; set; }
+  public string? SchemaUrl { [DebuggerStepThrough] get; set; }
 
   /// <summary>
   /// Main particle in compound element
   /// </summary>
-  public SchemaParticle? Main { get; set; }
+  public SchemaParticle? Main { [DebuggerStepThrough] get; set; }
 }

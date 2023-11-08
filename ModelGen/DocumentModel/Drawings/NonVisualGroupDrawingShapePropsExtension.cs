@@ -4,14 +4,53 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   This element specifies an extension that is used for future extensions to the current version of DrawingML. This allows for the specifying of currently unknown elements in the future that is used for later versions of generating applications.
 /// </summary>
-public partial class NonVisualGroupDrawingShapePropsExtension
+public partial class NonVisualGroupDrawingShapePropsExtension: ModelElement<DXD.NonVisualGroupDrawingShapePropsExtension>
 {
+  public NonVisualGroupDrawingShapePropsExtension(): base(){ }
+  
+  public NonVisualGroupDrawingShapePropsExtension(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public NonVisualGroupDrawingShapePropsExtension(DXD.NonVisualGroupDrawingShapePropsExtension openXmlElement): base(openXmlElement) { }
+  
   
   /// <summary>
   ///   Specifies the URI, or uniform resource identifier that represents the data stored under this tag. The URI is used to identify the correct 'server' that can process the contents of this tag.
   /// </summary>
-  public String? Uri { get; set; }
+  [DataMember]
+  public String? Uri
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Uri);
+    }
+    set
+    {
+      _ExistingElement.Uri = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
-  public DMD.NonVisualGroupProperties? NonVisualGroupProperties { get; set; }
+  [DataMember]
+  public DMD.NonVisualGroupProperties? NonVisualGroupProperties
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXO13D.NonVisualGroupProperties>();
+      if (element != null)
+        return NonVisualGroupPropertiesConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXO13D.NonVisualGroupProperties>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = NonVisualGroupPropertiesConverter.CreateOpenXmlElement<DXO13D.NonVisualGroupProperties>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
 }

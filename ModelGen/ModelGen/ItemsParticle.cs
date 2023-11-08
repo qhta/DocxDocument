@@ -11,7 +11,7 @@ namespace ModelGen;
 [KnownType(typeof(ItemsAllParticle))]
 public abstract class ItemsParticle : SchemaParticle
 {
-  public Collection<SchemaParticle> Items { get; } = new Collection<SchemaParticle>();
+  public Collection<SchemaParticle> Items { [DebuggerStepThrough] get; } = new Collection<SchemaParticle>();
 
   public static ItemsParticle Create(ParticleType particleType)
   {

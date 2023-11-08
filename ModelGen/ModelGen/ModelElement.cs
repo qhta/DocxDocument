@@ -25,17 +25,17 @@ public class ModelElement : IOwnedElement
   /// Owner of the element (can be of any object).
   /// </summary>
   [XmlIgnore]
-  public object? Owner { get; set; }
+  public object? Owner { [DebuggerStepThrough] get; set; }
 
   /// <summary>
   /// Name of the element (as read from the source library) or declared on creation.
   /// </summary>
-  public string Name { get; set; } = null!;
+  public string Name { [DebuggerStepThrough] get; set; } = null!;
 
   /// <summary>
   /// New name of the element used if the element is renamed.
   /// </summary>
-  public string? NewName { get; set; }
+  public string? NewName { [DebuggerStepThrough] get; set; }
 
   /// <summary>
   /// Specifies whether the element is accepted to processing in specific phase
@@ -95,7 +95,7 @@ public class ModelElement : IOwnedElement
   /// <summary>
   /// Errors list.
   /// </summary>
-  public Errors? Errors { get; private set; }
+  public Errors? Errors { [DebuggerStepThrough] get; private set; }
 
   /// <summary>
   /// Adds an error to the element at the specific phase.
@@ -139,7 +139,7 @@ public class ModelElement : IOwnedElement
   /// <summary>
   /// Fixes list.
   /// </summary>
-  public Fixages? Fixages { get; private set; }
+  public Fixages? Fixages { [DebuggerStepThrough] get; private set; }
 
   /// <summary>
   /// Adds an error to the element at the specific phase.
@@ -166,13 +166,13 @@ public class ModelElement : IOwnedElement
   /// Specifies whether the element is converted to other element.
   /// </summary>
   [XmlIgnore]
-  public bool IsConverted { get; set; }
+  public bool IsConverted { [DebuggerStepThrough] get; set; }
 
   /// <summary>
   /// Specifies whether some other element is converted to this element.
   /// </summary>
   [XmlIgnore]
-  public bool IsConversionTarget { get; set; }
+  public bool IsConversionTarget { [DebuggerStepThrough] get; set; }
 
   /// <summary>
   /// Single-paragraph description.
@@ -186,7 +186,7 @@ public class ModelElement : IOwnedElement
   /// <summary>
   /// Multi-paragraph description.
   /// </summary>
-  public ElementDocs? Documentation { get; set; }
+  public ElementDocs? Documentation { [DebuggerStepThrough] get; set; }
 
   /// <summary>
   /// Gets a string of <see cref="Description"/> or <see cref="Documentation"/>.
@@ -210,18 +210,18 @@ public class ModelElement : IOwnedElement
   /// Schema for OpenXml format
   /// </summary>
   [XmlIgnore]
-  public ElementSchema? Schema { get; set; }
+  public ElementSchema? Schema { [DebuggerStepThrough] get; set; }
 
   /// <summary>
   /// Version of Office when the element is available.
   /// </summary>
-  public string? OfficeVersion { get; set; }
+  public string? OfficeVersion { [DebuggerStepThrough] get; set; }
 
   /// <summary>
   /// Custom attributes assigned to this element
   /// </summary>
   [XmlIgnore]
-  public CustomAttributes? CustomAttributes { get; protected set; } = null!;
+  public CustomAttributes? CustomAttributes { [DebuggerStepThrough] get; protected set; } = null!;
 
   /// <summary>
   /// Adds a <see cref="CustomAttribInfo"/> creating <see cref="CustomAttributes"/>.

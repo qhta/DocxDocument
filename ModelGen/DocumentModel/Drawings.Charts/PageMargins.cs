@@ -4,42 +4,114 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Page Margins.
 /// </summary>
-public partial class PageMargins
+public partial class PageMargins: ModelElement<DXDC.PageMargins>
 {
+  public PageMargins(): base(){ }
+  
+  public PageMargins(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public PageMargins(DXDC.PageMargins openXmlElement): base(openXmlElement) { }
+  
   
   /// <summary>
   ///   Left
   /// </summary>
-  public Double? Left { get; set; }
+  [DataMember]
+  public Double? Left
+  {
+    get
+    {
+      return _Element?.Left?.Value;
+    }
+    set
+    {
+      _ExistingElement.Left = value;
+    }
+  }
   
   
   /// <summary>
   ///   Right
   /// </summary>
-  public Double? Right { get; set; }
+  [DataMember]
+  public Double? Right
+  {
+    get
+    {
+      return _Element?.Right?.Value;
+    }
+    set
+    {
+      _ExistingElement.Right = value;
+    }
+  }
   
   
   /// <summary>
   ///   Top
   /// </summary>
-  public Double? Top { get; set; }
+  [DataMember]
+  public Double? Top
+  {
+    get
+    {
+      return _Element?.Top?.Value;
+    }
+    set
+    {
+      _ExistingElement.Top = value;
+    }
+  }
   
   
   /// <summary>
   ///   Bottom
   /// </summary>
-  public Double? Bottom { get; set; }
+  [DataMember]
+  public Double? Bottom
+  {
+    get
+    {
+      return _Element?.Bottom?.Value;
+    }
+    set
+    {
+      _ExistingElement.Bottom = value;
+    }
+  }
   
   
   /// <summary>
   ///   Header
   /// </summary>
-  public Double? Header { get; set; }
+  [DataMember]
+  public Double? Header
+  {
+    get
+    {
+      return _Element?.Header?.Value;
+    }
+    set
+    {
+      _ExistingElement.Header = value;
+    }
+  }
   
   
   /// <summary>
   ///   Footer
   /// </summary>
-  public Double? Footer { get; set; }
+  [DataMember]
+  public Double? Footer
+  {
+    get
+    {
+      return _Element?.Footer?.Value;
+    }
+    set
+    {
+      _ExistingElement.Footer = value;
+    }
+  }
   
 }

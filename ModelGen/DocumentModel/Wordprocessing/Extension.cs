@@ -4,12 +4,29 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the Extension Class.
 /// </summary>
-public partial class Extension
+public partial class Extension: ModelElement<DXO21WEL.Extension>
 {
+  public Extension(): base(){ }
+  
+  public Extension(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public Extension(DXO21WEL.Extension openXmlElement): base(openXmlElement) { }
+  
   
   /// <summary>
   ///   uri, this property is only available in Office 2021 and later.
   /// </summary>
-  public String? Uri { get; set; }
+  [DataMember]
+  public String? Uri
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Uri);
+    }
+    set
+    {
+      _ExistingElement.Uri = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
 }

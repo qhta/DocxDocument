@@ -10,17 +10,17 @@ public class CustomAttribTypedArgument : IOwnedElement
   /// <summary>
   /// Used to implement <see cref="IOwnedElement"/>
   /// </summary>
-  public object? Owner { get; set; }
+  public object? Owner { [DebuggerStepThrough] get; set; }
 
   /// <summary>
   /// Type of the argument
   /// </summary>
-  public TypeInfo Type { get; }
+  public TypeInfo Type { [DebuggerStepThrough] get; }
 
   /// <summary>
   /// Value of the argument
   /// </summary>
-  public object? Value { get; }
+  public object? Value { [DebuggerStepThrough] get; }
 
   public CustomAttribTypedArgument(Type argumentType, object? value)
   {

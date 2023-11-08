@@ -4,60 +4,165 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Shape Handle.
 /// </summary>
-public partial class ShapeHandle
+public partial class ShapeHandle: ModelElement<DXV.ShapeHandle>
 {
+  public ShapeHandle(): base(){ }
+  
+  public ShapeHandle(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public ShapeHandle(DXV.ShapeHandle openXmlElement): base(openXmlElement) { }
+  
   
   /// <summary>
   ///   Handle Position
   /// </summary>
-  public String? Position { get; set; }
+  [DataMember]
+  public String? Position
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Position);
+    }
+    set
+    {
+      _ExistingElement.Position = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Handle Polar Center
   /// </summary>
-  public String? Polar { get; set; }
+  [DataMember]
+  public String? Polar
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Polar);
+    }
+    set
+    {
+      _ExistingElement.Polar = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Handle Coordinate Mapping
   /// </summary>
-  public String? Map { get; set; }
+  [DataMember]
+  public String? Map
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Map);
+    }
+    set
+    {
+      _ExistingElement.Map = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Invert Handle's X Position
   /// </summary>
-  public DM.TrueFalseBlankValue? InvertX { get; set; }
+  [DataMember]
+  public DM.TrueFalseBlankValue? InvertX
+  {
+    get
+    {
+      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseBlankValue>()?.Val);
+    }
+    set
+    {
+      SimpleValueConverter.SetValue<DX.TrueFalseBlankValue,DocumentFormat.OpenXml.TrueFalseBlankValue>(openXmlElement, value);
+    }
+  }
   
   
   /// <summary>
   ///   Invert Handle's Y Position
   /// </summary>
-  public DM.TrueFalseBlankValue? InvertY { get; set; }
+  [DataMember]
+  public DM.TrueFalseBlankValue? InvertY
+  {
+    get
+    {
+      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseBlankValue>()?.Val);
+    }
+    set
+    {
+      SimpleValueConverter.SetValue<DX.TrueFalseBlankValue,DocumentFormat.OpenXml.TrueFalseBlankValue>(openXmlElement, value);
+    }
+  }
   
   
   /// <summary>
   ///   Handle Inversion Toggle
   /// </summary>
-  public DM.TrueFalseBlankValue? Switch { get; set; }
+  [DataMember]
+  public DM.TrueFalseBlankValue? Switch
+  {
+    get
+    {
+      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseBlankValue>()?.Val);
+    }
+    set
+    {
+      SimpleValueConverter.SetValue<DX.TrueFalseBlankValue,DocumentFormat.OpenXml.TrueFalseBlankValue>(openXmlElement, value);
+    }
+  }
   
   
   /// <summary>
   ///   Handle X Position Range
   /// </summary>
-  public String? XRange { get; set; }
+  [DataMember]
+  public String? XRange
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.XRange);
+    }
+    set
+    {
+      _ExistingElement.XRange = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Handle Y Position Range
   /// </summary>
-  public String? YRange { get; set; }
+  [DataMember]
+  public String? YRange
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.YRange);
+    }
+    set
+    {
+      _ExistingElement.YRange = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Handle Polar Radius Range
   /// </summary>
-  public String? RadiusRange { get; set; }
+  [DataMember]
+  public String? RadiusRange
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.RadiusRange);
+    }
+    set
+    {
+      _ExistingElement.RadiusRange = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
 }

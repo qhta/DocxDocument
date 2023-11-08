@@ -59,6 +59,25 @@ public class ModelGenerator : BaseCodeGenerator
     GenerateDocumentationComments(typeInfo);
     GenerateCustomAttributes(typeInfo.CustomAttributes);
 
+    GenerateHeader(typeInfo, typeName, kind);
+
+    Writer.WriteLine("{");
+    Writer.Indent++;
+    if (kind == TypeKind.@class)
+      GenerateConstructors(typeInfo, typeName, kind);
+
+    var ok = GenerateAcceptedProperties(typeInfo, aNamespace, kind);
+    Writer.Indent--;
+    Writer.WriteLine("}");
+    if (kind == TypeKind.@interface)
+      GeneratedInterfacesCount += 1;
+    else if (kind == TypeKind.@class)
+      GeneratedClassesCount += 1;
+    return ok;
+  }
+
+  protected virtual void GenerateHeader(TypeInfo typeInfo, string? typeName, TypeKind kind)
+  {
     if (kind == TypeKind.@interface)
     {
       var str = $"public partial interface {typeName}";
@@ -71,17 +90,11 @@ public class ModelGenerator : BaseCodeGenerator
     }
     else
       throw new NotImplementedException($"GenerateClassOrInterface not implemented for kind {kind}");
-    Writer.WriteLine("{");
-    Writer.Indent++;
+  }
 
-    var ok = GenerateAcceptedProperties(typeInfo, aNamespace, kind);
-    Writer.Indent--;
-    Writer.WriteLine("}");
-    if (kind == TypeKind.@interface)
-      GeneratedInterfacesCount += 1;
-    else if (kind == TypeKind.@class)
-      GeneratedClassesCount += 1;
-    return ok;
+  protected virtual bool GenerateConstructors(TypeInfo typeInfo, string typeName, TypeKind kind)
+  {
+    return false;
   }
 
   private bool GenerateAcceptedProperties(TypeInfo typeInfo, string? inNamespace, TypeKind kind)
@@ -119,11 +132,9 @@ public class ModelGenerator : BaseCodeGenerator
   //  return true;
   //}
 
-  private bool GenerateProperty(PropInfo prop, string? inNamespace, TypeKind kind)
+  protected virtual bool GenerateProperty(PropInfo prop, string? inNamespace, TypeKind kind)
   {
     var targetPropType = prop.PropertyType.GetConversionTargetOrSelf();
-    //if (prop.Name == "Items" && targetPropType.IsConstructedGenericType && targetPropType.GetGenericArguments().FirstOrDefault()?.Name=="Schema")
-    //  Debug.Assert(true);
     var targetPropTypeName = prop.TargetPropertyTypeName ??
       targetPropType.GetFullName(true, true, true);
     var propTypeName = targetPropTypeName.Name;
@@ -137,11 +148,13 @@ public class ModelGenerator : BaseCodeGenerator
     string qm = "?";
     GenerateDocumentationComments(prop);
     GenerateCustomAttributes(prop.CustomAttributes);
+    Writer.WriteLine($"[DataMember]");
     Writer.WriteLine($"public {px}{propTypeName}{qm} {prop.Name} {{ get; set; }}");
     Writer.WriteLine();
     GeneratedPropertiesCount += 1;
     return true;
   }
+
   #endregion
 
   #region Enum types generation
@@ -153,7 +166,7 @@ public class ModelGenerator : BaseCodeGenerator
     outputPath = Path.Combine(outputPath, aNamespace);
     var typeName = type.TargetName;
     var fileName = ValidateFilename(typeName);
-    if (!GenerateEnumType(type, typeName, Path.Combine(outputPath, fileName + ".cs")))
+    if (!GenerateEnumType(type, typeName, Path.Combine(outputPath, "Enums", fileName + ".cs")))
       return false;
     GeneratedEnumTypesCount += 1;
     return true;

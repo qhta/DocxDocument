@@ -10,22 +10,22 @@ public class Creator
   /// <summary>
   /// Assembly of DocumentFormat.OpenXml.dll
   /// </summary>
-  protected Assembly SourceAssembly { get; set; } = null!;
+  protected Assembly SourceAssembly { [DebuggerStepThrough] get; set; } = null!;
 
   /// <summary>
   /// Total count of types in SourceAssembly
   /// </summary>
-  protected int TotalTypesCount { get; set; }
+  protected int TotalTypesCount { [DebuggerStepThrough] get; set; }
 
   /// <summary>
   /// Name of the C# project. Base of the namespace.
   /// </summary>
-  protected string ProjectName { get; set; }
+  protected string ProjectName { [DebuggerStepThrough] get; set; }
 
   /// <summary>
   /// Base path of directories to create the structure of the output files.
   /// </summary>
-  protected string OutputPath { get; set; }
+  protected string OutputPath { [DebuggerStepThrough] get; set; }
 
 
   public bool CancelRequest
@@ -38,13 +38,13 @@ public class Creator
     }
   }
 
-  public bool IsRun { get; set; }
+  public bool IsRun { [DebuggerStepThrough] get; set; }
 
-  public PPS PhaseDone { get; private set; }
+  public PPS PhaseDone { [DebuggerStepThrough] get; private set; }
 
-  public ModelMonitor? ModelMonitor { get; set; }
+  public ModelMonitor? ModelMonitor { [DebuggerStepThrough] get; set; }
 
-  public BaseCodeGenerator CodeGenerator { get; set; } = null!;
+  public BaseCodeGenerator CodeGenerator { [DebuggerStepThrough] get; set; } = null!;
 
   public Creator(ProcessOptions options)
   {
@@ -84,7 +84,7 @@ public class Creator
     }
   }
 
-  protected ProcessOptions Options { get; set; } = new ProcessOptions();
+  protected ProcessOptions Options { [DebuggerStepThrough] get; set; } = new ProcessOptions();
 
   protected Type? RootType = null!;
 
@@ -101,8 +101,8 @@ public class Creator
 
   public bool CanContinue => PhaseDone < StopAtPhase;
 
-  public HashSet<TypeInfo> InvalidTypes { get; private set; } = new();
-  public HashSet<PropInfo> InvalidProps { get; private set; } = new();
+  public HashSet<TypeInfo> InvalidTypes { [DebuggerStepThrough] get; private set; } = new();
+  public HashSet<PropInfo> InvalidProps { [DebuggerStepThrough] get; private set; } = new();
 
   public virtual void RunOn(Type type, ProcessOptions options, bool continueProcess = false)
   {

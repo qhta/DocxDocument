@@ -4,152 +4,844 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 ///   Defines the TextCharacterPropertiesType Class.
 /// </summary>
-public partial class TextCharacterPropertiesType
+public partial class TextCharacterPropertiesType: ModelElement<DXO13DCS.TextCharacterPropertiesType>
 {
-  public Boolean? SmtClean { get; set; }
+  public TextCharacterPropertiesType(): base(){ }
   
-  public UInt32? SmtId { get; set; }
+  public TextCharacterPropertiesType(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public TextCharacterPropertiesType(DXO13DCS.TextCharacterPropertiesType openXmlElement): base(openXmlElement) { }
+  
+  [DataMember]
+  public Boolean? SmtClean
+  {
+    get
+    {
+      return _Element?.SmtClean?.Value;
+    }
+    set
+    {
+      if (value != null)
+        _ExistingElement.SmtClean = new BooleanValue { Value = (Boolean)value };
+      else
+        _ExistingElement.SmtClean = null;
+    }
+  }
+  
+  [DataMember]
+  public UInt32? SmtId
+  {
+    get
+    {
+      return _Element?.SmtId?.Value;
+    }
+    set
+    {
+      _ExistingElement.SmtId = value;
+    }
+  }
   
   
   /// <summary>
   ///   kumimoji
   /// </summary>
-  public Boolean? Kumimoji { get; set; }
+  [DataMember]
+  public Boolean? Kumimoji
+  {
+    get
+    {
+      return _Element?.Kumimoji?.Value;
+    }
+    set
+    {
+      if (value != null)
+        _ExistingElement.Kumimoji = new BooleanValue { Value = (Boolean)value };
+      else
+        _ExistingElement.Kumimoji = null;
+    }
+  }
   
   
   /// <summary>
   ///   lang
   /// </summary>
-  public String? Language { get; set; }
+  [DataMember]
+  public String? Language
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Language);
+    }
+    set
+    {
+      _ExistingElement.Language = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   altLang
   /// </summary>
-  public String? AlternativeLanguage { get; set; }
+  [DataMember]
+  public String? AlternativeLanguage
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.AlternativeLanguage);
+    }
+    set
+    {
+      _ExistingElement.AlternativeLanguage = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   sz
   /// </summary>
-  public Int32? FontSize { get; set; }
+  [DataMember]
+  public Int32? FontSize
+  {
+    get
+    {
+      return _Element?.FontSize?.Value;
+    }
+    set
+    {
+      _ExistingElement.FontSize = value;
+    }
+  }
   
   
   /// <summary>
   ///   b
   /// </summary>
-  public Boolean? Bold { get; set; }
+  [DataMember]
+  public Boolean? Bold
+  {
+    get
+    {
+      return _Element?.Bold?.Value;
+    }
+    set
+    {
+      if (value != null)
+        _ExistingElement.Bold = new BooleanValue { Value = (Boolean)value };
+      else
+        _ExistingElement.Bold = null;
+    }
+  }
   
   
   /// <summary>
   ///   i
   /// </summary>
-  public Boolean? Italic { get; set; }
+  [DataMember]
+  public Boolean? Italic
+  {
+    get
+    {
+      return _Element?.Italic?.Value;
+    }
+    set
+    {
+      if (value != null)
+        _ExistingElement.Italic = new BooleanValue { Value = (Boolean)value };
+      else
+        _ExistingElement.Italic = null;
+    }
+  }
   
   
   /// <summary>
   ///   kern
   /// </summary>
-  public Int32? Kerning { get; set; }
+  [DataMember]
+  public Int32? Kerning
+  {
+    get
+    {
+      return _Element?.Kerning?.Value;
+    }
+    set
+    {
+      _ExistingElement.Kerning = value;
+    }
+  }
   
   
   /// <summary>
   ///   spc
   /// </summary>
-  public Int32? Spacing { get; set; }
+  [DataMember]
+  public Int32? Spacing
+  {
+    get
+    {
+      return _Element?.Spacing?.Value;
+    }
+    set
+    {
+      _ExistingElement.Spacing = value;
+    }
+  }
   
   
   /// <summary>
   ///   normalizeH
   /// </summary>
-  public Boolean? NormalizeHeight { get; set; }
+  [DataMember]
+  public Boolean? NormalizeHeight
+  {
+    get
+    {
+      return _Element?.NormalizeHeight?.Value;
+    }
+    set
+    {
+      if (value != null)
+        _ExistingElement.NormalizeHeight = new BooleanValue { Value = (Boolean)value };
+      else
+        _ExistingElement.NormalizeHeight = null;
+    }
+  }
   
   
   /// <summary>
   ///   baseline
   /// </summary>
-  public Int32? Baseline { get; set; }
+  [DataMember]
+  public Int32? Baseline
+  {
+    get
+    {
+      return _Element?.Baseline?.Value;
+    }
+    set
+    {
+      _ExistingElement.Baseline = value;
+    }
+  }
   
   
   /// <summary>
   ///   noProof
   /// </summary>
-  public Boolean? NoProof { get; set; }
+  [DataMember]
+  public Boolean? NoProof
+  {
+    get
+    {
+      return _Element?.NoProof?.Value;
+    }
+    set
+    {
+      if (value != null)
+        _ExistingElement.NoProof = new BooleanValue { Value = (Boolean)value };
+      else
+        _ExistingElement.NoProof = null;
+    }
+  }
   
   
   /// <summary>
   ///   dirty
   /// </summary>
-  public Boolean? Dirty { get; set; }
+  [DataMember]
+  public Boolean? Dirty
+  {
+    get
+    {
+      return _Element?.Dirty?.Value;
+    }
+    set
+    {
+      if (value != null)
+        _ExistingElement.Dirty = new BooleanValue { Value = (Boolean)value };
+      else
+        _ExistingElement.Dirty = null;
+    }
+  }
   
   
   /// <summary>
   ///   err
   /// </summary>
-  public Boolean? SpellingError { get; set; }
+  [DataMember]
+  public Boolean? SpellingError
+  {
+    get
+    {
+      return _Element?.SpellingError?.Value;
+    }
+    set
+    {
+      if (value != null)
+        _ExistingElement.SpellingError = new BooleanValue { Value = (Boolean)value };
+      else
+        _ExistingElement.SpellingError = null;
+    }
+  }
   
   
   /// <summary>
   ///   smtClean
   /// </summary>
-  public Boolean? SmartTagClean { get; set; }
+  [DataMember]
+  public Boolean? SmartTagClean
+  {
+    get
+    {
+      return _Element?.SmartTagClean?.Value;
+    }
+    set
+    {
+      if (value != null)
+        _ExistingElement.SmartTagClean = new BooleanValue { Value = (Boolean)value };
+      else
+        _ExistingElement.SmartTagClean = null;
+    }
+  }
   
   
   /// <summary>
   ///   smtId
   /// </summary>
-  public UInt32? SmartTagId { get; set; }
+  [DataMember]
+  public UInt32? SmartTagId
+  {
+    get
+    {
+      return _Element?.SmartTagId?.Value;
+    }
+    set
+    {
+      _ExistingElement.SmartTagId = value;
+    }
+  }
   
   
   /// <summary>
   ///   bmk
   /// </summary>
-  public String? Bookmark { get; set; }
+  [DataMember]
+  public String? Bookmark
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Bookmark);
+    }
+    set
+    {
+      _ExistingElement.Bookmark = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Outline.
   /// </summary>
-  public DMD.Outline? Outline { get; set; }
+  [DataMember]
+  public DMD.Outline? Outline
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXD.Outline>();
+      if (element != null)
+        return OutlineConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXD.Outline>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = OutlineConverter.CreateOpenXmlElement<DXD.Outline>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
-  public DMD.NoFill? NoFill { get; set; }
+  [DataMember]
+  public DMD.NoFill? NoFill
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXD.NoFill>();
+      if (element != null)
+        return NoFillConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXD.NoFill>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = NoFillConverter.CreateOpenXmlElement<DXD.NoFill>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
-  public DMD.SolidFill? SolidFill { get; set; }
+  [DataMember]
+  public DMD.SolidFill? SolidFill
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXD.SolidFill>();
+      if (element != null)
+        return SolidFillConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXD.SolidFill>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = SolidFillConverter.CreateOpenXmlElement<DXD.SolidFill>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
-  public DMD.GradientFill? GradientFill { get; set; }
+  [DataMember]
+  public DMD.GradientFill? GradientFill
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXD.GradientFill>();
+      if (element != null)
+        return GradientFillConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXD.GradientFill>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = GradientFillConverter.CreateOpenXmlElement<DXD.GradientFill>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
-  public DMD.BlipFill? BlipFill { get; set; }
+  [DataMember]
+  public DMD.BlipFill? BlipFill
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXD.BlipFill>();
+      if (element != null)
+        return BlipFillConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXD.BlipFill>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = BlipFillConverter.CreateOpenXmlElement<DXD.BlipFill>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
-  public DMD.PatternFill? PatternFill { get; set; }
+  [DataMember]
+  public DMD.PatternFill? PatternFill
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXD.PatternFill>();
+      if (element != null)
+        return PatternFillConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXD.PatternFill>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = PatternFillConverter.CreateOpenXmlElement<DXD.PatternFill>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
-  public DMD.GroupFill? GroupFill { get; set; }
+  [DataMember]
+  public DMD.GroupFill? GroupFill
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXD.GroupFill>();
+      if (element != null)
+        return GroupFillConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXD.GroupFill>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = GroupFillConverter.CreateOpenXmlElement<DXD.GroupFill>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
-  public DMD.EffectList? EffectList { get; set; }
+  [DataMember]
+  public DMD.EffectList? EffectList
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXD.EffectList>();
+      if (element != null)
+        return EffectListConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXD.EffectList>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = EffectListConverter.CreateOpenXmlElement<DXD.EffectList>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
-  public DMD.EffectDag? EffectDag { get; set; }
+  [DataMember]
+  public DMD.EffectDag? EffectDag
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXD.EffectDag>();
+      if (element != null)
+        return EffectDagConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXD.EffectDag>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = EffectDagConverter.CreateOpenXmlElement<DXD.EffectDag>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
-  public DMD.Highlight? Highlight { get; set; }
+  [DataMember]
+  public DMD.Highlight? Highlight
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXD.Highlight>();
+      if (element != null)
+        return HighlightConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXD.Highlight>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = HighlightConverter.CreateOpenXmlElement<DXD.Highlight>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
-  public DMD.UnderlineFollowsText? UnderlineFollowsText { get; set; }
+  [DataMember]
+  public DMD.UnderlineFollowsText? UnderlineFollowsText
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXD.UnderlineFollowsText>();
+      if (element != null)
+        return UnderlineFollowsTextConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXD.UnderlineFollowsText>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = UnderlineFollowsTextConverter.CreateOpenXmlElement<DXD.UnderlineFollowsText>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
-  public DMD.UnderlineFillText? UnderlineFillText { get; set; }
+  [DataMember]
+  public DMD.UnderlineFillText? UnderlineFillText
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXD.UnderlineFillText>();
+      if (element != null)
+        return UnderlineFillTextConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXD.UnderlineFillText>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = UnderlineFillTextConverter.CreateOpenXmlElement<DXD.UnderlineFillText>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
-  public DMD.UnderlineFill? UnderlineFill { get; set; }
+  [DataMember]
+  public DMD.UnderlineFill? UnderlineFill
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXD.UnderlineFill>();
+      if (element != null)
+        return UnderlineFillConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXD.UnderlineFill>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = UnderlineFillConverter.CreateOpenXmlElement<DXD.UnderlineFill>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
-  public DMD.LatinFont? LatinFont { get; set; }
+  [DataMember]
+  public DMD.LatinFont? LatinFont
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXD.LatinFont>();
+      if (element != null)
+        return LatinFontConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXD.LatinFont>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = LatinFontConverter.CreateOpenXmlElement<DXD.LatinFont>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
-  public DMD.EastAsianFont? EastAsianFont { get; set; }
+  [DataMember]
+  public DMD.EastAsianFont? EastAsianFont
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXD.EastAsianFont>();
+      if (element != null)
+        return EastAsianFontConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXD.EastAsianFont>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = EastAsianFontConverter.CreateOpenXmlElement<DXD.EastAsianFont>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
-  public DMD.ComplexScriptFont? ComplexScriptFont { get; set; }
+  [DataMember]
+  public DMD.ComplexScriptFont? ComplexScriptFont
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXD.ComplexScriptFont>();
+      if (element != null)
+        return ComplexScriptFontConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXD.ComplexScriptFont>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = ComplexScriptFontConverter.CreateOpenXmlElement<DXD.ComplexScriptFont>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
-  public DMD.SymbolFont? SymbolFont { get; set; }
+  [DataMember]
+  public DMD.SymbolFont? SymbolFont
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXD.SymbolFont>();
+      if (element != null)
+        return SymbolFontConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXD.SymbolFont>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = SymbolFontConverter.CreateOpenXmlElement<DXD.SymbolFont>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
-  public DMD.HyperlinkOnClick? HyperlinkOnClick { get; set; }
+  [DataMember]
+  public DMD.HyperlinkOnClick? HyperlinkOnClick
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXD.HyperlinkOnClick>();
+      if (element != null)
+        return HyperlinkOnClickConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXD.HyperlinkOnClick>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = HyperlinkOnClickConverter.CreateOpenXmlElement<DXD.HyperlinkOnClick>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
-  public DMD.HyperlinkOnMouseOver? HyperlinkOnMouseOver { get; set; }
+  [DataMember]
+  public DMD.HyperlinkOnMouseOver? HyperlinkOnMouseOver
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXD.HyperlinkOnMouseOver>();
+      if (element != null)
+        return HyperlinkOnMouseOverConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXD.HyperlinkOnMouseOver>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = HyperlinkOnMouseOverConverter.CreateOpenXmlElement<DXD.HyperlinkOnMouseOver>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
-  public Boolean? RightToLeft { get; set; }
+  [DataMember]
+  public Boolean? RightToLeft
+  {
+    get
+    {
+      return _ExistingElement.GetFirstChild<DXD.RightToLeft>() != null;
+    }
+    set
+    {
+      if (value == false)
+      {
+        var itemElement = _ExistingElement.GetFirstChild<DXD.RightToLeft>();
+        if (itemElement != null)
+          itemElement.Remove();
+      }
+      if (value == true)
+      {
+        var itemElement = new DXD.RightToLeft();
+        _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
-  public DMD.ExtensionList? ExtensionList { get; set; }
+  [DataMember]
+  public DMD.ExtensionList? ExtensionList
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXD.ExtensionList>();
+      if (element != null)
+        return ExtensionListConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXD.ExtensionList>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = ExtensionListConverter.CreateOpenXmlElement<DXD.ExtensionList>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
 }

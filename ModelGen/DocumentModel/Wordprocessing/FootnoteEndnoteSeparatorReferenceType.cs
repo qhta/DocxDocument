@@ -4,12 +4,29 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the FootnoteEndnoteSeparatorReferenceType Class.
 /// </summary>
-public partial class FootnoteEndnoteSeparatorReferenceType
+public partial class FootnoteEndnoteSeparatorReferenceType: ModelElement<DXW.FootnoteEndnoteSeparatorReferenceType>
 {
+  public FootnoteEndnoteSeparatorReferenceType(): base(){ }
+  
+  public FootnoteEndnoteSeparatorReferenceType(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public FootnoteEndnoteSeparatorReferenceType(DXW.FootnoteEndnoteSeparatorReferenceType openXmlElement): base(openXmlElement) { }
+  
   
   /// <summary>
   ///   Footnote/Endnote ID
   /// </summary>
-  public Int64? Id { get; set; }
+  [DataMember]
+  public Int64? Id
+  {
+    get
+    {
+      return _Element?.Id?.Value;
+    }
+    set
+    {
+      _ExistingElement.Id = value;
+    }
+  }
   
 }
