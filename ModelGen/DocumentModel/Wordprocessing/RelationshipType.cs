@@ -4,12 +4,29 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the RelationshipType Class.
 /// </summary>
-public partial class RelationshipType
+public partial class RelationshipType: ModelElement<DXW.RelationshipType>
 {
+  public RelationshipType(): base(){ }
+  
+  public RelationshipType(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public RelationshipType(DXW.RelationshipType openXmlElement): base(openXmlElement) { }
+  
   
   /// <summary>
   ///   Relationship to Part
   /// </summary>
-  public String? Id { get; set; }
+  [DataMember]
+  public String? Id
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Id);
+    }
+    set
+    {
+      _ExistingElement.Id = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
 }

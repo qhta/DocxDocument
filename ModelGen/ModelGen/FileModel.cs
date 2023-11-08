@@ -7,5 +7,5 @@ public record FileModel
     Filename = name;
   }
 
-  public string Filename { get; set; }
+  public string Filename { [DebuggerStepThrough] get; set; }
 }

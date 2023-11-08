@@ -4,10 +4,38 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   An instance of this part type contains the definition for a set of styles used by this document.
 /// </summary>
-public partial class StyleDefinitionsPart
+public partial class StyleDefinitionsPart: ModelElement<DXPack.StyleDefinitionsPart>
 {
-  public String? ContentType { get; set; }
+  public StyleDefinitionsPart(): base(){ }
   
-  public String? RelationshipType { get; set; }
+  public StyleDefinitionsPart(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public StyleDefinitionsPart(DXPack.StyleDefinitionsPart openXmlElement): base(openXmlElement) { }
+  
+  [DataMember]
+  public String? ContentType
+  {
+    get
+    {
+      return _Element?.ContentType;
+    }
+    set
+    {
+      _ExistingElement.ContentType = value;
+    }
+  }
+  
+  [DataMember]
+  public String? RelationshipType
+  {
+    get
+    {
+      return _Element?.RelationshipType;
+    }
+    set
+    {
+      _ExistingElement.RelationshipType = value;
+    }
+  }
   
 }

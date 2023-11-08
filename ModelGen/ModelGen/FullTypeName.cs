@@ -24,10 +24,10 @@ public record FullTypeName
     Name = name;
     Namespace = nspace;
   }
-  public string Name { get; set; }
-  public string? Namespace { get; set; }
+  public string Name { [DebuggerStepThrough] get; set; }
+  public string? Namespace { [DebuggerStepThrough] get; set; }
 
-  public List<FullTypeName>? ArgNames { get; set; }
+  public List<FullTypeName>? ArgNames { [DebuggerStepThrough] get; set; }
 
   public string[] GetNamespaces()
   {

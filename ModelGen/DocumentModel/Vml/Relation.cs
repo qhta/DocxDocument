@@ -4,24 +4,63 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Diagram Relationship.
 /// </summary>
-public partial class Relation
+public partial class Relation: ModelElement<DXVO.Relation>
 {
+  public Relation(): base(){ }
+  
+  public Relation(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public Relation(DXVO.Relation openXmlElement): base(openXmlElement) { }
+  
   
   /// <summary>
   ///   Diagram Relationship Source Shape
   /// </summary>
-  public String? SourceId { get; set; }
+  [DataMember]
+  public String? SourceId
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.SourceId);
+    }
+    set
+    {
+      _ExistingElement.SourceId = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Diagram Relationship Destination Shape
   /// </summary>
-  public String? DestinationId { get; set; }
+  [DataMember]
+  public String? DestinationId
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.DestinationId);
+    }
+    set
+    {
+      _ExistingElement.DestinationId = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Diagram Relationship Center Shape
   /// </summary>
-  public String? CenterShapeId { get; set; }
+  [DataMember]
+  public String? CenterShapeId
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.CenterShapeId);
+    }
+    set
+    {
+      _ExistingElement.CenterShapeId = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
 }

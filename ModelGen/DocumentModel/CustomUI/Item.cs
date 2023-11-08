@@ -4,42 +4,114 @@ namespace DocumentModel.CustomUI;
 /// <summary>
 ///   Defines the Item Class.
 /// </summary>
-public partial class Item
+public partial class Item: ModelElement<DXOCUI.Item>
 {
+  public Item(): base(){ }
+  
+  public Item(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public Item(DXOCUI.Item openXmlElement): base(openXmlElement) { }
+  
   
   /// <summary>
   ///   id
   /// </summary>
-  public String? Id { get; set; }
+  [DataMember]
+  public String? Id
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Id);
+    }
+    set
+    {
+      _ExistingElement.Id = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   label
   /// </summary>
-  public String? Label { get; set; }
+  [DataMember]
+  public String? Label
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Label);
+    }
+    set
+    {
+      _ExistingElement.Label = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   image
   /// </summary>
-  public String? Image { get; set; }
+  [DataMember]
+  public String? Image
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Image);
+    }
+    set
+    {
+      _ExistingElement.Image = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   imageMso
   /// </summary>
-  public String? ImageMso { get; set; }
+  [DataMember]
+  public String? ImageMso
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.ImageMso);
+    }
+    set
+    {
+      _ExistingElement.ImageMso = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   screentip
   /// </summary>
-  public String? Screentip { get; set; }
+  [DataMember]
+  public String? Screentip
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Screentip);
+    }
+    set
+    {
+      _ExistingElement.Screentip = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   supertip
   /// </summary>
-  public String? Supertip { get; set; }
+  [DataMember]
+  public String? Supertip
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Supertip);
+    }
+    set
+    {
+      _ExistingElement.Supertip = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
 }

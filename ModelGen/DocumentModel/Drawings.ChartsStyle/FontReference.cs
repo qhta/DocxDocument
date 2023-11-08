@@ -4,26 +4,167 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 ///   Defines the FontReference Class.
 /// </summary>
-public partial class FontReference
+public partial class FontReference: ModelElement<DXO13DCS.FontReference>
 {
+  public FontReference(): base(){ }
+  
+  public FontReference(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public FontReference(DXO13DCS.FontReference openXmlElement): base(openXmlElement) { }
+  
   
   /// <summary>
   ///   mods, this property is only available in Office 2013 and later.
   /// </summary>
-  public DM.ListOf<String>? Modifiers { get; set; }
+  [DataMember]
+  public DM.ListOf<String>? Modifiers
+  {
+    get
+    {
+      return ListValueConverter.GetValue(_Element?.Modifiers);
+    }
+    set
+    {
+      if (value != null)
+        _ExistingElement.Modifiers = ListValueConverter.CreateListValue<DX.StringValue>(value);
+      else
+        _ExistingElement.Modifiers = null;
+    }
+  }
   
-  public DMD.RgbColorModelPercentage? RgbColorModelPercentage { get; set; }
+  [DataMember]
+  public DMD.RgbColorModelPercentage? RgbColorModelPercentage
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXD.RgbColorModelPercentage>();
+      if (element != null)
+        return RgbColorModelPercentageConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXD.RgbColorModelPercentage>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = RgbColorModelPercentageConverter.CreateOpenXmlElement<DXD.RgbColorModelPercentage>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
-  public DMD.RgbColorModelHex? RgbColorModelHex { get; set; }
+  [DataMember]
+  public DMD.RgbColorModelHex? RgbColorModelHex
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXD.RgbColorModelHex>();
+      if (element != null)
+        return RgbColorModelHexConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXD.RgbColorModelHex>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = RgbColorModelHexConverter.CreateOpenXmlElement<DXD.RgbColorModelHex>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
-  public DMD.HslColor? HslColor { get; set; }
+  [DataMember]
+  public DMD.HslColor? HslColor
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXD.HslColor>();
+      if (element != null)
+        return HslColorConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXD.HslColor>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = HslColorConverter.CreateOpenXmlElement<DXD.HslColor>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
-  public DMD.SystemColor? SystemColor { get; set; }
+  [DataMember]
+  public DMD.SystemColor? SystemColor
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXD.SystemColor>();
+      if (element != null)
+        return SystemColorConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXD.SystemColor>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = SystemColorConverter.CreateOpenXmlElement<DXD.SystemColor>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
-  public DMD.SchemeColorKind? SchemeColor { get; set; }
+  [DataMember]
+  public DMD.SchemeColorKind? SchemeColor
+  {
+    get
+    {
+      throw new NotImplementedException("Not implemented in GenerateEnumPropertyGetCode: propertyType is DocumentFormat.OpenXml.Drawing.SchemeColor");
+    }
+    set
+    {
+      throw new NotImplementedException("Not implemented in GenerateEnumPropertySetCode: propertyType is DocumentFormat.OpenXml.Drawing.SchemeColor");
+    }
+  }
   
-  public DMD.PresetColorKind? PresetColor { get; set; }
+  [DataMember]
+  public DMD.PresetColorKind? PresetColor
+  {
+    get
+    {
+      throw new NotImplementedException("Not implemented in GenerateEnumPropertyGetCode: propertyType is DocumentFormat.OpenXml.Drawing.PresetColor");
+    }
+    set
+    {
+      throw new NotImplementedException("Not implemented in GenerateEnumPropertySetCode: propertyType is DocumentFormat.OpenXml.Drawing.PresetColor");
+    }
+  }
   
-  public String? StyleColor { get; set; }
+  [DataMember]
+  public String? StyleColor
+  {
+    get
+    {
+      throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor");
+    }
+    set
+    {
+      throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor");
+    }
+  }
   
 }

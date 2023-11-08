@@ -4,16 +4,60 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the WordprocessingCommentsPart
 /// </summary>
-public partial class WordprocessingCommentsPart
+public partial class WordprocessingCommentsPart: ModelElement<DXPack.WordprocessingCommentsPart>
 {
+  public WordprocessingCommentsPart(): base(){ }
+  
+  public WordprocessingCommentsPart(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public WordprocessingCommentsPart(DXPack.WordprocessingCommentsPart openXmlElement): base(openXmlElement) { }
+  
   
   /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>
-  public DMW.Comments? Comments { get; set; }
+  [DataMember]
+  public DMW.Comments? Comments
+  {
+    get
+    {
+        return CommentsConverter.CreateModelElement(_Element?.RootElement as DXW.Comments);
+    }
+    set
+    {
+      if (value != null)
+      {
+         var rootElement = CommentsConverter.CreateOpenXmlElement<DXW.Comments>(value);
+         if (rootElement != null)
+           _ExistingElement.Comments = rootElement;
+      }
+    }
+  }
   
-  public String? ContentType { get; set; }
+  [DataMember]
+  public String? ContentType
+  {
+    get
+    {
+      return _Element?.ContentType;
+    }
+    set
+    {
+      _ExistingElement.ContentType = value;
+    }
+  }
   
-  public String? RelationshipType { get; set; }
+  [DataMember]
+  public String? RelationshipType
+  {
+    get
+    {
+      return _Element?.RelationshipType;
+    }
+    set
+    {
+      _ExistingElement.RelationshipType = value;
+    }
+  }
   
 }

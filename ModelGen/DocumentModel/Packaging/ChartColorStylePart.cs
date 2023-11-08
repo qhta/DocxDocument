@@ -4,16 +4,60 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the ChartColorStylePart
 /// </summary>
-public partial class ChartColorStylePart
+public partial class ChartColorStylePart: ModelElement<DXPack.ChartColorStylePart>
 {
+  public ChartColorStylePart(): base(){ }
+  
+  public ChartColorStylePart(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public ChartColorStylePart(DXPack.ChartColorStylePart openXmlElement): base(openXmlElement) { }
+  
   
   /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>
-  public DMDCS.ColorStyle? ColorStyle { get; set; }
+  [DataMember]
+  public DMDCS.ColorStyle? ColorStyle
+  {
+    get
+    {
+        return ColorStyleConverter.CreateModelElement(_Element?.RootElement as DXO13DCS.ColorStyle);
+    }
+    set
+    {
+      if (value != null)
+      {
+         var rootElement = ColorStyleConverter.CreateOpenXmlElement<DXO13DCS.ColorStyle>(value);
+         if (rootElement != null)
+           _ExistingElement.ColorStyle = rootElement;
+      }
+    }
+  }
   
-  public String? ContentType { get; set; }
+  [DataMember]
+  public String? ContentType
+  {
+    get
+    {
+      return _Element?.ContentType;
+    }
+    set
+    {
+      _ExistingElement.ContentType = value;
+    }
+  }
   
-  public String? RelationshipType { get; set; }
+  [DataMember]
+  public String? RelationshipType
+  {
+    get
+    {
+      return _Element?.RelationshipType;
+    }
+    set
+    {
+      _ExistingElement.RelationshipType = value;
+    }
+  }
   
 }

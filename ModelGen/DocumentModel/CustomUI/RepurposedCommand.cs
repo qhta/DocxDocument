@@ -4,30 +4,83 @@ namespace DocumentModel.CustomUI;
 /// <summary>
 ///   Defines the RepurposedCommand Class.
 /// </summary>
-public partial class RepurposedCommand
+public partial class RepurposedCommand: ModelElement<DXOCUI.RepurposedCommand>
 {
+  public RepurposedCommand(): base(){ }
+  
+  public RepurposedCommand(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public RepurposedCommand(DXOCUI.RepurposedCommand openXmlElement): base(openXmlElement) { }
+  
   
   /// <summary>
   ///   onAction
   /// </summary>
-  public String? OnAction { get; set; }
+  [DataMember]
+  public String? OnAction
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.OnAction);
+    }
+    set
+    {
+      _ExistingElement.OnAction = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   enabled
   /// </summary>
-  public Boolean? Enabled { get; set; }
+  [DataMember]
+  public Boolean? Enabled
+  {
+    get
+    {
+      return _Element?.Enabled?.Value;
+    }
+    set
+    {
+      if (value != null)
+        _ExistingElement.Enabled = new BooleanValue { Value = (Boolean)value };
+      else
+        _ExistingElement.Enabled = null;
+    }
+  }
   
   
   /// <summary>
   ///   getEnabled
   /// </summary>
-  public String? GetEnabled { get; set; }
+  [DataMember]
+  public String? GetEnabled
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.GetEnabled);
+    }
+    set
+    {
+      _ExistingElement.GetEnabled = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   idMso
   /// </summary>
-  public String? IdMso { get; set; }
+  [DataMember]
+  public String? IdMso
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.IdMso);
+    }
+    set
+    {
+      _ExistingElement.IdMso = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
 }

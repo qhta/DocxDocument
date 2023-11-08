@@ -106,7 +106,7 @@
           }
         }
       },
-      "Namotion.Reflection/3.0.0": {
+      "Namotion.Reflection/3.1.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.CSharp": "4.3.0"
@@ -1678,6 +1678,10 @@
       "DocumentModel.BaseTypes/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "DocumentFormat.OpenXml": "2.20.0",
+          "Qhta.TextUtils": "3.2.0"
+        },
         "compile": {
           "bin/placeholder/DocumentModel.BaseTypes.dll": {}
         },
@@ -1707,7 +1711,7 @@
           "DocumentModel.BaseTypes": "1.0.0",
           "ModelDocumentation": "1.0.0",
           "ModelGenDataConfig": "1.0.0",
-          "Namotion.Reflection": "3.0.0",
+          "Namotion.Reflection": "3.1.0",
           "Newtonsoft.Json": "13.0.3",
           "Qhta.Collections": "4.6.0",
           "Qhta.HtmlUtils": "2.1.0",
@@ -1727,8 +1731,10 @@
       },
       "ModelGenDataConfig/1.0.0": {
         "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
+        "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "DocumentModel.BaseTypes": "1.0.0",
+          "Namotion.Reflection": "3.1.0",
           "Qhta.Collections": "4.6.0",
           "Qhta.TextUtils": "3.2.0"
         },
@@ -1957,10 +1963,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Namotion.Reflection/3.0.0": {
-      "sha512": "LhonaYvJJtT1/biog/Is9NVlwHpjwzuUG6e+xR2I6kzy8Kg4mXC86xnZ/MOOgaZaUpoTPNRm7NWLCs4J4KgU1A==",
+    "Namotion.Reflection/3.1.0": {
+      "sha512": "IkbLtJzN1JQaiW0QYPWnHpkqph9cPJVXyWJsGfqPjHsYGUb3whvnIg6pzViHVWXamXj6Vki0LUmmYYR5IjwRVQ==",
       "type": "package",
-      "path": "namotion.reflection/3.0.0",
+      "path": "namotion.reflection/3.1.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1968,7 +1974,7 @@
         "lib/net462/Namotion.Reflection.xml",
         "lib/netstandard2.0/Namotion.Reflection.dll",
         "lib/netstandard2.0/Namotion.Reflection.xml",
-        "namotion.reflection.3.0.0.nupkg.sha512",
+        "namotion.reflection.3.1.0.nupkg.sha512",
         "namotion.reflection.nuspec"
       ]
     },

@@ -4,120 +4,341 @@ namespace DocumentModel.CustomUI10;
 /// <summary>
 ///   Defines the BackstageCheckBox Class.
 /// </summary>
-public partial class BackstageCheckBox
+public partial class BackstageCheckBox: ModelElement<DXO10CUI.BackstageCheckBox>
 {
+  public BackstageCheckBox(): base(){ }
+  
+  public BackstageCheckBox(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public BackstageCheckBox(DXO10CUI.BackstageCheckBox openXmlElement): base(openXmlElement) { }
+  
   
   /// <summary>
   ///   description, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? Description { get; set; }
+  [DataMember]
+  public String? Description
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Description);
+    }
+    set
+    {
+      _ExistingElement.Description = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   getDescription, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? GetDescription { get; set; }
+  [DataMember]
+  public String? GetDescription
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.GetDescription);
+    }
+    set
+    {
+      _ExistingElement.GetDescription = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   screentip, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? Screentip { get; set; }
+  [DataMember]
+  public String? Screentip
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Screentip);
+    }
+    set
+    {
+      _ExistingElement.Screentip = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   getScreentip, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? GetScreentip { get; set; }
+  [DataMember]
+  public String? GetScreentip
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.GetScreentip);
+    }
+    set
+    {
+      _ExistingElement.GetScreentip = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   supertip, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? Supertip { get; set; }
+  [DataMember]
+  public String? Supertip
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Supertip);
+    }
+    set
+    {
+      _ExistingElement.Supertip = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   getSupertip, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? GetSupertip { get; set; }
+  [DataMember]
+  public String? GetSupertip
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.GetSupertip);
+    }
+    set
+    {
+      _ExistingElement.GetSupertip = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   id, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? Id { get; set; }
+  [DataMember]
+  public String? Id
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Id);
+    }
+    set
+    {
+      _ExistingElement.Id = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   idQ, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? QualifiedId { get; set; }
+  [DataMember]
+  public String? QualifiedId
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.QualifiedId);
+    }
+    set
+    {
+      _ExistingElement.QualifiedId = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   tag, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? Tag { get; set; }
+  [DataMember]
+  public String? Tag
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Tag);
+    }
+    set
+    {
+      _ExistingElement.Tag = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   onAction, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? OnAction { get; set; }
+  [DataMember]
+  public String? OnAction
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.OnAction);
+    }
+    set
+    {
+      _ExistingElement.OnAction = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   getPressed, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? GetPressed { get; set; }
+  [DataMember]
+  public String? GetPressed
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.GetPressed);
+    }
+    set
+    {
+      _ExistingElement.GetPressed = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   enabled, this property is only available in Office 2010 and later.
   /// </summary>
-  public Boolean? Enabled { get; set; }
+  [DataMember]
+  public Boolean? Enabled
+  {
+    get
+    {
+      return _Element?.Enabled?.Value;
+    }
+    set
+    {
+      if (value != null)
+        _ExistingElement.Enabled = new BooleanValue { Value = (Boolean)value };
+      else
+        _ExistingElement.Enabled = null;
+    }
+  }
   
   
   /// <summary>
   ///   getEnabled, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? GetEnabled { get; set; }
+  [DataMember]
+  public String? GetEnabled
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.GetEnabled);
+    }
+    set
+    {
+      _ExistingElement.GetEnabled = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   label, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? Label { get; set; }
+  [DataMember]
+  public String? Label
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Label);
+    }
+    set
+    {
+      _ExistingElement.Label = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   getLabel, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? GetLabel { get; set; }
+  [DataMember]
+  public String? GetLabel
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.GetLabel);
+    }
+    set
+    {
+      _ExistingElement.GetLabel = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   visible, this property is only available in Office 2010 and later.
   /// </summary>
-  public Boolean? Visible { get; set; }
+  [DataMember]
+  public Boolean? Visible
+  {
+    get
+    {
+      return _Element?.Visible?.Value;
+    }
+    set
+    {
+      if (value != null)
+        _ExistingElement.Visible = new BooleanValue { Value = (Boolean)value };
+      else
+        _ExistingElement.Visible = null;
+    }
+  }
   
   
   /// <summary>
   ///   getVisible, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? GetVisible { get; set; }
+  [DataMember]
+  public String? GetVisible
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.GetVisible);
+    }
+    set
+    {
+      _ExistingElement.GetVisible = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   keytip, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? Keytip { get; set; }
+  [DataMember]
+  public String? Keytip
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Keytip);
+    }
+    set
+    {
+      _ExistingElement.Keytip = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   getKeytip, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? GetKeytip { get; set; }
+  [DataMember]
+  public String? GetKeytip
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.GetKeytip);
+    }
+    set
+    {
+      _ExistingElement.GetKeytip = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
 }

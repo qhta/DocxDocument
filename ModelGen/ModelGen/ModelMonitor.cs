@@ -11,9 +11,9 @@ public abstract class ModelMonitor
 
   public abstract DocumentationWriter GetDocumentationWriter(DisplayOptions options);
 
-  public PPS PhaseNum { get; protected set; }
+  public PPS PhaseNum { [DebuggerStepThrough] get; protected set; }
 
-  public string? PhaseName { get; protected set; }
+  public string? PhaseName { [DebuggerStepThrough] get; protected set; }
 
   public virtual void ShowProcessStart(string line)
   {

@@ -24,22 +24,22 @@ public class ModelValidator
     TypeDataSelector = typeDataSelector;
   }
 
-  public PPS PhaseNum { get; private set; }
-  public NTS NamespaceTypeSelector { get; private set; }
-  public MSS TypeStatusSelector { get; private set; }
-  public TDS TypeDataSelector { get; private set; }
+  public PPS PhaseNum { [DebuggerStepThrough] get; private set; }
+  public NTS NamespaceTypeSelector { [DebuggerStepThrough] get; private set; }
+  public MSS TypeStatusSelector { [DebuggerStepThrough] get; private set; }
+  public TDS TypeDataSelector { [DebuggerStepThrough] get; private set; }
 
-  public int TotalTypesCount { get; private set; }
+  public int TotalTypesCount { [DebuggerStepThrough] get; private set; }
 
-  public HashSet<TypeInfo> ValidatedTypes { get; private set; } = new HashSet<TypeInfo>();
+  public HashSet<TypeInfo> ValidatedTypes { [DebuggerStepThrough] get; private set; } = new HashSet<TypeInfo>();
   public int ValidatedTypesCount => ValidatedTypes.Count;
 
-  public HashSet<TypeInfo> InvalidTypes { get; private set; } = new HashSet<TypeInfo>();
+  public HashSet<TypeInfo> InvalidTypes { [DebuggerStepThrough] get; private set; } = new HashSet<TypeInfo>();
   public int InvalidTypesCount => InvalidTypes.Count;
 
-  public int ValidTypesCount { get; private set; }
+  public int ValidTypesCount { [DebuggerStepThrough] get; private set; }
 
-  public HashSet<PropInfo> InvalidProps { get; private set; } = new HashSet<PropInfo>();
+  public HashSet<PropInfo> InvalidProps { [DebuggerStepThrough] get; private set; } = new HashSet<PropInfo>();
   public int InvalidPropsCount => InvalidProps.Count;
 
   public bool ValidateTypes(IEnumerable<TypeInfo> types, ValidatingTypeEvent? OnValidatingType)

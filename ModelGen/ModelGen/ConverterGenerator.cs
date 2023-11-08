@@ -20,7 +20,7 @@ public class ConverterGenerator : BaseCodeGenerator
     OutputPath = outputPath + ".OpenXml";
   }
 
-  public int SkippedTypesCount { get; private set; }
+  public int SkippedTypesCount { [DebuggerStepThrough] get; private set; }
 
   public override bool GenerateTypeFile(TypeInfo typeInfo)
   {

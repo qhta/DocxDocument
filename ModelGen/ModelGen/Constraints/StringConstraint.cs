@@ -9,26 +9,26 @@ public record StringConstraint : Constraint
   /// <summary>
   /// Minimum accepted length of the string.
   /// </summary>
-  public int? MinLength { get; set; }
+  public int? MinLength { [DebuggerStepThrough] get; set; }
 
   /// <summary>
   /// Maximum accepted length of the string.
   /// </summary>
-  public int? MaxLength { get; set; }
+  public int? MaxLength { [DebuggerStepThrough] get; set; }
 
   /// <summary>
   /// Fixed length of the string.
   /// </summary>
-  public int? FixLength { get; set; }
+  public int? FixLength { [DebuggerStepThrough] get; set; }
 
   /// <summary>
   /// Regular expression that describes accepted string format.
   /// </summary>
-  public string? Regex { get; set; }
+  public string? Regex { [DebuggerStepThrough] get; set; }
 
   /// <summary>
   /// XsdType that describes accepted string format. Only few XsdTypes are accepted.
   /// </summary>
-  public XsdType? XsdType { get; set; }
+  public XsdType? XsdType { [DebuggerStepThrough] get; set; }
 
 }

@@ -8,37 +8,37 @@ public record DisplayOptions
   /// <summary>
   /// Specifies Namespaces do display. May be namespaces or wildcard patterns.
   /// </summary>
-  public String[]? Namespaces { get; set; }
+  public String[]? Namespaces { [DebuggerStepThrough] get; set; }
   
   /// <summary>
   /// Specifies Namespaces do display. May be namespaces or wildcard patterns.
   /// </summary>
-  public String[]? Typenames { get; set; }
+  public String[]? Typenames { [DebuggerStepThrough] get; set; }
 
   /// <summary>
   /// Determines which namespaces to display.
   /// </summary>
-  public NTS NamespaceTypeSelector { get; set; } = NTS.Target;
+  public NTS NamespaceTypeSelector { [DebuggerStepThrough] get; set; } = NTS.Target;
   
   /// <summary>
   /// Determines which namespaces to display.
   /// </summary>
-  public TKS TypeKindSelector { get; set; } = TKS.Any;
+  public TKS TypeKindSelector { [DebuggerStepThrough] get; set; } = TKS.Any;
 
   /// <summary>
   /// Determines which namespaces to display.
   /// </summary>
-  public MSS TypeStatusSelector { get; set; }
+  public MSS TypeStatusSelector { [DebuggerStepThrough] get; set; }
 
   /// <summary>
   /// Determines what type data to display.
   /// </summary>
-  public TDS TypeDataSelector { get; set; }
+  public TDS TypeDataSelector { [DebuggerStepThrough] get; set; }
 
   /// <summary>
   /// Determines which members to display.
   /// </summary>
-  public MSS MemberStatusSelector { get; set; }
+  public MSS MemberStatusSelector { [DebuggerStepThrough] get; set; }
 
   /// <summary>
   /// Limits list of enumerated types
@@ -58,6 +58,6 @@ public record DisplayOptions
   /// <summary>
   /// Specifies relationships semantics selected to display or to exclude depending on TDS.
   /// </summary>
-  public Semantics[]? SemanticsFilter { get; set; }
+  public Semantics[]? SemanticsFilter { [DebuggerStepThrough] get; set; }
 
 }

@@ -4,12 +4,29 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Argument Properties.
 /// </summary>
-public partial class ArgumentProperties
+public partial class ArgumentProperties: ModelElement<DXM.ArgumentProperties>
 {
+  public ArgumentProperties(): base(){ }
+  
+  public ArgumentProperties(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public ArgumentProperties(DXM.ArgumentProperties openXmlElement): base(openXmlElement) { }
+  
   
   /// <summary>
   ///   Argument Size.
   /// </summary>
-  public Int64? ArgumentSize { get; set; }
+  [DataMember]
+  public Int64? ArgumentSize
+  {
+    get
+    {
+      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DXM.ArgumentSize>()?.Val);
+    }
+    set
+    {
+      SimpleValueConverter.SetValue<DXM.ArgumentSize,System.Int64>(openXmlElement, value);
+    }
+  }
   
 }

@@ -4,138 +4,441 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Defines the Stroke Class.
 /// </summary>
-public partial class Stroke
+public partial class Stroke: ModelElement<DXV.Stroke>
 {
+  public Stroke(): base(){ }
+  
+  public Stroke(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public Stroke(DXV.Stroke openXmlElement): base(openXmlElement) { }
+  
   
   /// <summary>
   ///   Unique Identifier
   /// </summary>
-  public String? Id { get; set; }
+  [DataMember]
+  public String? Id
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Id);
+    }
+    set
+    {
+      _ExistingElement.Id = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Stroke Toggle
   /// </summary>
-  public DM.TrueFalseValue? On { get; set; }
+  [DataMember]
+  public DM.TrueFalseValue? On
+  {
+    get
+    {
+      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+    }
+    set
+    {
+      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+    }
+  }
   
   
   /// <summary>
   ///   Stroke Weight
   /// </summary>
-  public String? Weight { get; set; }
+  [DataMember]
+  public String? Weight
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Weight);
+    }
+    set
+    {
+      _ExistingElement.Weight = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Stroke Color
   /// </summary>
-  public String? Color { get; set; }
+  [DataMember]
+  public String? Color
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Color);
+    }
+    set
+    {
+      _ExistingElement.Color = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Stroke Opacity
   /// </summary>
-  public String? Opacity { get; set; }
+  [DataMember]
+  public String? Opacity
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Opacity);
+    }
+    set
+    {
+      _ExistingElement.Opacity = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Miter Joint Limit
   /// </summary>
-  public String? Miterlimit { get; set; }
+  [DataMember]
+  public String? Miterlimit
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Miterlimit);
+    }
+    set
+    {
+      _ExistingElement.Miterlimit = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Stroke Dash Pattern
   /// </summary>
-  public String? DashStyle { get; set; }
+  [DataMember]
+  public String? DashStyle
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.DashStyle);
+    }
+    set
+    {
+      _ExistingElement.DashStyle = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Stroke Image Location
   /// </summary>
-  public String? Source { get; set; }
+  [DataMember]
+  public String? Source
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Source);
+    }
+    set
+    {
+      _ExistingElement.Source = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Stroke Image Size
   /// </summary>
-  public String? ImageSize { get; set; }
+  [DataMember]
+  public String? ImageSize
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.ImageSize);
+    }
+    set
+    {
+      _ExistingElement.ImageSize = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Stoke Image Alignment
   /// </summary>
-  public DM.TrueFalseValue? ImageAlignShape { get; set; }
+  [DataMember]
+  public DM.TrueFalseValue? ImageAlignShape
+  {
+    get
+    {
+      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+    }
+    set
+    {
+      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+    }
+  }
   
   
   /// <summary>
   ///   Stroke Alternate Pattern Color
   /// </summary>
-  public String? Color2 { get; set; }
+  [DataMember]
+  public String? Color2
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Color2);
+    }
+    set
+    {
+      _ExistingElement.Color2 = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Original Image Reference
   /// </summary>
-  public String? Href { get; set; }
+  [DataMember]
+  public String? Href
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Href);
+    }
+    set
+    {
+      _ExistingElement.Href = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Alternate Image Reference
   /// </summary>
-  public String? AlternateImageReference { get; set; }
+  [DataMember]
+  public String? AlternateImageReference
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.AlternateImageReference);
+    }
+    set
+    {
+      _ExistingElement.AlternateImageReference = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Stroke Title
   /// </summary>
-  public String? Title { get; set; }
+  [DataMember]
+  public String? Title
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Title);
+    }
+    set
+    {
+      _ExistingElement.Title = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Force Dashed Outline
   /// </summary>
-  public DM.TrueFalseValue? ForceDash { get; set; }
+  [DataMember]
+  public DM.TrueFalseValue? ForceDash
+  {
+    get
+    {
+      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+    }
+    set
+    {
+      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+    }
+  }
   
   
   /// <summary>
   ///   Relationship
   /// </summary>
-  public String? RelationshipId { get; set; }
+  [DataMember]
+  public String? RelationshipId
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.RelationshipId);
+    }
+    set
+    {
+      _ExistingElement.RelationshipId = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   Inset Border From Path
   /// </summary>
-  public DM.TrueFalseValue? Insetpen { get; set; }
+  [DataMember]
+  public DM.TrueFalseValue? Insetpen
+  {
+    get
+    {
+      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+    }
+    set
+    {
+      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+    }
+  }
   
   
   /// <summary>
   ///   LeftStroke.
   /// </summary>
-  public DMVML.LeftStroke? LeftStroke { get; set; }
+  [DataMember]
+  public DMVML.LeftStroke? LeftStroke
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXVO.LeftStroke>();
+      if (element != null)
+        return LeftStrokeConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXVO.LeftStroke>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = LeftStrokeConverter.CreateOpenXmlElement<DXVO.LeftStroke>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
   
   /// <summary>
   ///   TopStroke.
   /// </summary>
-  public DMVML.TopStroke? TopStroke { get; set; }
+  [DataMember]
+  public DMVML.TopStroke? TopStroke
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXVO.TopStroke>();
+      if (element != null)
+        return TopStrokeConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXVO.TopStroke>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = TopStrokeConverter.CreateOpenXmlElement<DXVO.TopStroke>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
   
   /// <summary>
   ///   RightStroke.
   /// </summary>
-  public DMVML.RightStroke? RightStroke { get; set; }
+  [DataMember]
+  public DMVML.RightStroke? RightStroke
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXVO.RightStroke>();
+      if (element != null)
+        return RightStrokeConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXVO.RightStroke>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = RightStrokeConverter.CreateOpenXmlElement<DXVO.RightStroke>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
   
   /// <summary>
   ///   BottomStroke.
   /// </summary>
-  public DMVML.BottomStroke? BottomStroke { get; set; }
+  [DataMember]
+  public DMVML.BottomStroke? BottomStroke
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXVO.BottomStroke>();
+      if (element != null)
+        return BottomStrokeConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXVO.BottomStroke>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = BottomStrokeConverter.CreateOpenXmlElement<DXVO.BottomStroke>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
   
   /// <summary>
   ///   ColumnStroke.
   /// </summary>
-  public DMVML.ColumnStroke? ColumnStroke { get; set; }
+  [DataMember]
+  public DMVML.ColumnStroke? ColumnStroke
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXVO.ColumnStroke>();
+      if (element != null)
+        return ColumnStrokeConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXVO.ColumnStroke>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = ColumnStrokeConverter.CreateOpenXmlElement<DXVO.ColumnStroke>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
 }

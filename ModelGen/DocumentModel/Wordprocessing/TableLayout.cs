@@ -4,6 +4,12 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   This element specifies the algorithm which shall be used to lay out the contents of this table within the document. When a table is displayed in a document, it can either be displayed using a fixed width or autofit layout algorithm (each discussed in the simple type referenced by the val attribute).
 /// </summary>
-public partial class TableLayout
+public partial class TableLayout: ModelElement<DXW.TableLayout>
 {
+  public TableLayout(): base(){ }
+  
+  public TableLayout(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public TableLayout(DXW.TableLayout openXmlElement): base(openXmlElement) { }
+  
 }

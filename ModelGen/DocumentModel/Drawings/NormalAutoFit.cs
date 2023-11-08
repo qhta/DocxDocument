@@ -4,18 +4,46 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Normal AutoFit.
 /// </summary>
-public partial class NormalAutoFit
+public partial class NormalAutoFit: ModelElement<DXD.NormalAutoFit>
 {
+  public NormalAutoFit(): base(){ }
+  
+  public NormalAutoFit(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public NormalAutoFit(DXD.NormalAutoFit openXmlElement): base(openXmlElement) { }
+  
   
   /// <summary>
   ///   Font Scale
   /// </summary>
-  public Int32? FontScale { get; set; }
+  [DataMember]
+  public Int32? FontScale
+  {
+    get
+    {
+      return _Element?.FontScale?.Value;
+    }
+    set
+    {
+      _ExistingElement.FontScale = value;
+    }
+  }
   
   
   /// <summary>
   ///   Line Space Reduction
   /// </summary>
-  public Int32? LineSpaceReduction { get; set; }
+  [DataMember]
+  public Int32? LineSpaceReduction
+  {
+    get
+    {
+      return _Element?.LineSpaceReduction?.Value;
+    }
+    set
+    {
+      _ExistingElement.LineSpaceReduction = value;
+    }
+  }
   
 }

@@ -4,54 +4,157 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Page Setup.
 /// </summary>
-public partial class PageSetup
+public partial class PageSetup: ModelElement<DXDC.PageSetup>
 {
+  public PageSetup(): base(){ }
+  
+  public PageSetup(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public PageSetup(DXDC.PageSetup openXmlElement): base(openXmlElement) { }
+  
   
   /// <summary>
   ///   Page Size
   /// </summary>
-  public UInt32? PaperSize { get; set; }
+  [DataMember]
+  public UInt32? PaperSize
+  {
+    get
+    {
+      return _Element?.PaperSize?.Value;
+    }
+    set
+    {
+      _ExistingElement.PaperSize = value;
+    }
+  }
   
   
   /// <summary>
   ///   First Page Number
   /// </summary>
-  public Int32? FirstPageNumber { get; set; }
+  [DataMember]
+  public Int32? FirstPageNumber
+  {
+    get
+    {
+      return _Element?.FirstPageNumber?.Value;
+    }
+    set
+    {
+      _ExistingElement.FirstPageNumber = value;
+    }
+  }
   
   
   /// <summary>
   ///   Black and White
   /// </summary>
-  public Boolean? BlackAndWhite { get; set; }
+  [DataMember]
+  public Boolean? BlackAndWhite
+  {
+    get
+    {
+      return _Element?.BlackAndWhite?.Value;
+    }
+    set
+    {
+      if (value != null)
+        _ExistingElement.BlackAndWhite = new BooleanValue { Value = (Boolean)value };
+      else
+        _ExistingElement.BlackAndWhite = null;
+    }
+  }
   
   
   /// <summary>
   ///   Draft
   /// </summary>
-  public Boolean? Draft { get; set; }
+  [DataMember]
+  public Boolean? Draft
+  {
+    get
+    {
+      return _Element?.Draft?.Value;
+    }
+    set
+    {
+      if (value != null)
+        _ExistingElement.Draft = new BooleanValue { Value = (Boolean)value };
+      else
+        _ExistingElement.Draft = null;
+    }
+  }
   
   
   /// <summary>
   ///   Use First Page Number
   /// </summary>
-  public Boolean? UseFirstPageNumber { get; set; }
+  [DataMember]
+  public Boolean? UseFirstPageNumber
+  {
+    get
+    {
+      return _Element?.UseFirstPageNumber?.Value;
+    }
+    set
+    {
+      if (value != null)
+        _ExistingElement.UseFirstPageNumber = new BooleanValue { Value = (Boolean)value };
+      else
+        _ExistingElement.UseFirstPageNumber = null;
+    }
+  }
   
   
   /// <summary>
   ///   Horizontal DPI
   /// </summary>
-  public Int32? HorizontalDpi { get; set; }
+  [DataMember]
+  public Int32? HorizontalDpi
+  {
+    get
+    {
+      return _Element?.HorizontalDpi?.Value;
+    }
+    set
+    {
+      _ExistingElement.HorizontalDpi = value;
+    }
+  }
   
   
   /// <summary>
   ///   Vertical DPI
   /// </summary>
-  public Int32? VerticalDpi { get; set; }
+  [DataMember]
+  public Int32? VerticalDpi
+  {
+    get
+    {
+      return _Element?.VerticalDpi?.Value;
+    }
+    set
+    {
+      _ExistingElement.VerticalDpi = value;
+    }
+  }
   
   
   /// <summary>
   ///   Copies
   /// </summary>
-  public UInt32? Copies { get; set; }
+  [DataMember]
+  public UInt32? Copies
+  {
+    get
+    {
+      return _Element?.Copies?.Value;
+    }
+    set
+    {
+      _ExistingElement.Copies = value;
+    }
+  }
   
 }

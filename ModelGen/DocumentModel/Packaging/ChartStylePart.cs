@@ -4,16 +4,60 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the ChartStylePart
 /// </summary>
-public partial class ChartStylePart
+public partial class ChartStylePart: ModelElement<DXPack.ChartStylePart>
 {
+  public ChartStylePart(): base(){ }
+  
+  public ChartStylePart(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public ChartStylePart(DXPack.ChartStylePart openXmlElement): base(openXmlElement) { }
+  
   
   /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>
-  public DMDCS.ChartStyle? ChartStyle { get; set; }
+  [DataMember]
+  public DMDCS.ChartStyle? ChartStyle
+  {
+    get
+    {
+        return ChartStyleConverter.CreateModelElement(_Element?.RootElement as DXO13DCS.ChartStyle);
+    }
+    set
+    {
+      if (value != null)
+      {
+         var rootElement = ChartStyleConverter.CreateOpenXmlElement<DXO13DCS.ChartStyle>(value);
+         if (rootElement != null)
+           _ExistingElement.ChartStyle = rootElement;
+      }
+    }
+  }
   
-  public String? ContentType { get; set; }
+  [DataMember]
+  public String? ContentType
+  {
+    get
+    {
+      return _Element?.ContentType;
+    }
+    set
+    {
+      _ExistingElement.ContentType = value;
+    }
+  }
   
-  public String? RelationshipType { get; set; }
+  [DataMember]
+  public String? RelationshipType
+  {
+    get
+    {
+      return _Element?.RelationshipType;
+    }
+    set
+    {
+      _ExistingElement.RelationshipType = value;
+    }
+  }
   
 }

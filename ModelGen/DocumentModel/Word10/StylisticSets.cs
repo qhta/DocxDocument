@@ -4,6 +4,12 @@ namespace DocumentModel.Word10;
 /// <summary>
 ///   This element specifies a list of stylistic sets that modify the display of OpenType fonts. (For more information about stylistic sets, see OpenType.) By default, there are no stylistic sets enabled.
 /// </summary>
-public partial class StylisticSets
+public partial class StylisticSets: ModelElement<DXO10W.StylisticSets>
 {
+  public StylisticSets(): base(){ }
+  
+  public StylisticSets(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public StylisticSets(DXO10W.StylisticSets openXmlElement): base(openXmlElement) { }
+  
 }

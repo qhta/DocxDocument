@@ -5,7 +5,7 @@ namespace ModelGen;
 [XmlRoot("Enum")]
 public class EnumInfo : MemberElement
 {
-  public int? Value { get; set; }
+  public int? Value { [DebuggerStepThrough] get; set; }
 
   public EnumInfo(string name, int? value) : base(name)
   {

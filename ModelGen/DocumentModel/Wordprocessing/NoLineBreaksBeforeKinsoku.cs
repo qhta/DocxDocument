@@ -4,18 +4,46 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Custom Set Of Characters Which Cannot Begin A Line.
 /// </summary>
-public partial class NoLineBreaksBeforeKinsoku
+public partial class NoLineBreaksBeforeKinsoku: ModelElement<DXW.NoLineBreaksBeforeKinsoku>
 {
+  public NoLineBreaksBeforeKinsoku(): base(){ }
+  
+  public NoLineBreaksBeforeKinsoku(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public NoLineBreaksBeforeKinsoku(DXW.NoLineBreaksBeforeKinsoku openXmlElement): base(openXmlElement) { }
+  
   
   /// <summary>
   ///   lang
   /// </summary>
-  public String? Language { get; set; }
+  [DataMember]
+  public String? Language
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Language);
+    }
+    set
+    {
+      _ExistingElement.Language = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
   
   /// <summary>
   ///   val
   /// </summary>
-  public String? Val { get; set; }
+  [DataMember]
+  public String? Val
+  {
+    get
+    {
+      return StringValueConverter.GetValue(_Element?.Val);
+    }
+    set
+    {
+      _ExistingElement.Val = StringValueConverter.CreateStringValue(value);
+    }
+  }
   
 }

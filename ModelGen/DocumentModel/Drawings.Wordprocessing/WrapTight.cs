@@ -4,24 +4,74 @@ namespace DocumentModel.Drawings.Wordprocessing;
 /// <summary>
 ///   Tight Wrapping.
 /// </summary>
-public partial class WrapTight
+public partial class WrapTight: ModelElement<DXDW.WrapTight>
 {
+  public WrapTight(): base(){ }
+  
+  public WrapTight(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  
+  public WrapTight(DXDW.WrapTight openXmlElement): base(openXmlElement) { }
+  
   
   /// <summary>
   ///   Distance From Test on Left Edge
   /// </summary>
-  public UInt32? DistanceFromLeft { get; set; }
+  [DataMember]
+  public UInt32? DistanceFromLeft
+  {
+    get
+    {
+      return _Element?.DistanceFromLeft?.Value;
+    }
+    set
+    {
+      _ExistingElement.DistanceFromLeft = value;
+    }
+  }
   
   
   /// <summary>
   ///   Distance From Text on Right Edge
   /// </summary>
-  public UInt32? DistanceFromRight { get; set; }
+  [DataMember]
+  public UInt32? DistanceFromRight
+  {
+    get
+    {
+      return _Element?.DistanceFromRight?.Value;
+    }
+    set
+    {
+      _ExistingElement.DistanceFromRight = value;
+    }
+  }
   
   
   /// <summary>
   ///   Tight Wrapping Extents Polygon.
   /// </summary>
-  public DMDW.WrapPolygon? WrapPolygon { get; set; }
+  [DataMember]
+  public DMDW.WrapPolygon? WrapPolygon
+  {
+    get
+    {
+      var element = _Element?.GetFirstChild<DXDW.WrapPolygon>();
+      if (element != null)
+        return WrapPolygonConverter.CreateModelElement(element);
+      return null;
+    }
+    set
+    {
+      var itemElement = _ExistingElement.GetFirstChild<DXDW.WrapPolygon>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = WrapPolygonConverter.CreateOpenXmlElement<DXDW.WrapPolygon>(value);
+        if (itemElement != null)
+          _ExistingElement.AddChild(itemElement);
+      }
+    }
+  }
   
 }
