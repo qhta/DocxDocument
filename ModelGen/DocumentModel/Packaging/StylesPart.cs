@@ -4,11 +4,11 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines StylesPart. The StylesPart served as the base class of StylesWithEffectsPart and StyleDefinitionsPart.
 /// </summary>
-public partial class StylesPart: ModelElement<DXPack.StylesPart>
+public partial class StylesPart: ModelPartElement<DXPack.StylesPart>
 {
   public StylesPart(): base(){ }
   
-  public StylesPart(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  public StylesPart(DXPack.OpenXmlPart openXmlElement): base(openXmlElement) { }
   
   public StylesPart(DXPack.StylesPart openXmlElement): base(openXmlElement) { }
   

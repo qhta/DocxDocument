@@ -4,11 +4,11 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the ChartColorStylePart
 /// </summary>
-public partial class ChartColorStylePart: ModelElement<DXPack.ChartColorStylePart>
+public partial class ChartColorStylePart: ModelPartElement<DXPack.ChartColorStylePart>
 {
   public ChartColorStylePart(): base(){ }
   
-  public ChartColorStylePart(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  public ChartColorStylePart(DXPack.OpenXmlPart openXmlElement): base(openXmlElement) { }
   
   public ChartColorStylePart(DXPack.ChartColorStylePart openXmlElement): base(openXmlElement) { }
   

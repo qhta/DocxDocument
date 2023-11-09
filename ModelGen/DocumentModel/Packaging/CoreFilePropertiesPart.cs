@@ -4,11 +4,11 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Core properties enable users to get and set well-known and common sets of property metadata within packages.
 /// </summary>
-public partial class CoreFilePropertiesPart: ModelElement<DXPack.CoreFilePropertiesPart>
+public partial class CoreFilePropertiesPart: ModelPartElement<DXPack.CoreFilePropertiesPart>
 {
   public CoreFilePropertiesPart(): base(){ }
   
-  public CoreFilePropertiesPart(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  public CoreFilePropertiesPart(DXPack.OpenXmlPart openXmlElement): base(openXmlElement) { }
   
   public CoreFilePropertiesPart(DXPack.CoreFilePropertiesPart openXmlElement): base(openXmlElement) { }
   

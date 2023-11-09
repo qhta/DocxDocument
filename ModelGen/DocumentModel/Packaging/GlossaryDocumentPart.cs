@@ -4,11 +4,11 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   An instance of this part type is a supplementary document storage location which stores the definition and content for content that shall be carried with the document for future insertion and/or use, but which shall not be visible within the contents of the main document story.
 /// </summary>
-public partial class GlossaryDocumentPart: ModelElement<DXPack.GlossaryDocumentPart>
+public partial class GlossaryDocumentPart: ModelPartElement<DXPack.GlossaryDocumentPart>
 {
   public GlossaryDocumentPart(): base(){ }
   
-  public GlossaryDocumentPart(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  public GlossaryDocumentPart(DXPack.OpenXmlPart openXmlElement): base(openXmlElement) { }
   
   public GlossaryDocumentPart(DXPack.GlossaryDocumentPart openXmlElement): base(openXmlElement) { }
   

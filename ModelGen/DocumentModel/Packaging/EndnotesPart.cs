@@ -4,11 +4,11 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   An instance of this part type contains all the endnotes for the document.
 /// </summary>
-public partial class EndnotesPart: ModelElement<DXPack.EndnotesPart>
+public partial class EndnotesPart: ModelPartElement<DXPack.EndnotesPart>
 {
   public EndnotesPart(): base(){ }
   
-  public EndnotesPart(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  public EndnotesPart(DXPack.OpenXmlPart openXmlElement): base(openXmlElement) { }
   
   public EndnotesPart(DXPack.EndnotesPart openXmlElement): base(openXmlElement) { }
   

@@ -4,11 +4,11 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the ChartPart
 /// </summary>
-public partial class ChartPart: ModelElement<DXPack.ChartPart>
+public partial class ChartPart: ModelPartElement<DXPack.ChartPart>
 {
   public ChartPart(): base(){ }
   
-  public ChartPart(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  public ChartPart(DXPack.OpenXmlPart openXmlElement): base(openXmlElement) { }
   
   public ChartPart(DXPack.ChartPart openXmlElement): base(openXmlElement) { }
   

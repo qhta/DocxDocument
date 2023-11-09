@@ -4,11 +4,11 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   This part stores a copy of the styles part.
 /// </summary>
-public partial class StylesWithEffectsPart: ModelElement<DXPack.StylesWithEffectsPart>
+public partial class StylesWithEffectsPart: ModelPartElement<DXPack.StylesWithEffectsPart>
 {
   public StylesWithEffectsPart(): base(){ }
   
-  public StylesWithEffectsPart(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  public StylesWithEffectsPart(DXPack.OpenXmlPart openXmlElement): base(openXmlElement) { }
   
   public StylesWithEffectsPart(DXPack.StylesWithEffectsPart openXmlElement): base(openXmlElement) { }
   

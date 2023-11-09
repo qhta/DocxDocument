@@ -4,11 +4,11 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the XmlSignaturePart
 /// </summary>
-public partial class XmlSignaturePart: ModelElement<DXPack.XmlSignaturePart>
+public partial class XmlSignaturePart: ModelPartElement<DXPack.XmlSignaturePart>
 {
   public XmlSignaturePart(): base(){ }
   
-  public XmlSignaturePart(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  public XmlSignaturePart(DXPack.OpenXmlPart openXmlElement): base(openXmlElement) { }
   
   public XmlSignaturePart(DXPack.XmlSignaturePart openXmlElement): base(openXmlElement) { }
   

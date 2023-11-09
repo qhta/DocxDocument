@@ -4,11 +4,11 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines CustomUiPart. The CustomUiPart served as the base class of RibbonExtensibilityPart and QuickAccessToolbarCustomizationsPart.
 /// </summary>
-public partial class CustomUIPart: ModelElement<DXPack.CustomUIPart>
+public partial class CustomUIPart: ModelPartElement<DXPack.CustomUIPart>
 {
   public CustomUIPart(): base(){ }
   
-  public CustomUIPart(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  public CustomUIPart(DXPack.OpenXmlPart openXmlElement): base(openXmlElement) { }
   
   public CustomUIPart(DXPack.CustomUIPart openXmlElement): base(openXmlElement) { }
   

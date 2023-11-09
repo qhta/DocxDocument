@@ -4,11 +4,11 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the DiagramPersistLayoutPart
 /// </summary>
-public partial class DiagramPersistLayoutPart: ModelElement<DXPack.DiagramPersistLayoutPart>
+public partial class DiagramPersistLayoutPart: ModelPartElement<DXPack.DiagramPersistLayoutPart>
 {
   public DiagramPersistLayoutPart(): base(){ }
   
-  public DiagramPersistLayoutPart(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  public DiagramPersistLayoutPart(DXPack.OpenXmlPart openXmlElement): base(openXmlElement) { }
   
   public DiagramPersistLayoutPart(DXPack.DiagramPersistLayoutPart openXmlElement): base(openXmlElement) { }
   
