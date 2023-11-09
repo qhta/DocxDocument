@@ -4,11 +4,11 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   An instance of this part type contains the information about a footer displayed for one or more sections.
 /// </summary>
-public partial class FooterPart: ModelElement<DXPack.FooterPart>
+public partial class FooterPart: ModelPartElement<DXPack.FooterPart>
 {
   public FooterPart(): base(){ }
   
-  public FooterPart(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  public FooterPart(DXPack.OpenXmlPart openXmlElement): base(openXmlElement) { }
   
   public FooterPart(DXPack.FooterPart openXmlElement): base(openXmlElement) { }
   

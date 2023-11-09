@@ -4,11 +4,11 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the WordCommentsExtensiblePart
 /// </summary>
-public partial class WordCommentsExtensiblePart: ModelElement<DXPack.WordCommentsExtensiblePart>
+public partial class WordCommentsExtensiblePart: ModelPartElement<DXPack.WordCommentsExtensiblePart>
 {
   public WordCommentsExtensiblePart(): base(){ }
   
-  public WordCommentsExtensiblePart(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  public WordCommentsExtensiblePart(DXPack.OpenXmlPart openXmlElement): base(openXmlElement) { }
   
   public WordCommentsExtensiblePart(DXPack.WordCommentsExtensiblePart openXmlElement): base(openXmlElement) { }
   

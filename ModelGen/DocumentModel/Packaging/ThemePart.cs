@@ -4,11 +4,11 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the ThemePart
 /// </summary>
-public partial class ThemePart: ModelElement<DXPack.ThemePart>
+public partial class ThemePart: ModelPartElement<DXPack.ThemePart>
 {
   public ThemePart(): base(){ }
   
-  public ThemePart(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  public ThemePart(DXPack.OpenXmlPart openXmlElement): base(openXmlElement) { }
   
   public ThemePart(DXPack.ThemePart openXmlElement): base(openXmlElement) { }
   

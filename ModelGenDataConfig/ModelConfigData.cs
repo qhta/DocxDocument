@@ -755,7 +755,7 @@ public class ModelConfigData
 
   public void LoadData(string? dataFolder)
   {
-    Debug.WriteLine($"ModelConfigData.LoadData({dataFolder})");
+    //Debug.WriteLine($"ModelConfigData.LoadData({dataFolder})");
     LoadDataFromFile(GetFilename(dataFolder));
     DataFolder = dataFolder;
   }

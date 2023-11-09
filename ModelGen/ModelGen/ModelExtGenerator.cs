@@ -5,6 +5,7 @@ public partial class ModelExtGenerator : ModelGenerator
   public ModelExtGenerator(ProcessOptions options) : base(options)
   {
     SolutionName = "GeneratedModel";
+    GlobalUsings.Add("DocumentFormat.OpenXml");
   }
 
   protected override void GenerateHeader(TypeInfo typeInfo, string? typeName, TypeKind kind)
@@ -27,7 +28,11 @@ public partial class ModelExtGenerator : ModelGenerator
         if (ns!=null)
           GlobalUsings.Add(ns);
       }
-      var str = $"public partial class {typeName}: ModelElement<{px}{typeName}>";
+      var baseClassName = "ModelElement";
+      if (typeInfo.Type.IsEqualOrSubclassOf(typeof(DXPack.OpenXmlPart)))
+         baseClassName = "ModelPartElement";
+
+      var str = $"public partial class {typeName}: {baseClassName}<{px}{typeName}>";
       Writer.WriteLine(str);
     }
     else
@@ -46,7 +51,10 @@ public partial class ModelExtGenerator : ModelGenerator
     }
     Writer.WriteLine($"public {typeName}(): base(){{ }}");
     Writer.WriteLine();
-    Writer.WriteLine($"public {typeName}(DX.OpenXmlElement openXmlElement): base(openXmlElement) {{ }}");
+    var baseClassName = "DX.OpenXmlElement";
+    if (typeInfo.Type.IsEqualOrSubclassOf(typeof(DXPack.OpenXmlPart)))
+         baseClassName = "DXPack.OpenXmlPart";
+    Writer.WriteLine($"public {typeName}({baseClassName} openXmlElement): base(openXmlElement) {{ }}");
     Writer.WriteLine();
     Writer.WriteLine($"public {typeName}({px}{sourceTypeName.Name} openXmlElement): base(openXmlElement) {{ }}");
     Writer.WriteLine();

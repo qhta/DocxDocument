@@ -4,11 +4,11 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the DiagramColorsPart
 /// </summary>
-public partial class DiagramColorsPart: ModelElement<DXPack.DiagramColorsPart>
+public partial class DiagramColorsPart: ModelPartElement<DXPack.DiagramColorsPart>
 {
   public DiagramColorsPart(): base(){ }
   
-  public DiagramColorsPart(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  public DiagramColorsPart(DXPack.OpenXmlPart openXmlElement): base(openXmlElement) { }
   
   public DiagramColorsPart(DXPack.DiagramColorsPart openXmlElement): base(openXmlElement) { }
   

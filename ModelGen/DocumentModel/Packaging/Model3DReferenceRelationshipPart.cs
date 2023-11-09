@@ -4,11 +4,11 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the Model3DReferenceRelationshipPart
 /// </summary>
-public partial class Model3DReferenceRelationshipPart: ModelElement<DXPack.Model3DReferenceRelationshipPart>
+public partial class Model3DReferenceRelationshipPart: ModelPartElement<DXPack.Model3DReferenceRelationshipPart>
 {
   public Model3DReferenceRelationshipPart(): base(){ }
   
-  public Model3DReferenceRelationshipPart(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  public Model3DReferenceRelationshipPart(DXPack.OpenXmlPart openXmlElement): base(openXmlElement) { }
   
   public Model3DReferenceRelationshipPart(DXPack.Model3DReferenceRelationshipPart openXmlElement): base(openXmlElement) { }
   

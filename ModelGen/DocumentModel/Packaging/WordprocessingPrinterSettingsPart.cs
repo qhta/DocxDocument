@@ -4,11 +4,11 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the WordprocessingPrinterSettingsPart
 /// </summary>
-public partial class WordprocessingPrinterSettingsPart: ModelElement<DXPack.WordprocessingPrinterSettingsPart>
+public partial class WordprocessingPrinterSettingsPart: ModelPartElement<DXPack.WordprocessingPrinterSettingsPart>
 {
   public WordprocessingPrinterSettingsPart(): base(){ }
   
-  public WordprocessingPrinterSettingsPart(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  public WordprocessingPrinterSettingsPart(DXPack.OpenXmlPart openXmlElement): base(openXmlElement) { }
   
   public WordprocessingPrinterSettingsPart(DXPack.WordprocessingPrinterSettingsPart openXmlElement): base(openXmlElement) { }
   

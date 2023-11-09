@@ -4,11 +4,11 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   An instance of this part type contains information about each of the fonts used by content in the document. When a consumer reads a WordprocessingML document, it shall use this information to determine which fonts to use to display the document when the specified fonts are not available on the consumer’s system.
 /// </summary>
-public partial class FontTablePart: ModelElement<DXPack.FontTablePart>
+public partial class FontTablePart: ModelPartElement<DXPack.FontTablePart>
 {
   public FontTablePart(): base(){ }
   
-  public FontTablePart(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  public FontTablePart(DXPack.OpenXmlPart openXmlElement): base(openXmlElement) { }
   
   public FontTablePart(DXPack.FontTablePart openXmlElement): base(openXmlElement) { }
   

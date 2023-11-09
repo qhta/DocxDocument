@@ -4,11 +4,11 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the DiagramStylePart
 /// </summary>
-public partial class DiagramStylePart: ModelElement<DXPack.DiagramStylePart>
+public partial class DiagramStylePart: ModelPartElement<DXPack.DiagramStylePart>
 {
   public DiagramStylePart(): base(){ }
   
-  public DiagramStylePart(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  public DiagramStylePart(DXPack.OpenXmlPart openXmlElement): base(openXmlElement) { }
   
   public DiagramStylePart(DXPack.DiagramStylePart openXmlElement): base(openXmlElement) { }
   

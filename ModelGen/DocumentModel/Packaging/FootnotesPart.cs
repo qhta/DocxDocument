@@ -4,11 +4,11 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   An instance of this part type contains all the footnotes for the document.
 /// </summary>
-public partial class FootnotesPart: ModelElement<DXPack.FootnotesPart>
+public partial class FootnotesPart: ModelPartElement<DXPack.FootnotesPart>
 {
   public FootnotesPart(): base(){ }
   
-  public FootnotesPart(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  public FootnotesPart(DXPack.OpenXmlPart openXmlElement): base(openXmlElement) { }
   
   public FootnotesPart(DXPack.FootnotesPart openXmlElement): base(openXmlElement) { }
   

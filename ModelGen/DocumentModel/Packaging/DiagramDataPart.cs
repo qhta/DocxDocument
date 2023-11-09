@@ -4,11 +4,11 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the DiagramDataPart
 /// </summary>
-public partial class DiagramDataPart: ModelElement<DXPack.DiagramDataPart>
+public partial class DiagramDataPart: ModelPartElement<DXPack.DiagramDataPart>
 {
   public DiagramDataPart(): base(){ }
   
-  public DiagramDataPart(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  public DiagramDataPart(DXPack.OpenXmlPart openXmlElement): base(openXmlElement) { }
   
   public DiagramDataPart(DXPack.DiagramDataPart openXmlElement): base(openXmlElement) { }
   

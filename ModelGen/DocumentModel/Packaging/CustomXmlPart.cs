@@ -4,11 +4,11 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the CustomXmlPart
 /// </summary>
-public partial class CustomXmlPart: ModelElement<DXPack.CustomXmlPart>
+public partial class CustomXmlPart: ModelPartElement<DXPack.CustomXmlPart>
 {
   public CustomXmlPart(): base(){ }
   
-  public CustomXmlPart(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  public CustomXmlPart(DXPack.OpenXmlPart openXmlElement): base(openXmlElement) { }
   
   public CustomXmlPart(DXPack.CustomXmlPart openXmlElement): base(openXmlElement) { }
   

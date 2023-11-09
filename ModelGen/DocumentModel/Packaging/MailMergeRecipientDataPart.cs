@@ -4,11 +4,11 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the MailMergeRecipientDataPart
 /// </summary>
-public partial class MailMergeRecipientDataPart: ModelElement<DXPack.MailMergeRecipientDataPart>
+public partial class MailMergeRecipientDataPart: ModelPartElement<DXPack.MailMergeRecipientDataPart>
 {
   public MailMergeRecipientDataPart(): base(){ }
   
-  public MailMergeRecipientDataPart(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  public MailMergeRecipientDataPart(DXPack.OpenXmlPart openXmlElement): base(openXmlElement) { }
   
   public MailMergeRecipientDataPart(DXPack.MailMergeRecipientDataPart openXmlElement): base(openXmlElement) { }
   

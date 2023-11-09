@@ -4,11 +4,11 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the EmbeddedControlPersistenceBinaryDataPart
 /// </summary>
-public partial class EmbeddedControlPersistenceBinaryDataPart: ModelElement<DXPack.EmbeddedControlPersistenceBinaryDataPart>
+public partial class EmbeddedControlPersistenceBinaryDataPart: ModelPartElement<DXPack.EmbeddedControlPersistenceBinaryDataPart>
 {
   public EmbeddedControlPersistenceBinaryDataPart(): base(){ }
   
-  public EmbeddedControlPersistenceBinaryDataPart(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  public EmbeddedControlPersistenceBinaryDataPart(DXPack.OpenXmlPart openXmlElement): base(openXmlElement) { }
   
   public EmbeddedControlPersistenceBinaryDataPart(DXPack.EmbeddedControlPersistenceBinaryDataPart openXmlElement): base(openXmlElement) { }
   
