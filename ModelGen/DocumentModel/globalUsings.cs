@@ -1,3 +1,4 @@
+global using DX = DocumentFormat.OpenXml;
 global using System;
 global using System.Collections.Generic;
 global using System.Collections.ObjectModel;
@@ -9,7 +10,6 @@ global using DM = DocumentModel;
 global using DocumentModel.OpenXml;
 global using DXPack = DocumentFormat.OpenXml.Packaging;
 global using DMPACK = DocumentModel.Packaging;
-global using DX = DocumentFormat.OpenXml;
 global using DXW = DocumentFormat.OpenXml.Wordprocessing;
 global using DXO21DT = DocumentFormat.OpenXml.Office2021.DocumentTasks;
 global using DXO21OEL = DocumentFormat.OpenXml.Office2021.OfficeExtLst;

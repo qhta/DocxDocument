@@ -302,7 +302,7 @@ public abstract class BaseCodeGenerator
 
   }
 
-  public bool GenerateGlobalUsings()
+  public virtual bool GenerateGlobalUsings()
   {
     return GenerateGlobalUsings(Path.Combine(OutputPath, "GlobalUsings.cs"));
   }

@@ -4,11 +4,11 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the LabelInfoPart
 /// </summary>
-public partial class LabelInfoPart: ModelElement<DXPack.LabelInfoPart>
+public partial class LabelInfoPart: ModelPartElement<DXPack.LabelInfoPart>
 {
   public LabelInfoPart(): base(){ }
   
-  public LabelInfoPart(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  public LabelInfoPart(DXPack.OpenXmlPart openXmlElement): base(openXmlElement) { }
   
   public LabelInfoPart(DXPack.LabelInfoPart openXmlElement): base(openXmlElement) { }
   

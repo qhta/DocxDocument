@@ -4,11 +4,11 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the ThemeOverridePart
 /// </summary>
-public partial class ThemeOverridePart: ModelElement<DXPack.ThemeOverridePart>
+public partial class ThemeOverridePart: ModelPartElement<DXPack.ThemeOverridePart>
 {
   public ThemeOverridePart(): base(){ }
   
-  public ThemeOverridePart(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  public ThemeOverridePart(DXPack.OpenXmlPart openXmlElement): base(openXmlElement) { }
   
   public ThemeOverridePart(DXPack.ThemeOverridePart openXmlElement): base(openXmlElement) { }
   

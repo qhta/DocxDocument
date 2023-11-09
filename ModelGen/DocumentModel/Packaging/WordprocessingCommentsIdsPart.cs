@@ -4,11 +4,11 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the WordprocessingCommentsIdsPart
 /// </summary>
-public partial class WordprocessingCommentsIdsPart: ModelElement<DXPack.WordprocessingCommentsIdsPart>
+public partial class WordprocessingCommentsIdsPart: ModelPartElement<DXPack.WordprocessingCommentsIdsPart>
 {
   public WordprocessingCommentsIdsPart(): base(){ }
   
-  public WordprocessingCommentsIdsPart(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  public WordprocessingCommentsIdsPart(DXPack.OpenXmlPart openXmlElement): base(openXmlElement) { }
   
   public WordprocessingCommentsIdsPart(DXPack.WordprocessingCommentsIdsPart openXmlElement): base(openXmlElement) { }
   

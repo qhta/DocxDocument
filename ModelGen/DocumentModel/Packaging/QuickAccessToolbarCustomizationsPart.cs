@@ -4,11 +4,11 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the QuickAccessToolbarCustomizationsPart
 /// </summary>
-public partial class QuickAccessToolbarCustomizationsPart: ModelElement<DXPack.QuickAccessToolbarCustomizationsPart>
+public partial class QuickAccessToolbarCustomizationsPart: ModelPartElement<DXPack.QuickAccessToolbarCustomizationsPart>
 {
   public QuickAccessToolbarCustomizationsPart(): base(){ }
   
-  public QuickAccessToolbarCustomizationsPart(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  public QuickAccessToolbarCustomizationsPart(DXPack.OpenXmlPart openXmlElement): base(openXmlElement) { }
   
   public QuickAccessToolbarCustomizationsPart(DXPack.QuickAccessToolbarCustomizationsPart openXmlElement): base(openXmlElement) { }
   

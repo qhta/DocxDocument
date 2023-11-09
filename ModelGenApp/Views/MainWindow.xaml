@@ -8,7 +8,7 @@
         xmlns:vm="clr-namespace:ModelGenApp.ViewModels"
         mc:Ignorable="d"
         d:DataContext="{d:DesignInstance Type=vm:MainViewModel}"
-        Title="{x:Static local:CommonStrings.MainWindowTitle}" Height="600" Width="800">
+        Title="{x:Static local:CommonStrings.MainWindowTitle}" Height="800" Width="800">
   <Grid>
     <Grid.RowDefinitions>
       <RowDefinition Height="20" />

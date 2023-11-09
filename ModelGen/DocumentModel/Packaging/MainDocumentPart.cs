@@ -4,11 +4,11 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   An instance of this part type contains the body of the document.
 /// </summary>
-public partial class MainDocumentPart: ModelElement<DXPack.MainDocumentPart>
+public partial class MainDocumentPart: ModelPartElement<DXPack.MainDocumentPart>
 {
   public MainDocumentPart(): base(){ }
   
-  public MainDocumentPart(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  public MainDocumentPart(DXPack.OpenXmlPart openXmlElement): base(openXmlElement) { }
   
   public MainDocumentPart(DXPack.MainDocumentPart openXmlElement): base(openXmlElement) { }
   

@@ -4,11 +4,11 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the WebExTaskpanesPart
 /// </summary>
-public partial class WebExTaskpanesPart: ModelElement<DXPack.WebExTaskpanesPart>
+public partial class WebExTaskpanesPart: ModelPartElement<DXPack.WebExTaskpanesPart>
 {
   public WebExTaskpanesPart(): base(){ }
   
-  public WebExTaskpanesPart(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  public WebExTaskpanesPart(DXPack.OpenXmlPart openXmlElement): base(openXmlElement) { }
   
   public WebExTaskpanesPart(DXPack.WebExTaskpanesPart openXmlElement): base(openXmlElement) { }
   

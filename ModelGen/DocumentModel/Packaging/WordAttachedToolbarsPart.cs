@@ -4,11 +4,11 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the WordAttachedToolbarsPart
 /// </summary>
-public partial class WordAttachedToolbarsPart: ModelElement<DXPack.WordAttachedToolbarsPart>
+public partial class WordAttachedToolbarsPart: ModelPartElement<DXPack.WordAttachedToolbarsPart>
 {
   public WordAttachedToolbarsPart(): base(){ }
   
-  public WordAttachedToolbarsPart(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  public WordAttachedToolbarsPart(DXPack.OpenXmlPart openXmlElement): base(openXmlElement) { }
   
   public WordAttachedToolbarsPart(DXPack.WordAttachedToolbarsPart openXmlElement): base(openXmlElement) { }
   

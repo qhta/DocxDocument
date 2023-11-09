@@ -4,11 +4,11 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the WordprocessingPeoplePart
 /// </summary>
-public partial class WordprocessingPeoplePart: ModelElement<DXPack.WordprocessingPeoplePart>
+public partial class WordprocessingPeoplePart: ModelPartElement<DXPack.WordprocessingPeoplePart>
 {
   public WordprocessingPeoplePart(): base(){ }
   
-  public WordprocessingPeoplePart(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  public WordprocessingPeoplePart(DXPack.OpenXmlPart openXmlElement): base(openXmlElement) { }
   
   public WordprocessingPeoplePart(DXPack.WordprocessingPeoplePart openXmlElement): base(openXmlElement) { }
   

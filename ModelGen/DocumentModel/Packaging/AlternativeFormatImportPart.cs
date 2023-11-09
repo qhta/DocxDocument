@@ -10,11 +10,11 @@ namespace DocumentModel.Packaging;
 /// <para>
 ///   Any document part that permits a p element can also contain an altChunk element, whose id attribute refers to a relationship. That relationship shall target a part within the package, which contains the content to be imported into this WordprocessingML document.
 /// </para>
-public partial class AlternativeFormatImportPart: ModelElement<DXPack.AlternativeFormatImportPart>
+public partial class AlternativeFormatImportPart: ModelPartElement<DXPack.AlternativeFormatImportPart>
 {
   public AlternativeFormatImportPart(): base(){ }
   
-  public AlternativeFormatImportPart(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  public AlternativeFormatImportPart(DXPack.OpenXmlPart openXmlElement): base(openXmlElement) { }
   
   public AlternativeFormatImportPart(DXPack.AlternativeFormatImportPart openXmlElement): base(openXmlElement) { }
   

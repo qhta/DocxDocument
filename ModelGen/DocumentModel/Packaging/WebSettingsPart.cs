@@ -4,11 +4,11 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   An instance of this part type contains the definition for web-specific settings used by this document.
 /// </summary>
-public partial class WebSettingsPart: ModelElement<DXPack.WebSettingsPart>
+public partial class WebSettingsPart: ModelPartElement<DXPack.WebSettingsPart>
 {
   public WebSettingsPart(): base(){ }
   
-  public WebSettingsPart(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  public WebSettingsPart(DXPack.OpenXmlPart openXmlElement): base(openXmlElement) { }
   
   public WebSettingsPart(DXPack.WebSettingsPart openXmlElement): base(openXmlElement) { }
   

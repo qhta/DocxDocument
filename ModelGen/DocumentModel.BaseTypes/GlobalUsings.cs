@@ -13,5 +13,6 @@ global using System.Runtime.Serialization;
 global using System.Text;
 
 global using DX=DocumentFormat.OpenXml;
+global using DXPack=DocumentFormat.OpenXml.Packaging;
 
 global using Qhta.TextUtils;

@@ -4,11 +4,11 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   An instance of this part type contains a definition for the structure of each unique numbering definition in this document.
 /// </summary>
-public partial class NumberingDefinitionsPart: ModelElement<DXPack.NumberingDefinitionsPart>
+public partial class NumberingDefinitionsPart: ModelPartElement<DXPack.NumberingDefinitionsPart>
 {
   public NumberingDefinitionsPart(): base(){ }
   
-  public NumberingDefinitionsPart(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  public NumberingDefinitionsPart(DXPack.OpenXmlPart openXmlElement): base(openXmlElement) { }
   
   public NumberingDefinitionsPart(DXPack.NumberingDefinitionsPart openXmlElement): base(openXmlElement) { }
   

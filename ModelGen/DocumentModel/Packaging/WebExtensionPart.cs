@@ -4,11 +4,11 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the WebExtensionPart
 /// </summary>
-public partial class WebExtensionPart: ModelElement<DXPack.WebExtensionPart>
+public partial class WebExtensionPart: ModelPartElement<DXPack.WebExtensionPart>
 {
   public WebExtensionPart(): base(){ }
   
-  public WebExtensionPart(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  public WebExtensionPart(DXPack.OpenXmlPart openXmlElement): base(openXmlElement) { }
   
   public WebExtensionPart(DXPack.WebExtensionPart openXmlElement): base(openXmlElement) { }
   

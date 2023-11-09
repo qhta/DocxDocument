@@ -4,11 +4,11 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the RibbonAndBackstageCustomizationsPart
 /// </summary>
-public partial class RibbonAndBackstageCustomizationsPart: ModelElement<DXPack.RibbonAndBackstageCustomizationsPart>
+public partial class RibbonAndBackstageCustomizationsPart: ModelPartElement<DXPack.RibbonAndBackstageCustomizationsPart>
 {
   public RibbonAndBackstageCustomizationsPart(): base(){ }
   
-  public RibbonAndBackstageCustomizationsPart(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  public RibbonAndBackstageCustomizationsPart(DXPack.OpenXmlPart openXmlElement): base(openXmlElement) { }
   
   public RibbonAndBackstageCustomizationsPart(DXPack.RibbonAndBackstageCustomizationsPart openXmlElement): base(openXmlElement) { }
   

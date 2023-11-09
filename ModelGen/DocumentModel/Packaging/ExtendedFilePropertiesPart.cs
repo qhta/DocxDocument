@@ -4,11 +4,11 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   An instance of this part contains properties specific to an Office Open XML document.
 /// </summary>
-public partial class ExtendedFilePropertiesPart: ModelElement<DXPack.ExtendedFilePropertiesPart>
+public partial class ExtendedFilePropertiesPart: ModelPartElement<DXPack.ExtendedFilePropertiesPart>
 {
   public ExtendedFilePropertiesPart(): base(){ }
   
-  public ExtendedFilePropertiesPart(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  public ExtendedFilePropertiesPart(DXPack.OpenXmlPart openXmlElement): base(openXmlElement) { }
   
   public ExtendedFilePropertiesPart(DXPack.ExtendedFilePropertiesPart openXmlElement): base(openXmlElement) { }
   

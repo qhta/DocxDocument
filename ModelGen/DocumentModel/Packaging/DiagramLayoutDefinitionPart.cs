@@ -4,11 +4,11 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the DiagramLayoutDefinitionPart
 /// </summary>
-public partial class DiagramLayoutDefinitionPart: ModelElement<DXPack.DiagramLayoutDefinitionPart>
+public partial class DiagramLayoutDefinitionPart: ModelPartElement<DXPack.DiagramLayoutDefinitionPart>
 {
   public DiagramLayoutDefinitionPart(): base(){ }
   
-  public DiagramLayoutDefinitionPart(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  public DiagramLayoutDefinitionPart(DXPack.OpenXmlPart openXmlElement): base(openXmlElement) { }
   
   public DiagramLayoutDefinitionPart(DXPack.DiagramLayoutDefinitionPart openXmlElement): base(openXmlElement) { }
   

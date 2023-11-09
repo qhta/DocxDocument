@@ -4,11 +4,11 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   An instance of this part type contains all the document's properties.
 /// </summary>
-public partial class DocumentSettingsPart: ModelElement<DXPack.DocumentSettingsPart>
+public partial class DocumentSettingsPart: ModelPartElement<DXPack.DocumentSettingsPart>
 {
   public DocumentSettingsPart(): base(){ }
   
-  public DocumentSettingsPart(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  public DocumentSettingsPart(DXPack.OpenXmlPart openXmlElement): base(openXmlElement) { }
   
   public DocumentSettingsPart(DXPack.DocumentSettingsPart openXmlElement): base(openXmlElement) { }
   

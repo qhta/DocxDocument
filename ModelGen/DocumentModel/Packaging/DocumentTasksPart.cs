@@ -4,11 +4,11 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the DocumentTasksPart
 /// </summary>
-public partial class DocumentTasksPart: ModelElement<DXPack.DocumentTasksPart>
+public partial class DocumentTasksPart: ModelPartElement<DXPack.DocumentTasksPart>
 {
   public DocumentTasksPart(): base(){ }
   
-  public DocumentTasksPart(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  public DocumentTasksPart(DXPack.OpenXmlPart openXmlElement): base(openXmlElement) { }
   
   public DocumentTasksPart(DXPack.DocumentTasksPart openXmlElement): base(openXmlElement) { }
   

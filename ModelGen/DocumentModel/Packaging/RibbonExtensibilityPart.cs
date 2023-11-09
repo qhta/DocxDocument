@@ -4,11 +4,11 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the RibbonExtensibilityPart
 /// </summary>
-public partial class RibbonExtensibilityPart: ModelElement<DXPack.RibbonExtensibilityPart>
+public partial class RibbonExtensibilityPart: ModelPartElement<DXPack.RibbonExtensibilityPart>
 {
   public RibbonExtensibilityPart(): base(){ }
   
-  public RibbonExtensibilityPart(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  public RibbonExtensibilityPart(DXPack.OpenXmlPart openXmlElement): base(openXmlElement) { }
   
   public RibbonExtensibilityPart(DXPack.RibbonExtensibilityPart openXmlElement): base(openXmlElement) { }
   

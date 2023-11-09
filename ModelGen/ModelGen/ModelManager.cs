@@ -993,13 +993,21 @@ public static class ModelManager
     foreach (var type in types)
     {
       onCheckingType?.Invoke(new ProgressTypeInfo { TotalTypes = totalTypes, CheckedTypes = checkedTypes, ProcessedTypes = fixedTypesCount, Current = type });
-      var removedProperties = RemoveUntargetedProperties(type);
-      if (removedProperties != 0)
+      //if (type.Name.EndsWith("Value"))
+      //{
+      //  type.SetRejected(PPS.FinalFix);
+      //  fixedTypesCount++;
+      //}
+      //else
       {
-        type.AddFixage(PPS.FinalFix, ErrorCode.InvalidProperties);
-        FixedTypes.AddUnique(type);
-        fixedTypesCount++;
-        removedPropsCount += removedProperties;
+        var removedProperties = RemoveUntargetedProperties(type);
+        if (removedProperties != 0)
+        {
+          type.AddFixage(PPS.FinalFix, ErrorCode.InvalidProperties);
+          FixedTypes.AddUnique(type);
+          fixedTypesCount++;
+          removedPropsCount += removedProperties;
+        }
       }
       checkedTypes++;
     }
