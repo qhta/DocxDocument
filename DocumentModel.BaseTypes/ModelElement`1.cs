@@ -1,4 +1,6 @@
-﻿namespace DocumentModel;
+﻿using System.Xml.Serialization;
+
+namespace DocumentModel;
 
 /// <summary>
 /// Base class for all model elements. 
@@ -28,8 +30,10 @@ public class ModelElement<OpenXmlElementType> : ModelElement, IModelElement<Open
     _Element = openXmlElement;
   }
 
+  [XmlIgnore]
   public OpenXmlElementType? _Element { get; set; }
 
+  [XmlIgnore]
   public OpenXmlElementType _ExistingElement
   {
     get
