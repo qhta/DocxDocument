@@ -162,7 +162,7 @@ public partial class TaskGroupCategory: ModelElement<DXO10CUI.TaskGroupCategory>
     set
     {
       if (value != null)
-        _ExistingElement.Visible = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.Visible = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.Visible = null;
     }

@@ -21,22 +21,11 @@ public partial class SdtPlaceholder: ModelElement<DXW.SdtPlaceholder>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.DocPartReference>();
-      if (element != null)
-        return DocPartReferenceConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.DocPartReference,DXW.DocPartReference>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.DocPartReference>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DocPartReferenceConverter.CreateOpenXmlElement<DXW.DocPartReference>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.DocPartReference,DXW.DocPartReference>(value);
     }
   }
   

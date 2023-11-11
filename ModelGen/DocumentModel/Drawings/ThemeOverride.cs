@@ -21,22 +21,11 @@ public partial class ThemeOverride: ModelElement<DXD.ThemeOverride>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.ColorScheme>();
-      if (element != null)
-        return ColorSchemeConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.ColorScheme,DXD.ColorScheme>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.ColorScheme>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ColorSchemeConverter.CreateOpenXmlElement<DXD.ColorScheme>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.ColorScheme,DXD.ColorScheme>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class ThemeOverride: ModelElement<DXD.ThemeOverride>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.FontScheme>();
-      if (element != null)
-        return FontSchemeConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.FontScheme,DXD.FontScheme>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.FontScheme>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FontSchemeConverter.CreateOpenXmlElement<DXD.FontScheme>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.FontScheme,DXD.FontScheme>(value);
     }
   }
   
@@ -77,22 +55,11 @@ public partial class ThemeOverride: ModelElement<DXD.ThemeOverride>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.FormatScheme>();
-      if (element != null)
-        return FormatSchemeConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.FormatScheme,DXD.FormatScheme>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.FormatScheme>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FormatSchemeConverter.CreateOpenXmlElement<DXD.FormatScheme>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.FormatScheme,DXD.FormatScheme>(value);
     }
   }
   

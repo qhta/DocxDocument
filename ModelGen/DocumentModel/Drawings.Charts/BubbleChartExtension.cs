@@ -34,22 +34,11 @@ public partial class BubbleChartExtension: ModelElement<DXDC.BubbleChartExtensio
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13DC.FilteredBubbleSeries>();
-      if (element != null)
-        return FilteredBubbleSeriesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC13.FilteredBubbleSeries,DXO13DC.FilteredBubbleSeries>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13DC.FilteredBubbleSeries>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FilteredBubbleSeriesConverter.CreateOpenXmlElement<DXO13DC.FilteredBubbleSeries>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC13.FilteredBubbleSeries,DXO13DC.FilteredBubbleSeries>(value);
     }
   }
   

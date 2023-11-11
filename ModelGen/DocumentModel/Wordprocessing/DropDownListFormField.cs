@@ -21,22 +21,11 @@ public partial class DropDownListFormField: ModelElement<DXW.DropDownListFormFie
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.DropDownListSelection>();
-      if (element != null)
-        return DropDownListSelectionConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.DropDownListSelection,DXW.DropDownListSelection>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.DropDownListSelection>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DropDownListSelectionConverter.CreateOpenXmlElement<DXW.DropDownListSelection>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.DropDownListSelection,DXW.DropDownListSelection>(value);
     }
   }
   
@@ -53,7 +42,7 @@ public partial class DropDownListFormField: ModelElement<DXW.DropDownListFormFie
     }
     set
     {
-      SimpleValueConverter.SetValue<DXW.DefaultDropDownListItemIndex,System.Int32>(openXmlElement, value);
+      SimpleValueConverter.SetValue<DXW.DefaultDropDownListItemIndex,System.Int32>(_ExistingElement, value);
     }
   }
   

@@ -21,22 +21,11 @@ public partial class FullReference: ModelElement<DXO13DC.FullReference>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13DC.SequenceOfReferences>();
-      if (element != null)
-        return SequenceOfReferencesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC13.SequenceOfReferences,DXO13DC.SequenceOfReferences>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13DC.SequenceOfReferences>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SequenceOfReferencesConverter.CreateOpenXmlElement<DXO13DC.SequenceOfReferences>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC13.SequenceOfReferences,DXO13DC.SequenceOfReferences>(value);
     }
   }
   

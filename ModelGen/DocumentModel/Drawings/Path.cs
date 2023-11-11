@@ -60,7 +60,7 @@ public partial class Path: ModelElement<DXD.Path>
     set
     {
       if (value != null)
-        _ExistingElement.Stroke = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.Stroke = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.Stroke = null;
     }
@@ -80,7 +80,7 @@ public partial class Path: ModelElement<DXD.Path>
     set
     {
       if (value != null)
-        _ExistingElement.ExtrusionOk = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.ExtrusionOk = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.ExtrusionOk = null;
     }

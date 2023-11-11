@@ -38,22 +38,11 @@ public partial class LevelOverride: ModelElement<DXW.LevelOverride>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.StartOverrideNumberingValue>();
-      if (element != null)
-        return StartOverrideNumberingValueConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.StartOverrideNumberingValue,DXW.StartOverrideNumberingValue>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.StartOverrideNumberingValue>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = StartOverrideNumberingValueConverter.CreateOpenXmlElement<DXW.StartOverrideNumberingValue>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.StartOverrideNumberingValue,DXW.StartOverrideNumberingValue>(value);
     }
   }
   
@@ -66,22 +55,11 @@ public partial class LevelOverride: ModelElement<DXW.LevelOverride>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.Level>();
-      if (element != null)
-        return LevelConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.Level,DXW.Level>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Level>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LevelConverter.CreateOpenXmlElement<DXW.Level>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.Level,DXW.Level>(value);
     }
   }
   

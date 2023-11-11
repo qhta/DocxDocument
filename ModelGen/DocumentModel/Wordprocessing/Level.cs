@@ -39,7 +39,7 @@ public partial class Level: ModelElement<DXW.Level>
     get
     {
       if (_Element?.TemplateCode?.Value != null)
-        return HexIntConverter.GetValue(_ExistingElement.TemplateCode.Value);
+        return HexIntConverter.GetValue(_Element?.TemplateCode.Value);
       return null;
     }
     set
@@ -77,22 +77,11 @@ public partial class Level: ModelElement<DXW.Level>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.StartNumberingValue>();
-      if (element != null)
-        return StartNumberingValueConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.StartNumberingValue,DXW.StartNumberingValue>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.StartNumberingValue>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = StartNumberingValueConverter.CreateOpenXmlElement<DXW.StartNumberingValue>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.StartNumberingValue,DXW.StartNumberingValue>(value);
     }
   }
   
@@ -105,22 +94,11 @@ public partial class Level: ModelElement<DXW.Level>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.NumberingFormat>();
-      if (element != null)
-        return NumberingFormatConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.NumberingFormat,DXW.NumberingFormat>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.NumberingFormat>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NumberingFormatConverter.CreateOpenXmlElement<DXW.NumberingFormat>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.NumberingFormat,DXW.NumberingFormat>(value);
     }
   }
   
@@ -133,22 +111,11 @@ public partial class Level: ModelElement<DXW.Level>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.LevelRestart>();
-      if (element != null)
-        return LevelRestartConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.LevelRestart,DXW.LevelRestart>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.LevelRestart>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LevelRestartConverter.CreateOpenXmlElement<DXW.LevelRestart>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.LevelRestart,DXW.LevelRestart>(value);
     }
   }
   
@@ -161,22 +128,11 @@ public partial class Level: ModelElement<DXW.Level>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.ParagraphStyleIdInLevel>();
-      if (element != null)
-        return ParagraphStyleIdInLevelConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.ParagraphStyleIdInLevel,DXW.ParagraphStyleIdInLevel>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.ParagraphStyleIdInLevel>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ParagraphStyleIdInLevelConverter.CreateOpenXmlElement<DXW.ParagraphStyleIdInLevel>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.ParagraphStyleIdInLevel,DXW.ParagraphStyleIdInLevel>(value);
     }
   }
   
@@ -189,22 +145,11 @@ public partial class Level: ModelElement<DXW.Level>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.IsLegalNumberingStyle>();
-      if (element != null)
-        return IsLegalNumberingStyleConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.IsLegalNumberingStyle,DXW.IsLegalNumberingStyle>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.IsLegalNumberingStyle>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = IsLegalNumberingStyleConverter.CreateOpenXmlElement<DXW.IsLegalNumberingStyle>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.IsLegalNumberingStyle,DXW.IsLegalNumberingStyle>(value);
     }
   }
   
@@ -244,22 +189,11 @@ public partial class Level: ModelElement<DXW.Level>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.LevelText>();
-      if (element != null)
-        return LevelTextConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.LevelText,DXW.LevelText>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.LevelText>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LevelTextConverter.CreateOpenXmlElement<DXW.LevelText>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.LevelText,DXW.LevelText>(value);
     }
   }
   
@@ -272,22 +206,11 @@ public partial class Level: ModelElement<DXW.Level>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.LevelPictureBulletId>();
-      if (element != null)
-        return LevelPictureBulletIdConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.LevelPictureBulletId,DXW.LevelPictureBulletId>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.LevelPictureBulletId>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LevelPictureBulletIdConverter.CreateOpenXmlElement<DXW.LevelPictureBulletId>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.LevelPictureBulletId,DXW.LevelPictureBulletId>(value);
     }
   }
   
@@ -300,22 +223,11 @@ public partial class Level: ModelElement<DXW.Level>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.LegacyNumbering>();
-      if (element != null)
-        return LegacyNumberingConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.LegacyNumbering,DXW.LegacyNumbering>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.LegacyNumbering>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LegacyNumberingConverter.CreateOpenXmlElement<DXW.LegacyNumbering>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.LegacyNumbering,DXW.LegacyNumbering>(value);
     }
   }
   
@@ -355,22 +267,11 @@ public partial class Level: ModelElement<DXW.Level>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.PreviousParagraphProperties>();
-      if (element != null)
-        return PreviousParagraphPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.PreviousParagraphProperties,DXW.PreviousParagraphProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.PreviousParagraphProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PreviousParagraphPropertiesConverter.CreateOpenXmlElement<DXW.PreviousParagraphProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.PreviousParagraphProperties,DXW.PreviousParagraphProperties>(value);
     }
   }
   
@@ -383,22 +284,11 @@ public partial class Level: ModelElement<DXW.Level>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.NumberingSymbolRunProperties>();
-      if (element != null)
-        return NumberingSymbolRunPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.NumberingSymbolRunProperties,DXW.NumberingSymbolRunProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.NumberingSymbolRunProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NumberingSymbolRunPropertiesConverter.CreateOpenXmlElement<DXW.NumberingSymbolRunProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.NumberingSymbolRunProperties,DXW.NumberingSymbolRunProperties>(value);
     }
   }
   

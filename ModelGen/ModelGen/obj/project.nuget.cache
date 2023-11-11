@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "iycKTHU38z8l1CwdFlX8J24u3tu1ibAvDiGWqHiBnfdxgHc+WG+tCCcGYTMZKyLfAxWB5eUry+6QF3+caSxE5A==",
+  "dgSpecHash": "7EhgZxEfUa6WGdd/jeO4FG+k/rfEnjfkpyoSbEBb010rdyMMsp+qOdMmISwe8LF+A8cFih12+aQ+3PLg2afNwQ==",
   "success": true,
   "projectFilePath": "D:\\VS\\Projects\\DocxDocument\\ModelGen\\ModelGen\\ModelGen.csproj",
   "expectedPackageFiles": [
@@ -17,6 +17,7 @@
     "C:\\Users\\qhta1\\.nuget\\packages\\qhta.conversion\\2.0.0\\qhta.conversion.2.0.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\qhta.htmlutils\\2.1.0\\qhta.htmlutils.2.1.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\qhta.testhelper\\3.0.0\\qhta.testhelper.3.0.0.nupkg.sha512",
+    "C:\\Users\\qhta1\\.nuget\\packages\\qhta.testutilities\\1.0.0\\qhta.testutilities.1.0.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\qhta.textutils\\3.2.0\\qhta.textutils.3.2.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\qhta.typeutils\\1.3.10.1\\qhta.typeutils.1.3.10.1.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\qhta.xml\\2.1.0\\qhta.xml.2.1.0.nupkg.sha512",

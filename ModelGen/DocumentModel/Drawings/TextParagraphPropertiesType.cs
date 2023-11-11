@@ -111,7 +111,7 @@ public partial class TextParagraphPropertiesType: ModelElement<DXD.TextParagraph
     set
     {
       if (value != null)
-        _ExistingElement.RightToLeft = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.RightToLeft = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.RightToLeft = null;
     }
@@ -131,7 +131,7 @@ public partial class TextParagraphPropertiesType: ModelElement<DXD.TextParagraph
     set
     {
       if (value != null)
-        _ExistingElement.EastAsianLineBreak = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.EastAsianLineBreak = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.EastAsianLineBreak = null;
     }
@@ -151,7 +151,7 @@ public partial class TextParagraphPropertiesType: ModelElement<DXD.TextParagraph
     set
     {
       if (value != null)
-        _ExistingElement.LatinLineBreak = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.LatinLineBreak = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.LatinLineBreak = null;
     }
@@ -171,7 +171,7 @@ public partial class TextParagraphPropertiesType: ModelElement<DXD.TextParagraph
     set
     {
       if (value != null)
-        _ExistingElement.Height = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.Height = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.Height = null;
     }
@@ -186,22 +186,11 @@ public partial class TextParagraphPropertiesType: ModelElement<DXD.TextParagraph
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.LineSpacing>();
-      if (element != null)
-        return LineSpacingConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.LineSpacing,DXD.LineSpacing>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.LineSpacing>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LineSpacingConverter.CreateOpenXmlElement<DXD.LineSpacing>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.LineSpacing,DXD.LineSpacing>(value);
     }
   }
   
@@ -214,22 +203,11 @@ public partial class TextParagraphPropertiesType: ModelElement<DXD.TextParagraph
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.SpaceBefore>();
-      if (element != null)
-        return SpaceBeforeConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.SpaceBefore,DXD.SpaceBefore>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.SpaceBefore>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SpaceBeforeConverter.CreateOpenXmlElement<DXD.SpaceBefore>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.SpaceBefore,DXD.SpaceBefore>(value);
     }
   }
   
@@ -242,22 +220,11 @@ public partial class TextParagraphPropertiesType: ModelElement<DXD.TextParagraph
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.SpaceAfter>();
-      if (element != null)
-        return SpaceAfterConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.SpaceAfter,DXD.SpaceAfter>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.SpaceAfter>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SpaceAfterConverter.CreateOpenXmlElement<DXD.SpaceAfter>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.SpaceAfter,DXD.SpaceAfter>(value);
     }
   }
   

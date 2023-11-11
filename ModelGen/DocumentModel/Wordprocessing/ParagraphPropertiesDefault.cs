@@ -21,22 +21,11 @@ public partial class ParagraphPropertiesDefault: ModelElement<DXW.ParagraphPrope
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.ParagraphPropertiesBaseStyle>();
-      if (element != null)
-        return ParagraphPropertiesBaseStyleConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.ParagraphPropertiesBaseStyle,DXW.ParagraphPropertiesBaseStyle>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.ParagraphPropertiesBaseStyle>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ParagraphPropertiesBaseStyleConverter.CreateOpenXmlElement<DXW.ParagraphPropertiesBaseStyle>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.ParagraphPropertiesBaseStyle,DXW.ParagraphPropertiesBaseStyle>(value);
     }
   }
   

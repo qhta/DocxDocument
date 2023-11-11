@@ -18,15 +18,15 @@ public partial class SaveThroughXslt: ModelElement<DXW.SaveThroughXslt>
   [DataMember]
   public string? Id
   {
-    get => _Element.Id?.Value;
-    set => _Element.Id = value;
+    get => _Element?.Id?.Value;
+    set => _ExistingElement.Id = value;
   }
 
   [DataMember]
   public string? SolutionId
   {
-    get => _Element.SolutionId?.Value;
-    set => _Element.SolutionId = value;
+    get => _Element?.SolutionId?.Value;
+    set => _ExistingElement.SolutionId = value;
   }
 
 }

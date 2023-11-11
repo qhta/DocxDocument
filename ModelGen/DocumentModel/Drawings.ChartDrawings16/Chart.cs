@@ -21,22 +21,11 @@ public partial class Chart: ModelElement<DXO16DCD.Chart>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.ChartTitle>();
-      if (element != null)
-        return ChartTitleConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.ChartTitle,DXO16DCD.ChartTitle>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.ChartTitle>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ChartTitleConverter.CreateOpenXmlElement<DXO16DCD.ChartTitle>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.ChartTitle,DXO16DCD.ChartTitle>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class Chart: ModelElement<DXO16DCD.Chart>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.PlotArea>();
-      if (element != null)
-        return PlotAreaConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.PlotArea,DXO16DCD.PlotArea>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.PlotArea>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PlotAreaConverter.CreateOpenXmlElement<DXO16DCD.PlotArea>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.PlotArea,DXO16DCD.PlotArea>(value);
     }
   }
   
@@ -77,22 +55,11 @@ public partial class Chart: ModelElement<DXO16DCD.Chart>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.Legend>();
-      if (element != null)
-        return LegendConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.Legend,DXO16DCD.Legend>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.Legend>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LegendConverter.CreateOpenXmlElement<DXO16DCD.Legend>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.Legend,DXO16DCD.Legend>(value);
     }
   }
   
@@ -105,22 +72,11 @@ public partial class Chart: ModelElement<DXO16DCD.Chart>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.ExtensionList>();
-      if (element != null)
-        return ExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.ExtensionList,DXO16DCD.ExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.ExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DXO16DCD.ExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.ExtensionList,DXO16DCD.ExtensionList>(value);
     }
   }
   

@@ -17,22 +17,11 @@ public partial class Body: ModelElement<DXW.Body>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.SectionProperties>();
-      if (element != null)
-        return SectionPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.SectionProperties,DXW.SectionProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.SectionProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SectionPropertiesConverter.CreateOpenXmlElement<DXW.SectionProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.SectionProperties,DXW.SectionProperties>(value);
     }
   }
   

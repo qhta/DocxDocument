@@ -21,22 +21,11 @@ public partial class DialogBoxLauncher: ModelElement<DXOCUI.DialogBoxLauncher>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXOCUI.UnsizedButton>();
-      if (element != null)
-        return UnsizedButtonConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMCUI.UnsizedButton,DXOCUI.UnsizedButton>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXOCUI.UnsizedButton>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = UnsizedButtonConverter.CreateOpenXmlElement<DXOCUI.UnsizedButton>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMCUI.UnsizedButton,DXOCUI.UnsizedButton>(value);
     }
   }
   

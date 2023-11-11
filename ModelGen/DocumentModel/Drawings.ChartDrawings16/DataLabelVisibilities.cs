@@ -26,7 +26,7 @@ public partial class DataLabelVisibilities: ModelElement<DXO16DCD.DataLabelVisib
     set
     {
       if (value != null)
-        _ExistingElement.SeriesName = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.SeriesName = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.SeriesName = null;
     }
@@ -46,7 +46,7 @@ public partial class DataLabelVisibilities: ModelElement<DXO16DCD.DataLabelVisib
     set
     {
       if (value != null)
-        _ExistingElement.CategoryName = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.CategoryName = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.CategoryName = null;
     }
@@ -66,7 +66,7 @@ public partial class DataLabelVisibilities: ModelElement<DXO16DCD.DataLabelVisib
     set
     {
       if (value != null)
-        _ExistingElement.Value = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.Value = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.Value = null;
     }

@@ -17,22 +17,11 @@ public partial class CheckBox: ModelElement<DXW.CheckBox>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.FormFieldSize>();
-      if (element != null)
-        return FormFieldSizeConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.FormFieldSize,DXW.FormFieldSize>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.FormFieldSize>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FormFieldSizeConverter.CreateOpenXmlElement<DXW.FormFieldSize>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.FormFieldSize,DXW.FormFieldSize>(value);
     }
   }
   
@@ -41,22 +30,11 @@ public partial class CheckBox: ModelElement<DXW.CheckBox>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.AutomaticallySizeFormField>();
-      if (element != null)
-        return AutomaticallySizeFormFieldConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.AutomaticallySizeFormField,DXW.AutomaticallySizeFormField>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.AutomaticallySizeFormField>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = AutomaticallySizeFormFieldConverter.CreateOpenXmlElement<DXW.AutomaticallySizeFormField>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.AutomaticallySizeFormField,DXW.AutomaticallySizeFormField>(value);
     }
   }
   
@@ -65,22 +43,11 @@ public partial class CheckBox: ModelElement<DXW.CheckBox>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.DefaultCheckBoxFormFieldState>();
-      if (element != null)
-        return DefaultCheckBoxFormFieldStateConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.DefaultCheckBoxFormFieldState,DXW.DefaultCheckBoxFormFieldState>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.DefaultCheckBoxFormFieldState>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DefaultCheckBoxFormFieldStateConverter.CreateOpenXmlElement<DXW.DefaultCheckBoxFormFieldState>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.DefaultCheckBoxFormFieldState,DXW.DefaultCheckBoxFormFieldState>(value);
     }
   }
   
@@ -89,22 +56,11 @@ public partial class CheckBox: ModelElement<DXW.CheckBox>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.Checked>();
-      if (element != null)
-        return CheckedConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.Checked,DXW.Checked>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Checked>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = CheckedConverter.CreateOpenXmlElement<DXW.Checked>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.Checked,DXW.Checked>(value);
     }
   }
   

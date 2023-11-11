@@ -34,15 +34,18 @@ public partial class Stroke: ModelElement<DXV.Stroke>
   ///   Stroke Toggle
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? On
+  public Boolean? On
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.On?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.On = value;
+      else
+        _ExistingElement.On = null;
     }
   }
   
@@ -170,15 +173,18 @@ public partial class Stroke: ModelElement<DXV.Stroke>
   ///   Stoke Image Alignment
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? ImageAlignShape
+  public Boolean? ImageAlignShape
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.ImageAlignShape?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.ImageAlignShape = value;
+      else
+        _ExistingElement.ImageAlignShape = null;
     }
   }
   
@@ -255,15 +261,18 @@ public partial class Stroke: ModelElement<DXV.Stroke>
   ///   Force Dashed Outline
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? ForceDash
+  public Boolean? ForceDash
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.ForceDash?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.ForceDash = value;
+      else
+        _ExistingElement.ForceDash = null;
     }
   }
   
@@ -289,15 +298,18 @@ public partial class Stroke: ModelElement<DXV.Stroke>
   ///   Inset Border From Path
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? Insetpen
+  public Boolean? Insetpen
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.Insetpen?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.Insetpen = value;
+      else
+        _ExistingElement.Insetpen = null;
     }
   }
   
@@ -310,22 +322,11 @@ public partial class Stroke: ModelElement<DXV.Stroke>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXVO.LeftStroke>();
-      if (element != null)
-        return LeftStrokeConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMVML.LeftStroke,DXVO.LeftStroke>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXVO.LeftStroke>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LeftStrokeConverter.CreateOpenXmlElement<DXVO.LeftStroke>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMVML.LeftStroke,DXVO.LeftStroke>(value);
     }
   }
   
@@ -338,22 +339,11 @@ public partial class Stroke: ModelElement<DXV.Stroke>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXVO.TopStroke>();
-      if (element != null)
-        return TopStrokeConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMVML.TopStroke,DXVO.TopStroke>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXVO.TopStroke>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TopStrokeConverter.CreateOpenXmlElement<DXVO.TopStroke>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMVML.TopStroke,DXVO.TopStroke>(value);
     }
   }
   
@@ -366,22 +356,11 @@ public partial class Stroke: ModelElement<DXV.Stroke>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXVO.RightStroke>();
-      if (element != null)
-        return RightStrokeConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMVML.RightStroke,DXVO.RightStroke>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXVO.RightStroke>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RightStrokeConverter.CreateOpenXmlElement<DXVO.RightStroke>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMVML.RightStroke,DXVO.RightStroke>(value);
     }
   }
   
@@ -394,22 +373,11 @@ public partial class Stroke: ModelElement<DXV.Stroke>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXVO.BottomStroke>();
-      if (element != null)
-        return BottomStrokeConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMVML.BottomStroke,DXVO.BottomStroke>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXVO.BottomStroke>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BottomStrokeConverter.CreateOpenXmlElement<DXVO.BottomStroke>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMVML.BottomStroke,DXVO.BottomStroke>(value);
     }
   }
   
@@ -422,22 +390,11 @@ public partial class Stroke: ModelElement<DXV.Stroke>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXVO.ColumnStroke>();
-      if (element != null)
-        return ColumnStrokeConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMVML.ColumnStroke,DXVO.ColumnStroke>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXVO.ColumnStroke>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ColumnStrokeConverter.CreateOpenXmlElement<DXVO.ColumnStroke>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMVML.ColumnStroke,DXVO.ColumnStroke>(value);
     }
   }
   

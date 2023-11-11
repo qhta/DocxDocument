@@ -21,22 +21,11 @@ public partial class RadarChartSeries: ModelElement<DXDC.RadarChartSeries>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.Index>();
-      if (element != null)
-        return IndexConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.Index,DXDC.Index>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.Index>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = IndexConverter.CreateOpenXmlElement<DXDC.Index>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.Index,DXDC.Index>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class RadarChartSeries: ModelElement<DXDC.RadarChartSeries>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.Order>();
-      if (element != null)
-        return OrderConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.Order,DXDC.Order>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.Order>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = OrderConverter.CreateOpenXmlElement<DXDC.Order>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.Order,DXDC.Order>(value);
     }
   }
   
@@ -77,22 +55,11 @@ public partial class RadarChartSeries: ModelElement<DXDC.RadarChartSeries>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.SeriesText>();
-      if (element != null)
-        return SeriesTextConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.SeriesText,DXDC.SeriesText>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.SeriesText>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SeriesTextConverter.CreateOpenXmlElement<DXDC.SeriesText>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.SeriesText,DXDC.SeriesText>(value);
     }
   }
   
@@ -105,22 +72,11 @@ public partial class RadarChartSeries: ModelElement<DXDC.RadarChartSeries>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.ChartShapeProperties>();
-      if (element != null)
-        return ChartShapePropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.ChartShapeProperties,DXDC.ChartShapeProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.ChartShapeProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ChartShapePropertiesConverter.CreateOpenXmlElement<DXDC.ChartShapeProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.ChartShapeProperties,DXDC.ChartShapeProperties>(value);
     }
   }
   
@@ -133,22 +89,11 @@ public partial class RadarChartSeries: ModelElement<DXDC.RadarChartSeries>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.PictureOptions>();
-      if (element != null)
-        return PictureOptionsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.PictureOptions,DXDC.PictureOptions>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.PictureOptions>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PictureOptionsConverter.CreateOpenXmlElement<DXDC.PictureOptions>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.PictureOptions,DXDC.PictureOptions>(value);
     }
   }
   
@@ -161,22 +106,11 @@ public partial class RadarChartSeries: ModelElement<DXDC.RadarChartSeries>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.Marker>();
-      if (element != null)
-        return MarkerConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.Marker,DXDC.Marker>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.Marker>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = MarkerConverter.CreateOpenXmlElement<DXDC.Marker>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.Marker,DXDC.Marker>(value);
     }
   }
   
@@ -185,22 +119,11 @@ public partial class RadarChartSeries: ModelElement<DXDC.RadarChartSeries>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.DataLabels>();
-      if (element != null)
-        return DataLabelsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.DataLabels,DXDC.DataLabels>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.DataLabels>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DataLabelsConverter.CreateOpenXmlElement<DXDC.DataLabels>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.DataLabels,DXDC.DataLabels>(value);
     }
   }
   
@@ -209,22 +132,11 @@ public partial class RadarChartSeries: ModelElement<DXDC.RadarChartSeries>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.CategoryAxisData>();
-      if (element != null)
-        return CategoryAxisDataConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.CategoryAxisData,DXDC.CategoryAxisData>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.CategoryAxisData>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = CategoryAxisDataConverter.CreateOpenXmlElement<DXDC.CategoryAxisData>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.CategoryAxisData,DXDC.CategoryAxisData>(value);
     }
   }
   
@@ -233,22 +145,11 @@ public partial class RadarChartSeries: ModelElement<DXDC.RadarChartSeries>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.Values>();
-      if (element != null)
-        return ValuesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.Values,DXDC.Values>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.Values>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ValuesConverter.CreateOpenXmlElement<DXDC.Values>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.Values,DXDC.Values>(value);
     }
   }
   
@@ -257,22 +158,11 @@ public partial class RadarChartSeries: ModelElement<DXDC.RadarChartSeries>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.RadarSerExtensionList>();
-      if (element != null)
-        return RadarSerExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.RadarSerExtensionList,DXDC.RadarSerExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.RadarSerExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RadarSerExtensionListConverter.CreateOpenXmlElement<DXDC.RadarSerExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.RadarSerExtensionList,DXDC.RadarSerExtensionList>(value);
     }
   }
   

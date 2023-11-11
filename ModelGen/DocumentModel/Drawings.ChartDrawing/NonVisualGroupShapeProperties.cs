@@ -21,22 +21,11 @@ public partial class NonVisualGroupShapeProperties: ModelElement<DXDCD.NonVisual
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDCD.NonVisualDrawingProperties>();
-      if (element != null)
-        return NonVisualDrawingPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD.NonVisualDrawingProperties,DXDCD.NonVisualDrawingProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDCD.NonVisualDrawingProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NonVisualDrawingPropertiesConverter.CreateOpenXmlElement<DXDCD.NonVisualDrawingProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD.NonVisualDrawingProperties,DXDCD.NonVisualDrawingProperties>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class NonVisualGroupShapeProperties: ModelElement<DXDCD.NonVisual
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDCD.NonVisualGroupShapeDrawingProperties>();
-      if (element != null)
-        return NonVisualGroupShapeDrawingPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD.NonVisualGroupShapeDrawingProperties,DXDCD.NonVisualGroupShapeDrawingProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDCD.NonVisualGroupShapeDrawingProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NonVisualGroupShapeDrawingPropertiesConverter.CreateOpenXmlElement<DXDCD.NonVisualGroupShapeDrawingProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD.NonVisualGroupShapeDrawingProperties,DXDCD.NonVisualGroupShapeDrawingProperties>(value);
     }
   }
   

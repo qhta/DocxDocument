@@ -21,22 +21,11 @@ public partial class BorderBox: ModelElement<DXM.BorderBox>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.BorderBoxProperties>();
-      if (element != null)
-        return BorderBoxPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.BorderBoxProperties,DXM.BorderBoxProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.BorderBoxProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BorderBoxPropertiesConverter.CreateOpenXmlElement<DXM.BorderBoxProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.BorderBoxProperties,DXM.BorderBoxProperties>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class BorderBox: ModelElement<DXM.BorderBox>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.Base>();
-      if (element != null)
-        return BaseConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.Base,DXM.Base>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.Base>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BaseConverter.CreateOpenXmlElement<DXM.Base>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.Base,DXM.Base>(value);
     }
   }
   

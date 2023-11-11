@@ -21,16 +21,11 @@ public partial class StylePaneFormatFilter: ModelElement<DXW.StylePaneFormatFilt
   {
     get
     {
-      if (_Element?.Val?.Value != null)
-        return HexCharConverter.GetValue(_ExistingElement.Val.Value);
-      return null;
+      return Convert.FromHexString(_Element?.Val.Value);
     }
     set
     {
-      if (value != null)
-        _ExistingElement.Val = value.ToString();
-      else
-        _ExistingElement.Val = null;
+      _ExistingElement.Val = Convert.ToHexString(value);
     }
   }
   

@@ -38,22 +38,11 @@ public partial class StyleLabel: ModelElement<DXDDD.StyleLabel>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDDD.Scene3D>();
-      if (element != null)
-        return Scene3DConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDD.Scene3D,DXDDD.Scene3D>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDDD.Scene3D>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = Scene3DConverter.CreateOpenXmlElement<DXDDD.Scene3D>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDD.Scene3D,DXDDD.Scene3D>(value);
     }
   }
   
@@ -66,22 +55,11 @@ public partial class StyleLabel: ModelElement<DXDDD.StyleLabel>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDDD.Shape3D>();
-      if (element != null)
-        return Shape3DConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDD.Shape3D,DXDDD.Shape3D>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDDD.Shape3D>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = Shape3DConverter.CreateOpenXmlElement<DXDDD.Shape3D>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDD.Shape3D,DXDDD.Shape3D>(value);
     }
   }
   
@@ -94,22 +72,11 @@ public partial class StyleLabel: ModelElement<DXDDD.StyleLabel>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDDD.TextProperties>();
-      if (element != null)
-        return TextPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDD.TextProperties,DXDDD.TextProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDDD.TextProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TextPropertiesConverter.CreateOpenXmlElement<DXDDD.TextProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDD.TextProperties,DXDDD.TextProperties>(value);
     }
   }
   
@@ -122,22 +89,11 @@ public partial class StyleLabel: ModelElement<DXDDD.StyleLabel>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDDD.Style>();
-      if (element != null)
-        return StyleConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDD.Style,DXDDD.Style>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDDD.Style>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = StyleConverter.CreateOpenXmlElement<DXDDD.Style>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDD.Style,DXDDD.Style>(value);
     }
   }
   
@@ -150,22 +106,11 @@ public partial class StyleLabel: ModelElement<DXDDD.StyleLabel>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDDD.ExtensionList>();
-      if (element != null)
-        return ExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDD.ExtensionList,DXDDD.ExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDDD.ExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DXDDD.ExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDD.ExtensionList,DXDDD.ExtensionList>(value);
     }
   }
   

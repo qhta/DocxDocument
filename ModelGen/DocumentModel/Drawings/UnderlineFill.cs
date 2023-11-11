@@ -21,22 +21,11 @@ public partial class UnderlineFill: ModelElement<DXD.UnderlineFill>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.NoFill>();
-      if (element != null)
-        return NoFillConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.NoFill,DXD.NoFill>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.NoFill>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NoFillConverter.CreateOpenXmlElement<DXD.NoFill>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.NoFill,DXD.NoFill>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class UnderlineFill: ModelElement<DXD.UnderlineFill>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.SolidFill>();
-      if (element != null)
-        return SolidFillConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.SolidFill,DXD.SolidFill>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.SolidFill>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SolidFillConverter.CreateOpenXmlElement<DXD.SolidFill>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.SolidFill,DXD.SolidFill>(value);
     }
   }
   
@@ -77,22 +55,11 @@ public partial class UnderlineFill: ModelElement<DXD.UnderlineFill>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.GradientFill>();
-      if (element != null)
-        return GradientFillConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.GradientFill,DXD.GradientFill>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.GradientFill>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = GradientFillConverter.CreateOpenXmlElement<DXD.GradientFill>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.GradientFill,DXD.GradientFill>(value);
     }
   }
   
@@ -105,22 +72,11 @@ public partial class UnderlineFill: ModelElement<DXD.UnderlineFill>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.BlipFill>();
-      if (element != null)
-        return BlipFillConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.BlipFill,DXD.BlipFill>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.BlipFill>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BlipFillConverter.CreateOpenXmlElement<DXD.BlipFill>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.BlipFill,DXD.BlipFill>(value);
     }
   }
   
@@ -133,22 +89,11 @@ public partial class UnderlineFill: ModelElement<DXD.UnderlineFill>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.PatternFill>();
-      if (element != null)
-        return PatternFillConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.PatternFill,DXD.PatternFill>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.PatternFill>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PatternFillConverter.CreateOpenXmlElement<DXD.PatternFill>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.PatternFill,DXD.PatternFill>(value);
     }
   }
   
@@ -161,22 +106,11 @@ public partial class UnderlineFill: ModelElement<DXD.UnderlineFill>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.GroupFill>();
-      if (element != null)
-        return GroupFillConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.GroupFill,DXD.GroupFill>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.GroupFill>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = GroupFillConverter.CreateOpenXmlElement<DXD.GroupFill>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.GroupFill,DXD.GroupFill>(value);
     }
   }
   

@@ -21,22 +21,11 @@ public partial class PreviousTableProperties: ModelElement<DXW.PreviousTableProp
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.TableStyle>();
-      if (element != null)
-        return TableStyleConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.TableStyle,DXW.TableStyle>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.TableStyle>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TableStyleConverter.CreateOpenXmlElement<DXW.TableStyle>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.TableStyle,DXW.TableStyle>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class PreviousTableProperties: ModelElement<DXW.PreviousTableProp
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.TablePositionProperties>();
-      if (element != null)
-        return TablePositionPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.TablePositionProperties,DXW.TablePositionProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.TablePositionProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TablePositionPropertiesConverter.CreateOpenXmlElement<DXW.TablePositionProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.TablePositionProperties,DXW.TablePositionProperties>(value);
     }
   }
   
@@ -104,22 +82,11 @@ public partial class PreviousTableProperties: ModelElement<DXW.PreviousTableProp
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.BiDiVisual>();
-      if (element != null)
-        return BiDiVisualConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.BiDiVisual,DXW.BiDiVisual>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.BiDiVisual>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BiDiVisualConverter.CreateOpenXmlElement<DXW.BiDiVisual>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.BiDiVisual,DXW.BiDiVisual>(value);
     }
   }
   
@@ -132,22 +99,11 @@ public partial class PreviousTableProperties: ModelElement<DXW.PreviousTableProp
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.TableWidth>();
-      if (element != null)
-        return TableWidthConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.TableWidth,DXW.TableWidth>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.TableWidth>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TableWidthConverter.CreateOpenXmlElement<DXW.TableWidth>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.TableWidth,DXW.TableWidth>(value);
     }
   }
   
@@ -187,22 +143,11 @@ public partial class PreviousTableProperties: ModelElement<DXW.PreviousTableProp
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.TableCellSpacing>();
-      if (element != null)
-        return TableCellSpacingConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.TableCellSpacing,DXW.TableCellSpacing>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.TableCellSpacing>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TableCellSpacingConverter.CreateOpenXmlElement<DXW.TableCellSpacing>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.TableCellSpacing,DXW.TableCellSpacing>(value);
     }
   }
   
@@ -215,22 +160,11 @@ public partial class PreviousTableProperties: ModelElement<DXW.PreviousTableProp
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.TableIndentation>();
-      if (element != null)
-        return TableIndentationConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.TableIndentation,DXW.TableIndentation>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.TableIndentation>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TableIndentationConverter.CreateOpenXmlElement<DXW.TableIndentation>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.TableIndentation,DXW.TableIndentation>(value);
     }
   }
   
@@ -243,22 +177,11 @@ public partial class PreviousTableProperties: ModelElement<DXW.PreviousTableProp
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.TableBorders>();
-      if (element != null)
-        return TableBordersConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.TableBorders,DXW.TableBorders>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.TableBorders>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TableBordersConverter.CreateOpenXmlElement<DXW.TableBorders>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.TableBorders,DXW.TableBorders>(value);
     }
   }
   
@@ -271,22 +194,11 @@ public partial class PreviousTableProperties: ModelElement<DXW.PreviousTableProp
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.Shading>();
-      if (element != null)
-        return ShadingConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.Shading,DXW.Shading>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Shading>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ShadingConverter.CreateOpenXmlElement<DXW.Shading>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.Shading,DXW.Shading>(value);
     }
   }
   
@@ -299,22 +211,11 @@ public partial class PreviousTableProperties: ModelElement<DXW.PreviousTableProp
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.TableLayout>();
-      if (element != null)
-        return TableLayoutConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.TableLayout,DXW.TableLayout>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.TableLayout>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TableLayoutConverter.CreateOpenXmlElement<DXW.TableLayout>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.TableLayout,DXW.TableLayout>(value);
     }
   }
   
@@ -327,22 +228,11 @@ public partial class PreviousTableProperties: ModelElement<DXW.PreviousTableProp
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.TableCellMarginDefault>();
-      if (element != null)
-        return TableCellMarginDefaultConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.TableCellMarginDefault,DXW.TableCellMarginDefault>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.TableCellMarginDefault>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TableCellMarginDefaultConverter.CreateOpenXmlElement<DXW.TableCellMarginDefault>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.TableCellMarginDefault,DXW.TableCellMarginDefault>(value);
     }
   }
   
@@ -355,22 +245,11 @@ public partial class PreviousTableProperties: ModelElement<DXW.PreviousTableProp
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.TableLook>();
-      if (element != null)
-        return TableLookConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.TableLook,DXW.TableLook>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.TableLook>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TableLookConverter.CreateOpenXmlElement<DXW.TableLook>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.TableLook,DXW.TableLook>(value);
     }
   }
   
@@ -383,22 +262,11 @@ public partial class PreviousTableProperties: ModelElement<DXW.PreviousTableProp
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.TableCaption>();
-      if (element != null)
-        return TableCaptionConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.TableCaption,DXW.TableCaption>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.TableCaption>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TableCaptionConverter.CreateOpenXmlElement<DXW.TableCaption>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.TableCaption,DXW.TableCaption>(value);
     }
   }
   
@@ -411,22 +279,11 @@ public partial class PreviousTableProperties: ModelElement<DXW.PreviousTableProp
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.TableDescription>();
-      if (element != null)
-        return TableDescriptionConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.TableDescription,DXW.TableDescription>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.TableDescription>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TableDescriptionConverter.CreateOpenXmlElement<DXW.TableDescription>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.TableDescription,DXW.TableDescription>(value);
     }
   }
   

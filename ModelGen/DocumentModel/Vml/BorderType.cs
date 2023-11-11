@@ -34,15 +34,18 @@ public partial class BorderType: ModelElement<DXVW.BorderType>
   ///   Border shadow
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? Shadow
+  public Boolean? Shadow
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.Shadow?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.Shadow = value;
+      else
+        _ExistingElement.Shadow = null;
     }
   }
   

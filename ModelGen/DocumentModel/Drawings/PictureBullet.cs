@@ -21,22 +21,11 @@ public partial class PictureBullet: ModelElement<DXD.PictureBullet>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.Blip>();
-      if (element != null)
-        return BlipConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.Blip,DXD.Blip>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.Blip>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BlipConverter.CreateOpenXmlElement<DXD.Blip>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.Blip,DXD.Blip>(value);
     }
   }
   

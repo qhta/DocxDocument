@@ -9,11 +9,9 @@
 /// </list>
 ///  This information should be used to determine the captions which are automatically added to objects when they are inserted into a WordprocessingML document. [Note: This setting is typically ignored unless it is specified in an application's default template. end note]
 /// </summary>
-public partial class Captions: ModelElement<DXW.Captions>
+public partial class Captions: NamedElementCollection<DXW.Captions, DXW.Caption, DMW.Caption>
 {
   public Captions(): base(){ }
-
-  public Captions(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
 
   public Captions(DXW.Captions openXmlElement): base(openXmlElement) { }
 

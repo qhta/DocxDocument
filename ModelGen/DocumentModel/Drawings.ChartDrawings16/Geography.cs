@@ -72,22 +72,11 @@ public partial class Geography: ModelElement<DXO16DCD.Geography>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.GeoCache>();
-      if (element != null)
-        return GeoCacheConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.GeoCache,DXO16DCD.GeoCache>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.GeoCache>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = GeoCacheConverter.CreateOpenXmlElement<DXO16DCD.GeoCache>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.GeoCache,DXO16DCD.GeoCache>(value);
     }
   }
   

@@ -43,7 +43,7 @@ public partial class ApplicationNonVisualDrawingProperties: ModelElement<DXO10DC
     set
     {
       if (value != null)
-        _ExistingElement.Published = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.Published = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.Published = null;
     }

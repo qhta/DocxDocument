@@ -21,22 +21,11 @@ public partial class FilteredBarSeries: ModelElement<DXO13DC.FilteredBarSeries>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13DC.BarChartSeries>();
-      if (element != null)
-        return BarChartSeriesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC13.BarChartSeries,DXO13DC.BarChartSeries>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13DC.BarChartSeries>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BarChartSeriesConverter.CreateOpenXmlElement<DXO13DC.BarChartSeries>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC13.BarChartSeries,DXO13DC.BarChartSeries>(value);
     }
   }
   

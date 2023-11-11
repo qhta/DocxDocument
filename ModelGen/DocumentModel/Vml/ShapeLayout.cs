@@ -21,22 +21,11 @@ public partial class ShapeLayout: ModelElement<DXVO.ShapeLayout>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXVO.ShapeIdMap>();
-      if (element != null)
-        return ShapeIdMapConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMVML.ShapeIdMap,DXVO.ShapeIdMap>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXVO.ShapeIdMap>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ShapeIdMapConverter.CreateOpenXmlElement<DXVO.ShapeIdMap>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMVML.ShapeIdMap,DXVO.ShapeIdMap>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class ShapeLayout: ModelElement<DXVO.ShapeLayout>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXVO.RegroupTable>();
-      if (element != null)
-        return RegroupTableConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMVML.RegroupTable,DXVO.RegroupTable>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXVO.RegroupTable>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RegroupTableConverter.CreateOpenXmlElement<DXVO.RegroupTable>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMVML.RegroupTable,DXVO.RegroupTable>(value);
     }
   }
   
@@ -77,22 +55,11 @@ public partial class ShapeLayout: ModelElement<DXVO.ShapeLayout>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXVO.Rules>();
-      if (element != null)
-        return RulesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMVML.Rules,DXVO.Rules>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXVO.Rules>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RulesConverter.CreateOpenXmlElement<DXVO.Rules>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMVML.Rules,DXVO.Rules>(value);
     }
   }
   

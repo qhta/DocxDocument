@@ -21,22 +21,11 @@ public partial class RelativeHeight: ModelElement<DXO10WD.RelativeHeight>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10WD.PercentageHeight>();
-      if (element != null)
-        return PercentageHeightConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMWD.PercentageHeight,DXO10WD.PercentageHeight>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10WD.PercentageHeight>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PercentageHeightConverter.CreateOpenXmlElement<DXO10WD.PercentageHeight>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMWD.PercentageHeight,DXO10WD.PercentageHeight>(value);
     }
   }
   

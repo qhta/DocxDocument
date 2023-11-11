@@ -21,22 +21,11 @@ public partial class NonVisualGraphicFrameProperties: ModelElement<DXDCD.NonVisu
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDCD.NonVisualDrawingProperties>();
-      if (element != null)
-        return NonVisualDrawingPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD.NonVisualDrawingProperties,DXDCD.NonVisualDrawingProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDCD.NonVisualDrawingProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NonVisualDrawingPropertiesConverter.CreateOpenXmlElement<DXDCD.NonVisualDrawingProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD.NonVisualDrawingProperties,DXDCD.NonVisualDrawingProperties>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class NonVisualGraphicFrameProperties: ModelElement<DXDCD.NonVisu
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDCD.NonVisualGraphicFrameDrawingProperties>();
-      if (element != null)
-        return NonVisualGraphicFrameDrawingPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD.NonVisualGraphicFrameDrawingProperties,DXDCD.NonVisualGraphicFrameDrawingProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDCD.NonVisualGraphicFrameDrawingProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NonVisualGraphicFrameDrawingPropertiesConverter.CreateOpenXmlElement<DXDCD.NonVisualGraphicFrameDrawingProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD.NonVisualGraphicFrameDrawingProperties,DXDCD.NonVisualGraphicFrameDrawingProperties>(value);
     }
   }
   

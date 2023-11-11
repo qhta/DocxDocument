@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ModelGen\DocumentModel.BaseTypes\DocumentModel.BaseTypes.csproj" />
+    <ProjectReference Include="..\DocumentModel.BaseTypes\DocumentModel.BaseTypes.csproj" />
   </ItemGroup>
 
 </Project>

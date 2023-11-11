@@ -21,22 +21,11 @@ public partial class MathFunction: ModelElement<DXM.MathFunction>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.FunctionProperties>();
-      if (element != null)
-        return FunctionPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.FunctionProperties,DXM.FunctionProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.FunctionProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FunctionPropertiesConverter.CreateOpenXmlElement<DXM.FunctionProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.FunctionProperties,DXM.FunctionProperties>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class MathFunction: ModelElement<DXM.MathFunction>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.FunctionName>();
-      if (element != null)
-        return FunctionNameConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.FunctionName,DXM.FunctionName>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.FunctionName>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FunctionNameConverter.CreateOpenXmlElement<DXM.FunctionName>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.FunctionName,DXM.FunctionName>(value);
     }
   }
   
@@ -77,22 +55,11 @@ public partial class MathFunction: ModelElement<DXM.MathFunction>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.Base>();
-      if (element != null)
-        return BaseConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.Base,DXM.Base>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.Base>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BaseConverter.CreateOpenXmlElement<DXM.Base>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.Base,DXM.Base>(value);
     }
   }
   

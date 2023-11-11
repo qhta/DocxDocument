@@ -48,22 +48,11 @@ public partial class EquationArrayProperties: ModelElement<DXM.EquationArrayProp
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.MaxDistribution>();
-      if (element != null)
-        return MaxDistributionConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.MaxDistribution,DXM.MaxDistribution>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.MaxDistribution>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = MaxDistributionConverter.CreateOpenXmlElement<DXM.MaxDistribution>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.MaxDistribution,DXM.MaxDistribution>(value);
     }
   }
   
@@ -76,22 +65,11 @@ public partial class EquationArrayProperties: ModelElement<DXM.EquationArrayProp
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.ObjectDistribution>();
-      if (element != null)
-        return ObjectDistributionConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.ObjectDistribution,DXM.ObjectDistribution>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.ObjectDistribution>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ObjectDistributionConverter.CreateOpenXmlElement<DXM.ObjectDistribution>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.ObjectDistribution,DXM.ObjectDistribution>(value);
     }
   }
   
@@ -104,22 +82,11 @@ public partial class EquationArrayProperties: ModelElement<DXM.EquationArrayProp
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.RowSpacingRule>();
-      if (element != null)
-        return RowSpacingRuleConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.RowSpacingRule,DXM.RowSpacingRule>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.RowSpacingRule>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RowSpacingRuleConverter.CreateOpenXmlElement<DXM.RowSpacingRule>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.RowSpacingRule,DXM.RowSpacingRule>(value);
     }
   }
   
@@ -132,22 +99,11 @@ public partial class EquationArrayProperties: ModelElement<DXM.EquationArrayProp
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.RowSpacing>();
-      if (element != null)
-        return RowSpacingConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.RowSpacing,DXM.RowSpacing>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.RowSpacing>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RowSpacingConverter.CreateOpenXmlElement<DXM.RowSpacing>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.RowSpacing,DXM.RowSpacing>(value);
     }
   }
   
@@ -160,22 +116,11 @@ public partial class EquationArrayProperties: ModelElement<DXM.EquationArrayProp
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.ControlProperties>();
-      if (element != null)
-        return ControlPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.ControlProperties,DXM.ControlProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.ControlProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ControlPropertiesConverter.CreateOpenXmlElement<DXM.ControlProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.ControlProperties,DXM.ControlProperties>(value);
     }
   }
   

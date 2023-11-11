@@ -21,22 +21,11 @@ public partial class ChartSpace: ModelElement<DXO16DCD.ChartSpace>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.ChartData>();
-      if (element != null)
-        return ChartDataConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.ChartData,DXO16DCD.ChartData>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.ChartData>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ChartDataConverter.CreateOpenXmlElement<DXO16DCD.ChartData>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.ChartData,DXO16DCD.ChartData>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class ChartSpace: ModelElement<DXO16DCD.ChartSpace>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.Chart>();
-      if (element != null)
-        return ChartConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.Chart,DXO16DCD.Chart>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.Chart>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ChartConverter.CreateOpenXmlElement<DXO16DCD.Chart>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.Chart,DXO16DCD.Chart>(value);
     }
   }
   
@@ -77,22 +55,11 @@ public partial class ChartSpace: ModelElement<DXO16DCD.ChartSpace>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.ShapeProperties>();
-      if (element != null)
-        return ShapePropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.ShapeProperties,DXO16DCD.ShapeProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.ShapeProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ShapePropertiesConverter.CreateOpenXmlElement<DXO16DCD.ShapeProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.ShapeProperties,DXO16DCD.ShapeProperties>(value);
     }
   }
   
@@ -105,22 +72,11 @@ public partial class ChartSpace: ModelElement<DXO16DCD.ChartSpace>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.TxPrTextBody>();
-      if (element != null)
-        return TxPrTextBodyConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.TxPrTextBody,DXO16DCD.TxPrTextBody>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.TxPrTextBody>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TxPrTextBodyConverter.CreateOpenXmlElement<DXO16DCD.TxPrTextBody>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.TxPrTextBody,DXO16DCD.TxPrTextBody>(value);
     }
   }
   
@@ -133,22 +89,11 @@ public partial class ChartSpace: ModelElement<DXO16DCD.ChartSpace>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.ColorMappingType>();
-      if (element != null)
-        return ColorMappingTypeConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.ColorMappingType,DXO16DCD.ColorMappingType>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.ColorMappingType>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ColorMappingTypeConverter.CreateOpenXmlElement<DXO16DCD.ColorMappingType>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.ColorMappingType,DXO16DCD.ColorMappingType>(value);
     }
   }
   
@@ -161,22 +106,11 @@ public partial class ChartSpace: ModelElement<DXO16DCD.ChartSpace>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.FormatOverrides>();
-      if (element != null)
-        return FormatOverridesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.FormatOverrides,DXO16DCD.FormatOverrides>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.FormatOverrides>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FormatOverridesConverter.CreateOpenXmlElement<DXO16DCD.FormatOverrides>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.FormatOverrides,DXO16DCD.FormatOverrides>(value);
     }
   }
   
@@ -189,22 +123,11 @@ public partial class ChartSpace: ModelElement<DXO16DCD.ChartSpace>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.PrintSettings>();
-      if (element != null)
-        return PrintSettingsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.PrintSettings,DXO16DCD.PrintSettings>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.PrintSettings>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PrintSettingsConverter.CreateOpenXmlElement<DXO16DCD.PrintSettings>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.PrintSettings,DXO16DCD.PrintSettings>(value);
     }
   }
   
@@ -217,22 +140,11 @@ public partial class ChartSpace: ModelElement<DXO16DCD.ChartSpace>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.ExtensionList>();
-      if (element != null)
-        return ExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.ExtensionList,DXO16DCD.ExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.ExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DXO16DCD.ExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.ExtensionList,DXO16DCD.ExtensionList>(value);
     }
   }
   

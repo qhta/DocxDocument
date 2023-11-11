@@ -21,22 +21,11 @@ public partial class Subscript: ModelElement<DXM.Subscript>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.SubscriptProperties>();
-      if (element != null)
-        return SubscriptPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.SubscriptProperties,DXM.SubscriptProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.SubscriptProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SubscriptPropertiesConverter.CreateOpenXmlElement<DXM.SubscriptProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.SubscriptProperties,DXM.SubscriptProperties>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class Subscript: ModelElement<DXM.Subscript>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.Base>();
-      if (element != null)
-        return BaseConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.Base,DXM.Base>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.Base>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BaseConverter.CreateOpenXmlElement<DXM.Base>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.Base,DXM.Base>(value);
     }
   }
   
@@ -77,22 +55,11 @@ public partial class Subscript: ModelElement<DXM.Subscript>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.SubArgument>();
-      if (element != null)
-        return SubArgumentConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.SubArgument,DXM.SubArgument>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.SubArgument>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SubArgumentConverter.CreateOpenXmlElement<DXM.SubArgument>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.SubArgument,DXM.SubArgument>(value);
     }
   }
   

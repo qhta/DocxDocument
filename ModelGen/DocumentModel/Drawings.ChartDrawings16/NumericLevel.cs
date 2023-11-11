@@ -63,4 +63,37 @@ public partial class NumericLevel: ModelElement<DXO16DCD.NumericLevel>
     }
   }
   
+  [DataMember]
+  public DM.ElementCollection<NumericValue>? Items
+  {
+    get
+    {
+      if (_Element==null)
+        return null;
+      var collection = new ElementCollection<DM.NumericValue>();
+      foreach (var item in _ExistingElement.Elements<DXO16DCD.NumericValue>())
+      {
+        var newItem = NumericValueConverter.GetValue(item);
+        if (newItem is not null)
+          collection.Add((NumericValue)newItem);
+      }
+      if (collection.Count>0)
+        return collection;
+      return null;
+    }
+    set
+    {
+      _ExistingElement.RemoveAllChildren<DXO16DCD.NumericValue>();
+      if (value != null)
+      {
+        foreach (var item in value)
+        {
+          var newItem = NumericValueConverter.CreateOpenXmlElement<DXO16DCD.NumericValue>(item);
+          if (newItem != null)
+            _ExistingElement.AddChild(newItem);
+        }
+      }
+    }
+  }
+  
 }

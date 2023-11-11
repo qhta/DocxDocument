@@ -21,22 +21,11 @@ public partial class Stretch: ModelElement<DXD.Stretch>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.FillRectangle>();
-      if (element != null)
-        return FillRectangleConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.FillRectangle,DXD.FillRectangle>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.FillRectangle>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FillRectangleConverter.CreateOpenXmlElement<DXD.FillRectangle>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.FillRectangle,DXD.FillRectangle>(value);
     }
   }
   

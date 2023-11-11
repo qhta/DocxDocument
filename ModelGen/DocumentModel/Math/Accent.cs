@@ -21,22 +21,11 @@ public partial class Accent: ModelElement<DXM.Accent>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.AccentProperties>();
-      if (element != null)
-        return AccentPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.AccentProperties,DXM.AccentProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.AccentProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = AccentPropertiesConverter.CreateOpenXmlElement<DXM.AccentProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.AccentProperties,DXM.AccentProperties>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class Accent: ModelElement<DXM.Accent>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.Base>();
-      if (element != null)
-        return BaseConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.Base,DXM.Base>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.Base>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BaseConverter.CreateOpenXmlElement<DXM.Base>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.Base,DXM.Base>(value);
     }
   }
   

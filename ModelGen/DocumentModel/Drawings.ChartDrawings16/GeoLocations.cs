@@ -21,22 +21,11 @@ public partial class GeoLocations: ModelElement<DXO16DCD.GeoLocations>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.GeoLocation>();
-      if (element != null)
-        return GeoLocationConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.GeoLocation,DXO16DCD.GeoLocation>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.GeoLocation>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = GeoLocationConverter.CreateOpenXmlElement<DXO16DCD.GeoLocation>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.GeoLocation,DXO16DCD.GeoLocation>(value);
     }
   }
   

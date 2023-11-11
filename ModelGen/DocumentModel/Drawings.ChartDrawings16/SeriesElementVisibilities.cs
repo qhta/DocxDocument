@@ -26,7 +26,7 @@ public partial class SeriesElementVisibilities: ModelElement<DXO16DCD.SeriesElem
     set
     {
       if (value != null)
-        _ExistingElement.ConnectorLines = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.ConnectorLines = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.ConnectorLines = null;
     }
@@ -46,7 +46,7 @@ public partial class SeriesElementVisibilities: ModelElement<DXO16DCD.SeriesElem
     set
     {
       if (value != null)
-        _ExistingElement.MeanLine = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.MeanLine = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.MeanLine = null;
     }
@@ -66,7 +66,7 @@ public partial class SeriesElementVisibilities: ModelElement<DXO16DCD.SeriesElem
     set
     {
       if (value != null)
-        _ExistingElement.MeanMarker = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.MeanMarker = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.MeanMarker = null;
     }
@@ -86,7 +86,7 @@ public partial class SeriesElementVisibilities: ModelElement<DXO16DCD.SeriesElem
     set
     {
       if (value != null)
-        _ExistingElement.Nonoutliers = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.Nonoutliers = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.Nonoutliers = null;
     }
@@ -106,7 +106,7 @@ public partial class SeriesElementVisibilities: ModelElement<DXO16DCD.SeriesElem
     set
     {
       if (value != null)
-        _ExistingElement.Outliers = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.Outliers = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.Outliers = null;
     }

@@ -21,22 +21,11 @@ public partial class FilteredBubbleSeries: ModelElement<DXO13DC.FilteredBubbleSe
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13DC.BubbleChartSeries>();
-      if (element != null)
-        return BubbleChartSeriesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC13.BubbleChartSeries,DXO13DC.BubbleChartSeries>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13DC.BubbleChartSeries>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BubbleChartSeriesConverter.CreateOpenXmlElement<DXO13DC.BubbleChartSeries>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC13.BubbleChartSeries,DXO13DC.BubbleChartSeries>(value);
     }
   }
   

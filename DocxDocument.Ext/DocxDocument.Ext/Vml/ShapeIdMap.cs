@@ -20,8 +20,8 @@ public partial class ShapeIdMap : ModelElement<DXVO.ShapeIdMap>
   [DataMember]
   public string? Data
   {
-    get => _Element.Data?.Value;
-    set => _Element.Data = value;
+    get => _Element?.Data?.Value;
+    set => _ExistingElement.Data = value;
   }
 
   /// <summary>
@@ -30,8 +30,8 @@ public partial class ShapeIdMap : ModelElement<DXVO.ShapeIdMap>
   [DataMember]
   public DMV.ExtensionHandlingBehaviorKind? Extension
   {
-    get => _Element.Extension?.GetEnumValue<DMV.ExtensionHandlingBehaviorKind, DXV.ExtensionHandlingBehaviorValues>();
-    set => _Element.Extension = EVU.SetEnumValue<DMV.ExtensionHandlingBehaviorKind, DXV.ExtensionHandlingBehaviorValues>(value);
+    get => _Element?.Extension?.GetEnumValue<DMV.ExtensionHandlingBehaviorKind, DXV.ExtensionHandlingBehaviorValues>();
+    set => _ExistingElement.Extension = EVU.SetEnumValue<DMV.ExtensionHandlingBehaviorKind, DXV.ExtensionHandlingBehaviorValues>(value);
   }
 
 }

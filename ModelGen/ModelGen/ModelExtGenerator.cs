@@ -24,15 +24,15 @@ public partial class ModelExtGenerator : ModelGenerator
       {
         if (!ns.StartsWith("System"))
           px = ns + ".";
-        ns = typeInfo.GetFullName(false, true, false).Namespace;
-        if (ns!=null)
-          GlobalUsings.Add(ns);
       }
+      ns = typeInfo.GetFullName(false, true, false).Namespace;
+      if (ns != null)
+        GlobalUsings.Add(ns);
       var baseClassName = "ModelElement";
       if (typeInfo.Type.IsEqualOrSubclassOf(typeof(DXPack.OpenXmlPart)))
-         baseClassName = "ModelPartElement";
+        baseClassName = "ModelPartElement";
 
-      var str = $"public partial class {typeName}: {baseClassName}<{px}{typeName}>";
+      var str = $"public partial class {typeName}: {baseClassName}<{sourceTypeName}>";
       Writer.WriteLine(str);
     }
     else
@@ -53,7 +53,7 @@ public partial class ModelExtGenerator : ModelGenerator
     Writer.WriteLine();
     var baseClassName = "DX.OpenXmlElement";
     if (typeInfo.Type.IsEqualOrSubclassOf(typeof(DXPack.OpenXmlPart)))
-         baseClassName = "DXPack.OpenXmlPart";
+      baseClassName = "DXPack.OpenXmlPart";
     Writer.WriteLine($"public {typeName}({baseClassName} openXmlElement): base(openXmlElement) {{ }}");
     Writer.WriteLine();
     Writer.WriteLine($"public {typeName}({px}{sourceTypeName.Name} openXmlElement): base(openXmlElement) {{ }}");

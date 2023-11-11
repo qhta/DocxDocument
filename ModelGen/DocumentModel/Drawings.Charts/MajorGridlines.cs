@@ -17,22 +17,11 @@ public partial class MajorGridlines: ModelElement<DXDC.MajorGridlines>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.ChartShapeProperties>();
-      if (element != null)
-        return ChartShapePropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.ChartShapeProperties,DXDC.ChartShapeProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.ChartShapeProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ChartShapePropertiesConverter.CreateOpenXmlElement<DXDC.ChartShapeProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.ChartShapeProperties,DXDC.ChartShapeProperties>(value);
     }
   }
   

@@ -68,15 +68,18 @@ public partial class TextBox: ModelElement<DXV.TextBox>
   ///   Text Box Single-Click Selection Toggle
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? SingleClick
+  public Boolean? SingleClick
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.SingleClick?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.SingleClick = value;
+      else
+        _ExistingElement.SingleClick = null;
     }
   }
   
@@ -85,22 +88,11 @@ public partial class TextBox: ModelElement<DXV.TextBox>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.TextBoxContent>();
-      if (element != null)
-        return TextBoxContentConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.TextBoxContent,DXW.TextBoxContent>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.TextBoxContent>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TextBoxContentConverter.CreateOpenXmlElement<DXW.TextBoxContent>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.TextBoxContent,DXW.TextBoxContent>(value);
     }
   }
   

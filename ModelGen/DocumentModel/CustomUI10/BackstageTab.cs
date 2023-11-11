@@ -162,7 +162,7 @@ public partial class BackstageTab: ModelElement<DXO10CUI.BackstageTab>
     set
     {
       if (value != null)
-        _ExistingElement.Enabled = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.Enabled = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.Enabled = null;
     }
@@ -233,7 +233,7 @@ public partial class BackstageTab: ModelElement<DXO10CUI.BackstageTab>
     set
     {
       if (value != null)
-        _ExistingElement.Visible = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.Visible = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.Visible = null;
     }
@@ -418,22 +418,11 @@ public partial class BackstageTab: ModelElement<DXO10CUI.BackstageTab>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10CUI.BackstageGroups>();
-      if (element != null)
-        return BackstageGroupsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMCUI10.BackstageGroups,DXO10CUI.BackstageGroups>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10CUI.BackstageGroups>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BackstageGroupsConverter.CreateOpenXmlElement<DXO10CUI.BackstageGroups>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMCUI10.BackstageGroups,DXO10CUI.BackstageGroups>(value);
     }
   }
   
@@ -446,22 +435,11 @@ public partial class BackstageTab: ModelElement<DXO10CUI.BackstageTab>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10CUI.SimpleGroups>();
-      if (element != null)
-        return SimpleGroupsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMCUI10.SimpleGroups,DXO10CUI.SimpleGroups>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10CUI.SimpleGroups>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SimpleGroupsConverter.CreateOpenXmlElement<DXO10CUI.SimpleGroups>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMCUI10.SimpleGroups,DXO10CUI.SimpleGroups>(value);
     }
   }
   

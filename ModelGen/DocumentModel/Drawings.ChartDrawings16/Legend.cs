@@ -26,7 +26,7 @@ public partial class Legend: ModelElement<DXO16DCD.Legend>
     set
     {
       if (value != null)
-        _ExistingElement.Overlay = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.Overlay = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.Overlay = null;
     }
@@ -41,22 +41,11 @@ public partial class Legend: ModelElement<DXO16DCD.Legend>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.ShapeProperties>();
-      if (element != null)
-        return ShapePropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.ShapeProperties,DXO16DCD.ShapeProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.ShapeProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ShapePropertiesConverter.CreateOpenXmlElement<DXO16DCD.ShapeProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.ShapeProperties,DXO16DCD.ShapeProperties>(value);
     }
   }
   
@@ -69,22 +58,11 @@ public partial class Legend: ModelElement<DXO16DCD.Legend>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.TxPrTextBody>();
-      if (element != null)
-        return TxPrTextBodyConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.TxPrTextBody,DXO16DCD.TxPrTextBody>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.TxPrTextBody>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TxPrTextBodyConverter.CreateOpenXmlElement<DXO16DCD.TxPrTextBody>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.TxPrTextBody,DXO16DCD.TxPrTextBody>(value);
     }
   }
   
@@ -97,22 +75,11 @@ public partial class Legend: ModelElement<DXO16DCD.Legend>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.ExtensionList>();
-      if (element != null)
-        return ExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.ExtensionList,DXO16DCD.ExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.ExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DXO16DCD.ExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.ExtensionList,DXO16DCD.ExtensionList>(value);
     }
   }
   

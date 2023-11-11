@@ -21,22 +21,11 @@ public partial class InvertSolidFillFormat: ModelElement<DXO10DC.InvertSolidFill
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10DC.ShapeProperties>();
-      if (element != null)
-        return ShapePropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC10.ShapeProperties,DXO10DC.ShapeProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10DC.ShapeProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ShapePropertiesConverter.CreateOpenXmlElement<DXO10DC.ShapeProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC10.ShapeProperties,DXO10DC.ShapeProperties>(value);
     }
   }
   

@@ -239,6 +239,22 @@
           }
         }
       },
+      "Qhta.TestUtilities/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Qhta.TypeUtils": "1.3.10.1"
+        },
+        "compile": {
+          "lib/net6.0/Qhta.TestUtilities.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Qhta.TestUtilities.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Qhta.TextUtils/3.2.0": {
         "type": "package",
         "compile": {
@@ -1716,6 +1732,7 @@
           "Qhta.Collections": "4.6.0",
           "Qhta.HtmlUtils": "2.1.0",
           "Qhta.TestHelper": "3.0.0",
+          "Qhta.TestUtilities": "1.0.0",
           "Qhta.TextUtils": "3.2.0",
           "Qhta.TypeUtils": "1.3.10.1",
           "Qhta.Xml": "2.1.0",
@@ -2094,6 +2111,21 @@
         "lib/netstandard2.0/Qhta.TestHelper.xml",
         "qhta.testhelper.3.0.0.nupkg.sha512",
         "qhta.testhelper.nuspec",
+        "readme.md"
+      ]
+    },
+    "Qhta.TestUtilities/1.0.0": {
+      "sha512": "pEhUN1NSDlICqO/UdB2apqu1VzE4AV5uBrpI6D/3z/ztU+EU8RK9EKkKjfj4pkerJO50W39woJB2GKYhZJm7xA==",
+      "type": "package",
+      "path": "qhta.testutilities/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        "lib/net6.0/Qhta.TestUtilities.dll",
+        "lib/net6.0/Qhta.TestUtilities.xml",
+        "lib/netstandard2.0/Qhta.TestUtilities.dll",
+        "lib/netstandard2.0/Qhta.TestUtilities.xml",
+        "qhta.testutilities.1.0.0.nupkg.sha512",
+        "qhta.testutilities.nuspec",
         "readme.md"
       ]
     },
@@ -5401,13 +5433,13 @@
     },
     "DocumentModel.Attributes/1.0.0": {
       "type": "project",
-      "path": "../ModelGen/DocumentModel.Attributes/DocumentModel.Attributes.csproj",
-      "msbuildProject": "../ModelGen/DocumentModel.Attributes/DocumentModel.Attributes.csproj"
+      "path": "../DocumentModel.Attributes/DocumentModel.Attributes.csproj",
+      "msbuildProject": "../DocumentModel.Attributes/DocumentModel.Attributes.csproj"
     },
     "DocumentModel.BaseTypes/1.0.0": {
       "type": "project",
-      "path": "../ModelGen/DocumentModel.BaseTypes/DocumentModel.BaseTypes.csproj",
-      "msbuildProject": "../ModelGen/DocumentModel.BaseTypes/DocumentModel.BaseTypes.csproj"
+      "path": "../DocumentModel.BaseTypes/DocumentModel.BaseTypes.csproj",
+      "msbuildProject": "../DocumentModel.BaseTypes/DocumentModel.BaseTypes.csproj"
     },
     "ModelDocumentation/1.0.0": {
       "type": "project",

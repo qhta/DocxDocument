@@ -315,7 +315,7 @@ public partial class Group: ModelElement<DXOCUI.Group>
     set
     {
       if (value != null)
-        _ExistingElement.Visible = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.Visible = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.Visible = null;
     }
@@ -377,22 +377,11 @@ public partial class Group: ModelElement<DXOCUI.Group>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXOCUI.DialogBoxLauncher>();
-      if (element != null)
-        return DialogBoxLauncherConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMCUI.DialogBoxLauncher,DXOCUI.DialogBoxLauncher>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXOCUI.DialogBoxLauncher>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DialogBoxLauncherConverter.CreateOpenXmlElement<DXOCUI.DialogBoxLauncher>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMCUI.DialogBoxLauncher,DXOCUI.DialogBoxLauncher>(value);
     }
   }
   

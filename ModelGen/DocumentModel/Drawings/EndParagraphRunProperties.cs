@@ -17,22 +17,11 @@ public partial class EndParagraphRunProperties: ModelElement<DXD.EndParagraphRun
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.Outline>();
-      if (element != null)
-        return OutlineConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.Outline,DXD.Outline>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.Outline>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = OutlineConverter.CreateOpenXmlElement<DXD.Outline>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.Outline,DXD.Outline>(value);
     }
   }
   
@@ -41,22 +30,11 @@ public partial class EndParagraphRunProperties: ModelElement<DXD.EndParagraphRun
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.NoFill>();
-      if (element != null)
-        return NoFillConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.NoFill,DXD.NoFill>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.NoFill>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NoFillConverter.CreateOpenXmlElement<DXD.NoFill>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.NoFill,DXD.NoFill>(value);
     }
   }
   
@@ -65,22 +43,11 @@ public partial class EndParagraphRunProperties: ModelElement<DXD.EndParagraphRun
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.SolidFill>();
-      if (element != null)
-        return SolidFillConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.SolidFill,DXD.SolidFill>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.SolidFill>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SolidFillConverter.CreateOpenXmlElement<DXD.SolidFill>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.SolidFill,DXD.SolidFill>(value);
     }
   }
   
@@ -89,22 +56,11 @@ public partial class EndParagraphRunProperties: ModelElement<DXD.EndParagraphRun
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.GradientFill>();
-      if (element != null)
-        return GradientFillConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.GradientFill,DXD.GradientFill>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.GradientFill>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = GradientFillConverter.CreateOpenXmlElement<DXD.GradientFill>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.GradientFill,DXD.GradientFill>(value);
     }
   }
   
@@ -113,22 +69,11 @@ public partial class EndParagraphRunProperties: ModelElement<DXD.EndParagraphRun
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.BlipFill>();
-      if (element != null)
-        return BlipFillConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.BlipFill,DXD.BlipFill>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.BlipFill>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BlipFillConverter.CreateOpenXmlElement<DXD.BlipFill>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.BlipFill,DXD.BlipFill>(value);
     }
   }
   
@@ -137,22 +82,11 @@ public partial class EndParagraphRunProperties: ModelElement<DXD.EndParagraphRun
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.PatternFill>();
-      if (element != null)
-        return PatternFillConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.PatternFill,DXD.PatternFill>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.PatternFill>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PatternFillConverter.CreateOpenXmlElement<DXD.PatternFill>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.PatternFill,DXD.PatternFill>(value);
     }
   }
   
@@ -161,22 +95,11 @@ public partial class EndParagraphRunProperties: ModelElement<DXD.EndParagraphRun
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.GroupFill>();
-      if (element != null)
-        return GroupFillConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.GroupFill,DXD.GroupFill>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.GroupFill>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = GroupFillConverter.CreateOpenXmlElement<DXD.GroupFill>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.GroupFill,DXD.GroupFill>(value);
     }
   }
   
@@ -185,22 +108,11 @@ public partial class EndParagraphRunProperties: ModelElement<DXD.EndParagraphRun
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.EffectList>();
-      if (element != null)
-        return EffectListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.EffectList,DXD.EffectList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.EffectList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EffectListConverter.CreateOpenXmlElement<DXD.EffectList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.EffectList,DXD.EffectList>(value);
     }
   }
   
@@ -209,22 +121,11 @@ public partial class EndParagraphRunProperties: ModelElement<DXD.EndParagraphRun
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.EffectDag>();
-      if (element != null)
-        return EffectDagConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.EffectDag,DXD.EffectDag>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.EffectDag>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EffectDagConverter.CreateOpenXmlElement<DXD.EffectDag>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.EffectDag,DXD.EffectDag>(value);
     }
   }
   
@@ -233,22 +134,11 @@ public partial class EndParagraphRunProperties: ModelElement<DXD.EndParagraphRun
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.Highlight>();
-      if (element != null)
-        return HighlightConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.Highlight,DXD.Highlight>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.Highlight>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = HighlightConverter.CreateOpenXmlElement<DXD.Highlight>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.Highlight,DXD.Highlight>(value);
     }
   }
   
@@ -257,22 +147,11 @@ public partial class EndParagraphRunProperties: ModelElement<DXD.EndParagraphRun
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.UnderlineFollowsText>();
-      if (element != null)
-        return UnderlineFollowsTextConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.UnderlineFollowsText,DXD.UnderlineFollowsText>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.UnderlineFollowsText>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = UnderlineFollowsTextConverter.CreateOpenXmlElement<DXD.UnderlineFollowsText>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.UnderlineFollowsText,DXD.UnderlineFollowsText>(value);
     }
   }
   
@@ -281,22 +160,11 @@ public partial class EndParagraphRunProperties: ModelElement<DXD.EndParagraphRun
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.Underline>();
-      if (element != null)
-        return UnderlineConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.Underline,DXD.Underline>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.Underline>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = UnderlineConverter.CreateOpenXmlElement<DXD.Underline>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.Underline,DXD.Underline>(value);
     }
   }
   
@@ -305,22 +173,11 @@ public partial class EndParagraphRunProperties: ModelElement<DXD.EndParagraphRun
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.UnderlineFillText>();
-      if (element != null)
-        return UnderlineFillTextConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.UnderlineFillText,DXD.UnderlineFillText>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.UnderlineFillText>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = UnderlineFillTextConverter.CreateOpenXmlElement<DXD.UnderlineFillText>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.UnderlineFillText,DXD.UnderlineFillText>(value);
     }
   }
   
@@ -329,22 +186,11 @@ public partial class EndParagraphRunProperties: ModelElement<DXD.EndParagraphRun
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.UnderlineFill>();
-      if (element != null)
-        return UnderlineFillConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.UnderlineFill,DXD.UnderlineFill>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.UnderlineFill>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = UnderlineFillConverter.CreateOpenXmlElement<DXD.UnderlineFill>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.UnderlineFill,DXD.UnderlineFill>(value);
     }
   }
   
@@ -353,22 +199,11 @@ public partial class EndParagraphRunProperties: ModelElement<DXD.EndParagraphRun
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.LatinFont>();
-      if (element != null)
-        return LatinFontConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.LatinFont,DXD.LatinFont>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.LatinFont>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LatinFontConverter.CreateOpenXmlElement<DXD.LatinFont>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.LatinFont,DXD.LatinFont>(value);
     }
   }
   
@@ -377,22 +212,11 @@ public partial class EndParagraphRunProperties: ModelElement<DXD.EndParagraphRun
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.EastAsianFont>();
-      if (element != null)
-        return EastAsianFontConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.EastAsianFont,DXD.EastAsianFont>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.EastAsianFont>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EastAsianFontConverter.CreateOpenXmlElement<DXD.EastAsianFont>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.EastAsianFont,DXD.EastAsianFont>(value);
     }
   }
   
@@ -401,22 +225,11 @@ public partial class EndParagraphRunProperties: ModelElement<DXD.EndParagraphRun
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.ComplexScriptFont>();
-      if (element != null)
-        return ComplexScriptFontConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.ComplexScriptFont,DXD.ComplexScriptFont>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.ComplexScriptFont>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ComplexScriptFontConverter.CreateOpenXmlElement<DXD.ComplexScriptFont>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.ComplexScriptFont,DXD.ComplexScriptFont>(value);
     }
   }
   
@@ -425,22 +238,11 @@ public partial class EndParagraphRunProperties: ModelElement<DXD.EndParagraphRun
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.SymbolFont>();
-      if (element != null)
-        return SymbolFontConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.SymbolFont,DXD.SymbolFont>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.SymbolFont>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SymbolFontConverter.CreateOpenXmlElement<DXD.SymbolFont>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.SymbolFont,DXD.SymbolFont>(value);
     }
   }
   
@@ -449,22 +251,11 @@ public partial class EndParagraphRunProperties: ModelElement<DXD.EndParagraphRun
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.HyperlinkOnClick>();
-      if (element != null)
-        return HyperlinkOnClickConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.HyperlinkOnClick,DXD.HyperlinkOnClick>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.HyperlinkOnClick>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = HyperlinkOnClickConverter.CreateOpenXmlElement<DXD.HyperlinkOnClick>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.HyperlinkOnClick,DXD.HyperlinkOnClick>(value);
     }
   }
   
@@ -473,22 +264,11 @@ public partial class EndParagraphRunProperties: ModelElement<DXD.EndParagraphRun
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.HyperlinkOnMouseOver>();
-      if (element != null)
-        return HyperlinkOnMouseOverConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.HyperlinkOnMouseOver,DXD.HyperlinkOnMouseOver>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.HyperlinkOnMouseOver>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = HyperlinkOnMouseOverConverter.CreateOpenXmlElement<DXD.HyperlinkOnMouseOver>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.HyperlinkOnMouseOver,DXD.HyperlinkOnMouseOver>(value);
     }
   }
   
@@ -520,22 +300,11 @@ public partial class EndParagraphRunProperties: ModelElement<DXD.EndParagraphRun
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.ExtensionList>();
-      if (element != null)
-        return ExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.ExtensionList,DXD.ExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.ExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DXD.ExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.ExtensionList,DXD.ExtensionList>(value);
     }
   }
   

@@ -21,22 +21,11 @@ public partial class ChartText: ModelElement<DXDC.ChartText>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.StringReference>();
-      if (element != null)
-        return StringReferenceConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.StringReference,DXDC.StringReference>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.StringReference>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = StringReferenceConverter.CreateOpenXmlElement<DXDC.StringReference>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.StringReference,DXDC.StringReference>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class ChartText: ModelElement<DXDC.ChartText>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.RichText>();
-      if (element != null)
-        return RichTextConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.RichText,DXDC.RichText>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.RichText>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RichTextConverter.CreateOpenXmlElement<DXDC.RichText>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.RichText,DXDC.RichText>(value);
     }
   }
   
@@ -77,22 +55,11 @@ public partial class ChartText: ModelElement<DXDC.ChartText>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.StringLiteral>();
-      if (element != null)
-        return StringLiteralConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.StringLiteral,DXDC.StringLiteral>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.StringLiteral>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = StringLiteralConverter.CreateOpenXmlElement<DXDC.StringLiteral>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.StringLiteral,DXDC.StringLiteral>(value);
     }
   }
   

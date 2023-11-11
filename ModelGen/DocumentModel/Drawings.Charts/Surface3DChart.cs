@@ -21,22 +21,11 @@ public partial class Surface3DChart: ModelElement<DXDC.Surface3DChart>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.Wireframe>();
-      if (element != null)
-        return WireframeConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.Wireframe,DXDC.Wireframe>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.Wireframe>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = WireframeConverter.CreateOpenXmlElement<DXDC.Wireframe>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.Wireframe,DXDC.Wireframe>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class Surface3DChart: ModelElement<DXDC.Surface3DChart>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.VaryColors>();
-      if (element != null)
-        return VaryColorsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.VaryColors,DXDC.VaryColors>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.VaryColors>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = VaryColorsConverter.CreateOpenXmlElement<DXDC.VaryColors>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.VaryColors,DXDC.VaryColors>(value);
     }
   }
   
@@ -73,22 +51,11 @@ public partial class Surface3DChart: ModelElement<DXDC.Surface3DChart>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.BandFormats>();
-      if (element != null)
-        return BandFormatsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.BandFormats,DXDC.BandFormats>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.BandFormats>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BandFormatsConverter.CreateOpenXmlElement<DXDC.BandFormats>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.BandFormats,DXDC.BandFormats>(value);
     }
   }
   
@@ -97,22 +64,11 @@ public partial class Surface3DChart: ModelElement<DXDC.Surface3DChart>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.Surface3DChartExtensionList>();
-      if (element != null)
-        return Surface3DChartExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.Surface3DChartExtensionList,DXDC.Surface3DChartExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.Surface3DChartExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = Surface3DChartExtensionListConverter.CreateOpenXmlElement<DXDC.Surface3DChartExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.Surface3DChartExtensionList,DXDC.Surface3DChartExtensionList>(value);
     }
   }
   

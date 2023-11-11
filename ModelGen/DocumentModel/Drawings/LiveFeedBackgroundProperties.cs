@@ -17,22 +17,11 @@ public partial class LiveFeedBackgroundProperties: ModelElement<DXO21DL.LiveFeed
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO21DL.BackgroundNormalProperties>();
-      if (element != null)
-        return BackgroundNormalPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.BackgroundNormalProperties,DXO21DL.BackgroundNormalProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO21DL.BackgroundNormalProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BackgroundNormalPropertiesConverter.CreateOpenXmlElement<DXO21DL.BackgroundNormalProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.BackgroundNormalProperties,DXO21DL.BackgroundNormalProperties>(value);
     }
   }
   
@@ -41,22 +30,11 @@ public partial class LiveFeedBackgroundProperties: ModelElement<DXO21DL.LiveFeed
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO21DL.BackgroundRemovedProperties>();
-      if (element != null)
-        return BackgroundRemovedPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.BackgroundRemovedProperties,DXO21DL.BackgroundRemovedProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO21DL.BackgroundRemovedProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BackgroundRemovedPropertiesConverter.CreateOpenXmlElement<DXO21DL.BackgroundRemovedProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.BackgroundRemovedProperties,DXO21DL.BackgroundRemovedProperties>(value);
     }
   }
   
@@ -65,22 +43,11 @@ public partial class LiveFeedBackgroundProperties: ModelElement<DXO21DL.LiveFeed
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO21DL.BackgroundBlurProperties>();
-      if (element != null)
-        return BackgroundBlurPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.BackgroundBlurProperties,DXO21DL.BackgroundBlurProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO21DL.BackgroundBlurProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BackgroundBlurPropertiesConverter.CreateOpenXmlElement<DXO21DL.BackgroundBlurProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.BackgroundBlurProperties,DXO21DL.BackgroundBlurProperties>(value);
     }
   }
   
@@ -89,22 +56,11 @@ public partial class LiveFeedBackgroundProperties: ModelElement<DXO21DL.LiveFeed
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO21DL.BackgroundCustomProperties>();
-      if (element != null)
-        return BackgroundCustomPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.BackgroundCustomProperties,DXO21DL.BackgroundCustomProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO21DL.BackgroundCustomProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BackgroundCustomPropertiesConverter.CreateOpenXmlElement<DXO21DL.BackgroundCustomProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.BackgroundCustomProperties,DXO21DL.BackgroundCustomProperties>(value);
     }
   }
   
@@ -113,22 +69,11 @@ public partial class LiveFeedBackgroundProperties: ModelElement<DXO21DL.LiveFeed
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO21DL.OfficeArtExtensionList>();
-      if (element != null)
-        return OfficeArtExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.OfficeArtExtensionList,DXO21DL.OfficeArtExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO21DL.OfficeArtExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = OfficeArtExtensionListConverter.CreateOpenXmlElement<DXO21DL.OfficeArtExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.OfficeArtExtensionList,DXO21DL.OfficeArtExtensionList>(value);
     }
   }
   

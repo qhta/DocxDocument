@@ -21,22 +21,11 @@ public partial class PreSubSuperProperties: ModelElement<DXM.PreSubSuperProperti
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.ControlProperties>();
-      if (element != null)
-        return ControlPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.ControlProperties,DXM.ControlProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.ControlProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ControlPropertiesConverter.CreateOpenXmlElement<DXM.ControlProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.ControlProperties,DXM.ControlProperties>(value);
     }
   }
   

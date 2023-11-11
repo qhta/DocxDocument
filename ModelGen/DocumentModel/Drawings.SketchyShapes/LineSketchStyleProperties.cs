@@ -34,22 +34,11 @@ public partial class LineSketchStyleProperties: ModelElement<DXO21DSS.LineSketch
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.CustomGeometry>();
-      if (element != null)
-        return CustomGeometryConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.CustomGeometry,DXD.CustomGeometry>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.CustomGeometry>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = CustomGeometryConverter.CreateOpenXmlElement<DXD.CustomGeometry>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.CustomGeometry,DXD.CustomGeometry>(value);
     }
   }
   
@@ -58,22 +47,11 @@ public partial class LineSketchStyleProperties: ModelElement<DXO21DSS.LineSketch
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.PresetGeometry>();
-      if (element != null)
-        return PresetGeometryConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.PresetGeometry,DXD.PresetGeometry>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.PresetGeometry>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PresetGeometryConverter.CreateOpenXmlElement<DXD.PresetGeometry>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.PresetGeometry,DXD.PresetGeometry>(value);
     }
   }
   
@@ -82,22 +60,11 @@ public partial class LineSketchStyleProperties: ModelElement<DXO21DSS.LineSketch
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO21DSS.LineSketchTypeProperties>();
-      if (element != null)
-        return LineSketchTypePropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDSS.LineSketchTypeProperties,DXO21DSS.LineSketchTypeProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO21DSS.LineSketchTypeProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LineSketchTypePropertiesConverter.CreateOpenXmlElement<DXO21DSS.LineSketchTypeProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDSS.LineSketchTypeProperties,DXO21DSS.LineSketchTypeProperties>(value);
     }
   }
   
@@ -106,22 +73,11 @@ public partial class LineSketchStyleProperties: ModelElement<DXO21DSS.LineSketch
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO21DSS.LineSketchSeed>();
-      if (element != null)
-        return LineSketchSeedConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDSS.LineSketchSeed,DXO21DSS.LineSketchSeed>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO21DSS.LineSketchSeed>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LineSketchSeedConverter.CreateOpenXmlElement<DXO21DSS.LineSketchSeed>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDSS.LineSketchSeed,DXO21DSS.LineSketchSeed>(value);
     }
   }
   
@@ -130,22 +86,11 @@ public partial class LineSketchStyleProperties: ModelElement<DXO21DSS.LineSketch
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO21DSS.OfficeArtExtensionList>();
-      if (element != null)
-        return OfficeArtExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDSS.OfficeArtExtensionList,DXO21DSS.OfficeArtExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO21DSS.OfficeArtExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = OfficeArtExtensionListConverter.CreateOpenXmlElement<DXO21DSS.OfficeArtExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDSS.OfficeArtExtensionList,DXO21DSS.OfficeArtExtensionList>(value);
     }
   }
   

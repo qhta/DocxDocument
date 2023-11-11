@@ -21,22 +21,11 @@ public partial class NonVisualGraphicFrameDrawingProperties: ModelElement<DXDW.N
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.GraphicFrameLocks>();
-      if (element != null)
-        return GraphicFrameLocksConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.GraphicFrameLocks,DXD.GraphicFrameLocks>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.GraphicFrameLocks>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = GraphicFrameLocksConverter.CreateOpenXmlElement<DXD.GraphicFrameLocks>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.GraphicFrameLocks,DXD.GraphicFrameLocks>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class NonVisualGraphicFrameDrawingProperties: ModelElement<DXDW.N
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.ExtensionList>();
-      if (element != null)
-        return ExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.ExtensionList,DXD.ExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.ExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DXD.ExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.ExtensionList,DXD.ExtensionList>(value);
     }
   }
   

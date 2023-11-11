@@ -38,22 +38,11 @@ public partial class TableGridChange: ModelElement<DXW.TableGridChange>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.PreviousTableGrid>();
-      if (element != null)
-        return PreviousTableGridConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.PreviousTableGrid,DXW.PreviousTableGrid>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.PreviousTableGrid>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PreviousTableGridConverter.CreateOpenXmlElement<DXW.PreviousTableGrid>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.PreviousTableGrid,DXW.PreviousTableGrid>(value);
     }
   }
   

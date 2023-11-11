@@ -21,22 +21,11 @@ public partial class RecipientData: ModelElement<DXW.RecipientData>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.Active>();
-      if (element != null)
-        return ActiveConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.Active,DXW.Active>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Active>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ActiveConverter.CreateOpenXmlElement<DXW.Active>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.Active,DXW.Active>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class RecipientData: ModelElement<DXW.RecipientData>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.ColumnIndex>();
-      if (element != null)
-        return ColumnIndexConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.ColumnIndex,DXW.ColumnIndex>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.ColumnIndex>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ColumnIndexConverter.CreateOpenXmlElement<DXW.ColumnIndex>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.ColumnIndex,DXW.ColumnIndex>(value);
     }
   }
   
@@ -77,11 +55,11 @@ public partial class RecipientData: ModelElement<DXW.RecipientData>
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DXW.UniqueTag>()?.Val);
+      return Base64BinaryConverter.GetValue(_Element?.UniqueTag);
     }
     set
     {
-      SimpleValueConverter.SetValue<DXW.UniqueTag,DocumentModel.Base64Binary>(openXmlElement, value);
+      _ExistingElement.UniqueTag = Base64BinaryConverter.CreateOpenXmlElement<DXW.UniqueTag>(value);
     }
   }
   

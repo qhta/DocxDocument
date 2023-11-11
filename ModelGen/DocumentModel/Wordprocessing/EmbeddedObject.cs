@@ -56,7 +56,7 @@ public partial class EmbeddedObject: ModelElement<DXW.EmbeddedObject>
     get
     {
       if (_Element?.AnchorId?.Value != null)
-        return HexIntConverter.GetValue(_ExistingElement.AnchorId.Value);
+        return HexIntConverter.GetValue(_Element?.AnchorId.Value);
       return null;
     }
     set
@@ -73,22 +73,11 @@ public partial class EmbeddedObject: ModelElement<DXW.EmbeddedObject>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.Drawing>();
-      if (element != null)
-        return DrawingConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.Drawing,DXW.Drawing>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Drawing>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DrawingConverter.CreateOpenXmlElement<DXW.Drawing>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.Drawing,DXW.Drawing>(value);
     }
   }
   
@@ -97,22 +86,11 @@ public partial class EmbeddedObject: ModelElement<DXW.EmbeddedObject>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.Control>();
-      if (element != null)
-        return ControlConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.Control,DXW.Control>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Control>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ControlConverter.CreateOpenXmlElement<DXW.Control>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.Control,DXW.Control>(value);
     }
   }
   
@@ -121,22 +99,11 @@ public partial class EmbeddedObject: ModelElement<DXW.EmbeddedObject>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.ObjectEmbed>();
-      if (element != null)
-        return ObjectEmbedConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.ObjectEmbed,DXW.ObjectEmbed>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.ObjectEmbed>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ObjectEmbedConverter.CreateOpenXmlElement<DXW.ObjectEmbed>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.ObjectEmbed,DXW.ObjectEmbed>(value);
     }
   }
   
@@ -145,22 +112,11 @@ public partial class EmbeddedObject: ModelElement<DXW.EmbeddedObject>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.ObjectLink>();
-      if (element != null)
-        return ObjectLinkConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.ObjectLink,DXW.ObjectLink>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.ObjectLink>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ObjectLinkConverter.CreateOpenXmlElement<DXW.ObjectLink>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.ObjectLink,DXW.ObjectLink>(value);
     }
   }
   

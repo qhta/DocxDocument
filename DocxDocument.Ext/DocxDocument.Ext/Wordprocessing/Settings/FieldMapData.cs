@@ -22,7 +22,7 @@ public partial class FieldMapData : ModelElement<DXW.FieldMapData>
   public string? LanguageId
   {
     get => _Element?.GetStringVal<DXW.LanguageId>();
-    set => _Element.SetStringVal<DXW.LanguageId>(value);
+    set => _ExistingElement.SetStringVal<DXW.LanguageId>(value);
   }
 
   /// <summary>
@@ -35,7 +35,7 @@ public partial class FieldMapData : ModelElement<DXW.FieldMapData>
   public DMW.MailMergeOdsoFieldKind? MailMergeFieldType
   {
     get => _Element?.GetEnumVal<DMW.MailMergeOdsoFieldKind, DXW.MailMergeFieldType>();
-    set => _Element.SetEnumVal<DMW.MailMergeOdsoFieldKind, DXW.MailMergeFieldType>(value);
+    set => _ExistingElement.SetEnumVal<DMW.MailMergeOdsoFieldKind, DXW.MailMergeFieldType>(value);
   }
 
   /// <summary>
@@ -56,7 +56,7 @@ public partial class FieldMapData : ModelElement<DXW.FieldMapData>
   public bool? DynamicAddress
   {
     get => _Element?.GetBoolVal<DXW.DynamicAddress>();
-    set => _Element.SetBoolVal<DXW.DynamicAddress>(value);
+    set => _ExistingElement.SetBoolVal<DXW.DynamicAddress>(value);
   }
 
   /// <summary>
@@ -68,7 +68,7 @@ public partial class FieldMapData : ModelElement<DXW.FieldMapData>
   public string? Name
   {
     get => _Element?.GetStringVal<DXW.Name>();
-    set => _Element.SetStringVal<DXW.Name>(value);
+    set => _ExistingElement.SetStringVal<DXW.Name>(value);
   }
 
   /// <summary>
@@ -81,7 +81,7 @@ public partial class FieldMapData : ModelElement<DXW.FieldMapData>
   public string? MappedName
   {
     get => _Element?.GetStringVal<DXW.MappedName>();
-    set => _Element.SetStringVal<DXW.MappedName>(value);
+    set => _ExistingElement.SetStringVal<DXW.MappedName>(value);
   }
 
   /// <summary>
@@ -97,7 +97,7 @@ public partial class FieldMapData : ModelElement<DXW.FieldMapData>
   public int? ColumnIndex
   {
     get => _Element?.GetIntVal<DXW.ColumnIndex>();
-    set => _Element.SetIntVal<DXW.ColumnIndex>(value);
+    set => _ExistingElement.SetIntVal<DXW.ColumnIndex>(value);
   }
 
 }

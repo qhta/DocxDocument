@@ -43,7 +43,7 @@ public partial class Blur: ModelElement<DXD.Blur>
     set
     {
       if (value != null)
-        _ExistingElement.Grow = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.Grow = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.Grow = null;
     }

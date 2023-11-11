@@ -21,22 +21,11 @@ public partial class LiveFeedProperties: ModelElement<DXO21DL.LiveFeedProperties
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO21DL.LiveFeedBackgroundProperties>();
-      if (element != null)
-        return LiveFeedBackgroundPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.LiveFeedBackgroundProperties,DXO21DL.LiveFeedBackgroundProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO21DL.LiveFeedBackgroundProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LiveFeedBackgroundPropertiesConverter.CreateOpenXmlElement<DXO21DL.LiveFeedBackgroundProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.LiveFeedBackgroundProperties,DXO21DL.LiveFeedBackgroundProperties>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class LiveFeedProperties: ModelElement<DXO21DL.LiveFeedProperties
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO21DL.OfficeArtExtensionList>();
-      if (element != null)
-        return OfficeArtExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.OfficeArtExtensionList,DXO21DL.OfficeArtExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO21DL.OfficeArtExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = OfficeArtExtensionListConverter.CreateOpenXmlElement<DXO21DL.OfficeArtExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.OfficeArtExtensionList,DXO21DL.OfficeArtExtensionList>(value);
     }
   }
   

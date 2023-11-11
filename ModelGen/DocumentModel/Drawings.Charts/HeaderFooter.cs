@@ -26,7 +26,7 @@ public partial class HeaderFooter: ModelElement<DXDC.HeaderFooter>
     set
     {
       if (value != null)
-        _ExistingElement.AlignWithMargins = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.AlignWithMargins = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.AlignWithMargins = null;
     }
@@ -46,7 +46,7 @@ public partial class HeaderFooter: ModelElement<DXDC.HeaderFooter>
     set
     {
       if (value != null)
-        _ExistingElement.DifferentOddEven = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.DifferentOddEven = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.DifferentOddEven = null;
     }
@@ -66,7 +66,7 @@ public partial class HeaderFooter: ModelElement<DXDC.HeaderFooter>
     set
     {
       if (value != null)
-        _ExistingElement.DifferentFirst = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.DifferentFirst = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.DifferentFirst = null;
     }
@@ -81,22 +81,11 @@ public partial class HeaderFooter: ModelElement<DXDC.HeaderFooter>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.OddHeader>();
-      if (element != null)
-        return OddHeaderConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.OddHeader,DXDC.OddHeader>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.OddHeader>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = OddHeaderConverter.CreateOpenXmlElement<DXDC.OddHeader>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.OddHeader,DXDC.OddHeader>(value);
     }
   }
   
@@ -109,22 +98,11 @@ public partial class HeaderFooter: ModelElement<DXDC.HeaderFooter>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.OddFooter>();
-      if (element != null)
-        return OddFooterConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.OddFooter,DXDC.OddFooter>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.OddFooter>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = OddFooterConverter.CreateOpenXmlElement<DXDC.OddFooter>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.OddFooter,DXDC.OddFooter>(value);
     }
   }
   
@@ -137,22 +115,11 @@ public partial class HeaderFooter: ModelElement<DXDC.HeaderFooter>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.EvenHeader>();
-      if (element != null)
-        return EvenHeaderConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.EvenHeader,DXDC.EvenHeader>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.EvenHeader>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EvenHeaderConverter.CreateOpenXmlElement<DXDC.EvenHeader>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.EvenHeader,DXDC.EvenHeader>(value);
     }
   }
   
@@ -165,22 +132,11 @@ public partial class HeaderFooter: ModelElement<DXDC.HeaderFooter>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.EvenFooter>();
-      if (element != null)
-        return EvenFooterConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.EvenFooter,DXDC.EvenFooter>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.EvenFooter>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EvenFooterConverter.CreateOpenXmlElement<DXDC.EvenFooter>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.EvenFooter,DXDC.EvenFooter>(value);
     }
   }
   
@@ -193,22 +149,11 @@ public partial class HeaderFooter: ModelElement<DXDC.HeaderFooter>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.FirstHeader>();
-      if (element != null)
-        return FirstHeaderConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.FirstHeader,DXDC.FirstHeader>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.FirstHeader>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FirstHeaderConverter.CreateOpenXmlElement<DXDC.FirstHeader>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.FirstHeader,DXDC.FirstHeader>(value);
     }
   }
   
@@ -221,22 +166,11 @@ public partial class HeaderFooter: ModelElement<DXDC.HeaderFooter>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.FirstFooter>();
-      if (element != null)
-        return FirstFooterConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.FirstFooter,DXDC.FirstFooter>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.FirstFooter>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FirstFooterConverter.CreateOpenXmlElement<DXDC.FirstFooter>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.FirstFooter,DXDC.FirstFooter>(value);
     }
   }
   

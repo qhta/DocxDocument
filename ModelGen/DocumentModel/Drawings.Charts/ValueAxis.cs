@@ -21,22 +21,11 @@ public partial class ValueAxis: ModelElement<DXDC.ValueAxis>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.AxisId>();
-      if (element != null)
-        return AxisIdConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.AxisId,DXDC.AxisId>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.AxisId>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = AxisIdConverter.CreateOpenXmlElement<DXDC.AxisId>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.AxisId,DXDC.AxisId>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class ValueAxis: ModelElement<DXDC.ValueAxis>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.Scaling>();
-      if (element != null)
-        return ScalingConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.Scaling,DXDC.Scaling>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.Scaling>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ScalingConverter.CreateOpenXmlElement<DXDC.Scaling>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.Scaling,DXDC.Scaling>(value);
     }
   }
   
@@ -77,22 +55,11 @@ public partial class ValueAxis: ModelElement<DXDC.ValueAxis>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.Delete>();
-      if (element != null)
-        return DeleteConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.Delete,DXDC.Delete>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.Delete>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DeleteConverter.CreateOpenXmlElement<DXDC.Delete>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.Delete,DXDC.Delete>(value);
     }
   }
   
@@ -132,22 +99,11 @@ public partial class ValueAxis: ModelElement<DXDC.ValueAxis>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.MajorGridlines>();
-      if (element != null)
-        return MajorGridlinesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.MajorGridlines,DXDC.MajorGridlines>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.MajorGridlines>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = MajorGridlinesConverter.CreateOpenXmlElement<DXDC.MajorGridlines>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.MajorGridlines,DXDC.MajorGridlines>(value);
     }
   }
   
@@ -160,22 +116,11 @@ public partial class ValueAxis: ModelElement<DXDC.ValueAxis>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.MinorGridlines>();
-      if (element != null)
-        return MinorGridlinesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.MinorGridlines,DXDC.MinorGridlines>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.MinorGridlines>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = MinorGridlinesConverter.CreateOpenXmlElement<DXDC.MinorGridlines>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.MinorGridlines,DXDC.MinorGridlines>(value);
     }
   }
   
@@ -188,22 +133,11 @@ public partial class ValueAxis: ModelElement<DXDC.ValueAxis>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.Title>();
-      if (element != null)
-        return TitleConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.Title,DXDC.Title>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.Title>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TitleConverter.CreateOpenXmlElement<DXDC.Title>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.Title,DXDC.Title>(value);
     }
   }
   
@@ -216,22 +150,11 @@ public partial class ValueAxis: ModelElement<DXDC.ValueAxis>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.NumberingFormat>();
-      if (element != null)
-        return NumberingFormatConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.NumberingFormat,DXDC.NumberingFormat>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.NumberingFormat>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NumberingFormatConverter.CreateOpenXmlElement<DXDC.NumberingFormat>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.NumberingFormat,DXDC.NumberingFormat>(value);
     }
   }
   
@@ -244,22 +167,11 @@ public partial class ValueAxis: ModelElement<DXDC.ValueAxis>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.MajorTickMark>();
-      if (element != null)
-        return MajorTickMarkConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.MajorTickMark,DXDC.MajorTickMark>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.MajorTickMark>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = MajorTickMarkConverter.CreateOpenXmlElement<DXDC.MajorTickMark>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.MajorTickMark,DXDC.MajorTickMark>(value);
     }
   }
   
@@ -272,22 +184,11 @@ public partial class ValueAxis: ModelElement<DXDC.ValueAxis>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.MinorTickMark>();
-      if (element != null)
-        return MinorTickMarkConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.MinorTickMark,DXDC.MinorTickMark>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.MinorTickMark>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = MinorTickMarkConverter.CreateOpenXmlElement<DXDC.MinorTickMark>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.MinorTickMark,DXDC.MinorTickMark>(value);
     }
   }
   
@@ -327,22 +228,11 @@ public partial class ValueAxis: ModelElement<DXDC.ValueAxis>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.ChartShapeProperties>();
-      if (element != null)
-        return ChartShapePropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.ChartShapeProperties,DXDC.ChartShapeProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.ChartShapeProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ChartShapePropertiesConverter.CreateOpenXmlElement<DXDC.ChartShapeProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.ChartShapeProperties,DXDC.ChartShapeProperties>(value);
     }
   }
   
@@ -355,22 +245,11 @@ public partial class ValueAxis: ModelElement<DXDC.ValueAxis>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.TextProperties>();
-      if (element != null)
-        return TextPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.TextProperties,DXDC.TextProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.TextProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TextPropertiesConverter.CreateOpenXmlElement<DXDC.TextProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.TextProperties,DXDC.TextProperties>(value);
     }
   }
   
@@ -383,22 +262,11 @@ public partial class ValueAxis: ModelElement<DXDC.ValueAxis>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.CrossingAxis>();
-      if (element != null)
-        return CrossingAxisConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.CrossingAxis,DXDC.CrossingAxis>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.CrossingAxis>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = CrossingAxisConverter.CreateOpenXmlElement<DXDC.CrossingAxis>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.CrossingAxis,DXDC.CrossingAxis>(value);
     }
   }
   
@@ -430,22 +298,11 @@ public partial class ValueAxis: ModelElement<DXDC.ValueAxis>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.CrossesAt>();
-      if (element != null)
-        return CrossesAtConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.CrossesAt,DXDC.CrossesAt>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.CrossesAt>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = CrossesAtConverter.CreateOpenXmlElement<DXDC.CrossesAt>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.CrossesAt,DXDC.CrossesAt>(value);
     }
   }
   
@@ -477,22 +334,11 @@ public partial class ValueAxis: ModelElement<DXDC.ValueAxis>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.MajorUnit>();
-      if (element != null)
-        return MajorUnitConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.MajorUnit,DXDC.MajorUnit>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.MajorUnit>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = MajorUnitConverter.CreateOpenXmlElement<DXDC.MajorUnit>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.MajorUnit,DXDC.MajorUnit>(value);
     }
   }
   
@@ -501,22 +347,11 @@ public partial class ValueAxis: ModelElement<DXDC.ValueAxis>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.MinorUnit>();
-      if (element != null)
-        return MinorUnitConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.MinorUnit,DXDC.MinorUnit>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.MinorUnit>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = MinorUnitConverter.CreateOpenXmlElement<DXDC.MinorUnit>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.MinorUnit,DXDC.MinorUnit>(value);
     }
   }
   
@@ -525,22 +360,11 @@ public partial class ValueAxis: ModelElement<DXDC.ValueAxis>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.DisplayUnits>();
-      if (element != null)
-        return DisplayUnitsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.DisplayUnits,DXDC.DisplayUnits>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.DisplayUnits>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DisplayUnitsConverter.CreateOpenXmlElement<DXDC.DisplayUnits>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.DisplayUnits,DXDC.DisplayUnits>(value);
     }
   }
   
@@ -549,22 +373,11 @@ public partial class ValueAxis: ModelElement<DXDC.ValueAxis>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.ValAxExtensionList>();
-      if (element != null)
-        return ValAxExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.ValAxExtensionList,DXDC.ValAxExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.ValAxExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ValAxExtensionListConverter.CreateOpenXmlElement<DXDC.ValAxExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.ValAxExtensionList,DXDC.ValAxExtensionList>(value);
     }
   }
   

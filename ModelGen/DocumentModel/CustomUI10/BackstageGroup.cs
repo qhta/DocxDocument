@@ -196,7 +196,7 @@ public partial class BackstageGroup: ModelElement<DXO10CUI.BackstageGroup>
     set
     {
       if (value != null)
-        _ExistingElement.Visible = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.Visible = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.Visible = null;
     }
@@ -284,7 +284,7 @@ public partial class BackstageGroup: ModelElement<DXO10CUI.BackstageGroup>
     set
     {
       if (value != null)
-        _ExistingElement.ShowLabel = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.ShowLabel = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.ShowLabel = null;
     }
@@ -312,22 +312,11 @@ public partial class BackstageGroup: ModelElement<DXO10CUI.BackstageGroup>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10CUI.PrimaryItem>();
-      if (element != null)
-        return PrimaryItemConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMCUI10.PrimaryItem,DXO10CUI.PrimaryItem>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10CUI.PrimaryItem>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PrimaryItemConverter.CreateOpenXmlElement<DXO10CUI.PrimaryItem>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMCUI10.PrimaryItem,DXO10CUI.PrimaryItem>(value);
     }
   }
   
@@ -336,22 +325,11 @@ public partial class BackstageGroup: ModelElement<DXO10CUI.BackstageGroup>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10CUI.TopItemsGroupControls>();
-      if (element != null)
-        return TopItemsGroupControlsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMCUI10.TopItemsGroupControls,DXO10CUI.TopItemsGroupControls>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10CUI.TopItemsGroupControls>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TopItemsGroupControlsConverter.CreateOpenXmlElement<DXO10CUI.TopItemsGroupControls>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMCUI10.TopItemsGroupControls,DXO10CUI.TopItemsGroupControls>(value);
     }
   }
   
@@ -360,22 +338,11 @@ public partial class BackstageGroup: ModelElement<DXO10CUI.BackstageGroup>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10CUI.BottomItemsGroupControls>();
-      if (element != null)
-        return BottomItemsGroupControlsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMCUI10.BottomItemsGroupControls,DXO10CUI.BottomItemsGroupControls>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10CUI.BottomItemsGroupControls>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BottomItemsGroupControlsConverter.CreateOpenXmlElement<DXO10CUI.BottomItemsGroupControls>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMCUI10.BottomItemsGroupControls,DXO10CUI.BottomItemsGroupControls>(value);
     }
   }
   

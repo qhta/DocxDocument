@@ -17,15 +17,15 @@ public partial class ProofState : ModelElement<DXW.ProofState>
   [DataMember]
   public DMW.ProofingStateKind? Spelling
   {
-    get => _Element.Spelling?.GetEnumValue<DMW.ProofingStateKind, DXW.ProofingStateValues>();
-    set => _Element.Spelling = EVU.SetEnumValue<DMW.ProofingStateKind, DXW.ProofingStateValues>(value);
+    get => _Element?.Spelling?.GetEnumValue<DMW.ProofingStateKind, DXW.ProofingStateValues>();
+    set => _ExistingElement.Spelling = EVU.SetEnumValue<DMW.ProofingStateKind, DXW.ProofingStateValues>(value);
   }
 
   [DataMember]
   public DMW.ProofingStateKind? Grammar
   {
-    get => _Element.Grammar?.GetEnumValue<DMW.ProofingStateKind, DXW.ProofingStateValues>();
-    set => _Element.Grammar = EVU.SetEnumValue<DMW.ProofingStateKind, DXW.ProofingStateValues>(value);
+    get => _Element?.Grammar?.GetEnumValue<DMW.ProofingStateKind, DXW.ProofingStateValues>();
+    set => _ExistingElement.Grammar = EVU.SetEnumValue<DMW.ProofingStateKind, DXW.ProofingStateValues>(value);
   }
 
 }

@@ -21,22 +21,11 @@ public partial class CustomXmlProperties: ModelElement<DXW.CustomXmlProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.CustomXmlPlaceholder>();
-      if (element != null)
-        return CustomXmlPlaceholderConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.CustomXmlPlaceholder,DXW.CustomXmlPlaceholder>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.CustomXmlPlaceholder>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = CustomXmlPlaceholderConverter.CreateOpenXmlElement<DXW.CustomXmlPlaceholder>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.CustomXmlPlaceholder,DXW.CustomXmlPlaceholder>(value);
     }
   }
   

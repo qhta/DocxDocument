@@ -34,22 +34,11 @@ public partial class Area3DChartExtension: ModelElement<DXDC.Area3DChartExtensio
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13DC.FilteredAreaSeries>();
-      if (element != null)
-        return FilteredAreaSeriesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC13.FilteredAreaSeries,DXO13DC.FilteredAreaSeries>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13DC.FilteredAreaSeries>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FilteredAreaSeriesConverter.CreateOpenXmlElement<DXO13DC.FilteredAreaSeries>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC13.FilteredAreaSeries,DXO13DC.FilteredAreaSeries>(value);
     }
   }
   

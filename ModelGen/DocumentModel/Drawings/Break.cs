@@ -21,22 +21,11 @@ public partial class Break: ModelElement<DXD.Break>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.RunProperties>();
-      if (element != null)
-        return RunPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.RunProperties,DXD.RunProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.RunProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RunPropertiesConverter.CreateOpenXmlElement<DXD.RunProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.RunProperties,DXD.RunProperties>(value);
     }
   }
   

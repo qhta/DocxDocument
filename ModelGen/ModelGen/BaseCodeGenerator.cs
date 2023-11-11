@@ -425,12 +425,12 @@ public abstract class BaseCodeGenerator
   {
     string solutionPath = Path.GetDirectoryName(OutputPath)!;
     var solutionName = SolutionName + ".sln";
-    var outputTxtFile = ProjectName + ".txt";
+    var outputTxtFile = SolutionName + ".err.txt";
 
     Directory.SetCurrentDirectory(solutionPath);
     File.Delete(outputTxtFile);
     var compileExe = "c:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\devenv.exe";
-    var args = $"/build debug {solutionName} /out {outputTxtFile}";
+    var args = $"/rebuild debug {solutionName} /out {outputTxtFile}";
     var process = Process.Start(compileExe, args);
     process.WaitForExit();
     CompilationErrors errors = new();

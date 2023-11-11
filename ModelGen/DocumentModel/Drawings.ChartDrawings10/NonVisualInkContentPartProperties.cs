@@ -26,7 +26,7 @@ public partial class NonVisualInkContentPartProperties: ModelElement<DXO10DCD.No
     set
     {
       if (value != null)
-        _ExistingElement.IsComment = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.IsComment = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.IsComment = null;
     }
@@ -41,22 +41,11 @@ public partial class NonVisualInkContentPartProperties: ModelElement<DXO10DCD.No
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10D.ContentPartLocks>();
-      if (element != null)
-        return ContentPartLocksConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD10.ContentPartLocks,DXO10D.ContentPartLocks>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10D.ContentPartLocks>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ContentPartLocksConverter.CreateOpenXmlElement<DXO10D.ContentPartLocks>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD10.ContentPartLocks,DXO10D.ContentPartLocks>(value);
     }
   }
   
@@ -69,22 +58,11 @@ public partial class NonVisualInkContentPartProperties: ModelElement<DXO10DCD.No
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10D.OfficeArtExtensionList>();
-      if (element != null)
-        return OfficeArtExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD10.OfficeArtExtensionList,DXO10D.OfficeArtExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10D.OfficeArtExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = OfficeArtExtensionListConverter.CreateOpenXmlElement<DXO10D.OfficeArtExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD10.OfficeArtExtensionList,DXO10D.OfficeArtExtensionList>(value);
     }
   }
   

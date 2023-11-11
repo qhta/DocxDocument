@@ -22,7 +22,7 @@ public partial class CommentExtensible: ModelElement<DXO21WCE.CommentExtensible>
     get
     {
       if (_Element?.DurableId?.Value != null)
-        return HexIntConverter.GetValue(_ExistingElement.DurableId.Value);
+        return HexIntConverter.GetValue(_Element?.DurableId.Value);
       return null;
     }
     set
@@ -77,22 +77,11 @@ public partial class CommentExtensible: ModelElement<DXO21WCE.CommentExtensible>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO21WCE.ExtensionList>();
-      if (element != null)
-        return ExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.ExtensionList,DXO21WCE.ExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO21WCE.ExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DXO21WCE.ExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.ExtensionList,DXO21WCE.ExtensionList>(value);
     }
   }
   

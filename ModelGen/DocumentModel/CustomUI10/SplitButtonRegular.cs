@@ -26,7 +26,7 @@ public partial class SplitButtonRegular: ModelElement<DXO10CUI.SplitButtonRegula
     set
     {
       if (value != null)
-        _ExistingElement.Enabled = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.Enabled = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.Enabled = null;
     }
@@ -199,7 +199,7 @@ public partial class SplitButtonRegular: ModelElement<DXO10CUI.SplitButtonRegula
     set
     {
       if (value != null)
-        _ExistingElement.Visible = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.Visible = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.Visible = null;
     }
@@ -270,7 +270,7 @@ public partial class SplitButtonRegular: ModelElement<DXO10CUI.SplitButtonRegula
     set
     {
       if (value != null)
-        _ExistingElement.ShowLabel = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.ShowLabel = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.ShowLabel = null;
     }
@@ -298,22 +298,11 @@ public partial class SplitButtonRegular: ModelElement<DXO10CUI.SplitButtonRegula
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10CUI.VisibleButton>();
-      if (element != null)
-        return VisibleButtonConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMCUI10.VisibleButton,DXO10CUI.VisibleButton>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10CUI.VisibleButton>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = VisibleButtonConverter.CreateOpenXmlElement<DXO10CUI.VisibleButton>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMCUI10.VisibleButton,DXO10CUI.VisibleButton>(value);
     }
   }
   
@@ -322,22 +311,11 @@ public partial class SplitButtonRegular: ModelElement<DXO10CUI.SplitButtonRegula
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10CUI.VisibleToggleButton>();
-      if (element != null)
-        return VisibleToggleButtonConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMCUI10.VisibleToggleButton,DXO10CUI.VisibleToggleButton>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10CUI.VisibleToggleButton>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = VisibleToggleButtonConverter.CreateOpenXmlElement<DXO10CUI.VisibleToggleButton>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMCUI10.VisibleToggleButton,DXO10CUI.VisibleToggleButton>(value);
     }
   }
   
@@ -346,22 +324,11 @@ public partial class SplitButtonRegular: ModelElement<DXO10CUI.SplitButtonRegula
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10CUI.MenuRegular>();
-      if (element != null)
-        return MenuRegularConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMCUI10.MenuRegular,DXO10CUI.MenuRegular>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10CUI.MenuRegular>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = MenuRegularConverter.CreateOpenXmlElement<DXO10CUI.MenuRegular>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMCUI10.MenuRegular,DXO10CUI.MenuRegular>(value);
     }
   }
   

@@ -21,22 +21,11 @@ public partial class RunPropertiesDefault: ModelElement<DXW.RunPropertiesDefault
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.RunPropertiesBaseStyle>();
-      if (element != null)
-        return RunPropertiesBaseStyleConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.RunPropertiesBaseStyle,DXW.RunPropertiesBaseStyle>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.RunPropertiesBaseStyle>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RunPropertiesBaseStyleConverter.CreateOpenXmlElement<DXW.RunPropertiesBaseStyle>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.RunPropertiesBaseStyle,DXW.RunPropertiesBaseStyle>(value);
     }
   }
   

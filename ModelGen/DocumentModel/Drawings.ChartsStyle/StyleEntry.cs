@@ -41,22 +41,11 @@ public partial class StyleEntry: ModelElement<DXO13DCS.StyleEntry>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13DCS.LineReference>();
-      if (element != null)
-        return LineReferenceConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCS.LineReference,DXO13DCS.LineReference>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13DCS.LineReference>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LineReferenceConverter.CreateOpenXmlElement<DXO13DCS.LineReference>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCS.LineReference,DXO13DCS.LineReference>(value);
     }
   }
   
@@ -69,22 +58,11 @@ public partial class StyleEntry: ModelElement<DXO13DCS.StyleEntry>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13DCS.LineWidthScale>();
-      if (element != null)
-        return LineWidthScaleConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCS.LineWidthScale,DXO13DCS.LineWidthScale>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13DCS.LineWidthScale>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LineWidthScaleConverter.CreateOpenXmlElement<DXO13DCS.LineWidthScale>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCS.LineWidthScale,DXO13DCS.LineWidthScale>(value);
     }
   }
   
@@ -97,22 +75,11 @@ public partial class StyleEntry: ModelElement<DXO13DCS.StyleEntry>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13DCS.FillReference>();
-      if (element != null)
-        return FillReferenceConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCS.FillReference,DXO13DCS.FillReference>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13DCS.FillReference>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FillReferenceConverter.CreateOpenXmlElement<DXO13DCS.FillReference>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCS.FillReference,DXO13DCS.FillReference>(value);
     }
   }
   
@@ -125,22 +92,11 @@ public partial class StyleEntry: ModelElement<DXO13DCS.StyleEntry>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13DCS.EffectReference>();
-      if (element != null)
-        return EffectReferenceConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCS.EffectReference,DXO13DCS.EffectReference>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13DCS.EffectReference>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EffectReferenceConverter.CreateOpenXmlElement<DXO13DCS.EffectReference>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCS.EffectReference,DXO13DCS.EffectReference>(value);
     }
   }
   
@@ -153,22 +109,11 @@ public partial class StyleEntry: ModelElement<DXO13DCS.StyleEntry>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13DCS.FontReference>();
-      if (element != null)
-        return FontReferenceConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCS.FontReference,DXO13DCS.FontReference>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13DCS.FontReference>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FontReferenceConverter.CreateOpenXmlElement<DXO13DCS.FontReference>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCS.FontReference,DXO13DCS.FontReference>(value);
     }
   }
   
@@ -181,22 +126,11 @@ public partial class StyleEntry: ModelElement<DXO13DCS.StyleEntry>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13DCS.ShapeProperties>();
-      if (element != null)
-        return ShapePropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCS.ShapeProperties,DXO13DCS.ShapeProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13DCS.ShapeProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ShapePropertiesConverter.CreateOpenXmlElement<DXO13DCS.ShapeProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCS.ShapeProperties,DXO13DCS.ShapeProperties>(value);
     }
   }
   
@@ -209,22 +143,11 @@ public partial class StyleEntry: ModelElement<DXO13DCS.StyleEntry>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13DCS.TextCharacterPropertiesType>();
-      if (element != null)
-        return TextCharacterPropertiesTypeConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCS.TextCharacterPropertiesType,DXO13DCS.TextCharacterPropertiesType>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13DCS.TextCharacterPropertiesType>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TextCharacterPropertiesTypeConverter.CreateOpenXmlElement<DXO13DCS.TextCharacterPropertiesType>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCS.TextCharacterPropertiesType,DXO13DCS.TextCharacterPropertiesType>(value);
     }
   }
   
@@ -237,22 +160,11 @@ public partial class StyleEntry: ModelElement<DXO13DCS.StyleEntry>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13DCS.TextBodyProperties>();
-      if (element != null)
-        return TextBodyPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCS.TextBodyProperties,DXO13DCS.TextBodyProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13DCS.TextBodyProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TextBodyPropertiesConverter.CreateOpenXmlElement<DXO13DCS.TextBodyProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCS.TextBodyProperties,DXO13DCS.TextBodyProperties>(value);
     }
   }
   
@@ -265,22 +177,11 @@ public partial class StyleEntry: ModelElement<DXO13DCS.StyleEntry>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13DCS.OfficeArtExtensionList>();
-      if (element != null)
-        return OfficeArtExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCS.OfficeArtExtensionList,DXO13DCS.OfficeArtExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13DCS.OfficeArtExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = OfficeArtExtensionListConverter.CreateOpenXmlElement<DXO13DCS.OfficeArtExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCS.OfficeArtExtensionList,DXO13DCS.OfficeArtExtensionList>(value);
     }
   }
   

@@ -21,16 +21,11 @@ public partial class Ink: ModelElement<DXVO.Ink>
   {
     get
     {
-      if (_Element?.InkData?.Value != null)
-        return Convert.FromBase64String(_ExistingElement.InkData.Value);
-      return null;
+      return Base64BinaryConverter.GetValue(_Element?.InkData);
     }
     set
     {
-      if (value != null)
-        _ExistingElement.InkData = Convert.ToBase64String(value);
-      else
-        _ExistingElement.InkData = null;
+      _ExistingElement.InkData = Base64BinaryConverter.CreateBase64BinaryValue(value);
     }
   }
   
@@ -39,15 +34,18 @@ public partial class Ink: ModelElement<DXVO.Ink>
   ///   Annotation Flag
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? AnnotationFlag
+  public Boolean? AnnotationFlag
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.AnnotationFlag?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.AnnotationFlag = value;
+      else
+        _ExistingElement.AnnotationFlag = null;
     }
   }
   

@@ -21,22 +21,11 @@ public partial class Title: ModelElement<DXDC.Title>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.ChartText>();
-      if (element != null)
-        return ChartTextConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.ChartText,DXDC.ChartText>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.ChartText>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ChartTextConverter.CreateOpenXmlElement<DXDC.ChartText>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.ChartText,DXDC.ChartText>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class Title: ModelElement<DXDC.Title>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.Layout>();
-      if (element != null)
-        return LayoutConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.Layout,DXDC.Layout>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.Layout>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LayoutConverter.CreateOpenXmlElement<DXDC.Layout>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.Layout,DXDC.Layout>(value);
     }
   }
   
@@ -77,22 +55,11 @@ public partial class Title: ModelElement<DXDC.Title>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.Overlay>();
-      if (element != null)
-        return OverlayConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.Overlay,DXDC.Overlay>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.Overlay>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = OverlayConverter.CreateOpenXmlElement<DXDC.Overlay>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.Overlay,DXDC.Overlay>(value);
     }
   }
   
@@ -105,22 +72,11 @@ public partial class Title: ModelElement<DXDC.Title>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.ChartShapeProperties>();
-      if (element != null)
-        return ChartShapePropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.ChartShapeProperties,DXDC.ChartShapeProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.ChartShapeProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ChartShapePropertiesConverter.CreateOpenXmlElement<DXDC.ChartShapeProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.ChartShapeProperties,DXDC.ChartShapeProperties>(value);
     }
   }
   
@@ -133,22 +89,11 @@ public partial class Title: ModelElement<DXDC.Title>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.TextProperties>();
-      if (element != null)
-        return TextPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.TextProperties,DXDC.TextProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.TextProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TextPropertiesConverter.CreateOpenXmlElement<DXDC.TextProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.TextProperties,DXDC.TextProperties>(value);
     }
   }
   
@@ -161,22 +106,11 @@ public partial class Title: ModelElement<DXDC.Title>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.ExtensionList>();
-      if (element != null)
-        return ExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.ExtensionList,DXDC.ExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.ExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DXDC.ExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.ExtensionList,DXDC.ExtensionList>(value);
     }
   }
   

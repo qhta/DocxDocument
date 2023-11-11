@@ -21,22 +21,11 @@ public partial class PathGradientFill: ModelElement<DXD.PathGradientFill>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.FillToRectangle>();
-      if (element != null)
-        return FillToRectangleConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.FillToRectangle,DXD.FillToRectangle>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.FillToRectangle>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FillToRectangleConverter.CreateOpenXmlElement<DXD.FillToRectangle>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.FillToRectangle,DXD.FillToRectangle>(value);
     }
   }
   

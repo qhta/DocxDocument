@@ -8,20 +8,20 @@ public partial class Rules : IDictionary<string, Rule>
 {
   public void Add(string key, Rule value)
   {
-    var _element = _Element.Elements<DXVO.Rule>().FirstOrDefault(item => item.Id == key);
+    var _element = _Element?.Elements<DXVO.Rule>().FirstOrDefault(item => item.Id == key);
     if (_element != null)
       throw new InvalidOperationException($"Rule {key} already exists found");
-    _Element.AppendChild(value._Element);
+    _ExistingElement.AppendChild(value._Element);
   }
 
   public bool ContainsKey(string key)
   {
-    return _Element.Elements<DXVO.Rule>().FirstOrDefault(item => item.Id == key) != null;
+    return _Element?.Elements<DXVO.Rule>().FirstOrDefault(item => item.Id == key) != null;
   }
 
   public bool Remove(string key)
   {
-    var _element = _Element.Elements<DXVO.Rule>().FirstOrDefault(item => item.Id == key);
+    var _element = _Element?.Elements<DXVO.Rule>().FirstOrDefault(item => item.Id == key);
     if (_element == null)
       return false;
     _element.Remove();
@@ -30,7 +30,7 @@ public partial class Rules : IDictionary<string, Rule>
 
   public bool TryGetValue(string key, [MaybeNullWhen(false)] out Rule value)
   {
-    var _element = _Element.Elements<DXVO.Rule>().FirstOrDefault(item => item.Id == key);
+    var _element = _Element?.Elements<DXVO.Rule>().FirstOrDefault(item => item.Id == key);
     if (_element != null)
     {
       value = new Rule(_element);
@@ -44,14 +44,14 @@ public partial class Rules : IDictionary<string, Rule>
   {
     get
     {
-      var _element = _Element.Elements<DXVO.Rule>().FirstOrDefault(item => item.Id == key);
+      var _element = _Element?.Elements<DXVO.Rule>().FirstOrDefault(item => item.Id == key);
       if (_element != null)
         return new Rule(_element);
       throw new InvalidOperationException($"Rule {key} not found");
     }
     set
     {
-      var _element = _Element.Elements<DXVO.Rule>().FirstOrDefault(item => item.Id == key);
+      var _element = _Element?.Elements<DXVO.Rule>().FirstOrDefault(item => item.Id == key);
       if (_element != null)
       {
         _element.Type = value.Type;
@@ -61,13 +61,13 @@ public partial class Rules : IDictionary<string, Rule>
       else
       {
         _element = new DXVO.Rule { Id = key, Type = value.Type, ShapeReference = value.ShapeReference, How = value.How };
-        _Element.AppendChild(_element);
+        _ExistingElement.AppendChild(_element);
       }
     }
   }
 
-  public ICollection<string> Keys => (ICollection<string>)_Element.Elements<DXVO.Rule>().Select(item => item.Id).ToList();
-  public ICollection<Rule> Values => (ICollection<Rule>)_Element.Elements<DXVO.Rule>().Select(item => new Rule(item)).ToList();
+  public ICollection<string> Keys => (ICollection<string>)_ExistingElement.Elements<DXVO.Rule>().Select(item => item.Id).ToList();
+  public ICollection<Rule> Values => (ICollection<Rule>)_ExistingElement.Elements<DXVO.Rule>().Select(item => new Rule(item)).ToList();
 
   public void Add(KeyValuePair<string, Rule> item)
   {
@@ -81,9 +81,8 @@ public partial class Rules : IDictionary<string, Rule>
 
   public void CopyTo(KeyValuePair<string, Rule>[] array, int arrayIndex)
   {
-    var temp = _Element.Elements<DXVO.Rule>().Where(item=>item.Id!=null)
-      .Select(item=> new KeyValuePair<string, Rule>(item.Id!, new Rule(item))).ToArray();
-    temp.CopyTo(array, arrayIndex);
+    _Element?.Elements<DXVO.Rule>().Where(item=>item.Id!=null)
+      .Select(item=> new KeyValuePair<string, Rule>(item.Id!, new Rule(item))).ToArray().CopyTo(array, arrayIndex);
   }
 
   public bool Remove(KeyValuePair<string, Rule> item)
@@ -95,7 +94,8 @@ public partial class Rules : IDictionary<string, Rule>
 
   IEnumerator<KeyValuePair<string, Rule>> IEnumerable<KeyValuePair<string, Rule>>.GetEnumerator()
   {
-    foreach (var item in _Element.Elements<DXVO.Rule>().ToArray())
+    if (_Element != null)
+    foreach (var item in _Element.Elements<DXVO.Rule>())
       yield return new KeyValuePair<string, Rule>(item.Id!, new Rule(item));
   }
 }

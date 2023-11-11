@@ -55,22 +55,11 @@ public partial class FieldChar: ModelElement<DXW.FieldChar>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.FieldData>();
-      if (element != null)
-        return FieldDataConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.FieldData,DXW.FieldData>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.FieldData>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FieldDataConverter.CreateOpenXmlElement<DXW.FieldData>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.FieldData,DXW.FieldData>(value);
     }
   }
   
@@ -83,22 +72,11 @@ public partial class FieldChar: ModelElement<DXW.FieldChar>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.FormFieldData>();
-      if (element != null)
-        return FormFieldDataConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.FormFieldData,DXW.FormFieldData>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.FormFieldData>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FormFieldDataConverter.CreateOpenXmlElement<DXW.FormFieldData>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.FormFieldData,DXW.FormFieldData>(value);
     }
   }
   
@@ -111,22 +89,11 @@ public partial class FieldChar: ModelElement<DXW.FieldChar>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.NumberingChange>();
-      if (element != null)
-        return NumberingChangeConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.NumberingChange,DXW.NumberingChange>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.NumberingChange>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NumberingChangeConverter.CreateOpenXmlElement<DXW.NumberingChange>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.NumberingChange,DXW.NumberingChange>(value);
     }
   }
   

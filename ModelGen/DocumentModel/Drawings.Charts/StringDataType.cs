@@ -21,22 +21,11 @@ public partial class StringDataType: ModelElement<DXDC.StringDataType>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.PointCount>();
-      if (element != null)
-        return PointCountConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.PointCount,DXDC.PointCount>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.PointCount>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PointCountConverter.CreateOpenXmlElement<DXDC.PointCount>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.PointCount,DXDC.PointCount>(value);
     }
   }
   

@@ -21,22 +21,11 @@ public partial class SeriesLayoutProperties: ModelElement<DXO16DCD.SeriesLayoutP
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.ParentLabelLayout>();
-      if (element != null)
-        return ParentLabelLayoutConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.ParentLabelLayout,DXO16DCD.ParentLabelLayout>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.ParentLabelLayout>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ParentLabelLayoutConverter.CreateOpenXmlElement<DXO16DCD.ParentLabelLayout>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.ParentLabelLayout,DXO16DCD.ParentLabelLayout>(value);
     }
   }
   
@@ -76,22 +65,11 @@ public partial class SeriesLayoutProperties: ModelElement<DXO16DCD.SeriesLayoutP
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.SeriesElementVisibilities>();
-      if (element != null)
-        return SeriesElementVisibilitiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.SeriesElementVisibilities,DXO16DCD.SeriesElementVisibilities>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.SeriesElementVisibilities>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SeriesElementVisibilitiesConverter.CreateOpenXmlElement<DXO16DCD.SeriesElementVisibilities>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.SeriesElementVisibilities,DXO16DCD.SeriesElementVisibilities>(value);
     }
   }
   
@@ -100,22 +78,11 @@ public partial class SeriesLayoutProperties: ModelElement<DXO16DCD.SeriesLayoutP
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.Aggregation>();
-      if (element != null)
-        return AggregationConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.Aggregation,DXO16DCD.Aggregation>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.Aggregation>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = AggregationConverter.CreateOpenXmlElement<DXO16DCD.Aggregation>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.Aggregation,DXO16DCD.Aggregation>(value);
     }
   }
   
@@ -124,22 +91,11 @@ public partial class SeriesLayoutProperties: ModelElement<DXO16DCD.SeriesLayoutP
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.Binning>();
-      if (element != null)
-        return BinningConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.Binning,DXO16DCD.Binning>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.Binning>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BinningConverter.CreateOpenXmlElement<DXO16DCD.Binning>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.Binning,DXO16DCD.Binning>(value);
     }
   }
   
@@ -148,22 +104,11 @@ public partial class SeriesLayoutProperties: ModelElement<DXO16DCD.SeriesLayoutP
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.Geography>();
-      if (element != null)
-        return GeographyConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.Geography,DXO16DCD.Geography>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.Geography>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = GeographyConverter.CreateOpenXmlElement<DXO16DCD.Geography>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.Geography,DXO16DCD.Geography>(value);
     }
   }
   
@@ -172,22 +117,11 @@ public partial class SeriesLayoutProperties: ModelElement<DXO16DCD.SeriesLayoutP
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.Statistics>();
-      if (element != null)
-        return StatisticsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.Statistics,DXO16DCD.Statistics>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.Statistics>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = StatisticsConverter.CreateOpenXmlElement<DXO16DCD.Statistics>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.Statistics,DXO16DCD.Statistics>(value);
     }
   }
   
@@ -196,22 +130,11 @@ public partial class SeriesLayoutProperties: ModelElement<DXO16DCD.SeriesLayoutP
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.Subtotals>();
-      if (element != null)
-        return SubtotalsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.Subtotals,DXO16DCD.Subtotals>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.Subtotals>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SubtotalsConverter.CreateOpenXmlElement<DXO16DCD.Subtotals>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.Subtotals,DXO16DCD.Subtotals>(value);
     }
   }
   
@@ -220,22 +143,11 @@ public partial class SeriesLayoutProperties: ModelElement<DXO16DCD.SeriesLayoutP
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.ExtensionList>();
-      if (element != null)
-        return ExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.ExtensionList,DXO16DCD.ExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.ExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DXO16DCD.ExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.ExtensionList,DXO16DCD.ExtensionList>(value);
     }
   }
   

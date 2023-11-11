@@ -60,7 +60,7 @@ public partial class OEmbed: ModelElement<DXOW20OE.OEmbed>
     set
     {
       if (value != null)
-        _ExistingElement.PicLocksAutoForOEmbed = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.PicLocksAutoForOEmbed = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.PicLocksAutoForOEmbed = null;
     }

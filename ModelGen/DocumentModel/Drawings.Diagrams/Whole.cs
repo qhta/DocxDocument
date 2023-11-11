@@ -21,22 +21,11 @@ public partial class Whole: ModelElement<DXDDD.Whole>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.Outline>();
-      if (element != null)
-        return OutlineConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.Outline,DXD.Outline>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.Outline>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = OutlineConverter.CreateOpenXmlElement<DXD.Outline>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.Outline,DXD.Outline>(value);
     }
   }
   
@@ -45,22 +34,11 @@ public partial class Whole: ModelElement<DXDDD.Whole>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.EffectList>();
-      if (element != null)
-        return EffectListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.EffectList,DXD.EffectList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.EffectList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EffectListConverter.CreateOpenXmlElement<DXD.EffectList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.EffectList,DXD.EffectList>(value);
     }
   }
   
@@ -69,22 +47,11 @@ public partial class Whole: ModelElement<DXDDD.Whole>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.EffectDag>();
-      if (element != null)
-        return EffectDagConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.EffectDag,DXD.EffectDag>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.EffectDag>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EffectDagConverter.CreateOpenXmlElement<DXD.EffectDag>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.EffectDag,DXD.EffectDag>(value);
     }
   }
   

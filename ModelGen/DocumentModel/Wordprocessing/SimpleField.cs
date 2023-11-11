@@ -72,22 +72,11 @@ public partial class SimpleField: ModelElement<DXW.SimpleField>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.FieldData>();
-      if (element != null)
-        return FieldDataConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.FieldData,DXW.FieldData>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.FieldData>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FieldDataConverter.CreateOpenXmlElement<DXW.FieldData>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.FieldData,DXW.FieldData>(value);
     }
   }
   

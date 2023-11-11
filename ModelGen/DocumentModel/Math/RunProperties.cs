@@ -21,22 +21,11 @@ public partial class RunProperties: ModelElement<DXM.RunProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.Literal>();
-      if (element != null)
-        return LiteralConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.Literal,DXM.Literal>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.Literal>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LiteralConverter.CreateOpenXmlElement<DXM.Literal>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.Literal,DXM.Literal>(value);
     }
   }
   
@@ -45,22 +34,11 @@ public partial class RunProperties: ModelElement<DXM.RunProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.NormalText>();
-      if (element != null)
-        return NormalTextConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.NormalText,DXM.NormalText>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.NormalText>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NormalTextConverter.CreateOpenXmlElement<DXM.NormalText>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.NormalText,DXM.NormalText>(value);
     }
   }
   
@@ -115,22 +93,11 @@ public partial class RunProperties: ModelElement<DXM.RunProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.Break>();
-      if (element != null)
-        return BreakConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.Break,DXM.Break>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.Break>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BreakConverter.CreateOpenXmlElement<DXM.Break>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.Break,DXM.Break>(value);
     }
   }
   
@@ -139,22 +106,11 @@ public partial class RunProperties: ModelElement<DXM.RunProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.Alignment>();
-      if (element != null)
-        return AlignmentConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.Alignment,DXM.Alignment>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.Alignment>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = AlignmentConverter.CreateOpenXmlElement<DXM.Alignment>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.Alignment,DXM.Alignment>(value);
     }
   }
   

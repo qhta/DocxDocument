@@ -21,22 +21,11 @@ public partial class Fraction: ModelElement<DXM.Fraction>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.FractionProperties>();
-      if (element != null)
-        return FractionPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.FractionProperties,DXM.FractionProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.FractionProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FractionPropertiesConverter.CreateOpenXmlElement<DXM.FractionProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.FractionProperties,DXM.FractionProperties>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class Fraction: ModelElement<DXM.Fraction>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.Numerator>();
-      if (element != null)
-        return NumeratorConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.Numerator,DXM.Numerator>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.Numerator>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NumeratorConverter.CreateOpenXmlElement<DXM.Numerator>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.Numerator,DXM.Numerator>(value);
     }
   }
   
@@ -77,22 +55,11 @@ public partial class Fraction: ModelElement<DXM.Fraction>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.Denominator>();
-      if (element != null)
-        return DenominatorConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.Denominator,DXM.Denominator>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.Denominator>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DenominatorConverter.CreateOpenXmlElement<DXM.Denominator>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.Denominator,DXM.Denominator>(value);
     }
   }
   

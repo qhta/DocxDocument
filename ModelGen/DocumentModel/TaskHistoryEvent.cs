@@ -55,22 +55,11 @@ public partial class TaskHistoryEvent: ModelElement<DXO21DT.TaskHistoryEvent>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO21DT.AttributionTaskUser>();
-      if (element != null)
-        return AttributionTaskUserConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DM.AttributionTaskUser,DXO21DT.AttributionTaskUser>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO21DT.AttributionTaskUser>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = AttributionTaskUserConverter.CreateOpenXmlElement<DXO21DT.AttributionTaskUser>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DM.AttributionTaskUser,DXO21DT.AttributionTaskUser>(value);
     }
   }
   
@@ -83,22 +72,11 @@ public partial class TaskHistoryEvent: ModelElement<DXO21DT.TaskHistoryEvent>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO21DT.TaskAnchor>();
-      if (element != null)
-        return TaskAnchorConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DM.TaskAnchor,DXO21DT.TaskAnchor>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO21DT.TaskAnchor>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TaskAnchorConverter.CreateOpenXmlElement<DXO21DT.TaskAnchor>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DM.TaskAnchor,DXO21DT.TaskAnchor>(value);
     }
   }
   
@@ -107,22 +85,11 @@ public partial class TaskHistoryEvent: ModelElement<DXO21DT.TaskHistoryEvent>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO21DT.AssignTaskUser>();
-      if (element != null)
-        return AssignTaskUserConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DM.AssignTaskUser,DXO21DT.AssignTaskUser>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO21DT.AssignTaskUser>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = AssignTaskUserConverter.CreateOpenXmlElement<DXO21DT.AssignTaskUser>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DM.AssignTaskUser,DXO21DT.AssignTaskUser>(value);
     }
   }
   
@@ -131,22 +98,11 @@ public partial class TaskHistoryEvent: ModelElement<DXO21DT.TaskHistoryEvent>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO21DT.UnassignTaskUser>();
-      if (element != null)
-        return UnassignTaskUserConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DM.UnassignTaskUser,DXO21DT.UnassignTaskUser>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO21DT.UnassignTaskUser>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = UnassignTaskUserConverter.CreateOpenXmlElement<DXO21DT.UnassignTaskUser>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DM.UnassignTaskUser,DXO21DT.UnassignTaskUser>(value);
     }
   }
   
@@ -155,22 +111,11 @@ public partial class TaskHistoryEvent: ModelElement<DXO21DT.TaskHistoryEvent>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO21DT.TaskCreateEventInfo>();
-      if (element != null)
-        return TaskCreateEventInfoConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DM.TaskCreateEventInfo,DXO21DT.TaskCreateEventInfo>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO21DT.TaskCreateEventInfo>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TaskCreateEventInfoConverter.CreateOpenXmlElement<DXO21DT.TaskCreateEventInfo>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DM.TaskCreateEventInfo,DXO21DT.TaskCreateEventInfo>(value);
     }
   }
   
@@ -179,22 +124,11 @@ public partial class TaskHistoryEvent: ModelElement<DXO21DT.TaskHistoryEvent>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO21DT.TaskTitleEventInfo>();
-      if (element != null)
-        return TaskTitleEventInfoConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DM.TaskTitleEventInfo,DXO21DT.TaskTitleEventInfo>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO21DT.TaskTitleEventInfo>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TaskTitleEventInfoConverter.CreateOpenXmlElement<DXO21DT.TaskTitleEventInfo>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DM.TaskTitleEventInfo,DXO21DT.TaskTitleEventInfo>(value);
     }
   }
   
@@ -203,22 +137,11 @@ public partial class TaskHistoryEvent: ModelElement<DXO21DT.TaskHistoryEvent>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO21DT.TaskScheduleEventInfo>();
-      if (element != null)
-        return TaskScheduleEventInfoConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DM.TaskScheduleEventInfo,DXO21DT.TaskScheduleEventInfo>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO21DT.TaskScheduleEventInfo>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TaskScheduleEventInfoConverter.CreateOpenXmlElement<DXO21DT.TaskScheduleEventInfo>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DM.TaskScheduleEventInfo,DXO21DT.TaskScheduleEventInfo>(value);
     }
   }
   
@@ -227,22 +150,11 @@ public partial class TaskHistoryEvent: ModelElement<DXO21DT.TaskHistoryEvent>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO21DT.TaskProgressEventInfo>();
-      if (element != null)
-        return TaskProgressEventInfoConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DM.TaskProgressEventInfo,DXO21DT.TaskProgressEventInfo>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO21DT.TaskProgressEventInfo>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TaskProgressEventInfoConverter.CreateOpenXmlElement<DXO21DT.TaskProgressEventInfo>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DM.TaskProgressEventInfo,DXO21DT.TaskProgressEventInfo>(value);
     }
   }
   
@@ -251,22 +163,11 @@ public partial class TaskHistoryEvent: ModelElement<DXO21DT.TaskHistoryEvent>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO21DT.TaskPriorityEventInfo>();
-      if (element != null)
-        return TaskPriorityEventInfoConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DM.TaskPriorityEventInfo,DXO21DT.TaskPriorityEventInfo>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO21DT.TaskPriorityEventInfo>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TaskPriorityEventInfoConverter.CreateOpenXmlElement<DXO21DT.TaskPriorityEventInfo>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DM.TaskPriorityEventInfo,DXO21DT.TaskPriorityEventInfo>(value);
     }
   }
   
@@ -275,22 +176,11 @@ public partial class TaskHistoryEvent: ModelElement<DXO21DT.TaskHistoryEvent>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO21DT.TaskDeleteEventInfo>();
-      if (element != null)
-        return TaskDeleteEventInfoConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DM.TaskDeleteEventInfo,DXO21DT.TaskDeleteEventInfo>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO21DT.TaskDeleteEventInfo>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TaskDeleteEventInfoConverter.CreateOpenXmlElement<DXO21DT.TaskDeleteEventInfo>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DM.TaskDeleteEventInfo,DXO21DT.TaskDeleteEventInfo>(value);
     }
   }
   
@@ -299,22 +189,11 @@ public partial class TaskHistoryEvent: ModelElement<DXO21DT.TaskHistoryEvent>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO21DT.TaskUndeleteEventInfo>();
-      if (element != null)
-        return TaskUndeleteEventInfoConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DM.TaskUndeleteEventInfo,DXO21DT.TaskUndeleteEventInfo>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO21DT.TaskUndeleteEventInfo>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TaskUndeleteEventInfoConverter.CreateOpenXmlElement<DXO21DT.TaskUndeleteEventInfo>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DM.TaskUndeleteEventInfo,DXO21DT.TaskUndeleteEventInfo>(value);
     }
   }
   
@@ -323,22 +202,11 @@ public partial class TaskHistoryEvent: ModelElement<DXO21DT.TaskHistoryEvent>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO21DT.TaskUnassignAll>();
-      if (element != null)
-        return TaskUnassignAllConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DM.TaskUnassignAll,DXO21DT.TaskUnassignAll>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO21DT.TaskUnassignAll>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TaskUnassignAllConverter.CreateOpenXmlElement<DXO21DT.TaskUnassignAll>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DM.TaskUnassignAll,DXO21DT.TaskUnassignAll>(value);
     }
   }
   
@@ -347,22 +215,11 @@ public partial class TaskHistoryEvent: ModelElement<DXO21DT.TaskHistoryEvent>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO21DT.TaskUndo>();
-      if (element != null)
-        return TaskUndoConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DM.TaskUndo,DXO21DT.TaskUndo>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO21DT.TaskUndo>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TaskUndoConverter.CreateOpenXmlElement<DXO21DT.TaskUndo>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DM.TaskUndo,DXO21DT.TaskUndo>(value);
     }
   }
   
@@ -371,22 +228,11 @@ public partial class TaskHistoryEvent: ModelElement<DXO21DT.TaskHistoryEvent>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO21DT.ExtensionList>();
-      if (element != null)
-        return ExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DM.ExtensionList,DXO21DT.ExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO21DT.ExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DXO21DT.ExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DM.ExtensionList,DXO21DT.ExtensionList>(value);
     }
   }
   

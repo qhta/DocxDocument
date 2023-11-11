@@ -26,7 +26,7 @@ public partial class ConnectionShapeLocks: ModelElement<DXD.ConnectionShapeLocks
     set
     {
       if (value != null)
-        _ExistingElement.NoGrouping = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.NoGrouping = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.NoGrouping = null;
     }
@@ -46,7 +46,7 @@ public partial class ConnectionShapeLocks: ModelElement<DXD.ConnectionShapeLocks
     set
     {
       if (value != null)
-        _ExistingElement.NoSelection = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.NoSelection = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.NoSelection = null;
     }
@@ -66,7 +66,7 @@ public partial class ConnectionShapeLocks: ModelElement<DXD.ConnectionShapeLocks
     set
     {
       if (value != null)
-        _ExistingElement.NoRotation = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.NoRotation = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.NoRotation = null;
     }
@@ -86,7 +86,7 @@ public partial class ConnectionShapeLocks: ModelElement<DXD.ConnectionShapeLocks
     set
     {
       if (value != null)
-        _ExistingElement.NoChangeAspect = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.NoChangeAspect = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.NoChangeAspect = null;
     }
@@ -106,7 +106,7 @@ public partial class ConnectionShapeLocks: ModelElement<DXD.ConnectionShapeLocks
     set
     {
       if (value != null)
-        _ExistingElement.NoMove = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.NoMove = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.NoMove = null;
     }
@@ -126,7 +126,7 @@ public partial class ConnectionShapeLocks: ModelElement<DXD.ConnectionShapeLocks
     set
     {
       if (value != null)
-        _ExistingElement.NoResize = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.NoResize = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.NoResize = null;
     }
@@ -146,7 +146,7 @@ public partial class ConnectionShapeLocks: ModelElement<DXD.ConnectionShapeLocks
     set
     {
       if (value != null)
-        _ExistingElement.NoEditPoints = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.NoEditPoints = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.NoEditPoints = null;
     }
@@ -166,7 +166,7 @@ public partial class ConnectionShapeLocks: ModelElement<DXD.ConnectionShapeLocks
     set
     {
       if (value != null)
-        _ExistingElement.NoAdjustHandles = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.NoAdjustHandles = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.NoAdjustHandles = null;
     }
@@ -186,7 +186,7 @@ public partial class ConnectionShapeLocks: ModelElement<DXD.ConnectionShapeLocks
     set
     {
       if (value != null)
-        _ExistingElement.NoChangeArrowheads = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.NoChangeArrowheads = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.NoChangeArrowheads = null;
     }
@@ -206,7 +206,7 @@ public partial class ConnectionShapeLocks: ModelElement<DXD.ConnectionShapeLocks
     set
     {
       if (value != null)
-        _ExistingElement.NoChangeShapeType = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.NoChangeShapeType = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.NoChangeShapeType = null;
     }
@@ -221,22 +221,11 @@ public partial class ConnectionShapeLocks: ModelElement<DXD.ConnectionShapeLocks
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.ConnectorLockingExtensionList>();
-      if (element != null)
-        return ConnectorLockingExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.ConnectorLockingExtensionList,DXD.ConnectorLockingExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.ConnectorLockingExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ConnectorLockingExtensionListConverter.CreateOpenXmlElement<DXD.ConnectorLockingExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.ConnectorLockingExtensionList,DXD.ConnectorLockingExtensionList>(value);
     }
   }
   

@@ -52,7 +52,7 @@ public partial class Marker: ModelElement<DXDC.Marker>
     }
     set
     {
-      SimpleValueConverter.SetValue<DXDC.Size,System.Byte>(openXmlElement, value);
+      SimpleValueConverter.SetValue<DXDC.Size,System.Byte>(_ExistingElement, value);
     }
   }
   
@@ -65,22 +65,11 @@ public partial class Marker: ModelElement<DXDC.Marker>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.ChartShapeProperties>();
-      if (element != null)
-        return ChartShapePropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.ChartShapeProperties,DXDC.ChartShapeProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.ChartShapeProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ChartShapePropertiesConverter.CreateOpenXmlElement<DXDC.ChartShapeProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.ChartShapeProperties,DXDC.ChartShapeProperties>(value);
     }
   }
   
@@ -93,22 +82,11 @@ public partial class Marker: ModelElement<DXDC.Marker>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.ExtensionList>();
-      if (element != null)
-        return ExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.ExtensionList,DXDC.ExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.ExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DXDC.ExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.ExtensionList,DXDC.ExtensionList>(value);
     }
   }
   

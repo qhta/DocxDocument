@@ -34,22 +34,11 @@ public partial class DiagramDefinitionExtension: ModelElement<DXDDD.DiagramDefin
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO19DD11.NumberDiagramInfoList>();
-      if (element != null)
-        return NumberDiagramInfoListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDD1.NumberDiagramInfoList,DXO19DD11.NumberDiagramInfoList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO19DD11.NumberDiagramInfoList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NumberDiagramInfoListConverter.CreateOpenXmlElement<DXO19DD11.NumberDiagramInfoList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDD1.NumberDiagramInfoList,DXO19DD11.NumberDiagramInfoList>(value);
     }
   }
   
@@ -58,22 +47,11 @@ public partial class DiagramDefinitionExtension: ModelElement<DXDDD.DiagramDefin
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO19DD12.TextListStyleType>();
-      if (element != null)
-        return TextListStyleTypeConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDD2.TextListStyleType,DXO19DD12.TextListStyleType>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO19DD12.TextListStyleType>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TextListStyleTypeConverter.CreateOpenXmlElement<DXO19DD12.TextListStyleType>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDD2.TextListStyleType,DXO19DD12.TextListStyleType>(value);
     }
   }
   

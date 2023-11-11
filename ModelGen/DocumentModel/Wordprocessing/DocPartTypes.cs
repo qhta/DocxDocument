@@ -34,11 +34,13 @@ public partial class DocPartTypes: ModelElement<DXW.DocPartTypes>
   {
     get
     {
-      var collection = new Collection<DMW.DocPartKind>();
-      foreach (var item in _ExistingElement.Elements<>())
+      if (_Element==null)
+        return null;
+      var collection = new ElementCollection<DMW.DocPartKind>();
+      foreach (var item in _ExistingElement.Elements<DXW.DocPartType>())
       {
-        var newItem = ElementCollection<DocPartKind>Converter.CreateModelElement(item);
-        if (newItem != null)
+        var newItem = EnumValueConverter.GetValue<DXW.DocPartType,DM.DocPartKind>(item);
+        if (newItem is not null)
           collection.Add(newItem);
       }
       if (collection.Count>0)
@@ -52,7 +54,7 @@ public partial class DocPartTypes: ModelElement<DXW.DocPartTypes>
       {
         foreach (var item in value)
         {
-          var newItem = ElementCollection<DocPartKind>Converter.CreateOpenXmlElement<DM.ElementCollection<DocPartType>>(item);
+          var newItem = (item);
           if (newItem != null)
             _ExistingElement.AddChild(newItem);
         }

@@ -17,22 +17,11 @@ public partial class MinorFont: ModelElement<DXD.MinorFont>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.LatinFont>();
-      if (element != null)
-        return LatinFontConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.LatinFont,DXD.LatinFont>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.LatinFont>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LatinFontConverter.CreateOpenXmlElement<DXD.LatinFont>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.LatinFont,DXD.LatinFont>(value);
     }
   }
   
@@ -41,22 +30,11 @@ public partial class MinorFont: ModelElement<DXD.MinorFont>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.EastAsianFont>();
-      if (element != null)
-        return EastAsianFontConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.EastAsianFont,DXD.EastAsianFont>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.EastAsianFont>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EastAsianFontConverter.CreateOpenXmlElement<DXD.EastAsianFont>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.EastAsianFont,DXD.EastAsianFont>(value);
     }
   }
   
@@ -65,22 +43,11 @@ public partial class MinorFont: ModelElement<DXD.MinorFont>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.ComplexScriptFont>();
-      if (element != null)
-        return ComplexScriptFontConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.ComplexScriptFont,DXD.ComplexScriptFont>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.ComplexScriptFont>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ComplexScriptFontConverter.CreateOpenXmlElement<DXD.ComplexScriptFont>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.ComplexScriptFont,DXD.ComplexScriptFont>(value);
     }
   }
   
@@ -89,22 +56,11 @@ public partial class MinorFont: ModelElement<DXD.MinorFont>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.ExtensionList>();
-      if (element != null)
-        return ExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.ExtensionList,DXD.ExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.ExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DXD.ExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.ExtensionList,DXD.ExtensionList>(value);
     }
   }
   

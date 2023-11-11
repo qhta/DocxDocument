@@ -17,15 +17,18 @@ public partial class Extrusion: ModelElement<DXVO.Extrusion>
   ///   Extrusion Toggle
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? On
+  public Boolean? On
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.On?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.On = value;
+      else
+        _ExistingElement.On = null;
     }
   }
   
@@ -170,15 +173,18 @@ public partial class Extrusion: ModelElement<DXVO.Extrusion>
   ///   Rotation Toggle
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? LockRotationCenter
+  public Boolean? LockRotationCenter
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.LockRotationCenter?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.LockRotationCenter = value;
+      else
+        _ExistingElement.LockRotationCenter = null;
     }
   }
   
@@ -187,15 +193,18 @@ public partial class Extrusion: ModelElement<DXVO.Extrusion>
   ///   Center of Rotation Toggle
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? AutoRotationCenter
+  public Boolean? AutoRotationCenter
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.AutoRotationCenter?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.AutoRotationCenter = value;
+      else
+        _ExistingElement.AutoRotationCenter = null;
     }
   }
   
@@ -306,15 +315,18 @@ public partial class Extrusion: ModelElement<DXVO.Extrusion>
   ///   Metallic Surface Toggle
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? Metal
+  public Boolean? Metal
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.Metal?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.Metal = value;
+      else
+        _ExistingElement.Metal = null;
     }
   }
   
@@ -357,15 +369,18 @@ public partial class Extrusion: ModelElement<DXVO.Extrusion>
   ///   Shape Face Lighting Toggle
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? LightFace
+  public Boolean? LightFace
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.LightFace?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.LightFace = value;
+      else
+        _ExistingElement.LightFace = null;
     }
   }
   
@@ -425,15 +440,18 @@ public partial class Extrusion: ModelElement<DXVO.Extrusion>
   ///   Primary Light Harshness Toggle
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? LightHarsh
+  public Boolean? LightHarsh
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.LightHarsh?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.LightHarsh = value;
+      else
+        _ExistingElement.LightHarsh = null;
     }
   }
   
@@ -476,15 +494,18 @@ public partial class Extrusion: ModelElement<DXVO.Extrusion>
   ///   Secondary Light Harshness Toggle
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? LightHarsh2
+  public Boolean? LightHarsh2
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.LightHarsh2?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.LightHarsh2 = value;
+      else
+        _ExistingElement.LightHarsh2 = null;
     }
   }
   

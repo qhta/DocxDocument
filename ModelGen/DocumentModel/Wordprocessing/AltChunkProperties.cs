@@ -21,22 +21,11 @@ public partial class AltChunkProperties: ModelElement<DXW.AltChunkProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.MatchSource>();
-      if (element != null)
-        return MatchSourceConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.MatchSource,DXW.MatchSource>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.MatchSource>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = MatchSourceConverter.CreateOpenXmlElement<DXW.MatchSource>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.MatchSource,DXW.MatchSource>(value);
     }
   }
   

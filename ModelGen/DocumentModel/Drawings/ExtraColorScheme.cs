@@ -21,22 +21,11 @@ public partial class ExtraColorScheme: ModelElement<DXD.ExtraColorScheme>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.ColorScheme>();
-      if (element != null)
-        return ColorSchemeConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.ColorScheme,DXD.ColorScheme>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.ColorScheme>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ColorSchemeConverter.CreateOpenXmlElement<DXD.ColorScheme>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.ColorScheme,DXD.ColorScheme>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class ExtraColorScheme: ModelElement<DXD.ExtraColorScheme>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.ColorMap>();
-      if (element != null)
-        return ColorMapConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.ColorMap,DXD.ColorMap>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.ColorMap>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ColorMapConverter.CreateOpenXmlElement<DXD.ColorMap>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.ColorMap,DXD.ColorMap>(value);
     }
   }
   
