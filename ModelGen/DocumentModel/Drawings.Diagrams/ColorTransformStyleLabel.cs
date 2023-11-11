@@ -38,22 +38,11 @@ public partial class ColorTransformStyleLabel: ModelElement<DXDDD.ColorTransform
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDDD.FillColorList>();
-      if (element != null)
-        return FillColorListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDD.FillColorList,DXDDD.FillColorList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDDD.FillColorList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FillColorListConverter.CreateOpenXmlElement<DXDDD.FillColorList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDD.FillColorList,DXDDD.FillColorList>(value);
     }
   }
   
@@ -66,22 +55,11 @@ public partial class ColorTransformStyleLabel: ModelElement<DXDDD.ColorTransform
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDDD.LineColorList>();
-      if (element != null)
-        return LineColorListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDD.LineColorList,DXDDD.LineColorList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDDD.LineColorList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LineColorListConverter.CreateOpenXmlElement<DXDDD.LineColorList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDD.LineColorList,DXDDD.LineColorList>(value);
     }
   }
   
@@ -94,22 +72,11 @@ public partial class ColorTransformStyleLabel: ModelElement<DXDDD.ColorTransform
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDDD.EffectColorList>();
-      if (element != null)
-        return EffectColorListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDD.EffectColorList,DXDDD.EffectColorList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDDD.EffectColorList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EffectColorListConverter.CreateOpenXmlElement<DXDDD.EffectColorList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDD.EffectColorList,DXDDD.EffectColorList>(value);
     }
   }
   
@@ -122,22 +89,11 @@ public partial class ColorTransformStyleLabel: ModelElement<DXDDD.ColorTransform
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDDD.TextLineColorList>();
-      if (element != null)
-        return TextLineColorListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDD.TextLineColorList,DXDDD.TextLineColorList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDDD.TextLineColorList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TextLineColorListConverter.CreateOpenXmlElement<DXDDD.TextLineColorList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDD.TextLineColorList,DXDDD.TextLineColorList>(value);
     }
   }
   
@@ -150,22 +106,11 @@ public partial class ColorTransformStyleLabel: ModelElement<DXDDD.ColorTransform
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDDD.TextFillColorList>();
-      if (element != null)
-        return TextFillColorListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDD.TextFillColorList,DXDDD.TextFillColorList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDDD.TextFillColorList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TextFillColorListConverter.CreateOpenXmlElement<DXDDD.TextFillColorList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDD.TextFillColorList,DXDDD.TextFillColorList>(value);
     }
   }
   
@@ -178,22 +123,11 @@ public partial class ColorTransformStyleLabel: ModelElement<DXDDD.ColorTransform
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDDD.TextEffectColorList>();
-      if (element != null)
-        return TextEffectColorListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDD.TextEffectColorList,DXDDD.TextEffectColorList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDDD.TextEffectColorList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TextEffectColorListConverter.CreateOpenXmlElement<DXDDD.TextEffectColorList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDD.TextEffectColorList,DXDDD.TextEffectColorList>(value);
     }
   }
   
@@ -206,22 +140,11 @@ public partial class ColorTransformStyleLabel: ModelElement<DXDDD.ColorTransform
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDDD.ExtensionList>();
-      if (element != null)
-        return ExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDD.ExtensionList,DXDDD.ExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDDD.ExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DXDDD.ExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDD.ExtensionList,DXDDD.ExtensionList>(value);
     }
   }
   

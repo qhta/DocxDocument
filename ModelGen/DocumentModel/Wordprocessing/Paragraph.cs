@@ -22,7 +22,7 @@ public partial class Paragraph: ModelElement<DXW.Paragraph>
     get
     {
       if (_Element?.RsidParagraphMarkRevision?.Value != null)
-        return HexIntConverter.GetValue(_ExistingElement.RsidParagraphMarkRevision.Value);
+        return HexIntConverter.GetValue(_Element?.RsidParagraphMarkRevision.Value);
       return null;
     }
     set
@@ -44,7 +44,7 @@ public partial class Paragraph: ModelElement<DXW.Paragraph>
     get
     {
       if (_Element?.RsidParagraphAddition?.Value != null)
-        return HexIntConverter.GetValue(_ExistingElement.RsidParagraphAddition.Value);
+        return HexIntConverter.GetValue(_Element?.RsidParagraphAddition.Value);
       return null;
     }
     set
@@ -66,7 +66,7 @@ public partial class Paragraph: ModelElement<DXW.Paragraph>
     get
     {
       if (_Element?.RsidParagraphDeletion?.Value != null)
-        return HexIntConverter.GetValue(_ExistingElement.RsidParagraphDeletion.Value);
+        return HexIntConverter.GetValue(_Element?.RsidParagraphDeletion.Value);
       return null;
     }
     set
@@ -88,7 +88,7 @@ public partial class Paragraph: ModelElement<DXW.Paragraph>
     get
     {
       if (_Element?.RsidParagraphProperties?.Value != null)
-        return HexIntConverter.GetValue(_ExistingElement.RsidParagraphProperties.Value);
+        return HexIntConverter.GetValue(_Element?.RsidParagraphProperties.Value);
       return null;
     }
     set
@@ -110,7 +110,7 @@ public partial class Paragraph: ModelElement<DXW.Paragraph>
     get
     {
       if (_Element?.RsidRunAdditionDefault?.Value != null)
-        return HexIntConverter.GetValue(_ExistingElement.RsidRunAdditionDefault.Value);
+        return HexIntConverter.GetValue(_Element?.RsidRunAdditionDefault.Value);
       return null;
     }
     set
@@ -132,7 +132,7 @@ public partial class Paragraph: ModelElement<DXW.Paragraph>
     get
     {
       if (_Element?.ParagraphId?.Value != null)
-        return HexIntConverter.GetValue(_ExistingElement.ParagraphId.Value);
+        return HexIntConverter.GetValue(_Element?.ParagraphId.Value);
       return null;
     }
     set
@@ -154,7 +154,7 @@ public partial class Paragraph: ModelElement<DXW.Paragraph>
     get
     {
       if (_Element?.TextId?.Value != null)
-        return HexIntConverter.GetValue(_ExistingElement.TextId.Value);
+        return HexIntConverter.GetValue(_Element?.TextId.Value);
       return null;
     }
     set
@@ -192,22 +192,11 @@ public partial class Paragraph: ModelElement<DXW.Paragraph>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.ParagraphProperties>();
-      if (element != null)
-        return ParagraphPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.ParagraphProperties,DXW.ParagraphProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.ParagraphProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ParagraphPropertiesConverter.CreateOpenXmlElement<DXW.ParagraphProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.ParagraphProperties,DXW.ParagraphProperties>(value);
     }
   }
   

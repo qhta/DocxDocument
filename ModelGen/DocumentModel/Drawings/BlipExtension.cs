@@ -34,22 +34,11 @@ public partial class BlipExtension: ModelElement<DXD.BlipExtension>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10D.ImageProperties>();
-      if (element != null)
-        return ImagePropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD10.ImageProperties,DXO10D.ImageProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10D.ImageProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ImagePropertiesConverter.CreateOpenXmlElement<DXO10D.ImageProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD10.ImageProperties,DXO10D.ImageProperties>(value);
     }
   }
   
@@ -81,22 +70,11 @@ public partial class BlipExtension: ModelElement<DXD.BlipExtension>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13WD.WebVideoProperty>();
-      if (element != null)
-        return WebVideoPropertyConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDW.WebVideoProperty,DXO13WD.WebVideoProperty>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13WD.WebVideoProperty>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = WebVideoPropertyConverter.CreateOpenXmlElement<DXO13WD.WebVideoProperty>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDW.WebVideoProperty,DXO13WD.WebVideoProperty>(value);
     }
   }
   
@@ -105,22 +83,11 @@ public partial class BlipExtension: ModelElement<DXD.BlipExtension>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO19DSVG.SVGBlip>();
-      if (element != null)
-        return SVGBlipConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDSVG.SVGBlip,DXO19DSVG.SVGBlip>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO19DSVG.SVGBlip>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SVGBlipConverter.CreateOpenXmlElement<DXO19DSVG.SVGBlip>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDSVG.SVGBlip,DXO19DSVG.SVGBlip>(value);
     }
   }
   
@@ -129,22 +96,11 @@ public partial class BlipExtension: ModelElement<DXD.BlipExtension>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO19D.PictureAttributionSourceURL>();
-      if (element != null)
-        return PictureAttributionSourceURLConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.PictureAttributionSourceURL,DXO19D.PictureAttributionSourceURL>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO19D.PictureAttributionSourceURL>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PictureAttributionSourceURLConverter.CreateOpenXmlElement<DXO19D.PictureAttributionSourceURL>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.PictureAttributionSourceURL,DXO19D.PictureAttributionSourceURL>(value);
     }
   }
   
@@ -153,22 +109,11 @@ public partial class BlipExtension: ModelElement<DXD.BlipExtension>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXOW20OE.OEmbed>();
-      if (element != null)
-        return OEmbedConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW20.OEmbed,DXOW20OE.OEmbed>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXOW20OE.OEmbed>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = OEmbedConverter.CreateOpenXmlElement<DXOW20OE.OEmbed>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW20.OEmbed,DXOW20OE.OEmbed>(value);
     }
   }
   
@@ -177,22 +122,11 @@ public partial class BlipExtension: ModelElement<DXD.BlipExtension>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXOD21OE.OEmbedShared>();
-      if (element != null)
-        return OEmbedSharedConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDOE.OEmbedShared,DXOD21OE.OEmbedShared>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXOD21OE.OEmbedShared>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = OEmbedSharedConverter.CreateOpenXmlElement<DXOD21OE.OEmbedShared>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDOE.OEmbedShared,DXOD21OE.OEmbedShared>(value);
     }
   }
   

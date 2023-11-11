@@ -21,22 +21,11 @@ public partial class TableCell: ModelElement<DXW.TableCell>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.TableCellProperties>();
-      if (element != null)
-        return TableCellPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.TableCellProperties,DXW.TableCellProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.TableCellProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TableCellPropertiesConverter.CreateOpenXmlElement<DXW.TableCellProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.TableCellProperties,DXW.TableCellProperties>(value);
     }
   }
   

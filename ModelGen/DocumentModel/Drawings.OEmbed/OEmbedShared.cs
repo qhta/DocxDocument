@@ -55,22 +55,11 @@ public partial class OEmbedShared: ModelElement<DXOD21OE.OEmbedShared>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXOD21OE.OfficeArtExtensionList>();
-      if (element != null)
-        return OfficeArtExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDOE.OfficeArtExtensionList,DXOD21OE.OfficeArtExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXOD21OE.OfficeArtExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = OfficeArtExtensionListConverter.CreateOpenXmlElement<DXOD21OE.OfficeArtExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDOE.OfficeArtExtensionList,DXOD21OE.OfficeArtExtensionList>(value);
     }
   }
   

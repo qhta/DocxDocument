@@ -21,22 +21,11 @@ public partial class FilteredAreaSeries: ModelElement<DXO13DC.FilteredAreaSeries
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13DC.AreaChartSeries>();
-      if (element != null)
-        return AreaChartSeriesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC13.AreaChartSeries,DXO13DC.AreaChartSeries>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13DC.AreaChartSeries>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = AreaChartSeriesConverter.CreateOpenXmlElement<DXO13DC.AreaChartSeries>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC13.AreaChartSeries,DXO13DC.AreaChartSeries>(value);
     }
   }
   

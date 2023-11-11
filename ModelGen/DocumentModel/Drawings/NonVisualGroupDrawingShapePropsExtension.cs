@@ -34,22 +34,11 @@ public partial class NonVisualGroupDrawingShapePropsExtension: ModelElement<DXD.
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13D.NonVisualGroupProperties>();
-      if (element != null)
-        return NonVisualGroupPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.NonVisualGroupProperties,DXO13D.NonVisualGroupProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13D.NonVisualGroupProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NonVisualGroupPropertiesConverter.CreateOpenXmlElement<DXO13D.NonVisualGroupProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.NonVisualGroupProperties,DXO13D.NonVisualGroupProperties>(value);
     }
   }
   

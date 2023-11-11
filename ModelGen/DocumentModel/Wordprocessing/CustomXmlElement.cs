@@ -55,22 +55,11 @@ public partial class CustomXmlElement: ModelElement<DXW.CustomXmlElement>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.CustomXmlProperties>();
-      if (element != null)
-        return CustomXmlPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.CustomXmlProperties,DXW.CustomXmlProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.CustomXmlProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = CustomXmlPropertiesConverter.CreateOpenXmlElement<DXW.CustomXmlProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.CustomXmlProperties,DXW.CustomXmlProperties>(value);
     }
   }
   

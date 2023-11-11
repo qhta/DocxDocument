@@ -34,15 +34,18 @@ public partial class Arc: ModelElement<DXV.Arc>
   ///   Shape Handle Toggle
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? Oned
+  public Boolean? Oned
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.Oned?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.Oned = value;
+      else
+        _ExistingElement.Oned = null;
     }
   }
   
@@ -68,15 +71,18 @@ public partial class Arc: ModelElement<DXV.Arc>
   ///   Double-click Notification Toggle
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? DoubleClickNotify
+  public Boolean? DoubleClickNotify
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.DoubleClickNotify?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.DoubleClickNotify = value;
+      else
+        _ExistingElement.DoubleClickNotify = null;
     }
   }
   
@@ -85,15 +91,18 @@ public partial class Arc: ModelElement<DXV.Arc>
   ///   Button Behavior Toggle
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? Button
+  public Boolean? Button
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.Button?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.Button = value;
+      else
+        _ExistingElement.Button = null;
     }
   }
   
@@ -102,15 +111,18 @@ public partial class Arc: ModelElement<DXV.Arc>
   ///   Hide Script Anchors
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? UserHidden
+  public Boolean? UserHidden
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.UserHidden?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.UserHidden = value;
+      else
+        _ExistingElement.UserHidden = null;
     }
   }
   
@@ -119,15 +131,18 @@ public partial class Arc: ModelElement<DXV.Arc>
   ///   Graphical Bullet
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? Bullet
+  public Boolean? Bullet
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.Bullet?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.Bullet = value;
+      else
+        _ExistingElement.Bullet = null;
     }
   }
   
@@ -136,15 +151,18 @@ public partial class Arc: ModelElement<DXV.Arc>
   ///   Horizontal Rule Toggle
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? Horizontal
+  public Boolean? Horizontal
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.Horizontal?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.Horizontal = value;
+      else
+        _ExistingElement.Horizontal = null;
     }
   }
   
@@ -153,15 +171,18 @@ public partial class Arc: ModelElement<DXV.Arc>
   ///   Horizontal Rule Standard Display Toggle
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? HorizontalStandard
+  public Boolean? HorizontalStandard
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.HorizontalStandard?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.HorizontalStandard = value;
+      else
+        _ExistingElement.HorizontalStandard = null;
     }
   }
   
@@ -170,15 +191,18 @@ public partial class Arc: ModelElement<DXV.Arc>
   ///   Horizontal Rule 3D Shading Toggle
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? HorizontalNoShade
+  public Boolean? HorizontalNoShade
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.HorizontalNoShade?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.HorizontalNoShade = value;
+      else
+        _ExistingElement.HorizontalNoShade = null;
     }
   }
   
@@ -204,15 +228,18 @@ public partial class Arc: ModelElement<DXV.Arc>
   ///   Allow in Table Cell
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? AllowInCell
+  public Boolean? AllowInCell
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.AllowInCell?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.AllowInCell = value;
+      else
+        _ExistingElement.AllowInCell = null;
     }
   }
   
@@ -221,15 +248,18 @@ public partial class Arc: ModelElement<DXV.Arc>
   ///   Allow Shape Overlap
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? AllowOverlap
+  public Boolean? AllowOverlap
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.AllowOverlap?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.AllowOverlap = value;
+      else
+        _ExistingElement.AllowOverlap = null;
     }
   }
   
@@ -238,15 +268,18 @@ public partial class Arc: ModelElement<DXV.Arc>
   ///   Exists In Master Slide
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? UserDrawn
+  public Boolean? UserDrawn
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.UserDrawn?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.UserDrawn = value;
+      else
+        _ExistingElement.UserDrawn = null;
     }
   }
   
@@ -374,15 +407,18 @@ public partial class Arc: ModelElement<DXV.Arc>
   ///   Shape Fill Toggle
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? Filled
+  public Boolean? Filled
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.Filled?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.Filled = value;
+      else
+        _ExistingElement.Filled = null;
     }
   }
   
@@ -408,15 +444,18 @@ public partial class Arc: ModelElement<DXV.Arc>
   ///   Shape Stroke Toggle
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? Stroked
+  public Boolean? Stroked
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.Stroked?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.Stroked = value;
+      else
+        _ExistingElement.Stroked = null;
     }
   }
   
@@ -459,15 +498,18 @@ public partial class Arc: ModelElement<DXV.Arc>
   ///   Inset Border From Path
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? InsetPen
+  public Boolean? InsetPen
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.InsetPen?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.InsetPen = value;
+      else
+        _ExistingElement.InsetPen = null;
     }
   }
   
@@ -493,15 +535,18 @@ public partial class Arc: ModelElement<DXV.Arc>
   ///   Force Dashed Outline
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? ForceDash
+  public Boolean? ForceDash
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.ForceDash?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.ForceDash = value;
+      else
+        _ExistingElement.ForceDash = null;
     }
   }
   
@@ -510,15 +555,18 @@ public partial class Arc: ModelElement<DXV.Arc>
   ///   Embedded Object Icon Toggle
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? OleIcon
+  public Boolean? OleIcon
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.OleIcon?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.OleIcon = value;
+      else
+        _ExistingElement.OleIcon = null;
     }
   }
   
@@ -527,15 +575,18 @@ public partial class Arc: ModelElement<DXV.Arc>
   ///   Embedded Object Toggle
   /// </summary>
   [DataMember]
-  public DM.TrueFalseBlankValue? Ole
+  public Boolean? Ole
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseBlankValue>()?.Val);
+      return _Element?.Ole?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseBlankValue,DocumentFormat.OpenXml.TrueFalseBlankValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.Ole = value;
+      else
+        _ExistingElement.Ole = null;
     }
   }
   
@@ -544,15 +595,18 @@ public partial class Arc: ModelElement<DXV.Arc>
   ///   Relative Resize Toggle
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? PreferRelative
+  public Boolean? PreferRelative
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.PreferRelative?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.PreferRelative = value;
+      else
+        _ExistingElement.PreferRelative = null;
     }
   }
   
@@ -561,15 +615,18 @@ public partial class Arc: ModelElement<DXV.Arc>
   ///   Clip to Wrapping Polygon
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? ClipToWrap
+  public Boolean? ClipToWrap
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.ClipToWrap?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.ClipToWrap = value;
+      else
+        _ExistingElement.ClipToWrap = null;
     }
   }
   
@@ -578,15 +635,18 @@ public partial class Arc: ModelElement<DXV.Arc>
   ///   Clipping Toggle
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? Clip
+  public Boolean? Clip
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.Clip?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.Clip = value;
+      else
+        _ExistingElement.Clip = null;
     }
   }
   
@@ -599,16 +659,11 @@ public partial class Arc: ModelElement<DXV.Arc>
   {
     get
     {
-      if (_Element?.Gfxdata?.Value != null)
-        return Convert.FromBase64String(_ExistingElement.Gfxdata.Value);
-      return null;
+      return Base64BinaryConverter.GetValue(_Element?.Gfxdata);
     }
     set
     {
-      if (value != null)
-        _ExistingElement.Gfxdata = Convert.ToBase64String(value);
-      else
-        _ExistingElement.Gfxdata = null;
+      _ExistingElement.Gfxdata = Base64BinaryConverter.CreateBase64BinaryValue(value);
     }
   }
   
@@ -770,15 +825,18 @@ public partial class Arc: ModelElement<DXV.Arc>
   ///   Print Toggle
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? Print
+  public Boolean? Print
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.Print?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.Print = value;
+      else
+        _ExistingElement.Print = null;
     }
   }
   

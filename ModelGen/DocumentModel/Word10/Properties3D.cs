@@ -55,22 +55,11 @@ public partial class Properties3D: ModelElement<DXO10W.Properties3D>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10W.BevelTop>();
-      if (element != null)
-        return BevelTopConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW10.BevelTop,DXO10W.BevelTop>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10W.BevelTop>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BevelTopConverter.CreateOpenXmlElement<DXO10W.BevelTop>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW10.BevelTop,DXO10W.BevelTop>(value);
     }
   }
   
@@ -83,22 +72,11 @@ public partial class Properties3D: ModelElement<DXO10W.Properties3D>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10W.BevelBottom>();
-      if (element != null)
-        return BevelBottomConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW10.BevelBottom,DXO10W.BevelBottom>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10W.BevelBottom>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BevelBottomConverter.CreateOpenXmlElement<DXO10W.BevelBottom>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW10.BevelBottom,DXO10W.BevelBottom>(value);
     }
   }
   
@@ -111,22 +89,11 @@ public partial class Properties3D: ModelElement<DXO10W.Properties3D>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10W.ExtrusionColor>();
-      if (element != null)
-        return ExtrusionColorConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW10.ExtrusionColor,DXO10W.ExtrusionColor>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10W.ExtrusionColor>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtrusionColorConverter.CreateOpenXmlElement<DXO10W.ExtrusionColor>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW10.ExtrusionColor,DXO10W.ExtrusionColor>(value);
     }
   }
   
@@ -139,22 +106,11 @@ public partial class Properties3D: ModelElement<DXO10W.Properties3D>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10W.ContourColor>();
-      if (element != null)
-        return ContourColorConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW10.ContourColor,DXO10W.ContourColor>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10W.ContourColor>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ContourColorConverter.CreateOpenXmlElement<DXO10W.ContourColor>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW10.ContourColor,DXO10W.ContourColor>(value);
     }
   }
   

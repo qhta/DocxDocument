@@ -26,7 +26,7 @@ public partial class NonVisualShapeDrawingProperties: ModelElement<DXDCD.NonVisu
     set
     {
       if (value != null)
-        _ExistingElement.TextBox = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.TextBox = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.TextBox = null;
     }
@@ -41,22 +41,11 @@ public partial class NonVisualShapeDrawingProperties: ModelElement<DXDCD.NonVisu
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.ShapeLocks>();
-      if (element != null)
-        return ShapeLocksConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.ShapeLocks,DXD.ShapeLocks>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.ShapeLocks>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ShapeLocksConverter.CreateOpenXmlElement<DXD.ShapeLocks>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.ShapeLocks,DXD.ShapeLocks>(value);
     }
   }
   
@@ -69,22 +58,11 @@ public partial class NonVisualShapeDrawingProperties: ModelElement<DXDCD.NonVisu
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.ExtensionList>();
-      if (element != null)
-        return ExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.ExtensionList,DXD.ExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.ExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DXD.ExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.ExtensionList,DXD.ExtensionList>(value);
     }
   }
   

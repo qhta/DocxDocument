@@ -62,8 +62,9 @@ public class ReadWriteTest : ReadTest
           {
             var val = item.Value;
             Output.WriteLine($"  {item.Name}: {val.ToDumpString()}");
-            var newCustomProperty = (CustomProperty)item.Clone();
-            targetDocument.ExistingCustomProperties.Add(newCustomProperty);
+            var newCustomProperty = (CustomProperty?)item.Clone();
+            if (newCustomProperty != null)
+              targetDocument.ExistingCustomProperties.Add(newCustomProperty);
           }
       }
     }

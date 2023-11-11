@@ -34,22 +34,11 @@ public partial class TextOutlineEffect: ModelElement<DXO10W.TextOutlineEffect>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10W.NoFillEmpty>();
-      if (element != null)
-        return NoFillEmptyConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW10.NoFillEmpty,DXO10W.NoFillEmpty>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10W.NoFillEmpty>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NoFillEmptyConverter.CreateOpenXmlElement<DXO10W.NoFillEmpty>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW10.NoFillEmpty,DXO10W.NoFillEmpty>(value);
     }
   }
   
@@ -58,22 +47,11 @@ public partial class TextOutlineEffect: ModelElement<DXO10W.TextOutlineEffect>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10W.SolidColorFillProperties>();
-      if (element != null)
-        return SolidColorFillPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW10.SolidColorFillProperties,DXO10W.SolidColorFillProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10W.SolidColorFillProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SolidColorFillPropertiesConverter.CreateOpenXmlElement<DXO10W.SolidColorFillProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW10.SolidColorFillProperties,DXO10W.SolidColorFillProperties>(value);
     }
   }
   
@@ -82,22 +60,11 @@ public partial class TextOutlineEffect: ModelElement<DXO10W.TextOutlineEffect>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10W.GradientFillProperties>();
-      if (element != null)
-        return GradientFillPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW10.GradientFillProperties,DXO10W.GradientFillProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10W.GradientFillProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = GradientFillPropertiesConverter.CreateOpenXmlElement<DXO10W.GradientFillProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW10.GradientFillProperties,DXO10W.GradientFillProperties>(value);
     }
   }
   
@@ -129,22 +96,11 @@ public partial class TextOutlineEffect: ModelElement<DXO10W.TextOutlineEffect>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10W.RoundEmpty>();
-      if (element != null)
-        return RoundEmptyConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW10.RoundEmpty,DXO10W.RoundEmpty>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10W.RoundEmpty>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RoundEmptyConverter.CreateOpenXmlElement<DXO10W.RoundEmpty>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW10.RoundEmpty,DXO10W.RoundEmpty>(value);
     }
   }
   
@@ -153,22 +109,11 @@ public partial class TextOutlineEffect: ModelElement<DXO10W.TextOutlineEffect>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10W.BevelEmpty>();
-      if (element != null)
-        return BevelEmptyConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW10.BevelEmpty,DXO10W.BevelEmpty>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10W.BevelEmpty>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BevelEmptyConverter.CreateOpenXmlElement<DXO10W.BevelEmpty>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW10.BevelEmpty,DXO10W.BevelEmpty>(value);
     }
   }
   
@@ -177,22 +122,11 @@ public partial class TextOutlineEffect: ModelElement<DXO10W.TextOutlineEffect>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10W.LineJoinMiterProperties>();
-      if (element != null)
-        return LineJoinMiterPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW10.LineJoinMiterProperties,DXO10W.LineJoinMiterProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10W.LineJoinMiterProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LineJoinMiterPropertiesConverter.CreateOpenXmlElement<DXO10W.LineJoinMiterProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW10.LineJoinMiterProperties,DXO10W.LineJoinMiterProperties>(value);
     }
   }
   

@@ -21,22 +21,11 @@ public partial class DataLabelsRange: ModelElement<DXO13DC.DataLabelsRange>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13DC.Formula>();
-      if (element != null)
-        return FormulaConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC13.Formula,DXO13DC.Formula>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13DC.Formula>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FormulaConverter.CreateOpenXmlElement<DXO13DC.Formula>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC13.Formula,DXO13DC.Formula>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class DataLabelsRange: ModelElement<DXO13DC.DataLabelsRange>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13DC.DataLabelsRangeChache>();
-      if (element != null)
-        return DataLabelsRangeChacheConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC13.DataLabelsRangeChache,DXO13DC.DataLabelsRangeChache>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13DC.DataLabelsRangeChache>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DataLabelsRangeChacheConverter.CreateOpenXmlElement<DXO13DC.DataLabelsRangeChache>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC13.DataLabelsRangeChache,DXO13DC.DataLabelsRangeChache>(value);
     }
   }
   

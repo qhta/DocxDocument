@@ -21,22 +21,11 @@ public partial class TableCellMargin: ModelElement<DXW.TableCellMargin>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.TopMargin>();
-      if (element != null)
-        return TopMarginConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.TopMargin,DXW.TopMargin>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.TopMargin>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TopMarginConverter.CreateOpenXmlElement<DXW.TopMargin>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.TopMargin,DXW.TopMargin>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class TableCellMargin: ModelElement<DXW.TableCellMargin>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.LeftMargin>();
-      if (element != null)
-        return LeftMarginConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.LeftMargin,DXW.LeftMargin>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.LeftMargin>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LeftMarginConverter.CreateOpenXmlElement<DXW.LeftMargin>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.LeftMargin,DXW.LeftMargin>(value);
     }
   }
   
@@ -77,22 +55,11 @@ public partial class TableCellMargin: ModelElement<DXW.TableCellMargin>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.StartMargin>();
-      if (element != null)
-        return StartMarginConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.StartMargin,DXW.StartMargin>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.StartMargin>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = StartMarginConverter.CreateOpenXmlElement<DXW.StartMargin>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.StartMargin,DXW.StartMargin>(value);
     }
   }
   
@@ -105,22 +72,11 @@ public partial class TableCellMargin: ModelElement<DXW.TableCellMargin>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.BottomMargin>();
-      if (element != null)
-        return BottomMarginConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.BottomMargin,DXW.BottomMargin>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.BottomMargin>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BottomMarginConverter.CreateOpenXmlElement<DXW.BottomMargin>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.BottomMargin,DXW.BottomMargin>(value);
     }
   }
   
@@ -133,22 +89,11 @@ public partial class TableCellMargin: ModelElement<DXW.TableCellMargin>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.RightMargin>();
-      if (element != null)
-        return RightMarginConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.RightMargin,DXW.RightMargin>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.RightMargin>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RightMarginConverter.CreateOpenXmlElement<DXW.RightMargin>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.RightMargin,DXW.RightMargin>(value);
     }
   }
   
@@ -161,22 +106,11 @@ public partial class TableCellMargin: ModelElement<DXW.TableCellMargin>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.EndMargin>();
-      if (element != null)
-        return EndMarginConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.EndMargin,DXW.EndMargin>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.EndMargin>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EndMarginConverter.CreateOpenXmlElement<DXW.EndMargin>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.EndMargin,DXW.EndMargin>(value);
     }
   }
   

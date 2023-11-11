@@ -17,15 +17,18 @@ public partial class StrokeChildType: ModelElement<DXVO.StrokeChildType>
   ///   Stroke Toggle
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? On
+  public Boolean? On
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.On?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.On = value;
+      else
+        _ExistingElement.On = null;
     }
   }
   
@@ -136,15 +139,18 @@ public partial class StrokeChildType: ModelElement<DXVO.StrokeChildType>
   ///   Inset Border From Path
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? InsetPen
+  public Boolean? InsetPen
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.InsetPen?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.InsetPen = value;
+      else
+        _ExistingElement.InsetPen = null;
     }
   }
   
@@ -187,15 +193,18 @@ public partial class StrokeChildType: ModelElement<DXVO.StrokeChildType>
   ///   Stoke Image Alignment
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? ImageAlignShape
+  public Boolean? ImageAlignShape
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.ImageAlignShape?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.ImageAlignShape = value;
+      else
+        _ExistingElement.ImageAlignShape = null;
     }
   }
   
@@ -255,15 +264,18 @@ public partial class StrokeChildType: ModelElement<DXVO.StrokeChildType>
   ///   Force Dashed Outline
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? ForceDash
+  public Boolean? ForceDash
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.ForceDash?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.ForceDash = value;
+      else
+        _ExistingElement.ForceDash = null;
     }
   }
   

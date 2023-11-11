@@ -25,7 +25,7 @@ public partial class NumberingProperties: ModelElement<DXW.NumberingProperties>
     }
     set
     {
-      SimpleValueConverter.SetValue<DXW.NumberingLevelReference,System.Int32>(openXmlElement, value);
+      SimpleValueConverter.SetValue<DXW.NumberingLevelReference,System.Int32>(_ExistingElement, value);
     }
   }
   
@@ -38,22 +38,11 @@ public partial class NumberingProperties: ModelElement<DXW.NumberingProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.NumberingId>();
-      if (element != null)
-        return NumberingIdConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.NumberingId,DXW.NumberingId>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.NumberingId>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NumberingIdConverter.CreateOpenXmlElement<DXW.NumberingId>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.NumberingId,DXW.NumberingId>(value);
     }
   }
   
@@ -66,22 +55,11 @@ public partial class NumberingProperties: ModelElement<DXW.NumberingProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.NumberingChange>();
-      if (element != null)
-        return NumberingChangeConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.NumberingChange,DXW.NumberingChange>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.NumberingChange>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NumberingChangeConverter.CreateOpenXmlElement<DXW.NumberingChange>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.NumberingChange,DXW.NumberingChange>(value);
     }
   }
   
@@ -94,22 +72,11 @@ public partial class NumberingProperties: ModelElement<DXW.NumberingProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.Inserted>();
-      if (element != null)
-        return InsertedConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.Inserted,DXW.Inserted>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Inserted>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = InsertedConverter.CreateOpenXmlElement<DXW.Inserted>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.Inserted,DXW.Inserted>(value);
     }
   }
   

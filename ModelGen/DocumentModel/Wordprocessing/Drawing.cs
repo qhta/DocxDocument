@@ -21,22 +21,11 @@ public partial class Drawing: ModelElement<DXW.Drawing>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDW.Anchor>();
-      if (element != null)
-        return AnchorConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDW.Anchor,DXDW.Anchor>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDW.Anchor>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = AnchorConverter.CreateOpenXmlElement<DXDW.Anchor>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDW.Anchor,DXDW.Anchor>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class Drawing: ModelElement<DXW.Drawing>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDW.Inline>();
-      if (element != null)
-        return InlineConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDW.Inline,DXDW.Inline>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDW.Inline>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = InlineConverter.CreateOpenXmlElement<DXDW.Inline>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDW.Inline,DXDW.Inline>(value);
     }
   }
   

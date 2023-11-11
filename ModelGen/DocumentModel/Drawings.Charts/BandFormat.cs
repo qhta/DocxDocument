@@ -21,22 +21,11 @@ public partial class BandFormat: ModelElement<DXDC.BandFormat>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.Index>();
-      if (element != null)
-        return IndexConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.Index,DXDC.Index>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.Index>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = IndexConverter.CreateOpenXmlElement<DXDC.Index>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.Index,DXDC.Index>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class BandFormat: ModelElement<DXDC.BandFormat>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.ChartShapeProperties>();
-      if (element != null)
-        return ChartShapePropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.ChartShapeProperties,DXDC.ChartShapeProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.ChartShapeProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ChartShapePropertiesConverter.CreateOpenXmlElement<DXDC.ChartShapeProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.ChartShapeProperties,DXDC.ChartShapeProperties>(value);
     }
   }
   

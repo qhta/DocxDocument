@@ -17,22 +17,22 @@ public partial class ShapeLayout : ModelElement<DXVO.ShapeLayout>
   [DataMember]
   public DMV.ShapeIdMap? ShapeIdMap
   {
-    get => _Element.GetObject<DMV.ShapeIdMap, DXVO.ShapeIdMap>(); 
-    set => _Element.SetObject<DMV.ShapeIdMap, DXVO.ShapeIdMap>(value); 
+    get => _Element?.GetObject<DMV.ShapeIdMap, DXVO.ShapeIdMap>(); 
+    set => _ExistingElement.SetObject<DMV.ShapeIdMap, DXVO.ShapeIdMap>(value); 
   }
 
   [DataMember]
   public DMV.Rules? Rules
   {
-    get => _Element.GetObject<DMV.Rules, DXVO.Rules>(); 
-    set => _Element.SetObject<DMV.Rules, DXVO.Rules>(value); 
+    get => _Element?.GetObject<DMV.Rules, DXVO.Rules>(); 
+    set => _ExistingElement.SetObject<DMV.Rules, DXVO.Rules>(value); 
   }
 
   [DataMember]
   public DMV.RegroupTable? RegroupTable
   {
-    get => _Element.GetObject<DMV.RegroupTable, DXVO.RegroupTable>(); 
-    set => _Element.SetObject<DMV.RegroupTable, DXVO.RegroupTable>(value); 
+    get => _Element?.GetObject<DMV.RegroupTable, DXVO.RegroupTable>(); 
+    set => _ExistingElement.SetObject<DMV.RegroupTable, DXVO.RegroupTable>(value); 
   }
 
   /// <summary>
@@ -41,7 +41,7 @@ public partial class ShapeLayout : ModelElement<DXVO.ShapeLayout>
   [DataMember]
   public DMV.ExtensionHandlingBehaviorKind? Extension
   {
-    get => _Element.Extension?.GetEnumValue<DMV.ExtensionHandlingBehaviorKind, DXV.ExtensionHandlingBehaviorValues>();
-    set => _Element.Extension = EVU.SetEnumValue<DMV.ExtensionHandlingBehaviorKind, DXV.ExtensionHandlingBehaviorValues>(value);
+    get => _Element?.Extension?.GetEnumValue<DMV.ExtensionHandlingBehaviorKind, DXV.ExtensionHandlingBehaviorValues>();
+    set => _ExistingElement.Extension = EVU.SetEnumValue<DMV.ExtensionHandlingBehaviorKind, DXV.ExtensionHandlingBehaviorValues>(value);
   }
 }

@@ -19,8 +19,8 @@ public class MathProperties : ModelElement<DXM.MathProperties>
   [DataMember]
   public DMM.BreakBinaryOperatorKind? BreakBinary
   {
-    get => _Element.GetEnumVal<DMM.BreakBinaryOperatorKind, DXM.BreakBinary>();
-    set => _Element.SetEnumVal<DMM.BreakBinaryOperatorKind, DXM.BreakBinary>(value);
+    get => _Element?.GetEnumVal<DMM.BreakBinaryOperatorKind, DXM.BreakBinary>();
+    set => _ExistingElement.SetEnumVal<DMM.BreakBinaryOperatorKind, DXM.BreakBinary>(value);
   }
 
   /// <summary>
@@ -30,8 +30,8 @@ public class MathProperties : ModelElement<DXM.MathProperties>
   [DataMember]
   public DMM.BreakBinarySubtractionKind? BreakBinarySubtraction
   {
-    get => _Element.GetEnumVal<DMM.BreakBinarySubtractionKind, DXM.BreakBinarySubtraction>();
-    set => _Element.SetEnumVal<DMM.BreakBinarySubtractionKind, DXM.BreakBinarySubtraction>(value);
+    get => _Element?.GetEnumVal<DMM.BreakBinarySubtractionKind, DXM.BreakBinarySubtraction>();
+    set => _ExistingElement.SetEnumVal<DMM.BreakBinarySubtractionKind, DXM.BreakBinarySubtraction>(value);
   }
 
   /// <summary>
@@ -41,8 +41,8 @@ public class MathProperties : ModelElement<DXM.MathProperties>
   [DataMember]
   public string? MathFont
   {
-    get => _Element.GetStringVal<DXM.MathFont>();
-    set => _Element.SetStringVal<DXM.MathFont>(value);
+    get => _Element?.GetStringVal<DXM.MathFont>();
+    set => _ExistingElement.SetStringVal<DXM.MathFont>(value);
   }
 
   /// <summary>
@@ -54,8 +54,8 @@ public class MathProperties : ModelElement<DXM.MathProperties>
   [DataMember]
   public bool? SmallFraction
   {
-    get => _Element.GetBoolVal<DXM.SmallFraction>();
-    set => _Element.SetBoolVal<DXM.SmallFraction>(value);
+    get => _Element?.GetBoolVal<DXM.SmallFraction>();
+    set => _ExistingElement.SetBoolVal<DXM.SmallFraction>(value);
   }
 
   /// <summary>
@@ -67,8 +67,8 @@ public class MathProperties : ModelElement<DXM.MathProperties>
   [DataMember]
   public bool? DisplayDefaults
   {
-    get => _Element.GetBoolVal<DXM.DisplayDefaults>();
-    set => _Element.SetBoolVal<DXM.DisplayDefaults>(value);
+    get => _Element?.GetBoolVal<DXM.DisplayDefaults>();
+    set => _ExistingElement.SetBoolVal<DXM.DisplayDefaults>(value);
   }
 
   /// <summary>
@@ -80,8 +80,8 @@ public class MathProperties : ModelElement<DXM.MathProperties>
   [DataMember]
   public Twips? LeftMargin
   {
-    get => _Element.GetTwipsVal<DXM.LeftMargin>();
-    set => _Element.SetTwipsVal<DXM.LeftMargin>(value);
+    get => _Element?.GetTwipsVal<DXM.LeftMargin>();
+    set => _ExistingElement.SetTwipsVal<DXM.LeftMargin>(value);
   }
 
   /// <summary>
@@ -96,8 +96,8 @@ public class MathProperties : ModelElement<DXM.MathProperties>
   [DataMember]
   public Twips? RightMargin
   {
-    get => _Element.GetTwipsVal<DXM.RightMargin>();
-    set => _Element.SetTwipsVal<DXM.RightMargin>(value);
+    get => _Element?.GetTwipsVal<DXM.RightMargin>();
+    set => _ExistingElement.SetTwipsVal<DXM.RightMargin>(value);
   }
 
   /// <summary>
@@ -115,8 +115,8 @@ public class MathProperties : ModelElement<DXM.MathProperties>
   [DataMember]
   public DMM.JustificationKind? DefaultJustification
   {
-    get => _Element.GetEnumVal<DMM.JustificationKind, DXM.DefaultJustification>();
-    set => _Element.SetEnumVal<DMM.JustificationKind, DXM.DefaultJustification>(value);
+    get => _Element?.GetEnumVal<DMM.JustificationKind, DXM.DefaultJustification>();
+    set => _ExistingElement.SetEnumVal<DMM.JustificationKind, DXM.DefaultJustification>(value);
   }
 
   /// <summary>
@@ -125,8 +125,8 @@ public class MathProperties : ModelElement<DXM.MathProperties>
   [DataMember]
   public Twips? PreSpacing
   {
-    get => _Element.GetTwipsVal<DXM.PreSpacing>();
-    set => _Element.SetTwipsVal<DXM.PreSpacing>(value);
+    get => _Element?.GetTwipsVal<DXM.PreSpacing>();
+    set => _ExistingElement.SetTwipsVal<DXM.PreSpacing>(value);
   }
 
   /// <summary>
@@ -135,8 +135,8 @@ public class MathProperties : ModelElement<DXM.MathProperties>
   [DataMember]
   public Twips? PostSpacing
   {
-    get => _Element.GetTwipsVal<DXM.PostSpacing>();
-    set => _Element.SetTwipsVal<DXM.PostSpacing>(value);
+    get => _Element?.GetTwipsVal<DXM.PostSpacing>();
+    set => _ExistingElement.SetTwipsVal<DXM.PostSpacing>(value);
   }
 
   /// <summary>
@@ -146,8 +146,8 @@ public class MathProperties : ModelElement<DXM.MathProperties>
   [DataMember]
   public Twips? InterSpacing
   {
-    get => _Element.GetTwipsVal<DXM.InterSpacing>();
-    set => _Element.SetTwipsVal<DXM.InterSpacing>(value);
+    get => _Element?.GetTwipsVal<DXM.InterSpacing>();
+    set => _ExistingElement.SetTwipsVal<DXM.InterSpacing>(value);
   }
 
   /// <summary>
@@ -156,8 +156,8 @@ public class MathProperties : ModelElement<DXM.MathProperties>
   [DataMember]
   public Twips? IntraSpacing
   {
-    get => _Element.GetTwipsVal<DXM.IntraSpacing>();
-    set => _Element.SetTwipsVal<DXM.IntraSpacing>(value);
+    get => _Element?.GetTwipsVal<DXM.IntraSpacing>();
+    set => _ExistingElement.SetTwipsVal<DXM.IntraSpacing>(value);
   }
 
   /// <summary>
@@ -175,8 +175,8 @@ public class MathProperties : ModelElement<DXM.MathProperties>
   [DataMember]
   public DMM.LimitLocationKind? IntegralLimitLocation
   {
-    get => _Element.GetEnumVal<DMM.LimitLocationKind, DXM.IntegralLimitLocation>();
-    set => _Element.SetEnumVal<DMM.LimitLocationKind, DXM.IntegralLimitLocation>(value);
+    get => _Element?.GetEnumVal<DMM.LimitLocationKind, DXM.IntegralLimitLocation>();
+    set => _ExistingElement.SetEnumVal<DMM.LimitLocationKind, DXM.IntegralLimitLocation>(value);
   }
 
   /// <summary>
@@ -194,8 +194,8 @@ public class MathProperties : ModelElement<DXM.MathProperties>
   [DataMember]
   public DMM.LimitLocationKind? NaryLimitLocation
   {
-    get => _Element.GetEnumVal<DMM.LimitLocationKind, DXM.NaryLimitLocation>();
-    set => _Element.SetEnumVal<DMM.LimitLocationKind, DXM.NaryLimitLocation>(value);
+    get => _Element?.GetEnumVal<DMM.LimitLocationKind, DXM.NaryLimitLocation>();
+    set => _ExistingElement.SetEnumVal<DMM.LimitLocationKind, DXM.NaryLimitLocation>(value);
   }
 
   /// <summary>
@@ -207,8 +207,8 @@ public class MathProperties : ModelElement<DXM.MathProperties>
   [DataMember]
   public bool? WrapRight
   {
-    get => _Element.GetBoolVal<DXM.WrapRight>();
-    set => _Element.SetBoolVal<DXM.WrapRight>(value);
+    get => _Element?.GetBoolVal<DXM.WrapRight>();
+    set => _ExistingElement.SetBoolVal<DXM.WrapRight>(value);
   }
 
   /// <summary>
@@ -221,8 +221,8 @@ public class MathProperties : ModelElement<DXM.MathProperties>
   [DataMember]
   public Twips? WrapIndent
   {
-    get => _Element.GetTwipsVal<DXM.WrapIndent>();
-    set => _Element.SetTwipsVal<DXM.WrapIndent>(value);
+    get => _Element?.GetTwipsVal<DXM.WrapIndent>();
+    set => _ExistingElement.SetTwipsVal<DXM.WrapIndent>(value);
   }
 
 }

@@ -34,22 +34,11 @@ public partial class DLblExtension: ModelElement<DXDC.DLblExtension>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13DC.DataLabelFieldTable>();
-      if (element != null)
-        return DataLabelFieldTableConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC13.DataLabelFieldTable,DXO13DC.DataLabelFieldTable>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13DC.DataLabelFieldTable>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DataLabelFieldTableConverter.CreateOpenXmlElement<DXO13DC.DataLabelFieldTable>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC13.DataLabelFieldTable,DXO13DC.DataLabelFieldTable>(value);
     }
   }
   
@@ -58,22 +47,11 @@ public partial class DLblExtension: ModelElement<DXDC.DLblExtension>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13DC.ExceptionForSave>();
-      if (element != null)
-        return ExceptionForSaveConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC13.ExceptionForSave,DXO13DC.ExceptionForSave>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13DC.ExceptionForSave>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExceptionForSaveConverter.CreateOpenXmlElement<DXO13DC.ExceptionForSave>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC13.ExceptionForSave,DXO13DC.ExceptionForSave>(value);
     }
   }
   
@@ -82,22 +60,11 @@ public partial class DLblExtension: ModelElement<DXDC.DLblExtension>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13DC.ShowDataLabelsRange>();
-      if (element != null)
-        return ShowDataLabelsRangeConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC13.ShowDataLabelsRange,DXO13DC.ShowDataLabelsRange>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13DC.ShowDataLabelsRange>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ShowDataLabelsRangeConverter.CreateOpenXmlElement<DXO13DC.ShowDataLabelsRange>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC13.ShowDataLabelsRange,DXO13DC.ShowDataLabelsRange>(value);
     }
   }
   
@@ -106,22 +73,11 @@ public partial class DLblExtension: ModelElement<DXDC.DLblExtension>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13DC.ShapeProperties>();
-      if (element != null)
-        return ShapePropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC13.ShapeProperties,DXO13DC.ShapeProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13DC.ShapeProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ShapePropertiesConverter.CreateOpenXmlElement<DXO13DC.ShapeProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC13.ShapeProperties,DXO13DC.ShapeProperties>(value);
     }
   }
   
@@ -130,22 +86,11 @@ public partial class DLblExtension: ModelElement<DXDC.DLblExtension>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13DC.Layout>();
-      if (element != null)
-        return LayoutConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC13.Layout,DXO13DC.Layout>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13DC.Layout>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LayoutConverter.CreateOpenXmlElement<DXO13DC.Layout>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC13.Layout,DXO13DC.Layout>(value);
     }
   }
   

@@ -26,7 +26,7 @@ public partial class GradientFill: ModelElement<DXD.GradientFill>
     set
     {
       if (value != null)
-        _ExistingElement.RotateWithShape = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.RotateWithShape = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.RotateWithShape = null;
     }
@@ -41,22 +41,11 @@ public partial class GradientFill: ModelElement<DXD.GradientFill>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.GradientStopList>();
-      if (element != null)
-        return GradientStopListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.GradientStopList,DXD.GradientStopList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.GradientStopList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = GradientStopListConverter.CreateOpenXmlElement<DXD.GradientStopList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.GradientStopList,DXD.GradientStopList>(value);
     }
   }
   
@@ -65,22 +54,11 @@ public partial class GradientFill: ModelElement<DXD.GradientFill>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.LinearGradientFill>();
-      if (element != null)
-        return LinearGradientFillConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.LinearGradientFill,DXD.LinearGradientFill>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.LinearGradientFill>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LinearGradientFillConverter.CreateOpenXmlElement<DXD.LinearGradientFill>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.LinearGradientFill,DXD.LinearGradientFill>(value);
     }
   }
   
@@ -89,22 +67,11 @@ public partial class GradientFill: ModelElement<DXD.GradientFill>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.PathGradientFill>();
-      if (element != null)
-        return PathGradientFillConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.PathGradientFill,DXD.PathGradientFill>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.PathGradientFill>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PathGradientFillConverter.CreateOpenXmlElement<DXD.PathGradientFill>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.PathGradientFill,DXD.PathGradientFill>(value);
     }
   }
   
@@ -113,22 +80,11 @@ public partial class GradientFill: ModelElement<DXD.GradientFill>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.TileRectangle>();
-      if (element != null)
-        return TileRectangleConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.TileRectangle,DXD.TileRectangle>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.TileRectangle>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TileRectangleConverter.CreateOpenXmlElement<DXD.TileRectangle>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.TileRectangle,DXD.TileRectangle>(value);
     }
   }
   

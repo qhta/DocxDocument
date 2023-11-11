@@ -34,22 +34,11 @@ public partial class ScatterChartExtension: ModelElement<DXDC.ScatterChartExtens
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13DC.FilteredScatterSeries>();
-      if (element != null)
-        return FilteredScatterSeriesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC13.FilteredScatterSeries,DXO13DC.FilteredScatterSeries>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13DC.FilteredScatterSeries>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FilteredScatterSeriesConverter.CreateOpenXmlElement<DXO13DC.FilteredScatterSeries>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC13.FilteredScatterSeries,DXO13DC.FilteredScatterSeries>(value);
     }
   }
   

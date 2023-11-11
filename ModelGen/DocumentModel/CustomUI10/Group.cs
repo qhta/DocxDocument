@@ -315,7 +315,7 @@ public partial class Group: ModelElement<DXO10CUI.Group>
     set
     {
       if (value != null)
-        _ExistingElement.Visible = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.Visible = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.Visible = null;
     }
@@ -386,7 +386,7 @@ public partial class Group: ModelElement<DXO10CUI.Group>
     set
     {
       if (value != null)
-        _ExistingElement.AutoScale = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.AutoScale = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.AutoScale = null;
     }
@@ -406,7 +406,7 @@ public partial class Group: ModelElement<DXO10CUI.Group>
     set
     {
       if (value != null)
-        _ExistingElement.CenterVertically = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.CenterVertically = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.CenterVertically = null;
     }
@@ -417,22 +417,11 @@ public partial class Group: ModelElement<DXO10CUI.Group>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10CUI.DialogBoxLauncher>();
-      if (element != null)
-        return DialogBoxLauncherConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMCUI10.DialogBoxLauncher,DXO10CUI.DialogBoxLauncher>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10CUI.DialogBoxLauncher>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DialogBoxLauncherConverter.CreateOpenXmlElement<DXO10CUI.DialogBoxLauncher>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMCUI10.DialogBoxLauncher,DXO10CUI.DialogBoxLauncher>(value);
     }
   }
   

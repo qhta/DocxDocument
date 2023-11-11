@@ -21,22 +21,11 @@ public partial class LightRig: ModelElement<DXO10W.LightRig>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10W.SphereCoordinates>();
-      if (element != null)
-        return SphereCoordinatesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW10.SphereCoordinates,DXO10W.SphereCoordinates>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10W.SphereCoordinates>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SphereCoordinatesConverter.CreateOpenXmlElement<DXO10W.SphereCoordinates>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW10.SphereCoordinates,DXO10W.SphereCoordinates>(value);
     }
   }
   

@@ -21,22 +21,11 @@ public partial class RelativeWidth: ModelElement<DXO10WD.RelativeWidth>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10WD.PercentageWidth>();
-      if (element != null)
-        return PercentageWidthConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMWD.PercentageWidth,DXO10WD.PercentageWidth>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10WD.PercentageWidth>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PercentageWidthConverter.CreateOpenXmlElement<DXO10WD.PercentageWidth>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMWD.PercentageWidth,DXO10WD.PercentageWidth>(value);
     }
   }
   

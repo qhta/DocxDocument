@@ -170,15 +170,18 @@ public partial class ImageData: ModelElement<DXV.ImageData>
   ///   Image Grayscale Toggle
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? Grayscale
+  public Boolean? Grayscale
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.Grayscale?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.Grayscale = value;
+      else
+        _ExistingElement.Grayscale = null;
     }
   }
   
@@ -187,15 +190,18 @@ public partial class ImageData: ModelElement<DXV.ImageData>
   ///   Image Bilevel Toggle
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? BiLevel
+  public Boolean? BiLevel
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.BiLevel?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.BiLevel = value;
+      else
+        _ExistingElement.BiLevel = null;
     }
   }
   
@@ -255,15 +261,18 @@ public partial class ImageData: ModelElement<DXV.ImageData>
   ///   Detect Mouse Click
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? DetectMouseClick
+  public Boolean? DetectMouseClick
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.DetectMouseClick?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.DetectMouseClick = value;
+      else
+        _ExistingElement.DetectMouseClick = null;
     }
   }
   

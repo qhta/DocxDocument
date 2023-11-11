@@ -21,22 +21,11 @@ public partial class QuickAccessToolbar: ModelElement<DXOCUI.QuickAccessToolbar>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXOCUI.SharedQatControls>();
-      if (element != null)
-        return SharedQatControlsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMCUI.SharedQatControls,DXOCUI.SharedQatControls>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXOCUI.SharedQatControls>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SharedQatControlsConverter.CreateOpenXmlElement<DXOCUI.SharedQatControls>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMCUI.SharedQatControls,DXOCUI.SharedQatControls>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class QuickAccessToolbar: ModelElement<DXOCUI.QuickAccessToolbar>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXOCUI.DocumentSpecificQuickAccessToolbarControls>();
-      if (element != null)
-        return DocumentSpecificQuickAccessToolbarControlsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMCUI.DocumentSpecificQuickAccessToolbarControls,DXOCUI.DocumentSpecificQuickAccessToolbarControls>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXOCUI.DocumentSpecificQuickAccessToolbarControls>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DocumentSpecificQuickAccessToolbarControlsConverter.CreateOpenXmlElement<DXOCUI.DocumentSpecificQuickAccessToolbarControls>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMCUI.DocumentSpecificQuickAccessToolbarControls,DXOCUI.DocumentSpecificQuickAccessToolbarControls>(value);
     }
   }
   

@@ -17,15 +17,18 @@ public partial class Proxy: ModelElement<DXVO.Proxy>
   ///   Start Point Connection Flag
   /// </summary>
   [DataMember]
-  public DM.TrueFalseBlankValue? Start
+  public Boolean? Start
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseBlankValue>()?.Val);
+      return _Element?.Start?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseBlankValue,DocumentFormat.OpenXml.TrueFalseBlankValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.Start = value;
+      else
+        _ExistingElement.Start = null;
     }
   }
   
@@ -34,15 +37,18 @@ public partial class Proxy: ModelElement<DXVO.Proxy>
   ///   End Point Connection Flag
   /// </summary>
   [DataMember]
-  public DM.TrueFalseBlankValue? End
+  public Boolean? End
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseBlankValue>()?.Val);
+      return _Element?.End?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseBlankValue,DocumentFormat.OpenXml.TrueFalseBlankValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.End = value;
+      else
+        _ExistingElement.End = null;
     }
   }
   

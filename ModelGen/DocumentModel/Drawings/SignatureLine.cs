@@ -26,7 +26,7 @@ public partial class SignatureLine: ModelElement<DXO13D.SignatureLine>
     set
     {
       if (value != null)
-        _ExistingElement.IsSignatureLine = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.IsSignatureLine = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.IsSignatureLine = null;
     }
@@ -80,7 +80,7 @@ public partial class SignatureLine: ModelElement<DXO13D.SignatureLine>
     set
     {
       if (value != null)
-        _ExistingElement.SigningInstructionsSet = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.SigningInstructionsSet = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.SigningInstructionsSet = null;
     }
@@ -100,7 +100,7 @@ public partial class SignatureLine: ModelElement<DXO13D.SignatureLine>
     set
     {
       if (value != null)
-        _ExistingElement.AllowComments = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.AllowComments = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.AllowComments = null;
     }
@@ -120,7 +120,7 @@ public partial class SignatureLine: ModelElement<DXO13D.SignatureLine>
     set
     {
       if (value != null)
-        _ExistingElement.ShowSignDate = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.ShowSignDate = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.ShowSignDate = null;
     }

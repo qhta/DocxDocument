@@ -34,22 +34,11 @@ public partial class ShapePropertiesExtension: ModelElement<DXD.ShapePropertiesE
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10D.HiddenFillProperties>();
-      if (element != null)
-        return HiddenFillPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD10.HiddenFillProperties,DXO10D.HiddenFillProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10D.HiddenFillProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = HiddenFillPropertiesConverter.CreateOpenXmlElement<DXO10D.HiddenFillProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD10.HiddenFillProperties,DXO10D.HiddenFillProperties>(value);
     }
   }
   
@@ -58,22 +47,11 @@ public partial class ShapePropertiesExtension: ModelElement<DXD.ShapePropertiesE
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10D.HiddenLineProperties>();
-      if (element != null)
-        return HiddenLinePropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD10.HiddenLineProperties,DXO10D.HiddenLineProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10D.HiddenLineProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = HiddenLinePropertiesConverter.CreateOpenXmlElement<DXO10D.HiddenLineProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD10.HiddenLineProperties,DXO10D.HiddenLineProperties>(value);
     }
   }
   
@@ -82,22 +60,11 @@ public partial class ShapePropertiesExtension: ModelElement<DXD.ShapePropertiesE
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10D.HiddenEffectsProperties>();
-      if (element != null)
-        return HiddenEffectsPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD10.HiddenEffectsProperties,DXO10D.HiddenEffectsProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10D.HiddenEffectsProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = HiddenEffectsPropertiesConverter.CreateOpenXmlElement<DXO10D.HiddenEffectsProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD10.HiddenEffectsProperties,DXO10D.HiddenEffectsProperties>(value);
     }
   }
   
@@ -106,22 +73,11 @@ public partial class ShapePropertiesExtension: ModelElement<DXD.ShapePropertiesE
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10D.HiddenScene3D>();
-      if (element != null)
-        return HiddenScene3DConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD10.HiddenScene3D,DXO10D.HiddenScene3D>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10D.HiddenScene3D>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = HiddenScene3DConverter.CreateOpenXmlElement<DXO10D.HiddenScene3D>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD10.HiddenScene3D,DXO10D.HiddenScene3D>(value);
     }
   }
   
@@ -130,22 +86,11 @@ public partial class ShapePropertiesExtension: ModelElement<DXD.ShapePropertiesE
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10D.HiddenShape3D>();
-      if (element != null)
-        return HiddenShape3DConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD10.HiddenShape3D,DXO10D.HiddenShape3D>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10D.HiddenShape3D>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = HiddenShape3DConverter.CreateOpenXmlElement<DXO10D.HiddenShape3D>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD10.HiddenShape3D,DXO10D.HiddenShape3D>(value);
     }
   }
   

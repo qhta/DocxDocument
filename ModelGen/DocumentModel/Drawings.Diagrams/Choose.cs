@@ -34,22 +34,11 @@ public partial class Choose: ModelElement<DXDDD.Choose>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDDD.DiagramChooseElse>();
-      if (element != null)
-        return DiagramChooseElseConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDD.DiagramChooseElse,DXDDD.DiagramChooseElse>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDDD.DiagramChooseElse>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DiagramChooseElseConverter.CreateOpenXmlElement<DXDDD.DiagramChooseElse>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDD.DiagramChooseElse,DXDDD.DiagramChooseElse>(value);
     }
   }
   

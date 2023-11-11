@@ -17,22 +17,11 @@ public partial class BackstageGroups: ModelElement<DXO10CUI.BackstageGroups>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10CUI.TaskFormGroup>();
-      if (element != null)
-        return TaskFormGroupConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMCUI10.TaskFormGroup,DXO10CUI.TaskFormGroup>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10CUI.TaskFormGroup>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TaskFormGroupConverter.CreateOpenXmlElement<DXO10CUI.TaskFormGroup>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMCUI10.TaskFormGroup,DXO10CUI.TaskFormGroup>(value);
     }
   }
   

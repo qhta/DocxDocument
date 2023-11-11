@@ -34,22 +34,11 @@ public partial class RadarChartExtension: ModelElement<DXDC.RadarChartExtension>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13DC.FilteredRadarSeries>();
-      if (element != null)
-        return FilteredRadarSeriesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC13.FilteredRadarSeries,DXO13DC.FilteredRadarSeries>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13DC.FilteredRadarSeries>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FilteredRadarSeriesConverter.CreateOpenXmlElement<DXO13DC.FilteredRadarSeries>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC13.FilteredRadarSeries,DXO13DC.FilteredRadarSeries>(value);
     }
   }
   

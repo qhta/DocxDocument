@@ -108,6 +108,24 @@ public class NamespaceConfigViewModel : VisibleViewModel
     +": "+ string.Join(", ",DuplicatedTypes.Select(item=>item.Key));
 
   [DataGridColumn(
+    HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.ExcludedTargetNamespace),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.ExcludedTargetNamespaceTooltip)
+    )]
+  public bool TargetExcluded
+  {
+    get { return _TargetExcluded; }
+    set
+    {
+      if (_TargetExcluded != value)
+      {
+        _TargetExcluded = value;
+        NotifyPropertyChanged(nameof(TargetExcluded));
+      }
+    }
+  }
+  private bool _TargetExcluded;
+
+  [DataGridColumn(
     HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.TargetShortcut),
     HeaderTooltipResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.TargetShortcutTooltip)
     )]

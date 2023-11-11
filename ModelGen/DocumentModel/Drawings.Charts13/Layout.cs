@@ -21,22 +21,11 @@ public partial class Layout: ModelElement<DXO13DC.Layout>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.ManualLayout>();
-      if (element != null)
-        return ManualLayoutConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.ManualLayout,DXDC.ManualLayout>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.ManualLayout>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ManualLayoutConverter.CreateOpenXmlElement<DXDC.ManualLayout>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.ManualLayout,DXDC.ManualLayout>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class Layout: ModelElement<DXO13DC.Layout>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.ExtensionList>();
-      if (element != null)
-        return ExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.ExtensionList,DXDC.ExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.ExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DXDC.ExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.ExtensionList,DXDC.ExtensionList>(value);
     }
   }
   

@@ -51,22 +51,11 @@ public partial class Person: ModelElement<DXO13W.Person>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13W.PresenceInfo>();
-      if (element != null)
-        return PresenceInfoConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW13.PresenceInfo,DXO13W.PresenceInfo>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13W.PresenceInfo>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PresenceInfoConverter.CreateOpenXmlElement<DXO13W.PresenceInfo>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW13.PresenceInfo,DXO13W.PresenceInfo>(value);
     }
   }
   

@@ -21,22 +21,11 @@ public partial class QuickAccessToolbar: ModelElement<DXO10CUI.QuickAccessToolba
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10CUI.SharedControlsQatItems>();
-      if (element != null)
-        return SharedControlsQatItemsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMCUI10.SharedControlsQatItems,DXO10CUI.SharedControlsQatItems>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10CUI.SharedControlsQatItems>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SharedControlsQatItemsConverter.CreateOpenXmlElement<DXO10CUI.SharedControlsQatItems>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMCUI10.SharedControlsQatItems,DXO10CUI.SharedControlsQatItems>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class QuickAccessToolbar: ModelElement<DXO10CUI.QuickAccessToolba
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10CUI.DocumentControlsQatItems>();
-      if (element != null)
-        return DocumentControlsQatItemsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMCUI10.DocumentControlsQatItems,DXO10CUI.DocumentControlsQatItems>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10CUI.DocumentControlsQatItems>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DocumentControlsQatItemsConverter.CreateOpenXmlElement<DXO10CUI.DocumentControlsQatItems>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMCUI10.DocumentControlsQatItems,DXO10CUI.DocumentControlsQatItems>(value);
     }
   }
   

@@ -17,22 +17,11 @@ public partial class LineDefault: ModelElement<DXD.LineDefault>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.ShapeProperties>();
-      if (element != null)
-        return ShapePropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.ShapeProperties,DXD.ShapeProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.ShapeProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ShapePropertiesConverter.CreateOpenXmlElement<DXD.ShapeProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.ShapeProperties,DXD.ShapeProperties>(value);
     }
   }
   
@@ -41,22 +30,11 @@ public partial class LineDefault: ModelElement<DXD.LineDefault>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.BodyProperties>();
-      if (element != null)
-        return BodyPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.BodyProperties,DXD.BodyProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.BodyProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BodyPropertiesConverter.CreateOpenXmlElement<DXD.BodyProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.BodyProperties,DXD.BodyProperties>(value);
     }
   }
   
@@ -65,22 +43,11 @@ public partial class LineDefault: ModelElement<DXD.LineDefault>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.ListStyle>();
-      if (element != null)
-        return ListStyleConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.ListStyle,DXD.ListStyle>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.ListStyle>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ListStyleConverter.CreateOpenXmlElement<DXD.ListStyle>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.ListStyle,DXD.ListStyle>(value);
     }
   }
   
@@ -89,22 +56,11 @@ public partial class LineDefault: ModelElement<DXD.LineDefault>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.ShapeStyle>();
-      if (element != null)
-        return ShapeStyleConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.ShapeStyle,DXD.ShapeStyle>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.ShapeStyle>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ShapeStyleConverter.CreateOpenXmlElement<DXD.ShapeStyle>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.ShapeStyle,DXD.ShapeStyle>(value);
     }
   }
   
@@ -113,22 +69,11 @@ public partial class LineDefault: ModelElement<DXD.LineDefault>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.ExtensionList>();
-      if (element != null)
-        return ExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.ExtensionList,DXD.ExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.ExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DXD.ExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.ExtensionList,DXD.ExtensionList>(value);
     }
   }
   

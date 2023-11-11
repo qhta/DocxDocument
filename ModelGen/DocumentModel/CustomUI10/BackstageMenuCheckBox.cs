@@ -145,7 +145,7 @@ public partial class BackstageMenuCheckBox: ModelElement<DXO10CUI.BackstageMenuC
     set
     {
       if (value != null)
-        _ExistingElement.Enabled = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.Enabled = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.Enabled = null;
     }
@@ -216,7 +216,7 @@ public partial class BackstageMenuCheckBox: ModelElement<DXO10CUI.BackstageMenuC
     set
     {
       if (value != null)
-        _ExistingElement.Visible = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.Visible = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.Visible = null;
     }

@@ -32,7 +32,8 @@ global using DX = DocumentFormat.OpenXml;
 //global using DXCustXmlDataProps = DocumentFormat.OpenXml.CustomXmlDataProperties;
 //global using DXCustXmlSchRefs = DocumentFormat.OpenXml.CustomXmlSchemaReferences;
 //global using DXDraw = DocumentFormat.OpenXml.Drawing;
-//global using DXDrawChartDraw = DocumentFormat.OpenXml.Drawing.ChartDrawing;
+//global using DXDrawChartDraw = DocumentFormat.OpenXml.Drawing.Chart
+
 //global using DXDrawCharts = DocumentFormat.OpenXml.Drawing.Charts;
 //global using DXDrawDgms = DocumentFormat.OpenXml.Drawing.Diagrams;
 //global using DXDrawLegComp = DocumentFormat.OpenXml.Drawing.LegacyCompatibility;

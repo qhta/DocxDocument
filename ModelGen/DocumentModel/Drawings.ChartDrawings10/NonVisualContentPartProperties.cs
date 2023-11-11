@@ -21,22 +21,11 @@ public partial class NonVisualContentPartProperties: ModelElement<DXO10DCD.NonVi
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10DCD.NonVisualDrawingProperties>();
-      if (element != null)
-        return NonVisualDrawingPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD10.NonVisualDrawingProperties,DXO10DCD.NonVisualDrawingProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10DCD.NonVisualDrawingProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NonVisualDrawingPropertiesConverter.CreateOpenXmlElement<DXO10DCD.NonVisualDrawingProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD10.NonVisualDrawingProperties,DXO10DCD.NonVisualDrawingProperties>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class NonVisualContentPartProperties: ModelElement<DXO10DCD.NonVi
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10DCD.NonVisualInkContentPartProperties>();
-      if (element != null)
-        return NonVisualInkContentPartPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD10.NonVisualInkContentPartProperties,DXO10DCD.NonVisualInkContentPartProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10DCD.NonVisualInkContentPartProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NonVisualInkContentPartPropertiesConverter.CreateOpenXmlElement<DXO10DCD.NonVisualInkContentPartProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD10.NonVisualInkContentPartProperties,DXO10DCD.NonVisualInkContentPartProperties>(value);
     }
   }
   

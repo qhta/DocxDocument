@@ -38,22 +38,11 @@ public partial class ValueColorPositions: ModelElement<DXO16DCD.ValueColorPositi
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.MinValueColorEndPosition>();
-      if (element != null)
-        return MinValueColorEndPositionConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.MinValueColorEndPosition,DXO16DCD.MinValueColorEndPosition>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.MinValueColorEndPosition>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = MinValueColorEndPositionConverter.CreateOpenXmlElement<DXO16DCD.MinValueColorEndPosition>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.MinValueColorEndPosition,DXO16DCD.MinValueColorEndPosition>(value);
     }
   }
   
@@ -66,22 +55,11 @@ public partial class ValueColorPositions: ModelElement<DXO16DCD.ValueColorPositi
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.ValueColorMiddlePosition>();
-      if (element != null)
-        return ValueColorMiddlePositionConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.ValueColorMiddlePosition,DXO16DCD.ValueColorMiddlePosition>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.ValueColorMiddlePosition>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ValueColorMiddlePositionConverter.CreateOpenXmlElement<DXO16DCD.ValueColorMiddlePosition>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.ValueColorMiddlePosition,DXO16DCD.ValueColorMiddlePosition>(value);
     }
   }
   
@@ -94,22 +72,11 @@ public partial class ValueColorPositions: ModelElement<DXO16DCD.ValueColorPositi
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.MaxValueColorEndPosition>();
-      if (element != null)
-        return MaxValueColorEndPositionConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.MaxValueColorEndPosition,DXO16DCD.MaxValueColorEndPosition>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.MaxValueColorEndPosition>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = MaxValueColorEndPositionConverter.CreateOpenXmlElement<DXO16DCD.MaxValueColorEndPosition>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.MaxValueColorEndPosition,DXO16DCD.MaxValueColorEndPosition>(value);
     }
   }
   

@@ -21,22 +21,11 @@ public partial class RadicalProperties: ModelElement<DXM.RadicalProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.HideDegree>();
-      if (element != null)
-        return HideDegreeConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.HideDegree,DXM.HideDegree>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.HideDegree>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = HideDegreeConverter.CreateOpenXmlElement<DXM.HideDegree>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.HideDegree,DXM.HideDegree>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class RadicalProperties: ModelElement<DXM.RadicalProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.ControlProperties>();
-      if (element != null)
-        return ControlPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.ControlProperties,DXM.ControlProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.ControlProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ControlPropertiesConverter.CreateOpenXmlElement<DXM.ControlProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.ControlProperties,DXM.ControlProperties>(value);
     }
   }
   

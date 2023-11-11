@@ -60,7 +60,7 @@ public partial class GalleryRegular: ModelElement<DXO10CUI.GalleryRegular>
     set
     {
       if (value != null)
-        _ExistingElement.InvalidateContentOnDrop = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.InvalidateContentOnDrop = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.InvalidateContentOnDrop = null;
     }
@@ -182,7 +182,7 @@ public partial class GalleryRegular: ModelElement<DXO10CUI.GalleryRegular>
     set
     {
       if (value != null)
-        _ExistingElement.ShowItemLabel = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.ShowItemLabel = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.ShowItemLabel = null;
     }
@@ -219,7 +219,7 @@ public partial class GalleryRegular: ModelElement<DXO10CUI.GalleryRegular>
     set
     {
       if (value != null)
-        _ExistingElement.Enabled = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.Enabled = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.Enabled = null;
     }
@@ -307,7 +307,7 @@ public partial class GalleryRegular: ModelElement<DXO10CUI.GalleryRegular>
     set
     {
       if (value != null)
-        _ExistingElement.ShowItemImage = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.ShowItemImage = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.ShowItemImage = null;
     }
@@ -718,7 +718,7 @@ public partial class GalleryRegular: ModelElement<DXO10CUI.GalleryRegular>
     set
     {
       if (value != null)
-        _ExistingElement.Visible = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.Visible = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.Visible = null;
     }
@@ -789,7 +789,7 @@ public partial class GalleryRegular: ModelElement<DXO10CUI.GalleryRegular>
     set
     {
       if (value != null)
-        _ExistingElement.ShowLabel = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.ShowLabel = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.ShowLabel = null;
     }
@@ -826,7 +826,7 @@ public partial class GalleryRegular: ModelElement<DXO10CUI.GalleryRegular>
     set
     {
       if (value != null)
-        _ExistingElement.ShowImage = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.ShowImage = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.ShowImage = null;
     }

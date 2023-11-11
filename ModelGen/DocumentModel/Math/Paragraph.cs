@@ -21,22 +21,11 @@ public partial class Paragraph: ModelElement<DXM.Paragraph>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.ParagraphProperties>();
-      if (element != null)
-        return ParagraphPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.ParagraphProperties,DXM.ParagraphProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.ParagraphProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ParagraphPropertiesConverter.CreateOpenXmlElement<DXM.ParagraphProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.ParagraphProperties,DXM.ParagraphProperties>(value);
     }
   }
   

@@ -21,22 +21,11 @@ public partial class MarkerType: ModelElement<DXDCD.MarkerType>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDCD.XPosition>();
-      if (element != null)
-        return XPositionConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD.XPosition,DXDCD.XPosition>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDCD.XPosition>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = XPositionConverter.CreateOpenXmlElement<DXDCD.XPosition>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD.XPosition,DXDCD.XPosition>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class MarkerType: ModelElement<DXDCD.MarkerType>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDCD.YPosition>();
-      if (element != null)
-        return YPositionConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD.YPosition,DXDCD.YPosition>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDCD.YPosition>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = YPositionConverter.CreateOpenXmlElement<DXDCD.YPosition>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD.YPosition,DXDCD.YPosition>(value);
     }
   }
   

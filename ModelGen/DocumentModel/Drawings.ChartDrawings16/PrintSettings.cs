@@ -21,22 +21,11 @@ public partial class PrintSettings: ModelElement<DXO16DCD.PrintSettings>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.HeaderFooter>();
-      if (element != null)
-        return HeaderFooterConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.HeaderFooter,DXO16DCD.HeaderFooter>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.HeaderFooter>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = HeaderFooterConverter.CreateOpenXmlElement<DXO16DCD.HeaderFooter>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.HeaderFooter,DXO16DCD.HeaderFooter>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class PrintSettings: ModelElement<DXO16DCD.PrintSettings>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.PageMargins>();
-      if (element != null)
-        return PageMarginsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.PageMargins,DXO16DCD.PageMargins>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.PageMargins>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PageMarginsConverter.CreateOpenXmlElement<DXO16DCD.PageMargins>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.PageMargins,DXO16DCD.PageMargins>(value);
     }
   }
   
@@ -77,22 +55,11 @@ public partial class PrintSettings: ModelElement<DXO16DCD.PrintSettings>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.PageSetup>();
-      if (element != null)
-        return PageSetupConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.PageSetup,DXO16DCD.PageSetup>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.PageSetup>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PageSetupConverter.CreateOpenXmlElement<DXO16DCD.PageSetup>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.PageSetup,DXO16DCD.PageSetup>(value);
     }
   }
   

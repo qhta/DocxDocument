@@ -21,22 +21,11 @@ public partial class TableStyleConditionalFormattingTableCellProperties: ModelEl
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.TableCellBorders>();
-      if (element != null)
-        return TableCellBordersConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.TableCellBorders,DXW.TableCellBorders>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.TableCellBorders>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TableCellBordersConverter.CreateOpenXmlElement<DXW.TableCellBorders>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.TableCellBorders,DXW.TableCellBorders>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class TableStyleConditionalFormattingTableCellProperties: ModelEl
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.Shading>();
-      if (element != null)
-        return ShadingConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.Shading,DXW.Shading>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Shading>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ShadingConverter.CreateOpenXmlElement<DXW.Shading>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.Shading,DXW.Shading>(value);
     }
   }
   
@@ -77,22 +55,11 @@ public partial class TableStyleConditionalFormattingTableCellProperties: ModelEl
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.NoWrap>();
-      if (element != null)
-        return NoWrapConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.NoWrap,DXW.NoWrap>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.NoWrap>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NoWrapConverter.CreateOpenXmlElement<DXW.NoWrap>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.NoWrap,DXW.NoWrap>(value);
     }
   }
   
@@ -105,22 +72,11 @@ public partial class TableStyleConditionalFormattingTableCellProperties: ModelEl
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.TableCellMargin>();
-      if (element != null)
-        return TableCellMarginConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.TableCellMargin,DXW.TableCellMargin>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.TableCellMargin>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TableCellMarginConverter.CreateOpenXmlElement<DXW.TableCellMargin>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.TableCellMargin,DXW.TableCellMargin>(value);
     }
   }
   

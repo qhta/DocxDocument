@@ -17,22 +17,11 @@ public partial class Table: ModelElement<DXW.Table>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.TableProperties>();
-      if (element != null)
-        return TablePropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.TableProperties,DXW.TableProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.TableProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TablePropertiesConverter.CreateOpenXmlElement<DXW.TableProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.TableProperties,DXW.TableProperties>(value);
     }
   }
   
@@ -41,22 +30,11 @@ public partial class Table: ModelElement<DXW.Table>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.TableGrid>();
-      if (element != null)
-        return TableGridConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.TableGrid,DXW.TableGrid>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.TableGrid>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TableGridConverter.CreateOpenXmlElement<DXW.TableGrid>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.TableGrid,DXW.TableGrid>(value);
     }
   }
   

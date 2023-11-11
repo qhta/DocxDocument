@@ -21,22 +21,11 @@ public partial class LegendEntry: ModelElement<DXDC.LegendEntry>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.Index>();
-      if (element != null)
-        return IndexConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.Index,DXDC.Index>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.Index>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = IndexConverter.CreateOpenXmlElement<DXDC.Index>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.Index,DXDC.Index>(value);
     }
   }
   
@@ -45,22 +34,11 @@ public partial class LegendEntry: ModelElement<DXDC.LegendEntry>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.Delete>();
-      if (element != null)
-        return DeleteConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.Delete,DXDC.Delete>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.Delete>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DeleteConverter.CreateOpenXmlElement<DXDC.Delete>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.Delete,DXDC.Delete>(value);
     }
   }
   
@@ -69,22 +47,11 @@ public partial class LegendEntry: ModelElement<DXDC.LegendEntry>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.TextProperties>();
-      if (element != null)
-        return TextPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.TextProperties,DXDC.TextProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.TextProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TextPropertiesConverter.CreateOpenXmlElement<DXDC.TextProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.TextProperties,DXDC.TextProperties>(value);
     }
   }
   
@@ -93,22 +60,11 @@ public partial class LegendEntry: ModelElement<DXDC.LegendEntry>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.ExtensionList>();
-      if (element != null)
-        return ExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.ExtensionList,DXDC.ExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.ExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DXDC.ExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.ExtensionList,DXDC.ExtensionList>(value);
     }
   }
   

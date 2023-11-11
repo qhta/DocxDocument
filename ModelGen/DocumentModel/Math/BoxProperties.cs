@@ -21,22 +21,11 @@ public partial class BoxProperties: ModelElement<DXM.BoxProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.OperatorEmulator>();
-      if (element != null)
-        return OperatorEmulatorConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.OperatorEmulator,DXM.OperatorEmulator>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.OperatorEmulator>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = OperatorEmulatorConverter.CreateOpenXmlElement<DXM.OperatorEmulator>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.OperatorEmulator,DXM.OperatorEmulator>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class BoxProperties: ModelElement<DXM.BoxProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.NoBreak>();
-      if (element != null)
-        return NoBreakConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.NoBreak,DXM.NoBreak>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.NoBreak>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NoBreakConverter.CreateOpenXmlElement<DXM.NoBreak>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.NoBreak,DXM.NoBreak>(value);
     }
   }
   
@@ -77,22 +55,11 @@ public partial class BoxProperties: ModelElement<DXM.BoxProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.Differential>();
-      if (element != null)
-        return DifferentialConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.Differential,DXM.Differential>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.Differential>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DifferentialConverter.CreateOpenXmlElement<DXM.Differential>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.Differential,DXM.Differential>(value);
     }
   }
   
@@ -105,22 +72,11 @@ public partial class BoxProperties: ModelElement<DXM.BoxProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.Break>();
-      if (element != null)
-        return BreakConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.Break,DXM.Break>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.Break>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BreakConverter.CreateOpenXmlElement<DXM.Break>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.Break,DXM.Break>(value);
     }
   }
   
@@ -133,22 +89,11 @@ public partial class BoxProperties: ModelElement<DXM.BoxProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.Alignment>();
-      if (element != null)
-        return AlignmentConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.Alignment,DXM.Alignment>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.Alignment>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = AlignmentConverter.CreateOpenXmlElement<DXM.Alignment>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.Alignment,DXM.Alignment>(value);
     }
   }
   
@@ -161,22 +106,11 @@ public partial class BoxProperties: ModelElement<DXM.BoxProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.ControlProperties>();
-      if (element != null)
-        return ControlPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.ControlProperties,DXM.ControlProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.ControlProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ControlPropertiesConverter.CreateOpenXmlElement<DXM.ControlProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.ControlProperties,DXM.ControlProperties>(value);
     }
   }
   

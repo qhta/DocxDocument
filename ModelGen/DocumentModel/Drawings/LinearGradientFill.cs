@@ -43,7 +43,7 @@ public partial class LinearGradientFill: ModelElement<DXD.LinearGradientFill>
     set
     {
       if (value != null)
-        _ExistingElement.Scaled = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.Scaled = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.Scaled = null;
     }

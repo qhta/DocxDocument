@@ -38,16 +38,11 @@ public partial class SymbolChar: ModelElement<DXW.SymbolChar>
   {
     get
     {
-      if (_Element?.Char?.Value != null)
-        return HexCharConverter.GetValue(_ExistingElement.Char.Value);
-      return null;
+      return Convert.FromHexString(_Element?.Char.Value);
     }
     set
     {
-      if (value != null)
-        _ExistingElement.Char = value.ToString();
-      else
-        _ExistingElement.Char = null;
+      _ExistingElement.Char = Convert.ToHexString(value);
     }
   }
   

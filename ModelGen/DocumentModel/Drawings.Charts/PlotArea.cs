@@ -21,22 +21,11 @@ public partial class PlotArea: ModelElement<DXDC.PlotArea>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.Layout>();
-      if (element != null)
-        return LayoutConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.Layout,DXDC.Layout>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.Layout>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LayoutConverter.CreateOpenXmlElement<DXDC.Layout>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.Layout,DXDC.Layout>(value);
     }
   }
   
@@ -45,22 +34,11 @@ public partial class PlotArea: ModelElement<DXDC.PlotArea>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.DataTable>();
-      if (element != null)
-        return DataTableConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.DataTable,DXDC.DataTable>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.DataTable>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DataTableConverter.CreateOpenXmlElement<DXDC.DataTable>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.DataTable,DXDC.DataTable>(value);
     }
   }
   
@@ -69,22 +47,11 @@ public partial class PlotArea: ModelElement<DXDC.PlotArea>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.ShapeProperties>();
-      if (element != null)
-        return ShapePropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.ShapeProperties,DXDC.ShapeProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.ShapeProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ShapePropertiesConverter.CreateOpenXmlElement<DXDC.ShapeProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.ShapeProperties,DXDC.ShapeProperties>(value);
     }
   }
   
@@ -93,22 +60,11 @@ public partial class PlotArea: ModelElement<DXDC.PlotArea>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.ExtensionList>();
-      if (element != null)
-        return ExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.ExtensionList,DXDC.ExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.ExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DXDC.ExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.ExtensionList,DXDC.ExtensionList>(value);
     }
   }
   

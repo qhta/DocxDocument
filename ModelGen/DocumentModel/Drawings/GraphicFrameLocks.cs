@@ -26,7 +26,7 @@ public partial class GraphicFrameLocks: ModelElement<DXD.GraphicFrameLocks>
     set
     {
       if (value != null)
-        _ExistingElement.NoGrouping = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.NoGrouping = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.NoGrouping = null;
     }
@@ -46,7 +46,7 @@ public partial class GraphicFrameLocks: ModelElement<DXD.GraphicFrameLocks>
     set
     {
       if (value != null)
-        _ExistingElement.NoDrilldown = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.NoDrilldown = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.NoDrilldown = null;
     }
@@ -66,7 +66,7 @@ public partial class GraphicFrameLocks: ModelElement<DXD.GraphicFrameLocks>
     set
     {
       if (value != null)
-        _ExistingElement.NoSelection = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.NoSelection = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.NoSelection = null;
     }
@@ -86,7 +86,7 @@ public partial class GraphicFrameLocks: ModelElement<DXD.GraphicFrameLocks>
     set
     {
       if (value != null)
-        _ExistingElement.NoChangeAspect = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.NoChangeAspect = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.NoChangeAspect = null;
     }
@@ -106,7 +106,7 @@ public partial class GraphicFrameLocks: ModelElement<DXD.GraphicFrameLocks>
     set
     {
       if (value != null)
-        _ExistingElement.NoMove = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.NoMove = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.NoMove = null;
     }
@@ -126,7 +126,7 @@ public partial class GraphicFrameLocks: ModelElement<DXD.GraphicFrameLocks>
     set
     {
       if (value != null)
-        _ExistingElement.NoResize = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.NoResize = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.NoResize = null;
     }
@@ -141,22 +141,11 @@ public partial class GraphicFrameLocks: ModelElement<DXD.GraphicFrameLocks>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.ExtensionList>();
-      if (element != null)
-        return ExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.ExtensionList,DXD.ExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.ExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DXD.ExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.ExtensionList,DXD.ExtensionList>(value);
     }
   }
   

@@ -21,22 +21,11 @@ public partial class PreSubSuper: ModelElement<DXM.PreSubSuper>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.PreSubSuperProperties>();
-      if (element != null)
-        return PreSubSuperPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.PreSubSuperProperties,DXM.PreSubSuperProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.PreSubSuperProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PreSubSuperPropertiesConverter.CreateOpenXmlElement<DXM.PreSubSuperProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.PreSubSuperProperties,DXM.PreSubSuperProperties>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class PreSubSuper: ModelElement<DXM.PreSubSuper>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.SubArgument>();
-      if (element != null)
-        return SubArgumentConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.SubArgument,DXM.SubArgument>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.SubArgument>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SubArgumentConverter.CreateOpenXmlElement<DXM.SubArgument>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.SubArgument,DXM.SubArgument>(value);
     }
   }
   
@@ -77,22 +55,11 @@ public partial class PreSubSuper: ModelElement<DXM.PreSubSuper>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.SuperArgument>();
-      if (element != null)
-        return SuperArgumentConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.SuperArgument,DXM.SuperArgument>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.SuperArgument>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SuperArgumentConverter.CreateOpenXmlElement<DXM.SuperArgument>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.SuperArgument,DXM.SuperArgument>(value);
     }
   }
   
@@ -105,22 +72,11 @@ public partial class PreSubSuper: ModelElement<DXM.PreSubSuper>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.Base>();
-      if (element != null)
-        return BaseConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.Base,DXM.Base>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.Base>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BaseConverter.CreateOpenXmlElement<DXM.Base>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.Base,DXM.Base>(value);
     }
   }
   

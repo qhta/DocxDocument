@@ -21,22 +21,11 @@ public partial class PrintSettings: ModelElement<DXDC.PrintSettings>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.HeaderFooter>();
-      if (element != null)
-        return HeaderFooterConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.HeaderFooter,DXDC.HeaderFooter>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.HeaderFooter>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = HeaderFooterConverter.CreateOpenXmlElement<DXDC.HeaderFooter>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.HeaderFooter,DXDC.HeaderFooter>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class PrintSettings: ModelElement<DXDC.PrintSettings>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.PageMargins>();
-      if (element != null)
-        return PageMarginsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.PageMargins,DXDC.PageMargins>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.PageMargins>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PageMarginsConverter.CreateOpenXmlElement<DXDC.PageMargins>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.PageMargins,DXDC.PageMargins>(value);
     }
   }
   
@@ -77,22 +55,11 @@ public partial class PrintSettings: ModelElement<DXDC.PrintSettings>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.PageSetup>();
-      if (element != null)
-        return PageSetupConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.PageSetup,DXDC.PageSetup>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.PageSetup>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PageSetupConverter.CreateOpenXmlElement<DXDC.PageSetup>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.PageSetup,DXDC.PageSetup>(value);
     }
   }
   
@@ -105,22 +72,11 @@ public partial class PrintSettings: ModelElement<DXDC.PrintSettings>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.LegacyDrawingHeaderFooter>();
-      if (element != null)
-        return LegacyDrawingHeaderFooterConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.LegacyDrawingHeaderFooter,DXDC.LegacyDrawingHeaderFooter>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.LegacyDrawingHeaderFooter>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LegacyDrawingHeaderFooterConverter.CreateOpenXmlElement<DXDC.LegacyDrawingHeaderFooter>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.LegacyDrawingHeaderFooter,DXDC.LegacyDrawingHeaderFooter>(value);
     }
   }
   

@@ -21,22 +21,11 @@ public partial class EquationArray: ModelElement<DXM.EquationArray>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.EquationArrayProperties>();
-      if (element != null)
-        return EquationArrayPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.EquationArrayProperties,DXM.EquationArrayProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.EquationArrayProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EquationArrayPropertiesConverter.CreateOpenXmlElement<DXM.EquationArrayProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.EquationArrayProperties,DXM.EquationArrayProperties>(value);
     }
   }
   

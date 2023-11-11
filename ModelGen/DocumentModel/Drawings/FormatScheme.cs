@@ -38,22 +38,11 @@ public partial class FormatScheme: ModelElement<DXD.FormatScheme>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.FillStyleList>();
-      if (element != null)
-        return FillStyleListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.FillStyleList,DXD.FillStyleList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.FillStyleList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FillStyleListConverter.CreateOpenXmlElement<DXD.FillStyleList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.FillStyleList,DXD.FillStyleList>(value);
     }
   }
   
@@ -66,22 +55,11 @@ public partial class FormatScheme: ModelElement<DXD.FormatScheme>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.LineStyleList>();
-      if (element != null)
-        return LineStyleListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.LineStyleList,DXD.LineStyleList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.LineStyleList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LineStyleListConverter.CreateOpenXmlElement<DXD.LineStyleList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.LineStyleList,DXD.LineStyleList>(value);
     }
   }
   
@@ -94,22 +72,11 @@ public partial class FormatScheme: ModelElement<DXD.FormatScheme>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.EffectStyleList>();
-      if (element != null)
-        return EffectStyleListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.EffectStyleList,DXD.EffectStyleList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.EffectStyleList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EffectStyleListConverter.CreateOpenXmlElement<DXD.EffectStyleList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.EffectStyleList,DXD.EffectStyleList>(value);
     }
   }
   
@@ -122,22 +89,11 @@ public partial class FormatScheme: ModelElement<DXD.FormatScheme>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.BackgroundFillStyleList>();
-      if (element != null)
-        return BackgroundFillStyleListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.BackgroundFillStyleList,DXD.BackgroundFillStyleList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.BackgroundFillStyleList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BackgroundFillStyleListConverter.CreateOpenXmlElement<DXD.BackgroundFillStyleList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.BackgroundFillStyleList,DXD.BackgroundFillStyleList>(value);
     }
   }
   

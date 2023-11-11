@@ -17,22 +17,11 @@ public partial class ParagraphProperties: ModelElement<DXD.ParagraphProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.LineSpacing>();
-      if (element != null)
-        return LineSpacingConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.LineSpacing,DXD.LineSpacing>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.LineSpacing>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LineSpacingConverter.CreateOpenXmlElement<DXD.LineSpacing>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.LineSpacing,DXD.LineSpacing>(value);
     }
   }
   
@@ -41,22 +30,11 @@ public partial class ParagraphProperties: ModelElement<DXD.ParagraphProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.SpaceBefore>();
-      if (element != null)
-        return SpaceBeforeConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.SpaceBefore,DXD.SpaceBefore>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.SpaceBefore>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SpaceBeforeConverter.CreateOpenXmlElement<DXD.SpaceBefore>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.SpaceBefore,DXD.SpaceBefore>(value);
     }
   }
   
@@ -65,22 +43,11 @@ public partial class ParagraphProperties: ModelElement<DXD.ParagraphProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.SpaceAfter>();
-      if (element != null)
-        return SpaceAfterConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.SpaceAfter,DXD.SpaceAfter>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.SpaceAfter>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SpaceAfterConverter.CreateOpenXmlElement<DXD.SpaceAfter>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.SpaceAfter,DXD.SpaceAfter>(value);
     }
   }
   
@@ -89,22 +56,11 @@ public partial class ParagraphProperties: ModelElement<DXD.ParagraphProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.BulletColorText>();
-      if (element != null)
-        return BulletColorTextConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.BulletColorText,DXD.BulletColorText>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.BulletColorText>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BulletColorTextConverter.CreateOpenXmlElement<DXD.BulletColorText>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.BulletColorText,DXD.BulletColorText>(value);
     }
   }
   
@@ -113,22 +69,11 @@ public partial class ParagraphProperties: ModelElement<DXD.ParagraphProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.BulletColor>();
-      if (element != null)
-        return BulletColorConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.BulletColor,DXD.BulletColor>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.BulletColor>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BulletColorConverter.CreateOpenXmlElement<DXD.BulletColor>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.BulletColor,DXD.BulletColor>(value);
     }
   }
   
@@ -137,22 +82,11 @@ public partial class ParagraphProperties: ModelElement<DXD.ParagraphProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.BulletSizeText>();
-      if (element != null)
-        return BulletSizeTextConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.BulletSizeText,DXD.BulletSizeText>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.BulletSizeText>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BulletSizeTextConverter.CreateOpenXmlElement<DXD.BulletSizeText>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.BulletSizeText,DXD.BulletSizeText>(value);
     }
   }
   
@@ -165,7 +99,7 @@ public partial class ParagraphProperties: ModelElement<DXD.ParagraphProperties>
     }
     set
     {
-      SimpleValueConverter.SetValue<DXD.BulletSizePercentage,System.Int32>(openXmlElement, value);
+      SimpleValueConverter.SetValue<DXD.BulletSizePercentage,System.Int32>(_ExistingElement, value);
     }
   }
   
@@ -178,7 +112,7 @@ public partial class ParagraphProperties: ModelElement<DXD.ParagraphProperties>
     }
     set
     {
-      SimpleValueConverter.SetValue<DXD.BulletSizePoints,System.Int32>(openXmlElement, value);
+      SimpleValueConverter.SetValue<DXD.BulletSizePoints,System.Int32>(_ExistingElement, value);
     }
   }
   
@@ -187,22 +121,11 @@ public partial class ParagraphProperties: ModelElement<DXD.ParagraphProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.BulletFontText>();
-      if (element != null)
-        return BulletFontTextConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.BulletFontText,DXD.BulletFontText>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.BulletFontText>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BulletFontTextConverter.CreateOpenXmlElement<DXD.BulletFontText>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.BulletFontText,DXD.BulletFontText>(value);
     }
   }
   
@@ -211,22 +134,11 @@ public partial class ParagraphProperties: ModelElement<DXD.ParagraphProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.BulletFont>();
-      if (element != null)
-        return BulletFontConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.BulletFont,DXD.BulletFont>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.BulletFont>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BulletFontConverter.CreateOpenXmlElement<DXD.BulletFont>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.BulletFont,DXD.BulletFont>(value);
     }
   }
   
@@ -235,22 +147,11 @@ public partial class ParagraphProperties: ModelElement<DXD.ParagraphProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.NoBullet>();
-      if (element != null)
-        return NoBulletConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.NoBullet,DXD.NoBullet>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.NoBullet>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NoBulletConverter.CreateOpenXmlElement<DXD.NoBullet>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.NoBullet,DXD.NoBullet>(value);
     }
   }
   
@@ -259,22 +160,11 @@ public partial class ParagraphProperties: ModelElement<DXD.ParagraphProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.AutoNumberedBullet>();
-      if (element != null)
-        return AutoNumberedBulletConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.AutoNumberedBullet,DXD.AutoNumberedBullet>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.AutoNumberedBullet>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = AutoNumberedBulletConverter.CreateOpenXmlElement<DXD.AutoNumberedBullet>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.AutoNumberedBullet,DXD.AutoNumberedBullet>(value);
     }
   }
   
@@ -283,22 +173,11 @@ public partial class ParagraphProperties: ModelElement<DXD.ParagraphProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.CharacterBullet>();
-      if (element != null)
-        return CharacterBulletConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.CharacterBullet,DXD.CharacterBullet>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.CharacterBullet>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = CharacterBulletConverter.CreateOpenXmlElement<DXD.CharacterBullet>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.CharacterBullet,DXD.CharacterBullet>(value);
     }
   }
   
@@ -307,22 +186,11 @@ public partial class ParagraphProperties: ModelElement<DXD.ParagraphProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.PictureBullet>();
-      if (element != null)
-        return PictureBulletConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.PictureBullet,DXD.PictureBullet>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.PictureBullet>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PictureBulletConverter.CreateOpenXmlElement<DXD.PictureBullet>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.PictureBullet,DXD.PictureBullet>(value);
     }
   }
   
@@ -331,22 +199,11 @@ public partial class ParagraphProperties: ModelElement<DXD.ParagraphProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.TabStopList>();
-      if (element != null)
-        return TabStopListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.TabStopList,DXD.TabStopList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.TabStopList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TabStopListConverter.CreateOpenXmlElement<DXD.TabStopList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.TabStopList,DXD.TabStopList>(value);
     }
   }
   
@@ -355,22 +212,11 @@ public partial class ParagraphProperties: ModelElement<DXD.ParagraphProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.DefaultRunProperties>();
-      if (element != null)
-        return DefaultRunPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.DefaultRunProperties,DXD.DefaultRunProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.DefaultRunProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DefaultRunPropertiesConverter.CreateOpenXmlElement<DXD.DefaultRunProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.DefaultRunProperties,DXD.DefaultRunProperties>(value);
     }
   }
   
@@ -379,22 +225,11 @@ public partial class ParagraphProperties: ModelElement<DXD.ParagraphProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.ExtensionList>();
-      if (element != null)
-        return ExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.ExtensionList,DXD.ExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.ExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DXD.ExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.ExtensionList,DXD.ExtensionList>(value);
     }
   }
   

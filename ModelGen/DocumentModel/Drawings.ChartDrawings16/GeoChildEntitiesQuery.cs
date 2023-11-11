@@ -38,22 +38,11 @@ public partial class GeoChildEntitiesQuery: ModelElement<DXO16DCD.GeoChildEntiti
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.GeoChildTypes>();
-      if (element != null)
-        return GeoChildTypesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.GeoChildTypes,DXO16DCD.GeoChildTypes>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.GeoChildTypes>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = GeoChildTypesConverter.CreateOpenXmlElement<DXO16DCD.GeoChildTypes>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.GeoChildTypes,DXO16DCD.GeoChildTypes>(value);
     }
   }
   

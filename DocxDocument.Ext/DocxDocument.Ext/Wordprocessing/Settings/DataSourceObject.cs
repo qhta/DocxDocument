@@ -39,7 +39,7 @@ public partial class DataSourceObject : ModelElement<DXW.DataSourceObject>
   public DMW.MailMergeSourceKind? MailMergeSource
   {
     get => _Element?.GetEnumVal<DMW.MailMergeSourceKind, DXW.MailMergeSource>();
-    set => _Element.SetEnumVal<DMW.MailMergeSourceKind, DXW.MailMergeSource>(value);
+    set => _ExistingElement.SetEnumVal<DMW.MailMergeSourceKind, DXW.MailMergeSource>(value);
   }
 
   /// <summary>
@@ -54,7 +54,7 @@ public partial class DataSourceObject : ModelElement<DXW.DataSourceObject>
   public DMW.FieldMapData? FieldMapData
   {
     get => _Element?.GetObject<DMW.FieldMapData, DXW.FieldMapData>();
-    set => _Element.SetObject<DMW.FieldMapData, DXW.FieldMapData>(value);
+    set => _ExistingElement.SetObject<DMW.FieldMapData, DXW.FieldMapData>(value);
   }
 
   /// <summary>
@@ -67,7 +67,7 @@ public partial class DataSourceObject : ModelElement<DXW.DataSourceObject>
   public bool? FirstRowHeader
   {
     get => _Element?.GetBoolVal<DXW.FirstRowHeader>();
-    set => _Element.SetBoolVal<DXW.FirstRowHeader>(value);
+    set => _ExistingElement.SetBoolVal<DXW.FirstRowHeader>(value);
   }
 
   /// <summary>
@@ -97,7 +97,7 @@ public partial class DataSourceObject : ModelElement<DXW.DataSourceObject>
   public Reference? SourceReference
   {
     get => _Element?.GetRefId<DXW.SourceReference>();
-    set => _Element.SetRefId<DXW.SourceReference>(value?.ToString());
+    set => _ExistingElement.SetRefId<DXW.SourceReference>(value?.ToString());
   }
 
   /// <summary>
@@ -121,7 +121,7 @@ public partial class DataSourceObject : ModelElement<DXW.DataSourceObject>
   public Reference? RecipientDataReference
   {
     get => _Element?.GetRefId<DXW.RecipientDataReference>();
-    set => _Element.SetRefId<DXW.RecipientDataReference>(value?.ToString());
+    set => _ExistingElement.SetRefId<DXW.RecipientDataReference>(value?.ToString());
   }
 
   /// <summary>
@@ -152,7 +152,7 @@ public partial class DataSourceObject : ModelElement<DXW.DataSourceObject>
   public string? UdlConnectionString
   {
     get => _Element?.GetStringVal<DXW.UdlConnectionString>();
-    set => _Element.SetStringVal<DXW.UdlConnectionString>(value);
+    set => _ExistingElement.SetStringVal<DXW.UdlConnectionString>(value);
   }
 
   /// <summary>
@@ -166,7 +166,7 @@ public partial class DataSourceObject : ModelElement<DXW.DataSourceObject>
   public string? DataSourceTableName
   {
     get => _Element?.GetStringVal<DXW.DataSourceTableName>();
-    set => _Element.SetStringVal<DXW.DataSourceTableName>(value);
+    set => _ExistingElement.SetStringVal<DXW.DataSourceTableName>(value);
   }
 
   /// <summary>
@@ -178,6 +178,6 @@ public partial class DataSourceObject : ModelElement<DXW.DataSourceObject>
   public UInt16? ColumnDelimiter
   {
     get => (UInt16?)_Element?.GetIntVal<DXW.DataSourceTableName>();
-    set => _Element.SetIntVal<DXW.DataSourceTableName>(value);
+    set => _ExistingElement.SetIntVal<DXW.DataSourceTableName>(value);
   }
 }

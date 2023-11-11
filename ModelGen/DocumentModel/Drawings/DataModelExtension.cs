@@ -34,22 +34,11 @@ public partial class DataModelExtension: ModelElement<DXD.DataModelExtension>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXOD.DataModelExtensionBlock>();
-      if (element != null)
-        return DataModelExtensionBlockConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDO.DataModelExtensionBlock,DXOD.DataModelExtensionBlock>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXOD.DataModelExtensionBlock>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DataModelExtensionBlockConverter.CreateOpenXmlElement<DXOD.DataModelExtensionBlock>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDO.DataModelExtensionBlock,DXOD.DataModelExtensionBlock>(value);
     }
   }
   

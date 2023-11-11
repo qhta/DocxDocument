@@ -51,22 +51,11 @@ public partial class Blip: ModelElement<DXD.Blip>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.BlipExtensionList>();
-      if (element != null)
-        return BlipExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.BlipExtensionList,DXD.BlipExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.BlipExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BlipExtensionListConverter.CreateOpenXmlElement<DXD.BlipExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.BlipExtensionList,DXD.BlipExtensionList>(value);
     }
   }
   

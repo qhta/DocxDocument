@@ -34,15 +34,18 @@ public partial class Diagram: ModelElement<DXVO.Diagram>
   ///   Diagram Automatic Format
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? AutoFormat
+  public Boolean? AutoFormat
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.AutoFormat?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.AutoFormat = value;
+      else
+        _ExistingElement.AutoFormat = null;
     }
   }
   
@@ -51,15 +54,18 @@ public partial class Diagram: ModelElement<DXVO.Diagram>
   ///   Diagram Reverse Direction
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? Reverse
+  public Boolean? Reverse
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.Reverse?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.Reverse = value;
+      else
+        _ExistingElement.Reverse = null;
     }
   }
   
@@ -68,15 +74,18 @@ public partial class Diagram: ModelElement<DXVO.Diagram>
   ///   Diagram Automatic Layout
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? AutoLayout
+  public Boolean? AutoLayout
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.AutoLayout?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.AutoLayout = value;
+      else
+        _ExistingElement.AutoLayout = null;
     }
   }
   
@@ -174,22 +183,11 @@ public partial class Diagram: ModelElement<DXVO.Diagram>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXVO.RelationTable>();
-      if (element != null)
-        return RelationTableConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMVML.RelationTable,DXVO.RelationTable>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXVO.RelationTable>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RelationTableConverter.CreateOpenXmlElement<DXVO.RelationTable>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMVML.RelationTable,DXVO.RelationTable>(value);
     }
   }
   

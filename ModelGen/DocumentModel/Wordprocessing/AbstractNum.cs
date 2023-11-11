@@ -38,22 +38,11 @@ public partial class AbstractNum: ModelElement<DXW.AbstractNum>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.Nsid>();
-      if (element != null)
-        return NsidConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.Nsid,DXW.Nsid>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Nsid>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NsidConverter.CreateOpenXmlElement<DXW.Nsid>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.Nsid,DXW.Nsid>(value);
     }
   }
   
@@ -93,22 +82,11 @@ public partial class AbstractNum: ModelElement<DXW.AbstractNum>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.TemplateCode>();
-      if (element != null)
-        return TemplateCodeConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.TemplateCode,DXW.TemplateCode>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.TemplateCode>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TemplateCodeConverter.CreateOpenXmlElement<DXW.TemplateCode>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.TemplateCode,DXW.TemplateCode>(value);
     }
   }
   
@@ -121,22 +99,11 @@ public partial class AbstractNum: ModelElement<DXW.AbstractNum>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.AbstractNumDefinitionName>();
-      if (element != null)
-        return AbstractNumDefinitionNameConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.AbstractNumDefinitionName,DXW.AbstractNumDefinitionName>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.AbstractNumDefinitionName>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = AbstractNumDefinitionNameConverter.CreateOpenXmlElement<DXW.AbstractNumDefinitionName>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.AbstractNumDefinitionName,DXW.AbstractNumDefinitionName>(value);
     }
   }
   
@@ -149,22 +116,11 @@ public partial class AbstractNum: ModelElement<DXW.AbstractNum>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.StyleLink>();
-      if (element != null)
-        return StyleLinkConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.StyleLink,DXW.StyleLink>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.StyleLink>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = StyleLinkConverter.CreateOpenXmlElement<DXW.StyleLink>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.StyleLink,DXW.StyleLink>(value);
     }
   }
   
@@ -177,22 +133,11 @@ public partial class AbstractNum: ModelElement<DXW.AbstractNum>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.NumberingStyleLink>();
-      if (element != null)
-        return NumberingStyleLinkConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.NumberingStyleLink,DXW.NumberingStyleLink>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.NumberingStyleLink>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NumberingStyleLinkConverter.CreateOpenXmlElement<DXW.NumberingStyleLink>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.NumberingStyleLink,DXW.NumberingStyleLink>(value);
     }
   }
   

@@ -21,22 +21,11 @@ public partial class Graphic: ModelElement<DXD.Graphic>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.GraphicData>();
-      if (element != null)
-        return GraphicDataConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.GraphicData,DXD.GraphicData>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.GraphicData>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = GraphicDataConverter.CreateOpenXmlElement<DXD.GraphicData>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.GraphicData,DXD.GraphicData>(value);
     }
   }
   

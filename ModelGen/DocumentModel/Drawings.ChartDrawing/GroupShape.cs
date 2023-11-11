@@ -21,22 +21,11 @@ public partial class GroupShape: ModelElement<DXDCD.GroupShape>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDCD.NonVisualGroupShapeProperties>();
-      if (element != null)
-        return NonVisualGroupShapePropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD.NonVisualGroupShapeProperties,DXDCD.NonVisualGroupShapeProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDCD.NonVisualGroupShapeProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NonVisualGroupShapePropertiesConverter.CreateOpenXmlElement<DXDCD.NonVisualGroupShapeProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD.NonVisualGroupShapeProperties,DXDCD.NonVisualGroupShapeProperties>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class GroupShape: ModelElement<DXDCD.GroupShape>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDCD.GroupShapeProperties>();
-      if (element != null)
-        return GroupShapePropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD.GroupShapeProperties,DXDCD.GroupShapeProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDCD.GroupShapeProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = GroupShapePropertiesConverter.CreateOpenXmlElement<DXDCD.GroupShapeProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD.GroupShapeProperties,DXDCD.GroupShapeProperties>(value);
     }
   }
   

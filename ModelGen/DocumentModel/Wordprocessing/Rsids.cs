@@ -21,22 +21,11 @@ public partial class Rsids: ModelElement<DXW.Rsids>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.RsidRoot>();
-      if (element != null)
-        return RsidRootConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.RsidRoot,DXW.RsidRoot>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.RsidRoot>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RsidRootConverter.CreateOpenXmlElement<DXW.RsidRoot>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.RsidRoot,DXW.RsidRoot>(value);
     }
   }
   

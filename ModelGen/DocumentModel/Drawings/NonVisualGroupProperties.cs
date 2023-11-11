@@ -26,7 +26,7 @@ public partial class NonVisualGroupProperties: ModelElement<DXO13D.NonVisualGrou
     set
     {
       if (value != null)
-        _ExistingElement.IsLegacyGroup = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.IsLegacyGroup = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.IsLegacyGroup = null;
     }

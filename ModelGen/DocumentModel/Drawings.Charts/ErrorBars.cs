@@ -102,22 +102,11 @@ public partial class ErrorBars: ModelElement<DXDC.ErrorBars>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.NoEndCap>();
-      if (element != null)
-        return NoEndCapConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.NoEndCap,DXDC.NoEndCap>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.NoEndCap>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NoEndCapConverter.CreateOpenXmlElement<DXDC.NoEndCap>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.NoEndCap,DXDC.NoEndCap>(value);
     }
   }
   
@@ -130,22 +119,11 @@ public partial class ErrorBars: ModelElement<DXDC.ErrorBars>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.Plus>();
-      if (element != null)
-        return PlusConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.Plus,DXDC.Plus>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.Plus>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PlusConverter.CreateOpenXmlElement<DXDC.Plus>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.Plus,DXDC.Plus>(value);
     }
   }
   
@@ -158,22 +136,11 @@ public partial class ErrorBars: ModelElement<DXDC.ErrorBars>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.Minus>();
-      if (element != null)
-        return MinusConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.Minus,DXDC.Minus>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.Minus>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = MinusConverter.CreateOpenXmlElement<DXDC.Minus>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.Minus,DXDC.Minus>(value);
     }
   }
   
@@ -186,22 +153,11 @@ public partial class ErrorBars: ModelElement<DXDC.ErrorBars>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.ErrorBarValue>();
-      if (element != null)
-        return ErrorBarValueConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.ErrorBarValue,DXDC.ErrorBarValue>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.ErrorBarValue>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ErrorBarValueConverter.CreateOpenXmlElement<DXDC.ErrorBarValue>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.ErrorBarValue,DXDC.ErrorBarValue>(value);
     }
   }
   
@@ -214,22 +170,11 @@ public partial class ErrorBars: ModelElement<DXDC.ErrorBars>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.ChartShapeProperties>();
-      if (element != null)
-        return ChartShapePropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.ChartShapeProperties,DXDC.ChartShapeProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.ChartShapeProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ChartShapePropertiesConverter.CreateOpenXmlElement<DXDC.ChartShapeProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.ChartShapeProperties,DXDC.ChartShapeProperties>(value);
     }
   }
   
@@ -242,22 +187,11 @@ public partial class ErrorBars: ModelElement<DXDC.ErrorBars>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.ExtensionList>();
-      if (element != null)
-        return ExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.ExtensionList,DXDC.ExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.ExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DXDC.ExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.ExtensionList,DXDC.ExtensionList>(value);
     }
   }
   

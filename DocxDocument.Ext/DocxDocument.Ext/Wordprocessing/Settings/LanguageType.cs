@@ -87,25 +87,27 @@ public partial class LanguageType: ModelElement, IOpenXmlElementMappedObject
 
   internal DXW.LanguageType _Element { get; private set; }
 
+  internal DXW.LanguageType _ExistingElement => _Element;
+
   [DataMember]
   public string? Val
   {
-    get => _Element.Val;
-    set => _Element.Val = value;
+    get => _Element?.Val;
+    set => _ExistingElement.Val = value;
   }
 
   [DataMember]
   public string? Bidi
   {
-    get => _Element.Bidi;
-    set => _Element.Bidi = value;
+    get => _Element?.Bidi;
+    set => _ExistingElement.Bidi = value;
   }
 
   [DataMember]
   public string? EastAsia
   {
-    get => _Element.EastAsia;
-    set => _Element.EastAsia = value;
+    get => _Element?.EastAsia;
+    set => _ExistingElement.EastAsia = value;
   }
 
 }

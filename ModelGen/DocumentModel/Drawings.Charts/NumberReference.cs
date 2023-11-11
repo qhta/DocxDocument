@@ -21,22 +21,11 @@ public partial class NumberReference: ModelElement<DXDC.NumberReference>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.Formula>();
-      if (element != null)
-        return FormulaConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.Formula,DXDC.Formula>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.Formula>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FormulaConverter.CreateOpenXmlElement<DXDC.Formula>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.Formula,DXDC.Formula>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class NumberReference: ModelElement<DXDC.NumberReference>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.NumberingCache>();
-      if (element != null)
-        return NumberingCacheConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.NumberingCache,DXDC.NumberingCache>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.NumberingCache>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NumberingCacheConverter.CreateOpenXmlElement<DXDC.NumberingCache>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.NumberingCache,DXDC.NumberingCache>(value);
     }
   }
   
@@ -77,22 +55,11 @@ public partial class NumberReference: ModelElement<DXDC.NumberReference>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.NumRefExtensionList>();
-      if (element != null)
-        return NumRefExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.NumRefExtensionList,DXDC.NumRefExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.NumRefExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NumRefExtensionListConverter.CreateOpenXmlElement<DXDC.NumRefExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.NumRefExtensionList,DXDC.NumRefExtensionList>(value);
     }
   }
   

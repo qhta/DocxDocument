@@ -45,7 +45,7 @@ public partial class MailMerge :  ModelElement<DXW.MailMerge>
   public int? ActiveRecord
   {
     get => _Element?.GetIntVal<DXW.ActiveRecord>();
-    set => _Element.SetIntVal<DXW.ActiveRecord>(value);
+    set => _ExistingElement.SetIntVal<DXW.ActiveRecord>(value);
   }
 
   /// <summary>
@@ -77,7 +77,7 @@ public partial class MailMerge :  ModelElement<DXW.MailMerge>
   public int? CheckErrors
   {
     get => _Element?.GetIntVal<DXW.CheckErrors>();
-    set => _Element.SetIntVal<DXW.CheckErrors>(value);
+    set => _ExistingElement.SetIntVal<DXW.CheckErrors>(value);
   }
 
   /// <summary>
@@ -91,7 +91,7 @@ public partial class MailMerge :  ModelElement<DXW.MailMerge>
   public DMW.MailMergeDataKind? DataType
   {
     get => _Element?.GetEnumVal<DMW.MailMergeDataKind, DXW.DataType>();
-    set => _Element.SetEnumVal<DMW.MailMergeDataKind, DXW.DataType>(value);
+    set => _ExistingElement.SetEnumVal<DMW.MailMergeDataKind, DXW.DataType>(value);
   }
 
   /// <summary>
@@ -104,7 +104,7 @@ public partial class MailMerge :  ModelElement<DXW.MailMerge>
   public DMW.MailMergeDestinationKind? Destination
   {
     get => _Element?.GetEnumVal<DMW.MailMergeDestinationKind, DXW.Destination>();
-    set => _Element.SetEnumVal<DMW.MailMergeDestinationKind, DXW.Destination>(value);
+    set => _ExistingElement.SetEnumVal<DMW.MailMergeDestinationKind, DXW.Destination>(value);
   }
 
   /// <summary>
@@ -126,7 +126,7 @@ public partial class MailMerge :  ModelElement<DXW.MailMerge>
   public DMW.MailMergeDocumentKind? MainDocumentType
   {
     get => _Element?.GetEnumVal<DMW.MailMergeDocumentKind, DXW.MainDocumentType>();
-    set => _Element.SetEnumVal<DMW.MailMergeDocumentKind, DXW.MainDocumentType>(value);
+    set => _ExistingElement.SetEnumVal<DMW.MailMergeDocumentKind, DXW.MainDocumentType>(value);
   }
 
   /// <summary>
@@ -153,7 +153,7 @@ public partial class MailMerge :  ModelElement<DXW.MailMerge>
   public DMW.DataSourceObject? DataSourceObject
   {
     get => _Element?.GetObject<DMW.DataSourceObject, DXW.DataSourceObject>();
-    set => _Element.SetObject<DMW.DataSourceObject, DXW.DataSourceObject>(value);
+    set => _ExistingElement.SetObject<DMW.DataSourceObject, DXW.DataSourceObject>(value);
   }
 
   ///   <item><description><see cref="DocumentFormat.OpenXml.Wordprocessing.DataSourceObject" /> <c>&lt;w:odso></c></description></item>

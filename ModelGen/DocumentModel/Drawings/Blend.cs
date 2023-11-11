@@ -21,22 +21,11 @@ public partial class Blend: ModelElement<DXD.Blend>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.EffectContainer>();
-      if (element != null)
-        return EffectContainerConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.EffectContainer,DXD.EffectContainer>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.EffectContainer>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EffectContainerConverter.CreateOpenXmlElement<DXD.EffectContainer>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.EffectContainer,DXD.EffectContainer>(value);
     }
   }
   

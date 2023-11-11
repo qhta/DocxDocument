@@ -94,7 +94,7 @@ public partial class Anchor: ModelElement<DXDW.Anchor>
     set
     {
       if (value != null)
-        _ExistingElement.SimplePos = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.SimplePos = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.SimplePos = null;
     }
@@ -131,7 +131,7 @@ public partial class Anchor: ModelElement<DXDW.Anchor>
     set
     {
       if (value != null)
-        _ExistingElement.BehindDoc = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.BehindDoc = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.BehindDoc = null;
     }
@@ -151,7 +151,7 @@ public partial class Anchor: ModelElement<DXDW.Anchor>
     set
     {
       if (value != null)
-        _ExistingElement.Locked = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.Locked = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.Locked = null;
     }
@@ -171,7 +171,7 @@ public partial class Anchor: ModelElement<DXDW.Anchor>
     set
     {
       if (value != null)
-        _ExistingElement.LayoutInCell = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.LayoutInCell = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.LayoutInCell = null;
     }
@@ -191,7 +191,7 @@ public partial class Anchor: ModelElement<DXDW.Anchor>
     set
     {
       if (value != null)
-        _ExistingElement.Hidden = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.Hidden = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.Hidden = null;
     }
@@ -211,7 +211,7 @@ public partial class Anchor: ModelElement<DXDW.Anchor>
     set
     {
       if (value != null)
-        _ExistingElement.AllowOverlap = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.AllowOverlap = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.AllowOverlap = null;
     }
@@ -227,7 +227,7 @@ public partial class Anchor: ModelElement<DXDW.Anchor>
     get
     {
       if (_Element?.EditId?.Value != null)
-        return HexIntConverter.GetValue(_ExistingElement.EditId.Value);
+        return HexIntConverter.GetValue(_Element?.EditId.Value);
       return null;
     }
     set
@@ -249,7 +249,7 @@ public partial class Anchor: ModelElement<DXDW.Anchor>
     get
     {
       if (_Element?.AnchorId?.Value != null)
-        return HexIntConverter.GetValue(_ExistingElement.AnchorId.Value);
+        return HexIntConverter.GetValue(_Element?.AnchorId.Value);
       return null;
     }
     set
@@ -270,22 +270,11 @@ public partial class Anchor: ModelElement<DXDW.Anchor>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDW.SimplePosition>();
-      if (element != null)
-        return SimplePositionConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDW.SimplePosition,DXDW.SimplePosition>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDW.SimplePosition>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SimplePositionConverter.CreateOpenXmlElement<DXDW.SimplePosition>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDW.SimplePosition,DXDW.SimplePosition>(value);
     }
   }
   
@@ -298,22 +287,11 @@ public partial class Anchor: ModelElement<DXDW.Anchor>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDW.HorizontalPosition>();
-      if (element != null)
-        return HorizontalPositionConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDW.HorizontalPosition,DXDW.HorizontalPosition>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDW.HorizontalPosition>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = HorizontalPositionConverter.CreateOpenXmlElement<DXDW.HorizontalPosition>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDW.HorizontalPosition,DXDW.HorizontalPosition>(value);
     }
   }
   
@@ -326,22 +304,11 @@ public partial class Anchor: ModelElement<DXDW.Anchor>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDW.VerticalPosition>();
-      if (element != null)
-        return VerticalPositionConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDW.VerticalPosition,DXDW.VerticalPosition>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDW.VerticalPosition>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = VerticalPositionConverter.CreateOpenXmlElement<DXDW.VerticalPosition>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDW.VerticalPosition,DXDW.VerticalPosition>(value);
     }
   }
   
@@ -354,22 +321,11 @@ public partial class Anchor: ModelElement<DXDW.Anchor>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDW.Extent>();
-      if (element != null)
-        return ExtentConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDW.Extent,DXDW.Extent>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDW.Extent>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtentConverter.CreateOpenXmlElement<DXDW.Extent>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDW.Extent,DXDW.Extent>(value);
     }
   }
   
@@ -382,22 +338,11 @@ public partial class Anchor: ModelElement<DXDW.Anchor>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDW.EffectExtent>();
-      if (element != null)
-        return EffectExtentConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDW.EffectExtent,DXDW.EffectExtent>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDW.EffectExtent>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EffectExtentConverter.CreateOpenXmlElement<DXDW.EffectExtent>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDW.EffectExtent,DXDW.EffectExtent>(value);
     }
   }
   
@@ -406,22 +351,11 @@ public partial class Anchor: ModelElement<DXDW.Anchor>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDW.WrapNone>();
-      if (element != null)
-        return WrapNoneConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDW.WrapNone,DXDW.WrapNone>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDW.WrapNone>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = WrapNoneConverter.CreateOpenXmlElement<DXDW.WrapNone>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDW.WrapNone,DXDW.WrapNone>(value);
     }
   }
   
@@ -430,22 +364,11 @@ public partial class Anchor: ModelElement<DXDW.Anchor>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDW.WrapSquare>();
-      if (element != null)
-        return WrapSquareConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDW.WrapSquare,DXDW.WrapSquare>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDW.WrapSquare>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = WrapSquareConverter.CreateOpenXmlElement<DXDW.WrapSquare>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDW.WrapSquare,DXDW.WrapSquare>(value);
     }
   }
   
@@ -454,22 +377,11 @@ public partial class Anchor: ModelElement<DXDW.Anchor>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDW.WrapTight>();
-      if (element != null)
-        return WrapTightConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDW.WrapTight,DXDW.WrapTight>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDW.WrapTight>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = WrapTightConverter.CreateOpenXmlElement<DXDW.WrapTight>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDW.WrapTight,DXDW.WrapTight>(value);
     }
   }
   
@@ -478,22 +390,11 @@ public partial class Anchor: ModelElement<DXDW.Anchor>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDW.WrapThrough>();
-      if (element != null)
-        return WrapThroughConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDW.WrapThrough,DXDW.WrapThrough>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDW.WrapThrough>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = WrapThroughConverter.CreateOpenXmlElement<DXDW.WrapThrough>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDW.WrapThrough,DXDW.WrapThrough>(value);
     }
   }
   
@@ -502,22 +403,11 @@ public partial class Anchor: ModelElement<DXDW.Anchor>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDW.WrapTopBottom>();
-      if (element != null)
-        return WrapTopBottomConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDW.WrapTopBottom,DXDW.WrapTopBottom>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDW.WrapTopBottom>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = WrapTopBottomConverter.CreateOpenXmlElement<DXDW.WrapTopBottom>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDW.WrapTopBottom,DXDW.WrapTopBottom>(value);
     }
   }
   
@@ -526,22 +416,11 @@ public partial class Anchor: ModelElement<DXDW.Anchor>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDW.DocProperties>();
-      if (element != null)
-        return DocPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDW.DocProperties,DXDW.DocProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDW.DocProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DocPropertiesConverter.CreateOpenXmlElement<DXDW.DocProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDW.DocProperties,DXDW.DocProperties>(value);
     }
   }
   
@@ -550,22 +429,11 @@ public partial class Anchor: ModelElement<DXDW.Anchor>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDW.NonVisualGraphicFrameDrawingProperties>();
-      if (element != null)
-        return NonVisualGraphicFrameDrawingPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDW.NonVisualGraphicFrameDrawingProperties,DXDW.NonVisualGraphicFrameDrawingProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDW.NonVisualGraphicFrameDrawingProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NonVisualGraphicFrameDrawingPropertiesConverter.CreateOpenXmlElement<DXDW.NonVisualGraphicFrameDrawingProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDW.NonVisualGraphicFrameDrawingProperties,DXDW.NonVisualGraphicFrameDrawingProperties>(value);
     }
   }
   
@@ -574,22 +442,11 @@ public partial class Anchor: ModelElement<DXDW.Anchor>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.Graphic>();
-      if (element != null)
-        return GraphicConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.Graphic,DXD.Graphic>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.Graphic>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = GraphicConverter.CreateOpenXmlElement<DXD.Graphic>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.Graphic,DXD.Graphic>(value);
     }
   }
   
@@ -598,22 +455,11 @@ public partial class Anchor: ModelElement<DXDW.Anchor>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10WD.RelativeWidth>();
-      if (element != null)
-        return RelativeWidthConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMWD.RelativeWidth,DXO10WD.RelativeWidth>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10WD.RelativeWidth>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RelativeWidthConverter.CreateOpenXmlElement<DXO10WD.RelativeWidth>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMWD.RelativeWidth,DXO10WD.RelativeWidth>(value);
     }
   }
   

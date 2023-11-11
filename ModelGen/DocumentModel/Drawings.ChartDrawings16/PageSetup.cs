@@ -60,7 +60,7 @@ public partial class PageSetup: ModelElement<DXO16DCD.PageSetup>
     set
     {
       if (value != null)
-        _ExistingElement.BlackAndWhite = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.BlackAndWhite = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.BlackAndWhite = null;
     }
@@ -80,7 +80,7 @@ public partial class PageSetup: ModelElement<DXO16DCD.PageSetup>
     set
     {
       if (value != null)
-        _ExistingElement.Draft = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.Draft = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.Draft = null;
     }
@@ -100,7 +100,7 @@ public partial class PageSetup: ModelElement<DXO16DCD.PageSetup>
     set
     {
       if (value != null)
-        _ExistingElement.UseFirstPageNumber = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.UseFirstPageNumber = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.UseFirstPageNumber = null;
     }

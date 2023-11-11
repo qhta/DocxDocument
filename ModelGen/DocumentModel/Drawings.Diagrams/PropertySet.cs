@@ -213,7 +213,7 @@ public partial class PropertySet: ModelElement<DXDDD.PropertySet>
     set
     {
       if (value != null)
-        _ExistingElement.Coherent3D = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.Coherent3D = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.Coherent3D = null;
     }
@@ -250,7 +250,7 @@ public partial class PropertySet: ModelElement<DXDDD.PropertySet>
     set
     {
       if (value != null)
-        _ExistingElement.Placeholder = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.Placeholder = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.Placeholder = null;
     }
@@ -287,7 +287,7 @@ public partial class PropertySet: ModelElement<DXDDD.PropertySet>
     set
     {
       if (value != null)
-        _ExistingElement.VerticalFlip = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.VerticalFlip = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.VerticalFlip = null;
     }
@@ -307,7 +307,7 @@ public partial class PropertySet: ModelElement<DXDDD.PropertySet>
     set
     {
       if (value != null)
-        _ExistingElement.HorizontalFlip = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.HorizontalFlip = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.HorizontalFlip = null;
     }
@@ -395,7 +395,7 @@ public partial class PropertySet: ModelElement<DXDDD.PropertySet>
     set
     {
       if (value != null)
-        _ExistingElement.TextChanged = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.TextChanged = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.TextChanged = null;
     }
@@ -512,22 +512,11 @@ public partial class PropertySet: ModelElement<DXDDD.PropertySet>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDDD.PresentationLayoutVariables>();
-      if (element != null)
-        return PresentationLayoutVariablesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDD.PresentationLayoutVariables,DXDDD.PresentationLayoutVariables>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDDD.PresentationLayoutVariables>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PresentationLayoutVariablesConverter.CreateOpenXmlElement<DXDDD.PresentationLayoutVariables>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDD.PresentationLayoutVariables,DXDDD.PresentationLayoutVariables>(value);
     }
   }
   
@@ -540,22 +529,11 @@ public partial class PropertySet: ModelElement<DXDDD.PropertySet>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDDD.Style>();
-      if (element != null)
-        return StyleConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDD.Style,DXDDD.Style>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDDD.Style>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = StyleConverter.CreateOpenXmlElement<DXDDD.Style>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDD.Style,DXDDD.Style>(value);
     }
   }
   

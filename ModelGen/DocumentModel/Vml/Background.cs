@@ -34,15 +34,18 @@ public partial class Background: ModelElement<DXV.Background>
   ///   Shape Fill Toggle
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? Filled
+  public Boolean? Filled
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.Filled?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.Filled = value;
+      else
+        _ExistingElement.Filled = null;
     }
   }
   
@@ -72,22 +75,11 @@ public partial class Background: ModelElement<DXV.Background>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXV.Fill>();
-      if (element != null)
-        return FillConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMVML.Fill,DXV.Fill>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXV.Fill>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FillConverter.CreateOpenXmlElement<DXV.Fill>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMVML.Fill,DXV.Fill>(value);
     }
   }
   

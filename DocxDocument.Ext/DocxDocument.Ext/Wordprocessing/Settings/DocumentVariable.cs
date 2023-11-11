@@ -10,7 +10,7 @@
 /// </summary>
 [Obsolete]
 [DataContract]
-public partial class DocumentVariable: ModelElement<DXW.DocumentVariable>
+public partial class DocumentVariable: ModelElement<DXW.DocumentVariable>, INamedElement
 {
   public DocumentVariable(): base(){ }
 
@@ -21,26 +21,26 @@ public partial class DocumentVariable: ModelElement<DXW.DocumentVariable>
   [DataMember]
   public string? Name
   {
-    get => _Element.Name?.Value;
+    get => _Element?.Name?.Value;
     set
     {
       if (value != null)
-        _Element.Name = new DX.StringValue { Value = (string)value };
+        _ExistingElement.Name = new DX.StringValue { Value = (string)value };
       else
-        _Element.Name = null;
+        _ExistingElement.Name = null;
     }
   }
 
   [DataMember]
   public string? Val
   {
-    get => _Element.Val?.Value;
+    get => _Element?.Val?.Value;
     set
     {
       if (value != null)
-        _Element.Val = new DX.StringValue { Value = (string)value };
+        _ExistingElement.Val = new DX.StringValue { Value = (string)value };
       else
-        _Element.Val = null;
+        _ExistingElement.Val = null;
     }
   }
 

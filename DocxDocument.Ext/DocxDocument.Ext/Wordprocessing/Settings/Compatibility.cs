@@ -18,8 +18,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public bool? UseSingleBorderForContiguousCells
   {
-    get => _Element.GetBoolVal<DXW.UseSingleBorderForContiguousCells>();
-    set => _Element.SetBoolVal<DXW.UseSingleBorderForContiguousCells>(value);
+    get => _Element?.GetBoolVal<DXW.UseSingleBorderForContiguousCells>();
+    set => _ExistingElement.SetBoolVal<DXW.UseSingleBorderForContiguousCells>(value);
   }
 
   /// <summary>
@@ -28,8 +28,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public  bool? WordPerfectJustification
   {
-    get => _Element.GetBoolVal<DXW.WordPerfectJustification>();
-    set => _Element.SetBoolVal<DXW.WordPerfectJustification>(value);
+    get => _Element?.GetBoolVal<DXW.WordPerfectJustification>();
+    set => _ExistingElement.SetBoolVal<DXW.WordPerfectJustification>(value);
   }
 
   /// <summary>
@@ -38,8 +38,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public  bool? NoTabHangIndent
   {
-    get => _Element.GetBoolVal<DXW.NoTabHangIndent>();
-    set => _Element.SetBoolVal<DXW.NoTabHangIndent>(value);
+    get => _Element?.GetBoolVal<DXW.NoTabHangIndent>();
+    set => _ExistingElement.SetBoolVal<DXW.NoTabHangIndent>(value);
   }
 
   /// <summary>
@@ -48,8 +48,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public  bool? NoLeading
   {
-    get => _Element.GetBoolVal<DXW.NoLeading>();
-    set => _Element.SetBoolVal<DXW.NoLeading>(value);
+    get => _Element?.GetBoolVal<DXW.NoLeading>();
+    set => _ExistingElement.SetBoolVal<DXW.NoLeading>(value);
   }
 
   /// <summary>
@@ -58,8 +58,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public  bool? SpaceForUnderline
   {
-    get => _Element.GetBoolVal<DXW.SpaceForUnderline>();
-    set => _Element.SetBoolVal<DXW.SpaceForUnderline>(value);
+    get => _Element?.GetBoolVal<DXW.SpaceForUnderline>();
+    set => _ExistingElement.SetBoolVal<DXW.SpaceForUnderline>(value);
   }
 
   /// <summary>
@@ -68,8 +68,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public  bool? NoColumnBalance
   {
-    get => _Element.GetBoolVal<DXW.NoColumnBalance>();
-    set => _Element.SetBoolVal<DXW.NoColumnBalance>(value);
+    get => _Element?.GetBoolVal<DXW.NoColumnBalance>();
+    set => _ExistingElement.SetBoolVal<DXW.NoColumnBalance>(value);
   }
 
   /// <summary>
@@ -78,8 +78,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public  bool? BalanceSingleByteDoubleByteWidth
   {
-    get => _Element.GetBoolVal<DXW.BalanceSingleByteDoubleByteWidth>();
-    set => _Element.SetBoolVal<DXW.BalanceSingleByteDoubleByteWidth>(value);
+    get => _Element?.GetBoolVal<DXW.BalanceSingleByteDoubleByteWidth>();
+    set => _ExistingElement.SetBoolVal<DXW.BalanceSingleByteDoubleByteWidth>(value);
   }
 
   /// <summary>
@@ -88,8 +88,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public  bool? NoExtraLineSpacing
   {
-    get => _Element.GetBoolVal<DXW.NoExtraLineSpacing>();
-    set => _Element.SetBoolVal<DXW.NoExtraLineSpacing>(value);
+    get => _Element?.GetBoolVal<DXW.NoExtraLineSpacing>();
+    set => _ExistingElement.SetBoolVal<DXW.NoExtraLineSpacing>(value);
   }
 
   /// <summary>
@@ -98,8 +98,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public  bool? DoNotLeaveBackslashAlone
   {
-    get => _Element.GetBoolVal<DXW.DoNotLeaveBackslashAlone>();
-    set => _Element.SetBoolVal<DXW.DoNotLeaveBackslashAlone>(value);
+    get => _Element?.GetBoolVal<DXW.DoNotLeaveBackslashAlone>();
+    set => _ExistingElement.SetBoolVal<DXW.DoNotLeaveBackslashAlone>(value);
   }
 
   /// <summary>
@@ -108,8 +108,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public  bool? UnderlineTrailingSpaces
   {
-    get => _Element.GetBoolVal<DXW.UnderlineTrailingSpaces>();
-    set => _Element.SetBoolVal<DXW.UnderlineTrailingSpaces>(value);
+    get => _Element?.GetBoolVal<DXW.UnderlineTrailingSpaces>();
+    set => _ExistingElement.SetBoolVal<DXW.UnderlineTrailingSpaces>(value);
   }
 
   /// <summary>
@@ -118,8 +118,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public  bool? DoNotExpandShiftReturn
   {
-    get => _Element.GetBoolVal<DXW.DoNotExpandShiftReturn>();
-    set => _Element.SetBoolVal<DXW.DoNotExpandShiftReturn>(value);
+    get => _Element?.GetBoolVal<DXW.DoNotExpandShiftReturn>();
+    set => _ExistingElement.SetBoolVal<DXW.DoNotExpandShiftReturn>(value);
   }
 
   /// <summary>
@@ -128,8 +128,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public  bool? SpacingInWholePoints
   {
-    get => _Element.GetBoolVal<DXW.SpacingInWholePoints>();
-    set => _Element.SetBoolVal<DXW.SpacingInWholePoints>(value);
+    get => _Element?.GetBoolVal<DXW.SpacingInWholePoints>();
+    set => _ExistingElement.SetBoolVal<DXW.SpacingInWholePoints>(value);
   }
 
   /// <summary>
@@ -138,8 +138,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public  bool? LineWrapLikeWord6
   {
-    get => _Element.GetBoolVal<DXW.LineWrapLikeWord6>();
-    set => _Element.SetBoolVal<DXW.LineWrapLikeWord6>(value);
+    get => _Element?.GetBoolVal<DXW.LineWrapLikeWord6>();
+    set => _ExistingElement.SetBoolVal<DXW.LineWrapLikeWord6>(value);
   }
 
   /// <summary>
@@ -148,8 +148,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public  bool? PrintBodyTextBeforeHeader
   {
-    get => _Element.GetBoolVal<DXW.PrintBodyTextBeforeHeader>();
-    set => _Element.SetBoolVal<DXW.PrintBodyTextBeforeHeader>(value);
+    get => _Element?.GetBoolVal<DXW.PrintBodyTextBeforeHeader>();
+    set => _ExistingElement.SetBoolVal<DXW.PrintBodyTextBeforeHeader>(value);
   }
 
   /// <summary>
@@ -158,8 +158,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public  bool? PrintColorBlackWhite
   {
-    get => _Element.GetBoolVal<DXW.PrintColorBlackWhite>();
-    set => _Element.SetBoolVal<DXW.PrintColorBlackWhite>(value);
+    get => _Element?.GetBoolVal<DXW.PrintColorBlackWhite>();
+    set => _ExistingElement.SetBoolVal<DXW.PrintColorBlackWhite>(value);
   }
 
   /// <summary>
@@ -168,8 +168,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public  bool? WordPerfectSpaceWidth
   {
-    get => _Element.GetBoolVal<DXW.WordPerfectSpaceWidth>();
-    set => _Element.SetBoolVal<DXW.WordPerfectSpaceWidth>(value);
+    get => _Element?.GetBoolVal<DXW.WordPerfectSpaceWidth>();
+    set => _ExistingElement.SetBoolVal<DXW.WordPerfectSpaceWidth>(value);
   }
 
   /// <summary>
@@ -178,8 +178,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public  bool? ShowBreaksInFrames
   {
-    get => _Element.GetBoolVal<DXW.ShowBreaksInFrames>();
-    set => _Element.SetBoolVal<DXW.ShowBreaksInFrames>(value);
+    get => _Element?.GetBoolVal<DXW.ShowBreaksInFrames>();
+    set => _ExistingElement.SetBoolVal<DXW.ShowBreaksInFrames>(value);
   }
 
   /// <summary>
@@ -188,8 +188,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public  bool? SubFontBySize
   {
-    get => _Element.GetBoolVal<DXW.SubFontBySize>();
-    set => _Element.SetBoolVal<DXW.SubFontBySize>(value);
+    get => _Element?.GetBoolVal<DXW.SubFontBySize>();
+    set => _ExistingElement.SetBoolVal<DXW.SubFontBySize>(value);
   }
 
   /// <summary>
@@ -198,8 +198,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public  bool? SuppressBottomSpacing
   {
-    get => _Element.GetBoolVal<DXW.SuppressBottomSpacing>();
-    set => _Element.SetBoolVal<DXW.SuppressBottomSpacing>(value);
+    get => _Element?.GetBoolVal<DXW.SuppressBottomSpacing>();
+    set => _ExistingElement.SetBoolVal<DXW.SuppressBottomSpacing>(value);
   }
 
   /// <summary>
@@ -208,8 +208,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public  bool? SuppressTopSpacing
   {
-    get => _Element.GetBoolVal<DXW.SuppressTopSpacing>();
-    set => _Element.SetBoolVal<DXW.SuppressTopSpacing>(value);
+    get => _Element?.GetBoolVal<DXW.SuppressTopSpacing>();
+    set => _ExistingElement.SetBoolVal<DXW.SuppressTopSpacing>(value);
   }
 
   /// <summary>
@@ -218,8 +218,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public  bool? SuppressSpacingAtTopOfPage
   {
-    get => _Element.GetBoolVal<DXW.SuppressSpacingAtTopOfPage>();
-    set => _Element.SetBoolVal<DXW.SuppressSpacingAtTopOfPage>(value);
+    get => _Element?.GetBoolVal<DXW.SuppressSpacingAtTopOfPage>();
+    set => _ExistingElement.SetBoolVal<DXW.SuppressSpacingAtTopOfPage>(value);
   }
 
   /// <summary>
@@ -228,8 +228,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public  bool? SuppressTopSpacingWordPerfect
   {
-    get => _Element.GetBoolVal<DXW.SuppressTopSpacingWordPerfect>();
-    set => _Element.SetBoolVal<DXW.SuppressTopSpacingWordPerfect>(value);
+    get => _Element?.GetBoolVal<DXW.SuppressTopSpacingWordPerfect>();
+    set => _ExistingElement.SetBoolVal<DXW.SuppressTopSpacingWordPerfect>(value);
   }
 
   /// <summary>
@@ -238,8 +238,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public  bool? SuppressSpacingBeforeAfterPageBreak
   {
-    get => _Element.GetBoolVal<DXW.SuppressSpacingBeforeAfterPageBreak>();
-    set => _Element.SetBoolVal<DXW.SuppressSpacingBeforeAfterPageBreak>(value);
+    get => _Element?.GetBoolVal<DXW.SuppressSpacingBeforeAfterPageBreak>();
+    set => _ExistingElement.SetBoolVal<DXW.SuppressSpacingBeforeAfterPageBreak>(value);
   }
 
   /// <summary>
@@ -248,8 +248,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public  bool? SwapBordersFacingPages
   {
-    get => _Element.GetBoolVal<DXW.SwapBordersFacingPages>();
-    set => _Element.SetBoolVal<DXW.SwapBordersFacingPages>(value);
+    get => _Element?.GetBoolVal<DXW.SwapBordersFacingPages>();
+    set => _ExistingElement.SetBoolVal<DXW.SwapBordersFacingPages>(value);
   }
 
   /// <summary>
@@ -258,8 +258,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public  bool? ConvertMailMergeEscape
   {
-    get => _Element.GetBoolVal<DXW.ConvertMailMergeEscape>();
-    set => _Element.SetBoolVal<DXW.ConvertMailMergeEscape>(value);
+    get => _Element?.GetBoolVal<DXW.ConvertMailMergeEscape>();
+    set => _ExistingElement.SetBoolVal<DXW.ConvertMailMergeEscape>(value);
   }
 
   /// <summary>
@@ -268,8 +268,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public  bool? TruncateFontHeightsLikeWordPerfect
   {
-    get => _Element.GetBoolVal<DXW.TruncateFontHeightsLikeWordPerfect>();
-    set => _Element.SetBoolVal<DXW.TruncateFontHeightsLikeWordPerfect>(value);
+    get => _Element?.GetBoolVal<DXW.TruncateFontHeightsLikeWordPerfect>();
+    set => _ExistingElement.SetBoolVal<DXW.TruncateFontHeightsLikeWordPerfect>(value);
   }
 
   /// <summary>
@@ -278,8 +278,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public  bool? MacWordSmallCaps
   {
-    get => _Element.GetBoolVal<DXW.MacWordSmallCaps>();
-    set => _Element.SetBoolVal<DXW.MacWordSmallCaps>(value);
+    get => _Element?.GetBoolVal<DXW.MacWordSmallCaps>();
+    set => _ExistingElement.SetBoolVal<DXW.MacWordSmallCaps>(value);
   }
 
   /// <summary>
@@ -288,8 +288,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public  bool? UsePrinterMetrics
   {
-    get => _Element.GetBoolVal<DXW.UsePrinterMetrics>();
-    set => _Element.SetBoolVal<DXW.UsePrinterMetrics>(value);
+    get => _Element?.GetBoolVal<DXW.UsePrinterMetrics>();
+    set => _ExistingElement.SetBoolVal<DXW.UsePrinterMetrics>(value);
   }
 
   /// <summary>
@@ -298,8 +298,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public  bool? DoNotSuppressParagraphBorders
   {
-    get => _Element.GetBoolVal<DXW.DoNotSuppressParagraphBorders>();
-    set => _Element.SetBoolVal<DXW.DoNotSuppressParagraphBorders>(value);
+    get => _Element?.GetBoolVal<DXW.DoNotSuppressParagraphBorders>();
+    set => _ExistingElement.SetBoolVal<DXW.DoNotSuppressParagraphBorders>(value);
   }
 
   /// <summary>
@@ -308,8 +308,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public  bool? WrapTrailSpaces
   {
-    get => _Element.GetBoolVal<DXW.WrapTrailSpaces>();
-    set => _Element.SetBoolVal<DXW.WrapTrailSpaces>(value);
+    get => _Element?.GetBoolVal<DXW.WrapTrailSpaces>();
+    set => _ExistingElement.SetBoolVal<DXW.WrapTrailSpaces>(value);
   }
 
   /// <summary>
@@ -318,8 +318,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public  bool? FootnoteLayoutLikeWord8
   {
-    get => _Element.GetBoolVal<DXW.FootnoteLayoutLikeWord8>();
-    set => _Element.SetBoolVal<DXW.FootnoteLayoutLikeWord8>(value);
+    get => _Element?.GetBoolVal<DXW.FootnoteLayoutLikeWord8>();
+    set => _ExistingElement.SetBoolVal<DXW.FootnoteLayoutLikeWord8>(value);
   }
 
   /// <summary>
@@ -328,8 +328,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public  bool? ShapeLayoutLikeWord8
   {
-    get => _Element.GetBoolVal<DXW.ShapeLayoutLikeWord8>();
-    set => _Element.SetBoolVal<DXW.ShapeLayoutLikeWord8>(value);
+    get => _Element?.GetBoolVal<DXW.ShapeLayoutLikeWord8>();
+    set => _ExistingElement.SetBoolVal<DXW.ShapeLayoutLikeWord8>(value);
   }
 
   /// <summary>
@@ -338,8 +338,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public  bool? AlignTablesRowByRow
   {
-    get => _Element.GetBoolVal<DXW.AlignTablesRowByRow>();
-    set => _Element.SetBoolVal<DXW.AlignTablesRowByRow>(value);
+    get => _Element?.GetBoolVal<DXW.AlignTablesRowByRow>();
+    set => _ExistingElement.SetBoolVal<DXW.AlignTablesRowByRow>(value);
   }
 
   /// <summary>
@@ -348,8 +348,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public  bool? ForgetLastTabAlignment
   {
-    get => _Element.GetBoolVal<DXW.ForgetLastTabAlignment>();
-    set => _Element.SetBoolVal<DXW.ForgetLastTabAlignment>(value);
+    get => _Element?.GetBoolVal<DXW.ForgetLastTabAlignment>();
+    set => _ExistingElement.SetBoolVal<DXW.ForgetLastTabAlignment>(value);
   }
 
   /// <summary>
@@ -358,8 +358,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public  bool? AdjustLineHeightInTable
   {
-    get => _Element.GetBoolVal<DXW.AdjustLineHeightInTable>();
-    set => _Element.SetBoolVal<DXW.AdjustLineHeightInTable>(value);
+    get => _Element?.GetBoolVal<DXW.AdjustLineHeightInTable>();
+    set => _ExistingElement.SetBoolVal<DXW.AdjustLineHeightInTable>(value);
   }
 
   /// <summary>
@@ -368,8 +368,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public  bool? AutoSpaceLikeWord95
   {
-    get => _Element.GetBoolVal<DXW.AutoSpaceLikeWord95>();
-    set => _Element.SetBoolVal<DXW.AutoSpaceLikeWord95>(value);
+    get => _Element?.GetBoolVal<DXW.AutoSpaceLikeWord95>();
+    set => _ExistingElement.SetBoolVal<DXW.AutoSpaceLikeWord95>(value);
   }
 
   /// <summary>
@@ -378,8 +378,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public  bool? NoSpaceRaiseLower
   {
-    get => _Element.GetBoolVal<DXW.NoSpaceRaiseLower>();
-    set => _Element.SetBoolVal<DXW.NoSpaceRaiseLower>(value);
+    get => _Element?.GetBoolVal<DXW.NoSpaceRaiseLower>();
+    set => _ExistingElement.SetBoolVal<DXW.NoSpaceRaiseLower>(value);
   }
 
   /// <summary>
@@ -388,8 +388,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public  bool? DoNotUseHTMLParagraphAutoSpacing
   {
-    get => _Element.GetBoolVal<DXW.DoNotUseHTMLParagraphAutoSpacing>();
-    set => _Element.SetBoolVal<DXW.DoNotUseHTMLParagraphAutoSpacing>(value);
+    get => _Element?.GetBoolVal<DXW.DoNotUseHTMLParagraphAutoSpacing>();
+    set => _ExistingElement.SetBoolVal<DXW.DoNotUseHTMLParagraphAutoSpacing>(value);
   }
 
   /// <summary>
@@ -398,8 +398,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public  bool? LayoutRawTableWidth
   {
-    get => _Element.GetBoolVal<DXW.LayoutRawTableWidth>();
-    set => _Element.SetBoolVal<DXW.LayoutRawTableWidth>(value);
+    get => _Element?.GetBoolVal<DXW.LayoutRawTableWidth>();
+    set => _ExistingElement.SetBoolVal<DXW.LayoutRawTableWidth>(value);
   }
 
   /// <summary>
@@ -408,8 +408,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public  bool? LayoutTableRowsApart
   {
-    get => _Element.GetBoolVal<DXW.LayoutTableRowsApart>();
-    set => _Element.SetBoolVal<DXW.LayoutTableRowsApart>(value);
+    get => _Element?.GetBoolVal<DXW.LayoutTableRowsApart>();
+    set => _ExistingElement.SetBoolVal<DXW.LayoutTableRowsApart>(value);
   }
 
   /// <summary>
@@ -418,8 +418,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public  bool? UseWord97LineBreakRules
   {
-    get => _Element.GetBoolVal<DXW.UseWord97LineBreakRules>();
-    set => _Element.SetBoolVal<DXW.UseWord97LineBreakRules>(value);
+    get => _Element?.GetBoolVal<DXW.UseWord97LineBreakRules>();
+    set => _ExistingElement.SetBoolVal<DXW.UseWord97LineBreakRules>(value);
   }
 
   /// <summary>
@@ -428,8 +428,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public  bool? DoNotBreakWrappedTables
   {
-    get => _Element.GetBoolVal<DXW.DoNotBreakWrappedTables>();
-    set => _Element.SetBoolVal<DXW.DoNotBreakWrappedTables>(value);
+    get => _Element?.GetBoolVal<DXW.DoNotBreakWrappedTables>();
+    set => _ExistingElement.SetBoolVal<DXW.DoNotBreakWrappedTables>(value);
   }
 
   /// <summary>
@@ -438,8 +438,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public  bool? DoNotSnapToGridInCell
   {
-    get => _Element.GetBoolVal<DXW.DoNotSnapToGridInCell>();
-    set => _Element.SetBoolVal<DXW.DoNotSnapToGridInCell>(value);
+    get => _Element?.GetBoolVal<DXW.DoNotSnapToGridInCell>();
+    set => _ExistingElement.SetBoolVal<DXW.DoNotSnapToGridInCell>(value);
   }
 
   /// <summary>
@@ -448,8 +448,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public  bool? SelectFieldWithFirstOrLastChar
   {
-    get => _Element.GetBoolVal<DXW.SelectFieldWithFirstOrLastChar>();
-    set => _Element.SetBoolVal<DXW.SelectFieldWithFirstOrLastChar>(value);
+    get => _Element?.GetBoolVal<DXW.SelectFieldWithFirstOrLastChar>();
+    set => _ExistingElement.SetBoolVal<DXW.SelectFieldWithFirstOrLastChar>(value);
   }
 
   /// <summary>
@@ -458,8 +458,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public  bool? ApplyBreakingRules
   {
-    get => _Element.GetBoolVal<DXW.ApplyBreakingRules>();
-    set => _Element.SetBoolVal<DXW.ApplyBreakingRules>(value);
+    get => _Element?.GetBoolVal<DXW.ApplyBreakingRules>();
+    set => _ExistingElement.SetBoolVal<DXW.ApplyBreakingRules>(value);
   }
 
   /// <summary>
@@ -468,8 +468,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public  bool? DoNotWrapTextWithPunctuation
   {
-    get => _Element.GetBoolVal<DXW.DoNotWrapTextWithPunctuation>();
-    set => _Element.SetBoolVal<DXW.DoNotWrapTextWithPunctuation>(value);
+    get => _Element?.GetBoolVal<DXW.DoNotWrapTextWithPunctuation>();
+    set => _ExistingElement.SetBoolVal<DXW.DoNotWrapTextWithPunctuation>(value);
   }
 
   /// <summary>
@@ -478,8 +478,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public  bool? DoNotUseEastAsianBreakRules
   {
-    get => _Element.GetBoolVal<DXW.DoNotUseEastAsianBreakRules>();
-    set => _Element.SetBoolVal<DXW.DoNotUseEastAsianBreakRules>(value);
+    get => _Element?.GetBoolVal<DXW.DoNotUseEastAsianBreakRules>();
+    set => _ExistingElement.SetBoolVal<DXW.DoNotUseEastAsianBreakRules>(value);
   }
 
   /// <summary>
@@ -488,8 +488,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public  bool? UseWord2002TableStyleRules
   {
-    get => _Element.GetBoolVal<DXW.UseWord2002TableStyleRules>();
-    set => _Element.SetBoolVal<DXW.UseWord2002TableStyleRules>(value);
+    get => _Element?.GetBoolVal<DXW.UseWord2002TableStyleRules>();
+    set => _ExistingElement.SetBoolVal<DXW.UseWord2002TableStyleRules>(value);
   }
 
   /// <summary>
@@ -498,8 +498,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public  bool? GrowAutofit
   {
-    get => _Element.GetBoolVal<DXW.GrowAutofit>();
-    set => _Element.SetBoolVal<DXW.GrowAutofit>(value);
+    get => _Element?.GetBoolVal<DXW.GrowAutofit>();
+    set => _ExistingElement.SetBoolVal<DXW.GrowAutofit>(value);
   }
 
   /// <summary>
@@ -508,8 +508,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public  bool? UseFarEastLayout
   {
-    get => _Element.GetBoolVal<DXW.UseFarEastLayout>();
-    set => _Element.SetBoolVal<DXW.UseFarEastLayout>(value);
+    get => _Element?.GetBoolVal<DXW.UseFarEastLayout>();
+    set => _ExistingElement.SetBoolVal<DXW.UseFarEastLayout>(value);
   }
 
   /// <summary>
@@ -518,8 +518,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public  bool? UseNormalStyleForList
   {
-    get => _Element.GetBoolVal<DXW.UseNormalStyleForList>();
-    set => _Element.SetBoolVal<DXW.UseNormalStyleForList>(value);
+    get => _Element?.GetBoolVal<DXW.UseNormalStyleForList>();
+    set => _ExistingElement.SetBoolVal<DXW.UseNormalStyleForList>(value);
   }
 
   /// <summary>
@@ -528,8 +528,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public  bool? DoNotUseIndentAsNumberingTabStop
   {
-    get => _Element.GetBoolVal<DXW.DoNotUseIndentAsNumberingTabStop>();
-    set => _Element.SetBoolVal<DXW.DoNotUseIndentAsNumberingTabStop>(value);
+    get => _Element?.GetBoolVal<DXW.DoNotUseIndentAsNumberingTabStop>();
+    set => _ExistingElement.SetBoolVal<DXW.DoNotUseIndentAsNumberingTabStop>(value);
   }
 
   /// <summary>
@@ -538,8 +538,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public  bool? UseAltKinsokuLineBreakRules
   {
-    get => _Element.GetBoolVal<DXW.UseAltKinsokuLineBreakRules>();
-    set => _Element.SetBoolVal<DXW.UseAltKinsokuLineBreakRules>(value);
+    get => _Element?.GetBoolVal<DXW.UseAltKinsokuLineBreakRules>();
+    set => _ExistingElement.SetBoolVal<DXW.UseAltKinsokuLineBreakRules>(value);
   }
 
   /// <summary>
@@ -548,8 +548,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public  bool? AllowSpaceOfSameStyleInTable
   {
-    get => _Element.GetBoolVal<DXW.AllowSpaceOfSameStyleInTable>();
-    set => _Element.SetBoolVal<DXW.AllowSpaceOfSameStyleInTable>(value);
+    get => _Element?.GetBoolVal<DXW.AllowSpaceOfSameStyleInTable>();
+    set => _ExistingElement.SetBoolVal<DXW.AllowSpaceOfSameStyleInTable>(value);
   }
 
   /// <summary>
@@ -558,8 +558,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public  bool? DoNotSuppressIndentation
   {
-    get => _Element.GetBoolVal<DXW.DoNotSuppressIndentation>();
-    set => _Element.SetBoolVal<DXW.DoNotSuppressIndentation>(value);
+    get => _Element?.GetBoolVal<DXW.DoNotSuppressIndentation>();
+    set => _ExistingElement.SetBoolVal<DXW.DoNotSuppressIndentation>(value);
   }
 
   /// <summary>
@@ -568,8 +568,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public  bool? DoNotAutofitConstrainedTables
   {
-    get => _Element.GetBoolVal<DXW.DoNotAutofitConstrainedTables>();
-    set => _Element.SetBoolVal<DXW.DoNotAutofitConstrainedTables>(value);
+    get => _Element?.GetBoolVal<DXW.DoNotAutofitConstrainedTables>();
+    set => _ExistingElement.SetBoolVal<DXW.DoNotAutofitConstrainedTables>(value);
   }
 
   /// <summary>
@@ -578,8 +578,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public  bool? AutofitToFirstFixedWidthCell
   {
-    get => _Element.GetBoolVal<DXW.AutofitToFirstFixedWidthCell>();
-    set => _Element.SetBoolVal<DXW.AutofitToFirstFixedWidthCell>(value);
+    get => _Element?.GetBoolVal<DXW.AutofitToFirstFixedWidthCell>();
+    set => _ExistingElement.SetBoolVal<DXW.AutofitToFirstFixedWidthCell>(value);
   }
 
   /// <summary>
@@ -588,8 +588,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public  bool? UnderlineTabInNumberingList
   {
-    get => _Element.GetBoolVal<DXW.UnderlineTabInNumberingList>();
-    set => _Element.SetBoolVal<DXW.UnderlineTabInNumberingList>(value);
+    get => _Element?.GetBoolVal<DXW.UnderlineTabInNumberingList>();
+    set => _ExistingElement.SetBoolVal<DXW.UnderlineTabInNumberingList>(value);
   }
 
   /// <summary>
@@ -598,8 +598,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public  bool? DisplayHangulFixedWidth
   {
-    get => _Element.GetBoolVal<DXW.DisplayHangulFixedWidth>();
-    set => _Element.SetBoolVal<DXW.DisplayHangulFixedWidth>(value);
+    get => _Element?.GetBoolVal<DXW.DisplayHangulFixedWidth>();
+    set => _ExistingElement.SetBoolVal<DXW.DisplayHangulFixedWidth>(value);
   }
 
   /// <summary>
@@ -608,8 +608,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public  bool? SplitPageBreakAndParagraphMark
   {
-    get => _Element.GetBoolVal<DXW.SplitPageBreakAndParagraphMark>();
-    set => _Element.SetBoolVal<DXW.SplitPageBreakAndParagraphMark>(value);
+    get => _Element?.GetBoolVal<DXW.SplitPageBreakAndParagraphMark>();
+    set => _ExistingElement.SetBoolVal<DXW.SplitPageBreakAndParagraphMark>(value);
   }
 
   /// <summary>
@@ -618,8 +618,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public  bool? DoNotVerticallyAlignCellWithShape
   {
-    get => _Element.GetBoolVal<DXW.DoNotVerticallyAlignCellWithShape>();
-    set => _Element.SetBoolVal<DXW.DoNotVerticallyAlignCellWithShape>(value);
+    get => _Element?.GetBoolVal<DXW.DoNotVerticallyAlignCellWithShape>();
+    set => _ExistingElement.SetBoolVal<DXW.DoNotVerticallyAlignCellWithShape>(value);
   }
 
   /// <summary>
@@ -628,8 +628,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public  bool? DoNotBreakConstrainedForcedTable
   {
-    get => _Element.GetBoolVal<DXW.DoNotBreakConstrainedForcedTable>();
-    set => _Element.SetBoolVal<DXW.DoNotBreakConstrainedForcedTable>(value);
+    get => _Element?.GetBoolVal<DXW.DoNotBreakConstrainedForcedTable>();
+    set => _ExistingElement.SetBoolVal<DXW.DoNotBreakConstrainedForcedTable>(value);
   }
 
   /// <summary>
@@ -638,8 +638,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public  bool? DoNotVerticallyAlignInTextBox
   {
-    get => _Element.GetBoolVal<DXW.DoNotVerticallyAlignInTextBox>();
-    set => _Element.SetBoolVal<DXW.DoNotVerticallyAlignInTextBox>(value);
+    get => _Element?.GetBoolVal<DXW.DoNotVerticallyAlignInTextBox>();
+    set => _ExistingElement.SetBoolVal<DXW.DoNotVerticallyAlignInTextBox>(value);
   }
 
   /// <summary>
@@ -648,8 +648,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public  bool? UseAnsiKerningPairs
   {
-    get => _Element.GetBoolVal<DXW.UseAnsiKerningPairs>();
-    set => _Element.SetBoolVal<DXW.UseAnsiKerningPairs>(value);
+    get => _Element?.GetBoolVal<DXW.UseAnsiKerningPairs>();
+    set => _ExistingElement.SetBoolVal<DXW.UseAnsiKerningPairs>(value);
   }
 
   /// <summary>
@@ -658,8 +658,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public  bool? CachedColumnBalance
   {
-    get => _Element.GetBoolVal<DXW.CachedColumnBalance>();
-    set => _Element.SetBoolVal<DXW.CachedColumnBalance>(value);
+    get => _Element?.GetBoolVal<DXW.CachedColumnBalance>();
+    set => _ExistingElement.SetBoolVal<DXW.CachedColumnBalance>(value);
   }
 
   /// <summary>
@@ -668,6 +668,6 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public CompatibilitySettings CompatibilitySettings
   {
-    get => new CompatibilitySettings(_Element);
+    get => new CompatibilitySettings(_ExistingElement);
   }
 }

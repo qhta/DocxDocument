@@ -22,7 +22,7 @@ public partial class FontSignature: ModelElement<DXW.FontSignature>
     get
     {
       if (_Element?.UnicodeSignature0?.Value != null)
-        return HexIntConverter.GetValue(_ExistingElement.UnicodeSignature0.Value);
+        return HexIntConverter.GetValue(_Element?.UnicodeSignature0.Value);
       return null;
     }
     set
@@ -44,7 +44,7 @@ public partial class FontSignature: ModelElement<DXW.FontSignature>
     get
     {
       if (_Element?.UnicodeSignature1?.Value != null)
-        return HexIntConverter.GetValue(_ExistingElement.UnicodeSignature1.Value);
+        return HexIntConverter.GetValue(_Element?.UnicodeSignature1.Value);
       return null;
     }
     set
@@ -66,7 +66,7 @@ public partial class FontSignature: ModelElement<DXW.FontSignature>
     get
     {
       if (_Element?.UnicodeSignature2?.Value != null)
-        return HexIntConverter.GetValue(_ExistingElement.UnicodeSignature2.Value);
+        return HexIntConverter.GetValue(_Element?.UnicodeSignature2.Value);
       return null;
     }
     set
@@ -88,7 +88,7 @@ public partial class FontSignature: ModelElement<DXW.FontSignature>
     get
     {
       if (_Element?.UnicodeSignature3?.Value != null)
-        return HexIntConverter.GetValue(_ExistingElement.UnicodeSignature3.Value);
+        return HexIntConverter.GetValue(_Element?.UnicodeSignature3.Value);
       return null;
     }
     set
@@ -110,7 +110,7 @@ public partial class FontSignature: ModelElement<DXW.FontSignature>
     get
     {
       if (_Element?.CodePageSignature0?.Value != null)
-        return HexIntConverter.GetValue(_ExistingElement.CodePageSignature0.Value);
+        return HexIntConverter.GetValue(_Element?.CodePageSignature0.Value);
       return null;
     }
     set
@@ -132,7 +132,7 @@ public partial class FontSignature: ModelElement<DXW.FontSignature>
     get
     {
       if (_Element?.CodePageSignature1?.Value != null)
-        return HexIntConverter.GetValue(_ExistingElement.CodePageSignature1.Value);
+        return HexIntConverter.GetValue(_Element?.CodePageSignature1.Value);
       return null;
     }
     set

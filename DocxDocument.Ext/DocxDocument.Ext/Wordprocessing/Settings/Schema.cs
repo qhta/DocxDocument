@@ -18,39 +18,39 @@ public partial class Schema: ModelElement<DXCXSR.Schema>
   [DataMember]
   public string? Uri
   {
-    get => _Element.Uri?.Value;
+    get => _Element?.Uri?.Value;
     set
     {
       if (value != null)
-        _Element.Uri = new DX.StringValue { Value = (string)value };
+        _ExistingElement.Uri = new DX.StringValue { Value = (string)value };
       else
-        _Element.Uri = null;
+        _ExistingElement.Uri = null;
     }
   }
 
   [DataMember]
   public string? SchemaLocation
   {
-    get => _Element.SchemaLocation?.Value;
+    get => _Element?.SchemaLocation?.Value;
     set
     {
       if (value != null)
-        _Element.SchemaLocation = new DX.StringValue { Value = (string)value };
+        _ExistingElement.SchemaLocation = new DX.StringValue { Value = (string)value };
       else
-        _Element.SchemaLocation = null;
+        _ExistingElement.SchemaLocation = null;
     }
   }
 
   [DataMember]
   public string? ManifestLocation
   {
-    get => _Element.ManifestLocation?.Value;
+    get => _Element?.ManifestLocation?.Value;
     set
     {
       if (value != null)
-        _Element.ManifestLocation = new DX.StringValue { Value = (string)value };
+        _ExistingElement.ManifestLocation = new DX.StringValue { Value = (string)value };
       else
-        _Element.ManifestLocation = null;
+        _ExistingElement.ManifestLocation = null;
     }
   }
 }

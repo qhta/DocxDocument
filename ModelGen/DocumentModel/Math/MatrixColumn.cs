@@ -21,22 +21,11 @@ public partial class MatrixColumn: ModelElement<DXM.MatrixColumn>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.MatrixColumnProperties>();
-      if (element != null)
-        return MatrixColumnPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.MatrixColumnProperties,DXM.MatrixColumnProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.MatrixColumnProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = MatrixColumnPropertiesConverter.CreateOpenXmlElement<DXM.MatrixColumnProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.MatrixColumnProperties,DXM.MatrixColumnProperties>(value);
     }
   }
   

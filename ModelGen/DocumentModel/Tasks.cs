@@ -17,22 +17,11 @@ public partial class Tasks: ModelElement<DXO21DT.Tasks>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO21DT.ExtensionList>();
-      if (element != null)
-        return ExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DM.ExtensionList,DXO21DT.ExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO21DT.ExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DXO21DT.ExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DM.ExtensionList,DXO21DT.ExtensionList>(value);
     }
   }
   

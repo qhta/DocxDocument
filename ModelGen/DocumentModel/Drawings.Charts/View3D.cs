@@ -25,7 +25,7 @@ public partial class View3D: ModelElement<DXDC.View3D>
     }
     set
     {
-      SimpleValueConverter.SetValue<DXDC.RotateX,System.SByte>(openXmlElement, value);
+      SimpleValueConverter.SetValue<DXDC.RotateX,System.SByte>(_ExistingElement, value);
     }
   }
   
@@ -42,7 +42,7 @@ public partial class View3D: ModelElement<DXDC.View3D>
     }
     set
     {
-      SimpleValueConverter.SetValue<DXDC.HeightPercent,System.UInt16>(openXmlElement, value);
+      SimpleValueConverter.SetValue<DXDC.HeightPercent,System.UInt16>(_ExistingElement, value);
     }
   }
   
@@ -59,7 +59,7 @@ public partial class View3D: ModelElement<DXDC.View3D>
     }
     set
     {
-      SimpleValueConverter.SetValue<DXDC.RotateY,System.UInt16>(openXmlElement, value);
+      SimpleValueConverter.SetValue<DXDC.RotateY,System.UInt16>(_ExistingElement, value);
     }
   }
   
@@ -76,7 +76,7 @@ public partial class View3D: ModelElement<DXDC.View3D>
     }
     set
     {
-      SimpleValueConverter.SetValue<DXDC.DepthPercent,System.UInt16>(openXmlElement, value);
+      SimpleValueConverter.SetValue<DXDC.DepthPercent,System.UInt16>(_ExistingElement, value);
     }
   }
   
@@ -89,22 +89,11 @@ public partial class View3D: ModelElement<DXDC.View3D>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.RightAngleAxes>();
-      if (element != null)
-        return RightAngleAxesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.RightAngleAxes,DXDC.RightAngleAxes>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.RightAngleAxes>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RightAngleAxesConverter.CreateOpenXmlElement<DXDC.RightAngleAxes>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.RightAngleAxes,DXDC.RightAngleAxes>(value);
     }
   }
   
@@ -121,7 +110,7 @@ public partial class View3D: ModelElement<DXDC.View3D>
     }
     set
     {
-      SimpleValueConverter.SetValue<DXDC.Perspective,System.Byte>(openXmlElement, value);
+      SimpleValueConverter.SetValue<DXDC.Perspective,System.Byte>(_ExistingElement, value);
     }
   }
   
@@ -134,22 +123,11 @@ public partial class View3D: ModelElement<DXDC.View3D>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.ExtensionList>();
-      if (element != null)
-        return ExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.ExtensionList,DXDC.ExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.ExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DXDC.ExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.ExtensionList,DXDC.ExtensionList>(value);
     }
   }
   

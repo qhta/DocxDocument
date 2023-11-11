@@ -85,22 +85,11 @@ public partial class InsertedMathControl: ModelElement<DXW.InsertedMathControl>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.RunProperties>();
-      if (element != null)
-        return RunPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.RunProperties,DXW.RunProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.RunProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RunPropertiesConverter.CreateOpenXmlElement<DXW.RunProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.RunProperties,DXW.RunProperties>(value);
     }
   }
   
@@ -109,22 +98,11 @@ public partial class InsertedMathControl: ModelElement<DXW.InsertedMathControl>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.DeletedMathControl>();
-      if (element != null)
-        return DeletedMathControlConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.DeletedMathControl,DXW.DeletedMathControl>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.DeletedMathControl>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DeletedMathControlConverter.CreateOpenXmlElement<DXW.DeletedMathControl>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.DeletedMathControl,DXW.DeletedMathControl>(value);
     }
   }
   

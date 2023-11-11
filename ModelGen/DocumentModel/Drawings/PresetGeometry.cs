@@ -21,22 +21,11 @@ public partial class PresetGeometry: ModelElement<DXD.PresetGeometry>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.AdjustValueList>();
-      if (element != null)
-        return AdjustValueListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.AdjustValueList,DXD.AdjustValueList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.AdjustValueList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = AdjustValueListConverter.CreateOpenXmlElement<DXD.AdjustValueList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.AdjustValueList,DXD.AdjustValueList>(value);
     }
   }
   

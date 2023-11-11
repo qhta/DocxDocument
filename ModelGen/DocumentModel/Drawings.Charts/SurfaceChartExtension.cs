@@ -34,22 +34,11 @@ public partial class SurfaceChartExtension: ModelElement<DXDC.SurfaceChartExtens
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13DC.FilteredSurfaceSeries>();
-      if (element != null)
-        return FilteredSurfaceSeriesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC13.FilteredSurfaceSeries,DXO13DC.FilteredSurfaceSeries>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13DC.FilteredSurfaceSeries>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FilteredSurfaceSeriesConverter.CreateOpenXmlElement<DXO13DC.FilteredSurfaceSeries>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC13.FilteredSurfaceSeries,DXO13DC.FilteredSurfaceSeries>(value);
     }
   }
   

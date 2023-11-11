@@ -89,22 +89,11 @@ public partial class TableRowPropertiesChange: ModelElement<DXW.TableRowProperti
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.PreviousTableRowProperties>();
-      if (element != null)
-        return PreviousTableRowPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.PreviousTableRowProperties,DXW.PreviousTableRowProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.PreviousTableRowProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PreviousTableRowPropertiesConverter.CreateOpenXmlElement<DXW.PreviousTableRowProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.PreviousTableRowProperties,DXW.PreviousTableRowProperties>(value);
     }
   }
   

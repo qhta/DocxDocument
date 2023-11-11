@@ -48,22 +48,11 @@ public partial class FootnoteProperties: ModelElement<DXW.FootnoteProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.NumberingFormat>();
-      if (element != null)
-        return NumberingFormatConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.NumberingFormat,DXW.NumberingFormat>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.NumberingFormat>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NumberingFormatConverter.CreateOpenXmlElement<DXW.NumberingFormat>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.NumberingFormat,DXW.NumberingFormat>(value);
     }
   }
   
@@ -80,7 +69,7 @@ public partial class FootnoteProperties: ModelElement<DXW.FootnoteProperties>
     }
     set
     {
-      SimpleValueConverter.SetValue<DXW.NumberingStart,System.UInt16>(openXmlElement, value);
+      SimpleValueConverter.SetValue<DXW.NumberingStart,System.UInt16>(_ExistingElement, value);
     }
   }
   

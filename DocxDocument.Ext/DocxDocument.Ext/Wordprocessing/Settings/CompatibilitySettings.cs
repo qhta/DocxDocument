@@ -6,12 +6,9 @@
 /// Instead items of DocumentFormat.OpenXml.Wordprocessing.CompatiblitySetting type 
 /// are included directly in DocumentFormat.OpenXml.Wordprocessing.Compatibility element.
 /// </summary>
-public partial class CompatibilitySettings: ModelElement
+public partial class CompatibilitySettings: NamedElementCollection<DXW.Compatibility, DXW.CompatibilitySetting, DMW.CompatibilitySetting>
 {
-  public CompatibilitySettings(DXW.Compatibility openXmlElement)
-  {
-    _Element = openXmlElement;
-  }
+  public CompatibilitySettings(): base() { }
+  public CompatibilitySettings(DXW.Compatibility openXmlElement): base(openXmlElement) { }
 
-  internal DXW.Compatibility _Element { get; private set; }
 }

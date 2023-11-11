@@ -21,22 +21,11 @@ public partial class Frame: ModelElement<DXW.Frame>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.FrameSize>();
-      if (element != null)
-        return FrameSizeConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.FrameSize,DXW.FrameSize>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.FrameSize>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FrameSizeConverter.CreateOpenXmlElement<DXW.FrameSize>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.FrameSize,DXW.FrameSize>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class Frame: ModelElement<DXW.Frame>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.FrameName>();
-      if (element != null)
-        return FrameNameConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.FrameName,DXW.FrameName>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.FrameName>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FrameNameConverter.CreateOpenXmlElement<DXW.FrameName>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.FrameName,DXW.FrameName>(value);
     }
   }
   
@@ -77,22 +55,11 @@ public partial class Frame: ModelElement<DXW.Frame>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.SourceFileReference>();
-      if (element != null)
-        return SourceFileReferenceConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.SourceFileReference,DXW.SourceFileReference>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.SourceFileReference>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SourceFileReferenceConverter.CreateOpenXmlElement<DXW.SourceFileReference>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.SourceFileReference,DXW.SourceFileReference>(value);
     }
   }
   
@@ -105,22 +72,11 @@ public partial class Frame: ModelElement<DXW.Frame>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.MarginWidth>();
-      if (element != null)
-        return MarginWidthConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.MarginWidth,DXW.MarginWidth>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.MarginWidth>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = MarginWidthConverter.CreateOpenXmlElement<DXW.MarginWidth>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.MarginWidth,DXW.MarginWidth>(value);
     }
   }
   
@@ -133,22 +89,11 @@ public partial class Frame: ModelElement<DXW.Frame>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.MarginHeight>();
-      if (element != null)
-        return MarginHeightConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.MarginHeight,DXW.MarginHeight>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.MarginHeight>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = MarginHeightConverter.CreateOpenXmlElement<DXW.MarginHeight>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.MarginHeight,DXW.MarginHeight>(value);
     }
   }
   
@@ -188,22 +133,11 @@ public partial class Frame: ModelElement<DXW.Frame>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.NoResizeAllowed>();
-      if (element != null)
-        return NoResizeAllowedConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.NoResizeAllowed,DXW.NoResizeAllowed>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.NoResizeAllowed>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NoResizeAllowedConverter.CreateOpenXmlElement<DXW.NoResizeAllowed>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.NoResizeAllowed,DXW.NoResizeAllowed>(value);
     }
   }
   
@@ -216,22 +150,11 @@ public partial class Frame: ModelElement<DXW.Frame>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.LinkedToFile>();
-      if (element != null)
-        return LinkedToFileConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.LinkedToFile,DXW.LinkedToFile>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.LinkedToFile>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LinkedToFileConverter.CreateOpenXmlElement<DXW.LinkedToFile>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.LinkedToFile,DXW.LinkedToFile>(value);
     }
   }
   

@@ -58,18 +58,20 @@ public partial class ShapeDefaultsType : ModelElement, IOpenXmlElementMappedObje
 
   internal DXW.ShapeDefaultsType _Element { get; private set; }
 
+  internal DXW.ShapeDefaultsType _ExistingElement => _Element;
+
   [DataMember]
   public DMV.ShapeDefaults? VmlShapeDefaults
   {
-    get => _Element.GetObject<DMV.ShapeDefaults, DXVO.ShapeDefaults>();
-    set => _Element.SetObject<DMV.ShapeDefaults, DXVO.ShapeDefaults>(value);
+    get => _Element?.GetObject<DMV.ShapeDefaults, DXVO.ShapeDefaults>();
+    set => _ExistingElement.SetObject<DMV.ShapeDefaults, DXVO.ShapeDefaults>(value);
   }
 
   [DataMember]
   public DMV.ShapeLayout? VmlShapeLayout
   {
-    get => _Element.GetObject<DMV.ShapeLayout, DXVO.ShapeLayout>();
-    set => _Element.SetObject<DMV.ShapeLayout, DXVO.ShapeLayout>(value);
+    get => _Element?.GetObject<DMV.ShapeLayout, DXVO.ShapeLayout>();
+    set => _ExistingElement.SetObject<DMV.ShapeLayout, DXVO.ShapeLayout>(value);
   }
 
 }

@@ -43,7 +43,7 @@ public partial class NumberFormat: ModelElement<DXO16DCD.NumberFormat>
     set
     {
       if (value != null)
-        _ExistingElement.SourceLinked = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.SourceLinked = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.SourceLinked = null;
     }

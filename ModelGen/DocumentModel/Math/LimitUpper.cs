@@ -21,22 +21,11 @@ public partial class LimitUpper: ModelElement<DXM.LimitUpper>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.LimitUpperProperties>();
-      if (element != null)
-        return LimitUpperPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.LimitUpperProperties,DXM.LimitUpperProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.LimitUpperProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LimitUpperPropertiesConverter.CreateOpenXmlElement<DXM.LimitUpperProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.LimitUpperProperties,DXM.LimitUpperProperties>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class LimitUpper: ModelElement<DXM.LimitUpper>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.Base>();
-      if (element != null)
-        return BaseConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.Base,DXM.Base>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.Base>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BaseConverter.CreateOpenXmlElement<DXM.Base>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.Base,DXM.Base>(value);
     }
   }
   
@@ -77,22 +55,11 @@ public partial class LimitUpper: ModelElement<DXM.LimitUpper>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.Limit>();
-      if (element != null)
-        return LimitConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.Limit,DXM.Limit>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.Limit>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LimitConverter.CreateOpenXmlElement<DXM.Limit>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.Limit,DXM.Limit>(value);
     }
   }
   

@@ -864,8 +864,11 @@ public static class ModelManager
             propInfo.Constraints.FirstOrDefault(item => item.GetType() == typeof(StringConstraint));
           if (stringConstraint != null)
           {
-            if (stringConstraint.FixLength == 2)
+            if (stringConstraint.FixLength == 1)
               targetType = typeof(HexChar);
+            else
+            if (stringConstraint.FixLength == 2)
+              targetType = typeof(HexWord);
             else
             if (stringConstraint.FixLength == 3)
               targetType = typeof(RGB);
@@ -950,6 +953,15 @@ public static class ModelManager
   public static TypeInfo? GetConversionTarget(this TypeInfo typeInfo)
   {
     var result = TypeManager.GetRelatedTypes(typeInfo, Semantics.TypeChange).FirstOrDefault();
+    //if (result!=null)
+    //{
+    //  var argType = result.GetGenericArguments().FirstOrDefault();
+    //  if (argType!=null)
+    //  { 
+    //    argType = TypeManager.GetRelatedTypes(argType, Semantics.TypeChange).FirstOrDefault();
+    //    return argType; 
+    //  }
+    //}
     return result;
   }
 

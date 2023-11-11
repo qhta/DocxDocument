@@ -25,7 +25,7 @@ public partial class MathProperties: ModelElement<DXM.MathProperties>
     }
     set
     {
-      StringValueConverter.SetValue<DXM.MathFont>(openXmlElement, value);
+      StringValueConverter.SetValue<DXM.MathFont>(_ExistingElement, value);
     }
   }
   
@@ -92,22 +92,11 @@ public partial class MathProperties: ModelElement<DXM.MathProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.SmallFraction>();
-      if (element != null)
-        return SmallFractionConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.SmallFraction,DXM.SmallFraction>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.SmallFraction>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SmallFractionConverter.CreateOpenXmlElement<DXM.SmallFraction>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.SmallFraction,DXM.SmallFraction>(value);
     }
   }
   
@@ -120,22 +109,11 @@ public partial class MathProperties: ModelElement<DXM.MathProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.DisplayDefaults>();
-      if (element != null)
-        return DisplayDefaultsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.DisplayDefaults,DXM.DisplayDefaults>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.DisplayDefaults>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DisplayDefaultsConverter.CreateOpenXmlElement<DXM.DisplayDefaults>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.DisplayDefaults,DXM.DisplayDefaults>(value);
     }
   }
   
@@ -148,22 +126,11 @@ public partial class MathProperties: ModelElement<DXM.MathProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.LeftMargin>();
-      if (element != null)
-        return LeftMarginConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.LeftMargin,DXM.LeftMargin>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.LeftMargin>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LeftMarginConverter.CreateOpenXmlElement<DXM.LeftMargin>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.LeftMargin,DXM.LeftMargin>(value);
     }
   }
   
@@ -176,22 +143,11 @@ public partial class MathProperties: ModelElement<DXM.MathProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.RightMargin>();
-      if (element != null)
-        return RightMarginConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.RightMargin,DXM.RightMargin>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.RightMargin>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RightMarginConverter.CreateOpenXmlElement<DXM.RightMargin>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.RightMargin,DXM.RightMargin>(value);
     }
   }
   
@@ -204,22 +160,11 @@ public partial class MathProperties: ModelElement<DXM.MathProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.DefaultJustification>();
-      if (element != null)
-        return DefaultJustificationConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.DefaultJustification,DXM.DefaultJustification>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.DefaultJustification>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DefaultJustificationConverter.CreateOpenXmlElement<DXM.DefaultJustification>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.DefaultJustification,DXM.DefaultJustification>(value);
     }
   }
   
@@ -232,22 +177,11 @@ public partial class MathProperties: ModelElement<DXM.MathProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.PreSpacing>();
-      if (element != null)
-        return PreSpacingConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.PreSpacing,DXM.PreSpacing>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.PreSpacing>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PreSpacingConverter.CreateOpenXmlElement<DXM.PreSpacing>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.PreSpacing,DXM.PreSpacing>(value);
     }
   }
   
@@ -260,22 +194,11 @@ public partial class MathProperties: ModelElement<DXM.MathProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.PostSpacing>();
-      if (element != null)
-        return PostSpacingConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.PostSpacing,DXM.PostSpacing>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.PostSpacing>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PostSpacingConverter.CreateOpenXmlElement<DXM.PostSpacing>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.PostSpacing,DXM.PostSpacing>(value);
     }
   }
   
@@ -288,22 +211,11 @@ public partial class MathProperties: ModelElement<DXM.MathProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.InterSpacing>();
-      if (element != null)
-        return InterSpacingConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.InterSpacing,DXM.InterSpacing>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.InterSpacing>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = InterSpacingConverter.CreateOpenXmlElement<DXM.InterSpacing>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.InterSpacing,DXM.InterSpacing>(value);
     }
   }
   
@@ -316,22 +228,11 @@ public partial class MathProperties: ModelElement<DXM.MathProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.IntraSpacing>();
-      if (element != null)
-        return IntraSpacingConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.IntraSpacing,DXM.IntraSpacing>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.IntraSpacing>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = IntraSpacingConverter.CreateOpenXmlElement<DXM.IntraSpacing>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.IntraSpacing,DXM.IntraSpacing>(value);
     }
   }
   
@@ -340,22 +241,11 @@ public partial class MathProperties: ModelElement<DXM.MathProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.WrapIndent>();
-      if (element != null)
-        return WrapIndentConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.WrapIndent,DXM.WrapIndent>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.WrapIndent>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = WrapIndentConverter.CreateOpenXmlElement<DXM.WrapIndent>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.WrapIndent,DXM.WrapIndent>(value);
     }
   }
   
@@ -364,22 +254,11 @@ public partial class MathProperties: ModelElement<DXM.MathProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.WrapRight>();
-      if (element != null)
-        return WrapRightConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.WrapRight,DXM.WrapRight>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.WrapRight>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = WrapRightConverter.CreateOpenXmlElement<DXM.WrapRight>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.WrapRight,DXM.WrapRight>(value);
     }
   }
   
@@ -388,22 +267,11 @@ public partial class MathProperties: ModelElement<DXM.MathProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.IntegralLimitLocation>();
-      if (element != null)
-        return IntegralLimitLocationConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.IntegralLimitLocation,DXM.IntegralLimitLocation>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.IntegralLimitLocation>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = IntegralLimitLocationConverter.CreateOpenXmlElement<DXM.IntegralLimitLocation>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.IntegralLimitLocation,DXM.IntegralLimitLocation>(value);
     }
   }
   
@@ -412,22 +280,11 @@ public partial class MathProperties: ModelElement<DXM.MathProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.NaryLimitLocation>();
-      if (element != null)
-        return NaryLimitLocationConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.NaryLimitLocation,DXM.NaryLimitLocation>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.NaryLimitLocation>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NaryLimitLocationConverter.CreateOpenXmlElement<DXM.NaryLimitLocation>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.NaryLimitLocation,DXM.NaryLimitLocation>(value);
     }
   }
   

@@ -34,15 +34,18 @@ public partial class Fill: ModelElement<DXV.Fill>
   ///   Fill Toggle
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? On
+  public Boolean? On
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.On?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.On = value;
+      else
+        _ExistingElement.On = null;
     }
   }
   
@@ -238,15 +241,18 @@ public partial class Fill: ModelElement<DXV.Fill>
   ///   Align Image With Shape
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? AlignShape
+  public Boolean? AlignShape
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.AlignShape?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.AlignShape = value;
+      else
+        _ExistingElement.AlignShape = null;
     }
   }
   
@@ -306,15 +312,18 @@ public partial class Fill: ModelElement<DXV.Fill>
   ///   Detect Mouse Click
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? DetectMouseClick
+  public Boolean? DetectMouseClick
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.DetectMouseClick?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.DetectMouseClick = value;
+      else
+        _ExistingElement.DetectMouseClick = null;
     }
   }
   
@@ -357,15 +366,18 @@ public partial class Fill: ModelElement<DXV.Fill>
   ///   Recolor Fill as Picture
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? Recolor
+  public Boolean? Recolor
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.Recolor?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.Recolor = value;
+      else
+        _ExistingElement.Recolor = null;
     }
   }
   
@@ -374,15 +386,18 @@ public partial class Fill: ModelElement<DXV.Fill>
   ///   Rotate Fill with Shape
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? Rotate
+  public Boolean? Rotate
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.Rotate?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.Rotate = value;
+      else
+        _ExistingElement.Rotate = null;
     }
   }
   
@@ -412,22 +427,11 @@ public partial class Fill: ModelElement<DXV.Fill>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXVO.FillExtendedProperties>();
-      if (element != null)
-        return FillExtendedPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMVML.FillExtendedProperties,DXVO.FillExtendedProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXVO.FillExtendedProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FillExtendedPropertiesConverter.CreateOpenXmlElement<DXVO.FillExtendedProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMVML.FillExtendedProperties,DXVO.FillExtendedProperties>(value);
     }
   }
   

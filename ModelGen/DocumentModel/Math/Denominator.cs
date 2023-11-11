@@ -17,22 +17,11 @@ public partial class Denominator: ModelElement<DXM.Denominator>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.ArgumentProperties>();
-      if (element != null)
-        return ArgumentPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.ArgumentProperties,DXM.ArgumentProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.ArgumentProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ArgumentPropertiesConverter.CreateOpenXmlElement<DXM.ArgumentProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.ArgumentProperties,DXM.ArgumentProperties>(value);
     }
   }
   
@@ -41,22 +30,11 @@ public partial class Denominator: ModelElement<DXM.Denominator>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.ControlProperties>();
-      if (element != null)
-        return ControlPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.ControlProperties,DXM.ControlProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.ControlProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ControlPropertiesConverter.CreateOpenXmlElement<DXM.ControlProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.ControlProperties,DXM.ControlProperties>(value);
     }
   }
   

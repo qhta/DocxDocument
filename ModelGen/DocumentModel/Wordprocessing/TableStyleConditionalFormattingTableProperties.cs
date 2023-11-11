@@ -48,22 +48,11 @@ public partial class TableStyleConditionalFormattingTableProperties: ModelElemen
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.TableCellSpacing>();
-      if (element != null)
-        return TableCellSpacingConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.TableCellSpacing,DXW.TableCellSpacing>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.TableCellSpacing>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TableCellSpacingConverter.CreateOpenXmlElement<DXW.TableCellSpacing>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.TableCellSpacing,DXW.TableCellSpacing>(value);
     }
   }
   
@@ -76,22 +65,11 @@ public partial class TableStyleConditionalFormattingTableProperties: ModelElemen
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.TableIndentation>();
-      if (element != null)
-        return TableIndentationConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.TableIndentation,DXW.TableIndentation>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.TableIndentation>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TableIndentationConverter.CreateOpenXmlElement<DXW.TableIndentation>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.TableIndentation,DXW.TableIndentation>(value);
     }
   }
   
@@ -104,22 +82,11 @@ public partial class TableStyleConditionalFormattingTableProperties: ModelElemen
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.TableBorders>();
-      if (element != null)
-        return TableBordersConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.TableBorders,DXW.TableBorders>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.TableBorders>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TableBordersConverter.CreateOpenXmlElement<DXW.TableBorders>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.TableBorders,DXW.TableBorders>(value);
     }
   }
   
@@ -132,22 +99,11 @@ public partial class TableStyleConditionalFormattingTableProperties: ModelElemen
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.Shading>();
-      if (element != null)
-        return ShadingConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.Shading,DXW.Shading>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Shading>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ShadingConverter.CreateOpenXmlElement<DXW.Shading>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.Shading,DXW.Shading>(value);
     }
   }
   
@@ -160,22 +116,11 @@ public partial class TableStyleConditionalFormattingTableProperties: ModelElemen
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.TableCellMarginDefault>();
-      if (element != null)
-        return TableCellMarginDefaultConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.TableCellMarginDefault,DXW.TableCellMarginDefault>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.TableCellMarginDefault>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TableCellMarginDefaultConverter.CreateOpenXmlElement<DXW.TableCellMarginDefault>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.TableCellMarginDefault,DXW.TableCellMarginDefault>(value);
     }
   }
   

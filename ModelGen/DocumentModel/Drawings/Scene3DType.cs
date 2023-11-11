@@ -21,22 +21,11 @@ public partial class Scene3DType: ModelElement<DXD.Scene3DType>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.Camera>();
-      if (element != null)
-        return CameraConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.Camera,DXD.Camera>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.Camera>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = CameraConverter.CreateOpenXmlElement<DXD.Camera>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.Camera,DXD.Camera>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class Scene3DType: ModelElement<DXD.Scene3DType>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.LightRig>();
-      if (element != null)
-        return LightRigConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.LightRig,DXD.LightRig>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.LightRig>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LightRigConverter.CreateOpenXmlElement<DXD.LightRig>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.LightRig,DXD.LightRig>(value);
     }
   }
   
@@ -77,22 +55,11 @@ public partial class Scene3DType: ModelElement<DXD.Scene3DType>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.Backdrop>();
-      if (element != null)
-        return BackdropConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.Backdrop,DXD.Backdrop>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.Backdrop>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BackdropConverter.CreateOpenXmlElement<DXD.Backdrop>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.Backdrop,DXD.Backdrop>(value);
     }
   }
   
@@ -105,22 +72,11 @@ public partial class Scene3DType: ModelElement<DXD.Scene3DType>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.ExtensionList>();
-      if (element != null)
-        return ExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.ExtensionList,DXD.ExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.ExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DXD.ExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.ExtensionList,DXD.ExtensionList>(value);
     }
   }
   

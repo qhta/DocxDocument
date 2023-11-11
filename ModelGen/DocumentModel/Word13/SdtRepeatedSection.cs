@@ -25,7 +25,7 @@ public partial class SdtRepeatedSection: ModelElement<DXO13W.SdtRepeatedSection>
     }
     set
     {
-      StringValueConverter.SetValue<DXO13W.SectionTitle>(openXmlElement, value);
+      StringValueConverter.SetValue<DXO13W.SectionTitle>(_ExistingElement, value);
     }
   }
   
@@ -38,22 +38,11 @@ public partial class SdtRepeatedSection: ModelElement<DXO13W.SdtRepeatedSection>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13W.DoNotAllowInsertDeleteSection>();
-      if (element != null)
-        return DoNotAllowInsertDeleteSectionConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW13.DoNotAllowInsertDeleteSection,DXO13W.DoNotAllowInsertDeleteSection>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13W.DoNotAllowInsertDeleteSection>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DoNotAllowInsertDeleteSectionConverter.CreateOpenXmlElement<DXO13W.DoNotAllowInsertDeleteSection>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW13.DoNotAllowInsertDeleteSection,DXO13W.DoNotAllowInsertDeleteSection>(value);
     }
   }
   

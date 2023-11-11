@@ -21,22 +21,11 @@ public partial class GroupShapeNonVisualProperties: ModelElement<DXOD.GroupShape
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXOD.NonVisualDrawingProperties>();
-      if (element != null)
-        return NonVisualDrawingPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDO.NonVisualDrawingProperties,DXOD.NonVisualDrawingProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXOD.NonVisualDrawingProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NonVisualDrawingPropertiesConverter.CreateOpenXmlElement<DXOD.NonVisualDrawingProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDO.NonVisualDrawingProperties,DXOD.NonVisualDrawingProperties>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class GroupShapeNonVisualProperties: ModelElement<DXOD.GroupShape
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXOD.NonVisualGroupDrawingShapeProperties>();
-      if (element != null)
-        return NonVisualGroupDrawingShapePropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDO.NonVisualGroupDrawingShapeProperties,DXOD.NonVisualGroupDrawingShapeProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXOD.NonVisualGroupDrawingShapeProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NonVisualGroupDrawingShapePropertiesConverter.CreateOpenXmlElement<DXOD.NonVisualGroupDrawingShapeProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDO.NonVisualGroupDrawingShapeProperties,DXOD.NonVisualGroupDrawingShapeProperties>(value);
     }
   }
   

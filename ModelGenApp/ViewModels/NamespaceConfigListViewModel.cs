@@ -40,7 +40,10 @@ public class NamespaceConfigListViewModel : ModelConfigViewModel
         if (configData.NamespaceShortcuts.TryGetValue(ns, out var shortcut))
           item.Shortcut = shortcut;
         if (configData.TranslatedNamespaces.TryGetValue(ns, out var translated))
+        {
           item.TargetName = translated;
+          item.TargetExcluded = configData.ExcludedNamespaces.Contains(translated);
+        }
         if (translated != null)
           if (configData.NamespaceShortcuts.TryGetValue(translated, out var targetShortcut))
             item.TargetShortcut = targetShortcut;
@@ -68,6 +71,8 @@ public class NamespaceConfigListViewModel : ModelConfigViewModel
     {
       if (item.Excluded)
         configData.ExcludedNamespaces.Add(item.OrigName);
+      if (item.TargetExcluded && item.TargetName!=null)
+        configData.ExcludedNamespaces.Add(item.TargetName);
       if (!String.IsNullOrWhiteSpace(item.Shortcut))
         configData.NamespaceShortcuts.Add(item.OrigName, item.Shortcut);
       if (!String.IsNullOrWhiteSpace(item.TargetName))

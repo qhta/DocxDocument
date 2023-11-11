@@ -38,22 +38,11 @@ public partial class Shape: ModelElement<DXOD.Shape>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXOD.ShapeNonVisualProperties>();
-      if (element != null)
-        return ShapeNonVisualPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDO.ShapeNonVisualProperties,DXOD.ShapeNonVisualProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXOD.ShapeNonVisualProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ShapeNonVisualPropertiesConverter.CreateOpenXmlElement<DXOD.ShapeNonVisualProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDO.ShapeNonVisualProperties,DXOD.ShapeNonVisualProperties>(value);
     }
   }
   
@@ -66,22 +55,11 @@ public partial class Shape: ModelElement<DXOD.Shape>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXOD.ShapeProperties>();
-      if (element != null)
-        return ShapePropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDO.ShapeProperties,DXOD.ShapeProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXOD.ShapeProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ShapePropertiesConverter.CreateOpenXmlElement<DXOD.ShapeProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDO.ShapeProperties,DXOD.ShapeProperties>(value);
     }
   }
   
@@ -94,22 +72,11 @@ public partial class Shape: ModelElement<DXOD.Shape>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXOD.ShapeStyle>();
-      if (element != null)
-        return ShapeStyleConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDO.ShapeStyle,DXOD.ShapeStyle>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXOD.ShapeStyle>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ShapeStyleConverter.CreateOpenXmlElement<DXOD.ShapeStyle>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDO.ShapeStyle,DXOD.ShapeStyle>(value);
     }
   }
   
@@ -122,22 +89,11 @@ public partial class Shape: ModelElement<DXOD.Shape>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXOD.TextBody>();
-      if (element != null)
-        return TextBodyConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDO.TextBody,DXOD.TextBody>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXOD.TextBody>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TextBodyConverter.CreateOpenXmlElement<DXOD.TextBody>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDO.TextBody,DXOD.TextBody>(value);
     }
   }
   
@@ -150,22 +106,11 @@ public partial class Shape: ModelElement<DXOD.Shape>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXOD.Transform2D>();
-      if (element != null)
-        return Transform2DConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDO.Transform2D,DXOD.Transform2D>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXOD.Transform2D>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = Transform2DConverter.CreateOpenXmlElement<DXOD.Transform2D>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDO.Transform2D,DXOD.Transform2D>(value);
     }
   }
   
@@ -178,22 +123,11 @@ public partial class Shape: ModelElement<DXOD.Shape>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXOD.OfficeArtExtensionList>();
-      if (element != null)
-        return OfficeArtExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDO.OfficeArtExtensionList,DXOD.OfficeArtExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXOD.OfficeArtExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = OfficeArtExtensionListConverter.CreateOpenXmlElement<DXOD.OfficeArtExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDO.OfficeArtExtensionList,DXOD.OfficeArtExtensionList>(value);
     }
   }
   

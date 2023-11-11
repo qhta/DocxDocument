@@ -48,22 +48,11 @@ public partial class MailMerge: ModelElement<DXW.MailMerge>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.LinkToQuery>();
-      if (element != null)
-        return LinkToQueryConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.LinkToQuery,DXW.LinkToQuery>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.LinkToQuery>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LinkToQueryConverter.CreateOpenXmlElement<DXW.LinkToQuery>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.LinkToQuery,DXW.LinkToQuery>(value);
     }
   }
   
@@ -103,22 +92,11 @@ public partial class MailMerge: ModelElement<DXW.MailMerge>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.ConnectString>();
-      if (element != null)
-        return ConnectStringConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.ConnectString,DXW.ConnectString>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.ConnectString>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ConnectStringConverter.CreateOpenXmlElement<DXW.ConnectString>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.ConnectString,DXW.ConnectString>(value);
     }
   }
   
@@ -131,22 +109,11 @@ public partial class MailMerge: ModelElement<DXW.MailMerge>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.Query>();
-      if (element != null)
-        return QueryConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.Query,DXW.Query>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Query>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = QueryConverter.CreateOpenXmlElement<DXW.Query>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.Query,DXW.Query>(value);
     }
   }
   
@@ -159,22 +126,11 @@ public partial class MailMerge: ModelElement<DXW.MailMerge>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.DataSourceReference>();
-      if (element != null)
-        return DataSourceReferenceConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.DataSourceReference,DXW.DataSourceReference>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.DataSourceReference>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DataSourceReferenceConverter.CreateOpenXmlElement<DXW.DataSourceReference>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.DataSourceReference,DXW.DataSourceReference>(value);
     }
   }
   
@@ -187,22 +143,11 @@ public partial class MailMerge: ModelElement<DXW.MailMerge>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.HeaderSource>();
-      if (element != null)
-        return HeaderSourceConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.HeaderSource,DXW.HeaderSource>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.HeaderSource>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = HeaderSourceConverter.CreateOpenXmlElement<DXW.HeaderSource>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.HeaderSource,DXW.HeaderSource>(value);
     }
   }
   
@@ -215,22 +160,11 @@ public partial class MailMerge: ModelElement<DXW.MailMerge>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.DoNotSuppressBlankLines>();
-      if (element != null)
-        return DoNotSuppressBlankLinesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.DoNotSuppressBlankLines,DXW.DoNotSuppressBlankLines>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.DoNotSuppressBlankLines>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DoNotSuppressBlankLinesConverter.CreateOpenXmlElement<DXW.DoNotSuppressBlankLines>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.DoNotSuppressBlankLines,DXW.DoNotSuppressBlankLines>(value);
     }
   }
   
@@ -270,22 +204,11 @@ public partial class MailMerge: ModelElement<DXW.MailMerge>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.AddressFieldName>();
-      if (element != null)
-        return AddressFieldNameConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.AddressFieldName,DXW.AddressFieldName>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.AddressFieldName>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = AddressFieldNameConverter.CreateOpenXmlElement<DXW.AddressFieldName>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.AddressFieldName,DXW.AddressFieldName>(value);
     }
   }
   
@@ -298,22 +221,11 @@ public partial class MailMerge: ModelElement<DXW.MailMerge>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.MailSubject>();
-      if (element != null)
-        return MailSubjectConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.MailSubject,DXW.MailSubject>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.MailSubject>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = MailSubjectConverter.CreateOpenXmlElement<DXW.MailSubject>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.MailSubject,DXW.MailSubject>(value);
     }
   }
   
@@ -326,22 +238,11 @@ public partial class MailMerge: ModelElement<DXW.MailMerge>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.MailAsAttachment>();
-      if (element != null)
-        return MailAsAttachmentConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.MailAsAttachment,DXW.MailAsAttachment>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.MailAsAttachment>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = MailAsAttachmentConverter.CreateOpenXmlElement<DXW.MailAsAttachment>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.MailAsAttachment,DXW.MailAsAttachment>(value);
     }
   }
   
@@ -354,22 +255,11 @@ public partial class MailMerge: ModelElement<DXW.MailMerge>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.ViewMergedData>();
-      if (element != null)
-        return ViewMergedDataConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.ViewMergedData,DXW.ViewMergedData>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.ViewMergedData>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ViewMergedDataConverter.CreateOpenXmlElement<DXW.ViewMergedData>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.ViewMergedData,DXW.ViewMergedData>(value);
     }
   }
   
@@ -382,22 +272,11 @@ public partial class MailMerge: ModelElement<DXW.MailMerge>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.ActiveRecord>();
-      if (element != null)
-        return ActiveRecordConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.ActiveRecord,DXW.ActiveRecord>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.ActiveRecord>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ActiveRecordConverter.CreateOpenXmlElement<DXW.ActiveRecord>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.ActiveRecord,DXW.ActiveRecord>(value);
     }
   }
   
@@ -410,22 +289,11 @@ public partial class MailMerge: ModelElement<DXW.MailMerge>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.CheckErrors>();
-      if (element != null)
-        return CheckErrorsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.CheckErrors,DXW.CheckErrors>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.CheckErrors>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = CheckErrorsConverter.CreateOpenXmlElement<DXW.CheckErrors>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.CheckErrors,DXW.CheckErrors>(value);
     }
   }
   
@@ -438,22 +306,11 @@ public partial class MailMerge: ModelElement<DXW.MailMerge>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.DataSourceObject>();
-      if (element != null)
-        return DataSourceObjectConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.DataSourceObject,DXW.DataSourceObject>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.DataSourceObject>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DataSourceObjectConverter.CreateOpenXmlElement<DXW.DataSourceObject>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.DataSourceObject,DXW.DataSourceObject>(value);
     }
   }
   

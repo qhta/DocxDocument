@@ -72,22 +72,11 @@ public partial class ThemeFamily: ModelElement<DXO13T.ThemeFamily>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13T.OfficeArtExtensionList>();
-      if (element != null)
-        return OfficeArtExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMT.OfficeArtExtensionList,DXO13T.OfficeArtExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13T.OfficeArtExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = OfficeArtExtensionListConverter.CreateOpenXmlElement<DXO13T.OfficeArtExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMT.OfficeArtExtensionList,DXO13T.OfficeArtExtensionList>(value);
     }
   }
   
