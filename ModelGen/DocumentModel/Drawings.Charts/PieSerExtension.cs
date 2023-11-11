@@ -34,22 +34,11 @@ public partial class PieSerExtension: ModelElement<DXDC.PieSerExtension>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13DC.FilteredSeriesTitle>();
-      if (element != null)
-        return FilteredSeriesTitleConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC13.FilteredSeriesTitle,DXO13DC.FilteredSeriesTitle>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13DC.FilteredSeriesTitle>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FilteredSeriesTitleConverter.CreateOpenXmlElement<DXO13DC.FilteredSeriesTitle>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC13.FilteredSeriesTitle,DXO13DC.FilteredSeriesTitle>(value);
     }
   }
   
@@ -58,22 +47,11 @@ public partial class PieSerExtension: ModelElement<DXDC.PieSerExtension>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13DC.FilteredCategoryTitle>();
-      if (element != null)
-        return FilteredCategoryTitleConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC13.FilteredCategoryTitle,DXO13DC.FilteredCategoryTitle>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13DC.FilteredCategoryTitle>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FilteredCategoryTitleConverter.CreateOpenXmlElement<DXO13DC.FilteredCategoryTitle>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC13.FilteredCategoryTitle,DXO13DC.FilteredCategoryTitle>(value);
     }
   }
   
@@ -82,22 +60,11 @@ public partial class PieSerExtension: ModelElement<DXDC.PieSerExtension>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13DC.DataLabelsRange>();
-      if (element != null)
-        return DataLabelsRangeConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC13.DataLabelsRange,DXO13DC.DataLabelsRange>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13DC.DataLabelsRange>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DataLabelsRangeConverter.CreateOpenXmlElement<DXO13DC.DataLabelsRange>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC13.DataLabelsRange,DXO13DC.DataLabelsRange>(value);
     }
   }
   
@@ -106,22 +73,11 @@ public partial class PieSerExtension: ModelElement<DXDC.PieSerExtension>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13DC.CategoryFilterExceptions>();
-      if (element != null)
-        return CategoryFilterExceptionsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC13.CategoryFilterExceptions,DXO13DC.CategoryFilterExceptions>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13DC.CategoryFilterExceptions>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = CategoryFilterExceptionsConverter.CreateOpenXmlElement<DXO13DC.CategoryFilterExceptions>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC13.CategoryFilterExceptions,DXO13DC.CategoryFilterExceptions>(value);
     }
   }
   

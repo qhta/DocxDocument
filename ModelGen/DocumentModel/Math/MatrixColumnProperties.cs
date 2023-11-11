@@ -25,7 +25,7 @@ public partial class MatrixColumnProperties: ModelElement<DXM.MatrixColumnProper
     }
     set
     {
-      SimpleValueConverter.SetValue<DXM.MatrixColumnCount,System.Int64>(openXmlElement, value);
+      SimpleValueConverter.SetValue<DXM.MatrixColumnCount,System.Int64>(_ExistingElement, value);
     }
   }
   

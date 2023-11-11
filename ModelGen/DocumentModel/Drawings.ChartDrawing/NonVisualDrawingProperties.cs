@@ -77,7 +77,7 @@ public partial class NonVisualDrawingProperties: ModelElement<DXDCD.NonVisualDra
     set
     {
       if (value != null)
-        _ExistingElement.Hidden = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.Hidden = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.Hidden = null;
     }
@@ -109,22 +109,11 @@ public partial class NonVisualDrawingProperties: ModelElement<DXDCD.NonVisualDra
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.HyperlinkOnClick>();
-      if (element != null)
-        return HyperlinkOnClickConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.HyperlinkOnClick,DXD.HyperlinkOnClick>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.HyperlinkOnClick>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = HyperlinkOnClickConverter.CreateOpenXmlElement<DXD.HyperlinkOnClick>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.HyperlinkOnClick,DXD.HyperlinkOnClick>(value);
     }
   }
   
@@ -137,22 +126,11 @@ public partial class NonVisualDrawingProperties: ModelElement<DXDCD.NonVisualDra
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.HyperlinkOnHover>();
-      if (element != null)
-        return HyperlinkOnHoverConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.HyperlinkOnHover,DXD.HyperlinkOnHover>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.HyperlinkOnHover>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = HyperlinkOnHoverConverter.CreateOpenXmlElement<DXD.HyperlinkOnHover>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.HyperlinkOnHover,DXD.HyperlinkOnHover>(value);
     }
   }
   
@@ -165,22 +143,11 @@ public partial class NonVisualDrawingProperties: ModelElement<DXDCD.NonVisualDra
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.NonVisualDrawingPropertiesExtensionList>();
-      if (element != null)
-        return NonVisualDrawingPropertiesExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.NonVisualDrawingPropertiesExtensionList,DXD.NonVisualDrawingPropertiesExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.NonVisualDrawingPropertiesExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NonVisualDrawingPropertiesExtensionListConverter.CreateOpenXmlElement<DXD.NonVisualDrawingPropertiesExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.NonVisualDrawingPropertiesExtensionList,DXD.NonVisualDrawingPropertiesExtensionList>(value);
     }
   }
   

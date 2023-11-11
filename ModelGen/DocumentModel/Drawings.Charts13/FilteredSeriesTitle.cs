@@ -21,22 +21,11 @@ public partial class FilteredSeriesTitle: ModelElement<DXO13DC.FilteredSeriesTit
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13DC.ChartText>();
-      if (element != null)
-        return ChartTextConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC13.ChartText,DXO13DC.ChartText>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13DC.ChartText>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ChartTextConverter.CreateOpenXmlElement<DXO13DC.ChartText>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC13.ChartText,DXO13DC.ChartText>(value);
     }
   }
   

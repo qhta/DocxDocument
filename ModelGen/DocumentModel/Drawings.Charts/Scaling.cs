@@ -25,7 +25,7 @@ public partial class Scaling: ModelElement<DXDC.Scaling>
     }
     set
     {
-      SimpleValueConverter.SetValue<DXDC.LogBase,System.Double>(openXmlElement, value);
+      SimpleValueConverter.SetValue<DXDC.LogBase,System.Double>(_ExistingElement, value);
     }
   }
   
@@ -65,22 +65,11 @@ public partial class Scaling: ModelElement<DXDC.Scaling>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.MaxAxisValue>();
-      if (element != null)
-        return MaxAxisValueConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.MaxAxisValue,DXDC.MaxAxisValue>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.MaxAxisValue>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = MaxAxisValueConverter.CreateOpenXmlElement<DXDC.MaxAxisValue>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.MaxAxisValue,DXDC.MaxAxisValue>(value);
     }
   }
   
@@ -93,22 +82,11 @@ public partial class Scaling: ModelElement<DXDC.Scaling>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.MinAxisValue>();
-      if (element != null)
-        return MinAxisValueConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.MinAxisValue,DXDC.MinAxisValue>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.MinAxisValue>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = MinAxisValueConverter.CreateOpenXmlElement<DXDC.MinAxisValue>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.MinAxisValue,DXDC.MinAxisValue>(value);
     }
   }
   
@@ -121,22 +99,11 @@ public partial class Scaling: ModelElement<DXDC.Scaling>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.ExtensionList>();
-      if (element != null)
-        return ExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.ExtensionList,DXDC.ExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.ExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DXDC.ExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.ExtensionList,DXDC.ExtensionList>(value);
     }
   }
   

@@ -75,22 +75,11 @@ public partial class Bar3DChart: ModelElement<DXDC.Bar3DChart>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.VaryColors>();
-      if (element != null)
-        return VaryColorsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.VaryColors,DXDC.VaryColors>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.VaryColors>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = VaryColorsConverter.CreateOpenXmlElement<DXDC.VaryColors>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.VaryColors,DXDC.VaryColors>(value);
     }
   }
   
@@ -99,22 +88,11 @@ public partial class Bar3DChart: ModelElement<DXDC.Bar3DChart>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.DataLabels>();
-      if (element != null)
-        return DataLabelsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.DataLabels,DXDC.DataLabels>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.DataLabels>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DataLabelsConverter.CreateOpenXmlElement<DXDC.DataLabels>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.DataLabels,DXDC.DataLabels>(value);
     }
   }
   
@@ -123,22 +101,11 @@ public partial class Bar3DChart: ModelElement<DXDC.Bar3DChart>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.GapWidth>();
-      if (element != null)
-        return GapWidthConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.GapWidth,DXDC.GapWidth>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.GapWidth>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = GapWidthConverter.CreateOpenXmlElement<DXDC.GapWidth>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.GapWidth,DXDC.GapWidth>(value);
     }
   }
   
@@ -147,22 +114,11 @@ public partial class Bar3DChart: ModelElement<DXDC.Bar3DChart>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.GapDepth>();
-      if (element != null)
-        return GapDepthConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.GapDepth,DXDC.GapDepth>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.GapDepth>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = GapDepthConverter.CreateOpenXmlElement<DXDC.GapDepth>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.GapDepth,DXDC.GapDepth>(value);
     }
   }
   
@@ -194,22 +150,11 @@ public partial class Bar3DChart: ModelElement<DXDC.Bar3DChart>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.Bar3DChartExtensionList>();
-      if (element != null)
-        return Bar3DChartExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.Bar3DChartExtensionList,DXDC.Bar3DChartExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.Bar3DChartExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = Bar3DChartExtensionListConverter.CreateOpenXmlElement<DXDC.Bar3DChartExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.Bar3DChartExtensionList,DXDC.Bar3DChartExtensionList>(value);
     }
   }
   

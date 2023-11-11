@@ -17,15 +17,18 @@ public partial class SignatureLine: ModelElement<DXVO.SignatureLine>
   ///   Signature Line Flag
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? IsSignatureLine
+  public Boolean? IsSignatureLine
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.IsSignatureLine?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.IsSignatureLine = value;
+      else
+        _ExistingElement.IsSignatureLine = null;
     }
   }
   
@@ -68,15 +71,18 @@ public partial class SignatureLine: ModelElement<DXVO.SignatureLine>
   ///   Use Signing Instructions Flag
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? SigningInstructionsSet
+  public Boolean? SigningInstructionsSet
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.SigningInstructionsSet?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.SigningInstructionsSet = value;
+      else
+        _ExistingElement.SigningInstructionsSet = null;
     }
   }
   
@@ -85,15 +91,18 @@ public partial class SignatureLine: ModelElement<DXVO.SignatureLine>
   ///   User-specified Comments Flag
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? AllowComments
+  public Boolean? AllowComments
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.AllowComments?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.AllowComments = value;
+      else
+        _ExistingElement.AllowComments = null;
     }
   }
   
@@ -102,15 +111,18 @@ public partial class SignatureLine: ModelElement<DXVO.SignatureLine>
   ///   Show Signed Date Flag
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? ShowSignDate
+  public Boolean? ShowSignDate
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.ShowSignDate?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.ShowSignDate = value;
+      else
+        _ExistingElement.ShowSignDate = null;
     }
   }
   

@@ -17,22 +17,11 @@ public partial class CommentsExtensible: ModelElement<DXO21WCE.CommentsExtensibl
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO21WCE.ExtensionList>();
-      if (element != null)
-        return ExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.ExtensionList,DXO21WCE.ExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO21WCE.ExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DXO21WCE.ExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.ExtensionList,DXO21WCE.ExtensionList>(value);
     }
   }
   

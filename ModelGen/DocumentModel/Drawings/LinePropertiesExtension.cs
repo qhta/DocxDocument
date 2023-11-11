@@ -34,22 +34,11 @@ public partial class LinePropertiesExtension: ModelElement<DXD.LinePropertiesExt
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO21DSS.LineSketchStyleProperties>();
-      if (element != null)
-        return LineSketchStylePropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDSS.LineSketchStyleProperties,DXO21DSS.LineSketchStyleProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO21DSS.LineSketchStyleProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LineSketchStylePropertiesConverter.CreateOpenXmlElement<DXO21DSS.LineSketchStyleProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDSS.LineSketchStyleProperties,DXO21DSS.LineSketchStyleProperties>(value);
     }
   }
   

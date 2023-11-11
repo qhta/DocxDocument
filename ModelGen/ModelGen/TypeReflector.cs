@@ -3,6 +3,8 @@ using DocumentFormat.OpenXml.ExtendedProperties;
 
 using Namotion.Reflection;
 
+using Qhta.TestUtilities;
+
 namespace ModelGen;
 
 public static class TypeReflector
@@ -160,16 +162,14 @@ public static class TypeReflector
   public static void ReflectType(this TypeInfo typeInfo)
   {
     var t1 = DateTime.Now.Ticks;
-    //Debug.WriteLine($"ReflectType({typeInfo.Type.Name}). Thread={Thread.CurrentThread.ManagedThreadId}");
     if (typeInfo.IsReflected)
       return;
-    if (OnReflection!=null)
+    if (OnReflection != null)
       lock (reflectedLock)
       {
         reflected++;
         OnReflection?.Invoke(new ReflectionProgressInfo { Done = reflected, Waiting = WorkingSet.Count, Current = typeInfo });
       }
-    //Debug.WriteLine($"ReflectType({typeInfo.Type.Name}).Start. Thread={Thread.CurrentThread.ManagedThreadId}");
     var type = typeInfo.Type;
     if (type.IsEnum)
     {
@@ -197,10 +197,10 @@ public static class TypeReflector
 
       if (type.ContainsGenericParameters)
       {
-        var genericTypeParameters = type.GetGenericArguments();
-        if (genericTypeParameters.Any())
+        var _genericTypeArguments = type.GenericTypeArguments;
+        if (_genericTypeArguments.Any())
         {
-          foreach (var argType in genericTypeParameters)
+          foreach (var argType in _genericTypeArguments)
           {
             if (CancelRequest)
               return;
@@ -243,7 +243,7 @@ public static class TypeReflector
         {
           if (CancelRequest)
             return;
-          TypeManager.RegisterType(intf, typeInfo, Semantics.Implementation);
+          var aInftInfo = TypeManager.RegisterType(intf, typeInfo, Semantics.Implementation);
         }
       }
     }

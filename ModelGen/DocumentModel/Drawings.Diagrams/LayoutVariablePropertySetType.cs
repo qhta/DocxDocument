@@ -52,7 +52,7 @@ public partial class LayoutVariablePropertySetType: ModelElement<DXDDD.LayoutVar
     }
     set
     {
-      SimpleValueConverter.SetValue<DXDDD.MaxNumberOfChildren,System.Int32>(openXmlElement, value);
+      SimpleValueConverter.SetValue<DXDDD.MaxNumberOfChildren,System.Int32>(_ExistingElement, value);
     }
   }
   
@@ -69,7 +69,7 @@ public partial class LayoutVariablePropertySetType: ModelElement<DXDDD.LayoutVar
     }
     set
     {
-      SimpleValueConverter.SetValue<DXDDD.PreferredNumberOfChildren,System.Int32>(openXmlElement, value);
+      SimpleValueConverter.SetValue<DXDDD.PreferredNumberOfChildren,System.Int32>(_ExistingElement, value);
     }
   }
   

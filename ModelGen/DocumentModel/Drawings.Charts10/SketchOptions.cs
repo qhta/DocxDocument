@@ -21,22 +21,11 @@ public partial class SketchOptions: ModelElement<DXO10DC.SketchOptions>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10DC.InSketchMode>();
-      if (element != null)
-        return InSketchModeConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC10.InSketchMode,DXO10DC.InSketchMode>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10DC.InSketchMode>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = InSketchModeConverter.CreateOpenXmlElement<DXO10DC.InSketchMode>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC10.InSketchMode,DXO10DC.InSketchMode>(value);
     }
   }
   

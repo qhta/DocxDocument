@@ -21,22 +21,11 @@ public partial class ShapeProperties: ModelElement<DXOD.ShapeProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.Transform2D>();
-      if (element != null)
-        return Transform2DConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.Transform2D,DXD.Transform2D>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.Transform2D>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = Transform2DConverter.CreateOpenXmlElement<DXD.Transform2D>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.Transform2D,DXD.Transform2D>(value);
     }
   }
   
@@ -45,22 +34,11 @@ public partial class ShapeProperties: ModelElement<DXOD.ShapeProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.CustomGeometry>();
-      if (element != null)
-        return CustomGeometryConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.CustomGeometry,DXD.CustomGeometry>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.CustomGeometry>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = CustomGeometryConverter.CreateOpenXmlElement<DXD.CustomGeometry>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.CustomGeometry,DXD.CustomGeometry>(value);
     }
   }
   
@@ -69,22 +47,11 @@ public partial class ShapeProperties: ModelElement<DXOD.ShapeProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.PresetGeometry>();
-      if (element != null)
-        return PresetGeometryConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.PresetGeometry,DXD.PresetGeometry>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.PresetGeometry>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PresetGeometryConverter.CreateOpenXmlElement<DXD.PresetGeometry>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.PresetGeometry,DXD.PresetGeometry>(value);
     }
   }
   
@@ -93,22 +60,11 @@ public partial class ShapeProperties: ModelElement<DXOD.ShapeProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.NoFill>();
-      if (element != null)
-        return NoFillConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.NoFill,DXD.NoFill>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.NoFill>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NoFillConverter.CreateOpenXmlElement<DXD.NoFill>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.NoFill,DXD.NoFill>(value);
     }
   }
   
@@ -117,22 +73,11 @@ public partial class ShapeProperties: ModelElement<DXOD.ShapeProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.SolidFill>();
-      if (element != null)
-        return SolidFillConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.SolidFill,DXD.SolidFill>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.SolidFill>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SolidFillConverter.CreateOpenXmlElement<DXD.SolidFill>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.SolidFill,DXD.SolidFill>(value);
     }
   }
   
@@ -141,22 +86,11 @@ public partial class ShapeProperties: ModelElement<DXOD.ShapeProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.GradientFill>();
-      if (element != null)
-        return GradientFillConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.GradientFill,DXD.GradientFill>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.GradientFill>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = GradientFillConverter.CreateOpenXmlElement<DXD.GradientFill>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.GradientFill,DXD.GradientFill>(value);
     }
   }
   
@@ -165,22 +99,11 @@ public partial class ShapeProperties: ModelElement<DXOD.ShapeProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.BlipFill>();
-      if (element != null)
-        return BlipFillConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.BlipFill,DXD.BlipFill>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.BlipFill>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BlipFillConverter.CreateOpenXmlElement<DXD.BlipFill>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.BlipFill,DXD.BlipFill>(value);
     }
   }
   
@@ -189,22 +112,11 @@ public partial class ShapeProperties: ModelElement<DXOD.ShapeProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.PatternFill>();
-      if (element != null)
-        return PatternFillConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.PatternFill,DXD.PatternFill>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.PatternFill>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PatternFillConverter.CreateOpenXmlElement<DXD.PatternFill>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.PatternFill,DXD.PatternFill>(value);
     }
   }
   
@@ -213,22 +125,11 @@ public partial class ShapeProperties: ModelElement<DXOD.ShapeProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.GroupFill>();
-      if (element != null)
-        return GroupFillConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.GroupFill,DXD.GroupFill>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.GroupFill>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = GroupFillConverter.CreateOpenXmlElement<DXD.GroupFill>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.GroupFill,DXD.GroupFill>(value);
     }
   }
   
@@ -237,22 +138,11 @@ public partial class ShapeProperties: ModelElement<DXOD.ShapeProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.Outline>();
-      if (element != null)
-        return OutlineConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.Outline,DXD.Outline>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.Outline>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = OutlineConverter.CreateOpenXmlElement<DXD.Outline>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.Outline,DXD.Outline>(value);
     }
   }
   
@@ -261,22 +151,11 @@ public partial class ShapeProperties: ModelElement<DXOD.ShapeProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.EffectList>();
-      if (element != null)
-        return EffectListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.EffectList,DXD.EffectList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.EffectList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EffectListConverter.CreateOpenXmlElement<DXD.EffectList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.EffectList,DXD.EffectList>(value);
     }
   }
   
@@ -285,22 +164,11 @@ public partial class ShapeProperties: ModelElement<DXOD.ShapeProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.EffectDag>();
-      if (element != null)
-        return EffectDagConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.EffectDag,DXD.EffectDag>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.EffectDag>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EffectDagConverter.CreateOpenXmlElement<DXD.EffectDag>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.EffectDag,DXD.EffectDag>(value);
     }
   }
   
@@ -309,22 +177,11 @@ public partial class ShapeProperties: ModelElement<DXOD.ShapeProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.Scene3DType>();
-      if (element != null)
-        return Scene3DTypeConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.Scene3DType,DXD.Scene3DType>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.Scene3DType>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = Scene3DTypeConverter.CreateOpenXmlElement<DXD.Scene3DType>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.Scene3DType,DXD.Scene3DType>(value);
     }
   }
   
@@ -333,22 +190,11 @@ public partial class ShapeProperties: ModelElement<DXOD.ShapeProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.Shape3DType>();
-      if (element != null)
-        return Shape3DTypeConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.Shape3DType,DXD.Shape3DType>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.Shape3DType>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = Shape3DTypeConverter.CreateOpenXmlElement<DXD.Shape3DType>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.Shape3DType,DXD.Shape3DType>(value);
     }
   }
   
@@ -357,22 +203,11 @@ public partial class ShapeProperties: ModelElement<DXOD.ShapeProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.ShapePropertiesExtensionList>();
-      if (element != null)
-        return ShapePropertiesExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.ShapePropertiesExtensionList,DXD.ShapePropertiesExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.ShapePropertiesExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ShapePropertiesExtensionListConverter.CreateOpenXmlElement<DXD.ShapePropertiesExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.ShapePropertiesExtensionList,DXD.ShapePropertiesExtensionList>(value);
     }
   }
   

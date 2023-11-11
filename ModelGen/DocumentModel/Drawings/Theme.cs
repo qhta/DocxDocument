@@ -55,22 +55,11 @@ public partial class Theme: ModelElement<DXD.Theme>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.ThemeElements>();
-      if (element != null)
-        return ThemeElementsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.ThemeElements,DXD.ThemeElements>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.ThemeElements>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ThemeElementsConverter.CreateOpenXmlElement<DXD.ThemeElements>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.ThemeElements,DXD.ThemeElements>(value);
     }
   }
   
@@ -83,22 +72,11 @@ public partial class Theme: ModelElement<DXD.Theme>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.ObjectDefaults>();
-      if (element != null)
-        return ObjectDefaultsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.ObjectDefaults,DXD.ObjectDefaults>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.ObjectDefaults>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ObjectDefaultsConverter.CreateOpenXmlElement<DXD.ObjectDefaults>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.ObjectDefaults,DXD.ObjectDefaults>(value);
     }
   }
   
@@ -111,22 +89,11 @@ public partial class Theme: ModelElement<DXD.Theme>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.ExtraColorSchemeList>();
-      if (element != null)
-        return ExtraColorSchemeListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.ExtraColorSchemeList,DXD.ExtraColorSchemeList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.ExtraColorSchemeList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtraColorSchemeListConverter.CreateOpenXmlElement<DXD.ExtraColorSchemeList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.ExtraColorSchemeList,DXD.ExtraColorSchemeList>(value);
     }
   }
   
@@ -139,22 +106,11 @@ public partial class Theme: ModelElement<DXD.Theme>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.CustomColorList>();
-      if (element != null)
-        return CustomColorListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.CustomColorList,DXD.CustomColorList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.CustomColorList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = CustomColorListConverter.CreateOpenXmlElement<DXD.CustomColorList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.CustomColorList,DXD.CustomColorList>(value);
     }
   }
   
@@ -167,22 +123,11 @@ public partial class Theme: ModelElement<DXD.Theme>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.OfficeStyleSheetExtensionList>();
-      if (element != null)
-        return OfficeStyleSheetExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.OfficeStyleSheetExtensionList,DXD.OfficeStyleSheetExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.OfficeStyleSheetExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = OfficeStyleSheetExtensionListConverter.CreateOpenXmlElement<DXD.OfficeStyleSheetExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.OfficeStyleSheetExtensionList,DXD.OfficeStyleSheetExtensionList>(value);
     }
   }
   

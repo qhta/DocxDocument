@@ -55,22 +55,11 @@ public partial class Point: ModelElement<DXDDD.Point>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDDD.PropertySet>();
-      if (element != null)
-        return PropertySetConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDD.PropertySet,DXDDD.PropertySet>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDDD.PropertySet>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PropertySetConverter.CreateOpenXmlElement<DXDDD.PropertySet>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDD.PropertySet,DXDDD.PropertySet>(value);
     }
   }
   
@@ -83,22 +72,11 @@ public partial class Point: ModelElement<DXDDD.Point>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDDD.ShapeProperties>();
-      if (element != null)
-        return ShapePropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDD.ShapeProperties,DXDDD.ShapeProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDDD.ShapeProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ShapePropertiesConverter.CreateOpenXmlElement<DXDDD.ShapeProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDD.ShapeProperties,DXDDD.ShapeProperties>(value);
     }
   }
   
@@ -111,22 +89,11 @@ public partial class Point: ModelElement<DXDDD.Point>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDDD.TextBody>();
-      if (element != null)
-        return TextBodyConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDD.TextBody,DXDDD.TextBody>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDDD.TextBody>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TextBodyConverter.CreateOpenXmlElement<DXDDD.TextBody>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDD.TextBody,DXDDD.TextBody>(value);
     }
   }
   
@@ -139,22 +106,11 @@ public partial class Point: ModelElement<DXDDD.Point>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDDD.PtExtensionList>();
-      if (element != null)
-        return PtExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDD.PtExtensionList,DXDDD.PtExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDDD.PtExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PtExtensionListConverter.CreateOpenXmlElement<DXDDD.PtExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDD.PtExtensionList,DXDDD.PtExtensionList>(value);
     }
   }
   

@@ -21,22 +21,11 @@ public partial class LineTo: ModelElement<DXD.LineTo>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.Point>();
-      if (element != null)
-        return PointConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.Point,DXD.Point>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.Point>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PointConverter.CreateOpenXmlElement<DXD.Point>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.Point,DXD.Point>(value);
     }
   }
   

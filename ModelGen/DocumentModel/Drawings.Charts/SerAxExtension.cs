@@ -34,22 +34,11 @@ public partial class SerAxExtension: ModelElement<DXDC.SerAxExtension>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13DC.NumberingFormat>();
-      if (element != null)
-        return NumberingFormatConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC13.NumberingFormat,DXO13DC.NumberingFormat>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13DC.NumberingFormat>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NumberingFormatConverter.CreateOpenXmlElement<DXO13DC.NumberingFormat>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC13.NumberingFormat,DXO13DC.NumberingFormat>(value);
     }
   }
   

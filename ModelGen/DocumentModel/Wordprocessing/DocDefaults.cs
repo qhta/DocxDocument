@@ -21,22 +21,11 @@ public partial class DocDefaults: ModelElement<DXW.DocDefaults>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.RunPropertiesDefault>();
-      if (element != null)
-        return RunPropertiesDefaultConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.RunPropertiesDefault,DXW.RunPropertiesDefault>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.RunPropertiesDefault>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RunPropertiesDefaultConverter.CreateOpenXmlElement<DXW.RunPropertiesDefault>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.RunPropertiesDefault,DXW.RunPropertiesDefault>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class DocDefaults: ModelElement<DXW.DocDefaults>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.ParagraphPropertiesDefault>();
-      if (element != null)
-        return ParagraphPropertiesDefaultConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.ParagraphPropertiesDefault,DXW.ParagraphPropertiesDefault>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.ParagraphPropertiesDefault>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ParagraphPropertiesDefaultConverter.CreateOpenXmlElement<DXW.ParagraphPropertiesDefault>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.ParagraphPropertiesDefault,DXW.ParagraphPropertiesDefault>(value);
     }
   }
   

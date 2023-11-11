@@ -38,16 +38,11 @@ public partial class TextFontType: ModelElement<DXD.TextFontType>
   {
     get
     {
-      if (_Element?.Panose?.Value != null)
-        return Convert.FromHexString(_ExistingElement.Panose.Value);
-      return null;
+      return Convert.FromHexString(_Element?.Panose.Value);
     }
     set
     {
-      if (value != null)
-        _ExistingElement.Panose = Convert.ToHexString(value);
-      else
-        _ExistingElement.Panose = null;
+      _ExistingElement.Panose = Convert.ToHexString(value);
     }
   }
   

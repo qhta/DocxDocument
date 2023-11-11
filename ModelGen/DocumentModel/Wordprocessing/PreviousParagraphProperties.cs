@@ -21,22 +21,11 @@ public partial class PreviousParagraphProperties: ModelElement<DXW.PreviousParag
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.ParagraphStyleId>();
-      if (element != null)
-        return ParagraphStyleIdConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.ParagraphStyleId,DXW.ParagraphStyleId>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.ParagraphStyleId>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ParagraphStyleIdConverter.CreateOpenXmlElement<DXW.ParagraphStyleId>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.ParagraphStyleId,DXW.ParagraphStyleId>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class PreviousParagraphProperties: ModelElement<DXW.PreviousParag
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.KeepNext>();
-      if (element != null)
-        return KeepNextConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.KeepNext,DXW.KeepNext>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.KeepNext>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = KeepNextConverter.CreateOpenXmlElement<DXW.KeepNext>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.KeepNext,DXW.KeepNext>(value);
     }
   }
   
@@ -77,22 +55,11 @@ public partial class PreviousParagraphProperties: ModelElement<DXW.PreviousParag
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.KeepLines>();
-      if (element != null)
-        return KeepLinesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.KeepLines,DXW.KeepLines>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.KeepLines>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = KeepLinesConverter.CreateOpenXmlElement<DXW.KeepLines>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.KeepLines,DXW.KeepLines>(value);
     }
   }
   
@@ -105,22 +72,11 @@ public partial class PreviousParagraphProperties: ModelElement<DXW.PreviousParag
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.PageBreakBefore>();
-      if (element != null)
-        return PageBreakBeforeConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.PageBreakBefore,DXW.PageBreakBefore>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.PageBreakBefore>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PageBreakBeforeConverter.CreateOpenXmlElement<DXW.PageBreakBefore>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.PageBreakBefore,DXW.PageBreakBefore>(value);
     }
   }
   
@@ -133,22 +89,11 @@ public partial class PreviousParagraphProperties: ModelElement<DXW.PreviousParag
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.FrameProperties>();
-      if (element != null)
-        return FramePropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.FrameProperties,DXW.FrameProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.FrameProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FramePropertiesConverter.CreateOpenXmlElement<DXW.FrameProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.FrameProperties,DXW.FrameProperties>(value);
     }
   }
   
@@ -161,22 +106,11 @@ public partial class PreviousParagraphProperties: ModelElement<DXW.PreviousParag
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.WidowControl>();
-      if (element != null)
-        return WidowControlConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.WidowControl,DXW.WidowControl>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.WidowControl>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = WidowControlConverter.CreateOpenXmlElement<DXW.WidowControl>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.WidowControl,DXW.WidowControl>(value);
     }
   }
   
@@ -189,22 +123,11 @@ public partial class PreviousParagraphProperties: ModelElement<DXW.PreviousParag
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.NumberingProperties>();
-      if (element != null)
-        return NumberingPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.NumberingProperties,DXW.NumberingProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.NumberingProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NumberingPropertiesConverter.CreateOpenXmlElement<DXW.NumberingProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.NumberingProperties,DXW.NumberingProperties>(value);
     }
   }
   
@@ -217,22 +140,11 @@ public partial class PreviousParagraphProperties: ModelElement<DXW.PreviousParag
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.SuppressLineNumbers>();
-      if (element != null)
-        return SuppressLineNumbersConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.SuppressLineNumbers,DXW.SuppressLineNumbers>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.SuppressLineNumbers>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SuppressLineNumbersConverter.CreateOpenXmlElement<DXW.SuppressLineNumbers>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.SuppressLineNumbers,DXW.SuppressLineNumbers>(value);
     }
   }
   
@@ -245,22 +157,11 @@ public partial class PreviousParagraphProperties: ModelElement<DXW.PreviousParag
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.ParagraphBorders>();
-      if (element != null)
-        return ParagraphBordersConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.ParagraphBorders,DXW.ParagraphBorders>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.ParagraphBorders>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ParagraphBordersConverter.CreateOpenXmlElement<DXW.ParagraphBorders>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.ParagraphBorders,DXW.ParagraphBorders>(value);
     }
   }
   
@@ -273,22 +174,11 @@ public partial class PreviousParagraphProperties: ModelElement<DXW.PreviousParag
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.Shading>();
-      if (element != null)
-        return ShadingConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.Shading,DXW.Shading>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Shading>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ShadingConverter.CreateOpenXmlElement<DXW.Shading>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.Shading,DXW.Shading>(value);
     }
   }
   
@@ -301,22 +191,11 @@ public partial class PreviousParagraphProperties: ModelElement<DXW.PreviousParag
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.Tabs>();
-      if (element != null)
-        return TabsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.Tabs,DXW.Tabs>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Tabs>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TabsConverter.CreateOpenXmlElement<DXW.Tabs>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.Tabs,DXW.Tabs>(value);
     }
   }
   
@@ -329,22 +208,11 @@ public partial class PreviousParagraphProperties: ModelElement<DXW.PreviousParag
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.SuppressAutoHyphens>();
-      if (element != null)
-        return SuppressAutoHyphensConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.SuppressAutoHyphens,DXW.SuppressAutoHyphens>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.SuppressAutoHyphens>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SuppressAutoHyphensConverter.CreateOpenXmlElement<DXW.SuppressAutoHyphens>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.SuppressAutoHyphens,DXW.SuppressAutoHyphens>(value);
     }
   }
   
@@ -357,22 +225,11 @@ public partial class PreviousParagraphProperties: ModelElement<DXW.PreviousParag
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.Kinsoku>();
-      if (element != null)
-        return KinsokuConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.Kinsoku,DXW.Kinsoku>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Kinsoku>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = KinsokuConverter.CreateOpenXmlElement<DXW.Kinsoku>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.Kinsoku,DXW.Kinsoku>(value);
     }
   }
   
@@ -385,22 +242,11 @@ public partial class PreviousParagraphProperties: ModelElement<DXW.PreviousParag
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.WordWrap>();
-      if (element != null)
-        return WordWrapConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.WordWrap,DXW.WordWrap>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.WordWrap>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = WordWrapConverter.CreateOpenXmlElement<DXW.WordWrap>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.WordWrap,DXW.WordWrap>(value);
     }
   }
   
@@ -413,22 +259,11 @@ public partial class PreviousParagraphProperties: ModelElement<DXW.PreviousParag
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.OverflowPunctuation>();
-      if (element != null)
-        return OverflowPunctuationConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.OverflowPunctuation,DXW.OverflowPunctuation>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.OverflowPunctuation>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = OverflowPunctuationConverter.CreateOpenXmlElement<DXW.OverflowPunctuation>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.OverflowPunctuation,DXW.OverflowPunctuation>(value);
     }
   }
   
@@ -441,22 +276,11 @@ public partial class PreviousParagraphProperties: ModelElement<DXW.PreviousParag
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.TopLinePunctuation>();
-      if (element != null)
-        return TopLinePunctuationConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.TopLinePunctuation,DXW.TopLinePunctuation>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.TopLinePunctuation>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TopLinePunctuationConverter.CreateOpenXmlElement<DXW.TopLinePunctuation>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.TopLinePunctuation,DXW.TopLinePunctuation>(value);
     }
   }
   
@@ -469,22 +293,11 @@ public partial class PreviousParagraphProperties: ModelElement<DXW.PreviousParag
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.AutoSpaceDE>();
-      if (element != null)
-        return AutoSpaceDEConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.AutoSpaceDE,DXW.AutoSpaceDE>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.AutoSpaceDE>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = AutoSpaceDEConverter.CreateOpenXmlElement<DXW.AutoSpaceDE>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.AutoSpaceDE,DXW.AutoSpaceDE>(value);
     }
   }
   
@@ -497,22 +310,11 @@ public partial class PreviousParagraphProperties: ModelElement<DXW.PreviousParag
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.AutoSpaceDN>();
-      if (element != null)
-        return AutoSpaceDNConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.AutoSpaceDN,DXW.AutoSpaceDN>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.AutoSpaceDN>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = AutoSpaceDNConverter.CreateOpenXmlElement<DXW.AutoSpaceDN>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.AutoSpaceDN,DXW.AutoSpaceDN>(value);
     }
   }
   
@@ -525,22 +327,11 @@ public partial class PreviousParagraphProperties: ModelElement<DXW.PreviousParag
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.BiDi>();
-      if (element != null)
-        return BiDiConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.BiDi,DXW.BiDi>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.BiDi>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BiDiConverter.CreateOpenXmlElement<DXW.BiDi>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.BiDi,DXW.BiDi>(value);
     }
   }
   
@@ -553,22 +344,11 @@ public partial class PreviousParagraphProperties: ModelElement<DXW.PreviousParag
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.AdjustRightIndent>();
-      if (element != null)
-        return AdjustRightIndentConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.AdjustRightIndent,DXW.AdjustRightIndent>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.AdjustRightIndent>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = AdjustRightIndentConverter.CreateOpenXmlElement<DXW.AdjustRightIndent>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.AdjustRightIndent,DXW.AdjustRightIndent>(value);
     }
   }
   
@@ -581,22 +361,11 @@ public partial class PreviousParagraphProperties: ModelElement<DXW.PreviousParag
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.SnapToGrid>();
-      if (element != null)
-        return SnapToGridConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.SnapToGrid,DXW.SnapToGrid>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.SnapToGrid>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SnapToGridConverter.CreateOpenXmlElement<DXW.SnapToGrid>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.SnapToGrid,DXW.SnapToGrid>(value);
     }
   }
   
@@ -609,22 +378,11 @@ public partial class PreviousParagraphProperties: ModelElement<DXW.PreviousParag
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.SpacingBetweenLines>();
-      if (element != null)
-        return SpacingBetweenLinesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.SpacingBetweenLines,DXW.SpacingBetweenLines>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.SpacingBetweenLines>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SpacingBetweenLinesConverter.CreateOpenXmlElement<DXW.SpacingBetweenLines>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.SpacingBetweenLines,DXW.SpacingBetweenLines>(value);
     }
   }
   
@@ -637,22 +395,11 @@ public partial class PreviousParagraphProperties: ModelElement<DXW.PreviousParag
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.Indentation>();
-      if (element != null)
-        return IndentationConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.Indentation,DXW.Indentation>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Indentation>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = IndentationConverter.CreateOpenXmlElement<DXW.Indentation>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.Indentation,DXW.Indentation>(value);
     }
   }
   
@@ -665,22 +412,11 @@ public partial class PreviousParagraphProperties: ModelElement<DXW.PreviousParag
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.ContextualSpacing>();
-      if (element != null)
-        return ContextualSpacingConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.ContextualSpacing,DXW.ContextualSpacing>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.ContextualSpacing>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ContextualSpacingConverter.CreateOpenXmlElement<DXW.ContextualSpacing>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.ContextualSpacing,DXW.ContextualSpacing>(value);
     }
   }
   
@@ -693,22 +429,11 @@ public partial class PreviousParagraphProperties: ModelElement<DXW.PreviousParag
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.MirrorIndents>();
-      if (element != null)
-        return MirrorIndentsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.MirrorIndents,DXW.MirrorIndents>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.MirrorIndents>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = MirrorIndentsConverter.CreateOpenXmlElement<DXW.MirrorIndents>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.MirrorIndents,DXW.MirrorIndents>(value);
     }
   }
   
@@ -721,22 +446,11 @@ public partial class PreviousParagraphProperties: ModelElement<DXW.PreviousParag
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.SuppressOverlap>();
-      if (element != null)
-        return SuppressOverlapConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.SuppressOverlap,DXW.SuppressOverlap>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.SuppressOverlap>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SuppressOverlapConverter.CreateOpenXmlElement<DXW.SuppressOverlap>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.SuppressOverlap,DXW.SuppressOverlap>(value);
     }
   }
   
@@ -857,22 +571,11 @@ public partial class PreviousParagraphProperties: ModelElement<DXW.PreviousParag
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.OutlineLevel>();
-      if (element != null)
-        return OutlineLevelConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.OutlineLevel,DXW.OutlineLevel>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.OutlineLevel>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = OutlineLevelConverter.CreateOpenXmlElement<DXW.OutlineLevel>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.OutlineLevel,DXW.OutlineLevel>(value);
     }
   }
   

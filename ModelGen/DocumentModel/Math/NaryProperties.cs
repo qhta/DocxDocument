@@ -21,22 +21,11 @@ public partial class NaryProperties: ModelElement<DXM.NaryProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.AccentChar>();
-      if (element != null)
-        return AccentCharConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.AccentChar,DXM.AccentChar>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.AccentChar>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = AccentCharConverter.CreateOpenXmlElement<DXM.AccentChar>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.AccentChar,DXM.AccentChar>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class NaryProperties: ModelElement<DXM.NaryProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.LimitLocation>();
-      if (element != null)
-        return LimitLocationConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.LimitLocation,DXM.LimitLocation>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.LimitLocation>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LimitLocationConverter.CreateOpenXmlElement<DXM.LimitLocation>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.LimitLocation,DXM.LimitLocation>(value);
     }
   }
   
@@ -77,22 +55,11 @@ public partial class NaryProperties: ModelElement<DXM.NaryProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.GrowOperators>();
-      if (element != null)
-        return GrowOperatorsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.GrowOperators,DXM.GrowOperators>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.GrowOperators>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = GrowOperatorsConverter.CreateOpenXmlElement<DXM.GrowOperators>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.GrowOperators,DXM.GrowOperators>(value);
     }
   }
   
@@ -105,22 +72,11 @@ public partial class NaryProperties: ModelElement<DXM.NaryProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.HideSubArgument>();
-      if (element != null)
-        return HideSubArgumentConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.HideSubArgument,DXM.HideSubArgument>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.HideSubArgument>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = HideSubArgumentConverter.CreateOpenXmlElement<DXM.HideSubArgument>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.HideSubArgument,DXM.HideSubArgument>(value);
     }
   }
   
@@ -133,22 +89,11 @@ public partial class NaryProperties: ModelElement<DXM.NaryProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.HideSuperArgument>();
-      if (element != null)
-        return HideSuperArgumentConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.HideSuperArgument,DXM.HideSuperArgument>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.HideSuperArgument>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = HideSuperArgumentConverter.CreateOpenXmlElement<DXM.HideSuperArgument>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.HideSuperArgument,DXM.HideSuperArgument>(value);
     }
   }
   
@@ -161,22 +106,11 @@ public partial class NaryProperties: ModelElement<DXM.NaryProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.ControlProperties>();
-      if (element != null)
-        return ControlPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.ControlProperties,DXM.ControlProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.ControlProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ControlPropertiesConverter.CreateOpenXmlElement<DXM.ControlProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.ControlProperties,DXM.ControlProperties>(value);
     }
   }
   

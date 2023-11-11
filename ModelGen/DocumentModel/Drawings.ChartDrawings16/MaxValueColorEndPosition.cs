@@ -17,22 +17,11 @@ public partial class MaxValueColorEndPosition: ModelElement<DXO16DCD.MaxValueCol
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.ExtremeValueColorPosition>();
-      if (element != null)
-        return ExtremeValueColorPositionConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.ExtremeValueColorPosition,DXO16DCD.ExtremeValueColorPosition>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.ExtremeValueColorPosition>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtremeValueColorPositionConverter.CreateOpenXmlElement<DXO16DCD.ExtremeValueColorPosition>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.ExtremeValueColorPosition,DXO16DCD.ExtremeValueColorPosition>(value);
     }
   }
   
@@ -45,7 +34,7 @@ public partial class MaxValueColorEndPosition: ModelElement<DXO16DCD.MaxValueCol
     }
     set
     {
-      SimpleValueConverter.SetValue<DXO16DCD.NumberColorPosition,System.Double>(openXmlElement, value);
+      SimpleValueConverter.SetValue<DXO16DCD.NumberColorPosition,System.Double>(_ExistingElement, value);
     }
   }
   
@@ -58,7 +47,7 @@ public partial class MaxValueColorEndPosition: ModelElement<DXO16DCD.MaxValueCol
     }
     set
     {
-      SimpleValueConverter.SetValue<DXO16DCD.PercentageColorPosition,System.Double>(openXmlElement, value);
+      SimpleValueConverter.SetValue<DXO16DCD.PercentageColorPosition,System.Double>(_ExistingElement, value);
     }
   }
   

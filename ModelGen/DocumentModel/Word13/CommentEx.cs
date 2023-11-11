@@ -22,7 +22,7 @@ public partial class CommentEx: ModelElement<DXO13W.CommentEx>
     get
     {
       if (_Element?.ParaId?.Value != null)
-        return HexIntConverter.GetValue(_ExistingElement.ParaId.Value);
+        return HexIntConverter.GetValue(_Element?.ParaId.Value);
       return null;
     }
     set
@@ -44,7 +44,7 @@ public partial class CommentEx: ModelElement<DXO13W.CommentEx>
     get
     {
       if (_Element?.ParaIdParent?.Value != null)
-        return HexIntConverter.GetValue(_ExistingElement.ParaIdParent.Value);
+        return HexIntConverter.GetValue(_Element?.ParaIdParent.Value);
       return null;
     }
     set

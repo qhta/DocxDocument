@@ -21,22 +21,11 @@ public partial class Drawing: ModelElement<DXOD.Drawing>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXOD.ShapeTree>();
-      if (element != null)
-        return ShapeTreeConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDO.ShapeTree,DXOD.ShapeTree>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXOD.ShapeTree>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ShapeTreeConverter.CreateOpenXmlElement<DXOD.ShapeTree>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDO.ShapeTree,DXOD.ShapeTree>(value);
     }
   }
   

@@ -542,6 +542,24 @@ namespace ModelGenApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Is target excluded?.
+        /// </summary>
+        public static string ExcludedTargetNamespace {
+            get {
+                return ResourceManager.GetString("ExcludedTargetNamespace", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Target namespace is excluded from code generation..
+        /// </summary>
+        public static string ExcludedTargetNamespaceTooltip {
+            get {
+                return ResourceManager.GetString("ExcludedTargetNamespaceTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Is type excluded?.
         /// </summary>
         public static string ExcludedType {

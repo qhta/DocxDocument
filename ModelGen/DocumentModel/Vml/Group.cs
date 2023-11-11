@@ -187,15 +187,18 @@ public partial class Group: ModelElement<DXV.Group>
   ///   Print Toggle
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? Print
+  public Boolean? Print
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.Print?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.Print = value;
+      else
+        _ExistingElement.Print = null;
     }
   }
   
@@ -221,15 +224,18 @@ public partial class Group: ModelElement<DXV.Group>
   ///   oned
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? Oned
+  public Boolean? Oned
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.Oned?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.Oned = value;
+      else
+        _ExistingElement.Oned = null;
     }
   }
   
@@ -255,15 +261,18 @@ public partial class Group: ModelElement<DXV.Group>
   ///   doubleclicknotify
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? DoubleClickNotify
+  public Boolean? DoubleClickNotify
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.DoubleClickNotify?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.DoubleClickNotify = value;
+      else
+        _ExistingElement.DoubleClickNotify = null;
     }
   }
   
@@ -272,15 +281,18 @@ public partial class Group: ModelElement<DXV.Group>
   ///   button
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? Button
+  public Boolean? Button
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.Button?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.Button = value;
+      else
+        _ExistingElement.Button = null;
     }
   }
   
@@ -289,15 +301,18 @@ public partial class Group: ModelElement<DXV.Group>
   ///   userhidden
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? UserHidden
+  public Boolean? UserHidden
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.UserHidden?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.UserHidden = value;
+      else
+        _ExistingElement.UserHidden = null;
     }
   }
   
@@ -306,15 +321,18 @@ public partial class Group: ModelElement<DXV.Group>
   ///   bullet
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? Bullet
+  public Boolean? Bullet
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.Bullet?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.Bullet = value;
+      else
+        _ExistingElement.Bullet = null;
     }
   }
   
@@ -323,15 +341,18 @@ public partial class Group: ModelElement<DXV.Group>
   ///   hr
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? Horizontal
+  public Boolean? Horizontal
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.Horizontal?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.Horizontal = value;
+      else
+        _ExistingElement.Horizontal = null;
     }
   }
   
@@ -340,15 +361,18 @@ public partial class Group: ModelElement<DXV.Group>
   ///   hrstd
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? HorizontalStandard
+  public Boolean? HorizontalStandard
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.HorizontalStandard?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.HorizontalStandard = value;
+      else
+        _ExistingElement.HorizontalStandard = null;
     }
   }
   
@@ -357,15 +381,18 @@ public partial class Group: ModelElement<DXV.Group>
   ///   hrnoshade
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? HorizontalNoShade
+  public Boolean? HorizontalNoShade
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.HorizontalNoShade?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.HorizontalNoShade = value;
+      else
+        _ExistingElement.HorizontalNoShade = null;
     }
   }
   
@@ -391,15 +418,18 @@ public partial class Group: ModelElement<DXV.Group>
   ///   allowincell
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? AllowInCell
+  public Boolean? AllowInCell
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.AllowInCell?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.AllowInCell = value;
+      else
+        _ExistingElement.AllowInCell = null;
     }
   }
   
@@ -408,15 +438,18 @@ public partial class Group: ModelElement<DXV.Group>
   ///   allowoverlap
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? AllowOverlap
+  public Boolean? AllowOverlap
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.AllowOverlap?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.AllowOverlap = value;
+      else
+        _ExistingElement.AllowOverlap = null;
     }
   }
   
@@ -425,15 +458,18 @@ public partial class Group: ModelElement<DXV.Group>
   ///   userdrawn
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? UserDrawn
+  public Boolean? UserDrawn
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.UserDrawn?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.UserDrawn = value;
+      else
+        _ExistingElement.UserDrawn = null;
     }
   }
   
@@ -497,16 +533,11 @@ public partial class Group: ModelElement<DXV.Group>
   {
     get
     {
-      if (_Element?.Gfxdata?.Value != null)
-        return Convert.FromBase64String(_ExistingElement.Gfxdata.Value);
-      return null;
+      return Base64BinaryConverter.GetValue(_Element?.Gfxdata);
     }
     set
     {
-      if (value != null)
-        _ExistingElement.Gfxdata = Convert.ToBase64String(value);
-      else
-        _ExistingElement.Gfxdata = null;
+      _ExistingElement.Gfxdata = Base64BinaryConverter.CreateBase64BinaryValue(value);
     }
   }
   

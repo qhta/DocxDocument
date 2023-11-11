@@ -21,22 +21,11 @@ public partial class ShapeNonVisualProperties: ModelElement<DXOD.ShapeNonVisualP
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXOD.NonVisualDrawingProperties>();
-      if (element != null)
-        return NonVisualDrawingPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDO.NonVisualDrawingProperties,DXOD.NonVisualDrawingProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXOD.NonVisualDrawingProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NonVisualDrawingPropertiesConverter.CreateOpenXmlElement<DXOD.NonVisualDrawingProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDO.NonVisualDrawingProperties,DXOD.NonVisualDrawingProperties>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class ShapeNonVisualProperties: ModelElement<DXOD.ShapeNonVisualP
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXOD.NonVisualDrawingShapeProperties>();
-      if (element != null)
-        return NonVisualDrawingShapePropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDO.NonVisualDrawingShapeProperties,DXOD.NonVisualDrawingShapeProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXOD.NonVisualDrawingShapeProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NonVisualDrawingShapePropertiesConverter.CreateOpenXmlElement<DXOD.NonVisualDrawingShapeProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDO.NonVisualDrawingShapeProperties,DXOD.NonVisualDrawingShapeProperties>(value);
     }
   }
   

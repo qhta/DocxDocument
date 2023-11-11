@@ -21,22 +21,11 @@ public partial class ObjectDefaults: ModelElement<DXD.ObjectDefaults>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.ShapeDefault>();
-      if (element != null)
-        return ShapeDefaultConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.ShapeDefault,DXD.ShapeDefault>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.ShapeDefault>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ShapeDefaultConverter.CreateOpenXmlElement<DXD.ShapeDefault>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.ShapeDefault,DXD.ShapeDefault>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class ObjectDefaults: ModelElement<DXD.ObjectDefaults>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.LineDefault>();
-      if (element != null)
-        return LineDefaultConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.LineDefault,DXD.LineDefault>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.LineDefault>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LineDefaultConverter.CreateOpenXmlElement<DXD.LineDefault>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.LineDefault,DXD.LineDefault>(value);
     }
   }
   
@@ -77,22 +55,11 @@ public partial class ObjectDefaults: ModelElement<DXD.ObjectDefaults>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.TextDefault>();
-      if (element != null)
-        return TextDefaultConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.TextDefault,DXD.TextDefault>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.TextDefault>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TextDefaultConverter.CreateOpenXmlElement<DXD.TextDefault>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.TextDefault,DXD.TextDefault>(value);
     }
   }
   
@@ -105,22 +72,11 @@ public partial class ObjectDefaults: ModelElement<DXD.ObjectDefaults>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.ExtensionList>();
-      if (element != null)
-        return ExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.ExtensionList,DXD.ExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.ExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DXD.ExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.ExtensionList,DXD.ExtensionList>(value);
     }
   }
   

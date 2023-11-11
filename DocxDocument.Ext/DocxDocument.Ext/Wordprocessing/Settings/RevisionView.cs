@@ -20,8 +20,8 @@ public partial class RevisionView : ModelElement<DXW.RevisionView>
   [DataMember]
   public bool? Markup
   {
-    get => _Element.Markup?.Value;
-    set => _Element.Markup = value;
+    get => _Element?.Markup?.Value;
+    set => _ExistingElement.Markup = value;
   }
 
   /// <summary>
@@ -30,8 +30,8 @@ public partial class RevisionView : ModelElement<DXW.RevisionView>
   [DataMember]
   public bool? Comments
   {
-    get => _Element.Comments?.Value;
-    set => _Element.Comments = value;
+    get => _Element?.Comments?.Value;
+    set => _ExistingElement.Comments = value;
   }
 
   /// <summary>
@@ -40,8 +40,8 @@ public partial class RevisionView : ModelElement<DXW.RevisionView>
   [DataMember]
   public bool? DisplayRevision
   {
-    get => _Element.DisplayRevision?.Value;
-    set => _Element.DisplayRevision = value;
+    get => _Element?.DisplayRevision?.Value;
+    set => _ExistingElement.DisplayRevision = value;
   }
 
   /// <summary>
@@ -50,8 +50,8 @@ public partial class RevisionView : ModelElement<DXW.RevisionView>
   [DataMember]
   public bool? Formatting
   {
-    get => _Element.Formatting?.Value;
-    set => _Element.Formatting = value;
+    get => _Element?.Formatting?.Value;
+    set => _ExistingElement.Formatting = value;
   }
 
   /// <summary>
@@ -60,8 +60,8 @@ public partial class RevisionView : ModelElement<DXW.RevisionView>
   [DataMember]
   public bool? InkAnnotations
   {
-    get => _Element.InkAnnotations?.Value;
-    set => _Element.InkAnnotations = value;
+    get => _Element?.InkAnnotations?.Value;
+    set => _ExistingElement.InkAnnotations = value;
   }
 
 

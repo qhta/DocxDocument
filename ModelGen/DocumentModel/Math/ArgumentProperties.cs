@@ -25,7 +25,7 @@ public partial class ArgumentProperties: ModelElement<DXM.ArgumentProperties>
     }
     set
     {
-      SimpleValueConverter.SetValue<DXM.ArgumentSize,System.Int64>(openXmlElement, value);
+      SimpleValueConverter.SetValue<DXM.ArgumentSize,System.Int64>(_ExistingElement, value);
     }
   }
   

@@ -38,22 +38,11 @@ public partial class SdtContentDate: ModelElement<DXW.SdtContentDate>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.DateFormat>();
-      if (element != null)
-        return DateFormatConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.DateFormat,DXW.DateFormat>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.DateFormat>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DateFormatConverter.CreateOpenXmlElement<DXW.DateFormat>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.DateFormat,DXW.DateFormat>(value);
     }
   }
   
@@ -70,7 +59,7 @@ public partial class SdtContentDate: ModelElement<DXW.SdtContentDate>
     }
     set
     {
-      StringValueConverter.SetValue<DXW.LanguageId>(openXmlElement, value);
+      StringValueConverter.SetValue<DXW.LanguageId>(_ExistingElement, value);
     }
   }
   

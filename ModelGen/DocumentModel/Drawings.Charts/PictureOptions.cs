@@ -21,22 +21,11 @@ public partial class PictureOptions: ModelElement<DXDC.PictureOptions>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.ApplyToFront>();
-      if (element != null)
-        return ApplyToFrontConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.ApplyToFront,DXDC.ApplyToFront>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.ApplyToFront>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ApplyToFrontConverter.CreateOpenXmlElement<DXDC.ApplyToFront>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.ApplyToFront,DXDC.ApplyToFront>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class PictureOptions: ModelElement<DXDC.PictureOptions>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.ApplyToSides>();
-      if (element != null)
-        return ApplyToSidesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.ApplyToSides,DXDC.ApplyToSides>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.ApplyToSides>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ApplyToSidesConverter.CreateOpenXmlElement<DXDC.ApplyToSides>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.ApplyToSides,DXDC.ApplyToSides>(value);
     }
   }
   
@@ -77,22 +55,11 @@ public partial class PictureOptions: ModelElement<DXDC.PictureOptions>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.ApplyToEnd>();
-      if (element != null)
-        return ApplyToEndConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.ApplyToEnd,DXDC.ApplyToEnd>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.ApplyToEnd>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ApplyToEndConverter.CreateOpenXmlElement<DXDC.ApplyToEnd>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.ApplyToEnd,DXDC.ApplyToEnd>(value);
     }
   }
   
@@ -136,7 +103,7 @@ public partial class PictureOptions: ModelElement<DXDC.PictureOptions>
     }
     set
     {
-      SimpleValueConverter.SetValue<DXDC.PictureStackUnit,System.Double>(openXmlElement, value);
+      SimpleValueConverter.SetValue<DXDC.PictureStackUnit,System.Double>(_ExistingElement, value);
     }
   }
   

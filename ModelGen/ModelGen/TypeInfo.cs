@@ -175,7 +175,10 @@ public class TypeInfo : ModelElement
 
   public bool IsSimple()
   {
-    return Type.IsSimple() || Type == typeof(Uri) || Type == typeof(HexInt) /*|| Type == typeof(Byte[])*/;
+    return Type.IsSimple() || Type == typeof(Uri) || Type == typeof(HexInt) || Type == typeof(NumericValue)
+      //|| Type.IsEnum
+      || IsEnumValue(out _);
+      /*|| Type == typeof(Byte[])*/;
   }
 
   public bool IsEnumValue([NotNullWhen(true)][MaybeNullWhen(false)] out TypeInfo? enumType)

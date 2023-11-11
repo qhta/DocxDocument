@@ -21,22 +21,11 @@ public partial class SdtDocPartType: ModelElement<DXW.SdtDocPartType>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.DocPartGallery>();
-      if (element != null)
-        return DocPartGalleryConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.DocPartGallery,DXW.DocPartGallery>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.DocPartGallery>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DocPartGalleryConverter.CreateOpenXmlElement<DXW.DocPartGallery>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.DocPartGallery,DXW.DocPartGallery>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class SdtDocPartType: ModelElement<DXW.SdtDocPartType>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.DocPartCategory>();
-      if (element != null)
-        return DocPartCategoryConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.DocPartCategory,DXW.DocPartCategory>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.DocPartCategory>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DocPartCategoryConverter.CreateOpenXmlElement<DXW.DocPartCategory>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.DocPartCategory,DXW.DocPartCategory>(value);
     }
   }
   
@@ -77,22 +55,11 @@ public partial class SdtDocPartType: ModelElement<DXW.SdtDocPartType>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.DocPartUnique>();
-      if (element != null)
-        return DocPartUniqueConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.DocPartUnique,DXW.DocPartUnique>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.DocPartUnique>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DocPartUniqueConverter.CreateOpenXmlElement<DXW.DocPartUnique>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.DocPartUnique,DXW.DocPartUnique>(value);
     }
   }
   

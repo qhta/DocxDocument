@@ -21,22 +21,11 @@ public partial class TextBody: ModelElement<DXDDD.TextBody>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.BodyProperties>();
-      if (element != null)
-        return BodyPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.BodyProperties,DXD.BodyProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.BodyProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BodyPropertiesConverter.CreateOpenXmlElement<DXD.BodyProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.BodyProperties,DXD.BodyProperties>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class TextBody: ModelElement<DXDDD.TextBody>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.ListStyle>();
-      if (element != null)
-        return ListStyleConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.ListStyle,DXD.ListStyle>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.ListStyle>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ListStyleConverter.CreateOpenXmlElement<DXD.ListStyle>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.ListStyle,DXD.ListStyle>(value);
     }
   }
   

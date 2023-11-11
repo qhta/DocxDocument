@@ -17,22 +17,11 @@ public partial class StringLiteral: ModelElement<DXDC.StringLiteral>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.PointCount>();
-      if (element != null)
-        return PointCountConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.PointCount,DXDC.PointCount>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.PointCount>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PointCountConverter.CreateOpenXmlElement<DXDC.PointCount>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.PointCount,DXDC.PointCount>(value);
     }
   }
   
@@ -41,22 +30,11 @@ public partial class StringLiteral: ModelElement<DXDC.StringLiteral>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.StrDataExtensionList>();
-      if (element != null)
-        return StrDataExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.StrDataExtensionList,DXDC.StrDataExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.StrDataExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = StrDataExtensionListConverter.CreateOpenXmlElement<DXDC.StrDataExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.StrDataExtensionList,DXDC.StrDataExtensionList>(value);
     }
   }
   

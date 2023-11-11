@@ -21,22 +21,11 @@ public partial class Superscript: ModelElement<DXM.Superscript>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.SuperscriptProperties>();
-      if (element != null)
-        return SuperscriptPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.SuperscriptProperties,DXM.SuperscriptProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.SuperscriptProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SuperscriptPropertiesConverter.CreateOpenXmlElement<DXM.SuperscriptProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.SuperscriptProperties,DXM.SuperscriptProperties>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class Superscript: ModelElement<DXM.Superscript>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.Base>();
-      if (element != null)
-        return BaseConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.Base,DXM.Base>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.Base>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BaseConverter.CreateOpenXmlElement<DXM.Base>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.Base,DXM.Base>(value);
     }
   }
   
@@ -77,22 +55,11 @@ public partial class Superscript: ModelElement<DXM.Superscript>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.SuperArgument>();
-      if (element != null)
-        return SuperArgumentConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.SuperArgument,DXM.SuperArgument>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.SuperArgument>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SuperArgumentConverter.CreateOpenXmlElement<DXM.SuperArgument>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.SuperArgument,DXM.SuperArgument>(value);
     }
   }
   

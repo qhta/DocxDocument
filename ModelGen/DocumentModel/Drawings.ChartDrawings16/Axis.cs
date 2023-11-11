@@ -43,7 +43,7 @@ public partial class Axis: ModelElement<DXO16DCD.Axis>
     set
     {
       if (value != null)
-        _ExistingElement.Hidden = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.Hidden = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.Hidden = null;
     }
@@ -54,22 +54,11 @@ public partial class Axis: ModelElement<DXO16DCD.Axis>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.CategoryAxisScaling>();
-      if (element != null)
-        return CategoryAxisScalingConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.CategoryAxisScaling,DXO16DCD.CategoryAxisScaling>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.CategoryAxisScaling>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = CategoryAxisScalingConverter.CreateOpenXmlElement<DXO16DCD.CategoryAxisScaling>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.CategoryAxisScaling,DXO16DCD.CategoryAxisScaling>(value);
     }
   }
   
@@ -78,22 +67,11 @@ public partial class Axis: ModelElement<DXO16DCD.Axis>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.ValueAxisScaling>();
-      if (element != null)
-        return ValueAxisScalingConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.ValueAxisScaling,DXO16DCD.ValueAxisScaling>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.ValueAxisScaling>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ValueAxisScalingConverter.CreateOpenXmlElement<DXO16DCD.ValueAxisScaling>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.ValueAxisScaling,DXO16DCD.ValueAxisScaling>(value);
     }
   }
   
@@ -102,22 +80,11 @@ public partial class Axis: ModelElement<DXO16DCD.Axis>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.AxisTitle>();
-      if (element != null)
-        return AxisTitleConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.AxisTitle,DXO16DCD.AxisTitle>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.AxisTitle>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = AxisTitleConverter.CreateOpenXmlElement<DXO16DCD.AxisTitle>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.AxisTitle,DXO16DCD.AxisTitle>(value);
     }
   }
   
@@ -126,22 +93,11 @@ public partial class Axis: ModelElement<DXO16DCD.Axis>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.AxisUnits>();
-      if (element != null)
-        return AxisUnitsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.AxisUnits,DXO16DCD.AxisUnits>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.AxisUnits>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = AxisUnitsConverter.CreateOpenXmlElement<DXO16DCD.AxisUnits>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.AxisUnits,DXO16DCD.AxisUnits>(value);
     }
   }
   
@@ -150,22 +106,11 @@ public partial class Axis: ModelElement<DXO16DCD.Axis>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.MajorGridlinesGridlines>();
-      if (element != null)
-        return MajorGridlinesGridlinesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.MajorGridlinesGridlines,DXO16DCD.MajorGridlinesGridlines>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.MajorGridlinesGridlines>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = MajorGridlinesGridlinesConverter.CreateOpenXmlElement<DXO16DCD.MajorGridlinesGridlines>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.MajorGridlinesGridlines,DXO16DCD.MajorGridlinesGridlines>(value);
     }
   }
   
@@ -174,22 +119,11 @@ public partial class Axis: ModelElement<DXO16DCD.Axis>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.MinorGridlinesGridlines>();
-      if (element != null)
-        return MinorGridlinesGridlinesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.MinorGridlinesGridlines,DXO16DCD.MinorGridlinesGridlines>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.MinorGridlinesGridlines>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = MinorGridlinesGridlinesConverter.CreateOpenXmlElement<DXO16DCD.MinorGridlinesGridlines>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.MinorGridlinesGridlines,DXO16DCD.MinorGridlinesGridlines>(value);
     }
   }
   
@@ -198,22 +132,11 @@ public partial class Axis: ModelElement<DXO16DCD.Axis>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.MajorTickMarksTickMarks>();
-      if (element != null)
-        return MajorTickMarksTickMarksConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.MajorTickMarksTickMarks,DXO16DCD.MajorTickMarksTickMarks>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.MajorTickMarksTickMarks>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = MajorTickMarksTickMarksConverter.CreateOpenXmlElement<DXO16DCD.MajorTickMarksTickMarks>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.MajorTickMarksTickMarks,DXO16DCD.MajorTickMarksTickMarks>(value);
     }
   }
   
@@ -222,22 +145,11 @@ public partial class Axis: ModelElement<DXO16DCD.Axis>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.MinorTickMarksTickMarks>();
-      if (element != null)
-        return MinorTickMarksTickMarksConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.MinorTickMarksTickMarks,DXO16DCD.MinorTickMarksTickMarks>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.MinorTickMarksTickMarks>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = MinorTickMarksTickMarksConverter.CreateOpenXmlElement<DXO16DCD.MinorTickMarksTickMarks>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.MinorTickMarksTickMarks,DXO16DCD.MinorTickMarksTickMarks>(value);
     }
   }
   
@@ -246,22 +158,11 @@ public partial class Axis: ModelElement<DXO16DCD.Axis>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.TickLabels>();
-      if (element != null)
-        return TickLabelsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.TickLabels,DXO16DCD.TickLabels>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.TickLabels>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TickLabelsConverter.CreateOpenXmlElement<DXO16DCD.TickLabels>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.TickLabels,DXO16DCD.TickLabels>(value);
     }
   }
   
@@ -270,22 +171,11 @@ public partial class Axis: ModelElement<DXO16DCD.Axis>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.NumberFormat>();
-      if (element != null)
-        return NumberFormatConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.NumberFormat,DXO16DCD.NumberFormat>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.NumberFormat>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NumberFormatConverter.CreateOpenXmlElement<DXO16DCD.NumberFormat>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.NumberFormat,DXO16DCD.NumberFormat>(value);
     }
   }
   
@@ -294,22 +184,11 @@ public partial class Axis: ModelElement<DXO16DCD.Axis>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.ShapeProperties>();
-      if (element != null)
-        return ShapePropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.ShapeProperties,DXO16DCD.ShapeProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.ShapeProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ShapePropertiesConverter.CreateOpenXmlElement<DXO16DCD.ShapeProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.ShapeProperties,DXO16DCD.ShapeProperties>(value);
     }
   }
   
@@ -318,22 +197,11 @@ public partial class Axis: ModelElement<DXO16DCD.Axis>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.TxPrTextBody>();
-      if (element != null)
-        return TxPrTextBodyConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.TxPrTextBody,DXO16DCD.TxPrTextBody>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.TxPrTextBody>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TxPrTextBodyConverter.CreateOpenXmlElement<DXO16DCD.TxPrTextBody>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.TxPrTextBody,DXO16DCD.TxPrTextBody>(value);
     }
   }
   
@@ -342,22 +210,11 @@ public partial class Axis: ModelElement<DXO16DCD.Axis>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.ExtensionList>();
-      if (element != null)
-        return ExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.ExtensionList,DXO16DCD.ExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.ExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DXO16DCD.ExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.ExtensionList,DXO16DCD.ExtensionList>(value);
     }
   }
   

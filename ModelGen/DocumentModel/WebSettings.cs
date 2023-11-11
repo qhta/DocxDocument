@@ -21,22 +21,11 @@ public partial class WebSettings: ModelElement<DXW.WebSettings>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.Frameset>();
-      if (element != null)
-        return FramesetConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.Frameset,DXW.Frameset>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Frameset>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FramesetConverter.CreateOpenXmlElement<DXW.Frameset>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.Frameset,DXW.Frameset>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class WebSettings: ModelElement<DXW.WebSettings>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.Divs>();
-      if (element != null)
-        return DivsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.Divs,DXW.Divs>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Divs>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DivsConverter.CreateOpenXmlElement<DXW.Divs>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.Divs,DXW.Divs>(value);
     }
   }
   
@@ -77,22 +55,11 @@ public partial class WebSettings: ModelElement<DXW.WebSettings>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.WebPageEncoding>();
-      if (element != null)
-        return WebPageEncodingConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.WebPageEncoding,DXW.WebPageEncoding>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.WebPageEncoding>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = WebPageEncodingConverter.CreateOpenXmlElement<DXW.WebPageEncoding>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.WebPageEncoding,DXW.WebPageEncoding>(value);
     }
   }
   
@@ -105,22 +72,11 @@ public partial class WebSettings: ModelElement<DXW.WebSettings>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.OptimizeForBrowser>();
-      if (element != null)
-        return OptimizeForBrowserConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.OptimizeForBrowser,DXW.OptimizeForBrowser>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.OptimizeForBrowser>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = OptimizeForBrowserConverter.CreateOpenXmlElement<DXW.OptimizeForBrowser>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.OptimizeForBrowser,DXW.OptimizeForBrowser>(value);
     }
   }
   
@@ -133,22 +89,11 @@ public partial class WebSettings: ModelElement<DXW.WebSettings>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.RelyOnVML>();
-      if (element != null)
-        return RelyOnVMLConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.RelyOnVML,DXW.RelyOnVML>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.RelyOnVML>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RelyOnVMLConverter.CreateOpenXmlElement<DXW.RelyOnVML>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.RelyOnVML,DXW.RelyOnVML>(value);
     }
   }
   
@@ -161,22 +106,11 @@ public partial class WebSettings: ModelElement<DXW.WebSettings>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.AllowPNG>();
-      if (element != null)
-        return AllowPNGConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.AllowPNG,DXW.AllowPNG>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.AllowPNG>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = AllowPNGConverter.CreateOpenXmlElement<DXW.AllowPNG>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.AllowPNG,DXW.AllowPNG>(value);
     }
   }
   
@@ -189,22 +123,11 @@ public partial class WebSettings: ModelElement<DXW.WebSettings>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.DoNotRelyOnCSS>();
-      if (element != null)
-        return DoNotRelyOnCSSConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.DoNotRelyOnCSS,DXW.DoNotRelyOnCSS>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.DoNotRelyOnCSS>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DoNotRelyOnCSSConverter.CreateOpenXmlElement<DXW.DoNotRelyOnCSS>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.DoNotRelyOnCSS,DXW.DoNotRelyOnCSS>(value);
     }
   }
   
@@ -217,22 +140,11 @@ public partial class WebSettings: ModelElement<DXW.WebSettings>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.DoNotSaveAsSingleFile>();
-      if (element != null)
-        return DoNotSaveAsSingleFileConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.DoNotSaveAsSingleFile,DXW.DoNotSaveAsSingleFile>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.DoNotSaveAsSingleFile>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DoNotSaveAsSingleFileConverter.CreateOpenXmlElement<DXW.DoNotSaveAsSingleFile>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.DoNotSaveAsSingleFile,DXW.DoNotSaveAsSingleFile>(value);
     }
   }
   
@@ -245,22 +157,11 @@ public partial class WebSettings: ModelElement<DXW.WebSettings>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.DoNotOrganizeInFolder>();
-      if (element != null)
-        return DoNotOrganizeInFolderConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.DoNotOrganizeInFolder,DXW.DoNotOrganizeInFolder>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.DoNotOrganizeInFolder>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DoNotOrganizeInFolderConverter.CreateOpenXmlElement<DXW.DoNotOrganizeInFolder>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.DoNotOrganizeInFolder,DXW.DoNotOrganizeInFolder>(value);
     }
   }
   
@@ -273,22 +174,11 @@ public partial class WebSettings: ModelElement<DXW.WebSettings>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.DoNotUseLongFileNames>();
-      if (element != null)
-        return DoNotUseLongFileNamesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.DoNotUseLongFileNames,DXW.DoNotUseLongFileNames>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.DoNotUseLongFileNames>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DoNotUseLongFileNamesConverter.CreateOpenXmlElement<DXW.DoNotUseLongFileNames>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.DoNotUseLongFileNames,DXW.DoNotUseLongFileNames>(value);
     }
   }
   
@@ -301,22 +191,11 @@ public partial class WebSettings: ModelElement<DXW.WebSettings>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.PixelsPerInch>();
-      if (element != null)
-        return PixelsPerInchConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.PixelsPerInch,DXW.PixelsPerInch>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.PixelsPerInch>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PixelsPerInchConverter.CreateOpenXmlElement<DXW.PixelsPerInch>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.PixelsPerInch,DXW.PixelsPerInch>(value);
     }
   }
   

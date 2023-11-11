@@ -21,22 +21,11 @@ public partial class DocPartProperties: ModelElement<DXW.DocPartProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.DocPartName>();
-      if (element != null)
-        return DocPartNameConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.DocPartName,DXW.DocPartName>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.DocPartName>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DocPartNameConverter.CreateOpenXmlElement<DXW.DocPartName>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.DocPartName,DXW.DocPartName>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class DocPartProperties: ModelElement<DXW.DocPartProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.StyleId>();
-      if (element != null)
-        return StyleIdConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.StyleId,DXW.StyleId>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.StyleId>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = StyleIdConverter.CreateOpenXmlElement<DXW.StyleId>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.StyleId,DXW.StyleId>(value);
     }
   }
   
@@ -77,22 +55,11 @@ public partial class DocPartProperties: ModelElement<DXW.DocPartProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.Category>();
-      if (element != null)
-        return CategoryConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.Category,DXW.Category>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Category>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = CategoryConverter.CreateOpenXmlElement<DXW.Category>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.Category,DXW.Category>(value);
     }
   }
   
@@ -105,22 +72,11 @@ public partial class DocPartProperties: ModelElement<DXW.DocPartProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.DocPartTypes>();
-      if (element != null)
-        return DocPartTypesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.DocPartTypes,DXW.DocPartTypes>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.DocPartTypes>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DocPartTypesConverter.CreateOpenXmlElement<DXW.DocPartTypes>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.DocPartTypes,DXW.DocPartTypes>(value);
     }
   }
   
@@ -133,22 +89,11 @@ public partial class DocPartProperties: ModelElement<DXW.DocPartProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.Behaviors>();
-      if (element != null)
-        return BehaviorsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.Behaviors,DXW.Behaviors>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Behaviors>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BehaviorsConverter.CreateOpenXmlElement<DXW.Behaviors>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.Behaviors,DXW.Behaviors>(value);
     }
   }
   
@@ -161,22 +106,11 @@ public partial class DocPartProperties: ModelElement<DXW.DocPartProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.Description>();
-      if (element != null)
-        return DescriptionConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.Description,DXW.Description>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Description>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DescriptionConverter.CreateOpenXmlElement<DXW.Description>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.Description,DXW.Description>(value);
     }
   }
   
@@ -193,7 +127,7 @@ public partial class DocPartProperties: ModelElement<DXW.DocPartProperties>
     }
     set
     {
-      StringValueConverter.SetValue<DXW.DocPartId>(openXmlElement, value);
+      StringValueConverter.SetValue<DXW.DocPartId>(_ExistingElement, value);
     }
   }
   

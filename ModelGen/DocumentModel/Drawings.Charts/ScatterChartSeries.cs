@@ -21,22 +21,11 @@ public partial class ScatterChartSeries: ModelElement<DXDC.ScatterChartSeries>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.Index>();
-      if (element != null)
-        return IndexConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.Index,DXDC.Index>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.Index>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = IndexConverter.CreateOpenXmlElement<DXDC.Index>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.Index,DXDC.Index>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class ScatterChartSeries: ModelElement<DXDC.ScatterChartSeries>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.Order>();
-      if (element != null)
-        return OrderConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.Order,DXDC.Order>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.Order>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = OrderConverter.CreateOpenXmlElement<DXDC.Order>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.Order,DXDC.Order>(value);
     }
   }
   
@@ -77,22 +55,11 @@ public partial class ScatterChartSeries: ModelElement<DXDC.ScatterChartSeries>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.SeriesText>();
-      if (element != null)
-        return SeriesTextConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.SeriesText,DXDC.SeriesText>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.SeriesText>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SeriesTextConverter.CreateOpenXmlElement<DXDC.SeriesText>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.SeriesText,DXDC.SeriesText>(value);
     }
   }
   
@@ -105,22 +72,11 @@ public partial class ScatterChartSeries: ModelElement<DXDC.ScatterChartSeries>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.ChartShapeProperties>();
-      if (element != null)
-        return ChartShapePropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.ChartShapeProperties,DXDC.ChartShapeProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.ChartShapeProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ChartShapePropertiesConverter.CreateOpenXmlElement<DXDC.ChartShapeProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.ChartShapeProperties,DXDC.ChartShapeProperties>(value);
     }
   }
   
@@ -133,22 +89,11 @@ public partial class ScatterChartSeries: ModelElement<DXDC.ScatterChartSeries>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.Marker>();
-      if (element != null)
-        return MarkerConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.Marker,DXDC.Marker>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.Marker>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = MarkerConverter.CreateOpenXmlElement<DXDC.Marker>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.Marker,DXDC.Marker>(value);
     }
   }
   
@@ -157,22 +102,11 @@ public partial class ScatterChartSeries: ModelElement<DXDC.ScatterChartSeries>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.DataLabels>();
-      if (element != null)
-        return DataLabelsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.DataLabels,DXDC.DataLabels>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.DataLabels>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DataLabelsConverter.CreateOpenXmlElement<DXDC.DataLabels>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.DataLabels,DXDC.DataLabels>(value);
     }
   }
   
@@ -181,22 +115,11 @@ public partial class ScatterChartSeries: ModelElement<DXDC.ScatterChartSeries>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.XValues>();
-      if (element != null)
-        return XValuesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.XValues,DXDC.XValues>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.XValues>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = XValuesConverter.CreateOpenXmlElement<DXDC.XValues>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.XValues,DXDC.XValues>(value);
     }
   }
   
@@ -205,22 +128,11 @@ public partial class ScatterChartSeries: ModelElement<DXDC.ScatterChartSeries>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.YValues>();
-      if (element != null)
-        return YValuesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.YValues,DXDC.YValues>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.YValues>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = YValuesConverter.CreateOpenXmlElement<DXDC.YValues>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.YValues,DXDC.YValues>(value);
     }
   }
   
@@ -229,22 +141,11 @@ public partial class ScatterChartSeries: ModelElement<DXDC.ScatterChartSeries>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.Smooth>();
-      if (element != null)
-        return SmoothConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.Smooth,DXDC.Smooth>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.Smooth>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SmoothConverter.CreateOpenXmlElement<DXDC.Smooth>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.Smooth,DXDC.Smooth>(value);
     }
   }
   
@@ -253,22 +154,11 @@ public partial class ScatterChartSeries: ModelElement<DXDC.ScatterChartSeries>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.ScatterSerExtensionList>();
-      if (element != null)
-        return ScatterSerExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.ScatterSerExtensionList,DXDC.ScatterSerExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.ScatterSerExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ScatterSerExtensionListConverter.CreateOpenXmlElement<DXDC.ScatterSerExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.ScatterSerExtensionList,DXDC.ScatterSerExtensionList>(value);
     }
   }
   

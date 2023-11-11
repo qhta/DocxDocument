@@ -26,7 +26,7 @@ public partial class Ribbon: ModelElement<DXO10CUI.Ribbon>
     set
     {
       if (value != null)
-        _ExistingElement.StartFromScratch = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.StartFromScratch = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.StartFromScratch = null;
     }
@@ -41,22 +41,11 @@ public partial class Ribbon: ModelElement<DXO10CUI.Ribbon>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10CUI.QuickAccessToolbar>();
-      if (element != null)
-        return QuickAccessToolbarConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMCUI10.QuickAccessToolbar,DXO10CUI.QuickAccessToolbar>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10CUI.QuickAccessToolbar>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = QuickAccessToolbarConverter.CreateOpenXmlElement<DXO10CUI.QuickAccessToolbar>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMCUI10.QuickAccessToolbar,DXO10CUI.QuickAccessToolbar>(value);
     }
   }
   
@@ -69,22 +58,11 @@ public partial class Ribbon: ModelElement<DXO10CUI.Ribbon>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10CUI.Tabs>();
-      if (element != null)
-        return TabsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMCUI10.Tabs,DXO10CUI.Tabs>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10CUI.Tabs>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TabsConverter.CreateOpenXmlElement<DXO10CUI.Tabs>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMCUI10.Tabs,DXO10CUI.Tabs>(value);
     }
   }
   
@@ -97,22 +75,11 @@ public partial class Ribbon: ModelElement<DXO10CUI.Ribbon>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10CUI.ContextualTabs>();
-      if (element != null)
-        return ContextualTabsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMCUI10.ContextualTabs,DXO10CUI.ContextualTabs>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10CUI.ContextualTabs>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ContextualTabsConverter.CreateOpenXmlElement<DXO10CUI.ContextualTabs>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMCUI10.ContextualTabs,DXO10CUI.ContextualTabs>(value);
     }
   }
   

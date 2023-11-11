@@ -34,22 +34,11 @@ public partial class OfficeStyleSheetExtension: ModelElement<DXD.OfficeStyleShee
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13T.ThemeFamily>();
-      if (element != null)
-        return ThemeFamilyConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMT.ThemeFamily,DXO13T.ThemeFamily>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13T.ThemeFamily>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ThemeFamilyConverter.CreateOpenXmlElement<DXO13T.ThemeFamily>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMT.ThemeFamily,DXO13T.ThemeFamily>(value);
     }
   }
   

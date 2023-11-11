@@ -21,22 +21,11 @@ public partial class DelimiterProperties: ModelElement<DXM.DelimiterProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.BeginChar>();
-      if (element != null)
-        return BeginCharConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.BeginChar,DXM.BeginChar>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.BeginChar>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BeginCharConverter.CreateOpenXmlElement<DXM.BeginChar>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.BeginChar,DXM.BeginChar>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class DelimiterProperties: ModelElement<DXM.DelimiterProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.SeparatorChar>();
-      if (element != null)
-        return SeparatorCharConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.SeparatorChar,DXM.SeparatorChar>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.SeparatorChar>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SeparatorCharConverter.CreateOpenXmlElement<DXM.SeparatorChar>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.SeparatorChar,DXM.SeparatorChar>(value);
     }
   }
   
@@ -77,22 +55,11 @@ public partial class DelimiterProperties: ModelElement<DXM.DelimiterProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.EndChar>();
-      if (element != null)
-        return EndCharConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.EndChar,DXM.EndChar>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.EndChar>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EndCharConverter.CreateOpenXmlElement<DXM.EndChar>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.EndChar,DXM.EndChar>(value);
     }
   }
   
@@ -105,22 +72,11 @@ public partial class DelimiterProperties: ModelElement<DXM.DelimiterProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.GrowOperators>();
-      if (element != null)
-        return GrowOperatorsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.GrowOperators,DXM.GrowOperators>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.GrowOperators>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = GrowOperatorsConverter.CreateOpenXmlElement<DXM.GrowOperators>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.GrowOperators,DXM.GrowOperators>(value);
     }
   }
   
@@ -160,22 +116,11 @@ public partial class DelimiterProperties: ModelElement<DXM.DelimiterProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.ControlProperties>();
-      if (element != null)
-        return ControlPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.ControlProperties,DXM.ControlProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.ControlProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ControlPropertiesConverter.CreateOpenXmlElement<DXM.ControlProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.ControlProperties,DXM.ControlProperties>(value);
     }
   }
   

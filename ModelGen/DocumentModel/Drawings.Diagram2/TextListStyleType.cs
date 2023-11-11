@@ -21,22 +21,11 @@ public partial class TextListStyleType: ModelElement<DXO19DD12.TextListStyleType
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.DefaultParagraphProperties>();
-      if (element != null)
-        return DefaultParagraphPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.DefaultParagraphProperties,DXD.DefaultParagraphProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.DefaultParagraphProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DefaultParagraphPropertiesConverter.CreateOpenXmlElement<DXD.DefaultParagraphProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.DefaultParagraphProperties,DXD.DefaultParagraphProperties>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class TextListStyleType: ModelElement<DXO19DD12.TextListStyleType
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.Level1ParagraphProperties>();
-      if (element != null)
-        return Level1ParagraphPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.Level1ParagraphProperties,DXD.Level1ParagraphProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.Level1ParagraphProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = Level1ParagraphPropertiesConverter.CreateOpenXmlElement<DXD.Level1ParagraphProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.Level1ParagraphProperties,DXD.Level1ParagraphProperties>(value);
     }
   }
   
@@ -77,22 +55,11 @@ public partial class TextListStyleType: ModelElement<DXO19DD12.TextListStyleType
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.Level2ParagraphProperties>();
-      if (element != null)
-        return Level2ParagraphPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.Level2ParagraphProperties,DXD.Level2ParagraphProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.Level2ParagraphProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = Level2ParagraphPropertiesConverter.CreateOpenXmlElement<DXD.Level2ParagraphProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.Level2ParagraphProperties,DXD.Level2ParagraphProperties>(value);
     }
   }
   
@@ -105,22 +72,11 @@ public partial class TextListStyleType: ModelElement<DXO19DD12.TextListStyleType
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.Level3ParagraphProperties>();
-      if (element != null)
-        return Level3ParagraphPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.Level3ParagraphProperties,DXD.Level3ParagraphProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.Level3ParagraphProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = Level3ParagraphPropertiesConverter.CreateOpenXmlElement<DXD.Level3ParagraphProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.Level3ParagraphProperties,DXD.Level3ParagraphProperties>(value);
     }
   }
   
@@ -133,22 +89,11 @@ public partial class TextListStyleType: ModelElement<DXO19DD12.TextListStyleType
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.Level4ParagraphProperties>();
-      if (element != null)
-        return Level4ParagraphPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.Level4ParagraphProperties,DXD.Level4ParagraphProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.Level4ParagraphProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = Level4ParagraphPropertiesConverter.CreateOpenXmlElement<DXD.Level4ParagraphProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.Level4ParagraphProperties,DXD.Level4ParagraphProperties>(value);
     }
   }
   
@@ -161,22 +106,11 @@ public partial class TextListStyleType: ModelElement<DXO19DD12.TextListStyleType
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.Level5ParagraphProperties>();
-      if (element != null)
-        return Level5ParagraphPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.Level5ParagraphProperties,DXD.Level5ParagraphProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.Level5ParagraphProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = Level5ParagraphPropertiesConverter.CreateOpenXmlElement<DXD.Level5ParagraphProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.Level5ParagraphProperties,DXD.Level5ParagraphProperties>(value);
     }
   }
   
@@ -189,22 +123,11 @@ public partial class TextListStyleType: ModelElement<DXO19DD12.TextListStyleType
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.Level6ParagraphProperties>();
-      if (element != null)
-        return Level6ParagraphPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.Level6ParagraphProperties,DXD.Level6ParagraphProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.Level6ParagraphProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = Level6ParagraphPropertiesConverter.CreateOpenXmlElement<DXD.Level6ParagraphProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.Level6ParagraphProperties,DXD.Level6ParagraphProperties>(value);
     }
   }
   
@@ -217,22 +140,11 @@ public partial class TextListStyleType: ModelElement<DXO19DD12.TextListStyleType
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.Level7ParagraphProperties>();
-      if (element != null)
-        return Level7ParagraphPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.Level7ParagraphProperties,DXD.Level7ParagraphProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.Level7ParagraphProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = Level7ParagraphPropertiesConverter.CreateOpenXmlElement<DXD.Level7ParagraphProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.Level7ParagraphProperties,DXD.Level7ParagraphProperties>(value);
     }
   }
   
@@ -245,22 +157,11 @@ public partial class TextListStyleType: ModelElement<DXO19DD12.TextListStyleType
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.Level8ParagraphProperties>();
-      if (element != null)
-        return Level8ParagraphPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.Level8ParagraphProperties,DXD.Level8ParagraphProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.Level8ParagraphProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = Level8ParagraphPropertiesConverter.CreateOpenXmlElement<DXD.Level8ParagraphProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.Level8ParagraphProperties,DXD.Level8ParagraphProperties>(value);
     }
   }
   
@@ -273,22 +174,11 @@ public partial class TextListStyleType: ModelElement<DXO19DD12.TextListStyleType
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.Level9ParagraphProperties>();
-      if (element != null)
-        return Level9ParagraphPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.Level9ParagraphProperties,DXD.Level9ParagraphProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.Level9ParagraphProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = Level9ParagraphPropertiesConverter.CreateOpenXmlElement<DXD.Level9ParagraphProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.Level9ParagraphProperties,DXD.Level9ParagraphProperties>(value);
     }
   }
   
@@ -301,22 +191,11 @@ public partial class TextListStyleType: ModelElement<DXO19DD12.TextListStyleType
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.ExtensionList>();
-      if (element != null)
-        return ExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.ExtensionList,DXD.ExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.ExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DXD.ExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.ExtensionList,DXD.ExtensionList>(value);
     }
   }
   

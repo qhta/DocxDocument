@@ -26,7 +26,7 @@ public partial class ColorChange: ModelElement<DXD.ColorChange>
     set
     {
       if (value != null)
-        _ExistingElement.UseAlpha = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.UseAlpha = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.UseAlpha = null;
     }
@@ -41,22 +41,11 @@ public partial class ColorChange: ModelElement<DXD.ColorChange>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.ColorFrom>();
-      if (element != null)
-        return ColorFromConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.ColorFrom,DXD.ColorFrom>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.ColorFrom>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ColorFromConverter.CreateOpenXmlElement<DXD.ColorFrom>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.ColorFrom,DXD.ColorFrom>(value);
     }
   }
   
@@ -69,22 +58,11 @@ public partial class ColorChange: ModelElement<DXD.ColorChange>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.ColorTo>();
-      if (element != null)
-        return ColorToConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.ColorTo,DXD.ColorTo>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.ColorTo>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ColorToConverter.CreateOpenXmlElement<DXD.ColorTo>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.ColorTo,DXD.ColorTo>(value);
     }
   }
   

@@ -21,22 +21,11 @@ public partial class DataTable: ModelElement<DXDC.DataTable>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.ShowHorizontalBorder>();
-      if (element != null)
-        return ShowHorizontalBorderConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.ShowHorizontalBorder,DXDC.ShowHorizontalBorder>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.ShowHorizontalBorder>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ShowHorizontalBorderConverter.CreateOpenXmlElement<DXDC.ShowHorizontalBorder>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.ShowHorizontalBorder,DXDC.ShowHorizontalBorder>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class DataTable: ModelElement<DXDC.DataTable>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.ShowVerticalBorder>();
-      if (element != null)
-        return ShowVerticalBorderConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.ShowVerticalBorder,DXDC.ShowVerticalBorder>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.ShowVerticalBorder>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ShowVerticalBorderConverter.CreateOpenXmlElement<DXDC.ShowVerticalBorder>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.ShowVerticalBorder,DXDC.ShowVerticalBorder>(value);
     }
   }
   
@@ -77,22 +55,11 @@ public partial class DataTable: ModelElement<DXDC.DataTable>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.ShowOutlineBorder>();
-      if (element != null)
-        return ShowOutlineBorderConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.ShowOutlineBorder,DXDC.ShowOutlineBorder>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.ShowOutlineBorder>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ShowOutlineBorderConverter.CreateOpenXmlElement<DXDC.ShowOutlineBorder>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.ShowOutlineBorder,DXDC.ShowOutlineBorder>(value);
     }
   }
   
@@ -105,22 +72,11 @@ public partial class DataTable: ModelElement<DXDC.DataTable>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.ShowKeys>();
-      if (element != null)
-        return ShowKeysConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.ShowKeys,DXDC.ShowKeys>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.ShowKeys>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ShowKeysConverter.CreateOpenXmlElement<DXDC.ShowKeys>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.ShowKeys,DXDC.ShowKeys>(value);
     }
   }
   
@@ -133,22 +89,11 @@ public partial class DataTable: ModelElement<DXDC.DataTable>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.ChartShapeProperties>();
-      if (element != null)
-        return ChartShapePropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.ChartShapeProperties,DXDC.ChartShapeProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.ChartShapeProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ChartShapePropertiesConverter.CreateOpenXmlElement<DXDC.ChartShapeProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.ChartShapeProperties,DXDC.ChartShapeProperties>(value);
     }
   }
   
@@ -161,22 +106,11 @@ public partial class DataTable: ModelElement<DXDC.DataTable>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.TextProperties>();
-      if (element != null)
-        return TextPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.TextProperties,DXDC.TextProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.TextProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TextPropertiesConverter.CreateOpenXmlElement<DXDC.TextProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.TextProperties,DXDC.TextProperties>(value);
     }
   }
   
@@ -189,22 +123,11 @@ public partial class DataTable: ModelElement<DXDC.DataTable>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.ExtensionList>();
-      if (element != null)
-        return ExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.ExtensionList,DXDC.ExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.ExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DXDC.ExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.ExtensionList,DXDC.ExtensionList>(value);
     }
   }
   

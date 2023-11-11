@@ -21,22 +21,11 @@ public partial class TableStyleProperties: ModelElement<DXW.TableStyleProperties
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.StyleParagraphProperties>();
-      if (element != null)
-        return StyleParagraphPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.StyleParagraphProperties,DXW.StyleParagraphProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.StyleParagraphProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = StyleParagraphPropertiesConverter.CreateOpenXmlElement<DXW.StyleParagraphProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.StyleParagraphProperties,DXW.StyleParagraphProperties>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class TableStyleProperties: ModelElement<DXW.TableStyleProperties
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.RunPropertiesBaseStyle>();
-      if (element != null)
-        return RunPropertiesBaseStyleConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.RunPropertiesBaseStyle,DXW.RunPropertiesBaseStyle>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.RunPropertiesBaseStyle>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RunPropertiesBaseStyleConverter.CreateOpenXmlElement<DXW.RunPropertiesBaseStyle>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.RunPropertiesBaseStyle,DXW.RunPropertiesBaseStyle>(value);
     }
   }
   
@@ -77,22 +55,11 @@ public partial class TableStyleProperties: ModelElement<DXW.TableStyleProperties
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.TableStyleConditionalFormattingTableProperties>();
-      if (element != null)
-        return TableStyleConditionalFormattingTablePropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.TableStyleConditionalFormattingTableProperties,DXW.TableStyleConditionalFormattingTableProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.TableStyleConditionalFormattingTableProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TableStyleConditionalFormattingTablePropertiesConverter.CreateOpenXmlElement<DXW.TableStyleConditionalFormattingTableProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.TableStyleConditionalFormattingTableProperties,DXW.TableStyleConditionalFormattingTableProperties>(value);
     }
   }
   
@@ -105,22 +72,11 @@ public partial class TableStyleProperties: ModelElement<DXW.TableStyleProperties
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.TableStyleConditionalFormattingTableRowProperties>();
-      if (element != null)
-        return TableStyleConditionalFormattingTableRowPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.TableStyleConditionalFormattingTableRowProperties,DXW.TableStyleConditionalFormattingTableRowProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.TableStyleConditionalFormattingTableRowProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TableStyleConditionalFormattingTableRowPropertiesConverter.CreateOpenXmlElement<DXW.TableStyleConditionalFormattingTableRowProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.TableStyleConditionalFormattingTableRowProperties,DXW.TableStyleConditionalFormattingTableRowProperties>(value);
     }
   }
   
@@ -133,22 +89,11 @@ public partial class TableStyleProperties: ModelElement<DXW.TableStyleProperties
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.TableStyleConditionalFormattingTableCellProperties>();
-      if (element != null)
-        return TableStyleConditionalFormattingTableCellPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.TableStyleConditionalFormattingTableCellProperties,DXW.TableStyleConditionalFormattingTableCellProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.TableStyleConditionalFormattingTableCellProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TableStyleConditionalFormattingTableCellPropertiesConverter.CreateOpenXmlElement<DXW.TableStyleConditionalFormattingTableCellProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.TableStyleConditionalFormattingTableCellProperties,DXW.TableStyleConditionalFormattingTableCellProperties>(value);
     }
   }
   

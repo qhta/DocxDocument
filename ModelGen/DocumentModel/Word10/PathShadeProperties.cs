@@ -21,22 +21,11 @@ public partial class PathShadeProperties: ModelElement<DXO10W.PathShadePropertie
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10W.FillToRectangle>();
-      if (element != null)
-        return FillToRectangleConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW10.FillToRectangle,DXO10W.FillToRectangle>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10W.FillToRectangle>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FillToRectangleConverter.CreateOpenXmlElement<DXO10W.FillToRectangle>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW10.FillToRectangle,DXO10W.FillToRectangle>(value);
     }
   }
   

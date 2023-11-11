@@ -76,7 +76,7 @@ public partial class Style: ModelElement<DXW.Style>
     }
     set
     {
-      StringValueConverter.SetValue<DXW.StyleName>(openXmlElement, value);
+      StringValueConverter.SetValue<DXW.StyleName>(_ExistingElement, value);
     }
   }
   
@@ -89,22 +89,11 @@ public partial class Style: ModelElement<DXW.Style>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.Aliases>();
-      if (element != null)
-        return AliasesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.Aliases,DXW.Aliases>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Aliases>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = AliasesConverter.CreateOpenXmlElement<DXW.Aliases>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.Aliases,DXW.Aliases>(value);
     }
   }
   
@@ -117,22 +106,11 @@ public partial class Style: ModelElement<DXW.Style>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.BasedOn>();
-      if (element != null)
-        return BasedOnConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.BasedOn,DXW.BasedOn>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.BasedOn>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BasedOnConverter.CreateOpenXmlElement<DXW.BasedOn>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.BasedOn,DXW.BasedOn>(value);
     }
   }
   
@@ -145,22 +123,11 @@ public partial class Style: ModelElement<DXW.Style>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.NextParagraphStyle>();
-      if (element != null)
-        return NextParagraphStyleConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.NextParagraphStyle,DXW.NextParagraphStyle>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.NextParagraphStyle>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NextParagraphStyleConverter.CreateOpenXmlElement<DXW.NextParagraphStyle>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.NextParagraphStyle,DXW.NextParagraphStyle>(value);
     }
   }
   
@@ -173,22 +140,11 @@ public partial class Style: ModelElement<DXW.Style>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.LinkedStyle>();
-      if (element != null)
-        return LinkedStyleConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.LinkedStyle,DXW.LinkedStyle>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.LinkedStyle>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LinkedStyleConverter.CreateOpenXmlElement<DXW.LinkedStyle>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.LinkedStyle,DXW.LinkedStyle>(value);
     }
   }
   
@@ -201,22 +157,11 @@ public partial class Style: ModelElement<DXW.Style>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.AutoRedefine>();
-      if (element != null)
-        return AutoRedefineConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.AutoRedefine,DXW.AutoRedefine>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.AutoRedefine>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = AutoRedefineConverter.CreateOpenXmlElement<DXW.AutoRedefine>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.AutoRedefine,DXW.AutoRedefine>(value);
     }
   }
   
@@ -229,22 +174,11 @@ public partial class Style: ModelElement<DXW.Style>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.StyleHidden>();
-      if (element != null)
-        return StyleHiddenConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.StyleHidden,DXW.StyleHidden>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.StyleHidden>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = StyleHiddenConverter.CreateOpenXmlElement<DXW.StyleHidden>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.StyleHidden,DXW.StyleHidden>(value);
     }
   }
   
@@ -261,7 +195,7 @@ public partial class Style: ModelElement<DXW.Style>
     }
     set
     {
-      SimpleValueConverter.SetValue<DXW.UIPriority,System.Int32>(openXmlElement, value);
+      SimpleValueConverter.SetValue<DXW.UIPriority,System.Int32>(_ExistingElement, value);
     }
   }
   
@@ -274,22 +208,11 @@ public partial class Style: ModelElement<DXW.Style>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.SemiHidden>();
-      if (element != null)
-        return SemiHiddenConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.SemiHidden,DXW.SemiHidden>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.SemiHidden>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SemiHiddenConverter.CreateOpenXmlElement<DXW.SemiHidden>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.SemiHidden,DXW.SemiHidden>(value);
     }
   }
   
@@ -302,22 +225,11 @@ public partial class Style: ModelElement<DXW.Style>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.UnhideWhenUsed>();
-      if (element != null)
-        return UnhideWhenUsedConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.UnhideWhenUsed,DXW.UnhideWhenUsed>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.UnhideWhenUsed>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = UnhideWhenUsedConverter.CreateOpenXmlElement<DXW.UnhideWhenUsed>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.UnhideWhenUsed,DXW.UnhideWhenUsed>(value);
     }
   }
   
@@ -330,22 +242,11 @@ public partial class Style: ModelElement<DXW.Style>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.PrimaryStyle>();
-      if (element != null)
-        return PrimaryStyleConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.PrimaryStyle,DXW.PrimaryStyle>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.PrimaryStyle>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PrimaryStyleConverter.CreateOpenXmlElement<DXW.PrimaryStyle>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.PrimaryStyle,DXW.PrimaryStyle>(value);
     }
   }
   
@@ -358,22 +259,11 @@ public partial class Style: ModelElement<DXW.Style>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.Locked>();
-      if (element != null)
-        return LockedConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.Locked,DXW.Locked>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Locked>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LockedConverter.CreateOpenXmlElement<DXW.Locked>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.Locked,DXW.Locked>(value);
     }
   }
   
@@ -386,22 +276,11 @@ public partial class Style: ModelElement<DXW.Style>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.Personal>();
-      if (element != null)
-        return PersonalConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.Personal,DXW.Personal>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Personal>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PersonalConverter.CreateOpenXmlElement<DXW.Personal>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.Personal,DXW.Personal>(value);
     }
   }
   
@@ -414,22 +293,11 @@ public partial class Style: ModelElement<DXW.Style>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.PersonalCompose>();
-      if (element != null)
-        return PersonalComposeConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.PersonalCompose,DXW.PersonalCompose>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.PersonalCompose>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PersonalComposeConverter.CreateOpenXmlElement<DXW.PersonalCompose>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.PersonalCompose,DXW.PersonalCompose>(value);
     }
   }
   
@@ -442,22 +310,11 @@ public partial class Style: ModelElement<DXW.Style>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.PersonalReply>();
-      if (element != null)
-        return PersonalReplyConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.PersonalReply,DXW.PersonalReply>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.PersonalReply>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PersonalReplyConverter.CreateOpenXmlElement<DXW.PersonalReply>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.PersonalReply,DXW.PersonalReply>(value);
     }
   }
   
@@ -470,22 +327,11 @@ public partial class Style: ModelElement<DXW.Style>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.Rsid>();
-      if (element != null)
-        return RsidConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.Rsid,DXW.Rsid>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Rsid>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RsidConverter.CreateOpenXmlElement<DXW.Rsid>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.Rsid,DXW.Rsid>(value);
     }
   }
   
@@ -498,22 +344,11 @@ public partial class Style: ModelElement<DXW.Style>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.StyleParagraphProperties>();
-      if (element != null)
-        return StyleParagraphPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.StyleParagraphProperties,DXW.StyleParagraphProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.StyleParagraphProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = StyleParagraphPropertiesConverter.CreateOpenXmlElement<DXW.StyleParagraphProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.StyleParagraphProperties,DXW.StyleParagraphProperties>(value);
     }
   }
   
@@ -526,22 +361,11 @@ public partial class Style: ModelElement<DXW.Style>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.StyleRunProperties>();
-      if (element != null)
-        return StyleRunPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.StyleRunProperties,DXW.StyleRunProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.StyleRunProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = StyleRunPropertiesConverter.CreateOpenXmlElement<DXW.StyleRunProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.StyleRunProperties,DXW.StyleRunProperties>(value);
     }
   }
   
@@ -554,22 +378,11 @@ public partial class Style: ModelElement<DXW.Style>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.StyleTableProperties>();
-      if (element != null)
-        return StyleTablePropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.StyleTableProperties,DXW.StyleTableProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.StyleTableProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = StyleTablePropertiesConverter.CreateOpenXmlElement<DXW.StyleTableProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.StyleTableProperties,DXW.StyleTableProperties>(value);
     }
   }
   
@@ -582,22 +395,11 @@ public partial class Style: ModelElement<DXW.Style>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.TableStyleConditionalFormattingTableRowProperties>();
-      if (element != null)
-        return TableStyleConditionalFormattingTableRowPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.TableStyleConditionalFormattingTableRowProperties,DXW.TableStyleConditionalFormattingTableRowProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.TableStyleConditionalFormattingTableRowProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TableStyleConditionalFormattingTableRowPropertiesConverter.CreateOpenXmlElement<DXW.TableStyleConditionalFormattingTableRowProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.TableStyleConditionalFormattingTableRowProperties,DXW.TableStyleConditionalFormattingTableRowProperties>(value);
     }
   }
   
@@ -610,22 +412,11 @@ public partial class Style: ModelElement<DXW.Style>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.StyleTableCellProperties>();
-      if (element != null)
-        return StyleTableCellPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.StyleTableCellProperties,DXW.StyleTableCellProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.StyleTableCellProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = StyleTableCellPropertiesConverter.CreateOpenXmlElement<DXW.StyleTableCellProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.StyleTableCellProperties,DXW.StyleTableCellProperties>(value);
     }
   }
   

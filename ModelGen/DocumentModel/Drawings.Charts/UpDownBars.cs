@@ -21,22 +21,11 @@ public partial class UpDownBars: ModelElement<DXDC.UpDownBars>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.GapWidth>();
-      if (element != null)
-        return GapWidthConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.GapWidth,DXDC.GapWidth>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.GapWidth>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = GapWidthConverter.CreateOpenXmlElement<DXDC.GapWidth>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.GapWidth,DXDC.GapWidth>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class UpDownBars: ModelElement<DXDC.UpDownBars>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.UpBars>();
-      if (element != null)
-        return UpBarsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.UpBars,DXDC.UpBars>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.UpBars>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = UpBarsConverter.CreateOpenXmlElement<DXDC.UpBars>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.UpBars,DXDC.UpBars>(value);
     }
   }
   
@@ -77,22 +55,11 @@ public partial class UpDownBars: ModelElement<DXDC.UpDownBars>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.DownBars>();
-      if (element != null)
-        return DownBarsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.DownBars,DXDC.DownBars>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.DownBars>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DownBarsConverter.CreateOpenXmlElement<DXDC.DownBars>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.DownBars,DXDC.DownBars>(value);
     }
   }
   
@@ -105,22 +72,11 @@ public partial class UpDownBars: ModelElement<DXDC.UpDownBars>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.ExtensionList>();
-      if (element != null)
-        return ExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.ExtensionList,DXDC.ExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.ExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DXDC.ExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.ExtensionList,DXDC.ExtensionList>(value);
     }
   }
   

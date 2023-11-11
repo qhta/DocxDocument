@@ -38,22 +38,11 @@ public partial class ContentPart: ModelElement<DXO10DCD.ContentPart>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10DCD.NonVisualContentPartProperties>();
-      if (element != null)
-        return NonVisualContentPartPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD10.NonVisualContentPartProperties,DXO10DCD.NonVisualContentPartProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10DCD.NonVisualContentPartProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NonVisualContentPartPropertiesConverter.CreateOpenXmlElement<DXO10DCD.NonVisualContentPartProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD10.NonVisualContentPartProperties,DXO10DCD.NonVisualContentPartProperties>(value);
     }
   }
   
@@ -66,22 +55,11 @@ public partial class ContentPart: ModelElement<DXO10DCD.ContentPart>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10DCD.ApplicationNonVisualDrawingProperties>();
-      if (element != null)
-        return ApplicationNonVisualDrawingPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD10.ApplicationNonVisualDrawingProperties,DXO10DCD.ApplicationNonVisualDrawingProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10DCD.ApplicationNonVisualDrawingProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ApplicationNonVisualDrawingPropertiesConverter.CreateOpenXmlElement<DXO10DCD.ApplicationNonVisualDrawingProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD10.ApplicationNonVisualDrawingProperties,DXO10DCD.ApplicationNonVisualDrawingProperties>(value);
     }
   }
   
@@ -94,22 +72,11 @@ public partial class ContentPart: ModelElement<DXO10DCD.ContentPart>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10DCD.Transform2D>();
-      if (element != null)
-        return Transform2DConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD10.Transform2D,DXO10DCD.Transform2D>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10DCD.Transform2D>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = Transform2DConverter.CreateOpenXmlElement<DXO10DCD.Transform2D>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD10.Transform2D,DXO10DCD.Transform2D>(value);
     }
   }
   
@@ -122,22 +89,11 @@ public partial class ContentPart: ModelElement<DXO10DCD.ContentPart>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10DCD.OfficeArtExtensionList>();
-      if (element != null)
-        return OfficeArtExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD10.OfficeArtExtensionList,DXO10DCD.OfficeArtExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10DCD.OfficeArtExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = OfficeArtExtensionListConverter.CreateOpenXmlElement<DXO10DCD.OfficeArtExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD10.OfficeArtExtensionList,DXO10DCD.OfficeArtExtensionList>(value);
     }
   }
   

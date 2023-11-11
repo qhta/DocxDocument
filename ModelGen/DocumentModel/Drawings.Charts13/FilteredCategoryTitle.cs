@@ -21,22 +21,11 @@ public partial class FilteredCategoryTitle: ModelElement<DXO13DC.FilteredCategor
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13DC.AxisDataSourceType>();
-      if (element != null)
-        return AxisDataSourceTypeConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC13.AxisDataSourceType,DXO13DC.AxisDataSourceType>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13DC.AxisDataSourceType>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = AxisDataSourceTypeConverter.CreateOpenXmlElement<DXO13DC.AxisDataSourceType>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC13.AxisDataSourceType,DXO13DC.AxisDataSourceType>(value);
     }
   }
   

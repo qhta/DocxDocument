@@ -48,22 +48,11 @@ public partial class OfPieChart: ModelElement<DXDC.OfPieChart>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.VaryColors>();
-      if (element != null)
-        return VaryColorsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.VaryColors,DXDC.VaryColors>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.VaryColors>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = VaryColorsConverter.CreateOpenXmlElement<DXDC.VaryColors>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.VaryColors,DXDC.VaryColors>(value);
     }
   }
   
@@ -72,22 +61,11 @@ public partial class OfPieChart: ModelElement<DXDC.OfPieChart>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.DataLabels>();
-      if (element != null)
-        return DataLabelsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.DataLabels,DXDC.DataLabels>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.DataLabels>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DataLabelsConverter.CreateOpenXmlElement<DXDC.DataLabels>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.DataLabels,DXDC.DataLabels>(value);
     }
   }
   
@@ -96,22 +74,11 @@ public partial class OfPieChart: ModelElement<DXDC.OfPieChart>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.GapWidth>();
-      if (element != null)
-        return GapWidthConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.GapWidth,DXDC.GapWidth>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.GapWidth>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = GapWidthConverter.CreateOpenXmlElement<DXDC.GapWidth>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.GapWidth,DXDC.GapWidth>(value);
     }
   }
   
@@ -143,22 +110,11 @@ public partial class OfPieChart: ModelElement<DXDC.OfPieChart>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.SplitPosition>();
-      if (element != null)
-        return SplitPositionConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.SplitPosition,DXDC.SplitPosition>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.SplitPosition>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SplitPositionConverter.CreateOpenXmlElement<DXDC.SplitPosition>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.SplitPosition,DXDC.SplitPosition>(value);
     }
   }
   
@@ -167,22 +123,11 @@ public partial class OfPieChart: ModelElement<DXDC.OfPieChart>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.CustomSplit>();
-      if (element != null)
-        return CustomSplitConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.CustomSplit,DXDC.CustomSplit>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.CustomSplit>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = CustomSplitConverter.CreateOpenXmlElement<DXDC.CustomSplit>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.CustomSplit,DXDC.CustomSplit>(value);
     }
   }
   
@@ -195,7 +140,7 @@ public partial class OfPieChart: ModelElement<DXDC.OfPieChart>
     }
     set
     {
-      SimpleValueConverter.SetValue<DXDC.SecondPieSize,System.UInt16>(openXmlElement, value);
+      SimpleValueConverter.SetValue<DXDC.SecondPieSize,System.UInt16>(_ExistingElement, value);
     }
   }
   
@@ -204,22 +149,11 @@ public partial class OfPieChart: ModelElement<DXDC.OfPieChart>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.ExtensionList>();
-      if (element != null)
-        return ExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.ExtensionList,DXDC.ExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.ExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DXDC.ExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.ExtensionList,DXDC.ExtensionList>(value);
     }
   }
   

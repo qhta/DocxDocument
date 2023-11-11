@@ -34,22 +34,11 @@ public partial class ChartSpaceExtension: ModelElement<DXDC.ChartSpaceExtension>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10DC.PivotOptions>();
-      if (element != null)
-        return PivotOptionsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC10.PivotOptions,DXO10DC.PivotOptions>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10DC.PivotOptions>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PivotOptionsConverter.CreateOpenXmlElement<DXO10DC.PivotOptions>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC10.PivotOptions,DXO10DC.PivotOptions>(value);
     }
   }
   
@@ -58,22 +47,11 @@ public partial class ChartSpaceExtension: ModelElement<DXDC.ChartSpaceExtension>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10DC.SketchOptions>();
-      if (element != null)
-        return SketchOptionsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC10.SketchOptions,DXO10DC.SketchOptions>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10DC.SketchOptions>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SketchOptionsConverter.CreateOpenXmlElement<DXO10DC.SketchOptions>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC10.SketchOptions,DXO10DC.SketchOptions>(value);
     }
   }
   
@@ -82,22 +60,11 @@ public partial class ChartSpaceExtension: ModelElement<DXDC.ChartSpaceExtension>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13DC.PivotSource>();
-      if (element != null)
-        return PivotSourceConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC13.PivotSource,DXO13DC.PivotSource>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13DC.PivotSource>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PivotSourceConverter.CreateOpenXmlElement<DXO13DC.PivotSource>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC13.PivotSource,DXO13DC.PivotSource>(value);
     }
   }
   

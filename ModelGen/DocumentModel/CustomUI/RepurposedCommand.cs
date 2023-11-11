@@ -43,7 +43,7 @@ public partial class RepurposedCommand: ModelElement<DXOCUI.RepurposedCommand>
     set
     {
       if (value != null)
-        _ExistingElement.Enabled = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.Enabled = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.Enabled = null;
     }

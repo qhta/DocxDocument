@@ -48,22 +48,11 @@ public partial class AreaChart: ModelElement<DXDC.AreaChart>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.VaryColors>();
-      if (element != null)
-        return VaryColorsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.VaryColors,DXDC.VaryColors>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.VaryColors>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = VaryColorsConverter.CreateOpenXmlElement<DXDC.VaryColors>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.VaryColors,DXDC.VaryColors>(value);
     }
   }
   
@@ -72,22 +61,11 @@ public partial class AreaChart: ModelElement<DXDC.AreaChart>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.DataLabels>();
-      if (element != null)
-        return DataLabelsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.DataLabels,DXDC.DataLabels>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.DataLabels>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DataLabelsConverter.CreateOpenXmlElement<DXDC.DataLabels>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.DataLabels,DXDC.DataLabels>(value);
     }
   }
   
@@ -96,22 +74,11 @@ public partial class AreaChart: ModelElement<DXDC.AreaChart>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.DropLines>();
-      if (element != null)
-        return DropLinesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.DropLines,DXDC.DropLines>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.DropLines>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DropLinesConverter.CreateOpenXmlElement<DXDC.DropLines>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.DropLines,DXDC.DropLines>(value);
     }
   }
   
@@ -120,22 +87,11 @@ public partial class AreaChart: ModelElement<DXDC.AreaChart>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.AreaChartExtensionList>();
-      if (element != null)
-        return AreaChartExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.AreaChartExtensionList,DXDC.AreaChartExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.AreaChartExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = AreaChartExtensionListConverter.CreateOpenXmlElement<DXDC.AreaChartExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.AreaChartExtensionList,DXDC.AreaChartExtensionList>(value);
     }
   }
   

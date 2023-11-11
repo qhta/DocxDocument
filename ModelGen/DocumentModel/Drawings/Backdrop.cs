@@ -21,22 +21,11 @@ public partial class Backdrop: ModelElement<DXD.Backdrop>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.Anchor>();
-      if (element != null)
-        return AnchorConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.Anchor,DXD.Anchor>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.Anchor>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = AnchorConverter.CreateOpenXmlElement<DXD.Anchor>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.Anchor,DXD.Anchor>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class Backdrop: ModelElement<DXD.Backdrop>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.Normal>();
-      if (element != null)
-        return NormalConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.Normal,DXD.Normal>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.Normal>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NormalConverter.CreateOpenXmlElement<DXD.Normal>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.Normal,DXD.Normal>(value);
     }
   }
   
@@ -77,22 +55,11 @@ public partial class Backdrop: ModelElement<DXD.Backdrop>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.UpVector>();
-      if (element != null)
-        return UpVectorConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.UpVector,DXD.UpVector>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.UpVector>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = UpVectorConverter.CreateOpenXmlElement<DXD.UpVector>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.UpVector,DXD.UpVector>(value);
     }
   }
   
@@ -105,22 +72,11 @@ public partial class Backdrop: ModelElement<DXD.Backdrop>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.ExtensionList>();
-      if (element != null)
-        return ExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.ExtensionList,DXD.ExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.ExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DXD.ExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.ExtensionList,DXD.ExtensionList>(value);
     }
   }
   

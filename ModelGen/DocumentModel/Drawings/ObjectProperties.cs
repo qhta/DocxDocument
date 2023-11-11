@@ -43,7 +43,7 @@ public partial class ObjectProperties: ModelElement<DXO13D.ObjectProperties>
     set
     {
       if (value != null)
-        _ExistingElement.IsActiveX = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.IsActiveX = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.IsActiveX = null;
     }

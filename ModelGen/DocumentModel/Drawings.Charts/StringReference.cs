@@ -21,22 +21,11 @@ public partial class StringReference: ModelElement<DXDC.StringReference>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.Formula>();
-      if (element != null)
-        return FormulaConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.Formula,DXDC.Formula>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.Formula>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FormulaConverter.CreateOpenXmlElement<DXDC.Formula>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.Formula,DXDC.Formula>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class StringReference: ModelElement<DXDC.StringReference>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.StringCache>();
-      if (element != null)
-        return StringCacheConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.StringCache,DXDC.StringCache>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.StringCache>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = StringCacheConverter.CreateOpenXmlElement<DXDC.StringCache>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.StringCache,DXDC.StringCache>(value);
     }
   }
   
@@ -77,22 +55,11 @@ public partial class StringReference: ModelElement<DXDC.StringReference>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.StrRefExtensionList>();
-      if (element != null)
-        return StrRefExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.StrRefExtensionList,DXDC.StrRefExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.StrRefExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = StrRefExtensionListConverter.CreateOpenXmlElement<DXDC.StrRefExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.StrRefExtensionList,DXDC.StrRefExtensionList>(value);
     }
   }
   

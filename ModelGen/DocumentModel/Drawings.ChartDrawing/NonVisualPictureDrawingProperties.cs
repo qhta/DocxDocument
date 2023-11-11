@@ -26,7 +26,7 @@ public partial class NonVisualPictureDrawingProperties: ModelElement<DXDCD.NonVi
     set
     {
       if (value != null)
-        _ExistingElement.PreferRelativeResize = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.PreferRelativeResize = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.PreferRelativeResize = null;
     }
@@ -41,22 +41,11 @@ public partial class NonVisualPictureDrawingProperties: ModelElement<DXDCD.NonVi
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.PictureLocks>();
-      if (element != null)
-        return PictureLocksConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.PictureLocks,DXD.PictureLocks>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.PictureLocks>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PictureLocksConverter.CreateOpenXmlElement<DXD.PictureLocks>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.PictureLocks,DXD.PictureLocks>(value);
     }
   }
   
@@ -69,22 +58,11 @@ public partial class NonVisualPictureDrawingProperties: ModelElement<DXDCD.NonVi
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.NonVisualPicturePropertiesExtensionList>();
-      if (element != null)
-        return NonVisualPicturePropertiesExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.NonVisualPicturePropertiesExtensionList,DXD.NonVisualPicturePropertiesExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.NonVisualPicturePropertiesExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NonVisualPicturePropertiesExtensionListConverter.CreateOpenXmlElement<DXD.NonVisualPicturePropertiesExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.NonVisualPicturePropertiesExtensionList,DXD.NonVisualPicturePropertiesExtensionList>(value);
     }
   }
   

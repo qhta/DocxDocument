@@ -34,22 +34,11 @@ public partial class NonVisualDrawingPropertiesExtension: ModelElement<DXD.NonVi
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10D.CompatExtension>();
-      if (element != null)
-        return CompatExtensionConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD10.CompatExtension,DXO10D.CompatExtension>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10D.CompatExtension>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = CompatExtensionConverter.CreateOpenXmlElement<DXO10D.CompatExtension>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD10.CompatExtension,DXO10D.CompatExtension>(value);
     }
   }
   
@@ -58,22 +47,11 @@ public partial class NonVisualDrawingPropertiesExtension: ModelElement<DXD.NonVi
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13D.BackgroundProperties>();
-      if (element != null)
-        return BackgroundPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.BackgroundProperties,DXO13D.BackgroundProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13D.BackgroundProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BackgroundPropertiesConverter.CreateOpenXmlElement<DXO13D.BackgroundProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.BackgroundProperties,DXO13D.BackgroundProperties>(value);
     }
   }
   
@@ -82,22 +60,11 @@ public partial class NonVisualDrawingPropertiesExtension: ModelElement<DXD.NonVi
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16D.CreationId>();
-      if (element != null)
-        return CreationIdConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.CreationId,DXO16D.CreationId>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16D.CreationId>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = CreationIdConverter.CreateOpenXmlElement<DXO16D.CreationId>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.CreationId,DXO16D.CreationId>(value);
     }
   }
   
@@ -106,22 +73,11 @@ public partial class NonVisualDrawingPropertiesExtension: ModelElement<DXD.NonVi
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16D.PredecessorDrawingElementReference>();
-      if (element != null)
-        return PredecessorDrawingElementReferenceConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.PredecessorDrawingElementReference,DXO16D.PredecessorDrawingElementReference>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16D.PredecessorDrawingElementReference>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PredecessorDrawingElementReferenceConverter.CreateOpenXmlElement<DXO16D.PredecessorDrawingElementReference>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.PredecessorDrawingElementReference,DXO16D.PredecessorDrawingElementReference>(value);
     }
   }
   
@@ -153,22 +109,11 @@ public partial class NonVisualDrawingPropertiesExtension: ModelElement<DXD.NonVi
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO21DDC.ClassificationOutcome>();
-      if (element != null)
-        return ClassificationOutcomeConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.ClassificationOutcome,DXO21DDC.ClassificationOutcome>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO21DDC.ClassificationOutcome>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ClassificationOutcomeConverter.CreateOpenXmlElement<DXO21DDC.ClassificationOutcome>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.ClassificationOutcome,DXO21DDC.ClassificationOutcome>(value);
     }
   }
   
@@ -177,22 +122,11 @@ public partial class NonVisualDrawingPropertiesExtension: ModelElement<DXD.NonVi
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXOD21SL.ScriptLink>();
-      if (element != null)
-        return ScriptLinkConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDSL.ScriptLink,DXOD21SL.ScriptLink>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXOD21SL.ScriptLink>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ScriptLinkConverter.CreateOpenXmlElement<DXOD21SL.ScriptLink>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDSL.ScriptLink,DXOD21SL.ScriptLink>(value);
     }
   }
   

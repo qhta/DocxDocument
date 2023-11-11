@@ -89,22 +89,11 @@ public partial class ParagraphMarkRunPropertiesChange: ModelElement<DXW.Paragrap
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.PreviousParagraphMarkRunProperties>();
-      if (element != null)
-        return PreviousParagraphMarkRunPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.PreviousParagraphMarkRunProperties,DXW.PreviousParagraphMarkRunProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.PreviousParagraphMarkRunProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PreviousParagraphMarkRunPropertiesConverter.CreateOpenXmlElement<DXW.PreviousParagraphMarkRunProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.PreviousParagraphMarkRunProperties,DXW.PreviousParagraphMarkRunProperties>(value);
     }
   }
   

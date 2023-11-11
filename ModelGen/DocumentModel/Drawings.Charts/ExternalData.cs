@@ -38,22 +38,11 @@ public partial class ExternalData: ModelElement<DXDC.ExternalData>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.AutoUpdate>();
-      if (element != null)
-        return AutoUpdateConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.AutoUpdate,DXDC.AutoUpdate>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.AutoUpdate>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = AutoUpdateConverter.CreateOpenXmlElement<DXDC.AutoUpdate>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.AutoUpdate,DXDC.AutoUpdate>(value);
     }
   }
   

@@ -21,22 +21,11 @@ public partial class GroupChar: ModelElement<DXM.GroupChar>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.GroupCharProperties>();
-      if (element != null)
-        return GroupCharPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.GroupCharProperties,DXM.GroupCharProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.GroupCharProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = GroupCharPropertiesConverter.CreateOpenXmlElement<DXM.GroupCharProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.GroupCharProperties,DXM.GroupCharProperties>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class GroupChar: ModelElement<DXM.GroupChar>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.Base>();
-      if (element != null)
-        return BaseConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.Base,DXM.Base>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.Base>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BaseConverter.CreateOpenXmlElement<DXM.Base>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.Base,DXM.Base>(value);
     }
   }
   

@@ -21,22 +21,11 @@ public partial class Category: ModelElement<DXW.Category>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.Name>();
-      if (element != null)
-        return NameConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.Name,DXW.Name>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Name>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NameConverter.CreateOpenXmlElement<DXW.Name>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.Name,DXW.Name>(value);
     }
   }
   

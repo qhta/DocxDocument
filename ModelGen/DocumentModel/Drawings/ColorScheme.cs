@@ -38,22 +38,11 @@ public partial class ColorScheme: ModelElement<DXD.ColorScheme>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.Dark1Color>();
-      if (element != null)
-        return Dark1ColorConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.Dark1Color,DXD.Dark1Color>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.Dark1Color>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = Dark1ColorConverter.CreateOpenXmlElement<DXD.Dark1Color>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.Dark1Color,DXD.Dark1Color>(value);
     }
   }
   
@@ -66,22 +55,11 @@ public partial class ColorScheme: ModelElement<DXD.ColorScheme>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.Light1Color>();
-      if (element != null)
-        return Light1ColorConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.Light1Color,DXD.Light1Color>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.Light1Color>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = Light1ColorConverter.CreateOpenXmlElement<DXD.Light1Color>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.Light1Color,DXD.Light1Color>(value);
     }
   }
   
@@ -94,22 +72,11 @@ public partial class ColorScheme: ModelElement<DXD.ColorScheme>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.Dark2Color>();
-      if (element != null)
-        return Dark2ColorConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.Dark2Color,DXD.Dark2Color>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.Dark2Color>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = Dark2ColorConverter.CreateOpenXmlElement<DXD.Dark2Color>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.Dark2Color,DXD.Dark2Color>(value);
     }
   }
   
@@ -122,22 +89,11 @@ public partial class ColorScheme: ModelElement<DXD.ColorScheme>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.Light2Color>();
-      if (element != null)
-        return Light2ColorConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.Light2Color,DXD.Light2Color>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.Light2Color>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = Light2ColorConverter.CreateOpenXmlElement<DXD.Light2Color>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.Light2Color,DXD.Light2Color>(value);
     }
   }
   
@@ -150,22 +106,11 @@ public partial class ColorScheme: ModelElement<DXD.ColorScheme>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.Accent1Color>();
-      if (element != null)
-        return Accent1ColorConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.Accent1Color,DXD.Accent1Color>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.Accent1Color>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = Accent1ColorConverter.CreateOpenXmlElement<DXD.Accent1Color>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.Accent1Color,DXD.Accent1Color>(value);
     }
   }
   
@@ -178,22 +123,11 @@ public partial class ColorScheme: ModelElement<DXD.ColorScheme>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.Accent2Color>();
-      if (element != null)
-        return Accent2ColorConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.Accent2Color,DXD.Accent2Color>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.Accent2Color>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = Accent2ColorConverter.CreateOpenXmlElement<DXD.Accent2Color>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.Accent2Color,DXD.Accent2Color>(value);
     }
   }
   
@@ -206,22 +140,11 @@ public partial class ColorScheme: ModelElement<DXD.ColorScheme>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.Accent3Color>();
-      if (element != null)
-        return Accent3ColorConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.Accent3Color,DXD.Accent3Color>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.Accent3Color>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = Accent3ColorConverter.CreateOpenXmlElement<DXD.Accent3Color>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.Accent3Color,DXD.Accent3Color>(value);
     }
   }
   
@@ -234,22 +157,11 @@ public partial class ColorScheme: ModelElement<DXD.ColorScheme>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.Accent4Color>();
-      if (element != null)
-        return Accent4ColorConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.Accent4Color,DXD.Accent4Color>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.Accent4Color>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = Accent4ColorConverter.CreateOpenXmlElement<DXD.Accent4Color>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.Accent4Color,DXD.Accent4Color>(value);
     }
   }
   
@@ -262,22 +174,11 @@ public partial class ColorScheme: ModelElement<DXD.ColorScheme>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.Accent5Color>();
-      if (element != null)
-        return Accent5ColorConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.Accent5Color,DXD.Accent5Color>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.Accent5Color>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = Accent5ColorConverter.CreateOpenXmlElement<DXD.Accent5Color>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.Accent5Color,DXD.Accent5Color>(value);
     }
   }
   
@@ -290,22 +191,11 @@ public partial class ColorScheme: ModelElement<DXD.ColorScheme>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.Accent6Color>();
-      if (element != null)
-        return Accent6ColorConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.Accent6Color,DXD.Accent6Color>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.Accent6Color>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = Accent6ColorConverter.CreateOpenXmlElement<DXD.Accent6Color>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.Accent6Color,DXD.Accent6Color>(value);
     }
   }
   
@@ -318,22 +208,11 @@ public partial class ColorScheme: ModelElement<DXD.ColorScheme>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.Hyperlink>();
-      if (element != null)
-        return HyperlinkConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.Hyperlink,DXD.Hyperlink>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.Hyperlink>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = HyperlinkConverter.CreateOpenXmlElement<DXD.Hyperlink>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.Hyperlink,DXD.Hyperlink>(value);
     }
   }
   
@@ -346,22 +225,11 @@ public partial class ColorScheme: ModelElement<DXD.ColorScheme>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.FollowedHyperlinkColor>();
-      if (element != null)
-        return FollowedHyperlinkColorConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.FollowedHyperlinkColor,DXD.FollowedHyperlinkColor>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.FollowedHyperlinkColor>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FollowedHyperlinkColorConverter.CreateOpenXmlElement<DXD.FollowedHyperlinkColor>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.FollowedHyperlinkColor,DXD.FollowedHyperlinkColor>(value);
     }
   }
   
@@ -374,22 +242,11 @@ public partial class ColorScheme: ModelElement<DXD.ColorScheme>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.ExtensionList>();
-      if (element != null)
-        return ExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.ExtensionList,DXD.ExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.ExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DXD.ExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.ExtensionList,DXD.ExtensionList>(value);
     }
   }
   

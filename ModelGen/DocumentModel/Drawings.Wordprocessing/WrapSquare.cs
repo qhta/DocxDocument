@@ -89,22 +89,11 @@ public partial class WrapSquare: ModelElement<DXDW.WrapSquare>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDW.EffectExtent>();
-      if (element != null)
-        return EffectExtentConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDW.EffectExtent,DXDW.EffectExtent>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDW.EffectExtent>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EffectExtentConverter.CreateOpenXmlElement<DXDW.EffectExtent>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDW.EffectExtent,DXDW.EffectExtent>(value);
     }
   }
   

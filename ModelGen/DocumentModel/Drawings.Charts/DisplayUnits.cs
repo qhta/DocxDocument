@@ -17,22 +17,11 @@ public partial class DisplayUnits: ModelElement<DXDC.DisplayUnits>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.CustomDisplayUnit>();
-      if (element != null)
-        return CustomDisplayUnitConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.CustomDisplayUnit,DXDC.CustomDisplayUnit>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.CustomDisplayUnit>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = CustomDisplayUnitConverter.CreateOpenXmlElement<DXDC.CustomDisplayUnit>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.CustomDisplayUnit,DXDC.CustomDisplayUnit>(value);
     }
   }
   
@@ -64,22 +53,11 @@ public partial class DisplayUnits: ModelElement<DXDC.DisplayUnits>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.DisplayUnitsLabel>();
-      if (element != null)
-        return DisplayUnitsLabelConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.DisplayUnitsLabel,DXDC.DisplayUnitsLabel>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.DisplayUnitsLabel>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DisplayUnitsLabelConverter.CreateOpenXmlElement<DXDC.DisplayUnitsLabel>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.DisplayUnitsLabel,DXDC.DisplayUnitsLabel>(value);
     }
   }
   
@@ -88,22 +66,11 @@ public partial class DisplayUnits: ModelElement<DXDC.DisplayUnits>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.ExtensionList>();
-      if (element != null)
-        return ExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.ExtensionList,DXDC.ExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.ExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DXDC.ExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.ExtensionList,DXDC.ExtensionList>(value);
     }
   }
   

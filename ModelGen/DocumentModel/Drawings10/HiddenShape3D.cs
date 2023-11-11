@@ -72,22 +72,11 @@ public partial class HiddenShape3D: ModelElement<DXO10D.HiddenShape3D>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.BevelTop>();
-      if (element != null)
-        return BevelTopConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.BevelTop,DXD.BevelTop>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.BevelTop>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BevelTopConverter.CreateOpenXmlElement<DXD.BevelTop>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.BevelTop,DXD.BevelTop>(value);
     }
   }
   
@@ -100,22 +89,11 @@ public partial class HiddenShape3D: ModelElement<DXO10D.HiddenShape3D>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.BevelBottom>();
-      if (element != null)
-        return BevelBottomConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.BevelBottom,DXD.BevelBottom>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.BevelBottom>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BevelBottomConverter.CreateOpenXmlElement<DXD.BevelBottom>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.BevelBottom,DXD.BevelBottom>(value);
     }
   }
   
@@ -128,22 +106,11 @@ public partial class HiddenShape3D: ModelElement<DXO10D.HiddenShape3D>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.ExtrusionColor>();
-      if (element != null)
-        return ExtrusionColorConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.ExtrusionColor,DXD.ExtrusionColor>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.ExtrusionColor>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtrusionColorConverter.CreateOpenXmlElement<DXD.ExtrusionColor>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.ExtrusionColor,DXD.ExtrusionColor>(value);
     }
   }
   
@@ -156,22 +123,11 @@ public partial class HiddenShape3D: ModelElement<DXO10D.HiddenShape3D>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.ContourColor>();
-      if (element != null)
-        return ContourColorConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.ContourColor,DXD.ContourColor>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.ContourColor>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ContourColorConverter.CreateOpenXmlElement<DXD.ContourColor>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.ContourColor,DXD.ContourColor>(value);
     }
   }
   
@@ -184,22 +140,11 @@ public partial class HiddenShape3D: ModelElement<DXO10D.HiddenShape3D>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.ExtensionList>();
-      if (element != null)
-        return ExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.ExtensionList,DXD.ExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.ExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DXD.ExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.ExtensionList,DXD.ExtensionList>(value);
     }
   }
   

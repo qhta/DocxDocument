@@ -26,7 +26,7 @@ public partial class WrapPolygon: ModelElement<DXDW.WrapPolygon>
     set
     {
       if (value != null)
-        _ExistingElement.Edited = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.Edited = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.Edited = null;
     }
@@ -41,22 +41,11 @@ public partial class WrapPolygon: ModelElement<DXDW.WrapPolygon>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDW.StartPoint>();
-      if (element != null)
-        return StartPointConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDW.StartPoint,DXDW.StartPoint>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDW.StartPoint>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = StartPointConverter.CreateOpenXmlElement<DXDW.StartPoint>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDW.StartPoint,DXDW.StartPoint>(value);
     }
   }
   

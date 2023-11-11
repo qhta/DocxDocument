@@ -89,22 +89,11 @@ public partial class RunPropertiesChange: ModelElement<DXW.RunPropertiesChange>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.PreviousRunProperties>();
-      if (element != null)
-        return PreviousRunPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.PreviousRunProperties,DXW.PreviousRunProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.PreviousRunProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PreviousRunPropertiesConverter.CreateOpenXmlElement<DXW.PreviousRunProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.PreviousRunProperties,DXW.PreviousRunProperties>(value);
     }
   }
   

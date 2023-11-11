@@ -34,22 +34,11 @@ public partial class StrDataExtension: ModelElement<DXDC.StrDataExtension>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13DC.AutoGeneneratedCategories>();
-      if (element != null)
-        return AutoGeneneratedCategoriesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC13.AutoGeneneratedCategories,DXO13DC.AutoGeneneratedCategories>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13DC.AutoGeneneratedCategories>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = AutoGeneneratedCategoriesConverter.CreateOpenXmlElement<DXO13DC.AutoGeneneratedCategories>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC13.AutoGeneneratedCategories,DXO13DC.AutoGeneneratedCategories>(value);
     }
   }
   

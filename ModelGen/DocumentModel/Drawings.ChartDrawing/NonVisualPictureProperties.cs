@@ -21,22 +21,11 @@ public partial class NonVisualPictureProperties: ModelElement<DXDCD.NonVisualPic
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDCD.NonVisualDrawingProperties>();
-      if (element != null)
-        return NonVisualDrawingPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD.NonVisualDrawingProperties,DXDCD.NonVisualDrawingProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDCD.NonVisualDrawingProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NonVisualDrawingPropertiesConverter.CreateOpenXmlElement<DXDCD.NonVisualDrawingProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD.NonVisualDrawingProperties,DXDCD.NonVisualDrawingProperties>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class NonVisualPictureProperties: ModelElement<DXDCD.NonVisualPic
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDCD.NonVisualPictureDrawingProperties>();
-      if (element != null)
-        return NonVisualPictureDrawingPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD.NonVisualPictureDrawingProperties,DXDCD.NonVisualPictureDrawingProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDCD.NonVisualPictureDrawingProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NonVisualPictureDrawingPropertiesConverter.CreateOpenXmlElement<DXDCD.NonVisualPictureDrawingProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD.NonVisualPictureDrawingProperties,DXDCD.NonVisualPictureDrawingProperties>(value);
     }
   }
   

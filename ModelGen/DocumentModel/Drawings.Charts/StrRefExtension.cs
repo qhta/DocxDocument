@@ -34,22 +34,11 @@ public partial class StrRefExtension: ModelElement<DXDC.StrRefExtension>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13DC.FullReference>();
-      if (element != null)
-        return FullReferenceConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC13.FullReference,DXO13DC.FullReference>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13DC.FullReference>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FullReferenceConverter.CreateOpenXmlElement<DXO13DC.FullReference>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC13.FullReference,DXO13DC.FullReference>(value);
     }
   }
   
@@ -58,22 +47,11 @@ public partial class StrRefExtension: ModelElement<DXDC.StrRefExtension>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13DC.LevelReference>();
-      if (element != null)
-        return LevelReferenceConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC13.LevelReference,DXO13DC.LevelReference>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13DC.LevelReference>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LevelReferenceConverter.CreateOpenXmlElement<DXO13DC.LevelReference>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC13.LevelReference,DXO13DC.LevelReference>(value);
     }
   }
   
@@ -82,22 +60,11 @@ public partial class StrRefExtension: ModelElement<DXDC.StrRefExtension>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13DC.FormulaReference>();
-      if (element != null)
-        return FormulaReferenceConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC13.FormulaReference,DXO13DC.FormulaReference>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13DC.FormulaReference>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FormulaReferenceConverter.CreateOpenXmlElement<DXO13DC.FormulaReference>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC13.FormulaReference,DXO13DC.FormulaReference>(value);
     }
   }
   

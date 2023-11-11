@@ -21,22 +21,11 @@ public partial class FilteredLineSeriesExtension: ModelElement<DXO13DC.FilteredL
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13DC.LineChartSeries>();
-      if (element != null)
-        return LineChartSeriesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC13.LineChartSeries,DXO13DC.LineChartSeries>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13DC.LineChartSeries>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LineChartSeriesConverter.CreateOpenXmlElement<DXO13DC.LineChartSeries>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC13.LineChartSeries,DXO13DC.LineChartSeries>(value);
     }
   }
   

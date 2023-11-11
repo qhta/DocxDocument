@@ -34,22 +34,11 @@ public partial class PtExtension: ModelElement<DXD.PtExtension>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10DD.NonVisualDrawingProperties>();
-      if (element != null)
-        return NonVisualDrawingPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDD.NonVisualDrawingProperties,DXO10DD.NonVisualDrawingProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10DD.NonVisualDrawingProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NonVisualDrawingPropertiesConverter.CreateOpenXmlElement<DXO10DD.NonVisualDrawingProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDD.NonVisualDrawingProperties,DXO10DD.NonVisualDrawingProperties>(value);
     }
   }
   

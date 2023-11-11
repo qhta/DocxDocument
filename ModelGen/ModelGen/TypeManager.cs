@@ -255,7 +255,7 @@ public static class TypeManager
   public static TypeInfo RegisterType(Type type, TypeInfo source, Semantics semantics)
   {
     var result = RegisterType(type);
-    //AddRelationship(source, result, semantics);
+    AddRelationship(source, result, semantics);
     return result;
   }
 
@@ -440,13 +440,13 @@ public static class TypeManager
 
   public static bool IsCollection(this TypeInfo aType, [NotNullWhen(true)][MaybeNullWhen(false)] out TypeInfo? itemType)
   {
-    if (aType.Name.StartsWith("Collection`1"))
+    if (aType.Name.StartsWith("Collection`"))
     {
       itemType = aType.GetGenericArguments()[0];
       return true;
     }
-
-    var type = aType.GetImplementedInterfaces().FirstOrDefault((TypeInfo item) => item.Name.StartsWith("ICollection`1"));
+     
+    var type = aType.GetImplementedInterfaces().FirstOrDefault((TypeInfo item) => item.Name.StartsWith("ICollection`"));
     if (type != null)
     {
       itemType = type.GetGenericArguments()[0];

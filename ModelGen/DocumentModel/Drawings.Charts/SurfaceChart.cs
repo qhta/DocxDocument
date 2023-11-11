@@ -21,22 +21,11 @@ public partial class SurfaceChart: ModelElement<DXDC.SurfaceChart>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.Wireframe>();
-      if (element != null)
-        return WireframeConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.Wireframe,DXDC.Wireframe>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.Wireframe>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = WireframeConverter.CreateOpenXmlElement<DXDC.Wireframe>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.Wireframe,DXDC.Wireframe>(value);
     }
   }
   
@@ -45,22 +34,11 @@ public partial class SurfaceChart: ModelElement<DXDC.SurfaceChart>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.BandFormats>();
-      if (element != null)
-        return BandFormatsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.BandFormats,DXDC.BandFormats>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.BandFormats>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BandFormatsConverter.CreateOpenXmlElement<DXDC.BandFormats>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.BandFormats,DXDC.BandFormats>(value);
     }
   }
   
@@ -69,22 +47,11 @@ public partial class SurfaceChart: ModelElement<DXDC.SurfaceChart>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.SurfaceChartExtensionList>();
-      if (element != null)
-        return SurfaceChartExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.SurfaceChartExtensionList,DXDC.SurfaceChartExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.SurfaceChartExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SurfaceChartExtensionListConverter.CreateOpenXmlElement<DXDC.SurfaceChartExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.SurfaceChartExtensionList,DXDC.SurfaceChartExtensionList>(value);
     }
   }
   

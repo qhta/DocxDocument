@@ -21,22 +21,11 @@ public partial class Trendline: ModelElement<DXDC.Trendline>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.TrendlineName>();
-      if (element != null)
-        return TrendlineNameConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.TrendlineName,DXDC.TrendlineName>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.TrendlineName>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TrendlineNameConverter.CreateOpenXmlElement<DXDC.TrendlineName>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.TrendlineName,DXDC.TrendlineName>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class Trendline: ModelElement<DXDC.Trendline>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.ChartShapeProperties>();
-      if (element != null)
-        return ChartShapePropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.ChartShapeProperties,DXDC.ChartShapeProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.ChartShapeProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ChartShapePropertiesConverter.CreateOpenXmlElement<DXDC.ChartShapeProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.ChartShapeProperties,DXDC.ChartShapeProperties>(value);
     }
   }
   
@@ -108,7 +86,7 @@ public partial class Trendline: ModelElement<DXDC.Trendline>
     }
     set
     {
-      SimpleValueConverter.SetValue<DXDC.PolynomialOrder,System.Byte>(openXmlElement, value);
+      SimpleValueConverter.SetValue<DXDC.PolynomialOrder,System.Byte>(_ExistingElement, value);
     }
   }
   
@@ -125,7 +103,7 @@ public partial class Trendline: ModelElement<DXDC.Trendline>
     }
     set
     {
-      SimpleValueConverter.SetValue<DXDC.Period,System.UInt32>(openXmlElement, value);
+      SimpleValueConverter.SetValue<DXDC.Period,System.UInt32>(_ExistingElement, value);
     }
   }
   
@@ -138,22 +116,11 @@ public partial class Trendline: ModelElement<DXDC.Trendline>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.Forward>();
-      if (element != null)
-        return ForwardConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.Forward,DXDC.Forward>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.Forward>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ForwardConverter.CreateOpenXmlElement<DXDC.Forward>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.Forward,DXDC.Forward>(value);
     }
   }
   
@@ -166,22 +133,11 @@ public partial class Trendline: ModelElement<DXDC.Trendline>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.Backward>();
-      if (element != null)
-        return BackwardConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.Backward,DXDC.Backward>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.Backward>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BackwardConverter.CreateOpenXmlElement<DXDC.Backward>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.Backward,DXDC.Backward>(value);
     }
   }
   
@@ -194,22 +150,11 @@ public partial class Trendline: ModelElement<DXDC.Trendline>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.Intercept>();
-      if (element != null)
-        return InterceptConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.Intercept,DXDC.Intercept>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.Intercept>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = InterceptConverter.CreateOpenXmlElement<DXDC.Intercept>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.Intercept,DXDC.Intercept>(value);
     }
   }
   
@@ -222,22 +167,11 @@ public partial class Trendline: ModelElement<DXDC.Trendline>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.DisplayRSquaredValue>();
-      if (element != null)
-        return DisplayRSquaredValueConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.DisplayRSquaredValue,DXDC.DisplayRSquaredValue>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.DisplayRSquaredValue>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DisplayRSquaredValueConverter.CreateOpenXmlElement<DXDC.DisplayRSquaredValue>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.DisplayRSquaredValue,DXDC.DisplayRSquaredValue>(value);
     }
   }
   
@@ -250,22 +184,11 @@ public partial class Trendline: ModelElement<DXDC.Trendline>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.DisplayEquation>();
-      if (element != null)
-        return DisplayEquationConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.DisplayEquation,DXDC.DisplayEquation>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.DisplayEquation>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DisplayEquationConverter.CreateOpenXmlElement<DXDC.DisplayEquation>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.DisplayEquation,DXDC.DisplayEquation>(value);
     }
   }
   
@@ -278,22 +201,11 @@ public partial class Trendline: ModelElement<DXDC.Trendline>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.TrendlineLabel>();
-      if (element != null)
-        return TrendlineLabelConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.TrendlineLabel,DXDC.TrendlineLabel>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.TrendlineLabel>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TrendlineLabelConverter.CreateOpenXmlElement<DXDC.TrendlineLabel>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.TrendlineLabel,DXDC.TrendlineLabel>(value);
     }
   }
   
@@ -306,22 +218,11 @@ public partial class Trendline: ModelElement<DXDC.Trendline>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.ExtensionList>();
-      if (element != null)
-        return ExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.ExtensionList,DXDC.ExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.ExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DXDC.ExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.ExtensionList,DXDC.ExtensionList>(value);
     }
   }
   

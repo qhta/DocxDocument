@@ -21,22 +21,11 @@ public partial class FilteredSurfaceSeries: ModelElement<DXO13DC.FilteredSurface
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13DC.SurfaceChartSeries>();
-      if (element != null)
-        return SurfaceChartSeriesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC13.SurfaceChartSeries,DXO13DC.SurfaceChartSeries>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13DC.SurfaceChartSeries>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SurfaceChartSeriesConverter.CreateOpenXmlElement<DXO13DC.SurfaceChartSeries>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC13.SurfaceChartSeries,DXO13DC.SurfaceChartSeries>(value);
     }
   }
   

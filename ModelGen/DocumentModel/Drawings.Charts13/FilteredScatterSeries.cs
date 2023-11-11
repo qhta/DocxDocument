@@ -21,22 +21,11 @@ public partial class FilteredScatterSeries: ModelElement<DXO13DC.FilteredScatter
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13DC.ScatterChartSeries>();
-      if (element != null)
-        return ScatterChartSeriesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC13.ScatterChartSeries,DXO13DC.ScatterChartSeries>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13DC.ScatterChartSeries>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ScatterChartSeriesConverter.CreateOpenXmlElement<DXO13DC.ScatterChartSeries>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC13.ScatterChartSeries,DXO13DC.ScatterChartSeries>(value);
     }
   }
   

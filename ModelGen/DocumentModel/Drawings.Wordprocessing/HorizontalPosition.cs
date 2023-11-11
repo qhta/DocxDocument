@@ -21,22 +21,11 @@ public partial class HorizontalPosition: ModelElement<DXDW.HorizontalPosition>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDW.HorizontalAlignment>();
-      if (element != null)
-        return HorizontalAlignmentConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDW.HorizontalAlignment,DXDW.HorizontalAlignment>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDW.HorizontalAlignment>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = HorizontalAlignmentConverter.CreateOpenXmlElement<DXDW.HorizontalAlignment>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDW.HorizontalAlignment,DXDW.HorizontalAlignment>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class HorizontalPosition: ModelElement<DXDW.HorizontalPosition>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDW.PositionOffset>();
-      if (element != null)
-        return PositionOffsetConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDW.PositionOffset,DXDW.PositionOffset>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDW.PositionOffset>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PositionOffsetConverter.CreateOpenXmlElement<DXDW.PositionOffset>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDW.PositionOffset,DXDW.PositionOffset>(value);
     }
   }
   
@@ -77,22 +55,11 @@ public partial class HorizontalPosition: ModelElement<DXDW.HorizontalPosition>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10WD.PercentagePositionHeightOffset>();
-      if (element != null)
-        return PercentagePositionHeightOffsetConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMWD.PercentagePositionHeightOffset,DXO10WD.PercentagePositionHeightOffset>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10WD.PercentagePositionHeightOffset>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PercentagePositionHeightOffsetConverter.CreateOpenXmlElement<DXO10WD.PercentagePositionHeightOffset>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMWD.PercentagePositionHeightOffset,DXO10WD.PercentagePositionHeightOffset>(value);
     }
   }
   

@@ -21,22 +21,11 @@ public partial class Run: ModelElement<DXD.Run>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.RunProperties>();
-      if (element != null)
-        return RunPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.RunProperties,DXD.RunProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.RunProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RunPropertiesConverter.CreateOpenXmlElement<DXD.RunProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.RunProperties,DXD.RunProperties>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class Run: ModelElement<DXD.Run>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.Text>();
-      if (element != null)
-        return TextConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.Text,DXD.Text>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.Text>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TextConverter.CreateOpenXmlElement<DXD.Text>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.Text,DXD.Text>(value);
     }
   }
   

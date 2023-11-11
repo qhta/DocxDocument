@@ -89,22 +89,11 @@ public partial class TablePropertyExceptionsChange: ModelElement<DXW.TableProper
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.PreviousTablePropertyExceptions>();
-      if (element != null)
-        return PreviousTablePropertyExceptionsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.PreviousTablePropertyExceptions,DXW.PreviousTablePropertyExceptions>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.PreviousTablePropertyExceptions>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PreviousTablePropertyExceptionsConverter.CreateOpenXmlElement<DXW.PreviousTablePropertyExceptions>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.PreviousTablePropertyExceptions,DXW.PreviousTablePropertyExceptions>(value);
     }
   }
   

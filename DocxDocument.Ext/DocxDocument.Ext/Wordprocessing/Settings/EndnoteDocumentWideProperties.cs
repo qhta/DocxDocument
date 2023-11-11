@@ -23,7 +23,7 @@ public partial class EndnoteDocumentWideProperties : ModelElement<DXW.EndnoteDoc
   public DMW.EndnotePositionKind? EndnotePosition
   {
     get => _Element?.GetEnumVal<DMW.EndnotePositionKind,DXW.EndnotePosition>();
-    set => _Element.SetEnumVal<DMW.EndnotePositionKind,DXW.EndnotePosition>(value);
+    set => _ExistingElement.SetEnumVal<DMW.EndnotePositionKind,DXW.EndnotePosition>(value);
   }
 
   /// <summary>
@@ -36,7 +36,7 @@ public partial class EndnoteDocumentWideProperties : ModelElement<DXW.EndnoteDoc
   public int? NumberingStart
   {
     get => _Element?.GetIntVal<DXW.NumberingStart>();
-    set => _Element.SetIntVal<DXW.NumberingStart>(value);
+    set => _ExistingElement.SetIntVal<DXW.NumberingStart>(value);
   }
 
   /// <summary>
@@ -49,7 +49,7 @@ public partial class EndnoteDocumentWideProperties : ModelElement<DXW.EndnoteDoc
   public int? EndnoteSpecialReference
   {
     get => _Element?.GetIntId<DXW.EndnoteSpecialReference>();
-    set => _Element.SetIntId<DXW.EndnoteSpecialReference>(value);
+    set => _ExistingElement.SetIntId<DXW.EndnoteSpecialReference>(value);
   }
 
   /// <summary>
@@ -69,7 +69,7 @@ public partial class EndnoteDocumentWideProperties : ModelElement<DXW.EndnoteDoc
   public DMW.NumberFormatKind? NumberingFormat
   {
     get => _Element?.GetEnumVal<DMW.NumberFormatKind,DXW.NumberingFormat>();
-    set => _Element.SetEnumVal<DMW.NumberFormatKind,DXW.NumberingFormat>(value);
+    set => _ExistingElement.SetEnumVal<DMW.NumberFormatKind,DXW.NumberingFormat>(value);
   }
 
   /// <summary>
@@ -84,6 +84,6 @@ public partial class EndnoteDocumentWideProperties : ModelElement<DXW.EndnoteDoc
   public DMW.RestartNumberKind? NumberingRestart
   {
     get => _Element?.GetEnumVal<DMW.RestartNumberKind,DXW.NumberingRestart>();
-    set => _Element.SetEnumVal<DMW.RestartNumberKind,DXW.NumberingRestart>(value);
+    set => _ExistingElement.SetEnumVal<DMW.RestartNumberKind,DXW.NumberingRestart>(value);
   }
 }

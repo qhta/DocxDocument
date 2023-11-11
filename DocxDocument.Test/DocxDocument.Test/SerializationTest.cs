@@ -42,7 +42,7 @@ public class SerializationTest : ReadWriteTest
           Output.WriteLine($"Deserialization from: {outputXmlFile}");
           DeserializeXml(outputDocument, outputXmlFile);
           Output.WriteLine($"Deserialization passed");
-          bool ok = outputDocument.Compare(inputDocument);
+          bool ok = ModelObjectComparer.CompareObjects(outputDocument, inputDocument);
           if (!ok)
           {
             var diffs = ModelObjectComparer.Diffs;

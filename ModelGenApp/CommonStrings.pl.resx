@@ -121,7 +121,7 @@
     <value>Typ wykluczony jest odrzucany, nawet gdy jego przestrzeń nazw jest akceptowalna.</value>
   </data>
   <data name="IncludedTypeTooltip" xml:space="preserve">
-    <value>Typ dołączony jest akceptowany, nawet gdy jego przestrzeń nazw jest wykluczona.</value>
+    <value>Typ jest akceptowany, nawet gdy jego przestrzeń nazw jest wykluczona.</value>
   </data>
   <data name="MeaninglessDescription" xml:space="preserve">
     <value>Opis bez znaczenia</value>
@@ -245,7 +245,7 @@ Powinien być przygotowany uprzednio za pomocą osobnego narzędzia.</value>
     <value>Czy wykluczona?</value>
   </data>
   <data name="IncludedType" xml:space="preserve">
-    <value>Czy typ jest dołączony?</value>
+    <value>Czy typ jest akceptowany?</value>
   </data>
   <data name="ExcludedType" xml:space="preserve">
     <value>Czy typ wykluczony?</value>
@@ -710,5 +710,11 @@ Użyj znaku '*' aby dopasować wzorzec do wielu znaków.</value>
   </data>
   <data name="GeneratorTypeTooltip" xml:space="preserve">
     <value>Ty[p generatora określa sposób generowania kodu</value>
+  </data>
+  <data name="ExcludedTargetNamespace" xml:space="preserve">
+    <value>Czy wykluczona przestrzeń docelowa?</value>
+  </data>
+  <data name="ExcludedTargetNamespaceTooltip" xml:space="preserve">
+    <value>Docelowa przestrzeń jest wykluczona z generowania kodu.</value>
   </data>
 </root>

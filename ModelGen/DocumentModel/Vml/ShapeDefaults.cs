@@ -51,15 +51,18 @@ public partial class ShapeDefaults: ModelElement<DXVO.ShapeDefaults>
   ///   Shape Fill Toggle
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? BeFilled
+  public Boolean? BeFilled
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.BeFilled?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.BeFilled = value;
+      else
+        _ExistingElement.BeFilled = null;
     }
   }
   
@@ -85,15 +88,18 @@ public partial class ShapeDefaults: ModelElement<DXVO.ShapeDefaults>
   ///   Shape Stroke Toggle
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? IsStroke
+  public Boolean? IsStroke
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.IsStroke?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.IsStroke = value;
+      else
+        _ExistingElement.IsStroke = null;
     }
   }
   
@@ -119,15 +125,18 @@ public partial class ShapeDefaults: ModelElement<DXVO.ShapeDefaults>
   ///   Allow in Table Cell
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? AllowInCell
+  public Boolean? AllowInCell
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.AllowInCell?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.AllowInCell = value;
+      else
+        _ExistingElement.AllowInCell = null;
     }
   }
   
@@ -136,15 +145,18 @@ public partial class ShapeDefaults: ModelElement<DXVO.ShapeDefaults>
   ///   allowoverlap
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? AllowOverlap
+  public Boolean? AllowOverlap
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.AllowOverlap?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.AllowOverlap = value;
+      else
+        _ExistingElement.AllowOverlap = null;
     }
   }
   
@@ -157,22 +169,11 @@ public partial class ShapeDefaults: ModelElement<DXVO.ShapeDefaults>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXV.Fill>();
-      if (element != null)
-        return FillConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMVML.Fill,DXV.Fill>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXV.Fill>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FillConverter.CreateOpenXmlElement<DXV.Fill>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMVML.Fill,DXV.Fill>(value);
     }
   }
   
@@ -185,22 +186,11 @@ public partial class ShapeDefaults: ModelElement<DXVO.ShapeDefaults>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXV.ImageData>();
-      if (element != null)
-        return ImageDataConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMVML.ImageData,DXV.ImageData>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXV.ImageData>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ImageDataConverter.CreateOpenXmlElement<DXV.ImageData>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMVML.ImageData,DXV.ImageData>(value);
     }
   }
   
@@ -213,22 +203,11 @@ public partial class ShapeDefaults: ModelElement<DXVO.ShapeDefaults>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXV.Stroke>();
-      if (element != null)
-        return StrokeConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMVML.Stroke,DXV.Stroke>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXV.Stroke>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = StrokeConverter.CreateOpenXmlElement<DXV.Stroke>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMVML.Stroke,DXV.Stroke>(value);
     }
   }
   
@@ -241,22 +220,11 @@ public partial class ShapeDefaults: ModelElement<DXVO.ShapeDefaults>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXV.TextBox>();
-      if (element != null)
-        return TextBoxConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMVML.TextBox,DXV.TextBox>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXV.TextBox>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TextBoxConverter.CreateOpenXmlElement<DXV.TextBox>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMVML.TextBox,DXV.TextBox>(value);
     }
   }
   
@@ -269,22 +237,11 @@ public partial class ShapeDefaults: ModelElement<DXVO.ShapeDefaults>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXV.Shadow>();
-      if (element != null)
-        return ShadowConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMVML.Shadow,DXV.Shadow>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXV.Shadow>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ShadowConverter.CreateOpenXmlElement<DXV.Shadow>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMVML.Shadow,DXV.Shadow>(value);
     }
   }
   
@@ -297,22 +254,11 @@ public partial class ShapeDefaults: ModelElement<DXVO.ShapeDefaults>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXVO.Skew>();
-      if (element != null)
-        return SkewConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMVML.Skew,DXVO.Skew>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXVO.Skew>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SkewConverter.CreateOpenXmlElement<DXVO.Skew>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMVML.Skew,DXVO.Skew>(value);
     }
   }
   
@@ -325,22 +271,11 @@ public partial class ShapeDefaults: ModelElement<DXVO.ShapeDefaults>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXVO.Extrusion>();
-      if (element != null)
-        return ExtrusionConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMVML.Extrusion,DXVO.Extrusion>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXVO.Extrusion>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtrusionConverter.CreateOpenXmlElement<DXVO.Extrusion>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMVML.Extrusion,DXVO.Extrusion>(value);
     }
   }
   
@@ -353,22 +288,11 @@ public partial class ShapeDefaults: ModelElement<DXVO.ShapeDefaults>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXVO.Callout>();
-      if (element != null)
-        return CalloutConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMVML.Callout,DXVO.Callout>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXVO.Callout>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = CalloutConverter.CreateOpenXmlElement<DXVO.Callout>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMVML.Callout,DXVO.Callout>(value);
     }
   }
   
@@ -381,22 +305,11 @@ public partial class ShapeDefaults: ModelElement<DXVO.ShapeDefaults>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXVO.Lock>();
-      if (element != null)
-        return LockConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMVML.Lock,DXVO.Lock>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXVO.Lock>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LockConverter.CreateOpenXmlElement<DXVO.Lock>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMVML.Lock,DXVO.Lock>(value);
     }
   }
   
@@ -409,22 +322,11 @@ public partial class ShapeDefaults: ModelElement<DXVO.ShapeDefaults>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXVO.ColorMostRecentlyUsed>();
-      if (element != null)
-        return ColorMostRecentlyUsedConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMVML.ColorMostRecentlyUsed,DXVO.ColorMostRecentlyUsed>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXVO.ColorMostRecentlyUsed>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ColorMostRecentlyUsedConverter.CreateOpenXmlElement<DXVO.ColorMostRecentlyUsed>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMVML.ColorMostRecentlyUsed,DXVO.ColorMostRecentlyUsed>(value);
     }
   }
   
@@ -437,22 +339,11 @@ public partial class ShapeDefaults: ModelElement<DXVO.ShapeDefaults>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXVO.ColorMenu>();
-      if (element != null)
-        return ColorMenuConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMVML.ColorMenu,DXVO.ColorMenu>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXVO.ColorMenu>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ColorMenuConverter.CreateOpenXmlElement<DXVO.ColorMenu>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMVML.ColorMenu,DXVO.ColorMenu>(value);
     }
   }
   

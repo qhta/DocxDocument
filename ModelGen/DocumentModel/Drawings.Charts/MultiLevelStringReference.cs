@@ -21,22 +21,11 @@ public partial class MultiLevelStringReference: ModelElement<DXDC.MultiLevelStri
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.Formula>();
-      if (element != null)
-        return FormulaConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.Formula,DXDC.Formula>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.Formula>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FormulaConverter.CreateOpenXmlElement<DXDC.Formula>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.Formula,DXDC.Formula>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class MultiLevelStringReference: ModelElement<DXDC.MultiLevelStri
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.MultiLevelStringCache>();
-      if (element != null)
-        return MultiLevelStringCacheConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.MultiLevelStringCache,DXDC.MultiLevelStringCache>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.MultiLevelStringCache>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = MultiLevelStringCacheConverter.CreateOpenXmlElement<DXDC.MultiLevelStringCache>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.MultiLevelStringCache,DXDC.MultiLevelStringCache>(value);
     }
   }
   
@@ -77,22 +55,11 @@ public partial class MultiLevelStringReference: ModelElement<DXDC.MultiLevelStri
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.MultiLvlStrRefExtensionList>();
-      if (element != null)
-        return MultiLvlStrRefExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.MultiLvlStrRefExtensionList,DXDC.MultiLvlStrRefExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.MultiLvlStrRefExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = MultiLvlStrRefExtensionListConverter.CreateOpenXmlElement<DXDC.MultiLvlStrRefExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.MultiLvlStrRefExtensionList,DXDC.MultiLvlStrRefExtensionList>(value);
     }
   }
   

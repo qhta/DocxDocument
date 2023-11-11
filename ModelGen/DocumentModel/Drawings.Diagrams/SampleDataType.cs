@@ -26,7 +26,7 @@ public partial class SampleDataType: ModelElement<DXDDD.SampleDataType>
     set
     {
       if (value != null)
-        _ExistingElement.UseDefault = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.UseDefault = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.UseDefault = null;
     }
@@ -41,22 +41,11 @@ public partial class SampleDataType: ModelElement<DXDDD.SampleDataType>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDDD.DataModel>();
-      if (element != null)
-        return DataModelConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDD.DataModel,DXDDD.DataModel>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDDD.DataModel>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DataModelConverter.CreateOpenXmlElement<DXDDD.DataModel>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDD.DataModel,DXDDD.DataModel>(value);
     }
   }
   

@@ -18,8 +18,8 @@ public partial class ActiveWritingStyle : ModelElement<DXW.ActiveWritingStyle>
   [DataMember]
   public string? Language
   {
-    get => _Element.Language?.Value;
-    set => _Element.Language = value;
+    get => _Element?.Language?.Value;
+    set => _ExistingElement.Language = value;
   }
 
   /// <summary>
@@ -28,8 +28,8 @@ public partial class ActiveWritingStyle : ModelElement<DXW.ActiveWritingStyle>
   [DataMember]
   public ushort? VendorID
   {
-    get => _Element.VendorID?.Value;
-    set => _Element.VendorID = value;
+    get => _Element?.VendorID?.Value;
+    set => _ExistingElement.VendorID = value;
   }
 
   /// <summary>
@@ -38,8 +38,8 @@ public partial class ActiveWritingStyle : ModelElement<DXW.ActiveWritingStyle>
   [DataMember]
   public int? DllVersion
   {
-    get => _Element.DllVersion?.Value;
-    set => _Element.DllVersion = value;
+    get => _Element?.DllVersion?.Value;
+    set => _ExistingElement.DllVersion = value;
   }
 
   /// <summary>
@@ -48,8 +48,8 @@ public partial class ActiveWritingStyle : ModelElement<DXW.ActiveWritingStyle>
   [DataMember]
   public bool? NaturalLanguageGrammarCheck
   {
-    get => _Element.NaturalLanguageGrammarCheck?.Value;
-    set => _Element.NaturalLanguageGrammarCheck = value;
+    get => _Element?.NaturalLanguageGrammarCheck?.Value;
+    set => _ExistingElement.NaturalLanguageGrammarCheck = value;
   }
 
   /// <summary>
@@ -58,8 +58,8 @@ public partial class ActiveWritingStyle : ModelElement<DXW.ActiveWritingStyle>
   [DataMember]
   public bool? CheckStyle
   {
-    get => _Element.CheckStyle?.Value;
-    set => _Element.CheckStyle = value;
+    get => _Element?.CheckStyle?.Value;
+    set => _ExistingElement.CheckStyle = value;
   }
 
   /// <summary>
@@ -68,8 +68,8 @@ public partial class ActiveWritingStyle : ModelElement<DXW.ActiveWritingStyle>
   [DataMember]
   public string? ApplicationName
   {
-    get => _Element.ApplicationName?.Value;
-    set => _Element.ApplicationName = value;
+    get => _Element?.ApplicationName?.Value;
+    set => _ExistingElement.ApplicationName = value;
   }
 
 }

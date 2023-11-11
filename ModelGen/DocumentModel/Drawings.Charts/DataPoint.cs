@@ -21,22 +21,11 @@ public partial class DataPoint: ModelElement<DXDC.DataPoint>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.Index>();
-      if (element != null)
-        return IndexConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.Index,DXDC.Index>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.Index>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = IndexConverter.CreateOpenXmlElement<DXDC.Index>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.Index,DXDC.Index>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class DataPoint: ModelElement<DXDC.DataPoint>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.InvertIfNegative>();
-      if (element != null)
-        return InvertIfNegativeConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.InvertIfNegative,DXDC.InvertIfNegative>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.InvertIfNegative>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = InvertIfNegativeConverter.CreateOpenXmlElement<DXDC.InvertIfNegative>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.InvertIfNegative,DXDC.InvertIfNegative>(value);
     }
   }
   
@@ -77,22 +55,11 @@ public partial class DataPoint: ModelElement<DXDC.DataPoint>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.Marker>();
-      if (element != null)
-        return MarkerConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.Marker,DXDC.Marker>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.Marker>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = MarkerConverter.CreateOpenXmlElement<DXDC.Marker>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.Marker,DXDC.Marker>(value);
     }
   }
   
@@ -105,22 +72,11 @@ public partial class DataPoint: ModelElement<DXDC.DataPoint>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.Bubble3D>();
-      if (element != null)
-        return Bubble3DConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.Bubble3D,DXDC.Bubble3D>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.Bubble3D>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = Bubble3DConverter.CreateOpenXmlElement<DXDC.Bubble3D>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.Bubble3D,DXDC.Bubble3D>(value);
     }
   }
   
@@ -133,22 +89,11 @@ public partial class DataPoint: ModelElement<DXDC.DataPoint>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.Explosion>();
-      if (element != null)
-        return ExplosionConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.Explosion,DXDC.Explosion>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.Explosion>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExplosionConverter.CreateOpenXmlElement<DXDC.Explosion>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.Explosion,DXDC.Explosion>(value);
     }
   }
   
@@ -161,22 +106,11 @@ public partial class DataPoint: ModelElement<DXDC.DataPoint>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.ChartShapeProperties>();
-      if (element != null)
-        return ChartShapePropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.ChartShapeProperties,DXDC.ChartShapeProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.ChartShapeProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ChartShapePropertiesConverter.CreateOpenXmlElement<DXDC.ChartShapeProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.ChartShapeProperties,DXDC.ChartShapeProperties>(value);
     }
   }
   
@@ -189,22 +123,11 @@ public partial class DataPoint: ModelElement<DXDC.DataPoint>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.PictureOptions>();
-      if (element != null)
-        return PictureOptionsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.PictureOptions,DXDC.PictureOptions>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.PictureOptions>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PictureOptionsConverter.CreateOpenXmlElement<DXDC.PictureOptions>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.PictureOptions,DXDC.PictureOptions>(value);
     }
   }
   
@@ -217,22 +140,11 @@ public partial class DataPoint: ModelElement<DXDC.DataPoint>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.ExtensionList>();
-      if (element != null)
-        return ExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.ExtensionList,DXDC.ExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.ExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DXDC.ExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.ExtensionList,DXDC.ExtensionList>(value);
     }
   }
   

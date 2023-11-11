@@ -21,22 +21,11 @@ public partial class FramesetSplitbar: ModelElement<DXW.FramesetSplitbar>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.Width>();
-      if (element != null)
-        return WidthConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.Width,DXW.Width>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Width>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = WidthConverter.CreateOpenXmlElement<DXW.Width>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.Width,DXW.Width>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class FramesetSplitbar: ModelElement<DXW.FramesetSplitbar>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.Color>();
-      if (element != null)
-        return ColorConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.Color,DXW.Color>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Color>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ColorConverter.CreateOpenXmlElement<DXW.Color>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.Color,DXW.Color>(value);
     }
   }
   
@@ -77,22 +55,11 @@ public partial class FramesetSplitbar: ModelElement<DXW.FramesetSplitbar>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.NoBorder>();
-      if (element != null)
-        return NoBorderConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.NoBorder,DXW.NoBorder>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.NoBorder>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NoBorderConverter.CreateOpenXmlElement<DXW.NoBorder>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.NoBorder,DXW.NoBorder>(value);
     }
   }
   
@@ -105,22 +72,11 @@ public partial class FramesetSplitbar: ModelElement<DXW.FramesetSplitbar>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.FlatBorders>();
-      if (element != null)
-        return FlatBordersConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.FlatBorders,DXW.FlatBorders>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.FlatBorders>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FlatBordersConverter.CreateOpenXmlElement<DXW.FlatBorders>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.FlatBorders,DXW.FlatBorders>(value);
     }
   }
   

@@ -21,22 +21,11 @@ public partial class Clear: ModelElement<DXO16DCD.Clear>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.GeoLocationQueryResults>();
-      if (element != null)
-        return GeoLocationQueryResultsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.GeoLocationQueryResults,DXO16DCD.GeoLocationQueryResults>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.GeoLocationQueryResults>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = GeoLocationQueryResultsConverter.CreateOpenXmlElement<DXO16DCD.GeoLocationQueryResults>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.GeoLocationQueryResults,DXO16DCD.GeoLocationQueryResults>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class Clear: ModelElement<DXO16DCD.Clear>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.GeoDataEntityQueryResults>();
-      if (element != null)
-        return GeoDataEntityQueryResultsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.GeoDataEntityQueryResults,DXO16DCD.GeoDataEntityQueryResults>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.GeoDataEntityQueryResults>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = GeoDataEntityQueryResultsConverter.CreateOpenXmlElement<DXO16DCD.GeoDataEntityQueryResults>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.GeoDataEntityQueryResults,DXO16DCD.GeoDataEntityQueryResults>(value);
     }
   }
   
@@ -77,22 +55,11 @@ public partial class Clear: ModelElement<DXO16DCD.Clear>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.GeoDataPointToEntityQueryResults>();
-      if (element != null)
-        return GeoDataPointToEntityQueryResultsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.GeoDataPointToEntityQueryResults,DXO16DCD.GeoDataPointToEntityQueryResults>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.GeoDataPointToEntityQueryResults>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = GeoDataPointToEntityQueryResultsConverter.CreateOpenXmlElement<DXO16DCD.GeoDataPointToEntityQueryResults>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.GeoDataPointToEntityQueryResults,DXO16DCD.GeoDataPointToEntityQueryResults>(value);
     }
   }
   
@@ -105,22 +72,11 @@ public partial class Clear: ModelElement<DXO16DCD.Clear>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.GeoChildEntitiesQueryResults>();
-      if (element != null)
-        return GeoChildEntitiesQueryResultsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.GeoChildEntitiesQueryResults,DXO16DCD.GeoChildEntitiesQueryResults>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.GeoChildEntitiesQueryResults>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = GeoChildEntitiesQueryResultsConverter.CreateOpenXmlElement<DXO16DCD.GeoChildEntitiesQueryResults>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.GeoChildEntitiesQueryResults,DXO16DCD.GeoChildEntitiesQueryResults>(value);
     }
   }
   
@@ -133,22 +89,11 @@ public partial class Clear: ModelElement<DXO16DCD.Clear>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.GeoParentEntitiesQueryResults>();
-      if (element != null)
-        return GeoParentEntitiesQueryResultsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.GeoParentEntitiesQueryResults,DXO16DCD.GeoParentEntitiesQueryResults>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.GeoParentEntitiesQueryResults>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = GeoParentEntitiesQueryResultsConverter.CreateOpenXmlElement<DXO16DCD.GeoParentEntitiesQueryResults>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.GeoParentEntitiesQueryResults,DXO16DCD.GeoParentEntitiesQueryResults>(value);
     }
   }
   

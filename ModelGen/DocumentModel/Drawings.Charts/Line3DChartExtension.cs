@@ -34,22 +34,11 @@ public partial class Line3DChartExtension: ModelElement<DXDC.Line3DChartExtensio
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13DC.FilteredLineSeriesExtension>();
-      if (element != null)
-        return FilteredLineSeriesExtensionConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC13.FilteredLineSeriesExtension,DXO13DC.FilteredLineSeriesExtension>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13DC.FilteredLineSeriesExtension>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FilteredLineSeriesExtensionConverter.CreateOpenXmlElement<DXO13DC.FilteredLineSeriesExtension>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC13.FilteredLineSeriesExtension,DXO13DC.FilteredLineSeriesExtension>(value);
     }
   }
   

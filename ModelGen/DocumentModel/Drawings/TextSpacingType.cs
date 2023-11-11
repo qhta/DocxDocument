@@ -25,7 +25,7 @@ public partial class TextSpacingType: ModelElement<DXD.TextSpacingType>
     }
     set
     {
-      SimpleValueConverter.SetValue<DXD.SpacingPercent,System.Int32>(openXmlElement, value);
+      SimpleValueConverter.SetValue<DXD.SpacingPercent,System.Int32>(_ExistingElement, value);
     }
   }
   
@@ -42,7 +42,7 @@ public partial class TextSpacingType: ModelElement<DXD.TextSpacingType>
     }
     set
     {
-      SimpleValueConverter.SetValue<DXD.SpacingPoints,System.Int32>(openXmlElement, value);
+      SimpleValueConverter.SetValue<DXD.SpacingPoints,System.Int32>(_ExistingElement, value);
     }
   }
   

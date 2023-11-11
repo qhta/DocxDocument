@@ -17,22 +17,11 @@ public partial class Captions: ModelElement<DXW.Captions>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.AutoCaptions>();
-      if (element != null)
-        return AutoCaptionsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.AutoCaptions,DXW.AutoCaptions>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.AutoCaptions>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = AutoCaptionsConverter.CreateOpenXmlElement<DXW.AutoCaptions>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.AutoCaptions,DXW.AutoCaptions>(value);
     }
   }
   

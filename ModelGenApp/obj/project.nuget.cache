@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "1jtX4TrcplOWgmSibJwi4zRwkKPsRYiIUnol297Q2GQYJo2p6/DY0rfTfkPrOoYJfQ5HssVRVdYQ0PnehPzMyQ==",
+  "dgSpecHash": "+aFlUQQVnDfkoIQ2V3EwGN1aEKm7bETn3ev32ib0HSehDApA7Vpfm69ZLRu+XQels1PsrPEAQTEBFxC4dMxayA==",
   "success": true,
   "projectFilePath": "D:\\VS\\Projects\\DocxDocument\\ModelGenApp\\ModelGenApp.csproj",
   "expectedPackageFiles": [
@@ -19,6 +19,7 @@
     "C:\\Users\\qhta1\\.nuget\\packages\\qhta.observableobjects\\2.7.0\\qhta.observableobjects.2.7.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\qhta.ordnumbers\\2.3.0\\qhta.ordnumbers.2.3.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\qhta.testhelper\\3.0.0\\qhta.testhelper.3.0.0.nupkg.sha512",
+    "C:\\Users\\qhta1\\.nuget\\packages\\qhta.testutilities\\1.0.0\\qhta.testutilities.1.0.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\qhta.textutils\\3.2.0\\qhta.textutils.3.2.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\qhta.typeutils\\1.3.10.1\\qhta.typeutils.1.3.10.1.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\qhta.wpf.converters\\1.3.1\\qhta.wpf.converters.1.3.1.nupkg.sha512",

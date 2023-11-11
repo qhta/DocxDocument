@@ -89,22 +89,11 @@ public partial class OleObject: ModelElement<DXVO.OleObject>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXVO.LinkType>();
-      if (element != null)
-        return LinkTypeConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMVML.LinkType,DXVO.LinkType>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXVO.LinkType>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LinkTypeConverter.CreateOpenXmlElement<DXVO.LinkType>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMVML.LinkType,DXVO.LinkType>(value);
     }
   }
   
@@ -117,22 +106,11 @@ public partial class OleObject: ModelElement<DXVO.OleObject>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXVO.LockedField>();
-      if (element != null)
-        return LockedFieldConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMVML.LockedField,DXVO.LockedField>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXVO.LockedField>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LockedFieldConverter.CreateOpenXmlElement<DXVO.LockedField>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMVML.LockedField,DXVO.LockedField>(value);
     }
   }
   
@@ -145,22 +123,11 @@ public partial class OleObject: ModelElement<DXVO.OleObject>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXVO.FieldCodes>();
-      if (element != null)
-        return FieldCodesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMVML.FieldCodes,DXVO.FieldCodes>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXVO.FieldCodes>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FieldCodesConverter.CreateOpenXmlElement<DXVO.FieldCodes>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMVML.FieldCodes,DXVO.FieldCodes>(value);
     }
   }
   

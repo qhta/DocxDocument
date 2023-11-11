@@ -43,7 +43,7 @@ public partial class Transform2D: ModelElement<DXOD.Transform2D>
     set
     {
       if (value != null)
-        _ExistingElement.HorizontalFlip = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.HorizontalFlip = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.HorizontalFlip = null;
     }
@@ -63,7 +63,7 @@ public partial class Transform2D: ModelElement<DXOD.Transform2D>
     set
     {
       if (value != null)
-        _ExistingElement.VerticalFlip = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.VerticalFlip = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.VerticalFlip = null;
     }
@@ -78,22 +78,11 @@ public partial class Transform2D: ModelElement<DXOD.Transform2D>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.Offset>();
-      if (element != null)
-        return OffsetConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.Offset,DXD.Offset>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.Offset>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = OffsetConverter.CreateOpenXmlElement<DXD.Offset>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.Offset,DXD.Offset>(value);
     }
   }
   
@@ -106,22 +95,11 @@ public partial class Transform2D: ModelElement<DXOD.Transform2D>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.Extents>();
-      if (element != null)
-        return ExtentsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.Extents,DXD.Extents>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.Extents>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtentsConverter.CreateOpenXmlElement<DXD.Extents>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.Extents,DXD.Extents>(value);
     }
   }
   

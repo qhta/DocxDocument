@@ -43,7 +43,7 @@ public partial class TextBodyProperties: ModelElement<DXO13DCS.TextBodyPropertie
     set
     {
       if (value != null)
-        _ExistingElement.UseParagraphSpacing = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.UseParagraphSpacing = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.UseParagraphSpacing = null;
     }
@@ -165,7 +165,7 @@ public partial class TextBodyProperties: ModelElement<DXO13DCS.TextBodyPropertie
     set
     {
       if (value != null)
-        _ExistingElement.RightToLeftColumns = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.RightToLeftColumns = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.RightToLeftColumns = null;
     }
@@ -185,7 +185,7 @@ public partial class TextBodyProperties: ModelElement<DXO13DCS.TextBodyPropertie
     set
     {
       if (value != null)
-        _ExistingElement.FromWordArt = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.FromWordArt = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.FromWordArt = null;
     }
@@ -205,7 +205,7 @@ public partial class TextBodyProperties: ModelElement<DXO13DCS.TextBodyPropertie
     set
     {
       if (value != null)
-        _ExistingElement.AnchorCenter = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.AnchorCenter = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.AnchorCenter = null;
     }
@@ -225,7 +225,7 @@ public partial class TextBodyProperties: ModelElement<DXO13DCS.TextBodyPropertie
     set
     {
       if (value != null)
-        _ExistingElement.ForceAntiAlias = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.ForceAntiAlias = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.ForceAntiAlias = null;
     }
@@ -245,7 +245,7 @@ public partial class TextBodyProperties: ModelElement<DXO13DCS.TextBodyPropertie
     set
     {
       if (value != null)
-        _ExistingElement.UpRight = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.UpRight = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.UpRight = null;
     }
@@ -265,7 +265,7 @@ public partial class TextBodyProperties: ModelElement<DXO13DCS.TextBodyPropertie
     set
     {
       if (value != null)
-        _ExistingElement.CompatibleLineSpacing = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.CompatibleLineSpacing = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.CompatibleLineSpacing = null;
     }
@@ -280,22 +280,11 @@ public partial class TextBodyProperties: ModelElement<DXO13DCS.TextBodyPropertie
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.PresetTextWrap>();
-      if (element != null)
-        return PresetTextWrapConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.PresetTextWrap,DXD.PresetTextWrap>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.PresetTextWrap>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PresetTextWrapConverter.CreateOpenXmlElement<DXD.PresetTextWrap>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.PresetTextWrap,DXD.PresetTextWrap>(value);
     }
   }
   
@@ -304,22 +293,11 @@ public partial class TextBodyProperties: ModelElement<DXO13DCS.TextBodyPropertie
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.NoAutoFit>();
-      if (element != null)
-        return NoAutoFitConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.NoAutoFit,DXD.NoAutoFit>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.NoAutoFit>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NoAutoFitConverter.CreateOpenXmlElement<DXD.NoAutoFit>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.NoAutoFit,DXD.NoAutoFit>(value);
     }
   }
   
@@ -328,22 +306,11 @@ public partial class TextBodyProperties: ModelElement<DXO13DCS.TextBodyPropertie
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.NormalAutoFit>();
-      if (element != null)
-        return NormalAutoFitConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.NormalAutoFit,DXD.NormalAutoFit>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.NormalAutoFit>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NormalAutoFitConverter.CreateOpenXmlElement<DXD.NormalAutoFit>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.NormalAutoFit,DXD.NormalAutoFit>(value);
     }
   }
   
@@ -352,22 +319,11 @@ public partial class TextBodyProperties: ModelElement<DXO13DCS.TextBodyPropertie
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.ShapeAutoFit>();
-      if (element != null)
-        return ShapeAutoFitConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.ShapeAutoFit,DXD.ShapeAutoFit>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.ShapeAutoFit>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ShapeAutoFitConverter.CreateOpenXmlElement<DXD.ShapeAutoFit>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.ShapeAutoFit,DXD.ShapeAutoFit>(value);
     }
   }
   
@@ -376,22 +332,11 @@ public partial class TextBodyProperties: ModelElement<DXO13DCS.TextBodyPropertie
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.Scene3DType>();
-      if (element != null)
-        return Scene3DTypeConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.Scene3DType,DXD.Scene3DType>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.Scene3DType>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = Scene3DTypeConverter.CreateOpenXmlElement<DXD.Scene3DType>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.Scene3DType,DXD.Scene3DType>(value);
     }
   }
   
@@ -400,22 +345,11 @@ public partial class TextBodyProperties: ModelElement<DXO13DCS.TextBodyPropertie
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.Shape3DType>();
-      if (element != null)
-        return Shape3DTypeConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.Shape3DType,DXD.Shape3DType>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.Shape3DType>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = Shape3DTypeConverter.CreateOpenXmlElement<DXD.Shape3DType>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.Shape3DType,DXD.Shape3DType>(value);
     }
   }
   
@@ -424,22 +358,11 @@ public partial class TextBodyProperties: ModelElement<DXO13DCS.TextBodyPropertie
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.FlatText>();
-      if (element != null)
-        return FlatTextConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.FlatText,DXD.FlatText>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.FlatText>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FlatTextConverter.CreateOpenXmlElement<DXD.FlatText>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.FlatText,DXD.FlatText>(value);
     }
   }
   
@@ -448,22 +371,11 @@ public partial class TextBodyProperties: ModelElement<DXO13DCS.TextBodyPropertie
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.ExtensionList>();
-      if (element != null)
-        return ExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.ExtensionList,DXD.ExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.ExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DXD.ExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.ExtensionList,DXD.ExtensionList>(value);
     }
   }
   

@@ -55,22 +55,11 @@ public partial class CustomUI: ModelElement<DXOCUI.CustomUI>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXOCUI.RepurposedCommands>();
-      if (element != null)
-        return RepurposedCommandsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMCUI.RepurposedCommands,DXOCUI.RepurposedCommands>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXOCUI.RepurposedCommands>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RepurposedCommandsConverter.CreateOpenXmlElement<DXOCUI.RepurposedCommands>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMCUI.RepurposedCommands,DXOCUI.RepurposedCommands>(value);
     }
   }
   
@@ -83,22 +72,11 @@ public partial class CustomUI: ModelElement<DXOCUI.CustomUI>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXOCUI.Ribbon>();
-      if (element != null)
-        return RibbonConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMCUI.Ribbon,DXOCUI.Ribbon>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXOCUI.Ribbon>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RibbonConverter.CreateOpenXmlElement<DXOCUI.Ribbon>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMCUI.Ribbon,DXOCUI.Ribbon>(value);
     }
   }
   

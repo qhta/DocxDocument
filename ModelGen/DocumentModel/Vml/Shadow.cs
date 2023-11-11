@@ -34,15 +34,18 @@ public partial class Shadow: ModelElement<DXV.Shadow>
   ///   Shadow Toggle
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? On
+  public Boolean? On
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.On?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.On = value;
+      else
+        _ExistingElement.On = null;
     }
   }
   
@@ -51,15 +54,18 @@ public partial class Shadow: ModelElement<DXV.Shadow>
   ///   Shadow Transparency
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? Obscured
+  public Boolean? Obscured
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.Obscured?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.Obscured = value;
+      else
+        _ExistingElement.Obscured = null;
     }
   }
   

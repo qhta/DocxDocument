@@ -68,22 +68,11 @@ public partial class LayoutDefinition: ModelElement<DXDDD.LayoutDefinition>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDDD.CategoryList>();
-      if (element != null)
-        return CategoryListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDD.CategoryList,DXDDD.CategoryList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDDD.CategoryList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = CategoryListConverter.CreateOpenXmlElement<DXDDD.CategoryList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDD.CategoryList,DXDDD.CategoryList>(value);
     }
   }
   
@@ -92,22 +81,11 @@ public partial class LayoutDefinition: ModelElement<DXDDD.LayoutDefinition>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDDD.SampleData>();
-      if (element != null)
-        return SampleDataConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDD.SampleData,DXDDD.SampleData>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDDD.SampleData>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SampleDataConverter.CreateOpenXmlElement<DXDDD.SampleData>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDD.SampleData,DXDDD.SampleData>(value);
     }
   }
   
@@ -116,22 +94,11 @@ public partial class LayoutDefinition: ModelElement<DXDDD.LayoutDefinition>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDDD.StyleData>();
-      if (element != null)
-        return StyleDataConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDD.StyleData,DXDDD.StyleData>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDDD.StyleData>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = StyleDataConverter.CreateOpenXmlElement<DXDDD.StyleData>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDD.StyleData,DXDDD.StyleData>(value);
     }
   }
   
@@ -140,22 +107,11 @@ public partial class LayoutDefinition: ModelElement<DXDDD.LayoutDefinition>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDDD.ColorData>();
-      if (element != null)
-        return ColorDataConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDD.ColorData,DXDDD.ColorData>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDDD.ColorData>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ColorDataConverter.CreateOpenXmlElement<DXDDD.ColorData>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDD.ColorData,DXDDD.ColorData>(value);
     }
   }
   
@@ -164,22 +120,11 @@ public partial class LayoutDefinition: ModelElement<DXDDD.LayoutDefinition>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDDD.LayoutNode>();
-      if (element != null)
-        return LayoutNodeConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDD.LayoutNode,DXDDD.LayoutNode>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDDD.LayoutNode>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LayoutNodeConverter.CreateOpenXmlElement<DXDDD.LayoutNode>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDD.LayoutNode,DXDDD.LayoutNode>(value);
     }
   }
   
@@ -188,22 +133,11 @@ public partial class LayoutDefinition: ModelElement<DXDDD.LayoutDefinition>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDDD.DiagramDefinitionExtensionList>();
-      if (element != null)
-        return DiagramDefinitionExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDD.DiagramDefinitionExtensionList,DXDDD.DiagramDefinitionExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDDD.DiagramDefinitionExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DiagramDefinitionExtensionListConverter.CreateOpenXmlElement<DXDDD.DiagramDefinitionExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDD.DiagramDefinitionExtensionList,DXDDD.DiagramDefinitionExtensionList>(value);
     }
   }
   

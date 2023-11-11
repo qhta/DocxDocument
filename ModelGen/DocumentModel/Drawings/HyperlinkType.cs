@@ -111,7 +111,7 @@ public partial class HyperlinkType: ModelElement<DXD.HyperlinkType>
     set
     {
       if (value != null)
-        _ExistingElement.History = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.History = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.History = null;
     }
@@ -131,7 +131,7 @@ public partial class HyperlinkType: ModelElement<DXD.HyperlinkType>
     set
     {
       if (value != null)
-        _ExistingElement.HighlightClick = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.HighlightClick = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.HighlightClick = null;
     }
@@ -151,7 +151,7 @@ public partial class HyperlinkType: ModelElement<DXD.HyperlinkType>
     set
     {
       if (value != null)
-        _ExistingElement.EndSound = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.EndSound = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.EndSound = null;
     }
@@ -166,22 +166,11 @@ public partial class HyperlinkType: ModelElement<DXD.HyperlinkType>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.HyperlinkSound>();
-      if (element != null)
-        return HyperlinkSoundConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.HyperlinkSound,DXD.HyperlinkSound>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.HyperlinkSound>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = HyperlinkSoundConverter.CreateOpenXmlElement<DXD.HyperlinkSound>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.HyperlinkSound,DXD.HyperlinkSound>(value);
     }
   }
   
@@ -194,22 +183,11 @@ public partial class HyperlinkType: ModelElement<DXD.HyperlinkType>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.HyperlinkExtensionList>();
-      if (element != null)
-        return HyperlinkExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.HyperlinkExtensionList,DXD.HyperlinkExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.HyperlinkExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = HyperlinkExtensionListConverter.CreateOpenXmlElement<DXD.HyperlinkExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.HyperlinkExtensionList,DXD.HyperlinkExtensionList>(value);
     }
   }
   

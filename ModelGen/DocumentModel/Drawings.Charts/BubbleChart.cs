@@ -21,22 +21,11 @@ public partial class BubbleChart: ModelElement<DXDC.BubbleChart>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.VaryColors>();
-      if (element != null)
-        return VaryColorsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.VaryColors,DXDC.VaryColors>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.VaryColors>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = VaryColorsConverter.CreateOpenXmlElement<DXDC.VaryColors>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.VaryColors,DXDC.VaryColors>(value);
     }
   }
   
@@ -45,22 +34,11 @@ public partial class BubbleChart: ModelElement<DXDC.BubbleChart>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.DataLabels>();
-      if (element != null)
-        return DataLabelsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.DataLabels,DXDC.DataLabels>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.DataLabels>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DataLabelsConverter.CreateOpenXmlElement<DXDC.DataLabels>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.DataLabels,DXDC.DataLabels>(value);
     }
   }
   
@@ -69,22 +47,11 @@ public partial class BubbleChart: ModelElement<DXDC.BubbleChart>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.Bubble3D>();
-      if (element != null)
-        return Bubble3DConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.Bubble3D,DXDC.Bubble3D>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.Bubble3D>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = Bubble3DConverter.CreateOpenXmlElement<DXDC.Bubble3D>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.Bubble3D,DXDC.Bubble3D>(value);
     }
   }
   
@@ -97,7 +64,7 @@ public partial class BubbleChart: ModelElement<DXDC.BubbleChart>
     }
     set
     {
-      SimpleValueConverter.SetValue<DXDC.BubbleScale,System.UInt32>(openXmlElement, value);
+      SimpleValueConverter.SetValue<DXDC.BubbleScale,System.UInt32>(_ExistingElement, value);
     }
   }
   
@@ -106,22 +73,11 @@ public partial class BubbleChart: ModelElement<DXDC.BubbleChart>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.ShowNegativeBubbles>();
-      if (element != null)
-        return ShowNegativeBubblesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.ShowNegativeBubbles,DXDC.ShowNegativeBubbles>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.ShowNegativeBubbles>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ShowNegativeBubblesConverter.CreateOpenXmlElement<DXDC.ShowNegativeBubbles>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.ShowNegativeBubbles,DXDC.ShowNegativeBubbles>(value);
     }
   }
   
@@ -153,22 +109,11 @@ public partial class BubbleChart: ModelElement<DXDC.BubbleChart>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.BubbleChartExtensionList>();
-      if (element != null)
-        return BubbleChartExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.BubbleChartExtensionList,DXDC.BubbleChartExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.BubbleChartExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BubbleChartExtensionListConverter.CreateOpenXmlElement<DXDC.BubbleChartExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.BubbleChartExtensionList,DXDC.BubbleChartExtensionList>(value);
     }
   }
   

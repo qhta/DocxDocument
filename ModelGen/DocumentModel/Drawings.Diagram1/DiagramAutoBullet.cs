@@ -43,7 +43,7 @@ public partial class DiagramAutoBullet: ModelElement<DXO19DD11.DiagramAutoBullet
     set
     {
       if (value != null)
-        _ExistingElement.LeadZeros = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.LeadZeros = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.LeadZeros = null;
     }
@@ -58,22 +58,11 @@ public partial class DiagramAutoBullet: ModelElement<DXO19DD11.DiagramAutoBullet
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.NoBullet>();
-      if (element != null)
-        return NoBulletConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.NoBullet,DXD.NoBullet>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.NoBullet>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NoBulletConverter.CreateOpenXmlElement<DXD.NoBullet>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.NoBullet,DXD.NoBullet>(value);
     }
   }
   
@@ -86,22 +75,11 @@ public partial class DiagramAutoBullet: ModelElement<DXO19DD11.DiagramAutoBullet
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.AutoNumberedBullet>();
-      if (element != null)
-        return AutoNumberedBulletConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.AutoNumberedBullet,DXD.AutoNumberedBullet>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.AutoNumberedBullet>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = AutoNumberedBulletConverter.CreateOpenXmlElement<DXD.AutoNumberedBullet>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.AutoNumberedBullet,DXD.AutoNumberedBullet>(value);
     }
   }
   
@@ -114,22 +92,11 @@ public partial class DiagramAutoBullet: ModelElement<DXO19DD11.DiagramAutoBullet
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.CharacterBullet>();
-      if (element != null)
-        return CharacterBulletConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.CharacterBullet,DXD.CharacterBullet>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.CharacterBullet>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = CharacterBulletConverter.CreateOpenXmlElement<DXD.CharacterBullet>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.CharacterBullet,DXD.CharacterBullet>(value);
     }
   }
   
@@ -142,22 +109,11 @@ public partial class DiagramAutoBullet: ModelElement<DXO19DD11.DiagramAutoBullet
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.PictureBullet>();
-      if (element != null)
-        return PictureBulletConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.PictureBullet,DXD.PictureBullet>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.PictureBullet>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PictureBulletConverter.CreateOpenXmlElement<DXD.PictureBullet>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.PictureBullet,DXD.PictureBullet>(value);
     }
   }
   

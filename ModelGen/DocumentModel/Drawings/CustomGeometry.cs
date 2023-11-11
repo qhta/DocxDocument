@@ -21,22 +21,11 @@ public partial class CustomGeometry: ModelElement<DXD.CustomGeometry>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.AdjustValueList>();
-      if (element != null)
-        return AdjustValueListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.AdjustValueList,DXD.AdjustValueList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.AdjustValueList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = AdjustValueListConverter.CreateOpenXmlElement<DXD.AdjustValueList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.AdjustValueList,DXD.AdjustValueList>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class CustomGeometry: ModelElement<DXD.CustomGeometry>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.ShapeGuideList>();
-      if (element != null)
-        return ShapeGuideListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.ShapeGuideList,DXD.ShapeGuideList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.ShapeGuideList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ShapeGuideListConverter.CreateOpenXmlElement<DXD.ShapeGuideList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.ShapeGuideList,DXD.ShapeGuideList>(value);
     }
   }
   
@@ -77,22 +55,11 @@ public partial class CustomGeometry: ModelElement<DXD.CustomGeometry>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.AdjustHandleList>();
-      if (element != null)
-        return AdjustHandleListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.AdjustHandleList,DXD.AdjustHandleList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.AdjustHandleList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = AdjustHandleListConverter.CreateOpenXmlElement<DXD.AdjustHandleList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.AdjustHandleList,DXD.AdjustHandleList>(value);
     }
   }
   
@@ -105,22 +72,11 @@ public partial class CustomGeometry: ModelElement<DXD.CustomGeometry>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.ConnectionSiteList>();
-      if (element != null)
-        return ConnectionSiteListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.ConnectionSiteList,DXD.ConnectionSiteList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.ConnectionSiteList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ConnectionSiteListConverter.CreateOpenXmlElement<DXD.ConnectionSiteList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.ConnectionSiteList,DXD.ConnectionSiteList>(value);
     }
   }
   
@@ -133,22 +89,11 @@ public partial class CustomGeometry: ModelElement<DXD.CustomGeometry>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.Rectangle>();
-      if (element != null)
-        return RectangleConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.Rectangle,DXD.Rectangle>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.Rectangle>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RectangleConverter.CreateOpenXmlElement<DXD.Rectangle>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.Rectangle,DXD.Rectangle>(value);
     }
   }
   
@@ -161,22 +106,11 @@ public partial class CustomGeometry: ModelElement<DXD.CustomGeometry>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.PathList>();
-      if (element != null)
-        return PathListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.PathList,DXD.PathList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.PathList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PathListConverter.CreateOpenXmlElement<DXD.PathList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.PathList,DXD.PathList>(value);
     }
   }
   

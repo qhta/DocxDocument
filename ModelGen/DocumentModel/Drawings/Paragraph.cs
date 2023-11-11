@@ -21,22 +21,11 @@ public partial class Paragraph: ModelElement<DXD.Paragraph>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.ParagraphProperties>();
-      if (element != null)
-        return ParagraphPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.ParagraphProperties,DXD.ParagraphProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.ParagraphProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ParagraphPropertiesConverter.CreateOpenXmlElement<DXD.ParagraphProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.ParagraphProperties,DXD.ParagraphProperties>(value);
     }
   }
   
@@ -45,22 +34,11 @@ public partial class Paragraph: ModelElement<DXD.Paragraph>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.EndParagraphRunProperties>();
-      if (element != null)
-        return EndParagraphRunPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.EndParagraphRunProperties,DXD.EndParagraphRunProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.EndParagraphRunProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EndParagraphRunPropertiesConverter.CreateOpenXmlElement<DXD.EndParagraphRunProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.EndParagraphRunProperties,DXD.EndParagraphRunProperties>(value);
     }
   }
   

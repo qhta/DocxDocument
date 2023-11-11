@@ -21,22 +21,11 @@ public partial class AbsoluteAnchorSize: ModelElement<DXDCD.AbsoluteAnchorSize>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDCD.FromAnchor>();
-      if (element != null)
-        return FromAnchorConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD.FromAnchor,DXDCD.FromAnchor>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDCD.FromAnchor>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FromAnchorConverter.CreateOpenXmlElement<DXDCD.FromAnchor>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD.FromAnchor,DXDCD.FromAnchor>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class AbsoluteAnchorSize: ModelElement<DXDCD.AbsoluteAnchorSize>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDCD.Extent>();
-      if (element != null)
-        return ExtentConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD.Extent,DXDCD.Extent>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDCD.Extent>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtentConverter.CreateOpenXmlElement<DXDCD.Extent>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD.Extent,DXDCD.Extent>(value);
     }
   }
   
@@ -73,22 +51,11 @@ public partial class AbsoluteAnchorSize: ModelElement<DXDCD.AbsoluteAnchorSize>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDCD.Shape>();
-      if (element != null)
-        return ShapeConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD.Shape,DXDCD.Shape>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDCD.Shape>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ShapeConverter.CreateOpenXmlElement<DXDCD.Shape>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD.Shape,DXDCD.Shape>(value);
     }
   }
   
@@ -97,22 +64,11 @@ public partial class AbsoluteAnchorSize: ModelElement<DXDCD.AbsoluteAnchorSize>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDCD.GroupShape>();
-      if (element != null)
-        return GroupShapeConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD.GroupShape,DXDCD.GroupShape>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDCD.GroupShape>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = GroupShapeConverter.CreateOpenXmlElement<DXDCD.GroupShape>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD.GroupShape,DXDCD.GroupShape>(value);
     }
   }
   
@@ -121,22 +77,11 @@ public partial class AbsoluteAnchorSize: ModelElement<DXDCD.AbsoluteAnchorSize>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDCD.GraphicFrame>();
-      if (element != null)
-        return GraphicFrameConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD.GraphicFrame,DXDCD.GraphicFrame>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDCD.GraphicFrame>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = GraphicFrameConverter.CreateOpenXmlElement<DXDCD.GraphicFrame>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD.GraphicFrame,DXDCD.GraphicFrame>(value);
     }
   }
   
@@ -145,22 +90,11 @@ public partial class AbsoluteAnchorSize: ModelElement<DXDCD.AbsoluteAnchorSize>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDCD.ConnectionShape>();
-      if (element != null)
-        return ConnectionShapeConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD.ConnectionShape,DXDCD.ConnectionShape>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDCD.ConnectionShape>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ConnectionShapeConverter.CreateOpenXmlElement<DXDCD.ConnectionShape>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD.ConnectionShape,DXDCD.ConnectionShape>(value);
     }
   }
   
@@ -169,22 +103,11 @@ public partial class AbsoluteAnchorSize: ModelElement<DXDCD.AbsoluteAnchorSize>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDCD.Picture>();
-      if (element != null)
-        return PictureConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD.Picture,DXDCD.Picture>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDCD.Picture>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PictureConverter.CreateOpenXmlElement<DXDCD.Picture>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD.Picture,DXDCD.Picture>(value);
     }
   }
   

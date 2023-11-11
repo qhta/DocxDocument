@@ -89,22 +89,11 @@ public partial class Constraint: ModelElement<DXDDD.Constraint>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDDD.ExtensionList>();
-      if (element != null)
-        return ExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDD.ExtensionList,DXDDD.ExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDDD.ExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DXDDD.ExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDD.ExtensionList,DXDDD.ExtensionList>(value);
     }
   }
   

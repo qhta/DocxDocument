@@ -21,22 +21,11 @@ public partial class PivotFormat: ModelElement<DXDC.PivotFormat>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.Index>();
-      if (element != null)
-        return IndexConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.Index,DXDC.Index>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.Index>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = IndexConverter.CreateOpenXmlElement<DXDC.Index>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.Index,DXDC.Index>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class PivotFormat: ModelElement<DXDC.PivotFormat>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.ShapeProperties>();
-      if (element != null)
-        return ShapePropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.ShapeProperties,DXDC.ShapeProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.ShapeProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ShapePropertiesConverter.CreateOpenXmlElement<DXDC.ShapeProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.ShapeProperties,DXDC.ShapeProperties>(value);
     }
   }
   
@@ -77,22 +55,11 @@ public partial class PivotFormat: ModelElement<DXDC.PivotFormat>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.Marker>();
-      if (element != null)
-        return MarkerConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.Marker,DXDC.Marker>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.Marker>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = MarkerConverter.CreateOpenXmlElement<DXDC.Marker>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.Marker,DXDC.Marker>(value);
     }
   }
   
@@ -105,22 +72,11 @@ public partial class PivotFormat: ModelElement<DXDC.PivotFormat>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.DataLabel>();
-      if (element != null)
-        return DataLabelConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.DataLabel,DXDC.DataLabel>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.DataLabel>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DataLabelConverter.CreateOpenXmlElement<DXDC.DataLabel>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.DataLabel,DXDC.DataLabel>(value);
     }
   }
   
@@ -133,22 +89,11 @@ public partial class PivotFormat: ModelElement<DXDC.PivotFormat>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.ExtensionList>();
-      if (element != null)
-        return ExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.ExtensionList,DXDC.ExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.ExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DXDC.ExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.ExtensionList,DXDC.ExtensionList>(value);
     }
   }
   

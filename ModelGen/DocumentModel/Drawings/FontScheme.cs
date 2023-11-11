@@ -38,22 +38,11 @@ public partial class FontScheme: ModelElement<DXD.FontScheme>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.MajorFont>();
-      if (element != null)
-        return MajorFontConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.MajorFont,DXD.MajorFont>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.MajorFont>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = MajorFontConverter.CreateOpenXmlElement<DXD.MajorFont>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.MajorFont,DXD.MajorFont>(value);
     }
   }
   
@@ -66,22 +55,11 @@ public partial class FontScheme: ModelElement<DXD.FontScheme>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.MinorFont>();
-      if (element != null)
-        return MinorFontConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.MinorFont,DXD.MinorFont>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.MinorFont>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = MinorFontConverter.CreateOpenXmlElement<DXD.MinorFont>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.MinorFont,DXD.MinorFont>(value);
     }
   }
   
@@ -94,22 +72,11 @@ public partial class FontScheme: ModelElement<DXD.FontScheme>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.ExtensionList>();
-      if (element != null)
-        return ExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.ExtensionList,DXD.ExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.ExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DXD.ExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.ExtensionList,DXD.ExtensionList>(value);
     }
   }
   

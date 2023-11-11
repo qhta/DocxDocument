@@ -17,22 +17,11 @@ public partial class ContourColor: ModelElement<DXO10W.ContourColor>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10W.RgbColorModelHex>();
-      if (element != null)
-        return DMX.HexBinaryConverter.GetValue(element);
-      return null;
+      return _Element?.GetObject<DM.HexBinary,DXO10W.RgbColorModelHex>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10W.RgbColorModelHex>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = HexBinaryConverter.CreateOpenXmlElement<DXO10W.RgbColorModelHex>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DM.HexBinary,DXO10W.RgbColorModelHex>(value);
     }
   }
   

@@ -21,22 +21,11 @@ public partial class ShapeStyle: ModelElement<DXD.ShapeStyle>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.LineReference>();
-      if (element != null)
-        return LineReferenceConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.LineReference,DXD.LineReference>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.LineReference>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LineReferenceConverter.CreateOpenXmlElement<DXD.LineReference>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.LineReference,DXD.LineReference>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class ShapeStyle: ModelElement<DXD.ShapeStyle>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.FillReference>();
-      if (element != null)
-        return FillReferenceConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.FillReference,DXD.FillReference>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.FillReference>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FillReferenceConverter.CreateOpenXmlElement<DXD.FillReference>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.FillReference,DXD.FillReference>(value);
     }
   }
   
@@ -77,22 +55,11 @@ public partial class ShapeStyle: ModelElement<DXD.ShapeStyle>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.EffectReference>();
-      if (element != null)
-        return EffectReferenceConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.EffectReference,DXD.EffectReference>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.EffectReference>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EffectReferenceConverter.CreateOpenXmlElement<DXD.EffectReference>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.EffectReference,DXD.EffectReference>(value);
     }
   }
   
@@ -105,22 +72,11 @@ public partial class ShapeStyle: ModelElement<DXD.ShapeStyle>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.FontReference>();
-      if (element != null)
-        return FontReferenceConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.FontReference,DXD.FontReference>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.FontReference>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FontReferenceConverter.CreateOpenXmlElement<DXD.FontReference>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.FontReference,DXD.FontReference>(value);
     }
   }
   

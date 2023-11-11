@@ -21,22 +21,11 @@ public partial class RunPropertiesBaseStyle: ModelElement<DXW.RunPropertiesBaseS
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.RunFonts>();
-      if (element != null)
-        return RunFontsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.RunFonts,DXW.RunFonts>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.RunFonts>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RunFontsConverter.CreateOpenXmlElement<DXW.RunFonts>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.RunFonts,DXW.RunFonts>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class RunPropertiesBaseStyle: ModelElement<DXW.RunPropertiesBaseS
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.Bold>();
-      if (element != null)
-        return BoldConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.Bold,DXW.Bold>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Bold>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BoldConverter.CreateOpenXmlElement<DXW.Bold>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.Bold,DXW.Bold>(value);
     }
   }
   
@@ -77,22 +55,11 @@ public partial class RunPropertiesBaseStyle: ModelElement<DXW.RunPropertiesBaseS
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.BoldComplexScript>();
-      if (element != null)
-        return BoldComplexScriptConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.BoldComplexScript,DXW.BoldComplexScript>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.BoldComplexScript>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BoldComplexScriptConverter.CreateOpenXmlElement<DXW.BoldComplexScript>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.BoldComplexScript,DXW.BoldComplexScript>(value);
     }
   }
   
@@ -105,22 +72,11 @@ public partial class RunPropertiesBaseStyle: ModelElement<DXW.RunPropertiesBaseS
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.Italic>();
-      if (element != null)
-        return ItalicConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.Italic,DXW.Italic>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Italic>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ItalicConverter.CreateOpenXmlElement<DXW.Italic>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.Italic,DXW.Italic>(value);
     }
   }
   
@@ -133,22 +89,11 @@ public partial class RunPropertiesBaseStyle: ModelElement<DXW.RunPropertiesBaseS
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.ItalicComplexScript>();
-      if (element != null)
-        return ItalicComplexScriptConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.ItalicComplexScript,DXW.ItalicComplexScript>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.ItalicComplexScript>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ItalicComplexScriptConverter.CreateOpenXmlElement<DXW.ItalicComplexScript>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.ItalicComplexScript,DXW.ItalicComplexScript>(value);
     }
   }
   
@@ -161,22 +106,11 @@ public partial class RunPropertiesBaseStyle: ModelElement<DXW.RunPropertiesBaseS
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.Caps>();
-      if (element != null)
-        return CapsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.Caps,DXW.Caps>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Caps>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = CapsConverter.CreateOpenXmlElement<DXW.Caps>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.Caps,DXW.Caps>(value);
     }
   }
   
@@ -189,22 +123,11 @@ public partial class RunPropertiesBaseStyle: ModelElement<DXW.RunPropertiesBaseS
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.SmallCaps>();
-      if (element != null)
-        return SmallCapsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.SmallCaps,DXW.SmallCaps>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.SmallCaps>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SmallCapsConverter.CreateOpenXmlElement<DXW.SmallCaps>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.SmallCaps,DXW.SmallCaps>(value);
     }
   }
   
@@ -217,22 +140,11 @@ public partial class RunPropertiesBaseStyle: ModelElement<DXW.RunPropertiesBaseS
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.Strike>();
-      if (element != null)
-        return StrikeConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.Strike,DXW.Strike>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Strike>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = StrikeConverter.CreateOpenXmlElement<DXW.Strike>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.Strike,DXW.Strike>(value);
     }
   }
   
@@ -245,22 +157,11 @@ public partial class RunPropertiesBaseStyle: ModelElement<DXW.RunPropertiesBaseS
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.DoubleStrike>();
-      if (element != null)
-        return DoubleStrikeConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.DoubleStrike,DXW.DoubleStrike>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.DoubleStrike>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DoubleStrikeConverter.CreateOpenXmlElement<DXW.DoubleStrike>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.DoubleStrike,DXW.DoubleStrike>(value);
     }
   }
   
@@ -273,22 +174,11 @@ public partial class RunPropertiesBaseStyle: ModelElement<DXW.RunPropertiesBaseS
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.Outline>();
-      if (element != null)
-        return OutlineConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.Outline,DXW.Outline>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Outline>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = OutlineConverter.CreateOpenXmlElement<DXW.Outline>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.Outline,DXW.Outline>(value);
     }
   }
   
@@ -301,22 +191,11 @@ public partial class RunPropertiesBaseStyle: ModelElement<DXW.RunPropertiesBaseS
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.Shadow>();
-      if (element != null)
-        return ShadowConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.Shadow,DXW.Shadow>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Shadow>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ShadowConverter.CreateOpenXmlElement<DXW.Shadow>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.Shadow,DXW.Shadow>(value);
     }
   }
   
@@ -329,22 +208,11 @@ public partial class RunPropertiesBaseStyle: ModelElement<DXW.RunPropertiesBaseS
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.Emboss>();
-      if (element != null)
-        return EmbossConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.Emboss,DXW.Emboss>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Emboss>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EmbossConverter.CreateOpenXmlElement<DXW.Emboss>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.Emboss,DXW.Emboss>(value);
     }
   }
   
@@ -357,22 +225,11 @@ public partial class RunPropertiesBaseStyle: ModelElement<DXW.RunPropertiesBaseS
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.Imprint>();
-      if (element != null)
-        return ImprintConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.Imprint,DXW.Imprint>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Imprint>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ImprintConverter.CreateOpenXmlElement<DXW.Imprint>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.Imprint,DXW.Imprint>(value);
     }
   }
   
@@ -385,22 +242,11 @@ public partial class RunPropertiesBaseStyle: ModelElement<DXW.RunPropertiesBaseS
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.NoProof>();
-      if (element != null)
-        return NoProofConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.NoProof,DXW.NoProof>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.NoProof>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NoProofConverter.CreateOpenXmlElement<DXW.NoProof>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.NoProof,DXW.NoProof>(value);
     }
   }
   
@@ -413,22 +259,11 @@ public partial class RunPropertiesBaseStyle: ModelElement<DXW.RunPropertiesBaseS
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.SnapToGrid>();
-      if (element != null)
-        return SnapToGridConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.SnapToGrid,DXW.SnapToGrid>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.SnapToGrid>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SnapToGridConverter.CreateOpenXmlElement<DXW.SnapToGrid>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.SnapToGrid,DXW.SnapToGrid>(value);
     }
   }
   
@@ -441,22 +276,11 @@ public partial class RunPropertiesBaseStyle: ModelElement<DXW.RunPropertiesBaseS
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.Vanish>();
-      if (element != null)
-        return VanishConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.Vanish,DXW.Vanish>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Vanish>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = VanishConverter.CreateOpenXmlElement<DXW.Vanish>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.Vanish,DXW.Vanish>(value);
     }
   }
   
@@ -469,22 +293,11 @@ public partial class RunPropertiesBaseStyle: ModelElement<DXW.RunPropertiesBaseS
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.WebHidden>();
-      if (element != null)
-        return WebHiddenConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.WebHidden,DXW.WebHidden>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.WebHidden>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = WebHiddenConverter.CreateOpenXmlElement<DXW.WebHidden>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.WebHidden,DXW.WebHidden>(value);
     }
   }
   
@@ -497,22 +310,11 @@ public partial class RunPropertiesBaseStyle: ModelElement<DXW.RunPropertiesBaseS
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.Color>();
-      if (element != null)
-        return ColorConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.Color,DXW.Color>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Color>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ColorConverter.CreateOpenXmlElement<DXW.Color>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.Color,DXW.Color>(value);
     }
   }
   
@@ -529,7 +331,7 @@ public partial class RunPropertiesBaseStyle: ModelElement<DXW.RunPropertiesBaseS
     }
     set
     {
-      SimpleValueConverter.SetValue<DXW.Spacing,System.Int32>(openXmlElement, value);
+      SimpleValueConverter.SetValue<DXW.Spacing,System.Int32>(_ExistingElement, value);
     }
   }
   
@@ -546,7 +348,7 @@ public partial class RunPropertiesBaseStyle: ModelElement<DXW.RunPropertiesBaseS
     }
     set
     {
-      SimpleValueConverter.SetValue<DXW.CharacterScale,System.Int64>(openXmlElement, value);
+      SimpleValueConverter.SetValue<DXW.CharacterScale,System.Int64>(_ExistingElement, value);
     }
   }
   
@@ -563,7 +365,7 @@ public partial class RunPropertiesBaseStyle: ModelElement<DXW.RunPropertiesBaseS
     }
     set
     {
-      SimpleValueConverter.SetValue<DXW.Kern,System.UInt32>(openXmlElement, value);
+      SimpleValueConverter.SetValue<DXW.Kern,System.UInt32>(_ExistingElement, value);
     }
   }
   
@@ -580,7 +382,7 @@ public partial class RunPropertiesBaseStyle: ModelElement<DXW.RunPropertiesBaseS
     }
     set
     {
-      StringValueConverter.SetValue<DXW.Position>(openXmlElement, value);
+      StringValueConverter.SetValue<DXW.Position>(_ExistingElement, value);
     }
   }
   
@@ -593,22 +395,11 @@ public partial class RunPropertiesBaseStyle: ModelElement<DXW.RunPropertiesBaseS
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.FontSize>();
-      if (element != null)
-        return FontSizeConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.FontSize,DXW.FontSize>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.FontSize>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FontSizeConverter.CreateOpenXmlElement<DXW.FontSize>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.FontSize,DXW.FontSize>(value);
     }
   }
   
@@ -621,22 +412,11 @@ public partial class RunPropertiesBaseStyle: ModelElement<DXW.RunPropertiesBaseS
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.FontSizeComplexScript>();
-      if (element != null)
-        return FontSizeComplexScriptConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.FontSizeComplexScript,DXW.FontSizeComplexScript>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.FontSizeComplexScript>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FontSizeComplexScriptConverter.CreateOpenXmlElement<DXW.FontSizeComplexScript>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.FontSizeComplexScript,DXW.FontSizeComplexScript>(value);
     }
   }
   
@@ -649,22 +429,11 @@ public partial class RunPropertiesBaseStyle: ModelElement<DXW.RunPropertiesBaseS
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.Underline>();
-      if (element != null)
-        return UnderlineConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.Underline,DXW.Underline>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Underline>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = UnderlineConverter.CreateOpenXmlElement<DXW.Underline>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.Underline,DXW.Underline>(value);
     }
   }
   
@@ -704,22 +473,11 @@ public partial class RunPropertiesBaseStyle: ModelElement<DXW.RunPropertiesBaseS
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.Border>();
-      if (element != null)
-        return BorderConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.Border,DXW.Border>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Border>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BorderConverter.CreateOpenXmlElement<DXW.Border>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.Border,DXW.Border>(value);
     }
   }
   
@@ -732,22 +490,11 @@ public partial class RunPropertiesBaseStyle: ModelElement<DXW.RunPropertiesBaseS
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.Shading>();
-      if (element != null)
-        return ShadingConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.Shading,DXW.Shading>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Shading>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ShadingConverter.CreateOpenXmlElement<DXW.Shading>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.Shading,DXW.Shading>(value);
     }
   }
   
@@ -760,22 +507,11 @@ public partial class RunPropertiesBaseStyle: ModelElement<DXW.RunPropertiesBaseS
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.FitText>();
-      if (element != null)
-        return FitTextConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.FitText,DXW.FitText>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.FitText>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FitTextConverter.CreateOpenXmlElement<DXW.FitText>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.FitText,DXW.FitText>(value);
     }
   }
   
@@ -842,22 +578,11 @@ public partial class RunPropertiesBaseStyle: ModelElement<DXW.RunPropertiesBaseS
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.Languages>();
-      if (element != null)
-        return LanguagesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.Languages,DXW.Languages>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Languages>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LanguagesConverter.CreateOpenXmlElement<DXW.Languages>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.Languages,DXW.Languages>(value);
     }
   }
   
@@ -870,22 +595,11 @@ public partial class RunPropertiesBaseStyle: ModelElement<DXW.RunPropertiesBaseS
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.EastAsianLayout>();
-      if (element != null)
-        return EastAsianLayoutConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.EastAsianLayout,DXW.EastAsianLayout>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.EastAsianLayout>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EastAsianLayoutConverter.CreateOpenXmlElement<DXW.EastAsianLayout>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.EastAsianLayout,DXW.EastAsianLayout>(value);
     }
   }
   
@@ -898,22 +612,11 @@ public partial class RunPropertiesBaseStyle: ModelElement<DXW.RunPropertiesBaseS
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.SpecVanish>();
-      if (element != null)
-        return SpecVanishConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.SpecVanish,DXW.SpecVanish>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.SpecVanish>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SpecVanishConverter.CreateOpenXmlElement<DXW.SpecVanish>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.SpecVanish,DXW.SpecVanish>(value);
     }
   }
   

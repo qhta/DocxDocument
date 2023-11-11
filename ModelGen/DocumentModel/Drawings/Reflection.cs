@@ -230,7 +230,7 @@ public partial class Reflection: ModelElement<DXD.Reflection>
     set
     {
       if (value != null)
-        _ExistingElement.RotateWithShape = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.RotateWithShape = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.RotateWithShape = null;
     }

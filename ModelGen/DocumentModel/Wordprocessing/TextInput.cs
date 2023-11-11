@@ -48,22 +48,11 @@ public partial class TextInput: ModelElement<DXW.TextInput>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.DefaultTextBoxFormFieldString>();
-      if (element != null)
-        return DefaultTextBoxFormFieldStringConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.DefaultTextBoxFormFieldString,DXW.DefaultTextBoxFormFieldString>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.DefaultTextBoxFormFieldString>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DefaultTextBoxFormFieldStringConverter.CreateOpenXmlElement<DXW.DefaultTextBoxFormFieldString>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.DefaultTextBoxFormFieldString,DXW.DefaultTextBoxFormFieldString>(value);
     }
   }
   
@@ -80,7 +69,7 @@ public partial class TextInput: ModelElement<DXW.TextInput>
     }
     set
     {
-      SimpleValueConverter.SetValue<DXW.MaxLength,System.Int16>(openXmlElement, value);
+      SimpleValueConverter.SetValue<DXW.MaxLength,System.Int16>(_ExistingElement, value);
     }
   }
   
@@ -97,7 +86,7 @@ public partial class TextInput: ModelElement<DXW.TextInput>
     }
     set
     {
-      StringValueConverter.SetValue<DXW.Format>(openXmlElement, value);
+      StringValueConverter.SetValue<DXW.Format>(_ExistingElement, value);
     }
   }
   

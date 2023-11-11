@@ -17,22 +17,11 @@ public partial class NumericDimension: ModelElement<DXO16DCD.NumericDimension>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.Formula>();
-      if (element != null)
-        return FormulaConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.Formula,DXO16DCD.Formula>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.Formula>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FormulaConverter.CreateOpenXmlElement<DXO16DCD.Formula>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.Formula,DXO16DCD.Formula>(value);
     }
   }
   
@@ -41,22 +30,11 @@ public partial class NumericDimension: ModelElement<DXO16DCD.NumericDimension>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.NfFormula>();
-      if (element != null)
-        return NfFormulaConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.NfFormula,DXO16DCD.NfFormula>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.NfFormula>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NfFormulaConverter.CreateOpenXmlElement<DXO16DCD.NfFormula>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.NfFormula,DXO16DCD.NfFormula>(value);
     }
   }
   

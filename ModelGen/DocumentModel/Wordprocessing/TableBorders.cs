@@ -21,22 +21,11 @@ public partial class TableBorders: ModelElement<DXW.TableBorders>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.TopBorder>();
-      if (element != null)
-        return TopBorderConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.TopBorder,DXW.TopBorder>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.TopBorder>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TopBorderConverter.CreateOpenXmlElement<DXW.TopBorder>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.TopBorder,DXW.TopBorder>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class TableBorders: ModelElement<DXW.TableBorders>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.LeftBorder>();
-      if (element != null)
-        return LeftBorderConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.LeftBorder,DXW.LeftBorder>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.LeftBorder>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LeftBorderConverter.CreateOpenXmlElement<DXW.LeftBorder>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.LeftBorder,DXW.LeftBorder>(value);
     }
   }
   
@@ -77,22 +55,11 @@ public partial class TableBorders: ModelElement<DXW.TableBorders>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.StartBorder>();
-      if (element != null)
-        return StartBorderConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.StartBorder,DXW.StartBorder>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.StartBorder>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = StartBorderConverter.CreateOpenXmlElement<DXW.StartBorder>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.StartBorder,DXW.StartBorder>(value);
     }
   }
   
@@ -105,22 +72,11 @@ public partial class TableBorders: ModelElement<DXW.TableBorders>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.BottomBorder>();
-      if (element != null)
-        return BottomBorderConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.BottomBorder,DXW.BottomBorder>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.BottomBorder>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BottomBorderConverter.CreateOpenXmlElement<DXW.BottomBorder>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.BottomBorder,DXW.BottomBorder>(value);
     }
   }
   
@@ -133,22 +89,11 @@ public partial class TableBorders: ModelElement<DXW.TableBorders>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.RightBorder>();
-      if (element != null)
-        return RightBorderConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.RightBorder,DXW.RightBorder>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.RightBorder>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RightBorderConverter.CreateOpenXmlElement<DXW.RightBorder>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.RightBorder,DXW.RightBorder>(value);
     }
   }
   
@@ -161,22 +106,11 @@ public partial class TableBorders: ModelElement<DXW.TableBorders>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.EndBorder>();
-      if (element != null)
-        return EndBorderConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.EndBorder,DXW.EndBorder>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.EndBorder>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EndBorderConverter.CreateOpenXmlElement<DXW.EndBorder>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.EndBorder,DXW.EndBorder>(value);
     }
   }
   
@@ -189,22 +123,11 @@ public partial class TableBorders: ModelElement<DXW.TableBorders>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.InsideHorizontalBorder>();
-      if (element != null)
-        return InsideHorizontalBorderConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.InsideHorizontalBorder,DXW.InsideHorizontalBorder>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.InsideHorizontalBorder>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = InsideHorizontalBorderConverter.CreateOpenXmlElement<DXW.InsideHorizontalBorder>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.InsideHorizontalBorder,DXW.InsideHorizontalBorder>(value);
     }
   }
   
@@ -217,22 +140,11 @@ public partial class TableBorders: ModelElement<DXW.TableBorders>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.InsideVerticalBorder>();
-      if (element != null)
-        return InsideVerticalBorderConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.InsideVerticalBorder,DXW.InsideVerticalBorder>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.InsideVerticalBorder>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = InsideVerticalBorderConverter.CreateOpenXmlElement<DXW.InsideVerticalBorder>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.InsideVerticalBorder,DXW.InsideVerticalBorder>(value);
     }
   }
   

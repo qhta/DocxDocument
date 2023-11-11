@@ -26,7 +26,7 @@ public partial class Series: ModelElement<DXO16DCD.Series>
     set
     {
       if (value != null)
-        _ExistingElement.Hidden = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.Hidden = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.Hidden = null;
     }
@@ -92,22 +92,11 @@ public partial class Series: ModelElement<DXO16DCD.Series>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.Text>();
-      if (element != null)
-        return TextConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.Text,DXO16DCD.Text>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.Text>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TextConverter.CreateOpenXmlElement<DXO16DCD.Text>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.Text,DXO16DCD.Text>(value);
     }
   }
   
@@ -120,22 +109,11 @@ public partial class Series: ModelElement<DXO16DCD.Series>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.ShapeProperties>();
-      if (element != null)
-        return ShapePropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.ShapeProperties,DXO16DCD.ShapeProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.ShapeProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ShapePropertiesConverter.CreateOpenXmlElement<DXO16DCD.ShapeProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.ShapeProperties,DXO16DCD.ShapeProperties>(value);
     }
   }
   
@@ -148,22 +126,11 @@ public partial class Series: ModelElement<DXO16DCD.Series>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.ValueColors>();
-      if (element != null)
-        return ValueColorsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.ValueColors,DXO16DCD.ValueColors>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.ValueColors>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ValueColorsConverter.CreateOpenXmlElement<DXO16DCD.ValueColors>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.ValueColors,DXO16DCD.ValueColors>(value);
     }
   }
   
@@ -176,22 +143,11 @@ public partial class Series: ModelElement<DXO16DCD.Series>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.ValueColorPositions>();
-      if (element != null)
-        return ValueColorPositionsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.ValueColorPositions,DXO16DCD.ValueColorPositions>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.ValueColorPositions>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ValueColorPositionsConverter.CreateOpenXmlElement<DXO16DCD.ValueColorPositions>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.ValueColorPositions,DXO16DCD.ValueColorPositions>(value);
     }
   }
   
@@ -200,22 +156,11 @@ public partial class Series: ModelElement<DXO16DCD.Series>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.DataLabels>();
-      if (element != null)
-        return DataLabelsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.DataLabels,DXO16DCD.DataLabels>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.DataLabels>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DataLabelsConverter.CreateOpenXmlElement<DXO16DCD.DataLabels>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.DataLabels,DXO16DCD.DataLabels>(value);
     }
   }
   
@@ -228,7 +173,7 @@ public partial class Series: ModelElement<DXO16DCD.Series>
     }
     set
     {
-      SimpleValueConverter.SetValue<DXO16DCD.DataId,System.UInt32>(openXmlElement, value);
+      SimpleValueConverter.SetValue<DXO16DCD.DataId,System.UInt32>(_ExistingElement, value);
     }
   }
   
@@ -237,22 +182,11 @@ public partial class Series: ModelElement<DXO16DCD.Series>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.SeriesLayoutProperties>();
-      if (element != null)
-        return SeriesLayoutPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.SeriesLayoutProperties,DXO16DCD.SeriesLayoutProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.SeriesLayoutProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SeriesLayoutPropertiesConverter.CreateOpenXmlElement<DXO16DCD.SeriesLayoutProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.SeriesLayoutProperties,DXO16DCD.SeriesLayoutProperties>(value);
     }
   }
   
@@ -261,22 +195,11 @@ public partial class Series: ModelElement<DXO16DCD.Series>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.ExtensionList>();
-      if (element != null)
-        return ExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.ExtensionList,DXO16DCD.ExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.ExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DXO16DCD.ExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.ExtensionList,DXO16DCD.ExtensionList>(value);
     }
   }
   

@@ -89,22 +89,11 @@ public partial class WebExtensionStoreReference: ModelElement<DXO13WE.WebExtensi
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13WE.OfficeArtExtensionList>();
-      if (element != null)
-        return OfficeArtExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMEX.OfficeArtExtensionList,DXO13WE.OfficeArtExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13WE.OfficeArtExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = OfficeArtExtensionListConverter.CreateOpenXmlElement<DXO13WE.OfficeArtExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMEX.OfficeArtExtensionList,DXO13WE.OfficeArtExtensionList>(value);
     }
   }
   

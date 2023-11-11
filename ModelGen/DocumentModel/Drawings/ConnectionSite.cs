@@ -38,22 +38,11 @@ public partial class ConnectionSite: ModelElement<DXD.ConnectionSite>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.Position>();
-      if (element != null)
-        return PositionConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.Position,DXD.Position>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.Position>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PositionConverter.CreateOpenXmlElement<DXD.Position>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.Position,DXD.Position>(value);
     }
   }
   

@@ -4,12 +4,10 @@
 /// This class specifies that one or more types of objects, when inserted into a WordprocessingML document, 
 /// are automatically be labeled with a specific caption defined using the caption element (§17.15.1.16).
 /// </summary>
-public partial class AutoCaptions
+public partial class AutoCaptions: NamedElementCollection<DXW.AutoCaptions, DXW.AutoCaption, DMW.AutoCaption>
 {
-  public AutoCaptions(DXW.AutoCaptions openXmlElement)
-  {
-    _Element = openXmlElement;
-  }
+  public AutoCaptions(){ }
 
-  internal DXW.AutoCaptions _Element { get; private set; }
+  public AutoCaptions(DXW.AutoCaptions openXmlElement): base(openXmlElement) { }
+
 }

@@ -123,22 +123,11 @@ public partial class GeoData: ModelElement<DXO16DCD.GeoData>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.GeoPolygons>();
-      if (element != null)
-        return GeoPolygonsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.GeoPolygons,DXO16DCD.GeoPolygons>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.GeoPolygons>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = GeoPolygonsConverter.CreateOpenXmlElement<DXO16DCD.GeoPolygons>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.GeoPolygons,DXO16DCD.GeoPolygons>(value);
     }
   }
   
@@ -151,22 +140,11 @@ public partial class GeoData: ModelElement<DXO16DCD.GeoData>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.Copyrights>();
-      if (element != null)
-        return CopyrightsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.Copyrights,DXO16DCD.Copyrights>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.Copyrights>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = CopyrightsConverter.CreateOpenXmlElement<DXO16DCD.Copyrights>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.Copyrights,DXO16DCD.Copyrights>(value);
     }
   }
   

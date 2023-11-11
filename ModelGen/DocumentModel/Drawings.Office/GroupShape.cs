@@ -17,22 +17,11 @@ public partial class GroupShape: ModelElement<DXOD.GroupShape>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXOD.GroupShapeNonVisualProperties>();
-      if (element != null)
-        return GroupShapeNonVisualPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDO.GroupShapeNonVisualProperties,DXOD.GroupShapeNonVisualProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXOD.GroupShapeNonVisualProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = GroupShapeNonVisualPropertiesConverter.CreateOpenXmlElement<DXOD.GroupShapeNonVisualProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDO.GroupShapeNonVisualProperties,DXOD.GroupShapeNonVisualProperties>(value);
     }
   }
   
@@ -41,22 +30,11 @@ public partial class GroupShape: ModelElement<DXOD.GroupShape>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXOD.GroupShapeProperties>();
-      if (element != null)
-        return GroupShapePropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDO.GroupShapeProperties,DXOD.GroupShapeProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXOD.GroupShapeProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = GroupShapePropertiesConverter.CreateOpenXmlElement<DXOD.GroupShapeProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDO.GroupShapeProperties,DXOD.GroupShapeProperties>(value);
     }
   }
   
@@ -65,22 +43,11 @@ public partial class GroupShape: ModelElement<DXOD.GroupShape>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXOD.OfficeArtExtensionList>();
-      if (element != null)
-        return OfficeArtExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDO.OfficeArtExtensionList,DXOD.OfficeArtExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXOD.OfficeArtExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = OfficeArtExtensionListConverter.CreateOpenXmlElement<DXOD.OfficeArtExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDO.OfficeArtExtensionList,DXOD.OfficeArtExtensionList>(value);
     }
   }
   

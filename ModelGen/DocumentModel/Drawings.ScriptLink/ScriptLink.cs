@@ -38,22 +38,11 @@ public partial class ScriptLink: ModelElement<DXOD21SL.ScriptLink>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXOD21SL.OfficeArtExtensionList>();
-      if (element != null)
-        return OfficeArtExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDSL.OfficeArtExtensionList,DXOD21SL.OfficeArtExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXOD21SL.OfficeArtExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = OfficeArtExtensionListConverter.CreateOpenXmlElement<DXOD21SL.OfficeArtExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDSL.OfficeArtExtensionList,DXOD21SL.OfficeArtExtensionList>(value);
     }
   }
   

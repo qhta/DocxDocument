@@ -21,22 +21,11 @@ public partial class DataModelRoot: ModelElement<DXDDD.DataModelRoot>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDDD.PointList>();
-      if (element != null)
-        return PointListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDD.PointList,DXDDD.PointList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDDD.PointList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PointListConverter.CreateOpenXmlElement<DXDDD.PointList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDD.PointList,DXDDD.PointList>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class DataModelRoot: ModelElement<DXDDD.DataModelRoot>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDDD.ConnectionList>();
-      if (element != null)
-        return ConnectionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDD.ConnectionList,DXDDD.ConnectionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDDD.ConnectionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ConnectionListConverter.CreateOpenXmlElement<DXDDD.ConnectionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDD.ConnectionList,DXDDD.ConnectionList>(value);
     }
   }
   
@@ -77,22 +55,11 @@ public partial class DataModelRoot: ModelElement<DXDDD.DataModelRoot>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDDD.Background>();
-      if (element != null)
-        return BackgroundConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDD.Background,DXDDD.Background>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDDD.Background>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BackgroundConverter.CreateOpenXmlElement<DXDDD.Background>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDD.Background,DXDDD.Background>(value);
     }
   }
   
@@ -105,22 +72,11 @@ public partial class DataModelRoot: ModelElement<DXDDD.DataModelRoot>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDDD.Whole>();
-      if (element != null)
-        return WholeConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDD.Whole,DXDDD.Whole>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDDD.Whole>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = WholeConverter.CreateOpenXmlElement<DXDDD.Whole>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDD.Whole,DXDDD.Whole>(value);
     }
   }
   
@@ -133,22 +89,11 @@ public partial class DataModelRoot: ModelElement<DXDDD.DataModelRoot>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDDD.DataModelExtensionList>();
-      if (element != null)
-        return DataModelExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDD.DataModelExtensionList,DXDDD.DataModelExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDDD.DataModelExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DataModelExtensionListConverter.CreateOpenXmlElement<DXDDD.DataModelExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDD.DataModelExtensionList,DXDDD.DataModelExtensionList>(value);
     }
   }
   

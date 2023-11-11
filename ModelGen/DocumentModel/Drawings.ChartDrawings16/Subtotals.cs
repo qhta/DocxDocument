@@ -17,11 +17,13 @@ public partial class Subtotals: ModelElement<DXO16DCD.Subtotals>
   {
     get
     {
-      var collection = new Collection<DMDCD16.UInt32>();
-      foreach (var item in _ExistingElement.Elements<>())
+      if (_Element==null)
+        return null;
+      var collection = new ElementCollection<DMDCD16.UInt32>();
+      foreach (var item in _ExistingElement.Elements<DXO16DCD.UnsignedIntegerType>())
       {
-        var newItem = ElementCollection<UInt32>Converter.CreateModelElement(item);
-        if (newItem != null)
+        var newItem = DX.UInt32ValueConverter.CreateModelElement(item);
+        if (newItem is not null)
           collection.Add(newItem);
       }
       if (collection.Count>0)
@@ -35,7 +37,7 @@ public partial class Subtotals: ModelElement<DXO16DCD.Subtotals>
       {
         foreach (var item in value)
         {
-          var newItem = ElementCollection<UInt32>Converter.CreateOpenXmlElement<DM.ElementCollection<UnsignedIntegerType>>(item);
+          var newItem = DX.UInt32ValueConverter.CreateOpenXmlElement<DXO16DCD.UnsignedIntegerType>(item);
           if (newItem != null)
             _ExistingElement.AddChild(newItem);
         }

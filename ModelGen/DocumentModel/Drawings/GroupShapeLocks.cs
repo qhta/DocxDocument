@@ -26,7 +26,7 @@ public partial class GroupShapeLocks: ModelElement<DXD.GroupShapeLocks>
     set
     {
       if (value != null)
-        _ExistingElement.NoGrouping = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.NoGrouping = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.NoGrouping = null;
     }
@@ -46,7 +46,7 @@ public partial class GroupShapeLocks: ModelElement<DXD.GroupShapeLocks>
     set
     {
       if (value != null)
-        _ExistingElement.NoUngrouping = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.NoUngrouping = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.NoUngrouping = null;
     }
@@ -66,7 +66,7 @@ public partial class GroupShapeLocks: ModelElement<DXD.GroupShapeLocks>
     set
     {
       if (value != null)
-        _ExistingElement.NoSelection = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.NoSelection = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.NoSelection = null;
     }
@@ -86,7 +86,7 @@ public partial class GroupShapeLocks: ModelElement<DXD.GroupShapeLocks>
     set
     {
       if (value != null)
-        _ExistingElement.NoRotation = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.NoRotation = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.NoRotation = null;
     }
@@ -106,7 +106,7 @@ public partial class GroupShapeLocks: ModelElement<DXD.GroupShapeLocks>
     set
     {
       if (value != null)
-        _ExistingElement.NoChangeAspect = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.NoChangeAspect = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.NoChangeAspect = null;
     }
@@ -126,7 +126,7 @@ public partial class GroupShapeLocks: ModelElement<DXD.GroupShapeLocks>
     set
     {
       if (value != null)
-        _ExistingElement.NoMove = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.NoMove = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.NoMove = null;
     }
@@ -146,7 +146,7 @@ public partial class GroupShapeLocks: ModelElement<DXD.GroupShapeLocks>
     set
     {
       if (value != null)
-        _ExistingElement.NoResize = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.NoResize = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.NoResize = null;
     }
@@ -161,22 +161,11 @@ public partial class GroupShapeLocks: ModelElement<DXD.GroupShapeLocks>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.ExtensionList>();
-      if (element != null)
-        return ExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.ExtensionList,DXD.ExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.ExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DXD.ExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.ExtensionList,DXD.ExtensionList>(value);
     }
   }
   

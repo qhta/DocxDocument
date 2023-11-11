@@ -21,22 +21,11 @@ public partial class TextProperties: ModelElement<DXDDD.TextProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.Shape3DType>();
-      if (element != null)
-        return Shape3DTypeConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.Shape3DType,DXD.Shape3DType>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.Shape3DType>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = Shape3DTypeConverter.CreateOpenXmlElement<DXD.Shape3DType>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.Shape3DType,DXD.Shape3DType>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class TextProperties: ModelElement<DXDDD.TextProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.FlatText>();
-      if (element != null)
-        return FlatTextConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.FlatText,DXD.FlatText>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.FlatText>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FlatTextConverter.CreateOpenXmlElement<DXD.FlatText>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.FlatText,DXD.FlatText>(value);
     }
   }
   

@@ -48,22 +48,11 @@ public partial class FieldMapData: ModelElement<DXW.FieldMapData>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.Name>();
-      if (element != null)
-        return NameConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.Name,DXW.Name>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Name>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NameConverter.CreateOpenXmlElement<DXW.Name>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.Name,DXW.Name>(value);
     }
   }
   
@@ -76,22 +65,11 @@ public partial class FieldMapData: ModelElement<DXW.FieldMapData>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.MappedName>();
-      if (element != null)
-        return MappedNameConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.MappedName,DXW.MappedName>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.MappedName>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = MappedNameConverter.CreateOpenXmlElement<DXW.MappedName>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.MappedName,DXW.MappedName>(value);
     }
   }
   
@@ -104,22 +82,11 @@ public partial class FieldMapData: ModelElement<DXW.FieldMapData>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.ColumnIndex>();
-      if (element != null)
-        return ColumnIndexConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.ColumnIndex,DXW.ColumnIndex>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.ColumnIndex>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ColumnIndexConverter.CreateOpenXmlElement<DXW.ColumnIndex>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.ColumnIndex,DXW.ColumnIndex>(value);
     }
   }
   
@@ -136,7 +103,7 @@ public partial class FieldMapData: ModelElement<DXW.FieldMapData>
     }
     set
     {
-      StringValueConverter.SetValue<DXW.LanguageId>(openXmlElement, value);
+      StringValueConverter.SetValue<DXW.LanguageId>(_ExistingElement, value);
     }
   }
   
@@ -149,22 +116,11 @@ public partial class FieldMapData: ModelElement<DXW.FieldMapData>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.DynamicAddress>();
-      if (element != null)
-        return DynamicAddressConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.DynamicAddress,DXW.DynamicAddress>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.DynamicAddress>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DynamicAddressConverter.CreateOpenXmlElement<DXW.DynamicAddress>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.DynamicAddress,DXW.DynamicAddress>(value);
     }
   }
   

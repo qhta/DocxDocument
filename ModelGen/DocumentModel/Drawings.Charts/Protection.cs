@@ -21,22 +21,11 @@ public partial class Protection: ModelElement<DXDC.Protection>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.ChartObject>();
-      if (element != null)
-        return ChartObjectConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.ChartObject,DXDC.ChartObject>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.ChartObject>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ChartObjectConverter.CreateOpenXmlElement<DXDC.ChartObject>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.ChartObject,DXDC.ChartObject>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class Protection: ModelElement<DXDC.Protection>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.Data>();
-      if (element != null)
-        return DataConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.Data,DXDC.Data>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.Data>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DataConverter.CreateOpenXmlElement<DXDC.Data>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.Data,DXDC.Data>(value);
     }
   }
   
@@ -77,22 +55,11 @@ public partial class Protection: ModelElement<DXDC.Protection>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.Formatting>();
-      if (element != null)
-        return FormattingConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.Formatting,DXDC.Formatting>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.Formatting>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FormattingConverter.CreateOpenXmlElement<DXDC.Formatting>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.Formatting,DXDC.Formatting>(value);
     }
   }
   
@@ -105,22 +72,11 @@ public partial class Protection: ModelElement<DXDC.Protection>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.Selection>();
-      if (element != null)
-        return SelectionConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.Selection,DXDC.Selection>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.Selection>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SelectionConverter.CreateOpenXmlElement<DXDC.Selection>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.Selection,DXDC.Selection>(value);
     }
   }
   
@@ -133,22 +89,11 @@ public partial class Protection: ModelElement<DXDC.Protection>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.UserInterface>();
-      if (element != null)
-        return UserInterfaceConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.UserInterface,DXDC.UserInterface>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.UserInterface>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = UserInterfaceConverter.CreateOpenXmlElement<DXDC.UserInterface>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.UserInterface,DXDC.UserInterface>(value);
     }
   }
   

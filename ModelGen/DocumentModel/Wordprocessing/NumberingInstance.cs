@@ -55,22 +55,11 @@ public partial class NumberingInstance: ModelElement<DXW.NumberingInstance>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.AbstractNumId>();
-      if (element != null)
-        return AbstractNumIdConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.AbstractNumId,DXW.AbstractNumId>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.AbstractNumId>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = AbstractNumIdConverter.CreateOpenXmlElement<DXW.AbstractNumId>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.AbstractNumId,DXW.AbstractNumId>(value);
     }
   }
   

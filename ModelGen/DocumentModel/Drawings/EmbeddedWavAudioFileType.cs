@@ -60,7 +60,7 @@ public partial class EmbeddedWavAudioFileType: ModelElement<DXD.EmbeddedWavAudio
     set
     {
       if (value != null)
-        _ExistingElement.BuiltIn = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.BuiltIn = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.BuiltIn = null;
     }

@@ -22,7 +22,7 @@ public partial class Picture: ModelElement<DXW.Picture>
     get
     {
       if (_Element?.AnchorId?.Value != null)
-        return HexIntConverter.GetValue(_ExistingElement.AnchorId.Value);
+        return HexIntConverter.GetValue(_Element?.AnchorId.Value);
       return null;
     }
     set
@@ -39,22 +39,11 @@ public partial class Picture: ModelElement<DXW.Picture>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.MovieReference>();
-      if (element != null)
-        return MovieReferenceConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.MovieReference,DXW.MovieReference>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.MovieReference>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = MovieReferenceConverter.CreateOpenXmlElement<DXW.MovieReference>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.MovieReference,DXW.MovieReference>(value);
     }
   }
   
@@ -63,22 +52,11 @@ public partial class Picture: ModelElement<DXW.Picture>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.Control>();
-      if (element != null)
-        return ControlConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.Control,DXW.Control>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Control>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ControlConverter.CreateOpenXmlElement<DXW.Control>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.Control,DXW.Control>(value);
     }
   }
   

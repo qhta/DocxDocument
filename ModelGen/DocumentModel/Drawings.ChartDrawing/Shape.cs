@@ -60,7 +60,7 @@ public partial class Shape: ModelElement<DXDCD.Shape>
     set
     {
       if (value != null)
-        _ExistingElement.LockText = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.LockText = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.LockText = null;
     }
@@ -80,7 +80,7 @@ public partial class Shape: ModelElement<DXDCD.Shape>
     set
     {
       if (value != null)
-        _ExistingElement.Published = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.Published = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.Published = null;
     }
@@ -95,22 +95,11 @@ public partial class Shape: ModelElement<DXDCD.Shape>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDCD.NonVisualShapeProperties>();
-      if (element != null)
-        return NonVisualShapePropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD.NonVisualShapeProperties,DXDCD.NonVisualShapeProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDCD.NonVisualShapeProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NonVisualShapePropertiesConverter.CreateOpenXmlElement<DXDCD.NonVisualShapeProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD.NonVisualShapeProperties,DXDCD.NonVisualShapeProperties>(value);
     }
   }
   
@@ -123,22 +112,11 @@ public partial class Shape: ModelElement<DXDCD.Shape>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDCD.ShapeProperties>();
-      if (element != null)
-        return ShapePropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD.ShapeProperties,DXDCD.ShapeProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDCD.ShapeProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ShapePropertiesConverter.CreateOpenXmlElement<DXDCD.ShapeProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD.ShapeProperties,DXDCD.ShapeProperties>(value);
     }
   }
   
@@ -151,22 +129,11 @@ public partial class Shape: ModelElement<DXDCD.Shape>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDCD.Style>();
-      if (element != null)
-        return StyleConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD.Style,DXDCD.Style>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDCD.Style>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = StyleConverter.CreateOpenXmlElement<DXDCD.Style>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD.Style,DXDCD.Style>(value);
     }
   }
   
@@ -179,22 +146,11 @@ public partial class Shape: ModelElement<DXDCD.Shape>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDCD.TextBody>();
-      if (element != null)
-        return TextBodyConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD.TextBody,DXDCD.TextBody>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDCD.TextBody>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TextBodyConverter.CreateOpenXmlElement<DXDCD.TextBody>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD.TextBody,DXDCD.TextBody>(value);
     }
   }
   

@@ -1,6 +1,4 @@
-﻿using System.Runtime.Serialization;
-
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// This class specifies a set of suggested filters which should be applied to the list of document styles in this application 
@@ -20,211 +18,211 @@ public partial class StylePaneFormatFilter: ModelElement<DXW.StylePaneFormatFilt
   {
     get
     {
-      var val = _Element.Val?.Value;
+      var val = _Element?.Val?.Value;
       if (val == null) return null;
       return new HexWord(val);
     }
     set
     {
       if (value != null)
-        _Element.Val = new DX.HexBinaryValue { Value = ((HexWord)value).ToString() };
+        _ExistingElement.Val = new DX.HexBinaryValue { Value = ((HexWord)value).ToString() };
       else
-        _Element.Val = null;
+        _ExistingElement.Val = null;
     }
   }
 
   [DataMember]
   public bool? AllStyles
   {
-    get => _Element.AllStyles?.Value;
+    get => _Element?.AllStyles?.Value;
     set
     {
       if (value != null)
-        _Element.AllStyles = new DX.OnOffValue { Value = (bool)value };
+        _ExistingElement.AllStyles = new DX.OnOffValue { Value = (bool)value };
       else
-        _Element.AllStyles = null;
+        _ExistingElement.AllStyles = null;
     }
   }
 
   [DataMember]
   public bool? CustomStyles
   {
-    get => _Element.CustomStyles?.Value;
+    get => _Element?.CustomStyles?.Value;
     set
     {
       if (value != null)
-        _Element.CustomStyles = new DX.OnOffValue { Value = (bool)value };
+        _ExistingElement.CustomStyles = new DX.OnOffValue { Value = (bool)value };
       else
-        _Element.CustomStyles = null;
+        _ExistingElement.CustomStyles = null;
     }
   }
 
   [DataMember]
   public bool? LatentStyles
   {
-    get => _Element.LatentStyles?.Value;
+    get => _Element?.LatentStyles?.Value;
     set
     {
       if (value != null)
-        _Element.LatentStyles = new DX.OnOffValue { Value = (bool)value };
+        _ExistingElement.LatentStyles = new DX.OnOffValue { Value = (bool)value };
       else
-        _Element.LatentStyles = null;
+        _ExistingElement.LatentStyles = null;
     }
   }
 
   [DataMember]
   public bool? StylesInUse
   {
-    get => _Element.StylesInUse?.Value;
+    get => _Element?.StylesInUse?.Value;
     set
     {
       if (value != null)
-        _Element.StylesInUse = new DX.OnOffValue { Value = (bool)value };
+        _ExistingElement.StylesInUse = new DX.OnOffValue { Value = (bool)value };
       else
-        _Element.StylesInUse = null;
+        _ExistingElement.StylesInUse = null;
     }
   }
 
   [DataMember]
   public bool? HeadingStyles
   {
-    get => _Element.HeadingStyles?.Value;
+    get => _Element?.HeadingStyles?.Value;
     set
     {
       if (value != null)
-        _Element.HeadingStyles = new DX.OnOffValue { Value = (bool)value };
+        _ExistingElement.HeadingStyles = new DX.OnOffValue { Value = (bool)value };
       else
-        _Element.HeadingStyles = null;
+        _ExistingElement.HeadingStyles = null;
     }
   }
 
   [DataMember]
   public bool? NumberingStyles
   {
-    get => _Element.HeadingStyles?.Value;
+    get => _Element?.HeadingStyles?.Value;
     set
     {
       if (value != null)
-        _Element.NumberingStyles = new DX.OnOffValue { Value = (bool)value };
+        _ExistingElement.NumberingStyles = new DX.OnOffValue { Value = (bool)value };
       else
-        _Element.NumberingStyles = null;
+        _ExistingElement.NumberingStyles = null;
     }
   }
 
   [DataMember]
   public bool? TableStyles
   {
-    get => _Element.TableStyles?.Value;
+    get => _Element?.TableStyles?.Value;
     set
     {
       if (value != null)
-        _Element.TableStyles = new DX.OnOffValue { Value = (bool)value };
+        _ExistingElement.TableStyles = new DX.OnOffValue { Value = (bool)value };
       else
-        _Element.TableStyles = null;
+        _ExistingElement.TableStyles = null;
     }
   }
 
   [DataMember]
   public bool? DirectFormattingOnRuns
   {
-    get => _Element.DirectFormattingOnRuns?.Value;
+    get => _Element?.DirectFormattingOnRuns?.Value;
     set
     {
       if (value != null)
-        _Element.DirectFormattingOnRuns = new DX.OnOffValue { Value = (bool)value };
+        _ExistingElement.DirectFormattingOnRuns = new DX.OnOffValue { Value = (bool)value };
       else
-        _Element.DirectFormattingOnRuns = null;
+        _ExistingElement.DirectFormattingOnRuns = null;
     }
   }
 
   [DataMember]
   public bool? DirectFormattingOnParagraphs
   {
-    get => _Element.DirectFormattingOnParagraphs?.Value;
+    get => _Element?.DirectFormattingOnParagraphs?.Value;
     set
     {
       if (value != null)
-        _Element.DirectFormattingOnParagraphs = new DX.OnOffValue { Value = (bool)value };
+        _ExistingElement.DirectFormattingOnParagraphs = new DX.OnOffValue { Value = (bool)value };
       else
-        _Element.DirectFormattingOnParagraphs = null;
+        _ExistingElement.DirectFormattingOnParagraphs = null;
     }
   }
 
   [DataMember]
   public bool? DirectFormattingOnNumbering
   {
-    get => _Element.DirectFormattingOnParagraphs?.Value;
+    get => _Element?.DirectFormattingOnParagraphs?.Value;
     set
     {
       if (value != null)
-        _Element.DirectFormattingOnNumbering = new DX.OnOffValue { Value = (bool)value };
+        _ExistingElement.DirectFormattingOnNumbering = new DX.OnOffValue { Value = (bool)value };
       else
-        _Element.DirectFormattingOnNumbering = null;
+        _ExistingElement.DirectFormattingOnNumbering = null;
     }
   }
 
   [DataMember]
   public bool? DirectFormattingOnTables
   {
-    get => _Element.DirectFormattingOnTables?.Value;
+    get => _Element?.DirectFormattingOnTables?.Value;
     set
     {
       if (value != null)
-        _Element.DirectFormattingOnTables = new DX.OnOffValue { Value = (bool)value };
+        _ExistingElement.DirectFormattingOnTables = new DX.OnOffValue { Value = (bool)value };
       else
-        _Element.DirectFormattingOnTables = null;
+        _ExistingElement.DirectFormattingOnTables = null;
     }
   }
 
   [DataMember]
   public bool? ClearFormatting
   {
-    get => _Element.ClearFormatting?.Value;
+    get => _Element?.ClearFormatting?.Value;
     set
     {
       if (value != null)
-        _Element.ClearFormatting = new DX.OnOffValue { Value = (bool)value };
+        _ExistingElement.ClearFormatting = new DX.OnOffValue { Value = (bool)value };
       else
-        _Element.ClearFormatting = null;
+        _ExistingElement.ClearFormatting = null;
     }
   }
 
   [DataMember]
   public bool? Top3HeadingStyles
   {
-    get => _Element.Top3HeadingStyles?.Value;
+    get => _Element?.Top3HeadingStyles?.Value;
     set
     {
       if (value != null)
-        _Element.Top3HeadingStyles = new DX.OnOffValue { Value = (bool)value };
+        _ExistingElement.Top3HeadingStyles = new DX.OnOffValue { Value = (bool)value };
       else
-        _Element.Top3HeadingStyles = null;
+        _ExistingElement.Top3HeadingStyles = null;
     }
   }
 
   [DataMember]
   public bool? VisibleStyles
   {
-    get => _Element.VisibleStyles?.Value;
+    get => _Element?.VisibleStyles?.Value;
     set
     {
       if (value != null)
-        _Element.VisibleStyles = new DX.OnOffValue { Value = (bool)value };
+        _ExistingElement.VisibleStyles = new DX.OnOffValue { Value = (bool)value };
       else
-        _Element.VisibleStyles = null;
+        _ExistingElement.VisibleStyles = null;
     }
   }
 
   [DataMember]
   public bool? AlternateStyleNames
   {
-    get => _Element.AlternateStyleNames?.Value;
+    get => _Element?.AlternateStyleNames?.Value;
     set
     {
       if (value != null)
-        _Element.AlternateStyleNames = new DX.OnOffValue { Value = (bool)value };
+        _ExistingElement.AlternateStyleNames = new DX.OnOffValue { Value = (bool)value };
       else
-        _Element.AlternateStyleNames = null;
+        _ExistingElement.AlternateStyleNames = null;
     }
   }
 

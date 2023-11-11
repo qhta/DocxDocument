@@ -21,22 +21,11 @@ public partial class ParagraphMarkRunProperties: ModelElement<DXW.ParagraphMarkR
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.Inserted>();
-      if (element != null)
-        return InsertedConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.Inserted,DXW.Inserted>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Inserted>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = InsertedConverter.CreateOpenXmlElement<DXW.Inserted>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.Inserted,DXW.Inserted>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class ParagraphMarkRunProperties: ModelElement<DXW.ParagraphMarkR
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.Deleted>();
-      if (element != null)
-        return DeletedConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.Deleted,DXW.Deleted>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Deleted>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DeletedConverter.CreateOpenXmlElement<DXW.Deleted>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.Deleted,DXW.Deleted>(value);
     }
   }
   
@@ -77,22 +55,11 @@ public partial class ParagraphMarkRunProperties: ModelElement<DXW.ParagraphMarkR
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.MoveFrom>();
-      if (element != null)
-        return MoveFromConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.MoveFrom,DXW.MoveFrom>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.MoveFrom>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = MoveFromConverter.CreateOpenXmlElement<DXW.MoveFrom>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.MoveFrom,DXW.MoveFrom>(value);
     }
   }
   
@@ -105,22 +72,11 @@ public partial class ParagraphMarkRunProperties: ModelElement<DXW.ParagraphMarkR
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.MoveTo>();
-      if (element != null)
-        return MoveToConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.MoveTo,DXW.MoveTo>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.MoveTo>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = MoveToConverter.CreateOpenXmlElement<DXW.MoveTo>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.MoveTo,DXW.MoveTo>(value);
     }
   }
   
@@ -129,22 +85,11 @@ public partial class ParagraphMarkRunProperties: ModelElement<DXW.ParagraphMarkR
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10W.ConflictInsertion>();
-      if (element != null)
-        return ConflictInsertionConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW10.ConflictInsertion,DXO10W.ConflictInsertion>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10W.ConflictInsertion>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ConflictInsertionConverter.CreateOpenXmlElement<DXO10W.ConflictInsertion>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW10.ConflictInsertion,DXO10W.ConflictInsertion>(value);
     }
   }
   
@@ -153,22 +98,11 @@ public partial class ParagraphMarkRunProperties: ModelElement<DXW.ParagraphMarkR
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10W.ConflictDeletion>();
-      if (element != null)
-        return ConflictDeletionConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW10.ConflictDeletion,DXO10W.ConflictDeletion>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10W.ConflictDeletion>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ConflictDeletionConverter.CreateOpenXmlElement<DXO10W.ConflictDeletion>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW10.ConflictDeletion,DXO10W.ConflictDeletion>(value);
     }
   }
   
@@ -177,22 +111,11 @@ public partial class ParagraphMarkRunProperties: ModelElement<DXW.ParagraphMarkR
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.RunStyle>();
-      if (element != null)
-        return RunStyleConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.RunStyle,DXW.RunStyle>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.RunStyle>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RunStyleConverter.CreateOpenXmlElement<DXW.RunStyle>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.RunStyle,DXW.RunStyle>(value);
     }
   }
   
@@ -201,22 +124,11 @@ public partial class ParagraphMarkRunProperties: ModelElement<DXW.ParagraphMarkR
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.RunFonts>();
-      if (element != null)
-        return RunFontsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.RunFonts,DXW.RunFonts>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.RunFonts>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RunFontsConverter.CreateOpenXmlElement<DXW.RunFonts>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.RunFonts,DXW.RunFonts>(value);
     }
   }
   
@@ -225,22 +137,11 @@ public partial class ParagraphMarkRunProperties: ModelElement<DXW.ParagraphMarkR
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.Bold>();
-      if (element != null)
-        return BoldConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.Bold,DXW.Bold>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Bold>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BoldConverter.CreateOpenXmlElement<DXW.Bold>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.Bold,DXW.Bold>(value);
     }
   }
   
@@ -249,22 +150,11 @@ public partial class ParagraphMarkRunProperties: ModelElement<DXW.ParagraphMarkR
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.BoldComplexScript>();
-      if (element != null)
-        return BoldComplexScriptConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.BoldComplexScript,DXW.BoldComplexScript>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.BoldComplexScript>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BoldComplexScriptConverter.CreateOpenXmlElement<DXW.BoldComplexScript>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.BoldComplexScript,DXW.BoldComplexScript>(value);
     }
   }
   
@@ -273,22 +163,11 @@ public partial class ParagraphMarkRunProperties: ModelElement<DXW.ParagraphMarkR
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.Italic>();
-      if (element != null)
-        return ItalicConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.Italic,DXW.Italic>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Italic>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ItalicConverter.CreateOpenXmlElement<DXW.Italic>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.Italic,DXW.Italic>(value);
     }
   }
   
@@ -297,22 +176,11 @@ public partial class ParagraphMarkRunProperties: ModelElement<DXW.ParagraphMarkR
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.ItalicComplexScript>();
-      if (element != null)
-        return ItalicComplexScriptConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.ItalicComplexScript,DXW.ItalicComplexScript>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.ItalicComplexScript>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ItalicComplexScriptConverter.CreateOpenXmlElement<DXW.ItalicComplexScript>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.ItalicComplexScript,DXW.ItalicComplexScript>(value);
     }
   }
   
@@ -321,22 +189,11 @@ public partial class ParagraphMarkRunProperties: ModelElement<DXW.ParagraphMarkR
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.Caps>();
-      if (element != null)
-        return CapsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.Caps,DXW.Caps>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Caps>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = CapsConverter.CreateOpenXmlElement<DXW.Caps>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.Caps,DXW.Caps>(value);
     }
   }
   
@@ -345,22 +202,11 @@ public partial class ParagraphMarkRunProperties: ModelElement<DXW.ParagraphMarkR
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.SmallCaps>();
-      if (element != null)
-        return SmallCapsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.SmallCaps,DXW.SmallCaps>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.SmallCaps>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SmallCapsConverter.CreateOpenXmlElement<DXW.SmallCaps>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.SmallCaps,DXW.SmallCaps>(value);
     }
   }
   
@@ -369,22 +215,11 @@ public partial class ParagraphMarkRunProperties: ModelElement<DXW.ParagraphMarkR
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.Strike>();
-      if (element != null)
-        return StrikeConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.Strike,DXW.Strike>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Strike>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = StrikeConverter.CreateOpenXmlElement<DXW.Strike>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.Strike,DXW.Strike>(value);
     }
   }
   
@@ -393,22 +228,11 @@ public partial class ParagraphMarkRunProperties: ModelElement<DXW.ParagraphMarkR
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.DoubleStrike>();
-      if (element != null)
-        return DoubleStrikeConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.DoubleStrike,DXW.DoubleStrike>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.DoubleStrike>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DoubleStrikeConverter.CreateOpenXmlElement<DXW.DoubleStrike>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.DoubleStrike,DXW.DoubleStrike>(value);
     }
   }
   
@@ -417,22 +241,11 @@ public partial class ParagraphMarkRunProperties: ModelElement<DXW.ParagraphMarkR
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.Outline>();
-      if (element != null)
-        return OutlineConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.Outline,DXW.Outline>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Outline>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = OutlineConverter.CreateOpenXmlElement<DXW.Outline>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.Outline,DXW.Outline>(value);
     }
   }
   
@@ -441,22 +254,11 @@ public partial class ParagraphMarkRunProperties: ModelElement<DXW.ParagraphMarkR
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.Shadow>();
-      if (element != null)
-        return ShadowConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.Shadow,DXW.Shadow>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Shadow>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ShadowConverter.CreateOpenXmlElement<DXW.Shadow>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.Shadow,DXW.Shadow>(value);
     }
   }
   
@@ -465,22 +267,11 @@ public partial class ParagraphMarkRunProperties: ModelElement<DXW.ParagraphMarkR
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.Emboss>();
-      if (element != null)
-        return EmbossConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.Emboss,DXW.Emboss>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Emboss>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EmbossConverter.CreateOpenXmlElement<DXW.Emboss>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.Emboss,DXW.Emboss>(value);
     }
   }
   
@@ -489,22 +280,11 @@ public partial class ParagraphMarkRunProperties: ModelElement<DXW.ParagraphMarkR
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.Imprint>();
-      if (element != null)
-        return ImprintConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.Imprint,DXW.Imprint>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Imprint>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ImprintConverter.CreateOpenXmlElement<DXW.Imprint>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.Imprint,DXW.Imprint>(value);
     }
   }
   
@@ -513,22 +293,11 @@ public partial class ParagraphMarkRunProperties: ModelElement<DXW.ParagraphMarkR
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.NoProof>();
-      if (element != null)
-        return NoProofConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.NoProof,DXW.NoProof>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.NoProof>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NoProofConverter.CreateOpenXmlElement<DXW.NoProof>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.NoProof,DXW.NoProof>(value);
     }
   }
   
@@ -537,22 +306,11 @@ public partial class ParagraphMarkRunProperties: ModelElement<DXW.ParagraphMarkR
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.SnapToGrid>();
-      if (element != null)
-        return SnapToGridConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.SnapToGrid,DXW.SnapToGrid>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.SnapToGrid>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SnapToGridConverter.CreateOpenXmlElement<DXW.SnapToGrid>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.SnapToGrid,DXW.SnapToGrid>(value);
     }
   }
   
@@ -561,22 +319,11 @@ public partial class ParagraphMarkRunProperties: ModelElement<DXW.ParagraphMarkR
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.Vanish>();
-      if (element != null)
-        return VanishConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.Vanish,DXW.Vanish>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Vanish>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = VanishConverter.CreateOpenXmlElement<DXW.Vanish>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.Vanish,DXW.Vanish>(value);
     }
   }
   
@@ -585,22 +332,11 @@ public partial class ParagraphMarkRunProperties: ModelElement<DXW.ParagraphMarkR
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.WebHidden>();
-      if (element != null)
-        return WebHiddenConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.WebHidden,DXW.WebHidden>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.WebHidden>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = WebHiddenConverter.CreateOpenXmlElement<DXW.WebHidden>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.WebHidden,DXW.WebHidden>(value);
     }
   }
   
@@ -609,22 +345,11 @@ public partial class ParagraphMarkRunProperties: ModelElement<DXW.ParagraphMarkR
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.Color>();
-      if (element != null)
-        return ColorConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.Color,DXW.Color>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Color>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ColorConverter.CreateOpenXmlElement<DXW.Color>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.Color,DXW.Color>(value);
     }
   }
   
@@ -637,7 +362,7 @@ public partial class ParagraphMarkRunProperties: ModelElement<DXW.ParagraphMarkR
     }
     set
     {
-      SimpleValueConverter.SetValue<DXW.Spacing,System.Int32>(openXmlElement, value);
+      SimpleValueConverter.SetValue<DXW.Spacing,System.Int32>(_ExistingElement, value);
     }
   }
   
@@ -650,7 +375,7 @@ public partial class ParagraphMarkRunProperties: ModelElement<DXW.ParagraphMarkR
     }
     set
     {
-      SimpleValueConverter.SetValue<DXW.CharacterScale,System.Int64>(openXmlElement, value);
+      SimpleValueConverter.SetValue<DXW.CharacterScale,System.Int64>(_ExistingElement, value);
     }
   }
   
@@ -663,7 +388,7 @@ public partial class ParagraphMarkRunProperties: ModelElement<DXW.ParagraphMarkR
     }
     set
     {
-      SimpleValueConverter.SetValue<DXW.Kern,System.UInt32>(openXmlElement, value);
+      SimpleValueConverter.SetValue<DXW.Kern,System.UInt32>(_ExistingElement, value);
     }
   }
   
@@ -676,7 +401,7 @@ public partial class ParagraphMarkRunProperties: ModelElement<DXW.ParagraphMarkR
     }
     set
     {
-      StringValueConverter.SetValue<DXW.Position>(openXmlElement, value);
+      StringValueConverter.SetValue<DXW.Position>(_ExistingElement, value);
     }
   }
   
@@ -685,22 +410,11 @@ public partial class ParagraphMarkRunProperties: ModelElement<DXW.ParagraphMarkR
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.FontSize>();
-      if (element != null)
-        return FontSizeConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.FontSize,DXW.FontSize>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.FontSize>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FontSizeConverter.CreateOpenXmlElement<DXW.FontSize>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.FontSize,DXW.FontSize>(value);
     }
   }
   
@@ -709,22 +423,11 @@ public partial class ParagraphMarkRunProperties: ModelElement<DXW.ParagraphMarkR
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.FontSizeComplexScript>();
-      if (element != null)
-        return FontSizeComplexScriptConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.FontSizeComplexScript,DXW.FontSizeComplexScript>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.FontSizeComplexScript>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FontSizeComplexScriptConverter.CreateOpenXmlElement<DXW.FontSizeComplexScript>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.FontSizeComplexScript,DXW.FontSizeComplexScript>(value);
     }
   }
   
@@ -756,22 +459,11 @@ public partial class ParagraphMarkRunProperties: ModelElement<DXW.ParagraphMarkR
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.Underline>();
-      if (element != null)
-        return UnderlineConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.Underline,DXW.Underline>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Underline>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = UnderlineConverter.CreateOpenXmlElement<DXW.Underline>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.Underline,DXW.Underline>(value);
     }
   }
   
@@ -803,22 +495,11 @@ public partial class ParagraphMarkRunProperties: ModelElement<DXW.ParagraphMarkR
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.Border>();
-      if (element != null)
-        return BorderConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.Border,DXW.Border>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Border>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BorderConverter.CreateOpenXmlElement<DXW.Border>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.Border,DXW.Border>(value);
     }
   }
   
@@ -827,22 +508,11 @@ public partial class ParagraphMarkRunProperties: ModelElement<DXW.ParagraphMarkR
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.Shading>();
-      if (element != null)
-        return ShadingConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.Shading,DXW.Shading>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Shading>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ShadingConverter.CreateOpenXmlElement<DXW.Shading>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.Shading,DXW.Shading>(value);
     }
   }
   
@@ -851,22 +521,11 @@ public partial class ParagraphMarkRunProperties: ModelElement<DXW.ParagraphMarkR
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.FitText>();
-      if (element != null)
-        return FitTextConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.FitText,DXW.FitText>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.FitText>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FitTextConverter.CreateOpenXmlElement<DXW.FitText>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.FitText,DXW.FitText>(value);
     }
   }
   
@@ -898,22 +557,11 @@ public partial class ParagraphMarkRunProperties: ModelElement<DXW.ParagraphMarkR
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.RightToLeftText>();
-      if (element != null)
-        return RightToLeftTextConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.RightToLeftText,DXW.RightToLeftText>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.RightToLeftText>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RightToLeftTextConverter.CreateOpenXmlElement<DXW.RightToLeftText>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.RightToLeftText,DXW.RightToLeftText>(value);
     }
   }
   
@@ -922,22 +570,11 @@ public partial class ParagraphMarkRunProperties: ModelElement<DXW.ParagraphMarkR
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.ComplexScript>();
-      if (element != null)
-        return ComplexScriptConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.ComplexScript,DXW.ComplexScript>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.ComplexScript>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ComplexScriptConverter.CreateOpenXmlElement<DXW.ComplexScript>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.ComplexScript,DXW.ComplexScript>(value);
     }
   }
   
@@ -969,22 +606,11 @@ public partial class ParagraphMarkRunProperties: ModelElement<DXW.ParagraphMarkR
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.Languages>();
-      if (element != null)
-        return LanguagesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.Languages,DXW.Languages>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Languages>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LanguagesConverter.CreateOpenXmlElement<DXW.Languages>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.Languages,DXW.Languages>(value);
     }
   }
   
@@ -993,22 +619,11 @@ public partial class ParagraphMarkRunProperties: ModelElement<DXW.ParagraphMarkR
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.EastAsianLayout>();
-      if (element != null)
-        return EastAsianLayoutConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.EastAsianLayout,DXW.EastAsianLayout>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.EastAsianLayout>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EastAsianLayoutConverter.CreateOpenXmlElement<DXW.EastAsianLayout>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.EastAsianLayout,DXW.EastAsianLayout>(value);
     }
   }
   
@@ -1017,22 +632,11 @@ public partial class ParagraphMarkRunProperties: ModelElement<DXW.ParagraphMarkR
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.SpecVanish>();
-      if (element != null)
-        return SpecVanishConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.SpecVanish,DXW.SpecVanish>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.SpecVanish>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SpecVanishConverter.CreateOpenXmlElement<DXW.SpecVanish>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.SpecVanish,DXW.SpecVanish>(value);
     }
   }
   
@@ -1041,22 +645,11 @@ public partial class ParagraphMarkRunProperties: ModelElement<DXW.ParagraphMarkR
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10W.Glow>();
-      if (element != null)
-        return GlowConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW10.Glow,DXO10W.Glow>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10W.Glow>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = GlowConverter.CreateOpenXmlElement<DXO10W.Glow>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW10.Glow,DXO10W.Glow>(value);
     }
   }
   
@@ -1065,22 +658,11 @@ public partial class ParagraphMarkRunProperties: ModelElement<DXW.ParagraphMarkR
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10W.Reflection>();
-      if (element != null)
-        return ReflectionConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW10.Reflection,DXO10W.Reflection>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10W.Reflection>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ReflectionConverter.CreateOpenXmlElement<DXO10W.Reflection>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW10.Reflection,DXO10W.Reflection>(value);
     }
   }
   
@@ -1089,22 +671,11 @@ public partial class ParagraphMarkRunProperties: ModelElement<DXW.ParagraphMarkR
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10W.TextOutlineEffect>();
-      if (element != null)
-        return TextOutlineEffectConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW10.TextOutlineEffect,DXO10W.TextOutlineEffect>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10W.TextOutlineEffect>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TextOutlineEffectConverter.CreateOpenXmlElement<DXO10W.TextOutlineEffect>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW10.TextOutlineEffect,DXO10W.TextOutlineEffect>(value);
     }
   }
   
@@ -1113,22 +684,11 @@ public partial class ParagraphMarkRunProperties: ModelElement<DXW.ParagraphMarkR
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10W.FillTextEffect>();
-      if (element != null)
-        return FillTextEffectConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW10.FillTextEffect,DXO10W.FillTextEffect>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10W.FillTextEffect>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FillTextEffectConverter.CreateOpenXmlElement<DXO10W.FillTextEffect>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW10.FillTextEffect,DXO10W.FillTextEffect>(value);
     }
   }
   
@@ -1137,22 +697,11 @@ public partial class ParagraphMarkRunProperties: ModelElement<DXW.ParagraphMarkR
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10W.Scene3D>();
-      if (element != null)
-        return Scene3DConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW10.Scene3D,DXO10W.Scene3D>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10W.Scene3D>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = Scene3DConverter.CreateOpenXmlElement<DXO10W.Scene3D>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW10.Scene3D,DXO10W.Scene3D>(value);
     }
   }
   
@@ -1161,22 +710,11 @@ public partial class ParagraphMarkRunProperties: ModelElement<DXW.ParagraphMarkR
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10W.Properties3D>();
-      if (element != null)
-        return Properties3DConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW10.Properties3D,DXO10W.Properties3D>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10W.Properties3D>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = Properties3DConverter.CreateOpenXmlElement<DXO10W.Properties3D>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW10.Properties3D,DXO10W.Properties3D>(value);
     }
   }
   
@@ -1254,22 +792,11 @@ public partial class ParagraphMarkRunProperties: ModelElement<DXW.ParagraphMarkR
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10W.StylisticSets>();
-      if (element != null)
-        return StylisticSetsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW10.StylisticSets,DXO10W.StylisticSets>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10W.StylisticSets>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = StylisticSetsConverter.CreateOpenXmlElement<DXO10W.StylisticSets>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW10.StylisticSets,DXO10W.StylisticSets>(value);
     }
   }
   
@@ -1278,22 +805,11 @@ public partial class ParagraphMarkRunProperties: ModelElement<DXW.ParagraphMarkR
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10W.ContextualAlternatives>();
-      if (element != null)
-        return ContextualAlternativesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW10.ContextualAlternatives,DXO10W.ContextualAlternatives>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10W.ContextualAlternatives>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ContextualAlternativesConverter.CreateOpenXmlElement<DXO10W.ContextualAlternatives>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW10.ContextualAlternatives,DXO10W.ContextualAlternatives>(value);
     }
   }
   
@@ -1302,22 +818,11 @@ public partial class ParagraphMarkRunProperties: ModelElement<DXW.ParagraphMarkR
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.OfficeMath>();
-      if (element != null)
-        return OfficeMathConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.OfficeMath,DXW.OfficeMath>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.OfficeMath>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = OfficeMathConverter.CreateOpenXmlElement<DXW.OfficeMath>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.OfficeMath,DXW.OfficeMath>(value);
     }
   }
   
@@ -1326,22 +831,11 @@ public partial class ParagraphMarkRunProperties: ModelElement<DXW.ParagraphMarkR
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.ParagraphMarkRunPropertiesChange>();
-      if (element != null)
-        return ParagraphMarkRunPropertiesChangeConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.ParagraphMarkRunPropertiesChange,DXW.ParagraphMarkRunPropertiesChange>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.ParagraphMarkRunPropertiesChange>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ParagraphMarkRunPropertiesChangeConverter.CreateOpenXmlElement<DXW.ParagraphMarkRunPropertiesChange>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.ParagraphMarkRunPropertiesChange,DXW.ParagraphMarkRunPropertiesChange>(value);
     }
   }
   

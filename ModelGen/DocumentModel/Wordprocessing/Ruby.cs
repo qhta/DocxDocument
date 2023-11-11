@@ -21,22 +21,11 @@ public partial class Ruby: ModelElement<DXW.Ruby>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.RubyProperties>();
-      if (element != null)
-        return RubyPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.RubyProperties,DXW.RubyProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.RubyProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RubyPropertiesConverter.CreateOpenXmlElement<DXW.RubyProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.RubyProperties,DXW.RubyProperties>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class Ruby: ModelElement<DXW.Ruby>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.RubyContent>();
-      if (element != null)
-        return RubyContentConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.RubyContent,DXW.RubyContent>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.RubyContent>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RubyContentConverter.CreateOpenXmlElement<DXW.RubyContent>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.RubyContent,DXW.RubyContent>(value);
     }
   }
   
@@ -77,22 +55,11 @@ public partial class Ruby: ModelElement<DXW.Ruby>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.RubyBase>();
-      if (element != null)
-        return RubyBaseConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.RubyBase,DXW.RubyBase>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.RubyBase>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RubyBaseConverter.CreateOpenXmlElement<DXW.RubyBase>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.RubyBase,DXW.RubyBase>(value);
     }
   }
   

@@ -26,7 +26,7 @@ public partial class Ribbon: ModelElement<DXOCUI.Ribbon>
     set
     {
       if (value != null)
-        _ExistingElement.StartFromScratch = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.StartFromScratch = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.StartFromScratch = null;
     }
@@ -41,22 +41,11 @@ public partial class Ribbon: ModelElement<DXOCUI.Ribbon>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXOCUI.OfficeMenu>();
-      if (element != null)
-        return OfficeMenuConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMCUI.OfficeMenu,DXOCUI.OfficeMenu>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXOCUI.OfficeMenu>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = OfficeMenuConverter.CreateOpenXmlElement<DXOCUI.OfficeMenu>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMCUI.OfficeMenu,DXOCUI.OfficeMenu>(value);
     }
   }
   
@@ -69,22 +58,11 @@ public partial class Ribbon: ModelElement<DXOCUI.Ribbon>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXOCUI.QuickAccessToolbar>();
-      if (element != null)
-        return QuickAccessToolbarConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMCUI.QuickAccessToolbar,DXOCUI.QuickAccessToolbar>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXOCUI.QuickAccessToolbar>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = QuickAccessToolbarConverter.CreateOpenXmlElement<DXOCUI.QuickAccessToolbar>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMCUI.QuickAccessToolbar,DXOCUI.QuickAccessToolbar>(value);
     }
   }
   
@@ -97,22 +75,11 @@ public partial class Ribbon: ModelElement<DXOCUI.Ribbon>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXOCUI.Tabs>();
-      if (element != null)
-        return TabsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMCUI.Tabs,DXOCUI.Tabs>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXOCUI.Tabs>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TabsConverter.CreateOpenXmlElement<DXOCUI.Tabs>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMCUI.Tabs,DXOCUI.Tabs>(value);
     }
   }
   
@@ -125,22 +92,11 @@ public partial class Ribbon: ModelElement<DXOCUI.Ribbon>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXOCUI.ContextualTabSets>();
-      if (element != null)
-        return ContextualTabSetsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMCUI.ContextualTabSets,DXOCUI.ContextualTabSets>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXOCUI.ContextualTabSets>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ContextualTabSetsConverter.CreateOpenXmlElement<DXOCUI.ContextualTabSets>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMCUI.ContextualTabSets,DXOCUI.ContextualTabSets>(value);
     }
   }
   

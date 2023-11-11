@@ -21,22 +21,11 @@ public partial class SeriesText: ModelElement<DXDC.SeriesText>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.StringReference>();
-      if (element != null)
-        return StringReferenceConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.StringReference,DXDC.StringReference>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.StringReference>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = StringReferenceConverter.CreateOpenXmlElement<DXDC.StringReference>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.StringReference,DXDC.StringReference>(value);
     }
   }
   
@@ -45,26 +34,15 @@ public partial class SeriesText: ModelElement<DXDC.SeriesText>
   ///   NumericValue.
   /// </summary>
   [DataMember]
-  public DMDC.NumericValue? NumericValue
+  public DM.NumericValue? NumericValue
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.NumericValue>();
-      if (element != null)
-        return NumericValueConverter.CreateModelElement(element);
-      return null;
+      return NumericValueConverter.GetValue(_Element?.NumericValue);
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.NumericValue>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NumericValueConverter.CreateOpenXmlElement<DXDC.NumericValue>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.NumericValue = NumericValueConverter.CreateOpenXmlElement<DXDC.NumericValue>(value);
     }
   }
   

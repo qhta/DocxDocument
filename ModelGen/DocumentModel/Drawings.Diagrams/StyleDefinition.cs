@@ -51,22 +51,11 @@ public partial class StyleDefinition: ModelElement<DXDDD.StyleDefinition>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDDD.StyleDisplayCategories>();
-      if (element != null)
-        return StyleDisplayCategoriesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDD.StyleDisplayCategories,DXDDD.StyleDisplayCategories>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDDD.StyleDisplayCategories>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = StyleDisplayCategoriesConverter.CreateOpenXmlElement<DXDDD.StyleDisplayCategories>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDD.StyleDisplayCategories,DXDDD.StyleDisplayCategories>(value);
     }
   }
   
@@ -75,22 +64,11 @@ public partial class StyleDefinition: ModelElement<DXDDD.StyleDefinition>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDDD.Scene3D>();
-      if (element != null)
-        return Scene3DConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDD.Scene3D,DXDDD.Scene3D>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDDD.Scene3D>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = Scene3DConverter.CreateOpenXmlElement<DXDDD.Scene3D>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDD.Scene3D,DXDDD.Scene3D>(value);
     }
   }
   
@@ -99,22 +77,11 @@ public partial class StyleDefinition: ModelElement<DXDDD.StyleDefinition>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDDD.ExtensionList>();
-      if (element != null)
-        return ExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDD.ExtensionList,DXDDD.ExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDDD.ExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DXDDD.ExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDD.ExtensionList,DXDDD.ExtensionList>(value);
     }
   }
   

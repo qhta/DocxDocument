@@ -21,22 +21,11 @@ public partial class LightRig: ModelElement<DXD.LightRig>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.Rotation>();
-      if (element != null)
-        return RotationConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.Rotation,DXD.Rotation>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.Rotation>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RotationConverter.CreateOpenXmlElement<DXD.Rotation>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.Rotation,DXD.Rotation>(value);
     }
   }
   

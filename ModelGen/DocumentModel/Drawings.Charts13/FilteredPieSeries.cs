@@ -21,22 +21,11 @@ public partial class FilteredPieSeries: ModelElement<DXO13DC.FilteredPieSeries>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13DC.PieChartSeries>();
-      if (element != null)
-        return PieChartSeriesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC13.PieChartSeries,DXO13DC.PieChartSeries>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13DC.PieChartSeries>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PieChartSeriesConverter.CreateOpenXmlElement<DXO13DC.PieChartSeries>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC13.PieChartSeries,DXO13DC.PieChartSeries>(value);
     }
   }
   

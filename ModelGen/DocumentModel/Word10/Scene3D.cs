@@ -21,22 +21,11 @@ public partial class Scene3D: ModelElement<DXO10W.Scene3D>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10W.Camera>();
-      if (element != null)
-        return CameraConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW10.Camera,DXO10W.Camera>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10W.Camera>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = CameraConverter.CreateOpenXmlElement<DXO10W.Camera>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW10.Camera,DXO10W.Camera>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class Scene3D: ModelElement<DXO10W.Scene3D>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10W.LightRig>();
-      if (element != null)
-        return LightRigConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW10.LightRig,DXO10W.LightRig>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10W.LightRig>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LightRigConverter.CreateOpenXmlElement<DXO10W.LightRig>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW10.LightRig,DXO10W.LightRig>(value);
     }
   }
   

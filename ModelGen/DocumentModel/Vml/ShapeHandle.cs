@@ -68,15 +68,18 @@ public partial class ShapeHandle: ModelElement<DXV.ShapeHandle>
   ///   Invert Handle's X Position
   /// </summary>
   [DataMember]
-  public DM.TrueFalseBlankValue? InvertX
+  public Boolean? InvertX
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseBlankValue>()?.Val);
+      return _Element?.InvertX?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseBlankValue,DocumentFormat.OpenXml.TrueFalseBlankValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.InvertX = value;
+      else
+        _ExistingElement.InvertX = null;
     }
   }
   
@@ -85,15 +88,18 @@ public partial class ShapeHandle: ModelElement<DXV.ShapeHandle>
   ///   Invert Handle's Y Position
   /// </summary>
   [DataMember]
-  public DM.TrueFalseBlankValue? InvertY
+  public Boolean? InvertY
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseBlankValue>()?.Val);
+      return _Element?.InvertY?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseBlankValue,DocumentFormat.OpenXml.TrueFalseBlankValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.InvertY = value;
+      else
+        _ExistingElement.InvertY = null;
     }
   }
   
@@ -102,15 +108,18 @@ public partial class ShapeHandle: ModelElement<DXV.ShapeHandle>
   ///   Handle Inversion Toggle
   /// </summary>
   [DataMember]
-  public DM.TrueFalseBlankValue? Switch
+  public Boolean? Switch
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseBlankValue>()?.Val);
+      return _Element?.Switch?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseBlankValue,DocumentFormat.OpenXml.TrueFalseBlankValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.Switch = value;
+      else
+        _ExistingElement.Switch = null;
     }
   }
   

@@ -72,22 +72,11 @@ public partial class GeoLocation: ModelElement<DXO16DCD.GeoLocation>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.Address>();
-      if (element != null)
-        return AddressConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.Address,DXO16DCD.Address>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.Address>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = AddressConverter.CreateOpenXmlElement<DXO16DCD.Address>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.Address,DXO16DCD.Address>(value);
     }
   }
   

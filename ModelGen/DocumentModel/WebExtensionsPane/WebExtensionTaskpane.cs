@@ -43,7 +43,7 @@ public partial class WebExtensionTaskpane: ModelElement<DXO13WEP.WebExtensionTas
     set
     {
       if (value != null)
-        _ExistingElement.Visibility = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.Visibility = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.Visibility = null;
     }
@@ -97,7 +97,7 @@ public partial class WebExtensionTaskpane: ModelElement<DXO13WEP.WebExtensionTas
     set
     {
       if (value != null)
-        _ExistingElement.Locked = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.Locked = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.Locked = null;
     }
@@ -112,22 +112,11 @@ public partial class WebExtensionTaskpane: ModelElement<DXO13WEP.WebExtensionTas
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13WEP.WebExtensionPartReference>();
-      if (element != null)
-        return WebExtensionPartReferenceConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMWEP.WebExtensionPartReference,DXO13WEP.WebExtensionPartReference>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13WEP.WebExtensionPartReference>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = WebExtensionPartReferenceConverter.CreateOpenXmlElement<DXO13WEP.WebExtensionPartReference>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMWEP.WebExtensionPartReference,DXO13WEP.WebExtensionPartReference>(value);
     }
   }
   
@@ -140,22 +129,11 @@ public partial class WebExtensionTaskpane: ModelElement<DXO13WEP.WebExtensionTas
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13WEP.OfficeArtExtensionList>();
-      if (element != null)
-        return OfficeArtExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMWEP.OfficeArtExtensionList,DXO13WEP.OfficeArtExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13WEP.OfficeArtExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = OfficeArtExtensionListConverter.CreateOpenXmlElement<DXO13WEP.OfficeArtExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMWEP.OfficeArtExtensionList,DXO13WEP.OfficeArtExtensionList>(value);
     }
   }
   

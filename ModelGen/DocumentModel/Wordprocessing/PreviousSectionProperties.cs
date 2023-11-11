@@ -22,7 +22,7 @@ public partial class PreviousSectionProperties: ModelElement<DXW.PreviousSection
     get
     {
       if (_Element?.RsidRPr?.Value != null)
-        return HexIntConverter.GetValue(_ExistingElement.RsidRPr.Value);
+        return HexIntConverter.GetValue(_Element?.RsidRPr.Value);
       return null;
     }
     set
@@ -44,7 +44,7 @@ public partial class PreviousSectionProperties: ModelElement<DXW.PreviousSection
     get
     {
       if (_Element?.RsidDel?.Value != null)
-        return HexIntConverter.GetValue(_ExistingElement.RsidDel.Value);
+        return HexIntConverter.GetValue(_Element?.RsidDel.Value);
       return null;
     }
     set
@@ -66,7 +66,7 @@ public partial class PreviousSectionProperties: ModelElement<DXW.PreviousSection
     get
     {
       if (_Element?.RsidR?.Value != null)
-        return HexIntConverter.GetValue(_ExistingElement.RsidR.Value);
+        return HexIntConverter.GetValue(_Element?.RsidR.Value);
       return null;
     }
     set
@@ -88,7 +88,7 @@ public partial class PreviousSectionProperties: ModelElement<DXW.PreviousSection
     get
     {
       if (_Element?.RsidSect?.Value != null)
-        return HexIntConverter.GetValue(_ExistingElement.RsidSect.Value);
+        return HexIntConverter.GetValue(_Element?.RsidSect.Value);
       return null;
     }
     set
@@ -109,22 +109,11 @@ public partial class PreviousSectionProperties: ModelElement<DXW.PreviousSection
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.FootnoteProperties>();
-      if (element != null)
-        return FootnotePropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.FootnoteProperties,DXW.FootnoteProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.FootnoteProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FootnotePropertiesConverter.CreateOpenXmlElement<DXW.FootnoteProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.FootnoteProperties,DXW.FootnoteProperties>(value);
     }
   }
   
@@ -137,22 +126,11 @@ public partial class PreviousSectionProperties: ModelElement<DXW.PreviousSection
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.EndnoteProperties>();
-      if (element != null)
-        return EndnotePropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.EndnoteProperties,DXW.EndnoteProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.EndnoteProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EndnotePropertiesConverter.CreateOpenXmlElement<DXW.EndnoteProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.EndnoteProperties,DXW.EndnoteProperties>(value);
     }
   }
   
@@ -192,22 +170,11 @@ public partial class PreviousSectionProperties: ModelElement<DXW.PreviousSection
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.PageSize>();
-      if (element != null)
-        return PageSizeConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.PageSize,DXW.PageSize>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.PageSize>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PageSizeConverter.CreateOpenXmlElement<DXW.PageSize>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.PageSize,DXW.PageSize>(value);
     }
   }
   
@@ -220,22 +187,11 @@ public partial class PreviousSectionProperties: ModelElement<DXW.PreviousSection
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.PageMargin>();
-      if (element != null)
-        return PageMarginConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.PageMargin,DXW.PageMargin>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.PageMargin>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PageMarginConverter.CreateOpenXmlElement<DXW.PageMargin>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.PageMargin,DXW.PageMargin>(value);
     }
   }
   
@@ -248,22 +204,11 @@ public partial class PreviousSectionProperties: ModelElement<DXW.PreviousSection
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.PaperSource>();
-      if (element != null)
-        return PaperSourceConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.PaperSource,DXW.PaperSource>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.PaperSource>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PaperSourceConverter.CreateOpenXmlElement<DXW.PaperSource>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.PaperSource,DXW.PaperSource>(value);
     }
   }
   
@@ -276,22 +221,11 @@ public partial class PreviousSectionProperties: ModelElement<DXW.PreviousSection
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.PageBorders>();
-      if (element != null)
-        return PageBordersConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.PageBorders,DXW.PageBorders>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.PageBorders>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PageBordersConverter.CreateOpenXmlElement<DXW.PageBorders>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.PageBorders,DXW.PageBorders>(value);
     }
   }
   
@@ -304,22 +238,11 @@ public partial class PreviousSectionProperties: ModelElement<DXW.PreviousSection
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.LineNumberType>();
-      if (element != null)
-        return LineNumberTypeConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.LineNumberType,DXW.LineNumberType>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.LineNumberType>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LineNumberTypeConverter.CreateOpenXmlElement<DXW.LineNumberType>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.LineNumberType,DXW.LineNumberType>(value);
     }
   }
   
@@ -332,22 +255,11 @@ public partial class PreviousSectionProperties: ModelElement<DXW.PreviousSection
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.PageNumberType>();
-      if (element != null)
-        return PageNumberTypeConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.PageNumberType,DXW.PageNumberType>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.PageNumberType>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PageNumberTypeConverter.CreateOpenXmlElement<DXW.PageNumberType>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.PageNumberType,DXW.PageNumberType>(value);
     }
   }
   
@@ -360,22 +272,11 @@ public partial class PreviousSectionProperties: ModelElement<DXW.PreviousSection
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.Columns>();
-      if (element != null)
-        return ColumnsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.Columns,DXW.Columns>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Columns>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ColumnsConverter.CreateOpenXmlElement<DXW.Columns>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.Columns,DXW.Columns>(value);
     }
   }
   
@@ -388,22 +289,11 @@ public partial class PreviousSectionProperties: ModelElement<DXW.PreviousSection
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.FormProtection>();
-      if (element != null)
-        return FormProtectionConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.FormProtection,DXW.FormProtection>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.FormProtection>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FormProtectionConverter.CreateOpenXmlElement<DXW.FormProtection>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.FormProtection,DXW.FormProtection>(value);
     }
   }
   
@@ -443,22 +333,11 @@ public partial class PreviousSectionProperties: ModelElement<DXW.PreviousSection
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.NoEndnote>();
-      if (element != null)
-        return NoEndnoteConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.NoEndnote,DXW.NoEndnote>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.NoEndnote>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NoEndnoteConverter.CreateOpenXmlElement<DXW.NoEndnote>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.NoEndnote,DXW.NoEndnote>(value);
     }
   }
   
@@ -471,22 +350,11 @@ public partial class PreviousSectionProperties: ModelElement<DXW.PreviousSection
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.TitlePage>();
-      if (element != null)
-        return TitlePageConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.TitlePage,DXW.TitlePage>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.TitlePage>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TitlePageConverter.CreateOpenXmlElement<DXW.TitlePage>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.TitlePage,DXW.TitlePage>(value);
     }
   }
   
@@ -526,22 +394,11 @@ public partial class PreviousSectionProperties: ModelElement<DXW.PreviousSection
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.BiDi>();
-      if (element != null)
-        return BiDiConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.BiDi,DXW.BiDi>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.BiDi>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BiDiConverter.CreateOpenXmlElement<DXW.BiDi>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.BiDi,DXW.BiDi>(value);
     }
   }
   
@@ -554,22 +411,11 @@ public partial class PreviousSectionProperties: ModelElement<DXW.PreviousSection
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.GutterOnRight>();
-      if (element != null)
-        return GutterOnRightConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.GutterOnRight,DXW.GutterOnRight>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.GutterOnRight>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = GutterOnRightConverter.CreateOpenXmlElement<DXW.GutterOnRight>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.GutterOnRight,DXW.GutterOnRight>(value);
     }
   }
   
@@ -582,22 +428,11 @@ public partial class PreviousSectionProperties: ModelElement<DXW.PreviousSection
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.DocGrid>();
-      if (element != null)
-        return DocGridConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.DocGrid,DXW.DocGrid>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.DocGrid>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DocGridConverter.CreateOpenXmlElement<DXW.DocGrid>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.DocGrid,DXW.DocGrid>(value);
     }
   }
   
@@ -610,22 +445,11 @@ public partial class PreviousSectionProperties: ModelElement<DXW.PreviousSection
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.PrinterSettingsReference>();
-      if (element != null)
-        return PrinterSettingsReferenceConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.PrinterSettingsReference,DXW.PrinterSettingsReference>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.PrinterSettingsReference>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PrinterSettingsReferenceConverter.CreateOpenXmlElement<DXW.PrinterSettingsReference>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.PrinterSettingsReference,DXW.PrinterSettingsReference>(value);
     }
   }
   
@@ -642,7 +466,7 @@ public partial class PreviousSectionProperties: ModelElement<DXW.PreviousSection
     }
     set
     {
-      SimpleValueConverter.SetValue<DXO13W.FootnoteColumns,System.Int32>(openXmlElement, value);
+      SimpleValueConverter.SetValue<DXO13W.FootnoteColumns,System.Int32>(_ExistingElement, value);
     }
   }
   

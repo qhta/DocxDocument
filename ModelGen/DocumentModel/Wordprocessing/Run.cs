@@ -22,7 +22,7 @@ public partial class Run: ModelElement<DXW.Run>
     get
     {
       if (_Element?.RsidRunProperties?.Value != null)
-        return HexIntConverter.GetValue(_ExistingElement.RsidRunProperties.Value);
+        return HexIntConverter.GetValue(_Element?.RsidRunProperties.Value);
       return null;
     }
     set
@@ -44,7 +44,7 @@ public partial class Run: ModelElement<DXW.Run>
     get
     {
       if (_Element?.RsidRunDeletion?.Value != null)
-        return HexIntConverter.GetValue(_ExistingElement.RsidRunDeletion.Value);
+        return HexIntConverter.GetValue(_Element?.RsidRunDeletion.Value);
       return null;
     }
     set
@@ -66,7 +66,7 @@ public partial class Run: ModelElement<DXW.Run>
     get
     {
       if (_Element?.RsidRunAddition?.Value != null)
-        return HexIntConverter.GetValue(_ExistingElement.RsidRunAddition.Value);
+        return HexIntConverter.GetValue(_Element?.RsidRunAddition.Value);
       return null;
     }
     set
@@ -87,22 +87,11 @@ public partial class Run: ModelElement<DXW.Run>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.RunProperties>();
-      if (element != null)
-        return RunPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.RunProperties,DXW.RunProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.RunProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RunPropertiesConverter.CreateOpenXmlElement<DXW.RunProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.RunProperties,DXW.RunProperties>(value);
     }
   }
   

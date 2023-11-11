@@ -21,7 +21,7 @@ public partial class SpaceAfter: ModelElement<DXD.SpaceAfter>
     }
     set
     {
-      SimpleValueConverter.SetValue<DXD.SpacingPercent,System.Int32>(openXmlElement, value);
+      SimpleValueConverter.SetValue<DXD.SpacingPercent,System.Int32>(_ExistingElement, value);
     }
   }
   
@@ -34,7 +34,7 @@ public partial class SpaceAfter: ModelElement<DXD.SpaceAfter>
     }
     set
     {
-      SimpleValueConverter.SetValue<DXD.SpacingPoints,System.Int32>(openXmlElement, value);
+      SimpleValueConverter.SetValue<DXD.SpacingPoints,System.Int32>(_ExistingElement, value);
     }
   }
   

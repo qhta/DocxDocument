@@ -21,22 +21,11 @@ public partial class NonVisualGroupShapeDrawingProperties: ModelElement<DXDCD.No
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.GroupShapeLocks>();
-      if (element != null)
-        return GroupShapeLocksConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.GroupShapeLocks,DXD.GroupShapeLocks>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.GroupShapeLocks>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = GroupShapeLocksConverter.CreateOpenXmlElement<DXD.GroupShapeLocks>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.GroupShapeLocks,DXD.GroupShapeLocks>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class NonVisualGroupShapeDrawingProperties: ModelElement<DXDCD.No
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.NonVisualGroupDrawingShapePropsExtensionList>();
-      if (element != null)
-        return NonVisualGroupDrawingShapePropsExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.NonVisualGroupDrawingShapePropsExtensionList,DXD.NonVisualGroupDrawingShapePropsExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.NonVisualGroupDrawingShapePropsExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NonVisualGroupDrawingShapePropsExtensionListConverter.CreateOpenXmlElement<DXD.NonVisualGroupDrawingShapePropsExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.NonVisualGroupDrawingShapePropsExtensionList,DXD.NonVisualGroupDrawingShapePropsExtensionList>(value);
     }
   }
   

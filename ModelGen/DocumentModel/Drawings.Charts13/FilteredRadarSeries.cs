@@ -21,22 +21,11 @@ public partial class FilteredRadarSeries: ModelElement<DXO13DC.FilteredRadarSeri
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13DC.RadarChartSeries>();
-      if (element != null)
-        return RadarChartSeriesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC13.RadarChartSeries,DXO13DC.RadarChartSeries>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13DC.RadarChartSeries>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RadarChartSeriesConverter.CreateOpenXmlElement<DXO13DC.RadarChartSeries>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC13.RadarChartSeries,DXO13DC.RadarChartSeries>(value);
     }
   }
   

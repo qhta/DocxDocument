@@ -55,22 +55,11 @@ public partial class WrapThrough: ModelElement<DXDW.WrapThrough>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDW.WrapPolygon>();
-      if (element != null)
-        return WrapPolygonConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDW.WrapPolygon,DXDW.WrapPolygon>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDW.WrapPolygon>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = WrapPolygonConverter.CreateOpenXmlElement<DXDW.WrapPolygon>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDW.WrapPolygon,DXDW.WrapPolygon>(value);
     }
   }
   

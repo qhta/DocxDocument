@@ -48,22 +48,11 @@ public partial class RubyProperties: ModelElement<DXW.RubyProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.PhoneticGuideTextFontSize>();
-      if (element != null)
-        return PhoneticGuideTextFontSizeConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.PhoneticGuideTextFontSize,DXW.PhoneticGuideTextFontSize>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.PhoneticGuideTextFontSize>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PhoneticGuideTextFontSizeConverter.CreateOpenXmlElement<DXW.PhoneticGuideTextFontSize>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.PhoneticGuideTextFontSize,DXW.PhoneticGuideTextFontSize>(value);
     }
   }
   
@@ -80,7 +69,7 @@ public partial class RubyProperties: ModelElement<DXW.RubyProperties>
     }
     set
     {
-      SimpleValueConverter.SetValue<DXW.PhoneticGuideRaise,System.Int16>(openXmlElement, value);
+      SimpleValueConverter.SetValue<DXW.PhoneticGuideRaise,System.Int16>(_ExistingElement, value);
     }
   }
   
@@ -93,22 +82,11 @@ public partial class RubyProperties: ModelElement<DXW.RubyProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.PhoneticGuideBaseTextSize>();
-      if (element != null)
-        return PhoneticGuideBaseTextSizeConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.PhoneticGuideBaseTextSize,DXW.PhoneticGuideBaseTextSize>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.PhoneticGuideBaseTextSize>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PhoneticGuideBaseTextSizeConverter.CreateOpenXmlElement<DXW.PhoneticGuideBaseTextSize>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.PhoneticGuideBaseTextSize,DXW.PhoneticGuideBaseTextSize>(value);
     }
   }
   
@@ -125,7 +103,7 @@ public partial class RubyProperties: ModelElement<DXW.RubyProperties>
     }
     set
     {
-      StringValueConverter.SetValue<DXW.LanguageId>(openXmlElement, value);
+      StringValueConverter.SetValue<DXW.LanguageId>(_ExistingElement, value);
     }
   }
   
@@ -138,22 +116,11 @@ public partial class RubyProperties: ModelElement<DXW.RubyProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.Dirty>();
-      if (element != null)
-        return DirtyConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.Dirty,DXW.Dirty>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Dirty>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DirtyConverter.CreateOpenXmlElement<DXW.Dirty>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.Dirty,DXW.Dirty>(value);
     }
   }
   

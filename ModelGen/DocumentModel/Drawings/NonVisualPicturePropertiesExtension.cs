@@ -34,22 +34,11 @@ public partial class NonVisualPicturePropertiesExtension: ModelElement<DXD.NonVi
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10D.CameraTool>();
-      if (element != null)
-        return CameraToolConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD10.CameraTool,DXO10D.CameraTool>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10D.CameraTool>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = CameraToolConverter.CreateOpenXmlElement<DXO10D.CameraTool>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD10.CameraTool,DXO10D.CameraTool>(value);
     }
   }
   
@@ -58,22 +47,11 @@ public partial class NonVisualPicturePropertiesExtension: ModelElement<DXD.NonVi
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13D.SignatureLine>();
-      if (element != null)
-        return SignatureLineConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.SignatureLine,DXO13D.SignatureLine>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13D.SignatureLine>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SignatureLineConverter.CreateOpenXmlElement<DXO13D.SignatureLine>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.SignatureLine,DXO13D.SignatureLine>(value);
     }
   }
   
@@ -82,22 +60,11 @@ public partial class NonVisualPicturePropertiesExtension: ModelElement<DXD.NonVi
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13D.ObjectProperties>();
-      if (element != null)
-        return ObjectPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.ObjectProperties,DXO13D.ObjectProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13D.ObjectProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ObjectPropertiesConverter.CreateOpenXmlElement<DXO13D.ObjectProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.ObjectProperties,DXO13D.ObjectProperties>(value);
     }
   }
   
@@ -106,22 +73,11 @@ public partial class NonVisualPicturePropertiesExtension: ModelElement<DXD.NonVi
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO21DL.LiveFeedProperties>();
-      if (element != null)
-        return LiveFeedPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.LiveFeedProperties,DXO21DL.LiveFeedProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO21DL.LiveFeedProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LiveFeedPropertiesConverter.CreateOpenXmlElement<DXO21DL.LiveFeedProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.LiveFeedProperties,DXO21DL.LiveFeedProperties>(value);
     }
   }
   
@@ -130,22 +86,11 @@ public partial class NonVisualPicturePropertiesExtension: ModelElement<DXD.NonVi
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXOD22IF.ImageFormula>();
-      if (element != null)
-        return ImageFormulaConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDIF.ImageFormula,DXOD22IF.ImageFormula>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXOD22IF.ImageFormula>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ImageFormulaConverter.CreateOpenXmlElement<DXOD22IF.ImageFormula>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDIF.ImageFormula,DXOD22IF.ImageFormula>(value);
     }
   }
   

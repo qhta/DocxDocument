@@ -8,11 +8,20 @@
 /// in favor of the custom XML data support defined in /IEC 29500. end note]
 /// </summary>
 [Obsolete]
-public partial class DocumentVariables: ModelElement<DXW.DocumentVariables>
+public partial class DocumentVariables : NamedElementCollection<DXW.DocumentVariables, DXW.DocumentVariable, DMW.DocumentVariable>
 {
-  public DocumentVariables(): base(){ }
+  public DocumentVariables() : base() { }
 
-  public DocumentVariables(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
+  public DocumentVariables(DXW.DocumentVariables openXmlElement) : base(openXmlElement) { }
 
-  public DocumentVariables(DXW.DocumentVariables openXmlElement): base(openXmlElement) { } 
+  public bool TryGetValue(string key, [MaybeNullWhen(false)][NotNullWhen(true)] out string? value)
+  {
+    var ok = base.TryGetValue(key, out var documentVariable);
+    if (ok && documentVariable!=null)
+      value = documentVariable.Val;
+    else
+      value = null;
+    return ok;
+
+  }
 }

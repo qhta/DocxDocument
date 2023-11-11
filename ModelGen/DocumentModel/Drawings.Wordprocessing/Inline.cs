@@ -90,7 +90,7 @@ public partial class Inline: ModelElement<DXDW.Inline>
     get
     {
       if (_Element?.AnchorId?.Value != null)
-        return HexIntConverter.GetValue(_ExistingElement.AnchorId.Value);
+        return HexIntConverter.GetValue(_Element?.AnchorId.Value);
       return null;
     }
     set
@@ -112,7 +112,7 @@ public partial class Inline: ModelElement<DXDW.Inline>
     get
     {
       if (_Element?.EditId?.Value != null)
-        return HexIntConverter.GetValue(_ExistingElement.EditId.Value);
+        return HexIntConverter.GetValue(_Element?.EditId.Value);
       return null;
     }
     set
@@ -133,22 +133,11 @@ public partial class Inline: ModelElement<DXDW.Inline>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDW.Extent>();
-      if (element != null)
-        return ExtentConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDW.Extent,DXDW.Extent>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDW.Extent>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtentConverter.CreateOpenXmlElement<DXDW.Extent>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDW.Extent,DXDW.Extent>(value);
     }
   }
   
@@ -161,22 +150,11 @@ public partial class Inline: ModelElement<DXDW.Inline>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDW.EffectExtent>();
-      if (element != null)
-        return EffectExtentConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDW.EffectExtent,DXDW.EffectExtent>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDW.EffectExtent>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EffectExtentConverter.CreateOpenXmlElement<DXDW.EffectExtent>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDW.EffectExtent,DXDW.EffectExtent>(value);
     }
   }
   
@@ -189,22 +167,11 @@ public partial class Inline: ModelElement<DXDW.Inline>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDW.DocProperties>();
-      if (element != null)
-        return DocPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDW.DocProperties,DXDW.DocProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDW.DocProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DocPropertiesConverter.CreateOpenXmlElement<DXDW.DocProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDW.DocProperties,DXDW.DocProperties>(value);
     }
   }
   
@@ -217,22 +184,11 @@ public partial class Inline: ModelElement<DXDW.Inline>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDW.NonVisualGraphicFrameDrawingProperties>();
-      if (element != null)
-        return NonVisualGraphicFrameDrawingPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDW.NonVisualGraphicFrameDrawingProperties,DXDW.NonVisualGraphicFrameDrawingProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDW.NonVisualGraphicFrameDrawingProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NonVisualGraphicFrameDrawingPropertiesConverter.CreateOpenXmlElement<DXDW.NonVisualGraphicFrameDrawingProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDW.NonVisualGraphicFrameDrawingProperties,DXDW.NonVisualGraphicFrameDrawingProperties>(value);
     }
   }
   
@@ -245,22 +201,11 @@ public partial class Inline: ModelElement<DXDW.Inline>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.Graphic>();
-      if (element != null)
-        return GraphicConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.Graphic,DXD.Graphic>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.Graphic>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = GraphicConverter.CreateOpenXmlElement<DXD.Graphic>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.Graphic,DXD.Graphic>(value);
     }
   }
   

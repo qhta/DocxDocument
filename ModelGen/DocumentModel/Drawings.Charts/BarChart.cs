@@ -75,22 +75,11 @@ public partial class BarChart: ModelElement<DXDC.BarChart>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.VaryColors>();
-      if (element != null)
-        return VaryColorsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.VaryColors,DXDC.VaryColors>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.VaryColors>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = VaryColorsConverter.CreateOpenXmlElement<DXDC.VaryColors>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.VaryColors,DXDC.VaryColors>(value);
     }
   }
   
@@ -99,22 +88,11 @@ public partial class BarChart: ModelElement<DXDC.BarChart>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.DataLabels>();
-      if (element != null)
-        return DataLabelsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.DataLabels,DXDC.DataLabels>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.DataLabels>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DataLabelsConverter.CreateOpenXmlElement<DXDC.DataLabels>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.DataLabels,DXDC.DataLabels>(value);
     }
   }
   
@@ -123,22 +101,11 @@ public partial class BarChart: ModelElement<DXDC.BarChart>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.GapWidth>();
-      if (element != null)
-        return GapWidthConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.GapWidth,DXDC.GapWidth>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.GapWidth>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = GapWidthConverter.CreateOpenXmlElement<DXDC.GapWidth>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.GapWidth,DXDC.GapWidth>(value);
     }
   }
   
@@ -151,7 +118,7 @@ public partial class BarChart: ModelElement<DXDC.BarChart>
     }
     set
     {
-      SimpleValueConverter.SetValue<DXDC.Overlap,System.SByte>(openXmlElement, value);
+      SimpleValueConverter.SetValue<DXDC.Overlap,System.SByte>(_ExistingElement, value);
     }
   }
   
@@ -160,22 +127,11 @@ public partial class BarChart: ModelElement<DXDC.BarChart>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.BarChartExtensionList>();
-      if (element != null)
-        return BarChartExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.BarChartExtensionList,DXDC.BarChartExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.BarChartExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BarChartExtensionListConverter.CreateOpenXmlElement<DXDC.BarChartExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.BarChartExtensionList,DXDC.BarChartExtensionList>(value);
     }
   }
   

@@ -17,8 +17,8 @@ public partial class Rule : ModelElement<DXVO.Rule>
   [DataMember]
   public string? Id
   {
-    get => _Element.Id?.Value;
-    set => _Element.Id = value;
+    get => _Element?.Id?.Value;
+    set => _ExistingElement.Id = value;
   }
 
   /// <summary>
@@ -33,8 +33,8 @@ public partial class Rule : ModelElement<DXVO.Rule>
   [DataMember]
   public DXVO.RuleValues? Type
   {
-    get => _Element.Type?.Value;
-    set => _Element.Type = value;
+    get => _Element?.Type?.Value;
+    set => _ExistingElement.Type = value;
   }
 
   /// <summary>
@@ -45,14 +45,14 @@ public partial class Rule : ModelElement<DXVO.Rule>
   [DataMember]
   public string? ShapeReference
   {
-    get => _Element.ShapeReference?.Value;
-    set => _Element.ShapeReference = value;
+    get => _Element?.ShapeReference?.Value;
+    set => _ExistingElement.ShapeReference = value;
   }
 
   [DataMember]
   public DXVO.AlignmentValues? How
   {
-    get => _Element.How?.Value;
-    set => _Element.How = value;
+    get => _Element?.How?.Value;
+    set => _ExistingElement.How = value;
   }
 }

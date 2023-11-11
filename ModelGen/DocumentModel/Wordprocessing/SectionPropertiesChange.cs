@@ -89,22 +89,11 @@ public partial class SectionPropertiesChange: ModelElement<DXW.SectionProperties
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.PreviousSectionProperties>();
-      if (element != null)
-        return PreviousSectionPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.PreviousSectionProperties,DXW.PreviousSectionProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.PreviousSectionProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PreviousSectionPropertiesConverter.CreateOpenXmlElement<DXW.PreviousSectionProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.PreviousSectionProperties,DXW.PreviousSectionProperties>(value);
     }
   }
   

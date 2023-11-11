@@ -21,22 +21,11 @@ public partial class LineSketchTypeProperties: ModelElement<DXO21DSS.LineSketchT
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO21DSS.LineSketchNoneEmpty>();
-      if (element != null)
-        return LineSketchNoneEmptyConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDSS.LineSketchNoneEmpty,DXO21DSS.LineSketchNoneEmpty>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO21DSS.LineSketchNoneEmpty>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LineSketchNoneEmptyConverter.CreateOpenXmlElement<DXO21DSS.LineSketchNoneEmpty>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDSS.LineSketchNoneEmpty,DXO21DSS.LineSketchNoneEmpty>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class LineSketchTypeProperties: ModelElement<DXO21DSS.LineSketchT
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO21DSS.LineSketchCurvedEmpty>();
-      if (element != null)
-        return LineSketchCurvedEmptyConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDSS.LineSketchCurvedEmpty,DXO21DSS.LineSketchCurvedEmpty>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO21DSS.LineSketchCurvedEmpty>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LineSketchCurvedEmptyConverter.CreateOpenXmlElement<DXO21DSS.LineSketchCurvedEmpty>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDSS.LineSketchCurvedEmpty,DXO21DSS.LineSketchCurvedEmpty>(value);
     }
   }
   
@@ -77,22 +55,11 @@ public partial class LineSketchTypeProperties: ModelElement<DXO21DSS.LineSketchT
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO21DSS.LineSketchFreehandEmpty>();
-      if (element != null)
-        return LineSketchFreehandEmptyConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDSS.LineSketchFreehandEmpty,DXO21DSS.LineSketchFreehandEmpty>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO21DSS.LineSketchFreehandEmpty>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LineSketchFreehandEmptyConverter.CreateOpenXmlElement<DXO21DSS.LineSketchFreehandEmpty>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDSS.LineSketchFreehandEmpty,DXO21DSS.LineSketchFreehandEmpty>(value);
     }
   }
   
@@ -105,22 +72,11 @@ public partial class LineSketchTypeProperties: ModelElement<DXO21DSS.LineSketchT
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO21DSS.LineSketchScribbleEmpty>();
-      if (element != null)
-        return LineSketchScribbleEmptyConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDSS.LineSketchScribbleEmpty,DXO21DSS.LineSketchScribbleEmpty>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO21DSS.LineSketchScribbleEmpty>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LineSketchScribbleEmptyConverter.CreateOpenXmlElement<DXO21DSS.LineSketchScribbleEmpty>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDSS.LineSketchScribbleEmpty,DXO21DSS.LineSketchScribbleEmpty>(value);
     }
   }
   

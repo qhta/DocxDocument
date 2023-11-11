@@ -5,7 +5,7 @@
 /// [Note: This element can be used to store the transitional compatibility settings specified in Part 4 of /IEC 29500. end note]
 /// </summary>
 [DataContract]
-public partial class CompatibilitySetting: ModelElement<DXW.CompatibilitySetting>
+public partial class CompatibilitySetting: ModelElement<DXW.CompatibilitySetting>, INamedElement
 {
   public CompatibilitySetting(): base(){ }
 
@@ -14,16 +14,18 @@ public partial class CompatibilitySetting: ModelElement<DXW.CompatibilitySetting
   public CompatibilitySetting(DXW.CompatibilitySetting openXmlElement): base(openXmlElement) { }
 
   [DataMember]
-  public DMW.CompatSettingNameKind Name
+  public string? Name
   {
-    get => _Element.Name?.GetEnumValue<DMW.CompatSettingNameKind, DXW.CompatSettingNameValues>() ?? default(DMW.CompatSettingNameKind);
-    set => _Element.Name = EVU.SetEnumValue<DMW.CompatSettingNameKind, DXW.CompatSettingNameValues>(value);
+    get => (_Element?.Name?.GetEnumValue<DMW.CompatSettingNameKind, DXW.CompatSettingNameValues>() 
+      ?? default(DMW.CompatSettingNameKind)).ToString();
+    set => _ExistingElement.Name = (value==null) ? null :
+      EVU.SetEnumValue<DMW.CompatSettingNameKind, DXW.CompatSettingNameValues>(Enum.Parse<DMW.CompatSettingNameKind>(value));
   }
 
   [DataMember]
   public string? Val
   {
-    get => _Element.Val;
-    set => _Element.Val = value;
+    get => _Element?.Val;
+    set => _ExistingElement.Val = value;
   }
 }

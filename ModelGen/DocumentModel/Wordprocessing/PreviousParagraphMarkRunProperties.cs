@@ -21,22 +21,11 @@ public partial class PreviousParagraphMarkRunProperties: ModelElement<DXW.Previo
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.Inserted>();
-      if (element != null)
-        return InsertedConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.Inserted,DXW.Inserted>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Inserted>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = InsertedConverter.CreateOpenXmlElement<DXW.Inserted>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.Inserted,DXW.Inserted>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class PreviousParagraphMarkRunProperties: ModelElement<DXW.Previo
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.Deleted>();
-      if (element != null)
-        return DeletedConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.Deleted,DXW.Deleted>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Deleted>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DeletedConverter.CreateOpenXmlElement<DXW.Deleted>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.Deleted,DXW.Deleted>(value);
     }
   }
   
@@ -77,22 +55,11 @@ public partial class PreviousParagraphMarkRunProperties: ModelElement<DXW.Previo
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.MoveFrom>();
-      if (element != null)
-        return MoveFromConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.MoveFrom,DXW.MoveFrom>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.MoveFrom>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = MoveFromConverter.CreateOpenXmlElement<DXW.MoveFrom>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.MoveFrom,DXW.MoveFrom>(value);
     }
   }
   
@@ -105,22 +72,11 @@ public partial class PreviousParagraphMarkRunProperties: ModelElement<DXW.Previo
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.MoveTo>();
-      if (element != null)
-        return MoveToConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.MoveTo,DXW.MoveTo>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.MoveTo>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = MoveToConverter.CreateOpenXmlElement<DXW.MoveTo>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.MoveTo,DXW.MoveTo>(value);
     }
   }
   
@@ -129,22 +85,11 @@ public partial class PreviousParagraphMarkRunProperties: ModelElement<DXW.Previo
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10W.ConflictInsertion>();
-      if (element != null)
-        return ConflictInsertionConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW10.ConflictInsertion,DXO10W.ConflictInsertion>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10W.ConflictInsertion>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ConflictInsertionConverter.CreateOpenXmlElement<DXO10W.ConflictInsertion>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW10.ConflictInsertion,DXO10W.ConflictInsertion>(value);
     }
   }
   
@@ -153,22 +98,11 @@ public partial class PreviousParagraphMarkRunProperties: ModelElement<DXW.Previo
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10W.ConflictDeletion>();
-      if (element != null)
-        return ConflictDeletionConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW10.ConflictDeletion,DXO10W.ConflictDeletion>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10W.ConflictDeletion>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ConflictDeletionConverter.CreateOpenXmlElement<DXO10W.ConflictDeletion>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW10.ConflictDeletion,DXO10W.ConflictDeletion>(value);
     }
   }
   

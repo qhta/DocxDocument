@@ -22,7 +22,7 @@ public partial class WebExtension: ModelElement<DXO13WE.WebExtension>
     set
     {
       if (value != null)
-        _ExistingElement.Fronzen = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.Fronzen = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.Fronzen = null;
     }
@@ -59,7 +59,7 @@ public partial class WebExtension: ModelElement<DXO13WE.WebExtension>
     set
     {
       if (value != null)
-        _ExistingElement.Frozen = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.Frozen = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.Frozen = null;
     }
@@ -74,22 +74,11 @@ public partial class WebExtension: ModelElement<DXO13WE.WebExtension>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13WE.WebExtensionStoreReference>();
-      if (element != null)
-        return WebExtensionStoreReferenceConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMEX.WebExtensionStoreReference,DXO13WE.WebExtensionStoreReference>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13WE.WebExtensionStoreReference>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = WebExtensionStoreReferenceConverter.CreateOpenXmlElement<DXO13WE.WebExtensionStoreReference>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMEX.WebExtensionStoreReference,DXO13WE.WebExtensionStoreReference>(value);
     }
   }
   
@@ -102,22 +91,11 @@ public partial class WebExtension: ModelElement<DXO13WE.WebExtension>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13WE.WebExtensionReferenceList>();
-      if (element != null)
-        return WebExtensionReferenceListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMEX.WebExtensionReferenceList,DXO13WE.WebExtensionReferenceList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13WE.WebExtensionReferenceList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = WebExtensionReferenceListConverter.CreateOpenXmlElement<DXO13WE.WebExtensionReferenceList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMEX.WebExtensionReferenceList,DXO13WE.WebExtensionReferenceList>(value);
     }
   }
   
@@ -130,22 +108,11 @@ public partial class WebExtension: ModelElement<DXO13WE.WebExtension>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13WE.WebExtensionPropertyBag>();
-      if (element != null)
-        return WebExtensionPropertyBagConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMEX.WebExtensionPropertyBag,DXO13WE.WebExtensionPropertyBag>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13WE.WebExtensionPropertyBag>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = WebExtensionPropertyBagConverter.CreateOpenXmlElement<DXO13WE.WebExtensionPropertyBag>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMEX.WebExtensionPropertyBag,DXO13WE.WebExtensionPropertyBag>(value);
     }
   }
   
@@ -158,22 +125,11 @@ public partial class WebExtension: ModelElement<DXO13WE.WebExtension>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13WE.WebExtensionBindingList>();
-      if (element != null)
-        return WebExtensionBindingListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMEX.WebExtensionBindingList,DXO13WE.WebExtensionBindingList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13WE.WebExtensionBindingList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = WebExtensionBindingListConverter.CreateOpenXmlElement<DXO13WE.WebExtensionBindingList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMEX.WebExtensionBindingList,DXO13WE.WebExtensionBindingList>(value);
     }
   }
   
@@ -186,22 +142,11 @@ public partial class WebExtension: ModelElement<DXO13WE.WebExtension>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13WE.Snapshot>();
-      if (element != null)
-        return SnapshotConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMEX.Snapshot,DXO13WE.Snapshot>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13WE.Snapshot>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SnapshotConverter.CreateOpenXmlElement<DXO13WE.Snapshot>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMEX.Snapshot,DXO13WE.Snapshot>(value);
     }
   }
   
@@ -214,22 +159,11 @@ public partial class WebExtension: ModelElement<DXO13WE.WebExtension>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13WE.OfficeArtExtensionList>();
-      if (element != null)
-        return OfficeArtExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMEX.OfficeArtExtensionList,DXO13WE.OfficeArtExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13WE.OfficeArtExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = OfficeArtExtensionListConverter.CreateOpenXmlElement<DXO13WE.OfficeArtExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMEX.OfficeArtExtensionList,DXO13WE.OfficeArtExtensionList>(value);
     }
   }
   

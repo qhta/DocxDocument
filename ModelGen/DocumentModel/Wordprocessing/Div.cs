@@ -38,22 +38,11 @@ public partial class Div: ModelElement<DXW.Div>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.BlockQuote>();
-      if (element != null)
-        return BlockQuoteConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.BlockQuote,DXW.BlockQuote>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.BlockQuote>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BlockQuoteConverter.CreateOpenXmlElement<DXW.BlockQuote>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.BlockQuote,DXW.BlockQuote>(value);
     }
   }
   
@@ -66,22 +55,11 @@ public partial class Div: ModelElement<DXW.Div>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.BodyDiv>();
-      if (element != null)
-        return BodyDivConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.BodyDiv,DXW.BodyDiv>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.BodyDiv>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BodyDivConverter.CreateOpenXmlElement<DXW.BodyDiv>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.BodyDiv,DXW.BodyDiv>(value);
     }
   }
   
@@ -94,22 +72,11 @@ public partial class Div: ModelElement<DXW.Div>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.LeftMarginDiv>();
-      if (element != null)
-        return LeftMarginDivConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.LeftMarginDiv,DXW.LeftMarginDiv>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.LeftMarginDiv>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LeftMarginDivConverter.CreateOpenXmlElement<DXW.LeftMarginDiv>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.LeftMarginDiv,DXW.LeftMarginDiv>(value);
     }
   }
   
@@ -122,22 +89,11 @@ public partial class Div: ModelElement<DXW.Div>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.RightMarginDiv>();
-      if (element != null)
-        return RightMarginDivConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.RightMarginDiv,DXW.RightMarginDiv>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.RightMarginDiv>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RightMarginDivConverter.CreateOpenXmlElement<DXW.RightMarginDiv>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.RightMarginDiv,DXW.RightMarginDiv>(value);
     }
   }
   
@@ -150,22 +106,11 @@ public partial class Div: ModelElement<DXW.Div>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.TopMarginDiv>();
-      if (element != null)
-        return TopMarginDivConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.TopMarginDiv,DXW.TopMarginDiv>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.TopMarginDiv>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TopMarginDivConverter.CreateOpenXmlElement<DXW.TopMarginDiv>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.TopMarginDiv,DXW.TopMarginDiv>(value);
     }
   }
   
@@ -178,22 +123,11 @@ public partial class Div: ModelElement<DXW.Div>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.BottomMarginDiv>();
-      if (element != null)
-        return BottomMarginDivConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.BottomMarginDiv,DXW.BottomMarginDiv>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.BottomMarginDiv>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BottomMarginDivConverter.CreateOpenXmlElement<DXW.BottomMarginDiv>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.BottomMarginDiv,DXW.BottomMarginDiv>(value);
     }
   }
   
@@ -206,22 +140,11 @@ public partial class Div: ModelElement<DXW.Div>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.DivBorder>();
-      if (element != null)
-        return DivBorderConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.DivBorder,DXW.DivBorder>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.DivBorder>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DivBorderConverter.CreateOpenXmlElement<DXW.DivBorder>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.DivBorder,DXW.DivBorder>(value);
     }
   }
   

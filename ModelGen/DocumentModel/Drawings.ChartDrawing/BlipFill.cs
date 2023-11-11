@@ -43,7 +43,7 @@ public partial class BlipFill: ModelElement<DXDCD.BlipFill>
     set
     {
       if (value != null)
-        _ExistingElement.RotateWithShape = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.RotateWithShape = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.RotateWithShape = null;
     }
@@ -58,22 +58,11 @@ public partial class BlipFill: ModelElement<DXDCD.BlipFill>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.Blip>();
-      if (element != null)
-        return BlipConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.Blip,DXD.Blip>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.Blip>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BlipConverter.CreateOpenXmlElement<DXD.Blip>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.Blip,DXD.Blip>(value);
     }
   }
   
@@ -86,22 +75,11 @@ public partial class BlipFill: ModelElement<DXDCD.BlipFill>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.SourceRectangle>();
-      if (element != null)
-        return SourceRectangleConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.SourceRectangle,DXD.SourceRectangle>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.SourceRectangle>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SourceRectangleConverter.CreateOpenXmlElement<DXD.SourceRectangle>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.SourceRectangle,DXD.SourceRectangle>(value);
     }
   }
   
@@ -110,22 +88,11 @@ public partial class BlipFill: ModelElement<DXDCD.BlipFill>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.Tile>();
-      if (element != null)
-        return TileConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.Tile,DXD.Tile>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.Tile>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TileConverter.CreateOpenXmlElement<DXD.Tile>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.Tile,DXD.Tile>(value);
     }
   }
   
@@ -134,22 +101,11 @@ public partial class BlipFill: ModelElement<DXDCD.BlipFill>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.Stretch>();
-      if (element != null)
-        return StretchConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.Stretch,DXD.Stretch>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.Stretch>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = StretchConverter.CreateOpenXmlElement<DXD.Stretch>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.Stretch,DXD.Stretch>(value);
     }
   }
   

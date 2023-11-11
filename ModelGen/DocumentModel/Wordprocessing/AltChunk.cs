@@ -38,22 +38,11 @@ public partial class AltChunk: ModelElement<DXW.AltChunk>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.AltChunkProperties>();
-      if (element != null)
-        return AltChunkPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.AltChunkProperties,DXW.AltChunkProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.AltChunkProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = AltChunkPropertiesConverter.CreateOpenXmlElement<DXW.AltChunkProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.AltChunkProperties,DXW.AltChunkProperties>(value);
     }
   }
   

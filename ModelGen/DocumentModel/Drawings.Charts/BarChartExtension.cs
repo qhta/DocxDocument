@@ -34,22 +34,11 @@ public partial class BarChartExtension: ModelElement<DXDC.BarChartExtension>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13DC.FilteredBarSeries>();
-      if (element != null)
-        return FilteredBarSeriesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC13.FilteredBarSeries,DXO13DC.FilteredBarSeries>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13DC.FilteredBarSeries>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FilteredBarSeriesConverter.CreateOpenXmlElement<DXO13DC.FilteredBarSeries>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC13.FilteredBarSeries,DXO13DC.FilteredBarSeries>(value);
     }
   }
   

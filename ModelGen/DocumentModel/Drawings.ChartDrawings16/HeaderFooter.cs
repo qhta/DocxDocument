@@ -26,7 +26,7 @@ public partial class HeaderFooter: ModelElement<DXO16DCD.HeaderFooter>
     set
     {
       if (value != null)
-        _ExistingElement.AlignWithMargins = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.AlignWithMargins = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.AlignWithMargins = null;
     }
@@ -46,7 +46,7 @@ public partial class HeaderFooter: ModelElement<DXO16DCD.HeaderFooter>
     set
     {
       if (value != null)
-        _ExistingElement.DifferentOddEven = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.DifferentOddEven = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.DifferentOddEven = null;
     }
@@ -66,7 +66,7 @@ public partial class HeaderFooter: ModelElement<DXO16DCD.HeaderFooter>
     set
     {
       if (value != null)
-        _ExistingElement.DifferentFirst = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.DifferentFirst = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.DifferentFirst = null;
     }
@@ -81,22 +81,11 @@ public partial class HeaderFooter: ModelElement<DXO16DCD.HeaderFooter>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.OddHeaderXsdstring>();
-      if (element != null)
-        return OddHeaderXsdstringConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.OddHeaderXsdstring,DXO16DCD.OddHeaderXsdstring>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.OddHeaderXsdstring>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = OddHeaderXsdstringConverter.CreateOpenXmlElement<DXO16DCD.OddHeaderXsdstring>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.OddHeaderXsdstring,DXO16DCD.OddHeaderXsdstring>(value);
     }
   }
   
@@ -109,22 +98,11 @@ public partial class HeaderFooter: ModelElement<DXO16DCD.HeaderFooter>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.OddFooterXsdstring>();
-      if (element != null)
-        return OddFooterXsdstringConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.OddFooterXsdstring,DXO16DCD.OddFooterXsdstring>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.OddFooterXsdstring>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = OddFooterXsdstringConverter.CreateOpenXmlElement<DXO16DCD.OddFooterXsdstring>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.OddFooterXsdstring,DXO16DCD.OddFooterXsdstring>(value);
     }
   }
   
@@ -137,22 +115,11 @@ public partial class HeaderFooter: ModelElement<DXO16DCD.HeaderFooter>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.EvenHeaderXsdstring>();
-      if (element != null)
-        return EvenHeaderXsdstringConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.EvenHeaderXsdstring,DXO16DCD.EvenHeaderXsdstring>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.EvenHeaderXsdstring>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EvenHeaderXsdstringConverter.CreateOpenXmlElement<DXO16DCD.EvenHeaderXsdstring>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.EvenHeaderXsdstring,DXO16DCD.EvenHeaderXsdstring>(value);
     }
   }
   
@@ -165,22 +132,11 @@ public partial class HeaderFooter: ModelElement<DXO16DCD.HeaderFooter>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.EvenFooterXsdstring>();
-      if (element != null)
-        return EvenFooterXsdstringConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.EvenFooterXsdstring,DXO16DCD.EvenFooterXsdstring>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.EvenFooterXsdstring>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EvenFooterXsdstringConverter.CreateOpenXmlElement<DXO16DCD.EvenFooterXsdstring>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.EvenFooterXsdstring,DXO16DCD.EvenFooterXsdstring>(value);
     }
   }
   
@@ -193,22 +149,11 @@ public partial class HeaderFooter: ModelElement<DXO16DCD.HeaderFooter>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.FirstHeaderXsdstring>();
-      if (element != null)
-        return FirstHeaderXsdstringConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.FirstHeaderXsdstring,DXO16DCD.FirstHeaderXsdstring>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.FirstHeaderXsdstring>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FirstHeaderXsdstringConverter.CreateOpenXmlElement<DXO16DCD.FirstHeaderXsdstring>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.FirstHeaderXsdstring,DXO16DCD.FirstHeaderXsdstring>(value);
     }
   }
   
@@ -221,22 +166,11 @@ public partial class HeaderFooter: ModelElement<DXO16DCD.HeaderFooter>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.FirstFooterXsdstring>();
-      if (element != null)
-        return FirstFooterXsdstringConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.FirstFooterXsdstring,DXO16DCD.FirstFooterXsdstring>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.FirstFooterXsdstring>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FirstFooterXsdstringConverter.CreateOpenXmlElement<DXO16DCD.FirstFooterXsdstring>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.FirstFooterXsdstring,DXO16DCD.FirstFooterXsdstring>(value);
     }
   }
   

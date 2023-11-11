@@ -21,22 +21,11 @@ public partial class Radical: ModelElement<DXM.Radical>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.RadicalProperties>();
-      if (element != null)
-        return RadicalPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.RadicalProperties,DXM.RadicalProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.RadicalProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RadicalPropertiesConverter.CreateOpenXmlElement<DXM.RadicalProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.RadicalProperties,DXM.RadicalProperties>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class Radical: ModelElement<DXM.Radical>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.Degree>();
-      if (element != null)
-        return DegreeConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.Degree,DXM.Degree>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.Degree>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DegreeConverter.CreateOpenXmlElement<DXM.Degree>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.Degree,DXM.Degree>(value);
     }
   }
   
@@ -77,22 +55,11 @@ public partial class Radical: ModelElement<DXM.Radical>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.Base>();
-      if (element != null)
-        return BaseConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.Base,DXM.Base>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.Base>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BaseConverter.CreateOpenXmlElement<DXM.Base>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.Base,DXM.Base>(value);
     }
   }
   

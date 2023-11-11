@@ -21,22 +21,11 @@ public partial class SubSuperscriptProperties: ModelElement<DXM.SubSuperscriptPr
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.AlignScripts>();
-      if (element != null)
-        return AlignScriptsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.AlignScripts,DXM.AlignScripts>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.AlignScripts>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = AlignScriptsConverter.CreateOpenXmlElement<DXM.AlignScripts>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.AlignScripts,DXM.AlignScripts>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class SubSuperscriptProperties: ModelElement<DXM.SubSuperscriptPr
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.ControlProperties>();
-      if (element != null)
-        return ControlPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.ControlProperties,DXM.ControlProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.ControlProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ControlPropertiesConverter.CreateOpenXmlElement<DXM.ControlProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.ControlProperties,DXM.ControlProperties>(value);
     }
   }
   

@@ -17,15 +17,18 @@ public partial class Callout: ModelElement<DXVO.Callout>
   ///   Callout toggle
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? On
+  public Boolean? On
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.On?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.On = value;
+      else
+        _ExistingElement.On = null;
     }
   }
   
@@ -68,15 +71,18 @@ public partial class Callout: ModelElement<DXVO.Callout>
   ///   Callout automatic drop toggle
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? DropAuto
+  public Boolean? DropAuto
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.DropAuto?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.DropAuto = value;
+      else
+        _ExistingElement.DropAuto = null;
     }
   }
   
@@ -119,15 +125,18 @@ public partial class Callout: ModelElement<DXVO.Callout>
   ///   Callout length toggle
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? LengthSpecified
+  public Boolean? LengthSpecified
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.LengthSpecified?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.LengthSpecified = value;
+      else
+        _ExistingElement.LengthSpecified = null;
     }
   }
   
@@ -153,15 +162,18 @@ public partial class Callout: ModelElement<DXVO.Callout>
   ///   Callout accent bar toggle
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? AccentBar
+  public Boolean? AccentBar
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.AccentBar?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.AccentBar = value;
+      else
+        _ExistingElement.AccentBar = null;
     }
   }
   
@@ -170,15 +182,18 @@ public partial class Callout: ModelElement<DXVO.Callout>
   ///   Callout text border toggle
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? TextBorder
+  public Boolean? TextBorder
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.TextBorder?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.TextBorder = value;
+      else
+        _ExistingElement.TextBorder = null;
     }
   }
   
@@ -187,15 +202,18 @@ public partial class Callout: ModelElement<DXVO.Callout>
   ///   Callout flip x
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? MinusX
+  public Boolean? MinusX
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.MinusX?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.MinusX = value;
+      else
+        _ExistingElement.MinusX = null;
     }
   }
   
@@ -204,15 +222,18 @@ public partial class Callout: ModelElement<DXVO.Callout>
   ///   Callout flip y
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? MinusY
+  public Boolean? MinusY
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.MinusY?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.MinusY = value;
+      else
+        _ExistingElement.MinusY = null;
     }
   }
   

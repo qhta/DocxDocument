@@ -38,22 +38,11 @@ public partial class NumberDiagramInfo: ModelElement<DXO19DD11.NumberDiagramInfo
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO19DD11.DiagramAutoBullet>();
-      if (element != null)
-        return DiagramAutoBulletConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDD1.DiagramAutoBullet,DXO19DD11.DiagramAutoBullet>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO19DD11.DiagramAutoBullet>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DiagramAutoBulletConverter.CreateOpenXmlElement<DXO19DD11.DiagramAutoBullet>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDD1.DiagramAutoBullet,DXO19DD11.DiagramAutoBullet>(value);
     }
   }
   

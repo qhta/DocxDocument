@@ -21,22 +21,11 @@ public partial class PatternFill: ModelElement<DXD.PatternFill>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.ForegroundColor>();
-      if (element != null)
-        return ForegroundColorConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.ForegroundColor,DXD.ForegroundColor>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.ForegroundColor>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ForegroundColorConverter.CreateOpenXmlElement<DXD.ForegroundColor>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.ForegroundColor,DXD.ForegroundColor>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class PatternFill: ModelElement<DXD.PatternFill>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.BackgroundColor>();
-      if (element != null)
-        return BackgroundColorConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.BackgroundColor,DXD.BackgroundColor>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.BackgroundColor>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BackgroundColorConverter.CreateOpenXmlElement<DXD.BackgroundColor>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.BackgroundColor,DXD.BackgroundColor>(value);
     }
   }
   

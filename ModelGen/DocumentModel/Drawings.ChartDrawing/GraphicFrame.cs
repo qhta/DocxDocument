@@ -43,7 +43,7 @@ public partial class GraphicFrame: ModelElement<DXDCD.GraphicFrame>
     set
     {
       if (value != null)
-        _ExistingElement.Published = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.Published = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.Published = null;
     }
@@ -58,22 +58,11 @@ public partial class GraphicFrame: ModelElement<DXDCD.GraphicFrame>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDCD.NonVisualGraphicFrameProperties>();
-      if (element != null)
-        return NonVisualGraphicFramePropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD.NonVisualGraphicFrameProperties,DXDCD.NonVisualGraphicFrameProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDCD.NonVisualGraphicFrameProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NonVisualGraphicFramePropertiesConverter.CreateOpenXmlElement<DXDCD.NonVisualGraphicFrameProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD.NonVisualGraphicFrameProperties,DXDCD.NonVisualGraphicFrameProperties>(value);
     }
   }
   
@@ -86,22 +75,11 @@ public partial class GraphicFrame: ModelElement<DXDCD.GraphicFrame>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDCD.Transform>();
-      if (element != null)
-        return TransformConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD.Transform,DXDCD.Transform>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDCD.Transform>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TransformConverter.CreateOpenXmlElement<DXDCD.Transform>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD.Transform,DXDCD.Transform>(value);
     }
   }
   
@@ -114,22 +92,11 @@ public partial class GraphicFrame: ModelElement<DXDCD.GraphicFrame>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.Graphic>();
-      if (element != null)
-        return GraphicConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.Graphic,DXD.Graphic>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.Graphic>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = GraphicConverter.CreateOpenXmlElement<DXD.Graphic>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.Graphic,DXD.Graphic>(value);
     }
   }
   

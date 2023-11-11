@@ -22,7 +22,7 @@ public partial class TableRow: ModelElement<DXW.TableRow>
     get
     {
       if (_Element?.RsidTableRowMarkRevision?.Value != null)
-        return HexIntConverter.GetValue(_ExistingElement.RsidTableRowMarkRevision.Value);
+        return HexIntConverter.GetValue(_Element?.RsidTableRowMarkRevision.Value);
       return null;
     }
     set
@@ -44,7 +44,7 @@ public partial class TableRow: ModelElement<DXW.TableRow>
     get
     {
       if (_Element?.RsidTableRowAddition?.Value != null)
-        return HexIntConverter.GetValue(_ExistingElement.RsidTableRowAddition.Value);
+        return HexIntConverter.GetValue(_Element?.RsidTableRowAddition.Value);
       return null;
     }
     set
@@ -66,7 +66,7 @@ public partial class TableRow: ModelElement<DXW.TableRow>
     get
     {
       if (_Element?.RsidTableRowDeletion?.Value != null)
-        return HexIntConverter.GetValue(_ExistingElement.RsidTableRowDeletion.Value);
+        return HexIntConverter.GetValue(_Element?.RsidTableRowDeletion.Value);
       return null;
     }
     set
@@ -88,7 +88,7 @@ public partial class TableRow: ModelElement<DXW.TableRow>
     get
     {
       if (_Element?.RsidTableRowProperties?.Value != null)
-        return HexIntConverter.GetValue(_ExistingElement.RsidTableRowProperties.Value);
+        return HexIntConverter.GetValue(_Element?.RsidTableRowProperties.Value);
       return null;
     }
     set
@@ -110,7 +110,7 @@ public partial class TableRow: ModelElement<DXW.TableRow>
     get
     {
       if (_Element?.ParagraphId?.Value != null)
-        return HexIntConverter.GetValue(_ExistingElement.ParagraphId.Value);
+        return HexIntConverter.GetValue(_Element?.ParagraphId.Value);
       return null;
     }
     set
@@ -132,7 +132,7 @@ public partial class TableRow: ModelElement<DXW.TableRow>
     get
     {
       if (_Element?.TextId?.Value != null)
-        return HexIntConverter.GetValue(_ExistingElement.TextId.Value);
+        return HexIntConverter.GetValue(_Element?.TextId.Value);
       return null;
     }
     set
@@ -153,22 +153,11 @@ public partial class TableRow: ModelElement<DXW.TableRow>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.TablePropertyExceptions>();
-      if (element != null)
-        return TablePropertyExceptionsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.TablePropertyExceptions,DXW.TablePropertyExceptions>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.TablePropertyExceptions>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TablePropertyExceptionsConverter.CreateOpenXmlElement<DXW.TablePropertyExceptions>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.TablePropertyExceptions,DXW.TablePropertyExceptions>(value);
     }
   }
   
@@ -181,22 +170,11 @@ public partial class TableRow: ModelElement<DXW.TableRow>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.TableRowProperties>();
-      if (element != null)
-        return TableRowPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.TableRowProperties,DXW.TableRowProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.TableRowProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TableRowPropertiesConverter.CreateOpenXmlElement<DXW.TableRowProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.TableRowProperties,DXW.TableRowProperties>(value);
     }
   }
   

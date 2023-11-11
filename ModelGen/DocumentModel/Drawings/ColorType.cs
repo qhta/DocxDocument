@@ -21,22 +21,11 @@ public partial class ColorType: ModelElement<DXD.ColorType>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.RgbColorModelPercentage>();
-      if (element != null)
-        return RgbColorModelPercentageConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.RgbColorModelPercentage,DXD.RgbColorModelPercentage>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.RgbColorModelPercentage>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RgbColorModelPercentageConverter.CreateOpenXmlElement<DXD.RgbColorModelPercentage>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.RgbColorModelPercentage,DXD.RgbColorModelPercentage>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class ColorType: ModelElement<DXD.ColorType>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.RgbColorModelHex>();
-      if (element != null)
-        return RgbColorModelHexConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.RgbColorModelHex,DXD.RgbColorModelHex>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.RgbColorModelHex>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RgbColorModelHexConverter.CreateOpenXmlElement<DXD.RgbColorModelHex>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.RgbColorModelHex,DXD.RgbColorModelHex>(value);
     }
   }
   
@@ -77,22 +55,11 @@ public partial class ColorType: ModelElement<DXD.ColorType>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.HslColor>();
-      if (element != null)
-        return HslColorConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.HslColor,DXD.HslColor>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.HslColor>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = HslColorConverter.CreateOpenXmlElement<DXD.HslColor>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.HslColor,DXD.HslColor>(value);
     }
   }
   
@@ -105,22 +72,11 @@ public partial class ColorType: ModelElement<DXD.ColorType>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.SystemColor>();
-      if (element != null)
-        return SystemColorConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.SystemColor,DXD.SystemColor>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.SystemColor>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SystemColorConverter.CreateOpenXmlElement<DXD.SystemColor>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.SystemColor,DXD.SystemColor>(value);
     }
   }
   

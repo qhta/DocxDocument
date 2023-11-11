@@ -34,22 +34,11 @@ public partial class PieChartExtension: ModelElement<DXDC.PieChartExtension>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13DC.FilteredPieSeries>();
-      if (element != null)
-        return FilteredPieSeriesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC13.FilteredPieSeries,DXO13DC.FilteredPieSeries>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13DC.FilteredPieSeries>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FilteredPieSeriesConverter.CreateOpenXmlElement<DXO13DC.FilteredPieSeries>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC13.FilteredPieSeries,DXO13DC.FilteredPieSeries>(value);
     }
   }
   

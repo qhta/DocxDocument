@@ -21,22 +21,11 @@ public partial class ChartSpace: ModelElement<DXDC.ChartSpace>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.Date1904>();
-      if (element != null)
-        return Date1904Converter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.Date1904,DXDC.Date1904>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.Date1904>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = Date1904Converter.CreateOpenXmlElement<DXDC.Date1904>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.Date1904,DXDC.Date1904>(value);
     }
   }
   
@@ -53,7 +42,7 @@ public partial class ChartSpace: ModelElement<DXDC.ChartSpace>
     }
     set
     {
-      StringValueConverter.SetValue<DXDC.EditingLanguage>(openXmlElement, value);
+      StringValueConverter.SetValue<DXDC.EditingLanguage>(_ExistingElement, value);
     }
   }
   
@@ -66,22 +55,11 @@ public partial class ChartSpace: ModelElement<DXDC.ChartSpace>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.RoundedCorners>();
-      if (element != null)
-        return RoundedCornersConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.RoundedCorners,DXDC.RoundedCorners>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.RoundedCorners>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RoundedCornersConverter.CreateOpenXmlElement<DXDC.RoundedCorners>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.RoundedCorners,DXDC.RoundedCorners>(value);
     }
   }
   
@@ -94,7 +72,7 @@ public partial class ChartSpace: ModelElement<DXDC.ChartSpace>
     }
     set
     {
-      SimpleValueConverter.SetValue<DXO10DC.Style,System.Byte>(openXmlElement, value);
+      SimpleValueConverter.SetValue<DXO10DC.Style,System.Byte>(_ExistingElement, value);
     }
   }
   
@@ -103,22 +81,11 @@ public partial class ChartSpace: ModelElement<DXDC.ChartSpace>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.ColorMapOverride>();
-      if (element != null)
-        return ColorMapOverrideConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.ColorMapOverride,DXDC.ColorMapOverride>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.ColorMapOverride>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ColorMapOverrideConverter.CreateOpenXmlElement<DXDC.ColorMapOverride>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.ColorMapOverride,DXDC.ColorMapOverride>(value);
     }
   }
   
@@ -127,22 +94,11 @@ public partial class ChartSpace: ModelElement<DXDC.ChartSpace>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.PivotSource>();
-      if (element != null)
-        return PivotSourceConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.PivotSource,DXDC.PivotSource>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.PivotSource>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PivotSourceConverter.CreateOpenXmlElement<DXDC.PivotSource>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.PivotSource,DXDC.PivotSource>(value);
     }
   }
   
@@ -151,22 +107,11 @@ public partial class ChartSpace: ModelElement<DXDC.ChartSpace>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.Protection>();
-      if (element != null)
-        return ProtectionConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.Protection,DXDC.Protection>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.Protection>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ProtectionConverter.CreateOpenXmlElement<DXDC.Protection>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.Protection,DXDC.Protection>(value);
     }
   }
   
@@ -175,22 +120,11 @@ public partial class ChartSpace: ModelElement<DXDC.ChartSpace>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.Chart>();
-      if (element != null)
-        return ChartConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.Chart,DXDC.Chart>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.Chart>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ChartConverter.CreateOpenXmlElement<DXDC.Chart>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.Chart,DXDC.Chart>(value);
     }
   }
   
@@ -199,22 +133,11 @@ public partial class ChartSpace: ModelElement<DXDC.ChartSpace>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.ShapeProperties>();
-      if (element != null)
-        return ShapePropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.ShapeProperties,DXDC.ShapeProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.ShapeProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ShapePropertiesConverter.CreateOpenXmlElement<DXDC.ShapeProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.ShapeProperties,DXDC.ShapeProperties>(value);
     }
   }
   
@@ -223,22 +146,11 @@ public partial class ChartSpace: ModelElement<DXDC.ChartSpace>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.TextProperties>();
-      if (element != null)
-        return TextPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.TextProperties,DXDC.TextProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.TextProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TextPropertiesConverter.CreateOpenXmlElement<DXDC.TextProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.TextProperties,DXDC.TextProperties>(value);
     }
   }
   
@@ -247,22 +159,11 @@ public partial class ChartSpace: ModelElement<DXDC.ChartSpace>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.ExternalData>();
-      if (element != null)
-        return ExternalDataConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.ExternalData,DXDC.ExternalData>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.ExternalData>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExternalDataConverter.CreateOpenXmlElement<DXDC.ExternalData>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.ExternalData,DXDC.ExternalData>(value);
     }
   }
   
@@ -271,22 +172,11 @@ public partial class ChartSpace: ModelElement<DXDC.ChartSpace>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.PrintSettings>();
-      if (element != null)
-        return PrintSettingsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.PrintSettings,DXDC.PrintSettings>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.PrintSettings>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PrintSettingsConverter.CreateOpenXmlElement<DXDC.PrintSettings>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.PrintSettings,DXDC.PrintSettings>(value);
     }
   }
   
@@ -295,22 +185,11 @@ public partial class ChartSpace: ModelElement<DXDC.ChartSpace>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.UserShapesReference>();
-      if (element != null)
-        return UserShapesReferenceConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.UserShapesReference,DXDC.UserShapesReference>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.UserShapesReference>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = UserShapesReferenceConverter.CreateOpenXmlElement<DXDC.UserShapesReference>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.UserShapesReference,DXDC.UserShapesReference>(value);
     }
   }
   
@@ -319,22 +198,11 @@ public partial class ChartSpace: ModelElement<DXDC.ChartSpace>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.ChartSpaceExtensionList>();
-      if (element != null)
-        return ChartSpaceExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.ChartSpaceExtensionList,DXDC.ChartSpaceExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.ChartSpaceExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ChartSpaceExtensionListConverter.CreateOpenXmlElement<DXDC.ChartSpaceExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.ChartSpaceExtensionList,DXDC.ChartSpaceExtensionList>(value);
     }
   }
   

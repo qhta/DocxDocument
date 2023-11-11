@@ -25,7 +25,7 @@ public partial class SurfaceType: ModelElement<DXDC.SurfaceType>
     }
     set
     {
-      SimpleValueConverter.SetValue<DXDC.Thickness,System.Byte>(openXmlElement, value);
+      SimpleValueConverter.SetValue<DXDC.Thickness,System.Byte>(_ExistingElement, value);
     }
   }
   
@@ -38,22 +38,11 @@ public partial class SurfaceType: ModelElement<DXDC.SurfaceType>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.ShapeProperties>();
-      if (element != null)
-        return ShapePropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.ShapeProperties,DXDC.ShapeProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.ShapeProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ShapePropertiesConverter.CreateOpenXmlElement<DXDC.ShapeProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.ShapeProperties,DXDC.ShapeProperties>(value);
     }
   }
   
@@ -66,22 +55,11 @@ public partial class SurfaceType: ModelElement<DXDC.SurfaceType>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.PictureOptions>();
-      if (element != null)
-        return PictureOptionsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.PictureOptions,DXDC.PictureOptions>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.PictureOptions>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PictureOptionsConverter.CreateOpenXmlElement<DXDC.PictureOptions>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.PictureOptions,DXDC.PictureOptions>(value);
     }
   }
   
@@ -94,22 +72,11 @@ public partial class SurfaceType: ModelElement<DXDC.SurfaceType>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.ExtensionList>();
-      if (element != null)
-        return ExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.ExtensionList,DXDC.ExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.ExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DXDC.ExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.ExtensionList,DXDC.ExtensionList>(value);
     }
   }
   

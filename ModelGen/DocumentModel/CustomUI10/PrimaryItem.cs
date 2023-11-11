@@ -21,22 +21,11 @@ public partial class PrimaryItem: ModelElement<DXO10CUI.PrimaryItem>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10CUI.BackstageRegularButton>();
-      if (element != null)
-        return BackstageRegularButtonConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMCUI10.BackstageRegularButton,DXO10CUI.BackstageRegularButton>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10CUI.BackstageRegularButton>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BackstageRegularButtonConverter.CreateOpenXmlElement<DXO10CUI.BackstageRegularButton>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMCUI10.BackstageRegularButton,DXO10CUI.BackstageRegularButton>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class PrimaryItem: ModelElement<DXO10CUI.PrimaryItem>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10CUI.BackstagePrimaryMenu>();
-      if (element != null)
-        return BackstagePrimaryMenuConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMCUI10.BackstagePrimaryMenu,DXO10CUI.BackstagePrimaryMenu>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10CUI.BackstagePrimaryMenu>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BackstagePrimaryMenuConverter.CreateOpenXmlElement<DXO10CUI.BackstagePrimaryMenu>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMCUI10.BackstagePrimaryMenu,DXO10CUI.BackstagePrimaryMenu>(value);
     }
   }
   

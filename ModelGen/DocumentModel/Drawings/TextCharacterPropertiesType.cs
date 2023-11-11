@@ -22,7 +22,7 @@ public partial class TextCharacterPropertiesType: ModelElement<DXD.TextCharacter
     set
     {
       if (value != null)
-        _ExistingElement.SmtClean = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.SmtClean = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.SmtClean = null;
     }
@@ -55,7 +55,7 @@ public partial class TextCharacterPropertiesType: ModelElement<DXD.TextCharacter
     set
     {
       if (value != null)
-        _ExistingElement.Kumimoji = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.Kumimoji = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.Kumimoji = null;
     }
@@ -126,7 +126,7 @@ public partial class TextCharacterPropertiesType: ModelElement<DXD.TextCharacter
     set
     {
       if (value != null)
-        _ExistingElement.Bold = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.Bold = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.Bold = null;
     }
@@ -146,7 +146,7 @@ public partial class TextCharacterPropertiesType: ModelElement<DXD.TextCharacter
     set
     {
       if (value != null)
-        _ExistingElement.Italic = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.Italic = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.Italic = null;
     }
@@ -200,7 +200,7 @@ public partial class TextCharacterPropertiesType: ModelElement<DXD.TextCharacter
     set
     {
       if (value != null)
-        _ExistingElement.NormalizeHeight = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.NormalizeHeight = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.NormalizeHeight = null;
     }
@@ -237,7 +237,7 @@ public partial class TextCharacterPropertiesType: ModelElement<DXD.TextCharacter
     set
     {
       if (value != null)
-        _ExistingElement.NoProof = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.NoProof = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.NoProof = null;
     }
@@ -257,7 +257,7 @@ public partial class TextCharacterPropertiesType: ModelElement<DXD.TextCharacter
     set
     {
       if (value != null)
-        _ExistingElement.Dirty = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.Dirty = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.Dirty = null;
     }
@@ -277,7 +277,7 @@ public partial class TextCharacterPropertiesType: ModelElement<DXD.TextCharacter
     set
     {
       if (value != null)
-        _ExistingElement.SpellingError = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.SpellingError = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.SpellingError = null;
     }
@@ -297,7 +297,7 @@ public partial class TextCharacterPropertiesType: ModelElement<DXD.TextCharacter
     set
     {
       if (value != null)
-        _ExistingElement.SmartTagClean = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.SmartTagClean = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.SmartTagClean = null;
     }
@@ -346,22 +346,11 @@ public partial class TextCharacterPropertiesType: ModelElement<DXD.TextCharacter
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.Outline>();
-      if (element != null)
-        return OutlineConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.Outline,DXD.Outline>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.Outline>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = OutlineConverter.CreateOpenXmlElement<DXD.Outline>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.Outline,DXD.Outline>(value);
     }
   }
   

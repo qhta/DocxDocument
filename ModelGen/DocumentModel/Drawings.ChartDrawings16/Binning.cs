@@ -55,22 +55,11 @@ public partial class Binning: ModelElement<DXO16DCD.Binning>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.Xsddouble>();
-      if (element != null)
-        return XsddoubleConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.Xsddouble,DXO16DCD.Xsddouble>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.Xsddouble>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = XsddoubleConverter.CreateOpenXmlElement<DXO16DCD.Xsddouble>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.Xsddouble,DXO16DCD.Xsddouble>(value);
     }
   }
   
@@ -83,22 +72,11 @@ public partial class Binning: ModelElement<DXO16DCD.Binning>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.BinCountXsdunsignedInt>();
-      if (element != null)
-        return BinCountXsdunsignedIntConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.BinCountXsdunsignedInt,DXO16DCD.BinCountXsdunsignedInt>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.BinCountXsdunsignedInt>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BinCountXsdunsignedIntConverter.CreateOpenXmlElement<DXO16DCD.BinCountXsdunsignedInt>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.BinCountXsdunsignedInt,DXO16DCD.BinCountXsdunsignedInt>(value);
     }
   }
   

@@ -21,22 +21,11 @@ public partial class Bar: ModelElement<DXM.Bar>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.BarProperties>();
-      if (element != null)
-        return BarPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.BarProperties,DXM.BarProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.BarProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BarPropertiesConverter.CreateOpenXmlElement<DXM.BarProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.BarProperties,DXM.BarProperties>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class Bar: ModelElement<DXM.Bar>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.Base>();
-      if (element != null)
-        return BaseConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.Base,DXM.Base>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.Base>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BaseConverter.CreateOpenXmlElement<DXM.Base>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.Base,DXM.Base>(value);
     }
   }
   

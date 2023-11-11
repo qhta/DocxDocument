@@ -34,22 +34,11 @@ public partial class ConnectorLockingExtension: ModelElement<DXD.ConnectorLockin
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.Graphic>();
-      if (element != null)
-        return GraphicConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.Graphic,DXD.Graphic>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.Graphic>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = GraphicConverter.CreateOpenXmlElement<DXD.Graphic>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.Graphic,DXD.Graphic>(value);
     }
   }
   

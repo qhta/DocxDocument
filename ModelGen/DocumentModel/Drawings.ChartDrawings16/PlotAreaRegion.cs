@@ -21,22 +21,11 @@ public partial class PlotAreaRegion: ModelElement<DXO16DCD.PlotAreaRegion>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.PlotSurface>();
-      if (element != null)
-        return PlotSurfaceConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.PlotSurface,DXO16DCD.PlotSurface>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.PlotSurface>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PlotSurfaceConverter.CreateOpenXmlElement<DXO16DCD.PlotSurface>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.PlotSurface,DXO16DCD.PlotSurface>(value);
     }
   }
   
@@ -45,22 +34,11 @@ public partial class PlotAreaRegion: ModelElement<DXO16DCD.PlotAreaRegion>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.ExtensionList>();
-      if (element != null)
-        return ExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.ExtensionList,DXO16DCD.ExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.ExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DXO16DCD.ExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.ExtensionList,DXO16DCD.ExtensionList>(value);
     }
   }
   

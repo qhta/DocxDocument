@@ -17,22 +17,11 @@ public partial class CategoryAxisData: ModelElement<DXDC.CategoryAxisData>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.MultiLevelStringReference>();
-      if (element != null)
-        return MultiLevelStringReferenceConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.MultiLevelStringReference,DXDC.MultiLevelStringReference>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.MultiLevelStringReference>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = MultiLevelStringReferenceConverter.CreateOpenXmlElement<DXDC.MultiLevelStringReference>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.MultiLevelStringReference,DXDC.MultiLevelStringReference>(value);
     }
   }
   
@@ -41,22 +30,11 @@ public partial class CategoryAxisData: ModelElement<DXDC.CategoryAxisData>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.NumberReference>();
-      if (element != null)
-        return NumberReferenceConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.NumberReference,DXDC.NumberReference>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.NumberReference>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NumberReferenceConverter.CreateOpenXmlElement<DXDC.NumberReference>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.NumberReference,DXDC.NumberReference>(value);
     }
   }
   
@@ -65,22 +43,11 @@ public partial class CategoryAxisData: ModelElement<DXDC.CategoryAxisData>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.NumberLiteral>();
-      if (element != null)
-        return NumberLiteralConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.NumberLiteral,DXDC.NumberLiteral>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.NumberLiteral>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NumberLiteralConverter.CreateOpenXmlElement<DXDC.NumberLiteral>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.NumberLiteral,DXDC.NumberLiteral>(value);
     }
   }
   
@@ -89,22 +56,11 @@ public partial class CategoryAxisData: ModelElement<DXDC.CategoryAxisData>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.StringReference>();
-      if (element != null)
-        return StringReferenceConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.StringReference,DXDC.StringReference>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.StringReference>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = StringReferenceConverter.CreateOpenXmlElement<DXDC.StringReference>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.StringReference,DXDC.StringReference>(value);
     }
   }
   
@@ -113,22 +69,11 @@ public partial class CategoryAxisData: ModelElement<DXDC.CategoryAxisData>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.StringLiteral>();
-      if (element != null)
-        return StringLiteralConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.StringLiteral,DXDC.StringLiteral>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.StringLiteral>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = StringLiteralConverter.CreateOpenXmlElement<DXDC.StringLiteral>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.StringLiteral,DXDC.StringLiteral>(value);
     }
   }
   

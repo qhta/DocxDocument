@@ -21,22 +21,11 @@ public partial class SdtRunRuby: ModelElement<DXW.SdtRunRuby>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.SdtContentRunRuby>();
-      if (element != null)
-        return SdtContentRunRubyConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.SdtContentRunRuby,DXW.SdtContentRunRuby>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.SdtContentRunRuby>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SdtContentRunRubyConverter.CreateOpenXmlElement<DXW.SdtContentRunRuby>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.SdtContentRunRuby,DXW.SdtContentRunRuby>(value);
     }
   }
   
@@ -45,22 +34,11 @@ public partial class SdtRunRuby: ModelElement<DXW.SdtRunRuby>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.SdtProperties>();
-      if (element != null)
-        return SdtPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.SdtProperties,DXW.SdtProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.SdtProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SdtPropertiesConverter.CreateOpenXmlElement<DXW.SdtProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.SdtProperties,DXW.SdtProperties>(value);
     }
   }
   
@@ -69,22 +47,11 @@ public partial class SdtRunRuby: ModelElement<DXW.SdtRunRuby>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.SdtEndCharProperties>();
-      if (element != null)
-        return SdtEndCharPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.SdtEndCharProperties,DXW.SdtEndCharProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.SdtEndCharProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SdtEndCharPropertiesConverter.CreateOpenXmlElement<DXW.SdtEndCharProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.SdtEndCharProperties,DXW.SdtEndCharProperties>(value);
     }
   }
   

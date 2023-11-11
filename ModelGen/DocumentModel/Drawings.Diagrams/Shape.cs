@@ -94,7 +94,7 @@ public partial class Shape: ModelElement<DXDDD.Shape>
     set
     {
       if (value != null)
-        _ExistingElement.HideGeometry = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.HideGeometry = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.HideGeometry = null;
     }
@@ -114,7 +114,7 @@ public partial class Shape: ModelElement<DXDDD.Shape>
     set
     {
       if (value != null)
-        _ExistingElement.LockedText = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.LockedText = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.LockedText = null;
     }
@@ -134,7 +134,7 @@ public partial class Shape: ModelElement<DXDDD.Shape>
     set
     {
       if (value != null)
-        _ExistingElement.BlipPlaceholder = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.BlipPlaceholder = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.BlipPlaceholder = null;
     }
@@ -149,22 +149,11 @@ public partial class Shape: ModelElement<DXDDD.Shape>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDDD.AdjustList>();
-      if (element != null)
-        return AdjustListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDD.AdjustList,DXDDD.AdjustList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDDD.AdjustList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = AdjustListConverter.CreateOpenXmlElement<DXDDD.AdjustList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDD.AdjustList,DXDDD.AdjustList>(value);
     }
   }
   
@@ -177,22 +166,11 @@ public partial class Shape: ModelElement<DXDDD.Shape>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDDD.ExtensionList>();
-      if (element != null)
-        return ExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDD.ExtensionList,DXDDD.ExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDDD.ExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DXDDD.ExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDD.ExtensionList,DXDDD.ExtensionList>(value);
     }
   }
   

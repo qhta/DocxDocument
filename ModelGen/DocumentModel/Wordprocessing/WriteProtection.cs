@@ -90,7 +90,7 @@ public partial class WriteProtection: ModelElement<DXW.WriteProtection>
     get
     {
       if (_Element?.AlgorithmIdExtensibility?.Value != null)
-        return HexIntConverter.GetValue(_ExistingElement.AlgorithmIdExtensibility.Value);
+        return HexIntConverter.GetValue(_Element?.AlgorithmIdExtensibility.Value);
       return null;
     }
     set
@@ -129,7 +129,7 @@ public partial class WriteProtection: ModelElement<DXW.WriteProtection>
     get
     {
       if (_Element?.CryptographicProviderTypeExtensibility?.Value != null)
-        return HexIntConverter.GetValue(_ExistingElement.CryptographicProviderTypeExtensibility.Value);
+        return HexIntConverter.GetValue(_Element?.CryptographicProviderTypeExtensibility.Value);
       return null;
     }
     set
@@ -167,16 +167,11 @@ public partial class WriteProtection: ModelElement<DXW.WriteProtection>
   {
     get
     {
-      if (_Element?.Hash?.Value != null)
-        return Convert.FromBase64String(_ExistingElement.Hash.Value);
-      return null;
+      return Base64BinaryConverter.GetValue(_Element?.Hash);
     }
     set
     {
-      if (value != null)
-        _ExistingElement.Hash = Convert.ToBase64String(value);
-      else
-        _ExistingElement.Hash = null;
+      _ExistingElement.Hash = Base64BinaryConverter.CreateBase64BinaryValue(value);
     }
   }
   
@@ -189,16 +184,11 @@ public partial class WriteProtection: ModelElement<DXW.WriteProtection>
   {
     get
     {
-      if (_Element?.Salt?.Value != null)
-        return Convert.FromBase64String(_ExistingElement.Salt.Value);
-      return null;
+      return Base64BinaryConverter.GetValue(_Element?.Salt);
     }
     set
     {
-      if (value != null)
-        _ExistingElement.Salt = Convert.ToBase64String(value);
-      else
-        _ExistingElement.Salt = null;
+      _ExistingElement.Salt = Base64BinaryConverter.CreateBase64BinaryValue(value);
     }
   }
   
@@ -228,16 +218,11 @@ public partial class WriteProtection: ModelElement<DXW.WriteProtection>
   {
     get
     {
-      if (_Element?.HashValue?.Value != null)
-        return Convert.FromBase64String(_ExistingElement.HashValue.Value);
-      return null;
+      return Base64BinaryConverter.GetValue(_Element?.HashValue);
     }
     set
     {
-      if (value != null)
-        _ExistingElement.HashValue = Convert.ToBase64String(value);
-      else
-        _ExistingElement.HashValue = null;
+      _ExistingElement.HashValue = Base64BinaryConverter.CreateBase64BinaryValue(value);
     }
   }
   
@@ -250,16 +235,11 @@ public partial class WriteProtection: ModelElement<DXW.WriteProtection>
   {
     get
     {
-      if (_Element?.SaltValue?.Value != null)
-        return Convert.FromBase64String(_ExistingElement.SaltValue.Value);
-      return null;
+      return Base64BinaryConverter.GetValue(_Element?.SaltValue);
     }
     set
     {
-      if (value != null)
-        _ExistingElement.SaltValue = Convert.ToBase64String(value);
-      else
-        _ExistingElement.SaltValue = null;
+      _ExistingElement.SaltValue = Base64BinaryConverter.CreateBase64BinaryValue(value);
     }
   }
   

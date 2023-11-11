@@ -38,22 +38,11 @@ public partial class DataStoreItem: ModelElement<DXCXDP.DataStoreItem>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXCXDP.SchemaReferences>();
-      if (element != null)
-        return SchemaReferencesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMCX.SchemaReferences,DXCXDP.SchemaReferences>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXCXDP.SchemaReferences>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SchemaReferencesConverter.CreateOpenXmlElement<DXCXDP.SchemaReferences>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMCX.SchemaReferences,DXCXDP.SchemaReferences>(value);
     }
   }
   

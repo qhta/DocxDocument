@@ -38,22 +38,11 @@ public partial class DataLabel: ModelElement<DXO16DCD.DataLabel>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.NumberFormat>();
-      if (element != null)
-        return NumberFormatConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.NumberFormat,DXO16DCD.NumberFormat>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.NumberFormat>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NumberFormatConverter.CreateOpenXmlElement<DXO16DCD.NumberFormat>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.NumberFormat,DXO16DCD.NumberFormat>(value);
     }
   }
   
@@ -66,22 +55,11 @@ public partial class DataLabel: ModelElement<DXO16DCD.DataLabel>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.ShapeProperties>();
-      if (element != null)
-        return ShapePropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.ShapeProperties,DXO16DCD.ShapeProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.ShapeProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ShapePropertiesConverter.CreateOpenXmlElement<DXO16DCD.ShapeProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.ShapeProperties,DXO16DCD.ShapeProperties>(value);
     }
   }
   
@@ -94,22 +72,11 @@ public partial class DataLabel: ModelElement<DXO16DCD.DataLabel>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.TxPrTextBody>();
-      if (element != null)
-        return TxPrTextBodyConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.TxPrTextBody,DXO16DCD.TxPrTextBody>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.TxPrTextBody>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TxPrTextBodyConverter.CreateOpenXmlElement<DXO16DCD.TxPrTextBody>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.TxPrTextBody,DXO16DCD.TxPrTextBody>(value);
     }
   }
   
@@ -122,22 +89,11 @@ public partial class DataLabel: ModelElement<DXO16DCD.DataLabel>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.DataLabelVisibilities>();
-      if (element != null)
-        return DataLabelVisibilitiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.DataLabelVisibilities,DXO16DCD.DataLabelVisibilities>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.DataLabelVisibilities>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DataLabelVisibilitiesConverter.CreateOpenXmlElement<DXO16DCD.DataLabelVisibilities>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.DataLabelVisibilities,DXO16DCD.DataLabelVisibilities>(value);
     }
   }
   
@@ -150,22 +106,11 @@ public partial class DataLabel: ModelElement<DXO16DCD.DataLabel>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.SeparatorXsdstring>();
-      if (element != null)
-        return SeparatorXsdstringConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.SeparatorXsdstring,DXO16DCD.SeparatorXsdstring>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.SeparatorXsdstring>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SeparatorXsdstringConverter.CreateOpenXmlElement<DXO16DCD.SeparatorXsdstring>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.SeparatorXsdstring,DXO16DCD.SeparatorXsdstring>(value);
     }
   }
   
@@ -178,22 +123,11 @@ public partial class DataLabel: ModelElement<DXO16DCD.DataLabel>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.ExtensionList>();
-      if (element != null)
-        return ExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.ExtensionList,DXO16DCD.ExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.ExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DXO16DCD.ExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.ExtensionList,DXO16DCD.ExtensionList>(value);
     }
   }
   

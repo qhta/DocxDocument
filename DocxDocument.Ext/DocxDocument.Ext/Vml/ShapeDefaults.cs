@@ -17,8 +17,8 @@ public partial class ShapeDefaults : ModelElement<DXVO.ShapeDefaults>
   [DataMember]
   public long? MaxShapeId
   {
-    get => _Element.MaxShapeId?.Value;
-    set => _Element.MaxShapeId = value;
+    get => _Element?.MaxShapeId?.Value;
+    set => _ExistingElement.MaxShapeId = value;
   }
 
   /// <summary>
@@ -27,8 +27,8 @@ public partial class ShapeDefaults : ModelElement<DXVO.ShapeDefaults>
   [DataMember]
   public string? Style
   {
-    get => _Element.Style?.Value;
-    set => _Element.Style = value;
+    get => _Element?.Style?.Value;
+    set => _ExistingElement.Style = value;
   }
 
   /// <summary>
@@ -37,8 +37,8 @@ public partial class ShapeDefaults : ModelElement<DXVO.ShapeDefaults>
   [DataMember]
   public bool? BeFilled
   {
-    get => _Element.BeFilled?.Value;
-    set => _Element.BeFilled = value;
+    get => _Element?.BeFilled?.Value;
+    set => _ExistingElement.BeFilled = value;
   }
 
   /// <summary>
@@ -47,8 +47,8 @@ public partial class ShapeDefaults : ModelElement<DXVO.ShapeDefaults>
   [DataMember]
   public string? FillColor
   {
-    get => _Element.FillColor?.Value;
-    set => _Element.FillColor = value;
+    get => _Element?.FillColor?.Value;
+    set => _ExistingElement.FillColor = value;
   }
 
   /// <summary>
@@ -57,8 +57,8 @@ public partial class ShapeDefaults : ModelElement<DXVO.ShapeDefaults>
   [DataMember]
   public bool? IsStroke
   {
-    get => _Element.IsStroke?.Value;
-    set => _Element.IsStroke = value;
+    get => _Element?.IsStroke?.Value;
+    set => _ExistingElement.IsStroke = value;
   }
 
   /// <summary>
@@ -67,8 +67,8 @@ public partial class ShapeDefaults : ModelElement<DXVO.ShapeDefaults>
   [DataMember]
   public string? StrokeColor
   {
-    get => _Element.StrokeColor?.Value;
-    set => _Element.StrokeColor = value;
+    get => _Element?.StrokeColor?.Value;
+    set => _ExistingElement.StrokeColor = value;
   }
 
   /// <summary>
@@ -77,8 +77,8 @@ public partial class ShapeDefaults : ModelElement<DXVO.ShapeDefaults>
   [DataMember]
   public bool? AllowInCell
   {
-    get => _Element.AllowInCell?.Value;
-    set => _Element.AllowInCell = value;
+    get => _Element?.AllowInCell?.Value;
+    set => _ExistingElement.AllowInCell = value;
   }
 
   /// <summary>
@@ -87,8 +87,8 @@ public partial class ShapeDefaults : ModelElement<DXVO.ShapeDefaults>
   [DataMember]
   public bool? AllowOverlap
   {
-    get => _Element.AllowOverlap?.Value;
-    set => _Element.AllowOverlap = value;
+    get => _Element?.AllowOverlap?.Value;
+    set => _ExistingElement.AllowOverlap = value;
   }
 
   /// <summary>
@@ -97,7 +97,7 @@ public partial class ShapeDefaults : ModelElement<DXVO.ShapeDefaults>
   [DataMember]
   public DMV.ExtensionHandlingBehaviorKind? Extension
   {
-    get => _Element.Extension?.GetEnumValue<DMV.ExtensionHandlingBehaviorKind, DXV.ExtensionHandlingBehaviorValues>();
-    set => _Element.Extension = EVU.SetEnumValue<DMV.ExtensionHandlingBehaviorKind, DXV.ExtensionHandlingBehaviorValues>(value);
+    get => _Element?.Extension?.GetEnumValue<DMV.ExtensionHandlingBehaviorKind, DXV.ExtensionHandlingBehaviorValues>();
+    set => _ExistingElement.Extension = EVU.SetEnumValue<DMV.ExtensionHandlingBehaviorKind, DXV.ExtensionHandlingBehaviorValues>(value);
   }
 }

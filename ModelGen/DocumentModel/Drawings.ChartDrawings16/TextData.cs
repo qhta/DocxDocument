@@ -17,22 +17,11 @@ public partial class TextData: ModelElement<DXO16DCD.TextData>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.Formula>();
-      if (element != null)
-        return FormulaConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.Formula,DXO16DCD.Formula>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.Formula>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FormulaConverter.CreateOpenXmlElement<DXO16DCD.Formula>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.Formula,DXO16DCD.Formula>(value);
     }
   }
   
@@ -41,22 +30,11 @@ public partial class TextData: ModelElement<DXO16DCD.TextData>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.VXsdstring>();
-      if (element != null)
-        return VXsdstringConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.VXsdstring,DXO16DCD.VXsdstring>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.VXsdstring>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = VXsdstringConverter.CreateOpenXmlElement<DXO16DCD.VXsdstring>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.VXsdstring,DXO16DCD.VXsdstring>(value);
     }
   }
   

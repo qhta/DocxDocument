@@ -48,22 +48,11 @@ public partial class MatrixProperties: ModelElement<DXM.MatrixProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.HidePlaceholder>();
-      if (element != null)
-        return HidePlaceholderConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.HidePlaceholder,DXM.HidePlaceholder>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.HidePlaceholder>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = HidePlaceholderConverter.CreateOpenXmlElement<DXM.HidePlaceholder>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.HidePlaceholder,DXM.HidePlaceholder>(value);
     }
   }
   
@@ -76,22 +65,11 @@ public partial class MatrixProperties: ModelElement<DXM.MatrixProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.RowSpacingRule>();
-      if (element != null)
-        return RowSpacingRuleConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.RowSpacingRule,DXM.RowSpacingRule>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.RowSpacingRule>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RowSpacingRuleConverter.CreateOpenXmlElement<DXM.RowSpacingRule>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.RowSpacingRule,DXM.RowSpacingRule>(value);
     }
   }
   
@@ -104,22 +82,11 @@ public partial class MatrixProperties: ModelElement<DXM.MatrixProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.ColumnGapRule>();
-      if (element != null)
-        return ColumnGapRuleConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.ColumnGapRule,DXM.ColumnGapRule>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.ColumnGapRule>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ColumnGapRuleConverter.CreateOpenXmlElement<DXM.ColumnGapRule>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.ColumnGapRule,DXM.ColumnGapRule>(value);
     }
   }
   
@@ -132,22 +99,11 @@ public partial class MatrixProperties: ModelElement<DXM.MatrixProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.RowSpacing>();
-      if (element != null)
-        return RowSpacingConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.RowSpacing,DXM.RowSpacing>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.RowSpacing>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RowSpacingConverter.CreateOpenXmlElement<DXM.RowSpacing>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.RowSpacing,DXM.RowSpacing>(value);
     }
   }
   
@@ -160,22 +116,11 @@ public partial class MatrixProperties: ModelElement<DXM.MatrixProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.ColumnSpacing>();
-      if (element != null)
-        return ColumnSpacingConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.ColumnSpacing,DXM.ColumnSpacing>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.ColumnSpacing>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ColumnSpacingConverter.CreateOpenXmlElement<DXM.ColumnSpacing>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.ColumnSpacing,DXM.ColumnSpacing>(value);
     }
   }
   
@@ -188,22 +133,11 @@ public partial class MatrixProperties: ModelElement<DXM.MatrixProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.ColumnGap>();
-      if (element != null)
-        return ColumnGapConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.ColumnGap,DXM.ColumnGap>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.ColumnGap>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ColumnGapConverter.CreateOpenXmlElement<DXM.ColumnGap>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.ColumnGap,DXM.ColumnGap>(value);
     }
   }
   
@@ -216,22 +150,11 @@ public partial class MatrixProperties: ModelElement<DXM.MatrixProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.MatrixColumns>();
-      if (element != null)
-        return MatrixColumnsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.MatrixColumns,DXM.MatrixColumns>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.MatrixColumns>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = MatrixColumnsConverter.CreateOpenXmlElement<DXM.MatrixColumns>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.MatrixColumns,DXM.MatrixColumns>(value);
     }
   }
   
@@ -244,22 +167,11 @@ public partial class MatrixProperties: ModelElement<DXM.MatrixProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.ControlProperties>();
-      if (element != null)
-        return ControlPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.ControlProperties,DXM.ControlProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.ControlProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ControlPropertiesConverter.CreateOpenXmlElement<DXM.ControlProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.ControlProperties,DXM.ControlProperties>(value);
     }
   }
   

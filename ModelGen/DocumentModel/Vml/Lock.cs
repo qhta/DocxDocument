@@ -17,15 +17,18 @@ public partial class Lock: ModelElement<DXVO.Lock>
   ///   Position Lock
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? Position
+  public Boolean? Position
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.Position?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.Position = value;
+      else
+        _ExistingElement.Position = null;
     }
   }
   
@@ -34,15 +37,18 @@ public partial class Lock: ModelElement<DXVO.Lock>
   ///   Selection Lock
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? Selection
+  public Boolean? Selection
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.Selection?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.Selection = value;
+      else
+        _ExistingElement.Selection = null;
     }
   }
   
@@ -51,15 +57,18 @@ public partial class Lock: ModelElement<DXVO.Lock>
   ///   Grouping Lock
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? Grouping
+  public Boolean? Grouping
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.Grouping?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.Grouping = value;
+      else
+        _ExistingElement.Grouping = null;
     }
   }
   
@@ -68,15 +77,18 @@ public partial class Lock: ModelElement<DXVO.Lock>
   ///   Ungrouping Lock
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? Ungrouping
+  public Boolean? Ungrouping
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.Ungrouping?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.Ungrouping = value;
+      else
+        _ExistingElement.Ungrouping = null;
     }
   }
   
@@ -85,15 +97,18 @@ public partial class Lock: ModelElement<DXVO.Lock>
   ///   Rotation Lock
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? Rotation
+  public Boolean? Rotation
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.Rotation?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.Rotation = value;
+      else
+        _ExistingElement.Rotation = null;
     }
   }
   
@@ -102,15 +117,18 @@ public partial class Lock: ModelElement<DXVO.Lock>
   ///   Cropping Lock
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? Cropping
+  public Boolean? Cropping
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.Cropping?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.Cropping = value;
+      else
+        _ExistingElement.Cropping = null;
     }
   }
   
@@ -119,15 +137,18 @@ public partial class Lock: ModelElement<DXVO.Lock>
   ///   Vertices Lock
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? Verticies
+  public Boolean? Verticies
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.Verticies?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.Verticies = value;
+      else
+        _ExistingElement.Verticies = null;
     }
   }
   
@@ -136,15 +157,18 @@ public partial class Lock: ModelElement<DXVO.Lock>
   ///   Handles Lock
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? AdjustHandles
+  public Boolean? AdjustHandles
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.AdjustHandles?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.AdjustHandles = value;
+      else
+        _ExistingElement.AdjustHandles = null;
     }
   }
   
@@ -153,15 +177,18 @@ public partial class Lock: ModelElement<DXVO.Lock>
   ///   Text Lock
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? TextLock
+  public Boolean? TextLock
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.TextLock?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.TextLock = value;
+      else
+        _ExistingElement.TextLock = null;
     }
   }
   
@@ -170,15 +197,18 @@ public partial class Lock: ModelElement<DXVO.Lock>
   ///   Aspect Ratio Lock
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? AspectRatio
+  public Boolean? AspectRatio
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.AspectRatio?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.AspectRatio = value;
+      else
+        _ExistingElement.AspectRatio = null;
     }
   }
   
@@ -187,15 +217,18 @@ public partial class Lock: ModelElement<DXVO.Lock>
   ///   AutoShape Type Lock
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? ShapeType
+  public Boolean? ShapeType
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.ShapeType?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.ShapeType = value;
+      else
+        _ExistingElement.ShapeType = null;
     }
   }
   

@@ -43,7 +43,7 @@ public partial class TransformGroup: ModelElement<DXD.TransformGroup>
     set
     {
       if (value != null)
-        _ExistingElement.HorizontalFlip = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.HorizontalFlip = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.HorizontalFlip = null;
     }
@@ -63,7 +63,7 @@ public partial class TransformGroup: ModelElement<DXD.TransformGroup>
     set
     {
       if (value != null)
-        _ExistingElement.VerticalFlip = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.VerticalFlip = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.VerticalFlip = null;
     }
@@ -78,22 +78,11 @@ public partial class TransformGroup: ModelElement<DXD.TransformGroup>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.Offset>();
-      if (element != null)
-        return OffsetConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.Offset,DXD.Offset>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.Offset>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = OffsetConverter.CreateOpenXmlElement<DXD.Offset>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.Offset,DXD.Offset>(value);
     }
   }
   
@@ -106,22 +95,11 @@ public partial class TransformGroup: ModelElement<DXD.TransformGroup>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.Extents>();
-      if (element != null)
-        return ExtentsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.Extents,DXD.Extents>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.Extents>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtentsConverter.CreateOpenXmlElement<DXD.Extents>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.Extents,DXD.Extents>(value);
     }
   }
   
@@ -134,22 +112,11 @@ public partial class TransformGroup: ModelElement<DXD.TransformGroup>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.ChildOffset>();
-      if (element != null)
-        return ChildOffsetConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.ChildOffset,DXD.ChildOffset>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.ChildOffset>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ChildOffsetConverter.CreateOpenXmlElement<DXD.ChildOffset>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.ChildOffset,DXD.ChildOffset>(value);
     }
   }
   
@@ -162,22 +129,11 @@ public partial class TransformGroup: ModelElement<DXD.TransformGroup>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.ChildExtents>();
-      if (element != null)
-        return ChildExtentsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.ChildExtents,DXD.ChildExtents>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.ChildExtents>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ChildExtentsConverter.CreateOpenXmlElement<DXD.ChildExtents>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.ChildExtents,DXD.ChildExtents>(value);
     }
   }
   

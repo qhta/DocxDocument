@@ -17,11 +17,13 @@ public partial class Behaviors: ModelElement<DXW.Behaviors>
   {
     get
     {
-      var collection = new Collection<DMW.DocPartBehaviorKind>();
-      foreach (var item in _ExistingElement.Elements<>())
+      if (_Element==null)
+        return null;
+      var collection = new ElementCollection<DMW.DocPartBehaviorKind>();
+      foreach (var item in _ExistingElement.Elements<DXW.Behavior>())
       {
-        var newItem = ElementCollection<DocPartBehaviorKind>Converter.CreateModelElement(item);
-        if (newItem != null)
+        var newItem = EnumValueConverter.GetValue<DXW.Behavior,DM.DocPartBehaviorKind>(item);
+        if (newItem is not null)
           collection.Add(newItem);
       }
       if (collection.Count>0)
@@ -35,7 +37,7 @@ public partial class Behaviors: ModelElement<DXW.Behaviors>
       {
         foreach (var item in value)
         {
-          var newItem = ElementCollection<DocPartBehaviorKind>Converter.CreateOpenXmlElement<DM.ElementCollection<Behavior>>(item);
+          var newItem = (item);
           if (newItem != null)
             _ExistingElement.AddChild(newItem);
         }

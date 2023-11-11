@@ -72,22 +72,11 @@ public partial class DocumentBackground: ModelElement<DXW.DocumentBackground>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXV.Background>();
-      if (element != null)
-        return BackgroundConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMVML.Background,DXV.Background>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXV.Background>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BackgroundConverter.CreateOpenXmlElement<DXV.Background>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMVML.Background,DXV.Background>(value);
     }
   }
   

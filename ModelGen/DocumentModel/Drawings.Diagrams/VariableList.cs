@@ -44,7 +44,7 @@ public partial class VariableList: ModelElement<DXDDD.VariableList>
     }
     set
     {
-      SimpleValueConverter.SetValue<DXDDD.MaxNumberOfChildren,System.Int32>(openXmlElement, value);
+      SimpleValueConverter.SetValue<DXDDD.MaxNumberOfChildren,System.Int32>(_ExistingElement, value);
     }
   }
   
@@ -57,7 +57,7 @@ public partial class VariableList: ModelElement<DXDDD.VariableList>
     }
     set
     {
-      SimpleValueConverter.SetValue<DXDDD.PreferredNumberOfChildren,System.Int32>(openXmlElement, value);
+      SimpleValueConverter.SetValue<DXDDD.PreferredNumberOfChildren,System.Int32>(_ExistingElement, value);
     }
   }
   

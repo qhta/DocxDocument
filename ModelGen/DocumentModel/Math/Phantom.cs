@@ -21,22 +21,11 @@ public partial class Phantom: ModelElement<DXM.Phantom>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.PhantomProperties>();
-      if (element != null)
-        return PhantomPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.PhantomProperties,DXM.PhantomProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.PhantomProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PhantomPropertiesConverter.CreateOpenXmlElement<DXM.PhantomProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.PhantomProperties,DXM.PhantomProperties>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class Phantom: ModelElement<DXM.Phantom>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.Base>();
-      if (element != null)
-        return BaseConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.Base,DXM.Base>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.Base>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BaseConverter.CreateOpenXmlElement<DXM.Base>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.Base,DXM.Base>(value);
     }
   }
   

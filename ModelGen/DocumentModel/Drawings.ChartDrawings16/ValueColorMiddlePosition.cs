@@ -25,7 +25,7 @@ public partial class ValueColorMiddlePosition: ModelElement<DXO16DCD.ValueColorM
     }
     set
     {
-      SimpleValueConverter.SetValue<DXO16DCD.NumberColorPosition,System.Double>(openXmlElement, value);
+      SimpleValueConverter.SetValue<DXO16DCD.NumberColorPosition,System.Double>(_ExistingElement, value);
     }
   }
   
@@ -42,7 +42,7 @@ public partial class ValueColorMiddlePosition: ModelElement<DXO16DCD.ValueColorM
     }
     set
     {
-      SimpleValueConverter.SetValue<DXO16DCD.PercentageColorPosition,System.Double>(openXmlElement, value);
+      SimpleValueConverter.SetValue<DXO16DCD.PercentageColorPosition,System.Double>(_ExistingElement, value);
     }
   }
   

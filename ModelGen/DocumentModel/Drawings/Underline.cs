@@ -17,22 +17,11 @@ public partial class Underline: ModelElement<DXD.Underline>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.NoFill>();
-      if (element != null)
-        return NoFillConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.NoFill,DXD.NoFill>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.NoFill>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NoFillConverter.CreateOpenXmlElement<DXD.NoFill>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.NoFill,DXD.NoFill>(value);
     }
   }
   
@@ -41,22 +30,11 @@ public partial class Underline: ModelElement<DXD.Underline>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.SolidFill>();
-      if (element != null)
-        return SolidFillConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.SolidFill,DXD.SolidFill>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.SolidFill>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SolidFillConverter.CreateOpenXmlElement<DXD.SolidFill>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.SolidFill,DXD.SolidFill>(value);
     }
   }
   
@@ -65,22 +43,11 @@ public partial class Underline: ModelElement<DXD.Underline>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.GradientFill>();
-      if (element != null)
-        return GradientFillConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.GradientFill,DXD.GradientFill>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.GradientFill>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = GradientFillConverter.CreateOpenXmlElement<DXD.GradientFill>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.GradientFill,DXD.GradientFill>(value);
     }
   }
   
@@ -89,22 +56,11 @@ public partial class Underline: ModelElement<DXD.Underline>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.PatternFill>();
-      if (element != null)
-        return PatternFillConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.PatternFill,DXD.PatternFill>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.PatternFill>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PatternFillConverter.CreateOpenXmlElement<DXD.PatternFill>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.PatternFill,DXD.PatternFill>(value);
     }
   }
   
@@ -136,22 +92,11 @@ public partial class Underline: ModelElement<DXD.Underline>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.CustomDash>();
-      if (element != null)
-        return CustomDashConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.CustomDash,DXD.CustomDash>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.CustomDash>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = CustomDashConverter.CreateOpenXmlElement<DXD.CustomDash>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.CustomDash,DXD.CustomDash>(value);
     }
   }
   
@@ -160,22 +105,11 @@ public partial class Underline: ModelElement<DXD.Underline>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.Round>();
-      if (element != null)
-        return RoundConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.Round,DXD.Round>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.Round>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RoundConverter.CreateOpenXmlElement<DXD.Round>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.Round,DXD.Round>(value);
     }
   }
   
@@ -184,22 +118,11 @@ public partial class Underline: ModelElement<DXD.Underline>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.LineJoinBevel>();
-      if (element != null)
-        return LineJoinBevelConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.LineJoinBevel,DXD.LineJoinBevel>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.LineJoinBevel>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LineJoinBevelConverter.CreateOpenXmlElement<DXD.LineJoinBevel>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.LineJoinBevel,DXD.LineJoinBevel>(value);
     }
   }
   
@@ -208,22 +131,11 @@ public partial class Underline: ModelElement<DXD.Underline>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.Miter>();
-      if (element != null)
-        return MiterConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.Miter,DXD.Miter>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.Miter>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = MiterConverter.CreateOpenXmlElement<DXD.Miter>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.Miter,DXD.Miter>(value);
     }
   }
   
@@ -232,22 +144,11 @@ public partial class Underline: ModelElement<DXD.Underline>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.HeadEnd>();
-      if (element != null)
-        return HeadEndConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.HeadEnd,DXD.HeadEnd>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.HeadEnd>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = HeadEndConverter.CreateOpenXmlElement<DXD.HeadEnd>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.HeadEnd,DXD.HeadEnd>(value);
     }
   }
   
@@ -256,22 +157,11 @@ public partial class Underline: ModelElement<DXD.Underline>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.TailEnd>();
-      if (element != null)
-        return TailEndConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.TailEnd,DXD.TailEnd>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.TailEnd>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TailEndConverter.CreateOpenXmlElement<DXD.TailEnd>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.TailEnd,DXD.TailEnd>(value);
     }
   }
   
@@ -280,22 +170,11 @@ public partial class Underline: ModelElement<DXD.Underline>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.LinePropertiesExtensionList>();
-      if (element != null)
-        return LinePropertiesExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.LinePropertiesExtensionList,DXD.LinePropertiesExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.LinePropertiesExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LinePropertiesExtensionListConverter.CreateOpenXmlElement<DXD.LinePropertiesExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.LinePropertiesExtensionList,DXD.LinePropertiesExtensionList>(value);
     }
   }
   

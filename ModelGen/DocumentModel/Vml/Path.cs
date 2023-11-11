@@ -85,15 +85,18 @@ public partial class Path: ModelElement<DXV.Path>
   ///   Shape Fill Toggle
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? AllowFill
+  public Boolean? AllowFill
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.AllowFill?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.AllowFill = value;
+      else
+        _ExistingElement.AllowFill = null;
     }
   }
   
@@ -102,15 +105,18 @@ public partial class Path: ModelElement<DXV.Path>
   ///   Stroke Toggle
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? AllowStroke
+  public Boolean? AllowStroke
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.AllowStroke?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.AllowStroke = value;
+      else
+        _ExistingElement.AllowStroke = null;
     }
   }
   
@@ -119,15 +125,18 @@ public partial class Path: ModelElement<DXV.Path>
   ///   Shadow Toggle
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? AllowShading
+  public Boolean? AllowShading
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.AllowShading?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.AllowShading = value;
+      else
+        _ExistingElement.AllowShading = null;
     }
   }
   
@@ -136,15 +145,18 @@ public partial class Path: ModelElement<DXV.Path>
   ///   Arrowhead Display Toggle
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? ShowArrowhead
+  public Boolean? ShowArrowhead
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.ShowArrowhead?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.ShowArrowhead = value;
+      else
+        _ExistingElement.ShowArrowhead = null;
     }
   }
   
@@ -153,15 +165,18 @@ public partial class Path: ModelElement<DXV.Path>
   ///   Gradient Shape Toggle
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? AllowGradientShape
+  public Boolean? AllowGradientShape
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.AllowGradientShape?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.AllowGradientShape = value;
+      else
+        _ExistingElement.AllowGradientShape = null;
     }
   }
   
@@ -170,15 +185,18 @@ public partial class Path: ModelElement<DXV.Path>
   ///   Text Path Toggle
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? AllowTextPath
+  public Boolean? AllowTextPath
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.AllowTextPath?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.AllowTextPath = value;
+      else
+        _ExistingElement.AllowTextPath = null;
     }
   }
   
@@ -187,15 +205,18 @@ public partial class Path: ModelElement<DXV.Path>
   ///   Inset Stroke From Path Flag
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? AllowInsetPen
+  public Boolean? AllowInsetPen
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.AllowInsetPen?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.AllowInsetPen = value;
+      else
+        _ExistingElement.AllowInsetPen = null;
     }
   }
   
@@ -238,15 +259,18 @@ public partial class Path: ModelElement<DXV.Path>
   ///   Extrusion Toggle
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? AllowExtrusion
+  public Boolean? AllowExtrusion
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.AllowExtrusion?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.AllowExtrusion = value;
+      else
+        _ExistingElement.AllowExtrusion = null;
     }
   }
   

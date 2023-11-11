@@ -21,22 +21,11 @@ public partial class NonVisualConnectionShapeProperties: ModelElement<DXDCD.NonV
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.ConnectionShapeLocks>();
-      if (element != null)
-        return ConnectionShapeLocksConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.ConnectionShapeLocks,DXD.ConnectionShapeLocks>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.ConnectionShapeLocks>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ConnectionShapeLocksConverter.CreateOpenXmlElement<DXD.ConnectionShapeLocks>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.ConnectionShapeLocks,DXD.ConnectionShapeLocks>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class NonVisualConnectionShapeProperties: ModelElement<DXDCD.NonV
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.StartConnection>();
-      if (element != null)
-        return StartConnectionConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.StartConnection,DXD.StartConnection>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.StartConnection>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = StartConnectionConverter.CreateOpenXmlElement<DXD.StartConnection>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.StartConnection,DXD.StartConnection>(value);
     }
   }
   
@@ -77,22 +55,11 @@ public partial class NonVisualConnectionShapeProperties: ModelElement<DXDCD.NonV
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.EndConnection>();
-      if (element != null)
-        return EndConnectionConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.EndConnection,DXD.EndConnection>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.EndConnection>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EndConnectionConverter.CreateOpenXmlElement<DXD.EndConnection>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.EndConnection,DXD.EndConnection>(value);
     }
   }
   
@@ -105,22 +72,11 @@ public partial class NonVisualConnectionShapeProperties: ModelElement<DXDCD.NonV
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXD.ExtensionList>();
-      if (element != null)
-        return ExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMD.ExtensionList,DXD.ExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXD.ExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DXD.ExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMD.ExtensionList,DXD.ExtensionList>(value);
     }
   }
   

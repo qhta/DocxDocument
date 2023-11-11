@@ -21,22 +21,11 @@ public partial class BorderBoxProperties: ModelElement<DXM.BorderBoxProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.HideTop>();
-      if (element != null)
-        return HideTopConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.HideTop,DXM.HideTop>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.HideTop>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = HideTopConverter.CreateOpenXmlElement<DXM.HideTop>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.HideTop,DXM.HideTop>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class BorderBoxProperties: ModelElement<DXM.BorderBoxProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.HideBottom>();
-      if (element != null)
-        return HideBottomConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.HideBottom,DXM.HideBottom>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.HideBottom>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = HideBottomConverter.CreateOpenXmlElement<DXM.HideBottom>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.HideBottom,DXM.HideBottom>(value);
     }
   }
   
@@ -77,22 +55,11 @@ public partial class BorderBoxProperties: ModelElement<DXM.BorderBoxProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.HideLeft>();
-      if (element != null)
-        return HideLeftConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.HideLeft,DXM.HideLeft>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.HideLeft>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = HideLeftConverter.CreateOpenXmlElement<DXM.HideLeft>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.HideLeft,DXM.HideLeft>(value);
     }
   }
   
@@ -105,22 +72,11 @@ public partial class BorderBoxProperties: ModelElement<DXM.BorderBoxProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.HideRight>();
-      if (element != null)
-        return HideRightConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.HideRight,DXM.HideRight>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.HideRight>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = HideRightConverter.CreateOpenXmlElement<DXM.HideRight>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.HideRight,DXM.HideRight>(value);
     }
   }
   
@@ -133,22 +89,11 @@ public partial class BorderBoxProperties: ModelElement<DXM.BorderBoxProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.StrikeHorizontal>();
-      if (element != null)
-        return StrikeHorizontalConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.StrikeHorizontal,DXM.StrikeHorizontal>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.StrikeHorizontal>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = StrikeHorizontalConverter.CreateOpenXmlElement<DXM.StrikeHorizontal>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.StrikeHorizontal,DXM.StrikeHorizontal>(value);
     }
   }
   
@@ -161,22 +106,11 @@ public partial class BorderBoxProperties: ModelElement<DXM.BorderBoxProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.StrikeVertical>();
-      if (element != null)
-        return StrikeVerticalConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.StrikeVertical,DXM.StrikeVertical>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.StrikeVertical>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = StrikeVerticalConverter.CreateOpenXmlElement<DXM.StrikeVertical>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.StrikeVertical,DXM.StrikeVertical>(value);
     }
   }
   
@@ -189,22 +123,11 @@ public partial class BorderBoxProperties: ModelElement<DXM.BorderBoxProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.StrikeBottomLeftToTopRight>();
-      if (element != null)
-        return StrikeBottomLeftToTopRightConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.StrikeBottomLeftToTopRight,DXM.StrikeBottomLeftToTopRight>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.StrikeBottomLeftToTopRight>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = StrikeBottomLeftToTopRightConverter.CreateOpenXmlElement<DXM.StrikeBottomLeftToTopRight>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.StrikeBottomLeftToTopRight,DXM.StrikeBottomLeftToTopRight>(value);
     }
   }
   
@@ -217,22 +140,11 @@ public partial class BorderBoxProperties: ModelElement<DXM.BorderBoxProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.StrikeTopLeftToBottomRight>();
-      if (element != null)
-        return StrikeTopLeftToBottomRightConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.StrikeTopLeftToBottomRight,DXM.StrikeTopLeftToBottomRight>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.StrikeTopLeftToBottomRight>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = StrikeTopLeftToBottomRightConverter.CreateOpenXmlElement<DXM.StrikeTopLeftToBottomRight>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.StrikeTopLeftToBottomRight,DXM.StrikeTopLeftToBottomRight>(value);
     }
   }
   
@@ -245,22 +157,11 @@ public partial class BorderBoxProperties: ModelElement<DXM.BorderBoxProperties>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.ControlProperties>();
-      if (element != null)
-        return ControlPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.ControlProperties,DXM.ControlProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.ControlProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ControlPropertiesConverter.CreateOpenXmlElement<DXM.ControlProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.ControlProperties,DXM.ControlProperties>(value);
     }
   }
   

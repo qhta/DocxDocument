@@ -48,22 +48,11 @@ public partial class LineChart: ModelElement<DXDC.LineChart>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.VaryColors>();
-      if (element != null)
-        return VaryColorsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.VaryColors,DXDC.VaryColors>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.VaryColors>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = VaryColorsConverter.CreateOpenXmlElement<DXDC.VaryColors>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.VaryColors,DXDC.VaryColors>(value);
     }
   }
   
@@ -72,22 +61,11 @@ public partial class LineChart: ModelElement<DXDC.LineChart>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.DataLabels>();
-      if (element != null)
-        return DataLabelsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.DataLabels,DXDC.DataLabels>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.DataLabels>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DataLabelsConverter.CreateOpenXmlElement<DXDC.DataLabels>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.DataLabels,DXDC.DataLabels>(value);
     }
   }
   
@@ -96,22 +74,11 @@ public partial class LineChart: ModelElement<DXDC.LineChart>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.DropLines>();
-      if (element != null)
-        return DropLinesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.DropLines,DXDC.DropLines>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.DropLines>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DropLinesConverter.CreateOpenXmlElement<DXDC.DropLines>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.DropLines,DXDC.DropLines>(value);
     }
   }
   
@@ -120,22 +87,11 @@ public partial class LineChart: ModelElement<DXDC.LineChart>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.HighLowLines>();
-      if (element != null)
-        return HighLowLinesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.HighLowLines,DXDC.HighLowLines>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.HighLowLines>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = HighLowLinesConverter.CreateOpenXmlElement<DXDC.HighLowLines>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.HighLowLines,DXDC.HighLowLines>(value);
     }
   }
   
@@ -144,22 +100,11 @@ public partial class LineChart: ModelElement<DXDC.LineChart>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.UpDownBars>();
-      if (element != null)
-        return UpDownBarsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.UpDownBars,DXDC.UpDownBars>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.UpDownBars>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = UpDownBarsConverter.CreateOpenXmlElement<DXDC.UpDownBars>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.UpDownBars,DXDC.UpDownBars>(value);
     }
   }
   
@@ -168,22 +113,11 @@ public partial class LineChart: ModelElement<DXDC.LineChart>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.ShowMarker>();
-      if (element != null)
-        return ShowMarkerConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.ShowMarker,DXDC.ShowMarker>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.ShowMarker>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ShowMarkerConverter.CreateOpenXmlElement<DXDC.ShowMarker>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.ShowMarker,DXDC.ShowMarker>(value);
     }
   }
   
@@ -192,22 +126,11 @@ public partial class LineChart: ModelElement<DXDC.LineChart>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.Smooth>();
-      if (element != null)
-        return SmoothConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.Smooth,DXDC.Smooth>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.Smooth>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SmoothConverter.CreateOpenXmlElement<DXDC.Smooth>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.Smooth,DXDC.Smooth>(value);
     }
   }
   
@@ -216,22 +139,11 @@ public partial class LineChart: ModelElement<DXDC.LineChart>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXDC.LineChartExtensionList>();
-      if (element != null)
-        return LineChartExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC.LineChartExtensionList,DXDC.LineChartExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.LineChartExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LineChartExtensionListConverter.CreateOpenXmlElement<DXDC.LineChartExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC.LineChartExtensionList,DXDC.LineChartExtensionList>(value);
     }
   }
   

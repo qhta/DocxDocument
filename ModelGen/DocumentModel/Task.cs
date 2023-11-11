@@ -38,22 +38,11 @@ public partial class Task: ModelElement<DXO21DT.Task>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO21DT.TaskAnchor>();
-      if (element != null)
-        return TaskAnchorConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DM.TaskAnchor,DXO21DT.TaskAnchor>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO21DT.TaskAnchor>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TaskAnchorConverter.CreateOpenXmlElement<DXO21DT.TaskAnchor>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DM.TaskAnchor,DXO21DT.TaskAnchor>(value);
     }
   }
   
@@ -66,22 +55,11 @@ public partial class Task: ModelElement<DXO21DT.Task>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO21DT.TaskHistory>();
-      if (element != null)
-        return TaskHistoryConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DM.TaskHistory,DXO21DT.TaskHistory>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO21DT.TaskHistory>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TaskHistoryConverter.CreateOpenXmlElement<DXO21DT.TaskHistory>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DM.TaskHistory,DXO21DT.TaskHistory>(value);
     }
   }
   
@@ -94,22 +72,11 @@ public partial class Task: ModelElement<DXO21DT.Task>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO21DT.ExtensionList>();
-      if (element != null)
-        return ExtensionListConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DM.ExtensionList,DXO21DT.ExtensionList>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO21DT.ExtensionList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DXO21DT.ExtensionList>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DM.ExtensionList,DXO21DT.ExtensionList>(value);
     }
   }
   

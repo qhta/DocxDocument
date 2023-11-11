@@ -17,22 +17,11 @@ public partial class Numbering: ModelElement<DXW.Numbering>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.NumberingIdMacAtCleanup>();
-      if (element != null)
-        return NumberingIdMacAtCleanupConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.NumberingIdMacAtCleanup,DXW.NumberingIdMacAtCleanup>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.NumberingIdMacAtCleanup>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NumberingIdMacAtCleanupConverter.CreateOpenXmlElement<DXW.NumberingIdMacAtCleanup>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.NumberingIdMacAtCleanup,DXW.NumberingIdMacAtCleanup>(value);
     }
   }
   

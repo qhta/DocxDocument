@@ -21,22 +21,11 @@ public partial class CategoryFilterException: ModelElement<DXO13DC.CategoryFilte
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13DC.SequenceOfReferences>();
-      if (element != null)
-        return SequenceOfReferencesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC13.SequenceOfReferences,DXO13DC.SequenceOfReferences>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13DC.SequenceOfReferences>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SequenceOfReferencesConverter.CreateOpenXmlElement<DXO13DC.SequenceOfReferences>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC13.SequenceOfReferences,DXO13DC.SequenceOfReferences>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class CategoryFilterException: ModelElement<DXO13DC.CategoryFilte
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13DC.ShapeProperties>();
-      if (element != null)
-        return ShapePropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC13.ShapeProperties,DXO13DC.ShapeProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13DC.ShapeProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ShapePropertiesConverter.CreateOpenXmlElement<DXO13DC.ShapeProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC13.ShapeProperties,DXO13DC.ShapeProperties>(value);
     }
   }
   
@@ -81,7 +59,7 @@ public partial class CategoryFilterException: ModelElement<DXO13DC.CategoryFilte
     }
     set
     {
-      SimpleValueConverter.SetValue<DXO13DC.Explosion,System.UInt32>(openXmlElement, value);
+      SimpleValueConverter.SetValue<DXO13DC.Explosion,System.UInt32>(_ExistingElement, value);
     }
   }
   
@@ -94,22 +72,11 @@ public partial class CategoryFilterException: ModelElement<DXO13DC.CategoryFilte
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13DC.InvertIfNegativeBoolean>();
-      if (element != null)
-        return InvertIfNegativeBooleanConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC13.InvertIfNegativeBoolean,DXO13DC.InvertIfNegativeBoolean>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13DC.InvertIfNegativeBoolean>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = InvertIfNegativeBooleanConverter.CreateOpenXmlElement<DXO13DC.InvertIfNegativeBoolean>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC13.InvertIfNegativeBoolean,DXO13DC.InvertIfNegativeBoolean>(value);
     }
   }
   
@@ -122,22 +89,11 @@ public partial class CategoryFilterException: ModelElement<DXO13DC.CategoryFilte
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13DC.Bubble3D>();
-      if (element != null)
-        return Bubble3DConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC13.Bubble3D,DXO13DC.Bubble3D>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13DC.Bubble3D>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = Bubble3DConverter.CreateOpenXmlElement<DXO13DC.Bubble3D>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC13.Bubble3D,DXO13DC.Bubble3D>(value);
     }
   }
   
@@ -150,22 +106,11 @@ public partial class CategoryFilterException: ModelElement<DXO13DC.CategoryFilte
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13DC.Marker>();
-      if (element != null)
-        return MarkerConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC13.Marker,DXO13DC.Marker>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13DC.Marker>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = MarkerConverter.CreateOpenXmlElement<DXO13DC.Marker>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC13.Marker,DXO13DC.Marker>(value);
     }
   }
   
@@ -178,22 +123,11 @@ public partial class CategoryFilterException: ModelElement<DXO13DC.CategoryFilte
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO13DC.DataLabel>();
-      if (element != null)
-        return DataLabelConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC13.DataLabel,DXO13DC.DataLabel>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO13DC.DataLabel>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DataLabelConverter.CreateOpenXmlElement<DXO13DC.DataLabel>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC13.DataLabel,DXO13DC.DataLabel>(value);
     }
   }
   

@@ -38,22 +38,11 @@ public partial class NumberingPictureBullet: ModelElement<DXW.NumberingPictureBu
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.PictureBulletBase>();
-      if (element != null)
-        return PictureBulletBaseConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.PictureBulletBase,DXW.PictureBulletBase>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.PictureBulletBase>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PictureBulletBaseConverter.CreateOpenXmlElement<DXW.PictureBulletBase>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.PictureBulletBase,DXW.PictureBulletBase>(value);
     }
   }
   
@@ -66,22 +55,11 @@ public partial class NumberingPictureBullet: ModelElement<DXW.NumberingPictureBu
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.Drawing>();
-      if (element != null)
-        return DrawingConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.Drawing,DXW.Drawing>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Drawing>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DrawingConverter.CreateOpenXmlElement<DXW.Drawing>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.Drawing,DXW.Drawing>(value);
     }
   }
   

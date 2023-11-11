@@ -21,22 +21,11 @@ public partial class SdtContentCheckBox: ModelElement<DXO10W.SdtContentCheckBox>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10W.Checked>();
-      if (element != null)
-        return CheckedConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW10.Checked,DXO10W.Checked>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10W.Checked>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = CheckedConverter.CreateOpenXmlElement<DXO10W.Checked>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW10.Checked,DXO10W.Checked>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class SdtContentCheckBox: ModelElement<DXO10W.SdtContentCheckBox>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10W.CheckedState>();
-      if (element != null)
-        return CheckedStateConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW10.CheckedState,DXO10W.CheckedState>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10W.CheckedState>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = CheckedStateConverter.CreateOpenXmlElement<DXO10W.CheckedState>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW10.CheckedState,DXO10W.CheckedState>(value);
     }
   }
   
@@ -77,22 +55,11 @@ public partial class SdtContentCheckBox: ModelElement<DXO10W.SdtContentCheckBox>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10W.UncheckedState>();
-      if (element != null)
-        return UncheckedStateConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW10.UncheckedState,DXO10W.UncheckedState>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10W.UncheckedState>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = UncheckedStateConverter.CreateOpenXmlElement<DXO10W.UncheckedState>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW10.UncheckedState,DXO10W.UncheckedState>(value);
     }
   }
   

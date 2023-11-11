@@ -23,7 +23,7 @@ public partial class Rsids : ModelElement<DXW.Rsids>
   [DataMember]
   public HexInt? RsidRoot
   {
-    get => _Element.GetHexIntVal<DXW.RsidRoot>();
-    set => _Element.SetHexIntVal<DXW.RsidRoot>(value);
+    get => _Element?.GetHexIntVal<DXW.RsidRoot>();
+    set => _ExistingElement.SetHexIntVal<DXW.RsidRoot>(value);
   }
 }

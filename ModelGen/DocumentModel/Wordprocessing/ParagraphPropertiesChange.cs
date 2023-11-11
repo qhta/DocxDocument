@@ -89,22 +89,11 @@ public partial class ParagraphPropertiesChange: ModelElement<DXW.ParagraphProper
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXW.ParagraphPropertiesExtended>();
-      if (element != null)
-        return ParagraphPropertiesExtendedConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMW.ParagraphPropertiesExtended,DXW.ParagraphPropertiesExtended>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.ParagraphPropertiesExtended>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ParagraphPropertiesExtendedConverter.CreateOpenXmlElement<DXW.ParagraphPropertiesExtended>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMW.ParagraphPropertiesExtended,DXW.ParagraphPropertiesExtended>(value);
     }
   }
   

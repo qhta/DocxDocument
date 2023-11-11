@@ -51,15 +51,18 @@ public partial class TextPath: ModelElement<DXV.TextPath>
   ///   Text Path Toggle
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? On
+  public Boolean? On
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.On?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.On = value;
+      else
+        _ExistingElement.On = null;
     }
   }
   
@@ -68,15 +71,18 @@ public partial class TextPath: ModelElement<DXV.TextPath>
   ///   Shape Fit Toggle
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? FitShape
+  public Boolean? FitShape
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.FitShape?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.FitShape = value;
+      else
+        _ExistingElement.FitShape = null;
     }
   }
   
@@ -85,15 +91,18 @@ public partial class TextPath: ModelElement<DXV.TextPath>
   ///   Path Fit Toggle
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? FitPath
+  public Boolean? FitPath
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.FitPath?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.FitPath = value;
+      else
+        _ExistingElement.FitPath = null;
     }
   }
   
@@ -102,15 +111,18 @@ public partial class TextPath: ModelElement<DXV.TextPath>
   ///   Text Path Trim Toggle
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? Trim
+  public Boolean? Trim
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.Trim?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.Trim = value;
+      else
+        _ExistingElement.Trim = null;
     }
   }
   
@@ -119,15 +131,18 @@ public partial class TextPath: ModelElement<DXV.TextPath>
   ///   Text X-Scaling
   /// </summary>
   [DataMember]
-  public DM.TrueFalseValue? XScale
+  public Boolean? XScale
   {
     get
     {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DX.TrueFalseValue>()?.Val);
+      return _Element?.XScale?.Value;
     }
     set
     {
-      SimpleValueConverter.SetValue<DX.TrueFalseValue,DocumentFormat.OpenXml.TrueFalseValue>(openXmlElement, value);
+      if (value != null)
+        _ExistingElement.XScale = value;
+      else
+        _ExistingElement.XScale = null;
     }
   }
   

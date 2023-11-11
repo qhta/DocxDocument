@@ -55,22 +55,11 @@ public partial class CustomUI: ModelElement<DXO10CUI.CustomUI>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10CUI.Commands>();
-      if (element != null)
-        return CommandsConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMCUI10.Commands,DXO10CUI.Commands>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10CUI.Commands>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = CommandsConverter.CreateOpenXmlElement<DXO10CUI.Commands>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMCUI10.Commands,DXO10CUI.Commands>(value);
     }
   }
   
@@ -83,22 +72,11 @@ public partial class CustomUI: ModelElement<DXO10CUI.CustomUI>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10CUI.Ribbon>();
-      if (element != null)
-        return RibbonConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMCUI10.Ribbon,DXO10CUI.Ribbon>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10CUI.Ribbon>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RibbonConverter.CreateOpenXmlElement<DXO10CUI.Ribbon>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMCUI10.Ribbon,DXO10CUI.Ribbon>(value);
     }
   }
   
@@ -111,22 +89,11 @@ public partial class CustomUI: ModelElement<DXO10CUI.CustomUI>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10CUI.Backstage>();
-      if (element != null)
-        return BackstageConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMCUI10.Backstage,DXO10CUI.Backstage>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10CUI.Backstage>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BackstageConverter.CreateOpenXmlElement<DXO10CUI.Backstage>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMCUI10.Backstage,DXO10CUI.Backstage>(value);
     }
   }
   
@@ -139,22 +106,11 @@ public partial class CustomUI: ModelElement<DXO10CUI.CustomUI>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10CUI.ContextMenus>();
-      if (element != null)
-        return ContextMenusConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMCUI10.ContextMenus,DXO10CUI.ContextMenus>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10CUI.ContextMenus>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ContextMenusConverter.CreateOpenXmlElement<DXO10CUI.ContextMenus>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMCUI10.ContextMenus,DXO10CUI.ContextMenus>(value);
     }
   }
   

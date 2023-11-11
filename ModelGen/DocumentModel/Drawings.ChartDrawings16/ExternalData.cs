@@ -43,7 +43,7 @@ public partial class ExternalData: ModelElement<DXO16DCD.ExternalData>
     set
     {
       if (value != null)
-        _ExistingElement.AutoUpdate = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.AutoUpdate = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.AutoUpdate = null;
     }

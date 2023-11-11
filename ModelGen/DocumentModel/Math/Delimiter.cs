@@ -21,22 +21,11 @@ public partial class Delimiter: ModelElement<DXM.Delimiter>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXM.DelimiterProperties>();
-      if (element != null)
-        return DelimiterPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMM.DelimiterProperties,DXM.DelimiterProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.DelimiterProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DelimiterPropertiesConverter.CreateOpenXmlElement<DXM.DelimiterProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMM.DelimiterProperties,DXM.DelimiterProperties>(value);
     }
   }
   

@@ -162,7 +162,7 @@ public partial class BackstageRegularButton: ModelElement<DXO10CUI.BackstageRegu
     set
     {
       if (value != null)
-        _ExistingElement.IsDefinitive = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.IsDefinitive = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.IsDefinitive = null;
     }
@@ -182,7 +182,7 @@ public partial class BackstageRegularButton: ModelElement<DXO10CUI.BackstageRegu
     set
     {
       if (value != null)
-        _ExistingElement.Enabled = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.Enabled = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.Enabled = null;
     }
@@ -253,7 +253,7 @@ public partial class BackstageRegularButton: ModelElement<DXO10CUI.BackstageRegu
     set
     {
       if (value != null)
-        _ExistingElement.Visible = new BooleanValue { Value = (Boolean)value };
+        _ExistingElement.Visible = new DX.BooleanValue { Value = (Boolean)value };
       else
         _ExistingElement.Visible = null;
     }

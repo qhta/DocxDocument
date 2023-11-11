@@ -21,22 +21,11 @@ public partial class ValueColors: ModelElement<DXO16DCD.ValueColors>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.MinColorSolidColorFillProperties>();
-      if (element != null)
-        return MinColorSolidColorFillPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.MinColorSolidColorFillProperties,DXO16DCD.MinColorSolidColorFillProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.MinColorSolidColorFillProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = MinColorSolidColorFillPropertiesConverter.CreateOpenXmlElement<DXO16DCD.MinColorSolidColorFillProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.MinColorSolidColorFillProperties,DXO16DCD.MinColorSolidColorFillProperties>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class ValueColors: ModelElement<DXO16DCD.ValueColors>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.MidColorSolidColorFillProperties>();
-      if (element != null)
-        return MidColorSolidColorFillPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.MidColorSolidColorFillProperties,DXO16DCD.MidColorSolidColorFillProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.MidColorSolidColorFillProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = MidColorSolidColorFillPropertiesConverter.CreateOpenXmlElement<DXO16DCD.MidColorSolidColorFillProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.MidColorSolidColorFillProperties,DXO16DCD.MidColorSolidColorFillProperties>(value);
     }
   }
   
@@ -77,22 +55,11 @@ public partial class ValueColors: ModelElement<DXO16DCD.ValueColors>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO16DCD.MaxColorSolidColorFillProperties>();
-      if (element != null)
-        return MaxColorSolidColorFillPropertiesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDCD16.MaxColorSolidColorFillProperties,DXO16DCD.MaxColorSolidColorFillProperties>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO16DCD.MaxColorSolidColorFillProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = MaxColorSolidColorFillPropertiesConverter.CreateOpenXmlElement<DXO16DCD.MaxColorSolidColorFillProperties>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDCD16.MaxColorSolidColorFillProperties,DXO16DCD.MaxColorSolidColorFillProperties>(value);
     }
   }
   

@@ -21,22 +21,11 @@ public partial class PivotOptions: ModelElement<DXO10DC.PivotOptions>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10DC.DropZoneFilter>();
-      if (element != null)
-        return DropZoneFilterConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC10.DropZoneFilter,DXO10DC.DropZoneFilter>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10DC.DropZoneFilter>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DropZoneFilterConverter.CreateOpenXmlElement<DXO10DC.DropZoneFilter>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC10.DropZoneFilter,DXO10DC.DropZoneFilter>(value);
     }
   }
   
@@ -49,22 +38,11 @@ public partial class PivotOptions: ModelElement<DXO10DC.PivotOptions>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10DC.DropZoneCategories>();
-      if (element != null)
-        return DropZoneCategoriesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC10.DropZoneCategories,DXO10DC.DropZoneCategories>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10DC.DropZoneCategories>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DropZoneCategoriesConverter.CreateOpenXmlElement<DXO10DC.DropZoneCategories>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC10.DropZoneCategories,DXO10DC.DropZoneCategories>(value);
     }
   }
   
@@ -77,22 +55,11 @@ public partial class PivotOptions: ModelElement<DXO10DC.PivotOptions>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10DC.DropZoneData>();
-      if (element != null)
-        return DropZoneDataConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC10.DropZoneData,DXO10DC.DropZoneData>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10DC.DropZoneData>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DropZoneDataConverter.CreateOpenXmlElement<DXO10DC.DropZoneData>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC10.DropZoneData,DXO10DC.DropZoneData>(value);
     }
   }
   
@@ -105,22 +72,11 @@ public partial class PivotOptions: ModelElement<DXO10DC.PivotOptions>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10DC.DropZoneSeries>();
-      if (element != null)
-        return DropZoneSeriesConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC10.DropZoneSeries,DXO10DC.DropZoneSeries>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10DC.DropZoneSeries>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DropZoneSeriesConverter.CreateOpenXmlElement<DXO10DC.DropZoneSeries>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC10.DropZoneSeries,DXO10DC.DropZoneSeries>(value);
     }
   }
   
@@ -133,22 +89,11 @@ public partial class PivotOptions: ModelElement<DXO10DC.PivotOptions>
   {
     get
     {
-      var element = _Element?.GetFirstChild<DXO10DC.DropZonesVisible>();
-      if (element != null)
-        return DropZonesVisibleConverter.CreateModelElement(element);
-      return null;
+      return _Element?.GetObject<DMDC10.DropZonesVisible,DXO10DC.DropZonesVisible>();
     }
     set
     {
-      var itemElement = _ExistingElement.GetFirstChild<DXO10DC.DropZonesVisible>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DropZonesVisibleConverter.CreateOpenXmlElement<DXO10DC.DropZonesVisible>(value);
-        if (itemElement != null)
-          _ExistingElement.AddChild(itemElement);
-      }
+      _ExistingElement.SetObject<DMDC10.DropZonesVisible,DXO10DC.DropZonesVisible>(value);
     }
   }
   
