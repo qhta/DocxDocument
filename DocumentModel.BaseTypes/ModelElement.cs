@@ -15,5 +15,5 @@ public class ModelElement: IModelElement
 
   protected ModelElement? _Parent;
 
-  
 }
+

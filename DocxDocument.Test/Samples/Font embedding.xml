@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <dm:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:dm="DocumentModel" xmlns:dfox="DocumentFormat.OpenXml" xmlns:sys="System" xmlns:dmw="DocumentModel.Wordprocessing" xmlns:dmm="DocumentModel.Math" xmlns:dmv="DocumentModel.Vml" xmlns:dfoxvo="DocumentFormat.OpenXml.Vml.Office" xmlns:dmu="DocumentModel.Utilities" DocumentType="Document">
   <BuiltInProperties Title="" Creator="Jarosław Kuchta" Created="2023-03-29 16:00:00" LastModifiedBy="Jarosław Kuchta" Modified="2023-03-29 16:01:00" Subject="" Revision="1" Keywords="" Description="" DocumentSecurity="0" ScaleCrop="False" SharedDocument="False" LinksUpToDate="False" HyperlinksChanged="False" Template="Normal.dotm" Company="" Application="Microsoft Office Word" ApplicationVersion="16.0000" Pages="1" Words="0" Characters="0" CharactersWithSpaces="0" Lines="0" Paragraphs="0" TotalTime="1" />
-  <DocumentSettings DoNotDisplayPageBoundaries="True" EmbedTrueTypeFonts="True" DefaultTabStop="708" EmbedSystemFonts="True" HyphenationZone="425" ForceUpgrade="False" CharacterSpacingControl="DoNotCompress" DecimalSymbol="," ListSeparator=";" PersistentDocumentId="95539d85-459d-4ed4-903a-a5ee7daa66a8" ChartTrackingRefBased="True">
+  <DocumentSettings DoNotDisplayPageBoundaries="True" EmbedTrueTypeFonts="True" EmbedSystemFonts="True" DefaultTabStop="708" HyphenationZone="425" ForceUpgrade="False" CharacterSpacingControl="DoNotCompress" DecimalSymbol="," ListSeparator=";" PersistentDocumentId="95539d85-459d-4ed4-903a-a5ee7daa66a8" ChartTrackingRefBased="True">
     <ProofState Spelling="Clean" Grammar="Clean" />
     <Zoom Percent="140%" />
     <StylePaneFormatFilter AllStyles="True" CustomStyles="False" LatentStyles="False" StylesInUse="False" HeadingStyles="False" NumberingStyles="False" TableStyles="False" DirectFormattingOnRuns="True" DirectFormattingOnParagraphs="True" DirectFormattingOnNumbering="True" DirectFormattingOnTables="True" ClearFormatting="True" Top3HeadingStyles="True" VisibleStyles="False" AlternateStyleNames="False" />
@@ -546,7 +546,7 @@
       <dm:HexInt Val="00FF5B30" />
       <dm:HexInt Val="00FF737F" />
     </Rsids>
-    <MathProperties BreakBinary="Before" LeftMargin="0" BreakBinarySubtraction="MinusMinus" RightMargin="0" MathFont="Cambria Math" SmallFraction="False" DisplayDefaults="True" DefaultJustification="CenterGroup" IntegralLimitLocation="SubscriptSuperscript" WrapIndent="1440" NaryLimitLocation="UnderOver" />
+    <MathProperties BreakBinary="Before" BreakBinarySubtraction="MinusMinus" LeftMargin="0" MathFont="Cambria Math" RightMargin="0" SmallFraction="False" DisplayDefaults="True" DefaultJustification="CenterGroup" IntegralLimitLocation="SubscriptSuperscript" NaryLimitLocation="UnderOver" WrapIndent="1440" />
     <ThemeFontLanguages Val="pl-PL" Bidi="ar-SA" EastAsia="ja-JP" />
     <ColorSchemeMapping Background1="Light1" Text1="Dark1" Background2="Light2" Text2="Dark2" Accent1="Accent1" Accent2="Accent2" Accent3="Accent3" Accent4="Accent4" Accent5="Accent5" Accent6="Accent6" Hyperlink="Hyperlink" FollowedHyperlink="FollowedHyperlink" />
     <ShapeDefaults>

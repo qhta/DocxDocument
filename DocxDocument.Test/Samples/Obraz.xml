@@ -543,7 +543,7 @@
       <dm:HexInt Val="00FF5B30" />
       <dm:HexInt Val="00FF737F" />
     </Rsids>
-    <MathProperties BreakBinary="Before" LeftMargin="0" BreakBinarySubtraction="MinusMinus" RightMargin="0" MathFont="Cambria Math" SmallFraction="False" DisplayDefaults="True" DefaultJustification="CenterGroup" IntegralLimitLocation="SubscriptSuperscript" WrapIndent="1440" NaryLimitLocation="UnderOver" />
+    <MathProperties BreakBinary="Before" BreakBinarySubtraction="MinusMinus" LeftMargin="0" MathFont="Cambria Math" RightMargin="0" SmallFraction="False" DisplayDefaults="True" DefaultJustification="CenterGroup" IntegralLimitLocation="SubscriptSuperscript" NaryLimitLocation="UnderOver" WrapIndent="1440" />
     <ThemeFontLanguages Val="pl-PL" Bidi="ar-SA" EastAsia="ja-JP" />
     <ColorSchemeMapping Background1="Light1" Text1="Dark1" Background2="Light2" Text2="Dark2" Accent1="Accent1" Accent2="Accent2" Accent3="Accent3" Accent4="Accent4" Accent5="Accent5" Accent6="Accent6" Hyperlink="Hyperlink" FollowedHyperlink="FollowedHyperlink" />
     <ShapeDefaults>

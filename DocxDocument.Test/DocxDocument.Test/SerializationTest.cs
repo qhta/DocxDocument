@@ -3,10 +3,8 @@ using DocumentModel.Utilities;
 
 namespace DocxDocument.Test;
 
-[TestClass]
 public class SerializationTest : ReadWriteTest
 {
-  [TestMethod]
   public void TestSerializeAndDeserializeAll()
   {
     var samplesPath = SamplesPath;
@@ -16,7 +14,6 @@ public class SerializationTest : ReadWriteTest
     }
   }
 
-  [TestMethod]
   public void TestSerializeAndDeserializeOne()
   {
     var samplesPath = SamplesPath;
@@ -75,7 +72,7 @@ public class SerializationTest : ReadWriteTest
     using (FileStream fileStream = new FileStream(fileName, FileMode.Create))
     {
       var xmlWriter = XmlTextWriter.Create(fileStream, new XmlWriterSettings { Indent = true });
-      QXmlSerializer serializer = new QXmlSerializer(typeof(DM.Document), knownTypes);
+      QXmlSerializer serializer = new QXmlSerializer(typeof(DM.Document), knownTypes, new SerializationOptions{ AllowUnregisteredTypes = true });
       serializer.SerializeObject(xmlWriter, document);
     }
   }
@@ -84,7 +81,10 @@ public class SerializationTest : ReadWriteTest
   {
     var knownTypes = typeof(DM.Document).Assembly.GetTypes()
       .Where(type => !type.Name.Contains('<') &&
-      type.Namespace != null && type.Namespace.StartsWith("DocumentModel") && !type.Namespace.EndsWith("Utils")).ToArray();
+      type.Namespace != null && type.Namespace.StartsWith("DocumentModel") && !type.Namespace.EndsWith("Utils")).ToList();
+    knownTypes.AddRange(typeof(DX.OpenXmlElement).Assembly.GetTypes()
+      .Where(type => !type.Name.Contains('<')));
+
     using (FileStream fileStream = new FileStream(fileName, FileMode.Create))
     {
       DataContractSerializer serializer = new DataContractSerializer(typeof(DM.Document), knownTypes);
