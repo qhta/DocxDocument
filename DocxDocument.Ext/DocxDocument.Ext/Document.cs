@@ -223,8 +223,11 @@ public partial class Document : ModelElement, IDisposable
       }
     }
   }
+
+  [XmlIgnore]
   internal CustomProperties? _CustomProperties { get; private set; }
 
+  [XmlIgnore]
   public CustomProperties ExistingCustomProperties
   {
     get

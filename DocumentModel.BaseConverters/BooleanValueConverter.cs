@@ -88,12 +88,7 @@ public static class BooleanValueConverter
         {
           var itemElement = new ElementType();
           if (valStr != null)
-            itemElement.SetAttribute(new OpenXmlAttribute
-            {
-              NamespaceUri = openXmlElement.NamespaceUri,
-              LocalName = "val",
-              Value = valStr
-            });
+            itemElement.SetAttribute(new OpenXmlAttribute("val", openXmlElement.NamespaceUri, valStr));
           openXmlElement.AppendChild(itemElement);
         }
       }

@@ -15,6 +15,7 @@
   <ItemGroup>
     <PackageReference Include="DocumentFormat.OpenXml" Version="2.20.0" />
     <PackageReference Include="Qhta.TextUtils" Version="3.2.0" />
+    <PackageReference Include="Qhta.Xml" Version="3.0.0" />
   </ItemGroup>
 
 </Project>

@@ -43,7 +43,7 @@ where ModelItemType : IModelElement<OpenXmlItemType>, INamedElement, new()
   }
   private MethodInfo? _SetMethod;
 
-  private string? GetName(OpenXmlItemType item) => (string?)GetMethod.Invoke(item, null);
+  private string? GetName(OpenXmlItemType item) => GetMethod.Invoke(item, null)?.ToString();
 
   private void SetName(OpenXmlItemType item, string? value) => SetMethod.Invoke(item, new object?[] { value });
 

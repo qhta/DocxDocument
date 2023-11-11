@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "dgSpecHash": "7EhgZxEfUa6WGdd/jeO4FG+k/rfEnjfkpyoSbEBb010rdyMMsp+qOdMmISwe8LF+A8cFih12+aQ+3PLg2afNwQ==",
-  "success": true,
+  "dgSpecHash": "Pb3etkXls5LB5wJ86EY4LQwjD0qNPErby5SwaiM7rVa7+SXQSQSAqW/1TaKFT7nAe4P5HerNlfiaAOXzLoMhmw==",
+  "success": false,
   "projectFilePath": "D:\\VS\\Projects\\DocxDocument\\ModelGen\\ModelGen\\ModelGen.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\qhta1\\.nuget\\packages\\documentformat.openxml\\2.20.0\\documentformat.openxml.2.20.0.nupkg.sha512",
@@ -96,5 +96,15 @@
     "C:\\Users\\qhta1\\.nuget\\packages\\system.xml.xpath\\4.3.0\\system.xml.xpath.4.3.0.nupkg.sha512",
     "C:\\Users\\qhta1\\.nuget\\packages\\system.xml.xpath.xmldocument\\4.3.0\\system.xml.xpath.xmldocument.4.3.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1605",
+      "level": "Error",
+      "message": "Warning As Error: Detected package downgrade: Qhta.Xml from 2.2.0 to 2.1.0. Reference the package directly from the project to select a different version. \r\n ModelGen -> DocumentModel.BaseTypes -> Qhta.Xml (>= 2.2.0) \r\n ModelGen -> Qhta.Xml (>= 2.1.0)",
+      "libraryId": "Qhta.Xml",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }

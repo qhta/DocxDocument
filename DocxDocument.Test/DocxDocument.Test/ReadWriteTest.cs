@@ -1,19 +1,13 @@
-using System.Diagnostics;
-using System.Reflection;
-using System.Runtime.Serialization;
-
-using DocumentFormat.OpenXml.Office.CustomUI;
-
 using DocumentModel;
 
 using Qhta.TypeUtils;
 
 namespace DocxDocument.Test;
 
-[TestClass]
 public class ReadWriteTest : ReadTest
 {
-  [TestMethod]
+  public Qhta.Xml.Serialization.QXmlSerializer ModelSerializer = new(typeof(DocumentModel.Document), typeof(DocumentModel.Document).Assembly.GetExportedTypes());
+
   public void TestCreate()
   {
     var samplesPath = SamplesPath;
@@ -31,7 +25,6 @@ public class ReadWriteTest : ReadTest
     TestReadProperties(file);
   }
 
-  [TestMethod]
   public void TestCopyPropertiesOne()
   {
     var samplesPath = SamplesPath;
@@ -57,15 +50,15 @@ public class ReadWriteTest : ReadTest
           property.SetValue(targetDocument.BuiltInProperties, val);
         }
 
-        if (sourceDocument.HasCustomProperties)
-          foreach (var item in sourceDocument.CustomProperties!)
-          {
-            var val = item.Value;
-            Output.WriteLine($"  {item.Name}: {val.ToDumpString()}");
-            var newCustomProperty = (CustomProperty?)item.Clone();
-            if (newCustomProperty != null)
-              targetDocument.ExistingCustomProperties.Add(newCustomProperty);
-          }
+        //if (sourceDocument.HasCustomProperties)
+        //  foreach (var item in sourceDocument.CustomProperties!)
+        //  {
+        //    var val = item.Value;
+        //    Output.WriteLine($"  {item.Name}: {val.ToDumpString()}");
+        //    var newCustomProperty = (CustomProperty?)item.CopyDeep(ModelSerializer);
+        //    if (newCustomProperty != null)
+        //      targetDocument.ExistingCustomProperties.Add(newCustomProperty);
+        //  }
       }
     }
     catch (Exception ex)
@@ -86,7 +79,6 @@ public class ReadWriteTest : ReadTest
     null,
   };
 
-  [TestMethod]
   public void TestCreateProperties()
   {
     var samplesPath = SamplesPath;

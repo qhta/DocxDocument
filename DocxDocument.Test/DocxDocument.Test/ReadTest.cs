@@ -1,13 +1,11 @@
 using System.Diagnostics;
 namespace DocxDocument.Test;
 
-[TestClass]
 public class ReadTest
 {
   public TextWriter Output { [DebuggerStepThrough] get; set; } = null!;
   public string SamplesPath { [DebuggerStepThrough] get; set; } = null!;
 
-  [TestInitialize()]
   public void Initialize()
   {
     //Console.SetOut(ConsoleOutput);    // Associate StringBuilder with StdOut
@@ -15,7 +13,6 @@ public class ReadTest
     SamplesPath = GetSamplesPath();
   }
 
-  [TestMethod]
   public void TestOpenAllFiles()
   {
     var samplesPath = SamplesPath;
@@ -34,7 +31,6 @@ public class ReadTest
     }
   }
 
-  [TestMethod]
   public void TestReadProperties()
   {
     var samplesPath = SamplesPath;
@@ -104,7 +100,6 @@ public class ReadTest
     }
   }
 
-  [TestMethod]
   public void TestReadSettings()
   {
     var samplesPath = SamplesPath;

@@ -3,8 +3,8 @@
   public static void Main(params string[] args)
   {
     //RunReadTest();
-    RunReadWriteTest();
-    //RunSerializationTest();
+    //RunReadWriteTest();
+    RunSerializationTest();
   }
 
   private static void RunReadTest()
@@ -28,7 +28,7 @@
     Console.WriteLine();
     test.TestCreate();
     test.TestCreateProperties();
-    //test.TestCopyPropertiesOne();
+    test.TestCopyPropertiesOne();
   }
 
     private static void RunSerializationTest()

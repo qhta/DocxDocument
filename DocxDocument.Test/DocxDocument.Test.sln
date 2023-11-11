@@ -14,13 +14,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Qhta.Xml.Serialization", "..\..\MyLib\Qhta.Xml.Serialization\Qhta.Xml.Serialization.csproj", "{D132FFA5-E394-4ED4-A082-B3CDBF97506C}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Qhta.Xml", "..\..\MyLib\Qhta.Xml\Qhta.Xml.csproj", "{3CFCA43D-25F5-4472-91B8-9F8038FF4D1C}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Qhta.Xml.Reflection", "..\..\MyLib\Qhta.Xml.Reflection\Qhta.Xml.Reflection.csproj", "{16BF2FC8-8212-407C-8166-47941B818566}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocumentModel.BaseTypes", "..\DocumentModel.BaseTypes\DocumentModel.BaseTypes.csproj", "{F83522F9-6EF5-4807-AF9F-53D9A0BE3CBA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocumentModel.BaseConverters", "..\DocumentModel.BaseConverters\DocumentModel.BaseConverters.csproj", "{EDEC59C0-F827-434E-94BE-BAC65B0844EF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -40,22 +36,14 @@ Global
 		{DB52243C-F47E-4858-932E-BB88A72B7BA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB52243C-F47E-4858-932E-BB88A72B7BA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB52243C-F47E-4858-932E-BB88A72B7BA8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D132FFA5-E394-4ED4-A082-B3CDBF97506C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D132FFA5-E394-4ED4-A082-B3CDBF97506C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D132FFA5-E394-4ED4-A082-B3CDBF97506C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D132FFA5-E394-4ED4-A082-B3CDBF97506C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3CFCA43D-25F5-4472-91B8-9F8038FF4D1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3CFCA43D-25F5-4472-91B8-9F8038FF4D1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3CFCA43D-25F5-4472-91B8-9F8038FF4D1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3CFCA43D-25F5-4472-91B8-9F8038FF4D1C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{16BF2FC8-8212-407C-8166-47941B818566}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{16BF2FC8-8212-407C-8166-47941B818566}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{16BF2FC8-8212-407C-8166-47941B818566}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{16BF2FC8-8212-407C-8166-47941B818566}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F83522F9-6EF5-4807-AF9F-53D9A0BE3CBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F83522F9-6EF5-4807-AF9F-53D9A0BE3CBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F83522F9-6EF5-4807-AF9F-53D9A0BE3CBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F83522F9-6EF5-4807-AF9F-53D9A0BE3CBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDEC59C0-F827-434E-94BE-BAC65B0844EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDEC59C0-F827-434E-94BE-BAC65B0844EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDEC59C0-F827-434E-94BE-BAC65B0844EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDEC59C0-F827-434E-94BE-BAC65B0844EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
