@@ -6,7 +6,7 @@
 /// Custom file property value can be set by setting the appropriate Variant Type child element value.
 /// </summary>
 [DataContract]
-public class CustomProperty: ModelElement<DXCP.CustomDocumentProperty>
+public class CustomProperty: ModelElement<DXCP.CustomDocumentProperty>, IIdentifiedElement
 {
   public CustomProperty(): base(){ }
 

@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="CustomProperties.AsCollection.cs" />
     <Compile Remove="Wordprocessing\Settings\CompatibilitySettings.AsCollection.cs" />
   </ItemGroup>
 
