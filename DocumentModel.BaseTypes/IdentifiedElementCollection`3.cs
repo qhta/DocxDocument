@@ -13,6 +13,7 @@ where ModelItemType : IModelElement<OpenXmlItemType>, IIdentifiedElement, new()
     {
       if (_IdProperty == null)
         _IdProperty = typeof(OpenXmlItemType).GetProperty("Id")
+             ?? typeof(OpenXmlItemType).GetProperties().FirstOrDefault(item=>item.Name.EndsWith("Id"))
                  ?? throw new InvalidCastException($"{typeof(OpenXmlItemType)} must have \"Id\" property");
       return _IdProperty;
     }
