@@ -3,8 +3,8 @@
   public static void Main(params string[] args)
   {
     //RunReadTest();
-    //RunReadWriteTest();
-    RunSerializationTest();
+    RunReadWriteTest();
+    //RunSerializationTest();
   }
 
   private static void RunReadTest()
@@ -31,7 +31,7 @@
     test.TestCopyPropertiesOne();
   }
 
-    private static void RunSerializationTest()
+  private static void RunSerializationTest()
   {
     var test = new DocxDocument.Test.SerializationTest();
     test.Output = Console.Out;

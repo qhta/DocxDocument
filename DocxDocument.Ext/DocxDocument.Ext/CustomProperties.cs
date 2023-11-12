@@ -6,20 +6,8 @@
 /// </summary>
 public partial class CustomProperties: IdentifiedElementCollection<DXCP.Properties, DXCP.CustomDocumentProperty, DM.CustomProperty>
 {
-  public CustomProperties()
-  {
-    _CustomFileProperties = new DXCP.Properties();
-  }
+  public CustomProperties(): base() { }
 
-  public CustomProperties(DXCP.Properties properties)
-  {
-    _CustomFileProperties = properties;
-  }
-
-  #region CustomProperties
-
-  internal DXCP.Properties _CustomFileProperties { get; private set; }
-
-  #endregion
+  public CustomProperties(DXCP.Properties properties): base(properties) { }
 
 }

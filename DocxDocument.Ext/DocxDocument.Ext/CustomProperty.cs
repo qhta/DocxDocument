@@ -55,6 +55,7 @@ public class CustomProperty: ModelElement<DXCP.CustomDocumentProperty>, IIdentif
   }
 
   [DataMember]
+  [TypeConverter(typeof(Qhta.Conversion.ValueTypeConverter))]
   public object? Value
   {
     get

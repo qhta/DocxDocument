@@ -108,7 +108,7 @@ public enum VariantType
   /// <summary>
   /// Boolean Variant Type.
   /// </summary>
-  Bool,
+  Boolean,
   
   /// <summary>
   /// Currency Variant Type.
@@ -128,12 +128,12 @@ public enum VariantType
   /// <summary>
   /// Error Status Code Variant Type.
   /// </summary>
-  Error,
+  HexInt,
 
   /// <summary>
   /// Class ID Variant Type.
   /// </summary>
-  ClassId,
+  Guid,
 
   /// <summary>
   /// Clipboard Data Variant Type.
@@ -184,4 +184,14 @@ public enum VariantType
   /// Array Variant Type.
   /// </summary>
   Array,
+
+  /// <summary>
+  /// Variant representing enum type
+  /// </summary>
+  Enum,
+
+  /// <summary>
+  /// Variant representing object type
+  /// </summary>
+  Object,
 }

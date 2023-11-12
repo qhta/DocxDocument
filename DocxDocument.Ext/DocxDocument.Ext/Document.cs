@@ -217,7 +217,7 @@ public partial class Document : ModelElement, IDisposable
             if (customFilePropertiesPart == null)
               customFilePropertiesPart = _WordprocessingDocument.AddCustomFilePropertiesPart();
 
-            customFilePropertiesPart.Properties = _CustomProperties._CustomFileProperties;
+            customFilePropertiesPart.Properties = _CustomProperties._ExistingElement;
           }
         }
       }
