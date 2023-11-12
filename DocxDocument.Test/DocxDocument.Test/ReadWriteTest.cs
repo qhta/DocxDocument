@@ -6,10 +6,13 @@ namespace DocxDocument.Test;
 
 public class ReadWriteTest : ReadTest
 {
-  public Qhta.Xml.Serialization.QXmlSerializer ModelSerializer = new(typeof(DocumentModel.Document), typeof(DocumentModel.Document).Assembly.GetExportedTypes());
+  public Qhta.Xml.Serialization.QXmlSerializer ModelSerializer = 
+    new(typeof(DocumentModel.Document), typeof(DocumentModel.Document).Assembly.GetExportedTypes(), 
+      new SerializationOptions{ AcceptAllProperties = false, AcceptDataMembers = true });
 
-  public void TestCreate()
+  public bool TestCreate()
   {
+    bool success = false;
     var samplesPath = SamplesPath;
     var file = Path.Combine(samplesPath, "TestCreate.docx");
     Output.WriteLine($"TestCreate: {file}");
@@ -17,23 +20,27 @@ public class ReadWriteTest : ReadTest
     {
       using (var document = DM.Document.Create(file))
         Output.WriteLine($"  Type: {document.DocumentType}");
+      success=true;
     }
     catch (Exception ex)
     {
       Output.WriteLine($"  {ex.GetType().Name}: {ex.Message}");
     }
-    TestReadProperties(file);
+    if (success)
+      success = TestReadProperties(file);
+    return success;
   }
 
-  public void TestCopyPropertiesOne()
+  public bool TestCopyPropertiesOne()
   {
     var samplesPath = SamplesPath;
     var file = Path.Combine(samplesPath, "DocumentProperties.docx");
-    TestCopyProperties(file);
+    return TestCopyProperties(file);
   }
 
-  public void TestCopyProperties(string fileName)
+  public bool TestCopyProperties(string fileName)
   {
+    bool success = false;
     var sourceFile = fileName;
     var targetFile = Path.ChangeExtension(sourceFile,".new.docx");
     Output.WriteLine($"TestCopyProperties: {sourceFile} -> {targetFile}");
@@ -50,22 +57,29 @@ public class ReadWriteTest : ReadTest
           property.SetValue(targetDocument.BuiltInProperties, val);
         }
 
-        //if (sourceDocument.HasCustomProperties)
-        //  foreach (var item in sourceDocument.CustomProperties!)
-        //  {
-        //    var val = item.Value;
-        //    Output.WriteLine($"  {item.Name}: {val.ToDumpString()}");
-        //    var newCustomProperty = (CustomProperty?)item.CopyDeep(ModelSerializer);
-        //    if (newCustomProperty != null)
-        //      targetDocument.ExistingCustomProperties.Add(newCustomProperty);
-        //  }
+        if (sourceDocument.HasCustomProperties)
+        {
+          foreach (var item in sourceDocument.CustomProperties!)
+          {
+            var val = item.Value;
+            Output.WriteLine($"  {item.Name}: {val.ToDumpString()}");
+            var newCustomProperty = (CustomProperty?)item.CopyDeep(ModelSerializer);
+            if (newCustomProperty != null)
+              targetDocument.ExistingCustomProperties.Add(newCustomProperty);
+          }
+        }
       }
+      success = true;
     }
     catch (Exception ex)
     {
       Output.WriteLine($"  {ex.GetType().Name}: {ex.Message}");
     }
-    TestReadProperties(targetFile);
+    if (success)
+      success = TestReadProperties(targetFile);
+    if (success)
+      success = CompareDocuments(targetFile, sourceFile);
+    return success;
   }
 
   object?[] newCustomPropValues = new object?[]
@@ -79,13 +93,14 @@ public class ReadWriteTest : ReadTest
     null,
   };
 
-  public void TestCreateProperties()
+  public bool TestCreateProperties()
   {
+    bool success = false;
     var samplesPath = SamplesPath;
     var fileName = Path.Combine(samplesPath, "NewDocumentProperties.docx");
     var targetFile = Path.ChangeExtension(fileName,".new.docx");
     Output.WriteLine($"TestCreateProperties: {targetFile}");
-    //try
+    try
     {
       using (var targetDocument = DM.Document.Create(targetFile))
       {
@@ -153,12 +168,15 @@ public class ReadWriteTest : ReadTest
           targetDocument.ExistingCustomProperties.Add(propName, val);
         }
       }
+      success = true;
     }
-    //catch (Exception ex)
-    //{
-    //  Output.WriteLine($"  {ex.GetType().Name}: {ex.Message}");
-    //}
-    TestReadProperties(targetFile);
+    catch (Exception ex)
+    {
+      Output.WriteLine($"  {ex.GetType().Name}: {ex.Message}");
+    }
+    if (success)
+      success = TestReadProperties(targetFile);
+    return success;
   }
 
 }

@@ -50,7 +50,7 @@ public static class ModelObjectComparer
       var expectedType = expectedValue.GetType();
       if (checkedType != expectedType)
       {
-        Diffs.Add(propertyName, actualValue.GetType(), expectedValue.GetType(), "types are different");
+        Diffs.Add(propertyName, actualValue.GetType().Name, expectedValue.GetType().Name, "types are different");
         return false;
       }
       if (actualValue is string s1 && expectedValue is string s2)

@@ -17,4 +17,5 @@ global using System.Text;
 global using DX=DocumentFormat.OpenXml;
 global using DXPack=DocumentFormat.OpenXml.Packaging;
 
+global using Qhta.Conversion;
 global using Qhta.TextUtils;

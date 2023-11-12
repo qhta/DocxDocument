@@ -13,8 +13,9 @@ public class ReadTest
     SamplesPath = GetSamplesPath();
   }
 
-  public void TestOpenAllFiles()
+  public bool TestOpenAllFiles()
   {
+    bool success = false;
     var samplesPath = SamplesPath;
     foreach (var file in Directory.GetFiles(samplesPath, "*.docx").Where(name => !name.EndsWith(".new.docx")))
     {
@@ -23,22 +24,28 @@ public class ReadTest
       {
         using (var document = DM.Document.Open(file, false))
           Output.WriteLine($"  Type: {document.DocumentType}");
+        success = true;
       }
       catch (Exception ex)
       {
         Output.WriteLine($"  {ex.GetType().Name}: {ex.Message}");
+        success = false;
+        break;
       }
     }
+    return success;
   }
 
-  public void TestReadProperties()
+  public bool TestReadProperties()
   {
     var samplesPath = SamplesPath;
     var file = Path.Combine(samplesPath, "DocumentProperties.docx");
-    TestReadProperties(file);
+    return TestReadProperties(file);
   }
-  public void TestReadProperties(string file)
+
+  public bool TestReadProperties(string file)
   {
+    bool success = false;
     Output.WriteLine($"TestReadProperties: {file}");
     try
     {
@@ -92,16 +99,19 @@ public class ReadTest
             var val = item.Value;
             Output.WriteLine($"  {item.Name}: {val.ToDumpString()}");
           }
+        success = true;
       }
     }
     catch (Exception ex)
     {
       Output.WriteLine($"  {ex.GetType().Name}: {ex.Message}");
     }
+    return success;
   }
 
-  public void TestReadSettings()
+  public bool TestReadSettings()
   {
+    bool success = false;
     var samplesPath = SamplesPath;
     var file = Path.Combine(samplesPath, "DocumentSettings.docx");
     Output.WriteLine($"TestReadSettings: {file}");
@@ -122,11 +132,49 @@ public class ReadTest
             }
         }
       }
+      success = true;
     }
     catch (Exception ex)
     {
       Output.WriteLine($"  {ex.GetType().Name}: {ex.Message}");
     }
+    return success;
+  }
+
+  public bool CompareDocuments(string actualDocFile, string expectedDocFile)
+  {
+    bool success = false;
+    try
+    {
+      using (var actualDocument = DM.Document.Open(actualDocFile, false))
+      {
+        using (var expectedDocument = DM.Document.Open(expectedDocFile, false))
+        {
+          bool ok = ModelObjectComparer.CompareObjects(actualDocument, expectedDocument);
+          if (!ok)
+          {
+            var diffs = ModelObjectComparer.Diffs;
+            foreach (var diff in diffs)
+            {
+               Output.WriteLine($"{diff.ValuePath} {(diff.Reason ?? "are different")}");
+               Output.WriteLine($"  actual:   {(diff.ActualValue?.ToDumpString() ?? "null")}");
+               Output.WriteLine($"  expected: {(diff.ExpectedValue?.ToDumpString() ?? "null")}");
+            }
+          }
+          else
+          {
+            Output.WriteLine($"Properties are equal");
+            success = ok;
+          }
+        }
+        Output.WriteLine($"");
+      }
+    }
+    catch (Exception ex)
+    {
+      Output.WriteLine($"  {ex.GetType().Name}: {ex.Message}");
+    }
+    return success;
   }
 
   private string GetSamplesPath()

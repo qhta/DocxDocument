@@ -15,7 +15,7 @@ global using System.Xml;
 global using DocumentModel.OpenXml;
 global using DocumentFormat.OpenXml;
 global using DocumentFormat.OpenXml.VariantTypes;
-//global using Qhta.Collections;
+global using Qhta.Collections;
 //global using Qhta.DeepCompare;
 //global using Qhta.TextUtils;
 global using Qhta.TypeUtils;

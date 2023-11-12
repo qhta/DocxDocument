@@ -5,25 +5,29 @@ namespace DocxDocument.Test;
 
 public class SerializationTest : ReadWriteTest
 {
-  public void TestSerializeAndDeserializeAll()
+  public bool TestSerializeAndDeserializeAll()
   {
     var samplesPath = SamplesPath;
     foreach (var file in Directory.GetFiles(samplesPath, "*.docx").Where(name => !name.EndsWith(".new.docx")).ToArray())
     {
-      TestSerializeAndDeserialize(file);
+      if (!TestSerializeAndDeserialize(file))
+        return false;
     }
+    return true;
   }
 
-  public void TestSerializeAndDeserializeOne()
+  public bool TestSerializeAndDeserializeOne()
   {
     var samplesPath = SamplesPath;
     var file = Path.Combine(samplesPath, "DocumentProperties.docx");
-    TestSerializeAndDeserialize(file);
+    return TestSerializeAndDeserialize(file);
   }
 
-  public void TestSerializeAndDeserialize(string inputFile)
+  public bool TestSerializeAndDeserialize(string inputFile)
   {
-    TestReadProperties(inputFile);
+    if (!TestReadProperties(inputFile))
+      return false;
+    bool success = false;
     var outputXmlFile = Path.ChangeExtension(inputFile, ".xml");
     try
     {
@@ -45,9 +49,9 @@ public class SerializationTest : ReadWriteTest
             var diffs = ModelObjectComparer.Diffs;
             foreach (var diff in diffs)
             {
-               Output.WriteLine($"{diff.ValuePath} {(diff.Reason ?? "are different")}");
-               Output.WriteLine($"  actual:   {(diff.ActualValue?.ToDumpString() ?? "null")}");
-               Output.WriteLine($"  expected: {(diff.ExpectedValue?.ToDumpString() ?? "null")}");
+              Output.WriteLine($"{diff.ValuePath} {(diff.Reason ?? "are different")}");
+              Output.WriteLine($"  actual:   {(diff.ActualValue?.ToDumpString() ?? "null")}");
+              Output.WriteLine($"  expected: {(diff.ExpectedValue?.ToDumpString() ?? "null")}");
             }
           }
           else
@@ -55,13 +59,13 @@ public class SerializationTest : ReadWriteTest
         }
         Output.WriteLine($"");
       }
+      success = true;
     }
     catch (Exception ex)
     {
       Output.WriteLine($"  {ex.GetType().Name}: {ex.Message}");
-      return;
     }
-
+    return success;
   }
 
   public void SerializeXml(DM.Document document, string fileName)
@@ -72,7 +76,7 @@ public class SerializationTest : ReadWriteTest
     using (FileStream fileStream = new FileStream(fileName, FileMode.Create))
     {
       var xmlWriter = XmlTextWriter.Create(fileStream, new XmlWriterSettings { Indent = true });
-      QXmlSerializer serializer = new QXmlSerializer(typeof(DM.Document), knownTypes, new SerializationOptions{ AllowUnregisteredTypes = true });
+      QXmlSerializer serializer = new QXmlSerializer(typeof(DM.Document), knownTypes, new SerializationOptions { AcceptDataMembers = true });
       serializer.SerializeObject(xmlWriter, document);
     }
   }
