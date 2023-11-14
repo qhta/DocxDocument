@@ -8,9 +8,12 @@
 /// </summary>
 public partial class SchemaLibrary: ModelElement<DXCXSR.SchemaLibrary>
 {
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public SchemaLibrary(): base(){ }
 
   public SchemaLibrary(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
 
   public SchemaLibrary(DXCXSR.SchemaLibrary openXmlElement): base(openXmlElement) { } 
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
+
 }

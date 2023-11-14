@@ -1,4 +1,7 @@
 using System.Diagnostics;
+
+using Qhta.TestUtilities;
+
 namespace DocxDocument.Test;
 
 public class ReadTest
@@ -141,29 +144,30 @@ public class ReadTest
     return success;
   }
 
-  public bool CompareDocuments(string actualDocFile, string expectedDocFile)
+  public bool CompareDocxFiles(string actualDocFile, string expectedDocFile)
   {
     bool success = false;
+    Output.WriteLine($"Comparing docx files {Path.GetFileName(actualDocFile)} <-> {Path.GetFileName(expectedDocFile)}");
     try
     {
       using (var actualDocument = DM.Document.Open(actualDocFile, false))
       {
         using (var expectedDocument = DM.Document.Open(expectedDocFile, false))
         {
-          bool ok = ModelObjectComparer.CompareObjects(actualDocument, expectedDocument);
+          bool ok = DeepComparer.CompareObjects(actualDocument, expectedDocument);
           if (!ok)
           {
-            var diffs = ModelObjectComparer.Diffs;
+            var diffs = DeepComparer.Diffs;
             foreach (var diff in diffs)
             {
-               Output.WriteLine($"{diff.ValuePath} {(diff.Reason ?? "are different")}");
-               Output.WriteLine($"  actual:   {(diff.ActualValue?.ToDumpString() ?? "null")}");
-               Output.WriteLine($"  expected: {(diff.ExpectedValue?.ToDumpString() ?? "null")}");
+              Output.WriteLine($"{diff.ValuePath} {(diff.Reason ?? "are different")}");
+              Output.WriteLine($"  actual:   {(diff.ActualValue?.ToDumpString() ?? "null")}");
+              Output.WriteLine($"  expected: {(diff.ExpectedValue?.ToDumpString() ?? "null")}");
             }
           }
           else
           {
-            Output.WriteLine($"Properties are equal");
+            Output.WriteLine($"Documents are equal");
             success = ok;
           }
         }

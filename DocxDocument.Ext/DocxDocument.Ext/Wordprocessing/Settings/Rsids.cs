@@ -9,16 +9,20 @@
 /// </summary>
 public partial class Rsids : ModelElement<DXW.Rsids>
 {
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public Rsids(): base(){ }
 
   public Rsids(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
 
   public Rsids(DXW.Rsids openXmlElement): base(openXmlElement) { } 
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
 
   /// <summary>
   /// Specifies the revision save ID which was associated with the first editing session for this document. 
+  /// <para>
   /// [Note: This information must be identical between any number of copies of the same document, 
   /// as they all originate from the same original editing session. Applications can use this information as desired. end note]
+  /// </para>
   /// </summary>
   [DataMember]
   public HexInt? RsidRoot

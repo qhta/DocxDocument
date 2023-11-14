@@ -1,5 +1,6 @@
 ﻿namespace DocumentModel.Utilities;
 
+
 public record Diff
 {
   public string? ValuePath { get; set; }

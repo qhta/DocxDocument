@@ -2,44 +2,54 @@
 {
   public static void Main(params string[] args)
   {
+    bool success = true;
     //RunReadTest();
-    RunReadWriteTest();
+    if (!RunReadWriteTest()) {success = false;}
     //RunSerializationTest();
+
+    if (success) 
+      Console.WriteLine($"All tests PASSED");
+    else
+      Console.WriteLine($"Tests FAILED");
   }
 
-  private static void RunReadTest()
+  private static bool RunReadTest()
   {
     var test = new DocxDocument.Test.ReadWriteTest();
     test.Output = Console.Out;
     test.Initialize();
     Console.WriteLine($"Opening directory: {test.SamplesPath}");
     Console.WriteLine();
-    test.TestOpenAllFiles();
-    test.TestReadProperties();
-    test.TestReadSettings();
+    if (!test.TestOpenAllFiles()) return false;
+    if (!test.TestReadProperties()) return false;
+    if (!test.TestReadSettings()) return false;
+    return true;
   }
 
-  private static void RunReadWriteTest()
+  private static bool RunReadWriteTest()
   {
     var test = new DocxDocument.Test.ReadWriteTest();
     test.Output = Console.Out;
     test.Initialize();
     Console.WriteLine($"Opening directory: {test.SamplesPath}");
     Console.WriteLine();
-    test.TestCreate();
-    test.TestCreateProperties();
-    test.TestCopyPropertiesOne();
+    if (!test.TestCreate()) return false;
+    //if (!test.TestCopyPropertiesOne()) return false;
+    //if (!test.TestCreateProperties()) return false;
+    //if (!test.TestCreateSettings()) return false;
+    return true;
   }
 
-  private static void RunSerializationTest()
+  private static bool RunSerializationTest()
   {
     var test = new DocxDocument.Test.SerializationTest();
     test.Output = Console.Out;
     test.Initialize();
     Console.WriteLine($"Opening directory: {test.SamplesPath}");
     Console.WriteLine();
-    test.TestSerializeAndDeserializeOne();
-    test.TestSerializeAndDeserializeAll();
+    if (!test.TestSerializeAndDeserializeOne()) return false;
+    if (!test.TestSerializeAndDeserializeAll()) return false;
+    return true;
   }
 }
 

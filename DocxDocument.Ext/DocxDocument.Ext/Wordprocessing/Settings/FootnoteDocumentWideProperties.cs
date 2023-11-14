@@ -7,11 +7,13 @@
 [DataContract]
 public partial class FootnoteDocumentWideProperties : ModelElement<DXW.FootnoteDocumentWideProperties>
 {
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public FootnoteDocumentWideProperties(): base(){ }
 
   public FootnoteDocumentWideProperties(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
 
   public FootnoteDocumentWideProperties(DXW.FootnoteDocumentWideProperties openXmlElement): base(openXmlElement) { } 
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
 
   /// <summary>
   /// This element specifies where endnotes shall be placed on the page when they are referenced by text in the current document.

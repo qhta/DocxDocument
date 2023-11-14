@@ -1,8 +1,6 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿namespace DocumentModel.Vml;
 
-using DocumentFormat.OpenXml.Office.CustomUI;
-
-namespace DocumentModel.Vml;
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 public partial class Rules : IDictionary<string, Rule>
 {

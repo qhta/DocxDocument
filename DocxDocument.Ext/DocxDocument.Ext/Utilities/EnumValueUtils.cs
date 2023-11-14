@@ -5,10 +5,17 @@
 /// </summary>
 public static class EnumValueUtils
 {
-  public static EnumType GetEnumValue<EnumType, EnumValuesType>(this DX.EnumValue<EnumValuesType> _element) where EnumType : struct
+  /// <summary>
+  /// Gets an enum type value from the specified OpenXml EnumValue&lt;EnumValuesType&gt; parameter.
+  /// </summary>
+  /// <typeparam name="EnumType"></typeparam>
+  /// <typeparam name="EnumValuesType"></typeparam>
+  /// <param name="element"></param>
+  /// <returns></returns>
+  public static EnumType GetEnumValue<EnumType, EnumValuesType>(this DX.EnumValue<EnumValuesType> element) where EnumType : struct
   where EnumValuesType : struct
   {
-    object value = _element.Value;
+    object value = element.Value;
     if (typeof(EnumValuesType) != typeof(EnumType))
     {
       var n = (int)Convert.ChangeType(value, typeof(int));
@@ -17,6 +24,14 @@ public static class EnumValueUtils
     return (EnumType)value;
   }
 
+  /// <summary>
+  /// Creates an instance of the specified OpenXml EnumValue&lt;EnumValuesType&gt; type parameter
+  /// and sets an enum type value to this instance.  
+  /// </summary>
+  /// <typeparam name="EnumType"></typeparam>
+  /// <typeparam name="EnumValuesType"></typeparam>
+  /// <param name="value"></param>
+  /// <returns></returns>
   public static DX.EnumValue<EnumValuesType>? SetEnumValue<EnumType, EnumValuesType>(this EnumType? value) where EnumType : struct
   where EnumValuesType : struct
   {

@@ -10,10 +10,20 @@
 [Obsolete]
 public partial class DocumentVariables : NamedElementCollection<DXW.DocumentVariables, DXW.DocumentVariable, DMW.DocumentVariable>
 {
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public DocumentVariables() : base() { }
 
-  public DocumentVariables(DXW.DocumentVariables openXmlElement) : base(openXmlElement) { }
+  public DocumentVariables(DX.OpenXmlElement openXmlElement) : base(openXmlElement) { }
 
+  public DocumentVariables(DXW.DocumentVariables openXmlElement) : base(openXmlElement) { }
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
+
+  /// <summary>
+  /// Dictionary-like method to get a value of the defined variable.
+  /// </summary>
+  /// <param name="key"></param>
+  /// <param name="value"></param>
+  /// <returns></returns>
   public bool TryGetValue(string key, [MaybeNullWhen(false)][NotNullWhen(true)] out string? value)
   {
     var ok = base.TryGetValue(key, out var documentVariable);

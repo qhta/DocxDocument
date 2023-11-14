@@ -6,11 +6,13 @@
 [DataContract]
 public partial class Compatibility: ModelElement<DXW.Compatibility>
 {
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public Compatibility(): base(){ }
 
   public Compatibility(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
 
   public Compatibility(DXW.Compatibility openXmlElement): base(openXmlElement) { }
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
 
   /// <summary>
   /// Use Simplified Rules For Table Border Conflicts.
@@ -666,8 +668,10 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   /// Collection of other compatibility settings.
   /// </summary>
   [DataMember]
-  public CompatibilitySettings CompatibilitySettings
+  public CompatibilitySettings? CompatibilitySettings
   {
-    get => new CompatibilitySettings(_ExistingElement);
+    get => _Element?.GetObject<CompatibilitySettings, DXW.Compatibility>();
+    set => _ExistingElement.SetObject<CompatibilitySettings, DXW.Compatibility>(value);
   }
+
 }

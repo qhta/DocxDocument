@@ -1,16 +1,23 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// This class specifies information about the parameters of the grammar checking which was performed on the contents of the current WordprocessingML document. [Note: This information can be used as desired by applications; for example, to determine if the current grammar checking state, specified by the proofState element (§17.15.1.65) is sufficient. end note]
+/// This class specifies information about the parameters of the grammar checking which was performed 
+/// on the contents of the current WordprocessingML document. 
+/// <para>
+/// [Note: This information can be used as desired by applications; 
+/// for example, to determine if the current grammar checking state, specified by the proofState element (§17.15.1.65) is sufficient. end note]
+/// </para>
 /// </summary>
 [DataContract]
 public partial class ActiveWritingStyle : ModelElement<DXW.ActiveWritingStyle>
 {
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public ActiveWritingStyle(): base(){ }
 
   public ActiveWritingStyle(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
 
   public ActiveWritingStyle(DXW.ActiveWritingStyle openXmlElement): base(openXmlElement) { }
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
 
   /// <summary>
   /// Writing Style Language

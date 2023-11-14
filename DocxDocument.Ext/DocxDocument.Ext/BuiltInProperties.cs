@@ -6,11 +6,18 @@
 /// </summary>
 public partial class BuiltInProperties: ModelElement
 {
+  /// <summary>
+  /// Default constructor
+  /// </summary>
   public BuiltInProperties()
   {
     _ExtendedProperties = new DocumentFormat.OpenXml.ExtendedProperties.Properties();
   }
 
+  /// <summary>
+  /// Constructor with document parameter
+  /// </summary>
+  /// <param name="document"></param>
   public BuiltInProperties(DM.Document document)
   {
     _WordprocessingDocument = document._WordprocessingDocument;
@@ -224,11 +231,22 @@ public partial class BuiltInProperties: ModelElement
 
   #region ExtendedProperties
 
+  /// <summary>
+  /// Checks whether Wordprocessing document has ExtendedFileProperties root element defined.
+  /// </summary>
   public bool HasExtendedProperties => _WordprocessingDocument?.ExtendedFilePropertiesPart?.Properties != null;
 
+  /// <summary>
+  /// Reference to WordprocessingDocument ExtendedFileProperties root element.
+  /// Can be null.
+  /// </summary>
   internal DXEP.Properties? _ExtendedProperties { get; private set; }
 
-  private DXEP.Properties _ExistingExtendedProperties
+  /// <summary>
+  /// Reference to WordprocessingDocument ExtendedFileProperties root element.
+  /// If it does not exist, then a new one is created.
+  /// </summary>
+  internal DXEP.Properties _ExistingExtendedProperties
   {
     get
     {
@@ -550,6 +568,9 @@ public partial class BuiltInProperties: ModelElement
     }
   }
 
+  /// <summary>
+  /// This element specifies the total number of of words in a document if applicable.
+  /// </summary>
   [DataMember]
   public int? Words
   {
