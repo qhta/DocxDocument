@@ -5,7 +5,12 @@
 /// </summary>
 public static class BuiltInPropertiesUtils
 {
-  public static void CopyTo(this BuiltInProperties source, PackageProperties target)
+  /// <summary>
+  /// Special static method to copy Core properties to PackageProperties target.
+  /// </summary>
+  /// <param name="source"></param>
+  /// <param name="target"></param>
+  public static void CopyCorePropertiesTo(this BuiltInProperties source, PackageProperties target)
   {
     target.Title = source.Title;
     target.Creator = source.Creator;

@@ -5,6 +5,11 @@
 /// </summary>
 public static class OnOffUtils
 {
+  /// <summary>
+  /// Gets a boolean value from the specified OpenXml Math OnOffType parameter.
+  /// </summary>
+  /// <param name="element"></param>
+  /// <returns></returns>
   public static bool? AsBoolean(this DXM.OnOffType? element)
   {
     var val = element?.Val?.Value;
@@ -14,6 +19,11 @@ public static class OnOffUtils
     return null;
   }
 
+  /// <summary>
+  /// Gets a boolean value from the specified OpenXml OnOffValue parameter.
+  /// </summary>
+  /// <param name="element"></param>
+  /// <returns></returns>
   public static bool? AsBoolean(this DX.OnOffValue? element)
     => (element is null) ? null : (bool)element;
 }

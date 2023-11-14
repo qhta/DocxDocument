@@ -5,11 +5,22 @@
 /// </summary>
 public class MathProperties : ModelElement<DXM.MathProperties>
 {
+  /// <summary>
+  /// Default constructor.
+  /// </summary>
   public MathProperties(): base(){ }
 
+  /// <summary>
+  /// Constructor with any OpenXmlElement parameter.
+  /// </summary>
+  /// <param name="openXmlElement"></param>
   public MathProperties(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
 
-  public MathProperties(DXM.MathProperties openXmlElement): base(openXmlElement) { } 
+  /// <summary>
+  /// Constructor with OpenXml MathProperties parameter
+  /// </summary>
+  /// <param name="openXmlMathProperties"></param>
+  public MathProperties(DXM.MathProperties openXmlMathProperties): base(openXmlMathProperties) { } 
 
   /// <summary>
   /// This element specifies how binary operators are treated when they coincide with a line break. 

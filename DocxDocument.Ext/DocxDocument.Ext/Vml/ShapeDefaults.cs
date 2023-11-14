@@ -5,11 +5,13 @@
 /// </summary>
 public partial class ShapeDefaults : ModelElement<DXVO.ShapeDefaults>
 {
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public ShapeDefaults(): base(){ }
 
   public ShapeDefaults(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
 
   public ShapeDefaults(DXVO.ShapeDefaults openXmlElement): base(openXmlElement) { } 
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
 
   /// <summary>
   /// Shape ID Optional Storage

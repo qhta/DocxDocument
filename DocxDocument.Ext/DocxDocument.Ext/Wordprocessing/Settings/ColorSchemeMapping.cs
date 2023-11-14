@@ -7,11 +7,13 @@
 [DataContract]
 public partial class ColorSchemeMapping : ModelElement<DXW.ColorSchemeMapping>
 {
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public ColorSchemeMapping(): base(){ }
 
   public ColorSchemeMapping(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
 
   public ColorSchemeMapping(DXW.ColorSchemeMapping openXmlElement): base(openXmlElement) { }
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
 
   /// <summary>
   /// Background 1 Theme Color Mapping

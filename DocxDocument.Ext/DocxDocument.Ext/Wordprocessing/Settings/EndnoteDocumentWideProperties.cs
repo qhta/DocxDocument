@@ -7,11 +7,13 @@
 [DataContract]
 public partial class EndnoteDocumentWideProperties : ModelElement<DXW.EndnoteDocumentWideProperties>
 {
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public EndnoteDocumentWideProperties(): base(){ }
 
   public EndnoteDocumentWideProperties(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
 
   public EndnoteDocumentWideProperties(DXW.EndnoteDocumentWideProperties openXmlElement): base(openXmlElement) { } 
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
 
 
   /// <summary>

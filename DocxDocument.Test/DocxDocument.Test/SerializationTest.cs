@@ -1,6 +1,3 @@
-using DocumentModel;
-using DocumentModel.Utilities;
-
 namespace DocxDocument.Test;
 
 public class SerializationTest : ReadWriteTest
@@ -43,10 +40,10 @@ public class SerializationTest : ReadWriteTest
           Output.WriteLine($"Deserialization from: {outputXmlFile}");
           DeserializeXml(outputDocument, outputXmlFile);
           Output.WriteLine($"Deserialization passed");
-          bool ok = ModelObjectComparer.CompareObjects(outputDocument, inputDocument);
+          bool ok = DeepComparer.CompareObjects(outputDocument, inputDocument);
           if (!ok)
           {
-            var diffs = ModelObjectComparer.Diffs;
+            var diffs = DeepComparer.Diffs;
             foreach (var diff in diffs)
             {
               Output.WriteLine($"{diff.ValuePath} {(diff.Reason ?? "are different")}");

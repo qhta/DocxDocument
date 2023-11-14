@@ -2,6 +2,7 @@
 
 public partial class Rsids: ICollection<HexInt>
 {
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public void Add(HexInt value)
   {
     var _element = _Element?.Elements<DXW.Rsid>().FirstOrDefault(item => item.Val?.Value!=null && Int32.Parse(item.Val.Value, NumberStyles.HexNumber)==value);

@@ -9,11 +9,13 @@
 [DataContract]
 public partial class FieldMapData : ModelElement<DXW.FieldMapData>
 {
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public FieldMapData(): base(){ }
 
   public FieldMapData(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
 
   public FieldMapData(DXW.FieldMapData openXmlElement): base(openXmlElement) { } 
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
 
   /// <summary>
   /// This element specifies the language which shall be used for this phonetic guide.

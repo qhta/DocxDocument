@@ -11,8 +11,12 @@
 /// </summary>
 public partial class Captions: NamedElementCollection<DXW.Captions, DXW.Caption, DMW.Caption>
 {
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public Captions(): base(){ }
 
+  public Captions(DX.OpenXmlElement openXmlElement): base(openXmlElement){ }
+
   public Captions(DXW.Captions openXmlElement): base(openXmlElement) { }
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
 
 }

@@ -12,11 +12,13 @@
 [DataContract]
 public partial class DocumentVariable: ModelElement<DXW.DocumentVariable>, INamedElement
 {
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public DocumentVariable(): base(){ }
 
   public DocumentVariable(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
 
   public DocumentVariable(DXW.DocumentVariable openXmlElement): base(openXmlElement) { } 
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
 
   [DataMember]
   public string? Name

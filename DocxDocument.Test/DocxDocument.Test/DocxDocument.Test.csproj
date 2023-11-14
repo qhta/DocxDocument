@@ -19,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\MyLib\Qhta.TestUtilities\Qhta.TestUtilities.csproj" />
     <ProjectReference Include="..\..\DocxDocument.Ext\DocxDocument.Ext\DocxDocumentExt.csproj" />
   </ItemGroup>
 

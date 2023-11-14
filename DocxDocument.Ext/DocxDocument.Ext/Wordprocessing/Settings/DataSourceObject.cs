@@ -23,11 +23,13 @@
 [DataContract]
 public partial class DataSourceObject : ModelElement<DXW.DataSourceObject>
 {
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public DataSourceObject(): base(){ }
 
   public DataSourceObject(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
 
   public DataSourceObject(DXW.DataSourceObject openXmlElement): base(openXmlElement) { }
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
 
   /// <summary>
   /// This element specifies the type of external data source to be connected to 
@@ -97,7 +99,7 @@ public partial class DataSourceObject : ModelElement<DXW.DataSourceObject>
   public Reference? SourceReference
   {
     get => _Element?.GetRefId<DXW.SourceReference>();
-    set => _ExistingElement.SetRefId<DXW.SourceReference>(value?.ToString());
+    set => _ExistingElement.SetRefId<DXW.SourceReference>(value);
   }
 
   /// <summary>

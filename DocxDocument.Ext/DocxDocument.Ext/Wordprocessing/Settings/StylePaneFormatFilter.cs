@@ -7,12 +7,17 @@
 [DataContract]
 public partial class StylePaneFormatFilter: ModelElement<DXW.StylePaneFormatFilter>
 {
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public StylePaneFormatFilter(): base(){ }
 
   public StylePaneFormatFilter(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
 
   public StylePaneFormatFilter(DXW.StylePaneFormatFilter openXmlElement): base(openXmlElement) { } 
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
 
+  /// <summary>
+  /// Hexadecimally encoded value of all boolean properties.
+  /// </summary>
   [DataMember]
   public HexWord? Val
   {
@@ -31,6 +36,9 @@ public partial class StylePaneFormatFilter: ModelElement<DXW.StylePaneFormatFilt
     }
   }
 
+  /// <summary>
+  /// Specifies that all styles present in the Styles part should be displayed in the list of document styles.
+  /// </summary>
   [DataMember]
   public bool? AllStyles
   {
@@ -44,6 +52,9 @@ public partial class StylePaneFormatFilter: ModelElement<DXW.StylePaneFormatFilt
     }
   }
 
+  /// <summary>
+  /// Specifies that only styles with the customStyle attribute should be displayed in the list of document styles.
+  /// </summary>
   [DataMember]
   public bool? CustomStyles
   {
@@ -57,6 +68,9 @@ public partial class StylePaneFormatFilter: ModelElement<DXW.StylePaneFormatFilt
     }
   }
 
+  /// <summary>
+  /// Specifies that all latent styles should be displayed in the list of document styles.
+  /// </summary>
   [DataMember]
   public bool? LatentStyles
   {
@@ -70,6 +84,9 @@ public partial class StylePaneFormatFilter: ModelElement<DXW.StylePaneFormatFilt
     }
   }
 
+  /// <summary>
+  /// Specifies that only styles used in the document should be displayed in the list of document styles.
+  /// </summary>
   [DataMember]
   public bool? StylesInUse
   {
@@ -83,6 +100,10 @@ public partial class StylePaneFormatFilter: ModelElement<DXW.StylePaneFormatFilt
     }
   }
 
+  /// <summary>
+  /// Specifies that heading styles (styles with a styleId of Heading1 to Heading9) should be displayed 
+  /// in the list of document styles when the previous style is used in the document and/or is present in the Styles part.
+  /// </summary>
   [DataMember]
   public bool? HeadingStyles
   {
@@ -96,6 +117,9 @@ public partial class StylePaneFormatFilter: ModelElement<DXW.StylePaneFormatFilt
     }
   }
 
+  /// <summary>
+  /// Specifies that numbering styles should be displayed in the list of document styles.
+  /// </summary>
   [DataMember]
   public bool? NumberingStyles
   {
@@ -109,6 +133,9 @@ public partial class StylePaneFormatFilter: ModelElement<DXW.StylePaneFormatFilt
     }
   }
 
+  /// <summary>
+  /// Specifies that table styles should be displayed in the list of document styles.
+  /// </summary>
   [DataMember]
   public bool? TableStyles
   {
@@ -122,6 +149,10 @@ public partial class StylePaneFormatFilter: ModelElement<DXW.StylePaneFormatFilt
     }
   }
 
+  /// <summary>
+  /// Specifies that all unique forms of run-level direct formatting should be displayed 
+  /// in the list of document styles as though they were each a unique style.
+  /// </summary>
   [DataMember]
   public bool? DirectFormattingOnRuns
   {
@@ -135,6 +166,10 @@ public partial class StylePaneFormatFilter: ModelElement<DXW.StylePaneFormatFilt
     }
   }
 
+  /// <summary>
+  /// Specifies that all unique forms of paragraph-level direct formatting should be displayed 
+  /// in the list of document styles as though they were each a unique style.
+  /// </summary>
   [DataMember]
   public bool? DirectFormattingOnParagraphs
   {
@@ -148,6 +183,10 @@ public partial class StylePaneFormatFilter: ModelElement<DXW.StylePaneFormatFilt
     }
   }
 
+  /// <summary>
+  /// Specifies that all unique forms of direct formatting of numbering data should be displayed 
+  /// in the list of document styles as though they were each a unique style.
+  /// </summary>
   [DataMember]
   public bool? DirectFormattingOnNumbering
   {
@@ -161,6 +200,10 @@ public partial class StylePaneFormatFilter: ModelElement<DXW.StylePaneFormatFilt
     }
   }
 
+  /// <summary>
+  /// Specifies that all unique forms of direct formatting of tables should be displayed 
+  /// in the list of document styles as though they were each a unique style.
+  /// </summary>
   [DataMember]
   public bool? DirectFormattingOnTables
   {
@@ -174,6 +217,9 @@ public partial class StylePaneFormatFilter: ModelElement<DXW.StylePaneFormatFilt
     }
   }
 
+  /// <summary>
+  /// Specifies that a style should be present which removes all formatting and styles from text.
+  /// </summary>
   [DataMember]
   public bool? ClearFormatting
   {
@@ -187,6 +233,9 @@ public partial class StylePaneFormatFilter: ModelElement<DXW.StylePaneFormatFilt
     }
   }
 
+  /// <summary>
+  /// Specifies that heading styles with a styleId of Heading1 to Heading3 should always be displayed in the list of document styles.
+  /// </summary>
   [DataMember]
   public bool? Top3HeadingStyles
   {
@@ -200,6 +249,9 @@ public partial class StylePaneFormatFilter: ModelElement<DXW.StylePaneFormatFilt
     }
   }
 
+  /// <summary>
+  /// Specifies that styles should only be shown if the semiHidden element is false and the hidden element is false.
+  /// </summary>
   [DataMember]
   public bool? VisibleStyles
   {
@@ -213,6 +265,9 @@ public partial class StylePaneFormatFilter: ModelElement<DXW.StylePaneFormatFilt
     }
   }
 
+  /// <summary>
+  /// Specifies that primary names for styles should not be shown if an alternate name using the name element exists.
+  /// </summary>
   [DataMember]
   public bool? AlternateStyleNames
   {

@@ -8,11 +8,13 @@
 [DataContract]
 public partial class RevisionView : ModelElement<DXW.RevisionView>
 {
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public RevisionView(): base(){ }
 
   public RevisionView(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
 
   public RevisionView(DXW.RevisionView openXmlElement): base(openXmlElement) { } 
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
 
   /// <summary>
   /// Display Visual Indicator Of Markup Area

@@ -6,11 +6,13 @@
 /// </summary>
 public partial class Entry : ModelElement<DXVO.Entry>
 {
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public Entry(): base(){ }
 
   public Entry(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
 
   public Entry(DXVO.Entry openXmlElement): base(openXmlElement) { } 
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
 
   /// <summary>
   /// Specifies the ID of the new group. Default is 0.

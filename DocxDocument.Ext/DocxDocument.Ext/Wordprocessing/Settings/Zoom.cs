@@ -13,12 +13,17 @@
 [DataContract]
 public partial class Zoom : ModelElement<DXW.Zoom>
 {
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public Zoom(): base(){ }
 
   public Zoom(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
 
   public Zoom(DXW.Zoom openXmlElement): base(openXmlElement) { } 
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
 
+  /// <summary>
+  /// Represents a preset zoom kind value
+  /// </summary>
   [DataMember]
   public DMW.PresetZoomKind? Val
   {
@@ -26,6 +31,9 @@ public partial class Zoom : ModelElement<DXW.Zoom>
     set => _ExistingElement.Val = EVU.SetEnumValue<DMW.PresetZoomKind, DXW.PresetZoomValues>(value);
   }
 
+  /// <summary>
+  /// Represents actual percent zoom value.
+  /// </summary>
   [DataMember]
   public Percent? Percent
   {

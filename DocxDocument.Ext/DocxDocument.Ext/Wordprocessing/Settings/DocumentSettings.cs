@@ -8,6 +8,7 @@
 public partial class DocumentSettings: ModelElement
 {
 
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public DocumentSettings() { }
 
   public DocumentSettings(DM.Document document)
@@ -15,6 +16,7 @@ public partial class DocumentSettings: ModelElement
     _WordprocessingDocument = document._WordprocessingDocument;
     _DocumentSettings = _WordprocessingDocument?.MainDocumentPart?.DocumentSettingsPart?.Settings;
   }
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
 
   internal DXP.WordprocessingDocument? _WordprocessingDocument { get; private set; }
 
@@ -175,8 +177,8 @@ public partial class DocumentSettings: ModelElement
   /// <para>
   /// [Rationale: This setting is typically used to allow duplication of paper forms in electronic WordprocessingML document form, 
   /// allowing the resulting online document to be printed into the correct locations on the existing paper form. end rationale]
-  /// </summary>
   /// </para>
+  /// </summary>
   [DataMember]
   public bool? PrintFormsData
   {
@@ -875,6 +877,7 @@ public partial class DocumentSettings: ModelElement
   /// <para>
   /// If this element is omitted, then pages shall not be printed as signatures. 
   /// If the BookFoldRevPrinting element is also specified, then this element shall be ignored.
+  /// </para>
   /// </summary>
   [DataMember]
   public bool? BookFoldPrinting
@@ -1333,7 +1336,7 @@ public partial class DocumentSettings: ModelElement
   /// when this document is opened, in order to ensure that the most recent placeholder text is stored in the glossary document entry. 
   /// If the current placeholder text cannot be saved as a glossary document entry, then it should be modified as needed before saving.
   /// <para>
-  //  If this element is omitted, then the placeholder text in this document should not automatically be resaved when the document is opened.
+  ///  If this element is omitted, then the placeholder text in this document should not automatically be resaved when the document is opened.
   /// </para>
   /// </summary>
   [DataMember]
@@ -1635,6 +1638,10 @@ public partial class DocumentSettings: ModelElement
     set => _ExistingSettings.SetIntVal<DXW.ConsecutiveHyphenLimit>(value);
   }
 
+  /// <summary>
+  /// This class specifies information about the parameters of the grammar checking which was performed 
+  /// on the contents of the current WordprocessingML document. 
+  /// </summary>
   [DataMember]
   public ActiveWritingStyle? ActiveWritingStyle
   {

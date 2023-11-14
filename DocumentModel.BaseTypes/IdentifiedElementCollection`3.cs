@@ -1,12 +1,19 @@
 ﻿namespace DocumentModel;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+/// <summary>
+/// Collection of model elements that itself is a model of OpenXmlCompositeElement.
+/// ModelElements must have unique "Id" integer properties.
+/// </summary>
+/// <typeparam name="OpenXmlElementType">Type of modeled OpenXmlCompositeElement</typeparam>
+/// <typeparam name="OpenXmlItemType">Type of modeled OpenXmlElement item</typeparam>
+/// <typeparam name="ModelItemType">Type of ModelElement items</typeparam>
+
 public class IdentifiedElementCollection<OpenXmlElementType, OpenXmlItemType, ModelItemType> :
   ModelElement<OpenXmlElementType>, ICollection, ICollection<ModelItemType>, INotifyCollectionChanged
 where OpenXmlElementType : DX.OpenXmlCompositeElement
 where OpenXmlItemType : DX.OpenXmlElement
 where ModelItemType : IModelElement<OpenXmlItemType>, IIdentifiedElement, new()
 {
-
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   private PropertyInfo IdProperty
   {
     get
@@ -49,6 +56,8 @@ where ModelItemType : IModelElement<OpenXmlItemType>, IIdentifiedElement, new()
   private void SetName(OpenXmlItemType item, string? value) => SetMethod.Invoke(item, new object?[] { value });
 
   public IdentifiedElementCollection() { }
+
+  public IdentifiedElementCollection(DX.OpenXmlElement openXmlElement) : base(openXmlElement) { }
 
   public IdentifiedElementCollection(OpenXmlElementType openXmlElement) : base(openXmlElement) { }
 

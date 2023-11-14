@@ -5,6 +5,9 @@
 /// </summary>
 public static class VariantUtils
 {
+  /// <summary>
+  /// Table to convert OpenXml VectorBaseValues value to C# type.
+  /// </summary>
   private static Dictionary<DXVT.VectorBaseValues, Type> VectorBaseValueToType = new Dictionary<DXVT.VectorBaseValues, Type>()
   {
     { DXVT.VectorBaseValues.Variant, typeof(object) },
@@ -29,8 +32,20 @@ public static class VariantUtils
     { DXVT.VectorBaseValues.ClassId, typeof(Guid) },
   };
 
+  /// <summary>
+  /// Converts the specified OpenXml VTVector element to a C# array.
+  /// </summary>
+  /// <param name="element"></param>
+  /// <returns></returns>
   public static Array? AsArray(this DXVT.VTVector? element) => AsArray(element, out _);
 
+  /// <summary>
+  /// Converts the specified OpenXml VTVector element to a C# array.
+  /// using the specified OpenXml VectorBaseValues baseType.
+  /// </summary>
+  /// <param name="element"></param>
+  /// <param name="baseType"></param>
+  /// <returns></returns>
   public static Array? AsArray(this DXVT.VTVector? element, out DXVT.VectorBaseValues? baseType)
   {
     baseType = null;
@@ -50,6 +65,10 @@ public static class VariantUtils
   }
 
 
+  /// <summary>
+  /// Table to convert C# type to OpenXml VectorBaseValues value.
+  /// Contains default base values. Default for String type is Lpwstr.
+  /// </summary>
   private static Dictionary<Type, DXVT.VectorBaseValues> TypeToVectorBase = new Dictionary<Type, DXVT.VectorBaseValues>
   {
     { typeof(object), DXVT.VectorBaseValues.Variant },
@@ -70,7 +89,15 @@ public static class VariantUtils
     { typeof(Guid), DXVT.VectorBaseValues.ClassId },
   };
 
-  internal static DX.OpenXmlElement[]? AsChildArray(this Array? array, DXVT.VectorBaseValues? baseType = null)
+  /// <summary>
+  /// Converts the specified array to an array of OpenXmlElements
+  /// using the VectorBaseValues base type (when specified).
+  /// If it is unspecified, then default VectorBaseValues types are used.
+  /// </summary>
+  /// <param name="array"></param>
+  /// <param name="baseType"></param>
+  /// <returns></returns>
+  public static DX.OpenXmlElement[]? AsChildArray(this Array? array, DXVT.VectorBaseValues? baseType = null)
   {
     if (array == null)
       return null;
@@ -91,6 +118,15 @@ public static class VariantUtils
     }
     return result;
   }
+
+  /// <summary>
+  /// Converts the specified array to an OpenXml VTVector element
+  /// using the VectorBaseValues base type (when specified).
+  /// If it is unspecified, then default VectorBaseValues types are used.
+  /// </summary>
+  /// <param name="array"></param>
+  /// <param name="baseType"></param>
+  /// <returns></returns>
   public static DXVT.VTVector? AsVTVector(this Array? array, DXVT.VectorBaseValues? baseType = null)
   {
     if (array == null)
@@ -112,6 +148,9 @@ public static class VariantUtils
     return vector;
   }
 
+  /// <summary>
+  /// Table to convert OpenXml ArrayBaseValues value to C# type.
+  /// </summary>
   internal static Dictionary<DXVT.ArrayBaseValues, Type> ArrayBaseValueToType = new Dictionary<DXVT.ArrayBaseValues, Type>()
   {
     {  DXVT.ArrayBaseValues.Variant, typeof(object) },
@@ -132,8 +171,20 @@ public static class VariantUtils
     {  DXVT.ArrayBaseValues.Error, typeof(int) },
   };
 
+  /// <summary>
+  /// Converts the specified OpenXml VTArray element to a C# array.
+  /// </summary>
+  /// <param name="element"></param>
+  /// <returns></returns>
   public static Array? AsArray(this DXVT.VTArray? element) => AsArray(element, out _);
 
+  /// <summary>
+  /// Converts the specified OpenXml VTArray element to a C# array
+  /// using the specified OpenXml ArrayBaseValues base type. 
+  /// </summary>
+  /// <param name="element"></param>
+  /// <param name="baseType"></param>
+  /// <returns></returns>
   public static Array? AsArray(this DXVT.VTArray? element, out DXVT.ArrayBaseValues? baseType)
   {
     baseType = null;
@@ -156,6 +207,12 @@ public static class VariantUtils
     return array;
   }
 
+  /// <summary>
+  /// Converts the specified OpenXmlElement, which must be some of the VTVariant types,
+  /// to an object of the proper C# type.
+  /// </summary>
+  /// <param name="element"></param>
+  /// <returns></returns>
   public static object? AsObject(this DX.OpenXmlElement? element)
   {
     if (element is DXVT.VTInteger vtInt)
@@ -223,7 +280,14 @@ public static class VariantUtils
     return null;
   }
 
-  internal static DX.OpenXmlElement? AsVTVariant(this object? value, DXVT.VectorBaseValues? baseType = null)
+  /// <summary>
+  /// Converts any object value to an OpenXmlElement
+  /// using the specified VectorBaseValues base type.
+  /// </summary>
+  /// <param name="value"></param>
+  /// <param name="baseType"></param>
+  /// <returns></returns>
+  public static DX.OpenXmlElement? AsVTVariant(this object? value, DXVT.VectorBaseValues? baseType = null)
   {
     if (value == null)
       return new DXVT.VTNull();
@@ -281,6 +345,13 @@ public static class VariantUtils
     return null;
   }
 
+  #region conversion methods needed for ExtendedFileProperties read/write
+  /// <summary>
+  /// Converts an array of items to the string of items separated with commas.
+  /// Items which are strings are emmited enclosed with double-quotes characters.
+  /// </summary>
+  /// <param name="array"></param>
+  /// <returns></returns>
   public static string? AsString(this Array? array)
   {
     if (array == null) return null;
@@ -294,6 +365,11 @@ public static class VariantUtils
     return "{ " + String.Join(", ", ss) + " }";
   }
 
+  /// <summary>
+  /// Converts the specified OpenXml VTVector element to a StringList value.
+  /// </summary>
+  /// <param name="element"></param>
+  /// <returns></returns>
   public static StringList? AsStringList(this DXVT.VTVector? element)
   {
     var array = element?.AsArray();
@@ -308,15 +384,20 @@ public static class VariantUtils
     return null;
   }
 
-  public static DXVT.VTVector? AsVTVector(this StringList? list)
+  /// <summary>
+  /// Converts the specified StringList value to an OpenXml VTVector element.
+  /// </summary>
+  /// <param name="value"></param>
+  /// <returns></returns>
+  public static DXVT.VTVector? AsVTVector(this StringList? value)
   {
-    if (list == null) return null;
+    if (value == null) return null;
     var result = new DXVT.VTVector
     {
-      Size = new DX.UInt32Value((uint)list.Count()),
+      Size = new DX.UInt32Value((uint)value.Count()),
       BaseType = new DX.EnumValue<DXVT.VectorBaseValues>(DXVT.VectorBaseValues.Lpstr)
     };
-    foreach (var str in list)
+    foreach (var str in value)
     {
       var childItem = new DXVT.VTLPSTR(str);
       result.AppendChild(childItem);
@@ -324,6 +405,11 @@ public static class VariantUtils
     return result;
   }
 
+  /// <summary>
+  /// Converts the specified OpenXml VTVector element to a HeadingPairs value.
+  /// </summary>
+  /// <param name="element"></param>
+  /// <returns></returns>
   public static HeadingPairs? AsHeadingPairs(this DXVT.VTVector? element)
   {
     var array = element?.AsArray();
@@ -332,8 +418,8 @@ public static class VariantUtils
       var result = new HeadingPairs();
       for (int i = 0; i < array.Length / 2; i++)
       {
-        var item1 = array.GetValue(i*2);
-        var item2 = array.GetValue(i*2 + 1);
+        var item1 = array.GetValue(i * 2);
+        var item2 = array.GetValue(i * 2 + 1);
         if (item1 is string str && item2 is int num)
           result.Add(new HeadingPair { Heading = str, Num = num });
       }
@@ -342,15 +428,20 @@ public static class VariantUtils
     return null;
   }
 
-  public static DXVT.VTVector? AsVTVector(this HeadingPairs? list)
+  /// <summary>
+  /// Converts the specified HeadingPairs value to an OpenXml VTVector element.
+  /// </summary>
+  /// <param name="value"></param>
+  /// <returns></returns>
+  public static DXVT.VTVector? AsVTVector(this HeadingPairs? value)
   {
-    if (list == null) return null;
+    if (value == null) return null;
     var result = new DXVT.VTVector
     {
-      Size = new DX.UInt32Value((uint)list.Count() * 2),
+      Size = new DX.UInt32Value((uint)value.Count() * 2),
       BaseType = new DX.EnumValue<DXVT.VectorBaseValues>(DXVT.VectorBaseValues.Variant)
     };
-    foreach (var item in list)
+    foreach (var item in value)
     {
       var childItem1 = new DXVT.VTLPSTR(item.Heading ?? "");
       result.AppendChild(childItem1);
@@ -360,6 +451,11 @@ public static class VariantUtils
     return result;
   }
 
+  /// <summary>
+  /// Converts the specified OpenXml VTVector element to a HyperlinkList value.
+  /// </summary>
+  /// <param name="element"></param>
+  /// <returns></returns>
   public static HyperlinkList? AsHyperlinkList(this DXVT.VTVector? element)
   {
     var array = element?.AsArray();
@@ -409,21 +505,26 @@ public static class VariantUtils
     return null;
   }
 
-  public static DXVT.VTVector? AsVTVector(this HyperlinkList? list)
+  /// <summary>
+  /// Converts the specified HyperlinkList value to an OpenXml VTVector element.
+  /// </summary>
+  /// <param name="value"></param>
+  /// <returns></returns>
+  public static DXVT.VTVector? AsVTVector(this HyperlinkList? value)
   {
-    if (list == null) return null;
+    if (value == null) return null;
     var result = new DXVT.VTVector
     {
-      Size = new DX.UInt32Value((uint)list.Count() * 2),
+      Size = new DX.UInt32Value((uint)value.Count() * 2),
       BaseType = new DX.EnumValue<DXVT.VectorBaseValues>(DXVT.VectorBaseValues.Variant)
     };
-    foreach (var item in list)
+    foreach (var item in value)
     {
       result.AppendChild(new DXVT.VTInt32(item.N1.ToString()));
       result.AppendChild(new DXVT.VTInt32(item.N2.ToString()));
       result.AppendChild(new DXVT.VTInt32(item.N3.ToString()));
-      var n4h = (uint)Convert.ChangeType(item.Action,typeof(uint));
-      var n4l = (uint)Convert.ChangeType(item.Attachment,typeof(uint));
+      var n4h = (uint)Convert.ChangeType(item.Action, typeof(uint));
+      var n4l = (uint)Convert.ChangeType(item.Attachment, typeof(uint));
       var n4 = (n4h << 16) | (n4l);
       result.AppendChild(new DXVT.VTInt32(n4.ToString()));
       result.AppendChild(new DXVT.VTLPSTR(item.Target ?? ""));
@@ -431,7 +532,7 @@ public static class VariantUtils
     }
     return result;
   }
-
+  #endregion
 }
 
 

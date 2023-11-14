@@ -6,6 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <RootNamespace>DocumentModel</RootNamespace>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>    
   </PropertyGroup>
 
   <ItemGroup>
@@ -19,6 +20,10 @@
 
   <ItemGroup>
     <Compile Remove="CustomProperties.AsCollection.cs" />
+    <Compile Remove="Utilities\ModelObjectComparer.cs" />
+    <Compile Remove="Vml\RegroupTable.AsCollection.cs" />
+    <Compile Remove="Vml\Rules.AsCollection.cs" />
+    <Compile Remove="Vml\Rules.AsDictionary.cs" />
     <Compile Remove="Wordprocessing\Settings\CompatibilitySettings.AsCollection.cs" />
   </ItemGroup>
 
