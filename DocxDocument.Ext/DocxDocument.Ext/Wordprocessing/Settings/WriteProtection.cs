@@ -24,11 +24,13 @@
 [DataContract]
 public partial class WriteProtection : ModelElement<DXW.WriteProtection>
 {
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public WriteProtection(): base(){ }
 
   public WriteProtection(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
 
   public WriteProtection(DXW.WriteProtection openXmlElement): base(openXmlElement) { } 
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
 
   /// <summary>
   /// Recommend Write Protection in User Interface.

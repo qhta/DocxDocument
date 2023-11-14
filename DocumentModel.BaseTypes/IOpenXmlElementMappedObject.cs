@@ -11,5 +11,5 @@ public interface IOpenXmlElementMappedObject
   /// </summary>
   /// <typeparam name="OpenXmlElementType"></typeparam>
   /// <returns></returns>
-  public OpenXmlElementType GetElement<OpenXmlElementType>() where OpenXmlElementType : DX.OpenXmlElement;
+  public OpenXmlElementType? GetElement<OpenXmlElementType>() where OpenXmlElementType : DX.OpenXmlElement;
 }

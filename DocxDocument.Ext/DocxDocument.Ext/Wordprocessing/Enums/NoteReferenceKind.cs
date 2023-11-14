@@ -1,7 +1,7 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Defines the reference kind for a <see cref="NoteReference"/> and <see cref="NoteReferenceMark"/> element
+///   Defines the reference kind for a NoteReference and NoteReferenceMark element.
 /// </summary>
 //[JsonConverter(typeof(StringEnumConverter))]
 public enum NoteReferenceKind

@@ -9,11 +9,13 @@
 [DataContract]
 public partial class SaveThroughXslt: ModelElement<DXW.SaveThroughXslt>
 {
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public SaveThroughXslt(): base(){ }
 
   public SaveThroughXslt(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
 
   public SaveThroughXslt(DXW.SaveThroughXslt openXmlElement): base(openXmlElement) { } 
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
 
   [DataMember]
   public string? Id

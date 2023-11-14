@@ -7,11 +7,13 @@
 /// </summary>
 public partial class ShapeIdMap : ModelElement<DXVO.ShapeIdMap>
 {
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public ShapeIdMap(): base(){ }
 
   public ShapeIdMap(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
 
   public ShapeIdMap(DXVO.ShapeIdMap openXmlElement): base(openXmlElement) { } 
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
 
 
   /// <summary>

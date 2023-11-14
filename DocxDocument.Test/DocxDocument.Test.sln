@@ -18,6 +18,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocumentModel.BaseTypes", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocumentModel.BaseConverters", "..\DocumentModel.BaseConverters\DocumentModel.BaseConverters.csproj", "{EDEC59C0-F827-434E-94BE-BAC65B0844EF}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Qhta.TestUtilities", "..\..\MyLib\Qhta.TestUtilities\Qhta.TestUtilities.csproj", "{7E1DA126-8285-4CFB-9136-E2227E4C79BD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,6 +46,10 @@ Global
 		{EDEC59C0-F827-434E-94BE-BAC65B0844EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EDEC59C0-F827-434E-94BE-BAC65B0844EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EDEC59C0-F827-434E-94BE-BAC65B0844EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E1DA126-8285-4CFB-9136-E2227E4C79BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E1DA126-8285-4CFB-9136-E2227E4C79BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E1DA126-8285-4CFB-9136-E2227E4C79BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E1DA126-8285-4CFB-9136-E2227E4C79BD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -18,11 +18,11 @@ public class ModelElement<OpenXmlElementType> : ModelElement, IModelElement<Open
     _Element = (OpenXmlElementType)openXmlElement;
   }
 
-  public OpenXmlElementType1 GetElement<OpenXmlElementType1>() where OpenXmlElementType1 : DX.OpenXmlElement
+  public OpenXmlElementType1? GetElement<OpenXmlElementType1>() where OpenXmlElementType1 : DX.OpenXmlElement
   {
-    if (_Element is OpenXmlElementType1 validTypeElement)
-      return validTypeElement;
-    throw new ArgumentException($"Only {typeof(OpenXmlElementType1)} type supported in GetElement of {this.GetType()}");
+    if (typeof(OpenXmlElementType1)==typeof(OpenXmlElementType))
+      return _Element as OpenXmlElementType1;
+    throw new ArgumentException($"Only {typeof(OpenXmlElementType1)} type is supported in GetElement of {this.GetType()}");
   }
 
   public ModelElement(OpenXmlElementType openXmlElement)

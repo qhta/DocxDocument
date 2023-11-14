@@ -5,24 +5,39 @@
 /// These restrictions should be enforced by applications editing this document when the enforcement attribute is turned on, 
 /// and ignored (but persisted) otherwise. 
 /// Document protection is a set of restrictions used to prevent unintentional changes to all or part of a WordprocessingML document. 
+/// <para>
 /// [Note: This protection does not encrypt the document, and malicious applications might circumvent its use. 
 /// This protection is not intended as a security feature. end note]
+/// </para>
 /// </summary>
 [DataContract]
 public partial class DocumentProtection: ModelElement<DXW.DocumentProtection>
 {
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public DocumentProtection(): base(){ }
 
   public DocumentProtection(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
 
   public DocumentProtection(DXW.DocumentProtection openXmlElement): base(openXmlElement) { }
+//#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
 
+  /// <summary>
+  /// Specifies the set of editing restrictions which shall be enforced on a given WordprocessingML document.
+  /// </summary>
   public DMW.DocumentProtectionKind? Edit
   {
     get => _Element?.Edit?.GetEnumValue<DMW.DocumentProtectionKind, DXW.DocumentProtectionValues>();
     set => _ExistingElement.Edit = EnumValueUtils.SetEnumValue<DMW.DocumentProtectionKind, DXW.DocumentProtectionValues>(value);
   }
 
+  /// <summary>
+  /// Specifies if formatting restrictions are in effect for a given WordprocessingML document.
+  /// This enables the document to restrict the types of styles that can exist in a given WordprocessingML document. 
+  /// Specifically, by setting this attribute's value equal to true, every style whose locked element has a value of true 
+  /// (or latent styles whose locked attribute is true) shall not be available for use in the application, 
+  /// nor should any direct formatting. Only styles with a locked value of false can be used.
+  /// </summary>
+  [DataMember]
   public bool? Formatting
   {
     get => _Element?.Formatting?.Value;
@@ -35,6 +50,7 @@ public partial class DocumentProtection: ModelElement<DXW.DocumentProtection>
     }
   }
 
+  [DataMember]
   public bool? Enforcement
   {
     get => _Element?.Enforcement?.Value;
@@ -47,24 +63,28 @@ public partial class DocumentProtection: ModelElement<DXW.DocumentProtection>
     }
   }
 
+  [DataMember]
   public DMW.CryptProviderKind? CryptographicProviderType
   {
     get => _Element?.CryptographicProviderType?.GetEnumValue<DMW.CryptProviderKind, DXW.CryptProviderValues>();
     set => _ExistingElement.CryptographicProviderType = EnumValueUtils.SetEnumValue<DMW.CryptProviderKind, DXW.CryptProviderValues>(value);
   }
 
+  [DataMember]
   public DMW.CryptAlgorithmClassKind? CryptographicAlgorithmClass
   {
     get => _Element?.CryptographicAlgorithmClass?.GetEnumValue<DMW.CryptAlgorithmClassKind, DXW.CryptAlgorithmClassValues>();
     set => _ExistingElement.CryptographicAlgorithmClass = EnumValueUtils.SetEnumValue<DMW.CryptAlgorithmClassKind, DXW.CryptAlgorithmClassValues>(value);
   }
 
+  [DataMember]
   public DMW.CryptAlgorithmKind? CryptographicAlgorithmType
   {
     get => _Element?.CryptographicAlgorithmType?.GetEnumValue<DMW.CryptAlgorithmKind, DXW.CryptAlgorithmValues>();
     set => _ExistingElement.CryptographicAlgorithmType = EnumValueUtils.SetEnumValue<DMW.CryptAlgorithmKind, DXW.CryptAlgorithmValues>(value);
   }
 
+  [DataMember]
   public int? CryptographicAlgorithmSid
   {
     get => _Element?.CryptographicAlgorithmSid?.Value;
@@ -77,6 +97,7 @@ public partial class DocumentProtection: ModelElement<DXW.DocumentProtection>
     }
   }
 
+  [DataMember]
   public uint? CryptographicSpinCount
   {
     get => _Element?.CryptographicSpinCount?.Value;
@@ -89,6 +110,16 @@ public partial class DocumentProtection: ModelElement<DXW.DocumentProtection>
     }
   }
 
+
+  /// <summary>
+  /// The Microsoft Base Cryptographic Provider is the initial cryptographic service provider (CSP) provider, 
+  /// and is distributed with CryptoAPI versions 1.0 and 2.0. 
+  /// It is a general-purpose provider that supports digital signatures and data encryption.
+  /// <para>
+  /// The RSA public key algorithm is used for all public key operations.
+  /// </para>
+  /// </summary>
+  [DataMember]
   public string? CryptographicProvider
   {
     get => _Element?.CryptographicProvider?.Value;
@@ -101,6 +132,7 @@ public partial class DocumentProtection: ModelElement<DXW.DocumentProtection>
     }
   }
 
+  [DataMember]
   public HexBinary? AlgorithmIdExtensibility
   {
     get
@@ -118,6 +150,7 @@ public partial class DocumentProtection: ModelElement<DXW.DocumentProtection>
     }
   }
 
+  [DataMember]
   public string? AlgorithmIdExtensibilitySource
   {
     get => _Element?.AlgorithmIdExtensibilitySource?.Value;
@@ -130,6 +163,7 @@ public partial class DocumentProtection: ModelElement<DXW.DocumentProtection>
     }
   }
 
+  [DataMember]
   public HexBinary? CryptographicProviderTypeExtensibility
   {
     get 
@@ -147,6 +181,7 @@ public partial class DocumentProtection: ModelElement<DXW.DocumentProtection>
     }
   }
 
+  [DataMember]
   public string? CryptographicProviderTypeExtSource
   {
     get => _Element?.CryptographicProviderTypeExtSource?.Value;
@@ -159,6 +194,7 @@ public partial class DocumentProtection: ModelElement<DXW.DocumentProtection>
     }
   }
 
+  [DataMember]
   public byte[]? Hash
   {
     get
@@ -176,6 +212,8 @@ public partial class DocumentProtection: ModelElement<DXW.DocumentProtection>
     }
   }
 
+
+  [DataMember]
   public byte[]? Salt
   {
     get
@@ -193,6 +231,12 @@ public partial class DocumentProtection: ModelElement<DXW.DocumentProtection>
     }
   }
 
+  /// <summary>
+  /// The name of the cryptographic hashing algorithm used to generate the hash value. Only those algorithms that are installed in the operating system’s cryptographic subsystem can be utilized by Office.
+  /// The following hash algorithm names are reserved:
+  /// MD2, MD4, MD5, RIPEMD-128, RIPEMD-160, SHA-1, SHA-256, SHA-384, SHA-512, WHIRLPOOL, 
+  /// </summary>
+  [DataMember]
   public string? AlgorithmName
   {
     get => _Element?.AlgorithmName?.Value;
@@ -205,6 +249,14 @@ public partial class DocumentProtection: ModelElement<DXW.DocumentProtection>
     }
   }
 
+  /// <summary>
+  /// Specifies the hash value for the password required to edit this worksheet. 
+  /// This value shall be compared with the resulting hash value after hashing the user-supplied password 
+  /// using the algorithm specified by the preceding attributes and parent XML element. 
+  /// If the two values match, the protection shall no longer be enforced.
+  /// </summary>
+
+  [DataMember]
   public byte[]? HashValue
   {
     get
@@ -222,6 +274,10 @@ public partial class DocumentProtection: ModelElement<DXW.DocumentProtection>
     }
   }
 
+  /// <summary>
+  /// Specifies the random bytes that are pre-pended to the user-supplied password before it was hashed by the hashing algorithm.
+  /// </summary>
+  [DataMember]
   public byte[]? SaltValue
   {
     get
@@ -239,6 +295,10 @@ public partial class DocumentProtection: ModelElement<DXW.DocumentProtection>
     }
   }
 
+  /// <summary>
+  /// Specifies the number of times the hashing function shall be iteratively run (using each iteration's result as the input for the next iteration).
+  /// </summary>
+  [DataMember]
   public int? SpinCount
   {
     get => _Element?.SpinCount?.Value;

@@ -7,12 +7,17 @@
 [DataContract]
 public partial class AutoCaption: ModelElement<DXW.AutoCaption>, INamedElement
 {
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public AutoCaption(): base(){ }
 
   public AutoCaption(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
 
   public AutoCaption(DXW.AutoCaption openXmlElement): base(openXmlElement) { }
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
 
+  /// <summary>
+  /// Autocaption name representing a type of labeled elements (figures, table etc.).
+  /// </summary>
   [DataMember]
   public string? Name
   {
@@ -20,6 +25,9 @@ public partial class AutoCaption: ModelElement<DXW.AutoCaption>, INamedElement
     set => _ExistingElement.Name = value;
   }
 
+  /// <summary>
+  /// Automatically inserted caption preceding number of the specified element type.
+  /// </summary>
   [DataMember]
   public string? Caption
   {

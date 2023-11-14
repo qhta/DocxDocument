@@ -12,9 +12,8 @@ namespace DocumentModel.Wordprocessing;
 [DataContract]
 public class NoBreakKinsoku : ModelElement, IOpenXmlElementMappedObject
 {
-  public NoBreakKinsoku()
-  {
-  }
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+  public NoBreakKinsoku() { }
 
   public NoBreakKinsoku(DX.OpenXmlElement openXmlElement)
   {
@@ -33,7 +32,14 @@ public class NoBreakKinsoku : ModelElement, IOpenXmlElementMappedObject
     else
       throw new InvalidOperationException($"SourceElement must be either of NoLineBreaksBeforeKinsoku or NoLineBreaksAfterKinsoku type");
   }
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
 
+  /// <summary>
+  /// Gets a specific OpenXmlElement for the value.
+  /// </summary>
+  /// <typeparam name="OpenXmlElementType"></typeparam>
+  /// <returns></returns>
+  /// <exception cref="InvalidOperationException"></exception>
   public OpenXmlElementType GetElement<OpenXmlElementType>() where OpenXmlElementType : DX.OpenXmlElement
   {
     if (_Element is OpenXmlElementType result)
@@ -56,9 +62,20 @@ public class NoBreakKinsoku : ModelElement, IOpenXmlElementMappedObject
     else
       throw new InvalidOperationException($"Element type {typeof(OpenXmlElementType)} not supported");
   }
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
 
   internal DX.OpenXmlElement? _Element { get; private set; }
 
+  /// <summary>
+  /// Specifies the language of text for which the parent custom line breaking rule shall be applied. 
+  /// Applications supporting this functionality shall support custom line breaking for the following four languages:
+  /// <list type="bullet">
+  ///   <item>Chinese (Traditional)</item>
+  ///   <item>Chinese (Simplified)</item>
+  ///   <item>Japanese</item>
+  ///   <item>Korean</item>
+  /// </list>
+  /// </summary>
   [DataMember]
   public string? Lang
   {
@@ -78,6 +95,9 @@ public class NoBreakKinsoku : ModelElement, IOpenXmlElementMappedObject
   }
   private string? _Lang;
 
+  /// <summary>
+  /// Specifies the set of characters which shall be included in the custom line breaking rule.
+  /// </summary>
   [DataMember]
   public string? Val
   {

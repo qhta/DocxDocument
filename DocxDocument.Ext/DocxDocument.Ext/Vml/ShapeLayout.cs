@@ -5,14 +5,21 @@
 /// </summary>
 public partial class ShapeLayout : ModelElement<DXVO.ShapeLayout>
 {
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public ShapeLayout(): base(){ }
 
   public ShapeLayout(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
 
   public ShapeLayout(DXVO.ShapeLayout openXmlElement): base(openXmlElement) { } 
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
 
   /// <summary>
-  /// Shape ID Optional Storage
+  /// Shape ID Optional Storage.
+  /// <para>
+  /// Office ignores this value on file read. The value indicates ID blocks of 1024 values, 
+  /// where a value of 0 means IDs 0 to 1024, a value of 1 means IDs 1025 to 2048, and so on. 
+  /// If Office has at least one shape which has an ID contained in a specific block, it writes out the index for that block.
+  /// </para>
   /// </summary>
   [DataMember]
   public DMV.ShapeIdMap? ShapeIdMap
@@ -21,6 +28,12 @@ public partial class ShapeLayout : ModelElement<DXVO.ShapeLayout>
     set => _ExistingElement.SetObject<DMV.ShapeIdMap, DXVO.ShapeIdMap>(value); 
   }
 
+  /// <summary>
+  /// Office requires that the shape referenced by the idref attribute match the rule type specified by this attribute. 
+  /// If the value is arc, idref shall reference a valid shape that is an arc (the value of the shape’s spt attribute is 19). 
+  /// If the value is callout, idref shall reference a valid shape that is a callout. 
+  /// If the value is connector, idref shall reference a valid shape that is a connector.
+  /// </summary>
   [DataMember]
   public DMV.Rules? Rules
   {

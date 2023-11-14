@@ -6,6 +6,8 @@
 [DataContract]
 public partial class ShapeDefaultsType : ModelElement, IOpenXmlElementMappedObject
 {
+
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public ShapeDefaultsType()
   {
     _Element = new DXW.ShapeDefaults();
@@ -59,7 +61,11 @@ public partial class ShapeDefaultsType : ModelElement, IOpenXmlElementMappedObje
   internal DXW.ShapeDefaultsType _Element { get; private set; }
 
   internal DXW.ShapeDefaultsType _ExistingElement => _Element;
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
 
+  /// <summary>
+  /// This element specifies the defaults that are used when creating new shapes. These defaults are stored once per document.
+  /// </summary>
   [DataMember]
   public DMV.ShapeDefaults? VmlShapeDefaults
   {
@@ -67,6 +73,9 @@ public partial class ShapeDefaultsType : ModelElement, IOpenXmlElementMappedObje
     set => _ExistingElement.SetObject<DMV.ShapeDefaults, DXVO.ShapeDefaults>(value);
   }
 
+  /// <summary>
+  /// This element contains child elements that store information used in the editing and layout of shapes.
+  /// </summary>
   [DataMember]
   public DMV.ShapeLayout? VmlShapeLayout
   {

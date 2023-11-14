@@ -9,11 +9,13 @@
 [DataContract]
 public partial class Schema: ModelElement<DXCXSR.Schema>
 {
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public Schema(): base(){ }
 
   public Schema(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
 
   public Schema(DXCXSR.Schema openXmlElement): base(openXmlElement) { } 
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
 
   [DataMember]
   public string? Uri

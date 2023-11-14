@@ -22,11 +22,13 @@
 [DataContract]
 public partial class MailMerge :  ModelElement<DXW.MailMerge>
 {
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public MailMerge(): base(){ }
 
   public MailMerge(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
 
   public MailMerge(DXW.MailMerge openXmlElement): base(openXmlElement) { } 
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
 
   /// <summary>
   /// This element specifies that the hosting application shall display the given record 
@@ -85,7 +87,6 @@ public partial class MailMerge :  ModelElement<DXW.MailMerge>
   /// (such as a spreadsheet or database), or the alternative method of data access if the Dynamic Data Exchange system is not used. 
   /// This setting is purely a suggestion of the data source access mechanism which shall be used, 
   /// and can be ignored in favor of an alternative mechanism if one is present.
-  /// </para>
   /// </summary>
   [DataMember]
   public DMW.MailMergeDataKind? DataType
@@ -156,16 +157,16 @@ public partial class MailMerge :  ModelElement<DXW.MailMerge>
     set => _ExistingElement.SetObject<DMW.DataSourceObject, DXW.DataSourceObject>(value);
   }
 
-  ///   <item><description><see cref="DocumentFormat.OpenXml.Wordprocessing.DataSourceObject" /> <c>&lt;w:odso></c></description></item>
-  ///   <item><description><see cref="DocumentFormat.OpenXml.Wordprocessing.LinkToQuery" /> <c>&lt;w:linkToQuery></c></description></item>
-  ///   <item><description><see cref="DocumentFormat.OpenXml.Wordprocessing.DoNotSuppressBlankLines" /> <c>&lt;w:doNotSuppressBlankLines></c></description></item>
-  ///   <item><description><see cref="DocumentFormat.OpenXml.Wordprocessing.MailAsAttachment" /> <c>&lt;w:mailAsAttachment></c></description></item>
-  ///   <item><description><see cref="DocumentFormat.OpenXml.Wordprocessing.ViewMergedData" /> <c>&lt;w:viewMergedData></c></description></item>
-  ///   <item><description><see cref="DocumentFormat.OpenXml.Wordprocessing.DataSourceReference" /> <c>&lt;w:dataSource></c></description></item>
-  ///   <item><description><see cref="DocumentFormat.OpenXml.Wordprocessing.HeaderSource" /> <c>&lt;w:headerSource></c></description></item>
-  ///   <item><description><see cref="DocumentFormat.OpenXml.Wordprocessing.ConnectString" /> <c>&lt;w:connectString></c></description></item>
-  ///   <item><description><see cref="DocumentFormat.OpenXml.Wordprocessing.Query" /> <c>&lt;w:query></c></description></item>
-  ///   <item><description><see cref="DocumentFormat.OpenXml.Wordprocessing.AddressFieldName" /> <c>&lt;w:addressFieldName></c></description></item>
-  ///   <item><description><see cref="DocumentFormat.OpenXml.Wordprocessing.MailSubject" /> <c>&lt;w:mailSubject></c></description></item>
+  //   <item><description><see cref="DocumentFormat.OpenXml.Wordprocessing.DataSourceObject" /> <c>&lt;w:odso></c></description></item>
+  //   <item><description><see cref="DocumentFormat.OpenXml.Wordprocessing.LinkToQuery" /> <c>&lt;w:linkToQuery></c></description></item>
+  //   <item><description><see cref="DocumentFormat.OpenXml.Wordprocessing.DoNotSuppressBlankLines" /> <c>&lt;w:doNotSuppressBlankLines></c></description></item>
+  //   <item><description><see cref="DocumentFormat.OpenXml.Wordprocessing.MailAsAttachment" /> <c>&lt;w:mailAsAttachment></c></description></item>
+  //   <item><description><see cref="DocumentFormat.OpenXml.Wordprocessing.ViewMergedData" /> <c>&lt;w:viewMergedData></c></description></item>
+  //   <item><description><see cref="DocumentFormat.OpenXml.Wordprocessing.DataSourceReference" /> <c>&lt;w:dataSource></c></description></item>
+  //   <item><description><see cref="DocumentFormat.OpenXml.Wordprocessing.HeaderSource" /> <c>&lt;w:headerSource></c></description></item>
+  //   <item><description><see cref="DocumentFormat.OpenXml.Wordprocessing.ConnectString" /> <c>&lt;w:connectString></c></description></item>
+  //   <item><description><see cref="DocumentFormat.OpenXml.Wordprocessing.Query" /> <c>&lt;w:query></c></description></item>
+  //   <item><description><see cref="DocumentFormat.OpenXml.Wordprocessing.AddressFieldName" /> <c>&lt;w:addressFieldName></c></description></item>
+  //   <item><description><see cref="DocumentFormat.OpenXml.Wordprocessing.MailSubject" /> <c>&lt;w:mailSubject></c></description></item>
 
 }

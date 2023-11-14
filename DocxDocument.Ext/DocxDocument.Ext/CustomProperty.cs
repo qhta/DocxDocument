@@ -8,12 +8,26 @@
 [DataContract]
 public class CustomProperty: ModelElement<DXCP.CustomDocumentProperty>, IIdentifiedElement
 {
+  /// <summary>
+  /// Default constructor.
+  /// </summary>
   public CustomProperty(): base(){ }
 
+  /// <summary>
+  /// Constructor with any OpenXmlElement parameter.
+  /// </summary>
+  /// <param name="openXmlElement"></param>
   public CustomProperty(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
 
-  public CustomProperty(DXCP.CustomDocumentProperty openXmlElement): base(openXmlElement) { } 
+  /// <summary>
+  /// Constructor with OpenXml CustomDocumentProperty parameter.
+  /// </summary>
+  /// <param name="openXmlCustomDocumentProperty"></param>
+  public CustomProperty(DXCP.CustomDocumentProperty openXmlCustomDocumentProperty): base(openXmlCustomDocumentProperty) { } 
 
+  /// <summary>
+  /// Readable name of the property.
+  /// </summary>
   [DataMember]
   public string? Name
   {
@@ -21,6 +35,9 @@ public class CustomProperty: ModelElement<DXCP.CustomDocumentProperty>, IIdentif
     set => _ExistingElement.Name = value;
   }
 
+  /// <summary>
+  /// Persistent Id of the property. Should start from 2.
+  /// </summary>
   [DataMember]
   public int? Id
   {
@@ -28,6 +45,9 @@ public class CustomProperty: ModelElement<DXCP.CustomDocumentProperty>, IIdentif
     set => _ExistingElement.PropertyId = value;
   }
 
+  /// <summary>
+  /// Format identifier of the property. Should be set to {D5CDD505-2E9C-101B-9397-08002B2CF9AE}.
+  /// </summary>
   [DataMember]
   public Guid? FormatId
   {
@@ -41,6 +61,9 @@ public class CustomProperty: ModelElement<DXCP.CustomDocumentProperty>, IIdentif
     }
   }
 
+  /// <summary>
+  /// Optional bookmark link target.
+  /// </summary>
   [DataMember]
   public string? LinkTarget
   {
@@ -54,6 +77,9 @@ public class CustomProperty: ModelElement<DXCP.CustomDocumentProperty>, IIdentif
     }
   }
 
+  /// <summary>
+  /// Object value of the property. Must be convertible to any OpenXml VTVariant type.
+  /// </summary>
   [DataMember]
   [TypeConverter(typeof(Qhta.Conversion.ValueTypeConverter))]
   public object? Value

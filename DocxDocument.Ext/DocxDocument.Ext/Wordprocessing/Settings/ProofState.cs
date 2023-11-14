@@ -8,11 +8,13 @@
 [DataContract]
 public partial class ProofState : ModelElement<DXW.ProofState>
 {
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public ProofState(): base(){ }
 
   public ProofState(DX.OpenXmlElement openXmlElement): base(openXmlElement) { }
 
   public ProofState(DXW.ProofState openXmlElement): base(openXmlElement) { } 
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
 
   [DataMember]
   public DMW.ProofingStateKind? Spelling
