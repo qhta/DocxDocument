@@ -5,6 +5,7 @@
 /// </summary>
 public static class OpenXmlSimpleTypeUtils
 {
+  #region Universal OpenXmlSimpleType conversion methods
   /// <summary>
   /// Gets a boolean value from the specified OpenXml SimpleType parameter
   /// having "True/False" inner text.
@@ -55,4 +56,30 @@ public static class OpenXmlSimpleTypeUtils
     }
     return null;
   }
+
+  #endregion
+
+  #region specialized OpenXmlSimpleType conversion methods
+
+  public static string? GetString(this DX.StringValue? element) 
+  {
+    var str = element?.InnerText;
+    return str;
+  }
+
+  public static DX.StringValue? GetStringValue(this string? value) 
+  {
+    return (value!=null) ? new DX.StringValue(value) : null;
+  }
+
+//DocumentFormat.OpenXml.Base64BinaryValue
+//DocumentFormat.OpenXml.EnumValue<T>
+//DocumentFormat.OpenXml.HexBinaryValue
+//DocumentFormat.OpenXml.ListValue<T>
+//DocumentFormat.OpenXml.OnOffValue
+//DocumentFormat.OpenXml.OpenXmlSimpleValue<T>
+//DocumentFormat.OpenXml.StringValue
+//DocumentFormat.OpenXml.TrueFalseBlankValue
+//DocumentFormat.OpenXml.TrueFalseValue 
+  #endregion
 }

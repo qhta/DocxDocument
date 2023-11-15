@@ -96,10 +96,10 @@ public partial class FieldMapData : ModelElement<DXW.FieldMapData>
   /// </para>
   /// </summary>
   [DataMember]
-  public int? ColumnIndex
+  public UInt32? ColumnIndex
   {
-    get => _Element?.GetIntVal<Int32, DXW.ColumnIndex>();
-    set => _ExistingElement.SetIntVal<Int32, DXW.ColumnIndex>(value);
+    get => _Element?.GetIntVal<UInt32, DXW.ColumnIndex>();
+    set => _ExistingElement.SetIntVal<UInt32, DXW.ColumnIndex>(value);
   }
 
 }

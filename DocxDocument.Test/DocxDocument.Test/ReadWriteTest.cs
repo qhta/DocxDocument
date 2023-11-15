@@ -173,6 +173,7 @@ public class ReadWriteTest : ReadTest
     var samplesPath = SamplesPath;
     var fileName = Path.Combine(samplesPath, "NewDocumentProperties.docx");
     var targetFile = Path.ChangeExtension(fileName, ".new.docx");
+    var copyFile = Path.ChangeExtension(targetFile, ".copy.docx");
     Output.WriteLine($"TestCreateProperties: {targetFile}");
     try
     {
@@ -194,9 +195,10 @@ public class ReadWriteTest : ReadTest
           Output.WriteLine($"  Setting {propName} = {val.ToDumpString()}");
           targetDocument.ExistingCustomProperties.Add(propName, val);
         }
-
+        targetDocument.SaveAs(copyFile);
+        using (var copyDocument = DM.Document.Open(copyFile, false))
+          success = CompareDocuments(copyDocument, targetDocument);
       }
-      success = true;
     }
     catch (Exception ex)
     {
@@ -204,12 +206,6 @@ public class ReadWriteTest : ReadTest
     }
     if (success)
       success = TestReadProperties(targetFile);
-    if (success)
-    {
-      var copyFile = Path.ChangeExtension(targetFile, ".copy.docx");
-      File.Copy(targetFile, copyFile, true);
-      success = CompareDocxFiles(targetFile, copyFile);
-    }
     return success;
   }
 
@@ -219,6 +215,7 @@ public class ReadWriteTest : ReadTest
     var samplesPath = SamplesPath;
     var fileName = Path.Combine(samplesPath, "NewDocumentSettings.docx");
     var targetFile = Path.ChangeExtension(fileName, ".new.docx");
+    var copyFile = Path.ChangeExtension(targetFile, ".copy.docx");
     Output.WriteLine($"TestCreateSettings: {targetFile}");
     try
     {
@@ -231,15 +228,17 @@ public class ReadWriteTest : ReadTest
           Output.WriteLine($"  Setting {prop.Name} = {val.ToDumpString()}");
           prop.SetValue(targetDocument.DocumentSettings, val);
         }
+        targetDocument.SaveAs(copyFile);
+        using (var copyDocument = DM.Document.Open(copyFile, false))
+          success = CompareDocuments(copyDocument, targetDocument);
       }
-      success = true;
     }
     catch (Exception ex)
     {
       Output.WriteLine($"  {ex.GetType().Name}: {ex.Message}");
     }
     if (success)
-      success = TestReadProperties(targetFile);
+      success = TestReadSettings(targetFile);
     return success;
   }
 
@@ -271,6 +270,9 @@ public class ReadWriteTest : ReadTest
     else
     if (aType == typeof(UInt16))
       return (UInt16)(1000 + (++n));
+    else
+    if (aType == typeof(Int16))
+      return (Int16)(1000 + (++n));
     else
     if (aType == typeof(Int64))
       return new Random().NextInt64();

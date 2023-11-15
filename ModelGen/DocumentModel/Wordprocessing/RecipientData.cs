@@ -41,8 +41,8 @@ public partial class RecipientData: ModelElement<DXW.RecipientData>
   [DataMember]
   public DM.Base64Binary? UniqueTag
   {
-    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => Base64BinaryConverter.GetValue(_Element?.UniqueTag);
+    set => _ExistingElement.UniqueTag = Base64BinaryConverter.CreateOpenXmlElement<DXW.UniqueTag>(value);
   }
   
 }
