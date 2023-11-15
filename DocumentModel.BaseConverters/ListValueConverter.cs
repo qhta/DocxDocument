@@ -45,7 +45,7 @@ public static class ListValueConverter
       var result = new ListOf<EnumKind>();
       foreach (var item in element)
       {
-        var itemValue = EnumValueConverter.GetValue<EnumType, EnumKind>(item);
+        var itemValue = EnumValueConverter.GetEnumValue<EnumType, EnumKind>(item);
         if (itemValue != null)
           result.Add((EnumKind)itemValue);
       }

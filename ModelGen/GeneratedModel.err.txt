@@ -3,18 +3,19 @@ Rebuild started...
 2>------ Rebuild All started: Project: DocumentModel.BaseTypes, Configuration: Debug Any CPU ------
 1>DocumentModel.Attributes -> D:\VS\Projects\DocxDocument\DocumentModel.Attributes\bin\Debug\net6.0\DocumentModel.Attributes.dll
 2>DocumentModel.BaseTypes -> D:\VS\Projects\DocxDocument\DocumentModel.BaseTypes\bin\Debug\net6.0\DocumentModel.BaseTypes.dll
-3>------ Rebuild All started: Project: DocumentModel.BaseConverters, Configuration: Debug Any CPU ------
-3>D:\VS\Projects\DocxDocument\DocumentModel.BaseConverters\IdPartPairConverter.cs(21,7,21,36): warning CS0618: 'IdPartPair.RelationshipId.set' is obsolete: 'This object will be made immutable in a future release. Please use a new instance.'
-Time Elapsed: 00:00:00.0306648
+Time Elapsed: 00:00:00.0821082
 ========== Finished ==========
 
 
-3>DocumentModel.BaseConverters -> D:\VS\Projects\DocxDocument\DocumentModel.BaseConverters\bin\Debug\net6.0\DocumentModel.BaseConverters.dll
-3>Done building project "DocumentModel.BaseConverters.csproj".
+3>------ Rebuild All started: Project: DocumentModel.BaseConverters, Configuration: Debug Any CPU ------
 4>------ Rebuild All started: Project: DocumentModel.VariantTypes, Configuration: Debug Any CPU ------
 4>DocumentModel.VariantTypes -> D:\VS\Projects\DocxDocument\DocumentModel.VariantTypes\bin\Debug\net6.0\DocumentModel.VariantTypes.dll
+3>D:\VS\Projects\DocxDocument\DocumentModel.BaseConverters\IdPartPairConverter.cs(21,7,21,36): warning CS0618: 'IdPartPair.RelationshipId.set' is obsolete: 'This object will be made immutable in a future release. Please use a new instance.'
+3>D:\VS\Projects\DocxDocument\DocumentModel.BaseConverters\OpenXmlPackageConverter.cs(62,13,62,32): warning CS0472: The result of the expression is always 'true' since a value of type 'CompressionOption' is never equal to 'null' of type 'CompressionOption?'
+3>DocumentModel.BaseConverters -> D:\VS\Projects\DocxDocument\DocumentModel.BaseConverters\bin\Debug\net6.0\DocumentModel.BaseConverters.dll
+3>Done building project "DocumentModel.BaseConverters.csproj".
 5>------ Rebuild All started: Project: DocumentModel, Configuration: Debug Any CPU ------
 5>DocumentModel -> D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\bin\Debug\net6.0\DocumentModel.dll
 ========== Rebuild All: 5 succeeded, 0 failed, 0 skipped ==========
-========== Rebuild started at 11:04 and took 05,842 seconds ==========
+========== Rebuild started at 20:44 and took 08,720 seconds ==========
 

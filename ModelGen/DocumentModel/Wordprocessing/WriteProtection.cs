@@ -107,8 +107,8 @@ public partial class WriteProtection: ModelElement<DXW.WriteProtection>
   [DataMember]
   public DM.Base64Binary? Hash
   {
-    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => Base64BinaryConverter.GetValue(_Element?.Hash);
+    set => _ExistingElement.Hash = Base64BinaryConverter.CreateBase64BinaryValue(value);
   }
   
   
@@ -118,8 +118,8 @@ public partial class WriteProtection: ModelElement<DXW.WriteProtection>
   [DataMember]
   public DM.Base64Binary? Salt
   {
-    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => Base64BinaryConverter.GetValue(_Element?.Salt);
+    set => _ExistingElement.Salt = Base64BinaryConverter.CreateBase64BinaryValue(value);
   }
   
   
@@ -140,8 +140,8 @@ public partial class WriteProtection: ModelElement<DXW.WriteProtection>
   [DataMember]
   public DM.Base64Binary? HashValue
   {
-    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => Base64BinaryConverter.GetValue(_Element?.HashValue);
+    set => _ExistingElement.HashValue = Base64BinaryConverter.CreateBase64BinaryValue(value);
   }
   
   
@@ -151,8 +151,8 @@ public partial class WriteProtection: ModelElement<DXW.WriteProtection>
   [DataMember]
   public DM.Base64Binary? SaltValue
   {
-    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => Base64BinaryConverter.GetValue(_Element?.SaltValue);
+    set => _ExistingElement.SaltValue = Base64BinaryConverter.CreateBase64BinaryValue(value);
   }
   
   
