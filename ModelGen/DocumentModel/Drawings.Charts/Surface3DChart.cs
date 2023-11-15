@@ -19,14 +19,8 @@ public partial class Surface3DChart: ModelElement<DXDC.Surface3DChart>
   [DataMember]
   public DMDC.Wireframe? Wireframe
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.Wireframe,DXDC.Wireframe>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.Wireframe,DXDC.Wireframe>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.BooleanType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.BooleanType");
   }
   
   
@@ -36,40 +30,22 @@ public partial class Surface3DChart: ModelElement<DXDC.Surface3DChart>
   [DataMember]
   public DMDC.VaryColors? VaryColors
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.VaryColors,DXDC.VaryColors>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.VaryColors,DXDC.VaryColors>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.BooleanType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.BooleanType");
   }
   
   [DataMember]
   public DMDC.BandFormats? BandFormats
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.BandFormats,DXDC.BandFormats>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.BandFormats,DXDC.BandFormats>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMDC.Surface3DChartExtensionList? Surface3DChartExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.Surface3DChartExtensionList,DXDC.Surface3DChartExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.Surface3DChartExtensionList,DXDC.Surface3DChartExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

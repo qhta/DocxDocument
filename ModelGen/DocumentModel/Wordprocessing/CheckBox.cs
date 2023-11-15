@@ -15,53 +15,29 @@ public partial class CheckBox: ModelElement<DXW.CheckBox>
   [DataMember]
   public DMW.FormFieldSize? FormFieldSize
   {
-    get
-    {
-      return _Element?.GetObject<DMW.FormFieldSize,DXW.FormFieldSize>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.FormFieldSize,DXW.FormFieldSize>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.HpsMeasureType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.HpsMeasureType");
   }
   
   [DataMember]
   public DMW.AutomaticallySizeFormField? AutomaticallySizeFormField
   {
-    get
-    {
-      return _Element?.GetObject<DMW.AutomaticallySizeFormField,DXW.AutomaticallySizeFormField>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.AutomaticallySizeFormField,DXW.AutomaticallySizeFormField>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   [DataMember]
   public DMW.DefaultCheckBoxFormFieldState? DefaultCheckBoxFormFieldState
   {
-    get
-    {
-      return _Element?.GetObject<DMW.DefaultCheckBoxFormFieldState,DXW.DefaultCheckBoxFormFieldState>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.DefaultCheckBoxFormFieldState,DXW.DefaultCheckBoxFormFieldState>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   [DataMember]
   public DMW.Checked? Checked
   {
-    get
-    {
-      return _Element?.GetObject<DMW.Checked,DXW.Checked>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.Checked,DXW.Checked>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
 }

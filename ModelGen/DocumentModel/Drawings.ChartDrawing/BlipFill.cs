@@ -19,14 +19,8 @@ public partial class BlipFill: ModelElement<DXDCD.BlipFill>
   [DataMember]
   public UInt32? Dpi
   {
-    get
-    {
-      return _Element?.Dpi?.Value;
-    }
-    set
-    {
-      _ExistingElement.Dpi = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
   }
   
   
@@ -36,17 +30,8 @@ public partial class BlipFill: ModelElement<DXDCD.BlipFill>
   [DataMember]
   public Boolean? RotateWithShape
   {
-    get
-    {
-      return _Element?.RotateWithShape?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.RotateWithShape = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.RotateWithShape = null;
-    }
+    get => _Element?.RotateWithShape?.Value;
+    set => _ExistingElement.RotateWithShape = value;
   }
   
   
@@ -56,14 +41,8 @@ public partial class BlipFill: ModelElement<DXDCD.BlipFill>
   [DataMember]
   public DMD.Blip? Blip
   {
-    get
-    {
-      return _Element?.GetObject<DMD.Blip,DXD.Blip>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.Blip,DXD.Blip>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -73,40 +52,22 @@ public partial class BlipFill: ModelElement<DXDCD.BlipFill>
   [DataMember]
   public DMD.SourceRectangle? SourceRectangle
   {
-    get
-    {
-      return _Element?.GetObject<DMD.SourceRectangle,DXD.SourceRectangle>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.SourceRectangle,DXD.SourceRectangle>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.RelativeRectangleType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.RelativeRectangleType");
   }
   
   [DataMember]
   public DMD.Tile? Tile
   {
-    get
-    {
-      return _Element?.GetObject<DMD.Tile,DXD.Tile>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.Tile,DXD.Tile>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   [DataMember]
   public DMD.Stretch? Stretch
   {
-    get
-    {
-      return _Element?.GetObject<DMD.Stretch,DXD.Stretch>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.Stretch,DXD.Stretch>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

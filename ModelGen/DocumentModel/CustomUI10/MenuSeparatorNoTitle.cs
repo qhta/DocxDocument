@@ -19,14 +19,8 @@ public partial class MenuSeparatorNoTitle: ModelElement<DXO10CUI.MenuSeparatorNo
   [DataMember]
   public String? Id
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Id);
-    }
-    set
-    {
-      _ExistingElement.Id = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Id;
+    set => _ExistingElement.Id = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class MenuSeparatorNoTitle: ModelElement<DXO10CUI.MenuSeparatorNo
   [DataMember]
   public String? QualifiedId
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.QualifiedId);
-    }
-    set
-    {
-      _ExistingElement.QualifiedId = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.QualifiedId;
+    set => _ExistingElement.QualifiedId = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class MenuSeparatorNoTitle: ModelElement<DXO10CUI.MenuSeparatorNo
   [DataMember]
   public String? Tag
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Tag);
-    }
-    set
-    {
-      _ExistingElement.Tag = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Tag;
+    set => _ExistingElement.Tag = value;
   }
   
   
@@ -70,14 +52,8 @@ public partial class MenuSeparatorNoTitle: ModelElement<DXO10CUI.MenuSeparatorNo
   [DataMember]
   public String? InsertAfterMso
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.InsertAfterMso);
-    }
-    set
-    {
-      _ExistingElement.InsertAfterMso = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.InsertAfterMso;
+    set => _ExistingElement.InsertAfterMso = value;
   }
   
   
@@ -87,14 +63,8 @@ public partial class MenuSeparatorNoTitle: ModelElement<DXO10CUI.MenuSeparatorNo
   [DataMember]
   public String? InsertBeforeMso
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.InsertBeforeMso);
-    }
-    set
-    {
-      _ExistingElement.InsertBeforeMso = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.InsertBeforeMso;
+    set => _ExistingElement.InsertBeforeMso = value;
   }
   
   
@@ -104,14 +74,8 @@ public partial class MenuSeparatorNoTitle: ModelElement<DXO10CUI.MenuSeparatorNo
   [DataMember]
   public String? InsertAfterQulifiedId
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.InsertAfterQulifiedId);
-    }
-    set
-    {
-      _ExistingElement.InsertAfterQulifiedId = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.InsertAfterQulifiedId;
+    set => _ExistingElement.InsertAfterQulifiedId = value;
   }
   
   
@@ -121,14 +85,8 @@ public partial class MenuSeparatorNoTitle: ModelElement<DXO10CUI.MenuSeparatorNo
   [DataMember]
   public String? InsertBeforeQulifiedId
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.InsertBeforeQulifiedId);
-    }
-    set
-    {
-      _ExistingElement.InsertBeforeQulifiedId = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.InsertBeforeQulifiedId;
+    set => _ExistingElement.InsertBeforeQulifiedId = value;
   }
   
 }

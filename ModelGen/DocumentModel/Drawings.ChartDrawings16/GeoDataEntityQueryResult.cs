@@ -19,14 +19,8 @@ public partial class GeoDataEntityQueryResult: ModelElement<DXO16DCD.GeoDataEnti
   [DataMember]
   public DMDCD16.GeoDataEntityQuery? GeoDataEntityQuery
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.GeoDataEntityQuery,DXO16DCD.GeoDataEntityQuery>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.GeoDataEntityQuery,DXO16DCD.GeoDataEntityQuery>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -36,14 +30,8 @@ public partial class GeoDataEntityQueryResult: ModelElement<DXO16DCD.GeoDataEnti
   [DataMember]
   public DMDCD16.GeoData? GeoData
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.GeoData,DXO16DCD.GeoData>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.GeoData,DXO16DCD.GeoData>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

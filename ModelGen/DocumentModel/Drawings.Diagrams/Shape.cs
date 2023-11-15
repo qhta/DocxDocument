@@ -19,14 +19,8 @@ public partial class Shape: ModelElement<DXDDD.Shape>
   [DataMember]
   public Double? Rotation
   {
-    get
-    {
-      return _Element?.Rotation?.Value;
-    }
-    set
-    {
-      _ExistingElement.Rotation = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Double]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Double]");
   }
   
   
@@ -36,14 +30,8 @@ public partial class Shape: ModelElement<DXDDD.Shape>
   [DataMember]
   public String? Type
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Type);
-    }
-    set
-    {
-      _ExistingElement.Type = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Type;
+    set => _ExistingElement.Type = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class Shape: ModelElement<DXDDD.Shape>
   [DataMember]
   public String? Blip
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Blip);
-    }
-    set
-    {
-      _ExistingElement.Blip = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Blip;
+    set => _ExistingElement.Blip = value;
   }
   
   
@@ -70,14 +52,8 @@ public partial class Shape: ModelElement<DXDDD.Shape>
   [DataMember]
   public Int32? ZOrderOffset
   {
-    get
-    {
-      return _Element?.ZOrderOffset?.Value;
-    }
-    set
-    {
-      _ExistingElement.ZOrderOffset = value;
-    }
+    get => _Element?.ZOrderOffset?.Value;
+    set => _ExistingElement.ZOrderOffset = value;
   }
   
   
@@ -87,17 +63,8 @@ public partial class Shape: ModelElement<DXDDD.Shape>
   [DataMember]
   public Boolean? HideGeometry
   {
-    get
-    {
-      return _Element?.HideGeometry?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.HideGeometry = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.HideGeometry = null;
-    }
+    get => _Element?.HideGeometry?.Value;
+    set => _ExistingElement.HideGeometry = value;
   }
   
   
@@ -107,17 +74,8 @@ public partial class Shape: ModelElement<DXDDD.Shape>
   [DataMember]
   public Boolean? LockedText
   {
-    get
-    {
-      return _Element?.LockedText?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.LockedText = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.LockedText = null;
-    }
+    get => _Element?.LockedText?.Value;
+    set => _ExistingElement.LockedText = value;
   }
   
   
@@ -127,17 +85,8 @@ public partial class Shape: ModelElement<DXDDD.Shape>
   [DataMember]
   public Boolean? BlipPlaceholder
   {
-    get
-    {
-      return _Element?.BlipPlaceholder?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.BlipPlaceholder = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.BlipPlaceholder = null;
-    }
+    get => _Element?.BlipPlaceholder?.Value;
+    set => _ExistingElement.BlipPlaceholder = value;
   }
   
   
@@ -147,14 +96,8 @@ public partial class Shape: ModelElement<DXDDD.Shape>
   [DataMember]
   public DMDD.AdjustList? AdjustList
   {
-    get
-    {
-      return _Element?.GetObject<DMDD.AdjustList,DXDDD.AdjustList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDD.AdjustList,DXDDD.AdjustList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -164,14 +107,8 @@ public partial class Shape: ModelElement<DXDDD.Shape>
   [DataMember]
   public DMDD.ExtensionList? ExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMDD.ExtensionList,DXDDD.ExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDD.ExtensionList,DXDDD.ExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

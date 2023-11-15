@@ -19,14 +19,8 @@ public partial class TextPath: ModelElement<DXV.TextPath>
   [DataMember]
   public String? Id
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Id);
-    }
-    set
-    {
-      _ExistingElement.Id = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Id;
+    set => _ExistingElement.Id = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class TextPath: ModelElement<DXV.TextPath>
   [DataMember]
   public String? Style
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Style);
-    }
-    set
-    {
-      _ExistingElement.Style = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Style;
+    set => _ExistingElement.Style = value;
   }
   
   
@@ -53,17 +41,8 @@ public partial class TextPath: ModelElement<DXV.TextPath>
   [DataMember]
   public Boolean? On
   {
-    get
-    {
-      return _Element?.On?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.On = value;
-      else
-        _ExistingElement.On = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -73,17 +52,8 @@ public partial class TextPath: ModelElement<DXV.TextPath>
   [DataMember]
   public Boolean? FitShape
   {
-    get
-    {
-      return _Element?.FitShape?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.FitShape = value;
-      else
-        _ExistingElement.FitShape = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -93,17 +63,8 @@ public partial class TextPath: ModelElement<DXV.TextPath>
   [DataMember]
   public Boolean? FitPath
   {
-    get
-    {
-      return _Element?.FitPath?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.FitPath = value;
-      else
-        _ExistingElement.FitPath = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -113,17 +74,8 @@ public partial class TextPath: ModelElement<DXV.TextPath>
   [DataMember]
   public Boolean? Trim
   {
-    get
-    {
-      return _Element?.Trim?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Trim = value;
-      else
-        _ExistingElement.Trim = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -133,17 +85,8 @@ public partial class TextPath: ModelElement<DXV.TextPath>
   [DataMember]
   public Boolean? XScale
   {
-    get
-    {
-      return _Element?.XScale?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.XScale = value;
-      else
-        _ExistingElement.XScale = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -153,14 +96,8 @@ public partial class TextPath: ModelElement<DXV.TextPath>
   [DataMember]
   public String? String
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.String);
-    }
-    set
-    {
-      _ExistingElement.String = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.String;
+    set => _ExistingElement.String = value;
   }
   
 }

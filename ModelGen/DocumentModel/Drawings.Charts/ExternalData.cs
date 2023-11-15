@@ -19,14 +19,8 @@ public partial class ExternalData: ModelElement<DXDC.ExternalData>
   [DataMember]
   public String? Id
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Id);
-    }
-    set
-    {
-      _ExistingElement.Id = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Id;
+    set => _ExistingElement.Id = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class ExternalData: ModelElement<DXDC.ExternalData>
   [DataMember]
   public DMDC.AutoUpdate? AutoUpdate
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.AutoUpdate,DXDC.AutoUpdate>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.AutoUpdate,DXDC.AutoUpdate>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.BooleanType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.BooleanType");
   }
   
 }

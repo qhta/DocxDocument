@@ -19,14 +19,8 @@ public partial class NumberingFormat: ModelElement<DXW.NumberingFormat>
   [DataMember]
   public String? Format
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Format);
-    }
-    set
-    {
-      _ExistingElement.Format = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Format;
+    set => _ExistingElement.Format = value;
   }
   
 }

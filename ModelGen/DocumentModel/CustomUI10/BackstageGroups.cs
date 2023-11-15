@@ -15,14 +15,8 @@ public partial class BackstageGroups: ModelElement<DXO10CUI.BackstageGroups>
   [DataMember]
   public DMCUI10.TaskFormGroup? TaskFormGroup
   {
-    get
-    {
-      return _Element?.GetObject<DMCUI10.TaskFormGroup,DXO10CUI.TaskFormGroup>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMCUI10.TaskFormGroup,DXO10CUI.TaskFormGroup>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

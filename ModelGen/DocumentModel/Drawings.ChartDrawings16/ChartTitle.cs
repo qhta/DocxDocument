@@ -19,17 +19,8 @@ public partial class ChartTitle: ModelElement<DXO16DCD.ChartTitle>
   [DataMember]
   public Boolean? Overlay
   {
-    get
-    {
-      return _Element?.Overlay?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Overlay = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.Overlay = null;
-    }
+    get => _Element?.Overlay?.Value;
+    set => _ExistingElement.Overlay = value;
   }
   
   
@@ -39,14 +30,8 @@ public partial class ChartTitle: ModelElement<DXO16DCD.ChartTitle>
   [DataMember]
   public DMDCD16.Text? Text
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.Text,DXO16DCD.Text>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.Text,DXO16DCD.Text>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -56,14 +41,8 @@ public partial class ChartTitle: ModelElement<DXO16DCD.ChartTitle>
   [DataMember]
   public DMDCD16.ShapeProperties? ShapeProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.ShapeProperties,DXO16DCD.ShapeProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.ShapeProperties,DXO16DCD.ShapeProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -73,14 +52,8 @@ public partial class ChartTitle: ModelElement<DXO16DCD.ChartTitle>
   [DataMember]
   public DMDCD16.TxPrTextBody? TxPrTextBody
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.TxPrTextBody,DXO16DCD.TxPrTextBody>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.TxPrTextBody,DXO16DCD.TxPrTextBody>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TextBodyType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TextBodyType");
   }
   
   
@@ -90,14 +63,8 @@ public partial class ChartTitle: ModelElement<DXO16DCD.ChartTitle>
   [DataMember]
   public DMDCD16.ExtensionList? ExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.ExtensionList,DXO16DCD.ExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.ExtensionList,DXO16DCD.ExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

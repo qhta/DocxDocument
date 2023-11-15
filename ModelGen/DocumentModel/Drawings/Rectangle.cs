@@ -19,14 +19,8 @@ public partial class Rectangle: ModelElement<DXD.Rectangle>
   [DataMember]
   public String? Left
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Left);
-    }
-    set
-    {
-      _ExistingElement.Left = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Left;
+    set => _ExistingElement.Left = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class Rectangle: ModelElement<DXD.Rectangle>
   [DataMember]
   public String? Top
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Top);
-    }
-    set
-    {
-      _ExistingElement.Top = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Top;
+    set => _ExistingElement.Top = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class Rectangle: ModelElement<DXD.Rectangle>
   [DataMember]
   public String? Right
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Right);
-    }
-    set
-    {
-      _ExistingElement.Right = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Right;
+    set => _ExistingElement.Right = value;
   }
   
   
@@ -70,14 +52,8 @@ public partial class Rectangle: ModelElement<DXD.Rectangle>
   [DataMember]
   public String? Bottom
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Bottom);
-    }
-    set
-    {
-      _ExistingElement.Bottom = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Bottom;
+    set => _ExistingElement.Bottom = value;
   }
   
 }

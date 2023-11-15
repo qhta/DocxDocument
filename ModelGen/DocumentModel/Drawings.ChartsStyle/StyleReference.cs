@@ -19,14 +19,8 @@ public partial class StyleReference: ModelElement<DXO13DCS.StyleReference>
   [DataMember]
   public UInt32? Index
   {
-    get
-    {
-      return _Element?.Index?.Value;
-    }
-    set
-    {
-      _ExistingElement.Index = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
   }
   
   
@@ -36,17 +30,8 @@ public partial class StyleReference: ModelElement<DXO13DCS.StyleReference>
   [DataMember]
   public DM.ListOf<String>? Modifiers
   {
-    get
-    {
-      return ListValueConverter.GetValue(_Element?.Modifiers);
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Modifiers = ListValueConverter.CreateListValue<DX.StringValue>(value);
-      else
-        _ExistingElement.Modifiers = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.Object");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.Object");
   }
   
 }

@@ -19,14 +19,8 @@ public partial class Superscript: ModelElement<DXM.Superscript>
   [DataMember]
   public DMM.SuperscriptProperties? SuperscriptProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMM.SuperscriptProperties,DXM.SuperscriptProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.SuperscriptProperties,DXM.SuperscriptProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -36,14 +30,8 @@ public partial class Superscript: ModelElement<DXM.Superscript>
   [DataMember]
   public DMM.Base? Base
   {
-    get
-    {
-      return _Element?.GetObject<DMM.Base,DXM.Base>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.Base,DXM.Base>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OfficeMathArgumentType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OfficeMathArgumentType");
   }
   
   
@@ -53,14 +41,8 @@ public partial class Superscript: ModelElement<DXM.Superscript>
   [DataMember]
   public DMM.SuperArgument? SuperArgument
   {
-    get
-    {
-      return _Element?.GetObject<DMM.SuperArgument,DXM.SuperArgument>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.SuperArgument,DXM.SuperArgument>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OfficeMathArgumentType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OfficeMathArgumentType");
   }
   
 }

@@ -19,14 +19,8 @@ public partial class SketchOptions: ModelElement<DXO10DC.SketchOptions>
   [DataMember]
   public DMDC10.InSketchMode? InSketchMode
   {
-    get
-    {
-      return _Element?.GetObject<DMDC10.InSketchMode,DXO10DC.InSketchMode>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC10.InSketchMode,DXO10DC.InSketchMode>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2010.Drawing.Charts.BooleanFalseType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2010.Drawing.Charts.BooleanFalseType");
   }
   
   
@@ -36,24 +30,8 @@ public partial class SketchOptions: ModelElement<DXO10DC.SketchOptions>
   [DataMember]
   public Boolean? ShowSketchButton
   {
-    get
-    {
-      return _ExistingElement.GetFirstChild<DXO10DC.ShowSketchButton>() != null;
-    }
-    set
-    {
-      if (value == false)
-      {
-        var itemElement = _ExistingElement.GetFirstChild<DXO10DC.ShowSketchButton>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new DXO10DC.ShowSketchButton();
-        _ExistingElement.AddChild(itemElement);
-      }
-    }
+    get => _Element?.GetBoolVal<DXO10DC.ShowSketchButton>();
+    set => _ExistingElement.SetBoolVal<DXO10DC.ShowSketchButton>(value);
   }
   
 }

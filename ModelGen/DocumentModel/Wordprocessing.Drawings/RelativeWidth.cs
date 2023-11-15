@@ -19,14 +19,8 @@ public partial class RelativeWidth: ModelElement<DXO10WD.RelativeWidth>
   [DataMember]
   public DMWD.PercentageWidth? PercentageWidth
   {
-    get
-    {
-      return _Element?.GetObject<DMWD.PercentageWidth,DXO10WD.PercentageWidth>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMWD.PercentageWidth,DXO10WD.PercentageWidth>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
   }
   
 }

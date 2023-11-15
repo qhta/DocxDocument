@@ -19,14 +19,8 @@ public partial class ObjectProperties: ModelElement<DXO13D.ObjectProperties>
   [DataMember]
   public String? Id
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Id);
-    }
-    set
-    {
-      _ExistingElement.Id = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Id;
+    set => _ExistingElement.Id = value;
   }
   
   
@@ -36,17 +30,8 @@ public partial class ObjectProperties: ModelElement<DXO13D.ObjectProperties>
   [DataMember]
   public Boolean? IsActiveX
   {
-    get
-    {
-      return _Element?.IsActiveX?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.IsActiveX = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.IsActiveX = null;
-    }
+    get => _Element?.IsActiveX?.Value;
+    set => _ExistingElement.IsActiveX = value;
   }
   
   
@@ -56,14 +41,8 @@ public partial class ObjectProperties: ModelElement<DXO13D.ObjectProperties>
   [DataMember]
   public String? LinkType
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.LinkType);
-    }
-    set
-    {
-      _ExistingElement.LinkType = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.LinkType;
+    set => _ExistingElement.LinkType = value;
   }
   
 }

@@ -19,14 +19,8 @@ public partial class Text: ModelElement<DXO16DCD.Text>
   [DataMember]
   public DMDCD16.TextData? TextData
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.TextData,DXO16DCD.TextData>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.TextData,DXO16DCD.TextData>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -36,14 +30,8 @@ public partial class Text: ModelElement<DXO16DCD.Text>
   [DataMember]
   public DMDCD16.RichTextBody? RichTextBody
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.RichTextBody,DXO16DCD.RichTextBody>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.RichTextBody,DXO16DCD.RichTextBody>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TextBodyType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TextBodyType");
   }
   
 }

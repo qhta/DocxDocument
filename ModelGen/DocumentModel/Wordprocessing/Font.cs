@@ -19,14 +19,8 @@ public partial class Font: ModelElement<DXW.Font>
   [DataMember]
   public String? Name
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Name);
-    }
-    set
-    {
-      _ExistingElement.Name = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Name;
+    set => _ExistingElement.Name = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class Font: ModelElement<DXW.Font>
   [DataMember]
   public DMW.AltName? AltName
   {
-    get
-    {
-      return _Element?.GetObject<DMW.AltName,DXW.AltName>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.AltName,DXW.AltName>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.StringType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.StringType");
   }
   
   
@@ -53,14 +41,8 @@ public partial class Font: ModelElement<DXW.Font>
   [DataMember]
   public DM.HexBinary? Panose1Number
   {
-    get
-    {
-      return _Element?.GetObject<DM.HexBinary,DXW.Panose1Number>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DM.HexBinary,DXW.Panose1Number>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.Object");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.Object");
   }
   
   
@@ -70,14 +52,8 @@ public partial class Font: ModelElement<DXW.Font>
   [DataMember]
   public DMW.FontCharSet? FontCharSet
   {
-    get
-    {
-      return _Element?.GetObject<DMW.FontCharSet,DXW.FontCharSet>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.FontCharSet,DXW.FontCharSet>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -87,24 +63,8 @@ public partial class Font: ModelElement<DXW.Font>
   [DataMember]
   public DMW.FontFamilyKind? FontFamily
   {
-    get
-    {
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.FontFamilyValues, DMW.FontFamilyKind>(_ExistingElement.GetFirstChild<DXW.FontFamily>()?.Val?.Value);
-    }
-    set
-    {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.FontFamily>();
-      if (itemElement != null)
-      {
-        if (value != null)
-          EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.FontFamilyValues, DMW.FontFamilyKind>(itemElement, (DMW.FontFamilyKind)value);
-        else
-          itemElement.Remove();
-      }
-      else
-      if (value != null)
-        _ExistingElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.FontFamily, DocumentFormat.OpenXml.Wordprocessing.FontFamilyValues, DMW.FontFamilyKind>((DMW.FontFamilyKind)value));
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertyGetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertySetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -114,14 +74,8 @@ public partial class Font: ModelElement<DXW.Font>
   [DataMember]
   public DMW.NotTrueType? NotTrueType
   {
-    get
-    {
-      return _Element?.GetObject<DMW.NotTrueType,DXW.NotTrueType>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.NotTrueType,DXW.NotTrueType>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -131,24 +85,8 @@ public partial class Font: ModelElement<DXW.Font>
   [DataMember]
   public DMW.FontPitchKind? Pitch
   {
-    get
-    {
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.FontPitchValues, DMW.FontPitchKind>(_ExistingElement.GetFirstChild<DXW.Pitch>()?.Val?.Value);
-    }
-    set
-    {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Pitch>();
-      if (itemElement != null)
-      {
-        if (value != null)
-          EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.FontPitchValues, DMW.FontPitchKind>(itemElement, (DMW.FontPitchKind)value);
-        else
-          itemElement.Remove();
-      }
-      else
-      if (value != null)
-        _ExistingElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.Pitch, DocumentFormat.OpenXml.Wordprocessing.FontPitchValues, DMW.FontPitchKind>((DMW.FontPitchKind)value));
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertyGetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertySetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -158,14 +96,8 @@ public partial class Font: ModelElement<DXW.Font>
   [DataMember]
   public DMW.FontSignature? FontSignature
   {
-    get
-    {
-      return _Element?.GetObject<DMW.FontSignature,DXW.FontSignature>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.FontSignature,DXW.FontSignature>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -175,14 +107,8 @@ public partial class Font: ModelElement<DXW.Font>
   [DataMember]
   public DMW.EmbedRegularFont? EmbedRegularFont
   {
-    get
-    {
-      return _Element?.GetObject<DMW.EmbedRegularFont,DXW.EmbedRegularFont>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.EmbedRegularFont,DXW.EmbedRegularFont>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.FontRelationshipType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.FontRelationshipType");
   }
   
   
@@ -192,14 +118,8 @@ public partial class Font: ModelElement<DXW.Font>
   [DataMember]
   public DMW.EmbedBoldFont? EmbedBoldFont
   {
-    get
-    {
-      return _Element?.GetObject<DMW.EmbedBoldFont,DXW.EmbedBoldFont>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.EmbedBoldFont,DXW.EmbedBoldFont>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.FontRelationshipType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.FontRelationshipType");
   }
   
   
@@ -209,14 +129,8 @@ public partial class Font: ModelElement<DXW.Font>
   [DataMember]
   public DMW.EmbedItalicFont? EmbedItalicFont
   {
-    get
-    {
-      return _Element?.GetObject<DMW.EmbedItalicFont,DXW.EmbedItalicFont>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.EmbedItalicFont,DXW.EmbedItalicFont>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.FontRelationshipType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.FontRelationshipType");
   }
   
   
@@ -226,14 +140,8 @@ public partial class Font: ModelElement<DXW.Font>
   [DataMember]
   public DMW.EmbedBoldItalicFont? EmbedBoldItalicFont
   {
-    get
-    {
-      return _Element?.GetObject<DMW.EmbedBoldItalicFont,DXW.EmbedBoldItalicFont>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.EmbedBoldItalicFont,DXW.EmbedBoldItalicFont>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.FontRelationshipType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.FontRelationshipType");
   }
   
 }

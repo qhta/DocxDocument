@@ -19,14 +19,8 @@ public partial class ValueColorMiddlePosition: ModelElement<DXO16DCD.ValueColorM
   [DataMember]
   public Double? NumberColorPosition
   {
-    get
-    {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DXO16DCD.NumberColorPosition>()?.Val);
-    }
-    set
-    {
-      SimpleValueConverter.SetValue<DXO16DCD.NumberColorPosition,System.Double>(_ExistingElement, value);
-    }
+    get => _Element?.GetIntVal<Double, DXO16DCD.NumberColorPosition>();
+    set => _ExistingElement.SetIntVal<Double, DXO16DCD.NumberColorPosition>(value);
   }
   
   
@@ -36,14 +30,8 @@ public partial class ValueColorMiddlePosition: ModelElement<DXO16DCD.ValueColorM
   [DataMember]
   public Double? PercentageColorPosition
   {
-    get
-    {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DXO16DCD.PercentageColorPosition>()?.Val);
-    }
-    set
-    {
-      SimpleValueConverter.SetValue<DXO16DCD.PercentageColorPosition,System.Double>(_ExistingElement, value);
-    }
+    get => _Element?.GetIntVal<Double, DXO16DCD.PercentageColorPosition>();
+    set => _ExistingElement.SetIntVal<Double, DXO16DCD.PercentageColorPosition>(value);
   }
   
 }

@@ -19,17 +19,8 @@ public partial class SampleDataType: ModelElement<DXDDD.SampleDataType>
   [DataMember]
   public Boolean? UseDefault
   {
-    get
-    {
-      return _Element?.UseDefault?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.UseDefault = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.UseDefault = null;
-    }
+    get => _Element?.UseDefault?.Value;
+    set => _ExistingElement.UseDefault = value;
   }
   
   
@@ -39,14 +30,8 @@ public partial class SampleDataType: ModelElement<DXDDD.SampleDataType>
   [DataMember]
   public DMDD.DataModel? DataModel
   {
-    get
-    {
-      return _Element?.GetObject<DMDD.DataModel,DXDDD.DataModel>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDD.DataModel,DXDDD.DataModel>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

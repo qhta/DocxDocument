@@ -37,8 +37,8 @@ public partial class EndnoteDocumentWideProperties : ModelElement<DXW.EndnoteDoc
   [DataMember]
   public int? NumberingStart
   {
-    get => _Element?.GetIntVal<DXW.NumberingStart>();
-    set => _ExistingElement.SetIntVal<DXW.NumberingStart>(value);
+    get => _Element?.GetIntVal<Int32, DXW.NumberingStart>();
+    set => _ExistingElement.SetIntVal<Int32, DXW.NumberingStart>(value);
   }
 
   /// <summary>

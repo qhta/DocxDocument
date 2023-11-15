@@ -19,14 +19,8 @@ public partial class SdtContentDate: ModelElement<DXW.SdtContentDate>
   [DataMember]
   public DateTime? FullDate
   {
-    get
-    {
-      return _Element?.FullDate?.Value;
-    }
-    set
-    {
-      _ExistingElement.FullDate = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -36,14 +30,8 @@ public partial class SdtContentDate: ModelElement<DXW.SdtContentDate>
   [DataMember]
   public DMW.DateFormat? DateFormat
   {
-    get
-    {
-      return _Element?.GetObject<DMW.DateFormat,DXW.DateFormat>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.DateFormat,DXW.DateFormat>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.StringType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.StringType");
   }
   
   
@@ -53,14 +41,8 @@ public partial class SdtContentDate: ModelElement<DXW.SdtContentDate>
   [DataMember]
   public String? LanguageId
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.GetFirstChild<DXW.LanguageId>()?.Val);
-    }
-    set
-    {
-      StringValueConverter.SetValue<DXW.LanguageId>(_ExistingElement, value);
-    }
+    get => _Element?.GetStringVal<DXW.LanguageId>();
+    set => _ExistingElement.SetStringVal<DXW.LanguageId>(value);
   }
   
   
@@ -70,24 +52,8 @@ public partial class SdtContentDate: ModelElement<DXW.SdtContentDate>
   [DataMember]
   public DMW.DateFormatKind? SdtDateMappingType
   {
-    get
-    {
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.DateFormatValues, DMW.DateFormatKind>(_ExistingElement.GetFirstChild<DXW.SdtDateMappingType>()?.Val?.Value);
-    }
-    set
-    {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.SdtDateMappingType>();
-      if (itemElement != null)
-      {
-        if (value != null)
-          EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.DateFormatValues, DMW.DateFormatKind>(itemElement, (DMW.DateFormatKind)value);
-        else
-          itemElement.Remove();
-      }
-      else
-      if (value != null)
-        _ExistingElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.SdtDateMappingType, DocumentFormat.OpenXml.Wordprocessing.DateFormatValues, DMW.DateFormatKind>((DMW.DateFormatKind)value));
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertyGetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertySetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -97,24 +63,8 @@ public partial class SdtContentDate: ModelElement<DXW.SdtContentDate>
   [DataMember]
   public DMW.CalendarKind? Calendar
   {
-    get
-    {
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.CalendarValues, DMW.CalendarKind>(_ExistingElement.GetFirstChild<DXW.Calendar>()?.Val?.Value);
-    }
-    set
-    {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Calendar>();
-      if (itemElement != null)
-      {
-        if (value != null)
-          EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.CalendarValues, DMW.CalendarKind>(itemElement, (DMW.CalendarKind)value);
-        else
-          itemElement.Remove();
-      }
-      else
-      if (value != null)
-        _ExistingElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.Calendar, DocumentFormat.OpenXml.Wordprocessing.CalendarValues, DMW.CalendarKind>((DMW.CalendarKind)value));
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertyGetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertySetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
 }

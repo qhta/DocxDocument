@@ -19,14 +19,8 @@ public partial class DataSourceObject: ModelElement<DXW.DataSourceObject>
   [DataMember]
   public DMW.UdlConnectionString? UdlConnectionString
   {
-    get
-    {
-      return _Element?.GetObject<DMW.UdlConnectionString,DXW.UdlConnectionString>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.UdlConnectionString,DXW.UdlConnectionString>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.StringType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.StringType");
   }
   
   
@@ -36,14 +30,8 @@ public partial class DataSourceObject: ModelElement<DXW.DataSourceObject>
   [DataMember]
   public DMW.DataSourceTableName? DataSourceTableName
   {
-    get
-    {
-      return _Element?.GetObject<DMW.DataSourceTableName,DXW.DataSourceTableName>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.DataSourceTableName,DXW.DataSourceTableName>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.StringType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.StringType");
   }
   
   
@@ -53,14 +41,8 @@ public partial class DataSourceObject: ModelElement<DXW.DataSourceObject>
   [DataMember]
   public DMW.SourceReference? SourceReference
   {
-    get
-    {
-      return _Element?.GetObject<DMW.SourceReference,DXW.SourceReference>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.SourceReference,DXW.SourceReference>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.RelationshipType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.RelationshipType");
   }
   
   
@@ -70,14 +52,8 @@ public partial class DataSourceObject: ModelElement<DXW.DataSourceObject>
   [DataMember]
   public DMW.ColumnDelimiter? ColumnDelimiter
   {
-    get
-    {
-      return _Element?.GetObject<DMW.ColumnDelimiter,DXW.ColumnDelimiter>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.ColumnDelimiter,DXW.ColumnDelimiter>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.UnsignedDecimalNumberType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.UnsignedDecimalNumberType");
   }
   
   
@@ -87,24 +63,8 @@ public partial class DataSourceObject: ModelElement<DXW.DataSourceObject>
   [DataMember]
   public DMW.MailMergeSourceKind? MailMergeSource
   {
-    get
-    {
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.MailMergeSourceValues, DMW.MailMergeSourceKind>(_ExistingElement.GetFirstChild<DXW.MailMergeSource>()?.Val?.Value);
-    }
-    set
-    {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.MailMergeSource>();
-      if (itemElement != null)
-      {
-        if (value != null)
-          EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.MailMergeSourceValues, DMW.MailMergeSourceKind>(itemElement, (DMW.MailMergeSourceKind)value);
-        else
-          itemElement.Remove();
-      }
-      else
-      if (value != null)
-        _ExistingElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.MailMergeSource, DocumentFormat.OpenXml.Wordprocessing.MailMergeSourceValues, DMW.MailMergeSourceKind>((DMW.MailMergeSourceKind)value));
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertyGetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertySetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -114,27 +74,15 @@ public partial class DataSourceObject: ModelElement<DXW.DataSourceObject>
   [DataMember]
   public DMW.FirstRowHeader? FirstRowHeader
   {
-    get
-    {
-      return _Element?.GetObject<DMW.FirstRowHeader,DXW.FirstRowHeader>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.FirstRowHeader,DXW.FirstRowHeader>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   [DataMember]
   public DMW.RecipientDataReference? RecipientDataReference
   {
-    get
-    {
-      return _Element?.GetObject<DMW.RecipientDataReference,DXW.RecipientDataReference>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.RecipientDataReference,DXW.RecipientDataReference>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.RelationshipType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.RelationshipType");
   }
   
 }

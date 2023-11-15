@@ -19,14 +19,8 @@ public partial class BorderType: ModelElement<DXVW.BorderType>
   [DataMember]
   public Int64? Width
   {
-    get
-    {
-      return _Element?.Width?.Value;
-    }
-    set
-    {
-      _ExistingElement.Width = value;
-    }
+    get => _Element?.Width?.Value;
+    set => _ExistingElement.Width = value;
   }
   
   
@@ -36,17 +30,8 @@ public partial class BorderType: ModelElement<DXVW.BorderType>
   [DataMember]
   public Boolean? Shadow
   {
-    get
-    {
-      return _Element?.Shadow?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Shadow = value;
-      else
-        _ExistingElement.Shadow = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
 }

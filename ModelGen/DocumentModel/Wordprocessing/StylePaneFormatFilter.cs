@@ -19,14 +19,8 @@ public partial class StylePaneFormatFilter: ModelElement<DXW.StylePaneFormatFilt
   [DataMember]
   public DM.HexBinary? Val
   {
-    get
-    {
-      return Convert.FromHexString(_Element?.Val.Value);
-    }
-    set
-    {
-      _ExistingElement.Val = Convert.ToHexString(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -36,14 +30,8 @@ public partial class StylePaneFormatFilter: ModelElement<DXW.StylePaneFormatFilt
   [DataMember]
   public Boolean? AllStyles
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.AllStyles);
-    }
-    set
-    {
-      _ExistingElement.AllStyles = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
   
@@ -53,14 +41,8 @@ public partial class StylePaneFormatFilter: ModelElement<DXW.StylePaneFormatFilt
   [DataMember]
   public Boolean? CustomStyles
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.CustomStyles);
-    }
-    set
-    {
-      _ExistingElement.CustomStyles = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
   
@@ -70,14 +52,8 @@ public partial class StylePaneFormatFilter: ModelElement<DXW.StylePaneFormatFilt
   [DataMember]
   public Boolean? LatentStyles
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.LatentStyles);
-    }
-    set
-    {
-      _ExistingElement.LatentStyles = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
   
@@ -87,14 +63,8 @@ public partial class StylePaneFormatFilter: ModelElement<DXW.StylePaneFormatFilt
   [DataMember]
   public Boolean? StylesInUse
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.StylesInUse);
-    }
-    set
-    {
-      _ExistingElement.StylesInUse = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
   
@@ -104,14 +74,8 @@ public partial class StylePaneFormatFilter: ModelElement<DXW.StylePaneFormatFilt
   [DataMember]
   public Boolean? HeadingStyles
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.HeadingStyles);
-    }
-    set
-    {
-      _ExistingElement.HeadingStyles = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
   
@@ -121,14 +85,8 @@ public partial class StylePaneFormatFilter: ModelElement<DXW.StylePaneFormatFilt
   [DataMember]
   public Boolean? NumberingStyles
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.NumberingStyles);
-    }
-    set
-    {
-      _ExistingElement.NumberingStyles = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
   
@@ -138,14 +96,8 @@ public partial class StylePaneFormatFilter: ModelElement<DXW.StylePaneFormatFilt
   [DataMember]
   public Boolean? TableStyles
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.TableStyles);
-    }
-    set
-    {
-      _ExistingElement.TableStyles = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
   
@@ -155,14 +107,8 @@ public partial class StylePaneFormatFilter: ModelElement<DXW.StylePaneFormatFilt
   [DataMember]
   public Boolean? DirectFormattingOnRuns
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.DirectFormattingOnRuns);
-    }
-    set
-    {
-      _ExistingElement.DirectFormattingOnRuns = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
   
@@ -172,14 +118,8 @@ public partial class StylePaneFormatFilter: ModelElement<DXW.StylePaneFormatFilt
   [DataMember]
   public Boolean? DirectFormattingOnParagraphs
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.DirectFormattingOnParagraphs);
-    }
-    set
-    {
-      _ExistingElement.DirectFormattingOnParagraphs = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
   
@@ -189,14 +129,8 @@ public partial class StylePaneFormatFilter: ModelElement<DXW.StylePaneFormatFilt
   [DataMember]
   public Boolean? DirectFormattingOnNumbering
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.DirectFormattingOnNumbering);
-    }
-    set
-    {
-      _ExistingElement.DirectFormattingOnNumbering = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
   
@@ -206,14 +140,8 @@ public partial class StylePaneFormatFilter: ModelElement<DXW.StylePaneFormatFilt
   [DataMember]
   public Boolean? DirectFormattingOnTables
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.DirectFormattingOnTables);
-    }
-    set
-    {
-      _ExistingElement.DirectFormattingOnTables = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
   
@@ -223,14 +151,8 @@ public partial class StylePaneFormatFilter: ModelElement<DXW.StylePaneFormatFilt
   [DataMember]
   public Boolean? ClearFormatting
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.ClearFormatting);
-    }
-    set
-    {
-      _ExistingElement.ClearFormatting = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
   
@@ -240,14 +162,8 @@ public partial class StylePaneFormatFilter: ModelElement<DXW.StylePaneFormatFilt
   [DataMember]
   public Boolean? Top3HeadingStyles
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.Top3HeadingStyles);
-    }
-    set
-    {
-      _ExistingElement.Top3HeadingStyles = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
   
@@ -257,14 +173,8 @@ public partial class StylePaneFormatFilter: ModelElement<DXW.StylePaneFormatFilt
   [DataMember]
   public Boolean? VisibleStyles
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.VisibleStyles);
-    }
-    set
-    {
-      _ExistingElement.VisibleStyles = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
   
@@ -274,14 +184,8 @@ public partial class StylePaneFormatFilter: ModelElement<DXW.StylePaneFormatFilt
   [DataMember]
   public Boolean? AlternateStyleNames
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.AlternateStyleNames);
-    }
-    set
-    {
-      _ExistingElement.AlternateStyleNames = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
 }

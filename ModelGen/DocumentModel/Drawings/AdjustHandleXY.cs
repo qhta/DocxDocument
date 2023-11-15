@@ -19,14 +19,8 @@ public partial class AdjustHandleXY: ModelElement<DXD.AdjustHandleXY>
   [DataMember]
   public String? XAdjustmentGuide
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.XAdjustmentGuide);
-    }
-    set
-    {
-      _ExistingElement.XAdjustmentGuide = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.XAdjustmentGuide;
+    set => _ExistingElement.XAdjustmentGuide = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class AdjustHandleXY: ModelElement<DXD.AdjustHandleXY>
   [DataMember]
   public String? MinX
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.MinX);
-    }
-    set
-    {
-      _ExistingElement.MinX = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.MinX;
+    set => _ExistingElement.MinX = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class AdjustHandleXY: ModelElement<DXD.AdjustHandleXY>
   [DataMember]
   public String? MaxX
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.MaxX);
-    }
-    set
-    {
-      _ExistingElement.MaxX = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.MaxX;
+    set => _ExistingElement.MaxX = value;
   }
   
   
@@ -70,14 +52,8 @@ public partial class AdjustHandleXY: ModelElement<DXD.AdjustHandleXY>
   [DataMember]
   public String? YAdjustmentGuide
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.YAdjustmentGuide);
-    }
-    set
-    {
-      _ExistingElement.YAdjustmentGuide = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.YAdjustmentGuide;
+    set => _ExistingElement.YAdjustmentGuide = value;
   }
   
   
@@ -87,14 +63,8 @@ public partial class AdjustHandleXY: ModelElement<DXD.AdjustHandleXY>
   [DataMember]
   public String? MinY
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.MinY);
-    }
-    set
-    {
-      _ExistingElement.MinY = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.MinY;
+    set => _ExistingElement.MinY = value;
   }
   
   
@@ -104,14 +74,8 @@ public partial class AdjustHandleXY: ModelElement<DXD.AdjustHandleXY>
   [DataMember]
   public String? MaxY
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.MaxY);
-    }
-    set
-    {
-      _ExistingElement.MaxY = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.MaxY;
+    set => _ExistingElement.MaxY = value;
   }
   
   
@@ -121,14 +85,8 @@ public partial class AdjustHandleXY: ModelElement<DXD.AdjustHandleXY>
   [DataMember]
   public DMD.Position? Position
   {
-    get
-    {
-      return _Element?.GetObject<DMD.Position,DXD.Position>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.Position,DXD.Position>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.AdjustPoint2DType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.AdjustPoint2DType");
   }
   
 }

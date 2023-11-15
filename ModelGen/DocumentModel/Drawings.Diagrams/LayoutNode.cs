@@ -19,14 +19,8 @@ public partial class LayoutNode: ModelElement<DXDDD.LayoutNode>
   [DataMember]
   public String? Name
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Name);
-    }
-    set
-    {
-      _ExistingElement.Name = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Name;
+    set => _ExistingElement.Name = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class LayoutNode: ModelElement<DXDDD.LayoutNode>
   [DataMember]
   public String? StyleLabel
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.StyleLabel);
-    }
-    set
-    {
-      _ExistingElement.StyleLabel = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.StyleLabel;
+    set => _ExistingElement.StyleLabel = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class LayoutNode: ModelElement<DXDDD.LayoutNode>
   [DataMember]
   public String? MoveWith
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.MoveWith);
-    }
-    set
-    {
-      _ExistingElement.MoveWith = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.MoveWith;
+    set => _ExistingElement.MoveWith = value;
   }
   
 }

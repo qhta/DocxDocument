@@ -19,14 +19,8 @@ public partial class PivotSource: ModelElement<DXO13DC.PivotSource>
   [DataMember]
   public DMDC.PivotTableName? PivotTableName
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.PivotTableName,DXDC.PivotTableName>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.PivotTableName,DXDC.PivotTableName>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
   }
   
   
@@ -36,14 +30,8 @@ public partial class PivotSource: ModelElement<DXO13DC.PivotSource>
   [DataMember]
   public DMDC.FormatId? FormatId
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.FormatId,DXDC.FormatId>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.FormatId,DXDC.FormatId>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.UnsignedIntegerType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.UnsignedIntegerType");
   }
   
   
@@ -53,14 +41,8 @@ public partial class PivotSource: ModelElement<DXO13DC.PivotSource>
   [DataMember]
   public DMDC.ExtensionList? ExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.ExtensionList,DXDC.ExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.ExtensionList,DXDC.ExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

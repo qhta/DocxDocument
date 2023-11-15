@@ -19,14 +19,8 @@ public partial class AltChunkProperties: ModelElement<DXW.AltChunkProperties>
   [DataMember]
   public DMW.MatchSource? MatchSource
   {
-    get
-    {
-      return _Element?.GetObject<DMW.MatchSource,DXW.MatchSource>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.MatchSource,DXW.MatchSource>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
 }

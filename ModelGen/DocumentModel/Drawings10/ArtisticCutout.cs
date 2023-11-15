@@ -19,14 +19,8 @@ public partial class ArtisticCutout: ModelElement<DXO10D.ArtisticCutout>
   [DataMember]
   public Int32? Transparancy
   {
-    get
-    {
-      return _Element?.Transparancy?.Value;
-    }
-    set
-    {
-      _ExistingElement.Transparancy = value;
-    }
+    get => _Element?.Transparancy?.Value;
+    set => _ExistingElement.Transparancy = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class ArtisticCutout: ModelElement<DXO10D.ArtisticCutout>
   [DataMember]
   public Int32? NumberOfShades
   {
-    get
-    {
-      return _Element?.NumberOfShades?.Value;
-    }
-    set
-    {
-      _ExistingElement.NumberOfShades = value;
-    }
+    get => _Element?.NumberOfShades?.Value;
+    set => _ExistingElement.NumberOfShades = value;
   }
   
 }

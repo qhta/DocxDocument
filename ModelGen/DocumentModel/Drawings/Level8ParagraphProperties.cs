@@ -15,222 +15,120 @@ public partial class Level8ParagraphProperties: ModelElement<DXD.Level8Paragraph
   [DataMember]
   public DMD.LineSpacing? LineSpacing
   {
-    get
-    {
-      return _Element?.GetObject<DMD.LineSpacing,DXD.LineSpacing>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.LineSpacing,DXD.LineSpacing>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.TextSpacingType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.TextSpacingType");
   }
   
   [DataMember]
   public DMD.SpaceBefore? SpaceBefore
   {
-    get
-    {
-      return _Element?.GetObject<DMD.SpaceBefore,DXD.SpaceBefore>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.SpaceBefore,DXD.SpaceBefore>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.TextSpacingType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.TextSpacingType");
   }
   
   [DataMember]
   public DMD.SpaceAfter? SpaceAfter
   {
-    get
-    {
-      return _Element?.GetObject<DMD.SpaceAfter,DXD.SpaceAfter>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.SpaceAfter,DXD.SpaceAfter>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.TextSpacingType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.TextSpacingType");
   }
   
   [DataMember]
   public DMD.BulletColorText? BulletColorText
   {
-    get
-    {
-      return _Element?.GetObject<DMD.BulletColorText,DXD.BulletColorText>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.BulletColorText,DXD.BulletColorText>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   [DataMember]
   public DMD.BulletColor? BulletColor
   {
-    get
-    {
-      return _Element?.GetObject<DMD.BulletColor,DXD.BulletColor>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.BulletColor,DXD.BulletColor>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.ColorType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.ColorType");
   }
   
   [DataMember]
   public DMD.BulletSizeText? BulletSizeText
   {
-    get
-    {
-      return _Element?.GetObject<DMD.BulletSizeText,DXD.BulletSizeText>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.BulletSizeText,DXD.BulletSizeText>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   [DataMember]
   public Int32? BulletSizePercentage
   {
-    get
-    {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DXD.BulletSizePercentage>()?.Val);
-    }
-    set
-    {
-      SimpleValueConverter.SetValue<DXD.BulletSizePercentage,System.Int32>(_ExistingElement, value);
-    }
+    get => _Element?.GetIntVal<Int32, DXD.BulletSizePercentage>();
+    set => _ExistingElement.SetIntVal<Int32, DXD.BulletSizePercentage>(value);
   }
   
   [DataMember]
   public Int32? BulletSizePoints
   {
-    get
-    {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DXD.BulletSizePoints>()?.Val);
-    }
-    set
-    {
-      SimpleValueConverter.SetValue<DXD.BulletSizePoints,System.Int32>(_ExistingElement, value);
-    }
+    get => _Element?.GetIntVal<Int32, DXD.BulletSizePoints>();
+    set => _ExistingElement.SetIntVal<Int32, DXD.BulletSizePoints>(value);
   }
   
   [DataMember]
   public DMD.BulletFontText? BulletFontText
   {
-    get
-    {
-      return _Element?.GetObject<DMD.BulletFontText,DXD.BulletFontText>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.BulletFontText,DXD.BulletFontText>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   [DataMember]
   public DMD.BulletFont? BulletFont
   {
-    get
-    {
-      return _Element?.GetObject<DMD.BulletFont,DXD.BulletFont>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.BulletFont,DXD.BulletFont>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.TextFontType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.TextFontType");
   }
   
   [DataMember]
   public DMD.NoBullet? NoBullet
   {
-    get
-    {
-      return _Element?.GetObject<DMD.NoBullet,DXD.NoBullet>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.NoBullet,DXD.NoBullet>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   [DataMember]
   public DMD.AutoNumberedBullet? AutoNumberedBullet
   {
-    get
-    {
-      return _Element?.GetObject<DMD.AutoNumberedBullet,DXD.AutoNumberedBullet>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.AutoNumberedBullet,DXD.AutoNumberedBullet>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   [DataMember]
   public DMD.CharacterBullet? CharacterBullet
   {
-    get
-    {
-      return _Element?.GetObject<DMD.CharacterBullet,DXD.CharacterBullet>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.CharacterBullet,DXD.CharacterBullet>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   [DataMember]
   public DMD.PictureBullet? PictureBullet
   {
-    get
-    {
-      return _Element?.GetObject<DMD.PictureBullet,DXD.PictureBullet>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.PictureBullet,DXD.PictureBullet>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMD.TabStopList? TabStopList
   {
-    get
-    {
-      return _Element?.GetObject<DMD.TabStopList,DXD.TabStopList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.TabStopList,DXD.TabStopList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMD.DefaultRunProperties? DefaultRunProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMD.DefaultRunProperties,DXD.DefaultRunProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.DefaultRunProperties,DXD.DefaultRunProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType");
   }
   
   [DataMember]
   public DMD.ExtensionList? ExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMD.ExtensionList,DXD.ExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.ExtensionList,DXD.ExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

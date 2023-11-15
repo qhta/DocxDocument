@@ -19,19 +19,8 @@ public partial class SystemColor: ModelElement<DXD.SystemColor>
   [DataMember]
   public DM.HexBinary? LastColor
   {
-    get
-    {
-      if (_Element?.LastColor?.Value != null)
-        return (DocumentModel.RGB)UInt32.Parse(_ExistingElement.LastColor.Value, NumberStyles.HexNumber);
-      return null;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.LastColor = ((UInt32)value).ToString("X6");
-      else
-        _ExistingElement.LastColor = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
 }

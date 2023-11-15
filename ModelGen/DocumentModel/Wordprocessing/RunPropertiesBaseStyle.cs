@@ -19,14 +19,8 @@ public partial class RunPropertiesBaseStyle: ModelElement<DXW.RunPropertiesBaseS
   [DataMember]
   public DMW.RunFonts? RunFonts
   {
-    get
-    {
-      return _Element?.GetObject<DMW.RunFonts,DXW.RunFonts>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.RunFonts,DXW.RunFonts>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -36,14 +30,8 @@ public partial class RunPropertiesBaseStyle: ModelElement<DXW.RunPropertiesBaseS
   [DataMember]
   public DMW.Bold? Bold
   {
-    get
-    {
-      return _Element?.GetObject<DMW.Bold,DXW.Bold>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.Bold,DXW.Bold>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -53,14 +41,8 @@ public partial class RunPropertiesBaseStyle: ModelElement<DXW.RunPropertiesBaseS
   [DataMember]
   public DMW.BoldComplexScript? BoldComplexScript
   {
-    get
-    {
-      return _Element?.GetObject<DMW.BoldComplexScript,DXW.BoldComplexScript>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.BoldComplexScript,DXW.BoldComplexScript>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -70,14 +52,8 @@ public partial class RunPropertiesBaseStyle: ModelElement<DXW.RunPropertiesBaseS
   [DataMember]
   public DMW.Italic? Italic
   {
-    get
-    {
-      return _Element?.GetObject<DMW.Italic,DXW.Italic>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.Italic,DXW.Italic>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -87,14 +63,8 @@ public partial class RunPropertiesBaseStyle: ModelElement<DXW.RunPropertiesBaseS
   [DataMember]
   public DMW.ItalicComplexScript? ItalicComplexScript
   {
-    get
-    {
-      return _Element?.GetObject<DMW.ItalicComplexScript,DXW.ItalicComplexScript>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.ItalicComplexScript,DXW.ItalicComplexScript>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -104,14 +74,8 @@ public partial class RunPropertiesBaseStyle: ModelElement<DXW.RunPropertiesBaseS
   [DataMember]
   public DMW.Caps? Caps
   {
-    get
-    {
-      return _Element?.GetObject<DMW.Caps,DXW.Caps>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.Caps,DXW.Caps>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -121,14 +85,8 @@ public partial class RunPropertiesBaseStyle: ModelElement<DXW.RunPropertiesBaseS
   [DataMember]
   public DMW.SmallCaps? SmallCaps
   {
-    get
-    {
-      return _Element?.GetObject<DMW.SmallCaps,DXW.SmallCaps>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.SmallCaps,DXW.SmallCaps>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -138,14 +96,8 @@ public partial class RunPropertiesBaseStyle: ModelElement<DXW.RunPropertiesBaseS
   [DataMember]
   public DMW.Strike? Strike
   {
-    get
-    {
-      return _Element?.GetObject<DMW.Strike,DXW.Strike>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.Strike,DXW.Strike>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -155,14 +107,8 @@ public partial class RunPropertiesBaseStyle: ModelElement<DXW.RunPropertiesBaseS
   [DataMember]
   public DMW.DoubleStrike? DoubleStrike
   {
-    get
-    {
-      return _Element?.GetObject<DMW.DoubleStrike,DXW.DoubleStrike>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.DoubleStrike,DXW.DoubleStrike>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -172,14 +118,8 @@ public partial class RunPropertiesBaseStyle: ModelElement<DXW.RunPropertiesBaseS
   [DataMember]
   public DMW.Outline? Outline
   {
-    get
-    {
-      return _Element?.GetObject<DMW.Outline,DXW.Outline>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.Outline,DXW.Outline>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -189,14 +129,8 @@ public partial class RunPropertiesBaseStyle: ModelElement<DXW.RunPropertiesBaseS
   [DataMember]
   public DMW.Shadow? Shadow
   {
-    get
-    {
-      return _Element?.GetObject<DMW.Shadow,DXW.Shadow>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.Shadow,DXW.Shadow>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -206,14 +140,8 @@ public partial class RunPropertiesBaseStyle: ModelElement<DXW.RunPropertiesBaseS
   [DataMember]
   public DMW.Emboss? Emboss
   {
-    get
-    {
-      return _Element?.GetObject<DMW.Emboss,DXW.Emboss>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.Emboss,DXW.Emboss>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -223,14 +151,8 @@ public partial class RunPropertiesBaseStyle: ModelElement<DXW.RunPropertiesBaseS
   [DataMember]
   public DMW.Imprint? Imprint
   {
-    get
-    {
-      return _Element?.GetObject<DMW.Imprint,DXW.Imprint>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.Imprint,DXW.Imprint>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -240,14 +162,8 @@ public partial class RunPropertiesBaseStyle: ModelElement<DXW.RunPropertiesBaseS
   [DataMember]
   public DMW.NoProof? NoProof
   {
-    get
-    {
-      return _Element?.GetObject<DMW.NoProof,DXW.NoProof>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.NoProof,DXW.NoProof>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -257,14 +173,8 @@ public partial class RunPropertiesBaseStyle: ModelElement<DXW.RunPropertiesBaseS
   [DataMember]
   public DMW.SnapToGrid? SnapToGrid
   {
-    get
-    {
-      return _Element?.GetObject<DMW.SnapToGrid,DXW.SnapToGrid>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.SnapToGrid,DXW.SnapToGrid>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -274,14 +184,8 @@ public partial class RunPropertiesBaseStyle: ModelElement<DXW.RunPropertiesBaseS
   [DataMember]
   public DMW.Vanish? Vanish
   {
-    get
-    {
-      return _Element?.GetObject<DMW.Vanish,DXW.Vanish>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.Vanish,DXW.Vanish>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -291,14 +195,8 @@ public partial class RunPropertiesBaseStyle: ModelElement<DXW.RunPropertiesBaseS
   [DataMember]
   public DMW.WebHidden? WebHidden
   {
-    get
-    {
-      return _Element?.GetObject<DMW.WebHidden,DXW.WebHidden>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.WebHidden,DXW.WebHidden>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -308,14 +206,8 @@ public partial class RunPropertiesBaseStyle: ModelElement<DXW.RunPropertiesBaseS
   [DataMember]
   public DMW.Color? Color
   {
-    get
-    {
-      return _Element?.GetObject<DMW.Color,DXW.Color>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.Color,DXW.Color>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -325,14 +217,8 @@ public partial class RunPropertiesBaseStyle: ModelElement<DXW.RunPropertiesBaseS
   [DataMember]
   public Int32? Spacing
   {
-    get
-    {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DXW.Spacing>()?.Val);
-    }
-    set
-    {
-      SimpleValueConverter.SetValue<DXW.Spacing,System.Int32>(_ExistingElement, value);
-    }
+    get => _Element?.GetIntVal<Int32, DXW.Spacing>();
+    set => _ExistingElement.SetIntVal<Int32, DXW.Spacing>(value);
   }
   
   
@@ -342,14 +228,8 @@ public partial class RunPropertiesBaseStyle: ModelElement<DXW.RunPropertiesBaseS
   [DataMember]
   public Int64? CharacterScale
   {
-    get
-    {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DXW.CharacterScale>()?.Val);
-    }
-    set
-    {
-      SimpleValueConverter.SetValue<DXW.CharacterScale,System.Int64>(_ExistingElement, value);
-    }
+    get => _Element?.GetIntVal<Int64, DXW.CharacterScale>();
+    set => _ExistingElement.SetIntVal<Int64, DXW.CharacterScale>(value);
   }
   
   
@@ -359,14 +239,8 @@ public partial class RunPropertiesBaseStyle: ModelElement<DXW.RunPropertiesBaseS
   [DataMember]
   public UInt32? Kern
   {
-    get
-    {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DXW.Kern>()?.Val);
-    }
-    set
-    {
-      SimpleValueConverter.SetValue<DXW.Kern,System.UInt32>(_ExistingElement, value);
-    }
+    get => _Element?.GetIntVal<UInt32, DXW.Kern>();
+    set => _ExistingElement.SetIntVal<UInt32, DXW.Kern>(value);
   }
   
   
@@ -376,14 +250,8 @@ public partial class RunPropertiesBaseStyle: ModelElement<DXW.RunPropertiesBaseS
   [DataMember]
   public String? Position
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.GetFirstChild<DXW.Position>()?.Val);
-    }
-    set
-    {
-      StringValueConverter.SetValue<DXW.Position>(_ExistingElement, value);
-    }
+    get => _Element?.GetStringVal<DXW.Position>();
+    set => _ExistingElement.SetStringVal<DXW.Position>(value);
   }
   
   
@@ -393,14 +261,8 @@ public partial class RunPropertiesBaseStyle: ModelElement<DXW.RunPropertiesBaseS
   [DataMember]
   public DMW.FontSize? FontSize
   {
-    get
-    {
-      return _Element?.GetObject<DMW.FontSize,DXW.FontSize>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.FontSize,DXW.FontSize>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.HpsMeasureType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.HpsMeasureType");
   }
   
   
@@ -410,14 +272,8 @@ public partial class RunPropertiesBaseStyle: ModelElement<DXW.RunPropertiesBaseS
   [DataMember]
   public DMW.FontSizeComplexScript? FontSizeComplexScript
   {
-    get
-    {
-      return _Element?.GetObject<DMW.FontSizeComplexScript,DXW.FontSizeComplexScript>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.FontSizeComplexScript,DXW.FontSizeComplexScript>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.HpsMeasureType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.HpsMeasureType");
   }
   
   
@@ -427,14 +283,8 @@ public partial class RunPropertiesBaseStyle: ModelElement<DXW.RunPropertiesBaseS
   [DataMember]
   public DMW.Underline? Underline
   {
-    get
-    {
-      return _Element?.GetObject<DMW.Underline,DXW.Underline>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.Underline,DXW.Underline>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -444,24 +294,8 @@ public partial class RunPropertiesBaseStyle: ModelElement<DXW.RunPropertiesBaseS
   [DataMember]
   public DMW.TextEffectKind? TextEffect
   {
-    get
-    {
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TextEffectValues, DMW.TextEffectKind>(_ExistingElement.GetFirstChild<DXW.TextEffect>()?.Val?.Value);
-    }
-    set
-    {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.TextEffect>();
-      if (itemElement != null)
-      {
-        if (value != null)
-          EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TextEffectValues, DMW.TextEffectKind>(itemElement, (DMW.TextEffectKind)value);
-        else
-          itemElement.Remove();
-      }
-      else
-      if (value != null)
-        _ExistingElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.TextEffect, DocumentFormat.OpenXml.Wordprocessing.TextEffectValues, DMW.TextEffectKind>((DMW.TextEffectKind)value));
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertyGetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertySetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -471,14 +305,8 @@ public partial class RunPropertiesBaseStyle: ModelElement<DXW.RunPropertiesBaseS
   [DataMember]
   public DMW.Border? Border
   {
-    get
-    {
-      return _Element?.GetObject<DMW.Border,DXW.Border>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.Border,DXW.Border>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.BorderType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.BorderType");
   }
   
   
@@ -488,14 +316,8 @@ public partial class RunPropertiesBaseStyle: ModelElement<DXW.RunPropertiesBaseS
   [DataMember]
   public DMW.Shading? Shading
   {
-    get
-    {
-      return _Element?.GetObject<DMW.Shading,DXW.Shading>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.Shading,DXW.Shading>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -505,14 +327,8 @@ public partial class RunPropertiesBaseStyle: ModelElement<DXW.RunPropertiesBaseS
   [DataMember]
   public DMW.FitText? FitText
   {
-    get
-    {
-      return _Element?.GetObject<DMW.FitText,DXW.FitText>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.FitText,DXW.FitText>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -522,24 +338,8 @@ public partial class RunPropertiesBaseStyle: ModelElement<DXW.RunPropertiesBaseS
   [DataMember]
   public DMW.VerticalPositionKind? VerticalTextAlignment
   {
-    get
-    {
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.VerticalPositionValues, DMW.VerticalPositionKind>(_ExistingElement.GetFirstChild<DXW.VerticalTextAlignment>()?.Val?.Value);
-    }
-    set
-    {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.VerticalTextAlignment>();
-      if (itemElement != null)
-      {
-        if (value != null)
-          EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.VerticalPositionValues, DMW.VerticalPositionKind>(itemElement, (DMW.VerticalPositionKind)value);
-        else
-          itemElement.Remove();
-      }
-      else
-      if (value != null)
-        _ExistingElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.VerticalTextAlignment, DocumentFormat.OpenXml.Wordprocessing.VerticalPositionValues, DMW.VerticalPositionKind>((DMW.VerticalPositionKind)value));
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertyGetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertySetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -549,24 +349,8 @@ public partial class RunPropertiesBaseStyle: ModelElement<DXW.RunPropertiesBaseS
   [DataMember]
   public DMW.EmphasisMarkKind? Emphasis
   {
-    get
-    {
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.EmphasisMarkValues, DMW.EmphasisMarkKind>(_ExistingElement.GetFirstChild<DXW.Emphasis>()?.Val?.Value);
-    }
-    set
-    {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Emphasis>();
-      if (itemElement != null)
-      {
-        if (value != null)
-          EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.EmphasisMarkValues, DMW.EmphasisMarkKind>(itemElement, (DMW.EmphasisMarkKind)value);
-        else
-          itemElement.Remove();
-      }
-      else
-      if (value != null)
-        _ExistingElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.Emphasis, DocumentFormat.OpenXml.Wordprocessing.EmphasisMarkValues, DMW.EmphasisMarkKind>((DMW.EmphasisMarkKind)value));
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertyGetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertySetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -576,14 +360,8 @@ public partial class RunPropertiesBaseStyle: ModelElement<DXW.RunPropertiesBaseS
   [DataMember]
   public DMW.Languages? Languages
   {
-    get
-    {
-      return _Element?.GetObject<DMW.Languages,DXW.Languages>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.Languages,DXW.Languages>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.LanguageType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.LanguageType");
   }
   
   
@@ -593,14 +371,8 @@ public partial class RunPropertiesBaseStyle: ModelElement<DXW.RunPropertiesBaseS
   [DataMember]
   public DMW.EastAsianLayout? EastAsianLayout
   {
-    get
-    {
-      return _Element?.GetObject<DMW.EastAsianLayout,DXW.EastAsianLayout>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.EastAsianLayout,DXW.EastAsianLayout>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -610,14 +382,8 @@ public partial class RunPropertiesBaseStyle: ModelElement<DXW.RunPropertiesBaseS
   [DataMember]
   public DMW.SpecVanish? SpecVanish
   {
-    get
-    {
-      return _Element?.GetObject<DMW.SpecVanish,DXW.SpecVanish>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.SpecVanish,DXW.SpecVanish>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
 }

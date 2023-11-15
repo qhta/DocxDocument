@@ -19,14 +19,8 @@ public partial class SdtDocPartType: ModelElement<DXW.SdtDocPartType>
   [DataMember]
   public DMW.DocPartGallery? DocPartGallery
   {
-    get
-    {
-      return _Element?.GetObject<DMW.DocPartGallery,DXW.DocPartGallery>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.DocPartGallery,DXW.DocPartGallery>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.StringType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.StringType");
   }
   
   
@@ -36,14 +30,8 @@ public partial class SdtDocPartType: ModelElement<DXW.SdtDocPartType>
   [DataMember]
   public DMW.DocPartCategory? DocPartCategory
   {
-    get
-    {
-      return _Element?.GetObject<DMW.DocPartCategory,DXW.DocPartCategory>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.DocPartCategory,DXW.DocPartCategory>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.StringType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.StringType");
   }
   
   
@@ -53,14 +41,8 @@ public partial class SdtDocPartType: ModelElement<DXW.SdtDocPartType>
   [DataMember]
   public DMW.DocPartUnique? DocPartUnique
   {
-    get
-    {
-      return _Element?.GetObject<DMW.DocPartUnique,DXW.DocPartUnique>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.DocPartUnique,DXW.DocPartUnique>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
 }

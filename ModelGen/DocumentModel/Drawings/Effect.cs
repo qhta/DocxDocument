@@ -19,14 +19,8 @@ public partial class Effect: ModelElement<DXD.Effect>
   [DataMember]
   public String? Reference
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Reference);
-    }
-    set
-    {
-      _ExistingElement.Reference = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Reference;
+    set => _ExistingElement.Reference = value;
   }
   
 }

@@ -19,14 +19,8 @@ public partial class AltChunk: ModelElement<DXW.AltChunk>
   [DataMember]
   public String? Id
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Id);
-    }
-    set
-    {
-      _ExistingElement.Id = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Id;
+    set => _ExistingElement.Id = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class AltChunk: ModelElement<DXW.AltChunk>
   [DataMember]
   public DMW.AltChunkProperties? AltChunkProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMW.AltChunkProperties,DXW.AltChunkProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.AltChunkProperties,DXW.AltChunkProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

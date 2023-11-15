@@ -15,66 +15,36 @@ public partial class LineDefault: ModelElement<DXD.LineDefault>
   [DataMember]
   public DMD.ShapeProperties? ShapeProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMD.ShapeProperties,DXD.ShapeProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.ShapeProperties,DXD.ShapeProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMD.BodyProperties? BodyProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMD.BodyProperties,DXD.BodyProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.BodyProperties,DXD.BodyProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMD.ListStyle? ListStyle
   {
-    get
-    {
-      return _Element?.GetObject<DMD.ListStyle,DXD.ListStyle>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.ListStyle,DXD.ListStyle>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMD.ShapeStyle? ShapeStyle
   {
-    get
-    {
-      return _Element?.GetObject<DMD.ShapeStyle,DXD.ShapeStyle>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.ShapeStyle,DXD.ShapeStyle>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMD.ExtensionList? ExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMD.ExtensionList,DXD.ExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.ExtensionList,DXD.ExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

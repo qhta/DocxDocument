@@ -19,14 +19,8 @@ public partial class LineSketchTypeProperties: ModelElement<DXO21DSS.LineSketchT
   [DataMember]
   public DMDSS.LineSketchNoneEmpty? LineSketchNoneEmpty
   {
-    get
-    {
-      return _Element?.GetObject<DMDSS.LineSketchNoneEmpty,DXO21DSS.LineSketchNoneEmpty>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDSS.LineSketchNoneEmpty,DXO21DSS.LineSketchNoneEmpty>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.OpenXmlEmptyElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.OpenXmlEmptyElement");
   }
   
   
@@ -36,14 +30,8 @@ public partial class LineSketchTypeProperties: ModelElement<DXO21DSS.LineSketchT
   [DataMember]
   public DMDSS.LineSketchCurvedEmpty? LineSketchCurvedEmpty
   {
-    get
-    {
-      return _Element?.GetObject<DMDSS.LineSketchCurvedEmpty,DXO21DSS.LineSketchCurvedEmpty>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDSS.LineSketchCurvedEmpty,DXO21DSS.LineSketchCurvedEmpty>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.OpenXmlEmptyElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.OpenXmlEmptyElement");
   }
   
   
@@ -53,14 +41,8 @@ public partial class LineSketchTypeProperties: ModelElement<DXO21DSS.LineSketchT
   [DataMember]
   public DMDSS.LineSketchFreehandEmpty? LineSketchFreehandEmpty
   {
-    get
-    {
-      return _Element?.GetObject<DMDSS.LineSketchFreehandEmpty,DXO21DSS.LineSketchFreehandEmpty>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDSS.LineSketchFreehandEmpty,DXO21DSS.LineSketchFreehandEmpty>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.OpenXmlEmptyElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.OpenXmlEmptyElement");
   }
   
   
@@ -70,14 +52,8 @@ public partial class LineSketchTypeProperties: ModelElement<DXO21DSS.LineSketchT
   [DataMember]
   public DMDSS.LineSketchScribbleEmpty? LineSketchScribbleEmpty
   {
-    get
-    {
-      return _Element?.GetObject<DMDSS.LineSketchScribbleEmpty,DXO21DSS.LineSketchScribbleEmpty>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDSS.LineSketchScribbleEmpty,DXO21DSS.LineSketchScribbleEmpty>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.OpenXmlEmptyElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.OpenXmlEmptyElement");
   }
   
 }

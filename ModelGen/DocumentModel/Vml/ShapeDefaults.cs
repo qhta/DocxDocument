@@ -19,14 +19,8 @@ public partial class ShapeDefaults: ModelElement<DXVO.ShapeDefaults>
   [DataMember]
   public Int64? MaxShapeId
   {
-    get
-    {
-      return _Element?.MaxShapeId?.Value;
-    }
-    set
-    {
-      _ExistingElement.MaxShapeId = value;
-    }
+    get => _Element?.MaxShapeId?.Value;
+    set => _ExistingElement.MaxShapeId = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class ShapeDefaults: ModelElement<DXVO.ShapeDefaults>
   [DataMember]
   public String? Style
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Style);
-    }
-    set
-    {
-      _ExistingElement.Style = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Style;
+    set => _ExistingElement.Style = value;
   }
   
   
@@ -53,17 +41,8 @@ public partial class ShapeDefaults: ModelElement<DXVO.ShapeDefaults>
   [DataMember]
   public Boolean? BeFilled
   {
-    get
-    {
-      return _Element?.BeFilled?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.BeFilled = value;
-      else
-        _ExistingElement.BeFilled = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -73,14 +52,8 @@ public partial class ShapeDefaults: ModelElement<DXVO.ShapeDefaults>
   [DataMember]
   public String? FillColor
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.FillColor);
-    }
-    set
-    {
-      _ExistingElement.FillColor = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.FillColor;
+    set => _ExistingElement.FillColor = value;
   }
   
   
@@ -90,17 +63,8 @@ public partial class ShapeDefaults: ModelElement<DXVO.ShapeDefaults>
   [DataMember]
   public Boolean? IsStroke
   {
-    get
-    {
-      return _Element?.IsStroke?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.IsStroke = value;
-      else
-        _ExistingElement.IsStroke = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -110,14 +74,8 @@ public partial class ShapeDefaults: ModelElement<DXVO.ShapeDefaults>
   [DataMember]
   public String? StrokeColor
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.StrokeColor);
-    }
-    set
-    {
-      _ExistingElement.StrokeColor = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.StrokeColor;
+    set => _ExistingElement.StrokeColor = value;
   }
   
   
@@ -127,17 +85,8 @@ public partial class ShapeDefaults: ModelElement<DXVO.ShapeDefaults>
   [DataMember]
   public Boolean? AllowInCell
   {
-    get
-    {
-      return _Element?.AllowInCell?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.AllowInCell = value;
-      else
-        _ExistingElement.AllowInCell = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -147,17 +96,8 @@ public partial class ShapeDefaults: ModelElement<DXVO.ShapeDefaults>
   [DataMember]
   public Boolean? AllowOverlap
   {
-    get
-    {
-      return _Element?.AllowOverlap?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.AllowOverlap = value;
-      else
-        _ExistingElement.AllowOverlap = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -167,14 +107,8 @@ public partial class ShapeDefaults: ModelElement<DXVO.ShapeDefaults>
   [DataMember]
   public DMVML.Fill? Fill
   {
-    get
-    {
-      return _Element?.GetObject<DMVML.Fill,DXV.Fill>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMVML.Fill,DXV.Fill>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -184,14 +118,8 @@ public partial class ShapeDefaults: ModelElement<DXVO.ShapeDefaults>
   [DataMember]
   public DMVML.ImageData? ImageData
   {
-    get
-    {
-      return _Element?.GetObject<DMVML.ImageData,DXV.ImageData>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMVML.ImageData,DXV.ImageData>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -201,14 +129,8 @@ public partial class ShapeDefaults: ModelElement<DXVO.ShapeDefaults>
   [DataMember]
   public DMVML.Stroke? Stroke
   {
-    get
-    {
-      return _Element?.GetObject<DMVML.Stroke,DXV.Stroke>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMVML.Stroke,DXV.Stroke>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -218,14 +140,8 @@ public partial class ShapeDefaults: ModelElement<DXVO.ShapeDefaults>
   [DataMember]
   public DMVML.TextBox? TextBox
   {
-    get
-    {
-      return _Element?.GetObject<DMVML.TextBox,DXV.TextBox>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMVML.TextBox,DXV.TextBox>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -235,14 +151,8 @@ public partial class ShapeDefaults: ModelElement<DXVO.ShapeDefaults>
   [DataMember]
   public DMVML.Shadow? Shadow
   {
-    get
-    {
-      return _Element?.GetObject<DMVML.Shadow,DXV.Shadow>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMVML.Shadow,DXV.Shadow>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -252,14 +162,8 @@ public partial class ShapeDefaults: ModelElement<DXVO.ShapeDefaults>
   [DataMember]
   public DMVML.Skew? Skew
   {
-    get
-    {
-      return _Element?.GetObject<DMVML.Skew,DXVO.Skew>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMVML.Skew,DXVO.Skew>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -269,14 +173,8 @@ public partial class ShapeDefaults: ModelElement<DXVO.ShapeDefaults>
   [DataMember]
   public DMVML.Extrusion? Extrusion
   {
-    get
-    {
-      return _Element?.GetObject<DMVML.Extrusion,DXVO.Extrusion>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMVML.Extrusion,DXVO.Extrusion>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -286,14 +184,8 @@ public partial class ShapeDefaults: ModelElement<DXVO.ShapeDefaults>
   [DataMember]
   public DMVML.Callout? Callout
   {
-    get
-    {
-      return _Element?.GetObject<DMVML.Callout,DXVO.Callout>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMVML.Callout,DXVO.Callout>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -303,14 +195,8 @@ public partial class ShapeDefaults: ModelElement<DXVO.ShapeDefaults>
   [DataMember]
   public DMVML.Lock? Lock
   {
-    get
-    {
-      return _Element?.GetObject<DMVML.Lock,DXVO.Lock>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMVML.Lock,DXVO.Lock>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -320,14 +206,8 @@ public partial class ShapeDefaults: ModelElement<DXVO.ShapeDefaults>
   [DataMember]
   public DMVML.ColorMostRecentlyUsed? ColorMostRecentlyUsed
   {
-    get
-    {
-      return _Element?.GetObject<DMVML.ColorMostRecentlyUsed,DXVO.ColorMostRecentlyUsed>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMVML.ColorMostRecentlyUsed,DXVO.ColorMostRecentlyUsed>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -337,14 +217,8 @@ public partial class ShapeDefaults: ModelElement<DXVO.ShapeDefaults>
   [DataMember]
   public DMVML.ColorMenu? ColorMenu
   {
-    get
-    {
-      return _Element?.GetObject<DMVML.ColorMenu,DXVO.ColorMenu>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMVML.ColorMenu,DXVO.ColorMenu>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
 }

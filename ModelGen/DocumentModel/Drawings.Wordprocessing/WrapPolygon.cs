@@ -19,17 +19,8 @@ public partial class WrapPolygon: ModelElement<DXDW.WrapPolygon>
   [DataMember]
   public Boolean? Edited
   {
-    get
-    {
-      return _Element?.Edited?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Edited = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.Edited = null;
-    }
+    get => _Element?.Edited?.Value;
+    set => _ExistingElement.Edited = value;
   }
   
   
@@ -39,14 +30,8 @@ public partial class WrapPolygon: ModelElement<DXDW.WrapPolygon>
   [DataMember]
   public DMDW.StartPoint? StartPoint
   {
-    get
-    {
-      return _Element?.GetObject<DMDW.StartPoint,DXDW.StartPoint>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDW.StartPoint,DXDW.StartPoint>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Wordprocessing.Point2DType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Wordprocessing.Point2DType");
   }
   
 }

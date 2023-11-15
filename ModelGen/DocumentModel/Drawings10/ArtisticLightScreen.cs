@@ -19,14 +19,8 @@ public partial class ArtisticLightScreen: ModelElement<DXO10D.ArtisticLightScree
   [DataMember]
   public Int32? Transparancy
   {
-    get
-    {
-      return _Element?.Transparancy?.Value;
-    }
-    set
-    {
-      _ExistingElement.Transparancy = value;
-    }
+    get => _Element?.Transparancy?.Value;
+    set => _ExistingElement.Transparancy = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class ArtisticLightScreen: ModelElement<DXO10D.ArtisticLightScree
   [DataMember]
   public Int32? GridSize
   {
-    get
-    {
-      return _Element?.GridSize?.Value;
-    }
-    set
-    {
-      _ExistingElement.GridSize = value;
-    }
+    get => _Element?.GridSize?.Value;
+    set => _ExistingElement.GridSize = value;
   }
   
 }

@@ -19,14 +19,8 @@ public partial class Shading: ModelElement<DXW.Shading>
   [DataMember]
   public String? Color
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Color);
-    }
-    set
-    {
-      _ExistingElement.Color = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Color;
+    set => _ExistingElement.Color = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class Shading: ModelElement<DXW.Shading>
   [DataMember]
   public String? ThemeTint
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.ThemeTint);
-    }
-    set
-    {
-      _ExistingElement.ThemeTint = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.ThemeTint;
+    set => _ExistingElement.ThemeTint = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class Shading: ModelElement<DXW.Shading>
   [DataMember]
   public String? ThemeShade
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.ThemeShade);
-    }
-    set
-    {
-      _ExistingElement.ThemeShade = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.ThemeShade;
+    set => _ExistingElement.ThemeShade = value;
   }
   
   
@@ -70,14 +52,8 @@ public partial class Shading: ModelElement<DXW.Shading>
   [DataMember]
   public String? Fill
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Fill);
-    }
-    set
-    {
-      _ExistingElement.Fill = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Fill;
+    set => _ExistingElement.Fill = value;
   }
   
   
@@ -87,14 +63,8 @@ public partial class Shading: ModelElement<DXW.Shading>
   [DataMember]
   public String? ThemeFillTint
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.ThemeFillTint);
-    }
-    set
-    {
-      _ExistingElement.ThemeFillTint = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.ThemeFillTint;
+    set => _ExistingElement.ThemeFillTint = value;
   }
   
   
@@ -104,14 +74,8 @@ public partial class Shading: ModelElement<DXW.Shading>
   [DataMember]
   public String? ThemeFillShade
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.ThemeFillShade);
-    }
-    set
-    {
-      _ExistingElement.ThemeFillShade = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.ThemeFillShade;
+    set => _ExistingElement.ThemeFillShade = value;
   }
   
 }

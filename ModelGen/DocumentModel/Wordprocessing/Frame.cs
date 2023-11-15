@@ -19,14 +19,8 @@ public partial class Frame: ModelElement<DXW.Frame>
   [DataMember]
   public DMW.FrameSize? FrameSize
   {
-    get
-    {
-      return _Element?.GetObject<DMW.FrameSize,DXW.FrameSize>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.FrameSize,DXW.FrameSize>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.StringType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.StringType");
   }
   
   
@@ -36,14 +30,8 @@ public partial class Frame: ModelElement<DXW.Frame>
   [DataMember]
   public DMW.FrameName? FrameName
   {
-    get
-    {
-      return _Element?.GetObject<DMW.FrameName,DXW.FrameName>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.FrameName,DXW.FrameName>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.String255Type");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.String255Type");
   }
   
   
@@ -53,14 +41,8 @@ public partial class Frame: ModelElement<DXW.Frame>
   [DataMember]
   public DMW.SourceFileReference? SourceFileReference
   {
-    get
-    {
-      return _Element?.GetObject<DMW.SourceFileReference,DXW.SourceFileReference>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.SourceFileReference,DXW.SourceFileReference>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.RelationshipType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.RelationshipType");
   }
   
   
@@ -70,14 +52,8 @@ public partial class Frame: ModelElement<DXW.Frame>
   [DataMember]
   public DMW.MarginWidth? MarginWidth
   {
-    get
-    {
-      return _Element?.GetObject<DMW.MarginWidth,DXW.MarginWidth>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.MarginWidth,DXW.MarginWidth>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.PixelsMeasureType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.PixelsMeasureType");
   }
   
   
@@ -87,14 +63,8 @@ public partial class Frame: ModelElement<DXW.Frame>
   [DataMember]
   public DMW.MarginHeight? MarginHeight
   {
-    get
-    {
-      return _Element?.GetObject<DMW.MarginHeight,DXW.MarginHeight>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.MarginHeight,DXW.MarginHeight>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.PixelsMeasureType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.PixelsMeasureType");
   }
   
   
@@ -104,24 +74,8 @@ public partial class Frame: ModelElement<DXW.Frame>
   [DataMember]
   public DMW.FrameScrollbarVisibilityKind? ScrollbarVisibility
   {
-    get
-    {
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.FrameScrollbarVisibilityValues, DMW.FrameScrollbarVisibilityKind>(_ExistingElement.GetFirstChild<DXW.ScrollbarVisibility>()?.Val?.Value);
-    }
-    set
-    {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.ScrollbarVisibility>();
-      if (itemElement != null)
-      {
-        if (value != null)
-          EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.FrameScrollbarVisibilityValues, DMW.FrameScrollbarVisibilityKind>(itemElement, (DMW.FrameScrollbarVisibilityKind)value);
-        else
-          itemElement.Remove();
-      }
-      else
-      if (value != null)
-        _ExistingElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.ScrollbarVisibility, DocumentFormat.OpenXml.Wordprocessing.FrameScrollbarVisibilityValues, DMW.FrameScrollbarVisibilityKind>((DMW.FrameScrollbarVisibilityKind)value));
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertyGetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertySetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -131,14 +85,8 @@ public partial class Frame: ModelElement<DXW.Frame>
   [DataMember]
   public DMW.NoResizeAllowed? NoResizeAllowed
   {
-    get
-    {
-      return _Element?.GetObject<DMW.NoResizeAllowed,DXW.NoResizeAllowed>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.NoResizeAllowed,DXW.NoResizeAllowed>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyType");
   }
   
   
@@ -148,14 +96,8 @@ public partial class Frame: ModelElement<DXW.Frame>
   [DataMember]
   public DMW.LinkedToFile? LinkedToFile
   {
-    get
-    {
-      return _Element?.GetObject<DMW.LinkedToFile,DXW.LinkedToFile>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.LinkedToFile,DXW.LinkedToFile>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyType");
   }
   
 }

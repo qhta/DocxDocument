@@ -19,24 +19,8 @@ public partial class TextInput: ModelElement<DXW.TextInput>
   [DataMember]
   public DMW.TextBoxFormFieldKind? TextBoxFormFieldType
   {
-    get
-    {
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TextBoxFormFieldValues, DMW.TextBoxFormFieldKind>(_ExistingElement.GetFirstChild<DXW.TextBoxFormFieldType>()?.Val?.Value);
-    }
-    set
-    {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.TextBoxFormFieldType>();
-      if (itemElement != null)
-      {
-        if (value != null)
-          EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TextBoxFormFieldValues, DMW.TextBoxFormFieldKind>(itemElement, (DMW.TextBoxFormFieldKind)value);
-        else
-          itemElement.Remove();
-      }
-      else
-      if (value != null)
-        _ExistingElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.TextBoxFormFieldType, DocumentFormat.OpenXml.Wordprocessing.TextBoxFormFieldValues, DMW.TextBoxFormFieldKind>((DMW.TextBoxFormFieldKind)value));
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertyGetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertySetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -46,14 +30,8 @@ public partial class TextInput: ModelElement<DXW.TextInput>
   [DataMember]
   public DMW.DefaultTextBoxFormFieldString? DefaultTextBoxFormFieldString
   {
-    get
-    {
-      return _Element?.GetObject<DMW.DefaultTextBoxFormFieldString,DXW.DefaultTextBoxFormFieldString>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.DefaultTextBoxFormFieldString,DXW.DefaultTextBoxFormFieldString>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.String255Type");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.String255Type");
   }
   
   
@@ -63,14 +41,8 @@ public partial class TextInput: ModelElement<DXW.TextInput>
   [DataMember]
   public Int16? MaxLength
   {
-    get
-    {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DXW.MaxLength>()?.Val);
-    }
-    set
-    {
-      SimpleValueConverter.SetValue<DXW.MaxLength,System.Int16>(_ExistingElement, value);
-    }
+    get => _Element?.GetIntVal<Int16, DXW.MaxLength>();
+    set => _ExistingElement.SetIntVal<Int16, DXW.MaxLength>(value);
   }
   
   
@@ -80,14 +52,8 @@ public partial class TextInput: ModelElement<DXW.TextInput>
   [DataMember]
   public String? Format
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.GetFirstChild<DXW.Format>()?.Val);
-    }
-    set
-    {
-      StringValueConverter.SetValue<DXW.Format>(_ExistingElement, value);
-    }
+    get => _Element?.GetStringVal<DXW.Format>();
+    set => _ExistingElement.SetStringVal<DXW.Format>(value);
   }
   
 }

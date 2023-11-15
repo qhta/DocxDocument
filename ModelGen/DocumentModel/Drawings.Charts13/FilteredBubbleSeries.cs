@@ -19,14 +19,8 @@ public partial class FilteredBubbleSeries: ModelElement<DXO13DC.FilteredBubbleSe
   [DataMember]
   public DMDC13.BubbleChartSeries? BubbleChartSeries
   {
-    get
-    {
-      return _Element?.GetObject<DMDC13.BubbleChartSeries,DXO13DC.BubbleChartSeries>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC13.BubbleChartSeries,DXO13DC.BubbleChartSeries>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

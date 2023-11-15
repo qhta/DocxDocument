@@ -19,14 +19,8 @@ public partial class Miter: ModelElement<DXD.Miter>
   [DataMember]
   public Int32? Limit
   {
-    get
-    {
-      return _Element?.Limit?.Value;
-    }
-    set
-    {
-      _ExistingElement.Limit = value;
-    }
+    get => _Element?.Limit?.Value;
+    set => _ExistingElement.Limit = value;
   }
   
 }

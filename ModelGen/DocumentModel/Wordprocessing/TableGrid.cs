@@ -15,14 +15,8 @@ public partial class TableGrid: ModelElement<DXW.TableGrid>
   [DataMember]
   public DMW.TableGridChange? TableGridChange
   {
-    get
-    {
-      return _Element?.GetObject<DMW.TableGridChange,DXW.TableGridChange>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.TableGridChange,DXW.TableGridChange>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

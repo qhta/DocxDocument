@@ -19,14 +19,8 @@ public partial class NaryProperties: ModelElement<DXM.NaryProperties>
   [DataMember]
   public DMM.AccentChar? AccentChar
   {
-    get
-    {
-      return _Element?.GetObject<DMM.AccentChar,DXM.AccentChar>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.AccentChar,DXM.AccentChar>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.CharType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.CharType");
   }
   
   
@@ -36,14 +30,8 @@ public partial class NaryProperties: ModelElement<DXM.NaryProperties>
   [DataMember]
   public DMM.LimitLocation? LimitLocation
   {
-    get
-    {
-      return _Element?.GetObject<DMM.LimitLocation,DXM.LimitLocation>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.LimitLocation,DXM.LimitLocation>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.LimitLocationType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.LimitLocationType");
   }
   
   
@@ -53,14 +41,8 @@ public partial class NaryProperties: ModelElement<DXM.NaryProperties>
   [DataMember]
   public DMM.GrowOperators? GrowOperators
   {
-    get
-    {
-      return _Element?.GetObject<DMM.GrowOperators,DXM.GrowOperators>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.GrowOperators,DXM.GrowOperators>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OnOffType");
   }
   
   
@@ -70,14 +52,8 @@ public partial class NaryProperties: ModelElement<DXM.NaryProperties>
   [DataMember]
   public DMM.HideSubArgument? HideSubArgument
   {
-    get
-    {
-      return _Element?.GetObject<DMM.HideSubArgument,DXM.HideSubArgument>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.HideSubArgument,DXM.HideSubArgument>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OnOffType");
   }
   
   
@@ -87,14 +63,8 @@ public partial class NaryProperties: ModelElement<DXM.NaryProperties>
   [DataMember]
   public DMM.HideSuperArgument? HideSuperArgument
   {
-    get
-    {
-      return _Element?.GetObject<DMM.HideSuperArgument,DXM.HideSuperArgument>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.HideSuperArgument,DXM.HideSuperArgument>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OnOffType");
   }
   
   
@@ -104,14 +74,8 @@ public partial class NaryProperties: ModelElement<DXM.NaryProperties>
   [DataMember]
   public DMM.ControlProperties? ControlProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMM.ControlProperties,DXM.ControlProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.ControlProperties,DXM.ControlProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

@@ -15,34 +15,8 @@ public partial class Behaviors: ModelElement<DXW.Behaviors>
   [DataMember]
   public DM.ElementCollection<DocPartBehaviorKind>? Items
   {
-    get
-    {
-      if (_Element==null)
-        return null;
-      var collection = new ElementCollection<DMW.DocPartBehaviorKind>();
-      foreach (var item in _ExistingElement.Elements<DXW.Behavior>())
-      {
-        var newItem = EnumValueConverter.GetValue<DXW.Behavior,DM.DocPartBehaviorKind>(item);
-        if (newItem is not null)
-          collection.Add(newItem);
-      }
-      if (collection.Count>0)
-        return collection;
-      return null;
-    }
-    set
-    {
-      _ExistingElement.RemoveAllChildren<DXW.Behavior>();
-      if (value != null)
-      {
-        foreach (var item in value)
-        {
-          var newItem = (item);
-          if (newItem != null)
-            _ExistingElement.AddChild(newItem);
-        }
-      }
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentModel.ModelElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentModel.ModelElement");
   }
   
 }

@@ -19,14 +19,8 @@ public partial class Drawing: ModelElement<DXOD.Drawing>
   [DataMember]
   public DMDO.ShapeTree? ShapeTree
   {
-    get
-    {
-      return _Element?.GetObject<DMDO.ShapeTree,DXOD.ShapeTree>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDO.ShapeTree,DXOD.ShapeTree>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office.Drawing.GroupShapeType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office.Drawing.GroupShapeType");
   }
   
 }

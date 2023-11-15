@@ -19,14 +19,8 @@ public partial class Hyperlink: ModelElement<DXW.Hyperlink>
   [DataMember]
   public String? TargetFrame
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.TargetFrame);
-    }
-    set
-    {
-      _ExistingElement.TargetFrame = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.TargetFrame;
+    set => _ExistingElement.TargetFrame = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class Hyperlink: ModelElement<DXW.Hyperlink>
   [DataMember]
   public String? Tooltip
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Tooltip);
-    }
-    set
-    {
-      _ExistingElement.Tooltip = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Tooltip;
+    set => _ExistingElement.Tooltip = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class Hyperlink: ModelElement<DXW.Hyperlink>
   [DataMember]
   public String? DocLocation
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.DocLocation);
-    }
-    set
-    {
-      _ExistingElement.DocLocation = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.DocLocation;
+    set => _ExistingElement.DocLocation = value;
   }
   
   
@@ -70,14 +52,8 @@ public partial class Hyperlink: ModelElement<DXW.Hyperlink>
   [DataMember]
   public Boolean? History
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.History);
-    }
-    set
-    {
-      _ExistingElement.History = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
   
@@ -87,14 +63,8 @@ public partial class Hyperlink: ModelElement<DXW.Hyperlink>
   [DataMember]
   public String? Anchor
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Anchor);
-    }
-    set
-    {
-      _ExistingElement.Anchor = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Anchor;
+    set => _ExistingElement.Anchor = value;
   }
   
   
@@ -104,14 +74,8 @@ public partial class Hyperlink: ModelElement<DXW.Hyperlink>
   [DataMember]
   public String? Id
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Id);
-    }
-    set
-    {
-      _ExistingElement.Id = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Id;
+    set => _ExistingElement.Id = value;
   }
   
 }

@@ -19,14 +19,8 @@ public partial class FilteredLineSeriesExtension: ModelElement<DXO13DC.FilteredL
   [DataMember]
   public DMDC13.LineChartSeries? LineChartSeries
   {
-    get
-    {
-      return _Element?.GetObject<DMDC13.LineChartSeries,DXO13DC.LineChartSeries>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC13.LineChartSeries,DXO13DC.LineChartSeries>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

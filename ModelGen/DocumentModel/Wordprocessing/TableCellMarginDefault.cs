@@ -19,14 +19,8 @@ public partial class TableCellMarginDefault: ModelElement<DXW.TableCellMarginDef
   [DataMember]
   public DMW.TopMargin? TopMargin
   {
-    get
-    {
-      return _Element?.GetObject<DMW.TopMargin,DXW.TopMargin>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.TopMargin,DXW.TopMargin>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.TableWidthType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.TableWidthType");
   }
   
   
@@ -36,14 +30,8 @@ public partial class TableCellMarginDefault: ModelElement<DXW.TableCellMarginDef
   [DataMember]
   public DMW.TableCellLeftMargin? TableCellLeftMargin
   {
-    get
-    {
-      return _Element?.GetObject<DMW.TableCellLeftMargin,DXW.TableCellLeftMargin>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.TableCellLeftMargin,DXW.TableCellLeftMargin>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.TableWidthDxaNilType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.TableWidthDxaNilType");
   }
   
   
@@ -53,14 +41,8 @@ public partial class TableCellMarginDefault: ModelElement<DXW.TableCellMarginDef
   [DataMember]
   public DMW.StartMargin? StartMargin
   {
-    get
-    {
-      return _Element?.GetObject<DMW.StartMargin,DXW.StartMargin>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.StartMargin,DXW.StartMargin>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.TableWidthType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.TableWidthType");
   }
   
   
@@ -70,14 +52,8 @@ public partial class TableCellMarginDefault: ModelElement<DXW.TableCellMarginDef
   [DataMember]
   public DMW.BottomMargin? BottomMargin
   {
-    get
-    {
-      return _Element?.GetObject<DMW.BottomMargin,DXW.BottomMargin>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.BottomMargin,DXW.BottomMargin>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.TableWidthType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.TableWidthType");
   }
   
   
@@ -87,14 +63,8 @@ public partial class TableCellMarginDefault: ModelElement<DXW.TableCellMarginDef
   [DataMember]
   public DMW.TableCellRightMargin? TableCellRightMargin
   {
-    get
-    {
-      return _Element?.GetObject<DMW.TableCellRightMargin,DXW.TableCellRightMargin>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.TableCellRightMargin,DXW.TableCellRightMargin>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.TableWidthDxaNilType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.TableWidthDxaNilType");
   }
   
   
@@ -104,14 +74,8 @@ public partial class TableCellMarginDefault: ModelElement<DXW.TableCellMarginDef
   [DataMember]
   public DMW.EndMargin? EndMargin
   {
-    get
-    {
-      return _Element?.GetObject<DMW.EndMargin,DXW.EndMargin>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.EndMargin,DXW.EndMargin>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.TableWidthType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.TableWidthType");
   }
   
 }

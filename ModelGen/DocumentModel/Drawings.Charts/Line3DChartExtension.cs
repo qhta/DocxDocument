@@ -19,27 +19,15 @@ public partial class Line3DChartExtension: ModelElement<DXDC.Line3DChartExtensio
   [DataMember]
   public String? Uri
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Uri);
-    }
-    set
-    {
-      _ExistingElement.Uri = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Uri;
+    set => _ExistingElement.Uri = value;
   }
   
   [DataMember]
   public DMDC13.FilteredLineSeriesExtension? FilteredLineSeriesExtension
   {
-    get
-    {
-      return _Element?.GetObject<DMDC13.FilteredLineSeriesExtension,DXO13DC.FilteredLineSeriesExtension>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC13.FilteredLineSeriesExtension,DXO13DC.FilteredLineSeriesExtension>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

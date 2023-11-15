@@ -19,14 +19,8 @@ public partial class PrintSettings: ModelElement<DXDC.PrintSettings>
   [DataMember]
   public DMDC.HeaderFooter? HeaderFooter
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.HeaderFooter,DXDC.HeaderFooter>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.HeaderFooter,DXDC.HeaderFooter>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -36,14 +30,8 @@ public partial class PrintSettings: ModelElement<DXDC.PrintSettings>
   [DataMember]
   public DMDC.PageMargins? PageMargins
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.PageMargins,DXDC.PageMargins>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.PageMargins,DXDC.PageMargins>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -53,14 +41,8 @@ public partial class PrintSettings: ModelElement<DXDC.PrintSettings>
   [DataMember]
   public DMDC.PageSetup? PageSetup
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.PageSetup,DXDC.PageSetup>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.PageSetup,DXDC.PageSetup>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -70,14 +52,8 @@ public partial class PrintSettings: ModelElement<DXDC.PrintSettings>
   [DataMember]
   public DMDC.LegacyDrawingHeaderFooter? LegacyDrawingHeaderFooter
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.LegacyDrawingHeaderFooter,DXDC.LegacyDrawingHeaderFooter>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.LegacyDrawingHeaderFooter,DXDC.LegacyDrawingHeaderFooter>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.RelationshipIdType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.RelationshipIdType");
   }
   
 }

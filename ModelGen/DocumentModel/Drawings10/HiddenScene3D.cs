@@ -19,14 +19,8 @@ public partial class HiddenScene3D: ModelElement<DXO10D.HiddenScene3D>
   [DataMember]
   public DMD.Camera? Camera
   {
-    get
-    {
-      return _Element?.GetObject<DMD.Camera,DXD.Camera>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.Camera,DXD.Camera>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -36,14 +30,8 @@ public partial class HiddenScene3D: ModelElement<DXO10D.HiddenScene3D>
   [DataMember]
   public DMD.LightRig? LightRig
   {
-    get
-    {
-      return _Element?.GetObject<DMD.LightRig,DXD.LightRig>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.LightRig,DXD.LightRig>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -53,14 +41,8 @@ public partial class HiddenScene3D: ModelElement<DXO10D.HiddenScene3D>
   [DataMember]
   public DMD.Backdrop? Backdrop
   {
-    get
-    {
-      return _Element?.GetObject<DMD.Backdrop,DXD.Backdrop>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.Backdrop,DXD.Backdrop>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -70,14 +52,8 @@ public partial class HiddenScene3D: ModelElement<DXO10D.HiddenScene3D>
   [DataMember]
   public DMD.ExtensionList? ExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMD.ExtensionList,DXD.ExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.ExtensionList,DXD.ExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

@@ -19,27 +19,15 @@ public partial class Algorithm: ModelElement<DXDDD.Algorithm>
   [DataMember]
   public UInt32? Revision
   {
-    get
-    {
-      return _Element?.Revision?.Value;
-    }
-    set
-    {
-      _ExistingElement.Revision = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
   }
   
   [DataMember]
   public DMDD.ExtensionList? ExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMDD.ExtensionList,DXDDD.ExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDD.ExtensionList,DXDDD.ExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

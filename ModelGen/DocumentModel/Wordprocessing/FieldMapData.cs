@@ -19,24 +19,8 @@ public partial class FieldMapData: ModelElement<DXW.FieldMapData>
   [DataMember]
   public DMW.MailMergeOdsoFieldKind? MailMergeFieldType
   {
-    get
-    {
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.MailMergeOdsoFieldValues, DMW.MailMergeOdsoFieldKind>(_ExistingElement.GetFirstChild<DXW.MailMergeFieldType>()?.Val?.Value);
-    }
-    set
-    {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.MailMergeFieldType>();
-      if (itemElement != null)
-      {
-        if (value != null)
-          EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.MailMergeOdsoFieldValues, DMW.MailMergeOdsoFieldKind>(itemElement, (DMW.MailMergeOdsoFieldKind)value);
-        else
-          itemElement.Remove();
-      }
-      else
-      if (value != null)
-        _ExistingElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.MailMergeFieldType, DocumentFormat.OpenXml.Wordprocessing.MailMergeOdsoFieldValues, DMW.MailMergeOdsoFieldKind>((DMW.MailMergeOdsoFieldKind)value));
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertyGetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertySetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -46,14 +30,8 @@ public partial class FieldMapData: ModelElement<DXW.FieldMapData>
   [DataMember]
   public DMW.Name? Name
   {
-    get
-    {
-      return _Element?.GetObject<DMW.Name,DXW.Name>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.Name,DXW.Name>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.StringType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.StringType");
   }
   
   
@@ -63,14 +41,8 @@ public partial class FieldMapData: ModelElement<DXW.FieldMapData>
   [DataMember]
   public DMW.MappedName? MappedName
   {
-    get
-    {
-      return _Element?.GetObject<DMW.MappedName,DXW.MappedName>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.MappedName,DXW.MappedName>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.StringType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.StringType");
   }
   
   
@@ -80,14 +52,8 @@ public partial class FieldMapData: ModelElement<DXW.FieldMapData>
   [DataMember]
   public DMW.ColumnIndex? ColumnIndex
   {
-    get
-    {
-      return _Element?.GetObject<DMW.ColumnIndex,DXW.ColumnIndex>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.ColumnIndex,DXW.ColumnIndex>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.UnsignedDecimalNumberType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.UnsignedDecimalNumberType");
   }
   
   
@@ -97,14 +63,8 @@ public partial class FieldMapData: ModelElement<DXW.FieldMapData>
   [DataMember]
   public String? LanguageId
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.GetFirstChild<DXW.LanguageId>()?.Val);
-    }
-    set
-    {
-      StringValueConverter.SetValue<DXW.LanguageId>(_ExistingElement, value);
-    }
+    get => _Element?.GetStringVal<DXW.LanguageId>();
+    set => _ExistingElement.SetStringVal<DXW.LanguageId>(value);
   }
   
   
@@ -114,14 +74,8 @@ public partial class FieldMapData: ModelElement<DXW.FieldMapData>
   [DataMember]
   public DMW.DynamicAddress? DynamicAddress
   {
-    get
-    {
-      return _Element?.GetObject<DMW.DynamicAddress,DXW.DynamicAddress>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.DynamicAddress,DXW.DynamicAddress>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
 }

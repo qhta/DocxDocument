@@ -19,14 +19,8 @@ public partial class FootnoteEndnoteReferenceType: ModelElement<DXW.FootnoteEndn
   [DataMember]
   public Boolean? CustomMarkFollows
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.CustomMarkFollows);
-    }
-    set
-    {
-      _ExistingElement.CustomMarkFollows = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
   
@@ -36,14 +30,8 @@ public partial class FootnoteEndnoteReferenceType: ModelElement<DXW.FootnoteEndn
   [DataMember]
   public Int64? Id
   {
-    get
-    {
-      return _Element?.Id?.Value;
-    }
-    set
-    {
-      _ExistingElement.Id = value;
-    }
+    get => _Element?.Id?.Value;
+    set => _ExistingElement.Id = value;
   }
   
 }

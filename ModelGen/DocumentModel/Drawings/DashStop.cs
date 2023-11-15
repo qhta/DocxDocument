@@ -19,14 +19,8 @@ public partial class DashStop: ModelElement<DXD.DashStop>
   [DataMember]
   public Int32? DashLength
   {
-    get
-    {
-      return _Element?.DashLength?.Value;
-    }
-    set
-    {
-      _ExistingElement.DashLength = value;
-    }
+    get => _Element?.DashLength?.Value;
+    set => _ExistingElement.DashLength = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class DashStop: ModelElement<DXD.DashStop>
   [DataMember]
   public Int32? SpaceLength
   {
-    get
-    {
-      return _Element?.SpaceLength?.Value;
-    }
-    set
-    {
-      _ExistingElement.SpaceLength = value;
-    }
+    get => _Element?.SpaceLength?.Value;
+    set => _ExistingElement.SpaceLength = value;
   }
   
 }

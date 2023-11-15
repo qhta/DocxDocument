@@ -19,27 +19,15 @@ public partial class ConnectorLockingExtension: ModelElement<DXD.ConnectorLockin
   [DataMember]
   public String? Uri
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Uri);
-    }
-    set
-    {
-      _ExistingElement.Uri = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Uri;
+    set => _ExistingElement.Uri = value;
   }
   
   [DataMember]
   public DMD.Graphic? Graphic
   {
-    get
-    {
-      return _Element?.GetObject<DMD.Graphic,DXD.Graphic>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.Graphic,DXD.Graphic>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

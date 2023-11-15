@@ -19,14 +19,8 @@ public partial class ArtisticWatercolorSponge: ModelElement<DXO10D.ArtisticWater
   [DataMember]
   public Int32? Transparancy
   {
-    get
-    {
-      return _Element?.Transparancy?.Value;
-    }
-    set
-    {
-      _ExistingElement.Transparancy = value;
-    }
+    get => _Element?.Transparancy?.Value;
+    set => _ExistingElement.Transparancy = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class ArtisticWatercolorSponge: ModelElement<DXO10D.ArtisticWater
   [DataMember]
   public Int32? BrushSize
   {
-    get
-    {
-      return _Element?.BrushSize?.Value;
-    }
-    set
-    {
-      _ExistingElement.BrushSize = value;
-    }
+    get => _Element?.BrushSize?.Value;
+    set => _ExistingElement.BrushSize = value;
   }
   
 }

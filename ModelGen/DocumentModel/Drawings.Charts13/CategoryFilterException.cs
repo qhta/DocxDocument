@@ -19,14 +19,8 @@ public partial class CategoryFilterException: ModelElement<DXO13DC.CategoryFilte
   [DataMember]
   public DMDC13.SequenceOfReferences? SequenceOfReferences
   {
-    get
-    {
-      return _Element?.GetObject<DMDC13.SequenceOfReferences,DXO13DC.SequenceOfReferences>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC13.SequenceOfReferences,DXO13DC.SequenceOfReferences>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
   }
   
   
@@ -36,14 +30,8 @@ public partial class CategoryFilterException: ModelElement<DXO13DC.CategoryFilte
   [DataMember]
   public DMDC13.ShapeProperties? ShapeProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMDC13.ShapeProperties,DXO13DC.ShapeProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC13.ShapeProperties,DXO13DC.ShapeProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -53,14 +41,8 @@ public partial class CategoryFilterException: ModelElement<DXO13DC.CategoryFilte
   [DataMember]
   public UInt32? Explosion
   {
-    get
-    {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DXO13DC.Explosion>()?.Val);
-    }
-    set
-    {
-      SimpleValueConverter.SetValue<DXO13DC.Explosion,System.UInt32>(_ExistingElement, value);
-    }
+    get => _Element?.GetIntVal<UInt32, DXO13DC.Explosion>();
+    set => _ExistingElement.SetIntVal<UInt32, DXO13DC.Explosion>(value);
   }
   
   
@@ -70,14 +52,8 @@ public partial class CategoryFilterException: ModelElement<DXO13DC.CategoryFilte
   [DataMember]
   public DMDC13.InvertIfNegativeBoolean? InvertIfNegativeBoolean
   {
-    get
-    {
-      return _Element?.GetObject<DMDC13.InvertIfNegativeBoolean,DXO13DC.InvertIfNegativeBoolean>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC13.InvertIfNegativeBoolean,DXO13DC.InvertIfNegativeBoolean>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.Chart.BooleanType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.Chart.BooleanType");
   }
   
   
@@ -87,14 +63,8 @@ public partial class CategoryFilterException: ModelElement<DXO13DC.CategoryFilte
   [DataMember]
   public DMDC13.Bubble3D? Bubble3D
   {
-    get
-    {
-      return _Element?.GetObject<DMDC13.Bubble3D,DXO13DC.Bubble3D>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC13.Bubble3D,DXO13DC.Bubble3D>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.Chart.BooleanType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.Chart.BooleanType");
   }
   
   
@@ -104,14 +74,8 @@ public partial class CategoryFilterException: ModelElement<DXO13DC.CategoryFilte
   [DataMember]
   public DMDC13.Marker? Marker
   {
-    get
-    {
-      return _Element?.GetObject<DMDC13.Marker,DXO13DC.Marker>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC13.Marker,DXO13DC.Marker>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -121,14 +85,8 @@ public partial class CategoryFilterException: ModelElement<DXO13DC.CategoryFilte
   [DataMember]
   public DMDC13.DataLabel? DataLabel
   {
-    get
-    {
-      return _Element?.GetObject<DMDC13.DataLabel,DXO13DC.DataLabel>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC13.DataLabel,DXO13DC.DataLabel>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

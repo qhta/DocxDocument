@@ -46,8 +46,8 @@ public partial class MailMerge :  ModelElement<DXW.MailMerge>
   [DataMember]
   public int? ActiveRecord
   {
-    get => _Element?.GetIntVal<DXW.ActiveRecord>();
-    set => _ExistingElement.SetIntVal<DXW.ActiveRecord>(value);
+    get => _Element?.GetIntVal<Int32, DXW.ActiveRecord>();
+    set => _ExistingElement.SetIntVal<Int32, DXW.ActiveRecord>(value);
   }
 
   /// <summary>
@@ -78,8 +78,8 @@ public partial class MailMerge :  ModelElement<DXW.MailMerge>
   [DataMember]
   public int? CheckErrors
   {
-    get => _Element?.GetIntVal<DXW.CheckErrors>();
-    set => _ExistingElement.SetIntVal<DXW.CheckErrors>(value);
+    get => _Element?.GetIntVal<Int32, DXW.CheckErrors>();
+    set => _ExistingElement.SetIntVal<Int32, DXW.CheckErrors>(value);
   }
 
   /// <summary>

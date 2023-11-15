@@ -19,14 +19,8 @@ public partial class SolidColorFillProperties: ModelElement<DXO10W.SolidColorFil
   [DataMember]
   public DM.HexBinary? RgbColorModelHex
   {
-    get
-    {
-      return _Element?.GetObject<DM.HexBinary,DXO10W.RgbColorModelHex>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DM.HexBinary,DXO10W.RgbColorModelHex>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.Object");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.Object");
   }
   
   
@@ -36,14 +30,8 @@ public partial class SolidColorFillProperties: ModelElement<DXO10W.SolidColorFil
   [DataMember]
   public DMW10.SchemeColorKind? SchemeColor
   {
-    get
-    {
-      throw new NotImplementedException("Not implemented in GenerateEnumPropertyGetCode: propertyType is DocumentFormat.OpenXml.Office2010.Word.SchemeColor");
-    }
-    set
-    {
-      throw new NotImplementedException("Not implemented in GenerateEnumPropertySetCode: propertyType is DocumentFormat.OpenXml.Office2010.Word.SchemeColor");
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertyGetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertySetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

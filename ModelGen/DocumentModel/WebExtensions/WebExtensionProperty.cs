@@ -19,14 +19,8 @@ public partial class WebExtensionProperty: ModelElement<DXO13WE.WebExtensionProp
   [DataMember]
   public String? Name
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Name);
-    }
-    set
-    {
-      _ExistingElement.Name = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Name;
+    set => _ExistingElement.Name = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class WebExtensionProperty: ModelElement<DXO13WE.WebExtensionProp
   [DataMember]
   public String? Value
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Value);
-    }
-    set
-    {
-      _ExistingElement.Value = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Value;
+    set => _ExistingElement.Value = value;
   }
   
 }

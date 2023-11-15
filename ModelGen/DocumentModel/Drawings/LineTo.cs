@@ -19,14 +19,8 @@ public partial class LineTo: ModelElement<DXD.LineTo>
   [DataMember]
   public DMD.Point? Point
   {
-    get
-    {
-      return _Element?.GetObject<DMD.Point,DXD.Point>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.Point,DXD.Point>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.AdjustPoint2DType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.AdjustPoint2DType");
   }
   
 }

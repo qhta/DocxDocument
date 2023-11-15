@@ -19,14 +19,8 @@ public partial class ShapeHandle: ModelElement<DXV.ShapeHandle>
   [DataMember]
   public String? Position
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Position);
-    }
-    set
-    {
-      _ExistingElement.Position = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Position;
+    set => _ExistingElement.Position = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class ShapeHandle: ModelElement<DXV.ShapeHandle>
   [DataMember]
   public String? Polar
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Polar);
-    }
-    set
-    {
-      _ExistingElement.Polar = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Polar;
+    set => _ExistingElement.Polar = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class ShapeHandle: ModelElement<DXV.ShapeHandle>
   [DataMember]
   public String? Map
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Map);
-    }
-    set
-    {
-      _ExistingElement.Map = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Map;
+    set => _ExistingElement.Map = value;
   }
   
   
@@ -70,17 +52,8 @@ public partial class ShapeHandle: ModelElement<DXV.ShapeHandle>
   [DataMember]
   public Boolean? InvertX
   {
-    get
-    {
-      return _Element?.InvertX?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.InvertX = value;
-      else
-        _ExistingElement.InvertX = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseBlankValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseBlankValue");
   }
   
   
@@ -90,17 +63,8 @@ public partial class ShapeHandle: ModelElement<DXV.ShapeHandle>
   [DataMember]
   public Boolean? InvertY
   {
-    get
-    {
-      return _Element?.InvertY?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.InvertY = value;
-      else
-        _ExistingElement.InvertY = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseBlankValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseBlankValue");
   }
   
   
@@ -110,17 +74,8 @@ public partial class ShapeHandle: ModelElement<DXV.ShapeHandle>
   [DataMember]
   public Boolean? Switch
   {
-    get
-    {
-      return _Element?.Switch?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Switch = value;
-      else
-        _ExistingElement.Switch = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseBlankValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseBlankValue");
   }
   
   
@@ -130,14 +85,8 @@ public partial class ShapeHandle: ModelElement<DXV.ShapeHandle>
   [DataMember]
   public String? XRange
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.XRange);
-    }
-    set
-    {
-      _ExistingElement.XRange = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.XRange;
+    set => _ExistingElement.XRange = value;
   }
   
   
@@ -147,14 +96,8 @@ public partial class ShapeHandle: ModelElement<DXV.ShapeHandle>
   [DataMember]
   public String? YRange
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.YRange);
-    }
-    set
-    {
-      _ExistingElement.YRange = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.YRange;
+    set => _ExistingElement.YRange = value;
   }
   
   
@@ -164,14 +107,8 @@ public partial class ShapeHandle: ModelElement<DXV.ShapeHandle>
   [DataMember]
   public String? RadiusRange
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.RadiusRange);
-    }
-    set
-    {
-      _ExistingElement.RadiusRange = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.RadiusRange;
+    set => _ExistingElement.RadiusRange = value;
   }
   
 }

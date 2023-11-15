@@ -19,14 +19,8 @@ public partial class RevisionView: ModelElement<DXW.RevisionView>
   [DataMember]
   public Boolean? Markup
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.Markup);
-    }
-    set
-    {
-      _ExistingElement.Markup = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
   
@@ -36,14 +30,8 @@ public partial class RevisionView: ModelElement<DXW.RevisionView>
   [DataMember]
   public Boolean? Comments
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.Comments);
-    }
-    set
-    {
-      _ExistingElement.Comments = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
   
@@ -53,14 +41,8 @@ public partial class RevisionView: ModelElement<DXW.RevisionView>
   [DataMember]
   public Boolean? DisplayRevision
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.DisplayRevision);
-    }
-    set
-    {
-      _ExistingElement.DisplayRevision = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
   
@@ -70,14 +52,8 @@ public partial class RevisionView: ModelElement<DXW.RevisionView>
   [DataMember]
   public Boolean? Formatting
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.Formatting);
-    }
-    set
-    {
-      _ExistingElement.Formatting = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
   
@@ -87,14 +63,8 @@ public partial class RevisionView: ModelElement<DXW.RevisionView>
   [DataMember]
   public Boolean? InkAnnotations
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.InkAnnotations);
-    }
-    set
-    {
-      _ExistingElement.InkAnnotations = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
 }

@@ -19,14 +19,8 @@ public partial class DataStoreItem: ModelElement<DXCXDP.DataStoreItem>
   [DataMember]
   public String? ItemId
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.ItemId);
-    }
-    set
-    {
-      _ExistingElement.ItemId = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.ItemId;
+    set => _ExistingElement.ItemId = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class DataStoreItem: ModelElement<DXCXDP.DataStoreItem>
   [DataMember]
   public DMCX.SchemaReferences? SchemaReferences
   {
-    get
-    {
-      return _Element?.GetObject<DMCX.SchemaReferences,DXCXDP.SchemaReferences>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMCX.SchemaReferences,DXCXDP.SchemaReferences>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

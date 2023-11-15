@@ -19,14 +19,8 @@ public partial class Drawing: ModelElement<DXW.Drawing>
   [DataMember]
   public DMDW.Anchor? Anchor
   {
-    get
-    {
-      return _Element?.GetObject<DMDW.Anchor,DXDW.Anchor>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDW.Anchor,DXDW.Anchor>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -36,14 +30,8 @@ public partial class Drawing: ModelElement<DXW.Drawing>
   [DataMember]
   public DMDW.Inline? Inline
   {
-    get
-    {
-      return _Element?.GetObject<DMDW.Inline,DXDW.Inline>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDW.Inline,DXDW.Inline>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

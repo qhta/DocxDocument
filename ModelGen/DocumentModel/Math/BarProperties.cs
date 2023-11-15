@@ -19,14 +19,8 @@ public partial class BarProperties: ModelElement<DXM.BarProperties>
   [DataMember]
   public DMM.Position? Position
   {
-    get
-    {
-      return _Element?.GetObject<DMM.Position,DXM.Position>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.Position,DXM.Position>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.TopBottomType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.TopBottomType");
   }
   
   
@@ -36,14 +30,8 @@ public partial class BarProperties: ModelElement<DXM.BarProperties>
   [DataMember]
   public DMM.ControlProperties? ControlProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMM.ControlProperties,DXM.ControlProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.ControlProperties,DXM.ControlProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

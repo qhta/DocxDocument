@@ -19,14 +19,8 @@ public partial class NumberDataSourceType: ModelElement<DXDC.NumberDataSourceTyp
   [DataMember]
   public DMDC.NumberReference? NumberReference
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.NumberReference,DXDC.NumberReference>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.NumberReference,DXDC.NumberReference>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -36,14 +30,8 @@ public partial class NumberDataSourceType: ModelElement<DXDC.NumberDataSourceTyp
   [DataMember]
   public DMDC.NumberLiteral? NumberLiteral
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.NumberLiteral,DXDC.NumberLiteral>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.NumberLiteral,DXDC.NumberLiteral>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.NumberDataType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.NumberDataType");
   }
   
 }

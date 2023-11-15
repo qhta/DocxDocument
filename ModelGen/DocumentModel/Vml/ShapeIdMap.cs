@@ -19,14 +19,8 @@ public partial class ShapeIdMap: ModelElement<DXVO.ShapeIdMap>
   [DataMember]
   public String? Data
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Data);
-    }
-    set
-    {
-      _ExistingElement.Data = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Data;
+    set => _ExistingElement.Data = value;
   }
   
 }

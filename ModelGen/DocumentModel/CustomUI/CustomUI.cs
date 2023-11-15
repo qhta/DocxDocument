@@ -19,14 +19,8 @@ public partial class CustomUI: ModelElement<DXOCUI.CustomUI>
   [DataMember]
   public String? OnLoad
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.OnLoad);
-    }
-    set
-    {
-      _ExistingElement.OnLoad = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.OnLoad;
+    set => _ExistingElement.OnLoad = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class CustomUI: ModelElement<DXOCUI.CustomUI>
   [DataMember]
   public String? LoadImage
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.LoadImage);
-    }
-    set
-    {
-      _ExistingElement.LoadImage = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.LoadImage;
+    set => _ExistingElement.LoadImage = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class CustomUI: ModelElement<DXOCUI.CustomUI>
   [DataMember]
   public DMCUI.RepurposedCommands? RepurposedCommands
   {
-    get
-    {
-      return _Element?.GetObject<DMCUI.RepurposedCommands,DXOCUI.RepurposedCommands>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMCUI.RepurposedCommands,DXOCUI.RepurposedCommands>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -70,14 +52,8 @@ public partial class CustomUI: ModelElement<DXOCUI.CustomUI>
   [DataMember]
   public DMCUI.Ribbon? Ribbon
   {
-    get
-    {
-      return _Element?.GetObject<DMCUI.Ribbon,DXOCUI.Ribbon>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMCUI.Ribbon,DXOCUI.Ribbon>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

@@ -19,14 +19,8 @@ public partial class DataLabelHidden: ModelElement<DXO16DCD.DataLabelHidden>
   [DataMember]
   public UInt32? Idx
   {
-    get
-    {
-      return _Element?.Idx?.Value;
-    }
-    set
-    {
-      _ExistingElement.Idx = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
   }
   
 }

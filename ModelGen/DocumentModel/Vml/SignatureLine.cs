@@ -19,17 +19,8 @@ public partial class SignatureLine: ModelElement<DXVO.SignatureLine>
   [DataMember]
   public Boolean? IsSignatureLine
   {
-    get
-    {
-      return _Element?.IsSignatureLine?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.IsSignatureLine = value;
-      else
-        _ExistingElement.IsSignatureLine = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -39,14 +30,8 @@ public partial class SignatureLine: ModelElement<DXVO.SignatureLine>
   [DataMember]
   public String? Id
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Id);
-    }
-    set
-    {
-      _ExistingElement.Id = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Id;
+    set => _ExistingElement.Id = value;
   }
   
   
@@ -56,14 +41,8 @@ public partial class SignatureLine: ModelElement<DXVO.SignatureLine>
   [DataMember]
   public String? ProviderId
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.ProviderId);
-    }
-    set
-    {
-      _ExistingElement.ProviderId = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.ProviderId;
+    set => _ExistingElement.ProviderId = value;
   }
   
   
@@ -73,17 +52,8 @@ public partial class SignatureLine: ModelElement<DXVO.SignatureLine>
   [DataMember]
   public Boolean? SigningInstructionsSet
   {
-    get
-    {
-      return _Element?.SigningInstructionsSet?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.SigningInstructionsSet = value;
-      else
-        _ExistingElement.SigningInstructionsSet = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -93,17 +63,8 @@ public partial class SignatureLine: ModelElement<DXVO.SignatureLine>
   [DataMember]
   public Boolean? AllowComments
   {
-    get
-    {
-      return _Element?.AllowComments?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.AllowComments = value;
-      else
-        _ExistingElement.AllowComments = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -113,17 +74,8 @@ public partial class SignatureLine: ModelElement<DXVO.SignatureLine>
   [DataMember]
   public Boolean? ShowSignDate
   {
-    get
-    {
-      return _Element?.ShowSignDate?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.ShowSignDate = value;
-      else
-        _ExistingElement.ShowSignDate = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -133,14 +85,8 @@ public partial class SignatureLine: ModelElement<DXVO.SignatureLine>
   [DataMember]
   public String? SuggestedSigner
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.SuggestedSigner);
-    }
-    set
-    {
-      _ExistingElement.SuggestedSigner = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.SuggestedSigner;
+    set => _ExistingElement.SuggestedSigner = value;
   }
   
   
@@ -150,14 +96,8 @@ public partial class SignatureLine: ModelElement<DXVO.SignatureLine>
   [DataMember]
   public String? SuggestedSigner2
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.SuggestedSigner2);
-    }
-    set
-    {
-      _ExistingElement.SuggestedSigner2 = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.SuggestedSigner2;
+    set => _ExistingElement.SuggestedSigner2 = value;
   }
   
   
@@ -167,14 +107,8 @@ public partial class SignatureLine: ModelElement<DXVO.SignatureLine>
   [DataMember]
   public String? SuggestedSignerEmail
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.SuggestedSignerEmail);
-    }
-    set
-    {
-      _ExistingElement.SuggestedSignerEmail = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.SuggestedSignerEmail;
+    set => _ExistingElement.SuggestedSignerEmail = value;
   }
   
   
@@ -184,14 +118,8 @@ public partial class SignatureLine: ModelElement<DXVO.SignatureLine>
   [DataMember]
   public String? SigningInstructions
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.SigningInstructions);
-    }
-    set
-    {
-      _ExistingElement.SigningInstructions = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.SigningInstructions;
+    set => _ExistingElement.SigningInstructions = value;
   }
   
   
@@ -201,14 +129,8 @@ public partial class SignatureLine: ModelElement<DXVO.SignatureLine>
   [DataMember]
   public String? AdditionalXml
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.AdditionalXml);
-    }
-    set
-    {
-      _ExistingElement.AdditionalXml = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.AdditionalXml;
+    set => _ExistingElement.AdditionalXml = value;
   }
   
   
@@ -218,14 +140,8 @@ public partial class SignatureLine: ModelElement<DXVO.SignatureLine>
   [DataMember]
   public String? SignatureProviderUrl
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.SignatureProviderUrl);
-    }
-    set
-    {
-      _ExistingElement.SignatureProviderUrl = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.SignatureProviderUrl;
+    set => _ExistingElement.SignatureProviderUrl = value;
   }
   
 }

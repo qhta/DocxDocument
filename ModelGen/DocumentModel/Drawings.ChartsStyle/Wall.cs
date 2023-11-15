@@ -15,118 +15,64 @@ public partial class Wall: ModelElement<DXO13DCS.Wall>
   [DataMember]
   public DMDCS.LineReference? LineReference
   {
-    get
-    {
-      return _Element?.GetObject<DMDCS.LineReference,DXO13DCS.LineReference>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCS.LineReference,DXO13DCS.LineReference>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleReference");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleReference");
   }
   
   [DataMember]
   public DMDCS.LineWidthScale? LineWidthScale
   {
-    get
-    {
-      return _Element?.GetObject<DMDCS.LineWidthScale,DXO13DCS.LineWidthScale>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCS.LineWidthScale,DXO13DCS.LineWidthScale>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
   }
   
   [DataMember]
   public DMDCS.FillReference? FillReference
   {
-    get
-    {
-      return _Element?.GetObject<DMDCS.FillReference,DXO13DCS.FillReference>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCS.FillReference,DXO13DCS.FillReference>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleReference");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleReference");
   }
   
   [DataMember]
   public DMDCS.EffectReference? EffectReference
   {
-    get
-    {
-      return _Element?.GetObject<DMDCS.EffectReference,DXO13DCS.EffectReference>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCS.EffectReference,DXO13DCS.EffectReference>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleReference");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleReference");
   }
   
   [DataMember]
   public DMDCS.FontReference? FontReference
   {
-    get
-    {
-      return _Element?.GetObject<DMDCS.FontReference,DXO13DCS.FontReference>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCS.FontReference,DXO13DCS.FontReference>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMDCS.ShapeProperties? ShapeProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMDCS.ShapeProperties,DXO13DCS.ShapeProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCS.ShapeProperties,DXO13DCS.ShapeProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMDCS.TextCharacterPropertiesType? TextCharacterPropertiesType
   {
-    get
-    {
-      return _Element?.GetObject<DMDCS.TextCharacterPropertiesType,DXO13DCS.TextCharacterPropertiesType>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCS.TextCharacterPropertiesType,DXO13DCS.TextCharacterPropertiesType>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMDCS.TextBodyProperties? TextBodyProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMDCS.TextBodyProperties,DXO13DCS.TextBodyProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCS.TextBodyProperties,DXO13DCS.TextBodyProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMDCS.OfficeArtExtensionList? OfficeArtExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMDCS.OfficeArtExtensionList,DXO13DCS.OfficeArtExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCS.OfficeArtExtensionList,DXO13DCS.OfficeArtExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

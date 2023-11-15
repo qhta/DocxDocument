@@ -19,14 +19,8 @@ public partial class TaskPriorityEventInfo: ModelElement<DXO21DT.TaskPriorityEve
   [DataMember]
   public Int32? Value
   {
-    get
-    {
-      return _Element?.Value?.Value;
-    }
-    set
-    {
-      _ExistingElement.Value = value;
-    }
+    get => _Element?.Value?.Value;
+    set => _ExistingElement.Value = value;
   }
   
 }

@@ -19,14 +19,8 @@ public partial class StringPoint: ModelElement<DXDC.StringPoint>
   [DataMember]
   public UInt32? Index
   {
-    get
-    {
-      return _Element?.Index?.Value;
-    }
-    set
-    {
-      _ExistingElement.Index = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
   }
   
   
@@ -36,14 +30,8 @@ public partial class StringPoint: ModelElement<DXDC.StringPoint>
   [DataMember]
   public DM.NumericValue? NumericValue
   {
-    get
-    {
-      return NumericValueConverter.GetValue(_Element?.NumericValue);
-    }
-    set
-    {
-      _ExistingElement.NumericValue = NumericValueConverter.CreateOpenXmlElement<DXDC.NumericValue>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
 }

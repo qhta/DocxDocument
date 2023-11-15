@@ -19,14 +19,8 @@ public partial class Level: ModelElement<DXW.Level>
   [DataMember]
   public Int32? LevelIndex
   {
-    get
-    {
-      return _Element?.LevelIndex?.Value;
-    }
-    set
-    {
-      _ExistingElement.LevelIndex = value;
-    }
+    get => _Element?.LevelIndex?.Value;
+    set => _ExistingElement.LevelIndex = value;
   }
   
   
@@ -36,19 +30,8 @@ public partial class Level: ModelElement<DXW.Level>
   [DataMember]
   public DM.HexBinary? TemplateCode
   {
-    get
-    {
-      if (_Element?.TemplateCode?.Value != null)
-        return HexIntConverter.GetValue(_Element?.TemplateCode.Value);
-      return null;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.TemplateCode = value.ToString();
-      else
-        _ExistingElement.TemplateCode = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -58,14 +41,8 @@ public partial class Level: ModelElement<DXW.Level>
   [DataMember]
   public Boolean? Tentative
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.Tentative);
-    }
-    set
-    {
-      _ExistingElement.Tentative = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
   
@@ -75,14 +52,8 @@ public partial class Level: ModelElement<DXW.Level>
   [DataMember]
   public DMW.StartNumberingValue? StartNumberingValue
   {
-    get
-    {
-      return _Element?.GetObject<DMW.StartNumberingValue,DXW.StartNumberingValue>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.StartNumberingValue,DXW.StartNumberingValue>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.NonNegativeDecimalNumberType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.NonNegativeDecimalNumberType");
   }
   
   
@@ -92,14 +63,8 @@ public partial class Level: ModelElement<DXW.Level>
   [DataMember]
   public DMW.NumberingFormat? NumberingFormat
   {
-    get
-    {
-      return _Element?.GetObject<DMW.NumberingFormat,DXW.NumberingFormat>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.NumberingFormat,DXW.NumberingFormat>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -109,14 +74,8 @@ public partial class Level: ModelElement<DXW.Level>
   [DataMember]
   public DMW.LevelRestart? LevelRestart
   {
-    get
-    {
-      return _Element?.GetObject<DMW.LevelRestart,DXW.LevelRestart>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.LevelRestart,DXW.LevelRestart>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.DecimalNumberType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.DecimalNumberType");
   }
   
   
@@ -126,14 +85,8 @@ public partial class Level: ModelElement<DXW.Level>
   [DataMember]
   public DMW.ParagraphStyleIdInLevel? ParagraphStyleIdInLevel
   {
-    get
-    {
-      return _Element?.GetObject<DMW.ParagraphStyleIdInLevel,DXW.ParagraphStyleIdInLevel>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.ParagraphStyleIdInLevel,DXW.ParagraphStyleIdInLevel>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.String253Type");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.String253Type");
   }
   
   
@@ -143,14 +96,8 @@ public partial class Level: ModelElement<DXW.Level>
   [DataMember]
   public DMW.IsLegalNumberingStyle? IsLegalNumberingStyle
   {
-    get
-    {
-      return _Element?.GetObject<DMW.IsLegalNumberingStyle,DXW.IsLegalNumberingStyle>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.IsLegalNumberingStyle,DXW.IsLegalNumberingStyle>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -160,24 +107,8 @@ public partial class Level: ModelElement<DXW.Level>
   [DataMember]
   public DMW.LevelSuffixKind? LevelSuffix
   {
-    get
-    {
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.LevelSuffixValues, DMW.LevelSuffixKind>(_ExistingElement.GetFirstChild<DXW.LevelSuffix>()?.Val?.Value);
-    }
-    set
-    {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.LevelSuffix>();
-      if (itemElement != null)
-      {
-        if (value != null)
-          EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.LevelSuffixValues, DMW.LevelSuffixKind>(itemElement, (DMW.LevelSuffixKind)value);
-        else
-          itemElement.Remove();
-      }
-      else
-      if (value != null)
-        _ExistingElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.LevelSuffix, DocumentFormat.OpenXml.Wordprocessing.LevelSuffixValues, DMW.LevelSuffixKind>((DMW.LevelSuffixKind)value));
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertyGetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertySetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -187,14 +118,8 @@ public partial class Level: ModelElement<DXW.Level>
   [DataMember]
   public DMW.LevelText? LevelText
   {
-    get
-    {
-      return _Element?.GetObject<DMW.LevelText,DXW.LevelText>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.LevelText,DXW.LevelText>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -204,14 +129,8 @@ public partial class Level: ModelElement<DXW.Level>
   [DataMember]
   public DMW.LevelPictureBulletId? LevelPictureBulletId
   {
-    get
-    {
-      return _Element?.GetObject<DMW.LevelPictureBulletId,DXW.LevelPictureBulletId>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.LevelPictureBulletId,DXW.LevelPictureBulletId>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.DecimalNumberType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.DecimalNumberType");
   }
   
   
@@ -221,14 +140,8 @@ public partial class Level: ModelElement<DXW.Level>
   [DataMember]
   public DMW.LegacyNumbering? LegacyNumbering
   {
-    get
-    {
-      return _Element?.GetObject<DMW.LegacyNumbering,DXW.LegacyNumbering>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.LegacyNumbering,DXW.LegacyNumbering>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -238,24 +151,8 @@ public partial class Level: ModelElement<DXW.Level>
   [DataMember]
   public DMW.LevelJustificationKind? LevelJustification
   {
-    get
-    {
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.LevelJustificationValues, DMW.LevelJustificationKind>(_ExistingElement.GetFirstChild<DXW.LevelJustification>()?.Val?.Value);
-    }
-    set
-    {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.LevelJustification>();
-      if (itemElement != null)
-      {
-        if (value != null)
-          EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.LevelJustificationValues, DMW.LevelJustificationKind>(itemElement, (DMW.LevelJustificationKind)value);
-        else
-          itemElement.Remove();
-      }
-      else
-      if (value != null)
-        _ExistingElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.LevelJustification, DocumentFormat.OpenXml.Wordprocessing.LevelJustificationValues, DMW.LevelJustificationKind>((DMW.LevelJustificationKind)value));
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertyGetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertySetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -265,14 +162,8 @@ public partial class Level: ModelElement<DXW.Level>
   [DataMember]
   public DMW.PreviousParagraphProperties? PreviousParagraphProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMW.PreviousParagraphProperties,DXW.PreviousParagraphProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.PreviousParagraphProperties,DXW.PreviousParagraphProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -282,14 +173,8 @@ public partial class Level: ModelElement<DXW.Level>
   [DataMember]
   public DMW.NumberingSymbolRunProperties? NumberingSymbolRunProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMW.NumberingSymbolRunProperties,DXW.NumberingSymbolRunProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.NumberingSymbolRunProperties,DXW.NumberingSymbolRunProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

@@ -19,14 +19,8 @@ public partial class AxisUnits: ModelElement<DXO16DCD.AxisUnits>
   [DataMember]
   public DMDCD16.AxisUnitsLabel? AxisUnitsLabel
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.AxisUnitsLabel,DXO16DCD.AxisUnitsLabel>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.AxisUnitsLabel,DXO16DCD.AxisUnitsLabel>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -36,14 +30,8 @@ public partial class AxisUnits: ModelElement<DXO16DCD.AxisUnits>
   [DataMember]
   public DMDCD16.ExtensionList? ExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.ExtensionList,DXO16DCD.ExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.ExtensionList,DXO16DCD.ExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

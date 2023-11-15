@@ -19,14 +19,8 @@ public partial class ImageLayer: ModelElement<DXO10D.ImageLayer>
   [DataMember]
   public String? Embed
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Embed);
-    }
-    set
-    {
-      _ExistingElement.Embed = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Embed;
+    set => _ExistingElement.Embed = value;
   }
   
 }

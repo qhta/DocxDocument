@@ -19,14 +19,8 @@ public partial class EquationArray: ModelElement<DXM.EquationArray>
   [DataMember]
   public DMM.EquationArrayProperties? EquationArrayProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMM.EquationArrayProperties,DXM.EquationArrayProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.EquationArrayProperties,DXM.EquationArrayProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

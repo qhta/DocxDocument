@@ -19,14 +19,8 @@ public partial class Zoom: ModelElement<DXW.Zoom>
   [DataMember]
   public String? Percent
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Percent);
-    }
-    set
-    {
-      _ExistingElement.Percent = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Percent;
+    set => _ExistingElement.Percent = value;
   }
   
 }

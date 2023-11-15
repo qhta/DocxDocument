@@ -19,14 +19,8 @@ public partial class ParagraphBorders: ModelElement<DXW.ParagraphBorders>
   [DataMember]
   public DMW.TopBorder? TopBorder
   {
-    get
-    {
-      return _Element?.GetObject<DMW.TopBorder,DXW.TopBorder>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.TopBorder,DXW.TopBorder>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.BorderType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.BorderType");
   }
   
   
@@ -36,14 +30,8 @@ public partial class ParagraphBorders: ModelElement<DXW.ParagraphBorders>
   [DataMember]
   public DMW.LeftBorder? LeftBorder
   {
-    get
-    {
-      return _Element?.GetObject<DMW.LeftBorder,DXW.LeftBorder>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.LeftBorder,DXW.LeftBorder>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.BorderType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.BorderType");
   }
   
   
@@ -53,14 +41,8 @@ public partial class ParagraphBorders: ModelElement<DXW.ParagraphBorders>
   [DataMember]
   public DMW.BottomBorder? BottomBorder
   {
-    get
-    {
-      return _Element?.GetObject<DMW.BottomBorder,DXW.BottomBorder>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.BottomBorder,DXW.BottomBorder>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.BorderType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.BorderType");
   }
   
   
@@ -70,14 +52,8 @@ public partial class ParagraphBorders: ModelElement<DXW.ParagraphBorders>
   [DataMember]
   public DMW.RightBorder? RightBorder
   {
-    get
-    {
-      return _Element?.GetObject<DMW.RightBorder,DXW.RightBorder>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.RightBorder,DXW.RightBorder>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.BorderType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.BorderType");
   }
   
   
@@ -87,14 +63,8 @@ public partial class ParagraphBorders: ModelElement<DXW.ParagraphBorders>
   [DataMember]
   public DMW.BetweenBorder? BetweenBorder
   {
-    get
-    {
-      return _Element?.GetObject<DMW.BetweenBorder,DXW.BetweenBorder>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.BetweenBorder,DXW.BetweenBorder>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.BorderType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.BorderType");
   }
   
   
@@ -104,14 +74,8 @@ public partial class ParagraphBorders: ModelElement<DXW.ParagraphBorders>
   [DataMember]
   public DMW.BarBorder? BarBorder
   {
-    get
-    {
-      return _Element?.GetObject<DMW.BarBorder,DXW.BarBorder>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.BarBorder,DXW.BarBorder>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.BorderType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.BorderType");
   }
   
 }

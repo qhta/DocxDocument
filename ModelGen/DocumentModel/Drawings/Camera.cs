@@ -19,14 +19,8 @@ public partial class Camera: ModelElement<DXD.Camera>
   [DataMember]
   public Int32? FieldOfView
   {
-    get
-    {
-      return _Element?.FieldOfView?.Value;
-    }
-    set
-    {
-      _ExistingElement.FieldOfView = value;
-    }
+    get => _Element?.FieldOfView?.Value;
+    set => _ExistingElement.FieldOfView = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class Camera: ModelElement<DXD.Camera>
   [DataMember]
   public Int32? Zoom
   {
-    get
-    {
-      return _Element?.Zoom?.Value;
-    }
-    set
-    {
-      _ExistingElement.Zoom = value;
-    }
+    get => _Element?.Zoom?.Value;
+    set => _ExistingElement.Zoom = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class Camera: ModelElement<DXD.Camera>
   [DataMember]
   public DMD.Rotation? Rotation
   {
-    get
-    {
-      return _Element?.GetObject<DMD.Rotation,DXD.Rotation>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.Rotation,DXD.Rotation>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
 }

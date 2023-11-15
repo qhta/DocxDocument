@@ -19,14 +19,8 @@ public partial class GroupShapeNonVisualProperties: ModelElement<DXOD.GroupShape
   [DataMember]
   public DMDO.NonVisualDrawingProperties? NonVisualDrawingProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMDO.NonVisualDrawingProperties,DXOD.NonVisualDrawingProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDO.NonVisualDrawingProperties,DXOD.NonVisualDrawingProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -36,14 +30,8 @@ public partial class GroupShapeNonVisualProperties: ModelElement<DXOD.GroupShape
   [DataMember]
   public DMDO.NonVisualGroupDrawingShapeProperties? NonVisualGroupDrawingShapeProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMDO.NonVisualGroupDrawingShapeProperties,DXOD.NonVisualGroupDrawingShapeProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDO.NonVisualGroupDrawingShapeProperties,DXOD.NonVisualGroupDrawingShapeProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

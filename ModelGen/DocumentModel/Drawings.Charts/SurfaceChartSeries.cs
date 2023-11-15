@@ -19,14 +19,8 @@ public partial class SurfaceChartSeries: ModelElement<DXDC.SurfaceChartSeries>
   [DataMember]
   public DMDC.Index? Index
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.Index,DXDC.Index>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.Index,DXDC.Index>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.UnsignedIntegerType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.UnsignedIntegerType");
   }
   
   
@@ -36,14 +30,8 @@ public partial class SurfaceChartSeries: ModelElement<DXDC.SurfaceChartSeries>
   [DataMember]
   public DMDC.Order? Order
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.Order,DXDC.Order>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.Order,DXDC.Order>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.UnsignedIntegerType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.UnsignedIntegerType");
   }
   
   
@@ -53,14 +41,8 @@ public partial class SurfaceChartSeries: ModelElement<DXDC.SurfaceChartSeries>
   [DataMember]
   public DMDC.SeriesText? SeriesText
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.SeriesText,DXDC.SeriesText>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.SeriesText,DXDC.SeriesText>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -70,14 +52,8 @@ public partial class SurfaceChartSeries: ModelElement<DXDC.SurfaceChartSeries>
   [DataMember]
   public DMDC.ChartShapeProperties? ChartShapeProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.ChartShapeProperties,DXDC.ChartShapeProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.ChartShapeProperties,DXDC.ChartShapeProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -87,14 +63,8 @@ public partial class SurfaceChartSeries: ModelElement<DXDC.SurfaceChartSeries>
   [DataMember]
   public DMDC.PictureOptions? PictureOptions
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.PictureOptions,DXDC.PictureOptions>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.PictureOptions,DXDC.PictureOptions>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -104,14 +74,8 @@ public partial class SurfaceChartSeries: ModelElement<DXDC.SurfaceChartSeries>
   [DataMember]
   public DMDC.CategoryAxisData? CategoryAxisData
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.CategoryAxisData,DXDC.CategoryAxisData>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.CategoryAxisData,DXDC.CategoryAxisData>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.AxisDataSourceType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.AxisDataSourceType");
   }
   
   
@@ -121,14 +85,8 @@ public partial class SurfaceChartSeries: ModelElement<DXDC.SurfaceChartSeries>
   [DataMember]
   public DMDC.Values? Values
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.Values,DXDC.Values>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.Values,DXDC.Values>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.NumberDataSourceType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.NumberDataSourceType");
   }
   
   
@@ -138,14 +96,8 @@ public partial class SurfaceChartSeries: ModelElement<DXDC.SurfaceChartSeries>
   [DataMember]
   public DMDC.Bubble3D? Bubble3D
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.Bubble3D,DXDC.Bubble3D>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.Bubble3D,DXDC.Bubble3D>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.BooleanType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.BooleanType");
   }
   
   
@@ -155,14 +107,8 @@ public partial class SurfaceChartSeries: ModelElement<DXDC.SurfaceChartSeries>
   [DataMember]
   public DMDC.SurfaceSerExtensionList? SurfaceSerExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.SurfaceSerExtensionList,DXDC.SurfaceSerExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.SurfaceSerExtensionList,DXDC.SurfaceSerExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

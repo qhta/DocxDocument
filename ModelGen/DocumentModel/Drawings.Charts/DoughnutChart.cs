@@ -19,66 +19,36 @@ public partial class DoughnutChart: ModelElement<DXDC.DoughnutChart>
   [DataMember]
   public DMDC.VaryColors? VaryColors
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.VaryColors,DXDC.VaryColors>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.VaryColors,DXDC.VaryColors>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.BooleanType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.BooleanType");
   }
   
   [DataMember]
   public DMDC.DataLabels? DataLabels
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.DataLabels,DXDC.DataLabels>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.DataLabels,DXDC.DataLabels>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public UInt16? FirstSliceAngle
   {
-    get
-    {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DXDC.FirstSliceAngle>()?.Val);
-    }
-    set
-    {
-      SimpleValueConverter.SetValue<DXDC.FirstSliceAngle,System.UInt16>(_ExistingElement, value);
-    }
+    get => _Element?.GetIntVal<UInt16, DXDC.FirstSliceAngle>();
+    set => _ExistingElement.SetIntVal<UInt16, DXDC.FirstSliceAngle>(value);
   }
   
   [DataMember]
   public Byte? HoleSize
   {
-    get
-    {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DXDC.HoleSize>()?.Val);
-    }
-    set
-    {
-      SimpleValueConverter.SetValue<DXDC.HoleSize,System.Byte>(_ExistingElement, value);
-    }
+    get => _Element?.GetIntVal<Byte, DXDC.HoleSize>();
+    set => _ExistingElement.SetIntVal<Byte, DXDC.HoleSize>(value);
   }
   
   [DataMember]
   public DMDC.ExtensionList? ExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.ExtensionList,DXDC.ExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.ExtensionList,DXDC.ExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

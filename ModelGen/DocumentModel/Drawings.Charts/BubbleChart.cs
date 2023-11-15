@@ -19,102 +19,50 @@ public partial class BubbleChart: ModelElement<DXDC.BubbleChart>
   [DataMember]
   public DMDC.VaryColors? VaryColors
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.VaryColors,DXDC.VaryColors>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.VaryColors,DXDC.VaryColors>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.BooleanType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.BooleanType");
   }
   
   [DataMember]
   public DMDC.DataLabels? DataLabels
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.DataLabels,DXDC.DataLabels>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.DataLabels,DXDC.DataLabels>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMDC.Bubble3D? Bubble3D
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.Bubble3D,DXDC.Bubble3D>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.Bubble3D,DXDC.Bubble3D>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.BooleanType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.BooleanType");
   }
   
   [DataMember]
   public UInt32? BubbleScale
   {
-    get
-    {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DXDC.BubbleScale>()?.Val);
-    }
-    set
-    {
-      SimpleValueConverter.SetValue<DXDC.BubbleScale,System.UInt32>(_ExistingElement, value);
-    }
+    get => _Element?.GetIntVal<UInt32, DXDC.BubbleScale>();
+    set => _ExistingElement.SetIntVal<UInt32, DXDC.BubbleScale>(value);
   }
   
   [DataMember]
   public DMDC.ShowNegativeBubbles? ShowNegativeBubbles
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.ShowNegativeBubbles,DXDC.ShowNegativeBubbles>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.ShowNegativeBubbles,DXDC.ShowNegativeBubbles>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.BooleanType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.BooleanType");
   }
   
   [DataMember]
   public DMDC.SizeRepresentsKind? SizeRepresents
   {
-    get
-    {
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.SizeRepresentsValues, DMDC.SizeRepresentsKind>(_ExistingElement.GetFirstChild<DXDC.SizeRepresents>()?.Val?.Value);
-    }
-    set
-    {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.SizeRepresents>();
-      if (itemElement != null)
-      {
-        if (value != null)
-          EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.SizeRepresentsValues, DMDC.SizeRepresentsKind>(itemElement, (DMDC.SizeRepresentsKind)value);
-        else
-          itemElement.Remove();
-      }
-      else
-      if (value != null)
-        _ExistingElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDC.SizeRepresents, DocumentFormat.OpenXml.Drawing.Charts.SizeRepresentsValues, DMDC.SizeRepresentsKind>((DMDC.SizeRepresentsKind)value));
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertyGetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertySetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   [DataMember]
   public DMDC.BubbleChartExtensionList? BubbleChartExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.BubbleChartExtensionList,DXDC.BubbleChartExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.BubbleChartExtensionList,DXDC.BubbleChartExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

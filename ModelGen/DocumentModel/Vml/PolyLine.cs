@@ -19,14 +19,8 @@ public partial class PolyLine: ModelElement<DXV.PolyLine>
   [DataMember]
   public String? Id
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Id);
-    }
-    set
-    {
-      _ExistingElement.Id = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Id;
+    set => _ExistingElement.Id = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class PolyLine: ModelElement<DXV.PolyLine>
   [DataMember]
   public String? Style
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Style);
-    }
-    set
-    {
-      _ExistingElement.Style = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Style;
+    set => _ExistingElement.Style = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class PolyLine: ModelElement<DXV.PolyLine>
   [DataMember]
   public String? Href
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Href);
-    }
-    set
-    {
-      _ExistingElement.Href = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Href;
+    set => _ExistingElement.Href = value;
   }
   
   
@@ -70,14 +52,8 @@ public partial class PolyLine: ModelElement<DXV.PolyLine>
   [DataMember]
   public String? Target
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Target);
-    }
-    set
-    {
-      _ExistingElement.Target = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Target;
+    set => _ExistingElement.Target = value;
   }
   
   
@@ -87,14 +63,8 @@ public partial class PolyLine: ModelElement<DXV.PolyLine>
   [DataMember]
   public String? Class
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Class);
-    }
-    set
-    {
-      _ExistingElement.Class = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Class;
+    set => _ExistingElement.Class = value;
   }
   
   
@@ -104,14 +74,8 @@ public partial class PolyLine: ModelElement<DXV.PolyLine>
   [DataMember]
   public String? Title
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Title);
-    }
-    set
-    {
-      _ExistingElement.Title = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Title;
+    set => _ExistingElement.Title = value;
   }
   
   
@@ -121,14 +85,8 @@ public partial class PolyLine: ModelElement<DXV.PolyLine>
   [DataMember]
   public String? Alternate
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Alternate);
-    }
-    set
-    {
-      _ExistingElement.Alternate = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Alternate;
+    set => _ExistingElement.Alternate = value;
   }
   
   
@@ -138,14 +96,8 @@ public partial class PolyLine: ModelElement<DXV.PolyLine>
   [DataMember]
   public String? CoordinateSize
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.CoordinateSize);
-    }
-    set
-    {
-      _ExistingElement.CoordinateSize = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.CoordinateSize;
+    set => _ExistingElement.CoordinateSize = value;
   }
   
   
@@ -155,14 +107,8 @@ public partial class PolyLine: ModelElement<DXV.PolyLine>
   [DataMember]
   public String? CoordinateOrigin
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.CoordinateOrigin);
-    }
-    set
-    {
-      _ExistingElement.CoordinateOrigin = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.CoordinateOrigin;
+    set => _ExistingElement.CoordinateOrigin = value;
   }
   
   
@@ -172,14 +118,8 @@ public partial class PolyLine: ModelElement<DXV.PolyLine>
   [DataMember]
   public String? WrapCoordinates
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.WrapCoordinates);
-    }
-    set
-    {
-      _ExistingElement.WrapCoordinates = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.WrapCoordinates;
+    set => _ExistingElement.WrapCoordinates = value;
   }
   
   
@@ -189,17 +129,8 @@ public partial class PolyLine: ModelElement<DXV.PolyLine>
   [DataMember]
   public Boolean? Print
   {
-    get
-    {
-      return _Element?.Print?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Print = value;
-      else
-        _ExistingElement.Print = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -209,14 +140,8 @@ public partial class PolyLine: ModelElement<DXV.PolyLine>
   [DataMember]
   public String? OptionalString
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.OptionalString);
-    }
-    set
-    {
-      _ExistingElement.OptionalString = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.OptionalString;
+    set => _ExistingElement.OptionalString = value;
   }
   
   
@@ -226,17 +151,8 @@ public partial class PolyLine: ModelElement<DXV.PolyLine>
   [DataMember]
   public Boolean? Oned
   {
-    get
-    {
-      return _Element?.Oned?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Oned = value;
-      else
-        _ExistingElement.Oned = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -246,14 +162,8 @@ public partial class PolyLine: ModelElement<DXV.PolyLine>
   [DataMember]
   public Int64? RegroupId
   {
-    get
-    {
-      return _Element?.RegroupId?.Value;
-    }
-    set
-    {
-      _ExistingElement.RegroupId = value;
-    }
+    get => _Element?.RegroupId?.Value;
+    set => _ExistingElement.RegroupId = value;
   }
   
   
@@ -263,17 +173,8 @@ public partial class PolyLine: ModelElement<DXV.PolyLine>
   [DataMember]
   public Boolean? DoubleClickNotify
   {
-    get
-    {
-      return _Element?.DoubleClickNotify?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.DoubleClickNotify = value;
-      else
-        _ExistingElement.DoubleClickNotify = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -283,17 +184,8 @@ public partial class PolyLine: ModelElement<DXV.PolyLine>
   [DataMember]
   public Boolean? Button
   {
-    get
-    {
-      return _Element?.Button?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Button = value;
-      else
-        _ExistingElement.Button = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -303,17 +195,8 @@ public partial class PolyLine: ModelElement<DXV.PolyLine>
   [DataMember]
   public Boolean? UserHidden
   {
-    get
-    {
-      return _Element?.UserHidden?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.UserHidden = value;
-      else
-        _ExistingElement.UserHidden = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -323,17 +206,8 @@ public partial class PolyLine: ModelElement<DXV.PolyLine>
   [DataMember]
   public Boolean? Bullet
   {
-    get
-    {
-      return _Element?.Bullet?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Bullet = value;
-      else
-        _ExistingElement.Bullet = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -343,17 +217,8 @@ public partial class PolyLine: ModelElement<DXV.PolyLine>
   [DataMember]
   public Boolean? Horizontal
   {
-    get
-    {
-      return _Element?.Horizontal?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Horizontal = value;
-      else
-        _ExistingElement.Horizontal = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -363,17 +228,8 @@ public partial class PolyLine: ModelElement<DXV.PolyLine>
   [DataMember]
   public Boolean? HorizontalStandard
   {
-    get
-    {
-      return _Element?.HorizontalStandard?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.HorizontalStandard = value;
-      else
-        _ExistingElement.HorizontalStandard = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -383,17 +239,8 @@ public partial class PolyLine: ModelElement<DXV.PolyLine>
   [DataMember]
   public Boolean? HorizontalNoShade
   {
-    get
-    {
-      return _Element?.HorizontalNoShade?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.HorizontalNoShade = value;
-      else
-        _ExistingElement.HorizontalNoShade = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -403,14 +250,8 @@ public partial class PolyLine: ModelElement<DXV.PolyLine>
   [DataMember]
   public Single? HorizontalPercentage
   {
-    get
-    {
-      return _Element?.HorizontalPercentage?.Value;
-    }
-    set
-    {
-      _ExistingElement.HorizontalPercentage = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Single]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Single]");
   }
   
   
@@ -420,17 +261,8 @@ public partial class PolyLine: ModelElement<DXV.PolyLine>
   [DataMember]
   public Boolean? AllowInCell
   {
-    get
-    {
-      return _Element?.AllowInCell?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.AllowInCell = value;
-      else
-        _ExistingElement.AllowInCell = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -440,17 +272,8 @@ public partial class PolyLine: ModelElement<DXV.PolyLine>
   [DataMember]
   public Boolean? AllowOverlap
   {
-    get
-    {
-      return _Element?.AllowOverlap?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.AllowOverlap = value;
-      else
-        _ExistingElement.AllowOverlap = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -460,17 +283,8 @@ public partial class PolyLine: ModelElement<DXV.PolyLine>
   [DataMember]
   public Boolean? UserDrawn
   {
-    get
-    {
-      return _Element?.UserDrawn?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.UserDrawn = value;
-      else
-        _ExistingElement.UserDrawn = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -480,14 +294,8 @@ public partial class PolyLine: ModelElement<DXV.PolyLine>
   [DataMember]
   public String? BorderTopColor
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.BorderTopColor);
-    }
-    set
-    {
-      _ExistingElement.BorderTopColor = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.BorderTopColor;
+    set => _ExistingElement.BorderTopColor = value;
   }
   
   
@@ -497,14 +305,8 @@ public partial class PolyLine: ModelElement<DXV.PolyLine>
   [DataMember]
   public String? BorderLeftColor
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.BorderLeftColor);
-    }
-    set
-    {
-      _ExistingElement.BorderLeftColor = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.BorderLeftColor;
+    set => _ExistingElement.BorderLeftColor = value;
   }
   
   
@@ -514,14 +316,8 @@ public partial class PolyLine: ModelElement<DXV.PolyLine>
   [DataMember]
   public String? BorderBottomColor
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.BorderBottomColor);
-    }
-    set
-    {
-      _ExistingElement.BorderBottomColor = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.BorderBottomColor;
+    set => _ExistingElement.BorderBottomColor = value;
   }
   
   
@@ -531,14 +327,8 @@ public partial class PolyLine: ModelElement<DXV.PolyLine>
   [DataMember]
   public String? BorderRightColor
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.BorderRightColor);
-    }
-    set
-    {
-      _ExistingElement.BorderRightColor = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.BorderRightColor;
+    set => _ExistingElement.BorderRightColor = value;
   }
   
   
@@ -548,14 +338,8 @@ public partial class PolyLine: ModelElement<DXV.PolyLine>
   [DataMember]
   public Int64? DiagramLayout
   {
-    get
-    {
-      return _Element?.DiagramLayout?.Value;
-    }
-    set
-    {
-      _ExistingElement.DiagramLayout = value;
-    }
+    get => _Element?.DiagramLayout?.Value;
+    set => _ExistingElement.DiagramLayout = value;
   }
   
   
@@ -565,14 +349,8 @@ public partial class PolyLine: ModelElement<DXV.PolyLine>
   [DataMember]
   public Int64? DiagramNodeKind
   {
-    get
-    {
-      return _Element?.DiagramNodeKind?.Value;
-    }
-    set
-    {
-      _ExistingElement.DiagramNodeKind = value;
-    }
+    get => _Element?.DiagramNodeKind?.Value;
+    set => _ExistingElement.DiagramNodeKind = value;
   }
   
   
@@ -582,14 +360,8 @@ public partial class PolyLine: ModelElement<DXV.PolyLine>
   [DataMember]
   public Int64? DiagramLayoutMostRecentUsed
   {
-    get
-    {
-      return _Element?.DiagramLayoutMostRecentUsed?.Value;
-    }
-    set
-    {
-      _ExistingElement.DiagramLayoutMostRecentUsed = value;
-    }
+    get => _Element?.DiagramLayoutMostRecentUsed?.Value;
+    set => _ExistingElement.DiagramLayoutMostRecentUsed = value;
   }
   
   
@@ -599,17 +371,8 @@ public partial class PolyLine: ModelElement<DXV.PolyLine>
   [DataMember]
   public Boolean? Filled
   {
-    get
-    {
-      return _Element?.Filled?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Filled = value;
-      else
-        _ExistingElement.Filled = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -619,14 +382,8 @@ public partial class PolyLine: ModelElement<DXV.PolyLine>
   [DataMember]
   public String? FillColor
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.FillColor);
-    }
-    set
-    {
-      _ExistingElement.FillColor = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.FillColor;
+    set => _ExistingElement.FillColor = value;
   }
   
   
@@ -636,17 +393,8 @@ public partial class PolyLine: ModelElement<DXV.PolyLine>
   [DataMember]
   public Boolean? Stroked
   {
-    get
-    {
-      return _Element?.Stroked?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Stroked = value;
-      else
-        _ExistingElement.Stroked = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -656,14 +404,8 @@ public partial class PolyLine: ModelElement<DXV.PolyLine>
   [DataMember]
   public String? StrokeColor
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.StrokeColor);
-    }
-    set
-    {
-      _ExistingElement.StrokeColor = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.StrokeColor;
+    set => _ExistingElement.StrokeColor = value;
   }
   
   
@@ -673,14 +415,8 @@ public partial class PolyLine: ModelElement<DXV.PolyLine>
   [DataMember]
   public String? StrokeWeight
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.StrokeWeight);
-    }
-    set
-    {
-      _ExistingElement.StrokeWeight = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.StrokeWeight;
+    set => _ExistingElement.StrokeWeight = value;
   }
   
   
@@ -690,17 +426,8 @@ public partial class PolyLine: ModelElement<DXV.PolyLine>
   [DataMember]
   public Boolean? InsetPen
   {
-    get
-    {
-      return _Element?.InsetPen?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.InsetPen = value;
-      else
-        _ExistingElement.InsetPen = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -710,14 +437,8 @@ public partial class PolyLine: ModelElement<DXV.PolyLine>
   [DataMember]
   public Int32? OptionalNumber
   {
-    get
-    {
-      return _Element?.OptionalNumber?.Value;
-    }
-    set
-    {
-      _ExistingElement.OptionalNumber = value;
-    }
+    get => _Element?.OptionalNumber?.Value;
+    set => _ExistingElement.OptionalNumber = value;
   }
   
   
@@ -727,17 +448,8 @@ public partial class PolyLine: ModelElement<DXV.PolyLine>
   [DataMember]
   public Boolean? ForceDash
   {
-    get
-    {
-      return _Element?.ForceDash?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.ForceDash = value;
-      else
-        _ExistingElement.ForceDash = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -747,17 +459,8 @@ public partial class PolyLine: ModelElement<DXV.PolyLine>
   [DataMember]
   public Boolean? OleIcon
   {
-    get
-    {
-      return _Element?.OleIcon?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.OleIcon = value;
-      else
-        _ExistingElement.OleIcon = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -767,17 +470,8 @@ public partial class PolyLine: ModelElement<DXV.PolyLine>
   [DataMember]
   public Boolean? Ole
   {
-    get
-    {
-      return _Element?.Ole?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Ole = value;
-      else
-        _ExistingElement.Ole = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseBlankValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseBlankValue");
   }
   
   
@@ -787,17 +481,8 @@ public partial class PolyLine: ModelElement<DXV.PolyLine>
   [DataMember]
   public Boolean? PreferRelative
   {
-    get
-    {
-      return _Element?.PreferRelative?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.PreferRelative = value;
-      else
-        _ExistingElement.PreferRelative = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -807,17 +492,8 @@ public partial class PolyLine: ModelElement<DXV.PolyLine>
   [DataMember]
   public Boolean? ClipToWrap
   {
-    get
-    {
-      return _Element?.ClipToWrap?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.ClipToWrap = value;
-      else
-        _ExistingElement.ClipToWrap = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -827,17 +503,8 @@ public partial class PolyLine: ModelElement<DXV.PolyLine>
   [DataMember]
   public Boolean? Clip
   {
-    get
-    {
-      return _Element?.Clip?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Clip = value;
-      else
-        _ExistingElement.Clip = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -847,14 +514,8 @@ public partial class PolyLine: ModelElement<DXV.PolyLine>
   [DataMember]
   public DM.Base64Binary? Gfxdata
   {
-    get
-    {
-      return Base64BinaryConverter.GetValue(_Element?.Gfxdata);
-    }
-    set
-    {
-      _ExistingElement.Gfxdata = Base64BinaryConverter.CreateBase64BinaryValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -864,14 +525,8 @@ public partial class PolyLine: ModelElement<DXV.PolyLine>
   [DataMember]
   public String? Points
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Points);
-    }
-    set
-    {
-      _ExistingElement.Points = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Points;
+    set => _ExistingElement.Points = value;
   }
   
 }

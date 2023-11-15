@@ -19,14 +19,8 @@ public partial class QuickAccessToolbar: ModelElement<DXOCUI.QuickAccessToolbar>
   [DataMember]
   public DMCUI.SharedQatControls? SharedQatControls
   {
-    get
-    {
-      return _Element?.GetObject<DMCUI.SharedQatControls,DXOCUI.SharedQatControls>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMCUI.SharedQatControls,DXOCUI.SharedQatControls>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office.CustomUI.QatItemsType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office.CustomUI.QatItemsType");
   }
   
   
@@ -36,14 +30,8 @@ public partial class QuickAccessToolbar: ModelElement<DXOCUI.QuickAccessToolbar>
   [DataMember]
   public DMCUI.DocumentSpecificQuickAccessToolbarControls? DocumentSpecificQuickAccessToolbarControls
   {
-    get
-    {
-      return _Element?.GetObject<DMCUI.DocumentSpecificQuickAccessToolbarControls,DXOCUI.DocumentSpecificQuickAccessToolbarControls>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMCUI.DocumentSpecificQuickAccessToolbarControls,DXOCUI.DocumentSpecificQuickAccessToolbarControls>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office.CustomUI.QatItemsType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office.CustomUI.QatItemsType");
   }
   
 }

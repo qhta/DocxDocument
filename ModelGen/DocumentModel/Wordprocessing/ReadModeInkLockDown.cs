@@ -19,14 +19,8 @@ public partial class ReadModeInkLockDown: ModelElement<DXW.ReadModeInkLockDown>
   [DataMember]
   public Boolean? UseActualPages
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.UseActualPages);
-    }
-    set
-    {
-      _ExistingElement.UseActualPages = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
   
@@ -36,14 +30,8 @@ public partial class ReadModeInkLockDown: ModelElement<DXW.ReadModeInkLockDown>
   [DataMember]
   public UInt32? Width
   {
-    get
-    {
-      return _Element?.Width?.Value;
-    }
-    set
-    {
-      _ExistingElement.Width = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
   }
   
   
@@ -53,14 +41,8 @@ public partial class ReadModeInkLockDown: ModelElement<DXW.ReadModeInkLockDown>
   [DataMember]
   public UInt32? Height
   {
-    get
-    {
-      return _Element?.Height?.Value;
-    }
-    set
-    {
-      _ExistingElement.Height = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
   }
   
   
@@ -70,14 +52,8 @@ public partial class ReadModeInkLockDown: ModelElement<DXW.ReadModeInkLockDown>
   [DataMember]
   public String? FontSize
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.FontSize);
-    }
-    set
-    {
-      _ExistingElement.FontSize = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.FontSize;
+    set => _ExistingElement.FontSize = value;
   }
   
 }

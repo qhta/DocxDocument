@@ -19,14 +19,8 @@ public partial class HyperlinkType: ModelElement<DXD.HyperlinkType>
   [DataMember]
   public String? Id
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Id);
-    }
-    set
-    {
-      _ExistingElement.Id = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Id;
+    set => _ExistingElement.Id = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class HyperlinkType: ModelElement<DXD.HyperlinkType>
   [DataMember]
   public String? InvalidUrl
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.InvalidUrl);
-    }
-    set
-    {
-      _ExistingElement.InvalidUrl = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.InvalidUrl;
+    set => _ExistingElement.InvalidUrl = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class HyperlinkType: ModelElement<DXD.HyperlinkType>
   [DataMember]
   public String? Action
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Action);
-    }
-    set
-    {
-      _ExistingElement.Action = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Action;
+    set => _ExistingElement.Action = value;
   }
   
   
@@ -70,14 +52,8 @@ public partial class HyperlinkType: ModelElement<DXD.HyperlinkType>
   [DataMember]
   public String? TargetFrame
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.TargetFrame);
-    }
-    set
-    {
-      _ExistingElement.TargetFrame = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.TargetFrame;
+    set => _ExistingElement.TargetFrame = value;
   }
   
   
@@ -87,14 +63,8 @@ public partial class HyperlinkType: ModelElement<DXD.HyperlinkType>
   [DataMember]
   public String? Tooltip
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Tooltip);
-    }
-    set
-    {
-      _ExistingElement.Tooltip = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Tooltip;
+    set => _ExistingElement.Tooltip = value;
   }
   
   
@@ -104,17 +74,8 @@ public partial class HyperlinkType: ModelElement<DXD.HyperlinkType>
   [DataMember]
   public Boolean? History
   {
-    get
-    {
-      return _Element?.History?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.History = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.History = null;
-    }
+    get => _Element?.History?.Value;
+    set => _ExistingElement.History = value;
   }
   
   
@@ -124,17 +85,8 @@ public partial class HyperlinkType: ModelElement<DXD.HyperlinkType>
   [DataMember]
   public Boolean? HighlightClick
   {
-    get
-    {
-      return _Element?.HighlightClick?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.HighlightClick = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.HighlightClick = null;
-    }
+    get => _Element?.HighlightClick?.Value;
+    set => _ExistingElement.HighlightClick = value;
   }
   
   
@@ -144,17 +96,8 @@ public partial class HyperlinkType: ModelElement<DXD.HyperlinkType>
   [DataMember]
   public Boolean? EndSound
   {
-    get
-    {
-      return _Element?.EndSound?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.EndSound = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.EndSound = null;
-    }
+    get => _Element?.EndSound?.Value;
+    set => _ExistingElement.EndSound = value;
   }
   
   
@@ -164,14 +107,8 @@ public partial class HyperlinkType: ModelElement<DXD.HyperlinkType>
   [DataMember]
   public DMD.HyperlinkSound? HyperlinkSound
   {
-    get
-    {
-      return _Element?.GetObject<DMD.HyperlinkSound,DXD.HyperlinkSound>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.HyperlinkSound,DXD.HyperlinkSound>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.EmbeddedWavAudioFileType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.EmbeddedWavAudioFileType");
   }
   
   
@@ -181,14 +118,8 @@ public partial class HyperlinkType: ModelElement<DXD.HyperlinkType>
   [DataMember]
   public DMD.HyperlinkExtensionList? HyperlinkExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMD.HyperlinkExtensionList,DXD.HyperlinkExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.HyperlinkExtensionList,DXD.HyperlinkExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

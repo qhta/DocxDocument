@@ -19,14 +19,8 @@ public partial class PropertySet: ModelElement<DXDDD.PropertySet>
   [DataMember]
   public String? PresentationElementId
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.PresentationElementId);
-    }
-    set
-    {
-      _ExistingElement.PresentationElementId = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.PresentationElementId;
+    set => _ExistingElement.PresentationElementId = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class PropertySet: ModelElement<DXDDD.PropertySet>
   [DataMember]
   public String? PresentationName
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.PresentationName);
-    }
-    set
-    {
-      _ExistingElement.PresentationName = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.PresentationName;
+    set => _ExistingElement.PresentationName = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class PropertySet: ModelElement<DXDDD.PropertySet>
   [DataMember]
   public String? PresentationStyleLabel
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.PresentationStyleLabel);
-    }
-    set
-    {
-      _ExistingElement.PresentationStyleLabel = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.PresentationStyleLabel;
+    set => _ExistingElement.PresentationStyleLabel = value;
   }
   
   
@@ -70,14 +52,8 @@ public partial class PropertySet: ModelElement<DXDDD.PropertySet>
   [DataMember]
   public Int32? PresentationStyleIndex
   {
-    get
-    {
-      return _Element?.PresentationStyleIndex?.Value;
-    }
-    set
-    {
-      _ExistingElement.PresentationStyleIndex = value;
-    }
+    get => _Element?.PresentationStyleIndex?.Value;
+    set => _ExistingElement.PresentationStyleIndex = value;
   }
   
   
@@ -87,14 +63,8 @@ public partial class PropertySet: ModelElement<DXDDD.PropertySet>
   [DataMember]
   public Int32? PresentationStyleCount
   {
-    get
-    {
-      return _Element?.PresentationStyleCount?.Value;
-    }
-    set
-    {
-      _ExistingElement.PresentationStyleCount = value;
-    }
+    get => _Element?.PresentationStyleCount?.Value;
+    set => _ExistingElement.PresentationStyleCount = value;
   }
   
   
@@ -104,14 +74,8 @@ public partial class PropertySet: ModelElement<DXDDD.PropertySet>
   [DataMember]
   public String? LayoutTypeId
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.LayoutTypeId);
-    }
-    set
-    {
-      _ExistingElement.LayoutTypeId = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.LayoutTypeId;
+    set => _ExistingElement.LayoutTypeId = value;
   }
   
   
@@ -121,14 +85,8 @@ public partial class PropertySet: ModelElement<DXDDD.PropertySet>
   [DataMember]
   public String? LayoutCategoryId
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.LayoutCategoryId);
-    }
-    set
-    {
-      _ExistingElement.LayoutCategoryId = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.LayoutCategoryId;
+    set => _ExistingElement.LayoutCategoryId = value;
   }
   
   
@@ -138,14 +96,8 @@ public partial class PropertySet: ModelElement<DXDDD.PropertySet>
   [DataMember]
   public String? QuickStyleTypeId
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.QuickStyleTypeId);
-    }
-    set
-    {
-      _ExistingElement.QuickStyleTypeId = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.QuickStyleTypeId;
+    set => _ExistingElement.QuickStyleTypeId = value;
   }
   
   
@@ -155,14 +107,8 @@ public partial class PropertySet: ModelElement<DXDDD.PropertySet>
   [DataMember]
   public String? QuickStyleCategoryId
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.QuickStyleCategoryId);
-    }
-    set
-    {
-      _ExistingElement.QuickStyleCategoryId = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.QuickStyleCategoryId;
+    set => _ExistingElement.QuickStyleCategoryId = value;
   }
   
   
@@ -172,14 +118,8 @@ public partial class PropertySet: ModelElement<DXDDD.PropertySet>
   [DataMember]
   public String? ColorType
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.ColorType);
-    }
-    set
-    {
-      _ExistingElement.ColorType = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.ColorType;
+    set => _ExistingElement.ColorType = value;
   }
   
   
@@ -189,14 +129,8 @@ public partial class PropertySet: ModelElement<DXDDD.PropertySet>
   [DataMember]
   public String? ColorCategoryId
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.ColorCategoryId);
-    }
-    set
-    {
-      _ExistingElement.ColorCategoryId = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.ColorCategoryId;
+    set => _ExistingElement.ColorCategoryId = value;
   }
   
   
@@ -206,17 +140,8 @@ public partial class PropertySet: ModelElement<DXDDD.PropertySet>
   [DataMember]
   public Boolean? Coherent3D
   {
-    get
-    {
-      return _Element?.Coherent3D?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Coherent3D = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.Coherent3D = null;
-    }
+    get => _Element?.Coherent3D?.Value;
+    set => _ExistingElement.Coherent3D = value;
   }
   
   
@@ -226,14 +151,8 @@ public partial class PropertySet: ModelElement<DXDDD.PropertySet>
   [DataMember]
   public String? PlaceholderText
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.PlaceholderText);
-    }
-    set
-    {
-      _ExistingElement.PlaceholderText = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.PlaceholderText;
+    set => _ExistingElement.PlaceholderText = value;
   }
   
   
@@ -243,17 +162,8 @@ public partial class PropertySet: ModelElement<DXDDD.PropertySet>
   [DataMember]
   public Boolean? Placeholder
   {
-    get
-    {
-      return _Element?.Placeholder?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Placeholder = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.Placeholder = null;
-    }
+    get => _Element?.Placeholder?.Value;
+    set => _ExistingElement.Placeholder = value;
   }
   
   
@@ -263,14 +173,8 @@ public partial class PropertySet: ModelElement<DXDDD.PropertySet>
   [DataMember]
   public Int32? Rotation
   {
-    get
-    {
-      return _Element?.Rotation?.Value;
-    }
-    set
-    {
-      _ExistingElement.Rotation = value;
-    }
+    get => _Element?.Rotation?.Value;
+    set => _ExistingElement.Rotation = value;
   }
   
   
@@ -280,17 +184,8 @@ public partial class PropertySet: ModelElement<DXDDD.PropertySet>
   [DataMember]
   public Boolean? VerticalFlip
   {
-    get
-    {
-      return _Element?.VerticalFlip?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.VerticalFlip = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.VerticalFlip = null;
-    }
+    get => _Element?.VerticalFlip?.Value;
+    set => _ExistingElement.VerticalFlip = value;
   }
   
   
@@ -300,17 +195,8 @@ public partial class PropertySet: ModelElement<DXDDD.PropertySet>
   [DataMember]
   public Boolean? HorizontalFlip
   {
-    get
-    {
-      return _Element?.HorizontalFlip?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.HorizontalFlip = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.HorizontalFlip = null;
-    }
+    get => _Element?.HorizontalFlip?.Value;
+    set => _ExistingElement.HorizontalFlip = value;
   }
   
   
@@ -320,14 +206,8 @@ public partial class PropertySet: ModelElement<DXDDD.PropertySet>
   [DataMember]
   public Int32? FixedWidthOverride
   {
-    get
-    {
-      return _Element?.FixedWidthOverride?.Value;
-    }
-    set
-    {
-      _ExistingElement.FixedWidthOverride = value;
-    }
+    get => _Element?.FixedWidthOverride?.Value;
+    set => _ExistingElement.FixedWidthOverride = value;
   }
   
   
@@ -337,14 +217,8 @@ public partial class PropertySet: ModelElement<DXDDD.PropertySet>
   [DataMember]
   public Int32? FixedHeightOverride
   {
-    get
-    {
-      return _Element?.FixedHeightOverride?.Value;
-    }
-    set
-    {
-      _ExistingElement.FixedHeightOverride = value;
-    }
+    get => _Element?.FixedHeightOverride?.Value;
+    set => _ExistingElement.FixedHeightOverride = value;
   }
   
   
@@ -354,14 +228,8 @@ public partial class PropertySet: ModelElement<DXDDD.PropertySet>
   [DataMember]
   public Int32? WidthScale
   {
-    get
-    {
-      return _Element?.WidthScale?.Value;
-    }
-    set
-    {
-      _ExistingElement.WidthScale = value;
-    }
+    get => _Element?.WidthScale?.Value;
+    set => _ExistingElement.WidthScale = value;
   }
   
   
@@ -371,14 +239,8 @@ public partial class PropertySet: ModelElement<DXDDD.PropertySet>
   [DataMember]
   public Int32? HightScale
   {
-    get
-    {
-      return _Element?.HightScale?.Value;
-    }
-    set
-    {
-      _ExistingElement.HightScale = value;
-    }
+    get => _Element?.HightScale?.Value;
+    set => _ExistingElement.HightScale = value;
   }
   
   
@@ -388,17 +250,8 @@ public partial class PropertySet: ModelElement<DXDDD.PropertySet>
   [DataMember]
   public Boolean? TextChanged
   {
-    get
-    {
-      return _Element?.TextChanged?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.TextChanged = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.TextChanged = null;
-    }
+    get => _Element?.TextChanged?.Value;
+    set => _ExistingElement.TextChanged = value;
   }
   
   
@@ -408,14 +261,8 @@ public partial class PropertySet: ModelElement<DXDDD.PropertySet>
   [DataMember]
   public Int32? FactorWidth
   {
-    get
-    {
-      return _Element?.FactorWidth?.Value;
-    }
-    set
-    {
-      _ExistingElement.FactorWidth = value;
-    }
+    get => _Element?.FactorWidth?.Value;
+    set => _ExistingElement.FactorWidth = value;
   }
   
   
@@ -425,14 +272,8 @@ public partial class PropertySet: ModelElement<DXDDD.PropertySet>
   [DataMember]
   public Int32? FactorHeight
   {
-    get
-    {
-      return _Element?.FactorHeight?.Value;
-    }
-    set
-    {
-      _ExistingElement.FactorHeight = value;
-    }
+    get => _Element?.FactorHeight?.Value;
+    set => _ExistingElement.FactorHeight = value;
   }
   
   
@@ -442,14 +283,8 @@ public partial class PropertySet: ModelElement<DXDDD.PropertySet>
   [DataMember]
   public Int32? NeighborOffsetWidth
   {
-    get
-    {
-      return _Element?.NeighborOffsetWidth?.Value;
-    }
-    set
-    {
-      _ExistingElement.NeighborOffsetWidth = value;
-    }
+    get => _Element?.NeighborOffsetWidth?.Value;
+    set => _ExistingElement.NeighborOffsetWidth = value;
   }
   
   
@@ -459,14 +294,8 @@ public partial class PropertySet: ModelElement<DXDDD.PropertySet>
   [DataMember]
   public Int32? NeighborOffsetHeight
   {
-    get
-    {
-      return _Element?.NeighborOffsetHeight?.Value;
-    }
-    set
-    {
-      _ExistingElement.NeighborOffsetHeight = value;
-    }
+    get => _Element?.NeighborOffsetHeight?.Value;
+    set => _ExistingElement.NeighborOffsetHeight = value;
   }
   
   
@@ -476,14 +305,8 @@ public partial class PropertySet: ModelElement<DXDDD.PropertySet>
   [DataMember]
   public Int32? RadiusScale
   {
-    get
-    {
-      return _Element?.RadiusScale?.Value;
-    }
-    set
-    {
-      _ExistingElement.RadiusScale = value;
-    }
+    get => _Element?.RadiusScale?.Value;
+    set => _ExistingElement.RadiusScale = value;
   }
   
   
@@ -493,14 +316,8 @@ public partial class PropertySet: ModelElement<DXDDD.PropertySet>
   [DataMember]
   public Int32? IncludeAngleScale
   {
-    get
-    {
-      return _Element?.IncludeAngleScale?.Value;
-    }
-    set
-    {
-      _ExistingElement.IncludeAngleScale = value;
-    }
+    get => _Element?.IncludeAngleScale?.Value;
+    set => _ExistingElement.IncludeAngleScale = value;
   }
   
   
@@ -510,14 +327,8 @@ public partial class PropertySet: ModelElement<DXDDD.PropertySet>
   [DataMember]
   public DMDD.PresentationLayoutVariables? PresentationLayoutVariables
   {
-    get
-    {
-      return _Element?.GetObject<DMDD.PresentationLayoutVariables,DXDDD.PresentationLayoutVariables>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDD.PresentationLayoutVariables,DXDDD.PresentationLayoutVariables>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Diagrams.LayoutVariablePropertySetType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Diagrams.LayoutVariablePropertySetType");
   }
   
   
@@ -527,14 +338,8 @@ public partial class PropertySet: ModelElement<DXDDD.PropertySet>
   [DataMember]
   public DMDD.Style? Style
   {
-    get
-    {
-      return _Element?.GetObject<DMDD.Style,DXDDD.Style>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDD.Style,DXDDD.Style>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

@@ -19,14 +19,8 @@ public partial class PermStart: ModelElement<DXW.PermStart>
   [DataMember]
   public String? Ed
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Ed);
-    }
-    set
-    {
-      _ExistingElement.Ed = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Ed;
+    set => _ExistingElement.Ed = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class PermStart: ModelElement<DXW.PermStart>
   [DataMember]
   public Int32? ColumnFirst
   {
-    get
-    {
-      return _Element?.ColumnFirst?.Value;
-    }
-    set
-    {
-      _ExistingElement.ColumnFirst = value;
-    }
+    get => _Element?.ColumnFirst?.Value;
+    set => _ExistingElement.ColumnFirst = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class PermStart: ModelElement<DXW.PermStart>
   [DataMember]
   public Int32? ColumnLast
   {
-    get
-    {
-      return _Element?.ColumnLast?.Value;
-    }
-    set
-    {
-      _ExistingElement.ColumnLast = value;
-    }
+    get => _Element?.ColumnLast?.Value;
+    set => _ExistingElement.ColumnLast = value;
   }
   
   
@@ -70,14 +52,8 @@ public partial class PermStart: ModelElement<DXW.PermStart>
   [DataMember]
   public Int32? Id
   {
-    get
-    {
-      return _Element?.Id?.Value;
-    }
-    set
-    {
-      _ExistingElement.Id = value;
-    }
+    get => _Element?.Id?.Value;
+    set => _ExistingElement.Id = value;
   }
   
 }

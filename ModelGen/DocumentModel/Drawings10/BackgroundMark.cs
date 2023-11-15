@@ -19,14 +19,8 @@ public partial class BackgroundMark: ModelElement<DXO10D.BackgroundMark>
   [DataMember]
   public Int32? FirstXCoordinate
   {
-    get
-    {
-      return _Element?.FirstXCoordinate?.Value;
-    }
-    set
-    {
-      _ExistingElement.FirstXCoordinate = value;
-    }
+    get => _Element?.FirstXCoordinate?.Value;
+    set => _ExistingElement.FirstXCoordinate = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class BackgroundMark: ModelElement<DXO10D.BackgroundMark>
   [DataMember]
   public Int32? FirstYCoordinate
   {
-    get
-    {
-      return _Element?.FirstYCoordinate?.Value;
-    }
-    set
-    {
-      _ExistingElement.FirstYCoordinate = value;
-    }
+    get => _Element?.FirstYCoordinate?.Value;
+    set => _ExistingElement.FirstYCoordinate = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class BackgroundMark: ModelElement<DXO10D.BackgroundMark>
   [DataMember]
   public Int32? SecondXCoordinate
   {
-    get
-    {
-      return _Element?.SecondXCoordinate?.Value;
-    }
-    set
-    {
-      _ExistingElement.SecondXCoordinate = value;
-    }
+    get => _Element?.SecondXCoordinate?.Value;
+    set => _ExistingElement.SecondXCoordinate = value;
   }
   
   
@@ -70,14 +52,8 @@ public partial class BackgroundMark: ModelElement<DXO10D.BackgroundMark>
   [DataMember]
   public Int32? SecondYCoordinate
   {
-    get
-    {
-      return _Element?.SecondYCoordinate?.Value;
-    }
-    set
-    {
-      _ExistingElement.SecondYCoordinate = value;
-    }
+    get => _Element?.SecondYCoordinate?.Value;
+    set => _ExistingElement.SecondYCoordinate = value;
   }
   
 }

@@ -19,14 +19,8 @@ public partial class Rule: ModelElement<DXDDD.Rule>
   [DataMember]
   public String? ForName
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.ForName);
-    }
-    set
-    {
-      _ExistingElement.ForName = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.ForName;
+    set => _ExistingElement.ForName = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class Rule: ModelElement<DXDDD.Rule>
   [DataMember]
   public Double? Val
   {
-    get
-    {
-      return _Element?.Val?.Value;
-    }
-    set
-    {
-      _ExistingElement.Val = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Double]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Double]");
   }
   
   
@@ -53,14 +41,8 @@ public partial class Rule: ModelElement<DXDDD.Rule>
   [DataMember]
   public Double? Fact
   {
-    get
-    {
-      return _Element?.Fact?.Value;
-    }
-    set
-    {
-      _ExistingElement.Fact = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Double]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Double]");
   }
   
   
@@ -70,14 +52,8 @@ public partial class Rule: ModelElement<DXDDD.Rule>
   [DataMember]
   public Double? Max
   {
-    get
-    {
-      return _Element?.Max?.Value;
-    }
-    set
-    {
-      _ExistingElement.Max = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Double]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Double]");
   }
   
   
@@ -87,14 +63,8 @@ public partial class Rule: ModelElement<DXDDD.Rule>
   [DataMember]
   public DMDD.ExtensionList? ExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMDD.ExtensionList,DXDDD.ExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDD.ExtensionList,DXDDD.ExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

@@ -19,14 +19,8 @@ public partial class Scene3D: ModelElement<DXO10W.Scene3D>
   [DataMember]
   public DMW10.Camera? Camera
   {
-    get
-    {
-      return _Element?.GetObject<DMW10.Camera,DXO10W.Camera>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW10.Camera,DXO10W.Camera>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -36,14 +30,8 @@ public partial class Scene3D: ModelElement<DXO10W.Scene3D>
   [DataMember]
   public DMW10.LightRig? LightRig
   {
-    get
-    {
-      return _Element?.GetObject<DMW10.LightRig,DXO10W.LightRig>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW10.LightRig,DXO10W.LightRig>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

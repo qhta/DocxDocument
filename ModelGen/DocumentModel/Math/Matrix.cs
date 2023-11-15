@@ -19,14 +19,8 @@ public partial class Matrix: ModelElement<DXM.Matrix>
   [DataMember]
   public DMM.MatrixProperties? MatrixProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMM.MatrixProperties,DXM.MatrixProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.MatrixProperties,DXM.MatrixProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

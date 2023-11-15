@@ -19,14 +19,8 @@ public partial class PathShadeProperties: ModelElement<DXO10W.PathShadePropertie
   [DataMember]
   public DMW10.FillToRectangle? FillToRectangle
   {
-    get
-    {
-      return _Element?.GetObject<DMW10.FillToRectangle,DXO10W.FillToRectangle>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW10.FillToRectangle,DXO10W.FillToRectangle>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
 }

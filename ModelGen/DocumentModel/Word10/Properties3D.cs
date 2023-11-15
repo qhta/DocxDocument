@@ -19,14 +19,8 @@ public partial class Properties3D: ModelElement<DXO10W.Properties3D>
   [DataMember]
   public Int64? ExtrusionHeight
   {
-    get
-    {
-      return _Element?.ExtrusionHeight?.Value;
-    }
-    set
-    {
-      _ExistingElement.ExtrusionHeight = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int64]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int64]");
   }
   
   
@@ -36,14 +30,8 @@ public partial class Properties3D: ModelElement<DXO10W.Properties3D>
   [DataMember]
   public Int64? ContourWidth
   {
-    get
-    {
-      return _Element?.ContourWidth?.Value;
-    }
-    set
-    {
-      _ExistingElement.ContourWidth = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int64]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int64]");
   }
   
   
@@ -53,14 +41,8 @@ public partial class Properties3D: ModelElement<DXO10W.Properties3D>
   [DataMember]
   public DMW10.BevelTop? BevelTop
   {
-    get
-    {
-      return _Element?.GetObject<DMW10.BevelTop,DXO10W.BevelTop>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW10.BevelTop,DXO10W.BevelTop>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2010.Word.BevelType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2010.Word.BevelType");
   }
   
   
@@ -70,14 +52,8 @@ public partial class Properties3D: ModelElement<DXO10W.Properties3D>
   [DataMember]
   public DMW10.BevelBottom? BevelBottom
   {
-    get
-    {
-      return _Element?.GetObject<DMW10.BevelBottom,DXO10W.BevelBottom>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW10.BevelBottom,DXO10W.BevelBottom>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2010.Word.BevelType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2010.Word.BevelType");
   }
   
   
@@ -87,14 +63,8 @@ public partial class Properties3D: ModelElement<DXO10W.Properties3D>
   [DataMember]
   public DMW10.ExtrusionColor? ExtrusionColor
   {
-    get
-    {
-      return _Element?.GetObject<DMW10.ExtrusionColor,DXO10W.ExtrusionColor>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW10.ExtrusionColor,DXO10W.ExtrusionColor>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2010.Word.ColorType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2010.Word.ColorType");
   }
   
   
@@ -104,14 +74,8 @@ public partial class Properties3D: ModelElement<DXO10W.Properties3D>
   [DataMember]
   public DMW10.ContourColor? ContourColor
   {
-    get
-    {
-      return _Element?.GetObject<DMW10.ContourColor,DXO10W.ContourColor>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW10.ContourColor,DXO10W.ContourColor>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2010.Word.ColorType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2010.Word.ColorType");
   }
   
 }

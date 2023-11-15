@@ -19,14 +19,8 @@ public partial class DocumentBackground: ModelElement<DXW.DocumentBackground>
   [DataMember]
   public String? Color
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Color);
-    }
-    set
-    {
-      _ExistingElement.Color = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Color;
+    set => _ExistingElement.Color = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class DocumentBackground: ModelElement<DXW.DocumentBackground>
   [DataMember]
   public String? ThemeTint
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.ThemeTint);
-    }
-    set
-    {
-      _ExistingElement.ThemeTint = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.ThemeTint;
+    set => _ExistingElement.ThemeTint = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class DocumentBackground: ModelElement<DXW.DocumentBackground>
   [DataMember]
   public String? ThemeShade
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.ThemeShade);
-    }
-    set
-    {
-      _ExistingElement.ThemeShade = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.ThemeShade;
+    set => _ExistingElement.ThemeShade = value;
   }
   
   
@@ -70,14 +52,8 @@ public partial class DocumentBackground: ModelElement<DXW.DocumentBackground>
   [DataMember]
   public DMVML.Background? Background
   {
-    get
-    {
-      return _Element?.GetObject<DMVML.Background,DXV.Background>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMVML.Background,DXV.Background>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

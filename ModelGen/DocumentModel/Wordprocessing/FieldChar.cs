@@ -19,14 +19,8 @@ public partial class FieldChar: ModelElement<DXW.FieldChar>
   [DataMember]
   public Boolean? FieldLock
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.FieldLock);
-    }
-    set
-    {
-      _ExistingElement.FieldLock = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
   
@@ -36,14 +30,8 @@ public partial class FieldChar: ModelElement<DXW.FieldChar>
   [DataMember]
   public Boolean? Dirty
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.Dirty);
-    }
-    set
-    {
-      _ExistingElement.Dirty = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
   
@@ -53,14 +41,8 @@ public partial class FieldChar: ModelElement<DXW.FieldChar>
   [DataMember]
   public DMW.FieldData? FieldData
   {
-    get
-    {
-      return _Element?.GetObject<DMW.FieldData,DXW.FieldData>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.FieldData,DXW.FieldData>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
   }
   
   
@@ -70,14 +52,8 @@ public partial class FieldChar: ModelElement<DXW.FieldChar>
   [DataMember]
   public DMW.FormFieldData? FormFieldData
   {
-    get
-    {
-      return _Element?.GetObject<DMW.FormFieldData,DXW.FormFieldData>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.FormFieldData,DXW.FormFieldData>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -87,14 +63,8 @@ public partial class FieldChar: ModelElement<DXW.FieldChar>
   [DataMember]
   public DMW.NumberingChange? NumberingChange
   {
-    get
-    {
-      return _Element?.GetObject<DMW.NumberingChange,DXW.NumberingChange>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.NumberingChange,DXW.NumberingChange>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
 }

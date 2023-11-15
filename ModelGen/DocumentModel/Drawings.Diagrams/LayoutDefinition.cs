@@ -19,14 +19,8 @@ public partial class LayoutDefinition: ModelElement<DXDDD.LayoutDefinition>
   [DataMember]
   public String? UniqueId
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.UniqueId);
-    }
-    set
-    {
-      _ExistingElement.UniqueId = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.UniqueId;
+    set => _ExistingElement.UniqueId = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class LayoutDefinition: ModelElement<DXDDD.LayoutDefinition>
   [DataMember]
   public String? MinVersion
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.MinVersion);
-    }
-    set
-    {
-      _ExistingElement.MinVersion = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.MinVersion;
+    set => _ExistingElement.MinVersion = value;
   }
   
   
@@ -53,92 +41,50 @@ public partial class LayoutDefinition: ModelElement<DXDDD.LayoutDefinition>
   [DataMember]
   public String? DefaultStyle
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.DefaultStyle);
-    }
-    set
-    {
-      _ExistingElement.DefaultStyle = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.DefaultStyle;
+    set => _ExistingElement.DefaultStyle = value;
   }
   
   [DataMember]
   public DMDD.CategoryList? CategoryList
   {
-    get
-    {
-      return _Element?.GetObject<DMDD.CategoryList,DXDDD.CategoryList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDD.CategoryList,DXDDD.CategoryList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMDD.SampleData? SampleData
   {
-    get
-    {
-      return _Element?.GetObject<DMDD.SampleData,DXDDD.SampleData>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDD.SampleData,DXDDD.SampleData>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Diagrams.SampleDataType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Diagrams.SampleDataType");
   }
   
   [DataMember]
   public DMDD.StyleData? StyleData
   {
-    get
-    {
-      return _Element?.GetObject<DMDD.StyleData,DXDDD.StyleData>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDD.StyleData,DXDDD.StyleData>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Diagrams.SampleDataType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Diagrams.SampleDataType");
   }
   
   [DataMember]
   public DMDD.ColorData? ColorData
   {
-    get
-    {
-      return _Element?.GetObject<DMDD.ColorData,DXDDD.ColorData>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDD.ColorData,DXDDD.ColorData>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Diagrams.SampleDataType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Diagrams.SampleDataType");
   }
   
   [DataMember]
   public DMDD.LayoutNode? LayoutNode
   {
-    get
-    {
-      return _Element?.GetObject<DMDD.LayoutNode,DXDDD.LayoutNode>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDD.LayoutNode,DXDDD.LayoutNode>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMDD.DiagramDefinitionExtensionList? DiagramDefinitionExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMDD.DiagramDefinitionExtensionList,DXDDD.DiagramDefinitionExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDD.DiagramDefinitionExtensionList,DXDDD.DiagramDefinitionExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

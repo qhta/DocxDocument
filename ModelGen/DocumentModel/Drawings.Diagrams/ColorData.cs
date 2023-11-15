@@ -15,14 +15,8 @@ public partial class ColorData: ModelElement<DXDDD.ColorData>
   [DataMember]
   public DMDD.DataModel? DataModel
   {
-    get
-    {
-      return _Element?.GetObject<DMDD.DataModel,DXDDD.DataModel>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDD.DataModel,DXDDD.DataModel>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

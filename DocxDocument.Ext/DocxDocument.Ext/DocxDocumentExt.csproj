@@ -20,7 +20,6 @@
 
   <ItemGroup>
     <Compile Remove="CustomProperties.AsCollection.cs" />
-    <Compile Remove="Utilities\ModelObjectComparer.cs" />
     <Compile Remove="Vml\RegroupTable.AsCollection.cs" />
     <Compile Remove="Vml\Rules.AsCollection.cs" />
     <Compile Remove="Vml\Rules.AsDictionary.cs" />
@@ -36,6 +35,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\DocumentModel.BaseConverters\DocumentModel.BaseConverters.csproj" />
     <ProjectReference Include="..\..\DocumentModel.BaseTypes\DocumentModel.BaseTypes.csproj" />
   </ItemGroup>
 

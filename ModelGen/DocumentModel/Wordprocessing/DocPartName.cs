@@ -19,14 +19,8 @@ public partial class DocPartName: ModelElement<DXW.DocPartName>
   [DataMember]
   public String? Val
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Val);
-    }
-    set
-    {
-      _ExistingElement.Val = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Val;
+    set => _ExistingElement.Val = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class DocPartName: ModelElement<DXW.DocPartName>
   [DataMember]
   public Boolean? Decorated
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.Decorated);
-    }
-    set
-    {
-      _ExistingElement.Decorated = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
 }

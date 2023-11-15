@@ -19,14 +19,8 @@ public partial class UpDownBars: ModelElement<DXDC.UpDownBars>
   [DataMember]
   public DMDC.GapWidth? GapWidth
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.GapWidth,DXDC.GapWidth>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.GapWidth,DXDC.GapWidth>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.GapAmountType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.GapAmountType");
   }
   
   
@@ -36,14 +30,8 @@ public partial class UpDownBars: ModelElement<DXDC.UpDownBars>
   [DataMember]
   public DMDC.UpBars? UpBars
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.UpBars,DXDC.UpBars>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.UpBars,DXDC.UpBars>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.UpDownBarType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.UpDownBarType");
   }
   
   
@@ -53,14 +41,8 @@ public partial class UpDownBars: ModelElement<DXDC.UpDownBars>
   [DataMember]
   public DMDC.DownBars? DownBars
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.DownBars,DXDC.DownBars>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.DownBars,DXDC.DownBars>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.UpDownBarType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.UpDownBarType");
   }
   
   
@@ -70,14 +52,8 @@ public partial class UpDownBars: ModelElement<DXDC.UpDownBars>
   [DataMember]
   public DMDC.ExtensionList? ExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.ExtensionList,DXDC.ExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.ExtensionList,DXDC.ExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

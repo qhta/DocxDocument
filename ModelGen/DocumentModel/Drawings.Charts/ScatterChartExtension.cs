@@ -19,27 +19,15 @@ public partial class ScatterChartExtension: ModelElement<DXDC.ScatterChartExtens
   [DataMember]
   public String? Uri
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Uri);
-    }
-    set
-    {
-      _ExistingElement.Uri = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Uri;
+    set => _ExistingElement.Uri = value;
   }
   
   [DataMember]
   public DMDC13.FilteredScatterSeries? FilteredScatterSeries
   {
-    get
-    {
-      return _Element?.GetObject<DMDC13.FilteredScatterSeries,DXO13DC.FilteredScatterSeries>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC13.FilteredScatterSeries,DXO13DC.FilteredScatterSeries>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

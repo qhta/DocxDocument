@@ -19,40 +19,22 @@ public partial class GradientFillProperties: ModelElement<DXO10W.GradientFillPro
   [DataMember]
   public DMW10.GradientStopList? GradientStopList
   {
-    get
-    {
-      return _Element?.GetObject<DMW10.GradientStopList,DXO10W.GradientStopList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW10.GradientStopList,DXO10W.GradientStopList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMW10.LinearShadeProperties? LinearShadeProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMW10.LinearShadeProperties,DXO10W.LinearShadeProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW10.LinearShadeProperties,DXO10W.LinearShadeProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   [DataMember]
   public DMW10.PathShadeProperties? PathShadeProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMW10.PathShadeProperties,DXO10W.PathShadeProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW10.PathShadeProperties,DXO10W.PathShadeProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

@@ -19,14 +19,8 @@ public partial class ObjectEmbed: ModelElement<DXW.ObjectEmbed>
   [DataMember]
   public String? Id
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Id);
-    }
-    set
-    {
-      _ExistingElement.Id = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Id;
+    set => _ExistingElement.Id = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class ObjectEmbed: ModelElement<DXW.ObjectEmbed>
   [DataMember]
   public String? ProgId
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.ProgId);
-    }
-    set
-    {
-      _ExistingElement.ProgId = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.ProgId;
+    set => _ExistingElement.ProgId = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class ObjectEmbed: ModelElement<DXW.ObjectEmbed>
   [DataMember]
   public String? ShapeId
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.ShapeId);
-    }
-    set
-    {
-      _ExistingElement.ShapeId = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.ShapeId;
+    set => _ExistingElement.ShapeId = value;
   }
   
   
@@ -70,14 +52,8 @@ public partial class ObjectEmbed: ModelElement<DXW.ObjectEmbed>
   [DataMember]
   public String? FieldCodes
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.FieldCodes);
-    }
-    set
-    {
-      _ExistingElement.FieldCodes = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.FieldCodes;
+    set => _ExistingElement.FieldCodes = value;
   }
   
 }

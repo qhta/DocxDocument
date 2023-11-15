@@ -19,14 +19,8 @@ public partial class GlossaryDocument: ModelElement<DXW.GlossaryDocument>
   [DataMember]
   public DMW.DocumentBackground? DocumentBackground
   {
-    get
-    {
-      return _Element?.GetObject<DMW.DocumentBackground,DXW.DocumentBackground>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.DocumentBackground,DXW.DocumentBackground>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -36,14 +30,8 @@ public partial class GlossaryDocument: ModelElement<DXW.GlossaryDocument>
   [DataMember]
   public DMW.DocParts? DocParts
   {
-    get
-    {
-      return _Element?.GetObject<DMW.DocParts,DXW.DocParts>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.DocParts,DXW.DocParts>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

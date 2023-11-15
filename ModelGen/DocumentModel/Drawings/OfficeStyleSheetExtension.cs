@@ -19,27 +19,15 @@ public partial class OfficeStyleSheetExtension: ModelElement<DXD.OfficeStyleShee
   [DataMember]
   public String? Uri
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Uri);
-    }
-    set
-    {
-      _ExistingElement.Uri = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Uri;
+    set => _ExistingElement.Uri = value;
   }
   
   [DataMember]
   public DMT.ThemeFamily? ThemeFamily
   {
-    get
-    {
-      return _Element?.GetObject<DMT.ThemeFamily,DXO13T.ThemeFamily>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMT.ThemeFamily,DXO13T.ThemeFamily>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

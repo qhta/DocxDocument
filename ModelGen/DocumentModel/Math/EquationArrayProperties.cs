@@ -19,24 +19,8 @@ public partial class EquationArrayProperties: ModelElement<DXM.EquationArrayProp
   [DataMember]
   public DMM.VerticalAlignmentKind? BaseJustification
   {
-    get
-    {
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.VerticalAlignmentValues, DMM.VerticalAlignmentKind>(_ExistingElement.GetFirstChild<DXM.BaseJustification>()?.Val?.Value);
-    }
-    set
-    {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.BaseJustification>();
-      if (itemElement != null)
-      {
-        if (value != null)
-          EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.VerticalAlignmentValues, DMM.VerticalAlignmentKind>(itemElement, (DMM.VerticalAlignmentKind)value);
-        else
-          itemElement.Remove();
-      }
-      else
-      if (value != null)
-        _ExistingElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXM.BaseJustification, DocumentFormat.OpenXml.Math.VerticalAlignmentValues, DMM.VerticalAlignmentKind>((DMM.VerticalAlignmentKind)value));
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertyGetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertySetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -46,14 +30,8 @@ public partial class EquationArrayProperties: ModelElement<DXM.EquationArrayProp
   [DataMember]
   public DMM.MaxDistribution? MaxDistribution
   {
-    get
-    {
-      return _Element?.GetObject<DMM.MaxDistribution,DXM.MaxDistribution>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.MaxDistribution,DXM.MaxDistribution>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OnOffType");
   }
   
   
@@ -63,14 +41,8 @@ public partial class EquationArrayProperties: ModelElement<DXM.EquationArrayProp
   [DataMember]
   public DMM.ObjectDistribution? ObjectDistribution
   {
-    get
-    {
-      return _Element?.GetObject<DMM.ObjectDistribution,DXM.ObjectDistribution>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.ObjectDistribution,DXM.ObjectDistribution>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OnOffType");
   }
   
   
@@ -80,14 +52,8 @@ public partial class EquationArrayProperties: ModelElement<DXM.EquationArrayProp
   [DataMember]
   public DMM.RowSpacingRule? RowSpacingRule
   {
-    get
-    {
-      return _Element?.GetObject<DMM.RowSpacingRule,DXM.RowSpacingRule>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.RowSpacingRule,DXM.RowSpacingRule>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.SpacingRuleType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.SpacingRuleType");
   }
   
   
@@ -97,14 +63,8 @@ public partial class EquationArrayProperties: ModelElement<DXM.EquationArrayProp
   [DataMember]
   public DMM.RowSpacing? RowSpacing
   {
-    get
-    {
-      return _Element?.GetObject<DMM.RowSpacing,DXM.RowSpacing>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.RowSpacing,DXM.RowSpacing>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.UnsignedShortType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.UnsignedShortType");
   }
   
   
@@ -114,14 +74,8 @@ public partial class EquationArrayProperties: ModelElement<DXM.EquationArrayProp
   [DataMember]
   public DMM.ControlProperties? ControlProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMM.ControlProperties,DXM.ControlProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.ControlProperties,DXM.ControlProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

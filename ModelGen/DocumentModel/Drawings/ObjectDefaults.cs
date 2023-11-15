@@ -19,14 +19,8 @@ public partial class ObjectDefaults: ModelElement<DXD.ObjectDefaults>
   [DataMember]
   public DMD.ShapeDefault? ShapeDefault
   {
-    get
-    {
-      return _Element?.GetObject<DMD.ShapeDefault,DXD.ShapeDefault>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.ShapeDefault,DXD.ShapeDefault>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.DefaultShapeDefinitionType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.DefaultShapeDefinitionType");
   }
   
   
@@ -36,14 +30,8 @@ public partial class ObjectDefaults: ModelElement<DXD.ObjectDefaults>
   [DataMember]
   public DMD.LineDefault? LineDefault
   {
-    get
-    {
-      return _Element?.GetObject<DMD.LineDefault,DXD.LineDefault>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.LineDefault,DXD.LineDefault>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.DefaultShapeDefinitionType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.DefaultShapeDefinitionType");
   }
   
   
@@ -53,14 +41,8 @@ public partial class ObjectDefaults: ModelElement<DXD.ObjectDefaults>
   [DataMember]
   public DMD.TextDefault? TextDefault
   {
-    get
-    {
-      return _Element?.GetObject<DMD.TextDefault,DXD.TextDefault>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.TextDefault,DXD.TextDefault>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.DefaultShapeDefinitionType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.DefaultShapeDefinitionType");
   }
   
   
@@ -70,14 +52,8 @@ public partial class ObjectDefaults: ModelElement<DXD.ObjectDefaults>
   [DataMember]
   public DMD.ExtensionList? ExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMD.ExtensionList,DXD.ExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.ExtensionList,DXD.ExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

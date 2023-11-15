@@ -19,14 +19,8 @@ public partial class NormalAutoFit: ModelElement<DXD.NormalAutoFit>
   [DataMember]
   public Int32? FontScale
   {
-    get
-    {
-      return _Element?.FontScale?.Value;
-    }
-    set
-    {
-      _ExistingElement.FontScale = value;
-    }
+    get => _Element?.FontScale?.Value;
+    set => _ExistingElement.FontScale = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class NormalAutoFit: ModelElement<DXD.NormalAutoFit>
   [DataMember]
   public Int32? LineSpaceReduction
   {
-    get
-    {
-      return _Element?.LineSpaceReduction?.Value;
-    }
-    set
-    {
-      _ExistingElement.LineSpaceReduction = value;
-    }
+    get => _Element?.LineSpaceReduction?.Value;
+    set => _ExistingElement.LineSpaceReduction = value;
   }
   
 }

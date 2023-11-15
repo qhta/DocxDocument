@@ -19,14 +19,8 @@ public partial class TextBody: ModelElement<DXOD.TextBody>
   [DataMember]
   public DMD.BodyProperties? BodyProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMD.BodyProperties,DXD.BodyProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.BodyProperties,DXD.BodyProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -36,14 +30,8 @@ public partial class TextBody: ModelElement<DXOD.TextBody>
   [DataMember]
   public DMD.ListStyle? ListStyle
   {
-    get
-    {
-      return _Element?.GetObject<DMD.ListStyle,DXD.ListStyle>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.ListStyle,DXD.ListStyle>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

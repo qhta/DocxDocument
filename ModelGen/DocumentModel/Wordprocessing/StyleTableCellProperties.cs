@@ -19,14 +19,8 @@ public partial class StyleTableCellProperties: ModelElement<DXW.StyleTableCellPr
   [DataMember]
   public DMW.Shading? Shading
   {
-    get
-    {
-      return _Element?.GetObject<DMW.Shading,DXW.Shading>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.Shading,DXW.Shading>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -36,14 +30,8 @@ public partial class StyleTableCellProperties: ModelElement<DXW.StyleTableCellPr
   [DataMember]
   public DMW.NoWrap? NoWrap
   {
-    get
-    {
-      return _Element?.GetObject<DMW.NoWrap,DXW.NoWrap>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.NoWrap,DXW.NoWrap>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyType");
   }
   
   
@@ -53,14 +41,8 @@ public partial class StyleTableCellProperties: ModelElement<DXW.StyleTableCellPr
   [DataMember]
   public DMW.TableCellMargin? TableCellMargin
   {
-    get
-    {
-      return _Element?.GetObject<DMW.TableCellMargin,DXW.TableCellMargin>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.TableCellMargin,DXW.TableCellMargin>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -70,24 +52,8 @@ public partial class StyleTableCellProperties: ModelElement<DXW.StyleTableCellPr
   [DataMember]
   public DMW.TableVerticalAlignmentKind? TableCellVerticalAlignment
   {
-    get
-    {
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TableVerticalAlignmentValues, DMW.TableVerticalAlignmentKind>(_ExistingElement.GetFirstChild<DXW.TableCellVerticalAlignment>()?.Val?.Value);
-    }
-    set
-    {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.TableCellVerticalAlignment>();
-      if (itemElement != null)
-      {
-        if (value != null)
-          EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableVerticalAlignmentValues, DMW.TableVerticalAlignmentKind>(itemElement, (DMW.TableVerticalAlignmentKind)value);
-        else
-          itemElement.Remove();
-      }
-      else
-      if (value != null)
-        _ExistingElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.TableCellVerticalAlignment, DocumentFormat.OpenXml.Wordprocessing.TableVerticalAlignmentValues, DMW.TableVerticalAlignmentKind>((DMW.TableVerticalAlignmentKind)value));
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertyGetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertySetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
 }

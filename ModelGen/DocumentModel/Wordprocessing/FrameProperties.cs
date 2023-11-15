@@ -19,14 +19,8 @@ public partial class FrameProperties: ModelElement<DXW.FrameProperties>
   [DataMember]
   public Int32? Lines
   {
-    get
-    {
-      return _Element?.Lines?.Value;
-    }
-    set
-    {
-      _ExistingElement.Lines = value;
-    }
+    get => _Element?.Lines?.Value;
+    set => _ExistingElement.Lines = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class FrameProperties: ModelElement<DXW.FrameProperties>
   [DataMember]
   public String? Width
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Width);
-    }
-    set
-    {
-      _ExistingElement.Width = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Width;
+    set => _ExistingElement.Width = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class FrameProperties: ModelElement<DXW.FrameProperties>
   [DataMember]
   public UInt32? Height
   {
-    get
-    {
-      return _Element?.Height?.Value;
-    }
-    set
-    {
-      _ExistingElement.Height = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
   }
   
   
@@ -70,14 +52,8 @@ public partial class FrameProperties: ModelElement<DXW.FrameProperties>
   [DataMember]
   public String? VerticalSpace
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.VerticalSpace);
-    }
-    set
-    {
-      _ExistingElement.VerticalSpace = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.VerticalSpace;
+    set => _ExistingElement.VerticalSpace = value;
   }
   
   
@@ -87,14 +63,8 @@ public partial class FrameProperties: ModelElement<DXW.FrameProperties>
   [DataMember]
   public String? HorizontalSpace
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.HorizontalSpace);
-    }
-    set
-    {
-      _ExistingElement.HorizontalSpace = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.HorizontalSpace;
+    set => _ExistingElement.HorizontalSpace = value;
   }
   
   
@@ -104,14 +74,8 @@ public partial class FrameProperties: ModelElement<DXW.FrameProperties>
   [DataMember]
   public String? X
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.X);
-    }
-    set
-    {
-      _ExistingElement.X = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.X;
+    set => _ExistingElement.X = value;
   }
   
   
@@ -121,14 +85,8 @@ public partial class FrameProperties: ModelElement<DXW.FrameProperties>
   [DataMember]
   public String? Y
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Y);
-    }
-    set
-    {
-      _ExistingElement.Y = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Y;
+    set => _ExistingElement.Y = value;
   }
   
   
@@ -138,14 +96,8 @@ public partial class FrameProperties: ModelElement<DXW.FrameProperties>
   [DataMember]
   public Boolean? AnchorLock
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.AnchorLock);
-    }
-    set
-    {
-      _ExistingElement.AnchorLock = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
 }
