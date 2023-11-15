@@ -1,6 +1,6 @@
 ﻿namespace DocumentModel.OpenXml;
 
-public static class UInt32ValueConverter
+public static class UIntValueConverter
 {
   public static UInt32? GetValue(DXDC.UnsignedIntegerType element)
   {

@@ -21,6 +21,7 @@ where ModelItemType : IModelElement<OpenXmlItemType>, INamedElement, new()
     {
       if (_NameProperty == null)
         _NameProperty = typeof(OpenXmlItemType).GetProperty("Name")
+                 ?? typeof(OpenXmlItemType).GetProperty("Id")
                  ?? throw new InvalidCastException($"{typeof(OpenXmlItemType)} must have \"Name\" property");
       return _NameProperty;
     }

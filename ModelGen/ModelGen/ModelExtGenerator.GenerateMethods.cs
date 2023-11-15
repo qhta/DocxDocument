@@ -1,14 +1,7 @@
 ﻿using DocumentFormat.OpenXml;
-using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
-using DocumentModel;
-using Qhta.TypeUtils;
-using Qhta.TextUtils;
-using Text = DocumentFormat.OpenXml.Drawing.Text;
-using System.Reflection;
-using System.Xml.Linq;
+
 using InvalidOperationException = System.InvalidOperationException;
-using System.Runtime.CompilerServices;
 
 namespace ModelGen;
 
@@ -72,6 +65,7 @@ public partial class ModelExtGenerator
 
   #endregion
 
+  #region Main generate property getter/setter methods
   private bool GeneratePropertyGetter(PropInfo prop)
   {
     //var ok = false;
@@ -91,18 +85,18 @@ public partial class ModelExtGenerator
       return GenerateBooleanPropertyGetCode(prop);
     else if (targetPropType.Type.IsNumeral())
       return GenerateNumericValuePropertyGetCode(prop);
-    //else if (targetPropType.Type == typeof(Base64Binary))
-    //  ok = GenerateBase64BinaryPropertyGetCode(prop);
+    else if (targetPropType.Type == typeof(Base64Binary))
+      return GenerateBase64BinaryPropertyGetCode(prop);
     //else if (targetPropType.IsSimple())
-    //  ok = GenerateSimplePropertyGetCode(prop);
+    //  return GenerateSimplePropertyGetCode(prop);
     //else if (targetPropType.Type.Implements(typeof(ICollection)))
-    //  ok = GenerateCollectionGetCode(prop);
+    //  return GenerateCollectionGetCode(prop);
     //else if (prop.PropertyType.Type.IsEqualOrSubclassOf(typeof(OpenXmlSimpleType)))
-    //  ok = GenerateSimplePropertyGetCode(prop);
+    //  return GenerateSimplePropertyGetCode(prop);
     //else if (prop.DeclaringType?.Type.IsEqualOrSubclassOf(typeof(OpenXmlCompositeElement)) == true)
-    //  ok = GenerateContentElementPropertyGetCode(prop);
+    //  return GenerateContentElementPropertyGetCode(prop);
     //else if (prop.DeclaringType?.Type.IsEqualOrSubclassOf(typeof(OpenXmlPart)) == true && prop.PropertyType.Type.IsEqualOrSubclassOf(typeof(OpenXmlPartRootElement)))
-    //  ok = GeneratePartRootElementPropertyGetCode(prop);
+    //  return GeneratePartRootElementPropertyGetCode(prop);
     //else if (origPropType.Type.IsClass)
     //  return GenerateSimplePropertyGetCode(prop);
     else
@@ -129,21 +123,22 @@ public partial class ModelExtGenerator
       return GenerateBooleanPropertySetCode(prop);
     else if (targetPropType.Type.IsNumeral())
       return GenerateNumericValuePropertySetCode(prop);
-    //else if (targetPropType.Type == typeof(Base64Binary))
-    //  ok = GenerateBase64BinaryPropertySetCode(prop);
+    else if (targetPropType.Type == typeof(Base64Binary))
+      return GenerateBase64BinaryPropertySetCode(prop);
     //else if (targetPropType.IsSimple())
-    //  ok = GenerateSimplePropertySetCode(prop);
+    //  return GenerateSimplePropertySetCode(prop);
     //else if (targetPropType.Type.Implements(typeof(ICollection)))
-    //  ok = GenerateCollectionSetCode(prop);
+    //  return GenerateCollectionSetCode(prop);
     //else if (prop.PropertyType.Type.IsEqualOrSubclassOf(typeof(OpenXmlSimpleType)))
-    //  ok = GenerateSimplePropertySetCode(prop);
+    //  return GenerateSimplePropertySetCode(prop);
     //else if (prop.DeclaringType?.Type.IsEqualOrSubclassOf(typeof(OpenXmlCompositeElement)) == true)
-    //  ok = GenerateContentElementPropertySetCode(prop);
+    //  return GenerateContentElementPropertySetCode(prop);
     //else if (prop.DeclaringType?.Type.IsEqualOrSubclassOf(typeof(OpenXmlPart)) == true && prop.PropertyType.Type.IsEqualOrSubclassOf(typeof(OpenXmlPartRootElement)))
-    //  ok = GeneratePartRootElementPropertySetCode(prop);
+    //  return GeneratePartRootElementPropertySetCode(prop);
     else
       return GenerateSetNotImplementedException($"targetPropType baseType is {targetPropType.Type.BaseType}");
   }
+  #endregion
 
   #region Simple property access code generation
 
@@ -280,7 +275,6 @@ public partial class ModelExtGenerator
     return true;
   }
   #endregion
-
 
   #region GenerateGuidProperty code
   private bool GenerateGuidPropertyGetCode(PropInfo prop)
@@ -798,7 +792,7 @@ public partial class ModelExtGenerator
   private bool GenerateBase64BinaryPropertyGetCode(PropInfo prop)
   {
     var origPropName = prop.Name;
-    Writer.WriteLine($"return Base64BinaryConverter.GetValue(_Element?.{origPropName});");
+    Writer.WriteLine($"get => Base64BinaryConverter.GetValue(_Element?.{origPropName});");
     return true;
   }
 
@@ -806,13 +800,13 @@ public partial class ModelExtGenerator
   {
     var origPropName = prop.Name;
     if (prop.PropertyType.Type == typeof(DX.Base64BinaryValue))
-      Writer.WriteLine($"_ExistingElement.{origPropName} = Base64BinaryConverter.CreateBase64BinaryValue(value);");
+      Writer.WriteLine($"set => _ExistingElement.{origPropName} = Base64BinaryConverter.CreateBase64BinaryValue(value);");
     else
     {
       var origPropType = prop.PropertyType;
       var origPropTypeName = origPropType.GetFullName(false, true, true);
       GlobalUsings.Add(origPropType.OriginalNamespace);
-      Writer.WriteLine($"_ExistingElement.{origPropName} = Base64BinaryConverter.CreateOpenXmlElement<{origPropTypeName}>(value);");
+      Writer.WriteLine($"set => _ExistingElement.{origPropName} = Base64BinaryConverter.CreateOpenXmlElement<{origPropTypeName}>(value);");
     }
     return true;
   }

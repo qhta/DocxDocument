@@ -19,8 +19,8 @@ public partial class Ink: ModelElement<DXVO.Ink>
   [DataMember]
   public DM.Base64Binary? InkData
   {
-    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => Base64BinaryConverter.GetValue(_Element?.InkData);
+    set => _ExistingElement.InkData = Base64BinaryConverter.CreateBase64BinaryValue(value);
   }
   
   

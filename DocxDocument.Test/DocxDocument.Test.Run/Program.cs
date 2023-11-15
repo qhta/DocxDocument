@@ -34,9 +34,9 @@
     Console.WriteLine($"Opening directory: {test.SamplesPath}");
     Console.WriteLine();
     if (!test.TestCreate()) return false;
-    //if (!test.TestCopyPropertiesOne()) return false;
-    //if (!test.TestCreateProperties()) return false;
-    //if (!test.TestCreateSettings()) return false;
+    if (!test.TestCopyPropertiesOne()) return false;
+    if (!test.TestCreateProperties()) return false;
+    if (!test.TestCreateSettings()) return false;
     return true;
   }
 

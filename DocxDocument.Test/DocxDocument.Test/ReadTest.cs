@@ -114,13 +114,18 @@ public class ReadTest
 
   public bool TestReadSettings()
   {
-    bool success = false;
     var samplesPath = SamplesPath;
-    var file = Path.Combine(samplesPath, "DocumentSettings.docx");
-    Output.WriteLine($"TestReadSettings: {file}");
+    var fileName = Path.Combine(samplesPath, "DocumentSettings.docx");
+    return TestReadSettings(fileName);
+  }
+
+  public bool TestReadSettings(string fileName)
+  {
+    bool success = true;
+    Output.WriteLine($"TestReadSettings: {fileName}");
     try
     {
-      using (var document = DM.Document.Open(file, false))
+      using (var document = DM.Document.Open(fileName, false))
       {
         if (document.HasDocumentSettings)
         {
@@ -131,15 +136,18 @@ public class ReadTest
             {
               var val = prop.GetValue(settings);
               if (val != null)
+              {
+                success = false;
                 Output.WriteLine($"  {prop.Name}: {val.ToDumpString()}");
+              }
             }
         }
       }
-      success = true;
     }
     catch (Exception ex)
     {
       Output.WriteLine($"  {ex.GetType().Name}: {ex.Message}");
+      success = false;
     }
     return success;
   }
@@ -151,32 +159,35 @@ public class ReadTest
     try
     {
       using (var actualDocument = DM.Document.Open(actualDocFile, false))
-      {
-        using (var expectedDocument = DM.Document.Open(expectedDocFile, false))
-        {
-          bool ok = DeepComparer.CompareObjects(actualDocument, expectedDocument);
-          if (!ok)
-          {
-            var diffs = DeepComparer.Diffs;
-            foreach (var diff in diffs)
-            {
-              Output.WriteLine($"{diff.ValuePath} {(diff.Reason ?? "are different")}");
-              Output.WriteLine($"  actual:   {(diff.ActualValue?.ToDumpString() ?? "null")}");
-              Output.WriteLine($"  expected: {(diff.ExpectedValue?.ToDumpString() ?? "null")}");
-            }
-          }
-          else
-          {
-            Output.WriteLine($"Documents are equal");
-            success = ok;
-          }
-        }
-        Output.WriteLine($"");
-      }
+      using (var expectedDocument = DM.Document.Open(expectedDocFile, false))
+        success = CompareDocuments(actualDocument, expectedDocument);
     }
     catch (Exception ex)
     {
       Output.WriteLine($"  {ex.GetType().Name}: {ex.Message}");
+      success = false;
+    }
+    return success;
+  }
+
+  public bool CompareDocuments(DM.Document actualDocument, DM.Document expectedDocument)
+  {
+    bool success = false;
+    bool ok = DeepComparer.CompareObjects(actualDocument, expectedDocument);
+    if (!ok)
+    {
+      var diffs = DeepComparer.Diffs;
+      foreach (var diff in diffs)
+      {
+        Output.WriteLine($"{diff.ValuePath} {(diff.Reason ?? "are different")}");
+        Output.WriteLine($"  actual:   {(diff.ActualValue?.ToDumpString() ?? "null")}");
+        Output.WriteLine($"  expected: {(diff.ExpectedValue?.ToDumpString() ?? "null")}");
+      }
+    }
+    else
+    {
+      Output.WriteLine($"Documents are equal");
+      success = ok;
     }
     return success;
   }

@@ -35,10 +35,10 @@ public partial class EndnoteDocumentWideProperties : ModelElement<DXW.EndnoteDoc
   /// If this element is omitted, then the starting value shall be 1.
   /// </summary>
   [DataMember]
-  public int? NumberingStart
+  public UInt16? NumberingStart
   {
-    get => _Element?.GetIntVal<Int32, DXW.NumberingStart>();
-    set => _ExistingElement.SetIntVal<Int32, DXW.NumberingStart>(value);
+    get => _Element?.GetIntVal<UInt16, DXW.NumberingStart>();
+    set => _ExistingElement.SetIntVal<UInt16, DXW.NumberingStart>(value);
   }
 
   /// <summary>
@@ -50,8 +50,8 @@ public partial class EndnoteDocumentWideProperties : ModelElement<DXW.EndnoteDoc
   [DataMember]
   public int? EndnoteSpecialReference
   {
-    get => _Element?.GetIntId<DXW.EndnoteSpecialReference>();
-    set => _ExistingElement.SetIntId<DXW.EndnoteSpecialReference>(value);
+    get => _Element?.GetIntVal<Int32, DXW.EndnoteSpecialReference>("Id");
+    set => _ExistingElement.SetIntVal<Int32, DXW.EndnoteSpecialReference>(value, "Id");
   }
 
   /// <summary>

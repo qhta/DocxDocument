@@ -1322,10 +1322,10 @@ public partial class DocumentSettings: ModelElement
   /// </para>
   /// </summary>
   [DataMember]
-  public int? BookFoldPrintingSheets
+  public Int16? BookFoldPrintingSheets
   {
-    get => _DocumentSettings?.GetIntVal<int, DXW.BookFoldPrintingSheets>();
-    set => _ExistingSettings.SetIntVal<int, DXW.BookFoldPrintingSheets>(value);
+    get => _DocumentSettings?.GetIntVal<Int16, DXW.BookFoldPrintingSheets>();
+    set => _ExistingSettings.SetIntVal<Int16, DXW.BookFoldPrintingSheets>(value);
   }
 
   /// <summary>
@@ -1429,8 +1429,8 @@ public partial class DocumentSettings: ModelElement
   [DataMember]
   public string? AttachedSchema
   {
-    get => _DocumentSettings?.GetStringVal<DXW.SaveThroughXslt>();
-    set => _ExistingSettings.SetStringVal<DXW.SaveThroughXslt>(value);
+    get => _DocumentSettings?.GetStringVal<DXW.SaveThroughXslt>("Id");
+    set => _ExistingSettings.SetStringVal<DXW.SaveThroughXslt>(value, "Id");
   }
 
   /// <summary>
@@ -1632,10 +1632,10 @@ public partial class DocumentSettings: ModelElement
   /// </para>
   /// </summary>
   [DataMember]
-  public int? ConsecutiveHyphenLimit
+  public UInt16? ConsecutiveHyphenLimit
   {
-    get => _DocumentSettings?.GetIntVal<Int32, DXW.ConsecutiveHyphenLimit>();
-    set => _ExistingSettings.SetIntVal<Int32, DXW.ConsecutiveHyphenLimit>(value);
+    get => _DocumentSettings?.GetIntVal<UInt16, DXW.ConsecutiveHyphenLimit>();
+    set => _ExistingSettings.SetIntVal<UInt16, DXW.ConsecutiveHyphenLimit>(value);
   }
 
   /// <summary>

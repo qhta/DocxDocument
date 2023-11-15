@@ -327,8 +327,8 @@ public partial class Group: ModelElement<DXV.Group>
   [DataMember]
   public DM.Base64Binary? Gfxdata
   {
-    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => Base64BinaryConverter.GetValue(_Element?.Gfxdata);
+    set => _ExistingElement.Gfxdata = Base64BinaryConverter.CreateBase64BinaryValue(value);
   }
   
   

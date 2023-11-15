@@ -34,10 +34,10 @@ public partial class FootnoteDocumentWideProperties : ModelElement<DXW.FootnoteD
   /// If this element is omitted, then the starting value shall be 1.
   /// </summary>
   [DataMember]
-  public int? NumberingStart
+  public UInt16? NumberingStart
   {
-    get => _Element?.GetIntVal<Int32, DXW.NumberingStart>();
-    set => _ExistingElement.SetIntVal<Int32, DXW.NumberingStart>(value);
+    get => _Element?.GetIntVal<UInt16, DXW.NumberingStart>();
+    set => _ExistingElement.SetIntVal<UInt16, DXW.NumberingStart>(value);
   }
 
   /// <summary>
@@ -49,8 +49,8 @@ public partial class FootnoteDocumentWideProperties : ModelElement<DXW.FootnoteD
   [DataMember]
   public int? FootnoteSpecialReference
   {
-    get => _Element?.GetIntId<DXW.FootnoteSpecialReference>();
-    set => _ExistingElement.SetIntId<DXW.FootnoteSpecialReference>(value);
+    get => _Element?.GetIntVal<Int32, DXW.FootnoteSpecialReference>("Id");
+    set => _ExistingElement.SetIntVal<Int32, DXW.FootnoteSpecialReference>(value, "Id");
   }
 
   /// <summary>

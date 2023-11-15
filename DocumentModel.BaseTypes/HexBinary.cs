@@ -113,4 +113,12 @@ public class HexBinary: IEquatable<HexBinary>
   {
     return value.GetHashCode();
   }
+
+  public override bool Equals(object? other)
+  {
+    if (other is HexBinary otherValue)
+      return this.value.SequenceEqual(otherValue.value);
+    return false;
+  }
+
 }

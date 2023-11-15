@@ -547,8 +547,8 @@ public partial class Shape: ModelElement<DXV.Shape>
   [DataMember]
   public DM.Base64Binary? EncodedPackage
   {
-    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => Base64BinaryConverter.GetValue(_Element?.EncodedPackage);
+    set => _ExistingElement.EncodedPackage = Base64BinaryConverter.CreateBase64BinaryValue(value);
   }
   
   
