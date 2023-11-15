@@ -15,14 +15,8 @@ public partial class LeaderLines: ModelElement<DXDC.LeaderLines>
   [DataMember]
   public DMDC.ChartShapeProperties? ChartShapeProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.ChartShapeProperties,DXDC.ChartShapeProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.ChartShapeProperties,DXDC.ChartShapeProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

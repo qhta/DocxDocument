@@ -19,14 +19,8 @@ public partial class Rsids: ModelElement<DXW.Rsids>
   [DataMember]
   public DMW.RsidRoot? RsidRoot
   {
-    get
-    {
-      return _Element?.GetObject<DMW.RsidRoot,DXW.RsidRoot>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.RsidRoot,DXW.RsidRoot>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.LongHexNumberType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.LongHexNumberType");
   }
   
 }

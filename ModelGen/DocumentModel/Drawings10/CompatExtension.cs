@@ -19,14 +19,8 @@ public partial class CompatExtension: ModelElement<DXO10D.CompatExtension>
   [DataMember]
   public String? ShapeId
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.ShapeId);
-    }
-    set
-    {
-      _ExistingElement.ShapeId = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.ShapeId;
+    set => _ExistingElement.ShapeId = value;
   }
   
 }

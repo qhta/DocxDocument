@@ -19,14 +19,8 @@ public partial class Style: ModelElement<DXW.Style>
   [DataMember]
   public String? StyleId
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.StyleId);
-    }
-    set
-    {
-      _ExistingElement.StyleId = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.StyleId;
+    set => _ExistingElement.StyleId = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class Style: ModelElement<DXW.Style>
   [DataMember]
   public Boolean? Default
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.Default);
-    }
-    set
-    {
-      _ExistingElement.Default = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
   
@@ -53,14 +41,8 @@ public partial class Style: ModelElement<DXW.Style>
   [DataMember]
   public Boolean? CustomStyle
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.CustomStyle);
-    }
-    set
-    {
-      _ExistingElement.CustomStyle = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
   
@@ -70,14 +52,8 @@ public partial class Style: ModelElement<DXW.Style>
   [DataMember]
   public String? StyleName
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.GetFirstChild<DXW.StyleName>()?.Val);
-    }
-    set
-    {
-      StringValueConverter.SetValue<DXW.StyleName>(_ExistingElement, value);
-    }
+    get => _Element?.GetStringVal<DXW.StyleName>();
+    set => _ExistingElement.SetStringVal<DXW.StyleName>(value);
   }
   
   
@@ -87,14 +63,8 @@ public partial class Style: ModelElement<DXW.Style>
   [DataMember]
   public DMW.Aliases? Aliases
   {
-    get
-    {
-      return _Element?.GetObject<DMW.Aliases,DXW.Aliases>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.Aliases,DXW.Aliases>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.String253Type");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.String253Type");
   }
   
   
@@ -104,14 +74,8 @@ public partial class Style: ModelElement<DXW.Style>
   [DataMember]
   public DMW.BasedOn? BasedOn
   {
-    get
-    {
-      return _Element?.GetObject<DMW.BasedOn,DXW.BasedOn>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.BasedOn,DXW.BasedOn>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.String253Type");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.String253Type");
   }
   
   
@@ -121,14 +85,8 @@ public partial class Style: ModelElement<DXW.Style>
   [DataMember]
   public DMW.NextParagraphStyle? NextParagraphStyle
   {
-    get
-    {
-      return _Element?.GetObject<DMW.NextParagraphStyle,DXW.NextParagraphStyle>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.NextParagraphStyle,DXW.NextParagraphStyle>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.String253Type");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.String253Type");
   }
   
   
@@ -138,14 +96,8 @@ public partial class Style: ModelElement<DXW.Style>
   [DataMember]
   public DMW.LinkedStyle? LinkedStyle
   {
-    get
-    {
-      return _Element?.GetObject<DMW.LinkedStyle,DXW.LinkedStyle>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.LinkedStyle,DXW.LinkedStyle>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.String253Type");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.String253Type");
   }
   
   
@@ -155,14 +107,8 @@ public partial class Style: ModelElement<DXW.Style>
   [DataMember]
   public DMW.AutoRedefine? AutoRedefine
   {
-    get
-    {
-      return _Element?.GetObject<DMW.AutoRedefine,DXW.AutoRedefine>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.AutoRedefine,DXW.AutoRedefine>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyType");
   }
   
   
@@ -172,14 +118,8 @@ public partial class Style: ModelElement<DXW.Style>
   [DataMember]
   public DMW.StyleHidden? StyleHidden
   {
-    get
-    {
-      return _Element?.GetObject<DMW.StyleHidden,DXW.StyleHidden>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.StyleHidden,DXW.StyleHidden>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyType");
   }
   
   
@@ -189,14 +129,8 @@ public partial class Style: ModelElement<DXW.Style>
   [DataMember]
   public Int32? UIPriority
   {
-    get
-    {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DXW.UIPriority>()?.Val);
-    }
-    set
-    {
-      SimpleValueConverter.SetValue<DXW.UIPriority,System.Int32>(_ExistingElement, value);
-    }
+    get => _Element?.GetIntVal<Int32, DXW.UIPriority>();
+    set => _ExistingElement.SetIntVal<Int32, DXW.UIPriority>(value);
   }
   
   
@@ -206,14 +140,8 @@ public partial class Style: ModelElement<DXW.Style>
   [DataMember]
   public DMW.SemiHidden? SemiHidden
   {
-    get
-    {
-      return _Element?.GetObject<DMW.SemiHidden,DXW.SemiHidden>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.SemiHidden,DXW.SemiHidden>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyType");
   }
   
   
@@ -223,14 +151,8 @@ public partial class Style: ModelElement<DXW.Style>
   [DataMember]
   public DMW.UnhideWhenUsed? UnhideWhenUsed
   {
-    get
-    {
-      return _Element?.GetObject<DMW.UnhideWhenUsed,DXW.UnhideWhenUsed>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.UnhideWhenUsed,DXW.UnhideWhenUsed>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyType");
   }
   
   
@@ -240,14 +162,8 @@ public partial class Style: ModelElement<DXW.Style>
   [DataMember]
   public DMW.PrimaryStyle? PrimaryStyle
   {
-    get
-    {
-      return _Element?.GetObject<DMW.PrimaryStyle,DXW.PrimaryStyle>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.PrimaryStyle,DXW.PrimaryStyle>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyType");
   }
   
   
@@ -257,14 +173,8 @@ public partial class Style: ModelElement<DXW.Style>
   [DataMember]
   public DMW.Locked? Locked
   {
-    get
-    {
-      return _Element?.GetObject<DMW.Locked,DXW.Locked>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.Locked,DXW.Locked>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyType");
   }
   
   
@@ -274,14 +184,8 @@ public partial class Style: ModelElement<DXW.Style>
   [DataMember]
   public DMW.Personal? Personal
   {
-    get
-    {
-      return _Element?.GetObject<DMW.Personal,DXW.Personal>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.Personal,DXW.Personal>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyType");
   }
   
   
@@ -291,14 +195,8 @@ public partial class Style: ModelElement<DXW.Style>
   [DataMember]
   public DMW.PersonalCompose? PersonalCompose
   {
-    get
-    {
-      return _Element?.GetObject<DMW.PersonalCompose,DXW.PersonalCompose>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.PersonalCompose,DXW.PersonalCompose>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyType");
   }
   
   
@@ -308,14 +206,8 @@ public partial class Style: ModelElement<DXW.Style>
   [DataMember]
   public DMW.PersonalReply? PersonalReply
   {
-    get
-    {
-      return _Element?.GetObject<DMW.PersonalReply,DXW.PersonalReply>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.PersonalReply,DXW.PersonalReply>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyType");
   }
   
   
@@ -325,14 +217,8 @@ public partial class Style: ModelElement<DXW.Style>
   [DataMember]
   public HexInt? Rsid
   {
-    get
-    {
-      return _Element?.GetObject<DMW.Rsid,DXW.Rsid>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.Rsid,DXW.Rsid>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.LongHexNumberType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.LongHexNumberType");
   }
   
   
@@ -342,14 +228,8 @@ public partial class Style: ModelElement<DXW.Style>
   [DataMember]
   public DMW.StyleParagraphProperties? StyleParagraphProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMW.StyleParagraphProperties,DXW.StyleParagraphProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.StyleParagraphProperties,DXW.StyleParagraphProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -359,14 +239,8 @@ public partial class Style: ModelElement<DXW.Style>
   [DataMember]
   public DMW.StyleRunProperties? StyleRunProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMW.StyleRunProperties,DXW.StyleRunProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.StyleRunProperties,DXW.StyleRunProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -376,14 +250,8 @@ public partial class Style: ModelElement<DXW.Style>
   [DataMember]
   public DMW.StyleTableProperties? StyleTableProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMW.StyleTableProperties,DXW.StyleTableProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.StyleTableProperties,DXW.StyleTableProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -393,14 +261,8 @@ public partial class Style: ModelElement<DXW.Style>
   [DataMember]
   public DMW.TableStyleConditionalFormattingTableRowProperties? TableStyleConditionalFormattingTableRowProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMW.TableStyleConditionalFormattingTableRowProperties,DXW.TableStyleConditionalFormattingTableRowProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.TableStyleConditionalFormattingTableRowProperties,DXW.TableStyleConditionalFormattingTableRowProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -410,14 +272,8 @@ public partial class Style: ModelElement<DXW.Style>
   [DataMember]
   public DMW.StyleTableCellProperties? StyleTableCellProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMW.StyleTableCellProperties,DXW.StyleTableCellProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.StyleTableCellProperties,DXW.StyleTableCellProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

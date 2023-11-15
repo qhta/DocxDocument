@@ -15,14 +15,8 @@ public partial class Numbering: ModelElement<DXW.Numbering>
   [DataMember]
   public DMW.NumberingIdMacAtCleanup? NumberingIdMacAtCleanup
   {
-    get
-    {
-      return _Element?.GetObject<DMW.NumberingIdMacAtCleanup,DXW.NumberingIdMacAtCleanup>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.NumberingIdMacAtCleanup,DXW.NumberingIdMacAtCleanup>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.DecimalNumberType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.DecimalNumberType");
   }
   
 }

@@ -19,14 +19,8 @@ public partial class ConditionalFormatStyle: ModelElement<DXW.ConditionalFormatS
   [DataMember]
   public String? Val
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Val);
-    }
-    set
-    {
-      _ExistingElement.Val = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Val;
+    set => _ExistingElement.Val = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class ConditionalFormatStyle: ModelElement<DXW.ConditionalFormatS
   [DataMember]
   public Boolean? FirstRow
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.FirstRow);
-    }
-    set
-    {
-      _ExistingElement.FirstRow = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
   
@@ -53,14 +41,8 @@ public partial class ConditionalFormatStyle: ModelElement<DXW.ConditionalFormatS
   [DataMember]
   public Boolean? LastRow
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.LastRow);
-    }
-    set
-    {
-      _ExistingElement.LastRow = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
   
@@ -70,14 +52,8 @@ public partial class ConditionalFormatStyle: ModelElement<DXW.ConditionalFormatS
   [DataMember]
   public Boolean? FirstColumn
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.FirstColumn);
-    }
-    set
-    {
-      _ExistingElement.FirstColumn = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
   
@@ -87,14 +63,8 @@ public partial class ConditionalFormatStyle: ModelElement<DXW.ConditionalFormatS
   [DataMember]
   public Boolean? LastColumn
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.LastColumn);
-    }
-    set
-    {
-      _ExistingElement.LastColumn = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
   
@@ -104,14 +74,8 @@ public partial class ConditionalFormatStyle: ModelElement<DXW.ConditionalFormatS
   [DataMember]
   public Boolean? OddVerticalBand
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.OddVerticalBand);
-    }
-    set
-    {
-      _ExistingElement.OddVerticalBand = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
   
@@ -121,14 +85,8 @@ public partial class ConditionalFormatStyle: ModelElement<DXW.ConditionalFormatS
   [DataMember]
   public Boolean? EvenVerticalBand
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.EvenVerticalBand);
-    }
-    set
-    {
-      _ExistingElement.EvenVerticalBand = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
   
@@ -138,14 +96,8 @@ public partial class ConditionalFormatStyle: ModelElement<DXW.ConditionalFormatS
   [DataMember]
   public Boolean? OddHorizontalBand
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.OddHorizontalBand);
-    }
-    set
-    {
-      _ExistingElement.OddHorizontalBand = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
   
@@ -155,14 +107,8 @@ public partial class ConditionalFormatStyle: ModelElement<DXW.ConditionalFormatS
   [DataMember]
   public Boolean? EvenHorizontalBand
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.EvenHorizontalBand);
-    }
-    set
-    {
-      _ExistingElement.EvenHorizontalBand = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
   
@@ -172,14 +118,8 @@ public partial class ConditionalFormatStyle: ModelElement<DXW.ConditionalFormatS
   [DataMember]
   public Boolean? FirstRowFirstColumn
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.FirstRowFirstColumn);
-    }
-    set
-    {
-      _ExistingElement.FirstRowFirstColumn = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
   
@@ -189,14 +129,8 @@ public partial class ConditionalFormatStyle: ModelElement<DXW.ConditionalFormatS
   [DataMember]
   public Boolean? FirstRowLastColumn
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.FirstRowLastColumn);
-    }
-    set
-    {
-      _ExistingElement.FirstRowLastColumn = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
   
@@ -206,14 +140,8 @@ public partial class ConditionalFormatStyle: ModelElement<DXW.ConditionalFormatS
   [DataMember]
   public Boolean? LastRowFirstColumn
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.LastRowFirstColumn);
-    }
-    set
-    {
-      _ExistingElement.LastRowFirstColumn = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
   
@@ -223,14 +151,8 @@ public partial class ConditionalFormatStyle: ModelElement<DXW.ConditionalFormatS
   [DataMember]
   public Boolean? LastRowLastColumn
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.LastRowLastColumn);
-    }
-    set
-    {
-      _ExistingElement.LastRowLastColumn = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
 }

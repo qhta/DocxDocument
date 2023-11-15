@@ -19,14 +19,8 @@ public partial class InvertSolidFillFormat: ModelElement<DXO10DC.InvertSolidFill
   [DataMember]
   public DMDC10.ShapeProperties? ShapeProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMDC10.ShapeProperties,DXO10DC.ShapeProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC10.ShapeProperties,DXO10DC.ShapeProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

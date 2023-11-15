@@ -19,14 +19,8 @@ public partial class Break: ModelElement<DXD.Break>
   [DataMember]
   public DMD.RunProperties? RunProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMD.RunProperties,DXD.RunProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.RunProperties,DXD.RunProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType");
   }
   
 }

@@ -19,17 +19,8 @@ public partial class HeaderFooter: ModelElement<DXDC.HeaderFooter>
   [DataMember]
   public Boolean? AlignWithMargins
   {
-    get
-    {
-      return _Element?.AlignWithMargins?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.AlignWithMargins = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.AlignWithMargins = null;
-    }
+    get => _Element?.AlignWithMargins?.Value;
+    set => _ExistingElement.AlignWithMargins = value;
   }
   
   
@@ -39,17 +30,8 @@ public partial class HeaderFooter: ModelElement<DXDC.HeaderFooter>
   [DataMember]
   public Boolean? DifferentOddEven
   {
-    get
-    {
-      return _Element?.DifferentOddEven?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.DifferentOddEven = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.DifferentOddEven = null;
-    }
+    get => _Element?.DifferentOddEven?.Value;
+    set => _ExistingElement.DifferentOddEven = value;
   }
   
   
@@ -59,17 +41,8 @@ public partial class HeaderFooter: ModelElement<DXDC.HeaderFooter>
   [DataMember]
   public Boolean? DifferentFirst
   {
-    get
-    {
-      return _Element?.DifferentFirst?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.DifferentFirst = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.DifferentFirst = null;
-    }
+    get => _Element?.DifferentFirst?.Value;
+    set => _ExistingElement.DifferentFirst = value;
   }
   
   
@@ -79,14 +52,8 @@ public partial class HeaderFooter: ModelElement<DXDC.HeaderFooter>
   [DataMember]
   public DMDC.OddHeader? OddHeader
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.OddHeader,DXDC.OddHeader>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.OddHeader,DXDC.OddHeader>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
   }
   
   
@@ -96,14 +63,8 @@ public partial class HeaderFooter: ModelElement<DXDC.HeaderFooter>
   [DataMember]
   public DMDC.OddFooter? OddFooter
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.OddFooter,DXDC.OddFooter>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.OddFooter,DXDC.OddFooter>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
   }
   
   
@@ -113,14 +74,8 @@ public partial class HeaderFooter: ModelElement<DXDC.HeaderFooter>
   [DataMember]
   public DMDC.EvenHeader? EvenHeader
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.EvenHeader,DXDC.EvenHeader>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.EvenHeader,DXDC.EvenHeader>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
   }
   
   
@@ -130,14 +85,8 @@ public partial class HeaderFooter: ModelElement<DXDC.HeaderFooter>
   [DataMember]
   public DMDC.EvenFooter? EvenFooter
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.EvenFooter,DXDC.EvenFooter>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.EvenFooter,DXDC.EvenFooter>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
   }
   
   
@@ -147,14 +96,8 @@ public partial class HeaderFooter: ModelElement<DXDC.HeaderFooter>
   [DataMember]
   public DMDC.FirstHeader? FirstHeader
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.FirstHeader,DXDC.FirstHeader>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.FirstHeader,DXDC.FirstHeader>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
   }
   
   
@@ -164,14 +107,8 @@ public partial class HeaderFooter: ModelElement<DXDC.HeaderFooter>
   [DataMember]
   public DMDC.FirstFooter? FirstFooter
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.FirstFooter,DXDC.FirstFooter>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.FirstFooter,DXDC.FirstFooter>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
   }
   
 }

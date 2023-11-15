@@ -19,14 +19,8 @@ public partial class Trendline: ModelElement<DXDC.Trendline>
   [DataMember]
   public DMDC.TrendlineName? TrendlineName
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.TrendlineName,DXDC.TrendlineName>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.TrendlineName,DXDC.TrendlineName>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
   }
   
   
@@ -36,14 +30,8 @@ public partial class Trendline: ModelElement<DXDC.Trendline>
   [DataMember]
   public DMDC.ChartShapeProperties? ChartShapeProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.ChartShapeProperties,DXDC.ChartShapeProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.ChartShapeProperties,DXDC.ChartShapeProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -53,24 +41,8 @@ public partial class Trendline: ModelElement<DXDC.Trendline>
   [DataMember]
   public DMDC.TrendlineKind? TrendlineType
   {
-    get
-    {
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.TrendlineValues, DMDC.TrendlineKind>(_ExistingElement.GetFirstChild<DXDC.TrendlineType>()?.Val?.Value);
-    }
-    set
-    {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.TrendlineType>();
-      if (itemElement != null)
-      {
-        if (value != null)
-          EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.TrendlineValues, DMDC.TrendlineKind>(itemElement, (DMDC.TrendlineKind)value);
-        else
-          itemElement.Remove();
-      }
-      else
-      if (value != null)
-        _ExistingElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDC.TrendlineType, DocumentFormat.OpenXml.Drawing.Charts.TrendlineValues, DMDC.TrendlineKind>((DMDC.TrendlineKind)value));
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertyGetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertySetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -80,14 +52,8 @@ public partial class Trendline: ModelElement<DXDC.Trendline>
   [DataMember]
   public Byte? PolynomialOrder
   {
-    get
-    {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DXDC.PolynomialOrder>()?.Val);
-    }
-    set
-    {
-      SimpleValueConverter.SetValue<DXDC.PolynomialOrder,System.Byte>(_ExistingElement, value);
-    }
+    get => _Element?.GetIntVal<Byte, DXDC.PolynomialOrder>();
+    set => _ExistingElement.SetIntVal<Byte, DXDC.PolynomialOrder>(value);
   }
   
   
@@ -97,14 +63,8 @@ public partial class Trendline: ModelElement<DXDC.Trendline>
   [DataMember]
   public UInt32? Period
   {
-    get
-    {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DXDC.Period>()?.Val);
-    }
-    set
-    {
-      SimpleValueConverter.SetValue<DXDC.Period,System.UInt32>(_ExistingElement, value);
-    }
+    get => _Element?.GetIntVal<UInt32, DXDC.Period>();
+    set => _ExistingElement.SetIntVal<UInt32, DXDC.Period>(value);
   }
   
   
@@ -114,14 +74,8 @@ public partial class Trendline: ModelElement<DXDC.Trendline>
   [DataMember]
   public DMDC.Forward? Forward
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.Forward,DXDC.Forward>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.Forward,DXDC.Forward>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.DoubleType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.DoubleType");
   }
   
   
@@ -131,14 +85,8 @@ public partial class Trendline: ModelElement<DXDC.Trendline>
   [DataMember]
   public DMDC.Backward? Backward
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.Backward,DXDC.Backward>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.Backward,DXDC.Backward>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.DoubleType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.DoubleType");
   }
   
   
@@ -148,14 +96,8 @@ public partial class Trendline: ModelElement<DXDC.Trendline>
   [DataMember]
   public DMDC.Intercept? Intercept
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.Intercept,DXDC.Intercept>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.Intercept,DXDC.Intercept>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.DoubleType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.DoubleType");
   }
   
   
@@ -165,14 +107,8 @@ public partial class Trendline: ModelElement<DXDC.Trendline>
   [DataMember]
   public DMDC.DisplayRSquaredValue? DisplayRSquaredValue
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.DisplayRSquaredValue,DXDC.DisplayRSquaredValue>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.DisplayRSquaredValue,DXDC.DisplayRSquaredValue>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.BooleanType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.BooleanType");
   }
   
   
@@ -182,14 +118,8 @@ public partial class Trendline: ModelElement<DXDC.Trendline>
   [DataMember]
   public DMDC.DisplayEquation? DisplayEquation
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.DisplayEquation,DXDC.DisplayEquation>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.DisplayEquation,DXDC.DisplayEquation>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.BooleanType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.BooleanType");
   }
   
   
@@ -199,14 +129,8 @@ public partial class Trendline: ModelElement<DXDC.Trendline>
   [DataMember]
   public DMDC.TrendlineLabel? TrendlineLabel
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.TrendlineLabel,DXDC.TrendlineLabel>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.TrendlineLabel,DXDC.TrendlineLabel>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -216,14 +140,8 @@ public partial class Trendline: ModelElement<DXDC.Trendline>
   [DataMember]
   public DMDC.ExtensionList? ExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.ExtensionList,DXDC.ExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.ExtensionList,DXDC.ExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

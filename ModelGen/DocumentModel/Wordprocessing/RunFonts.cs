@@ -19,14 +19,8 @@ public partial class RunFonts: ModelElement<DXW.RunFonts>
   [DataMember]
   public String? Ascii
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Ascii);
-    }
-    set
-    {
-      _ExistingElement.Ascii = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Ascii;
+    set => _ExistingElement.Ascii = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class RunFonts: ModelElement<DXW.RunFonts>
   [DataMember]
   public String? HighAnsi
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.HighAnsi);
-    }
-    set
-    {
-      _ExistingElement.HighAnsi = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.HighAnsi;
+    set => _ExistingElement.HighAnsi = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class RunFonts: ModelElement<DXW.RunFonts>
   [DataMember]
   public String? EastAsia
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.EastAsia);
-    }
-    set
-    {
-      _ExistingElement.EastAsia = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.EastAsia;
+    set => _ExistingElement.EastAsia = value;
   }
   
   
@@ -70,14 +52,8 @@ public partial class RunFonts: ModelElement<DXW.RunFonts>
   [DataMember]
   public String? ComplexScript
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.ComplexScript);
-    }
-    set
-    {
-      _ExistingElement.ComplexScript = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.ComplexScript;
+    set => _ExistingElement.ComplexScript = value;
   }
   
 }

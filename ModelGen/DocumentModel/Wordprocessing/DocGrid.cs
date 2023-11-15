@@ -19,14 +19,8 @@ public partial class DocGrid: ModelElement<DXW.DocGrid>
   [DataMember]
   public Int32? LinePitch
   {
-    get
-    {
-      return _Element?.LinePitch?.Value;
-    }
-    set
-    {
-      _ExistingElement.LinePitch = value;
-    }
+    get => _Element?.LinePitch?.Value;
+    set => _ExistingElement.LinePitch = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class DocGrid: ModelElement<DXW.DocGrid>
   [DataMember]
   public Int32? CharacterSpace
   {
-    get
-    {
-      return _Element?.CharacterSpace?.Value;
-    }
-    set
-    {
-      _ExistingElement.CharacterSpace = value;
-    }
+    get => _Element?.CharacterSpace?.Value;
+    set => _ExistingElement.CharacterSpace = value;
   }
   
 }

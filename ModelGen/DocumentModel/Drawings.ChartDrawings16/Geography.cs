@@ -19,14 +19,8 @@ public partial class Geography: ModelElement<DXO16DCD.Geography>
   [DataMember]
   public String? CultureLanguage
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.CultureLanguage);
-    }
-    set
-    {
-      _ExistingElement.CultureLanguage = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.CultureLanguage;
+    set => _ExistingElement.CultureLanguage = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class Geography: ModelElement<DXO16DCD.Geography>
   [DataMember]
   public String? CultureRegion
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.CultureRegion);
-    }
-    set
-    {
-      _ExistingElement.CultureRegion = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.CultureRegion;
+    set => _ExistingElement.CultureRegion = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class Geography: ModelElement<DXO16DCD.Geography>
   [DataMember]
   public String? Attribution
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Attribution);
-    }
-    set
-    {
-      _ExistingElement.Attribution = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Attribution;
+    set => _ExistingElement.Attribution = value;
   }
   
   
@@ -70,14 +52,8 @@ public partial class Geography: ModelElement<DXO16DCD.Geography>
   [DataMember]
   public DMDCD16.GeoCache? GeoCache
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.GeoCache,DXO16DCD.GeoCache>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.GeoCache,DXO16DCD.GeoCache>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

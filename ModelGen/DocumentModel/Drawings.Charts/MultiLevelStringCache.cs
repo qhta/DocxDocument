@@ -19,27 +19,15 @@ public partial class MultiLevelStringCache: ModelElement<DXDC.MultiLevelStringCa
   [DataMember]
   public DMDC.PointCount? PointCount
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.PointCount,DXDC.PointCount>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.PointCount,DXDC.PointCount>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.UnsignedIntegerType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.UnsignedIntegerType");
   }
   
   [DataMember]
   public DMDC.ExtensionList? ExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.ExtensionList,DXDC.ExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.ExtensionList,DXDC.ExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

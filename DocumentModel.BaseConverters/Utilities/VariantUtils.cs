@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Utils;
+﻿namespace DocumentModel.OpenXml;
 
 /// <summary>
 /// This static class contains extension operations to be performed on a DocumentFormat.OpenXml.VariantTypes objects.

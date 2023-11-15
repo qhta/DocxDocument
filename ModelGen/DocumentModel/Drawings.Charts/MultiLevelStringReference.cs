@@ -19,14 +19,8 @@ public partial class MultiLevelStringReference: ModelElement<DXDC.MultiLevelStri
   [DataMember]
   public DMDC.Formula? Formula
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.Formula,DXDC.Formula>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.Formula,DXDC.Formula>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
   }
   
   
@@ -36,14 +30,8 @@ public partial class MultiLevelStringReference: ModelElement<DXDC.MultiLevelStri
   [DataMember]
   public DMDC.MultiLevelStringCache? MultiLevelStringCache
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.MultiLevelStringCache,DXDC.MultiLevelStringCache>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.MultiLevelStringCache,DXDC.MultiLevelStringCache>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -53,14 +41,8 @@ public partial class MultiLevelStringReference: ModelElement<DXDC.MultiLevelStri
   [DataMember]
   public DMDC.MultiLvlStrRefExtensionList? MultiLvlStrRefExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.MultiLvlStrRefExtensionList,DXDC.MultiLvlStrRefExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.MultiLvlStrRefExtensionList,DXDC.MultiLvlStrRefExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

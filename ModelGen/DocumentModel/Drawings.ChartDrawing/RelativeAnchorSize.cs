@@ -19,14 +19,8 @@ public partial class RelativeAnchorSize: ModelElement<DXDCD.RelativeAnchorSize>
   [DataMember]
   public DMDCD.FromAnchor? FromAnchor
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD.FromAnchor,DXDCD.FromAnchor>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD.FromAnchor,DXDCD.FromAnchor>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.ChartDrawing.MarkerType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.ChartDrawing.MarkerType");
   }
   
   
@@ -36,79 +30,43 @@ public partial class RelativeAnchorSize: ModelElement<DXDCD.RelativeAnchorSize>
   [DataMember]
   public DMDCD.ToAnchor? ToAnchor
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD.ToAnchor,DXDCD.ToAnchor>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD.ToAnchor,DXDCD.ToAnchor>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.ChartDrawing.MarkerType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.ChartDrawing.MarkerType");
   }
   
   [DataMember]
   public DMDCD.Shape? Shape
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD.Shape,DXDCD.Shape>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD.Shape,DXDCD.Shape>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMDCD.GroupShape? GroupShape
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD.GroupShape,DXDCD.GroupShape>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD.GroupShape,DXDCD.GroupShape>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMDCD.GraphicFrame? GraphicFrame
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD.GraphicFrame,DXDCD.GraphicFrame>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD.GraphicFrame,DXDCD.GraphicFrame>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMDCD.ConnectionShape? ConnectionShape
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD.ConnectionShape,DXDCD.ConnectionShape>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD.ConnectionShape,DXDCD.ConnectionShape>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMDCD.Picture? Picture
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD.Picture,DXDCD.Picture>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD.Picture,DXDCD.Picture>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

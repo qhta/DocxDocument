@@ -19,14 +19,8 @@ public partial class FilteredCategoryTitle: ModelElement<DXO13DC.FilteredCategor
   [DataMember]
   public DMDC13.AxisDataSourceType? AxisDataSourceType
   {
-    get
-    {
-      return _Element?.GetObject<DMDC13.AxisDataSourceType,DXO13DC.AxisDataSourceType>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC13.AxisDataSourceType,DXO13DC.AxisDataSourceType>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

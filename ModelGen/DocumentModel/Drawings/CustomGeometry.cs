@@ -19,14 +19,8 @@ public partial class CustomGeometry: ModelElement<DXD.CustomGeometry>
   [DataMember]
   public DMD.AdjustValueList? AdjustValueList
   {
-    get
-    {
-      return _Element?.GetObject<DMD.AdjustValueList,DXD.AdjustValueList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.AdjustValueList,DXD.AdjustValueList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.GeometryGuideListType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.GeometryGuideListType");
   }
   
   
@@ -36,14 +30,8 @@ public partial class CustomGeometry: ModelElement<DXD.CustomGeometry>
   [DataMember]
   public DMD.ShapeGuideList? ShapeGuideList
   {
-    get
-    {
-      return _Element?.GetObject<DMD.ShapeGuideList,DXD.ShapeGuideList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.ShapeGuideList,DXD.ShapeGuideList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.GeometryGuideListType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.GeometryGuideListType");
   }
   
   
@@ -53,14 +41,8 @@ public partial class CustomGeometry: ModelElement<DXD.CustomGeometry>
   [DataMember]
   public DMD.AdjustHandleList? AdjustHandleList
   {
-    get
-    {
-      return _Element?.GetObject<DMD.AdjustHandleList,DXD.AdjustHandleList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.AdjustHandleList,DXD.AdjustHandleList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -70,14 +52,8 @@ public partial class CustomGeometry: ModelElement<DXD.CustomGeometry>
   [DataMember]
   public DMD.ConnectionSiteList? ConnectionSiteList
   {
-    get
-    {
-      return _Element?.GetObject<DMD.ConnectionSiteList,DXD.ConnectionSiteList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.ConnectionSiteList,DXD.ConnectionSiteList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -87,14 +63,8 @@ public partial class CustomGeometry: ModelElement<DXD.CustomGeometry>
   [DataMember]
   public DMD.Rectangle? Rectangle
   {
-    get
-    {
-      return _Element?.GetObject<DMD.Rectangle,DXD.Rectangle>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.Rectangle,DXD.Rectangle>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -104,14 +74,8 @@ public partial class CustomGeometry: ModelElement<DXD.CustomGeometry>
   [DataMember]
   public DMD.PathList? PathList
   {
-    get
-    {
-      return _Element?.GetObject<DMD.PathList,DXD.PathList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.PathList,DXD.PathList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

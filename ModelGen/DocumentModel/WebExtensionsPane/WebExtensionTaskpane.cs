@@ -19,14 +19,8 @@ public partial class WebExtensionTaskpane: ModelElement<DXO13WEP.WebExtensionTas
   [DataMember]
   public String? DockState
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.DockState);
-    }
-    set
-    {
-      _ExistingElement.DockState = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.DockState;
+    set => _ExistingElement.DockState = value;
   }
   
   
@@ -36,17 +30,8 @@ public partial class WebExtensionTaskpane: ModelElement<DXO13WEP.WebExtensionTas
   [DataMember]
   public Boolean? Visibility
   {
-    get
-    {
-      return _Element?.Visibility?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Visibility = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.Visibility = null;
-    }
+    get => _Element?.Visibility?.Value;
+    set => _ExistingElement.Visibility = value;
   }
   
   
@@ -56,14 +41,8 @@ public partial class WebExtensionTaskpane: ModelElement<DXO13WEP.WebExtensionTas
   [DataMember]
   public Double? Width
   {
-    get
-    {
-      return _Element?.Width?.Value;
-    }
-    set
-    {
-      _ExistingElement.Width = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Double]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Double]");
   }
   
   
@@ -73,14 +52,8 @@ public partial class WebExtensionTaskpane: ModelElement<DXO13WEP.WebExtensionTas
   [DataMember]
   public UInt32? Row
   {
-    get
-    {
-      return _Element?.Row?.Value;
-    }
-    set
-    {
-      _ExistingElement.Row = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
   }
   
   
@@ -90,17 +63,8 @@ public partial class WebExtensionTaskpane: ModelElement<DXO13WEP.WebExtensionTas
   [DataMember]
   public Boolean? Locked
   {
-    get
-    {
-      return _Element?.Locked?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Locked = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.Locked = null;
-    }
+    get => _Element?.Locked?.Value;
+    set => _ExistingElement.Locked = value;
   }
   
   
@@ -110,14 +74,8 @@ public partial class WebExtensionTaskpane: ModelElement<DXO13WEP.WebExtensionTas
   [DataMember]
   public DMWEP.WebExtensionPartReference? WebExtensionPartReference
   {
-    get
-    {
-      return _Element?.GetObject<DMWEP.WebExtensionPartReference,DXO13WEP.WebExtensionPartReference>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMWEP.WebExtensionPartReference,DXO13WEP.WebExtensionPartReference>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -127,14 +85,8 @@ public partial class WebExtensionTaskpane: ModelElement<DXO13WEP.WebExtensionTas
   [DataMember]
   public DMWEP.OfficeArtExtensionList? OfficeArtExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMWEP.OfficeArtExtensionList,DXO13WEP.OfficeArtExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMWEP.OfficeArtExtensionList,DXO13WEP.OfficeArtExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

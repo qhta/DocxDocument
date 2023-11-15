@@ -19,14 +19,8 @@ public partial class MarkerLayoutProperties: ModelElement<DXO13DCS.MarkerLayoutP
   [DataMember]
   public Byte? Size
   {
-    get
-    {
-      return _Element?.Size?.Value;
-    }
-    set
-    {
-      _ExistingElement.Size = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Byte]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Byte]");
   }
   
 }

@@ -15,27 +15,15 @@ public partial class HyperlinkOnMouseOver: ModelElement<DXD.HyperlinkOnMouseOver
   [DataMember]
   public DMD.HyperlinkSound? HyperlinkSound
   {
-    get
-    {
-      return _Element?.GetObject<DMD.HyperlinkSound,DXD.HyperlinkSound>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.HyperlinkSound,DXD.HyperlinkSound>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.EmbeddedWavAudioFileType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.EmbeddedWavAudioFileType");
   }
   
   [DataMember]
   public DMD.HyperlinkExtensionList? HyperlinkExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMD.HyperlinkExtensionList,DXD.HyperlinkExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.HyperlinkExtensionList,DXD.HyperlinkExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

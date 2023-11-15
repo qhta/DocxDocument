@@ -19,14 +19,8 @@ public partial class TextFontType: ModelElement<DXD.TextFontType>
   [DataMember]
   public String? Typeface
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Typeface);
-    }
-    set
-    {
-      _ExistingElement.Typeface = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Typeface;
+    set => _ExistingElement.Typeface = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class TextFontType: ModelElement<DXD.TextFontType>
   [DataMember]
   public DM.HexBinary? Panose
   {
-    get
-    {
-      return Convert.FromHexString(_Element?.Panose.Value);
-    }
-    set
-    {
-      _ExistingElement.Panose = Convert.ToHexString(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.Object");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.Object");
   }
   
   
@@ -53,14 +41,8 @@ public partial class TextFontType: ModelElement<DXD.TextFontType>
   [DataMember]
   public SByte? PitchFamily
   {
-    get
-    {
-      return _Element?.PitchFamily?.Value;
-    }
-    set
-    {
-      _ExistingElement.PitchFamily = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.SByte]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.SByte]");
   }
   
   
@@ -70,14 +52,8 @@ public partial class TextFontType: ModelElement<DXD.TextFontType>
   [DataMember]
   public SByte? CharacterSet
   {
-    get
-    {
-      return _Element?.CharacterSet?.Value;
-    }
-    set
-    {
-      _ExistingElement.CharacterSet = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.SByte]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.SByte]");
   }
   
 }

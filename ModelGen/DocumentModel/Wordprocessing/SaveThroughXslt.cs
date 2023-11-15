@@ -19,14 +19,8 @@ public partial class SaveThroughXslt: ModelElement<DXW.SaveThroughXslt>
   [DataMember]
   public String? Id
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Id);
-    }
-    set
-    {
-      _ExistingElement.Id = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Id;
+    set => _ExistingElement.Id = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class SaveThroughXslt: ModelElement<DXW.SaveThroughXslt>
   [DataMember]
   public String? SolutionId
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.SolutionId);
-    }
-    set
-    {
-      _ExistingElement.SolutionId = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.SolutionId;
+    set => _ExistingElement.SolutionId = value;
   }
   
 }

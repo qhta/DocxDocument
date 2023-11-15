@@ -19,99 +19,43 @@ public partial class RunProperties: ModelElement<DXM.RunProperties>
   [DataMember]
   public DMM.Literal? Literal
   {
-    get
-    {
-      return _Element?.GetObject<DMM.Literal,DXM.Literal>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.Literal,DXM.Literal>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OnOffType");
   }
   
   [DataMember]
   public DMM.NormalText? NormalText
   {
-    get
-    {
-      return _Element?.GetObject<DMM.NormalText,DXM.NormalText>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.NormalText,DXM.NormalText>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OnOffType");
   }
   
   [DataMember]
   public DMM.ScriptKind? Script
   {
-    get
-    {
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.ScriptValues, DMM.ScriptKind>(_ExistingElement.GetFirstChild<DXM.Script>()?.Val?.Value);
-    }
-    set
-    {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.Script>();
-      if (itemElement != null)
-      {
-        if (value != null)
-          EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.ScriptValues, DMM.ScriptKind>(itemElement, (DMM.ScriptKind)value);
-        else
-          itemElement.Remove();
-      }
-      else
-      if (value != null)
-        _ExistingElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXM.Script, DocumentFormat.OpenXml.Math.ScriptValues, DMM.ScriptKind>((DMM.ScriptKind)value));
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertyGetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertySetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   [DataMember]
   public DMM.StyleKind? Style
   {
-    get
-    {
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.StyleValues, DMM.StyleKind>(_ExistingElement.GetFirstChild<DXM.Style>()?.Val?.Value);
-    }
-    set
-    {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.Style>();
-      if (itemElement != null)
-      {
-        if (value != null)
-          EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.StyleValues, DMM.StyleKind>(itemElement, (DMM.StyleKind)value);
-        else
-          itemElement.Remove();
-      }
-      else
-      if (value != null)
-        _ExistingElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXM.Style, DocumentFormat.OpenXml.Math.StyleValues, DMM.StyleKind>((DMM.StyleKind)value));
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertyGetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertySetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   [DataMember]
   public DMM.Break? Break
   {
-    get
-    {
-      return _Element?.GetObject<DMM.Break,DXM.Break>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.Break,DXM.Break>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   [DataMember]
   public DMM.Alignment? Alignment
   {
-    get
-    {
-      return _Element?.GetObject<DMM.Alignment,DXM.Alignment>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.Alignment,DXM.Alignment>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OnOffType");
   }
   
 }

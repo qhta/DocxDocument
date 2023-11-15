@@ -19,24 +19,8 @@ public partial class Line3DChart: ModelElement<DXDC.Line3DChart>
   [DataMember]
   public DMDC.GroupingKind? Grouping
   {
-    get
-    {
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.GroupingValues, DMDC.GroupingKind>(_ExistingElement.GetFirstChild<DXDC.Grouping>()?.Val?.Value);
-    }
-    set
-    {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.Grouping>();
-      if (itemElement != null)
-      {
-        if (value != null)
-          EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.GroupingValues, DMDC.GroupingKind>(itemElement, (DMDC.GroupingKind)value);
-        else
-          itemElement.Remove();
-      }
-      else
-      if (value != null)
-        _ExistingElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDC.Grouping, DocumentFormat.OpenXml.Drawing.Charts.GroupingValues, DMDC.GroupingKind>((DMDC.GroupingKind)value));
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertyGetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertySetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -46,66 +30,36 @@ public partial class Line3DChart: ModelElement<DXDC.Line3DChart>
   [DataMember]
   public DMDC.VaryColors? VaryColors
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.VaryColors,DXDC.VaryColors>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.VaryColors,DXDC.VaryColors>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.BooleanType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.BooleanType");
   }
   
   [DataMember]
   public DMDC.DataLabels? DataLabels
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.DataLabels,DXDC.DataLabels>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.DataLabels,DXDC.DataLabels>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMDC.DropLines? DropLines
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.DropLines,DXDC.DropLines>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.DropLines,DXDC.DropLines>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.ChartLinesType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.ChartLinesType");
   }
   
   [DataMember]
   public DMDC.GapDepth? GapDepth
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.GapDepth,DXDC.GapDepth>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.GapDepth,DXDC.GapDepth>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.GapAmountType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.GapAmountType");
   }
   
   [DataMember]
   public DMDC.Line3DChartExtensionList? Line3DChartExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.Line3DChartExtensionList,DXDC.Line3DChartExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.Line3DChartExtensionList,DXDC.Line3DChartExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

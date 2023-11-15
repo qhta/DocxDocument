@@ -19,14 +19,8 @@ public partial class TableProperties: ModelElement<DXW.TableProperties>
   [DataMember]
   public DMW.TableStyle? TableStyle
   {
-    get
-    {
-      return _Element?.GetObject<DMW.TableStyle,DXW.TableStyle>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.TableStyle,DXW.TableStyle>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.String253Type");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.String253Type");
   }
   
   
@@ -36,14 +30,8 @@ public partial class TableProperties: ModelElement<DXW.TableProperties>
   [DataMember]
   public DMW.TablePositionProperties? TablePositionProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMW.TablePositionProperties,DXW.TablePositionProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.TablePositionProperties,DXW.TablePositionProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -53,24 +41,8 @@ public partial class TableProperties: ModelElement<DXW.TableProperties>
   [DataMember]
   public DMW.TableOverlapKind? TableOverlap
   {
-    get
-    {
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TableOverlapValues, DMW.TableOverlapKind>(_ExistingElement.GetFirstChild<DXW.TableOverlap>()?.Val?.Value);
-    }
-    set
-    {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.TableOverlap>();
-      if (itemElement != null)
-      {
-        if (value != null)
-          EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableOverlapValues, DMW.TableOverlapKind>(itemElement, (DMW.TableOverlapKind)value);
-        else
-          itemElement.Remove();
-      }
-      else
-      if (value != null)
-        _ExistingElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.TableOverlap, DocumentFormat.OpenXml.Wordprocessing.TableOverlapValues, DMW.TableOverlapKind>((DMW.TableOverlapKind)value));
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertyGetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertySetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -80,14 +52,8 @@ public partial class TableProperties: ModelElement<DXW.TableProperties>
   [DataMember]
   public DMW.BiDiVisual? BiDiVisual
   {
-    get
-    {
-      return _Element?.GetObject<DMW.BiDiVisual,DXW.BiDiVisual>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.BiDiVisual,DXW.BiDiVisual>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyType");
   }
   
   
@@ -97,14 +63,8 @@ public partial class TableProperties: ModelElement<DXW.TableProperties>
   [DataMember]
   public DMW.TableWidth? TableWidth
   {
-    get
-    {
-      return _Element?.GetObject<DMW.TableWidth,DXW.TableWidth>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.TableWidth,DXW.TableWidth>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.TableWidthType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.TableWidthType");
   }
   
   
@@ -114,24 +74,8 @@ public partial class TableProperties: ModelElement<DXW.TableProperties>
   [DataMember]
   public DMW.TableRowAlignmentKind? TableJustification
   {
-    get
-    {
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TableRowAlignmentValues, DMW.TableRowAlignmentKind>(_ExistingElement.GetFirstChild<DXW.TableJustification>()?.Val?.Value);
-    }
-    set
-    {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.TableJustification>();
-      if (itemElement != null)
-      {
-        if (value != null)
-          EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableRowAlignmentValues, DMW.TableRowAlignmentKind>(itemElement, (DMW.TableRowAlignmentKind)value);
-        else
-          itemElement.Remove();
-      }
-      else
-      if (value != null)
-        _ExistingElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.TableJustification, DocumentFormat.OpenXml.Wordprocessing.TableRowAlignmentValues, DMW.TableRowAlignmentKind>((DMW.TableRowAlignmentKind)value));
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertyGetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertySetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -141,14 +85,8 @@ public partial class TableProperties: ModelElement<DXW.TableProperties>
   [DataMember]
   public DMW.TableCellSpacing? TableCellSpacing
   {
-    get
-    {
-      return _Element?.GetObject<DMW.TableCellSpacing,DXW.TableCellSpacing>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.TableCellSpacing,DXW.TableCellSpacing>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.TableWidthType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.TableWidthType");
   }
   
   
@@ -158,14 +96,8 @@ public partial class TableProperties: ModelElement<DXW.TableProperties>
   [DataMember]
   public DMW.TableIndentation? TableIndentation
   {
-    get
-    {
-      return _Element?.GetObject<DMW.TableIndentation,DXW.TableIndentation>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.TableIndentation,DXW.TableIndentation>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -175,14 +107,8 @@ public partial class TableProperties: ModelElement<DXW.TableProperties>
   [DataMember]
   public DMW.TableBorders? TableBorders
   {
-    get
-    {
-      return _Element?.GetObject<DMW.TableBorders,DXW.TableBorders>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.TableBorders,DXW.TableBorders>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -192,14 +118,8 @@ public partial class TableProperties: ModelElement<DXW.TableProperties>
   [DataMember]
   public DMW.Shading? Shading
   {
-    get
-    {
-      return _Element?.GetObject<DMW.Shading,DXW.Shading>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.Shading,DXW.Shading>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -209,14 +129,8 @@ public partial class TableProperties: ModelElement<DXW.TableProperties>
   [DataMember]
   public DMW.TableLayout? TableLayout
   {
-    get
-    {
-      return _Element?.GetObject<DMW.TableLayout,DXW.TableLayout>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.TableLayout,DXW.TableLayout>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -226,14 +140,8 @@ public partial class TableProperties: ModelElement<DXW.TableProperties>
   [DataMember]
   public DMW.TableCellMarginDefault? TableCellMarginDefault
   {
-    get
-    {
-      return _Element?.GetObject<DMW.TableCellMarginDefault,DXW.TableCellMarginDefault>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.TableCellMarginDefault,DXW.TableCellMarginDefault>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -243,14 +151,8 @@ public partial class TableProperties: ModelElement<DXW.TableProperties>
   [DataMember]
   public DMW.TableLook? TableLook
   {
-    get
-    {
-      return _Element?.GetObject<DMW.TableLook,DXW.TableLook>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.TableLook,DXW.TableLook>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -260,14 +162,8 @@ public partial class TableProperties: ModelElement<DXW.TableProperties>
   [DataMember]
   public DMW.TableCaption? TableCaption
   {
-    get
-    {
-      return _Element?.GetObject<DMW.TableCaption,DXW.TableCaption>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.TableCaption,DXW.TableCaption>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.StringType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.StringType");
   }
   
   
@@ -277,14 +173,8 @@ public partial class TableProperties: ModelElement<DXW.TableProperties>
   [DataMember]
   public DMW.TableDescription? TableDescription
   {
-    get
-    {
-      return _Element?.GetObject<DMW.TableDescription,DXW.TableDescription>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.TableDescription,DXW.TableDescription>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.StringType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.StringType");
   }
   
   
@@ -294,14 +184,8 @@ public partial class TableProperties: ModelElement<DXW.TableProperties>
   [DataMember]
   public DMW.TablePropertiesChange? TablePropertiesChange
   {
-    get
-    {
-      return _Element?.GetObject<DMW.TablePropertiesChange,DXW.TablePropertiesChange>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.TablePropertiesChange,DXW.TablePropertiesChange>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

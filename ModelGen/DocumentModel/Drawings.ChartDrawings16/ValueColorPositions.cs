@@ -19,14 +19,8 @@ public partial class ValueColorPositions: ModelElement<DXO16DCD.ValueColorPositi
   [DataMember]
   public Int32? Count
   {
-    get
-    {
-      return _Element?.Count?.Value;
-    }
-    set
-    {
-      _ExistingElement.Count = value;
-    }
+    get => _Element?.Count?.Value;
+    set => _ExistingElement.Count = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class ValueColorPositions: ModelElement<DXO16DCD.ValueColorPositi
   [DataMember]
   public DMDCD16.MinValueColorEndPosition? MinValueColorEndPosition
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.MinValueColorEndPosition,DXO16DCD.MinValueColorEndPosition>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.MinValueColorEndPosition,DXO16DCD.MinValueColorEndPosition>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.OpenXmlValueColorEndPositionElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.OpenXmlValueColorEndPositionElement");
   }
   
   
@@ -53,14 +41,8 @@ public partial class ValueColorPositions: ModelElement<DXO16DCD.ValueColorPositi
   [DataMember]
   public DMDCD16.ValueColorMiddlePosition? ValueColorMiddlePosition
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.ValueColorMiddlePosition,DXO16DCD.ValueColorMiddlePosition>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.ValueColorMiddlePosition,DXO16DCD.ValueColorMiddlePosition>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -70,14 +52,8 @@ public partial class ValueColorPositions: ModelElement<DXO16DCD.ValueColorPositi
   [DataMember]
   public DMDCD16.MaxValueColorEndPosition? MaxValueColorEndPosition
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.MaxValueColorEndPosition,DXO16DCD.MaxValueColorEndPosition>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.MaxValueColorEndPosition,DXO16DCD.MaxValueColorEndPosition>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.OpenXmlValueColorEndPositionElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.OpenXmlValueColorEndPositionElement");
   }
   
 }

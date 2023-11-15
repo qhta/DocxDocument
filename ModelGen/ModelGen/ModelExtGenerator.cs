@@ -81,9 +81,7 @@ public partial class ModelExtGenerator : ModelGenerator
     Writer.WriteLine($"public {px}{propTypeName}{qm} {prop.Name}");
     Writer.WriteLine($"{{");
     Writer.Indent++;
-    Writer.WriteLine($"get");
     GeneratePropertyGetter(prop);
-    Writer.WriteLine($"set");
     GeneratePropertySetter(prop);
     Writer.Indent--;
     Writer.WriteLine($"}}");

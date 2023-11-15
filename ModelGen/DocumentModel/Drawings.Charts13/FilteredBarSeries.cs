@@ -19,14 +19,8 @@ public partial class FilteredBarSeries: ModelElement<DXO13DC.FilteredBarSeries>
   [DataMember]
   public DMDC13.BarChartSeries? BarChartSeries
   {
-    get
-    {
-      return _Element?.GetObject<DMDC13.BarChartSeries,DXO13DC.BarChartSeries>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC13.BarChartSeries,DXO13DC.BarChartSeries>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

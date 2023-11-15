@@ -19,14 +19,8 @@ public partial class Shape: ModelElement<DXDCD.Shape>
   [DataMember]
   public String? Macro
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Macro);
-    }
-    set
-    {
-      _ExistingElement.Macro = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Macro;
+    set => _ExistingElement.Macro = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class Shape: ModelElement<DXDCD.Shape>
   [DataMember]
   public String? TextLink
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.TextLink);
-    }
-    set
-    {
-      _ExistingElement.TextLink = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.TextLink;
+    set => _ExistingElement.TextLink = value;
   }
   
   
@@ -53,17 +41,8 @@ public partial class Shape: ModelElement<DXDCD.Shape>
   [DataMember]
   public Boolean? LockText
   {
-    get
-    {
-      return _Element?.LockText?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.LockText = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.LockText = null;
-    }
+    get => _Element?.LockText?.Value;
+    set => _ExistingElement.LockText = value;
   }
   
   
@@ -73,17 +52,8 @@ public partial class Shape: ModelElement<DXDCD.Shape>
   [DataMember]
   public Boolean? Published
   {
-    get
-    {
-      return _Element?.Published?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Published = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.Published = null;
-    }
+    get => _Element?.Published?.Value;
+    set => _ExistingElement.Published = value;
   }
   
   
@@ -93,14 +63,8 @@ public partial class Shape: ModelElement<DXDCD.Shape>
   [DataMember]
   public DMDCD.NonVisualShapeProperties? NonVisualShapeProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD.NonVisualShapeProperties,DXDCD.NonVisualShapeProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD.NonVisualShapeProperties,DXDCD.NonVisualShapeProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -110,14 +74,8 @@ public partial class Shape: ModelElement<DXDCD.Shape>
   [DataMember]
   public DMDCD.ShapeProperties? ShapeProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD.ShapeProperties,DXDCD.ShapeProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD.ShapeProperties,DXDCD.ShapeProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -127,14 +85,8 @@ public partial class Shape: ModelElement<DXDCD.Shape>
   [DataMember]
   public DMDCD.Style? Style
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD.Style,DXDCD.Style>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD.Style,DXDCD.Style>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -144,14 +96,8 @@ public partial class Shape: ModelElement<DXDCD.Shape>
   [DataMember]
   public DMDCD.TextBody? TextBody
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD.TextBody,DXDCD.TextBody>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD.TextBody,DXDCD.TextBody>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

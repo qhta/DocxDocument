@@ -19,14 +19,8 @@ public partial class RunPropertiesDefault: ModelElement<DXW.RunPropertiesDefault
   [DataMember]
   public DMW.RunPropertiesBaseStyle? RunPropertiesBaseStyle
   {
-    get
-    {
-      return _Element?.GetObject<DMW.RunPropertiesBaseStyle,DXW.RunPropertiesBaseStyle>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.RunPropertiesBaseStyle,DXW.RunPropertiesBaseStyle>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

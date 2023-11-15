@@ -19,14 +19,8 @@ public partial class DocPart: ModelElement<DXW.DocPart>
   [DataMember]
   public DMW.DocPartProperties? DocPartProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMW.DocPartProperties,DXW.DocPartProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.DocPartProperties,DXW.DocPartProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -36,14 +30,8 @@ public partial class DocPart: ModelElement<DXW.DocPart>
   [DataMember]
   public DMW.DocPartBody? DocPartBody
   {
-    get
-    {
-      return _Element?.GetObject<DMW.DocPartBody,DXW.DocPartBody>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.DocPartBody,DXW.DocPartBody>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.BodyType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.BodyType");
   }
   
 }

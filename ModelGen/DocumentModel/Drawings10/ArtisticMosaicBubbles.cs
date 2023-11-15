@@ -19,14 +19,8 @@ public partial class ArtisticMosaicBubbles: ModelElement<DXO10D.ArtisticMosaicBu
   [DataMember]
   public Int32? Transparancy
   {
-    get
-    {
-      return _Element?.Transparancy?.Value;
-    }
-    set
-    {
-      _ExistingElement.Transparancy = value;
-    }
+    get => _Element?.Transparancy?.Value;
+    set => _ExistingElement.Transparancy = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class ArtisticMosaicBubbles: ModelElement<DXO10D.ArtisticMosaicBu
   [DataMember]
   public Int32? Pressure
   {
-    get
-    {
-      return _Element?.Pressure?.Value;
-    }
-    set
-    {
-      _ExistingElement.Pressure = value;
-    }
+    get => _Element?.Pressure?.Value;
+    set => _ExistingElement.Pressure = value;
   }
   
 }

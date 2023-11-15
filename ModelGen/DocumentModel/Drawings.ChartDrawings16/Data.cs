@@ -19,27 +19,15 @@ public partial class Data: ModelElement<DXO16DCD.Data>
   [DataMember]
   public UInt32? Id
   {
-    get
-    {
-      return _Element?.Id?.Value;
-    }
-    set
-    {
-      _ExistingElement.Id = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
   }
   
   [DataMember]
   public DMDCD16.ExtensionList? ExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.ExtensionList,DXO16DCD.ExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.ExtensionList,DXO16DCD.ExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

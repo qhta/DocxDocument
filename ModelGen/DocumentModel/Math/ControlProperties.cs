@@ -15,66 +15,36 @@ public partial class ControlProperties: ModelElement<DXM.ControlProperties>
   [DataMember]
   public DMW.RunProperties? RunProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMW.RunProperties,DXW.RunProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.RunProperties,DXW.RunProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMW.InsertedMathControl? InsertedMathControl
   {
-    get
-    {
-      return _Element?.GetObject<DMW.InsertedMathControl,DXW.InsertedMathControl>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.InsertedMathControl,DXW.InsertedMathControl>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMW.DeletedMathControl? DeletedMathControl
   {
-    get
-    {
-      return _Element?.GetObject<DMW.DeletedMathControl,DXW.DeletedMathControl>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.DeletedMathControl,DXW.DeletedMathControl>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMW.MoveFromMathControl? MoveFromMathControl
   {
-    get
-    {
-      return _Element?.GetObject<DMW.MoveFromMathControl,DXW.MoveFromMathControl>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.MoveFromMathControl,DXW.MoveFromMathControl>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.MathControlMoveType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.MathControlMoveType");
   }
   
   [DataMember]
   public DMW.MoveToMathControl? MoveToMathControl
   {
-    get
-    {
-      return _Element?.GetObject<DMW.MoveToMathControl,DXW.MoveToMathControl>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.MoveToMathControl,DXW.MoveToMathControl>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.MathControlMoveType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.MathControlMoveType");
   }
   
 }

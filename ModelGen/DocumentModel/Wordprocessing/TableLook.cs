@@ -19,14 +19,8 @@ public partial class TableLook: ModelElement<DXW.TableLook>
   [DataMember]
   public DM.HexBinary? Val
   {
-    get
-    {
-      return Convert.FromHexString(_Element?.Val.Value);
-    }
-    set
-    {
-      _ExistingElement.Val = Convert.ToHexString(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -36,14 +30,8 @@ public partial class TableLook: ModelElement<DXW.TableLook>
   [DataMember]
   public Boolean? FirstRow
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.FirstRow);
-    }
-    set
-    {
-      _ExistingElement.FirstRow = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
   
@@ -53,14 +41,8 @@ public partial class TableLook: ModelElement<DXW.TableLook>
   [DataMember]
   public Boolean? LastRow
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.LastRow);
-    }
-    set
-    {
-      _ExistingElement.LastRow = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
   
@@ -70,14 +52,8 @@ public partial class TableLook: ModelElement<DXW.TableLook>
   [DataMember]
   public Boolean? FirstColumn
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.FirstColumn);
-    }
-    set
-    {
-      _ExistingElement.FirstColumn = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
   
@@ -87,14 +63,8 @@ public partial class TableLook: ModelElement<DXW.TableLook>
   [DataMember]
   public Boolean? LastColumn
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.LastColumn);
-    }
-    set
-    {
-      _ExistingElement.LastColumn = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
   
@@ -104,14 +74,8 @@ public partial class TableLook: ModelElement<DXW.TableLook>
   [DataMember]
   public Boolean? NoHorizontalBand
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.NoHorizontalBand);
-    }
-    set
-    {
-      _ExistingElement.NoHorizontalBand = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
   
@@ -121,14 +85,8 @@ public partial class TableLook: ModelElement<DXW.TableLook>
   [DataMember]
   public Boolean? NoVerticalBand
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.NoVerticalBand);
-    }
-    set
-    {
-      _ExistingElement.NoVerticalBand = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
 }

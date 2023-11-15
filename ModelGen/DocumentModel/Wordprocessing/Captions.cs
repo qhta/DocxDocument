@@ -15,14 +15,8 @@ public partial class Captions: ModelElement<DXW.Captions>
   [DataMember]
   public DMW.AutoCaptions? AutoCaptions
   {
-    get
-    {
-      return _Element?.GetObject<DMW.AutoCaptions,DXW.AutoCaptions>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.AutoCaptions,DXW.AutoCaptions>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

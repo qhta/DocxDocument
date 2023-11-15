@@ -19,14 +19,8 @@ public partial class AdjustPoint2DType: ModelElement<DXD.AdjustPoint2DType>
   [DataMember]
   public String? X
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.X);
-    }
-    set
-    {
-      _ExistingElement.X = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.X;
+    set => _ExistingElement.X = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class AdjustPoint2DType: ModelElement<DXD.AdjustPoint2DType>
   [DataMember]
   public String? Y
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Y);
-    }
-    set
-    {
-      _ExistingElement.Y = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Y;
+    set => _ExistingElement.Y = value;
   }
   
 }

@@ -19,14 +19,8 @@ public partial class GeoPolygon: ModelElement<DXO16DCD.GeoPolygon>
   [DataMember]
   public String? PolygonId
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.PolygonId);
-    }
-    set
-    {
-      _ExistingElement.PolygonId = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.PolygonId;
+    set => _ExistingElement.PolygonId = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class GeoPolygon: ModelElement<DXO16DCD.GeoPolygon>
   [DataMember]
   public Int64? NumPoints
   {
-    get
-    {
-      return _Element?.NumPoints?.Value;
-    }
-    set
-    {
-      _ExistingElement.NumPoints = value;
-    }
+    get => _Element?.NumPoints?.Value;
+    set => _ExistingElement.NumPoints = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class GeoPolygon: ModelElement<DXO16DCD.GeoPolygon>
   [DataMember]
   public String? PcaRings
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.PcaRings);
-    }
-    set
-    {
-      _ExistingElement.PcaRings = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.PcaRings;
+    set => _ExistingElement.PcaRings = value;
   }
   
 }

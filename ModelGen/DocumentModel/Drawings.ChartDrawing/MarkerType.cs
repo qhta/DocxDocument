@@ -19,14 +19,8 @@ public partial class MarkerType: ModelElement<DXDCD.MarkerType>
   [DataMember]
   public DMDCD.XPosition? XPosition
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD.XPosition,DXDCD.XPosition>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD.XPosition,DXDCD.XPosition>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
   }
   
   
@@ -36,14 +30,8 @@ public partial class MarkerType: ModelElement<DXDCD.MarkerType>
   [DataMember]
   public DMDCD.YPosition? YPosition
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD.YPosition,DXDCD.YPosition>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD.YPosition,DXDCD.YPosition>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
   }
   
 }

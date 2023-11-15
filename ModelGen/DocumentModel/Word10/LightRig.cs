@@ -19,14 +19,8 @@ public partial class LightRig: ModelElement<DXO10W.LightRig>
   [DataMember]
   public DMW10.SphereCoordinates? SphereCoordinates
   {
-    get
-    {
-      return _Element?.GetObject<DMW10.SphereCoordinates,DXO10W.SphereCoordinates>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW10.SphereCoordinates,DXO10W.SphereCoordinates>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
 }

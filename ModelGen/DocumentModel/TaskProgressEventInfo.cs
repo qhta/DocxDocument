@@ -19,14 +19,8 @@ public partial class TaskProgressEventInfo: ModelElement<DXO21DT.TaskProgressEve
   [DataMember]
   public Int32? PercentComplete
   {
-    get
-    {
-      return _Element?.PercentComplete?.Value;
-    }
-    set
-    {
-      _ExistingElement.PercentComplete = value;
-    }
+    get => _Element?.PercentComplete?.Value;
+    set => _ExistingElement.PercentComplete = value;
   }
   
 }

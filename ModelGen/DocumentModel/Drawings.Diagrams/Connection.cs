@@ -19,14 +19,8 @@ public partial class Connection: ModelElement<DXDDD.Connection>
   [DataMember]
   public String? ModelId
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.ModelId);
-    }
-    set
-    {
-      _ExistingElement.ModelId = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.ModelId;
+    set => _ExistingElement.ModelId = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class Connection: ModelElement<DXDDD.Connection>
   [DataMember]
   public String? SourceId
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.SourceId);
-    }
-    set
-    {
-      _ExistingElement.SourceId = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.SourceId;
+    set => _ExistingElement.SourceId = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class Connection: ModelElement<DXDDD.Connection>
   [DataMember]
   public String? DestinationId
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.DestinationId);
-    }
-    set
-    {
-      _ExistingElement.DestinationId = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.DestinationId;
+    set => _ExistingElement.DestinationId = value;
   }
   
   
@@ -70,14 +52,8 @@ public partial class Connection: ModelElement<DXDDD.Connection>
   [DataMember]
   public UInt32? SourcePosition
   {
-    get
-    {
-      return _Element?.SourcePosition?.Value;
-    }
-    set
-    {
-      _ExistingElement.SourcePosition = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
   }
   
   
@@ -87,14 +63,8 @@ public partial class Connection: ModelElement<DXDDD.Connection>
   [DataMember]
   public UInt32? DestinationPosition
   {
-    get
-    {
-      return _Element?.DestinationPosition?.Value;
-    }
-    set
-    {
-      _ExistingElement.DestinationPosition = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
   }
   
   
@@ -104,14 +74,8 @@ public partial class Connection: ModelElement<DXDDD.Connection>
   [DataMember]
   public String? ParentTransitionId
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.ParentTransitionId);
-    }
-    set
-    {
-      _ExistingElement.ParentTransitionId = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.ParentTransitionId;
+    set => _ExistingElement.ParentTransitionId = value;
   }
   
   
@@ -121,14 +85,8 @@ public partial class Connection: ModelElement<DXDDD.Connection>
   [DataMember]
   public String? SiblingTransitionId
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.SiblingTransitionId);
-    }
-    set
-    {
-      _ExistingElement.SiblingTransitionId = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.SiblingTransitionId;
+    set => _ExistingElement.SiblingTransitionId = value;
   }
   
   
@@ -138,14 +96,8 @@ public partial class Connection: ModelElement<DXDDD.Connection>
   [DataMember]
   public String? PresentationId
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.PresentationId);
-    }
-    set
-    {
-      _ExistingElement.PresentationId = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.PresentationId;
+    set => _ExistingElement.PresentationId = value;
   }
   
   
@@ -155,14 +107,8 @@ public partial class Connection: ModelElement<DXDDD.Connection>
   [DataMember]
   public DMDD.ExtensionList? ExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMDD.ExtensionList,DXDDD.ExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDD.ExtensionList,DXDDD.ExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

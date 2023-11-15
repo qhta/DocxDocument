@@ -19,14 +19,8 @@ public partial class EmbeddedWavAudioFileType: ModelElement<DXD.EmbeddedWavAudio
   [DataMember]
   public String? Embed
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Embed);
-    }
-    set
-    {
-      _ExistingElement.Embed = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Embed;
+    set => _ExistingElement.Embed = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class EmbeddedWavAudioFileType: ModelElement<DXD.EmbeddedWavAudio
   [DataMember]
   public String? Name
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Name);
-    }
-    set
-    {
-      _ExistingElement.Name = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Name;
+    set => _ExistingElement.Name = value;
   }
   
   
@@ -53,17 +41,8 @@ public partial class EmbeddedWavAudioFileType: ModelElement<DXD.EmbeddedWavAudio
   [DataMember]
   public Boolean? BuiltIn
   {
-    get
-    {
-      return _Element?.BuiltIn?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.BuiltIn = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.BuiltIn = null;
-    }
+    get => _Element?.BuiltIn?.Value;
+    set => _ExistingElement.BuiltIn = value;
   }
   
 }

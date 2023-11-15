@@ -19,14 +19,8 @@ public partial class Theme: ModelElement<DXD.Theme>
   [DataMember]
   public String? Name
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Name);
-    }
-    set
-    {
-      _ExistingElement.Name = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Name;
+    set => _ExistingElement.Name = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class Theme: ModelElement<DXD.Theme>
   [DataMember]
   public String? ThemeId
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.ThemeId);
-    }
-    set
-    {
-      _ExistingElement.ThemeId = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.ThemeId;
+    set => _ExistingElement.ThemeId = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class Theme: ModelElement<DXD.Theme>
   [DataMember]
   public DMD.ThemeElements? ThemeElements
   {
-    get
-    {
-      return _Element?.GetObject<DMD.ThemeElements,DXD.ThemeElements>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.ThemeElements,DXD.ThemeElements>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -70,14 +52,8 @@ public partial class Theme: ModelElement<DXD.Theme>
   [DataMember]
   public DMD.ObjectDefaults? ObjectDefaults
   {
-    get
-    {
-      return _Element?.GetObject<DMD.ObjectDefaults,DXD.ObjectDefaults>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.ObjectDefaults,DXD.ObjectDefaults>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -87,14 +63,8 @@ public partial class Theme: ModelElement<DXD.Theme>
   [DataMember]
   public DMD.ExtraColorSchemeList? ExtraColorSchemeList
   {
-    get
-    {
-      return _Element?.GetObject<DMD.ExtraColorSchemeList,DXD.ExtraColorSchemeList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.ExtraColorSchemeList,DXD.ExtraColorSchemeList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -104,14 +74,8 @@ public partial class Theme: ModelElement<DXD.Theme>
   [DataMember]
   public DMD.CustomColorList? CustomColorList
   {
-    get
-    {
-      return _Element?.GetObject<DMD.CustomColorList,DXD.CustomColorList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.CustomColorList,DXD.CustomColorList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -121,14 +85,8 @@ public partial class Theme: ModelElement<DXD.Theme>
   [DataMember]
   public DMD.OfficeStyleSheetExtensionList? OfficeStyleSheetExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMD.OfficeStyleSheetExtensionList,DXD.OfficeStyleSheetExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.OfficeStyleSheetExtensionList,DXD.OfficeStyleSheetExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

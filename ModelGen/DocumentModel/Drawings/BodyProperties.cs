@@ -19,14 +19,8 @@ public partial class BodyProperties: ModelElement<DXD.BodyProperties>
   [DataMember]
   public Int32? Rotation
   {
-    get
-    {
-      return _Element?.Rotation?.Value;
-    }
-    set
-    {
-      _ExistingElement.Rotation = value;
-    }
+    get => _Element?.Rotation?.Value;
+    set => _ExistingElement.Rotation = value;
   }
   
   
@@ -36,17 +30,8 @@ public partial class BodyProperties: ModelElement<DXD.BodyProperties>
   [DataMember]
   public Boolean? UseParagraphSpacing
   {
-    get
-    {
-      return _Element?.UseParagraphSpacing?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.UseParagraphSpacing = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.UseParagraphSpacing = null;
-    }
+    get => _Element?.UseParagraphSpacing?.Value;
+    set => _ExistingElement.UseParagraphSpacing = value;
   }
   
   
@@ -56,14 +41,8 @@ public partial class BodyProperties: ModelElement<DXD.BodyProperties>
   [DataMember]
   public Int32? LeftInset
   {
-    get
-    {
-      return _Element?.LeftInset?.Value;
-    }
-    set
-    {
-      _ExistingElement.LeftInset = value;
-    }
+    get => _Element?.LeftInset?.Value;
+    set => _ExistingElement.LeftInset = value;
   }
   
   
@@ -73,14 +52,8 @@ public partial class BodyProperties: ModelElement<DXD.BodyProperties>
   [DataMember]
   public Int32? TopInset
   {
-    get
-    {
-      return _Element?.TopInset?.Value;
-    }
-    set
-    {
-      _ExistingElement.TopInset = value;
-    }
+    get => _Element?.TopInset?.Value;
+    set => _ExistingElement.TopInset = value;
   }
   
   
@@ -90,14 +63,8 @@ public partial class BodyProperties: ModelElement<DXD.BodyProperties>
   [DataMember]
   public Int32? RightInset
   {
-    get
-    {
-      return _Element?.RightInset?.Value;
-    }
-    set
-    {
-      _ExistingElement.RightInset = value;
-    }
+    get => _Element?.RightInset?.Value;
+    set => _ExistingElement.RightInset = value;
   }
   
   
@@ -107,14 +74,8 @@ public partial class BodyProperties: ModelElement<DXD.BodyProperties>
   [DataMember]
   public Int32? BottomInset
   {
-    get
-    {
-      return _Element?.BottomInset?.Value;
-    }
-    set
-    {
-      _ExistingElement.BottomInset = value;
-    }
+    get => _Element?.BottomInset?.Value;
+    set => _ExistingElement.BottomInset = value;
   }
   
   
@@ -124,14 +85,8 @@ public partial class BodyProperties: ModelElement<DXD.BodyProperties>
   [DataMember]
   public Int32? ColumnCount
   {
-    get
-    {
-      return _Element?.ColumnCount?.Value;
-    }
-    set
-    {
-      _ExistingElement.ColumnCount = value;
-    }
+    get => _Element?.ColumnCount?.Value;
+    set => _ExistingElement.ColumnCount = value;
   }
   
   
@@ -141,14 +96,8 @@ public partial class BodyProperties: ModelElement<DXD.BodyProperties>
   [DataMember]
   public Int32? ColumnSpacing
   {
-    get
-    {
-      return _Element?.ColumnSpacing?.Value;
-    }
-    set
-    {
-      _ExistingElement.ColumnSpacing = value;
-    }
+    get => _Element?.ColumnSpacing?.Value;
+    set => _ExistingElement.ColumnSpacing = value;
   }
   
   
@@ -158,17 +107,8 @@ public partial class BodyProperties: ModelElement<DXD.BodyProperties>
   [DataMember]
   public Boolean? RightToLeftColumns
   {
-    get
-    {
-      return _Element?.RightToLeftColumns?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.RightToLeftColumns = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.RightToLeftColumns = null;
-    }
+    get => _Element?.RightToLeftColumns?.Value;
+    set => _ExistingElement.RightToLeftColumns = value;
   }
   
   
@@ -178,17 +118,8 @@ public partial class BodyProperties: ModelElement<DXD.BodyProperties>
   [DataMember]
   public Boolean? FromWordArt
   {
-    get
-    {
-      return _Element?.FromWordArt?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.FromWordArt = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.FromWordArt = null;
-    }
+    get => _Element?.FromWordArt?.Value;
+    set => _ExistingElement.FromWordArt = value;
   }
   
   
@@ -198,17 +129,8 @@ public partial class BodyProperties: ModelElement<DXD.BodyProperties>
   [DataMember]
   public Boolean? AnchorCenter
   {
-    get
-    {
-      return _Element?.AnchorCenter?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.AnchorCenter = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.AnchorCenter = null;
-    }
+    get => _Element?.AnchorCenter?.Value;
+    set => _ExistingElement.AnchorCenter = value;
   }
   
   
@@ -218,17 +140,8 @@ public partial class BodyProperties: ModelElement<DXD.BodyProperties>
   [DataMember]
   public Boolean? ForceAntiAlias
   {
-    get
-    {
-      return _Element?.ForceAntiAlias?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.ForceAntiAlias = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.ForceAntiAlias = null;
-    }
+    get => _Element?.ForceAntiAlias?.Value;
+    set => _ExistingElement.ForceAntiAlias = value;
   }
   
   
@@ -238,17 +151,8 @@ public partial class BodyProperties: ModelElement<DXD.BodyProperties>
   [DataMember]
   public Boolean? UpRight
   {
-    get
-    {
-      return _Element?.UpRight?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.UpRight = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.UpRight = null;
-    }
+    get => _Element?.UpRight?.Value;
+    set => _ExistingElement.UpRight = value;
   }
   
   
@@ -258,17 +162,8 @@ public partial class BodyProperties: ModelElement<DXD.BodyProperties>
   [DataMember]
   public Boolean? CompatibleLineSpacing
   {
-    get
-    {
-      return _Element?.CompatibleLineSpacing?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.CompatibleLineSpacing = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.CompatibleLineSpacing = null;
-    }
+    get => _Element?.CompatibleLineSpacing?.Value;
+    set => _ExistingElement.CompatibleLineSpacing = value;
   }
   
   
@@ -278,105 +173,57 @@ public partial class BodyProperties: ModelElement<DXD.BodyProperties>
   [DataMember]
   public DMD.PresetTextWrap? PresetTextWrap
   {
-    get
-    {
-      return _Element?.GetObject<DMD.PresetTextWrap,DXD.PresetTextWrap>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.PresetTextWrap,DXD.PresetTextWrap>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMD.NoAutoFit? NoAutoFit
   {
-    get
-    {
-      return _Element?.GetObject<DMD.NoAutoFit,DXD.NoAutoFit>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.NoAutoFit,DXD.NoAutoFit>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   [DataMember]
   public DMD.NormalAutoFit? NormalAutoFit
   {
-    get
-    {
-      return _Element?.GetObject<DMD.NormalAutoFit,DXD.NormalAutoFit>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.NormalAutoFit,DXD.NormalAutoFit>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   [DataMember]
   public DMD.ShapeAutoFit? ShapeAutoFit
   {
-    get
-    {
-      return _Element?.GetObject<DMD.ShapeAutoFit,DXD.ShapeAutoFit>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.ShapeAutoFit,DXD.ShapeAutoFit>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   [DataMember]
   public DMD.Scene3DType? Scene3DType
   {
-    get
-    {
-      return _Element?.GetObject<DMD.Scene3DType,DXD.Scene3DType>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.Scene3DType,DXD.Scene3DType>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMD.Shape3DType? Shape3DType
   {
-    get
-    {
-      return _Element?.GetObject<DMD.Shape3DType,DXD.Shape3DType>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.Shape3DType,DXD.Shape3DType>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMD.FlatText? FlatText
   {
-    get
-    {
-      return _Element?.GetObject<DMD.FlatText,DXD.FlatText>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.FlatText,DXD.FlatText>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   [DataMember]
   public DMD.ExtensionList? ExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMD.ExtensionList,DXD.ExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.ExtensionList,DXD.ExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

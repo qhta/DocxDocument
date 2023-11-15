@@ -19,14 +19,8 @@ public partial class DataLabelFieldTableEntry: ModelElement<DXO13DC.DataLabelFie
   [DataMember]
   public DMDC13.TextFieldGuid? TextFieldGuid
   {
-    get
-    {
-      return _Element?.GetObject<DMDC13.TextFieldGuid,DXO13DC.TextFieldGuid>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC13.TextFieldGuid,DXO13DC.TextFieldGuid>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
   }
   
   
@@ -36,14 +30,8 @@ public partial class DataLabelFieldTableEntry: ModelElement<DXO13DC.DataLabelFie
   [DataMember]
   public DMDC13.Formula? Formula
   {
-    get
-    {
-      return _Element?.GetObject<DMDC13.Formula,DXO13DC.Formula>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC13.Formula,DXO13DC.Formula>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
   }
   
   
@@ -53,14 +41,8 @@ public partial class DataLabelFieldTableEntry: ModelElement<DXO13DC.DataLabelFie
   [DataMember]
   public DMDC13.DataLabelFieldTableCache? DataLabelFieldTableCache
   {
-    get
-    {
-      return _Element?.GetObject<DMDC13.DataLabelFieldTableCache,DXO13DC.DataLabelFieldTableCache>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC13.DataLabelFieldTableCache,DXO13DC.DataLabelFieldTableCache>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.Chart.StringDataType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.Chart.StringDataType");
   }
   
 }

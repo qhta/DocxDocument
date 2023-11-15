@@ -19,14 +19,8 @@ public partial class ParagraphPropertiesDefault: ModelElement<DXW.ParagraphPrope
   [DataMember]
   public DMW.ParagraphPropertiesBaseStyle? ParagraphPropertiesBaseStyle
   {
-    get
-    {
-      return _Element?.GetObject<DMW.ParagraphPropertiesBaseStyle,DXW.ParagraphPropertiesBaseStyle>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.ParagraphPropertiesBaseStyle,DXW.ParagraphPropertiesBaseStyle>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

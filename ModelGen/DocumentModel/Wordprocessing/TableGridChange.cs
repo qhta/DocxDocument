@@ -19,14 +19,8 @@ public partial class TableGridChange: ModelElement<DXW.TableGridChange>
   [DataMember]
   public String? Id
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Id);
-    }
-    set
-    {
-      _ExistingElement.Id = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Id;
+    set => _ExistingElement.Id = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class TableGridChange: ModelElement<DXW.TableGridChange>
   [DataMember]
   public DMW.PreviousTableGrid? PreviousTableGrid
   {
-    get
-    {
-      return _Element?.GetObject<DMW.PreviousTableGrid,DXW.PreviousTableGrid>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.PreviousTableGrid,DXW.PreviousTableGrid>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

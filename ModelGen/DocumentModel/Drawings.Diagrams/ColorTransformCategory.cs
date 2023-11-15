@@ -19,14 +19,8 @@ public partial class ColorTransformCategory: ModelElement<DXDDD.ColorTransformCa
   [DataMember]
   public String? Type
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Type);
-    }
-    set
-    {
-      _ExistingElement.Type = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Type;
+    set => _ExistingElement.Type = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class ColorTransformCategory: ModelElement<DXDDD.ColorTransformCa
   [DataMember]
   public UInt32? Priority
   {
-    get
-    {
-      return _Element?.Priority?.Value;
-    }
-    set
-    {
-      _ExistingElement.Priority = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
   }
   
 }

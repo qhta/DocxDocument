@@ -19,14 +19,8 @@ public partial class ParagraphProperties: ModelElement<DXM.ParagraphProperties>
   [DataMember]
   public DMM.Justification? Justification
   {
-    get
-    {
-      return _Element?.GetObject<DMM.Justification,DXM.Justification>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.Justification,DXM.Justification>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OfficeMathJustificationType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OfficeMathJustificationType");
   }
   
 }

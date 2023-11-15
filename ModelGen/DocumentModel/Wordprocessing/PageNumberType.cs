@@ -19,14 +19,8 @@ public partial class PageNumberType: ModelElement<DXW.PageNumberType>
   [DataMember]
   public Int32? Start
   {
-    get
-    {
-      return _Element?.Start?.Value;
-    }
-    set
-    {
-      _ExistingElement.Start = value;
-    }
+    get => _Element?.Start?.Value;
+    set => _ExistingElement.Start = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class PageNumberType: ModelElement<DXW.PageNumberType>
   [DataMember]
   public Byte? ChapterStyle
   {
-    get
-    {
-      return _Element?.ChapterStyle?.Value;
-    }
-    set
-    {
-      _ExistingElement.ChapterStyle = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Byte]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Byte]");
   }
   
 }

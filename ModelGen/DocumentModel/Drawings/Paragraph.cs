@@ -19,27 +19,15 @@ public partial class Paragraph: ModelElement<DXD.Paragraph>
   [DataMember]
   public DMD.ParagraphProperties? ParagraphProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMD.ParagraphProperties,DXD.ParagraphProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.ParagraphProperties,DXD.ParagraphProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType");
   }
   
   [DataMember]
   public DMD.EndParagraphRunProperties? EndParagraphRunProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMD.EndParagraphRunProperties,DXD.EndParagraphRunProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.EndParagraphRunProperties,DXD.EndParagraphRunProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType");
   }
   
 }

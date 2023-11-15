@@ -19,24 +19,8 @@ public partial class RubyProperties: ModelElement<DXW.RubyProperties>
   [DataMember]
   public DMW.RubyAlignKind? RubyAlign
   {
-    get
-    {
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.RubyAlignValues, DMW.RubyAlignKind>(_ExistingElement.GetFirstChild<DXW.RubyAlign>()?.Val?.Value);
-    }
-    set
-    {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.RubyAlign>();
-      if (itemElement != null)
-      {
-        if (value != null)
-          EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.RubyAlignValues, DMW.RubyAlignKind>(itemElement, (DMW.RubyAlignKind)value);
-        else
-          itemElement.Remove();
-      }
-      else
-      if (value != null)
-        _ExistingElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.RubyAlign, DocumentFormat.OpenXml.Wordprocessing.RubyAlignValues, DMW.RubyAlignKind>((DMW.RubyAlignKind)value));
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertyGetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertySetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -46,14 +30,8 @@ public partial class RubyProperties: ModelElement<DXW.RubyProperties>
   [DataMember]
   public DMW.PhoneticGuideTextFontSize? PhoneticGuideTextFontSize
   {
-    get
-    {
-      return _Element?.GetObject<DMW.PhoneticGuideTextFontSize,DXW.PhoneticGuideTextFontSize>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.PhoneticGuideTextFontSize,DXW.PhoneticGuideTextFontSize>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.HpsMeasureType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.HpsMeasureType");
   }
   
   
@@ -63,14 +41,8 @@ public partial class RubyProperties: ModelElement<DXW.RubyProperties>
   [DataMember]
   public Int16? PhoneticGuideRaise
   {
-    get
-    {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DXW.PhoneticGuideRaise>()?.Val);
-    }
-    set
-    {
-      SimpleValueConverter.SetValue<DXW.PhoneticGuideRaise,System.Int16>(_ExistingElement, value);
-    }
+    get => _Element?.GetIntVal<Int16, DXW.PhoneticGuideRaise>();
+    set => _ExistingElement.SetIntVal<Int16, DXW.PhoneticGuideRaise>(value);
   }
   
   
@@ -80,14 +52,8 @@ public partial class RubyProperties: ModelElement<DXW.RubyProperties>
   [DataMember]
   public DMW.PhoneticGuideBaseTextSize? PhoneticGuideBaseTextSize
   {
-    get
-    {
-      return _Element?.GetObject<DMW.PhoneticGuideBaseTextSize,DXW.PhoneticGuideBaseTextSize>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.PhoneticGuideBaseTextSize,DXW.PhoneticGuideBaseTextSize>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.HpsMeasureType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.HpsMeasureType");
   }
   
   
@@ -97,14 +63,8 @@ public partial class RubyProperties: ModelElement<DXW.RubyProperties>
   [DataMember]
   public String? LanguageId
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.GetFirstChild<DXW.LanguageId>()?.Val);
-    }
-    set
-    {
-      StringValueConverter.SetValue<DXW.LanguageId>(_ExistingElement, value);
-    }
+    get => _Element?.GetStringVal<DXW.LanguageId>();
+    set => _ExistingElement.SetStringVal<DXW.LanguageId>(value);
   }
   
   
@@ -114,14 +74,8 @@ public partial class RubyProperties: ModelElement<DXW.RubyProperties>
   [DataMember]
   public DMW.Dirty? Dirty
   {
-    get
-    {
-      return _Element?.GetObject<DMW.Dirty,DXW.Dirty>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.Dirty,DXW.Dirty>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
 }

@@ -19,14 +19,8 @@ public partial class GeoLocationQuery: ModelElement<DXO16DCD.GeoLocationQuery>
   [DataMember]
   public String? CountryRegion
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.CountryRegion);
-    }
-    set
-    {
-      _ExistingElement.CountryRegion = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.CountryRegion;
+    set => _ExistingElement.CountryRegion = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class GeoLocationQuery: ModelElement<DXO16DCD.GeoLocationQuery>
   [DataMember]
   public String? AdminDistrict1
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.AdminDistrict1);
-    }
-    set
-    {
-      _ExistingElement.AdminDistrict1 = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.AdminDistrict1;
+    set => _ExistingElement.AdminDistrict1 = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class GeoLocationQuery: ModelElement<DXO16DCD.GeoLocationQuery>
   [DataMember]
   public String? AdminDistrict2
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.AdminDistrict2);
-    }
-    set
-    {
-      _ExistingElement.AdminDistrict2 = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.AdminDistrict2;
+    set => _ExistingElement.AdminDistrict2 = value;
   }
   
   
@@ -70,14 +52,8 @@ public partial class GeoLocationQuery: ModelElement<DXO16DCD.GeoLocationQuery>
   [DataMember]
   public String? PostalCode
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.PostalCode);
-    }
-    set
-    {
-      _ExistingElement.PostalCode = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.PostalCode;
+    set => _ExistingElement.PostalCode = value;
   }
   
 }

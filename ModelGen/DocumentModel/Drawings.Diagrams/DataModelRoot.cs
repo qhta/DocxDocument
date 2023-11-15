@@ -19,14 +19,8 @@ public partial class DataModelRoot: ModelElement<DXDDD.DataModelRoot>
   [DataMember]
   public DMDD.PointList? PointList
   {
-    get
-    {
-      return _Element?.GetObject<DMDD.PointList,DXDDD.PointList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDD.PointList,DXDDD.PointList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -36,14 +30,8 @@ public partial class DataModelRoot: ModelElement<DXDDD.DataModelRoot>
   [DataMember]
   public DMDD.ConnectionList? ConnectionList
   {
-    get
-    {
-      return _Element?.GetObject<DMDD.ConnectionList,DXDDD.ConnectionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDD.ConnectionList,DXDDD.ConnectionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -53,14 +41,8 @@ public partial class DataModelRoot: ModelElement<DXDDD.DataModelRoot>
   [DataMember]
   public DMDD.Background? Background
   {
-    get
-    {
-      return _Element?.GetObject<DMDD.Background,DXDDD.Background>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDD.Background,DXDDD.Background>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -70,14 +52,8 @@ public partial class DataModelRoot: ModelElement<DXDDD.DataModelRoot>
   [DataMember]
   public DMDD.Whole? Whole
   {
-    get
-    {
-      return _Element?.GetObject<DMDD.Whole,DXDDD.Whole>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDD.Whole,DXDDD.Whole>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -87,14 +63,8 @@ public partial class DataModelRoot: ModelElement<DXDDD.DataModelRoot>
   [DataMember]
   public DMDD.DataModelExtensionList? DataModelExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMDD.DataModelExtensionList,DXDDD.DataModelExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDD.DataModelExtensionList,DXDDD.DataModelExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

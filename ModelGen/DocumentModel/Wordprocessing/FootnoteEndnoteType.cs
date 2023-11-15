@@ -19,14 +19,8 @@ public partial class FootnoteEndnoteType: ModelElement<DXW.FootnoteEndnoteType>
   [DataMember]
   public Int64? Id
   {
-    get
-    {
-      return _Element?.Id?.Value;
-    }
-    set
-    {
-      _ExistingElement.Id = value;
-    }
+    get => _Element?.Id?.Value;
+    set => _ExistingElement.Id = value;
   }
   
 }

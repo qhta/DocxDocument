@@ -19,14 +19,8 @@ public partial class FlatText: ModelElement<DXD.FlatText>
   [DataMember]
   public Int64? Z
   {
-    get
-    {
-      return _Element?.Z?.Value;
-    }
-    set
-    {
-      _ExistingElement.Z = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int64]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int64]");
   }
   
 }

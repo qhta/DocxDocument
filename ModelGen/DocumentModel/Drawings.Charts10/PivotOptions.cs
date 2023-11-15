@@ -19,14 +19,8 @@ public partial class PivotOptions: ModelElement<DXO10DC.PivotOptions>
   [DataMember]
   public DMDC10.DropZoneFilter? DropZoneFilter
   {
-    get
-    {
-      return _Element?.GetObject<DMDC10.DropZoneFilter,DXO10DC.DropZoneFilter>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC10.DropZoneFilter,DXO10DC.DropZoneFilter>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2010.Drawing.Charts.BooleanFalseType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2010.Drawing.Charts.BooleanFalseType");
   }
   
   
@@ -36,14 +30,8 @@ public partial class PivotOptions: ModelElement<DXO10DC.PivotOptions>
   [DataMember]
   public DMDC10.DropZoneCategories? DropZoneCategories
   {
-    get
-    {
-      return _Element?.GetObject<DMDC10.DropZoneCategories,DXO10DC.DropZoneCategories>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC10.DropZoneCategories,DXO10DC.DropZoneCategories>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2010.Drawing.Charts.BooleanFalseType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2010.Drawing.Charts.BooleanFalseType");
   }
   
   
@@ -53,14 +41,8 @@ public partial class PivotOptions: ModelElement<DXO10DC.PivotOptions>
   [DataMember]
   public DMDC10.DropZoneData? DropZoneData
   {
-    get
-    {
-      return _Element?.GetObject<DMDC10.DropZoneData,DXO10DC.DropZoneData>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC10.DropZoneData,DXO10DC.DropZoneData>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2010.Drawing.Charts.BooleanFalseType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2010.Drawing.Charts.BooleanFalseType");
   }
   
   
@@ -70,14 +52,8 @@ public partial class PivotOptions: ModelElement<DXO10DC.PivotOptions>
   [DataMember]
   public DMDC10.DropZoneSeries? DropZoneSeries
   {
-    get
-    {
-      return _Element?.GetObject<DMDC10.DropZoneSeries,DXO10DC.DropZoneSeries>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC10.DropZoneSeries,DXO10DC.DropZoneSeries>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2010.Drawing.Charts.BooleanFalseType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2010.Drawing.Charts.BooleanFalseType");
   }
   
   
@@ -87,14 +63,8 @@ public partial class PivotOptions: ModelElement<DXO10DC.PivotOptions>
   [DataMember]
   public DMDC10.DropZonesVisible? DropZonesVisible
   {
-    get
-    {
-      return _Element?.GetObject<DMDC10.DropZonesVisible,DXO10DC.DropZonesVisible>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC10.DropZonesVisible,DXO10DC.DropZonesVisible>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2010.Drawing.Charts.BooleanFalseType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2010.Drawing.Charts.BooleanFalseType");
   }
   
 }

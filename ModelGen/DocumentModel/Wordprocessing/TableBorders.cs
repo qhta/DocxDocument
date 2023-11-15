@@ -19,14 +19,8 @@ public partial class TableBorders: ModelElement<DXW.TableBorders>
   [DataMember]
   public DMW.TopBorder? TopBorder
   {
-    get
-    {
-      return _Element?.GetObject<DMW.TopBorder,DXW.TopBorder>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.TopBorder,DXW.TopBorder>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.BorderType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.BorderType");
   }
   
   
@@ -36,14 +30,8 @@ public partial class TableBorders: ModelElement<DXW.TableBorders>
   [DataMember]
   public DMW.LeftBorder? LeftBorder
   {
-    get
-    {
-      return _Element?.GetObject<DMW.LeftBorder,DXW.LeftBorder>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.LeftBorder,DXW.LeftBorder>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.BorderType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.BorderType");
   }
   
   
@@ -53,14 +41,8 @@ public partial class TableBorders: ModelElement<DXW.TableBorders>
   [DataMember]
   public DMW.StartBorder? StartBorder
   {
-    get
-    {
-      return _Element?.GetObject<DMW.StartBorder,DXW.StartBorder>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.StartBorder,DXW.StartBorder>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.BorderType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.BorderType");
   }
   
   
@@ -70,14 +52,8 @@ public partial class TableBorders: ModelElement<DXW.TableBorders>
   [DataMember]
   public DMW.BottomBorder? BottomBorder
   {
-    get
-    {
-      return _Element?.GetObject<DMW.BottomBorder,DXW.BottomBorder>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.BottomBorder,DXW.BottomBorder>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.BorderType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.BorderType");
   }
   
   
@@ -87,14 +63,8 @@ public partial class TableBorders: ModelElement<DXW.TableBorders>
   [DataMember]
   public DMW.RightBorder? RightBorder
   {
-    get
-    {
-      return _Element?.GetObject<DMW.RightBorder,DXW.RightBorder>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.RightBorder,DXW.RightBorder>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.BorderType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.BorderType");
   }
   
   
@@ -104,14 +74,8 @@ public partial class TableBorders: ModelElement<DXW.TableBorders>
   [DataMember]
   public DMW.EndBorder? EndBorder
   {
-    get
-    {
-      return _Element?.GetObject<DMW.EndBorder,DXW.EndBorder>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.EndBorder,DXW.EndBorder>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.BorderType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.BorderType");
   }
   
   
@@ -121,14 +85,8 @@ public partial class TableBorders: ModelElement<DXW.TableBorders>
   [DataMember]
   public DMW.InsideHorizontalBorder? InsideHorizontalBorder
   {
-    get
-    {
-      return _Element?.GetObject<DMW.InsideHorizontalBorder,DXW.InsideHorizontalBorder>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.InsideHorizontalBorder,DXW.InsideHorizontalBorder>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.BorderType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.BorderType");
   }
   
   
@@ -138,14 +96,8 @@ public partial class TableBorders: ModelElement<DXW.TableBorders>
   [DataMember]
   public DMW.InsideVerticalBorder? InsideVerticalBorder
   {
-    get
-    {
-      return _Element?.GetObject<DMW.InsideVerticalBorder,DXW.InsideVerticalBorder>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.InsideVerticalBorder,DXW.InsideVerticalBorder>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.BorderType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.BorderType");
   }
   
 }

@@ -19,27 +19,15 @@ public partial class PieChartExtension: ModelElement<DXDC.PieChartExtension>
   [DataMember]
   public String? Uri
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Uri);
-    }
-    set
-    {
-      _ExistingElement.Uri = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Uri;
+    set => _ExistingElement.Uri = value;
   }
   
   [DataMember]
   public DMDC13.FilteredPieSeries? FilteredPieSeries
   {
-    get
-    {
-      return _Element?.GetObject<DMDC13.FilteredPieSeries,DXO13DC.FilteredPieSeries>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC13.FilteredPieSeries,DXO13DC.FilteredPieSeries>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

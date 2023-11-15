@@ -19,14 +19,8 @@ public partial class HslColor: ModelElement<DXD.HslColor>
   [DataMember]
   public Int32? HueValue
   {
-    get
-    {
-      return _Element?.HueValue?.Value;
-    }
-    set
-    {
-      _ExistingElement.HueValue = value;
-    }
+    get => _Element?.HueValue?.Value;
+    set => _ExistingElement.HueValue = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class HslColor: ModelElement<DXD.HslColor>
   [DataMember]
   public Int32? SatValue
   {
-    get
-    {
-      return _Element?.SatValue?.Value;
-    }
-    set
-    {
-      _ExistingElement.SatValue = value;
-    }
+    get => _Element?.SatValue?.Value;
+    set => _ExistingElement.SatValue = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class HslColor: ModelElement<DXD.HslColor>
   [DataMember]
   public Int32? LumValue
   {
-    get
-    {
-      return _Element?.LumValue?.Value;
-    }
-    set
-    {
-      _ExistingElement.LumValue = value;
-    }
+    get => _Element?.LumValue?.Value;
+    set => _ExistingElement.LumValue = value;
   }
   
 }

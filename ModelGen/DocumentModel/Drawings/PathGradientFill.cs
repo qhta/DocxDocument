@@ -19,14 +19,8 @@ public partial class PathGradientFill: ModelElement<DXD.PathGradientFill>
   [DataMember]
   public DMD.FillToRectangle? FillToRectangle
   {
-    get
-    {
-      return _Element?.GetObject<DMD.FillToRectangle,DXD.FillToRectangle>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.FillToRectangle,DXD.FillToRectangle>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.RelativeRectangleType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.RelativeRectangleType");
   }
   
 }

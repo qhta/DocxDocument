@@ -19,14 +19,8 @@ public partial class TransformEffect: ModelElement<DXD.TransformEffect>
   [DataMember]
   public Int32? HorizontalRatio
   {
-    get
-    {
-      return _Element?.HorizontalRatio?.Value;
-    }
-    set
-    {
-      _ExistingElement.HorizontalRatio = value;
-    }
+    get => _Element?.HorizontalRatio?.Value;
+    set => _ExistingElement.HorizontalRatio = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class TransformEffect: ModelElement<DXD.TransformEffect>
   [DataMember]
   public Int32? VerticalRatio
   {
-    get
-    {
-      return _Element?.VerticalRatio?.Value;
-    }
-    set
-    {
-      _ExistingElement.VerticalRatio = value;
-    }
+    get => _Element?.VerticalRatio?.Value;
+    set => _ExistingElement.VerticalRatio = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class TransformEffect: ModelElement<DXD.TransformEffect>
   [DataMember]
   public Int32? HorizontalSkew
   {
-    get
-    {
-      return _Element?.HorizontalSkew?.Value;
-    }
-    set
-    {
-      _ExistingElement.HorizontalSkew = value;
-    }
+    get => _Element?.HorizontalSkew?.Value;
+    set => _ExistingElement.HorizontalSkew = value;
   }
   
   
@@ -70,14 +52,8 @@ public partial class TransformEffect: ModelElement<DXD.TransformEffect>
   [DataMember]
   public Int32? VerticalSkew
   {
-    get
-    {
-      return _Element?.VerticalSkew?.Value;
-    }
-    set
-    {
-      _ExistingElement.VerticalSkew = value;
-    }
+    get => _Element?.VerticalSkew?.Value;
+    set => _ExistingElement.VerticalSkew = value;
   }
   
   
@@ -87,14 +63,8 @@ public partial class TransformEffect: ModelElement<DXD.TransformEffect>
   [DataMember]
   public Int64? HorizontalShift
   {
-    get
-    {
-      return _Element?.HorizontalShift?.Value;
-    }
-    set
-    {
-      _ExistingElement.HorizontalShift = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int64]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int64]");
   }
   
   
@@ -104,14 +74,8 @@ public partial class TransformEffect: ModelElement<DXD.TransformEffect>
   [DataMember]
   public Int64? VerticalShift
   {
-    get
-    {
-      return _Element?.VerticalShift?.Value;
-    }
-    set
-    {
-      _ExistingElement.VerticalShift = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int64]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int64]");
   }
   
 }

@@ -19,14 +19,8 @@ public partial class UnsizedDynamicMenu: ModelElement<DXOCUI.UnsizedDynamicMenu>
   [DataMember]
   public String? Description
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Description);
-    }
-    set
-    {
-      _ExistingElement.Description = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Description;
+    set => _ExistingElement.Description = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class UnsizedDynamicMenu: ModelElement<DXOCUI.UnsizedDynamicMenu>
   [DataMember]
   public String? GetDescription
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.GetDescription);
-    }
-    set
-    {
-      _ExistingElement.GetDescription = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.GetDescription;
+    set => _ExistingElement.GetDescription = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class UnsizedDynamicMenu: ModelElement<DXOCUI.UnsizedDynamicMenu>
   [DataMember]
   public String? Id
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Id);
-    }
-    set
-    {
-      _ExistingElement.Id = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Id;
+    set => _ExistingElement.Id = value;
   }
   
   
@@ -70,14 +52,8 @@ public partial class UnsizedDynamicMenu: ModelElement<DXOCUI.UnsizedDynamicMenu>
   [DataMember]
   public String? IdQ
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.IdQ);
-    }
-    set
-    {
-      _ExistingElement.IdQ = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.IdQ;
+    set => _ExistingElement.IdQ = value;
   }
   
   
@@ -87,14 +63,8 @@ public partial class UnsizedDynamicMenu: ModelElement<DXOCUI.UnsizedDynamicMenu>
   [DataMember]
   public String? IdMso
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.IdMso);
-    }
-    set
-    {
-      _ExistingElement.IdMso = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.IdMso;
+    set => _ExistingElement.IdMso = value;
   }
   
   
@@ -104,14 +74,8 @@ public partial class UnsizedDynamicMenu: ModelElement<DXOCUI.UnsizedDynamicMenu>
   [DataMember]
   public String? Tag
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Tag);
-    }
-    set
-    {
-      _ExistingElement.Tag = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Tag;
+    set => _ExistingElement.Tag = value;
   }
   
   
@@ -121,14 +85,8 @@ public partial class UnsizedDynamicMenu: ModelElement<DXOCUI.UnsizedDynamicMenu>
   [DataMember]
   public String? GetContent
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.GetContent);
-    }
-    set
-    {
-      _ExistingElement.GetContent = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.GetContent;
+    set => _ExistingElement.GetContent = value;
   }
   
   
@@ -138,17 +96,8 @@ public partial class UnsizedDynamicMenu: ModelElement<DXOCUI.UnsizedDynamicMenu>
   [DataMember]
   public Boolean? InvalidateContentOnDrop
   {
-    get
-    {
-      return _Element?.InvalidateContentOnDrop?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.InvalidateContentOnDrop = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.InvalidateContentOnDrop = null;
-    }
+    get => _Element?.InvalidateContentOnDrop?.Value;
+    set => _ExistingElement.InvalidateContentOnDrop = value;
   }
   
   
@@ -158,14 +107,8 @@ public partial class UnsizedDynamicMenu: ModelElement<DXOCUI.UnsizedDynamicMenu>
   [DataMember]
   public String? Image
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Image);
-    }
-    set
-    {
-      _ExistingElement.Image = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Image;
+    set => _ExistingElement.Image = value;
   }
   
   
@@ -175,14 +118,8 @@ public partial class UnsizedDynamicMenu: ModelElement<DXOCUI.UnsizedDynamicMenu>
   [DataMember]
   public String? ImageMso
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.ImageMso);
-    }
-    set
-    {
-      _ExistingElement.ImageMso = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.ImageMso;
+    set => _ExistingElement.ImageMso = value;
   }
   
   
@@ -192,14 +129,8 @@ public partial class UnsizedDynamicMenu: ModelElement<DXOCUI.UnsizedDynamicMenu>
   [DataMember]
   public String? GetImage
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.GetImage);
-    }
-    set
-    {
-      _ExistingElement.GetImage = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.GetImage;
+    set => _ExistingElement.GetImage = value;
   }
   
   
@@ -209,14 +140,8 @@ public partial class UnsizedDynamicMenu: ModelElement<DXOCUI.UnsizedDynamicMenu>
   [DataMember]
   public String? Screentip
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Screentip);
-    }
-    set
-    {
-      _ExistingElement.Screentip = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Screentip;
+    set => _ExistingElement.Screentip = value;
   }
   
   
@@ -226,14 +151,8 @@ public partial class UnsizedDynamicMenu: ModelElement<DXOCUI.UnsizedDynamicMenu>
   [DataMember]
   public String? GetScreentip
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.GetScreentip);
-    }
-    set
-    {
-      _ExistingElement.GetScreentip = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.GetScreentip;
+    set => _ExistingElement.GetScreentip = value;
   }
   
   
@@ -243,14 +162,8 @@ public partial class UnsizedDynamicMenu: ModelElement<DXOCUI.UnsizedDynamicMenu>
   [DataMember]
   public String? Supertip
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Supertip);
-    }
-    set
-    {
-      _ExistingElement.Supertip = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Supertip;
+    set => _ExistingElement.Supertip = value;
   }
   
   
@@ -260,14 +173,8 @@ public partial class UnsizedDynamicMenu: ModelElement<DXOCUI.UnsizedDynamicMenu>
   [DataMember]
   public String? GetSupertip
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.GetSupertip);
-    }
-    set
-    {
-      _ExistingElement.GetSupertip = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.GetSupertip;
+    set => _ExistingElement.GetSupertip = value;
   }
   
   
@@ -277,17 +184,8 @@ public partial class UnsizedDynamicMenu: ModelElement<DXOCUI.UnsizedDynamicMenu>
   [DataMember]
   public Boolean? Enabled
   {
-    get
-    {
-      return _Element?.Enabled?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Enabled = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.Enabled = null;
-    }
+    get => _Element?.Enabled?.Value;
+    set => _ExistingElement.Enabled = value;
   }
   
   
@@ -297,14 +195,8 @@ public partial class UnsizedDynamicMenu: ModelElement<DXOCUI.UnsizedDynamicMenu>
   [DataMember]
   public String? GetEnabled
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.GetEnabled);
-    }
-    set
-    {
-      _ExistingElement.GetEnabled = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.GetEnabled;
+    set => _ExistingElement.GetEnabled = value;
   }
   
   
@@ -314,14 +206,8 @@ public partial class UnsizedDynamicMenu: ModelElement<DXOCUI.UnsizedDynamicMenu>
   [DataMember]
   public String? Label
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Label);
-    }
-    set
-    {
-      _ExistingElement.Label = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Label;
+    set => _ExistingElement.Label = value;
   }
   
   
@@ -331,14 +217,8 @@ public partial class UnsizedDynamicMenu: ModelElement<DXOCUI.UnsizedDynamicMenu>
   [DataMember]
   public String? GetLabel
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.GetLabel);
-    }
-    set
-    {
-      _ExistingElement.GetLabel = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.GetLabel;
+    set => _ExistingElement.GetLabel = value;
   }
   
   
@@ -348,14 +228,8 @@ public partial class UnsizedDynamicMenu: ModelElement<DXOCUI.UnsizedDynamicMenu>
   [DataMember]
   public String? InsertAfterMso
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.InsertAfterMso);
-    }
-    set
-    {
-      _ExistingElement.InsertAfterMso = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.InsertAfterMso;
+    set => _ExistingElement.InsertAfterMso = value;
   }
   
   
@@ -365,14 +239,8 @@ public partial class UnsizedDynamicMenu: ModelElement<DXOCUI.UnsizedDynamicMenu>
   [DataMember]
   public String? InsertBeforeMso
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.InsertBeforeMso);
-    }
-    set
-    {
-      _ExistingElement.InsertBeforeMso = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.InsertBeforeMso;
+    set => _ExistingElement.InsertBeforeMso = value;
   }
   
   
@@ -382,14 +250,8 @@ public partial class UnsizedDynamicMenu: ModelElement<DXOCUI.UnsizedDynamicMenu>
   [DataMember]
   public String? InsertAfterQ
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.InsertAfterQ);
-    }
-    set
-    {
-      _ExistingElement.InsertAfterQ = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.InsertAfterQ;
+    set => _ExistingElement.InsertAfterQ = value;
   }
   
   
@@ -399,14 +261,8 @@ public partial class UnsizedDynamicMenu: ModelElement<DXOCUI.UnsizedDynamicMenu>
   [DataMember]
   public String? InsertBeforeQ
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.InsertBeforeQ);
-    }
-    set
-    {
-      _ExistingElement.InsertBeforeQ = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.InsertBeforeQ;
+    set => _ExistingElement.InsertBeforeQ = value;
   }
   
   
@@ -416,17 +272,8 @@ public partial class UnsizedDynamicMenu: ModelElement<DXOCUI.UnsizedDynamicMenu>
   [DataMember]
   public Boolean? Visible
   {
-    get
-    {
-      return _Element?.Visible?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Visible = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.Visible = null;
-    }
+    get => _Element?.Visible?.Value;
+    set => _ExistingElement.Visible = value;
   }
   
   
@@ -436,14 +283,8 @@ public partial class UnsizedDynamicMenu: ModelElement<DXOCUI.UnsizedDynamicMenu>
   [DataMember]
   public String? GetVisible
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.GetVisible);
-    }
-    set
-    {
-      _ExistingElement.GetVisible = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.GetVisible;
+    set => _ExistingElement.GetVisible = value;
   }
   
   
@@ -453,14 +294,8 @@ public partial class UnsizedDynamicMenu: ModelElement<DXOCUI.UnsizedDynamicMenu>
   [DataMember]
   public String? Keytip
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Keytip);
-    }
-    set
-    {
-      _ExistingElement.Keytip = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Keytip;
+    set => _ExistingElement.Keytip = value;
   }
   
   
@@ -470,14 +305,8 @@ public partial class UnsizedDynamicMenu: ModelElement<DXOCUI.UnsizedDynamicMenu>
   [DataMember]
   public String? GetKeytip
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.GetKeytip);
-    }
-    set
-    {
-      _ExistingElement.GetKeytip = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.GetKeytip;
+    set => _ExistingElement.GetKeytip = value;
   }
   
   
@@ -487,17 +316,8 @@ public partial class UnsizedDynamicMenu: ModelElement<DXOCUI.UnsizedDynamicMenu>
   [DataMember]
   public Boolean? ShowLabel
   {
-    get
-    {
-      return _Element?.ShowLabel?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.ShowLabel = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.ShowLabel = null;
-    }
+    get => _Element?.ShowLabel?.Value;
+    set => _ExistingElement.ShowLabel = value;
   }
   
   
@@ -507,14 +327,8 @@ public partial class UnsizedDynamicMenu: ModelElement<DXOCUI.UnsizedDynamicMenu>
   [DataMember]
   public String? GetShowLabel
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.GetShowLabel);
-    }
-    set
-    {
-      _ExistingElement.GetShowLabel = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.GetShowLabel;
+    set => _ExistingElement.GetShowLabel = value;
   }
   
   
@@ -524,17 +338,8 @@ public partial class UnsizedDynamicMenu: ModelElement<DXOCUI.UnsizedDynamicMenu>
   [DataMember]
   public Boolean? ShowImage
   {
-    get
-    {
-      return _Element?.ShowImage?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.ShowImage = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.ShowImage = null;
-    }
+    get => _Element?.ShowImage?.Value;
+    set => _ExistingElement.ShowImage = value;
   }
   
   
@@ -544,14 +349,8 @@ public partial class UnsizedDynamicMenu: ModelElement<DXOCUI.UnsizedDynamicMenu>
   [DataMember]
   public String? GetShowImage
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.GetShowImage);
-    }
-    set
-    {
-      _ExistingElement.GetShowImage = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.GetShowImage;
+    set => _ExistingElement.GetShowImage = value;
   }
   
 }

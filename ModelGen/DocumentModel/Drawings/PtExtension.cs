@@ -19,27 +19,15 @@ public partial class PtExtension: ModelElement<DXD.PtExtension>
   [DataMember]
   public String? Uri
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Uri);
-    }
-    set
-    {
-      _ExistingElement.Uri = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Uri;
+    set => _ExistingElement.Uri = value;
   }
   
   [DataMember]
   public DMDD.NonVisualDrawingProperties? NonVisualDrawingProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMDD.NonVisualDrawingProperties,DXO10DD.NonVisualDrawingProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDD.NonVisualDrawingProperties,DXO10DD.NonVisualDrawingProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

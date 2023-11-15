@@ -19,14 +19,8 @@ public partial class StringReference: ModelElement<DXDC.StringReference>
   [DataMember]
   public DMDC.Formula? Formula
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.Formula,DXDC.Formula>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.Formula,DXDC.Formula>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
   }
   
   
@@ -36,14 +30,8 @@ public partial class StringReference: ModelElement<DXDC.StringReference>
   [DataMember]
   public DMDC.StringCache? StringCache
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.StringCache,DXDC.StringCache>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.StringCache,DXDC.StringCache>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.StringDataType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.StringDataType");
   }
   
   
@@ -53,14 +41,8 @@ public partial class StringReference: ModelElement<DXDC.StringReference>
   [DataMember]
   public DMDC.StrRefExtensionList? StrRefExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.StrRefExtensionList,DXDC.StrRefExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.StrRefExtensionList,DXDC.StrRefExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

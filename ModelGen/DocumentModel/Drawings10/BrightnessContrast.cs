@@ -19,14 +19,8 @@ public partial class BrightnessContrast: ModelElement<DXO10D.BrightnessContrast>
   [DataMember]
   public Int32? Bright
   {
-    get
-    {
-      return _Element?.Bright?.Value;
-    }
-    set
-    {
-      _ExistingElement.Bright = value;
-    }
+    get => _Element?.Bright?.Value;
+    set => _ExistingElement.Bright = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class BrightnessContrast: ModelElement<DXO10D.BrightnessContrast>
   [DataMember]
   public Int32? Contrast
   {
-    get
-    {
-      return _Element?.Contrast?.Value;
-    }
-    set
-    {
-      _ExistingElement.Contrast = value;
-    }
+    get => _Element?.Contrast?.Value;
+    set => _ExistingElement.Contrast = value;
   }
   
 }

@@ -15,14 +15,8 @@ public partial class ColorMap: ModelElement<DXD.ColorMap>
   [DataMember]
   public DMD.ExtensionList? ExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMD.ExtensionList,DXD.ExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.ExtensionList,DXD.ExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

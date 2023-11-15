@@ -19,14 +19,8 @@ public partial class TablePropertyExceptionsChange: ModelElement<DXW.TableProper
   [DataMember]
   public String? Author
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Author);
-    }
-    set
-    {
-      _ExistingElement.Author = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Author;
+    set => _ExistingElement.Author = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class TablePropertyExceptionsChange: ModelElement<DXW.TableProper
   [DataMember]
   public DateTime? Date
   {
-    get
-    {
-      return _Element?.Date?.Value;
-    }
-    set
-    {
-      _ExistingElement.Date = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -53,14 +41,8 @@ public partial class TablePropertyExceptionsChange: ModelElement<DXW.TableProper
   [DataMember]
   public DateTime? DateUtc
   {
-    get
-    {
-      return _Element?.DateUtc?.Value;
-    }
-    set
-    {
-      _ExistingElement.DateUtc = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -70,14 +52,8 @@ public partial class TablePropertyExceptionsChange: ModelElement<DXW.TableProper
   [DataMember]
   public String? Id
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Id);
-    }
-    set
-    {
-      _ExistingElement.Id = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Id;
+    set => _ExistingElement.Id = value;
   }
   
   
@@ -87,14 +63,8 @@ public partial class TablePropertyExceptionsChange: ModelElement<DXW.TableProper
   [DataMember]
   public DMW.PreviousTablePropertyExceptions? PreviousTablePropertyExceptions
   {
-    get
-    {
-      return _Element?.GetObject<DMW.PreviousTablePropertyExceptions,DXW.PreviousTablePropertyExceptions>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.PreviousTablePropertyExceptions,DXW.PreviousTablePropertyExceptions>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

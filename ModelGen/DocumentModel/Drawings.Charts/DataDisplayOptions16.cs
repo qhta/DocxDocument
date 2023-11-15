@@ -19,24 +19,8 @@ public partial class DataDisplayOptions16: ModelElement<DXDC.DataDisplayOptions1
   [DataMember]
   public Boolean? BooleanFalse
   {
-    get
-    {
-      return _ExistingElement.GetFirstChild<DXO19DC.BooleanFalse>() != null;
-    }
-    set
-    {
-      if (value == false)
-      {
-        var itemElement = _ExistingElement.GetFirstChild<DXO19DC.BooleanFalse>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new DXO19DC.BooleanFalse();
-        _ExistingElement.AddChild(itemElement);
-      }
-    }
+    get => _Element?.GetBoolVal<DXO19DC.BooleanFalse>();
+    set => _ExistingElement.SetBoolVal<DXO19DC.BooleanFalse>(value);
   }
   
 }

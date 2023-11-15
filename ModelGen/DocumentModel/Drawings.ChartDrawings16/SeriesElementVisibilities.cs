@@ -19,17 +19,8 @@ public partial class SeriesElementVisibilities: ModelElement<DXO16DCD.SeriesElem
   [DataMember]
   public Boolean? ConnectorLines
   {
-    get
-    {
-      return _Element?.ConnectorLines?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.ConnectorLines = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.ConnectorLines = null;
-    }
+    get => _Element?.ConnectorLines?.Value;
+    set => _ExistingElement.ConnectorLines = value;
   }
   
   
@@ -39,17 +30,8 @@ public partial class SeriesElementVisibilities: ModelElement<DXO16DCD.SeriesElem
   [DataMember]
   public Boolean? MeanLine
   {
-    get
-    {
-      return _Element?.MeanLine?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.MeanLine = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.MeanLine = null;
-    }
+    get => _Element?.MeanLine?.Value;
+    set => _ExistingElement.MeanLine = value;
   }
   
   
@@ -59,17 +41,8 @@ public partial class SeriesElementVisibilities: ModelElement<DXO16DCD.SeriesElem
   [DataMember]
   public Boolean? MeanMarker
   {
-    get
-    {
-      return _Element?.MeanMarker?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.MeanMarker = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.MeanMarker = null;
-    }
+    get => _Element?.MeanMarker?.Value;
+    set => _ExistingElement.MeanMarker = value;
   }
   
   
@@ -79,17 +52,8 @@ public partial class SeriesElementVisibilities: ModelElement<DXO16DCD.SeriesElem
   [DataMember]
   public Boolean? Nonoutliers
   {
-    get
-    {
-      return _Element?.Nonoutliers?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Nonoutliers = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.Nonoutliers = null;
-    }
+    get => _Element?.Nonoutliers?.Value;
+    set => _ExistingElement.Nonoutliers = value;
   }
   
   
@@ -99,17 +63,8 @@ public partial class SeriesElementVisibilities: ModelElement<DXO16DCD.SeriesElem
   [DataMember]
   public Boolean? Outliers
   {
-    get
-    {
-      return _Element?.Outliers?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Outliers = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.Outliers = null;
-    }
+    get => _Element?.Outliers?.Value;
+    set => _ExistingElement.Outliers = value;
   }
   
 }

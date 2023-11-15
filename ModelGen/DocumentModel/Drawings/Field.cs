@@ -19,14 +19,8 @@ public partial class Field: ModelElement<DXD.Field>
   [DataMember]
   public String? Id
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Id);
-    }
-    set
-    {
-      _ExistingElement.Id = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Id;
+    set => _ExistingElement.Id = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class Field: ModelElement<DXD.Field>
   [DataMember]
   public String? Type
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Type);
-    }
-    set
-    {
-      _ExistingElement.Type = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Type;
+    set => _ExistingElement.Type = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class Field: ModelElement<DXD.Field>
   [DataMember]
   public DMD.RunProperties? RunProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMD.RunProperties,DXD.RunProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.RunProperties,DXD.RunProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType");
   }
   
   
@@ -70,14 +52,8 @@ public partial class Field: ModelElement<DXD.Field>
   [DataMember]
   public DMD.ParagraphProperties? ParagraphProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMD.ParagraphProperties,DXD.ParagraphProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.ParagraphProperties,DXD.ParagraphProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType");
   }
   
   
@@ -87,14 +63,8 @@ public partial class Field: ModelElement<DXD.Field>
   [DataMember]
   public DMD.Text? Text
   {
-    get
-    {
-      return _Element?.GetObject<DMD.Text,DXD.Text>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.Text,DXD.Text>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
   }
   
 }

@@ -19,14 +19,8 @@ public partial class LineNumberType: ModelElement<DXW.LineNumberType>
   [DataMember]
   public Int16? CountBy
   {
-    get
-    {
-      return _Element?.CountBy?.Value;
-    }
-    set
-    {
-      _ExistingElement.CountBy = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int16]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int16]");
   }
   
   
@@ -36,14 +30,8 @@ public partial class LineNumberType: ModelElement<DXW.LineNumberType>
   [DataMember]
   public Int16? Start
   {
-    get
-    {
-      return _Element?.Start?.Value;
-    }
-    set
-    {
-      _ExistingElement.Start = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int16]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int16]");
   }
   
   
@@ -53,14 +41,8 @@ public partial class LineNumberType: ModelElement<DXW.LineNumberType>
   [DataMember]
   public String? Distance
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Distance);
-    }
-    set
-    {
-      _ExistingElement.Distance = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Distance;
+    set => _ExistingElement.Distance = value;
   }
   
 }

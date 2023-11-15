@@ -19,14 +19,8 @@ public partial class FilteredAreaSeries: ModelElement<DXO13DC.FilteredAreaSeries
   [DataMember]
   public DMDC13.AreaChartSeries? AreaChartSeries
   {
-    get
-    {
-      return _Element?.GetObject<DMDC13.AreaChartSeries,DXO13DC.AreaChartSeries>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC13.AreaChartSeries,DXO13DC.AreaChartSeries>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

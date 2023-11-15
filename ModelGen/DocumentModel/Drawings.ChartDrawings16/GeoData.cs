@@ -19,14 +19,8 @@ public partial class GeoData: ModelElement<DXO16DCD.GeoData>
   [DataMember]
   public String? EntityName
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.EntityName);
-    }
-    set
-    {
-      _ExistingElement.EntityName = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.EntityName;
+    set => _ExistingElement.EntityName = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class GeoData: ModelElement<DXO16DCD.GeoData>
   [DataMember]
   public String? EntityId
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.EntityId);
-    }
-    set
-    {
-      _ExistingElement.EntityId = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.EntityId;
+    set => _ExistingElement.EntityId = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class GeoData: ModelElement<DXO16DCD.GeoData>
   [DataMember]
   public Double? East
   {
-    get
-    {
-      return _Element?.East?.Value;
-    }
-    set
-    {
-      _ExistingElement.East = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Double]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Double]");
   }
   
   
@@ -70,14 +52,8 @@ public partial class GeoData: ModelElement<DXO16DCD.GeoData>
   [DataMember]
   public Double? West
   {
-    get
-    {
-      return _Element?.West?.Value;
-    }
-    set
-    {
-      _ExistingElement.West = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Double]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Double]");
   }
   
   
@@ -87,14 +63,8 @@ public partial class GeoData: ModelElement<DXO16DCD.GeoData>
   [DataMember]
   public Double? North
   {
-    get
-    {
-      return _Element?.North?.Value;
-    }
-    set
-    {
-      _ExistingElement.North = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Double]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Double]");
   }
   
   
@@ -104,14 +74,8 @@ public partial class GeoData: ModelElement<DXO16DCD.GeoData>
   [DataMember]
   public Double? South
   {
-    get
-    {
-      return _Element?.South?.Value;
-    }
-    set
-    {
-      _ExistingElement.South = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Double]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Double]");
   }
   
   
@@ -121,14 +85,8 @@ public partial class GeoData: ModelElement<DXO16DCD.GeoData>
   [DataMember]
   public DMDCD16.GeoPolygons? GeoPolygons
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.GeoPolygons,DXO16DCD.GeoPolygons>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.GeoPolygons,DXO16DCD.GeoPolygons>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -138,14 +96,8 @@ public partial class GeoData: ModelElement<DXO16DCD.GeoData>
   [DataMember]
   public DMDCD16.Copyrights? Copyrights
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.Copyrights,DXO16DCD.Copyrights>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.Copyrights,DXO16DCD.Copyrights>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

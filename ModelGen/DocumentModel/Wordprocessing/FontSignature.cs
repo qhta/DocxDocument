@@ -19,19 +19,8 @@ public partial class FontSignature: ModelElement<DXW.FontSignature>
   [DataMember]
   public DM.HexBinary? UnicodeSignature0
   {
-    get
-    {
-      if (_Element?.UnicodeSignature0?.Value != null)
-        return HexIntConverter.GetValue(_Element?.UnicodeSignature0.Value);
-      return null;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.UnicodeSignature0 = value.ToString();
-      else
-        _ExistingElement.UnicodeSignature0 = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -41,19 +30,8 @@ public partial class FontSignature: ModelElement<DXW.FontSignature>
   [DataMember]
   public DM.HexBinary? UnicodeSignature1
   {
-    get
-    {
-      if (_Element?.UnicodeSignature1?.Value != null)
-        return HexIntConverter.GetValue(_Element?.UnicodeSignature1.Value);
-      return null;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.UnicodeSignature1 = value.ToString();
-      else
-        _ExistingElement.UnicodeSignature1 = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -63,19 +41,8 @@ public partial class FontSignature: ModelElement<DXW.FontSignature>
   [DataMember]
   public DM.HexBinary? UnicodeSignature2
   {
-    get
-    {
-      if (_Element?.UnicodeSignature2?.Value != null)
-        return HexIntConverter.GetValue(_Element?.UnicodeSignature2.Value);
-      return null;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.UnicodeSignature2 = value.ToString();
-      else
-        _ExistingElement.UnicodeSignature2 = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -85,19 +52,8 @@ public partial class FontSignature: ModelElement<DXW.FontSignature>
   [DataMember]
   public DM.HexBinary? UnicodeSignature3
   {
-    get
-    {
-      if (_Element?.UnicodeSignature3?.Value != null)
-        return HexIntConverter.GetValue(_Element?.UnicodeSignature3.Value);
-      return null;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.UnicodeSignature3 = value.ToString();
-      else
-        _ExistingElement.UnicodeSignature3 = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -107,19 +63,8 @@ public partial class FontSignature: ModelElement<DXW.FontSignature>
   [DataMember]
   public DM.HexBinary? CodePageSignature0
   {
-    get
-    {
-      if (_Element?.CodePageSignature0?.Value != null)
-        return HexIntConverter.GetValue(_Element?.CodePageSignature0.Value);
-      return null;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.CodePageSignature0 = value.ToString();
-      else
-        _ExistingElement.CodePageSignature0 = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -129,19 +74,8 @@ public partial class FontSignature: ModelElement<DXW.FontSignature>
   [DataMember]
   public DM.HexBinary? CodePageSignature1
   {
-    get
-    {
-      if (_Element?.CodePageSignature1?.Value != null)
-        return HexIntConverter.GetValue(_Element?.CodePageSignature1.Value);
-      return null;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.CodePageSignature1 = value.ToString();
-      else
-        _ExistingElement.CodePageSignature1 = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
 }

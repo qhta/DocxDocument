@@ -19,14 +19,8 @@ public partial class GeoEntity: ModelElement<DXO16DCD.GeoEntity>
   [DataMember]
   public String? EntityName
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.EntityName);
-    }
-    set
-    {
-      _ExistingElement.EntityName = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.EntityName;
+    set => _ExistingElement.EntityName = value;
   }
   
 }

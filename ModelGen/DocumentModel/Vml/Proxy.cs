@@ -19,17 +19,8 @@ public partial class Proxy: ModelElement<DXVO.Proxy>
   [DataMember]
   public Boolean? Start
   {
-    get
-    {
-      return _Element?.Start?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Start = value;
-      else
-        _ExistingElement.Start = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseBlankValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseBlankValue");
   }
   
   
@@ -39,17 +30,8 @@ public partial class Proxy: ModelElement<DXVO.Proxy>
   [DataMember]
   public Boolean? End
   {
-    get
-    {
-      return _Element?.End?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.End = value;
-      else
-        _ExistingElement.End = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseBlankValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseBlankValue");
   }
   
   
@@ -59,14 +41,8 @@ public partial class Proxy: ModelElement<DXVO.Proxy>
   [DataMember]
   public String? ShapeReference
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.ShapeReference);
-    }
-    set
-    {
-      _ExistingElement.ShapeReference = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.ShapeReference;
+    set => _ExistingElement.ShapeReference = value;
   }
   
   
@@ -76,14 +52,8 @@ public partial class Proxy: ModelElement<DXVO.Proxy>
   [DataMember]
   public Int32? ConnectionLocation
   {
-    get
-    {
-      return _Element?.ConnectionLocation?.Value;
-    }
-    set
-    {
-      _ExistingElement.ConnectionLocation = value;
-    }
+    get => _Element?.ConnectionLocation?.Value;
+    set => _ExistingElement.ConnectionLocation = value;
   }
   
 }

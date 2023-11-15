@@ -19,14 +19,8 @@ public partial class ContextMenu: ModelElement<DXO10CUI.ContextMenu>
   [DataMember]
   public String? IdMso
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.IdMso);
-    }
-    set
-    {
-      _ExistingElement.IdMso = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.IdMso;
+    set => _ExistingElement.IdMso = value;
   }
   
 }

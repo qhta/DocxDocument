@@ -19,14 +19,8 @@ public partial class VerticalSeparator: ModelElement<DXOCUI.VerticalSeparator>
   [DataMember]
   public String? Id
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Id);
-    }
-    set
-    {
-      _ExistingElement.Id = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Id;
+    set => _ExistingElement.Id = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class VerticalSeparator: ModelElement<DXOCUI.VerticalSeparator>
   [DataMember]
   public String? IdQ
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.IdQ);
-    }
-    set
-    {
-      _ExistingElement.IdQ = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.IdQ;
+    set => _ExistingElement.IdQ = value;
   }
   
   
@@ -53,17 +41,8 @@ public partial class VerticalSeparator: ModelElement<DXOCUI.VerticalSeparator>
   [DataMember]
   public Boolean? Visible
   {
-    get
-    {
-      return _Element?.Visible?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Visible = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.Visible = null;
-    }
+    get => _Element?.Visible?.Value;
+    set => _ExistingElement.Visible = value;
   }
   
   
@@ -73,14 +52,8 @@ public partial class VerticalSeparator: ModelElement<DXOCUI.VerticalSeparator>
   [DataMember]
   public String? GetVisible
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.GetVisible);
-    }
-    set
-    {
-      _ExistingElement.GetVisible = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.GetVisible;
+    set => _ExistingElement.GetVisible = value;
   }
   
   
@@ -90,14 +63,8 @@ public partial class VerticalSeparator: ModelElement<DXOCUI.VerticalSeparator>
   [DataMember]
   public String? InsertAfterMso
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.InsertAfterMso);
-    }
-    set
-    {
-      _ExistingElement.InsertAfterMso = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.InsertAfterMso;
+    set => _ExistingElement.InsertAfterMso = value;
   }
   
   
@@ -107,14 +74,8 @@ public partial class VerticalSeparator: ModelElement<DXOCUI.VerticalSeparator>
   [DataMember]
   public String? InsertBeforeMso
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.InsertBeforeMso);
-    }
-    set
-    {
-      _ExistingElement.InsertBeforeMso = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.InsertBeforeMso;
+    set => _ExistingElement.InsertBeforeMso = value;
   }
   
   
@@ -124,14 +85,8 @@ public partial class VerticalSeparator: ModelElement<DXOCUI.VerticalSeparator>
   [DataMember]
   public String? InsertAfterQ
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.InsertAfterQ);
-    }
-    set
-    {
-      _ExistingElement.InsertAfterQ = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.InsertAfterQ;
+    set => _ExistingElement.InsertAfterQ = value;
   }
   
   
@@ -141,14 +96,8 @@ public partial class VerticalSeparator: ModelElement<DXOCUI.VerticalSeparator>
   [DataMember]
   public String? InsertBeforeQ
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.InsertBeforeQ);
-    }
-    set
-    {
-      _ExistingElement.InsertBeforeQ = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.InsertBeforeQ;
+    set => _ExistingElement.InsertBeforeQ = value;
   }
   
 }

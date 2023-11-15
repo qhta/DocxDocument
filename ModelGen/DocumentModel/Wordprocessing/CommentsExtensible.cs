@@ -15,14 +15,8 @@ public partial class CommentsExtensible: ModelElement<DXO21WCE.CommentsExtensibl
   [DataMember]
   public DMW.ExtensionList? ExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMW.ExtensionList,DXO21WCE.ExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.ExtensionList,DXO21WCE.ExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

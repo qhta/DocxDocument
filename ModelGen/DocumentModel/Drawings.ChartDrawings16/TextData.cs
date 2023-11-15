@@ -15,27 +15,15 @@ public partial class TextData: ModelElement<DXO16DCD.TextData>
   [DataMember]
   public DMDCD16.Formula? Formula
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.Formula,DXO16DCD.Formula>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.Formula,DXO16DCD.Formula>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.OpenXmlFormulaElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.OpenXmlFormulaElement");
   }
   
   [DataMember]
   public DMDCD16.VXsdstring? VXsdstring
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.VXsdstring,DXO16DCD.VXsdstring>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.VXsdstring,DXO16DCD.VXsdstring>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
   }
   
 }

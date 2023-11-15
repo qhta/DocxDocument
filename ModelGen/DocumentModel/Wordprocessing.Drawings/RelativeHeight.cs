@@ -19,14 +19,8 @@ public partial class RelativeHeight: ModelElement<DXO10WD.RelativeHeight>
   [DataMember]
   public DMWD.PercentageHeight? PercentageHeight
   {
-    get
-    {
-      return _Element?.GetObject<DMWD.PercentageHeight,DXO10WD.PercentageHeight>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMWD.PercentageHeight,DXO10WD.PercentageHeight>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
   }
   
 }

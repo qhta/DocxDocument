@@ -19,17 +19,8 @@ public partial class NonVisualInkContentPartProperties: ModelElement<DXO10DCD.No
   [DataMember]
   public Boolean? IsComment
   {
-    get
-    {
-      return _Element?.IsComment?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.IsComment = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.IsComment = null;
-    }
+    get => _Element?.IsComment?.Value;
+    set => _ExistingElement.IsComment = value;
   }
   
   
@@ -39,14 +30,8 @@ public partial class NonVisualInkContentPartProperties: ModelElement<DXO10DCD.No
   [DataMember]
   public DMD10.ContentPartLocks? ContentPartLocks
   {
-    get
-    {
-      return _Element?.GetObject<DMD10.ContentPartLocks,DXO10D.ContentPartLocks>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD10.ContentPartLocks,DXO10D.ContentPartLocks>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -56,14 +41,8 @@ public partial class NonVisualInkContentPartProperties: ModelElement<DXO10DCD.No
   [DataMember]
   public DMD10.OfficeArtExtensionList? OfficeArtExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMD10.OfficeArtExtensionList,DXO10D.OfficeArtExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD10.OfficeArtExtensionList,DXO10D.OfficeArtExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

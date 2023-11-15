@@ -19,79 +19,43 @@ public partial class LineSketchStyleProperties: ModelElement<DXO21DSS.LineSketch
   [DataMember]
   public UInt32? Sd
   {
-    get
-    {
-      return _Element?.Sd?.Value;
-    }
-    set
-    {
-      _ExistingElement.Sd = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
   }
   
   [DataMember]
   public DMD.CustomGeometry? CustomGeometry
   {
-    get
-    {
-      return _Element?.GetObject<DMD.CustomGeometry,DXD.CustomGeometry>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.CustomGeometry,DXD.CustomGeometry>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMD.PresetGeometry? PresetGeometry
   {
-    get
-    {
-      return _Element?.GetObject<DMD.PresetGeometry,DXD.PresetGeometry>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.PresetGeometry,DXD.PresetGeometry>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMDSS.LineSketchTypeProperties? LineSketchTypeProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMDSS.LineSketchTypeProperties,DXO21DSS.LineSketchTypeProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDSS.LineSketchTypeProperties,DXO21DSS.LineSketchTypeProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMDSS.LineSketchSeed? LineSketchSeed
   {
-    get
-    {
-      return _Element?.GetObject<DMDSS.LineSketchSeed,DXO21DSS.LineSketchSeed>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDSS.LineSketchSeed,DXO21DSS.LineSketchSeed>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
   }
   
   [DataMember]
   public DMDSS.OfficeArtExtensionList? OfficeArtExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMDSS.OfficeArtExtensionList,DXO21DSS.OfficeArtExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDSS.OfficeArtExtensionList,DXO21DSS.OfficeArtExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

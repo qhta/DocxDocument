@@ -19,14 +19,8 @@ public partial class PresenceInfo: ModelElement<DXO13W.PresenceInfo>
   [DataMember]
   public String? ProviderId
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.ProviderId);
-    }
-    set
-    {
-      _ExistingElement.ProviderId = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.ProviderId;
+    set => _ExistingElement.ProviderId = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class PresenceInfo: ModelElement<DXO13W.PresenceInfo>
   [DataMember]
   public String? UserId
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.UserId);
-    }
-    set
-    {
-      _ExistingElement.UserId = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.UserId;
+    set => _ExistingElement.UserId = value;
   }
   
 }

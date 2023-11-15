@@ -19,14 +19,8 @@ public partial class Schema: ModelElement<DXCXSR.Schema>
   [DataMember]
   public String? Uri
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Uri);
-    }
-    set
-    {
-      _ExistingElement.Uri = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Uri;
+    set => _ExistingElement.Uri = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class Schema: ModelElement<DXCXSR.Schema>
   [DataMember]
   public String? ManifestLocation
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.ManifestLocation);
-    }
-    set
-    {
-      _ExistingElement.ManifestLocation = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.ManifestLocation;
+    set => _ExistingElement.ManifestLocation = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class Schema: ModelElement<DXCXSR.Schema>
   [DataMember]
   public String? SchemaLocation
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.SchemaLocation);
-    }
-    set
-    {
-      _ExistingElement.SchemaLocation = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.SchemaLocation;
+    set => _ExistingElement.SchemaLocation = value;
   }
   
 }

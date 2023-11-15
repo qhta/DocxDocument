@@ -19,14 +19,8 @@ public partial class FontScheme: ModelElement<DXD.FontScheme>
   [DataMember]
   public String? Name
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Name);
-    }
-    set
-    {
-      _ExistingElement.Name = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Name;
+    set => _ExistingElement.Name = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class FontScheme: ModelElement<DXD.FontScheme>
   [DataMember]
   public DMD.MajorFont? MajorFont
   {
-    get
-    {
-      return _Element?.GetObject<DMD.MajorFont,DXD.MajorFont>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.MajorFont,DXD.MajorFont>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.FontCollectionType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.FontCollectionType");
   }
   
   
@@ -53,14 +41,8 @@ public partial class FontScheme: ModelElement<DXD.FontScheme>
   [DataMember]
   public DMD.MinorFont? MinorFont
   {
-    get
-    {
-      return _Element?.GetObject<DMD.MinorFont,DXD.MinorFont>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.MinorFont,DXD.MinorFont>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.FontCollectionType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.FontCollectionType");
   }
   
   
@@ -70,14 +52,8 @@ public partial class FontScheme: ModelElement<DXD.FontScheme>
   [DataMember]
   public DMD.ExtensionList? ExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMD.ExtensionList,DXD.ExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.ExtensionList,DXD.ExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

@@ -19,14 +19,8 @@ public partial class TabStop: ModelElement<DXD.TabStop>
   [DataMember]
   public Int32? Position
   {
-    get
-    {
-      return _Element?.Position?.Value;
-    }
-    set
-    {
-      _ExistingElement.Position = value;
-    }
+    get => _Element?.Position?.Value;
+    set => _ExistingElement.Position = value;
   }
   
 }

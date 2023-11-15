@@ -19,14 +19,8 @@ public partial class EastAsianLayout: ModelElement<DXW.EastAsianLayout>
   [DataMember]
   public Int32? Id
   {
-    get
-    {
-      return _Element?.Id?.Value;
-    }
-    set
-    {
-      _ExistingElement.Id = value;
-    }
+    get => _Element?.Id?.Value;
+    set => _ExistingElement.Id = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class EastAsianLayout: ModelElement<DXW.EastAsianLayout>
   [DataMember]
   public Boolean? Combine
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.Combine);
-    }
-    set
-    {
-      _ExistingElement.Combine = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
   
@@ -53,14 +41,8 @@ public partial class EastAsianLayout: ModelElement<DXW.EastAsianLayout>
   [DataMember]
   public Boolean? Vertical
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.Vertical);
-    }
-    set
-    {
-      _ExistingElement.Vertical = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
   
@@ -70,14 +52,8 @@ public partial class EastAsianLayout: ModelElement<DXW.EastAsianLayout>
   [DataMember]
   public Boolean? VerticalCompress
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.VerticalCompress);
-    }
-    set
-    {
-      _ExistingElement.VerticalCompress = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
 }

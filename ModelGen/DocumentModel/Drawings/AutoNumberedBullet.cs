@@ -19,14 +19,8 @@ public partial class AutoNumberedBullet: ModelElement<DXD.AutoNumberedBullet>
   [DataMember]
   public Int32? StartAt
   {
-    get
-    {
-      return _Element?.StartAt?.Value;
-    }
-    set
-    {
-      _ExistingElement.StartAt = value;
-    }
+    get => _Element?.StartAt?.Value;
+    set => _ExistingElement.StartAt = value;
   }
   
 }

@@ -15,14 +15,8 @@ public partial class Person: ModelElement<DXO13W.Person>
   [DataMember]
   public String? Contact
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Contact);
-    }
-    set
-    {
-      _ExistingElement.Contact = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Contact;
+    set => _ExistingElement.Contact = value;
   }
   
   
@@ -32,14 +26,8 @@ public partial class Person: ModelElement<DXO13W.Person>
   [DataMember]
   public String? Author
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Author);
-    }
-    set
-    {
-      _ExistingElement.Author = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Author;
+    set => _ExistingElement.Author = value;
   }
   
   
@@ -49,14 +37,8 @@ public partial class Person: ModelElement<DXO13W.Person>
   [DataMember]
   public DMW13.PresenceInfo? PresenceInfo
   {
-    get
-    {
-      return _Element?.GetObject<DMW13.PresenceInfo,DXO13W.PresenceInfo>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW13.PresenceInfo,DXO13W.PresenceInfo>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
 }

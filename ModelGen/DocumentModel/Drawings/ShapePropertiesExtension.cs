@@ -19,102 +19,50 @@ public partial class ShapePropertiesExtension: ModelElement<DXD.ShapePropertiesE
   [DataMember]
   public String? Uri
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Uri);
-    }
-    set
-    {
-      _ExistingElement.Uri = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Uri;
+    set => _ExistingElement.Uri = value;
   }
   
   [DataMember]
   public DMD10.HiddenFillProperties? HiddenFillProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMD10.HiddenFillProperties,DXO10D.HiddenFillProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD10.HiddenFillProperties,DXO10D.HiddenFillProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMD10.HiddenLineProperties? HiddenLineProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMD10.HiddenLineProperties,DXO10D.HiddenLineProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD10.HiddenLineProperties,DXO10D.HiddenLineProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMD10.HiddenEffectsProperties? HiddenEffectsProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMD10.HiddenEffectsProperties,DXO10D.HiddenEffectsProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD10.HiddenEffectsProperties,DXO10D.HiddenEffectsProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMD10.HiddenScene3D? HiddenScene3D
   {
-    get
-    {
-      return _Element?.GetObject<DMD10.HiddenScene3D,DXO10D.HiddenScene3D>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD10.HiddenScene3D,DXO10D.HiddenScene3D>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMD10.HiddenShape3D? HiddenShape3D
   {
-    get
-    {
-      return _Element?.GetObject<DMD10.HiddenShape3D,DXO10D.HiddenShape3D>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD10.HiddenShape3D,DXO10D.HiddenShape3D>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public Boolean? ShadowObscured
   {
-    get
-    {
-      return _ExistingElement.GetFirstChild<DXO10D.ShadowObscured>() != null;
-    }
-    set
-    {
-      if (value == false)
-      {
-        var itemElement = _ExistingElement.GetFirstChild<DXO10D.ShadowObscured>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new DXO10D.ShadowObscured();
-        _ExistingElement.AddChild(itemElement);
-      }
-    }
+    get => _Element?.GetBoolVal<DXO10D.ShadowObscured>();
+    set => _ExistingElement.SetBoolVal<DXO10D.ShadowObscured>(value);
   }
   
 }

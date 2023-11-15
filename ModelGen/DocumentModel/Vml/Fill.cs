@@ -19,14 +19,8 @@ public partial class Fill: ModelElement<DXV.Fill>
   [DataMember]
   public String? Id
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Id);
-    }
-    set
-    {
-      _ExistingElement.Id = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Id;
+    set => _ExistingElement.Id = value;
   }
   
   
@@ -36,17 +30,8 @@ public partial class Fill: ModelElement<DXV.Fill>
   [DataMember]
   public Boolean? On
   {
-    get
-    {
-      return _Element?.On?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.On = value;
-      else
-        _ExistingElement.On = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -56,14 +41,8 @@ public partial class Fill: ModelElement<DXV.Fill>
   [DataMember]
   public String? Color
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Color);
-    }
-    set
-    {
-      _ExistingElement.Color = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Color;
+    set => _ExistingElement.Color = value;
   }
   
   
@@ -73,14 +52,8 @@ public partial class Fill: ModelElement<DXV.Fill>
   [DataMember]
   public String? Opacity
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Opacity);
-    }
-    set
-    {
-      _ExistingElement.Opacity = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Opacity;
+    set => _ExistingElement.Opacity = value;
   }
   
   
@@ -90,14 +63,8 @@ public partial class Fill: ModelElement<DXV.Fill>
   [DataMember]
   public String? Color2
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Color2);
-    }
-    set
-    {
-      _ExistingElement.Color2 = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Color2;
+    set => _ExistingElement.Color2 = value;
   }
   
   
@@ -107,14 +74,8 @@ public partial class Fill: ModelElement<DXV.Fill>
   [DataMember]
   public String? Source
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Source);
-    }
-    set
-    {
-      _ExistingElement.Source = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Source;
+    set => _ExistingElement.Source = value;
   }
   
   
@@ -124,14 +85,8 @@ public partial class Fill: ModelElement<DXV.Fill>
   [DataMember]
   public String? Href
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Href);
-    }
-    set
-    {
-      _ExistingElement.Href = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Href;
+    set => _ExistingElement.Href = value;
   }
   
   
@@ -141,14 +96,8 @@ public partial class Fill: ModelElement<DXV.Fill>
   [DataMember]
   public String? AlternateImageReference
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.AlternateImageReference);
-    }
-    set
-    {
-      _ExistingElement.AlternateImageReference = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.AlternateImageReference;
+    set => _ExistingElement.AlternateImageReference = value;
   }
   
   
@@ -158,14 +107,8 @@ public partial class Fill: ModelElement<DXV.Fill>
   [DataMember]
   public String? Size
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Size);
-    }
-    set
-    {
-      _ExistingElement.Size = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Size;
+    set => _ExistingElement.Size = value;
   }
   
   
@@ -175,14 +118,8 @@ public partial class Fill: ModelElement<DXV.Fill>
   [DataMember]
   public String? Origin
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Origin);
-    }
-    set
-    {
-      _ExistingElement.Origin = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Origin;
+    set => _ExistingElement.Origin = value;
   }
   
   
@@ -192,14 +129,8 @@ public partial class Fill: ModelElement<DXV.Fill>
   [DataMember]
   public String? Position
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Position);
-    }
-    set
-    {
-      _ExistingElement.Position = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Position;
+    set => _ExistingElement.Position = value;
   }
   
   
@@ -209,14 +140,8 @@ public partial class Fill: ModelElement<DXV.Fill>
   [DataMember]
   public String? Colors
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Colors);
-    }
-    set
-    {
-      _ExistingElement.Colors = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Colors;
+    set => _ExistingElement.Colors = value;
   }
   
   
@@ -226,14 +151,8 @@ public partial class Fill: ModelElement<DXV.Fill>
   [DataMember]
   public Decimal? Angle
   {
-    get
-    {
-      return _Element?.Angle?.Value;
-    }
-    set
-    {
-      _ExistingElement.Angle = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Decimal]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Decimal]");
   }
   
   
@@ -243,17 +162,8 @@ public partial class Fill: ModelElement<DXV.Fill>
   [DataMember]
   public Boolean? AlignShape
   {
-    get
-    {
-      return _Element?.AlignShape?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.AlignShape = value;
-      else
-        _ExistingElement.AlignShape = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -263,14 +173,8 @@ public partial class Fill: ModelElement<DXV.Fill>
   [DataMember]
   public String? Focus
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Focus);
-    }
-    set
-    {
-      _ExistingElement.Focus = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Focus;
+    set => _ExistingElement.Focus = value;
   }
   
   
@@ -280,14 +184,8 @@ public partial class Fill: ModelElement<DXV.Fill>
   [DataMember]
   public String? FocusSize
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.FocusSize);
-    }
-    set
-    {
-      _ExistingElement.FocusSize = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.FocusSize;
+    set => _ExistingElement.FocusSize = value;
   }
   
   
@@ -297,14 +195,8 @@ public partial class Fill: ModelElement<DXV.Fill>
   [DataMember]
   public String? FocusPosition
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.FocusPosition);
-    }
-    set
-    {
-      _ExistingElement.FocusPosition = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.FocusPosition;
+    set => _ExistingElement.FocusPosition = value;
   }
   
   
@@ -314,17 +206,8 @@ public partial class Fill: ModelElement<DXV.Fill>
   [DataMember]
   public Boolean? DetectMouseClick
   {
-    get
-    {
-      return _Element?.DetectMouseClick?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.DetectMouseClick = value;
-      else
-        _ExistingElement.DetectMouseClick = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -334,14 +217,8 @@ public partial class Fill: ModelElement<DXV.Fill>
   [DataMember]
   public String? Title
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Title);
-    }
-    set
-    {
-      _ExistingElement.Title = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Title;
+    set => _ExistingElement.Title = value;
   }
   
   
@@ -351,14 +228,8 @@ public partial class Fill: ModelElement<DXV.Fill>
   [DataMember]
   public String? Opacity2
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Opacity2);
-    }
-    set
-    {
-      _ExistingElement.Opacity2 = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Opacity2;
+    set => _ExistingElement.Opacity2 = value;
   }
   
   
@@ -368,17 +239,8 @@ public partial class Fill: ModelElement<DXV.Fill>
   [DataMember]
   public Boolean? Recolor
   {
-    get
-    {
-      return _Element?.Recolor?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Recolor = value;
-      else
-        _ExistingElement.Recolor = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -388,17 +250,8 @@ public partial class Fill: ModelElement<DXV.Fill>
   [DataMember]
   public Boolean? Rotate
   {
-    get
-    {
-      return _Element?.Rotate?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Rotate = value;
-      else
-        _ExistingElement.Rotate = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -408,14 +261,8 @@ public partial class Fill: ModelElement<DXV.Fill>
   [DataMember]
   public String? RelationshipId
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.RelationshipId);
-    }
-    set
-    {
-      _ExistingElement.RelationshipId = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.RelationshipId;
+    set => _ExistingElement.RelationshipId = value;
   }
   
   
@@ -425,14 +272,8 @@ public partial class Fill: ModelElement<DXV.Fill>
   [DataMember]
   public DMVML.FillExtendedProperties? FillExtendedProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMVML.FillExtendedProperties,DXVO.FillExtendedProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMVML.FillExtendedProperties,DXVO.FillExtendedProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
 }

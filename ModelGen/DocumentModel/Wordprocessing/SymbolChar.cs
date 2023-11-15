@@ -19,14 +19,8 @@ public partial class SymbolChar: ModelElement<DXW.SymbolChar>
   [DataMember]
   public String? Font
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Font);
-    }
-    set
-    {
-      _ExistingElement.Font = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Font;
+    set => _ExistingElement.Font = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class SymbolChar: ModelElement<DXW.SymbolChar>
   [DataMember]
   public DM.HexBinary? Char
   {
-    get
-    {
-      return Convert.FromHexString(_Element?.Char.Value);
-    }
-    set
-    {
-      _ExistingElement.Char = Convert.ToHexString(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
 }

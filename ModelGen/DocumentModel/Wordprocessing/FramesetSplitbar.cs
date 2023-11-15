@@ -19,14 +19,8 @@ public partial class FramesetSplitbar: ModelElement<DXW.FramesetSplitbar>
   [DataMember]
   public DMW.Width? Width
   {
-    get
-    {
-      return _Element?.GetObject<DMW.Width,DXW.Width>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.Width,DXW.Width>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.TwipsMeasureType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.TwipsMeasureType");
   }
   
   
@@ -36,14 +30,8 @@ public partial class FramesetSplitbar: ModelElement<DXW.FramesetSplitbar>
   [DataMember]
   public DMW.Color? Color
   {
-    get
-    {
-      return _Element?.GetObject<DMW.Color,DXW.Color>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.Color,DXW.Color>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -53,14 +41,8 @@ public partial class FramesetSplitbar: ModelElement<DXW.FramesetSplitbar>
   [DataMember]
   public DMW.NoBorder? NoBorder
   {
-    get
-    {
-      return _Element?.GetObject<DMW.NoBorder,DXW.NoBorder>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.NoBorder,DXW.NoBorder>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyType");
   }
   
   
@@ -70,14 +52,8 @@ public partial class FramesetSplitbar: ModelElement<DXW.FramesetSplitbar>
   [DataMember]
   public DMW.FlatBorders? FlatBorders
   {
-    get
-    {
-      return _Element?.GetObject<DMW.FlatBorders,DXW.FlatBorders>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.FlatBorders,DXW.FlatBorders>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyType");
   }
   
 }

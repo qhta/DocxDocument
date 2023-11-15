@@ -590,15 +590,17 @@ public static class OpenXmlCompositeElementUtils
   #endregion
 
   #region Int get/set methods
-  public static int? GetIntVal<ElementType>(this DX.OpenXmlCompositeElement? openXmlElement) where ElementType : DX.OpenXmlLeafElement
+  public static IntegerType? GetIntVal<IntegerType, OpenXmlElementType>(this DX.OpenXmlCompositeElement? openXmlElement) 
+    where IntegerType: struct, IConvertible
+    where OpenXmlElementType : DX.OpenXmlLeafElement
   {
     if (openXmlElement != null)
     {
-      var _element = openXmlElement.Elements<ElementType>().FirstOrDefault();
+      var _element = openXmlElement.Elements<OpenXmlElementType>().FirstOrDefault();
       if (_element != null)
       {
-        var valProperty = typeof(ElementType).GetProperty("Val");
-        Debug.Assert(valProperty != null, $"\"Val\" property in {typeof(ElementType)} not found");
+        var valProperty = typeof(OpenXmlElementType).GetProperty("Val");
+        Debug.Assert(valProperty != null, $"\"Val\" property in {typeof(OpenXmlElementType)} not found");
         var val = valProperty.GetValue(_element);
         if (val != null)
         {
@@ -608,9 +610,7 @@ public static class OpenXmlCompositeElementUtils
           var value = valueProperty.GetValue(val);
           if (value != null)
           {
-            if (value is Int32 n)
-              return n;
-            n = Convert.ToInt32(value);
+            IntegerType n = (IntegerType)Convert.ChangeType(value, typeof(IntegerType));
             return n;
           }
         }
@@ -619,27 +619,27 @@ public static class OpenXmlCompositeElementUtils
     return null;
   }
 
-  public static void SetIntVal<ElementType>(this DX.OpenXmlCompositeElement openXmlElement, int? value) where ElementType : DX.OpenXmlLeafElement, new()
+  public static void SetIntVal<IntegerType, OpenXmlElementType>(this DX.OpenXmlCompositeElement openXmlElement, IntegerType? value) 
+    where IntegerType: struct, IConvertible
+    where OpenXmlElementType : DX.OpenXmlLeafElement, new()
   {
     if (value is not null)
     {
-      var _element = openXmlElement.Elements<ElementType>().FirstOrDefault();
+      var _element = openXmlElement.Elements<OpenXmlElementType>().FirstOrDefault();
       if (_element == null)
       {
-        _element = new ElementType();
+        _element = new OpenXmlElementType();
         openXmlElement.AppendChild(_element);
       }
-      var valProperty = typeof(ElementType).GetProperty("Val");
-      Debug.Assert(valProperty != null, $"\"Val\" property in {typeof(ElementType)} not found");
+      var valProperty = typeof(OpenXmlElementType).GetProperty("Val");
+      Debug.Assert(valProperty != null, $"\"Val\" property in {typeof(OpenXmlElementType)} not found");
       var valType = valProperty.PropertyType;
-      if (valType == typeof(DX.Int32Value))
-        valProperty.SetValue(_element, new DX.Int32Value(value));
-      else
-        throw new InvalidCastException($"Unsupported typecast operation from {value.GetType()} to int");
+      var val = Convert.ChangeType(value, valType);
+      valProperty.SetValue(_element, val);
     }
     else
     {
-      var _element = openXmlElement.Elements<ElementType>().FirstOrDefault();
+      var _element = openXmlElement.Elements<OpenXmlElementType>().FirstOrDefault();
       if (_element != null)
         _element.Remove();
     }

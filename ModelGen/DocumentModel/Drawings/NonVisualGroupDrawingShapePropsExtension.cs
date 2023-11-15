@@ -19,27 +19,15 @@ public partial class NonVisualGroupDrawingShapePropsExtension: ModelElement<DXD.
   [DataMember]
   public String? Uri
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Uri);
-    }
-    set
-    {
-      _ExistingElement.Uri = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Uri;
+    set => _ExistingElement.Uri = value;
   }
   
   [DataMember]
   public DMD.NonVisualGroupProperties? NonVisualGroupProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMD.NonVisualGroupProperties,DXO13D.NonVisualGroupProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.NonVisualGroupProperties,DXO13D.NonVisualGroupProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
 }

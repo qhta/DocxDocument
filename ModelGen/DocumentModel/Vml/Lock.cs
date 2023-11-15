@@ -19,17 +19,8 @@ public partial class Lock: ModelElement<DXVO.Lock>
   [DataMember]
   public Boolean? Position
   {
-    get
-    {
-      return _Element?.Position?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Position = value;
-      else
-        _ExistingElement.Position = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -39,17 +30,8 @@ public partial class Lock: ModelElement<DXVO.Lock>
   [DataMember]
   public Boolean? Selection
   {
-    get
-    {
-      return _Element?.Selection?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Selection = value;
-      else
-        _ExistingElement.Selection = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -59,17 +41,8 @@ public partial class Lock: ModelElement<DXVO.Lock>
   [DataMember]
   public Boolean? Grouping
   {
-    get
-    {
-      return _Element?.Grouping?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Grouping = value;
-      else
-        _ExistingElement.Grouping = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -79,17 +52,8 @@ public partial class Lock: ModelElement<DXVO.Lock>
   [DataMember]
   public Boolean? Ungrouping
   {
-    get
-    {
-      return _Element?.Ungrouping?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Ungrouping = value;
-      else
-        _ExistingElement.Ungrouping = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -99,17 +63,8 @@ public partial class Lock: ModelElement<DXVO.Lock>
   [DataMember]
   public Boolean? Rotation
   {
-    get
-    {
-      return _Element?.Rotation?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Rotation = value;
-      else
-        _ExistingElement.Rotation = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -119,17 +74,8 @@ public partial class Lock: ModelElement<DXVO.Lock>
   [DataMember]
   public Boolean? Cropping
   {
-    get
-    {
-      return _Element?.Cropping?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Cropping = value;
-      else
-        _ExistingElement.Cropping = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -139,17 +85,8 @@ public partial class Lock: ModelElement<DXVO.Lock>
   [DataMember]
   public Boolean? Verticies
   {
-    get
-    {
-      return _Element?.Verticies?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Verticies = value;
-      else
-        _ExistingElement.Verticies = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -159,17 +96,8 @@ public partial class Lock: ModelElement<DXVO.Lock>
   [DataMember]
   public Boolean? AdjustHandles
   {
-    get
-    {
-      return _Element?.AdjustHandles?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.AdjustHandles = value;
-      else
-        _ExistingElement.AdjustHandles = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -179,17 +107,8 @@ public partial class Lock: ModelElement<DXVO.Lock>
   [DataMember]
   public Boolean? TextLock
   {
-    get
-    {
-      return _Element?.TextLock?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.TextLock = value;
-      else
-        _ExistingElement.TextLock = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -199,17 +118,8 @@ public partial class Lock: ModelElement<DXVO.Lock>
   [DataMember]
   public Boolean? AspectRatio
   {
-    get
-    {
-      return _Element?.AspectRatio?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.AspectRatio = value;
-      else
-        _ExistingElement.AspectRatio = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -219,17 +129,8 @@ public partial class Lock: ModelElement<DXVO.Lock>
   [DataMember]
   public Boolean? ShapeType
   {
-    get
-    {
-      return _Element?.ShapeType?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.ShapeType = value;
-      else
-        _ExistingElement.ShapeType = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
 }

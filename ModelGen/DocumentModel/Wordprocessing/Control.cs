@@ -19,14 +19,8 @@ public partial class Control: ModelElement<DXW.Control>
   [DataMember]
   public String? Name
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Name);
-    }
-    set
-    {
-      _ExistingElement.Name = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Name;
+    set => _ExistingElement.Name = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class Control: ModelElement<DXW.Control>
   [DataMember]
   public String? ShapeId
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.ShapeId);
-    }
-    set
-    {
-      _ExistingElement.ShapeId = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.ShapeId;
+    set => _ExistingElement.ShapeId = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class Control: ModelElement<DXW.Control>
   [DataMember]
   public String? Id
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Id);
-    }
-    set
-    {
-      _ExistingElement.Id = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Id;
+    set => _ExistingElement.Id = value;
   }
   
 }

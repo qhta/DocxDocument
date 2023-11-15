@@ -19,14 +19,8 @@ public partial class Diagram: ModelElement<DXVO.Diagram>
   [DataMember]
   public Int64? Style
   {
-    get
-    {
-      return _Element?.Style?.Value;
-    }
-    set
-    {
-      _ExistingElement.Style = value;
-    }
+    get => _Element?.Style?.Value;
+    set => _ExistingElement.Style = value;
   }
   
   
@@ -36,17 +30,8 @@ public partial class Diagram: ModelElement<DXVO.Diagram>
   [DataMember]
   public Boolean? AutoFormat
   {
-    get
-    {
-      return _Element?.AutoFormat?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.AutoFormat = value;
-      else
-        _ExistingElement.AutoFormat = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -56,17 +41,8 @@ public partial class Diagram: ModelElement<DXVO.Diagram>
   [DataMember]
   public Boolean? Reverse
   {
-    get
-    {
-      return _Element?.Reverse?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Reverse = value;
-      else
-        _ExistingElement.Reverse = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -76,17 +52,8 @@ public partial class Diagram: ModelElement<DXVO.Diagram>
   [DataMember]
   public Boolean? AutoLayout
   {
-    get
-    {
-      return _Element?.AutoLayout?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.AutoLayout = value;
-      else
-        _ExistingElement.AutoLayout = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -96,14 +63,8 @@ public partial class Diagram: ModelElement<DXVO.Diagram>
   [DataMember]
   public Int64? ScaleX
   {
-    get
-    {
-      return _Element?.ScaleX?.Value;
-    }
-    set
-    {
-      _ExistingElement.ScaleX = value;
-    }
+    get => _Element?.ScaleX?.Value;
+    set => _ExistingElement.ScaleX = value;
   }
   
   
@@ -113,14 +74,8 @@ public partial class Diagram: ModelElement<DXVO.Diagram>
   [DataMember]
   public Int64? ScaleY
   {
-    get
-    {
-      return _Element?.ScaleY?.Value;
-    }
-    set
-    {
-      _ExistingElement.ScaleY = value;
-    }
+    get => _Element?.ScaleY?.Value;
+    set => _ExistingElement.ScaleY = value;
   }
   
   
@@ -130,14 +85,8 @@ public partial class Diagram: ModelElement<DXVO.Diagram>
   [DataMember]
   public Int64? FontSize
   {
-    get
-    {
-      return _Element?.FontSize?.Value;
-    }
-    set
-    {
-      _ExistingElement.FontSize = value;
-    }
+    get => _Element?.FontSize?.Value;
+    set => _ExistingElement.FontSize = value;
   }
   
   
@@ -147,14 +96,8 @@ public partial class Diagram: ModelElement<DXVO.Diagram>
   [DataMember]
   public String? ConstrainBounds
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.ConstrainBounds);
-    }
-    set
-    {
-      _ExistingElement.ConstrainBounds = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.ConstrainBounds;
+    set => _ExistingElement.ConstrainBounds = value;
   }
   
   
@@ -164,14 +107,8 @@ public partial class Diagram: ModelElement<DXVO.Diagram>
   [DataMember]
   public Int64? BaseTextScale
   {
-    get
-    {
-      return _Element?.BaseTextScale?.Value;
-    }
-    set
-    {
-      _ExistingElement.BaseTextScale = value;
-    }
+    get => _Element?.BaseTextScale?.Value;
+    set => _ExistingElement.BaseTextScale = value;
   }
   
   
@@ -181,14 +118,8 @@ public partial class Diagram: ModelElement<DXVO.Diagram>
   [DataMember]
   public DMVML.RelationTable? RelationTable
   {
-    get
-    {
-      return _Element?.GetObject<DMVML.RelationTable,DXVO.RelationTable>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMVML.RelationTable,DXVO.RelationTable>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

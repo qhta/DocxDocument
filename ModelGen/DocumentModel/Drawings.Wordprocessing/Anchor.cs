@@ -19,14 +19,8 @@ public partial class Anchor: ModelElement<DXDW.Anchor>
   [DataMember]
   public UInt32? DistanceFromTop
   {
-    get
-    {
-      return _Element?.DistanceFromTop?.Value;
-    }
-    set
-    {
-      _ExistingElement.DistanceFromTop = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
   }
   
   
@@ -36,14 +30,8 @@ public partial class Anchor: ModelElement<DXDW.Anchor>
   [DataMember]
   public UInt32? DistanceFromBottom
   {
-    get
-    {
-      return _Element?.DistanceFromBottom?.Value;
-    }
-    set
-    {
-      _ExistingElement.DistanceFromBottom = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
   }
   
   
@@ -53,14 +41,8 @@ public partial class Anchor: ModelElement<DXDW.Anchor>
   [DataMember]
   public UInt32? DistanceFromLeft
   {
-    get
-    {
-      return _Element?.DistanceFromLeft?.Value;
-    }
-    set
-    {
-      _ExistingElement.DistanceFromLeft = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
   }
   
   
@@ -70,14 +52,8 @@ public partial class Anchor: ModelElement<DXDW.Anchor>
   [DataMember]
   public UInt32? DistanceFromRight
   {
-    get
-    {
-      return _Element?.DistanceFromRight?.Value;
-    }
-    set
-    {
-      _ExistingElement.DistanceFromRight = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
   }
   
   
@@ -87,17 +63,8 @@ public partial class Anchor: ModelElement<DXDW.Anchor>
   [DataMember]
   public Boolean? SimplePos
   {
-    get
-    {
-      return _Element?.SimplePos?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.SimplePos = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.SimplePos = null;
-    }
+    get => _Element?.SimplePos?.Value;
+    set => _ExistingElement.SimplePos = value;
   }
   
   
@@ -107,14 +74,8 @@ public partial class Anchor: ModelElement<DXDW.Anchor>
   [DataMember]
   public UInt32? RelativeHeight
   {
-    get
-    {
-      return _Element?.RelativeHeight?.Value;
-    }
-    set
-    {
-      _ExistingElement.RelativeHeight = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
   }
   
   
@@ -124,17 +85,8 @@ public partial class Anchor: ModelElement<DXDW.Anchor>
   [DataMember]
   public Boolean? BehindDoc
   {
-    get
-    {
-      return _Element?.BehindDoc?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.BehindDoc = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.BehindDoc = null;
-    }
+    get => _Element?.BehindDoc?.Value;
+    set => _ExistingElement.BehindDoc = value;
   }
   
   
@@ -144,17 +96,8 @@ public partial class Anchor: ModelElement<DXDW.Anchor>
   [DataMember]
   public Boolean? Locked
   {
-    get
-    {
-      return _Element?.Locked?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Locked = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.Locked = null;
-    }
+    get => _Element?.Locked?.Value;
+    set => _ExistingElement.Locked = value;
   }
   
   
@@ -164,17 +107,8 @@ public partial class Anchor: ModelElement<DXDW.Anchor>
   [DataMember]
   public Boolean? LayoutInCell
   {
-    get
-    {
-      return _Element?.LayoutInCell?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.LayoutInCell = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.LayoutInCell = null;
-    }
+    get => _Element?.LayoutInCell?.Value;
+    set => _ExistingElement.LayoutInCell = value;
   }
   
   
@@ -184,17 +118,8 @@ public partial class Anchor: ModelElement<DXDW.Anchor>
   [DataMember]
   public Boolean? Hidden
   {
-    get
-    {
-      return _Element?.Hidden?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Hidden = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.Hidden = null;
-    }
+    get => _Element?.Hidden?.Value;
+    set => _ExistingElement.Hidden = value;
   }
   
   
@@ -204,17 +129,8 @@ public partial class Anchor: ModelElement<DXDW.Anchor>
   [DataMember]
   public Boolean? AllowOverlap
   {
-    get
-    {
-      return _Element?.AllowOverlap?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.AllowOverlap = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.AllowOverlap = null;
-    }
+    get => _Element?.AllowOverlap?.Value;
+    set => _ExistingElement.AllowOverlap = value;
   }
   
   
@@ -224,19 +140,8 @@ public partial class Anchor: ModelElement<DXDW.Anchor>
   [DataMember]
   public DM.HexBinary? EditId
   {
-    get
-    {
-      if (_Element?.EditId?.Value != null)
-        return HexIntConverter.GetValue(_Element?.EditId.Value);
-      return null;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.EditId = value.ToString();
-      else
-        _ExistingElement.EditId = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -246,19 +151,8 @@ public partial class Anchor: ModelElement<DXDW.Anchor>
   [DataMember]
   public DM.HexBinary? AnchorId
   {
-    get
-    {
-      if (_Element?.AnchorId?.Value != null)
-        return HexIntConverter.GetValue(_Element?.AnchorId.Value);
-      return null;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.AnchorId = value.ToString();
-      else
-        _ExistingElement.AnchorId = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -268,14 +162,8 @@ public partial class Anchor: ModelElement<DXDW.Anchor>
   [DataMember]
   public DMDW.SimplePosition? SimplePosition
   {
-    get
-    {
-      return _Element?.GetObject<DMDW.SimplePosition,DXDW.SimplePosition>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDW.SimplePosition,DXDW.SimplePosition>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Wordprocessing.Point2DType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Wordprocessing.Point2DType");
   }
   
   
@@ -285,14 +173,8 @@ public partial class Anchor: ModelElement<DXDW.Anchor>
   [DataMember]
   public DMDW.HorizontalPosition? HorizontalPosition
   {
-    get
-    {
-      return _Element?.GetObject<DMDW.HorizontalPosition,DXDW.HorizontalPosition>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDW.HorizontalPosition,DXDW.HorizontalPosition>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -302,14 +184,8 @@ public partial class Anchor: ModelElement<DXDW.Anchor>
   [DataMember]
   public DMDW.VerticalPosition? VerticalPosition
   {
-    get
-    {
-      return _Element?.GetObject<DMDW.VerticalPosition,DXDW.VerticalPosition>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDW.VerticalPosition,DXDW.VerticalPosition>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -319,14 +195,8 @@ public partial class Anchor: ModelElement<DXDW.Anchor>
   [DataMember]
   public DMDW.Extent? Extent
   {
-    get
-    {
-      return _Element?.GetObject<DMDW.Extent,DXDW.Extent>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDW.Extent,DXDW.Extent>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -336,131 +206,71 @@ public partial class Anchor: ModelElement<DXDW.Anchor>
   [DataMember]
   public DMDW.EffectExtent? EffectExtent
   {
-    get
-    {
-      return _Element?.GetObject<DMDW.EffectExtent,DXDW.EffectExtent>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDW.EffectExtent,DXDW.EffectExtent>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   [DataMember]
   public DMDW.WrapNone? WrapNone
   {
-    get
-    {
-      return _Element?.GetObject<DMDW.WrapNone,DXDW.WrapNone>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDW.WrapNone,DXDW.WrapNone>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   [DataMember]
   public DMDW.WrapSquare? WrapSquare
   {
-    get
-    {
-      return _Element?.GetObject<DMDW.WrapSquare,DXDW.WrapSquare>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDW.WrapSquare,DXDW.WrapSquare>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMDW.WrapTight? WrapTight
   {
-    get
-    {
-      return _Element?.GetObject<DMDW.WrapTight,DXDW.WrapTight>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDW.WrapTight,DXDW.WrapTight>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMDW.WrapThrough? WrapThrough
   {
-    get
-    {
-      return _Element?.GetObject<DMDW.WrapThrough,DXDW.WrapThrough>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDW.WrapThrough,DXDW.WrapThrough>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMDW.WrapTopBottom? WrapTopBottom
   {
-    get
-    {
-      return _Element?.GetObject<DMDW.WrapTopBottom,DXDW.WrapTopBottom>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDW.WrapTopBottom,DXDW.WrapTopBottom>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMDW.DocProperties? DocProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMDW.DocProperties,DXDW.DocProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDW.DocProperties,DXDW.DocProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMDW.NonVisualGraphicFrameDrawingProperties? NonVisualGraphicFrameDrawingProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMDW.NonVisualGraphicFrameDrawingProperties,DXDW.NonVisualGraphicFrameDrawingProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDW.NonVisualGraphicFrameDrawingProperties,DXDW.NonVisualGraphicFrameDrawingProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMD.Graphic? Graphic
   {
-    get
-    {
-      return _Element?.GetObject<DMD.Graphic,DXD.Graphic>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.Graphic,DXD.Graphic>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMWD.RelativeWidth? RelativeWidth
   {
-    get
-    {
-      return _Element?.GetObject<DMWD.RelativeWidth,DXO10WD.RelativeWidth>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMWD.RelativeWidth,DXO10WD.RelativeWidth>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

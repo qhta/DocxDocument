@@ -19,14 +19,8 @@ public partial class ArtisticLineDrawing: ModelElement<DXO10D.ArtisticLineDrawin
   [DataMember]
   public Int32? Transparancy
   {
-    get
-    {
-      return _Element?.Transparancy?.Value;
-    }
-    set
-    {
-      _ExistingElement.Transparancy = value;
-    }
+    get => _Element?.Transparancy?.Value;
+    set => _ExistingElement.Transparancy = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class ArtisticLineDrawing: ModelElement<DXO10D.ArtisticLineDrawin
   [DataMember]
   public Int32? PencilSize
   {
-    get
-    {
-      return _Element?.PencilSize?.Value;
-    }
-    set
-    {
-      _ExistingElement.PencilSize = value;
-    }
+    get => _Element?.PencilSize?.Value;
+    set => _ExistingElement.PencilSize = value;
   }
   
 }

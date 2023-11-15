@@ -19,14 +19,8 @@ public partial class LightRig: ModelElement<DXD.LightRig>
   [DataMember]
   public DMD.Rotation? Rotation
   {
-    get
-    {
-      return _Element?.GetObject<DMD.Rotation,DXD.Rotation>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.Rotation,DXD.Rotation>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
 }

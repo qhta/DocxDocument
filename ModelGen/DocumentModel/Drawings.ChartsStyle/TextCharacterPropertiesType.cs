@@ -15,30 +15,15 @@ public partial class TextCharacterPropertiesType: ModelElement<DXO13DCS.TextChar
   [DataMember]
   public Boolean? SmtClean
   {
-    get
-    {
-      return _Element?.SmtClean?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.SmtClean = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.SmtClean = null;
-    }
+    get => _Element?.SmtClean?.Value;
+    set => _ExistingElement.SmtClean = value;
   }
   
   [DataMember]
   public UInt32? SmtId
   {
-    get
-    {
-      return _Element?.SmtId?.Value;
-    }
-    set
-    {
-      _ExistingElement.SmtId = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
   }
   
   
@@ -48,17 +33,8 @@ public partial class TextCharacterPropertiesType: ModelElement<DXO13DCS.TextChar
   [DataMember]
   public Boolean? Kumimoji
   {
-    get
-    {
-      return _Element?.Kumimoji?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Kumimoji = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.Kumimoji = null;
-    }
+    get => _Element?.Kumimoji?.Value;
+    set => _ExistingElement.Kumimoji = value;
   }
   
   
@@ -68,14 +44,8 @@ public partial class TextCharacterPropertiesType: ModelElement<DXO13DCS.TextChar
   [DataMember]
   public String? Language
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Language);
-    }
-    set
-    {
-      _ExistingElement.Language = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Language;
+    set => _ExistingElement.Language = value;
   }
   
   
@@ -85,14 +55,8 @@ public partial class TextCharacterPropertiesType: ModelElement<DXO13DCS.TextChar
   [DataMember]
   public String? AlternativeLanguage
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.AlternativeLanguage);
-    }
-    set
-    {
-      _ExistingElement.AlternativeLanguage = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.AlternativeLanguage;
+    set => _ExistingElement.AlternativeLanguage = value;
   }
   
   
@@ -102,14 +66,8 @@ public partial class TextCharacterPropertiesType: ModelElement<DXO13DCS.TextChar
   [DataMember]
   public Int32? FontSize
   {
-    get
-    {
-      return _Element?.FontSize?.Value;
-    }
-    set
-    {
-      _ExistingElement.FontSize = value;
-    }
+    get => _Element?.FontSize?.Value;
+    set => _ExistingElement.FontSize = value;
   }
   
   
@@ -119,17 +77,8 @@ public partial class TextCharacterPropertiesType: ModelElement<DXO13DCS.TextChar
   [DataMember]
   public Boolean? Bold
   {
-    get
-    {
-      return _Element?.Bold?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Bold = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.Bold = null;
-    }
+    get => _Element?.Bold?.Value;
+    set => _ExistingElement.Bold = value;
   }
   
   
@@ -139,17 +88,8 @@ public partial class TextCharacterPropertiesType: ModelElement<DXO13DCS.TextChar
   [DataMember]
   public Boolean? Italic
   {
-    get
-    {
-      return _Element?.Italic?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Italic = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.Italic = null;
-    }
+    get => _Element?.Italic?.Value;
+    set => _ExistingElement.Italic = value;
   }
   
   
@@ -159,14 +99,8 @@ public partial class TextCharacterPropertiesType: ModelElement<DXO13DCS.TextChar
   [DataMember]
   public Int32? Kerning
   {
-    get
-    {
-      return _Element?.Kerning?.Value;
-    }
-    set
-    {
-      _ExistingElement.Kerning = value;
-    }
+    get => _Element?.Kerning?.Value;
+    set => _ExistingElement.Kerning = value;
   }
   
   
@@ -176,14 +110,8 @@ public partial class TextCharacterPropertiesType: ModelElement<DXO13DCS.TextChar
   [DataMember]
   public Int32? Spacing
   {
-    get
-    {
-      return _Element?.Spacing?.Value;
-    }
-    set
-    {
-      _ExistingElement.Spacing = value;
-    }
+    get => _Element?.Spacing?.Value;
+    set => _ExistingElement.Spacing = value;
   }
   
   
@@ -193,17 +121,8 @@ public partial class TextCharacterPropertiesType: ModelElement<DXO13DCS.TextChar
   [DataMember]
   public Boolean? NormalizeHeight
   {
-    get
-    {
-      return _Element?.NormalizeHeight?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.NormalizeHeight = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.NormalizeHeight = null;
-    }
+    get => _Element?.NormalizeHeight?.Value;
+    set => _ExistingElement.NormalizeHeight = value;
   }
   
   
@@ -213,14 +132,8 @@ public partial class TextCharacterPropertiesType: ModelElement<DXO13DCS.TextChar
   [DataMember]
   public Int32? Baseline
   {
-    get
-    {
-      return _Element?.Baseline?.Value;
-    }
-    set
-    {
-      _ExistingElement.Baseline = value;
-    }
+    get => _Element?.Baseline?.Value;
+    set => _ExistingElement.Baseline = value;
   }
   
   
@@ -230,17 +143,8 @@ public partial class TextCharacterPropertiesType: ModelElement<DXO13DCS.TextChar
   [DataMember]
   public Boolean? NoProof
   {
-    get
-    {
-      return _Element?.NoProof?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.NoProof = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.NoProof = null;
-    }
+    get => _Element?.NoProof?.Value;
+    set => _ExistingElement.NoProof = value;
   }
   
   
@@ -250,17 +154,8 @@ public partial class TextCharacterPropertiesType: ModelElement<DXO13DCS.TextChar
   [DataMember]
   public Boolean? Dirty
   {
-    get
-    {
-      return _Element?.Dirty?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Dirty = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.Dirty = null;
-    }
+    get => _Element?.Dirty?.Value;
+    set => _ExistingElement.Dirty = value;
   }
   
   
@@ -270,17 +165,8 @@ public partial class TextCharacterPropertiesType: ModelElement<DXO13DCS.TextChar
   [DataMember]
   public Boolean? SpellingError
   {
-    get
-    {
-      return _Element?.SpellingError?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.SpellingError = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.SpellingError = null;
-    }
+    get => _Element?.SpellingError?.Value;
+    set => _ExistingElement.SpellingError = value;
   }
   
   
@@ -290,17 +176,8 @@ public partial class TextCharacterPropertiesType: ModelElement<DXO13DCS.TextChar
   [DataMember]
   public Boolean? SmartTagClean
   {
-    get
-    {
-      return _Element?.SmartTagClean?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.SmartTagClean = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.SmartTagClean = null;
-    }
+    get => _Element?.SmartTagClean?.Value;
+    set => _ExistingElement.SmartTagClean = value;
   }
   
   
@@ -310,14 +187,8 @@ public partial class TextCharacterPropertiesType: ModelElement<DXO13DCS.TextChar
   [DataMember]
   public UInt32? SmartTagId
   {
-    get
-    {
-      return _Element?.SmartTagId?.Value;
-    }
-    set
-    {
-      _ExistingElement.SmartTagId = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
   }
   
   
@@ -327,14 +198,8 @@ public partial class TextCharacterPropertiesType: ModelElement<DXO13DCS.TextChar
   [DataMember]
   public String? Bookmark
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Bookmark);
-    }
-    set
-    {
-      _ExistingElement.Bookmark = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Bookmark;
+    set => _ExistingElement.Bookmark = value;
   }
   
   
@@ -344,284 +209,148 @@ public partial class TextCharacterPropertiesType: ModelElement<DXO13DCS.TextChar
   [DataMember]
   public DMD.Outline? Outline
   {
-    get
-    {
-      return _Element?.GetObject<DMD.Outline,DXD.Outline>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.Outline,DXD.Outline>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.LinePropertiesType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.LinePropertiesType");
   }
   
   [DataMember]
   public DMD.NoFill? NoFill
   {
-    get
-    {
-      return _Element?.GetObject<DMD.NoFill,DXD.NoFill>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.NoFill,DXD.NoFill>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   [DataMember]
   public DMD.SolidFill? SolidFill
   {
-    get
-    {
-      return _Element?.GetObject<DMD.SolidFill,DXD.SolidFill>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.SolidFill,DXD.SolidFill>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMD.GradientFill? GradientFill
   {
-    get
-    {
-      return _Element?.GetObject<DMD.GradientFill,DXD.GradientFill>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.GradientFill,DXD.GradientFill>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMD.BlipFill? BlipFill
   {
-    get
-    {
-      return _Element?.GetObject<DMD.BlipFill,DXD.BlipFill>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.BlipFill,DXD.BlipFill>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMD.PatternFill? PatternFill
   {
-    get
-    {
-      return _Element?.GetObject<DMD.PatternFill,DXD.PatternFill>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.PatternFill,DXD.PatternFill>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMD.GroupFill? GroupFill
   {
-    get
-    {
-      return _Element?.GetObject<DMD.GroupFill,DXD.GroupFill>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.GroupFill,DXD.GroupFill>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   [DataMember]
   public DMD.EffectList? EffectList
   {
-    get
-    {
-      return _Element?.GetObject<DMD.EffectList,DXD.EffectList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.EffectList,DXD.EffectList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMD.EffectDag? EffectDag
   {
-    get
-    {
-      return _Element?.GetObject<DMD.EffectDag,DXD.EffectDag>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.EffectDag,DXD.EffectDag>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.EffectContainerType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.EffectContainerType");
   }
   
   [DataMember]
   public DMD.Highlight? Highlight
   {
-    get
-    {
-      return _Element?.GetObject<DMD.Highlight,DXD.Highlight>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.Highlight,DXD.Highlight>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.ColorType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.ColorType");
   }
   
   [DataMember]
   public DMD.UnderlineFollowsText? UnderlineFollowsText
   {
-    get
-    {
-      return _Element?.GetObject<DMD.UnderlineFollowsText,DXD.UnderlineFollowsText>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.UnderlineFollowsText,DXD.UnderlineFollowsText>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   [DataMember]
   public DMD.UnderlineFillText? UnderlineFillText
   {
-    get
-    {
-      return _Element?.GetObject<DMD.UnderlineFillText,DXD.UnderlineFillText>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.UnderlineFillText,DXD.UnderlineFillText>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   [DataMember]
   public DMD.UnderlineFill? UnderlineFill
   {
-    get
-    {
-      return _Element?.GetObject<DMD.UnderlineFill,DXD.UnderlineFill>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.UnderlineFill,DXD.UnderlineFill>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMD.LatinFont? LatinFont
   {
-    get
-    {
-      return _Element?.GetObject<DMD.LatinFont,DXD.LatinFont>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.LatinFont,DXD.LatinFont>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.TextFontType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.TextFontType");
   }
   
   [DataMember]
   public DMD.EastAsianFont? EastAsianFont
   {
-    get
-    {
-      return _Element?.GetObject<DMD.EastAsianFont,DXD.EastAsianFont>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.EastAsianFont,DXD.EastAsianFont>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.TextFontType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.TextFontType");
   }
   
   [DataMember]
   public DMD.ComplexScriptFont? ComplexScriptFont
   {
-    get
-    {
-      return _Element?.GetObject<DMD.ComplexScriptFont,DXD.ComplexScriptFont>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.ComplexScriptFont,DXD.ComplexScriptFont>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.TextFontType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.TextFontType");
   }
   
   [DataMember]
   public DMD.SymbolFont? SymbolFont
   {
-    get
-    {
-      return _Element?.GetObject<DMD.SymbolFont,DXD.SymbolFont>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.SymbolFont,DXD.SymbolFont>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.TextFontType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.TextFontType");
   }
   
   [DataMember]
   public DMD.HyperlinkOnClick? HyperlinkOnClick
   {
-    get
-    {
-      return _Element?.GetObject<DMD.HyperlinkOnClick,DXD.HyperlinkOnClick>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.HyperlinkOnClick,DXD.HyperlinkOnClick>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.HyperlinkType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.HyperlinkType");
   }
   
   [DataMember]
   public DMD.HyperlinkOnMouseOver? HyperlinkOnMouseOver
   {
-    get
-    {
-      return _Element?.GetObject<DMD.HyperlinkOnMouseOver,DXD.HyperlinkOnMouseOver>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.HyperlinkOnMouseOver,DXD.HyperlinkOnMouseOver>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.HyperlinkType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.HyperlinkType");
   }
   
   [DataMember]
   public Boolean? RightToLeft
   {
-    get
-    {
-      return _ExistingElement.GetFirstChild<DXD.RightToLeft>() != null;
-    }
-    set
-    {
-      if (value == false)
-      {
-        var itemElement = _ExistingElement.GetFirstChild<DXD.RightToLeft>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new DXD.RightToLeft();
-        _ExistingElement.AddChild(itemElement);
-      }
-    }
+    get => _Element?.GetBoolVal<DXD.RightToLeft>();
+    set => _ExistingElement.SetBoolVal<DXD.RightToLeft>(value);
   }
   
   [DataMember]
   public DMD.ExtensionList? ExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMD.ExtensionList,DXD.ExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.ExtensionList,DXD.ExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

@@ -19,14 +19,8 @@ public partial class Reflection: ModelElement<DXO10W.Reflection>
   [DataMember]
   public Int64? BlurRadius
   {
-    get
-    {
-      return _Element?.BlurRadius?.Value;
-    }
-    set
-    {
-      _ExistingElement.BlurRadius = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int64]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int64]");
   }
   
   
@@ -36,14 +30,8 @@ public partial class Reflection: ModelElement<DXO10W.Reflection>
   [DataMember]
   public Int32? StartingOpacity
   {
-    get
-    {
-      return _Element?.StartingOpacity?.Value;
-    }
-    set
-    {
-      _ExistingElement.StartingOpacity = value;
-    }
+    get => _Element?.StartingOpacity?.Value;
+    set => _ExistingElement.StartingOpacity = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class Reflection: ModelElement<DXO10W.Reflection>
   [DataMember]
   public Int32? StartPosition
   {
-    get
-    {
-      return _Element?.StartPosition?.Value;
-    }
-    set
-    {
-      _ExistingElement.StartPosition = value;
-    }
+    get => _Element?.StartPosition?.Value;
+    set => _ExistingElement.StartPosition = value;
   }
   
   
@@ -70,14 +52,8 @@ public partial class Reflection: ModelElement<DXO10W.Reflection>
   [DataMember]
   public Int32? EndingOpacity
   {
-    get
-    {
-      return _Element?.EndingOpacity?.Value;
-    }
-    set
-    {
-      _ExistingElement.EndingOpacity = value;
-    }
+    get => _Element?.EndingOpacity?.Value;
+    set => _ExistingElement.EndingOpacity = value;
   }
   
   
@@ -87,14 +63,8 @@ public partial class Reflection: ModelElement<DXO10W.Reflection>
   [DataMember]
   public Int32? EndPosition
   {
-    get
-    {
-      return _Element?.EndPosition?.Value;
-    }
-    set
-    {
-      _ExistingElement.EndPosition = value;
-    }
+    get => _Element?.EndPosition?.Value;
+    set => _ExistingElement.EndPosition = value;
   }
   
   
@@ -104,14 +74,8 @@ public partial class Reflection: ModelElement<DXO10W.Reflection>
   [DataMember]
   public Int64? DistanceFromText
   {
-    get
-    {
-      return _Element?.DistanceFromText?.Value;
-    }
-    set
-    {
-      _ExistingElement.DistanceFromText = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int64]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int64]");
   }
   
   
@@ -121,14 +85,8 @@ public partial class Reflection: ModelElement<DXO10W.Reflection>
   [DataMember]
   public Int32? DirectionAngle
   {
-    get
-    {
-      return _Element?.DirectionAngle?.Value;
-    }
-    set
-    {
-      _ExistingElement.DirectionAngle = value;
-    }
+    get => _Element?.DirectionAngle?.Value;
+    set => _ExistingElement.DirectionAngle = value;
   }
   
   
@@ -138,14 +96,8 @@ public partial class Reflection: ModelElement<DXO10W.Reflection>
   [DataMember]
   public Int32? FadeDirection
   {
-    get
-    {
-      return _Element?.FadeDirection?.Value;
-    }
-    set
-    {
-      _ExistingElement.FadeDirection = value;
-    }
+    get => _Element?.FadeDirection?.Value;
+    set => _ExistingElement.FadeDirection = value;
   }
   
   
@@ -155,14 +107,8 @@ public partial class Reflection: ModelElement<DXO10W.Reflection>
   [DataMember]
   public Int32? HorizontalScalingFactor
   {
-    get
-    {
-      return _Element?.HorizontalScalingFactor?.Value;
-    }
-    set
-    {
-      _ExistingElement.HorizontalScalingFactor = value;
-    }
+    get => _Element?.HorizontalScalingFactor?.Value;
+    set => _ExistingElement.HorizontalScalingFactor = value;
   }
   
   
@@ -172,14 +118,8 @@ public partial class Reflection: ModelElement<DXO10W.Reflection>
   [DataMember]
   public Int32? VerticalScalingFactor
   {
-    get
-    {
-      return _Element?.VerticalScalingFactor?.Value;
-    }
-    set
-    {
-      _ExistingElement.VerticalScalingFactor = value;
-    }
+    get => _Element?.VerticalScalingFactor?.Value;
+    set => _ExistingElement.VerticalScalingFactor = value;
   }
   
   
@@ -189,14 +129,8 @@ public partial class Reflection: ModelElement<DXO10W.Reflection>
   [DataMember]
   public Int32? HorizontalSkewAngle
   {
-    get
-    {
-      return _Element?.HorizontalSkewAngle?.Value;
-    }
-    set
-    {
-      _ExistingElement.HorizontalSkewAngle = value;
-    }
+    get => _Element?.HorizontalSkewAngle?.Value;
+    set => _ExistingElement.HorizontalSkewAngle = value;
   }
   
   
@@ -206,14 +140,8 @@ public partial class Reflection: ModelElement<DXO10W.Reflection>
   [DataMember]
   public Int32? VerticalSkewAngle
   {
-    get
-    {
-      return _Element?.VerticalSkewAngle?.Value;
-    }
-    set
-    {
-      _ExistingElement.VerticalSkewAngle = value;
-    }
+    get => _Element?.VerticalSkewAngle?.Value;
+    set => _ExistingElement.VerticalSkewAngle = value;
   }
   
 }

@@ -19,14 +19,8 @@ public partial class AxisDataSourceType: ModelElement<DXDC.AxisDataSourceType>
   [DataMember]
   public DMDC.MultiLevelStringReference? MultiLevelStringReference
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.MultiLevelStringReference,DXDC.MultiLevelStringReference>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.MultiLevelStringReference,DXDC.MultiLevelStringReference>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -36,14 +30,8 @@ public partial class AxisDataSourceType: ModelElement<DXDC.AxisDataSourceType>
   [DataMember]
   public DMDC.NumberReference? NumberReference
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.NumberReference,DXDC.NumberReference>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.NumberReference,DXDC.NumberReference>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -53,14 +41,8 @@ public partial class AxisDataSourceType: ModelElement<DXDC.AxisDataSourceType>
   [DataMember]
   public DMDC.NumberLiteral? NumberLiteral
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.NumberLiteral,DXDC.NumberLiteral>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.NumberLiteral,DXDC.NumberLiteral>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.NumberDataType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.NumberDataType");
   }
   
   
@@ -70,14 +52,8 @@ public partial class AxisDataSourceType: ModelElement<DXDC.AxisDataSourceType>
   [DataMember]
   public DMDC.StringReference? StringReference
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.StringReference,DXDC.StringReference>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.StringReference,DXDC.StringReference>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -87,14 +63,8 @@ public partial class AxisDataSourceType: ModelElement<DXDC.AxisDataSourceType>
   [DataMember]
   public DMDC.StringLiteral? StringLiteral
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.StringLiteral,DXDC.StringLiteral>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.StringLiteral,DXDC.StringLiteral>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.StringDataType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.StringDataType");
   }
   
 }

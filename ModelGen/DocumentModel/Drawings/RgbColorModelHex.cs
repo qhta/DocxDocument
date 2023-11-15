@@ -19,19 +19,8 @@ public partial class RgbColorModelHex: ModelElement<DXD.RgbColorModelHex>
   [DataMember]
   public DM.HexBinary? Val
   {
-    get
-    {
-      if (_Element?.Val?.Value != null)
-        return (DocumentModel.RGB)UInt32.Parse(_ExistingElement.Val.Value, NumberStyles.HexNumber);
-      return null;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Val = ((UInt32)value).ToString("X6");
-      else
-        _ExistingElement.Val = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -41,14 +30,8 @@ public partial class RgbColorModelHex: ModelElement<DXD.RgbColorModelHex>
   [DataMember]
   public Int32? LegacySpreadsheetColorIndex
   {
-    get
-    {
-      return _Element?.LegacySpreadsheetColorIndex?.Value;
-    }
-    set
-    {
-      _ExistingElement.LegacySpreadsheetColorIndex = value;
-    }
+    get => _Element?.LegacySpreadsheetColorIndex?.Value;
+    set => _ExistingElement.LegacySpreadsheetColorIndex = value;
   }
   
 }

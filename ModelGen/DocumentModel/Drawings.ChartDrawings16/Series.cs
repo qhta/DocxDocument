@@ -19,17 +19,8 @@ public partial class Series: ModelElement<DXO16DCD.Series>
   [DataMember]
   public Boolean? Hidden
   {
-    get
-    {
-      return _Element?.Hidden?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Hidden = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.Hidden = null;
-    }
+    get => _Element?.Hidden?.Value;
+    set => _ExistingElement.Hidden = value;
   }
   
   
@@ -39,14 +30,8 @@ public partial class Series: ModelElement<DXO16DCD.Series>
   [DataMember]
   public UInt32? OwnerIdx
   {
-    get
-    {
-      return _Element?.OwnerIdx?.Value;
-    }
-    set
-    {
-      _ExistingElement.OwnerIdx = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
   }
   
   
@@ -56,14 +41,8 @@ public partial class Series: ModelElement<DXO16DCD.Series>
   [DataMember]
   public String? UniqueId
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.UniqueId);
-    }
-    set
-    {
-      _ExistingElement.UniqueId = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.UniqueId;
+    set => _ExistingElement.UniqueId = value;
   }
   
   
@@ -73,14 +52,8 @@ public partial class Series: ModelElement<DXO16DCD.Series>
   [DataMember]
   public UInt32? FormatIdx
   {
-    get
-    {
-      return _Element?.FormatIdx?.Value;
-    }
-    set
-    {
-      _ExistingElement.FormatIdx = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
   }
   
   
@@ -90,14 +63,8 @@ public partial class Series: ModelElement<DXO16DCD.Series>
   [DataMember]
   public DMDCD16.Text? Text
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.Text,DXO16DCD.Text>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.Text,DXO16DCD.Text>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -107,14 +74,8 @@ public partial class Series: ModelElement<DXO16DCD.Series>
   [DataMember]
   public DMDCD16.ShapeProperties? ShapeProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.ShapeProperties,DXO16DCD.ShapeProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.ShapeProperties,DXO16DCD.ShapeProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -124,14 +85,8 @@ public partial class Series: ModelElement<DXO16DCD.Series>
   [DataMember]
   public DMDCD16.ValueColors? ValueColors
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.ValueColors,DXO16DCD.ValueColors>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.ValueColors,DXO16DCD.ValueColors>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -141,66 +96,36 @@ public partial class Series: ModelElement<DXO16DCD.Series>
   [DataMember]
   public DMDCD16.ValueColorPositions? ValueColorPositions
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.ValueColorPositions,DXO16DCD.ValueColorPositions>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.ValueColorPositions,DXO16DCD.ValueColorPositions>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMDCD16.DataLabels? DataLabels
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.DataLabels,DXO16DCD.DataLabels>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.DataLabels,DXO16DCD.DataLabels>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public UInt32? DataId
   {
-    get
-    {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DXO16DCD.DataId>()?.Val);
-    }
-    set
-    {
-      SimpleValueConverter.SetValue<DXO16DCD.DataId,System.UInt32>(_ExistingElement, value);
-    }
+    get => _Element?.GetIntVal<UInt32, DXO16DCD.DataId>();
+    set => _ExistingElement.SetIntVal<UInt32, DXO16DCD.DataId>(value);
   }
   
   [DataMember]
   public DMDCD16.SeriesLayoutProperties? SeriesLayoutProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.SeriesLayoutProperties,DXO16DCD.SeriesLayoutProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.SeriesLayoutProperties,DXO16DCD.SeriesLayoutProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMDCD16.ExtensionList? ExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.ExtensionList,DXO16DCD.ExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.ExtensionList,DXO16DCD.ExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

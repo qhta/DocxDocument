@@ -19,14 +19,8 @@ public partial class CharacterBullet: ModelElement<DXD.CharacterBullet>
   [DataMember]
   public String? Char
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Char);
-    }
-    set
-    {
-      _ExistingElement.Char = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Char;
+    set => _ExistingElement.Char = value;
   }
   
 }

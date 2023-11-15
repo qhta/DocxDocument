@@ -19,14 +19,8 @@ public partial class TaskAnchor: ModelElement<DXO21DT.TaskAnchor>
   [DataMember]
   public DM.CommentAnchor? CommentAnchor
   {
-    get
-    {
-      return _Element?.GetObject<DM.CommentAnchor,DXO21DT.CommentAnchor>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DM.CommentAnchor,DXO21DT.CommentAnchor>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -36,14 +30,8 @@ public partial class TaskAnchor: ModelElement<DXO21DT.TaskAnchor>
   [DataMember]
   public DM.ExtensionList? ExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DM.ExtensionList,DXO21DT.ExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DM.ExtensionList,DXO21DT.ExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

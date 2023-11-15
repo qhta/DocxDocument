@@ -19,14 +19,8 @@ public partial class TabSet: ModelElement<DXO10CUI.TabSet>
   [DataMember]
   public String? IdMso
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.IdMso);
-    }
-    set
-    {
-      _ExistingElement.IdMso = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.IdMso;
+    set => _ExistingElement.IdMso = value;
   }
   
   
@@ -36,17 +30,8 @@ public partial class TabSet: ModelElement<DXO10CUI.TabSet>
   [DataMember]
   public Boolean? Visible
   {
-    get
-    {
-      return _Element?.Visible?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Visible = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.Visible = null;
-    }
+    get => _Element?.Visible?.Value;
+    set => _ExistingElement.Visible = value;
   }
   
   
@@ -56,14 +41,8 @@ public partial class TabSet: ModelElement<DXO10CUI.TabSet>
   [DataMember]
   public String? GetVisible
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.GetVisible);
-    }
-    set
-    {
-      _ExistingElement.GetVisible = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.GetVisible;
+    set => _ExistingElement.GetVisible = value;
   }
   
 }

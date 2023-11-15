@@ -19,14 +19,8 @@ public partial class ValueAxisScaling: ModelElement<DXO16DCD.ValueAxisScaling>
   [DataMember]
   public String? Max
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Max);
-    }
-    set
-    {
-      _ExistingElement.Max = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Max;
+    set => _ExistingElement.Max = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class ValueAxisScaling: ModelElement<DXO16DCD.ValueAxisScaling>
   [DataMember]
   public String? Min
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Min);
-    }
-    set
-    {
-      _ExistingElement.Min = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Min;
+    set => _ExistingElement.Min = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class ValueAxisScaling: ModelElement<DXO16DCD.ValueAxisScaling>
   [DataMember]
   public String? MajorUnit
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.MajorUnit);
-    }
-    set
-    {
-      _ExistingElement.MajorUnit = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.MajorUnit;
+    set => _ExistingElement.MajorUnit = value;
   }
   
   
@@ -70,14 +52,8 @@ public partial class ValueAxisScaling: ModelElement<DXO16DCD.ValueAxisScaling>
   [DataMember]
   public String? MinorUnit
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.MinorUnit);
-    }
-    set
-    {
-      _ExistingElement.MinorUnit = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.MinorUnit;
+    set => _ExistingElement.MinorUnit = value;
   }
   
 }

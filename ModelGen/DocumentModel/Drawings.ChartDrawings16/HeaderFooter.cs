@@ -19,17 +19,8 @@ public partial class HeaderFooter: ModelElement<DXO16DCD.HeaderFooter>
   [DataMember]
   public Boolean? AlignWithMargins
   {
-    get
-    {
-      return _Element?.AlignWithMargins?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.AlignWithMargins = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.AlignWithMargins = null;
-    }
+    get => _Element?.AlignWithMargins?.Value;
+    set => _ExistingElement.AlignWithMargins = value;
   }
   
   
@@ -39,17 +30,8 @@ public partial class HeaderFooter: ModelElement<DXO16DCD.HeaderFooter>
   [DataMember]
   public Boolean? DifferentOddEven
   {
-    get
-    {
-      return _Element?.DifferentOddEven?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.DifferentOddEven = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.DifferentOddEven = null;
-    }
+    get => _Element?.DifferentOddEven?.Value;
+    set => _ExistingElement.DifferentOddEven = value;
   }
   
   
@@ -59,17 +41,8 @@ public partial class HeaderFooter: ModelElement<DXO16DCD.HeaderFooter>
   [DataMember]
   public Boolean? DifferentFirst
   {
-    get
-    {
-      return _Element?.DifferentFirst?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.DifferentFirst = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.DifferentFirst = null;
-    }
+    get => _Element?.DifferentFirst?.Value;
+    set => _ExistingElement.DifferentFirst = value;
   }
   
   
@@ -79,14 +52,8 @@ public partial class HeaderFooter: ModelElement<DXO16DCD.HeaderFooter>
   [DataMember]
   public DMDCD16.OddHeaderXsdstring? OddHeaderXsdstring
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.OddHeaderXsdstring,DXO16DCD.OddHeaderXsdstring>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.OddHeaderXsdstring,DXO16DCD.OddHeaderXsdstring>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
   }
   
   
@@ -96,14 +63,8 @@ public partial class HeaderFooter: ModelElement<DXO16DCD.HeaderFooter>
   [DataMember]
   public DMDCD16.OddFooterXsdstring? OddFooterXsdstring
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.OddFooterXsdstring,DXO16DCD.OddFooterXsdstring>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.OddFooterXsdstring,DXO16DCD.OddFooterXsdstring>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
   }
   
   
@@ -113,14 +74,8 @@ public partial class HeaderFooter: ModelElement<DXO16DCD.HeaderFooter>
   [DataMember]
   public DMDCD16.EvenHeaderXsdstring? EvenHeaderXsdstring
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.EvenHeaderXsdstring,DXO16DCD.EvenHeaderXsdstring>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.EvenHeaderXsdstring,DXO16DCD.EvenHeaderXsdstring>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
   }
   
   
@@ -130,14 +85,8 @@ public partial class HeaderFooter: ModelElement<DXO16DCD.HeaderFooter>
   [DataMember]
   public DMDCD16.EvenFooterXsdstring? EvenFooterXsdstring
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.EvenFooterXsdstring,DXO16DCD.EvenFooterXsdstring>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.EvenFooterXsdstring,DXO16DCD.EvenFooterXsdstring>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
   }
   
   
@@ -147,14 +96,8 @@ public partial class HeaderFooter: ModelElement<DXO16DCD.HeaderFooter>
   [DataMember]
   public DMDCD16.FirstHeaderXsdstring? FirstHeaderXsdstring
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.FirstHeaderXsdstring,DXO16DCD.FirstHeaderXsdstring>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.FirstHeaderXsdstring,DXO16DCD.FirstHeaderXsdstring>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
   }
   
   
@@ -164,14 +107,8 @@ public partial class HeaderFooter: ModelElement<DXO16DCD.HeaderFooter>
   [DataMember]
   public DMDCD16.FirstFooterXsdstring? FirstFooterXsdstring
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.FirstFooterXsdstring,DXO16DCD.FirstFooterXsdstring>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.FirstFooterXsdstring,DXO16DCD.FirstFooterXsdstring>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
   }
   
 }

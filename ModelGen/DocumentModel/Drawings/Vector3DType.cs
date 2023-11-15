@@ -19,14 +19,8 @@ public partial class Vector3DType: ModelElement<DXD.Vector3DType>
   [DataMember]
   public Int64? Dx
   {
-    get
-    {
-      return _Element?.Dx?.Value;
-    }
-    set
-    {
-      _ExistingElement.Dx = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int64]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int64]");
   }
   
   
@@ -36,14 +30,8 @@ public partial class Vector3DType: ModelElement<DXD.Vector3DType>
   [DataMember]
   public Int64? Dy
   {
-    get
-    {
-      return _Element?.Dy?.Value;
-    }
-    set
-    {
-      _ExistingElement.Dy = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int64]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int64]");
   }
   
   
@@ -53,14 +41,8 @@ public partial class Vector3DType: ModelElement<DXD.Vector3DType>
   [DataMember]
   public Int64? Dz
   {
-    get
-    {
-      return _Element?.Dz?.Value;
-    }
-    set
-    {
-      _ExistingElement.Dz = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int64]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int64]");
   }
   
 }

@@ -19,14 +19,8 @@ public partial class NonVisualConnectorShapeDrawingProperties: ModelElement<DXDC
   [DataMember]
   public DMDCD.NonVisualDrawingProperties? NonVisualDrawingProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD.NonVisualDrawingProperties,DXDCD.NonVisualDrawingProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD.NonVisualDrawingProperties,DXDCD.NonVisualDrawingProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -36,14 +30,8 @@ public partial class NonVisualConnectorShapeDrawingProperties: ModelElement<DXDC
   [DataMember]
   public DMDCD.NonVisualConnectionShapeProperties? NonVisualConnectionShapeProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD.NonVisualConnectionShapeProperties,DXDCD.NonVisualConnectionShapeProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD.NonVisualConnectionShapeProperties,DXDCD.NonVisualConnectionShapeProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

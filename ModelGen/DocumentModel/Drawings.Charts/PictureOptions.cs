@@ -19,14 +19,8 @@ public partial class PictureOptions: ModelElement<DXDC.PictureOptions>
   [DataMember]
   public DMDC.ApplyToFront? ApplyToFront
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.ApplyToFront,DXDC.ApplyToFront>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.ApplyToFront,DXDC.ApplyToFront>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.BooleanType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.BooleanType");
   }
   
   
@@ -36,14 +30,8 @@ public partial class PictureOptions: ModelElement<DXDC.PictureOptions>
   [DataMember]
   public DMDC.ApplyToSides? ApplyToSides
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.ApplyToSides,DXDC.ApplyToSides>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.ApplyToSides,DXDC.ApplyToSides>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.BooleanType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.BooleanType");
   }
   
   
@@ -53,14 +41,8 @@ public partial class PictureOptions: ModelElement<DXDC.PictureOptions>
   [DataMember]
   public DMDC.ApplyToEnd? ApplyToEnd
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.ApplyToEnd,DXDC.ApplyToEnd>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.ApplyToEnd,DXDC.ApplyToEnd>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.BooleanType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.BooleanType");
   }
   
   
@@ -70,24 +52,8 @@ public partial class PictureOptions: ModelElement<DXDC.PictureOptions>
   [DataMember]
   public DMDC.PictureFormatKind? PictureFormat
   {
-    get
-    {
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.PictureFormatValues, DMDC.PictureFormatKind>(_ExistingElement.GetFirstChild<DXDC.PictureFormat>()?.Val?.Value);
-    }
-    set
-    {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.PictureFormat>();
-      if (itemElement != null)
-      {
-        if (value != null)
-          EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.PictureFormatValues, DMDC.PictureFormatKind>(itemElement, (DMDC.PictureFormatKind)value);
-        else
-          itemElement.Remove();
-      }
-      else
-      if (value != null)
-        _ExistingElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDC.PictureFormat, DocumentFormat.OpenXml.Drawing.Charts.PictureFormatValues, DMDC.PictureFormatKind>((DMDC.PictureFormatKind)value));
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertyGetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertySetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -97,14 +63,8 @@ public partial class PictureOptions: ModelElement<DXDC.PictureOptions>
   [DataMember]
   public Double? PictureStackUnit
   {
-    get
-    {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DXDC.PictureStackUnit>()?.Val);
-    }
-    set
-    {
-      SimpleValueConverter.SetValue<DXDC.PictureStackUnit,System.Double>(_ExistingElement, value);
-    }
+    get => _Element?.GetIntVal<Double, DXDC.PictureStackUnit>();
+    set => _ExistingElement.SetIntVal<Double, DXDC.PictureStackUnit>(value);
   }
   
 }

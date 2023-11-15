@@ -19,14 +19,8 @@ public partial class Transform2D: ModelElement<DXD.Transform2D>
   [DataMember]
   public Int32? Rotation
   {
-    get
-    {
-      return _Element?.Rotation?.Value;
-    }
-    set
-    {
-      _ExistingElement.Rotation = value;
-    }
+    get => _Element?.Rotation?.Value;
+    set => _ExistingElement.Rotation = value;
   }
   
   
@@ -36,17 +30,8 @@ public partial class Transform2D: ModelElement<DXD.Transform2D>
   [DataMember]
   public Boolean? HorizontalFlip
   {
-    get
-    {
-      return _Element?.HorizontalFlip?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.HorizontalFlip = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.HorizontalFlip = null;
-    }
+    get => _Element?.HorizontalFlip?.Value;
+    set => _ExistingElement.HorizontalFlip = value;
   }
   
   
@@ -56,17 +41,8 @@ public partial class Transform2D: ModelElement<DXD.Transform2D>
   [DataMember]
   public Boolean? VerticalFlip
   {
-    get
-    {
-      return _Element?.VerticalFlip?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.VerticalFlip = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.VerticalFlip = null;
-    }
+    get => _Element?.VerticalFlip?.Value;
+    set => _ExistingElement.VerticalFlip = value;
   }
   
   
@@ -76,14 +52,8 @@ public partial class Transform2D: ModelElement<DXD.Transform2D>
   [DataMember]
   public DMD.Offset? Offset
   {
-    get
-    {
-      return _Element?.GetObject<DMD.Offset,DXD.Offset>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.Offset,DXD.Offset>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Point2DType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Point2DType");
   }
   
   
@@ -93,14 +63,8 @@ public partial class Transform2D: ModelElement<DXD.Transform2D>
   [DataMember]
   public DMD.Extents? Extents
   {
-    get
-    {
-      return _Element?.GetObject<DMD.Extents,DXD.Extents>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.Extents,DXD.Extents>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.PositiveSize2DType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.PositiveSize2DType");
   }
   
 }

@@ -19,14 +19,8 @@ public partial class PredecessorDrawingElementReference: ModelElement<DXO16D.Pre
   [DataMember]
   public String? Pred
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Pred);
-    }
-    set
-    {
-      _ExistingElement.Pred = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Pred;
+    set => _ExistingElement.Pred = value;
   }
   
 }

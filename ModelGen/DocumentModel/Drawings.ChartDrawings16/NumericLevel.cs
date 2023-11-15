@@ -19,14 +19,8 @@ public partial class NumericLevel: ModelElement<DXO16DCD.NumericLevel>
   [DataMember]
   public UInt32? PtCount
   {
-    get
-    {
-      return _Element?.PtCount?.Value;
-    }
-    set
-    {
-      _ExistingElement.PtCount = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
   }
   
   
@@ -36,14 +30,8 @@ public partial class NumericLevel: ModelElement<DXO16DCD.NumericLevel>
   [DataMember]
   public String? FormatCode
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.FormatCode);
-    }
-    set
-    {
-      _ExistingElement.FormatCode = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.FormatCode;
+    set => _ExistingElement.FormatCode = value;
   }
   
   
@@ -53,47 +41,15 @@ public partial class NumericLevel: ModelElement<DXO16DCD.NumericLevel>
   [DataMember]
   public String? Name
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Name);
-    }
-    set
-    {
-      _ExistingElement.Name = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Name;
+    set => _ExistingElement.Name = value;
   }
   
   [DataMember]
   public DM.ElementCollection<NumericValue>? Items
   {
-    get
-    {
-      if (_Element==null)
-        return null;
-      var collection = new ElementCollection<DM.NumericValue>();
-      foreach (var item in _ExistingElement.Elements<DXO16DCD.NumericValue>())
-      {
-        var newItem = NumericValueConverter.GetValue(item);
-        if (newItem is not null)
-          collection.Add((NumericValue)newItem);
-      }
-      if (collection.Count>0)
-        return collection;
-      return null;
-    }
-    set
-    {
-      _ExistingElement.RemoveAllChildren<DXO16DCD.NumericValue>();
-      if (value != null)
-      {
-        foreach (var item in value)
-        {
-          var newItem = NumericValueConverter.CreateOpenXmlElement<DXO16DCD.NumericValue>(item);
-          if (newItem != null)
-            _ExistingElement.AddChild(newItem);
-        }
-      }
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentModel.ModelElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentModel.ModelElement");
   }
   
 }

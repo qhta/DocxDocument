@@ -19,14 +19,8 @@ public partial class Style: ModelElement<DXDCD.Style>
   [DataMember]
   public DMD.LineReference? LineReference
   {
-    get
-    {
-      return _Element?.GetObject<DMD.LineReference,DXD.LineReference>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.LineReference,DXD.LineReference>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.StyleMatrixReferenceType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.StyleMatrixReferenceType");
   }
   
   
@@ -36,14 +30,8 @@ public partial class Style: ModelElement<DXDCD.Style>
   [DataMember]
   public DMD.FillReference? FillReference
   {
-    get
-    {
-      return _Element?.GetObject<DMD.FillReference,DXD.FillReference>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.FillReference,DXD.FillReference>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.StyleMatrixReferenceType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.StyleMatrixReferenceType");
   }
   
   
@@ -53,14 +41,8 @@ public partial class Style: ModelElement<DXDCD.Style>
   [DataMember]
   public DMD.EffectReference? EffectReference
   {
-    get
-    {
-      return _Element?.GetObject<DMD.EffectReference,DXD.EffectReference>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.EffectReference,DXD.EffectReference>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.StyleMatrixReferenceType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.StyleMatrixReferenceType");
   }
   
   
@@ -70,14 +52,8 @@ public partial class Style: ModelElement<DXDCD.Style>
   [DataMember]
   public DMD.FontReference? FontReference
   {
-    get
-    {
-      return _Element?.GetObject<DMD.FontReference,DXD.FontReference>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.FontReference,DXD.FontReference>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

@@ -19,14 +19,8 @@ public partial class SupplementalFont: ModelElement<DXD.SupplementalFont>
   [DataMember]
   public String? Script
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Script);
-    }
-    set
-    {
-      _ExistingElement.Script = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Script;
+    set => _ExistingElement.Script = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class SupplementalFont: ModelElement<DXD.SupplementalFont>
   [DataMember]
   public String? Typeface
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Typeface);
-    }
-    set
-    {
-      _ExistingElement.Typeface = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Typeface;
+    set => _ExistingElement.Typeface = value;
   }
   
 }

@@ -19,14 +19,8 @@ public partial class Tile: ModelElement<DXD.Tile>
   [DataMember]
   public Int64? HorizontalOffset
   {
-    get
-    {
-      return _Element?.HorizontalOffset?.Value;
-    }
-    set
-    {
-      _ExistingElement.HorizontalOffset = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int64]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int64]");
   }
   
   
@@ -36,14 +30,8 @@ public partial class Tile: ModelElement<DXD.Tile>
   [DataMember]
   public Int64? VerticalOffset
   {
-    get
-    {
-      return _Element?.VerticalOffset?.Value;
-    }
-    set
-    {
-      _ExistingElement.VerticalOffset = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int64]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int64]");
   }
   
   
@@ -53,14 +41,8 @@ public partial class Tile: ModelElement<DXD.Tile>
   [DataMember]
   public Int32? HorizontalRatio
   {
-    get
-    {
-      return _Element?.HorizontalRatio?.Value;
-    }
-    set
-    {
-      _ExistingElement.HorizontalRatio = value;
-    }
+    get => _Element?.HorizontalRatio?.Value;
+    set => _ExistingElement.HorizontalRatio = value;
   }
   
   
@@ -70,14 +52,8 @@ public partial class Tile: ModelElement<DXD.Tile>
   [DataMember]
   public Int32? VerticalRatio
   {
-    get
-    {
-      return _Element?.VerticalRatio?.Value;
-    }
-    set
-    {
-      _ExistingElement.VerticalRatio = value;
-    }
+    get => _Element?.VerticalRatio?.Value;
+    set => _ExistingElement.VerticalRatio = value;
   }
   
 }

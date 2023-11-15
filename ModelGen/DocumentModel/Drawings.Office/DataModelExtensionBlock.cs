@@ -19,14 +19,8 @@ public partial class DataModelExtensionBlock: ModelElement<DXOD.DataModelExtensi
   [DataMember]
   public String? RelId
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.RelId);
-    }
-    set
-    {
-      _ExistingElement.RelId = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.RelId;
+    set => _ExistingElement.RelId = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class DataModelExtensionBlock: ModelElement<DXOD.DataModelExtensi
   [DataMember]
   public String? MinVer
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.MinVer);
-    }
-    set
-    {
-      _ExistingElement.MinVer = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.MinVer;
+    set => _ExistingElement.MinVer = value;
   }
   
 }

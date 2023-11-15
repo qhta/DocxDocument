@@ -19,14 +19,8 @@ public partial class TaskFormGroup: ModelElement<DXO10CUI.TaskFormGroup>
   [DataMember]
   public String? Id
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Id);
-    }
-    set
-    {
-      _ExistingElement.Id = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Id;
+    set => _ExistingElement.Id = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class TaskFormGroup: ModelElement<DXO10CUI.TaskFormGroup>
   [DataMember]
   public String? QualifiedId
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.QualifiedId);
-    }
-    set
-    {
-      _ExistingElement.QualifiedId = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.QualifiedId;
+    set => _ExistingElement.QualifiedId = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class TaskFormGroup: ModelElement<DXO10CUI.TaskFormGroup>
   [DataMember]
   public String? Tag
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Tag);
-    }
-    set
-    {
-      _ExistingElement.Tag = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Tag;
+    set => _ExistingElement.Tag = value;
   }
   
   
@@ -70,14 +52,8 @@ public partial class TaskFormGroup: ModelElement<DXO10CUI.TaskFormGroup>
   [DataMember]
   public String? IdMso
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.IdMso);
-    }
-    set
-    {
-      _ExistingElement.IdMso = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.IdMso;
+    set => _ExistingElement.IdMso = value;
   }
   
   
@@ -87,14 +63,8 @@ public partial class TaskFormGroup: ModelElement<DXO10CUI.TaskFormGroup>
   [DataMember]
   public String? Label
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Label);
-    }
-    set
-    {
-      _ExistingElement.Label = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Label;
+    set => _ExistingElement.Label = value;
   }
   
   
@@ -104,14 +74,8 @@ public partial class TaskFormGroup: ModelElement<DXO10CUI.TaskFormGroup>
   [DataMember]
   public String? GetLabel
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.GetLabel);
-    }
-    set
-    {
-      _ExistingElement.GetLabel = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.GetLabel;
+    set => _ExistingElement.GetLabel = value;
   }
   
   
@@ -121,17 +85,8 @@ public partial class TaskFormGroup: ModelElement<DXO10CUI.TaskFormGroup>
   [DataMember]
   public Boolean? Visible
   {
-    get
-    {
-      return _Element?.Visible?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Visible = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.Visible = null;
-    }
+    get => _Element?.Visible?.Value;
+    set => _ExistingElement.Visible = value;
   }
   
   
@@ -141,14 +96,8 @@ public partial class TaskFormGroup: ModelElement<DXO10CUI.TaskFormGroup>
   [DataMember]
   public String? GetVisible
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.GetVisible);
-    }
-    set
-    {
-      _ExistingElement.GetVisible = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.GetVisible;
+    set => _ExistingElement.GetVisible = value;
   }
   
   
@@ -158,14 +107,8 @@ public partial class TaskFormGroup: ModelElement<DXO10CUI.TaskFormGroup>
   [DataMember]
   public String? HelperText
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.HelperText);
-    }
-    set
-    {
-      _ExistingElement.HelperText = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.HelperText;
+    set => _ExistingElement.HelperText = value;
   }
   
   
@@ -175,14 +118,8 @@ public partial class TaskFormGroup: ModelElement<DXO10CUI.TaskFormGroup>
   [DataMember]
   public String? GetHelperText
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.GetHelperText);
-    }
-    set
-    {
-      _ExistingElement.GetHelperText = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.GetHelperText;
+    set => _ExistingElement.GetHelperText = value;
   }
   
   
@@ -192,17 +129,8 @@ public partial class TaskFormGroup: ModelElement<DXO10CUI.TaskFormGroup>
   [DataMember]
   public Boolean? ShowLabel
   {
-    get
-    {
-      return _Element?.ShowLabel?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.ShowLabel = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.ShowLabel = null;
-    }
+    get => _Element?.ShowLabel?.Value;
+    set => _ExistingElement.ShowLabel = value;
   }
   
   
@@ -212,14 +140,8 @@ public partial class TaskFormGroup: ModelElement<DXO10CUI.TaskFormGroup>
   [DataMember]
   public String? GetShowLabel
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.GetShowLabel);
-    }
-    set
-    {
-      _ExistingElement.GetShowLabel = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.GetShowLabel;
+    set => _ExistingElement.GetShowLabel = value;
   }
   
 }

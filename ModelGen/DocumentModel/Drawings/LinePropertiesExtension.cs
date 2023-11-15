@@ -19,27 +19,15 @@ public partial class LinePropertiesExtension: ModelElement<DXD.LinePropertiesExt
   [DataMember]
   public String? Uri
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Uri);
-    }
-    set
-    {
-      _ExistingElement.Uri = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Uri;
+    set => _ExistingElement.Uri = value;
   }
   
   [DataMember]
   public DMDSS.LineSketchStyleProperties? LineSketchStyleProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMDSS.LineSketchStyleProperties,DXO21DSS.LineSketchStyleProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDSS.LineSketchStyleProperties,DXO21DSS.LineSketchStyleProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

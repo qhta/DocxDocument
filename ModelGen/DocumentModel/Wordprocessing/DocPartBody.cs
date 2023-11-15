@@ -15,14 +15,8 @@ public partial class DocPartBody: ModelElement<DXW.DocPartBody>
   [DataMember]
   public DMW.SectionProperties? SectionProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMW.SectionProperties,DXW.SectionProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.SectionProperties,DXW.SectionProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

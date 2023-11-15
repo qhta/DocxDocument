@@ -19,14 +19,8 @@ public partial class Document: ModelElement<DXW.Document>
   [DataMember]
   public DMW.DocumentBackground? DocumentBackground
   {
-    get
-    {
-      return _Element?.GetObject<DMW.DocumentBackground,DXW.DocumentBackground>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.DocumentBackground,DXW.DocumentBackground>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -36,14 +30,8 @@ public partial class Document: ModelElement<DXW.Document>
   [DataMember]
   public DMW.Body? Body
   {
-    get
-    {
-      return _Element?.GetObject<DMW.Body,DXW.Body>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.Body,DXW.Body>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.BodyType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.BodyType");
   }
   
 }

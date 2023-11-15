@@ -19,14 +19,8 @@ public partial class ExternalData: ModelElement<DXO16DCD.ExternalData>
   [DataMember]
   public String? Id
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Id);
-    }
-    set
-    {
-      _ExistingElement.Id = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Id;
+    set => _ExistingElement.Id = value;
   }
   
   
@@ -36,17 +30,8 @@ public partial class ExternalData: ModelElement<DXO16DCD.ExternalData>
   [DataMember]
   public Boolean? AutoUpdate
   {
-    get
-    {
-      return _Element?.AutoUpdate?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.AutoUpdate = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.AutoUpdate = null;
-    }
+    get => _Element?.AutoUpdate?.Value;
+    set => _ExistingElement.AutoUpdate = value;
   }
   
 }

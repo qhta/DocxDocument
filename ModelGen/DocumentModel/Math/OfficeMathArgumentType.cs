@@ -19,14 +19,8 @@ public partial class OfficeMathArgumentType: ModelElement<DXM.OfficeMathArgument
   [DataMember]
   public DMM.ArgumentProperties? ArgumentProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMM.ArgumentProperties,DXM.ArgumentProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.ArgumentProperties,DXM.ArgumentProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

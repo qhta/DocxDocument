@@ -19,14 +19,8 @@ public partial class NumberReference: ModelElement<DXDC.NumberReference>
   [DataMember]
   public DMDC.Formula? Formula
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.Formula,DXDC.Formula>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.Formula,DXDC.Formula>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
   }
   
   
@@ -36,14 +30,8 @@ public partial class NumberReference: ModelElement<DXDC.NumberReference>
   [DataMember]
   public DMDC.NumberingCache? NumberingCache
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.NumberingCache,DXDC.NumberingCache>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.NumberingCache,DXDC.NumberingCache>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.NumberDataType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.NumberDataType");
   }
   
   
@@ -53,14 +41,8 @@ public partial class NumberReference: ModelElement<DXDC.NumberReference>
   [DataMember]
   public DMDC.NumRefExtensionList? NumRefExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.NumRefExtensionList,DXDC.NumRefExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.NumRefExtensionList,DXDC.NumRefExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

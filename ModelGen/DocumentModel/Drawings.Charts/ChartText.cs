@@ -19,14 +19,8 @@ public partial class ChartText: ModelElement<DXDC.ChartText>
   [DataMember]
   public DMDC.StringReference? StringReference
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.StringReference,DXDC.StringReference>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.StringReference,DXDC.StringReference>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -36,14 +30,8 @@ public partial class ChartText: ModelElement<DXDC.ChartText>
   [DataMember]
   public DMDC.RichText? RichText
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.RichText,DXDC.RichText>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.RichText,DXDC.RichText>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.TextBodyType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.TextBodyType");
   }
   
   
@@ -53,14 +41,8 @@ public partial class ChartText: ModelElement<DXDC.ChartText>
   [DataMember]
   public DMDC.StringLiteral? StringLiteral
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.StringLiteral,DXDC.StringLiteral>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.StringLiteral,DXDC.StringLiteral>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.StringDataType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.StringDataType");
   }
   
 }

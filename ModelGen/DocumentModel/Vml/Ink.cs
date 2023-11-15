@@ -19,14 +19,8 @@ public partial class Ink: ModelElement<DXVO.Ink>
   [DataMember]
   public DM.Base64Binary? InkData
   {
-    get
-    {
-      return Base64BinaryConverter.GetValue(_Element?.InkData);
-    }
-    set
-    {
-      _ExistingElement.InkData = Base64BinaryConverter.CreateBase64BinaryValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -36,17 +30,8 @@ public partial class Ink: ModelElement<DXVO.Ink>
   [DataMember]
   public Boolean? AnnotationFlag
   {
-    get
-    {
-      return _Element?.AnnotationFlag?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.AnnotationFlag = value;
-      else
-        _ExistingElement.AnnotationFlag = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
 }

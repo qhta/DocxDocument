@@ -15,30 +15,15 @@ public partial class TextCharacterPropertiesType: ModelElement<DXD.TextCharacter
   [DataMember]
   public Boolean? SmtClean
   {
-    get
-    {
-      return _Element?.SmtClean?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.SmtClean = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.SmtClean = null;
-    }
+    get => _Element?.SmtClean?.Value;
+    set => _ExistingElement.SmtClean = value;
   }
   
   [DataMember]
   public UInt32? SmtId
   {
-    get
-    {
-      return _Element?.SmtId?.Value;
-    }
-    set
-    {
-      _ExistingElement.SmtId = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
   }
   
   
@@ -48,17 +33,8 @@ public partial class TextCharacterPropertiesType: ModelElement<DXD.TextCharacter
   [DataMember]
   public Boolean? Kumimoji
   {
-    get
-    {
-      return _Element?.Kumimoji?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Kumimoji = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.Kumimoji = null;
-    }
+    get => _Element?.Kumimoji?.Value;
+    set => _ExistingElement.Kumimoji = value;
   }
   
   
@@ -68,14 +44,8 @@ public partial class TextCharacterPropertiesType: ModelElement<DXD.TextCharacter
   [DataMember]
   public String? Language
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Language);
-    }
-    set
-    {
-      _ExistingElement.Language = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Language;
+    set => _ExistingElement.Language = value;
   }
   
   
@@ -85,14 +55,8 @@ public partial class TextCharacterPropertiesType: ModelElement<DXD.TextCharacter
   [DataMember]
   public String? AlternativeLanguage
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.AlternativeLanguage);
-    }
-    set
-    {
-      _ExistingElement.AlternativeLanguage = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.AlternativeLanguage;
+    set => _ExistingElement.AlternativeLanguage = value;
   }
   
   
@@ -102,14 +66,8 @@ public partial class TextCharacterPropertiesType: ModelElement<DXD.TextCharacter
   [DataMember]
   public Int32? FontSize
   {
-    get
-    {
-      return _Element?.FontSize?.Value;
-    }
-    set
-    {
-      _ExistingElement.FontSize = value;
-    }
+    get => _Element?.FontSize?.Value;
+    set => _ExistingElement.FontSize = value;
   }
   
   
@@ -119,17 +77,8 @@ public partial class TextCharacterPropertiesType: ModelElement<DXD.TextCharacter
   [DataMember]
   public Boolean? Bold
   {
-    get
-    {
-      return _Element?.Bold?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Bold = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.Bold = null;
-    }
+    get => _Element?.Bold?.Value;
+    set => _ExistingElement.Bold = value;
   }
   
   
@@ -139,17 +88,8 @@ public partial class TextCharacterPropertiesType: ModelElement<DXD.TextCharacter
   [DataMember]
   public Boolean? Italic
   {
-    get
-    {
-      return _Element?.Italic?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Italic = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.Italic = null;
-    }
+    get => _Element?.Italic?.Value;
+    set => _ExistingElement.Italic = value;
   }
   
   
@@ -159,14 +99,8 @@ public partial class TextCharacterPropertiesType: ModelElement<DXD.TextCharacter
   [DataMember]
   public Int32? Kerning
   {
-    get
-    {
-      return _Element?.Kerning?.Value;
-    }
-    set
-    {
-      _ExistingElement.Kerning = value;
-    }
+    get => _Element?.Kerning?.Value;
+    set => _ExistingElement.Kerning = value;
   }
   
   
@@ -176,14 +110,8 @@ public partial class TextCharacterPropertiesType: ModelElement<DXD.TextCharacter
   [DataMember]
   public Int32? Spacing
   {
-    get
-    {
-      return _Element?.Spacing?.Value;
-    }
-    set
-    {
-      _ExistingElement.Spacing = value;
-    }
+    get => _Element?.Spacing?.Value;
+    set => _ExistingElement.Spacing = value;
   }
   
   
@@ -193,17 +121,8 @@ public partial class TextCharacterPropertiesType: ModelElement<DXD.TextCharacter
   [DataMember]
   public Boolean? NormalizeHeight
   {
-    get
-    {
-      return _Element?.NormalizeHeight?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.NormalizeHeight = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.NormalizeHeight = null;
-    }
+    get => _Element?.NormalizeHeight?.Value;
+    set => _ExistingElement.NormalizeHeight = value;
   }
   
   
@@ -213,14 +132,8 @@ public partial class TextCharacterPropertiesType: ModelElement<DXD.TextCharacter
   [DataMember]
   public Int32? Baseline
   {
-    get
-    {
-      return _Element?.Baseline?.Value;
-    }
-    set
-    {
-      _ExistingElement.Baseline = value;
-    }
+    get => _Element?.Baseline?.Value;
+    set => _ExistingElement.Baseline = value;
   }
   
   
@@ -230,17 +143,8 @@ public partial class TextCharacterPropertiesType: ModelElement<DXD.TextCharacter
   [DataMember]
   public Boolean? NoProof
   {
-    get
-    {
-      return _Element?.NoProof?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.NoProof = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.NoProof = null;
-    }
+    get => _Element?.NoProof?.Value;
+    set => _ExistingElement.NoProof = value;
   }
   
   
@@ -250,17 +154,8 @@ public partial class TextCharacterPropertiesType: ModelElement<DXD.TextCharacter
   [DataMember]
   public Boolean? Dirty
   {
-    get
-    {
-      return _Element?.Dirty?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Dirty = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.Dirty = null;
-    }
+    get => _Element?.Dirty?.Value;
+    set => _ExistingElement.Dirty = value;
   }
   
   
@@ -270,17 +165,8 @@ public partial class TextCharacterPropertiesType: ModelElement<DXD.TextCharacter
   [DataMember]
   public Boolean? SpellingError
   {
-    get
-    {
-      return _Element?.SpellingError?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.SpellingError = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.SpellingError = null;
-    }
+    get => _Element?.SpellingError?.Value;
+    set => _ExistingElement.SpellingError = value;
   }
   
   
@@ -290,17 +176,8 @@ public partial class TextCharacterPropertiesType: ModelElement<DXD.TextCharacter
   [DataMember]
   public Boolean? SmartTagClean
   {
-    get
-    {
-      return _Element?.SmartTagClean?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.SmartTagClean = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.SmartTagClean = null;
-    }
+    get => _Element?.SmartTagClean?.Value;
+    set => _ExistingElement.SmartTagClean = value;
   }
   
   
@@ -310,14 +187,8 @@ public partial class TextCharacterPropertiesType: ModelElement<DXD.TextCharacter
   [DataMember]
   public UInt32? SmartTagId
   {
-    get
-    {
-      return _Element?.SmartTagId?.Value;
-    }
-    set
-    {
-      _ExistingElement.SmartTagId = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
   }
   
   
@@ -327,14 +198,8 @@ public partial class TextCharacterPropertiesType: ModelElement<DXD.TextCharacter
   [DataMember]
   public String? Bookmark
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Bookmark);
-    }
-    set
-    {
-      _ExistingElement.Bookmark = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Bookmark;
+    set => _ExistingElement.Bookmark = value;
   }
   
   
@@ -344,14 +209,8 @@ public partial class TextCharacterPropertiesType: ModelElement<DXD.TextCharacter
   [DataMember]
   public DMD.Outline? Outline
   {
-    get
-    {
-      return _Element?.GetObject<DMD.Outline,DXD.Outline>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.Outline,DXD.Outline>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.LinePropertiesType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.LinePropertiesType");
   }
   
 }

@@ -19,14 +19,8 @@ public partial class ChartStyle: ModelElement<DXO13DCS.ChartStyle>
   [DataMember]
   public UInt32? Id
   {
-    get
-    {
-      return _Element?.Id?.Value;
-    }
-    set
-    {
-      _ExistingElement.Id = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
   }
   
   
@@ -36,14 +30,8 @@ public partial class ChartStyle: ModelElement<DXO13DCS.ChartStyle>
   [DataMember]
   public DMDCS.AxisTitle? AxisTitle
   {
-    get
-    {
-      return _Element?.GetObject<DMDCS.AxisTitle,DXO13DCS.AxisTitle>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCS.AxisTitle,DXO13DCS.AxisTitle>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry");
   }
   
   
@@ -53,14 +41,8 @@ public partial class ChartStyle: ModelElement<DXO13DCS.ChartStyle>
   [DataMember]
   public DMDCS.CategoryAxis? CategoryAxis
   {
-    get
-    {
-      return _Element?.GetObject<DMDCS.CategoryAxis,DXO13DCS.CategoryAxis>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCS.CategoryAxis,DXO13DCS.CategoryAxis>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry");
   }
   
   
@@ -70,14 +52,8 @@ public partial class ChartStyle: ModelElement<DXO13DCS.ChartStyle>
   [DataMember]
   public DMDCS.ChartArea? ChartArea
   {
-    get
-    {
-      return _Element?.GetObject<DMDCS.ChartArea,DXO13DCS.ChartArea>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCS.ChartArea,DXO13DCS.ChartArea>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry");
   }
   
   
@@ -87,14 +63,8 @@ public partial class ChartStyle: ModelElement<DXO13DCS.ChartStyle>
   [DataMember]
   public DMDCS.DataLabel? DataLabel
   {
-    get
-    {
-      return _Element?.GetObject<DMDCS.DataLabel,DXO13DCS.DataLabel>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCS.DataLabel,DXO13DCS.DataLabel>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry");
   }
   
   
@@ -104,14 +74,8 @@ public partial class ChartStyle: ModelElement<DXO13DCS.ChartStyle>
   [DataMember]
   public DMDCS.DataLabelCallout? DataLabelCallout
   {
-    get
-    {
-      return _Element?.GetObject<DMDCS.DataLabelCallout,DXO13DCS.DataLabelCallout>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCS.DataLabelCallout,DXO13DCS.DataLabelCallout>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry");
   }
   
   
@@ -121,14 +85,8 @@ public partial class ChartStyle: ModelElement<DXO13DCS.ChartStyle>
   [DataMember]
   public DMDCS.DataPoint? DataPoint
   {
-    get
-    {
-      return _Element?.GetObject<DMDCS.DataPoint,DXO13DCS.DataPoint>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCS.DataPoint,DXO13DCS.DataPoint>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry");
   }
   
   
@@ -138,14 +96,8 @@ public partial class ChartStyle: ModelElement<DXO13DCS.ChartStyle>
   [DataMember]
   public DMDCS.DataPoint3D? DataPoint3D
   {
-    get
-    {
-      return _Element?.GetObject<DMDCS.DataPoint3D,DXO13DCS.DataPoint3D>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCS.DataPoint3D,DXO13DCS.DataPoint3D>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry");
   }
   
   
@@ -155,14 +107,8 @@ public partial class ChartStyle: ModelElement<DXO13DCS.ChartStyle>
   [DataMember]
   public DMDCS.DataPointLine? DataPointLine
   {
-    get
-    {
-      return _Element?.GetObject<DMDCS.DataPointLine,DXO13DCS.DataPointLine>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCS.DataPointLine,DXO13DCS.DataPointLine>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry");
   }
   
   
@@ -172,14 +118,8 @@ public partial class ChartStyle: ModelElement<DXO13DCS.ChartStyle>
   [DataMember]
   public DMDCS.DataPointMarker? DataPointMarker
   {
-    get
-    {
-      return _Element?.GetObject<DMDCS.DataPointMarker,DXO13DCS.DataPointMarker>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCS.DataPointMarker,DXO13DCS.DataPointMarker>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry");
   }
   
   
@@ -189,14 +129,8 @@ public partial class ChartStyle: ModelElement<DXO13DCS.ChartStyle>
   [DataMember]
   public DMDCS.MarkerLayoutProperties? MarkerLayoutProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMDCS.MarkerLayoutProperties,DXO13DCS.MarkerLayoutProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCS.MarkerLayoutProperties,DXO13DCS.MarkerLayoutProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -206,14 +140,8 @@ public partial class ChartStyle: ModelElement<DXO13DCS.ChartStyle>
   [DataMember]
   public DMDCS.DataPointWireframe? DataPointWireframe
   {
-    get
-    {
-      return _Element?.GetObject<DMDCS.DataPointWireframe,DXO13DCS.DataPointWireframe>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCS.DataPointWireframe,DXO13DCS.DataPointWireframe>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry");
   }
   
   
@@ -223,14 +151,8 @@ public partial class ChartStyle: ModelElement<DXO13DCS.ChartStyle>
   [DataMember]
   public DMDCS.DataTableStyle? DataTableStyle
   {
-    get
-    {
-      return _Element?.GetObject<DMDCS.DataTableStyle,DXO13DCS.DataTableStyle>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCS.DataTableStyle,DXO13DCS.DataTableStyle>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry");
   }
   
   
@@ -240,14 +162,8 @@ public partial class ChartStyle: ModelElement<DXO13DCS.ChartStyle>
   [DataMember]
   public DMDCS.DownBar? DownBar
   {
-    get
-    {
-      return _Element?.GetObject<DMDCS.DownBar,DXO13DCS.DownBar>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCS.DownBar,DXO13DCS.DownBar>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry");
   }
   
   
@@ -257,14 +173,8 @@ public partial class ChartStyle: ModelElement<DXO13DCS.ChartStyle>
   [DataMember]
   public DMDCS.DropLine? DropLine
   {
-    get
-    {
-      return _Element?.GetObject<DMDCS.DropLine,DXO13DCS.DropLine>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCS.DropLine,DXO13DCS.DropLine>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry");
   }
   
   
@@ -274,14 +184,8 @@ public partial class ChartStyle: ModelElement<DXO13DCS.ChartStyle>
   [DataMember]
   public DMDCS.ErrorBar? ErrorBar
   {
-    get
-    {
-      return _Element?.GetObject<DMDCS.ErrorBar,DXO13DCS.ErrorBar>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCS.ErrorBar,DXO13DCS.ErrorBar>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry");
   }
   
   
@@ -291,14 +195,8 @@ public partial class ChartStyle: ModelElement<DXO13DCS.ChartStyle>
   [DataMember]
   public DMDCS.Floor? Floor
   {
-    get
-    {
-      return _Element?.GetObject<DMDCS.Floor,DXO13DCS.Floor>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCS.Floor,DXO13DCS.Floor>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry");
   }
   
   
@@ -308,14 +206,8 @@ public partial class ChartStyle: ModelElement<DXO13DCS.ChartStyle>
   [DataMember]
   public DMDCS.GridlineMajor? GridlineMajor
   {
-    get
-    {
-      return _Element?.GetObject<DMDCS.GridlineMajor,DXO13DCS.GridlineMajor>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCS.GridlineMajor,DXO13DCS.GridlineMajor>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry");
   }
   
   
@@ -325,14 +217,8 @@ public partial class ChartStyle: ModelElement<DXO13DCS.ChartStyle>
   [DataMember]
   public DMDCS.GridlineMinor? GridlineMinor
   {
-    get
-    {
-      return _Element?.GetObject<DMDCS.GridlineMinor,DXO13DCS.GridlineMinor>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCS.GridlineMinor,DXO13DCS.GridlineMinor>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry");
   }
   
   
@@ -342,14 +228,8 @@ public partial class ChartStyle: ModelElement<DXO13DCS.ChartStyle>
   [DataMember]
   public DMDCS.HiLoLine? HiLoLine
   {
-    get
-    {
-      return _Element?.GetObject<DMDCS.HiLoLine,DXO13DCS.HiLoLine>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCS.HiLoLine,DXO13DCS.HiLoLine>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry");
   }
   
   
@@ -359,14 +239,8 @@ public partial class ChartStyle: ModelElement<DXO13DCS.ChartStyle>
   [DataMember]
   public DMDCS.LeaderLine? LeaderLine
   {
-    get
-    {
-      return _Element?.GetObject<DMDCS.LeaderLine,DXO13DCS.LeaderLine>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCS.LeaderLine,DXO13DCS.LeaderLine>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry");
   }
   
   
@@ -376,14 +250,8 @@ public partial class ChartStyle: ModelElement<DXO13DCS.ChartStyle>
   [DataMember]
   public DMDCS.LegendStyle? LegendStyle
   {
-    get
-    {
-      return _Element?.GetObject<DMDCS.LegendStyle,DXO13DCS.LegendStyle>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCS.LegendStyle,DXO13DCS.LegendStyle>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry");
   }
   
   
@@ -393,14 +261,8 @@ public partial class ChartStyle: ModelElement<DXO13DCS.ChartStyle>
   [DataMember]
   public DMDCS.PlotArea? PlotArea
   {
-    get
-    {
-      return _Element?.GetObject<DMDCS.PlotArea,DXO13DCS.PlotArea>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCS.PlotArea,DXO13DCS.PlotArea>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry");
   }
   
   
@@ -410,14 +272,8 @@ public partial class ChartStyle: ModelElement<DXO13DCS.ChartStyle>
   [DataMember]
   public DMDCS.PlotArea3D? PlotArea3D
   {
-    get
-    {
-      return _Element?.GetObject<DMDCS.PlotArea3D,DXO13DCS.PlotArea3D>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCS.PlotArea3D,DXO13DCS.PlotArea3D>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry");
   }
   
   
@@ -427,14 +283,8 @@ public partial class ChartStyle: ModelElement<DXO13DCS.ChartStyle>
   [DataMember]
   public DMDCS.SeriesAxis? SeriesAxis
   {
-    get
-    {
-      return _Element?.GetObject<DMDCS.SeriesAxis,DXO13DCS.SeriesAxis>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCS.SeriesAxis,DXO13DCS.SeriesAxis>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry");
   }
   
   
@@ -444,14 +294,8 @@ public partial class ChartStyle: ModelElement<DXO13DCS.ChartStyle>
   [DataMember]
   public DMDCS.SeriesLine? SeriesLine
   {
-    get
-    {
-      return _Element?.GetObject<DMDCS.SeriesLine,DXO13DCS.SeriesLine>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCS.SeriesLine,DXO13DCS.SeriesLine>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry");
   }
   
   
@@ -461,14 +305,8 @@ public partial class ChartStyle: ModelElement<DXO13DCS.ChartStyle>
   [DataMember]
   public DMDCS.TitleStyle? TitleStyle
   {
-    get
-    {
-      return _Element?.GetObject<DMDCS.TitleStyle,DXO13DCS.TitleStyle>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCS.TitleStyle,DXO13DCS.TitleStyle>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry");
   }
   
   
@@ -478,14 +316,8 @@ public partial class ChartStyle: ModelElement<DXO13DCS.ChartStyle>
   [DataMember]
   public DMDCS.TrendlineStyle? TrendlineStyle
   {
-    get
-    {
-      return _Element?.GetObject<DMDCS.TrendlineStyle,DXO13DCS.TrendlineStyle>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCS.TrendlineStyle,DXO13DCS.TrendlineStyle>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry");
   }
   
   
@@ -495,14 +327,8 @@ public partial class ChartStyle: ModelElement<DXO13DCS.ChartStyle>
   [DataMember]
   public DMDCS.TrendlineLabel? TrendlineLabel
   {
-    get
-    {
-      return _Element?.GetObject<DMDCS.TrendlineLabel,DXO13DCS.TrendlineLabel>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCS.TrendlineLabel,DXO13DCS.TrendlineLabel>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry");
   }
   
   
@@ -512,14 +338,8 @@ public partial class ChartStyle: ModelElement<DXO13DCS.ChartStyle>
   [DataMember]
   public DMDCS.UpBar? UpBar
   {
-    get
-    {
-      return _Element?.GetObject<DMDCS.UpBar,DXO13DCS.UpBar>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCS.UpBar,DXO13DCS.UpBar>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry");
   }
   
   
@@ -529,14 +349,8 @@ public partial class ChartStyle: ModelElement<DXO13DCS.ChartStyle>
   [DataMember]
   public DMDCS.ValueAxis? ValueAxis
   {
-    get
-    {
-      return _Element?.GetObject<DMDCS.ValueAxis,DXO13DCS.ValueAxis>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCS.ValueAxis,DXO13DCS.ValueAxis>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry");
   }
   
   
@@ -546,14 +360,8 @@ public partial class ChartStyle: ModelElement<DXO13DCS.ChartStyle>
   [DataMember]
   public DMDCS.Wall? Wall
   {
-    get
-    {
-      return _Element?.GetObject<DMDCS.Wall,DXO13DCS.Wall>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCS.Wall,DXO13DCS.Wall>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry");
   }
   
   
@@ -563,14 +371,8 @@ public partial class ChartStyle: ModelElement<DXO13DCS.ChartStyle>
   [DataMember]
   public DMDCS.OfficeArtExtensionList? OfficeArtExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMDCS.OfficeArtExtensionList,DXO13DCS.OfficeArtExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCS.OfficeArtExtensionList,DXO13DCS.OfficeArtExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

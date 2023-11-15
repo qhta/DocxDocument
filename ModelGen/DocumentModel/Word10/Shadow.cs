@@ -19,14 +19,8 @@ public partial class Shadow: ModelElement<DXO10W.Shadow>
   [DataMember]
   public Int64? BlurRadius
   {
-    get
-    {
-      return _Element?.BlurRadius?.Value;
-    }
-    set
-    {
-      _ExistingElement.BlurRadius = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int64]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int64]");
   }
   
   
@@ -36,14 +30,8 @@ public partial class Shadow: ModelElement<DXO10W.Shadow>
   [DataMember]
   public Int64? DistanceFromText
   {
-    get
-    {
-      return _Element?.DistanceFromText?.Value;
-    }
-    set
-    {
-      _ExistingElement.DistanceFromText = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int64]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int64]");
   }
   
   
@@ -53,14 +41,8 @@ public partial class Shadow: ModelElement<DXO10W.Shadow>
   [DataMember]
   public Int32? DirectionAngle
   {
-    get
-    {
-      return _Element?.DirectionAngle?.Value;
-    }
-    set
-    {
-      _ExistingElement.DirectionAngle = value;
-    }
+    get => _Element?.DirectionAngle?.Value;
+    set => _ExistingElement.DirectionAngle = value;
   }
   
   
@@ -70,14 +52,8 @@ public partial class Shadow: ModelElement<DXO10W.Shadow>
   [DataMember]
   public Int32? HorizontalScalingFactor
   {
-    get
-    {
-      return _Element?.HorizontalScalingFactor?.Value;
-    }
-    set
-    {
-      _ExistingElement.HorizontalScalingFactor = value;
-    }
+    get => _Element?.HorizontalScalingFactor?.Value;
+    set => _ExistingElement.HorizontalScalingFactor = value;
   }
   
   
@@ -87,14 +63,8 @@ public partial class Shadow: ModelElement<DXO10W.Shadow>
   [DataMember]
   public Int32? VerticalScalingFactor
   {
-    get
-    {
-      return _Element?.VerticalScalingFactor?.Value;
-    }
-    set
-    {
-      _ExistingElement.VerticalScalingFactor = value;
-    }
+    get => _Element?.VerticalScalingFactor?.Value;
+    set => _ExistingElement.VerticalScalingFactor = value;
   }
   
   
@@ -104,14 +74,8 @@ public partial class Shadow: ModelElement<DXO10W.Shadow>
   [DataMember]
   public Int32? HorizontalSkewAngle
   {
-    get
-    {
-      return _Element?.HorizontalSkewAngle?.Value;
-    }
-    set
-    {
-      _ExistingElement.HorizontalSkewAngle = value;
-    }
+    get => _Element?.HorizontalSkewAngle?.Value;
+    set => _ExistingElement.HorizontalSkewAngle = value;
   }
   
   
@@ -121,14 +85,8 @@ public partial class Shadow: ModelElement<DXO10W.Shadow>
   [DataMember]
   public Int32? VerticalSkewAngle
   {
-    get
-    {
-      return _Element?.VerticalSkewAngle?.Value;
-    }
-    set
-    {
-      _ExistingElement.VerticalSkewAngle = value;
-    }
+    get => _Element?.VerticalSkewAngle?.Value;
+    set => _ExistingElement.VerticalSkewAngle = value;
   }
   
   
@@ -138,14 +96,8 @@ public partial class Shadow: ModelElement<DXO10W.Shadow>
   [DataMember]
   public DM.HexBinary? RgbColorModelHex
   {
-    get
-    {
-      return _Element?.GetObject<DM.HexBinary,DXO10W.RgbColorModelHex>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DM.HexBinary,DXO10W.RgbColorModelHex>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.Object");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.Object");
   }
   
   
@@ -155,14 +107,8 @@ public partial class Shadow: ModelElement<DXO10W.Shadow>
   [DataMember]
   public DMW10.SchemeColorKind? SchemeColor
   {
-    get
-    {
-      throw new NotImplementedException("Not implemented in GenerateEnumPropertyGetCode: propertyType is DocumentFormat.OpenXml.Office2010.Word.SchemeColor");
-    }
-    set
-    {
-      throw new NotImplementedException("Not implemented in GenerateEnumPropertySetCode: propertyType is DocumentFormat.OpenXml.Office2010.Word.SchemeColor");
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertyGetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertySetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

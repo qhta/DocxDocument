@@ -19,14 +19,8 @@ public partial class Run: ModelElement<DXM.Run>
   [DataMember]
   public DMM.RunProperties? MathRunProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMM.RunProperties,DXM.RunProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.RunProperties,DXM.RunProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -36,14 +30,8 @@ public partial class Run: ModelElement<DXM.Run>
   [DataMember]
   public DMW.RunProperties? RunProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMW.RunProperties,DXW.RunProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.RunProperties,DXW.RunProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

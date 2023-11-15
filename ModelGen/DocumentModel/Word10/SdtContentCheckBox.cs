@@ -19,14 +19,8 @@ public partial class SdtContentCheckBox: ModelElement<DXO10W.SdtContentCheckBox>
   [DataMember]
   public DMW10.Checked? Checked
   {
-    get
-    {
-      return _Element?.GetObject<DMW10.Checked,DXO10W.Checked>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW10.Checked,DXO10W.Checked>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2010.Word.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2010.Word.OnOffType");
   }
   
   
@@ -36,14 +30,8 @@ public partial class SdtContentCheckBox: ModelElement<DXO10W.SdtContentCheckBox>
   [DataMember]
   public DMW10.CheckedState? CheckedState
   {
-    get
-    {
-      return _Element?.GetObject<DMW10.CheckedState,DXO10W.CheckedState>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW10.CheckedState,DXO10W.CheckedState>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2010.Word.CheckBoxSymbolType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2010.Word.CheckBoxSymbolType");
   }
   
   
@@ -53,14 +41,8 @@ public partial class SdtContentCheckBox: ModelElement<DXO10W.SdtContentCheckBox>
   [DataMember]
   public DMW10.UncheckedState? UncheckedState
   {
-    get
-    {
-      return _Element?.GetObject<DMW10.UncheckedState,DXO10W.UncheckedState>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW10.UncheckedState,DXO10W.UncheckedState>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2010.Word.CheckBoxSymbolType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2010.Word.CheckBoxSymbolType");
   }
   
 }

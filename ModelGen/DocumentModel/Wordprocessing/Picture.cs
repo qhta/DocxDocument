@@ -19,45 +19,22 @@ public partial class Picture: ModelElement<DXW.Picture>
   [DataMember]
   public DM.HexBinary? AnchorId
   {
-    get
-    {
-      if (_Element?.AnchorId?.Value != null)
-        return HexIntConverter.GetValue(_Element?.AnchorId.Value);
-      return null;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.AnchorId = value.ToString();
-      else
-        _ExistingElement.AnchorId = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   [DataMember]
   public DMW.MovieReference? MovieReference
   {
-    get
-    {
-      return _Element?.GetObject<DMW.MovieReference,DXW.MovieReference>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.MovieReference,DXW.MovieReference>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.RelationshipType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.RelationshipType");
   }
   
   [DataMember]
   public DMW.Control? Control
   {
-    get
-    {
-      return _Element?.GetObject<DMW.Control,DXW.Control>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.Control,DXW.Control>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
 }

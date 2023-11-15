@@ -19,14 +19,8 @@ public partial class WebExtensionStoreReference: ModelElement<DXO13WE.WebExtensi
   [DataMember]
   public String? Id
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Id);
-    }
-    set
-    {
-      _ExistingElement.Id = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Id;
+    set => _ExistingElement.Id = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class WebExtensionStoreReference: ModelElement<DXO13WE.WebExtensi
   [DataMember]
   public String? Version
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Version);
-    }
-    set
-    {
-      _ExistingElement.Version = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Version;
+    set => _ExistingElement.Version = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class WebExtensionStoreReference: ModelElement<DXO13WE.WebExtensi
   [DataMember]
   public String? Store
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Store);
-    }
-    set
-    {
-      _ExistingElement.Store = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Store;
+    set => _ExistingElement.Store = value;
   }
   
   
@@ -70,14 +52,8 @@ public partial class WebExtensionStoreReference: ModelElement<DXO13WE.WebExtensi
   [DataMember]
   public String? StoreType
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.StoreType);
-    }
-    set
-    {
-      _ExistingElement.StoreType = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.StoreType;
+    set => _ExistingElement.StoreType = value;
   }
   
   
@@ -87,14 +63,8 @@ public partial class WebExtensionStoreReference: ModelElement<DXO13WE.WebExtensi
   [DataMember]
   public DMEX.OfficeArtExtensionList? OfficeArtExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMEX.OfficeArtExtensionList,DXO13WE.OfficeArtExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMEX.OfficeArtExtensionList,DXO13WE.OfficeArtExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

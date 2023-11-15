@@ -19,14 +19,8 @@ public partial class ArtisticCement: ModelElement<DXO10D.ArtisticCement>
   [DataMember]
   public Int32? Transparancy
   {
-    get
-    {
-      return _Element?.Transparancy?.Value;
-    }
-    set
-    {
-      _ExistingElement.Transparancy = value;
-    }
+    get => _Element?.Transparancy?.Value;
+    set => _ExistingElement.Transparancy = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class ArtisticCement: ModelElement<DXO10D.ArtisticCement>
   [DataMember]
   public Int32? CrackSpacing
   {
-    get
-    {
-      return _Element?.CrackSpacing?.Value;
-    }
-    set
-    {
-      _ExistingElement.CrackSpacing = value;
-    }
+    get => _Element?.CrackSpacing?.Value;
+    set => _ExistingElement.CrackSpacing = value;
   }
   
 }

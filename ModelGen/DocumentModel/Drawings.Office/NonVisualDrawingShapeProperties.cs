@@ -19,17 +19,8 @@ public partial class NonVisualDrawingShapeProperties: ModelElement<DXOD.NonVisua
   [DataMember]
   public Boolean? TextBox
   {
-    get
-    {
-      return _Element?.TextBox?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.TextBox = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.TextBox = null;
-    }
+    get => _Element?.TextBox?.Value;
+    set => _ExistingElement.TextBox = value;
   }
   
   
@@ -39,14 +30,8 @@ public partial class NonVisualDrawingShapeProperties: ModelElement<DXOD.NonVisua
   [DataMember]
   public DMD.ShapeLocks? ShapeLocks
   {
-    get
-    {
-      return _Element?.GetObject<DMD.ShapeLocks,DXD.ShapeLocks>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.ShapeLocks,DXD.ShapeLocks>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -56,14 +41,8 @@ public partial class NonVisualDrawingShapeProperties: ModelElement<DXOD.NonVisua
   [DataMember]
   public DMD.ExtensionList? ExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMD.ExtensionList,DXD.ExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.ExtensionList,DXD.ExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

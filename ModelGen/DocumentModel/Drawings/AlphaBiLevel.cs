@@ -19,14 +19,8 @@ public partial class AlphaBiLevel: ModelElement<DXD.AlphaBiLevel>
   [DataMember]
   public Int32? Threshold
   {
-    get
-    {
-      return _Element?.Threshold?.Value;
-    }
-    set
-    {
-      _ExistingElement.Threshold = value;
-    }
+    get => _Element?.Threshold?.Value;
+    set => _ExistingElement.Threshold = value;
   }
   
 }

@@ -19,24 +19,8 @@ public partial class ManualLayout: ModelElement<DXDC.ManualLayout>
   [DataMember]
   public DMDC.LayoutTargetKind? LayoutTarget
   {
-    get
-    {
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.LayoutTargetValues, DMDC.LayoutTargetKind>(_ExistingElement.GetFirstChild<DXDC.LayoutTarget>()?.Val?.Value);
-    }
-    set
-    {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.LayoutTarget>();
-      if (itemElement != null)
-      {
-        if (value != null)
-          EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.LayoutTargetValues, DMDC.LayoutTargetKind>(itemElement, (DMDC.LayoutTargetKind)value);
-        else
-          itemElement.Remove();
-      }
-      else
-      if (value != null)
-        _ExistingElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDC.LayoutTarget, DocumentFormat.OpenXml.Drawing.Charts.LayoutTargetValues, DMDC.LayoutTargetKind>((DMDC.LayoutTargetKind)value));
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertyGetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertySetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -46,14 +30,8 @@ public partial class ManualLayout: ModelElement<DXDC.ManualLayout>
   [DataMember]
   public DMDC.LeftMode? LeftMode
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.LeftMode,DXDC.LeftMode>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.LeftMode,DXDC.LeftMode>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.LayoutModeType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.LayoutModeType");
   }
   
   
@@ -63,14 +41,8 @@ public partial class ManualLayout: ModelElement<DXDC.ManualLayout>
   [DataMember]
   public DMDC.TopMode? TopMode
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.TopMode,DXDC.TopMode>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.TopMode,DXDC.TopMode>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.LayoutModeType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.LayoutModeType");
   }
   
   
@@ -80,14 +52,8 @@ public partial class ManualLayout: ModelElement<DXDC.ManualLayout>
   [DataMember]
   public DMDC.WidthMode? WidthMode
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.WidthMode,DXDC.WidthMode>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.WidthMode,DXDC.WidthMode>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.LayoutModeType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.LayoutModeType");
   }
   
   
@@ -97,14 +63,8 @@ public partial class ManualLayout: ModelElement<DXDC.ManualLayout>
   [DataMember]
   public DMDC.HeightMode? HeightMode
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.HeightMode,DXDC.HeightMode>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.HeightMode,DXDC.HeightMode>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.LayoutModeType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.LayoutModeType");
   }
   
   
@@ -114,14 +74,8 @@ public partial class ManualLayout: ModelElement<DXDC.ManualLayout>
   [DataMember]
   public DMDC.Left? Left
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.Left,DXDC.Left>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.Left,DXDC.Left>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.DoubleType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.DoubleType");
   }
   
   
@@ -131,14 +85,8 @@ public partial class ManualLayout: ModelElement<DXDC.ManualLayout>
   [DataMember]
   public DMDC.Top? Top
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.Top,DXDC.Top>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.Top,DXDC.Top>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.DoubleType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.DoubleType");
   }
   
   
@@ -148,14 +96,8 @@ public partial class ManualLayout: ModelElement<DXDC.ManualLayout>
   [DataMember]
   public DMDC.Width? Width
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.Width,DXDC.Width>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.Width,DXDC.Width>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.DoubleType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.DoubleType");
   }
   
   
@@ -165,14 +107,8 @@ public partial class ManualLayout: ModelElement<DXDC.ManualLayout>
   [DataMember]
   public DMDC.Height? Height
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.Height,DXDC.Height>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.Height,DXDC.Height>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.DoubleType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.DoubleType");
   }
   
   
@@ -182,14 +118,8 @@ public partial class ManualLayout: ModelElement<DXDC.ManualLayout>
   [DataMember]
   public DMDC.ExtensionList? ExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.ExtensionList,DXDC.ExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.ExtensionList,DXDC.ExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

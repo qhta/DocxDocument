@@ -15,66 +15,36 @@ public partial class LiveFeedBackgroundProperties: ModelElement<DXO21DL.LiveFeed
   [DataMember]
   public DMD.BackgroundNormalProperties? BackgroundNormalProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMD.BackgroundNormalProperties,DXO21DL.BackgroundNormalProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.BackgroundNormalProperties,DXO21DL.BackgroundNormalProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMD.BackgroundRemovedProperties? BackgroundRemovedProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMD.BackgroundRemovedProperties,DXO21DL.BackgroundRemovedProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.BackgroundRemovedProperties,DXO21DL.BackgroundRemovedProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMD.BackgroundBlurProperties? BackgroundBlurProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMD.BackgroundBlurProperties,DXO21DL.BackgroundBlurProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.BackgroundBlurProperties,DXO21DL.BackgroundBlurProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMD.BackgroundCustomProperties? BackgroundCustomProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMD.BackgroundCustomProperties,DXO21DL.BackgroundCustomProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.BackgroundCustomProperties,DXO21DL.BackgroundCustomProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMD.OfficeArtExtensionList? OfficeArtExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMD.OfficeArtExtensionList,DXO21DL.OfficeArtExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.OfficeArtExtensionList,DXO21DL.OfficeArtExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

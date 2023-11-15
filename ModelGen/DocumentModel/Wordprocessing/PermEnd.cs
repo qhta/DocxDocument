@@ -19,14 +19,8 @@ public partial class PermEnd: ModelElement<DXW.PermEnd>
   [DataMember]
   public Int32? Id
   {
-    get
-    {
-      return _Element?.Id?.Value;
-    }
-    set
-    {
-      _ExistingElement.Id = value;
-    }
+    get => _Element?.Id?.Value;
+    set => _ExistingElement.Id = value;
   }
   
 }

@@ -19,14 +19,8 @@ public partial class OleObject: ModelElement<DXVO.OleObject>
   [DataMember]
   public String? ProgId
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.ProgId);
-    }
-    set
-    {
-      _ExistingElement.ProgId = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.ProgId;
+    set => _ExistingElement.ProgId = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class OleObject: ModelElement<DXVO.OleObject>
   [DataMember]
   public String? ShapeId
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.ShapeId);
-    }
-    set
-    {
-      _ExistingElement.ShapeId = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.ShapeId;
+    set => _ExistingElement.ShapeId = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class OleObject: ModelElement<DXVO.OleObject>
   [DataMember]
   public String? ObjectId
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.ObjectId);
-    }
-    set
-    {
-      _ExistingElement.ObjectId = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.ObjectId;
+    set => _ExistingElement.ObjectId = value;
   }
   
   
@@ -70,14 +52,8 @@ public partial class OleObject: ModelElement<DXVO.OleObject>
   [DataMember]
   public String? Id
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Id);
-    }
-    set
-    {
-      _ExistingElement.Id = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Id;
+    set => _ExistingElement.Id = value;
   }
   
   
@@ -87,14 +63,8 @@ public partial class OleObject: ModelElement<DXVO.OleObject>
   [DataMember]
   public DMVML.LinkType? LinkType
   {
-    get
-    {
-      return _Element?.GetObject<DMVML.LinkType,DXVO.LinkType>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMVML.LinkType,DXVO.LinkType>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
   }
   
   
@@ -104,14 +74,8 @@ public partial class OleObject: ModelElement<DXVO.OleObject>
   [DataMember]
   public DMVML.LockedField? LockedField
   {
-    get
-    {
-      return _Element?.GetObject<DMVML.LockedField,DXVO.LockedField>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMVML.LockedField,DXVO.LockedField>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
   }
   
   
@@ -121,14 +85,8 @@ public partial class OleObject: ModelElement<DXVO.OleObject>
   [DataMember]
   public DMVML.FieldCodes? FieldCodes
   {
-    get
-    {
-      return _Element?.GetObject<DMVML.FieldCodes,DXVO.FieldCodes>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMVML.FieldCodes,DXVO.FieldCodes>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
   }
   
 }

@@ -19,14 +19,8 @@ public partial class Address: ModelElement<DXO16DCD.Address>
   [DataMember]
   public String? Address1
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Address1);
-    }
-    set
-    {
-      _ExistingElement.Address1 = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Address1;
+    set => _ExistingElement.Address1 = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class Address: ModelElement<DXO16DCD.Address>
   [DataMember]
   public String? CountryRegion
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.CountryRegion);
-    }
-    set
-    {
-      _ExistingElement.CountryRegion = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.CountryRegion;
+    set => _ExistingElement.CountryRegion = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class Address: ModelElement<DXO16DCD.Address>
   [DataMember]
   public String? AdminDistrict1
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.AdminDistrict1);
-    }
-    set
-    {
-      _ExistingElement.AdminDistrict1 = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.AdminDistrict1;
+    set => _ExistingElement.AdminDistrict1 = value;
   }
   
   
@@ -70,14 +52,8 @@ public partial class Address: ModelElement<DXO16DCD.Address>
   [DataMember]
   public String? AdminDistrict2
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.AdminDistrict2);
-    }
-    set
-    {
-      _ExistingElement.AdminDistrict2 = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.AdminDistrict2;
+    set => _ExistingElement.AdminDistrict2 = value;
   }
   
   
@@ -87,14 +63,8 @@ public partial class Address: ModelElement<DXO16DCD.Address>
   [DataMember]
   public String? PostalCode
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.PostalCode);
-    }
-    set
-    {
-      _ExistingElement.PostalCode = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.PostalCode;
+    set => _ExistingElement.PostalCode = value;
   }
   
   
@@ -104,14 +74,8 @@ public partial class Address: ModelElement<DXO16DCD.Address>
   [DataMember]
   public String? Locality
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Locality);
-    }
-    set
-    {
-      _ExistingElement.Locality = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Locality;
+    set => _ExistingElement.Locality = value;
   }
   
   
@@ -121,14 +85,8 @@ public partial class Address: ModelElement<DXO16DCD.Address>
   [DataMember]
   public String? IsoCountryCode
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.IsoCountryCode);
-    }
-    set
-    {
-      _ExistingElement.IsoCountryCode = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.IsoCountryCode;
+    set => _ExistingElement.IsoCountryCode = value;
   }
   
 }

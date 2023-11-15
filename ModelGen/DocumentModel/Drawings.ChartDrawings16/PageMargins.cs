@@ -19,14 +19,8 @@ public partial class PageMargins: ModelElement<DXO16DCD.PageMargins>
   [DataMember]
   public Double? L
   {
-    get
-    {
-      return _Element?.L?.Value;
-    }
-    set
-    {
-      _ExistingElement.L = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Double]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Double]");
   }
   
   
@@ -36,14 +30,8 @@ public partial class PageMargins: ModelElement<DXO16DCD.PageMargins>
   [DataMember]
   public Double? R
   {
-    get
-    {
-      return _Element?.R?.Value;
-    }
-    set
-    {
-      _ExistingElement.R = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Double]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Double]");
   }
   
   
@@ -53,14 +41,8 @@ public partial class PageMargins: ModelElement<DXO16DCD.PageMargins>
   [DataMember]
   public Double? T
   {
-    get
-    {
-      return _Element?.T?.Value;
-    }
-    set
-    {
-      _ExistingElement.T = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Double]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Double]");
   }
   
   
@@ -70,14 +52,8 @@ public partial class PageMargins: ModelElement<DXO16DCD.PageMargins>
   [DataMember]
   public Double? B
   {
-    get
-    {
-      return _Element?.B?.Value;
-    }
-    set
-    {
-      _ExistingElement.B = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Double]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Double]");
   }
   
   
@@ -87,14 +63,8 @@ public partial class PageMargins: ModelElement<DXO16DCD.PageMargins>
   [DataMember]
   public Double? Header
   {
-    get
-    {
-      return _Element?.Header?.Value;
-    }
-    set
-    {
-      _ExistingElement.Header = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Double]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Double]");
   }
   
   
@@ -104,14 +74,8 @@ public partial class PageMargins: ModelElement<DXO16DCD.PageMargins>
   [DataMember]
   public Double? Footer
   {
-    get
-    {
-      return _Element?.Footer?.Value;
-    }
-    set
-    {
-      _ExistingElement.Footer = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Double]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Double]");
   }
   
 }

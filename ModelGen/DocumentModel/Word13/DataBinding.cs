@@ -19,14 +19,8 @@ public partial class DataBinding: ModelElement<DXO13W.DataBinding>
   [DataMember]
   public String? PrefixMappings
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.PrefixMappings);
-    }
-    set
-    {
-      _ExistingElement.PrefixMappings = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.PrefixMappings;
+    set => _ExistingElement.PrefixMappings = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class DataBinding: ModelElement<DXO13W.DataBinding>
   [DataMember]
   public String? XPath
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.XPath);
-    }
-    set
-    {
-      _ExistingElement.XPath = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.XPath;
+    set => _ExistingElement.XPath = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class DataBinding: ModelElement<DXO13W.DataBinding>
   [DataMember]
   public String? StoreItemId
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.StoreItemId);
-    }
-    set
-    {
-      _ExistingElement.StoreItemId = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.StoreItemId;
+    set => _ExistingElement.StoreItemId = value;
   }
   
 }

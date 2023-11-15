@@ -19,14 +19,8 @@ public partial class DialogBoxLauncher: ModelElement<DXO10CUI.DialogBoxLauncher>
   [DataMember]
   public DMCUI10.ButtonRegular? ButtonRegular
   {
-    get
-    {
-      return _Element?.GetObject<DMCUI10.ButtonRegular,DXO10CUI.ButtonRegular>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMCUI10.ButtonRegular,DXO10CUI.ButtonRegular>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
 }

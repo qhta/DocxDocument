@@ -19,14 +19,8 @@ public partial class ScriptLink: ModelElement<DXOD21SL.ScriptLink>
   [DataMember]
   public String? Val
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Val);
-    }
-    set
-    {
-      _ExistingElement.Val = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Val;
+    set => _ExistingElement.Val = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class ScriptLink: ModelElement<DXOD21SL.ScriptLink>
   [DataMember]
   public DMDSL.OfficeArtExtensionList? OfficeArtExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMDSL.OfficeArtExtensionList,DXOD21SL.OfficeArtExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDSL.OfficeArtExtensionList,DXOD21SL.OfficeArtExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

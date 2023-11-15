@@ -19,14 +19,8 @@ public partial class ClipPath: ModelElement<DXVO.ClipPath>
   [DataMember]
   public String? Value
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Value);
-    }
-    set
-    {
-      _ExistingElement.Value = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Value;
+    set => _ExistingElement.Value = value;
   }
   
 }

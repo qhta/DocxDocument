@@ -19,14 +19,8 @@ public partial class ColorStyle: ModelElement<DXO13DCS.ColorStyle>
   [DataMember]
   public String? Method
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Method);
-    }
-    set
-    {
-      _ExistingElement.Method = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Method;
+    set => _ExistingElement.Method = value;
   }
   
   
@@ -36,27 +30,15 @@ public partial class ColorStyle: ModelElement<DXO13DCS.ColorStyle>
   [DataMember]
   public UInt32? Id
   {
-    get
-    {
-      return _Element?.Id?.Value;
-    }
-    set
-    {
-      _ExistingElement.Id = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
   }
   
   [DataMember]
   public DMDCS.OfficeArtExtensionList? OfficeArtExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMDCS.OfficeArtExtensionList,DXO13DCS.OfficeArtExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCS.OfficeArtExtensionList,DXO13DCS.OfficeArtExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

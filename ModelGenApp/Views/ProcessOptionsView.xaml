@@ -29,7 +29,7 @@
   <Grid>
     <Border BorderBrush="Black"
             BorderThickness="0.5"
-            Background="LightGray">
+            Background="WhiteSmoke">
       <Grid>
         <Grid.RowDefinitions>
           <RowDefinition Height="Auto" />

@@ -19,14 +19,8 @@ public partial class Path: ModelElement<DXD.Path>
   [DataMember]
   public Int64? Width
   {
-    get
-    {
-      return _Element?.Width?.Value;
-    }
-    set
-    {
-      _ExistingElement.Width = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int64]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int64]");
   }
   
   
@@ -36,14 +30,8 @@ public partial class Path: ModelElement<DXD.Path>
   [DataMember]
   public Int64? Height
   {
-    get
-    {
-      return _Element?.Height?.Value;
-    }
-    set
-    {
-      _ExistingElement.Height = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int64]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int64]");
   }
   
   
@@ -53,17 +41,8 @@ public partial class Path: ModelElement<DXD.Path>
   [DataMember]
   public Boolean? Stroke
   {
-    get
-    {
-      return _Element?.Stroke?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Stroke = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.Stroke = null;
-    }
+    get => _Element?.Stroke?.Value;
+    set => _ExistingElement.Stroke = value;
   }
   
   
@@ -73,17 +52,8 @@ public partial class Path: ModelElement<DXD.Path>
   [DataMember]
   public Boolean? ExtrusionOk
   {
-    get
-    {
-      return _Element?.ExtrusionOk?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.ExtrusionOk = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.ExtrusionOk = null;
-    }
+    get => _Element?.ExtrusionOk?.Value;
+    set => _ExistingElement.ExtrusionOk = value;
   }
   
 }

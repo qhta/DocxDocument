@@ -19,14 +19,8 @@ public partial class TintEffect: ModelElement<DXD.TintEffect>
   [DataMember]
   public Int32? Hue
   {
-    get
-    {
-      return _Element?.Hue?.Value;
-    }
-    set
-    {
-      _ExistingElement.Hue = value;
-    }
+    get => _Element?.Hue?.Value;
+    set => _ExistingElement.Hue = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class TintEffect: ModelElement<DXD.TintEffect>
   [DataMember]
   public Int32? Amount
   {
-    get
-    {
-      return _Element?.Amount?.Value;
-    }
-    set
-    {
-      _ExistingElement.Amount = value;
-    }
+    get => _Element?.Amount?.Value;
+    set => _ExistingElement.Amount = value;
   }
   
 }

@@ -19,14 +19,8 @@ public partial class NonVisualDrawingProperties: ModelElement<DXO10DCD.NonVisual
   [DataMember]
   public UInt32? Id
   {
-    get
-    {
-      return _Element?.Id?.Value;
-    }
-    set
-    {
-      _ExistingElement.Id = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
   }
   
   
@@ -36,14 +30,8 @@ public partial class NonVisualDrawingProperties: ModelElement<DXO10DCD.NonVisual
   [DataMember]
   public String? Name
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Name);
-    }
-    set
-    {
-      _ExistingElement.Name = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Name;
+    set => _ExistingElement.Name = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class NonVisualDrawingProperties: ModelElement<DXO10DCD.NonVisual
   [DataMember]
   public String? Description
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Description);
-    }
-    set
-    {
-      _ExistingElement.Description = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Description;
+    set => _ExistingElement.Description = value;
   }
   
   
@@ -70,17 +52,8 @@ public partial class NonVisualDrawingProperties: ModelElement<DXO10DCD.NonVisual
   [DataMember]
   public Boolean? Hidden
   {
-    get
-    {
-      return _Element?.Hidden?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Hidden = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.Hidden = null;
-    }
+    get => _Element?.Hidden?.Value;
+    set => _ExistingElement.Hidden = value;
   }
   
   
@@ -90,14 +63,8 @@ public partial class NonVisualDrawingProperties: ModelElement<DXO10DCD.NonVisual
   [DataMember]
   public String? Title
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Title);
-    }
-    set
-    {
-      _ExistingElement.Title = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Title;
+    set => _ExistingElement.Title = value;
   }
   
   
@@ -107,14 +74,8 @@ public partial class NonVisualDrawingProperties: ModelElement<DXO10DCD.NonVisual
   [DataMember]
   public DMD.HyperlinkOnClick? HyperlinkOnClick
   {
-    get
-    {
-      return _Element?.GetObject<DMD.HyperlinkOnClick,DXD.HyperlinkOnClick>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.HyperlinkOnClick,DXD.HyperlinkOnClick>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.HyperlinkType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.HyperlinkType");
   }
   
   
@@ -124,14 +85,8 @@ public partial class NonVisualDrawingProperties: ModelElement<DXO10DCD.NonVisual
   [DataMember]
   public DMD.HyperlinkOnHover? HyperlinkOnHover
   {
-    get
-    {
-      return _Element?.GetObject<DMD.HyperlinkOnHover,DXD.HyperlinkOnHover>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.HyperlinkOnHover,DXD.HyperlinkOnHover>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.HyperlinkType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.HyperlinkType");
   }
   
   
@@ -141,14 +96,8 @@ public partial class NonVisualDrawingProperties: ModelElement<DXO10DCD.NonVisual
   [DataMember]
   public DMD.NonVisualDrawingPropertiesExtensionList? NonVisualDrawingPropertiesExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMD.NonVisualDrawingPropertiesExtensionList,DXD.NonVisualDrawingPropertiesExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.NonVisualDrawingPropertiesExtensionList,DXD.NonVisualDrawingPropertiesExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

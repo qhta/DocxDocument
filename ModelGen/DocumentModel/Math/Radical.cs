@@ -19,14 +19,8 @@ public partial class Radical: ModelElement<DXM.Radical>
   [DataMember]
   public DMM.RadicalProperties? RadicalProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMM.RadicalProperties,DXM.RadicalProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.RadicalProperties,DXM.RadicalProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -36,14 +30,8 @@ public partial class Radical: ModelElement<DXM.Radical>
   [DataMember]
   public DMM.Degree? Degree
   {
-    get
-    {
-      return _Element?.GetObject<DMM.Degree,DXM.Degree>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.Degree,DXM.Degree>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OfficeMathArgumentType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OfficeMathArgumentType");
   }
   
   
@@ -53,14 +41,8 @@ public partial class Radical: ModelElement<DXM.Radical>
   [DataMember]
   public DMM.Base? Base
   {
-    get
-    {
-      return _Element?.GetObject<DMM.Base,DXM.Base>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.Base,DXM.Base>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OfficeMathArgumentType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OfficeMathArgumentType");
   }
   
 }

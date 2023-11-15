@@ -19,17 +19,8 @@ public partial class GradientFill: ModelElement<DXD.GradientFill>
   [DataMember]
   public Boolean? RotateWithShape
   {
-    get
-    {
-      return _Element?.RotateWithShape?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.RotateWithShape = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.RotateWithShape = null;
-    }
+    get => _Element?.RotateWithShape?.Value;
+    set => _ExistingElement.RotateWithShape = value;
   }
   
   
@@ -39,53 +30,29 @@ public partial class GradientFill: ModelElement<DXD.GradientFill>
   [DataMember]
   public DMD.GradientStopList? GradientStopList
   {
-    get
-    {
-      return _Element?.GetObject<DMD.GradientStopList,DXD.GradientStopList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.GradientStopList,DXD.GradientStopList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMD.LinearGradientFill? LinearGradientFill
   {
-    get
-    {
-      return _Element?.GetObject<DMD.LinearGradientFill,DXD.LinearGradientFill>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.LinearGradientFill,DXD.LinearGradientFill>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   [DataMember]
   public DMD.PathGradientFill? PathGradientFill
   {
-    get
-    {
-      return _Element?.GetObject<DMD.PathGradientFill,DXD.PathGradientFill>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.PathGradientFill,DXD.PathGradientFill>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMD.TileRectangle? TileRectangle
   {
-    get
-    {
-      return _Element?.GetObject<DMD.TileRectangle,DXD.TileRectangle>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.TileRectangle,DXD.TileRectangle>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.RelativeRectangleType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.RelativeRectangleType");
   }
   
 }

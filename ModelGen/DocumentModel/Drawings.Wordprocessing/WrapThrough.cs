@@ -19,14 +19,8 @@ public partial class WrapThrough: ModelElement<DXDW.WrapThrough>
   [DataMember]
   public UInt32? DistanceFromLeft
   {
-    get
-    {
-      return _Element?.DistanceFromLeft?.Value;
-    }
-    set
-    {
-      _ExistingElement.DistanceFromLeft = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
   }
   
   
@@ -36,14 +30,8 @@ public partial class WrapThrough: ModelElement<DXDW.WrapThrough>
   [DataMember]
   public UInt32? DistanceFromRight
   {
-    get
-    {
-      return _Element?.DistanceFromRight?.Value;
-    }
-    set
-    {
-      _ExistingElement.DistanceFromRight = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
   }
   
   
@@ -53,14 +41,8 @@ public partial class WrapThrough: ModelElement<DXDW.WrapThrough>
   [DataMember]
   public DMDW.WrapPolygon? WrapPolygon
   {
-    get
-    {
-      return _Element?.GetObject<DMDW.WrapPolygon,DXDW.WrapPolygon>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDW.WrapPolygon,DXDW.WrapPolygon>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

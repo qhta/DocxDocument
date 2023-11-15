@@ -19,14 +19,8 @@ public partial class MenuSeparator: ModelElement<DXOCUI.MenuSeparator>
   [DataMember]
   public String? Id
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Id);
-    }
-    set
-    {
-      _ExistingElement.Id = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Id;
+    set => _ExistingElement.Id = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class MenuSeparator: ModelElement<DXOCUI.MenuSeparator>
   [DataMember]
   public String? IdQ
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.IdQ);
-    }
-    set
-    {
-      _ExistingElement.IdQ = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.IdQ;
+    set => _ExistingElement.IdQ = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class MenuSeparator: ModelElement<DXOCUI.MenuSeparator>
   [DataMember]
   public String? InsertAfterMso
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.InsertAfterMso);
-    }
-    set
-    {
-      _ExistingElement.InsertAfterMso = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.InsertAfterMso;
+    set => _ExistingElement.InsertAfterMso = value;
   }
   
   
@@ -70,14 +52,8 @@ public partial class MenuSeparator: ModelElement<DXOCUI.MenuSeparator>
   [DataMember]
   public String? InsertBeforeMso
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.InsertBeforeMso);
-    }
-    set
-    {
-      _ExistingElement.InsertBeforeMso = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.InsertBeforeMso;
+    set => _ExistingElement.InsertBeforeMso = value;
   }
   
   
@@ -87,14 +63,8 @@ public partial class MenuSeparator: ModelElement<DXOCUI.MenuSeparator>
   [DataMember]
   public String? InsertAfterQ
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.InsertAfterQ);
-    }
-    set
-    {
-      _ExistingElement.InsertAfterQ = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.InsertAfterQ;
+    set => _ExistingElement.InsertAfterQ = value;
   }
   
   
@@ -104,14 +74,8 @@ public partial class MenuSeparator: ModelElement<DXOCUI.MenuSeparator>
   [DataMember]
   public String? InsertBeforeQ
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.InsertBeforeQ);
-    }
-    set
-    {
-      _ExistingElement.InsertBeforeQ = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.InsertBeforeQ;
+    set => _ExistingElement.InsertBeforeQ = value;
   }
   
   
@@ -121,14 +85,8 @@ public partial class MenuSeparator: ModelElement<DXOCUI.MenuSeparator>
   [DataMember]
   public String? Title
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Title);
-    }
-    set
-    {
-      _ExistingElement.Title = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Title;
+    set => _ExistingElement.Title = value;
   }
   
   
@@ -138,14 +96,8 @@ public partial class MenuSeparator: ModelElement<DXOCUI.MenuSeparator>
   [DataMember]
   public String? GetTitle
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.GetTitle);
-    }
-    set
-    {
-      _ExistingElement.GetTitle = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.GetTitle;
+    set => _ExistingElement.GetTitle = value;
   }
   
 }

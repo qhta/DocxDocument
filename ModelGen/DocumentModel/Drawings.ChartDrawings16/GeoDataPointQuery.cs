@@ -19,14 +19,8 @@ public partial class GeoDataPointQuery: ModelElement<DXO16DCD.GeoDataPointQuery>
   [DataMember]
   public Double? Latitude
   {
-    get
-    {
-      return _Element?.Latitude?.Value;
-    }
-    set
-    {
-      _ExistingElement.Latitude = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Double]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Double]");
   }
   
   
@@ -36,14 +30,8 @@ public partial class GeoDataPointQuery: ModelElement<DXO16DCD.GeoDataPointQuery>
   [DataMember]
   public Double? Longitude
   {
-    get
-    {
-      return _Element?.Longitude?.Value;
-    }
-    set
-    {
-      _ExistingElement.Longitude = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Double]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Double]");
   }
   
 }

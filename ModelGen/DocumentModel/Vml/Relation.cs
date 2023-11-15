@@ -19,14 +19,8 @@ public partial class Relation: ModelElement<DXVO.Relation>
   [DataMember]
   public String? SourceId
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.SourceId);
-    }
-    set
-    {
-      _ExistingElement.SourceId = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.SourceId;
+    set => _ExistingElement.SourceId = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class Relation: ModelElement<DXVO.Relation>
   [DataMember]
   public String? DestinationId
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.DestinationId);
-    }
-    set
-    {
-      _ExistingElement.DestinationId = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.DestinationId;
+    set => _ExistingElement.DestinationId = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class Relation: ModelElement<DXVO.Relation>
   [DataMember]
   public String? CenterShapeId
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.CenterShapeId);
-    }
-    set
-    {
-      _ExistingElement.CenterShapeId = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.CenterShapeId;
+    set => _ExistingElement.CenterShapeId = value;
   }
   
 }

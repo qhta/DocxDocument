@@ -19,79 +19,43 @@ public partial class NonVisualPicturePropertiesExtension: ModelElement<DXD.NonVi
   [DataMember]
   public String? Uri
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Uri);
-    }
-    set
-    {
-      _ExistingElement.Uri = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Uri;
+    set => _ExistingElement.Uri = value;
   }
   
   [DataMember]
   public DMD10.CameraTool? CameraTool
   {
-    get
-    {
-      return _Element?.GetObject<DMD10.CameraTool,DXO10D.CameraTool>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD10.CameraTool,DXO10D.CameraTool>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   [DataMember]
   public DMD.SignatureLine? SignatureLine
   {
-    get
-    {
-      return _Element?.GetObject<DMD.SignatureLine,DXO13D.SignatureLine>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.SignatureLine,DXO13D.SignatureLine>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   [DataMember]
   public DMD.ObjectProperties? ObjectProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMD.ObjectProperties,DXO13D.ObjectProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.ObjectProperties,DXO13D.ObjectProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   [DataMember]
   public DMD.LiveFeedProperties? LiveFeedProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMD.LiveFeedProperties,DXO21DL.LiveFeedProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.LiveFeedProperties,DXO21DL.LiveFeedProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMDIF.ImageFormula? ImageFormula
   {
-    get
-    {
-      return _Element?.GetObject<DMDIF.ImageFormula,DXOD22IF.ImageFormula>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDIF.ImageFormula,DXOD22IF.ImageFormula>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
 }

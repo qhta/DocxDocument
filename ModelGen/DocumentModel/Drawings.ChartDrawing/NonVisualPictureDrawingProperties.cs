@@ -19,17 +19,8 @@ public partial class NonVisualPictureDrawingProperties: ModelElement<DXDCD.NonVi
   [DataMember]
   public Boolean? PreferRelativeResize
   {
-    get
-    {
-      return _Element?.PreferRelativeResize?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.PreferRelativeResize = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.PreferRelativeResize = null;
-    }
+    get => _Element?.PreferRelativeResize?.Value;
+    set => _ExistingElement.PreferRelativeResize = value;
   }
   
   
@@ -39,14 +30,8 @@ public partial class NonVisualPictureDrawingProperties: ModelElement<DXDCD.NonVi
   [DataMember]
   public DMD.PictureLocks? PictureLocks
   {
-    get
-    {
-      return _Element?.GetObject<DMD.PictureLocks,DXD.PictureLocks>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.PictureLocks,DXD.PictureLocks>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -56,14 +41,8 @@ public partial class NonVisualPictureDrawingProperties: ModelElement<DXDCD.NonVi
   [DataMember]
   public DMD.NonVisualPicturePropertiesExtensionList? NonVisualPicturePropertiesExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMD.NonVisualPicturePropertiesExtensionList,DXD.NonVisualPicturePropertiesExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.NonVisualPicturePropertiesExtensionList,DXD.NonVisualPicturePropertiesExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

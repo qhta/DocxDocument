@@ -19,14 +19,8 @@ public partial class PreviousParagraphMarkRunProperties: ModelElement<DXW.Previo
   [DataMember]
   public DMW.Inserted? Inserted
   {
-    get
-    {
-      return _Element?.GetObject<DMW.Inserted,DXW.Inserted>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.Inserted,DXW.Inserted>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.TrackChangeType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.TrackChangeType");
   }
   
   
@@ -36,14 +30,8 @@ public partial class PreviousParagraphMarkRunProperties: ModelElement<DXW.Previo
   [DataMember]
   public DMW.Deleted? Deleted
   {
-    get
-    {
-      return _Element?.GetObject<DMW.Deleted,DXW.Deleted>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.Deleted,DXW.Deleted>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.TrackChangeType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.TrackChangeType");
   }
   
   
@@ -53,14 +41,8 @@ public partial class PreviousParagraphMarkRunProperties: ModelElement<DXW.Previo
   [DataMember]
   public DMW.MoveFrom? MoveFrom
   {
-    get
-    {
-      return _Element?.GetObject<DMW.MoveFrom,DXW.MoveFrom>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.MoveFrom,DXW.MoveFrom>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.TrackChangeType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.TrackChangeType");
   }
   
   
@@ -70,40 +52,22 @@ public partial class PreviousParagraphMarkRunProperties: ModelElement<DXW.Previo
   [DataMember]
   public DMW.MoveTo? MoveTo
   {
-    get
-    {
-      return _Element?.GetObject<DMW.MoveTo,DXW.MoveTo>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.MoveTo,DXW.MoveTo>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.TrackChangeType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.TrackChangeType");
   }
   
   [DataMember]
   public DMW10.ConflictInsertion? ConflictInsertion
   {
-    get
-    {
-      return _Element?.GetObject<DMW10.ConflictInsertion,DXO10W.ConflictInsertion>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW10.ConflictInsertion,DXO10W.ConflictInsertion>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2010.Word.TrackChangeType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2010.Word.TrackChangeType");
   }
   
   [DataMember]
   public DMW10.ConflictDeletion? ConflictDeletion
   {
-    get
-    {
-      return _Element?.GetObject<DMW10.ConflictDeletion,DXO10W.ConflictDeletion>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW10.ConflictDeletion,DXO10W.ConflictDeletion>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2010.Word.TrackChangeType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2010.Word.TrackChangeType");
   }
   
 }

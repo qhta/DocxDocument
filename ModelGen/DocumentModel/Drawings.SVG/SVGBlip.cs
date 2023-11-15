@@ -19,14 +19,8 @@ public partial class SVGBlip: ModelElement<DXO19DSVG.SVGBlip>
   [DataMember]
   public String? Embed
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Embed);
-    }
-    set
-    {
-      _ExistingElement.Embed = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Embed;
+    set => _ExistingElement.Embed = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class SVGBlip: ModelElement<DXO19DSVG.SVGBlip>
   [DataMember]
   public String? Link
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Link);
-    }
-    set
-    {
-      _ExistingElement.Link = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Link;
+    set => _ExistingElement.Link = value;
   }
   
 }

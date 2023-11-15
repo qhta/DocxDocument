@@ -19,14 +19,8 @@ public partial class SeriesText: ModelElement<DXDC.SeriesText>
   [DataMember]
   public DMDC.StringReference? StringReference
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.StringReference,DXDC.StringReference>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.StringReference,DXDC.StringReference>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -36,14 +30,8 @@ public partial class SeriesText: ModelElement<DXDC.SeriesText>
   [DataMember]
   public DM.NumericValue? NumericValue
   {
-    get
-    {
-      return NumericValueConverter.GetValue(_Element?.NumericValue);
-    }
-    set
-    {
-      _ExistingElement.NumericValue = NumericValueConverter.CreateOpenXmlElement<DXDC.NumericValue>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
 }

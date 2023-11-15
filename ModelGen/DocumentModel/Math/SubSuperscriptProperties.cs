@@ -19,14 +19,8 @@ public partial class SubSuperscriptProperties: ModelElement<DXM.SubSuperscriptPr
   [DataMember]
   public DMM.AlignScripts? AlignScripts
   {
-    get
-    {
-      return _Element?.GetObject<DMM.AlignScripts,DXM.AlignScripts>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.AlignScripts,DXM.AlignScripts>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OnOffType");
   }
   
   
@@ -36,14 +30,8 @@ public partial class SubSuperscriptProperties: ModelElement<DXM.SubSuperscriptPr
   [DataMember]
   public DMM.ControlProperties? ControlProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMM.ControlProperties,DXM.ControlProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.ControlProperties,DXM.ControlProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

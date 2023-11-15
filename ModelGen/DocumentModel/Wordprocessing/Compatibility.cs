@@ -19,14 +19,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public DMW.UseSingleBorderForContiguousCells? UseSingleBorderForContiguousCells
   {
-    get
-    {
-      return _Element?.GetObject<DMW.UseSingleBorderForContiguousCells,DXW.UseSingleBorderForContiguousCells>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.UseSingleBorderForContiguousCells,DXW.UseSingleBorderForContiguousCells>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -36,14 +30,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public DMW.WordPerfectJustification? WordPerfectJustification
   {
-    get
-    {
-      return _Element?.GetObject<DMW.WordPerfectJustification,DXW.WordPerfectJustification>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.WordPerfectJustification,DXW.WordPerfectJustification>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -53,14 +41,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public DMW.NoTabHangIndent? NoTabHangIndent
   {
-    get
-    {
-      return _Element?.GetObject<DMW.NoTabHangIndent,DXW.NoTabHangIndent>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.NoTabHangIndent,DXW.NoTabHangIndent>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -70,14 +52,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public DMW.NoLeading? NoLeading
   {
-    get
-    {
-      return _Element?.GetObject<DMW.NoLeading,DXW.NoLeading>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.NoLeading,DXW.NoLeading>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -87,14 +63,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public DMW.SpaceForUnderline? SpaceForUnderline
   {
-    get
-    {
-      return _Element?.GetObject<DMW.SpaceForUnderline,DXW.SpaceForUnderline>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.SpaceForUnderline,DXW.SpaceForUnderline>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -104,14 +74,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public DMW.NoColumnBalance? NoColumnBalance
   {
-    get
-    {
-      return _Element?.GetObject<DMW.NoColumnBalance,DXW.NoColumnBalance>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.NoColumnBalance,DXW.NoColumnBalance>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -121,14 +85,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public DMW.BalanceSingleByteDoubleByteWidth? BalanceSingleByteDoubleByteWidth
   {
-    get
-    {
-      return _Element?.GetObject<DMW.BalanceSingleByteDoubleByteWidth,DXW.BalanceSingleByteDoubleByteWidth>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.BalanceSingleByteDoubleByteWidth,DXW.BalanceSingleByteDoubleByteWidth>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -138,14 +96,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public DMW.NoExtraLineSpacing? NoExtraLineSpacing
   {
-    get
-    {
-      return _Element?.GetObject<DMW.NoExtraLineSpacing,DXW.NoExtraLineSpacing>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.NoExtraLineSpacing,DXW.NoExtraLineSpacing>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -155,14 +107,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public DMW.DoNotLeaveBackslashAlone? DoNotLeaveBackslashAlone
   {
-    get
-    {
-      return _Element?.GetObject<DMW.DoNotLeaveBackslashAlone,DXW.DoNotLeaveBackslashAlone>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.DoNotLeaveBackslashAlone,DXW.DoNotLeaveBackslashAlone>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -172,14 +118,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public DMW.UnderlineTrailingSpaces? UnderlineTrailingSpaces
   {
-    get
-    {
-      return _Element?.GetObject<DMW.UnderlineTrailingSpaces,DXW.UnderlineTrailingSpaces>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.UnderlineTrailingSpaces,DXW.UnderlineTrailingSpaces>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -189,14 +129,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public DMW.DoNotExpandShiftReturn? DoNotExpandShiftReturn
   {
-    get
-    {
-      return _Element?.GetObject<DMW.DoNotExpandShiftReturn,DXW.DoNotExpandShiftReturn>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.DoNotExpandShiftReturn,DXW.DoNotExpandShiftReturn>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -206,14 +140,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public DMW.SpacingInWholePoints? SpacingInWholePoints
   {
-    get
-    {
-      return _Element?.GetObject<DMW.SpacingInWholePoints,DXW.SpacingInWholePoints>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.SpacingInWholePoints,DXW.SpacingInWholePoints>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -223,14 +151,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public DMW.LineWrapLikeWord6? LineWrapLikeWord6
   {
-    get
-    {
-      return _Element?.GetObject<DMW.LineWrapLikeWord6,DXW.LineWrapLikeWord6>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.LineWrapLikeWord6,DXW.LineWrapLikeWord6>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -240,14 +162,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public DMW.PrintBodyTextBeforeHeader? PrintBodyTextBeforeHeader
   {
-    get
-    {
-      return _Element?.GetObject<DMW.PrintBodyTextBeforeHeader,DXW.PrintBodyTextBeforeHeader>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.PrintBodyTextBeforeHeader,DXW.PrintBodyTextBeforeHeader>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -257,14 +173,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public DMW.PrintColorBlackWhite? PrintColorBlackWhite
   {
-    get
-    {
-      return _Element?.GetObject<DMW.PrintColorBlackWhite,DXW.PrintColorBlackWhite>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.PrintColorBlackWhite,DXW.PrintColorBlackWhite>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -274,14 +184,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public DMW.WordPerfectSpaceWidth? WordPerfectSpaceWidth
   {
-    get
-    {
-      return _Element?.GetObject<DMW.WordPerfectSpaceWidth,DXW.WordPerfectSpaceWidth>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.WordPerfectSpaceWidth,DXW.WordPerfectSpaceWidth>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -291,14 +195,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public DMW.ShowBreaksInFrames? ShowBreaksInFrames
   {
-    get
-    {
-      return _Element?.GetObject<DMW.ShowBreaksInFrames,DXW.ShowBreaksInFrames>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.ShowBreaksInFrames,DXW.ShowBreaksInFrames>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -308,14 +206,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public DMW.SubFontBySize? SubFontBySize
   {
-    get
-    {
-      return _Element?.GetObject<DMW.SubFontBySize,DXW.SubFontBySize>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.SubFontBySize,DXW.SubFontBySize>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -325,14 +217,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public DMW.SuppressBottomSpacing? SuppressBottomSpacing
   {
-    get
-    {
-      return _Element?.GetObject<DMW.SuppressBottomSpacing,DXW.SuppressBottomSpacing>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.SuppressBottomSpacing,DXW.SuppressBottomSpacing>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -342,14 +228,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public DMW.SuppressTopSpacing? SuppressTopSpacing
   {
-    get
-    {
-      return _Element?.GetObject<DMW.SuppressTopSpacing,DXW.SuppressTopSpacing>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.SuppressTopSpacing,DXW.SuppressTopSpacing>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -359,14 +239,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public DMW.SuppressSpacingAtTopOfPage? SuppressSpacingAtTopOfPage
   {
-    get
-    {
-      return _Element?.GetObject<DMW.SuppressSpacingAtTopOfPage,DXW.SuppressSpacingAtTopOfPage>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.SuppressSpacingAtTopOfPage,DXW.SuppressSpacingAtTopOfPage>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -376,14 +250,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public DMW.SuppressTopSpacingWordPerfect? SuppressTopSpacingWordPerfect
   {
-    get
-    {
-      return _Element?.GetObject<DMW.SuppressTopSpacingWordPerfect,DXW.SuppressTopSpacingWordPerfect>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.SuppressTopSpacingWordPerfect,DXW.SuppressTopSpacingWordPerfect>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -393,14 +261,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public DMW.SuppressSpacingBeforeAfterPageBreak? SuppressSpacingBeforeAfterPageBreak
   {
-    get
-    {
-      return _Element?.GetObject<DMW.SuppressSpacingBeforeAfterPageBreak,DXW.SuppressSpacingBeforeAfterPageBreak>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.SuppressSpacingBeforeAfterPageBreak,DXW.SuppressSpacingBeforeAfterPageBreak>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -410,14 +272,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public DMW.SwapBordersFacingPages? SwapBordersFacingPages
   {
-    get
-    {
-      return _Element?.GetObject<DMW.SwapBordersFacingPages,DXW.SwapBordersFacingPages>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.SwapBordersFacingPages,DXW.SwapBordersFacingPages>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -427,14 +283,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public DMW.ConvertMailMergeEscape? ConvertMailMergeEscape
   {
-    get
-    {
-      return _Element?.GetObject<DMW.ConvertMailMergeEscape,DXW.ConvertMailMergeEscape>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.ConvertMailMergeEscape,DXW.ConvertMailMergeEscape>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -444,14 +294,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public DMW.TruncateFontHeightsLikeWordPerfect? TruncateFontHeightsLikeWordPerfect
   {
-    get
-    {
-      return _Element?.GetObject<DMW.TruncateFontHeightsLikeWordPerfect,DXW.TruncateFontHeightsLikeWordPerfect>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.TruncateFontHeightsLikeWordPerfect,DXW.TruncateFontHeightsLikeWordPerfect>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -461,14 +305,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public DMW.MacWordSmallCaps? MacWordSmallCaps
   {
-    get
-    {
-      return _Element?.GetObject<DMW.MacWordSmallCaps,DXW.MacWordSmallCaps>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.MacWordSmallCaps,DXW.MacWordSmallCaps>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -478,14 +316,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public DMW.UsePrinterMetrics? UsePrinterMetrics
   {
-    get
-    {
-      return _Element?.GetObject<DMW.UsePrinterMetrics,DXW.UsePrinterMetrics>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.UsePrinterMetrics,DXW.UsePrinterMetrics>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -495,14 +327,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public DMW.DoNotSuppressParagraphBorders? DoNotSuppressParagraphBorders
   {
-    get
-    {
-      return _Element?.GetObject<DMW.DoNotSuppressParagraphBorders,DXW.DoNotSuppressParagraphBorders>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.DoNotSuppressParagraphBorders,DXW.DoNotSuppressParagraphBorders>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -512,14 +338,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public DMW.WrapTrailSpaces? WrapTrailSpaces
   {
-    get
-    {
-      return _Element?.GetObject<DMW.WrapTrailSpaces,DXW.WrapTrailSpaces>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.WrapTrailSpaces,DXW.WrapTrailSpaces>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -529,14 +349,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public DMW.FootnoteLayoutLikeWord8? FootnoteLayoutLikeWord8
   {
-    get
-    {
-      return _Element?.GetObject<DMW.FootnoteLayoutLikeWord8,DXW.FootnoteLayoutLikeWord8>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.FootnoteLayoutLikeWord8,DXW.FootnoteLayoutLikeWord8>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -546,14 +360,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public DMW.ShapeLayoutLikeWord8? ShapeLayoutLikeWord8
   {
-    get
-    {
-      return _Element?.GetObject<DMW.ShapeLayoutLikeWord8,DXW.ShapeLayoutLikeWord8>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.ShapeLayoutLikeWord8,DXW.ShapeLayoutLikeWord8>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -563,14 +371,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public DMW.AlignTablesRowByRow? AlignTablesRowByRow
   {
-    get
-    {
-      return _Element?.GetObject<DMW.AlignTablesRowByRow,DXW.AlignTablesRowByRow>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.AlignTablesRowByRow,DXW.AlignTablesRowByRow>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -580,14 +382,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public DMW.ForgetLastTabAlignment? ForgetLastTabAlignment
   {
-    get
-    {
-      return _Element?.GetObject<DMW.ForgetLastTabAlignment,DXW.ForgetLastTabAlignment>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.ForgetLastTabAlignment,DXW.ForgetLastTabAlignment>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -597,14 +393,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public DMW.AdjustLineHeightInTable? AdjustLineHeightInTable
   {
-    get
-    {
-      return _Element?.GetObject<DMW.AdjustLineHeightInTable,DXW.AdjustLineHeightInTable>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.AdjustLineHeightInTable,DXW.AdjustLineHeightInTable>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -614,14 +404,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public DMW.AutoSpaceLikeWord95? AutoSpaceLikeWord95
   {
-    get
-    {
-      return _Element?.GetObject<DMW.AutoSpaceLikeWord95,DXW.AutoSpaceLikeWord95>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.AutoSpaceLikeWord95,DXW.AutoSpaceLikeWord95>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -631,14 +415,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public DMW.NoSpaceRaiseLower? NoSpaceRaiseLower
   {
-    get
-    {
-      return _Element?.GetObject<DMW.NoSpaceRaiseLower,DXW.NoSpaceRaiseLower>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.NoSpaceRaiseLower,DXW.NoSpaceRaiseLower>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -648,14 +426,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public DMW.DoNotUseHTMLParagraphAutoSpacing? DoNotUseHTMLParagraphAutoSpacing
   {
-    get
-    {
-      return _Element?.GetObject<DMW.DoNotUseHTMLParagraphAutoSpacing,DXW.DoNotUseHTMLParagraphAutoSpacing>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.DoNotUseHTMLParagraphAutoSpacing,DXW.DoNotUseHTMLParagraphAutoSpacing>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -665,14 +437,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public DMW.LayoutRawTableWidth? LayoutRawTableWidth
   {
-    get
-    {
-      return _Element?.GetObject<DMW.LayoutRawTableWidth,DXW.LayoutRawTableWidth>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.LayoutRawTableWidth,DXW.LayoutRawTableWidth>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -682,14 +448,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public DMW.UseWord97LineBreakRules? UseWord97LineBreakRules
   {
-    get
-    {
-      return _Element?.GetObject<DMW.UseWord97LineBreakRules,DXW.UseWord97LineBreakRules>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.UseWord97LineBreakRules,DXW.UseWord97LineBreakRules>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -699,14 +459,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public DMW.DoNotBreakWrappedTables? DoNotBreakWrappedTables
   {
-    get
-    {
-      return _Element?.GetObject<DMW.DoNotBreakWrappedTables,DXW.DoNotBreakWrappedTables>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.DoNotBreakWrappedTables,DXW.DoNotBreakWrappedTables>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -716,14 +470,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public DMW.DoNotSnapToGridInCell? DoNotSnapToGridInCell
   {
-    get
-    {
-      return _Element?.GetObject<DMW.DoNotSnapToGridInCell,DXW.DoNotSnapToGridInCell>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.DoNotSnapToGridInCell,DXW.DoNotSnapToGridInCell>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -733,14 +481,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public DMW.SelectFieldWithFirstOrLastChar? SelectFieldWithFirstOrLastChar
   {
-    get
-    {
-      return _Element?.GetObject<DMW.SelectFieldWithFirstOrLastChar,DXW.SelectFieldWithFirstOrLastChar>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.SelectFieldWithFirstOrLastChar,DXW.SelectFieldWithFirstOrLastChar>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -750,14 +492,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public DMW.ApplyBreakingRules? ApplyBreakingRules
   {
-    get
-    {
-      return _Element?.GetObject<DMW.ApplyBreakingRules,DXW.ApplyBreakingRules>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.ApplyBreakingRules,DXW.ApplyBreakingRules>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -767,14 +503,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public DMW.DoNotWrapTextWithPunctuation? DoNotWrapTextWithPunctuation
   {
-    get
-    {
-      return _Element?.GetObject<DMW.DoNotWrapTextWithPunctuation,DXW.DoNotWrapTextWithPunctuation>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.DoNotWrapTextWithPunctuation,DXW.DoNotWrapTextWithPunctuation>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -784,14 +514,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public DMW.DoNotUseEastAsianBreakRules? DoNotUseEastAsianBreakRules
   {
-    get
-    {
-      return _Element?.GetObject<DMW.DoNotUseEastAsianBreakRules,DXW.DoNotUseEastAsianBreakRules>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.DoNotUseEastAsianBreakRules,DXW.DoNotUseEastAsianBreakRules>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -801,14 +525,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public DMW.UseWord2002TableStyleRules? UseWord2002TableStyleRules
   {
-    get
-    {
-      return _Element?.GetObject<DMW.UseWord2002TableStyleRules,DXW.UseWord2002TableStyleRules>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.UseWord2002TableStyleRules,DXW.UseWord2002TableStyleRules>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -818,14 +536,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public DMW.GrowAutofit? GrowAutofit
   {
-    get
-    {
-      return _Element?.GetObject<DMW.GrowAutofit,DXW.GrowAutofit>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.GrowAutofit,DXW.GrowAutofit>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -835,14 +547,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public DMW.UseFarEastLayout? UseFarEastLayout
   {
-    get
-    {
-      return _Element?.GetObject<DMW.UseFarEastLayout,DXW.UseFarEastLayout>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.UseFarEastLayout,DXW.UseFarEastLayout>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -852,14 +558,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public DMW.UseNormalStyleForList? UseNormalStyleForList
   {
-    get
-    {
-      return _Element?.GetObject<DMW.UseNormalStyleForList,DXW.UseNormalStyleForList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.UseNormalStyleForList,DXW.UseNormalStyleForList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -869,14 +569,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public DMW.DoNotUseIndentAsNumberingTabStop? DoNotUseIndentAsNumberingTabStop
   {
-    get
-    {
-      return _Element?.GetObject<DMW.DoNotUseIndentAsNumberingTabStop,DXW.DoNotUseIndentAsNumberingTabStop>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.DoNotUseIndentAsNumberingTabStop,DXW.DoNotUseIndentAsNumberingTabStop>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -886,14 +580,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public DMW.UseAltKinsokuLineBreakRules? UseAltKinsokuLineBreakRules
   {
-    get
-    {
-      return _Element?.GetObject<DMW.UseAltKinsokuLineBreakRules,DXW.UseAltKinsokuLineBreakRules>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.UseAltKinsokuLineBreakRules,DXW.UseAltKinsokuLineBreakRules>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -903,14 +591,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public DMW.AllowSpaceOfSameStyleInTable? AllowSpaceOfSameStyleInTable
   {
-    get
-    {
-      return _Element?.GetObject<DMW.AllowSpaceOfSameStyleInTable,DXW.AllowSpaceOfSameStyleInTable>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.AllowSpaceOfSameStyleInTable,DXW.AllowSpaceOfSameStyleInTable>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -920,14 +602,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public DMW.DoNotSuppressIndentation? DoNotSuppressIndentation
   {
-    get
-    {
-      return _Element?.GetObject<DMW.DoNotSuppressIndentation,DXW.DoNotSuppressIndentation>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.DoNotSuppressIndentation,DXW.DoNotSuppressIndentation>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -937,14 +613,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public DMW.DoNotAutofitConstrainedTables? DoNotAutofitConstrainedTables
   {
-    get
-    {
-      return _Element?.GetObject<DMW.DoNotAutofitConstrainedTables,DXW.DoNotAutofitConstrainedTables>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.DoNotAutofitConstrainedTables,DXW.DoNotAutofitConstrainedTables>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -954,14 +624,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public DMW.AutofitToFirstFixedWidthCell? AutofitToFirstFixedWidthCell
   {
-    get
-    {
-      return _Element?.GetObject<DMW.AutofitToFirstFixedWidthCell,DXW.AutofitToFirstFixedWidthCell>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.AutofitToFirstFixedWidthCell,DXW.AutofitToFirstFixedWidthCell>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -971,14 +635,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public DMW.UnderlineTabInNumberingList? UnderlineTabInNumberingList
   {
-    get
-    {
-      return _Element?.GetObject<DMW.UnderlineTabInNumberingList,DXW.UnderlineTabInNumberingList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.UnderlineTabInNumberingList,DXW.UnderlineTabInNumberingList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -988,14 +646,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public DMW.DisplayHangulFixedWidth? DisplayHangulFixedWidth
   {
-    get
-    {
-      return _Element?.GetObject<DMW.DisplayHangulFixedWidth,DXW.DisplayHangulFixedWidth>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.DisplayHangulFixedWidth,DXW.DisplayHangulFixedWidth>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -1005,14 +657,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public DMW.SplitPageBreakAndParagraphMark? SplitPageBreakAndParagraphMark
   {
-    get
-    {
-      return _Element?.GetObject<DMW.SplitPageBreakAndParagraphMark,DXW.SplitPageBreakAndParagraphMark>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.SplitPageBreakAndParagraphMark,DXW.SplitPageBreakAndParagraphMark>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -1022,14 +668,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public DMW.DoNotVerticallyAlignCellWithShape? DoNotVerticallyAlignCellWithShape
   {
-    get
-    {
-      return _Element?.GetObject<DMW.DoNotVerticallyAlignCellWithShape,DXW.DoNotVerticallyAlignCellWithShape>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.DoNotVerticallyAlignCellWithShape,DXW.DoNotVerticallyAlignCellWithShape>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -1039,14 +679,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public DMW.DoNotBreakConstrainedForcedTable? DoNotBreakConstrainedForcedTable
   {
-    get
-    {
-      return _Element?.GetObject<DMW.DoNotBreakConstrainedForcedTable,DXW.DoNotBreakConstrainedForcedTable>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.DoNotBreakConstrainedForcedTable,DXW.DoNotBreakConstrainedForcedTable>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -1056,14 +690,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public DMW.DoNotVerticallyAlignInTextBox? DoNotVerticallyAlignInTextBox
   {
-    get
-    {
-      return _Element?.GetObject<DMW.DoNotVerticallyAlignInTextBox,DXW.DoNotVerticallyAlignInTextBox>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.DoNotVerticallyAlignInTextBox,DXW.DoNotVerticallyAlignInTextBox>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -1073,14 +701,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public DMW.UseAnsiKerningPairs? UseAnsiKerningPairs
   {
-    get
-    {
-      return _Element?.GetObject<DMW.UseAnsiKerningPairs,DXW.UseAnsiKerningPairs>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.UseAnsiKerningPairs,DXW.UseAnsiKerningPairs>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -1090,14 +712,8 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   [DataMember]
   public DMW.CachedColumnBalance? CachedColumnBalance
   {
-    get
-    {
-      return _Element?.GetObject<DMW.CachedColumnBalance,DXW.CachedColumnBalance>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.CachedColumnBalance,DXW.CachedColumnBalance>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
 }

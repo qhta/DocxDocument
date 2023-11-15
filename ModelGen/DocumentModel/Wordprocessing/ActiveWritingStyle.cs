@@ -19,14 +19,8 @@ public partial class ActiveWritingStyle: ModelElement<DXW.ActiveWritingStyle>
   [DataMember]
   public String? Language
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Language);
-    }
-    set
-    {
-      _ExistingElement.Language = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Language;
+    set => _ExistingElement.Language = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class ActiveWritingStyle: ModelElement<DXW.ActiveWritingStyle>
   [DataMember]
   public UInt16? VendorID
   {
-    get
-    {
-      return _Element?.VendorID?.Value;
-    }
-    set
-    {
-      _ExistingElement.VendorID = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt16]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt16]");
   }
   
   
@@ -53,14 +41,8 @@ public partial class ActiveWritingStyle: ModelElement<DXW.ActiveWritingStyle>
   [DataMember]
   public Int32? DllVersion
   {
-    get
-    {
-      return _Element?.DllVersion?.Value;
-    }
-    set
-    {
-      _ExistingElement.DllVersion = value;
-    }
+    get => _Element?.DllVersion?.Value;
+    set => _ExistingElement.DllVersion = value;
   }
   
   
@@ -70,14 +52,8 @@ public partial class ActiveWritingStyle: ModelElement<DXW.ActiveWritingStyle>
   [DataMember]
   public Boolean? NaturalLanguageGrammarCheck
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.NaturalLanguageGrammarCheck);
-    }
-    set
-    {
-      _ExistingElement.NaturalLanguageGrammarCheck = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
   
@@ -87,14 +63,8 @@ public partial class ActiveWritingStyle: ModelElement<DXW.ActiveWritingStyle>
   [DataMember]
   public Boolean? CheckStyle
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.CheckStyle);
-    }
-    set
-    {
-      _ExistingElement.CheckStyle = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
   
@@ -104,14 +74,8 @@ public partial class ActiveWritingStyle: ModelElement<DXW.ActiveWritingStyle>
   [DataMember]
   public String? ApplicationName
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.ApplicationName);
-    }
-    set
-    {
-      _ExistingElement.ApplicationName = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.ApplicationName;
+    set => _ExistingElement.ApplicationName = value;
   }
   
 }

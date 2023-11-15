@@ -19,14 +19,8 @@ public partial class MathProperties: ModelElement<DXM.MathProperties>
   [DataMember]
   public String? MathFont
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.GetFirstChild<DXM.MathFont>()?.Val);
-    }
-    set
-    {
-      StringValueConverter.SetValue<DXM.MathFont>(_ExistingElement, value);
-    }
+    get => _Element?.GetStringVal<DXM.MathFont>();
+    set => _ExistingElement.SetStringVal<DXM.MathFont>(value);
   }
   
   
@@ -36,24 +30,8 @@ public partial class MathProperties: ModelElement<DXM.MathProperties>
   [DataMember]
   public DMM.BreakBinaryOperatorKind? BreakBinary
   {
-    get
-    {
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BreakBinaryOperatorValues, DMM.BreakBinaryOperatorKind>(_ExistingElement.GetFirstChild<DXM.BreakBinary>()?.Val?.Value);
-    }
-    set
-    {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.BreakBinary>();
-      if (itemElement != null)
-      {
-        if (value != null)
-          EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.BreakBinaryOperatorValues, DMM.BreakBinaryOperatorKind>(itemElement, (DMM.BreakBinaryOperatorKind)value);
-        else
-          itemElement.Remove();
-      }
-      else
-      if (value != null)
-        _ExistingElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXM.BreakBinary, DocumentFormat.OpenXml.Math.BreakBinaryOperatorValues, DMM.BreakBinaryOperatorKind>((DMM.BreakBinaryOperatorKind)value));
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertyGetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertySetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -63,24 +41,8 @@ public partial class MathProperties: ModelElement<DXM.MathProperties>
   [DataMember]
   public DMM.BreakBinarySubtractionKind? BreakBinarySubtraction
   {
-    get
-    {
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BreakBinarySubtractionValues, DMM.BreakBinarySubtractionKind>(_ExistingElement.GetFirstChild<DXM.BreakBinarySubtraction>()?.Val?.Value);
-    }
-    set
-    {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.BreakBinarySubtraction>();
-      if (itemElement != null)
-      {
-        if (value != null)
-          EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.BreakBinarySubtractionValues, DMM.BreakBinarySubtractionKind>(itemElement, (DMM.BreakBinarySubtractionKind)value);
-        else
-          itemElement.Remove();
-      }
-      else
-      if (value != null)
-        _ExistingElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXM.BreakBinarySubtraction, DocumentFormat.OpenXml.Math.BreakBinarySubtractionValues, DMM.BreakBinarySubtractionKind>((DMM.BreakBinarySubtractionKind)value));
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertyGetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertySetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -90,14 +52,8 @@ public partial class MathProperties: ModelElement<DXM.MathProperties>
   [DataMember]
   public DMM.SmallFraction? SmallFraction
   {
-    get
-    {
-      return _Element?.GetObject<DMM.SmallFraction,DXM.SmallFraction>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.SmallFraction,DXM.SmallFraction>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OnOffType");
   }
   
   
@@ -107,14 +63,8 @@ public partial class MathProperties: ModelElement<DXM.MathProperties>
   [DataMember]
   public DMM.DisplayDefaults? DisplayDefaults
   {
-    get
-    {
-      return _Element?.GetObject<DMM.DisplayDefaults,DXM.DisplayDefaults>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.DisplayDefaults,DXM.DisplayDefaults>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OnOffType");
   }
   
   
@@ -124,14 +74,8 @@ public partial class MathProperties: ModelElement<DXM.MathProperties>
   [DataMember]
   public DMM.LeftMargin? LeftMargin
   {
-    get
-    {
-      return _Element?.GetObject<DMM.LeftMargin,DXM.LeftMargin>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.LeftMargin,DXM.LeftMargin>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.TwipsMeasureType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.TwipsMeasureType");
   }
   
   
@@ -141,14 +85,8 @@ public partial class MathProperties: ModelElement<DXM.MathProperties>
   [DataMember]
   public DMM.RightMargin? RightMargin
   {
-    get
-    {
-      return _Element?.GetObject<DMM.RightMargin,DXM.RightMargin>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.RightMargin,DXM.RightMargin>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.TwipsMeasureType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.TwipsMeasureType");
   }
   
   
@@ -158,14 +96,8 @@ public partial class MathProperties: ModelElement<DXM.MathProperties>
   [DataMember]
   public DMM.DefaultJustification? DefaultJustification
   {
-    get
-    {
-      return _Element?.GetObject<DMM.DefaultJustification,DXM.DefaultJustification>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.DefaultJustification,DXM.DefaultJustification>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OfficeMathJustificationType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OfficeMathJustificationType");
   }
   
   
@@ -175,14 +107,8 @@ public partial class MathProperties: ModelElement<DXM.MathProperties>
   [DataMember]
   public DMM.PreSpacing? PreSpacing
   {
-    get
-    {
-      return _Element?.GetObject<DMM.PreSpacing,DXM.PreSpacing>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.PreSpacing,DXM.PreSpacing>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.TwipsMeasureType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.TwipsMeasureType");
   }
   
   
@@ -192,14 +118,8 @@ public partial class MathProperties: ModelElement<DXM.MathProperties>
   [DataMember]
   public DMM.PostSpacing? PostSpacing
   {
-    get
-    {
-      return _Element?.GetObject<DMM.PostSpacing,DXM.PostSpacing>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.PostSpacing,DXM.PostSpacing>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.TwipsMeasureType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.TwipsMeasureType");
   }
   
   
@@ -209,14 +129,8 @@ public partial class MathProperties: ModelElement<DXM.MathProperties>
   [DataMember]
   public DMM.InterSpacing? InterSpacing
   {
-    get
-    {
-      return _Element?.GetObject<DMM.InterSpacing,DXM.InterSpacing>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.InterSpacing,DXM.InterSpacing>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.TwipsMeasureType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.TwipsMeasureType");
   }
   
   
@@ -226,66 +140,36 @@ public partial class MathProperties: ModelElement<DXM.MathProperties>
   [DataMember]
   public DMM.IntraSpacing? IntraSpacing
   {
-    get
-    {
-      return _Element?.GetObject<DMM.IntraSpacing,DXM.IntraSpacing>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.IntraSpacing,DXM.IntraSpacing>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.TwipsMeasureType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.TwipsMeasureType");
   }
   
   [DataMember]
   public DMM.WrapIndent? WrapIndent
   {
-    get
-    {
-      return _Element?.GetObject<DMM.WrapIndent,DXM.WrapIndent>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.WrapIndent,DXM.WrapIndent>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.TwipsMeasureType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.TwipsMeasureType");
   }
   
   [DataMember]
   public DMM.WrapRight? WrapRight
   {
-    get
-    {
-      return _Element?.GetObject<DMM.WrapRight,DXM.WrapRight>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.WrapRight,DXM.WrapRight>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OnOffType");
   }
   
   [DataMember]
   public DMM.IntegralLimitLocation? IntegralLimitLocation
   {
-    get
-    {
-      return _Element?.GetObject<DMM.IntegralLimitLocation,DXM.IntegralLimitLocation>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.IntegralLimitLocation,DXM.IntegralLimitLocation>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.LimitLocationType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.LimitLocationType");
   }
   
   [DataMember]
   public DMM.NaryLimitLocation? NaryLimitLocation
   {
-    get
-    {
-      return _Element?.GetObject<DMM.NaryLimitLocation,DXM.NaryLimitLocation>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.NaryLimitLocation,DXM.NaryLimitLocation>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.LimitLocationType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.LimitLocationType");
   }
   
 }

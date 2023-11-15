@@ -19,14 +19,8 @@ public partial class ArtisticBlur: ModelElement<DXO10D.ArtisticBlur>
   [DataMember]
   public Int32? Radius
   {
-    get
-    {
-      return _Element?.Radius?.Value;
-    }
-    set
-    {
-      _ExistingElement.Radius = value;
-    }
+    get => _Element?.Radius?.Value;
+    set => _ExistingElement.Radius = value;
   }
   
 }

@@ -19,14 +19,8 @@ public partial class ImageFormula: ModelElement<DXOD22IF.ImageFormula>
   [DataMember]
   public String? Formula
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Formula);
-    }
-    set
-    {
-      _ExistingElement.Formula = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Formula;
+    set => _ExistingElement.Formula = value;
   }
   
 }

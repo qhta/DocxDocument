@@ -15,27 +15,15 @@ public partial class StringLiteral: ModelElement<DXDC.StringLiteral>
   [DataMember]
   public DMDC.PointCount? PointCount
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.PointCount,DXDC.PointCount>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.PointCount,DXDC.PointCount>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.UnsignedIntegerType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.UnsignedIntegerType");
   }
   
   [DataMember]
   public DMDC.StrDataExtensionList? StrDataExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.StrDataExtensionList,DXDC.StrDataExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.StrDataExtensionList,DXDC.StrDataExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

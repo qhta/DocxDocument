@@ -19,19 +19,8 @@ public partial class TableRow: ModelElement<DXW.TableRow>
   [DataMember]
   public DM.HexBinary? RsidTableRowMarkRevision
   {
-    get
-    {
-      if (_Element?.RsidTableRowMarkRevision?.Value != null)
-        return HexIntConverter.GetValue(_Element?.RsidTableRowMarkRevision.Value);
-      return null;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.RsidTableRowMarkRevision = value.ToString();
-      else
-        _ExistingElement.RsidTableRowMarkRevision = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -41,19 +30,8 @@ public partial class TableRow: ModelElement<DXW.TableRow>
   [DataMember]
   public DM.HexBinary? RsidTableRowAddition
   {
-    get
-    {
-      if (_Element?.RsidTableRowAddition?.Value != null)
-        return HexIntConverter.GetValue(_Element?.RsidTableRowAddition.Value);
-      return null;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.RsidTableRowAddition = value.ToString();
-      else
-        _ExistingElement.RsidTableRowAddition = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -63,19 +41,8 @@ public partial class TableRow: ModelElement<DXW.TableRow>
   [DataMember]
   public DM.HexBinary? RsidTableRowDeletion
   {
-    get
-    {
-      if (_Element?.RsidTableRowDeletion?.Value != null)
-        return HexIntConverter.GetValue(_Element?.RsidTableRowDeletion.Value);
-      return null;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.RsidTableRowDeletion = value.ToString();
-      else
-        _ExistingElement.RsidTableRowDeletion = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -85,19 +52,8 @@ public partial class TableRow: ModelElement<DXW.TableRow>
   [DataMember]
   public DM.HexBinary? RsidTableRowProperties
   {
-    get
-    {
-      if (_Element?.RsidTableRowProperties?.Value != null)
-        return HexIntConverter.GetValue(_Element?.RsidTableRowProperties.Value);
-      return null;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.RsidTableRowProperties = value.ToString();
-      else
-        _ExistingElement.RsidTableRowProperties = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -107,19 +63,8 @@ public partial class TableRow: ModelElement<DXW.TableRow>
   [DataMember]
   public DM.HexBinary? ParagraphId
   {
-    get
-    {
-      if (_Element?.ParagraphId?.Value != null)
-        return HexIntConverter.GetValue(_Element?.ParagraphId.Value);
-      return null;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.ParagraphId = value.ToString();
-      else
-        _ExistingElement.ParagraphId = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -129,19 +74,8 @@ public partial class TableRow: ModelElement<DXW.TableRow>
   [DataMember]
   public DM.HexBinary? TextId
   {
-    get
-    {
-      if (_Element?.TextId?.Value != null)
-        return HexIntConverter.GetValue(_Element?.TextId.Value);
-      return null;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.TextId = value.ToString();
-      else
-        _ExistingElement.TextId = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -151,14 +85,8 @@ public partial class TableRow: ModelElement<DXW.TableRow>
   [DataMember]
   public DMW.TablePropertyExceptions? TablePropertyExceptions
   {
-    get
-    {
-      return _Element?.GetObject<DMW.TablePropertyExceptions,DXW.TablePropertyExceptions>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.TablePropertyExceptions,DXW.TablePropertyExceptions>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -168,14 +96,8 @@ public partial class TableRow: ModelElement<DXW.TableRow>
   [DataMember]
   public DMW.TableRowProperties? TableRowProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMW.TableRowProperties,DXW.TableRowProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.TableRowProperties,DXW.TableRowProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

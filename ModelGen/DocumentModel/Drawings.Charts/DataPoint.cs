@@ -19,14 +19,8 @@ public partial class DataPoint: ModelElement<DXDC.DataPoint>
   [DataMember]
   public DMDC.Index? Index
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.Index,DXDC.Index>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.Index,DXDC.Index>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.UnsignedIntegerType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.UnsignedIntegerType");
   }
   
   
@@ -36,14 +30,8 @@ public partial class DataPoint: ModelElement<DXDC.DataPoint>
   [DataMember]
   public DMDC.InvertIfNegative? InvertIfNegative
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.InvertIfNegative,DXDC.InvertIfNegative>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.InvertIfNegative,DXDC.InvertIfNegative>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.BooleanType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.BooleanType");
   }
   
   
@@ -53,14 +41,8 @@ public partial class DataPoint: ModelElement<DXDC.DataPoint>
   [DataMember]
   public DMDC.Marker? Marker
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.Marker,DXDC.Marker>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.Marker,DXDC.Marker>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -70,14 +52,8 @@ public partial class DataPoint: ModelElement<DXDC.DataPoint>
   [DataMember]
   public DMDC.Bubble3D? Bubble3D
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.Bubble3D,DXDC.Bubble3D>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.Bubble3D,DXDC.Bubble3D>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.BooleanType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.BooleanType");
   }
   
   
@@ -87,14 +63,8 @@ public partial class DataPoint: ModelElement<DXDC.DataPoint>
   [DataMember]
   public DMDC.Explosion? Explosion
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.Explosion,DXDC.Explosion>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.Explosion,DXDC.Explosion>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.UnsignedIntegerType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.UnsignedIntegerType");
   }
   
   
@@ -104,14 +74,8 @@ public partial class DataPoint: ModelElement<DXDC.DataPoint>
   [DataMember]
   public DMDC.ChartShapeProperties? ChartShapeProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.ChartShapeProperties,DXDC.ChartShapeProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.ChartShapeProperties,DXDC.ChartShapeProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -121,14 +85,8 @@ public partial class DataPoint: ModelElement<DXDC.DataPoint>
   [DataMember]
   public DMDC.PictureOptions? PictureOptions
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.PictureOptions,DXDC.PictureOptions>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.PictureOptions,DXDC.PictureOptions>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -138,14 +96,8 @@ public partial class DataPoint: ModelElement<DXDC.DataPoint>
   [DataMember]
   public DMDC.ExtensionList? ExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.ExtensionList,DXDC.ExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.ExtensionList,DXDC.ExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

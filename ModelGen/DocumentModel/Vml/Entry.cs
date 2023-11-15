@@ -19,14 +19,8 @@ public partial class Entry: ModelElement<DXVO.Entry>
   [DataMember]
   public Int32? New
   {
-    get
-    {
-      return _Element?.New?.Value;
-    }
-    set
-    {
-      _ExistingElement.New = value;
-    }
+    get => _Element?.New?.Value;
+    set => _ExistingElement.New = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class Entry: ModelElement<DXVO.Entry>
   [DataMember]
   public Int32? Old
   {
-    get
-    {
-      return _Element?.Old?.Value;
-    }
-    set
-    {
-      _ExistingElement.Old = value;
-    }
+    get => _Element?.Old?.Value;
+    set => _ExistingElement.Old = value;
   }
   
 }

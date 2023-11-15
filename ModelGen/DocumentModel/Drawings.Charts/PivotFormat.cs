@@ -19,14 +19,8 @@ public partial class PivotFormat: ModelElement<DXDC.PivotFormat>
   [DataMember]
   public DMDC.Index? Index
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.Index,DXDC.Index>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.Index,DXDC.Index>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.UnsignedIntegerType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.UnsignedIntegerType");
   }
   
   
@@ -36,14 +30,8 @@ public partial class PivotFormat: ModelElement<DXDC.PivotFormat>
   [DataMember]
   public DMDC.ShapeProperties? ShapeProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.ShapeProperties,DXDC.ShapeProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.ShapeProperties,DXDC.ShapeProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -53,14 +41,8 @@ public partial class PivotFormat: ModelElement<DXDC.PivotFormat>
   [DataMember]
   public DMDC.Marker? Marker
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.Marker,DXDC.Marker>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.Marker,DXDC.Marker>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -70,14 +52,8 @@ public partial class PivotFormat: ModelElement<DXDC.PivotFormat>
   [DataMember]
   public DMDC.DataLabel? DataLabel
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.DataLabel,DXDC.DataLabel>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.DataLabel,DXDC.DataLabel>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -87,14 +63,8 @@ public partial class PivotFormat: ModelElement<DXDC.PivotFormat>
   [DataMember]
   public DMDC.ExtensionList? ExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.ExtensionList,DXDC.ExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.ExtensionList,DXDC.ExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

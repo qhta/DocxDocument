@@ -19,14 +19,8 @@ public partial class Rule: ModelElement<DXVO.Rule>
   [DataMember]
   public String? Id
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Id);
-    }
-    set
-    {
-      _ExistingElement.Id = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Id;
+    set => _ExistingElement.Id = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class Rule: ModelElement<DXVO.Rule>
   [DataMember]
   public String? ShapeReference
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.ShapeReference);
-    }
-    set
-    {
-      _ExistingElement.ShapeReference = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.ShapeReference;
+    set => _ExistingElement.ShapeReference = value;
   }
   
 }

@@ -19,14 +19,8 @@ public partial class Backdrop: ModelElement<DXD.Backdrop>
   [DataMember]
   public DMD.Anchor? Anchor
   {
-    get
-    {
-      return _Element?.GetObject<DMD.Anchor,DXD.Anchor>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.Anchor,DXD.Anchor>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -36,14 +30,8 @@ public partial class Backdrop: ModelElement<DXD.Backdrop>
   [DataMember]
   public DMD.Normal? Normal
   {
-    get
-    {
-      return _Element?.GetObject<DMD.Normal,DXD.Normal>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.Normal,DXD.Normal>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Vector3DType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Vector3DType");
   }
   
   
@@ -53,14 +41,8 @@ public partial class Backdrop: ModelElement<DXD.Backdrop>
   [DataMember]
   public DMD.UpVector? UpVector
   {
-    get
-    {
-      return _Element?.GetObject<DMD.UpVector,DXD.UpVector>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.UpVector,DXD.UpVector>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Vector3DType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Vector3DType");
   }
   
   
@@ -70,14 +52,8 @@ public partial class Backdrop: ModelElement<DXD.Backdrop>
   [DataMember]
   public DMD.ExtensionList? ExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMD.ExtensionList,DXD.ExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.ExtensionList,DXD.ExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

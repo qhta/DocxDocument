@@ -19,14 +19,8 @@ public partial class Hsl: ModelElement<DXD.Hsl>
   [DataMember]
   public Int32? Hue
   {
-    get
-    {
-      return _Element?.Hue?.Value;
-    }
-    set
-    {
-      _ExistingElement.Hue = value;
-    }
+    get => _Element?.Hue?.Value;
+    set => _ExistingElement.Hue = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class Hsl: ModelElement<DXD.Hsl>
   [DataMember]
   public Int32? Saturation
   {
-    get
-    {
-      return _Element?.Saturation?.Value;
-    }
-    set
-    {
-      _ExistingElement.Saturation = value;
-    }
+    get => _Element?.Saturation?.Value;
+    set => _ExistingElement.Saturation = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class Hsl: ModelElement<DXD.Hsl>
   [DataMember]
   public Int32? Luminance
   {
-    get
-    {
-      return _Element?.Luminance?.Value;
-    }
-    set
-    {
-      _ExistingElement.Luminance = value;
-    }
+    get => _Element?.Luminance?.Value;
+    set => _ExistingElement.Luminance = value;
   }
   
 }

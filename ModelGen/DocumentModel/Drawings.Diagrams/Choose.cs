@@ -19,27 +19,15 @@ public partial class Choose: ModelElement<DXDDD.Choose>
   [DataMember]
   public String? Name
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Name);
-    }
-    set
-    {
-      _ExistingElement.Name = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Name;
+    set => _ExistingElement.Name = value;
   }
   
   [DataMember]
   public DMDD.DiagramChooseElse? DiagramChooseElse
   {
-    get
-    {
-      return _Element?.GetObject<DMDD.DiagramChooseElse,DXDDD.DiagramChooseElse>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDD.DiagramChooseElse,DXDDD.DiagramChooseElse>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

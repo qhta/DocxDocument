@@ -19,14 +19,8 @@ public partial class CustomUI: ModelElement<DXO10CUI.CustomUI>
   [DataMember]
   public String? OnLoad
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.OnLoad);
-    }
-    set
-    {
-      _ExistingElement.OnLoad = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.OnLoad;
+    set => _ExistingElement.OnLoad = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class CustomUI: ModelElement<DXO10CUI.CustomUI>
   [DataMember]
   public String? LoadImage
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.LoadImage);
-    }
-    set
-    {
-      _ExistingElement.LoadImage = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.LoadImage;
+    set => _ExistingElement.LoadImage = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class CustomUI: ModelElement<DXO10CUI.CustomUI>
   [DataMember]
   public DMCUI10.Commands? Commands
   {
-    get
-    {
-      return _Element?.GetObject<DMCUI10.Commands,DXO10CUI.Commands>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMCUI10.Commands,DXO10CUI.Commands>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -70,14 +52,8 @@ public partial class CustomUI: ModelElement<DXO10CUI.CustomUI>
   [DataMember]
   public DMCUI10.Ribbon? Ribbon
   {
-    get
-    {
-      return _Element?.GetObject<DMCUI10.Ribbon,DXO10CUI.Ribbon>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMCUI10.Ribbon,DXO10CUI.Ribbon>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -87,14 +63,8 @@ public partial class CustomUI: ModelElement<DXO10CUI.CustomUI>
   [DataMember]
   public DMCUI10.Backstage? Backstage
   {
-    get
-    {
-      return _Element?.GetObject<DMCUI10.Backstage,DXO10CUI.Backstage>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMCUI10.Backstage,DXO10CUI.Backstage>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -104,14 +74,8 @@ public partial class CustomUI: ModelElement<DXO10CUI.CustomUI>
   [DataMember]
   public DMCUI10.ContextMenus? ContextMenus
   {
-    get
-    {
-      return _Element?.GetObject<DMCUI10.ContextMenus,DXO10CUI.ContextMenus>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMCUI10.ContextMenus,DXO10CUI.ContextMenus>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

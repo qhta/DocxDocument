@@ -19,14 +19,8 @@ public partial class Blend: ModelElement<DXD.Blend>
   [DataMember]
   public DMD.EffectContainer? EffectContainer
   {
-    get
-    {
-      return _Element?.GetObject<DMD.EffectContainer,DXD.EffectContainer>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.EffectContainer,DXD.EffectContainer>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.EffectContainerType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.EffectContainerType");
   }
   
 }

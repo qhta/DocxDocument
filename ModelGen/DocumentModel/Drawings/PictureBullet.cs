@@ -19,14 +19,8 @@ public partial class PictureBullet: ModelElement<DXD.PictureBullet>
   [DataMember]
   public DMD.Blip? Blip
   {
-    get
-    {
-      return _Element?.GetObject<DMD.Blip,DXD.Blip>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.Blip,DXD.Blip>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

@@ -19,14 +19,8 @@ public partial class DocDefaults: ModelElement<DXW.DocDefaults>
   [DataMember]
   public DMW.RunPropertiesDefault? RunPropertiesDefault
   {
-    get
-    {
-      return _Element?.GetObject<DMW.RunPropertiesDefault,DXW.RunPropertiesDefault>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.RunPropertiesDefault,DXW.RunPropertiesDefault>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -36,14 +30,8 @@ public partial class DocDefaults: ModelElement<DXW.DocDefaults>
   [DataMember]
   public DMW.ParagraphPropertiesDefault? ParagraphPropertiesDefault
   {
-    get
-    {
-      return _Element?.GetObject<DMW.ParagraphPropertiesDefault,DXW.ParagraphPropertiesDefault>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.ParagraphPropertiesDefault,DXW.ParagraphPropertiesDefault>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

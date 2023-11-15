@@ -19,14 +19,8 @@ public partial class View3D: ModelElement<DXDC.View3D>
   [DataMember]
   public SByte? RotateX
   {
-    get
-    {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DXDC.RotateX>()?.Val);
-    }
-    set
-    {
-      SimpleValueConverter.SetValue<DXDC.RotateX,System.SByte>(_ExistingElement, value);
-    }
+    get => _Element?.GetIntVal<SByte, DXDC.RotateX>();
+    set => _ExistingElement.SetIntVal<SByte, DXDC.RotateX>(value);
   }
   
   
@@ -36,14 +30,8 @@ public partial class View3D: ModelElement<DXDC.View3D>
   [DataMember]
   public UInt16? HeightPercent
   {
-    get
-    {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DXDC.HeightPercent>()?.Val);
-    }
-    set
-    {
-      SimpleValueConverter.SetValue<DXDC.HeightPercent,System.UInt16>(_ExistingElement, value);
-    }
+    get => _Element?.GetIntVal<UInt16, DXDC.HeightPercent>();
+    set => _ExistingElement.SetIntVal<UInt16, DXDC.HeightPercent>(value);
   }
   
   
@@ -53,14 +41,8 @@ public partial class View3D: ModelElement<DXDC.View3D>
   [DataMember]
   public UInt16? RotateY
   {
-    get
-    {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DXDC.RotateY>()?.Val);
-    }
-    set
-    {
-      SimpleValueConverter.SetValue<DXDC.RotateY,System.UInt16>(_ExistingElement, value);
-    }
+    get => _Element?.GetIntVal<UInt16, DXDC.RotateY>();
+    set => _ExistingElement.SetIntVal<UInt16, DXDC.RotateY>(value);
   }
   
   
@@ -70,14 +52,8 @@ public partial class View3D: ModelElement<DXDC.View3D>
   [DataMember]
   public UInt16? DepthPercent
   {
-    get
-    {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DXDC.DepthPercent>()?.Val);
-    }
-    set
-    {
-      SimpleValueConverter.SetValue<DXDC.DepthPercent,System.UInt16>(_ExistingElement, value);
-    }
+    get => _Element?.GetIntVal<UInt16, DXDC.DepthPercent>();
+    set => _ExistingElement.SetIntVal<UInt16, DXDC.DepthPercent>(value);
   }
   
   
@@ -87,14 +63,8 @@ public partial class View3D: ModelElement<DXDC.View3D>
   [DataMember]
   public DMDC.RightAngleAxes? RightAngleAxes
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.RightAngleAxes,DXDC.RightAngleAxes>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.RightAngleAxes,DXDC.RightAngleAxes>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.BooleanType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.BooleanType");
   }
   
   
@@ -104,14 +74,8 @@ public partial class View3D: ModelElement<DXDC.View3D>
   [DataMember]
   public Byte? Perspective
   {
-    get
-    {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DXDC.Perspective>()?.Val);
-    }
-    set
-    {
-      SimpleValueConverter.SetValue<DXDC.Perspective,System.Byte>(_ExistingElement, value);
-    }
+    get => _Element?.GetIntVal<Byte, DXDC.Perspective>();
+    set => _ExistingElement.SetIntVal<Byte, DXDC.Perspective>(value);
   }
   
   
@@ -121,14 +85,8 @@ public partial class View3D: ModelElement<DXDC.View3D>
   [DataMember]
   public DMDC.ExtensionList? ExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.ExtensionList,DXDC.ExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.ExtensionList,DXDC.ExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

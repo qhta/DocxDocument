@@ -19,14 +19,8 @@ public partial class HiddenEffectsProperties: ModelElement<DXO10D.HiddenEffectsP
   [DataMember]
   public DMD.EffectList? EffectList
   {
-    get
-    {
-      return _Element?.GetObject<DMD.EffectList,DXD.EffectList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.EffectList,DXD.EffectList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -36,14 +30,8 @@ public partial class HiddenEffectsProperties: ModelElement<DXO10D.HiddenEffectsP
   [DataMember]
   public DMD.EffectDag? EffectDag
   {
-    get
-    {
-      return _Element?.GetObject<DMD.EffectDag,DXD.EffectDag>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.EffectDag,DXD.EffectDag>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.EffectContainerType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.EffectContainerType");
   }
   
 }

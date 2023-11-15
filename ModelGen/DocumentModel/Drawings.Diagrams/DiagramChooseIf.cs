@@ -19,14 +19,8 @@ public partial class DiagramChooseIf: ModelElement<DXDDD.DiagramChooseIf>
   [DataMember]
   public String? Name
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Name);
-    }
-    set
-    {
-      _ExistingElement.Name = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Name;
+    set => _ExistingElement.Name = value;
   }
   
   
@@ -36,17 +30,8 @@ public partial class DiagramChooseIf: ModelElement<DXDDD.DiagramChooseIf>
   [DataMember]
   public DM.ListOf<AxisKind>? Axis
   {
-    get
-    {
-      return ListValueConverter.GetValue<DXDDD.AxisValues, DMDD.AxisKind>(_Element?.Axis);
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Axis = ListValueConverter.CreateListValue<DXDDD.AxisValues, DMDD.AxisKind>(value);
-      else
-        _ExistingElement.Axis = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.Object");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.Object");
   }
   
   
@@ -56,17 +41,8 @@ public partial class DiagramChooseIf: ModelElement<DXDDD.DiagramChooseIf>
   [DataMember]
   public DM.ListOf<ElementKind>? PointType
   {
-    get
-    {
-      return ListValueConverter.GetValue<DXDDD.ElementValues, DMDD.ElementKind>(_Element?.PointType);
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.PointType = ListValueConverter.CreateListValue<DXDDD.ElementValues, DMDD.ElementKind>(value);
-      else
-        _ExistingElement.PointType = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.Object");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.Object");
   }
   
   
@@ -76,17 +52,8 @@ public partial class DiagramChooseIf: ModelElement<DXDDD.DiagramChooseIf>
   [DataMember]
   public DM.ListOf<Boolean>? HideLastTrans
   {
-    get
-    {
-      return ListValueConverter.GetValue(_Element?.HideLastTrans);
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.HideLastTrans = ListValueConverter.CreateListValue<DX.BooleanValue>(value);
-      else
-        _ExistingElement.HideLastTrans = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.Object");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.Object");
   }
   
   
@@ -96,17 +63,8 @@ public partial class DiagramChooseIf: ModelElement<DXDDD.DiagramChooseIf>
   [DataMember]
   public DM.ListOf<Int32>? Start
   {
-    get
-    {
-      return ListValueConverter.GetValue(_Element?.Start);
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Start = ListValueConverter.CreateListValue<DX.Int32Value>(value);
-      else
-        _ExistingElement.Start = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.Object");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.Object");
   }
   
   
@@ -116,17 +74,8 @@ public partial class DiagramChooseIf: ModelElement<DXDDD.DiagramChooseIf>
   [DataMember]
   public DM.ListOf<UInt32>? Count
   {
-    get
-    {
-      return ListValueConverter.GetValue(_Element?.Count);
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Count = ListValueConverter.CreateListValue<DX.UInt32Value>(value);
-      else
-        _ExistingElement.Count = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.Object");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.Object");
   }
   
   
@@ -136,17 +85,8 @@ public partial class DiagramChooseIf: ModelElement<DXDDD.DiagramChooseIf>
   [DataMember]
   public DM.ListOf<Int32>? Step
   {
-    get
-    {
-      return ListValueConverter.GetValue(_Element?.Step);
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Step = ListValueConverter.CreateListValue<DX.Int32Value>(value);
-      else
-        _ExistingElement.Step = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.Object");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.Object");
   }
   
   
@@ -156,14 +96,8 @@ public partial class DiagramChooseIf: ModelElement<DXDDD.DiagramChooseIf>
   [DataMember]
   public String? Argument
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Argument);
-    }
-    set
-    {
-      _ExistingElement.Argument = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Argument;
+    set => _ExistingElement.Argument = value;
   }
   
   
@@ -173,14 +107,8 @@ public partial class DiagramChooseIf: ModelElement<DXDDD.DiagramChooseIf>
   [DataMember]
   public String? Val
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Val);
-    }
-    set
-    {
-      _ExistingElement.Val = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Val;
+    set => _ExistingElement.Val = value;
   }
   
 }

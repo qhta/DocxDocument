@@ -19,14 +19,8 @@ public partial class ShapeLayout: ModelElement<DXVO.ShapeLayout>
   [DataMember]
   public DMVML.ShapeIdMap? ShapeIdMap
   {
-    get
-    {
-      return _Element?.GetObject<DMVML.ShapeIdMap,DXVO.ShapeIdMap>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMVML.ShapeIdMap,DXVO.ShapeIdMap>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -36,14 +30,8 @@ public partial class ShapeLayout: ModelElement<DXVO.ShapeLayout>
   [DataMember]
   public DMVML.RegroupTable? RegroupTable
   {
-    get
-    {
-      return _Element?.GetObject<DMVML.RegroupTable,DXVO.RegroupTable>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMVML.RegroupTable,DXVO.RegroupTable>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -53,14 +41,8 @@ public partial class ShapeLayout: ModelElement<DXVO.ShapeLayout>
   [DataMember]
   public DMVML.Rules? Rules
   {
-    get
-    {
-      return _Element?.GetObject<DMVML.Rules,DXVO.Rules>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMVML.Rules,DXVO.Rules>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

@@ -19,14 +19,8 @@ public partial class NumberDiagramInfo: ModelElement<DXO19DD11.NumberDiagramInfo
   [DataMember]
   public UInt32? Lvl
   {
-    get
-    {
-      return _Element?.Lvl?.Value;
-    }
-    set
-    {
-      _ExistingElement.Lvl = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
   }
   
   
@@ -36,14 +30,8 @@ public partial class NumberDiagramInfo: ModelElement<DXO19DD11.NumberDiagramInfo
   [DataMember]
   public DMDD1.DiagramAutoBullet? DiagramAutoBullet
   {
-    get
-    {
-      return _Element?.GetObject<DMDD1.DiagramAutoBullet,DXO19DD11.DiagramAutoBullet>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDD1.DiagramAutoBullet,DXO19DD11.DiagramAutoBullet>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

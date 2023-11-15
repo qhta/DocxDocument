@@ -19,14 +19,8 @@ public partial class NumberingPictureBullet: ModelElement<DXW.NumberingPictureBu
   [DataMember]
   public Int32? NumberingPictureBulletId
   {
-    get
-    {
-      return _Element?.NumberingPictureBulletId?.Value;
-    }
-    set
-    {
-      _ExistingElement.NumberingPictureBulletId = value;
-    }
+    get => _Element?.NumberingPictureBulletId?.Value;
+    set => _ExistingElement.NumberingPictureBulletId = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class NumberingPictureBullet: ModelElement<DXW.NumberingPictureBu
   [DataMember]
   public DMW.PictureBulletBase? PictureBulletBase
   {
-    get
-    {
-      return _Element?.GetObject<DMW.PictureBulletBase,DXW.PictureBulletBase>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.PictureBulletBase,DXW.PictureBulletBase>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -53,14 +41,8 @@ public partial class NumberingPictureBullet: ModelElement<DXW.NumberingPictureBu
   [DataMember]
   public DMW.Drawing? Drawing
   {
-    get
-    {
-      return _Element?.GetObject<DMW.Drawing,DXW.Drawing>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.Drawing,DXW.Drawing>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

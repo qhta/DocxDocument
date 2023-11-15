@@ -19,14 +19,8 @@ public partial class Paragraph: ModelElement<DXM.Paragraph>
   [DataMember]
   public DMM.ParagraphProperties? ParagraphProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMM.ParagraphProperties,DXM.ParagraphProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.ParagraphProperties,DXM.ParagraphProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

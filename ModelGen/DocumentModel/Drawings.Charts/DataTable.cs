@@ -19,14 +19,8 @@ public partial class DataTable: ModelElement<DXDC.DataTable>
   [DataMember]
   public DMDC.ShowHorizontalBorder? ShowHorizontalBorder
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.ShowHorizontalBorder,DXDC.ShowHorizontalBorder>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.ShowHorizontalBorder,DXDC.ShowHorizontalBorder>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.BooleanType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.BooleanType");
   }
   
   
@@ -36,14 +30,8 @@ public partial class DataTable: ModelElement<DXDC.DataTable>
   [DataMember]
   public DMDC.ShowVerticalBorder? ShowVerticalBorder
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.ShowVerticalBorder,DXDC.ShowVerticalBorder>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.ShowVerticalBorder,DXDC.ShowVerticalBorder>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.BooleanType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.BooleanType");
   }
   
   
@@ -53,14 +41,8 @@ public partial class DataTable: ModelElement<DXDC.DataTable>
   [DataMember]
   public DMDC.ShowOutlineBorder? ShowOutlineBorder
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.ShowOutlineBorder,DXDC.ShowOutlineBorder>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.ShowOutlineBorder,DXDC.ShowOutlineBorder>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.BooleanType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.BooleanType");
   }
   
   
@@ -70,14 +52,8 @@ public partial class DataTable: ModelElement<DXDC.DataTable>
   [DataMember]
   public DMDC.ShowKeys? ShowKeys
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.ShowKeys,DXDC.ShowKeys>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.ShowKeys,DXDC.ShowKeys>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.BooleanType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.BooleanType");
   }
   
   
@@ -87,14 +63,8 @@ public partial class DataTable: ModelElement<DXDC.DataTable>
   [DataMember]
   public DMDC.ChartShapeProperties? ChartShapeProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.ChartShapeProperties,DXDC.ChartShapeProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.ChartShapeProperties,DXDC.ChartShapeProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -104,14 +74,8 @@ public partial class DataTable: ModelElement<DXDC.DataTable>
   [DataMember]
   public DMDC.TextProperties? TextProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.TextProperties,DXDC.TextProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.TextProperties,DXDC.TextProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.TextBodyType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.TextBodyType");
   }
   
   
@@ -121,14 +85,8 @@ public partial class DataTable: ModelElement<DXDC.DataTable>
   [DataMember]
   public DMDC.ExtensionList? ExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.ExtensionList,DXDC.ExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.ExtensionList,DXDC.ExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

@@ -19,14 +19,8 @@ public partial class Shape3D: ModelElement<DXDDD.Shape3D>
   [DataMember]
   public Int64? Z
   {
-    get
-    {
-      return _Element?.Z?.Value;
-    }
-    set
-    {
-      _ExistingElement.Z = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int64]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int64]");
   }
   
   
@@ -36,14 +30,8 @@ public partial class Shape3D: ModelElement<DXDDD.Shape3D>
   [DataMember]
   public Int64? ExtrusionHeight
   {
-    get
-    {
-      return _Element?.ExtrusionHeight?.Value;
-    }
-    set
-    {
-      _ExistingElement.ExtrusionHeight = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int64]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int64]");
   }
   
   
@@ -53,14 +41,8 @@ public partial class Shape3D: ModelElement<DXDDD.Shape3D>
   [DataMember]
   public Int64? ContourWidth
   {
-    get
-    {
-      return _Element?.ContourWidth?.Value;
-    }
-    set
-    {
-      _ExistingElement.ContourWidth = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int64]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int64]");
   }
   
   
@@ -70,14 +52,8 @@ public partial class Shape3D: ModelElement<DXDDD.Shape3D>
   [DataMember]
   public DMD.BevelTop? BevelTop
   {
-    get
-    {
-      return _Element?.GetObject<DMD.BevelTop,DXD.BevelTop>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.BevelTop,DXD.BevelTop>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.BevelType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.BevelType");
   }
   
   
@@ -87,14 +63,8 @@ public partial class Shape3D: ModelElement<DXDDD.Shape3D>
   [DataMember]
   public DMD.BevelBottom? BevelBottom
   {
-    get
-    {
-      return _Element?.GetObject<DMD.BevelBottom,DXD.BevelBottom>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.BevelBottom,DXD.BevelBottom>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.BevelType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.BevelType");
   }
   
   
@@ -104,14 +74,8 @@ public partial class Shape3D: ModelElement<DXDDD.Shape3D>
   [DataMember]
   public DMD.ExtrusionColor? ExtrusionColor
   {
-    get
-    {
-      return _Element?.GetObject<DMD.ExtrusionColor,DXD.ExtrusionColor>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.ExtrusionColor,DXD.ExtrusionColor>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.ColorType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.ColorType");
   }
   
   
@@ -121,14 +85,8 @@ public partial class Shape3D: ModelElement<DXDDD.Shape3D>
   [DataMember]
   public DMD.ContourColor? ContourColor
   {
-    get
-    {
-      return _Element?.GetObject<DMD.ContourColor,DXD.ContourColor>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.ContourColor,DXD.ContourColor>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.ColorType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.ColorType");
   }
   
   
@@ -138,14 +96,8 @@ public partial class Shape3D: ModelElement<DXDDD.Shape3D>
   [DataMember]
   public DMD.ExtensionList? ExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMD.ExtensionList,DXD.ExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.ExtensionList,DXD.ExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

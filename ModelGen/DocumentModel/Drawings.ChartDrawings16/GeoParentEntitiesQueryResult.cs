@@ -19,14 +19,8 @@ public partial class GeoParentEntitiesQueryResult: ModelElement<DXO16DCD.GeoPare
   [DataMember]
   public DMDCD16.GeoParentEntitiesQuery? GeoParentEntitiesQuery
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.GeoParentEntitiesQuery,DXO16DCD.GeoParentEntitiesQuery>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.GeoParentEntitiesQuery,DXO16DCD.GeoParentEntitiesQuery>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -36,14 +30,8 @@ public partial class GeoParentEntitiesQueryResult: ModelElement<DXO16DCD.GeoPare
   [DataMember]
   public DMDCD16.GeoEntity? GeoEntity
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.GeoEntity,DXO16DCD.GeoEntity>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.GeoEntity,DXO16DCD.GeoEntity>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -53,14 +41,8 @@ public partial class GeoParentEntitiesQueryResult: ModelElement<DXO16DCD.GeoPare
   [DataMember]
   public DMDCD16.GeoParentEntity? GeoParentEntity
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.GeoParentEntity,DXO16DCD.GeoParentEntity>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.GeoParentEntity,DXO16DCD.GeoParentEntity>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
 }

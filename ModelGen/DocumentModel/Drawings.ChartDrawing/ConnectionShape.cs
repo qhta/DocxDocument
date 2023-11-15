@@ -19,14 +19,8 @@ public partial class ConnectionShape: ModelElement<DXDCD.ConnectionShape>
   [DataMember]
   public String? Macro
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Macro);
-    }
-    set
-    {
-      _ExistingElement.Macro = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Macro;
+    set => _ExistingElement.Macro = value;
   }
   
   
@@ -36,17 +30,8 @@ public partial class ConnectionShape: ModelElement<DXDCD.ConnectionShape>
   [DataMember]
   public Boolean? Published
   {
-    get
-    {
-      return _Element?.Published?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Published = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.Published = null;
-    }
+    get => _Element?.Published?.Value;
+    set => _ExistingElement.Published = value;
   }
   
   
@@ -56,14 +41,8 @@ public partial class ConnectionShape: ModelElement<DXDCD.ConnectionShape>
   [DataMember]
   public DMDCD.NonVisualConnectorShapeDrawingProperties? NonVisualConnectorShapeDrawingProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD.NonVisualConnectorShapeDrawingProperties,DXDCD.NonVisualConnectorShapeDrawingProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD.NonVisualConnectorShapeDrawingProperties,DXDCD.NonVisualConnectorShapeDrawingProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -73,14 +52,8 @@ public partial class ConnectionShape: ModelElement<DXDCD.ConnectionShape>
   [DataMember]
   public DMDCD.ShapeProperties? ShapeProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD.ShapeProperties,DXDCD.ShapeProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD.ShapeProperties,DXDCD.ShapeProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -90,14 +63,8 @@ public partial class ConnectionShape: ModelElement<DXDCD.ConnectionShape>
   [DataMember]
   public DMDCD.Style? Style
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD.Style,DXDCD.Style>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD.Style,DXDCD.Style>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

@@ -19,14 +19,8 @@ public partial class BackstageItemType: ModelElement<DXO10CUI.BackstageItemType>
   [DataMember]
   public String? Id
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Id);
-    }
-    set
-    {
-      _ExistingElement.Id = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Id;
+    set => _ExistingElement.Id = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class BackstageItemType: ModelElement<DXO10CUI.BackstageItemType>
   [DataMember]
   public String? Label
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Label);
-    }
-    set
-    {
-      _ExistingElement.Label = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Label;
+    set => _ExistingElement.Label = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class BackstageItemType: ModelElement<DXO10CUI.BackstageItemType>
   [DataMember]
   public String? GetLabel
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.GetLabel);
-    }
-    set
-    {
-      _ExistingElement.GetLabel = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.GetLabel;
+    set => _ExistingElement.GetLabel = value;
   }
   
 }

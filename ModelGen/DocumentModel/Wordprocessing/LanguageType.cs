@@ -19,14 +19,8 @@ public partial class LanguageType: ModelElement<DXW.LanguageType>
   [DataMember]
   public String? Val
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Val);
-    }
-    set
-    {
-      _ExistingElement.Val = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Val;
+    set => _ExistingElement.Val = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class LanguageType: ModelElement<DXW.LanguageType>
   [DataMember]
   public String? EastAsia
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.EastAsia);
-    }
-    set
-    {
-      _ExistingElement.EastAsia = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.EastAsia;
+    set => _ExistingElement.EastAsia = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class LanguageType: ModelElement<DXW.LanguageType>
   [DataMember]
   public String? Bidi
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Bidi);
-    }
-    set
-    {
-      _ExistingElement.Bidi = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Bidi;
+    set => _ExistingElement.Bidi = value;
   }
   
 }

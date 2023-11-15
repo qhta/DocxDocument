@@ -19,14 +19,8 @@ public partial class FilteredPieSeries: ModelElement<DXO13DC.FilteredPieSeries>
   [DataMember]
   public DMDC13.PieChartSeries? PieChartSeries
   {
-    get
-    {
-      return _Element?.GetObject<DMDC13.PieChartSeries,DXO13DC.PieChartSeries>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC13.PieChartSeries,DXO13DC.PieChartSeries>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

@@ -19,14 +19,8 @@ public partial class EffectExtent: ModelElement<DXDW.EffectExtent>
   [DataMember]
   public Int64? LeftEdge
   {
-    get
-    {
-      return _Element?.LeftEdge?.Value;
-    }
-    set
-    {
-      _ExistingElement.LeftEdge = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int64]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int64]");
   }
   
   
@@ -36,14 +30,8 @@ public partial class EffectExtent: ModelElement<DXDW.EffectExtent>
   [DataMember]
   public Int64? TopEdge
   {
-    get
-    {
-      return _Element?.TopEdge?.Value;
-    }
-    set
-    {
-      _ExistingElement.TopEdge = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int64]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int64]");
   }
   
   
@@ -53,14 +41,8 @@ public partial class EffectExtent: ModelElement<DXDW.EffectExtent>
   [DataMember]
   public Int64? RightEdge
   {
-    get
-    {
-      return _Element?.RightEdge?.Value;
-    }
-    set
-    {
-      _ExistingElement.RightEdge = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int64]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int64]");
   }
   
   
@@ -70,14 +52,8 @@ public partial class EffectExtent: ModelElement<DXDW.EffectExtent>
   [DataMember]
   public Int64? BottomEdge
   {
-    get
-    {
-      return _Element?.BottomEdge?.Value;
-    }
-    set
-    {
-      _ExistingElement.BottomEdge = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int64]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int64]");
   }
   
 }

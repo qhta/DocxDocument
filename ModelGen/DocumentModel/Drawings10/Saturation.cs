@@ -19,14 +19,8 @@ public partial class Saturation: ModelElement<DXO10D.Saturation>
   [DataMember]
   public Int32? SaturationAmount
   {
-    get
-    {
-      return _Element?.SaturationAmount?.Value;
-    }
-    set
-    {
-      _ExistingElement.SaturationAmount = value;
-    }
+    get => _Element?.SaturationAmount?.Value;
+    set => _ExistingElement.SaturationAmount = value;
   }
   
 }

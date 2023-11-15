@@ -19,14 +19,8 @@ public partial class RgbColorModelPercentage: ModelElement<DXD.RgbColorModelPerc
   [DataMember]
   public Int32? RedPortion
   {
-    get
-    {
-      return _Element?.RedPortion?.Value;
-    }
-    set
-    {
-      _ExistingElement.RedPortion = value;
-    }
+    get => _Element?.RedPortion?.Value;
+    set => _ExistingElement.RedPortion = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class RgbColorModelPercentage: ModelElement<DXD.RgbColorModelPerc
   [DataMember]
   public Int32? GreenPortion
   {
-    get
-    {
-      return _Element?.GreenPortion?.Value;
-    }
-    set
-    {
-      _ExistingElement.GreenPortion = value;
-    }
+    get => _Element?.GreenPortion?.Value;
+    set => _ExistingElement.GreenPortion = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class RgbColorModelPercentage: ModelElement<DXD.RgbColorModelPerc
   [DataMember]
   public Int32? BluePortion
   {
-    get
-    {
-      return _Element?.BluePortion?.Value;
-    }
-    set
-    {
-      _ExistingElement.BluePortion = value;
-    }
+    get => _Element?.BluePortion?.Value;
+    set => _ExistingElement.BluePortion = value;
   }
   
 }

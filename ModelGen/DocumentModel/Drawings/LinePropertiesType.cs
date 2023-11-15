@@ -19,14 +19,8 @@ public partial class LinePropertiesType: ModelElement<DXD.LinePropertiesType>
   [DataMember]
   public Int32? Width
   {
-    get
-    {
-      return _Element?.Width?.Value;
-    }
-    set
-    {
-      _ExistingElement.Width = value;
-    }
+    get => _Element?.Width?.Value;
+    set => _ExistingElement.Width = value;
   }
   
 }

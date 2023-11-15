@@ -19,14 +19,8 @@ public partial class PrimaryItem: ModelElement<DXO10CUI.PrimaryItem>
   [DataMember]
   public DMCUI10.BackstageRegularButton? BackstageRegularButton
   {
-    get
-    {
-      return _Element?.GetObject<DMCUI10.BackstageRegularButton,DXO10CUI.BackstageRegularButton>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMCUI10.BackstageRegularButton,DXO10CUI.BackstageRegularButton>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -36,14 +30,8 @@ public partial class PrimaryItem: ModelElement<DXO10CUI.PrimaryItem>
   [DataMember]
   public DMCUI10.BackstagePrimaryMenu? BackstagePrimaryMenu
   {
-    get
-    {
-      return _Element?.GetObject<DMCUI10.BackstagePrimaryMenu,DXO10CUI.BackstagePrimaryMenu>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMCUI10.BackstagePrimaryMenu,DXO10CUI.BackstagePrimaryMenu>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

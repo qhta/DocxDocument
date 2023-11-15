@@ -19,14 +19,8 @@ public partial class ColorsDefinition: ModelElement<DXDDD.ColorsDefinition>
   [DataMember]
   public String? UniqueId
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.UniqueId);
-    }
-    set
-    {
-      _ExistingElement.UniqueId = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.UniqueId;
+    set => _ExistingElement.UniqueId = value;
   }
   
   
@@ -36,40 +30,22 @@ public partial class ColorsDefinition: ModelElement<DXDDD.ColorsDefinition>
   [DataMember]
   public String? MinVersion
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.MinVersion);
-    }
-    set
-    {
-      _ExistingElement.MinVersion = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.MinVersion;
+    set => _ExistingElement.MinVersion = value;
   }
   
   [DataMember]
   public DMDD.ColorTransformCategories? ColorTransformCategories
   {
-    get
-    {
-      return _Element?.GetObject<DMDD.ColorTransformCategories,DXDDD.ColorTransformCategories>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDD.ColorTransformCategories,DXDDD.ColorTransformCategories>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMDD.ExtensionList? ExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMDD.ExtensionList,DXDDD.ExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDD.ExtensionList,DXDDD.ExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

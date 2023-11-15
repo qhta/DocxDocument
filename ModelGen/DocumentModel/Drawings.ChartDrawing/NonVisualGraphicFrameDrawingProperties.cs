@@ -19,14 +19,8 @@ public partial class NonVisualGraphicFrameDrawingProperties: ModelElement<DXDCD.
   [DataMember]
   public DMD.GraphicFrameLocks? GraphicFrameLocks
   {
-    get
-    {
-      return _Element?.GetObject<DMD.GraphicFrameLocks,DXD.GraphicFrameLocks>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.GraphicFrameLocks,DXD.GraphicFrameLocks>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -36,14 +30,8 @@ public partial class NonVisualGraphicFrameDrawingProperties: ModelElement<DXDCD.
   [DataMember]
   public DMD.ExtensionList? ExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMD.ExtensionList,DXD.ExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.ExtensionList,DXD.ExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

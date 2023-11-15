@@ -19,115 +19,57 @@ public partial class NonVisualDrawingPropertiesExtension: ModelElement<DXD.NonVi
   [DataMember]
   public String? Uri
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Uri);
-    }
-    set
-    {
-      _ExistingElement.Uri = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Uri;
+    set => _ExistingElement.Uri = value;
   }
   
   [DataMember]
   public DMD10.CompatExtension? CompatExtension
   {
-    get
-    {
-      return _Element?.GetObject<DMD10.CompatExtension,DXO10D.CompatExtension>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD10.CompatExtension,DXO10D.CompatExtension>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   [DataMember]
   public DMD.BackgroundProperties? BackgroundProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMD.BackgroundProperties,DXO13D.BackgroundProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.BackgroundProperties,DXO13D.BackgroundProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   [DataMember]
   public DMD.CreationId? CreationId
   {
-    get
-    {
-      return _Element?.GetObject<DMD.CreationId,DXO16D.CreationId>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.CreationId,DXO16D.CreationId>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   [DataMember]
   public DMD.PredecessorDrawingElementReference? PredecessorDrawingElementReference
   {
-    get
-    {
-      return _Element?.GetObject<DMD.PredecessorDrawingElementReference,DXO16D.PredecessorDrawingElementReference>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.PredecessorDrawingElementReference,DXO16D.PredecessorDrawingElementReference>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   [DataMember]
   public Boolean? Decorative
   {
-    get
-    {
-      return _ExistingElement.GetFirstChild<DXO19D.Decorative>() != null;
-    }
-    set
-    {
-      if (value == false)
-      {
-        var itemElement = _ExistingElement.GetFirstChild<DXO19D.Decorative>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new DXO19D.Decorative();
-        _ExistingElement.AddChild(itemElement);
-      }
-    }
+    get => _Element?.GetBoolVal<DXO19D.Decorative>();
+    set => _ExistingElement.SetBoolVal<DXO19D.Decorative>(value);
   }
   
   [DataMember]
   public DMD.ClassificationOutcome? ClassificationOutcome
   {
-    get
-    {
-      return _Element?.GetObject<DMD.ClassificationOutcome,DXO21DDC.ClassificationOutcome>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.ClassificationOutcome,DXO21DDC.ClassificationOutcome>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   [DataMember]
   public DMDSL.ScriptLink? ScriptLink
   {
-    get
-    {
-      return _Element?.GetObject<DMDSL.ScriptLink,DXOD21SL.ScriptLink>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDSL.ScriptLink,DXOD21SL.ScriptLink>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

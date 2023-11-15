@@ -19,14 +19,8 @@ public partial class GeoHierarchyEntity: ModelElement<DXO16DCD.GeoHierarchyEntit
   [DataMember]
   public String? EntityName
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.EntityName);
-    }
-    set
-    {
-      _ExistingElement.EntityName = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.EntityName;
+    set => _ExistingElement.EntityName = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class GeoHierarchyEntity: ModelElement<DXO16DCD.GeoHierarchyEntit
   [DataMember]
   public String? EntityId
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.EntityId);
-    }
-    set
-    {
-      _ExistingElement.EntityId = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.EntityId;
+    set => _ExistingElement.EntityId = value;
   }
   
 }

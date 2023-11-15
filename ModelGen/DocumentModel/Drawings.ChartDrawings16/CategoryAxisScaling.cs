@@ -19,14 +19,8 @@ public partial class CategoryAxisScaling: ModelElement<DXO16DCD.CategoryAxisScal
   [DataMember]
   public String? GapWidth
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.GapWidth);
-    }
-    set
-    {
-      _ExistingElement.GapWidth = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.GapWidth;
+    set => _ExistingElement.GapWidth = value;
   }
   
 }

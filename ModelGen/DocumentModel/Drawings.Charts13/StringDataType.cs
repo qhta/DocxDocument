@@ -19,14 +19,8 @@ public partial class StringDataType: ModelElement<DXO13DC.StringDataType>
   [DataMember]
   public DMDC.PointCount? PointCount
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.PointCount,DXDC.PointCount>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.PointCount,DXDC.PointCount>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.UnsignedIntegerType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.UnsignedIntegerType");
   }
   
 }

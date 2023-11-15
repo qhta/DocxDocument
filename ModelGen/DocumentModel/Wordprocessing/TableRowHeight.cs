@@ -19,14 +19,8 @@ public partial class TableRowHeight: ModelElement<DXW.TableRowHeight>
   [DataMember]
   public UInt32? Val
   {
-    get
-    {
-      return _Element?.Val?.Value;
-    }
-    set
-    {
-      _ExistingElement.Val = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
   }
   
 }

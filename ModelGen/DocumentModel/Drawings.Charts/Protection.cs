@@ -19,14 +19,8 @@ public partial class Protection: ModelElement<DXDC.Protection>
   [DataMember]
   public DMDC.ChartObject? ChartObject
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.ChartObject,DXDC.ChartObject>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.ChartObject,DXDC.ChartObject>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.BooleanType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.BooleanType");
   }
   
   
@@ -36,14 +30,8 @@ public partial class Protection: ModelElement<DXDC.Protection>
   [DataMember]
   public DMDC.Data? Data
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.Data,DXDC.Data>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.Data,DXDC.Data>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.BooleanType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.BooleanType");
   }
   
   
@@ -53,14 +41,8 @@ public partial class Protection: ModelElement<DXDC.Protection>
   [DataMember]
   public DMDC.Formatting? Formatting
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.Formatting,DXDC.Formatting>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.Formatting,DXDC.Formatting>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.BooleanType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.BooleanType");
   }
   
   
@@ -70,14 +52,8 @@ public partial class Protection: ModelElement<DXDC.Protection>
   [DataMember]
   public DMDC.Selection? Selection
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.Selection,DXDC.Selection>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.Selection,DXDC.Selection>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.BooleanType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.BooleanType");
   }
   
   
@@ -87,14 +63,8 @@ public partial class Protection: ModelElement<DXDC.Protection>
   [DataMember]
   public DMDC.UserInterface? UserInterface
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.UserInterface,DXDC.UserInterface>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.UserInterface,DXDC.UserInterface>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.BooleanType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.BooleanType");
   }
   
 }

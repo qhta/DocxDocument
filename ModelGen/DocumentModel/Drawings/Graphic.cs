@@ -19,14 +19,8 @@ public partial class Graphic: ModelElement<DXD.Graphic>
   [DataMember]
   public DMD.GraphicData? GraphicData
   {
-    get
-    {
-      return _Element?.GetObject<DMD.GraphicData,DXD.GraphicData>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.GraphicData,DXD.GraphicData>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

@@ -19,14 +19,8 @@ public partial class ArtisticMarker: ModelElement<DXO10D.ArtisticMarker>
   [DataMember]
   public Int32? Transparancy
   {
-    get
-    {
-      return _Element?.Transparancy?.Value;
-    }
-    set
-    {
-      _ExistingElement.Transparancy = value;
-    }
+    get => _Element?.Transparancy?.Value;
+    set => _ExistingElement.Transparancy = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class ArtisticMarker: ModelElement<DXO10D.ArtisticMarker>
   [DataMember]
   public Int32? Size
   {
-    get
-    {
-      return _Element?.Size?.Value;
-    }
-    set
-    {
-      _ExistingElement.Size = value;
-    }
+    get => _Element?.Size?.Value;
+    set => _ExistingElement.Size = value;
   }
   
 }

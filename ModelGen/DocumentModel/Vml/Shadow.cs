@@ -19,14 +19,8 @@ public partial class Shadow: ModelElement<DXV.Shadow>
   [DataMember]
   public String? Id
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Id);
-    }
-    set
-    {
-      _ExistingElement.Id = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Id;
+    set => _ExistingElement.Id = value;
   }
   
   
@@ -36,17 +30,8 @@ public partial class Shadow: ModelElement<DXV.Shadow>
   [DataMember]
   public Boolean? On
   {
-    get
-    {
-      return _Element?.On?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.On = value;
-      else
-        _ExistingElement.On = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -56,17 +41,8 @@ public partial class Shadow: ModelElement<DXV.Shadow>
   [DataMember]
   public Boolean? Obscured
   {
-    get
-    {
-      return _Element?.Obscured?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Obscured = value;
-      else
-        _ExistingElement.Obscured = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -76,14 +52,8 @@ public partial class Shadow: ModelElement<DXV.Shadow>
   [DataMember]
   public String? Color
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Color);
-    }
-    set
-    {
-      _ExistingElement.Color = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Color;
+    set => _ExistingElement.Color = value;
   }
   
   
@@ -93,14 +63,8 @@ public partial class Shadow: ModelElement<DXV.Shadow>
   [DataMember]
   public String? Opacity
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Opacity);
-    }
-    set
-    {
-      _ExistingElement.Opacity = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Opacity;
+    set => _ExistingElement.Opacity = value;
   }
   
   
@@ -110,14 +74,8 @@ public partial class Shadow: ModelElement<DXV.Shadow>
   [DataMember]
   public String? Offset
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Offset);
-    }
-    set
-    {
-      _ExistingElement.Offset = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Offset;
+    set => _ExistingElement.Offset = value;
   }
   
   
@@ -127,14 +85,8 @@ public partial class Shadow: ModelElement<DXV.Shadow>
   [DataMember]
   public String? Color2
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Color2);
-    }
-    set
-    {
-      _ExistingElement.Color2 = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Color2;
+    set => _ExistingElement.Color2 = value;
   }
   
   
@@ -144,14 +96,8 @@ public partial class Shadow: ModelElement<DXV.Shadow>
   [DataMember]
   public String? Offset2
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Offset2);
-    }
-    set
-    {
-      _ExistingElement.Offset2 = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Offset2;
+    set => _ExistingElement.Offset2 = value;
   }
   
   
@@ -161,14 +107,8 @@ public partial class Shadow: ModelElement<DXV.Shadow>
   [DataMember]
   public String? Origin
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Origin);
-    }
-    set
-    {
-      _ExistingElement.Origin = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Origin;
+    set => _ExistingElement.Origin = value;
   }
   
   
@@ -178,14 +118,8 @@ public partial class Shadow: ModelElement<DXV.Shadow>
   [DataMember]
   public String? Matrix
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Matrix);
-    }
-    set
-    {
-      _ExistingElement.Matrix = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Matrix;
+    set => _ExistingElement.Matrix = value;
   }
   
 }

@@ -19,17 +19,8 @@ public partial class ConnectionShapeLocks: ModelElement<DXD.ConnectionShapeLocks
   [DataMember]
   public Boolean? NoGrouping
   {
-    get
-    {
-      return _Element?.NoGrouping?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.NoGrouping = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.NoGrouping = null;
-    }
+    get => _Element?.NoGrouping?.Value;
+    set => _ExistingElement.NoGrouping = value;
   }
   
   
@@ -39,17 +30,8 @@ public partial class ConnectionShapeLocks: ModelElement<DXD.ConnectionShapeLocks
   [DataMember]
   public Boolean? NoSelection
   {
-    get
-    {
-      return _Element?.NoSelection?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.NoSelection = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.NoSelection = null;
-    }
+    get => _Element?.NoSelection?.Value;
+    set => _ExistingElement.NoSelection = value;
   }
   
   
@@ -59,17 +41,8 @@ public partial class ConnectionShapeLocks: ModelElement<DXD.ConnectionShapeLocks
   [DataMember]
   public Boolean? NoRotation
   {
-    get
-    {
-      return _Element?.NoRotation?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.NoRotation = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.NoRotation = null;
-    }
+    get => _Element?.NoRotation?.Value;
+    set => _ExistingElement.NoRotation = value;
   }
   
   
@@ -79,17 +52,8 @@ public partial class ConnectionShapeLocks: ModelElement<DXD.ConnectionShapeLocks
   [DataMember]
   public Boolean? NoChangeAspect
   {
-    get
-    {
-      return _Element?.NoChangeAspect?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.NoChangeAspect = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.NoChangeAspect = null;
-    }
+    get => _Element?.NoChangeAspect?.Value;
+    set => _ExistingElement.NoChangeAspect = value;
   }
   
   
@@ -99,17 +63,8 @@ public partial class ConnectionShapeLocks: ModelElement<DXD.ConnectionShapeLocks
   [DataMember]
   public Boolean? NoMove
   {
-    get
-    {
-      return _Element?.NoMove?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.NoMove = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.NoMove = null;
-    }
+    get => _Element?.NoMove?.Value;
+    set => _ExistingElement.NoMove = value;
   }
   
   
@@ -119,17 +74,8 @@ public partial class ConnectionShapeLocks: ModelElement<DXD.ConnectionShapeLocks
   [DataMember]
   public Boolean? NoResize
   {
-    get
-    {
-      return _Element?.NoResize?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.NoResize = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.NoResize = null;
-    }
+    get => _Element?.NoResize?.Value;
+    set => _ExistingElement.NoResize = value;
   }
   
   
@@ -139,17 +85,8 @@ public partial class ConnectionShapeLocks: ModelElement<DXD.ConnectionShapeLocks
   [DataMember]
   public Boolean? NoEditPoints
   {
-    get
-    {
-      return _Element?.NoEditPoints?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.NoEditPoints = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.NoEditPoints = null;
-    }
+    get => _Element?.NoEditPoints?.Value;
+    set => _ExistingElement.NoEditPoints = value;
   }
   
   
@@ -159,17 +96,8 @@ public partial class ConnectionShapeLocks: ModelElement<DXD.ConnectionShapeLocks
   [DataMember]
   public Boolean? NoAdjustHandles
   {
-    get
-    {
-      return _Element?.NoAdjustHandles?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.NoAdjustHandles = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.NoAdjustHandles = null;
-    }
+    get => _Element?.NoAdjustHandles?.Value;
+    set => _ExistingElement.NoAdjustHandles = value;
   }
   
   
@@ -179,17 +107,8 @@ public partial class ConnectionShapeLocks: ModelElement<DXD.ConnectionShapeLocks
   [DataMember]
   public Boolean? NoChangeArrowheads
   {
-    get
-    {
-      return _Element?.NoChangeArrowheads?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.NoChangeArrowheads = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.NoChangeArrowheads = null;
-    }
+    get => _Element?.NoChangeArrowheads?.Value;
+    set => _ExistingElement.NoChangeArrowheads = value;
   }
   
   
@@ -199,17 +118,8 @@ public partial class ConnectionShapeLocks: ModelElement<DXD.ConnectionShapeLocks
   [DataMember]
   public Boolean? NoChangeShapeType
   {
-    get
-    {
-      return _Element?.NoChangeShapeType?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.NoChangeShapeType = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.NoChangeShapeType = null;
-    }
+    get => _Element?.NoChangeShapeType?.Value;
+    set => _ExistingElement.NoChangeShapeType = value;
   }
   
   
@@ -219,14 +129,8 @@ public partial class ConnectionShapeLocks: ModelElement<DXD.ConnectionShapeLocks
   [DataMember]
   public DMD.ConnectorLockingExtensionList? ConnectorLockingExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMD.ConnectorLockingExtensionList,DXD.ConnectorLockingExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.ConnectorLockingExtensionList,DXD.ConnectorLockingExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

@@ -19,53 +19,29 @@ public partial class PlotArea: ModelElement<DXDC.PlotArea>
   [DataMember]
   public DMDC.Layout? Layout
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.Layout,DXDC.Layout>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.Layout,DXDC.Layout>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMDC.DataTable? DataTable
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.DataTable,DXDC.DataTable>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.DataTable,DXDC.DataTable>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMDC.ShapeProperties? ShapeProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.ShapeProperties,DXDC.ShapeProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.ShapeProperties,DXDC.ShapeProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMDC.ExtensionList? ExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.ExtensionList,DXDC.ExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.ExtensionList,DXDC.ExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

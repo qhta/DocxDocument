@@ -19,14 +19,8 @@ public partial class SdtPlaceholder: ModelElement<DXW.SdtPlaceholder>
   [DataMember]
   public DMW.DocPartReference? DocPartReference
   {
-    get
-    {
-      return _Element?.GetObject<DMW.DocPartReference,DXW.DocPartReference>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.DocPartReference,DXW.DocPartReference>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.StringType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.StringType");
   }
   
 }

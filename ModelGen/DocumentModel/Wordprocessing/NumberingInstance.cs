@@ -19,14 +19,8 @@ public partial class NumberingInstance: ModelElement<DXW.NumberingInstance>
   [DataMember]
   public Int32? NumberID
   {
-    get
-    {
-      return _Element?.NumberID?.Value;
-    }
-    set
-    {
-      _ExistingElement.NumberID = value;
-    }
+    get => _Element?.NumberID?.Value;
+    set => _ExistingElement.NumberID = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class NumberingInstance: ModelElement<DXW.NumberingInstance>
   [DataMember]
   public Int32? DurableId
   {
-    get
-    {
-      return _Element?.DurableId?.Value;
-    }
-    set
-    {
-      _ExistingElement.DurableId = value;
-    }
+    get => _Element?.DurableId?.Value;
+    set => _ExistingElement.DurableId = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class NumberingInstance: ModelElement<DXW.NumberingInstance>
   [DataMember]
   public DMW.AbstractNumId? AbstractNumId
   {
-    get
-    {
-      return _Element?.GetObject<DMW.AbstractNumId,DXW.AbstractNumId>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.AbstractNumId,DXW.AbstractNumId>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.NonNegativeDecimalNumberType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.NonNegativeDecimalNumberType");
   }
   
 }

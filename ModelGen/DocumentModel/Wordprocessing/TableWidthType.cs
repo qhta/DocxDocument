@@ -19,14 +19,8 @@ public partial class TableWidthType: ModelElement<DXW.TableWidthType>
   [DataMember]
   public String? Width
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Width);
-    }
-    set
-    {
-      _ExistingElement.Width = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Width;
+    set => _ExistingElement.Width = value;
   }
   
 }

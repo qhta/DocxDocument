@@ -19,14 +19,8 @@ public partial class BackstageGroup: ModelElement<DXO10CUI.BackstageGroup>
   [DataMember]
   public String? Id
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Id);
-    }
-    set
-    {
-      _ExistingElement.Id = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Id;
+    set => _ExistingElement.Id = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class BackstageGroup: ModelElement<DXO10CUI.BackstageGroup>
   [DataMember]
   public String? QualifiedId
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.QualifiedId);
-    }
-    set
-    {
-      _ExistingElement.QualifiedId = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.QualifiedId;
+    set => _ExistingElement.QualifiedId = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class BackstageGroup: ModelElement<DXO10CUI.BackstageGroup>
   [DataMember]
   public String? Tag
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Tag);
-    }
-    set
-    {
-      _ExistingElement.Tag = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Tag;
+    set => _ExistingElement.Tag = value;
   }
   
   
@@ -70,14 +52,8 @@ public partial class BackstageGroup: ModelElement<DXO10CUI.BackstageGroup>
   [DataMember]
   public String? IdMso
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.IdMso);
-    }
-    set
-    {
-      _ExistingElement.IdMso = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.IdMso;
+    set => _ExistingElement.IdMso = value;
   }
   
   
@@ -87,14 +63,8 @@ public partial class BackstageGroup: ModelElement<DXO10CUI.BackstageGroup>
   [DataMember]
   public String? InsertAfterMso
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.InsertAfterMso);
-    }
-    set
-    {
-      _ExistingElement.InsertAfterMso = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.InsertAfterMso;
+    set => _ExistingElement.InsertAfterMso = value;
   }
   
   
@@ -104,14 +74,8 @@ public partial class BackstageGroup: ModelElement<DXO10CUI.BackstageGroup>
   [DataMember]
   public String? InsertBeforeMso
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.InsertBeforeMso);
-    }
-    set
-    {
-      _ExistingElement.InsertBeforeMso = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.InsertBeforeMso;
+    set => _ExistingElement.InsertBeforeMso = value;
   }
   
   
@@ -121,14 +85,8 @@ public partial class BackstageGroup: ModelElement<DXO10CUI.BackstageGroup>
   [DataMember]
   public String? InsertAfterQulifiedId
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.InsertAfterQulifiedId);
-    }
-    set
-    {
-      _ExistingElement.InsertAfterQulifiedId = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.InsertAfterQulifiedId;
+    set => _ExistingElement.InsertAfterQulifiedId = value;
   }
   
   
@@ -138,14 +96,8 @@ public partial class BackstageGroup: ModelElement<DXO10CUI.BackstageGroup>
   [DataMember]
   public String? InsertBeforeQulifiedId
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.InsertBeforeQulifiedId);
-    }
-    set
-    {
-      _ExistingElement.InsertBeforeQulifiedId = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.InsertBeforeQulifiedId;
+    set => _ExistingElement.InsertBeforeQulifiedId = value;
   }
   
   
@@ -155,14 +107,8 @@ public partial class BackstageGroup: ModelElement<DXO10CUI.BackstageGroup>
   [DataMember]
   public String? Label
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Label);
-    }
-    set
-    {
-      _ExistingElement.Label = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Label;
+    set => _ExistingElement.Label = value;
   }
   
   
@@ -172,14 +118,8 @@ public partial class BackstageGroup: ModelElement<DXO10CUI.BackstageGroup>
   [DataMember]
   public String? GetLabel
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.GetLabel);
-    }
-    set
-    {
-      _ExistingElement.GetLabel = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.GetLabel;
+    set => _ExistingElement.GetLabel = value;
   }
   
   
@@ -189,17 +129,8 @@ public partial class BackstageGroup: ModelElement<DXO10CUI.BackstageGroup>
   [DataMember]
   public Boolean? Visible
   {
-    get
-    {
-      return _Element?.Visible?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Visible = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.Visible = null;
-    }
+    get => _Element?.Visible?.Value;
+    set => _ExistingElement.Visible = value;
   }
   
   
@@ -209,14 +140,8 @@ public partial class BackstageGroup: ModelElement<DXO10CUI.BackstageGroup>
   [DataMember]
   public String? GetVisible
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.GetVisible);
-    }
-    set
-    {
-      _ExistingElement.GetVisible = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.GetVisible;
+    set => _ExistingElement.GetVisible = value;
   }
   
   
@@ -226,14 +151,8 @@ public partial class BackstageGroup: ModelElement<DXO10CUI.BackstageGroup>
   [DataMember]
   public String? GetStyle
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.GetStyle);
-    }
-    set
-    {
-      _ExistingElement.GetStyle = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.GetStyle;
+    set => _ExistingElement.GetStyle = value;
   }
   
   
@@ -243,14 +162,8 @@ public partial class BackstageGroup: ModelElement<DXO10CUI.BackstageGroup>
   [DataMember]
   public String? HelperText
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.HelperText);
-    }
-    set
-    {
-      _ExistingElement.HelperText = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.HelperText;
+    set => _ExistingElement.HelperText = value;
   }
   
   
@@ -260,14 +173,8 @@ public partial class BackstageGroup: ModelElement<DXO10CUI.BackstageGroup>
   [DataMember]
   public String? GetHelperText
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.GetHelperText);
-    }
-    set
-    {
-      _ExistingElement.GetHelperText = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.GetHelperText;
+    set => _ExistingElement.GetHelperText = value;
   }
   
   
@@ -277,17 +184,8 @@ public partial class BackstageGroup: ModelElement<DXO10CUI.BackstageGroup>
   [DataMember]
   public Boolean? ShowLabel
   {
-    get
-    {
-      return _Element?.ShowLabel?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.ShowLabel = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.ShowLabel = null;
-    }
+    get => _Element?.ShowLabel?.Value;
+    set => _ExistingElement.ShowLabel = value;
   }
   
   
@@ -297,53 +195,29 @@ public partial class BackstageGroup: ModelElement<DXO10CUI.BackstageGroup>
   [DataMember]
   public String? GetShowLabel
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.GetShowLabel);
-    }
-    set
-    {
-      _ExistingElement.GetShowLabel = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.GetShowLabel;
+    set => _ExistingElement.GetShowLabel = value;
   }
   
   [DataMember]
   public DMCUI10.PrimaryItem? PrimaryItem
   {
-    get
-    {
-      return _Element?.GetObject<DMCUI10.PrimaryItem,DXO10CUI.PrimaryItem>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMCUI10.PrimaryItem,DXO10CUI.PrimaryItem>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMCUI10.TopItemsGroupControls? TopItemsGroupControls
   {
-    get
-    {
-      return _Element?.GetObject<DMCUI10.TopItemsGroupControls,DXO10CUI.TopItemsGroupControls>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMCUI10.TopItemsGroupControls,DXO10CUI.TopItemsGroupControls>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2010.CustomUI.GroupControlsType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2010.CustomUI.GroupControlsType");
   }
   
   [DataMember]
   public DMCUI10.BottomItemsGroupControls? BottomItemsGroupControls
   {
-    get
-    {
-      return _Element?.GetObject<DMCUI10.BottomItemsGroupControls,DXO10CUI.BottomItemsGroupControls>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMCUI10.BottomItemsGroupControls,DXO10CUI.BottomItemsGroupControls>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2010.CustomUI.GroupControlsType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2010.CustomUI.GroupControlsType");
   }
   
 }

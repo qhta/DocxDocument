@@ -19,14 +19,8 @@ public partial class GeoCache: ModelElement<DXO16DCD.GeoCache>
   [DataMember]
   public String? Provider
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Provider);
-    }
-    set
-    {
-      _ExistingElement.Provider = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Provider;
+    set => _ExistingElement.Provider = value;
   }
   
 }

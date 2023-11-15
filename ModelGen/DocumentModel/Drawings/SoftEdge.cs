@@ -19,14 +19,8 @@ public partial class SoftEdge: ModelElement<DXD.SoftEdge>
   [DataMember]
   public Int64? Radius
   {
-    get
-    {
-      return _Element?.Radius?.Value;
-    }
-    set
-    {
-      _ExistingElement.Radius = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int64]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int64]");
   }
   
 }

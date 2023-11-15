@@ -19,14 +19,8 @@ public partial class CameraTool: ModelElement<DXO10D.CameraTool>
   [DataMember]
   public String? CellRange
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.CellRange);
-    }
-    set
-    {
-      _ExistingElement.CellRange = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.CellRange;
+    set => _ExistingElement.CellRange = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class CameraTool: ModelElement<DXO10D.CameraTool>
   [DataMember]
   public String? ShapeId
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.ShapeId);
-    }
-    set
-    {
-      _ExistingElement.ShapeId = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.ShapeId;
+    set => _ExistingElement.ShapeId = value;
   }
   
 }

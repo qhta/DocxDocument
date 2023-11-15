@@ -19,14 +19,8 @@ public partial class Adjust: ModelElement<DXDDD.Adjust>
   [DataMember]
   public UInt32? Index
   {
-    get
-    {
-      return _Element?.Index?.Value;
-    }
-    set
-    {
-      _ExistingElement.Index = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
   }
   
   
@@ -36,14 +30,8 @@ public partial class Adjust: ModelElement<DXDDD.Adjust>
   [DataMember]
   public Double? Val
   {
-    get
-    {
-      return _Element?.Val?.Value;
-    }
-    set
-    {
-      _ExistingElement.Val = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Double]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Double]");
   }
   
 }

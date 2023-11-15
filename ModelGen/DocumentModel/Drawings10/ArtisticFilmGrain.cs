@@ -19,14 +19,8 @@ public partial class ArtisticFilmGrain: ModelElement<DXO10D.ArtisticFilmGrain>
   [DataMember]
   public Int32? Transparancy
   {
-    get
-    {
-      return _Element?.Transparancy?.Value;
-    }
-    set
-    {
-      _ExistingElement.Transparancy = value;
-    }
+    get => _Element?.Transparancy?.Value;
+    set => _ExistingElement.Transparancy = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class ArtisticFilmGrain: ModelElement<DXO10D.ArtisticFilmGrain>
   [DataMember]
   public Int32? GrainSize
   {
-    get
-    {
-      return _Element?.GrainSize?.Value;
-    }
-    set
-    {
-      _ExistingElement.GrainSize = value;
-    }
+    get => _Element?.GrainSize?.Value;
+    set => _ExistingElement.GrainSize = value;
   }
   
 }

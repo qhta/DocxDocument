@@ -19,14 +19,8 @@ public partial class DataLabelsRange: ModelElement<DXO13DC.DataLabelsRange>
   [DataMember]
   public DMDC13.Formula? Formula
   {
-    get
-    {
-      return _Element?.GetObject<DMDC13.Formula,DXO13DC.Formula>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC13.Formula,DXO13DC.Formula>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
   }
   
   
@@ -36,14 +30,8 @@ public partial class DataLabelsRange: ModelElement<DXO13DC.DataLabelsRange>
   [DataMember]
   public DMDC13.DataLabelsRangeChache? DataLabelsRangeChache
   {
-    get
-    {
-      return _Element?.GetObject<DMDC13.DataLabelsRangeChache,DXO13DC.DataLabelsRangeChache>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC13.DataLabelsRangeChache,DXO13DC.DataLabelsRangeChache>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.Chart.StringDataType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Drawing.Chart.StringDataType");
   }
   
 }

@@ -19,14 +19,8 @@ public partial class ArtisticPlasticWrap: ModelElement<DXO10D.ArtisticPlasticWra
   [DataMember]
   public Int32? Transparancy
   {
-    get
-    {
-      return _Element?.Transparancy?.Value;
-    }
-    set
-    {
-      _ExistingElement.Transparancy = value;
-    }
+    get => _Element?.Transparancy?.Value;
+    set => _ExistingElement.Transparancy = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class ArtisticPlasticWrap: ModelElement<DXO10D.ArtisticPlasticWra
   [DataMember]
   public Int32? Smoothness
   {
-    get
-    {
-      return _Element?.Smoothness?.Value;
-    }
-    set
-    {
-      _ExistingElement.Smoothness = value;
-    }
+    get => _Element?.Smoothness?.Value;
+    set => _ExistingElement.Smoothness = value;
   }
   
 }

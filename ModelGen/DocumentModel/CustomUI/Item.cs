@@ -19,14 +19,8 @@ public partial class Item: ModelElement<DXOCUI.Item>
   [DataMember]
   public String? Id
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Id);
-    }
-    set
-    {
-      _ExistingElement.Id = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Id;
+    set => _ExistingElement.Id = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class Item: ModelElement<DXOCUI.Item>
   [DataMember]
   public String? Label
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Label);
-    }
-    set
-    {
-      _ExistingElement.Label = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Label;
+    set => _ExistingElement.Label = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class Item: ModelElement<DXOCUI.Item>
   [DataMember]
   public String? Image
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Image);
-    }
-    set
-    {
-      _ExistingElement.Image = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Image;
+    set => _ExistingElement.Image = value;
   }
   
   
@@ -70,14 +52,8 @@ public partial class Item: ModelElement<DXOCUI.Item>
   [DataMember]
   public String? ImageMso
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.ImageMso);
-    }
-    set
-    {
-      _ExistingElement.ImageMso = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.ImageMso;
+    set => _ExistingElement.ImageMso = value;
   }
   
   
@@ -87,14 +63,8 @@ public partial class Item: ModelElement<DXOCUI.Item>
   [DataMember]
   public String? Screentip
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Screentip);
-    }
-    set
-    {
-      _ExistingElement.Screentip = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Screentip;
+    set => _ExistingElement.Screentip = value;
   }
   
   
@@ -104,14 +74,8 @@ public partial class Item: ModelElement<DXOCUI.Item>
   [DataMember]
   public String? Supertip
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Supertip);
-    }
-    set
-    {
-      _ExistingElement.Supertip = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Supertip;
+    set => _ExistingElement.Supertip = value;
   }
   
 }

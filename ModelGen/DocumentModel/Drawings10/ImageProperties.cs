@@ -19,14 +19,8 @@ public partial class ImageProperties: ModelElement<DXO10D.ImageProperties>
   [DataMember]
   public DMD10.ImageLayer? ImageLayer
   {
-    get
-    {
-      return _Element?.GetObject<DMD10.ImageLayer,DXO10D.ImageLayer>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD10.ImageLayer,DXO10D.ImageLayer>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

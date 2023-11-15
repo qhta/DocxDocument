@@ -19,14 +19,8 @@ public partial class ApplicationNonVisualDrawingProperties: ModelElement<DXO10DC
   [DataMember]
   public String? Macro
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Macro);
-    }
-    set
-    {
-      _ExistingElement.Macro = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Macro;
+    set => _ExistingElement.Macro = value;
   }
   
   
@@ -36,17 +30,8 @@ public partial class ApplicationNonVisualDrawingProperties: ModelElement<DXO10DC
   [DataMember]
   public Boolean? Published
   {
-    get
-    {
-      return _Element?.Published?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Published = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.Published = null;
-    }
+    get => _Element?.Published?.Value;
+    set => _ExistingElement.Published = value;
   }
   
 }

@@ -19,14 +19,8 @@ public partial class DialogBoxLauncher: ModelElement<DXOCUI.DialogBoxLauncher>
   [DataMember]
   public DMCUI.UnsizedButton? UnsizedButton
   {
-    get
-    {
-      return _Element?.GetObject<DMCUI.UnsizedButton,DXOCUI.UnsizedButton>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMCUI.UnsizedButton,DXOCUI.UnsizedButton>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
 }

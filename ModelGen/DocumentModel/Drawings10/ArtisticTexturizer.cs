@@ -19,14 +19,8 @@ public partial class ArtisticTexturizer: ModelElement<DXO10D.ArtisticTexturizer>
   [DataMember]
   public Int32? Transparancy
   {
-    get
-    {
-      return _Element?.Transparancy?.Value;
-    }
-    set
-    {
-      _ExistingElement.Transparancy = value;
-    }
+    get => _Element?.Transparancy?.Value;
+    set => _ExistingElement.Transparancy = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class ArtisticTexturizer: ModelElement<DXO10D.ArtisticTexturizer>
   [DataMember]
   public Int32? Scaling
   {
-    get
-    {
-      return _Element?.Scaling?.Value;
-    }
-    set
-    {
-      _ExistingElement.Scaling = value;
-    }
+    get => _Element?.Scaling?.Value;
+    set => _ExistingElement.Scaling = value;
   }
   
 }

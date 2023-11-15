@@ -15,14 +15,8 @@ public partial class CustomXmlBlock: ModelElement<DXW.CustomXmlBlock>
   [DataMember]
   public DMW.CustomXmlProperties? CustomXmlProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMW.CustomXmlProperties,DXW.CustomXmlProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.CustomXmlProperties,DXW.CustomXmlProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

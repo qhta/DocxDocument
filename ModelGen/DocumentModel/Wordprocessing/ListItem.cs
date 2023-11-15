@@ -19,14 +19,8 @@ public partial class ListItem: ModelElement<DXW.ListItem>
   [DataMember]
   public String? DisplayText
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.DisplayText);
-    }
-    set
-    {
-      _ExistingElement.DisplayText = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.DisplayText;
+    set => _ExistingElement.DisplayText = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class ListItem: ModelElement<DXW.ListItem>
   [DataMember]
   public String? Value
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Value);
-    }
-    set
-    {
-      _ExistingElement.Value = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Value;
+    set => _ExistingElement.Value = value;
   }
   
 }

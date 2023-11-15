@@ -19,14 +19,8 @@ public partial class Blip: ModelElement<DXD.Blip>
   [DataMember]
   public String? Embed
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Embed);
-    }
-    set
-    {
-      _ExistingElement.Embed = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Embed;
+    set => _ExistingElement.Embed = value;
   }
   
   
@@ -36,27 +30,15 @@ public partial class Blip: ModelElement<DXD.Blip>
   [DataMember]
   public String? Link
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Link);
-    }
-    set
-    {
-      _ExistingElement.Link = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Link;
+    set => _ExistingElement.Link = value;
   }
   
   [DataMember]
   public DMD.BlipExtensionList? BlipExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMD.BlipExtensionList,DXD.BlipExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.BlipExtensionList,DXD.BlipExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

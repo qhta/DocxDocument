@@ -19,14 +19,8 @@ public partial class BookmarkStart: ModelElement<DXW.BookmarkStart>
   [DataMember]
   public String? Name
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Name);
-    }
-    set
-    {
-      _ExistingElement.Name = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Name;
+    set => _ExistingElement.Name = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class BookmarkStart: ModelElement<DXW.BookmarkStart>
   [DataMember]
   public Int32? ColumnFirst
   {
-    get
-    {
-      return _Element?.ColumnFirst?.Value;
-    }
-    set
-    {
-      _ExistingElement.ColumnFirst = value;
-    }
+    get => _Element?.ColumnFirst?.Value;
+    set => _ExistingElement.ColumnFirst = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class BookmarkStart: ModelElement<DXW.BookmarkStart>
   [DataMember]
   public Int32? ColumnLast
   {
-    get
-    {
-      return _Element?.ColumnLast?.Value;
-    }
-    set
-    {
-      _ExistingElement.ColumnLast = value;
-    }
+    get => _Element?.ColumnLast?.Value;
+    set => _ExistingElement.ColumnLast = value;
   }
   
   
@@ -70,14 +52,8 @@ public partial class BookmarkStart: ModelElement<DXW.BookmarkStart>
   [DataMember]
   public String? Id
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Id);
-    }
-    set
-    {
-      _ExistingElement.Id = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Id;
+    set => _ExistingElement.Id = value;
   }
   
 }

@@ -292,7 +292,7 @@ public abstract class BaseCodeGenerator
     return true;
   }
 
-  protected HashSet<string> GlobalUsings { [DebuggerStepThrough] get; } = new();
+  protected GlobalUsingsClass GlobalUsings { [DebuggerStepThrough] get; } = new();
 
   protected void AddGlobalUsing(string aNamespace)
   {

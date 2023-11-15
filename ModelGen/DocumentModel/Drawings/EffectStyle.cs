@@ -15,53 +15,29 @@ public partial class EffectStyle: ModelElement<DXD.EffectStyle>
   [DataMember]
   public DMD.EffectList? EffectList
   {
-    get
-    {
-      return _Element?.GetObject<DMD.EffectList,DXD.EffectList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.EffectList,DXD.EffectList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMD.EffectDag? EffectDag
   {
-    get
-    {
-      return _Element?.GetObject<DMD.EffectDag,DXD.EffectDag>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.EffectDag,DXD.EffectDag>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.EffectContainerType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.EffectContainerType");
   }
   
   [DataMember]
   public DMD.Scene3DType? Scene3DType
   {
-    get
-    {
-      return _Element?.GetObject<DMD.Scene3DType,DXD.Scene3DType>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.Scene3DType,DXD.Scene3DType>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMD.Shape3DType? Shape3DType
   {
-    get
-    {
-      return _Element?.GetObject<DMD.Shape3DType,DXD.Shape3DType>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.Shape3DType,DXD.Shape3DType>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }
