@@ -664,8 +664,8 @@ public partial class DocumentSettings: ModelElement
   [DataMember]
   public int? DefaultImageDpi
   {
-    get => _DocumentSettings?.GetIntVal<DXW10.DefaultImageDpi>();
-    set => _ExistingSettings.SetIntVal<DXW10.DefaultImageDpi>(value);
+    get => _DocumentSettings?.GetIntVal<Int32, DXW10.DefaultImageDpi>();
+    set => _ExistingSettings.SetIntVal<Int32, DXW10.DefaultImageDpi>(value);
   }
 
   /// <summary>
@@ -1324,8 +1324,8 @@ public partial class DocumentSettings: ModelElement
   [DataMember]
   public int? BookFoldPrintingSheets
   {
-    get => _DocumentSettings?.GetIntVal<DXW.BookFoldPrintingSheets>();
-    set => _ExistingSettings.SetIntVal<DXW.BookFoldPrintingSheets>(value);
+    get => _DocumentSettings?.GetIntVal<int, DXW.BookFoldPrintingSheets>();
+    set => _ExistingSettings.SetIntVal<int, DXW.BookFoldPrintingSheets>(value);
   }
 
   /// <summary>
@@ -1581,8 +1581,8 @@ public partial class DocumentSettings: ModelElement
   [DataMember]
   public int? DisplayHorizontalDrawingGrid
   {
-    get => _DocumentSettings?.GetIntVal<DXW.DisplayHorizontalDrawingGrid>();
-    set => _ExistingSettings.SetIntVal<DXW.DisplayHorizontalDrawingGrid>(value);
+    get => _DocumentSettings?.GetIntVal<Int32, DXW.DisplayHorizontalDrawingGrid>();
+    set => _ExistingSettings.SetIntVal<Int32, DXW.DisplayHorizontalDrawingGrid>(value);
   }
 
   /// <summary>
@@ -1600,8 +1600,8 @@ public partial class DocumentSettings: ModelElement
   [DataMember]
   public int? DisplayVerticalDrawingGrid
   {
-    get => _DocumentSettings?.GetIntVal<DXW.DisplayVerticalDrawingGrid>();
-    set => _ExistingSettings.SetIntVal<DXW.DisplayVerticalDrawingGrid>(value);
+    get => _DocumentSettings?.GetIntVal<Int32, DXW.DisplayVerticalDrawingGrid>();
+    set => _ExistingSettings.SetIntVal<Int32, DXW.DisplayVerticalDrawingGrid>(value);
   }
 
   /// <summary>
@@ -1618,8 +1618,8 @@ public partial class DocumentSettings: ModelElement
   [DataMember]
   public Percent? SummaryLength
   {
-    get => _DocumentSettings?.GetIntVal<DXW.SummaryLength>();
-    set => _ExistingSettings.SetIntVal<DXW.SummaryLength>(value);
+    get => _DocumentSettings?.GetIntVal<Int32, DXW.SummaryLength>();
+    set => _ExistingSettings.SetIntVal<Int32, DXW.SummaryLength>(value);
   }
 
   /// <summary>
@@ -1634,8 +1634,8 @@ public partial class DocumentSettings: ModelElement
   [DataMember]
   public int? ConsecutiveHyphenLimit
   {
-    get => _DocumentSettings?.GetIntVal<DXW.ConsecutiveHyphenLimit>();
-    set => _ExistingSettings.SetIntVal<DXW.ConsecutiveHyphenLimit>(value);
+    get => _DocumentSettings?.GetIntVal<Int32, DXW.ConsecutiveHyphenLimit>();
+    set => _ExistingSettings.SetIntVal<Int32, DXW.ConsecutiveHyphenLimit>(value);
   }
 
   /// <summary>

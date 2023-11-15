@@ -19,14 +19,8 @@ public partial class Extent: ModelElement<DXDCD.Extent>
   [DataMember]
   public Int64? Cx
   {
-    get
-    {
-      return _Element?.Cx?.Value;
-    }
-    set
-    {
-      _ExistingElement.Cx = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int64]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int64]");
   }
   
   
@@ -36,14 +30,8 @@ public partial class Extent: ModelElement<DXDCD.Extent>
   [DataMember]
   public Int64? Cy
   {
-    get
-    {
-      return _Element?.Cy?.Value;
-    }
-    set
-    {
-      _ExistingElement.Cy = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int64]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int64]");
   }
   
 }

@@ -19,14 +19,8 @@ public partial class DocumentProtection: ModelElement<DXW.DocumentProtection>
   [DataMember]
   public Boolean? Formatting
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.Formatting);
-    }
-    set
-    {
-      _ExistingElement.Formatting = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
   
@@ -36,14 +30,8 @@ public partial class DocumentProtection: ModelElement<DXW.DocumentProtection>
   [DataMember]
   public Boolean? Enforcement
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.Enforcement);
-    }
-    set
-    {
-      _ExistingElement.Enforcement = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
   
@@ -53,14 +41,8 @@ public partial class DocumentProtection: ModelElement<DXW.DocumentProtection>
   [DataMember]
   public Int32? CryptographicAlgorithmSid
   {
-    get
-    {
-      return _Element?.CryptographicAlgorithmSid?.Value;
-    }
-    set
-    {
-      _ExistingElement.CryptographicAlgorithmSid = value;
-    }
+    get => _Element?.CryptographicAlgorithmSid?.Value;
+    set => _ExistingElement.CryptographicAlgorithmSid = value;
   }
   
   
@@ -70,14 +52,8 @@ public partial class DocumentProtection: ModelElement<DXW.DocumentProtection>
   [DataMember]
   public UInt32? CryptographicSpinCount
   {
-    get
-    {
-      return _Element?.CryptographicSpinCount?.Value;
-    }
-    set
-    {
-      _ExistingElement.CryptographicSpinCount = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
   }
   
   
@@ -87,14 +63,8 @@ public partial class DocumentProtection: ModelElement<DXW.DocumentProtection>
   [DataMember]
   public String? CryptographicProvider
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.CryptographicProvider);
-    }
-    set
-    {
-      _ExistingElement.CryptographicProvider = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.CryptographicProvider;
+    set => _ExistingElement.CryptographicProvider = value;
   }
   
   
@@ -104,19 +74,8 @@ public partial class DocumentProtection: ModelElement<DXW.DocumentProtection>
   [DataMember]
   public DM.HexBinary? AlgorithmIdExtensibility
   {
-    get
-    {
-      if (_Element?.AlgorithmIdExtensibility?.Value != null)
-        return HexIntConverter.GetValue(_Element?.AlgorithmIdExtensibility.Value);
-      return null;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.AlgorithmIdExtensibility = value.ToString();
-      else
-        _ExistingElement.AlgorithmIdExtensibility = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -126,14 +85,8 @@ public partial class DocumentProtection: ModelElement<DXW.DocumentProtection>
   [DataMember]
   public String? AlgorithmIdExtensibilitySource
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.AlgorithmIdExtensibilitySource);
-    }
-    set
-    {
-      _ExistingElement.AlgorithmIdExtensibilitySource = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.AlgorithmIdExtensibilitySource;
+    set => _ExistingElement.AlgorithmIdExtensibilitySource = value;
   }
   
   
@@ -143,19 +96,8 @@ public partial class DocumentProtection: ModelElement<DXW.DocumentProtection>
   [DataMember]
   public DM.HexBinary? CryptographicProviderTypeExtensibility
   {
-    get
-    {
-      if (_Element?.CryptographicProviderTypeExtensibility?.Value != null)
-        return HexIntConverter.GetValue(_Element?.CryptographicProviderTypeExtensibility.Value);
-      return null;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.CryptographicProviderTypeExtensibility = value.ToString();
-      else
-        _ExistingElement.CryptographicProviderTypeExtensibility = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -165,14 +107,8 @@ public partial class DocumentProtection: ModelElement<DXW.DocumentProtection>
   [DataMember]
   public String? CryptographicProviderTypeExtSource
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.CryptographicProviderTypeExtSource);
-    }
-    set
-    {
-      _ExistingElement.CryptographicProviderTypeExtSource = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.CryptographicProviderTypeExtSource;
+    set => _ExistingElement.CryptographicProviderTypeExtSource = value;
   }
   
   
@@ -182,14 +118,8 @@ public partial class DocumentProtection: ModelElement<DXW.DocumentProtection>
   [DataMember]
   public DM.Base64Binary? Hash
   {
-    get
-    {
-      return Base64BinaryConverter.GetValue(_Element?.Hash);
-    }
-    set
-    {
-      _ExistingElement.Hash = Base64BinaryConverter.CreateBase64BinaryValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -199,14 +129,8 @@ public partial class DocumentProtection: ModelElement<DXW.DocumentProtection>
   [DataMember]
   public DM.Base64Binary? Salt
   {
-    get
-    {
-      return Base64BinaryConverter.GetValue(_Element?.Salt);
-    }
-    set
-    {
-      _ExistingElement.Salt = Base64BinaryConverter.CreateBase64BinaryValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -216,14 +140,8 @@ public partial class DocumentProtection: ModelElement<DXW.DocumentProtection>
   [DataMember]
   public String? AlgorithmName
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.AlgorithmName);
-    }
-    set
-    {
-      _ExistingElement.AlgorithmName = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.AlgorithmName;
+    set => _ExistingElement.AlgorithmName = value;
   }
   
   
@@ -233,14 +151,8 @@ public partial class DocumentProtection: ModelElement<DXW.DocumentProtection>
   [DataMember]
   public DM.Base64Binary? HashValue
   {
-    get
-    {
-      return Base64BinaryConverter.GetValue(_Element?.HashValue);
-    }
-    set
-    {
-      _ExistingElement.HashValue = Base64BinaryConverter.CreateBase64BinaryValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -250,14 +162,8 @@ public partial class DocumentProtection: ModelElement<DXW.DocumentProtection>
   [DataMember]
   public DM.Base64Binary? SaltValue
   {
-    get
-    {
-      return Base64BinaryConverter.GetValue(_Element?.SaltValue);
-    }
-    set
-    {
-      _ExistingElement.SaltValue = Base64BinaryConverter.CreateBase64BinaryValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -267,14 +173,8 @@ public partial class DocumentProtection: ModelElement<DXW.DocumentProtection>
   [DataMember]
   public Int32? SpinCount
   {
-    get
-    {
-      return _Element?.SpinCount?.Value;
-    }
-    set
-    {
-      _ExistingElement.SpinCount = value;
-    }
+    get => _Element?.SpinCount?.Value;
+    set => _ExistingElement.SpinCount = value;
   }
   
 }

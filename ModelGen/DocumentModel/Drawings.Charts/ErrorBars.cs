@@ -19,24 +19,8 @@ public partial class ErrorBars: ModelElement<DXDC.ErrorBars>
   [DataMember]
   public DMDC.ErrorBarDirectionKind? ErrorDirection
   {
-    get
-    {
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.ErrorBarDirectionValues, DMDC.ErrorBarDirectionKind>(_ExistingElement.GetFirstChild<DXDC.ErrorDirection>()?.Val?.Value);
-    }
-    set
-    {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.ErrorDirection>();
-      if (itemElement != null)
-      {
-        if (value != null)
-          EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ErrorBarDirectionValues, DMDC.ErrorBarDirectionKind>(itemElement, (DMDC.ErrorBarDirectionKind)value);
-        else
-          itemElement.Remove();
-      }
-      else
-      if (value != null)
-        _ExistingElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDC.ErrorDirection, DocumentFormat.OpenXml.Drawing.Charts.ErrorBarDirectionValues, DMDC.ErrorBarDirectionKind>((DMDC.ErrorBarDirectionKind)value));
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertyGetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertySetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -46,24 +30,8 @@ public partial class ErrorBars: ModelElement<DXDC.ErrorBars>
   [DataMember]
   public DMDC.ErrorBarKind? ErrorBarType
   {
-    get
-    {
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.ErrorBarValues, DMDC.ErrorBarKind>(_ExistingElement.GetFirstChild<DXDC.ErrorBarType>()?.Val?.Value);
-    }
-    set
-    {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.ErrorBarType>();
-      if (itemElement != null)
-      {
-        if (value != null)
-          EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ErrorBarValues, DMDC.ErrorBarKind>(itemElement, (DMDC.ErrorBarKind)value);
-        else
-          itemElement.Remove();
-      }
-      else
-      if (value != null)
-        _ExistingElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDC.ErrorBarType, DocumentFormat.OpenXml.Drawing.Charts.ErrorBarValues, DMDC.ErrorBarKind>((DMDC.ErrorBarKind)value));
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertyGetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertySetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -73,24 +41,8 @@ public partial class ErrorBars: ModelElement<DXDC.ErrorBars>
   [DataMember]
   public DMDC.ErrorKind? ErrorBarValueType
   {
-    get
-    {
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.ErrorValues, DMDC.ErrorKind>(_ExistingElement.GetFirstChild<DXDC.ErrorBarValueType>()?.Val?.Value);
-    }
-    set
-    {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.ErrorBarValueType>();
-      if (itemElement != null)
-      {
-        if (value != null)
-          EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ErrorValues, DMDC.ErrorKind>(itemElement, (DMDC.ErrorKind)value);
-        else
-          itemElement.Remove();
-      }
-      else
-      if (value != null)
-        _ExistingElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDC.ErrorBarValueType, DocumentFormat.OpenXml.Drawing.Charts.ErrorValues, DMDC.ErrorKind>((DMDC.ErrorKind)value));
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertyGetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertySetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -100,14 +52,8 @@ public partial class ErrorBars: ModelElement<DXDC.ErrorBars>
   [DataMember]
   public DMDC.NoEndCap? NoEndCap
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.NoEndCap,DXDC.NoEndCap>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.NoEndCap,DXDC.NoEndCap>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.BooleanType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.BooleanType");
   }
   
   
@@ -117,14 +63,8 @@ public partial class ErrorBars: ModelElement<DXDC.ErrorBars>
   [DataMember]
   public DMDC.Plus? Plus
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.Plus,DXDC.Plus>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.Plus,DXDC.Plus>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.NumberDataSourceType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.NumberDataSourceType");
   }
   
   
@@ -134,14 +74,8 @@ public partial class ErrorBars: ModelElement<DXDC.ErrorBars>
   [DataMember]
   public DMDC.Minus? Minus
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.Minus,DXDC.Minus>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.Minus,DXDC.Minus>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.NumberDataSourceType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.NumberDataSourceType");
   }
   
   
@@ -151,14 +85,8 @@ public partial class ErrorBars: ModelElement<DXDC.ErrorBars>
   [DataMember]
   public DMDC.ErrorBarValue? ErrorBarValue
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.ErrorBarValue,DXDC.ErrorBarValue>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.ErrorBarValue,DXDC.ErrorBarValue>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.DoubleType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.DoubleType");
   }
   
   
@@ -168,14 +96,8 @@ public partial class ErrorBars: ModelElement<DXDC.ErrorBars>
   [DataMember]
   public DMDC.ChartShapeProperties? ChartShapeProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.ChartShapeProperties,DXDC.ChartShapeProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.ChartShapeProperties,DXDC.ChartShapeProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -185,14 +107,8 @@ public partial class ErrorBars: ModelElement<DXDC.ErrorBars>
   [DataMember]
   public DMDC.ExtensionList? ExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.ExtensionList,DXDC.ExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.ExtensionList,DXDC.ExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

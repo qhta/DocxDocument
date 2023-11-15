@@ -19,14 +19,8 @@ public partial class ColorMostRecentlyUsed: ModelElement<DXVO.ColorMostRecentlyU
   [DataMember]
   public String? Colors
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Colors);
-    }
-    set
-    {
-      _ExistingElement.Colors = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Colors;
+    set => _ExistingElement.Colors = value;
   }
   
 }

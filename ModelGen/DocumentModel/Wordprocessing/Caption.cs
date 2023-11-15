@@ -19,14 +19,8 @@ public partial class Caption: ModelElement<DXW.Caption>
   [DataMember]
   public String? Name
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Name);
-    }
-    set
-    {
-      _ExistingElement.Name = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Name;
+    set => _ExistingElement.Name = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class Caption: ModelElement<DXW.Caption>
   [DataMember]
   public Boolean? ChapterNumber
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.ChapterNumber);
-    }
-    set
-    {
-      _ExistingElement.ChapterNumber = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
   
@@ -53,14 +41,8 @@ public partial class Caption: ModelElement<DXW.Caption>
   [DataMember]
   public Int32? Heading
   {
-    get
-    {
-      return _Element?.Heading?.Value;
-    }
-    set
-    {
-      _ExistingElement.Heading = value;
-    }
+    get => _Element?.Heading?.Value;
+    set => _ExistingElement.Heading = value;
   }
   
   
@@ -70,14 +52,8 @@ public partial class Caption: ModelElement<DXW.Caption>
   [DataMember]
   public Boolean? NoLabel
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.NoLabel);
-    }
-    set
-    {
-      _ExistingElement.NoLabel = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
 }

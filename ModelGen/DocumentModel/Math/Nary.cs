@@ -19,14 +19,8 @@ public partial class Nary: ModelElement<DXM.Nary>
   [DataMember]
   public DMM.NaryProperties? NaryProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMM.NaryProperties,DXM.NaryProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.NaryProperties,DXM.NaryProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -36,14 +30,8 @@ public partial class Nary: ModelElement<DXM.Nary>
   [DataMember]
   public DMM.SubArgument? SubArgument
   {
-    get
-    {
-      return _Element?.GetObject<DMM.SubArgument,DXM.SubArgument>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.SubArgument,DXM.SubArgument>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OfficeMathArgumentType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OfficeMathArgumentType");
   }
   
   
@@ -53,14 +41,8 @@ public partial class Nary: ModelElement<DXM.Nary>
   [DataMember]
   public DMM.SuperArgument? SuperArgument
   {
-    get
-    {
-      return _Element?.GetObject<DMM.SuperArgument,DXM.SuperArgument>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.SuperArgument,DXM.SuperArgument>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OfficeMathArgumentType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OfficeMathArgumentType");
   }
   
   
@@ -70,14 +52,8 @@ public partial class Nary: ModelElement<DXM.Nary>
   [DataMember]
   public DMM.Base? Base
   {
-    get
-    {
-      return _Element?.GetObject<DMM.Base,DXM.Base>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.Base,DXM.Base>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OfficeMathArgumentType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OfficeMathArgumentType");
   }
   
 }

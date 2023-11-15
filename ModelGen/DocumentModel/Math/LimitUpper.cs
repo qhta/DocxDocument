@@ -19,14 +19,8 @@ public partial class LimitUpper: ModelElement<DXM.LimitUpper>
   [DataMember]
   public DMM.LimitUpperProperties? LimitUpperProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMM.LimitUpperProperties,DXM.LimitUpperProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.LimitUpperProperties,DXM.LimitUpperProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -36,14 +30,8 @@ public partial class LimitUpper: ModelElement<DXM.LimitUpper>
   [DataMember]
   public DMM.Base? Base
   {
-    get
-    {
-      return _Element?.GetObject<DMM.Base,DXM.Base>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.Base,DXM.Base>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OfficeMathArgumentType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OfficeMathArgumentType");
   }
   
   
@@ -53,14 +41,8 @@ public partial class LimitUpper: ModelElement<DXM.LimitUpper>
   [DataMember]
   public DMM.Limit? Limit
   {
-    get
-    {
-      return _Element?.GetObject<DMM.Limit,DXM.Limit>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.Limit,DXM.Limit>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OfficeMathArgumentType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OfficeMathArgumentType");
   }
   
 }

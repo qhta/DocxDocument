@@ -19,14 +19,8 @@ public partial class ArcTo: ModelElement<DXD.ArcTo>
   [DataMember]
   public String? WidthRadius
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.WidthRadius);
-    }
-    set
-    {
-      _ExistingElement.WidthRadius = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.WidthRadius;
+    set => _ExistingElement.WidthRadius = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class ArcTo: ModelElement<DXD.ArcTo>
   [DataMember]
   public String? HeightRadius
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.HeightRadius);
-    }
-    set
-    {
-      _ExistingElement.HeightRadius = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.HeightRadius;
+    set => _ExistingElement.HeightRadius = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class ArcTo: ModelElement<DXD.ArcTo>
   [DataMember]
   public String? StartAngle
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.StartAngle);
-    }
-    set
-    {
-      _ExistingElement.StartAngle = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.StartAngle;
+    set => _ExistingElement.StartAngle = value;
   }
   
   
@@ -70,14 +52,8 @@ public partial class ArcTo: ModelElement<DXD.ArcTo>
   [DataMember]
   public String? SwingAngle
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.SwingAngle);
-    }
-    set
-    {
-      _ExistingElement.SwingAngle = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.SwingAngle;
+    set => _ExistingElement.SwingAngle = value;
   }
   
 }

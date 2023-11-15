@@ -19,14 +19,8 @@ public partial class LevelOverride: ModelElement<DXW.LevelOverride>
   [DataMember]
   public Int32? LevelIndex
   {
-    get
-    {
-      return _Element?.LevelIndex?.Value;
-    }
-    set
-    {
-      _ExistingElement.LevelIndex = value;
-    }
+    get => _Element?.LevelIndex?.Value;
+    set => _ExistingElement.LevelIndex = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class LevelOverride: ModelElement<DXW.LevelOverride>
   [DataMember]
   public DMW.StartOverrideNumberingValue? StartOverrideNumberingValue
   {
-    get
-    {
-      return _Element?.GetObject<DMW.StartOverrideNumberingValue,DXW.StartOverrideNumberingValue>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.StartOverrideNumberingValue,DXW.StartOverrideNumberingValue>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.DecimalNumberType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.DecimalNumberType");
   }
   
   
@@ -53,14 +41,8 @@ public partial class LevelOverride: ModelElement<DXW.LevelOverride>
   [DataMember]
   public DMW.Level? Level
   {
-    get
-    {
-      return _Element?.GetObject<DMW.Level,DXW.Level>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.Level,DXW.Level>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

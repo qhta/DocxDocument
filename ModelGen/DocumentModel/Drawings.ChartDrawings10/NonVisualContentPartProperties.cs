@@ -19,14 +19,8 @@ public partial class NonVisualContentPartProperties: ModelElement<DXO10DCD.NonVi
   [DataMember]
   public DMDCD10.NonVisualDrawingProperties? NonVisualDrawingProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD10.NonVisualDrawingProperties,DXO10DCD.NonVisualDrawingProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD10.NonVisualDrawingProperties,DXO10DCD.NonVisualDrawingProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -36,14 +30,8 @@ public partial class NonVisualContentPartProperties: ModelElement<DXO10DCD.NonVi
   [DataMember]
   public DMDCD10.NonVisualInkContentPartProperties? NonVisualInkContentPartProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD10.NonVisualInkContentPartProperties,DXO10DCD.NonVisualInkContentPartProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD10.NonVisualInkContentPartProperties,DXO10DCD.NonVisualInkContentPartProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

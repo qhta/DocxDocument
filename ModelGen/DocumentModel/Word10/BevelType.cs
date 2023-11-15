@@ -19,14 +19,8 @@ public partial class BevelType: ModelElement<DXO10W.BevelType>
   [DataMember]
   public Int64? Width
   {
-    get
-    {
-      return _Element?.Width?.Value;
-    }
-    set
-    {
-      _ExistingElement.Width = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int64]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int64]");
   }
   
   
@@ -36,14 +30,8 @@ public partial class BevelType: ModelElement<DXO10W.BevelType>
   [DataMember]
   public Int64? Height
   {
-    get
-    {
-      return _Element?.Height?.Value;
-    }
-    set
-    {
-      _ExistingElement.Height = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int64]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int64]");
   }
   
 }

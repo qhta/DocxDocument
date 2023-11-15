@@ -19,17 +19,8 @@ public partial class GraphicFrameLocks: ModelElement<DXD.GraphicFrameLocks>
   [DataMember]
   public Boolean? NoGrouping
   {
-    get
-    {
-      return _Element?.NoGrouping?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.NoGrouping = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.NoGrouping = null;
-    }
+    get => _Element?.NoGrouping?.Value;
+    set => _ExistingElement.NoGrouping = value;
   }
   
   
@@ -39,17 +30,8 @@ public partial class GraphicFrameLocks: ModelElement<DXD.GraphicFrameLocks>
   [DataMember]
   public Boolean? NoDrilldown
   {
-    get
-    {
-      return _Element?.NoDrilldown?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.NoDrilldown = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.NoDrilldown = null;
-    }
+    get => _Element?.NoDrilldown?.Value;
+    set => _ExistingElement.NoDrilldown = value;
   }
   
   
@@ -59,17 +41,8 @@ public partial class GraphicFrameLocks: ModelElement<DXD.GraphicFrameLocks>
   [DataMember]
   public Boolean? NoSelection
   {
-    get
-    {
-      return _Element?.NoSelection?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.NoSelection = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.NoSelection = null;
-    }
+    get => _Element?.NoSelection?.Value;
+    set => _ExistingElement.NoSelection = value;
   }
   
   
@@ -79,17 +52,8 @@ public partial class GraphicFrameLocks: ModelElement<DXD.GraphicFrameLocks>
   [DataMember]
   public Boolean? NoChangeAspect
   {
-    get
-    {
-      return _Element?.NoChangeAspect?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.NoChangeAspect = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.NoChangeAspect = null;
-    }
+    get => _Element?.NoChangeAspect?.Value;
+    set => _ExistingElement.NoChangeAspect = value;
   }
   
   
@@ -99,17 +63,8 @@ public partial class GraphicFrameLocks: ModelElement<DXD.GraphicFrameLocks>
   [DataMember]
   public Boolean? NoMove
   {
-    get
-    {
-      return _Element?.NoMove?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.NoMove = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.NoMove = null;
-    }
+    get => _Element?.NoMove?.Value;
+    set => _ExistingElement.NoMove = value;
   }
   
   
@@ -119,17 +74,8 @@ public partial class GraphicFrameLocks: ModelElement<DXD.GraphicFrameLocks>
   [DataMember]
   public Boolean? NoResize
   {
-    get
-    {
-      return _Element?.NoResize?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.NoResize = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.NoResize = null;
-    }
+    get => _Element?.NoResize?.Value;
+    set => _ExistingElement.NoResize = value;
   }
   
   
@@ -139,14 +85,8 @@ public partial class GraphicFrameLocks: ModelElement<DXD.GraphicFrameLocks>
   [DataMember]
   public DMD.ExtensionList? ExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMD.ExtensionList,DXD.ExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.ExtensionList,DXD.ExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

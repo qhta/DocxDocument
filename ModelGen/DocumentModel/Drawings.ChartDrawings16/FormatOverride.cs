@@ -19,14 +19,8 @@ public partial class FormatOverride: ModelElement<DXO16DCD.FormatOverride>
   [DataMember]
   public UInt32? Idx
   {
-    get
-    {
-      return _Element?.Idx?.Value;
-    }
-    set
-    {
-      _ExistingElement.Idx = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
   }
   
   
@@ -36,14 +30,8 @@ public partial class FormatOverride: ModelElement<DXO16DCD.FormatOverride>
   [DataMember]
   public DMDCD16.ShapeProperties? ShapeProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.ShapeProperties,DXO16DCD.ShapeProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.ShapeProperties,DXO16DCD.ShapeProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -53,14 +41,8 @@ public partial class FormatOverride: ModelElement<DXO16DCD.FormatOverride>
   [DataMember]
   public DMDCD16.ExtensionList? ExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.ExtensionList,DXO16DCD.ExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.ExtensionList,DXO16DCD.ExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

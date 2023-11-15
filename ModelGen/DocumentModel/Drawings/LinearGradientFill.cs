@@ -19,14 +19,8 @@ public partial class LinearGradientFill: ModelElement<DXD.LinearGradientFill>
   [DataMember]
   public Int32? Angle
   {
-    get
-    {
-      return _Element?.Angle?.Value;
-    }
-    set
-    {
-      _ExistingElement.Angle = value;
-    }
+    get => _Element?.Angle?.Value;
+    set => _ExistingElement.Angle = value;
   }
   
   
@@ -36,17 +30,8 @@ public partial class LinearGradientFill: ModelElement<DXD.LinearGradientFill>
   [DataMember]
   public Boolean? Scaled
   {
-    get
-    {
-      return _Element?.Scaled?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Scaled = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.Scaled = null;
-    }
+    get => _Element?.Scaled?.Value;
+    set => _ExistingElement.Scaled = value;
   }
   
 }

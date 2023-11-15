@@ -19,14 +19,8 @@ public partial class EffectList: ModelElement<DXD.EffectList>
   [DataMember]
   public DMD.Blur? Blur
   {
-    get
-    {
-      return _Element?.GetObject<DMD.Blur,DXD.Blur>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.Blur,DXD.Blur>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -36,14 +30,8 @@ public partial class EffectList: ModelElement<DXD.EffectList>
   [DataMember]
   public DMD.FillOverlay? FillOverlay
   {
-    get
-    {
-      return _Element?.GetObject<DMD.FillOverlay,DXD.FillOverlay>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.FillOverlay,DXD.FillOverlay>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -53,14 +41,8 @@ public partial class EffectList: ModelElement<DXD.EffectList>
   [DataMember]
   public DMD.Glow? Glow
   {
-    get
-    {
-      return _Element?.GetObject<DMD.Glow,DXD.Glow>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.Glow,DXD.Glow>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -70,14 +52,8 @@ public partial class EffectList: ModelElement<DXD.EffectList>
   [DataMember]
   public DMD.InnerShadow? InnerShadow
   {
-    get
-    {
-      return _Element?.GetObject<DMD.InnerShadow,DXD.InnerShadow>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.InnerShadow,DXD.InnerShadow>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -87,14 +63,8 @@ public partial class EffectList: ModelElement<DXD.EffectList>
   [DataMember]
   public DMD.OuterShadow? OuterShadow
   {
-    get
-    {
-      return _Element?.GetObject<DMD.OuterShadow,DXD.OuterShadow>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.OuterShadow,DXD.OuterShadow>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -104,14 +74,8 @@ public partial class EffectList: ModelElement<DXD.EffectList>
   [DataMember]
   public DMD.PresetShadow? PresetShadow
   {
-    get
-    {
-      return _Element?.GetObject<DMD.PresetShadow,DXD.PresetShadow>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.PresetShadow,DXD.PresetShadow>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -121,14 +85,8 @@ public partial class EffectList: ModelElement<DXD.EffectList>
   [DataMember]
   public DMD.Reflection? Reflection
   {
-    get
-    {
-      return _Element?.GetObject<DMD.Reflection,DXD.Reflection>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.Reflection,DXD.Reflection>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -138,14 +96,8 @@ public partial class EffectList: ModelElement<DXD.EffectList>
   [DataMember]
   public DMD.SoftEdge? SoftEdge
   {
-    get
-    {
-      return _Element?.GetObject<DMD.SoftEdge,DXD.SoftEdge>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.SoftEdge,DXD.SoftEdge>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
 }

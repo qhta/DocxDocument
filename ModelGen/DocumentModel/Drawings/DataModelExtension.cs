@@ -19,50 +19,22 @@ public partial class DataModelExtension: ModelElement<DXD.DataModelExtension>
   [DataMember]
   public String? Uri
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Uri);
-    }
-    set
-    {
-      _ExistingElement.Uri = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Uri;
+    set => _ExistingElement.Uri = value;
   }
   
   [DataMember]
   public DMDO.DataModelExtensionBlock? DataModelExtensionBlock
   {
-    get
-    {
-      return _Element?.GetObject<DMDO.DataModelExtensionBlock,DXOD.DataModelExtensionBlock>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDO.DataModelExtensionBlock,DXOD.DataModelExtensionBlock>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   [DataMember]
   public Boolean? RecolorImages
   {
-    get
-    {
-      return _ExistingElement.GetFirstChild<DXO10DD.RecolorImages>() != null;
-    }
-    set
-    {
-      if (value == false)
-      {
-        var itemElement = _ExistingElement.GetFirstChild<DXO10DD.RecolorImages>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new DXO10DD.RecolorImages();
-        _ExistingElement.AddChild(itemElement);
-      }
-    }
+    get => _Element?.GetBoolVal<DXO10DD.RecolorImages>();
+    set => _ExistingElement.SetBoolVal<DXO10DD.RecolorImages>(value);
   }
   
 }

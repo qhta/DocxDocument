@@ -19,14 +19,8 @@ public partial class GeoLocations: ModelElement<DXO16DCD.GeoLocations>
   [DataMember]
   public DMDCD16.GeoLocation? GeoLocation
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.GeoLocation,DXO16DCD.GeoLocation>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.GeoLocation,DXO16DCD.GeoLocation>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

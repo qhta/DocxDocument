@@ -19,14 +19,8 @@ public partial class BackgroundRemoval: ModelElement<DXO10D.BackgroundRemoval>
   [DataMember]
   public Int32? MarqueeTop
   {
-    get
-    {
-      return _Element?.MarqueeTop?.Value;
-    }
-    set
-    {
-      _ExistingElement.MarqueeTop = value;
-    }
+    get => _Element?.MarqueeTop?.Value;
+    set => _ExistingElement.MarqueeTop = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class BackgroundRemoval: ModelElement<DXO10D.BackgroundRemoval>
   [DataMember]
   public Int32? MarqueeBottom
   {
-    get
-    {
-      return _Element?.MarqueeBottom?.Value;
-    }
-    set
-    {
-      _ExistingElement.MarqueeBottom = value;
-    }
+    get => _Element?.MarqueeBottom?.Value;
+    set => _ExistingElement.MarqueeBottom = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class BackgroundRemoval: ModelElement<DXO10D.BackgroundRemoval>
   [DataMember]
   public Int32? MarqueeLeft
   {
-    get
-    {
-      return _Element?.MarqueeLeft?.Value;
-    }
-    set
-    {
-      _ExistingElement.MarqueeLeft = value;
-    }
+    get => _Element?.MarqueeLeft?.Value;
+    set => _ExistingElement.MarqueeLeft = value;
   }
   
   
@@ -70,14 +52,8 @@ public partial class BackgroundRemoval: ModelElement<DXO10D.BackgroundRemoval>
   [DataMember]
   public Int32? MarqueeRight
   {
-    get
-    {
-      return _Element?.MarqueeRight?.Value;
-    }
-    set
-    {
-      _ExistingElement.MarqueeRight = value;
-    }
+    get => _Element?.MarqueeRight?.Value;
+    set => _ExistingElement.MarqueeRight = value;
   }
   
 }

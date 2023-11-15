@@ -19,14 +19,8 @@ public partial class Columns: ModelElement<DXW.Columns>
   [DataMember]
   public Boolean? EqualWidth
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.EqualWidth);
-    }
-    set
-    {
-      _ExistingElement.EqualWidth = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
   
@@ -36,14 +30,8 @@ public partial class Columns: ModelElement<DXW.Columns>
   [DataMember]
   public String? Space
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Space);
-    }
-    set
-    {
-      _ExistingElement.Space = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Space;
+    set => _ExistingElement.Space = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class Columns: ModelElement<DXW.Columns>
   [DataMember]
   public Int16? ColumnCount
   {
-    get
-    {
-      return _Element?.ColumnCount?.Value;
-    }
-    set
-    {
-      _ExistingElement.ColumnCount = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int16]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int16]");
   }
   
   
@@ -70,14 +52,8 @@ public partial class Columns: ModelElement<DXW.Columns>
   [DataMember]
   public Boolean? Separator
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.Separator);
-    }
-    set
-    {
-      _ExistingElement.Separator = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
 }

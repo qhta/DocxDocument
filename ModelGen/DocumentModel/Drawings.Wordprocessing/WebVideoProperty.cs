@@ -19,14 +19,8 @@ public partial class WebVideoProperty: ModelElement<DXO13WD.WebVideoProperty>
   [DataMember]
   public String? EmbeddedHtml
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.EmbeddedHtml);
-    }
-    set
-    {
-      _ExistingElement.EmbeddedHtml = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.EmbeddedHtml;
+    set => _ExistingElement.EmbeddedHtml = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class WebVideoProperty: ModelElement<DXO13WD.WebVideoProperty>
   [DataMember]
   public UInt32? Height
   {
-    get
-    {
-      return _Element?.Height?.Value;
-    }
-    set
-    {
-      _ExistingElement.Height = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
   }
   
   
@@ -53,14 +41,8 @@ public partial class WebVideoProperty: ModelElement<DXO13WD.WebVideoProperty>
   [DataMember]
   public UInt32? Width
   {
-    get
-    {
-      return _Element?.Width?.Value;
-    }
-    set
-    {
-      _ExistingElement.Width = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
   }
   
 }

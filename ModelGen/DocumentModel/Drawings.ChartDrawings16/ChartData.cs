@@ -19,27 +19,15 @@ public partial class ChartData: ModelElement<DXO16DCD.ChartData>
   [DataMember]
   public DMDCD16.ExternalData? ExternalData
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.ExternalData,DXO16DCD.ExternalData>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.ExternalData,DXO16DCD.ExternalData>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   [DataMember]
   public DMDCD16.ExtensionList? ExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.ExtensionList,DXO16DCD.ExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.ExtensionList,DXO16DCD.ExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

@@ -19,14 +19,8 @@ public partial class AlphaReplace: ModelElement<DXD.AlphaReplace>
   [DataMember]
   public Int32? Alpha
   {
-    get
-    {
-      return _Element?.Alpha?.Value;
-    }
-    set
-    {
-      _ExistingElement.Alpha = value;
-    }
+    get => _Element?.Alpha?.Value;
+    set => _ExistingElement.Alpha = value;
   }
   
 }

@@ -19,19 +19,8 @@ public partial class Run: ModelElement<DXW.Run>
   [DataMember]
   public DM.HexBinary? RsidRunProperties
   {
-    get
-    {
-      if (_Element?.RsidRunProperties?.Value != null)
-        return HexIntConverter.GetValue(_Element?.RsidRunProperties.Value);
-      return null;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.RsidRunProperties = value.ToString();
-      else
-        _ExistingElement.RsidRunProperties = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -41,19 +30,8 @@ public partial class Run: ModelElement<DXW.Run>
   [DataMember]
   public DM.HexBinary? RsidRunDeletion
   {
-    get
-    {
-      if (_Element?.RsidRunDeletion?.Value != null)
-        return HexIntConverter.GetValue(_Element?.RsidRunDeletion.Value);
-      return null;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.RsidRunDeletion = value.ToString();
-      else
-        _ExistingElement.RsidRunDeletion = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -63,19 +41,8 @@ public partial class Run: ModelElement<DXW.Run>
   [DataMember]
   public DM.HexBinary? RsidRunAddition
   {
-    get
-    {
-      if (_Element?.RsidRunAddition?.Value != null)
-        return HexIntConverter.GetValue(_Element?.RsidRunAddition.Value);
-      return null;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.RsidRunAddition = value.ToString();
-      else
-        _ExistingElement.RsidRunAddition = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -85,14 +52,8 @@ public partial class Run: ModelElement<DXW.Run>
   [DataMember]
   public DMW.RunProperties? RunProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMW.RunProperties,DXW.RunProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.RunProperties,DXW.RunProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

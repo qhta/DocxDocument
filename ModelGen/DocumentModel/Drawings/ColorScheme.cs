@@ -19,14 +19,8 @@ public partial class ColorScheme: ModelElement<DXD.ColorScheme>
   [DataMember]
   public String? Name
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Name);
-    }
-    set
-    {
-      _ExistingElement.Name = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Name;
+    set => _ExistingElement.Name = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class ColorScheme: ModelElement<DXD.ColorScheme>
   [DataMember]
   public DMD.Dark1Color? Dark1Color
   {
-    get
-    {
-      return _Element?.GetObject<DMD.Dark1Color,DXD.Dark1Color>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.Dark1Color,DXD.Dark1Color>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Color2Type");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Color2Type");
   }
   
   
@@ -53,14 +41,8 @@ public partial class ColorScheme: ModelElement<DXD.ColorScheme>
   [DataMember]
   public DMD.Light1Color? Light1Color
   {
-    get
-    {
-      return _Element?.GetObject<DMD.Light1Color,DXD.Light1Color>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.Light1Color,DXD.Light1Color>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Color2Type");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Color2Type");
   }
   
   
@@ -70,14 +52,8 @@ public partial class ColorScheme: ModelElement<DXD.ColorScheme>
   [DataMember]
   public DMD.Dark2Color? Dark2Color
   {
-    get
-    {
-      return _Element?.GetObject<DMD.Dark2Color,DXD.Dark2Color>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.Dark2Color,DXD.Dark2Color>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Color2Type");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Color2Type");
   }
   
   
@@ -87,14 +63,8 @@ public partial class ColorScheme: ModelElement<DXD.ColorScheme>
   [DataMember]
   public DMD.Light2Color? Light2Color
   {
-    get
-    {
-      return _Element?.GetObject<DMD.Light2Color,DXD.Light2Color>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.Light2Color,DXD.Light2Color>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Color2Type");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Color2Type");
   }
   
   
@@ -104,14 +74,8 @@ public partial class ColorScheme: ModelElement<DXD.ColorScheme>
   [DataMember]
   public DMD.Accent1Color? Accent1Color
   {
-    get
-    {
-      return _Element?.GetObject<DMD.Accent1Color,DXD.Accent1Color>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.Accent1Color,DXD.Accent1Color>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Color2Type");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Color2Type");
   }
   
   
@@ -121,14 +85,8 @@ public partial class ColorScheme: ModelElement<DXD.ColorScheme>
   [DataMember]
   public DMD.Accent2Color? Accent2Color
   {
-    get
-    {
-      return _Element?.GetObject<DMD.Accent2Color,DXD.Accent2Color>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.Accent2Color,DXD.Accent2Color>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Color2Type");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Color2Type");
   }
   
   
@@ -138,14 +96,8 @@ public partial class ColorScheme: ModelElement<DXD.ColorScheme>
   [DataMember]
   public DMD.Accent3Color? Accent3Color
   {
-    get
-    {
-      return _Element?.GetObject<DMD.Accent3Color,DXD.Accent3Color>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.Accent3Color,DXD.Accent3Color>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Color2Type");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Color2Type");
   }
   
   
@@ -155,14 +107,8 @@ public partial class ColorScheme: ModelElement<DXD.ColorScheme>
   [DataMember]
   public DMD.Accent4Color? Accent4Color
   {
-    get
-    {
-      return _Element?.GetObject<DMD.Accent4Color,DXD.Accent4Color>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.Accent4Color,DXD.Accent4Color>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Color2Type");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Color2Type");
   }
   
   
@@ -172,14 +118,8 @@ public partial class ColorScheme: ModelElement<DXD.ColorScheme>
   [DataMember]
   public DMD.Accent5Color? Accent5Color
   {
-    get
-    {
-      return _Element?.GetObject<DMD.Accent5Color,DXD.Accent5Color>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.Accent5Color,DXD.Accent5Color>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Color2Type");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Color2Type");
   }
   
   
@@ -189,14 +129,8 @@ public partial class ColorScheme: ModelElement<DXD.ColorScheme>
   [DataMember]
   public DMD.Accent6Color? Accent6Color
   {
-    get
-    {
-      return _Element?.GetObject<DMD.Accent6Color,DXD.Accent6Color>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.Accent6Color,DXD.Accent6Color>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Color2Type");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Color2Type");
   }
   
   
@@ -206,14 +140,8 @@ public partial class ColorScheme: ModelElement<DXD.ColorScheme>
   [DataMember]
   public DMD.Hyperlink? Hyperlink
   {
-    get
-    {
-      return _Element?.GetObject<DMD.Hyperlink,DXD.Hyperlink>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.Hyperlink,DXD.Hyperlink>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Color2Type");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Color2Type");
   }
   
   
@@ -223,14 +151,8 @@ public partial class ColorScheme: ModelElement<DXD.ColorScheme>
   [DataMember]
   public DMD.FollowedHyperlinkColor? FollowedHyperlinkColor
   {
-    get
-    {
-      return _Element?.GetObject<DMD.FollowedHyperlinkColor,DXD.FollowedHyperlinkColor>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.FollowedHyperlinkColor,DXD.FollowedHyperlinkColor>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Color2Type");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Color2Type");
   }
   
   
@@ -240,14 +162,8 @@ public partial class ColorScheme: ModelElement<DXD.ColorScheme>
   [DataMember]
   public DMD.ExtensionList? ExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMD.ExtensionList,DXD.ExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.ExtensionList,DXD.ExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

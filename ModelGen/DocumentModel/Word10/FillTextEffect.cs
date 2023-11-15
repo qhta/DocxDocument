@@ -19,14 +19,8 @@ public partial class FillTextEffect: ModelElement<DXO10W.FillTextEffect>
   [DataMember]
   public DMW10.NoFillEmpty? NoFillEmpty
   {
-    get
-    {
-      return _Element?.GetObject<DMW10.NoFillEmpty,DXO10W.NoFillEmpty>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW10.NoFillEmpty,DXO10W.NoFillEmpty>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2010.Word.EmptyType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2010.Word.EmptyType");
   }
   
   
@@ -36,14 +30,8 @@ public partial class FillTextEffect: ModelElement<DXO10W.FillTextEffect>
   [DataMember]
   public DMW10.SolidColorFillProperties? SolidColorFillProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMW10.SolidColorFillProperties,DXO10W.SolidColorFillProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW10.SolidColorFillProperties,DXO10W.SolidColorFillProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -53,14 +41,8 @@ public partial class FillTextEffect: ModelElement<DXO10W.FillTextEffect>
   [DataMember]
   public DMW10.GradientFillProperties? GradientFillProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMW10.GradientFillProperties,DXO10W.GradientFillProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW10.GradientFillProperties,DXO10W.GradientFillProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

@@ -19,27 +19,15 @@ public partial class Area3DChartExtension: ModelElement<DXDC.Area3DChartExtensio
   [DataMember]
   public String? Uri
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Uri);
-    }
-    set
-    {
-      _ExistingElement.Uri = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Uri;
+    set => _ExistingElement.Uri = value;
   }
   
   [DataMember]
   public DMDC13.FilteredAreaSeries? FilteredAreaSeries
   {
-    get
-    {
-      return _Element?.GetObject<DMDC13.FilteredAreaSeries,DXO13DC.FilteredAreaSeries>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC13.FilteredAreaSeries,DXO13DC.FilteredAreaSeries>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

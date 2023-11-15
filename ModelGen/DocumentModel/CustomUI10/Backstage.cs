@@ -19,14 +19,8 @@ public partial class Backstage: ModelElement<DXO10CUI.Backstage>
   [DataMember]
   public String? OnShow
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.OnShow);
-    }
-    set
-    {
-      _ExistingElement.OnShow = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.OnShow;
+    set => _ExistingElement.OnShow = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class Backstage: ModelElement<DXO10CUI.Backstage>
   [DataMember]
   public String? OnHide
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.OnHide);
-    }
-    set
-    {
-      _ExistingElement.OnHide = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.OnHide;
+    set => _ExistingElement.OnHide = value;
   }
   
 }

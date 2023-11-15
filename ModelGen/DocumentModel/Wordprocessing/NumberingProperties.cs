@@ -19,14 +19,8 @@ public partial class NumberingProperties: ModelElement<DXW.NumberingProperties>
   [DataMember]
   public Int32? NumberingLevelReference
   {
-    get
-    {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DXW.NumberingLevelReference>()?.Val);
-    }
-    set
-    {
-      SimpleValueConverter.SetValue<DXW.NumberingLevelReference,System.Int32>(_ExistingElement, value);
-    }
+    get => _Element?.GetIntVal<Int32, DXW.NumberingLevelReference>();
+    set => _ExistingElement.SetIntVal<Int32, DXW.NumberingLevelReference>(value);
   }
   
   
@@ -36,14 +30,8 @@ public partial class NumberingProperties: ModelElement<DXW.NumberingProperties>
   [DataMember]
   public DMW.NumberingId? NumberingId
   {
-    get
-    {
-      return _Element?.GetObject<DMW.NumberingId,DXW.NumberingId>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.NumberingId,DXW.NumberingId>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.NonNegativeDecimalNumberType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.NonNegativeDecimalNumberType");
   }
   
   
@@ -53,14 +41,8 @@ public partial class NumberingProperties: ModelElement<DXW.NumberingProperties>
   [DataMember]
   public DMW.NumberingChange? NumberingChange
   {
-    get
-    {
-      return _Element?.GetObject<DMW.NumberingChange,DXW.NumberingChange>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.NumberingChange,DXW.NumberingChange>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -70,14 +52,8 @@ public partial class NumberingProperties: ModelElement<DXW.NumberingProperties>
   [DataMember]
   public DMW.Inserted? Inserted
   {
-    get
-    {
-      return _Element?.GetObject<DMW.Inserted,DXW.Inserted>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.Inserted,DXW.Inserted>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.TrackChangeType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.TrackChangeType");
   }
   
 }

@@ -19,14 +19,8 @@ public partial class ArtisticPhotocopy: ModelElement<DXO10D.ArtisticPhotocopy>
   [DataMember]
   public Int32? Transparancy
   {
-    get
-    {
-      return _Element?.Transparancy?.Value;
-    }
-    set
-    {
-      _ExistingElement.Transparancy = value;
-    }
+    get => _Element?.Transparancy?.Value;
+    set => _ExistingElement.Transparancy = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class ArtisticPhotocopy: ModelElement<DXO10D.ArtisticPhotocopy>
   [DataMember]
   public Int32? Detail
   {
-    get
-    {
-      return _Element?.Detail?.Value;
-    }
-    set
-    {
-      _ExistingElement.Detail = value;
-    }
+    get => _Element?.Detail?.Value;
+    set => _ExistingElement.Detail = value;
   }
   
 }

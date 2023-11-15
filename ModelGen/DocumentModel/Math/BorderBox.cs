@@ -19,14 +19,8 @@ public partial class BorderBox: ModelElement<DXM.BorderBox>
   [DataMember]
   public DMM.BorderBoxProperties? BorderBoxProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMM.BorderBoxProperties,DXM.BorderBoxProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.BorderBoxProperties,DXM.BorderBoxProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -36,14 +30,8 @@ public partial class BorderBox: ModelElement<DXM.BorderBox>
   [DataMember]
   public DMM.Base? Base
   {
-    get
-    {
-      return _Element?.GetObject<DMM.Base,DXM.Base>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.Base,DXM.Base>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OfficeMathArgumentType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OfficeMathArgumentType");
   }
   
 }

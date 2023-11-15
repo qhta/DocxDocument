@@ -19,14 +19,8 @@ public partial class Comment: ModelElement<DXW.Comment>
   [DataMember]
   public String? Initials
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Initials);
-    }
-    set
-    {
-      _ExistingElement.Initials = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Initials;
+    set => _ExistingElement.Initials = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class Comment: ModelElement<DXW.Comment>
   [DataMember]
   public String? Author
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Author);
-    }
-    set
-    {
-      _ExistingElement.Author = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Author;
+    set => _ExistingElement.Author = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class Comment: ModelElement<DXW.Comment>
   [DataMember]
   public DateTime? Date
   {
-    get
-    {
-      return _Element?.Date?.Value;
-    }
-    set
-    {
-      _ExistingElement.Date = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -70,14 +52,8 @@ public partial class Comment: ModelElement<DXW.Comment>
   [DataMember]
   public DateTime? DateUtc
   {
-    get
-    {
-      return _Element?.DateUtc?.Value;
-    }
-    set
-    {
-      _ExistingElement.DateUtc = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -87,14 +63,8 @@ public partial class Comment: ModelElement<DXW.Comment>
   [DataMember]
   public String? Id
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Id);
-    }
-    set
-    {
-      _ExistingElement.Id = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Id;
+    set => _ExistingElement.Id = value;
   }
   
 }

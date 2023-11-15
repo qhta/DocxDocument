@@ -19,37 +19,15 @@ public partial class HyperlinkExtension: ModelElement<DXD.HyperlinkExtension>
   [DataMember]
   public String? Uri
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Uri);
-    }
-    set
-    {
-      _ExistingElement.Uri = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Uri;
+    set => _ExistingElement.Uri = value;
   }
   
   [DataMember]
   public DMD.HyperlinkColorEnum? HyperlinkColor
   {
-    get
-    {
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2019.Drawing.HyperLinkColor.HyperlinkColorEnum, DMD.HyperlinkColorEnum>(_ExistingElement.GetFirstChild<DXO19DHLC.HyperlinkColor>()?.Val?.Value);
-    }
-    set
-    {
-      var itemElement = _ExistingElement.GetFirstChild<DXO19DHLC.HyperlinkColor>();
-      if (itemElement != null)
-      {
-        if (value != null)
-          EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Office2019.Drawing.HyperLinkColor.HyperlinkColorEnum, DMD.HyperlinkColorEnum>(itemElement, (DMD.HyperlinkColorEnum)value);
-        else
-          itemElement.Remove();
-      }
-      else
-      if (value != null)
-        _ExistingElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXO19DHLC.HyperlinkColor, DocumentFormat.OpenXml.Office2019.Drawing.HyperLinkColor.HyperlinkColorEnum, DMD.HyperlinkColorEnum>((DMD.HyperlinkColorEnum)value));
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertyGetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertySetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
 }

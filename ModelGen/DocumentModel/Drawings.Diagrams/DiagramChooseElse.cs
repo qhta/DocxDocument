@@ -19,14 +19,8 @@ public partial class DiagramChooseElse: ModelElement<DXDDD.DiagramChooseElse>
   [DataMember]
   public String? Name
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Name);
-    }
-    set
-    {
-      _ExistingElement.Name = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Name;
+    set => _ExistingElement.Name = value;
   }
   
 }

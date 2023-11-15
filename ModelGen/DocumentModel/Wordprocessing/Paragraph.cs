@@ -19,19 +19,8 @@ public partial class Paragraph: ModelElement<DXW.Paragraph>
   [DataMember]
   public DM.HexBinary? RsidParagraphMarkRevision
   {
-    get
-    {
-      if (_Element?.RsidParagraphMarkRevision?.Value != null)
-        return HexIntConverter.GetValue(_Element?.RsidParagraphMarkRevision.Value);
-      return null;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.RsidParagraphMarkRevision = value.ToString();
-      else
-        _ExistingElement.RsidParagraphMarkRevision = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -41,19 +30,8 @@ public partial class Paragraph: ModelElement<DXW.Paragraph>
   [DataMember]
   public DM.HexBinary? RsidParagraphAddition
   {
-    get
-    {
-      if (_Element?.RsidParagraphAddition?.Value != null)
-        return HexIntConverter.GetValue(_Element?.RsidParagraphAddition.Value);
-      return null;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.RsidParagraphAddition = value.ToString();
-      else
-        _ExistingElement.RsidParagraphAddition = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -63,19 +41,8 @@ public partial class Paragraph: ModelElement<DXW.Paragraph>
   [DataMember]
   public DM.HexBinary? RsidParagraphDeletion
   {
-    get
-    {
-      if (_Element?.RsidParagraphDeletion?.Value != null)
-        return HexIntConverter.GetValue(_Element?.RsidParagraphDeletion.Value);
-      return null;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.RsidParagraphDeletion = value.ToString();
-      else
-        _ExistingElement.RsidParagraphDeletion = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -85,19 +52,8 @@ public partial class Paragraph: ModelElement<DXW.Paragraph>
   [DataMember]
   public DM.HexBinary? RsidParagraphProperties
   {
-    get
-    {
-      if (_Element?.RsidParagraphProperties?.Value != null)
-        return HexIntConverter.GetValue(_Element?.RsidParagraphProperties.Value);
-      return null;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.RsidParagraphProperties = value.ToString();
-      else
-        _ExistingElement.RsidParagraphProperties = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -107,19 +63,8 @@ public partial class Paragraph: ModelElement<DXW.Paragraph>
   [DataMember]
   public DM.HexBinary? RsidRunAdditionDefault
   {
-    get
-    {
-      if (_Element?.RsidRunAdditionDefault?.Value != null)
-        return HexIntConverter.GetValue(_Element?.RsidRunAdditionDefault.Value);
-      return null;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.RsidRunAdditionDefault = value.ToString();
-      else
-        _ExistingElement.RsidRunAdditionDefault = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -129,19 +74,8 @@ public partial class Paragraph: ModelElement<DXW.Paragraph>
   [DataMember]
   public DM.HexBinary? ParagraphId
   {
-    get
-    {
-      if (_Element?.ParagraphId?.Value != null)
-        return HexIntConverter.GetValue(_Element?.ParagraphId.Value);
-      return null;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.ParagraphId = value.ToString();
-      else
-        _ExistingElement.ParagraphId = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -151,19 +85,8 @@ public partial class Paragraph: ModelElement<DXW.Paragraph>
   [DataMember]
   public DM.HexBinary? TextId
   {
-    get
-    {
-      if (_Element?.TextId?.Value != null)
-        return HexIntConverter.GetValue(_Element?.TextId.Value);
-      return null;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.TextId = value.ToString();
-      else
-        _ExistingElement.TextId = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -173,14 +96,8 @@ public partial class Paragraph: ModelElement<DXW.Paragraph>
   [DataMember]
   public Boolean? NoSpellError
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.NoSpellError);
-    }
-    set
-    {
-      _ExistingElement.NoSpellError = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
   
@@ -190,14 +107,8 @@ public partial class Paragraph: ModelElement<DXW.Paragraph>
   [DataMember]
   public DMW.ParagraphProperties? ParagraphProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMW.ParagraphProperties,DXW.ParagraphProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.ParagraphProperties,DXW.ParagraphProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

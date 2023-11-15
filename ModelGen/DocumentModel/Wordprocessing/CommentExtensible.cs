@@ -19,19 +19,8 @@ public partial class CommentExtensible: ModelElement<DXO21WCE.CommentExtensible>
   [DataMember]
   public DM.HexBinary? DurableId
   {
-    get
-    {
-      if (_Element?.DurableId?.Value != null)
-        return HexIntConverter.GetValue(_Element?.DurableId.Value);
-      return null;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.DurableId = value.ToString();
-      else
-        _ExistingElement.DurableId = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -41,14 +30,8 @@ public partial class CommentExtensible: ModelElement<DXO21WCE.CommentExtensible>
   [DataMember]
   public DateTime? DateUtc
   {
-    get
-    {
-      return _Element?.DateUtc?.Value;
-    }
-    set
-    {
-      _ExistingElement.DateUtc = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -58,14 +41,8 @@ public partial class CommentExtensible: ModelElement<DXO21WCE.CommentExtensible>
   [DataMember]
   public Boolean? IntelligentPlaceholder
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.IntelligentPlaceholder);
-    }
-    set
-    {
-      _ExistingElement.IntelligentPlaceholder = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
   
@@ -75,14 +52,8 @@ public partial class CommentExtensible: ModelElement<DXO21WCE.CommentExtensible>
   [DataMember]
   public DMW.ExtensionList? ExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMW.ExtensionList,DXO21WCE.ExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.ExtensionList,DXO21WCE.ExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

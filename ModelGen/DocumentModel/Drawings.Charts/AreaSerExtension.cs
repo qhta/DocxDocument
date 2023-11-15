@@ -19,66 +19,36 @@ public partial class AreaSerExtension: ModelElement<DXDC.AreaSerExtension>
   [DataMember]
   public String? Uri
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Uri);
-    }
-    set
-    {
-      _ExistingElement.Uri = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Uri;
+    set => _ExistingElement.Uri = value;
   }
   
   [DataMember]
   public DMDC13.FilteredSeriesTitle? FilteredSeriesTitle
   {
-    get
-    {
-      return _Element?.GetObject<DMDC13.FilteredSeriesTitle,DXO13DC.FilteredSeriesTitle>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC13.FilteredSeriesTitle,DXO13DC.FilteredSeriesTitle>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMDC13.FilteredCategoryTitle? FilteredCategoryTitle
   {
-    get
-    {
-      return _Element?.GetObject<DMDC13.FilteredCategoryTitle,DXO13DC.FilteredCategoryTitle>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC13.FilteredCategoryTitle,DXO13DC.FilteredCategoryTitle>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMDC13.DataLabelsRange? DataLabelsRange
   {
-    get
-    {
-      return _Element?.GetObject<DMDC13.DataLabelsRange,DXO13DC.DataLabelsRange>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC13.DataLabelsRange,DXO13DC.DataLabelsRange>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMDC13.CategoryFilterExceptions? CategoryFilterExceptions
   {
-    get
-    {
-      return _Element?.GetObject<DMDC13.CategoryFilterExceptions,DXO13DC.CategoryFilterExceptions>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC13.CategoryFilterExceptions,DXO13DC.CategoryFilterExceptions>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

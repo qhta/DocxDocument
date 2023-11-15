@@ -19,14 +19,8 @@ public partial class TablePositionProperties: ModelElement<DXW.TablePositionProp
   [DataMember]
   public Int16? LeftFromText
   {
-    get
-    {
-      return _Element?.LeftFromText?.Value;
-    }
-    set
-    {
-      _ExistingElement.LeftFromText = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int16]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int16]");
   }
   
   
@@ -36,14 +30,8 @@ public partial class TablePositionProperties: ModelElement<DXW.TablePositionProp
   [DataMember]
   public Int16? RightFromText
   {
-    get
-    {
-      return _Element?.RightFromText?.Value;
-    }
-    set
-    {
-      _ExistingElement.RightFromText = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int16]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int16]");
   }
   
   
@@ -53,14 +41,8 @@ public partial class TablePositionProperties: ModelElement<DXW.TablePositionProp
   [DataMember]
   public Int16? TopFromText
   {
-    get
-    {
-      return _Element?.TopFromText?.Value;
-    }
-    set
-    {
-      _ExistingElement.TopFromText = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int16]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int16]");
   }
   
   
@@ -70,14 +52,8 @@ public partial class TablePositionProperties: ModelElement<DXW.TablePositionProp
   [DataMember]
   public Int16? BottomFromText
   {
-    get
-    {
-      return _Element?.BottomFromText?.Value;
-    }
-    set
-    {
-      _ExistingElement.BottomFromText = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int16]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int16]");
   }
   
   
@@ -87,14 +63,8 @@ public partial class TablePositionProperties: ModelElement<DXW.TablePositionProp
   [DataMember]
   public Int32? TablePositionX
   {
-    get
-    {
-      return _Element?.TablePositionX?.Value;
-    }
-    set
-    {
-      _ExistingElement.TablePositionX = value;
-    }
+    get => _Element?.TablePositionX?.Value;
+    set => _ExistingElement.TablePositionX = value;
   }
   
   
@@ -104,14 +74,8 @@ public partial class TablePositionProperties: ModelElement<DXW.TablePositionProp
   [DataMember]
   public Int32? TablePositionY
   {
-    get
-    {
-      return _Element?.TablePositionY?.Value;
-    }
-    set
-    {
-      _ExistingElement.TablePositionY = value;
-    }
+    get => _Element?.TablePositionY?.Value;
+    set => _ExistingElement.TablePositionY = value;
   }
   
 }

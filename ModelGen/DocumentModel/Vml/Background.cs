@@ -19,14 +19,8 @@ public partial class Background: ModelElement<DXV.Background>
   [DataMember]
   public String? Id
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Id);
-    }
-    set
-    {
-      _ExistingElement.Id = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Id;
+    set => _ExistingElement.Id = value;
   }
   
   
@@ -36,17 +30,8 @@ public partial class Background: ModelElement<DXV.Background>
   [DataMember]
   public Boolean? Filled
   {
-    get
-    {
-      return _Element?.Filled?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Filled = value;
-      else
-        _ExistingElement.Filled = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -56,14 +41,8 @@ public partial class Background: ModelElement<DXV.Background>
   [DataMember]
   public String? Fillcolor
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Fillcolor);
-    }
-    set
-    {
-      _ExistingElement.Fillcolor = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Fillcolor;
+    set => _ExistingElement.Fillcolor = value;
   }
   
   
@@ -73,14 +52,8 @@ public partial class Background: ModelElement<DXV.Background>
   [DataMember]
   public DMVML.Fill? Fill
   {
-    get
-    {
-      return _Element?.GetObject<DMVML.Fill,DXV.Fill>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMVML.Fill,DXV.Fill>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

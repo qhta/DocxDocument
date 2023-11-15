@@ -19,14 +19,8 @@ public partial class Blur: ModelElement<DXD.Blur>
   [DataMember]
   public Int64? Radius
   {
-    get
-    {
-      return _Element?.Radius?.Value;
-    }
-    set
-    {
-      _ExistingElement.Radius = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int64]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int64]");
   }
   
   
@@ -36,17 +30,8 @@ public partial class Blur: ModelElement<DXD.Blur>
   [DataMember]
   public Boolean? Grow
   {
-    get
-    {
-      return _Element?.Grow?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Grow = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.Grow = null;
-    }
+    get => _Element?.Grow?.Value;
+    set => _ExistingElement.Grow = value;
   }
   
 }

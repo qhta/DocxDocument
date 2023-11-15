@@ -19,14 +19,8 @@ public partial class SdtContentText: ModelElement<DXW.SdtContentText>
   [DataMember]
   public Boolean? MultiLine
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.MultiLine);
-    }
-    set
-    {
-      _ExistingElement.MultiLine = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
 }

@@ -19,14 +19,8 @@ public partial class PageSize: ModelElement<DXW.PageSize>
   [DataMember]
   public UInt32? Width
   {
-    get
-    {
-      return _Element?.Width?.Value;
-    }
-    set
-    {
-      _ExistingElement.Width = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
   }
   
   
@@ -36,14 +30,8 @@ public partial class PageSize: ModelElement<DXW.PageSize>
   [DataMember]
   public UInt32? Height
   {
-    get
-    {
-      return _Element?.Height?.Value;
-    }
-    set
-    {
-      _ExistingElement.Height = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
   }
   
   
@@ -53,14 +41,8 @@ public partial class PageSize: ModelElement<DXW.PageSize>
   [DataMember]
   public UInt16? Code
   {
-    get
-    {
-      return _Element?.Code?.Value;
-    }
-    set
-    {
-      _ExistingElement.Code = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt16]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt16]");
   }
   
 }

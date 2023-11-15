@@ -19,14 +19,8 @@ public partial class DocumentVariable: ModelElement<DXW.DocumentVariable>
   [DataMember]
   public String? Name
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Name);
-    }
-    set
-    {
-      _ExistingElement.Name = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Name;
+    set => _ExistingElement.Name = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class DocumentVariable: ModelElement<DXW.DocumentVariable>
   [DataMember]
   public String? Val
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Val);
-    }
-    set
-    {
-      _ExistingElement.Val = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Val;
+    set => _ExistingElement.Val = value;
   }
   
 }

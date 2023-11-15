@@ -19,40 +19,22 @@ public partial class DiagramDefinitionExtension: ModelElement<DXDDD.DiagramDefin
   [DataMember]
   public String? Uri
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Uri);
-    }
-    set
-    {
-      _ExistingElement.Uri = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Uri;
+    set => _ExistingElement.Uri = value;
   }
   
   [DataMember]
   public DMDD1.NumberDiagramInfoList? NumberDiagramInfoList
   {
-    get
-    {
-      return _Element?.GetObject<DMDD1.NumberDiagramInfoList,DXO19DD11.NumberDiagramInfoList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDD1.NumberDiagramInfoList,DXO19DD11.NumberDiagramInfoList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMDD2.TextListStyleType? TextListStyleType
   {
-    get
-    {
-      return _Element?.GetObject<DMDD2.TextListStyleType,DXO19DD12.TextListStyleType>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDD2.TextListStyleType,DXO19DD12.TextListStyleType>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

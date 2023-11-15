@@ -19,14 +19,8 @@ public partial class Ruby: ModelElement<DXW.Ruby>
   [DataMember]
   public DMW.RubyProperties? RubyProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMW.RubyProperties,DXW.RubyProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.RubyProperties,DXW.RubyProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -36,14 +30,8 @@ public partial class Ruby: ModelElement<DXW.Ruby>
   [DataMember]
   public DMW.RubyContent? RubyContent
   {
-    get
-    {
-      return _Element?.GetObject<DMW.RubyContent,DXW.RubyContent>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.RubyContent,DXW.RubyContent>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.RubyContentType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.RubyContentType");
   }
   
   
@@ -53,14 +41,8 @@ public partial class Ruby: ModelElement<DXW.Ruby>
   [DataMember]
   public DMW.RubyBase? RubyBase
   {
-    get
-    {
-      return _Element?.GetObject<DMW.RubyBase,DXW.RubyBase>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.RubyBase,DXW.RubyBase>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.RubyContentType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.RubyContentType");
   }
   
 }

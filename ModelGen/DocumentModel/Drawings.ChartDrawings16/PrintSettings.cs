@@ -19,14 +19,8 @@ public partial class PrintSettings: ModelElement<DXO16DCD.PrintSettings>
   [DataMember]
   public DMDCD16.HeaderFooter? HeaderFooter
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.HeaderFooter,DXO16DCD.HeaderFooter>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.HeaderFooter,DXO16DCD.HeaderFooter>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -36,14 +30,8 @@ public partial class PrintSettings: ModelElement<DXO16DCD.PrintSettings>
   [DataMember]
   public DMDCD16.PageMargins? PageMargins
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.PageMargins,DXO16DCD.PageMargins>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.PageMargins,DXO16DCD.PageMargins>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -53,14 +41,8 @@ public partial class PrintSettings: ModelElement<DXO16DCD.PrintSettings>
   [DataMember]
   public DMDCD16.PageSetup? PageSetup
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.PageSetup,DXO16DCD.PageSetup>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.PageSetup,DXO16DCD.PageSetup>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
 }

@@ -19,14 +19,8 @@ public partial class CustomXmlElement: ModelElement<DXW.CustomXmlElement>
   [DataMember]
   public String? Uri
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Uri);
-    }
-    set
-    {
-      _ExistingElement.Uri = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Uri;
+    set => _ExistingElement.Uri = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class CustomXmlElement: ModelElement<DXW.CustomXmlElement>
   [DataMember]
   public String? Element
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Element);
-    }
-    set
-    {
-      _ExistingElement.Element = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Element;
+    set => _ExistingElement.Element = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class CustomXmlElement: ModelElement<DXW.CustomXmlElement>
   [DataMember]
   public DMW.CustomXmlProperties? CustomXmlProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMW.CustomXmlProperties,DXW.CustomXmlProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.CustomXmlProperties,DXW.CustomXmlProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

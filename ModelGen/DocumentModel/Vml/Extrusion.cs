@@ -19,17 +19,8 @@ public partial class Extrusion: ModelElement<DXVO.Extrusion>
   [DataMember]
   public Boolean? On
   {
-    get
-    {
-      return _Element?.On?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.On = value;
-      else
-        _ExistingElement.On = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -39,14 +30,8 @@ public partial class Extrusion: ModelElement<DXVO.Extrusion>
   [DataMember]
   public String? ViewpointOrigin
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.ViewpointOrigin);
-    }
-    set
-    {
-      _ExistingElement.ViewpointOrigin = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.ViewpointOrigin;
+    set => _ExistingElement.ViewpointOrigin = value;
   }
   
   
@@ -56,14 +41,8 @@ public partial class Extrusion: ModelElement<DXVO.Extrusion>
   [DataMember]
   public String? Viewpoint
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Viewpoint);
-    }
-    set
-    {
-      _ExistingElement.Viewpoint = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Viewpoint;
+    set => _ExistingElement.Viewpoint = value;
   }
   
   
@@ -73,14 +52,8 @@ public partial class Extrusion: ModelElement<DXVO.Extrusion>
   [DataMember]
   public Single? SkewAngle
   {
-    get
-    {
-      return _Element?.SkewAngle?.Value;
-    }
-    set
-    {
-      _ExistingElement.SkewAngle = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Single]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Single]");
   }
   
   
@@ -90,14 +63,8 @@ public partial class Extrusion: ModelElement<DXVO.Extrusion>
   [DataMember]
   public String? SkewAmount
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.SkewAmount);
-    }
-    set
-    {
-      _ExistingElement.SkewAmount = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.SkewAmount;
+    set => _ExistingElement.SkewAmount = value;
   }
   
   
@@ -107,14 +74,8 @@ public partial class Extrusion: ModelElement<DXVO.Extrusion>
   [DataMember]
   public String? ForceDepth
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.ForceDepth);
-    }
-    set
-    {
-      _ExistingElement.ForceDepth = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.ForceDepth;
+    set => _ExistingElement.ForceDepth = value;
   }
   
   
@@ -124,14 +85,8 @@ public partial class Extrusion: ModelElement<DXVO.Extrusion>
   [DataMember]
   public String? BackDepth
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.BackDepth);
-    }
-    set
-    {
-      _ExistingElement.BackDepth = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.BackDepth;
+    set => _ExistingElement.BackDepth = value;
   }
   
   
@@ -141,14 +96,8 @@ public partial class Extrusion: ModelElement<DXVO.Extrusion>
   [DataMember]
   public String? Orientation
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Orientation);
-    }
-    set
-    {
-      _ExistingElement.Orientation = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Orientation;
+    set => _ExistingElement.Orientation = value;
   }
   
   
@@ -158,14 +107,8 @@ public partial class Extrusion: ModelElement<DXVO.Extrusion>
   [DataMember]
   public Single? OrientationAngle
   {
-    get
-    {
-      return _Element?.OrientationAngle?.Value;
-    }
-    set
-    {
-      _ExistingElement.OrientationAngle = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Single]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Single]");
   }
   
   
@@ -175,17 +118,8 @@ public partial class Extrusion: ModelElement<DXVO.Extrusion>
   [DataMember]
   public Boolean? LockRotationCenter
   {
-    get
-    {
-      return _Element?.LockRotationCenter?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.LockRotationCenter = value;
-      else
-        _ExistingElement.LockRotationCenter = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -195,17 +129,8 @@ public partial class Extrusion: ModelElement<DXVO.Extrusion>
   [DataMember]
   public Boolean? AutoRotationCenter
   {
-    get
-    {
-      return _Element?.AutoRotationCenter?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.AutoRotationCenter = value;
-      else
-        _ExistingElement.AutoRotationCenter = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -215,14 +140,8 @@ public partial class Extrusion: ModelElement<DXVO.Extrusion>
   [DataMember]
   public String? RotationCenter
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.RotationCenter);
-    }
-    set
-    {
-      _ExistingElement.RotationCenter = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.RotationCenter;
+    set => _ExistingElement.RotationCenter = value;
   }
   
   
@@ -232,14 +151,8 @@ public partial class Extrusion: ModelElement<DXVO.Extrusion>
   [DataMember]
   public String? RotationAngle
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.RotationAngle);
-    }
-    set
-    {
-      _ExistingElement.RotationAngle = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.RotationAngle;
+    set => _ExistingElement.RotationAngle = value;
   }
   
   
@@ -249,14 +162,8 @@ public partial class Extrusion: ModelElement<DXVO.Extrusion>
   [DataMember]
   public String? Color
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Color);
-    }
-    set
-    {
-      _ExistingElement.Color = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Color;
+    set => _ExistingElement.Color = value;
   }
   
   
@@ -266,14 +173,8 @@ public partial class Extrusion: ModelElement<DXVO.Extrusion>
   [DataMember]
   public Single? Shininess
   {
-    get
-    {
-      return _Element?.Shininess?.Value;
-    }
-    set
-    {
-      _ExistingElement.Shininess = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Single]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Single]");
   }
   
   
@@ -283,14 +184,8 @@ public partial class Extrusion: ModelElement<DXVO.Extrusion>
   [DataMember]
   public String? Specularity
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Specularity);
-    }
-    set
-    {
-      _ExistingElement.Specularity = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Specularity;
+    set => _ExistingElement.Specularity = value;
   }
   
   
@@ -300,14 +195,8 @@ public partial class Extrusion: ModelElement<DXVO.Extrusion>
   [DataMember]
   public String? Diffusity
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Diffusity);
-    }
-    set
-    {
-      _ExistingElement.Diffusity = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Diffusity;
+    set => _ExistingElement.Diffusity = value;
   }
   
   
@@ -317,17 +206,8 @@ public partial class Extrusion: ModelElement<DXVO.Extrusion>
   [DataMember]
   public Boolean? Metal
   {
-    get
-    {
-      return _Element?.Metal?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Metal = value;
-      else
-        _ExistingElement.Metal = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -337,14 +217,8 @@ public partial class Extrusion: ModelElement<DXVO.Extrusion>
   [DataMember]
   public String? Edge
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Edge);
-    }
-    set
-    {
-      _ExistingElement.Edge = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Edge;
+    set => _ExistingElement.Edge = value;
   }
   
   
@@ -354,14 +228,8 @@ public partial class Extrusion: ModelElement<DXVO.Extrusion>
   [DataMember]
   public String? Facet
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Facet);
-    }
-    set
-    {
-      _ExistingElement.Facet = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Facet;
+    set => _ExistingElement.Facet = value;
   }
   
   
@@ -371,17 +239,8 @@ public partial class Extrusion: ModelElement<DXVO.Extrusion>
   [DataMember]
   public Boolean? LightFace
   {
-    get
-    {
-      return _Element?.LightFace?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.LightFace = value;
-      else
-        _ExistingElement.LightFace = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -391,14 +250,8 @@ public partial class Extrusion: ModelElement<DXVO.Extrusion>
   [DataMember]
   public String? Brightness
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Brightness);
-    }
-    set
-    {
-      _ExistingElement.Brightness = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Brightness;
+    set => _ExistingElement.Brightness = value;
   }
   
   
@@ -408,14 +261,8 @@ public partial class Extrusion: ModelElement<DXVO.Extrusion>
   [DataMember]
   public String? LightPosition
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.LightPosition);
-    }
-    set
-    {
-      _ExistingElement.LightPosition = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.LightPosition;
+    set => _ExistingElement.LightPosition = value;
   }
   
   
@@ -425,14 +272,8 @@ public partial class Extrusion: ModelElement<DXVO.Extrusion>
   [DataMember]
   public String? LightLevel
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.LightLevel);
-    }
-    set
-    {
-      _ExistingElement.LightLevel = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.LightLevel;
+    set => _ExistingElement.LightLevel = value;
   }
   
   
@@ -442,17 +283,8 @@ public partial class Extrusion: ModelElement<DXVO.Extrusion>
   [DataMember]
   public Boolean? LightHarsh
   {
-    get
-    {
-      return _Element?.LightHarsh?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.LightHarsh = value;
-      else
-        _ExistingElement.LightHarsh = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -462,14 +294,8 @@ public partial class Extrusion: ModelElement<DXVO.Extrusion>
   [DataMember]
   public String? LightPosition2
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.LightPosition2);
-    }
-    set
-    {
-      _ExistingElement.LightPosition2 = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.LightPosition2;
+    set => _ExistingElement.LightPosition2 = value;
   }
   
   
@@ -479,14 +305,8 @@ public partial class Extrusion: ModelElement<DXVO.Extrusion>
   [DataMember]
   public String? LightLevel2
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.LightLevel2);
-    }
-    set
-    {
-      _ExistingElement.LightLevel2 = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.LightLevel2;
+    set => _ExistingElement.LightLevel2 = value;
   }
   
   
@@ -496,17 +316,8 @@ public partial class Extrusion: ModelElement<DXVO.Extrusion>
   [DataMember]
   public Boolean? LightHarsh2
   {
-    get
-    {
-      return _Element?.LightHarsh2?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.LightHarsh2 = value;
-      else
-        _ExistingElement.LightHarsh2 = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
 }

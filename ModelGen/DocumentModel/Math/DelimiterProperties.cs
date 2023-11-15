@@ -19,14 +19,8 @@ public partial class DelimiterProperties: ModelElement<DXM.DelimiterProperties>
   [DataMember]
   public DMM.BeginChar? BeginChar
   {
-    get
-    {
-      return _Element?.GetObject<DMM.BeginChar,DXM.BeginChar>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.BeginChar,DXM.BeginChar>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.CharType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.CharType");
   }
   
   
@@ -36,14 +30,8 @@ public partial class DelimiterProperties: ModelElement<DXM.DelimiterProperties>
   [DataMember]
   public DMM.SeparatorChar? SeparatorChar
   {
-    get
-    {
-      return _Element?.GetObject<DMM.SeparatorChar,DXM.SeparatorChar>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.SeparatorChar,DXM.SeparatorChar>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.CharType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.CharType");
   }
   
   
@@ -53,14 +41,8 @@ public partial class DelimiterProperties: ModelElement<DXM.DelimiterProperties>
   [DataMember]
   public DMM.EndChar? EndChar
   {
-    get
-    {
-      return _Element?.GetObject<DMM.EndChar,DXM.EndChar>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.EndChar,DXM.EndChar>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.CharType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.CharType");
   }
   
   
@@ -70,14 +52,8 @@ public partial class DelimiterProperties: ModelElement<DXM.DelimiterProperties>
   [DataMember]
   public DMM.GrowOperators? GrowOperators
   {
-    get
-    {
-      return _Element?.GetObject<DMM.GrowOperators,DXM.GrowOperators>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.GrowOperators,DXM.GrowOperators>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OnOffType");
   }
   
   
@@ -87,24 +63,8 @@ public partial class DelimiterProperties: ModelElement<DXM.DelimiterProperties>
   [DataMember]
   public DMM.ShapeDelimiterKind? Shape
   {
-    get
-    {
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.ShapeDelimiterValues, DMM.ShapeDelimiterKind>(_ExistingElement.GetFirstChild<DXM.Shape>()?.Val?.Value);
-    }
-    set
-    {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.Shape>();
-      if (itemElement != null)
-      {
-        if (value != null)
-          EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.ShapeDelimiterValues, DMM.ShapeDelimiterKind>(itemElement, (DMM.ShapeDelimiterKind)value);
-        else
-          itemElement.Remove();
-      }
-      else
-      if (value != null)
-        _ExistingElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXM.Shape, DocumentFormat.OpenXml.Math.ShapeDelimiterValues, DMM.ShapeDelimiterKind>((DMM.ShapeDelimiterKind)value));
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertyGetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertySetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -114,14 +74,8 @@ public partial class DelimiterProperties: ModelElement<DXM.DelimiterProperties>
   [DataMember]
   public DMM.ControlProperties? ControlProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMM.ControlProperties,DXM.ControlProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.ControlProperties,DXM.ControlProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

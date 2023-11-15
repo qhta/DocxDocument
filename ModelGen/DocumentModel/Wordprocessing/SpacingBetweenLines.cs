@@ -19,14 +19,8 @@ public partial class SpacingBetweenLines: ModelElement<DXW.SpacingBetweenLines>
   [DataMember]
   public String? Before
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Before);
-    }
-    set
-    {
-      _ExistingElement.Before = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Before;
+    set => _ExistingElement.Before = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class SpacingBetweenLines: ModelElement<DXW.SpacingBetweenLines>
   [DataMember]
   public Int32? BeforeLines
   {
-    get
-    {
-      return _Element?.BeforeLines?.Value;
-    }
-    set
-    {
-      _ExistingElement.BeforeLines = value;
-    }
+    get => _Element?.BeforeLines?.Value;
+    set => _ExistingElement.BeforeLines = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class SpacingBetweenLines: ModelElement<DXW.SpacingBetweenLines>
   [DataMember]
   public Boolean? BeforeAutoSpacing
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.BeforeAutoSpacing);
-    }
-    set
-    {
-      _ExistingElement.BeforeAutoSpacing = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
   
@@ -70,14 +52,8 @@ public partial class SpacingBetweenLines: ModelElement<DXW.SpacingBetweenLines>
   [DataMember]
   public String? After
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.After);
-    }
-    set
-    {
-      _ExistingElement.After = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.After;
+    set => _ExistingElement.After = value;
   }
   
   
@@ -87,14 +63,8 @@ public partial class SpacingBetweenLines: ModelElement<DXW.SpacingBetweenLines>
   [DataMember]
   public Int32? AfterLines
   {
-    get
-    {
-      return _Element?.AfterLines?.Value;
-    }
-    set
-    {
-      _ExistingElement.AfterLines = value;
-    }
+    get => _Element?.AfterLines?.Value;
+    set => _ExistingElement.AfterLines = value;
   }
   
   
@@ -104,14 +74,8 @@ public partial class SpacingBetweenLines: ModelElement<DXW.SpacingBetweenLines>
   [DataMember]
   public Boolean? AfterAutoSpacing
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.AfterAutoSpacing);
-    }
-    set
-    {
-      _ExistingElement.AfterAutoSpacing = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
   
@@ -121,14 +85,8 @@ public partial class SpacingBetweenLines: ModelElement<DXW.SpacingBetweenLines>
   [DataMember]
   public String? Line
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Line);
-    }
-    set
-    {
-      _ExistingElement.Line = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Line;
+    set => _ExistingElement.Line = value;
   }
   
 }

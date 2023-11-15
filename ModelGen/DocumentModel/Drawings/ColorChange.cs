@@ -19,17 +19,8 @@ public partial class ColorChange: ModelElement<DXD.ColorChange>
   [DataMember]
   public Boolean? UseAlpha
   {
-    get
-    {
-      return _Element?.UseAlpha?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.UseAlpha = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.UseAlpha = null;
-    }
+    get => _Element?.UseAlpha?.Value;
+    set => _ExistingElement.UseAlpha = value;
   }
   
   
@@ -39,14 +30,8 @@ public partial class ColorChange: ModelElement<DXD.ColorChange>
   [DataMember]
   public DMD.ColorFrom? ColorFrom
   {
-    get
-    {
-      return _Element?.GetObject<DMD.ColorFrom,DXD.ColorFrom>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.ColorFrom,DXD.ColorFrom>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.ColorType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.ColorType");
   }
   
   
@@ -56,14 +41,8 @@ public partial class ColorChange: ModelElement<DXD.ColorChange>
   [DataMember]
   public DMD.ColorTo? ColorTo
   {
-    get
-    {
-      return _Element?.GetObject<DMD.ColorTo,DXD.ColorTo>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.ColorTo,DXD.ColorTo>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.ColorType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.ColorType");
   }
   
 }

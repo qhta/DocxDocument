@@ -19,14 +19,8 @@ public partial class ColorTransformStyleLabel: ModelElement<DXDDD.ColorTransform
   [DataMember]
   public String? Name
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Name);
-    }
-    set
-    {
-      _ExistingElement.Name = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Name;
+    set => _ExistingElement.Name = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class ColorTransformStyleLabel: ModelElement<DXDDD.ColorTransform
   [DataMember]
   public DMDD.FillColorList? FillColorList
   {
-    get
-    {
-      return _Element?.GetObject<DMDD.FillColorList,DXDDD.FillColorList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDD.FillColorList,DXDDD.FillColorList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Diagrams.ColorsType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Diagrams.ColorsType");
   }
   
   
@@ -53,14 +41,8 @@ public partial class ColorTransformStyleLabel: ModelElement<DXDDD.ColorTransform
   [DataMember]
   public DMDD.LineColorList? LineColorList
   {
-    get
-    {
-      return _Element?.GetObject<DMDD.LineColorList,DXDDD.LineColorList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDD.LineColorList,DXDDD.LineColorList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Diagrams.ColorsType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Diagrams.ColorsType");
   }
   
   
@@ -70,14 +52,8 @@ public partial class ColorTransformStyleLabel: ModelElement<DXDDD.ColorTransform
   [DataMember]
   public DMDD.EffectColorList? EffectColorList
   {
-    get
-    {
-      return _Element?.GetObject<DMDD.EffectColorList,DXDDD.EffectColorList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDD.EffectColorList,DXDDD.EffectColorList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Diagrams.ColorsType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Diagrams.ColorsType");
   }
   
   
@@ -87,14 +63,8 @@ public partial class ColorTransformStyleLabel: ModelElement<DXDDD.ColorTransform
   [DataMember]
   public DMDD.TextLineColorList? TextLineColorList
   {
-    get
-    {
-      return _Element?.GetObject<DMDD.TextLineColorList,DXDDD.TextLineColorList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDD.TextLineColorList,DXDDD.TextLineColorList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Diagrams.ColorsType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Diagrams.ColorsType");
   }
   
   
@@ -104,14 +74,8 @@ public partial class ColorTransformStyleLabel: ModelElement<DXDDD.ColorTransform
   [DataMember]
   public DMDD.TextFillColorList? TextFillColorList
   {
-    get
-    {
-      return _Element?.GetObject<DMDD.TextFillColorList,DXDDD.TextFillColorList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDD.TextFillColorList,DXDDD.TextFillColorList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Diagrams.ColorsType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Diagrams.ColorsType");
   }
   
   
@@ -121,14 +85,8 @@ public partial class ColorTransformStyleLabel: ModelElement<DXDDD.ColorTransform
   [DataMember]
   public DMDD.TextEffectColorList? TextEffectColorList
   {
-    get
-    {
-      return _Element?.GetObject<DMDD.TextEffectColorList,DXDDD.TextEffectColorList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDD.TextEffectColorList,DXDDD.TextEffectColorList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Diagrams.ColorsType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Diagrams.ColorsType");
   }
   
   
@@ -138,14 +96,8 @@ public partial class ColorTransformStyleLabel: ModelElement<DXDDD.ColorTransform
   [DataMember]
   public DMDD.ExtensionList? ExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMDD.ExtensionList,DXDDD.ExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDD.ExtensionList,DXDDD.ExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

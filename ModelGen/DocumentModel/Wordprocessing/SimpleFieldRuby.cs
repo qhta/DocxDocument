@@ -19,14 +19,8 @@ public partial class SimpleFieldRuby: ModelElement<DXW.SimpleFieldRuby>
   [DataMember]
   public String? Instruction
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Instruction);
-    }
-    set
-    {
-      _ExistingElement.Instruction = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Instruction;
+    set => _ExistingElement.Instruction = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class SimpleFieldRuby: ModelElement<DXW.SimpleFieldRuby>
   [DataMember]
   public Boolean? FieldLock
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.FieldLock);
-    }
-    set
-    {
-      _ExistingElement.FieldLock = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
   
@@ -53,14 +41,8 @@ public partial class SimpleFieldRuby: ModelElement<DXW.SimpleFieldRuby>
   [DataMember]
   public Boolean? Dirty
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.Dirty);
-    }
-    set
-    {
-      _ExistingElement.Dirty = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
   
@@ -70,14 +52,8 @@ public partial class SimpleFieldRuby: ModelElement<DXW.SimpleFieldRuby>
   [DataMember]
   public DMW.FieldData? FieldData
   {
-    get
-    {
-      return _Element?.GetObject<DMW.FieldData,DXW.FieldData>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.FieldData,DXW.FieldData>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
   }
   
 }

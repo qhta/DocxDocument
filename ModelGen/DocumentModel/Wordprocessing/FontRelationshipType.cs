@@ -19,14 +19,8 @@ public partial class FontRelationshipType: ModelElement<DXW.FontRelationshipType
   [DataMember]
   public String? FontKey
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.FontKey);
-    }
-    set
-    {
-      _ExistingElement.FontKey = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.FontKey;
+    set => _ExistingElement.FontKey = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class FontRelationshipType: ModelElement<DXW.FontRelationshipType
   [DataMember]
   public Boolean? Subsetted
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.Subsetted);
-    }
-    set
-    {
-      _ExistingElement.Subsetted = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
   
@@ -53,14 +41,8 @@ public partial class FontRelationshipType: ModelElement<DXW.FontRelationshipType
   [DataMember]
   public String? Id
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Id);
-    }
-    set
-    {
-      _ExistingElement.Id = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Id;
+    set => _ExistingElement.Id = value;
   }
   
 }

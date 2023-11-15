@@ -19,14 +19,8 @@ public partial class OEmbedShared: ModelElement<DXOD21OE.OEmbedShared>
   [DataMember]
   public String? SrcUrl
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.SrcUrl);
-    }
-    set
-    {
-      _ExistingElement.SrcUrl = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.SrcUrl;
+    set => _ExistingElement.SrcUrl = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class OEmbedShared: ModelElement<DXOD21OE.OEmbedShared>
   [DataMember]
   public String? Type
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Type);
-    }
-    set
-    {
-      _ExistingElement.Type = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Type;
+    set => _ExistingElement.Type = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class OEmbedShared: ModelElement<DXOD21OE.OEmbedShared>
   [DataMember]
   public DMDOE.OfficeArtExtensionList? OfficeArtExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMDOE.OfficeArtExtensionList,DXOD21OE.OfficeArtExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDOE.OfficeArtExtensionList,DXOD21OE.OfficeArtExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

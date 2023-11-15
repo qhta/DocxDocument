@@ -19,14 +19,8 @@ public partial class Frameset: ModelElement<DXW.Frameset>
   [DataMember]
   public DMW.FrameSize? FrameSize
   {
-    get
-    {
-      return _Element?.GetObject<DMW.FrameSize,DXW.FrameSize>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.FrameSize,DXW.FrameSize>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.StringType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.StringType");
   }
   
   
@@ -36,14 +30,8 @@ public partial class Frameset: ModelElement<DXW.Frameset>
   [DataMember]
   public DMW.FramesetSplitbar? FramesetSplitbar
   {
-    get
-    {
-      return _Element?.GetObject<DMW.FramesetSplitbar,DXW.FramesetSplitbar>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.FramesetSplitbar,DXW.FramesetSplitbar>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -53,24 +41,8 @@ public partial class Frameset: ModelElement<DXW.Frameset>
   [DataMember]
   public DMW.FrameLayoutKind? FrameLayout
   {
-    get
-    {
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.FrameLayoutValues, DMW.FrameLayoutKind>(_ExistingElement.GetFirstChild<DXW.FrameLayout>()?.Val?.Value);
-    }
-    set
-    {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.FrameLayout>();
-      if (itemElement != null)
-      {
-        if (value != null)
-          EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.FrameLayoutValues, DMW.FrameLayoutKind>(itemElement, (DMW.FrameLayoutKind)value);
-        else
-          itemElement.Remove();
-      }
-      else
-      if (value != null)
-        _ExistingElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.FrameLayout, DocumentFormat.OpenXml.Wordprocessing.FrameLayoutValues, DMW.FrameLayoutKind>((DMW.FrameLayoutKind)value));
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertyGetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertySetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
 }

@@ -19,14 +19,8 @@ public partial class LuminanceEffect: ModelElement<DXD.LuminanceEffect>
   [DataMember]
   public Int32? Brightness
   {
-    get
-    {
-      return _Element?.Brightness?.Value;
-    }
-    set
-    {
-      _ExistingElement.Brightness = value;
-    }
+    get => _Element?.Brightness?.Value;
+    set => _ExistingElement.Brightness = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class LuminanceEffect: ModelElement<DXD.LuminanceEffect>
   [DataMember]
   public Int32? Contrast
   {
-    get
-    {
-      return _Element?.Contrast?.Value;
-    }
-    set
-    {
-      _ExistingElement.Contrast = value;
-    }
+    get => _Element?.Contrast?.Value;
+    set => _ExistingElement.Contrast = value;
   }
   
 }

@@ -19,14 +19,8 @@ public partial class Title: ModelElement<DXDC.Title>
   [DataMember]
   public DMDC.ChartText? ChartText
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.ChartText,DXDC.ChartText>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.ChartText,DXDC.ChartText>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -36,14 +30,8 @@ public partial class Title: ModelElement<DXDC.Title>
   [DataMember]
   public DMDC.Layout? Layout
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.Layout,DXDC.Layout>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.Layout,DXDC.Layout>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -53,14 +41,8 @@ public partial class Title: ModelElement<DXDC.Title>
   [DataMember]
   public DMDC.Overlay? Overlay
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.Overlay,DXDC.Overlay>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.Overlay,DXDC.Overlay>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.BooleanType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.BooleanType");
   }
   
   
@@ -70,14 +52,8 @@ public partial class Title: ModelElement<DXDC.Title>
   [DataMember]
   public DMDC.ChartShapeProperties? ChartShapeProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.ChartShapeProperties,DXDC.ChartShapeProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.ChartShapeProperties,DXDC.ChartShapeProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -87,14 +63,8 @@ public partial class Title: ModelElement<DXDC.Title>
   [DataMember]
   public DMDC.TextProperties? TextProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.TextProperties,DXDC.TextProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.TextProperties,DXDC.TextProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.TextBodyType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.TextBodyType");
   }
   
   
@@ -104,14 +74,8 @@ public partial class Title: ModelElement<DXDC.Title>
   [DataMember]
   public DMDC.ExtensionList? ExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.ExtensionList,DXDC.ExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.ExtensionList,DXDC.ExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

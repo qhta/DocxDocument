@@ -19,14 +19,8 @@ public partial class Indentation: ModelElement<DXW.Indentation>
   [DataMember]
   public String? Left
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Left);
-    }
-    set
-    {
-      _ExistingElement.Left = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Left;
+    set => _ExistingElement.Left = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class Indentation: ModelElement<DXW.Indentation>
   [DataMember]
   public String? Start
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Start);
-    }
-    set
-    {
-      _ExistingElement.Start = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Start;
+    set => _ExistingElement.Start = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class Indentation: ModelElement<DXW.Indentation>
   [DataMember]
   public Int32? LeftChars
   {
-    get
-    {
-      return _Element?.LeftChars?.Value;
-    }
-    set
-    {
-      _ExistingElement.LeftChars = value;
-    }
+    get => _Element?.LeftChars?.Value;
+    set => _ExistingElement.LeftChars = value;
   }
   
   
@@ -70,14 +52,8 @@ public partial class Indentation: ModelElement<DXW.Indentation>
   [DataMember]
   public Int32? StartCharacters
   {
-    get
-    {
-      return _Element?.StartCharacters?.Value;
-    }
-    set
-    {
-      _ExistingElement.StartCharacters = value;
-    }
+    get => _Element?.StartCharacters?.Value;
+    set => _ExistingElement.StartCharacters = value;
   }
   
   
@@ -87,14 +63,8 @@ public partial class Indentation: ModelElement<DXW.Indentation>
   [DataMember]
   public String? Right
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Right);
-    }
-    set
-    {
-      _ExistingElement.Right = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Right;
+    set => _ExistingElement.Right = value;
   }
   
   
@@ -104,14 +74,8 @@ public partial class Indentation: ModelElement<DXW.Indentation>
   [DataMember]
   public String? End
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.End);
-    }
-    set
-    {
-      _ExistingElement.End = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.End;
+    set => _ExistingElement.End = value;
   }
   
   
@@ -121,14 +85,8 @@ public partial class Indentation: ModelElement<DXW.Indentation>
   [DataMember]
   public Int32? RightChars
   {
-    get
-    {
-      return _Element?.RightChars?.Value;
-    }
-    set
-    {
-      _ExistingElement.RightChars = value;
-    }
+    get => _Element?.RightChars?.Value;
+    set => _ExistingElement.RightChars = value;
   }
   
   
@@ -138,14 +96,8 @@ public partial class Indentation: ModelElement<DXW.Indentation>
   [DataMember]
   public Int32? EndCharacters
   {
-    get
-    {
-      return _Element?.EndCharacters?.Value;
-    }
-    set
-    {
-      _ExistingElement.EndCharacters = value;
-    }
+    get => _Element?.EndCharacters?.Value;
+    set => _ExistingElement.EndCharacters = value;
   }
   
   
@@ -155,14 +107,8 @@ public partial class Indentation: ModelElement<DXW.Indentation>
   [DataMember]
   public String? Hanging
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Hanging);
-    }
-    set
-    {
-      _ExistingElement.Hanging = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Hanging;
+    set => _ExistingElement.Hanging = value;
   }
   
   
@@ -172,14 +118,8 @@ public partial class Indentation: ModelElement<DXW.Indentation>
   [DataMember]
   public Int32? HangingChars
   {
-    get
-    {
-      return _Element?.HangingChars?.Value;
-    }
-    set
-    {
-      _ExistingElement.HangingChars = value;
-    }
+    get => _Element?.HangingChars?.Value;
+    set => _ExistingElement.HangingChars = value;
   }
   
   
@@ -189,14 +129,8 @@ public partial class Indentation: ModelElement<DXW.Indentation>
   [DataMember]
   public String? FirstLine
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.FirstLine);
-    }
-    set
-    {
-      _ExistingElement.FirstLine = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.FirstLine;
+    set => _ExistingElement.FirstLine = value;
   }
   
   
@@ -206,14 +140,8 @@ public partial class Indentation: ModelElement<DXW.Indentation>
   [DataMember]
   public Int32? FirstLineChars
   {
-    get
-    {
-      return _Element?.FirstLineChars?.Value;
-    }
-    set
-    {
-      _ExistingElement.FirstLineChars = value;
-    }
+    get => _Element?.FirstLineChars?.Value;
+    set => _ExistingElement.FirstLineChars = value;
   }
   
 }

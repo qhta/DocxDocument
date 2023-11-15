@@ -19,14 +19,8 @@ public partial class Break: ModelElement<DXM.Break>
   [DataMember]
   public Int64? AlignAt
   {
-    get
-    {
-      return _Element?.AlignAt?.Value;
-    }
-    set
-    {
-      _ExistingElement.AlignAt = value;
-    }
+    get => _Element?.AlignAt?.Value;
+    set => _ExistingElement.AlignAt = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class Break: ModelElement<DXM.Break>
   [DataMember]
   public Int64? Val
   {
-    get
-    {
-      return _Element?.Val?.Value;
-    }
-    set
-    {
-      _ExistingElement.Val = value;
-    }
+    get => _Element?.Val?.Value;
+    set => _ExistingElement.Val = value;
   }
   
 }

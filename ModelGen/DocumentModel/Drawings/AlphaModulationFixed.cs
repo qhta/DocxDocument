@@ -19,14 +19,8 @@ public partial class AlphaModulationFixed: ModelElement<DXD.AlphaModulationFixed
   [DataMember]
   public Int32? Amount
   {
-    get
-    {
-      return _Element?.Amount?.Value;
-    }
-    set
-    {
-      _ExistingElement.Amount = value;
-    }
+    get => _Element?.Amount?.Value;
+    set => _ExistingElement.Amount = value;
   }
   
 }

@@ -19,14 +19,8 @@ public partial class GroupCharProperties: ModelElement<DXM.GroupCharProperties>
   [DataMember]
   public DMM.AccentChar? AccentChar
   {
-    get
-    {
-      return _Element?.GetObject<DMM.AccentChar,DXM.AccentChar>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.AccentChar,DXM.AccentChar>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.CharType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.CharType");
   }
   
   
@@ -36,14 +30,8 @@ public partial class GroupCharProperties: ModelElement<DXM.GroupCharProperties>
   [DataMember]
   public DMM.Position? Position
   {
-    get
-    {
-      return _Element?.GetObject<DMM.Position,DXM.Position>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.Position,DXM.Position>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.TopBottomType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.TopBottomType");
   }
   
   
@@ -53,14 +41,8 @@ public partial class GroupCharProperties: ModelElement<DXM.GroupCharProperties>
   [DataMember]
   public DMM.VerticalJustification? VerticalJustification
   {
-    get
-    {
-      return _Element?.GetObject<DMM.VerticalJustification,DXM.VerticalJustification>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.VerticalJustification,DXM.VerticalJustification>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.TopBottomType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.TopBottomType");
   }
   
   
@@ -70,14 +52,8 @@ public partial class GroupCharProperties: ModelElement<DXM.GroupCharProperties>
   [DataMember]
   public DMM.ControlProperties? ControlProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMM.ControlProperties,DXM.ControlProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.ControlProperties,DXM.ControlProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

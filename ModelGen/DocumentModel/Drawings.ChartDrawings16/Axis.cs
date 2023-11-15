@@ -19,14 +19,8 @@ public partial class Axis: ModelElement<DXO16DCD.Axis>
   [DataMember]
   public UInt32? Id
   {
-    get
-    {
-      return _Element?.Id?.Value;
-    }
-    set
-    {
-      _ExistingElement.Id = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
   }
   
   
@@ -36,186 +30,99 @@ public partial class Axis: ModelElement<DXO16DCD.Axis>
   [DataMember]
   public Boolean? Hidden
   {
-    get
-    {
-      return _Element?.Hidden?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Hidden = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.Hidden = null;
-    }
+    get => _Element?.Hidden?.Value;
+    set => _ExistingElement.Hidden = value;
   }
   
   [DataMember]
   public DMDCD16.CategoryAxisScaling? CategoryAxisScaling
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.CategoryAxisScaling,DXO16DCD.CategoryAxisScaling>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.CategoryAxisScaling,DXO16DCD.CategoryAxisScaling>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   [DataMember]
   public DMDCD16.ValueAxisScaling? ValueAxisScaling
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.ValueAxisScaling,DXO16DCD.ValueAxisScaling>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.ValueAxisScaling,DXO16DCD.ValueAxisScaling>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   [DataMember]
   public DMDCD16.AxisTitle? AxisTitle
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.AxisTitle,DXO16DCD.AxisTitle>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.AxisTitle,DXO16DCD.AxisTitle>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMDCD16.AxisUnits? AxisUnits
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.AxisUnits,DXO16DCD.AxisUnits>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.AxisUnits,DXO16DCD.AxisUnits>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMDCD16.MajorGridlinesGridlines? MajorGridlinesGridlines
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.MajorGridlinesGridlines,DXO16DCD.MajorGridlinesGridlines>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.MajorGridlinesGridlines,DXO16DCD.MajorGridlinesGridlines>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.OpenXmlGridlinesElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.OpenXmlGridlinesElement");
   }
   
   [DataMember]
   public DMDCD16.MinorGridlinesGridlines? MinorGridlinesGridlines
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.MinorGridlinesGridlines,DXO16DCD.MinorGridlinesGridlines>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.MinorGridlinesGridlines,DXO16DCD.MinorGridlinesGridlines>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.OpenXmlGridlinesElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.OpenXmlGridlinesElement");
   }
   
   [DataMember]
   public DMDCD16.MajorTickMarksTickMarks? MajorTickMarksTickMarks
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.MajorTickMarksTickMarks,DXO16DCD.MajorTickMarksTickMarks>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.MajorTickMarksTickMarks,DXO16DCD.MajorTickMarksTickMarks>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.OpenXmlTickMarksElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.OpenXmlTickMarksElement");
   }
   
   [DataMember]
   public DMDCD16.MinorTickMarksTickMarks? MinorTickMarksTickMarks
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.MinorTickMarksTickMarks,DXO16DCD.MinorTickMarksTickMarks>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.MinorTickMarksTickMarks,DXO16DCD.MinorTickMarksTickMarks>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.OpenXmlTickMarksElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.OpenXmlTickMarksElement");
   }
   
   [DataMember]
   public DMDCD16.TickLabels? TickLabels
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.TickLabels,DXO16DCD.TickLabels>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.TickLabels,DXO16DCD.TickLabels>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMDCD16.NumberFormat? NumberFormat
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.NumberFormat,DXO16DCD.NumberFormat>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.NumberFormat,DXO16DCD.NumberFormat>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   [DataMember]
   public DMDCD16.ShapeProperties? ShapeProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.ShapeProperties,DXO16DCD.ShapeProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.ShapeProperties,DXO16DCD.ShapeProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMDCD16.TxPrTextBody? TxPrTextBody
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.TxPrTextBody,DXO16DCD.TxPrTextBody>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.TxPrTextBody,DXO16DCD.TxPrTextBody>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TextBodyType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TextBodyType");
   }
   
   [DataMember]
   public DMDCD16.ExtensionList? ExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.ExtensionList,DXO16DCD.ExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.ExtensionList,DXO16DCD.ExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

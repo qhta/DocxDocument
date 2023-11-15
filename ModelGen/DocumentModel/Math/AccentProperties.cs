@@ -19,14 +19,8 @@ public partial class AccentProperties: ModelElement<DXM.AccentProperties>
   [DataMember]
   public DMM.AccentChar? AccentChar
   {
-    get
-    {
-      return _Element?.GetObject<DMM.AccentChar,DXM.AccentChar>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.AccentChar,DXM.AccentChar>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.CharType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.CharType");
   }
   
   
@@ -36,14 +30,8 @@ public partial class AccentProperties: ModelElement<DXM.AccentProperties>
   [DataMember]
   public DMM.ControlProperties? ControlProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMM.ControlProperties,DXM.ControlProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.ControlProperties,DXM.ControlProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

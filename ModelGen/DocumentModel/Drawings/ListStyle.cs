@@ -19,14 +19,8 @@ public partial class ListStyle: ModelElement<DXD.ListStyle>
   [DataMember]
   public DMD.DefaultParagraphProperties? DefaultParagraphProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMD.DefaultParagraphProperties,DXD.DefaultParagraphProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.DefaultParagraphProperties,DXD.DefaultParagraphProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType");
   }
   
   
@@ -36,14 +30,8 @@ public partial class ListStyle: ModelElement<DXD.ListStyle>
   [DataMember]
   public DMD.Level1ParagraphProperties? Level1ParagraphProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMD.Level1ParagraphProperties,DXD.Level1ParagraphProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.Level1ParagraphProperties,DXD.Level1ParagraphProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType");
   }
   
   
@@ -53,14 +41,8 @@ public partial class ListStyle: ModelElement<DXD.ListStyle>
   [DataMember]
   public DMD.Level2ParagraphProperties? Level2ParagraphProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMD.Level2ParagraphProperties,DXD.Level2ParagraphProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.Level2ParagraphProperties,DXD.Level2ParagraphProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType");
   }
   
   
@@ -70,14 +52,8 @@ public partial class ListStyle: ModelElement<DXD.ListStyle>
   [DataMember]
   public DMD.Level3ParagraphProperties? Level3ParagraphProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMD.Level3ParagraphProperties,DXD.Level3ParagraphProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.Level3ParagraphProperties,DXD.Level3ParagraphProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType");
   }
   
   
@@ -87,14 +63,8 @@ public partial class ListStyle: ModelElement<DXD.ListStyle>
   [DataMember]
   public DMD.Level4ParagraphProperties? Level4ParagraphProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMD.Level4ParagraphProperties,DXD.Level4ParagraphProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.Level4ParagraphProperties,DXD.Level4ParagraphProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType");
   }
   
   
@@ -104,14 +74,8 @@ public partial class ListStyle: ModelElement<DXD.ListStyle>
   [DataMember]
   public DMD.Level5ParagraphProperties? Level5ParagraphProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMD.Level5ParagraphProperties,DXD.Level5ParagraphProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.Level5ParagraphProperties,DXD.Level5ParagraphProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType");
   }
   
   
@@ -121,14 +85,8 @@ public partial class ListStyle: ModelElement<DXD.ListStyle>
   [DataMember]
   public DMD.Level6ParagraphProperties? Level6ParagraphProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMD.Level6ParagraphProperties,DXD.Level6ParagraphProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.Level6ParagraphProperties,DXD.Level6ParagraphProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType");
   }
   
   
@@ -138,14 +96,8 @@ public partial class ListStyle: ModelElement<DXD.ListStyle>
   [DataMember]
   public DMD.Level7ParagraphProperties? Level7ParagraphProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMD.Level7ParagraphProperties,DXD.Level7ParagraphProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.Level7ParagraphProperties,DXD.Level7ParagraphProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType");
   }
   
   
@@ -155,14 +107,8 @@ public partial class ListStyle: ModelElement<DXD.ListStyle>
   [DataMember]
   public DMD.Level8ParagraphProperties? Level8ParagraphProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMD.Level8ParagraphProperties,DXD.Level8ParagraphProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.Level8ParagraphProperties,DXD.Level8ParagraphProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType");
   }
   
   
@@ -172,14 +118,8 @@ public partial class ListStyle: ModelElement<DXD.ListStyle>
   [DataMember]
   public DMD.Level9ParagraphProperties? Level9ParagraphProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMD.Level9ParagraphProperties,DXD.Level9ParagraphProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.Level9ParagraphProperties,DXD.Level9ParagraphProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType");
   }
   
   
@@ -189,14 +129,8 @@ public partial class ListStyle: ModelElement<DXD.ListStyle>
   [DataMember]
   public DMD.ExtensionList? ExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMD.ExtensionList,DXD.ExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.ExtensionList,DXD.ExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

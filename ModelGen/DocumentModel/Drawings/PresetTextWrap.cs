@@ -19,14 +19,8 @@ public partial class PresetTextWrap: ModelElement<DXD.PresetTextWrap>
   [DataMember]
   public DMD.AdjustValueList? AdjustValueList
   {
-    get
-    {
-      return _Element?.GetObject<DMD.AdjustValueList,DXD.AdjustValueList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.AdjustValueList,DXD.AdjustValueList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.GeometryGuideListType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.GeometryGuideListType");
   }
   
 }

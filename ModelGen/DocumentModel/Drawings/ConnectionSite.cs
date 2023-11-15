@@ -19,14 +19,8 @@ public partial class ConnectionSite: ModelElement<DXD.ConnectionSite>
   [DataMember]
   public String? Angle
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Angle);
-    }
-    set
-    {
-      _ExistingElement.Angle = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Angle;
+    set => _ExistingElement.Angle = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class ConnectionSite: ModelElement<DXD.ConnectionSite>
   [DataMember]
   public DMD.Position? Position
   {
-    get
-    {
-      return _Element?.GetObject<DMD.Position,DXD.Position>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.Position,DXD.Position>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.AdjustPoint2DType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.AdjustPoint2DType");
   }
   
 }

@@ -19,14 +19,8 @@ public partial class LatentStyles: ModelElement<DXW.LatentStyles>
   [DataMember]
   public Boolean? DefaultLockedState
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.DefaultLockedState);
-    }
-    set
-    {
-      _ExistingElement.DefaultLockedState = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
   
@@ -36,14 +30,8 @@ public partial class LatentStyles: ModelElement<DXW.LatentStyles>
   [DataMember]
   public Int32? DefaultUiPriority
   {
-    get
-    {
-      return _Element?.DefaultUiPriority?.Value;
-    }
-    set
-    {
-      _ExistingElement.DefaultUiPriority = value;
-    }
+    get => _Element?.DefaultUiPriority?.Value;
+    set => _ExistingElement.DefaultUiPriority = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class LatentStyles: ModelElement<DXW.LatentStyles>
   [DataMember]
   public Boolean? DefaultSemiHidden
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.DefaultSemiHidden);
-    }
-    set
-    {
-      _ExistingElement.DefaultSemiHidden = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
   
@@ -70,14 +52,8 @@ public partial class LatentStyles: ModelElement<DXW.LatentStyles>
   [DataMember]
   public Boolean? DefaultUnhideWhenUsed
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.DefaultUnhideWhenUsed);
-    }
-    set
-    {
-      _ExistingElement.DefaultUnhideWhenUsed = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
   
@@ -87,14 +63,8 @@ public partial class LatentStyles: ModelElement<DXW.LatentStyles>
   [DataMember]
   public Boolean? DefaultPrimaryStyle
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.DefaultPrimaryStyle);
-    }
-    set
-    {
-      _ExistingElement.DefaultPrimaryStyle = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
   
@@ -104,14 +74,8 @@ public partial class LatentStyles: ModelElement<DXW.LatentStyles>
   [DataMember]
   public Int32? Count
   {
-    get
-    {
-      return _Element?.Count?.Value;
-    }
-    set
-    {
-      _ExistingElement.Count = value;
-    }
+    get => _Element?.Count?.Value;
+    set => _ExistingElement.Count = value;
   }
   
 }

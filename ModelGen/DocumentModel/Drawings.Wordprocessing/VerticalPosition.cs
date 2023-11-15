@@ -19,14 +19,8 @@ public partial class VerticalPosition: ModelElement<DXDW.VerticalPosition>
   [DataMember]
   public DMDW.VerticalAlignment? VerticalAlignment
   {
-    get
-    {
-      return _Element?.GetObject<DMDW.VerticalAlignment,DXDW.VerticalAlignment>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDW.VerticalAlignment,DXDW.VerticalAlignment>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
   }
   
   
@@ -36,14 +30,8 @@ public partial class VerticalPosition: ModelElement<DXDW.VerticalPosition>
   [DataMember]
   public DMDW.PositionOffset? PositionOffset
   {
-    get
-    {
-      return _Element?.GetObject<DMDW.PositionOffset,DXDW.PositionOffset>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDW.PositionOffset,DXDW.PositionOffset>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
   }
   
   
@@ -53,14 +41,8 @@ public partial class VerticalPosition: ModelElement<DXDW.VerticalPosition>
   [DataMember]
   public DMWD.PercentagePositionVerticalOffset? PercentagePositionVerticalOffset
   {
-    get
-    {
-      return _Element?.GetObject<DMWD.PercentagePositionVerticalOffset,DXO10WD.PercentagePositionVerticalOffset>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMWD.PercentagePositionVerticalOffset,DXO10WD.PercentagePositionVerticalOffset>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
   }
   
 }

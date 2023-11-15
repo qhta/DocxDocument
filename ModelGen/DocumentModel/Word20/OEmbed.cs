@@ -19,14 +19,8 @@ public partial class OEmbed: ModelElement<DXOW20OE.OEmbed>
   [DataMember]
   public String? OEmbedUrl
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.OEmbedUrl);
-    }
-    set
-    {
-      _ExistingElement.OEmbedUrl = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.OEmbedUrl;
+    set => _ExistingElement.OEmbedUrl = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class OEmbed: ModelElement<DXOW20OE.OEmbed>
   [DataMember]
   public String? MediaType
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.MediaType);
-    }
-    set
-    {
-      _ExistingElement.MediaType = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.MediaType;
+    set => _ExistingElement.MediaType = value;
   }
   
   
@@ -53,17 +41,8 @@ public partial class OEmbed: ModelElement<DXOW20OE.OEmbed>
   [DataMember]
   public Boolean? PicLocksAutoForOEmbed
   {
-    get
-    {
-      return _Element?.PicLocksAutoForOEmbed?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.PicLocksAutoForOEmbed = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.PicLocksAutoForOEmbed = null;
-    }
+    get => _Element?.PicLocksAutoForOEmbed?.Value;
+    set => _ExistingElement.PicLocksAutoForOEmbed = value;
   }
   
 }

@@ -19,14 +19,8 @@ public partial class Color: ModelElement<DXO13W.Color>
   [DataMember]
   public String? Val
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Val);
-    }
-    set
-    {
-      _ExistingElement.Val = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Val;
+    set => _ExistingElement.Val = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class Color: ModelElement<DXO13W.Color>
   [DataMember]
   public String? ThemeTint
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.ThemeTint);
-    }
-    set
-    {
-      _ExistingElement.ThemeTint = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.ThemeTint;
+    set => _ExistingElement.ThemeTint = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class Color: ModelElement<DXO13W.Color>
   [DataMember]
   public String? ThemeShade
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.ThemeShade);
-    }
-    set
-    {
-      _ExistingElement.ThemeShade = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.ThemeShade;
+    set => _ExistingElement.ThemeShade = value;
   }
   
 }

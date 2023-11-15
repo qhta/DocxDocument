@@ -19,14 +19,8 @@ public partial class PaperSource: ModelElement<DXW.PaperSource>
   [DataMember]
   public UInt16? First
   {
-    get
-    {
-      return _Element?.First?.Value;
-    }
-    set
-    {
-      _ExistingElement.First = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt16]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt16]");
   }
   
   
@@ -36,14 +30,8 @@ public partial class PaperSource: ModelElement<DXW.PaperSource>
   [DataMember]
   public UInt16? Other
   {
-    get
-    {
-      return _Element?.Other?.Value;
-    }
-    set
-    {
-      _ExistingElement.Other = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt16]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt16]");
   }
   
 }

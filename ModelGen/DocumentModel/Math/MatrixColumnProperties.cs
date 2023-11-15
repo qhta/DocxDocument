@@ -19,14 +19,8 @@ public partial class MatrixColumnProperties: ModelElement<DXM.MatrixColumnProper
   [DataMember]
   public Int64? MatrixColumnCount
   {
-    get
-    {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DXM.MatrixColumnCount>()?.Val);
-    }
-    set
-    {
-      SimpleValueConverter.SetValue<DXM.MatrixColumnCount,System.Int64>(_ExistingElement, value);
-    }
+    get => _Element?.GetIntVal<Int64, DXM.MatrixColumnCount>();
+    set => _ExistingElement.SetIntVal<Int64, DXM.MatrixColumnCount>(value);
   }
   
   
@@ -36,24 +30,8 @@ public partial class MatrixColumnProperties: ModelElement<DXM.MatrixColumnProper
   [DataMember]
   public DMM.HorizontalAlignmentKind? MatrixColumnJustification
   {
-    get
-    {
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.HorizontalAlignmentValues, DMM.HorizontalAlignmentKind>(_ExistingElement.GetFirstChild<DXM.MatrixColumnJustification>()?.Val?.Value);
-    }
-    set
-    {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.MatrixColumnJustification>();
-      if (itemElement != null)
-      {
-        if (value != null)
-          EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.HorizontalAlignmentValues, DMM.HorizontalAlignmentKind>(itemElement, (DMM.HorizontalAlignmentKind)value);
-        else
-          itemElement.Remove();
-      }
-      else
-      if (value != null)
-        _ExistingElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXM.MatrixColumnJustification, DocumentFormat.OpenXml.Math.HorizontalAlignmentValues, DMM.HorizontalAlignmentKind>((DMM.HorizontalAlignmentKind)value));
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertyGetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertySetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
 }

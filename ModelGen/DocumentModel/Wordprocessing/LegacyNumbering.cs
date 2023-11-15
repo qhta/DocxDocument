@@ -19,14 +19,8 @@ public partial class LegacyNumbering: ModelElement<DXW.LegacyNumbering>
   [DataMember]
   public Boolean? Legacy
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.Legacy);
-    }
-    set
-    {
-      _ExistingElement.Legacy = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
   
@@ -36,14 +30,8 @@ public partial class LegacyNumbering: ModelElement<DXW.LegacyNumbering>
   [DataMember]
   public String? LegacySpace
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.LegacySpace);
-    }
-    set
-    {
-      _ExistingElement.LegacySpace = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.LegacySpace;
+    set => _ExistingElement.LegacySpace = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class LegacyNumbering: ModelElement<DXW.LegacyNumbering>
   [DataMember]
   public String? LegacyIndent
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.LegacyIndent);
-    }
-    set
-    {
-      _ExistingElement.LegacyIndent = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.LegacyIndent;
+    set => _ExistingElement.LegacyIndent = value;
   }
   
 }

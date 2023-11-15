@@ -19,24 +19,8 @@ public partial class MailMerge: ModelElement<DXW.MailMerge>
   [DataMember]
   public DMW.MailMergeDocumentKind? MainDocumentType
   {
-    get
-    {
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.MailMergeDocumentValues, DMW.MailMergeDocumentKind>(_ExistingElement.GetFirstChild<DXW.MainDocumentType>()?.Val?.Value);
-    }
-    set
-    {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.MainDocumentType>();
-      if (itemElement != null)
-      {
-        if (value != null)
-          EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.MailMergeDocumentValues, DMW.MailMergeDocumentKind>(itemElement, (DMW.MailMergeDocumentKind)value);
-        else
-          itemElement.Remove();
-      }
-      else
-      if (value != null)
-        _ExistingElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.MainDocumentType, DocumentFormat.OpenXml.Wordprocessing.MailMergeDocumentValues, DMW.MailMergeDocumentKind>((DMW.MailMergeDocumentKind)value));
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertyGetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertySetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -46,14 +30,8 @@ public partial class MailMerge: ModelElement<DXW.MailMerge>
   [DataMember]
   public DMW.LinkToQuery? LinkToQuery
   {
-    get
-    {
-      return _Element?.GetObject<DMW.LinkToQuery,DXW.LinkToQuery>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.LinkToQuery,DXW.LinkToQuery>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -63,24 +41,8 @@ public partial class MailMerge: ModelElement<DXW.MailMerge>
   [DataMember]
   public DMW.MailMergeDataKind? DataType
   {
-    get
-    {
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.MailMergeDataValues, DMW.MailMergeDataKind>(_ExistingElement.GetFirstChild<DXW.DataType>()?.Val?.Value);
-    }
-    set
-    {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.DataType>();
-      if (itemElement != null)
-      {
-        if (value != null)
-          EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.MailMergeDataValues, DMW.MailMergeDataKind>(itemElement, (DMW.MailMergeDataKind)value);
-        else
-          itemElement.Remove();
-      }
-      else
-      if (value != null)
-        _ExistingElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.DataType, DocumentFormat.OpenXml.Wordprocessing.MailMergeDataValues, DMW.MailMergeDataKind>((DMW.MailMergeDataKind)value));
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertyGetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertySetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -90,14 +52,8 @@ public partial class MailMerge: ModelElement<DXW.MailMerge>
   [DataMember]
   public DMW.ConnectString? ConnectString
   {
-    get
-    {
-      return _Element?.GetObject<DMW.ConnectString,DXW.ConnectString>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.ConnectString,DXW.ConnectString>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.StringType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.StringType");
   }
   
   
@@ -107,14 +63,8 @@ public partial class MailMerge: ModelElement<DXW.MailMerge>
   [DataMember]
   public DMW.Query? Query
   {
-    get
-    {
-      return _Element?.GetObject<DMW.Query,DXW.Query>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.Query,DXW.Query>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.StringType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.StringType");
   }
   
   
@@ -124,14 +74,8 @@ public partial class MailMerge: ModelElement<DXW.MailMerge>
   [DataMember]
   public DMW.DataSourceReference? DataSourceReference
   {
-    get
-    {
-      return _Element?.GetObject<DMW.DataSourceReference,DXW.DataSourceReference>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.DataSourceReference,DXW.DataSourceReference>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.RelationshipType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.RelationshipType");
   }
   
   
@@ -141,14 +85,8 @@ public partial class MailMerge: ModelElement<DXW.MailMerge>
   [DataMember]
   public DMW.HeaderSource? HeaderSource
   {
-    get
-    {
-      return _Element?.GetObject<DMW.HeaderSource,DXW.HeaderSource>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.HeaderSource,DXW.HeaderSource>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.RelationshipType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.RelationshipType");
   }
   
   
@@ -158,14 +96,8 @@ public partial class MailMerge: ModelElement<DXW.MailMerge>
   [DataMember]
   public DMW.DoNotSuppressBlankLines? DoNotSuppressBlankLines
   {
-    get
-    {
-      return _Element?.GetObject<DMW.DoNotSuppressBlankLines,DXW.DoNotSuppressBlankLines>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.DoNotSuppressBlankLines,DXW.DoNotSuppressBlankLines>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -175,24 +107,8 @@ public partial class MailMerge: ModelElement<DXW.MailMerge>
   [DataMember]
   public DMW.MailMergeDestinationKind? Destination
   {
-    get
-    {
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.MailMergeDestinationValues, DMW.MailMergeDestinationKind>(_ExistingElement.GetFirstChild<DXW.Destination>()?.Val?.Value);
-    }
-    set
-    {
-      var itemElement = _ExistingElement.GetFirstChild<DXW.Destination>();
-      if (itemElement != null)
-      {
-        if (value != null)
-          EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.MailMergeDestinationValues, DMW.MailMergeDestinationKind>(itemElement, (DMW.MailMergeDestinationKind)value);
-        else
-          itemElement.Remove();
-      }
-      else
-      if (value != null)
-        _ExistingElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.Destination, DocumentFormat.OpenXml.Wordprocessing.MailMergeDestinationValues, DMW.MailMergeDestinationKind>((DMW.MailMergeDestinationKind)value));
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertyGetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertySetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -202,14 +118,8 @@ public partial class MailMerge: ModelElement<DXW.MailMerge>
   [DataMember]
   public DMW.AddressFieldName? AddressFieldName
   {
-    get
-    {
-      return _Element?.GetObject<DMW.AddressFieldName,DXW.AddressFieldName>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.AddressFieldName,DXW.AddressFieldName>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.StringType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.StringType");
   }
   
   
@@ -219,14 +129,8 @@ public partial class MailMerge: ModelElement<DXW.MailMerge>
   [DataMember]
   public DMW.MailSubject? MailSubject
   {
-    get
-    {
-      return _Element?.GetObject<DMW.MailSubject,DXW.MailSubject>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.MailSubject,DXW.MailSubject>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.StringType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.StringType");
   }
   
   
@@ -236,14 +140,8 @@ public partial class MailMerge: ModelElement<DXW.MailMerge>
   [DataMember]
   public DMW.MailAsAttachment? MailAsAttachment
   {
-    get
-    {
-      return _Element?.GetObject<DMW.MailAsAttachment,DXW.MailAsAttachment>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.MailAsAttachment,DXW.MailAsAttachment>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -253,14 +151,8 @@ public partial class MailMerge: ModelElement<DXW.MailMerge>
   [DataMember]
   public DMW.ViewMergedData? ViewMergedData
   {
-    get
-    {
-      return _Element?.GetObject<DMW.ViewMergedData,DXW.ViewMergedData>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.ViewMergedData,DXW.ViewMergedData>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -270,14 +162,8 @@ public partial class MailMerge: ModelElement<DXW.MailMerge>
   [DataMember]
   public DMW.ActiveRecord? ActiveRecord
   {
-    get
-    {
-      return _Element?.GetObject<DMW.ActiveRecord,DXW.ActiveRecord>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.ActiveRecord,DXW.ActiveRecord>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.DecimalNumberType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.DecimalNumberType");
   }
   
   
@@ -287,14 +173,8 @@ public partial class MailMerge: ModelElement<DXW.MailMerge>
   [DataMember]
   public DMW.CheckErrors? CheckErrors
   {
-    get
-    {
-      return _Element?.GetObject<DMW.CheckErrors,DXW.CheckErrors>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.CheckErrors,DXW.CheckErrors>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.DecimalNumberType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.DecimalNumberType");
   }
   
   
@@ -304,14 +184,8 @@ public partial class MailMerge: ModelElement<DXW.MailMerge>
   [DataMember]
   public DMW.DataSourceObject? DataSourceObject
   {
-    get
-    {
-      return _Element?.GetObject<DMW.DataSourceObject,DXW.DataSourceObject>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.DataSourceObject,DXW.DataSourceObject>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

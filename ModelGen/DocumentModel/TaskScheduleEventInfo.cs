@@ -19,14 +19,8 @@ public partial class TaskScheduleEventInfo: ModelElement<DXO21DT.TaskScheduleEve
   [DataMember]
   public DateTime? StartDate
   {
-    get
-    {
-      return _Element?.StartDate?.Value;
-    }
-    set
-    {
-      _ExistingElement.StartDate = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -36,14 +30,8 @@ public partial class TaskScheduleEventInfo: ModelElement<DXO21DT.TaskScheduleEve
   [DataMember]
   public DateTime? DueDate
   {
-    get
-    {
-      return _Element?.DueDate?.Value;
-    }
-    set
-    {
-      _ExistingElement.DueDate = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
 }

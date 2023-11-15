@@ -19,14 +19,8 @@ public partial class FilteredRadarSeries: ModelElement<DXO13DC.FilteredRadarSeri
   [DataMember]
   public DMDC13.RadarChartSeries? RadarChartSeries
   {
-    get
-    {
-      return _Element?.GetObject<DMDC13.RadarChartSeries,DXO13DC.RadarChartSeries>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC13.RadarChartSeries,DXO13DC.RadarChartSeries>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

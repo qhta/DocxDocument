@@ -19,14 +19,8 @@ public partial class BorderBoxProperties: ModelElement<DXM.BorderBoxProperties>
   [DataMember]
   public DMM.HideTop? HideTop
   {
-    get
-    {
-      return _Element?.GetObject<DMM.HideTop,DXM.HideTop>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.HideTop,DXM.HideTop>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OnOffType");
   }
   
   
@@ -36,14 +30,8 @@ public partial class BorderBoxProperties: ModelElement<DXM.BorderBoxProperties>
   [DataMember]
   public DMM.HideBottom? HideBottom
   {
-    get
-    {
-      return _Element?.GetObject<DMM.HideBottom,DXM.HideBottom>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.HideBottom,DXM.HideBottom>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OnOffType");
   }
   
   
@@ -53,14 +41,8 @@ public partial class BorderBoxProperties: ModelElement<DXM.BorderBoxProperties>
   [DataMember]
   public DMM.HideLeft? HideLeft
   {
-    get
-    {
-      return _Element?.GetObject<DMM.HideLeft,DXM.HideLeft>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.HideLeft,DXM.HideLeft>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OnOffType");
   }
   
   
@@ -70,14 +52,8 @@ public partial class BorderBoxProperties: ModelElement<DXM.BorderBoxProperties>
   [DataMember]
   public DMM.HideRight? HideRight
   {
-    get
-    {
-      return _Element?.GetObject<DMM.HideRight,DXM.HideRight>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.HideRight,DXM.HideRight>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OnOffType");
   }
   
   
@@ -87,14 +63,8 @@ public partial class BorderBoxProperties: ModelElement<DXM.BorderBoxProperties>
   [DataMember]
   public DMM.StrikeHorizontal? StrikeHorizontal
   {
-    get
-    {
-      return _Element?.GetObject<DMM.StrikeHorizontal,DXM.StrikeHorizontal>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.StrikeHorizontal,DXM.StrikeHorizontal>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OnOffType");
   }
   
   
@@ -104,14 +74,8 @@ public partial class BorderBoxProperties: ModelElement<DXM.BorderBoxProperties>
   [DataMember]
   public DMM.StrikeVertical? StrikeVertical
   {
-    get
-    {
-      return _Element?.GetObject<DMM.StrikeVertical,DXM.StrikeVertical>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.StrikeVertical,DXM.StrikeVertical>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OnOffType");
   }
   
   
@@ -121,14 +85,8 @@ public partial class BorderBoxProperties: ModelElement<DXM.BorderBoxProperties>
   [DataMember]
   public DMM.StrikeBottomLeftToTopRight? StrikeBottomLeftToTopRight
   {
-    get
-    {
-      return _Element?.GetObject<DMM.StrikeBottomLeftToTopRight,DXM.StrikeBottomLeftToTopRight>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.StrikeBottomLeftToTopRight,DXM.StrikeBottomLeftToTopRight>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OnOffType");
   }
   
   
@@ -138,14 +96,8 @@ public partial class BorderBoxProperties: ModelElement<DXM.BorderBoxProperties>
   [DataMember]
   public DMM.StrikeTopLeftToBottomRight? StrikeTopLeftToBottomRight
   {
-    get
-    {
-      return _Element?.GetObject<DMM.StrikeTopLeftToBottomRight,DXM.StrikeTopLeftToBottomRight>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.StrikeTopLeftToBottomRight,DXM.StrikeTopLeftToBottomRight>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OnOffType");
   }
   
   
@@ -155,14 +107,8 @@ public partial class BorderBoxProperties: ModelElement<DXM.BorderBoxProperties>
   [DataMember]
   public DMM.ControlProperties? ControlProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMM.ControlProperties,DXM.ControlProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.ControlProperties,DXM.ControlProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

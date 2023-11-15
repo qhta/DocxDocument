@@ -19,14 +19,8 @@ public partial class NumberingFormat: ModelElement<DXDC.NumberingFormat>
   [DataMember]
   public String? FormatCode
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.FormatCode);
-    }
-    set
-    {
-      _ExistingElement.FormatCode = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.FormatCode;
+    set => _ExistingElement.FormatCode = value;
   }
   
   
@@ -36,17 +30,8 @@ public partial class NumberingFormat: ModelElement<DXDC.NumberingFormat>
   [DataMember]
   public Boolean? SourceLinked
   {
-    get
-    {
-      return _Element?.SourceLinked?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.SourceLinked = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.SourceLinked = null;
-    }
+    get => _Element?.SourceLinked?.Value;
+    set => _ExistingElement.SourceLinked = value;
   }
   
 }

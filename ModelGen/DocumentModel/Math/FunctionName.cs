@@ -15,27 +15,15 @@ public partial class FunctionName: ModelElement<DXM.FunctionName>
   [DataMember]
   public DMM.ArgumentProperties? ArgumentProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMM.ArgumentProperties,DXM.ArgumentProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.ArgumentProperties,DXM.ArgumentProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMM.ControlProperties? ControlProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMM.ControlProperties,DXM.ControlProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.ControlProperties,DXM.ControlProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

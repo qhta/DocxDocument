@@ -19,14 +19,8 @@ public partial class BoxProperties: ModelElement<DXM.BoxProperties>
   [DataMember]
   public DMM.OperatorEmulator? OperatorEmulator
   {
-    get
-    {
-      return _Element?.GetObject<DMM.OperatorEmulator,DXM.OperatorEmulator>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.OperatorEmulator,DXM.OperatorEmulator>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OnOffType");
   }
   
   
@@ -36,14 +30,8 @@ public partial class BoxProperties: ModelElement<DXM.BoxProperties>
   [DataMember]
   public DMM.NoBreak? NoBreak
   {
-    get
-    {
-      return _Element?.GetObject<DMM.NoBreak,DXM.NoBreak>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.NoBreak,DXM.NoBreak>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OnOffType");
   }
   
   
@@ -53,14 +41,8 @@ public partial class BoxProperties: ModelElement<DXM.BoxProperties>
   [DataMember]
   public DMM.Differential? Differential
   {
-    get
-    {
-      return _Element?.GetObject<DMM.Differential,DXM.Differential>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.Differential,DXM.Differential>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OnOffType");
   }
   
   
@@ -70,14 +52,8 @@ public partial class BoxProperties: ModelElement<DXM.BoxProperties>
   [DataMember]
   public DMM.Break? Break
   {
-    get
-    {
-      return _Element?.GetObject<DMM.Break,DXM.Break>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.Break,DXM.Break>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -87,14 +63,8 @@ public partial class BoxProperties: ModelElement<DXM.BoxProperties>
   [DataMember]
   public DMM.Alignment? Alignment
   {
-    get
-    {
-      return _Element?.GetObject<DMM.Alignment,DXM.Alignment>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.Alignment,DXM.Alignment>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OnOffType");
   }
   
   
@@ -104,14 +74,8 @@ public partial class BoxProperties: ModelElement<DXM.BoxProperties>
   [DataMember]
   public DMM.ControlProperties? ControlProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMM.ControlProperties,DXM.ControlProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.ControlProperties,DXM.ControlProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

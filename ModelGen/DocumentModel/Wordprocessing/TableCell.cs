@@ -19,14 +19,8 @@ public partial class TableCell: ModelElement<DXW.TableCell>
   [DataMember]
   public DMW.TableCellProperties? TableCellProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMW.TableCellProperties,DXW.TableCellProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.TableCellProperties,DXW.TableCellProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

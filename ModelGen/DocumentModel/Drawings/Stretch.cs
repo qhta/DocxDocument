@@ -19,14 +19,8 @@ public partial class Stretch: ModelElement<DXD.Stretch>
   [DataMember]
   public DMD.FillRectangle? FillRectangle
   {
-    get
-    {
-      return _Element?.GetObject<DMD.FillRectangle,DXD.FillRectangle>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.FillRectangle,DXD.FillRectangle>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.RelativeRectangleType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.RelativeRectangleType");
   }
   
 }

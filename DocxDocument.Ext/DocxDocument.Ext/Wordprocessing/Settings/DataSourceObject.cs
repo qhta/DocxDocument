@@ -179,7 +179,7 @@ public partial class DataSourceObject : ModelElement<DXW.DataSourceObject>
   [DataMember]
   public UInt16? ColumnDelimiter
   {
-    get => (UInt16?)_Element?.GetIntVal<DXW.DataSourceTableName>();
-    set => _ExistingElement.SetIntVal<DXW.DataSourceTableName>(value);
+    get => (UInt16?)_Element?.GetIntVal<UInt16, DXW.DataSourceTableName>();
+    set => _ExistingElement.SetIntVal<UInt16, DXW.DataSourceTableName>(value);
   }
 }

@@ -19,17 +19,8 @@ public partial class Ribbon: ModelElement<DXO10CUI.Ribbon>
   [DataMember]
   public Boolean? StartFromScratch
   {
-    get
-    {
-      return _Element?.StartFromScratch?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.StartFromScratch = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.StartFromScratch = null;
-    }
+    get => _Element?.StartFromScratch?.Value;
+    set => _ExistingElement.StartFromScratch = value;
   }
   
   
@@ -39,14 +30,8 @@ public partial class Ribbon: ModelElement<DXO10CUI.Ribbon>
   [DataMember]
   public DMCUI10.QuickAccessToolbar? QuickAccessToolbar
   {
-    get
-    {
-      return _Element?.GetObject<DMCUI10.QuickAccessToolbar,DXO10CUI.QuickAccessToolbar>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMCUI10.QuickAccessToolbar,DXO10CUI.QuickAccessToolbar>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -56,14 +41,8 @@ public partial class Ribbon: ModelElement<DXO10CUI.Ribbon>
   [DataMember]
   public DMCUI10.Tabs? Tabs
   {
-    get
-    {
-      return _Element?.GetObject<DMCUI10.Tabs,DXO10CUI.Tabs>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMCUI10.Tabs,DXO10CUI.Tabs>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -73,14 +52,8 @@ public partial class Ribbon: ModelElement<DXO10CUI.Ribbon>
   [DataMember]
   public DMCUI10.ContextualTabs? ContextualTabs
   {
-    get
-    {
-      return _Element?.GetObject<DMCUI10.ContextualTabs,DXO10CUI.ContextualTabs>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMCUI10.ContextualTabs,DXO10CUI.ContextualTabs>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

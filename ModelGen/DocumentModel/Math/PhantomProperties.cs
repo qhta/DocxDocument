@@ -19,14 +19,8 @@ public partial class PhantomProperties: ModelElement<DXM.PhantomProperties>
   [DataMember]
   public DMM.ShowPhantom? ShowPhantom
   {
-    get
-    {
-      return _Element?.GetObject<DMM.ShowPhantom,DXM.ShowPhantom>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.ShowPhantom,DXM.ShowPhantom>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OnOffType");
   }
   
   
@@ -36,14 +30,8 @@ public partial class PhantomProperties: ModelElement<DXM.PhantomProperties>
   [DataMember]
   public DMM.ZeroWidth? ZeroWidth
   {
-    get
-    {
-      return _Element?.GetObject<DMM.ZeroWidth,DXM.ZeroWidth>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.ZeroWidth,DXM.ZeroWidth>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OnOffType");
   }
   
   
@@ -53,14 +41,8 @@ public partial class PhantomProperties: ModelElement<DXM.PhantomProperties>
   [DataMember]
   public DMM.ZeroAscent? ZeroAscent
   {
-    get
-    {
-      return _Element?.GetObject<DMM.ZeroAscent,DXM.ZeroAscent>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.ZeroAscent,DXM.ZeroAscent>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OnOffType");
   }
   
   
@@ -70,14 +52,8 @@ public partial class PhantomProperties: ModelElement<DXM.PhantomProperties>
   [DataMember]
   public DMM.ZeroDescent? ZeroDescent
   {
-    get
-    {
-      return _Element?.GetObject<DMM.ZeroDescent,DXM.ZeroDescent>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.ZeroDescent,DXM.ZeroDescent>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OnOffType");
   }
   
   
@@ -87,14 +63,8 @@ public partial class PhantomProperties: ModelElement<DXM.PhantomProperties>
   [DataMember]
   public DMM.Transparent? Transparent
   {
-    get
-    {
-      return _Element?.GetObject<DMM.Transparent,DXM.Transparent>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.Transparent,DXM.Transparent>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OnOffType");
   }
   
   
@@ -104,14 +74,8 @@ public partial class PhantomProperties: ModelElement<DXM.PhantomProperties>
   [DataMember]
   public DMM.ControlProperties? ControlProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMM.ControlProperties,DXM.ControlProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.ControlProperties,DXM.ControlProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

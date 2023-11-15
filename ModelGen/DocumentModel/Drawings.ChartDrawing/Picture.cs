@@ -19,14 +19,8 @@ public partial class Picture: ModelElement<DXDCD.Picture>
   [DataMember]
   public String? Macro
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Macro);
-    }
-    set
-    {
-      _ExistingElement.Macro = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Macro;
+    set => _ExistingElement.Macro = value;
   }
   
   
@@ -36,17 +30,8 @@ public partial class Picture: ModelElement<DXDCD.Picture>
   [DataMember]
   public Boolean? Published
   {
-    get
-    {
-      return _Element?.Published?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Published = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.Published = null;
-    }
+    get => _Element?.Published?.Value;
+    set => _ExistingElement.Published = value;
   }
   
   
@@ -56,14 +41,8 @@ public partial class Picture: ModelElement<DXDCD.Picture>
   [DataMember]
   public DMDCD.NonVisualPictureProperties? NonVisualPictureProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD.NonVisualPictureProperties,DXDCD.NonVisualPictureProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD.NonVisualPictureProperties,DXDCD.NonVisualPictureProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -73,14 +52,8 @@ public partial class Picture: ModelElement<DXDCD.Picture>
   [DataMember]
   public DMDCD.BlipFill? BlipFill
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD.BlipFill,DXDCD.BlipFill>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD.BlipFill,DXDCD.BlipFill>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -90,14 +63,8 @@ public partial class Picture: ModelElement<DXDCD.Picture>
   [DataMember]
   public DMDCD.ShapeProperties? ShapeProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD.ShapeProperties,DXDCD.ShapeProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD.ShapeProperties,DXDCD.ShapeProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -107,14 +74,8 @@ public partial class Picture: ModelElement<DXDCD.Picture>
   [DataMember]
   public DMDCD.Style? Style
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD.Style,DXDCD.Style>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD.Style,DXDCD.Style>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

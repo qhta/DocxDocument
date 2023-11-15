@@ -19,17 +19,8 @@ public partial class SplitButtonRegular: ModelElement<DXO10CUI.SplitButtonRegula
   [DataMember]
   public Boolean? Enabled
   {
-    get
-    {
-      return _Element?.Enabled?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Enabled = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.Enabled = null;
-    }
+    get => _Element?.Enabled?.Value;
+    set => _ExistingElement.Enabled = value;
   }
   
   
@@ -39,14 +30,8 @@ public partial class SplitButtonRegular: ModelElement<DXO10CUI.SplitButtonRegula
   [DataMember]
   public String? GetEnabled
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.GetEnabled);
-    }
-    set
-    {
-      _ExistingElement.GetEnabled = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.GetEnabled;
+    set => _ExistingElement.GetEnabled = value;
   }
   
   
@@ -56,14 +41,8 @@ public partial class SplitButtonRegular: ModelElement<DXO10CUI.SplitButtonRegula
   [DataMember]
   public String? Id
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Id);
-    }
-    set
-    {
-      _ExistingElement.Id = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Id;
+    set => _ExistingElement.Id = value;
   }
   
   
@@ -73,14 +52,8 @@ public partial class SplitButtonRegular: ModelElement<DXO10CUI.SplitButtonRegula
   [DataMember]
   public String? QualifiedId
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.QualifiedId);
-    }
-    set
-    {
-      _ExistingElement.QualifiedId = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.QualifiedId;
+    set => _ExistingElement.QualifiedId = value;
   }
   
   
@@ -90,14 +63,8 @@ public partial class SplitButtonRegular: ModelElement<DXO10CUI.SplitButtonRegula
   [DataMember]
   public String? Tag
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Tag);
-    }
-    set
-    {
-      _ExistingElement.Tag = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Tag;
+    set => _ExistingElement.Tag = value;
   }
   
   
@@ -107,14 +74,8 @@ public partial class SplitButtonRegular: ModelElement<DXO10CUI.SplitButtonRegula
   [DataMember]
   public String? IdMso
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.IdMso);
-    }
-    set
-    {
-      _ExistingElement.IdMso = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.IdMso;
+    set => _ExistingElement.IdMso = value;
   }
   
   
@@ -124,14 +85,8 @@ public partial class SplitButtonRegular: ModelElement<DXO10CUI.SplitButtonRegula
   [DataMember]
   public String? InsertAfterMso
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.InsertAfterMso);
-    }
-    set
-    {
-      _ExistingElement.InsertAfterMso = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.InsertAfterMso;
+    set => _ExistingElement.InsertAfterMso = value;
   }
   
   
@@ -141,14 +96,8 @@ public partial class SplitButtonRegular: ModelElement<DXO10CUI.SplitButtonRegula
   [DataMember]
   public String? InsertBeforeMso
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.InsertBeforeMso);
-    }
-    set
-    {
-      _ExistingElement.InsertBeforeMso = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.InsertBeforeMso;
+    set => _ExistingElement.InsertBeforeMso = value;
   }
   
   
@@ -158,14 +107,8 @@ public partial class SplitButtonRegular: ModelElement<DXO10CUI.SplitButtonRegula
   [DataMember]
   public String? InsertAfterQulifiedId
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.InsertAfterQulifiedId);
-    }
-    set
-    {
-      _ExistingElement.InsertAfterQulifiedId = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.InsertAfterQulifiedId;
+    set => _ExistingElement.InsertAfterQulifiedId = value;
   }
   
   
@@ -175,14 +118,8 @@ public partial class SplitButtonRegular: ModelElement<DXO10CUI.SplitButtonRegula
   [DataMember]
   public String? InsertBeforeQulifiedId
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.InsertBeforeQulifiedId);
-    }
-    set
-    {
-      _ExistingElement.InsertBeforeQulifiedId = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.InsertBeforeQulifiedId;
+    set => _ExistingElement.InsertBeforeQulifiedId = value;
   }
   
   
@@ -192,17 +129,8 @@ public partial class SplitButtonRegular: ModelElement<DXO10CUI.SplitButtonRegula
   [DataMember]
   public Boolean? Visible
   {
-    get
-    {
-      return _Element?.Visible?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Visible = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.Visible = null;
-    }
+    get => _Element?.Visible?.Value;
+    set => _ExistingElement.Visible = value;
   }
   
   
@@ -212,14 +140,8 @@ public partial class SplitButtonRegular: ModelElement<DXO10CUI.SplitButtonRegula
   [DataMember]
   public String? GetVisible
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.GetVisible);
-    }
-    set
-    {
-      _ExistingElement.GetVisible = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.GetVisible;
+    set => _ExistingElement.GetVisible = value;
   }
   
   
@@ -229,14 +151,8 @@ public partial class SplitButtonRegular: ModelElement<DXO10CUI.SplitButtonRegula
   [DataMember]
   public String? Keytip
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Keytip);
-    }
-    set
-    {
-      _ExistingElement.Keytip = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Keytip;
+    set => _ExistingElement.Keytip = value;
   }
   
   
@@ -246,14 +162,8 @@ public partial class SplitButtonRegular: ModelElement<DXO10CUI.SplitButtonRegula
   [DataMember]
   public String? GetKeytip
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.GetKeytip);
-    }
-    set
-    {
-      _ExistingElement.GetKeytip = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.GetKeytip;
+    set => _ExistingElement.GetKeytip = value;
   }
   
   
@@ -263,17 +173,8 @@ public partial class SplitButtonRegular: ModelElement<DXO10CUI.SplitButtonRegula
   [DataMember]
   public Boolean? ShowLabel
   {
-    get
-    {
-      return _Element?.ShowLabel?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.ShowLabel = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.ShowLabel = null;
-    }
+    get => _Element?.ShowLabel?.Value;
+    set => _ExistingElement.ShowLabel = value;
   }
   
   
@@ -283,53 +184,29 @@ public partial class SplitButtonRegular: ModelElement<DXO10CUI.SplitButtonRegula
   [DataMember]
   public String? GetShowLabel
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.GetShowLabel);
-    }
-    set
-    {
-      _ExistingElement.GetShowLabel = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.GetShowLabel;
+    set => _ExistingElement.GetShowLabel = value;
   }
   
   [DataMember]
   public DMCUI10.VisibleButton? VisibleButton
   {
-    get
-    {
-      return _Element?.GetObject<DMCUI10.VisibleButton,DXO10CUI.VisibleButton>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMCUI10.VisibleButton,DXO10CUI.VisibleButton>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   [DataMember]
   public DMCUI10.VisibleToggleButton? VisibleToggleButton
   {
-    get
-    {
-      return _Element?.GetObject<DMCUI10.VisibleToggleButton,DXO10CUI.VisibleToggleButton>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMCUI10.VisibleToggleButton,DXO10CUI.VisibleToggleButton>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   [DataMember]
   public DMCUI10.MenuRegular? MenuRegular
   {
-    get
-    {
-      return _Element?.GetObject<DMCUI10.MenuRegular,DXO10CUI.MenuRegular>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMCUI10.MenuRegular,DXO10CUI.MenuRegular>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

@@ -19,14 +19,8 @@ public partial class AutoCaption: ModelElement<DXW.AutoCaption>
   [DataMember]
   public String? Name
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Name);
-    }
-    set
-    {
-      _ExistingElement.Name = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Name;
+    set => _ExistingElement.Name = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class AutoCaption: ModelElement<DXW.AutoCaption>
   [DataMember]
   public String? Caption
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Caption);
-    }
-    set
-    {
-      _ExistingElement.Caption = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Caption;
+    set => _ExistingElement.Caption = value;
   }
   
 }

@@ -19,14 +19,8 @@ public partial class CustomDocumentProperty: ModelElement<DXCP.CustomDocumentPro
   [DataMember]
   public String? FormatId
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.FormatId);
-    }
-    set
-    {
-      _ExistingElement.FormatId = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.FormatId;
+    set => _ExistingElement.FormatId = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class CustomDocumentProperty: ModelElement<DXCP.CustomDocumentPro
   [DataMember]
   public Int32? PropertyId
   {
-    get
-    {
-      return _Element?.PropertyId?.Value;
-    }
-    set
-    {
-      _ExistingElement.PropertyId = value;
-    }
+    get => _Element?.PropertyId?.Value;
+    set => _ExistingElement.PropertyId = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class CustomDocumentProperty: ModelElement<DXCP.CustomDocumentPro
   [DataMember]
   public String? Name
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Name);
-    }
-    set
-    {
-      _ExistingElement.Name = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Name;
+    set => _ExistingElement.Name = value;
   }
   
   
@@ -70,14 +52,8 @@ public partial class CustomDocumentProperty: ModelElement<DXCP.CustomDocumentPro
   [DataMember]
   public String? LinkTarget
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.LinkTarget);
-    }
-    set
-    {
-      _ExistingElement.LinkTarget = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.LinkTarget;
+    set => _ExistingElement.LinkTarget = value;
   }
   
 }

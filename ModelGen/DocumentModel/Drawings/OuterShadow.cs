@@ -19,14 +19,8 @@ public partial class OuterShadow: ModelElement<DXD.OuterShadow>
   [DataMember]
   public Int64? BlurRadius
   {
-    get
-    {
-      return _Element?.BlurRadius?.Value;
-    }
-    set
-    {
-      _ExistingElement.BlurRadius = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int64]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int64]");
   }
   
   
@@ -36,14 +30,8 @@ public partial class OuterShadow: ModelElement<DXD.OuterShadow>
   [DataMember]
   public Int64? Distance
   {
-    get
-    {
-      return _Element?.Distance?.Value;
-    }
-    set
-    {
-      _ExistingElement.Distance = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int64]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.Int64]");
   }
   
   
@@ -53,14 +41,8 @@ public partial class OuterShadow: ModelElement<DXD.OuterShadow>
   [DataMember]
   public Int32? Direction
   {
-    get
-    {
-      return _Element?.Direction?.Value;
-    }
-    set
-    {
-      _ExistingElement.Direction = value;
-    }
+    get => _Element?.Direction?.Value;
+    set => _ExistingElement.Direction = value;
   }
   
   
@@ -70,14 +52,8 @@ public partial class OuterShadow: ModelElement<DXD.OuterShadow>
   [DataMember]
   public Int32? HorizontalRatio
   {
-    get
-    {
-      return _Element?.HorizontalRatio?.Value;
-    }
-    set
-    {
-      _ExistingElement.HorizontalRatio = value;
-    }
+    get => _Element?.HorizontalRatio?.Value;
+    set => _ExistingElement.HorizontalRatio = value;
   }
   
   
@@ -87,14 +63,8 @@ public partial class OuterShadow: ModelElement<DXD.OuterShadow>
   [DataMember]
   public Int32? VerticalRatio
   {
-    get
-    {
-      return _Element?.VerticalRatio?.Value;
-    }
-    set
-    {
-      _ExistingElement.VerticalRatio = value;
-    }
+    get => _Element?.VerticalRatio?.Value;
+    set => _ExistingElement.VerticalRatio = value;
   }
   
   
@@ -104,14 +74,8 @@ public partial class OuterShadow: ModelElement<DXD.OuterShadow>
   [DataMember]
   public Int32? HorizontalSkew
   {
-    get
-    {
-      return _Element?.HorizontalSkew?.Value;
-    }
-    set
-    {
-      _ExistingElement.HorizontalSkew = value;
-    }
+    get => _Element?.HorizontalSkew?.Value;
+    set => _ExistingElement.HorizontalSkew = value;
   }
   
   
@@ -121,14 +85,8 @@ public partial class OuterShadow: ModelElement<DXD.OuterShadow>
   [DataMember]
   public Int32? VerticalSkew
   {
-    get
-    {
-      return _Element?.VerticalSkew?.Value;
-    }
-    set
-    {
-      _ExistingElement.VerticalSkew = value;
-    }
+    get => _Element?.VerticalSkew?.Value;
+    set => _ExistingElement.VerticalSkew = value;
   }
   
   
@@ -138,17 +96,8 @@ public partial class OuterShadow: ModelElement<DXD.OuterShadow>
   [DataMember]
   public Boolean? RotateWithShape
   {
-    get
-    {
-      return _Element?.RotateWithShape?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.RotateWithShape = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.RotateWithShape = null;
-    }
+    get => _Element?.RotateWithShape?.Value;
+    set => _ExistingElement.RotateWithShape = value;
   }
   
   
@@ -158,14 +107,8 @@ public partial class OuterShadow: ModelElement<DXD.OuterShadow>
   [DataMember]
   public DMD.RgbColorModelPercentage? RgbColorModelPercentage
   {
-    get
-    {
-      return _Element?.GetObject<DMD.RgbColorModelPercentage,DXD.RgbColorModelPercentage>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.RgbColorModelPercentage,DXD.RgbColorModelPercentage>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -175,14 +118,8 @@ public partial class OuterShadow: ModelElement<DXD.OuterShadow>
   [DataMember]
   public DMD.RgbColorModelHex? RgbColorModelHex
   {
-    get
-    {
-      return _Element?.GetObject<DMD.RgbColorModelHex,DXD.RgbColorModelHex>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.RgbColorModelHex,DXD.RgbColorModelHex>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -192,14 +129,8 @@ public partial class OuterShadow: ModelElement<DXD.OuterShadow>
   [DataMember]
   public DMD.HslColor? HslColor
   {
-    get
-    {
-      return _Element?.GetObject<DMD.HslColor,DXD.HslColor>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.HslColor,DXD.HslColor>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -209,14 +140,8 @@ public partial class OuterShadow: ModelElement<DXD.OuterShadow>
   [DataMember]
   public DMD.SystemColor? SystemColor
   {
-    get
-    {
-      return _Element?.GetObject<DMD.SystemColor,DXD.SystemColor>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.SystemColor,DXD.SystemColor>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -226,14 +151,8 @@ public partial class OuterShadow: ModelElement<DXD.OuterShadow>
   [DataMember]
   public DMD.SchemeColorKind? SchemeColor
   {
-    get
-    {
-      throw new NotImplementedException("Not implemented in GenerateEnumPropertyGetCode: propertyType is DocumentFormat.OpenXml.Drawing.SchemeColor");
-    }
-    set
-    {
-      throw new NotImplementedException("Not implemented in GenerateEnumPropertySetCode: propertyType is DocumentFormat.OpenXml.Drawing.SchemeColor");
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertyGetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertySetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -243,14 +162,8 @@ public partial class OuterShadow: ModelElement<DXD.OuterShadow>
   [DataMember]
   public DMD.PresetColorKind? PresetColor
   {
-    get
-    {
-      throw new NotImplementedException("Not implemented in GenerateEnumPropertyGetCode: propertyType is DocumentFormat.OpenXml.Drawing.PresetColor");
-    }
-    set
-    {
-      throw new NotImplementedException("Not implemented in GenerateEnumPropertySetCode: propertyType is DocumentFormat.OpenXml.Drawing.PresetColor");
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertyGetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertySetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

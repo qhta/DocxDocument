@@ -19,14 +19,8 @@ public partial class LinearShadeProperties: ModelElement<DXO10W.LinearShadePrope
   [DataMember]
   public Int32? Angle
   {
-    get
-    {
-      return _Element?.Angle?.Value;
-    }
-    set
-    {
-      _ExistingElement.Angle = value;
-    }
+    get => _Element?.Angle?.Value;
+    set => _ExistingElement.Angle = value;
   }
   
 }

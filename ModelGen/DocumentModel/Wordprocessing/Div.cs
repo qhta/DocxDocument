@@ -19,14 +19,8 @@ public partial class Div: ModelElement<DXW.Div>
   [DataMember]
   public String? Id
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Id);
-    }
-    set
-    {
-      _ExistingElement.Id = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Id;
+    set => _ExistingElement.Id = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class Div: ModelElement<DXW.Div>
   [DataMember]
   public DMW.BlockQuote? BlockQuote
   {
-    get
-    {
-      return _Element?.GetObject<DMW.BlockQuote,DXW.BlockQuote>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.BlockQuote,DXW.BlockQuote>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -53,14 +41,8 @@ public partial class Div: ModelElement<DXW.Div>
   [DataMember]
   public DMW.BodyDiv? BodyDiv
   {
-    get
-    {
-      return _Element?.GetObject<DMW.BodyDiv,DXW.BodyDiv>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.BodyDiv,DXW.BodyDiv>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -70,14 +52,8 @@ public partial class Div: ModelElement<DXW.Div>
   [DataMember]
   public DMW.LeftMarginDiv? LeftMarginDiv
   {
-    get
-    {
-      return _Element?.GetObject<DMW.LeftMarginDiv,DXW.LeftMarginDiv>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.LeftMarginDiv,DXW.LeftMarginDiv>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.SignedTwipsMeasureType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.SignedTwipsMeasureType");
   }
   
   
@@ -87,14 +63,8 @@ public partial class Div: ModelElement<DXW.Div>
   [DataMember]
   public DMW.RightMarginDiv? RightMarginDiv
   {
-    get
-    {
-      return _Element?.GetObject<DMW.RightMarginDiv,DXW.RightMarginDiv>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.RightMarginDiv,DXW.RightMarginDiv>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.SignedTwipsMeasureType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.SignedTwipsMeasureType");
   }
   
   
@@ -104,14 +74,8 @@ public partial class Div: ModelElement<DXW.Div>
   [DataMember]
   public DMW.TopMarginDiv? TopMarginDiv
   {
-    get
-    {
-      return _Element?.GetObject<DMW.TopMarginDiv,DXW.TopMarginDiv>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.TopMarginDiv,DXW.TopMarginDiv>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.SignedTwipsMeasureType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.SignedTwipsMeasureType");
   }
   
   
@@ -121,14 +85,8 @@ public partial class Div: ModelElement<DXW.Div>
   [DataMember]
   public DMW.BottomMarginDiv? BottomMarginDiv
   {
-    get
-    {
-      return _Element?.GetObject<DMW.BottomMarginDiv,DXW.BottomMarginDiv>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.BottomMarginDiv,DXW.BottomMarginDiv>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.SignedTwipsMeasureType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.SignedTwipsMeasureType");
   }
   
   
@@ -138,14 +96,8 @@ public partial class Div: ModelElement<DXW.Div>
   [DataMember]
   public DMW.DivBorder? DivBorder
   {
-    get
-    {
-      return _Element?.GetObject<DMW.DivBorder,DXW.DivBorder>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.DivBorder,DXW.DivBorder>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

@@ -19,14 +19,8 @@ public partial class ExtraColorScheme: ModelElement<DXD.ExtraColorScheme>
   [DataMember]
   public DMD.ColorScheme? ColorScheme
   {
-    get
-    {
-      return _Element?.GetObject<DMD.ColorScheme,DXD.ColorScheme>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.ColorScheme,DXD.ColorScheme>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -36,14 +30,8 @@ public partial class ExtraColorScheme: ModelElement<DXD.ExtraColorScheme>
   [DataMember]
   public DMD.ColorMap? ColorMap
   {
-    get
-    {
-      return _Element?.GetObject<DMD.ColorMap,DXD.ColorMap>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.ColorMap,DXD.ColorMap>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.ColorMappingType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.ColorMappingType");
   }
   
 }

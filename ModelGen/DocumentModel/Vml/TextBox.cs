@@ -19,14 +19,8 @@ public partial class TextBox: ModelElement<DXV.TextBox>
   [DataMember]
   public String? Id
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Id);
-    }
-    set
-    {
-      _ExistingElement.Id = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Id;
+    set => _ExistingElement.Id = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class TextBox: ModelElement<DXV.TextBox>
   [DataMember]
   public String? Style
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Style);
-    }
-    set
-    {
-      _ExistingElement.Style = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Style;
+    set => _ExistingElement.Style = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class TextBox: ModelElement<DXV.TextBox>
   [DataMember]
   public String? Inset
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Inset);
-    }
-    set
-    {
-      _ExistingElement.Inset = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Inset;
+    set => _ExistingElement.Inset = value;
   }
   
   
@@ -70,30 +52,15 @@ public partial class TextBox: ModelElement<DXV.TextBox>
   [DataMember]
   public Boolean? SingleClick
   {
-    get
-    {
-      return _Element?.SingleClick?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.SingleClick = value;
-      else
-        _ExistingElement.SingleClick = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   [DataMember]
   public DMW.TextBoxContent? TextBoxContent
   {
-    get
-    {
-      return _Element?.GetObject<DMW.TextBoxContent,DXW.TextBoxContent>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.TextBoxContent,DXW.TextBoxContent>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

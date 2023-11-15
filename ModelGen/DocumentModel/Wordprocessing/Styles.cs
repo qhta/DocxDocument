@@ -19,14 +19,8 @@ public partial class Styles: ModelElement<DXW.Styles>
   [DataMember]
   public DMW.DocDefaults? DocDefaults
   {
-    get
-    {
-      return _Element?.GetObject<DMW.DocDefaults,DXW.DocDefaults>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.DocDefaults,DXW.DocDefaults>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -36,14 +30,8 @@ public partial class Styles: ModelElement<DXW.Styles>
   [DataMember]
   public DMW.LatentStyles? LatentStyles
   {
-    get
-    {
-      return _Element?.GetObject<DMW.LatentStyles,DXW.LatentStyles>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.LatentStyles,DXW.LatentStyles>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

@@ -19,14 +19,8 @@ public partial class DataLabel: ModelElement<DXO16DCD.DataLabel>
   [DataMember]
   public UInt32? Idx
   {
-    get
-    {
-      return _Element?.Idx?.Value;
-    }
-    set
-    {
-      _ExistingElement.Idx = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
   }
   
   
@@ -36,14 +30,8 @@ public partial class DataLabel: ModelElement<DXO16DCD.DataLabel>
   [DataMember]
   public DMDCD16.NumberFormat? NumberFormat
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.NumberFormat,DXO16DCD.NumberFormat>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.NumberFormat,DXO16DCD.NumberFormat>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -53,14 +41,8 @@ public partial class DataLabel: ModelElement<DXO16DCD.DataLabel>
   [DataMember]
   public DMDCD16.ShapeProperties? ShapeProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.ShapeProperties,DXO16DCD.ShapeProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.ShapeProperties,DXO16DCD.ShapeProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -70,14 +52,8 @@ public partial class DataLabel: ModelElement<DXO16DCD.DataLabel>
   [DataMember]
   public DMDCD16.TxPrTextBody? TxPrTextBody
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.TxPrTextBody,DXO16DCD.TxPrTextBody>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.TxPrTextBody,DXO16DCD.TxPrTextBody>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TextBodyType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TextBodyType");
   }
   
   
@@ -87,14 +63,8 @@ public partial class DataLabel: ModelElement<DXO16DCD.DataLabel>
   [DataMember]
   public DMDCD16.DataLabelVisibilities? DataLabelVisibilities
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.DataLabelVisibilities,DXO16DCD.DataLabelVisibilities>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.DataLabelVisibilities,DXO16DCD.DataLabelVisibilities>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -104,14 +74,8 @@ public partial class DataLabel: ModelElement<DXO16DCD.DataLabel>
   [DataMember]
   public DMDCD16.SeparatorXsdstring? SeparatorXsdstring
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.SeparatorXsdstring,DXO16DCD.SeparatorXsdstring>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.SeparatorXsdstring,DXO16DCD.SeparatorXsdstring>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
   }
   
   
@@ -121,14 +85,8 @@ public partial class DataLabel: ModelElement<DXO16DCD.DataLabel>
   [DataMember]
   public DMDCD16.ExtensionList? ExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.ExtensionList,DXO16DCD.ExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.ExtensionList,DXO16DCD.ExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

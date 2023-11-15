@@ -19,14 +19,8 @@ public partial class LiveFeedProperties: ModelElement<DXO21DL.LiveFeedProperties
   [DataMember]
   public DMD.LiveFeedBackgroundProperties? LiveFeedBackgroundProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMD.LiveFeedBackgroundProperties,DXO21DL.LiveFeedBackgroundProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.LiveFeedBackgroundProperties,DXO21DL.LiveFeedBackgroundProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -36,14 +30,8 @@ public partial class LiveFeedProperties: ModelElement<DXO21DL.LiveFeedProperties
   [DataMember]
   public DMD.OfficeArtExtensionList? OfficeArtExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMD.OfficeArtExtensionList,DXO21DL.OfficeArtExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.OfficeArtExtensionList,DXO21DL.OfficeArtExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

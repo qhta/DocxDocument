@@ -19,14 +19,8 @@ public partial class RadicalProperties: ModelElement<DXM.RadicalProperties>
   [DataMember]
   public DMM.HideDegree? HideDegree
   {
-    get
-    {
-      return _Element?.GetObject<DMM.HideDegree,DXM.HideDegree>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.HideDegree,DXM.HideDegree>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OnOffType");
   }
   
   
@@ -36,14 +30,8 @@ public partial class RadicalProperties: ModelElement<DXM.RadicalProperties>
   [DataMember]
   public DMM.ControlProperties? ControlProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMM.ControlProperties,DXM.ControlProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.ControlProperties,DXM.ControlProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

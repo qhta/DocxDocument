@@ -19,14 +19,8 @@ public partial class RadarChartSeries: ModelElement<DXO13DC.RadarChartSeries>
   [DataMember]
   public DMDC.Index? Index
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.Index,DXDC.Index>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.Index,DXDC.Index>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.UnsignedIntegerType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.UnsignedIntegerType");
   }
   
   
@@ -36,14 +30,8 @@ public partial class RadarChartSeries: ModelElement<DXO13DC.RadarChartSeries>
   [DataMember]
   public DMDC.Order? Order
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.Order,DXDC.Order>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.Order,DXDC.Order>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.UnsignedIntegerType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.UnsignedIntegerType");
   }
   
   
@@ -53,14 +41,8 @@ public partial class RadarChartSeries: ModelElement<DXO13DC.RadarChartSeries>
   [DataMember]
   public DMDC.SeriesText? SeriesText
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.SeriesText,DXDC.SeriesText>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.SeriesText,DXDC.SeriesText>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -70,14 +52,8 @@ public partial class RadarChartSeries: ModelElement<DXO13DC.RadarChartSeries>
   [DataMember]
   public DMDC.ChartShapeProperties? ChartShapeProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.ChartShapeProperties,DXDC.ChartShapeProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.ChartShapeProperties,DXDC.ChartShapeProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -87,14 +63,8 @@ public partial class RadarChartSeries: ModelElement<DXO13DC.RadarChartSeries>
   [DataMember]
   public DMDC.PictureOptions? PictureOptions
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.PictureOptions,DXDC.PictureOptions>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.PictureOptions,DXDC.PictureOptions>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -104,66 +74,36 @@ public partial class RadarChartSeries: ModelElement<DXO13DC.RadarChartSeries>
   [DataMember]
   public DMDC.Marker? Marker
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.Marker,DXDC.Marker>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.Marker,DXDC.Marker>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMDC.DataLabels? DataLabels
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.DataLabels,DXDC.DataLabels>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.DataLabels,DXDC.DataLabels>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMDC.CategoryAxisData? CategoryAxisData
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.CategoryAxisData,DXDC.CategoryAxisData>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.CategoryAxisData,DXDC.CategoryAxisData>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.AxisDataSourceType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.AxisDataSourceType");
   }
   
   [DataMember]
   public DMDC.Values? Values
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.Values,DXDC.Values>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.Values,DXDC.Values>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.NumberDataSourceType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.NumberDataSourceType");
   }
   
   [DataMember]
   public DMDC.RadarSerExtensionList? RadarSerExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.RadarSerExtensionList,DXDC.RadarSerExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.RadarSerExtensionList,DXDC.RadarSerExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

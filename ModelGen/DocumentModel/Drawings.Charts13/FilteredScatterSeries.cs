@@ -19,14 +19,8 @@ public partial class FilteredScatterSeries: ModelElement<DXO13DC.FilteredScatter
   [DataMember]
   public DMDC13.ScatterChartSeries? ScatterChartSeries
   {
-    get
-    {
-      return _Element?.GetObject<DMDC13.ScatterChartSeries,DXO13DC.ScatterChartSeries>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC13.ScatterChartSeries,DXO13DC.ScatterChartSeries>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

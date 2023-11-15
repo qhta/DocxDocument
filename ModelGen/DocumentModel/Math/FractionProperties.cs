@@ -19,24 +19,8 @@ public partial class FractionProperties: ModelElement<DXM.FractionProperties>
   [DataMember]
   public DMM.FractionTypeKind? FractionType
   {
-    get
-    {
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.FractionTypeValues, DMM.FractionTypeKind>(_ExistingElement.GetFirstChild<DXM.FractionType>()?.Val?.Value);
-    }
-    set
-    {
-      var itemElement = _ExistingElement.GetFirstChild<DXM.FractionType>();
-      if (itemElement != null)
-      {
-        if (value != null)
-          EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.FractionTypeValues, DMM.FractionTypeKind>(itemElement, (DMM.FractionTypeKind)value);
-        else
-          itemElement.Remove();
-      }
-      else
-      if (value != null)
-        _ExistingElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXM.FractionType, DocumentFormat.OpenXml.Math.FractionTypeValues, DMM.FractionTypeKind>((DMM.FractionTypeKind)value));
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertyGetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertySetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -46,14 +30,8 @@ public partial class FractionProperties: ModelElement<DXM.FractionProperties>
   [DataMember]
   public DMM.ControlProperties? ControlProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMM.ControlProperties,DXM.ControlProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.ControlProperties,DXM.ControlProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

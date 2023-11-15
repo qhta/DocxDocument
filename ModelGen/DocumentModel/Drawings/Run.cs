@@ -19,14 +19,8 @@ public partial class Run: ModelElement<DXD.Run>
   [DataMember]
   public DMD.RunProperties? RunProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMD.RunProperties,DXD.RunProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.RunProperties,DXD.RunProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType");
   }
   
   
@@ -36,14 +30,8 @@ public partial class Run: ModelElement<DXD.Run>
   [DataMember]
   public DMD.Text? Text
   {
-    get
-    {
-      return _Element?.GetObject<DMD.Text,DXD.Text>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.Text,DXD.Text>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
   }
   
 }

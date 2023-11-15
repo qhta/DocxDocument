@@ -19,14 +19,8 @@ public partial class Binning: ModelElement<DXO16DCD.Binning>
   [DataMember]
   public String? Underflow
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Underflow);
-    }
-    set
-    {
-      _ExistingElement.Underflow = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Underflow;
+    set => _ExistingElement.Underflow = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class Binning: ModelElement<DXO16DCD.Binning>
   [DataMember]
   public String? Overflow
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Overflow);
-    }
-    set
-    {
-      _ExistingElement.Overflow = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Overflow;
+    set => _ExistingElement.Overflow = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class Binning: ModelElement<DXO16DCD.Binning>
   [DataMember]
   public DMDCD16.Xsddouble? Xsddouble
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.Xsddouble,DXO16DCD.Xsddouble>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.Xsddouble,DXO16DCD.Xsddouble>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
   }
   
   
@@ -70,14 +52,8 @@ public partial class Binning: ModelElement<DXO16DCD.Binning>
   [DataMember]
   public DMDCD16.BinCountXsdunsignedInt? BinCountXsdunsignedInt
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.BinCountXsdunsignedInt,DXO16DCD.BinCountXsdunsignedInt>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.BinCountXsdunsignedInt,DXO16DCD.BinCountXsdunsignedInt>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
   }
   
 }

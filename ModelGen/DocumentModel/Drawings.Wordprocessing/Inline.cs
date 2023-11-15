@@ -19,14 +19,8 @@ public partial class Inline: ModelElement<DXDW.Inline>
   [DataMember]
   public UInt32? DistanceFromTop
   {
-    get
-    {
-      return _Element?.DistanceFromTop?.Value;
-    }
-    set
-    {
-      _ExistingElement.DistanceFromTop = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
   }
   
   
@@ -36,14 +30,8 @@ public partial class Inline: ModelElement<DXDW.Inline>
   [DataMember]
   public UInt32? DistanceFromBottom
   {
-    get
-    {
-      return _Element?.DistanceFromBottom?.Value;
-    }
-    set
-    {
-      _ExistingElement.DistanceFromBottom = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
   }
   
   
@@ -53,14 +41,8 @@ public partial class Inline: ModelElement<DXDW.Inline>
   [DataMember]
   public UInt32? DistanceFromLeft
   {
-    get
-    {
-      return _Element?.DistanceFromLeft?.Value;
-    }
-    set
-    {
-      _ExistingElement.DistanceFromLeft = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
   }
   
   
@@ -70,14 +52,8 @@ public partial class Inline: ModelElement<DXDW.Inline>
   [DataMember]
   public UInt32? DistanceFromRight
   {
-    get
-    {
-      return _Element?.DistanceFromRight?.Value;
-    }
-    set
-    {
-      _ExistingElement.DistanceFromRight = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
   }
   
   
@@ -87,19 +63,8 @@ public partial class Inline: ModelElement<DXDW.Inline>
   [DataMember]
   public DM.HexBinary? AnchorId
   {
-    get
-    {
-      if (_Element?.AnchorId?.Value != null)
-        return HexIntConverter.GetValue(_Element?.AnchorId.Value);
-      return null;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.AnchorId = value.ToString();
-      else
-        _ExistingElement.AnchorId = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -109,19 +74,8 @@ public partial class Inline: ModelElement<DXDW.Inline>
   [DataMember]
   public DM.HexBinary? EditId
   {
-    get
-    {
-      if (_Element?.EditId?.Value != null)
-        return HexIntConverter.GetValue(_Element?.EditId.Value);
-      return null;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.EditId = value.ToString();
-      else
-        _ExistingElement.EditId = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -131,14 +85,8 @@ public partial class Inline: ModelElement<DXDW.Inline>
   [DataMember]
   public DMDW.Extent? Extent
   {
-    get
-    {
-      return _Element?.GetObject<DMDW.Extent,DXDW.Extent>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDW.Extent,DXDW.Extent>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -148,14 +96,8 @@ public partial class Inline: ModelElement<DXDW.Inline>
   [DataMember]
   public DMDW.EffectExtent? EffectExtent
   {
-    get
-    {
-      return _Element?.GetObject<DMDW.EffectExtent,DXDW.EffectExtent>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDW.EffectExtent,DXDW.EffectExtent>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -165,14 +107,8 @@ public partial class Inline: ModelElement<DXDW.Inline>
   [DataMember]
   public DMDW.DocProperties? DocProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMDW.DocProperties,DXDW.DocProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDW.DocProperties,DXDW.DocProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -182,14 +118,8 @@ public partial class Inline: ModelElement<DXDW.Inline>
   [DataMember]
   public DMDW.NonVisualGraphicFrameDrawingProperties? NonVisualGraphicFrameDrawingProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMDW.NonVisualGraphicFrameDrawingProperties,DXDW.NonVisualGraphicFrameDrawingProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDW.NonVisualGraphicFrameDrawingProperties,DXDW.NonVisualGraphicFrameDrawingProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -199,14 +129,8 @@ public partial class Inline: ModelElement<DXDW.Inline>
   [DataMember]
   public DMD.Graphic? Graphic
   {
-    get
-    {
-      return _Element?.GetObject<DMD.Graphic,DXD.Graphic>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.Graphic,DXD.Graphic>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

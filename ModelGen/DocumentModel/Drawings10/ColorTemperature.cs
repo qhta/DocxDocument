@@ -19,14 +19,8 @@ public partial class ColorTemperature: ModelElement<DXO10D.ColorTemperature>
   [DataMember]
   public Int32? ColorTemperatureValue
   {
-    get
-    {
-      return _Element?.ColorTemperatureValue?.Value;
-    }
-    set
-    {
-      _ExistingElement.ColorTemperatureValue = value;
-    }
+    get => _Element?.ColorTemperatureValue?.Value;
+    set => _ExistingElement.ColorTemperatureValue = value;
   }
   
 }

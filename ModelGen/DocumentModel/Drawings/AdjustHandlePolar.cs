@@ -19,14 +19,8 @@ public partial class AdjustHandlePolar: ModelElement<DXD.AdjustHandlePolar>
   [DataMember]
   public String? RadialAdjustmentGuide
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.RadialAdjustmentGuide);
-    }
-    set
-    {
-      _ExistingElement.RadialAdjustmentGuide = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.RadialAdjustmentGuide;
+    set => _ExistingElement.RadialAdjustmentGuide = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class AdjustHandlePolar: ModelElement<DXD.AdjustHandlePolar>
   [DataMember]
   public String? MinRadial
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.MinRadial);
-    }
-    set
-    {
-      _ExistingElement.MinRadial = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.MinRadial;
+    set => _ExistingElement.MinRadial = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class AdjustHandlePolar: ModelElement<DXD.AdjustHandlePolar>
   [DataMember]
   public String? MaxRadial
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.MaxRadial);
-    }
-    set
-    {
-      _ExistingElement.MaxRadial = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.MaxRadial;
+    set => _ExistingElement.MaxRadial = value;
   }
   
   
@@ -70,14 +52,8 @@ public partial class AdjustHandlePolar: ModelElement<DXD.AdjustHandlePolar>
   [DataMember]
   public String? AngleAdjustmentGuide
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.AngleAdjustmentGuide);
-    }
-    set
-    {
-      _ExistingElement.AngleAdjustmentGuide = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.AngleAdjustmentGuide;
+    set => _ExistingElement.AngleAdjustmentGuide = value;
   }
   
   
@@ -87,14 +63,8 @@ public partial class AdjustHandlePolar: ModelElement<DXD.AdjustHandlePolar>
   [DataMember]
   public String? MinAngle
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.MinAngle);
-    }
-    set
-    {
-      _ExistingElement.MinAngle = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.MinAngle;
+    set => _ExistingElement.MinAngle = value;
   }
   
   
@@ -104,14 +74,8 @@ public partial class AdjustHandlePolar: ModelElement<DXD.AdjustHandlePolar>
   [DataMember]
   public String? MaxAngle
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.MaxAngle);
-    }
-    set
-    {
-      _ExistingElement.MaxAngle = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.MaxAngle;
+    set => _ExistingElement.MaxAngle = value;
   }
   
   
@@ -121,14 +85,8 @@ public partial class AdjustHandlePolar: ModelElement<DXD.AdjustHandlePolar>
   [DataMember]
   public DMD.Position? Position
   {
-    get
-    {
-      return _Element?.GetObject<DMD.Position,DXD.Position>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.Position,DXD.Position>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.AdjustPoint2DType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.AdjustPoint2DType");
   }
   
 }

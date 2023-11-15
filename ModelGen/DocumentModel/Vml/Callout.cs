@@ -19,17 +19,8 @@ public partial class Callout: ModelElement<DXVO.Callout>
   [DataMember]
   public Boolean? On
   {
-    get
-    {
-      return _Element?.On?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.On = value;
-      else
-        _ExistingElement.On = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -39,14 +30,8 @@ public partial class Callout: ModelElement<DXVO.Callout>
   [DataMember]
   public String? Type
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Type);
-    }
-    set
-    {
-      _ExistingElement.Type = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Type;
+    set => _ExistingElement.Type = value;
   }
   
   
@@ -56,14 +41,8 @@ public partial class Callout: ModelElement<DXVO.Callout>
   [DataMember]
   public String? Gap
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Gap);
-    }
-    set
-    {
-      _ExistingElement.Gap = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Gap;
+    set => _ExistingElement.Gap = value;
   }
   
   
@@ -73,17 +52,8 @@ public partial class Callout: ModelElement<DXVO.Callout>
   [DataMember]
   public Boolean? DropAuto
   {
-    get
-    {
-      return _Element?.DropAuto?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.DropAuto = value;
-      else
-        _ExistingElement.DropAuto = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -93,14 +63,8 @@ public partial class Callout: ModelElement<DXVO.Callout>
   [DataMember]
   public String? Drop
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Drop);
-    }
-    set
-    {
-      _ExistingElement.Drop = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Drop;
+    set => _ExistingElement.Drop = value;
   }
   
   
@@ -110,14 +74,8 @@ public partial class Callout: ModelElement<DXVO.Callout>
   [DataMember]
   public String? Distance
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Distance);
-    }
-    set
-    {
-      _ExistingElement.Distance = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Distance;
+    set => _ExistingElement.Distance = value;
   }
   
   
@@ -127,17 +85,8 @@ public partial class Callout: ModelElement<DXVO.Callout>
   [DataMember]
   public Boolean? LengthSpecified
   {
-    get
-    {
-      return _Element?.LengthSpecified?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.LengthSpecified = value;
-      else
-        _ExistingElement.LengthSpecified = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -147,14 +96,8 @@ public partial class Callout: ModelElement<DXVO.Callout>
   [DataMember]
   public String? Length
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Length);
-    }
-    set
-    {
-      _ExistingElement.Length = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Length;
+    set => _ExistingElement.Length = value;
   }
   
   
@@ -164,17 +107,8 @@ public partial class Callout: ModelElement<DXVO.Callout>
   [DataMember]
   public Boolean? AccentBar
   {
-    get
-    {
-      return _Element?.AccentBar?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.AccentBar = value;
-      else
-        _ExistingElement.AccentBar = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -184,17 +118,8 @@ public partial class Callout: ModelElement<DXVO.Callout>
   [DataMember]
   public Boolean? TextBorder
   {
-    get
-    {
-      return _Element?.TextBorder?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.TextBorder = value;
-      else
-        _ExistingElement.TextBorder = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -204,17 +129,8 @@ public partial class Callout: ModelElement<DXVO.Callout>
   [DataMember]
   public Boolean? MinusX
   {
-    get
-    {
-      return _Element?.MinusX?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.MinusX = value;
-      else
-        _ExistingElement.MinusX = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -224,17 +140,8 @@ public partial class Callout: ModelElement<DXVO.Callout>
   [DataMember]
   public Boolean? MinusY
   {
-    get
-    {
-      return _Element?.MinusY?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.MinusY = value;
-      else
-        _ExistingElement.MinusY = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
 }

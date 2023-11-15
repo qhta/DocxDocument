@@ -19,17 +19,8 @@ public partial class NonVisualGroupProperties: ModelElement<DXO13D.NonVisualGrou
   [DataMember]
   public Boolean? IsLegacyGroup
   {
-    get
-    {
-      return _Element?.IsLegacyGroup?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.IsLegacyGroup = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.IsLegacyGroup = null;
-    }
+    get => _Element?.IsLegacyGroup?.Value;
+    set => _ExistingElement.IsLegacyGroup = value;
   }
   
 }

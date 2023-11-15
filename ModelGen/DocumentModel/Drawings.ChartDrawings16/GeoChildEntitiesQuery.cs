@@ -19,14 +19,8 @@ public partial class GeoChildEntitiesQuery: ModelElement<DXO16DCD.GeoChildEntiti
   [DataMember]
   public String? EntityId
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.EntityId);
-    }
-    set
-    {
-      _ExistingElement.EntityId = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.EntityId;
+    set => _ExistingElement.EntityId = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class GeoChildEntitiesQuery: ModelElement<DXO16DCD.GeoChildEntiti
   [DataMember]
   public DMDCD16.GeoChildTypes? GeoChildTypes
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.GeoChildTypes,DXO16DCD.GeoChildTypes>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.GeoChildTypes,DXO16DCD.GeoChildTypes>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

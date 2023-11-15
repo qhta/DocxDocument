@@ -19,14 +19,8 @@ public partial class Delimiter: ModelElement<DXM.Delimiter>
   [DataMember]
   public DMM.DelimiterProperties? DelimiterProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMM.DelimiterProperties,DXM.DelimiterProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.DelimiterProperties,DXM.DelimiterProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

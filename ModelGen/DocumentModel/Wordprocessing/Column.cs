@@ -19,14 +19,8 @@ public partial class Column: ModelElement<DXW.Column>
   [DataMember]
   public String? Width
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Width);
-    }
-    set
-    {
-      _ExistingElement.Width = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Width;
+    set => _ExistingElement.Width = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class Column: ModelElement<DXW.Column>
   [DataMember]
   public String? Space
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Space);
-    }
-    set
-    {
-      _ExistingElement.Space = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Space;
+    set => _ExistingElement.Space = value;
   }
   
 }

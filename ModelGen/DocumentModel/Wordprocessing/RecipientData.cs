@@ -19,14 +19,8 @@ public partial class RecipientData: ModelElement<DXW.RecipientData>
   [DataMember]
   public DMW.Active? Active
   {
-    get
-    {
-      return _Element?.GetObject<DMW.Active,DXW.Active>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.Active,DXW.Active>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -36,14 +30,8 @@ public partial class RecipientData: ModelElement<DXW.RecipientData>
   [DataMember]
   public DMW.ColumnIndex? ColumnIndex
   {
-    get
-    {
-      return _Element?.GetObject<DMW.ColumnIndex,DXW.ColumnIndex>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.ColumnIndex,DXW.ColumnIndex>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.UnsignedDecimalNumberType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.UnsignedDecimalNumberType");
   }
   
   
@@ -53,14 +41,8 @@ public partial class RecipientData: ModelElement<DXW.RecipientData>
   [DataMember]
   public DM.Base64Binary? UniqueTag
   {
-    get
-    {
-      return Base64BinaryConverter.GetValue(_Element?.UniqueTag);
-    }
-    set
-    {
-      _ExistingElement.UniqueTag = Base64BinaryConverter.CreateOpenXmlElement<DXW.UniqueTag>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
 }

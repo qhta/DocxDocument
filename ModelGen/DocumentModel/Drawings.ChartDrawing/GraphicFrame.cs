@@ -19,14 +19,8 @@ public partial class GraphicFrame: ModelElement<DXDCD.GraphicFrame>
   [DataMember]
   public String? Macro
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Macro);
-    }
-    set
-    {
-      _ExistingElement.Macro = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Macro;
+    set => _ExistingElement.Macro = value;
   }
   
   
@@ -36,17 +30,8 @@ public partial class GraphicFrame: ModelElement<DXDCD.GraphicFrame>
   [DataMember]
   public Boolean? Published
   {
-    get
-    {
-      return _Element?.Published?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Published = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.Published = null;
-    }
+    get => _Element?.Published?.Value;
+    set => _ExistingElement.Published = value;
   }
   
   
@@ -56,14 +41,8 @@ public partial class GraphicFrame: ModelElement<DXDCD.GraphicFrame>
   [DataMember]
   public DMDCD.NonVisualGraphicFrameProperties? NonVisualGraphicFrameProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD.NonVisualGraphicFrameProperties,DXDCD.NonVisualGraphicFrameProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD.NonVisualGraphicFrameProperties,DXDCD.NonVisualGraphicFrameProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -73,14 +52,8 @@ public partial class GraphicFrame: ModelElement<DXDCD.GraphicFrame>
   [DataMember]
   public DMDCD.Transform? Transform
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD.Transform,DXDCD.Transform>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD.Transform,DXDCD.Transform>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -90,14 +63,8 @@ public partial class GraphicFrame: ModelElement<DXDCD.GraphicFrame>
   [DataMember]
   public DMD.Graphic? Graphic
   {
-    get
-    {
-      return _Element?.GetObject<DMD.Graphic,DXD.Graphic>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.Graphic,DXD.Graphic>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

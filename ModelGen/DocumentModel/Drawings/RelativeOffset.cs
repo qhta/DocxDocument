@@ -19,14 +19,8 @@ public partial class RelativeOffset: ModelElement<DXD.RelativeOffset>
   [DataMember]
   public Int32? OffsetX
   {
-    get
-    {
-      return _Element?.OffsetX?.Value;
-    }
-    set
-    {
-      _ExistingElement.OffsetX = value;
-    }
+    get => _Element?.OffsetX?.Value;
+    set => _ExistingElement.OffsetX = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class RelativeOffset: ModelElement<DXD.RelativeOffset>
   [DataMember]
   public Int32? OffsetY
   {
-    get
-    {
-      return _Element?.OffsetY?.Value;
-    }
-    set
-    {
-      _ExistingElement.OffsetY = value;
-    }
+    get => _Element?.OffsetY?.Value;
+    set => _ExistingElement.OffsetY = value;
   }
   
 }

@@ -19,14 +19,8 @@ public partial class ShapeGuide: ModelElement<DXD.ShapeGuide>
   [DataMember]
   public String? Name
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Name);
-    }
-    set
-    {
-      _ExistingElement.Name = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Name;
+    set => _ExistingElement.Name = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class ShapeGuide: ModelElement<DXD.ShapeGuide>
   [DataMember]
   public String? Formula
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Formula);
-    }
-    set
-    {
-      _ExistingElement.Formula = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Formula;
+    set => _ExistingElement.Formula = value;
   }
   
 }

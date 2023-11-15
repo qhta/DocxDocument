@@ -15,27 +15,15 @@ public partial class Table: ModelElement<DXW.Table>
   [DataMember]
   public DMW.TableProperties? TableProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMW.TableProperties,DXW.TableProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.TableProperties,DXW.TableProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMW.TableGrid? TableGrid
   {
-    get
-    {
-      return _Element?.GetObject<DMW.TableGrid,DXW.TableGrid>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.TableGrid,DXW.TableGrid>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

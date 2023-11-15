@@ -19,14 +19,8 @@ public partial class Subscript: ModelElement<DXM.Subscript>
   [DataMember]
   public DMM.SubscriptProperties? SubscriptProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMM.SubscriptProperties,DXM.SubscriptProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.SubscriptProperties,DXM.SubscriptProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -36,14 +30,8 @@ public partial class Subscript: ModelElement<DXM.Subscript>
   [DataMember]
   public DMM.Base? Base
   {
-    get
-    {
-      return _Element?.GetObject<DMM.Base,DXM.Base>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.Base,DXM.Base>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OfficeMathArgumentType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OfficeMathArgumentType");
   }
   
   
@@ -53,14 +41,8 @@ public partial class Subscript: ModelElement<DXM.Subscript>
   [DataMember]
   public DMM.SubArgument? SubArgument
   {
-    get
-    {
-      return _Element?.GetObject<DMM.SubArgument,DXM.SubArgument>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.SubArgument,DXM.SubArgument>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OfficeMathArgumentType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OfficeMathArgumentType");
   }
   
 }

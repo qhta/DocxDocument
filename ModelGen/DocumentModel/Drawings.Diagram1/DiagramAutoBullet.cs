@@ -19,14 +19,8 @@ public partial class DiagramAutoBullet: ModelElement<DXO19DD11.DiagramAutoBullet
   [DataMember]
   public String? AutoBulletPrefix
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.AutoBulletPrefix);
-    }
-    set
-    {
-      _ExistingElement.AutoBulletPrefix = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.AutoBulletPrefix;
+    set => _ExistingElement.AutoBulletPrefix = value;
   }
   
   
@@ -36,17 +30,8 @@ public partial class DiagramAutoBullet: ModelElement<DXO19DD11.DiagramAutoBullet
   [DataMember]
   public Boolean? LeadZeros
   {
-    get
-    {
-      return _Element?.LeadZeros?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.LeadZeros = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.LeadZeros = null;
-    }
+    get => _Element?.LeadZeros?.Value;
+    set => _ExistingElement.LeadZeros = value;
   }
   
   
@@ -56,14 +41,8 @@ public partial class DiagramAutoBullet: ModelElement<DXO19DD11.DiagramAutoBullet
   [DataMember]
   public DMD.NoBullet? NoBullet
   {
-    get
-    {
-      return _Element?.GetObject<DMD.NoBullet,DXD.NoBullet>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.NoBullet,DXD.NoBullet>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -73,14 +52,8 @@ public partial class DiagramAutoBullet: ModelElement<DXO19DD11.DiagramAutoBullet
   [DataMember]
   public DMD.AutoNumberedBullet? AutoNumberedBullet
   {
-    get
-    {
-      return _Element?.GetObject<DMD.AutoNumberedBullet,DXD.AutoNumberedBullet>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.AutoNumberedBullet,DXD.AutoNumberedBullet>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -90,14 +63,8 @@ public partial class DiagramAutoBullet: ModelElement<DXO19DD11.DiagramAutoBullet
   [DataMember]
   public DMD.CharacterBullet? CharacterBullet
   {
-    get
-    {
-      return _Element?.GetObject<DMD.CharacterBullet,DXD.CharacterBullet>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.CharacterBullet,DXD.CharacterBullet>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -107,14 +74,8 @@ public partial class DiagramAutoBullet: ModelElement<DXO19DD11.DiagramAutoBullet
   [DataMember]
   public DMD.PictureBullet? PictureBullet
   {
-    get
-    {
-      return _Element?.GetObject<DMD.PictureBullet,DXD.PictureBullet>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.PictureBullet,DXD.PictureBullet>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

@@ -19,14 +19,8 @@ public partial class ImageData: ModelElement<DXV.ImageData>
   [DataMember]
   public String? Id
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Id);
-    }
-    set
-    {
-      _ExistingElement.Id = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Id;
+    set => _ExistingElement.Id = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class ImageData: ModelElement<DXV.ImageData>
   [DataMember]
   public String? ChromAKey
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.ChromAKey);
-    }
-    set
-    {
-      _ExistingElement.ChromAKey = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.ChromAKey;
+    set => _ExistingElement.ChromAKey = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class ImageData: ModelElement<DXV.ImageData>
   [DataMember]
   public String? CropLeft
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.CropLeft);
-    }
-    set
-    {
-      _ExistingElement.CropLeft = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.CropLeft;
+    set => _ExistingElement.CropLeft = value;
   }
   
   
@@ -70,14 +52,8 @@ public partial class ImageData: ModelElement<DXV.ImageData>
   [DataMember]
   public String? CropTop
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.CropTop);
-    }
-    set
-    {
-      _ExistingElement.CropTop = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.CropTop;
+    set => _ExistingElement.CropTop = value;
   }
   
   
@@ -87,14 +63,8 @@ public partial class ImageData: ModelElement<DXV.ImageData>
   [DataMember]
   public String? CropRight
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.CropRight);
-    }
-    set
-    {
-      _ExistingElement.CropRight = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.CropRight;
+    set => _ExistingElement.CropRight = value;
   }
   
   
@@ -104,14 +74,8 @@ public partial class ImageData: ModelElement<DXV.ImageData>
   [DataMember]
   public String? CropBottom
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.CropBottom);
-    }
-    set
-    {
-      _ExistingElement.CropBottom = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.CropBottom;
+    set => _ExistingElement.CropBottom = value;
   }
   
   
@@ -121,14 +85,8 @@ public partial class ImageData: ModelElement<DXV.ImageData>
   [DataMember]
   public String? Gain
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Gain);
-    }
-    set
-    {
-      _ExistingElement.Gain = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Gain;
+    set => _ExistingElement.Gain = value;
   }
   
   
@@ -138,14 +96,8 @@ public partial class ImageData: ModelElement<DXV.ImageData>
   [DataMember]
   public String? BlackLevel
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.BlackLevel);
-    }
-    set
-    {
-      _ExistingElement.BlackLevel = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.BlackLevel;
+    set => _ExistingElement.BlackLevel = value;
   }
   
   
@@ -155,14 +107,8 @@ public partial class ImageData: ModelElement<DXV.ImageData>
   [DataMember]
   public String? Gamma
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Gamma);
-    }
-    set
-    {
-      _ExistingElement.Gamma = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Gamma;
+    set => _ExistingElement.Gamma = value;
   }
   
   
@@ -172,17 +118,8 @@ public partial class ImageData: ModelElement<DXV.ImageData>
   [DataMember]
   public Boolean? Grayscale
   {
-    get
-    {
-      return _Element?.Grayscale?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Grayscale = value;
-      else
-        _ExistingElement.Grayscale = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -192,17 +129,8 @@ public partial class ImageData: ModelElement<DXV.ImageData>
   [DataMember]
   public Boolean? BiLevel
   {
-    get
-    {
-      return _Element?.BiLevel?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.BiLevel = value;
-      else
-        _ExistingElement.BiLevel = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -212,14 +140,8 @@ public partial class ImageData: ModelElement<DXV.ImageData>
   [DataMember]
   public String? EmbossColor
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.EmbossColor);
-    }
-    set
-    {
-      _ExistingElement.EmbossColor = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.EmbossColor;
+    set => _ExistingElement.EmbossColor = value;
   }
   
   
@@ -229,14 +151,8 @@ public partial class ImageData: ModelElement<DXV.ImageData>
   [DataMember]
   public String? RecolorTarget
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.RecolorTarget);
-    }
-    set
-    {
-      _ExistingElement.RecolorTarget = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.RecolorTarget;
+    set => _ExistingElement.RecolorTarget = value;
   }
   
   
@@ -246,14 +162,8 @@ public partial class ImageData: ModelElement<DXV.ImageData>
   [DataMember]
   public String? Title
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Title);
-    }
-    set
-    {
-      _ExistingElement.Title = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Title;
+    set => _ExistingElement.Title = value;
   }
   
   
@@ -263,17 +173,8 @@ public partial class ImageData: ModelElement<DXV.ImageData>
   [DataMember]
   public Boolean? DetectMouseClick
   {
-    get
-    {
-      return _Element?.DetectMouseClick?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.DetectMouseClick = value;
-      else
-        _ExistingElement.DetectMouseClick = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -283,14 +184,8 @@ public partial class ImageData: ModelElement<DXV.ImageData>
   [DataMember]
   public String? RelId
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.RelId);
-    }
-    set
-    {
-      _ExistingElement.RelId = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.RelId;
+    set => _ExistingElement.RelId = value;
   }
   
   
@@ -300,14 +195,8 @@ public partial class ImageData: ModelElement<DXV.ImageData>
   [DataMember]
   public String? RelationshipId
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.RelationshipId);
-    }
-    set
-    {
-      _ExistingElement.RelationshipId = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.RelationshipId;
+    set => _ExistingElement.RelationshipId = value;
   }
   
   
@@ -317,14 +206,8 @@ public partial class ImageData: ModelElement<DXV.ImageData>
   [DataMember]
   public String? Picture
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Picture);
-    }
-    set
-    {
-      _ExistingElement.Picture = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Picture;
+    set => _ExistingElement.Picture = value;
   }
   
   
@@ -334,14 +217,8 @@ public partial class ImageData: ModelElement<DXV.ImageData>
   [DataMember]
   public String? RelHref
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.RelHref);
-    }
-    set
-    {
-      _ExistingElement.RelHref = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.RelHref;
+    set => _ExistingElement.RelHref = value;
   }
   
 }

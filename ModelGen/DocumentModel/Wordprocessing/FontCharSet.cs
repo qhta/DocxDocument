@@ -19,14 +19,8 @@ public partial class FontCharSet: ModelElement<DXW.FontCharSet>
   [DataMember]
   public String? Val
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Val);
-    }
-    set
-    {
-      _ExistingElement.Val = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Val;
+    set => _ExistingElement.Val = value;
   }
   
 }

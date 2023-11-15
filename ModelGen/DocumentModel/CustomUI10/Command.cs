@@ -19,14 +19,8 @@ public partial class Command: ModelElement<DXO10CUI.Command>
   [DataMember]
   public String? OnAction
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.OnAction);
-    }
-    set
-    {
-      _ExistingElement.OnAction = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.OnAction;
+    set => _ExistingElement.OnAction = value;
   }
   
   
@@ -36,17 +30,8 @@ public partial class Command: ModelElement<DXO10CUI.Command>
   [DataMember]
   public Boolean? Enabled
   {
-    get
-    {
-      return _Element?.Enabled?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Enabled = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.Enabled = null;
-    }
+    get => _Element?.Enabled?.Value;
+    set => _ExistingElement.Enabled = value;
   }
   
   
@@ -56,14 +41,8 @@ public partial class Command: ModelElement<DXO10CUI.Command>
   [DataMember]
   public String? GetEnabled
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.GetEnabled);
-    }
-    set
-    {
-      _ExistingElement.GetEnabled = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.GetEnabled;
+    set => _ExistingElement.GetEnabled = value;
   }
   
   
@@ -73,14 +52,8 @@ public partial class Command: ModelElement<DXO10CUI.Command>
   [DataMember]
   public String? IdMso
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.IdMso);
-    }
-    set
-    {
-      _ExistingElement.IdMso = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.IdMso;
+    set => _ExistingElement.IdMso = value;
   }
   
 }

@@ -15,14 +15,8 @@ public partial class Tasks: ModelElement<DXO21DT.Tasks>
   [DataMember]
   public DM.ExtensionList? ExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DM.ExtensionList,DXO21DT.ExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DM.ExtensionList,DXO21DT.ExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

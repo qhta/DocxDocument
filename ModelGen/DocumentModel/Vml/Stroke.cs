@@ -19,14 +19,8 @@ public partial class Stroke: ModelElement<DXV.Stroke>
   [DataMember]
   public String? Id
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Id);
-    }
-    set
-    {
-      _ExistingElement.Id = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Id;
+    set => _ExistingElement.Id = value;
   }
   
   
@@ -36,17 +30,8 @@ public partial class Stroke: ModelElement<DXV.Stroke>
   [DataMember]
   public Boolean? On
   {
-    get
-    {
-      return _Element?.On?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.On = value;
-      else
-        _ExistingElement.On = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -56,14 +41,8 @@ public partial class Stroke: ModelElement<DXV.Stroke>
   [DataMember]
   public String? Weight
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Weight);
-    }
-    set
-    {
-      _ExistingElement.Weight = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Weight;
+    set => _ExistingElement.Weight = value;
   }
   
   
@@ -73,14 +52,8 @@ public partial class Stroke: ModelElement<DXV.Stroke>
   [DataMember]
   public String? Color
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Color);
-    }
-    set
-    {
-      _ExistingElement.Color = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Color;
+    set => _ExistingElement.Color = value;
   }
   
   
@@ -90,14 +63,8 @@ public partial class Stroke: ModelElement<DXV.Stroke>
   [DataMember]
   public String? Opacity
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Opacity);
-    }
-    set
-    {
-      _ExistingElement.Opacity = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Opacity;
+    set => _ExistingElement.Opacity = value;
   }
   
   
@@ -107,14 +74,8 @@ public partial class Stroke: ModelElement<DXV.Stroke>
   [DataMember]
   public String? Miterlimit
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Miterlimit);
-    }
-    set
-    {
-      _ExistingElement.Miterlimit = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Miterlimit;
+    set => _ExistingElement.Miterlimit = value;
   }
   
   
@@ -124,14 +85,8 @@ public partial class Stroke: ModelElement<DXV.Stroke>
   [DataMember]
   public String? DashStyle
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.DashStyle);
-    }
-    set
-    {
-      _ExistingElement.DashStyle = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.DashStyle;
+    set => _ExistingElement.DashStyle = value;
   }
   
   
@@ -141,14 +96,8 @@ public partial class Stroke: ModelElement<DXV.Stroke>
   [DataMember]
   public String? Source
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Source);
-    }
-    set
-    {
-      _ExistingElement.Source = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Source;
+    set => _ExistingElement.Source = value;
   }
   
   
@@ -158,14 +107,8 @@ public partial class Stroke: ModelElement<DXV.Stroke>
   [DataMember]
   public String? ImageSize
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.ImageSize);
-    }
-    set
-    {
-      _ExistingElement.ImageSize = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.ImageSize;
+    set => _ExistingElement.ImageSize = value;
   }
   
   
@@ -175,17 +118,8 @@ public partial class Stroke: ModelElement<DXV.Stroke>
   [DataMember]
   public Boolean? ImageAlignShape
   {
-    get
-    {
-      return _Element?.ImageAlignShape?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.ImageAlignShape = value;
-      else
-        _ExistingElement.ImageAlignShape = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -195,14 +129,8 @@ public partial class Stroke: ModelElement<DXV.Stroke>
   [DataMember]
   public String? Color2
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Color2);
-    }
-    set
-    {
-      _ExistingElement.Color2 = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Color2;
+    set => _ExistingElement.Color2 = value;
   }
   
   
@@ -212,14 +140,8 @@ public partial class Stroke: ModelElement<DXV.Stroke>
   [DataMember]
   public String? Href
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Href);
-    }
-    set
-    {
-      _ExistingElement.Href = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Href;
+    set => _ExistingElement.Href = value;
   }
   
   
@@ -229,14 +151,8 @@ public partial class Stroke: ModelElement<DXV.Stroke>
   [DataMember]
   public String? AlternateImageReference
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.AlternateImageReference);
-    }
-    set
-    {
-      _ExistingElement.AlternateImageReference = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.AlternateImageReference;
+    set => _ExistingElement.AlternateImageReference = value;
   }
   
   
@@ -246,14 +162,8 @@ public partial class Stroke: ModelElement<DXV.Stroke>
   [DataMember]
   public String? Title
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Title);
-    }
-    set
-    {
-      _ExistingElement.Title = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Title;
+    set => _ExistingElement.Title = value;
   }
   
   
@@ -263,17 +173,8 @@ public partial class Stroke: ModelElement<DXV.Stroke>
   [DataMember]
   public Boolean? ForceDash
   {
-    get
-    {
-      return _Element?.ForceDash?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.ForceDash = value;
-      else
-        _ExistingElement.ForceDash = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -283,14 +184,8 @@ public partial class Stroke: ModelElement<DXV.Stroke>
   [DataMember]
   public String? RelationshipId
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.RelationshipId);
-    }
-    set
-    {
-      _ExistingElement.RelationshipId = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.RelationshipId;
+    set => _ExistingElement.RelationshipId = value;
   }
   
   
@@ -300,17 +195,8 @@ public partial class Stroke: ModelElement<DXV.Stroke>
   [DataMember]
   public Boolean? Insetpen
   {
-    get
-    {
-      return _Element?.Insetpen?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Insetpen = value;
-      else
-        _ExistingElement.Insetpen = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -320,14 +206,8 @@ public partial class Stroke: ModelElement<DXV.Stroke>
   [DataMember]
   public DMVML.LeftStroke? LeftStroke
   {
-    get
-    {
-      return _Element?.GetObject<DMVML.LeftStroke,DXVO.LeftStroke>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMVML.LeftStroke,DXVO.LeftStroke>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Vml.Office.StrokeChildType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Vml.Office.StrokeChildType");
   }
   
   
@@ -337,14 +217,8 @@ public partial class Stroke: ModelElement<DXV.Stroke>
   [DataMember]
   public DMVML.TopStroke? TopStroke
   {
-    get
-    {
-      return _Element?.GetObject<DMVML.TopStroke,DXVO.TopStroke>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMVML.TopStroke,DXVO.TopStroke>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Vml.Office.StrokeChildType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Vml.Office.StrokeChildType");
   }
   
   
@@ -354,14 +228,8 @@ public partial class Stroke: ModelElement<DXV.Stroke>
   [DataMember]
   public DMVML.RightStroke? RightStroke
   {
-    get
-    {
-      return _Element?.GetObject<DMVML.RightStroke,DXVO.RightStroke>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMVML.RightStroke,DXVO.RightStroke>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Vml.Office.StrokeChildType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Vml.Office.StrokeChildType");
   }
   
   
@@ -371,14 +239,8 @@ public partial class Stroke: ModelElement<DXV.Stroke>
   [DataMember]
   public DMVML.BottomStroke? BottomStroke
   {
-    get
-    {
-      return _Element?.GetObject<DMVML.BottomStroke,DXVO.BottomStroke>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMVML.BottomStroke,DXVO.BottomStroke>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Vml.Office.StrokeChildType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Vml.Office.StrokeChildType");
   }
   
   
@@ -388,14 +250,8 @@ public partial class Stroke: ModelElement<DXV.Stroke>
   [DataMember]
   public DMVML.ColumnStroke? ColumnStroke
   {
-    get
-    {
-      return _Element?.GetObject<DMVML.ColumnStroke,DXVO.ColumnStroke>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMVML.ColumnStroke,DXVO.ColumnStroke>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Vml.Office.StrokeChildType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Vml.Office.StrokeChildType");
   }
   
 }

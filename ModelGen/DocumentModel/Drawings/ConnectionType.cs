@@ -19,14 +19,8 @@ public partial class ConnectionType: ModelElement<DXD.ConnectionType>
   [DataMember]
   public UInt32? Id
   {
-    get
-    {
-      return _Element?.Id?.Value;
-    }
-    set
-    {
-      _ExistingElement.Id = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
   }
   
   
@@ -36,14 +30,8 @@ public partial class ConnectionType: ModelElement<DXD.ConnectionType>
   [DataMember]
   public UInt32? Index
   {
-    get
-    {
-      return _Element?.Index?.Value;
-    }
-    set
-    {
-      _ExistingElement.Index = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
   }
   
 }

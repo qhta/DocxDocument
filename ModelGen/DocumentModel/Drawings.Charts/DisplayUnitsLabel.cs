@@ -19,14 +19,8 @@ public partial class DisplayUnitsLabel: ModelElement<DXDC.DisplayUnitsLabel>
   [DataMember]
   public DMDC.Layout? Layout
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.Layout,DXDC.Layout>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.Layout,DXDC.Layout>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -36,14 +30,8 @@ public partial class DisplayUnitsLabel: ModelElement<DXDC.DisplayUnitsLabel>
   [DataMember]
   public DMDC.ChartText? ChartText
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.ChartText,DXDC.ChartText>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.ChartText,DXDC.ChartText>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -53,14 +41,8 @@ public partial class DisplayUnitsLabel: ModelElement<DXDC.DisplayUnitsLabel>
   [DataMember]
   public DMDC.ChartShapeProperties? ChartShapeProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.ChartShapeProperties,DXDC.ChartShapeProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.ChartShapeProperties,DXDC.ChartShapeProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -70,14 +52,8 @@ public partial class DisplayUnitsLabel: ModelElement<DXDC.DisplayUnitsLabel>
   [DataMember]
   public DMDC.TextProperties? TextProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.TextProperties,DXDC.TextProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.TextProperties,DXDC.TextProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.TextBodyType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.TextBodyType");
   }
   
 }

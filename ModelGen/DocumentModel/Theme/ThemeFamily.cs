@@ -19,14 +19,8 @@ public partial class ThemeFamily: ModelElement<DXO13T.ThemeFamily>
   [DataMember]
   public String? Name
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Name);
-    }
-    set
-    {
-      _ExistingElement.Name = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Name;
+    set => _ExistingElement.Name = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class ThemeFamily: ModelElement<DXO13T.ThemeFamily>
   [DataMember]
   public String? Id
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Id);
-    }
-    set
-    {
-      _ExistingElement.Id = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Id;
+    set => _ExistingElement.Id = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class ThemeFamily: ModelElement<DXO13T.ThemeFamily>
   [DataMember]
   public String? Vid
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Vid);
-    }
-    set
-    {
-      _ExistingElement.Vid = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Vid;
+    set => _ExistingElement.Vid = value;
   }
   
   
@@ -70,14 +52,8 @@ public partial class ThemeFamily: ModelElement<DXO13T.ThemeFamily>
   [DataMember]
   public DMT.OfficeArtExtensionList? OfficeArtExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMT.OfficeArtExtensionList,DXO13T.OfficeArtExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMT.OfficeArtExtensionList,DXO13T.OfficeArtExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

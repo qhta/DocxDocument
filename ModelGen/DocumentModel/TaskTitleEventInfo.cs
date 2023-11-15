@@ -19,14 +19,8 @@ public partial class TaskTitleEventInfo: ModelElement<DXO21DT.TaskTitleEventInfo
   [DataMember]
   public String? Title
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Title);
-    }
-    set
-    {
-      _ExistingElement.Title = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Title;
+    set => _ExistingElement.Title = value;
   }
   
 }

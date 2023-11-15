@@ -19,14 +19,8 @@ public partial class StyleDefinitionTitle: ModelElement<DXDDD.StyleDefinitionTit
   [DataMember]
   public String? Language
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Language);
-    }
-    set
-    {
-      _ExistingElement.Language = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Language;
+    set => _ExistingElement.Language = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class StyleDefinitionTitle: ModelElement<DXDDD.StyleDefinitionTit
   [DataMember]
   public String? Val
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Val);
-    }
-    set
-    {
-      _ExistingElement.Val = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Val;
+    set => _ExistingElement.Val = value;
   }
   
 }

@@ -19,14 +19,8 @@ public partial class ColorMenu: ModelElement<DXVO.ColorMenu>
   [DataMember]
   public String? StrokeColor
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.StrokeColor);
-    }
-    set
-    {
-      _ExistingElement.StrokeColor = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.StrokeColor;
+    set => _ExistingElement.StrokeColor = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class ColorMenu: ModelElement<DXVO.ColorMenu>
   [DataMember]
   public String? FillColor
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.FillColor);
-    }
-    set
-    {
-      _ExistingElement.FillColor = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.FillColor;
+    set => _ExistingElement.FillColor = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class ColorMenu: ModelElement<DXVO.ColorMenu>
   [DataMember]
   public String? ShadowColor
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.ShadowColor);
-    }
-    set
-    {
-      _ExistingElement.ShadowColor = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.ShadowColor;
+    set => _ExistingElement.ShadowColor = value;
   }
   
   
@@ -70,14 +52,8 @@ public partial class ColorMenu: ModelElement<DXVO.ColorMenu>
   [DataMember]
   public String? ExtrusionColor
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.ExtrusionColor);
-    }
-    set
-    {
-      _ExistingElement.ExtrusionColor = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.ExtrusionColor;
+    set => _ExistingElement.ExtrusionColor = value;
   }
   
 }

@@ -19,14 +19,8 @@ public partial class BorderType: ModelElement<DXW.BorderType>
   [DataMember]
   public String? Color
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Color);
-    }
-    set
-    {
-      _ExistingElement.Color = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Color;
+    set => _ExistingElement.Color = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class BorderType: ModelElement<DXW.BorderType>
   [DataMember]
   public String? ThemeTint
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.ThemeTint);
-    }
-    set
-    {
-      _ExistingElement.ThemeTint = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.ThemeTint;
+    set => _ExistingElement.ThemeTint = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class BorderType: ModelElement<DXW.BorderType>
   [DataMember]
   public String? ThemeShade
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.ThemeShade);
-    }
-    set
-    {
-      _ExistingElement.ThemeShade = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.ThemeShade;
+    set => _ExistingElement.ThemeShade = value;
   }
   
   
@@ -70,14 +52,8 @@ public partial class BorderType: ModelElement<DXW.BorderType>
   [DataMember]
   public UInt32? Size
   {
-    get
-    {
-      return _Element?.Size?.Value;
-    }
-    set
-    {
-      _ExistingElement.Size = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
   }
   
   
@@ -87,14 +63,8 @@ public partial class BorderType: ModelElement<DXW.BorderType>
   [DataMember]
   public UInt32? Space
   {
-    get
-    {
-      return _Element?.Space?.Value;
-    }
-    set
-    {
-      _ExistingElement.Space = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
   }
   
   
@@ -104,14 +74,8 @@ public partial class BorderType: ModelElement<DXW.BorderType>
   [DataMember]
   public Boolean? Shadow
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.Shadow);
-    }
-    set
-    {
-      _ExistingElement.Shadow = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
   
@@ -121,14 +85,8 @@ public partial class BorderType: ModelElement<DXW.BorderType>
   [DataMember]
   public Boolean? Frame
   {
-    get
-    {
-      return BooleanValueConverter.GetValue(_Element?.Frame);
-    }
-    set
-    {
-      _ExistingElement.Frame = BooleanValueConverter.CreateOnOffValue(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.OnOffValue");
   }
   
 }

@@ -19,14 +19,8 @@ public partial class PatternFill: ModelElement<DXD.PatternFill>
   [DataMember]
   public DMD.ForegroundColor? ForegroundColor
   {
-    get
-    {
-      return _Element?.GetObject<DMD.ForegroundColor,DXD.ForegroundColor>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.ForegroundColor,DXD.ForegroundColor>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.ColorType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.ColorType");
   }
   
   
@@ -36,14 +30,8 @@ public partial class PatternFill: ModelElement<DXD.PatternFill>
   [DataMember]
   public DMD.BackgroundColor? BackgroundColor
   {
-    get
-    {
-      return _Element?.GetObject<DMD.BackgroundColor,DXD.BackgroundColor>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.BackgroundColor,DXD.BackgroundColor>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.ColorType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.ColorType");
   }
   
 }

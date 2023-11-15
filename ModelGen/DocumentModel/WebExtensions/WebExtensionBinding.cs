@@ -19,14 +19,8 @@ public partial class WebExtensionBinding: ModelElement<DXO13WE.WebExtensionBindi
   [DataMember]
   public String? Id
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Id);
-    }
-    set
-    {
-      _ExistingElement.Id = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Id;
+    set => _ExistingElement.Id = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class WebExtensionBinding: ModelElement<DXO13WE.WebExtensionBindi
   [DataMember]
   public String? Type
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Type);
-    }
-    set
-    {
-      _ExistingElement.Type = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Type;
+    set => _ExistingElement.Type = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class WebExtensionBinding: ModelElement<DXO13WE.WebExtensionBindi
   [DataMember]
   public String? AppReference
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.AppReference);
-    }
-    set
-    {
-      _ExistingElement.AppReference = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.AppReference;
+    set => _ExistingElement.AppReference = value;
   }
   
   
@@ -70,14 +52,8 @@ public partial class WebExtensionBinding: ModelElement<DXO13WE.WebExtensionBindi
   [DataMember]
   public DMEX.OfficeArtExtensionList? OfficeArtExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMEX.OfficeArtExtensionList,DXO13WE.OfficeArtExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMEX.OfficeArtExtensionList,DXO13WE.OfficeArtExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

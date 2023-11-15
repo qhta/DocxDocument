@@ -19,24 +19,8 @@ public partial class RadarChart: ModelElement<DXDC.RadarChart>
   [DataMember]
   public DMDC.RadarStyleKind? RadarStyle
   {
-    get
-    {
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.RadarStyleValues, DMDC.RadarStyleKind>(_ExistingElement.GetFirstChild<DXDC.RadarStyle>()?.Val?.Value);
-    }
-    set
-    {
-      var itemElement = _ExistingElement.GetFirstChild<DXDC.RadarStyle>();
-      if (itemElement != null)
-      {
-        if (value != null)
-          EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.RadarStyleValues, DMDC.RadarStyleKind>(itemElement, (DMDC.RadarStyleKind)value);
-        else
-          itemElement.Remove();
-      }
-      else
-      if (value != null)
-        _ExistingElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDC.RadarStyle, DocumentFormat.OpenXml.Drawing.Charts.RadarStyleValues, DMDC.RadarStyleKind>((DMDC.RadarStyleKind)value));
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertyGetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertySetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -46,40 +30,22 @@ public partial class RadarChart: ModelElement<DXDC.RadarChart>
   [DataMember]
   public DMDC.VaryColors? VaryColors
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.VaryColors,DXDC.VaryColors>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.VaryColors,DXDC.VaryColors>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.BooleanType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.BooleanType");
   }
   
   [DataMember]
   public DMDC.DataLabels? DataLabels
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.DataLabels,DXDC.DataLabels>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.DataLabels,DXDC.DataLabels>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMDC.RadarChartExtensionList? RadarChartExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.RadarChartExtensionList,DXDC.RadarChartExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.RadarChartExtensionList,DXDC.RadarChartExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

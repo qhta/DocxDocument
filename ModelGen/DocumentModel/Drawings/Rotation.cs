@@ -19,14 +19,8 @@ public partial class Rotation: ModelElement<DXD.Rotation>
   [DataMember]
   public Int32? Latitude
   {
-    get
-    {
-      return _Element?.Latitude?.Value;
-    }
-    set
-    {
-      _ExistingElement.Latitude = value;
-    }
+    get => _Element?.Latitude?.Value;
+    set => _ExistingElement.Latitude = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class Rotation: ModelElement<DXD.Rotation>
   [DataMember]
   public Int32? Longitude
   {
-    get
-    {
-      return _Element?.Longitude?.Value;
-    }
-    set
-    {
-      _ExistingElement.Longitude = value;
-    }
+    get => _Element?.Longitude?.Value;
+    set => _ExistingElement.Longitude = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class Rotation: ModelElement<DXD.Rotation>
   [DataMember]
   public Int32? Revolution
   {
-    get
-    {
-      return _Element?.Revolution?.Value;
-    }
-    set
-    {
-      _ExistingElement.Revolution = value;
-    }
+    get => _Element?.Revolution?.Value;
+    set => _ExistingElement.Revolution = value;
   }
   
 }

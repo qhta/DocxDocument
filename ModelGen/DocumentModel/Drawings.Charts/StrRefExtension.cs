@@ -19,53 +19,29 @@ public partial class StrRefExtension: ModelElement<DXDC.StrRefExtension>
   [DataMember]
   public String? Uri
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Uri);
-    }
-    set
-    {
-      _ExistingElement.Uri = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Uri;
+    set => _ExistingElement.Uri = value;
   }
   
   [DataMember]
   public DMDC13.FullReference? FullReference
   {
-    get
-    {
-      return _Element?.GetObject<DMDC13.FullReference,DXO13DC.FullReference>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC13.FullReference,DXO13DC.FullReference>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMDC13.LevelReference? LevelReference
   {
-    get
-    {
-      return _Element?.GetObject<DMDC13.LevelReference,DXO13DC.LevelReference>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC13.LevelReference,DXO13DC.LevelReference>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMDC13.FormulaReference? FormulaReference
   {
-    get
-    {
-      return _Element?.GetObject<DMDC13.FormulaReference,DXO13DC.FormulaReference>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC13.FormulaReference,DXO13DC.FormulaReference>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

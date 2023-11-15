@@ -19,14 +19,8 @@ public partial class Skew: ModelElement<DXVO.Skew>
   [DataMember]
   public String? Id
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Id);
-    }
-    set
-    {
-      _ExistingElement.Id = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Id;
+    set => _ExistingElement.Id = value;
   }
   
   
@@ -36,17 +30,8 @@ public partial class Skew: ModelElement<DXVO.Skew>
   [DataMember]
   public Boolean? On
   {
-    get
-    {
-      return _Element?.On?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.On = value;
-      else
-        _ExistingElement.On = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -56,14 +41,8 @@ public partial class Skew: ModelElement<DXVO.Skew>
   [DataMember]
   public String? Offset
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Offset);
-    }
-    set
-    {
-      _ExistingElement.Offset = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Offset;
+    set => _ExistingElement.Offset = value;
   }
   
   
@@ -73,14 +52,8 @@ public partial class Skew: ModelElement<DXVO.Skew>
   [DataMember]
   public String? Origin
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Origin);
-    }
-    set
-    {
-      _ExistingElement.Origin = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Origin;
+    set => _ExistingElement.Origin = value;
   }
   
   
@@ -90,14 +63,8 @@ public partial class Skew: ModelElement<DXVO.Skew>
   [DataMember]
   public String? Matrix
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Matrix);
-    }
-    set
-    {
-      _ExistingElement.Matrix = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Matrix;
+    set => _ExistingElement.Matrix = value;
   }
   
 }

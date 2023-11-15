@@ -19,14 +19,8 @@ public partial class BackstageTab: ModelElement<DXO10CUI.BackstageTab>
   [DataMember]
   public String? Id
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Id);
-    }
-    set
-    {
-      _ExistingElement.Id = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Id;
+    set => _ExistingElement.Id = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class BackstageTab: ModelElement<DXO10CUI.BackstageTab>
   [DataMember]
   public String? QualifiedId
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.QualifiedId);
-    }
-    set
-    {
-      _ExistingElement.QualifiedId = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.QualifiedId;
+    set => _ExistingElement.QualifiedId = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class BackstageTab: ModelElement<DXO10CUI.BackstageTab>
   [DataMember]
   public String? Tag
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Tag);
-    }
-    set
-    {
-      _ExistingElement.Tag = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Tag;
+    set => _ExistingElement.Tag = value;
   }
   
   
@@ -70,14 +52,8 @@ public partial class BackstageTab: ModelElement<DXO10CUI.BackstageTab>
   [DataMember]
   public String? IdMso
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.IdMso);
-    }
-    set
-    {
-      _ExistingElement.IdMso = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.IdMso;
+    set => _ExistingElement.IdMso = value;
   }
   
   
@@ -87,14 +63,8 @@ public partial class BackstageTab: ModelElement<DXO10CUI.BackstageTab>
   [DataMember]
   public String? InsertAfterMso
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.InsertAfterMso);
-    }
-    set
-    {
-      _ExistingElement.InsertAfterMso = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.InsertAfterMso;
+    set => _ExistingElement.InsertAfterMso = value;
   }
   
   
@@ -104,14 +74,8 @@ public partial class BackstageTab: ModelElement<DXO10CUI.BackstageTab>
   [DataMember]
   public String? InsertBeforeMso
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.InsertBeforeMso);
-    }
-    set
-    {
-      _ExistingElement.InsertBeforeMso = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.InsertBeforeMso;
+    set => _ExistingElement.InsertBeforeMso = value;
   }
   
   
@@ -121,14 +85,8 @@ public partial class BackstageTab: ModelElement<DXO10CUI.BackstageTab>
   [DataMember]
   public String? InsertAfterQulifiedId
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.InsertAfterQulifiedId);
-    }
-    set
-    {
-      _ExistingElement.InsertAfterQulifiedId = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.InsertAfterQulifiedId;
+    set => _ExistingElement.InsertAfterQulifiedId = value;
   }
   
   
@@ -138,14 +96,8 @@ public partial class BackstageTab: ModelElement<DXO10CUI.BackstageTab>
   [DataMember]
   public String? InsertBeforeQulifiedId
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.InsertBeforeQulifiedId);
-    }
-    set
-    {
-      _ExistingElement.InsertBeforeQulifiedId = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.InsertBeforeQulifiedId;
+    set => _ExistingElement.InsertBeforeQulifiedId = value;
   }
   
   
@@ -155,17 +107,8 @@ public partial class BackstageTab: ModelElement<DXO10CUI.BackstageTab>
   [DataMember]
   public Boolean? Enabled
   {
-    get
-    {
-      return _Element?.Enabled?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Enabled = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.Enabled = null;
-    }
+    get => _Element?.Enabled?.Value;
+    set => _ExistingElement.Enabled = value;
   }
   
   
@@ -175,14 +118,8 @@ public partial class BackstageTab: ModelElement<DXO10CUI.BackstageTab>
   [DataMember]
   public String? GetEnabled
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.GetEnabled);
-    }
-    set
-    {
-      _ExistingElement.GetEnabled = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.GetEnabled;
+    set => _ExistingElement.GetEnabled = value;
   }
   
   
@@ -192,14 +129,8 @@ public partial class BackstageTab: ModelElement<DXO10CUI.BackstageTab>
   [DataMember]
   public String? Label
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Label);
-    }
-    set
-    {
-      _ExistingElement.Label = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Label;
+    set => _ExistingElement.Label = value;
   }
   
   
@@ -209,14 +140,8 @@ public partial class BackstageTab: ModelElement<DXO10CUI.BackstageTab>
   [DataMember]
   public String? GetLabel
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.GetLabel);
-    }
-    set
-    {
-      _ExistingElement.GetLabel = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.GetLabel;
+    set => _ExistingElement.GetLabel = value;
   }
   
   
@@ -226,17 +151,8 @@ public partial class BackstageTab: ModelElement<DXO10CUI.BackstageTab>
   [DataMember]
   public Boolean? Visible
   {
-    get
-    {
-      return _Element?.Visible?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.Visible = new DX.BooleanValue { Value = (Boolean)value };
-      else
-        _ExistingElement.Visible = null;
-    }
+    get => _Element?.Visible?.Value;
+    set => _ExistingElement.Visible = value;
   }
   
   
@@ -246,14 +162,8 @@ public partial class BackstageTab: ModelElement<DXO10CUI.BackstageTab>
   [DataMember]
   public String? GetVisible
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.GetVisible);
-    }
-    set
-    {
-      _ExistingElement.GetVisible = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.GetVisible;
+    set => _ExistingElement.GetVisible = value;
   }
   
   
@@ -263,14 +173,8 @@ public partial class BackstageTab: ModelElement<DXO10CUI.BackstageTab>
   [DataMember]
   public String? Keytip
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Keytip);
-    }
-    set
-    {
-      _ExistingElement.Keytip = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Keytip;
+    set => _ExistingElement.Keytip = value;
   }
   
   
@@ -280,14 +184,8 @@ public partial class BackstageTab: ModelElement<DXO10CUI.BackstageTab>
   [DataMember]
   public String? GetKeytip
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.GetKeytip);
-    }
-    set
-    {
-      _ExistingElement.GetKeytip = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.GetKeytip;
+    set => _ExistingElement.GetKeytip = value;
   }
   
   
@@ -297,14 +195,8 @@ public partial class BackstageTab: ModelElement<DXO10CUI.BackstageTab>
   [DataMember]
   public String? Title
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Title);
-    }
-    set
-    {
-      _ExistingElement.Title = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Title;
+    set => _ExistingElement.Title = value;
   }
   
   
@@ -314,14 +206,8 @@ public partial class BackstageTab: ModelElement<DXO10CUI.BackstageTab>
   [DataMember]
   public String? GetTitle
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.GetTitle);
-    }
-    set
-    {
-      _ExistingElement.GetTitle = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.GetTitle;
+    set => _ExistingElement.GetTitle = value;
   }
   
   
@@ -331,14 +217,8 @@ public partial class BackstageTab: ModelElement<DXO10CUI.BackstageTab>
   [DataMember]
   public Int64? ColumnWidthPercent
   {
-    get
-    {
-      return _Element?.ColumnWidthPercent?.Value;
-    }
-    set
-    {
-      _ExistingElement.ColumnWidthPercent = value;
-    }
+    get => _Element?.ColumnWidthPercent?.Value;
+    set => _ExistingElement.ColumnWidthPercent = value;
   }
   
   
@@ -348,14 +228,8 @@ public partial class BackstageTab: ModelElement<DXO10CUI.BackstageTab>
   [DataMember]
   public Int64? FirstColumnMinWidth
   {
-    get
-    {
-      return _Element?.FirstColumnMinWidth?.Value;
-    }
-    set
-    {
-      _ExistingElement.FirstColumnMinWidth = value;
-    }
+    get => _Element?.FirstColumnMinWidth?.Value;
+    set => _ExistingElement.FirstColumnMinWidth = value;
   }
   
   
@@ -365,14 +239,8 @@ public partial class BackstageTab: ModelElement<DXO10CUI.BackstageTab>
   [DataMember]
   public Int64? FirstColumnMaxWidth
   {
-    get
-    {
-      return _Element?.FirstColumnMaxWidth?.Value;
-    }
-    set
-    {
-      _ExistingElement.FirstColumnMaxWidth = value;
-    }
+    get => _Element?.FirstColumnMaxWidth?.Value;
+    set => _ExistingElement.FirstColumnMaxWidth = value;
   }
   
   
@@ -382,14 +250,8 @@ public partial class BackstageTab: ModelElement<DXO10CUI.BackstageTab>
   [DataMember]
   public Int64? SecondColumnMinWidth
   {
-    get
-    {
-      return _Element?.SecondColumnMinWidth?.Value;
-    }
-    set
-    {
-      _ExistingElement.SecondColumnMinWidth = value;
-    }
+    get => _Element?.SecondColumnMinWidth?.Value;
+    set => _ExistingElement.SecondColumnMinWidth = value;
   }
   
   
@@ -399,14 +261,8 @@ public partial class BackstageTab: ModelElement<DXO10CUI.BackstageTab>
   [DataMember]
   public Int64? SecondColumnMaxWidth
   {
-    get
-    {
-      return _Element?.SecondColumnMaxWidth?.Value;
-    }
-    set
-    {
-      _ExistingElement.SecondColumnMaxWidth = value;
-    }
+    get => _Element?.SecondColumnMaxWidth?.Value;
+    set => _ExistingElement.SecondColumnMaxWidth = value;
   }
   
   
@@ -416,14 +272,8 @@ public partial class BackstageTab: ModelElement<DXO10CUI.BackstageTab>
   [DataMember]
   public DMCUI10.BackstageGroups? BackstageGroups
   {
-    get
-    {
-      return _Element?.GetObject<DMCUI10.BackstageGroups,DXO10CUI.BackstageGroups>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMCUI10.BackstageGroups,DXO10CUI.BackstageGroups>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -433,14 +283,8 @@ public partial class BackstageTab: ModelElement<DXO10CUI.BackstageTab>
   [DataMember]
   public DMCUI10.SimpleGroups? SimpleGroups
   {
-    get
-    {
-      return _Element?.GetObject<DMCUI10.SimpleGroups,DXO10CUI.SimpleGroups>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMCUI10.SimpleGroups,DXO10CUI.SimpleGroups>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

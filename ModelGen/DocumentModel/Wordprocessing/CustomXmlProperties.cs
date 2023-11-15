@@ -19,14 +19,8 @@ public partial class CustomXmlProperties: ModelElement<DXW.CustomXmlProperties>
   [DataMember]
   public DMW.CustomXmlPlaceholder? CustomXmlPlaceholder
   {
-    get
-    {
-      return _Element?.GetObject<DMW.CustomXmlPlaceholder,DXW.CustomXmlPlaceholder>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.CustomXmlPlaceholder,DXW.CustomXmlPlaceholder>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.StringType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.StringType");
   }
   
 }

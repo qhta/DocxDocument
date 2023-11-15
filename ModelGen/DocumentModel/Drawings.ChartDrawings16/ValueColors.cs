@@ -19,14 +19,8 @@ public partial class ValueColors: ModelElement<DXO16DCD.ValueColors>
   [DataMember]
   public DMDCD16.MinColorSolidColorFillProperties? MinColorSolidColorFillProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.MinColorSolidColorFillProperties,DXO16DCD.MinColorSolidColorFillProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.MinColorSolidColorFillProperties,DXO16DCD.MinColorSolidColorFillProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.OpenXmlSolidColorFillPropertiesElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.OpenXmlSolidColorFillPropertiesElement");
   }
   
   
@@ -36,14 +30,8 @@ public partial class ValueColors: ModelElement<DXO16DCD.ValueColors>
   [DataMember]
   public DMDCD16.MidColorSolidColorFillProperties? MidColorSolidColorFillProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.MidColorSolidColorFillProperties,DXO16DCD.MidColorSolidColorFillProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.MidColorSolidColorFillProperties,DXO16DCD.MidColorSolidColorFillProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.OpenXmlSolidColorFillPropertiesElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.OpenXmlSolidColorFillPropertiesElement");
   }
   
   
@@ -53,14 +41,8 @@ public partial class ValueColors: ModelElement<DXO16DCD.ValueColors>
   [DataMember]
   public DMDCD16.MaxColorSolidColorFillProperties? MaxColorSolidColorFillProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMDCD16.MaxColorSolidColorFillProperties,DXO16DCD.MaxColorSolidColorFillProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDCD16.MaxColorSolidColorFillProperties,DXO16DCD.MaxColorSolidColorFillProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.OpenXmlSolidColorFillPropertiesElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.OpenXmlSolidColorFillPropertiesElement");
   }
   
 }

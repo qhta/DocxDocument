@@ -19,14 +19,8 @@ public partial class DocPartProperties: ModelElement<DXW.DocPartProperties>
   [DataMember]
   public DMW.DocPartName? DocPartName
   {
-    get
-    {
-      return _Element?.GetObject<DMW.DocPartName,DXW.DocPartName>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.DocPartName,DXW.DocPartName>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   
@@ -36,14 +30,8 @@ public partial class DocPartProperties: ModelElement<DXW.DocPartProperties>
   [DataMember]
   public DMW.StyleId? StyleId
   {
-    get
-    {
-      return _Element?.GetObject<DMW.StyleId,DXW.StyleId>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.StyleId,DXW.StyleId>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.StringType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.StringType");
   }
   
   
@@ -53,14 +41,8 @@ public partial class DocPartProperties: ModelElement<DXW.DocPartProperties>
   [DataMember]
   public DMW.Category? Category
   {
-    get
-    {
-      return _Element?.GetObject<DMW.Category,DXW.Category>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.Category,DXW.Category>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -70,14 +52,8 @@ public partial class DocPartProperties: ModelElement<DXW.DocPartProperties>
   [DataMember]
   public DMW.DocPartTypes? DocPartTypes
   {
-    get
-    {
-      return _Element?.GetObject<DMW.DocPartTypes,DXW.DocPartTypes>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.DocPartTypes,DXW.DocPartTypes>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -87,14 +63,8 @@ public partial class DocPartProperties: ModelElement<DXW.DocPartProperties>
   [DataMember]
   public DMW.Behaviors? Behaviors
   {
-    get
-    {
-      return _Element?.GetObject<DMW.Behaviors,DXW.Behaviors>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.Behaviors,DXW.Behaviors>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -104,14 +74,8 @@ public partial class DocPartProperties: ModelElement<DXW.DocPartProperties>
   [DataMember]
   public DMW.Description? Description
   {
-    get
-    {
-      return _Element?.GetObject<DMW.Description,DXW.Description>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.Description,DXW.Description>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.StringType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.StringType");
   }
   
   
@@ -121,14 +85,8 @@ public partial class DocPartProperties: ModelElement<DXW.DocPartProperties>
   [DataMember]
   public String? DocPartId
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.GetFirstChild<DXW.DocPartId>()?.Val);
-    }
-    set
-    {
-      StringValueConverter.SetValue<DXW.DocPartId>(_ExistingElement, value);
-    }
+    get => _Element?.GetStringVal<DXW.DocPartId>();
+    set => _ExistingElement.SetStringVal<DXW.DocPartId>(value);
   }
   
 }

@@ -19,14 +19,8 @@ public partial class ArtisticPaintStrokes: ModelElement<DXO10D.ArtisticPaintStro
   [DataMember]
   public Int32? Transparancy
   {
-    get
-    {
-      return _Element?.Transparancy?.Value;
-    }
-    set
-    {
-      _ExistingElement.Transparancy = value;
-    }
+    get => _Element?.Transparancy?.Value;
+    set => _ExistingElement.Transparancy = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class ArtisticPaintStrokes: ModelElement<DXO10D.ArtisticPaintStro
   [DataMember]
   public Int32? Intensity
   {
-    get
-    {
-      return _Element?.Intensity?.Value;
-    }
-    set
-    {
-      _ExistingElement.Intensity = value;
-    }
+    get => _Element?.Intensity?.Value;
+    set => _ExistingElement.Intensity = value;
   }
   
 }

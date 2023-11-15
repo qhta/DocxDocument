@@ -19,14 +19,8 @@ public partial class WrapSquare: ModelElement<DXDW.WrapSquare>
   [DataMember]
   public UInt32? DistanceFromTop
   {
-    get
-    {
-      return _Element?.DistanceFromTop?.Value;
-    }
-    set
-    {
-      _ExistingElement.DistanceFromTop = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
   }
   
   
@@ -36,14 +30,8 @@ public partial class WrapSquare: ModelElement<DXDW.WrapSquare>
   [DataMember]
   public UInt32? DistanceFromBottom
   {
-    get
-    {
-      return _Element?.DistanceFromBottom?.Value;
-    }
-    set
-    {
-      _ExistingElement.DistanceFromBottom = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
   }
   
   
@@ -53,14 +41,8 @@ public partial class WrapSquare: ModelElement<DXDW.WrapSquare>
   [DataMember]
   public UInt32? DistanceFromLeft
   {
-    get
-    {
-      return _Element?.DistanceFromLeft?.Value;
-    }
-    set
-    {
-      _ExistingElement.DistanceFromLeft = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
   }
   
   
@@ -70,14 +52,8 @@ public partial class WrapSquare: ModelElement<DXDW.WrapSquare>
   [DataMember]
   public UInt32? DistanceFromRight
   {
-    get
-    {
-      return _Element?.DistanceFromRight?.Value;
-    }
-    set
-    {
-      _ExistingElement.DistanceFromRight = value;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
   }
   
   
@@ -87,14 +63,8 @@ public partial class WrapSquare: ModelElement<DXDW.WrapSquare>
   [DataMember]
   public DMDW.EffectExtent? EffectExtent
   {
-    get
-    {
-      return _Element?.GetObject<DMDW.EffectExtent,DXDW.EffectExtent>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDW.EffectExtent,DXDW.EffectExtent>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
 }

@@ -19,14 +19,8 @@ public partial class DropDownListFormField: ModelElement<DXW.DropDownListFormFie
   [DataMember]
   public DMW.DropDownListSelection? DropDownListSelection
   {
-    get
-    {
-      return _Element?.GetObject<DMW.DropDownListSelection,DXW.DropDownListSelection>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.DropDownListSelection,DXW.DropDownListSelection>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.DecimalNumberType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.DecimalNumberType");
   }
   
   
@@ -36,14 +30,8 @@ public partial class DropDownListFormField: ModelElement<DXW.DropDownListFormFie
   [DataMember]
   public Int32? DefaultDropDownListItemIndex
   {
-    get
-    {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DXW.DefaultDropDownListItemIndex>()?.Val);
-    }
-    set
-    {
-      SimpleValueConverter.SetValue<DXW.DefaultDropDownListItemIndex,System.Int32>(_ExistingElement, value);
-    }
+    get => _Element?.GetIntVal<Int32, DXW.DefaultDropDownListItemIndex>();
+    set => _ExistingElement.SetIntVal<Int32, DXW.DefaultDropDownListItemIndex>(value);
   }
   
 }

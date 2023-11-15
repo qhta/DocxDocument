@@ -19,14 +19,8 @@ public partial class MathFunction: ModelElement<DXM.MathFunction>
   [DataMember]
   public DMM.FunctionProperties? FunctionProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMM.FunctionProperties,DXM.FunctionProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.FunctionProperties,DXM.FunctionProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -36,14 +30,8 @@ public partial class MathFunction: ModelElement<DXM.MathFunction>
   [DataMember]
   public DMM.FunctionName? FunctionName
   {
-    get
-    {
-      return _Element?.GetObject<DMM.FunctionName,DXM.FunctionName>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.FunctionName,DXM.FunctionName>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OfficeMathArgumentType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OfficeMathArgumentType");
   }
   
   
@@ -53,14 +41,8 @@ public partial class MathFunction: ModelElement<DXM.MathFunction>
   [DataMember]
   public DMM.Base? Base
   {
-    get
-    {
-      return _Element?.GetObject<DMM.Base,DXM.Base>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMM.Base,DXM.Base>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OfficeMathArgumentType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Math.OfficeMathArgumentType");
   }
   
 }

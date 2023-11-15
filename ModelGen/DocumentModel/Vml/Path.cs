@@ -19,14 +19,8 @@ public partial class Path: ModelElement<DXV.Path>
   [DataMember]
   public String? Id
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Id);
-    }
-    set
-    {
-      _ExistingElement.Id = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Id;
+    set => _ExistingElement.Id = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class Path: ModelElement<DXV.Path>
   [DataMember]
   public String? Value
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Value);
-    }
-    set
-    {
-      _ExistingElement.Value = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Value;
+    set => _ExistingElement.Value = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class Path: ModelElement<DXV.Path>
   [DataMember]
   public String? Limo
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Limo);
-    }
-    set
-    {
-      _ExistingElement.Limo = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Limo;
+    set => _ExistingElement.Limo = value;
   }
   
   
@@ -70,14 +52,8 @@ public partial class Path: ModelElement<DXV.Path>
   [DataMember]
   public String? TextboxRectangle
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.TextboxRectangle);
-    }
-    set
-    {
-      _ExistingElement.TextboxRectangle = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.TextboxRectangle;
+    set => _ExistingElement.TextboxRectangle = value;
   }
   
   
@@ -87,17 +63,8 @@ public partial class Path: ModelElement<DXV.Path>
   [DataMember]
   public Boolean? AllowFill
   {
-    get
-    {
-      return _Element?.AllowFill?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.AllowFill = value;
-      else
-        _ExistingElement.AllowFill = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -107,17 +74,8 @@ public partial class Path: ModelElement<DXV.Path>
   [DataMember]
   public Boolean? AllowStroke
   {
-    get
-    {
-      return _Element?.AllowStroke?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.AllowStroke = value;
-      else
-        _ExistingElement.AllowStroke = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -127,17 +85,8 @@ public partial class Path: ModelElement<DXV.Path>
   [DataMember]
   public Boolean? AllowShading
   {
-    get
-    {
-      return _Element?.AllowShading?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.AllowShading = value;
-      else
-        _ExistingElement.AllowShading = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -147,17 +96,8 @@ public partial class Path: ModelElement<DXV.Path>
   [DataMember]
   public Boolean? ShowArrowhead
   {
-    get
-    {
-      return _Element?.ShowArrowhead?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.ShowArrowhead = value;
-      else
-        _ExistingElement.ShowArrowhead = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -167,17 +107,8 @@ public partial class Path: ModelElement<DXV.Path>
   [DataMember]
   public Boolean? AllowGradientShape
   {
-    get
-    {
-      return _Element?.AllowGradientShape?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.AllowGradientShape = value;
-      else
-        _ExistingElement.AllowGradientShape = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -187,17 +118,8 @@ public partial class Path: ModelElement<DXV.Path>
   [DataMember]
   public Boolean? AllowTextPath
   {
-    get
-    {
-      return _Element?.AllowTextPath?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.AllowTextPath = value;
-      else
-        _ExistingElement.AllowTextPath = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -207,17 +129,8 @@ public partial class Path: ModelElement<DXV.Path>
   [DataMember]
   public Boolean? AllowInsetPen
   {
-    get
-    {
-      return _Element?.AllowInsetPen?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.AllowInsetPen = value;
-      else
-        _ExistingElement.AllowInsetPen = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
   
@@ -227,14 +140,8 @@ public partial class Path: ModelElement<DXV.Path>
   [DataMember]
   public String? ConnectionPoints
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.ConnectionPoints);
-    }
-    set
-    {
-      _ExistingElement.ConnectionPoints = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.ConnectionPoints;
+    set => _ExistingElement.ConnectionPoints = value;
   }
   
   
@@ -244,14 +151,8 @@ public partial class Path: ModelElement<DXV.Path>
   [DataMember]
   public String? ConnectAngles
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.ConnectAngles);
-    }
-    set
-    {
-      _ExistingElement.ConnectAngles = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.ConnectAngles;
+    set => _ExistingElement.ConnectAngles = value;
   }
   
   
@@ -261,17 +162,8 @@ public partial class Path: ModelElement<DXV.Path>
   [DataMember]
   public Boolean? AllowExtrusion
   {
-    get
-    {
-      return _Element?.AllowExtrusion?.Value;
-    }
-    set
-    {
-      if (value != null)
-        _ExistingElement.AllowExtrusion = value;
-      else
-        _ExistingElement.AllowExtrusion = null;
-    }
+    get => throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    set => throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: boolean propertyType is DocumentFormat.OpenXml.TrueFalseValue");
   }
   
 }

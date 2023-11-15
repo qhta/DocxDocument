@@ -19,14 +19,8 @@ public partial class CheckBoxSymbolType: ModelElement<DXO10W.CheckBoxSymbolType>
   [DataMember]
   public String? Font
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Font);
-    }
-    set
-    {
-      _ExistingElement.Font = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Font;
+    set => _ExistingElement.Font = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class CheckBoxSymbolType: ModelElement<DXO10W.CheckBoxSymbolType>
   [DataMember]
   public DM.HexBinary? Val
   {
-    get
-    {
-      return Convert.FromHexString(_Element?.Val.Value);
-    }
-    set
-    {
-      _ExistingElement.Val = Convert.ToHexString(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.Object");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.Object");
   }
   
 }

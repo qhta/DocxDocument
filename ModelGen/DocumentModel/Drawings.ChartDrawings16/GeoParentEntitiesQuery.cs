@@ -19,14 +19,8 @@ public partial class GeoParentEntitiesQuery: ModelElement<DXO16DCD.GeoParentEnti
   [DataMember]
   public String? EntityId
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.EntityId);
-    }
-    set
-    {
-      _ExistingElement.EntityId = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.EntityId;
+    set => _ExistingElement.EntityId = value;
   }
   
 }

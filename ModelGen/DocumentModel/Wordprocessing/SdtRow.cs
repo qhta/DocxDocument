@@ -19,40 +19,22 @@ public partial class SdtRow: ModelElement<DXW.SdtRow>
   [DataMember]
   public DMW.SdtContentRow? SdtContentRow
   {
-    get
-    {
-      return _Element?.GetObject<DMW.SdtContentRow,DXW.SdtContentRow>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.SdtContentRow,DXW.SdtContentRow>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMW.SdtProperties? SdtProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMW.SdtProperties,DXW.SdtProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.SdtProperties,DXW.SdtProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMW.SdtEndCharProperties? SdtEndCharProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMW.SdtEndCharProperties,DXW.SdtEndCharProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW.SdtEndCharProperties,DXW.SdtEndCharProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

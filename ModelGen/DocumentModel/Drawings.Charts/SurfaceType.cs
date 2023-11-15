@@ -19,14 +19,8 @@ public partial class SurfaceType: ModelElement<DXDC.SurfaceType>
   [DataMember]
   public Byte? Thickness
   {
-    get
-    {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DXDC.Thickness>()?.Val);
-    }
-    set
-    {
-      SimpleValueConverter.SetValue<DXDC.Thickness,System.Byte>(_ExistingElement, value);
-    }
+    get => _Element?.GetIntVal<Byte, DXDC.Thickness>();
+    set => _ExistingElement.SetIntVal<Byte, DXDC.Thickness>(value);
   }
   
   
@@ -36,14 +30,8 @@ public partial class SurfaceType: ModelElement<DXDC.SurfaceType>
   [DataMember]
   public DMDC.ShapeProperties? ShapeProperties
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.ShapeProperties,DXDC.ShapeProperties>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.ShapeProperties,DXDC.ShapeProperties>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -53,14 +41,8 @@ public partial class SurfaceType: ModelElement<DXDC.SurfaceType>
   [DataMember]
   public DMDC.PictureOptions? PictureOptions
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.PictureOptions,DXDC.PictureOptions>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.PictureOptions,DXDC.PictureOptions>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -70,14 +52,8 @@ public partial class SurfaceType: ModelElement<DXDC.SurfaceType>
   [DataMember]
   public DMDC.ExtensionList? ExtensionList
   {
-    get
-    {
-      return _Element?.GetObject<DMDC.ExtensionList,DXDC.ExtensionList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMDC.ExtensionList,DXDC.ExtensionList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

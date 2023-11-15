@@ -19,40 +19,22 @@ public partial class Whole: ModelElement<DXDDD.Whole>
   [DataMember]
   public DMD.Outline? Outline
   {
-    get
-    {
-      return _Element?.GetObject<DMD.Outline,DXD.Outline>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.Outline,DXD.Outline>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.LinePropertiesType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.LinePropertiesType");
   }
   
   [DataMember]
   public DMD.EffectList? EffectList
   {
-    get
-    {
-      return _Element?.GetObject<DMD.EffectList,DXD.EffectList>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.EffectList,DXD.EffectList>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   [DataMember]
   public DMD.EffectDag? EffectDag
   {
-    get
-    {
-      return _Element?.GetObject<DMD.EffectDag,DXD.EffectDag>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.EffectDag,DXD.EffectDag>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.EffectContainerType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.EffectContainerType");
   }
   
 }

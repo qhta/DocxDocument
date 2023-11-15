@@ -19,14 +19,8 @@ public partial class Formula: ModelElement<DXV.Formula>
   [DataMember]
   public String? Equation
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Equation);
-    }
-    set
-    {
-      _ExistingElement.Equation = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Equation;
+    set => _ExistingElement.Equation = value;
   }
   
 }

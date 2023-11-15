@@ -19,14 +19,8 @@ public partial class GroupBox: ModelElement<DXO10CUI.GroupBox>
   [DataMember]
   public String? Id
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Id);
-    }
-    set
-    {
-      _ExistingElement.Id = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Id;
+    set => _ExistingElement.Id = value;
   }
   
   
@@ -36,14 +30,8 @@ public partial class GroupBox: ModelElement<DXO10CUI.GroupBox>
   [DataMember]
   public String? QualifiedId
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.QualifiedId);
-    }
-    set
-    {
-      _ExistingElement.QualifiedId = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.QualifiedId;
+    set => _ExistingElement.QualifiedId = value;
   }
   
   
@@ -53,14 +41,8 @@ public partial class GroupBox: ModelElement<DXO10CUI.GroupBox>
   [DataMember]
   public String? Tag
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Tag);
-    }
-    set
-    {
-      _ExistingElement.Tag = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Tag;
+    set => _ExistingElement.Tag = value;
   }
   
   
@@ -70,14 +52,8 @@ public partial class GroupBox: ModelElement<DXO10CUI.GroupBox>
   [DataMember]
   public String? Label
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.Label);
-    }
-    set
-    {
-      _ExistingElement.Label = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.Label;
+    set => _ExistingElement.Label = value;
   }
   
   
@@ -87,14 +63,8 @@ public partial class GroupBox: ModelElement<DXO10CUI.GroupBox>
   [DataMember]
   public String? GetLabel
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.GetLabel);
-    }
-    set
-    {
-      _ExistingElement.GetLabel = StringValueConverter.CreateStringValue(value);
-    }
+    get => _Element?.GetLabel;
+    set => _ExistingElement.GetLabel = value;
   }
   
 }

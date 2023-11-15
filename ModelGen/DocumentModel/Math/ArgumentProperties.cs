@@ -19,14 +19,8 @@ public partial class ArgumentProperties: ModelElement<DXM.ArgumentProperties>
   [DataMember]
   public Int64? ArgumentSize
   {
-    get
-    {
-      return SimpleValueConverter.GetValue(_Element?.GetFirstChild<DXM.ArgumentSize>()?.Val);
-    }
-    set
-    {
-      SimpleValueConverter.SetValue<DXM.ArgumentSize,System.Int64>(_ExistingElement, value);
-    }
+    get => _Element?.GetIntVal<Int64, DXM.ArgumentSize>();
+    set => _ExistingElement.SetIntVal<Int64, DXM.ArgumentSize>(value);
   }
   
 }

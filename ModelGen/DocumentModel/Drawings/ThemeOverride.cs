@@ -19,14 +19,8 @@ public partial class ThemeOverride: ModelElement<DXD.ThemeOverride>
   [DataMember]
   public DMD.ColorScheme? ColorScheme
   {
-    get
-    {
-      return _Element?.GetObject<DMD.ColorScheme,DXD.ColorScheme>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.ColorScheme,DXD.ColorScheme>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -36,14 +30,8 @@ public partial class ThemeOverride: ModelElement<DXD.ThemeOverride>
   [DataMember]
   public DMD.FontScheme? FontScheme
   {
-    get
-    {
-      return _Element?.GetObject<DMD.FontScheme,DXD.FontScheme>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.FontScheme,DXD.FontScheme>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
   
@@ -53,14 +41,8 @@ public partial class ThemeOverride: ModelElement<DXD.ThemeOverride>
   [DataMember]
   public DMD.FormatScheme? FormatScheme
   {
-    get
-    {
-      return _Element?.GetObject<DMD.FormatScheme,DXD.FormatScheme>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMD.FormatScheme,DXD.FormatScheme>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

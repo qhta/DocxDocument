@@ -19,14 +19,8 @@ public partial class SdtRepeatedSection: ModelElement<DXO13W.SdtRepeatedSection>
   [DataMember]
   public String? SectionTitle
   {
-    get
-    {
-      return StringValueConverter.GetValue(_Element?.GetFirstChild<DXO13W.SectionTitle>()?.Val);
-    }
-    set
-    {
-      StringValueConverter.SetValue<DXO13W.SectionTitle>(_ExistingElement, value);
-    }
+    get => _Element?.GetStringVal<DXO13W.SectionTitle>();
+    set => _ExistingElement.SetStringVal<DXO13W.SectionTitle>(value);
   }
   
   
@@ -36,14 +30,8 @@ public partial class SdtRepeatedSection: ModelElement<DXO13W.SdtRepeatedSection>
   [DataMember]
   public DMW13.DoNotAllowInsertDeleteSection? DoNotAllowInsertDeleteSection
   {
-    get
-    {
-      return _Element?.GetObject<DMW13.DoNotAllowInsertDeleteSection,DXO13W.DoNotAllowInsertDeleteSection>();
-    }
-    set
-    {
-      _ExistingElement.SetObject<DMW13.DoNotAllowInsertDeleteSection,DXO13W.DoNotAllowInsertDeleteSection>(value);
-    }
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Word.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Office2013.Word.OnOffType");
   }
   
 }
