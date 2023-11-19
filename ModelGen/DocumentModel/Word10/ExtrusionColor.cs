@@ -13,10 +13,10 @@ public partial class ExtrusionColor: ModelElement<DXO10W.ExtrusionColor>
   public ExtrusionColor(DXO10W.ExtrusionColor openXmlElement): base(openXmlElement) { }
   
   [DataMember]
-  public DM.HexBinary? RgbColorModelHex
+  public DM.HexRgb? RgbColorModelHex
   {
-    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.Object");
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.Object");
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   [DataMember]

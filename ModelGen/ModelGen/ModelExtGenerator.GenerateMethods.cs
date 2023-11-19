@@ -87,6 +87,8 @@ public partial class ModelExtGenerator
       return GenerateNumericValuePropertyGetCode(prop);
     else if (targetPropType.Type == typeof(Base64Binary))
       return GenerateBase64BinaryPropertyGetCode(prop);
+    else if (targetPropType.Type == typeof(HexInt))
+      return GenerateHexIntPropertyGetCode(prop);
     //else if (targetPropType.IsSimple())
     //  return GenerateSimplePropertyGetCode(prop);
     //else if (targetPropType.Type.Implements(typeof(ICollection)))
@@ -99,6 +101,9 @@ public partial class ModelExtGenerator
     //  return GeneratePartRootElementPropertyGetCode(prop);
     //else if (origPropType.Type.IsClass)
     //  return GenerateSimplePropertyGetCode(prop);
+    //else if ((prop.Owner as TypeInfo)?.BaseTypeInfo?.Type.IsEqualOrSubclassOf(typeof(DX.OpenXmlCompositeElement))==true
+    //  && origPropType.Type.IsEqualOrSubclassOf(typeof(DX.OpenXmlElement)))
+    //  return GenerateCompositeElementPropertyGetCode(prop);
     else
       return GenerateGetNotImplementedException($"targetPropType baseType is {targetPropType.Type.BaseType}");
 
@@ -439,17 +444,18 @@ public partial class ModelExtGenerator
   #region GenerateHexIntProperty code
   private bool GenerateHexIntPropertyGetCode(PropInfo prop)
   {
-    if (prop.PropertyType.Type == typeof(DX.HexBinaryValue))
+    var origPropOwnerType = (prop.Owner as TypeInfo)?.Type;
+    var origPropType = prop.PropertyType;
+    if (origPropOwnerType != null && origPropOwnerType.IsEqualOrSubclassOf(typeof(DX.OpenXmlCompositeElement))
+      && origPropType.Type.IsEqualOrSubclassOf(typeof(DX.OpenXmlElement)))
     {
-      var origPropName = prop.Name;
-      Writer.WriteLine($"if (_Element?.{origPropName}?.Value != null)");
-      Writer.WriteLine($"  return HexIntConverter.GetValue(_Element?.{origPropName}.Value);");
-      Writer.WriteLine($"return null;");
+      var origPropTypeName = prop.PropertyType.GetFullName(false, true, true);
+      Writer.WriteLine($"get => _Element?.GetHexIntVal<{origPropTypeName}>();");
     }
     else
     {
-      var origPropTypeName = prop.PropertyType.GetFullName(false, true, true);
-      Writer.WriteLine($"return HexIntConverter.GetValue(_Element?.GetFirstChild<{origPropTypeName}>()?.Val);");
+      var origPropName = prop.Name;
+      Writer.WriteLine($"get => HexIntConverter.GetValue(_Element?.{origPropName});");
     }
     return true;
   }
@@ -520,6 +526,23 @@ public partial class ModelExtGenerator
   }
 
   private bool GenerateHexBinaryPropertySetCode(PropInfo prop)
+  {
+    var origPropName = prop.Name;
+    Writer.WriteLine($"_ExistingElement.{origPropName} = Convert.ToHexString(value);");
+    return true;
+  }
+  #endregion
+
+  #region GenerateComplexElementProperty code
+  private bool GenerateCompositeElementPropertyGetCode(PropInfo prop)
+  {
+    var origPropTypeName = prop.PropertyType.GetFullName(false, true, true);
+    var targetPropTypeName = prop.PropertyType.GetFullName(true, true, true);
+    Writer.WriteLine($"get => _Element?.GetObject<{targetPropTypeName}, {origPropTypeName}>();");
+    return true;
+  }
+
+  private bool GenerateCompositeElementPropertySetCode(PropInfo prop)
   {
     var origPropName = prop.Name;
     Writer.WriteLine($"_ExistingElement.{origPropName} = Convert.ToHexString(value);");

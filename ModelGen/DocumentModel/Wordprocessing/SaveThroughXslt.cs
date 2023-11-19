@@ -17,10 +17,10 @@ public partial class SaveThroughXslt: ModelElement<DXW.SaveThroughXslt>
   ///   XSL Transformation Location
   /// </summary>
   [DataMember]
-  public String? Id
+  public DocumentModel.HexInt? Id
   {
-    get => _Element?.Id;
-    set => _ExistingElement.Id = value;
+    get => HexIntConverter.GetValue(_Element?.Id);
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -28,10 +28,10 @@ public partial class SaveThroughXslt: ModelElement<DXW.SaveThroughXslt>
   ///   Local Identifier for XSL Transform
   /// </summary>
   [DataMember]
-  public String? SolutionId
+  public DocumentModel.HexInt? SolutionId
   {
-    get => _Element?.SolutionId;
-    set => _ExistingElement.SolutionId = value;
+    get => HexIntConverter.GetValue(_Element?.SolutionId);
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
 }

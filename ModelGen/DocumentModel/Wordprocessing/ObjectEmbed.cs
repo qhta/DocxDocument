@@ -17,10 +17,10 @@ public partial class ObjectEmbed: ModelElement<DXW.ObjectEmbed>
   ///   id
   /// </summary>
   [DataMember]
-  public String? Id
+  public DocumentModel.HexInt? Id
   {
-    get => _Element?.Id;
-    set => _ExistingElement.Id = value;
+    get => HexIntConverter.GetValue(_Element?.Id);
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -28,10 +28,10 @@ public partial class ObjectEmbed: ModelElement<DXW.ObjectEmbed>
   ///   progId
   /// </summary>
   [DataMember]
-  public String? ProgId
+  public DocumentModel.HexInt? ProgId
   {
-    get => _Element?.ProgId;
-    set => _ExistingElement.ProgId = value;
+    get => HexIntConverter.GetValue(_Element?.ProgId);
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -39,10 +39,10 @@ public partial class ObjectEmbed: ModelElement<DXW.ObjectEmbed>
   ///   shapeId
   /// </summary>
   [DataMember]
-  public String? ShapeId
+  public DocumentModel.HexInt? ShapeId
   {
-    get => _Element?.ShapeId;
-    set => _ExistingElement.ShapeId = value;
+    get => HexIntConverter.GetValue(_Element?.ShapeId);
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   

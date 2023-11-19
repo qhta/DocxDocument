@@ -17,10 +17,10 @@ public partial class Fill: ModelElement<DXV.Fill>
   ///   Unique Identifier
   /// </summary>
   [DataMember]
-  public String? Id
+  public DocumentModel.HexInt? Id
   {
-    get => _Element?.Id;
-    set => _ExistingElement.Id = value;
+    get => HexIntConverter.GetValue(_Element?.Id);
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -259,10 +259,10 @@ public partial class Fill: ModelElement<DXV.Fill>
   ///   Relationship to Part
   /// </summary>
   [DataMember]
-  public String? RelationshipId
+  public DocumentModel.HexInt? RelationshipId
   {
-    get => _Element?.RelationshipId;
-    set => _ExistingElement.RelationshipId = value;
+    get => HexIntConverter.GetValue(_Element?.RelationshipId);
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   

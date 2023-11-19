@@ -17,9 +17,9 @@ public partial class FontSignature: ModelElement<DXW.FontSignature>
   ///   First 32 Bits of Unicode Subset Bitfield
   /// </summary>
   [DataMember]
-  public DM.HexBinary? UnicodeSignature0
+  public DocumentModel.HexInt? UnicodeSignature0
   {
-    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    get => HexIntConverter.GetValue(_Element?.UnicodeSignature0);
     set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
@@ -28,9 +28,9 @@ public partial class FontSignature: ModelElement<DXW.FontSignature>
   ///   Second 32 Bits of Unicode Subset Bitfield
   /// </summary>
   [DataMember]
-  public DM.HexBinary? UnicodeSignature1
+  public DocumentModel.HexInt? UnicodeSignature1
   {
-    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    get => HexIntConverter.GetValue(_Element?.UnicodeSignature1);
     set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
@@ -39,9 +39,9 @@ public partial class FontSignature: ModelElement<DXW.FontSignature>
   ///   Third 32 Bits of Unicode Subset Bitfield
   /// </summary>
   [DataMember]
-  public DM.HexBinary? UnicodeSignature2
+  public DocumentModel.HexInt? UnicodeSignature2
   {
-    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    get => HexIntConverter.GetValue(_Element?.UnicodeSignature2);
     set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
@@ -50,9 +50,9 @@ public partial class FontSignature: ModelElement<DXW.FontSignature>
   ///   Fourth 32 Bits of Unicode Subset Bitfield
   /// </summary>
   [DataMember]
-  public DM.HexBinary? UnicodeSignature3
+  public DocumentModel.HexInt? UnicodeSignature3
   {
-    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    get => HexIntConverter.GetValue(_Element?.UnicodeSignature3);
     set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
@@ -63,7 +63,7 @@ public partial class FontSignature: ModelElement<DXW.FontSignature>
   [DataMember]
   public DM.HexBinary? CodePageSignature0
   {
-    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    get => HexIntConverter.GetValue(_Element?.CodePageSignature0);
     set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
@@ -74,7 +74,7 @@ public partial class FontSignature: ModelElement<DXW.FontSignature>
   [DataMember]
   public DM.HexBinary? CodePageSignature1
   {
-    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    get => HexIntConverter.GetValue(_Element?.CodePageSignature1);
     set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   

@@ -39,9 +39,9 @@ public partial class EmbeddedObject: ModelElement<DXW.EmbeddedObject>
   ///   anchorId, this property is only available in Office 2010 and later.
   /// </summary>
   [DataMember]
-  public DM.HexBinary? AnchorId
+  public DocumentModel.HexInt? AnchorId
   {
-    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    get => HexIntConverter.GetValue(_Element?.AnchorId);
     set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   

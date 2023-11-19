@@ -17,10 +17,10 @@ public partial class Style: ModelElement<DXW.Style>
   ///   Style ID
   /// </summary>
   [DataMember]
-  public String? StyleId
+  public DocumentModel.HexInt? StyleId
   {
-    get => _Element?.StyleId;
-    set => _ExistingElement.StyleId = value;
+    get => HexIntConverter.GetValue(_Element?.StyleId);
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -215,10 +215,10 @@ public partial class Style: ModelElement<DXW.Style>
   ///   Revision Identifier for Style Definition.
   /// </summary>
   [DataMember]
-  public HexInt? Rsid
+  public DocumentModel.HexInt? Rsid
   {
-    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.LongHexNumberType");
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.LongHexNumberType");
+    get => _Element?.GetHexIntVal<DXW.Rsid>();
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   

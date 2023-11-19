@@ -171,10 +171,10 @@ public partial class StyleRunProperties: ModelElement<DXW.StyleRunProperties>
   ///   SnapToGrid.
   /// </summary>
   [DataMember]
-  public DMW.SnapToGrid? SnapToGrid
+  public DocumentModel.HexInt? SnapToGrid
   {
-    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    get => _Element?.GetHexIntVal<DXW.SnapToGrid>();
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   

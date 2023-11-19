@@ -279,6 +279,13 @@ public partial class DocumentSettings: ModelElement<DXW.Settings>
   }
   
   [DataMember]
+  public String? StylePaneSortMethods
+  {
+    get => _Element?.GetStringVal<DXW.StylePaneSortMethods>();
+    set => _ExistingElement.SetStringVal<DXW.StylePaneSortMethods>(value);
+  }
+  
+  [DataMember]
   public DMW.DocumentTypeKind? DocumentType
   {
     get => throw new NotImplementedException("Not implemented in GenerateEnumTypePropertyGetCode: enum propertyType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
@@ -440,17 +447,17 @@ public partial class DocumentSettings: ModelElement<DXW.Settings>
   }
   
   [DataMember]
-  public DMW.DisplayHorizontalDrawingGrid? DisplayHorizontalDrawingGrid
+  public DocumentModel.HexInt? DisplayHorizontalDrawingGrid
   {
-    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.UnsignedInt7Type");
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.UnsignedInt7Type");
+    get => _Element?.GetHexIntVal<DXW.DisplayHorizontalDrawingGrid>();
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   [DataMember]
-  public DMW.DisplayVerticalDrawingGrid? DisplayVerticalDrawingGrid
+  public DocumentModel.HexInt? DisplayVerticalDrawingGrid
   {
-    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.UnsignedInt7Type");
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.UnsignedInt7Type");
+    get => _Element?.GetHexIntVal<DXW.DisplayVerticalDrawingGrid>();
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   [DataMember]
@@ -741,10 +748,10 @@ public partial class DocumentSettings: ModelElement<DXW.Settings>
   }
   
   [DataMember]
-  public DM.HexBinary? DocumentId
+  public DocumentModel.HexInt? DocumentId
   {
-    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.Object");
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.Object");
+    get => _Element?.GetHexIntVal<DXO10W.DocumentId>();
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   [DataMember]
@@ -776,10 +783,10 @@ public partial class DocumentSettings: ModelElement<DXW.Settings>
   }
   
   [DataMember]
-  public String? PersistentDocumentId
+  public DocumentModel.HexInt? PersistentDocumentId
   {
-    get => _Element?.GetStringVal<DXO13W.PersistentDocumentId>();
-    set => _ExistingElement.SetStringVal<DXO13W.PersistentDocumentId>(value);
+    get => _Element?.GetHexIntVal<DXO13W.PersistentDocumentId>();
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
 }

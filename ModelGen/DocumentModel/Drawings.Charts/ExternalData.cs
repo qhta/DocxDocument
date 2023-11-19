@@ -17,10 +17,10 @@ public partial class ExternalData: ModelElement<DXDC.ExternalData>
   ///   Relationship Reference
   /// </summary>
   [DataMember]
-  public String? Id
+  public DocumentModel.HexInt? Id
   {
-    get => _Element?.Id;
-    set => _ExistingElement.Id = value;
+    get => HexIntConverter.GetValue(_Element?.Id);
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   

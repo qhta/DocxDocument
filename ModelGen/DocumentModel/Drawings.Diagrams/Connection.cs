@@ -17,10 +17,10 @@ public partial class Connection: ModelElement<DXDDD.Connection>
   ///   Model Identifier
   /// </summary>
   [DataMember]
-  public String? ModelId
+  public DocumentModel.HexInt? ModelId
   {
-    get => _Element?.ModelId;
-    set => _ExistingElement.ModelId = value;
+    get => HexIntConverter.GetValue(_Element?.ModelId);
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -28,10 +28,10 @@ public partial class Connection: ModelElement<DXDDD.Connection>
   ///   Source Identifier
   /// </summary>
   [DataMember]
-  public String? SourceId
+  public DocumentModel.HexInt? SourceId
   {
-    get => _Element?.SourceId;
-    set => _ExistingElement.SourceId = value;
+    get => HexIntConverter.GetValue(_Element?.SourceId);
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -39,10 +39,10 @@ public partial class Connection: ModelElement<DXDDD.Connection>
   ///   Destination Identifier
   /// </summary>
   [DataMember]
-  public String? DestinationId
+  public DocumentModel.HexInt? DestinationId
   {
-    get => _Element?.DestinationId;
-    set => _ExistingElement.DestinationId = value;
+    get => HexIntConverter.GetValue(_Element?.DestinationId);
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -72,10 +72,10 @@ public partial class Connection: ModelElement<DXDDD.Connection>
   ///   Parent Transition Identifier
   /// </summary>
   [DataMember]
-  public String? ParentTransitionId
+  public DocumentModel.HexInt? ParentTransitionId
   {
-    get => _Element?.ParentTransitionId;
-    set => _ExistingElement.ParentTransitionId = value;
+    get => HexIntConverter.GetValue(_Element?.ParentTransitionId);
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -83,10 +83,10 @@ public partial class Connection: ModelElement<DXDDD.Connection>
   ///   Sibling Transition Identifier
   /// </summary>
   [DataMember]
-  public String? SiblingTransitionId
+  public DocumentModel.HexInt? SiblingTransitionId
   {
-    get => _Element?.SiblingTransitionId;
-    set => _ExistingElement.SiblingTransitionId = value;
+    get => HexIntConverter.GetValue(_Element?.SiblingTransitionId);
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -94,10 +94,10 @@ public partial class Connection: ModelElement<DXDDD.Connection>
   ///   Presentation Identifier
   /// </summary>
   [DataMember]
-  public String? PresentationId
+  public DocumentModel.HexInt? PresentationId
   {
-    get => _Element?.PresentationId;
-    set => _ExistingElement.PresentationId = value;
+    get => HexIntConverter.GetValue(_Element?.PresentationId);
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   

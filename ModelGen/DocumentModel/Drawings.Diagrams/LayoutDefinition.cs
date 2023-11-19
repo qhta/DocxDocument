@@ -17,10 +17,10 @@ public partial class LayoutDefinition: ModelElement<DXDDD.LayoutDefinition>
   ///   uniqueId
   /// </summary>
   [DataMember]
-  public String? UniqueId
+  public DocumentModel.HexInt? UniqueId
   {
-    get => _Element?.UniqueId;
-    set => _ExistingElement.UniqueId = value;
+    get => HexIntConverter.GetValue(_Element?.UniqueId);
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   

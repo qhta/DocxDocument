@@ -17,10 +17,10 @@ public partial class Point: ModelElement<DXDDD.Point>
   ///   Model Identifier
   /// </summary>
   [DataMember]
-  public String? ModelId
+  public DocumentModel.HexInt? ModelId
   {
-    get => _Element?.ModelId;
-    set => _ExistingElement.ModelId = value;
+    get => HexIntConverter.GetValue(_Element?.ModelId);
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -28,10 +28,10 @@ public partial class Point: ModelElement<DXDDD.Point>
   ///   Connection Identifier
   /// </summary>
   [DataMember]
-  public String? ConnectionId
+  public DocumentModel.HexInt? ConnectionId
   {
-    get => _Element?.ConnectionId;
-    set => _ExistingElement.ConnectionId = value;
+    get => HexIntConverter.GetValue(_Element?.ConnectionId);
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   

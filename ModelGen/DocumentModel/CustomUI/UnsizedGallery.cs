@@ -259,10 +259,10 @@ public partial class UnsizedGallery: ModelElement<DXOCUI.UnsizedGallery>
   ///   getItemID
   /// </summary>
   [DataMember]
-  public String? GetItemID
+  public DocumentModel.HexInt? GetItemID
   {
-    get => _Element?.GetItemID;
-    set => _ExistingElement.GetItemID = value;
+    get => HexIntConverter.GetValue(_Element?.GetItemID);
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -281,10 +281,10 @@ public partial class UnsizedGallery: ModelElement<DXOCUI.UnsizedGallery>
   ///   getSelectedItemID
   /// </summary>
   [DataMember]
-  public String? GetSelectedItemID
+  public DocumentModel.HexInt? GetSelectedItemID
   {
-    get => _Element?.GetSelectedItemID;
-    set => _ExistingElement.GetSelectedItemID = value;
+    get => HexIntConverter.GetValue(_Element?.GetSelectedItemID);
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -303,10 +303,10 @@ public partial class UnsizedGallery: ModelElement<DXOCUI.UnsizedGallery>
   ///   id
   /// </summary>
   [DataMember]
-  public String? Id
+  public DocumentModel.HexInt? Id
   {
-    get => _Element?.Id;
-    set => _ExistingElement.Id = value;
+    get => HexIntConverter.GetValue(_Element?.Id);
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   

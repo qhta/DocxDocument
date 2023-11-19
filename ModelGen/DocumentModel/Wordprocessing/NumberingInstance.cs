@@ -17,10 +17,10 @@ public partial class NumberingInstance: ModelElement<DXW.NumberingInstance>
   ///   numId
   /// </summary>
   [DataMember]
-  public Int32? NumberID
+  public DocumentModel.HexInt? NumberID
   {
-    get => _Element?.NumberID?.Value;
-    set => _ExistingElement.NumberID = value;
+    get => HexIntConverter.GetValue(_Element?.NumberID);
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -28,10 +28,10 @@ public partial class NumberingInstance: ModelElement<DXW.NumberingInstance>
   ///   durableId
   /// </summary>
   [DataMember]
-  public Int32? DurableId
+  public DocumentModel.HexInt? DurableId
   {
-    get => _Element?.DurableId?.Value;
-    set => _ExistingElement.DurableId = value;
+    get => HexIntConverter.GetValue(_Element?.DurableId);
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -39,10 +39,10 @@ public partial class NumberingInstance: ModelElement<DXW.NumberingInstance>
   ///   AbstractNumId.
   /// </summary>
   [DataMember]
-  public DMW.AbstractNumId? AbstractNumId
+  public DocumentModel.HexInt? AbstractNumId
   {
-    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.NonNegativeDecimalNumberType");
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.NonNegativeDecimalNumberType");
+    get => _Element?.GetHexIntVal<DXW.AbstractNumId>();
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
 }

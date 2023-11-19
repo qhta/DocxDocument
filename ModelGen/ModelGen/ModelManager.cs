@@ -444,6 +444,8 @@ public static class ModelManager
 
   public static string GetTargetName(this PropInfo prop)
   {
+    if (prop.Name.StartsWith("UnicodeSignature"))
+      Debug.Assert(true);
     if (ModelConfig.Instance == null)
       throw new System.InvalidOperationException(CommonStrings.Model_configuration_not_defined);
 
@@ -456,23 +458,53 @@ public static class ModelManager
     return prop.Name;
   }
 
-  public static TypeInfo? GetTargetPropertyType(this PropInfo propInfo)
+  public static TypeInfo? GetTargetPropertyType(this PropInfo prop)
   {
-    var result = propInfo.PropertyType;
-    if (result != null)
+    if (ModelConfig.Instance == null)
+      throw new System.InvalidOperationException(CommonStrings.Model_configuration_not_defined);
+    //if (prop.Name.EndsWith("Id"))
+    //{
+    //  var origPropType = prop.PropertyType;
+    //  if (origPropType.Type==typeof(DX.Int32Value))
+    //    return 
+    //}
+    //else
     {
-      if (result.IsAcceptedAfter(PPS.CodeGen) || result.IsConversionTarget)
-        return result;
-      if (result.OriginalNamespace.StartsWith("System"))
-        return result;
-      if (result.TargetNamespace != null)
+      var result = prop.PropertyType;
+      if (result != null)
       {
-        if (result.TargetNamespace.StartsWith("System") || TypeManager.GetNamespace(result.TargetNamespace).IsTarget)
-          return result;
+        if (prop.DeclaringType != null)
+        {
+          var propName = prop.Name;
+          if (propName == "RegroupId")
+            Debug.Assert(true);
+          var fullName = prop.DeclaringType.GetFullName(false, true, true) + "." + prop.Name;
+          if (ModelConfig.Instance.PropertyTypeConversion.TryGetValue(fullName, out var newTypeName)
+            || ModelConfig.Instance.PropertyTypeConversion.TryGetValue(propName, out newTypeName))
+          {
+            var k = newTypeName.LastIndexOf('.');
+            if (k != -1)
+            {
+              var aNamespace = newTypeName.Substring(0, k);
+              var aTypeName = newTypeName.Substring(k + 1);
+              TypeManager.KnownNamespaces.TryGetValue(aNamespace, out var targetNS);
+              Debug.Assert(targetNS != null, $"Target namespace \"{targetNS}\" not found");
+              if (targetNS.TypeNames.TryGetValue(aTypeName, out var result1))
+                return result1;
+              var aType = typeof(DocumentModel.ModelElement).Assembly.GetExportedTypes().FirstOrDefault(item => item.Name == aTypeName);
+              Debug.Assert(aType != null, $"Target type \"{newTypeName}\" not found");
+              result = new TypeInfo(aType);
+              result.SetRejected(PPS.CodeGen);
+              return result;
+            }
+          }
+
+        }
+
+        //result = result.GetConversionTarget();
       }
-      result = result.GetConversionTarget();
+      return result;
     }
-    return result;
   }
   #endregion
 

@@ -28,10 +28,10 @@ public partial class TaskHistoryEvent: ModelElement<DXO21DT.TaskHistoryEvent>
   ///   id, this property is only available in Office 2021 and later.
   /// </summary>
   [DataMember]
-  public String? Id
+  public DocumentModel.HexInt? Id
   {
-    get => _Element?.Id;
-    set => _ExistingElement.Id = value;
+    get => HexIntConverter.GetValue(_Element?.Id);
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   

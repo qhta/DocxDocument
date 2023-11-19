@@ -17,10 +17,10 @@ public partial class Group: ModelElement<DXV.Group>
   ///   Unique Identifier
   /// </summary>
   [DataMember]
-  public String? Id
+  public DocumentModel.HexInt? Id
   {
-    get => _Element?.Id;
-    set => _ExistingElement.Id = value;
+    get => HexIntConverter.GetValue(_Element?.Id);
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -160,10 +160,10 @@ public partial class Group: ModelElement<DXV.Group>
   ///   regroupid
   /// </summary>
   [DataMember]
-  public Int64? RegroupId
+  public DocumentModel.HexInt? RegroupId
   {
-    get => _Element?.RegroupId?.Value;
-    set => _ExistingElement.RegroupId = value;
+    get => HexIntConverter.GetValue(_Element?.RegroupId);
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   

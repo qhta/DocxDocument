@@ -524,11 +524,29 @@ namespace ModelGenApp {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Is excluded?.
+        ///   Looks up a localized string similar to Excl.prop..
         /// </summary>
         public static string ExcludedProperty {
             get {
                 return ResourceManager.GetString("ExcludedProperty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Excl.prop.ns..
+        /// </summary>
+        public static string ExcludedPropertyNamespace {
+            get {
+                return ResourceManager.GetString("ExcludedPropertyNamespace", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Is property namespace excluded?.
+        /// </summary>
+        public static string ExcludedPropertyNamespaceTooltip {
+            get {
+                return ResourceManager.GetString("ExcludedPropertyNamespaceTooltip", resourceCulture);
             }
         }
         
@@ -542,7 +560,25 @@ namespace ModelGenApp {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Is target excluded?.
+        ///   Looks up a localized string similar to Excl.prop.type.
+        /// </summary>
+        public static string ExcludedPropertyType {
+            get {
+                return ResourceManager.GetString("ExcludedPropertyType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Is property type excluded?.
+        /// </summary>
+        public static string ExcludedPropertyTypeTooltip {
+            get {
+                return ResourceManager.GetString("ExcludedPropertyTypeTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Excl.target ns..
         /// </summary>
         public static string ExcludedTargetNamespace {
             get {
@@ -574,6 +610,24 @@ namespace ModelGenApp {
         public static string ExcludedTypeTooltip {
             get {
                 return ResourceManager.GetString("ExcludedTypeTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Excl.val.type.
+        /// </summary>
+        public static string ExcludedValueType {
+            get {
+                return ResourceManager.GetString("ExcludedValueType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Is value type excluded from processing?.
+        /// </summary>
+        public static string ExcludedValueTypeTooltip {
+            get {
+                return ResourceManager.GetString("ExcludedValueTypeTooltip", resourceCulture);
             }
         }
         
@@ -1039,6 +1093,96 @@ namespace ModelGenApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Original property name.
+        /// </summary>
+        public static string OriginalPropertyName {
+            get {
+                return ResourceManager.GetString("OriginalPropertyName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Original property namespace.
+        /// </summary>
+        public static string OriginalPropertyNamespace {
+            get {
+                return ResourceManager.GetString("OriginalPropertyNamespace", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This is a namespace of the type that declares the property..
+        /// </summary>
+        public static string OriginalPropertyNamespaceTooltip {
+            get {
+                return ResourceManager.GetString("OriginalPropertyNamespaceTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This is an original property name read from source..
+        /// </summary>
+        public static string OriginalPropertyNameTooltip {
+            get {
+                return ResourceManager.GetString("OriginalPropertyNameTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Original property type.
+        /// </summary>
+        public static string OriginalPropertyType {
+            get {
+                return ResourceManager.GetString("OriginalPropertyType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This is an original type that declares the property..
+        /// </summary>
+        public static string OriginalPropertyTypeTooltip {
+            get {
+                return ResourceManager.GetString("OriginalPropertyTypeTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Original value namespace.
+        /// </summary>
+        public static string OriginalPropValueNamespace {
+            get {
+                return ResourceManager.GetString("OriginalPropValueNamespace", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This is a namespace of original type of property value..
+        /// </summary>
+        public static string OriginalPropValueNamespaceTooltip {
+            get {
+                return ResourceManager.GetString("OriginalPropValueNamespaceTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Original value type.
+        /// </summary>
+        public static string OriginalPropValueType {
+            get {
+                return ResourceManager.GetString("OriginalPropValueType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This is an original type of property value..
+        /// </summary>
+        public static string OriginalPropValueTypeTooltip {
+            get {
+                return ResourceManager.GetString("OriginalPropValueTypeTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Original type name.
         /// </summary>
         public static string OriginalTypeName {
@@ -1162,6 +1306,24 @@ namespace ModelGenApp {
         public static string PropertyNameTooltip {
             get {
                 return ResourceManager.GetString("PropertyNameTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to #.
+        /// </summary>
+        public static string RecordNumber {
+            get {
+                return ResourceManager.GetString("RecordNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Number of the record in the collection.
+        /// </summary>
+        public static string RecordNumberTooltip {
+            get {
+                return ResourceManager.GetString("RecordNumberTooltip", resourceCulture);
             }
         }
         
@@ -1522,6 +1684,24 @@ namespace ModelGenApp {
         public static string TargetNameTooltip {
             get {
                 return ResourceManager.GetString("TargetNameTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Target property name.
+        /// </summary>
+        public static string TargetPropertyName {
+            get {
+                return ResourceManager.GetString("TargetPropertyName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Target property name is a new property name written to output..
+        /// </summary>
+        public static string TargetPropertyNameTooltip {
+            get {
+                return ResourceManager.GetString("TargetPropertyNameTooltip", resourceCulture);
             }
         }
         

@@ -17,6 +17,58 @@ public abstract class ModelConfigViewModel : ViewModel
 
   public virtual string Caption { get; protected set; } = CommonStrings.ModelConfiguration;
 
+
+  /// <summary>
+  /// Is progress bar visible. Should be true if data is loaded in backround.
+  /// </summary>
+  public bool ShowProgressBar
+  {
+    get { return _ShowProgressBar; }
+    set
+    {
+      if (_ShowProgressBar != value)
+      {
+        _ShowProgressBar = value;
+        NotifyPropertyChanged(nameof(ShowProgressBar));
+      }
+    }
+  }
+  private bool _ShowProgressBar;
+
+  /// <summary>
+  /// Maximum value of progress bar. Considered only when progress bar is visible.
+  /// </summary>
+  public int ProgressBarMaximum
+  {
+    get { return _ProgressBarMaximum; }
+    set
+    {
+      if (_ProgressBarMaximum != value)
+      {
+        _ProgressBarMaximum = value;
+        NotifyPropertyChanged(nameof(ProgressBarMaximum));
+      }
+    }
+  }
+  private int _ProgressBarMaximum;
+
+  /// <summary>
+  /// Actual value of progress bar. Considered only when progress bar is visible.
+  /// </summary>
+  public int ProgressBarValue
+  {
+    get { return _ProgressBarValue; }
+    set
+    {
+      if (_ProgressBarValue != value)
+      {
+        _ProgressBarValue = value;
+        NotifyPropertyChanged(nameof(ProgressBarValue));
+      }
+    }
+  }
+  private int _ProgressBarValue;
+
   /// <summary>
   /// Stores loaded assembly reference. Used in <see cref="ReloadData"/>
   /// </summary>

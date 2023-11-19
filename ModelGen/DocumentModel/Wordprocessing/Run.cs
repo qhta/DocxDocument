@@ -19,7 +19,7 @@ public partial class Run: ModelElement<DXW.Run>
   [DataMember]
   public DM.HexBinary? RsidRunProperties
   {
-    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    get => HexIntConverter.GetValue(_Element?.RsidRunProperties);
     set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
@@ -30,7 +30,7 @@ public partial class Run: ModelElement<DXW.Run>
   [DataMember]
   public DM.HexBinary? RsidRunDeletion
   {
-    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    get => HexIntConverter.GetValue(_Element?.RsidRunDeletion);
     set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
@@ -41,7 +41,7 @@ public partial class Run: ModelElement<DXW.Run>
   [DataMember]
   public DM.HexBinary? RsidRunAddition
   {
-    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    get => HexIntConverter.GetValue(_Element?.RsidRunAddition);
     set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   

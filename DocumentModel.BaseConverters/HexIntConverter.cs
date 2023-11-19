@@ -3,7 +3,7 @@
 public static class HexIntConverter
 {
 
-  #region HexInt get/set methods
+  #region HexInt get methods
 
   /// <summary>
   /// Gets a HexInt value from OpenXmlCompositeElement containing OpenXmlElementType element with a "Val" property.
@@ -107,31 +107,27 @@ public static class HexIntConverter
   }
 
   /// <summary>
-  /// Sets a HexInt value in the specified OpenXmlCompositeElement containing OpenXmlElementType element with a "Val" property.
+  /// Gets a HexInt value from the specified OpenXml Int32Value.
   /// </summary>
-  /// <typeparam name="OpenElementType"></typeparam>
-  /// <param name="openXmlElement"></param>
-  /// <param name="value"></param>
-  public static void SetValue<OpenElementType>(this OpenXmlCompositeElement openXmlElement, HexInt? value)
-    where OpenElementType : OpenXmlElement, new()
+  /// <param name="element"></param>
+  /// <returns></returns>
+  public static HexInt? GetValue(this DX.Int32Value? element)
   {
-    var valProperty = typeof(OpenElementType).GetProperty("Val") ?? typeof(OpenElementType).GetProperty("Value");
-    Debug.Assert(valProperty != null);
-    var itemElement = openXmlElement.GetFirstChild<OpenElementType>();
-    if (itemElement != null)
-    {
-      if (value != null)
-        valProperty.SetValue(itemElement, HexIntConverter.CreateHexBinaryValue(value));
-      else
-        itemElement.Remove();
-    }
-    else
-    if (value != null)
-    {
-      itemElement = new OpenElementType();
-      valProperty.SetValue(itemElement, new HexBinaryValue(value.ToString()));
-      openXmlElement.AppendChild(itemElement);
-    }
+    if (element?.Value != null)
+      return element.Value;
+    return null;
+  }
+
+  /// <summary>
+  /// Gets a HexInt value from the specified OpenXml Int32Value.
+  /// </summary>
+  /// <param name="element"></param>
+  /// <returns></returns>
+  public static HexInt? GetValue(this DX.UInt32Value? element)
+  {
+    if (element?.Value != null)
+      return element.Value;
+    return null;
   }
 
   /// <summary>
@@ -143,6 +139,18 @@ public static class HexIntConverter
   {
     if (element?.Val?.Value != null)
       return element.Val.Value;
+    return null;
+  }
+
+  /// <summary>
+  /// Gets a HexInt value from the specified OpenXml StringValue.
+  /// </summary>
+  /// <param name="element"></param>
+  /// <returns></returns>
+  public static HexInt? GetValue(this DX.StringValue? element)
+  {
+    if (element?.Value != null)
+      return element.Value;
     return null;
   }
 
@@ -225,4 +233,147 @@ public static class HexIntConverter
     return element;
   }
   #endregion
+
+
+  #region OpenXmlLeafElement with Val property conversion methods
+  public static HexInt? GetHexIntVal<OpenXmlElementType> (this DX.OpenXmlLeafElement? openXmlElement, 
+    string? propName = null) 
+    where OpenXmlElementType : DX.OpenXmlLeafElement
+  {
+    if (openXmlElement != null)
+    {
+      var element = openXmlElement.Elements<OpenXmlElementType>().FirstOrDefault();
+      if (element != null)
+      {
+        if (propName==null) propName = "Val";
+        var valProperty = typeof(OpenXmlElementType).GetProperty(propName);
+        Debug.Assert(valProperty != null, $"\"Val\" property in {typeof(OpenXmlElementType)} not found");
+        var val = valProperty.GetValue(element);
+        if (val != null)
+        {
+          var valType = val.GetType();
+          var valueProperty = valType.GetProperty("Value");
+          Debug.Assert(valueProperty != null, $"\"Value\" property in {valType} not found");
+          var value = valueProperty.GetValue(val);
+          if (value is not null)
+          {
+            if (value is string str)
+              return str;
+          }
+        }
+      }
+    }
+    return null;
+  }
+
+  public static void SetHexIntVal<OpenXmlElementType>(this OpenXmlLeafElement openXmlElement, String? value,
+    string? propName = null) 
+    where OpenXmlElementType : TypedOpenXmlLeafElement, new()
+  {
+    if (propName==null)
+      propName = "Val";
+    var valProperty = typeof(OpenXmlElementType).GetProperty(propName);
+    Debug.Assert(valProperty != null);
+    var itemElement = openXmlElement.GetFirstChild<OpenXmlElementType>();
+    if (itemElement != null)
+    {
+      if (value != null)
+        valProperty.SetValue(itemElement, new HexBinaryValue(value));
+      else
+        itemElement.Remove();
+    }
+    else
+    if (value != null)
+    {
+      itemElement = new OpenXmlElementType();
+      valProperty.SetValue(itemElement, new StringValue(value));
+      openXmlElement.AppendChild(itemElement);
+    }
+  }
+  #endregion
+
+  #region OpenXmlLeafElement with Val property conversion methods
+  public static HexInt? GetHexIntVal<OpenXmlElementType> (this DX.OpenXmlCompositeElement? openXmlElement, 
+    string? propName = null) 
+    where OpenXmlElementType : DX.OpenXmlLeafElement
+  {
+    if (openXmlElement != null)
+    {
+      var element = openXmlElement.Elements<OpenXmlElementType>().FirstOrDefault();
+      if (element != null)
+      {
+        if (propName==null) propName = "Val";
+        var valProperty = typeof(OpenXmlElementType).GetProperty(propName);
+        Debug.Assert(valProperty != null, $"\"Val\" property in {typeof(OpenXmlElementType)} not found");
+        var val = valProperty.GetValue(element);
+        if (val != null)
+        {
+          var valType = val.GetType();
+          var valueProperty = valType.GetProperty("Value");
+          Debug.Assert(valueProperty != null, $"\"Value\" property in {valType} not found");
+          var value = valueProperty.GetValue(val);
+          if (value is not null)
+          {
+            if (value is string str)
+              return str;
+          }
+        }
+      }
+    }
+    return null;
+  }
+
+  public static void SetHexIntVal<OpenXmlElementType>(this OpenXmlCompositeElement openXmlElement, String? value,
+    string? propName = null) 
+    where OpenXmlElementType : TypedOpenXmlLeafElement, new()
+  {
+    if (propName==null)
+      propName = "Val";
+    var valProperty = typeof(OpenXmlElementType).GetProperty(propName);
+    Debug.Assert(valProperty != null);
+    var itemElement = openXmlElement.GetFirstChild<OpenXmlElementType>();
+    if (itemElement != null)
+    {
+      if (value != null)
+        valProperty.SetValue(itemElement, new HexBinaryValue(value));
+      else
+        itemElement.Remove();
+    }
+    else
+    if (value != null)
+    {
+      itemElement = new OpenXmlElementType();
+      valProperty.SetValue(itemElement, new StringValue(value));
+      openXmlElement.AppendChild(itemElement);
+    }
+  }
+  #endregion
+
+  /// <summary>
+  /// Sets a HexInt value in the specified OpenXmlCompositeElement containing OpenXmlElementType element with a "Val" property.
+  /// </summary>
+  /// <typeparam name="OpenElementType"></typeparam>
+  /// <param name="openXmlElement"></param>
+  /// <param name="value"></param>
+  public static void SetValue<OpenElementType>(this OpenXmlCompositeElement openXmlElement, HexInt? value)
+    where OpenElementType : OpenXmlElement, new()
+  {
+    var valProperty = typeof(OpenElementType).GetProperty("Val") ?? typeof(OpenElementType).GetProperty("Value");
+    Debug.Assert(valProperty != null);
+    var itemElement = openXmlElement.GetFirstChild<OpenElementType>();
+    if (itemElement != null)
+    {
+      if (value != null)
+        valProperty.SetValue(itemElement, HexIntConverter.CreateHexBinaryValue(value));
+      else
+        itemElement.Remove();
+    }
+    else
+    if (value != null)
+    {
+      itemElement = new OpenElementType();
+      valProperty.SetValue(itemElement, new HexBinaryValue(value.ToString()));
+      openXmlElement.AppendChild(itemElement);
+    }
+  }
 }

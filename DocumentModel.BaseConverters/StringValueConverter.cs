@@ -60,7 +60,7 @@ public static class StringValueConverter
   }
   #endregion
 
-  #region TypedOpenXmlLeafElement with Val property conversion methods
+  #region OpenXmlLeafElement with Val property conversion methods
   public static string? GetStringVal<OpenXmlElementType> (this DX.OpenXmlCompositeElement? openXmlElement, 
     string? propName = null) 
     where OpenXmlElementType : DX.OpenXmlLeafElement

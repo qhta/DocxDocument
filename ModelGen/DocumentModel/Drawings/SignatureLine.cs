@@ -28,10 +28,10 @@ public partial class SignatureLine: ModelElement<DXO13D.SignatureLine>
   ///   id, this property is only available in Office 2013 and later.
   /// </summary>
   [DataMember]
-  public String? Id
+  public DocumentModel.HexInt? Id
   {
-    get => _Element?.Id;
-    set => _ExistingElement.Id = value;
+    get => HexIntConverter.GetValue(_Element?.Id);
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -39,10 +39,10 @@ public partial class SignatureLine: ModelElement<DXO13D.SignatureLine>
   ///   provId, this property is only available in Office 2013 and later.
   /// </summary>
   [DataMember]
-  public String? ProviderId
+  public DocumentModel.HexInt? ProviderId
   {
-    get => _Element?.ProviderId;
-    set => _ExistingElement.ProviderId = value;
+    get => HexIntConverter.GetValue(_Element?.ProviderId);
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   

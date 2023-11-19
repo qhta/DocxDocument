@@ -39,10 +39,10 @@ public partial class DataBinding: ModelElement<DXO13W.DataBinding>
   ///   Custom XML Data Storage ID
   /// </summary>
   [DataMember]
-  public String? StoreItemId
+  public DocumentModel.HexInt? StoreItemId
   {
-    get => _Element?.StoreItemId;
-    set => _ExistingElement.StoreItemId = value;
+    get => HexIntConverter.GetValue(_Element?.StoreItemId);
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
 }

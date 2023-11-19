@@ -36,7 +36,6 @@
     <PackageReference Include="IgnoresAccessChecksToGenerator" Version="0.6.0" PrivateAssets="All" />
     <PackageReference Include="Namotion.Reflection" Version="3.1.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    <PackageReference Include="Qhta.Collections" Version="4.6.0" />
     <PackageReference Include="Qhta.HtmlUtils" Version="2.1.0" />
     <PackageReference Include="Qhta.TestHelper" Version="3.0.0" />
     <PackageReference Include="Qhta.TestUtilities" Version="1.0.0" />
@@ -48,6 +47,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\MyLib\Qhta.Collections\Qhta.Collections.csproj" />
     <ProjectReference Include="..\..\ModelDocumentation\ModelDocumentation.csproj" />
     <ProjectReference Include="..\..\ModelGenDataConfig\ModelGenDataConfig.csproj" />
     <ProjectReference Include="..\..\DocumentModel.Attributes\DocumentModel.Attributes.csproj" />

@@ -1,12 +1,10 @@
 ﻿using System.Collections.ObjectModel;
-using System.Data;
-using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
-using System.Linq.Expressions;
 using System.Reflection;
 
 using Qhta.Collections;
 using Qhta.TextUtils;
+using DM = DocumentModel;
 
 namespace ModelGenDataConfig;
 
@@ -395,13 +393,13 @@ public class ModelConfigData
 
   public WildcardStringDictionary PropertyTypeConversion { get; } = new()
   {
-    { "DocumentFormat.OpenXml.Wordprocessing.DocumentSettings.DocumentId", "HexInt" },
-    { "DocumentFormat.OpenXml.Wordprocessing.DocumentSettings.PersistentDocumentId", "Guid" },
-    { "DocumentFormat.OpenXml.Wordprocessing.CheckBoxSymbolType.Val", "HexChar" },
-    { "DocumentFormat.OpenXml.Wordprocessing.Mcd.BEncrypt", "HexChar" },
-    { "DocumentFormat.OpenXml.Wordprocessing.Mcd.Cmg", "HexChar" },
-    { "Rsid", "HexInt" },
-    { "DocumentFormat.OpenXml.Wordprocessing.Rsids.RsidRoot", "HexInt" },
+    { "DocumentFormat.OpenXml.Wordprocessing.DocumentSettings.DocumentId", nameof(DM.HexInt) },
+    { "DocumentFormat.OpenXml.Wordprocessing.DocumentSettings.PersistentDocumentId", nameof(System.Guid) },
+    { "DocumentFormat.OpenXml.Wordprocessing.CheckBoxSymbolType.Val", nameof(DM.HexChar) },
+    { "DocumentFormat.OpenXml.Wordprocessing.Mcd.BEncrypt", nameof(DM.HexChar) },
+    { "DocumentFormat.OpenXml.Wordprocessing.Mcd.Cmg", nameof(DM.HexChar) },
+    { "Rsid", nameof(DM.HexInt) },
+    { "DocumentFormat.OpenXml.Wordprocessing.Rsids.RsidRoot", nameof(DM.HexInt) },
     { "DocumentFormat.OpenXml.Wordprocessing.Rsids.Items", "Collection<HexInt>" },
   };
 
@@ -417,8 +415,11 @@ public class ModelConfigData
         var k = "Collection<".Length;
         var str = item.Value.Substring(k, item.Value.Length - k - 1);
         var type = GetType(str);
-        type = typeof(Collection<>).MakeGenericType(type);
-        PropertyTypes.Add(item.Key, type);
+        if (type != null)
+        {
+          type = typeof(Collection<>).MakeGenericType(type);
+          PropertyTypes.Add(item.Key, type);
+        }
       }
       else
       {
@@ -870,6 +871,7 @@ public class ModelConfigData
       }
     }
     catch { return false; }
+    BuildPropertyTypesDictionary();
     return true;
   }
 
@@ -951,16 +953,30 @@ public class ModelConfigData
   }
   #endregion
 
-  private Type GetType(string typeName)
+  private Type? GetType(string typeName)
   {
-    var types = typeof(System.String).Assembly.GetTypes();
-    var type = types.FirstOrDefault(item => item.Name == typeName);
-    if (type == null)
+    Type? result = null;
+    string aNamespace = "";
+    string aTypeName = typeName;
+    var k = typeName.IndexOf(".");
+    if (k != -1)
     {
-      types = typeof(DocumentModel.ModelElement).Assembly.GetTypes();
-      type = types.FirstOrDefault(item => item.Name == typeName);
+      aNamespace = typeName.Substring(0, k);
+      aTypeName = typeName.Substring(k + 1);
     }
-    Debug.Assert(type != null, $"Type {typeName} not found");
-    return type;
+    if (aNamespace == "" || aNamespace == "System")
+    {
+      var types = typeof(System.String).Assembly.GetTypes();
+      result = types.FirstOrDefault(item => item.Name == typeName);
+    }
+    if (result == null)
+    {
+      if (aNamespace == "" || aNamespace == "DocumentModel")
+      {
+        var types = typeof(DocumentModel.ModelElement).Assembly.GetTypes();
+        result = types.FirstOrDefault(item => item.Name == aTypeName);
+      }
+    }
+    return result;
   }
 }

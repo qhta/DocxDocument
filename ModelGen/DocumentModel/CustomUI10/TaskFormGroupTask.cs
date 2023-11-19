@@ -17,10 +17,10 @@ public partial class TaskFormGroupTask: ModelElement<DXO10CUI.TaskFormGroupTask>
   ///   id, this property is only available in Office 2010 and later.
   /// </summary>
   [DataMember]
-  public String? Id
+  public DocumentModel.HexInt? Id
   {
-    get => _Element?.Id;
-    set => _ExistingElement.Id = value;
+    get => HexIntConverter.GetValue(_Element?.Id);
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -28,10 +28,10 @@ public partial class TaskFormGroupTask: ModelElement<DXO10CUI.TaskFormGroupTask>
   ///   idQ, this property is only available in Office 2010 and later.
   /// </summary>
   [DataMember]
-  public String? QualifiedId
+  public DocumentModel.HexInt? QualifiedId
   {
-    get => _Element?.QualifiedId;
-    set => _ExistingElement.QualifiedId = value;
+    get => HexIntConverter.GetValue(_Element?.QualifiedId);
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -83,10 +83,10 @@ public partial class TaskFormGroupTask: ModelElement<DXO10CUI.TaskFormGroupTask>
   ///   insertAfterQ, this property is only available in Office 2010 and later.
   /// </summary>
   [DataMember]
-  public String? InsertAfterQulifiedId
+  public DocumentModel.HexInt? InsertAfterQulifiedId
   {
-    get => _Element?.InsertAfterQulifiedId;
-    set => _ExistingElement.InsertAfterQulifiedId = value;
+    get => HexIntConverter.GetValue(_Element?.InsertAfterQulifiedId);
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -94,10 +94,10 @@ public partial class TaskFormGroupTask: ModelElement<DXO10CUI.TaskFormGroupTask>
   ///   insertBeforeQ, this property is only available in Office 2010 and later.
   /// </summary>
   [DataMember]
-  public String? InsertBeforeQulifiedId
+  public DocumentModel.HexInt? InsertBeforeQulifiedId
   {
-    get => _Element?.InsertBeforeQulifiedId;
-    set => _ExistingElement.InsertBeforeQulifiedId = value;
+    get => HexIntConverter.GetValue(_Element?.InsertBeforeQulifiedId);
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   

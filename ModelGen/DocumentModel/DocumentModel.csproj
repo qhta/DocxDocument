@@ -23,6 +23,7 @@
     <ProjectReference Include="..\..\DocumentModel.Attributes\DocumentModel.Attributes.csproj" />
     <ProjectReference Include="..\..\DocumentModel.BaseConverters\DocumentModel.BaseConverters.csproj" />
     <ProjectReference Include="..\..\DocumentModel.BaseTypes\DocumentModel.BaseTypes.csproj" />
+    <ProjectReference Include="..\..\DocumentModel.VariantTypes\DocumentModel.VariantTypes.csproj" />
   </ItemGroup>
 
 </Project> 

@@ -28,10 +28,10 @@ public partial class ActiveWritingStyle: ModelElement<DXW.ActiveWritingStyle>
   ///   Grammatical Engine ID
   /// </summary>
   [DataMember]
-  public UInt16? VendorID
+  public DocumentModel.HexInt? VendorID
   {
-    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt16]");
-    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt16]");
+    get => HexIntConverter.GetValue(_Element?.VendorID);
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   

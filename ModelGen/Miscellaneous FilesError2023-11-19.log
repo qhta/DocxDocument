@@ -1,0 +1,54 @@
+
+
+Date:2023-11-19 04:55:26,757
+Thread:[1]
+Level:ERROR
+Logger:InsertBlazorCode.SyncfusionCodeGeneratorMenuCommand                         [(null)]
+Message:System.ArgumentException: Empty path name is not legal.
+   at System.IO.File.ReadAllText(String path)
+   at InsertBlazorCode.SyncfusionCodeGeneratorMenuCommand.queryStatusMenuCommand_BeforeQueryStatus(Object sender, EventArgs e) in C:\Git\RP\vsext_insertblazorcode\SyncfusionBlazorcodegenerator\SyncfusionCodeGeneratorMenuCommand.cs:line 333
+
+
+Date:2023-11-19 04:57:13,941
+Thread:[1]
+Level:ERROR
+Logger:InsertBlazorCode.SyncfusionCodeGeneratorMenuCommand                         [(null)]
+Message:System.ArgumentException: Empty path name is not legal.
+   at System.IO.File.ReadAllText(String path)
+   at InsertBlazorCode.SyncfusionCodeGeneratorMenuCommand.queryStatusMenuCommand_BeforeQueryStatus(Object sender, EventArgs e) in C:\Git\RP\vsext_insertblazorcode\SyncfusionBlazorcodegenerator\SyncfusionCodeGeneratorMenuCommand.cs:line 333
+
+
+Date:2023-11-19 10:17:28,172
+Thread:[1]
+Level:ERROR
+Logger:InsertBlazorCode.SyncfusionCodeGeneratorMenuCommand                         [(null)]
+Message:System.ArgumentException: Empty path name is not legal.
+   at System.IO.File.ReadAllText(String path)
+   at InsertBlazorCode.SyncfusionCodeGeneratorMenuCommand.queryStatusMenuCommand_BeforeQueryStatus(Object sender, EventArgs e) in C:\Git\RP\vsext_insertblazorcode\SyncfusionBlazorcodegenerator\SyncfusionCodeGeneratorMenuCommand.cs:line 333
+
+
+Date:2023-11-19 10:19:21,635
+Thread:[1]
+Level:ERROR
+Logger:InsertBlazorCode.SyncfusionCodeGeneratorMenuCommand                         [(null)]
+Message:System.ArgumentException: Empty path name is not legal.
+   at System.IO.File.ReadAllText(String path)
+   at InsertBlazorCode.SyncfusionCodeGeneratorMenuCommand.queryStatusMenuCommand_BeforeQueryStatus(Object sender, EventArgs e) in C:\Git\RP\vsext_insertblazorcode\SyncfusionBlazorcodegenerator\SyncfusionCodeGeneratorMenuCommand.cs:line 333
+
+
+Date:2023-11-19 13:10:26,677
+Thread:[1]
+Level:ERROR
+Logger:InsertBlazorCode.SyncfusionCodeGeneratorMenuCommand                         [(null)]
+Message:System.ArgumentException: Empty path name is not legal.
+   at System.IO.File.ReadAllText(String path)
+   at InsertBlazorCode.SyncfusionCodeGeneratorMenuCommand.queryStatusMenuCommand_BeforeQueryStatus(Object sender, EventArgs e) in C:\Git\RP\vsext_insertblazorcode\SyncfusionBlazorcodegenerator\SyncfusionCodeGeneratorMenuCommand.cs:line 333
+
+
+Date:2023-11-19 13:10:41,527
+Thread:[1]
+Level:ERROR
+Logger:InsertBlazorCode.SyncfusionCodeGeneratorMenuCommand                         [(null)]
+Message:System.ArgumentException: Empty path name is not legal.
+   at System.IO.File.ReadAllText(String path)
+   at InsertBlazorCode.SyncfusionCodeGeneratorMenuCommand.queryStatusMenuCommand_BeforeQueryStatus(Object sender, EventArgs e) in C:\Git\RP\vsext_insertblazorcode\SyncfusionBlazorcodegenerator\SyncfusionCodeGeneratorMenuCommand.cs:line 333

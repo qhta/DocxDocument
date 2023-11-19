@@ -28,10 +28,10 @@ public partial class WriteProtection: ModelElement<DXW.WriteProtection>
   ///   Cryptographic Hashing Algorithm
   /// </summary>
   [DataMember]
-  public Int32? CryptographicAlgorithmSid
+  public DocumentModel.HexInt? CryptographicAlgorithmSid
   {
-    get => _Element?.CryptographicAlgorithmSid?.Value;
-    set => _ExistingElement.CryptographicAlgorithmSid = value;
+    get => HexIntConverter.GetValue(_Element?.CryptographicAlgorithmSid);
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -63,7 +63,7 @@ public partial class WriteProtection: ModelElement<DXW.WriteProtection>
   [DataMember]
   public DM.HexBinary? AlgorithmIdExtensibility
   {
-    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    get => HexIntConverter.GetValue(_Element?.AlgorithmIdExtensibility);
     set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
@@ -85,7 +85,7 @@ public partial class WriteProtection: ModelElement<DXW.WriteProtection>
   [DataMember]
   public DM.HexBinary? CryptographicProviderTypeExtensibility
   {
-    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    get => HexIntConverter.GetValue(_Element?.CryptographicProviderTypeExtensibility);
     set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   

@@ -23,7 +23,7 @@ public static class ModelConfig
   }
   public static string? DataFolder { get; private set; } = "";
 
-  public static ModelConfigData? Instance { get; private set; } = null!;
+  public static ModelConfigData? Instance { [DebuggerStepThrough] get; private set; } = null!;
 
   public static string GetAppDataBase()
   {

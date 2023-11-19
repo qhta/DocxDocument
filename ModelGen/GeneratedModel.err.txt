@@ -1,21 +1,38 @@
-Rebuild started...
+Rebuild started at 21:20...
 1>------ Rebuild All started: Project: DocumentModel.Attributes, Configuration: Debug Any CPU ------
 2>------ Rebuild All started: Project: DocumentModel.BaseTypes, Configuration: Debug Any CPU ------
 1>DocumentModel.Attributes -> D:\VS\Projects\DocxDocument\DocumentModel.Attributes\bin\Debug\net6.0\DocumentModel.Attributes.dll
 2>DocumentModel.BaseTypes -> D:\VS\Projects\DocxDocument\DocumentModel.BaseTypes\bin\Debug\net6.0\DocumentModel.BaseTypes.dll
-Time Elapsed: 00:00:00.0821082
+Time Elapsed: 00:00:00.1013198
 ========== Finished ==========
 
 
 3>------ Rebuild All started: Project: DocumentModel.BaseConverters, Configuration: Debug Any CPU ------
 4>------ Rebuild All started: Project: DocumentModel.VariantTypes, Configuration: Debug Any CPU ------
 4>DocumentModel.VariantTypes -> D:\VS\Projects\DocxDocument\DocumentModel.VariantTypes\bin\Debug\net6.0\DocumentModel.VariantTypes.dll
-3>D:\VS\Projects\DocxDocument\DocumentModel.BaseConverters\IdPartPairConverter.cs(21,7,21,36): warning CS0618: 'IdPartPair.RelationshipId.set' is obsolete: 'This object will be made immutable in a future release. Please use a new instance.'
-3>D:\VS\Projects\DocxDocument\DocumentModel.BaseConverters\OpenXmlPackageConverter.cs(62,13,62,32): warning CS0472: The result of the expression is always 'true' since a value of type 'CompressionOption' is never equal to 'null' of type 'CompressionOption?'
 3>DocumentModel.BaseConverters -> D:\VS\Projects\DocxDocument\DocumentModel.BaseConverters\bin\Debug\net6.0\DocumentModel.BaseConverters.dll
-3>Done building project "DocumentModel.BaseConverters.csproj".
 5>------ Rebuild All started: Project: DocumentModel, Configuration: Debug Any CPU ------
-5>DocumentModel -> D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\bin\Debug\net6.0\DocumentModel.dll
-========== Rebuild All: 5 succeeded, 0 failed, 0 skipped ==========
-========== Rebuild started at 20:44 and took 08,720 seconds ==========
+5>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Drawings.ChartDrawings16\Series.cs(22,37,22,55): error CS1503: Argument 1: cannot convert from 'DocumentFormat.OpenXml.EnumValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesLayout>' to 'DocumentFormat.OpenXml.HexBinaryValue?'
+5>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Vml\Arc.cs(44,37,44,56): error CS1503: Argument 1: cannot convert from 'DocumentFormat.OpenXml.IntegerValue' to 'DocumentFormat.OpenXml.HexBinaryValue?'
+5>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Vml\Curve.cs(165,37,165,56): error CS1503: Argument 1: cannot convert from 'DocumentFormat.OpenXml.IntegerValue' to 'DocumentFormat.OpenXml.HexBinaryValue?'
+5>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Wordprocessing.Drawings\RelativeWidth.cs(22,37,22,55): error CS1503: Argument 1: cannot convert from 'DocumentFormat.OpenXml.EnumValue<DocumentFormat.OpenXml.Office2010.Word.Drawing.SizeRelativeHorizontallyValues>' to 'DocumentFormat.OpenXml.HexBinaryValue?'
+5>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Vml\Shapetype.cs(165,37,165,56): error CS1503: Argument 1: cannot convert from 'DocumentFormat.OpenXml.IntegerValue' to 'DocumentFormat.OpenXml.HexBinaryValue?'
+5>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Wordprocessing\ActiveWritingStyle.cs(33,37,33,55): error CS1503: Argument 1: cannot convert from 'DocumentFormat.OpenXml.UInt16Value' to 'DocumentFormat.OpenXml.HexBinaryValue?'
+5>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Wordprocessing\TableGridChange.cs(33,21,33,57): error CS0311: The type 'DocumentFormat.OpenXml.Wordprocessing.PreviousTableGrid' cannot be used as type parameter 'OpenXmlElementType' in the generic type or method 'HexIntConverter.GetHexIntVal<OpenXmlElementType>(OpenXmlCompositeElement?)'. There is no implicit reference conversion from 'DocumentFormat.OpenXml.Wordprocessing.PreviousTableGrid' to 'DocumentFormat.OpenXml.OpenXmlLeafElement'.
+5>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Vml\ShapeDefaults.cs(22,37,22,57): error CS1503: Argument 1: cannot convert from 'DocumentFormat.OpenXml.IntegerValue' to 'DocumentFormat.OpenXml.HexBinaryValue?'
+5>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Vml\Shape.cs(165,37,165,56): error CS1503: Argument 1: cannot convert from 'DocumentFormat.OpenXml.IntegerValue' to 'DocumentFormat.OpenXml.HexBinaryValue?'
+5>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Vml\RoundRectangle.cs(154,37,154,56): error CS1503: Argument 1: cannot convert from 'DocumentFormat.OpenXml.IntegerValue' to 'DocumentFormat.OpenXml.HexBinaryValue?'
+5>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Vml\Rectangle.cs(165,37,165,56): error CS1503: Argument 1: cannot convert from 'DocumentFormat.OpenXml.IntegerValue' to 'DocumentFormat.OpenXml.HexBinaryValue?'
+5>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Vml\ImageFile.cs(154,37,154,56): error CS1503: Argument 1: cannot convert from 'DocumentFormat.OpenXml.IntegerValue' to 'DocumentFormat.OpenXml.HexBinaryValue?'
+5>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Vml\PolyLine.cs(165,37,165,56): error CS1503: Argument 1: cannot convert from 'DocumentFormat.OpenXml.IntegerValue' to 'DocumentFormat.OpenXml.HexBinaryValue?'
+5>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Vml\Line.cs(165,37,165,56): error CS1503: Argument 1: cannot convert from 'DocumentFormat.OpenXml.IntegerValue' to 'DocumentFormat.OpenXml.HexBinaryValue?'
+5>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Vml\Oval.cs(165,37,165,56): error CS1503: Argument 1: cannot convert from 'DocumentFormat.OpenXml.IntegerValue' to 'DocumentFormat.OpenXml.HexBinaryValue?'
+5>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Vml\Group.cs(165,37,165,56): error CS1503: Argument 1: cannot convert from 'DocumentFormat.OpenXml.IntegerValue' to 'DocumentFormat.OpenXml.HexBinaryValue?'
+5>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Wordprocessing\Table.cs(25,21,25,49): error CS0311: The type 'DocumentFormat.OpenXml.Wordprocessing.TableGrid' cannot be used as type parameter 'OpenXmlElementType' in the generic type or method 'HexIntConverter.GetHexIntVal<OpenXmlElementType>(OpenXmlCompositeElement?)'. There is no implicit reference conversion from 'DocumentFormat.OpenXml.Wordprocessing.TableGrid' to 'DocumentFormat.OpenXml.OpenXmlLeafElement'.
+5>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Wordprocessing\FootnoteEndnoteSeparatorReferenceType.cs(22,37,22,49): error CS1503: Argument 1: cannot convert from 'DocumentFormat.OpenXml.IntegerValue' to 'DocumentFormat.OpenXml.HexBinaryValue?'
+5>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Wordprocessing\FootnoteEndnoteReferenceType.cs(33,37,33,49): error CS1503: Argument 1: cannot convert from 'DocumentFormat.OpenXml.IntegerValue' to 'DocumentFormat.OpenXml.HexBinaryValue?'
+5>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Wordprocessing\FootnoteEndnoteType.cs(22,37,22,49): error CS1503: Argument 1: cannot convert from 'DocumentFormat.OpenXml.IntegerValue' to 'DocumentFormat.OpenXml.HexBinaryValue?'
+5>Done building project "DocumentModel.csproj" -- FAILED.
+========== Rebuild All: 4 succeeded, 1 failed, 0 skipped ==========
+========== Rebuild completed at 21:21 and took 14,771 seconds ==========
 

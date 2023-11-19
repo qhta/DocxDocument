@@ -166,7 +166,7 @@ public class ModelElement : IOwnedElement
   /// Specifies whether the element is converted to other element.
   /// </summary>
   [XmlIgnore]
-  public bool IsConverted { [DebuggerStepThrough] get; set; }
+  public virtual bool IsConverted { [DebuggerStepThrough] get; set; }
 
   /// <summary>
   /// Specifies whether some other element is converted to this element.
