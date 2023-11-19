@@ -30,7 +30,7 @@ public partial class Level: ModelElement<DXW.Level>
   [DataMember]
   public DM.HexBinary? TemplateCode
   {
-    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    get => HexIntConverter.GetValue(_Element?.TemplateCode);
     set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
@@ -127,10 +127,10 @@ public partial class Level: ModelElement<DXW.Level>
   ///   Picture Numbering Symbol Definition Reference.
   /// </summary>
   [DataMember]
-  public DMW.LevelPictureBulletId? LevelPictureBulletId
+  public DocumentModel.HexInt? LevelPictureBulletId
   {
-    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.DecimalNumberType");
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.DecimalNumberType");
+    get => _Element?.GetHexIntVal<DXW.LevelPictureBulletId>();
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   

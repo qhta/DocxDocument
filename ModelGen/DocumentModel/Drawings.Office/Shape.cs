@@ -17,10 +17,10 @@ public partial class Shape: ModelElement<DXOD.Shape>
   ///   modelId, this property is only available in Office 2010 and later.
   /// </summary>
   [DataMember]
-  public String? ModelId
+  public DocumentModel.HexInt? ModelId
   {
-    get => _Element?.ModelId;
-    set => _ExistingElement.ModelId = value;
+    get => HexIntConverter.GetValue(_Element?.ModelId);
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   

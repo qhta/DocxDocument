@@ -264,7 +264,7 @@ Powinien być przygotowany uprzednio za pomocą osobnego narzędzia.</value>
 Jeśli nie jest zdefiniowany, to właściwość może być zadeklarowana w dowolnym typie.</value>
   </data>
   <data name="ExcludedProperty" xml:space="preserve">
-    <value>Czy wykluczona?</value>
+    <value>Wykl.wł.</value>
   </data>
   <data name="ExcludedPropertyTooltip" xml:space="preserve">
     <value>Właściwość wykluczona jest odrzucana, nawet gdy jej typ jest zaakceptowany.</value>
@@ -607,7 +607,7 @@ Użyj znaku '*' aby dopasować wzorzec do wielu znaków.</value>
     <value>Wynik konwersji to typ określony przez fazę konwersji.</value>
   </data>
   <data name="OriginalTypeName" xml:space="preserve">
-    <value>Oryginalna nazwa type</value>
+    <value>Oryginalna nazwa typu</value>
   </data>
   <data name="SaveConfigurationAnyway" xml:space="preserve">
     <value>Czy na pewno zapisać konfigurację?</value>
@@ -712,9 +712,69 @@ Użyj znaku '*' aby dopasować wzorzec do wielu znaków.</value>
     <value>Ty[p generatora określa sposób generowania kodu</value>
   </data>
   <data name="ExcludedTargetNamespace" xml:space="preserve">
-    <value>Czy wykluczona przestrzeń docelowa?</value>
+    <value>Wykl.docel.pn.</value>
   </data>
   <data name="ExcludedTargetNamespaceTooltip" xml:space="preserve">
     <value>Docelowa przestrzeń jest wykluczona z generowania kodu.</value>
+  </data>
+  <data name="OriginalPropertyName" xml:space="preserve">
+    <value>Oryginalna nazwa właściwości</value>
+  </data>
+  <data name="OriginalPropValueNamespace" xml:space="preserve">
+    <value>Oryginalna przestrzeń nazw wartości</value>
+  </data>
+  <data name="OriginalPropValueType" xml:space="preserve">
+    <value>Oryginalny typ wartości</value>
+  </data>
+  <data name="OriginalPropertyNamespace" xml:space="preserve">
+    <value>Oryginalna przestrzeń nazw właściwości</value>
+  </data>
+  <data name="OriginalPropertyNamespaceTooltip" xml:space="preserve">
+    <value>To jest przestrzeń nazw typu, który deklaruje właściwość.</value>
+  </data>
+  <data name="OriginalPropertyType" xml:space="preserve">
+    <value>Oryginalny typ właściwości</value>
+  </data>
+  <data name="OriginalPropertyTypeTooltip" xml:space="preserve">
+    <value>To jest oryginalny typ, który deklaruje właściwość.</value>
+  </data>
+  <data name="OriginalPropertyNameTooltip" xml:space="preserve">
+    <value>To jest oryginalna nazwa właściwości odczytana ze źródła.</value>
+  </data>
+  <data name="OriginalPropValueNamespaceTooltip" xml:space="preserve">
+    <value>To jest przestrzeń nazw oryginalnego typu wartości właściwości.</value>
+  </data>
+  <data name="OriginalPropValueTypeTooltip" xml:space="preserve">
+    <value>To jest oryginalny typ wartości właściwości.</value>
+  </data>
+  <data name="ExcludedPropertyNamespace" xml:space="preserve">
+    <value>Wykl.pn.wł.</value>
+  </data>
+  <data name="ExcludedPropertyNamespaceTooltip" xml:space="preserve">
+    <value>Czy wykluczona przestrzeń nazw właściwości?</value>
+  </data>
+  <data name="ExcludedPropertyType" xml:space="preserve">
+    <value>Wykl.typ wł</value>
+  </data>
+  <data name="ExcludedPropertyTypeTooltip" xml:space="preserve">
+    <value>Czy wykluczony typ właściwości?</value>
+  </data>
+  <data name="ExcludedValueType" xml:space="preserve">
+    <value>Wykl.typ wart</value>
+  </data>
+  <data name="ExcludedValueTypeTooltip" xml:space="preserve">
+    <value>Czy typ wartości jest wykluczony z przetwarzania?</value>
+  </data>
+  <data name="TargetPropertyName" xml:space="preserve">
+    <value>Docelowa nazwa właściwości</value>
+  </data>
+  <data name="TargetPropertyNameTooltip" xml:space="preserve">
+    <value>Docelowa nazwa właściwości jest nową nazwą właściwości zapisywaną na wyjściu.</value>
+  </data>
+  <data name="RecordNumber" xml:space="preserve">
+    <value>#</value>
+  </data>
+  <data name="RecordNumberTooltip" xml:space="preserve">
+    <value>Numer rekordu w kolekcji</value>
   </data>
 </root>

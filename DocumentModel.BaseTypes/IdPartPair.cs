@@ -10,4 +10,9 @@ public class IdPartPair: ModelElement
   ///   Gets or sets the relationship ID in the pair.
   /// </summary>
   public string? RelationshipId { get; set; }
+
+    /// <summary>
+  ///   Gets or sets the relationship ID in the pair.
+  /// </summary>
+  public DX.Packaging.OpenXmlPart? OpenXmlPart { get; set; }
 }

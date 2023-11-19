@@ -28,10 +28,10 @@ public partial class PivotSource: ModelElement<DXO13DC.PivotSource>
   ///   Format ID.
   /// </summary>
   [DataMember]
-  public DMDC.FormatId? FormatId
+  public DocumentModel.HexInt? FormatId
   {
-    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.UnsignedIntegerType");
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.UnsignedIntegerType");
+    get => _Element?.GetHexIntVal<DXDC.FormatId>();
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   

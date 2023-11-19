@@ -41,6 +41,23 @@ public static class OpenXmlSimpleTypeUtils
   }
 
   /// <summary>
+  /// Gets an int value from the specified OpenXml SimpleType parameter
+  /// having integer-formatted inner text.
+  /// </summary>
+  /// <param name="element"></param>
+  /// <returns></returns>
+  public static uint? AsUInt(this DX.OpenXmlSimpleType? element)
+  {
+    var str = element?.InnerText;
+    if (str != null)
+    {
+      if (uint.TryParse(str, NumberStyles.HexNumber, null, out var val))
+        return val;
+    }
+    return null;
+  }
+
+  /// <summary>
   /// Gets a Guid value from the specified OpenXml SimpleType parameter
   /// having Guid-formatted inner text.
   /// </summary>

@@ -12,7 +12,7 @@ public class PhaseSummaryViewModel : ObservableList<PhaseSummaryInfoViewModel>
     if (args.NewItems != null)
       collection = args.NewItems.Cast<PhaseSummaryInfoViewModel>();
     else
-      collection = this._items.Cast<PhaseSummaryInfoViewModel>();
+      collection = this._Items.Cast<PhaseSummaryInfoViewModel>();
     foreach (var item in collection)
       item.PropertyChanged += Item_PropertyChanged;
   }

@@ -17,10 +17,10 @@ public partial class GeoDataPointToEntityQuery: ModelElement<DXO16DCD.GeoDataPoi
   ///   entityId, this property is only available in Office 2016 and later.
   /// </summary>
   [DataMember]
-  public String? EntityId
+  public DocumentModel.HexInt? EntityId
   {
-    get => _Element?.EntityId;
-    set => _ExistingElement.EntityId = value;
+    get => HexIntConverter.GetValue(_Element?.EntityId);
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
 }

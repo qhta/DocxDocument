@@ -17,10 +17,10 @@ public partial class Hyperlink: ModelElement<DXO10CUI.Hyperlink>
   ///   id, this property is only available in Office 2010 and later.
   /// </summary>
   [DataMember]
-  public String? Id
+  public DocumentModel.HexInt? Id
   {
-    get => _Element?.Id;
-    set => _ExistingElement.Id = value;
+    get => HexIntConverter.GetValue(_Element?.Id);
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -28,10 +28,10 @@ public partial class Hyperlink: ModelElement<DXO10CUI.Hyperlink>
   ///   idQ, this property is only available in Office 2010 and later.
   /// </summary>
   [DataMember]
-  public String? QualifiedId
+  public DocumentModel.HexInt? QualifiedId
   {
-    get => _Element?.QualifiedId;
-    set => _ExistingElement.QualifiedId = value;
+    get => HexIntConverter.GetValue(_Element?.QualifiedId);
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   

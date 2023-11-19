@@ -19,7 +19,7 @@ public partial class Paragraph: ModelElement<DXW.Paragraph>
   [DataMember]
   public DM.HexBinary? RsidParagraphMarkRevision
   {
-    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    get => HexIntConverter.GetValue(_Element?.RsidParagraphMarkRevision);
     set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
@@ -30,7 +30,7 @@ public partial class Paragraph: ModelElement<DXW.Paragraph>
   [DataMember]
   public DM.HexBinary? RsidParagraphAddition
   {
-    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    get => HexIntConverter.GetValue(_Element?.RsidParagraphAddition);
     set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
@@ -41,7 +41,7 @@ public partial class Paragraph: ModelElement<DXW.Paragraph>
   [DataMember]
   public DM.HexBinary? RsidParagraphDeletion
   {
-    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    get => HexIntConverter.GetValue(_Element?.RsidParagraphDeletion);
     set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
@@ -52,7 +52,7 @@ public partial class Paragraph: ModelElement<DXW.Paragraph>
   [DataMember]
   public DM.HexBinary? RsidParagraphProperties
   {
-    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    get => HexIntConverter.GetValue(_Element?.RsidParagraphProperties);
     set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
@@ -63,7 +63,7 @@ public partial class Paragraph: ModelElement<DXW.Paragraph>
   [DataMember]
   public DM.HexBinary? RsidRunAdditionDefault
   {
-    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    get => HexIntConverter.GetValue(_Element?.RsidRunAdditionDefault);
     set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
@@ -72,9 +72,9 @@ public partial class Paragraph: ModelElement<DXW.Paragraph>
   ///   paraId, this property is only available in Office 2010 and later.
   /// </summary>
   [DataMember]
-  public DM.HexBinary? ParagraphId
+  public DocumentModel.HexInt? ParagraphId
   {
-    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    get => HexIntConverter.GetValue(_Element?.ParagraphId);
     set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
@@ -83,9 +83,9 @@ public partial class Paragraph: ModelElement<DXW.Paragraph>
   ///   textId, this property is only available in Office 2010 and later.
   /// </summary>
   [DataMember]
-  public DM.HexBinary? TextId
+  public DocumentModel.HexInt? TextId
   {
-    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    get => HexIntConverter.GetValue(_Element?.TextId);
     set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   

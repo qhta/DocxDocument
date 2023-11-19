@@ -1,10 +1,45 @@
 ﻿namespace ModelGenApp.ViewModels;
 public class PropertyConfigViewModel : VisibleViewModel
 {
+  [DataGridColumn(
+    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.RecordNumber),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.RecordNumberTooltip)
+    )]
+  public int RecordNumber
+  {
+    get { return _RecordNumber; }
+    set
+    {
+      if (_RecordNumber != value)
+      {
+        _RecordNumber = value;
+        NotifyPropertyChanged(nameof(RecordNumber));
+      }
+    }
+  }
+  private int _RecordNumber;
 
   [DataGridColumn(
-    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.OriginalDeclarationType),
-    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.OriginalDeclarationTypeTooltip)
+    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.OriginalPropertyNamespace),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.OriginalPropertyNamespaceTooltip)
+    )]
+  public string OrigNamespace
+  {
+    get { return _OrigNamespace; }
+    set
+    {
+      if (_OrigNamespace != value)
+      {
+        _OrigNamespace = value;
+        NotifyPropertyChanged(nameof(OrigNamespace));
+      }
+    }
+  }
+  private string _OrigNamespace = string.Empty;
+
+  [DataGridColumn(
+    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.OriginalPropertyType),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.OriginalPropertyTypeTooltip)
     )]
   public string OrigType
   {
@@ -21,8 +56,8 @@ public class PropertyConfigViewModel : VisibleViewModel
   private string _OrigType = string.Empty;
 
   [DataGridColumn(
-    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.ConfigPropertyName),
-    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.ConfigPropertyNameTooltip)
+    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.OriginalPropertyName),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.OriginalPropertyNameTooltip)
     )]
   public string OrigName
   {
@@ -39,26 +74,8 @@ public class PropertyConfigViewModel : VisibleViewModel
   private string _OrigName = string.Empty;
 
   [DataGridColumn(
-    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.ExcludedProperty),
-    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.ExcludedPropertyTooltip)
-    )]
-  public bool ExcludedProperty
-  {
-    get { return _Excluded; }
-    set
-    {
-      if (_Excluded != value)
-      {
-        _Excluded = value;
-        NotifyPropertyChanged(nameof(ExcludedProperty));
-      }
-    }
-  }
-  private bool _Excluded;
-
-  [DataGridColumn(
-    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.TargetName),
-    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.TargetNameTooltip)
+    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.TargetPropertyName),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.TargetPropertyNameTooltip)
     )]
   public string? TargetName
   {
@@ -74,6 +91,113 @@ public class PropertyConfigViewModel : VisibleViewModel
   }
   private string? _TargetName;
 
+  [DataGridColumn(
+    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.ExcludedPropertyNamespace),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.ExcludedPropertyNamespaceTooltip)
+    )]
+  public bool ExcludedNamespace
+  {
+    get { return _ExcludedNamespace; }
+    set
+    {
+      if (_ExcludedNamespace != value)
+      {
+        _ExcludedNamespace = value;
+        NotifyPropertyChanged(nameof(ExcludedNamespace));
+      }
+    }
+  }
+  private bool _ExcludedNamespace;
+
+  [DataGridColumn(
+    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.ExcludedPropertyType),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.ExcludedPropertyTypeTooltip)
+    )]
+  public bool ExcludedType
+  {
+    get { return _ExcludedType; }
+    set
+    {
+      if (_ExcludedType != value)
+      {
+        _ExcludedType = value;
+        NotifyPropertyChanged(nameof(ExcludedType));
+      }
+    }
+  }
+  private bool _ExcludedType;
+
+  [DataGridColumn(
+    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.ExcludedProperty),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.ExcludedPropertyTooltip)
+    )]
+  public bool ExcludedProperty
+  {
+    get { return _ExcludedProperty; }
+    set
+    {
+      if (_ExcludedProperty != value)
+      {
+        _ExcludedProperty = value;
+        NotifyPropertyChanged(nameof(ExcludedProperty));
+      }
+    }
+  }
+  private bool _ExcludedProperty;
+
+  [DataGridColumn(
+    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.OriginalPropValueNamespace),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.OriginalPropValueNamespaceTooltip)
+    )]
+  public string OrigValueNamespace
+  {
+    get { return _OrigValueNamespace; }
+    set
+    {
+      if (_OrigValueNamespace != value)
+      {
+        _OrigValueNamespace = value;
+        NotifyPropertyChanged(nameof(OrigValueNamespace));
+      }
+    }
+  }
+  private string _OrigValueNamespace = string.Empty;
+
+  [DataGridColumn(
+    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.OriginalPropValueType),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.OriginalPropValueTypeTooltip)
+    )]
+  public string OrigValueType
+  {
+    get { return _OrigValueType; }
+    set
+    {
+      if (_OrigValueType != value)
+      {
+        _OrigValueType = value;
+        NotifyPropertyChanged(nameof(OrigValueType));
+      }
+    }
+  }
+  private string _OrigValueType = string.Empty;
+
+  [DataGridColumn(
+    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.ExcludedValueType),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.ExcludedValueTypeTooltip)
+    )]
+  public bool ExcludedValueType
+  {
+    get { return _ExcludedValueType; }
+    set
+    {
+      if (_ExcludedValueType != value)
+      {
+        _ExcludedValueType = value;
+        NotifyPropertyChanged(nameof(ExcludedValueType));
+      }
+    }
+  }
+  private bool _ExcludedValueType;
 
   [DataGridColumn(
     HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.TargetPropertyType),

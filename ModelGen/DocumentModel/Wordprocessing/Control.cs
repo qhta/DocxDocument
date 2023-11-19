@@ -28,10 +28,10 @@ public partial class Control: ModelElement<DXW.Control>
   ///   Associated VML Data Reference
   /// </summary>
   [DataMember]
-  public String? ShapeId
+  public DocumentModel.HexInt? ShapeId
   {
-    get => _Element?.ShapeId;
-    set => _ExistingElement.ShapeId = value;
+    get => HexIntConverter.GetValue(_Element?.ShapeId);
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -39,10 +39,10 @@ public partial class Control: ModelElement<DXW.Control>
   ///   Embedded Control Properties Relationship Reference
   /// </summary>
   [DataMember]
-  public String? Id
+  public DocumentModel.HexInt? Id
   {
-    get => _Element?.Id;
-    set => _ExistingElement.Id = value;
+    get => HexIntConverter.GetValue(_Element?.Id);
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
 }

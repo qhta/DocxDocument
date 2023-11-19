@@ -17,10 +17,10 @@ public partial class Data: ModelElement<DXO16DCD.Data>
   ///   id, this property is only available in Office 2016 and later.
   /// </summary>
   [DataMember]
-  public UInt32? Id
+  public DocumentModel.HexInt? Id
   {
-    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
-    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
+    get => HexIntConverter.GetValue(_Element?.Id);
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   [DataMember]

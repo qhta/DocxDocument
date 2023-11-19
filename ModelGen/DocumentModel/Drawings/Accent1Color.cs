@@ -20,10 +20,10 @@ public partial class Accent1Color: ModelElement<DXD.Accent1Color>
   }
   
   [DataMember]
-  public DMD.RgbColorModelHex? RgbColorModelHex
+  public DM.HexRgb? RgbColorModelHex
   {
-    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   [DataMember]

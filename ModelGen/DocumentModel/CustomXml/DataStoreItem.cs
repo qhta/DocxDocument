@@ -17,10 +17,10 @@ public partial class DataStoreItem: ModelElement<DXCXDP.DataStoreItem>
   ///   Custom XML Data ID
   /// </summary>
   [DataMember]
-  public String? ItemId
+  public DocumentModel.HexInt? ItemId
   {
-    get => _Element?.ItemId;
-    set => _ExistingElement.ItemId = value;
+    get => HexIntConverter.GetValue(_Element?.ItemId);
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   

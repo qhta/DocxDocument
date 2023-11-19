@@ -13,6 +13,8 @@ public record FolderModel: FileModel, ICollection<FileModel>
 
   public void Add(FileModel item)
   {
+    if (item.Filename=="String.cs")
+      Debug.Assert(true);
     Items.Add(item.Filename, item);
   }
 

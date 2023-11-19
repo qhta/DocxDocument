@@ -225,9 +225,10 @@ public static class EnumValueConverter
   /// <typeparam name="EnumValuesType"></typeparam>
   /// <param name="element"></param>
   /// <returns></returns>
-  public static EnumType GetValue<EnumType, EnumValuesType>(this DX.EnumValue<EnumValuesType> element) where EnumType : struct
+  public static EnumType? GetValue<EnumType, EnumValuesType>(this DX.EnumValue<EnumValuesType>? element) where EnumType : struct
   where EnumValuesType : struct
   {
+    if (element==null) return null;
     object value = element.Value;
     if (typeof(EnumValuesType) != typeof(EnumType))
     {
