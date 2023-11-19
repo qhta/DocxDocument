@@ -38,10 +38,10 @@ public partial class NonVisualDrawingPropertiesExtension: ModelElement<DXD.NonVi
   }
   
   [DataMember]
-  public DMD.CreationId? CreationId
+  public DocumentModel.HexInt? CreationId
   {
-    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    get => _Element?.GetHexIntVal<DXO16D.CreationId>();
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   [DataMember]

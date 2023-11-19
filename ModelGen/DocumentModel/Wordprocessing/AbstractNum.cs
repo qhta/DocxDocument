@@ -17,10 +17,10 @@ public partial class AbstractNum: ModelElement<DXW.AbstractNum>
   ///   Abstract Numbering Definition ID
   /// </summary>
   [DataMember]
-  public Int32? AbstractNumberId
+  public DocumentModel.HexInt? AbstractNumberId
   {
-    get => _Element?.AbstractNumberId?.Value;
-    set => _ExistingElement.AbstractNumberId = value;
+    get => HexIntConverter.GetValue(_Element?.AbstractNumberId);
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -28,10 +28,10 @@ public partial class AbstractNum: ModelElement<DXW.AbstractNum>
   ///   Abstract Numbering Definition Identifier.
   /// </summary>
   [DataMember]
-  public DMW.Nsid? Nsid
+  public DocumentModel.HexInt? Nsid
   {
-    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.LongHexNumberType");
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.LongHexNumberType");
+    get => _Element?.GetHexIntVal<DXW.Nsid>();
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   

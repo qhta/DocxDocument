@@ -17,10 +17,10 @@ public partial class PropertySet: ModelElement<DXDDD.PropertySet>
   ///   Presentation Element Identifier
   /// </summary>
   [DataMember]
-  public String? PresentationElementId
+  public DocumentModel.HexInt? PresentationElementId
   {
-    get => _Element?.PresentationElementId;
-    set => _ExistingElement.PresentationElementId = value;
+    get => HexIntConverter.GetValue(_Element?.PresentationElementId);
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -72,10 +72,10 @@ public partial class PropertySet: ModelElement<DXDDD.PropertySet>
   ///   Current Diagram Type
   /// </summary>
   [DataMember]
-  public String? LayoutTypeId
+  public DocumentModel.HexInt? LayoutTypeId
   {
-    get => _Element?.LayoutTypeId;
-    set => _ExistingElement.LayoutTypeId = value;
+    get => HexIntConverter.GetValue(_Element?.LayoutTypeId);
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -83,10 +83,10 @@ public partial class PropertySet: ModelElement<DXDDD.PropertySet>
   ///   Current Diagram Category
   /// </summary>
   [DataMember]
-  public String? LayoutCategoryId
+  public DocumentModel.HexInt? LayoutCategoryId
   {
-    get => _Element?.LayoutCategoryId;
-    set => _ExistingElement.LayoutCategoryId = value;
+    get => HexIntConverter.GetValue(_Element?.LayoutCategoryId);
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -94,10 +94,10 @@ public partial class PropertySet: ModelElement<DXDDD.PropertySet>
   ///   Current Style Type
   /// </summary>
   [DataMember]
-  public String? QuickStyleTypeId
+  public DocumentModel.HexInt? QuickStyleTypeId
   {
-    get => _Element?.QuickStyleTypeId;
-    set => _ExistingElement.QuickStyleTypeId = value;
+    get => HexIntConverter.GetValue(_Element?.QuickStyleTypeId);
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -105,10 +105,10 @@ public partial class PropertySet: ModelElement<DXDDD.PropertySet>
   ///   Current Style Category
   /// </summary>
   [DataMember]
-  public String? QuickStyleCategoryId
+  public DocumentModel.HexInt? QuickStyleCategoryId
   {
-    get => _Element?.QuickStyleCategoryId;
-    set => _ExistingElement.QuickStyleCategoryId = value;
+    get => HexIntConverter.GetValue(_Element?.QuickStyleCategoryId);
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -127,10 +127,10 @@ public partial class PropertySet: ModelElement<DXDDD.PropertySet>
   ///   Color Transform Category
   /// </summary>
   [DataMember]
-  public String? ColorCategoryId
+  public DocumentModel.HexInt? ColorCategoryId
   {
-    get => _Element?.ColorCategoryId;
-    set => _ExistingElement.ColorCategoryId = value;
+    get => HexIntConverter.GetValue(_Element?.ColorCategoryId);
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   

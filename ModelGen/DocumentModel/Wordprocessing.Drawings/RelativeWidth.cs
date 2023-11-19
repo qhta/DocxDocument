@@ -14,6 +14,17 @@ public partial class RelativeWidth: ModelElement<DXO10WD.RelativeWidth>
   
   
   /// <summary>
+  ///   relativeFrom, this property is only available in Office 2010 and later.
+  /// </summary>
+  [DataMember]
+  public DocumentModel.HexInt? ObjectId
+  {
+    get => HexIntConverter.GetValue(_Element?.ObjectId);
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+  }
+  
+  
+  /// <summary>
   ///   PercentageWidth.
   /// </summary>
   [DataMember]

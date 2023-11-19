@@ -39,10 +39,10 @@ public partial class SdtContentDate: ModelElement<DXW.SdtContentDate>
   ///   Date Picker Language ID.
   /// </summary>
   [DataMember]
-  public String? LanguageId
+  public DocumentModel.HexInt? LanguageId
   {
-    get => _Element?.GetStringVal<DXW.LanguageId>();
-    set => _ExistingElement.SetStringVal<DXW.LanguageId>(value);
+    get => _Element?.GetHexIntVal<DXW.LanguageId>();
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   

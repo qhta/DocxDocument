@@ -19,7 +19,7 @@ public partial class TableRow: ModelElement<DXW.TableRow>
   [DataMember]
   public DM.HexBinary? RsidTableRowMarkRevision
   {
-    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    get => HexIntConverter.GetValue(_Element?.RsidTableRowMarkRevision);
     set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
@@ -30,7 +30,7 @@ public partial class TableRow: ModelElement<DXW.TableRow>
   [DataMember]
   public DM.HexBinary? RsidTableRowAddition
   {
-    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    get => HexIntConverter.GetValue(_Element?.RsidTableRowAddition);
     set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
@@ -41,7 +41,7 @@ public partial class TableRow: ModelElement<DXW.TableRow>
   [DataMember]
   public DM.HexBinary? RsidTableRowDeletion
   {
-    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    get => HexIntConverter.GetValue(_Element?.RsidTableRowDeletion);
     set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
@@ -52,7 +52,7 @@ public partial class TableRow: ModelElement<DXW.TableRow>
   [DataMember]
   public DM.HexBinary? RsidTableRowProperties
   {
-    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    get => HexIntConverter.GetValue(_Element?.RsidTableRowProperties);
     set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
@@ -61,9 +61,9 @@ public partial class TableRow: ModelElement<DXW.TableRow>
   ///   paraId, this property is only available in Office 2010 and later.
   /// </summary>
   [DataMember]
-  public DM.HexBinary? ParagraphId
+  public DocumentModel.HexInt? ParagraphId
   {
-    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    get => HexIntConverter.GetValue(_Element?.ParagraphId);
     set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
@@ -72,9 +72,9 @@ public partial class TableRow: ModelElement<DXW.TableRow>
   ///   textId, this property is only available in Office 2010 and later.
   /// </summary>
   [DataMember]
-  public DM.HexBinary? TextId
+  public DocumentModel.HexInt? TextId
   {
-    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    get => HexIntConverter.GetValue(_Element?.TextId);
     set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   

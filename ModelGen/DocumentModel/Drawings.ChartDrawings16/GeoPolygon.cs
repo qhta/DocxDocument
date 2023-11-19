@@ -17,10 +17,10 @@ public partial class GeoPolygon: ModelElement<DXO16DCD.GeoPolygon>
   ///   polygonId, this property is only available in Office 2016 and later.
   /// </summary>
   [DataMember]
-  public String? PolygonId
+  public DocumentModel.HexInt? PolygonId
   {
-    get => _Element?.PolygonId;
-    set => _ExistingElement.PolygonId = value;
+    get => HexIntConverter.GetValue(_Element?.PolygonId);
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   

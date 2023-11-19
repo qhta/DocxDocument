@@ -17,9 +17,9 @@ public partial class CommentEx: ModelElement<DXO13W.CommentEx>
   ///   paraId, this property is only available in Office 2013 and later.
   /// </summary>
   [DataMember]
-  public DM.HexBinary? ParaId
+  public DocumentModel.HexInt? ParaId
   {
-    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    get => HexIntConverter.GetValue(_Element?.ParaId);
     set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
@@ -30,7 +30,7 @@ public partial class CommentEx: ModelElement<DXO13W.CommentEx>
   [DataMember]
   public DM.HexBinary? ParaIdParent
   {
-    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    get => HexIntConverter.GetValue(_Element?.ParaIdParent);
     set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   

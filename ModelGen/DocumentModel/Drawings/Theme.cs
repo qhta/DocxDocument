@@ -28,10 +28,10 @@ public partial class Theme: ModelElement<DXD.Theme>
   ///   id, this property is only available in Office 2013 and later.
   /// </summary>
   [DataMember]
-  public String? ThemeId
+  public DocumentModel.HexInt? ThemeId
   {
-    get => _Element?.ThemeId;
-    set => _ExistingElement.ThemeId = value;
+    get => HexIntConverter.GetValue(_Element?.ThemeId);
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   

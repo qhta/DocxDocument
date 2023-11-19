@@ -17,10 +17,10 @@ public partial class ParagraphProperties: ModelElement<DXW.ParagraphProperties>
   ///   ParagraphStyleId.
   /// </summary>
   [DataMember]
-  public DMW.ParagraphStyleId? ParagraphStyleId
+  public DocumentModel.HexInt? ParagraphStyleId
   {
-    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.StringType");
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.StringType");
+    get => _Element?.GetHexIntVal<DXW.ParagraphStyleId>();
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -237,10 +237,10 @@ public partial class ParagraphProperties: ModelElement<DXW.ParagraphProperties>
   ///   SnapToGrid.
   /// </summary>
   [DataMember]
-  public DMW.SnapToGrid? SnapToGrid
+  public DocumentModel.HexInt? SnapToGrid
   {
-    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    get => _Element?.GetHexIntVal<DXW.SnapToGrid>();
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -358,10 +358,10 @@ public partial class ParagraphProperties: ModelElement<DXW.ParagraphProperties>
   ///   DivId.
   /// </summary>
   [DataMember]
-  public String? DivId
+  public DocumentModel.HexInt? DivId
   {
-    get => _Element?.GetStringVal<DXW.DivId>();
-    set => _ExistingElement.SetStringVal<DXW.DivId>(value);
+    get => _Element?.GetHexIntVal<DXW.DivId>();
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   

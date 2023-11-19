@@ -29,7 +29,6 @@ global using Qhta.TypeUtils;
 global using Qhta.WPF.Converters;
 global using Qhta.WPF.Utils;
 global using Qhta.Xml.Serialization;
-
 global using ModelGen;
 global using ModelGenApp.Helpers;
 global using ModelGenApp.ViewModels;

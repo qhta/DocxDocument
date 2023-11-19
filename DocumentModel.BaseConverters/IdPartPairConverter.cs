@@ -15,31 +15,23 @@ public static class IdPartPairConverter
     return openXmlElement?.RelationshipId;
   }
 
-  public static void SetRelationshipId(IdPartPair? openXmlElement, String? value)
-  {
-    if (openXmlElement != null && value != null)
-      openXmlElement.RelationshipId = value;
-  }
-
   public static DocumentModel.Packaging.IdPartPair? CreateModelElement(IdPartPair? openXmlElement)
   {
     if (openXmlElement != null)
     {
       var value = new DocumentModel.Packaging.IdPartPair();
       value.RelationshipId = GetRelationshipId(openXmlElement);
+      value.OpenXmlPart = openXmlElement.OpenXmlPart;
       return value;
     }
     return null;
   }
 
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.IdPartPair? value)
-    where OpenXmlElementType : IdPartPair, new()
+  public static IdPartPair? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.IdPartPair? value)
   {
-    if (value != null)
+    if (value != null && value.RelationshipId!=null && value.OpenXmlPart!=null)
     {
-      var openXmlElement = new OpenXmlElementType();
-      SetRelationshipId(openXmlElement, value?.RelationshipId);
-      return openXmlElement;
+      return new IdPartPair(value.RelationshipId, value.OpenXmlPart);
     }
     return default;
   }

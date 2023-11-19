@@ -28,10 +28,10 @@ public partial class ThemeFamily: ModelElement<DXO13T.ThemeFamily>
   ///   id, this property is only available in Office 2013 and later.
   /// </summary>
   [DataMember]
-  public String? Id
+  public DocumentModel.HexInt? Id
   {
-    get => _Element?.Id;
-    set => _ExistingElement.Id = value;
+    get => HexIntConverter.GetValue(_Element?.Id);
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -39,10 +39,10 @@ public partial class ThemeFamily: ModelElement<DXO13T.ThemeFamily>
   ///   vid, this property is only available in Office 2013 and later.
   /// </summary>
   [DataMember]
-  public String? Vid
+  public DocumentModel.HexInt? Vid
   {
-    get => _Element?.Vid;
-    set => _ExistingElement.Vid = value;
+    get => HexIntConverter.GetValue(_Element?.Vid);
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   

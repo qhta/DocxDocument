@@ -19,7 +19,7 @@ public partial class PreviousSectionProperties: ModelElement<DXW.PreviousSection
   [DataMember]
   public DM.HexBinary? RsidRPr
   {
-    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    get => HexIntConverter.GetValue(_Element?.RsidRPr);
     set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
@@ -30,7 +30,7 @@ public partial class PreviousSectionProperties: ModelElement<DXW.PreviousSection
   [DataMember]
   public DM.HexBinary? RsidDel
   {
-    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    get => HexIntConverter.GetValue(_Element?.RsidDel);
     set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
@@ -41,7 +41,7 @@ public partial class PreviousSectionProperties: ModelElement<DXW.PreviousSection
   [DataMember]
   public DM.HexBinary? RsidR
   {
-    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    get => HexIntConverter.GetValue(_Element?.RsidR);
     set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
@@ -52,7 +52,7 @@ public partial class PreviousSectionProperties: ModelElement<DXW.PreviousSection
   [DataMember]
   public DM.HexBinary? RsidSect
   {
-    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.ValueType");
+    get => HexIntConverter.GetValue(_Element?.RsidSect);
     set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
@@ -248,10 +248,10 @@ public partial class PreviousSectionProperties: ModelElement<DXW.PreviousSection
   ///   DocGrid.
   /// </summary>
   [DataMember]
-  public DMW.DocGrid? DocGrid
+  public DocumentModel.HexInt? DocGrid
   {
-    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    get => _Element?.GetHexIntVal<DXW.DocGrid>();
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   

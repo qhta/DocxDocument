@@ -17,10 +17,10 @@ public partial class OleObject: ModelElement<DXVO.OleObject>
   ///   OLE Object Application
   /// </summary>
   [DataMember]
-  public String? ProgId
+  public DocumentModel.HexInt? ProgId
   {
-    get => _Element?.ProgId;
-    set => _ExistingElement.ProgId = value;
+    get => HexIntConverter.GetValue(_Element?.ProgId);
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -28,10 +28,10 @@ public partial class OleObject: ModelElement<DXVO.OleObject>
   ///   OLE Object Shape
   /// </summary>
   [DataMember]
-  public String? ShapeId
+  public DocumentModel.HexInt? ShapeId
   {
-    get => _Element?.ShapeId;
-    set => _ExistingElement.ShapeId = value;
+    get => HexIntConverter.GetValue(_Element?.ShapeId);
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -39,10 +39,10 @@ public partial class OleObject: ModelElement<DXVO.OleObject>
   ///   OLE Object Unique ID
   /// </summary>
   [DataMember]
-  public String? ObjectId
+  public DocumentModel.HexInt? ObjectId
   {
-    get => _Element?.ObjectId;
-    set => _ExistingElement.ObjectId = value;
+    get => HexIntConverter.GetValue(_Element?.ObjectId);
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   
@@ -50,10 +50,10 @@ public partial class OleObject: ModelElement<DXVO.OleObject>
   ///   Relationship
   /// </summary>
   [DataMember]
-  public String? Id
+  public DocumentModel.HexInt? Id
   {
-    get => _Element?.Id;
-    set => _ExistingElement.Id = value;
+    get => HexIntConverter.GetValue(_Element?.Id);
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
   

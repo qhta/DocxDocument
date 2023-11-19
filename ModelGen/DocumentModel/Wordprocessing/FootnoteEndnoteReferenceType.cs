@@ -28,10 +28,10 @@ public partial class FootnoteEndnoteReferenceType: ModelElement<DXW.FootnoteEndn
   ///   Footnote/Endnote ID Reference
   /// </summary>
   [DataMember]
-  public Int64? Id
+  public DocumentModel.HexInt? Id
   {
-    get => _Element?.Id?.Value;
-    set => _ExistingElement.Id = value;
+    get => HexIntConverter.GetValue(_Element?.Id);
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
 }

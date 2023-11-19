@@ -28,10 +28,10 @@ public partial class CameraTool: ModelElement<DXO10D.CameraTool>
   ///   spid, this property is only available in Office 2010 and later.
   /// </summary>
   [DataMember]
-  public String? ShapeId
+  public DocumentModel.HexInt? ShapeId
   {
-    get => _Element?.ShapeId;
-    set => _ExistingElement.ShapeId = value;
+    get => HexIntConverter.GetValue(_Element?.ShapeId);
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
 }

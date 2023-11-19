@@ -7,17 +7,29 @@
              xmlns:vm="clr-namespace:ModelGenApp.ViewModels"
              xmlns:utl="clr-namespace:Qhta.WPF.Utils;assembly=Qhta.WPF.Utils"
              mc:Ignorable="d"
-             d:DataContext="{d:DesignInstance Type={x:Type vm:PropertyConfigViewModel}}"
+             d:DataContext="{d:DesignInstance Type={x:Type vm:PropertyConfigListViewModel}}"
              d:DesignHeight="450"
              d:DesignWidth="800">
   <Grid>
+    <!--<Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>    
+    <ProgressBar Height="8"
+                 Orientation="Horizontal"
+                 Maximum="{Binding Path=ProgressBarMaximum}"
+                 Value="{Binding Path=ProgressBarValue}"/>-->
     <DataGrid x:Name="MainDataGrid"
+              Grid.Row="0"
               AutoGenerateColumns="True"
               AutoGeneratingColumn="DataGrid_AutoGeneratingColumn"
               HorizontalContentAlignment="Stretch"
               utl:CollectionViewBehavior.EnableCollectionSynchronization="True"
               utl:CollectionViewBehavior.IsFocusable="True"
               utl:CollectionViewBehavior.ShowFilterButton="True"
+              utl:CollectionViewBehavior.ShowProgressBar="true"
+              utl:CollectionViewBehavior.ProgressBarMaximum="{Binding Path=ProgressBarMaximum}"
+              utl:CollectionViewBehavior.ProgressBarValue="{Binding Path=ProgressBarValue}"
               ClipboardCopyMode="IncludeHeader"
               ItemsSource="{Binding Path=VisibleItems}">
     </DataGrid>

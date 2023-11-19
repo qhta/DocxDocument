@@ -264,7 +264,7 @@ It should be prepared by an external tool.</value>
 If not defined then a property can be declared in any type.</value>
   </data>
   <data name="ExcludedProperty" xml:space="preserve">
-    <value>Is excluded?</value>
+    <value>Excl.prop.</value>
   </data>
   <data name="ExcludedPropertyTooltip" xml:space="preserve">
     <value>Excluded property is rejected even if its type is accepted.</value>
@@ -712,9 +712,69 @@ Use '*' wildcard character to match many characters.</value>
     <value>Generator type specifies the way of output generation</value>
   </data>
   <data name="ExcludedTargetNamespace" xml:space="preserve">
-    <value>Is target excluded?</value>
+    <value>Excl.target ns.</value>
   </data>
   <data name="ExcludedTargetNamespaceTooltip" xml:space="preserve">
     <value>Target namespace is excluded from code generation.</value>
+  </data>
+  <data name="OriginalPropertyName" xml:space="preserve">
+    <value>Original property name</value>
+  </data>
+  <data name="OriginalPropValueNamespace" xml:space="preserve">
+    <value>Original value namespace</value>
+  </data>
+  <data name="OriginalPropValueType" xml:space="preserve">
+    <value>Original value type</value>
+  </data>
+  <data name="OriginalPropertyNamespace" xml:space="preserve">
+    <value>Original property namespace</value>
+  </data>
+  <data name="OriginalPropertyNamespaceTooltip" xml:space="preserve">
+    <value>This is a namespace of the type that declares the property.</value>
+  </data>
+  <data name="OriginalPropertyType" xml:space="preserve">
+    <value>Original property type</value>
+  </data>
+  <data name="OriginalPropertyTypeTooltip" xml:space="preserve">
+    <value>This is an original type that declares the property.</value>
+  </data>
+  <data name="OriginalPropertyNameTooltip" xml:space="preserve">
+    <value>This is an original property name read from source.</value>
+  </data>
+  <data name="OriginalPropValueNamespaceTooltip" xml:space="preserve">
+    <value>This is a namespace of original type of property value.</value>
+  </data>
+  <data name="OriginalPropValueTypeTooltip" xml:space="preserve">
+    <value>This is an original type of property value.</value>
+  </data>
+  <data name="ExcludedPropertyNamespace" xml:space="preserve">
+    <value>Excl.prop.ns.</value>
+  </data>
+  <data name="ExcludedPropertyNamespaceTooltip" xml:space="preserve">
+    <value>Is property namespace excluded?</value>
+  </data>
+  <data name="ExcludedPropertyType" xml:space="preserve">
+    <value>Excl.prop.type</value>
+  </data>
+  <data name="ExcludedPropertyTypeTooltip" xml:space="preserve">
+    <value>Is property type excluded?</value>
+  </data>
+  <data name="ExcludedValueType" xml:space="preserve">
+    <value>Excl.val.type</value>
+  </data>
+  <data name="ExcludedValueTypeTooltip" xml:space="preserve">
+    <value>Is value type excluded from processing?</value>
+  </data>
+  <data name="TargetPropertyName" xml:space="preserve">
+    <value>Target property name</value>
+  </data>
+  <data name="TargetPropertyNameTooltip" xml:space="preserve">
+    <value>Target property name is a new property name written to output.</value>
+  </data>
+  <data name="RecordNumber" xml:space="preserve">
+    <value>#</value>
+  </data>
+  <data name="RecordNumberTooltip" xml:space="preserve">
+    <value>Number of the record in the collection</value>
   </data>
 </root>

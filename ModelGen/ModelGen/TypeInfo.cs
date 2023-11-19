@@ -37,6 +37,22 @@ public class TypeInfo : ModelElement
     }
   }
 
+  public override bool IsConverted
+  {
+    get
+    {
+      if (base.IsConverted)
+        return true;
+      if (ConversionTarget != null)
+      {
+        base.IsConverted = true;
+        return true;
+      }
+      return false;
+    }
+    set => base.IsConverted = value;
+  }
+
   /// <summary>
   /// Target type info - used in conversion.
   /// </summary>
@@ -178,7 +194,8 @@ public class TypeInfo : ModelElement
     return Type.IsSimple() || Type == typeof(Uri) || Type == typeof(HexInt) || Type == typeof(NumericValue)
       //|| Type.IsEnum
       || IsEnumValue(out _);
-      /*|| Type == typeof(Byte[])*/;
+    /*|| Type == typeof(Byte[])*/
+    ;
   }
 
   public bool IsEnumValue([NotNullWhen(true)][MaybeNullWhen(false)] out TypeInfo? enumType)

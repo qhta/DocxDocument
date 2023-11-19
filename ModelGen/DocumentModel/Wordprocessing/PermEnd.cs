@@ -17,10 +17,10 @@ public partial class PermEnd: ModelElement<DXW.PermEnd>
   ///   Annotation ID
   /// </summary>
   [DataMember]
-  public Int32? Id
+  public DocumentModel.HexInt? Id
   {
-    get => _Element?.Id?.Value;
-    set => _ExistingElement.Id = value;
+    get => HexIntConverter.GetValue(_Element?.Id);
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
   }
   
 }

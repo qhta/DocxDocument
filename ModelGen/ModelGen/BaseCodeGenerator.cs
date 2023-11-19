@@ -61,7 +61,8 @@ public abstract class BaseCodeGenerator
       {
         CreateNamespaceFolder(nspace.TargetName);
         var types = nspace.AcceptedTypesTo(PPS.CodeGen).Where(item => !item.IsConstructedGenericType
-        && !ModelConfig.Instance.PredefinedTypes.Contains(item.Type.FullName!)).ToArray();
+        && !ModelConfig.Instance.PredefinedTypes.Contains(item.Type.FullName!)
+        && !item.IsConverted).ToArray();
 
         allTypes.Add(nspace, types);
         totalTypesCount += types.Count();
@@ -71,16 +72,18 @@ public abstract class BaseCodeGenerator
     {
       var nspace = item.Key;
       var nsTypesCount = 0;
-      foreach (var type in item.Value)
+      foreach (var typeInfo in item.Value)
       {
+        if (typeInfo.IsConverted)
+          continue;
         _OnGeneratingType?.Invoke(new ProgressTypeInfo
         {
           Namespaces = nspacesCount,
           ProcessedTypes = generatedTypesCount,
           TotalTypes = totalTypesCount,
-          Current = type
+          Current = typeInfo
         });
-        if (GenerateTypeFile(type))
+        if (GenerateTypeFile(typeInfo))
         {
           nsTypesCount++;
           generatedTypesCount++;
