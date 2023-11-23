@@ -40,14 +40,13 @@
     <PackageReference Include="Qhta.TestHelper" Version="3.0.0" />
     <PackageReference Include="Qhta.TestUtilities" Version="1.0.0" />
     <PackageReference Include="Qhta.TextUtils" Version="3.2.0" />
-    <PackageReference Include="Qhta.TypeUtils" Version="1.3.10.1" />
+    <PackageReference Include="Qhta.TypeUtils" Version="1.3.11" />
     <PackageReference Include="Qhta.Xml" Version="3.0.0" />
     <PackageReference Include="Snork.TextWrap" Version="1.0.1301" />
     <PackageReference Include="System.IO.Packaging" Version="7.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\MyLib\Qhta.Collections\Qhta.Collections.csproj" />
     <ProjectReference Include="..\..\ModelDocumentation\ModelDocumentation.csproj" />
     <ProjectReference Include="..\..\ModelGenDataConfig\ModelGenDataConfig.csproj" />
     <ProjectReference Include="..\..\DocumentModel.Attributes\DocumentModel.Attributes.csproj" />
