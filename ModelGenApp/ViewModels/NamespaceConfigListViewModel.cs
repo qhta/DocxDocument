@@ -5,20 +5,20 @@ public class NamespaceConfigListViewModel : ModelConfigViewModel
   {
     Caption = CommonStrings.ModelConfiguration + " | " + CommonStrings.Namespaces.ToLower();
     Namespaces = new ListViewModel<NamespaceConfigViewModel>();
-    CollectionViewSource = new CollectionViewSource<NamespaceConfigViewModel>(Namespaces);
-    VisibleItems = CollectionViewSource.GetDefaultView(Namespaces);
+    VisibleItems = new CollectionViewSource<NamespaceConfigViewModel>(Namespaces);
+    //VisibleItems = CollectionViewSource.GetDefaultView(Namespaces);
     //VisibleItems.Filter = new Predicate<object>(item => item is NamespaceConfigViewModel viewModel && viewModel.OrigName.Contains("Wordprocessing"));
     GetData(configData);
   }
 
   public ListViewModel<NamespaceConfigViewModel> Namespaces { get; private set; }
 
-  private CollectionViewSource<NamespaceConfigViewModel> CollectionViewSource;
+  public CollectionViewSource<NamespaceConfigViewModel> VisibleItems { get; private set; }
 
   /// <summary>
   /// This is the result collection view to be used in DataGrid.
   /// </summary>
-  public ICollectionView VisibleItems { get; private set; }
+  //public ICollectionView VisibleItems { get; private set; }
 
   public override void GetData(ModelConfigData configData)
   {
