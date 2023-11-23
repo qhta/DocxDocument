@@ -5,7 +5,6 @@ public class PropertyConfigListViewModel : ModelConfigViewModel
   {
     Caption = CommonStrings.ModelConfiguration + ": " + CommonStrings.Properties.ToLower();
     Properties = new ListViewModel<PropertyConfigViewModel>();
-    Properties.NotificationDelay = 500;
     CollectionViewSource = new CollectionViewSource<PropertyConfigViewModel>(Properties);
     VisibleItems = CollectionViewSource.GetDefaultView(Properties);
     ShowProgressBar = true;
