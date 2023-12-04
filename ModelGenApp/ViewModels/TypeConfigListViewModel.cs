@@ -3,7 +3,7 @@ public class TypeConfigListViewModel : ModelConfigViewModel
 {
   public TypeConfigListViewModel(ModelConfigData configData) : base(configData)
   {
-    Caption = CommonStrings.ModelConfiguration +": "+CommonStrings.Types.ToLower();
+    Caption = CommonStrings.ModelConfiguration + ": " + CommonStrings.Types.ToLower();
     Types = new ListViewModel<TypeConfigViewModel>();
     CollectionViewSource = new CollectionViewSource<TypeConfigViewModel>(Types);
     VisibleItems = CollectionViewSource.GetDefaultView(Types);
@@ -118,7 +118,7 @@ public class TypeConfigListViewModel : ModelConfigViewModel
         configData.ExcludedTypes.Add(fullTypeName);
       if (item.TargetNamespace != null || item.TargetName != null)
       {
-        var targetNamespace = item.TargetNamespace ?? item.OrigNamespace.Replace("DocumentFormat.OpenXml","DocumentModel");
+        var targetNamespace = item.TargetNamespace ?? item.OrigNamespace.Replace("DocumentFormat.OpenXml", "DocumentModel");
         var targetName = item.TargetName ?? item.OrigName;
         configData.TypeConversion.Add(fullTypeName, targetNamespace + "." + targetName);
       }
@@ -137,16 +137,17 @@ public class TypeConfigListViewModel : ModelConfigViewModel
   /// </summary>
   public Command ExcludeTypesCommand { get; private set; }
 
-  protected virtual void ExcludeTypesExecute(string parameter)
+  protected virtual void ExcludeTypesExecute(string? parameter)
   {
-    foreach (var item in Types)
-    {
-      if (item.OrigName.IsLike(parameter))
-        item.IsExcluded = true;
-    }
+    if (parameter != null)
+      foreach (var item in Types)
+      {
+        if (item.OrigName.IsLike(parameter))
+          item.IsExcluded = true;
+      }
   }
 
-  protected virtual bool ExcludeTypesCanExecute(string parameter)
+  protected virtual bool ExcludeTypesCanExecute(string? parameter)
   {
     return !String.IsNullOrEmpty(parameter);
   }
@@ -158,16 +159,17 @@ public class TypeConfigListViewModel : ModelConfigViewModel
   /// </summary>
   public Command IncludeTypesCommand { get; private set; }
 
-  protected virtual void IncludeTypesExecute(string parameter)
+  protected virtual void IncludeTypesExecute(string? parameter)
   {
-    foreach (var item in Types)
-    {
-      if (item.OrigName.IsLike(parameter))
-        item.IsIncluded = true;
-    }
+    if (parameter != null)
+      foreach (var item in Types)
+      {
+        if (item.OrigName.IsLike(parameter))
+          item.IsIncluded = true;
+      }
   }
 
-  protected virtual bool IncludeTypesCanExecute(string parameter)
+  protected virtual bool IncludeTypesCanExecute(string? parameter)
   {
     return !String.IsNullOrEmpty(parameter);
   }
