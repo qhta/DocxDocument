@@ -100,12 +100,12 @@ public class MainViewModel : ViewModel
   #region OpenConfigCommand
   public Command OpenConfigCommand { get; }
 
-  public bool CanOpenConfig(string parameter)
+  public bool CanOpenConfig(string? parameter)
   {
     return true;
   }
 
-  protected void OpenConfig(string parameter)
+  protected void OpenConfig(string? parameter)
   {
       if (ModelConfig.Instance==null)
         throw new InvalidOperationException(CommonStrings.Model_configuration_not_defined);
