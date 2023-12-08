@@ -6,6 +6,7 @@ public partial class App : Application
   {
     GC.Collect();
     CultureInfo.CurrentUICulture = new CultureInfo("pl-PL");
+    Command.CommandManager = new CommandManagerBridge();
   }
 
 }
