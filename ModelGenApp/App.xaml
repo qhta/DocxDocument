@@ -10,7 +10,7 @@
   <Application.Resources>
     <ResourceDictionary>
       <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="pack://application:,,,/Qhta.WPF.Utils;component/Resources/DataGridStyle.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Qhta.WPF.Utils;component/Resources/WpfUtils.Resources.xaml" />
         <ResourceDictionary Source="AppColors.xaml" />
       </ResourceDictionary.MergedDictionaries>
       <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
