@@ -28,10 +28,10 @@ public partial class NumberingProperties: ModelElement<DXW.NumberingProperties>
   ///   Numbering Definition Instance Reference.
   /// </summary>
   [DataMember]
-  public DocumentModel.HexInt? NumberingId
+  public DMW.NumberingId? NumberingId
   {
-    get => _Element?.GetHexIntVal<DXW.NumberingId>();
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.NonNegativeDecimalNumberType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.NonNegativeDecimalNumberType");
   }
   
   

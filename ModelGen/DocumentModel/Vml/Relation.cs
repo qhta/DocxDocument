@@ -17,10 +17,10 @@ public partial class Relation: ModelElement<DXVO.Relation>
   ///   Diagram Relationship Source Shape
   /// </summary>
   [DataMember]
-  public DocumentModel.HexInt? SourceId
+  public String? SourceId
   {
-    get => HexIntConverter.GetValue(_Element?.SourceId);
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => _Element?.SourceId;
+    set => _ExistingElement.SourceId = value;
   }
   
   
@@ -28,10 +28,10 @@ public partial class Relation: ModelElement<DXVO.Relation>
   ///   Diagram Relationship Destination Shape
   /// </summary>
   [DataMember]
-  public DocumentModel.HexInt? DestinationId
+  public String? DestinationId
   {
-    get => HexIntConverter.GetValue(_Element?.DestinationId);
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => _Element?.DestinationId;
+    set => _ExistingElement.DestinationId = value;
   }
   
   
@@ -39,10 +39,10 @@ public partial class Relation: ModelElement<DXVO.Relation>
   ///   Diagram Relationship Center Shape
   /// </summary>
   [DataMember]
-  public DocumentModel.HexInt? CenterShapeId
+  public String? CenterShapeId
   {
-    get => HexIntConverter.GetValue(_Element?.CenterShapeId);
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => _Element?.CenterShapeId;
+    set => _ExistingElement.CenterShapeId = value;
   }
   
 }

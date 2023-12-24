@@ -1,0 +1,13 @@
+global using System;
+global using System.Collections.Generic;
+global using System.Collections.ObjectModel;
+global using System.Text;
+global using System.ComponentModel;
+global using System.Runtime.Serialization;
+global using DocumentModel.Attributes;
+global using DocumentModel;
+global using DocumentModel.OpenXml;
+global using DMVT = DocumentModel.VariantTypes;
+global using DXVT = DocumentFormat.OpenXml.VariantTypes;
+
+

@@ -54,10 +54,10 @@ public class Creator
       throw new InvalidOperationException(CommonStrings.Code_output_path_not_defined);
     if (options.GeneratorType == null)
       throw new InvalidOperationException(CommonStrings.Generator_type_not_defined);
-    var generatorType = ProcessOptionsMgr.GetGeneratorTypes().FirstOrDefault(item=>item.Name == options.GeneratorType);
+    var generatorType = ProcessOptionsMgr.GetGeneratorTypes().FirstOrDefault(item => item.Name == options.GeneratorType);
     if (generatorType == null)
       throw new InvalidOperationException(CommonStrings.Generator_type_not_found);
-    var codeGenerator = generatorType.GetConstructor(new Type[]{typeof(ProcessOptions)})?.Invoke(new object[]{ options}) as BaseCodeGenerator;
+    var codeGenerator = generatorType.GetConstructor(new Type[] { typeof(ProcessOptions) })?.Invoke(new object[] { options }) as BaseCodeGenerator;
     if (codeGenerator == null)
       throw new InvalidOperationException(CommonStrings.Generator_type_constructor_not_found);
     CodeGenerator = codeGenerator;
@@ -67,6 +67,8 @@ public class Creator
 
   public void RunProcess(ProcessOptions options, bool continueProcess = false)
   {
+    if (options.InputAssembly == null)
+      throw new InvalidOperationException(CommonStrings.Input_assembly_not_defined);
     if (options.ScanTypeName == null)
       throw new InvalidOperationException(CommonStrings.Scan_type_name_not_defined);
     if (continueProcess && PhaseDone > PPS.None)
@@ -76,7 +78,7 @@ public class Creator
     }
     else
     {
-      var assembly = Assembly.Load("DocumentFormat.OpenXml");
+      var assembly = Assembly.Load(options.InputAssembly);
       Debug.Assert(assembly != null);
       RootType = assembly.GetType(options.ScanTypeName, true);
       Debug.Assert(RootType != null);
@@ -374,12 +376,12 @@ public class Creator
         .Where(typeInfo => !typeInfo.IsGenericTypeDefinition).ToArray().ToArray();
       if (!modelValidator.ValidateTypes(newTypes, ModelValidator_OnValidatingType))
       {
-      {
-        var invalidTypesCount = modelValidator.InvalidTypesCount;
-        summaryInfo.Summary.Add(SummaryInfoKind.InvalidTypes, invalidTypesCount);
-        if (invalidTypesCount > 0)
-          InvalidTypes.AddRange(modelValidator.InvalidTypes);
-      }
+        {
+          var invalidTypesCount = modelValidator.InvalidTypesCount;
+          summaryInfo.Summary.Add(SummaryInfoKind.InvalidTypes, invalidTypesCount);
+          if (invalidTypesCount > 0)
+            InvalidTypes.AddRange(modelValidator.InvalidTypes);
+        }
         var invalidPropsCount = modelValidator.InvalidPropsCount;
         if (invalidPropsCount > 0)
         {
@@ -414,7 +416,7 @@ public class Creator
     ModelMonitor?.ShowPhaseStart(PPS.FinalFix, CommonStrings.FinalCheck);
     DateTime t1 = DateTime.Now;
     var fixedTypesCount = ModelManager.FinalFix(ModelManager_OnFinalCheck);
-    var removedPropsCount = ModelManager.FixedProps.Count(item=>item.IsRejectedAfter(PPS.FinalFix));
+    var removedPropsCount = ModelManager.FixedProps.Count(item => item.IsRejectedAfter(PPS.FinalFix));
     var summaryInfo = new SummaryInfo
     {
       Summary = new Dictionary<SummaryInfoKind, object>{
@@ -463,7 +465,7 @@ public class Creator
   {
     ModelMonitor?.ShowPhaseStart(PPS.CodeGen, CommonStrings.GenerateCode);
     DateTime t1 = DateTime.Now;
-    var nspaces = TypeManager.AllNamespaces.Where(item => item.IsTarget 
+    var nspaces = TypeManager.AllNamespaces.Where(item => item.IsTarget
     && !ModelConfig.Instance!.ExcludedNamespaces.Contains(item.OriginalName));
     var generatedTypesCount = CodeGenerator.GenerateCode(nspaces, CodeGenerator_OnGeneratingCode);
     var summaryInfo = new SummaryInfo

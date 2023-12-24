@@ -20,10 +20,10 @@ public partial class TextCharacterPropertiesType: ModelElement<DXD.TextCharacter
   }
   
   [DataMember]
-  public DocumentModel.HexInt? SmtId
+  public UInt32? SmtId
   {
-    get => HexIntConverter.GetValue(_Element?.SmtId);
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
   }
   
   
@@ -185,10 +185,10 @@ public partial class TextCharacterPropertiesType: ModelElement<DXD.TextCharacter
   ///   smtId
   /// </summary>
   [DataMember]
-  public DocumentModel.HexInt? SmartTagId
+  public UInt32? SmartTagId
   {
-    get => HexIntConverter.GetValue(_Element?.SmartTagId);
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
   }
   
   

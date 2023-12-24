@@ -226,10 +226,10 @@ public partial class StyleParagraphProperties: ModelElement<DXW.StyleParagraphPr
   ///   SnapToGrid.
   /// </summary>
   [DataMember]
-  public DocumentModel.HexInt? SnapToGrid
+  public DMW.SnapToGrid? SnapToGrid
   {
-    get => _Element?.GetHexIntVal<DXW.SnapToGrid>();
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   

@@ -20,10 +20,10 @@ public partial class Table: ModelElement<DXW.Table>
   }
   
   [DataMember]
-  public DocumentModel.HexInt? TableGrid
+  public DMW.TableGrid? TableGrid
   {
-    get => _Element?.GetHexIntVal<DXW.TableGrid>();
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

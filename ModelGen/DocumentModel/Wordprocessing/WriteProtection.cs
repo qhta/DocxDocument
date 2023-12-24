@@ -28,10 +28,10 @@ public partial class WriteProtection: ModelElement<DXW.WriteProtection>
   ///   Cryptographic Hashing Algorithm
   /// </summary>
   [DataMember]
-  public DocumentModel.HexInt? CryptographicAlgorithmSid
+  public Int32? CryptographicAlgorithmSid
   {
-    get => HexIntConverter.GetValue(_Element?.CryptographicAlgorithmSid);
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => _Element?.CryptographicAlgorithmSid?.Value;
+    set => _ExistingElement.CryptographicAlgorithmSid = value;
   }
   
   

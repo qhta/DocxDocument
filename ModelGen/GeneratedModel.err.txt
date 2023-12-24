@@ -1,38 +1,40 @@
-Rebuild started at 21:20...
+Rebuild started at 18:42...
 1>------ Rebuild All started: Project: DocumentModel.Attributes, Configuration: Debug Any CPU ------
 2>------ Rebuild All started: Project: DocumentModel.BaseTypes, Configuration: Debug Any CPU ------
-1>DocumentModel.Attributes -> D:\VS\Projects\DocxDocument\DocumentModel.Attributes\bin\Debug\net6.0\DocumentModel.Attributes.dll
-2>DocumentModel.BaseTypes -> D:\VS\Projects\DocxDocument\DocumentModel.BaseTypes\bin\Debug\net6.0\DocumentModel.BaseTypes.dll
-Time Elapsed: 00:00:00.1013198
+Time Elapsed: 00:00:00.0666611
 ========== Finished ==========
 
 
+1>DocumentModel.Attributes -> D:\VS\Projects\DocxDocument\DocumentModel.Attributes\bin\Debug\net6.0\DocumentModel.Attributes.dll
+2>DocumentModel.BaseTypes -> D:\VS\Projects\DocxDocument\DocumentModel.BaseTypes\bin\Debug\net6.0\DocumentModel.BaseTypes.dll
 3>------ Rebuild All started: Project: DocumentModel.BaseConverters, Configuration: Debug Any CPU ------
 4>------ Rebuild All started: Project: DocumentModel.VariantTypes, Configuration: Debug Any CPU ------
 4>DocumentModel.VariantTypes -> D:\VS\Projects\DocxDocument\DocumentModel.VariantTypes\bin\Debug\net6.0\DocumentModel.VariantTypes.dll
 3>DocumentModel.BaseConverters -> D:\VS\Projects\DocxDocument\DocumentModel.BaseConverters\bin\Debug\net6.0\DocumentModel.BaseConverters.dll
 5>------ Rebuild All started: Project: DocumentModel, Configuration: Debug Any CPU ------
-5>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Drawings.ChartDrawings16\Series.cs(22,37,22,55): error CS1503: Argument 1: cannot convert from 'DocumentFormat.OpenXml.EnumValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesLayout>' to 'DocumentFormat.OpenXml.HexBinaryValue?'
-5>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Vml\Arc.cs(44,37,44,56): error CS1503: Argument 1: cannot convert from 'DocumentFormat.OpenXml.IntegerValue' to 'DocumentFormat.OpenXml.HexBinaryValue?'
-5>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Vml\Curve.cs(165,37,165,56): error CS1503: Argument 1: cannot convert from 'DocumentFormat.OpenXml.IntegerValue' to 'DocumentFormat.OpenXml.HexBinaryValue?'
-5>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Wordprocessing.Drawings\RelativeWidth.cs(22,37,22,55): error CS1503: Argument 1: cannot convert from 'DocumentFormat.OpenXml.EnumValue<DocumentFormat.OpenXml.Office2010.Word.Drawing.SizeRelativeHorizontallyValues>' to 'DocumentFormat.OpenXml.HexBinaryValue?'
-5>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Vml\Shapetype.cs(165,37,165,56): error CS1503: Argument 1: cannot convert from 'DocumentFormat.OpenXml.IntegerValue' to 'DocumentFormat.OpenXml.HexBinaryValue?'
-5>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Wordprocessing\ActiveWritingStyle.cs(33,37,33,55): error CS1503: Argument 1: cannot convert from 'DocumentFormat.OpenXml.UInt16Value' to 'DocumentFormat.OpenXml.HexBinaryValue?'
-5>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Wordprocessing\TableGridChange.cs(33,21,33,57): error CS0311: The type 'DocumentFormat.OpenXml.Wordprocessing.PreviousTableGrid' cannot be used as type parameter 'OpenXmlElementType' in the generic type or method 'HexIntConverter.GetHexIntVal<OpenXmlElementType>(OpenXmlCompositeElement?)'. There is no implicit reference conversion from 'DocumentFormat.OpenXml.Wordprocessing.PreviousTableGrid' to 'DocumentFormat.OpenXml.OpenXmlLeafElement'.
-5>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Vml\ShapeDefaults.cs(22,37,22,57): error CS1503: Argument 1: cannot convert from 'DocumentFormat.OpenXml.IntegerValue' to 'DocumentFormat.OpenXml.HexBinaryValue?'
-5>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Vml\Shape.cs(165,37,165,56): error CS1503: Argument 1: cannot convert from 'DocumentFormat.OpenXml.IntegerValue' to 'DocumentFormat.OpenXml.HexBinaryValue?'
-5>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Vml\RoundRectangle.cs(154,37,154,56): error CS1503: Argument 1: cannot convert from 'DocumentFormat.OpenXml.IntegerValue' to 'DocumentFormat.OpenXml.HexBinaryValue?'
-5>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Vml\Rectangle.cs(165,37,165,56): error CS1503: Argument 1: cannot convert from 'DocumentFormat.OpenXml.IntegerValue' to 'DocumentFormat.OpenXml.HexBinaryValue?'
-5>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Vml\ImageFile.cs(154,37,154,56): error CS1503: Argument 1: cannot convert from 'DocumentFormat.OpenXml.IntegerValue' to 'DocumentFormat.OpenXml.HexBinaryValue?'
-5>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Vml\PolyLine.cs(165,37,165,56): error CS1503: Argument 1: cannot convert from 'DocumentFormat.OpenXml.IntegerValue' to 'DocumentFormat.OpenXml.HexBinaryValue?'
-5>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Vml\Line.cs(165,37,165,56): error CS1503: Argument 1: cannot convert from 'DocumentFormat.OpenXml.IntegerValue' to 'DocumentFormat.OpenXml.HexBinaryValue?'
-5>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Vml\Oval.cs(165,37,165,56): error CS1503: Argument 1: cannot convert from 'DocumentFormat.OpenXml.IntegerValue' to 'DocumentFormat.OpenXml.HexBinaryValue?'
-5>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Vml\Group.cs(165,37,165,56): error CS1503: Argument 1: cannot convert from 'DocumentFormat.OpenXml.IntegerValue' to 'DocumentFormat.OpenXml.HexBinaryValue?'
-5>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Wordprocessing\Table.cs(25,21,25,49): error CS0311: The type 'DocumentFormat.OpenXml.Wordprocessing.TableGrid' cannot be used as type parameter 'OpenXmlElementType' in the generic type or method 'HexIntConverter.GetHexIntVal<OpenXmlElementType>(OpenXmlCompositeElement?)'. There is no implicit reference conversion from 'DocumentFormat.OpenXml.Wordprocessing.TableGrid' to 'DocumentFormat.OpenXml.OpenXmlLeafElement'.
-5>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Wordprocessing\FootnoteEndnoteSeparatorReferenceType.cs(22,37,22,49): error CS1503: Argument 1: cannot convert from 'DocumentFormat.OpenXml.IntegerValue' to 'DocumentFormat.OpenXml.HexBinaryValue?'
-5>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Wordprocessing\FootnoteEndnoteReferenceType.cs(33,37,33,49): error CS1503: Argument 1: cannot convert from 'DocumentFormat.OpenXml.IntegerValue' to 'DocumentFormat.OpenXml.HexBinaryValue?'
-5>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Wordprocessing\FootnoteEndnoteType.cs(22,37,22,49): error CS1503: Argument 1: cannot convert from 'DocumentFormat.OpenXml.IntegerValue' to 'DocumentFormat.OpenXml.HexBinaryValue?'
+5>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Vml\Arc.cs(44,12,44,38): error CS0266: Cannot implicitly convert type 'long?' to 'DocumentModel.HexLong?'. An explicit conversion exists (are you missing a cast?)
+5>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Vml\Arc.cs(45,41,45,46): error CS0029: Cannot implicitly convert type 'DocumentModel.HexLong?' to 'DocumentFormat.OpenXml.IntegerValue'
+5>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Vml\Curve.cs(165,12,165,38): error CS0266: Cannot implicitly convert type 'long?' to 'DocumentModel.HexLong?'. An explicit conversion exists (are you missing a cast?)
+5>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Vml\Curve.cs(166,41,166,46): error CS0029: Cannot implicitly convert type 'DocumentModel.HexLong?' to 'DocumentFormat.OpenXml.IntegerValue'
+5>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Vml\Group.cs(165,12,165,38): error CS0266: Cannot implicitly convert type 'long?' to 'DocumentModel.HexLong?'. An explicit conversion exists (are you missing a cast?)
+5>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Vml\ImageFile.cs(154,12,154,38): error CS0266: Cannot implicitly convert type 'long?' to 'DocumentModel.HexLong?'. An explicit conversion exists (are you missing a cast?)
+5>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Vml\ImageFile.cs(155,41,155,46): error CS0029: Cannot implicitly convert type 'DocumentModel.HexLong?' to 'DocumentFormat.OpenXml.IntegerValue'
+5>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Vml\Group.cs(166,41,166,46): error CS0029: Cannot implicitly convert type 'DocumentModel.HexLong?' to 'DocumentFormat.OpenXml.IntegerValue'
+5>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Vml\Line.cs(165,12,165,38): error CS0266: Cannot implicitly convert type 'long?' to 'DocumentModel.HexLong?'. An explicit conversion exists (are you missing a cast?)
+5>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Vml\Line.cs(166,41,166,46): error CS0029: Cannot implicitly convert type 'DocumentModel.HexLong?' to 'DocumentFormat.OpenXml.IntegerValue'
+5>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Vml\Oval.cs(165,12,165,38): error CS0266: Cannot implicitly convert type 'long?' to 'DocumentModel.HexLong?'. An explicit conversion exists (are you missing a cast?)
+5>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Vml\Oval.cs(166,41,166,46): error CS0029: Cannot implicitly convert type 'DocumentModel.HexLong?' to 'DocumentFormat.OpenXml.IntegerValue'
+5>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Vml\PolyLine.cs(165,12,165,38): error CS0266: Cannot implicitly convert type 'long?' to 'DocumentModel.HexLong?'. An explicit conversion exists (are you missing a cast?)
+5>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Vml\PolyLine.cs(166,41,166,46): error CS0029: Cannot implicitly convert type 'DocumentModel.HexLong?' to 'DocumentFormat.OpenXml.IntegerValue'
+5>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Vml\Rectangle.cs(165,12,165,38): error CS0266: Cannot implicitly convert type 'long?' to 'DocumentModel.HexLong?'. An explicit conversion exists (are you missing a cast?)
+5>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Vml\Rectangle.cs(166,41,166,46): error CS0029: Cannot implicitly convert type 'DocumentModel.HexLong?' to 'DocumentFormat.OpenXml.IntegerValue'
+5>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Vml\RoundRectangle.cs(154,12,154,38): error CS0266: Cannot implicitly convert type 'long?' to 'DocumentModel.HexLong?'. An explicit conversion exists (are you missing a cast?)
+5>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Vml\RoundRectangle.cs(155,41,155,46): error CS0029: Cannot implicitly convert type 'DocumentModel.HexLong?' to 'DocumentFormat.OpenXml.IntegerValue'
+5>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Vml\Shape.cs(165,12,165,38): error CS0266: Cannot implicitly convert type 'long?' to 'DocumentModel.HexLong?'. An explicit conversion exists (are you missing a cast?)
+5>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Vml\Shape.cs(166,41,166,46): error CS0029: Cannot implicitly convert type 'DocumentModel.HexLong?' to 'DocumentFormat.OpenXml.IntegerValue'
+5>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Vml\Shapetype.cs(165,12,165,38): error CS0266: Cannot implicitly convert type 'long?' to 'DocumentModel.HexLong?'. An explicit conversion exists (are you missing a cast?)
+5>D:\VS\Projects\DocxDocument\ModelGen\DocumentModel\Vml\Shapetype.cs(166,41,166,46): error CS0029: Cannot implicitly convert type 'DocumentModel.HexLong?' to 'DocumentFormat.OpenXml.IntegerValue'
 5>Done building project "DocumentModel.csproj" -- FAILED.
 ========== Rebuild All: 4 succeeded, 1 failed, 0 skipped ==========
-========== Rebuild completed at 21:21 and took 14,771 seconds ==========
+========== Rebuild completed at 18:43 and took 49,146 seconds ==========
 

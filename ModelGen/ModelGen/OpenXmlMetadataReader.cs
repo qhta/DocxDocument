@@ -1,8 +1,4 @@
 ﻿using DocumentFormat.OpenXml;
-using DocumentFormat.OpenXml.Validation.Schema;
-
-using Newtonsoft.Json.Serialization;
-
 using DXFwork = DocumentFormat.OpenXml.Framework;
 using DXMeta = DocumentFormat.OpenXml.Framework.Metadata;
 using DXSchema = DocumentFormat.OpenXml.Validation.Schema;

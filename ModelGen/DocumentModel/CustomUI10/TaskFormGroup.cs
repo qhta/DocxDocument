@@ -17,10 +17,10 @@ public partial class TaskFormGroup: ModelElement<DXO10CUI.TaskFormGroup>
   ///   id, this property is only available in Office 2010 and later.
   /// </summary>
   [DataMember]
-  public DocumentModel.HexInt? Id
+  public String? Id
   {
-    get => HexIntConverter.GetValue(_Element?.Id);
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => _Element?.Id;
+    set => _ExistingElement.Id = value;
   }
   
   
@@ -28,10 +28,10 @@ public partial class TaskFormGroup: ModelElement<DXO10CUI.TaskFormGroup>
   ///   idQ, this property is only available in Office 2010 and later.
   /// </summary>
   [DataMember]
-  public DocumentModel.HexInt? QualifiedId
+  public String? QualifiedId
   {
-    get => HexIntConverter.GetValue(_Element?.QualifiedId);
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => _Element?.QualifiedId;
+    set => _ExistingElement.QualifiedId = value;
   }
   
   

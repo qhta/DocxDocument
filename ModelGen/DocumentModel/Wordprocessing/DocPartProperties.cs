@@ -28,10 +28,10 @@ public partial class DocPartProperties: ModelElement<DXW.DocPartProperties>
   ///   Associated Paragraph Style Name.
   /// </summary>
   [DataMember]
-  public DocumentModel.HexInt? StyleId
+  public DMW.StyleId? StyleId
   {
-    get => _Element?.GetHexIntVal<DXW.StyleId>();
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.StringType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.StringType");
   }
   
   
@@ -83,10 +83,10 @@ public partial class DocPartProperties: ModelElement<DXW.DocPartProperties>
   ///   Entry ID.
   /// </summary>
   [DataMember]
-  public DocumentModel.HexInt? DocPartId
+  public String? DocPartId
   {
-    get => _Element?.GetHexIntVal<DXW.DocPartId>();
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => _Element?.GetStringVal<DXW.DocPartId>();
+    set => _ExistingElement.SetStringVal<DXW.DocPartId>(value);
   }
   
 }

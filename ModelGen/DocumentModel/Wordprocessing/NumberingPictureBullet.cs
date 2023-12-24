@@ -17,10 +17,10 @@ public partial class NumberingPictureBullet: ModelElement<DXW.NumberingPictureBu
   ///   numPicBulletId
   /// </summary>
   [DataMember]
-  public DocumentModel.HexInt? NumberingPictureBulletId
+  public Int32? NumberingPictureBulletId
   {
-    get => HexIntConverter.GetValue(_Element?.NumberingPictureBulletId);
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => _Element?.NumberingPictureBulletId?.Value;
+    set => _ExistingElement.NumberingPictureBulletId = value;
   }
   
   

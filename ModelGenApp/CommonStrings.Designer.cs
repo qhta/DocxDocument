@@ -777,6 +777,24 @@ namespace ModelGenApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Input assembly.
+        /// </summary>
+        public static string InputAssembly {
+            get {
+                return ResourceManager.GetString("InputAssembly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Input assembly to parse.
+        /// </summary>
+        public static string InputAssemblyTooltip {
+            get {
+                return ResourceManager.GetString("InputAssemblyTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Interfaces.
         /// </summary>
         public static string Interfaces {

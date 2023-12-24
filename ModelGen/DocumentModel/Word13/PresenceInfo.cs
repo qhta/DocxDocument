@@ -17,10 +17,10 @@ public partial class PresenceInfo: ModelElement<DXO13W.PresenceInfo>
   ///   providerId, this property is only available in Office 2013 and later.
   /// </summary>
   [DataMember]
-  public DocumentModel.HexInt? ProviderId
+  public String? ProviderId
   {
-    get => HexIntConverter.GetValue(_Element?.ProviderId);
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => _Element?.ProviderId;
+    set => _ExistingElement.ProviderId = value;
   }
   
   
@@ -28,10 +28,10 @@ public partial class PresenceInfo: ModelElement<DXO13W.PresenceInfo>
   ///   userId, this property is only available in Office 2013 and later.
   /// </summary>
   [DataMember]
-  public DocumentModel.HexInt? UserId
+  public String? UserId
   {
-    get => HexIntConverter.GetValue(_Element?.UserId);
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => _Element?.UserId;
+    set => _ExistingElement.UserId = value;
   }
   
 }

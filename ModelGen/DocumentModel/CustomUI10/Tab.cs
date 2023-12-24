@@ -17,10 +17,10 @@ public partial class Tab: ModelElement<DXO10CUI.Tab>
   ///   id, this property is only available in Office 2010 and later.
   /// </summary>
   [DataMember]
-  public DocumentModel.HexInt? Id
+  public String? Id
   {
-    get => HexIntConverter.GetValue(_Element?.Id);
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => _Element?.Id;
+    set => _ExistingElement.Id = value;
   }
   
   
@@ -28,10 +28,10 @@ public partial class Tab: ModelElement<DXO10CUI.Tab>
   ///   idQ, this property is only available in Office 2010 and later.
   /// </summary>
   [DataMember]
-  public DocumentModel.HexInt? QualifiedId
+  public String? QualifiedId
   {
-    get => HexIntConverter.GetValue(_Element?.QualifiedId);
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => _Element?.QualifiedId;
+    set => _ExistingElement.QualifiedId = value;
   }
   
   
@@ -105,10 +105,10 @@ public partial class Tab: ModelElement<DXO10CUI.Tab>
   ///   insertAfterQ, this property is only available in Office 2010 and later.
   /// </summary>
   [DataMember]
-  public DocumentModel.HexInt? InsertAfterQulifiedId
+  public String? InsertAfterQulifiedId
   {
-    get => HexIntConverter.GetValue(_Element?.InsertAfterQulifiedId);
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => _Element?.InsertAfterQulifiedId;
+    set => _ExistingElement.InsertAfterQulifiedId = value;
   }
   
   
@@ -116,10 +116,10 @@ public partial class Tab: ModelElement<DXO10CUI.Tab>
   ///   insertBeforeQ, this property is only available in Office 2010 and later.
   /// </summary>
   [DataMember]
-  public DocumentModel.HexInt? InsertBeforeQulifiedId
+  public String? InsertBeforeQulifiedId
   {
-    get => HexIntConverter.GetValue(_Element?.InsertBeforeQulifiedId);
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => _Element?.InsertBeforeQulifiedId;
+    set => _ExistingElement.InsertBeforeQulifiedId = value;
   }
   
   

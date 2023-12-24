@@ -295,6 +295,15 @@ namespace ModelGen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Input name not defined.
+        /// </summary>
+        internal static string Input_assembly_not_defined {
+            get {
+                return ResourceManager.GetString("Input_assembly_not_defined", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Invalid properties.
         /// </summary>
         internal static string InvalidProperties {

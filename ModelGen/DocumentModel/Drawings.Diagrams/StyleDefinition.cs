@@ -17,10 +17,10 @@ public partial class StyleDefinition: ModelElement<DXDDD.StyleDefinition>
   ///   Unique Style ID
   /// </summary>
   [DataMember]
-  public DocumentModel.HexInt? UniqueId
+  public String? UniqueId
   {
-    get => HexIntConverter.GetValue(_Element?.UniqueId);
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => _Element?.UniqueId;
+    set => _ExistingElement.UniqueId = value;
   }
   
   

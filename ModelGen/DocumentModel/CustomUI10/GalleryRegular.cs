@@ -259,10 +259,10 @@ public partial class GalleryRegular: ModelElement<DXO10CUI.GalleryRegular>
   ///   getItemID, this property is only available in Office 2010 and later.
   /// </summary>
   [DataMember]
-  public DocumentModel.HexInt? GetItemID
+  public String? GetItemID
   {
-    get => HexIntConverter.GetValue(_Element?.GetItemID);
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => _Element?.GetItemID;
+    set => _ExistingElement.GetItemID = value;
   }
   
   
@@ -281,10 +281,10 @@ public partial class GalleryRegular: ModelElement<DXO10CUI.GalleryRegular>
   ///   getSelectedItemID, this property is only available in Office 2010 and later.
   /// </summary>
   [DataMember]
-  public DocumentModel.HexInt? GetSelectedItemID
+  public String? GetSelectedItemID
   {
-    get => HexIntConverter.GetValue(_Element?.GetSelectedItemID);
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => _Element?.GetSelectedItemID;
+    set => _ExistingElement.GetSelectedItemID = value;
   }
   
   
@@ -303,10 +303,10 @@ public partial class GalleryRegular: ModelElement<DXO10CUI.GalleryRegular>
   ///   id, this property is only available in Office 2010 and later.
   /// </summary>
   [DataMember]
-  public DocumentModel.HexInt? Id
+  public String? Id
   {
-    get => HexIntConverter.GetValue(_Element?.Id);
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => _Element?.Id;
+    set => _ExistingElement.Id = value;
   }
   
   
@@ -314,10 +314,10 @@ public partial class GalleryRegular: ModelElement<DXO10CUI.GalleryRegular>
   ///   idQ, this property is only available in Office 2010 and later.
   /// </summary>
   [DataMember]
-  public DocumentModel.HexInt? QualifiedId
+  public String? QualifiedId
   {
-    get => HexIntConverter.GetValue(_Element?.QualifiedId);
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => _Element?.QualifiedId;
+    set => _ExistingElement.QualifiedId = value;
   }
   
   
@@ -435,10 +435,10 @@ public partial class GalleryRegular: ModelElement<DXO10CUI.GalleryRegular>
   ///   insertAfterQ, this property is only available in Office 2010 and later.
   /// </summary>
   [DataMember]
-  public DocumentModel.HexInt? InsertAfterQulifiedId
+  public String? InsertAfterQulifiedId
   {
-    get => HexIntConverter.GetValue(_Element?.InsertAfterQulifiedId);
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => _Element?.InsertAfterQulifiedId;
+    set => _ExistingElement.InsertAfterQulifiedId = value;
   }
   
   
@@ -446,10 +446,10 @@ public partial class GalleryRegular: ModelElement<DXO10CUI.GalleryRegular>
   ///   insertBeforeQ, this property is only available in Office 2010 and later.
   /// </summary>
   [DataMember]
-  public DocumentModel.HexInt? InsertBeforeQulifiedId
+  public String? InsertBeforeQulifiedId
   {
-    get => HexIntConverter.GetValue(_Element?.InsertBeforeQulifiedId);
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => _Element?.InsertBeforeQulifiedId;
+    set => _ExistingElement.InsertBeforeQulifiedId = value;
   }
   
   

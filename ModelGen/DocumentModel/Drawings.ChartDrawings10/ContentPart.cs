@@ -17,10 +17,10 @@ public partial class ContentPart: ModelElement<DXO10DCD.ContentPart>
   ///   id, this property is only available in Office 2010 and later.
   /// </summary>
   [DataMember]
-  public DocumentModel.HexInt? RelationshipId
+  public String? RelationshipId
   {
-    get => HexIntConverter.GetValue(_Element?.RelationshipId);
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => _Element?.RelationshipId;
+    set => _ExistingElement.RelationshipId = value;
   }
   
   

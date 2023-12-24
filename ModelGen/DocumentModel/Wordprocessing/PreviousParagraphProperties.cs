@@ -17,10 +17,10 @@ public partial class PreviousParagraphProperties: ModelElement<DXW.PreviousParag
   ///   ParagraphStyleId.
   /// </summary>
   [DataMember]
-  public DocumentModel.HexInt? ParagraphStyleId
+  public DMW.ParagraphStyleId? ParagraphStyleId
   {
-    get => _Element?.GetHexIntVal<DXW.ParagraphStyleId>();
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.StringType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.StringType");
   }
   
   
@@ -237,10 +237,10 @@ public partial class PreviousParagraphProperties: ModelElement<DXW.PreviousParag
   ///   SnapToGrid.
   /// </summary>
   [DataMember]
-  public DocumentModel.HexInt? SnapToGrid
+  public DMW.SnapToGrid? SnapToGrid
   {
-    get => _Element?.GetHexIntVal<DXW.SnapToGrid>();
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   

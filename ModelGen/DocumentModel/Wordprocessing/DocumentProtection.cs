@@ -39,10 +39,10 @@ public partial class DocumentProtection: ModelElement<DXW.DocumentProtection>
   ///   Cryptographic Hashing Algorithm
   /// </summary>
   [DataMember]
-  public DocumentModel.HexInt? CryptographicAlgorithmSid
+  public Int32? CryptographicAlgorithmSid
   {
-    get => HexIntConverter.GetValue(_Element?.CryptographicAlgorithmSid);
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => _Element?.CryptographicAlgorithmSid?.Value;
+    set => _ExistingElement.CryptographicAlgorithmSid = value;
   }
   
   

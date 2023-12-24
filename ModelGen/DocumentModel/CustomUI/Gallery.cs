@@ -270,10 +270,10 @@ public partial class Gallery: ModelElement<DXOCUI.Gallery>
   ///   getItemID
   /// </summary>
   [DataMember]
-  public DocumentModel.HexInt? GetItemID
+  public String? GetItemID
   {
-    get => HexIntConverter.GetValue(_Element?.GetItemID);
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => _Element?.GetItemID;
+    set => _ExistingElement.GetItemID = value;
   }
   
   
@@ -292,10 +292,10 @@ public partial class Gallery: ModelElement<DXOCUI.Gallery>
   ///   getSelectedItemID
   /// </summary>
   [DataMember]
-  public DocumentModel.HexInt? GetSelectedItemID
+  public String? GetSelectedItemID
   {
-    get => HexIntConverter.GetValue(_Element?.GetSelectedItemID);
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => _Element?.GetSelectedItemID;
+    set => _ExistingElement.GetSelectedItemID = value;
   }
   
   
@@ -314,10 +314,10 @@ public partial class Gallery: ModelElement<DXOCUI.Gallery>
   ///   id
   /// </summary>
   [DataMember]
-  public DocumentModel.HexInt? Id
+  public String? Id
   {
-    get => HexIntConverter.GetValue(_Element?.Id);
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => _Element?.Id;
+    set => _ExistingElement.Id = value;
   }
   
   

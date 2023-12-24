@@ -176,10 +176,10 @@ public partial class SectionProperties: ModelElement<DXW.SectionProperties>
   }
   
   [DataMember]
-  public DocumentModel.HexInt? DocGrid
+  public DMW.DocGrid? DocGrid
   {
-    get => _Element?.GetHexIntVal<DXW.DocGrid>();
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafElement");
   }
   
   [DataMember]

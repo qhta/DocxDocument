@@ -14,17 +14,6 @@ public partial class Series: ModelElement<DXO16DCD.Series>
   
   
   /// <summary>
-  ///   layoutId, this property is only available in Office 2016 and later.
-  /// </summary>
-  [DataMember]
-  public DocumentModel.HexInt? LayoutId
-  {
-    get => HexIntConverter.GetValue(_Element?.LayoutId);
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
-  }
-  
-  
-  /// <summary>
   ///   hidden, this property is only available in Office 2016 and later.
   /// </summary>
   [DataMember]
@@ -50,10 +39,10 @@ public partial class Series: ModelElement<DXO16DCD.Series>
   ///   uniqueId, this property is only available in Office 2016 and later.
   /// </summary>
   [DataMember]
-  public DocumentModel.HexInt? UniqueId
+  public String? UniqueId
   {
-    get => HexIntConverter.GetValue(_Element?.UniqueId);
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => _Element?.UniqueId;
+    set => _ExistingElement.UniqueId = value;
   }
   
   
@@ -119,10 +108,10 @@ public partial class Series: ModelElement<DXO16DCD.Series>
   }
   
   [DataMember]
-  public DocumentModel.HexInt? DataId
+  public UInt32? DataId
   {
-    get => _Element?.GetHexIntVal<DXO16DCD.DataId>();
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => _Element?.GetIntVal<UInt32, DXO16DCD.DataId>();
+    set => _ExistingElement.SetIntVal<UInt32, DXO16DCD.DataId>(value);
   }
   
   [DataMember]

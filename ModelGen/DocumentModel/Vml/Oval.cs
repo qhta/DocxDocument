@@ -17,10 +17,10 @@ public partial class Oval: ModelElement<DXV.Oval>
   ///   Unique Identifier
   /// </summary>
   [DataMember]
-  public DocumentModel.HexInt? Id
+  public String? Id
   {
-    get => HexIntConverter.GetValue(_Element?.Id);
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => _Element?.Id;
+    set => _ExistingElement.Id = value;
   }
   
   
@@ -160,10 +160,10 @@ public partial class Oval: ModelElement<DXV.Oval>
   ///   Regroup ID
   /// </summary>
   [DataMember]
-  public DocumentModel.HexInt? RegroupId
+  public DocumentModel.HexLong? RegroupId
   {
-    get => HexIntConverter.GetValue(_Element?.RegroupId);
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => _Element?.RegroupId?.Value;
+    set => _ExistingElement.RegroupId = value;
   }
   
   
