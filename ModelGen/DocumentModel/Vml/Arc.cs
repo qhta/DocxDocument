@@ -39,10 +39,10 @@ public partial class Arc: ModelElement<DXV.Arc>
   ///   Regroup ID
   /// </summary>
   [DataMember]
-  public DocumentModel.HexInt? RegroupId
+  public DocumentModel.HexLong? RegroupId
   {
-    get => HexIntConverter.GetValue(_Element?.RegroupId);
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => _Element?.RegroupId?.Value;
+    set => _ExistingElement.RegroupId = value;
   }
   
   
@@ -402,10 +402,10 @@ public partial class Arc: ModelElement<DXV.Arc>
   ///   Unique Identifier
   /// </summary>
   [DataMember]
-  public DocumentModel.HexInt? Id
+  public String? Id
   {
-    get => HexIntConverter.GetValue(_Element?.Id);
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => _Element?.Id;
+    set => _ExistingElement.Id = value;
   }
   
   

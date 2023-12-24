@@ -17,7 +17,7 @@ public partial class CommentExtensible: ModelElement<DXO21WCE.CommentExtensible>
   ///   durableId, this property is only available in Office 2021 and later.
   /// </summary>
   [DataMember]
-  public DocumentModel.HexInt? DurableId
+  public DM.HexBinary? DurableId
   {
     get => HexIntConverter.GetValue(_Element?.DurableId);
     set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");

@@ -16,10 +16,26 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
 
   #region Observable properties
   /// <summary>
+  /// Specifies the name of input assembly to parse.
+  /// </summary>
+  /// 
+  public string? InputAssembly
+  {
+    get { return Model.InputAssembly; }
+    set
+    {
+      if (Model.InputAssembly != value)
+      {
+        Model.InputAssembly = value;
+        NotifyPropertyChanged(nameof(InputAssembly));
+      }
+    }
+  }
+
+  /// <summary>
   /// Specifies the name of the generator class.
   /// </summary>
   /// 
-
   public string? GeneratorType
   {
     get { return Model.GeneratorType; }

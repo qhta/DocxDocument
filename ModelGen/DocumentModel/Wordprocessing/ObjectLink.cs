@@ -28,10 +28,10 @@ public partial class ObjectLink: ModelElement<DXW.ObjectLink>
   ///   id
   /// </summary>
   [DataMember]
-  public DocumentModel.HexInt? Id
+  public String? Id
   {
-    get => HexIntConverter.GetValue(_Element?.Id);
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => _Element?.Id;
+    set => _ExistingElement.Id = value;
   }
   
   
@@ -39,10 +39,10 @@ public partial class ObjectLink: ModelElement<DXW.ObjectLink>
   ///   progId
   /// </summary>
   [DataMember]
-  public DocumentModel.HexInt? ProgId
+  public String? ProgId
   {
-    get => HexIntConverter.GetValue(_Element?.ProgId);
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => _Element?.ProgId;
+    set => _ExistingElement.ProgId = value;
   }
   
   
@@ -50,10 +50,10 @@ public partial class ObjectLink: ModelElement<DXW.ObjectLink>
   ///   shapeId
   /// </summary>
   [DataMember]
-  public DocumentModel.HexInt? ShapeId
+  public String? ShapeId
   {
-    get => HexIntConverter.GetValue(_Element?.ShapeId);
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => _Element?.ShapeId;
+    set => _ExistingElement.ShapeId = value;
   }
   
   

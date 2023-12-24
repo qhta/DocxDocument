@@ -17,10 +17,10 @@ public partial class ParagraphProperties: ModelElement<DXW.ParagraphProperties>
   ///   ParagraphStyleId.
   /// </summary>
   [DataMember]
-  public DocumentModel.HexInt? ParagraphStyleId
+  public DMW.ParagraphStyleId? ParagraphStyleId
   {
-    get => _Element?.GetHexIntVal<DXW.ParagraphStyleId>();
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.StringType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.StringType");
   }
   
   
@@ -237,10 +237,10 @@ public partial class ParagraphProperties: ModelElement<DXW.ParagraphProperties>
   ///   SnapToGrid.
   /// </summary>
   [DataMember]
-  public DocumentModel.HexInt? SnapToGrid
+  public DMW.SnapToGrid? SnapToGrid
   {
-    get => _Element?.GetHexIntVal<DXW.SnapToGrid>();
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.OnOffType");
   }
   
   
@@ -358,10 +358,10 @@ public partial class ParagraphProperties: ModelElement<DXW.ParagraphProperties>
   ///   DivId.
   /// </summary>
   [DataMember]
-  public DocumentModel.HexInt? DivId
+  public String? DivId
   {
-    get => _Element?.GetHexIntVal<DXW.DivId>();
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => _Element?.GetStringVal<DXW.DivId>();
+    set => _ExistingElement.SetStringVal<DXW.DivId>(value);
   }
   
   

@@ -17,7 +17,7 @@ public partial class CommentId: ModelElement<DXO19WC.CommentId>
   ///   paraId, this property is only available in Office 2019 and later.
   /// </summary>
   [DataMember]
-  public DocumentModel.HexInt? ParaId
+  public DM.HexBinary? ParaId
   {
     get => HexIntConverter.GetValue(_Element?.ParaId);
     set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
@@ -28,7 +28,7 @@ public partial class CommentId: ModelElement<DXO19WC.CommentId>
   ///   durableId, this property is only available in Office 2019 and later.
   /// </summary>
   [DataMember]
-  public DocumentModel.HexInt? DurableId
+  public DM.HexBinary? DurableId
   {
     get => HexIntConverter.GetValue(_Element?.DurableId);
     set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");

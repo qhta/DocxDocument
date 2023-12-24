@@ -138,7 +138,7 @@ public partial class Anchor: ModelElement<DXDW.Anchor>
   ///   editId, this property is only available in Office 2010 and later.
   /// </summary>
   [DataMember]
-  public DocumentModel.HexInt? EditId
+  public DM.HexBinary? EditId
   {
     get => HexIntConverter.GetValue(_Element?.EditId);
     set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
@@ -149,7 +149,7 @@ public partial class Anchor: ModelElement<DXDW.Anchor>
   ///   anchorId, this property is only available in Office 2010 and later.
   /// </summary>
   [DataMember]
-  public DocumentModel.HexInt? AnchorId
+  public DM.HexBinary? AnchorId
   {
     get => HexIntConverter.GetValue(_Element?.AnchorId);
     set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");

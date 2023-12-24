@@ -17,10 +17,10 @@ public partial class StyleSet: ModelElement<DXO10W.StyleSet>
   ///   id, this property is only available in Office 2010 and later.
   /// </summary>
   [DataMember]
-  public DocumentModel.HexInt? Id
+  public UInt32? Id
   {
-    get => HexIntConverter.GetValue(_Element?.Id);
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertyGetCode: numeric propertyType baseType is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
+    set => throw new NotImplementedException("Not implemented in GenerateNumericValuePropertySetCode: numeric propertyType baseclass is DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1[System.UInt32]");
   }
   
 }

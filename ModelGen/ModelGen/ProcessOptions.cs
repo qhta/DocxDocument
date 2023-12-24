@@ -12,6 +12,11 @@ public record ProcessOptions
   public string? AppDataFolder { [DebuggerStepThrough] get; set; }
 
   /// <summary>
+  /// Specifies the name of input assembly to parse.
+  /// </summary>
+  public string? InputAssembly { [DebuggerStepThrough] get; set; }
+
+  /// <summary>
   /// Specifies the name of the generator class.
   /// </summary>
   public string? GeneratorType { [DebuggerStepThrough] get; set; }

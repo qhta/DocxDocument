@@ -17,10 +17,10 @@ public partial class ImageData: ModelElement<DXV.ImageData>
   ///   Unique Identifier
   /// </summary>
   [DataMember]
-  public DocumentModel.HexInt? Id
+  public String? Id
   {
-    get => HexIntConverter.GetValue(_Element?.Id);
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => _Element?.Id;
+    set => _ExistingElement.Id = value;
   }
   
   
@@ -182,10 +182,10 @@ public partial class ImageData: ModelElement<DXV.ImageData>
   ///   Relationship to Part
   /// </summary>
   [DataMember]
-  public DocumentModel.HexInt? RelId
+  public String? RelId
   {
-    get => HexIntConverter.GetValue(_Element?.RelId);
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => _Element?.RelId;
+    set => _ExistingElement.RelId = value;
   }
   
   
@@ -193,10 +193,10 @@ public partial class ImageData: ModelElement<DXV.ImageData>
   ///   Explicit Relationship to Image Data
   /// </summary>
   [DataMember]
-  public DocumentModel.HexInt? RelationshipId
+  public String? RelationshipId
   {
-    get => HexIntConverter.GetValue(_Element?.RelationshipId);
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => _Element?.RelationshipId;
+    set => _ExistingElement.RelationshipId = value;
   }
   
   

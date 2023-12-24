@@ -291,4 +291,7 @@
   <data name="Solution_name_not_defined" xml:space="preserve">
     <value>Solution name not defined</value>
   </data>
+  <data name="Input_assembly_not_defined" xml:space="preserve">
+    <value>Input name not defined</value>
+  </data>
 </root>

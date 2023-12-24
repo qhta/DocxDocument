@@ -83,10 +83,10 @@ public partial class ComboBox: ModelElement<DXOCUI.ComboBox>
   ///   getItemID
   /// </summary>
   [DataMember]
-  public DocumentModel.HexInt? GetItemID
+  public String? GetItemID
   {
-    get => HexIntConverter.GetValue(_Element?.GetItemID);
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => _Element?.GetItemID;
+    set => _ExistingElement.GetItemID = value;
   }
   
   
@@ -204,10 +204,10 @@ public partial class ComboBox: ModelElement<DXOCUI.ComboBox>
   ///   id
   /// </summary>
   [DataMember]
-  public DocumentModel.HexInt? Id
+  public String? Id
   {
-    get => HexIntConverter.GetValue(_Element?.Id);
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => _Element?.Id;
+    set => _ExistingElement.Id = value;
   }
   
   
