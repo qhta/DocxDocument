@@ -28,10 +28,10 @@ public partial class FitText: ModelElement<DXW.FitText>
   ///   Fit Text Run ID
   /// </summary>
   [DataMember]
-  public DocumentModel.HexInt? Id
+  public Int32? Id
   {
-    get => HexIntConverter.GetValue(_Element?.Id);
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => _Element?.Id?.Value;
+    set => _ExistingElement.Id = value;
   }
   
 }

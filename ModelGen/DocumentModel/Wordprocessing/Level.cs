@@ -127,10 +127,10 @@ public partial class Level: ModelElement<DXW.Level>
   ///   Picture Numbering Symbol Definition Reference.
   /// </summary>
   [DataMember]
-  public DocumentModel.HexInt? LevelPictureBulletId
+  public DMW.LevelPictureBulletId? LevelPictureBulletId
   {
-    get => _Element?.GetHexIntVal<DXW.LevelPictureBulletId>();
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.DecimalNumberType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.DecimalNumberType");
   }
   
   

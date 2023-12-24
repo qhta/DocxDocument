@@ -17,10 +17,10 @@ public partial class DataLabelFieldTableEntry: ModelElement<DXO13DC.DataLabelFie
   ///   TextFieldGuid.
   /// </summary>
   [DataMember]
-  public DocumentModel.HexInt? TextFieldGuid
+  public DMDC13.TextFieldGuid? TextFieldGuid
   {
-    get => _Element?.GetHexIntVal<DXO13DC.TextFieldGuid>();
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement");
   }
   
   

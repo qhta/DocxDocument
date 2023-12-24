@@ -17,10 +17,10 @@ public partial class TableGridChange: ModelElement<DXW.TableGridChange>
   ///   Annotation Identifier
   /// </summary>
   [DataMember]
-  public DocumentModel.HexInt? Id
+  public String? Id
   {
-    get => HexIntConverter.GetValue(_Element?.Id);
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => _Element?.Id;
+    set => _ExistingElement.Id = value;
   }
   
   
@@ -28,10 +28,10 @@ public partial class TableGridChange: ModelElement<DXW.TableGridChange>
   ///   Previous Table Grid.
   /// </summary>
   [DataMember]
-  public DocumentModel.HexInt? PreviousTableGrid
+  public DMW.PreviousTableGrid? PreviousTableGrid
   {
-    get => _Element?.GetHexIntVal<DXW.PreviousTableGrid>();
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
   }
   
 }

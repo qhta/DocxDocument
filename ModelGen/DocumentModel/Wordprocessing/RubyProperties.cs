@@ -61,10 +61,10 @@ public partial class RubyProperties: ModelElement<DXW.RubyProperties>
   ///   Language ID for Phonetic Guide.
   /// </summary>
   [DataMember]
-  public DocumentModel.HexInt? LanguageId
+  public String? LanguageId
   {
-    get => _Element?.GetHexIntVal<DXW.LanguageId>();
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => _Element?.GetStringVal<DXW.LanguageId>();
+    set => _ExistingElement.SetStringVal<DXW.LanguageId>(value);
   }
   
   

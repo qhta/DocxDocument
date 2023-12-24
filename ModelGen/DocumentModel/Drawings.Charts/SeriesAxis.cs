@@ -17,10 +17,10 @@ public partial class SeriesAxis: ModelElement<DXDC.SeriesAxis>
   ///   Axis ID.
   /// </summary>
   [DataMember]
-  public DocumentModel.HexInt? AxisId
+  public DMDC.AxisId? AxisId
   {
-    get => _Element?.GetHexIntVal<DXDC.AxisId>();
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.UnsignedIntegerType");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Drawing.Charts.UnsignedIntegerType");
   }
   
   

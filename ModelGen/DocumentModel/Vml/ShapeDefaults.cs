@@ -17,10 +17,10 @@ public partial class ShapeDefaults: ModelElement<DXVO.ShapeDefaults>
   ///   Shape ID Optional Storage
   /// </summary>
   [DataMember]
-  public DocumentModel.HexInt? MaxShapeId
+  public Int64? MaxShapeId
   {
-    get => HexIntConverter.GetValue(_Element?.MaxShapeId);
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => _Element?.MaxShapeId?.Value;
+    set => _ExistingElement.MaxShapeId = value;
   }
   
   

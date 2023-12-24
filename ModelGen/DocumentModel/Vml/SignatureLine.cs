@@ -28,10 +28,10 @@ public partial class SignatureLine: ModelElement<DXVO.SignatureLine>
   ///   Unique ID
   /// </summary>
   [DataMember]
-  public DocumentModel.HexInt? Id
+  public String? Id
   {
-    get => HexIntConverter.GetValue(_Element?.Id);
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => _Element?.Id;
+    set => _ExistingElement.Id = value;
   }
   
   
@@ -39,10 +39,10 @@ public partial class SignatureLine: ModelElement<DXVO.SignatureLine>
   ///   Signature Provider ID
   /// </summary>
   [DataMember]
-  public DocumentModel.HexInt? ProviderId
+  public String? ProviderId
   {
-    get => HexIntConverter.GetValue(_Element?.ProviderId);
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => _Element?.ProviderId;
+    set => _ExistingElement.ProviderId = value;
   }
   
   

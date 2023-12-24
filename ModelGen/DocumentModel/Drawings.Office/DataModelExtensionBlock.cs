@@ -17,10 +17,10 @@ public partial class DataModelExtensionBlock: ModelElement<DXOD.DataModelExtensi
   ///   relId, this property is only available in Office 2010 and later.
   /// </summary>
   [DataMember]
-  public DocumentModel.HexInt? RelId
+  public String? RelId
   {
-    get => HexIntConverter.GetValue(_Element?.RelId);
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => _Element?.RelId;
+    set => _ExistingElement.RelId = value;
   }
   
   

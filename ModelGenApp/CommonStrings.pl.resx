@@ -777,4 +777,10 @@ Użyj znaku '*' aby dopasować wzorzec do wielu znaków.</value>
   <data name="RecordNumberTooltip" xml:space="preserve">
     <value>Numer rekordu w kolekcji</value>
   </data>
+  <data name="InputAssembly" xml:space="preserve">
+    <value>Źródłowy asemblat</value>
+  </data>
+  <data name="InputAssemblyTooltip" xml:space="preserve">
+    <value>Źródłowy asemblat do skanowania</value>
+  </data>
 </root>
