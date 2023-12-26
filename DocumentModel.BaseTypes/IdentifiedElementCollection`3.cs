@@ -14,6 +14,7 @@ where OpenXmlItemType : DX.OpenXmlElement
 where ModelItemType : IModelElement<OpenXmlItemType>, IIdentifiedElement, new()
 {
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+
   private PropertyInfo IdProperty
   {
     get
@@ -74,13 +75,13 @@ where ModelItemType : IModelElement<OpenXmlItemType>, IIdentifiedElement, new()
   {
     if (value.Id == null)
       throw new InvalidOperationException($"{value.GetType()}.Id must not be null");
-    else
+    else 
     {
       var element = _Element?.Elements<OpenXmlItemType>().FirstOrDefault(item => GetId(item) == value.Id);
       if (element != null)
         throw new InvalidOperationException($"{value.GetType()} {value.Id} already exists found");
       var childElement = value._ExistingElement;
-      _ExistingElement.AppendChild(childElement);
+        _ExistingElement.AppendChild(childElement);
     }
   }
 

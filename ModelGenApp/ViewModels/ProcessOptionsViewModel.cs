@@ -6,15 +6,48 @@ namespace ModelGenApp.ViewModels;
 public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
 {
 
-  public ProcessOptionsViewModel() : base(ProcessOptionsMgr.GetInstance())
+  public ProcessOptionsViewModel() : base(ProcessOptionsMgr.CurrentInstance)
   {
-    _MainTypeNames = GetMainTypeNames();
+    SaveOptionsCommand = new RelayCommand(SaveOptions) { Name = nameof(SaveOptions) };
+    RestoreOptionsCommand = new RelayCommand(RestoreOptions) { Name = nameof(RestoreOptions) };
     BrowseModelDocFileCommand = new RelayCommand(BrowseModelDocFile) { Name = nameof(BrowseModelDocFile) };
     BrowseCodeOutputPathCommand = new RelayCommand(BrowseCodeOutputPath) { Name = nameof(BrowseCodeOutputPath) };
-    BrowseAppDataFolderCommand = new RelayCommand(BrowseAppDataFolder) { Name = nameof(BrowseAppDataFolder) };
+    AddAppDataFolderCommand = new RelayCommand(AddAppDataFolder) { Name = nameof(AddAppDataFolder) };
   }
 
   #region Observable properties
+
+  /// <summary>
+  /// Specifies the names of available app data folders.
+  /// </summary>
+  public string[] AppDataFolders
+  {
+    get
+    {
+      var appDataBase = ModelConfig.GetAppDataBase();
+      var dirs = Directory.EnumerateDirectories(appDataBase);
+      return dirs.Select(item => Path.GetFileName(item)).ToArray();
+    }
+  }
+
+  /// <summary>
+  /// Specifies the name of the subfolder of user's AppData containing config files for input and produced log files.
+  /// </summary>
+  public string? AppDataFolder
+  {
+    get { return Model.AppDataFolder; }
+    set
+    {
+      if (Model.AppDataFolder != value)
+      {
+        ProcessOptionsMgr.DataFolder = value;
+        Model.AppDataFolder = value;
+        RestoreOptions();
+        NotifyPropertyChanged(nameof(AppDataFolder));
+      }
+    }
+  }
+
   /// <summary>
   /// Specifies the name of input assembly to parse.
   /// </summary>
@@ -45,22 +78,6 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
       {
         Model.GeneratorType = value;
         NotifyPropertyChanged(nameof(GeneratorType));
-      }
-    }
-  }
-
-  /// <summary>
-  /// Specifies the name of the subfolder of user's AppData containing config files for input and produced log files .
-  /// </summary>
-  public string? AppDataFolder
-  {
-    get { return Model.AppDataFolder; }
-    set
-    {
-      if (Model.AppDataFolder != value)
-      {
-        Model.AppDataFolder = value;
-        NotifyPropertyChanged(nameof(AppDataFolder));
       }
     }
   }
@@ -288,28 +305,71 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
       }
     }
   }
-  private ObservableCollection<string> _MainTypeNames;
+  private ObservableCollection<string> _MainTypeNames = new ObservableCollection<string>();
 
-  private ObservableCollection<string> GetMainTypeNames()
+  private ObservableCollection<string> GetMainTypeNames(string assemblyName)
   {
-    var assembly = Assembly.Load("DocumentFormat.OpenXml");
-    var typeNames = assembly.GetTypes().Where(type => !type.IsCompilerGenerated() && !type.IsAbstract)
-    .Select(type => type.FullName ?? "")
-    .Where(name => name.StartsWith("DocumentFormat.OpenXml.Packaging")).ToList();
+    var assembly = Assembly.Load(assemblyName);
+    var typeNames = assembly.GetTypes()
+      //.Where(type => !type.IsCompilerGenerated() && !type.IsAbstract)
+      .Select(type => type.FullName ?? "")
+    //.Where(name => name.StartsWith("DocumentFormat.OpenXml.Packaging"))
+    .ToList();
     typeNames.Sort();
-    var sortedTypeNames = typeNames.Where(name => name.EndsWith("Document")).ToList();
-    sortedTypeNames.AddRange(typeNames.Where(name => name.EndsWith("Part")).ToList());
-    return new ObservableCollection<string>(sortedTypeNames);
+    //var sortedTypeNames = typeNames.Where(name => name.Contains("Document")).ToList();
+    //sortedTypeNames.AddRange(typeNames.Where(name => name.Contains("Spreadsheet")).ToList());
+    //sortedTypeNames.AddRange(typeNames.Where(name => name.Contains("Part")).ToList());
+    return new ObservableCollection<string>(typeNames);
   }
+
+  #region SaveOptionsCommand
+  /// <summary>
+  /// A command to store config data
+  /// </summary>
+  public Command SaveOptionsCommand { get; }
+
+  /// <summary>
+  /// Execute method to store config data.
+  /// </summary>
+  public void SaveOptions()
+  {
+    if (AppDataFolder != null) 
+    {
+      ProcessOptionsMgr.SaveInstance(this.Model);
+      ProcessOptionsMgr.SaveInstanceName(AppDataFolder);
+    }
+  }
+  #endregion
+
+  #region RestoreOptionsCommand
+  /// <summary>
+  /// A command to restore config data
+  /// </summary>
+  public Command RestoreOptionsCommand { get; }
+
+  /// <summary>
+  /// Execute method to restore config data.
+  /// </summary>
+  public void RestoreOptions()
+  {
+    var oldData = ProcessOptionsMgr.LoadInstance(AppDataFolder);
+    this.Model = oldData;
+    if (InputAssembly!=null)
+      MainTypeNames = GetMainTypeNames(InputAssembly);
+    foreach (var propInfo in typeof(ProcessOptionsViewModel).GetProperties())
+      NotifyPropertyChanged(propInfo.Name);
+
+  }
+  #endregion
 
   #region BrowseModelDocFileCommand
   /// <summary>
-  /// A command to store config data
+  /// A command to browse model doc file.
   /// </summary>
   public Command BrowseModelDocFileCommand { get; }
 
   /// <summary>
-  /// Execute method of config data store.
+  /// Execute method to browse model doc file.
   /// </summary>
   public void BrowseModelDocFile()
   {
@@ -326,12 +386,12 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
 
   #region BrowseCodeOutputPathCommand
   /// <summary>
-  /// A command to store config data
+  /// A command to browse code output path.
   /// </summary>
   public Command BrowseCodeOutputPathCommand { get; }
 
   /// <summary>
-  /// Execute method of config data store.
+  /// Execute method to browse code output path.
   /// </summary>
   public void BrowseCodeOutputPath()
   {
@@ -348,38 +408,71 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
   }
   #endregion
 
-  #region BrowseAppDataFolderCommand
+  #region AddAppDataFolderCommand
   /// <summary>
-  /// A command to store config data
+  /// A command to create app data folder.
   /// </summary>
-  public Command BrowseAppDataFolderCommand { get; }
+  public Command AddAppDataFolderCommand { get; }
 
   /// <summary>
-  /// Execute method of config data store.
+  /// Execute method to create app data folder.
   /// </summary>
-  public void BrowseAppDataFolder()
+  public void AddAppDataFolder()
   {
-    var appDataBase =  ModelConfig.GetAppDataBase();
-    var appDataPath = appDataBase;
-    appDataPath = Path.Combine(appDataPath, AppDataFolder ?? "");
-    var dialog = new WPFFolderBrowserDialog();
-    while (!String.IsNullOrEmpty(appDataPath) && !Directory.Exists(appDataPath))
-      appDataPath = Path.GetDirectoryName(appDataPath);
-    if (!String.IsNullOrEmpty(appDataPath))
-      dialog.InitialDirectory = appDataPath;
-    if (dialog.ShowDialog() == true)
+    var dialog = new AddAppDataFolderDialog();
+    var viewModel = new AddAppDataFolderViewModel { ExistingFolders = this.AppDataFolders, FolderToCopy = this.AppDataFolder };
+    dialog.DataContext = viewModel;
+    if (dialog.ShowDialog() == true && viewModel.NewFolderName != null)
     {
-      var filename = dialog.FileName.Trim();
-      appDataPath = filename;
-      appDataPath = appDataPath.ReplaceStart(appDataBase,"").ReplaceStart("\\","");
-      AppDataFolder = appDataPath;
+      var newFolderName = viewModel.NewFolderName.Trim();
+      if (AppDataFolders.Contains(newFolderName))
+      {
+        MessageBox.Show(String.Format(CommonStrings.AppDataFolderAlreadyExists_1, newFolderName));
+      }
+      else
+      if (!String.IsNullOrEmpty(newFolderName))
+      {
+        var appDataBase = ModelConfig.GetAppDataBase();
+        var newFolderPath = Path.Combine(appDataBase, newFolderName);
+        Directory.CreateDirectory(newFolderPath);
+        if (viewModel.CopyContent && !String.IsNullOrEmpty(viewModel.FolderToCopy))
+        {
+          var folderToCopy = Path.Combine(appDataBase, viewModel.FolderToCopy);
+          foreach (var file in Directory.GetFiles(folderToCopy))
+          {
+            try
+            {
+              var sourceFile = file;
+              var targetFile = Path.Combine(newFolderPath, Path.GetFileName(file));
+              File.Copy(sourceFile, targetFile);
+            }
+            catch { }
+          }
+          AppDataFolder = newFolderName;
+        }
+      }
     }
+    //var appDataBase = ModelConfig.GetAppDataBase();
+    //var appDataPath = appDataBase;
+    //appDataPath = Path.Combine(appDataPath, AppDataFolder ?? "");
+    //var dialog = new WPFFolderBrowserDialog();
+    //while (!String.IsNullOrEmpty(appDataPath) && !Directory.Exists(appDataPath))
+    //  appDataPath = Path.GetDirectoryName(appDataPath);
+    //if (!String.IsNullOrEmpty(appDataPath))
+    //  dialog.InitialDirectory = appDataPath;
+    //if (dialog.ShowDialog() == true)
+    //{
+    //  var filename = dialog.FileName.Trim();
+    //  appDataPath = filename;
+    //  appDataPath = appDataPath.ReplaceStart(appDataBase, "").ReplaceStart("\\", "");
+    //  AppDataFolder = appDataPath;
+    //}
   }
   #endregion
 
   #region GeneratorType selection
 
-  public string[] GeneratorTypeNames => ProcessOptionsMgr.GetGeneratorTypes().Select(item=>item.Name).ToArray();
+  public string[] GeneratorTypeNames => ProcessOptionsMgr.GetGeneratorTypes().Select(item => item.Name).ToArray();
 
 
   #endregion

@@ -49,7 +49,7 @@ public static class OpenXmlPackageConverter
   public static CompressionOption? GetCompressionOption(OpenXmlPackage? openXmlElement)
   {
     if (openXmlElement?.CompressionOption != null)
-      return EnumValueConverter.GetValue<CompressionOption, CompressionOption>(openXmlElement.CompressionOption);
+      return openXmlElement.CompressionOption;
     return null;
   }
 
@@ -58,19 +58,19 @@ public static class OpenXmlPackageConverter
     if (openXmlElement != null)
       if (value != null)
       {
-        var itemElement = EnumValueConverter.GetValue<CompressionOption, CompressionOption>(value);
+        var itemElement = value;
         if (itemElement != null)
           openXmlElement.CompressionOption = (CompressionOption)itemElement;
       }
   }
 
-  /// <summary>
-  ///   Gets a PartExtensionProvider part which provides a mapping from ContentType to part extension.
-  /// </summary>
-  public static Dictionary<String, String>? GetPartExtensionProvider(OpenXmlPackage? openXmlElement)
-  {
-    return openXmlElement?.PartExtensionProvider;
-  }
+  ///// <summary>
+  /////   Gets a PartExtensionProvider part which provides a mapping from ContentType to part extension.
+  ///// </summary>
+  //public static Dictionary<String, String>? GetPartExtensionProvider(OpenXmlPackage? openXmlElement)
+  //{
+  //  return openXmlElement?.PartExtensionProvider;
+  //}
 
   ///// <summary>
   /////   Gets all the  parts in the document package.

@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Namotion.Reflection" Version="3.1.0" />
+    <PackageReference Include="Namotion.Reflection" Version="3.1.1" />
     <PackageReference Include="Qhta.TextUtils" Version="3.2.0" />
   </ItemGroup>
 

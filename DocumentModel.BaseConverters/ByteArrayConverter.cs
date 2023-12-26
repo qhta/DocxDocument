@@ -2,7 +2,7 @@
 
 public static class ByteArrayConverter
 {
-  public static byte[]? GetValue(DX.TypedOpenXmlLeafElement? element)
+  public static byte[]? GetValue(DX.OpenXmlLeafElement? element)
   {
     var valProperty = element?.GetType().GetProperty("Value");
     if (valProperty != null)

@@ -783,4 +783,19 @@ Use '*' wildcard character to match many characters.</value>
   <data name="InputAssemblyTooltip" xml:space="preserve">
     <value>Input assembly to parse</value>
   </data>
+  <data name="AddNewAppDataFolder" xml:space="preserve">
+    <value>Add new application data folder</value>
+  </data>
+  <data name="NewFolderName" xml:space="preserve">
+    <value>New folder name</value>
+  </data>
+  <data name="CopyContentFrom" xml:space="preserve">
+    <value>Copy content from</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="AppDataFolderAlreadyExists_1" xml:space="preserve">
+    <value>App data folder \"{0}\" already exists</value>
+  </data>
 </root>

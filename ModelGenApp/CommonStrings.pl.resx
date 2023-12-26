@@ -783,4 +783,19 @@ Użyj znaku '*' aby dopasować wzorzec do wielu znaków.</value>
   <data name="InputAssemblyTooltip" xml:space="preserve">
     <value>Źródłowy asemblat do skanowania</value>
   </data>
+  <data name="AddNewAppDataFolder" xml:space="preserve">
+    <value>Dodaj nowy folder danych aplikacji</value>
+  </data>
+  <data name="NewFolderName" xml:space="preserve">
+    <value>Nazwa nowego folderu</value>
+  </data>
+  <data name="CopyContentFrom" xml:space="preserve">
+    <value>Kopiuj zawartość z</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="AppDataFolderAlreadyExists_1" xml:space="preserve">
+    <value>Folder danych \"{0}\" już istnieje</value>
+  </data>
 </root>

@@ -252,7 +252,7 @@ public static class TypeReflector
     if (xmlDocsElement != null)
       CommentDocsParser.ParseDocumentation(typeInfo, xmlDocsElement);
 
-    typeInfo.Schema = OpenXmlMetadataReader.GetOpenXmlElementSchema(typeInfo);
+    //typeInfo.Schema = OpenXmlMetadataReader.GetOpenXmlElementSchema(typeInfo);
 
     if (typeInfo.Schema != null)
       ProcessElementSchema(typeInfo, typeInfo.Schema);

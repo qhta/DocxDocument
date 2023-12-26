@@ -16,7 +16,7 @@ public static class HexCharConverter
     return null;
   }
 
-    public static HexChar? GetValue(DX.TypedOpenXmlLeafElement? openXmlElement)
+    public static HexChar? GetValue(DX.OpenXmlLeafElement? openXmlElement)
   {
     var valProperty = openXmlElement?.GetType().GetProperty("Value");
     if (valProperty != null)

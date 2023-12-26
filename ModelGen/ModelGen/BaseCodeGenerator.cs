@@ -150,11 +150,9 @@ public abstract class BaseCodeGenerator
 
   protected bool CopyProjectFile(string projectName, string outputPath, string? configPath)
   {
-    string? sourceFilename;
+    string? sourceFilename ="csproj.xml";
     if (configPath != null)
-      sourceFilename = Path.Combine(configPath, projectName + ".csproj.xml");
-    else
-      sourceFilename = projectName + ".csproj.xml";
+      sourceFilename = Path.Combine(configPath, sourceFilename);
     if (!File.Exists(sourceFilename))
     {
       Debug.WriteLine($"Project template file \"{sourceFilename}\" not found");
@@ -251,11 +249,9 @@ public abstract class BaseCodeGenerator
 
   protected bool InitGlobalUsings(string projectName, string? configPath)
   {
-    string? sourceFilename;
+    string? sourceFilename = "globalUsings.cs";
     if (configPath != null)
-      sourceFilename = Path.Combine(configPath, projectName + ".globalUsings.cs.txt");
-    else
-      sourceFilename = projectName + ".globalUsings.cs.txt";
+      sourceFilename = Path.Combine(configPath, sourceFilename);
     if (!File.Exists(sourceFilename))
     {
       Debug.WriteLine($"Global usings file \"{sourceFilename}\" not found");
@@ -427,13 +423,13 @@ public abstract class BaseCodeGenerator
   public CompilationErrors CompileCode()
   {
     string solutionPath = Path.GetDirectoryName(OutputPath)!;
-    var solutionName = SolutionName + ".sln";
+    var solutionFileName = SolutionName + ".sln";
     var outputTxtFile = SolutionName + ".err.txt";
 
     Directory.SetCurrentDirectory(solutionPath);
     File.Delete(outputTxtFile);
     var compileExe = "c:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\devenv.exe";
-    var args = $"/rebuild debug {solutionName} /out {outputTxtFile}";
+    var args = $"/rebuild debug {solutionFileName} /out {outputTxtFile}";
     var process = Process.Start(compileExe, args);
     process.WaitForExit();
     CompilationErrors errors = new();

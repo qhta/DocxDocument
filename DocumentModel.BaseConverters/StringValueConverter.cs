@@ -39,7 +39,7 @@ public static class StringValueConverter
   #endregion
 
   #region TextElement conversion methods
-  public static string GetValue(DX.TypedOpenXmlLeafTextElement element)
+  public static string GetValue(DX.OpenXmlLeafTextElement element)
   {
     return element.Text;
   }
@@ -94,7 +94,7 @@ public static class StringValueConverter
 
   public static void SetStringVal<OpenXmlElementType>(this OpenXmlCompositeElement openXmlElement, String? value,
     string? propName = null) 
-    where OpenXmlElementType : TypedOpenXmlLeafElement, new()
+    where OpenXmlElementType : OpenXmlLeafElement, new()
   {
     if (propName==null)
       propName = "Val";

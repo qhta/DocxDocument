@@ -10,7 +10,7 @@ public class PropertyConfigListViewModel : ModelConfigViewModel
     ShowProgressBar = true;
     BeginInvokeActionEnabled = false;
     //GetData(configData);
-    Task.Factory.StartNew(()=>GetData(configData));
+    Task.Factory.StartNew(() => GetData(configData));
   }
 
   public ListViewModel<PropertyConfigViewModel> Properties { get; private set; }
@@ -27,66 +27,69 @@ public class PropertyConfigListViewModel : ModelConfigViewModel
     Debug.WriteLine("GetData");
     Properties.Clear();
     base.GetData(configData);
-    var types = _Assembly.GetExportedTypes()
-      .OrderBy(t => t.Name)
-      .ToList();
-    ProgressBarMaximum = types.Count;
-    ProgressBarValue = 0;
-    var fullNameComparison = configData.IncludedTypes.FirstOrDefault(item => item.Contains('.')) != null
-                          || configData.ExcludedTypes.FirstOrDefault(item => item.Contains('.')) != null;
-    int typesCount=0;
-    int propCount = 0;
-    foreach (var type in types)
+    if (_Assembly != null)
     {
-      ProgressBarValue = ++typesCount;
-      var _Properties = new List<PropertyConfigViewModel>();
-      foreach (var property in type.GetProperties())
+      var types = _Assembly.GetExportedTypes()
+        .OrderBy(t => t.Name)
+        .ToList();
+      ProgressBarMaximum = types.Count;
+      ProgressBarValue = 0;
+      var fullNameComparison = configData.IncludedTypes.FirstOrDefault(item => item.Contains('.')) != null
+                            || configData.ExcludedTypes.FirstOrDefault(item => item.Contains('.')) != null;
+      int typesCount = 0;
+      int propCount = 0;
+      foreach (var type in types)
       {
-        var propName = property.Name;
-        var typedPropName = propName;
-        var fullPropName = propName;
-        string propTypename = "";
-        string propNamespace = "";
-        var propDeclaringType = property.DeclaringType;
-        if (propDeclaringType != null)
+        ProgressBarValue = ++typesCount;
+        var _Properties = new List<PropertyConfigViewModel>();
+        foreach (var property in type.GetProperties())
         {
-          propTypename = propDeclaringType.Name;
-          typedPropName = propTypename + "." + typedPropName;
-          fullPropName = propTypename + "." + fullPropName;
-          if (propDeclaringType.Namespace != null)
+          var propName = property.Name;
+          var typedPropName = propName;
+          var fullPropName = propName;
+          string propTypename = "";
+          string propNamespace = "";
+          var propDeclaringType = property.DeclaringType;
+          if (propDeclaringType != null)
           {
-            propNamespace = propDeclaringType.Namespace;
-            fullPropName = propNamespace + "." + fullPropName;
+            propTypename = propDeclaringType.Name;
+            typedPropName = propTypename + "." + typedPropName;
+            fullPropName = propTypename + "." + fullPropName;
+            if (propDeclaringType.Namespace != null)
+            {
+              propNamespace = propDeclaringType.Namespace;
+              fullPropName = propNamespace + "." + fullPropName;
+            }
           }
+          var valueType = property.PropertyType;
+          var valueTypeName = valueType.GetExpandedName(propDeclaringType?.Namespace);
+          string valueTypeNamespace = valueType.Namespace ?? "";
+          var item = new PropertyConfigViewModel
+          {
+            RecordNumber = ++propCount,
+            OrigName = propName,
+            OrigType = propTypename,
+            OrigNamespace = propNamespace,
+            OrigValueNamespace = valueTypeNamespace,
+            OrigValueType = valueTypeName
+          };
+          item.ExcludedNamespace = configData.ExcludedNamespaces.Contains(propNamespace);
+          item.ExcludedType = configData.ExcludedTypes.Contains(propTypename);
+          item.ExcludedProperty = configData.ExcludedProperties.Contains(fullPropName)
+            || configData.ExcludedProperties.Contains(typedPropName)
+            || configData.ExcludedProperties.Contains(propName);
+          item.ExcludedValueType =
+            (configData.ExcludedNamespaces.Contains(valueTypeNamespace) && !configData.IncludedTypes.Contains(valueType.Name))
+            || configData.ExcludedTypes.Contains(valueType.Name);
+          if (configData.PropertyTranslateTable.TryGetValue(fullPropName, out var newName)
+           || configData.PropertyTranslateTable.TryGetValue(propName, out newName))
+            item.TargetName = newName;
+          else
+            item.TargetName = null;
+          _Properties.Add(item);
         }
-        var valueType = property.PropertyType;
-        var valueTypeName = valueType.GetExpandedName(propDeclaringType?.Namespace);
-        string valueTypeNamespace = valueType.Namespace ?? "";
-        var item = new PropertyConfigViewModel
-        {
-          RecordNumber = ++propCount,
-          OrigName = propName,
-          OrigType = propTypename,
-          OrigNamespace = propNamespace,
-          OrigValueNamespace = valueTypeNamespace,
-          OrigValueType = valueTypeName
-        };
-        item.ExcludedNamespace = configData.ExcludedNamespaces.Contains(propNamespace);
-        item.ExcludedType = configData.ExcludedTypes.Contains(propTypename);
-        item.ExcludedProperty = configData.ExcludedProperties.Contains(fullPropName) 
-          || configData.ExcludedProperties.Contains(typedPropName)
-          || configData.ExcludedProperties.Contains(propName);
-        item.ExcludedValueType = 
-          (configData.ExcludedNamespaces.Contains(valueTypeNamespace) && !configData.IncludedTypes.Contains(valueType.Name))
-          || configData.ExcludedTypes.Contains(valueType.Name);
-        if (configData.PropertyTranslateTable.TryGetValue(fullPropName, out var newName)
-         || configData.PropertyTranslateTable.TryGetValue(propName, out newName)) 
-          item.TargetName = newName;
-        else
-          item.TargetName = null;
-        _Properties.Add(item);
+        Properties.AddRange(_Properties);
       }
-      Properties.AddRange(_Properties);
     }
     ProgressBarValue = 0;
     //foreach (var propName in configData.ExcludedProperties)
