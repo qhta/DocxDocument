@@ -34,11 +34,4 @@ public partial class Snapshot: ModelElement<DXO13WE.Snapshot>
     set => _ExistingElement.Link = value;
   }
   
-  [DataMember]
-  public DMD.BlipExtensionList? BlipExtensionList
-  {
-    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
-  }
-  
 }

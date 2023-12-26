@@ -16,7 +16,7 @@ public static class HexRgbConverter
     return null;
   }
 
-    public static HexRgb? GetValue(DX.TypedOpenXmlLeafElement? openXmlElement)
+    public static HexRgb? GetValue(DX.OpenXmlLeafElement? openXmlElement)
   {
     var valProperty = openXmlElement?.GetType().GetProperty("Value");
     if (valProperty != null)

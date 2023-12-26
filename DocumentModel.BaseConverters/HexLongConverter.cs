@@ -171,12 +171,12 @@ public static class HexLongConverter
   }
 
   /// <summary>
-  /// Gets a HexLong value from the specified OpenXml TypedOpenXmlLeafElement
+  /// Gets a HexLong value from the specified OpenXml OpenXmlLeafElement
   /// which has a property of HexBinaryValue type.
   /// </summary>
   /// <param name="openXmlElement"></param>
   /// <returns></returns>
-  public static HexLong? GetValue(this DX.TypedOpenXmlLeafElement? openXmlElement)
+  public static HexLong? GetValue(this DX.OpenXmlLeafElement? openXmlElement)
   {
     var valProperty = openXmlElement?.GetType().GetProperties().FirstOrDefault(item => item.PropertyType == typeof(HexBinaryValue));
     if (valProperty != null)
@@ -283,7 +283,7 @@ public static class HexLongConverter
 
   public static void SetHexLongVal<OpenXmlElementType>(this OpenXmlLeafElement openXmlElement, String? value,
     string? propName = null) 
-    where OpenXmlElementType : TypedOpenXmlLeafElement, new()
+    where OpenXmlElementType : OpenXmlLeafElement, new()
   {
     if (propName==null)
       propName = "Val";
@@ -340,7 +340,7 @@ public static class HexLongConverter
 
   public static void SetHexLongVal<OpenXmlElementType>(this OpenXmlCompositeElement openXmlElement, String? value,
     string? propName = null) 
-    where OpenXmlElementType : TypedOpenXmlLeafElement, new()
+    where OpenXmlElementType : OpenXmlLeafElement, new()
   {
     if (propName==null)
       propName = "Val";

@@ -562,12 +562,12 @@ public abstract class ModelMonitor
 
   public virtual void ShowElementSchema(TypeInfo typeInfo, DisplayOptions options)
   {
-    if (typeInfo.Schema != null)
-    {
-      typeInfo.Schema.Rename();
-      if (typeInfo.Schema?.Main != null)
-        WriteSchemaParticle(typeInfo.Schema.Main);
-    }
+    //if (typeInfo.Schema != null)
+    //{
+    //  typeInfo.Schema.Rename();
+    //  if (typeInfo.Schema?.Main != null)
+    //    WriteSchemaParticle(typeInfo.Schema.Main);
+    //}
   }
 
   public virtual void WriteSchemaParticle(SchemaParticle particle)

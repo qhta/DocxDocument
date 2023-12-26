@@ -4,8 +4,7 @@ public partial class ModelExtGenerator : ModelGenerator
 {
   public ModelExtGenerator(ProcessOptions options) : base(options)
   {
-    SolutionName = "GeneratedModel";
-    GlobalUsings.Add("DocumentFormat.OpenXml");
+    GlobalUsings.Add(options.InputAssembly);
   }
 
   protected override void GenerateHeader(TypeInfo typeInfo, string? typeName, TypeKind kind)

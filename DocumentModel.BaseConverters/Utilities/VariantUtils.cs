@@ -295,53 +295,52 @@ public static class VariantUtils
       return new DXVT.VTEmpty();
     if (baseType == null)
       baseType = TypeToVectorBase[value.GetType()];
-    switch (baseType)
+    if (baseType == DXVT.VectorBaseValues.Variant)
     {
-      case DXVT.VectorBaseValues.Variant:
-        var result = new DXVT.Variant();
-        var childElement = value.AsVTVariant();
-        if (childElement != null)
-          result.AppendChild(childElement);
-        return result;
-      case DXVT.VectorBaseValues.OneByteSignedInteger:
-        return new DXVT.VTByte(value.ToString()!);
-      case DXVT.VectorBaseValues.TwoBytesSignedInteger:
-        return new DXVT.VTShort(value.ToString()!);
-      case DXVT.VectorBaseValues.FourBytesSignedInteger:
-        return new DXVT.VTInt32(value.ToString()!);
-      case DXVT.VectorBaseValues.EightBytesSignedInteger:
-        return new DXVT.VTInt64(value.ToString()!);
-      case DXVT.VectorBaseValues.OneByteUnsignedInteger:
-        return new DXVT.VTUnsignedByte(value.ToString()!);
-      case DXVT.VectorBaseValues.TwoBytesUnsignedInteger:
-        return new DXVT.VTUnsignedShort(value.ToString()!);
-      case DXVT.VectorBaseValues.FourBytesUnsignedInteger:
-        return new DXVT.VTUnsignedInt32(value.ToString()!);
-      case DXVT.VectorBaseValues.EightBytesUnsignedInteger:
-        return new DXVT.VTUnsignedInt64(value.ToString()!);
-      case DXVT.VectorBaseValues.FourBytesReal:
-        return new DXVT.VTFloat(((float)value).ToString(CultureInfo.InvariantCulture)!);
-      case DXVT.VectorBaseValues.EightBytesReal:
-        return new DXVT.VTDouble(((double)value).ToString(CultureInfo.InvariantCulture)!);
-      case DXVT.VectorBaseValues.Lpstr:
-        return new DXVT.VTLPSTR(((string)value));
-      case DXVT.VectorBaseValues.Lpwstr:
-        return new DXVT.VTLPWSTR(((string)value));
-      case DXVT.VectorBaseValues.Bstr:
-        return new DXVT.VTBString(((string)value));
-      case DXVT.VectorBaseValues.Date:
-        return new DXVT.VTDate(((DateTime)value).ToString());
-      case DXVT.VectorBaseValues.Filetime:
-        return new DXVT.VTFileTime(((DateTime)value).ToString());
-      case DXVT.VectorBaseValues.Bool:
-        return new DXVT.VTBool(((bool)value).ToString());
-      case DXVT.VectorBaseValues.Currency:
-        return new DXVT.VTCurrency(((decimal)value).ToString(CultureInfo.InvariantCulture)!);
-      case DXVT.VectorBaseValues.Error:
-        return new DXVT.VTError("0x" + ((int)value).ToString("X8"));
-      case DXVT.VectorBaseValues.ClassId:
-        return new DXVT.VTClassId(((Guid)value).ToString("D"));
+      var result = new DXVT.Variant();
+      var childElement = value.AsVTVariant();
+      if (childElement != null)
+        result.AppendChild(childElement);
+      return result;
     }
+    if (baseType == DXVT.VectorBaseValues.OneByteSignedInteger)
+      return new DXVT.VTByte(value.ToString()!);
+    if (baseType == DXVT.VectorBaseValues.TwoBytesSignedInteger)
+      return new DXVT.VTShort(value.ToString()!);
+    if (baseType == DXVT.VectorBaseValues.FourBytesSignedInteger)
+      return new DXVT.VTInt32(value.ToString()!);
+    if (baseType == DXVT.VectorBaseValues.EightBytesSignedInteger)
+      return new DXVT.VTInt64(value.ToString()!);
+    if (baseType == DXVT.VectorBaseValues.OneByteUnsignedInteger)
+      return new DXVT.VTUnsignedByte(value.ToString()!);
+    if (baseType == DXVT.VectorBaseValues.TwoBytesUnsignedInteger)
+      return new DXVT.VTUnsignedShort(value.ToString()!);
+    if (baseType == DXVT.VectorBaseValues.FourBytesUnsignedInteger)
+      return new DXVT.VTUnsignedInt32(value.ToString()!);
+    if (baseType == DXVT.VectorBaseValues.EightBytesUnsignedInteger)
+      return new DXVT.VTUnsignedInt64(value.ToString()!);
+    if (baseType == DXVT.VectorBaseValues.FourBytesReal)
+      return new DXVT.VTFloat(((float)value).ToString(CultureInfo.InvariantCulture)!);
+    if (baseType == DXVT.VectorBaseValues.EightBytesReal)
+      return new DXVT.VTDouble(((double)value).ToString(CultureInfo.InvariantCulture)!);
+    if (baseType == DXVT.VectorBaseValues.Lpstr)
+      return new DXVT.VTLPSTR(((string)value));
+    if (baseType == DXVT.VectorBaseValues.Lpwstr)
+      return new DXVT.VTLPWSTR(((string)value));
+    if (baseType == DXVT.VectorBaseValues.Bstr)
+      return new DXVT.VTBString(((string)value));
+    if (baseType == DXVT.VectorBaseValues.Date)
+      return new DXVT.VTDate(((DateTime)value).ToString());
+    if (baseType == DXVT.VectorBaseValues.Filetime)
+      return new DXVT.VTFileTime(((DateTime)value).ToString());
+    if (baseType == DXVT.VectorBaseValues.Bool)
+      return new DXVT.VTBool(((bool)value).ToString());
+    if (baseType == DXVT.VectorBaseValues.Currency)
+      return new DXVT.VTCurrency(((decimal)value).ToString(CultureInfo.InvariantCulture)!);
+    if (baseType == DXVT.VectorBaseValues.Error)
+      return new DXVT.VTError("0x" + ((int)value).ToString("X8"));
+    if (baseType == DXVT.VectorBaseValues.ClassId)
+      return new DXVT.VTClassId(((Guid)value).ToString("D"));
     return null;
   }
 
