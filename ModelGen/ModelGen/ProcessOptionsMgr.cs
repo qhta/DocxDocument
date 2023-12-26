@@ -5,9 +5,37 @@ public static class ProcessOptionsMgr
 {
   private static object LockObj = new object();
 
-  public static string DataFolder = "";
+  public static string? DataFolder { get; set; }
 
   private static Dictionary<string, ProcessOptions> Instances = new();
+
+  public static string? LoadInstanceName()
+  {
+    lock (LockObj)
+    {
+      var filename = GetFilename();
+      if (File.Exists(filename))
+      {
+        try
+        {
+          using (var textFile = File.OpenText(filename))
+          {
+            var text = textFile.ReadToEnd();
+
+            var options = JsonConvert.DeserializeObject<ProcessOptions>(text);
+            return options?.AppDataFolder;
+          }
+        }
+        catch (Exception ex)
+        {
+          Debug.WriteLine($"Error reading {filename}: {ex.Message}");
+        }
+      }
+      return null;
+    }
+  }
+
+  public static ProcessOptions CurrentInstance => GetInstance(DataFolder);
 
   public static ProcessOptions GetInstance(string? dataFolder = null)
   {
@@ -19,7 +47,18 @@ public static class ProcessOptionsMgr
       if (Instances.TryGetValue(instanceKey, out var result))
         return result;
 
-      var filename = GetFilename();
+      var instance = LoadInstance(dataFolder);
+      Instances.Add(instanceKey, instance);
+      return instance;
+    }
+  }
+
+    public static ProcessOptions LoadInstance(string? dataFolder = null)
+  {
+    lock (LockObj)
+    {
+      ProcessOptions result = new ProcessOptions();
+      var filename = GetFilename(dataFolder);
       if (File.Exists(filename))
       {
         try
@@ -27,21 +66,13 @@ public static class ProcessOptionsMgr
           using (var textFile = File.OpenText(filename))
           {
             var text = textFile.ReadToEnd();
-            //using (var reader = new Newtonsoft.Json.JsonTextReader(text))
+
+            var newResult = JsonConvert.DeserializeObject<ProcessOptions>(text);
+            if (newResult != null)
             {
-              //var serializer = new Newtonsoft.Json.JsonSerializer();
-              result = JsonConvert.DeserializeObject<ProcessOptions>(text);
-              if (result != null)
-              {
-                var aDataFolder = result.AppDataFolder;
-                if (!string.IsNullOrEmpty(aDataFolder) && string.IsNullOrEmpty(DataFolder) && aDataFolder!=DataFolder)
-                {
-                  result = GetInstance(aDataFolder);
-                  result.AppDataFolder = aDataFolder;
-                }
-                Instances.Add(instanceKey, result);
-                return result;
-              }
+              if (dataFolder!=null)
+                newResult.AppDataFolder = dataFolder;
+              result = newResult;
             }
           }
         }
@@ -50,7 +81,21 @@ public static class ProcessOptionsMgr
           Debug.WriteLine($"Error reading {filename}: {ex.Message}");
         }
       }
-      return new ProcessOptions();
+      return result;
+    }
+  }
+
+  public static void SaveInstanceName(string name)
+  {
+    lock (LockObj)
+    {
+      var filename = GetFilename();
+      using (var text = File.CreateText(filename))
+      {
+        var options = new ProcessOptions{ AppDataFolder=name };
+        var serializer = new Newtonsoft.Json.JsonSerializer();
+        serializer.Serialize(text, options);
+      }
     }
   }
 
@@ -58,7 +103,7 @@ public static class ProcessOptionsMgr
   {
     lock (LockObj)
     {
-      var filename = GetFilename();
+      var filename = GetFilename(value.AppDataFolder);
       using (var text = File.CreateText(filename))
       {
         var serializer = new Newtonsoft.Json.JsonSerializer();
@@ -97,6 +142,6 @@ public static class ProcessOptionsMgr
   public static Type[] GetGeneratorTypes()
   {
     var assembly = Assembly.GetAssembly(typeof(BaseCodeGenerator));
-    return assembly!.GetTypes().Where(item=>item.IsSubclassOf(typeof(BaseCodeGenerator))).ToArray();
+    return assembly!.GetTypes().Where(item => item.IsSubclassOf(typeof(BaseCodeGenerator))).ToArray();
   }
 }

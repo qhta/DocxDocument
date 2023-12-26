@@ -12,13 +12,6 @@ public partial class WebExtension: ModelElement<DXO13WE.WebExtension>
   
   public WebExtension(DXO13WE.WebExtension openXmlElement): base(openXmlElement) { }
   
-  [DataMember]
-  public Boolean? Fronzen
-  {
-    get => _Element?.Fronzen?.Value;
-    set => _ExistingElement.Fronzen = value;
-  }
-  
   
   /// <summary>
   ///   id, this property is only available in Office 2013 and later.
@@ -48,8 +41,8 @@ public partial class WebExtension: ModelElement<DXO13WE.WebExtension>
   [DataMember]
   public DMEX.WebExtensionStoreReference? WebExtensionStoreReference
   {
-    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.OpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.OpenXmlCompositeElement");
   }
   
   
@@ -59,8 +52,8 @@ public partial class WebExtension: ModelElement<DXO13WE.WebExtension>
   [DataMember]
   public DMEX.WebExtensionReferenceList? WebExtensionReferenceList
   {
-    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.OpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.OpenXmlCompositeElement");
   }
   
   
@@ -70,8 +63,8 @@ public partial class WebExtension: ModelElement<DXO13WE.WebExtension>
   [DataMember]
   public DMEX.WebExtensionPropertyBag? WebExtensionPropertyBag
   {
-    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.OpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.OpenXmlCompositeElement");
   }
   
   
@@ -81,8 +74,8 @@ public partial class WebExtension: ModelElement<DXO13WE.WebExtension>
   [DataMember]
   public DMEX.WebExtensionBindingList? WebExtensionBindingList
   {
-    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.OpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.OpenXmlCompositeElement");
   }
   
   
@@ -92,8 +85,8 @@ public partial class WebExtension: ModelElement<DXO13WE.WebExtension>
   [DataMember]
   public DMEX.Snapshot? Snapshot
   {
-    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.OpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.OpenXmlCompositeElement");
   }
   
   
@@ -103,8 +96,8 @@ public partial class WebExtension: ModelElement<DXO13WE.WebExtension>
   [DataMember]
   public DMEX.OfficeArtExtensionList? OfficeArtExtensionList
   {
-    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.TypedOpenXmlCompositeElement");
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.OpenXmlCompositeElement");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.OpenXmlCompositeElement");
   }
   
 }

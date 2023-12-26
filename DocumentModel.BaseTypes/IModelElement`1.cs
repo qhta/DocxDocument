@@ -3,9 +3,9 @@ namespace DocumentModel;
 /// <summary>
 ///   Interface for model element that envelopes OpenXmlElement.
 /// </summary>
-public interface IModelElement<OpenXmlElementType>: IModelElement
+public interface IModelElement<ElementType>: IModelElement
 {
-  public OpenXmlElementType? _Element { get; set; }
+  public ElementType? _Element { get; set; }
 
-  public OpenXmlElementType _ExistingElement { get; }
+  public ElementType _ExistingElement { get; }
 }

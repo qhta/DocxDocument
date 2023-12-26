@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Views\AddAppDataFolderDialog.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\CodeResultsView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -103,6 +106,9 @@
   </ItemGroup>
   <ItemGroup>
     <Page Update="AppColors.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\AddAppDataFolderDialog.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\CodeResultsView.xaml">

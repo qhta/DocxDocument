@@ -24,31 +24,34 @@ public class NamespaceConfigListViewModel : ModelConfigViewModel
   {
     Namespaces.Clear();
     base.GetData(configData);
-    var namespaces = _Assembly.GetExportedTypes()
-      .Where(type=>!type.IsConstructedGenericType)
-      .GroupBy(item => item.Namespace)
-      .OrderBy(grp => grp.Key)
-      .ToList();
-    foreach (var group in namespaces)
+    if (_Assembly != null)
     {
-      if (group.Key != null)
+      var namespaces = _Assembly.GetExportedTypes()
+        .Where(type => !type.IsConstructedGenericType)
+        .GroupBy(item => item.Namespace)
+        .OrderBy(grp => grp.Key)
+        .ToList();
+      foreach (var group in namespaces)
       {
-        var ns = group.Key;
-        var item = new NamespaceConfigViewModel { OrigName = ns };
-        item.Types = group.ToArray();
-        item.Excluded = configData.ExcludedNamespaces.Contains(ns);
-        if (configData.NamespaceShortcuts.TryGetValue(ns, out var shortcut))
-          item.Shortcut = shortcut;
-        if (configData.TranslatedNamespaces.TryGetValue(ns, out var translated))
+        if (group.Key != null)
         {
-          item.TargetName = translated;
-          item.TargetExcluded = configData.ExcludedNamespaces.Contains(translated);
+          var ns = group.Key;
+          var item = new NamespaceConfigViewModel { OrigName = ns };
+          item.Types = group.ToArray();
+          item.Excluded = configData.ExcludedNamespaces.Contains(ns);
+          if (configData.NamespaceShortcuts.TryGetValue(ns, out var shortcut))
+            item.Shortcut = shortcut;
+          if (configData.TranslatedNamespaces.TryGetValue(ns, out var translated))
+          {
+            item.TargetName = translated;
+            item.TargetExcluded = configData.ExcludedNamespaces.Contains(translated);
+          }
+          if (translated != null)
+            if (configData.NamespaceShortcuts.TryGetValue(translated, out var targetShortcut))
+              item.TargetShortcut = targetShortcut;
+          item.PropertyChanged += Item_PropertyChanged;
+          Namespaces.Add(item);
         }
-        if (translated != null)
-          if (configData.NamespaceShortcuts.TryGetValue(translated, out var targetShortcut))
-            item.TargetShortcut = targetShortcut;
-        item.PropertyChanged += Item_PropertyChanged;
-        Namespaces.Add(item);
       }
     }
     ValidateData();
@@ -71,7 +74,7 @@ public class NamespaceConfigListViewModel : ModelConfigViewModel
     {
       if (item.Excluded)
         configData.ExcludedNamespaces.Add(item.OrigName);
-      if (item.TargetExcluded && item.TargetName!=null)
+      if (item.TargetExcluded && item.TargetName != null)
         configData.ExcludedNamespaces.Add(item.TargetName);
       if (!String.IsNullOrWhiteSpace(item.Shortcut))
         configData.NamespaceShortcuts.Add(item.OrigName, item.Shortcut);
@@ -177,14 +180,14 @@ public class NamespaceConfigListViewModel : ModelConfigViewModel
       ns.DuplicatedTypes.Clear();
     }
     var ok = true;
-    var knownTargetNamespaces = new Dictionary<string, Dictionary<string,Type>>(); // target namespaces with typenames
+    var knownTargetNamespaces = new Dictionary<string, Dictionary<string, Type>>(); // target namespaces with typenames
     foreach (var newNamespace in Namespaces)
     {
       if (!String.IsNullOrWhiteSpace(newNamespace.TargetName))
       {
         if (!knownTargetNamespaces.TryGetValue(newNamespace.TargetName, out var targetTypes))
         {
-          targetTypes = new Dictionary<string,Type>(newNamespace.Types.ToDictionary(type=>type.Name));
+          targetTypes = new Dictionary<string, Type>(newNamespace.Types.ToDictionary(type => type.Name));
           knownTargetNamespaces.Add(newNamespace.TargetName, targetTypes);
         }
         else

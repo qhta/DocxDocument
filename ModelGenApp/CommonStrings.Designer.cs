@@ -106,6 +106,15 @@ namespace ModelGenApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add new application data folder.
+        /// </summary>
+        public static string AddNewAppDataFolder {
+            get {
+                return ResourceManager.GetString("AddNewAppDataFolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to All.
         /// </summary>
         public static string All {
@@ -129,6 +138,15 @@ namespace ModelGenApp {
         public static string AppDataFolder {
             get {
                 return ResourceManager.GetString("AppDataFolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to App data folder \&quot;{0}\&quot; already exists.
+        /// </summary>
+        public static string AppDataFolderAlreadyExists_1 {
+            get {
+                return ResourceManager.GetString("AppDataFolderAlreadyExists_1", resourceCulture);
             }
         }
         
@@ -310,6 +328,15 @@ namespace ModelGenApp {
         public static string ConvertTypes {
             get {
                 return ResourceManager.GetString("ConvertTypes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Copy content from.
+        /// </summary>
+        public static string CopyContentFrom {
+            get {
+                return ResourceManager.GetString("CopyContentFrom", resourceCulture);
             }
         }
         
@@ -1038,11 +1065,29 @@ namespace ModelGenApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to New folder name.
+        /// </summary>
+        public static string NewFolderName {
+            get {
+                return ResourceManager.GetString("NewFolderName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to No error.
         /// </summary>
         public static string NoError {
             get {
                 return ResourceManager.GetString("NoError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to OK.
+        /// </summary>
+        public static string OK {
+            get {
+                return ResourceManager.GetString("OK", resourceCulture);
             }
         }
         

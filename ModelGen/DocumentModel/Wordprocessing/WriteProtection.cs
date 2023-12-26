@@ -63,8 +63,8 @@ public partial class WriteProtection: ModelElement<DXW.WriteProtection>
   [DataMember]
   public DM.HexBinary? AlgorithmIdExtensibility
   {
-    get => HexIntConverter.GetValue(_Element?.AlgorithmIdExtensibility);
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.Object");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.Object");
   }
   
   
@@ -85,8 +85,8 @@ public partial class WriteProtection: ModelElement<DXW.WriteProtection>
   [DataMember]
   public DM.HexBinary? CryptographicProviderTypeExtensibility
   {
-    get => HexIntConverter.GetValue(_Element?.CryptographicProviderTypeExtensibility);
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.ValueType");
+    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is System.Object");
+    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is System.Object");
   }
   
   

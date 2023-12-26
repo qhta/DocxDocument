@@ -69,6 +69,7 @@ public class MainViewModel : ViewModel
     StopProcessCommand = new RelayCommand(StopProcess, CanStopProcess) { Name = "StopProcessCommand" };
     ContinueProcessCommand = new RelayCommand(ContinueProcess, CanContinueProcess) { Name = "ContinueProcessCommand" };
     ProcessOptionsVM.PropertyChanged += ProcessOptionsVM_PropertyChanged;
+    ProcessOptionsVM.RestoreOptions();
   }
 
   private void ProcessOptionsVM_PropertyChanged(object? sender, System.ComponentModel.PropertyChangedEventArgs args)

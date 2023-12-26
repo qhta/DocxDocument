@@ -1594,8 +1594,8 @@ public class ConverterGenerator : BaseCodeGenerator
       return GenerateBooleanOnOffOnlyTypePropertyGetCode(prop);
     if (prop.PropertyType.Type.IsEqualOrSubclassOf(typeof(EmptyType)))
       return GenerateBooleanEmptyTypeElementPropertyGetCode(prop);
-    if (prop.PropertyType.Type.IsEqualOrSubclassOf(typeof(TypedOpenXmlLeafElement)))
-      return GenerateBooleanTypedOpenXmlLeafElementPropertyGetCode(prop);
+    if (prop.PropertyType.Type.IsEqualOrSubclassOf(typeof(OpenXmlLeafElement)))
+      return GenerateBooleanOpenXmlLeafElementPropertyGetCode(prop);
     return GenerateNotImplementedException($"propertyType is {prop.PropertyType.Type}");
   }
 
@@ -1619,8 +1619,8 @@ public class ConverterGenerator : BaseCodeGenerator
       return GenerateBooleanOnOffOnlyTypePropertyCmpCode(prop);
     if (prop.PropertyType.Type.IsEqualOrSubclassOf(typeof(EmptyType)))
       return GenerateBooleanEmptyTypeElementPropertyCmpCode(prop);
-    if (prop.PropertyType.Type.IsEqualOrSubclassOf(typeof(TypedOpenXmlLeafElement)))
-      return GenerateBooleanTypedOpenXmlLeafElementPropertyCmpCode(prop);
+    if (prop.PropertyType.Type.IsEqualOrSubclassOf(typeof(OpenXmlLeafElement)))
+      return GenerateBooleanOpenXmlLeafElementPropertyCmpCode(prop);
     return GenerateNotImplementedException($"propertyType is {prop.PropertyType.Type}");
   }
 
@@ -1644,8 +1644,8 @@ public class ConverterGenerator : BaseCodeGenerator
       return GenerateBooleanOnOffOnlyTypePropertySetCode(prop);
     if (prop.PropertyType.Type.IsEqualOrSubclassOf(typeof(EmptyType)))
       return GenerateBooleanEmptyTypeElementPropertySetCode(prop);
-    if (prop.PropertyType.Type.IsEqualOrSubclassOf(typeof(TypedOpenXmlLeafElement)))
-      return GenerateBooleanTypedOpenXmlLeafElementPropertySetCode(prop);
+    if (prop.PropertyType.Type.IsEqualOrSubclassOf(typeof(OpenXmlLeafElement)))
+      return GenerateBooleanOpenXmlLeafElementPropertySetCode(prop);
     return GenerateNotImplementedException($"propertyType is {prop.PropertyType.Type}");
   }
   #endregion
@@ -1877,8 +1877,8 @@ public class ConverterGenerator : BaseCodeGenerator
   }
   #endregion
 
-  #region GenerateBooleanTypedOpenXmlLeafElementProperty code
-  private bool GenerateBooleanTypedOpenXmlLeafElementPropertyGetCode(PropInfo prop)
+  #region GenerateBooleanOpenXmlLeafElementProperty code
+  private bool GenerateBooleanOpenXmlLeafElementPropertyGetCode(PropInfo prop)
   {
     var origPropType = prop.PropertyType;
     var origPropTypeName = origPropType.GetFullName(false, true, true);
@@ -1886,7 +1886,7 @@ public class ConverterGenerator : BaseCodeGenerator
     return true;
   }
 
-  private bool GenerateBooleanTypedOpenXmlLeafElementPropertyCmpCode(PropInfo prop)
+  private bool GenerateBooleanOpenXmlLeafElementPropertyCmpCode(PropInfo prop)
   {
     var origPropType = prop.PropertyType;
     var origPropTypeName = origPropType.GetFullName(false, true, true);
@@ -1897,7 +1897,7 @@ public class ConverterGenerator : BaseCodeGenerator
     return true;
   }
 
-  private bool GenerateBooleanTypedOpenXmlLeafElementPropertySetCode(PropInfo prop)
+  private bool GenerateBooleanOpenXmlLeafElementPropertySetCode(PropInfo prop)
   {
     //var origPropName = prop.Name;
     //var origTypeName = prop.DeclaringType?.GetFullName(false, true, true) ?? "";

@@ -12,11 +12,4 @@ public partial class Numbering: ModelElement<DXW.Numbering>
   
   public Numbering(DXW.Numbering openXmlElement): base(openXmlElement) { }
   
-  [DataMember]
-  public DMW.NumberingIdMacAtCleanup? NumberingIdMacAtCleanup
-  {
-    get => throw new NotImplementedException("Not implemented in GeneratePropertyGetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.DecimalNumberType");
-    set => throw new NotImplementedException("Not implemented in GeneratePropertySetter: targetPropType baseType is DocumentFormat.OpenXml.Wordprocessing.DecimalNumberType");
-  }
-  
 }

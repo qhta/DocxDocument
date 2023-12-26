@@ -4,7 +4,6 @@ public class ModelGenerator : BaseCodeGenerator
 {
   public ModelGenerator(ProcessOptions options)
   {
-    SolutionName = "GeneratedModel";
     if (options.ProjectName == null)
       throw new InvalidOperationException(CommonStrings.Project_name_not_defined);
     if (options.CodeOutputPath == null)

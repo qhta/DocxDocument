@@ -12,7 +12,7 @@ public static class Base64BinaryConverter
     return new byte[0];
   }
 
-  public static byte[]? GetValue(DX.TypedOpenXmlLeafElement? element)
+  public static byte[]? GetValue(DX.OpenXmlLeafElement? element)
   {
     if (element == null)
       return null;

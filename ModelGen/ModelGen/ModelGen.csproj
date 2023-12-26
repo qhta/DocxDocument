@@ -16,15 +16,16 @@
     <NoWarn>1701;1702;618</NoWarn>
   </PropertyGroup>
 
-  <ItemGroup>
+  <!--ItemGroup>
     <InternalsAssemblyName Include="DocumentFormat.OpenXml" />
-  </ItemGroup>
+  </ItemGroup -->
 
   <ItemGroup>
     <Compile Remove="Managers.cs" />
     <Compile Remove="ModelConfig.cs" />
     <Compile Remove="ModelManager.Conversion.cs" />
     <Compile Remove="MyParticleConstraint.cs" />
+    <Compile Remove="OpenXmlMetadataReader.cs" />
     <Compile Remove="PropKind.cs" />
     <Compile Remove="SchemaGenerator.cs" />
     <Compile Remove="SortedStrings.cs" />
@@ -32,9 +33,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="DocumentFormat.OpenXml" Version="2.20.0" />
-    <PackageReference Include="IgnoresAccessChecksToGenerator" Version="0.6.0" PrivateAssets="All" />
-    <PackageReference Include="Namotion.Reflection" Version="3.1.0" />
+    <PackageReference Include="DocumentFormat.OpenXml" Version="3.0.0" />
+    <PackageReference Include="IgnoresAccessChecksToGenerator" Version="0.7.0" PrivateAssets="All" />
+    <PackageReference Include="Namotion.Reflection" Version="3.1.1" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Qhta.HtmlUtils" Version="2.1.0" />
     <PackageReference Include="Qhta.TestHelper" Version="3.0.0" />
@@ -43,7 +44,7 @@
     <PackageReference Include="Qhta.TypeUtils" Version="1.3.11" />
     <PackageReference Include="Qhta.Xml" Version="3.0.0" />
     <PackageReference Include="Snork.TextWrap" Version="1.0.1301" />
-    <PackageReference Include="System.IO.Packaging" Version="7.0.0" />
+    <PackageReference Include="System.IO.Packaging" Version="8.0.0" />
   </ItemGroup>
 
   <ItemGroup>

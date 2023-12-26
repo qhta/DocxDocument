@@ -59,7 +59,7 @@ public static class UIntValueConverter
   }
 
   public static void SetValue<ElementType>(OpenXmlCompositeElement openXmlElement, UInt32? value)
-    where ElementType : TypedOpenXmlLeafElement, new()
+    where ElementType : OpenXmlLeafElement, new()
   {
     var valProperty = typeof(ElementType).GetProperty("Val") ?? typeof(ElementType).GetProperty("Value");
     Debug.Assert(valProperty != null);

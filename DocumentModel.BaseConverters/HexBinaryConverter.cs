@@ -2,7 +2,7 @@
 
 public static class HexBinaryConverter
 {
-  public static HexBinary? GetValue(DX.TypedOpenXmlLeafElement? openXmlElement)
+  public static HexBinary? GetValue(DX.OpenXmlLeafElement? openXmlElement)
   {
     var valProperty = openXmlElement?.GetType().GetProperties().FirstOrDefault(item=>item.PropertyType==typeof(HexBinaryValue));
     if (valProperty != null)

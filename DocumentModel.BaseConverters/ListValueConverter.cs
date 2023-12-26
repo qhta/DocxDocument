@@ -36,8 +36,8 @@ public static class ListValueConverter
   #endregion
 
   #region ListOf<EnumKind> access methods
-  public static ListOf<EnumKind>? GetValue<EnumType, EnumKind>(DX.ListValue<DX.EnumValue<EnumType>>? element)
-    where EnumType : struct, IConvertible
+  public static ListOf<EnumKind>? GetValue<OpenXmlEnumType, EnumKind>(DX.ListValue<DX.EnumValue<OpenXmlEnumType>>? element)
+    where OpenXmlEnumType : struct, IEnumValue, IEnumValueFactory<OpenXmlEnumType>
     where EnumKind : struct, IConvertible
   {
     if (element != null)
@@ -45,7 +45,7 @@ public static class ListValueConverter
       var result = new ListOf<EnumKind>();
       foreach (var item in element)
       {
-        var itemValue = EnumValueConverter.GetEnumValue<EnumType, EnumKind>(item);
+        var itemValue = EnumValueConverter.GetEnumValue<OpenXmlEnumType, EnumKind>(item);
         if (itemValue != null)
           result.Add((EnumKind)itemValue);
       }
@@ -53,18 +53,18 @@ public static class ListValueConverter
     return null;
   }
 
-  public static DX.ListValue<DX.EnumValue<EnumType>>? CreateListValue<EnumType, EnumKind>(ListOf<EnumKind> value)
-    where EnumType : struct, IConvertible
+  public static DX.ListValue<DX.EnumValue<OpenXmlEnumType>>? CreateListValue<OpenXmlEnumType, EnumKind>(ListOf<EnumKind> value)
+    where OpenXmlEnumType : struct, IEnumValue, IEnumValueFactory<OpenXmlEnumType>
     where EnumKind : struct, IConvertible
   {
-    var resultList = new List<DX.EnumValue<EnumType>>();
+    var resultList = new List<DX.EnumValue<OpenXmlEnumType>>();
     foreach (var item in value)
     {
-      var itemObject = EnumValueConverter.CreateEnumValue<EnumType, EnumKind>(item);
+      var itemObject = EnumValueConverter.CreateEnumValue<OpenXmlEnumType, EnumKind>(item);
       if (itemObject != null)
         resultList.Add(itemObject);
     }
-    var element = new DX.ListValue<DX.EnumValue<EnumType>>(resultList);
+    var element = new DX.ListValue<DX.EnumValue<OpenXmlEnumType>>(resultList);
     return element;
   }
   #endregion

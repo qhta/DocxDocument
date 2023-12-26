@@ -212,15 +212,13 @@ public static class BooleanValueConverter
   {
     if (openXmlElement?.Value != null)
     {
-      switch (openXmlElement.Value)
-      {
-        case DXO10W.OnOffValues.True:
-        case DXO10W.OnOffValues.One:
-          return true;
-        case DXO10W.OnOffValues.False:
-        case DXO10W.OnOffValues.Zero:
-          return false;
-      }
+      var value = openXmlElement.Value;
+      if (value == DXO10W.OnOffValues.True
+        || value == DXO10W.OnOffValues.One)
+        return true;
+      if (value == DXO10W.OnOffValues.False
+        || value == DXO10W.OnOffValues.Zero)
+        return false;
     }
     return null;
   }
@@ -299,17 +297,15 @@ public static class BooleanValueConverter
   {
     if (openXmlElement?.Value != null)
     {
-      switch (openXmlElement.Value)
-      {
-        case DXM.BooleanValues.True:
-        case DXM.BooleanValues.On:
-        case DXM.BooleanValues.One:
-          return true;
-        case DXM.BooleanValues.False:
-        case DXM.BooleanValues.Off:
-        case DXM.BooleanValues.Zero:
-          return false;
-      }
+      var value = openXmlElement.Value;
+      if (value == DXM.BooleanValues.True
+        || value == DXM.BooleanValues.On
+        || value == DXM.BooleanValues.One)
+        return true;
+      if (value == DXM.BooleanValues.False
+        || value == DXM.BooleanValues.Off
+        || value == DXM.BooleanValues.Zero)
+        return false;
     }
     return null;
   }
@@ -351,13 +347,13 @@ public static class BooleanValueConverter
 
   #endregion
 
-  #region TypedOpenXmlLeafTextElement conversion.
+  #region OpenXmlLeafTextElement conversion.
   /// <summary>
   /// Gets a boolean value from the specified TypedOpenXmlLeaf element.
   /// </summary>
   /// <param name="element"></param>
   /// <returns></returns>
-  public static bool? GetBoolTextVal(this DX.TypedOpenXmlLeafTextElement? element)
+  public static bool? GetBoolTextVal(this DX.OpenXmlLeafTextElement? element)
   {
     if (element?.Text != null)
     {

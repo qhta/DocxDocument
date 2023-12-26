@@ -72,7 +72,7 @@ public abstract class ModelConfigViewModel : ViewModel
   /// <summary>
   /// Stores loaded assembly reference. Used in <see cref="ReloadData"/>
   /// </summary>
-  protected Assembly _Assembly;
+  protected Assembly? _Assembly;
 
   /// <summary>
   /// Loads namespaces defined in the assembly.

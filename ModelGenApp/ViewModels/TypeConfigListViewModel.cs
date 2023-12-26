@@ -61,39 +61,42 @@ public class TypeConfigListViewModel : ModelConfigViewModel
   {
     Types.Clear();
     base.GetData(configData);
-    var types = _Assembly.GetExportedTypes()
-      .OrderBy(ti => ti.Name)
-      .ToList();
-    var fullNameComparison = configData.IncludedTypes.FirstOrDefault(item => item.Contains('.')) != null
-                          || configData.ExcludedTypes.FirstOrDefault(item => item.Contains('.')) != null;
-    foreach (var type in types)
+    if (_Assembly != null)
     {
-      if (type != null)
+      var types = _Assembly.GetExportedTypes()
+        .OrderBy(ti => ti.Name)
+        .ToList();
+      var fullNameComparison = configData.IncludedTypes.FirstOrDefault(item => item.Contains('.')) != null
+                            || configData.ExcludedTypes.FirstOrDefault(item => item.Contains('.')) != null;
+      foreach (var type in types)
       {
-        var fullTypeName = (type.Namespace ?? "") + "." + type.Name;
+        if (type != null)
+        {
+          var fullTypeName = (type.Namespace ?? "") + "." + type.Name;
 
-        var item = new TypeConfigViewModel { OrigNamespace = type.Namespace ?? "", OrigName = type.Name };
-        item.ExcludedNamespace = configData.ExcludedNamespaces.Contains(type.Namespace ?? "");
-        if (fullNameComparison)
-        {
-          item.IsExcluded = configData.ExcludedTypes.Contains(fullTypeName);
-          item.IsIncluded = configData.IncludedTypes.Contains(fullTypeName);
-        }
-        else
-        {
-          item.IsExcluded = configData.ExcludedTypes.Contains(type.Name);
-          item.IsIncluded = configData.IncludedTypes.Contains(type.Name);
-        }
-        if (configData.TypeConversion.TryGetValue(fullTypeName, out var conversion))
-        {
-          var k = conversion.LastIndexOf('.');
-          if (k > 0 && k < conversion.Length - 1)
+          var item = new TypeConfigViewModel { OrigNamespace = type.Namespace ?? "", OrigName = type.Name };
+          item.ExcludedNamespace = configData.ExcludedNamespaces.Contains(type.Namespace ?? "");
+          if (fullNameComparison)
           {
-            item.TargetNamespace = conversion.Substring(0, k);
-            item.TargetName = conversion.Substring(k + 1);
+            item.IsExcluded = configData.ExcludedTypes.Contains(fullTypeName);
+            item.IsIncluded = configData.IncludedTypes.Contains(fullTypeName);
           }
+          else
+          {
+            item.IsExcluded = configData.ExcludedTypes.Contains(type.Name);
+            item.IsIncluded = configData.IncludedTypes.Contains(type.Name);
+          }
+          if (configData.TypeConversion.TryGetValue(fullTypeName, out var conversion))
+          {
+            var k = conversion.LastIndexOf('.');
+            if (k > 0 && k < conversion.Length - 1)
+            {
+              item.TargetNamespace = conversion.Substring(0, k);
+              item.TargetName = conversion.Substring(k + 1);
+            }
+          }
+          Types.Add(item);
         }
-        Types.Add(item);
       }
     }
   }

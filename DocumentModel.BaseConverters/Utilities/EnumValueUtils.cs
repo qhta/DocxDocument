@@ -6,17 +6,17 @@
 public static class EnumValueUtils
 {
   /// <summary>
-  /// Gets an enum type value from the specified OpenXml EnumValue&lt;EnumValuesType&gt; parameter.
+  /// Gets an enum type value from the specified OpenXml EnumValue&lt;OpenXmlEnumType&gt; parameter.
   /// </summary>
   /// <typeparam name="EnumType"></typeparam>
-  /// <typeparam name="EnumValuesType"></typeparam>
+  /// <typeparam name="OpenXmlEnumType"></typeparam>
   /// <param name="element"></param>
   /// <returns></returns>
-  public static EnumType GetEnumValue<EnumType, EnumValuesType>(this DX.EnumValue<EnumValuesType> element) where EnumType : struct
-  where EnumValuesType : struct
+  public static EnumType GetEnumValue<EnumType, OpenXmlEnumType>(this DX.EnumValue<OpenXmlEnumType> element) where EnumType : struct
+  where OpenXmlEnumType : struct, IEnumValue, IEnumValueFactory<OpenXmlEnumType>
   {
     object value = element.Value;
-    if (typeof(EnumValuesType) != typeof(EnumType))
+    if (typeof(OpenXmlEnumType) != typeof(EnumType))
     {
       var n = (int)Convert.ChangeType(value, typeof(int));
       value = Enum.ToObject(typeof(EnumType), n);
@@ -25,27 +25,42 @@ public static class EnumValueUtils
   }
 
   /// <summary>
-  /// Creates an instance of the specified OpenXml EnumValue&lt;EnumValuesType&gt; type parameter
+  /// Creates an instance of the specified OpenXml EnumValue&lt;OpenXmlEnumType&gt; type parameter
   /// and sets an enum type value to this instance.  
   /// </summary>
   /// <typeparam name="EnumType"></typeparam>
-  /// <typeparam name="EnumValuesType"></typeparam>
+  /// <typeparam name="OpenXmlEnumType"></typeparam>
   /// <param name="value"></param>
-  /// <returns></returns>
-  public static DX.EnumValue<EnumValuesType>? SetEnumValue<EnumType, EnumValuesType>(this EnumType? value) where EnumType : struct
-  where EnumValuesType : struct
+  public static void SetEnumValue<EnumType, OpenXmlEnumType>(this DX.EnumValue<OpenXmlEnumType> element, EnumType? value) where EnumType : struct
+  where OpenXmlEnumType : struct, IEnumValue, IEnumValueFactory<OpenXmlEnumType>
   {
-    if (value == null)
-      return null;
-    object? newValue;
-    if (typeof(EnumValuesType) != typeof(EnumType))
+    if (value != null)
     {
-      var n = (int)Convert.ChangeType(value, typeof(int));
-      newValue = Enum.ToObject(typeof(EnumValuesType), n);
+        var n = (int)Convert.ChangeType(value, typeof(int));
+        OpenXmlEnumType newValue = (OpenXmlEnumType)Enum.ToObject(typeof(OpenXmlEnumType), n);
+        element.Value = newValue;
     }
     else
-      newValue = value;
-    return new DX.EnumValue<EnumValuesType>((EnumValuesType)newValue);
+      element.Value = default(OpenXmlEnumType);
   }
 
+  /// <summary>
+  /// Creates an instance of the specified OpenXml EnumValue&lt;OpenXmlEnumType&gt; type parameter
+  /// and sets an enum type value to this instance.  
+  /// </summary>
+  /// <typeparam name="EnumType"></typeparam>
+  /// <typeparam name="EnumType2"></typeparam>
+  /// <param name="value"></param>
+  public static void SetSimpleEnumValue<EnumType, EnumType2>(this DX.OpenXmlSimpleValue<EnumType2> element, EnumType? value) where EnumType : struct
+  where EnumType2 : struct
+  {
+    if (value != null)
+    {
+        var n = (int)Convert.ChangeType(value, typeof(int));
+        EnumType2 newValue = (EnumType2)Enum.ToObject(typeof(EnumType2), n);
+        element.Value = newValue;
+    }
+    else
+      element.Value = default(EnumType2);
+  }
 }

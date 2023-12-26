@@ -640,7 +640,8 @@ public partial class ModelExtGenerator
     var targetPropType = prop.GetTargetType();
     var targetPropTypeName = targetPropType.GetFullName(true, true, true);
     GlobalUsings.Add(origPropType.OriginalNamespace);
-    Writer.WriteLine($"get => _Element?.{origPropName}?.GetEnumValue<{targetPropTypeName}, {origPropTypeName}>();");
+    Writer.WriteLine($"get => EnumValueConverter.Convert" +
+      $"<{targetPropTypeName}, {origPropTypeName}>(_Element?.{origPropName});");
     return true;
   }
 
@@ -652,8 +653,10 @@ public partial class ModelExtGenerator
     var targetPropType = prop.GetTargetType();
     var targetPropTypeName = targetPropType.GetFullName(true, true, true);
     GlobalUsings.Add(origPropType.OriginalNamespace);
-    Writer.WriteLine($"set => _ExistingElement.{origPropName} = EnumValueUtils.SetEnumValue<{targetPropTypeName}, {origPropTypeName}>(value);");
-    return true;
+    //Writer.WriteLine($"set => EnumValueUtils.SetSimpleEnumValue<{targetPropTypeName}, {origPropTypeName}>" +
+    //  $"(_ExistingElement.{origPropName}, value);");
+    //return true;
+    return GenerateSetNotImplementedException($"enum propertyType is {prop.PropertyType.Type}");
   }
   #endregion
 
@@ -750,8 +753,8 @@ public partial class ModelExtGenerator
   #region GenerateNumericValueProperty code
   private bool GenerateNumericValuePropertyGetCode(PropInfo prop)
   {
-    if (prop.PropertyType.Type.IsEqualOrSubclassOf(typeof(TypedOpenXmlLeafElement)))
-      return GenerateIntegerTypedOpenXmlLeafElementPropertyGetCode(prop);
+    if (prop.PropertyType.Type.IsEqualOrSubclassOf(typeof(OpenXmlLeafElement)))
+      return GenerateIntegerOpenXmlLeafElementPropertyGetCode(prop);
     else
     if (prop.PropertyType.Type.IsEqualOrSubclassOf(typeof(IntegerValue)))
       return GenerateIntValuePropertyGetCode(prop);
@@ -762,8 +765,8 @@ public partial class ModelExtGenerator
 
   private bool GenerateNumericValuePropertySetCode(PropInfo prop)
   {
-    if (prop.PropertyType.Type.IsEqualOrSubclassOf(typeof(TypedOpenXmlLeafElement)))
-      return GenerateIntegerTypedOpenXmlLeafElementPropertySetCode(prop);
+    if (prop.PropertyType.Type.IsEqualOrSubclassOf(typeof(OpenXmlLeafElement)))
+      return GenerateIntegerOpenXmlLeafElementPropertySetCode(prop);
     else
     if (prop.PropertyType.Type.IsEqualOrSubclassOf(typeof(IntegerValue)))
       return GenerateIntValuePropertySetCode(prop);
@@ -789,8 +792,8 @@ public partial class ModelExtGenerator
   }
   #endregion
 
-  #region GenerateIntegerTypedOpenXmlLeafElementProperty code
-  private bool GenerateIntegerTypedOpenXmlLeafElementPropertyGetCode(PropInfo prop)
+  #region GenerateIntegerOpenXmlLeafElementProperty code
+  private bool GenerateIntegerOpenXmlLeafElementPropertyGetCode(PropInfo prop)
   {
     var origPropType = prop.PropertyType;
     var origPropTypeName = origPropType.GetFullName(false, true, true);
@@ -800,7 +803,7 @@ public partial class ModelExtGenerator
     return true;
   }
 
-  private bool GenerateIntegerTypedOpenXmlLeafElementPropertySetCode(PropInfo prop)
+  private bool GenerateIntegerOpenXmlLeafElementPropertySetCode(PropInfo prop)
   {
     var origPropType = prop.PropertyType;
     var origPropTypeName = origPropType.GetFullName(false, true, true);
@@ -859,8 +862,8 @@ public partial class ModelExtGenerator
     //  return GenerateBooleanOnOffOnlyTypePropertyGetCode(prop);
     //if (prop.PropertyType.Type.IsEqualOrSubclassOf(typeof(EmptyType)))
     //  return GenerateBooleanEmptyTypeElementPropertyGetCode(prop);
-    if (prop.PropertyType.Type.IsEqualOrSubclassOf(typeof(TypedOpenXmlLeafElement)))
-      return GenerateBooleanTypedOpenXmlLeafElementPropertyGetCode(prop);
+    if (prop.PropertyType.Type.IsEqualOrSubclassOf(typeof(OpenXmlLeafElement)))
+      return GenerateBooleanOpenXmlLeafElementPropertyGetCode(prop);
     return GenerateGetNotImplementedException($"boolean propertyType is {prop.PropertyType.Type}");
   }
 
@@ -884,8 +887,8 @@ public partial class ModelExtGenerator
     //  return GenerateBooleanOnOffOnlyTypePropertySetCode(prop);
     //if (prop.PropertyType.Type.IsEqualOrSubclassOf(typeof(EmptyType)))
     //  return GenerateBooleanEmptyTypeElementPropertySetCode(prop);
-    if (prop.PropertyType.Type.IsEqualOrSubclassOf(typeof(TypedOpenXmlLeafElement)))
-      return GenerateBooleanTypedOpenXmlLeafElementPropertySetCode(prop);
+    if (prop.PropertyType.Type.IsEqualOrSubclassOf(typeof(OpenXmlLeafElement)))
+      return GenerateBooleanOpenXmlLeafElementPropertySetCode(prop);
     return GenerateSetNotImplementedException($"boolean propertyType is {prop.PropertyType.Type}");
   }
   #endregion
@@ -1041,8 +1044,8 @@ public partial class ModelExtGenerator
   }
   #endregion
 
-  #region GenerateBooleanTypedOpenXmlLeafElementProperty code
-  private bool GenerateBooleanTypedOpenXmlLeafElementPropertyGetCode(PropInfo prop)
+  #region GenerateBooleanOpenXmlLeafElementProperty code
+  private bool GenerateBooleanOpenXmlLeafElementPropertyGetCode(PropInfo prop)
   {
     var origPropType = prop.PropertyType;
     var origPropTypeName = origPropType.GetFullName(false, true, true);
@@ -1051,7 +1054,7 @@ public partial class ModelExtGenerator
     return true;
   }
 
-  private bool GenerateBooleanTypedOpenXmlLeafElementPropertySetCode(PropInfo prop)
+  private bool GenerateBooleanOpenXmlLeafElementPropertySetCode(PropInfo prop)
   {
     var origPropType = prop.PropertyType;
     var origPropTypeName = origPropType.GetFullName(false, true, true);

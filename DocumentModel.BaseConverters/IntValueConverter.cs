@@ -231,7 +231,7 @@ public static class IntValueConverter
   /// <param name="openXmlElement"></param>
   /// <param name="value"></param>
   public static void SetValue<OpenXmlElementType>(this OpenXmlCompositeElement openXmlElement, Int32? value)
-    where OpenXmlElementType : TypedOpenXmlLeafElement, new()
+    where OpenXmlElementType : OpenXmlLeafElement, new()
   {
     var valProperty = typeof(OpenXmlElementType).GetProperty("Val") ?? typeof(OpenXmlElementType).GetProperty("Value");
     Debug.Assert(valProperty != null);

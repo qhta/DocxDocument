@@ -13,7 +13,9 @@ public partial class MainWindow : Window
     Command.CommandManager = new CommandManagerBridge();
     InitializeComponent();
 
-    var options = ProcessOptionsMgr.GetInstance();
+    var selectedProject = ProcessOptionsMgr.LoadInstanceName();
+    ProcessOptionsMgr.DataFolder = selectedProject;
+    var options = ProcessOptionsMgr.CurrentInstance;
 
     //ModelConfig.SetDataFolder(options.AppDataFolder ?? "");
     var modelDataFilename = ModelConfig.GetFilename(options.AppDataFolder);

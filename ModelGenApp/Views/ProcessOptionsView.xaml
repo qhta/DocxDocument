@@ -60,6 +60,8 @@
                                Height="Auto" />
                 <RowDefinition MinHeight="35"
                                Height="Auto" />
+                <RowDefinition MinHeight="35"
+                               Height="Auto" />
               </Grid.RowDefinitions>
               <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" />
@@ -73,19 +75,20 @@
                      VerticalAlignment="Center"
                      Content="{x:Static local:CommonStrings.AppDataFolder}"
                      ToolTip="{x:Static local:CommonStrings.AppDataFolderTooltip}" />
-              <TextBox Grid.Row="0"
-                       Grid.Column="1"
-                       Margin="5"
-                       VerticalContentAlignment="Center"
-                       TextWrapping="Wrap"
-                       MinHeight="25"
-                       Height="Auto"
-                       Text="{Binding Path=ProcessOptionsVM.AppDataFolder}" />
+              <ComboBox Grid.Row="0"
+                        Grid.Column="1"
+                        Margin="5"
+                        VerticalContentAlignment="Center"
+                        IsEditable="False"
+                        MinHeight="25"
+                        Height="Auto"
+                        ItemsSource="{Binding Path=ProcessOptionsVM.AppDataFolders}"
+                        SelectedValue="{Binding Path=ProcessOptionsVM.AppDataFolder}" />
               <Button Grid.Row="0"
                       Grid.Column="2"
                       Margin="5"
-                      Content="..."
-                      Command="{Binding Path=ProcessOptionsVM.BrowseAppDataFolderCommand}" />
+                      Content="+"
+                      Command="{Binding Path=ProcessOptionsVM.AddAppDataFolderCommand}" />
 
               <Label Grid.Row="1"
                      Grid.Column="0"
@@ -127,7 +130,7 @@
                         DropDownClosed="GeneratorSelectionBox_DropDownClosed"
                         Text="{Binding Path=ProcessOptionsVM.GeneratorType}"
                         ItemsSource="{Binding Path=ProcessOptionsVM.GeneratorTypeNames}" />
-              <Button Grid.Row="1"
+              <Button Grid.Row="2"
                       Grid.Column="2"
                       Margin="5"
                       Content="..."
@@ -240,6 +243,22 @@
                       Content="..."
                       Command="{Binding Path=ProcessOptionsVM.BrowseCodeOutputPathCommand}" />
 
+              <StackPanel Grid.Row="9"
+                          Grid.ColumnSpan="3"
+                          Orientation="Horizontal"
+                          HorizontalAlignment="Center"
+                          Margin="0,8"
+                          >
+                <Button x:Name="SaveOptionsButton"
+                        Width="80"
+                        Content="{x:Static local:CommonStrings.Save}"
+                        Command="{Binding Path=ProcessOptionsVM.SaveOptionsCommand}"/>
+                <Button x:Name="RestoreOptionsButton"
+                        Margin="10,0,0,0"
+                        Width="80"
+                        Content="{x:Static local:CommonStrings.Cancel}"
+                        Command="{Binding Path=ProcessOptionsVM.RestoreOptionsCommand}" />
+              </StackPanel>
             </Grid>
           </Expander>
         </Border>

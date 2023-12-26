@@ -155,12 +155,12 @@ public static class HexIntConverter
   }
 
   /// <summary>
-  /// Gets a HexInt value from the specified OpenXml TypedOpenXmlLeafElement
+  /// Gets a HexInt value from the specified OpenXml OpenXmlLeafElement
   /// which has a property of HexBinaryValue type.
   /// </summary>
   /// <param name="openXmlElement"></param>
   /// <returns></returns>
-  public static HexInt? GetValue(this DX.TypedOpenXmlLeafElement? openXmlElement)
+  public static HexInt? GetValue(this DX.OpenXmlLeafElement? openXmlElement)
   {
     var valProperty = openXmlElement?.GetType().GetProperties().FirstOrDefault(item => item.PropertyType == typeof(HexBinaryValue));
     if (valProperty != null)
@@ -268,7 +268,7 @@ public static class HexIntConverter
 
   public static void SetHexIntVal<OpenXmlElementType>(this OpenXmlLeafElement openXmlElement, String? value,
     string? propName = null) 
-    where OpenXmlElementType : TypedOpenXmlLeafElement, new()
+    where OpenXmlElementType : OpenXmlLeafElement, new()
   {
     if (propName==null)
       propName = "Val";
@@ -325,7 +325,7 @@ public static class HexIntConverter
 
   public static void SetHexIntVal<OpenXmlElementType>(this OpenXmlCompositeElement openXmlElement, String? value,
     string? propName = null) 
-    where OpenXmlElementType : TypedOpenXmlLeafElement, new()
+    where OpenXmlElementType : OpenXmlLeafElement, new()
   {
     if (propName==null)
       propName = "Val";
