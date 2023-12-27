@@ -28,7 +28,7 @@ public class FileViewModel : VisibleViewModel<FileModel>
 
   public string Text
   {
-    get { return GetText(); }
+   [DebuggerStepThrough] get { return GetText(); }
     set
     {
       if (_Text != value)

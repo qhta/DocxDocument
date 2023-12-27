@@ -11,7 +11,7 @@ public class NamespaceConfigViewModel : VisibleViewModel
     )]
   public string OrigName
   {
-    get { return _OrigName; }
+   [DebuggerStepThrough] get { return _OrigName; }
     set
     {
       if (_OrigName != value)
@@ -29,7 +29,7 @@ public class NamespaceConfigViewModel : VisibleViewModel
     )]
   public bool Excluded
   {
-    get { return _Excluded; }
+   [DebuggerStepThrough] get { return _Excluded; }
     set
     {
       if (_Excluded != value)
@@ -47,7 +47,7 @@ public class NamespaceConfigViewModel : VisibleViewModel
     )]
   public string? Shortcut
   {
-    get { return _Shortcut; }
+   [DebuggerStepThrough] get { return _Shortcut; }
     set
     {
       if (_Shortcut != value)
@@ -87,7 +87,7 @@ public class NamespaceConfigViewModel : VisibleViewModel
     )]
   public string? TargetName
   {
-    get { return _TargetName; }
+   [DebuggerStepThrough] get { return _TargetName; }
     set
     {
       if (_TargetName != value)
@@ -113,7 +113,7 @@ public class NamespaceConfigViewModel : VisibleViewModel
     )]
   public bool TargetExcluded
   {
-    get { return _TargetExcluded; }
+   [DebuggerStepThrough] get { return _TargetExcluded; }
     set
     {
       if (_TargetExcluded != value)
@@ -131,7 +131,7 @@ public class NamespaceConfigViewModel : VisibleViewModel
     )]
   public string? TargetShortcut
   {
-    get { return _TargetShortcut; }
+   [DebuggerStepThrough] get { return _TargetShortcut; }
     set
     {
       if (_TargetShortcut != value)
@@ -145,7 +145,7 @@ public class NamespaceConfigViewModel : VisibleViewModel
 
   public bool IsTargetShortcutValid
   {
-    get { return _IsTargetShortcutValid; }
+   [DebuggerStepThrough] get { return _IsTargetShortcutValid; }
     set
     {
       if (_IsTargetShortcutValid != value)
@@ -167,7 +167,7 @@ public class NamespaceConfigViewModel : VisibleViewModel
 
   public bool HasUniqueTypes
   {
-    get { return _HasUniqueTypes; }
+   [DebuggerStepThrough] get { return _HasUniqueTypes; }
     set
     {
       if (_HasUniqueTypes != value)

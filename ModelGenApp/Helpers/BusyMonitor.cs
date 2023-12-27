@@ -31,7 +31,7 @@ public class BusyMonitor : ObservableObject
 
   public bool IsBusy
   {
-    get { return _IsBusy; }
+   [DebuggerStepThrough] get { return _IsBusy; }
     set
     {
       if (_IsBusy != value)

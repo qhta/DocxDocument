@@ -125,7 +125,7 @@ public static class ProcessOptionsMgr
       }
     }
   }
-  public static string GetFilename(string? dataFolder)
+  public static string GetFilename(string? dataFolder = null)
   {
     var path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
     path = Path.Combine(path, "ModelGen");
@@ -136,8 +136,6 @@ public static class ProcessOptionsMgr
     path = Path.Combine(path, "ProcessOptions.json");
     return path;
   }
-
-  public static string GetFilename() => GetFilename(DataFolder);
 
   public static Type[] GetGeneratorTypes()
   {

@@ -10,7 +10,7 @@ public class ElementSchemaViewModel : ViewModel<ElementSchema>
 
   public string? Name
   {
-    get { return _Name; }
+   [DebuggerStepThrough] get { return _Name; }
     set
     {
       if (_Name != value)

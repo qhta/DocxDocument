@@ -119,7 +119,7 @@ public abstract class ItemListViewModel<T> : ViewModel, IEnumerable<T> where T :
   #region Filter
   public MemberInfoViewModelFilter? Filter
   {
-    get { return _Filter; }
+   [DebuggerStepThrough] get { return _Filter; }
     set
     {
       if (_Filter != value)
