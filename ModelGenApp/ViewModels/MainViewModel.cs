@@ -31,17 +31,17 @@ public class MainViewModel : ViewModel
 
   public ProcessOptionsViewModel ProcessOptionsVM
   {
-   [DebuggerStepThrough] get { return _ProcessOptionsVM; }
+   [DebuggerStepThrough] get { return Options; }
     set
     {
-      if (_ProcessOptionsVM != value)
+      if (Options != value)
       {
-        _ProcessOptionsVM = value;
+        Options = value;
         NotifyPropertyChanged(nameof(ProcessOptionsVM));
       }
     }
   }
-  private ProcessOptionsViewModel _ProcessOptionsVM;
+  private ProcessOptionsViewModel Options;
 
   public Window? StartWindow
   {
@@ -63,7 +63,7 @@ public class MainViewModel : ViewModel
   public MainViewModel()//: this()
   {
     this.windowService = new WindowService();
-    _ProcessOptionsVM = new ProcessOptionsViewModel();
+    Options = new ProcessOptionsViewModel();
     OpenConfigCommand = new RelayCommand<string>(OpenConfig, CanOpenConfig) { Name = "OpenConfigCommand" };
     StartProcessCommand = new RelayCommand(StartProcess, CanStartProcess) { Name = "StartProcessCommand" };
     StopProcessCommand = new RelayCommand(StopProcess, CanStopProcess) { Name = "StopProcessCommand" };
@@ -103,22 +103,29 @@ public class MainViewModel : ViewModel
 
   public bool CanOpenConfig(string? parameter)
   {
-    return true;
+    return Options.InputAssembly != null && ModelConfig.Instance!=null;
   }
 
   protected void OpenConfig(string? parameter)
   {
-      if (ModelConfig.Instance==null)
-        throw new InvalidOperationException(CommonStrings.Model_configuration_not_defined);
+    if (Options.InputAssembly == null)
+      throw new InvalidOperationException(CommonStrings.Input_assembly_not_specified);
+    if (ModelConfig.Instance==null)
+      throw new InvalidOperationException(CommonStrings.Model_configuration_not_defined);
+    if (ModelConfigVM==null || Options.InputAssembly != ModelConfigVM.AssemblyName)
+      ModelConfigVM = new ModelConfigViewModel(Options.InputAssembly, ModelConfig.Instance);
     if (parameter == "Namespaces")
-      WindowsManager.ShowWindow<ModelConfigWindow>(new NamespaceConfigListViewModel(ModelConfig.Instance));
+      WindowsManager.ShowWindow<ModelConfigWindow>(ModelConfigVM.NamespaceConfigList);
     else
     if (parameter == "Types")
-      WindowsManager.ShowWindow<ModelConfigWindow>(new TypeConfigListViewModel(ModelConfig.Instance));
+      WindowsManager.ShowWindow<ModelConfigWindow>(ModelConfigVM.TypeConfigList);
     else
     if (parameter == "Properties")
-      WindowsManager.ShowWindow<ModelConfigWindow>(new PropertyConfigListViewModel(ModelConfig.Instance));
+      WindowsManager.ShowWindow<ModelConfigWindow>(ModelConfigVM.PropertiesConfigList);
   }
+
+  public ModelConfigViewModel ModelConfigVM { get; private set; } = null!;
+
   #endregion
 
   #region StartStopProcess commands

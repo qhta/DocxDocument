@@ -9,7 +9,7 @@ public partial class ModelConfigWindow : Window
 
   private void CancelButton_Click(object sender, RoutedEventArgs e)
   {
-    (DataContext as ModelConfigViewModel)?.RestoreDataCommand.Execute(null);
+    (DataContext as ConfigListViewModel)?.RestoreDataCommand.Execute(null);
     Close();
   }
 }

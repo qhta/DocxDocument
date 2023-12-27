@@ -1,58 +1,40 @@
 ﻿namespace ModelGenApp.ViewModels;
-public class NamespaceConfigListViewModel : ModelConfigViewModel
+public class NamespaceConfigListViewModel : ConfigListViewModel
 {
-  public NamespaceConfigListViewModel(ModelConfigData configData) : base(configData)
+  public NamespaceConfigListViewModel(ModelConfigViewModel parent): base(parent)
   {
     Caption = CommonStrings.ModelConfiguration + " | " + CommonStrings.Namespaces.ToLower();
-    Namespaces = new ListViewModel<NamespaceConfigViewModel>();
-    VisibleItems = new CollectionViewSource<NamespaceConfigViewModel>(Namespaces);
+    Items = new ListViewModel<NamespaceConfigViewModel>();
+    VisibleItems = new CollectionViewSource<NamespaceConfigViewModel>(Items);
     //VisibleItems = CollectionViewSource.GetDefaultView(Namespaces);
     //VisibleItems.Filter = new Predicate<object>(item => item is NamespaceConfigViewModel viewModel && viewModel.OrigName.Contains("Wordprocessing"));
-    GetData(configData);
   }
 
-  public ListViewModel<NamespaceConfigViewModel> Namespaces { get; private set; }
+  public ListViewModel<NamespaceConfigViewModel> Items { get; private set; }
 
   public CollectionViewSource<NamespaceConfigViewModel> VisibleItems { get; private set; }
 
-  /// <summary>
-  /// This is the result collection view to be used in DataGrid.
-  /// </summary>
-  //public ICollectionView VisibleItems { get; private set; }
-
-  public override void GetData(ModelConfigData configData)
+  public override void CreateItems(ModelConfigData configData)
   {
-    Namespaces.Clear();
-    base.GetData(configData);
-    if (_Assembly != null)
+    Items.Clear();
+
+    foreach (var ns in Parent.LoadedNamespaces)
     {
-      var namespaces = _Assembly.GetExportedTypes()
-        .Where(type => !type.IsConstructedGenericType)
-        .GroupBy(item => item.Namespace)
-        .OrderBy(grp => grp.Key)
-        .ToList();
-      foreach (var group in namespaces)
+      var item = new NamespaceConfigViewModel { OrigName = ns };
+      item.Types = Parent.LoadedTypes.Where(item=>item.Namespace==ns).ToArray();
+      item.Excluded = configData.ExcludedNamespaces.Contains(ns);
+      if (configData.NamespaceShortcuts.TryGetValue(ns, out var shortcut))
+        item.Shortcut = shortcut;
+      if (configData.TranslatedNamespaces.TryGetValue(ns, out var translated))
       {
-        if (group.Key != null)
-        {
-          var ns = group.Key;
-          var item = new NamespaceConfigViewModel { OrigName = ns };
-          item.Types = group.ToArray();
-          item.Excluded = configData.ExcludedNamespaces.Contains(ns);
-          if (configData.NamespaceShortcuts.TryGetValue(ns, out var shortcut))
-            item.Shortcut = shortcut;
-          if (configData.TranslatedNamespaces.TryGetValue(ns, out var translated))
-          {
-            item.TargetName = translated;
-            item.TargetExcluded = configData.ExcludedNamespaces.Contains(translated);
-          }
-          if (translated != null)
-            if (configData.NamespaceShortcuts.TryGetValue(translated, out var targetShortcut))
-              item.TargetShortcut = targetShortcut;
-          item.PropertyChanged += Item_PropertyChanged;
-          Namespaces.Add(item);
-        }
+        item.TargetName = translated;
+        item.TargetExcluded = configData.ExcludedNamespaces.Contains(translated);
       }
+      if (translated != null)
+        if (configData.NamespaceShortcuts.TryGetValue(translated, out var targetShortcut))
+          item.TargetShortcut = targetShortcut;
+      item.PropertyChanged += Item_PropertyChanged;
+      Items.Add(item);
     }
     ValidateData();
   }
@@ -70,7 +52,7 @@ public class NamespaceConfigListViewModel : ModelConfigViewModel
     configData.ExcludedNamespaces.Clear();
     configData.NamespaceShortcuts.Clear();
     configData.TranslatedNamespaces.Clear();
-    foreach (var item in Namespaces)
+    foreach (var item in Items)
     {
       if (item.Excluded)
         configData.ExcludedNamespaces.Add(item.OrigName);
@@ -108,7 +90,7 @@ public class NamespaceConfigListViewModel : ModelConfigViewModel
     var ok = true;
     // Names are unique, so we must check only if a shortcut already exists.
     var knownShortcuts = new List<string>();
-    foreach (var item in Namespaces)
+    foreach (var item in Items)
     {
       bool isValid = true;
       if (!String.IsNullOrWhiteSpace(item.Shortcut))
@@ -134,7 +116,7 @@ public class NamespaceConfigListViewModel : ModelConfigViewModel
     var knownTargetShortcuts = new Dictionary<string, string?>();  // target shortcut to target name mapping
     // We must also check if a target name already is mapped to different target shortcut
     var knownTargetNames = new Dictionary<string, string?>(); // target name to target shortcut mapping
-    foreach (var item in Namespaces)
+    foreach (var item in Items)
     {
       bool isValid = true;
       if (!String.IsNullOrWhiteSpace(item.TargetShortcut))
@@ -174,14 +156,14 @@ public class NamespaceConfigListViewModel : ModelConfigViewModel
   /// <returns></returns>
   public bool ValidateUniqueTypes()
   {
-    foreach (var ns in Namespaces)
+    foreach (var ns in Items)
     {
       ns.HasUniqueTypes = true;
       ns.DuplicatedTypes.Clear();
     }
     var ok = true;
     var knownTargetNamespaces = new Dictionary<string, Dictionary<string, Type>>(); // target namespaces with typenames
-    foreach (var newNamespace in Namespaces)
+    foreach (var newNamespace in Items)
     {
       if (!String.IsNullOrWhiteSpace(newNamespace.TargetName))
       {
@@ -197,7 +179,7 @@ public class NamespaceConfigListViewModel : ModelConfigViewModel
           {
             if (targetTypes.TryGetValue(newType.Name, out var oldType))
             {
-              var oldNamespace = Namespaces.First(ns => ns.OrigName == oldType.Namespace);
+              var oldNamespace = Items.First(ns => ns.OrigName == oldType.Namespace);
               oldNamespace.HasUniqueTypes = false;
               if (!oldNamespace.DuplicatedTypes.ContainsKey(oldType.Name))
                 oldNamespace.DuplicatedTypes.Add(oldType.Name, oldType);
@@ -215,9 +197,9 @@ public class NamespaceConfigListViewModel : ModelConfigViewModel
     return ok;
   }
 
-  public bool AreAllShortcutsValid => Namespaces.Any(item => !item.IsShortcutValid);
+  public bool AreAllShortcutsValid => Items.Any(item => !item.IsShortcutValid);
 
-  public bool AreAllTargetShortcutsValid => Namespaces.Any(item => !item.IsTargetShortcutValid);
+  public bool AreAllTargetShortcutsValid => Items.Any(item => !item.IsTargetShortcutValid);
 
-  public bool AreAllTypesUnique => Namespaces.Any(item => !item.HasUniqueTypes);
+  public bool AreAllTypesUnique => Items.Any(item => !item.HasUniqueTypes);
 }
