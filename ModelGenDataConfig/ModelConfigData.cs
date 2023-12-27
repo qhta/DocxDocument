@@ -22,159 +22,19 @@ public class ModelConfigData
   #region Namespaces
 
   /// <summary>
-  /// List of DocumentFormat namespaces that should be excluded from processing.
+  /// List of source namespaces that should be treated as origin namespaces.
   /// </summary>
-  public WildcardStrings ExcludedNamespaces { get; } = new WildcardStrings
-  {
-    "DocumentFormat.OpenXml",
-    "*Metadata", "*Features", "*Framework", "*Framework.Schema", "*Validation", "*Validation.Schema",
-    "*Presentation*",
-    "*Spreadsheet*",
-    "*Excel*",
-    "*PowerPoint*",
-    "*.Office.Word",
-    "*.VariantTypes",
-    "DocumentFormat.OpenXml.Vml.Presentation",
-    "DocumentFormat.OpenXml.Vml.Spreadsheet",
-  };
+  public WildcardStrings IncludedNamespaces { get; } = new WildcardStrings();
 
   /// <summary>
-  /// Translation table of DocumentFormat namespaces to DocumentModel namespaces.
+  /// List of origin namespaces that should be excluded from processing.
   /// </summary>
-  public BiDiDictionary<string, string> TranslatedNamespaces { get; } = new BiDiDictionary<string, string>()
-  {
-    {"DocumentFormat.OpenXml", "DocumentModel" },
-    {"DocumentFormat.OpenXml.AdditionalCharacteristics", "DocumentModel" },
-    {"DocumentFormat.OpenXml.Bibliography", "DocumentModel.Bibliography" },
-    {"DocumentFormat.OpenXml.CustomProperties", "DocumentModel.Properties" },
-    {"DocumentFormat.OpenXml.CustomXmlDataProperties", "DocumentModel.CustomXml" },
-    {"DocumentFormat.OpenXml.CustomXmlSchemaReferences", "DocumentModel.CustomXml" },
-    {"DocumentFormat.OpenXml.Drawing", "DocumentModel.Drawings" },
-    {"DocumentFormat.OpenXml.Drawing.ChartDrawing", "DocumentModel.Drawings.ChartDrawing" },
-    {"DocumentFormat.OpenXml.Drawing.Charts", "DocumentModel.Drawings.Charts" },
-    {"DocumentFormat.OpenXml.Drawing.Diagrams", "DocumentModel.Drawings.Diagrams" },
-    {"DocumentFormat.OpenXml.Drawing.LegacyCompatibility", "DocumentModel.Drawings.Legacy" },
-    {"DocumentFormat.OpenXml.Drawing.LockedCanvas", "DocumentModel.Drawings.LockedCanvas" },
-    {"DocumentFormat.OpenXml.Drawing.Pictures", "DocumentModel.Drawings.Pictures" },
-    {"DocumentFormat.OpenXml.Drawing.Spreadsheet", "DocumentModel.Drawings.Spreadsheet" },
-    {"DocumentFormat.OpenXml.Drawing.Wordprocessing", "DocumentModel.Drawings.Wordprocessing" },
-    {"DocumentFormat.OpenXml.EMMA", "DocumentModel.EMMA" },
-    {"DocumentFormat.OpenXml.ExtendedProperties", "DocumentModel.Properties" },
-    {"DocumentFormat.OpenXml.Features", "DocumentModel.Framework" },
-    {"DocumentFormat.OpenXml.Framework", "DocumentModel.Framework" },
-    {"DocumentFormat.OpenXml.Framework.Metadata", "DocumentModel.Framework" },
-    {"DocumentFormat.OpenXml.Framework.Schema", "DocumentModel.Framework" },
-    {"DocumentFormat.OpenXml.InkML", "DocumentModel.Painting" },
-    {"DocumentFormat.OpenXml.Math", "DocumentModel.Math" },
-    {"DocumentFormat.OpenXml.Office.ActiveX", "DocumentModel.UI" },
-    {"DocumentFormat.OpenXml.Office.ContentType", "DocumentModel.UI" },
-    {"DocumentFormat.OpenXml.Office.CoverPageProps", "DocumentModel.UI" },
-    {"DocumentFormat.OpenXml.Office.CustomDocumentInformationPanel", "DocumentModel.UI" },
-    {"DocumentFormat.OpenXml.Office.CustomUI", "DocumentModel.UI" },
-    {"DocumentFormat.OpenXml.Office.CustomXsn", "DocumentModel.UI" },
-    {"DocumentFormat.OpenXml.Office.Drawing", "DocumentModel.Drawings.Office" },
-    {"DocumentFormat.OpenXml.Office.Drawing.Y2021.OEmbed", "DocumentModel.Drawings.Office.OEmbed" },
-    {"DocumentFormat.OpenXml.Office.Drawing.Y2021.ScriptLink", "DocumentModel.Drawings.Office.ScriptLink" },
-    {"DocumentFormat.OpenXml.Office.Excel", "DocumentModel.Spreadsheet" },
-    {"DocumentFormat.OpenXml.Office.LongProperties", "DocumentModel" },
-    {"DocumentFormat.OpenXml.Office.MetaAttributes", "DocumentModel" },
-    {"DocumentFormat.OpenXml.Office.PowerPoint.Y2021.M06.Main", "DocumentModel.Presentation" },
-    {"DocumentFormat.OpenXml.Office.SpreadSheetML.Y2021.ExtLinks2021", "DocumentModel.Spreadsheet" },
-    {"DocumentFormat.OpenXml.Office.SpreadSheetML.Y2022.PivotVersionInfo", "DocumentModel.Spreadsheet" },
-    {"DocumentFormat.OpenXml.Office.Word", "DocumentModel.Wordprocessing" },
-    {"DocumentFormat.OpenXml.Office.Word.Y2020.OEmbed", "DocumentModel.Wordprocessing.OEmbed" },
-    {"DocumentFormat.OpenXml.Office2010.CustomUI", "DocumentModel" },
-    {"DocumentFormat.OpenXml.Office2010.Drawing", "DocumentModel.Drawings" },
-    {"DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing", "DocumentModel.Drawings.ChartDrawings" },
-    {"DocumentFormat.OpenXml.Office2010.Drawing.Charts", "DocumentModel.Drawings.Charts" },
-    {"DocumentFormat.OpenXml.Office2010.Drawing.Diagram", "DocumentModel.Drawings.Diagrams" },
-    {"DocumentFormat.OpenXml.Office2010.Drawing.LegacyCompatibility", "DocumentModel.Drawings.Legacy" },
-    {"DocumentFormat.OpenXml.Office2010.Drawing.Pictures", "DocumentModel.Drawings.Pictures" },
-    {"DocumentFormat.OpenXml.Office2010.Drawing.Slicer", "DocumentModel.Drawings.Slicer" },
-    {"DocumentFormat.OpenXml.Office2010.Excel", "DocumentModel.Spreadsheet" },
-    {"DocumentFormat.OpenXml.Office2010.Excel.Drawing", "DocumentModel.Drawings.Spreadsheet" },
-    {"DocumentFormat.OpenXml.Office2010.ExcelAc", "DocumentModel.Spreadsheet" },
-    {"DocumentFormat.OpenXml.Office2010.Ink", "DocumentModel" },
-    {"DocumentFormat.OpenXml.Office2010.PowerPoint", "DocumentModel.Presentation" },
-    {"DocumentFormat.OpenXml.Office2010.Word", "DocumentModel.Wordprocessing" },
-    {"DocumentFormat.OpenXml.Office2010.Word.Drawing", "DocumentModel.Wordprocessing.Drawings" },
-    {"DocumentFormat.OpenXml.Office2010.Word.DrawingCanvas", "DocumentModel.Wordprocessing.DrawingCanvas" },
-    {"DocumentFormat.OpenXml.Office2010.Word.DrawingGroup", "DocumentModel.Wordprocessing.DrawingGroup" },
-    {"DocumentFormat.OpenXml.Office2010.Word.DrawingShape", "DocumentModel.Wordprocessing.DrawingShape" },
-    {"DocumentFormat.OpenXml.Office2013.Drawing", "DocumentModel.Drawings" },
-    {"DocumentFormat.OpenXml.Office2013.Drawing.Chart", "DocumentModel.Drawings.Charts" },
-    {"DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle", "DocumentModel.Drawings.ChartsStyle" },
-    {"DocumentFormat.OpenXml.Office2013.Drawing.TimeSlicer", "DocumentModel.Drawings" },
-    {"DocumentFormat.OpenXml.Office2013.Excel", "DocumentModel.Spreadsheet" },
-    {"DocumentFormat.OpenXml.Office2013.ExcelAc", "DocumentModel.Spreadsheet" },
-    {"DocumentFormat.OpenXml.Office2013.PowerPoint", "DocumentModel.Presentation" },
-    {"DocumentFormat.OpenXml.Office2013.PowerPoint.Roaming", "DocumentModel.Presentation" },
-    {"DocumentFormat.OpenXml.Office2013.Theme", "DocumentModel" },
-    {"DocumentFormat.OpenXml.Office2013.WebExtension", "DocumentModel.WebExtensions" },
-    {"DocumentFormat.OpenXml.Office2013.WebExtentionPane", "DocumentModel.WebExtensions.UI" },
-    {"DocumentFormat.OpenXml.Office2013.Word", "DocumentModel.Wordprocessing" },
-    {"DocumentFormat.OpenXml.Office2013.Word.Drawing", "DocumentModel.Drawings.Wordprocessing" },
-    {"DocumentFormat.OpenXml.Office2016.Drawing", "DocumentModel.Drawings" },
-    {"DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing", "DocumentModel.Drawings.ChartDrawings" },
-    {"DocumentFormat.OpenXml.Office2016.Drawing.Charts", "DocumentModel.Drawings.Charts" },
-    {"DocumentFormat.OpenXml.Office2016.Drawing.ChartsAc", "DocumentModel.Drawings.Charts" },
-    {"DocumentFormat.OpenXml.Office2016.Drawing.Command", "DocumentModel.Drawings" },
-    {"DocumentFormat.OpenXml.Office2016.Excel", "DocumentModel.Spreadsheet" },
-    {"DocumentFormat.OpenXml.Office2016.ExcelAc", "DocumentModel.Spreadsheet" },
-    {"DocumentFormat.OpenXml.Office2016.Presentation", "DocumentModel.Presentation" },
-    {"DocumentFormat.OpenXml.Office2016.Presentation.Command", "DocumentModel.Presentation" },
-    {"DocumentFormat.OpenXml.Office2016.Word.Symex", "DocumentModel.Wordprocessing" },
-    {"DocumentFormat.OpenXml.Office2019.Drawing", "DocumentModel.Drawings" },
-    {"DocumentFormat.OpenXml.Office2019.Drawing.Animation", "DocumentModel.Drawings.Animation" },
-    {"DocumentFormat.OpenXml.Office2019.Drawing.Animation.Model3D", "DocumentModel.Drawings.Animation.Model3D" },
-    {"DocumentFormat.OpenXml.Office2019.Drawing.Chart", "DocumentModel.Drawings.Charts" },
-    {"DocumentFormat.OpenXml.Office2019.Drawing.Diagram11", "DocumentModel.Drawings.Diagram1" },
-    {"DocumentFormat.OpenXml.Office2019.Drawing.Diagram12", "DocumentModel.Drawings.Diagram2" },
-    {"DocumentFormat.OpenXml.Office2019.Drawing.HyperLinkColor", "DocumentModel.Drawings" },
-    {"DocumentFormat.OpenXml.Office2019.Drawing.Ink", "DocumentModel.Drawings" },
-    {"DocumentFormat.OpenXml.Office2019.Drawing.Model3D", "DocumentModel.Drawings.Model3D" },
-    {"DocumentFormat.OpenXml.Office2019.Drawing.SVG", "DocumentModel.Drawings.SVG" },
-    {"DocumentFormat.OpenXml.Office2019.Excel.CalcFeatures", "DocumentModel.Spreadsheet" },
-    {"DocumentFormat.OpenXml.Office2019.Excel.DynamicArray", "DocumentModel.Spreadsheet" },
-    {"DocumentFormat.OpenXml.Office2019.Excel.PivotDefaultLayout", "DocumentModel.Spreadsheet" },
-    {"DocumentFormat.OpenXml.Office2019.Excel.RichData", "DocumentModel.Spreadsheet" },
-    {"DocumentFormat.OpenXml.Office2019.Excel.RichData2", "DocumentModel.Spreadsheet" },
-    {"DocumentFormat.OpenXml.Office2019.Excel.ThreadedComments", "DocumentModel.Spreadsheet" },
-    {"DocumentFormat.OpenXml.Office2019.Presentation", "DocumentModel.Presentation" },
-    {"DocumentFormat.OpenXml.Office2019.Word.Cid", "DocumentModel.Wordprocessing" },
-    {"DocumentFormat.OpenXml.Office2021.DocumentTasks", "DocumentModel" },
-    {"DocumentFormat.OpenXml.Office2021.Drawing.DocumentClassification", "DocumentModel.Drawings" },
-    {"DocumentFormat.OpenXml.Office2021.Drawing.Livefeed", "DocumentModel.Drawings" },
-    {"DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes", "DocumentModel.Drawings" },
-    {"DocumentFormat.OpenXml.Office2021.Excel.ExternalLinks", "DocumentModel.Spreadsheet" },
-    {"DocumentFormat.OpenXml.Office2021.Excel.NamedSheetViews", "DocumentModel.Spreadsheet" },
-    {"DocumentFormat.OpenXml.Office2021.Excel.Pivot", "DocumentModel.Spreadsheet" },
-    {"DocumentFormat.OpenXml.Office2021.Excel.RichDataWebImage", "DocumentModel.Spreadsheet" },
-    {"DocumentFormat.OpenXml.Office2021.Excel.RichValueRefreshIntervals", "DocumentModel.Spreadsheet" },
-    {"DocumentFormat.OpenXml.Office2021.Excel.ThreadedComments2", "DocumentModel.Spreadsheet" },
-    {"DocumentFormat.OpenXml.Office2021.MipLabelMetaData", "DocumentModel" },
-    {"DocumentFormat.OpenXml.Office2021.OfficeExtLst", "DocumentModel" },
-    {"DocumentFormat.OpenXml.Office2021.PowerPoint.Comment", "DocumentModel.Presentation" },
-    {"DocumentFormat.OpenXml.Office2021.PowerPoint.Designer", "DocumentModel.Presentation" },
-    {"DocumentFormat.OpenXml.Office2021.PowerPoint.Tasks", "DocumentModel.Presentation" },
-    {"DocumentFormat.OpenXml.Office2021.Word.CommentsExt", "DocumentModel.Wordprocessing" },
-    {"DocumentFormat.OpenXml.Office2021.Word.ExtensionList", "DocumentModel.Wordprocessing" },
-    {"DocumentFormat.OpenXml.Office.Drawing.Y2022.ImageFormula", "DocumentModel.Drawings" },
-    {"DocumentFormat.OpenXml.Packaging", "DocumentModel.Packaging" },
-    {"DocumentFormat.OpenXml.Presentation", "DocumentModel.Presentation" },
-    {"DocumentFormat.OpenXml.Spreadsheet", "DocumentModel.Spreadsheet" },
-    {"DocumentFormat.OpenXml.Validation", "DocumentModel.Validation" },
-    {"DocumentFormat.OpenXml.Validation.Schema", "DocumentModel.Validation" },
-    {"DocumentFormat.OpenXml.Validation.Schema.Restrictions", "DocumentModel.Validation" },
-    {"DocumentFormat.OpenXml.Validation.Semantic", "DocumentModel.Validation" },
-    {"DocumentFormat.OpenXml.VariantTypes", "DocumentModel.VariantTypes" },
-    {"DocumentFormat.OpenXml.Vml", "DocumentModel.Vml" },
-    {"DocumentFormat.OpenXml.Vml.Office", "DocumentModel.Vml" },
-    {"DocumentFormat.OpenXml.Vml.Presentation", "DocumentModel.Presentation.Vml" },
-    {"DocumentFormat.OpenXml.Vml.Spreadsheet", "DocumentModel.Spreadsheet.Vml" },
-    {"DocumentFormat.OpenXml.Vml.Wordprocessing", "DocumentModel.Wordprocessing.Vml" },
-    {"DocumentFormat.OpenXml.Wordprocessing", "DocumentModel.Wordprocessing" },
-  };
+  public WildcardStrings ExcludedNamespaces { get; } = new WildcardStrings();
+
+  /// <summary>
+  /// Translation table of origin namespaces to target namespaces.
+  /// </summary>
+  public BiDiDictionary<string, string> TranslatedNamespaces { get; } = new BiDiDictionary<string, string>();
 
   /// <summary>
   /// Shortcuts for DocumentFormat.OpenXml namespaces. 
@@ -182,140 +42,7 @@ public class ModelConfigData
   /// Shortcuts for DocumentModel.OpenXml namespaces can be translated by replacing starting "DX" with "DXM".
   /// It is implemented in <see cref="NamespaceShortcut(string)"/> function.
   /// </summary>
-  public BiDiDictionary<string, string> NamespaceShortcuts { get; } = new BiDiDictionary<string, string>()
-  {
-    { "DocumentFormat.OpenXml", "DX" },
-    { "DocumentFormat.OpenXml.AdditionalCharacteristics", "DXAddCht" },
-    { "DocumentFormat.OpenXml.Bibliography", "DXBib" },
-    { "DocumentFormat.OpenXml.CustomProperties", "DXCustProps" },
-    { "DocumentFormat.OpenXml.CustomXmlDataProperties", "DXCustXmlDataProps" },
-    { "DocumentFormat.OpenXml.CustomXmlSchemaReferences", "DXCustXmlSchRefs" },
-    { "DocumentFormat.OpenXml.Drawing", "DXDraw" },
-    { "DocumentFormat.OpenXml.Drawing.ChartDrawing", "DXDrawChartDraw" },
-    { "DocumentFormat.OpenXml.Drawing.Charts", "DXDrawCharts" },
-    { "DocumentFormat.OpenXml.Drawing.Diagrams", "DXDrawDgms" },
-    { "DocumentFormat.OpenXml.Drawing.LegacyCompatibility", "DXDrawLegComp" },
-    { "DocumentFormat.OpenXml.Drawing.LockedCanvas", "DXDrawLockCanv" },
-    { "DocumentFormat.OpenXml.Drawing.Pictures", "DXDrawPict" },
-    { "DocumentFormat.OpenXml.Drawing.Spreadsheet", "DXDrawS" },
-    { "DocumentFormat.OpenXml.Drawing.Wordprocessing", "DXDrawW" },
-    { "DocumentFormat.OpenXml.EMMA", "DXEMMA" },
-    { "DocumentFormat.OpenXml.ExtendedProperties", "DXExtProps" },
-    { "DocumentFormat.OpenXml.Features", "DXFeat" },
-    { "DocumentFormat.OpenXml.Framework", "DXFwork" },
-    { "DocumentFormat.OpenXml.Framework.Metadata", "DXFworkMeta" },
-    { "DocumentFormat.OpenXml.Framework.Schema", "DXFworkSch" },
-    { "DocumentFormat.OpenXml.InkML", "DXInkML" },
-    { "DocumentFormat.OpenXml.Math", "DXM" },
-    { "DocumentFormat.OpenXml.Office.ActiveX", "DXOActiveX" },
-    { "DocumentFormat.OpenXml.Office.ContentType", "DXOContentType" },
-    { "DocumentFormat.OpenXml.Office.CoverPageProps", "DXOCoverPageProps" },
-    { "DocumentFormat.OpenXml.Office.CustomDocumentInformationPanel", "DXOCustDocInfPnl" },
-    { "DocumentFormat.OpenXml.Office.CustomUI", "DXOCustUI" },
-    { "DocumentFormat.OpenXml.Office.CustomXsn", "DXOCustXsn" },
-    { "DocumentFormat.OpenXml.Office.Drawing", "DXODraw" },
-    { "DocumentFormat.OpenXml.Office.Drawing.Y2021.OEmbed", "DXODrawY21OEmb" },
-    { "DocumentFormat.OpenXml.Office.Drawing.Y2021.ScriptLink", "DXODrawY21ScptLnk" },
-    { "DocumentFormat.OpenXml.Office.Excel", "DXOS" },
-    { "DocumentFormat.OpenXml.Office.LongProperties", "DXOLongProps" },
-    { "DocumentFormat.OpenXml.Office.MetaAttributes", "DXOMetaAttr" },
-    { "DocumentFormat.OpenXml.Office.PowerPoint.Y2021.M06.Main", "DXOPY21M06Main" },
-    { "DocumentFormat.OpenXml.Office.SpreadSheetML.Y2021.ExtLinks2021", "DXOSMLY21ExtLnks2021" },
-    { "DocumentFormat.OpenXml.Office.SpreadSheetML.Y2022.PivotVersionInfo", "DXOSMLY22PivotVerInf" },
-    { "DocumentFormat.OpenXml.Office.Word", "DXOW" },
-    { "DocumentFormat.OpenXml.Office.Word.Y2020.OEmbed", "DXOWY20OEmb" },
-    { "DocumentFormat.OpenXml.Office2010.CustomUI", "DXO10CustUI" },
-    { "DocumentFormat.OpenXml.Office2010.Drawing", "DXO10Draw" },
-    { "DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing", "DXO10DrawChartDraw" },
-    { "DocumentFormat.OpenXml.Office2010.Drawing.Charts", "DXO10DrawCharts" },
-    { "DocumentFormat.OpenXml.Office2010.Drawing.Diagram", "DXO10DrawDgm" },
-    { "DocumentFormat.OpenXml.Office2010.Drawing.LegacyCompatibility", "DXO10DrawLegComp" },
-    { "DocumentFormat.OpenXml.Office2010.Drawing.Pictures", "DXO10DrawPict" },
-    { "DocumentFormat.OpenXml.Office2010.Drawing.Slicer", "DXO10DrawSlicer" },
-    { "DocumentFormat.OpenXml.Office.Drawing.Y2022.ImageFormula", "DXODrawY22IF" },
-    { "DocumentFormat.OpenXml.Office2010.Excel", "DXO10S" },
-    { "DocumentFormat.OpenXml.Office2010.Excel.Drawing", "DXO10SDraw" },
-    { "DocumentFormat.OpenXml.Office2010.ExcelAc", "DXO10SAc" },
-    { "DocumentFormat.OpenXml.Office2010.Ink", "DXO10Ink" },
-    { "DocumentFormat.OpenXml.Office2010.PowerPoint", "DXO10P" },
-    { "DocumentFormat.OpenXml.Office2010.Word", "DXO10W" },
-    { "DocumentFormat.OpenXml.Office2010.Word.Drawing", "DXO10WDraw" },
-    { "DocumentFormat.OpenXml.Office2010.Word.DrawingCanvas", "DXO10WDrawCnv" },
-    { "DocumentFormat.OpenXml.Office2010.Word.DrawingGroup", "DXO10WDrawGroup" },
-    { "DocumentFormat.OpenXml.Office2010.Word.DrawingShape", "DXO10WDrawShp" },
-    { "DocumentFormat.OpenXml.Office2013.Drawing", "DXO13Draw" },
-    { "DocumentFormat.OpenXml.Office2013.Drawing.Chart", "DXO13DrawChart" },
-    { "DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle", "DXO13DrawChartStyle" },
-    { "DocumentFormat.OpenXml.Office2013.Drawing.TimeSlicer", "DXO13DrawTimeSlicer" },
-    { "DocumentFormat.OpenXml.Office2013.Excel", "DXO13S" },
-    { "DocumentFormat.OpenXml.Office2013.ExcelAc", "DXO13SAc" },
-    { "DocumentFormat.OpenXml.Office2013.PowerPoint", "DXO13P" },
-    { "DocumentFormat.OpenXml.Office2013.PowerPoint.Roaming", "DXO13PRoaming" },
-    { "DocumentFormat.OpenXml.Office2013.Theme", "DXO13Theme" },
-    { "DocumentFormat.OpenXml.Office2013.WebExtension", "DXO13WebExt" },
-    { "DocumentFormat.OpenXml.Office2013.WebExtentionPane", "DXO13WebExtPane" },
-    { "DocumentFormat.OpenXml.Office2013.Word", "DXO13W" },
-    { "DocumentFormat.OpenXml.Office2013.Word.Drawing", "DXO13WDraw" },
-    { "DocumentFormat.OpenXml.Office2016.Drawing", "DXO16Draw" },
-    { "DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing", "DXO16DrawChartDraw" },
-    { "DocumentFormat.OpenXml.Office2016.Drawing.Charts", "DXO16DrawCharts" },
-    { "DocumentFormat.OpenXml.Office2016.Drawing.ChartsAc", "DXO16DrawChartsAc" },
-    { "DocumentFormat.OpenXml.Office2016.Drawing.Command", "DXO16DrawCmd" },
-    { "DocumentFormat.OpenXml.Office2016.Excel", "DXO16S" },
-    { "DocumentFormat.OpenXml.Office2016.ExcelAc", "DXO16SAc" },
-    { "DocumentFormat.OpenXml.Office2016.Presentation", "DXO16P" },
-    { "DocumentFormat.OpenXml.Office2016.Presentation.Command", "DXO16PCmd" },
-    { "DocumentFormat.OpenXml.Office2016.Word.Symex", "DXO16WSymex" },
-    { "DocumentFormat.OpenXml.Office2019.Drawing", "DXO19Draw" },
-    { "DocumentFormat.OpenXml.Office2019.Drawing.Animation", "DXO19DrawAnim" },
-    { "DocumentFormat.OpenXml.Office2019.Drawing.Animation.Model3D", "DXO19DrawAnim3D" },
-    { "DocumentFormat.OpenXml.Office2019.Drawing.Chart", "DXO19DrawChart" },
-    { "DocumentFormat.OpenXml.Office2019.Drawing.Diagram11", "DXO19DrawDgm11" },
-    { "DocumentFormat.OpenXml.Office2019.Drawing.Diagram12", "DXO19DrawDgm12" },
-    { "DocumentFormat.OpenXml.Office2019.Drawing.HyperLinkColor", "DXO19DrawHLnkClr" },
-    { "DocumentFormat.OpenXml.Office2019.Drawing.Ink", "DXO19DrawInk" },
-    { "DocumentFormat.OpenXml.Office2019.Drawing.Model3D", "DXO19Draw3D" },
-    { "DocumentFormat.OpenXml.Office2019.Drawing.SVG", "DXO19DrawSVG" },
-    { "DocumentFormat.OpenXml.Office2019.Excel.CalcFeatures", "DXO19SCalcFeat" },
-    { "DocumentFormat.OpenXml.Office2019.Excel.DynamicArray", "DXO19SDynArray" },
-    { "DocumentFormat.OpenXml.Office2019.Excel.PivotDefaultLayout", "DXO19SPivotDefLayt" },
-    { "DocumentFormat.OpenXml.Office2019.Excel.RichData", "DXO19SRichData" },
-    { "DocumentFormat.OpenXml.Office2019.Excel.RichData2", "DXO19SRichData2" },
-    { "DocumentFormat.OpenXml.Office2019.Excel.ThreadedComments", "DXO19SThrComt" },
-    { "DocumentFormat.OpenXml.Office2019.Presentation", "DXO19P" },
-    { "DocumentFormat.OpenXml.Office2019.Word.Cid", "DXO19WCid" },
-    { "DocumentFormat.OpenXml.Office2021.DocumentTasks", "DXO21DocTasks" },
-    { "DocumentFormat.OpenXml.Office2021.Drawing.DocumentClassification", "DXO21DrawDocCls" },
-    { "DocumentFormat.OpenXml.Office2021.Drawing.Livefeed", "DXO21DrawLivefeed" },
-    { "DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes", "DXO21DrawSketchyShps" },
-    { "DocumentFormat.OpenXml.Office2021.Excel.ExternalLinks", "DXO21SExtLnks" },
-    { "DocumentFormat.OpenXml.Office2021.Excel.NamedSheetViews", "DXO21SNamedSheetVws" },
-    { "DocumentFormat.OpenXml.Office2021.Excel.Pivot", "DXO21SPivot" },
-    { "DocumentFormat.OpenXml.Office2021.Excel.RichDataWebImage", "DXO21SRichDataWebImg" },
-    { "DocumentFormat.OpenXml.Office2021.Excel.RichValueRefreshIntervals", "DXO21SRichValRefshImtv" },
-    { "DocumentFormat.OpenXml.Office2021.Excel.ThreadedComments2", "DXO21SThrComt2" },
-    { "DocumentFormat.OpenXml.Office2021.MipLabelMetaData", "DXO21MipLabelMeta" },
-    { "DocumentFormat.OpenXml.Office2021.OfficeExtLst", "DXO21OExtLst" },
-    { "DocumentFormat.OpenXml.Office2021.PowerPoint.Comment", "DXO21PComt" },
-    { "DocumentFormat.OpenXml.Office2021.PowerPoint.Designer", "DXO21PDsg" },
-    { "DocumentFormat.OpenXml.Office2021.PowerPoint.Tasks", "DXO21PTasks" },
-    { "DocumentFormat.OpenXml.Office2021.Word.CommentsExt", "DXO21WComtExt" },
-    { "DocumentFormat.OpenXml.Office2021.Word.ExtensionList", "DXO21WExtList" },
-    { "DocumentFormat.OpenXml.Packaging", "DXPack" },
-    { "DocumentFormat.OpenXml.Presentation", "DXP" },
-    { "DocumentFormat.OpenXml.Spreadsheet", "DXS" },
-    { "DocumentFormat.OpenXml.Validation", "DXValid" },
-    { "DocumentFormat.OpenXml.Validation.Schema", "DXValidSch" },
-    { "DocumentFormat.OpenXml.Validation.Schema.Restrictions", "DXValidSchRest" },
-    { "DocumentFormat.OpenXml.Validation.Semantic", "DXValidSmt" },
-    { "DocumentFormat.OpenXml.VariantTypes", "DXVT" },
-    { "DocumentFormat.OpenXml.Vml", "DXVml" },
-    { "DocumentFormat.OpenXml.Vml.Office", "DXVmlO" },
-    { "DocumentFormat.OpenXml.Vml.Presentation", "DXVmlP" },
-    { "DocumentFormat.OpenXml.Vml.Spreadsheet", "DXVmlS" },
-    { "DocumentFormat.OpenXml.Vml.Wordprocessing", "DXVmlW" },
-    { "DocumentFormat.OpenXml.Wordprocessing", "DXW" },
-  };
+  public BiDiDictionary<string, string> NamespaceShortcuts { get; } = new BiDiDictionary<string, string>();
 
 
   public string? NamespaceShortcut(string ns)
@@ -324,84 +51,17 @@ public class ModelConfigData
       return null;
     if (NamespaceShortcuts.TryGetValue2(ns, out var shortcut))
       return shortcut;
-    //if (ns.StartsWith("DocumentFormat"))
-    //{
-    //  if (ModelConfig.Instance.NamespaceShortcuts.TryGetValue2(ns, out var shortcut))
-    //    return shortcut;
-    //}
-    //else
-    //if (ns.StartsWith("DocumentModel.OpenXml"))
-    //{
-    //  ns = ns.ReplaceStart("DocumentModel", "DocumentFormat");
-    //  if (ModelConfig.Instance.NamespaceShortcuts.TryGetValue2(ns, out var shortcut))
-    //  {
-    //    shortcut.ReplaceStart("DX", "DXM");
-    //    return shortcut;
-    //  }
-    //}
-    //else
-    //if (ns.StartsWith("DocumentModel"))
-    //{
-    //  ns = ns.ReplaceStart("DocumentModel", "DocumentFormat.OpenXml");
-    //  if (ModelConfig.Instance.NamespaceShortcuts.TryGetValue2(ns, out var shortcut))
-    //  {
-    //    shortcut.ReplaceStart("DX", "DM");
-    //    return shortcut;
-    //  }
-    //}
     return null;
   }
   #endregion
 
   #region Properties
 
-  public WildcardStrings ExcludedProperties { get; } = new WildcardStrings
-  {
-    "FirstChild", "LastChild", "HasChildren", "InnerText", "InnerXml", "Features",
-    "OpenXmlElementContext", "HasAttributes", "ExtendedAttributes", "ChildElements",
-    "Parent", "NamespaceUri", "LocalName", "Prefix", "NamespaceDeclarations",
-    "XmlQualifiedName", "XName", "OuterXml", "MCAttributes",
-    "IsRootElementLoaded",
-    "RelationshipErrorHandlerFactory",
-    "AddError",
-    "*Part",
-    "HasValue",
-    "OpenXmlPackage",
-    "Container",
-    "RootElementContext",
-    "WebExtensions"
+  public WildcardStrings ExcludedProperties { get; } = new WildcardStrings();
 
-  };
+  public Dictionary<string, string> PropertyTranslateTable = new();
 
-  public Dictionary<string, string> PropertyTranslateTable = new()
-  {
-    { "DocumentFormat.OpenXml.Wordprocessing.LatentStyles.Count", "TotalCount" },
-    { "DocumentFormat.OpenXml.Wordprocessing.LatentStyles.LatentStyleExceptionInfos", "Items" },
-    { "DocumentFormat.OpenXml.Wordprocessing.Style.Default", "IsDefault" },
-    { "DocumentFormat.OpenXml.Wordprocessing.Style.CustomStyle", "IsCustom" },
-    { "DocumentFormat.OpenXml.Wordprocessing.Style.AutoRedefine", "IsAutoRedefined" },
-    { "DocumentFormat.OpenXml.Wordprocessing.Style.StyleHidden", "IsHidden" },
-    { "DocumentFormat.OpenXml.Wordprocessing.Style.SemiHidden", "IsSemiHidden" },
-    { "DocumentFormat.OpenXml.Wordprocessing.Style.UnhideWhenUsed", "IsUnhiddenWhenUsed" },
-    { "DocumentFormat.OpenXml.Wordprocessing.Style.PrimaryStyle", "IsPrimary" },
-    { "DocumentFormat.OpenXml.Wordprocessing.Style.Locked", "IsLocked" },
-    { "DocumentFormat.OpenXml.Wordprocessing.Style.Personal", "IsPersonal" },
-    { "DocumentFormat.OpenXml.Wordprocessing.Style.PersonalCompose", "IsPersonalCompose" },
-    { "DocumentFormat.OpenXml.Wordprocessing.Style.PersonalReply", "IsPersonalReply" },
-    { "DocumentFormat.OpenXml.Wordprocessing.Font.Panose1Number", "Panose"},
-    };
-
-  public WildcardStringDictionary PropertyTypeConversion { get; } = new()
-  {
-    { "DocumentFormat.OpenXml.Wordprocessing.DocumentSettings.DocumentId", nameof(DM.HexInt) },
-    { "DocumentFormat.OpenXml.Wordprocessing.DocumentSettings.PersistentDocumentId", nameof(System.Guid) },
-    { "DocumentFormat.OpenXml.Wordprocessing.CheckBoxSymbolType.Val", nameof(DM.HexChar) },
-    { "DocumentFormat.OpenXml.Wordprocessing.Mcd.BEncrypt", nameof(DM.HexChar) },
-    { "DocumentFormat.OpenXml.Wordprocessing.Mcd.Cmg", nameof(DM.HexChar) },
-    { "Rsid", nameof(DM.HexInt) },
-    { "DocumentFormat.OpenXml.Wordprocessing.Rsids.RsidRoot", nameof(DM.HexInt) },
-    { "DocumentFormat.OpenXml.Wordprocessing.Rsids.Items", "Collection<HexInt>" },
-  };
+  public WildcardStringDictionary PropertyTypeConversion { get; } = new();
 
   public WildcardStringDictionary<Type> PropertyTypes { get; } = new();
 
@@ -483,92 +143,13 @@ public class ModelConfigData
     return false;
   }
 
-  public WildcardStrings ExcludedTypes { get; } = new WildcardStrings
-  {
-    "SR", "*Reader", "*Attribute", "*Attributes", "*Extensions", "*Helper", "*Provider", "*Methods",
-    "XmlConvertingReader*", "*.Part", "EnumInfoLookup`1", "MiscAttrContainer", "ModelElement", /*"HexWord",*/
-    "OpenXmlElementContext",
-    "OpenXmlElementList",
-    "OpenXmlSimpleType",
-    "OpenXmlPackage",
-    "OpenXmlPart",
-    "TypedOpenXmlPart",
-    "OpenXmlPartContainer",
-    "IFixedContentTypePart",
-    "WordAttachedToolbarsPart",
-    "Worksheet*Part",
-    "NamedsheetPart",
-    "PivotTable*Part",
-    "TableDefinitionPart",
-    "QueryTablePart",
-    "SingleCellTablePart",
-    "SpreadsheetPrinterSettingsPart",
-    "Slide*Part",
-    "Notes*Part",
-    "PowerPointCommentPart",
-    "DocumentTasksPart",
-    "Vba*Part",
-    "Ribbon*Part",
-    "QuickAccessToolbarCustomizationsPart",
-    "WebEx*Part",
-    "CustomUIPart",
-    "TypedOpenXmlPackage",
-    "OnOffType",
-    "OfficeAvailabilityAttribute", "NullableContextAttribute", "SchemaAttrAttribute", "NullableAttribute", "SerializableAttribute",
-    "DebuggerDisplayAttribute", "DebuggerNonUserCodeAttribute", "CLSCompliantAttribute", "EditorBrowsableAttribute",
-  };
+  public WildcardStrings ExcludedTypes { get; } = new ();
 
-  public WildcardStrings IncludedTypes { get; } = new WildcardStrings
-  {
-    "CustomXmlAttribute",
-    "DocPart",
-    "EnumValue*",
-    "OpenXmlSimpleValue*",
-    "ListValue*",
-  };
+  public WildcardStrings IncludedTypes { get; } = new ();
 
-  public BiDiDictionary<string, string> TypeConversion { get; } = new()
-  {
-    { "DocumentFormat.OpenXml.Wordprocessing.Settings", "DocumentModel.DocumentSettings"},
-    { "DocumentFormat.OpenXml.Wordprocessing.WebSettings", "DocumentModel.WebSettings"},
-    { "DocumentFormat.OpenXml.Wordprocessing.Fonts", "DocumentModel.Wordprocessing.Fonts"},
-    { "DocumentFormat.OpenXml.StringValue", "System.String"},
-    { "DocumentFormat.OpenXml.BooleanValue", "System.Boolean"},
-    { "DocumentFormat.OpenXml.OnOffValue", "System.Boolean"},
-    { "DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues", "System.Boolean"},
-    { "DocumentFormat.OpenXml.Office2019.Drawing.Chart.BooleanFalse", "System.Boolean"},
-    { "DocumentFormat.OpenXml.Office2010.ExcelAc.List", "System.String"},
-    { "DocumentFormat.OpenXml.IntegerValue", "System.Int64"},
-    { "DocumentFormat.OpenXml.Int32Value", "System.Int32"},
-    { "DocumentFormat.OpenXml.UInt32Value", "System.UInt32"},
-    { "DocumentFormat.OpenXml.Int16Value", "System.Int16"},
-    { "DocumentFormat.OpenXml.UInt16Value", "System.UInt16"},
-    { "DocumentFormat.OpenXml.Int64Value", "System.Int64"},
-    { "DocumentFormat.OpenXml.UInt64Value", "System.UInt16"},
-    { "DocumentFormat.OpenXml.ByteValue", "System.Byte"},
-    { "DocumentFormat.OpenXml.SByteValue", "System.SByte"},
-    { "DocumentFormat.OpenXml.SingleValue", "System.Single"},
-    { "DocumentFormat.OpenXml.DoubleValue", "System.Double"},
-    { "DocumentFormat.OpenXml.DecimalValue", "System.Decimal"},
-    { "DocumentFormat.OpenXml.DateTimeValue", "System.DateTime"},
-    { "DocumentFormat.OpenXml.OpenXmlElement", "DocumentModel.ModelElement"},
-    { "DocumentFormat.OpenXml.OpenXmlLeafElement", "System.Boolean"},
-    { "DocumentFormat.OpenXml.OpenXmlLeafTextElement", "System.String"},
-    { "DocumentFormat.OpenXml.Wordprocessing.LongHexNumberType", "System.UInt32"},
-    { "DocumentFormat.OpenXml.EnumStringAttribute", "System.Xml.Serialization.XmlEnumAttribute"},
-    { "DocumentFormat.OpenXml.OfficeAvailabilityAttribute", "DocumentModel.Attributes.OfficeAvailabilityAttribute"},
-    { "DocumentFormat.OpenXml.ChildElementInfoAttribute", "DocumentModel.Attributes.ChildElementInfoAttribute"},
-    { "DocumentFormat.OpenXml.SchemaAttrAttribute", "DocumentModel.Attributes.SchemaAttrAttribute"},
-    { "DocumentFormat.OpenXml.VariantTypes.Variant", "DocumentModel.Variant"},
-    { "DocumentFormat.OpenXml.VariantTypes.VTArray", "DocumentModel.ArrayVariant"},
-    { "DocumentFormat.OpenXml.VariantTypes.VTVector", "DocumentModel.VectorVariant"},
-    { "DocumentFormat.OpenXml.Base64BinaryValue", "DocumentModel.Base64Binary"},
-    { "DocumentFormat.OpenXml.HexBinaryValue", "DocumentModel.HexBinary"},
-  };
+  public BiDiDictionary<string, string> TypeConversion { get; } = new();
 
-  public WildcardStrings PredefinedTypes { get; } = new WildcardStrings
-  {
-  };
+  public WildcardStrings PredefinedTypes { get; } = new ();
 
   public Dictionary<string, Type> ModelTypes { get; } = new();
 
@@ -578,60 +159,6 @@ public class ModelConfigData
     foreach (var type in assembly.GetTypes())
       ModelTypes.Add(type.FullName ?? "", type);
   }
-
-  //public record TypeConversionTarget
-  //{
-  //  public Type Type { get; set; } = null!;
-  //  public bool Rename { get; set; }
-
-  //  public TypeConversionTarget(Type type)
-  //  {
-  //    Type = type;
-  //  }
-  //  public TypeConversionTarget(Type type, bool rename)
-  //  {
-  //    Type = type;
-  //    Rename = rename;
-  //  }
-
-  //  public implicit operator TypeConversionTarget(Type type) => new TypeConversionTarget(type);
-  //  public implicit operator TypeConversionTarget(TypeInfo typeInfo) => new TypeConversionTarget(typeInfo.Type);
-  //}
-  //public Dictionary<Type, TypeConversionTarget> TypeConversionTable { get; } = new()
-  //{
-  //  { typeof(DocumentFormat.OpenXml.StringValue), typeof(System.String)},
-  //  { typeof(DocumentFormat.OpenXml.BooleanValue), typeof(System.Boolean)},
-  //  { typeof(DocumentFormat.OpenXml.OnOffValue), typeof(System.Boolean)},
-  //  { typeof(DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues), typeof(System.Boolean)},
-  //  { typeof(DocumentFormat.OpenXml.Office2019.Drawing.Chart.BooleanFalse), typeof(System.Boolean) },
-  //  { typeof(DocumentFormat.OpenXml.Office2010.ExcelAc.List), typeof(System.String) },
-  //  { typeof(DocumentFormat.OpenXml.IntegerValue), typeof(System.Int64)},
-  //  { typeof(DocumentFormat.OpenXml.Int32Value), typeof(System.Int32)},
-  //  { typeof(DocumentFormat.OpenXml.UInt32Value), typeof(System.UInt32)},
-  //  { typeof(DocumentFormat.OpenXml.Int16Value), typeof(System.Int16)},
-  //  { typeof(DocumentFormat.OpenXml.UInt16Value), typeof(System.UInt16)},
-  //  { typeof(DocumentFormat.OpenXml.Int64Value), typeof(System.Int64)},
-  //  { typeof(DocumentFormat.OpenXml.UInt64Value), typeof(System.UInt16)},
-  //  { typeof(DocumentFormat.OpenXml.ByteValue), typeof(System.Byte)},
-  //  { typeof(DocumentFormat.OpenXml.SByteValue), typeof(System.SByte)},
-  //  { typeof(DocumentFormat.OpenXml.SingleValue), typeof(System.Single)},
-  //  { typeof(DocumentFormat.OpenXml.DoubleValue), typeof(System.Double)},
-  //  { typeof(DocumentFormat.OpenXml.DecimalValue), typeof(System.Decimal)},
-  //  { typeof(DocumentFormat.OpenXml.DateTimeValue), typeof(System.DateTime)},
-  //  { typeof(DocumentFormat.OpenXml.OpenXmlElement), typeof(DocumentModel.ModelElement)},
-  //  { typeof(DocumentFormat.OpenXml.OpenXmlLeafElement), typeof(System.Boolean)},
-  //  { typeof(DocumentFormat.OpenXml.OpenXmlLeafTextElement), typeof(System.String)},
-  //  { typeof(DocumentFormat.OpenXml.Wordprocessing.LongHexNumberType), typeof(System.UInt32)},
-  //  { typeof(DocumentFormat.OpenXml.EnumStringAttribute), typeof(System.Xml.Serialization.XmlEnumAttribute) },
-  //  { typeof(DocumentFormat.OpenXml.OfficeAvailabilityAttribute), typeof(DocumentModel.Attributes.OfficeAvailabilityAttribute) },
-  //  { typeof(DocumentFormat.OpenXml.ChildElementInfoAttribute), typeof(DocumentModel.Attributes.ChildElementInfoAttribute) },
-  //  { typeof(DocumentFormat.OpenXml.SchemaAttrAttribute), typeof(DocumentModel.Attributes.SchemaAttrAttribute) },
-  //  { typeof(DocumentFormat.OpenXml.VariantTypes.Variant), typeof(DocumentModel.Variant)},
-  //  { typeof(DocumentFormat.OpenXml.VariantTypes.VTArray), typeof(DocumentModel.ArrayVariant)},
-  //  { typeof(DocumentFormat.OpenXml.VariantTypes.VTVector), typeof(DocumentModel.VectorVariant)},
-  //  { typeof(DocumentFormat.OpenXml.Base64BinaryValue), typeof(DocumentModel.Base64Binary)},
-  //  { typeof(DocumentFormat.OpenXml.HexBinaryValue), typeof(DocumentModel.HexBinary)},
-  //};
 
   public BiDiDictionary<string, string> BuiltInTypeTranslation { get; } = new()
   {
@@ -651,7 +178,7 @@ public class ModelConfigData
     { "System.Decimal", "decimal" },
   };
 
-  public WildcardStrings SimpleTypes { get; } = new WildcardStrings
+  public WildcardStrings SimpleTypes { get; } = new ()
   {
     nameof(System.String),
     nameof(System.Boolean),
@@ -816,6 +343,7 @@ public class ModelConfigData
 
   public bool LoadDataFromFile(string filename)
   {
+    if (File.Exists(filename))
     try
     {
       using (var textReader = File.OpenText(filename))

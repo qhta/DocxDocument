@@ -24,6 +24,24 @@ public class NamespaceConfigViewModel : VisibleViewModel
   private string _OrigName = string.Empty;
 
   [DataGridColumn(
+    HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.IncludedNamespace),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.IncludedNamespaceTooltip)
+    )]
+  public bool Included
+  {
+   [DebuggerStepThrough] get { return _Included; }
+    set
+    {
+      if (_Included != value)
+      {
+        _Included = value;
+        NotifyPropertyChanged(nameof(Included));
+      }
+    }
+  }
+  private bool _Included;
+
+  [DataGridColumn(
     HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.ExcludedNamespace),
     HeaderTooltipResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.ExcludedNamespaceTooltip)
     )]
