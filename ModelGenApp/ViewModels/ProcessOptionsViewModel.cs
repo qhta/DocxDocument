@@ -35,7 +35,7 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
   /// </summary>
   public string? AppDataFolder
   {
-    get { return Model.AppDataFolder; }
+   [DebuggerStepThrough] get { return Model.AppDataFolder; }
     set
     {
       if (Model.AppDataFolder != value)
@@ -54,7 +54,7 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
   /// 
   public string? InputAssembly
   {
-    get { return Model.InputAssembly; }
+   [DebuggerStepThrough] get { return Model.InputAssembly; }
     set
     {
       if (Model.InputAssembly != value)
@@ -71,7 +71,7 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
   /// 
   public string? GeneratorType
   {
-    get { return Model.GeneratorType; }
+   [DebuggerStepThrough] get { return Model.GeneratorType; }
     set
     {
       if (Model.GeneratorType != value)
@@ -87,7 +87,7 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
   /// </summary>
   public string? CodeOutputPath
   {
-    get { return Model.CodeOutputPath; }
+   [DebuggerStepThrough] get { return Model.CodeOutputPath; }
     set
     {
       if (Model.CodeOutputPath != value)
@@ -104,7 +104,7 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
 
   public string? ProjectName
   {
-    get { return Model.ProjectName; }
+   [DebuggerStepThrough] get { return Model.ProjectName; }
     set
     {
       if (Model.ProjectName != value)
@@ -120,7 +120,7 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
   /// </summary>
   public string? SolutionName
   {
-    get { return Model.SolutionName; }
+   [DebuggerStepThrough] get { return Model.SolutionName; }
     set
     {
       if (Model.SolutionName != value)
@@ -136,7 +136,7 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
   /// </summary>
   public string? RootNamespace
   {
-    get { return Model.RootNamespace; }
+   [DebuggerStepThrough] get { return Model.RootNamespace; }
     set
     {
       if (Model.RootNamespace != value)
@@ -152,7 +152,7 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
   /// </summary>
   public string? ScanTypeName
   {
-    get { return Model.ScanTypeName; }
+   [DebuggerStepThrough] get { return Model.ScanTypeName; }
     set
     {
       if (Model.ScanTypeName != value)
@@ -168,7 +168,7 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
   /// </summary>
   public string? ModelDocFileName
   {
-    get { return Model.ModelDocFileName; }
+   [DebuggerStepThrough] get { return Model.ModelDocFileName; }
     set
     {
       if (Model.ModelDocFileName != value)
@@ -185,7 +185,7 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
   /// </summary>
   public int StopAtPhase
   {
-    get { return Model.StopAtPhase; }
+   [DebuggerStepThrough] get { return Model.StopAtPhase; }
     set
     {
       if (Model.StopAtPhase != value)
@@ -201,7 +201,7 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
   /// </summary>
   public bool ValidateScan
   {
-    get { return Model.ValidateScan; }
+   [DebuggerStepThrough] get { return Model.ValidateScan; }
     set
     {
       if (Model.ValidateScan != value)
@@ -217,7 +217,7 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
   /// </summary>
   public bool ValidateDocs
   {
-    get { return Model.ValidateDocs; }
+   [DebuggerStepThrough] get { return Model.ValidateDocs; }
     set
     {
       if (Model.ValidateDocs != value)
@@ -233,7 +233,7 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
   /// </summary>
   public bool ValidateNames
   {
-    get { return Model.ValidateNames; }
+   [DebuggerStepThrough] get { return Model.ValidateNames; }
     set
     {
       if (Model.ValidateNames != value)
@@ -249,7 +249,7 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
   /// </summary>
   public bool ValidateConversion
   {
-    get { return Model.ValidateConversion; }
+   [DebuggerStepThrough] get { return Model.ValidateConversion; }
     set
     {
       if (Model.ValidateConversion != value)
@@ -265,7 +265,7 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
   /// </summary>
   public bool ValidateFix
   {
-    get { return Model.ValidateFix; }
+   [DebuggerStepThrough] get { return Model.ValidateFix; }
     set
     {
       if (Model.ValidateFix != value)
@@ -281,7 +281,7 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
   /// </summary>
   public bool ValidateGeneration
   {
-    get { return Model.ValidateGeneration; }
+   [DebuggerStepThrough] get { return Model.ValidateGeneration; }
     set
     {
       if (Model.ValidateGeneration != value)
@@ -295,7 +295,7 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
 
   public ObservableCollection<string> MainTypeNames
   {
-    get { return _MainTypeNames; }
+   [DebuggerStepThrough] get { return _MainTypeNames; }
     set
     {
       if (_MainTypeNames != value)

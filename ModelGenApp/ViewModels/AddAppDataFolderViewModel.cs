@@ -15,7 +15,7 @@ public class AddAppDataFolderViewModel: ViewModel
   /// </summary>
   public string? NewFolderName
   {
-    get { return _NewFolderName; }
+    [DebuggerStepThrough] get { return _NewFolderName; }
     set
     {
       if (_NewFolderName != value)
@@ -32,7 +32,7 @@ public class AddAppDataFolderViewModel: ViewModel
   /// </summary>
   public string[] ExistingFolders
   {
-    get { return _ExistingFolders; }
+   [DebuggerStepThrough] get { return _ExistingFolders; }
     set
     {
       if (_ExistingFolders != value)
@@ -49,7 +49,7 @@ public class AddAppDataFolderViewModel: ViewModel
   /// </summary>
   public bool CopyContent
   {
-    get { return _CopyContent; }
+   [DebuggerStepThrough] get { return _CopyContent; }
     set
     {
       if (_CopyContent != value)
@@ -66,7 +66,7 @@ public class AddAppDataFolderViewModel: ViewModel
   /// </summary>
   public string? FolderToCopy
   {
-    get { return _FolderToCopy; }
+   [DebuggerStepThrough] get { return _FolderToCopy; }
     set
     {
       if (_FolderToCopy != value)

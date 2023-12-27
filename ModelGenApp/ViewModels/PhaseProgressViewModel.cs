@@ -5,7 +5,7 @@ public partial class PhaseProgressViewModel : ViewModel
 
   public int InnerHeight
   {
-    get { return _InnerHeight; }
+   [DebuggerStepThrough] get { return _InnerHeight; }
     set
     {
       if (_InnerHeight != value)

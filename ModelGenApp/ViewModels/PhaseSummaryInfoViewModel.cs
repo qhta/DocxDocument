@@ -9,7 +9,7 @@ public class PhaseSummaryInfoViewModel: ViewModel
 
   public bool IsChecked
   {
-    get { return _IsChecked; }
+   [DebuggerStepThrough] get { return _IsChecked; }
     set
     {
       if (_IsChecked != value)

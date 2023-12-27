@@ -51,7 +51,7 @@ public void WriteSameLine(string line)
 
 public ObservableList<string> Lines
 {
-  get { return _Lines; }
+ [DebuggerStepThrough] get { return _Lines; }
   set
   {
     if (_Lines != value)
@@ -65,7 +65,7 @@ private ObservableList<string> _Lines = new();
 
 public string? StatusLine
 {
-  get { return _StatusLine; }
+ [DebuggerStepThrough] get { return _StatusLine; }
   set
   {
     if (_StatusLine != value)
@@ -79,7 +79,7 @@ private string? _StatusLine;
 
 public PhaseResultsViewModel[] PhaseMonitors
 {
-  get { return _PhaseMonitors; }
+ [DebuggerStepThrough] get { return _PhaseMonitors; }
   set
   {
     if (_PhaseMonitors != value)
@@ -93,7 +93,7 @@ private PhaseResultsViewModel[] _PhaseMonitors = null!;
 
 public int Percentage
 {
-  get { return _Percentage; }
+ [DebuggerStepThrough] get { return _Percentage; }
   set
   {
     if (_Percentage != value)

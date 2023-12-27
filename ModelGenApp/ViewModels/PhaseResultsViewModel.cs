@@ -65,7 +65,7 @@ public abstract partial class PhaseResultsViewModel : ViewModel
 
   public bool ShowTargetsOnlyEnabled
   {
-    get { return _ShowTargetsOnlyEnabled; }
+   [DebuggerStepThrough] get { return _ShowTargetsOnlyEnabled; }
     set
     {
       if (_ShowTargetsOnlyEnabled != value)
@@ -82,7 +82,7 @@ public abstract partial class PhaseResultsViewModel : ViewModel
   /// </summary>
   public int Percentage
   {
-    get { return _Percentage; }
+   [DebuggerStepThrough] get { return _Percentage; }
     set
     {
       if (_Percentage != value)
@@ -97,7 +97,7 @@ public abstract partial class PhaseResultsViewModel : ViewModel
   #region Summary
   public PhaseSummaryViewModel Summary
   {
-    get { return _Summary; }
+   [DebuggerStepThrough] get { return _Summary; }
     set
     {
       if (_Summary != value)
@@ -160,7 +160,7 @@ public abstract partial class PhaseResultsViewModel : ViewModel
   #region Namespaces
   public NamespacesViewModel Namespaces
   {
-    get { return _Namespaces; }
+   [DebuggerStepThrough] get { return _Namespaces; }
     set
     {
       if (_Namespaces != value)
@@ -295,7 +295,7 @@ public abstract partial class PhaseResultsViewModel : ViewModel
   /// </summary>
   public Command SaveResultsCommand
   {
-    get { return _SaveResultsCommand; }
+   [DebuggerStepThrough] get { return _SaveResultsCommand; }
     set
     {
       if (_SaveResultsCommand != value)
@@ -326,7 +326,7 @@ public abstract partial class PhaseResultsViewModel : ViewModel
   /// </summary>
   public Command ShowResultsCommand
   {
-    get { return _ShowResultsCommand; }
+   [DebuggerStepThrough] get { return _ShowResultsCommand; }
     set
     {
       if (_ShowResultsCommand != value)
@@ -356,7 +356,7 @@ public abstract partial class PhaseResultsViewModel : ViewModel
   /// </summary>
   public Command RefreshResultsCommand
   {
-    get { return _RefreshResultsCommand; }
+   [DebuggerStepThrough] get { return _RefreshResultsCommand; }
     set
     {
       if (_RefreshResultsCommand != value)
@@ -383,7 +383,7 @@ public abstract partial class PhaseResultsViewModel : ViewModel
 
   public TypeInfoViewModelFilter? Filter
   {
-    get { return _Filter; }
+   [DebuggerStepThrough] get { return _Filter; }
     set
     {
       if (_Filter != value)
@@ -424,7 +424,7 @@ public abstract partial class PhaseResultsViewModel : ViewModel
 
   public bool ShowTargetsOnly
   {
-    get { return _ShowTargetsOnly; }
+   [DebuggerStepThrough] get { return _ShowTargetsOnly; }
     set
     {
       if (_ShowTargetsOnly != value)

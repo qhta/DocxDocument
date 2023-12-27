@@ -8,7 +8,7 @@ public class TypeConfigViewModel : VisibleViewModel
     )]
   public string OrigNamespace
   {
-    get { return _OrigNamespace; }
+   [DebuggerStepThrough] get { return _OrigNamespace; }
     set
     {
       if (_OrigNamespace != value)
@@ -27,7 +27,7 @@ public class TypeConfigViewModel : VisibleViewModel
     )]
   public bool ExcludedNamespace
   {
-    get { return _ExcludedNamespace; }
+   [DebuggerStepThrough] get { return _ExcludedNamespace; }
     set
     {
       if (_ExcludedNamespace != value)
@@ -45,7 +45,7 @@ public class TypeConfigViewModel : VisibleViewModel
     )]  
   public string OrigName
   {
-    get { return _OrigName; }
+   [DebuggerStepThrough] get { return _OrigName; }
     set
     {
       if (_OrigName != value)
@@ -64,7 +64,7 @@ public class TypeConfigViewModel : VisibleViewModel
     )]
   public bool IsExcluded
   {
-    get { return _Excluded; }
+   [DebuggerStepThrough] get { return _Excluded; }
     set
     {
       if (_Excluded != value)
@@ -82,7 +82,7 @@ public class TypeConfigViewModel : VisibleViewModel
     )]
   public bool IsIncluded
   {
-    get { return _Included; }
+   [DebuggerStepThrough] get { return _Included; }
     set
     {
       if (_Included != value)
@@ -102,7 +102,7 @@ public class TypeConfigViewModel : VisibleViewModel
     )]
   public string? TargetNamespace
   {
-    get { return _TargetNamespace; }
+   [DebuggerStepThrough] get { return _TargetNamespace; }
     set
     {
       if (_TargetNamespace != value)
@@ -120,7 +120,7 @@ public class TypeConfigViewModel : VisibleViewModel
     )]
   public string? TargetName
   {
-    get { return _TargetName; }
+   [DebuggerStepThrough] get { return _TargetName; }
     set
     {
       if (_TargetName != value)

@@ -7,7 +7,7 @@ public class PropertyConfigViewModel : VisibleViewModel
     )]
   public int RecordNumber
   {
-    get { return _RecordNumber; }
+   [DebuggerStepThrough] get { return _RecordNumber; }
     set
     {
       if (_RecordNumber != value)
@@ -25,7 +25,7 @@ public class PropertyConfigViewModel : VisibleViewModel
     )]
   public string OrigNamespace
   {
-    get { return _OrigNamespace; }
+   [DebuggerStepThrough] get { return _OrigNamespace; }
     set
     {
       if (_OrigNamespace != value)
@@ -43,7 +43,7 @@ public class PropertyConfigViewModel : VisibleViewModel
     )]
   public string OrigType
   {
-    get { return _OrigType; }
+   [DebuggerStepThrough] get { return _OrigType; }
     set
     {
       if (_OrigType != value)
@@ -61,7 +61,7 @@ public class PropertyConfigViewModel : VisibleViewModel
     )]
   public string OrigName
   {
-    get { return _OrigName; }
+   [DebuggerStepThrough] get { return _OrigName; }
     set
     {
       if (_OrigName != value)
@@ -79,7 +79,7 @@ public class PropertyConfigViewModel : VisibleViewModel
     )]
   public string? TargetName
   {
-    get { return _TargetName; }
+   [DebuggerStepThrough] get { return _TargetName; }
     set
     {
       if (_TargetName != value)
@@ -97,7 +97,7 @@ public class PropertyConfigViewModel : VisibleViewModel
     )]
   public bool ExcludedNamespace
   {
-    get { return _ExcludedNamespace; }
+   [DebuggerStepThrough] get { return _ExcludedNamespace; }
     set
     {
       if (_ExcludedNamespace != value)
@@ -115,7 +115,7 @@ public class PropertyConfigViewModel : VisibleViewModel
     )]
   public bool ExcludedType
   {
-    get { return _ExcludedType; }
+   [DebuggerStepThrough] get { return _ExcludedType; }
     set
     {
       if (_ExcludedType != value)
@@ -133,7 +133,7 @@ public class PropertyConfigViewModel : VisibleViewModel
     )]
   public bool ExcludedProperty
   {
-    get { return _ExcludedProperty; }
+   [DebuggerStepThrough] get { return _ExcludedProperty; }
     set
     {
       if (_ExcludedProperty != value)
@@ -151,7 +151,7 @@ public class PropertyConfigViewModel : VisibleViewModel
     )]
   public string OrigValueNamespace
   {
-    get { return _OrigValueNamespace; }
+   [DebuggerStepThrough] get { return _OrigValueNamespace; }
     set
     {
       if (_OrigValueNamespace != value)
@@ -169,7 +169,7 @@ public class PropertyConfigViewModel : VisibleViewModel
     )]
   public string OrigValueType
   {
-    get { return _OrigValueType; }
+   [DebuggerStepThrough] get { return _OrigValueType; }
     set
     {
       if (_OrigValueType != value)
@@ -187,7 +187,7 @@ public class PropertyConfigViewModel : VisibleViewModel
     )]
   public bool ExcludedValueType
   {
-    get { return _ExcludedValueType; }
+   [DebuggerStepThrough] get { return _ExcludedValueType; }
     set
     {
       if (_ExcludedValueType != value)
@@ -205,7 +205,7 @@ public class PropertyConfigViewModel : VisibleViewModel
     )]
   public string? TargetPropertyType
   {
-    get { return _TargetPropertyType; }
+   [DebuggerStepThrough] get { return _TargetPropertyType; }
     set
     {
       if (_TargetPropertyType != value)
@@ -219,7 +219,7 @@ public class PropertyConfigViewModel : VisibleViewModel
   
   public new bool IsValid
   {
-    get { return _IsValid; }
+   [DebuggerStepThrough] get { return _IsValid; }
     set
     {
       if (_IsValid != value)
@@ -233,7 +233,7 @@ public class PropertyConfigViewModel : VisibleViewModel
 
   public string? ValidationMsg
   {
-    get { return _ValidationMsg; }
+   [DebuggerStepThrough] get { return _ValidationMsg; }
     set
     {
       if (_ValidationMsg != value)

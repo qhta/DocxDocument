@@ -16,7 +16,7 @@ public class ElementParticleViewModel : ViewModel<ItemElementParticle>
 
   public string? Name
   {
-    get { return _Name; }
+   [DebuggerStepThrough] get { return _Name; }
     set
     {
       if (_Name != value)
