@@ -142,20 +142,9 @@ public abstract partial class PhaseResultsViewModel : ViewModel
   }
   #endregion
 
-
   public NTS NamespacesSelector { get; protected set; }
 
-  public TNS TypeNameSelector
-  {
-    get
-    {
-      if (NamespacesSelector == NTS.Target)
-        return new TNS(true, false, false);
-      if (!NamespacesSelector.HasFlag(NTS.Target))
-        return new TNS(false, false, false);
-      return new TNS(ShowTargetsOnly, false, false);
-    }
-  }
+  public TNS TypeNameSelector => new TNS(NamespacesSelector, false, false);
 
   #region Namespaces
   public NamespacesViewModel Namespaces

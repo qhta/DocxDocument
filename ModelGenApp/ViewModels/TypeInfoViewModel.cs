@@ -81,7 +81,7 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
   {
     get
     {
-      if (TypeNameSelector.Target)
+      if (TypeNameSelector.NTS == NTS.Target)
         return TargetTypeName;
       else
         return OriginalName;
@@ -94,7 +94,7 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
   {
     get
     {
-      if (TypeNameSelector.Target)
+      if (TypeNameSelector.NTS == NTS.Target)
         return Model.TargetNamespace?.ToString();
       else
         return Model.OriginalNamespace.ToString();
@@ -192,7 +192,7 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
     }
   }
 
-  public string? FullName => Model.GetFullName(TypeNameSelector.Target, true, false);
+  public string? FullName => Model.GetFullName(TypeNameSelector.NTS == NTS.Target, true, false);
 
   [DataGridColumn(
     HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.Description),
@@ -291,7 +291,7 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
   /// <summary>
   /// Shown as Window.Title.
   /// </summary>
-  public string Caption => TypeKind + " | " + Model.GetFullName(TypeNameSelector.Target, true, false);
+  public string Caption => TypeKind + " | " + Model.GetFullName(TypeNameSelector.NTS == NTS.Target, true, false);
 
   public virtual object? Members => null;
 

@@ -72,13 +72,13 @@ public abstract class ModelMonitor
     if (namespaces.Any())
     {
       namespaces.Sort();
-      var maxNamespaceLength = namespaces.Max(item => item.Length);
+      var maxNamespaceLength = namespaces.Count>0 ? namespaces.Max(item => item.Name.Length) : 0;
       foreach (var nspace in namespaces)
       {
-        var aSpace = nspace;
+        var aSpace = nspace.Name;
         if (aSpace.Length < maxNamespaceLength)
           aSpace = aSpace + new string(' ', maxNamespaceLength - aSpace.Length);
-        var nSpaceTypes = TypeManager.GetNamespaceTypes(nspace).ToArray();
+        var nSpaceTypes = nspace.Types.ToArray();
         var totalTypesCount = nSpaceTypes.Count();
         var acceptedTypesCount = nSpaceTypes.Count(item => !item.IsAcceptedAfter(phase));
         var rejectedTypesCount = nSpaceTypes.Count(item => item.IsRejectedAfter(phase));
@@ -110,12 +110,12 @@ public abstract class ModelMonitor
     var namespaces = TypeManager.GetNamespaces(options.NamespaceTypeSelector).ToList();
     if (options.Namespaces != null)
       namespaces = namespaces.Where(item => options.Namespaces
-      .FirstOrDefault(pattern => item == pattern || item.IsLike(pattern)) != null).ToList();
+      .FirstOrDefault(pattern => item.Name == pattern || item.Name.IsLike(pattern)) != null).ToList();
     namespaces.Sort();
     foreach (var nspace in namespaces)
     {
       Indent();
-      ShowNamespaceTypes(phase, nspace, options);
+      ShowNamespaceTypes(phase, nspace.Name, options);
       Unindent();
     }
   }

@@ -73,6 +73,7 @@ public static class TypeManager
 
   public static Namespace RegisterNamespace(string ns)
   {
+    Debug.WriteLine($"RegisterNamespace({ns})");
     lock (KnownNamespaces)
     {
       if (!KnownNamespaces.TryGetValue(ns, out var nspace))
@@ -111,20 +112,22 @@ public static class TypeManager
     return newNspace;
   }
 
-  public static IEnumerable<string> GetNamespaces(NTS filter)
+  public static IEnumerable<Namespace> GetNamespaces(NTS filter)
   {
     lock (KnownNamespaces)
     {
       var knownNamespace = KnownNamespaces.ToArray();
-      if (filter == 0)
-        return KnownNamespaces.Select(item => item.Key);
-      var result = new List<string>();
+      if (filter == NTS.Any)
+        return KnownNamespaces.Select(item => item.Value);
+      var result = new List<Namespace>();
       if (filter.HasFlag(NTS.Target))
-        result.AddRange(knownNamespace.Where(item => item.Key.StartsWith("DocumentModel")).Select(item => item.Key));
+        result.AddRange(knownNamespace.Where(item => item.Value.IsTarget).Select(item => item.Value));
       if (filter.HasFlag(NTS.Origin))
-        result.AddRange(knownNamespace.Where(item => item.Key.StartsWith("DocumentFormat")).Select(item => item.Key));
+        result.AddRange(knownNamespace.Where(item => item.Value.IsOrigin).Select(item => item.Value));
       if (filter.HasFlag(NTS.System))
-        result.AddRange(knownNamespace.Where(item => item.Key.StartsWith("System")).Select(item => item.Key));
+        result.AddRange(knownNamespace.Where(item => item.Value.IsSystem).Select(item => item.Value));
+      if (filter.HasFlag(NTS.Other))
+        result.AddRange(knownNamespace.Where(item => !item.Value.IsSystem && !item.Value.IsTarget && !item.Value.IsOrigin).Select(item => item.Value));
       return result;
     }
   }

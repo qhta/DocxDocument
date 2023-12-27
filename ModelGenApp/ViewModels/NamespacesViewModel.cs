@@ -22,7 +22,7 @@ public class NamespacesViewModel : ViewModel
 
   public bool ShowTargetsOnly { get => Phase.ShowTargetsOnly; set => Phase.ShowTargetsOnly = value; }
 
-  public bool ShowOriginalName => !TypeNameSelector.Target;
+  public bool ShowOriginalName => NamespacesSelector.HasFlag(NTS.Origin);
   public bool ShowTargetName => NamespacesSelector.HasFlag(NTS.Target);
 
   public TypeInfoViewModelFilter? Filter
@@ -58,17 +58,7 @@ public class NamespacesViewModel : ViewModel
   {
     //Debug.WriteLine($"NamespacesViewModel.FillItems.Start at {DateTime.Now.TimeOfDay}");
     Items.Clear();
-    var namespaces = new List<Namespace>();
-    lock (TypeManager.KnownNamespaces)
-    {
-
-      if (TypeNameSelector.Target)
-        namespaces.AddRange(TypeManager.KnownNamespaces.Where(item => item.Key.StartsWith("DocumentModel")).Select(item => item.Value));
-      else
-        namespaces.AddRange(TypeManager.KnownNamespaces.Where(item => item.Key.StartsWith("DocumentFormat")).Select(item => item.Value));
-      if (NamespacesSelector.HasFlag(NTS.System))
-        namespaces.AddRange(TypeManager.KnownNamespaces.Where(item => item.Key.StartsWith("System")).Select(item => item.Value));
-    }
+    var namespaces = TypeManager.GetNamespaces(TypeNameSelector.NTS);
     var viewModels = new List<NamespaceViewModel>();
     foreach (var ns in namespaces)
     {
@@ -90,13 +80,7 @@ public class NamespacesViewModel : ViewModel
   public void RefreshItems()
   {
     //Debug.WriteLine($"NamespacesViewModel.RefreshItems.Start at {DateTime.Now.TimeOfDay}");
-    var namespaces = new List<Namespace>();
-    if (TypeNameSelector.Target)
-      namespaces.AddRange(TypeManager.KnownNamespaces.Where(item => item.Key.StartsWith("DocumentModel")).Select(item => item.Value));
-    else
-      namespaces.AddRange(TypeManager.KnownNamespaces.Where(item => item.Key.StartsWith("DocumentFormat")).Select(item => item.Value));
-    if (NamespacesSelector.HasFlag(NTS.System))
-      namespaces.AddRange(TypeManager.KnownNamespaces.Where(item => item.Key.StartsWith("System")).Select(item => item.Value));
+    var namespaces = TypeManager.GetNamespaces(TypeNameSelector.NTS);
     var newNamespaces = new List<Namespace>();
     foreach (var ns in namespaces)
       if (!Items.Any(item => item.Model == ns))
