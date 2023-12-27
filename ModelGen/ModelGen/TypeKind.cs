@@ -2,7 +2,7 @@
 
 public enum TypeKind
 {
-  type,
+  @type,
   @enum,
   @struct,
   @class,

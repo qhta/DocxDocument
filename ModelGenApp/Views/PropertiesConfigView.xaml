@@ -27,7 +27,7 @@
               utl:CollectionViewBehavior.EnableCollectionSynchronization="True"
               utl:CollectionViewBehavior.IsFocusable="True"
               utl:CollectionViewBehavior.ShowFilterButton="True"
-              utl:CollectionViewBehavior.ShowProgressBar="true"
+              utl:CollectionViewBehavior.ShowProgressBar="false"
               utl:CollectionViewBehavior.ProgressBarMaximum="{Binding Path=ProgressBarMaximum}"
               utl:CollectionViewBehavior.ProgressBarValue="{Binding Path=ProgressBarValue}"
               ClipboardCopyMode="IncludeHeader"

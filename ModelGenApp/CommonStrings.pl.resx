@@ -798,4 +798,16 @@ Użyj znaku '*' aby dopasować wzorzec do wielu znaków.</value>
   <data name="AppDataFolderAlreadyExists_1" xml:space="preserve">
     <value>Folder danych \"{0}\" już istnieje</value>
   </data>
+  <data name="Input_assembly_not_specified" xml:space="preserve">
+    <value>Asemblat źródłowy nieokreślony</value>
+  </data>
+  <data name="IncludedNamespace" xml:space="preserve">
+    <value>Czy włączona?</value>
+  </data>
+  <data name="IncludedNamespaceTooltip" xml:space="preserve">
+    <value>Włączone przestrzenie nazw są akceptowane podczas skanowania jako oryginalne przestrzenie nazw.</value>
+  </data>
+  <data name="TypeKind" xml:space="preserve">
+    <value>Rodzaj typu</value>
+  </data>
 </root>

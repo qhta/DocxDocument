@@ -40,6 +40,24 @@ public class TypeConfigViewModel : VisibleViewModel
   private bool _ExcludedNamespace;
 
   [DataGridColumn(
+    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.TypeKind),
+    IsReadOnly = true
+    )]  
+  public TypeKind TypeKind
+  {
+   [DebuggerStepThrough] get { return _TypeKind; }
+    set
+    {
+      if (_TypeKind != value)
+      {
+        _TypeKind = value;
+        NotifyPropertyChanged(nameof(TypeKind));
+      }
+    }
+  }
+  private TypeKind _TypeKind;
+
+  [DataGridColumn(
     HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.OriginalTypeName),
     HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.OriginalNameTooltip)
     )]  
@@ -56,7 +74,6 @@ public class TypeConfigViewModel : VisibleViewModel
     }
   }
   private string _OrigName = string.Empty;
-
 
   [DataGridColumn(
     HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.ExcludedType),

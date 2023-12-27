@@ -1,186 +1,179 @@
 ﻿namespace ModelGenApp.ViewModels;
 
 /// <summary>
-/// Abstract view model of model config data. Inherited classes specify some group of settings.
+/// Compound view model of model config data. Inherited classes specify some group of settings.
 /// </summary>
-public abstract class ModelConfigViewModel : ViewModel
+public class ModelConfigViewModel : ViewModel
 {
   /// <summary>
   /// Default initializing constructor
   /// </summary>
-  public ModelConfigViewModel(ModelConfigData configData)
+  public ModelConfigViewModel(string assemblyName, ModelConfigData configData)
   {
-    _Assembly = Assembly.Load("DocumentFormat.OpenXml");
-    StoreDataCommand = new RelayCommand(StoreData, CanStoreData) { Name = "StoreDataCommand" };
-    RestoreDataCommand = new RelayCommand(RestoreData, CanRestoreData) { Name = "RestoreDataCommand" };
+    AssemblyName = assemblyName;
+    LoadedAssemblies = LoadAssemblies(assemblyName);
+    LoadedTypes = GetTypes(LoadedAssemblies);
+    LoadedNamespaces = GetNamespaces(LoadedTypes);
+    LoadedProperties = GetProperties(LoadedTypes);
+    ConfigData = configData;
+    NamespaceConfigList = new NamespaceConfigListViewModel(this);
+    TypeConfigList = new TypeConfigListViewModel(this);
+    PropertiesConfigList = new PropertyConfigListViewModel(this);
+    //StoreDataCommand = new RelayCommand(StoreData, CanStoreData) { Name = "StoreDataCommand" };
+    //RestoreDataCommand = new RelayCommand(RestoreData, CanRestoreData) { Name = "RestoreDataCommand" };
+    CreateViewModelItemsAsync(configData);
   }
 
-  public virtual string Caption { get; protected set; } = CommonStrings.ModelConfiguration;
-
+  /// <summary>
+  /// Stores loaded assembly name. 
+  /// </summary>
+  public string AssemblyName { get; private set; }
+  /// <summary>
+  /// Stores loaded assemblies.
+  /// </summary>
+  public IEnumerable<Assembly> LoadedAssemblies { get; private set; }
 
   /// <summary>
-  /// Is progress bar visible. Should be true if data is loaded in backround.
+  /// Load main assembly and its references assemblies.
   /// </summary>
-  public bool ShowProgressBar
+  private IEnumerable<Assembly> LoadAssemblies(string assemblyName)
   {
-   [DebuggerStepThrough] get { return _ShowProgressBar; }
-    set
+    var loadedAssemblies = new List<Assembly> ();
+    var mainAssembly = Assembly.Load(AssemblyName);
+    loadedAssemblies.Add(mainAssembly);
+    foreach (var asm in mainAssembly.GetReferencedAssemblies())
     {
-      if (_ShowProgressBar != value)
+      try
       {
-        _ShowProgressBar = value;
-        NotifyPropertyChanged(nameof(ShowProgressBar));
+        var refAssembly = Assembly.Load(asm);
+        loadedAssemblies.Add(refAssembly);
+      }
+      catch (Exception ex)
+      {
+        Debug.WriteLine(ex.Message + $" in assembly {asm}");
       }
     }
+    return loadedAssemblies;
   }
-  private bool _ShowProgressBar;
 
   /// <summary>
-  /// Maximum value of progress bar. Considered only when progress bar is visible.
+  /// List of all types exported by loaded assemblies.
   /// </summary>
-  public int ProgressBarMaximum
+  public IEnumerable<Type> LoadedTypes { get; private set; }
+
+  /// <summary>
+  /// Gets types from loaded assemblies to the list of loaded types.
+  /// Compiler-generated types are not loaded.
+  /// </summary>
+  private IEnumerable<Type> GetTypes(IEnumerable<Assembly> loadedAssemblies)
   {
-   [DebuggerStepThrough] get { return _ProgressBarMaximum; }
-    set
+    var loadedTypes = new List<Type> ();
+    foreach (var assembly in loadedAssemblies)
     {
-      if (_ProgressBarMaximum != value)
-      {
-        _ProgressBarMaximum = value;
-        NotifyPropertyChanged(nameof(ProgressBarMaximum));
-      }
+      var types = assembly.GetExportedTypes().Where(type=>!type.IsCompilerGenerated());
+      loadedTypes.AddRange(types);
     }
+    return loadedTypes;
   }
-  private int _ProgressBarMaximum;
 
   /// <summary>
-  /// Actual value of progress bar. Considered only when progress bar is visible.
+  /// List of all namespaces in loaded assemblies.
   /// </summary>
-  public int ProgressBarValue
+  public IEnumerable<string> LoadedNamespaces { get; private set; }
+
+  /// <summary>
+  /// Loads unique namespaces from loaded types to the list of loaded namespaces.
+  /// </summary>
+  private IEnumerable<string> GetNamespaces(IEnumerable<Type> loadedTypes)
   {
-   [DebuggerStepThrough] get { return _ProgressBarValue; }
-    set
+    var loadedNamespaces = new List<string> ();
+    foreach (var type in loadedTypes)
     {
-      if (_ProgressBarValue != value)
-      {
-        _ProgressBarValue = value;
-        NotifyPropertyChanged(nameof(ProgressBarValue));
-      }
+      var ns = type.Namespace!;
+      if (!loadedNamespaces.Contains(ns))
+        loadedNamespaces.Add(ns);
     }
+    return loadedNamespaces;
   }
-  private int _ProgressBarValue;
 
   /// <summary>
-  /// Stores loaded assembly reference. Used in <see cref="ReloadData"/>
+  /// List of all public properties of loaded types.
   /// </summary>
-  protected Assembly? _Assembly;
+  public IEnumerable<PropertyInfo> LoadedProperties { get; private set; }
 
   /// <summary>
-  /// Loads namespaces defined in the assembly.
+  /// Gets property infos from loaded types to the list of loaded properties.
+  /// </summary>
+  private IEnumerable<PropertyInfo> GetProperties(IEnumerable<Type> loadedTypes)
+  {
+    var loadedProperties = new List<PropertyInfo>();
+    foreach (var type in loadedTypes)
+    {
+      var properties = type.GetProperties();
+      loadedProperties.AddRange(properties);
+    }
+    return loadedProperties;
+  }
+
+  public ModelConfigData ConfigData { get; set; }
+
+  public NamespaceConfigListViewModel NamespaceConfigList { get; private set; }
+
+  public TypeConfigListViewModel TypeConfigList { get; private set; }
+
+  public PropertyConfigListViewModel PropertiesConfigList { get; private set; }
+
+  /// <summary>
+  /// Asynchronously Loads data defined in the assembly.
+  /// </summary>
+  public async void CreateViewModelItemsAsync(ModelConfigData configData)
+  {
+    await Task.Run(() => CreateViewModelItems(configData));
+  }
+
+  /// <summary>
+  /// Create view model items basing on current config data.
   /// </summary>
   /// <param name="configData"></param>
-  /// <param name="assembly"></param>
-  public virtual void GetData(ModelConfigData configData)
+  public void CreateViewModelItems(ModelConfigData configData)
   {
-    configData.ReloadData();
-  }
-
-  /// <summary>
-  /// Reload namespaces after config data reload.
-  /// </summary>
-  /// <param name="configData"></param>
-  public virtual void ReloadData(ModelConfigData configData)
-  {
-    GetData(configData);
+    NamespaceConfigList.CreateItems(configData);
+    TypeConfigList.CreateItems(configData);
+    PropertiesConfigList.CreateItems(configData);
   }
 
   /// <summary>
   /// Stores config data in the config file.
   /// </summary>
-  /// <param name="configData"></param>
-  public virtual void SaveData(ModelConfigData configData)
+  public void SaveData(ModelConfigData configData)
   {
-    SetData(configData);
     configData.SaveData();
-    ReloadData(configData);
   }
 
-  /// <summary>
-  /// Sets config data. Used in <see cref="SaveData"/> method.
-  /// </summary>
-  /// <param name="configData"></param>
-  /// <returns></returns>
-  public abstract void SetData(ModelConfigData configData);
+  //#region RestoreDataCommand
 
-  /// <summary>
-  /// Validates config data. Used in <see cref="StoreData"/> method.
-  /// </summary>
-  /// <param name="configData"></param>
-  /// <returns></returns>
-  public abstract bool ValidateData();
+  ///// <summary>
+  ///// A command to restore config data.
+  ///// </summary>
+  //public Command RestoreDataCommand { get; }
 
-  #region StoreDataCommand
-  /// <summary>
-  /// A command to store config data
-  /// </summary>
-  public Command StoreDataCommand { get; }
+  ///// <summary>
+  ///// Checks if config data can be restored (true if it was loaded previously).
+  ///// </summary>
+  ///// <returns></returns>
+  //public bool CanRestoreData()
+  //{
+  //  return MainAssembly != null;
+  //}
 
-  /// <summary>
-  /// Checks if config data can be stored (always true).
-  /// </summary>
-  /// <returns></returns>
-  public bool CanStoreData()
-  {
-    return true;
-  }
-
-  /// <summary>
-  /// Execute method of config data store.
-  /// </summary>
-  public void StoreData()
-  {
-    MessageBoxResult dlgResult = MessageBoxResult.Yes;
-    if (!ValidateData())
-      dlgResult = MessageBox.Show(CommonStrings.Model_configuration_is_invalid + " " + CommonStrings.SaveConfigurationAnyway, null, MessageBoxButton.YesNo);
-    if (dlgResult == MessageBoxResult.Yes)
-    {
-      if (ModelConfig.Instance != null)
-      {
-        var filename = ModelConfig.Instance.GetFilename();
-        if (!File.Exists(filename))
-          File.Copy(filename, Path.ChangeExtension(filename, ".bak"));
-        SaveData(ModelConfig.Instance);
-        MessageBox.Show(String.Format(CommonStrings.Model_configuration_saved_in_0, filename));
-      }
-      else
-        MessageBox.Show(String.Format(CommonStrings.Model_configuration_not_defined));
-    }
-  }
-  #endregion
-
-  #region RestoreDataCommand
-
-  /// <summary>
-  /// A command to restore config data.
-  /// </summary>
-  public Command RestoreDataCommand { get; }
-
-  /// <summary>
-  /// Checks if config data can be restored (true if it was loaded previously).
-  /// </summary>
-  /// <returns></returns>
-  public bool CanRestoreData()
-  {
-    return _Assembly != null;
-  }
-
-  /// <summary>
-  /// Execute method of config data restore.
-  /// </summary>
-  public void RestoreData()
-  {
-    if (ModelConfig.Instance != null)
-      ReloadData(ModelConfig.Instance);
-  }
-  #endregion
+  ///// <summary>
+  ///// Execute method of config data restore.
+  ///// </summary>
+  //public void RestoreData()
+  //{
+  //  if (ConfigData != null)
+  //    ReloadData();
+  //}
+  //#endregion
 
 }
