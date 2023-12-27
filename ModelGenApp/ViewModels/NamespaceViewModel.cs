@@ -6,14 +6,14 @@ public class NamespaceViewModel : ViewModel<Namespace>
 
     Phase = phaseViewModel;
     Filter = filter;
-    Name = ns.OriginalName;
+    Name = ns.Name;
     TargetName = ns.TargetName;
-    AllTypes = new TypeListViewModel(phaseViewModel, this, ns.OriginalName+":AllTypes", phaseViewModel.TypeNameSelector, TKS.Any, Filter);
-    Classes = new ClassListViewModel(phaseViewModel, this, ns.OriginalName+":ClassTypes", phaseViewModel.TypeNameSelector, TKS.Class, Filter, AllTypes);
-    Enums = new EnumTypeListViewModel(phaseViewModel, this, ns.OriginalName+":EnumTypes", phaseViewModel.TypeNameSelector, TKS.Enum, Filter, AllTypes);
-    Interfaces = new ClassListViewModel(phaseViewModel, this, ns.OriginalName+":InterfaceTypes", phaseViewModel.TypeNameSelector, TKS.Interface, Filter, AllTypes);
-    Structs = new ClassListViewModel(phaseViewModel, this, ns.OriginalName+":StructTypes", phaseViewModel.TypeNameSelector, TKS.Struct, Filter, AllTypes);
-    Others = new TypeListViewModel(phaseViewModel, this, ns.OriginalName+":OtherTypes", phaseViewModel.TypeNameSelector, TKS.Other, Filter, AllTypes);
+    AllTypes = new TypeListViewModel(phaseViewModel, this, ns.Name+":AllTypes", phaseViewModel.TypeNameSelector, TKS.Any, Filter);
+    Classes = new ClassListViewModel(phaseViewModel, this, ns.Name+":ClassTypes", phaseViewModel.TypeNameSelector, TKS.Class, Filter, AllTypes);
+    Enums = new EnumTypeListViewModel(phaseViewModel, this, ns.Name+":EnumTypes", phaseViewModel.TypeNameSelector, TKS.Enum, Filter, AllTypes);
+    Interfaces = new ClassListViewModel(phaseViewModel, this, ns.Name+":InterfaceTypes", phaseViewModel.TypeNameSelector, TKS.Interface, Filter, AllTypes);
+    Structs = new ClassListViewModel(phaseViewModel, this, ns.Name+":StructTypes", phaseViewModel.TypeNameSelector, TKS.Struct, Filter, AllTypes);
+    Others = new TypeListViewModel(phaseViewModel, this, ns.Name+":OtherTypes", phaseViewModel.TypeNameSelector, TKS.Other, Filter, AllTypes);
   }
 
   public PhaseResultsViewModel Phase { get; private set; }

@@ -96,14 +96,23 @@
                      VerticalAlignment="Center"
                      Content="{x:Static local:CommonStrings.InputAssembly}"
                      ToolTip="{x:Static local:CommonStrings.InputAssemblyTooltip}" />
-              <TextBox Grid.Row="1"
+              <!--<TextBox Grid.Row="1"
                        Grid.Column="1"
                        Margin="5"
                        VerticalContentAlignment="Center"
                        TextWrapping="Wrap"
                        MinHeight="25"
                        Height="Auto"
-                       Text="{Binding Path=ProcessOptionsVM.InputAssembly}" />
+                       Text="{Binding Path=ProcessOptionsVM.InputAssembly}" />-->
+              <ComboBox Grid.Row="1"
+                        Grid.Column="1"
+                        Margin="5"
+                        VerticalContentAlignment="Center"
+                        IsEditable="False"
+                        MinHeight="25"
+                        Height="Auto"
+                        ItemsSource="{Binding Path=ProcessOptionsVM.AvailableAssemblies}"
+                        SelectedValue="{Binding Path=ProcessOptionsVM.InputAssembly}" />
 
               <Label Grid.Row="2"
                      Grid.Column="0"

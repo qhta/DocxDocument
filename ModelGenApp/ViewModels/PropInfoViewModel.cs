@@ -99,7 +99,7 @@ public class PropInfoViewModel : ViewModel<PropInfo>, IAcceptable
   {
     get
     {
-      if (TypeNameSelector.Target)
+      if (TypeNameSelector.NTS == NTS.Target)
         return Model.GetTargetName();
       return Model.Name;
     }
@@ -116,7 +116,7 @@ public class PropInfoViewModel : ViewModel<PropInfo>, IAcceptable
     get
     {
       var propType = Model.PropertyType;
-      if (TypeNameSelector.Target)
+      if (TypeNameSelector.NTS == NTS.Target)
         propType = Model.TargetType ?? propType.TargetType;
       if (propType != null && _ValueType == null)
       {

@@ -2,7 +2,7 @@
 
 public class Namespace
 {
-  public string OriginalName { [DebuggerStepThrough] get; private set; }
+  public string Name { [DebuggerStepThrough] get; private set; }
 
   public string? TargetName { [DebuggerStepThrough] get; set; }
 
@@ -38,13 +38,17 @@ public class Namespace
 
   public Namespace(string name)
   {
-    OriginalName = name;
+    Name = name;
     Types = new OwnedCollection<TypeInfo>(this);
     Types.CollectionChanged += Types_CollectionChanged;
     TypeNames = new Dictionary<string, TypeInfo>();
   }
 
-  public bool IsTarget => OriginalName.StartsWith("DocumentModel");
+  public bool IsTarget => Name.StartsWith("DocumentModel");
+
+  public bool IsOrigin => Name.StartsWith("DocumentFormat") || Name.StartsWith("Microsoft");
+
+  public bool IsSystem => Name.StartsWith("System");
 
   private void Types_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {

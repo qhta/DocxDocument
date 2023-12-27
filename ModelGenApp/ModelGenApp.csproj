@@ -29,7 +29,6 @@
 
   <ItemGroup>
     <PackageReference Include="DocumentFormat.OpenXml" Version="3.0.0" />
-    <PackageReference Include="Microsoft.Office.Interop.Word" Version="15.0.4797.1004" />
     <PackageReference Include="Qhta.HtmlUtils" Version="2.1.0" />
     <PackageReference Include="Qhta.ObservableObjects" Version="2.8.0" />
     <PackageReference Include="Qhta.TextUtils" Version="3.2.0" />
@@ -86,8 +85,17 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Word">
+      <HintPath>C:\Program Files (x86)\Microsoft Visual Studio\Shared\Visual Studio Tools for Office\PIA\Office15\Microsoft.Office.Interop.Word.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Vbe.Interop">
+      <HintPath>C:\Program Files (x86)\Microsoft Visual Studio\Shared\Visual Studio Tools for Office\PIA\Office15\Microsoft.Vbe.Interop.dll</HintPath>
+    </Reference>
     <Reference Include="office">
       <HintPath>C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\ReferenceAssemblies\v4.0\Office15\Office.dll</HintPath>
+    </Reference>
+    <Reference Include="stdole">
+      <HintPath>C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\PublicAssemblies\stdole.dll</HintPath>
     </Reference>
   </ItemGroup>
 

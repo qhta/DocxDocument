@@ -35,7 +35,8 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
   /// </summary>
   public string? AppDataFolder
   {
-   [DebuggerStepThrough] get { return Model.AppDataFolder; }
+    [DebuggerStepThrough]
+    get { return Model.AppDataFolder; }
     set
     {
       if (Model.AppDataFolder != value)
@@ -54,7 +55,8 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
   /// 
   public string? InputAssembly
   {
-   [DebuggerStepThrough] get { return Model.InputAssembly; }
+    [DebuggerStepThrough]
+    get { return Model.InputAssembly; }
     set
     {
       if (Model.InputAssembly != value)
@@ -71,7 +73,8 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
   /// 
   public string? GeneratorType
   {
-   [DebuggerStepThrough] get { return Model.GeneratorType; }
+    [DebuggerStepThrough]
+    get { return Model.GeneratorType; }
     set
     {
       if (Model.GeneratorType != value)
@@ -87,7 +90,8 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
   /// </summary>
   public string? CodeOutputPath
   {
-   [DebuggerStepThrough] get { return Model.CodeOutputPath; }
+    [DebuggerStepThrough]
+    get { return Model.CodeOutputPath; }
     set
     {
       if (Model.CodeOutputPath != value)
@@ -104,7 +108,8 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
 
   public string? ProjectName
   {
-   [DebuggerStepThrough] get { return Model.ProjectName; }
+    [DebuggerStepThrough]
+    get { return Model.ProjectName; }
     set
     {
       if (Model.ProjectName != value)
@@ -120,7 +125,8 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
   /// </summary>
   public string? SolutionName
   {
-   [DebuggerStepThrough] get { return Model.SolutionName; }
+    [DebuggerStepThrough]
+    get { return Model.SolutionName; }
     set
     {
       if (Model.SolutionName != value)
@@ -136,7 +142,8 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
   /// </summary>
   public string? RootNamespace
   {
-   [DebuggerStepThrough] get { return Model.RootNamespace; }
+    [DebuggerStepThrough]
+    get { return Model.RootNamespace; }
     set
     {
       if (Model.RootNamespace != value)
@@ -152,7 +159,8 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
   /// </summary>
   public string? ScanTypeName
   {
-   [DebuggerStepThrough] get { return Model.ScanTypeName; }
+    [DebuggerStepThrough]
+    get { return Model.ScanTypeName; }
     set
     {
       if (Model.ScanTypeName != value)
@@ -168,7 +176,8 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
   /// </summary>
   public string? ModelDocFileName
   {
-   [DebuggerStepThrough] get { return Model.ModelDocFileName; }
+    [DebuggerStepThrough]
+    get { return Model.ModelDocFileName; }
     set
     {
       if (Model.ModelDocFileName != value)
@@ -185,7 +194,8 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
   /// </summary>
   public int StopAtPhase
   {
-   [DebuggerStepThrough] get { return Model.StopAtPhase; }
+    [DebuggerStepThrough]
+    get { return Model.StopAtPhase; }
     set
     {
       if (Model.StopAtPhase != value)
@@ -201,7 +211,8 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
   /// </summary>
   public bool ValidateScan
   {
-   [DebuggerStepThrough] get { return Model.ValidateScan; }
+    [DebuggerStepThrough]
+    get { return Model.ValidateScan; }
     set
     {
       if (Model.ValidateScan != value)
@@ -217,7 +228,8 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
   /// </summary>
   public bool ValidateDocs
   {
-   [DebuggerStepThrough] get { return Model.ValidateDocs; }
+    [DebuggerStepThrough]
+    get { return Model.ValidateDocs; }
     set
     {
       if (Model.ValidateDocs != value)
@@ -233,7 +245,8 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
   /// </summary>
   public bool ValidateNames
   {
-   [DebuggerStepThrough] get { return Model.ValidateNames; }
+    [DebuggerStepThrough]
+    get { return Model.ValidateNames; }
     set
     {
       if (Model.ValidateNames != value)
@@ -249,7 +262,8 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
   /// </summary>
   public bool ValidateConversion
   {
-   [DebuggerStepThrough] get { return Model.ValidateConversion; }
+    [DebuggerStepThrough]
+    get { return Model.ValidateConversion; }
     set
     {
       if (Model.ValidateConversion != value)
@@ -265,7 +279,8 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
   /// </summary>
   public bool ValidateFix
   {
-   [DebuggerStepThrough] get { return Model.ValidateFix; }
+    [DebuggerStepThrough]
+    get { return Model.ValidateFix; }
     set
     {
       if (Model.ValidateFix != value)
@@ -281,7 +296,8 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
   /// </summary>
   public bool ValidateGeneration
   {
-   [DebuggerStepThrough] get { return Model.ValidateGeneration; }
+    [DebuggerStepThrough]
+    get { return Model.ValidateGeneration; }
     set
     {
       if (Model.ValidateGeneration != value)
@@ -295,7 +311,8 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
 
   public ObservableCollection<string> MainTypeNames
   {
-   [DebuggerStepThrough] get { return _MainTypeNames; }
+    [DebuggerStepThrough]
+    get { return _MainTypeNames; }
     set
     {
       if (_MainTypeNames != value)
@@ -309,17 +326,33 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
 
   private ObservableCollection<string> GetMainTypeNames(string assemblyName)
   {
-    var assembly = Assembly.Load(assemblyName);
-    var typeNames = assembly.GetTypes()
-      //.Where(type => !type.IsCompilerGenerated() && !type.IsAbstract)
-      .Select(type => type.FullName ?? "")
-    //.Where(name => name.StartsWith("DocumentFormat.OpenXml.Packaging"))
-    .ToList();
-    typeNames.Sort();
+    var typeNames = GetMainTypes(assemblyName);
     //var sortedTypeNames = typeNames.Where(name => name.Contains("Document")).ToList();
     //sortedTypeNames.AddRange(typeNames.Where(name => name.Contains("Spreadsheet")).ToList());
     //sortedTypeNames.AddRange(typeNames.Where(name => name.Contains("Part")).ToList());
-    return new ObservableCollection<string>(typeNames);
+    return new ObservableCollection<string>(typeNames.Select(item=>item.FullName!).OrderBy(item=>item));
+  }
+
+  public static string[] GetAvailableAssemblies()
+  {
+    List<Assembly> availableAssemblies = new List<Assembly>();
+    availableAssemblies.Add(Assembly.Load("DocumentFormat.OpenXml"));
+    availableAssemblies.Add(Assembly.Load("Microsoft.Office.Interop.Word"));
+    return availableAssemblies.Select(item=>item.FullName!)
+      .OrderBy(item=>item).ToArray();
+  }
+
+  public static Type[] GetMainTypes(string assemblyName)
+  {
+    var assembly = Assembly.Load(assemblyName);
+    var typeNames = assembly.GetTypes()
+      .Where(type => !type.IsCompilerGenerated() && !type.IsAbstract)
+    //.Where(name => name.StartsWith("DocumentFormat.OpenXml.Packaging"))
+    .ToList();
+    //var sortedTypeNames = typeNames.Where(name => name.Contains("Document")).ToList();
+    //sortedTypeNames.AddRange(typeNames.Where(name => name.Contains("Spreadsheet")).ToList());
+    //sortedTypeNames.AddRange(typeNames.Where(name => name.Contains("Part")).ToList());
+    return typeNames.ToArray();
   }
 
   #region SaveOptionsCommand
@@ -333,7 +366,7 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
   /// </summary>
   public void SaveOptions()
   {
-    if (AppDataFolder != null) 
+    if (AppDataFolder != null)
     {
       ProcessOptionsMgr.SaveInstance(this.Model);
       ProcessOptionsMgr.SaveInstanceName(AppDataFolder);
@@ -354,7 +387,7 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
   {
     var oldData = ProcessOptionsMgr.LoadInstance(AppDataFolder);
     this.Model = oldData;
-    if (InputAssembly!=null)
+    if (InputAssembly != null)
       MainTypeNames = GetMainTypeNames(InputAssembly);
     foreach (var propInfo in typeof(ProcessOptionsViewModel).GetProperties())
       NotifyPropertyChanged(propInfo.Name);
@@ -470,10 +503,11 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
   }
   #endregion
 
+  #region AvailableAssemblies selection
+  public string[] AvailableAssemblies => GetAvailableAssemblies();
+  #endregion
+
   #region GeneratorType selection
-
   public string[] GeneratorTypeNames => ProcessOptionsMgr.GetGeneratorTypes().Select(item => item.Name).ToArray();
-
-
   #endregion
 }

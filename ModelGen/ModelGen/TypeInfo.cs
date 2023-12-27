@@ -82,9 +82,9 @@ public class TypeInfo : ModelElement
     if (Owner is Namespace nspace)
     {
       if (nspace.TargetName != null) return nspace.TargetName;
-      if (ModelConfig.Instance.TranslatedNamespaces.TryGetValue2(nspace.OriginalName, out var targetNamespace))
+      if (ModelConfig.Instance.TranslatedNamespaces.TryGetValue2(nspace.Name, out var targetNamespace))
         return targetNamespace;
-      return nspace.OriginalName;
+      return nspace.Name;
     }
     return OriginalNamespace;
   }
@@ -253,7 +253,7 @@ public class TypeInfo : ModelElement
   }
 
   public FullTypeName GetFullName(bool target, bool withNamespace, bool nsShortcut)
-    => GetFullName(new TNS(target, withNamespace, nsShortcut));
+    => GetFullName(new TNS(target ? NTS.Target : NTS.Any, withNamespace, nsShortcut));
 
   public static FullTypeName GetFullName(Type aType, TNS nameKindSelector)
   {
@@ -296,11 +296,11 @@ public class TypeInfo : ModelElement
   {
     string aName;
     string? aNamespace = null;
-    if (!nameKindSelector.Target)
+    if (nameKindSelector.NTS.HasFlag(NTS.Origin))
       return GetFullName(Type, nameKindSelector);
     else
     {
-      if (nameKindSelector.Target)
+      if (nameKindSelector.NTS.HasFlag(NTS.Target))
         aName = this.TargetName ?? this.Name;
       else
         aName = this.Name;

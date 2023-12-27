@@ -41,7 +41,7 @@ public class EnumInfoViewModel : ViewModel<EnumInfo>, IAcceptable
   {
     get
     {
-      if (NameKindSelector.Target)
+      if (NameKindSelector.NTS == NTS.Target)
         return Model.NewName ?? Model.Name;
       return Model.Name;
     }

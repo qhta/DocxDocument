@@ -207,7 +207,7 @@ public static class ModelManager
     {
       tasks[i] = new Task<int>(() =>
       {
-        var repaired = ModelManager.CheckNamespaceDuplicatedTypes(nspace);
+        var repaired = ModelManager.CheckNamespaceDuplicatedTypes(nspace.TargetName ?? nspace.Name);
         OnDone(repaired, tasks.Count(item => item?.Status == TaskStatus.Running));
         return repaired;
       });
@@ -289,9 +289,9 @@ public static class ModelManager
 
     int n = 0;
     foreach (var ns in TypeManager.AllNamespaces
-      .Where(nspace => !ModelConfig.Instance.ExcludedNamespaces.Contains(nspace.OriginalName)).ToList())
+      .Where(nspace => !ModelConfig.Instance.ExcludedNamespaces.Contains(nspace.Name)).ToList())
     {
-      if (ModelConfig.Instance.TranslatedNamespaces.TryGetValue(ns.OriginalName, out var targetName))
+      if (ModelConfig.Instance.TranslatedNamespaces.TryGetValue(ns.Name, out var targetName))
       {
         ns.TargetName = targetName;
         var nspace = TypeManager.RegisterNamespace(targetName);

@@ -8,7 +8,7 @@ public record TNS
   /// <summary>
   /// Specifies whether to get Target or Origin name.
   /// </summary>
-  public bool Target { [DebuggerStepThrough] get; set; }
+  public NTS NTS { [DebuggerStepThrough] get; set; }
 
   /// <summary>
   /// Specifies whether to get namespace.
@@ -21,9 +21,9 @@ public record TNS
   public bool NsShortcut { [DebuggerStepThrough] get; set; }
 
   [DebuggerStepThrough]
-  public TNS (bool target, bool withNamespace, bool nsShortcut)
+  public TNS (NTS nts, bool withNamespace, bool nsShortcut)
   {
-    Target = target;
+    NTS = nts;
     Namespace = withNamespace;
     NsShortcut = nsShortcut;
   }
