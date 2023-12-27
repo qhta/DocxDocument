@@ -13,7 +13,7 @@ public class TypePropViewModel: ViewModel
 
   public bool IsRed
   {
-    get { return _IsRed; }
+   [DebuggerStepThrough] get { return _IsRed; }
     set
     {
       if (_IsRed != value)

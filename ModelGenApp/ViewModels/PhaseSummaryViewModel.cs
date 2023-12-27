@@ -43,7 +43,7 @@ public class PhaseSummaryViewModel : ObservableList<PhaseSummaryInfoViewModel>
 
   public SummaryInfoKind? Filter
   {
-    get { return _Filter; }
+   [DebuggerStepThrough] get { return _Filter; }
     set
     {
       if (_Filter != value)

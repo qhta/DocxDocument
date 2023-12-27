@@ -12,7 +12,7 @@ public class BindingProxy : Freezable
 
     public object Data
     {
-        get { return (object)GetValue(DataProperty); }
+       [DebuggerStepThrough] get { return (object)GetValue(DataProperty); }
         set { SetValue(DataProperty, value); }
     }
 

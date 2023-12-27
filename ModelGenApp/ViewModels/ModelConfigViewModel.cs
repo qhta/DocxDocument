@@ -23,7 +23,7 @@ public abstract class ModelConfigViewModel : ViewModel
   /// </summary>
   public bool ShowProgressBar
   {
-    get { return _ShowProgressBar; }
+   [DebuggerStepThrough] get { return _ShowProgressBar; }
     set
     {
       if (_ShowProgressBar != value)
@@ -40,7 +40,7 @@ public abstract class ModelConfigViewModel : ViewModel
   /// </summary>
   public int ProgressBarMaximum
   {
-    get { return _ProgressBarMaximum; }
+   [DebuggerStepThrough] get { return _ProgressBarMaximum; }
     set
     {
       if (_ProgressBarMaximum != value)
@@ -57,7 +57,7 @@ public abstract class ModelConfigViewModel : ViewModel
   /// </summary>
   public int ProgressBarValue
   {
-    get { return _ProgressBarValue; }
+   [DebuggerStepThrough] get { return _ProgressBarValue; }
     set
     {
       if (_ProgressBarValue != value)

@@ -19,6 +19,6 @@ public class TextBoxWriter : TextWriter
 
   public override Encoding Encoding
   {
-    get { return System.Text.Encoding.UTF8; }
+   [DebuggerStepThrough] get { return System.Text.Encoding.UTF8; }
   }
 }

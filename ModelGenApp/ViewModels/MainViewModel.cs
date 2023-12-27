@@ -4,7 +4,7 @@ public class MainViewModel : ViewModel
 {
   public ProcessMonitorViewModel ProcessMonitorVM
   {
-    get { return ProcessMonitor.VM; }
+   [DebuggerStepThrough] get { return ProcessMonitor.VM; }
     set
     {
       if (ProcessMonitor.VM != value)
@@ -17,7 +17,7 @@ public class MainViewModel : ViewModel
 
   public ProcessMonitor ProcessMonitor
   {
-    get { return _ProcessMonitor; }
+   [DebuggerStepThrough] get { return _ProcessMonitor; }
     set
     {
       if (_ProcessMonitor != value)
@@ -31,7 +31,7 @@ public class MainViewModel : ViewModel
 
   public ProcessOptionsViewModel ProcessOptionsVM
   {
-    get { return _ProcessOptionsVM; }
+   [DebuggerStepThrough] get { return _ProcessOptionsVM; }
     set
     {
       if (_ProcessOptionsVM != value)
@@ -45,7 +45,7 @@ public class MainViewModel : ViewModel
 
   public Window? StartWindow
   {
-    get { return _StartWindow; }
+   [DebuggerStepThrough] get { return _StartWindow; }
     set
     {
       if (_StartWindow != value)
@@ -125,7 +125,7 @@ public class MainViewModel : ViewModel
 
   public bool ProcessStarted
   {
-    get { return _ProcessStarted; }
+   [DebuggerStepThrough] get { return _ProcessStarted; }
     set
     {
       if (_ProcessStarted != value)

@@ -37,7 +37,7 @@ namespace ModelGenApp {
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         public static global::System.Resources.ResourceManager ResourceManager {
-            get {
+           [DebuggerStepThrough] get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ModelGenApp.CommonStrings", typeof(CommonStrings).Assembly);
                     resourceMan = temp;
@@ -52,7 +52,7 @@ namespace ModelGenApp {
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         public static global::System.Globalization.CultureInfo Culture {
-            get {
+           [DebuggerStepThrough] get {
                 return resourceCulture;
             }
             set {
@@ -64,7 +64,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Acceptance.
         /// </summary>
         public static string Acceptance {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("Acceptance", resourceCulture);
             }
         }
@@ -73,7 +73,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Specifies whether the item was accepted or rejected at the end of the current phase..
         /// </summary>
         public static string AcceptanceTooltip {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("AcceptanceTooltip", resourceCulture);
             }
         }
@@ -82,7 +82,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to AcceptedOnly.
         /// </summary>
         public static string AcceptedOnly {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("AcceptedOnly", resourceCulture);
             }
         }
@@ -91,7 +91,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Accepted types.
         /// </summary>
         public static string AcceptedTypes {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("AcceptedTypes", resourceCulture);
             }
         }
@@ -100,7 +100,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Add docs.
         /// </summary>
         public static string AddDocs {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("AddDocs", resourceCulture);
             }
         }
@@ -109,7 +109,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Add new application data folder.
         /// </summary>
         public static string AddNewAppDataFolder {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("AddNewAppDataFolder", resourceCulture);
             }
         }
@@ -118,7 +118,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to All.
         /// </summary>
         public static string All {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("All", resourceCulture);
             }
         }
@@ -127,7 +127,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to All types.
         /// </summary>
         public static string AllTypes {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("AllTypes", resourceCulture);
             }
         }
@@ -136,7 +136,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to App data folder.
         /// </summary>
         public static string AppDataFolder {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("AppDataFolder", resourceCulture);
             }
         }
@@ -145,7 +145,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to App data folder \&quot;{0}\&quot; already exists.
         /// </summary>
         public static string AppDataFolderAlreadyExists_1 {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("AppDataFolderAlreadyExists_1", resourceCulture);
             }
         }
@@ -154,7 +154,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Subfolder of AppData folder containing model configuration.
         /// </summary>
         public static string AppDataFolderTooltip {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("AppDataFolderTooltip", resourceCulture);
             }
         }
@@ -163,7 +163,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Base type.
         /// </summary>
         public static string BaseType {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("BaseType", resourceCulture);
             }
         }
@@ -172,7 +172,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
         public static string Cancel {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("Cancel", resourceCulture);
             }
         }
@@ -181,7 +181,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Checked types.
         /// </summary>
         public static string CheckedTypes {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("CheckedTypes", resourceCulture);
             }
         }
@@ -190,7 +190,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Classes.
         /// </summary>
         public static string Classes {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("Classes", resourceCulture);
             }
         }
@@ -199,7 +199,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Class types.
         /// </summary>
         public static string ClassTypes {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("ClassTypes", resourceCulture);
             }
         }
@@ -208,7 +208,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Code output path is not defined.
         /// </summary>
         public static string Code_output_path_not_defined {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("Code_output_path_not_defined", resourceCulture);
             }
         }
@@ -217,7 +217,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Code compilation.
         /// </summary>
         public static string CodeCompilation {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("CodeCompilation", resourceCulture);
             }
         }
@@ -226,7 +226,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Code generation.
         /// </summary>
         public static string CodeGen {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("CodeGen", resourceCulture);
             }
         }
@@ -235,7 +235,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Code output path.
         /// </summary>
         public static string CodeOutputPath {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("CodeOutputPath", resourceCulture);
             }
         }
@@ -244,7 +244,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Compilation error list.
         /// </summary>
         public static string CompilationErrorList {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("CompilationErrorList", resourceCulture);
             }
         }
@@ -253,7 +253,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Compilation errors.
         /// </summary>
         public static string CompilationErrors {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("CompilationErrors", resourceCulture);
             }
         }
@@ -262,7 +262,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Configuration.
         /// </summary>
         public static string Config {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("Config", resourceCulture);
             }
         }
@@ -271,7 +271,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Config property name.
         /// </summary>
         public static string ConfigPropertyName {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("ConfigPropertyName", resourceCulture);
             }
         }
@@ -281,7 +281,7 @@ namespace ModelGenApp {
         ///Can contain * as a wildcard..
         /// </summary>
         public static string ConfigPropertyNameTooltip {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("ConfigPropertyNameTooltip", resourceCulture);
             }
         }
@@ -290,7 +290,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Continue.
         /// </summary>
         public static string Continue {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("Continue", resourceCulture);
             }
         }
@@ -299,7 +299,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Conversion target.
         /// </summary>
         public static string ConversionTarget {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("ConversionTarget", resourceCulture);
             }
         }
@@ -308,7 +308,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Conversion target is a type resulted from conversion phase..
         /// </summary>
         public static string ConversionTargetTooltip {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("ConversionTargetTooltip", resourceCulture);
             }
         }
@@ -317,7 +317,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Converted types.
         /// </summary>
         public static string ConvertedTypes {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("ConvertedTypes", resourceCulture);
             }
         }
@@ -326,7 +326,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Convert types.
         /// </summary>
         public static string ConvertTypes {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("ConvertTypes", resourceCulture);
             }
         }
@@ -335,7 +335,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Copy content from.
         /// </summary>
         public static string CopyContentFrom {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("CopyContentFrom", resourceCulture);
             }
         }
@@ -344,7 +344,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Count.
         /// </summary>
         public static string Count {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("Count", resourceCulture);
             }
         }
@@ -353,7 +353,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Declaring type.
         /// </summary>
         public static string DeclaringType {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("DeclaringType", resourceCulture);
             }
         }
@@ -363,7 +363,7 @@ namespace ModelGenApp {
         ///It can be the current type or one of its base types..
         /// </summary>
         public static string DeclaringTypeTooltip {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("DeclaringTypeTooltip", resourceCulture);
             }
         }
@@ -372,7 +372,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Derived types.
         /// </summary>
         public static string DerivedTypes {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("DerivedTypes", resourceCulture);
             }
         }
@@ -381,7 +381,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Description.
         /// </summary>
         public static string Description {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("Description", resourceCulture);
             }
         }
@@ -390,7 +390,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Short description..
         /// </summary>
         public static string DescriptionTooltip {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("DescriptionTooltip", resourceCulture);
             }
         }
@@ -399,7 +399,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Display options.
         /// </summary>
         public static string DisplayOptions {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("DisplayOptions", resourceCulture);
             }
         }
@@ -408,7 +408,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Display options:.
         /// </summary>
         public static string DisplayOptions_ {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("DisplayOptions_", resourceCulture);
             }
         }
@@ -417,7 +417,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Documentation.
         /// </summary>
         public static string Documentation {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("Documentation", resourceCulture);
             }
         }
@@ -426,7 +426,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Duplicated shortcut.
         /// </summary>
         public static string Duplicated_shortcut {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("Duplicated shortcut", resourceCulture);
             }
         }
@@ -435,7 +435,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Duplicated types in target namespace.
         /// </summary>
         public static string Duplicated_types_in_target_namespace {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("Duplicated_types_in_target_namespace", resourceCulture);
             }
         }
@@ -444,7 +444,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Enums.
         /// </summary>
         public static string Enums {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("Enums", resourceCulture);
             }
         }
@@ -453,7 +453,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Enum types.
         /// </summary>
         public static string EnumTypes {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("EnumTypes", resourceCulture);
             }
         }
@@ -462,7 +462,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Enum value name.
         /// </summary>
         public static string EnumValName {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("EnumValName", resourceCulture);
             }
         }
@@ -472,7 +472,7 @@ namespace ModelGenApp {
         ///defined in the enum type (depending on processing phase)..
         /// </summary>
         public static string EnumValNameTooltip {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("EnumValNameTooltip", resourceCulture);
             }
         }
@@ -481,7 +481,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Enum vals.
         /// </summary>
         public static string EnumVals {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("EnumVals", resourceCulture);
             }
         }
@@ -490,7 +490,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Enum value.
         /// </summary>
         public static string EnumValue {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("EnumValue", resourceCulture);
             }
         }
@@ -499,7 +499,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Enum values.
         /// </summary>
         public static string EnumValues {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("EnumValues", resourceCulture);
             }
         }
@@ -509,7 +509,7 @@ namespace ModelGenApp {
         ///defined in the enum type..
         /// </summary>
         public static string EnumValueTooltip {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("EnumValueTooltip", resourceCulture);
             }
         }
@@ -518,7 +518,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Error code.
         /// </summary>
         public static string ErrorCode {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("ErrorCode", resourceCulture);
             }
         }
@@ -527,7 +527,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Exclude.
         /// </summary>
         public static string Exclude {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("Exclude", resourceCulture);
             }
         }
@@ -536,7 +536,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Is excluded?.
         /// </summary>
         public static string ExcludedNamespace {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("ExcludedNamespace", resourceCulture);
             }
         }
@@ -545,7 +545,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Excluded namespace is rejected from scanning..
         /// </summary>
         public static string ExcludedNamespaceTooltip {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("ExcludedNamespaceTooltip", resourceCulture);
             }
         }
@@ -554,7 +554,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Excl.prop..
         /// </summary>
         public static string ExcludedProperty {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("ExcludedProperty", resourceCulture);
             }
         }
@@ -563,7 +563,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Excl.prop.ns..
         /// </summary>
         public static string ExcludedPropertyNamespace {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("ExcludedPropertyNamespace", resourceCulture);
             }
         }
@@ -572,7 +572,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Is property namespace excluded?.
         /// </summary>
         public static string ExcludedPropertyNamespaceTooltip {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("ExcludedPropertyNamespaceTooltip", resourceCulture);
             }
         }
@@ -581,7 +581,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Excluded property is rejected even if its type is accepted..
         /// </summary>
         public static string ExcludedPropertyTooltip {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("ExcludedPropertyTooltip", resourceCulture);
             }
         }
@@ -590,7 +590,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Excl.prop.type.
         /// </summary>
         public static string ExcludedPropertyType {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("ExcludedPropertyType", resourceCulture);
             }
         }
@@ -599,7 +599,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Is property type excluded?.
         /// </summary>
         public static string ExcludedPropertyTypeTooltip {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("ExcludedPropertyTypeTooltip", resourceCulture);
             }
         }
@@ -608,7 +608,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Excl.target ns..
         /// </summary>
         public static string ExcludedTargetNamespace {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("ExcludedTargetNamespace", resourceCulture);
             }
         }
@@ -617,7 +617,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Target namespace is excluded from code generation..
         /// </summary>
         public static string ExcludedTargetNamespaceTooltip {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("ExcludedTargetNamespaceTooltip", resourceCulture);
             }
         }
@@ -626,7 +626,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Is type excluded?.
         /// </summary>
         public static string ExcludedType {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("ExcludedType", resourceCulture);
             }
         }
@@ -635,7 +635,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Excluded type is rejected even if its namespace is included..
         /// </summary>
         public static string ExcludedTypeTooltip {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("ExcludedTypeTooltip", resourceCulture);
             }
         }
@@ -644,7 +644,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Excl.val.type.
         /// </summary>
         public static string ExcludedValueType {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("ExcludedValueType", resourceCulture);
             }
         }
@@ -653,7 +653,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Is value type excluded from processing?.
         /// </summary>
         public static string ExcludedValueTypeTooltip {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("ExcludedValueTypeTooltip", resourceCulture);
             }
         }
@@ -662,7 +662,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Filename.
         /// </summary>
         public static string Filename {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("Filename", resourceCulture);
             }
         }
@@ -671,7 +671,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to File tree.
         /// </summary>
         public static string FileTree {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("FileTree", resourceCulture);
             }
         }
@@ -680,7 +680,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to File with docs.
         /// </summary>
         public static string FileWithDocs {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("FileWithDocs", resourceCulture);
             }
         }
@@ -690,7 +690,7 @@ namespace ModelGenApp {
         ///It should be prepared by an external tool..
         /// </summary>
         public static string FileWithDocsTooltip {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("FileWithDocsTooltip", resourceCulture);
             }
         }
@@ -699,7 +699,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to You can use or omit adding docs from file..
         /// </summary>
         public static string FileWithDocsUseTooltip {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("FileWithDocsUseTooltip", resourceCulture);
             }
         }
@@ -708,7 +708,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to FIlter results.
         /// </summary>
         public static string FilterResults {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("FilterResults", resourceCulture);
             }
         }
@@ -717,7 +717,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Final fix.
         /// </summary>
         public static string FinalFix {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("FinalFix", resourceCulture);
             }
         }
@@ -726,7 +726,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Fixed types.
         /// </summary>
         public static string FixedTypes {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("FixedTypes", resourceCulture);
             }
         }
@@ -735,7 +735,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Generated files.
         /// </summary>
         public static string GeneratedFiles {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("GeneratedFiles", resourceCulture);
             }
         }
@@ -744,7 +744,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Generated types.
         /// </summary>
         public static string GeneratedTypes {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("GeneratedTypes", resourceCulture);
             }
         }
@@ -753,7 +753,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Generator type.
         /// </summary>
         public static string GeneratorType {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("GeneratorType", resourceCulture);
             }
         }
@@ -762,7 +762,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Generator type specifies the way of output generation.
         /// </summary>
         public static string GeneratorTypeTooltip {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("GeneratorTypeTooltip", resourceCulture);
             }
         }
@@ -771,7 +771,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Include.
         /// </summary>
         public static string Include {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("Include", resourceCulture);
             }
         }
@@ -780,7 +780,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Is type included?.
         /// </summary>
         public static string IncludedType {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("IncludedType", resourceCulture);
             }
         }
@@ -789,7 +789,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Included type is accepted even if its namespaces is excluded..
         /// </summary>
         public static string IncludedTypeTooltip {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("IncludedTypeTooltip", resourceCulture);
             }
         }
@@ -798,7 +798,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Incoming relationships.
         /// </summary>
         public static string IncomingRelationships {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("IncomingRelationships", resourceCulture);
             }
         }
@@ -807,7 +807,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Input assembly.
         /// </summary>
         public static string InputAssembly {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("InputAssembly", resourceCulture);
             }
         }
@@ -816,7 +816,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Input assembly to parse.
         /// </summary>
         public static string InputAssemblyTooltip {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("InputAssemblyTooltip", resourceCulture);
             }
         }
@@ -825,7 +825,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Interfaces.
         /// </summary>
         public static string Interfaces {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("Interfaces", resourceCulture);
             }
         }
@@ -834,7 +834,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to InterfaceTypes.
         /// </summary>
         public static string InterfaceTypes {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("InterfaceTypes", resourceCulture);
             }
         }
@@ -843,7 +843,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Invalid generic argument type.
         /// </summary>
         public static string InvalidGenericArgType {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("InvalidGenericArgType", resourceCulture);
             }
         }
@@ -852,7 +852,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Invalid properties.
         /// </summary>
         public static string InvalidProperties {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("InvalidProperties", resourceCulture);
             }
         }
@@ -861,7 +861,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Invalid types.
         /// </summary>
         public static string InvalidTypes {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("InvalidTypes", resourceCulture);
             }
         }
@@ -870,7 +870,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Kind.
         /// </summary>
         public static string Kind {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("Kind", resourceCulture);
             }
         }
@@ -879,7 +879,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Document model generator.
         /// </summary>
         public static string MainWindowTitle {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("MainWindowTitle", resourceCulture);
             }
         }
@@ -888,7 +888,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Meaningless description.
         /// </summary>
         public static string MeaninglessDescription {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("MeaninglessDescription", resourceCulture);
             }
         }
@@ -897,7 +897,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Members.
         /// </summary>
         public static string Members {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("Members", resourceCulture);
             }
         }
@@ -906,7 +906,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Missing description.
         /// </summary>
         public static string MissingDescription {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("MissingDescription", resourceCulture);
             }
         }
@@ -915,7 +915,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Missing generic argument type.
         /// </summary>
         public static string MissingGenericArgType {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("MissingGenericArgType", resourceCulture);
             }
         }
@@ -924,7 +924,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Missing included types relationships.
         /// </summary>
         public static string MissingIncludedTypeRels {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("MissingIncludedTypeRels", resourceCulture);
             }
         }
@@ -933,7 +933,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Missing included types in schema.
         /// </summary>
         public static string MissingIncludedTypeSchema {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("MissingIncludedTypeSchema", resourceCulture);
             }
         }
@@ -942,7 +942,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Missing properties.
         /// </summary>
         public static string MissingProperties {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("MissingProperties", resourceCulture);
             }
         }
@@ -951,7 +951,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Missing property target type.
         /// </summary>
         public static string MissingPropertyTargetType {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("MissingPropertyTargetType", resourceCulture);
             }
         }
@@ -960,7 +960,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Missing schema.
         /// </summary>
         public static string MissingSchema {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("MissingSchema", resourceCulture);
             }
         }
@@ -969,7 +969,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Missing some included types relationships:.
         /// </summary>
         public static string MissingSomeIncludedTypeRels {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("MissingSomeIncludedTypeRels", resourceCulture);
             }
         }
@@ -978,7 +978,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Missing some included types in schema:.
         /// </summary>
         public static string MissingSomeIncludedTypeSchema {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("MissingSomeIncludedTypeSchema", resourceCulture);
             }
         }
@@ -987,7 +987,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Missing target namespace.
         /// </summary>
         public static string MissingTargetNamespace {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("MissingTargetNamespace", resourceCulture);
             }
         }
@@ -996,7 +996,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Model configuration is invalid. See marks in the table..
         /// </summary>
         public static string Model_configuration_is_invalid {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("Model_configuration_is_invalid", resourceCulture);
             }
         }
@@ -1005,7 +1005,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Model configuration is not defined..
         /// </summary>
         public static string Model_configuration_not_defined {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("Model_configuration_not_defined", resourceCulture);
             }
         }
@@ -1014,7 +1014,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Model configuration saved in {0}.
         /// </summary>
         public static string Model_configuration_saved_in_0 {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("Model_configuration_saved_in_0", resourceCulture);
             }
         }
@@ -1023,7 +1023,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Model configuration.
         /// </summary>
         public static string ModelConfiguration {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("ModelConfiguration", resourceCulture);
             }
         }
@@ -1032,7 +1032,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Target namespace has multiple types with the same name..
         /// </summary>
         public static string MultiplicatedName {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("MultiplicatedName", resourceCulture);
             }
         }
@@ -1041,7 +1041,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Name.
         /// </summary>
         public static string Name {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("Name", resourceCulture);
             }
         }
@@ -1050,7 +1050,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Namespace.
         /// </summary>
         public static string Namespace {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("Namespace", resourceCulture);
             }
         }
@@ -1059,7 +1059,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Namespaces.
         /// </summary>
         public static string Namespaces {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("Namespaces", resourceCulture);
             }
         }
@@ -1068,7 +1068,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to New folder name.
         /// </summary>
         public static string NewFolderName {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("NewFolderName", resourceCulture);
             }
         }
@@ -1077,7 +1077,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to No error.
         /// </summary>
         public static string NoError {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("NoError", resourceCulture);
             }
         }
@@ -1086,7 +1086,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to OK.
         /// </summary>
         public static string OK {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("OK", resourceCulture);
             }
         }
@@ -1095,7 +1095,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Main options.
         /// </summary>
         public static string OptionsExpanderHeader {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("OptionsExpanderHeader", resourceCulture);
             }
         }
@@ -1104,7 +1104,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Original declaration type.
         /// </summary>
         public static string OriginalDeclarationType {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("OriginalDeclarationType", resourceCulture);
             }
         }
@@ -1114,7 +1114,7 @@ namespace ModelGenApp {
         ///If not defined then a property can be declared in any type..
         /// </summary>
         public static string OriginalDeclarationTypeTooltip {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("OriginalDeclarationTypeTooltip", resourceCulture);
             }
         }
@@ -1123,7 +1123,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Original name.
         /// </summary>
         public static string OriginalName {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("OriginalName", resourceCulture);
             }
         }
@@ -1132,7 +1132,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Original namespace.
         /// </summary>
         public static string OriginalNamespace {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("OriginalNamespace", resourceCulture);
             }
         }
@@ -1141,7 +1141,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Original namespace is a namespace read from source..
         /// </summary>
         public static string OriginalNamespaceTooltip {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("OriginalNamespaceTooltip", resourceCulture);
             }
         }
@@ -1150,7 +1150,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Original name is a name read from source..
         /// </summary>
         public static string OriginalNameTooltip {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("OriginalNameTooltip", resourceCulture);
             }
         }
@@ -1159,7 +1159,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Original property name.
         /// </summary>
         public static string OriginalPropertyName {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("OriginalPropertyName", resourceCulture);
             }
         }
@@ -1168,7 +1168,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Original property namespace.
         /// </summary>
         public static string OriginalPropertyNamespace {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("OriginalPropertyNamespace", resourceCulture);
             }
         }
@@ -1177,7 +1177,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to This is a namespace of the type that declares the property..
         /// </summary>
         public static string OriginalPropertyNamespaceTooltip {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("OriginalPropertyNamespaceTooltip", resourceCulture);
             }
         }
@@ -1186,7 +1186,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to This is an original property name read from source..
         /// </summary>
         public static string OriginalPropertyNameTooltip {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("OriginalPropertyNameTooltip", resourceCulture);
             }
         }
@@ -1195,7 +1195,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Original property type.
         /// </summary>
         public static string OriginalPropertyType {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("OriginalPropertyType", resourceCulture);
             }
         }
@@ -1204,7 +1204,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to This is an original type that declares the property..
         /// </summary>
         public static string OriginalPropertyTypeTooltip {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("OriginalPropertyTypeTooltip", resourceCulture);
             }
         }
@@ -1213,7 +1213,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Original value namespace.
         /// </summary>
         public static string OriginalPropValueNamespace {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("OriginalPropValueNamespace", resourceCulture);
             }
         }
@@ -1222,7 +1222,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to This is a namespace of original type of property value..
         /// </summary>
         public static string OriginalPropValueNamespaceTooltip {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("OriginalPropValueNamespaceTooltip", resourceCulture);
             }
         }
@@ -1231,7 +1231,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Original value type.
         /// </summary>
         public static string OriginalPropValueType {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("OriginalPropValueType", resourceCulture);
             }
         }
@@ -1240,7 +1240,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to This is an original type of property value..
         /// </summary>
         public static string OriginalPropValueTypeTooltip {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("OriginalPropValueTypeTooltip", resourceCulture);
             }
         }
@@ -1249,7 +1249,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Original type name.
         /// </summary>
         public static string OriginalTypeName {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("OriginalTypeName", resourceCulture);
             }
         }
@@ -1258,7 +1258,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Others.
         /// </summary>
         public static string Others {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("Others", resourceCulture);
             }
         }
@@ -1267,7 +1267,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Other types.
         /// </summary>
         public static string OtherTypes {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("OtherTypes", resourceCulture);
             }
         }
@@ -1276,7 +1276,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Outgoing relationships.
         /// </summary>
         public static string OutgoingRelationships {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("OutgoingRelationships", resourceCulture);
             }
         }
@@ -1285,7 +1285,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Problem.
         /// </summary>
         public static string Problem {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("Problem", resourceCulture);
             }
         }
@@ -1294,7 +1294,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Problematic types.
         /// </summary>
         public static string ProblematicTypes {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("ProblematicTypes", resourceCulture);
             }
         }
@@ -1303,7 +1303,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Process phases:.
         /// </summary>
         public static string Process_phases_ {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("Process phases_", resourceCulture);
             }
         }
@@ -1312,7 +1312,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Project name not defined.
         /// </summary>
         public static string Project_name_not_defined {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("Project_name_not_defined", resourceCulture);
             }
         }
@@ -1321,7 +1321,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Project name.
         /// </summary>
         public static string ProjectName {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("ProjectName", resourceCulture);
             }
         }
@@ -1330,7 +1330,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Name of generated C# project.
         /// </summary>
         public static string ProjectNameTooltip {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("ProjectNameTooltip", resourceCulture);
             }
         }
@@ -1339,7 +1339,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Properties.
         /// </summary>
         public static string Properties {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("Properties", resourceCulture);
             }
         }
@@ -1348,7 +1348,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Properties define values assigned to the object of the class..
         /// </summary>
         public static string PropertiesTooltip {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("PropertiesTooltip", resourceCulture);
             }
         }
@@ -1357,7 +1357,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Property name.
         /// </summary>
         public static string PropertyName {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("PropertyName", resourceCulture);
             }
         }
@@ -1367,7 +1367,7 @@ namespace ModelGenApp {
         ///(depending on processing phase)..
         /// </summary>
         public static string PropertyNameTooltip {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("PropertyNameTooltip", resourceCulture);
             }
         }
@@ -1376,7 +1376,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to #.
         /// </summary>
         public static string RecordNumber {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("RecordNumber", resourceCulture);
             }
         }
@@ -1385,7 +1385,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Number of the record in the collection.
         /// </summary>
         public static string RecordNumberTooltip {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("RecordNumberTooltip", resourceCulture);
             }
         }
@@ -1394,7 +1394,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Refresh.
         /// </summary>
         public static string Refresh {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("Refresh", resourceCulture);
             }
         }
@@ -1403,7 +1403,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Refresh results.
         /// </summary>
         public static string RefreshResults {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("RefreshResults", resourceCulture);
             }
         }
@@ -1412,7 +1412,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Registered namespaces.
         /// </summary>
         public static string RegisteredNamespaces {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("RegisteredNamespaces", resourceCulture);
             }
         }
@@ -1421,7 +1421,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Registered types.
         /// </summary>
         public static string RegisteredTypes {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("RegisteredTypes", resourceCulture);
             }
         }
@@ -1430,7 +1430,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Rejected types.
         /// </summary>
         public static string RejectedTypes {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("RejectedTypes", resourceCulture);
             }
         }
@@ -1439,7 +1439,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Related type.
         /// </summary>
         public static string RelatedType {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("RelatedType", resourceCulture);
             }
         }
@@ -1448,7 +1448,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Relationships.
         /// </summary>
         public static string Relationships {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("Relationships", resourceCulture);
             }
         }
@@ -1457,7 +1457,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Removed properties.
         /// </summary>
         public static string RemovedProperties {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("RemovedProperties", resourceCulture);
             }
         }
@@ -1466,7 +1466,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Rename.
         /// </summary>
         public static string Rename {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("Rename", resourceCulture);
             }
         }
@@ -1475,7 +1475,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Renamed types.
         /// </summary>
         public static string RenamedTypes {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("RenamedTypes", resourceCulture);
             }
         }
@@ -1484,7 +1484,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Result kind.
         /// </summary>
         public static string ResultKind {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("ResultKind", resourceCulture);
             }
         }
@@ -1493,7 +1493,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Results of phase.
         /// </summary>
         public static string ResultsOfPhase {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("ResultsOfPhase", resourceCulture);
             }
         }
@@ -1502,7 +1502,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Root namespace.
         /// </summary>
         public static string RootNamespace {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("RootNamespace", resourceCulture);
             }
         }
@@ -1511,7 +1511,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Output code types will be generated into this namespace and its sub-namespace..
         /// </summary>
         public static string RootNamespaceTooltip {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("RootNamespaceTooltip", resourceCulture);
             }
         }
@@ -1520,7 +1520,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Save.
         /// </summary>
         public static string Save {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("Save", resourceCulture);
             }
         }
@@ -1529,7 +1529,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Save configuration anyway?.
         /// </summary>
         public static string SaveConfigurationAnyway {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("SaveConfigurationAnyway", resourceCulture);
             }
         }
@@ -1538,7 +1538,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Save results.
         /// </summary>
         public static string SaveResults {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("SaveResults", resourceCulture);
             }
         }
@@ -1547,7 +1547,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Scan source.
         /// </summary>
         public static string ScanSource {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("ScanSource", resourceCulture);
             }
         }
@@ -1556,7 +1556,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Schema.
         /// </summary>
         public static string Schema {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("Schema", resourceCulture);
             }
         }
@@ -1565,7 +1565,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Semantics.
         /// </summary>
         public static string Semantics {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("Semantics", resourceCulture);
             }
         }
@@ -1574,7 +1574,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Shortcut.
         /// </summary>
         public static string Shortcut {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("Shortcut", resourceCulture);
             }
         }
@@ -1583,7 +1583,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Shortcut error.
         /// </summary>
         public static string ShortcutError {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("ShortcutError", resourceCulture);
             }
         }
@@ -1592,7 +1592,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Shortcut replaces its name (if shortcuts are enabled)..
         /// </summary>
         public static string ShortcutTooltip {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("ShortcutTooltip", resourceCulture);
             }
         }
@@ -1601,7 +1601,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Show accepted only.
         /// </summary>
         public static string ShowAcceptedOnly {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("ShowAcceptedOnly", resourceCulture);
             }
         }
@@ -1610,7 +1610,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Show declaring type.
         /// </summary>
         public static string ShowDeclaringType {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("ShowDeclaringType", resourceCulture);
             }
         }
@@ -1619,7 +1619,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Show full type name.
         /// </summary>
         public static string ShowFullTypeName {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("ShowFullTypeName", resourceCulture);
             }
         }
@@ -1628,7 +1628,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Show results.
         /// </summary>
         public static string ShowResults {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("ShowResults", resourceCulture);
             }
         }
@@ -1637,7 +1637,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Show target namespaces.
         /// </summary>
         public static string ShowTargetNamespaces {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("ShowTargetNamespaces", resourceCulture);
             }
         }
@@ -1646,7 +1646,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Solution name.
         /// </summary>
         public static string SolutionName {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("SolutionName", resourceCulture);
             }
         }
@@ -1655,7 +1655,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Name of generated C# solution.
         /// </summary>
         public static string SolutionNameTooltip {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("SolutionNameTooltip", resourceCulture);
             }
         }
@@ -1664,7 +1664,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Start.
         /// </summary>
         public static string Start {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("Start", resourceCulture);
             }
         }
@@ -1673,7 +1673,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Structs.
         /// </summary>
         public static string Structs {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("Structs", resourceCulture);
             }
         }
@@ -1682,7 +1682,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Struct types.
         /// </summary>
         public static string StructTypes {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("StructTypes", resourceCulture);
             }
         }
@@ -1691,7 +1691,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Target shortcuts must be different in different target names..
         /// </summary>
         public static string Target_shortcut_error {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("Target_shortcut_error", resourceCulture);
             }
         }
@@ -1700,7 +1700,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Target name.
         /// </summary>
         public static string TargetName {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("TargetName", resourceCulture);
             }
         }
@@ -1709,7 +1709,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Target namespace.
         /// </summary>
         public static string TargetNamespace {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("TargetNamespace", resourceCulture);
             }
         }
@@ -1718,7 +1718,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Target namespace error.
         /// </summary>
         public static string TargetNamespaceError {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("TargetNamespaceError", resourceCulture);
             }
         }
@@ -1727,7 +1727,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to target namespaces only.
         /// </summary>
         public static string TargetNamespacesOnly {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("TargetNamespacesOnly", resourceCulture);
             }
         }
@@ -1736,7 +1736,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Target namespace is a namespace written to output..
         /// </summary>
         public static string TargetNamespaceTooltip {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("TargetNamespaceTooltip", resourceCulture);
             }
         }
@@ -1745,7 +1745,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Target name is a name written to output..
         /// </summary>
         public static string TargetNameTooltip {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("TargetNameTooltip", resourceCulture);
             }
         }
@@ -1754,7 +1754,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Target property name.
         /// </summary>
         public static string TargetPropertyName {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("TargetPropertyName", resourceCulture);
             }
         }
@@ -1763,7 +1763,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Target property name is a new property name written to output..
         /// </summary>
         public static string TargetPropertyNameTooltip {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("TargetPropertyNameTooltip", resourceCulture);
             }
         }
@@ -1772,7 +1772,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Target property type.
         /// </summary>
         public static string TargetPropertyType {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("TargetPropertyType", resourceCulture);
             }
         }
@@ -1781,7 +1781,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Target property type is a type of property value written to output..
         /// </summary>
         public static string TargetPropertyTypeTooltip {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("TargetPropertyTypeTooltip", resourceCulture);
             }
         }
@@ -1790,7 +1790,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Target shortcut.
         /// </summary>
         public static string TargetShortcut {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("TargetShortcut", resourceCulture);
             }
         }
@@ -1799,7 +1799,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Target shortcut error.
         /// </summary>
         public static string TargetShortcutError {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("TargetShortcutError", resourceCulture);
             }
         }
@@ -1808,7 +1808,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Target shortcut replaces target name (if shortcuts are enabled)..
         /// </summary>
         public static string TargetShortcutTooltip {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("TargetShortcutTooltip", resourceCulture);
             }
         }
@@ -1817,7 +1817,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to targets only.
         /// </summary>
         public static string TargetsOnly {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("TargetsOnly", resourceCulture);
             }
         }
@@ -1826,7 +1826,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Target type.
         /// </summary>
         public static string TargetType {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("TargetType", resourceCulture);
             }
         }
@@ -1835,7 +1835,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Target type results from conversion phase..
         /// </summary>
         public static string TargetTypeTooltip {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("TargetTypeTooltip", resourceCulture);
             }
         }
@@ -1844,7 +1844,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Type full name.
         /// </summary>
         public static string TypeFullName {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("TypeFullName", resourceCulture);
             }
         }
@@ -1853,7 +1853,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Type name preceded with namespace..
         /// </summary>
         public static string TypeFullNameTooltip {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("TypeFullNameTooltip", resourceCulture);
             }
         }
@@ -1862,7 +1862,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Type name.
         /// </summary>
         public static string TypeName {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("TypeName", resourceCulture);
             }
         }
@@ -1871,7 +1871,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Type name pattern.
         /// </summary>
         public static string TypeNamePattern {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("TypeNamePattern", resourceCulture);
             }
         }
@@ -1881,7 +1881,7 @@ namespace ModelGenApp {
         ///Use &apos;*&apos; wildcard character to match many characters..
         /// </summary>
         public static string TypeNamePatternTooltip {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("TypeNamePatternTooltip", resourceCulture);
             }
         }
@@ -1891,7 +1891,7 @@ namespace ModelGenApp {
         ///(depending on processing phase)..
         /// </summary>
         public static string TypeNameTooltip {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("TypeNameTooltip", resourceCulture);
             }
         }
@@ -1900,7 +1900,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Types.
         /// </summary>
         public static string Types {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("Types", resourceCulture);
             }
         }
@@ -1909,7 +1909,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Types with added description.
         /// </summary>
         public static string TypesWithAddedDescription {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("TypesWithAddedDescription", resourceCulture);
             }
         }
@@ -1918,7 +1918,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Types with description.
         /// </summary>
         public static string TypesWithDescription {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("TypesWithDescription", resourceCulture);
             }
         }
@@ -1927,7 +1927,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Types with meaningless description.
         /// </summary>
         public static string TypesWithMeaninglessDescription {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("TypesWithMeaninglessDescription", resourceCulture);
             }
         }
@@ -1936,7 +1936,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Types with non-unique name.
         /// </summary>
         public static string TypesWithNonUniqueName {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("TypesWithNonUniqueName", resourceCulture);
             }
         }
@@ -1945,7 +1945,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Types without description.
         /// </summary>
         public static string TypesWithoutDescription {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("TypesWithoutDescription", resourceCulture);
             }
         }
@@ -1954,7 +1954,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Types with same name.
         /// </summary>
         public static string TypesWithSameName {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("TypesWithSameName", resourceCulture);
             }
         }
@@ -1963,7 +1963,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Type to scan.
         /// </summary>
         public static string TypeToScan {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("TypeToScan", resourceCulture);
             }
         }
@@ -1972,7 +1972,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to This is the main type where scan begins. Its property types and item types are scanned next..
         /// </summary>
         public static string TypeToScanTooltip {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("TypeToScanTooltip", resourceCulture);
             }
         }
@@ -1981,7 +1981,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Unregistered namespace {0}.
         /// </summary>
         public static string UnregisteredNamespace {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("UnregisteredNamespace", resourceCulture);
             }
         }
@@ -1990,7 +1990,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Validate conversion.
         /// </summary>
         public static string ValidateConversion {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("ValidateConversion", resourceCulture);
             }
         }
@@ -1999,7 +1999,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Validate docs.
         /// </summary>
         public static string ValidateDocs {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("ValidateDocs", resourceCulture);
             }
         }
@@ -2008,7 +2008,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Validated types.
         /// </summary>
         public static string ValidatedTypes {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("ValidatedTypes", resourceCulture);
             }
         }
@@ -2017,7 +2017,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Validate fix.
         /// </summary>
         public static string ValidateFix {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("ValidateFix", resourceCulture);
             }
         }
@@ -2026,7 +2026,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Validate generation.
         /// </summary>
         public static string ValidateGeneration {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("ValidateGeneration", resourceCulture);
             }
         }
@@ -2035,7 +2035,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Validate names.
         /// </summary>
         public static string ValidateNames {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("ValidateNames", resourceCulture);
             }
         }
@@ -2044,7 +2044,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Validate scan.
         /// </summary>
         public static string ValidateScan {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("ValidateScan", resourceCulture);
             }
         }
@@ -2053,7 +2053,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Validation error.
         /// </summary>
         public static string ValidationError {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("ValidationError", resourceCulture);
             }
         }
@@ -2062,7 +2062,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Valid types.
         /// </summary>
         public static string ValidTypes {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("ValidTypes", resourceCulture);
             }
         }
@@ -2071,7 +2071,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Value type.
         /// </summary>
         public static string ValueType {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("ValueType", resourceCulture);
             }
         }
@@ -2080,7 +2080,7 @@ namespace ModelGenApp {
         ///   Looks up a localized string similar to Value type is declared type of property value..
         /// </summary>
         public static string ValueTypeTooltip {
-            get {
+           [DebuggerStepThrough] get {
                 return ResourceManager.GetString("ValueTypeTooltip", resourceCulture);
             }
         }

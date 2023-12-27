@@ -52,7 +52,7 @@ public class TypeListViewModel<T> : ViewModel where T : TypeInfoViewModel
 
   public TypeInfoViewModelFilter? Filter
   {
-    get { return _Filter; }
+   [DebuggerStepThrough] get { return _Filter; }
     set
     {
       if (_Filter != value)
@@ -137,7 +137,7 @@ public class TypeListViewModel<T> : ViewModel where T : TypeInfoViewModel
 
   public bool ShowNamespaces
   {
-    get { return _ShowNamespace ?? Namespace == null; }
+   [DebuggerStepThrough] get { return _ShowNamespace ?? Namespace == null; }
     set { _ShowNamespace = value; }
   }
   private bool? _ShowNamespace;
@@ -165,7 +165,7 @@ public class TypeListViewModel<T> : ViewModel where T : TypeInfoViewModel
 
   public bool ShowAcceptedOnlyEnabled
   {
-    get { return _ShowAcceptedOnlyEnabled; }
+   [DebuggerStepThrough] get { return _ShowAcceptedOnlyEnabled; }
     set
     {
       if (_ShowAcceptedOnlyEnabled != value)
@@ -339,7 +339,7 @@ public class TypeListViewModel<T> : ViewModel where T : TypeInfoViewModel
   /// </summary>
   public Command RefreshResultsCommand
   {
-    get { return _RefreshResultsCommand; }
+   [DebuggerStepThrough] get { return _RefreshResultsCommand; }
     set
     {
       if (_RefreshResultsCommand != value)
