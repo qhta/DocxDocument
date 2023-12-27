@@ -13,7 +13,7 @@ public static class ProcessOptionsMgr
   {
     lock (LockObj)
     {
-      var filename = GetFilename();
+      var filename = GetConfigFilename();
       if (File.Exists(filename))
       {
         try
@@ -22,7 +22,7 @@ public static class ProcessOptionsMgr
           {
             var text = textFile.ReadToEnd();
 
-            var options = JsonConvert.DeserializeObject<ProcessOptions>(text);
+            var options = JsonConvert.DeserializeObject<AppConfig>(text);
             return options?.AppDataFolder;
           }
         }
@@ -53,12 +53,12 @@ public static class ProcessOptionsMgr
     }
   }
 
-    public static ProcessOptions LoadInstance(string? dataFolder = null)
+  public static ProcessOptions LoadInstance(string? dataFolder = null)
   {
     lock (LockObj)
     {
       ProcessOptions result = new ProcessOptions();
-      var filename = GetFilename(dataFolder);
+      var filename = GetOptionsFilename(dataFolder);
       if (File.Exists(filename))
       {
         try
@@ -70,7 +70,7 @@ public static class ProcessOptionsMgr
             var newResult = JsonConvert.DeserializeObject<ProcessOptions>(text);
             if (newResult != null)
             {
-              if (dataFolder!=null)
+              if (dataFolder != null)
                 newResult.AppDataFolder = dataFolder;
               result = newResult;
             }
@@ -89,10 +89,10 @@ public static class ProcessOptionsMgr
   {
     lock (LockObj)
     {
-      var filename = GetFilename();
+      var filename = GetConfigFilename();
       using (var text = File.CreateText(filename))
       {
-        var options = new ProcessOptions{ AppDataFolder=name };
+        var options = new AppConfig { AppDataFolder = name };
         var serializer = new Newtonsoft.Json.JsonSerializer();
         serializer.Serialize(text, options);
       }
@@ -103,7 +103,7 @@ public static class ProcessOptionsMgr
   {
     lock (LockObj)
     {
-      var filename = GetFilename(value.AppDataFolder);
+      var filename = GetOptionsFilename(value.AppDataFolder);
       using (var text = File.CreateText(filename))
       {
         var serializer = new Newtonsoft.Json.JsonSerializer();
@@ -116,7 +116,7 @@ public static class ProcessOptionsMgr
   {
     lock (LockObj)
     {
-      var filename = GetFilename();
+      var filename = GetOptionsFilename();
       filename = Path.ChangeExtension(filename, ".xml");
       using (var stream = File.OpenWrite(filename))
       {
@@ -125,7 +125,18 @@ public static class ProcessOptionsMgr
       }
     }
   }
-  public static string GetFilename(string? dataFolder = null)
+
+  public static string GetConfigFilename()
+  {
+    var path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+    path = Path.Combine(path, "ModelGen");
+    if (!Directory.Exists(path))
+      Directory.CreateDirectory(path);
+    path = Path.Combine(path, "AppConfig.json");
+    return path;
+  }
+
+  public static string GetOptionsFilename(string? dataFolder = null)
   {
     var path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
     path = Path.Combine(path, "ModelGen");
@@ -142,4 +153,6 @@ public static class ProcessOptionsMgr
     var assembly = Assembly.GetAssembly(typeof(BaseCodeGenerator));
     return assembly!.GetTypes().Where(item => item.IsSubclassOf(typeof(BaseCodeGenerator))).ToArray();
   }
+
+
 }
