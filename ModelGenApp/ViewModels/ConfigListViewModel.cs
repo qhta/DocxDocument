@@ -5,14 +5,14 @@
 /// </summary>
 public abstract class ConfigListViewModel : ViewModel
 {
-  public ConfigListViewModel(ModelConfigViewModel parent)
+  public ConfigListViewModel(ModelConfigViewModel owner)
   {
-    Parent = parent;
+    Owner = owner;
     StoreDataCommand = new RelayCommand(StoreData);
     RestoreDataCommand = new RelayCommand(RestoreData);
   }
 
-  protected ModelConfigViewModel Parent { [DebuggerStepThrough] get; private set; }
+  protected ModelConfigViewModel Owner { [DebuggerStepThrough] get; private set; }
 
   public virtual string Caption { [DebuggerStepThrough] get; protected set; } = CommonStrings.ModelConfiguration;
 
@@ -87,7 +87,7 @@ public abstract class ConfigListViewModel : ViewModel
   public virtual void SaveData(ModelConfigData configData)
   {
     SetData(configData);
-    Parent.SaveData(configData);
+    Owner.SaveData(configData);
   }
 
   /// <summary>

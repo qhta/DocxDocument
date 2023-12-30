@@ -1,7 +1,7 @@
 ﻿namespace ModelGenApp.ViewModels;
 public class NamespaceConfigListViewModel : ConfigListViewModel
 {
-  public NamespaceConfigListViewModel(ModelConfigViewModel parent): base(parent)
+  public NamespaceConfigListViewModel(ModelConfigViewModel owner): base(owner)
   {
     Caption = CommonStrings.ModelConfiguration + " | " + CommonStrings.Namespaces.ToLower();
     Items = new ListViewModel<NamespaceConfigViewModel>();
@@ -22,14 +22,20 @@ public class NamespaceConfigListViewModel : ConfigListViewModel
   public void ClearItems()
   {
     Items.Clear();
+    nsCount = 0;
   }
+
+  int nsCount = 0; 
+
 
   public void CreateItems(ModelConfigData configData)
   {
-    foreach (var ns in Parent.LoadedNamespaces)
+    foreach (var ns in Owner.LoadedNamespaces)
     {
       var item = new NamespaceConfigViewModel { OrigName = ns };
-      item.Types = Parent.LoadedTypes.Where(item=>item.Namespace==ns).ToArray();
+      item.RecordNumber = ++nsCount;
+      item.Types = Owner.LoadedTypes.Where(item=>item.Namespace==ns).ToArray();
+      item.IsIncluded = configData.IncludedNamespaces.Contains(ns);
       item.IsExcluded = configData.ExcludedNamespaces.Contains(ns);
       if (configData.NamespaceShortcuts.TryGetValue(ns, out var shortcut))
         item.Shortcut = shortcut;
@@ -43,7 +49,7 @@ public class NamespaceConfigListViewModel : ConfigListViewModel
           item.TargetShortcut = targetShortcut;
       item.PropertyChanged += Item_PropertyChanged;
       Items.Add(item);
-    }
+    }                                                                    
     ValidateData();
   }
 
@@ -57,11 +63,14 @@ public class NamespaceConfigListViewModel : ConfigListViewModel
 
   public override void SetData(ModelConfigData configData)
   {
+    configData.IncludedNamespaces.Clear();
     configData.ExcludedNamespaces.Clear();
     configData.NamespaceShortcuts.Clear();
     configData.TranslatedNamespaces.Clear();
     foreach (var item in Items)
     {
+      if (item.IsIncluded)
+        configData.IncludedNamespaces.Add(item.OrigName);
       if (item.IsExcluded)
         configData.ExcludedNamespaces.Add(item.OrigName);
       if (item.TargetExcluded && item.TargetName != null)
