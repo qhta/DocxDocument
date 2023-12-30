@@ -25,11 +25,11 @@ public class CodeGenPhaseViewModel : PhaseResultsViewModel
     base.SetSummary(summary);
   }
 
-  public FileListViewModel? CompilationFiles { get; set; }
-  public ErrorListViewModel? CompilationErrors { get; set; }
+  public FileListViewModel? CompilationFiles { [DebuggerStepThrough] get; set; }
+  public ErrorListViewModel? CompilationErrors { [DebuggerStepThrough] get; set; }
 
-  private FilesList? _CompilationFiles { get; set; }
-  private CompilationErrors? _CompilationErrors { get; set; }
+  private FilesList? _CompilationFiles { [DebuggerStepThrough] get; set; }
+  private CompilationErrors? _CompilationErrors { [DebuggerStepThrough] get; set; }
 
   protected override void ShowResultsExecute()
   {

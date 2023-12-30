@@ -171,7 +171,7 @@ public static class TypeManager
     else
       result = Type.GetType(fullTypeName + ", DocumentModel.BaseTypes")
       ?? Type.GetType(fullTypeName + ", DocumentModel.Attributes");
-    if (result==null)
+    if (result == null)
       return null;
     //Debug.Assert(result != null);
     if (argTypeName != null)
@@ -183,7 +183,7 @@ public static class TypeManager
         argType = Type.GetType(argTypeName + ", DocumentModel.BaseTypes")
         ?? Type.GetType(argTypeName + ", DocumentModel.Attributes");
       Debug.Assert(argType != null);
-      result = result.MakeGenericType(new Type[]{ argType });
+      result = result.MakeGenericType(new Type[] { argType });
     }
     return result;
   }
@@ -201,7 +201,7 @@ public static class TypeManager
     k = typeName.LastIndexOf(".");
     if (k >= 0)
     {
-      ns = typeName.Substring(0,k);
+      ns = typeName.Substring(0, k);
       typeName = typeName.Substring(k + 1);
     }
     return (ns, typeName, argTypeName);
@@ -260,6 +260,21 @@ public static class TypeManager
     var result = RegisterType(type);
     AddRelationship(source, result, semantics);
     return result;
+  }
+
+  public static TypeKind GetTypeKind(this Type type)
+  {
+    if (type.IsEnum)
+      return TypeKind.@enum;
+    else
+    if (type.IsValueType)
+      return TypeKind.@struct;
+    else if (type.IsInterface)
+      return TypeKind.@interface;
+    else if (type.IsClass)
+      return TypeKind.@class;
+    else
+      return TypeKind.type;
   }
 
   public static TypeRelationship AddRelationship(this TypeInfo source, TypeInfo target, Semantics semantics, int order = 0)
@@ -448,7 +463,7 @@ public static class TypeManager
       itemType = aType.GetGenericArguments()[0];
       return true;
     }
-     
+
     var type = aType.GetImplementedInterfaces().FirstOrDefault((TypeInfo item) => item.Name.StartsWith("ICollection`"));
     if (type != null)
     {

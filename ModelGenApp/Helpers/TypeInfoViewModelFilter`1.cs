@@ -110,7 +110,7 @@ public record TypeInfoViewModelFilter<T> : IFilter where T : TypeInfoViewModel
     return false;
   }
 
-  public string Caption { get; set; } = null!;
+  public string Caption { [DebuggerStepThrough] get; set; } = null!;
 
   /// <summary>
   /// Initializing constructor with known predicate.
@@ -122,12 +122,12 @@ public record TypeInfoViewModelFilter<T> : IFilter where T : TypeInfoViewModel
   /// <summary>
   /// Predicate to apply in filtering.
   /// </summary>
-  public Predicate<T> Predicate { get; private set; } = null!;
+  public Predicate<T> Predicate { [DebuggerStepThrough] get; private set; } = null!;
 
   /// <summary>
   /// A parameter for predicate.
   /// </summary>
-  public object? Value { get; private set; }
+  public object? Value { [DebuggerStepThrough] get; private set; }
 
   public Predicate<T> GetPredicate()
   {

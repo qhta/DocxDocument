@@ -747,12 +747,6 @@ Use '*' wildcard character to match many characters.</value>
   <data name="OriginalPropValueTypeTooltip" xml:space="preserve">
     <value>This is an original type of property value.</value>
   </data>
-  <data name="ExcludedPropertyNamespace" xml:space="preserve">
-    <value>Excl.prop.ns.</value>
-  </data>
-  <data name="ExcludedPropertyNamespaceTooltip" xml:space="preserve">
-    <value>Is property namespace excluded?</value>
-  </data>
   <data name="ExcludedPropertyType" xml:space="preserve">
     <value>Excl.prop.type</value>
   </data>

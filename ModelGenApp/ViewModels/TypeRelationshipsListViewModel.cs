@@ -9,7 +9,7 @@ public class TypeRelationshipsListViewModel: ItemListViewModel<TypeRelationshipV
     TypeNameSelector = typeNameSelector;
   }
 
-  public TNS TypeNameSelector { get; private set; }
+  public TNS TypeNameSelector { [DebuggerStepThrough] get; private set; }
 
   public new bool ShowAcceptedOnly
   {

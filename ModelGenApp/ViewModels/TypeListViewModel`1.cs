@@ -91,9 +91,9 @@ public class TypeListViewModel<T> : ViewModel where T : TypeInfoViewModel
   {
     (Items).AddRange(list.Cast<T>());
   }
-  public NamespaceViewModel? Namespace { get; private set; }
+  public NamespaceViewModel? Namespace { [DebuggerStepThrough] get; private set; }
 
-  public string Name { get; private set; }
+  public string Name { [DebuggerStepThrough] get; private set; }
 
   public string Caption
   {
@@ -111,7 +111,7 @@ public class TypeListViewModel<T> : ViewModel where T : TypeInfoViewModel
 
   public TNS TypeNameSelector => Phase.TypeNameSelector;
 
-  public TKS TypeKindSelector { get; private set; }
+  public TKS TypeKindSelector { [DebuggerStepThrough] get; private set; }
 
   public bool ShowAcceptance => !ShowAcceptedOnly;
 
@@ -122,17 +122,17 @@ public class TypeListViewModel<T> : ViewModel where T : TypeInfoViewModel
   public bool ShowTargetType => Phase.PhaseNum >= PPS.ConvertTypes;
 
 
-  public PhaseResultsViewModel Phase { get; private set; }
+  public PhaseResultsViewModel Phase { [DebuggerStepThrough] get; private set; }
 
   public int Count => VisibleItems.Count;
 
-  public virtual ObservableList<T> Items { get; } = new ObservableList<T>();
+  public virtual ObservableList<T> Items { [DebuggerStepThrough] get; } = new ObservableList<T>();
 
   public IEnumerable<TypeInfoViewModel> Types => Items;
 
-  public FilteredCollection<T> VisibleItems { get; private set; } = null!;
+  public FilteredCollection<T> VisibleItems { [DebuggerStepThrough] get; private set; } = null!;
 
-  public TypeListViewModel<TypeInfoViewModel>? Source { get; private set; }
+  public TypeListViewModel<TypeInfoViewModel>? Source { [DebuggerStepThrough] get; private set; }
 
 
   public bool ShowNamespaces
@@ -320,7 +320,7 @@ public class TypeListViewModel<T> : ViewModel where T : TypeInfoViewModel
 
   #region ShowDetailsCommand
 
-  public Command ShowDetailsCommand { get; private set; }
+  public Command ShowDetailsCommand { [DebuggerStepThrough] get; private set; }
 
   protected virtual bool ShowDetailsCanExecute()
   {

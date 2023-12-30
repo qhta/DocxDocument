@@ -13,7 +13,7 @@ public class EnumTypeInfoViewModel : TypeInfoViewModel
     SortMemberPath = "EnumValues.Count", 
     ClipboardContentPath = "EnumValues.Count",
     DisplayIndex = 4)]
-  public EnumListViewModel EnumValues { get; set; }
+  public EnumListViewModel EnumValues { [DebuggerStepThrough] get; set; }
 
   public override object? Members => EnumValues;
 

@@ -99,7 +99,7 @@ public class MainViewModel : ViewModel
   }
 
   #region OpenConfigCommand
-  public Command OpenConfigCommand { get; }
+  public Command OpenConfigCommand { [DebuggerStepThrough] get; }
 
   public bool CanOpenConfig(string? parameter)
   {
@@ -124,7 +124,7 @@ public class MainViewModel : ViewModel
       WindowsManager.ShowWindow<ModelConfigWindow>(ModelConfigVM.PropertiesConfigList);
   }
 
-  public ModelConfigViewModel ModelConfigVM { get; private set; } = null!;
+  public ModelConfigViewModel ModelConfigVM { [DebuggerStepThrough] get; private set; } = null!;
 
   #endregion
 
@@ -146,7 +146,7 @@ public class MainViewModel : ViewModel
   }
   private bool _ProcessStarted;
 
-  public Command StartProcessCommand { get; }
+  public Command StartProcessCommand { [DebuggerStepThrough] get; }
 
   public bool CanStartProcess()
   {
@@ -194,9 +194,9 @@ public class MainViewModel : ViewModel
     ProcessStarted = false;
   }
 
-  public Creator? Creator { get; set; }
+  public Creator? Creator { [DebuggerStepThrough] get; set; }
 
-  public Command StopProcessCommand { get; }
+  public Command StopProcessCommand { [DebuggerStepThrough] get; }
 
   public bool CanStopProcess()
   {
@@ -209,7 +209,7 @@ public class MainViewModel : ViewModel
       Creator.CancelRequest = true;
   }
 
-  public Command ContinueProcessCommand { get; }
+  public Command ContinueProcessCommand { [DebuggerStepThrough] get; }
 
   public bool CanContinueProcess()
   {

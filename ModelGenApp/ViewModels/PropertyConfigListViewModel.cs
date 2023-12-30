@@ -4,41 +4,41 @@ public class PropertyConfigListViewModel : ConfigListViewModel
   public PropertyConfigListViewModel(ModelConfigViewModel parent) : base(parent)
   {
     Caption = CommonStrings.ModelConfiguration + ": " + CommonStrings.Properties.ToLower();
-    Properties = new ListViewModel<PropertyConfigViewModel>();
-    CollectionViewSource = new CollectionViewSource<PropertyConfigViewModel>(Properties);
-    VisibleItems = CollectionViewSource.GetDefaultView(Properties);
+    Items = new ListViewModel<PropertyConfigViewModel>();
+    CollectionViewSource = new CollectionViewSource<PropertyConfigViewModel>(Items);
+    VisibleItems = CollectionViewSource.GetDefaultView(Items);
     ShowProgressBar = true;
     BeginInvokeActionEnabled = false;
   }
 
-  public ListViewModel<PropertyConfigViewModel> Properties { get; private set; }
+  public ListViewModel<PropertyConfigViewModel> Items { [DebuggerStepThrough] get; private set; }
 
   private CollectionViewSource<PropertyConfigViewModel> CollectionViewSource;
 
   /// <summary>
   /// This is the result collection view to be used in DataGrid.
   /// </summary>
-  public ICollectionView VisibleItems { get; private set; }
+  public ICollectionView VisibleItems { [DebuggerStepThrough] get; private set; }
 
-  public override void CreateItems(ModelConfigData configData)
+  public void CreateItems(TypeConfigViewModel parent, ModelConfigData configData)
   {
-      Properties.Clear();
-      var fullNameComparison = configData.IncludedTypes.FirstOrDefault(item => item.Contains('.')) != null
-                          || configData.ExcludedTypes.FirstOrDefault(item => item.Contains('.')) != null;
+    Items.Clear();
+    var fullNameComparison = configData.IncludedTypes.FirstOrDefault(item => item.Contains('.')) != null
+                        || configData.ExcludedTypes.FirstOrDefault(item => item.Contains('.')) != null;
     int typesCount = 0;
     int propCount = 0;
     foreach (var type in Parent.LoadedTypes)
     {
       ProgressBarValue = ++typesCount;
       var _Properties = new List<PropertyConfigViewModel>();
-      foreach (var property in type.GetProperties())
+      foreach (var propertyInfo in type.GetProperties())
       {
-        var propName = property.Name;
+        var propName = propertyInfo.Name;
         var typedPropName = propName;
         var fullPropName = propName;
         string propTypename = "";
         string propNamespace = "";
-        var propDeclaringType = property.DeclaringType;
+        var propDeclaringType = propertyInfo.DeclaringType;
         if (propDeclaringType != null)
         {
           propTypename = propDeclaringType.Name;
@@ -50,20 +50,17 @@ public class PropertyConfigListViewModel : ConfigListViewModel
             fullPropName = propNamespace + "." + fullPropName;
           }
         }
-        var valueType = property.PropertyType;
+        var valueType = propertyInfo.PropertyType;
         var valueTypeName = valueType.GetExpandedName(propDeclaringType?.Namespace);
         string valueTypeNamespace = valueType.Namespace ?? "";
-        var item = new PropertyConfigViewModel
+        var item = new PropertyConfigViewModel (parent, propertyInfo)
         {
           RecordNumber = ++propCount,
-          OrigName = propName,
-          OrigType = propTypename,
-          OrigNamespace = propNamespace,
           OrigValueNamespace = valueTypeNamespace,
           OrigValueType = valueTypeName
         };
-        item.ExcludedNamespace = configData.ExcludedNamespaces.Contains(propNamespace);
-        item.ExcludedType = configData.ExcludedTypes.Contains(propTypename);
+        //item.IsNamespaceExcluded = configData.ExcludedNamespaces.Contains(propNamespace);
+        //item.IsTypeExcluded = configData.ExcludedTypes.Contains(propTypename);
         item.ExcludedProperty = configData.ExcludedProperties.Contains(fullPropName)
           || configData.ExcludedProperties.Contains(typedPropName)
           || configData.ExcludedProperties.Contains(propName);
@@ -77,23 +74,23 @@ public class PropertyConfigListViewModel : ConfigListViewModel
           item.TargetName = null;
         _Properties.Add(item);
       }
-      Properties.AddRange(_Properties);
+      Items.AddRange(_Properties);
     }
   }
 
   public override void SetData(ModelConfigData configData)
   {
     configData.ExcludedProperties.Clear();
-    foreach (var item in Properties.Where(item => item.ExcludedProperty))
-      configData.ExcludedProperties.Add(ModelConfig.JoinTypeAndProperty(item.OrigType, item.OrigName));
+    foreach (var item in Items.Where(item => item.ExcludedProperty))
+      configData.ExcludedProperties.Add(ModelConfig.JoinTypeAndProperty(item.OrigTypeName, item.OrigName));
 
     configData.PropertyTranslateTable.Clear();
-    foreach (var item in Properties.Where(item => !String.IsNullOrEmpty(item.TargetName)))
-      configData.PropertyTranslateTable.Add(ModelConfig.JoinTypeAndProperty(item.OrigType, item.OrigName), item.TargetName ?? "");
+    foreach (var item in Items.Where(item => !String.IsNullOrEmpty(item.TargetName)))
+      configData.PropertyTranslateTable.Add(ModelConfig.JoinTypeAndProperty(item.OrigTypeName, item.OrigName), item.TargetName ?? "");
 
     configData.PropertyTypeConversion.Clear();
-    foreach (var item in Properties.Where(item => !String.IsNullOrEmpty(item.TargetPropertyType)))
-      configData.PropertyTypeConversion.Add(ModelConfig.JoinTypeAndProperty(item.OrigType, item.OrigName), item.TargetPropertyType ?? "");
+    foreach (var item in Items.Where(item => !String.IsNullOrEmpty(item.TargetPropertyType)))
+      configData.PropertyTypeConversion.Add(ModelConfig.JoinTypeAndProperty(item.OrigTypeName, item.OrigName), item.TargetPropertyType ?? "");
 
   }
 

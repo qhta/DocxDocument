@@ -10,13 +10,13 @@ public class ErrorListViewModel : ViewModel<CompilationErrors>
     GetData(model);
   }
 
-  public ListViewModel<ErrorViewModel> Errors { get; private set; }
+  public ListViewModel<ErrorViewModel> Errors { [DebuggerStepThrough] get; private set; }
 
   private CollectionViewSource<ErrorViewModel> CollectionViewSource;
   /// <summary>
   /// This is the result collection view to be used in DataGrid.
   /// </summary>
-  public ICollectionView VisibleItems { get; private set; }
+  public ICollectionView VisibleItems { [DebuggerStepThrough] get; private set; }
 
   public void GetData(CompilationErrors compilationErrors)
   {

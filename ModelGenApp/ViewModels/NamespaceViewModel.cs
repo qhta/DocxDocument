@@ -16,7 +16,7 @@ public class NamespaceViewModel : ViewModel<Namespace>
     Others = new TypeListViewModel(phaseViewModel, this, ns.Name+":OtherTypes", phaseViewModel.TypeNameSelector, TKS.Other, Filter, AllTypes);
   }
 
-  public PhaseResultsViewModel Phase { get; private set; }
+  public PhaseResultsViewModel Phase { [DebuggerStepThrough] get; private set; }
 
   public string PhaseName => Phase.PhaseName;
 
@@ -51,13 +51,13 @@ public class NamespaceViewModel : ViewModel<Namespace>
     HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.Name),
     HeaderTooltipResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.OriginalNamespaceTooltip)
     )]
-  public string Name { get; set; }
+  public string Name { [DebuggerStepThrough] get; set; }
 
   [DataGridColumn(
     HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.TargetName),
     HeaderTooltipResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.TargetNamespaceTooltip)
     )]
-  public string? TargetName { get; set; }
+  public string? TargetName { [DebuggerStepThrough] get; set; }
 
   public string Caption
   {
@@ -80,7 +80,7 @@ public class NamespaceViewModel : ViewModel<Namespace>
     DataTemplateResourceKey = "CountColumnTemplate",
     SortMemberPath = "AllTypes.Count",
     ClipboardContentPath = "AllTypes.Count")]
-  public TypeListViewModel AllTypes { get; set; }
+  public TypeListViewModel AllTypes { [DebuggerStepThrough] get; set; }
 
   [DataGridColumn(
     HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.Classes),
@@ -88,7 +88,7 @@ public class NamespaceViewModel : ViewModel<Namespace>
     DataTemplateResourceKey = "CountColumnTemplate",
     SortMemberPath = "Classes.Count",
     ClipboardContentPath = "Classes.Count")]
-  public ClassListViewModel Classes { get; set; }
+  public ClassListViewModel Classes { [DebuggerStepThrough] get; set; }
 
   [DataGridColumn(
     HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.Enums),
@@ -96,7 +96,7 @@ public class NamespaceViewModel : ViewModel<Namespace>
     DataTemplateResourceKey = "CountColumnTemplate",
     SortMemberPath = "Enums.Count",
     ClipboardContentPath = "Enums.Count")]
-  public EnumTypeListViewModel Enums { get; set; }
+  public EnumTypeListViewModel Enums { [DebuggerStepThrough] get; set; }
 
   [DataGridColumn(
     HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.Interfaces),
@@ -104,7 +104,7 @@ public class NamespaceViewModel : ViewModel<Namespace>
     DataTemplateResourceKey = "CountColumnTemplate",
     SortMemberPath = "Interfaces.Count",
     ClipboardContentPath = "Interfaces.Count")]
-  public ClassListViewModel Interfaces { get; set; }
+  public ClassListViewModel Interfaces { [DebuggerStepThrough] get; set; }
 
   [DataGridColumn(
     HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.Structs),
@@ -112,7 +112,7 @@ public class NamespaceViewModel : ViewModel<Namespace>
     DataTemplateResourceKey = "CountColumnTemplate",
     SortMemberPath = "Structs.Count",
     ClipboardContentPath = "Structs.Count")]
-  public ClassListViewModel Structs { get; set; }
+  public ClassListViewModel Structs { [DebuggerStepThrough] get; set; }
 
   [DataGridColumn(
     HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.Others),
@@ -120,7 +120,7 @@ public class NamespaceViewModel : ViewModel<Namespace>
     DataTemplateResourceKey = "CountColumnTemplate",
     SortMemberPath = "Others.Count",
     ClipboardContentPath = "Others.Count")]
-  public TypeListViewModel Others { get; set; }
+  public TypeListViewModel Others { [DebuggerStepThrough] get; set; }
 
   public async void FillTypesAsync()
   {

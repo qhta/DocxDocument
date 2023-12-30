@@ -1,105 +1,88 @@
 ﻿namespace ModelGenApp.ViewModels;
 public class TypeConfigViewModel : VisibleViewModel
 {
-
-  [DataGridColumn(
-    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.OriginalNamespace),
-    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.OriginalNamespaceTooltip)
-    )]
-  public string OrigNamespace
+  public TypeConfigViewModel(NamespaceConfigViewModel parent, Type type)
   {
-   [DebuggerStepThrough] get { return _OrigNamespace; }
-    set
-    {
-      if (_OrigNamespace != value)
-      {
-        _OrigNamespace = value;
-        NotifyPropertyChanged(nameof(OrigNamespace));
-      }
-    }
+    Parent = parent;
+    Type = type;
+    Parent.PropertyChanged += Parent_PropertyChanged;
   }
-  private string _OrigNamespace = string.Empty;
 
 
-  [DataGridColumn(
-    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.ExcludedNamespace),
-    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.ExcludedNamespaceTooltip)
-    )]
-  public bool ExcludedNamespace
+  private NamespaceConfigViewModel Parent { [DebuggerStepThrough] get; set; }
+  private Type Type { [DebuggerStepThrough] get; set; }
+
+  private void Parent_PropertyChanged(object? sender, PropertyChangedEventArgs args)
   {
-   [DebuggerStepThrough] get { return _ExcludedNamespace; }
-    set
-    {
-      if (_ExcludedNamespace != value)
-      {
-        _ExcludedNamespace = value;
-        NotifyPropertyChanged(nameof(ExcludedNamespace));
-      }
-    }
+    if (args.PropertyName == nameof(NamespaceConfigViewModel.OrigName))
+      NotifyPropertyChanged(nameof(OrigNamespace));
+    else if (args.PropertyName == nameof(NamespaceConfigViewModel.IsIncluded))
+      NotifyPropertyChanged(nameof(IsNamespaceIncluded));
+    else
+    if (args.PropertyName == nameof(NamespaceConfigViewModel.IsExcluded))
+      NotifyPropertyChanged(nameof(IsNamespaceExcluded));
   }
-  private bool _ExcludedNamespace;
+
 
   [DataGridColumn(
-    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.TypeKind),
+    HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.OriginalNamespace),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.OriginalNamespaceTooltip)
+    )]
+  public string OrigNamespace => Parent.OrigName;
+
+  [DataGridColumn(
+  HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.IncludedNamespace),
+  HeaderTooltipResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.IncludedNamespaceTooltip)
+  )]
+  public bool IsNamespaceIncluded => Parent.IsIncluded;
+
+  [DataGridColumn(
+    HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.ExcludedNamespace),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.ExcludedNamespaceTooltip)
+    )]
+  public bool IsNamespaceExcluded => Parent.IsExcluded;
+
+  [DataGridColumn(
+    HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.TypeKind),
     IsReadOnly = true
-    )]  
-  public TypeKind TypeKind
-  {
-   [DebuggerStepThrough] get { return _TypeKind; }
-    set
-    {
-      if (_TypeKind != value)
-      {
-        _TypeKind = value;
-        NotifyPropertyChanged(nameof(TypeKind));
-      }
-    }
-  }
-  private TypeKind _TypeKind;
-
-  [DataGridColumn(
-    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.OriginalTypeName),
-    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.OriginalNameTooltip)
-    )]  
-  public string OrigName
-  {
-   [DebuggerStepThrough] get { return _OrigName; }
-    set
-    {
-      if (_OrigName != value)
-      {
-        _OrigName = value;
-        NotifyPropertyChanged(nameof(OrigName));
-      }
-    }
-  }
-  private string _OrigName = string.Empty;
-
-  [DataGridColumn(
-    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.ExcludedType),
-    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.ExcludedTypeTooltip)
     )]
-  public bool IsExcluded
+  public TypeKind TypeKind => TypeManager.GetTypeKind(Type);
+
+  [DataGridColumn(
+    HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.OriginalTypeName),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.OriginalNameTooltip)
+    )]
+  public string OrigName => Type.Name; 
+
+  [DataGridColumn(
+    HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.ExcludedType),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.ExcludedTypeTooltip)
+    )]
+  public bool Excluded
   {
-   [DebuggerStepThrough] get { return _Excluded; }
+    [DebuggerStepThrough]
+    get { return _Excluded; }
     set
     {
       if (_Excluded != value)
       {
         _Excluded = value;
-        NotifyPropertyChanged(nameof(IsExcluded));
+        NotifyPropertyChanged(nameof(Excluded));
       }
     }
   }
   private bool _Excluded;
 
+  public bool IsExcluded => Excluded || IsNamespaceExcluded;
+
   [DataGridColumn(
-    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.IncludedType),
-    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.IncludedTypeTooltip)
+    HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.IncludedType),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.IncludedTypeTooltip)
     )]
   public bool IsIncluded
   {
-   [DebuggerStepThrough] get { return _Included; }
+    [DebuggerStepThrough]
+    get { return _Included; }
     set
     {
       if (_Included != value)
@@ -107,19 +90,20 @@ public class TypeConfigViewModel : VisibleViewModel
         _Included = value;
         NotifyPropertyChanged(nameof(IsIncluded));
         if (value)
-          IsExcluded = false;
+          Excluded = false;
       }
     }
   }
   private bool _Included;
 
   [DataGridColumn(
-    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.TargetNamespace),
-    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.TargetNamespaceTooltip)
+    HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.TargetNamespace),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.TargetNamespaceTooltip)
     )]
   public string? TargetNamespace
   {
-   [DebuggerStepThrough] get { return _TargetNamespace; }
+    [DebuggerStepThrough]
+    get { return _TargetNamespace; }
     set
     {
       if (_TargetNamespace != value)
@@ -132,12 +116,13 @@ public class TypeConfigViewModel : VisibleViewModel
   private string? _TargetNamespace;
 
   [DataGridColumn(
-    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.TargetName),
-    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.TargetNameTooltip)
+    HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.TargetName),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.TargetNameTooltip)
     )]
   public string? TargetName
   {
-   [DebuggerStepThrough] get { return _TargetName; }
+    [DebuggerStepThrough]
+    get { return _TargetName; }
     set
     {
       if (_TargetName != value)

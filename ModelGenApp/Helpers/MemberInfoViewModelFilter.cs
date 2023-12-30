@@ -72,7 +72,7 @@ public record MemberInfoViewModelFilter: IFilter
   //MembersWithSameName,
   //RenamedMembers,
   //ConvertedMembers,
-  public string Caption { get; set; } = null!;
+  public string Caption { [DebuggerStepThrough] get; set; } = null!;
 
   /// <summary>
   /// Initializing constructor with known predicate.
@@ -84,12 +84,12 @@ public record MemberInfoViewModelFilter: IFilter
   /// <summary>
   /// Predicate to apply in filtering.
   /// </summary>
-  public Predicate<object> Predicate { get; private set; } = null!;
+  public Predicate<object> Predicate { [DebuggerStepThrough] get; private set; } = null!;
 
   /// <summary>
   /// A parameter for predicate.
   /// </summary>
-  public object? Value { get; private set; }
+  public object? Value { [DebuggerStepThrough] get; private set; }
 
   public Predicate<object> GetPredicate()
   {

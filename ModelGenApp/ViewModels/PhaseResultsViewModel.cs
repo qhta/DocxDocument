@@ -52,12 +52,12 @@ public abstract partial class PhaseResultsViewModel : ViewModel
   /// <summary>
   /// ID of the process phase.
   /// </summary>
-  public PPS PhaseNum { get; private set; }
+  public PPS PhaseNum { [DebuggerStepThrough] get; private set; }
 
   /// <summary>
   /// Name of the process phase.
   /// </summary>
-  public string PhaseName { get; set; }
+  public string PhaseName { [DebuggerStepThrough] get; set; }
 
   public string Caption => CommonStrings.ResultsOfPhase +": "+
     CommonStrings.ResourceManager.GetString(PhaseName, CultureInfo.CurrentUICulture) ?? PhaseName;
@@ -142,7 +142,7 @@ public abstract partial class PhaseResultsViewModel : ViewModel
   }
   #endregion
 
-  public NTS NamespacesSelector { get; protected set; }
+  public NTS NamespacesSelector { [DebuggerStepThrough] get; protected set; }
 
   public TNS TypeNameSelector => new TNS(NamespacesSelector, false, false);
 
@@ -404,11 +404,11 @@ public abstract partial class PhaseResultsViewModel : ViewModel
   }
   #endregion
 
-  public bool IsTargetNameVisible { get; protected set; }
+  public bool IsTargetNameVisible { [DebuggerStepThrough] get; protected set; }
 
-  public bool IsInvalidMarkVisible { get; protected set; } = true;
+  public bool IsInvalidMarkVisible { [DebuggerStepThrough] get; protected set; } = true;
 
-  public bool CanShowErrorDetails { get; protected set; }
+  public bool CanShowErrorDetails { [DebuggerStepThrough] get; protected set; }
 
 
   public bool ShowTargetsOnly

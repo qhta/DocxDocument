@@ -12,9 +12,9 @@ public abstract class ConfigListViewModel : ViewModel
     RestoreDataCommand = new RelayCommand(RestoreData);
   }
 
-  protected ModelConfigViewModel Parent { get; private set; }
+  protected ModelConfigViewModel Parent { [DebuggerStepThrough] get; private set; }
 
-  public virtual string Caption { get; protected set; } = CommonStrings.ModelConfiguration;
+  public virtual string Caption { [DebuggerStepThrough] get; protected set; } = CommonStrings.ModelConfiguration;
 
   /// <summary>
   /// Is progress bar visible. Should be true if data is loaded in backround.
@@ -67,18 +67,18 @@ public abstract class ConfigListViewModel : ViewModel
   }
   private int _ProgressBarValue;
 
-  /// <summary>
-  /// Creates items basing on info loaded in parent view model and config data.
-  /// </summary>
-  public abstract void CreateItems(ModelConfigData configData);
+  ///// <summary>
+  ///// Creates items basing on info loaded in parent view model and config data.
+  ///// </summary>
+  //public abstract void CreateItems(ModelConfigData configData);
 
-  /// <summary>
-  /// Refreshes items using config data.
-  /// </summary>
-  public void RefeshItems(ModelConfigData configData)
-  {
-    CreateItems(configData);
-  }
+  ///// <summary>
+  ///// Refreshes items using config data.
+  ///// </summary>
+  //public void RefeshItems(ModelConfigData configData)
+  //{
+  //  CreateItems(configData);
+  //}
 
   /// <summary>
   /// Stores data from items to config data
@@ -107,7 +107,7 @@ public abstract class ConfigListViewModel : ViewModel
   /// <summary>
   /// A command to store config data
   /// </summary>
-  public Command StoreDataCommand { get; }
+  public Command StoreDataCommand { [DebuggerStepThrough] get; }
 
   /// <summary>
   /// Checks if config data can be stored (always true).
@@ -147,7 +147,7 @@ public abstract class ConfigListViewModel : ViewModel
   /// <summary>
   /// A command to restore config data.
   /// </summary>
-  public Command RestoreDataCommand { get; }
+  public Command RestoreDataCommand { [DebuggerStepThrough] get; }
 
   /// <summary>
   /// Checks if config data can be restored (true if it was loaded previously).

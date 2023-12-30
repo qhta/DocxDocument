@@ -34,11 +34,11 @@ public abstract class ItemListViewModel<T> : ViewModel, IEnumerable<T> where T :
     NotifyPropertyChanged(nameof(Count));
   }
 
-  public PhaseResultsViewModel Phase { get; private set; }
+  public PhaseResultsViewModel Phase { [DebuggerStepThrough] get; private set; }
 
-  public TypeInfoViewModel? OwnerType { get; private set; }
+  public TypeInfoViewModel? OwnerType { [DebuggerStepThrough] get; private set; }
 
-  public string Name { get; private set; }
+  public string Name { [DebuggerStepThrough] get; private set; }
 
   public string Caption
   {
@@ -56,9 +56,9 @@ public abstract class ItemListViewModel<T> : ViewModel, IEnumerable<T> where T :
 
   public bool Visible => true;
 
-  public ObservableList<T> Items { get; private set; }
+  public ObservableList<T> Items { [DebuggerStepThrough] get; private set; }
 
-  public FilteredCollection<T> VisibleItems { get; private set; } = null!;
+  public FilteredCollection<T> VisibleItems { [DebuggerStepThrough] get; private set; } = null!;
 
   public bool ShowAcceptedOnly
   {
@@ -97,10 +97,10 @@ public abstract class ItemListViewModel<T> : ViewModel, IEnumerable<T> where T :
   /// </summary>
   private static bool _showDeclaringType = true;
 
-  public bool ShowDisplayOptions { get; protected set; }
+  public bool ShowDisplayOptions { [DebuggerStepThrough] get; protected set; }
 
   #region ShowDetailsCommand
-  public Command ShowDetailsCommand { get; private set; }
+  public Command ShowDetailsCommand { [DebuggerStepThrough] get; private set; }
 
   protected virtual bool ShowDetailsCanExecute()
   {

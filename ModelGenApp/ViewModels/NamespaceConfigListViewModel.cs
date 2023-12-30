@@ -5,24 +5,27 @@ public class NamespaceConfigListViewModel : ConfigListViewModel
   {
     Caption = CommonStrings.ModelConfiguration + " | " + CommonStrings.Namespaces.ToLower();
     Items = new ListViewModel<NamespaceConfigViewModel>();
-    VisibleItems = new CollectionViewSource<NamespaceConfigViewModel>(Items);
-    //VisibleItems = CollectionViewSource.GetDefaultView(Namespaces);
+    CollectionViewSource = new CollectionViewSource<NamespaceConfigViewModel>(Items);
+    VisibleItems = CollectionViewSource.GetDefaultView(Items);
     //VisibleItems.Filter = new Predicate<object>(item => item is NamespaceConfigViewModel viewModel && viewModel.OrigName.Contains("Wordprocessing"));
   }
 
-  public ListViewModel<NamespaceConfigViewModel> Items { get; private set; }
+  public ListViewModel<NamespaceConfigViewModel> Items { [DebuggerStepThrough] get; private set; }
 
-  public CollectionViewSource<NamespaceConfigViewModel> VisibleItems { get; private set; }
+  private CollectionViewSource<NamespaceConfigViewModel> CollectionViewSource;
 
-  public override void CreateItems(ModelConfigData configData)
+  /// <summary>
+  /// This is the result collection view to be used in DataGrid.
+  /// </summary>
+  public ICollectionView VisibleItems { [DebuggerStepThrough] get; private set; }
+
+  public void CreateItems(ModelConfigData configData)
   {
-    Items.Clear();
-
     foreach (var ns in Parent.LoadedNamespaces)
     {
       var item = new NamespaceConfigViewModel { OrigName = ns };
       item.Types = Parent.LoadedTypes.Where(item=>item.Namespace==ns).ToArray();
-      item.Excluded = configData.ExcludedNamespaces.Contains(ns);
+      item.IsExcluded = configData.ExcludedNamespaces.Contains(ns);
       if (configData.NamespaceShortcuts.TryGetValue(ns, out var shortcut))
         item.Shortcut = shortcut;
       if (configData.TranslatedNamespaces.TryGetValue(ns, out var translated))
@@ -54,7 +57,7 @@ public class NamespaceConfigListViewModel : ConfigListViewModel
     configData.TranslatedNamespaces.Clear();
     foreach (var item in Items)
     {
-      if (item.Excluded)
+      if (item.IsExcluded)
         configData.ExcludedNamespaces.Add(item.OrigName);
       if (item.TargetExcluded && item.TargetName != null)
         configData.ExcludedNamespaces.Add(item.TargetName);
