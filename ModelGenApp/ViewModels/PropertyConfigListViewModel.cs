@@ -20,62 +20,71 @@ public class PropertyConfigListViewModel : ConfigListViewModel
   /// </summary>
   public ICollectionView VisibleItems { [DebuggerStepThrough] get; private set; }
 
-  public void CreateItems(TypeConfigViewModel parent, ModelConfigData configData)
+
+  public void ClearItems()
   {
     Items.Clear();
+    typesCount = 0;
+    propCount = 0;
+    ProgressBarMaximum = Parent.TypeConfigList.Items.Count;
+  }
+
+  int typesCount = 0;
+  int propCount = 0;
+
+  public void CreateItems(TypeConfigViewModel parent, ModelConfigData configData)
+  {
     var fullNameComparison = configData.IncludedTypes.FirstOrDefault(item => item.Contains('.')) != null
                         || configData.ExcludedTypes.FirstOrDefault(item => item.Contains('.')) != null;
-    int typesCount = 0;
-    int propCount = 0;
-    foreach (var type in Parent.LoadedTypes)
+    ProgressBarValue = ++typesCount;
+    var _Properties = new List<PropertyConfigViewModel>();
+    var type = parent.Type;
+    foreach (var propertyInfo in type.GetProperties())
     {
-      ProgressBarValue = ++typesCount;
-      var _Properties = new List<PropertyConfigViewModel>();
-      foreach (var propertyInfo in type.GetProperties())
+      var propName = propertyInfo.Name;
+      var typedPropName = propName;
+      var fullPropName = propName;
+      string propTypename = "";
+      string propNamespace = "";
+      var propDeclaringType = propertyInfo.DeclaringType;
+      if (propDeclaringType != null)
       {
-        var propName = propertyInfo.Name;
-        var typedPropName = propName;
-        var fullPropName = propName;
-        string propTypename = "";
-        string propNamespace = "";
-        var propDeclaringType = propertyInfo.DeclaringType;
-        if (propDeclaringType != null)
+        propTypename = propDeclaringType.Name;
+        typedPropName = propTypename + "." + typedPropName;
+        fullPropName = propTypename + "." + fullPropName;
+        if (propDeclaringType.Namespace != null)
         {
-          propTypename = propDeclaringType.Name;
-          typedPropName = propTypename + "." + typedPropName;
-          fullPropName = propTypename + "." + fullPropName;
-          if (propDeclaringType.Namespace != null)
-          {
-            propNamespace = propDeclaringType.Namespace;
-            fullPropName = propNamespace + "." + fullPropName;
-          }
+          propNamespace = propDeclaringType.Namespace;
+          fullPropName = propNamespace + "." + fullPropName;
         }
-        var valueType = propertyInfo.PropertyType;
-        var valueTypeName = valueType.GetExpandedName(propDeclaringType?.Namespace);
-        string valueTypeNamespace = valueType.Namespace ?? "";
-        var item = new PropertyConfigViewModel (parent, propertyInfo)
-        {
-          RecordNumber = ++propCount,
-          OrigValueNamespace = valueTypeNamespace,
-          OrigValueType = valueTypeName
-        };
-        //item.IsNamespaceExcluded = configData.ExcludedNamespaces.Contains(propNamespace);
-        //item.IsTypeExcluded = configData.ExcludedTypes.Contains(propTypename);
-        item.ExcludedProperty = configData.ExcludedProperties.Contains(fullPropName)
-          || configData.ExcludedProperties.Contains(typedPropName)
-          || configData.ExcludedProperties.Contains(propName);
-        item.ExcludedValueType =
-          (configData.ExcludedNamespaces.Contains(valueTypeNamespace) && !configData.IncludedTypes.Contains(valueType.Name))
-          || configData.ExcludedTypes.Contains(valueType.Name);
-        if (configData.PropertyTranslateTable.TryGetValue(fullPropName, out var newName)
-         || configData.PropertyTranslateTable.TryGetValue(propName, out newName))
-          item.TargetName = newName;
-        else
-          item.TargetName = null;
-        _Properties.Add(item);
       }
-      Items.AddRange(_Properties);
+      var valueType = propertyInfo.PropertyType;
+      var valueTypeName = valueType.GetExpandedName(propDeclaringType?.Namespace);
+      string valueTypeNamespace = valueType.Namespace ?? "";
+      var item = new PropertyConfigViewModel(parent, propertyInfo)
+      {
+        RecordNumber = ++propCount,
+        OrigValueNamespace = valueTypeNamespace,
+        OrigValueType = valueTypeName
+      };
+      //item.IsNamespaceExcluded = configData.ExcludedNamespaces.Contains(propNamespace);
+      //item.IsTypeExcluded = configData.ExcludedTypes.Contains(propTypename);
+      item.ExcludedProperty = configData.ExcludedProperties.Contains(fullPropName)
+        || configData.ExcludedProperties.Contains(typedPropName)
+        || configData.ExcludedProperties.Contains(propName);
+      item.ExcludedValueType =
+        (configData.ExcludedNamespaces.Contains(valueTypeNamespace) && !configData.IncludedTypes.Contains(valueType.Name))
+        || configData.ExcludedTypes.Contains(valueType.Name);
+      if (configData.PropertyTranslateTable.TryGetValue(fullPropName, out var newName)
+       || configData.PropertyTranslateTable.TryGetValue(propName, out newName))
+        item.TargetName = newName;
+      else
+        item.TargetName = null;
+      _Properties.Add(item);
     }
+    Items.AddRange(_Properties);
+    if (typesCount>=ProgressBarMaximum)
+      ProgressBarValue = 0;
   }
 
   public override void SetData(ModelConfigData configData)
