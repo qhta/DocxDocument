@@ -9,8 +9,8 @@ public class TypeConfigViewModel : VisibleViewModel
   }
 
 
-  private NamespaceConfigViewModel Parent { [DebuggerStepThrough] get; set; }
-  private Type Type { [DebuggerStepThrough] get; set; }
+  public NamespaceConfigViewModel Parent { [DebuggerStepThrough] get; private set; }
+  public Type Type { [DebuggerStepThrough] get; private set; }
 
   private void Parent_PropertyChanged(object? sender, PropertyChangedEventArgs args)
   {
