@@ -1,7 +1,7 @@
 ﻿namespace ModelGenApp.ViewModels;
 public class TypeConfigListViewModel : ConfigListViewModel
 {
-  public TypeConfigListViewModel(ModelConfigViewModel parent) : base(parent)
+  public TypeConfigListViewModel(ModelConfigViewModel owner) : base(owner)
   {
     Caption = CommonStrings.ModelConfiguration + ": " + CommonStrings.Types.ToLower();
     Items = new ListViewModel<TypeConfigViewModel>();
@@ -10,41 +10,6 @@ public class TypeConfigListViewModel : ConfigListViewModel
     ExcludeTypesCommand = new RelayCommand<string>(ExcludeTypesExecute, ExcludeTypesCanExecute) { Name = "ExcludeTypesCommand" };
     IncludeTypesCommand = new RelayCommand<string>(IncludeTypesExecute, IncludeTypesCanExecute) { Name = "IncludeTypesCommand" };
   }
-
-  #region Populate ExcludedNamespace for all items on change of one
-  private void Types_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
-  {
-    if (args.Action == NotifyCollectionChangedAction.Add)
-    {
-      if (args.NewItems != null)
-        foreach (var item in args.NewItems)
-        {
-          if (item is TypeConfigViewModel typeConfigViewModel)
-            typeConfigViewModel.PropertyChanged += TypeConfigViewModel_PropertyChanged;
-        }
-    }
-  }
-  private bool IsExcludedNamespaceChanged { [DebuggerStepThrough] get; set; }
-  private bool IgnorePropertyChanged { [DebuggerStepThrough] get; set; }
-  private void TypeConfigViewModel_PropertyChanged(object? sender, PropertyChangedEventArgs args)
-  {
-    //if (IgnorePropertyChanged) return;
-    //IgnorePropertyChanged = true;
-    //if (sender is TypeConfigViewModel typeConfigViewModel)
-    //{
-    //  IsExcludedNamespaceChanged = true;
-    //  if (args.PropertyName == nameof(TypeConfigViewModel.IsNamespaceExcluded))
-    //  {
-    //    var value = typeConfigViewModel.IsNamespaceExcluded;
-    //    var ns = typeConfigViewModel.OrigNamespace;
-    //    foreach (var item in Items)
-    //      if (item.OrigNamespace == ns)
-    //        item.NamespaceExcluded = value;
-    //  }
-    //}
-    //IgnorePropertyChanged = false;
-  }
-  #endregion
 
   public ListViewModel<TypeConfigViewModel> Items { [DebuggerStepThrough] get; private set; }
 
@@ -58,28 +23,36 @@ public class TypeConfigListViewModel : ConfigListViewModel
   public void ClearItems()
   {
     Items.Clear();
+    typesCount = 0;
   }
 
-  public void CreateItems(NamespaceConfigViewModel nsVM, ModelConfigData configData)
+  int typesCount = 0; 
+
+  public void CreateItems(NamespaceConfigViewModel parent, ModelConfigData configData)
   {
     var fullNameComparison = configData.IncludedTypes.FirstOrDefault(item => item.Contains('.')) != null
                           || configData.ExcludedTypes.FirstOrDefault(item => item.Contains('.')) != null;
-    foreach (var type in Parent.LoadedTypes)
+    foreach (var type in parent.Types)
     {
       if (type != null)
       {
         var fullTypeName = (type.Namespace ?? "") + "." + type.Name;
 
-        var item = new TypeConfigViewModel (nsVM, type);
+        var item = new TypeConfigViewModel (parent, type);
+        item.RecordNumber = ++typesCount;
         if (fullNameComparison)
         {
-          item.Excluded = configData.ExcludedTypes.Contains(fullTypeName);
-          item.IsIncluded = configData.IncludedTypes.Contains(fullTypeName);
+          if (configData.ExcludedTypes.Contains(fullTypeName))
+            item.IsExcluded = true;
+          if (configData.IncludedTypes.Contains(fullTypeName))
+            item.IsIncluded = true;
         }
         else
         {
-          item.Excluded = configData.ExcludedTypes.Contains(type.Name);
-          item.IsIncluded = configData.IncludedTypes.Contains(type.Name);
+          if (configData.ExcludedTypes.Contains(type.Name))
+            item.IsExcluded = true;
+          if (configData.IncludedTypes.Contains(type.Name))
+            item.IsIncluded = true;
         }
         if (configData.TypeConversion.TryGetValue(fullTypeName, out var conversion))
         {
@@ -97,21 +70,15 @@ public class TypeConfigListViewModel : ConfigListViewModel
 
   public override void SetData(ModelConfigData configData)
   {
-    if (IsExcludedNamespaceChanged)
-    {
-      configData.ExcludedNamespaces.Clear();
-      foreach (var nsGrouping in Items.Where(item => item.IsNamespaceExcluded).GroupBy(item => item.OrigNamespace))
-        configData.ExcludedNamespaces.Add(nsGrouping.Key);
-    }
     configData.IncludedTypes.Clear();
     configData.ExcludedTypes.Clear();
     configData.TypeConversion.Clear();
     foreach (var item in Items)
     {
       var fullTypeName = item.OrigNamespace + "." + item.OrigName;
-      if (item.IsIncluded)
+      if (item.IsIncluded && item.IsIncluded!=item.Parent.IsIncluded)
         configData.IncludedTypes.Add(fullTypeName);
-      if (item.Excluded)
+      if (item.IsExcluded && item.IsExcluded!=item.Parent.IsExcluded)
         configData.ExcludedTypes.Add(fullTypeName);
       if (item.TargetNamespace != null || item.TargetName != null)
       {
@@ -140,7 +107,7 @@ public class TypeConfigListViewModel : ConfigListViewModel
       foreach (var item in Items)
       {
         if (item.OrigName.IsLike(parameter))
-          item.Excluded = true;
+          item.IsExcluded = true;
       }
   }
 

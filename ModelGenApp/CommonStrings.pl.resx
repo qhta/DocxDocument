@@ -200,7 +200,7 @@ Powinien być przygotowany uprzednio za pomocą osobnego narzędzia.</value>
     <value>Nazwa oryginalna to nazwa odczytana ze źródła.</value>
   </data>
   <data name="ExcludedNamespaceTooltip" xml:space="preserve">
-    <value>Wykluczona przestrzeń nazw jest odrzucana podczas skanowania.</value>
+    <value>Wykluczona przestrzeń nazw zawiera typy wykluczone z przetwarzania.</value>
   </data>
   <data name="Shortcut" xml:space="preserve">
     <value>Skrót</value>
@@ -279,8 +279,7 @@ Jeśli nie jest zdefiniowany, to właściwość może być zadeklarowana w dowol
     <value>Konfigurowana nazwa właściwości</value>
   </data>
   <data name="ConfigPropertyNameTooltip" xml:space="preserve">
-    <value>Konfigurowana nazwa właściwości jest deklarowaną nazwą właściwości. 
-Może zawierać * jako symbol wieloznaczny.</value>
+    <value>Konfigurowana nazwa właściwości jest deklarowaną nazwą właściwości. </value>
   </data>
   <data name="Name" xml:space="preserve">
     <value>Nazwa</value>
@@ -796,12 +795,24 @@ Użyj znaku '*' aby dopasować wzorzec do wielu znaków.</value>
     <value>Asemblat źródłowy nieokreślony</value>
   </data>
   <data name="IncludedNamespace" xml:space="preserve">
-    <value>Czy włączona?</value>
+    <value>Czy pn. akceptowana?</value>
   </data>
   <data name="IncludedNamespaceTooltip" xml:space="preserve">
-    <value>Włączone przestrzenie nazw są akceptowane podczas skanowania jako oryginalne przestrzenie nazw.</value>
+    <value>Akceptowana przestrzeń nazw zawiera typy akceptowane do przetwarzania.</value>
   </data>
   <data name="TypeKind" xml:space="preserve">
     <value>Rodzaj typu</value>
+  </data>
+  <data name="Accept" xml:space="preserve">
+    <value>Akcept?</value>
+  </data>
+  <data name="Excl" xml:space="preserve">
+    <value>Wykl?</value>
+  </data>
+  <data name="OriginalTypeNameTooltip" xml:space="preserve">
+    <value>Oryginalna nazwa typu odczytana ze źródła.</value>
+  </data>
+  <data name="IncludedPropertyTooltip" xml:space="preserve">
+    <value>Właściwość może być zaakceptowana tylko gdy jej typ deklarujący jest zaakceptowany.</value>
   </data>
 </root>

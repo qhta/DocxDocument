@@ -324,6 +324,7 @@ public class ModelConfigData
   {
     using (var textWriter = File.CreateText(filename))
     {
+      WriteStrings(textWriter, "IncludedNamespaces", IncludedNamespaces);
       WriteStrings(textWriter, "ExcludedNamespaces", ExcludedNamespaces);
       WriteDictionary(textWriter, "TranslatedNamespaces", TranslatedNamespaces);
       WriteDictionary(textWriter, "NamespaceShortcuts", NamespaceShortcuts);
@@ -359,7 +360,9 @@ public class ModelConfigData
           if (line.StartsWith("[") && line.EndsWith("]"))
           {
             var key = line.Substring(1, line.Length - 2);
-            if (key == "ExcludedNamespaces")
+            if (key == "IncludedNamespaces")
+              ReadStrings(textReader, IncludedNamespaces, ref lineNumber);
+            else if (key == "ExcludedNamespaces")
               ReadStrings(textReader, ExcludedNamespaces, ref lineNumber);
             else if (key == "TranslatedNamespaces")
               ReadDictionary(textReader, TranslatedNamespaces, ref lineNumber);

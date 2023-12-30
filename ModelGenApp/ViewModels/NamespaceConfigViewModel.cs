@@ -5,6 +5,25 @@ public class NamespaceConfigViewModel : VisibleViewModel
 {
 
   [DataGridColumn(
+    HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.RecordNumber),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.RecordNumberTooltip)
+    )]
+  public int RecordNumber
+  {
+    [DebuggerStepThrough]
+    get { return _RecordNumber; }
+    set
+    {
+      if (_RecordNumber != value)
+      {
+        _RecordNumber = value;
+        NotifyPropertyChanged(nameof(RecordNumber));
+      }
+    }
+  }
+  private int _RecordNumber;
+
+  [DataGridColumn(
     IsReadOnly = true,
     HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.OriginalName),
     HeaderTooltipResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.OriginalNameTooltip)
@@ -24,7 +43,7 @@ public class NamespaceConfigViewModel : VisibleViewModel
   private string _OrigName = string.Empty;
 
   [DataGridColumn(
-    HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.IncludedNamespace),
+    HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.Accept),
     HeaderTooltipResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.IncludedNamespaceTooltip)
     )]
   public bool IsIncluded
@@ -36,13 +55,15 @@ public class NamespaceConfigViewModel : VisibleViewModel
       {
         _Included = value;
         NotifyPropertyChanged(nameof(IsIncluded));
+        if (value)
+          IsExcluded = false;
       }
     }
   }
   private bool _Included;
 
   [DataGridColumn(
-    HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.ExcludedNamespace),
+    HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.Excl),
     HeaderTooltipResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.ExcludedNamespaceTooltip)
     )]
   public bool IsExcluded
@@ -54,6 +75,8 @@ public class NamespaceConfigViewModel : VisibleViewModel
       {
         _Excluded = value;
         NotifyPropertyChanged(nameof(IsExcluded));
+        if (value)
+          IsIncluded = false;
       }
     }
   }
