@@ -52,9 +52,9 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
     )]
   public TypeKind TypeKind => Model.TypeKind;
 
-  public TNS TypeNameSelector { get; private set; }
+  public TNS TypeNameSelector { [DebuggerStepThrough] get; private set; }
 
-  public PhaseResultsViewModel Phase { get; private set; }
+  public PhaseResultsViewModel Phase { [DebuggerStepThrough] get; private set; }
 
   public bool IsTypeKindSelected(TKS tks) => Model.IsTypeKindSelected(tks);
 
@@ -297,7 +297,7 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
 
   public bool IsMembersVisible => Members != null;
 
-  public ElementSchemaViewModel? Schema { get; private set; }
+  public ElementSchemaViewModel? Schema { [DebuggerStepThrough] get; private set; }
 
   public bool IsSchemaVisible => Schema != null;
 
@@ -401,7 +401,7 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
   #endregion
 
   #region ShowTypeCommand
-  public Command ShowTypeCommand { get; private set; }
+  public Command ShowTypeCommand { [DebuggerStepThrough] get; private set; }
 
   protected virtual bool ShowTypeCanExecute()
   {
@@ -423,7 +423,7 @@ public class TypeInfoViewModel : ViewModel<TypeInfo>
   #endregion
 
   #region ShowErrorCommand
-  public Command ShowErrorCommand { get; private set; }
+  public Command ShowErrorCommand { [DebuggerStepThrough] get; private set; }
 
   protected virtual bool ShowErrorCanExecute()
   {

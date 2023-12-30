@@ -7,9 +7,9 @@ public class TypePropViewModel: ViewModel
     Value = value;
   }
 
-  public string Name { get; set; }
+  public string Name { [DebuggerStepThrough] get; set; }
 
-  public object? Value { get; set; }
+  public object? Value { [DebuggerStepThrough] get; set; }
 
   public bool IsRed
   {

@@ -3,11 +3,11 @@
 public partial class ProcessMonitor : ModelMonitor
 {
 
-  public ProcessMonitorViewModel VM { get; set; } = new();
+  public ProcessMonitorViewModel VM { [DebuggerStepThrough] get; set; } = new();
 
-  public int IndentLevel { get; set; }
+  public int IndentLevel { [DebuggerStepThrough] get; set; }
 
-  public int IndentSize { get; set; } = 2;
+  public int IndentSize { [DebuggerStepThrough] get; set; } = 2;
 
   public override void WriteLine()
   {

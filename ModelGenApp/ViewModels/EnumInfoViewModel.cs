@@ -10,7 +10,7 @@ public class EnumInfoViewModel : ViewModel<EnumInfo>, IAcceptable
 
   public PhaseResultsViewModel Phase {get; private set; }
 
-  public EnumTypeInfoViewModel? Owner { get; private set; }
+  public EnumTypeInfoViewModel? Owner { [DebuggerStepThrough] get; private set; }
 
   public TNS NameKindSelector {get; private set; }
 

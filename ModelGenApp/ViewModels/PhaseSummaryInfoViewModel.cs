@@ -1,11 +1,11 @@
 ﻿namespace ModelGenApp.ViewModels;
 public class PhaseSummaryInfoViewModel: ViewModel
 {
-  public SummaryInfoKind InfoKind { get; set; }
+  public SummaryInfoKind InfoKind { [DebuggerStepThrough] get; set; }
 
-  public string Name { get; set; } = null!;
+  public string Name { [DebuggerStepThrough] get; set; } = null!;
 
-  public object? Value { get; set; }
+  public object? Value { [DebuggerStepThrough] get; set; }
 
   public bool IsChecked
   {
@@ -21,5 +21,5 @@ public class PhaseSummaryInfoViewModel: ViewModel
   }
   private bool _IsChecked;
 
-  public bool FilterEnabled { get; set; }
+  public bool FilterEnabled { [DebuggerStepThrough] get; set; }
 }

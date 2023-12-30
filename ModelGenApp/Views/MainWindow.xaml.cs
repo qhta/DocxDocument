@@ -49,7 +49,7 @@ public partial class MainWindow : Window
     DataContext = MainViewModel;
   }
 
-  public MainViewModel MainViewModel { get; }
+  public MainViewModel MainViewModel { [DebuggerStepThrough] get; }
 
   private void ProcessOptionsView_Loaded(object sender, RoutedEventArgs e)
   {

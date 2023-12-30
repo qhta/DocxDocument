@@ -27,7 +27,7 @@ public class NamespaceConfigViewModel : VisibleViewModel
     HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.IncludedNamespace),
     HeaderTooltipResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.IncludedNamespaceTooltip)
     )]
-  public bool Included
+  public bool IsIncluded
   {
    [DebuggerStepThrough] get { return _Included; }
     set
@@ -35,7 +35,7 @@ public class NamespaceConfigViewModel : VisibleViewModel
       if (_Included != value)
       {
         _Included = value;
-        NotifyPropertyChanged(nameof(Included));
+        NotifyPropertyChanged(nameof(IsIncluded));
       }
     }
   }
@@ -45,7 +45,7 @@ public class NamespaceConfigViewModel : VisibleViewModel
     HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.ExcludedNamespace),
     HeaderTooltipResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.ExcludedNamespaceTooltip)
     )]
-  public bool Excluded
+  public bool IsExcluded
   {
    [DebuggerStepThrough] get { return _Excluded; }
     set
@@ -53,7 +53,7 @@ public class NamespaceConfigViewModel : VisibleViewModel
       if (_Excluded != value)
       {
         _Excluded = value;
-        NotifyPropertyChanged(nameof(Excluded));
+        NotifyPropertyChanged(nameof(IsExcluded));
       }
     }
   }
@@ -198,9 +198,9 @@ public class NamespaceConfigViewModel : VisibleViewModel
   }
   private bool _HasUniqueTypes = true;
 
-  public Type[] Types { get; set; } = null!;
+  public Type[] Types { [DebuggerStepThrough] get; set; } = null!;
 
-  public SortedList<string, Type> DuplicatedTypes { get; set; } = new();
+  public SortedList<string, Type> DuplicatedTypes { [DebuggerStepThrough] get; set; } = new();
 
   [DataGridColumn(
     HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.Types)

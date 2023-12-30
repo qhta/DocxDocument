@@ -19,7 +19,7 @@ public class FileViewModel : VisibleViewModel<FileModel>
   [DataGridColumn(
     HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.Count)
   )]
-  public int? Count { get; protected set; }
+  public int? Count { [DebuggerStepThrough] get; protected set; }
 
   public virtual string Caption => Name;
 
@@ -60,7 +60,7 @@ public class FileViewModel : VisibleViewModel<FileModel>
   }
 
   #region ShowDetailsCommand
-  public Command ShowDetailsCommand { get; private set; }
+  public Command ShowDetailsCommand { [DebuggerStepThrough] get; private set; }
 
   protected virtual bool ShowDetailsCanExecute()
   {

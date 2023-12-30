@@ -2,5 +2,5 @@
 
 public interface IAcceptable
 {
-  public bool IsAccepted { get; }
+  public bool IsAccepted { [DebuggerStepThrough] get; }
 }
