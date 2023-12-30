@@ -1,13 +1,37 @@
 ﻿namespace ModelGenApp.ViewModels;
 public class PropertyConfigViewModel : VisibleViewModel
 {
+  public PropertyConfigViewModel(TypeConfigViewModel parent, PropertyInfo property)
+  {
+    Parent = parent;
+    Property = property;
+    Parent.PropertyChanged += Parent_PropertyChanged;
+  }
+
+
+  private TypeConfigViewModel Parent { [DebuggerStepThrough] get; set; }
+  private PropertyInfo Property { [DebuggerStepThrough] get; set; }
+
+  private void Parent_PropertyChanged(object? sender, PropertyChangedEventArgs args)
+  {
+    if (args.PropertyName == nameof(TypeConfigViewModel.OrigNamespace))
+      NotifyPropertyChanged(nameof(OrigNamespace));
+    else
+    if (args.PropertyName == nameof(TypeConfigViewModel.OrigName))
+      NotifyPropertyChanged(nameof(OrigTypeName));
+    else
+    if (args.PropertyName == nameof(TypeConfigViewModel.Excluded))
+      NotifyPropertyChanged(nameof(IsTypeExcluded));
+  }
+
   [DataGridColumn(
-    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.RecordNumber),
-    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.RecordNumberTooltip)
+    HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.RecordNumber),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.RecordNumberTooltip)
     )]
   public int RecordNumber
   {
-   [DebuggerStepThrough] get { return _RecordNumber; }
+    [DebuggerStepThrough]
+    get { return _RecordNumber; }
     set
     {
       if (_RecordNumber != value)
@@ -20,66 +44,27 @@ public class PropertyConfigViewModel : VisibleViewModel
   private int _RecordNumber;
 
   [DataGridColumn(
-    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.OriginalPropertyNamespace),
-    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.OriginalPropertyNamespaceTooltip)
+    HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.OriginalPropertyNamespace),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.OriginalPropertyNamespaceTooltip)
     )]
-  public string OrigNamespace
-  {
-   [DebuggerStepThrough] get { return _OrigNamespace; }
-    set
-    {
-      if (_OrigNamespace != value)
-      {
-        _OrigNamespace = value;
-        NotifyPropertyChanged(nameof(OrigNamespace));
-      }
-    }
-  }
-  private string _OrigNamespace = string.Empty;
+  public string OrigNamespace => Parent.OrigNamespace;
+
+  public string OrigTypeName => Parent.OrigName;
 
   [DataGridColumn(
-    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.OriginalPropertyType),
-    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.OriginalPropertyTypeTooltip)
+    HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.OriginalPropertyName),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.OriginalPropertyNameTooltip)
     )]
-  public string OrigType
-  {
-   [DebuggerStepThrough] get { return _OrigType; }
-    set
-    {
-      if (_OrigType != value)
-      {
-        _OrigType = value;
-        NotifyPropertyChanged(nameof(OrigType));
-      }
-    }
-  }
-  private string _OrigType = string.Empty;
+  public string OrigName => Property.Name;
 
   [DataGridColumn(
-    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.OriginalPropertyName),
-    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.OriginalPropertyNameTooltip)
-    )]
-  public string OrigName
-  {
-   [DebuggerStepThrough] get { return _OrigName; }
-    set
-    {
-      if (_OrigName != value)
-      {
-        _OrigName = value;
-        NotifyPropertyChanged(nameof(OrigName));
-      }
-    }
-  }
-  private string _OrigName = string.Empty;
-
-  [DataGridColumn(
-    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.TargetPropertyName),
-    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.TargetPropertyNameTooltip)
+    HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.TargetPropertyName),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.TargetPropertyNameTooltip)
     )]
   public string? TargetName
   {
-   [DebuggerStepThrough] get { return _TargetName; }
+    [DebuggerStepThrough]
+    get { return _TargetName; }
     set
     {
       if (_TargetName != value)
@@ -92,48 +77,19 @@ public class PropertyConfigViewModel : VisibleViewModel
   private string? _TargetName;
 
   [DataGridColumn(
-    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.ExcludedPropertyNamespace),
-    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.ExcludedPropertyNamespaceTooltip)
+    HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.ExcludedPropertyType),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.ExcludedPropertyTypeTooltip)
     )]
-  public bool ExcludedNamespace
-  {
-   [DebuggerStepThrough] get { return _ExcludedNamespace; }
-    set
-    {
-      if (_ExcludedNamespace != value)
-      {
-        _ExcludedNamespace = value;
-        NotifyPropertyChanged(nameof(ExcludedNamespace));
-      }
-    }
-  }
-  private bool _ExcludedNamespace;
+  public bool IsTypeExcluded => Parent.Excluded;
 
   [DataGridColumn(
-    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.ExcludedPropertyType),
-    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.ExcludedPropertyTypeTooltip)
-    )]
-  public bool ExcludedType
-  {
-   [DebuggerStepThrough] get { return _ExcludedType; }
-    set
-    {
-      if (_ExcludedType != value)
-      {
-        _ExcludedType = value;
-        NotifyPropertyChanged(nameof(ExcludedType));
-      }
-    }
-  }
-  private bool _ExcludedType;
-
-  [DataGridColumn(
-    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.ExcludedProperty),
-    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.ExcludedPropertyTooltip)
+    HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.ExcludedProperty),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.ExcludedPropertyTooltip)
     )]
   public bool ExcludedProperty
   {
-   [DebuggerStepThrough] get { return _ExcludedProperty; }
+    [DebuggerStepThrough]
+    get { return _ExcludedProperty; }
     set
     {
       if (_ExcludedProperty != value)
@@ -146,12 +102,13 @@ public class PropertyConfigViewModel : VisibleViewModel
   private bool _ExcludedProperty;
 
   [DataGridColumn(
-    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.OriginalPropValueNamespace),
-    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.OriginalPropValueNamespaceTooltip)
+    HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.OriginalPropValueNamespace),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.OriginalPropValueNamespaceTooltip)
     )]
   public string OrigValueNamespace
   {
-   [DebuggerStepThrough] get { return _OrigValueNamespace; }
+    [DebuggerStepThrough]
+    get { return _OrigValueNamespace; }
     set
     {
       if (_OrigValueNamespace != value)
@@ -164,12 +121,13 @@ public class PropertyConfigViewModel : VisibleViewModel
   private string _OrigValueNamespace = string.Empty;
 
   [DataGridColumn(
-    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.OriginalPropValueType),
-    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.OriginalPropValueTypeTooltip)
+    HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.OriginalPropValueType),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.OriginalPropValueTypeTooltip)
     )]
   public string OrigValueType
   {
-   [DebuggerStepThrough] get { return _OrigValueType; }
+    [DebuggerStepThrough]
+    get { return _OrigValueType; }
     set
     {
       if (_OrigValueType != value)
@@ -182,12 +140,13 @@ public class PropertyConfigViewModel : VisibleViewModel
   private string _OrigValueType = string.Empty;
 
   [DataGridColumn(
-    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.ExcludedValueType),
-    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.ExcludedValueTypeTooltip)
+    HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.ExcludedValueType),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.ExcludedValueTypeTooltip)
     )]
   public bool ExcludedValueType
   {
-   [DebuggerStepThrough] get { return _ExcludedValueType; }
+    [DebuggerStepThrough]
+    get { return _ExcludedValueType; }
     set
     {
       if (_ExcludedValueType != value)
@@ -200,12 +159,13 @@ public class PropertyConfigViewModel : VisibleViewModel
   private bool _ExcludedValueType;
 
   [DataGridColumn(
-    HeaderResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.TargetPropertyType),
-    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings."+nameof(CommonStrings.TargetPropertyTypeTooltip)
+    HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.TargetPropertyType),
+    HeaderTooltipResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.TargetPropertyTypeTooltip)
     )]
   public string? TargetPropertyType
   {
-   [DebuggerStepThrough] get { return _TargetPropertyType; }
+    [DebuggerStepThrough]
+    get { return _TargetPropertyType; }
     set
     {
       if (_TargetPropertyType != value)
@@ -216,10 +176,11 @@ public class PropertyConfigViewModel : VisibleViewModel
     }
   }
   private string? _TargetPropertyType;
-  
+
   public new bool IsValid
   {
-   [DebuggerStepThrough] get { return _IsValid; }
+    [DebuggerStepThrough]
+    get { return _IsValid; }
     set
     {
       if (_IsValid != value)
@@ -233,7 +194,8 @@ public class PropertyConfigViewModel : VisibleViewModel
 
   public string? ValidationMsg
   {
-   [DebuggerStepThrough] get { return _ValidationMsg; }
+    [DebuggerStepThrough]
+    get { return _ValidationMsg; }
     set
     {
       if (_ValidationMsg != value)

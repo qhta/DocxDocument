@@ -27,11 +27,11 @@ public class ModelConfigViewModel : ViewModel
   /// <summary>
   /// Stores loaded assembly name. 
   /// </summary>
-  public string AssemblyName { get; private set; }
+  public string AssemblyName { [DebuggerStepThrough] get; private set; }
   /// <summary>
   /// Stores loaded assemblies.
   /// </summary>
-  public IEnumerable<Assembly> LoadedAssemblies { get; private set; }
+  public IEnumerable<Assembly> LoadedAssemblies { [DebuggerStepThrough] get; private set; }
 
   /// <summary>
   /// Load main assembly and its references assemblies.
@@ -59,7 +59,7 @@ public class ModelConfigViewModel : ViewModel
   /// <summary>
   /// List of all types exported by loaded assemblies.
   /// </summary>
-  public IEnumerable<Type> LoadedTypes { get; private set; }
+  public IEnumerable<Type> LoadedTypes { [DebuggerStepThrough] get; private set; }
 
   /// <summary>
   /// Gets types from loaded assemblies to the list of loaded types.
@@ -79,7 +79,7 @@ public class ModelConfigViewModel : ViewModel
   /// <summary>
   /// List of all namespaces in loaded assemblies.
   /// </summary>
-  public IEnumerable<string> LoadedNamespaces { get; private set; }
+  public IEnumerable<string> LoadedNamespaces { [DebuggerStepThrough] get; private set; }
 
   /// <summary>
   /// Loads unique namespaces from loaded types to the list of loaded namespaces.
@@ -99,7 +99,7 @@ public class ModelConfigViewModel : ViewModel
   /// <summary>
   /// List of all public properties of loaded types.
   /// </summary>
-  public IEnumerable<PropertyInfo> LoadedProperties { get; private set; }
+  public IEnumerable<PropertyInfo> LoadedProperties { [DebuggerStepThrough] get; private set; }
 
   /// <summary>
   /// Gets property infos from loaded types to the list of loaded properties.
@@ -115,13 +115,13 @@ public class ModelConfigViewModel : ViewModel
     return loadedProperties;
   }
 
-  public ModelConfigData ConfigData { get; set; }
+  public ModelConfigData ConfigData { [DebuggerStepThrough] get; set; }
 
-  public NamespaceConfigListViewModel NamespaceConfigList { get; private set; }
+  public NamespaceConfigListViewModel NamespaceConfigList { [DebuggerStepThrough] get; private set; }
 
-  public TypeConfigListViewModel TypeConfigList { get; private set; }
+  public TypeConfigListViewModel TypeConfigList { [DebuggerStepThrough] get; private set; }
 
-  public PropertyConfigListViewModel PropertiesConfigList { get; private set; }
+  public PropertyConfigListViewModel PropertiesConfigList { [DebuggerStepThrough] get; private set; }
 
   /// <summary>
   /// Asynchronously Loads data defined in the assembly.
@@ -137,9 +137,16 @@ public class ModelConfigViewModel : ViewModel
   /// <param name="configData"></param>
   public void CreateViewModelItems(ModelConfigData configData)
   {
+    NamespaceConfigList.Items.Clear();
+    TypeConfigList.Items.Clear();
+    PropertiesConfigList.Items.Clear();
     NamespaceConfigList.CreateItems(configData);
-    TypeConfigList.CreateItems(configData);
-    PropertiesConfigList.CreateItems(configData);
+    foreach (var nsVM in NamespaceConfigList.Items)
+    {
+      TypeConfigList.CreateItems(nsVM, configData);
+    }
+   //foreach (var typeVM in TypeConfigList.Items)
+   //  PropertiesConfigList.CreateItems(typeVM, configData);
   }
 
   /// <summary>
@@ -155,7 +162,7 @@ public class ModelConfigViewModel : ViewModel
   ///// <summary>
   ///// A command to restore config data.
   ///// </summary>
-  //public Command RestoreDataCommand { get; }
+  //public Command RestoreDataCommand { [DebuggerStepThrough] get; }
 
   ///// <summary>
   ///// Checks if config data can be restored (true if it was loaded previously).

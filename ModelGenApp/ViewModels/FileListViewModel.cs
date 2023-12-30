@@ -13,16 +13,16 @@ public class FileListViewModel : ViewModel<FilesList>, IEnumerable<FileViewModel
     GetData(model);
   }
 
-  public FolderViewModel? ParentFolder { get; set; }
+  public FolderViewModel? ParentFolder { [DebuggerStepThrough] get; set; }
 
-  public ListViewModel<FileViewModel> Files { get; private set; }
+  public ListViewModel<FileViewModel> Files { [DebuggerStepThrough] get; private set; }
 
 
   private CollectionViewSource<FileViewModel> CollectionViewSource;
   /// <summary>
   /// This is the result collection view to be used in DataGrid.
   /// </summary>
-  public ICollectionView VisibleItems { get; private set; }
+  public ICollectionView VisibleItems { [DebuggerStepThrough] get; private set; }
 
   public void GetData(FilesList compilationFiles)
   {

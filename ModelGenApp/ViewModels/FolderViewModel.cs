@@ -9,8 +9,8 @@ public class FolderViewModel : FileViewModel
     TotalCount = model.Items.TotalCount;
   }
 
-  public FileListViewModel Items { get; private set; }
-  public int TotalCount { get; private set; }
+  public FileListViewModel Items { [DebuggerStepThrough] get; private set; }
+  public int TotalCount { [DebuggerStepThrough] get; private set; }
 
   public override string Caption => Name+$" ({TotalCount})";
 

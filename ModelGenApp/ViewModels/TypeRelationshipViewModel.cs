@@ -10,11 +10,11 @@ public class TypeRelationshipViewModel : ViewModel<TypeRelationship>, IAcceptabl
     IsIncoming = incoming;
   }
 
-  public PhaseResultsViewModel Phase { get; private set; }
+  public PhaseResultsViewModel Phase { [DebuggerStepThrough] get; private set; }
 
-  public TypeInfoViewModel? Owner { get; private set; }
+  public TypeInfoViewModel? Owner { [DebuggerStepThrough] get; private set; }
 
-  public TNS NameKindSelector { get; private set; }
+  public TNS NameKindSelector { [DebuggerStepThrough] get; private set; }
 
   public bool IsAccepted => Model.Target.IsAcceptedAfter(Phase.PhaseNum);
 
@@ -63,7 +63,7 @@ public class TypeRelationshipViewModel : ViewModel<TypeRelationship>, IAcceptabl
   }
   private bool _ShowFullTypeName;
 
-  public bool IsIncoming { get; set; }
+  public bool IsIncoming { [DebuggerStepThrough] get; set; }
 
   [DataGridColumn(
     HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.RelatedType),

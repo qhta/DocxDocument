@@ -14,7 +14,7 @@ public class PropListViewModel : ItemListViewModel<PropInfoViewModel>
     //_Predicate = new Predicate<object>(obj=> obj_Predicate.Invoke(obj));
   }
 
-  public TNS TypeNameSelector { get; private set; }
+  public TNS TypeNameSelector { [DebuggerStepThrough] get; private set; }
 
   public bool ShowFullTypeName
   {

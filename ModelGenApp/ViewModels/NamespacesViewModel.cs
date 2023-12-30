@@ -10,9 +10,9 @@ public class NamespacesViewModel : ViewModel
     FillItemsAsync();
   }
 
-  public ObservableList<NamespaceViewModel> Items { get; private set; }
+  public ObservableList<NamespaceViewModel> Items { [DebuggerStepThrough] get; private set; }
 
-  public PhaseResultsViewModel Phase { get; private set; }
+  public PhaseResultsViewModel Phase { [DebuggerStepThrough] get; private set; }
 
   public NTS NamespacesSelector => Phase.NamespacesSelector;
 

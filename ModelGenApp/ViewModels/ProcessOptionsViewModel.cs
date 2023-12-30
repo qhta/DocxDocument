@@ -359,7 +359,7 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
   /// <summary>
   /// A command to store config data
   /// </summary>
-  public Command SaveOptionsCommand { get; }
+  public Command SaveOptionsCommand { [DebuggerStepThrough] get; }
 
   /// <summary>
   /// Execute method to store config data.
@@ -378,7 +378,7 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
   /// <summary>
   /// A command to restore config data
   /// </summary>
-  public Command RestoreOptionsCommand { get; }
+  public Command RestoreOptionsCommand { [DebuggerStepThrough] get; }
 
   /// <summary>
   /// Execute method to restore config data.
@@ -399,7 +399,7 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
   /// <summary>
   /// A command to browse model doc file.
   /// </summary>
-  public Command BrowseModelDocFileCommand { get; }
+  public Command BrowseModelDocFileCommand { [DebuggerStepThrough] get; }
 
   /// <summary>
   /// Execute method to browse model doc file.
@@ -421,7 +421,7 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
   /// <summary>
   /// A command to browse code output path.
   /// </summary>
-  public Command BrowseCodeOutputPathCommand { get; }
+  public Command BrowseCodeOutputPathCommand { [DebuggerStepThrough] get; }
 
   /// <summary>
   /// Execute method to browse code output path.
@@ -445,7 +445,7 @@ public partial class ProcessOptionsViewModel : ViewModel<ProcessOptions>
   /// <summary>
   /// A command to create app data folder.
   /// </summary>
-  public Command AddAppDataFolderCommand { get; }
+  public Command AddAppDataFolderCommand { [DebuggerStepThrough] get; }
 
   /// <summary>
   /// Execute method to create app data folder.

@@ -560,24 +560,6 @@ namespace ModelGenApp {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Excl.prop.ns..
-        /// </summary>
-        public static string ExcludedPropertyNamespace {
-            get {
-                return ResourceManager.GetString("ExcludedPropertyNamespace", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Is property namespace excluded?.
-        /// </summary>
-        public static string ExcludedPropertyNamespaceTooltip {
-            get {
-                return ResourceManager.GetString("ExcludedPropertyNamespaceTooltip", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Excluded property is rejected even if its type is accepted..
         /// </summary>
         public static string ExcludedPropertyTooltip {
