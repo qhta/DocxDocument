@@ -200,7 +200,7 @@ It should be prepared by an external tool.</value>
     <value>Original name is a name read from source.</value>
   </data>
   <data name="ExcludedNamespaceTooltip" xml:space="preserve">
-    <value>Excluded namespace is rejected from scanning.</value>
+    <value>Excluded namespace contains types excluded from processing.</value>
   </data>
   <data name="Shortcut" xml:space="preserve">
     <value>Shortcut</value>
@@ -279,8 +279,7 @@ If not defined then a property can be declared in any type.</value>
     <value>Config property name</value>
   </data>
   <data name="ConfigPropertyNameTooltip" xml:space="preserve">
-    <value>Config property name is declared name of the property. 
-Can contain * as a wildcard.</value>
+    <value>Config property name is declared name of the property. </value>
   </data>
   <data name="Name" xml:space="preserve">
     <value>Name</value>
@@ -796,12 +795,24 @@ Use '*' wildcard character to match many characters.</value>
     <value>Input assembly not specified</value>
   </data>
   <data name="IncludedNamespace" xml:space="preserve">
-    <value>Is included?</value>
+    <value>Is ns included?</value>
   </data>
   <data name="IncludedNamespaceTooltip" xml:space="preserve">
-    <value>Included namespace are accepted in scanning as origin ones.</value>
+    <value>Included namespace contains types included in processing.</value>
   </data>
   <data name="TypeKind" xml:space="preserve">
     <value>Type kind</value>
+  </data>
+  <data name="Accept" xml:space="preserve">
+    <value>Accept?</value>
+  </data>
+  <data name="Excl" xml:space="preserve">
+    <value>Excl?</value>
+  </data>
+  <data name="OriginalTypeNameTooltip" xml:space="preserve">
+    <value>Original type name as read from source.</value>
+  </data>
+  <data name="IncludedPropertyTooltip" xml:space="preserve">
+    <value>Property can be included only if its declaring type is included.</value>
   </data>
 </root>

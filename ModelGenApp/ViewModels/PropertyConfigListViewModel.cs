@@ -1,7 +1,7 @@
 ﻿namespace ModelGenApp.ViewModels;
 public class PropertyConfigListViewModel : ConfigListViewModel
 {
-  public PropertyConfigListViewModel(ModelConfigViewModel parent) : base(parent)
+  public PropertyConfigListViewModel(ModelConfigViewModel owner) : base(owner)
   {
     Caption = CommonStrings.ModelConfiguration + ": " + CommonStrings.Properties.ToLower();
     Items = new ListViewModel<PropertyConfigViewModel>();
@@ -26,7 +26,7 @@ public class PropertyConfigListViewModel : ConfigListViewModel
     Items.Clear();
     typesCount = 0;
     propCount = 0;
-    ProgressBarMaximum = Parent.TypeConfigList.Items.Count;
+    ProgressBarMaximum = Owner.TypeConfigList.Items.Count;
   }
 
   int typesCount = 0;
@@ -67,11 +67,12 @@ public class PropertyConfigListViewModel : ConfigListViewModel
         OrigValueNamespace = valueTypeNamespace,
         OrigValueType = valueTypeName
       };
-      //item.IsNamespaceExcluded = configData.ExcludedNamespaces.Contains(propNamespace);
-      //item.IsTypeExcluded = configData.ExcludedTypes.Contains(propTypename);
-      item.ExcludedProperty = configData.ExcludedProperties.Contains(fullPropName)
+
+      if (configData.ExcludedProperties.Contains(fullPropName)
         || configData.ExcludedProperties.Contains(typedPropName)
-        || configData.ExcludedProperties.Contains(propName);
+        || configData.ExcludedProperties.Contains(propName))
+        item.IsExcluded = true;
+
       item.ExcludedValueType =
         (configData.ExcludedNamespaces.Contains(valueTypeNamespace) && !configData.IncludedTypes.Contains(valueType.Name))
         || configData.ExcludedTypes.Contains(valueType.Name);
@@ -90,16 +91,16 @@ public class PropertyConfigListViewModel : ConfigListViewModel
   public override void SetData(ModelConfigData configData)
   {
     configData.ExcludedProperties.Clear();
-    foreach (var item in Items.Where(item => item.ExcludedProperty))
-      configData.ExcludedProperties.Add(ModelConfig.JoinTypeAndProperty(item.OrigTypeName, item.OrigName));
+    foreach (var item in Items.Where(item => item.IsExcluded && item.IsExcluded!=item.Parent.IsExcluded))
+      configData.ExcludedProperties.Add(ModelConfig.JoinTypeAndProperty(item.DeclaringType, item.OrigName));
 
     configData.PropertyTranslateTable.Clear();
     foreach (var item in Items.Where(item => !String.IsNullOrEmpty(item.TargetName)))
-      configData.PropertyTranslateTable.Add(ModelConfig.JoinTypeAndProperty(item.OrigTypeName, item.OrigName), item.TargetName ?? "");
+      configData.PropertyTranslateTable.Add(ModelConfig.JoinTypeAndProperty(item.DeclaringType, item.OrigName), item.TargetName ?? "");
 
     configData.PropertyTypeConversion.Clear();
     foreach (var item in Items.Where(item => !String.IsNullOrEmpty(item.TargetPropertyType)))
-      configData.PropertyTypeConversion.Add(ModelConfig.JoinTypeAndProperty(item.OrigTypeName, item.OrigName), item.TargetPropertyType ?? "");
+      configData.PropertyTypeConversion.Add(ModelConfig.JoinTypeAndProperty(item.DeclaringType, item.OrigName), item.TargetPropertyType ?? "");
 
   }
 

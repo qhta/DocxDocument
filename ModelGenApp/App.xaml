@@ -244,12 +244,13 @@
                  ToolTip="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=DataContext.Item2}" />
         </Grid>
       </DataTemplate>
+      
       <DataTemplate x:Key="ShortcutCellEditingTemplate">
         <TextBox Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=DataContext.Item1, 
                UpdateSourceTrigger=PropertyChanged}"
                  Style="{StaticResource NoBorderTextBoxStyle}" />
       </DataTemplate>
-
+      
       <DataTemplate x:Key="TypeInfoLinkTemplate">
         <TextBlock Text="{Binding Path=Name}"
                    TextDecorations="Underline">

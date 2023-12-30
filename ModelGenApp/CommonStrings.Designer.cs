@@ -61,6 +61,15 @@ namespace ModelGenApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Accept?.
+        /// </summary>
+        public static string Accept {
+            get {
+                return ResourceManager.GetString("Accept", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Acceptance.
         /// </summary>
         public static string Acceptance {
@@ -277,8 +286,7 @@ namespace ModelGenApp {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Config property name is declared name of the property. 
-        ///Can contain * as a wildcard..
+        ///   Looks up a localized string similar to Config property name is declared name of the property. .
         /// </summary>
         public static string ConfigPropertyNameTooltip {
             get {
@@ -524,6 +532,15 @@ namespace ModelGenApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Excl?.
+        /// </summary>
+        public static string Excl {
+            get {
+                return ResourceManager.GetString("Excl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Exclude.
         /// </summary>
         public static string Exclude {
@@ -542,7 +559,7 @@ namespace ModelGenApp {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Excluded namespace is rejected from scanning..
+        ///   Looks up a localized string similar to Excluded namespace contains types excluded from processing..
         /// </summary>
         public static string ExcludedNamespaceTooltip {
             get {
@@ -759,7 +776,7 @@ namespace ModelGenApp {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Is included?.
+        ///   Looks up a localized string similar to Is ns included?.
         /// </summary>
         public static string IncludedNamespace {
             get {
@@ -768,11 +785,20 @@ namespace ModelGenApp {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Included namespace are accepted in scanning as origin ones..
+        ///   Looks up a localized string similar to Included namespace contains types included in processing..
         /// </summary>
         public static string IncludedNamespaceTooltip {
             get {
                 return ResourceManager.GetString("IncludedNamespaceTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Property can be included only if its declaring type is included..
+        /// </summary>
+        public static string IncludedPropertyTooltip {
+            get {
+                return ResourceManager.GetString("IncludedPropertyTooltip", resourceCulture);
             }
         }
         
@@ -1260,6 +1286,15 @@ namespace ModelGenApp {
         public static string OriginalTypeName {
             get {
                 return ResourceManager.GetString("OriginalTypeName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Original type name as read from source..
+        /// </summary>
+        public static string OriginalTypeNameTooltip {
+            get {
+                return ResourceManager.GetString("OriginalTypeNameTooltip", resourceCulture);
             }
         }
         
