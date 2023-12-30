@@ -55,6 +55,11 @@ public class TypeConfigListViewModel : ConfigListViewModel
   /// </summary>
   public ICollectionView VisibleItems { [DebuggerStepThrough] get; private set; }
 
+  public void ClearItems()
+  {
+    Items.Clear();
+  }
+
   public void CreateItems(NamespaceConfigViewModel nsVM, ModelConfigData configData)
   {
     var fullNameComparison = configData.IncludedTypes.FirstOrDefault(item => item.Contains('.')) != null

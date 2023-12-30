@@ -137,16 +137,16 @@ public class ModelConfigViewModel : ViewModel
   /// <param name="configData"></param>
   public void CreateViewModelItems(ModelConfigData configData)
   {
-    NamespaceConfigList.Items.Clear();
-    TypeConfigList.Items.Clear();
-    PropertiesConfigList.Items.Clear();
+    NamespaceConfigList.ClearItems();
     NamespaceConfigList.CreateItems(configData);
+    TypeConfigList.ClearItems();
     foreach (var nsVM in NamespaceConfigList.Items)
     {
       TypeConfigList.CreateItems(nsVM, configData);
     }
-   //foreach (var typeVM in TypeConfigList.Items)
-   //  PropertiesConfigList.CreateItems(typeVM, configData);
+    PropertiesConfigList.ClearItems();
+    foreach (var typeVM in TypeConfigList.Items)
+      PropertiesConfigList.CreateItems(typeVM, configData);
   }
 
   /// <summary>

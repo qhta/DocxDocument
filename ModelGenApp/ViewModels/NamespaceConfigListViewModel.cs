@@ -19,6 +19,11 @@ public class NamespaceConfigListViewModel : ConfigListViewModel
   /// </summary>
   public ICollectionView VisibleItems { [DebuggerStepThrough] get; private set; }
 
+  public void ClearItems()
+  {
+    Items.Clear();
+  }
+
   public void CreateItems(ModelConfigData configData)
   {
     foreach (var ns in Parent.LoadedNamespaces)
