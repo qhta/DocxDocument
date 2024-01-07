@@ -815,4 +815,31 @@ Use '*' wildcard character to match many characters.</value>
   <data name="IncludedPropertyTooltip" xml:space="preserve">
     <value>Property can be included only if its declaring type is included.</value>
   </data>
+  <data name="LibraryName" xml:space="preserve">
+    <value>Library name</value>
+  </data>
+  <data name="LibraryNameTooltip" xml:space="preserve">
+    <value>Name of the DLL (without extension)</value>
+  </data>
+  <data name="IsSourceLib" xml:space="preserve">
+    <value>Source</value>
+  </data>
+  <data name="IsSourceLibTooltip" xml:space="preserve">
+    <value>Source library is read on input of the process.</value>
+  </data>
+  <data name="IsTargetLib" xml:space="preserve">
+    <value>Target</value>
+  </data>
+  <data name="IsTargetLibTooltip" xml:space="preserve">
+    <value>Target library is generated on output of the process.</value>
+  </data>
+  <data name="IsUsedLib" xml:space="preserve">
+    <value>Used</value>
+  </data>
+  <data name="IsUsedLibTooltip" xml:space="preserve">
+    <value>Used library is declared in the uses directive in GlobalUsings file.</value>
+  </data>
+  <data name="Libraries" xml:space="preserve">
+    <value>Libraries</value>
+  </data>
 </root>

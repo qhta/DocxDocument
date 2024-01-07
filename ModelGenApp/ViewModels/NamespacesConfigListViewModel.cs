@@ -1,7 +1,7 @@
 ﻿namespace ModelGenApp.ViewModels;
-public class NamespaceConfigListViewModel : ConfigListViewModel
+public class NamespacesConfigListViewModel : ConfigListViewModel
 {
-  public NamespaceConfigListViewModel(ModelConfigViewModel owner): base(owner)
+  public NamespacesConfigListViewModel(ModelConfigViewModel owner): base(owner)
   {
     Caption = CommonStrings.ModelConfiguration + " | " + CommonStrings.Namespaces.ToLower();
     Items = new ListViewModel<NamespaceConfigViewModel>();
@@ -27,7 +27,6 @@ public class NamespaceConfigListViewModel : ConfigListViewModel
 
   int nsCount = 0; 
 
-
   public void CreateItems(ModelConfigData configData)
   {
     foreach (var ns in Owner.LoadedNamespaces)
@@ -35,14 +34,14 @@ public class NamespaceConfigListViewModel : ConfigListViewModel
       var item = new NamespaceConfigViewModel { OrigName = ns };
       item.RecordNumber = ++nsCount;
       item.Types = Owner.LoadedTypes.Where(item=>item.Namespace==ns).ToArray();
-      item.IsIncluded = configData.IncludedNamespaces.Contains(ns);
-      item.IsExcluded = configData.ExcludedNamespaces.Contains(ns);
+      item.IsAccepted = configData.AcceptedNamespaces.Contains(ns);
+      item.IsRejected = configData.RejectedNamespaces.Contains(ns);
       if (configData.NamespaceShortcuts.TryGetValue(ns, out var shortcut))
         item.Shortcut = shortcut;
       if (configData.TranslatedNamespaces.TryGetValue(ns, out var translated))
       {
         item.TargetName = translated;
-        item.TargetExcluded = configData.ExcludedNamespaces.Contains(translated);
+        item.TargetExcluded = configData.RejectedNamespaces.Contains(translated);
       }
       if (translated != null)
         if (configData.NamespaceShortcuts.TryGetValue(translated, out var targetShortcut))
@@ -63,18 +62,18 @@ public class NamespaceConfigListViewModel : ConfigListViewModel
 
   public override void SetData(ModelConfigData configData)
   {
-    configData.IncludedNamespaces.Clear();
-    configData.ExcludedNamespaces.Clear();
+    configData.AcceptedNamespaces.Clear();
+    configData.RejectedNamespaces.Clear();
     configData.NamespaceShortcuts.Clear();
     configData.TranslatedNamespaces.Clear();
     foreach (var item in Items)
     {
-      if (item.IsIncluded)
-        configData.IncludedNamespaces.Add(item.OrigName);
-      if (item.IsExcluded)
-        configData.ExcludedNamespaces.Add(item.OrigName);
+      if (item.IsAccepted)
+        configData.AcceptedNamespaces.Add(item.OrigName);
+      if (item.IsRejected)
+        configData.RejectedNamespaces.Add(item.OrigName);
       if (item.TargetExcluded && item.TargetName != null)
-        configData.ExcludedNamespaces.Add(item.TargetName);
+        configData.RejectedNamespaces.Add(item.TargetName);
       if (!String.IsNullOrWhiteSpace(item.Shortcut))
         configData.NamespaceShortcuts.Add(item.OrigName, item.Shortcut);
       if (!String.IsNullOrWhiteSpace(item.TargetName))

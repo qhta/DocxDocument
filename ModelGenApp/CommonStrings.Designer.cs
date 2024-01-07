@@ -902,11 +902,92 @@ namespace ModelGenApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Source.
+        /// </summary>
+        public static string IsSourceLib {
+            get {
+                return ResourceManager.GetString("IsSourceLib", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Source library is read on input of the process..
+        /// </summary>
+        public static string IsSourceLibTooltip {
+            get {
+                return ResourceManager.GetString("IsSourceLibTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Target.
+        /// </summary>
+        public static string IsTargetLib {
+            get {
+                return ResourceManager.GetString("IsTargetLib", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Target library is generated on output of the process..
+        /// </summary>
+        public static string IsTargetLibTooltip {
+            get {
+                return ResourceManager.GetString("IsTargetLibTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Used.
+        /// </summary>
+        public static string IsUsedLib {
+            get {
+                return ResourceManager.GetString("IsUsedLib", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Used library is declared in the uses directive in GlobalUsings file..
+        /// </summary>
+        public static string IsUsedLibTooltip {
+            get {
+                return ResourceManager.GetString("IsUsedLibTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Kind.
         /// </summary>
         public static string Kind {
             get {
                 return ResourceManager.GetString("Kind", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Libraries.
+        /// </summary>
+        public static string Libraries {
+            get {
+                return ResourceManager.GetString("Libraries", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Library name.
+        /// </summary>
+        public static string LibraryName {
+            get {
+                return ResourceManager.GetString("LibraryName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name of the DLL (without extension).
+        /// </summary>
+        public static string LibraryNameTooltip {
+            get {
+                return ResourceManager.GetString("LibraryNameTooltip", resourceCulture);
             }
         }
         

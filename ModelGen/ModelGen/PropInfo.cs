@@ -111,7 +111,7 @@ public class PropInfo : MemberElement
     if (propertyInfo.SetMethod == null || !propertyInfo.SetMethod.IsPublic)
       IsReadonly = true;
 
-    if (ModelConfig.Instance.ExcludedProperties.Contains(propertyInfo.Name))
+    if (ModelConfig.Instance.RejectedProperties.Contains(propertyInfo.Name))
       SetRejected(PPS.ScanSource);
     var xmlDocsElement = propertyInfo.GetXmlDocsElement();
     if (xmlDocsElement != null)
@@ -127,7 +127,7 @@ public class PropInfo : MemberElement
   {
     if (ModelConfig.Instance == null)
       throw new System.InvalidOperationException(CommonStrings.Model_configuration_not_defined);
-    if (ModelConfig.Instance.ExcludedProperties.Contains(typeInfo.Name))
+    if (ModelConfig.Instance.RejectedProperties.Contains(typeInfo.Name))
       SetRejected(PPS.ScanSource);
   }
 

@@ -82,7 +82,7 @@ public class TypeInfo : ModelElement
     if (Owner is Namespace nspace)
     {
       if (nspace.TargetName != null) return nspace.TargetName;
-      if (ModelConfig.Instance.TranslatedNamespaces.TryGetValue2(nspace.Name, out var targetNamespace))
+      if (ModelConfig.Instance.TranslatedNamespaces.TryGetValue(nspace.Name, out var targetNamespace))
         return targetNamespace;
       return nspace.Name;
     }

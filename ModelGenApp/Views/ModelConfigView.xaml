@@ -11,13 +11,16 @@
   <Grid>
     <ContentControl Content="{Binding}">
       <ContentControl.Resources>
-        <DataTemplate DataType="{x:Type vm:NamespaceConfigListViewModel}">
-          <views:NamespacesConfigView/>
+        <DataTemplate DataType="{x:Type vm:LibrariesConfigListViewModel}">
+          <views:LibrariesConfigView/>
         </DataTemplate>
-        <DataTemplate DataType="{x:Type vm:TypeConfigListViewModel}">
+        <DataTemplate DataType="{x:Type vm:NamespacesConfigListViewModel}">
+          <views:NamespacesConfigView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:TypesConfigListViewModel}">
           <views:TypesConfigView/>
         </DataTemplate>
-        <DataTemplate DataType="{x:Type vm:PropertyConfigListViewModel}">
+        <DataTemplate DataType="{x:Type vm:PropertiesConfigListViewModel}">
           <views:PropertiesConfigView/>
         </DataTemplate>
       </ContentControl.Resources>
