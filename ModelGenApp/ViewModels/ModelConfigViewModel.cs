@@ -1,4 +1,6 @@
-﻿namespace ModelGenApp.ViewModels;
+﻿using System.Collections.Immutable;
+
+namespace ModelGenApp.ViewModels;
 
 /// <summary>
 /// Compound view model of model config data. Inherited classes specify some group of settings.
@@ -11,18 +13,45 @@ public class ModelConfigViewModel : ViewModel
   public ModelConfigViewModel(string assemblyName, ModelConfigData configData)
   {
     AssemblyName = assemblyName;
+    Assembly entryAssembly = Assembly.GetEntryAssembly()!;
+    var entryAssemblyName = entryAssembly.GetName();
+    var assemblyNames = new List<AssemblyName>();//entryAssembly.GetReferencedAssemblies().OrderBy(item => item.FullName).ToList();
+    string binFolder = Path.GetDirectoryName(entryAssembly.Location)!;
+    var dllFiles = Directory.EnumerateFiles(binFolder, "*.dll");
+    foreach (var dllFile in dllFiles)
+    {
+      if (!Path.GetFileName(dllFile).StartsWith("ModelGen"))
+      {
+        var asm = Assembly.LoadFile(dllFile);
+        var asmName = asm!.GetName();
+        if (asmName.Name != entryAssemblyName.Name)
+        {
+          if (asmName != null && !assemblyNames.Any(item => item.Name == asmName.Name))
+          {
+            assemblyNames.Add(asmName);
+          }
+        }
+      }
+    }
+    ReferencedAssemblyNames = assemblyNames.OrderBy(item => item.FullName).ToList();
     LoadedAssemblies = LoadAssemblies(assemblyName);
     LoadedTypes = GetTypes(LoadedAssemblies);
     LoadedNamespaces = GetNamespaces(LoadedTypes);
     LoadedProperties = GetProperties(LoadedTypes);
     ConfigData = configData;
-    NamespaceConfigList = new NamespaceConfigListViewModel(this);
-    TypeConfigList = new TypeConfigListViewModel(this);
-    PropertiesConfigList = new PropertyConfigListViewModel(this);
+    LibrariesConfigList = new LibrariesConfigListViewModel(this);
+    NamespacesConfigList = new NamespacesConfigListViewModel(this);
+    TypesConfigList = new TypesConfigListViewModel(this);
+    PropertiesConfigList = new PropertiesConfigListViewModel(this);
     //StoreDataCommand = new RelayCommand(StoreData, CanStoreData) { Name = "StoreDataCommand" };
     //RestoreDataCommand = new RelayCommand(RestoreData, CanRestoreData) { Name = "RestoreDataCommand" };
     CreateViewModelItemsAsync(configData);
   }
+
+  /// <summary>
+  /// Stores loaded assemblies.
+  /// </summary>
+  public IEnumerable<AssemblyName> ReferencedAssemblyNames { [DebuggerStepThrough] get; private set; }
 
   /// <summary>
   /// Stores loaded assembly name. 
@@ -38,7 +67,7 @@ public class ModelConfigViewModel : ViewModel
   /// </summary>
   private IEnumerable<Assembly> LoadAssemblies(string assemblyName)
   {
-    var loadedAssemblies = new List<Assembly> ();
+    var loadedAssemblies = new List<Assembly>();
     var mainAssembly = Assembly.Load(AssemblyName);
     loadedAssemblies.Add(mainAssembly);
     foreach (var asm in mainAssembly.GetReferencedAssemblies())
@@ -67,10 +96,10 @@ public class ModelConfigViewModel : ViewModel
   /// </summary>
   private IEnumerable<Type> GetTypes(IEnumerable<Assembly> loadedAssemblies)
   {
-    var loadedTypes = new List<Type> ();
+    var loadedTypes = new List<Type>();
     foreach (var assembly in loadedAssemblies)
     {
-      var types = assembly.GetExportedTypes().Where(type=>!type.IsCompilerGenerated());
+      var types = assembly.GetExportedTypes().Where(type => !type.IsCompilerGenerated());
       loadedTypes.AddRange(types);
     }
     return loadedTypes;
@@ -86,7 +115,7 @@ public class ModelConfigViewModel : ViewModel
   /// </summary>
   private IEnumerable<string> GetNamespaces(IEnumerable<Type> loadedTypes)
   {
-    var loadedNamespaces = new List<string> ();
+    var loadedNamespaces = new List<string>();
     foreach (var type in loadedTypes)
     {
       var ns = type.Namespace!;
@@ -117,11 +146,13 @@ public class ModelConfigViewModel : ViewModel
 
   public ModelConfigData ConfigData { [DebuggerStepThrough] get; set; }
 
-  public NamespaceConfigListViewModel NamespaceConfigList { [DebuggerStepThrough] get; private set; }
+  public LibrariesConfigListViewModel LibrariesConfigList { [DebuggerStepThrough] get; private set; }
 
-  public TypeConfigListViewModel TypeConfigList { [DebuggerStepThrough] get; private set; }
+  public NamespacesConfigListViewModel NamespacesConfigList { [DebuggerStepThrough] get; private set; }
 
-  public PropertyConfigListViewModel PropertiesConfigList { [DebuggerStepThrough] get; private set; }
+  public TypesConfigListViewModel TypesConfigList { [DebuggerStepThrough] get; private set; }
+
+  public PropertiesConfigListViewModel PropertiesConfigList { [DebuggerStepThrough] get; private set; }
 
   /// <summary>
   /// Asynchronously Loads data defined in the assembly.
@@ -137,15 +168,17 @@ public class ModelConfigViewModel : ViewModel
   /// <param name="configData"></param>
   public void CreateViewModelItems(ModelConfigData configData)
   {
-    NamespaceConfigList.ClearItems();
-    NamespaceConfigList.CreateItems(configData);
-    TypeConfigList.ClearItems();
-    foreach (var nsVM in NamespaceConfigList.Items)
+    LibrariesConfigList.ClearItems();
+    LibrariesConfigList.CreateItems(configData);
+    NamespacesConfigList.ClearItems();
+    NamespacesConfigList.CreateItems(configData);
+    TypesConfigList.ClearItems();
+    foreach (var nsVM in NamespacesConfigList.Items)
     {
-      TypeConfigList.CreateItems(nsVM, configData);
+      TypesConfigList.CreateItems(nsVM, configData);
     }
     PropertiesConfigList.ClearItems();
-    foreach (var typeVM in TypeConfigList.Items)
+    foreach (var typeVM in TypesConfigList.Items)
       PropertiesConfigList.CreateItems(typeVM, configData);
   }
 

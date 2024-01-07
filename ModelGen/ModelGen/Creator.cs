@@ -466,7 +466,7 @@ public class Creator
     ModelMonitor?.ShowPhaseStart(PPS.CodeGen, CommonStrings.GenerateCode);
     DateTime t1 = DateTime.Now;
     var nspaces = TypeManager.AllNamespaces.Where(item => item.IsTarget
-    && !ModelConfig.Instance!.ExcludedNamespaces.Contains(item.Name));
+    && !ModelConfig.Instance!.RejectedNamespaces.Contains(item.Name));
     var generatedTypesCount = CodeGenerator.GenerateCode(nspaces, CodeGenerator_OnGeneratingCode);
     var summaryInfo = new SummaryInfo
     {

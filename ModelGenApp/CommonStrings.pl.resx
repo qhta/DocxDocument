@@ -815,4 +815,31 @@ Użyj znaku '*' aby dopasować wzorzec do wielu znaków.</value>
   <data name="IncludedPropertyTooltip" xml:space="preserve">
     <value>Właściwość może być zaakceptowana tylko gdy jej typ deklarujący jest zaakceptowany.</value>
   </data>
+  <data name="LibraryName" xml:space="preserve">
+    <value>Nazwa biblioteki</value>
+  </data>
+  <data name="LibraryNameTooltip" xml:space="preserve">
+    <value>Nazwa DLL (bez rozszerzenia)</value>
+  </data>
+  <data name="IsSourceLib" xml:space="preserve">
+    <value>Źródłowa</value>
+  </data>
+  <data name="IsSourceLibTooltip" xml:space="preserve">
+    <value>Biblioteka źródłowa jest czytana na wejściu procesu.</value>
+  </data>
+  <data name="IsTargetLib" xml:space="preserve">
+    <value>Docelowa</value>
+  </data>
+  <data name="IsTargetLibTooltip" xml:space="preserve">
+    <value>Biblioteka docelowa jest generowana na wyjściu procesu.</value>
+  </data>
+  <data name="IsUsedLib" xml:space="preserve">
+    <value>Używana</value>
+  </data>
+  <data name="IsUsedLibTooltip" xml:space="preserve">
+    <value>Biblioteka używana jest deklarowana w dyrektywie uses pliku GlobalUsings.</value>
+  </data>
+  <data name="Libraries" xml:space="preserve">
+    <value>Biblioteki</value>
+  </data>
 </root>

@@ -18,12 +18,18 @@
     </Grid.RowDefinitions>
     <Menu Grid.Row="0" >
       <MenuItem Header="{x:Static local:CommonStrings.Config}" >
+        <MenuItem Header="{x:Static local:CommonStrings.Libraries}"
+                  Command="{Binding OpenConfigCommand}"
+                  CommandParameter="Libraries" />
         <MenuItem Header="{x:Static local:CommonStrings.Namespaces}" 
-                  Command="{Binding OpenConfigCommand}" CommandParameter="Namespaces"/>
+                  Command="{Binding OpenConfigCommand}" 
+                  CommandParameter="Namespaces"/>
         <MenuItem Header="{x:Static local:CommonStrings.Types}" 
-                  Command="{Binding OpenConfigCommand}" CommandParameter="Types"/>
+                  Command="{Binding OpenConfigCommand}" 
+                  CommandParameter="Types"/>
         <MenuItem Header="{x:Static local:CommonStrings.Properties}" 
-                  Command="{Binding OpenConfigCommand}" CommandParameter="Properties"/>
+                  Command="{Binding OpenConfigCommand}" 
+                  CommandParameter="Properties"/>
       </MenuItem>
       <MenuItem Header="{x:Static local:CommonStrings.Start}" 
                 Command="{Binding StartProcessCommand}"/>

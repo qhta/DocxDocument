@@ -5,7 +5,7 @@ public partial class NamespacesConfigView : UserControl
   public NamespacesConfigView()
   {
     InitializeComponent();
-    dataGridColumnCreator = new DataGridColumnCreator(MainDataGrid, typeof(NamespaceConfigListViewModel), typeof(NamespaceConfigViewModel))
+    dataGridColumnCreator = new DataGridColumnCreator(MainDataGrid, typeof(NamespacesConfigListViewModel), typeof(NamespaceConfigViewModel))
     { IsFilterButtonVisible = true };
   }
 
@@ -17,7 +17,7 @@ public partial class NamespacesConfigView : UserControl
     if (args.PropertyName == nameof(NamespaceConfigViewModel.ShortcutError))
     {
       BindingOperations.SetBinding(args.Column, DataGridColumn.VisibilityProperty,
-        new Binding("DataContext." + nameof(NamespaceConfigListViewModel.AreAllShortcutsValid))
+        new Binding("DataContext." + nameof(NamespacesConfigListViewModel.AreAllShortcutsValid))
         {
           Source = dummyElement,
           Converter = new BoolToVisibilityConverter(),
@@ -27,7 +27,7 @@ public partial class NamespacesConfigView : UserControl
     if (args.PropertyName == nameof(NamespaceConfigViewModel.TargetNameError))
     {
       BindingOperations.SetBinding(args.Column, DataGridColumn.VisibilityProperty,
-        new Binding("DataContext." + nameof(NamespaceConfigListViewModel.AreAllTypesUnique))
+        new Binding("DataContext." + nameof(NamespacesConfigListViewModel.AreAllTypesUnique))
         {
           Source = dummyElement,
           Converter = new BoolToVisibilityConverter(),
@@ -37,7 +37,7 @@ public partial class NamespacesConfigView : UserControl
     if (args.PropertyName == nameof(NamespaceConfigViewModel.TargetShortcutError))
     {
       BindingOperations.SetBinding(args.Column, DataGridColumn.VisibilityProperty,
-        new Binding("DataContext." + nameof(NamespaceConfigListViewModel.AreAllTargetShortcutsValid))
+        new Binding("DataContext." + nameof(NamespacesConfigListViewModel.AreAllTargetShortcutsValid))
         {
           Source = dummyElement,
           Converter = new BoolToVisibilityConverter(),

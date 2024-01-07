@@ -19,30 +19,63 @@ public class ModelConfigData
   }
   public string? DataFolder { get; private set; }
 
+  #region Libraries
+  /// <summary>
+  /// List of libraries that should be read at the beginning of the process.
+  /// </summary>
+  public SortedSet<string> SourceLibraries { get; } = new ();
+
+  /// <summary>
+  /// List of libraries that should be generated at the end of the process.
+  /// </summary>
+  public SortedSet<string> TargetLibraries { get; } = new ();
+
+  /// <summary>
+  /// List of libraries that are used in the process but are not source libraries.
+  /// </summary>
+  public SortedSet<string> UsedLibraries { get; } = new ();
+  #endregion
+
   #region Namespaces
+  /// <summary>
+  /// List of namespaces that should be treated as source namespaces.
+  /// </summary>
+  public WildcardStrings SourceNamespaces { get; } = new ();
+
+  /// <summary>
+  /// List of namespaces that are defined as target namespaces.
+  /// </summary>
+  public SortedSet<string> TargetNamespaces { get; } = new ();
+
+  /// <summary>
+  /// Assignment of target namespaces to target libraries.
+  /// </summary>
+  public SortedDictionary<string, string> TargetNamespaceAssignment { get; } = new ();
+
+  /// <summary>
+  /// List of namespaces that are neither source nor target namespaces.
+  /// </summary>
+  public WildcardStrings OtherNamespaces { get; } = new ();
 
   /// <summary>
   /// List of source namespaces that should be treated as origin namespaces.
   /// </summary>
-  public WildcardStrings IncludedNamespaces { get; } = new WildcardStrings();
+  public WildcardStrings AcceptedNamespaces { get; } = new ();
 
   /// <summary>
-  /// List of origin namespaces that should be excluded from processing.
+  /// List of source namespaces that should be excluded from processing.
   /// </summary>
-  public WildcardStrings ExcludedNamespaces { get; } = new WildcardStrings();
+  public WildcardStrings RejectedNamespaces { get; } = new ();
 
   /// <summary>
   /// Translation table of origin namespaces to target namespaces.
   /// </summary>
-  public BiDiDictionary<string, string> TranslatedNamespaces { get; } = new BiDiDictionary<string, string>();
+  public Dictionary<string, string> TranslatedNamespaces { get; } = new ();
 
   /// <summary>
-  /// Shortcuts for DocumentFormat.OpenXml namespaces. 
-  /// Shortcuts for DocumentModel namespaces can be translated by replacing starting "DX" with "DM".
-  /// Shortcuts for DocumentModel.OpenXml namespaces can be translated by replacing starting "DX" with "DXM".
-  /// It is implemented in <see cref="NamespaceShortcut(string)"/> function.
+  /// Shortcuts for namespaces.Shortcuts are mutually assigned to namespaces.
   /// </summary>
-  public BiDiDictionary<string, string> NamespaceShortcuts { get; } = new BiDiDictionary<string, string>();
+  public BiDiDictionary<string, string> NamespaceShortcuts { get; } = new ();
 
 
   public string? NamespaceShortcut(string ns)
@@ -57,7 +90,7 @@ public class ModelConfigData
 
   #region Properties
 
-  public WildcardStrings ExcludedProperties { get; } = new WildcardStrings();
+  public WildcardStrings RejectedProperties { get; } = new WildcardStrings();
 
   public Dictionary<string, string> PropertyTranslateTable = new();
 
@@ -116,36 +149,36 @@ public class ModelConfigData
   {
     if (type.Namespace?.StartsWith("System") == true && !type.IsConstructedGenericType)
       return true;
-    var fullNameComparison = IncludedTypes.FirstOrDefault(item => item.Contains('.')) != null
-                          || ExcludedTypes.FirstOrDefault(item => item.Contains('.')) != null;
+    var fullNameComparison = AcceptedTypes.FirstOrDefault(item => item.Contains('.')) != null
+                          || RejectedTypes.FirstOrDefault(item => item.Contains('.')) != null;
     if (fullNameComparison)
     {
       var fullName = type.Name;
       var ns = type.Namespace ?? "";
       if (type.Namespace != null)
         fullName = type.Namespace + "." + fullName;
-      if (IncludedTypes.Contains(fullName))
+      if (AcceptedTypes.Contains(fullName))
         return false;
-      if (ExcludedNamespaces.Contains(ns))
+      if (RejectedNamespaces.Contains(ns))
         return true;
-      if (ExcludedTypes.Contains(fullName))
+      if (RejectedTypes.Contains(fullName))
         return true;
     }
     else
     {
-      if (IncludedTypes.Contains(type.Name))
+      if (AcceptedTypes.Contains(type.Name))
         return false;
-      if (ExcludedNamespaces.Contains(type.Namespace ?? ""))
+      if (RejectedNamespaces.Contains(type.Namespace ?? ""))
         return true;
-      if (ExcludedTypes.Contains(type.Name))
+      if (RejectedTypes.Contains(type.Name))
         return true;
     }
     return false;
   }
 
-  public WildcardStrings ExcludedTypes { get; } = new ();
+  public WildcardStrings AcceptedTypes { get; } = new ();
 
-  public WildcardStrings IncludedTypes { get; } = new ();
+  public WildcardStrings RejectedTypes { get; } = new ();
 
   public BiDiDictionary<string, string> TypeConversion { get; } = new();
 
@@ -324,14 +357,17 @@ public class ModelConfigData
   {
     using (var textWriter = File.CreateText(filename))
     {
-      WriteStrings(textWriter, "IncludedNamespaces", IncludedNamespaces);
-      WriteStrings(textWriter, "ExcludedNamespaces", ExcludedNamespaces);
+      WriteStrings(textWriter, "SourceLibraries", SourceLibraries);
+      WriteStrings(textWriter, "TargetLibraries", TargetLibraries);
+      WriteStrings(textWriter, "UsedLibraries", UsedLibraries);
+      WriteStrings(textWriter, "AcceptedNamespaces", AcceptedNamespaces);
+      WriteStrings(textWriter, "RejectedNamespaces", RejectedNamespaces);
       WriteDictionary(textWriter, "TranslatedNamespaces", TranslatedNamespaces);
       WriteDictionary(textWriter, "NamespaceShortcuts", NamespaceShortcuts);
-      WriteStrings(textWriter, "IncludedTypes", IncludedTypes);
-      WriteStrings(textWriter, "ExcludedTypes", ExcludedTypes);
+      WriteStrings(textWriter, "AcceptedTypes", AcceptedTypes);
+      WriteStrings(textWriter, "RejectedTypes", RejectedTypes);
       WriteDictionary(textWriter, "TypeConversion", TypeConversion);
-      WriteStrings(textWriter, "ExcludedProperties", ExcludedProperties);
+      WriteStrings(textWriter, "ExcludedProperties", RejectedProperties);
       WriteDictionary(textWriter, "PropertyTranslateTable", PropertyTranslateTable);
       WriteDictionary(textWriter, "PropertyTypeConversion", PropertyTypeConversion);
 
@@ -360,25 +396,40 @@ public class ModelConfigData
           if (line.StartsWith("[") && line.EndsWith("]"))
           {
             var key = line.Substring(1, line.Length - 2);
-            if (key == "IncludedNamespaces")
-              ReadStrings(textReader, IncludedNamespaces, ref lineNumber);
-            else if (key == "ExcludedNamespaces")
-              ReadStrings(textReader, ExcludedNamespaces, ref lineNumber);
-            else if (key == "TranslatedNamespaces")
+            if (key == "SourceLibraries")
+              ReadStrings(textReader, SourceLibraries, ref lineNumber);
+            else 
+            if (key == "TargetLibraries")
+              ReadStrings(textReader, TargetLibraries, ref lineNumber);
+            else 
+            if (key == "UsedLibraries")
+              ReadStrings(textReader, UsedLibraries, ref lineNumber);
+            else 
+            if (key == "AcceptedNamespaces")
+              ReadStrings(textReader, AcceptedNamespaces, ref lineNumber);
+            else 
+            if (key == "RejectedNamespaces")
+              ReadStrings(textReader, RejectedNamespaces, ref lineNumber);
+            else 
+            if (key == "TranslatedNamespaces")
               ReadDictionary(textReader, TranslatedNamespaces, ref lineNumber);
-            else if (key == "NamespaceShortcuts")
+            else 
+            if (key == "NamespaceShortcuts")
               ReadDictionary(textReader, NamespaceShortcuts, ref lineNumber);
-            else if (key == "IncludedTypes")
-              ReadStrings(textReader, IncludedTypes, ref lineNumber);
-            else if (key == "ExcludedTypes")
-              ReadStrings(textReader, ExcludedTypes, ref lineNumber);
-            else if (key == "TypeConversion")
-            {
+            else 
+            if (key == "AcceptedTypes")
+              ReadStrings(textReader, AcceptedTypes, ref lineNumber);
+            else 
+            if (key == "RejectedTypes")
+              ReadStrings(textReader, RejectedTypes, ref lineNumber);
+            else 
+            if (key == "TypeConversion")
               ReadDictionary(textReader, TypeConversion, ref lineNumber);
-            }
-            else if (key == "ExcludedProperties")
-              ReadStrings(textReader, ExcludedProperties, ref lineNumber);
-            else if (key == "PropertyTranslateTable")
+            else 
+            if (key == "ExcludedProperties")
+              ReadStrings(textReader, RejectedProperties, ref lineNumber);
+            else 
+            if (key == "PropertyTranslateTable")
               ReadDictionary(textReader, PropertyTranslateTable, ref lineNumber);
             else if (key == "PropertyTypeConversion")
             {

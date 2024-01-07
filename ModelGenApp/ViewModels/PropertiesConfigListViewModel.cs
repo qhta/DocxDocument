@@ -1,7 +1,7 @@
 ﻿namespace ModelGenApp.ViewModels;
-public class PropertyConfigListViewModel : ConfigListViewModel
+public class PropertiesConfigListViewModel : ConfigListViewModel
 {
-  public PropertyConfigListViewModel(ModelConfigViewModel owner) : base(owner)
+  public PropertiesConfigListViewModel(ModelConfigViewModel owner) : base(owner)
   {
     Caption = CommonStrings.ModelConfiguration + ": " + CommonStrings.Properties.ToLower();
     Items = new ListViewModel<PropertyConfigViewModel>();
@@ -26,7 +26,7 @@ public class PropertyConfigListViewModel : ConfigListViewModel
     Items.Clear();
     typesCount = 0;
     propCount = 0;
-    ProgressBarMaximum = Owner.TypeConfigList.Items.Count;
+    ProgressBarMaximum = Owner.TypesConfigList.Items.Count;
   }
 
   int typesCount = 0;
@@ -34,8 +34,8 @@ public class PropertyConfigListViewModel : ConfigListViewModel
 
   public void CreateItems(TypeConfigViewModel parent, ModelConfigData configData)
   {
-    var fullNameComparison = configData.IncludedTypes.FirstOrDefault(item => item.Contains('.')) != null
-                        || configData.ExcludedTypes.FirstOrDefault(item => item.Contains('.')) != null;
+    var fullNameComparison = configData.AcceptedTypes.FirstOrDefault(item => item.Contains('.')) != null
+                        || configData.RejectedTypes.FirstOrDefault(item => item.Contains('.')) != null;
     ProgressBarValue = ++typesCount;
     var _Properties = new List<PropertyConfigViewModel>();
     var type = parent.Type;
@@ -68,14 +68,14 @@ public class PropertyConfigListViewModel : ConfigListViewModel
         OrigValueType = valueTypeName
       };
 
-      if (configData.ExcludedProperties.Contains(fullPropName)
-        || configData.ExcludedProperties.Contains(typedPropName)
-        || configData.ExcludedProperties.Contains(propName))
+      if (configData.RejectedProperties.Contains(fullPropName)
+        || configData.RejectedProperties.Contains(typedPropName)
+        || configData.RejectedProperties.Contains(propName))
         item.IsExcluded = true;
 
       item.ExcludedValueType =
-        (configData.ExcludedNamespaces.Contains(valueTypeNamespace) && !configData.IncludedTypes.Contains(valueType.Name))
-        || configData.ExcludedTypes.Contains(valueType.Name);
+        (configData.RejectedNamespaces.Contains(valueTypeNamespace) && !configData.AcceptedTypes.Contains(valueType.Name))
+        || configData.RejectedTypes.Contains(valueType.Name);
       if (configData.PropertyTranslateTable.TryGetValue(fullPropName, out var newName)
        || configData.PropertyTranslateTable.TryGetValue(propName, out newName))
         item.TargetName = newName;
@@ -90,9 +90,9 @@ public class PropertyConfigListViewModel : ConfigListViewModel
 
   public override void SetData(ModelConfigData configData)
   {
-    configData.ExcludedProperties.Clear();
+    configData.RejectedProperties.Clear();
     foreach (var item in Items.Where(item => item.IsExcluded && item.IsExcluded!=item.Parent.IsExcluded))
-      configData.ExcludedProperties.Add(ModelConfig.JoinTypeAndProperty(item.DeclaringType, item.OrigName));
+      configData.RejectedProperties.Add(ModelConfig.JoinTypeAndProperty(item.DeclaringType, item.OrigName));
 
     configData.PropertyTranslateTable.Clear();
     foreach (var item in Items.Where(item => !String.IsNullOrEmpty(item.TargetName)))
