@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\MyLib\Qhta.Xml.Serialization\Qhta.Xml.Serialization.csproj" />
+    <PackageReference Include="Qhta.Xml.Serialization" Version="3.0.0" />
   </ItemGroup>
 
 </Project>

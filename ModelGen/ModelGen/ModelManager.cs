@@ -111,7 +111,7 @@ public static class ModelManager
     if (ModelConfig.Instance == null)
       throw new System.InvalidOperationException(CommonStrings.Model_configuration_not_defined);
 
-    if (ModelConfig.Instance.ExcludedNamespaces.Contains(typeInfo.GetTargetNamespace()))
+    if (ModelConfig.Instance.RejectedNamespaces.Contains(typeInfo.GetTargetNamespace()))
       return true;
     if (typeInfo.IsConstructedGenericType)
     {
@@ -289,7 +289,7 @@ public static class ModelManager
 
     int n = 0;
     foreach (var ns in TypeManager.AllNamespaces
-      .Where(nspace => !ModelConfig.Instance.ExcludedNamespaces.Contains(nspace.Name)).ToList())
+      .Where(nspace => !ModelConfig.Instance.RejectedNamespaces.Contains(nspace.Name)).ToList())
     {
       if (ModelConfig.Instance.TranslatedNamespaces.TryGetValue(ns.Name, out var targetName))
       {

@@ -93,21 +93,8 @@ public static class TypeManager
     var newNspace = nspace;
     foreach (var item in ModelConfig.Instance.TranslatedNamespaces)
     {
-      if (nspace.StartsWith(item.Item1))
-        newNspace = nspace.Replace(item.Item1, item.Item2);
-    }
-    return newNspace;
-  }
-
-  public static string TranslateNamespaceBack(string nspace)
-  {
-    if (ModelConfig.Instance == null)
-      throw new System.InvalidOperationException(CommonStrings.Model_configuration_not_defined);
-    var newNspace = nspace;
-    foreach (var item in ModelConfig.Instance.TranslatedNamespaces)
-    {
-      if (nspace.StartsWith(item.Item2))
-        newNspace = nspace.Replace(item.Item2, item.Item1);
+      if (nspace.StartsWith(item.Key))
+        newNspace = nspace.Replace(item.Key, item.Value);
     }
     return newNspace;
   }

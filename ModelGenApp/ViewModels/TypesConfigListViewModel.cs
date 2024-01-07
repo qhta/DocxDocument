@@ -1,7 +1,7 @@
 ﻿namespace ModelGenApp.ViewModels;
-public class TypeConfigListViewModel : ConfigListViewModel
+public class TypesConfigListViewModel : ConfigListViewModel
 {
-  public TypeConfigListViewModel(ModelConfigViewModel owner) : base(owner)
+  public TypesConfigListViewModel(ModelConfigViewModel owner) : base(owner)
   {
     Caption = CommonStrings.ModelConfiguration + ": " + CommonStrings.Types.ToLower();
     Items = new ListViewModel<TypeConfigViewModel>();
@@ -30,8 +30,8 @@ public class TypeConfigListViewModel : ConfigListViewModel
 
   public void CreateItems(NamespaceConfigViewModel parent, ModelConfigData configData)
   {
-    var fullNameComparison = configData.IncludedTypes.FirstOrDefault(item => item.Contains('.')) != null
-                          || configData.ExcludedTypes.FirstOrDefault(item => item.Contains('.')) != null;
+    var fullNameComparison = configData.AcceptedTypes.FirstOrDefault(item => item.Contains('.')) != null
+                          || configData.RejectedTypes.FirstOrDefault(item => item.Contains('.')) != null;
     foreach (var type in parent.Types)
     {
       if (type != null)
@@ -42,16 +42,16 @@ public class TypeConfigListViewModel : ConfigListViewModel
         item.RecordNumber = ++typesCount;
         if (fullNameComparison)
         {
-          if (configData.ExcludedTypes.Contains(fullTypeName))
+          if (configData.RejectedTypes.Contains(fullTypeName))
             item.IsExcluded = true;
-          if (configData.IncludedTypes.Contains(fullTypeName))
+          if (configData.AcceptedTypes.Contains(fullTypeName))
             item.IsIncluded = true;
         }
         else
         {
-          if (configData.ExcludedTypes.Contains(type.Name))
+          if (configData.RejectedTypes.Contains(type.Name))
             item.IsExcluded = true;
-          if (configData.IncludedTypes.Contains(type.Name))
+          if (configData.AcceptedTypes.Contains(type.Name))
             item.IsIncluded = true;
         }
         if (configData.TypeConversion.TryGetValue(fullTypeName, out var conversion))
@@ -70,16 +70,16 @@ public class TypeConfigListViewModel : ConfigListViewModel
 
   public override void SetData(ModelConfigData configData)
   {
-    configData.IncludedTypes.Clear();
-    configData.ExcludedTypes.Clear();
+    configData.AcceptedTypes.Clear();
+    configData.RejectedTypes.Clear();
     configData.TypeConversion.Clear();
     foreach (var item in Items)
     {
       var fullTypeName = item.OrigNamespace + "." + item.OrigName;
-      if (item.IsIncluded && item.IsIncluded!=item.Parent.IsIncluded)
-        configData.IncludedTypes.Add(fullTypeName);
-      if (item.IsExcluded && item.IsExcluded!=item.Parent.IsExcluded)
-        configData.ExcludedTypes.Add(fullTypeName);
+      if (item.IsIncluded && item.IsIncluded!=item.Parent.IsAccepted)
+        configData.AcceptedTypes.Add(fullTypeName);
+      if (item.IsExcluded && item.IsExcluded!=item.Parent.IsRejected)
+        configData.RejectedTypes.Add(fullTypeName);
       if (item.TargetNamespace != null || item.TargetName != null)
       {
         var targetNamespace = item.TargetNamespace ?? item.OrigNamespace.Replace("DocumentFormat.OpenXml", "DocumentModel");

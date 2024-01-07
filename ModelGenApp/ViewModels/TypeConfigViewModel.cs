@@ -16,10 +16,10 @@ public class TypeConfigViewModel : VisibleViewModel
   {
     if (args.PropertyName == nameof(NamespaceConfigViewModel.OrigName))
       NotifyPropertyChanged(nameof(OrigNamespace));
-    else if (args.PropertyName == nameof(NamespaceConfigViewModel.IsIncluded))
+    else if (args.PropertyName == nameof(NamespaceConfigViewModel.IsAccepted))
       NotifyPropertyChanged(nameof(IsIncluded));
     else
-    if (args.PropertyName == nameof(NamespaceConfigViewModel.IsExcluded))
+    if (args.PropertyName == nameof(NamespaceConfigViewModel.IsRejected))
       NotifyPropertyChanged(nameof(IsExcluded));
   }
 
@@ -68,7 +68,7 @@ public class TypeConfigViewModel : VisibleViewModel
   public bool IsIncluded
   {
     [DebuggerStepThrough]
-    get { return _Included ?? Parent.IsIncluded; }
+    get { return _Included ?? Parent.IsAccepted; }
     set
     {
       if (_Included != value)
@@ -77,7 +77,7 @@ public class TypeConfigViewModel : VisibleViewModel
         NotifyPropertyChanged(nameof(IsIncluded));
         if (value)
           IsExcluded = false;
-        if (value == Parent.IsIncluded)
+        if (value == Parent.IsAccepted)
           _Included = null;
       }
     }
@@ -91,7 +91,7 @@ public class TypeConfigViewModel : VisibleViewModel
   public bool IsExcluded
   {
     [DebuggerStepThrough]
-    get { return _Excluded ?? Parent.IsExcluded; }
+    get { return _Excluded ?? Parent.IsRejected; }
     set
     {
       if (_Excluded != value)
@@ -100,7 +100,7 @@ public class TypeConfigViewModel : VisibleViewModel
         NotifyPropertyChanged(nameof(IsExcluded));
         if (value)
           IsIncluded = false;
-        if (value == Parent.IsExcluded)
+        if (value == Parent.IsRejected)
           _Excluded = null;
       }
     }

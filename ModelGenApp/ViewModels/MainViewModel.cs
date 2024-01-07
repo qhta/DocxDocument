@@ -114,11 +114,15 @@ public class MainViewModel : ViewModel
       throw new InvalidOperationException(CommonStrings.Model_configuration_not_defined);
     if (ModelConfigVM==null || Options.InputAssembly != ModelConfigVM.AssemblyName)
       ModelConfigVM = new ModelConfigViewModel(Options.InputAssembly, ModelConfig.Instance);
+
+    if (parameter == "Libraries")
+      WindowsManager.ShowWindow<ModelConfigWindow>(ModelConfigVM.LibrariesConfigList);
+    else
     if (parameter == "Namespaces")
-      WindowsManager.ShowWindow<ModelConfigWindow>(ModelConfigVM.NamespaceConfigList);
+      WindowsManager.ShowWindow<ModelConfigWindow>(ModelConfigVM.NamespacesConfigList);
     else
     if (parameter == "Types")
-      WindowsManager.ShowWindow<ModelConfigWindow>(ModelConfigVM.TypeConfigList);
+      WindowsManager.ShowWindow<ModelConfigWindow>(ModelConfigVM.TypesConfigList);
     else
     if (parameter == "Properties")
       WindowsManager.ShowWindow<ModelConfigWindow>(ModelConfigVM.PropertiesConfigList);

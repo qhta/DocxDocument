@@ -46,7 +46,7 @@ public class NamespaceConfigViewModel : VisibleViewModel
     HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.Accept),
     HeaderTooltipResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.IncludedNamespaceTooltip)
     )]
-  public bool IsIncluded
+  public bool IsAccepted
   {
    [DebuggerStepThrough] get { return _Included; }
     set
@@ -54,9 +54,9 @@ public class NamespaceConfigViewModel : VisibleViewModel
       if (_Included != value)
       {
         _Included = value;
-        NotifyPropertyChanged(nameof(IsIncluded));
+        NotifyPropertyChanged(nameof(IsAccepted));
         if (value)
-          IsExcluded = false;
+          IsRejected = false;
       }
     }
   }
@@ -66,7 +66,7 @@ public class NamespaceConfigViewModel : VisibleViewModel
     HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.Excl),
     HeaderTooltipResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.ExcludedNamespaceTooltip)
     )]
-  public bool IsExcluded
+  public bool IsRejected
   {
    [DebuggerStepThrough] get { return _Excluded; }
     set
@@ -74,9 +74,9 @@ public class NamespaceConfigViewModel : VisibleViewModel
       if (_Excluded != value)
       {
         _Excluded = value;
-        NotifyPropertyChanged(nameof(IsExcluded));
+        NotifyPropertyChanged(nameof(IsRejected));
         if (value)
-          IsIncluded = false;
+          IsAccepted = false;
       }
     }
   }
