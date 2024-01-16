@@ -7,6 +7,7 @@ public class LibrariesConfigListViewModel : ConfigListViewModel<LibraryConfigVie
 
   public void CreateItems(ModelConfigData configData)
   {
+    var targetLibraries = configData.TargetLibraries;
     foreach (var aName in Owner.ReferencedAssemblyNames)
     {
       var item = new LibraryConfigViewModel { Name = aName.FullName };
@@ -15,8 +16,16 @@ public class LibrariesConfigListViewModel : ConfigListViewModel<LibraryConfigVie
       item.IsTarget = configData.TargetLibraries.Contains(item.Name);
       item.IsUsed = configData.UsedLibraries.Contains(item.Name);
       item.PropertyChanged += Item_PropertyChanged;
+      if (item.IsTarget)
+        targetLibraries.Remove(item.Name);
       this.Add(item);
-    }                                                                    
+    }       
+    foreach (var name in targetLibraries)   
+    {
+      var item = new LibraryConfigViewModel { Name = name, IsTarget = true };
+      item.RecordNumber = ++CreatedItemsCount;
+      this.Add(item);
+    }
     ValidateData();
   }
 
