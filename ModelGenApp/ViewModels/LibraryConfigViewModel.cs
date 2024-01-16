@@ -24,7 +24,7 @@ public class LibraryConfigViewModel : VisibleViewModel
   private int _RecordNumber;
 
   [DataGridColumn(
-    IsReadOnly = true,
+    //IsReadOnly = true,
     HeaderResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.LibraryName),
     HeaderTooltipResourceKey = "ModelGenApp.CommonStrings." + nameof(CommonStrings.LibraryNameTooltip)
     )]

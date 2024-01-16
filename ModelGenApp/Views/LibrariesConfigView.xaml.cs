@@ -24,4 +24,9 @@ public partial class LibrariesConfigView : UserControl
       dataGridColumnCreator.GenerateColumn(sender, args);
     }
   }
+
+  private void DataGrid_InitializingNewItem(object sender, InitializingNewItemEventArgs  args)
+  {
+  }
+
 }
