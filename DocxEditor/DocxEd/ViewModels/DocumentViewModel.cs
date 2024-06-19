@@ -40,6 +40,9 @@ public class DocumentViewModel : ViewModel<DocumentModel.Wordprocessing.Document
   }
   public string? Caption => Model.Filename;
 
+  public string? Title => Model.Title;
+
+
   private bool disposedValue;
 
   protected virtual void Dispose(bool disposing)

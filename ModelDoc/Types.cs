@@ -2,30 +2,30 @@
 using System.Collections.Specialized;
 using System.Diagnostics.CodeAnalysis;
 
-namespace ModelDocumentation;
-public class Properties : ObservableCollection<PropDoc>
+namespace ModelDoc;
+public class Types : ObservableCollection<TypeDoc>
 {
-  private readonly Dictionary<string, PropDoc> _TagIndex;
-  private readonly Dictionary<string, PropDoc> _NameIndex;
-  private readonly Dictionary<(string, string), PropDoc> _TagAndNameIndex;
+  private readonly Dictionary<string, TypeDoc> _TagIndex;
+  private readonly Dictionary<string, TypeDoc> _NameIndex;
+  private readonly Dictionary<(string, string), TypeDoc> _TagAndNameIndex;
 
   /// <summary>
   /// Default initializing constructor.
   /// </summary>
-  public Properties()
+  public Types()
   {
-    _TagIndex = new Dictionary<string, PropDoc>();
-    _NameIndex = new Dictionary<string, PropDoc>();
-    _TagAndNameIndex = new Dictionary<(string, string), PropDoc>();
+    _TagIndex = new Dictionary<string, TypeDoc>();
+    _NameIndex = new Dictionary<string, TypeDoc>();
+    _TagAndNameIndex = new Dictionary<(string, string), TypeDoc>();
     this.CollectionChanged += NamespaceCollection_CollectionChanged;
   }
 
-  private void NamespaceCollection_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void NamespaceCollection_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (args.Action == NotifyCollectionChangedAction.Add)
     {
       if (args.NewItems != null)
-        foreach (var item in args.NewItems.Cast<PropDoc>())
+        foreach (var item in args.NewItems.Cast<TypeDoc>())
         {
           if (!_TagIndex.ContainsKey(item.Tag))
             _TagIndex.Add(item.Tag, item);
@@ -54,14 +54,14 @@ public class Properties : ObservableCollection<PropDoc>
   /// <param name="name"></param>
   /// <param name="value"></param>
   /// <returns></returns>
-  public bool TryFindTag(string name, [NotNullWhen(true)] out PropDoc value) => _TagIndex.TryGetValue(name, out value);
+  public bool TryFindTag(string name, [NotNullWhen(true)] out TypeDoc? value) => _TagIndex.TryGetValue(name, out value);
 
   /// <summary>
   /// Checks if an item with the same name was already added.
   /// </summary>
   /// <param name="name"></param>
   /// <returns></returns>
-  public bool ContainsName(string name) => _TagIndex.ContainsKey(name);
+  public bool ContainsName(string name) => _NameIndex.ContainsKey(name);
 
   /// <summary>
   /// Tries to get an item with a known name.
@@ -69,7 +69,7 @@ public class Properties : ObservableCollection<PropDoc>
   /// <param name="name"></param>
   /// <param name="value"></param>
   /// <returns></returns>
-  public bool TryFindName(string name, [NotNullWhen(true)] out PropDoc value) => _TagIndex.TryGetValue(name, out value);
+  public bool TryFindName(string name, [NotNullWhen(true)] out TypeDoc? value) => _NameIndex.TryGetValue(name, out value);
 
   /// <summary>
   /// Checks if an item with the same tag and name was already added.
@@ -84,7 +84,6 @@ public class Properties : ObservableCollection<PropDoc>
   /// <param name="name"></param>
   /// <param name="value"></param>
   /// <returns></returns>
-  public bool TryFindTagAndName((string, string) key, [NotNullWhen(true)] out PropDoc value) => _TagAndNameIndex.TryGetValue(key, out value);
+  public bool TryFindTagAndName((string, string) key, [NotNullWhen(true)] out TypeDoc? value) => _TagAndNameIndex.TryGetValue(key, out value);
 
 }
-

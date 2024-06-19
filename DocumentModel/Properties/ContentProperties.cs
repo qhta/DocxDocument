@@ -1,79 +1,143 @@
 namespace DocumentModel;
+using DocumentModel.Wordprocessing;
+
+using O = DocumentFormat.OpenXml;
+using P = DocumentFormat.OpenXml.Packaging;
+using W = DocumentFormat.OpenXml.Wordprocessing;
 
 /// <summary>
 ///   Predefined set of metadata properties that are applicable to Office Open XML documents. 
 ///   These properties extend the set of core properties which are common to all packages.
 /// </summary>
-public partial class ContentProperties: KnownDocumentProperties
+public partial class ContentProperties : KnownDocumentProperties
 {
+  internal Document? OwnerDocument;
+  internal O.ExtendedProperties.Properties ExtendedProperties;
+
+  public ContentProperties(Document ownerDocument)
+  {
+    OwnerDocument = ownerDocument;
+    var part = OwnerDocument.WordprocessingDocument.ExtendedFilePropertiesPart;
+    if (part == null)
+      part = OwnerDocument.WordprocessingDocument.AddExtendedFilePropertiesPart();
+    var properties = part.Properties;
+    if (properties == null)
+      properties = new O.ExtendedProperties.Properties();
+    ExtendedProperties = properties;
+  }
+
   /// <summary>
   ///   Specifies the name of an external document template containing format 
   ///   and style information used to create the current document.
   /// </summary>
-  public string? Template { get; set; }
+  public string? Template
+  {
+    get => ExtendedProperties.Template?.Text;
+    set
+    {
+      if (value != null)
+        ExtendedProperties.Template = new O.ExtendedProperties.Template(value);
+      else
+        ExtendedProperties.Template?.Remove();
+      }
+    }
+  }
 
   /// <summary>
   ///   The name of a supervisor associated with the document.
   /// </summary>
-  public string? Manager { get; set; }
+  public string? Manager
+  {
+    get; set;
+  }
 
   /// <summary>
   ///   The name of a company associated with the document.
   /// </summary>
-  public string? Company { get; set; }
+  public string? Company
+  {
+    get; set;
+  }
 
   /// <summary>
   ///   The intended format for a presentation document. For example, a presentation intended
   ///   to be shown on video has PresentationFormat "Video"..
   /// </summary>
-  public string? PresentationFormat { get; set; }
+  public string? PresentationFormat
+  {
+    get; set;
+  }
 
   /// <summary>
   ///   Indicates the display mode of the document thumbnail. 
   ///   Set this element to TRUE to enable scaling of the document thumbnail to the display. 
   ///   Set this element to FALSE to enable cropping of the document thumbnail to show only sections that fits the display.
   /// </summary>
-  public bool? ScaleCrop { get; set; }
+  public bool? ScaleCrop
+  {
+    get; set;
+  }
 
   /// <summary>
   ///   Indicates the grouping of document parts and the number of parts in each group. These parts are
   ///   not document parts but conceptual representations of document sections.
   /// </summary>
-  public HeadingPairs? HeadingPairs { get; set; }
+  public HeadingPairs? HeadingPairs
+  {
+    get; set;
+  }
 
   /// <summary>
   ///   The title of each document. 
   ///   These parts are not document parts but conceptual representations of document sections.
   /// </summary>
-  public StringList? TitlesOfParts { get; set; }
+  public StringList? TitlesOfParts
+  {
+    get; set;
+  }
 
   /// <summary>
   ///   Indicates whether hyperlinks in a document are up-to-date. Set this element to TRUE to indicate
   ///   that hyperlinks are updated. Set this element to FALSE to indicate that hyperlinks are outdated.
   /// </summary>
-  public bool? LinksUpToDate { get; set; }
+  public bool? LinksUpToDate
+  {
+    get; set;
+  }
 
   /// <summary>
   ///   Indicates if this document is currently shared between multiple producers. 
   ///   If this element is set to TRUE, producers should take care when updating the document.
   /// </summary>
-  public bool? SharedDocument { get; set; }
+  public bool? SharedDocument
+  {
+    get; set;
+  }
 
   /// <summary>
   ///   The base string used for evaluating relative hyperlinks in this document.
   /// </summary>
-  public string? HyperlinkBase { get; set; }
+  public string? HyperlinkBase
+  {
+    get; set;
+  }
 
   /// <summary>
   ///   The set of hyperlinks that were in this document when last saved.
   /// </summary>
-  public DMPr.HyperlinkList? HyperlinkList { get; set; }
+  public DMPr.HyperlinkList? HyperlinkList
+  {
+    get; set;
+  }
 
   /// <summary>
   ///   Specifies that one or more hyperlinks in this part were updated exclusively in this part by a producer. 
   ///   The next producer to open this document shall update the hyperlink relationships with the new hyperlinks specified in this part.
   /// </summary>
-  public bool? HyperlinksChanged { get; set; }
+  public bool? HyperlinksChanged
+  {
+    get; set;
+  }
 
   /// <summary>
   ///   Specifies the security level of a document as a numeric value.
@@ -83,7 +147,10 @@ public partial class ContentProperties: KnownDocumentProperties
   ///   4 - Document is enforced to be opened as read-only.
   ///   8 - Document is locked for annotation
   /// </summary>
-  public int? DocumentSecurity { get; set; }
+  public int? DocumentSecurity
+  {
+    get; set;
+  }
 
   /// <summary>
   ///   This element contains the signature of a digitally signed document.
@@ -91,16 +158,25 @@ public partial class ContentProperties: KnownDocumentProperties
   ///   representation, and should be avoided in favor of the well-defined mechanism defined in Part 2. Any use of this
   ///   property should be for legacy compatibility only, and is application-defined. 
   /// </summary>
-  public byte[]? DigitalSignature { get; set; }
+  public byte[]? DigitalSignature
+  {
+    get; set;
+  }
 
   /// <summary>
   ///   Specifies the name of the application that created this document.
   /// </summary>
-  public string? Application { get; set; }
+  public string? Application
+  {
+    get; set;
+  }
 
   /// <summary>
   ///   Specifies the version of the application which produced this document.
   /// </summary>
-  public string? ApplicationVersion { get; set; }
+  public string? ApplicationVersion
+  {
+    get; set;
+  }
 
 }

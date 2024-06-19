@@ -10,6 +10,6 @@
              d:DataContext="{d:DesignInstance Type=vm:DocumentViewModel}"
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-    <TextBlock Text="{Binding Caption}" />
+    <TextBlock Text="{Binding Title}" />
   </Grid>
 </UserControl>

@@ -1,11 +1,12 @@
 ﻿using System.Xml;
+using System.Xml.Schema;
 using System.Xml.Serialization;
 
-using ModelDocumentation;
+using ModelDoc;
 
 using Qhta.Xml.Serialization;
 
-namespace ModelDocumentation;
+namespace ModelDoc;
 public class ModelDoc
 {
   public ModelDoc() { }
@@ -22,6 +23,10 @@ public class ModelDoc
   private static ModelDoc _Instance = null!;
 
   public Namespaces Namespaces { get; private set; } = new Namespaces();
+
+  public void AddXmlSchemaSimpleTypes (IEnumerable<SchemaType>  simpleTypes)
+  {
+  }
   
   #region Save/Load data
   public void SaveData()

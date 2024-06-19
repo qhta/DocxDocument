@@ -1,6 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 
-namespace ModelDocumentation;
+namespace ModelDoc;
 public class Summary: ObservableCollection<string>
 {
   public bool IsEmpty => Count == 0;

@@ -1,4 +1,6 @@
 ﻿namespace DocumentModel;
+using DocumentModel.Wordprocessing;
+
 
 /// <summary>
 /// Collection of document properties that is divided to several parts: core properties, 
@@ -7,6 +9,14 @@
 /// </summary>
 public partial class DocumentProperties : ICollection<DocumentProperty>
 {
+  internal Document? OwnerDocument;
+
+  public DocumentProperties(Document ownerDocument)
+  {
+    OwnerDocument = ownerDocument;
+    CoreProperties = new CoreProperties(OwnerDocument);
+  }
+
   /// <summary>
   /// Collection of core properties, which represents document properties defined in Dublin Core standard
   /// and Open Packaging Conventions. 
@@ -78,13 +88,14 @@ public partial class DocumentProperties : ICollection<DocumentProperty>
   {
     if (item.Name != null)
     {
-      if (CoreProperties.GetKnownProperties(typeof(CoreProperties)).ContainsKey(item.Name))
-      {
-        if (CoreProperties == null)
-          CoreProperties = new CoreProperties();
-        CoreProperties.Set(item.Name, item.Value);
-      }
-      else if (ContentProperties.GetKnownProperties(typeof(ContentProperties)).ContainsKey(item.Name))
+      //if (CoreProperties.GetKnownProperties(typeof(CoreProperties)).ContainsKey(item.Name))
+      //{
+      //  if (CoreProperties == null)
+      //    CoreProperties = new CoreProperties();
+      //  CoreProperties.Set(item.Name, item.Value);
+      //}
+      //else 
+      if (ContentProperties.GetKnownProperties(typeof(ContentProperties)).ContainsKey(item.Name))
       {
         if (ContentProperties == null)
           ContentProperties = new ContentProperties();
