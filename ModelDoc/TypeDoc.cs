@@ -1,6 +1,6 @@
 ﻿using System.Xml.Serialization;
 
-namespace ModelDocumentation;
+namespace ModelDoc;
 
 /// <summary>
 /// Represents model type documentation: summary and properties documentation.

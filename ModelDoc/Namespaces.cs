@@ -2,31 +2,31 @@
 using System.Collections.Specialized;
 using System.Diagnostics.CodeAnalysis;
 
-namespace ModelDocumentation;
+namespace ModelDoc;
 
 /// <summary>
-/// Collection of <see cref="NamespaceDoc"/> with indexing by name.
+/// Collection of <see cref="Namespace"/> with indexing by name.
 /// </summary>
-public class Namespaces : ObservableCollection<NamespaceDoc>
+public class Namespaces : ObservableCollection<Namespace>
 {
-  private readonly Dictionary<string, NamespaceDoc> _Index;
+  private readonly Dictionary<string, Namespace> _Index;
 
   /// <summary>
   /// Default initializing constructor.
   /// </summary>
   public Namespaces()
   {
-    _Index = new Dictionary<string, NamespaceDoc>();
+    _Index = new Dictionary<string, Namespace>();
     this.CollectionChanged += NamespaceCollection_CollectionChanged;
   }
 
-  private void NamespaceCollection_CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+  private void NamespaceCollection_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
     if (args.Action == NotifyCollectionChangedAction.Add)
     {
       if (args.NewItems != null)
-        foreach (var item in args.NewItems.Cast<NamespaceDoc>())
-          _Index.Add(item.Name, item);
+        foreach (var item in args.NewItems.Cast<Namespace>())
+          _Index.Add(item.FullName, item);
     }
   }
 
@@ -43,6 +43,6 @@ public class Namespaces : ObservableCollection<NamespaceDoc>
   /// <param name="name"></param>
   /// <param name="value"></param>
   /// <returns></returns>
-  public bool TryGetValue(string name, [NotNullWhen(true)] out NamespaceDoc value) => _Index.TryGetValue(name, out value);
+  public bool TryGetValue(string name, [NotNullWhen(true)] out Namespace? value) => _Index.TryGetValue(name, out value);
 
 }
