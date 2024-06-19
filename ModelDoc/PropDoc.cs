@@ -1,6 +1,6 @@
 ﻿using System.Xml.Serialization;
 
-namespace ModelDocumentation;
+namespace ModelDoc;
 /// <summary>
 /// Represents model property documentation. The same is used for enum value documentation
 /// </summary>

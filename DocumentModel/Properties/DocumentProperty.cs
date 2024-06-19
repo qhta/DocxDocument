@@ -9,8 +9,9 @@ public partial class DocumentProperty : ModelElement
 {
   public DocumentProperty() { }
 
-  public DocumentProperty(string name, Type? type = null, object? value = null)
+  public DocumentProperty(string category, string name, Type? type = null, object? value = null)
   {
+    Category = category;
     Name = name;
     if (type != null)
     {
@@ -24,14 +25,24 @@ public partial class DocumentProperty : ModelElement
 
   public DocumentProperty(DocumentProperty other)
   {
+    Category = other.Category;
     Name = other.Name;
     Value = other.Value;
   }
 
   /// <summary>
-  ///   Custom File Property Name
+  ///   Property Category.
   /// </summary>
-   public string? Name
+  public string? Category
+  {
+    get;
+    set;
+  }
+
+  /// <summary>
+  ///   Property Name.
+  /// </summary>
+  public string? Name
   {
     get;
     set;
