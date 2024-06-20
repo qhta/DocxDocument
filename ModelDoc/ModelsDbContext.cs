@@ -35,6 +35,8 @@ public class ModelsDbContext : DbContext
 
   public DbSet<SchemaParticle> SchemaParticles { get; set; }
 
+  public DbSet<SchemaGroup> SchemaGroups { get; set; }
+
   public SchemaElements SchemaElements
   {
     get
