@@ -166,12 +166,12 @@ internal class XmlSchemaParser
           else
           if (item is XmlSchemaGroup xmlSchemaGroup)
           {
-
+            ParseXmlSchemaGroup(schemaFile, xmlSchemaGroup);
           }
           else
           if (item is XmlSchemaElement xmlSchemaElement)
           {
-
+            ParseXmlSchemaGlobalElement(schemaFile, xmlSchemaElement);
           }
           else
           if (item is XmlSchemaAttributeGroup xmlSchemaAttributeGroup)
@@ -529,19 +529,19 @@ internal class XmlSchemaParser
     ParseXmlSchemaAttributeDetails(schemaAttribute, xmlSchemaAttribute);
   }
 
-  internal void ParseXmlSchemaGlobalAttribute(SchemaFile schemaFile, XmlSchemaAttribute xmlSchemaAttribute)
+  internal void ParseXmlSchemaGlobalAttribute(SchemaFile parentSchemaFile, XmlSchemaAttribute xmlSchemaAttribute)
   {
     SchemaAttribute? schemaAttribute;
     if (xmlSchemaAttribute.Name != null)
     {
       schemaAttribute = dbContext.SchemaAttributes.FirstOrDefault(item =>
-        item.SchemaFileId == schemaFile.Id && item.AttributeName == xmlSchemaAttribute.Name);
+        item.SchemaFileId == parentSchemaFile.Id && item.AttributeName == xmlSchemaAttribute.Name);
       if (schemaAttribute == null)
       {
         Console.WriteLine($"Adding global attribute {xmlSchemaAttribute.Name}");
         schemaAttribute = new SchemaAttribute
         {
-          SchemaFileId = schemaFile.Id,
+          SchemaFileId = parentSchemaFile.Id,
           AttributeName = xmlSchemaAttribute.Name,
         };
         dbContext.SchemaAttributes.Add(schemaAttribute);
@@ -554,13 +554,13 @@ internal class XmlSchemaParser
       if (ns == null)
         throw new DataException($"Namespace {xmlSchemaAttribute.RefName.Namespace} not found");
       schemaAttribute = dbContext.SchemaAttributes.FirstOrDefault(item =>
-        item.SchemaFileId == schemaFile.Id && item.AttributeName == xmlSchemaAttribute.RefName.Name && item.RefNamespaceId == ns.Id);
+        item.SchemaFileId == parentSchemaFile.Id && item.AttributeName == xmlSchemaAttribute.RefName.Name && item.RefNamespaceId == ns.Id);
       if (schemaAttribute == null)
       {
         Console.WriteLine($"Adding global attribute reference to {ns.Url} {xmlSchemaAttribute.RefName.Name}");
         schemaAttribute = new SchemaAttribute
         {
-          SchemaFileId = schemaFile.Id,
+          SchemaFileId = parentSchemaFile.Id,
           AttributeName = xmlSchemaAttribute.RefName.Name,
           RefNamespaceId = ns.Id
         };
@@ -708,37 +708,37 @@ internal class XmlSchemaParser
     }
   }
 
-  internal void ParseXmlSchemaParticle(SchemaComplexType schemaComplexType, SchemaParticle? parentParticle, XmlSchemaParticle xmlSchemaParticle, int? ordNum)
+  internal void ParseXmlSchemaParticle(SchemaComplexType parentComplexType, SchemaParticle? parentParticle, XmlSchemaParticle xmlSchemaParticle, int? ordNum)
   {
     if (xmlSchemaParticle is XmlSchemaElement xmlSchemaElement)
     {
-      ParseXmlSchemaElement(schemaComplexType, parentParticle, xmlSchemaElement, ordNum);
+      ParseXmlSchemaElement(parentComplexType, parentParticle, xmlSchemaElement, ordNum);
     }
     else
     if (xmlSchemaParticle is XmlSchemaSequence xmlSchemaSequence)
     {
-      ParseXmlSchemaSequence(schemaComplexType, parentParticle, xmlSchemaSequence, ordNum);
+      ParseXmlSchemaSequence(parentComplexType, parentParticle, xmlSchemaSequence, ordNum);
     }
     else
     if (xmlSchemaParticle is XmlSchemaAny xmlSchemaAny)
     {
-      ParseXmlSchemaAny(schemaComplexType, parentParticle, xmlSchemaAny, ordNum);
+      ParseXmlSchemaAny(parentComplexType, parentParticle, xmlSchemaAny, ordNum);
     }
     else
     if (xmlSchemaParticle is XmlSchemaAll xmlSchemaAll)
     {
-      ParseXmlSchemaAll(schemaComplexType, parentParticle, xmlSchemaAll, ordNum);
+      ParseXmlSchemaAll(parentComplexType, parentParticle, xmlSchemaAll, ordNum);
     }
     else
     if (xmlSchemaParticle is XmlSchemaChoice xmlSchemaChoice)
     {
-      ParseXmlSchemaChoice(schemaComplexType, parentParticle, xmlSchemaChoice, ordNum);
+      ParseXmlSchemaChoice(parentComplexType, parentParticle, xmlSchemaChoice, ordNum);
     }
     else
 
     if (xmlSchemaParticle is XmlSchemaGroupRef xmlSchemaGroupRef)
     {
-      ParseXmlSchemaGroupRef(schemaComplexType, parentParticle, xmlSchemaGroupRef, ordNum);
+      ParseXmlSchemaGroupRef(parentComplexType, parentParticle, xmlSchemaGroupRef, ordNum);
     }
     else
     {
@@ -746,89 +746,281 @@ internal class XmlSchemaParser
     }
   }
 
-  internal void ParseXmlSchemaAny (SchemaComplexType schemaComplexType, SchemaParticle? parentParticle, XmlSchemaAny xmlSchemaAny, int? ordNum)
+  internal void ParseXmlSchemaParticle(SchemaGroup parentGroup, SchemaParticle? parentParticle, XmlSchemaParticle xmlSchemaParticle, int? ordNum)
   {
-    var schemaParticle = (SchemaAny?)dbContext.SchemaParticles.FirstOrDefault(item =>
-      item.ComplexTypeId == schemaComplexType.Id && item.OrdNum == ordNum && item.ParticleType == ParticleType.Any);
-    if (schemaParticle == null)
+    if (xmlSchemaParticle is XmlSchemaElement xmlSchemaElement)
     {
-      schemaParticle = new SchemaAny
+      ParseXmlSchemaElement(parentGroup, parentParticle, xmlSchemaElement, ordNum);
+    }
+    else
+    if (xmlSchemaParticle is XmlSchemaSequence xmlSchemaSequence)
+    {
+      ParseXmlSchemaSequence(parentGroup, parentParticle, xmlSchemaSequence, ordNum);
+    }
+    else
+    if (xmlSchemaParticle is XmlSchemaAny xmlSchemaAny)
+    {
+      ParseXmlSchemaAny(parentGroup, parentParticle, xmlSchemaAny, ordNum);
+    }
+    else
+    if (xmlSchemaParticle is XmlSchemaAll xmlSchemaAll)
+    {
+      ParseXmlSchemaAll(parentGroup, parentParticle, xmlSchemaAll, ordNum);
+    }
+    else
+    if (xmlSchemaParticle is XmlSchemaChoice xmlSchemaChoice)
+    {
+      ParseXmlSchemaChoice(parentGroup, parentParticle, xmlSchemaChoice, ordNum);
+    }
+    else
+
+    if (xmlSchemaParticle is XmlSchemaGroupRef xmlSchemaGroupRef)
+    {
+      ParseXmlSchemaGroupRef(parentGroup, parentParticle, xmlSchemaGroupRef, ordNum);
+    }
+    else
+    {
+      throw new NotImplementedException($"Sequence item type {xmlSchemaParticle.GetType()} not supported");
+    }
+  }
+  internal void ParseXmlSchemaAny(SchemaComplexType parentComplexType, SchemaParticle? parentParticle, XmlSchemaAny xmlSchemaAny, int? ordNum)
+  {
+    var schemaAny = (SchemaAny?)dbContext.SchemaParticles.FirstOrDefault(item =>
+      item.ComplexTypeId == parentComplexType.Id && item.OrdNum == ordNum && item.ParticleType == ParticleType.Any);
+    if (schemaAny == null)
+    {
+      schemaAny = new SchemaAny
       {
-        ComplexTypeId = schemaComplexType.Id,
+        ComplexTypeId = parentComplexType.Id,
         ParentParticleId = parentParticle?.Id,
         OrdNum = ordNum
       };
-      dbContext.SchemaParticles.Add(schemaParticle);
+      dbContext.SchemaParticles.Add(schemaAny);
       dbContext.SaveChanges();
-      Console.WriteLine($"Adding Any particle {schemaParticle.Id}");
+      Console.WriteLine($"Adding Any particle {schemaAny.Id}");
     }
-    schemaParticle.Namespace = xmlSchemaAny.Namespace;
-    schemaParticle.ProcessContents = xmlSchemaAny.ProcessContents switch
+    ParseXmlSchemaAnyDetails(schemaAny, xmlSchemaAny);
+  }
+
+  internal void ParseXmlSchemaAny(SchemaGroup parentGroup, SchemaParticle? parentParticle, XmlSchemaAny xmlSchemaAny, int? ordNum)
+  {
+    var schemaAny = (SchemaAny?)dbContext.SchemaParticles.FirstOrDefault(item =>
+      item.GroupId == parentGroup.Id && item.OrdNum == ordNum && item.ParticleType == ParticleType.Any);
+    if (schemaAny == null)
+    {
+      schemaAny = new SchemaAny
+      {
+        GroupId = parentGroup.Id,
+        ParentParticleId = parentParticle?.Id,
+        OrdNum = ordNum
+      };
+      dbContext.SchemaParticles.Add(schemaAny);
+      dbContext.SaveChanges();
+      Console.WriteLine($"Adding Any particle {schemaAny.Id}");
+    }
+    ParseXmlSchemaAnyDetails(schemaAny, xmlSchemaAny);
+  }
+
+  internal void ParseXmlSchemaAnyDetails(SchemaAny schemaAny, XmlSchemaAny xmlSchemaAny)
+  {
+    schemaAny.Namespace = xmlSchemaAny.Namespace;
+    schemaAny.ProcessContents = xmlSchemaAny.ProcessContents switch
     {
       XmlSchemaContentProcessing.Lax => ContentProcessing.Lax,
       XmlSchemaContentProcessing.Skip => ContentProcessing.Skip,
       XmlSchemaContentProcessing.Strict => ContentProcessing.Strict,
       _ => null
     };
-    schemaParticle.MinOccurs = GetOccurs(xmlSchemaAny.MinOccurs, xmlSchemaAny.MinOccursString);
-    schemaParticle.MaxOccurs = GetOccurs(xmlSchemaAny.MaxOccurs, xmlSchemaAny.MaxOccursString);
+    schemaAny.MinOccurs = GetOccurs(xmlSchemaAny.MinOccurs, xmlSchemaAny.MinOccursString);
+    schemaAny.MaxOccurs = GetOccurs(xmlSchemaAny.MaxOccurs, xmlSchemaAny.MaxOccursString);
     if (dbContext.SaveChanges() > 0)
-      Console.WriteLine($"  Changing Any particle {schemaParticle.Id} settings");
+      Console.WriteLine($"  Changing Any particle {schemaAny.Id} settings");
   }
 
-  internal void ParseXmlSchemaGroupRef(SchemaComplexType schemaComplexType, SchemaParticle? parentParticle, XmlSchemaGroupRef xmlSchemaGroupRef, int? ordNum)
+  internal void ParseXmlSchemaGroupRef(SchemaComplexType parentComplexType, SchemaParticle? parentParticle, XmlSchemaGroupRef xmlSchemaGroupRef, int? ordNum)
   {
-    var schemaParticle = (SchemaGroupRef?)dbContext.SchemaParticles.FirstOrDefault(item =>
-      item.ComplexTypeId == schemaComplexType.Id && item.OrdNum == ordNum && item.ParticleType == ParticleType.GroupRef);
-    if (schemaParticle == null)
+    var parentParticleId = parentParticle?.Id; var schemaGroupRef = (SchemaGroupRef?)dbContext.SchemaParticles.FirstOrDefault(item =>
+      item.ComplexTypeId == parentComplexType.Id && item.ParentParticleId == parentParticleId && item.OrdNum == ordNum && item.ParticleType == ParticleType.GroupRef);
+    if (schemaGroupRef == null)
     {
-      schemaParticle = new SchemaGroupRef
+      schemaGroupRef = new SchemaGroupRef
       {
-        ComplexTypeId = schemaComplexType.Id,
+        ComplexTypeId = parentComplexType.Id,
         ParentParticleId = parentParticle?.Id,
         OrdNum = ordNum
       };
-      dbContext.SchemaParticles.Add(schemaParticle);
+      dbContext.SchemaParticles.Add(schemaGroupRef);
       dbContext.SaveChanges();
-      Console.WriteLine($"Adding GroupRef particle {schemaParticle.Id}");
+      Console.WriteLine($"Adding GroupRef particle {schemaGroupRef.Id}");
     }
-    schemaParticle.Name = xmlSchemaGroupRef.RefName.Name;
+    ParseXmlSchemaGroupRefDetails(schemaGroupRef, xmlSchemaGroupRef);
+  }
+  internal void ParseXmlSchemaGroupRef(SchemaGroup parentGroup, SchemaParticle? parentParticle, XmlSchemaGroupRef xmlSchemaGroupRef, int? ordNum)
+  {
+    var parentParticleId = parentParticle?.Id;
+    var schemaGroupRef = (SchemaGroupRef?)dbContext.SchemaParticles.FirstOrDefault(item =>
+      item.GroupId == parentGroup.Id && item.ParentParticleId == parentParticleId && item.OrdNum == ordNum && item.ParticleType == ParticleType.GroupRef);
+    if (schemaGroupRef == null)
+    {
+      schemaGroupRef = new SchemaGroupRef
+      {
+        GroupId = parentGroup.Id,
+        ParentParticleId = parentParticle?.Id,
+        OrdNum = ordNum
+      };
+      dbContext.SchemaParticles.Add(schemaGroupRef);
+      dbContext.SaveChanges();
+      Console.WriteLine($"Adding GroupRef particle {schemaGroupRef.Id}");
+    }
+    ParseXmlSchemaGroupRefDetails(schemaGroupRef, xmlSchemaGroupRef);
+  }
+
+  private void ParseXmlSchemaGroupRefDetails(SchemaGroupRef schemaGroupRef, XmlSchemaGroupRef xmlSchemaGroupRef)
+  {
+    schemaGroupRef.Name = xmlSchemaGroupRef.RefName.Name;
     var ns = dbContext.SchemaNamespaces.FirstOrDefault(item => item.Url == xmlSchemaGroupRef.RefName.Namespace);
     if (ns == null)
       throw new DataException($"Namespace {xmlSchemaGroupRef.RefName.Namespace} not found");
-    schemaParticle.RefNamespaceId = ns.Id;
-    schemaParticle.MinOccurs = GetOccurs(xmlSchemaGroupRef.MinOccurs, xmlSchemaGroupRef.MinOccursString);
-    schemaParticle.MaxOccurs = GetOccurs(xmlSchemaGroupRef.MaxOccurs, xmlSchemaGroupRef.MaxOccursString);
+    schemaGroupRef.RefNamespaceId = ns.Id;
+    schemaGroupRef.MinOccurs = GetOccurs(xmlSchemaGroupRef.MinOccurs, xmlSchemaGroupRef.MinOccursString);
+    schemaGroupRef.MaxOccurs = GetOccurs(xmlSchemaGroupRef.MaxOccurs, xmlSchemaGroupRef.MaxOccursString);
     if (dbContext.SaveChanges() > 0)
-      Console.WriteLine($"  Changing GroupRef {schemaParticle.Id} settings");
+      Console.WriteLine($"  Changing GroupRef {schemaGroupRef.Id} settings");
   }
 
-  internal void ParseXmlSchemaSequence(SchemaComplexType schemaComplexType, SchemaParticle? parentParticle, XmlSchemaSequence xmlSchemaSequence, int? ordNum)
+  internal void ParseXmlSchemaSequence(SchemaComplexType parentComplexType, SchemaParticle? parentParticle, XmlSchemaSequence xmlSchemaSequence, int? ordNum)
   {
-    var schemaGroup = (SchemaSequence?)dbContext.SchemaParticles.FirstOrDefault(item =>
-      item.ComplexTypeId == schemaComplexType.Id && item.OrdNum == ordNum && item.ParticleType == ParticleType.Sequence);
-    if (schemaGroup == null)
+    var parentParticleId = parentParticle?.Id; 
+    var particle = (SchemaSequence?)dbContext.SchemaParticles.FirstOrDefault(item =>
+      item.ComplexTypeId == parentComplexType.Id && item.ParentParticleId == parentParticleId && item.OrdNum == ordNum && item.ParticleType == ParticleType.Sequence);
+    if (particle == null)
     {
-      schemaGroup = new SchemaSequence
+      particle = new SchemaSequence
       {
-        ComplexTypeId = schemaComplexType.Id,
+        ComplexTypeId = parentComplexType.Id,
         ParentParticleId = parentParticle?.Id,
         OrdNum = ordNum
       };
-      dbContext.SchemaParticles.Add(schemaGroup);
+      dbContext.SchemaParticles.Add(particle);
       dbContext.SaveChanges();
-      Console.WriteLine($"Adding Sequence particle {schemaGroup.Id}");
+      Console.WriteLine($"Adding Sequence particle {particle.Id}");
     }
-    schemaGroup.MinOccurs = GetOccurs(xmlSchemaSequence.MinOccurs, xmlSchemaSequence.MinOccursString);
-    schemaGroup.MaxOccurs = GetOccurs(xmlSchemaSequence.MaxOccurs, xmlSchemaSequence.MaxOccursString);
+    ParseXmlSchemaGroupBaseDetails(particle, parentComplexType, xmlSchemaSequence);
+  }
+
+  internal void ParseXmlSchemaSequence(SchemaGroup parentGroup, SchemaParticle? parentParticle, XmlSchemaSequence xmlSchemaSequence, int? ordNum)
+  {
+    var parentParticleId = parentParticle?.Id;
+    var particle = (SchemaSequence?)dbContext.SchemaParticles.FirstOrDefault(item =>
+      item.GroupId == parentGroup.Id && item.ParentParticleId == parentParticleId && item.OrdNum == ordNum && item.ParticleType == ParticleType.Sequence);
+    if (particle == null)
+    {
+      particle = new SchemaSequence
+      {
+        GroupId = parentGroup.Id,
+        ParentParticleId = parentParticle?.Id,
+        OrdNum = ordNum
+      };
+      dbContext.SchemaParticles.Add(particle);
+      dbContext.SaveChanges();
+      Console.WriteLine($"Adding Sequence particle {particle.Id}");
+    }
+    ParseXmlSchemaGroupBaseDetails(particle, parentGroup, xmlSchemaSequence);
+  }
+
+  internal void ParseXmlSchemaChoice(SchemaComplexType parentComplexType, SchemaParticle? parentParticle, XmlSchemaChoice xmlSchemaChoice, int? ordNum)
+  {
+    var parentParticleId = parentParticle?.Id;
+    var particle = (SchemaChoice?)dbContext.SchemaParticles.FirstOrDefault(item =>
+      item.ComplexTypeId == parentComplexType.Id && item.ParentParticleId == parentParticleId && item.OrdNum == ordNum && item.ParticleType == ParticleType.Choice);
+    if (particle == null)
+    {
+      particle = new SchemaChoice
+      {
+        ComplexTypeId = parentComplexType.Id,
+        ParentParticleId = parentParticle?.Id,
+        OrdNum = ordNum
+      };
+      dbContext.SchemaParticles.Add(particle);
+      dbContext.SaveChanges();
+      Console.WriteLine($"Adding Choice particle {particle.Id}");
+    }
+    ParseXmlSchemaGroupBaseDetails(particle, parentComplexType, xmlSchemaChoice);
+  }
+
+  internal void ParseXmlSchemaChoice(SchemaGroup parentGroup, SchemaParticle? parentParticle, XmlSchemaChoice xmlSchemaChoice, int? ordNum)
+  {
+    var parentParticleId = parentParticle?.Id;
+    var particle = (SchemaChoice?)dbContext.SchemaParticles.FirstOrDefault(item =>
+      item.GroupId == parentGroup.Id && item.ParentParticleId == parentParticleId && item.OrdNum == ordNum && item.ParticleType == ParticleType.Choice);
+    if (particle == null)
+    {
+      particle = new SchemaChoice
+      {
+        GroupId = parentGroup.Id,
+        ParentParticleId = parentParticle?.Id,
+        OrdNum = ordNum
+      };
+      dbContext.SchemaParticles.Add(particle);
+      dbContext.SaveChanges();
+      Console.WriteLine($"Adding Choice particle {particle.Id}");
+    }
+    ParseXmlSchemaGroupBaseDetails(particle, parentGroup, xmlSchemaChoice);
+  }
+
+  internal void ParseXmlSchemaAll(SchemaComplexType parentComplexType, SchemaParticle? parentParticle, XmlSchemaAll xmlSchemaAll, int? ordNum)
+  {
+    var parentParticleId = parentParticle?.Id;
+    var particle = (SchemaAll?)dbContext.SchemaParticles.FirstOrDefault(item =>
+      item.ComplexTypeId == parentComplexType.Id && item.ParentParticleId == parentParticleId && item.OrdNum == ordNum && item.ParticleType == ParticleType.All);
+    if (particle == null)
+    {
+      particle = new SchemaAll
+      {
+        ComplexTypeId = parentComplexType.Id,
+        ParentParticleId = parentParticle?.Id,
+        OrdNum = ordNum
+      };
+      dbContext.SchemaParticles.Add(particle);
+      dbContext.SaveChanges();
+      Console.WriteLine($"Adding All particle {particle.Id}");
+    }
+    ParseXmlSchemaGroupBaseDetails(particle, parentComplexType, xmlSchemaAll);
+  }
+
+  internal void ParseXmlSchemaAll(SchemaGroup parentGroup, SchemaParticle? parentParticle, XmlSchemaAll xmlSchemaAll, int? ordNum)
+  {
+    var parentParticleId = parentParticle?.Id;
+    var particle = (SchemaAll?)dbContext.SchemaParticles.FirstOrDefault(item =>
+      item.GroupId == parentGroup.Id && item.ParentParticleId == parentParticleId && item.OrdNum == ordNum && item.ParticleType == ParticleType.All);
+    if (particle == null)
+    {
+      particle = new SchemaAll
+      {
+        GroupId = parentGroup.Id,
+        ParentParticleId = parentParticle?.Id,
+        OrdNum = ordNum
+      };
+      dbContext.SchemaParticles.Add(particle);
+      dbContext.SaveChanges();
+      Console.WriteLine($"Adding All particle {particle.Id}");
+    }
+    ParseXmlSchemaGroupBaseDetails(particle, parentGroup, xmlSchemaAll);
+  }
+
+  private void ParseXmlSchemaGroupBaseDetails(SchemaGroupBase particle, SchemaComplexType parentComplexType,
+    XmlSchemaGroupBase xmlSchemaGroupBase)
+  {
+    particle.MinOccurs = GetOccurs(xmlSchemaGroupBase.MinOccurs, xmlSchemaGroupBase.MinOccursString);
+    particle.MaxOccurs = GetOccurs(xmlSchemaGroupBase.MaxOccurs, xmlSchemaGroupBase.MaxOccursString);
     if (dbContext.SaveChanges() > 0)
-      Console.WriteLine($"  Changing Sequence particle {schemaGroup.Id} settings");
+      Console.WriteLine($"  Changing Sequence particle {particle.Id} settings");
     int ordNum1 = 0;
-    foreach (var item in xmlSchemaSequence.Items)
+    foreach (var item in xmlSchemaGroupBase.Items)
     {
       ordNum1++;
-      if (item is XmlSchemaParticle xmlSchemaParticle) 
-        ParseXmlSchemaParticle(schemaComplexType, schemaGroup, xmlSchemaParticle, ordNum1);
+      if (item is XmlSchemaParticle xmlSchemaParticle)
+        ParseXmlSchemaParticle(parentComplexType, particle, xmlSchemaParticle, ordNum1);
       else
       {
         throw new NotImplementedException($"Sequence item type {item.GetType()} not supported");
@@ -836,86 +1028,41 @@ internal class XmlSchemaParser
     }
   }
 
-  internal void ParseXmlSchemaChoice(SchemaComplexType schemaComplexType, SchemaParticle? parentParticle, XmlSchemaChoice xmlSchemaChoice, int? ordNum)
+  private void ParseXmlSchemaGroupBaseDetails(SchemaGroupBase particle, SchemaGroup parentGroup,
+    XmlSchemaGroupBase xmlSchemaGroupBase)
   {
-    var schemaGroup = (SchemaChoice?)dbContext.SchemaParticles.FirstOrDefault(item =>
-      item.ComplexTypeId == schemaComplexType.Id && item.OrdNum == ordNum && item.ParticleType == ParticleType.Choice);
-    if (schemaGroup == null)
-    {
-      schemaGroup = new SchemaChoice
-      {
-        ComplexTypeId = schemaComplexType.Id,
-        ParentParticleId = parentParticle?.Id,
-        OrdNum = ordNum
-      };
-      dbContext.SchemaParticles.Add(schemaGroup);
-      dbContext.SaveChanges();
-      Console.WriteLine($"Adding Choice particle {schemaGroup.Id}");
-    }
-    schemaGroup.MinOccurs = GetOccurs(xmlSchemaChoice.MinOccurs, xmlSchemaChoice.MinOccursString);
-    schemaGroup.MaxOccurs = GetOccurs(xmlSchemaChoice.MaxOccurs, xmlSchemaChoice.MaxOccursString);
+    particle.MinOccurs = GetOccurs(xmlSchemaGroupBase.MinOccurs, xmlSchemaGroupBase.MinOccursString);
+    particle.MaxOccurs = GetOccurs(xmlSchemaGroupBase.MaxOccurs, xmlSchemaGroupBase.MaxOccursString);
     if (dbContext.SaveChanges() > 0)
-      Console.WriteLine($"  Changing Choice particle {schemaGroup.Id} settings");
+      Console.WriteLine($"  Changing Sequence particle {particle.Id} settings");
     int ordNum1 = 0;
-    foreach (var item in xmlSchemaChoice.Items)
+    foreach (var item in xmlSchemaGroupBase.Items)
     {
       ordNum1++;
       if (item is XmlSchemaParticle xmlSchemaParticle)
-        ParseXmlSchemaParticle(schemaComplexType, schemaGroup, xmlSchemaParticle, ordNum1);
+        ParseXmlSchemaParticle(parentGroup, particle, xmlSchemaParticle, ordNum1);
       else
       {
-        throw new NotImplementedException($"Choice item type {item.GetType()} not supported");
+        throw new NotImplementedException($"Sequence item type {item.GetType()} not supported");
       }
     }
   }
 
-  internal void ParseXmlSchemaAll(SchemaComplexType schemaComplexType, SchemaParticle? parentParticle, XmlSchemaAll xmlSchemaAll, int? ordNum)
+  internal void ParseXmlSchemaElement(SchemaComplexType parentComplexType, SchemaParticle? parentParticle, XmlSchemaElement xmlSchemaElement, int? ordNum)
   {
-    var schemaGroup = (SchemaAll?)dbContext.SchemaParticles.FirstOrDefault(item =>
-      item.ComplexTypeId == schemaComplexType.Id && item.OrdNum == ordNum && item.ParticleType == ParticleType.All);
-    if (schemaGroup == null)
-    {
-      schemaGroup = new SchemaAll
-      {
-        ComplexTypeId = schemaComplexType.Id,
-        ParentParticleId = parentParticle?.Id,
-        OrdNum = ordNum
-      };
-      dbContext.SchemaParticles.Add(schemaGroup);
-      dbContext.SaveChanges();
-      Console.WriteLine($"Adding All particle {schemaGroup.Id}");
-    }
-    schemaGroup.MinOccurs = GetOccurs(xmlSchemaAll.MinOccurs, xmlSchemaAll.MinOccursString);
-    schemaGroup.MaxOccurs = GetOccurs(xmlSchemaAll.MaxOccurs, xmlSchemaAll.MaxOccursString);
-    if (dbContext.SaveChanges() > 0)
-      Console.WriteLine($"  Changing All particle {schemaGroup.Id} settings");
-    int ordNum1 = 0;
-    foreach (var item in xmlSchemaAll.Items)
-    {
-      ordNum1++;
-      if (item is XmlSchemaParticle xmlSchemaParticle)
-        ParseXmlSchemaParticle(schemaComplexType, schemaGroup, xmlSchemaParticle, ordNum1);
-      else
-      {
-        throw new NotImplementedException($"All item type {item.GetType()} not supported");
-      }
-    }
-  }
-
-  internal void ParseXmlSchemaElement(SchemaComplexType schemaComplexType, SchemaParticle? parentParticle, XmlSchemaElement xmlSchemaElement, int? ordNum)
-  {
+    var parentParticleId = parentParticle?.Id;
     SchemaElement? schemaElement;
     if (xmlSchemaElement.Name != null)
     {
       schemaElement = dbContext.SchemaElements.FirstOrDefault(item =>
-        item.ComplexTypeId == schemaComplexType.Id
-        && item.ParticleType == ParticleType.Element && item.Name == xmlSchemaElement.Name);
+        item.ComplexTypeId == parentComplexType.Id && item.ParentParticleId == parentParticleId 
+        && item.ParticleType == ParticleType.Element && item.OrdNum == ordNum && item.Name == xmlSchemaElement.Name);
       if (schemaElement == null)
       {
         Console.WriteLine($"Adding element {xmlSchemaElement.Name}");
         schemaElement = new SchemaElement
         {
-          ComplexTypeId = schemaComplexType.Id,
+          ComplexTypeId = parentComplexType.Id,
           ParentParticleId = parentParticle?.Id,
           OrdNum = ordNum,
           Name = xmlSchemaElement.Name,
@@ -930,13 +1077,14 @@ internal class XmlSchemaParser
       if (ns == null)
         throw new DataException($"Namespace {xmlSchemaElement.RefName.Namespace} not found");
       schemaElement = dbContext.SchemaElements.FirstOrDefault(item =>
-        item.ComplexTypeId == schemaComplexType.Id && item.Name == xmlSchemaElement.RefName.Name && item.RefNamespaceId == ns.Id);
+        item.ComplexTypeId == parentComplexType.Id && item.ParentParticleId == parentParticleId 
+        && item.ParticleType == ParticleType.Element && item.OrdNum == ordNum && item.Name == xmlSchemaElement.Name && item.RefNamespaceId == ns.Id);
       if (schemaElement == null)
       {
         Console.WriteLine($"Adding element reference to {ns.Url} {xmlSchemaElement.RefName.Name}");
         schemaElement = new SchemaElement
         {
-          ComplexTypeId = schemaComplexType.Id,
+          ComplexTypeId = parentComplexType.Id,
           ParentParticleId = parentParticle?.Id,
           OrdNum = ordNum,
           Name = xmlSchemaElement.RefName.Name,
@@ -946,13 +1094,103 @@ internal class XmlSchemaParser
         dbContext.SaveChanges();
       }
     }
-    ParseXmlSchemaElementDetails(schemaElement, parentParticle, xmlSchemaElement, ordNum);
+    ParseXmlSchemaElementDetails(schemaElement, xmlSchemaElement);
   }
 
-  internal void ParseXmlSchemaElementDetails(SchemaElement schemaElement, SchemaParticle? parentParticle, XmlSchemaElement xmlSchemaElement, int? ordNum)
+  internal void ParseXmlSchemaElement(SchemaGroup parentGroup, SchemaParticle? parentParticle, XmlSchemaElement xmlSchemaElement, int? ordNum)
   {
-    schemaElement.OrdNum = ordNum;
-    schemaElement.ParentParticleId = parentParticle?.Id;
+    var parentParticleId = parentParticle?.Id;
+    SchemaElement? schemaElement;
+    if (xmlSchemaElement.Name != null)
+    {
+      schemaElement = dbContext.SchemaElements.FirstOrDefault(item =>
+        item.GroupId == parentGroup.Id && item.ParentParticleId == parentParticleId
+        && item.ParticleType == ParticleType.Element && item.OrdNum == ordNum && item.Name == xmlSchemaElement.Name);
+      if (schemaElement == null)
+      {
+        Console.WriteLine($"Adding element {xmlSchemaElement.Name}");
+        schemaElement = new SchemaElement
+        {
+          GroupId = parentGroup.Id,
+          ParentParticleId = parentParticle?.Id,
+          OrdNum = ordNum,
+          Name = xmlSchemaElement.Name,
+        };
+        dbContext.SchemaElements.Add(schemaElement);
+        dbContext.SaveChanges();
+      }
+    }
+    else
+    {
+      var ns = dbContext.SchemaNamespaces.FirstOrDefault(item => item.Url == xmlSchemaElement.RefName.Namespace);
+      if (ns == null)
+        throw new DataException($"Namespace {xmlSchemaElement.RefName.Namespace} not found");
+      schemaElement = dbContext.SchemaElements.FirstOrDefault(item =>
+        item.GroupId == parentGroup.Id && item.ParentParticleId == parentParticleId
+        && item.ParticleType == ParticleType.Element && item.OrdNum == ordNum && item.Name == xmlSchemaElement.Name && item.RefNamespaceId == ns.Id);
+      if (schemaElement == null)
+      {
+        Console.WriteLine($"Adding element reference to {ns.Url} {xmlSchemaElement.RefName.Name}");
+        schemaElement = new SchemaElement
+        {
+          GroupId = parentGroup.Id,
+          ParentParticleId = parentParticle?.Id,
+          OrdNum = ordNum,
+          Name = xmlSchemaElement.RefName.Name,
+          RefNamespaceId = ns.Id
+        };
+        dbContext.SchemaElements.Add(schemaElement);
+        dbContext.SaveChanges();
+      }
+    }
+    ParseXmlSchemaElementDetails(schemaElement, xmlSchemaElement);
+  }
+
+  internal void ParseXmlSchemaGlobalElement(SchemaFile parentSchemaFile, XmlSchemaElement xmlSchemaElement)
+  {
+    SchemaElement? schemaElement;
+    if (xmlSchemaElement.Name != null)
+    {
+      schemaElement = dbContext.SchemaElements.FirstOrDefault(item =>
+        item.SchemaFileId == parentSchemaFile.Id
+        && item.ParticleType == ParticleType.Element && item.Name == xmlSchemaElement.Name);
+      if (schemaElement == null)
+      {
+        Console.WriteLine($"Adding global element {xmlSchemaElement.Name}");
+        schemaElement = new SchemaElement
+        {
+          SchemaFileId = parentSchemaFile.Id,
+          Name = xmlSchemaElement.Name,
+        };
+        dbContext.SchemaElements.Add(schemaElement);
+        dbContext.SaveChanges();
+      }
+    }
+    else
+    {
+      var ns = dbContext.SchemaNamespaces.FirstOrDefault(item => item.Url == xmlSchemaElement.RefName.Namespace);
+      if (ns == null)
+        throw new DataException($"Namespace {xmlSchemaElement.RefName.Namespace} not found");
+      schemaElement = dbContext.SchemaElements.FirstOrDefault(item =>
+        item.SchemaFileId == parentSchemaFile.Id && item.Name == xmlSchemaElement.RefName.Name && item.RefNamespaceId == ns.Id);
+      if (schemaElement == null)
+      {
+        Console.WriteLine($"Adding element reference to {ns.Url} {xmlSchemaElement.RefName.Name}");
+        schemaElement = new SchemaElement
+        {
+          SchemaFileId = parentSchemaFile.Id,
+          Name = xmlSchemaElement.RefName.Name,
+          RefNamespaceId = ns.Id
+        };
+        dbContext.SchemaElements.Add(schemaElement);
+        dbContext.SaveChanges();
+      }
+    }
+    ParseXmlSchemaElementDetails(schemaElement, xmlSchemaElement);
+  }
+
+  internal void ParseXmlSchemaElementDetails(SchemaElement schemaElement, XmlSchemaElement xmlSchemaElement)
+  {
     if (!string.IsNullOrEmpty(xmlSchemaElement.SchemaTypeName.Namespace))
     {
       var ns = dbContext.SchemaNamespaces.FirstOrDefault(item => item.Url == xmlSchemaElement.SchemaTypeName.Namespace);
@@ -985,4 +1223,69 @@ internal class XmlSchemaParser
       return int.MinValue;
     return (int)value;
   }
+
+  internal void ParseXmlSchemaGroup(SchemaFile schemaFile, XmlSchemaGroup xmlSchemaGroup)
+  {
+    if (xmlSchemaGroup.Name != null)
+    {
+      var schemaGroup = dbContext.SchemaGroups.FirstOrDefault(item =>
+        item.SchemaFileId == schemaFile.Id && item.GroupName == xmlSchemaGroup.Name);
+      if (schemaGroup == null)
+      {
+        Console.WriteLine($"Adding global group {xmlSchemaGroup.Name}");
+        schemaGroup = new SchemaGroup
+        {
+          SchemaFileId = schemaFile.Id,
+          GroupName = xmlSchemaGroup.Name,
+        };
+        dbContext.SchemaGroups.Add(schemaGroup);
+        dbContext.SaveChanges();
+      }
+      if (xmlSchemaGroup.Particle != null)
+      {
+        ParseXmlSchemaGroupParticle(schemaGroup, null, xmlSchemaGroup.Particle, null);
+      }
+    }
+    else
+      throw new InvalidDataException("Global group without name is not supported");
+  }
+
+  internal void ParseXmlSchemaGroupParticle(SchemaGroup schemaGroup, SchemaParticle? parentParticle, XmlSchemaParticle xmlSchemaParticle, int? ordNum)
+  {
+    if (xmlSchemaParticle is XmlSchemaElement xmlSchemaElement)
+    {
+      ParseXmlSchemaElement(schemaGroup, parentParticle, xmlSchemaElement, ordNum);
+    }
+    else
+    if (xmlSchemaParticle is XmlSchemaSequence xmlSchemaSequence)
+    {
+      ParseXmlSchemaSequence(schemaGroup, parentParticle, xmlSchemaSequence, ordNum);
+    }
+    else
+    if (xmlSchemaParticle is XmlSchemaAny xmlSchemaAny)
+    {
+      ParseXmlSchemaAny(schemaGroup, parentParticle, xmlSchemaAny, ordNum);
+    }
+    else
+    if (xmlSchemaParticle is XmlSchemaAll xmlSchemaAll)
+    {
+      ParseXmlSchemaAll(schemaGroup, parentParticle, xmlSchemaAll, ordNum);
+    }
+    else
+    if (xmlSchemaParticle is XmlSchemaChoice xmlSchemaChoice)
+    {
+      ParseXmlSchemaChoice(schemaGroup, parentParticle, xmlSchemaChoice, ordNum);
+    }
+    else
+
+    if (xmlSchemaParticle is XmlSchemaGroupRef xmlSchemaGroupRef)
+    {
+      ParseXmlSchemaGroupRef(schemaGroup, parentParticle, xmlSchemaGroupRef, ordNum);
+    }
+    else
+    {
+      throw new NotImplementedException($"Sequence item type {xmlSchemaParticle.GetType()} not supported");
+    }
+  }
+
 }

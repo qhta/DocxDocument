@@ -7,9 +7,13 @@ public abstract class SchemaParticle
 
   [Key] public int Id { get; set; }
 
-  public int? ComplexTypeId { get; set; }
-
   public ParticleType ParticleType { get; set; }
+
+  public int? SchemaFileId { get; set; }
+
+  public int? GroupId { get; set; }
+
+  public int? ComplexTypeId { get; set; }
 
   public int? ParentParticleId { get; set; }
 
