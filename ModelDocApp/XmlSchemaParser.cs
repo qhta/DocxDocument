@@ -1,4 +1,5 @@
 ﻿using System.Data;
+using System.Diagnostics;
 using System.Globalization;
 using System.Xml.Schema;
 
@@ -472,7 +473,14 @@ internal class XmlSchemaParser
     if (xmlSchemaComplexType.BaseXmlSchemaType != null)
     {
       if (xmlSchemaComplexType.BaseXmlSchemaType.Name != null)
+      {
         schemaComplexType.BaseTypeName = xmlSchemaComplexType.BaseXmlSchemaType.Name;
+      var ns = dbContext.SchemaNamespaces.FirstOrDefault(item => item.Url == xmlSchemaComplexType.BaseXmlSchemaType.QualifiedName.Namespace);
+      if (ns!=null && ns.Id != nsId)
+        schemaComplexType.BaseNamespaceId = ns.Id;
+      }
+      if (SaveChanges() > 0)
+        Console.WriteLine($"  Setting complex type {typeName} base type");
     }
     ParseXmlSchemaComplexTypeDetails(schemaComplexType, xmlSchemaComplexType);
     return schemaComplexType;
