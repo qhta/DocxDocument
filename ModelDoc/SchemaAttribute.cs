@@ -11,7 +11,7 @@ public class SchemaAttribute
 
   public int? AttributeGroupId { get; set; }
 
-  public int? SchemaFileId { get; set; }
+  public int? SchemaNamespaceId { get; set; }
 
   public int? RefNamespaceId { get; set; }
 

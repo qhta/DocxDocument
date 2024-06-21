@@ -11,8 +11,6 @@ public class SchemaAttributeGroupRef
 
   public int? AttributeGroupId { get; set; }
 
-  public int? SchemaFileId { get; set; }
-
   public int? RefNamespaceId { get; set; }
 
   [MaxLength(255)]
