@@ -1,4 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.Diagnostics;
+
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 
 
 namespace ModelDoc;
@@ -13,7 +16,7 @@ public class ModelsDbContext : DbContext
 
   public DbSet<SchemaUsedNamespace> SchemaUsedNamespaces { get; set; }
 
-  public DbSet<SchemaType> SchemaTypes { get; set; }
+  //public DbSet<SchemaType> SchemaTypes { get; set; }
 
   public DbSet<SchemaSimpleType> SchemaSimpleTypes { get; set; }
 
@@ -56,17 +59,18 @@ public class ModelsDbContext : DbContext
   protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
   {
     optionsBuilder.UseJet(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\VS\Docs\DocumentModel\Models.accdb;");
+    //optionsBuilder.LogTo(message => Debug.WriteLine(message));
   }
 
   protected override void OnModelCreating(ModelBuilder modelBuilder)
   {
-    modelBuilder.Entity<SchemaType>()
-      .HasDiscriminator<bool>("IsComplex")
-      .HasValue<SchemaSimpleType>(false)
-      .HasValue<SchemaComplexType>(true);
+    //modelBuilder.Entity<SchemaType>()
+    //  .HasDiscriminator<bool>("IsComplex")
+    //  .HasValue<SchemaSimpleType>(false)
+    //  .HasValue<SchemaComplexType>(true);
 
-    modelBuilder.Entity<SchemaType>()
-      .Property("IsComplex").HasColumnType("bit");
+    //modelBuilder.Entity<SchemaType>()
+    //  .Property("IsComplex").HasColumnType("bit");
 
     modelBuilder.Entity<SchemaParticle>()
       .HasDiscriminator<ParticleType>("ParticleType")
@@ -96,4 +100,5 @@ public class ModelsDbContext : DbContext
       .Property(e => e.RefNamespaceId)
       .HasColumnName("RefNamespaceId");
   }
+
 }

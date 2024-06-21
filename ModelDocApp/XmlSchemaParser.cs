@@ -4,8 +4,6 @@ using System.Xml.Schema;
 
 using ModelDoc;
 
-using SchemaType = ModelDoc.SchemaType;
-
 namespace ModelDocApp;
 
 internal class XmlSchemaParser
@@ -57,6 +55,21 @@ internal class XmlSchemaParser
     throw new InvalidDataException(msg);
   }
 
+  internal int SaveChanges()
+  {
+    try
+    {
+      var changes = dbContext.SaveChanges();
+      return changes;
+    }
+    catch (Exception e)
+    {
+      Console.WriteLine(e);
+      //throw;
+      return -1;
+
+    }
+  }
 
   internal void ParseSchemaFilesAndNamespaces(XmlSchemaSet schemaSet)
   {
@@ -79,12 +92,12 @@ internal class XmlSchemaParser
           {
             schemaNamespace = new SchemaNamespace { Url = schema.TargetNamespace };
             dbContext.SchemaNamespaces.Add(schemaNamespace);
-            dbContext.SaveChanges();
+            SaveChanges();
           }
           schemaFile.TargetNamespaceId = schemaNamespace.Id;
         }
-        dbContext.SaveChanges();
-        Console.WriteLine($"  Checking {schema.Namespaces.Count} namespaces");
+        SaveChanges();
+
         var namespaces = schema.Namespaces.ToArray();
         for (int i = 0; i < namespaces.Count(); i++)
         {
@@ -97,7 +110,7 @@ internal class XmlSchemaParser
               Console.WriteLine($"  adding namespace {ns.Name}\t{ns.Namespace}");
               schemaNamespace = new SchemaNamespace { Url = ns.Namespace };
               dbContext.SchemaNamespaces.Add(schemaNamespace);
-              dbContext.SaveChanges();
+              SaveChanges();
             }
             var schemaUsedNamespace = dbContext.SchemaUsedNamespaces.FirstOrDefault(item =>
                       item.SchemaFileId == schemaFile.Id && item.SchemaNamespaceId == schemaNamespace.Id && item.Prefix == ns.Name);
@@ -106,7 +119,7 @@ internal class XmlSchemaParser
               Console.WriteLine($"  adding used namespace {ns.Name}\t{schemaNamespace.Id}");
               schemaUsedNamespace = new SchemaUsedNamespace { SchemaFileId = schemaFile.Id, SchemaNamespaceId = schemaNamespace.Id, Prefix = ns.Name };
               dbContext.SchemaUsedNamespaces.Add(schemaUsedNamespace);
-              dbContext.SaveChanges();
+              SaveChanges();
             }
           }
         }
@@ -134,7 +147,7 @@ internal class XmlSchemaParser
         schemaNamespace.Prefix = schemaNamespacePrefix.Prefix;
       }
     }
-    if (dbContext.SaveChanges() > 0)
+    if (SaveChanges() > 0)
       Console.WriteLine("Setting namespace prefixes");
   }
 
@@ -142,57 +155,62 @@ internal class XmlSchemaParser
   {
     foreach (XmlSchema schema in schemaSet.Schemas())
     {
-      Console.WriteLine($"Checking {schema.Id} types");
-      if (schema.Id != null)
-      {
-        string id = schema.Id;
-        var schemaFile = dbContext.SchemaFiles.FirstOrDefault(item => item.FileName == id);
-        if (schemaFile == null)
-        {
-          throw new Exception($"Schema filename {id} must be created first");
-        }
+      ParseXmlSchema(schema);
+    }
+  }
 
-        foreach (var item in schema.Items)
+  internal void ParseXmlSchema(XmlSchema schema)
+  {
+    Console.WriteLine($"Checking {schema.Id} items");
+    if (schema.Id != null)
+    {
+      string id = schema.Id;
+      var schemaFile = dbContext.SchemaFiles.FirstOrDefault(item => item.FileName == id);
+      if (schemaFile == null)
+      {
+        throw new Exception($"Schema filename {id} must be created first");
+      }
+
+      foreach (var item in schema.Items)
+      {
+        if (item is XmlSchemaSimpleType xmlSchemaSimpleType)
         {
-          if (item is XmlSchemaSimpleType xmlSchemaSimpleType)
-          {
-            ParseXmlSchemaSimpleType(schemaFile, xmlSchemaSimpleType);
-          }
-          else
-          if (item is XmlSchemaComplexType xmlSchemaComplexType)
-          {
-            ParseXmlSchemaComplexType(schemaFile, xmlSchemaComplexType);
-          }
-          else
-          if (item is XmlSchemaGroup xmlSchemaGroup)
-          {
-            ParseXmlSchemaGroup(schemaFile, xmlSchemaGroup);
-          }
-          else
-          if (item is XmlSchemaElement xmlSchemaElement)
-          {
-            ParseXmlSchemaGlobalElement(schemaFile, xmlSchemaElement);
-          }
-          else
-          if (item is XmlSchemaAttributeGroup xmlSchemaAttributeGroup)
-          {
-            ParseXmlSchemaAttributeGroup(schemaFile, xmlSchemaAttributeGroup);
-          }
-          else
-          if (item is XmlSchemaAttribute xmlSchemaAttribute)
-          {
-            ParseXmlSchemaGlobalAttribute(schemaFile, xmlSchemaAttribute);
-          }
-          else
-          {
-            throw new NotImplementedException($"Schema type {item.GetType()} not supported");
-          }
+          ParseXmlSchemaSimpleType(schemaFile, xmlSchemaSimpleType);
+        }
+        else
+        if (item is XmlSchemaComplexType xmlSchemaComplexType)
+        {
+          ParseXmlSchemaComplexType(schemaFile, xmlSchemaComplexType);
+        }
+        else
+        if (item is XmlSchemaGroup xmlSchemaGroup)
+        {
+          ParseXmlSchemaGroup(schemaFile, xmlSchemaGroup);
+        }
+        else
+        if (item is XmlSchemaElement xmlSchemaElement)
+        {
+          ParseXmlSchemaGlobalElement(schemaFile, xmlSchemaElement);
+        }
+        else
+        if (item is XmlSchemaAttributeGroup xmlSchemaAttributeGroup)
+        {
+          ParseXmlSchemaAttributeGroup(schemaFile, xmlSchemaAttributeGroup);
+        }
+        else
+        if (item is XmlSchemaAttribute xmlSchemaAttribute)
+        {
+          ParseXmlSchemaGlobalAttribute(schemaFile, xmlSchemaAttribute);
+        }
+        else
+        {
+          throw new NotImplementedException($"Schema type {item.GetType()} not supported");
         }
       }
     }
   }
 
-  internal SchemaType ParseXmlSchemaSimpleType(SchemaFile schemaFile, XmlSchemaSimpleType xmlSchemaSimpleType, string? defaultTypeName = null)
+  internal SchemaSimpleType ParseXmlSchemaSimpleType(SchemaFile schemaFile, XmlSchemaSimpleType xmlSchemaSimpleType, string? defaultTypeName = null)
   {
     var typeName = xmlSchemaSimpleType.Name ?? defaultTypeName;
     var schemaSimpleType = dbContext.SchemaSimpleTypes.FirstOrDefault(item =>
@@ -205,8 +223,8 @@ internal class XmlSchemaParser
         SchemaFileId = schemaFile.Id,
         TypeName = typeName
       };
-      dbContext.SchemaTypes.Add(schemaSimpleType);
-      dbContext.SaveChanges();
+      dbContext.SchemaSimpleTypes.Add(schemaSimpleType);
+      SaveChanges();
     }
     if (xmlSchemaSimpleType.BaseXmlSchemaType != null)
     {
@@ -240,7 +258,7 @@ internal class XmlSchemaParser
       else
       {
         schemaSimpleType.BaseTypeName = restriction.BaseTypeName.Name;
-        if (dbContext.SaveChanges() > 0)
+        if (SaveChanges() > 0)
           Console.WriteLine("  Setting other simple type");
       }
     }
@@ -258,7 +276,7 @@ internal class XmlSchemaParser
       throw new NotImplementedException($"Simple type content {xmlSchemaSimpleType.Content} not supported");
   }
 
-  internal void ParseXmlSimpleTypeEnumRestriction(SchemaType schemaSimpleType, XmlSchemaSimpleTypeRestriction restriction)
+  internal void ParseXmlSimpleTypeEnumRestriction(SchemaSimpleType schemaSimpleType, XmlSchemaSimpleTypeRestriction restriction)
   {
     int n = 0;
     schemaSimpleType.BaseTypeName = "enum";
@@ -276,10 +294,10 @@ internal class XmlSchemaParser
       schemaEnumValue.EnumValueNum = n++;
     }
     schemaSimpleType.BaseTypeName = restriction.BaseTypeName.Name;
-    dbContext.SaveChanges();
+    SaveChanges();
   }
 
-  internal void ParseXmlSimpleTypePatternRestriction(SchemaType schemaSimpleType, XmlSchemaSimpleTypeRestriction restriction)
+  internal void ParseXmlSimpleTypePatternRestriction(SchemaSimpleType schemaSimpleType, XmlSchemaSimpleTypeRestriction restriction)
   {
     schemaSimpleType.BaseTypeName = "string";
     foreach (var facet in restriction.Facets)
@@ -292,7 +310,7 @@ internal class XmlSchemaParser
         Console.WriteLine($"  Adding pattern value {patternFacet.Value}");
         schemaPattern = new SchemaPattern { SimpleTypeId = schemaSimpleType.Id, Pattern = patternFacet.Value };
         dbContext.SchemaPatterns.Add(schemaPattern);
-        dbContext.SaveChanges();
+        SaveChanges();
       }
     }
   }
@@ -325,7 +343,7 @@ internal class XmlSchemaParser
       else
         throw new NotImplementedException($"Restriction type {facet.GetType()} not supported");
     }
-    if (dbContext.SaveChanges() > 0)
+    if (SaveChanges() > 0)
       Console.WriteLine("  Adding other simple type restrictions");
   }
 
@@ -343,7 +361,7 @@ internal class XmlSchemaParser
     throw new NotImplementedException($"Value {value} should be decimal number");
   }
 
-  internal void ParseXmlSimpleTypeUnion(SchemaType schemaSimpleType, XmlSchemaSimpleTypeUnion union)
+  internal void ParseXmlSimpleTypeUnion(SchemaSimpleType schemaSimpleType, XmlSchemaSimpleTypeUnion union)
   {
     if (union.MemberTypes != null)
     {
@@ -355,7 +373,7 @@ internal class XmlSchemaParser
         if (memberNamespace == null)
           throw new NotImplementedException($"Namespace {memberType.Namespace} in type {schemaSimpleType.TypeName} not found");
         schemaSimpleType.BaseNamespaceId = memberNamespace.Id;
-        dbContext.SaveChanges();
+        SaveChanges();
       }
       else
       {
@@ -375,7 +393,7 @@ internal class XmlSchemaParser
             throw new NotImplementedException($"Namespace {memberType.Namespace} in type {schemaSimpleType.TypeName} not found");
           schemaUnionMember.MemberNamespaceId = memberNamespace.Id;
 
-          if (dbContext.SaveChanges() > 0)
+          if (SaveChanges() > 0)
             Console.WriteLine($"  Setting type unit item {memberType.Name}");
         }
       }
@@ -400,13 +418,13 @@ internal class XmlSchemaParser
           throw new NotImplementedException($"Namespace {url} in type {schemaSimpleType.TypeName} not found");
         schemaUnionMember.MemberNamespaceId = memberNamespace.Id;
 
-        if (dbContext.SaveChanges() > 0)
+        if (SaveChanges() > 0)
           Console.WriteLine($"  Setting type unit item {memberType.Name}");
       }
     }
   }
 
-  internal void ParseXmlSimpleTypeList(SchemaType schemaSimpleType, XmlSchemaSimpleTypeList list)
+  internal void ParseXmlSimpleTypeList(SchemaSimpleType schemaSimpleType, XmlSchemaSimpleTypeList list)
   {
     schemaSimpleType.BaseTypeName = "list";
     var itemType = list.ItemTypeName;
@@ -423,11 +441,11 @@ internal class XmlSchemaParser
       throw new NotImplementedException(
         $"Namespace {itemType.Namespace} in type {schemaSimpleType.TypeName} not found");
     schemaListItem.ItemNamespaceId = itemNamespace.Id;
-    if (dbContext.SaveChanges() > 0)
+    if (SaveChanges() > 0)
       Console.WriteLine($"  Setting type list item {itemType.Name}");
   }
 
-  internal SchemaType ParseXmlSchemaComplexType(SchemaFile schemaFile, XmlSchemaComplexType xmlSchemaComplexType, string? defaultTypeName = null)
+  internal SchemaComplexType ParseXmlSchemaComplexType(SchemaFile schemaFile, XmlSchemaComplexType xmlSchemaComplexType, string? defaultTypeName = null)
   {
     var typeName = xmlSchemaComplexType.Name ?? defaultTypeName;
     var schemaComplexType = dbContext.SchemaComplexTypes.FirstOrDefault(item =>
@@ -440,8 +458,8 @@ internal class XmlSchemaParser
         SchemaFileId = schemaFile.Id,
         TypeName = typeName
       };
-      dbContext.SchemaTypes.Add(schemaComplexType);
-      dbContext.SaveChanges();
+      dbContext.SchemaComplexTypes.Add(schemaComplexType);
+      SaveChanges();
     }
     if (xmlSchemaComplexType.BaseXmlSchemaType != null)
     {
@@ -479,7 +497,7 @@ internal class XmlSchemaParser
       XmlSchemaContentType.Mixed => ContentType.Mixed,
       _ => throw new NotImplementedException($"Content type {xmlSchemaComplexType.ContentType} not supported")
     };
-    if (dbContext.SaveChanges() > 0)
+    if (SaveChanges() > 0)
       Console.WriteLine("  Setting complex type content type");
     if (xmlSchemaComplexType.Particle != null)
     {
@@ -487,7 +505,7 @@ internal class XmlSchemaParser
     }
   }
 
-  internal void ParseXmlSchemaComplexTypeAttribute(SchemaType schemaComplexType, XmlSchemaAttribute xmlSchemaAttribute)
+  internal void ParseXmlSchemaComplexTypeAttribute(SchemaComplexType schemaComplexType, XmlSchemaAttribute xmlSchemaAttribute)
   {
     SchemaAttribute? schemaAttribute;
     if (xmlSchemaAttribute.Name != null)
@@ -503,7 +521,7 @@ internal class XmlSchemaParser
           AttributeName = xmlSchemaAttribute.Name,
         };
         dbContext.SchemaAttributes.Add(schemaAttribute);
-        dbContext.SaveChanges();
+        SaveChanges();
       }
     }
     else
@@ -523,7 +541,7 @@ internal class XmlSchemaParser
           RefNamespaceId = ns.Id
         };
         dbContext.SchemaAttributes.Add(schemaAttribute);
-        dbContext.SaveChanges();
+        SaveChanges();
       }
     }
     ParseXmlSchemaAttributeDetails(schemaAttribute, xmlSchemaAttribute);
@@ -545,7 +563,7 @@ internal class XmlSchemaParser
           AttributeName = xmlSchemaAttribute.Name,
         };
         dbContext.SchemaAttributes.Add(schemaAttribute);
-        dbContext.SaveChanges();
+        SaveChanges();
       }
     }
     else
@@ -565,7 +583,7 @@ internal class XmlSchemaParser
           RefNamespaceId = ns.Id
         };
         dbContext.SchemaAttributes.Add(schemaAttribute);
-        dbContext.SaveChanges();
+        SaveChanges();
       }
     }
     ParseXmlSchemaAttributeDetails(schemaAttribute, xmlSchemaAttribute);
@@ -593,7 +611,7 @@ internal class XmlSchemaParser
     };
     schemaAttribute.DefaultValue = xmlSchemaAttribute.DefaultValue ?? xmlSchemaAttribute.FixedValue;
     schemaAttribute.IsFixed = xmlSchemaAttribute.FixedValue != null;
-    if (dbContext.SaveChanges() > 0)
+    if (SaveChanges() > 0)
       Console.WriteLine($"  Changing attribute {schemaAttribute.AttributeName} settings");
   }
 
@@ -613,7 +631,7 @@ internal class XmlSchemaParser
           GroupName = xmlSchemaAttributeGroup.Name,
         };
         dbContext.SchemaAttributeGroups.Add(schemaAttributeGroup);
-        dbContext.SaveChanges();
+        SaveChanges();
       }
       foreach (var attribute in xmlSchemaAttributeGroup.Attributes)
       {
@@ -662,7 +680,7 @@ internal class XmlSchemaParser
           AttributeName = xmlSchemaAttribute.Name,
         };
         dbContext.SchemaAttributes.Add(schemaAttribute);
-        dbContext.SaveChanges();
+        SaveChanges();
       }
     }
     else
@@ -682,7 +700,7 @@ internal class XmlSchemaParser
           RefNamespaceId = ns.Id
         };
         dbContext.SchemaAttributes.Add(schemaAttribute);
-        dbContext.SaveChanges();
+        SaveChanges();
       }
     }
     ParseXmlSchemaAttributeDetails(schemaAttribute, xmlSchemaAttribute);
@@ -704,7 +722,7 @@ internal class XmlSchemaParser
         RefNamespaceId = ns.Id
       };
       dbContext.SchemaAttributeGroupRefs.Add(schemaAttributeGroupRef);
-      dbContext.SaveChanges();
+      SaveChanges();
     }
   }
 
@@ -796,7 +814,7 @@ internal class XmlSchemaParser
         OrdNum = ordNum
       };
       dbContext.SchemaParticles.Add(schemaAny);
-      dbContext.SaveChanges();
+      SaveChanges();
       Console.WriteLine($"Adding Any particle {schemaAny.Id}");
     }
     ParseXmlSchemaAnyDetails(schemaAny, xmlSchemaAny);
@@ -815,7 +833,7 @@ internal class XmlSchemaParser
         OrdNum = ordNum
       };
       dbContext.SchemaParticles.Add(schemaAny);
-      dbContext.SaveChanges();
+      SaveChanges();
       Console.WriteLine($"Adding Any particle {schemaAny.Id}");
     }
     ParseXmlSchemaAnyDetails(schemaAny, xmlSchemaAny);
@@ -833,7 +851,7 @@ internal class XmlSchemaParser
     };
     schemaAny.MinOccurs = GetOccurs(xmlSchemaAny.MinOccurs, xmlSchemaAny.MinOccursString);
     schemaAny.MaxOccurs = GetOccurs(xmlSchemaAny.MaxOccurs, xmlSchemaAny.MaxOccursString);
-    if (dbContext.SaveChanges() > 0)
+    if (SaveChanges() > 0)
       Console.WriteLine($"  Changing Any particle {schemaAny.Id} settings");
   }
 
@@ -850,7 +868,7 @@ internal class XmlSchemaParser
         OrdNum = ordNum
       };
       dbContext.SchemaParticles.Add(schemaGroupRef);
-      dbContext.SaveChanges();
+      SaveChanges();
       Console.WriteLine($"Adding GroupRef particle {schemaGroupRef.Id}");
     }
     ParseXmlSchemaGroupRefDetails(schemaGroupRef, xmlSchemaGroupRef);
@@ -869,7 +887,7 @@ internal class XmlSchemaParser
         OrdNum = ordNum
       };
       dbContext.SchemaParticles.Add(schemaGroupRef);
-      dbContext.SaveChanges();
+      SaveChanges();
       Console.WriteLine($"Adding GroupRef particle {schemaGroupRef.Id}");
     }
     ParseXmlSchemaGroupRefDetails(schemaGroupRef, xmlSchemaGroupRef);
@@ -884,7 +902,7 @@ internal class XmlSchemaParser
     schemaGroupRef.RefNamespaceId = ns.Id;
     schemaGroupRef.MinOccurs = GetOccurs(xmlSchemaGroupRef.MinOccurs, xmlSchemaGroupRef.MinOccursString);
     schemaGroupRef.MaxOccurs = GetOccurs(xmlSchemaGroupRef.MaxOccurs, xmlSchemaGroupRef.MaxOccursString);
-    if (dbContext.SaveChanges() > 0)
+    if (SaveChanges() > 0)
       Console.WriteLine($"  Changing GroupRef {schemaGroupRef.Id} settings");
   }
 
@@ -902,7 +920,7 @@ internal class XmlSchemaParser
         OrdNum = ordNum
       };
       dbContext.SchemaParticles.Add(particle);
-      dbContext.SaveChanges();
+      SaveChanges();
       Console.WriteLine($"Adding Sequence particle {particle.Id}");
     }
     ParseXmlSchemaGroupBaseDetails(particle, parentComplexType, xmlSchemaSequence);
@@ -922,7 +940,7 @@ internal class XmlSchemaParser
         OrdNum = ordNum
       };
       dbContext.SchemaParticles.Add(particle);
-      dbContext.SaveChanges();
+      SaveChanges();
       Console.WriteLine($"Adding Sequence particle {particle.Id}");
     }
     ParseXmlSchemaGroupBaseDetails(particle, parentGroup, xmlSchemaSequence);
@@ -942,7 +960,7 @@ internal class XmlSchemaParser
         OrdNum = ordNum
       };
       dbContext.SchemaParticles.Add(particle);
-      dbContext.SaveChanges();
+      SaveChanges();
       Console.WriteLine($"Adding Choice particle {particle.Id}");
     }
     ParseXmlSchemaGroupBaseDetails(particle, parentComplexType, xmlSchemaChoice);
@@ -962,7 +980,7 @@ internal class XmlSchemaParser
         OrdNum = ordNum
       };
       dbContext.SchemaParticles.Add(particle);
-      dbContext.SaveChanges();
+      SaveChanges();
       Console.WriteLine($"Adding Choice particle {particle.Id}");
     }
     ParseXmlSchemaGroupBaseDetails(particle, parentGroup, xmlSchemaChoice);
@@ -982,7 +1000,7 @@ internal class XmlSchemaParser
         OrdNum = ordNum
       };
       dbContext.SchemaParticles.Add(particle);
-      dbContext.SaveChanges();
+      SaveChanges();
       Console.WriteLine($"Adding All particle {particle.Id}");
     }
     ParseXmlSchemaGroupBaseDetails(particle, parentComplexType, xmlSchemaAll);
@@ -1002,7 +1020,7 @@ internal class XmlSchemaParser
         OrdNum = ordNum
       };
       dbContext.SchemaParticles.Add(particle);
-      dbContext.SaveChanges();
+      SaveChanges();
       Console.WriteLine($"Adding All particle {particle.Id}");
     }
     ParseXmlSchemaGroupBaseDetails(particle, parentGroup, xmlSchemaAll);
@@ -1013,7 +1031,7 @@ internal class XmlSchemaParser
   {
     particle.MinOccurs = GetOccurs(xmlSchemaGroupBase.MinOccurs, xmlSchemaGroupBase.MinOccursString);
     particle.MaxOccurs = GetOccurs(xmlSchemaGroupBase.MaxOccurs, xmlSchemaGroupBase.MaxOccursString);
-    if (dbContext.SaveChanges() > 0)
+    if (SaveChanges() > 0)
       Console.WriteLine($"  Changing Sequence particle {particle.Id} settings");
     int ordNum1 = 0;
     foreach (var item in xmlSchemaGroupBase.Items)
@@ -1033,7 +1051,7 @@ internal class XmlSchemaParser
   {
     particle.MinOccurs = GetOccurs(xmlSchemaGroupBase.MinOccurs, xmlSchemaGroupBase.MinOccursString);
     particle.MaxOccurs = GetOccurs(xmlSchemaGroupBase.MaxOccurs, xmlSchemaGroupBase.MaxOccursString);
-    if (dbContext.SaveChanges() > 0)
+    if (SaveChanges() > 0)
       Console.WriteLine($"  Changing Sequence particle {particle.Id} settings");
     int ordNum1 = 0;
     foreach (var item in xmlSchemaGroupBase.Items)
@@ -1068,7 +1086,7 @@ internal class XmlSchemaParser
           Name = xmlSchemaElement.Name,
         };
         dbContext.SchemaElements.Add(schemaElement);
-        dbContext.SaveChanges();
+        SaveChanges();
       }
     }
     else
@@ -1078,7 +1096,7 @@ internal class XmlSchemaParser
         throw new DataException($"Namespace {xmlSchemaElement.RefName.Namespace} not found");
       schemaElement = dbContext.SchemaElements.FirstOrDefault(item =>
         item.ComplexTypeId == parentComplexType.Id && item.ParentParticleId == parentParticleId 
-        && item.ParticleType == ParticleType.Element && item.OrdNum == ordNum && item.Name == xmlSchemaElement.Name && item.RefNamespaceId == ns.Id);
+        && item.ParticleType == ParticleType.Element && item.OrdNum == ordNum && item.Name == xmlSchemaElement.RefName.Name && item.RefNamespaceId == ns.Id);
       if (schemaElement == null)
       {
         Console.WriteLine($"Adding element reference to {ns.Url} {xmlSchemaElement.RefName.Name}");
@@ -1091,7 +1109,7 @@ internal class XmlSchemaParser
           RefNamespaceId = ns.Id
         };
         dbContext.SchemaElements.Add(schemaElement);
-        dbContext.SaveChanges();
+        SaveChanges();
       }
     }
     ParseXmlSchemaElementDetails(schemaElement, xmlSchemaElement);
@@ -1117,7 +1135,7 @@ internal class XmlSchemaParser
           Name = xmlSchemaElement.Name,
         };
         dbContext.SchemaElements.Add(schemaElement);
-        dbContext.SaveChanges();
+        SaveChanges();
       }
     }
     else
@@ -1127,7 +1145,7 @@ internal class XmlSchemaParser
         throw new DataException($"Namespace {xmlSchemaElement.RefName.Namespace} not found");
       schemaElement = dbContext.SchemaElements.FirstOrDefault(item =>
         item.GroupId == parentGroup.Id && item.ParentParticleId == parentParticleId
-        && item.ParticleType == ParticleType.Element && item.OrdNum == ordNum && item.Name == xmlSchemaElement.Name && item.RefNamespaceId == ns.Id);
+        && item.ParticleType == ParticleType.Element && item.OrdNum == ordNum && item.Name == xmlSchemaElement.RefName.Name && item.RefNamespaceId == ns.Id);
       if (schemaElement == null)
       {
         Console.WriteLine($"Adding element reference to {ns.Url} {xmlSchemaElement.RefName.Name}");
@@ -1140,7 +1158,7 @@ internal class XmlSchemaParser
           RefNamespaceId = ns.Id
         };
         dbContext.SchemaElements.Add(schemaElement);
-        dbContext.SaveChanges();
+        SaveChanges();
       }
     }
     ParseXmlSchemaElementDetails(schemaElement, xmlSchemaElement);
@@ -1163,7 +1181,7 @@ internal class XmlSchemaParser
           Name = xmlSchemaElement.Name,
         };
         dbContext.SchemaElements.Add(schemaElement);
-        dbContext.SaveChanges();
+        SaveChanges();
       }
     }
     else
@@ -1183,7 +1201,7 @@ internal class XmlSchemaParser
           RefNamespaceId = ns.Id
         };
         dbContext.SchemaElements.Add(schemaElement);
-        dbContext.SaveChanges();
+        SaveChanges();
       }
     }
     ParseXmlSchemaElementDetails(schemaElement, xmlSchemaElement);
@@ -1201,7 +1219,7 @@ internal class XmlSchemaParser
     schemaElement.TypeName = xmlSchemaElement.SchemaTypeName.Name;
     schemaElement.MinOccurs = GetOccurs(xmlSchemaElement.MinOccurs, xmlSchemaElement.MinOccursString);
     schemaElement.MaxOccurs = GetOccurs(xmlSchemaElement.MaxOccurs, xmlSchemaElement.MaxOccursString);
-    if (dbContext.SaveChanges() > 0)
+    if (SaveChanges() > 0)
       Console.WriteLine($"  Changing element {schemaElement.Name} settings");
   }
 
@@ -1239,7 +1257,7 @@ internal class XmlSchemaParser
           GroupName = xmlSchemaGroup.Name,
         };
         dbContext.SchemaGroups.Add(schemaGroup);
-        dbContext.SaveChanges();
+        SaveChanges();
       }
       if (xmlSchemaGroup.Particle != null)
       {
