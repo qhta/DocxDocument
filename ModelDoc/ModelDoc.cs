@@ -1,8 +1,4 @@
 ﻿using System.Xml;
-using System.Xml.Schema;
-using System.Xml.Serialization;
-
-using ModelDoc;
 
 using Qhta.Xml.Serialization;
 
@@ -20,13 +16,10 @@ public class ModelDoc
       return _Instance;
     }
   }
-  private static ModelDoc _Instance = null!;
+  private static ModelDoc? _Instance = null!;
 
   public Namespaces Namespaces { get; private set; } = new Namespaces();
 
-  public void AddXmlSchemaSimpleTypes (IEnumerable<SchemaType>  simpleTypes)
-  {
-  }
   
   #region Save/Load data
   public void SaveData()

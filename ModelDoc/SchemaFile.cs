@@ -1,25 +1,30 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
-using Microsoft.EntityFrameworkCore;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace ModelDoc;
+
+/// <summary>
+/// SchemaFile represents an XSD file.
+/// </summary>
 public class SchemaFile
 {
-  public SchemaFile() { }
+  /// <summary>
+  ///   Unique identifier for the SchemaFile.
+  /// </summary>
+  [Key] public int Id { get; set; }
 
-  [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-  [Key, Column(Order = 0)]
-  public int Id { get; set; }
+  /// <summary>
+  ///  The name of the file (without path and extension).
+  /// </summary>
+  [MaxLength(255)] public string? FileName { get; set; }
 
-  [MaxLength(255)]
-  public string? FileName {get; set; }
-
+  /// <summary>
+  /// Unique identifier for the namespace defined in the file.
+  /// </summary>
   public int? TargetNamespaceId { get; set; }
 
-  public SchemaNamespace? TargetNamespace
-  {
-    get; set;
-  }
+  /// <summary>
+  /// Navigation property for the namespace defined in the file.
+  /// </summary>
+  public SchemaNamespace? TargetNamespace { get; set; }
 
-  //public Types Types {get; set;} = new();
 }
