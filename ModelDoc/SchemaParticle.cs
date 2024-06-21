@@ -9,7 +9,7 @@ public abstract class SchemaParticle
 
   public ParticleType ParticleType { get; set; }
 
-  public int? SchemaFileId { get; set; }
+  public int? SchemaNamespaceId { get; set; }
 
   public int? GroupId { get; set; }
 
