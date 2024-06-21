@@ -6,7 +6,7 @@ public class SchemaComplexType
 {
   [Key] public int Id { get; set; }
 
-  public int SchemaFileId { get; set; }
+  public int SchemaNamespaceId { get; set; }
 
   [MaxLength(255)]
   public string? TypeName { get; set; }
@@ -15,8 +15,6 @@ public class SchemaComplexType
 
   [MaxLength(255)]
   public string? BaseTypeName { get; set; }
-
-  public SchemaFile? SchemaFile { get; set; }
 
   public ContentType ContentType { get; set; }
 }
