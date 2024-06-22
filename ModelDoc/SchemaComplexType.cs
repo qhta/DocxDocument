@@ -39,4 +39,9 @@ public class SchemaComplexType
   /// Content type of the complex type.
   /// </summary>
   public ContentType ContentType { get; set; }
+
+  /// <summary>
+  /// Navigation property for the namespace of the complex type.
+  /// </summary>
+  public SchemaNamespace? ParentNamespace { get; set; }
 }

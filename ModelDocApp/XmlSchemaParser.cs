@@ -943,7 +943,11 @@ internal class XmlSchemaParser
     var ns = dbContext.SchemaNamespaces.FirstOrDefault(item => item.Url == xmlSchemaGroupRef.RefName.Namespace);
     if (ns == null)
       throw new DataException($"Namespace {xmlSchemaGroupRef.RefName.Namespace} not found");
-    schemaGroupRef.RefNamespaceId = ns.Id;
+    int? nsId = ns.Id;
+    if (nsId == schemaGroupRef.OwnerNamespace?.Id)
+      nsId = null;
+
+    schemaGroupRef.RefNamespaceId = nsId;
     schemaGroupRef.MinOccurs = GetOccurs(xmlSchemaGroupRef.MinOccurs, xmlSchemaGroupRef.MinOccursString);
     schemaGroupRef.MaxOccurs = GetOccurs(xmlSchemaGroupRef.MaxOccurs, xmlSchemaGroupRef.MaxOccursString);
     if (SaveChanges() > 0)
@@ -1138,9 +1142,12 @@ internal class XmlSchemaParser
       var ns = dbContext.SchemaNamespaces.FirstOrDefault(item => item.Url == xmlSchemaElement.RefName.Namespace);
       if (ns == null)
         throw new DataException($"Namespace {xmlSchemaElement.RefName.Namespace} not found");
+      int? nsId = ns.Id;
+      if (nsId == parentComplexType.ParentNamespace?.Id)
+        nsId = null;
       schemaElement = dbContext.SchemaElements.FirstOrDefault(item =>
         item.ComplexTypeId == parentComplexType.Id && item.ParentParticleId == parentParticleId 
-        && item.ParticleType == ParticleType.Element && item.OrdNum == ordNum && item.Name == xmlSchemaElement.RefName.Name && item.RefNamespaceId == ns.Id);
+        && item.ParticleType == ParticleType.Element && item.OrdNum == ordNum && item.Name == xmlSchemaElement.RefName.Name && item.RefNamespaceId == nsId);
       if (schemaElement == null)
       {
         Console.WriteLine($"Adding element reference to {ns.Url} {xmlSchemaElement.RefName.Name}");
@@ -1150,7 +1157,7 @@ internal class XmlSchemaParser
           ParentParticleId = parentParticle?.Id,
           OrdNum = ordNum,
           Name = xmlSchemaElement.RefName.Name,
-          RefNamespaceId = ns.Id
+          RefNamespaceId = nsId
         };
         dbContext.SchemaElements.Add(schemaElement);
         SaveChanges();
@@ -1187,9 +1194,12 @@ internal class XmlSchemaParser
       var ns = dbContext.SchemaNamespaces.FirstOrDefault(item => item.Url == xmlSchemaElement.RefName.Namespace);
       if (ns == null)
         throw new DataException($"Namespace {xmlSchemaElement.RefName.Namespace} not found");
+      int? nsId = ns.Id;
+      if (nsId == parentGroup.ParentNamespace?.Id)
+        nsId = null;
       schemaElement = dbContext.SchemaElements.FirstOrDefault(item =>
         item.GroupId == parentGroup.Id && item.ParentParticleId == parentParticleId
-        && item.ParticleType == ParticleType.Element && item.OrdNum == ordNum && item.Name == xmlSchemaElement.RefName.Name && item.RefNamespaceId == ns.Id);
+        && item.ParticleType == ParticleType.Element && item.OrdNum == ordNum && item.Name == xmlSchemaElement.RefName.Name && item.RefNamespaceId == nsId);
       if (schemaElement == null)
       {
         Console.WriteLine($"Adding element reference to {ns.Url} {xmlSchemaElement.RefName.Name}");
@@ -1199,7 +1209,7 @@ internal class XmlSchemaParser
           ParentParticleId = parentParticle?.Id,
           OrdNum = ordNum,
           Name = xmlSchemaElement.RefName.Name,
-          RefNamespaceId = ns.Id
+          RefNamespaceId = nsId
         };
         dbContext.SchemaElements.Add(schemaElement);
         SaveChanges();
@@ -1258,7 +1268,10 @@ internal class XmlSchemaParser
       var ns = dbContext.SchemaNamespaces.FirstOrDefault(item => item.Url == xmlSchemaElement.SchemaTypeName.Namespace);
       if (ns == null)
         throw new DataException($"Namespace {xmlSchemaElement.SchemaTypeName.Namespace} not found");
-      schemaElement.TypeNamespaceId = ns.Id;
+      int? nsId = ns.Id; ;
+      if (nsId == schemaElement.OwnerNamespace?.Id)
+        nsId = null;
+      schemaElement.TypeNamespaceId = nsId;
     }
     schemaElement.TypeName = xmlSchemaElement.SchemaTypeName.Name;
     schemaElement.MinOccurs = GetOccurs(xmlSchemaElement.MinOccurs, xmlSchemaElement.MinOccursString);

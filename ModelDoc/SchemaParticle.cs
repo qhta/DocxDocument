@@ -57,4 +57,29 @@ public abstract class SchemaParticle
   /// </summary>
   public int? MaxOccurs { get; set; }
 
+  /// <summary>
+  /// Navigation property for the parent namespace.
+  /// Exists only if the particle is a global particle.
+  /// </summary>
+  public SchemaNamespace? ParentNamespace { get; set; }
+
+  /// <summary>
+  /// Navigation property for the parent complex type.
+  /// Exists only if the particle is part of a complex type.
+  /// </summary>
+  public SchemaComplexType? ParentComplexType { get; set; }
+
+  /// <summary>
+  /// Navigation property for the parent group.
+  /// Exists only if the particle is part of a group.
+  /// </summary>
+  public SchemaGroup? ParentGroup { get; set; }
+
+  /// <summary>
+  /// Navigation property for the parent particle.
+  /// Exists only if the particle is declared inside another particle.
+  /// </summary>
+  public SchemaParticle? ParentParticle { get; set; }
+
+  public SchemaNamespace? OwnerNamespace => ParentNamespace ?? ParentComplexType?.ParentNamespace ?? ParentGroup?.ParentNamespace;// ?? ParentParticle?.OwnerNamespace;
 }

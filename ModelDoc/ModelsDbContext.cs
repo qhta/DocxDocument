@@ -100,6 +100,40 @@ public class ModelsDbContext : DbContext
       .Property(e => e.RefNamespaceId)
       .HasColumnName("RefNamespaceId");
 
+    modelBuilder.Entity<SchemaParticle>()
+      .HasOne(p => p.ParentComplexType)
+      .WithMany() // Assuming SchemaComplexType has a collection of SchemaParticles
+      .HasForeignKey(p => p.ComplexTypeId)
+      .OnDelete(DeleteBehavior.Restrict); // Customize the delete behavior as needed
+
+    modelBuilder.Entity<SchemaParticle>()
+        .HasOne(p => p.ParentGroup)
+        .WithMany() // Assuming SchemaGroup has a collection of SchemaParticles
+        .HasForeignKey(p => p.GroupId)
+        .OnDelete(DeleteBehavior.Restrict); // Customize the delete behavior as needed
+
+    //modelBuilder.Entity<SchemaGroup>()
+    //  .Navigation(e => e.ParentNamespace)
+    //  .UsePropertyAccessMode(PropertyAccessMode.Property);
+
+    //modelBuilder.Entity<SchemaParticle>()
+    //  .Navigation(e => e.ParentNamespace)
+    //  .UsePropertyAccessMode(PropertyAccessMode.Property);
+
+    //modelBuilder.Entity<SchemaParticle>()
+    //  .Navigation(e => e.ParentComplexType)
+    //  .UsePropertyAccessMode(PropertyAccessMode.Property);
+
+    //modelBuilder.Entity<SchemaParticle>()
+    //  .Navigation(e => e.ParentGroup)
+    //  .UsePropertyAccessMode(PropertyAccessMode.Property);
+
+
+    //modelBuilder.Entity<SchemaParticle>()
+    //  .Navigation(e => e.ParentParticle)
+    //  .UsePropertyAccessMode(PropertyAccessMode.Property);
+
+
     //modelBuilder.Entity<SchemaGroupBase>()
     //  .Navigation(e => e.Items)
     //  .UsePropertyAccessMode(PropertyAccessMode.Property);
