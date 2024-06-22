@@ -23,7 +23,7 @@ public class SchemaUnionMember
   public int? MemberNamespaceId { get; set; }
 
   /// <summary>
-  /// Name of the member type.
+  /// RefName of the member type.
   /// </summary>
   [MaxLength(255)] public string? MemberTypeName { get; set; }
 }

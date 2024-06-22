@@ -30,7 +30,7 @@ public class SchemaAttributeGroupRef
   public int? RefNamespaceId { get; set; }
 
   /// <summary>
-  /// Name of the attribute group that is referenced.
+  /// RefName of the attribute group that is referenced.
   /// </summary>
   [MaxLength(255)]
   public string? RefName { get; set; }

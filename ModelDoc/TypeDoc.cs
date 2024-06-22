@@ -44,7 +44,7 @@ public class TypeDoc
   private string? _FriendlyName;
 
   /// <summary>
-  /// Name without spaces.
+  /// RefName without spaces.
   /// </summary>
   [XmlIgnore]
   public string? Name { get; private set; }

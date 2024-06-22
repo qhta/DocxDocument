@@ -34,7 +34,7 @@ public class SchemaAttribute
   public int? RefNamespaceId { get; set; }
 
   /// <summary>
-  /// Name of the attribute.
+  /// RefName of the attribute.
   /// </summary>
   [MaxLength(255)]
   public string? AttributeName { get; set; }
@@ -46,7 +46,7 @@ public class SchemaAttribute
   public int? TypeNamespaceId { get; set; }
 
   /// <summary>
-  /// Name of the attribute type.
+  /// RefName of the attribute type.
   /// </summary>
   [MaxLength(255)]
   public string? TypeName { get; set; }

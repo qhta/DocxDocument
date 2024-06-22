@@ -8,6 +8,6 @@ public class SchemaGroupRef: SchemaParticle
   public int? RefNamespaceId { get; set; }
 
   [MaxLength(255)]
-  public string? Name { get; set; }
+  public string? RefName { get; set; }
 
 }

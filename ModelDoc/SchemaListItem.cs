@@ -23,7 +23,7 @@ public class SchemaListItem
   public int? ItemNamespaceId { get; set; }
 
   /// <summary>
-  /// Name of the item type.
+  /// RefName of the item type.
   /// </summary>
   [MaxLength(255)] public string? ItemTypeName { get; set; }
 }

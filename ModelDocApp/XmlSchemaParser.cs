@@ -414,7 +414,7 @@ internal class XmlSchemaParser
       schemaSimpleType.BaseTypeName = "union";
       foreach (var memberType in union.BaseMemberTypes)
       {
-        var memberSimpleType = ParseXmlSchemaSimpleType(schemaSimpleType.SchemaNamespaceId, memberType, $"_anon_{(++AnonSimpleTypes)}");
+        var memberSimpleType = ParseXmlSchemaSimpleType(schemaSimpleType.SchemaNamespace!, memberType, $"_anon_{(++AnonSimpleTypes)}");
         var schemaUnionMember = dbContext.SchemaUnionMembers.FirstOrDefault(item =>
           item.SimpleTypeId == schemaSimpleType.Id && item.MemberTypeName == memberSimpleType.TypeName);
         if (schemaUnionMember == null)
@@ -939,7 +939,7 @@ internal class XmlSchemaParser
 
   private void ParseXmlSchemaGroupRefDetails(SchemaGroupRef schemaGroupRef, XmlSchemaGroupRef xmlSchemaGroupRef)
   {
-    schemaGroupRef.Name = xmlSchemaGroupRef.RefName.Name;
+    schemaGroupRef.RefName = xmlSchemaGroupRef.RefName.Name;
     var ns = dbContext.SchemaNamespaces.FirstOrDefault(item => item.Url == xmlSchemaGroupRef.RefName.Namespace);
     if (ns == null)
       throw new DataException($"Namespace {xmlSchemaGroupRef.RefName.Namespace} not found");

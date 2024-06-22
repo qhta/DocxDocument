@@ -89,7 +89,7 @@ public class ModelsDbContext : DbContext
       .HasColumnName("Name");
 
     modelBuilder.Entity<SchemaGroupRef>()
-      .Property(e => e.Name)
+      .Property(e => e.RefName)
       .HasColumnName("Name");
 
     modelBuilder.Entity<SchemaElement>()
@@ -99,6 +99,14 @@ public class ModelsDbContext : DbContext
     modelBuilder.Entity<SchemaGroupRef>()
       .Property(e => e.RefNamespaceId)
       .HasColumnName("RefNamespaceId");
+
+    //modelBuilder.Entity<SchemaGroupBase>()
+    //  .Navigation(e => e.Items)
+    //  .UsePropertyAccessMode(PropertyAccessMode.Property);
+
+    //modelBuilder.Entity<SchemaParticle>()
+    //  .Navigation(e => e.ParentParticle)
+    //  .UsePropertyAccessMode(PropertyAccessMode.Property);
   }
 
 }

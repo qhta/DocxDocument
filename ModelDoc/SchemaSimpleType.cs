@@ -18,7 +18,7 @@ public class SchemaSimpleType
   public int SchemaNamespaceId { get; set; }
 
   /// <summary>
-  /// Name of the simple type.
+  /// RefName of the simple type.
   /// </summary>
   [MaxLength(255)]
   public string? TypeName { get; set; }
@@ -30,7 +30,7 @@ public class SchemaSimpleType
   public int? BaseNamespaceId { get; set; }
 
   /// <summary>
-  /// Name of the base type.
+  /// RefName of the base type.
   /// </summary>
   [MaxLength(255)]
   public string? BaseTypeName { get; set; }

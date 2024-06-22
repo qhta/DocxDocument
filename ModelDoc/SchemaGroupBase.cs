@@ -1,9 +1,12 @@
-﻿using System.Collections.ObjectModel;
-using System.ComponentModel.DataAnnotations;
+﻿namespace ModelDoc;
 
-namespace ModelDoc;
-
+/// <summary>
+/// Represents a group of elements.
+/// </summary>
 public abstract class SchemaGroupBase: SchemaParticle
 {
-  //public Collection<object> Items { get; } = new Collection<object>();
+  ///// <summary>
+  ///// Navigation property for the items in the group.
+  ///// </summary>
+  //public ICollection<SchemaParticle>? Items { get; set; }
 }
