@@ -1,5 +1,8 @@
 ﻿namespace ModelDoc;
 
+/// <summary>
+/// Specifies how the content of an element is processed by the Xml processor.
+/// </summary>
 public enum ContentProcessing: byte
 {
   /// <summary>

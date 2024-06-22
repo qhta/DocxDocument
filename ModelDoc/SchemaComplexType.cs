@@ -18,7 +18,7 @@ public class SchemaComplexType
   public int SchemaNamespaceId { get; set; }
 
   /// <summary>
-  /// Name of the complex type.
+  /// RefName of the complex type.
   /// </summary>
   [MaxLength(255)]
   public string? TypeName { get; set; }
@@ -30,7 +30,7 @@ public class SchemaComplexType
   public int? BaseNamespaceId { get; set; }
 
   /// <summary>
-  /// Name of the base type. It can be a simple type or a complex type.
+  /// RefName of the base type. It can be a simple type or a complex type.
   /// </summary>
   [MaxLength(255)]
   public string? BaseTypeName { get; set; }
