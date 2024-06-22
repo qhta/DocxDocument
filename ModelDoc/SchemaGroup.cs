@@ -12,5 +12,9 @@ public class SchemaGroup
   [MaxLength(255)]
   public string? GroupName { get; set; }
 
+  /// <summary>
+  /// Navigation property for the namespace of the group.
+  /// </summary>
+  public SchemaNamespace? ParentNamespace { get; set; }
 
 }
