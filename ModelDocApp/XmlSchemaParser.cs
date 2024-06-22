@@ -173,43 +173,43 @@ internal class XmlSchemaParser
       }
 
 
-      if (schemaFile.TargetNamespaceId == null)
+      var ns = schemaFile.TargetNamespace;
+      if (ns == null)
       {
         throw new Exception($"Schema file {id} has no target namespace");
       }
-      var nsId = (int)
-        schemaFile.TargetNamespaceId;
+
 
       foreach (var item in schema.Items)
       {
         if (item is XmlSchemaSimpleType xmlSchemaSimpleType)
         {
-          ParseXmlSchemaSimpleType(nsId, xmlSchemaSimpleType);
+          ParseXmlSchemaSimpleType(ns, xmlSchemaSimpleType);
         }
         else
         if (item is XmlSchemaComplexType xmlSchemaComplexType)
         {
-          ParseXmlSchemaComplexType(nsId, xmlSchemaComplexType);
+          ParseXmlSchemaComplexType(ns, xmlSchemaComplexType);
         }
         else
         if (item is XmlSchemaGroup xmlSchemaGroup)
         {
-          ParseXmlSchemaGroup(nsId, xmlSchemaGroup);
+          ParseXmlSchemaGroup(ns, xmlSchemaGroup);
         }
         else
         if (item is XmlSchemaElement xmlSchemaElement)
         {
-          ParseXmlSchemaGlobalElement(nsId, xmlSchemaElement);
+          ParseXmlSchemaGlobalElement(ns, xmlSchemaElement);
         }
         else
         if (item is XmlSchemaAttributeGroup xmlSchemaAttributeGroup)
         {
-          ParseXmlSchemaAttributeGroup(nsId, xmlSchemaAttributeGroup);
+          ParseXmlSchemaAttributeGroup(ns, xmlSchemaAttributeGroup);
         }
         else
         if (item is XmlSchemaAttribute xmlSchemaAttribute)
         {
-          ParseXmlSchemaGlobalAttribute(nsId, xmlSchemaAttribute);
+          ParseXmlSchemaGlobalAttribute(ns, xmlSchemaAttribute);
         }
         else
         {
@@ -219,8 +219,9 @@ internal class XmlSchemaParser
     }
   }
 
-  internal SchemaSimpleType ParseXmlSchemaSimpleType(int nsId, XmlSchemaSimpleType xmlSchemaSimpleType, string? defaultTypeName = null)
+  internal SchemaSimpleType ParseXmlSchemaSimpleType(SchemaNamespace parentNamespace, XmlSchemaSimpleType xmlSchemaSimpleType, string? defaultTypeName = null)
   {
+    var nsId = parentNamespace.Id;
     var typeName = xmlSchemaSimpleType.Name ?? defaultTypeName;
     var schemaSimpleType = dbContext.SchemaSimpleTypes.FirstOrDefault(item =>
         item.SchemaNamespaceId == nsId && item.TypeName == typeName);
@@ -454,8 +455,9 @@ internal class XmlSchemaParser
       Console.WriteLine($"  Setting type list item {itemType.Name}");
   }
 
-  internal SchemaComplexType ParseXmlSchemaComplexType(int nsId, XmlSchemaComplexType xmlSchemaComplexType, string? defaultTypeName = null)
+  internal SchemaComplexType ParseXmlSchemaComplexType(SchemaNamespace parentNamespace, XmlSchemaComplexType xmlSchemaComplexType, string? defaultTypeName = null)
   {
+    var nsId = parentNamespace.Id;
     var typeName = xmlSchemaComplexType.Name ?? defaultTypeName;
     var schemaComplexType = dbContext.SchemaComplexTypes.FirstOrDefault(item =>
       item.SchemaNamespaceId == nsId && item.TypeName == typeName);
@@ -497,7 +499,7 @@ internal class XmlSchemaParser
       else
       if (attribute is XmlSchemaAttributeGroupRef xmlSchemaAttributeGroupRef)
       {
-
+        ParseXmlSchemaAttributeGroupRef(schemaComplexType, xmlSchemaAttributeGroupRef);
       }
       else
       {
@@ -563,8 +565,9 @@ internal class XmlSchemaParser
     ParseXmlSchemaAttributeDetails(schemaAttribute, xmlSchemaAttribute);
   }
 
-  internal void ParseXmlSchemaGlobalAttribute(int nsId, XmlSchemaAttribute xmlSchemaAttribute)
+  internal void ParseXmlSchemaGlobalAttribute(SchemaNamespace parentNamespace, XmlSchemaAttribute xmlSchemaAttribute)
   {
+    int nsId = parentNamespace.Id;
     SchemaAttribute? schemaAttribute;
     if (xmlSchemaAttribute.Name != null)
     {
@@ -632,8 +635,9 @@ internal class XmlSchemaParser
   }
 
 
-  internal void ParseXmlSchemaAttributeGroup(int nsId, XmlSchemaAttributeGroup xmlSchemaAttributeGroup)
+  internal void ParseXmlSchemaAttributeGroup(SchemaNamespace parentNamespace, XmlSchemaAttributeGroup xmlSchemaAttributeGroup)
   {
+    int nsId = parentNamespace.Id;
     if (xmlSchemaAttributeGroup.Name != null)
     {
       var schemaAttributeGroup = dbContext.SchemaAttributeGroups.FirstOrDefault(item =>
@@ -722,20 +726,44 @@ internal class XmlSchemaParser
     ParseXmlSchemaAttributeDetails(schemaAttribute, xmlSchemaAttribute);
   }
 
-  internal void ParseXmlSchemaAttributeGroupRef(SchemaAttributeGroup schemaAttributeGroup, XmlSchemaAttributeGroupRef xmlSchemaAttributeGroupRef)
+  internal void ParseXmlSchemaAttributeGroupRef(SchemaComplexType parentComplexType, XmlSchemaAttributeGroupRef xmlSchemaAttributeGroupRef)
   {
     var ns = dbContext.SchemaNamespaces.First(item => item.Url == xmlSchemaAttributeGroupRef.RefName.Namespace);
+    int? nsId = parentComplexType.SchemaNamespaceId;
+    if (ns.Id == nsId)
+      nsId = null;
     var schemaAttributeGroupRef = dbContext.SchemaAttributeGroupRefs.FirstOrDefault(item =>
-      item.AttributeGroupId == schemaAttributeGroup.Id && item.GroupName == xmlSchemaAttributeGroupRef.RefName.Name
-      && item.RefNamespaceId == ns.Id);
+      item.ComplexTypeId == parentComplexType.Id && item.RefName == xmlSchemaAttributeGroupRef.RefName.Name && item.RefNamespaceId == nsId);
     if (schemaAttributeGroupRef == null)
     {
       Console.WriteLine($"Adding attribute group ref {xmlSchemaAttributeGroupRef.RefName.Name}");
       schemaAttributeGroupRef = new SchemaAttributeGroupRef
       {
-        AttributeGroupId = schemaAttributeGroup.Id,
-        GroupName = xmlSchemaAttributeGroupRef.RefName.Name,
-        RefNamespaceId = ns.Id
+        ComplexTypeId = parentComplexType.Id,
+        RefName = xmlSchemaAttributeGroupRef.RefName.Name,
+        RefNamespaceId = nsId
+      };
+      dbContext.SchemaAttributeGroupRefs.Add(schemaAttributeGroupRef);
+      SaveChanges();
+    }
+  }
+
+  internal void ParseXmlSchemaAttributeGroupRef(SchemaAttributeGroup parentAttributeGroup, XmlSchemaAttributeGroupRef xmlSchemaAttributeGroupRef)
+  {
+    var ns = dbContext.SchemaNamespaces.First(item => item.Url == xmlSchemaAttributeGroupRef.RefName.Namespace);
+    int? nsId = parentAttributeGroup.SchemaNamespaceId;
+    if (ns.Id == nsId)
+      nsId = null;
+    var schemaAttributeGroupRef = dbContext.SchemaAttributeGroupRefs.FirstOrDefault(item =>
+      item.AttributeGroupId == parentAttributeGroup.Id && item.RefName == xmlSchemaAttributeGroupRef.RefName.Name && item.RefNamespaceId == nsId);
+    if (schemaAttributeGroupRef == null)
+    {
+      Console.WriteLine($"Adding attribute group ref {xmlSchemaAttributeGroupRef.RefName.Name}");
+      schemaAttributeGroupRef = new SchemaAttributeGroupRef
+      {
+        AttributeGroupId = parentAttributeGroup.Id,
+        RefName = xmlSchemaAttributeGroupRef.RefName.Name,
+        RefNamespaceId = nsId
       };
       dbContext.SchemaAttributeGroupRefs.Add(schemaAttributeGroupRef);
       SaveChanges();
@@ -1180,8 +1208,9 @@ internal class XmlSchemaParser
     ParseXmlSchemaElementDetails(schemaElement, xmlSchemaElement);
   }
 
-  internal void ParseXmlSchemaGlobalElement(int nsId, XmlSchemaElement xmlSchemaElement)
+  internal void ParseXmlSchemaGlobalElement(SchemaNamespace parentNamespace, XmlSchemaElement xmlSchemaElement)
   {
+    var nsId = parentNamespace.Id;
     SchemaElement? schemaElement;
     if (xmlSchemaElement.Name != null)
     {
@@ -1257,8 +1286,9 @@ internal class XmlSchemaParser
     return (int)value;
   }
 
-  internal void ParseXmlSchemaGroup(int nsId, XmlSchemaGroup xmlSchemaGroup)
+  internal void ParseXmlSchemaGroup(SchemaNamespace parentNamespace, XmlSchemaGroup xmlSchemaGroup)
   {
+    var nsId = parentNamespace.Id;
     if (xmlSchemaGroup.Name != null)
     {
       var schemaGroup = dbContext.SchemaGroups.FirstOrDefault(item =>
