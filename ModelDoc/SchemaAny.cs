@@ -2,6 +2,9 @@
 
 namespace ModelDoc;
 
+/// <summary>
+/// Represents a group of elements that can appear in any order.
+/// </summary>
 public class SchemaAny: SchemaParticle
 {
   [MaxLength(255)]
