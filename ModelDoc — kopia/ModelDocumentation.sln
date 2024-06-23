@@ -5,9 +5,7 @@ VisualStudioVersion = 17.10.34928.147
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModelDoc", "ModelDoc.csproj", "{089423D5-B356-4127-B94B-D7A5EB380BA4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModelDocApp", "..\ModelDocApp\ModelDocApp.csproj", "{27266A3D-1B80-4BAF-A1E6-0B9C4E56B4BC}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModelXmlSchema", "..\ModelXmlSchema\ModelXmlSchema.csproj", "{11159996-E06C-446B-B15A-B92B85F8EA07}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelDocApp", "..\ModelDocApp\ModelDocApp.csproj", "{27266A3D-1B80-4BAF-A1E6-0B9C4E56B4BC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +21,6 @@ Global
 		{27266A3D-1B80-4BAF-A1E6-0B9C4E56B4BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27266A3D-1B80-4BAF-A1E6-0B9C4E56B4BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{27266A3D-1B80-4BAF-A1E6-0B9C4E56B4BC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{11159996-E06C-446B-B15A-B92B85F8EA07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{11159996-E06C-446B-B15A-B92B85F8EA07}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{11159996-E06C-446B-B15A-B92B85F8EA07}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{11159996-E06C-446B-B15A-B92B85F8EA07}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
