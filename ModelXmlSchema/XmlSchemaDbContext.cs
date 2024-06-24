@@ -50,6 +50,20 @@ public sealed class XmlSchemaDbContext : DbContext
   }
   private SchemaElements? _SchemaElements;
 
+  public SchemaGroupRefs SchemaGroupRefs
+  {
+    get
+    {
+      if (_SchemaGroupRefs == null)
+      {
+        _SchemaGroupRefs = new SchemaGroupRefs(SchemaParticles);
+      }
+
+      return _SchemaGroupRefs;
+    }
+  }
+  private SchemaGroupRefs? _SchemaGroupRefs;
+
   public string DbFilename { get; }
 
   public XmlSchemaDbContext(string dbFilename)
