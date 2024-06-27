@@ -1,0 +1,73 @@
+﻿using System.ComponentModel.DataAnnotations;
+using Microsoft.EntityFrameworkCore;
+
+namespace ModelOpenXmlLib;
+
+[Index(nameof(Name), IsUnique = false)]
+[Index(nameof(NamespaceId), IsUnique = false)]
+[Index(nameof(NamespaceId), nameof(Name), IsUnique = true)]
+[Index(nameof(Kind), IsUnique = false)]
+public class TypeDef
+{
+  /// <summary>
+  /// Unique identifier of the entity.
+  /// </summary>
+  [Key]
+  public int Id { get; set; }
+
+  /// <summary>
+  /// The name of the type.
+  /// </summary>
+  [MaxLength(255)]
+  public string Name { get; set; } = null!;
+
+  /// <summary>
+  /// The kind of the type.
+  /// </summary>
+  public TypeKind Kind { get; set; }
+
+  /// <summary>
+  /// Specifies whether the type is abstract.
+  /// </summary>
+  public bool IsAbstract { get; set; }
+
+  /// <summary>
+  /// Unique identifier of the namespace containing the type.
+  /// </summary>
+  public int NamespaceId { get; set; }
+
+  /// <summary>
+  /// Navigation property for the namespace containing the type.
+  /// </summary>
+  public Namespace Namespace { get; set; } = null!;
+
+  /// <summary>
+  /// Unique identifier of the base type.
+  /// </summary>
+  public int? BaseTypeId { get; set; }
+
+  /// <summary>
+  /// Navigation property for the base type.
+  /// </summary>
+  public TypeDef? BaseType { get; set; }
+
+  /// <summary>
+  /// Navigation property for the derived types of the type.
+  /// </summary>
+  public ICollection<TypeDef>? DerivedTypes { get; set; }
+
+  /// <summary>
+  /// Navigation property for the enum values of the enum type.
+  /// </summary>
+  public ICollection<EnumValue>? EnumValues { get; set; }
+
+  /// <summary>
+  /// Navigation property for the properties of the complex type.
+  /// </summary>
+  public ICollection<Property>? Properties { get; set; }
+
+  /// <summary>
+  /// Navigation property for the properties that uses this type.
+  /// </summary>
+  public ICollection<Property>? UsedInProperties { get; set; }
+}
