@@ -5,7 +5,7 @@ namespace ModelXmlSchema;
 /// <summary>
 /// Represents an element in a schema.
 /// </summary>
-public class SchemaElement: SchemaParticle
+public class Element: Particle
 {
   /// <summary>
   /// Identifier of the namespace that this element refers to.

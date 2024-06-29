@@ -5,7 +5,7 @@ namespace ModelXmlSchema;
 /// <summary>
 /// Represents a reference to a group of elements.
 /// </summary>
-public class SchemaGroupRef: SchemaParticle
+public class GroupRef: Particle
 {
 
   /// <summary>

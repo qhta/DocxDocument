@@ -5,7 +5,7 @@ namespace ModelXmlSchema;
 /// <summary>
 /// Represents a group of attributes which can be used in many places.
 /// </summary>
-public class SchemaAttributeGroup
+public class AttributeGroup
 {
 
   /// <summary>

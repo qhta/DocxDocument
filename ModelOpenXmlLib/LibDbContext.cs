@@ -1,10 +1,4 @@
-﻿using System.Diagnostics;
-
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
-using EntityFrameworkCore.Jet;
-using DocumentFormat.OpenXml;
-using Microsoft.EntityFrameworkCore.Metadata.Conventions;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace ModelOpenXmlLib;
 
@@ -61,16 +55,6 @@ public sealed class LibDbContext : DbContext
     modelBuilder.Entity<FileNamespace>()
       .HasKey(item => new { item.FileId, item.NamespaceId }); // Composite key
 
-    //modelBuilder.Entity<FileNamespace>()
-    //  .HasOne(item => item.File)
-    //  .WithMany(subItem => subItem.FileNamespaces)
-    //  .HasForeignKey(item => item.FileId);
-
-    //modelBuilder.Entity<FileNamespace>()
-    //  .HasOne(item => item.Namespace)
-    //  .WithMany(subItem => subItem.FileNamespaces)
-    //  .HasForeignKey(item => item.NamespaceId);
-
     modelBuilder.Entity<TypeDef>()
       .Property(item => item.Kind)
       .HasColumnType("byte");
@@ -104,9 +88,6 @@ public sealed class LibDbContext : DbContext
       .WithMany()
       .HasForeignKey(item => item.ValueTypeId);
 
-    //modelBuilder.Entity<Property>()
-    //  .Property(p => p.ValueType)
-    //  .UsePropertyAccessMode(PropertyAccessMode.Property);
   }
 
 
@@ -122,7 +103,7 @@ public sealed class LibDbContext : DbContext
       {
         foreach (LibFile file in args.NewItems!)
         {
-          FilesDictionary.Add(file.FileName ?? "", file);
+          FilesDictionary.Add(file.FileName, file);
         }
       }
     };
@@ -133,7 +114,7 @@ public sealed class LibDbContext : DbContext
       {
         foreach (Namespace ns in args.NewItems!)
         {
-          NamespaceDictionary.Add(ns.Name ?? "", ns);
+          NamespaceDictionary.Add(ns.Name, ns);
         }
       }
     };
@@ -163,7 +144,7 @@ public sealed class LibDbContext : DbContext
       {
         foreach (TypeDef type in args.NewItems!)
         {
-          NamespaceDictionary[type.Namespace.Name ?? ""].TypesDictionary.Add(type.Name, type);
+          NamespaceDictionary[type.Namespace.Name].TypesDictionary.Add(type.Name, type);
         }
       }
     };
@@ -173,7 +154,7 @@ public sealed class LibDbContext : DbContext
       {
         foreach (EnumValue enumValue in args.NewItems!)
         {
-          NamespaceDictionary[enumValue.OwnerType.Namespace.Name ?? ""].TypesDictionary[enumValue.OwnerType.Name].EnumValuesDictionary.Add(enumValue.Name, enumValue);
+          NamespaceDictionary[enumValue.OwnerType.Namespace.Name].TypesDictionary[enumValue.OwnerType.Name].EnumValuesDictionary.Add(enumValue.Name, enumValue);
         }
       }
     };
@@ -183,7 +164,7 @@ public sealed class LibDbContext : DbContext
       {
         foreach (Property prop in args.NewItems!)
         {
-          NamespaceDictionary[prop.OwnerType.Namespace.Name ?? ""].TypesDictionary[prop.OwnerType.Name].PropertiesDictionary.Add(prop.Name, prop);
+          NamespaceDictionary[prop.OwnerType.Namespace.Name].TypesDictionary[prop.OwnerType.Name].PropertiesDictionary.Add(prop.Name, prop);
         }
       }
     };

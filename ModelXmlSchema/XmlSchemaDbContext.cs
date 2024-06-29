@@ -3,6 +3,8 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using EntityFrameworkCore.Jet;
+using System.Xml.Linq;
+using System.IO.Compression;
 
 namespace ModelXmlSchema;
 
@@ -10,59 +12,61 @@ public sealed class XmlSchemaDbContext : DbContext
 {
   public DbSet<SchemaFile> SchemaFiles { get; set; }
 
-  public DbSet<SchemaNamespace> SchemaNamespaces { get; set; }
+  public DbSet<Namespace> Namespaces { get; set; }
 
-  public DbSet<SchemaUsedNamespace> SchemaUsedNamespaces { get; set; }
+  public DbSet<UsedNamespace> UsedNamespaces { get; set; }
 
-  public DbSet<SchemaSimpleType> SchemaSimpleTypes { get; set; }
+  public DbSet<TypeDef> Types { get; set; }
 
-  public DbSet<SchemaComplexType> SchemaComplexTypes { get; set; }
+  public DbSet<EnumValue> EnumValues { get; set; }
 
-  public DbSet<SchemaEnumValue> SchemaEnumValues { get; set; }
+  public DbSet<Pattern> Patterns { get; set; }
 
-  public DbSet<SchemaPattern> SchemaPatterns { get; set; }
+  public DbSet<UnionMember> UnionMembers { get; set; }
 
-  public DbSet<SchemaUnionMember> SchemaUnionMembers { get; set; }
+  public DbSet<ListItem> ListItems { get; set; }
 
-  public DbSet<SchemaListItem> SchemaListItems { get; set; }
+  public DbSet<Attribute> Attributes { get; set; }
 
-  public DbSet<SchemaAttribute> SchemaAttributes { get; set; }
+  public DbSet<AttributeGroup> AttributeGroups { get; set; }
 
-  public DbSet<SchemaAttributeGroup> SchemaAttributeGroups { get; set; }
+  public DbSet<AttributeGroupRef> AttributeGroupRefs { get; set; }
 
-  public DbSet<SchemaAttributeGroupRef> SchemaAttributeGroupRefs { get; set; }
+  public DbSet<Particle> Particles { get; set; }
 
-  public DbSet<SchemaParticle> SchemaParticles { get; set; }
+  public DbSet<Group> Groups { get; set; }
 
-  public DbSet<SchemaGroup> SchemaGroups { get; set; }
-
-  public SchemaElements SchemaElements
+  public Elements Elements
   {
     get
     {
-      if (_SchemaElements == null)
+      if (_Elements == null)
       {
-        _SchemaElements = new SchemaElements(SchemaParticles);
+        _Elements = new Elements(Particles);
       }
 
-      return _SchemaElements;
+      return _Elements;
     }
   }
-  private SchemaElements? _SchemaElements;
+  private Elements? _Elements;
 
-  public SchemaGroupRefs SchemaGroupRefs
+  public Dictionary<string, SchemaFile> FilesDictionary { get; set; } = null!;
+
+  public Dictionary<string, Namespace> NamespaceDictionary { get; set; } = null!;
+
+  public GroupRefs SchemaGroupRefs
   {
     get
     {
       if (_SchemaGroupRefs == null)
       {
-        _SchemaGroupRefs = new SchemaGroupRefs(SchemaParticles);
+        _SchemaGroupRefs = new GroupRefs(Particles);
       }
 
       return _SchemaGroupRefs;
     }
   }
-  private SchemaGroupRefs? _SchemaGroupRefs;
+  private GroupRefs? _SchemaGroupRefs;
 
   public string DbFilename { get; }
 
@@ -81,45 +85,88 @@ public sealed class XmlSchemaDbContext : DbContext
 
   protected override void OnModelCreating(ModelBuilder modelBuilder)
   {
-    modelBuilder.Entity<SchemaParticle>()
-      .HasDiscriminator<ParticleType>("ParticleType")
-      .HasValue<SchemaAny>(ParticleType.Any)
-      .HasValue<SchemaElement>(ParticleType.Element)
-      .HasValue<SchemaGroupRef>(ParticleType.GroupRef)
-      .HasValue<SchemaAll>(ParticleType.All)
-      .HasValue<SchemaChoice>(ParticleType.Choice)
-      .HasValue<SchemaSequence>(ParticleType.Sequence);
+    modelBuilder.Entity<UsedNamespace>()
+      .HasKey(e => new { SchemaFileId = e.FileId, e.NamespaceId });
 
-    modelBuilder.Entity<SchemaParticle>()
+    modelBuilder.Entity<UsedNamespace>()
+      .HasOne(e => e.SchemaFile)
+      .WithMany(e => e.UsedNamespaces)
+      .HasForeignKey(e => e.FileId);
+
+    modelBuilder.Entity<UsedNamespace>()
+      .HasOne(e => e.SchemaNamespace)
+      .WithMany()
+      .HasForeignKey(e => e.NamespaceId);
+
+    modelBuilder.Entity<TypeDef>()
+      .Property(type => type.IsComplex)
+      .HasColumnType("bit");
+
+    modelBuilder.Entity<TypeDef>()
+      .HasDiscriminator<bool>("IsComplex")
+      .HasValue<SimpleType>(false)
+      .HasValue<ComplexType>(true);
+
+    modelBuilder.Entity<TypeDef>()
+      .HasOne(e => e.Namespace)
+      .WithMany(e => e.Types)
+      .HasForeignKey(e => e.NamespaceId);
+
+    modelBuilder.Entity<TypeDef>()
+      .HasOne(e => e.BaseTypeNamespace)
+      .WithMany()
+      .HasForeignKey(e => e.BaseNamespaceId);
+
+
+    modelBuilder.Entity<TypeDef>()
+      .HasOne(e => e.BaseType)
+      .WithMany()
+      .HasForeignKey(e => e.BaseTypeId);
+
+    modelBuilder.Entity<EnumValue>()
+      .HasOne(item => item.OwnerType)
+      .WithMany(subItem => subItem.EnumValues)
+      .HasForeignKey(item => item.OwnerTypeId);
+
+    modelBuilder.Entity<Particle>()
+      .HasDiscriminator<ParticleType>("ParticleType")
+      .HasValue<Any>(ParticleType.Any)
+      .HasValue<Element>(ParticleType.Element)
+      .HasValue<GroupRef>(ParticleType.GroupRef)
+      .HasValue<All>(ParticleType.All)
+      .HasValue<Choice>(ParticleType.Choice)
+      .HasValue<Sequence>(ParticleType.Sequence);
+
+    modelBuilder.Entity<Particle>()
       .Property("ParticleType").HasColumnType("byte");
 
-    modelBuilder.Entity<SchemaElement>()
+    modelBuilder.Entity<Element>()
       .Property(e => e.Name)
       .HasColumnName("Name");
 
-    modelBuilder.Entity<SchemaGroupRef>()
+    modelBuilder.Entity<GroupRef>()
       .Property(e => e.RefName)
       .HasColumnName("Name");
 
-    modelBuilder.Entity<SchemaElement>()
+    modelBuilder.Entity<Element>()
       .Property(e => e.RefNamespaceId)
       .HasColumnName("RefNamespaceId");
 
-    modelBuilder.Entity<SchemaGroupRef>()
+    modelBuilder.Entity<GroupRef>()
       .Property(e => e.RefNamespaceId)
       .HasColumnName("RefNamespaceId");
 
-    modelBuilder.Entity<SchemaParticle>()
+    modelBuilder.Entity<Particle>()
       .HasOne(p => p.ParentComplexType)
-      .WithMany() 
+      .WithMany()
       .HasForeignKey(p => p.ComplexTypeId)
-      .OnDelete(DeleteBehavior.Restrict); 
+      .OnDelete(DeleteBehavior.Restrict);
 
-    modelBuilder.Entity<SchemaParticle>()
+    modelBuilder.Entity<Particle>()
         .HasOne(p => p.ParentGroup)
-        .WithMany() // Assuming SchemaGroup has a collection of SchemaParticles
+        .WithMany() // Assuming SchemaGroup has a collection of Particles
         .HasForeignKey(p => p.GroupId)
-        .OnDelete(DeleteBehavior.Restrict); 
+        .OnDelete(DeleteBehavior.Restrict);
 
     //modelBuilder.Entity<SchemaGroup>()
     //  .Navigation(e => e.ParentNamespace)
@@ -144,4 +191,91 @@ public sealed class XmlSchemaDbContext : DbContext
 
   }
 
+  public void LoadFiles()
+  {
+    FilesDictionary = SchemaFiles.ToDictionary(file => file.FileName);
+    NamespaceDictionary = Namespaces.ToDictionary(ns => ns.Url ?? "");
+
+    SchemaFiles.Local.CollectionChanged += (sender, args) =>
+    {
+      if (args.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add)
+      {
+        foreach (SchemaFile file in args.NewItems!)
+        {
+          FilesDictionary.Add(file.FileName, file);
+        }
+      }
+    };
+
+    Namespaces.Local.CollectionChanged += (sender, args) =>
+    {
+      if (args.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add)
+      {
+        foreach (Namespace ns in args.NewItems!)
+        {
+          NamespaceDictionary.Add(ns.Url, ns);
+        }
+      }
+    };
+  }
+
+  public void LoadNamespaces()
+  {
+    //DisplayMessageEnabled = true;
+    foreach (var ns in Namespaces
+               .Include(ns => ns.Types)
+            )
+    {
+      ns.TypesDictionary = ns.Types.ToDictionary(type => type.Name, type => type);
+    }
+
+    Types.Local.CollectionChanged += (sender, args) =>
+    {
+      if (args.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add)
+      {
+        foreach (TypeDef type in args.NewItems!)
+        {
+          NamespaceDictionary[type.Namespace.Url].TypesDictionary.Add(type.Name, type);
+        }
+      }
+    };
+
+    foreach (var simpleType in Types.OfType<SimpleType>().Include(type => type.EnumValues))
+    {
+      //simpleType.PatternsDictionary = simpleType.Patterns.ToDictionary(pattern => pattern.Value);
+      simpleType.EnumValuesDictionary = simpleType.EnumValues.ToDictionary(enumValue => enumValue.Name);
+      //simpleType.ListItemsDictionary = simpleType.ListItems.ToDictionary(listItem => listItem.Value);
+      //simpleType.UnionMembersDictionary = simpleType.UnionMembers.ToDictionary(unionMember => unionMember.MemberType.Name);
+    }
+    //else if (type is ComplexType complexType)
+    //{
+    //  //complexType.AttributesDictionary = complexType.Attributes.ToDictionary(attr => attr.Name);
+    //  //complexType.AttributeGroupRefsDictionary = complexType.AttributeGroupRefs.ToDictionary(attrGroupRef => attrGroupRef.RefName);
+    //  //complexType.ParticlesDictionary = complexType.Particles.ToDictionary(particle => particle.Name);
+    //}
+
+
+
+    EnumValues.Local.CollectionChanged += (sender, args) =>
+    {
+      if (args.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add)
+      {
+        foreach (EnumValue enumValue in args.NewItems!)
+        {
+          (NamespaceDictionary[enumValue.OwnerType.Namespace.Url].TypesDictionary[enumValue.OwnerType.Name] as SimpleType)?.EnumValuesDictionary.Add(enumValue.Name, enumValue);
+        }
+      }
+    };
+
+    //Properties.Local.CollectionChanged += (sender, args) =>
+    //{
+    //  if (args.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add)
+    //  {
+    //    foreach (Property prop in args.NewItems!)
+    //    {
+    //      NamespaceDictionary[prop.OwnerType.Namespace.Name].TypesDictionary[prop.OwnerType.Name].PropertiesDictionary.Add(prop.Name, prop);
+    //    }
+    //  }
+    //};
+  }
 }

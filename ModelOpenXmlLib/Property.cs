@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Runtime.InteropServices;
+
 using Microsoft.EntityFrameworkCore;
 
 namespace ModelOpenXmlLib;
@@ -40,15 +41,16 @@ public class Property
   public int OwnerTypeId { get; set; }
 
   /// <summary>
+  /// Unique identifier of the value type.
+  /// </summary>
+  public int? ValueTypeId { get; set; }
+
+
+  /// <summary>
   /// Navigation property for the owner type.
   /// </summary>
   [Required]
   public TypeDef OwnerType { get; set; } = null!;
-
-  /// <summary>
-  /// Unique identifier of the value type.
-  /// </summary>
-  public int? ValueTypeId { get; set; }
 
   /// <summary>
   /// Navigation property for the value type.
