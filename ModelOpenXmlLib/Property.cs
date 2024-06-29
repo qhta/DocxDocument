@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Runtime.InteropServices;
 using Microsoft.EntityFrameworkCore;
 
 namespace ModelOpenXmlLib;
@@ -9,6 +10,7 @@ namespace ModelOpenXmlLib;
 [Index(nameof(OwnerTypeId), nameof(Name), IsUnique = true)]
 [Index(nameof(OwnerTypeId), nameof(OrdNum), IsUnique = false)]
 [Index(nameof(OwnerTypeId), IsUnique = false)]
+[Index(nameof(ValueTypeId), IsUnique = false)]
 [Index(nameof(Name), IsUnique = false)]
 [Index(nameof(OrdNum), IsUnique = false)]
 public class Property
@@ -48,8 +50,8 @@ public class Property
   /// </summary>
   public int? ValueTypeId { get; set; }
 
-  ///// <summary>
-  ///// Navigation property for the value type.
-  ///// </summary>
-  //public TypeDef? ValueType { get; set; } = null!;
+  /// <summary>
+  /// Navigation property for the value type.
+  /// </summary>
+  public TypeDef? ValueType { get; set; }
 }
