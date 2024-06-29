@@ -31,12 +31,13 @@ public class OpenXmlLibParser
       ParseOpenXmlFilesAndNamespaces(metadataLoadContext);
       //SetNamespacePrefixes();
       ParseAssemblies(metadataLoadContext);
+      dbContext.DisplayMessageEnabled = false;
       FilesTotal = dbContext.Files.Count();
       NamespacesTotal = dbContext.Namespaces.Count();
       FileNamespacesTotal = dbContext.FileNamespaces.Count();
-      TypesTotal = dbContext.Types.Count();
-      EnumValuesTotal = dbContext.EnumValues.Count();
-      PropertiesTotal = dbContext.Properties.Count();
+      //TypesTotal = dbContext.Types.Count();
+      //EnumValuesTotal = dbContext.EnumValues.Count();
+      //PropertiesTotal = dbContext.Properties.Count();
     }
   }
 
@@ -86,13 +87,12 @@ public class OpenXmlLibParser
   internal void ParseOpenXmlFilesAndNamespaces(MetadataLoadContext metadataLoadContext)
   {
     var assemblies = metadataLoadContext.GetAssemblies();
-
+    dbContext.LoadFiles();
     foreach (var assembly in metadataLoadContext.GetAssemblies())
     {
       var filename = Path.GetFileNameWithoutExtension(Path.GetFileName(assembly.GetFiles().First().Name));
 
-      var libFile = dbContext.Files.FirstOrDefault(f => f.FileName == filename);
-      if (libFile == null)
+      if (!dbContext.FilesDictionary.TryGetValue(filename, out var libFile))
       {
         WriteLine($"Adding file {filename}");
         libFile = new LibFile { FileName = filename };
@@ -107,8 +107,7 @@ public class OpenXmlLibParser
         if (!string.IsNullOrEmpty(ns) /*&& !ns.StartsWith("System")*/)
         {
           WriteLine($"Checking namespace {ns} is null or empty = {!String.IsNullOrEmpty(ns) && !ns.StartsWith("System")}");
-          var libNamespace = dbContext.Namespaces.FirstOrDefault(n => n.Name == ns);
-          if (libNamespace == null)
+          if (!dbContext.NamespaceDictionary.TryGetValue(ns, out var libNamespace))
           {
             WriteLine($"Adding namespace {ns}");
             libNamespace = new Namespace { Name = ns };
@@ -128,11 +127,14 @@ public class OpenXmlLibParser
           }
         }
       }
-    };
+    }
+
   }
 
   internal void ParseAssemblies(MetadataLoadContext metadataLoadContext)
   {
+    dbContext.LoadNamespaces();
+    dbContext.DisplayMessageEnabled = false;
     var assemblies = metadataLoadContext.GetAssemblies();
 
     foreach (var assembly in metadataLoadContext.GetAssemblies())
@@ -141,10 +143,10 @@ public class OpenXmlLibParser
       {
         var ns = typeDefinition.Namespace;
         var name = typeDefinition.Name;
-        if (!String.IsNullOrEmpty(ns) && !ns.StartsWith("System") && !String.IsNullOrEmpty(name) && !name.StartsWith("<"))
+        if (!String.IsNullOrEmpty(ns) && !ns.StartsWith("System") && !String.IsNullOrEmpty(name) && !name.StartsWith("<") && !typeDefinition.IsGenericMethodParameter)
         {
-          var libNamespace = dbContext.Namespaces.FirstOrDefault(n => n.Name == ns);
-          if (libNamespace == null)
+
+          if (!dbContext.NamespaceDictionary.TryGetValue(ns, out var libNamespace))
             throw new InvalidDataException($"Namespace {ns} not found");
           ParseType(libNamespace, typeDefinition);
         }
@@ -152,43 +154,51 @@ public class OpenXmlLibParser
     };
   }
 
-  internal void ParseType(Namespace ns, Type assType)
+  internal bool ParseType(Namespace ns, Type assType)
   {
     var typeName = assType.Name;
     Write($"Checking type {ns.Name}.{typeName} ... ");
 
-    var libType = dbContext.Types.FirstOrDefault(t => t.Name == typeName && t.NamespaceId == ns.Id);
-    if (libType == null)
+    //var libType = ns.Types?.FirstOrDefault(t => t.Name == typeName);
+    //if (libType == null)
+    if (!ns.TypesDictionary.TryGetValue(typeName, out var libType))
     {
       WriteLine($"added");
       libType = new TypeDef { Name = typeName, NamespaceId = ns.Id };
       dbContext.Types.Add(libType);
+      ParseTypeDetails(libType, assType);
       if (SaveChanges() > 0)
         TypesAdded++;
       else
         throw new InvalidDataException($"Type {ns.Name}.{typeName} not added");
-      ParseTypeDetails(libType, assType);
-      ParseTypeMembers(libType, assType);
-      if (ParseBaseType(libType, assType))
-        WriteLine($"Base type updated");
+
+      //ParseTypeMembers(libType, assType);
+      //if (ParseBaseType(libType, assType))
+      //  WriteLine($"Base type updated");
+      return true;
     }
     else
     {
       bool updated = false;
       if (ParseTypeDetails(libType, assType))
       {
+        if (SaveChanges() > 0)
+          TypesUpdated++;
+        else
+          throw new InvalidDataException($"Type {ns.Name}.{typeName} not updated");
         WriteLine($"updated");
         updated = true;
-        TypesUpdated++;
+
       }
       else
         WriteLine($"ok");
-      ParseTypeMembers(libType, assType);
-      if (ParseBaseType(libType, assType) && !updated)
-      {
-        WriteLine($"Base type of {ns.Name}.{typeName} updated");
-        TypesUpdated++;
-      }
+      //ParseTypeMembers(libType, assType);
+      //if (ParseBaseType(libType, assType) && !updated)
+      //{
+      //  WriteLine($"Base type of {ns.Name}.{typeName} updated");
+      //  TypesUpdated++;
+      //}
+      return updated;
     }
   }
 
@@ -206,243 +216,306 @@ public class OpenXmlLibParser
 
   internal bool ParseValueTypeDetails(TypeDef libType, Type assType)
   {
+    if (assType.IsGenericTypeParameter)
+      return false;
     var interfaces = assType.GetInterfaces();
     if (interfaces.FirstOrDefault(item => item.Name == "IEnumValueFactory`1") != null)
     {
-      libType.Kind = TypeKind.Enum;
-      return dbContext.SaveChanges() > 0;
+      var changed = false;
+      if (libType.Kind != TypeKind.Enum)
+      {
+        libType.Kind = TypeKind.Enum;
+        changed = true;
+      }
+      return changed;
     }
     return ParseStructTypeDetails(libType, assType);
   }
 
   internal bool ParseEnumTypeDetails(TypeDef libType, Type assType)
   {
-    libType.Kind = TypeKind.Enum;
-    return (SaveChanges() > 0);
+    var changed = false;
+    if (libType.Kind != TypeKind.Enum)
+    {
+      libType.Kind = TypeKind.Enum;
+      changed = true;
+    }
+    return changed;
   }
 
   public bool ParseStructTypeDetails(TypeDef libType, Type assType)
   {
-    ParseProperties(libType, assType);
-    libType.Kind = TypeKind.Struct;
-    libType.IsAbstract = assType.IsAbstract;
-    return (SaveChanges() > 0);
+    if (assType.IsGenericTypeParameter)
+      return false;
+    var changed = false;
+    if (libType.Kind != TypeKind.Struct)
+    {
+      libType.Kind = TypeKind.Struct;
+      changed = true;
+    }
+    if (libType.IsAbstract != assType.IsAbstract)
+    {
+      libType.IsAbstract = assType.IsAbstract;
+      changed = true;
+    }
+    return changed;
   }
 
   public bool ParseClassTypeDetails(TypeDef libType, Type assType)
   {
-    libType.Kind = assType.IsInterface ? TypeKind.Interface : TypeKind.Class;
-    libType.IsAbstract = assType.IsAbstract;
-    return (SaveChanges() > 0);
-  }
-
-  internal int ParseTypeMembers(TypeDef libType, Type assType)
-  {
-    if (assType.IsEnum)
-      return ParseEnumValues(libType, assType);
-    else if (assType.IsClass || assType.IsInterface)
-      return ParseProperties(libType, assType);
-    else if (assType.IsValueType)
-    {
-      if (libType.Kind == TypeKind.Enum)
-        return ParseStaticProperties(libType, assType);
-      return ParseProperties(libType, assType);
-    }
-    else
-      throw new InvalidDataException($"Type {libType.Name} kind must be enum, value or class");
-  }
-
-  internal int ParseEnumValues(TypeDef libType, Type typeDefinition)
-  {
-    int added = 0;
-    int ordNum = 0;
-    foreach (FieldInfo field in typeDefinition.GetFields(BindingFlags.Public | BindingFlags.Static | BindingFlags.DeclaredOnly))
-    {
-      if (field.IsLiteral && !field.IsInitOnly)
-      {
-        Write($"Checking enum value {libType.Name}.{field.Name} ... ");
-        var enumValue = dbContext.EnumValues.FirstOrDefault(e => e.OwnerTypeId == libType.Id && e.Name == field.Name && e.OrdNum == ordNum);
-        if (enumValue == null)
-        {
-
-          enumValue = new EnumValue { OwnerTypeId = libType.Id, Name = field.Name, OrdNum = ordNum };
-          dbContext.EnumValues.Add(enumValue);
-          if (SaveChanges() > 0)
-          {
-            EnumValuesAdded++;
-            added++;
-          }
-        }
-        else
-          WriteLine($"ok");
-        ordNum++;
-      }
-    }
-    return added;
-  }
-  internal int ParseStaticProperties(TypeDef libType, Type typeDefinition)
-  {
-    int added = 0;
-    int ordNum = 0;
-    foreach (PropertyInfo property in typeDefinition.GetProperties(BindingFlags.Public | BindingFlags.Static | BindingFlags.DeclaredOnly))
-    {
-      Write($"Checking enum value {libType.Name}.{property.Name} ...");
-
-      var enumValue = dbContext.EnumValues.FirstOrDefault(e => e.OwnerTypeId == libType.Id && e.Name == property.Name && e.OrdNum == ordNum);
-      if (enumValue == null)
-      {
-        enumValue = new EnumValue { OwnerTypeId = libType.Id, Name = property.Name, OrdNum = ordNum };
-        dbContext.EnumValues.Add(enumValue);
-        if (SaveChanges() > 0)
-        {
-          EnumValuesAdded++;
-          WriteLine($"added");
-          added++;
-        }
-      }
-      else
-        WriteLine($"ok");
-      ordNum++;
-    }
-    return added;
-  }
-
-  public int ParseProperties(TypeDef libType, Type typeDefinition)
-  {
-    int added = 0;
-    int updated = 0;
-    int ordNum = 0;
-    foreach (PropertyInfo property in typeDefinition.GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly))
-    {
-      if (property.CanWrite)
-      {
-        Write($"Checking property {libType.Name}.{property.Name} ... ");
-
-        var libProperty = dbContext.Properties.FirstOrDefault(e => e.OwnerTypeId == libType.Id && e.Name == property.Name);
-        if (libProperty == null)
-        {
-          libProperty = new Property { OwnerTypeId = libType.Id, Name = property.Name, OrdNum = ordNum };
-          dbContext.Properties.Add(libProperty);
-          if (SaveChanges() > 0)
-          {
-            WriteLine($"added");
-            PropertiesAdded++;
-            added++;
-          }
-          else
-            throw new InvalidDataException($"Property {libType.Name}.{property.Name} not added");
-          ParsePropertyDetails(libProperty, property, ordNum);
-          ParsePropertyValueType(libProperty, property);
-        }
-        else
-        {
-          if (ParsePropertyDetails(libProperty, property, ordNum))
-          {
-            WriteLine($"updated");
-            PropertiesUpdated++;
-            updated++;
-          }
-          else
-            WriteLine($"ok");
-          ParsePropertyValueType(libProperty, property);
-        }
-        ordNum++;
-      }
-    }
-    return added + updated;
-  }
-
-  internal bool ParsePropertyDetails(Property libProperty, PropertyInfo property, int ordNum)
-  {
-    libProperty.OrdNum = ordNum;
-    return dbContext.SaveChanges() > 0 || libProperty.ValueTypeId == null;
-  }
-
-  internal bool ParsePropertyValueType(Property libProperty, PropertyInfo property)
-  {
-    var valueTypeDef = ParseValueType(property.PropertyType);
-    libProperty.ValueTypeId = valueTypeDef.Id;
-    return dbContext.SaveChanges() > 0;
-  }
-
-  internal TypeDef ParseValueType(Type assType)
-  {
-    var ns = dbContext.Namespaces.FirstOrDefault(item=>item.Name==assType.Namespace);
-    if (ns == null)
-      throw new InvalidDataException($"Namespace {assType.Namespace} not found");
-    var typeName = assType.Name;
-    Write($"Checking type {ns.Name}.{typeName} ... ");
-
-    var libType = dbContext.Types.FirstOrDefault(t => t.Name == typeName && t.NamespaceId == ns.Id);
-    if (libType == null)
-    {
-      WriteLine($"added");
-      libType = new TypeDef { Name = typeName, NamespaceId = ns.Id };
-      dbContext.Types.Add(libType);
-      if (SaveChanges() > 0)
-        TypesAdded++;
-      else
-        throw new InvalidDataException($"Type {ns.Name}.{typeName} not added");
-      ParseTypeDetails(libType, assType);
-      //ParseTypeMembers(libType, assType);
-    }
-    else
-    {
-      if (ParseTypeDetails(libType, assType))
-      {
-        WriteLine($"updated");
-        TypesUpdated++;
-      }
-      else
-        WriteLine($"ok");
-      //ParseTypeMembers(libType, assType);
-    };
-    return libType;
-  }
-
-  internal bool ParseBaseType(TypeDef libType, Type assType)
-  {
-    if (libType.Kind == TypeKind.Enum || assType.BaseType == null)
+    if (assType.IsGenericTypeParameter)
       return false;
-
-    var baseTypeDef = ParseBaseType(assType.BaseType);
-    libType.BaseTypeId = baseTypeDef.Id;
-    return dbContext.SaveChanges() > 0;
-  }
-
-  internal TypeDef ParseBaseType(Type assType)
-  {
-    var ns = dbContext.Namespaces.FirstOrDefault(item => item.Name == assType.Namespace);
-    if (ns == null)
-      throw new InvalidDataException($"Namespace {assType.Namespace} not found");
-    var typeName = assType.Name;
-    Write($"Checking type {ns.Name}.{typeName} ... ");
-
-    var libType = dbContext.Types.FirstOrDefault(t => t.Name == typeName && t.NamespaceId == ns.Id);
-    if (libType == null)
+    var changed = false;
+    var kind = assType.IsInterface ? TypeKind.Interface : TypeKind.Class;
+    if (libType.Kind != kind)
     {
-      WriteLine($"added");
-      libType = new TypeDef { Name = typeName, NamespaceId = ns.Id };
-      dbContext.Types.Add(libType);
-      if (SaveChanges() > 0)
-        TypesAdded++;
-      else
-        throw new InvalidDataException($"Type {ns.Name}.{typeName} not added");
-      ParseTypeDetails(libType, assType);
-      //ParseTypeMembers(libType, assType);
+      libType.Kind = kind;
+      changed = true;
     }
-    else
+    if (libType.IsAbstract != assType.IsAbstract)
     {
-      if (ParseTypeDetails(libType, assType))
-      {
-        WriteLine($"updated");
-        TypesUpdated++;
-      }
-      else
-        WriteLine($"ok");
-      //ParseTypeMembers(libType, assType);
-    };
-    return libType;
+      libType.IsAbstract = assType.IsAbstract;
+      changed = true;
+    }
+    return changed;
   }
+
+  //internal int ParseTypeMembers(TypeDef libType, Type assType)
+  //{
+  //  if (assType.IsEnum)
+  //    return ParseEnumValues(libType, assType);
+  //  else if (assType.IsClass || assType.IsInterface)
+  //    return ParseProperties(libType, assType);
+  //  else if (assType.IsValueType)
+  //  {
+  //    if (libType.Kind == TypeKind.Enum)
+  //      return ParseStaticProperties(libType, assType);
+  //    return ParseProperties(libType, assType);
+  //  }
+  //  else
+  //    throw new InvalidDataException($"Type {libType.Name} kind must be enum, value or class");
+  //}
+
+  //internal int ParseEnumValues(TypeDef libType, Type typeDefinition)
+  //{
+  //  int added = 0;
+  //  int ordNum = 0;
+  //  foreach (FieldInfo field in typeDefinition.GetFields(BindingFlags.Public | BindingFlags.Static | BindingFlags.DeclaredOnly))
+  //  {
+  //    if (field.IsLiteral && !field.IsInitOnly)
+  //    {
+  //      Write($"Checking enum value {libType.Name}.{field.Name} ... ");
+  //      if (!libType.EnumValuesDictionary.TryGetValue(field.Name, out var enumValue))
+  //      {
+
+  //        enumValue = new EnumValue { OwnerTypeId = libType.Val, Name = field.Name, OrdNum = ordNum };
+  //        dbContext.EnumValues.Add(enumValue);
+  //        if (SaveChanges() > 0)
+  //        {
+  //          EnumValuesAdded++;
+  //          added++;
+  //        }
+  //      }
+  //      else
+  //        WriteLine($"ok");
+  //      ordNum++;
+  //    }
+  //  }
+  //  return added;
+  //}
+  //internal int ParseStaticProperties(TypeDef libType, Type typeDefinition)
+  //{
+  //  int added = 0;
+  //  int ordNum = 0;
+  //  foreach (PropertyInfo property in typeDefinition.GetProperties(BindingFlags.Public | BindingFlags.Static | BindingFlags.DeclaredOnly))
+  //  {
+  //    Write($"Checking enum value {libType.Name}.{property.Name} ...");
+
+  //    if (!libType.EnumValuesDictionary.TryGetValue(property.Name, out var enumValue))
+  //    {
+  //      enumValue = new EnumValue { OwnerTypeId = libType.Val, Name = property.Name, OrdNum = ordNum };
+  //      dbContext.EnumValues.Add(enumValue);
+  //      if (SaveChanges() > 0)
+  //      {
+  //        EnumValuesAdded++;
+  //        WriteLine($"added");
+  //        added++;
+  //      }
+  //    }
+  //    else
+  //      WriteLine($"ok");
+  //    ordNum++;
+  //  }
+  //  return added;
+  //}
+
+  //public int ParseProperties(TypeDef libType, Type typeDefinition)
+  //{
+  //  int added = 0;
+  //  int updated = 0;
+  //  int ordNum = 0;
+  //  foreach (PropertyInfo property in typeDefinition.GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly))
+  //  {
+  //    if (property.CanWrite)
+  //    {
+  //      Write($"Checking property {libType.Name}.{property.Name} ... ");
+
+  //      //var libProperty = dbContext.Properties.FirstOrDefault(e => e.OwnerTypeId == libType.Val && e.Name == property.Name);
+  //      //if (libProperty == null)
+
+  //      if (!libType.PropertiesDictionary.TryGetValue(property.Name, out var libProperty))
+  //      {
+  //        libProperty = new Property { OwnerTypeId = libType.Val, Name = property.Name, OrdNum = ordNum };
+  //        dbContext.Properties.Add(libProperty);
+  //        if (SaveChanges() > 0)
+  //        {
+  //          WriteLine($"added");
+  //          PropertiesAdded++;
+  //          added++;
+  //        }
+  //        else
+  //          throw new InvalidDataException($"Property {libType.Name}.{property.Name} not added");
+  //        ParsePropertyDetails(libProperty, property, ordNum);
+  //        ParsePropertyValueType(libProperty, property);
+  //      }
+  //      else
+  //      {
+  //        if (ParsePropertyDetails(libProperty, property, ordNum))
+  //        {
+  //          WriteLine($"updated");
+  //          PropertiesUpdated++;
+  //          updated++;
+  //        }
+  //        else
+  //          WriteLine($"ok");
+  //        ParsePropertyValueType(libProperty, property);
+  //      }
+  //      ordNum++;
+  //    }
+  //  }
+  //  return added + updated;
+  //}
+
+  //internal bool ParsePropertyDetails(Property libProperty, PropertyInfo property, int ordNum)
+  //{
+  //  var changed = false;
+  //  if (libProperty.OrdNum != ordNum)
+  //  {
+  //    libProperty.OrdNum = ordNum;
+  //    changed = true;
+  //  }
+  //  if (changed) 
+  //    dbContext.SaveChanges();
+  //  return changed;
+  //}
+
+  //internal bool ParsePropertyValueType(Property libProperty, PropertyInfo property)
+  //{
+  //  var changed = false;
+  //  var valueTypeDef = ParseValueType(property.PropertyType);
+  //  if (libProperty.ValueTypeId != valueTypeDef.Val)
+  //  {
+  //    libProperty.ValueTypeId = valueTypeDef.Val;
+  //    changed = true;
+  //  }
+  //  if (changed) 
+  //    dbContext.SaveChanges();
+  //  return changed;
+  //}
+
+  //internal TypeDef ParseValueType(Type assType)
+  //{
+  //  //var ns = dbContext.Files.FirstOrDefault(item=>item.Name==assType.Namespace);
+  //  //if (ns == null)
+  //  //  throw new InvalidDataException($"Namespace {assType.Namespace} not found");
+  //  if (assType.Namespace == null)
+  //    throw new InvalidDataException($"Namespace of {assType} is null");
+  //  if (!dbContext.NamespaceDictionary.TryGetValue(assType.Namespace, out var ns))
+  //    throw new InvalidDataException($"Namespace {assType.Namespace} not found");
+  //  var typeName = assType.Name;
+  //  Write($"Checking type {ns.Name}.{typeName} ... ");
+
+  //  if (!ns.TypesDictionary.TryGetValue(typeName, out var libType))
+  //  {
+  //    WriteLine($"added");
+  //    libType = new TypeDef { Name = typeName, NamespaceId = ns.Val };
+  //    dbContext.Types.Add(libType);
+  //    if (SaveChanges() > 0)
+  //      TypesAdded++;
+  //    else
+  //      throw new InvalidDataException($"Type {ns.Name}.{typeName} not added");
+  //    ParseTypeDetails(libType, assType);
+  //    //ParseTypeMembers(libType, assType);
+  //  }
+  //  else
+  //  {
+  //    if (ParseTypeDetails(libType, assType))
+  //    {
+  //      WriteLine($"updated");
+  //      TypesUpdated++;
+  //    }
+  //    else
+  //      WriteLine($"ok");
+  //    //ParseTypeMembers(libType, assType);
+  //  };
+  //  return libType;
+  //}
+
+  //internal bool ParseBaseType(TypeDef libType, Type assType)
+  //{
+  //  if (libType.Kind == TypeKind.Enum || assType.BaseType == null)
+  //    return false;
+
+  //  var baseTypeDef = ParseBaseType(assType.BaseType);
+  //  var changed = false;
+  //  if (libType.BaseTypeId != baseTypeDef.Val)
+  //  {
+  //    libType.BaseTypeId = baseTypeDef.Val;
+  //    changed = true;
+  //  }
+  //  if (changed) 
+  //    dbContext.SaveChanges();
+  //  return changed;
+  //}
+
+  //internal TypeDef ParseBaseType(Type assType)
+  //{
+  //  //var ns = dbContext.Files.FirstOrDefault(item => item.Name == assType.Namespace);
+  //  //if (ns == null)
+  //  //  throw new InvalidDataException($"Namespace {assType.Namespace} not found");
+  //  if (assType.Namespace == null)
+  //    throw new InvalidDataException($"Namespace of {assType} is null");
+  //  if (!dbContext.NamespaceDictionary.TryGetValue(assType.Namespace, out var ns))
+  //    throw new InvalidDataException($"Namespace {assType.Namespace} not found");
+  //  var typeName = assType.Name;
+  //  Write($"Checking type {ns.Name}.{typeName} ... ");
+
+  //  //var libType = ns.Types?.FirstOrDefault(t => t.Name == typeName);
+  //  //if (libType == null)
+  //  if (!ns.TypesDictionary.TryGetValue(typeName, out var libType))
+  //  {
+  //    WriteLine($"added");
+  //    libType = new TypeDef { Name = typeName, NamespaceId = ns.Val };
+  //    dbContext.Types.Add(libType);
+  //    if (SaveChanges() > 0)
+  //      TypesAdded++;
+  //    else
+  //      throw new InvalidDataException($"Type {ns.Name}.{typeName} not added");
+  //    ParseTypeDetails(libType, assType);
+  //    //ParseTypeMembers(libType, assType);
+  //  }
+  //  else
+  //  {
+  //    if (ParseTypeDetails(libType, assType))
+  //    {
+  //      WriteLine($"updated");
+  //      TypesUpdated++;
+  //    }
+  //    else
+  //      WriteLine($"ok");
+  //    //ParseTypeMembers(libType, assType);
+  //  };
+  //  return libType;
+  //}
 
 }
