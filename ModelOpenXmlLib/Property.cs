@@ -8,6 +8,9 @@ namespace ModelOpenXmlLib;
 /// </summary>
 [Index(nameof(OwnerTypeId), nameof(Name), IsUnique = true)]
 [Index(nameof(OwnerTypeId), nameof(OrdNum), IsUnique = false)]
+[Index(nameof(OwnerTypeId), IsUnique = false)]
+[Index(nameof(Name), IsUnique = false)]
+[Index(nameof(OrdNum), IsUnique = false)]
 public class Property
 {
   /// <summary>
@@ -45,8 +48,8 @@ public class Property
   /// </summary>
   public int? ValueTypeId { get; set; }
 
-  /// <summary>
-  /// Navigation property for the value type.
-  /// </summary>
-  public TypeDef? ValueType { get; set; } = null!;
+  ///// <summary>
+  ///// Navigation property for the value type.
+  ///// </summary>
+  //public TypeDef? ValueType { get; set; } = null!;
 }

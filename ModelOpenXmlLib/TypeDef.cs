@@ -1,4 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 using Microsoft.EntityFrameworkCore;
 
 namespace ModelOpenXmlLib;
@@ -41,33 +43,40 @@ public class TypeDef
   /// </summary>
   public Namespace Namespace { get; set; } = null!;
 
-  /// <summary>
-  /// Unique identifier of the base type.
-  /// </summary>
-  public int? BaseTypeId { get; set; }
+  ///// <summary>
+  ///// Unique identifier of the base type.
+  ///// </summary>
+  //public int? BaseTypeId { get; set; }
 
-  /// <summary>
-  /// Navigation property for the base type.
-  /// </summary>
-  public TypeDef? BaseType { get; set; }
+  ///// <summary>
+  ///// Navigation property for the base type.
+  ///// </summary>
+  //public TypeDef? BaseType { get; set; }
 
-  /// <summary>
-  /// Navigation property for the derived types of the type.
-  /// </summary>
-  public ICollection<TypeDef>? DerivedTypes { get; set; }
+  ///// <summary>
+  ///// Navigation property for the derived types of the type.
+  ///// </summary>
+  //public ICollection<TypeDef>? DerivedTypes { get; set; }
 
-  /// <summary>
-  /// Navigation property for the enum values of the enum type.
-  /// </summary>
-  public ICollection<EnumValue>? EnumValues { get; set; }
+  ///// <summary>
+  ///// Navigation property for the enum values of the enum type.
+  ///// </summary>
+  //public virtual ICollection<EnumValue> EnumValues { get; set; } = null!;
+  //// Not mapped to the database, used for in-memory access
+  //[NotMapped]
+  //public Dictionary<string, EnumValue> EnumValuesDictionary { get; set; } = null!;
 
-  /// <summary>
-  /// Navigation property for the properties of the complex type.
-  /// </summary>
-  public ICollection<Property>? Properties { get; set; }
+  ///// <summary>
+  ///// Navigation property for the properties of the complex type.
+  ///// </summary>
+  //public virtual ICollection<Property> Properties { get; set; } = null!;
 
-  /// <summary>
-  /// Navigation property for the properties that uses this type.
-  /// </summary>
-  public ICollection<Property>? UsedInProperties { get; set; }
+  //// Not mapped to the database, used for in-memory access
+  //[NotMapped]
+  //public Dictionary<string, Property> PropertiesDictionary { get; set; } = null!;
+
+  ///// <summary>
+  ///// Navigation property for the properties that uses this type.
+  ///// </summary>
+  //public ICollection<Property>? UsedInProperties { get; set; }
 }

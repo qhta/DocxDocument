@@ -10,6 +10,7 @@
   <ItemGroup>
     <PackageReference Include="DocumentFormat.OpenXml" Version="3.0.2" />
     <PackageReference Include="DocumentFormat.OpenXml.Features" Version="3.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="8.0.6" />
     <PackageReference Include="System.Data.OleDb" Version="9.0.0-preview.5.24306.7" />
     <PackageReference Include="System.Reflection.MetadataLoadContext" Version="9.0.0-preview.5.24306.7" />
   </ItemGroup>
