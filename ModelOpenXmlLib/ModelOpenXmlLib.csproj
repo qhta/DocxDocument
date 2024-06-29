@@ -8,9 +8,7 @@
 
   <ItemGroup>
     <Compile Remove="EnumType.cs" />
-    <Compile Remove="EnumValue.cs" />
     <Compile Remove="LibFilesCollection.cs" />
-    <Compile Remove="Property.cs" />
   </ItemGroup>
 
   <ItemGroup>

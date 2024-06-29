@@ -18,9 +18,9 @@ public sealed class LibDbContext : DbContext
 
   public DbSet<TypeDef> Types { get; set; }
 
-  //public DbSet<EnumValue> EnumValues { get; set; }
+  public DbSet<EnumValue> EnumValues { get; set; }
 
-  //public DbSet<Property> Properties { get; set; }
+  public DbSet<Property> Properties { get; set; }
 
   public Dictionary<string, LibFile> FilesDictionary { get; set; } = null!;
 
@@ -84,27 +84,32 @@ public sealed class LibDbContext : DbContext
       .WithMany(subItem => subItem.Types)
       .HasForeignKey(item => item.NamespaceId);
 
-    //modelBuilder.Entity<EnumValue>()
-    //  .HasOne(item => item.OwnerType)
-    //  .WithMany(subItem => subItem.EnumValues)
-    //  .HasForeignKey(item => item.OwnerTypeId);
+    modelBuilder.Entity<TypeDef>()
+      .HasOne(item => item.BaseType)
+      .WithMany(subItem => subItem.DerivedTypes)
+      .HasForeignKey(item => item.BaseTypeId);
+
+    modelBuilder.Entity<EnumValue>()
+      .HasOne(item => item.OwnerType)
+      .WithMany(subItem => subItem.EnumValues)
+      .HasForeignKey(item => item.OwnerTypeId);
+
+    modelBuilder.Entity<Property>()
+      .HasOne(item => item.OwnerType)
+      .WithMany(subItem => subItem.Properties)
+      .HasForeignKey(item => item.OwnerTypeId);
+
+    modelBuilder.Entity<Property>()
+      .HasOne(item => item.ValueType)
+      .WithMany()
+      .HasForeignKey(item => item.ValueTypeId);
 
     //modelBuilder.Entity<Property>()
-    //  .HasOne(item => item.OwnerType)
-    //  .WithMany(subItem => subItem.Properties)
-    //  .HasForeignKey(item => item.OwnerTypeId);
-
-    //  modelBuilder.Entity<Property>()
-    //    .HasOne(item => item.ValueType)
-    //    .WithMany(subItem => subItem.UsedInProperties)
-    //    .HasForeignKey(item => item.ValueTypeId);
-
-    //modelBuilder.Entity<TypeDef>()
-    //  .HasOne(item => item.BaseType)
-    //  .WithMany(subItem => subItem.DerivedTypes)
-    //  .HasForeignKey(item => item.BaseTypeId);
-
+    //  .Property(p => p.ValueType)
+    //  .UsePropertyAccessMode(PropertyAccessMode.Property);
   }
+
+
 
   public void LoadFiles()
   {
@@ -132,24 +137,25 @@ public sealed class LibDbContext : DbContext
         }
       }
     };
+
   }
 
   public void LoadNamespaces()
   {
-
+    //DisplayMessageEnabled = true;
     foreach (var ns in Namespaces
+               .Include(ns => ns.Types).
+               ThenInclude(aType => aType.EnumValues)
                .Include(ns => ns.Types)
-               //.ThenInclude(aType => aType.Properties)
-               //.Include(aType => aType.Types).
-               //ThenInclude(aType => aType.EnumValues)
+               .ThenInclude(aType => aType.Properties)
                )
     {
       ns.TypesDictionary = ns.Types.ToDictionary(type => type.Name, type => type);
-      //foreach (var type in ns.TypesDictionary.Values)
-      //{
-      //  type.PropertiesDictionary = type.Properties.ToDictionary(prop => prop.Name, prop => prop);
-      //  type.EnumValuesDictionary = type.EnumValues.ToDictionary(enumValue => enumValue.Name, enumValue => enumValue);
-      //}
+      foreach (var type in ns.TypesDictionary.Values)
+      {
+        type.EnumValuesDictionary = type.EnumValues.ToDictionary(enumValue => enumValue.Name, enumValue => enumValue);
+        type.PropertiesDictionary = type.Properties.ToDictionary(prop => prop.Name, prop => prop);
+      }
     }
     Types.Local.CollectionChanged += (sender, args) =>
     {
@@ -158,6 +164,26 @@ public sealed class LibDbContext : DbContext
         foreach (TypeDef type in args.NewItems!)
         {
           NamespaceDictionary[type.Namespace.Name ?? ""].TypesDictionary.Add(type.Name, type);
+        }
+      }
+    };
+    EnumValues.Local.CollectionChanged += (sender, args) =>
+    {
+      if (args.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add)
+      {
+        foreach (EnumValue enumValue in args.NewItems!)
+        {
+          NamespaceDictionary[enumValue.OwnerType.Namespace.Name ?? ""].TypesDictionary[enumValue.OwnerType.Name].EnumValuesDictionary.Add(enumValue.Name, enumValue);
+        }
+      }
+    };
+    Properties.Local.CollectionChanged += (sender, args) =>
+    {
+      if (args.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add)
+      {
+        foreach (Property prop in args.NewItems!)
+        {
+          NamespaceDictionary[prop.OwnerType.Namespace.Name ?? ""].TypesDictionary[prop.OwnerType.Name].PropertiesDictionary.Add(prop.Name, prop);
         }
       }
     };

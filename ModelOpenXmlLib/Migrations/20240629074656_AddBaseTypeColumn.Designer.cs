@@ -3,6 +3,7 @@ using System;
 using EntityFrameworkCore.Jet.Metadata;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ModelOpenXmlLib;
 
@@ -11,44 +12,17 @@ using ModelOpenXmlLib;
 namespace ModelOpenXmlLib.Migrations
 {
     [DbContext(typeof(LibDbContext))]
-    partial class LibDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240629074656_AddBaseTypeColumn")]
+    partial class AddBaseTypeColumn
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Jet:ValueGenerationStrategy", JetValueGenerationStrategy.IdentityColumn)
                 .HasAnnotation("ProductVersion", "8.0.6")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
-
-            modelBuilder.Entity("ModelOpenXmlLib.EnumValue", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasAnnotation("Jet:ValueGenerationStrategy", JetValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("varchar(255)");
-
-                    b.Property<int>("OrdNum")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("OwnerTypeId")
-                        .HasColumnType("integer");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("OwnerTypeId", "Name")
-                        .IsUnique();
-
-                    b.HasIndex("OwnerTypeId", "OrdNum")
-                        .IsUnique();
-
-                    b.ToTable("EnumValues");
-                });
 
             modelBuilder.Entity("ModelOpenXmlLib.FileNamespace", b =>
                 {
@@ -115,45 +89,6 @@ namespace ModelOpenXmlLib.Migrations
                     b.ToTable("Namespaces");
                 });
 
-            modelBuilder.Entity("ModelOpenXmlLib.Property", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasAnnotation("Jet:ValueGenerationStrategy", JetValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("varchar(255)");
-
-                    b.Property<int>("OrdNum")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("OwnerTypeId")
-                        .HasColumnType("integer");
-
-                    b.Property<int?>("ValueTypeId")
-                        .HasColumnType("integer");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("Name");
-
-                    b.HasIndex("OrdNum");
-
-                    b.HasIndex("OwnerTypeId");
-
-                    b.HasIndex("ValueTypeId");
-
-                    b.HasIndex("OwnerTypeId", "Name")
-                        .IsUnique();
-
-                    b.HasIndex("OwnerTypeId", "OrdNum");
-
-                    b.ToTable("Properties");
-                });
-
             modelBuilder.Entity("ModelOpenXmlLib.TypeDef", b =>
                 {
                     b.Property<int>("Id")
@@ -194,17 +129,6 @@ namespace ModelOpenXmlLib.Migrations
                     b.ToTable("Types");
                 });
 
-            modelBuilder.Entity("ModelOpenXmlLib.EnumValue", b =>
-                {
-                    b.HasOne("ModelOpenXmlLib.TypeDef", "OwnerType")
-                        .WithMany("EnumValues")
-                        .HasForeignKey("OwnerTypeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("OwnerType");
-                });
-
             modelBuilder.Entity("ModelOpenXmlLib.FileNamespace", b =>
                 {
                     b.HasOne("ModelOpenXmlLib.LibFile", "File")
@@ -220,21 +144,6 @@ namespace ModelOpenXmlLib.Migrations
                         .IsRequired();
 
                     b.Navigation("File");
-                });
-
-            modelBuilder.Entity("ModelOpenXmlLib.Property", b =>
-                {
-                    b.HasOne("ModelOpenXmlLib.TypeDef", "OwnerType")
-                        .WithMany("Properties")
-                        .HasForeignKey("OwnerTypeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ModelOpenXmlLib.TypeDef", null)
-                        .WithMany("UsedInProperties")
-                        .HasForeignKey("ValueTypeId");
-
-                    b.Navigation("OwnerType");
                 });
 
             modelBuilder.Entity("ModelOpenXmlLib.TypeDef", b =>
@@ -264,12 +173,6 @@ namespace ModelOpenXmlLib.Migrations
             modelBuilder.Entity("ModelOpenXmlLib.TypeDef", b =>
                 {
                     b.Navigation("DerivedTypes");
-
-                    b.Navigation("EnumValues");
-
-                    b.Navigation("Properties");
-
-                    b.Navigation("UsedInProperties");
                 });
 #pragma warning restore 612, 618
         }

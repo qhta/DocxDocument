@@ -3,6 +3,7 @@ using System;
 using EntityFrameworkCore.Jet.Metadata;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ModelOpenXmlLib;
 
@@ -11,9 +12,11 @@ using ModelOpenXmlLib;
 namespace ModelOpenXmlLib.Migrations
 {
     [DbContext(typeof(LibDbContext))]
-    partial class LibDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240629103132_AddProperties")]
+    partial class AddProperties
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
