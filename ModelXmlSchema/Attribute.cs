@@ -5,7 +5,7 @@ namespace ModelXmlSchema;
 /// <summary>
 /// Represents an attribute in a schema.
 /// </summary>
-public class SchemaAttribute
+public class Attribute
 {
 
   /// <summary>

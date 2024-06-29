@@ -5,7 +5,7 @@ namespace ModelXmlSchema;
 /// <summary>
 /// Union member type for the simple type.
 /// </summary>
-public class SchemaUnionMember
+public class UnionMember
 {
   /// <summary>
   /// Unique identifier of the entity.

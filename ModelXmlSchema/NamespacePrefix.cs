@@ -7,12 +7,12 @@ namespace ModelXmlSchema;
 /// <summary>
 /// Helper class to get the prefix of a namespace used in a file.
 /// </summary>
-public class SchemaNamespacePrefix
+public class NamespacePrefix
 {
   /// <summary>
   /// Unique identifier of namespace.
   /// </summary>
-  public int SchemaNamespaceId { get; set; }
+  public int NamespaceId { get; set; }
 
   /// <summary>
   /// Prefix (short name) of the namespace used in the file.

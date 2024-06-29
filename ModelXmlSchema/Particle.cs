@@ -5,7 +5,7 @@ namespace ModelXmlSchema;
 /// <summary>
 /// Abstract class that represents a particle in a schema.
 /// </summary>
-public abstract class SchemaParticle
+public abstract class Particle
 {
 
   /// <summary>
@@ -61,25 +61,25 @@ public abstract class SchemaParticle
   /// Navigation property for the parent namespace.
   /// Exists only if the particle is a global particle.
   /// </summary>
-  public SchemaNamespace? ParentNamespace { get; set; }
+  public Namespace? ParentNamespace { get; set; }
 
   /// <summary>
   /// Navigation property for the parent complex type.
   /// Exists only if the particle is part of a complex type.
   /// </summary>
-  public SchemaComplexType? ParentComplexType { get; set; }
+  public ComplexType? ParentComplexType { get; set; }
 
   /// <summary>
   /// Navigation property for the parent group.
   /// Exists only if the particle is part of a group.
   /// </summary>
-  public SchemaGroup? ParentGroup { get; set; }
+  public Group? ParentGroup { get; set; }
 
   /// <summary>
   /// Navigation property for the parent particle.
   /// Exists only if the particle is declared inside another particle.
   /// </summary>
-  public SchemaParticle? ParentParticle { get; set; }
+  public Particle? ParentParticle { get; set; }
 
-  public SchemaNamespace? OwnerNamespace => ParentNamespace ?? ParentComplexType?.ParentNamespace ?? ParentGroup?.ParentNamespace;// ?? ParentParticle?.OwnerNamespace;
+  public Namespace? OwnerNamespace => ParentNamespace ?? ParentComplexType?.Namespace ?? ParentGroup?.ParentNamespace;// ?? ParentParticle?.Namespace;
 }

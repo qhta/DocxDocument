@@ -5,7 +5,7 @@ namespace ModelXmlSchema;
 /// <summary>
 /// Represents a group of elements that can appear in any order.
 /// </summary>
-public class SchemaAny: SchemaParticle
+public class Any: Particle
 {
   [MaxLength(255)]
   public string? Namespace { get; set; }

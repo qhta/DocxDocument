@@ -5,7 +5,7 @@ namespace ModelXmlSchema;
 /// <summary>
 /// List item type for simple list types.
 /// </summary>
-public class SchemaListItem
+public class ListItem
 {
   /// <summary>
   /// Unique identifier of the entity.

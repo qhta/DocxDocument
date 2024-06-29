@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ModelXmlSchema;
 
-public class SchemaPattern
+public class Pattern
 {
 
   [Key]
@@ -25,7 +25,7 @@ public class SchemaPattern
 
 
   [MaxLength(255)]
-  public string? Pattern
+  public string? Value
   {
     get; set;
   }

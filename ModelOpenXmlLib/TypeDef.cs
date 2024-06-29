@@ -63,17 +63,32 @@ public class TypeDef
   /// </summary>
   public virtual ICollection<EnumValue> EnumValues { get; set; } = null!;
 
-  // Not mapped to the database, used for in-memory access
+  /// <summary>
+  /// Dictionary of enum values of the enum type.
+  /// </summary>
   [NotMapped]
-  public Dictionary<string, EnumValue> EnumValuesDictionary { get; set; } = null!;
+  public Dictionary<string, EnumValue> EnumValuesDictionary
+  {
+    get => _EnumValuesDictionary ??= new Dictionary<string, EnumValue>();
+    set => _EnumValuesDictionary = value;
+  }
+
+  private Dictionary<string, EnumValue>? _EnumValuesDictionary;
 
   /// <summary>
   /// Navigation property for the properties of the complex type.
   /// </summary>
   public virtual ICollection<Property> Properties { get; set; } = null!;
 
-  // Not mapped to the database, used for in-memory access
+  /// <summary>
+  /// Dictionary of properties of the complex type.
+  /// </summary>
   [NotMapped]
-  public Dictionary<string, Property> PropertiesDictionary { get; set; } = null!;
+  public Dictionary<string, Property> PropertiesDictionary
+  {
+    get => _PropertiesDictionary ??= new Dictionary<string, Property>();
+    set => _PropertiesDictionary = value;
+  }
 
+  private Dictionary<string, Property>? _PropertiesDictionary;
 }
