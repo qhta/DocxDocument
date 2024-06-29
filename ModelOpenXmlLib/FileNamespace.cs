@@ -23,14 +23,4 @@ public class FileNamespace
   /// </summary>
   public int NamespaceId { get; set; }
 
-  /// <summary>
-  /// Navigation property for the LibFile.
-  /// </summary>
-  public LibFile File { get; set; } = null!;
-
-  ///// <summary>
-  ///// Navigation property for the LibNamespace.
-  ///// </summary>
-  //public Namespace Namespace { get; set; } = null!;
-
 }

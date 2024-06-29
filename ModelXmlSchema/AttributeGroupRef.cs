@@ -5,7 +5,7 @@ namespace ModelXmlSchema;
 /// <summary>
 /// References an attribute group in a schema. Replaces attribute.
 /// </summary>
-public class SchemaAttributeGroupRef
+public class AttributeGroupRef
 {
 
   /// <summary>

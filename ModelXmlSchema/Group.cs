@@ -5,7 +5,7 @@ namespace ModelXmlSchema;
 /// <summary>
 /// Represents a group of elements which can be used in many places.
 /// </summary>
-public class SchemaGroup
+public class Group
 {
 
   /// <summary>
@@ -27,6 +27,6 @@ public class SchemaGroup
   /// <summary>
   /// Navigation property for the namespace of the group.
   /// </summary>
-  public SchemaNamespace? ParentNamespace { get; set; }
+  public Namespace? ParentNamespace { get; set; }
 
 }

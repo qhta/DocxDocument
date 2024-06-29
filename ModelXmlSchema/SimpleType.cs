@@ -6,36 +6,8 @@ namespace ModelXmlSchema;
 /// <summary>
 /// Simple type definition in a schema.
 /// </summary>
-public class SchemaSimpleType
+public class SimpleType: TypeDef
 {
-  /// <summary>
-  /// Unique identifier for the simple type.
-  /// </summary>
-  [Key] public int Id { get; set; }
-
-  /// <summary>
-  /// Unique identifier of the namespace where the simple type is defined.
-  /// </summary>
-  public int SchemaNamespaceId { get; set; }
-
-  /// <summary>
-  /// RefName of the simple type.
-  /// </summary>
-  [MaxLength(255)]
-  public string? TypeName { get; set; }
-
-  /// <summary>
-  /// Unique identifier of the base namespace where the base type name is defined.
-  /// Omitted if the base type is defined in the same namespace.
-  /// </summary>
-  public int? BaseNamespaceId { get; set; }
-
-  /// <summary>
-  /// RefName of the base type.
-  /// </summary>
-  [MaxLength(255)]
-  public string? BaseTypeName { get; set; }
-
   /// <summary>
   /// Fixed length of the hexBinary string (in bytes).
   /// </summary>
@@ -76,7 +48,17 @@ public class SchemaSimpleType
   public string? MaxExclusive { get; set; }
 
   /// <summary>
-  /// Navigation property for the namespace where the simple type is defined.
+  /// Enumeration values for the simple type.
   /// </summary>
-  public SchemaNamespace? SchemaNamespace { get; set; }
+  public virtual ICollection<EnumValue> EnumValues { get; set; } = null!;
+
+  // Not mapped to the database, used for in-memory access
+  [NotMapped]
+  public Dictionary<string, EnumValue> EnumValuesDictionary
+  {
+    get => _EnumValuesDictionary ??= new Dictionary<string, EnumValue>();
+    set => _EnumValuesDictionary = value;
+  }
+
+  private Dictionary<string, EnumValue>? _EnumValuesDictionary;
 }
