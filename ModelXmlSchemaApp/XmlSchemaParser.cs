@@ -350,6 +350,7 @@ public class XmlSchemaParser
 
   internal bool ParseXmlSchemaSimpleTypeDetails(SimpleType SimpleType, XmlSchemaSimpleType XmlSchemaSimpleType)
   {
+    bool updated = false;
     if (XmlSchemaSimpleType.Content is XmlSchemaSimpleTypeRestriction restriction)
     {
       if (restriction.Facets.Count > 0)
@@ -359,10 +360,10 @@ public class XmlSchemaParser
         {
           return ParseXmlSchemaSimpleTypeEnumRestriction(SimpleType, restriction);
         }
-        //else if (facet is XmlSchemaPatternFacet patternFacet)
-        //{
-        //  ParseXmlSchemaSimpleTypePatternRestriction(SimpleType, restriction);
-        //}
+        else if (facet is XmlSchemaPatternFacet patternFacet)
+        {
+          return ParseXmlSchemaSimpleTypePatternRestriction(SimpleType, restriction);
+        }
         //else
         //{
         //  ParseXmlSchemaSimpleTypeOtherRestriction(SimpleType, restriction);
@@ -370,11 +371,15 @@ public class XmlSchemaParser
       }
       else
       {
-        SimpleType.BaseTypeName = restriction.BaseTypeName.Name;
-        if (SaveChanges() > 0)
+        var baseTypeName = restriction.BaseTypeName.Name;
+        if (SimpleType.BaseTypeName!=baseTypeName)
         {
-          WriteLine($"  Updating simple type {SimpleType.Name} settings");
-          SimpleTypesUpdates++;
+          SimpleType.BaseTypeName = restriction.BaseTypeName.Name;
+          if (SaveChanges() > 0)
+          {
+            SimpleTypesUpdates++;
+            updated = true;
+          }
         }
       }
     }
@@ -390,7 +395,7 @@ public class XmlSchemaParser
     //}
     //else
     //  throw new NotImplementedException($"Simple type content {XmlSchemaSimpleType.Content} not supported");
-    return false;
+    return updated;
   }
 
   internal bool ParseXmlSchemaSimpleTypeEnumRestriction(SimpleType SimpleType, XmlSchemaSimpleTypeRestriction restriction)
@@ -428,24 +433,27 @@ public class XmlSchemaParser
     return added || updated;
   }
 
-  //internal void ParseXmlSchemaSimpleTypePatternRestriction(SimpleType SimpleType, XmlSchemaSimpleTypeRestriction restriction)
-  //{
-  //  SimpleType.BaseTypeName = "string";
-  //  foreach (var facet in restriction.Facets)
-  //  {
-  //    var patternFacet = (XmlSchemaPatternFacet)facet;
-  //    var schemaPattern = dbContext.Patterns.FirstOrDefault(item =>
-  //      item.OwnerTypeId == SimpleType.Id && item.Pattern == patternFacet.Value);
-  //    if (schemaPattern == null)
-  //    {
-  //      WriteLine($"  Adding pattern value {patternFacet.Value}");
-  //      schemaPattern = new SchemaPattern { OwnerTypeId = SimpleType.Id, Pattern = patternFacet.Value };
-  //      dbContext.Patterns.Add(schemaPattern);
-  //      if (SaveChanges() > 0)
-  //        SchemaPatternsAdded++;
-  //    }
-  //  }
-  //}
+  internal bool ParseXmlSchemaSimpleTypePatternRestriction(SimpleType SimpleType, XmlSchemaSimpleTypeRestriction restriction)
+  {
+    bool added = false;
+    SimpleType.BaseTypeName = "string";
+    foreach (var facet in restriction.Facets)
+    {
+      var patternFacet = (XmlSchemaPatternFacet)facet;
+      var patternValue = patternFacet.Value;
+       if (patternValue == null)
+          throw new NotImplementedException("Pattern facet is null");
+       if (!SimpleType.PatternsDictionary.TryGetValue(patternValue, out var schemaPattern))
+      {
+        schemaPattern = new Pattern { OwnerTypeId = SimpleType.Id, Value = patternValue };
+        dbContext.Patterns.Add(schemaPattern);
+        if (SaveChanges() > 0)
+          SchemaPatternsAdded++;
+        added = true;
+      }
+    }
+    return added;
+  }
 
   //internal void ParseXmlSchemaSimpleTypeOtherRestriction(SimpleType SimpleType, XmlSchemaSimpleTypeRestriction restriction)
   //{
