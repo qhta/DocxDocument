@@ -23,6 +23,9 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.Office.Interop.Access" Version="15.0.4420.1018" />
+    <PackageReference Include="Microsoft.Office.Interop.Access.Dao" Version="15.0.4420.1018" />
+    <PackageReference Include="MicrosoftOfficeCore15" Version="15.0.4420.1017" />
     <PackageReference Include="System.Data.OleDb" Version="9.0.0-preview.4.24266.19" />
   </ItemGroup>
 

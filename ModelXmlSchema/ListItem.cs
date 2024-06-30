@@ -15,15 +15,21 @@ public class ListItem
   /// <summary>
   /// Unique identifier of the simple type which the list item belongs to.
   /// </summary>
-  public int SimpleTypeId { get; set; }
+  public int OwnerTypeId { get; set; }
 
   /// <summary>
-  /// Identifier of the namespace of the item type.
+  /// Identifier of the member type.
   /// </summary>
-  public int? ItemNamespaceId { get; set; }
+  public int MemberTypeId { get; set; }
 
   /// <summary>
-  /// RefName of the item type.
+  /// Navigation property for the owner type.
   /// </summary>
-  [MaxLength(255)] public string? ItemTypeName { get; set; }
+  [Required]
+  public SimpleType OwnerType { get; set; } = null!;
+
+  /// <summary>
+  /// Navigation property for the member type.
+  /// </summary>
+  public SimpleType MemberType { get; set; } = null!;
 }

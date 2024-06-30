@@ -5,6 +5,8 @@ using Microsoft.Extensions.Options;
 using EntityFrameworkCore.Jet;
 using System.Xml.Linq;
 using System.IO.Compression;
+using Microsoft.Office.Interop.Access.Dao;
+using Access = Microsoft.Office.Interop.Access;
 
 namespace ModelXmlSchema;
 
@@ -74,6 +76,7 @@ public sealed class XmlSchemaDbContext : DbContext
   {
     DbFilename = dbFilename;
     Database.EnsureCreated();
+    SetLookups();
   }
 
   protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -113,15 +116,25 @@ public sealed class XmlSchemaDbContext : DbContext
       .HasForeignKey(e => e.NamespaceId);
 
     modelBuilder.Entity<TypeDef>()
-      .HasOne(e => e.BaseTypeNamespace)
-      .WithMany()
-      .HasForeignKey(e => e.BaseNamespaceId);
-
-
-    modelBuilder.Entity<TypeDef>()
       .HasOne(e => e.BaseType)
       .WithMany()
       .HasForeignKey(e => e.BaseTypeId);
+
+    modelBuilder.Entity<SimpleType>()
+      .Property(type => type.HasPattern)
+      .HasColumnType("bit");
+
+    modelBuilder.Entity<SimpleType>()
+      .Property(type => type.IsEnum)
+      .HasColumnType("bit");
+
+    modelBuilder.Entity<SimpleType>()
+      .Property(type => type.IsUnion)
+      .HasColumnType("bit");
+
+    modelBuilder.Entity<SimpleType>()
+      .Property(type => type.IsList)
+      .HasColumnType("bit");
 
     modelBuilder.Entity<EnumValue>()
       .HasOne(item => item.OwnerType)
@@ -132,6 +145,21 @@ public sealed class XmlSchemaDbContext : DbContext
       .HasOne(item => item.OwnerType)
       .WithMany(subItem => subItem.Patterns)
       .HasForeignKey(item => item.OwnerTypeId);
+
+    modelBuilder.Entity<UnionMember>()
+      .HasOne(item => item.OwnerType)
+      .WithMany(subItem => subItem.UnionMembers)
+      .HasForeignKey(item => item.OwnerTypeId);
+
+    modelBuilder.Entity<UnionMember>()
+      .HasOne(item => item.MemberType)
+      .WithMany()
+      .HasForeignKey(item => item.MemberTypeId);
+
+    modelBuilder.Entity<ListItem>()
+      .HasOne(item => item.MemberType)
+      .WithMany()
+      .HasForeignKey(item => item.MemberTypeId);
 
     modelBuilder.Entity<Particle>()
       .HasDiscriminator<ParticleType>("ParticleType")
@@ -196,6 +224,54 @@ public sealed class XmlSchemaDbContext : DbContext
 
   }
 
+  internal void SetLookups()
+  {
+    var accessApp = new Access.ApplicationClass();
+    accessApp.OpenCurrentDatabase(DbFilename, true);
+    try
+    {
+      var database = accessApp.CurrentDb();
+      SetLookup(database, "Types", "NamespaceId", "Namespaces");
+      SetLookup(database, "Types", "BaseTypeId", "Types");
+    }
+    catch (Exception e)
+    {
+      Console.WriteLine(e);
+      throw;
+    }
+    finally
+    {
+      accessApp.CloseCurrentDatabase();
+      accessApp.Quit();
+    }
+
+  }
+
+  internal void SetLookup(Access.Dao.Database database, string tableName, string fieldName, string lookupTableName)
+  {
+    var field = database.TableDefs[tableName].Fields[fieldName];
+    field.Properties["DisplayControl"].Value = 111; // acComboBox
+    SetProperty(field, "RowSourceType", DataTypeEnum.dbText, "Table/Query");
+    SetProperty(field, "RowSource", DataTypeEnum.dbText, lookupTableName);
+    SetProperty(field, "ColumnCount", DataTypeEnum.dbInteger, 2);
+    SetProperty(field, "ColumnWidths", DataTypeEnum.dbText, "0");
+  }
+
+  internal void SetProperty(Access.Dao.Field field, string propertyName, DataTypeEnum dataType, object value)
+  {
+    try
+    {
+      // Try to access the property if it already exists
+      Property prop = field.Properties[propertyName];
+      prop.Value = value;
+    }
+    catch (Exception)
+    {
+      // If the property does not exist, create and append it
+      Property newProp = field.CreateProperty(propertyName, dataType, value);
+      field.Properties.Append(newProp);
+    }
+  }
   public void LoadFiles()
   {
     FilesDictionary = SchemaFiles.ToDictionary(file => file.FileName);
@@ -247,19 +323,8 @@ public sealed class XmlSchemaDbContext : DbContext
 
     foreach (var simpleType in Types.OfType<SimpleType>().Include(type => type.EnumValues))
     {
-      //simpleType.PatternsDictionary = simpleType.Patterns.ToDictionary(pattern => pattern.Value);
       simpleType.EnumValuesDictionary = simpleType.EnumValues.ToDictionary(enumValue => enumValue.Name);
-      //simpleType.ListItemsDictionary = simpleType.ListItems.ToDictionary(listItem => listItem.Value);
-      //simpleType.UnionMembersDictionary = simpleType.UnionMembers.ToDictionary(unionMember => unionMember.MemberType.Name);
     }
-    //else if (type is ComplexType complexType)
-    //{
-    //  //complexType.AttributesDictionary = complexType.Attributes.ToDictionary(attr => attr.Name);
-    //  //complexType.AttributeGroupRefsDictionary = complexType.AttributeGroupRefs.ToDictionary(attrGroupRef => attrGroupRef.RefName);
-    //  //complexType.ParticlesDictionary = complexType.Particles.ToDictionary(particle => particle.Name);
-    //}
-
-
 
     EnumValues.Local.CollectionChanged += (sender, args) =>
     {
@@ -286,6 +351,45 @@ public sealed class XmlSchemaDbContext : DbContext
         foreach (Pattern pattern in args.NewItems!)
         {
           (NamespaceDictionary[pattern.OwnerType.Namespace.Url].TypesDictionary[pattern.OwnerType.Name] as SimpleType)?.PatternsDictionary.Add(pattern.Value, pattern);
+        }
+      }
+    };
+
+
+    foreach (var simpleType in Types.OfType<SimpleType>().Include(type => type.UnionMembers))
+    {
+      simpleType.UnionMembersDictionary = simpleType.UnionMembers
+        .ToDictionary(unionMember => unionMember.MemberType.FullName);
+    }
+
+
+    UnionMembers.Local.CollectionChanged += (sender, args) =>
+    {
+      if (args.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add)
+      {
+        foreach (UnionMember unionMember in args.NewItems!)
+        {
+          (NamespaceDictionary[unionMember.OwnerType.Namespace.Url].TypesDictionary[unionMember.OwnerType.Name] as SimpleType)?
+            .UnionMembersDictionary.Add(unionMember.MemberType.FullName, unionMember);
+        }
+      }
+    };
+
+    foreach (var simpleType in Types.OfType<SimpleType>().Include(type => type.ListItems))
+    {
+      simpleType.ListItemsDictionary = simpleType.ListItems
+        .ToDictionary(ListItem => ListItem.MemberType.FullName);
+    }
+
+
+    ListItems.Local.CollectionChanged += (sender, args) =>
+    {
+      if (args.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add)
+      {
+        foreach (ListItem ListItem in args.NewItems!)
+        {
+          (NamespaceDictionary[ListItem.OwnerType.Namespace.Url].TypesDictionary[ListItem.OwnerType.Name] as SimpleType)?
+            .ListItemsDictionary.Add(ListItem.MemberType.FullName, ListItem);
         }
       }
     };

@@ -1,10 +1,15 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
+using Microsoft.EntityFrameworkCore;
+
 namespace ModelXmlSchema;
 
 /// <summary>
 /// Union member type for the simple type.
 /// </summary>
+[Index(nameof(OwnerTypeId), nameof(MemberTypeId), IsUnique = true)]
+[Index(nameof(OwnerTypeId), IsUnique = false)]
+[Index(nameof(MemberTypeId), IsUnique = false)]
 public class UnionMember
 {
   /// <summary>
@@ -15,15 +20,22 @@ public class UnionMember
   /// <summary>
   /// Unique identifier of the simple type which the union member belongs to.
   /// </summary>
-  public int SimpleTypeId { get; set; }
+  public int OwnerTypeId { get; set; }
 
   /// <summary>
-  /// Identifier of the namespace of the member type.
+  /// Identifier of the member type.
   /// </summary>
-  public int? MemberNamespaceId { get; set; }
+  public int MemberTypeId { get; set; }
 
   /// <summary>
-  /// RefName of the member type.
+  /// Navigation property for the owner type.
   /// </summary>
-  [MaxLength(255)] public string? MemberTypeName { get; set; }
+  [Required]
+  public SimpleType OwnerType { get; set; } = null!;
+
+  /// <summary>
+  /// Navigation property for the member type.
+  /// </summary>
+  public SimpleType MemberType { get; set; } = null!;
 }
+

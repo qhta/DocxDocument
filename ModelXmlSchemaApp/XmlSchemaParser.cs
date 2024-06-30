@@ -8,6 +8,8 @@ using Microsoft.EntityFrameworkCore.Diagnostics;
 
 using ModelXmlSchema;
 
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
+
 namespace ModelXmlSchemaApp;
 
 
@@ -292,7 +294,7 @@ public class XmlSchemaParser
     }
   }
 
-  internal bool ParseXmlSchemaSimpleType(Namespace ns, XmlSchemaSimpleType XmlSchemaSimpleType, string? defaultTypeName = null)
+  internal SimpleType ParseXmlSchemaSimpleType(Namespace ns, XmlSchemaSimpleType XmlSchemaSimpleType, string? defaultTypeName = null)
   {
     var added = false;
     var updated = false;
@@ -320,17 +322,14 @@ public class XmlSchemaParser
     var baseSchemaType = XmlSchemaSimpleType.BaseXmlSchemaType;
     if (baseSchemaType != null)
     {
-      if (baseSchemaType.Name != null)
+      var baseTypeName = baseSchemaType.Name ?? baseSchemaType.QualifiedName.Name;
+      var baseTypeNamespace = baseSchemaType.QualifiedName.Namespace;
+      var baseType = CheckTypeDef(baseTypeName, baseTypeNamespace);
+      if (simpleType.BaseTypeId != baseType.Id)
       {
-        simpleType.BaseTypeName = baseSchemaType.Name;
-        updated = true;
-      }
-      if (baseSchemaType.QualifiedName.Namespace != ns.Url)
-      {
-        if (!dbContext.NamespaceDictionary.TryGetValue(baseSchemaType.QualifiedName.Namespace, out var baseTypeNamespace))
-          throw new NotImplementedException($"Namespace {baseSchemaType.QualifiedName.Namespace} in type {simpleType.Name} not found");
-        simpleType.BaseNamespaceId = baseTypeNamespace.Id;
-        updated = true;
+        simpleType.BaseTypeId = baseType.Id;
+        if (SaveChanges() > 0)
+          updated = true;
       }
       if (updated)
         SaveChanges();
@@ -345,11 +344,12 @@ public class XmlSchemaParser
         else
           WriteLine("ok");
     }
-    return added || updated;
+    return simpleType;
   }
 
-  internal bool ParseXmlSchemaSimpleTypeDetails(SimpleType SimpleType, XmlSchemaSimpleType XmlSchemaSimpleType)
+  internal bool ParseXmlSchemaSimpleTypeDetails(SimpleType simpleType, XmlSchemaSimpleType XmlSchemaSimpleType)
   {
+    bool added = false;
     bool updated = false;
     if (XmlSchemaSimpleType.Content is XmlSchemaSimpleTypeRestriction restriction)
     {
@@ -358,52 +358,69 @@ public class XmlSchemaParser
         var facet = restriction.Facets[0];
         if (facet is XmlSchemaEnumerationFacet enumerationFacet)
         {
-          return ParseXmlSchemaSimpleTypeEnumRestriction(SimpleType, restriction);
+          return ParseXmlSchemaSimpleTypeEnumRestriction(simpleType, restriction);
         }
         else if (facet is XmlSchemaPatternFacet patternFacet)
         {
-          return ParseXmlSchemaSimpleTypePatternRestriction(SimpleType, restriction);
+          return ParseXmlSchemaSimpleTypePatternRestriction(simpleType, restriction);
         }
-        //else
-        //{
-        //  ParseXmlSchemaSimpleTypeOtherRestriction(SimpleType, restriction);
-        //}
+        else
+        {
+          return ParseXmlSchemaSimpleTypeOtherRestriction(simpleType, restriction);
+        }
       }
       else
       {
         var baseTypeName = restriction.BaseTypeName.Name;
-        if (SimpleType.BaseTypeName!=baseTypeName)
+        var baseTypeNamespace = restriction.BaseTypeName.Namespace;
+        if (baseTypeNamespace == null)
+          throw new NotImplementedException($"Base type namespace in {simpleType.Name} is null");
+        var baseType = CheckTypeDef(baseTypeName, baseTypeNamespace);
+        if (simpleType.BaseTypeId != baseType.Id)
         {
-          SimpleType.BaseTypeName = restriction.BaseTypeName.Name;
+          simpleType.BaseTypeId = baseType.Id;
           if (SaveChanges() > 0)
           {
-            SimpleTypesUpdates++;
-            updated = true;
+            if (!added) updated = true;
           }
         }
       }
     }
-    //else
-    //if (XmlSchemaSimpleType.Content is XmlSchemaSimpleTypeUnion union)
-    //{
-    //  ParseXmlSchemaSimpleTypeUnion(SimpleType, union);
-    //}
-    //else
-    //if (XmlSchemaSimpleType.Content is XmlSchemaSimpleTypeList list)
-    //{
-    //  ParseXmlSchemaSimpleTypeList(SimpleType, list);
-    //}
-    //else
-    //  throw new NotImplementedException($"Simple type content {XmlSchemaSimpleType.Content} not supported");
-    return updated;
+    else
+    if (XmlSchemaSimpleType.Content is XmlSchemaSimpleTypeUnion union)
+    {
+      return ParseXmlSchemaSimpleTypeUnion(simpleType, union);
+    }
+    else
+    if (XmlSchemaSimpleType.Content is XmlSchemaSimpleTypeList list)
+    {
+      return ParseXmlSchemaSimpleTypeList(simpleType, list);
+    }
+    else
+      throw new NotImplementedException($"Simple type content {XmlSchemaSimpleType.Content} not supported");
+    return added || updated;
   }
 
-  internal bool ParseXmlSchemaSimpleTypeEnumRestriction(SimpleType SimpleType, XmlSchemaSimpleTypeRestriction restriction)
+  private TypeDef CheckTypeDef(string baseTypeName, string baseTypeNamespace)
+  {
+    if (!dbContext.NamespaceDictionary.TryGetValue(baseTypeNamespace, out var ns))
+      throw new NotImplementedException($"Namespace {baseTypeNamespace} not found");
+    if (!ns.TypesDictionary.TryGetValue(baseTypeName, out var baseType))
+    {
+      baseType = new SimpleType { NamespaceId = ns.Id, Name = baseTypeName };
+      dbContext.Types.Add(baseType);
+      if (SaveChanges() > 0)
+        SimpleTypesAdded++;
+    }
+    return baseType;
+  }
+
+  internal bool ParseXmlSchemaSimpleTypeEnumRestriction(SimpleType simpleType, XmlSchemaSimpleTypeRestriction restriction)
   {
     bool added = false;
     bool updated = false;
     int n = 0;
-    SimpleType.BaseTypeName = "enum";
+    simpleType.IsEnum = true;
     foreach (var facet in restriction.Facets)
     {
       var enumerationFacet = (XmlSchemaEnumerationFacet)facet;
@@ -411,9 +428,9 @@ public class XmlSchemaParser
       if (stringValue == null)
         throw new NotImplementedException("Enumeration facet is null");
 
-      if (!SimpleType.EnumValuesDictionary.TryGetValue(stringValue, out var enumValue))
+      if (!simpleType.EnumValuesDictionary.TryGetValue(stringValue, out var enumValue))
       {
-        enumValue = new EnumValue { OwnerTypeId = SimpleType.Id, Name = stringValue };
+        enumValue = new EnumValue { OwnerTypeId = simpleType.Id, Name = stringValue };
         dbContext.EnumValues.Add(enumValue);
         enumValue.Value = n++;
         if (SaveChanges() > 0)
@@ -421,31 +438,33 @@ public class XmlSchemaParser
         added = true;
       }
     }
-    if (SimpleType.BaseTypeName != restriction.BaseTypeName.Name)
+    var baseTypeName = restriction.BaseTypeName.Name;
+    var baseTypeNamespace = restriction.BaseTypeName.Namespace;
+    var baseType = CheckTypeDef(baseTypeName, baseTypeNamespace);
+    if (simpleType.BaseTypeId != baseType.Id)
     {
-      SimpleType.BaseTypeName = restriction.BaseTypeName.Name;
+      simpleType.BaseTypeId = baseType.Id;
       if (SaveChanges() > 0)
       {
-        SimpleTypesUpdates++;
         updated = true;
       }
     }
     return added || updated;
   }
 
-  internal bool ParseXmlSchemaSimpleTypePatternRestriction(SimpleType SimpleType, XmlSchemaSimpleTypeRestriction restriction)
+  internal bool ParseXmlSchemaSimpleTypePatternRestriction(SimpleType simpleType, XmlSchemaSimpleTypeRestriction restriction)
   {
     bool added = false;
-    SimpleType.BaseTypeName = "string";
+    simpleType.HasPattern = true;
     foreach (var facet in restriction.Facets)
     {
       var patternFacet = (XmlSchemaPatternFacet)facet;
       var patternValue = patternFacet.Value;
-       if (patternValue == null)
-          throw new NotImplementedException("Pattern facet is null");
-       if (!SimpleType.PatternsDictionary.TryGetValue(patternValue, out var schemaPattern))
+      if (patternValue == null)
+        throw new NotImplementedException("Pattern facet is null");
+      if (!simpleType.PatternsDictionary.TryGetValue(patternValue, out var schemaPattern))
       {
-        schemaPattern = new Pattern { OwnerTypeId = SimpleType.Id, Value = patternValue };
+        schemaPattern = new Pattern { OwnerTypeId = simpleType.Id, Value = patternValue };
         dbContext.Patterns.Add(schemaPattern);
         if (SaveChanges() > 0)
           SchemaPatternsAdded++;
@@ -455,153 +474,205 @@ public class XmlSchemaParser
     return added;
   }
 
-  //internal void ParseXmlSchemaSimpleTypeOtherRestriction(SimpleType SimpleType, XmlSchemaSimpleTypeRestriction restriction)
-  //{
-  //  SimpleType.BaseTypeName = restriction.BaseTypeName.Name;
-  //  foreach (var facet in restriction.Facets)
-  //  {
-  //    if (facet is XmlSchemaMinExclusiveFacet minExclusiveFacet)
-  //      SimpleType.MinExclusive = minExclusiveFacet.Value;
-  //    else
-  //    if (facet is XmlSchemaMinInclusiveFacet minInclusiveFacet)
-  //      SimpleType.MinInclusive = minInclusiveFacet.Value;
-  //    else
-  //    if (facet is XmlSchemaMaxInclusiveFacet maxInclusiveFacet)
-  //      SimpleType.MaxInclusive = maxInclusiveFacet.Value;
-  //    else
-  //    if (facet is XmlSchemaMaxExclusiveFacet maxExclusiveFacet)
-  //      SimpleType.MaxExclusive = maxExclusiveFacet.Value;
-  //    else
-  //    if (facet is XmlSchemaMinLengthFacet minLengthFacet)
-  //      SimpleType.MinLength = GetIntegerValue(minLengthFacet.Value);
-  //    else
-  //    if (facet is XmlSchemaLengthFacet lengthFacet)
-  //      SimpleType.Length = GetIntegerValue(lengthFacet.Value);
-  //    else
-  //    if (facet is XmlSchemaMaxLengthFacet maxLengthFacet)
-  //      SimpleType.MaxLength = GetIntegerValue(maxLengthFacet.Value);
-  //    else
-  //      throw new NotImplementedException($"Restriction type {facet.GetType()} not supported");
-  //  }
-  //}
+  internal bool ParseXmlSchemaSimpleTypeOtherRestriction(SimpleType simpleType, XmlSchemaSimpleTypeRestriction restriction)
+  {
+    bool updated = false;
+    var baseTypeName = restriction.BaseTypeName.Name;
+    var baseTypeNamespace = restriction.BaseTypeName.Namespace;
+    var baseType = CheckTypeDef(baseTypeName, baseTypeNamespace);
+    if (simpleType.BaseTypeId != baseType.Id)
+    {
+      simpleType.BaseTypeId = baseType.Id;
+      updated = true;
+    }
+    foreach (var facet in restriction.Facets)
+    {
+      if (facet is XmlSchemaMinExclusiveFacet minExclusiveFacet)
+      {
+        if (simpleType.MinExclusive != minExclusiveFacet.Value)
+        {
+          simpleType.MinExclusive = minExclusiveFacet.Value;
+          updated = true;
+        }
+      }
+      else
+      if (facet is XmlSchemaMinInclusiveFacet minInclusiveFacet)
+      {
+        if (simpleType.MinInclusive != minInclusiveFacet.Value)
+        {
+          simpleType.MinInclusive = minInclusiveFacet.Value;
+          updated = true;
+        }
+      }
+      else
+      if (facet is XmlSchemaMaxInclusiveFacet maxInclusiveFacet)
+      {
+        if (simpleType.MaxInclusive != maxInclusiveFacet.Value)
+        {
+          simpleType.MaxInclusive = maxInclusiveFacet.Value;
+          updated = true;
+        }
+      }
+      else
+      if (facet is XmlSchemaMaxExclusiveFacet maxExclusiveFacet)
+      {
+        if (simpleType.MaxExclusive != maxExclusiveFacet.Value)
+        {
+          simpleType.MaxExclusive = maxExclusiveFacet.Value;
+          updated = true;
+        }
+      }
+      else
+      if (facet is XmlSchemaMinLengthFacet minLengthFacet)
+      {
+        var minLengthValue = GetIntegerValue(minLengthFacet.Value);
+        if (simpleType.MinLength != minLengthValue)
+        {
+          simpleType.MinLength = minLengthValue;
+          updated = true;
+        }
+      }
+      else
+      if (facet is XmlSchemaLengthFacet lengthFacet)
+      {
+        var lengthValue = GetIntegerValue(lengthFacet.Value);
+        if (simpleType.MinLength != lengthValue)
+        {
+          simpleType.Length = lengthValue;
+          updated = true;
+        }
+      }
+      else
+      if (facet is XmlSchemaMaxLengthFacet maxLengthFacet)
+      {
+        var maxLengthValue = GetIntegerValue(maxLengthFacet.Value);
+        if (simpleType.MinLength != maxLengthValue)
+        {
+          simpleType.MaxLength = maxLengthValue;
+          updated = true;
+        }
+      }
+      else
+        throw new NotImplementedException($"Restriction type {facet.GetType()} not supported");
+    }
+    if (updated)
+      SaveChanges();
+    return updated;
+  }
 
-  //internal int GetIntegerValue(string? value)
-  //{
-  //  if (int.TryParse(value, CultureInfo.InvariantCulture, out var val))
-  //    return val;
-  //  throw new NotImplementedException($"Value {value} should be int number");
-  //}
+  internal int GetIntegerValue(string? value)
+  {
+    if (int.TryParse(value, CultureInfo.InvariantCulture, out var val))
+      return val;
+    throw new NotImplementedException($"Value {value} should be int number");
+  }
 
-  //internal decimal GetDecimalValue(string? value)
-  //{
-  //  if (decimal.TryParse(value, CultureInfo.InvariantCulture, out var val))
-  //    return val;
-  //  throw new NotImplementedException($"Value {value} should be decimal number");
-  //}
+  internal decimal GetDecimalValue(string? value)
+  {
+    if (decimal.TryParse(value, CultureInfo.InvariantCulture, out var val))
+      return val;
+    throw new NotImplementedException($"Value {value} should be decimal number");
+  }
 
-  //internal void ParseXmlSchemaSimpleTypeUnion(SimpleType SimpleType, XmlSchemaSimpleTypeUnion union)
-  //{
-  //  if (union.MemberTypes != null)
-  //  {
-  //    if (union.MemberTypes.Length == 1)
-  //    {
-  //      var memberType = union.MemberTypes[0];
-  //      SimpleType.BaseTypeName = memberType.Name;
-  //      var memberNamespace = dbContext.Namespaces.FirstOrDefault(item => item.Url == memberType.Namespace);
-  //      if (memberNamespace == null)
-  //        throw new NotImplementedException($"Namespace {memberType.Namespace} in type {SimpleType.Name} not found");
-  //      SimpleType.BaseNamespaceId = memberNamespace.Id;
-  //      if (SaveChanges() > 0)
-  //      {
-  //        WriteLine($"  Updating simple type {SimpleType.Name} settings");
-  //        SimpleTypesUpdates++;
-  //      }
-  //    }
-  //    else
-  //    {
-  //      SimpleType.BaseTypeName = "union";
-  //      foreach (var memberType in union.MemberTypes)
-  //      {
-  //        var type = memberType;
-  //        var schemaUnionMember = dbContext.UnionMembers.FirstOrDefault(item =>
-  //          item.OwnerTypeId == SimpleType.Id && item.MemberTypeName == type.Name);
-  //        if (schemaUnionMember == null)
-  //        {
-  //          WriteLine($"  Adding member value {memberType.Name}");
-  //          schemaUnionMember = new SchemaUnionMember { OwnerTypeId = SimpleType.Id, MemberTypeName = memberType.Name };
-  //          dbContext.UnionMembers.Add(schemaUnionMember);
-  //          if (SaveChanges() > 0)
-  //            SchemaUnionMembersAdded++;
-  //        }
-  //        var memberNamespace = dbContext.Namespaces.FirstOrDefault(item => item.Url == memberType.Namespace);
-  //        if (memberNamespace == null)
-  //          throw new NotImplementedException($"Namespace {memberType.Namespace} in type {SimpleType.Name} not found");
-  //        schemaUnionMember.MemberNamespaceId = memberNamespace.Id;
-  //        if (SaveChanges() > 0)
-  //        {
-  //          WriteLine($"  Updating union member {schemaUnionMember.MemberTypeName} settings");
-  //          SchemaUnionMembersUpdates++;
-  //        }
-  //      }
-  //    }
-  //  }
-  //  else
-  //  if (union.BaseMemberTypes != null)
-  //  {
-  //    SimpleType.BaseTypeName = "union";
-  //    foreach (var memberType in union.BaseMemberTypes)
-  //    {
-  //      var memberSimpleType = ParseXmlSchemaSimpleType(SimpleType.Namespace!, memberType, $"_anon_{(++AnonSimpleTypes)}");
-  //      var schemaUnionMember = dbContext.UnionMembers.FirstOrDefault(item =>
-  //        item.OwnerTypeId == SimpleType.Id && item.MemberTypeName == memberSimpleType.Name);
-  //      if (schemaUnionMember == null)
-  //      {
-  //        WriteLine($"  Adding member value {memberSimpleType.Name}");
-  //        schemaUnionMember = new SchemaUnionMember { OwnerTypeId = SimpleType.Id, MemberTypeName = memberSimpleType.Name };
-  //        dbContext.UnionMembers.Add(schemaUnionMember);
-  //        if (SaveChanges() > 0)
-  //          SchemaUnionMembersAdded++;
-  //      }
-  //      var url = memberSimpleType.Namespace!.Url;
-  //      var memberNamespace = dbContext.Namespaces.FirstOrDefault(item => item.Url == url);
-  //      if (memberNamespace == null)
-  //        throw new NotImplementedException($"Namespace {url} in type {SimpleType.Name} not found");
-  //      schemaUnionMember.MemberNamespaceId = memberNamespace.Id;
-  //      if (SaveChanges() > 0)
-  //      {
-  //        WriteLine($"  Updating union member {schemaUnionMember.MemberTypeName} settings");
-  //        SchemaUnionMembersUpdates++;
-  //      }
-  //    }
-  //  }
-  //}
+  internal bool ParseXmlSchemaSimpleTypeUnion(SimpleType simpleType, XmlSchemaSimpleTypeUnion union)
+  {
+    bool added = false;
+    bool updated = false;
+    if (union.MemberTypes != null)
+    {
+      if (!simpleType.IsUnion)
+      {
+        simpleType.IsUnion = true;
+        if (SaveChanges() > 0)
+          updated = true;
+      }
+      foreach (var xmlMemberType in union.MemberTypes)
+      {
+        var type = xmlMemberType;
+        var memberTypeName = type.Name;
+        var memberTypeNamespace = xmlMemberType.Namespace;
+        if (!dbContext.NamespaceDictionary.TryGetValue(memberTypeNamespace, out var memberNamespace))
+          throw new NotImplementedException($"Namespace {memberTypeNamespace} in type {simpleType.Name} not found");
 
-  //internal void ParseXmlSchemaSimpleTypeList(SimpleType SimpleType, XmlSchemaSimpleTypeList list)
-  //{
-  //  SimpleType.BaseTypeName = "list";
-  //  var itemType = list.ItemTypeName;
-  //  var schemaListItem = dbContext.ListItems.FirstOrDefault(item =>
-  //    item.OwnerTypeId == SimpleType.Id && item.ItemTypeName == itemType.Name);
-  //  if (schemaListItem == null)
-  //  {
-  //    WriteLine($"  Adding listItem {itemType.Name}");
-  //    schemaListItem = new SchemaListItem { OwnerTypeId = SimpleType.Id, ItemTypeName = itemType.Name };
-  //    dbContext.ListItems.Add(schemaListItem);
-  //    if (SaveChanges() > 0)
-  //      SchemaListItemsAdded++;
-  //  }
+        if (!simpleType.UnionMembersDictionary.TryGetValue(memberNamespace.Url + "/" + memberTypeName, out var schemaUnionMember))
+        {
+          var memberType = CheckTypeDef(memberTypeName, memberNamespace.Url);
+          if (memberType == null)
+            throw new NotImplementedException($"Member type {memberNamespace.Url}/{memberTypeName} not found");
+          schemaUnionMember = new UnionMember { OwnerTypeId = simpleType.Id, MemberTypeId = memberType.Id };
+          dbContext.UnionMembers.Add(schemaUnionMember);
+          if (SaveChanges() > 0)
+            SchemaUnionMembersAdded++;
+          added = true;
+        }
+      }
+    }
+    else
+    if (union.BaseMemberTypes != null)
+    {
+      simpleType.IsUnion = true;
+      foreach (var xmlMemberType in union.BaseMemberTypes)
+      {
+        var memberTypeName = xmlMemberType.Name;
+        var memberTypeNamespace = xmlMemberType.QualifiedName.Namespace;
+        if (memberTypeName == null)
+        {
+          var baseMemberType = ParseXmlSchemaSimpleType(simpleType.Namespace, xmlMemberType, $"anon_{++this.AnonSimpleTypes}");
+          memberTypeName = baseMemberType.Name;
+          memberTypeNamespace = baseMemberType.Namespace.Url;
+        }
 
-  //  var itemNamespace = dbContext.Namespaces.FirstOrDefault(item => item.Url == itemType.Namespace);
-  //  if (itemNamespace == null)
-  //    throw new NotImplementedException(
-  //      $"Namespace {itemType.Namespace} in type {SimpleType.Name} not found");
-  //  schemaListItem.ItemNamespaceId = itemNamespace.Id;
-  //  if (SaveChanges() > 0)
-  //  {
-  //    WriteLine($"  Updating type list item {itemType.Name} settings");
-  //    SchemaListItemsUpdates++;
-  //  }
-  //}
+        if (!dbContext.NamespaceDictionary.TryGetValue(memberTypeNamespace, out var memberNamespace))
+          throw new NotImplementedException($"Namespace {memberTypeNamespace} in type {simpleType.Name} not found");
+
+        if (!simpleType.UnionMembersDictionary.TryGetValue(memberNamespace.Url + "/" + memberTypeName, out var schemaUnionMember))
+        {
+          var memberType = CheckTypeDef(memberTypeName, memberNamespace.Url);
+          if (memberType == null)
+            throw new NotImplementedException($"Member type {memberNamespace.Url}/{memberTypeName} not found");
+          schemaUnionMember = new UnionMember { OwnerTypeId = simpleType.Id, MemberTypeId = memberType.Id };
+          dbContext.UnionMembers.Add(schemaUnionMember);
+          if (SaveChanges() > 0)
+            SchemaUnionMembersAdded++;
+          added = true;
+        }
+      }
+    }
+    else
+    {
+      throw new NotImplementedException("Union type must have member types o base member types declared");
+    }
+    return added || updated;
+  }
+
+  internal bool ParseXmlSchemaSimpleTypeList(SimpleType simpleType, XmlSchemaSimpleTypeList list)
+  {
+    bool added = false;
+    bool updated = false;
+    if (!simpleType.IsList)
+    {
+      simpleType.IsList = true;
+      if (SaveChanges() > 0)
+        updated = true;
+    }
+    var memberTypeName = list.ItemTypeName.Name;
+    var memberTypeNamespace = list.ItemTypeName.Namespace;
+    if (!dbContext.NamespaceDictionary.TryGetValue(memberTypeNamespace, out var memberNamespace))
+      throw new NotImplementedException($"Namespace {memberTypeNamespace} in type {simpleType.Name} not found");
+
+    if (!simpleType.ListItemsDictionary.TryGetValue(memberNamespace.Url + "/" + memberTypeName, out var schemaListItem))
+    {
+      var memberType = CheckTypeDef(memberTypeName, memberNamespace.Url);
+      if (memberType == null)
+        throw new NotImplementedException($"Member type {memberNamespace.Url}/{memberTypeName} not found");
+      schemaListItem = new ListItem { OwnerTypeId = simpleType.Id, MemberTypeId = memberType.Id };
+      dbContext.ListItems.Add(schemaListItem);
+      if (SaveChanges() > 0)
+        SchemaListItemsAdded++;
+      added = true;
+    }
+    return added || updated;
+  }
 
   //internal SchemaComplexType ParseXmlSchemaComplexType(Namespace parentNamespace, XmlSchemaComplexType xmlSchemaComplexType, string? defaultTypeName = null)
   //{
