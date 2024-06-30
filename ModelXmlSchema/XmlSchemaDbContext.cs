@@ -128,6 +128,11 @@ public sealed class XmlSchemaDbContext : DbContext
       .WithMany(subItem => subItem.EnumValues)
       .HasForeignKey(item => item.OwnerTypeId);
 
+    modelBuilder.Entity<Pattern>()
+      .HasOne(item => item.OwnerType)
+      .WithMany(subItem => subItem.Patterns)
+      .HasForeignKey(item => item.OwnerTypeId);
+
     modelBuilder.Entity<Particle>()
       .HasDiscriminator<ParticleType>("ParticleType")
       .HasValue<Any>(ParticleType.Any)
@@ -267,15 +272,22 @@ public sealed class XmlSchemaDbContext : DbContext
       }
     };
 
-    //Properties.Local.CollectionChanged += (sender, args) =>
-    //{
-    //  if (args.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add)
-    //  {
-    //    foreach (Property prop in args.NewItems!)
-    //    {
-    //      NamespaceDictionary[prop.OwnerType.Namespace.Name].TypesDictionary[prop.OwnerType.Name].PropertiesDictionary.Add(prop.Name, prop);
-    //    }
-    //  }
-    //};
+
+    foreach (var simpleType in Types.OfType<SimpleType>().Include(type => type.Patterns))
+    {
+      simpleType.PatternsDictionary = simpleType.Patterns.ToDictionary(pattern => pattern.Value);
+    }
+
+
+    Patterns.Local.CollectionChanged += (sender, args) =>
+    {
+      if (args.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add)
+      {
+        foreach (Pattern pattern in args.NewItems!)
+        {
+          (NamespaceDictionary[pattern.OwnerType.Namespace.Url].TypesDictionary[pattern.OwnerType.Name] as SimpleType)?.PatternsDictionary.Add(pattern.Value, pattern);
+        }
+      }
+    };
   }
 }
