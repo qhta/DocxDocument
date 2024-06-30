@@ -48,6 +48,26 @@ public class SimpleType: TypeDef
   public string? MaxExclusive { get; set; }
 
   /// <summary>
+  /// Specifies if the simple type has pattern restrictions.
+  /// </summary>
+  public bool HasPattern { get; set; }
+
+  /// <summary>
+  /// Specifies if the simple type is an enumeration.
+  /// </summary>
+  public bool IsEnum { get; set; }
+
+  /// <summary>
+  /// Specifies if the simple type is a union.
+  /// </summary>
+  public bool IsUnion { get; set; }
+
+  /// <summary>
+  /// Specifies if the simple type is a list.
+  /// </summary>
+  public bool IsList { get; set; }
+
+  /// <summary>
   /// Enumeration values for the simple type.
   /// </summary>
   public virtual ICollection<EnumValue> EnumValues { get; set; } = null!;
@@ -65,7 +85,7 @@ public class SimpleType: TypeDef
   private Dictionary<string, EnumValue>? _EnumValuesDictionary;
 
   /// <summary>
-  /// Enumeration values for the simple type.
+  ///Patterns for the simple type.
   /// </summary>
   public virtual ICollection<Pattern> Patterns { get; set; } = null!;
 
@@ -78,6 +98,37 @@ public class SimpleType: TypeDef
     get => _PatternsDictionary ??= new Dictionary<string, Pattern>();
     set => _PatternsDictionary = value;
   }
-
   private Dictionary<string, Pattern>? _PatternsDictionary;
+
+  /// <summary>
+  /// UnionMembers for the simple type.
+  /// </summary>
+  public virtual ICollection<UnionMember> UnionMembers { get; set; } = null!;
+
+  /// <summary>
+  /// Dictionary of UnionMembers for the simple type.
+  /// </summary>
+  [NotMapped]
+  public Dictionary<string, UnionMember> UnionMembersDictionary
+  {
+    get => _UnionMembersDictionary ??= new Dictionary<string, UnionMember>();
+    set => _UnionMembersDictionary = value;
+  }
+  private Dictionary<string, UnionMember>? _UnionMembersDictionary;
+
+  /// <summary>
+  /// ListItems for the simple type.
+  /// </summary>
+  public virtual ICollection<ListItem> ListItems { get; set; } = null!;
+
+  /// <summary>
+  /// Dictionary of ListItems for the simple type.
+  /// </summary>
+  [NotMapped]
+  public Dictionary<string, ListItem> ListItemsDictionary
+  {
+    get => _ListItemsDictionary ??= new Dictionary<string, ListItem>();
+    set => _ListItemsDictionary = value;
+  }
+  private Dictionary<string, ListItem>? _ListItemsDictionary;
 }
