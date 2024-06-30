@@ -52,7 +52,9 @@ public class SimpleType: TypeDef
   /// </summary>
   public virtual ICollection<EnumValue> EnumValues { get; set; } = null!;
 
-  // Not mapped to the database, used for in-memory access
+  /// <summary>
+  /// Dictionary of enumeration values for the simple type.
+  /// </summary>
   [NotMapped]
   public Dictionary<string, EnumValue> EnumValuesDictionary
   {
@@ -61,4 +63,21 @@ public class SimpleType: TypeDef
   }
 
   private Dictionary<string, EnumValue>? _EnumValuesDictionary;
+
+  /// <summary>
+  /// Enumeration values for the simple type.
+  /// </summary>
+  public virtual ICollection<Pattern> Patterns { get; set; } = null!;
+
+  /// <summary>
+  /// Dictionary of patterns for the simple type.
+  /// </summary>
+  [NotMapped]
+  public Dictionary<string, Pattern> PatternsDictionary
+  {
+    get => _PatternsDictionary ??= new Dictionary<string, Pattern>();
+    set => _PatternsDictionary = value;
+  }
+
+  private Dictionary<string, Pattern>? _PatternsDictionary;
 }
