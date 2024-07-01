@@ -339,6 +339,7 @@ public class XmlSchemaParser
     SimpleType simpleType;
     if (!ns.TypesDictionary.TryGetValue(typeName, out var typeDef))
     {
+
       simpleType = new SimpleType
       {
         NamespaceId = nsId,
@@ -416,7 +417,8 @@ public class XmlSchemaParser
           simpleType.BaseTypeId = baseType.Id;
           if (SaveChanges() > 0)
           {
-            if (!added) updated = true;
+            if (!added)
+              updated = true;
           }
         }
       }
@@ -571,7 +573,7 @@ public class XmlSchemaParser
       if (facet is XmlSchemaLengthFacet lengthFacet)
       {
         var lengthValue = GetIntegerValue(lengthFacet.Value);
-        if (simpleType.MinLength != lengthValue)
+        if (simpleType.Length != lengthValue)
         {
           simpleType.Length = lengthValue;
           updated = true;
@@ -581,7 +583,7 @@ public class XmlSchemaParser
       if (facet is XmlSchemaMaxLengthFacet maxLengthFacet)
       {
         var maxLengthValue = GetIntegerValue(maxLengthFacet.Value);
-        if (simpleType.MinLength != maxLengthValue)
+        if (simpleType.MaxLength != maxLengthValue)
         {
           simpleType.MaxLength = maxLengthValue;
           updated = true;
