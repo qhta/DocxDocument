@@ -76,7 +76,7 @@ public sealed class XmlSchemaDbContext : DbContext
   {
     DbFilename = dbFilename;
     Database.EnsureCreated();
-    SetLookups();
+    SetupAccessDatabase();
   }
 
   protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -224,15 +224,24 @@ public sealed class XmlSchemaDbContext : DbContext
 
   }
 
-  internal void SetLookups()
+  internal void SetupAccessDatabase()
   {
     var accessApp = new Access.ApplicationClass();
     accessApp.OpenCurrentDatabase(DbFilename, true);
     try
     {
       var database = accessApp.CurrentDb();
-      SetLookup(database, "Types", "NamespaceId", "Namespaces");
-      SetLookup(database, "Types", "BaseTypeId", "Types");
+      SetQuery(database, "TypesList", "SELECT Types.Id, [Prefix] & \":\" & [Types].[Name] AS ShortName\r\nFROM Namespaces INNER JOIN Types ON Namespaces.Id = Types.NamespaceId;");
+      SetQuery(database, "NamespacesList", "SELECT Namespaces.Id, [Prefix] & \": \" & [Url] AS FullName\r\nFROM Namespaces;");
+      SetLookup(database, "Types", "NamespaceId", "NamespacesList");
+      SetLookup(database, "Types", "BaseTypeId", "TypesList");
+      SetLookup(database, "EnumValues", "OwnerTypeId", "TypesList");
+      SetLookup(database, "Patterns", "OwnerTypeId", "TypesList");
+      SetLookup(database, "UnionMembers", "OwnerTypeId", "TypesList");
+      SetLookup(database, "UnionMembers", "MemberTypeId", "TypesList");
+      SetLookup(database, "ListItems", "OwnerTypeId", "TypesList");
+      SetLookup(database, "ListItems", "MemberTypeId", "TypesList");
+      //SetLookup(database, "Elements", "NamespaceId", "NamespacesList");
     }
     catch (Exception e)
     {
@@ -247,10 +256,22 @@ public sealed class XmlSchemaDbContext : DbContext
 
   }
 
+  internal void SetQuery(Access.Dao.Database database, string queryName, string sqlText)
+  {
+    try
+    {
+      var query = database.CreateQueryDef(queryName, sqlText);
+    }
+    catch (System.Runtime.InteropServices.COMException)
+    {
+
+    }
+  }
+
   internal void SetLookup(Access.Dao.Database database, string tableName, string fieldName, string lookupTableName)
   {
     var field = database.TableDefs[tableName].Fields[fieldName];
-    field.Properties["DisplayControl"].Value = 111; // acComboBox
+    SetProperty(field, "DisplayControl", DataTypeEnum.dbInteger, 111); // acComboBox
     SetProperty(field, "RowSourceType", DataTypeEnum.dbText, "Table/Query");
     SetProperty(field, "RowSource", DataTypeEnum.dbText, lookupTableName);
     SetProperty(field, "ColumnCount", DataTypeEnum.dbInteger, 2);
@@ -265,7 +286,7 @@ public sealed class XmlSchemaDbContext : DbContext
       Property prop = field.Properties[propertyName];
       prop.Value = value;
     }
-    catch (Exception)
+    catch (System.Runtime.InteropServices.COMException)
     {
       // If the property does not exist, create and append it
       Property newProp = field.CreateProperty(propertyName, dataType, value);

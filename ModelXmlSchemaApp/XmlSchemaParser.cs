@@ -189,6 +189,22 @@ public class XmlSchemaParser
 
   internal void SetNamespacePrefixes()
   {
+    var prefixesInFile = new Dictionary<string, string>();
+    using (var textReader = File.OpenText(Path.Combine(SourceXsdPath, "Prefixes.csv")))
+    {
+      int lineNo = 0;
+      while (!textReader.EndOfStream)
+      {
+        var line = textReader.ReadLine();
+        if (line == null) break;
+        if (++lineNo == 1) continue;
+        var parts = line.Split(new char[] { ',', ';', '\t' });
+        if (parts.Length == 2)
+        {
+          prefixesInFile[parts[1]] = parts[0];
+        }
+      }
+    }
     var NamespacePrefixes = dbContext.UsedNamespaces
       .GroupBy(item => new { item.NamespaceId, item.Prefix })
       .Select(group => new NamespacePrefix()
@@ -197,20 +213,39 @@ public class XmlSchemaParser
         Prefix = group.Key.Prefix,
         Count = group.Count()
       });
+
     foreach (var NamespacePrefix in NamespacePrefixes)
     {
       var Namespace = dbContext.Namespaces.FirstOrDefault(item => item.Id == NamespacePrefix.NamespaceId);
       if (Namespace != null)
       {
-        Namespace.Prefix = NamespacePrefix.Prefix;
+        if (Namespace.Prefix != NamespacePrefix.Prefix)
+        {
+          Namespace.Prefix = NamespacePrefix.Prefix;
+          if (SaveChanges() > 0)
+          {
+            NamespacesUpdates++;
+          }
+        }
       }
     }
 
-    if (SaveChanges() > 0)
+    foreach (var Namespace in dbContext.Namespaces.Where(item => item.Prefix == null).ToList())
     {
-      WriteLine("Setting namespace prefix");
-      NamespacesUpdates++;
+      if (prefixesInFile.TryGetValue(Namespace.Url, out var prefix))
+      {
+        if (Namespace.Prefix != prefix)
+        {
+          Namespace.Prefix = prefix;
+          if (SaveChanges() > 0)
+          {
+            NamespacesUpdates++;
+          }
+        }
+      }
     }
+
+
   }
 
   internal void ParseXmlSchemaSet(XmlSchemaSet schemaSet)
