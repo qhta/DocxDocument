@@ -22,8 +22,8 @@ public class XmlSchemaParser
   public int SchemaFilesTotal, SchemaFilesAdded, SchemaFilesUpdated;
   public int NamespacesTotal, NamespacesAdded, NamespacesUpdates;
   public int UsedNamespacesTotal, UsedNamespacesAdded;
-  public int SimpleTypesTotal, SimpleTypesAdded, SimpleTypesUpdates;
-  public int SchemaComplexTypesTotal, SchemaComplexTypesAdded;
+  public int SimpleTypesTotal, SimpleTypesAdded, SimpleTypesUpdated;
+  public int ComplexTypesTotal, ComplexTypesAdded, ComplexTypesUpdated;
   public int SchemaAttributesTotal, SchemaAttributesAdded, SchemaAttributesUpdates;
   public int SchemaAttributeGroupsTotal, SchemaAttributeGroupsAdded;
   public int SchemaAttributeGroupRefsTotal, SchemaAttributeGroupRefsAdded;
@@ -256,7 +256,7 @@ public class XmlSchemaParser
       ParseXmlSchema(schema);
     }
     SimpleTypesTotal = dbContext.Types.Count(item => !item.IsComplex);
-    SchemaComplexTypesTotal = dbContext.Types.Count(item => item.IsComplex);
+    ComplexTypesTotal = dbContext.Types.Count(item => item.IsComplex);
     SchemaAttributesTotal = dbContext.Attributes.Count();
     SchemaAttributeGroupsTotal = dbContext.AttributeGroups.Count();
     SchemaAttributeGroupRefsTotal = dbContext.AttributeGroupRefs.Count();
@@ -296,11 +296,11 @@ public class XmlSchemaParser
         {
           ParseXmlSchemaSimpleType(ns, XmlSchemaSimpleType);
         }
-        //else
-        //if (item is XmlSchemaComplexType xmlSchemaComplexType)
-        //{
-        //  ParseXmlSchemaComplexType(ns, xmlSchemaComplexType);
-        //}
+        else
+        if (item is XmlSchemaComplexType xmlSchemaComplexType)
+        {
+          ParseXmlSchemaComplexType(ns, xmlSchemaComplexType);
+        }
         //else
         //if (item is XmlSchemaGroup xmlSchemaGroup)
         //{
@@ -329,12 +329,12 @@ public class XmlSchemaParser
     }
   }
 
-  internal SimpleType ParseXmlSchemaSimpleType(Namespace ns, XmlSchemaSimpleType XmlSchemaSimpleType, string? defaultTypeName = null)
+  internal SimpleType ParseXmlSchemaSimpleType(Namespace ns, XmlSchemaSimpleType xmlSchemaSimpleType, string? defaultTypeName = null)
   {
     var added = false;
     var updated = false;
     var nsId = ns.Id;
-    string typeName = XmlSchemaSimpleType.Name ?? defaultTypeName ?? throw new InvalidDataException("Empty type def name");
+    string typeName = xmlSchemaSimpleType.Name ?? defaultTypeName ?? throw new InvalidDataException("Empty type def name");
     Write($"Checking simple type {ns.Url}/{typeName} ... ");
     SimpleType simpleType;
     if (!ns.TypesDictionary.TryGetValue(typeName, out var typeDef))
@@ -355,12 +355,13 @@ public class XmlSchemaParser
     {
       simpleType = (SimpleType)typeDef;
     }
-    var baseSchemaType = XmlSchemaSimpleType.BaseXmlSchemaType;
+
+    var baseSchemaType = xmlSchemaSimpleType.BaseXmlSchemaType;
     if (baseSchemaType != null)
     {
       var baseTypeName = baseSchemaType.Name ?? baseSchemaType.QualifiedName.Name;
       var baseTypeNamespace = baseSchemaType.QualifiedName.Namespace;
-      var baseType = CheckTypeDef(baseTypeName, baseTypeNamespace);
+      var baseType = CheckTypeDef(baseTypeName, baseTypeNamespace, TypeKind.Simple);
       if (simpleType.BaseTypeId != baseType.Id)
       {
         simpleType.BaseTypeId = baseType.Id;
@@ -369,17 +370,20 @@ public class XmlSchemaParser
       }
       if (updated)
         SaveChanges();
-      if (ParseXmlSchemaSimpleTypeDetails(simpleType, XmlSchemaSimpleType))
-        updated = true;
-      if (!added)
-        if (updated)
-        {
-          WriteLine("updated");
-          SimpleTypesUpdates++;
-        }
-        else
-          WriteLine("ok");
     }
+
+    if (ParseXmlSchemaSimpleTypeDetails(simpleType, xmlSchemaSimpleType))
+      updated = true;
+
+    if (!added)
+      if (updated)
+      {
+        WriteLine("updated");
+        SimpleTypesUpdated++;
+      }
+      else
+        WriteLine("ok");
+
     return simpleType;
   }
 
@@ -411,7 +415,7 @@ public class XmlSchemaParser
         var baseTypeNamespace = restriction.BaseTypeName.Namespace;
         if (baseTypeNamespace == null)
           throw new NotImplementedException($"Base type namespace in {simpleType.Name} is null");
-        var baseType = CheckTypeDef(baseTypeName, baseTypeNamespace);
+        var baseType = CheckTypeDef(baseTypeName, baseTypeNamespace, TypeKind.Simple);
         if (simpleType.BaseTypeId != baseType.Id)
         {
           simpleType.BaseTypeId = baseType.Id;
@@ -438,13 +442,16 @@ public class XmlSchemaParser
     return added || updated;
   }
 
-  private TypeDef CheckTypeDef(string baseTypeName, string baseTypeNamespace)
+  private TypeDef CheckTypeDef(string baseTypeName, string baseTypeNamespace, TypeKind typeKind)
   {
     if (!dbContext.NamespaceDictionary.TryGetValue(baseTypeNamespace, out var ns))
       throw new NotImplementedException($"Namespace {baseTypeNamespace} not found");
     if (!ns.TypesDictionary.TryGetValue(baseTypeName, out var baseType))
     {
-      baseType = new SimpleType { NamespaceId = ns.Id, Name = baseTypeName };
+      if (typeKind==TypeKind.Complex || baseTypeName.StartsWith("CT_"))
+        baseType = new ComplexType { NamespaceId = ns.Id, Name = baseTypeName };
+      else
+        baseType = new SimpleType { NamespaceId = ns.Id, Name = baseTypeName };
       dbContext.Types.Add(baseType);
       if (SaveChanges() > 0)
         SimpleTypesAdded++;
@@ -477,7 +484,7 @@ public class XmlSchemaParser
     }
     var baseTypeName = restriction.BaseTypeName.Name;
     var baseTypeNamespace = restriction.BaseTypeName.Namespace;
-    var baseType = CheckTypeDef(baseTypeName, baseTypeNamespace);
+    var baseType = CheckTypeDef(baseTypeName, baseTypeNamespace, TypeKind.Simple);
     if (simpleType.BaseTypeId != baseType.Id)
     {
       simpleType.BaseTypeId = baseType.Id;
@@ -516,7 +523,7 @@ public class XmlSchemaParser
     bool updated = false;
     var baseTypeName = restriction.BaseTypeName.Name;
     var baseTypeNamespace = restriction.BaseTypeName.Namespace;
-    var baseType = CheckTypeDef(baseTypeName, baseTypeNamespace);
+    var baseType = CheckTypeDef(baseTypeName, baseTypeNamespace, TypeKind.Simple);
     if (simpleType.BaseTypeId != baseType.Id)
     {
       simpleType.BaseTypeId = baseType.Id;
@@ -604,13 +611,6 @@ public class XmlSchemaParser
     throw new NotImplementedException($"Value {value} should be int number");
   }
 
-  internal decimal GetDecimalValue(string? value)
-  {
-    if (decimal.TryParse(value, CultureInfo.InvariantCulture, out var val))
-      return val;
-    throw new NotImplementedException($"Value {value} should be decimal number");
-  }
-
   internal bool ParseXmlSchemaSimpleTypeUnion(SimpleType simpleType, XmlSchemaSimpleTypeUnion union)
   {
     bool added = false;
@@ -633,7 +633,7 @@ public class XmlSchemaParser
 
         if (!simpleType.UnionMembersDictionary.TryGetValue(memberNamespace.Url + "/" + memberTypeName, out var schemaUnionMember))
         {
-          var memberType = CheckTypeDef(memberTypeName, memberNamespace.Url);
+          var memberType = CheckTypeDef(memberTypeName, memberNamespace.Url, TypeKind.Simple);
           if (memberType == null)
             throw new NotImplementedException($"Member type {memberNamespace.Url}/{memberTypeName} not found");
           schemaUnionMember = new UnionMember { OwnerTypeId = simpleType.Id, MemberTypeId = memberType.Id };
@@ -664,7 +664,7 @@ public class XmlSchemaParser
 
         if (!simpleType.UnionMembersDictionary.TryGetValue(memberNamespace.Url + "/" + memberTypeName, out var schemaUnionMember))
         {
-          var memberType = CheckTypeDef(memberTypeName, memberNamespace.Url);
+          var memberType = CheckTypeDef(memberTypeName, memberNamespace.Url, TypeKind.Simple);
           if (memberType == null)
             throw new NotImplementedException($"Member type {memberNamespace.Url}/{memberTypeName} not found");
           schemaUnionMember = new UnionMember { OwnerTypeId = simpleType.Id, MemberTypeId = memberType.Id };
@@ -699,7 +699,7 @@ public class XmlSchemaParser
 
     if (!simpleType.ListItemsDictionary.TryGetValue(memberNamespace.Url + "/" + memberTypeName, out var schemaListItem))
     {
-      var memberType = CheckTypeDef(memberTypeName, memberNamespace.Url);
+      var memberType = CheckTypeDef(memberTypeName, memberNamespace.Url, TypeKind.Simple);
       if (memberType == null)
         throw new NotImplementedException($"Member type {memberNamespace.Url}/{memberTypeName} not found");
       schemaListItem = new ListItem { OwnerTypeId = simpleType.Id, MemberTypeId = memberType.Id };
@@ -711,30 +711,62 @@ public class XmlSchemaParser
     return added || updated;
   }
 
-  //internal SchemaComplexType ParseXmlSchemaComplexType(Namespace parentNamespace, XmlSchemaComplexType xmlSchemaComplexType, string? defaultTypeName = null)
-  //{
-  //  var nsId = parentNamespace.Id;
-  //  var typeName = xmlSchemaComplexType.Name ?? defaultTypeName;
-  //  var schemaComplexType = dbContext.ComplexTypes.FirstOrDefault(item =>
-  //    item.NamespaceId == nsId && item.Name == typeName);
-  //  if (schemaComplexType == null)
-  //  {
-  //    WriteLine($"Adding complex type {typeName}");
-  //    schemaComplexType = new SchemaComplexType { NamespaceId = nsId, Name = typeName };
-  //    dbContext.ComplexTypes.Add(schemaComplexType);
-  //    if (SaveChanges() > 0)
-  //      SchemaComplexTypesAdded++;
-  //  }
-  //  if (xmlSchemaComplexType.BaseXmlSchemaType is { Name: not null })
-  //  {
-  //    schemaComplexType.BaseTypeName = xmlSchemaComplexType.BaseXmlSchemaType.Name;
-  //    var ns = dbContext.Namespaces.FirstOrDefault(item => item.Url == xmlSchemaComplexType.BaseXmlSchemaType.QualifiedName.Namespace);
-  //    if (ns != null && ns.Id != nsId)
-  //      schemaComplexType.BaseNamespaceId = ns.Id;
-  //  }
-  //  ParseXmlSchemaComplexTypeDetails(schemaComplexType, xmlSchemaComplexType);
-  //  return schemaComplexType;
-  //}
+  internal ComplexType ParseXmlSchemaComplexType(Namespace ns, XmlSchemaComplexType xmlSchemaComplexType, string? defaultTypeName = null)
+  {
+    var added = false;
+    var updated = false;
+    var nsId = ns.Id;
+    string typeName = xmlSchemaComplexType.Name ?? defaultTypeName ?? throw new InvalidDataException("Empty type def name");
+    Write($"Checking complex type {ns.Url}/{typeName} ... ");
+    ComplexType complexType;
+    if (!ns.TypesDictionary.TryGetValue(typeName, out var typeDef))
+    {
+
+      complexType = new ComplexType
+      {
+        NamespaceId = nsId,
+        Name = typeName
+      };
+      dbContext.Types.Add(complexType);
+      if (SaveChanges() > 0)
+        ComplexTypesAdded++;
+      WriteLine("added");
+      added = true;
+    }
+    else
+    {
+      complexType = (ComplexType)typeDef;
+    }
+
+    var baseSchemaType = xmlSchemaComplexType.BaseXmlSchemaType;
+    if (baseSchemaType != null)
+    {
+      var baseTypeName = baseSchemaType.Name ?? baseSchemaType.QualifiedName.Name;
+      var baseTypeNamespace = baseSchemaType.QualifiedName.Namespace;
+      var baseType = CheckTypeDef(baseTypeName, baseTypeNamespace, TypeKind.Complex);
+      if (complexType.BaseTypeId != baseType.Id)
+      {
+        complexType.BaseTypeId = baseType.Id;
+        if (SaveChanges() > 0)
+          updated = true;
+      }
+      if (updated)
+        SaveChanges();
+    }
+
+    //if (ParseXmlSchemaComplexTypeDetails(complexType, xmlSchemaComplexType))
+    //  updated = true;
+
+    if (!added)
+      if (updated)
+      {
+        WriteLine("updated");
+        ComplexTypesUpdated++;
+      }
+      else
+        WriteLine("ok");
+    return complexType;
+  }
 
   //internal void ParseXmlSchemaComplexTypeDetails(SchemaComplexType schemaComplexType, XmlSchemaComplexType xmlSchemaComplexType)
   //{
