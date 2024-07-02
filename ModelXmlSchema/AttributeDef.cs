@@ -88,7 +88,7 @@ public class AttributeDef
   public virtual Namespace? OwnerNamespace { get; set; }
 
   /// <summary>
-  /// Unique identifier of the referenced type.
+  /// Full name of the attribute containing the namespace prefix and the name.
   /// </summary>
   [NotMapped]
   public string FullName => (OwnerNamespace?.Prefix ?? OwnerType?.Namespace.Prefix) + ":" + Name;
