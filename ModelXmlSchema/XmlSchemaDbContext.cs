@@ -83,6 +83,29 @@ public sealed class XmlSchemaDbContext : DbContext
     SetupAccessDatabase();
   }
 
+  public override void Dispose()
+  {
+    base.Dispose();
+    KillMsAccess();
+  }
+
+  public override async ValueTask DisposeAsync()
+  {
+    // Perform async cleanup of managed resources here.
+    // Note: There's no need to call GC.SuppressFinalize(this) with the async dispose pattern.
+
+    await base.DisposeAsync();
+    KillMsAccess();
+  }
+
+  internal void KillMsAccess()
+  {
+    foreach (var process in Process.GetProcessesByName("MSACCESS"))
+    {
+      process.Kill();
+    }
+  }
+
   protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
   {
     optionsBuilder.UseJet(@$"Provider=Microsoft.ACE.OLEDB.16.0;Data Source={DbFilename};");
@@ -225,22 +248,21 @@ public sealed class XmlSchemaDbContext : DbContext
     {
       accessApp.OpenCurrentDatabase(DbFilename, false);
       database = accessApp.CurrentDb();
-      //SetQuery(database, "TypesList", "SELECT Types.Id, [Prefix] & \":\" & [Types].[Name] AS ShortName\r\nFROM Namespaces INNER JOIN Types ON Namespaces.Id = Types.NamespaceId;");
-      //SetQuery(database, "NamespacesList", "SELECT Namespaces.Id, [Prefix] & \": \" & [Url] AS FullName\r\nFROM Namespaces;");
-      //SetLookup(database, "Types", "NamespaceId", "NamespacesList");
-      //SetLookup(database, "Types", "BaseTypeId", "TypesList");
-      //SetLookup(database, "EnumValues", "OwnerTypeId", "TypesList");
-      //SetLookup(database, "Patterns", "OwnerTypeId", "TypesList");
-      //SetLookup(database, "UnionMembers", "OwnerTypeId", "TypesList");
-      //SetLookup(database, "UnionMembers", "MemberTypeId", "TypesList");
-      //SetLookup(database, "ListItems", "OwnerTypeId", "TypesList");
-      //SetLookup(database, "ListItems", "MemberTypeId", "TypesList");
-      ////CreateEnumLookupTable(database, "ContentTypes", typeof(ContentType));
-      //SetLookup(database, "Types", "ContentType", "ContentTypes");
+      SetQuery(database, "TypesList", "SELECT Types.Id, [Prefix] & \":\" & [Types].[Name] AS ShortName\r\nFROM Namespaces INNER JOIN Types ON Namespaces.Id = Types.NamespaceId;");
+      SetQuery(database, "NamespacesList", "SELECT Namespaces.Id, [Prefix] & \": \" & [Url] AS FullName\r\nFROM Namespaces;");
+      SetLookup(database, "Types", "NamespaceId", "NamespacesList");
+      SetLookup(database, "Types", "BaseTypeId", "TypesList");
+      SetLookup(database, "EnumValues", "OwnerTypeId", "TypesList");
+      SetLookup(database, "Patterns", "OwnerTypeId", "TypesList");
+      SetLookup(database, "UnionMembers", "OwnerTypeId", "TypesList");
+      SetLookup(database, "UnionMembers", "MemberTypeId", "TypesList");
+      SetLookup(database, "ListItems", "OwnerTypeId", "TypesList");
+      SetLookup(database, "ListItems", "MemberTypeId", "TypesList");
+      //CreateEnumLookupTable(database, "ContentTypes", typeof(ContentType));
+      SetLookup(database, "Types", "ContentType", "ContentTypes");
 
-      //SetLookup(database, "Attributes", "OwnerTypeId", "TypesList");
-      //SetLookup(database, "Attributes", "OwnerNamespaceId", "NamespacesList");
-      //accessApp.CloseCurrentDatabase();
+      SetLookup(database, "Attributes", "OwnerTypeId", "TypesList");
+      SetLookup(database, "Attributes", "OwnerNamespaceId", "NamespacesList");
 
     }
     catch (Exception ex)
@@ -286,7 +308,7 @@ public sealed class XmlSchemaDbContext : DbContext
         recordset.Close();
       }
     }
-    catch (COMException comEx)
+    catch (COMException)
     {
       // Handle the COM exception, e.g., log it or show a message to the user.
     }
@@ -294,7 +316,8 @@ public sealed class XmlSchemaDbContext : DbContext
     {
       // Ensure COM objects are released even if an exception occurs.
       if (recordset != null) Marshal.ReleaseComObject(recordset);
-      if (tableDef != null) Marshal.ReleaseComObject(tableDef);
+      /*if (tableDef != null)*/
+      Marshal.ReleaseComObject(tableDef);
 
       // For good measure, force a garbage collection.
       GC.Collect();
@@ -347,6 +370,7 @@ public sealed class XmlSchemaDbContext : DbContext
     }
     return database.TableDefs[tableName];
   }
+
   internal void SetQuery(Access.Dao.Database database, string queryName, string sqlText)
   {
     QueryDef query = null!;
