@@ -34,6 +34,7 @@ public abstract class TypeDef
   /// <summary>
   /// Indicates if the type is a simple type or a complex type.
   /// </summary>
+  [Column(TypeName = "bit")] 
   public bool IsComplex { get; set; }
 
   /// <summary>

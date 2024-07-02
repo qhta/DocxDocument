@@ -768,80 +768,80 @@ public class XmlSchemaParser
     return complexType;
   }
 
-  //internal void ParseXmlSchemaComplexTypeDetails(SchemaComplexType schemaComplexType, XmlSchemaComplexType xmlSchemaComplexType)
-  //{
-  //  foreach (var attribute in xmlSchemaComplexType.Attributes)
-  //  {
-  //    if (attribute is XmlSchemaAttribute xmlSchemaAttribute)
-  //    {
-  //      ParseXmlSchemaComplexTypeAttribute(schemaComplexType, xmlSchemaAttribute);
-  //    }
-  //    else
-  //    if (attribute is XmlSchemaAttributeGroupRef xmlSchemaAttributeGroupRef)
-  //    {
-  //      ParseXmlSchemaAttributeGroupRef(schemaComplexType, xmlSchemaAttributeGroupRef);
-  //    }
-  //    else
-  //    {
-  //      throw new NotImplementedException($"Attribute type {attribute.GetType()} not supported");
-  //    }
-  //  }
+  internal void ParseXmlSchemaComplexTypeDetails(ComplexType schemaComplexType, XmlSchemaComplexType xmlSchemaComplexType)
+  {
+    foreach (var attribute in xmlSchemaComplexType.Attributes)
+    {
+      if (attribute is XmlSchemaAttribute xmlSchemaAttribute)
+      {
+        ParseXmlSchemaComplexTypeAttribute(schemaComplexType, xmlSchemaAttribute);
+      }
+      //else
+      //if (attribute is XmlSchemaAttributeGroupRef xmlSchemaAttributeGroupRef)
+      //{
+      //  ParseXmlSchemaAttributeGroupRef(schemaComplexType, xmlSchemaAttributeGroupRef);
+      //}
+      //else
+      //{
+      //  throw new NotImplementedException($"Attribute type {attribute.GetType()} not supported");
+      //}
+    }
 
-  //  schemaComplexType.ContentType = xmlSchemaComplexType.ContentType switch
-  //  {
-  //    XmlSchemaContentType.Empty => ContentType.Empty,
-  //    XmlSchemaContentType.TextOnly => ContentType.TextOnly,
-  //    XmlSchemaContentType.ElementOnly => ContentType.ElementOnly,
-  //    XmlSchemaContentType.Mixed => ContentType.Mixed,
-  //    _ => throw new NotImplementedException($"Content type {xmlSchemaComplexType.ContentType} not supported")
-  //  };
-  //  if (xmlSchemaComplexType.Particle != null)
-  //    ParseXmlSchemaParticle(schemaComplexType, null, xmlSchemaComplexType.Particle, null);
-  //}
+    schemaComplexType.ContentType = xmlSchemaComplexType.ContentType switch
+    {
+      XmlSchemaContentType.Empty => ContentType.Empty,
+      XmlSchemaContentType.TextOnly => ContentType.TextOnly,
+      XmlSchemaContentType.ElementOnly => ContentType.ElementOnly,
+      XmlSchemaContentType.Mixed => ContentType.Mixed,
+      _ => throw new NotImplementedException($"Content type {xmlSchemaComplexType.ContentType} not supported")
+    };
+    //if (xmlSchemaComplexType.Particle != null)
+    //  ParseXmlSchemaParticle(schemaComplexType, null, xmlSchemaComplexType.Particle, null);
+  }
 
-  //internal void ParseXmlSchemaComplexTypeAttribute(SchemaComplexType schemaComplexType, XmlSchemaAttribute xmlSchemaAttribute)
-  //{
-  //  SchemaAttribute? schemaAttribute;
-  //  if (xmlSchemaAttribute.Name != null)
-  //  {
-  //    schemaAttribute = dbContext.Attributes.FirstOrDefault(item =>
-  //      item.ComplexTypeId == schemaComplexType.Id && item.AttributeName == xmlSchemaAttribute.Name);
-  //    if (schemaAttribute == null)
-  //    {
-  //      WriteLine($"Adding attribute {xmlSchemaAttribute.Name}");
-  //      schemaAttribute = new SchemaAttribute
-  //      {
-  //        ComplexTypeId = schemaComplexType.Id,
-  //        AttributeName = xmlSchemaAttribute.Name,
-  //      };
-  //      dbContext.Attributes.Add(schemaAttribute);
-  //      if (SaveChanges() > 0)
-  //        SchemaAttributesAdded++;
-  //    }
-  //  }
-  //  else
-  //  {
-  //    var ns = dbContext.Namespaces.FirstOrDefault(item => item.Url == xmlSchemaAttribute.RefName.Namespace);
-  //    if (ns == null)
-  //      throw new DataException($"Namespace {xmlSchemaAttribute.RefName.Namespace} not found");
-  //    schemaAttribute = dbContext.Attributes.FirstOrDefault(item =>
-  //      item.ComplexTypeId == schemaComplexType.Id && item.AttributeName == xmlSchemaAttribute.RefName.Name && item.RefNamespaceId == ns.Id);
-  //    if (schemaAttribute == null)
-  //    {
-  //      WriteLine($"Adding attribute reference to {ns.Url} {xmlSchemaAttribute.RefName.Name}");
-  //      schemaAttribute = new SchemaAttribute
-  //      {
-  //        ComplexTypeId = schemaComplexType.Id,
-  //        AttributeName = xmlSchemaAttribute.RefName.Name,
-  //        RefNamespaceId = ns.Id
-  //      };
-  //      dbContext.Attributes.Add(schemaAttribute);
-  //      if (SaveChanges() > 0)
-  //        SchemaAttributesAdded++;
-  //    }
-  //  }
-  //  ParseXmlSchemaAttributeDetails(schemaAttribute, xmlSchemaAttribute);
-  //}
+  internal void ParseXmlSchemaComplexTypeAttribute(ComplexType schemaComplexType, XmlSchemaAttribute xmlSchemaAttribute)
+  {
+    AttributeDef? schemaAttribute;
+    if (xmlSchemaAttribute.Name != null)
+    {
+      schemaAttribute = dbContext.Attributes.FirstOrDefault(item =>
+        item.OwnerTypeId == schemaComplexType.Id && item.Name == xmlSchemaAttribute.Name);
+      if (schemaAttribute == null)
+      {
+        WriteLine($"Adding attribute {xmlSchemaAttribute.Name}");
+        schemaAttribute = new AttributeDef
+        {
+          OwnerTypeId = schemaComplexType.Id,
+          Name = xmlSchemaAttribute.Name,
+        };
+        dbContext.Attributes.Add(schemaAttribute);
+        if (SaveChanges() > 0)
+          SchemaAttributesAdded++;
+      }
+    }
+    else
+    {
+      var ns = dbContext.Namespaces.FirstOrDefault(item => item.Url == xmlSchemaAttribute.RefName.Namespace);
+      if (ns == null)
+        throw new DataException($"Namespace {xmlSchemaAttribute.RefName.Namespace} not found");
+      schemaAttribute = dbContext.Attributes.FirstOrDefault(item =>
+        item.OwnerTypeId == schemaComplexType.Id && item.Name == xmlSchemaAttribute.RefName.Name && item.RefNamespaceId == ns.Id);
+      if (schemaAttribute == null)
+      {
+        WriteLine($"Adding attribute reference to {ns.Url} {xmlSchemaAttribute.RefName.Name}");
+        schemaAttribute = new AttributeDef
+        {
+          OwnerTypeId = schemaComplexType.Id,
+          Name = xmlSchemaAttribute.RefName.Name,
+          RefNamespaceId = ns.Id
+        };
+        dbContext.Attributes.Add(schemaAttribute);
+        if (SaveChanges() > 0)
+          SchemaAttributesAdded++;
+      }
+    }
+    //ParseXmlSchemaAttributeDetails(schemaAttribute, xmlSchemaAttribute);
+  }
 
   //internal void ParseXmlSchemaGlobalAttribute(Namespace parentNamespace, XmlSchemaAttribute xmlSchemaAttribute)
   //{
@@ -1012,7 +1012,7 @@ public class XmlSchemaParser
   //  ParseXmlSchemaAttributeDetails(schemaAttribute, xmlSchemaAttribute);
   //}
 
-  //internal void ParseXmlSchemaAttributeGroupRef(SchemaComplexType parentComplexType, XmlSchemaAttributeGroupRef xmlSchemaAttributeGroupRef)
+  //internal void ParseXmlSchemaAttributeGroupRef(ComplexType parentComplexType, XmlSchemaAttributeGroupRef xmlSchemaAttributeGroupRef)
   //{
   //  var ns = dbContext.Namespaces.First(item => item.Url == xmlSchemaAttributeGroupRef.RefName.Namespace);
   //  int? nsId = parentComplexType.NamespaceId;
@@ -1058,7 +1058,7 @@ public class XmlSchemaParser
   //  }
   //}
 
-  //internal void ParseXmlSchemaParticle(SchemaComplexType parentComplexType, SchemaParticle? parentParticle, XmlSchemaParticle xmlSchemaParticle, int? ordNum)
+  //internal void ParseXmlSchemaParticle(ComplexType parentComplexType, SchemaParticle? parentParticle, XmlSchemaParticle xmlSchemaParticle, int? ordNum)
   //{
   //  if (xmlSchemaParticle is XmlSchemaElement xmlSchemaElement)
   //  {
@@ -1133,7 +1133,7 @@ public class XmlSchemaParser
   //    throw new NotImplementedException($"Sequence item type {xmlSchemaParticle.GetType()} not supported");
   //  }
   //}
-  //internal void ParseXmlSchemaAny(SchemaComplexType parentComplexType, SchemaParticle? parentParticle, XmlSchemaAny xmlSchemaAny, int? ordNum)
+  //internal void ParseXmlSchemaAny(ComplexType parentComplexType, SchemaParticle? parentParticle, XmlSchemaAny xmlSchemaAny, int? ordNum)
   //{
   //  var schemaAny = (SchemaAny?)dbContext.Particles.FirstOrDefault(item =>
   //    item.ComplexTypeId == parentComplexType.Id && item.OrdNum == ordNum && item.ParticleType == ParticleType.Any);
@@ -1196,7 +1196,7 @@ public class XmlSchemaParser
   //  }
   //}
 
-  //internal void ParseXmlSchemaGroupRef(SchemaComplexType parentComplexType, SchemaParticle? parentParticle, XmlSchemaGroupRef xmlSchemaGroupRef, int? ordNum)
+  //internal void ParseXmlSchemaGroupRef(ComplexType parentComplexType, SchemaParticle? parentParticle, XmlSchemaGroupRef xmlSchemaGroupRef, int? ordNum)
   //{
   //  var parentParticleId = parentParticle?.Id; var schemaGroupRef = (SchemaGroupRef?)dbContext.Particles.FirstOrDefault(item =>
   //    item.ComplexTypeId == parentComplexType.Id && item.ParentParticleId == parentParticleId && item.OrdNum == ordNum && item.ParticleType == ParticleType.GroupRef);
@@ -1260,7 +1260,7 @@ public class XmlSchemaParser
   //  }
   //}
 
-  //internal void ParseXmlSchemaSequence(SchemaComplexType parentComplexType, SchemaParticle? parentParticle, XmlSchemaSequence xmlSchemaSequence, int? ordNum)
+  //internal void ParseXmlSchemaSequence(ComplexType parentComplexType, SchemaParticle? parentParticle, XmlSchemaSequence xmlSchemaSequence, int? ordNum)
   //{
   //  var parentParticleId = parentParticle?.Id;
   //  var particle = (SchemaSequence?)dbContext.Particles.FirstOrDefault(item =>
@@ -1306,7 +1306,7 @@ public class XmlSchemaParser
   //  ParseXmlSchemaGroupBaseDetails(particle, parentGroup, xmlSchemaSequence);
   //}
 
-  //internal void ParseXmlSchemaChoice(SchemaComplexType parentComplexType, SchemaParticle? parentParticle, XmlSchemaChoice xmlSchemaChoice, int? ordNum)
+  //internal void ParseXmlSchemaChoice(ComplexType parentComplexType, SchemaParticle? parentParticle, XmlSchemaChoice xmlSchemaChoice, int? ordNum)
   //{
   //  var parentParticleId = parentParticle?.Id;
   //  var particle = (SchemaChoice?)dbContext.Particles.FirstOrDefault(item =>
@@ -1352,7 +1352,7 @@ public class XmlSchemaParser
   //  ParseXmlSchemaGroupBaseDetails(particle, parentGroup, xmlSchemaChoice);
   //}
 
-  //internal void ParseXmlSchemaAll(SchemaComplexType parentComplexType, SchemaParticle? parentParticle, XmlSchemaAll xmlSchemaAll, int? ordNum)
+  //internal void ParseXmlSchemaAll(ComplexType parentComplexType, SchemaParticle? parentParticle, XmlSchemaAll xmlSchemaAll, int? ordNum)
   //{
   //  var parentParticleId = parentParticle?.Id;
   //  var particle = (SchemaAll?)dbContext.Particles.FirstOrDefault(item =>
@@ -1398,7 +1398,7 @@ public class XmlSchemaParser
   //  ParseXmlSchemaGroupBaseDetails(particle, parentGroup, xmlSchemaAll);
   //  }
 
-  //  private void ParseXmlSchemaGroupBaseDetails(SchemaGroupBase particle, SchemaComplexType parentComplexType,
+  //  private void ParseXmlSchemaGroupBaseDetails(SchemaGroupBase particle, ComplexType parentComplexType,
   //    XmlSchemaGroupBase xmlSchemaGroupBase)
   //  {
   //    particle.MinOccurs = GetOccurs(xmlSchemaGroupBase.MinOccurs, xmlSchemaGroupBase.MinOccursString);
@@ -1438,7 +1438,7 @@ public class XmlSchemaParser
   //    }
   //  }
 
-  //  internal void ParseXmlSchemaElement(SchemaComplexType parentComplexType, SchemaParticle? parentParticle, XmlSchemaElement xmlSchemaElement, int? ordNum)
+  //  internal void ParseXmlSchemaElement(ComplexType parentComplexType, SchemaParticle? parentParticle, XmlSchemaElement xmlSchemaElement, int? ordNum)
   //  {
   //    var parentParticleId = parentParticle?.Id;
   //    SchemaElement? schemaElement;

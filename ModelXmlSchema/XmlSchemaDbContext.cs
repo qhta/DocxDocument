@@ -7,6 +7,8 @@ using System.Xml.Linq;
 using System.IO.Compression;
 using Microsoft.Office.Interop.Access.Dao;
 using Access = Microsoft.Office.Interop.Access;
+using System.Runtime.InteropServices;
+using Microsoft.Office.Interop.Access;
 
 namespace ModelXmlSchema;
 
@@ -28,7 +30,7 @@ public sealed class XmlSchemaDbContext : DbContext
 
   public DbSet<ListItem> ListItems { get; set; }
 
-  public DbSet<Attribute> Attributes { get; set; }
+  public DbSet<AttributeDef> Attributes { get; set; }
 
   public DbSet<AttributeGroup> AttributeGroups { get; set; }
 
@@ -102,10 +104,6 @@ public sealed class XmlSchemaDbContext : DbContext
       .HasForeignKey(e => e.NamespaceId);
 
     modelBuilder.Entity<TypeDef>()
-      .Property(type => type.IsComplex)
-      .HasColumnType("bit");
-
-    modelBuilder.Entity<TypeDef>()
       .HasDiscriminator<bool>("IsComplex")
       .HasValue<SimpleType>(false)
       .HasValue<ComplexType>(true);
@@ -119,22 +117,6 @@ public sealed class XmlSchemaDbContext : DbContext
       .HasOne(e => e.BaseType)
       .WithMany()
       .HasForeignKey(e => e.BaseTypeId);
-
-    modelBuilder.Entity<SimpleType>()
-      .Property(type => type.HasPattern)
-      .HasColumnType("bit");
-
-    modelBuilder.Entity<SimpleType>()
-      .Property(type => type.IsEnum)
-      .HasColumnType("bit");
-
-    modelBuilder.Entity<SimpleType>()
-      .Property(type => type.IsUnion)
-      .HasColumnType("bit");
-
-    modelBuilder.Entity<SimpleType>()
-      .Property(type => type.IsList)
-      .HasColumnType("bit");
 
     modelBuilder.Entity<EnumValue>()
       .HasOne(item => item.OwnerType)
@@ -161,6 +143,11 @@ public sealed class XmlSchemaDbContext : DbContext
       .WithMany()
       .HasForeignKey(item => item.MemberTypeId);
 
+    modelBuilder.Entity<AttributeDef>()
+      .HasOne(item => item.OwnerType)
+      .WithMany(subItem => subItem.Attributes)
+      .HasForeignKey(item => item.OwnerTypeId);
+
     modelBuilder.Entity<Particle>()
       .HasDiscriminator<ParticleType>("ParticleType")
       .HasValue<Any>(ParticleType.Any)
@@ -169,9 +156,6 @@ public sealed class XmlSchemaDbContext : DbContext
       .HasValue<All>(ParticleType.All)
       .HasValue<Choice>(ParticleType.Choice)
       .HasValue<Sequence>(ParticleType.Sequence);
-
-    modelBuilder.Entity<Particle>()
-      .Property("ParticleType").HasColumnType("byte");
 
     modelBuilder.Entity<Element>()
       .Property(e => e.Name)
@@ -227,9 +211,9 @@ public sealed class XmlSchemaDbContext : DbContext
   internal void SetupAccessDatabase()
   {
     var accessApp = new Access.ApplicationClass();
-    accessApp.OpenCurrentDatabase(DbFilename, true);
     try
     {
+      accessApp.OpenCurrentDatabase(DbFilename, false);
       var database = accessApp.CurrentDb();
       SetQuery(database, "TypesList", "SELECT Types.Id, [Prefix] & \":\" & [Types].[Name] AS ShortName\r\nFROM Namespaces INNER JOIN Types ON Namespaces.Id = Types.NamespaceId;");
       SetQuery(database, "NamespacesList", "SELECT Namespaces.Id, [Prefix] & \": \" & [Url] AS FullName\r\nFROM Namespaces;");
@@ -241,17 +225,23 @@ public sealed class XmlSchemaDbContext : DbContext
       SetLookup(database, "UnionMembers", "MemberTypeId", "TypesList");
       SetLookup(database, "ListItems", "OwnerTypeId", "TypesList");
       SetLookup(database, "ListItems", "MemberTypeId", "TypesList");
+      SetLookup(database, "Attributes", "OwnerTypeId", "TypesList");
       //SetLookup(database, "Elements", "NamespaceId", "NamespacesList");
+      //accessApp.CloseCurrentDatabase();
+      accessApp.Quit(AcQuitOption.acQuitSaveAll);
     }
-    catch (Exception e)
+    catch (Exception ex)
     {
-      Console.WriteLine(e);
-      throw;
+      Console.WriteLine($"An error occurred: {ex.Message}");
     }
     finally
     {
-      accessApp.CloseCurrentDatabase();
-      accessApp.Quit();
+
+      Marshal.ReleaseComObject(accessApp);
+      accessApp = null;
+      // For good measure, force a garbage collection
+      GC.Collect();
+      GC.WaitForPendingFinalizers();
     }
 
   }
@@ -342,77 +332,87 @@ public sealed class XmlSchemaDbContext : DbContext
       }
     };
 
-    foreach (var simpleType in Types.OfType<SimpleType>().Include(type => type.EnumValues))
-    {
-      simpleType.EnumValuesDictionary = simpleType.EnumValues.ToDictionary(enumValue => enumValue.Name);
-    }
-
-    EnumValues.Local.CollectionChanged += (sender, args) =>
-    {
-      if (args.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add)
-      {
-        foreach (EnumValue enumValue in args.NewItems!)
-        {
-          (NamespaceDictionary[enumValue.OwnerType.Namespace.Url].TypesDictionary[enumValue.OwnerType.Name] as SimpleType)?.EnumValuesDictionary.Add(enumValue.Name, enumValue);
-        }
-      }
-    };
-
 
     foreach (var simpleType in Types.OfType<SimpleType>().Include(type => type.Patterns))
     {
       simpleType.PatternsDictionary = simpleType.Patterns.ToDictionary(pattern => pattern.Value);
     }
-
-
     Patterns.Local.CollectionChanged += (sender, args) =>
     {
       if (args.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add)
       {
         foreach (Pattern pattern in args.NewItems!)
         {
-          (NamespaceDictionary[pattern.OwnerType.Namespace.Url].TypesDictionary[pattern.OwnerType.Name] as SimpleType)?.PatternsDictionary.Add(pattern.Value, pattern);
+          pattern.OwnerType.PatternsDictionary.Add(pattern.Value, pattern);
         }
       }
     };
-
+    
+    foreach (var simpleType in Types.OfType<SimpleType>().Include(type => type.EnumValues))
+    {
+      simpleType.EnumValuesDictionary = simpleType.EnumValues.ToDictionary(enumValue => enumValue.Name);
+    }
+    EnumValues.Local.CollectionChanged += (sender, args) =>
+    {
+      if (args.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add)
+      {
+        foreach (EnumValue enumValue in args.NewItems!)
+        {
+          enumValue.OwnerType.EnumValuesDictionary.Add(enumValue.Name, enumValue);
+        }
+      }
+    };
 
     foreach (var simpleType in Types.OfType<SimpleType>().Include(type => type.UnionMembers))
     {
       simpleType.UnionMembersDictionary = simpleType.UnionMembers
         .ToDictionary(unionMember => unionMember.MemberType.FullName);
     }
-
-
     UnionMembers.Local.CollectionChanged += (sender, args) =>
-    {
-      if (args.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add)
-      {
-        foreach (UnionMember unionMember in args.NewItems!)
-        {
-          (NamespaceDictionary[unionMember.OwnerType.Namespace.Url].TypesDictionary[unionMember.OwnerType.Name] as SimpleType)?
-            .UnionMembersDictionary.Add(unionMember.MemberType.FullName, unionMember);
-        }
-      }
-    };
+       {
+         if (args.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add)
+         {
+           foreach (UnionMember unionMember in args.NewItems!)
+           {
+             unionMember.OwnerType.UnionMembersDictionary.Add(unionMember.MemberType.FullName, unionMember);
+           }
+         }
+       };
 
     foreach (var simpleType in Types.OfType<SimpleType>().Include(type => type.ListItems))
     {
       simpleType.ListItemsDictionary = simpleType.ListItems
         .ToDictionary(ListItem => ListItem.MemberType.FullName);
     }
-
-
     ListItems.Local.CollectionChanged += (sender, args) =>
+       {
+         if (args.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add)
+         {
+           foreach (ListItem listItem in args.NewItems!)
+           {
+             listItem.OwnerType.ListItemsDictionary.Add(listItem.MemberType.FullName, listItem);
+           }
+         }
+       };
+
+    foreach (var complexType in Types.OfType<ComplexType>().Include(type => type.Attributes))
+    {
+      complexType.AttributesDictionary = complexType.Attributes
+        .ToDictionary(attribute => attribute.Name);
+    }
+    Attributes.Local.CollectionChanged += (sender, args) =>
     {
       if (args.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add)
       {
-        foreach (ListItem ListItem in args.NewItems!)
+        foreach (AttributeDef attribute in args.NewItems!)
         {
-          (NamespaceDictionary[ListItem.OwnerType.Namespace.Url].TypesDictionary[ListItem.OwnerType.Name] as SimpleType)?
-            .ListItemsDictionary.Add(ListItem.MemberType.FullName, ListItem);
+          if (attribute.OwnerType !=null)
+          {
+            attribute.OwnerType.AttributesDictionary.Add(attribute.Name, attribute);
+          }
         }
       }
     };
+
   }
 }
