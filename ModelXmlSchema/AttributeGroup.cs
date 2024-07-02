@@ -37,6 +37,22 @@ public class AttributeGroup
   public virtual Namespace OwnerNamespace { get; set; } = null!;
 
   /// <summary>
+  /// Attributes defined in the complex type.
+  /// </summary>
+  public virtual ICollection<AttributeDef> Attributes { get; set; } = new List<AttributeDef>();
+
+  /// <summary>
+  /// Dictionary of attribute definitions of the complex type.
+  /// </summary>
+  [NotMapped]
+  public Dictionary<string, AttributeDef> AttributesDictionary
+  {
+    get => _AttributesDictionary ??= new Dictionary<string, AttributeDef>();
+    set => _AttributesDictionary = value;
+  }
+  private Dictionary<string, AttributeDef>? _AttributesDictionary;
+
+  /// <summary>
   /// Full name of the attribute group containing the namespace prefix and the name.
   /// </summary>
   [NotMapped]

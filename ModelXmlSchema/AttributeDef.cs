@@ -12,6 +12,8 @@ namespace ModelXmlSchema;
 [Index(nameof(OwnerTypeId), IsUnique = false)]
 [Index(nameof(OwnerNamespaceId), nameof(Name), IsUnique = true)]
 [Index(nameof(OwnerNamespaceId), IsUnique = false)]
+[Index(nameof(OwnerGroupId), nameof(Name), IsUnique = true)]
+[Index(nameof(OwnerGroupId), IsUnique = false)]
 [Index(nameof(Name), IsUnique = false)]
 public class AttributeDef
 {
@@ -81,6 +83,11 @@ public class AttributeDef
   /// Navigation property to the complex type that contains the attribute.
   /// </summary>
   public virtual ComplexType? OwnerType { get; set; }
+
+  /// <summary>
+  /// Navigation property to the namespace that directly contains the attribute.
+  /// </summary>
+  public virtual AttributeGroup? OwnerGroup { get; set; }
 
   /// <summary>
   /// Navigation property to the namespace that directly contains the attribute.

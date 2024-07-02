@@ -7,6 +7,7 @@ using System.Xml.Schema;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Microsoft.Office.Interop.Access.Dao;
 
 using ModelXmlSchema;
 
@@ -28,7 +29,7 @@ public class XmlSchemaParser
   public int SimpleTypesTotal, SimpleTypesAdded, SimpleTypesUpdated;
   public int ComplexTypesTotal, ComplexTypesAdded, ComplexTypesUpdated;
   public int AttributesTotal, AttributesAdded, AttributesUpdated;
-  public int AttributeGroupsTotal, AttributeGroupsAdded;
+  public int AttributeGroupsTotal, AttributeGroupsAdded, AttributeGroupsUpdated;
   public int SchemaAttributeGroupRefsTotal, SchemaAttributeGroupRefsAdded;
   public int SchemaParticlesTotal, SchemaParticlesAdded, SchemaParticlesUpdates;
   public int SchemaEnumValuesTotal, SchemaEnumValuesAdded;
@@ -971,28 +972,28 @@ public class XmlSchemaParser
     {
       throw new NotImplementedException("Redefined attribute group not supported");
     }
-    //foreach (var attribute in xmlSchemaAttributeGroup.Attributes)
-    //{
-    //  if (attribute is XmlSchemaAttribute xmlSchemaAttribute)
-    //  {
-    //    ParseXmlSchemaGroupAttribute(schemaAttributeGroup, xmlSchemaAttribute);
-    //  }
-    //  else
-    //  if (attribute is XmlSchemaAttributeGroupRef xmlSchemaAttributeGroupRef)
-    //  {
-    //    ParseXmlSchemaAttributeGroupRef(schemaAttributeGroup, xmlSchemaAttributeGroupRef);
-    //  }
-    //  else
-    //  {
-    //    throw new NotImplementedException($"Attribute type {attribute.GetType()} not supported");
-    //  }
-    //}
+    foreach (var attribute in xmlSchemaAttributeGroup.Attributes)
+    {
+      if (attribute is XmlSchemaAttribute xmlSchemaAttribute)
+      {
+        ParseXmlSchemaGroupAttribute(attributeGroup, xmlSchemaAttribute);
+      }
+      //  else
+      //  if (attribute is XmlSchemaAttributeGroupRef xmlSchemaAttributeGroupRef)
+      //  {
+      //    ParseXmlSchemaAttributeGroupRef(schemaAttributeGroup, xmlSchemaAttributeGroupRef);
+      //  }
+      //  else
+      //  {
+      //    throw new NotImplementedException($"Attribute type {attribute.GetType()} not supported");
+      //  }
+    }
 
     if (!added)
       if (updated)
       {
         WriteLine("updated");
-        ComplexTypesUpdated++;
+        AttributeGroupsUpdated++;
       }
       else
         WriteLine("ok");
@@ -1000,49 +1001,58 @@ public class XmlSchemaParser
   }
 
 
-  //internal void ParseXmlSchemaGroupAttribute(SchemaAttributeGroup schemaAttributeGroup, XmlSchemaAttribute xmlSchemaAttribute)
-  //{
-  //  SchemaAttribute? schemaAttribute;
-  //  if (xmlSchemaAttribute.Name != null)
-  //  {
-  //    schemaAttribute = dbContext.Attributes.FirstOrDefault(item =>
-  //      item.AttributeGroupId == schemaAttributeGroup.Id && item.AttributeName == xmlSchemaAttribute.Name);
-  //    if (schemaAttribute == null)
-  //    {
-  //      WriteLine($"Adding group attribute {xmlSchemaAttribute.Name}");
-  //      schemaAttribute = new SchemaAttribute
-  //      {
-  //        AttributeGroupId = schemaAttributeGroup.Id,
-  //        AttributeName = xmlSchemaAttribute.Name,
-  //      };
-  //      dbContext.Attributes.Add(schemaAttribute);
-  //      if (SaveChanges() > 0)
-  //        SchemaAttributeGroupsAdded++;
-  //    }
-  //  }
-  //  else
-  //  {
-  //    var ns = dbContext.Namespaces.FirstOrDefault(item => item.Url == xmlSchemaAttribute.RefName.Namespace);
-  //    if (ns == null)
-  //      throw new DataException($"Namespace {xmlSchemaAttribute.RefName.Namespace} not found");
-  //    schemaAttribute = dbContext.Attributes.FirstOrDefault(item =>
-  //      item.AttributeGroupId == schemaAttributeGroup.Id && item.AttributeName == xmlSchemaAttribute.RefName.Name && item.RefNamespaceId == ns.Id);
-  //    if (schemaAttribute == null)
-  //    {
-  //      WriteLine($"Adding group attribute reference to {ns.Url} {xmlSchemaAttribute.RefName.Name}");
-  //      schemaAttribute = new SchemaAttribute
-  //      {
-  //        AttributeGroupId = schemaAttributeGroup.Id,
-  //        AttributeName = xmlSchemaAttribute.RefName.Name,
-  //        RefNamespaceId = ns.Id
-  //      };
-  //      dbContext.Attributes.Add(schemaAttribute);
-  //      if (SaveChanges() > 0)
-  //        SchemaAttributeGroupsAdded++;
-  //    }
-  //  }
-  //  ParseXmlSchemaAttributeDetails(schemaAttribute, xmlSchemaAttribute);
-  //}
+  internal bool ParseXmlSchemaGroupAttribute(AttributeGroup attributeGroup, XmlSchemaAttribute xmlSchemaAttribute)
+  {
+    bool added = false;
+    bool updated = false;
+    AttributeDef? attributeDef;
+    if (xmlSchemaAttribute.Name != null)
+    {
+      //attributeDef = dbContext.Attributes.FirstOrDefault(item =>
+      //  item.AttributeGroupId == attributeGroup.Id && item.AttributeName == xmlSchemaAttribute.Name);
+      //if (attributeDef == null)
+      if (!attributeGroup.AttributesDictionary.TryGetValue(xmlSchemaAttribute.Name, out attributeDef))
+      {
+        attributeDef = new AttributeDef
+        {
+          OwnerGroupId = attributeGroup.Id,
+          Name = xmlSchemaAttribute.Name,
+        };
+        attributeGroup.Attributes.Add(attributeDef);
+        if (SaveChanges() > 0)
+          AttributesAdded++;
+        added = true;
+      }
+    }
+    //else
+    //{
+    //  var ns = dbContext.Namespaces.FirstOrDefault(item => item.Url == xmlSchemaAttribute.RefName.Namespace);
+    //  if (ns == null)
+    //    throw new DataException($"Namespace {xmlSchemaAttribute.RefName.Namespace} not found");
+    //  attributeDef = dbContext.Attributes.FirstOrDefault(item =>
+    //    item.AttributeGroupId == attributeGroup.Id && item.AttributeName == xmlSchemaAttribute.RefName.Name && item.RefNamespaceId == ns.Id);
+    //  if (attributeDef == null)
+    //  {
+    //    WriteLine($"Adding group attribute reference to {ns.Url} {xmlSchemaAttribute.RefName.Name}");
+    //    attributeDef = new SchemaAttribute
+    //    {
+    //      AttributeGroupId = attributeGroup.Id,
+    //      AttributeName = xmlSchemaAttribute.RefName.Name,
+    //      RefNamespaceId = ns.Id
+    //    };
+    //    dbContext.Attributes.Add(attributeDef);
+    //    if (SaveChanges() > 0)
+    //      SchemaAttributeGroupsAdded++;
+    //  }
+    //}
+    //ParseXmlSchemaAttributeDetails(attributeDef, xmlSchemaAttribute);
+    if (!added)
+      if (updated)
+      {
+        AttributesUpdated++;
+      }
+    return added || updated;
+  }
 
   //internal void ParseXmlSchemaAttributeGroupRef(ComplexType parentComplexType, XmlSchemaAttributeGroupRef xmlSchemaAttributeGroupRef)
   //{
