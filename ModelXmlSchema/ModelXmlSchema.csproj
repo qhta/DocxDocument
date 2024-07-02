@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="ListType.cs" />
     <Compile Remove="SchemaFiles.cs" />
   </ItemGroup>
 

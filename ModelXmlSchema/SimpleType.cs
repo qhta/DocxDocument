@@ -50,39 +50,26 @@ public class SimpleType: TypeDef
   /// <summary>
   /// Specifies if the simple type has pattern restrictions.
   /// </summary>
+  [Column(TypeName = "bit")] 
   public bool HasPattern { get; set; }
 
   /// <summary>
   /// Specifies if the simple type is an enumeration.
   /// </summary>
+  [Column(TypeName = "bit")] 
   public bool IsEnum { get; set; }
 
   /// <summary>
   /// Specifies if the simple type is a union.
   /// </summary>
+  [Column(TypeName = "bit")] 
   public bool IsUnion { get; set; }
 
   /// <summary>
   /// Specifies if the simple type is a list.
   /// </summary>
+  [Column(TypeName = "bit")] 
   public bool IsList { get; set; }
-
-  /// <summary>
-  /// Enumeration values for the simple type.
-  /// </summary>
-  public virtual ICollection<EnumValue> EnumValues { get; set; } = null!;
-
-  /// <summary>
-  /// Dictionary of enumeration values for the simple type.
-  /// </summary>
-  [NotMapped]
-  public Dictionary<string, EnumValue> EnumValuesDictionary
-  {
-    get => _EnumValuesDictionary ??= new Dictionary<string, EnumValue>();
-    set => _EnumValuesDictionary = value;
-  }
-
-  private Dictionary<string, EnumValue>? _EnumValuesDictionary;
 
   /// <summary>
   ///Patterns for the simple type.
@@ -100,6 +87,22 @@ public class SimpleType: TypeDef
   }
   private Dictionary<string, Pattern>? _PatternsDictionary;
 
+  /// <summary>
+  /// Enumeration values for the simple type.
+  /// </summary>
+  public virtual ICollection<EnumValue> EnumValues { get; set; } = null!;
+
+  /// <summary>
+  /// Dictionary of enumeration values for the simple type.
+  /// </summary>
+  [NotMapped]
+  public Dictionary<string, EnumValue> EnumValuesDictionary
+  {
+    get => _EnumValuesDictionary ??= new Dictionary<string, EnumValue>();
+    set => _EnumValuesDictionary = value;
+  }
+
+  private Dictionary<string, EnumValue>? _EnumValuesDictionary;
   /// <summary>
   /// UnionMembers for the simple type.
   /// </summary>

@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ModelXmlSchema;
 
@@ -16,6 +17,7 @@ public abstract class Particle
   /// <summary>
   /// Stores the type of the particle.
   /// </summary>
+  [Column(TypeName = "byte")]
   public ParticleType ParticleType { get; set; }
 
   /// <summary>
