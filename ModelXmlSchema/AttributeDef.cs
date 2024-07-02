@@ -1,11 +1,17 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+using Microsoft.EntityFrameworkCore;
 
 namespace ModelXmlSchema;
 
 /// <summary>
 /// Represents an attribute in a schema.
 /// </summary>
-public class Attribute
+[Index(nameof(OwnerTypeId), nameof(Name), IsUnique = true)]
+[Index(nameof(OwnerTypeId), IsUnique = false)]
+[Index(nameof(Name), IsUnique = false)]
+public class AttributeDef
 {
 
   /// <summary>
@@ -16,17 +22,17 @@ public class Attribute
   /// <summary>
   /// Identifier of the complex type that contains the attribute.
   /// </summary>
-  public int? ComplexTypeId { get; set; }
+  public int? OwnerTypeId { get; set; }
   
   /// <summary>
   /// Identifier of the attribute group that contains the attribute.
   /// </summary>
-  public int? AttributeGroupId { get; set; }
+  public int? OwnerGroupId { get; set; }
 
   /// <summary>
   /// Identifier of the namespace of the global attribute.
   /// </summary>
-  public int? SchemaNamespaceId { get; set; }
+  public int? OwnerNamespaceId { get; set; }
 
   /// <summary>
   /// Identifier of the namespace of the referenced attribute.
@@ -34,10 +40,11 @@ public class Attribute
   public int? RefNamespaceId { get; set; }
 
   /// <summary>
-  /// RefName of the attribute.
+  /// Name of the attribute.
   /// </summary>
   [MaxLength(255)]
-  public string? AttributeName { get; set; }
+  [Required]
+  public required string Name { get; set; }
 
   /// <summary>
   /// Identifier of the namespace of the attribute type.
@@ -65,6 +72,11 @@ public class Attribute
   /// <summary>
   /// Indicates if the default attribute value is fixed.
   /// </summary>
+  [Column(TypeName = "bit")] 
   public bool IsFixed { get; set; }
 
+  /// <summary>
+  /// Navigation property to the complex type that contains the attribute.
+  /// </summary>
+  public virtual ComplexType? OwnerType { get; set; }
 }
