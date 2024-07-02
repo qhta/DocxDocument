@@ -180,6 +180,12 @@ public sealed class XmlSchemaDbContext : DbContext
       .HasForeignKey(item => item.OwnerNamespaceId)
       .IsRequired(false);
 
+    modelBuilder.Entity<AttributeGroup>()
+      .HasOne(item => item.OwnerNamespace)
+      .WithMany(owner => owner.GlobalAttributeGroups)
+      .HasForeignKey(item => item.OwnerNamespaceId)
+      .IsRequired(false);
+
     modelBuilder.Entity<Particle>()
       .HasDiscriminator<ParticleType>("ParticleType")
       .HasValue<Any>(ParticleType.Any)
@@ -258,12 +264,12 @@ public sealed class XmlSchemaDbContext : DbContext
       SetLookup(database, "UnionMembers", "MemberTypeId", "TypesList");
       SetLookup(database, "ListItems", "OwnerTypeId", "TypesList");
       SetLookup(database, "ListItems", "MemberTypeId", "TypesList");
-      //CreateEnumLookupTable(database, "ContentTypes", typeof(ContentType));
+      CreateEnumLookupTable(database, "ContentTypes", typeof(ContentType));
       SetLookup(database, "Types", "ContentType", "ContentTypes");
 
       SetLookup(database, "Attributes", "OwnerTypeId", "TypesList");
       SetLookup(database, "Attributes", "OwnerNamespaceId", "NamespacesList");
-
+      SetLookup(database, "AttributeGroups", "OwnerNamespaceId", "NamespacesList");
     }
     catch (Exception ex)
     {
@@ -562,7 +568,14 @@ public sealed class XmlSchemaDbContext : DbContext
                .Include(ns => ns.GlobalAttributes)
             )
     {
-      ns.AttributesDictionary = ns.GlobalAttributes.ToDictionary(attribute => attribute.Name, type => type);
+      ns.AttributesDictionary = ns.GlobalAttributes.ToDictionary(attribute => attribute.Name, attribute => attribute);
+    }
+
+    foreach (var ns in Namespaces
+               .Include(ns => ns.GlobalAttributeGroups)
+            )
+    {
+      ns.AttributeGroupsDictionary = ns.GlobalAttributeGroups.ToDictionary(attribute => attribute.Name, attribute => attribute);
     }
 
     foreach (var complexType in Types.OfType<ComplexType>().Include(type => type.Attributes))

@@ -51,4 +51,15 @@ public class Namespace
   /// </summary>
   [NotMapped]
   public Dictionary<string, AttributeDef> AttributesDictionary { get; set; } = null!;
+
+  /// <summary>
+  /// Collection of attribute groups defined directly in the namespace.
+  /// </summary>
+  public virtual ICollection<AttributeGroup> GlobalAttributeGroups { get; set; } = null!;
+
+  /// <summary>
+  /// Dictionary of attribute groups defined directly in the namespace.
+  /// </summary>
+  [NotMapped]
+  public Dictionary<string, AttributeGroup> AttributeGroupsDictionary { get; set; } = null!;
 }

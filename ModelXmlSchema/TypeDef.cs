@@ -54,7 +54,7 @@ public abstract class TypeDef
   public TypeDef? BaseType { get; set; }
 
   /// <summary>
-  /// Unique identifier of the referenced type.
+  /// Full name of the type containing the namespace prefix and the name.
   /// </summary>
   [NotMapped]
   public string FullName => Namespace.Prefix + ":" + Name;
