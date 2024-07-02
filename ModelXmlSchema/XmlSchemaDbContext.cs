@@ -83,21 +83,6 @@ public sealed class XmlSchemaDbContext : DbContext
     SetupAccessDatabase();
   }
 
-  public override void Dispose()
-  {
-    base.Dispose();
-    KillMsAccess();
-  }
-
-  public override async ValueTask DisposeAsync()
-  {
-    // Perform async cleanup of managed resources here.
-    // Note: There's no need to call GC.SuppressFinalize(this) with the async dispose pattern.
-
-    await base.DisposeAsync();
-    KillMsAccess();
-  }
-
   internal void KillMsAccess()
   {
     foreach (var process in Process.GetProcessesByName("MSACCESS"))
@@ -180,6 +165,12 @@ public sealed class XmlSchemaDbContext : DbContext
       .HasForeignKey(item => item.OwnerNamespaceId)
       .IsRequired(false);
 
+    modelBuilder.Entity<AttributeDef>()
+      .HasOne(item => item.OwnerGroup)
+      .WithMany(owner => owner.Attributes)
+      .HasForeignKey(item => item.OwnerGroupId)
+      .IsRequired(false);
+
     modelBuilder.Entity<AttributeGroup>()
       .HasOne(item => item.OwnerNamespace)
       .WithMany(owner => owner.GlobalAttributeGroups)
@@ -255,6 +246,7 @@ public sealed class XmlSchemaDbContext : DbContext
       accessApp.OpenCurrentDatabase(DbFilename, false);
       database = accessApp.CurrentDb();
       SetQuery(database, "TypesList", "SELECT Types.Id, [Prefix] & \":\" & [Types].[Name] AS ShortName\r\nFROM Namespaces INNER JOIN Types ON Namespaces.Id = Types.NamespaceId;");
+      SetQuery(database, "AttributeGroupsList", "SELECT AttributeGroups.Id, [Prefix] & \":\" & [AttributeGroups].[Name] AS ShortName\r\nFROM Namespaces INNER JOIN AttributeGroups ON Namespaces.Id = AttributeGroups.OwnerNamespaceId;");
       SetQuery(database, "NamespacesList", "SELECT Namespaces.Id, [Prefix] & \": \" & [Url] AS FullName\r\nFROM Namespaces;");
       SetLookup(database, "Types", "NamespaceId", "NamespacesList");
       SetLookup(database, "Types", "BaseTypeId", "TypesList");
@@ -268,6 +260,7 @@ public sealed class XmlSchemaDbContext : DbContext
       SetLookup(database, "Types", "ContentType", "ContentTypes");
 
       SetLookup(database, "Attributes", "OwnerTypeId", "TypesList");
+      SetLookup(database, "Attributes", "OwnerGroupId", "AttributeGroupsList");
       SetLookup(database, "Attributes", "OwnerNamespaceId", "NamespacesList");
       SetLookup(database, "AttributeGroups", "OwnerNamespaceId", "NamespacesList");
     }
@@ -287,6 +280,7 @@ public sealed class XmlSchemaDbContext : DbContext
       // For good measure, force a garbage collection
       GC.Collect();
       GC.WaitForPendingFinalizers();
+      KillMsAccess();
     }
 
   }
@@ -573,9 +567,14 @@ public sealed class XmlSchemaDbContext : DbContext
 
     foreach (var ns in Namespaces
                .Include(ns => ns.GlobalAttributeGroups)
+               .ThenInclude(group => group.Attributes) // Include attributes of the group
             )
     {
       ns.AttributeGroupsDictionary = ns.GlobalAttributeGroups.ToDictionary(attribute => attribute.Name, attribute => attribute);
+      foreach (var group in ns.GlobalAttributeGroups)
+      {
+        group.AttributesDictionary = group.Attributes.ToDictionary(attribute => attribute.Name, attribute => attribute);
+      }
     }
 
     foreach (var complexType in Types.OfType<ComplexType>().Include(type => type.Attributes))
@@ -593,6 +592,10 @@ public sealed class XmlSchemaDbContext : DbContext
           if (attribute.OwnerType != null)
           {
             attribute.OwnerType.AttributesDictionary.TryAdd(attribute.Name, attribute);
+          }
+          else if (attribute.OwnerGroup != null)
+          {
+            attribute.OwnerGroup.AttributesDictionary.TryAdd(attribute.Name, attribute);
           }
           else if (attribute.OwnerNamespace != null)
           {
