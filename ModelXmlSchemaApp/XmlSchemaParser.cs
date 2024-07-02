@@ -28,7 +28,7 @@ public class XmlSchemaParser
   public int SimpleTypesTotal, SimpleTypesAdded, SimpleTypesUpdated;
   public int ComplexTypesTotal, ComplexTypesAdded, ComplexTypesUpdated;
   public int AttributesTotal, AttributesAdded, AttributesUpdated;
-  public int SchemaAttributeGroupsTotal, SchemaAttributeGroupsAdded;
+  public int AttributeGroupsTotal, AttributeGroupsAdded;
   public int SchemaAttributeGroupRefsTotal, SchemaAttributeGroupRefsAdded;
   public int SchemaParticlesTotal, SchemaParticlesAdded, SchemaParticlesUpdates;
   public int SchemaEnumValuesTotal, SchemaEnumValuesAdded;
@@ -256,7 +256,7 @@ public class XmlSchemaParser
     SimpleTypesTotal = dbContext.Types.Count(item => !item.IsComplex);
     ComplexTypesTotal = dbContext.Types.Count(item => item.IsComplex);
     AttributesTotal = dbContext.Attributes.Count();
-    SchemaAttributeGroupsTotal = dbContext.AttributeGroups.Count();
+    AttributeGroupsTotal = dbContext.AttributeGroups.Count();
     SchemaAttributeGroupRefsTotal = dbContext.AttributeGroupRefs.Count();
     SchemaParticlesTotal = dbContext.Particles.Count();
     SchemaEnumValuesTotal = dbContext.EnumValues.Count();
@@ -309,11 +309,11 @@ public class XmlSchemaParser
         //{
         //  ParseXmlSchemaGlobalElement(ns, xmlSchemaElement);
         //}
-        //else
-        //if (item is XmlSchemaAttributeGroup xmlSchemaAttributeGroup)
-        //{
-        //  ParseXmlSchemaAttributeGroup(ns, xmlSchemaAttributeGroup);
-        //}
+        else
+        if (item is XmlSchemaAttributeGroup xmlSchemaAttributeGroup)
+        {
+          ParseXmlSchemaAttributeGroup(ns, xmlSchemaAttributeGroup);
+        }
         else
         if (item is XmlSchemaAttribute xmlSchemaAttribute)
         {
@@ -935,55 +935,70 @@ public class XmlSchemaParser
   }
 
 
-  //internal void ParseXmlSchemaAttributeGroup(Namespace parentNamespace, XmlSchemaAttributeGroup xmlSchemaAttributeGroup)
-  //{
-  //  int nsId = parentNamespace.Id;
-  //  if (xmlSchemaAttributeGroup.Name != null)
-  //  {
-  //    var schemaAttributeGroup = dbContext.AttributeGroups.FirstOrDefault(item =>
-  //      item.NamespaceId == nsId && item.GroupName == xmlSchemaAttributeGroup.Name);
-  //    if (schemaAttributeGroup == null)
-  //    {
-  //      WriteLine($"Adding attribute group {xmlSchemaAttributeGroup.Name}");
-  //      schemaAttributeGroup = new SchemaAttributeGroup
-  //      {
-  //        NamespaceId = nsId,
-  //        GroupName = xmlSchemaAttributeGroup.Name,
-  //      };
-  //      dbContext.AttributeGroups.Add(schemaAttributeGroup);
-  //      if (SaveChanges() > 0)
-  //        SchemaAttributeGroupsAdded++;
-  //    }
-  //    foreach (var attribute in xmlSchemaAttributeGroup.Attributes)
-  //    {
-  //      if (attribute is XmlSchemaAttribute xmlSchemaAttribute)
-  //      {
-  //        ParseXmlSchemaGroupAttribute(schemaAttributeGroup, xmlSchemaAttribute);
-  //      }
-  //      else
-  //      if (attribute is XmlSchemaAttributeGroupRef xmlSchemaAttributeGroupRef)
-  //      {
-  //        ParseXmlSchemaAttributeGroupRef(schemaAttributeGroup, xmlSchemaAttributeGroupRef);
-  //      }
-  //      else
-  //      {
-  //        throw new NotImplementedException($"Attribute type {attribute.GetType()} not supported");
-  //      }
-  //    }
-  //  }
-  //  else
-  //  {
-  //    throw new NotImplementedException("Anonymous attribute group not supported");
-  //  }
-  //  if (xmlSchemaAttributeGroup.AnyAttribute != null)
-  //  {
-  //    throw new NotImplementedException("Any attribute not supported");
-  //  }
-  //  if (xmlSchemaAttributeGroup.RedefinedAttributeGroup != null)
-  //  {
-  //    throw new NotImplementedException("Redefined attribute group not supported");
-  //  }
-  //}
+  internal bool ParseXmlSchemaAttributeGroup(Namespace ns, XmlSchemaAttributeGroup xmlSchemaAttributeGroup)
+  {
+    bool added = false;
+    bool updated = false;
+    int nsId = ns.Id;
+    AttributeGroup? attributeGroup;
+    if (xmlSchemaAttributeGroup.Name != null)
+    {
+      Write($"Checking global attribute {ns.Url}/{xmlSchemaAttributeGroup.Name} ... ");
+      var attrName = xmlSchemaAttributeGroup.Name;
+      if (!ns.AttributeGroupsDictionary.TryGetValue(attrName, out attributeGroup))
+      {
+        attributeGroup = new AttributeGroup
+        {
+          OwnerNamespaceId = nsId,
+          Name = attrName,
+        };
+        ns.GlobalAttributeGroups.Add(attributeGroup);
+        if (SaveChanges() > 0)
+          AttributeGroupsAdded++;
+        added = true;
+        WriteLine("added");
+      }
+    }
+    else
+    {
+      throw new NotImplementedException("Anonymous attribute group not supported");
+    }
+    if (xmlSchemaAttributeGroup.AnyAttribute != null)
+    {
+      throw new NotImplementedException("Any attribute not supported");
+    }
+    if (xmlSchemaAttributeGroup.RedefinedAttributeGroup != null)
+    {
+      throw new NotImplementedException("Redefined attribute group not supported");
+    }
+    //foreach (var attribute in xmlSchemaAttributeGroup.Attributes)
+    //{
+    //  if (attribute is XmlSchemaAttribute xmlSchemaAttribute)
+    //  {
+    //    ParseXmlSchemaGroupAttribute(schemaAttributeGroup, xmlSchemaAttribute);
+    //  }
+    //  else
+    //  if (attribute is XmlSchemaAttributeGroupRef xmlSchemaAttributeGroupRef)
+    //  {
+    //    ParseXmlSchemaAttributeGroupRef(schemaAttributeGroup, xmlSchemaAttributeGroupRef);
+    //  }
+    //  else
+    //  {
+    //    throw new NotImplementedException($"Attribute type {attribute.GetType()} not supported");
+    //  }
+    //}
+
+    if (!added)
+      if (updated)
+      {
+        WriteLine("updated");
+        ComplexTypesUpdated++;
+      }
+      else
+        WriteLine("ok");
+    return added || updated;
+  }
+
 
   //internal void ParseXmlSchemaGroupAttribute(SchemaAttributeGroup schemaAttributeGroup, XmlSchemaAttribute xmlSchemaAttribute)
   //{
