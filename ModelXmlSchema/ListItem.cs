@@ -1,10 +1,15 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
+using Microsoft.EntityFrameworkCore;
+
 namespace ModelXmlSchema;
 
 /// <summary>
 /// List item type for simple list types.
 /// </summary>
+[Index(nameof(OwnerTypeId), nameof(MemberTypeId), IsUnique = true)]
+[Index(nameof(OwnerTypeId), IsUnique = false)]
+[Index(nameof(MemberTypeId), IsUnique = false)]
 public class ListItem
 {
   /// <summary>

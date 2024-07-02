@@ -20,9 +20,9 @@ public class ComplexType: TypeDef
   public bool HasAttributes { get; set; }
 
   /// <summary>
-  /// Attributes of the complex type.
+  /// Attributes defined in the complex type.
   /// </summary>
-  public virtual ICollection<AttributeDef> Attributes { get; set; } = null!;
+  public virtual ICollection<AttributeDef>? Attributes { get; set; } = null!;
 
   /// <summary>
   /// Dictionary of attribute definitions of the complex type.
@@ -33,6 +33,5 @@ public class ComplexType: TypeDef
     get => _AttributesDictionary ??= new Dictionary<string, AttributeDef>();
     set => _AttributesDictionary = value;
   }
-
   private Dictionary<string, AttributeDef>? _AttributesDictionary;
 }
