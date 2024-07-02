@@ -12,17 +12,17 @@ namespace ModelXmlSchema;
 [Index(nameof(Prefix), IsUnique = true)]
 public class Namespace
 {
-
   /// <summary>
   /// Unique identifier of the namespace.
   /// </summary>
-  [Key] public int Id { get; set; }
+  [Key]
+  public int Id { get; set; }
 
   /// <summary>
   /// Url (long name) of the namespace.
   /// </summary>
   [MaxLength(255)]
-  public required string Url {get; set; }
+  public required string Url { get; set; }
 
   /// <summary>
   /// Prefix (short name) of the namespace.
@@ -35,6 +35,20 @@ public class Namespace
   /// </summary>
   public virtual ICollection<TypeDef> Types { get; set; } = null!;
 
-  // Not mapped to the database, used for in-memory access
-  [NotMapped] public Dictionary<string, TypeDef> TypesDictionary { get; set; } = null!;
+  /// <summary>
+  /// Dictionary of types defined in the namespace.
+  /// </summary>
+  [NotMapped]
+  public Dictionary<string, TypeDef> TypesDictionary { get; set; } = null!;
+
+  /// <summary>
+  /// Collection of attributes defined directly in the namespace.
+  /// </summary>
+  public virtual ICollection<AttributeDef> GlobalAttributes { get; set; } = null!;
+
+  /// <summary>
+  /// Dictionary of attributes defined directly in the namespace.
+  /// </summary>
+  [NotMapped]
+  public Dictionary<string, AttributeDef> AttributesDictionary { get; set; } = null!;
 }

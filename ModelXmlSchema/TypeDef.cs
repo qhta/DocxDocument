@@ -53,6 +53,20 @@ public abstract class TypeDef
   /// </summary>
   public TypeDef? BaseType { get; set; }
 
+  /// <summary>
+  /// Unique identifier of the referenced type.
+  /// </summary>
   [NotMapped]
-  public string FullName => Namespace.Url + "/" + Name;
+  public string FullName => Namespace.Prefix + ":" + Name;
+
+  /// <summary>
+  /// Returns the full name of the type.
+  /// </summary>
+  /// <param name="ns">Namespace that contains this type directly.</param>
+  /// <param name="name">Name of the type</param>
+  /// <returns></returns>
+  public static string GetFullName(Namespace ns, string name)
+  {
+    return ns.Prefix + ":" + name;
+  }
 }

@@ -10,6 +10,8 @@ namespace ModelXmlSchema;
 /// </summary>
 [Index(nameof(OwnerTypeId), nameof(Name), IsUnique = true)]
 [Index(nameof(OwnerTypeId), IsUnique = false)]
+[Index(nameof(OwnerNamespaceId), nameof(Name), IsUnique = true)]
+[Index(nameof(OwnerNamespaceId), IsUnique = false)]
 [Index(nameof(Name), IsUnique = false)]
 public class AttributeDef
 {
@@ -35,16 +37,16 @@ public class AttributeDef
   public int? OwnerNamespaceId { get; set; }
 
   /// <summary>
-  /// Identifier of the namespace of the referenced attribute.
-  /// </summary>
-  public int? RefNamespaceId { get; set; }
-
-  /// <summary>
   /// Name of the attribute.
   /// </summary>
   [MaxLength(255)]
   [Required]
   public required string Name { get; set; }
+
+  /// <summary>
+  /// Identifier of the referenced attribute.
+  /// </summary>
+  public int? RefAttributeId { get; set; }
 
   /// <summary>
   /// Identifier of the namespace of the attribute type.
@@ -79,4 +81,26 @@ public class AttributeDef
   /// Navigation property to the complex type that contains the attribute.
   /// </summary>
   public virtual ComplexType? OwnerType { get; set; }
+
+  /// <summary>
+  /// Navigation property to the namespace that directly contains the attribute.
+  /// </summary>
+  public virtual Namespace? OwnerNamespace { get; set; }
+
+  /// <summary>
+  /// Unique identifier of the referenced type.
+  /// </summary>
+  [NotMapped]
+  public string FullName => (OwnerNamespace?.Prefix ?? OwnerType?.Namespace.Prefix) + ":" + Name;
+
+  /// <summary>
+  /// Returns the full name of the attribute.
+  /// </summary>
+  /// <param name="ns">Namespace that contains this attribute directly or indirectly</param>
+  /// <param name="name">Name of the attribute</param>
+  /// <returns></returns>
+  public static string GetFullName(Namespace ns, string name)
+  {
+    return ns.Prefix + ":" + name;
+  }
 }
