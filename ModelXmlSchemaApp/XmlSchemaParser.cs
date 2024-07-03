@@ -30,7 +30,8 @@ public class XmlSchemaParser
   public int ComplexTypesTotal, ComplexTypesAdded, ComplexTypesUpdated;
   public int AttributesTotal, AttributesAdded, AttributesUpdated;
   public int AttributeGroupsTotal, AttributeGroupsAdded, AttributeGroupsUpdated;
-  public int SchemaAttributeGroupRefsTotal, SchemaAttributeGroupRefsAdded;
+  public int AttributeRefsTotal, AttributeRefsAdded;
+  public int AttributeGroupRefsTotal, AttributeGroupRefsAdded;
   public int SchemaParticlesTotal, SchemaParticlesAdded, SchemaParticlesUpdates;
   public int SchemaEnumValuesTotal, SchemaEnumValuesAdded;
   public int SchemaPatternsTotal, SchemaPatternsAdded;
@@ -257,8 +258,9 @@ public class XmlSchemaParser
     SimpleTypesTotal = dbContext.Types.OfType<SimpleType>().Count();
     ComplexTypesTotal = dbContext.Types.OfType<ComplexType>().Count();
     AttributesTotal = dbContext.Attributes.OfType<AttributeDef>().Count();
-    AttributeGroupsTotal = dbContext.Attributes.OfType<AttributeGroup>().Count();
-    SchemaAttributeGroupRefsTotal = dbContext.Attributes.OfType<AttributeGroup>().Count();
+    AttributeRefsTotal = dbContext.Attributes.OfType<AttributeRef>().Count();
+    AttributeGroupRefsTotal = dbContext.Attributes.OfType<AttributeGroupRef>().Count();
+    AttributeGroupsTotal = dbContext.AttributeGroups.Count();
     SchemaParticlesTotal = dbContext.Particles.Count();
     SchemaEnumValuesTotal = dbContext.EnumValues.Count();
     SchemaPatternsTotal = dbContext.Patterns.Count();
@@ -865,7 +867,7 @@ public class XmlSchemaParser
           OwnerNamespaceId = nsId,
           Name = attrName,
         };
-        ns.GlobalAttributes.Add(attributeBase);
+        ns.Attributes.Add(attributeBase);
         if (SaveChanges() > 0)
           AttributesAdded++;
         added = true;
@@ -899,7 +901,7 @@ public class XmlSchemaParser
     if (!ns.AttributesDictionary.TryGetValue(refAttributeName, out var attributeBase))
     {
       attributeBase = new AttributeDef { OwnerNamespaceId = ns.Id, Name = refAttributeName };
-      ns.GlobalAttributes.Add(attributeBase);
+      ns.Attributes.Add(attributeBase);
       if (SaveChanges() > 0)
         AttributesAdded++;
     }
@@ -945,28 +947,25 @@ public class XmlSchemaParser
     bool added = false;
     bool updated = false;
     int nsId = ns.Id;
-    AttributeBase? attributeBase;
+    AttributeGroup? attributeGroup;
     if (xmlSchemaAttributeGroup.Name != null)
     {
       Write($"Checking global attribute {ns.Url}/{xmlSchemaAttributeGroup.Name} ... ");
       var attrName = xmlSchemaAttributeGroup.Name;
-      if (!ns.AttributesDictionary.TryGetValue(attrName, out attributeBase))
+      if (!ns.AttributeGroupsDictionary.TryGetValue(attrName, out attributeGroup))
       {
-        attributeBase = new AttributeGroup
+        attributeGroup = new AttributeGroup
         {
           OwnerNamespaceId = nsId,
           Name = attrName,
         };
-        ns.GlobalAttributes.Add(attributeBase);
+        ns.AttributeGroups.Add(attributeGroup);
         if (SaveChanges() > 0)
           AttributeGroupsAdded++;
         added = true;
         WriteLine("added");
       }
-      else if (attributeBase is not AttributeGroup)
-      {
-        throw new InvalidDataException("There is already an attribute with this name");
-      }
+
     }
     else
     {
@@ -980,8 +979,6 @@ public class XmlSchemaParser
     {
       throw new NotImplementedException("Redefined attribute group not supported");
     }
-
-    var attributeGroup = (AttributeGroup)attributeBase;
 
     foreach (var attribute in xmlSchemaAttributeGroup.Attributes)
     {
