@@ -3,6 +3,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 using Microsoft.EntityFrameworkCore;
 
+using static Azure.Core.HttpHeader;
+
 namespace ModelXmlSchema;
 
 /// <summary>
@@ -76,7 +78,7 @@ public abstract class AttributeBase
   /// Full name of the attribute containing the namespace prefix and the name.
   /// </summary>
   [NotMapped]
-  public string FullName => (OwnerNamespace?.Prefix ?? OwnerType?.Namespace.Prefix) + ":" + Name;
+  public string FullName => Name.Contains(':') ? Name : ((OwnerNamespace?.Prefix ?? OwnerType?.Namespace.Prefix ?? OwnerGroup?.OwnerNamespace.Prefix) + ":" + Name);
 
   /// <summary>
   /// Returns the full name of the attribute.
@@ -86,6 +88,6 @@ public abstract class AttributeBase
   /// <returns></returns>
   public static string GetFullName(Namespace ns, string name)
   {
-    return ns.Prefix + ":" + name;
+    return name.Contains(':') ? name : (ns.Prefix + ":" + name);
   }
 }
