@@ -566,33 +566,28 @@ public sealed class XmlSchemaDbContext : DbContext
 
 
     foreach (var ns in Namespaces
-               .Include(ns => ns.Attributes)
-            )
+               .Include(ns => ns.Attributes))
     {
-      ns.AttributesDictionary = ns.Attributes.ToDictionary(attribute => attribute.Name, attribute => attribute);
+      ns.AttributesDictionary = ns.Attributes.ToDictionary(attribute => attribute.FullName, attribute => attribute);
     }
 
     foreach (var ns in Namespaces
-               .Include(ns => ns.AttributeGroups)
-            )
+               .Include(ns => ns.AttributeGroups))
     {
-      ns.AttributeGroupsDictionary = ns.AttributeGroups.ToDictionary(attributeGroup => attributeGroup.Name, attributeGroup => attributeGroup);
+      ns.AttributeGroupsDictionary = ns.AttributeGroups.ToDictionary(attributeGroup => attributeGroup.FullName, attributeGroup => attributeGroup);
     }
 
     foreach (var attributeGroup in AttributeGroups
-               .Include(group => group.Attributes)
-             )
+               .Include(group => group.Attributes))
     {
-      {
-        attributeGroup.AttributesDictionary = attributeGroup.Attributes.ToDictionary(attribute => attribute.Name, attribute => attribute);
-      }
+      attributeGroup.AttributesDictionary = attributeGroup.Attributes.ToDictionary(attribute => attribute.FullName, attribute => attribute);
     }
 
-    foreach (var complexType in Types.OfType<ComplexType>().Include(type => type.Attributes))
+    foreach (var complexType in Types.OfType<ComplexType>()
+               .Include(type => type.Attributes))
     {
-      //if (complexType.Attributes != null)
-        complexType.AttributesDictionary = complexType.Attributes
-          .ToDictionary(attribute => attribute.Name);
+      complexType.AttributesDictionary = complexType.Attributes
+        .ToDictionary(attribute => attribute.FullName);
     }
     Attributes.Local.CollectionChanged += (sender, args) =>
     {
@@ -602,15 +597,15 @@ public sealed class XmlSchemaDbContext : DbContext
         {
           if (attribute.OwnerType != null)
           {
-            attribute.OwnerType.AttributesDictionary.TryAdd(attribute.Name, attribute);
+            attribute.OwnerType.AttributesDictionary.TryAdd(attribute.FullName, attribute);
           }
           else if (attribute.OwnerGroup != null)
           {
-            attribute.OwnerGroup.AttributesDictionary.TryAdd(attribute.Name, attribute);
+            attribute.OwnerGroup.AttributesDictionary.TryAdd(attribute.FullName, attribute);
           }
           else if (attribute.OwnerNamespace != null)
           {
-            attribute.OwnerNamespace.AttributesDictionary.TryAdd(attribute.Name, attribute);
+            attribute.OwnerNamespace.AttributesDictionary.TryAdd(attribute.FullName, attribute);
           }
         }
       }
