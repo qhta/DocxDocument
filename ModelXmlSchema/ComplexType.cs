@@ -22,16 +22,16 @@ public class ComplexType: TypeDef
   /// <summary>
   /// Attributes defined in the complex type.
   /// </summary>
-  public virtual ICollection<AttributeDef>? Attributes { get; set; } = null!;
+  public virtual ICollection<AttributeBase> Attributes { get; set; } = new List<AttributeBase>();
 
   /// <summary>
   /// Dictionary of attribute definitions of the complex type.
   /// </summary>
   [NotMapped]
-  public Dictionary<string, AttributeDef> AttributesDictionary
+  public Dictionary<string, AttributeBase> AttributesDictionary
   {
-    get => _AttributesDictionary ??= new Dictionary<string, AttributeDef>();
+    get => _AttributesDictionary ??= new Dictionary<string, AttributeBase>();
     set => _AttributesDictionary = value;
   }
-  private Dictionary<string, AttributeDef>? _AttributesDictionary;
+  private Dictionary<string, AttributeBase>? _AttributesDictionary;
 }

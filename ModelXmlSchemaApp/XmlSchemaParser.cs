@@ -5,9 +5,9 @@ using System.Xml;
 using System.Xml.Schema;
 
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Diagnostics;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using Microsoft.Office.Interop.Access.Dao;
+//using Microsoft.EntityFrameworkCore.Diagnostics;
+//using Microsoft.EntityFrameworkCore.Metadata.Internal;
+//using Microsoft.Office.Interop.Access.Dao;
 
 using ModelXmlSchema;
 
@@ -254,11 +254,11 @@ public class XmlSchemaParser
     {
       ParseXmlSchema(schema);
     }
-    SimpleTypesTotal = dbContext.Types.Count(item => !item.IsComplex);
-    ComplexTypesTotal = dbContext.Types.Count(item => item.IsComplex);
-    AttributesTotal = dbContext.Attributes.Count();
-    AttributeGroupsTotal = dbContext.AttributeGroups.Count();
-    SchemaAttributeGroupRefsTotal = dbContext.AttributeGroupRefs.Count();
+    SimpleTypesTotal = dbContext.Types.OfType<SimpleType>().Count();
+    ComplexTypesTotal = dbContext.Types.OfType<ComplexType>().Count();
+    AttributesTotal = dbContext.Attributes.OfType<AttributeDef>().Count();
+    AttributeGroupsTotal = dbContext.Attributes.OfType<AttributeGroup>().Count();
+    SchemaAttributeGroupRefsTotal = dbContext.Attributes.OfType<AttributeGroup>().Count();
     SchemaParticlesTotal = dbContext.Particles.Count();
     SchemaEnumValuesTotal = dbContext.EnumValues.Count();
     SchemaPatternsTotal = dbContext.Patterns.Count();
@@ -448,7 +448,7 @@ public class XmlSchemaParser
     if (!ns.TypesDictionary.TryGetValue(baseTypeName, out var baseType))
     {
       if (typeKind == TypeKind.Complex || baseTypeName.StartsWith("CT_"))
-        baseType = new Model.ComplexType { NamespaceId = ns.Id, Name = baseTypeName };
+        baseType = new ComplexType { NamespaceId = ns.Id, Name = baseTypeName };
       else
         baseType = new SimpleType { NamespaceId = ns.Id, Name = baseTypeName };
       dbContext.Types.Add(baseType);
@@ -710,18 +710,18 @@ public class XmlSchemaParser
     return added || updated;
   }
 
-  internal Model.ComplexType ParseXmlSchemaComplexType(Namespace ns, XmlSchemaComplexType xmlSchemaComplexType, string? defaultTypeName = null)
+  internal ComplexType ParseXmlSchemaComplexType(Namespace ns, XmlSchemaComplexType xmlSchemaComplexType, string? defaultTypeName = null)
   {
     var added = false;
     var updated = false;
     var nsId = ns.Id;
     string typeName = xmlSchemaComplexType.Name ?? defaultTypeName ?? throw new InvalidDataException("Empty type def name");
     Write($"Checking complex type {ns.Url}/{typeName} ... ");
-    Model.ComplexType complexType;
+    ComplexType complexType;
     if (!ns.TypesDictionary.TryGetValue(typeName, out var typeDef))
     {
 
-      complexType = new Model.ComplexType
+      complexType = new ComplexType
       {
         NamespaceId = nsId,
         Name = typeName
@@ -734,7 +734,7 @@ public class XmlSchemaParser
     }
     else
     {
-      complexType = (Model.ComplexType)typeDef;
+      complexType = (ComplexType)typeDef;
     }
 
     var baseSchemaType = xmlSchemaComplexType.BaseXmlSchemaType;
@@ -767,7 +767,7 @@ public class XmlSchemaParser
     return complexType;
   }
 
-  internal bool ParseXmlSchemaComplexTypeDetails(Model.ComplexType complexType, XmlSchemaComplexType xmlSchemaComplexType)
+  internal bool ParseXmlSchemaComplexTypeDetails(ComplexType complexType, XmlSchemaComplexType xmlSchemaComplexType)
   {
     bool updated = false;
     foreach (var attribute in xmlSchemaComplexType.Attributes)
@@ -776,15 +776,15 @@ public class XmlSchemaParser
       {
         updated = ParseXmlSchemaComplexTypeAttribute(complexType, xmlSchemaAttribute);
       }
-      //else
-      //if (attribute is XmlSchemaAttributeGroupRef xmlSchemaAttributeGroupRef)
-      //{
-      //  ParseXmlSchemaAttributeGroupRef(schemaComplexType, xmlSchemaAttributeGroupRef);
-      //}
-      //else
-      //{
-      //  throw new NotImplementedException($"Attribute type {attribute.GetType()} not supported");
-      //}
+      else
+      if (attribute is XmlSchemaAttributeGroupRef xmlSchemaAttributeGroupRef)
+      {
+        ParseXmlSchemaAttributeGroupRef(complexType, xmlSchemaAttributeGroupRef);
+      }
+      else
+      {
+        throw new NotImplementedException($"Attribute type {attribute.GetType()} not supported");
+      }
     }
 
     var contentType = xmlSchemaComplexType.ContentType switch
@@ -809,10 +809,10 @@ public class XmlSchemaParser
     return updated;
   }
 
-  internal bool ParseXmlSchemaComplexTypeAttribute(Model.ComplexType complexType, XmlSchemaAttribute xmlSchemaAttribute)
+  internal bool ParseXmlSchemaComplexTypeAttribute(ComplexType complexType, XmlSchemaAttribute xmlSchemaAttribute)
   {
     bool updated = false;
-    AttributeDef? attributeDef;
+    AttributeBase? attributeDef;
     if (xmlSchemaAttribute.Name != null)
     {
       if (!complexType.AttributesDictionary.TryGetValue(xmlSchemaAttribute.Name, out attributeDef))
@@ -832,13 +832,12 @@ public class XmlSchemaParser
       var refAttribute = CheckGlobalAttributeDef(xmlSchemaAttribute.RefName);
       if (!complexType.AttributesDictionary.TryGetValue(refAttribute.FullName, out attributeDef))
       {
-        attributeDef = new AttributeDef
+        attributeDef = new AttributeRef
         {
           OwnerTypeId = complexType.Id,
           Name = refAttribute.FullName,
           RefAttributeId = refAttribute.Id
         };
-        complexType.Attributes ??= new List<AttributeDef>();
         complexType.Attributes.Add(attributeDef);
         if (SaveChanges() > 0)
           updated = true;
@@ -854,19 +853,19 @@ public class XmlSchemaParser
     bool added = false;
     bool updated = false;
     int nsId = ns.Id;
-    AttributeDef? attributeDef;
+    AttributeBase? attributeBase;
     if (xmlSchemaAttribute.Name != null)
     {
       Write($"Checking global attribute {ns.Url}/{xmlSchemaAttribute.Name} ... ");
       var attrName = xmlSchemaAttribute.Name;
-      if (!ns.AttributesDictionary.TryGetValue(attrName, out attributeDef))
+      if (!ns.AttributesDictionary.TryGetValue(attrName, out attributeBase))
       {
-        attributeDef = new AttributeDef
+        attributeBase = new AttributeDef
         {
           OwnerNamespaceId = nsId,
           Name = attrName,
         };
-        ns.GlobalAttributes.Add(attributeDef);
+        ns.GlobalAttributes.Add(attributeBase);
         if (SaveChanges() > 0)
           AttributesAdded++;
         added = true;
@@ -876,6 +875,7 @@ public class XmlSchemaParser
     else
       throw new NotImplementedException("Anonymous global attribute not supported");
 
+    var attributeDef = (AttributeDef)attributeBase;
     //ParseXmlSchemaAttributeDetails(attributeDef, xmlSchemaAttribute);
 
     if (!added)
@@ -896,14 +896,18 @@ public class XmlSchemaParser
     var refAttributeNamespace = attributeName.Namespace;
     if (!dbContext.NamespacesDictionary.TryGetValue(refAttributeNamespace, out var ns))
       throw new NotImplementedException($"Namespace {refAttributeNamespace} not found");
-    if (!ns.AttributesDictionary.TryGetValue(refAttributeName, out var attributeDef))
+    if (!ns.AttributesDictionary.TryGetValue(refAttributeName, out var attributeBase))
     {
-      attributeDef = new AttributeDef { OwnerNamespaceId = ns.Id, Name = refAttributeName };
-      ns.GlobalAttributes.Add(attributeDef);
+      attributeBase = new AttributeDef { OwnerNamespaceId = ns.Id, Name = refAttributeName };
+      ns.GlobalAttributes.Add(attributeBase);
       if (SaveChanges() > 0)
         AttributesAdded++;
     }
-    return attributeDef;
+    else if (attributeBase is not AttributeDef)
+    {
+      throw new InvalidDataException("There is already an attribute with this name");
+    }
+    return (AttributeDef)attributeBase;
   }
 
   internal void ParseXmlSchemaAttributeDetails(AttributeDef schemaAttribute, XmlSchemaAttribute xmlSchemaAttribute)
@@ -913,10 +917,10 @@ public class XmlSchemaParser
       var ns = dbContext.Namespaces.FirstOrDefault(item => item.Url == xmlSchemaAttribute.SchemaTypeName.Namespace);
       if (ns == null)
         throw new DataException($"Namespace {xmlSchemaAttribute.SchemaTypeName.Namespace} not found");
-      schemaAttribute.TypeNamespaceId = ns.Id;
+      schemaAttribute.ValueTypeId = ns.Id;
     }
     else
-      schemaAttribute.TypeNamespaceId = null;
+      schemaAttribute.ValueTypeId = null;
     schemaAttribute.Name = xmlSchemaAttribute.SchemaTypeName.Name;
     schemaAttribute.Use = xmlSchemaAttribute.Use switch
     {
@@ -941,23 +945,27 @@ public class XmlSchemaParser
     bool added = false;
     bool updated = false;
     int nsId = ns.Id;
-    AttributeGroup? attributeGroup;
+    AttributeBase? attributeBase;
     if (xmlSchemaAttributeGroup.Name != null)
     {
       Write($"Checking global attribute {ns.Url}/{xmlSchemaAttributeGroup.Name} ... ");
       var attrName = xmlSchemaAttributeGroup.Name;
-      if (!ns.AttributeGroupsDictionary.TryGetValue(attrName, out attributeGroup))
+      if (!ns.AttributesDictionary.TryGetValue(attrName, out attributeBase))
       {
-        attributeGroup = new AttributeGroup
+        attributeBase = new AttributeGroup
         {
           OwnerNamespaceId = nsId,
           Name = attrName,
         };
-        ns.GlobalAttributeGroups.Add(attributeGroup);
+        ns.GlobalAttributes.Add(attributeBase);
         if (SaveChanges() > 0)
           AttributeGroupsAdded++;
         added = true;
         WriteLine("added");
+      }
+      else if (attributeBase is not AttributeGroup)
+      {
+        throw new InvalidDataException("There is already an attribute with this name");
       }
     }
     else
@@ -972,21 +980,24 @@ public class XmlSchemaParser
     {
       throw new NotImplementedException("Redefined attribute group not supported");
     }
+
+    var attributeGroup = (AttributeGroup)attributeBase;
+
     foreach (var attribute in xmlSchemaAttributeGroup.Attributes)
     {
       if (attribute is XmlSchemaAttribute xmlSchemaAttribute)
       {
         ParseXmlSchemaGroupAttribute(attributeGroup, xmlSchemaAttribute);
       }
-      //  else
-      //  if (attribute is XmlSchemaAttributeGroupRef xmlSchemaAttributeGroupRef)
-      //  {
-      //    ParseXmlSchemaAttributeGroupRef(schemaAttributeGroup, xmlSchemaAttributeGroupRef);
-      //  }
-      //  else
-      //  {
-      //    throw new NotImplementedException($"Attribute type {attribute.GetType()} not supported");
-      //  }
+      else
+        if (attribute is XmlSchemaAttributeGroupRef xmlSchemaAttributeGroupRef)
+      {
+        ParseXmlSchemaAttributeGroupRef(attributeGroup, xmlSchemaAttributeGroupRef);
+      }
+      else
+      {
+        throw new NotImplementedException($"Attribute type {attribute.GetType()} not supported");
+      }
     }
 
     if (!added)
@@ -1005,23 +1016,24 @@ public class XmlSchemaParser
   {
     bool added = false;
     bool updated = false;
-    AttributeDef? attributeDef;
+    AttributeBase? attributeBase;
     if (xmlSchemaAttribute.Name != null)
     {
-      //attributeDef = dbContext.Attributes.FirstOrDefault(item =>
-      //  item.AttributeGroupId == attributeGroup.Id && item.AttributeName == xmlSchemaAttribute.Name);
-      //if (attributeDef == null)
-      if (!attributeGroup.AttributesDictionary.TryGetValue(xmlSchemaAttribute.Name, out attributeDef))
+      if (!attributeGroup.AttributesDictionary.TryGetValue(xmlSchemaAttribute.Name, out attributeBase))
       {
-        attributeDef = new AttributeDef
+        attributeBase = new AttributeDef
         {
           OwnerGroupId = attributeGroup.Id,
           Name = xmlSchemaAttribute.Name,
         };
-        attributeGroup.Attributes.Add(attributeDef);
+        attributeGroup.Attributes.Add(attributeBase);
         if (SaveChanges() > 0)
           AttributesAdded++;
         added = true;
+      }
+      else if (attributeBase is not AttributeDef)
+      {
+        throw new InvalidDataException("There is already an attribute group with this name");
       }
     }
     //else
@@ -1054,51 +1066,51 @@ public class XmlSchemaParser
     return added || updated;
   }
 
-  //internal void ParseXmlSchemaAttributeGroupRef(ComplexType parentComplexType, XmlSchemaAttributeGroupRef xmlSchemaAttributeGroupRef)
-  //{
-  //  var ns = dbContext.Namespaces.First(item => item.Url == xmlSchemaAttributeGroupRef.RefName.Namespace);
-  //  int? nsId = parentComplexType.NamespaceId;
-  //  if (ns.Id == nsId)
-  //    nsId = null;
-  //  var schemaAttributeGroupRef = dbContext.AttributeGroupRefs.FirstOrDefault(item =>
-  //    item.ComplexTypeId == parentComplexType.Id && item.RefName == xmlSchemaAttributeGroupRef.RefName.Name && item.RefNamespaceId == nsId);
-  //  if (schemaAttributeGroupRef == null)
-  //  {
-  //    WriteLine($"Adding attribute group ref {xmlSchemaAttributeGroupRef.RefName.Name}");
-  //    schemaAttributeGroupRef = new SchemaAttributeGroupRef
-  //    {
-  //      ComplexTypeId = parentComplexType.Id,
-  //      RefName = xmlSchemaAttributeGroupRef.RefName.Name,
-  //      RefNamespaceId = nsId
-  //    };
-  //    dbContext.AttributeGroupRefs.Add(schemaAttributeGroupRef);
-  //    if (SaveChanges() > 0)
-  //      SchemaAttributeGroupRefsAdded++;
-  //  }
-  //}
+  internal void ParseXmlSchemaAttributeGroupRef(ComplexType parentComplexType, XmlSchemaAttributeGroupRef xmlSchemaAttributeGroupRef)
+  {
+    //var ns = dbContext.Namespaces.First(item => item.Url == xmlSchemaAttributeGroupRef.RefName.Namespace);
+    //int? nsId = parentComplexType.NamespaceId;
+    //if (ns.Id == nsId)
+    //  nsId = null;
+    //var schemaAttributeGroupRef = dbContext.AttributeGroupRefs.FirstOrDefault(item =>
+    //  item.OwnerTypeId == parentComplexType.Id && item.RefName == xmlSchemaAttributeGroupRef.RefName.Name && item.RefNamespaceId == nsId);
+    //if (schemaAttributeGroupRef == null)
+    //{
+    //  WriteLine($"Adding attribute group ref {xmlSchemaAttributeGroupRef.RefName.Name}");
+    //  schemaAttributeGroupRef = new AttributeGroupRef
+    //  {
+    //    OwnerTypeId = parentComplexType.Id,
+    //    RefName = xmlSchemaAttributeGroupRef.RefName.Name,
+    //    RefNamespaceId = nsId
+    //  };
+    //  dbContext.AttributeGroupRefs.Add(schemaAttributeGroupRef);
+    //  if (SaveChanges() > 0)
+    //    SchemaAttributeGroupRefsAdded++;
+    //}
+  }
 
-  //internal void ParseXmlSchemaAttributeGroupRef(SchemaAttributeGroup parentAttributeGroup, XmlSchemaAttributeGroupRef xmlSchemaAttributeGroupRef)
-  //{
-  //  var ns = dbContext.Namespaces.First(item => item.Url == xmlSchemaAttributeGroupRef.RefName.Namespace);
-  //  int? nsId = parentAttributeGroup.NamespaceId;
-  //  if (ns.Id == nsId)
-  //    nsId = null;
-  //  var schemaAttributeGroupRef = dbContext.AttributeGroupRefs.FirstOrDefault(item =>
-  //    item.AttributeGroupId == parentAttributeGroup.Id && item.RefName == xmlSchemaAttributeGroupRef.RefName.Name && item.RefNamespaceId == nsId);
-  //  if (schemaAttributeGroupRef == null)
-  //  {
-  //    WriteLine($"Adding attribute group ref {xmlSchemaAttributeGroupRef.RefName.Name}");
-  //    schemaAttributeGroupRef = new SchemaAttributeGroupRef
-  //    {
-  //      AttributeGroupId = parentAttributeGroup.Id,
-  //      RefName = xmlSchemaAttributeGroupRef.RefName.Name,
-  //      RefNamespaceId = nsId
-  //    };
-  //    dbContext.AttributeGroupRefs.Add(schemaAttributeGroupRef);
-  //    if (SaveChanges() > 0)
-  //      SchemaAttributeGroupRefsAdded++;
-  //  }
-  //}
+  internal void ParseXmlSchemaAttributeGroupRef(AttributeGroup parentAttributeGroup, XmlSchemaAttributeGroupRef xmlSchemaAttributeGroupRef)
+  {
+    //var ns = dbContext.Namespaces.First(item => item.Url == xmlSchemaAttributeGroupRef.RefName.Namespace);
+    //int? nsId = parentAttributeGroup.OwnerNamespaceId;
+    //if (ns.Id == nsId)
+    //  nsId = null;
+    //var schemaAttributeGroupRef = dbContext.AttributeGroupRefs.FirstOrDefault(item =>
+    //  item.OwnerGroupId == parentAttributeGroup.Id && item.RefName == xmlSchemaAttributeGroupRef.RefName.Name && item.RefNamespaceId == nsId);
+    //if (schemaAttributeGroupRef == null)
+    //{
+    //  WriteLine($"Adding attribute group ref {xmlSchemaAttributeGroupRef.RefName.Name}");
+    //  schemaAttributeGroupRef = new AttributeGroupRef
+    //  {
+    //    OwnerGroupId = parentAttributeGroup.Id,
+    //    RefName = xmlSchemaAttributeGroupRef.RefName.Name,
+    //    RefNamespaceId = nsId
+    //  };
+    //  dbContext.AttributeGroupRefs.Add(schemaAttributeGroupRef);
+    //  if (SaveChanges() > 0)
+    //    SchemaAttributeGroupRefsAdded++;
+    //}
+  }
 
   //internal void ParseXmlSchemaParticle(ComplexType parentComplexType, SchemaParticle? parentParticle, XmlSchemaParticle xmlSchemaParticle, int? ordNum)
   //{

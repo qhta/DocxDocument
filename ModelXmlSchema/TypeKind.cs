@@ -3,7 +3,7 @@
 /// <summary>
 /// Enumerates the different kinds of types.
 /// </summary>
-public enum TypeKind
+public enum TypeKind: byte
 {
   /// <summary>
   /// A simple type.

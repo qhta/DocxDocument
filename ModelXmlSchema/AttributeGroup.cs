@@ -11,61 +11,30 @@ namespace ModelXmlSchema;
 [Index(nameof(OwnerNamespaceId), nameof(Name), IsUnique = true)]
 [Index(nameof(OwnerNamespaceId), IsUnique = false)]
 [Index(nameof(Name), IsUnique = false)]
-public class AttributeGroup
+public class AttributeGroup: AttributeBase
 {
-
   /// <summary>
-  /// Unique identifier of the entity.
+  /// Initializes the type discriminator.
   /// </summary>
-  [Key] public int Id { get; set; }
+  public AttributeGroup()
+  {
+    Type = AttributeType.AttributeGroup;
+  }
 
   /// <summary>
-  /// Unique identifier of the namespace of the group.
+  /// Attributes defined in the attribute group.
   /// </summary>
-  public int OwnerNamespaceId { get; set; }
+  public virtual ICollection<AttributeBase> Attributes { get; set; } = new List<AttributeBase>();
 
   /// <summary>
-  /// Name of the group.
-  /// </summary>
-  [MaxLength(255)]
-  [Required]
-  public required string Name { get; set; }
-
-  /// <summary>
-  /// Navigation property to the namespace that directly contains the attribute.
-  /// </summary>
-  public virtual Namespace OwnerNamespace { get; set; } = null!;
-
-  /// <summary>
-  /// Attributes defined in the complex type.
-  /// </summary>
-  public virtual ICollection<AttributeDef> Attributes { get; set; } = new List<AttributeDef>();
-
-  /// <summary>
-  /// Dictionary of attribute definitions of the complex type.
+  /// Dictionary of attribute definitions of the attribute group.
   /// </summary>
   [NotMapped]
-  public Dictionary<string, AttributeDef> AttributesDictionary
+  public Dictionary<string, AttributeBase> AttributesDictionary
   {
-    get => _AttributesDictionary ??= new Dictionary<string, AttributeDef>();
+    get => _AttributesDictionary ??= new Dictionary<string, AttributeBase>();
     set => _AttributesDictionary = value;
   }
-  private Dictionary<string, AttributeDef>? _AttributesDictionary;
+  private Dictionary<string, AttributeBase>? _AttributesDictionary;
 
-  /// <summary>
-  /// Full name of the attribute group containing the namespace prefix and the name.
-  /// </summary>
-  [NotMapped]
-  public string FullName => OwnerNamespace.Prefix + ":" + Name;
-
-  /// <summary>
-  /// Returns the full name of the attribute group.
-  /// </summary>
-  /// <param name="ns">Namespace that contains this attribute directly or indirectly</param>
-  /// <param name="name">Name of the attribute</param>
-  /// <returns></returns>
-  public static string GetFullName(Namespace ns, string name)
-  {
-    return ns.Prefix + ":" + name;
-  }
 }
