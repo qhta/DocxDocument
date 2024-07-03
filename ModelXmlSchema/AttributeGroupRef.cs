@@ -1,38 +1,25 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
+using Microsoft.EntityFrameworkCore;
+
 namespace ModelXmlSchema;
 
 /// <summary>
 /// References an attribute group in a schema. Replaces attribute.
 /// </summary>
-public class AttributeGroupRef
+public class AttributeGroupRef: AttributeBase
 {
+  /// <summary>
+  /// Initializes the type discriminator.
+  /// </summary>
+  public AttributeGroupRef()
+  {
+    Type = AttributeType.AttributeGroupRef;
+  }
 
   /// <summary>
-  /// Unique identifier for the attribute group reference.
+  /// Identifier of the attribute group that is referenced.
   /// </summary>
-  [Key] public int Id { get; set; }
-
-  /// <summary>
-  /// Identifier of the complex type that contains the attribute group reference.
-  /// </summary>
-  public int? ComplexTypeId { get; set; }
-
-  /// <summary>
-  /// Identifier of the attribute group that contains the attribute.
-  /// </summary>
-  public int? AttributeGroupId { get; set; }
-
-  /// <summary>
-  /// Identifier of the namespace of the attribute group that is referenced.
-  /// Omitted if the referenced group namespace is the same as the parent complex type or parent attribute group namespace.
-  /// </summary>
-  public int? RefNamespaceId { get; set; }
-
-  /// <summary>
-  /// RefName of the attribute group that is referenced.
-  /// </summary>
-  [MaxLength(255)]
-  public string? RefName { get; set; }
-
+  [Required]
+  public int RefGroupId { get; set; }
 }

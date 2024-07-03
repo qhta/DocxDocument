@@ -32,11 +32,7 @@ public sealed class XmlSchemaDbContext : DbContext
 
   public DbSet<ListItem> ListItems { get; set; }
 
-  public DbSet<AttributeDef> Attributes { get; set; }
-
-  public DbSet<AttributeGroup> AttributeGroups { get; set; }
-
-  public DbSet<AttributeGroupRef> AttributeGroupRefs { get; set; }
+  public DbSet<AttributeBase> Attributes { get; set; }
 
   public DbSet<Particle> Particles { get; set; }
 
@@ -153,29 +149,30 @@ public sealed class XmlSchemaDbContext : DbContext
       .WithMany()
       .HasForeignKey(item => item.MemberTypeId);
 
-    modelBuilder.Entity<AttributeDef>()
+    modelBuilder.Entity<AttributeBase>()
       .HasOne(item => item.OwnerType)
       .WithMany(owner => owner.Attributes)
       .HasForeignKey(item => item.OwnerTypeId)
       .IsRequired(false);
 
-    modelBuilder.Entity<AttributeDef>()
+    modelBuilder.Entity<AttributeBase>()
       .HasOne(item => item.OwnerNamespace)
       .WithMany(owner => owner.GlobalAttributes)
       .HasForeignKey(item => item.OwnerNamespaceId)
       .IsRequired(false);
 
-    modelBuilder.Entity<AttributeDef>()
+    modelBuilder.Entity<AttributeBase>()
       .HasOne(item => item.OwnerGroup)
       .WithMany(owner => owner.Attributes)
       .HasForeignKey(item => item.OwnerGroupId)
       .IsRequired(false);
 
-    modelBuilder.Entity<AttributeGroup>()
-      .HasOne(item => item.OwnerNamespace)
-      .WithMany(owner => owner.GlobalAttributeGroups)
-      .HasForeignKey(item => item.OwnerNamespaceId)
-      .IsRequired(false);
+    modelBuilder.Entity<AttributeBase>()
+      .HasDiscriminator<AttributeType>("Type")
+      .HasValue<AttributeDef>(AttributeType.AttributeDef)
+      .HasValue<AttributeRef>(AttributeType.AttributeRef)
+      .HasValue<AttributeGroup>(AttributeType.AttributeGroup)
+      .HasValue<AttributeGroupRef>(AttributeType.AttributeGroupRef);
 
     modelBuilder.Entity<Particle>()
       .HasDiscriminator<ParticleType>("ParticleType")
@@ -246,7 +243,7 @@ public sealed class XmlSchemaDbContext : DbContext
       accessApp.OpenCurrentDatabase(DbFilename, false);
       database = accessApp.CurrentDb();
       SetQuery(database, "TypesList", "SELECT Types.Id, [Prefix] & \":\" & [Types].[Name] AS ShortName\r\nFROM Namespaces INNER JOIN Types ON Namespaces.Id = Types.NamespaceId;");
-      SetQuery(database, "AttributeGroupsList", "SELECT AttributeGroups.Id, [Prefix] & \":\" & [AttributeGroups].[Name] AS ShortName\r\nFROM Namespaces INNER JOIN AttributeGroups ON Namespaces.Id = AttributeGroups.OwnerNamespaceId;");
+      SetQuery(database, "AttributeGroupsList", $"SELECT Attributes.Id, [Prefix] & \":\" & [Attributes].[Name] AS ShortName\r\nFROM Namespaces INNER JOIN Attributes ON Namespaces.Id = Attributes.OwnerNamespaceId\r\nWHERE (((Attributes.Type)={(byte)(AttributeType.AttributeGroup)}));");
       SetQuery(database, "NamespacesList", "SELECT Namespaces.Id, [Prefix] & \": \" & [Url] AS FullName\r\nFROM Namespaces;");
       SetLookup(database, "Types", "NamespaceId", "NamespacesList");
       SetLookup(database, "Types", "BaseTypeId", "TypesList");
@@ -262,7 +259,8 @@ public sealed class XmlSchemaDbContext : DbContext
       SetLookup(database, "Attributes", "OwnerTypeId", "TypesList");
       SetLookup(database, "Attributes", "OwnerGroupId", "AttributeGroupsList");
       SetLookup(database, "Attributes", "OwnerNamespaceId", "NamespacesList");
-      SetLookup(database, "AttributeGroups", "OwnerNamespaceId", "NamespacesList");
+      CreateEnumLookupTable(database, "AttributeTypes", typeof(AttributeType));
+      SetLookup(database, "Attributes", "Type", "AttributeTypes");
     }
     catch (Exception ex)
     {
@@ -302,7 +300,8 @@ public sealed class XmlSchemaDbContext : DbContext
       {
         recordset = database.OpenRecordset(tableName);
         recordset.AddNew();
-        recordset.Fields["Id"].Value = (byte)value;
+        var n = (byte)value;
+        recordset.Fields["Id"].Value = n;
         recordset.Fields["Name"].Value = value.ToString();
         recordset.Update();
         recordset.Close();
@@ -565,21 +564,18 @@ public sealed class XmlSchemaDbContext : DbContext
       ns.AttributesDictionary = ns.GlobalAttributes.ToDictionary(attribute => attribute.Name, attribute => attribute);
     }
 
-    foreach (var ns in Namespaces
-               .Include(ns => ns.GlobalAttributeGroups)
-               .ThenInclude(group => group.Attributes) // Include attributes of the group
-            )
+    foreach (var attributeGroup in Attributes.OfType<AttributeGroup>()
+               .Include(group => group.Attributes)
+             )
     {
-      ns.AttributeGroupsDictionary = ns.GlobalAttributeGroups.ToDictionary(attribute => attribute.Name, attribute => attribute);
-      foreach (var group in ns.GlobalAttributeGroups)
       {
-        group.AttributesDictionary = group.Attributes.ToDictionary(attribute => attribute.Name, attribute => attribute);
+        attributeGroup.AttributesDictionary = attributeGroup.Attributes.ToDictionary(attribute => attribute.Name, attribute => attribute);
       }
     }
 
     foreach (var complexType in Types.OfType<ComplexType>().Include(type => type.Attributes))
     {
-      if (complexType.Attributes != null)
+      //if (complexType.Attributes != null)
         complexType.AttributesDictionary = complexType.Attributes
           .ToDictionary(attribute => attribute.Name);
     }
@@ -587,7 +583,7 @@ public sealed class XmlSchemaDbContext : DbContext
     {
       if (args.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add)
       {
-        foreach (AttributeDef attribute in args.NewItems!)
+        foreach (AttributeBase attribute in args.NewItems!)
         {
           if (attribute.OwnerType != null)
           {
