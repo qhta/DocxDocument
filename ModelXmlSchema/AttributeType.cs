@@ -16,11 +16,6 @@ public enum AttributeType: byte
   AttributeRef,
 
   /// <summary>
-  /// Group of attributes.
-  /// </summary>
-  AttributeGroup,
-
-  /// <summary>
   /// AttributeGroup reference.
   /// </summary>
   AttributeGroupRef,

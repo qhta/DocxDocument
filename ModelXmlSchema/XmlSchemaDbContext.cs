@@ -34,6 +34,8 @@ public sealed class XmlSchemaDbContext : DbContext
 
   public DbSet<AttributeBase> Attributes { get; set; }
 
+  public DbSet<AttributeGroup> AttributeGroups { get; set; }
+
   public DbSet<Particle> Particles { get; set; }
 
   public DbSet<Group> Groups { get; set; }
@@ -157,7 +159,7 @@ public sealed class XmlSchemaDbContext : DbContext
 
     modelBuilder.Entity<AttributeBase>()
       .HasOne(item => item.OwnerNamespace)
-      .WithMany(owner => owner.GlobalAttributes)
+      .WithMany(owner => owner.Attributes)
       .HasForeignKey(item => item.OwnerNamespaceId)
       .IsRequired(false);
 
@@ -171,8 +173,14 @@ public sealed class XmlSchemaDbContext : DbContext
       .HasDiscriminator<AttributeType>("Type")
       .HasValue<AttributeDef>(AttributeType.AttributeDef)
       .HasValue<AttributeRef>(AttributeType.AttributeRef)
-      .HasValue<AttributeGroup>(AttributeType.AttributeGroup)
       .HasValue<AttributeGroupRef>(AttributeType.AttributeGroupRef);
+
+
+    modelBuilder.Entity<AttributeGroup>()
+      .HasOne(item => item.OwnerNamespace)
+      .WithMany(owner => owner.AttributeGroups)
+      .HasForeignKey(item => item.OwnerNamespaceId)
+      .IsRequired(false);
 
     modelBuilder.Entity<Particle>()
       .HasDiscriminator<ParticleType>("ParticleType")
@@ -243,7 +251,7 @@ public sealed class XmlSchemaDbContext : DbContext
       accessApp.OpenCurrentDatabase(DbFilename, false);
       database = accessApp.CurrentDb();
       SetQuery(database, "TypesList", "SELECT Types.Id, [Prefix] & \":\" & [Types].[Name] AS ShortName\r\nFROM Namespaces INNER JOIN Types ON Namespaces.Id = Types.NamespaceId;");
-      SetQuery(database, "AttributeGroupsList", $"SELECT Attributes.Id, [Prefix] & \":\" & [Attributes].[Name] AS ShortName\r\nFROM Namespaces INNER JOIN Attributes ON Namespaces.Id = Attributes.OwnerNamespaceId\r\nWHERE (((Attributes.Type)={(byte)(AttributeType.AttributeGroup)}));");
+      SetQuery(database, "AttributeGroupsList", "SELECT AttributeGroups.Id, [Prefix] & \":\" & [AttributeGroups].[Name] AS ShortName\r\nFROM Namespaces INNER JOIN AttributeGroups ON Namespaces.Id = AttributeGroups.OwnerNamespaceId;");
       SetQuery(database, "NamespacesList", "SELECT Namespaces.Id, [Prefix] & \": \" & [Url] AS FullName\r\nFROM Namespaces;");
       SetLookup(database, "Types", "NamespaceId", "NamespacesList");
       SetLookup(database, "Types", "BaseTypeId", "TypesList");
@@ -558,13 +566,20 @@ public sealed class XmlSchemaDbContext : DbContext
 
 
     foreach (var ns in Namespaces
-               .Include(ns => ns.GlobalAttributes)
+               .Include(ns => ns.Attributes)
             )
     {
-      ns.AttributesDictionary = ns.GlobalAttributes.ToDictionary(attribute => attribute.Name, attribute => attribute);
+      ns.AttributesDictionary = ns.Attributes.ToDictionary(attribute => attribute.Name, attribute => attribute);
     }
 
-    foreach (var attributeGroup in Attributes.OfType<AttributeGroup>()
+    foreach (var ns in Namespaces
+               .Include(ns => ns.AttributeGroups)
+            )
+    {
+      ns.AttributeGroupsDictionary = ns.AttributeGroups.ToDictionary(attributeGroup => attributeGroup.Name, attributeGroup => attributeGroup);
+    }
+
+    foreach (var attributeGroup in AttributeGroups
                .Include(group => group.Attributes)
              )
     {

@@ -17,8 +17,9 @@ internal class Program
     Console.WriteLine("Found {0} simple types, added {1}, updated {2}", XmlSchemaParser.SimpleTypesTotal, XmlSchemaParser. SimpleTypesAdded, XmlSchemaParser. SimpleTypesUpdated);
     Console.WriteLine("Found {0} complex types, added {1}, updated {2}", XmlSchemaParser.ComplexTypesTotal, XmlSchemaParser. ComplexTypesAdded, XmlSchemaParser.ComplexTypesUpdated);
     Console.WriteLine("Found {0} attributes, added {1}, updated {2}", XmlSchemaParser.AttributesTotal, XmlSchemaParser. AttributesAdded, XmlSchemaParser. AttributesUpdated);
-    Console.WriteLine("Found {0} attribute groups, added {1}", XmlSchemaParser.AttributeGroupsTotal, XmlSchemaParser. AttributeGroupsAdded);
-    Console.WriteLine("Found {0} attribute group refs, added {1}", XmlSchemaParser.SchemaAttributeGroupRefsTotal, XmlSchemaParser. SchemaAttributeGroupRefsAdded);
+    Console.WriteLine("Found {0} attributes refs, added {1}", XmlSchemaParser.AttributeRefsTotal, XmlSchemaParser.AttributeRefsAdded);
+    Console.WriteLine("Found {0} attribute groups, added {1}, updated {2}", XmlSchemaParser.AttributeGroupsTotal, XmlSchemaParser. AttributeGroupsAdded, XmlSchemaParser.AttributeGroupsUpdated);
+    Console.WriteLine("Found {0} attribute group refs, added {1}", XmlSchemaParser.AttributeGroupRefsTotal, XmlSchemaParser. AttributeGroupRefsAdded);
     Console.WriteLine("Found {0} particles, added {1}, updated {2}", XmlSchemaParser.SchemaParticlesTotal, XmlSchemaParser. SchemaParticlesAdded, XmlSchemaParser. SchemaParticlesUpdates);
     Console.WriteLine("Found {0} enum values, added {1}", XmlSchemaParser.SchemaEnumValuesTotal, XmlSchemaParser. SchemaEnumValuesAdded);
     Console.WriteLine("Found {0} patterns, added {1}", XmlSchemaParser.SchemaPatternsTotal, XmlSchemaParser. SchemaPatternsAdded);
