@@ -44,12 +44,23 @@ public class Namespace
   /// <summary>
   /// Collection of attributes defined directly in the namespace.
   /// </summary>
-  public virtual ICollection<AttributeBase> GlobalAttributes { get; set; } = null!;
+  public virtual List<AttributeBase> Attributes { get; set; } = new();
 
   /// <summary>
   /// Dictionary of attributes defined directly in the namespace.
   /// </summary>
   [NotMapped]
-  public Dictionary<string, AttributeBase> AttributesDictionary { get; set; } = null!;
+  public Dictionary<string, AttributeBase> AttributesDictionary { get; set; } = new();
+
+  /// <summary>
+  /// Collection of attributes groups defined in the namespace.
+  /// </summary>
+  public virtual List<AttributeGroup> AttributeGroups { get; set; } = new();
+
+  /// <summary>
+  /// Dictionary of attributes defined directly in the namespace.
+  /// </summary>
+  [NotMapped]
+  public Dictionary<string, AttributeGroup> AttributeGroupsDictionary { get; set; } = new();
 
 }
