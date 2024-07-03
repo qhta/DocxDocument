@@ -1107,7 +1107,7 @@ public class XmlSchemaParser
       schemaAttributeGroupRef = new AttributeGroupRef
       {
         OwnerTypeId = parentGroup.Id,
-        Name = attributeGroup.Name,
+        Name = attributeGroupName,
         RefGroupId = attributeGroup.Id
       };
       parentGroup.Attributes.Add(schemaAttributeGroupRef);
