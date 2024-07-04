@@ -244,6 +244,7 @@ public sealed class XmlSchemaDbContext : DbContext
 
   internal void SetupAccessDatabase()
   {
+    Console.WriteLine("Setting Access database lookups");
     var accessApp = new Access.Application();
     Dao.Database database = null!;
     try

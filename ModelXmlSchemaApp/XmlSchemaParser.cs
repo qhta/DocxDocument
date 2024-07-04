@@ -30,7 +30,6 @@ public class XmlSchemaParser
   public int ComplexTypesTotal, ComplexTypesAdded, ComplexTypesUpdated;
   public int AttributesTotal, AttributesAdded, AttributesUpdated;
   public int AttributeGroupsTotal, AttributeGroupsAdded, AttributeGroupsUpdated;
-  public int AttributeRefsTotal, AttributeRefsAdded;
   public int AttributeGroupRefsTotal, AttributeGroupRefsAdded;
   public int SchemaParticlesTotal, SchemaParticlesAdded, SchemaParticlesUpdates;
   public int SchemaEnumValuesTotal, SchemaEnumValuesAdded;
@@ -256,9 +255,7 @@ public class XmlSchemaParser
     }
     SimpleTypesTotal = dbContext.Types.OfType<SimpleType>().Count();
     ComplexTypesTotal = dbContext.Types.OfType<ComplexType>().Count();
-    AttributesTotal = dbContext.Attributes.OfType<AttributeDef>().Count();
-    AttributeRefsTotal = dbContext.Attributes.OfType<AttributeRef>().Count();
-    AttributeGroupRefsTotal = dbContext.Attributes.OfType<AttributeGroupRef>().Count();
+    AttributesTotal = dbContext.Attributes.Count();
     AttributeGroupsTotal = dbContext.AttributeGroups.Count();
     SchemaParticlesTotal = dbContext.Particles.Count();
     SchemaEnumValuesTotal = dbContext.EnumValues.Count();
@@ -813,18 +810,18 @@ public class XmlSchemaParser
   internal bool ParseXmlSchemaComplexTypeAttribute(ComplexType complexType, XmlSchemaAttribute xmlSchemaAttribute)
   {
     bool updated = false;
-    AttributeBase? attributeDef;
+    AttributeBase? attributeBase;
     if (xmlSchemaAttribute.Name != null)
     {
       var fullName = AttributeBase.GetFullName(complexType.Namespace, xmlSchemaAttribute.Name);
-      if (!complexType.AttributesDictionary.TryGetValue(fullName, out attributeDef))
+      if (!complexType.AttributesDictionary.TryGetValue(fullName, out attributeBase))
       {
-        attributeDef = new AttributeDef
+        attributeBase = new AttributeDef
         {
           OwnerTypeId = complexType.Id,
           Name = xmlSchemaAttribute.Name,
         };
-        dbContext.Attributes.Add(attributeDef);
+        dbContext.Attributes.Add(attributeBase);
         if (SaveChanges() > 0)
           AttributesAdded++;
       }
@@ -832,15 +829,15 @@ public class XmlSchemaParser
     else
     {
       var refAttribute = CheckGlobalAttributeDef(xmlSchemaAttribute.RefName);
-      if (!complexType.AttributesDictionary.TryGetValue(refAttribute.FullName, out attributeDef))
+      if (!complexType.AttributesDictionary.TryGetValue(refAttribute.FullName, out attributeBase))
       {
-        attributeDef = new AttributeRef
+        attributeBase = new AttributeRef
         {
           OwnerTypeId = complexType.Id,
           Name = refAttribute.FullName,
           RefAttributeId = refAttribute.Id
         };
-        complexType.Attributes.Add(attributeDef);
+        complexType.Attributes.Add(attributeBase);
         if (SaveChanges() > 0)
           updated = true;
       }
@@ -1050,28 +1047,25 @@ public class XmlSchemaParser
         throw new InvalidDataException("There is already an attribute group with this name");
       }
     }
-    //else
-    //{
-    //  var ns = dbContext.Namespaces.FirstOrDefault(item => item.Url == xmlSchemaAttribute.RefName.Namespace);
-    //  if (ns == null)
-    //    throw new DataException($"Namespace {xmlSchemaAttribute.RefName.Namespace} not found");
-    //  attributeDef = dbContext.Attributes.FirstOrDefault(item =>
-    //    item.AttributeGroupId == attributeGroup.Id && item.AttributeName == xmlSchemaAttribute.RefName.Name && item.RefNamespaceId == ns.Id);
-    //  if (attributeDef == null)
-    //  {
-    //    WriteLine($"Adding group attribute reference to {ns.Url} {xmlSchemaAttribute.RefName.Name}");
-    //    attributeDef = new SchemaAttribute
-    //    {
-    //      AttributeGroupId = attributeGroup.Id,
-    //      AttributeName = xmlSchemaAttribute.RefName.Name,
-    //      RefNamespaceId = ns.Id
-    //    };
-    //    dbContext.Attributes.Add(attributeDef);
-    //    if (SaveChanges() > 0)
-    //      SchemaAttributeGroupsAdded++;
-    //  }
-    //}
+    else
+    {
+      var refAttribute = CheckGlobalAttributeDef(xmlSchemaAttribute.RefName);
+      if (!attributeGroup.AttributesDictionary.TryGetValue(refAttribute.FullName, out attributeBase))
+      {
+        attributeBase = new AttributeRef
+        {
+          OwnerGroupId = attributeGroup.Id,
+          Name = refAttribute.FullName,
+          RefAttributeId = refAttribute.Id
+        };
+        attributeGroup.Attributes.Add(attributeBase);
+        if (SaveChanges() > 0)
+          updated = true;
+      }
+    }
+
     //ParseXmlSchemaAttributeDetails(attributeDef, xmlSchemaAttribute);
+
     if (!added)
       if (updated)
       {
