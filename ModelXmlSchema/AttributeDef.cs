@@ -32,7 +32,6 @@ public class AttributeDef: AttributeBase
   /// <summary>
   /// Indicates if the default attribute value is fixed.
   /// </summary>
-  [Column(TypeName = "bit")] 
+  [Column(TypeName = "bit")]
   public bool IsFixed { get; set; }
-
 }
