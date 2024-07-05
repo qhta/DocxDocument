@@ -24,25 +24,25 @@ public abstract class Particle
   /// Identifier of the namespace of the schema where the particle is defined.
   /// Applies to global particles.
   /// </summary>
-  public int? SchemaNamespaceId { get; set; }
+  public int? OwnerNamespaceId { get; set; }
 
   /// <summary>
   /// Identifier of the parent group.
   /// Applies to particles that are part of a group.
   /// </summary>
-  public int? GroupId { get; set; }
+  public int? OwnerGroupId { get; set; }
 
   /// <summary>
   /// Identifier of the parent complex type.
   /// Applies to particles that are part of a complex type.
   /// </summary>
-  public int? ComplexTypeId { get; set; }
+  public int? OwnerTypeId { get; set; }
 
   /// <summary>
   /// Identifier of the parent particle.
   /// Applies to particles that are declared inside another particle.
   /// </summary>
-  public int? ParentParticleId { get; set; }
+  public int? OwnerParticleId { get; set; }
 
   /// <summary>
   ///  Order number of the particle (from 1).
@@ -63,25 +63,31 @@ public abstract class Particle
   /// Navigation property for the parent namespace.
   /// Exists only if the particle is a global particle.
   /// </summary>
-  public Namespace? ParentNamespace { get; set; }
+  public Namespace? OwnerNamespace { get; set; }
 
   /// <summary>
   /// Navigation property for the parent complex type.
   /// Exists only if the particle is part of a complex type.
   /// </summary>
-  public ComplexType? ParentComplexType { get; set; }
+  public ComplexType? OwnerType { get; set; }
 
   /// <summary>
   /// Navigation property for the parent group.
   /// Exists only if the particle is part of a group.
   /// </summary>
-  public Group? ParentGroup { get; set; }
+  public ElementGroup? OwnerGroup { get; set; }
 
   /// <summary>
   /// Navigation property for the parent particle.
   /// Exists only if the particle is declared inside another particle.
   /// </summary>
-  public Particle? ParentParticle { get; set; }
+  public ParticleGroup? OwnerParticle { get; set; }
 
-  public Namespace? OwnerNamespace => ParentNamespace ?? ParentComplexType?.Namespace ?? ParentGroup?.ParentNamespace;// ?? ParentParticle?.Namespace;
+  /// <summary>
+  /// Returns the namespace that contains the particle directly or indirectly.
+  /// </summary>
+  [NotMapped]
+  public Namespace? HostingNamespace =>
+    OwnerNamespace ?? OwnerGroup?.OwnerNamespace ?? OwnerType?.OwnerNamespace;
+
 }

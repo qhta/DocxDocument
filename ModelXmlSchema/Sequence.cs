@@ -3,7 +3,7 @@
 /// <summary>
 /// Represents a group of elements that must appear in the specified order.
 /// </summary>
-public class Sequence: GroupBase
+public class Sequence: ParticleGroup
 {
 
 }

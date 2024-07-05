@@ -1,12 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-using Microsoft.EntityFrameworkCore;
-
 namespace ModelXmlSchema;
 
 /// <summary>
-/// Represents an attribute in a schema.
+/// Represents an attribute definition in a schema.
 /// </summary>
 public class AttributeDef: AttributeBase
 {

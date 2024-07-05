@@ -20,13 +20,13 @@ internal class Program
     Console.WriteLine("Found {0} attribute references, added {1}, updated {2}", XmlSchemaParser.AttributeRefsTotal, XmlSchemaParser.AttributeRefsAdded, XmlSchemaParser.AttributeRefsUpdated);
     Console.WriteLine("Found {0} attribute groups, added {1}", XmlSchemaParser.AttributeGroupsTotal, XmlSchemaParser. AttributeGroupsAdded);
     Console.WriteLine("Found {0} attribute group refs, added {1}", XmlSchemaParser.AttributeGroupRefsTotal, XmlSchemaParser. AttributeGroupRefsAdded);
-    Console.WriteLine("Found {0} particles, added {1}, updated {2}", XmlSchemaParser.SchemaParticlesTotal, XmlSchemaParser. SchemaParticlesAdded, XmlSchemaParser. SchemaParticlesUpdates);
-    Console.WriteLine("Found {0} enum values, added {1}", XmlSchemaParser.SchemaEnumValuesTotal, XmlSchemaParser. SchemaEnumValuesAdded);
-    Console.WriteLine("Found {0} patterns, added {1}", XmlSchemaParser.SchemaPatternsTotal, XmlSchemaParser. SchemaPatternsAdded);
-    Console.WriteLine("Found {0} list items, added {1}, updated {2}", XmlSchemaParser.SchemaListItemsTotal, XmlSchemaParser. SchemaListItemsAdded, XmlSchemaParser. SchemaListItemsUpdates);
-    Console.WriteLine("Found {0} union members, added {1}, updated {2}", XmlSchemaParser.SchemaUnionMembersTotal, XmlSchemaParser. SchemaUnionMembersAdded, XmlSchemaParser. SchemaUnionMembersUpdates);
-    Console.WriteLine("Found {0} groups, added {1}", XmlSchemaParser.SchemaGroupsTotal, XmlSchemaParser. SchemaGroupsAdded);
-    Console.WriteLine("Found {0} group refs, added {1}, updated {2}", XmlSchemaParser.SchemaGroupRefsTotal, XmlSchemaParser. SchemaGroupRefsAdded, XmlSchemaParser. SchemaGroupRefsUpdates);
-    Console.WriteLine("Found {0} elements, added {1}, updated {2}", XmlSchemaParser.SchemaElementsTotal, XmlSchemaParser. SchemaElementsAdded, XmlSchemaParser. SchemaElementsUpdates);
+    Console.WriteLine("Found {0} particles, added {1}, updated {2}", XmlSchemaParser.ParticlesTotal, XmlSchemaParser. ParticlesAdded, XmlSchemaParser. ParticlesUpdated);
+    Console.WriteLine("Found {0} enum values, added {1}", XmlSchemaParser.EnumValuesTotal, XmlSchemaParser. EnumValuesAdded);
+    Console.WriteLine("Found {0} patterns, added {1}", XmlSchemaParser.PatternsTotal, XmlSchemaParser. PatternsAdded);
+    Console.WriteLine("Found {0} list items, added {1}, updated {2}", XmlSchemaParser.ListItemsTotal, XmlSchemaParser.ListItemsAdded, XmlSchemaParser.ListItemsUpdates);
+    Console.WriteLine("Found {0} union members, added {1}, updated {2}", XmlSchemaParser.UnionMembersTotal, XmlSchemaParser.UnionMembersAdded, XmlSchemaParser.UnionMembersUpdates);
+    Console.WriteLine("Found {0} groups, added {1}", XmlSchemaParser.GroupsTotal, XmlSchemaParser. ElementGroupsAdded);
+    Console.WriteLine("Found {0} group refs, added {1}, updated {2}", XmlSchemaParser.GroupRefsTotal, XmlSchemaParser.GroupRefsAdded, XmlSchemaParser.GroupRefsUpdated);
+    Console.WriteLine("Found {0} elements, added {1}, updated {2}", XmlSchemaParser.ElementsTotal, XmlSchemaParser.ElementsAdded, XmlSchemaParser.ElementsUpdated);
 }
 }

@@ -3,7 +3,7 @@
 namespace ModelXmlSchema;
 
 /// <summary>
-/// Represents a group of elements that can appear in any order.
+/// Represents a group of particles that can appear in any order.
 /// </summary>
 public class Any: Particle
 {

@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
 namespace ModelXmlSchema;
-[Index(nameof(Name), nameof(NamespaceId), IsUnique = true)]
+[Index(nameof(Name), nameof(OwnerNamespaceId), IsUnique = true)]
 [Index(nameof(Name),IsUnique = false)]
-[Index(nameof(NamespaceId), IsUnique = false)]
+[Index(nameof(OwnerNamespaceId), IsUnique = false)]
 public abstract class TypeDef
 {
   /// <summary>
@@ -29,7 +29,7 @@ public abstract class TypeDef
   /// <summary>
   /// Unique identifier of the namespace where the type is defined.
   /// </summary>
-  public int NamespaceId { get; set; }
+  public int OwnerNamespaceId { get; set; }
 
   /// <summary>
   /// Indicates if the type is a simple type or a complex type.
@@ -46,7 +46,7 @@ public abstract class TypeDef
   /// Navigation property for the namespace where this type is defined.
   /// </summary>
   [Required]
-  public Namespace Namespace { get; set; } = null!;
+  public Namespace OwnerNamespace { get; set; } = null!;
 
   /// <summary>
   /// Navigation property for the base type.
@@ -57,7 +57,7 @@ public abstract class TypeDef
   /// Full name of the type containing the namespace prefix and the name.
   /// </summary>
   [NotMapped]
-  public string FullName => Namespace.Prefix + ":" + Name;
+  public string FullName => OwnerNamespace.Prefix + ":" + Name;
 
   /// <summary>
   /// Returns the full name of the type.

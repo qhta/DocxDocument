@@ -63,4 +63,25 @@ public class Namespace
   [NotMapped]
   public Dictionary<string, AttributeGroup> AttributeGroupsDictionary { get; set; } = new();
 
+  /// <summary>
+  /// Collection of elements defined directly in the namespace.
+  /// </summary>
+  public virtual List<Element> Elements { get; set; } = new();
+
+  /// <summary>
+  /// Dictionary of elements defined directly in the namespace.
+  /// </summary>
+  [NotMapped]
+  public Dictionary<string, Element> ElementsDictionary { get; set; } = new();
+
+  /// <summary>
+  /// Collection of attributes groups defined in the namespace.
+  /// </summary>
+  public virtual List<ElementGroup> ElementGroups { get; set; } = new();
+
+  /// <summary>
+  /// Dictionary of attributes defined directly in the namespace.
+  /// </summary>
+  [NotMapped]
+  public Dictionary<string, ElementGroup> ElementGroupsDictionary { get; set; } = new();
 }

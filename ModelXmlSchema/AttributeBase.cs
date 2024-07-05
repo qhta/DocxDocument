@@ -3,13 +3,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 using Microsoft.EntityFrameworkCore;
 
-using static Azure.Core.HttpHeader;
-
 namespace ModelXmlSchema;
 
 /// <summary>
 /// Abstract attribute class.
-/// Base class for attribute definition, attribute group, attribute reference and attribute group reference classes.
+/// Base class for attribute definition, attribute reference and attribute group reference classes.
 /// </summary>
 [Index(nameof(OwnerTypeId), nameof(Name), IsUnique = true)]
 [Index(nameof(OwnerTypeId), IsUnique = false)]
@@ -78,7 +76,7 @@ public abstract class AttributeBase
   /// Full name of the attribute containing the namespace prefix and the name.
   /// </summary>
   [NotMapped]
-  public string FullName => Name.Contains(':') ? Name : ((OwnerNamespace?.Prefix ?? OwnerType?.Namespace.Prefix ?? OwnerGroup?.OwnerNamespace.Prefix) + ":" + Name);
+  public string FullName => Name.Contains(':') ? Name : ((OwnerNamespace?.Prefix ?? OwnerType?.OwnerNamespace.Prefix ?? OwnerGroup?.OwnerNamespace.Prefix) + ":" + Name);
 
   /// <summary>
   /// Returns the full name of the attribute.
