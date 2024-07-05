@@ -8,7 +8,7 @@ namespace ModelXmlSchema;
 /// <summary>
 /// Represents a group of elements defined in a namespace.
 /// </summary>
- [Index(nameof(OwnerNamespaceId), nameof(Name), IsUnique = true)]
+[Index(nameof(OwnerNamespaceId), nameof(Name), IsUnique = true)]
 [Index(nameof(OwnerNamespaceId), IsUnique = false)]
 [Index(nameof(Name), IsUnique = false)]
 public class ElementGroup

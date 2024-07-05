@@ -187,11 +187,11 @@ public sealed class XmlSchemaDbContext : DbContext
       .HasValue<Choice>(ParticleType.Choice)
       .HasValue<Sequence>(ParticleType.Sequence);
 
-    modelBuilder.Entity<Particle>()
-      .HasOne(p => p.OwnerType)
-      .WithOne(ct => ct.Particle)
-      .HasForeignKey<Particle>(p => p.OwnerTypeId)
-      .IsRequired(false);
+    //modelBuilder.Entity<Particle>()
+    //  .HasOne(p => p.OwnerType)
+    //  .WithOne(ct => ct.Particle)
+    //  .HasForeignKey<Particle>(p => p.OwnerTypeId)
+    //  .IsRequired(false);
 
     modelBuilder.Entity<ComplexType>()
       .HasOne(p => p.Particle)
@@ -220,6 +220,11 @@ public sealed class XmlSchemaDbContext : DbContext
       .HasOne(g => g.OwnerNamespace)
       .WithMany(g => g.ElementGroups)
       .HasForeignKey(p => p.OwnerNamespaceId);
+
+    modelBuilder.Entity<Element>()
+      .HasOne(g => g.OwnerNamespace)
+      .WithMany(g => g.Elements)
+      .HasForeignKey(p => p.OwnerNamespaceId);
   }
 
   internal void SetupAccessDatabase()
@@ -234,7 +239,7 @@ public sealed class XmlSchemaDbContext : DbContext
       SetQuery(database, "AttributeGroupsList", "SELECT AttributeGroups.Id, [Prefix] & \":\" & [AttributeGroups].[Name] AS FullName\r\nFROM Namespaces INNER JOIN AttributeGroups ON Namespaces.Id = AttributeGroups.OwnerNamespaceId;");
       SetQuery(database, "NamespacesList", "SELECT Namespaces.Id, [Prefix] & \": \" & [Url] AS FullName\r\nFROM Namespaces;");
       SetQuery(database, "ElementGroupsList", "SELECT ElementGroups.Id, [Namespaces].[Prefix] & \":\" & [ElementGroups].[Name] AS FullName\r\nFROM Namespaces INNER JOIN ElementGroups ON Namespaces.Id = ElementGroups.OwnerNamespaceId;");
-      
+
       //SetLookup(database, "Types", "OwnerNamespaceId", "NamespacesList");
       //SetLookup(database, "Types", "BaseTypeId", "TypesList");
       //SetLookup(database, "EnumValues", "OwnerTypeId", "TypesList");
@@ -243,20 +248,20 @@ public sealed class XmlSchemaDbContext : DbContext
       //SetLookup(database, "UnionMembers", "MemberTypeId", "TypesList");
       //SetLookup(database, "ListItems", "OwnerTypeId", "TypesList");
       //SetLookup(database, "ListItems", "MemberTypeId", "TypesList");
-      
+
       CreateEnumLookupTable(database, "ContentTypes", typeof(ContentType));
       SetLookup(database, "Types", "ContentType", "ContentTypes");
 
       //SetLookup(database, "Attributes", "OwnerTypeId", "TypesList");
       //SetLookup(database, "Attributes", "OwnerGroupId", "AttributeGroupsList");
       //SetLookup(database, "Attributes", "OwnerNamespaceId", "NamespacesList");
-      
+
       CreateEnumLookupTable(database, "AttributeTypes", typeof(AttributeType));
       SetLookup(database, "Attributes", "Type", "AttributeTypes");
 
       CreateEnumLookupTable(database, "ParticleTypes", typeof(ParticleType));
       SetLookup(database, "Particles", "ParticleType", "ParticleTypes");
-      
+
       //SetLookup(database, "Particles", "OwnerNamespaceId", "NamespacesList");
       //SetLookup(database, "Particles", "OwnerTypeId", "TypesList");
       //SetLookup(database, "Particles", "OwnerGroupId", "ElementGroupsList");
@@ -524,7 +529,9 @@ public sealed class XmlSchemaDbContext : DbContext
       }
     };
 
-    foreach (var simpleType in Types.OfType<SimpleType>().Include(type => type.UnionMembers))
+    foreach (var simpleType in Types.OfType<SimpleType>()
+               .Include(type => type.UnionMembers)
+               .ThenInclude(member => member.MemberType))
     {
       simpleType.UnionMembersDictionary = simpleType.UnionMembers
         .ToDictionary(unionMember => unionMember.MemberType.FullName);
@@ -535,12 +542,22 @@ public sealed class XmlSchemaDbContext : DbContext
          {
            foreach (UnionMember unionMember in args.NewItems!)
            {
-             unionMember.OwnerType.UnionMembersDictionary.TryAdd(unionMember.MemberType.FullName, unionMember);
+             try
+             {
+               unionMember.OwnerType.UnionMembersDictionary.TryAdd(unionMember.MemberType.FullName, unionMember);
+             }
+             catch (Exception e)
+             {
+               Console.WriteLine(e);
+               throw;
+             }
            }
          }
        };
 
-    foreach (var simpleType in Types.OfType<SimpleType>().Include(type => type.ListItems))
+    foreach (var simpleType in Types.OfType<SimpleType>()
+               .Include(type => type.ListItems)
+               .ThenInclude(item => item.MemberType))
     {
       simpleType.ListItemsDictionary = simpleType.ListItems
         .ToDictionary(ListItem => ListItem.MemberType.FullName);
@@ -617,6 +634,7 @@ public sealed class XmlSchemaDbContext : DbContext
     foreach (var ns in Namespaces
                .Include(ns => ns.Elements))
     {
+      Debug.WriteLine($"Loading namespace: {ns.Url}");
       ns.ElementsDictionary = ns.Elements.ToDictionary(element => element.FullName, element => element);
     }
     Particles.Local.CollectionChanged += (sender, args) =>
@@ -632,7 +650,7 @@ public sealed class XmlSchemaDbContext : DbContext
     };
 
     foreach (var ns in Namespaces
-           .Include(ns => ns.ElementGroups))
+           .Include(ns => ns.ElementGroups).ThenInclude(eg => eg.Particle))
     {
       ns.ElementGroupsDictionary = ns.ElementGroups.ToDictionary(group => group.FullName, group => group);
     }
@@ -647,5 +665,77 @@ public sealed class XmlSchemaDbContext : DbContext
       }
     };
 
+    foreach (var ns in Namespaces
+               .Include(ns => ns.Elements))
+    {
+      ns.ElementsDictionary = ns.Elements.ToDictionary(e => e.FullName, e => e);
+    }
+    Particles.Local.CollectionChanged += (sender, args) =>
+    {
+      if (args.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add)
+      {
+        foreach (Element element in args.NewItems!.OfType<Element>())
+        {
+          element.OwnerNamespace?.ElementsDictionary.TryAdd(element.FullName, element);
+        }
+      }
+    };
+
+    foreach (var complexType in Types.OfType<ComplexType>().Include(type => type.Particle))
+    {
+    };
+
+    foreach (var particle in Particles.OfType<Element>())
+    {
+      if (particle.RefElementId != null && particle.RefElement == null)
+      {
+        particle.RefElement = Particles.OfType<Element>().First(e => e.Id == particle.RefElementId);
+      }
+      if (particle.RefTypeId != null && particle.RefType == null)
+      {
+        particle.RefType = Types.OfType<ComplexType>().FirstOrDefault(type => type.Id == particle.RefTypeId);
+      }
+    }
+
+    foreach (var particle in Particles)
+    {
+      if (particle.OwnerTypeId != null)
+      {
+        particle.OwnerType ??= Types.OfType<ComplexType>().FirstOrDefault(type => type.Id == particle.OwnerTypeId);
+        if (particle.OwnerType != null)
+        {
+          particle.OwnerType.ParticleId = particle.Id;
+          particle.OwnerType.Particle = particle;
+        }
+      }
+      if (particle.OwnerGroupId != null)
+      {
+        particle.OwnerGroup ??= ElementGroups.FirstOrDefault(type => type.Id == particle.OwnerGroupId);
+        if (particle.OwnerGroup != null)
+        {
+          particle.OwnerGroup.ParticleId = particle.Id;
+          particle.OwnerGroup.Particle = particle as ParticleGroup;
+        }
+      }
+      if (particle.OwnerParticleId != null)
+      {
+        particle.OwnerParticle ??= Particles.FirstOrDefault(type => type.Id == particle.OwnerParticleId) as ParticleGroup;
+        if (particle.OwnerParticle != null)
+        {
+          particle.OwnerParticle.ItemsDictionary.TryAdd((int)particle.OrdNum!, particle);
+        }
+      }
+      if (particle.OwnerNamespaceId != null)
+      {
+        particle.OwnerNamespace ??= Namespaces.FirstOrDefault(type => type.Id == particle.OwnerNamespaceId);
+        if (particle.OwnerNamespace != null && particle is Element element)
+        {
+          particle.OwnerNamespace.ElementsDictionary.TryAdd(element.FullName, element);
+        }
+      }
+
+    }
+
+    SaveChanges();
   }
 }

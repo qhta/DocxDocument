@@ -1,11 +1,17 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
+using Microsoft.EntityFrameworkCore;
+
 namespace ModelXmlSchema;
 
 /// <summary>
 /// Abstract class that represents a particle in a schema.
 /// </summary>
+[Index(nameof(OwnerNamespaceId), IsUnique = false)]
+[Index(nameof(OwnerGroupId), IsUnique = false)]
+[Index(nameof(OwnerTypeId), IsUnique = false)]
+[Index(nameof(OwnerParticleId), IsUnique = false)]
 public abstract class Particle
 {
 

@@ -1,11 +1,17 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
 namespace ModelXmlSchema;
 
 /// <summary>
 /// Represents an element in a schema.
 /// </summary>
+[Index(nameof(Name), Name = "IX_Element_Name", IsUnique = false)]
+[Index(nameof(OwnerNamespaceId),nameof(Name), IsUnique = true)]
+[Index(nameof(OwnerGroupId), nameof(Name), IsUnique = true)]
+[Index(nameof(OwnerTypeId), nameof(Name), IsUnique = true)]
+[Index(nameof(OwnerParticleId), nameof(Name), IsUnique = true)]
 public class Element: Particle
 {
   /// <summary>

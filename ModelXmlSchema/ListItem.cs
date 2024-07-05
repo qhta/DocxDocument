@@ -36,5 +36,5 @@ public class ListItem
   /// <summary>
   /// Navigation property for the member type.
   /// </summary>
-  public SimpleType MemberType { get; set; } = null!;
+  public TypeDef MemberType { get; set; } = null!;
 }
