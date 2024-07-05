@@ -10,7 +10,11 @@ internal class Program
     var XmlSchemaParser = new XmlSchemaParser();
     XmlSchemaParser.ParseSchemaFiles(@"D:\VS\Docs\OpenXML\Schemas", @"D:\VS\Docs\OpenXML\XmlSchema.accdb");
     var t2 = DateTime.Now;
-    Console.WriteLine("Done in {0} seconds", (int)(t2-t1).TotalSeconds);
+    var dt = t2 - t1;
+    if (dt.TotalMinutes >= 1)
+      Console.WriteLine("Done in {0} min {1} sec", (int)dt.TotalMinutes, dt.Seconds);
+    else
+      Console.WriteLine("Done in {0} seconds", (int)dt.TotalSeconds);
     Console.WriteLine("Found {0} files, added {1}, updated {2}", XmlSchemaParser.SchemaFilesTotal, XmlSchemaParser.SchemaFilesAdded, XmlSchemaParser.SchemaFilesUpdated);
     Console.WriteLine("Found {0} namespaces, added {1}, updated {2}", XmlSchemaParser.NamespacesTotal, XmlSchemaParser.NamespacesAdded, XmlSchemaParser.NamespacesUpdates);
     Console.WriteLine("Found {0} used namespaces, added {1}", XmlSchemaParser.UsedNamespacesTotal, XmlSchemaParser.UsedNamespacesAdded);
