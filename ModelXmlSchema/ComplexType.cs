@@ -43,5 +43,5 @@ public class ComplexType: TypeDef
   /// <summary>
   /// Navigation property to the particle that defines the content model of the complex type.
   /// </summary>
-  public virtual Particle? Particle { get; set; }
+  public Particle? Particle { get; set; }
 }
