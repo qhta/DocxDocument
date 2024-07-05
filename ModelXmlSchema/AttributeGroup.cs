@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 namespace ModelXmlSchema;
 
 /// <summary>
-/// Represents a group of attributes which can be used in many places.
+/// Represents a group of attributes defined in a namespace.
 /// </summary>
 [Index(nameof(OwnerNamespaceId), nameof(Name), IsUnique = true)]
 [Index(nameof(OwnerNamespaceId), IsUnique = false)]

@@ -1,16 +1,12 @@
 ﻿using System.Diagnostics;
+using System.Runtime.InteropServices;
 
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
-using EntityFrameworkCore.Jet;
-using System.Xml.Linq;
-using System.IO.Compression;
-using System.Runtime.InteropServices;
-using Microsoft.Office.Interop.Access.Dao;
 using Microsoft.Office.Interop.Access;
-using Dao = Microsoft.Office.Interop.Access.Dao;
+using Microsoft.Office.Interop.Access.Dao;
+
 using Access = Microsoft.Office.Interop.Access;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
+using Dao = Microsoft.Office.Interop.Access.Dao;
 
 namespace ModelXmlSchema;
 
@@ -38,7 +34,7 @@ public sealed class XmlSchemaDbContext : DbContext
 
   public DbSet<Particle> Particles { get; set; }
 
-  public DbSet<Group> Groups { get; set; }
+  public DbSet<ElementGroup> ElementGroups { get; set; }
 
   public Elements Elements
   {
@@ -58,19 +54,19 @@ public sealed class XmlSchemaDbContext : DbContext
 
   public Dictionary<string, Namespace> NamespacesDictionary { get; set; } = null!;
 
-  public GroupRefs SchemaGroupRefs
+  public ElementGroupRefs SchemaGroupRefs
   {
     get
     {
       if (_SchemaGroupRefs == null)
       {
-        _SchemaGroupRefs = new GroupRefs(Particles);
+        _SchemaGroupRefs = new ElementGroupRefs(Particles);
       }
 
       return _SchemaGroupRefs;
     }
   }
-  private GroupRefs? _SchemaGroupRefs;
+  private ElementGroupRefs? _SchemaGroupRefs;
 
   public string DbFilename { get; }
 
@@ -117,9 +113,9 @@ public sealed class XmlSchemaDbContext : DbContext
       .HasValue<ComplexType>(true);
 
     modelBuilder.Entity<TypeDef>()
-      .HasOne(item => item.Namespace)
+      .HasOne(item => item.OwnerNamespace)
       .WithMany(owner => owner.Types)
-      .HasForeignKey(item => item.NamespaceId);
+      .HasForeignKey(item => item.OwnerNamespaceId);
 
     modelBuilder.Entity<TypeDef>()
       .HasOne(e => e.BaseType)
@@ -186,90 +182,86 @@ public sealed class XmlSchemaDbContext : DbContext
       .HasDiscriminator<ParticleType>("ParticleType")
       .HasValue<Any>(ParticleType.Any)
       .HasValue<Element>(ParticleType.Element)
-      .HasValue<GroupRef>(ParticleType.GroupRef)
+      .HasValue<ElementGroupRef>(ParticleType.GroupRef)
       .HasValue<All>(ParticleType.All)
       .HasValue<Choice>(ParticleType.Choice)
       .HasValue<Sequence>(ParticleType.Sequence);
 
-    modelBuilder.Entity<Element>()
-      .Property(e => e.Name)
-      .HasColumnName("Name");
+    modelBuilder.Entity<Particle>()
+      .HasOne(p => p.OwnerType)
+      .WithOne(ct => ct.Particle)
+      .HasForeignKey<Particle>(p => p.OwnerTypeId)
+      .IsRequired(false);
 
-    modelBuilder.Entity<GroupRef>()
-      .Property(e => e.RefName)
-      .HasColumnName("Name");
-
-    modelBuilder.Entity<Element>()
-      .Property(e => e.RefNamespaceId)
-      .HasColumnName("RefNamespaceId");
-
-    modelBuilder.Entity<GroupRef>()
-      .Property(e => e.RefNamespaceId)
-      .HasColumnName("RefNamespaceId");
+    modelBuilder.Entity<ComplexType>()
+      .HasOne(p => p.Particle)
+      .WithOne(ct => ct.OwnerType)
+      .HasForeignKey<ComplexType>(p => p.ParticleId)
+      .IsRequired(false);
 
     modelBuilder.Entity<Particle>()
-      .HasOne(p => p.ParentComplexType)
+      .HasOne(p => p.OwnerParticle)
+      .WithMany(g => g.Items)
+      .HasForeignKey(p => p.OwnerParticleId)
+      .IsRequired(false);
+
+    modelBuilder.Entity<ElementGroup>()
+      .HasOne(p => p.Particle)
+      .WithOne(ct => ct.OwnerGroup)
+      .HasForeignKey<ElementGroup>(p => p.ParticleId)
+      .IsRequired(false);
+
+    modelBuilder.Entity<Element>()
+      .HasOne(e => e.RefElement)
       .WithMany()
-      .HasForeignKey(p => p.ComplexTypeId)
-      .OnDelete(DeleteBehavior.Restrict);
+      .HasForeignKey(e => e.RefElementId);
 
-    modelBuilder.Entity<Particle>()
-        .HasOne(p => p.ParentGroup)
-        .WithMany() // Assuming SchemaGroup has a collection of Particles
-        .HasForeignKey(p => p.GroupId)
-        .OnDelete(DeleteBehavior.Restrict);
-
-    //modelBuilder.Entity<SchemaGroup>()
-    //  .Navigation(e => e.ParentNamespace)
-    //  .UsePropertyAccessMode(PropertyAccessMode.Property);
-
-    //modelBuilder.Entity<SchemaParticle>()
-    //  .Navigation(e => e.ParentNamespace)
-    //  .UsePropertyAccessMode(PropertyAccessMode.Property);
-
-    //modelBuilder.Entity<SchemaParticle>()
-    //  .Navigation(e => e.ParentComplexType)
-    //  .UsePropertyAccessMode(PropertyAccessMode.Property);
-
-    //modelBuilder.Entity<SchemaParticle>()
-    //  .Navigation(e => e.ParentGroup)
-    //  .UsePropertyAccessMode(PropertyAccessMode.Property);
-
-
-    //modelBuilder.Entity<SchemaParticle>()
-    //  .Navigation(e => e.ParentParticle)
-    //  .UsePropertyAccessMode(PropertyAccessMode.Property);
-
+    modelBuilder.Entity<ElementGroup>()
+      .HasOne(g => g.OwnerNamespace)
+      .WithMany(g => g.ElementGroups)
+      .HasForeignKey(p => p.OwnerNamespaceId);
   }
 
   internal void SetupAccessDatabase()
   {
-    Console.WriteLine("Setting Access database lookups");
     var accessApp = new Access.Application();
     Dao.Database database = null!;
     try
     {
       accessApp.OpenCurrentDatabase(DbFilename, false);
       database = accessApp.CurrentDb();
-      SetQuery(database, "TypesList", "SELECT Types.Id, [Prefix] & \":\" & [Types].[Name] AS ShortName\r\nFROM Namespaces INNER JOIN Types ON Namespaces.Id = Types.NamespaceId;");
-      SetQuery(database, "AttributeGroupsList", "SELECT AttributeGroups.Id, [Prefix] & \":\" & [AttributeGroups].[Name] AS ShortName\r\nFROM Namespaces INNER JOIN AttributeGroups ON Namespaces.Id = AttributeGroups.OwnerNamespaceId;");
+      SetQuery(database, "TypesList", "SELECT Types.Id, [Prefix] & \":\" & [Types].[Name] AS FullName\r\nFROM Namespaces INNER JOIN Types ON Namespaces.Id = Types.OwnerNamespaceId;");
+      SetQuery(database, "AttributeGroupsList", "SELECT AttributeGroups.Id, [Prefix] & \":\" & [AttributeGroups].[Name] AS FullName\r\nFROM Namespaces INNER JOIN AttributeGroups ON Namespaces.Id = AttributeGroups.OwnerNamespaceId;");
       SetQuery(database, "NamespacesList", "SELECT Namespaces.Id, [Prefix] & \": \" & [Url] AS FullName\r\nFROM Namespaces;");
-      SetLookup(database, "Types", "NamespaceId", "NamespacesList");
-      SetLookup(database, "Types", "BaseTypeId", "TypesList");
-      SetLookup(database, "EnumValues", "OwnerTypeId", "TypesList");
-      SetLookup(database, "Patterns", "OwnerTypeId", "TypesList");
-      SetLookup(database, "UnionMembers", "OwnerTypeId", "TypesList");
-      SetLookup(database, "UnionMembers", "MemberTypeId", "TypesList");
-      SetLookup(database, "ListItems", "OwnerTypeId", "TypesList");
-      SetLookup(database, "ListItems", "MemberTypeId", "TypesList");
+      SetQuery(database, "ElementGroupsList", "SELECT ElementGroups.Id, [Namespaces].[Prefix] & \":\" & [ElementGroups].[Name] AS FullName\r\nFROM Namespaces INNER JOIN ElementGroups ON Namespaces.Id = ElementGroups.OwnerNamespaceId;");
+      
+      //SetLookup(database, "Types", "OwnerNamespaceId", "NamespacesList");
+      //SetLookup(database, "Types", "BaseTypeId", "TypesList");
+      //SetLookup(database, "EnumValues", "OwnerTypeId", "TypesList");
+      //SetLookup(database, "Patterns", "OwnerTypeId", "TypesList");
+      //SetLookup(database, "UnionMembers", "OwnerTypeId", "TypesList");
+      //SetLookup(database, "UnionMembers", "MemberTypeId", "TypesList");
+      //SetLookup(database, "ListItems", "OwnerTypeId", "TypesList");
+      //SetLookup(database, "ListItems", "MemberTypeId", "TypesList");
+      
       CreateEnumLookupTable(database, "ContentTypes", typeof(ContentType));
       SetLookup(database, "Types", "ContentType", "ContentTypes");
 
-      SetLookup(database, "Attributes", "OwnerTypeId", "TypesList");
-      SetLookup(database, "Attributes", "OwnerGroupId", "AttributeGroupsList");
-      SetLookup(database, "Attributes", "OwnerNamespaceId", "NamespacesList");
+      //SetLookup(database, "Attributes", "OwnerTypeId", "TypesList");
+      //SetLookup(database, "Attributes", "OwnerGroupId", "AttributeGroupsList");
+      //SetLookup(database, "Attributes", "OwnerNamespaceId", "NamespacesList");
+      
       CreateEnumLookupTable(database, "AttributeTypes", typeof(AttributeType));
       SetLookup(database, "Attributes", "Type", "AttributeTypes");
+
+      CreateEnumLookupTable(database, "ParticleTypes", typeof(ParticleType));
+      SetLookup(database, "Particles", "ParticleType", "ParticleTypes");
+      
+      //SetLookup(database, "Particles", "OwnerNamespaceId", "NamespacesList");
+      //SetLookup(database, "Particles", "OwnerTypeId", "TypesList");
+      //SetLookup(database, "Particles", "OwnerGroupId", "ElementGroupsList");
+
+      SetLookup(database, "ElementGroups", "OwnerNamespaceId", "NamespacesList");
     }
     catch (Exception ex)
     {
@@ -497,7 +489,7 @@ public sealed class XmlSchemaDbContext : DbContext
       {
         foreach (TypeDef type in args.NewItems!)
         {
-          NamespacesDictionary[type.Namespace.Url].TypesDictionary.TryAdd(type.Name, type);
+          NamespacesDictionary[type.OwnerNamespace.Url].TypesDictionary.TryAdd(type.Name, type);
         }
       }
     };
@@ -577,6 +569,16 @@ public sealed class XmlSchemaDbContext : DbContext
     {
       ns.AttributeGroupsDictionary = ns.AttributeGroups.ToDictionary(attributeGroup => attributeGroup.FullName, attributeGroup => attributeGroup);
     }
+    AttributeGroups.Local.CollectionChanged += (sender, args) =>
+    {
+      if (args.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add)
+      {
+        foreach (AttributeGroup group in args.NewItems!)
+        {
+          group.OwnerNamespace.AttributeGroupsDictionary.TryAdd(group.FullName, group);
+        }
+      }
+    };
 
     foreach (var attributeGroup in AttributeGroups
                .Include(group => group.Attributes))
@@ -608,6 +610,39 @@ public sealed class XmlSchemaDbContext : DbContext
           {
             attribute.OwnerNamespace.AttributesDictionary.TryAdd(attribute.FullName, attribute);
           }
+        }
+      }
+    };
+
+    foreach (var ns in Namespaces
+               .Include(ns => ns.Elements))
+    {
+      ns.ElementsDictionary = ns.Elements.ToDictionary(element => element.FullName, element => element);
+    }
+    Particles.Local.CollectionChanged += (sender, args) =>
+    {
+      if (args.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add)
+      {
+        foreach (Element element in args.NewItems!.OfType<Element>())
+        {
+          if (element.OwnerNamespace != null)
+            element.OwnerNamespace.ElementsDictionary.TryAdd(element.FullName, element);
+        }
+      }
+    };
+
+    foreach (var ns in Namespaces
+           .Include(ns => ns.ElementGroups))
+    {
+      ns.ElementGroupsDictionary = ns.ElementGroups.ToDictionary(group => group.FullName, group => group);
+    }
+    ElementGroups.Local.CollectionChanged += (sender, args) =>
+    {
+      if (args.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add)
+      {
+        foreach (ElementGroup group in args.NewItems!)
+        {
+          group.OwnerNamespace.ElementGroupsDictionary.TryAdd(group.FullName, group);
         }
       }
     };

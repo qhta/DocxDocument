@@ -20,6 +20,11 @@ public class ComplexType: TypeDef
   public bool HasAttributes { get; set; }
 
   /// <summary>
+  /// Identifier of the particle that defines the content model of the complex type.
+  /// </summary>
+  public int? ParticleId { get; set; }
+
+  /// <summary>
   /// Attributes defined in the complex type.
   /// </summary>
   public virtual ICollection<AttributeBase> Attributes { get; set; } = new List<AttributeBase>();
@@ -34,4 +39,9 @@ public class ComplexType: TypeDef
     set => _AttributesDictionary = value;
   }
   private Dictionary<string, AttributeBase>? _AttributesDictionary;
+
+  /// <summary>
+  /// Navigation property to the particle that defines the content model of the complex type.
+  /// </summary>
+  public virtual Particle? Particle { get; set; }
 }
