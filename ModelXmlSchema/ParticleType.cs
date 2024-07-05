@@ -16,7 +16,7 @@ public enum ParticleType : byte
   Element,
 
   /// <summary>
-  /// Represents a group of elements.
+  /// Represents a reference to a group of elements.
   /// </summary>
   GroupRef,
 

@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ModelXmlSchema;
 
@@ -11,24 +12,45 @@ public class Element: Particle
   /// Identifier of the namespace that this element refers to.
   /// Applies to the element which is a reference to another element.
   /// </summary>
-  public int? RefNamespaceId { get; set; }
+  public int? RefElementId { get; set; }
 
   /// <summary>
   /// Name of this element or the referred element.
   /// </summary>
   [MaxLength(255)]
+  [Column("Name")]
   public string? Name { get; set; }
 
   /// <summary>
-  /// Identifier of the namespace that the type of the element refers to.
-  /// Omitted if the type is defined in the same namespace as the element.
+  /// Identifier of the type of the element refers to.
+  /// Applies to the element which is a reference to another element.
   /// </summary>
-  public int? TypeNamespaceId { get; set; }
+  public int? RefTypeId { get; set; }
 
   /// <summary>
-  /// Name of the type of this element.
+  /// Navigation property to the element that this element refers to.
   /// </summary>
-  [MaxLength(255)]
-  public string? TypeName { get; set; }
+  public Element? RefElement { get; set; }
 
+  /// <summary>
+  /// Navigation property to the type of the element refers to.
+  /// </summary>
+  public ComplexType? RefType { get; set; }
+
+  /// <summary>
+  /// Full name of the element containing the namespace prefix and the name.
+  /// </summary>
+  [NotMapped]
+  public string FullName => (HostingNamespace?.Prefix ?? "") + ":" + Name;
+
+  /// <summary>
+  /// Returns the full name of the attribute.
+  /// </summary>
+  /// <param name="ns">Namespace that contains this attribute directly or indirectly</param>
+  /// <param name="name">Name of the attribute</param>
+  /// <returns></returns>
+  public static string GetFullName(Namespace ns, string name)
+  {
+    return ns.Prefix + ":" + name;
+  }
 }

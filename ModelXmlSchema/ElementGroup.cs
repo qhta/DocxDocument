@@ -6,49 +6,35 @@ using Microsoft.EntityFrameworkCore;
 namespace ModelXmlSchema;
 
 /// <summary>
-/// Represents a group of attributes defined in a namespace.
+/// Represents a group of elements defined in a namespace.
 /// </summary>
-[Index(nameof(OwnerNamespaceId), nameof(Name), IsUnique = true)]
+ [Index(nameof(OwnerNamespaceId), nameof(Name), IsUnique = true)]
 [Index(nameof(OwnerNamespaceId), IsUnique = false)]
 [Index(nameof(Name), IsUnique = false)]
-public class AttributeGroup
+public class ElementGroup
 {
-  /// <summary>
-  /// Unique identifier for the attribute.
-  /// </summary>
-  [Key]
-  public int Id { get; set; }
 
   /// <summary>
-  /// Identifier of the namespace of the global attribute.
+  /// Unique identifier of the entity.
   /// </summary>
-  [Required]
+  [Key] public int Id { get; set; }
+
+  /// <summary>
+  /// Unique identifier of the namespace where this group is defined.
+  /// </summary>
   public int OwnerNamespaceId { get; set; }
 
   /// <summary>
-  /// Name of the attribute.
+  /// Name of the group.
   /// </summary>
   [MaxLength(255)]
   [Required]
   public required string Name { get; set; }
 
   /// <summary>
-  /// Attributes defined in the attribute group.
+  /// Identifier of the particle that defines the content model of the element group.
   /// </summary>
-  public virtual ICollection<AttributeBase> Attributes { get; set; } = new List<AttributeBase>();
-
-  /// <summary>
-  /// Dictionary of attribute definitions of the attribute group.
-  /// </summary>
-  [NotMapped]
-  public Dictionary<string, AttributeBase> AttributesDictionary
-  {
-    get => _AttributesDictionary ??= new Dictionary<string, AttributeBase>();
-    set => _AttributesDictionary = value;
-  }
-
-  private Dictionary<string, AttributeBase>? _AttributesDictionary;
-
+  public int? ParticleId { get; set; }
 
   /// <summary>
   /// Navigation property to the namespace that directly contains the attribute.
@@ -71,4 +57,10 @@ public class AttributeGroup
   {
     return ns.Prefix + ":" + name;
   }
+
+  /// <summary>
+  /// Navigation property to the particle that defines the content model of the element group.
+  /// </summary>
+  public ParticleGroup? Particle { get; set; }
+
 }

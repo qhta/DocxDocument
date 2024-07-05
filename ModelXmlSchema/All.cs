@@ -1,10 +1,10 @@
 ﻿namespace ModelXmlSchema;
 
 /// <summary>
-/// Represents a group of elements that can appear in any order.
-/// Each element can appear zero or one time.
+/// Represents a group of particles that can appear in any order.
+/// Each particle can appear zero or one time.
 /// </summary>
-public class All: GroupBase
+public class All: ParticleGroup
 {
 
 }
