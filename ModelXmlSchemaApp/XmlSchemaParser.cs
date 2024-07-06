@@ -30,8 +30,8 @@ public class XmlSchemaParser
   public int PatternsTotal, PatternsAdded;
   public int ListItemsTotal, ListItemsAdded, ListItemsUpdates;
   public int UnionMembersTotal, UnionMembersAdded, UnionMembersUpdates;
-  public int GroupsTotal, ElementGroupsAdded;
-  public int GroupRefsTotal, GroupRefsAdded, GroupRefsUpdated;
+  public int ElementGroupsTotal, ElementGroupsAdded;
+  public int ElementGroupRefsTotal, ElementGroupRefsAdded, ElementGroupRefsUpdated;
   public int ElementsTotal, ElementsAdded, ElementsUpdated;
 
   public void ParseSchemaFiles(string sourceXsdPath, string dbFilename)
@@ -264,10 +264,10 @@ public class XmlSchemaParser
     PatternsTotal = dbContext.Patterns.Count();
     ListItemsTotal = dbContext.ListItems.Count();
     UnionMembersTotal = dbContext.UnionMembers.Count();
-    GroupsTotal = dbContext.ElementGroups.Count();
-    GroupRefsTotal = dbContext.Particles.OfType<ElementGroupRef>().Count();
+    ElementGroupsTotal = dbContext.ElementGroups.Count();
+    ElementGroupRefsTotal = dbContext.Particles.OfType<ElementGroupRef>().Count();
     ElementsTotal = dbContext.Particles.OfType<Element>().Count();
-    ParticlesTotal = dbContext.Particles.Count() - GroupRefsTotal - ElementsTotal;
+    ParticlesTotal = dbContext.Particles.Count() - ElementGroupRefsTotal - ElementsTotal;
   }
 
   internal void ParseXmlSchema(XmlSchema schema)
@@ -509,7 +509,7 @@ public class XmlSchemaParser
   internal bool ParseXmlSchemaSimpleTypePatternRestriction(SimpleType simpleType, XmlSchemaSimpleTypeRestriction restriction)
   {
     bool added = false;
-    simpleType.HasPattern = true;
+    simpleType.HasPatterns = true;
     foreach (var facet in restriction.Facets)
     {
       var patternFacet = (XmlSchemaPatternFacet)facet;
@@ -839,7 +839,7 @@ public class XmlSchemaParser
           OwnerTypeId = complexType.Id,
           Name = xmlSchemaAttribute.Name,
         };
-        dbContext.Attributes.Add(attributeBase);
+        complexType.HasAttributes = true; dbContext.Attributes.Add(attributeBase);
         if (SaveChanges() > 0)
         {
           AttributeDefsAdded++;
@@ -858,6 +858,7 @@ public class XmlSchemaParser
           Name = refAttribute.FullName,
           RefAttributeId = refAttribute.Id
         };
+        complexType.HasAttributes = true;
         complexType.Attributes.Add(attributeBase);
         if (SaveChanges() > 0)
         {
@@ -1213,7 +1214,7 @@ public class XmlSchemaParser
       dbContext.Particles.Add(any);
       if (SaveChanges() > 0)
       {
-        GroupRefsAdded++;
+        ElementGroupRefsAdded++;
         added = true;
       }
     }
@@ -1230,7 +1231,7 @@ public class XmlSchemaParser
     }
     if (ParseXmlSchemaAnyDetails(any, xmlSchemaAny))
       if (!added)
-        GroupRefsUpdated++;
+        ElementGroupRefsUpdated++;
     return any;
   }
 
@@ -1284,14 +1285,13 @@ public class XmlSchemaParser
       {
         OwnerParticleId = particleGroup.Id,
         OrdNum = ordNum,
-        Name = refGroup.FullName,
         RefGroupId = refGroup.Id
       };
       particleGroup.Items.Add(elementGroupRef);
       dbContext.Particles.Add(elementGroupRef);
       if (SaveChanges() > 0)
       {
-        GroupRefsAdded++;
+        ElementGroupRefsAdded++;
         added = true;
       }
     }
@@ -1308,7 +1308,7 @@ public class XmlSchemaParser
     }
     if (ParseXmlSchemaGroupRefDetails(elementGroupRef, xmlSchemaGroupRef))
       if (!added)
-        GroupRefsUpdated++;
+        ElementGroupRefsUpdated++;
     return elementGroupRef;
   }
 
@@ -1322,13 +1322,12 @@ public class XmlSchemaParser
       elementGroupRef = new ElementGroupRef
       {
         OwnerTypeId = parentType.Id,
-        Name = refGroup.FullName,
         RefGroupId = refGroup.Id
       };
       dbContext.Particles.Add(elementGroupRef);
       if (SaveChanges() > 0)
       {
-        GroupRefsAdded++;
+        ElementGroupRefsAdded++;
         added = true;
       }
     }
@@ -1346,7 +1345,7 @@ public class XmlSchemaParser
     }
     if (ParseXmlSchemaGroupRefDetails(elementGroupRef, xmlSchemaGroupRef))
       if (!added)
-        GroupRefsUpdated++;
+        ElementGroupRefsUpdated++;
     return elementGroupRef;
   }
 

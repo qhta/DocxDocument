@@ -93,7 +93,7 @@ public abstract class Particle
   /// Returns the namespace that contains the particle directly or indirectly.
   /// </summary>
   [NotMapped]
-  public Namespace? HostingNamespace =>
-    OwnerNamespace ?? OwnerGroup?.OwnerNamespace ?? OwnerType?.OwnerNamespace;
+  public Namespace HostingNamespace =>
+    OwnerNamespace ?? OwnerGroup?.OwnerNamespace ?? OwnerType?.OwnerNamespace!;
 
 }

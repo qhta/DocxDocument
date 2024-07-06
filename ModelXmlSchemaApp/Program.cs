@@ -29,8 +29,8 @@ internal class Program
     Console.WriteLine("Found {0} patterns, added {1}", XmlSchemaParser.PatternsTotal, XmlSchemaParser. PatternsAdded);
     Console.WriteLine("Found {0} list items, added {1}, updated {2}", XmlSchemaParser.ListItemsTotal, XmlSchemaParser.ListItemsAdded, XmlSchemaParser.ListItemsUpdates);
     Console.WriteLine("Found {0} union members, added {1}, updated {2}", XmlSchemaParser.UnionMembersTotal, XmlSchemaParser.UnionMembersAdded, XmlSchemaParser.UnionMembersUpdates);
-    Console.WriteLine("Found {0} groups, added {1}", XmlSchemaParser.GroupsTotal, XmlSchemaParser. ElementGroupsAdded);
-    Console.WriteLine("Found {0} group refs, added {1}, updated {2}", XmlSchemaParser.GroupRefsTotal, XmlSchemaParser.GroupRefsAdded, XmlSchemaParser.GroupRefsUpdated);
+    Console.WriteLine("Found {0} element groups, added {1}", XmlSchemaParser.ElementGroupsTotal, XmlSchemaParser. ElementGroupsAdded);
+    Console.WriteLine("Found {0} element group refs, added {1}, updated {2}", XmlSchemaParser.ElementGroupRefsTotal, XmlSchemaParser.ElementGroupRefsAdded, XmlSchemaParser.ElementGroupRefsUpdated);
     Console.WriteLine("Found {0} elements, added {1}, updated {2}", XmlSchemaParser.ElementsTotal, XmlSchemaParser.ElementsAdded, XmlSchemaParser.ElementsUpdated);
 }
 }

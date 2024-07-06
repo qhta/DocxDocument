@@ -40,6 +40,11 @@ public class ElementGroup
   /// Navigation property to the namespace that directly contains the attribute.
   /// </summary>
   public virtual Namespace OwnerNamespace { get; set; } = null!;
+  
+  /// <summary>
+  /// Navigation property to the particle that defines the content model of the element group.
+  /// </summary>
+  public ParticleGroup? Particle { get; set; }
 
   /// <summary>
   /// Full name of the attribute containing the namespace prefix and the name.
@@ -57,10 +62,5 @@ public class ElementGroup
   {
     return ns.Prefix + ":" + name;
   }
-
-  /// <summary>
-  /// Navigation property to the particle that defines the content model of the element group.
-  /// </summary>
-  public ParticleGroup? Particle { get; set; }
 
 }

@@ -1,7 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-
-using Microsoft.EntityFrameworkCore;
 
 namespace ModelXmlSchema;
 
@@ -24,4 +21,8 @@ public class AttributeRef: AttributeBase
   [Required]
   public int RefAttributeId { get; set; }
 
+  /// <summary>
+  /// Navigation property for the referenced attribute.
+  /// </summary>
+  public AttributeBase RefAttribute { get; set; } = null!;
 }
