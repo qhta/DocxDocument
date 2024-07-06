@@ -51,7 +51,7 @@ public class SimpleType: TypeDef
   /// Specifies if the simple type has pattern restrictions.
   /// </summary>
   [Column(TypeName = "bit")] 
-  public bool HasPattern { get; set; }
+  public bool HasPatterns { get; set; }
 
   /// <summary>
   /// Specifies if the simple type is an enumeration.
