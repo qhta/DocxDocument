@@ -22,4 +22,9 @@ public class AttributeGroupRef: AttributeBase
   /// </summary>
   [Required]
   public int RefGroupId { get; set; }
+
+  /// <summary>
+  /// Navigation property for the referenced attribute group.
+  /// </summary>
+  public AttributeGroup RefGroup { get; set; } = null!;
 }

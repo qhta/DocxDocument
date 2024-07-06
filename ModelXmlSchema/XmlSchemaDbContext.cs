@@ -54,20 +54,6 @@ public sealed class XmlSchemaDbContext : DbContext
 
   public Dictionary<string, Namespace> NamespacesDictionary { get; set; } = null!;
 
-  public ElementGroupRefs SchemaGroupRefs
-  {
-    get
-    {
-      if (_SchemaGroupRefs == null)
-      {
-        _SchemaGroupRefs = new ElementGroupRefs(Particles);
-      }
-
-      return _SchemaGroupRefs;
-    }
-  }
-  private ElementGroupRefs? _SchemaGroupRefs;
-
   public string DbFilename { get; }
 
   public XmlSchemaDbContext(string dbFilename)
@@ -77,13 +63,6 @@ public sealed class XmlSchemaDbContext : DbContext
     SetupAccessDatabase();
   }
 
-  internal void KillMsAccess()
-  {
-    foreach (var process in Process.GetProcessesByName("MSACCESS"))
-    {
-      process.Kill();
-    }
-  }
 
   protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
   {
@@ -171,6 +150,20 @@ public sealed class XmlSchemaDbContext : DbContext
       .HasValue<AttributeRef>(AttributeType.AttributeRef)
       .HasValue<AttributeGroupRef>(AttributeType.AttributeGroupRef);
 
+    modelBuilder.Entity<AttributeDef>()
+      .HasOne(item => item.ValueType)
+      .WithMany()
+      .HasForeignKey(item => item.ValueTypeId);
+
+    modelBuilder.Entity<AttributeRef>()
+      .HasOne(item => item.RefAttribute)
+      .WithMany()
+      .HasForeignKey(item => item.RefAttributeId);
+
+    modelBuilder.Entity<AttributeGroupRef>()
+      .HasOne(item => item.RefGroup)
+      .WithMany()
+      .HasForeignKey(item => item.RefGroupId);
 
     modelBuilder.Entity<AttributeGroup>()
       .HasOne(item => item.OwnerNamespace)
@@ -187,11 +180,10 @@ public sealed class XmlSchemaDbContext : DbContext
       .HasValue<Choice>(ParticleType.Choice)
       .HasValue<Sequence>(ParticleType.Sequence);
 
-    //modelBuilder.Entity<Particle>()
-    //  .HasOne(p => p.OwnerType)
-    //  .WithOne(ct => ct.Particle)
-    //  .HasForeignKey<Particle>(p => p.OwnerTypeId)
-    //  .IsRequired(false);
+    modelBuilder.Entity<ElementGroupRef>()
+      .HasOne(item => item.RefGroup)
+      .WithMany()
+      .HasForeignKey(item => item.RefGroupId);
 
     modelBuilder.Entity<ComplexType>()
       .HasOne(p => p.Particle)
@@ -286,7 +278,15 @@ public sealed class XmlSchemaDbContext : DbContext
       GC.WaitForPendingFinalizers();
       KillMsAccess();
     }
+ }
 
+
+  internal void KillMsAccess()
+  {
+    foreach (var process in Process.GetProcessesByName("MSACCESS"))
+    {
+      process.Kill();
+    }
   }
 
   internal void CreateEnumLookupTable(Access.Dao.Database database, string tableName, Type enumType)
@@ -502,6 +502,7 @@ public sealed class XmlSchemaDbContext : DbContext
     foreach (var simpleType in Types.OfType<SimpleType>().Include(type => type.Patterns))
     {
       simpleType.PatternsDictionary = simpleType.Patterns.ToDictionary(pattern => pattern.Value);
+      simpleType.HasPatterns = simpleType.PatternsDictionary.Count > 0;
     }
     Patterns.Local.CollectionChanged += (sender, args) =>
     {
@@ -517,6 +518,7 @@ public sealed class XmlSchemaDbContext : DbContext
     foreach (var simpleType in Types.OfType<SimpleType>().Include(type => type.EnumValues))
     {
       simpleType.EnumValuesDictionary = simpleType.EnumValues.ToDictionary(enumValue => enumValue.Name);
+      simpleType.IsEnum = simpleType.EnumValuesDictionary.Count > 0;
     }
     EnumValues.Local.CollectionChanged += (sender, args) =>
     {
@@ -535,6 +537,7 @@ public sealed class XmlSchemaDbContext : DbContext
     {
       simpleType.UnionMembersDictionary = simpleType.UnionMembers
         .ToDictionary(unionMember => unionMember.MemberType.FullName);
+      simpleType.IsUnion = simpleType.UnionMembersDictionary.Count > 0;
     }
     UnionMembers.Local.CollectionChanged += (sender, args) =>
        {
@@ -561,6 +564,7 @@ public sealed class XmlSchemaDbContext : DbContext
     {
       simpleType.ListItemsDictionary = simpleType.ListItems
         .ToDictionary(ListItem => ListItem.MemberType.FullName);
+      simpleType.IsList = simpleType.ListItemsDictionary.Count > 0;
     }
     ListItems.Local.CollectionChanged += (sender, args) =>
        {
@@ -597,6 +601,18 @@ public sealed class XmlSchemaDbContext : DbContext
       }
     };
 
+    foreach (var attribute in Attributes.OfType<AttributeDef>()
+               .Include(attr => attr.ValueType))
+    { }
+
+    foreach (var attribute in Attributes.OfType<AttributeRef>()
+               .Include(attr => attr.RefAttribute))
+    {}
+
+    foreach (var attribute in Attributes.OfType<AttributeGroupRef>()
+               .Include(attr => attr.RefGroup))
+    { }
+
     foreach (var attributeGroup in AttributeGroups
                .Include(group => group.Attributes))
     {
@@ -608,6 +624,7 @@ public sealed class XmlSchemaDbContext : DbContext
     {
       complexType.AttributesDictionary = complexType.Attributes
         .ToDictionary(attribute => attribute.FullName);
+      complexType.HasAttributes = complexType.AttributesDictionary.Count > 0;
     }
     Attributes.Local.CollectionChanged += (sender, args) =>
     {
@@ -714,7 +731,7 @@ public sealed class XmlSchemaDbContext : DbContext
         if (particle.OwnerGroup != null)
         {
           particle.OwnerGroup.ParticleId = particle.Id;
-          particle.OwnerGroup.Particle = particle as ParticleGroup;
+          particle.OwnerGroup.Particle = (ParticleGroup)particle;
         }
       }
       if (particle.OwnerParticleId != null)

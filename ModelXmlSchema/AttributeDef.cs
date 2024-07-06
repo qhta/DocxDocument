@@ -32,4 +32,9 @@ public class AttributeDef: AttributeBase
   /// </summary>
   [Column(TypeName = "bit")]
   public bool IsFixed { get; set; }
+
+  /// <summary>
+  /// Navigation property for the value type.
+  /// </summary>
+  public TypeDef ValueType { get; set; } = null!;
 }

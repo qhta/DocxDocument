@@ -1,7 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-
-namespace ModelXmlSchema;
+﻿namespace ModelXmlSchema;
 
 /// <summary>
 /// Represents a reference to a group of elements.
@@ -12,10 +9,12 @@ public class ElementGroupRef: Particle
   /// <summary>
   /// Identifier of the referenced group.
   /// </summary>
-  public int? RefGroupId { get; set; }
+  public int RefGroupId { get; set; }
 
-  [MaxLength(255)]
-  [Column("Name")]
-  public required string Name { get; set; }
+
+  /// <summary>
+  /// Navigation property for the referenced group.
+  /// </summary>
+  public ElementGroup RefGroup { get; set; } = null!;
 
 }
