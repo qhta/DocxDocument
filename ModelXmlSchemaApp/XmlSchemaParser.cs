@@ -25,7 +25,7 @@ public class XmlSchemaParser
   public int AttributeRefsTotal, AttributeRefsAdded, AttributeRefsUpdated;
   public int AttributeGroupsTotal, AttributeGroupsAdded;
   public int AttributeGroupRefsTotal, AttributeGroupRefsAdded;
-  public int ParticlesTotal, ParticlesAdded, ParticlesUpdated;
+  public int OtherParticlesTotal, OtherParticlesAdded, OtherParticlesUpdated;
   public int EnumValuesTotal, EnumValuesAdded;
   public int PatternsTotal, PatternsAdded;
   public int ListItemsTotal, ListItemsAdded, ListItemsUpdates;
@@ -267,7 +267,7 @@ public class XmlSchemaParser
     ElementGroupsTotal = dbContext.ElementGroups.Count();
     ElementGroupRefsTotal = dbContext.Particles.OfType<ElementGroupRef>().Count();
     ElementsTotal = dbContext.Particles.OfType<Element>().Count();
-    ParticlesTotal = dbContext.Particles.Count() - ElementGroupRefsTotal - ElementsTotal;
+    OtherParticlesTotal = dbContext.Particles.Count() - ElementGroupRefsTotal - ElementsTotal;
   }
 
   internal void ParseXmlSchema(XmlSchema schema)
@@ -1392,7 +1392,7 @@ public class XmlSchemaParser
       dbContext.Particles.Add(sequence);
       if (SaveChanges() > 0)
       {
-        ParticlesAdded++;
+        OtherParticlesAdded++;
         added = true;
       }
     }
@@ -1409,7 +1409,7 @@ public class XmlSchemaParser
     }
     if (ParseXmlSchemaGroupBaseDetails(sequence, xmlSchemaSequence))
       if (!added)
-        ParticlesUpdated++;
+        OtherParticlesUpdated++;
     return sequence;
   }
 
@@ -1426,7 +1426,7 @@ public class XmlSchemaParser
       dbContext.Particles.Add(sequence);
       if (SaveChanges() > 0)
       {
-        ParticlesAdded++;
+        OtherParticlesAdded++;
         added = true;
       }
     }
@@ -1444,7 +1444,7 @@ public class XmlSchemaParser
     }
     if (ParseXmlSchemaGroupBaseDetails(sequence, xmlSchemaSequence))
       if (!added)
-        ParticlesUpdated++;
+        OtherParticlesUpdated++;
     return sequence;
   }
 
@@ -1461,7 +1461,7 @@ public class XmlSchemaParser
       dbContext.Particles.Add(sequence);
       if (SaveChanges() > 0)
       {
-        ParticlesAdded++;
+        OtherParticlesAdded++;
         added = true;
       }
     }
@@ -1479,7 +1479,7 @@ public class XmlSchemaParser
     }
     if (ParseXmlSchemaGroupBaseDetails(sequence, xmlSchemaSequence))
       if (!added)
-        ParticlesUpdated++;
+        OtherParticlesUpdated++;
     return sequence;
   }
 
@@ -1498,7 +1498,7 @@ public class XmlSchemaParser
       dbContext.Particles.Add(choice);
       if (SaveChanges() > 0)
       {
-        ParticlesAdded++;
+        OtherParticlesAdded++;
         added = true;
       }
     }
@@ -1515,7 +1515,7 @@ public class XmlSchemaParser
     }
     if (ParseXmlSchemaGroupBaseDetails(choice, xmlSchemaChoice))
       if (!added)
-        ParticlesUpdated++;
+        OtherParticlesUpdated++;
     return choice;
   }
 
@@ -1532,7 +1532,7 @@ public class XmlSchemaParser
       dbContext.Particles.Add(choice);
       if (SaveChanges() > 0)
       {
-        ParticlesAdded++;
+        OtherParticlesAdded++;
         added = true;
       }
     }
@@ -1550,7 +1550,7 @@ public class XmlSchemaParser
     }
     if (ParseXmlSchemaGroupBaseDetails(choice, xmlSchemaChoice))
       if (!added)
-        ParticlesUpdated++;
+        OtherParticlesUpdated++;
     return choice;
   }
 
@@ -1567,7 +1567,7 @@ public class XmlSchemaParser
       dbContext.Particles.Add(choice);
       if (SaveChanges() > 0)
       {
-        ParticlesAdded++;
+        OtherParticlesAdded++;
         added = true;
       }
     }
@@ -1585,7 +1585,7 @@ public class XmlSchemaParser
     }
     if (ParseXmlSchemaGroupBaseDetails(choice, xmlSchemaChoice))
       if (!added)
-        ParticlesUpdated++;
+        OtherParticlesUpdated++;
     return choice;
   }
 
@@ -1604,7 +1604,7 @@ public class XmlSchemaParser
       dbContext.Particles.Add(all);
       if (SaveChanges() > 0)
       {
-        ParticlesAdded++;
+        OtherParticlesAdded++;
         added = true;
       }
     }
@@ -1621,7 +1621,7 @@ public class XmlSchemaParser
     }
     if (ParseXmlSchemaGroupBaseDetails(all, xmlSchemaAll))
       if (!added)
-        ParticlesUpdated++;
+        OtherParticlesUpdated++;
     return all;
   }
 
@@ -1638,7 +1638,7 @@ public class XmlSchemaParser
       dbContext.Particles.Add(all);
       if (SaveChanges() > 0)
       {
-        ParticlesAdded++;
+        OtherParticlesAdded++;
         added = true;
       }
     }
@@ -1656,7 +1656,7 @@ public class XmlSchemaParser
     }
     if (ParseXmlSchemaGroupBaseDetails(all, xmlSchemaAll))
       if (!added)
-        ParticlesUpdated++;
+        OtherParticlesUpdated++;
     return all;
   }
 
@@ -1673,7 +1673,7 @@ public class XmlSchemaParser
       dbContext.Particles.Add(all);
       if (SaveChanges() > 0)
       {
-        ParticlesAdded++;
+        OtherParticlesAdded++;
         added = true;
       }
     }
@@ -1691,7 +1691,7 @@ public class XmlSchemaParser
     }
     if (ParseXmlSchemaGroupBaseDetails(all, xmlSchemaAll))
       if (!added)
-        ParticlesUpdated++;
+        OtherParticlesUpdated++;
     return all;
   }
 
