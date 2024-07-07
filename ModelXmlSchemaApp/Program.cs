@@ -24,7 +24,6 @@ internal class Program
     Console.WriteLine("Found {0} attribute references, added {1}, updated {2}", XmlSchemaParser.AttributeRefsTotal, XmlSchemaParser.AttributeRefsAdded, XmlSchemaParser.AttributeRefsUpdated);
     Console.WriteLine("Found {0} attribute groups, added {1}", XmlSchemaParser.AttributeGroupsTotal, XmlSchemaParser. AttributeGroupsAdded);
     Console.WriteLine("Found {0} attribute group refs, added {1}", XmlSchemaParser.AttributeGroupRefsTotal, XmlSchemaParser. AttributeGroupRefsAdded);
-    Console.WriteLine("Found {0} particles, added {1}, updated {2}", XmlSchemaParser.ParticlesTotal, XmlSchemaParser. ParticlesAdded, XmlSchemaParser. ParticlesUpdated);
     Console.WriteLine("Found {0} enum values, added {1}", XmlSchemaParser.EnumValuesTotal, XmlSchemaParser. EnumValuesAdded);
     Console.WriteLine("Found {0} patterns, added {1}", XmlSchemaParser.PatternsTotal, XmlSchemaParser. PatternsAdded);
     Console.WriteLine("Found {0} list items, added {1}, updated {2}", XmlSchemaParser.ListItemsTotal, XmlSchemaParser.ListItemsAdded, XmlSchemaParser.ListItemsUpdates);
@@ -32,5 +31,6 @@ internal class Program
     Console.WriteLine("Found {0} element groups, added {1}", XmlSchemaParser.ElementGroupsTotal, XmlSchemaParser. ElementGroupsAdded);
     Console.WriteLine("Found {0} element group refs, added {1}, updated {2}", XmlSchemaParser.ElementGroupRefsTotal, XmlSchemaParser.ElementGroupRefsAdded, XmlSchemaParser.ElementGroupRefsUpdated);
     Console.WriteLine("Found {0} elements, added {1}, updated {2}", XmlSchemaParser.ElementsTotal, XmlSchemaParser.ElementsAdded, XmlSchemaParser.ElementsUpdated);
-}
+    Console.WriteLine("Found {0} other particles, added {1}, updated {2}", XmlSchemaParser.OtherParticlesTotal, XmlSchemaParser.OtherParticlesAdded, XmlSchemaParser.OtherParticlesUpdated);
+  }
 }
