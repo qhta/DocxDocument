@@ -8,9 +8,9 @@ namespace ModelOpenXmlLib;
 /// <summary>
 ///  Many-to-many relationship between SchemaFile and SchemaNamespace.
 /// </summary>
+[PrimaryKey(nameof(FileId), nameof(NamespaceId))]
 [Index(nameof(FileId), IsUnique=false)]
 [Index(nameof(NamespaceId), IsUnique = false)]
-[PrimaryKey(nameof(FileId), nameof(NamespaceId))]
 public class FileNamespace
 {
   /// <summary>
@@ -23,4 +23,13 @@ public class FileNamespace
   /// </summary>
   public int NamespaceId { get; set; }
 
+  /// <summary>
+  /// Navigation property to the LibFile.
+  /// </summary>
+  public LibFile File { get; set; } = null!;
+
+  /// <summary>
+  /// Navigation property to the Namespace.
+  /// </summary>
+  public Namespace Namespace { get; set; } = null!;
 }

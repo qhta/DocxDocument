@@ -1,4 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 using Microsoft.EntityFrameworkCore;
 
 namespace ModelOpenXmlDoc;
@@ -7,7 +9,7 @@ namespace ModelOpenXmlDoc;
 /// LibFile represents a DLL file.
 /// </summary>
 [Index(nameof(FileName), IsUnique = true)]
-public class LibFile
+public class DocFile
 {
   /// <summary>
   ///   Unique identifier for the entity.
@@ -20,5 +22,16 @@ public class LibFile
   [MaxLength(255)]
   [Required]
   public required string FileName { get; set; }
+
+  /// <summary>
+  /// Navigation property for the chapters in the file.
+  /// </summary>
+  public List<Chapter> Chapters { get; set; } = new List<Chapter>();
+
+  /// <summary>
+  /// Dictionary of chapters in the file. Chapter Number is the key.
+  /// </summary>
+  [NotMapped]
+  public Dictionary<string, Chapter> ChaptersDictionary { get; set; } = null!;
 
 }

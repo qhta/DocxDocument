@@ -1,4 +1,13 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using DocumentFormat.OpenXml.Math;
+using System.Diagnostics;
+using System.Net.Mime;
+using System.Runtime.InteropServices;
+
+using Microsoft.EntityFrameworkCore;
+using Access = Microsoft.Office.Interop.Access;
+using DAO = Microsoft.Office.Interop.Access.Dao;
+
+using Qhta.Access.Dao;
 
 namespace ModelOpenXmlLib;
 
@@ -32,6 +41,7 @@ public sealed class LibDbContext : DbContext
   {
     DbFilename = dbFilename;
     Database.EnsureCreated();
+    SetupAccessDatabase();
   }
 
   protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -48,25 +58,57 @@ public sealed class LibDbContext : DbContext
     if (DisplayMessageEnabled)
       Console.WriteLine(message);
   }
+  internal void SetupAccessDatabase()
+  {
+    var accessApp = new Access.Application();
+    DAO.Database database = null!;
+    try
+    {
+      accessApp.OpenCurrentDatabase(DbFilename, false);
+      database = accessApp.CurrentDb();
 
+      Tools.CreateEnumLookupTable(database, "TypeKinds", typeof(TypeKind));
+      Tools.SetLookup(database, "Types", "Kind", "TypeKinds");
+    }
+    catch (Exception ex)
+    {
+      Debug.WriteLine($"An error occurred: {ex.Message}");
+    }
+    finally
+    {
+      if (database != null)
+      {
+        accessApp.CloseCurrentDatabase();
+      }
+      accessApp.Quit(Access.AcQuitOption.acQuitSaveAll);
+      Marshal.ReleaseComObject(accessApp);
+      accessApp = null!;
+      // For good measure, force a garbage collection
+      GC.Collect();
+      GC.WaitForPendingFinalizers();
+      Tools.KillMsAccess();
+    }
+  }
   protected override void OnModelCreating(ModelBuilder modelBuilder)
   {
 
     modelBuilder.Entity<FileNamespace>()
-      .HasKey(item => new { item.FileId, item.NamespaceId }); // Composite key
+      .HasKey(item => new { item.FileId, item.NamespaceId });
 
-    modelBuilder.Entity<TypeDef>()
-      .Property(item => item.Kind)
-      .HasColumnType("byte");
+    modelBuilder.Entity<FileNamespace>()
+      .HasOne(item => item.File)
+      .WithMany()
+      .HasForeignKey(item => item.FileId);
 
-    modelBuilder.Entity<TypeDef>()
-      .Property(item => item.IsAbstract)
-      .HasColumnType("bit");
-
-    modelBuilder.Entity<TypeDef>()
+    modelBuilder.Entity<FileNamespace>()
       .HasOne(item => item.Namespace)
-      .WithMany(subItem => subItem.Types)
+      .WithMany()
       .HasForeignKey(item => item.NamespaceId);
+
+    modelBuilder.Entity<TypeDef>()
+      .HasOne(item => item.OwnerNamespace)
+      .WithMany(subItem => subItem.Types)
+      .HasForeignKey(item => item.OwnerNamespaceId);
 
     modelBuilder.Entity<TypeDef>()
       .HasOne(item => item.BaseType)
@@ -144,7 +186,7 @@ public sealed class LibDbContext : DbContext
       {
         foreach (TypeDef type in args.NewItems!)
         {
-          NamespaceDictionary[type.Namespace.Name].TypesDictionary.Add(type.Name, type);
+          NamespaceDictionary[type.OwnerNamespace.Name].TypesDictionary.Add(type.Name, type);
         }
       }
     };
@@ -154,7 +196,7 @@ public sealed class LibDbContext : DbContext
       {
         foreach (EnumValue enumValue in args.NewItems!)
         {
-          NamespaceDictionary[enumValue.OwnerType.Namespace.Name].TypesDictionary[enumValue.OwnerType.Name].EnumValuesDictionary.Add(enumValue.Name, enumValue);
+          NamespaceDictionary[enumValue.OwnerType.OwnerNamespace.Name].TypesDictionary[enumValue.OwnerType.Name].EnumValuesDictionary.Add(enumValue.Name, enumValue);
         }
       }
     };
@@ -164,7 +206,7 @@ public sealed class LibDbContext : DbContext
       {
         foreach (Property prop in args.NewItems!)
         {
-          NamespaceDictionary[prop.OwnerType.Namespace.Name].TypesDictionary[prop.OwnerType.Name].PropertiesDictionary.Add(prop.Name, prop);
+          NamespaceDictionary[prop.OwnerType.OwnerNamespace.Name].TypesDictionary[prop.OwnerType.Name].PropertiesDictionary.Add(prop.Name, prop);
         }
       }
     };

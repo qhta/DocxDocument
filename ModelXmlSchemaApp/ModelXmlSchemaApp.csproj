@@ -8,11 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Office.Interop.Access.Dao" Version="15.0.4420.1018" />
-    <PackageReference Include="MicrosoftOfficeCore15" Version="15.0.4420.1017" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\ModelXmlSchema\ModelXmlSchema.csproj" />
   </ItemGroup>
 
