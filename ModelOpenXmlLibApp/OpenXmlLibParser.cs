@@ -27,7 +27,7 @@ public class OpenXmlLibParser
   public int PropertiesTotal, PropertiesAdded, PropertiesUpdated;
   public int EnumValuesTotal, EnumValuesAdded;
 
-  public void ParseSchemaFiles(string sourceDllPath, string dbFilename)
+  public void ParseLibraries(string sourceDllPath, string dbFilename)
   {
     SourceDllPath = sourceDllPath;
     MetadataLoadContext metadataLoadContext = LoadLibraryFiles();
@@ -35,7 +35,6 @@ public class OpenXmlLibParser
     {
       dbContext.ChangeTracker.LazyLoadingEnabled = false;
       ParseOpenXmlFilesAndNamespaces(metadataLoadContext);
-      //SetNamespacePrefixes();
       ParseAssemblies(metadataLoadContext);
       dbContext.DisplayMessageEnabled = false;
       FilesTotal = dbContext.Files.Count();
@@ -47,9 +46,7 @@ public class OpenXmlLibParser
     }
   }
 
-  internal int AnonSimpleTypes = 0;
   internal LibDbContext dbContext = null!;
-
 
   internal int SaveChanges()
   {
@@ -112,10 +109,9 @@ public class OpenXmlLibParser
         var ns = grouping.Key;
         if (!string.IsNullOrEmpty(ns) /*&& !ns.StartsWith("System")*/)
         {
-          WriteLine($"Checking namespace {ns} is null or empty = {!String.IsNullOrEmpty(ns) && !ns.StartsWith("System")}");
+          WriteLine($"Checking namespace {ns}");
           if (!dbContext.NamespaceDictionary.TryGetValue(ns, out var libNamespace))
           {
-            WriteLine($"Adding namespace {ns}");
             libNamespace = new Namespace { Name = ns };
             dbContext.Namespaces.Add(libNamespace);
             if (SaveChanges() > 0)
@@ -125,7 +121,6 @@ public class OpenXmlLibParser
           var fileNamespace = dbContext.FileNamespaces.FirstOrDefault(u => u.NamespaceId == libNamespace.Id && u.FileId == libFile.Id);
           if (fileNamespace == null)
           {
-            WriteLine($"Adding File namespace {ns} to file {filename}");
             fileNamespace = new FileNamespace { NamespaceId = libNamespace.Id, FileId = libFile.Id };
             dbContext.FileNamespaces.Add(fileNamespace);
             if (SaveChanges() > 0)
@@ -171,7 +166,7 @@ public class OpenXmlLibParser
     if (!ns.TypesDictionary.TryGetValue(typeName, out var libType))
     {
       WriteLine($"added");
-      libType = new TypeDef { Name = typeName, NamespaceId = ns.Id };
+      libType = new TypeDef { Name = typeName, OwnerNamespaceId = ns.Id };
       dbContext.Types.Add(libType);
       ParseTypeDetails(libType, assType);
       if (SaveChanges() > 0)
@@ -181,29 +176,21 @@ public class OpenXmlLibParser
 
       ParseBaseType(libType, assType);
       added = true;
-
     }
     else
     {
       updated = ParseTypeDetails(libType, assType);
+      if (ParseBaseType(libType, assType)) 
+        updated = true;
+    }
+    if (!added)
       if (updated)
       {
-        if (SaveChanges() > 0)
-          TypesUpdated++;
-        else
-          throw new InvalidDataException($"Type {ns.Name}.{typeName} not updated");
-        WriteLine($"updated");
+        WriteLine("updated");
+        TypesUpdated++;
       }
       else
-        WriteLine($"ok");
-      if (ParseBaseType(libType, assType))
-      {
-        WriteLine($"Base type of {ns.Name}.{typeName} updated");
-        if (!updated)
-          TypesUpdated++;
-        updated = true;
-      }
-    }
+        WriteLine("ok");
     ParseTypeMembers(libType, assType);
     return added || updated;
   }
@@ -309,10 +296,8 @@ public class OpenXmlLibParser
     {
       if (field.IsLiteral && !field.IsInitOnly)
       {
-        Write($"Checking enum value {libType.Name}.{field.Name} ... ");
         if (!libType.EnumValuesDictionary.TryGetValue(field.Name, out var enumValue))
         {
-
           enumValue = new EnumValue { OwnerTypeId = libType.Id, Name = field.Name, OrdNum = ordNum };
           dbContext.EnumValues.Add(enumValue);
           if (SaveChanges() > 0)
@@ -321,8 +306,6 @@ public class OpenXmlLibParser
             added++;
           }
         }
-        else
-          WriteLine($"ok");
         ordNum++;
       }
     }
@@ -335,8 +318,7 @@ public class OpenXmlLibParser
     int ordNum = 0;
     foreach (PropertyInfo property in typeDefinition.GetProperties(BindingFlags.Public | BindingFlags.Static | BindingFlags.DeclaredOnly))
     {
-      Write($"Checking enum property {libType.Name}.{property.Name} ...");
-
+      added++;
       if (!libType.EnumValuesDictionary.TryGetValue(property.Name, out var enumValue))
       {
         enumValue = new EnumValue { OwnerTypeId = libType.Id, Name = property.Name, OrdNum = ordNum };
@@ -344,12 +326,8 @@ public class OpenXmlLibParser
         if (SaveChanges() > 0)
         {
           EnumValuesAdded++;
-          WriteLine($"added");
-          added++;
         }
       }
-      else
-        WriteLine($"ok");
       ordNum++;
     }
     return added;
@@ -375,14 +353,12 @@ public class OpenXmlLibParser
   {
     bool added = false;
     bool updated = false;
-    Write($"Checking property {libType.Name}.{property.Name} ... ");
     if (!libType.PropertiesDictionary.TryGetValue(property.Name, out var libProperty))
     {
       libProperty = new Property { OwnerTypeId = libType.Id, Name = property.Name, OrdNum = ordNum };
       dbContext.Properties.Add(libProperty);
       if (SaveChanges() > 0)
       {
-        WriteLine($"added");
         PropertiesAdded++;
         added = true;
       }
@@ -394,15 +370,11 @@ public class OpenXmlLibParser
     {
       if (ParsePropertyDetails(libProperty, property, ordNum))
       {
-        WriteLine($"updated");
         PropertiesUpdated++;
         updated = true;;
       }
-      else
-        WriteLine($"ok");
       if (ParsePropertyValueType(libProperty, property))
       {
-        WriteLine($"Value type of {libType.Name}.{property.Name} updated");
         if (!updated)
           PropertiesUpdated++;
         updated = true;
@@ -464,7 +436,7 @@ public class OpenXmlLibParser
     var typeName = assType.Name;
     if (!ns.TypesDictionary.TryGetValue(typeName, out var libType))
     {
-      libType = new TypeDef { Name = typeName, NamespaceId = ns.Id };
+      libType = new TypeDef { Name = typeName, OwnerNamespaceId = ns.Id };
       ParseTypeDetails(libType, assType);
       dbContext.Types.Add(libType);
       if (SaveChanges() > 0)

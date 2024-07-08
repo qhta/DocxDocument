@@ -7,12 +7,13 @@ using Microsoft.Office.Interop.Access.Dao;
 
 using Access = Microsoft.Office.Interop.Access;
 using Dao = Microsoft.Office.Interop.Access.Dao;
+using Qhta.Access.Dao;
 
 namespace ModelXmlSchema;
 
 public sealed class XmlSchemaDbContext : DbContext
 {
-  public DbSet<SchemaFile> SchemaFiles { get; set; }
+  public DbSet<XsdFile> Files { get; set; }
 
   public DbSet<Namespace> Namespaces { get; set; }
 
@@ -50,7 +51,7 @@ public sealed class XmlSchemaDbContext : DbContext
   }
   private Elements? _Elements;
 
-  public Dictionary<string, SchemaFile> FilesDictionary { get; set; } = null!;
+  public Dictionary<string, XsdFile> FilesDictionary { get; set; } = null!;
 
   public Dictionary<string, Namespace> NamespacesDictionary { get; set; } = null!;
 
@@ -68,7 +69,7 @@ public sealed class XmlSchemaDbContext : DbContext
   {
     optionsBuilder.UseJet(@$"Provider=Microsoft.ACE.OLEDB.16.0;Data Source={DbFilename};");
     //optionsBuilder.EnableSensitiveDataLogging(true);
-    //optionsBuilder.LogTo(message => Console.WriteLine(message));
+    optionsBuilder.LogTo(message => Console.WriteLine(message));
   }
 
   protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -77,12 +78,12 @@ public sealed class XmlSchemaDbContext : DbContext
       .HasKey(e => new { SchemaFileId = e.FileId, e.NamespaceId });
 
     modelBuilder.Entity<UsedNamespace>()
-      .HasOne(e => e.SchemaFile)
+      .HasOne(e => e.File)
       .WithMany(e => e.UsedNamespaces)
       .HasForeignKey(e => e.FileId);
 
     modelBuilder.Entity<UsedNamespace>()
-      .HasOne(e => e.SchemaNamespace)
+      .HasOne(e => e.Namespace)
       .WithMany()
       .HasForeignKey(e => e.NamespaceId);
 
@@ -227,38 +228,38 @@ public sealed class XmlSchemaDbContext : DbContext
     {
       accessApp.OpenCurrentDatabase(DbFilename, false);
       database = accessApp.CurrentDb();
-      SetQuery(database, "TypesList", "SELECT Types.Id, [Prefix] & \":\" & [Types].[Name] AS FullName\r\nFROM Namespaces INNER JOIN Types ON Namespaces.Id = Types.OwnerNamespaceId;");
-      SetQuery(database, "AttributeGroupsList", "SELECT AttributeGroups.Id, [Prefix] & \":\" & [AttributeGroups].[Name] AS FullName\r\nFROM Namespaces INNER JOIN AttributeGroups ON Namespaces.Id = AttributeGroups.OwnerNamespaceId;");
-      SetQuery(database, "NamespacesList", "SELECT Namespaces.Id, [Prefix] & \": \" & [Url] AS FullName\r\nFROM Namespaces;");
-      SetQuery(database, "ElementGroupsList", "SELECT ElementGroups.Id, [Namespaces].[Prefix] & \":\" & [ElementGroups].[Name] AS FullName\r\nFROM Namespaces INNER JOIN ElementGroups ON Namespaces.Id = ElementGroups.OwnerNamespaceId;");
+      Tools.SetQuery(database, "TypesList", "SELECT Types.Id, [Prefix] & \":\" & [Types].[Name] AS FullName\r\nFROM Namespaces INNER JOIN Types ON Namespaces.Id = Types.OwnerNamespaceId;");
+      Tools.SetQuery(database, "AttributeGroupsList", "SELECT AttributeGroups.Id, [Prefix] & \":\" & [AttributeGroups].[Name] AS FullName\r\nFROM Namespaces INNER JOIN AttributeGroups ON Namespaces.Id = AttributeGroups.OwnerNamespaceId;");
+      Tools.SetQuery(database, "NamespacesList", "SELECT Namespaces.Id, [Prefix] & \": \" & [Url] AS FullName\r\nFROM Namespaces;");
+      Tools.SetQuery(database, "ElementGroupsList", "SELECT ElementGroups.Id, [Namespaces].[Prefix] & \":\" & [ElementGroups].[Name] AS FullName\r\nFROM Namespaces INNER JOIN ElementGroups ON Namespaces.Id = ElementGroups.OwnerNamespaceId;");
 
-      //SetLookup(database, "Types", "OwnerNamespaceId", "NamespacesList");
-      //SetLookup(database, "Types", "BaseTypeId", "TypesList");
-      //SetLookup(database, "EnumValues", "OwnerTypeId", "TypesList");
-      //SetLookup(database, "Patterns", "OwnerTypeId", "TypesList");
-      //SetLookup(database, "UnionMembers", "OwnerTypeId", "TypesList");
-      //SetLookup(database, "UnionMembers", "MemberTypeId", "TypesList");
-      //SetLookup(database, "ListItems", "OwnerTypeId", "TypesList");
-      //SetLookup(database, "ListItems", "MemberTypeId", "TypesList");
+      //Tools.SetLookup(database, "Types", "OwnerNamespaceId", "NamespacesList");
+      //Tools.SetLookup(database, "Types", "BaseTypeId", "TypesList");
+      //Tools.SetLookup(database, "EnumValues", "OwnerTypeId", "TypesList");
+      //Tools.SetLookup(database, "Patterns", "OwnerTypeId", "TypesList");
+      //Tools.SetLookup(database, "UnionMembers", "OwnerTypeId", "TypesList");
+      //Tools.SetLookup(database, "UnionMembers", "MemberTypeId", "TypesList");
+      //Tools.SetLookup(database, "ListItems", "OwnerTypeId", "TypesList");
+      //Tools.SetLookup(database, "ListItems", "MemberTypeId", "TypesList");
 
-      CreateEnumLookupTable(database, "ContentTypes", typeof(ContentType));
-      SetLookup(database, "Types", "ContentType", "ContentTypes");
+      Tools.CreateEnumLookupTable(database, "ContentTypes", typeof(ContentType));
+      Tools.SetLookup(database, "Types", "ContentType", "ContentTypes");
 
-      //SetLookup(database, "Attributes", "OwnerTypeId", "TypesList");
-      //SetLookup(database, "Attributes", "OwnerGroupId", "AttributeGroupsList");
-      //SetLookup(database, "Attributes", "OwnerNamespaceId", "NamespacesList");
+      //Tools.SetLookup(database, "Attributes", "OwnerTypeId", "TypesList");
+      //Tools.SetLookup(database, "Attributes", "OwnerGroupId", "AttributeGroupsList");
+      //Tools.SetLookup(database, "Attributes", "OwnerNamespaceId", "NamespacesList");
 
-      CreateEnumLookupTable(database, "AttributeTypes", typeof(AttributeType));
-      SetLookup(database, "Attributes", "Type", "AttributeTypes");
+      Tools.CreateEnumLookupTable(database, "AttributeTypes", typeof(AttributeType));
+      Tools.SetLookup(database, "Attributes", "Type", "AttributeTypes");
 
-      CreateEnumLookupTable(database, "ParticleTypes", typeof(ParticleType));
-      SetLookup(database, "Particles", "ParticleType", "ParticleTypes");
+      Tools.CreateEnumLookupTable(database, "ParticleTypes", typeof(ParticleType));
+      Tools.SetLookup(database, "Particles", "ParticleType", "ParticleTypes");
 
-      //SetLookup(database, "Particles", "OwnerNamespaceId", "NamespacesList");
-      //SetLookup(database, "Particles", "OwnerTypeId", "TypesList");
-      //SetLookup(database, "Particles", "OwnerGroupId", "ElementGroupsList");
+      //Tools.SetLookup(database, "Particles", "OwnerNamespaceId", "NamespacesList");
+      //Tools.SetLookup(database, "Particles", "OwnerTypeId", "TypesList");
+      //Tools.SetLookup(database, "Particles", "OwnerGroupId", "ElementGroupsList");
 
-      SetLookup(database, "ElementGroups", "OwnerNamespaceId", "NamespacesList");
+      Tools.SetLookup(database, "ElementGroups", "OwnerNamespaceId", "NamespacesList");
     }
     catch (Exception ex)
     {
@@ -276,191 +277,21 @@ public sealed class XmlSchemaDbContext : DbContext
       // For good measure, force a garbage collection
       GC.Collect();
       GC.WaitForPendingFinalizers();
-      KillMsAccess();
+      Tools.KillMsAccess();
     }
  }
 
 
-  internal void KillMsAccess()
-  {
-    foreach (var process in Process.GetProcessesByName("MSACCESS"))
-    {
-      process.Kill();
-    }
-  }
-
-  internal void CreateEnumLookupTable(Access.Dao.Database database, string tableName, Type enumType)
-  {
-    if (!enumType.IsEnum)
-    {
-      throw new ArgumentException("Type must be an enum", nameof(enumType));
-    }
-
-    TableDef tableDef = null!;
-    Recordset recordset = null!;
-
-    try
-    {
-      tableDef = CreateLookupTable(database, tableName);
-      foreach (var value in Enum.GetValues(enumType))
-      {
-        recordset = database.OpenRecordset(tableName);
-        recordset.AddNew();
-        var n = (byte)value;
-        recordset.Fields["Id"].Value = n;
-        recordset.Fields["Name"].Value = value.ToString();
-        recordset.Update();
-        recordset.Close();
-      }
-    }
-    catch (COMException)
-    {
-      // Handle the COM exception, e.g., log it or show a message to the user.
-    }
-    finally
-    {
-      // Ensure COM objects are released even if an exception occurs.
-      if (recordset != null) Marshal.ReleaseComObject(recordset);
-      /*if (tableDef != null)*/
-      Marshal.ReleaseComObject(tableDef);
-
-      // For good measure, force a garbage collection.
-      GC.Collect();
-      GC.WaitForPendingFinalizers();
-    }
-  }
-
-  internal TableDef CreateLookupTable(Access.Dao.Database database, string tableName)
-  {
-    TableDef tableDef = null!;
-    Field idField = null!;
-    Field nameField = null!;
-    Dao.Index pkIndex = null!;
-    try
-    {
-      tableDef = database.CreateTableDef(tableName);
-      idField = tableDef.CreateField("Id", DataTypeEnum.dbByte);
-      tableDef.Fields.Append(idField);
-      nameField = tableDef.CreateField("Name", DataTypeEnum.dbText, 25);
-      tableDef.Fields.Append(nameField);
-      database.TableDefs.Append(tableDef);
-      // Create a primary key index
-      pkIndex = tableDef.CreateIndex("PrimaryKey");
-      pkIndex.Primary = true; // Set as primary key
-      pkIndex.Unique = true; // Ensure unique values
-
-      // Add the ID field to the index
-      Field indexField = pkIndex.CreateField("Id");
-      (pkIndex.Fields as IndexFields)?.Append(indexField);
-
-      // Append the Index to the TableDef
-      tableDef.Indexes.Append(pkIndex);
-    }
-    catch (COMException comEx)
-    {
-      // Handle the COM exception, e.g., log it or show a message to the user.
-      Debug.WriteLine($"COMException occurred: {comEx.Message}");
-    }
-    finally
-    {
-      // Ensure COM objects are released even if an exception occurs.
-      if (pkIndex != null) Marshal.ReleaseComObject(pkIndex);
-      if (nameField != null) Marshal.ReleaseComObject(nameField);
-      if (idField != null) Marshal.ReleaseComObject(idField);
-      if (tableDef != null) Marshal.ReleaseComObject(tableDef);
-
-      // For good measure, force a garbage collection.
-      GC.Collect();
-      GC.WaitForPendingFinalizers();
-    }
-    return database.TableDefs[tableName];
-  }
-
-  internal void SetQuery(Access.Dao.Database database, string queryName, string sqlText)
-  {
-    QueryDef query = null!;
-    try
-    {
-      query = database.CreateQueryDef(queryName, sqlText);
-    }
-    catch (COMException comEx)
-    {
-      // Handle the COM exception, e.g., log it or show a message to the user.
-      Debug.WriteLine($"COMException occurred: {comEx.Message}");
-    }
-    finally
-    {
-      // Ensure COM objects are released even if an exception occurs.
-      if (query != null) Marshal.ReleaseComObject(query);
-
-      // For good measure, force a garbage collection.
-      GC.Collect();
-      GC.WaitForPendingFinalizers();
-    }
-  }
-
-  internal void SetLookup(Access.Dao.Database database, string tableName, string fieldName, string lookupTableName)
-  {
-    var field = database.TableDefs[tableName].Fields[fieldName];
-    SetProperty(field, "DisplayControl", DataTypeEnum.dbInteger, 111); // acComboBox
-    SetProperty(field, "RowSourceType", DataTypeEnum.dbText, "Table/Query");
-    SetProperty(field, "RowSource", DataTypeEnum.dbText, lookupTableName);
-    SetProperty(field, "ColumnCount", DataTypeEnum.dbInteger, 2);
-    SetProperty(field, "ColumnWidths", DataTypeEnum.dbText, "0");
-  }
-
-  internal void SetProperty(Access.Dao.Field field, string propertyName, DataTypeEnum dataType, object value)
-  {
-    Dao.Property prop = null!;
-
-    try
-    {
-      // Try to access the property if it already exists
-      prop = field.Properties[propertyName];
-      prop.Value = value;
-    }
-    catch (System.Runtime.InteropServices.COMException)
-    {
-      Dao.Property newProp = null!;
-      try
-      {
-        // If the property does not exist, create and append it
-        newProp = field.CreateProperty(propertyName, dataType, value);
-        field.Properties.Append(newProp);
-      }
-      catch (COMException comEx)
-      {
-        // Handle the COM exception, e.g., log it or show a message to the user.
-        Debug.WriteLine($"COMException occurred: {comEx.Message}");
-      }
-      finally
-      {
-        // Ensure COM objects are released even if an exception occurs.
-        if (newProp != null) Marshal.ReleaseComObject(newProp);
-      }
-
-    }
-    finally
-    {
-      // Ensure COM objects are released even if an exception occurs.
-      if (prop != null) Marshal.ReleaseComObject(prop);
-
-      // For good measure, force a garbage collection.
-      GC.Collect();
-      GC.WaitForPendingFinalizers();
-    }
-  }
-
   public void LoadFiles()
   {
-    FilesDictionary = SchemaFiles.ToDictionary(file => file.FileName);
+    FilesDictionary = Files.ToDictionary(file => file.FileName);
     NamespacesDictionary = Namespaces.ToDictionary(ns => ns.Url ?? "");
 
-    SchemaFiles.Local.CollectionChanged += (sender, args) =>
+    Files.Local.CollectionChanged += (sender, args) =>
     {
       if (args.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add)
       {
-        foreach (SchemaFile file in args.NewItems!)
+        foreach (XsdFile file in args.NewItems!)
         {
           FilesDictionary.Add(file.FileName, file);
         }
@@ -468,6 +299,7 @@ public sealed class XmlSchemaDbContext : DbContext
     };
 
     Namespaces.Local.CollectionChanged += (sender, args) =>
+
     {
       if (args.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add)
       {

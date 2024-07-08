@@ -6,7 +6,7 @@ internal class Program
   {
     var t1 = DateTime.Now;
     var OpenXmlLibParser = new OpenXmlLibParser();
-    OpenXmlLibParser.ParseSchemaFiles(@"D:\VS\Docs\OpenXML\Libraries", @"D:\VS\Docs\OpenXML\OpenXmlLib.accdb");
+    OpenXmlLibParser.ParseLibraries(@"D:\VS\Docs\OpenXML\Libraries", @"D:\VS\Docs\OpenXML\OpenXmlLib.accdb");
     var t2 = DateTime.Now;
     var dt = t2 - t1;
     if (dt.TotalMinutes >= 1)

@@ -126,8 +126,8 @@ public class XmlSchemaParser
         string filename = schema.Id;
         if (!dbContext.FilesDictionary.TryGetValue(filename, out var schemaFile))
         {
-          schemaFile = new SchemaFile { FileName = filename };
-          dbContext.SchemaFiles.Add(schemaFile);
+          schemaFile = new ModelXmlSchema.XsdFile { FileName = filename };
+          dbContext.Files.Add(schemaFile);
           if (SaveChanges() > 0)
             SchemaFilesAdded++;
 
@@ -168,7 +168,7 @@ public class XmlSchemaParser
       }
     }
 
-    SchemaFilesTotal = dbContext.SchemaFiles.Count();
+    SchemaFilesTotal = dbContext.Files.Count();
     NamespacesTotal = dbContext.Namespaces.Count();
     UsedNamespacesTotal = dbContext.UsedNamespaces.Count();
   }
@@ -190,7 +190,7 @@ public class XmlSchemaParser
   internal void SetNamespacePrefixes()
   {
     var prefixesInFile = new Dictionary<string, string>();
-    using (var textReader = File.OpenText(Path.Combine(SourceXsdPath, "Prefixes.csv")))
+    using (var textReader = System.IO.File.OpenText(Path.Combine(SourceXsdPath, "Prefixes.csv")))
     {
       int lineNo = 0;
       while (!textReader.EndOfStream)
@@ -272,11 +272,11 @@ public class XmlSchemaParser
 
   internal void ParseXmlSchema(XmlSchema schema)
   {
-    WriteLine($"Checking {schema.Id} items");
+    WriteLine($"Parsing {schema.Id} items");
     if (schema.Id != null)
     {
       string id = schema.Id;
-      var schemaFile = dbContext.SchemaFiles.Include(file => file.TargetNamespace).FirstOrDefault(item => item.FileName == id);
+      var schemaFile = dbContext.Files.Include(file => file.TargetNamespace).FirstOrDefault(item => item.FileName == id);
       if (schemaFile == null)
       {
         throw new Exception($"Schema file {id} must be created first");
