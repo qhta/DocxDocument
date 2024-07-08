@@ -1,4 +1,5 @@
 ﻿using DocumentFormat.OpenXml.Wordprocessing;
+
 using Microsoft.EntityFrameworkCore;
 
 namespace ModelOpenXmlDoc;
@@ -151,7 +152,7 @@ public sealed class DocDbContext : DbContext
     {
       simpleType.IsEnum = simpleType.EnumValues.Count > 0;
       if (simpleType.IsEnum)
-        simpleType.EnumValuesDictionary = simpleType.EnumValues.ToDictionary(ev => ev.ShortName);
+        simpleType.EnumValuesDictionary = simpleType.EnumValues.ToDictionary(ev => ev.Value);
     }
 
     EnumValues.Local.CollectionChanged += (sender, args) =>
@@ -160,7 +161,7 @@ public sealed class DocDbContext : DbContext
         {
           foreach (EnumValue enumValue in args.NewItems!)
           {
-            enumValue.OwnerType.EnumValuesDictionary.TryAdd(enumValue.ShortName, enumValue);
+            enumValue.OwnerType.EnumValuesDictionary.TryAdd(enumValue.Value, enumValue);
           }
         }
       };

@@ -15,7 +15,8 @@ internal class Program
       Console.WriteLine("Done in {0} seconds", (int)dt.TotalSeconds);
     Console.WriteLine("Found {0} files, added {1}", OpenXmlDocParser.FilesTotal, OpenXmlDocParser.FilesAdded);
     Console.WriteLine("Found {0} chapters, added {1}, updated {2}", OpenXmlDocParser.ChaptersTotal, OpenXmlDocParser.ChaptersAdded, OpenXmlDocParser.ChaptersUpdated);
-
+    Console.WriteLine("Found {0} simple types, added {1}, updated {2}", OpenXmlDocParser.SimpleTypesTotal, OpenXmlDocParser.SimpleTypesAdded, OpenXmlDocParser.SimpleTypesUpdated);
+    Console.WriteLine("Found {0} enum values, added {1}, updated {2}", OpenXmlDocParser.EnumValuesTotal, OpenXmlDocParser.EnumValuesAdded, OpenXmlDocParser.EnumValuesUpdated);
   }
 
 }

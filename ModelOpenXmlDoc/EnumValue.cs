@@ -5,10 +5,11 @@ namespace ModelOpenXmlDoc;
 /// <summary>
 /// Enum value for simple types.
 /// </summary>
-[Index(nameof(OwnerTypeId), nameof(ShortName), IsUnique = true)]
-[Index(nameof(OwnerTypeId), nameof(ShortName), IsUnique = false)]
+[Index(nameof(OwnerTypeId), nameof(OrdNum), IsUnique = true)]
+[Index(nameof(OwnerTypeId), nameof(Value), IsUnique = true)]
 [Index(nameof(OwnerTypeId), IsUnique = false)]
-[Index(nameof(ShortName), IsUnique = false)]
+[Index(nameof(OrdNum), IsUnique = false)]
+[Index(nameof(Value), IsUnique = false)]
 public class EnumValue
 {
 
@@ -24,11 +25,17 @@ public class EnumValue
   public int OwnerTypeId { get; set; }
 
   /// <summary>
-  /// Short name of the enum value.
+  /// Ordinal number of the enum value in the owner type. Counted from 0.
+  /// </summary>
+  [Required]
+  public int OrdNum { get; set; }
+
+  /// <summary>
+  /// String value the enum value.
   /// </summary>
   [MaxLength(255)]
   [Required]
-  public required string ShortName { get; set; }
+  public required string Value { get; set; }
 
   /// <summary>
   /// Long name of the enum value.
