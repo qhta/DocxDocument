@@ -1,22 +1,21 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Microsoft.EntityFrameworkCore;
 
-namespace ModelXmlSchema;
-
+namespace ModelOpenXmlDoc;
 /// <summary>
 /// Enum value for simple types.
 /// </summary>
-[Index(nameof(OwnerTypeId), nameof(Value), IsUnique = true)]
-[Index(nameof(OwnerTypeId), nameof(OrdNum), IsUnique = false)]
+[Index(nameof(OwnerTypeId), nameof(ShortName), IsUnique = true)]
+[Index(nameof(OwnerTypeId), nameof(ShortName), IsUnique = false)]
 [Index(nameof(OwnerTypeId), IsUnique = false)]
-[Index(nameof(Value), IsUnique = false)]
+[Index(nameof(ShortName), IsUnique = false)]
 public class EnumValue
 {
 
   /// <summary>
   /// Unique identifier of the entity.
   /// </summary>
-  [Key] 
+  [Key]
   public int Id { get; set; }
 
   /// <summary>
@@ -25,16 +24,18 @@ public class EnumValue
   public int OwnerTypeId { get; set; }
 
   /// <summary>
-  /// String representation of the enum value.
+  /// Short name of the enum value.
   /// </summary>
   [MaxLength(255)]
   [Required]
-  public required string Value { get; set; }
+  public required string ShortName { get; set; }
 
   /// <summary>
-  /// Ordinal number of enum value.Counted from 0.
+  /// Long name of the enum value.
   /// </summary>
-  public int OrdNum { get; set; }
+  [MaxLength(255)]
+  [Required]
+  public required string LongName { get; set; }
 
   /// <summary>
   /// Navigation property for the owner type.
@@ -42,3 +43,4 @@ public class EnumValue
   [Required]
   public SimpleType OwnerType { get; set; } = null!;
 }
+

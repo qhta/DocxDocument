@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using DocumentFormat.OpenXml.Wordprocessing;
+using Microsoft.EntityFrameworkCore;
 
 namespace ModelOpenXmlDoc;
 
@@ -7,6 +8,10 @@ public sealed class DocDbContext : DbContext
   public DbSet<DocFile> Files { get; set; }
 
   public DbSet<Chapter> Chapters { get; set; }
+
+  public DbSet<SimpleType> SimpleTypes { get; set; }
+
+  public DbSet<EnumValue> EnumValues { get; set; }
 
   public Dictionary<string, DocFile> FilesDictionary { get; set; } = null!;
   public Dictionary<int, DocFile> FilesIndex { get; set; } = null!;
@@ -55,9 +60,16 @@ public sealed class DocDbContext : DbContext
       .WithMany(subItem => subItem.SubChapters)
       .HasForeignKey(item => item.ParentChapterId);
 
+    modelBuilder.Entity<SimpleType>()
+      .HasOne(item => item.OwnerChapter)
+      .WithMany(chapter => chapter.SimpleTypes)
+      .HasForeignKey(item => item.OwnerChapterId);
+
+    modelBuilder.Entity<EnumValue>()
+      .HasOne(item => item.OwnerType)
+      .WithMany(type => type.EnumValues)
+      .HasForeignKey(item => item.OwnerTypeId);
   }
-
-
 
   public void LoadFiles()
   {
@@ -92,10 +104,15 @@ public sealed class DocDbContext : DbContext
 
     foreach (var chapter in Chapters
                .Include(f => f.SubChapters)
+               .Include(f => f.SimpleTypes)
             )
     {
-      chapter.SubChaptersDictionary = chapter.SubChapters.ToDictionary(Chapter => Chapter.NumStr);
       chapter.HasSubChapters = chapter.SubChapters.Count > 0;
+      if (chapter.HasSubChapters)
+        chapter.SubChaptersDictionary = chapter.SubChapters.ToDictionary(Chapter => Chapter.NumStr);
+      chapter.HasSimpleTypes = chapter.SimpleTypes.Count > 0;
+      if (chapter.HasSimpleTypes)
+        chapter.SimpleTypesDictionary = chapter.SimpleTypes.ToDictionary(SimpleType => SimpleType.ShortName);
     }
 
     Chapters.Local.CollectionChanged += (sender, args) =>
@@ -116,6 +133,37 @@ public sealed class DocDbContext : DbContext
         }
       }
     };
+
+    SimpleTypes.Local.CollectionChanged += (sender, args) =>
+    {
+      if (args.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add)
+      {
+        foreach (SimpleType simpleType in args.NewItems!)
+        {
+          simpleType.OwnerChapter.SimpleTypesDictionary.TryAdd(simpleType.ShortName, simpleType);
+        }
+      }
+    };
+
+    foreach (var simpleType in SimpleTypes
+               .Include(f => f.EnumValues)
+            )
+    {
+      simpleType.IsEnum = simpleType.EnumValues.Count > 0;
+      if (simpleType.IsEnum)
+        simpleType.EnumValuesDictionary = simpleType.EnumValues.ToDictionary(ev => ev.ShortName);
+    }
+
+    EnumValues.Local.CollectionChanged += (sender, args) =>
+      {
+        if (args.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add)
+        {
+          foreach (EnumValue enumValue in args.NewItems!)
+          {
+            enumValue.OwnerType.EnumValuesDictionary.TryAdd(enumValue.ShortName, enumValue);
+          }
+        }
+      };
 
   }
 

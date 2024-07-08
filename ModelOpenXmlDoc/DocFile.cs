@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-
+using DocumentFormat.OpenXml.Packaging;
+using DocumentFormat.OpenXml.Wordprocessing;
 using Microsoft.EntityFrameworkCore;
 
 namespace ModelOpenXmlDoc;
@@ -33,5 +34,11 @@ public class DocFile
   /// </summary>
   [NotMapped]
   public Dictionary<string, Chapter> ChaptersDictionary { get; set; } = null!;
+
+  /// <summary>
+  /// Temporary storage for the Word document.
+  /// </summary>
+  [NotMapped]
+  public WordprocessingDocument? Document { get; set; }
 
 }

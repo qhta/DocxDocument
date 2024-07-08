@@ -349,7 +349,7 @@ public sealed class XmlSchemaDbContext : DbContext
 
     foreach (var simpleType in Types.OfType<SimpleType>().Include(type => type.EnumValues))
     {
-      simpleType.EnumValuesDictionary = simpleType.EnumValues.ToDictionary(enumValue => enumValue.Name);
+      simpleType.EnumValuesDictionary = simpleType.EnumValues.ToDictionary(enumValue => enumValue.Value);
       simpleType.IsEnum = simpleType.EnumValuesDictionary.Count > 0;
     }
     EnumValues.Local.CollectionChanged += (sender, args) =>
@@ -358,7 +358,7 @@ public sealed class XmlSchemaDbContext : DbContext
       {
         foreach (EnumValue enumValue in args.NewItems!)
         {
-          enumValue.OwnerType.EnumValuesDictionary.TryAdd(enumValue.Name, enumValue);
+          enumValue.OwnerType.EnumValuesDictionary.TryAdd(enumValue.Value, enumValue);
         }
       }
     };
